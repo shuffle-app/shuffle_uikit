@@ -1,0 +1,33 @@
+name: shuffle_uikit
+description: This project is a collection of UI kit in Shuffle app of Azart Technologies
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: '>=2.19.4 <3.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.4
+  gradient_borders: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  assets:
+    - assets/images/png/
+    - assets/images/svg/
+    - assets/fonts/
+
+  fonts:
+    - family: Syne
+      fonts:
+        - asset: assets/fonts/Syne-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Syne-Bold.ttf
+          weight: 700
