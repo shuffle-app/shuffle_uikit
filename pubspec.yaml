@@ -12,11 +12,20 @@ dependencies:
     sdk: flutter
   flutter_svg: ^2.0.4
   gradient_borders: ^1.0.0
+  flutter_gen_runner: ^5.2.0
+  build_runner: ^2.3.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
+dependency_overrides:
+  flutter_gen_core:
+    git:
+      url: https://github.com/jetpeter/flutter_gen
+      path: packages/core
+      ref: 785161759cf07319c59d5ecc9de4ef66662bcd95
 
 flutter:
   assets:
@@ -31,3 +40,17 @@ flutter:
           weight: 400
         - asset: assets/fonts/Syne-Bold.ttf
           weight: 700
+
+flutter_gen:
+  output: lib/tokens
+  line_length: 120
+  integrations:
+    flutter_svg: true
+  assets:
+    enabled: true
+    fonts:
+      enabled: false
+    output:
+      style: dot-delimiter
+      package_parameter_enabled: false
+      synthetic-package: false

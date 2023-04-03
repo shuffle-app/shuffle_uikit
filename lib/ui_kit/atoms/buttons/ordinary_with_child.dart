@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/tokens/ui_kit_border_radius.dart';
+import 'package:shuffle_uikit/foundation/ui_kit_border_radius.dart';
 
 class OrdinaryButtonWithChild extends StatelessWidget {
   final VoidCallback onPressed;
@@ -27,7 +27,7 @@ class OrdinaryButtonWithChild extends StatelessWidget {
         ),
         shape: MaterialStateProperty.all(
           const RoundedRectangleBorder(
-            borderRadius: UiKitBorderRadius.all24,
+            borderRadius: BorderRadiusFoundation.all24,
           ),
         ),
       ),

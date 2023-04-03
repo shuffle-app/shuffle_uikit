@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/tokens/foundation.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/profile/place_widget.dart';
 import 'package:shuffle_uikit/ui_models/profile/profile_post.dart';
+
+import '../../../foundation/shuffle_ui_kit_foundation.dart';
 
 class ProfilePostsPlaces extends StatelessWidget {
   final List<ProfilePlace> places;
@@ -18,14 +19,14 @@ class ProfilePostsPlaces extends StatelessWidget {
         (context, index) {
           final place = places[index];
           return Padding(
-            padding: UiKitEdgeInsets.horizontal16,
+            padding: EdgeInsetsFoundation.horizontal16,
             child: Column(
               children: [
                 if (index != 0)
                   const Divider(
                     height: 32,
                     thickness: 1,
-                    color: UiKitColors.dividerColor,
+                    color: ColorsFoundation.dividerColor,
                   ),
                 PlaceWidget(place: place),
               ],

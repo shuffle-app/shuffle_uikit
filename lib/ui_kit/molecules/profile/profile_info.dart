@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
+import 'package:shuffle_uikit/ui_kit/atoms/buttons/ordinary.dart';
 
 class ProfileInfo extends StatelessWidget {
   final String nickname;
@@ -27,7 +28,7 @@ class ProfileInfo extends StatelessWidget {
               TextSpan(
                 text: '\nFollowers\n',
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                      color: UiKitColors.solidGreyText,
+                      color: ColorsFoundation.solidGreyText,
                     ),
               ),
               TextSpan(
@@ -38,7 +39,7 @@ class ProfileInfo extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ),
-        UiKitSpacing.verticalSpace12,
+        SpacingFoundation.verticalSpace12,
         GeneralPurposeButton(
           text: 'FOLLOW',
           onPressed: () {},

@@ -1,7 +1,7 @@
 import 'package:example/presentation/ui/profile/influencer_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           labelColor: Colors.black,
           unselectedLabelColor: Colors.white,
           indicator: BoxDecoration(
-            borderRadius: UiKitBorderRadius.max,
+            borderRadius: BorderRadiusFoundation.max,
             color: Colors.white,
           ),
         ),

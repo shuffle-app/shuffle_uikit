@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/place_post_body.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/place_tag_widget.dart';
+import 'package:shuffle_uikit/ui_models/profile/profile_post.dart';
+
+import '../../../foundation/shuffle_ui_kit_foundation.dart';
 
 class PlaceWidget extends StatelessWidget {
   final ProfilePlace place;
@@ -22,7 +24,7 @@ class PlaceWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             ClipRRect(
-              borderRadius: UiKitBorderRadius.all24,
+              borderRadius: BorderRadiusFoundation.all24,
               child: Image.asset(
                 place.image,
                 width: 80,
@@ -30,7 +32,7 @@ class PlaceWidget extends StatelessWidget {
                 package: 'shuffle_uikit',
               ),
             ),
-            UiKitSpacing.horizontalSpace10,
+            SpacingFoundation.horizontalSpace10,
             Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,14 +41,14 @@ class PlaceWidget extends StatelessWidget {
                   place.title,
                   style: Theme.of(context).textTheme.labelMedium,
                 ),
-                UiKitSpacing.verticalSpace2,
+                SpacingFoundation.verticalSpace2,
                 Text(
                   place.createdAt,
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: UiKitColors.solidGreyText,
+                        color: ColorsFoundation.solidGreyText,
                       ),
                 ),
-                UiKitSpacing.verticalSpace8,
+                SpacingFoundation.verticalSpace8,
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -69,11 +71,11 @@ class PlaceWidget extends StatelessWidget {
             ),
           ],
         ),
-        UiKitSpacing.verticalSpace12,
+        SpacingFoundation.verticalSpace12,
         PlacePostBody(
           text: place.postBody,
         ),
-        UiKitSpacing.verticalSpace12,
+        SpacingFoundation.verticalSpace12,
         Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.end,
@@ -82,11 +84,11 @@ class PlaceWidget extends StatelessWidget {
               'assets/images/svg/like.svg',
               package: 'shuffle_uikit',
             ),
-            UiKitSpacing.horizontalSpace8,
+            SpacingFoundation.horizontalSpace8,
             Text(
               'Helpful',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: UiKitColors.solidGreyText,
+                    color: ColorsFoundation.solidGreyText,
                   ),
             )
           ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/tokens/foundation.dart';
+import 'package:shuffle_uikit/ui_kit/atoms/common/ui_kit_card_wrapper.dart';
+
+import '../../../foundation/shuffle_ui_kit_foundation.dart';
 
 class ProfileHighlightCard extends StatelessWidget {
   final String title;
@@ -15,7 +17,7 @@ class ProfileHighlightCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return CardWrapper(
       width: 91,
-      padding: UiKitEdgeInsets.all16,
+      padding: EdgeInsetsFoundation.all16,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
@@ -25,7 +27,7 @@ class ProfileHighlightCard extends StatelessWidget {
             style: Theme.of(context).textTheme.titleLarge,
             textAlign: TextAlign.center,
           ),
-          UiKitSpacing.verticalSpace12,
+          SpacingFoundation.verticalSpace12,
           Text(
             title,
             style: Theme.of(context).textTheme.displayMedium?.copyWith(

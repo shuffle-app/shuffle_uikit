@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/tokens/ui_kit_border_radius.dart';
-import 'package:shuffle_uikit/tokens/ui_kit_colors.dart';
+import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 
 class CardWrapper extends StatelessWidget {
   final Widget child;
@@ -25,8 +24,8 @@ class CardWrapper extends StatelessWidget {
       height: height,
       padding: padding,
       decoration: BoxDecoration(
-        borderRadius: borderRadius ?? UiKitBorderRadius.all24,
-        color: UiKitColors.solidSurface,
+        borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
+        color: ColorsFoundation.solidSurface,
       ),
       child: child,
     );

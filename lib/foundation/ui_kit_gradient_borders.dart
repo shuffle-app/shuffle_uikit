@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
-import 'package:shuffle_uikit/tokens/ui_kit_colors.dart';
+import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 
-class UiKitGradientBorders {
-  UiKitGradientBorders._();
+class GradientBordersFoundation {
+  GradientBordersFoundation._();
 
   static const gradientDefault = GradientBoxBorder(
     gradient: RadialGradient(
       colors: [
-        UiKitColors.chipBorderOrange,
-        UiKitColors.chipBorderYellow,
-        UiKitColors.chipBorderPink,
+        ColorsFoundation.orange,
+        ColorsFoundation.yellow,
+        ColorsFoundation.pink,
       ],
       radius: 2,
       center: Alignment(-0.6, -0.9),

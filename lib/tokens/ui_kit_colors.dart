@@ -9,7 +9,7 @@ class UiKitColors {
   static const subtitleGrey = Color(0xffA8AAAE);
   static const dividerColor = Color(0xff1A1A1A);
 
-  static const chipBorderYellow = Color(0xffC6E216);
-  static const chipBorderOrange = Color(0xffE32900);
-  static const chipBorderPink = Color(0xffD808FA);
+  static const yellow = Color(0xffC6E216);
+  static const orange = Color(0xffE32900);
+  static const pink = Color(0xffD808FA);
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:shuffle_uikit/tokens/ui_kit_colors.dart';
+import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
+import 'package:shuffle_uikit/tokens/assets.gen.dart';
 
 class AppBarCustomBackButton extends StatelessWidget {
   const AppBarCustomBackButton({Key? key}) : super(key: key);
@@ -9,7 +9,7 @@ class AppBarCustomBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       shape: const CircleBorder(),
-      color: UiKitColors.surface,
+      color: ColorsFoundation.surface,
       elevation: 0,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
@@ -17,14 +17,13 @@ class AppBarCustomBackButton extends StatelessWidget {
         child: Ink(
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
-            color: UiKitColors.surface,
+            color: ColorsFoundation.surface,
           ),
           width: 28,
           height: 28,
-          child: SvgPicture.asset(
-            'assets/images/svg/chevron_left.svg',
+          child: GraphicsFoundation.instance.svgPicture(
+            asset: Assets.images.svg.chevronLeft,
             fit: BoxFit.scaleDown,
-            package: 'shuffle_uikit',
           ),
         ),
       ),

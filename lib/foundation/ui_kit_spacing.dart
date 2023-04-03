@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-class UiKitSpacing {
-  UiKitSpacing._();
+class SpacingFoundation {
+  SpacingFoundation._();
 
   static const horizontalSpace4 = SizedBox(width: 4);
   static const horizontalSpace8 = SizedBox(width: 8);

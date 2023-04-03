@@ -17,7 +17,7 @@ class InfluencerProfile extends StatelessWidget {
             delegate: SliverChildListDelegate(
               [
                 Padding(
-                  padding: UiKitEdgeInsets.all16,
+                  padding: EdgeInsetsFoundation.all16,
                   child: ProfileCard(
                     profileData: VisitingProfileData(
                       nickname: '@marywill',
@@ -29,16 +29,16 @@ class InfluencerProfile extends StatelessWidget {
                   ),
                 ),
                 const Padding(
-                  padding: UiKitEdgeInsets.horizontal16,
+                  padding: EdgeInsetsFoundation.horizontal16,
                   child: ProfileHighlights(
                     placesVisited: 934,
                     reviewsPosted: 630,
                     points: 32040,
                   ),
                 ),
-                UiKitSpacing.verticalSpace24,
+                SpacingFoundation.verticalSpace24,
                 Padding(
-                  padding: UiKitEdgeInsets.horizontal16,
+                  padding: EdgeInsetsFoundation.horizontal16,
                   child: ProfileAttitudeTabs(
                     tabs: [
                       ProfileAttitudeTab(
@@ -52,7 +52,7 @@ class InfluencerProfile extends StatelessWidget {
                     ],
                   ),
                 ),
-                UiKitSpacing.verticalSpace24,
+                SpacingFoundation.verticalSpace24,
                 ProfileStoriesList(
                   stories: List.generate(
                     5,
@@ -61,7 +61,7 @@ class InfluencerProfile extends StatelessWidget {
                     ),
                   ),
                 ),
-                UiKitSpacing.verticalSpace24,
+                SpacingFoundation.verticalSpace24,
               ],
             ),
           ),
@@ -93,7 +93,7 @@ class InfluencerProfile extends StatelessWidget {
             delegate: SliverChildListDelegate(
               [
                 Padding(
-                  padding: UiKitEdgeInsets.horizontal16,
+                  padding: EdgeInsetsFoundation.horizontal16,
                   child: OrdinaryButtonWithChild(
                     color: Colors.white,
                     onPressed: () {},
@@ -107,7 +107,7 @@ class InfluencerProfile extends StatelessWidget {
                                 color: Colors.black,
                               ),
                         ),
-                        UiKitSpacing.horizontalSpace4,
+                        SpacingFoundation.horizontalSpace4,
                         const Icon(
                           Icons.keyboard_arrow_down_rounded,
                           color: Colors.black,
@@ -116,7 +116,7 @@ class InfluencerProfile extends StatelessWidget {
                     ),
                   ),
                 ),
-                UiKitSpacing.verticalSpace24
+                SpacingFoundation.verticalSpace24
               ],
             ),
           ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/tokens/ui_kit_spacing.dart';
+import 'package:shuffle_uikit/foundation/ui_kit_spacing.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/profile/profile_highlights_card.dart';
 
 class ProfileHighlights extends StatelessWidget {
@@ -25,12 +25,12 @@ class ProfileHighlights extends StatelessWidget {
           value: placesVisited,
           title: 'places visited',
         ),
-        UiKitSpacing.horizontalSpace8,
+        SpacingFoundation.horizontalSpace8,
         ProfileHighlightCard(
           value: reviewsPosted,
           title: 'reviews posted',
         ),
-        UiKitSpacing.horizontalSpace8,
+        SpacingFoundation.horizontalSpace8,
         ProfileHighlightCard(
           value: points,
           title: 'points earned',

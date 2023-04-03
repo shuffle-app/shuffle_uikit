@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/tokens/foundation.dart';
+import 'package:shuffle_uikit/tokens/tokens.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_story_widget.dart';
 import 'package:shuffle_uikit/ui_models/profile/profile_story.dart';
 
@@ -17,7 +17,7 @@ class ProfileStoriesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return CardWrapper(
       borderRadius: BorderRadius.zero,
-      padding: UiKitEdgeInsets.all16,
+      padding: EdgeInsetsFoundation.all16,
       child: SizedBox(
         height: 180,
         child: ListView.separated(
@@ -29,7 +29,7 @@ class ProfileStoriesList extends StatelessWidget {
               imagePath: story.image,
             );
           },
-          separatorBuilder: (context, index) => UiKitSpacing.horizontalSpace12,
+          separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace12,
         ),
       ),
     );

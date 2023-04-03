@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/tokens/foundation.dart';
+import 'package:shuffle_uikit/tokens/tokens.dart';
 
 class GeneralPurposeButton extends StatelessWidget {
   final String text;
@@ -27,7 +27,7 @@ class GeneralPurposeButton extends StatelessWidget {
         ),
         shape: MaterialStateProperty.all(
           const RoundedRectangleBorder(
-            borderRadius: UiKitBorderRadius.all24,
+            borderRadius: BorderRadiusFoundation.all24,
           ),
         ),
       ),

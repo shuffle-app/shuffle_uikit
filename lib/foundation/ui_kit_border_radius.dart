@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class UiKitBorderRadius {
-  UiKitBorderRadius._();
+class BorderRadiusFoundation {
+  BorderRadiusFoundation._();
 
   static const all24 = BorderRadius.all(Radius.circular(24));
   static const onlyBottom24 = BorderRadius.only(

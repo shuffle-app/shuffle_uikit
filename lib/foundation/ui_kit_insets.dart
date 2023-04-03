@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class UiKitEdgeInsets {
-  UiKitEdgeInsets._();
+class EdgeInsetsFoundation {
+  EdgeInsetsFoundation._();
 
   static const all4 = EdgeInsets.all(4.0);
   static const all16 = EdgeInsets.all(16.0);

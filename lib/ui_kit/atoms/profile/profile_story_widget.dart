@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/tokens/ui_kit_border_radius.dart';
-import 'package:shuffle_uikit/tokens/ui_kit_gradient_borders.dart';
+import 'package:shuffle_uikit/foundation/ui_kit_border_radius.dart';
+import 'package:shuffle_uikit/foundation/ui_kit_gradient_borders.dart';
 
 class ProfileStoryWidget extends StatelessWidget {
   final String imagePath;
@@ -16,11 +16,11 @@ class ProfileStoryWidget extends StatelessWidget {
       width: 100,
       decoration: const BoxDecoration(
         color: Colors.black,
-        borderRadius: UiKitBorderRadius.all24,
-        border: UiKitGradientBorders.gradientDefault,
+        borderRadius: BorderRadiusFoundation.all24,
+        border: GradientBordersFoundation.gradientDefault,
       ),
       child: ClipRRect(
-        borderRadius: UiKitBorderRadius.all24,
+        borderRadius: BorderRadiusFoundation.all24,
         child: Image.asset(
           imagePath,
           fit: BoxFit.cover,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 
 class PlaceTagWidget extends StatelessWidget {
   final String title;
@@ -21,16 +21,16 @@ class PlaceTagWidget extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (showSpacing) UiKitSpacing.horizontalSpace12,
+        if (showSpacing) SpacingFoundation.horizontalSpace12,
         SvgPicture.asset(
           icon,
           package: 'shuffle_uikit',
         ),
-        UiKitSpacing.horizontalSpace4,
+        SpacingFoundation.horizontalSpace4,
         Text(
           title,
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                color: textColor ?? UiKitColors.solidGreyText,
+                color: textColor ?? ColorsFoundation.solidGreyText,
               ),
         )
       ],
