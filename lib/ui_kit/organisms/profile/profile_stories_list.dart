@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/foundation.dart';
+import 'package:shuffle_uikit/tokens/foundation.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_story_widget.dart';
 import 'package:shuffle_uikit/ui_models/profile/profile_story.dart';
 

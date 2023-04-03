@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
-import 'package:shuffle_uikit/foundation/ui_kit_colors.dart';
+import 'package:shuffle_uikit/tokens/ui_kit_colors.dart';
 
 class UiKitGradientBorders {
   UiKitGradientBorders._();

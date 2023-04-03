@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/ui_kit_border_radius.dart';
-import 'package:shuffle_uikit/foundation/ui_kit_gradient_borders.dart';
-import 'package:shuffle_uikit/foundation/ui_kit_insets.dart';
+import 'package:shuffle_uikit/tokens/ui_kit_border_radius.dart';
+import 'package:shuffle_uikit/tokens/ui_kit_gradient_borders.dart';
+import 'package:shuffle_uikit/tokens/ui_kit_insets.dart';
 
 class InterestChip extends StatelessWidget {
   final String interest;

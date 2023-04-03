@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/foundation.dart';
+import 'package:shuffle_uikit/tokens/foundation.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/profile/profile_attitude_tab.dart';
 
 class ProfileAttitudeTabs extends StatelessWidget {

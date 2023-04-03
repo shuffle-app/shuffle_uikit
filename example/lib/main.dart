@@ -60,13 +60,6 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
             fontFamily: 'Syne',
           ),
-          headlineMedium: TextStyle(
-            package: 'shuffle_uikit',
-            fontSize: 20,
-            fontWeight: FontWeight.w700,
-            color: Colors.white,
-            fontFamily: 'Syne',
-          ),
           displayMedium: TextStyle(
             package: 'shuffle_uikit',
             fontSize: 16,
@@ -93,6 +86,7 @@ class MyApp extends StatelessWidget {
             fontSize: 13,
             fontWeight: FontWeight.w600,
             color: Colors.white,
+            letterSpacing: 0,
             fontFamily: 'Syne',
           ),
           labelMedium: TextStyle(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shuffle_uikit/foundation/ui_kit_colors.dart';
+import 'package:shuffle_uikit/tokens/ui_kit_colors.dart';
 
 class AppBarCustomBackButton extends StatelessWidget {
   const AppBarCustomBackButton({Key? key}) : super(key: key);

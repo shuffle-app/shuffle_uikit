@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/foundation.dart';
+import 'package:shuffle_uikit/tokens/foundation.dart';
 
 class GeneralPurposeButton extends StatelessWidget {
   final String text;
