@@ -51,11 +51,6 @@ class MyApp extends StatelessWidget {
           toolbarHeight: 84,
           color: Colors.black,
           centerTitle: true,
-          systemOverlayStyle: SystemUiOverlayStyle( // TODO check please
-            statusBarColor: Colors.black,
-            statusBarIconBrightness: Brightness.dark,
-            statusBarBrightness: Brightness.light,
-          ),
         ),
         textTheme: const TextTheme(
           headlineLarge: TextStyle(
