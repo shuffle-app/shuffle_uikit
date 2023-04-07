@@ -13,7 +13,6 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /// todo add description to Confluence document
     return CardWrapper(
       padding: EdgeInsetsFoundation.all16,
       child: Column(

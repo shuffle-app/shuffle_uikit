@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/app_bar/app_bar_back_button.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/app_bar/app_bar_title.dart';
@@ -15,30 +17,34 @@ class CustomAppBar extends PreferredSize {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: preferredSize.width,
-      height: preferredSize.height + MediaQuery.of(context).padding.top,
-      decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.07),
-        borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(24),
-          bottomRight: Radius.circular(24),
-        ),
-      ),
-      padding: const EdgeInsets.all(16),
-
-      /// Navigation-top under Frame484 in Figma
-      child: Align(
-        alignment: Alignment.bottomCenter,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            const AppBarCustomBackButton(),
-            AppBarTitle(
-              title: title,
-              centerTitle: centerTitle,
+    return ClipRRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+        child: Container(
+          width: preferredSize.width,
+          height: preferredSize.height + MediaQuery.of(context).padding.top,
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.07),
+            borderRadius: const BorderRadius.only(
+              bottomLeft: Radius.circular(24),
+              bottomRight: Radius.circular(24),
             ),
-          ],
+          ),
+          padding: const EdgeInsets.all(16),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                const AppBarCustomBackButton(),
+                AppBarTitle(
+                  title: title,
+                  centerTitle: centerTitle,
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

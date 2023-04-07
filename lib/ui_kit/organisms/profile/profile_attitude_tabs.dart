@@ -4,10 +4,12 @@ import 'package:shuffle_uikit/ui_kit/molecules/profile/profile_attitude_tab.dart
 
 class ProfileAttitudeTabs extends StatelessWidget {
   final List<ProfileAttitudeTab> tabs;
+  final ValueChanged<int> onTappedTab;
 
   const ProfileAttitudeTabs({
     Key? key,
     required this.tabs,
+    required this.onTappedTab,
   }) : super(key: key);
 
   @override
@@ -19,6 +21,7 @@ class ProfileAttitudeTabs extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadiusFoundation.max,
           child: TabBar(
+            onTap: onTappedTab,
             tabs: tabs,
           ),
         ),

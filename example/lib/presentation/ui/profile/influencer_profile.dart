@@ -40,15 +40,10 @@ class InfluencerProfile extends StatelessWidget {
                 Padding(
                   padding: EdgeInsetsFoundation.horizontal16,
                   child: ProfileAttitudeTabs(
-                    tabs: [
-                      ProfileAttitudeTab(
-                        title: 'LOVED',
-                        onTap: () {},
-                      ),
-                      ProfileAttitudeTab(
-                        title: 'HATED',
-                        onTap: () {},
-                      ),
+                    onTappedTab: (index) {},
+                    tabs: const [
+                      ProfileAttitudeTab(title: 'LOVED'),
+                      ProfileAttitudeTab(title: 'HATED'),
                     ],
                   ),
                 ),
