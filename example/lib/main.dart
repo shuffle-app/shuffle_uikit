@@ -1,4 +1,4 @@
-import 'package:example/presentation/ui/showcase/all_widgets_stand.dart';
+import 'package:example/presentation/ui/main_page/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/foundation/theme_foundation.dart';
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Shuffle Demo',
       debugShowCheckedModeBanner: false,
       theme: UiKitThemeFoundation.defaultTheme,
-      home: const AllWidgetsStand(),
+      home: const MainPage(),
     );
   }
 }
