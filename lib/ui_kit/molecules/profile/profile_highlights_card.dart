@@ -16,7 +16,6 @@ class ProfileHighlightCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardWrapper(
-      width: 91,
       padding: EdgeInsetsFoundation.all16,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

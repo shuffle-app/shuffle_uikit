@@ -62,7 +62,7 @@ class InfluencerProfile extends StatelessWidget {
           ),
           ProfilePostsPlaces(
             places: List.generate(
-              10,
+              5,
               (index) => ProfilePlace(
                 image: 'assets/images/png/profile_post_1.png',
                 title: 'Virgins on the beach',
@@ -88,7 +88,7 @@ class InfluencerProfile extends StatelessWidget {
             delegate: SliverChildListDelegate(
               [
                 Padding(
-                  padding: EdgeInsetsFoundation.horizontal16,
+                  padding: EdgeInsetsFoundation.all16,
                   child: OrdinaryButtonWithChild(
                     color: Colors.white,
                     onPressed: () {},

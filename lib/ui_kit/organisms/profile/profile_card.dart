@@ -25,9 +25,11 @@ class ProfileCard extends StatelessWidget {
             children: [
               ProfileAvatar(avatarLink: profileData.avatarUrl),
               SpacingFoundation.horizontalSpace16,
-              ProfileInfo(
-                nickname: profileData.nickname,
-                followers: profileData.followers,
+              Expanded(
+                child: ProfileInfo(
+                  nickname: profileData.nickname,
+                  followers: profileData.followers,
+                ),
               ),
             ],
           ),

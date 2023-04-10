@@ -4,6 +4,7 @@ class EdgeInsetsFoundation {
   EdgeInsetsFoundation._();
 
   static const all4 = EdgeInsets.all(4.0);
+  static const all8 = EdgeInsets.all(8.0);
   static const all16 = EdgeInsets.all(16.0);
 
   static const horizontal16 = EdgeInsets.symmetric(horizontal: 16.0);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 
 class CardWrapper extends StatelessWidget {
   final Widget child;
@@ -19,10 +20,16 @@ class CardWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
+      ),
       child: Container(
         width: width,
         height: height,
         padding: padding,
+        decoration: BoxDecoration(
+          borderRadius: borderRadius,
+        ),
         child: child,
       ),
     );
