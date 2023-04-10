@@ -16,7 +16,6 @@ class ProfileInfo extends StatelessWidget {
     return Builder(
       builder: (context) {
         final boldTextTheme = Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme;
-        final regularTextTheme = Theme.of(context).extension<UiKitThemeData>()?.regularTextTheme;
         return Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,

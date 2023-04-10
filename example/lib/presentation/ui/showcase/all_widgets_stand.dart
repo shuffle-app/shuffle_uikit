@@ -10,6 +10,16 @@ class AllWidgetsStand extends StatefulWidget {
 
 class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final TextEditingController _controller = TextEditingController();
+  late bool isShuffleTheme;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      final theme = Theme.of(context).extension<UiKitThemeData>();
+      if (theme != null) setState(() => isShuffleTheme = true);
+    });
+  }
 
   @override
   void dispose() {
@@ -19,36 +29,73 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(
-        title: 'Shuffle UI Kit Showcase Stand',
-        centerTitle: true,
-      ),
-      body: GridView(
-        padding: EdgeInsetsFoundation.all16,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 5,
-          crossAxisSpacing: 16,
-          mainAxisSpacing: 16,
-          childAspectRatio: 1.5,
+    return Theme(
+      data: isShuffleTheme ? UiKitThemeFoundation.defaultTheme : ThemeData(),
+      child: Scaffold(
+        appBar: CustomAppBar(
+          title: 'Shuffle UI Kit Showcase Stand',
+          centerTitle: true,
+          action: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Shuffle Theme',
+                style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.body.copyWith(
+                      color: isShuffleTheme ? Colors.white : Colors.black,
+                    ),
+              ),
+              SpacingFoundation.horizontalSpace8,
+              Switch(
+                value: isShuffleTheme,
+                activeColor: Colors.white,
+                inactiveTrackColor: ColorsFoundation.solidSurface,
+                onChanged: (value) {
+                  if (value) {}
+                  setState(() {
+                    isShuffleTheme = value;
+                  });
+                },
+              ),
+            ],
+          ),
         ),
-        children: [
-          UiKitInputFieldRightIcon(
-            controller: _controller,
+        body: GridView(
+          padding: EdgeInsetsFoundation.all16,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 5,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+            childAspectRatio: 1.5,
           ),
-          UiKitInputFieldLeftIcon(
-            controller: _controller,
-          ),
-          UiKitInputFieldNoIcon(
-            controller: _controller,
-          ),
-          UiKitInputFieldNoIconCompact(
-            controller: _controller,
-          ),
-          UiKitInputFieldNoFill(
-            controller: _controller,
-          ),
-        ],
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                UiKitInputFieldRightIcon(
+                  controller: _controller,
+                  hintText: 'PLACEHOLDER',
+                ),
+                UiKitInputFieldRightIcon(
+                  controller: _controller,
+                  hintText: 'PLACEHOLDER',
+                  enabled: false,
+                ),
+              ],
+            ),
+            UiKitInputFieldLeftIcon(
+              controller: _controller,
+            ),
+            UiKitInputFieldNoIcon(
+              controller: _controller,
+            ),
+            UiKitInputFieldNoIconCompact(
+              controller: _controller,
+            ),
+            UiKitInputFieldNoFill(
+              controller: _controller,
+            ),
+          ],
+        ),
       ),
     );
   }

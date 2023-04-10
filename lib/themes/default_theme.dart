@@ -8,6 +8,9 @@ class UiKitThemes {
   final defaultThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
     useMaterial3: false,
+    textSelectionTheme: const TextSelectionThemeData(
+      cursorColor: Colors.white,
+    ),
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
         customColor: Colors.red,
@@ -28,69 +31,37 @@ class UiKitThemes {
           shadowColor: MaterialStateProperty.resolveWith((states) => Colors.white),
           surfaceTintColor: MaterialStateProperty.resolveWith((states) => Colors.white),
         ),
-        iconInputTheme: InputDecorationTheme(
+        iconInputTheme: const InputDecorationTheme(
           filled: true,
-          fillColor: Colors.white.withOpacity(0.07),
-          border: const OutlineInputBorder(
+          fillColor: ColorsFoundation.solidSurface,
+          border: OutlineInputBorder(
             borderRadius: BorderRadiusFoundation.all24,
             borderSide: BorderSide.none,
           ),
-          focusedBorder: const OutlineInputBorder(
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all24,
+            borderSide: BorderSide(
+              color: Colors.white,
+              width: 2,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadiusFoundation.all24,
             borderSide: BorderSide.none,
           ),
-          enabledBorder: const OutlineInputBorder(
+          errorBorder: OutlineInputBorder(
             borderRadius: BorderRadiusFoundation.all24,
-            borderSide: BorderSide.none,
+            borderSide: BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
           ),
-          errorBorder: const OutlineInputBorder(
+          focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadiusFoundation.all24,
-            borderSide: BorderSide.none,
-          ),
-          focusedErrorBorder: const OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all24,
-            borderSide: BorderSide.none,
-          ),
-          errorStyle: const TextStyle(
-            package: 'shuffle_uikit',
-            fontSize: 12,
-            fontWeight: FontWeight.w700,
-            fontFamily: 'Syne',
-          ),
-          errorMaxLines: 1,
-          contentPadding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 16,
-          ),
-          hintStyle: const TextStyle(
-            package: 'shuffle_uikit',
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
-            fontFamily: 'Syne',
-          ),
-          labelStyle: const TextStyle(
-            package: 'shuffle_uikit',
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
-            fontFamily: 'Syne',
-          ),
-          helperStyle: const TextStyle(
-            package: 'shuffle_uikit',
-            fontSize: 12,
-            fontWeight: FontWeight.w700,
-            fontFamily: 'Syne',
-          ),
-          prefixStyle: const TextStyle(
-            package: 'shuffle_uikit',
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
-            fontFamily: 'Syne',
-          ),
-          suffixStyle: const TextStyle(
-            package: 'shuffle_uikit',
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
-            fontFamily: 'Syne',
+            borderSide: BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
           ),
         ),
         noIconInputTheme: InputDecorationTheme(),

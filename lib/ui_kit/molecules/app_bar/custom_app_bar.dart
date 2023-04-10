@@ -8,10 +8,12 @@ import 'package:shuffle_uikit/ui_kit/atoms/app_bar/app_bar_title.dart';
 class CustomAppBar extends PreferredSize {
   final String title;
   final bool centerTitle;
+  final Widget? action;
 
   const CustomAppBar({
     super.key,
     required this.title,
+    this.action,
     this.centerTitle = false,
     super.preferredSize = const Size(double.infinity, 84),
   }) : super(child: const SizedBox());
@@ -40,6 +42,7 @@ class CustomAppBar extends PreferredSize {
                   title: title,
                   centerTitle: centerTitle,
                 ),
+                if (action != null) action!,
               ],
             ),
           ),
