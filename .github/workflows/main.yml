@@ -9,22 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: |
-          pwd
-          ls
-          cd example
-          pwd
-          ls
-      - run: pwd
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-      - run: ls
-      - run: flutter pub get
-      - run: flutter pub run build_runner build --delete-conflicting-outputs
-      - run: flutter build web --release --base-href "/shuffle-uikit/"
       - run: |
-          cd build/web
+          cd example
+          flutter pub get
+          flutter pub run build_runner build --delete-conflicting-outputs
+          flutter build web --release --base-href "/shuffle-uikit/"
+      - run: |
+          cd example/build/web
           git init
           git config --global user.email ${{secrets.kabzki_email}}
           git config --global user.name Kabzki
