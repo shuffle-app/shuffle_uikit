@@ -9,7 +9,6 @@ class UiKitInputFieldNoFill extends UiKitInputField {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return const Placeholder();
   }
 }

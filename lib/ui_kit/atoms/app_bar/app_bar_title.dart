@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class AppBarTitle extends StatelessWidget {
   final String title;
@@ -15,7 +16,7 @@ class AppBarTitle extends StatelessWidget {
     return Expanded(
       child: Text(
         title,
-        style: Theme.of(context).textTheme.headlineLarge,
+        style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.titleLarge.copyWith(color: Colors.white),
         textAlign: centerTitle ? TextAlign.center : TextAlign.left,
       ),
     );

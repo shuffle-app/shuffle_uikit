@@ -1,128 +1,128 @@
-import 'dart:ui';
+import 'package:flutter/painting.dart';
 
 class UiKitRegularTextTheme {
-  final TextStyle labelSmall = TextStyle(
+  final TextStyle labelSmall = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 14,
     fontWeight: FontWeight.w400,
-    height: 17.5,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
-  final TextStyle caption1 = TextStyle(
+  final TextStyle caption1 = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 13,
     fontWeight: FontWeight.w400,
-    height: 16.25,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
   TextStyle get caption1UpperCase => caption1;
-  final TextStyle caption2 = TextStyle(
+  final TextStyle caption2 = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 12,
     fontWeight: FontWeight.w400,
-    height: 15.6,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
   TextStyle get subHeadline => body;
-  final TextStyle body = TextStyle(
+  final TextStyle body = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 16,
     fontWeight: FontWeight.w400,
-    height: 20,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
   TextStyle get bodyUpperCase => body;
-  final TextStyle title1 = TextStyle(
+  final TextStyle title1 = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 24,
     fontWeight: FontWeight.w400,
-    height: 26.4,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
-  final TextStyle title2 = TextStyle(
+  final TextStyle title2 = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 20,
     fontWeight: FontWeight.w400,
-    height: 22,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
 
-  final TextStyle titleLarge = TextStyle(
+  final TextStyle titleLarge = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 34,
     fontWeight: FontWeight.w400,
-    height: 37,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
 }
 
 class UiKitBoldTextTheme {
-  final TextStyle labelLarge = TextStyle(
+  final TextStyle labelLarge = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 16,
     fontWeight: FontWeight.w600,
-    height: 20,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
 
-  final TextStyle caption1Medium = TextStyle(
+  final TextStyle caption1Medium = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 13,
     fontWeight: FontWeight.w600,
-    height: 16.25,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
   TextStyle get caption1UpperCaseMedium => caption1Medium;
   TextStyle get caption1UpperCase => caption1;
-  final TextStyle caption1 = TextStyle(
+  final TextStyle caption1 = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 13,
     fontWeight: FontWeight.w700,
-    height: 16.25,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
-  final TextStyle caption2 = TextStyle(
+  final TextStyle caption2 = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 12,
     fontWeight: FontWeight.w700,
-    height: 15.6,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
-  final TextStyle subHeadline = TextStyle(
+  final TextStyle subHeadline = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 16,
     fontWeight: FontWeight.w700,
-    height: 20,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
-  final TextStyle body = TextStyle(
+  final TextStyle body = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 16,
     fontWeight: FontWeight.w700,
-    height: 20,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
   TextStyle get bodyUpperCase => body;
-  final TextStyle title1 = TextStyle(
+  final TextStyle title1 = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 24,
     fontWeight: FontWeight.w700,
-    height: 26.4,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
 
-  final TextStyle title2 = TextStyle(
+  final TextStyle title2 = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 20,
     fontWeight: FontWeight.w700,
-    height: 22,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
-  final TextStyle titleLarge = TextStyle(
+  final TextStyle titleLarge = const TextStyle(
     fontFamily: 'Syne',
     fontSize: 34,
     fontWeight: FontWeight.w700,
-    height: 37.4,
-    color: const Color(0xff000000),
+    color: Color(0xffffffff),
+    package: 'shuffle_uikit',
   );
 }

@@ -11,6 +11,23 @@ class UiKitThemes {
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
         customColor: Colors.red,
+        chipTheme: UiKitChipThemeData(
+          border: Border.all(color: Colors.white, width: 2),
+          backgroundColor: ColorsFoundation.solidSurface,
+        ),
+        ordinaryButtonStyle: ButtonStyle(
+          fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(48)),
+          backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+          shape: MaterialStateProperty.resolveWith(
+            (states) => const RoundedRectangleBorder(
+              borderRadius: BorderRadiusFoundation.all24,
+            ),
+          ),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+          overlayColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+          shadowColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+          surfaceTintColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+        ),
         iconInputTheme: InputDecorationTheme(
           filled: true,
           fillColor: Colors.white.withOpacity(0.07),

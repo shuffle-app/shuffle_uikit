@@ -13,11 +13,15 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final UiKitRegularTextTheme regularTextTheme;
   final ButtonThemeData buttonTheme;
   final CardTheme cardTheme;
+  final UiKitChipThemeData chipTheme;
+  final ButtonStyle ordinaryButtonStyle;
 
   UiKitThemeData({
     required this.iconInputTheme,
+    required this.ordinaryButtonStyle,
     required this.noIconInputTheme,
     required this.noFillInputTheme,
+    required this.chipTheme,
     required this.customColor,
     required this.customAppBapTheme,
     required this.uiKitTabBarTheme,
@@ -41,6 +45,8 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     UiKitRegularTextTheme? regularTextTheme,
     ButtonThemeData? buttonTheme,
     CardTheme? cardTheme,
+    UiKitChipThemeData? chipTheme,
+    ButtonStyle? ordinaryButtonStyle,
   }) {
     return UiKitThemeData(
       customColor: customColor ?? this.customColor,
@@ -54,6 +60,8 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
       regularTextTheme: regularTextTheme ?? this.regularTextTheme,
       buttonTheme: buttonTheme ?? this.buttonTheme,
       cardTheme: cardTheme ?? this.cardTheme,
+      chipTheme: chipTheme ?? this.chipTheme,
+      ordinaryButtonStyle: ordinaryButtonStyle ?? this.ordinaryButtonStyle,
     );
   }
 
@@ -74,6 +82,18 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
       cardColor: cardColor,
       buttonTheme: buttonTheme,
       cardTheme: cardTheme,
+      chipTheme: chipTheme,
+      ordinaryButtonStyle: ordinaryButtonStyle,
     );
   }
+}
+
+class UiKitChipThemeData {
+  final Color backgroundColor;
+  final Border? border;
+
+  UiKitChipThemeData({
+    required this.backgroundColor,
+    this.border,
+  });
 }

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/common/ui_kit_card_wrapper.dart';
-
-import '../../../foundation/shuffle_ui_kit_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ProfileHighlightCard extends StatelessWidget {
   final String title;
@@ -15,27 +13,32 @@ class ProfileHighlightCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CardWrapper(
-      padding: EdgeInsetsFoundation.all16,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            '${value > 1000 ? '${value ~/ 1000}k+' : value}',
-            style: Theme.of(context).textTheme.titleLarge,
-            textAlign: TextAlign.center,
-          ),
-          SpacingFoundation.verticalSpace12,
-          Text(
-            title,
-            style: Theme.of(context).textTheme.displayMedium?.copyWith(
+    return Builder(
+      builder: (context) {
+        final theme = Theme.of(context).extension<UiKitThemeData>();
+        return CardWrapper(
+          padding: EdgeInsetsFoundation.all16,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                '${value > 1000 ? '${value ~/ 1000}k+' : value}',
+                style: theme?.boldTextTheme.title2,
+                textAlign: TextAlign.center,
+              ),
+              SpacingFoundation.verticalSpace12,
+              Text(
+                title,
+                style: theme?.boldTextTheme.body.copyWith(
                   color: Colors.white,
                 ),
-            textAlign: TextAlign.center,
+                textAlign: TextAlign.center,
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

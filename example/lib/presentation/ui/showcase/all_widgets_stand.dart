@@ -25,6 +25,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         centerTitle: true,
       ),
       body: GridView(
+        padding: EdgeInsetsFoundation.all16,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 5,
           crossAxisSpacing: 16,

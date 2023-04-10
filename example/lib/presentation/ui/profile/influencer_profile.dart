@@ -98,7 +98,7 @@ class InfluencerProfile extends StatelessWidget {
                       children: [
                         Text(
                           'Next 5 reviews'.toUpperCase(),
-                          style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                          style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.caption1UpperCase.copyWith(
                                 color: Colors.black,
                               ),
                         ),

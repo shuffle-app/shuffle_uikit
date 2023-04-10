@@ -7,6 +7,8 @@ class UiKitInputFieldRightIcon extends UiKitInputField {
     Key? key,
     required super.controller,
     super.errorText,
+    super.hintText,
+    super.validator,
   }) : super(key: key);
 
   @override
@@ -19,6 +21,14 @@ class UiKitInputFieldRightIcon extends UiKitInputField {
           child: TextFormField(
             controller: controller,
             validator: validator,
+            decoration: InputDecoration(
+              hintText: hintText,
+              errorText: errorText,
+              suffixIcon: const Icon(
+                Icons.close,
+                color: Colors.white,
+              ),
+            ),
           ),
         );
       },

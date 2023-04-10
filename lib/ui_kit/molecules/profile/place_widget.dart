@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/place_post_body.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/place_tag_widget.dart';
 import 'package:shuffle_uikit/ui_models/profile/profile_post.dart';
@@ -18,6 +19,7 @@ class PlaceWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, size) {
+        final theme = Theme.of(context).extension<UiKitThemeData>();
         return Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -41,14 +43,14 @@ class PlaceWidget extends StatelessWidget {
                   children: [
                     Text(
                       place.title,
-                      style: Theme.of(context).textTheme.labelMedium,
+                      style: theme?.boldTextTheme.caption1,
                     ),
                     SpacingFoundation.verticalSpace2,
                     Text(
                       place.createdAt,
-                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                            color: ColorsFoundation.solidGreyText,
-                          ),
+                      style: theme?.boldTextTheme.caption1Medium.copyWith(
+                        color: ColorsFoundation.solidGreyText,
+                      ),
                     ),
                     SpacingFoundation.verticalSpace8,
                     SizedBox(
@@ -95,9 +97,9 @@ class PlaceWidget extends StatelessWidget {
                 SpacingFoundation.horizontalSpace8,
                 Text(
                   'Helpful',
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: ColorsFoundation.solidGreyText,
-                      ),
+                  style: theme?.boldTextTheme.caption1.copyWith(
+                    color: ColorsFoundation.solidGreyText,
+                  ),
                 )
               ],
             ),
