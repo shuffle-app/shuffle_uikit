@@ -9,10 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: ls
+      - run: cd example
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-      - run: cd example
       - run: ls
       - run: flutter pub get
       - run: flutter pub run build_runner build --delete-conflicting-outputs
