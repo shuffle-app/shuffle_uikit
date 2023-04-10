@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Shuffle UI-kit Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.black,
         useMaterial3: false,
