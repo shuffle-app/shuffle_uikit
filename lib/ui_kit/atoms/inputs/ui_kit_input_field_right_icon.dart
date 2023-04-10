@@ -17,7 +17,13 @@ class UiKitInputFieldRightIcon extends UiKitInputField {
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
-        final inputTheme = Theme.of(context).extension<UiKitThemeData>()?.iconInputTheme;
+        final uiKitTheme = Theme.of(context).extension<UiKitThemeData>();
+        final inputTheme = uiKitTheme?.iconInputTheme;
+        final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
+        final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
+        final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
+          color: enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.solidGreyText.withOpacity(0.16),
+        );
         return Theme(
           data: Theme.of(context).copyWith(
             inputDecorationTheme: inputTheme,
@@ -25,15 +31,15 @@ class UiKitInputFieldRightIcon extends UiKitInputField {
           ),
           child: TextFormField(
             enabled: enabled,
-            controller: controller,
+            controller: enabled ? controller : null,
             validator: validator,
-            style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.caption1Medium.copyWith(color: Colors.white),
+            style: inputTextStyle,
             decoration: InputDecoration(
               hintText: hintText,
               errorText: errorText,
-              hintStyle: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.caption1UpperCaseMedium.copyWith(
-                    color: enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.solidGreyText.withOpacity(0.16),
-                  ),
+              errorStyle: errorStyle,
+              errorMaxLines: 1,
+              hintStyle: hintStyle,
               suffixIconColor: Colors.white,
               suffixIcon: IconButton(
                 icon: Icon(
