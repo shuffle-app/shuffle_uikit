@@ -18,7 +18,7 @@ class UiKitInputFieldNoIcon extends UiKitInputField {
     return Builder(
       builder: (context) {
         final uiKitTheme = Theme.of(context).extension<UiKitThemeData>();
-        final inputTheme = uiKitTheme?.iconInputTheme;
+        final inputTheme = uiKitTheme?.noIconInputTheme;
         final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
         final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
         final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(

@@ -17,6 +17,7 @@ class ProfileHighlightCard extends StatelessWidget {
       builder: (context) {
         final theme = Theme.of(context).extension<UiKitThemeData>();
         return CardWrapper(
+          height: 106,
           padding: EdgeInsetsFoundation.all16,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,

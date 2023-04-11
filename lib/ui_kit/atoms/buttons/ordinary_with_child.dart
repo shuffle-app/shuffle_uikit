@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class OrdinaryButtonWithChild extends StatelessWidget {
+class GeneralPurposeButtonWithChild extends StatelessWidget {
   final VoidCallback onPressed;
   final Color? color;
   final double? height;
   final Widget child;
 
-  const OrdinaryButtonWithChild({
+  const GeneralPurposeButtonWithChild({
     Key? key,
     required this.onPressed,
     required this.child,

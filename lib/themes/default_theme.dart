@@ -27,7 +27,7 @@ class UiKitThemes {
             ),
           ),
           foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-          overlayColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+          overlayColor: MaterialStateProperty.resolveWith((states) => ColorsFoundation.disabledColor),
           shadowColor: MaterialStateProperty.resolveWith((states) => Colors.white),
           surfaceTintColor: MaterialStateProperty.resolveWith((states) => Colors.white),
         ),
@@ -64,15 +64,48 @@ class UiKitThemes {
             ),
           ),
         ),
-        noIconInputTheme: InputDecorationTheme(),
-        noFillInputTheme: InputDecorationTheme(),
-        customAppBapTheme: AppBarTheme(
-          titleTextStyle: const TextStyle(
-            package: 'shuffle_uikit',
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
-            fontFamily: 'Syne',
+        noIconInputTheme: const InputDecorationTheme(
+          filled: true,
+          fillColor: ColorsFoundation.solidSurface,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all24,
+            borderSide: BorderSide.none,
           ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all24,
+            borderSide: BorderSide(
+              color: Colors.white,
+              width: 2,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all24,
+            borderSide: BorderSide.none,
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all24,
+            borderSide: BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all24,
+            borderSide: BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+        ),
+        noFillInputTheme: const InputDecorationTheme(
+          border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.solidGreyText, width: 0.5)),
+        ),
+        customAppBapTheme: AppBarTheme(
           toolbarHeight: 84,
           shadowColor: Colors.transparent,
           backgroundColor: Colors.white.withOpacity(0.07),
@@ -82,18 +115,6 @@ class UiKitThemes {
         uiKitTabBarTheme: const TabBarTheme(
           indicatorSize: TabBarIndicatorSize.tab,
           dividerColor: Colors.transparent,
-          unselectedLabelStyle: TextStyle(
-            package: 'shuffle_uikit',
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
-            fontFamily: 'Syne',
-          ),
-          labelStyle: TextStyle(
-            package: 'shuffle_uikit',
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
-            fontFamily: 'Syne',
-          ),
           labelColor: Colors.black,
           unselectedLabelColor: Colors.white,
           indicator: BoxDecoration(

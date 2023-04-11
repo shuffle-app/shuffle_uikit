@@ -3,13 +3,13 @@ import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
 
 class GeneralPurposeButton extends StatelessWidget {
   final String text;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final double? height;
 
   const GeneralPurposeButton({
     Key? key,
     required this.text,
-    required this.onPressed,
+    this.onPressed,
     this.height,
   }) : super(key: key);
 
@@ -22,7 +22,7 @@ class GeneralPurposeButton extends StatelessWidget {
           style: uiKitStyle?.ordinaryButtonStyle,
           onPressed: onPressed,
           child: Text(
-            text,
+            text.toUpperCase(),
             style: uiKitStyle?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black),
           ),
         );

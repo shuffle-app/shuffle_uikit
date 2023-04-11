@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/foundation/colors_foundation.dart';
+import 'package:shuffle_uikit/themes/input_state_color.dart';
 import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/inputs/input_field.dart';
 
@@ -19,6 +20,7 @@ class UiKitInputFieldLeftIcon extends UiKitInputField {
       builder: (context) {
         final uiKitTheme = Theme.of(context).extension<UiKitThemeData>();
         final inputTheme = uiKitTheme?.iconInputTheme;
+        final inputPropertiesColor = const InputStateColor();
         final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
         final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
         final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
@@ -40,11 +42,9 @@ class UiKitInputFieldLeftIcon extends UiKitInputField {
               errorMaxLines: 1,
               errorStyle: errorStyle,
               hintStyle: hintStyle,
+              prefixIconColor: inputPropertiesColor,
               prefixIcon: IconButton(
-                icon: Icon(
-                  Icons.close,
-                  color: enabled ? Colors.white : ColorsFoundation.solidGreyText,
-                ),
+                icon: const Icon(Icons.close),
                 onPressed: () {
                   controller.clear();
                 },
