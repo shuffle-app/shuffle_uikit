@@ -3,6 +3,7 @@
 
 export 'colors_foundation.dart';
 export 'images_foundation.dart';
+export 'theme_foundation.dart';
 export 'ui_kit_border_radius.dart';
 export 'ui_kit_gradient_borders.dart';
 export 'ui_kit_insets.dart';

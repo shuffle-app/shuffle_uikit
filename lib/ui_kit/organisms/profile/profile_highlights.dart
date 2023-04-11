@@ -21,19 +21,25 @@ class ProfileHighlights extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        ProfileHighlightCard(
-          value: placesVisited,
-          title: 'places visited',
+        Expanded(
+          child: ProfileHighlightCard(
+            value: placesVisited,
+            title: 'places visited',
+          ),
         ),
         SpacingFoundation.horizontalSpace8,
-        ProfileHighlightCard(
-          value: reviewsPosted,
-          title: 'reviews posted',
+        Expanded(
+          child: ProfileHighlightCard(
+            value: reviewsPosted,
+            title: 'reviews posted',
+          ),
         ),
         SpacingFoundation.horizontalSpace8,
-        ProfileHighlightCard(
-          value: points,
-          title: 'points earned',
+        Expanded(
+          child: ProfileHighlightCard(
+            value: points,
+            title: 'points earned',
+          ),
         ),
       ],
     );

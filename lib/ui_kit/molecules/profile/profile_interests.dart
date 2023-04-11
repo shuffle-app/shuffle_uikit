@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/foundation/ui_kit_gradient_borders.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/interest_chip.dart';
 
 class ProfileInterests extends StatelessWidget {
@@ -18,9 +19,10 @@ class ProfileInterests extends StatelessWidget {
       runSpacing: 8,
       children: [
         for (final interest in profileInterests)
-          InterestChip(
+          UiKitChip(
             interest: interest,
             isSelected: userInterests.contains(interest),
+            border: profileInterests.indexOf(interest) == 0 ? GradientBordersFoundation.gradientDefault : null,
           ),
       ],
     );

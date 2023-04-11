@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/buttons/ordinary.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ProfileInfo extends StatelessWidget {
   final String nickname;
@@ -14,38 +13,46 @@ class ProfileInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: nickname,
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-              TextSpan(
-                text: '\nFollowers\n',
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+    return Builder(
+      builder: (context) {
+        final boldTextTheme = Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme;
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: nickname,
+                    style: boldTextTheme?.title2.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                  TextSpan(
+                    text: '\nFollowers\n',
+                    style: boldTextTheme?.caption1Medium.copyWith(
                       color: ColorsFoundation.solidGreyText,
                     ),
+                  ),
+                  TextSpan(
+                    text: '2 650',
+                    style: boldTextTheme?.title2.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
               ),
-              TextSpan(
-                text: '2 650',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
-            ],
-          ),
-          textAlign: TextAlign.center,
-        ),
-        SpacingFoundation.verticalSpace12,
-        GeneralPurposeButton(
-          text: 'FOLLOW',
-          onPressed: () {},
-          color: Colors.white,
-        ),
-      ],
+              textAlign: TextAlign.center,
+            ),
+            SpacingFoundation.verticalSpace12,
+            GeneralPurposeButton(
+              text: 'FOLLOW',
+              onPressed: () {},
+            ),
+          ],
+        );
+      },
     );
   }
 }

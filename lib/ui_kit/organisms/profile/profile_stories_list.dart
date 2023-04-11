@@ -17,7 +17,7 @@ class ProfileStoriesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return CardWrapper(
       borderRadius: BorderRadius.zero,
-      padding: EdgeInsetsFoundation.all16,
+      padding: const EdgeInsets.fromLTRB(16, 16, 0, 16),
       child: SizedBox(
         height: 180,
         child: ListView.separated(

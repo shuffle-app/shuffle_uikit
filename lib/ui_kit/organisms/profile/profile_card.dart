@@ -13,7 +13,6 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /// todo add description to Confluence document
     return CardWrapper(
       padding: EdgeInsetsFoundation.all16,
       child: Column(
@@ -26,9 +25,11 @@ class ProfileCard extends StatelessWidget {
             children: [
               ProfileAvatar(avatarLink: profileData.avatarUrl),
               SpacingFoundation.horizontalSpace16,
-              ProfileInfo(
-                nickname: profileData.nickname,
-                followers: profileData.followers,
+              Expanded(
+                child: ProfileInfo(
+                  nickname: profileData.nickname,
+                  followers: profileData.followers,
+                ),
               ),
             ],
           ),

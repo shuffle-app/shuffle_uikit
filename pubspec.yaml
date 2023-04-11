@@ -38,6 +38,8 @@ flutter:
       fonts:
         - asset: assets/fonts/Syne-Regular.ttf
           weight: 400
+        - asset: assets/fonts/Syne-SemiBold.ttf
+          weight: 600
         - asset: assets/fonts/Syne-Bold.ttf
           weight: 700
 
