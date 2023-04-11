@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit/consts.dart';
 
 class ProfileHighlightCard extends StatelessWidget {
   final String title;
@@ -15,7 +16,21 @@ class ProfileHighlightCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
-        final theme = Theme.of(context).extension<UiKitThemeData>();
+        final width = MediaQuery.of(context).size.width;
+        final textTheme = Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme;
+        TextStyle? valueStyle;
+        TextStyle? titleStyle;
+        if (width <= kSmallestScreen) {
+          valueStyle = textTheme?.title2;
+          titleStyle = textTheme?.caption2;
+        } else if (width > kSmallestScreen && width <= kSmallScreen) {
+          titleStyle = textTheme?.caption1;
+          valueStyle = textTheme?.title2;
+        } else {
+          valueStyle = textTheme?.title2;
+          titleStyle = textTheme?.body;
+        }
+        titleStyle = titleStyle?.copyWith(color: ColorsFoundation.inputLabelGrey);
         return CardWrapper(
           height: 106,
           padding: EdgeInsetsFoundation.all16,
@@ -25,15 +40,13 @@ class ProfileHighlightCard extends StatelessWidget {
             children: [
               Text(
                 '${value > 1000 ? '${value ~/ 1000}k+' : value}',
-                style: theme?.boldTextTheme.title2,
+                style: valueStyle,
                 textAlign: TextAlign.center,
               ),
               SpacingFoundation.verticalSpace12,
               Text(
                 title,
-                style: theme?.boldTextTheme.body.copyWith(
-                  color: Colors.white,
-                ),
+                style: titleStyle,
                 textAlign: TextAlign.center,
               ),
             ],

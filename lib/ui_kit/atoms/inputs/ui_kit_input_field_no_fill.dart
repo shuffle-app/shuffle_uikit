@@ -36,6 +36,7 @@ class UiKitInputFieldNoFill extends UiKitInputField {
             disabledColor: ColorsFoundation.darkNeutral.withOpacity(0.16),
           ),
           child: TextFormField(
+            enabled: enabled,
             controller: enabled ? controller : null,
             style: inputTextStyle,
             decoration: InputDecoration(

@@ -16,7 +16,7 @@ class AppBarTitle extends StatelessWidget {
     return Expanded(
       child: Text(
         title,
-        style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.titleLarge.copyWith(color: Colors.white),
+        style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.title1.copyWith(color: Colors.white),
         textAlign: centerTitle ? TextAlign.center : TextAlign.left,
       ),
     );

@@ -5,12 +5,14 @@ import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
 import '../foundation/shuffle_ui_kit_foundation.dart';
 
 class UiKitThemes {
+  final a = Material();
   final defaultThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
     useMaterial3: false,
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: Colors.white,
     ),
+    disabledColor: ColorsFoundation.disabledColor,
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
         customColor: Colors.red,
@@ -26,10 +28,9 @@ class UiKitThemes {
               borderRadius: BorderRadiusFoundation.all24,
             ),
           ),
-          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+          // foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
           overlayColor: MaterialStateProperty.resolveWith((states) => ColorsFoundation.disabledColor),
           shadowColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-          surfaceTintColor: MaterialStateProperty.resolveWith((states) => Colors.white),
         ),
         iconInputTheme: const InputDecorationTheme(
           filled: true,
