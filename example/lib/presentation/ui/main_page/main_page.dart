@@ -1,5 +1,4 @@
-import 'package:example/presentation/ui/profile/influencer_profile.dart';
-import 'package:example/presentation/ui/showcase/all_widgets_stand.dart';
+import 'package:example/presentation/routing/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -65,26 +64,12 @@ class _MainPageState extends State<MainPage> {
                   ),
                   GeneralPurposeButton(
                     text: 'UI Kit Showcase Stand',
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Theme(data: theme, child: const AllWidgetsStand()),
-                      ),
-                    ),
+                    onPressed: () => Navigator.pushNamed(context, AppRoutes.stand),
                   ),
                   SpacingFoundation.verticalSpace16,
                   GeneralPurposeButton(
                     text: 'Influencer Profile',
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return Theme(data: theme, child: const InfluencerProfile());
-                          },
-                        ),
-                      );
-                    },
+                    onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile),
                   ),
                 ],
               ),

@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_web_plugins:
+   sdk: flutter
   flutter_svg: ^2.0.4
   gradient_borders: ^1.0.0
   flutter_gen_runner: ^5.2.0
