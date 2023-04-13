@@ -13,12 +13,19 @@ class AppBarTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Text(
-        title,
-        style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.title1.copyWith(color: Colors.white),
-        textAlign: centerTitle ? TextAlign.center : TextAlign.left,
-      ),
+    return Builder(
+      builder: (context) {
+        TextStyle? textStyle =
+            Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.title1 ?? Theme.of(context).primaryTextTheme.titleMedium;
+        textStyle = textStyle?.copyWith(color: Colors.white);
+        return Expanded(
+          child: Text(
+            title,
+            style: textStyle,
+            textAlign: centerTitle ? TextAlign.center : TextAlign.left,
+          ),
+        );
+      },
     );
   }
 }

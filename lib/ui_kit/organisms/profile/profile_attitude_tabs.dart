@@ -19,7 +19,6 @@ class ProfileAttitudeTabs extends StatelessWidget {
         final tabBarTheme = Theme.of(context).extension<UiKitThemeData>()?.uiKitTabBarTheme.copyWith(
               unselectedLabelStyle: tabStyle?.copyWith(color: Colors.white),
               labelStyle: tabStyle,
-              overlayColor: MaterialStateProperty.all(Colors.transparent),
             );
         return Theme(
           data: Theme.of(context).copyWith(tabBarTheme: tabBarTheme),

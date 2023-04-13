@@ -18,35 +18,33 @@ class CustomAppBar extends PreferredSize {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, size) {
-      return ClipRRect(
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
-          child: Container(
-            width: preferredSize.width,
-            height: preferredSize.height + MediaQuery.of(context).padding.top,
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.07),
-              borderRadius: BorderRadiusFoundation.onlyBottom24,
-            ),
-            padding: const EdgeInsets.all(16),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  const AppBarCustomBackButton(),
-                  AppBarTitle(
-                    title: title,
-                    centerTitle: centerTitle,
-                  ),
-                ],
-              ),
+    return ClipRRect(
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+        child: Container(
+          width: preferredSize.width,
+          height: preferredSize.height + MediaQuery.of(context).padding.top,
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.07),
+            borderRadius: BorderRadiusFoundation.onlyBottom24,
+          ),
+          padding: const EdgeInsets.all(16),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                const AppBarBackButton(),
+                AppBarTitle(
+                  title: title,
+                  centerTitle: centerTitle,
+                ),
+              ],
             ),
           ),
         ),
-      );
-    });
+      ),
+    );
   }
 }

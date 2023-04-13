@@ -28,7 +28,7 @@ class UiKitChip extends StatelessWidget {
           decoration: BoxDecoration(
             color: bordered ? chipTheme?.backgroundColor : Colors.transparent,
             borderRadius: BorderRadiusFoundation.max,
-            border: border ?? chipTheme?.border,
+            border: border ?? chipTheme?.border ?? Border.all(color: Colors.white, width: 2),
           ),
           child: Text(
             interest,

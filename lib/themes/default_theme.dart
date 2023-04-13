@@ -5,7 +5,6 @@ import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
 import '../foundation/shuffle_ui_kit_foundation.dart';
 
 class UiKitThemes {
-  final a = Material();
   final defaultThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
     useMaterial3: false,
@@ -22,15 +21,23 @@ class UiKitThemes {
         ),
         ordinaryButtonStyle: ButtonStyle(
           fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(48)),
-          backgroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+          backgroundColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.disabled)) {
+              return ColorsFoundation.disabledColor;
+            } else {
+              return Colors.white;
+            }
+          }),
           shape: MaterialStateProperty.resolveWith(
-            (states) => const RoundedRectangleBorder(
-              borderRadius: BorderRadiusFoundation.all24,
-            ),
+            (states) => const RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
           ),
-          // foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-          overlayColor: MaterialStateProperty.resolveWith((states) => ColorsFoundation.disabledColor),
-          shadowColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+          overlayColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.hovered)) {
+              return Colors.white;
+            }
+            return ColorsFoundation.disabledColor;
+          }),
         ),
         iconInputTheme: const InputDecorationTheme(
           filled: true,
@@ -107,10 +114,10 @@ class UiKitThemes {
           disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.solidGreyText, width: 0.5)),
         ),
         customAppBapTheme: AppBarTheme(
+          iconTheme: const IconThemeData(color: ColorsFoundation.surface),
           toolbarHeight: 84,
           shadowColor: Colors.transparent,
           backgroundColor: Colors.white.withOpacity(0.07),
-          foregroundColor: Colors.white.withOpacity(0.07),
           centerTitle: true,
         ),
         uiKitTabBarTheme: const TabBarTheme(
@@ -143,5 +150,67 @@ class UiKitThemes {
         regularTextTheme: UiKitRegularTextTheme(),
       ),
     ],
+  );
+  final fallbackThemeData = ThemeData(
+    scaffoldBackgroundColor: Colors.black,
+    primaryTextTheme: TextTheme(
+      titleMedium: TextStyle(
+        fontFamily: 'Syne',
+        fontSize: 24,
+        fontWeight: FontWeight.w700,
+        color: Color(0xffffffff),
+        package: 'shuffle_uikit',
+      ),
+    ),
+    textTheme: TextTheme(
+      bodyMedium: TextStyle(
+        fontFamily: 'Syne',
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        color: Color(0xffffffff),
+        package: 'shuffle_uikit',
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(48)),
+        backgroundColor: MaterialStateProperty.resolveWith((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return ColorsFoundation.disabledColor;
+          } else {
+            return Colors.white;
+          }
+        }),
+        shape: MaterialStateProperty.resolveWith(
+          (states) => const RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+        ),
+        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+        overlayColor: MaterialStateProperty.resolveWith((states) {
+          if (states.contains(MaterialState.hovered)) {
+            return Colors.white;
+          }
+          return ColorsFoundation.disabledColor;
+        }),
+      ),
+    ),
+    tabBarTheme: TabBarTheme(
+      indicatorSize: TabBarIndicatorSize.tab,
+      dividerColor: Colors.transparent,
+      labelColor: Colors.black,
+      unselectedLabelColor: Colors.white,
+      splashFactory: NoSplash.splashFactory,
+      overlayColor: MaterialStateProperty.all(Colors.transparent),
+      indicator: const BoxDecoration(
+        borderRadius: BorderRadiusFoundation.max,
+        color: Colors.white,
+      ),
+    ),
+    cardColor: ColorsFoundation.surface,
+    appBarTheme: AppBarTheme(
+      toolbarHeight: 84,
+      shadowColor: Colors.transparent,
+      backgroundColor: Colors.black.withOpacity(0.07),
+      centerTitle: true,
+    ),
   );
 }

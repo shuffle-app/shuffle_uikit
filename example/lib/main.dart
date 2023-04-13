@@ -20,7 +20,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  ThemeData _theme = UiKitThemeFoundation.defaultTheme;
+  ThemeData _theme = UiKitThemeFoundation.fallbackTheme;
 
   @override
   Widget build(BuildContext context) {

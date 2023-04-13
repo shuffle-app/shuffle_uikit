@@ -1,32 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/tokens/assets.gen.dart';
 
-class AppBarCustomBackButton extends StatelessWidget {
-  const AppBarCustomBackButton({Key? key}) : super(key: key);
+class AppBarBackButton extends StatelessWidget {
+  const AppBarBackButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      shape: const CircleBorder(),
-      color: ColorsFoundation.surface,
-      elevation: 0,
-      clipBehavior: Clip.hardEdge,
-      child: InkWell(
-        onTap: () => Navigator.pop(context),
-        child: Ink(
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: ColorsFoundation.surface,
+    return Builder(
+      builder: (context) {
+        final iconColor = Theme.of(context).extension<UiKitThemeData>()?.customAppBapTheme.iconTheme?.color;
+        return Material(
+          shape: const CircleBorder(),
+          color: iconColor ?? ColorsFoundation.surface,
+          elevation: 0,
+          clipBehavior: Clip.hardEdge,
+          child: InkWell(
+            onTap: () => Navigator.pop(context),
+            child: Ink(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: iconColor ?? ColorsFoundation.surface,
+              ),
+              width: 28,
+              height: 28,
+              child: GraphicsFoundation.instance.svgPicture(
+                asset: Assets.images.svg.chevronLeft,
+                fit: BoxFit.scaleDown,
+              ),
+            ),
           ),
-          width: 28,
-          height: 28,
-          child: GraphicsFoundation.instance.svgPicture(
-            asset: Assets.images.svg.chevronLeft,
-            fit: BoxFit.scaleDown,
-          ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

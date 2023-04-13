@@ -16,14 +16,12 @@ class ProfileInfo extends StatelessWidget {
     return Builder(
       builder: (context) {
         final boldTextTheme = Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme;
+        final fallBackStyle = Theme.of(context).textTheme.bodyMedium;
         TextStyle? nickNameStyle;
         TextStyle? followersCountStyle;
-        nickNameStyle = boldTextTheme?.bodyUpperCase.copyWith(
-          color: Colors.white,
-        );
-        followersCountStyle = boldTextTheme?.title2.copyWith(
-          color: Colors.white,
-        );
+        nickNameStyle = boldTextTheme?.bodyUpperCase ?? fallBackStyle;
+        followersCountStyle = boldTextTheme?.title2 ?? fallBackStyle;
+
         return Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -37,9 +35,7 @@ class ProfileInfo extends StatelessWidget {
                   ),
                   TextSpan(
                     text: '\nFollowers\n',
-                    style: boldTextTheme?.caption1Medium.copyWith(
-                      color: ColorsFoundation.solidGreyText,
-                    ),
+                    style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.solidGreyText) ?? fallBackStyle,
                   ),
                   TextSpan(
                     text: '2 650',
