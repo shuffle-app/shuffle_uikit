@@ -29,54 +29,51 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(_) {
-    final theme = isShuffleTheme ? UiKitThemeFoundation.defaultTheme : ThemeData();
-    return Theme(
-      data: theme,
-      child: Builder(
-        builder: (context) {
-          return Scaffold(
-            body: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Shuffle Theme',
-                        style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.body.copyWith(
-                              color: isShuffleTheme ? Colors.white : Colors.redAccent,
-                            ),
-                      ),
-                      SpacingFoundation.horizontalSpace8,
-                      Switch(
-                        value: isShuffleTheme,
-                        activeColor: Colors.white,
-                        inactiveTrackColor: ColorsFoundation.solidSurface,
-                        onChanged: (value) {
-                          setState(() {
-                            isShuffleTheme = value;
-                          });
-                        },
-                      ),
-                    ],
-                  ),
-                  GeneralPurposeButton(
-                    text: 'UI Kit Showcase Stand',
-                    onPressed: () => Navigator.pushNamed(context, AppRoutes.stand),
-                  ),
-                  SpacingFoundation.verticalSpace16,
-                  GeneralPurposeButton(
-                    text: 'Influencer Profile',
-                    onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile),
-                  ),
-                ],
-              ),
+    return Builder(
+      builder: (context) {
+        return Scaffold(
+          body: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Shuffle Theme',
+                      style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.body.copyWith(
+                            color: isShuffleTheme ? Colors.white : Colors.redAccent,
+                          ),
+                    ),
+                    SpacingFoundation.horizontalSpace8,
+                    Switch(
+                      value: isShuffleTheme,
+                      activeColor: Colors.white,
+                      inactiveTrackColor: ColorsFoundation.solidSurface,
+                      onChanged: (value) {
+                        setState(() {
+                          isShuffleTheme = value;
+                        });
+                        UiKitThemeProvider.of(context).updateTheme(isShuffleTheme ? UiKitThemeFoundation.defaultTheme : ThemeData());
+                      },
+                    ),
+                  ],
+                ),
+                GeneralPurposeButton(
+                  text: 'UI Kit Showcase Stand',
+                  onPressed: () => Navigator.pushNamed(context, AppRoutes.stand),
+                ),
+                SpacingFoundation.verticalSpace16,
+                GeneralPurposeButton(
+                  text: 'Influencer Profile',
+                  onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile),
+                ),
+              ],
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

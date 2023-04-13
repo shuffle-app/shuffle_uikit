@@ -3,7 +3,7 @@ import 'package:example/presentation/routing/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
-import 'package:shuffle_uikit/foundation/theme_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,17 +12,27 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  ThemeData _theme = UiKitThemeFoundation.defaultTheme;
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Shuffle Demo',
-      debugShowCheckedModeBanner: false,
-      theme: UiKitThemeFoundation.defaultTheme,
-      onGenerateRoute: AppRouter.onGenerateRoute,
-      initialRoute: AppRoutes.initial,
+    return UiKitThemeProvider(
+      onThemeUpdated: (theme) => setState(() => _theme = theme),
+      child: MaterialApp(
+        title: 'Shuffle Demo',
+        debugShowCheckedModeBanner: false,
+        theme: _theme,
+        onGenerateRoute: AppRouter.onGenerateRoute,
+        initialRoute: AppRoutes.initial,
+      ),
     );
   }
 }
