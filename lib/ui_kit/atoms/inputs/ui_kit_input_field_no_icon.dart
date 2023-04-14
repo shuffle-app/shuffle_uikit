@@ -3,15 +3,26 @@ import 'package:shuffle_uikit/foundation/colors_foundation.dart';
 import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/inputs/input_field.dart';
 
-class UiKitInputFieldNoIcon extends UiKitInputField {
+class UiKitInputFieldNoIcon extends StatelessWidget implements UiKitInputField {
   const UiKitInputFieldNoIcon({
     Key? key,
-    required super.controller,
-    super.errorText,
-    super.hintText,
-    super.validator,
-    super.enabled = true,
+    required this.controller,
+    this.errorText,
+    this.hintText,
+    this.validator,
+    this.enabled = true,
   }) : super(key: key);
+
+  @override
+  final TextEditingController controller;
+  @override
+  final bool enabled;
+  @override
+  final String? errorText;
+  @override
+  final String? hintText;
+  @override
+  final String? Function(String? p1)? validator;
 
   @override
   Widget build(BuildContext context) {

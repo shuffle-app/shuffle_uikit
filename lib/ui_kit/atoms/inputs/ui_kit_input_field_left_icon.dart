@@ -4,15 +4,38 @@ import 'package:shuffle_uikit/themes/input_state_color.dart';
 import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/inputs/input_field.dart';
 
-class UiKitInputFieldLeftIcon extends UiKitInputField {
+class UiKitInputFieldLeftIcon extends StatefulWidget implements UiKitInputField {
   const UiKitInputFieldLeftIcon({
     Key? key,
-    required super.controller,
-    super.errorText,
-    super.hintText,
-    super.validator,
-    super.enabled = true,
+    required this.controller,
+    this.errorText,
+    this.hintText,
+    this.validator,
+    this.enabled = true,
   }) : super(key: key);
+
+  @override
+  State<UiKitInputFieldLeftIcon> createState() => _UiKitInputFieldLeftIconState();
+
+  @override
+  final TextEditingController controller;
+  @override
+  final bool enabled;
+  @override
+  final String? errorText;
+  @override
+  final String? hintText;
+  @override
+  final String? Function(String? p1)? validator;
+}
+
+class _UiKitInputFieldLeftIconState extends State<UiKitInputFieldLeftIcon> {
+  final inputPropertiesColor = const InputStateColor();
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +43,10 @@ class UiKitInputFieldLeftIcon extends UiKitInputField {
       builder: (context) {
         final uiKitTheme = Theme.of(context).extension<UiKitThemeData>();
         final inputTheme = uiKitTheme?.iconInputTheme;
-        final inputPropertiesColor = const InputStateColor();
         final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
         final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
         final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
-          color: enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.solidGreyText.withOpacity(0.16),
+          color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.solidGreyText.withOpacity(0.16),
         );
         return Theme(
           data: Theme.of(context).copyWith(
@@ -32,13 +54,18 @@ class UiKitInputFieldLeftIcon extends UiKitInputField {
             disabledColor: ColorsFoundation.darkNeutral.withOpacity(0.16),
           ),
           child: TextFormField(
-            enabled: enabled,
-            style: inputTextStyle,
-            controller: enabled ? controller : null,
-            validator: validator,
+            enabled: widget.enabled,
+            style: MaterialStateTextStyle.resolveWith((states) {
+              if (states.contains(MaterialState.disabled)) {
+                return inputTextStyle!.copyWith(color: ColorsFoundation.error);
+              }
+              return inputTextStyle!;
+            }),
+            controller: widget.enabled ? widget.controller : null,
+            validator: widget.validator,
             decoration: InputDecoration(
-              hintText: hintText,
-              errorText: errorText,
+              hintText: widget.hintText,
+              errorText: widget.errorText,
               errorMaxLines: 1,
               errorStyle: errorStyle,
               hintStyle: hintStyle,
@@ -46,7 +73,7 @@ class UiKitInputFieldLeftIcon extends UiKitInputField {
               prefixIcon: IconButton(
                 icon: const Icon(Icons.close),
                 onPressed: () {
-                  controller.clear();
+                  widget.controller.clear();
                 },
                 visualDensity: VisualDensity.compact,
                 splashRadius: 5,

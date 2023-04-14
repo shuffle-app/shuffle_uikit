@@ -4,17 +4,28 @@ import 'package:shuffle_uikit/ui_kit/atoms/inputs/input_field.dart';
 
 import '../../../foundation/colors_foundation.dart';
 
-class UiKitInputFieldNoFill extends UiKitInputField {
-  final String label;
+class UiKitInputFieldNoFill extends StatelessWidget implements UiKitInputField {
   const UiKitInputFieldNoFill({
     Key? key,
-    required super.controller,
-    super.errorText,
-    super.hintText,
-    super.validator,
-    super.enabled = true,
+    required this.controller,
+    this.errorText,
+    this.hintText,
+    this.validator,
+    this.enabled = true,
     required this.label,
   }) : super(key: key);
+
+  final String label;
+  @override
+  final TextEditingController controller;
+  @override
+  final bool enabled;
+  @override
+  final String? errorText;
+  @override
+  final String? hintText;
+  @override
+  final String? Function(String? p1)? validator;
 
   @override
   Widget build(BuildContext context) {
