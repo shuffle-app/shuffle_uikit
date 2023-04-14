@@ -22,7 +22,8 @@ class UiKitInputFieldNoIconCompact extends StatefulWidget {
 }
 
 class _UiKitInputFieldNoIconCompactState extends State<UiKitInputFieldNoIconCompact> {
-  final ValueKey _key = const ValueKey(UiKitInputFieldNoIconCompact);
+  final GlobalKey<FormFieldState> _key = GlobalKey<FormFieldState>();
+
   @override
   Widget build(BuildContext context) {
     return Builder(
@@ -30,7 +31,9 @@ class _UiKitInputFieldNoIconCompactState extends State<UiKitInputFieldNoIconComp
         final uiKitTheme = Theme.of(context).extension<UiKitThemeData>();
         final inputTheme = uiKitTheme?.noIconInputTheme;
         final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
-        final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
+        final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
+          color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
+        );
         final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
           color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.solidGreyText.withOpacity(0.16),
         );
@@ -41,6 +44,7 @@ class _UiKitInputFieldNoIconCompactState extends State<UiKitInputFieldNoIconComp
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: 40,
@@ -51,13 +55,18 @@ class _UiKitInputFieldNoIconCompactState extends State<UiKitInputFieldNoIconComp
                   controller: widget.enabled ? widget.controller : null,
                   validator: widget.validator,
                   decoration: InputDecoration(
-                    contentPadding: EdgeInsetsFoundation.horizontal16,
+                    contentPadding: EdgeInsetsFoundation.symmetricH16V12,
                     hintText: '${widget.hintText}',
                     hintStyle: hintStyle,
                     errorStyle: errorStyle?.copyWith(fontSize: 0),
                   ),
                 ),
               ),
+              if (_key.currentState?.hasError ?? false)
+                Text(
+                  widget.validator?.call(widget.controller.text) ?? '',
+                  style: errorStyle,
+                ),
             ],
           ),
         );

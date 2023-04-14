@@ -31,6 +31,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements UiKitInputField
 
 class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
   final inputPropertiesColor = const InputStateColor();
+  final GlobalKey<FormFieldState> _key = GlobalKey<FormFieldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +50,13 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
             disabledColor: ColorsFoundation.darkNeutral.withOpacity(0.16),
           ),
           child: TextFormField(
+            key: _key,
             enabled: widget.enabled,
             controller: widget.enabled ? widget.controller : null,
             validator: widget.validator,
-            style: inputTextStyle,
+            style: inputTextStyle?.copyWith(
+              color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
+            ),
             decoration: InputDecoration(
               hintText: widget.hintText,
               errorText: widget.errorText,

@@ -31,11 +31,7 @@ class UiKitInputFieldLeftIcon extends StatefulWidget implements UiKitInputField 
 
 class _UiKitInputFieldLeftIconState extends State<UiKitInputFieldLeftIcon> {
   final inputPropertiesColor = const InputStateColor();
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
+  final GlobalKey<FormFieldState> _key = GlobalKey<FormFieldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +40,9 @@ class _UiKitInputFieldLeftIconState extends State<UiKitInputFieldLeftIcon> {
         final uiKitTheme = Theme.of(context).extension<UiKitThemeData>();
         final inputTheme = uiKitTheme?.iconInputTheme;
         final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
-        final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
+        final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
+          color: (_key.currentState?.hasError ?? false) ? ColorsFoundation.error : Colors.white,
+        );
         final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
           color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.solidGreyText.withOpacity(0.16),
         );
@@ -54,13 +52,9 @@ class _UiKitInputFieldLeftIconState extends State<UiKitInputFieldLeftIcon> {
             disabledColor: ColorsFoundation.darkNeutral.withOpacity(0.16),
           ),
           child: TextFormField(
+            key: _key,
+            style: inputTextStyle,
             enabled: widget.enabled,
-            style: MaterialStateTextStyle.resolveWith((states) {
-              if (states.contains(MaterialState.disabled)) {
-                return inputTextStyle!.copyWith(color: ColorsFoundation.error);
-              }
-              return inputTextStyle!;
-            }),
             controller: widget.enabled ? widget.controller : null,
             validator: widget.validator,
             decoration: InputDecoration(
