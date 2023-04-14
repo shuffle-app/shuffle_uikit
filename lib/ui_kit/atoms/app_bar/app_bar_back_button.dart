@@ -22,6 +22,7 @@ class AppBarBackButton extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: iconColor ?? ColorsFoundation.surface,
               ),
+              //TODO: подумать как избавиться от захардкоженных размеров
               width: 28,
               height: 28,
               child: GraphicsFoundation.instance.svgPicture(

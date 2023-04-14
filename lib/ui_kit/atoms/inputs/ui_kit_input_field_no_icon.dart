@@ -27,6 +27,7 @@ class UiKitInputFieldNoIcon extends StatelessWidget implements UiKitInputField {
   @override
   Widget build(BuildContext context) {
     return Builder(
+      //TODO: зачем тут билдеры стоят в каждом испуте? у нас получается как то стейтлес внутри стейтлес. бесполнезная вложенность
       builder: (context) {
         final uiKitTheme = Theme.of(context).extension<UiKitThemeData>();
         final inputTheme = uiKitTheme?.noIconInputTheme;
