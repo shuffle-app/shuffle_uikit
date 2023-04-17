@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 class SpacingFoundation {
   SpacingFoundation._();
 
+  //TODO: что будет на разных экранах? думаю стоит подключить screenUtil или что-то подобное чтобы примерно одинаково выглядело (кроме веба, там другая история конечно)
   static const horizontalSpace4 = SizedBox(width: 4);
   static const horizontalSpace8 = SizedBox(width: 8);
   static const horizontalSpace10 = SizedBox(width: 10);

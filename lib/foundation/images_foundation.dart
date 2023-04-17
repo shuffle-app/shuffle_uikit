@@ -7,6 +7,7 @@ class GraphicsFoundation {
 
   static GraphicsFoundation instance = const GraphicsFoundation._();
 
+  //TODO: add width and height support
   SvgPicture svgPicture({required SvgGenImage asset, BoxFit? fit}) => asset.svg(
         package: 'shuffle_uikit',
         fit: fit ?? BoxFit.none,

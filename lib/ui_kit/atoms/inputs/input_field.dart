@@ -24,3 +24,6 @@ abstract class UiKitInputField {
     this.validator,
   });
 }
+
+//TODO: make factory to return a UiKitInputField what we need
+// ref: https://www.flutterclutter.dev/flutter/basics/2023-03-19-what-are-factory-constructors/ "Instance of a subtype"

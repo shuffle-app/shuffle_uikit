@@ -34,6 +34,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
   @override
   Widget build(BuildContext context) {
     return Builder(
+      //TODO: зачем тут билдеры стоят в каждом испуте? у нас получается как то стейтлес внутри стейтлес. бесполнезная вложенность
       builder: (context) {
         _key.currentState?.validate();
         final uiKitTheme = Theme.of(context).extension<UiKitThemeData>();
