@@ -26,20 +26,7 @@ class GeneralPurposeButtonWithChild extends StatelessWidget {
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
-        final buttonStyle = Theme.of(context).extension<UiKitThemeData>()?.ordinaryButtonStyle.copyWith(
-          overlayColor: MaterialStateProperty.resolveWith(
-            (states) {
-              if (states.contains(MaterialState.hovered)) {
-                return Colors.white;
-              }
-              if (states.contains(MaterialState.pressed)) {
-                return Colors.white;
-              }
-              // return Colors.white;
-              return overlayColor ?? ColorsFoundation.disabledColor;
-            },
-          ),
-        );
+        final buttonStyle = Theme.of(context).extension<UiKitThemeData>()?.ordinaryButtonStyle;
         return ElevatedButton(
           style: buttonStyle,
           onPressed: onPressed ?? () {},
