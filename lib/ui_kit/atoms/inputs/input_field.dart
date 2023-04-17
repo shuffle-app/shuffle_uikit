@@ -1,5 +1,14 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
+/// Abstraction layer for all input fields
+/// it has all the common properties of any input fields in UiKit
+///
+/// [controller] is the text controller of the input field. It enables to interact with text in the input field
+/// [hintText] is the text that appears in the input field when it is empty
+/// [errorText] is the text that appears under the input field when it is invalid
+/// [enabled] is a boolean that enables or disables the input field
+/// [validator] is a function that validates the input field. It returns a string when the input field is invalid
+///
 abstract class UiKitInputField {
   final TextEditingController controller;
   final String? hintText;

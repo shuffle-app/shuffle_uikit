@@ -38,6 +38,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
+        _key.currentState?.validate();
         final uiKitTheme = Theme.of(context).extension<UiKitThemeData>();
         final inputTheme = uiKitTheme?.noFillInputTheme;
         final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
@@ -45,7 +46,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
           color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
         );
         TextStyle? labelStyle = uiKitTheme?.regularTextTheme.labelSmall;
-        if ((_key.currentState?.hasError ?? false)) {
+        if (_key.currentState?.hasError ?? false) {
           labelStyle = labelStyle?.copyWith(color: ColorsFoundation.error);
         } else {
           labelStyle = labelStyle?.copyWith(

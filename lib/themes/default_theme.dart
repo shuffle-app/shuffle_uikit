@@ -32,12 +32,6 @@ class UiKitThemes {
             (states) => const RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
           ),
           foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
-          overlayColor: MaterialStateProperty.resolveWith((states) {
-            if (states.contains(MaterialState.hovered)) {
-              return Colors.white;
-            }
-            return ColorsFoundation.disabledColor;
-          }),
         ),
         iconInputTheme: const InputDecorationTheme(
           filled: true,
@@ -153,7 +147,7 @@ class UiKitThemes {
   );
   final fallbackThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
-    primaryTextTheme: TextTheme(
+    primaryTextTheme: const TextTheme(
       titleMedium: TextStyle(
         fontFamily: 'Syne',
         fontSize: 24,
@@ -162,7 +156,7 @@ class UiKitThemes {
         package: 'shuffle_uikit',
       ),
     ),
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       bodyMedium: TextStyle(
         fontFamily: 'Syne',
         fontSize: 16,

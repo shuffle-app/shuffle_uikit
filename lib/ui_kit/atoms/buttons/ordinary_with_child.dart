@@ -1,28 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
+/// [GeneralPurposeButtonWithChild] is a button that accepts a child widget.
+/// when [onPressed] is not passed, it will be disabled and [overlayColor] will be used as a background color.
+/// pass own [overlayColor] to override default color in case if you don't need [onPressed]
+/// but still want some other color while [onPressed] is not passed.
+
 class GeneralPurposeButtonWithChild extends StatelessWidget {
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final Color? color;
   final double? height;
   final Widget child;
+  final Color? overlayColor;
 
   const GeneralPurposeButtonWithChild({
     Key? key,
-    required this.onPressed,
+    this.onPressed,
     required this.child,
     this.color,
     this.height,
+    this.overlayColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
-        final buttonStyle = Theme.of(context).extension<UiKitThemeData>()?.ordinaryButtonStyle;
+        final buttonStyle = Theme.of(context).extension<UiKitThemeData>()?.ordinaryButtonStyle.copyWith(
+          overlayColor: MaterialStateProperty.resolveWith(
+            (states) {
+              if (states.contains(MaterialState.hovered)) {
+                return Colors.white;
+              }
+              if (states.contains(MaterialState.pressed)) {
+                return Colors.white;
+              }
+              // return Colors.white;
+              return overlayColor ?? ColorsFoundation.disabledColor;
+            },
+          ),
+        );
         return ElevatedButton(
           style: buttonStyle,
-          onPressed: onPressed,
+          onPressed: onPressed ?? () {},
           child: child,
         );
       },

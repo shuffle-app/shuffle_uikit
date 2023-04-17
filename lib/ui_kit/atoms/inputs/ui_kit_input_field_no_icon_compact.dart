@@ -28,6 +28,7 @@ class _UiKitInputFieldNoIconCompactState extends State<UiKitInputFieldNoIconComp
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
+        _key.currentState?.validate();
         final uiKitTheme = Theme.of(context).extension<UiKitThemeData>();
         final inputTheme = uiKitTheme?.noIconInputTheme;
         final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);

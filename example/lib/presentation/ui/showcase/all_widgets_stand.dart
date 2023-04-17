@@ -11,20 +11,6 @@ class AllWidgetsStand extends StatefulWidget {
 
 class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final TextEditingController _controller = TextEditingController();
-  GlobalKey<FormState> form1 = GlobalKey<FormState>();
-
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Future.delayed(
-        const Duration(milliseconds: 250),
-        () {
-          form1.currentState?.validate();
-        },
-      );
-    });
-  }
 
   @override
   void dispose() {
@@ -41,155 +27,153 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       body: SingleChildScrollView(
         padding: EdgeInsetsFoundation.all16,
-        child: Form(
-          key: form1,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  UiKitInputFieldRightIcon(
-                    controller: _controller,
-                    hintText: 'PLACEHOLDER',
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                UiKitInputFieldRightIcon(
+                  controller: _controller,
+                  hintText: 'PLACEHOLDER',
+                ),
+                SpacingFoundation.verticalSpace16,
+                UiKitInputFieldRightIcon(
+                  controller: _controller,
+                  hintText: 'PLACEHOLDER',
+                  enabled: false,
+                ),
+                SpacingFoundation.verticalSpace16,
+                UiKitInputFieldRightIcon(
+                  controller: _controller,
+                  hintText: 'PLACEHOLDER',
+                  enabled: true,
+                  validator: (value) {
+                    return 'Wrong symbols';
+                  },
+                ),
+              ],
+            ),
+            SpacingFoundation.verticalSpace16,
+            UiKitInputFieldLeftIcon(
+              controller: _controller,
+              hintText: 'PLACEHOLDER',
+              enabled: true,
+            ),
+            SpacingFoundation.verticalSpace16,
+            UiKitInputFieldLeftIcon(
+              controller: _controller,
+              hintText: 'PLACEHOLDER',
+              enabled: false,
+            ),
+            SpacingFoundation.verticalSpace16,
+            UiKitInputFieldLeftIcon(
+              controller: _controller,
+              hintText: 'PLACEHOLDER',
+              enabled: true,
+              validator: (value) {
+                return 'Wrong symbols';
+              },
+            ),
+            SpacingFoundation.verticalSpace16,
+            UiKitInputFieldNoIcon(
+              controller: _controller,
+              hintText: 'PLACEHOLDER',
+            ),
+            SpacingFoundation.verticalSpace16,
+            UiKitInputFieldNoIcon(
+              controller: _controller,
+              hintText: 'PLACEHOLDER',
+              enabled: false,
+            ),
+            SpacingFoundation.verticalSpace16,
+            UiKitInputFieldNoIcon(
+              controller: _controller,
+              hintText: 'PLACEHOLDER',
+              validator: (value) {
+                return 'Wrong symbols';
+              },
+            ),
+            SpacingFoundation.verticalSpace16,
+            UiKitInputFieldNoIconCompact(
+              controller: _controller,
+              hintText: 'PLACEHOLDER',
+            ),
+            SpacingFoundation.verticalSpace16,
+            UiKitInputFieldNoIconCompact(
+              controller: _controller,
+              enabled: false,
+              hintText: 'PLACEHOLDER',
+            ),
+            SpacingFoundation.verticalSpace16,
+            UiKitInputFieldNoIconCompact(
+              controller: _controller,
+              hintText: 'PLACEHOLDER',
+              validator: (value) {
+                return 'Wrong symbols';
+              },
+            ),
+            SpacingFoundation.verticalSpace16,
+            UiKitInputFieldNoFill(
+              label: 'Name',
+              controller: _controller,
+              hintText: 'PLACEHOLDER',
+            ),
+            SpacingFoundation.verticalSpace16,
+            UiKitInputFieldNoFill(
+              label: 'Name',
+              controller: _controller,
+              hintText: 'PLACEHOLDER',
+              enabled: false,
+            ),
+            SpacingFoundation.verticalSpace16,
+            UiKitInputFieldNoFill(
+              label: 'Name',
+              controller: _controller,
+              hintText: 'PLACEHOLDER',
+              validator: (value) {
+                return 'Wrong symbols';
+              },
+            ),
+            SpacingFoundation.verticalSpace16,
+            GeneralPurposeButton(
+              text: 'Get code',
+              onPressed: () {},
+            ),
+            SpacingFoundation.verticalSpace16,
+            const GeneralPurposeButton(
+              text: 'Get code',
+            ),
+            SpacingFoundation.verticalSpace16,
+            Builder(
+              builder: (context) {
+                final buttonTextStyle = Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.bodyUpperCase.copyWith(
+                      color: Colors.black,
+                    );
+                return GeneralPurposeButtonWithChild(
+                  overlayColor: Colors.white,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Loading'.toUpperCase(),
+                        style: buttonTextStyle,
+                      ),
+                      SpacingFoundation.horizontalSpace4,
+                      const SizedBox(
+                        height: 20,
+                        width: 20,
+                        child: Center(child: CupertinoActivityIndicator()),
+                      ),
+                    ],
                   ),
-                  SpacingFoundation.verticalSpace16,
-                  UiKitInputFieldRightIcon(
-                    controller: _controller,
-                    hintText: 'PLACEHOLDER',
-                    enabled: false,
-                  ),
-                  SpacingFoundation.verticalSpace16,
-                  UiKitInputFieldRightIcon(
-                    controller: _controller,
-                    hintText: 'PLACEHOLDER',
-                    enabled: true,
-                    validator: (value) {
-                      return 'Wrong symbols';
-                    },
-                  ),
-                ],
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitInputFieldLeftIcon(
-                controller: _controller,
-                hintText: 'PLACEHOLDER',
-                enabled: true,
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitInputFieldLeftIcon(
-                controller: _controller,
-                hintText: 'PLACEHOLDER',
-                enabled: false,
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitInputFieldLeftIcon(
-                controller: _controller,
-                hintText: 'PLACEHOLDER',
-                enabled: true,
-                validator: (value) {
-                  return 'Wrong symbols';
-                },
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitInputFieldNoIcon(
-                controller: _controller,
-                hintText: 'PLACEHOLDER',
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitInputFieldNoIcon(
-                controller: _controller,
-                hintText: 'PLACEHOLDER',
-                enabled: false,
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitInputFieldNoIcon(
-                controller: _controller,
-                hintText: 'PLACEHOLDER',
-                validator: (value) {
-                  return 'Wrong symbols';
-                },
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitInputFieldNoIconCompact(
-                controller: _controller,
-                hintText: 'PLACEHOLDER',
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitInputFieldNoIconCompact(
-                controller: _controller,
-                enabled: false,
-                hintText: 'PLACEHOLDER',
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitInputFieldNoIconCompact(
-                controller: _controller,
-                hintText: 'PLACEHOLDER',
-                validator: (value) {
-                  return 'Wrong symbols';
-                },
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitInputFieldNoFill(
-                label: 'Name',
-                controller: _controller,
-                hintText: 'PLACEHOLDER',
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitInputFieldNoFill(
-                label: 'Name',
-                controller: _controller,
-                hintText: 'PLACEHOLDER',
-                enabled: false,
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitInputFieldNoFill(
-                label: 'Name',
-                controller: _controller,
-                hintText: 'PLACEHOLDER',
-                validator: (value) {
-                  return 'Wrong symbols';
-                },
-              ),
-              SpacingFoundation.verticalSpace16,
-              GeneralPurposeButton(
-                text: 'Get code',
-                onPressed: () {},
-              ),
-              SpacingFoundation.verticalSpace16,
-              const GeneralPurposeButton(
-                text: 'Get code',
-              ),
-              SpacingFoundation.verticalSpace16,
-              Builder(
-                builder: (context) {
-                  final buttonTextStyle =
-                      Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black);
-                  return GeneralPurposeButtonWithChild(
-                    onPressed: () {},
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Loading'.toUpperCase(),
-                          style: buttonTextStyle,
-                        ),
-                        SpacingFoundation.horizontalSpace4,
-                        const SizedBox(
-                          height: 20,
-                          width: 20,
-                          child: Center(child: CupertinoActivityIndicator()),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            ],
-          ),
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
