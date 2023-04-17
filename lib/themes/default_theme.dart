@@ -5,7 +5,7 @@ import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
 import '../foundation/shuffle_ui_kit_foundation.dart';
 
 class UiKitThemes {
-  final defaultThemeData = ThemeData(
+  late final defaultThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
     useMaterial3: false,
     textSelectionTheme: const TextSelectionThemeData(
@@ -145,6 +145,7 @@ class UiKitThemes {
       ),
     ],
   );
+
   final fallbackThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
     primaryTextTheme: const TextTheme(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/tokens/assets.gen.dart';
+import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
 class AppBarBackButton extends StatelessWidget {
   const AppBarBackButton({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class AppBarBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
-        final iconColor = Theme.of(context).extension<UiKitThemeData>()?.customAppBapTheme.iconTheme?.color;
+        final iconColor = context.uiKitTheme?.customAppBapTheme.iconTheme?.color;
         return Material(
           shape: const CircleBorder(),
           color: iconColor ?? ColorsFoundation.surface,
