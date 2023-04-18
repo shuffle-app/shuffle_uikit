@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EdgeInsetsFoundation {
   EdgeInsetsFoundation._();
 
-  static const all4 = EdgeInsets.all(4.0);
-  static const all8 = EdgeInsets.all(8.0);
-  static const all16 = EdgeInsets.all(16.0);
+  static final all4 = const EdgeInsets.all(4.0).w;
+  static final all8 = const EdgeInsets.all(8.0).w;
+  static final all16 = const EdgeInsets.all(16.0).w;
 
-  static const horizontal16 = EdgeInsets.symmetric(horizontal: 16.0);
+  static final horizontal16 = const EdgeInsets.symmetric(horizontal: 16.0).w;
+  static final vertical16 = const EdgeInsets.symmetric(vertical: 16.0).h;
 
-  static const symmetricH12V6 = EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0);
-  static const symmetricH16V12 = EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0);
+  static final symmetricH12V6 = const EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0).w;
+  static final symmetricH16V12 = const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0).w;
 }
