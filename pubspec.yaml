@@ -18,6 +18,10 @@ dependencies:
   build_runner: ^2.3.3
   flutter_screenutil: ^5.7.0
 
+  #dialogs widgets
+  popover: ^0.2.8+2
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

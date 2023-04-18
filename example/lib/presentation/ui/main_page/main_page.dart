@@ -1,4 +1,5 @@
 import 'package:example/presentation/routing/app_routes.dart';
+import 'package:example/presentation/ui/dialog_testings/dialog_testing_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -106,6 +107,11 @@ class _MainPageState extends State<MainPage> {
             GeneralPurposeButton(
               text: 'Influencer Profile',
               onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile),
+            ),
+            SpacingFoundation.verticalSpace16,
+            GeneralPurposeButton(
+              text: 'Dialog testing page',
+              onPressed: () => context.push(DialogTestingPage()),
             ),
           ],
         ),
