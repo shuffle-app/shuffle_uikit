@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/place_post_body.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/place_tag_widget.dart';
 import 'package:shuffle_uikit/ui_models/profile/profile_post.dart';
+import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
 import '../../../foundation/shuffle_ui_kit_foundation.dart';
 
@@ -19,7 +19,7 @@ class PlaceWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, size) {
-        final theme = Theme.of(context).extension<UiKitThemeData>();
+        final theme = context.uiKitTheme;
         return Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,

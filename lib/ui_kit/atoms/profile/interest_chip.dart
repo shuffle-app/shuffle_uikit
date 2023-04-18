@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/foundation/ui_kit_border_radius.dart';
 import 'package:shuffle_uikit/foundation/ui_kit_insets.dart';
-import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
+import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
 class UiKitChip extends StatelessWidget {
   final String interest;
@@ -19,23 +19,19 @@ class UiKitChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Builder(
-      builder: (context) {
-        final chipTheme = Theme.of(context).extension<UiKitThemeData>()?.chipTheme;
-        final chipTextStyle = Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.caption1;
-        return Container(
-          padding: EdgeInsetsFoundation.symmetricH12V6,
-          decoration: BoxDecoration(
-            color: bordered ? chipTheme?.backgroundColor : Colors.transparent,
-            borderRadius: BorderRadiusFoundation.max,
-            border: border ?? chipTheme?.border ?? Border.all(color: Colors.white, width: 2),
-          ),
-          child: Text(
-            interest,
-            style: chipTextStyle,
-          ),
-        );
-      },
+    final chipTheme = context.uiKitTheme?.chipTheme;
+    final chipTextStyle = context.uiKitTheme?.boldTextTheme.caption1;
+    return Container(
+      padding: EdgeInsetsFoundation.symmetricH12V6,
+      decoration: BoxDecoration(
+        color: bordered ? chipTheme?.backgroundColor : Colors.transparent,
+        borderRadius: BorderRadiusFoundation.max,
+        border: border ?? chipTheme?.border ?? Border.all(color: Colors.white, width: 2),
+      ),
+      child: Text(
+        interest,
+        style: chipTextStyle,
+      ),
     );
   }
 }

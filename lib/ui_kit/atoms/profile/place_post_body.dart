@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
 class PlacePostBody extends StatelessWidget {
   final String text;
@@ -13,7 +13,7 @@ class PlacePostBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
-        final textStyle = Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.caption1;
+        final textStyle = context.uiKitTheme?.boldTextTheme.caption1;
         return Text(
           text,
           style: textStyle,

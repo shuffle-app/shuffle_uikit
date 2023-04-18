@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
 class ProfileDescription extends StatelessWidget {
   final String text;
@@ -13,7 +13,7 @@ class ProfileDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.caption1,
+      style: context.uiKitTheme?.boldTextTheme.caption1,
     );
   }
 }

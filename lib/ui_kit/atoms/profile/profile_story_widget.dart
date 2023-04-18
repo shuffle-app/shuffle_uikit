@@ -17,7 +17,7 @@ class ProfileStoryWidget extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadiusFoundation.all24,
-        border: GradientBordersFoundation.gradientDefault,
+        border: GradientFoundation.borderGradient,
       ),
       child: ClipRRect(
         borderRadius: BorderRadiusFoundation.all24,

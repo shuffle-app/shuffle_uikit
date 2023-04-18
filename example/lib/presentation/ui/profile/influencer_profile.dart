@@ -28,9 +28,9 @@ class InfluencerProfile extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsetsFoundation.horizontal16,
-                  child: ProfileHighlights(
+                  child: const ProfileHighlights(
                     placesVisited: 934,
                     reviewsPosted: 630,
                     points: 32040,
@@ -89,25 +89,13 @@ class InfluencerProfile extends StatelessWidget {
               [
                 Padding(
                   padding: EdgeInsetsFoundation.all16,
-                  child: GeneralPurposeButtonWithChild(
+                  child: GeneralPurposeButtonWithIcon(
                     color: Colors.white,
                     onPressed: () {},
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Next 5 reviews'.toUpperCase(),
-                          style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.caption1UpperCase.copyWith(
-                                color: Colors.black,
-                              ),
-                        ),
-                        SpacingFoundation.horizontalSpace4,
-                        const Icon(
-                          Icons.keyboard_arrow_down_rounded,
-                          color: Colors.black,
-                        ),
-                      ],
+                    text: 'Next 5 reviews',
+                    icon: const Icon(
+                      Icons.keyboard_arrow_down_rounded,
+                      color: Colors.black,
                     ),
                   ),
                 ),

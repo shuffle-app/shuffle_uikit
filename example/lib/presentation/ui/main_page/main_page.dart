@@ -71,9 +71,9 @@ class _MainPageState extends State<MainPage> {
                   padding: EdgeInsetsFoundation.all16,
                   child: Text(
                     'Shuffle Theme',
-                    style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.body.copyWith(
-                              color: isDefaultTheme ? Colors.black : Colors.white,
-                            ) ??
+                    style: context.uiKitTheme?.boldTextTheme.body.copyWith(
+                          color: isDefaultTheme ? Colors.black : Colors.white,
+                        ) ??
                         TextStyle(color: isDefaultTheme ? Colors.black : Colors.white),
                   ),
                 ),

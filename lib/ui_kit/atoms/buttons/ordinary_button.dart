@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
+import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
 class GeneralPurposeButton extends StatelessWidget {
   final String text;
@@ -15,19 +15,15 @@ class GeneralPurposeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Builder(
-      builder: (context) {
-        final theme = Theme.of(context).extension<UiKitThemeData>();
-        TextStyle? textStyle = theme?.boldTextTheme.bodyUpperCase;
-        return ElevatedButton(
-          style: theme?.ordinaryButtonStyle,
-          onPressed: onPressed,
-          child: Text(
-            text.toUpperCase(),
-            style: textStyle?.copyWith(color: Colors.black),
-          ),
-        );
-      },
+    final theme = context.uiKitTheme;
+    TextStyle? textStyle = theme?.boldTextTheme.bodyUpperCase;
+    return ElevatedButton(
+      style: theme?.ordinaryButtonStyle,
+      onPressed: onPressed,
+      child: Text(
+        text.toUpperCase(),
+        style: textStyle?.copyWith(color: Colors.black),
+      ),
     );
   }
 }
