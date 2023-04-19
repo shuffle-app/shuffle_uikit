@@ -19,6 +19,7 @@ Future<T?> showUiKitPopover<T extends Object?>(BuildContext context,
       children: [
         title.paddingOnly(bottom: 8.h),
         if (description != null) description.paddingSymmetric(vertical: 8.h),
+        //TODO romancores: change button to black one
         GeneralPurposeButton(
           text: buttonText,
           onPressed: () => context.pop(),

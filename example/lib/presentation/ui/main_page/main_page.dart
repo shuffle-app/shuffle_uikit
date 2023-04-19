@@ -35,6 +35,8 @@ class _MainPageState extends State<MainPage> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            //TODO Murodkulov: предложение использовать купертино свитч с анимашкой
+            //https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html
             ToggleButtons(
               borderWidth: 2,
               borderColor: Colors.black,

@@ -48,7 +48,7 @@ class _CustomCalendarPickerDialogState
         child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-          //TODO: add theming
+          //TODO romancores or Murodkulov: add theming
           CalendarDatePicker(
             onDateChanged: _onSelectionChanged,
             initialDate: selectedDate,
@@ -57,7 +57,7 @@ class _CustomCalendarPickerDialogState
                 DateTime.now().add(const Duration(days: 365)),
           ),
           SpacingFoundation.horizontalSpace16,
-          //TODO: change buttons
+          //TODO romancores: change buttons
           Row(mainAxisAlignment: MainAxisAlignment.end, children: [
             GeneralPurposeButton(
               text: 'Cancel',

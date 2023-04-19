@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 showUiKitGeneralFullScreenDialog(
   BuildContext context, {
@@ -30,17 +29,18 @@ showUiKitGeneralFullScreenDialog(
     child: Dialog(
         clipBehavior: Clip.hardEdge,
         insetPadding: EdgeInsets.zero,
-        backgroundColor: context.uiKitTheme?.buttonTheme.colorScheme?.background,
+        backgroundColor:
+            context.uiKitTheme?.buttonTheme.colorScheme?.background,
         shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadiusFoundation.onlyTop24
-        ),
+            borderRadius: BorderRadiusFoundation.onlyTop24),
         child: Column(
           children: [
             const SlidingChip().paddingSymmetric(vertical: 12.h),
             Expanded(
                 child: SingleChildScrollView(
               physics: const ClampingScrollPhysics(),
-              padding: EdgeInsetsFoundation.horizontal16,
+              padding: EdgeInsets.symmetric(
+                  horizontal: EdgeInsetsFoundation.horizontal16),
               child: child,
             ))
           ],
