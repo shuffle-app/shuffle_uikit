@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class GeneralPurposeButtonWithIcon implements ButtonFactory {
+class GeneralPurposeButtonWithIcon extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final Color? color;
   final double? height;
@@ -15,7 +15,7 @@ class GeneralPurposeButtonWithIcon implements ButtonFactory {
     required this.text,
     this.color,
     this.height,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

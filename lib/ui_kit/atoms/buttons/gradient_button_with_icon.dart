@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class GradientButtonWithIcon implements ButtonFactory {
+class GradientButtonWithIcon extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final String text;
   final Widget icon;
@@ -11,7 +11,7 @@ class GradientButtonWithIcon implements ButtonFactory {
     this.onPressed,
     required this.text,
     required this.icon,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class GradientButtonWithIcon implements ButtonFactory {
           SpacingFoundation.horizontalSpace8,
           icon,
         ],
-      ).paddingAll(EdgeInsetsFoundation.all16),
+      ).paddingSymmetric(vertical: EdgeInsetsFoundation.vertical12),
     );
   }
 }
