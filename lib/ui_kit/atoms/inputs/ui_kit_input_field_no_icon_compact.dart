@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
-import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
+import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
 class UiKitInputFieldNoIconCompact extends StatefulWidget {
   final TextEditingController controller;
@@ -22,46 +23,59 @@ class UiKitInputFieldNoIconCompact extends StatefulWidget {
 }
 
 class _UiKitInputFieldNoIconCompactState extends State<UiKitInputFieldNoIconCompact> {
-  final ValueKey _key = const ValueKey(UiKitInputFieldNoIconCompact);
+  final GlobalKey<FormFieldState> _key = GlobalKey<FormFieldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      _key.currentState?.validate();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Builder(
-      builder: (context) {
-        final uiKitTheme = Theme.of(context).extension<UiKitThemeData>();
-        final inputTheme = uiKitTheme?.noIconInputTheme;
-        final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
-        final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
-        final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
-          color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.solidGreyText.withOpacity(0.16),
-        );
-        return Theme(
-          data: Theme.of(context).copyWith(
-            inputDecorationTheme: inputTheme,
-            disabledColor: ColorsFoundation.darkNeutral.withOpacity(0.16),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                height: 40,
-                child: TextFormField(
-                  key: _key,
-                  enabled: widget.enabled,
-                  style: inputTextStyle,
-                  controller: widget.enabled ? widget.controller : null,
-                  validator: widget.validator,
-                  decoration: InputDecoration(
-                    contentPadding: EdgeInsetsFoundation.horizontal16,
-                    hintText: '${widget.hintText}',
-                    hintStyle: hintStyle,
-                    errorStyle: errorStyle?.copyWith(fontSize: 0),
-                  ),
-                ),
+    final uiKitTheme = context.uiKitTheme;
+    final inputTheme = uiKitTheme?.noIconInputTheme;
+    final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
+    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
+      color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
+    );
+    final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
+      color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.solidGreyText.withOpacity(0.16),
+    );
+    return Theme(
+      data: Theme.of(context).copyWith(
+        inputDecorationTheme: inputTheme,
+        disabledColor: ColorsFoundation.darkNeutral.withOpacity(0.16),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 40,
+            child: TextFormField(
+              key: _key,
+              enabled: widget.enabled,
+              style: inputTextStyle,
+              controller: widget.enabled ? widget.controller : null,
+              validator: widget.validator,
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 12.w),
+                hintText: '${widget.hintText}',
+                hintStyle: hintStyle,
+                errorStyle: errorStyle?.copyWith(fontSize: 0),
               ),
-            ],
+            ),
           ),
-        );
-      },
+          if (_key.currentState?.hasError ?? false)
+            Text(
+              widget.validator?.call(widget.controller.text) ?? '',
+              style: errorStyle,
+            ),
+        ],
+      ),
     );
   }
 }

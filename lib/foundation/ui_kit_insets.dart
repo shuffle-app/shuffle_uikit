@@ -1,14 +1,17 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 
 class EdgeInsetsFoundation {
   EdgeInsetsFoundation._();
+  static final zero = 0.w;
 
-  static const all4 = EdgeInsets.all(4.0);
-  static const all8 = EdgeInsets.all(8.0);
-  static const all16 = EdgeInsets.all(16.0);
+  static final all4 = 4.w;
+  static final all8 = 8.w;
+  static final all16 = 16.w;
 
-  static const horizontal16 = EdgeInsets.symmetric(horizontal: 16.0);
-
-  static const symmetricH12V6 = EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0);
-  static const symmetricH16V12 = EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0);
+  static final horizontal16 = SpacingFoundation.horizontalSpacing16;
+  static final vertical16 = SpacingFoundation.verticalSpacing16;
+  static final horizontal12 = SpacingFoundation.horizontalSpacing12;
+  static final vertical12 = SpacingFoundation.verticalSpacing12;
+  static final vertical8 = SpacingFoundation.verticalSpacing8;
 }

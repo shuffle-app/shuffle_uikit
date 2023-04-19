@@ -5,7 +5,7 @@ import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
 import '../foundation/shuffle_ui_kit_foundation.dart';
 
 class UiKitThemes {
-  final defaultThemeData = ThemeData(
+  late final defaultThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
     useMaterial3: false,
     textSelectionTheme: const TextSelectionThemeData(
@@ -32,12 +32,6 @@ class UiKitThemes {
             (states) => const RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
           ),
           foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
-          overlayColor: MaterialStateProperty.resolveWith((states) {
-            if (states.contains(MaterialState.hovered)) {
-              return Colors.white;
-            }
-            return ColorsFoundation.disabledColor;
-          }),
         ),
         iconInputTheme: const InputDecorationTheme(
           filled: true,
@@ -151,9 +145,10 @@ class UiKitThemes {
       ),
     ],
   );
+
   final fallbackThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
-    primaryTextTheme: TextTheme(
+    primaryTextTheme: const TextTheme(
       titleMedium: TextStyle(
         fontFamily: 'Syne',
         fontSize: 24,
@@ -162,7 +157,7 @@ class UiKitThemes {
         package: 'shuffle_uikit',
       ),
     ),
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       bodyMedium: TextStyle(
         fontFamily: 'Syne',
         fontSize: 16,

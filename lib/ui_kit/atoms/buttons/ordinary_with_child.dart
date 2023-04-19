@@ -1,31 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class GeneralPurposeButtonWithChild extends StatelessWidget {
-  final VoidCallback onPressed;
+class GeneralPurposeButtonWithIcon implements ButtonFactory {
+  final VoidCallback? onPressed;
   final Color? color;
   final double? height;
-  final Widget child;
+  final Widget icon;
+  final String text;
 
-  const GeneralPurposeButtonWithChild({
+  const GeneralPurposeButtonWithIcon({
     Key? key,
-    required this.onPressed,
-    required this.child,
+    this.onPressed,
+    required this.icon,
+    required this.text,
     this.color,
     this.height,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Builder(
-      builder: (context) {
-        final buttonStyle = Theme.of(context).extension<UiKitThemeData>()?.ordinaryButtonStyle;
-        return ElevatedButton(
-          style: buttonStyle,
-          onPressed: onPressed,
-          child: child,
-        );
-      },
+    final buttonStyle = context.uiKitTheme?.ordinaryButtonStyle;
+    TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase;
+    return ElevatedButton(
+      style: buttonStyle,
+      onPressed: onPressed ?? () {},
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            text.toUpperCase(),
+            style: textStyle?.copyWith(color: Colors.black),
+          ),
+          SpacingFoundation.horizontalSpace8,
+          icon,
+        ],
+      ),
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/foundation/colors_foundation.dart';
 import 'package:shuffle_uikit/themes/input_state_color.dart';
-import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/inputs/input_field.dart';
+import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
 class UiKitInputFieldLeftIcon extends StatefulWidget implements UiKitInputField {
   const UiKitInputFieldLeftIcon({
@@ -31,57 +31,55 @@ class UiKitInputFieldLeftIcon extends StatefulWidget implements UiKitInputField 
 
 class _UiKitInputFieldLeftIconState extends State<UiKitInputFieldLeftIcon> {
   final inputPropertiesColor = const InputStateColor();
+  final GlobalKey<FormFieldState> _key = GlobalKey<FormFieldState>();
 
   @override
-  void dispose() {
-    super.dispose();
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      _key.currentState?.validate();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Builder(
-      builder: (context) {
-        final uiKitTheme = Theme.of(context).extension<UiKitThemeData>();
-        final inputTheme = uiKitTheme?.iconInputTheme;
-        final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
-        final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
-        final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
-          color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.solidGreyText.withOpacity(0.16),
-        );
-        return Theme(
-          data: Theme.of(context).copyWith(
-            inputDecorationTheme: inputTheme,
-            disabledColor: ColorsFoundation.darkNeutral.withOpacity(0.16),
+    final uiKitTheme = context.uiKitTheme;
+    final inputTheme = uiKitTheme?.iconInputTheme;
+    final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
+    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
+      color: (_key.currentState?.hasError ?? false) ? ColorsFoundation.error : Colors.white,
+    );
+    final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
+      color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.solidGreyText.withOpacity(0.16),
+    );
+    return Theme(
+      data: Theme.of(context).copyWith(
+        inputDecorationTheme: inputTheme,
+        disabledColor: ColorsFoundation.darkNeutral.withOpacity(0.16),
+      ),
+      child: TextFormField(
+        key: _key,
+        style: inputTextStyle,
+        enabled: widget.enabled,
+        controller: widget.enabled ? widget.controller : null,
+        validator: widget.validator,
+        decoration: InputDecoration(
+          hintText: widget.hintText,
+          errorText: widget.errorText,
+          errorMaxLines: 1,
+          errorStyle: errorStyle,
+          hintStyle: hintStyle,
+          prefixIconColor: inputPropertiesColor,
+          prefixIcon: IconButton(
+            icon: const Icon(Icons.close),
+            onPressed: () {
+              widget.controller.clear();
+            },
+            visualDensity: VisualDensity.compact,
+            splashRadius: 5,
           ),
-          child: TextFormField(
-            enabled: widget.enabled,
-            style: MaterialStateTextStyle.resolveWith((states) {
-              if (states.contains(MaterialState.disabled)) {
-                return inputTextStyle!.copyWith(color: ColorsFoundation.error);
-              }
-              return inputTextStyle!;
-            }),
-            controller: widget.enabled ? widget.controller : null,
-            validator: widget.validator,
-            decoration: InputDecoration(
-              hintText: widget.hintText,
-              errorText: widget.errorText,
-              errorMaxLines: 1,
-              errorStyle: errorStyle,
-              hintStyle: hintStyle,
-              prefixIconColor: inputPropertiesColor,
-              prefixIcon: IconButton(
-                icon: const Icon(Icons.close),
-                onPressed: () {
-                  widget.controller.clear();
-                },
-                visualDensity: VisualDensity.compact,
-                splashRadius: 5,
-              ),
-            ),
-          ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

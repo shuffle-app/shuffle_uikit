@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
+
+class GradientButton implements ButtonFactory {
+  final VoidCallback? onPressed;
+  final String text;
+
+  const GradientButton({
+    Key? key,
+    this.onPressed,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final enabled = onPressed != null;
+    TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black);
+    return Container(
+      height: 48,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadiusFoundation.all24,
+        gradient: enabled ? GradientFoundation.buttonGradient : null,
+        color: enabled ? null : ColorsFoundation.disabledColor,
+      ),
+      child: Text(
+        text.toUpperCase(),
+        style: textStyle,
+      ).paddingAll(EdgeInsetsFoundation.all16),
+    );
+  }
+}

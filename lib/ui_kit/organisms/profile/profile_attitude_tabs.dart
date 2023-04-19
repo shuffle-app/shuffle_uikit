@@ -13,33 +13,28 @@ class ProfileAttitudeTabs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Builder(
-      builder: (context) {
-        final tabStyle = Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.body;
-        final tabBarTheme = Theme.of(context).extension<UiKitThemeData>()?.uiKitTabBarTheme.copyWith(
-              unselectedLabelStyle: tabStyle?.copyWith(color: Colors.white),
-              labelStyle: tabStyle,
-            );
-        return Theme(
-          data: Theme.of(context).copyWith(tabBarTheme: tabBarTheme),
-          child: CardWrapper(
-            padding: EdgeInsetsFoundation.all4,
-            child: DefaultTabController(
-              length: tabs.length,
-              child: ClipRRect(
-                borderRadius: BorderRadiusFoundation.max,
-                child: TabBar(
-                  enableFeedback: true,
-                  splashBorderRadius: BorderRadiusFoundation.max,
-                  splashFactory: NoSplash.splashFactory,
-                  onTap: onTappedTab,
-                  tabs: tabs,
-                ),
-              ),
+    final tabStyle = context.uiKitTheme?.boldTextTheme.body;
+    final tabBarTheme = context.uiKitTheme?.uiKitTabBarTheme.copyWith(
+      unselectedLabelStyle: tabStyle?.copyWith(color: Colors.white),
+      labelStyle: tabStyle,
+    );
+    return Theme(
+      data: Theme.of(context).copyWith(tabBarTheme: tabBarTheme),
+      child: CardWrapper(
+        child: DefaultTabController(
+          length: tabs.length,
+          child: ClipRRect(
+            borderRadius: BorderRadiusFoundation.max,
+            child: TabBar(
+              enableFeedback: true,
+              splashBorderRadius: BorderRadiusFoundation.max,
+              splashFactory: NoSplash.splashFactory,
+              onTap: onTappedTab,
+              tabs: tabs,
             ),
           ),
-        );
-      },
+        ).paddingAll(EdgeInsetsFoundation.all4),
+      ),
     );
   }
 }

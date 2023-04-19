@@ -14,7 +14,6 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardWrapper(
-      padding: EdgeInsetsFoundation.all16,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -43,7 +42,7 @@ class ProfileCard extends StatelessWidget {
             profileInterests: profileData.interests,
           ),
         ],
-      ),
+      ).paddingAll(EdgeInsetsFoundation.all16),
     );
   }
 }

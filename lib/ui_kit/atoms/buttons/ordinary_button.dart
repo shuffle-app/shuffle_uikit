@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
+import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
+import 'package:shuffle_uikit/utils/widgets_factory/widgets_factory.dart';
 
-class GeneralPurposeButton extends StatelessWidget {
+class GeneralPurposeButton implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
   final double? height;
@@ -11,23 +12,19 @@ class GeneralPurposeButton extends StatelessWidget {
     required this.text,
     this.onPressed,
     this.height,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Builder(
-      builder: (context) {
-        final theme = Theme.of(context).extension<UiKitThemeData>();
-        TextStyle? textStyle = theme?.boldTextTheme.bodyUpperCase;
-        return ElevatedButton(
-          style: theme?.ordinaryButtonStyle,
-          onPressed: onPressed,
-          child: Text(
-            text.toUpperCase(),
-            style: textStyle?.copyWith(color: Colors.black),
-          ),
-        );
-      },
+    final theme = context.uiKitTheme;
+    TextStyle? textStyle = theme?.boldTextTheme.bodyUpperCase;
+    return ElevatedButton(
+      style: theme?.ordinaryButtonStyle,
+      onPressed: onPressed,
+      child: Text(
+        text.toUpperCase(),
+        style: textStyle?.copyWith(color: Colors.black),
+      ),
     );
   }
 }

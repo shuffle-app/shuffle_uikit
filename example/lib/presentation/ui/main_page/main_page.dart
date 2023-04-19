@@ -28,94 +28,79 @@ class _MainPageState extends State<MainPage> {
   }
 
   @override
-  Widget build(_) {
-    return Builder(
-      builder: (context) {
-        return Scaffold(
-          body: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ToggleButtons(
+              borderWidth: 2,
+              borderColor: Colors.black,
+              borderRadius: BorderRadiusFoundation.all24,
+              selectedColor: Colors.white,
+              selectedBorderColor: Colors.black,
+              disabledBorderColor: Colors.black,
+              isSelected: [isShuffleTheme, isFallbackTheme, isDefaultTheme],
+              onPressed: (index) {
+                if (index == 0) {
+                  UiKitTheme.of(context).updateTheme(UiKitThemeFoundation.defaultTheme);
+                  setState(() {
+                    isShuffleTheme = true;
+                    isFallbackTheme = false;
+                    isDefaultTheme = false;
+                  });
+                } else if (index == 1) {
+                  UiKitTheme.of(context).updateTheme(UiKitThemeFoundation.fallbackTheme);
+                  setState(() {
+                    isShuffleTheme = false;
+                    isFallbackTheme = true;
+                    isDefaultTheme = false;
+                  });
+                } else if (index == 2) {
+                  UiKitTheme.of(context).updateTheme(ThemeData());
+                  setState(() {
+                    isShuffleTheme = false;
+                    isFallbackTheme = false;
+                    isDefaultTheme = true;
+                  });
+                }
+              },
               children: [
-                ToggleButtons(
-                  fillColor: Colors.black,
-                  borderWidth: 2,
-                  borderColor: Colors.black,
-                  borderRadius: BorderRadiusFoundation.all24,
-                  selectedColor: Colors.transparent,
-                  selectedBorderColor: Colors.redAccent,
-                  disabledBorderColor: Colors.black,
-                  isSelected: [isShuffleTheme, isFallbackTheme, isDefaultTheme],
-                  onPressed: (index) {
-                    if (index == 0) {
-                      UiKitThemeProvider.of(context).updateTheme(UiKitThemeFoundation.defaultTheme);
-                      setState(() {
-                        isShuffleTheme = true;
-                        isFallbackTheme = false;
-                        isDefaultTheme = false;
-                      });
-                    } else if (index == 1) {
-                      UiKitThemeProvider.of(context).updateTheme(UiKitThemeFoundation.fallbackTheme);
-                      setState(() {
-                        isShuffleTheme = false;
-                        isFallbackTheme = true;
-                        isDefaultTheme = false;
-                      });
-                    } else if (index == 2) {
-                      UiKitThemeProvider.of(context).updateTheme(ThemeData());
-                      setState(() {
-                        isShuffleTheme = false;
-                        isFallbackTheme = false;
-                        isDefaultTheme = true;
-                      });
-                    }
-                  },
-                  children: [
-                    Padding(
-                      padding: EdgeInsetsFoundation.all16,
-                      child: Text(
-                        'Shuffle Theme',
-                        style: Theme.of(context).extension<UiKitThemeData>()?.boldTextTheme.body.copyWith(color: Colors.white),
+                Text(
+                  'Shuffle Theme',
+                  style: context.uiKitTheme?.boldTextTheme.body.copyWith(
+                        color: isDefaultTheme ? Colors.black : Colors.white,
+                      ) ??
+                      TextStyle(color: isDefaultTheme ? Colors.black : Colors.white),
+                ).paddingAll(EdgeInsetsFoundation.all16),
+                Text(
+                  'Fallback Theme',
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: isDefaultTheme ? Colors.black : Colors.white,
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsFoundation.all16,
-                      child: Text(
-                        'Fallback Theme',
-                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              color: isFallbackTheme
-                                  ? Colors.white
-                                  : isShuffleTheme
-                                      ? Colors.white
-                                      : Colors.black,
-                            ),
+                ).paddingAll(EdgeInsetsFoundation.all16),
+                Text(
+                  'Default Theme',
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: isDefaultTheme ? Colors.black : Colors.white,
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsFoundation.all16,
-                      child: Text(
-                        'Default Theme',
-                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              color: isShuffleTheme || isDefaultTheme ? Colors.white : Colors.black,
-                            ),
-                      ),
-                    ),
-                  ],
-                ),
-                SpacingFoundation.verticalSpace24,
-                GeneralPurposeButton(
-                  text: 'UI Kit Showcase Stand',
-                  onPressed: () => Navigator.pushNamed(context, AppRoutes.stand),
-                ),
-                SpacingFoundation.verticalSpace16,
-                GeneralPurposeButton(
-                  text: 'Influencer Profile',
-                  onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile),
-                ),
+                ).paddingAll(EdgeInsetsFoundation.all16),
               ],
             ),
-          ),
-        );
-      },
+            SpacingFoundation.verticalSpace24,
+            context.button(
+              text: 'UI Kit Showcase Stand',
+              onPressed: () => Navigator.pushNamed(context, AppRoutes.stand),
+            ),
+            SpacingFoundation.verticalSpace16,
+            context.button(
+              text: 'Influencer Profile',
+              onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
