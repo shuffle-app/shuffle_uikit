@@ -89,12 +89,12 @@ class _MainPageState extends State<MainPage> {
               ],
             ),
             SpacingFoundation.verticalSpace24,
-            GeneralPurposeButton(
+            context.button(
               text: 'UI Kit Showcase Stand',
               onPressed: () => Navigator.pushNamed(context, AppRoutes.stand),
             ),
             SpacingFoundation.verticalSpace16,
-            GeneralPurposeButton(
+            context.button(
               text: 'Influencer Profile',
               onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile),
             ),

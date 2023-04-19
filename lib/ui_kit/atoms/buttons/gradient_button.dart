@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class GradientButton extends StatelessWidget {
+class GradientButton implements ButtonFactory {
   final VoidCallback? onPressed;
   final String text;
-  final bool enabled;
 
   const GradientButton({
     Key? key,
     this.onPressed,
-    this.enabled = true,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
+    final enabled = onPressed != null;
     TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black);
     return Container(
       height: 48,

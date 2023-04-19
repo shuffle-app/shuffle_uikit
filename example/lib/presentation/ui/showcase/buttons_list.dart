@@ -10,31 +10,34 @@ class ButtonsList extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        GradientButton(
+        context.button(
+          text: 'GET CODE',
+          onPressed: () {},
+          gradient: true,
+        ),
+        SpacingFoundation.verticalSpace16,
+        context.button(
+          text: 'GET CODE',
+          gradient: true,
+        ),
+        SpacingFoundation.verticalSpace16,
+        context.button(
+          icon: const CupertinoActivityIndicator(),
+          text: 'GET CODE',
+          gradient: true,
+        ),
+        SpacingFoundation.verticalSpace16,
+        context.button(
           text: 'GET CODE',
           onPressed: () {},
         ),
         SpacingFoundation.verticalSpace16,
-        const GradientButton(
+        context.button(
           text: 'GET CODE',
         ),
         SpacingFoundation.verticalSpace16,
-        const GradientButtonWithIcon(
-          icon: CupertinoActivityIndicator(),
-          text: 'GET CODE',
-        ),
-        SpacingFoundation.verticalSpace16,
-        GeneralPurposeButton(
-          text: 'GET CODE',
-          onPressed: () {},
-        ),
-        SpacingFoundation.verticalSpace16,
-        const GeneralPurposeButton(
-          text: 'GET CODE',
-        ),
-        SpacingFoundation.verticalSpace16,
-        const GeneralPurposeButtonWithIcon(
-          icon: CupertinoActivityIndicator(),
+        context.button(
+          icon: const CupertinoActivityIndicator(),
           text: 'GET CODE',
         ),
       ],

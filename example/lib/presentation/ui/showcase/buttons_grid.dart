@@ -13,20 +13,22 @@ class ButtonsGrid extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              GradientButton(
+              context.button(
+                gradient: true,
                 text: 'Book it (+20)',
                 onPressed: () {},
               ),
-              SpacingFoundation.verticalSpace16,
-              const GradientButton(
-                text: 'Book it (+20)',
-                enabled: false,
-              ),
-              SpacingFoundation.verticalSpace16,
-              const GradientButtonWithIcon(
-                icon: CupertinoActivityIndicator(),
+              context.button(
+                gradient: true,
                 text: 'Book it (+20)',
               ),
+              context.button(
+                gradient: true,
+                icon: const CupertinoActivityIndicator(),
+                text: 'Book it (+20)',
+              ),
+              SpacingFoundation.verticalSpace16,
+              SpacingFoundation.verticalSpace16,
             ],
           ),
         ),
@@ -35,38 +37,17 @@ class ButtonsGrid extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              GeneralPurposeButton(
+              context.button(
                 text: 'GET CODE',
                 onPressed: () {},
               ),
               SpacingFoundation.verticalSpace16,
-              const GeneralPurposeButton(
+              context.button(
                 text: 'GET CODE',
               ),
               SpacingFoundation.verticalSpace16,
-              const GeneralPurposeButtonWithIcon(
-                icon: CupertinoActivityIndicator(),
-                text: 'GET CODE',
-              ),
-            ],
-          ),
-        ),
-        SpacingFoundation.horizontalSpace16,
-        Expanded(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              GradientButton(
-                text: 'GET CODE',
-                onPressed: () {},
-              ),
-              SpacingFoundation.verticalSpace16,
-              const GradientButton(
-                text: 'GET CODE',
-              ),
-              SpacingFoundation.verticalSpace16,
-              const GradientButtonWithIcon(
-                icon: CupertinoActivityIndicator(),
+              context.button(
+                icon: const CupertinoActivityIndicator(),
                 text: 'GET CODE',
               ),
             ],
@@ -77,19 +58,22 @@ class ButtonsGrid extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              GradientButton(
-                text: 'GET CODE',
+              context.button(
+                gradient: true,
+                text: 'Book it (+20)',
                 onPressed: () {},
               ),
-              SpacingFoundation.verticalSpace16,
-              const GradientButton(
-                text: 'GET CODE',
+              context.button(
+                gradient: true,
+                text: 'Book it (+20)',
+              ),
+              context.button(
+                gradient: true,
+                icon: const CupertinoActivityIndicator(),
+                text: 'Book it (+20)',
               ),
               SpacingFoundation.verticalSpace16,
-              const GradientButtonWithIcon(
-                icon: CupertinoActivityIndicator(),
-                text: 'GET CODE',
-              ),
+              SpacingFoundation.verticalSpace16,
             ],
           ),
         ),
@@ -98,19 +82,46 @@ class ButtonsGrid extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              GradientButton(
-                text: 'GET CODE',
+              context.button(
+                gradient: true,
+                text: 'Book it (+20)',
                 onPressed: () {},
               ),
-              SpacingFoundation.verticalSpace16,
-              const GradientButton(
-                text: 'GET CODE',
+              context.button(
+                gradient: true,
+                text: 'Book it (+20)',
+              ),
+              context.button(
+                gradient: true,
+                icon: const CupertinoActivityIndicator(),
+                text: 'Book it (+20)',
               ),
               SpacingFoundation.verticalSpace16,
-              const GradientButtonWithIcon(
-                icon: CupertinoActivityIndicator(),
-                text: 'GET CODE',
+              SpacingFoundation.verticalSpace16,
+            ],
+          ),
+        ),
+        SpacingFoundation.horizontalSpace16,
+        Expanded(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              context.button(
+                gradient: true,
+                text: 'Book it (+20)',
+                onPressed: () {},
               ),
+              context.button(
+                gradient: true,
+                text: 'Book it (+20)',
+              ),
+              context.button(
+                gradient: true,
+                icon: const CupertinoActivityIndicator(),
+                text: 'Book it (+20)',
+              ),
+              SpacingFoundation.verticalSpace16,
+              SpacingFoundation.verticalSpace16,
             ],
           ),
         ),
