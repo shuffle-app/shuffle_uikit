@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
 class ProfileAttitudeTabs extends StatelessWidget {
   final List<ProfileAttitudeTab> tabs;
@@ -22,7 +21,6 @@ class ProfileAttitudeTabs extends StatelessWidget {
     return Theme(
       data: Theme.of(context).copyWith(tabBarTheme: tabBarTheme),
       child: CardWrapper(
-        padding: EdgeInsetsFoundation.all4,
         child: DefaultTabController(
           length: tabs.length,
           child: ClipRRect(
@@ -35,7 +33,7 @@ class ProfileAttitudeTabs extends StatelessWidget {
               tabs: tabs,
             ),
           ),
-        ),
+        ).paddingAll(EdgeInsetsFoundation.all4),
       ),
     );
   }

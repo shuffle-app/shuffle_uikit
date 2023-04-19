@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/ui_kit_border_radius.dart';
-import 'package:shuffle_uikit/foundation/ui_kit_insets.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitChip extends StatelessWidget {
   final String interest;
@@ -22,7 +20,6 @@ class UiKitChip extends StatelessWidget {
     final chipTheme = context.uiKitTheme?.chipTheme;
     final chipTextStyle = context.uiKitTheme?.boldTextTheme.caption1;
     return Container(
-      padding: EdgeInsetsFoundation.symmetricH12V6,
       decoration: BoxDecoration(
         color: bordered ? chipTheme?.backgroundColor : Colors.transparent,
         borderRadius: BorderRadiusFoundation.max,
@@ -31,7 +28,7 @@ class UiKitChip extends StatelessWidget {
       child: Text(
         interest,
         style: chipTextStyle,
-      ),
+      ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12, vertical: EdgeInsetsFoundation.vertical8),
     );
   }
 }

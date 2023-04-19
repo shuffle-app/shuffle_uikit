@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
-/// [GeneralPurposeButtonWithIcon] is a button that accepts a child widget.
-/// when [onPressed] is not passed, it will be disabled and [overlayColor] will be used as a background color.
-/// pass own [overlayColor] to override default color in case if you don't need [onPressed]
-/// but still want some other color while [onPressed] is not passed.
-
-class GeneralPurposeButtonWithIcon extends StatelessWidget {
+class GeneralPurposeButtonWithIcon implements ButtonFactory {
   final VoidCallback? onPressed;
   final Color? color;
   final double? height;
   final Widget icon;
   final String text;
-  final Color? overlayColor;
 
   const GeneralPurposeButtonWithIcon({
     Key? key,
@@ -22,8 +15,7 @@ class GeneralPurposeButtonWithIcon extends StatelessWidget {
     required this.text,
     this.color,
     this.height,
-    this.overlayColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
 class ProfileInfo extends StatelessWidget {
   final String nickname;
@@ -42,7 +41,7 @@ class ProfileInfo extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         SpacingFoundation.verticalSpace12,
-        GeneralPurposeButton(
+        context.button(
           text: 'FOLLOW',
           onPressed: () {},
         ),

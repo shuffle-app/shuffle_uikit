@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class GradientButtonWithIcon extends StatelessWidget {
+class GradientButtonWithIcon implements ButtonFactory {
   final VoidCallback? onPressed;
   final String text;
   final Widget icon;
@@ -12,13 +11,12 @@ class GradientButtonWithIcon extends StatelessWidget {
     this.onPressed,
     required this.text,
     required this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 48,
-      padding: EdgeInsetsFoundation.all16,
       decoration: const BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
         gradient: GradientFoundation.buttonGradient,
@@ -33,7 +31,7 @@ class GradientButtonWithIcon extends StatelessWidget {
           SpacingFoundation.horizontalSpace8,
           icon,
         ],
-      ),
+      ).paddingAll(EdgeInsetsFoundation.all16),
     );
   }
 }
