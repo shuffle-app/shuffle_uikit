@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class GradientButton implements ButtonFactory {
+class GradientButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final String text;
 
@@ -9,7 +9,7 @@ class GradientButton implements ButtonFactory {
     Key? key,
     this.onPressed,
     required this.text,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class GradientButton implements ButtonFactory {
       child: Text(
         text.toUpperCase(),
         style: textStyle,
-      ).paddingAll(EdgeInsetsFoundation.all16),
+      ).paddingAll(EdgeInsetsFoundation.vertical12),
     );
   }
 }
