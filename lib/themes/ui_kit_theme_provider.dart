@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class UiKitThemeProvider extends InheritedWidget {
+class UiKitTheme extends InheritedWidget {
   final ValueChanged<ThemeData> onThemeUpdated;
 
-  const UiKitThemeProvider({
+  const UiKitTheme({
     required this.onThemeUpdated,
     required super.child,
     super.key,
   });
 
-  static UiKitThemeProvider of(BuildContext context) => context.findAncestorWidgetOfExactType<UiKitThemeProvider>()!;
+  static UiKitTheme of(BuildContext context) => context.findAncestorWidgetOfExactType<UiKitTheme>()!;
 
   void updateTheme(ThemeData data) {
     onThemeUpdated(data);
   }
 
   @override
-  bool updateShouldNotify(covariant UiKitThemeProvider oldWidget) => false;
+  bool updateShouldNotify(covariant UiKitTheme oldWidget) => false;
 }

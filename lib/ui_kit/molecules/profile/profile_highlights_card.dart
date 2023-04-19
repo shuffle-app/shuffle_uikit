@@ -19,7 +19,6 @@ class ProfileHighlightCard extends StatelessWidget {
     titleStyle = titleStyle?.copyWith(color: ColorsFoundation.inputLabelGrey);
     return CardWrapper(
       height: 106,
-      padding: EdgeInsetsFoundation.all16,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
@@ -36,7 +35,7 @@ class ProfileHighlightCard extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ],
-      ),
+      ).paddingAll(EdgeInsetsFoundation.all16),
     );
   }
 }

@@ -44,21 +44,21 @@ class _MainPageState extends State<MainPage> {
               isSelected: [isShuffleTheme, isFallbackTheme, isDefaultTheme],
               onPressed: (index) {
                 if (index == 0) {
-                  UiKitThemeProvider.of(context).updateTheme(UiKitThemeFoundation.defaultTheme);
+                  UiKitTheme.of(context).updateTheme(UiKitThemeFoundation.defaultTheme);
                   setState(() {
                     isShuffleTheme = true;
                     isFallbackTheme = false;
                     isDefaultTheme = false;
                   });
                 } else if (index == 1) {
-                  UiKitThemeProvider.of(context).updateTheme(UiKitThemeFoundation.fallbackTheme);
+                  UiKitTheme.of(context).updateTheme(UiKitThemeFoundation.fallbackTheme);
                   setState(() {
                     isShuffleTheme = false;
                     isFallbackTheme = true;
                     isDefaultTheme = false;
                   });
                 } else if (index == 2) {
-                  UiKitThemeProvider.of(context).updateTheme(ThemeData());
+                  UiKitTheme.of(context).updateTheme(ThemeData());
                   setState(() {
                     isShuffleTheme = false;
                     isFallbackTheme = false;
@@ -67,34 +67,25 @@ class _MainPageState extends State<MainPage> {
                 }
               },
               children: [
-                Padding(
-                  padding: EdgeInsetsFoundation.all16,
-                  child: Text(
-                    'Shuffle Theme',
-                    style: context.uiKitTheme?.boldTextTheme.body.copyWith(
-                          color: isDefaultTheme ? Colors.black : Colors.white,
-                        ) ??
-                        TextStyle(color: isDefaultTheme ? Colors.black : Colors.white),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsFoundation.all16,
-                  child: Text(
-                    'Fallback Theme',
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          color: isDefaultTheme ? Colors.black : Colors.white,
-                        ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsFoundation.all16,
-                  child: Text(
-                    'Default Theme',
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          color: isDefaultTheme ? Colors.black : Colors.white,
-                        ),
-                  ),
-                ),
+                Text(
+                  'Shuffle Theme',
+                  style: context.uiKitTheme?.boldTextTheme.body.copyWith(
+                        color: isDefaultTheme ? Colors.black : Colors.white,
+                      ) ??
+                      TextStyle(color: isDefaultTheme ? Colors.black : Colors.white),
+                ).paddingAll(EdgeInsetsFoundation.all16),
+                Text(
+                  'Fallback Theme',
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: isDefaultTheme ? Colors.black : Colors.white,
+                      ),
+                ).paddingAll(EdgeInsetsFoundation.all16),
+                Text(
+                  'Default Theme',
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: isDefaultTheme ? Colors.black : Colors.white,
+                      ),
+                ).paddingAll(EdgeInsetsFoundation.all16),
               ],
             ),
             SpacingFoundation.verticalSpace24,

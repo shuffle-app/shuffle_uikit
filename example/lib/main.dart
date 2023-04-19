@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return UiKitThemeProvider(
+    return UiKitTheme(
       onThemeUpdated: (theme) => setState(() => _theme = theme),
       child: ScreenUtilInit(
         designSize: const Size(320, 480),

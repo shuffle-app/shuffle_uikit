@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -19,7 +18,6 @@ class GradientButton extends StatelessWidget {
     TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black);
     return Container(
       height: 48,
-      padding: EdgeInsetsFoundation.all16,
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
         gradient: enabled ? GradientFoundation.buttonGradient : null,
@@ -28,7 +26,7 @@ class GradientButton extends StatelessWidget {
       child: Text(
         text.toUpperCase(),
         style: textStyle,
-      ),
+      ).paddingAll(EdgeInsetsFoundation.all16),
     );
   }
 }

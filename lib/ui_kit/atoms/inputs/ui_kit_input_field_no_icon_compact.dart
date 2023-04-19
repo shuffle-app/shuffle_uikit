@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
@@ -61,7 +62,7 @@ class _UiKitInputFieldNoIconCompactState extends State<UiKitInputFieldNoIconComp
               controller: widget.enabled ? widget.controller : null,
               validator: widget.validator,
               decoration: InputDecoration(
-                contentPadding: EdgeInsetsFoundation.symmetricH16V12,
+                contentPadding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 12.w),
                 hintText: '${widget.hintText}',
                 hintStyle: hintStyle,
                 errorStyle: errorStyle?.copyWith(fontSize: 0),

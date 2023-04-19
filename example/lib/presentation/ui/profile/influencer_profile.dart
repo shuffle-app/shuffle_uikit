@@ -16,37 +16,28 @@ class InfluencerProfile extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                Padding(
-                  padding: EdgeInsetsFoundation.all16,
-                  child: ProfileCard(
-                    profileData: VisitingProfileData(
-                      nickname: '@marywill',
-                      description: 'Just walking here and there trying to find something unique and interesting to show you!',
-                      avatarUrl: 'assets/images/png/profile_avatar.png',
-                      interests: ['Restaurants', 'Hookah', 'Roller Coaster', 'Swimmings'],
-                      followers: 2650,
-                    ),
+                ProfileCard(
+                  profileData: VisitingProfileData(
+                    nickname: '@marywill',
+                    description: 'Just walking here and there trying to find something unique and interesting to show you!',
+                    avatarUrl: 'assets/images/png/profile_avatar.png',
+                    interests: ['Restaurants', 'Hookah', 'Roller Coaster', 'Swimmings'],
+                    followers: 2650,
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsetsFoundation.horizontal16,
-                  child: const ProfileHighlights(
-                    placesVisited: 934,
-                    reviewsPosted: 630,
-                    points: 32040,
-                  ),
-                ),
+                ).paddingAll(EdgeInsetsFoundation.all16),
+                const ProfileHighlights(
+                  placesVisited: 934,
+                  reviewsPosted: 630,
+                  points: 32040,
+                ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
                 SpacingFoundation.verticalSpace24,
-                Padding(
-                  padding: EdgeInsetsFoundation.horizontal16,
-                  child: ProfileAttitudeTabs(
-                    onTappedTab: (index) {},
-                    tabs: const [
-                      ProfileAttitudeTab(title: 'LOVED'),
-                      ProfileAttitudeTab(title: 'HATED'),
-                    ],
-                  ),
-                ),
+                ProfileAttitudeTabs(
+                  onTappedTab: (index) {},
+                  tabs: const [
+                    ProfileAttitudeTab(title: 'LOVED'),
+                    ProfileAttitudeTab(title: 'HATED'),
+                  ],
+                ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
                 SpacingFoundation.verticalSpace24,
                 ProfileStoriesList(
                   stories: List.generate(
@@ -87,18 +78,15 @@ class InfluencerProfile extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                Padding(
-                  padding: EdgeInsetsFoundation.all16,
-                  child: GeneralPurposeButtonWithIcon(
-                    color: Colors.white,
-                    onPressed: () {},
-                    text: 'Next 5 reviews',
-                    icon: const Icon(
-                      Icons.keyboard_arrow_down_rounded,
-                      color: Colors.black,
-                    ),
+                GeneralPurposeButtonWithIcon(
+                  color: Colors.white,
+                  onPressed: () {},
+                  text: 'Next 5 reviews',
+                  icon: const Icon(
+                    Icons.keyboard_arrow_down_rounded,
+                    color: Colors.black,
                   ),
-                ),
+                ).paddingAll(EdgeInsetsFoundation.all16),
                 SpacingFoundation.verticalSpace24
               ],
             ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/tokens/tokens.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_story_widget.dart';
-import 'package:shuffle_uikit/ui_models/profile/profile_story.dart';
 
 /// [ProfileStoriesList] accepts [List] of [ProfileStory]
 /// and displays them in a horizontal list.
@@ -17,7 +16,6 @@ class ProfileStoriesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return CardWrapper(
       borderRadius: BorderRadius.zero,
-      padding: const EdgeInsets.fromLTRB(16, 16, 0, 16),
       child: SizedBox(
         height: 180,
         child: ListView.separated(
@@ -31,6 +29,11 @@ class ProfileStoriesList extends StatelessWidget {
           },
           separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace12,
         ),
+      ).paddingLTRB(
+        EdgeInsetsFoundation.horizontal16,
+        EdgeInsetsFoundation.vertical16,
+        EdgeInsetsFoundation.zero,
+        EdgeInsetsFoundation.vertical16,
       ),
     );
   }

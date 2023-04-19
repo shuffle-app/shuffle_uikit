@@ -44,7 +44,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsetsFoundation.all16,
         child: Form(
           key: _formKey,
           child: Column(
@@ -65,7 +64,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               if (MediaQuery.of(context).size.width < 720) const ButtonsList(),
             ],
           ),
-        ),
+        ).paddingAll(EdgeInsetsFoundation.all16),
       ),
     );
   }
