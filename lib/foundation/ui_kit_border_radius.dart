@@ -4,6 +4,11 @@ class BorderRadiusFoundation {
   BorderRadiusFoundation._();
 
   static const all24 = BorderRadius.all(Radius.circular(24));
+  static const onlyTop40 = BorderRadius.only(
+    topLeft: Radius.circular(40),
+    topRight: Radius.circular(40),
+  );
+
   static const onlyTop24 = BorderRadius.only(
     topLeft: Radius.circular(24),
     topRight: Radius.circular(24),

@@ -15,6 +15,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final CardTheme cardTheme;
   final UiKitChipThemeData chipTheme;
   final ButtonStyle ordinaryButtonStyle;
+  final BottomSheetThemeData bottomSheetTheme;
 
   UiKitThemeData({
     required this.iconInputTheme,
@@ -30,6 +31,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     required this.cardColor,
     required this.buttonTheme,
     required this.cardTheme,
+    required this.bottomSheetTheme,
   });
 
   @override
@@ -47,6 +49,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     CardTheme? cardTheme,
     UiKitChipThemeData? chipTheme,
     ButtonStyle? ordinaryButtonStyle,
+    BottomSheetThemeData? bottomSheetTheme,
   }) {
     return UiKitThemeData(
       customColor: customColor ?? this.customColor,
@@ -62,6 +65,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
       cardTheme: cardTheme ?? this.cardTheme,
       chipTheme: chipTheme ?? this.chipTheme,
       ordinaryButtonStyle: ordinaryButtonStyle ?? this.ordinaryButtonStyle,
+      bottomSheetTheme: bottomSheetTheme ?? this.bottomSheetTheme,
     );
   }
 
@@ -84,6 +88,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
       cardTheme: cardTheme,
       chipTheme: chipTheme,
       ordinaryButtonStyle: ordinaryButtonStyle,
+      bottomSheetTheme: bottomSheetTheme,
     );
   }
 }

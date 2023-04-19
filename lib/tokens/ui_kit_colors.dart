@@ -8,7 +8,6 @@ class UiKitColors {
   static const disabledColor = Color(0xffCBCCCE);
   static const solidSurface = Color(0xff131313);
   static const solidGreyText = Color(0xff7E8083);
-  static const subtitleGrey = Color(0xffA8AAAE);
   static const dividerColor = Color(0xff1A1A1A);
   static const inputLabelGrey = Color(0xffEEEEEF);
 
