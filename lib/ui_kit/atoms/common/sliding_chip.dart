@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
+import '../../../themes/bottom_sheet_theme.dart';
+
 class SlidingChip extends StatelessWidget {
   const SlidingChip({Key? key}) : super(key: key);
 
@@ -11,8 +13,9 @@ class SlidingChip extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
           borderRadius: BorderRadiusFoundation.all24,
-          //TODO:check color
-          color: context.uiKitTheme?.customColor),
+          color: (context.uiKitTheme?.bottomSheetTheme
+                  as UiKitBottomSheetThemeData?)
+              ?.sheetSliderColor ?? Colors.black),
       child: SizedBox(
         width: 60.w,
         height: 4.h,

@@ -5,11 +5,11 @@ class Animations {
   static slideAnimation(Animation<double> animation,
       Animation<double> secondAnimation, Widget child) {
     return SlideTransition(
-      child: child,
       position: Tween<Offset>(
         end: Offset.zero,
         begin: const Offset(0.0, 1.0),
       ).animate(animation),
+      child: child,
     );
   }
 

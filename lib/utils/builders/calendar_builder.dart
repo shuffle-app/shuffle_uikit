@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 Future<DateTime?> showUiKitCalendarDialog(
@@ -12,7 +11,7 @@ Future<DateTime?> showUiKitCalendarDialog(
           backgroundColor: context.uiKitTheme?.cardColor,
           clipBehavior: Clip.hardEdge,
           insetPadding: EdgeInsets.zero,
-          shape: const RoundedRectangleBorder(
+          shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusFoundation.all24,
           ),
           child: _CustomCalendarPickerDialog(
@@ -44,30 +43,31 @@ class _CustomCalendarPickerDialogState
   @override
   Widget build(BuildContext context) {
     return Container(
-        constraints: BoxConstraints.loose(Size(266.w, 380.h)),
-        child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-          //TODO romancores or Murodkulov: add theming
-          CalendarDatePicker(
-            onDateChanged: _onSelectionChanged,
-            initialDate: selectedDate,
-            firstDate: DateTime.now(),
-            lastDate: widget.lastDate ??
-                DateTime.now().add(const Duration(days: 365)),
-          ),
-          SpacingFoundation.horizontalSpace16,
-          //TODO romancores: change buttons
-          Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-            GeneralPurposeButton(
-              text: 'Cancel',
-              onPressed: () => context.pop(),
-            ),
-            GeneralPurposeButton(
-              text: 'Ok',
-              onPressed: () => context.pop(result: selectedDate),
-            )
-          ]),
-        ])).paddingSymmetric(vertical: 12.h, horizontal: 12.w);
+            constraints: BoxConstraints.loose(SizesFoundation.standartCalendarPopupSize),
+            child: Column(mainAxisSize: MainAxisSize.min, children: [
+              //TODO romancores or Murodkulov: add theming
+              CalendarDatePicker(
+                onDateChanged: _onSelectionChanged,
+                initialDate: selectedDate,
+                firstDate: DateTime.now(),
+                lastDate: widget.lastDate ??
+                    DateTime.now().add(const Duration(days: 365)),
+              ),
+              SpacingFoundation.horizontalSpace16,
+              Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                context.button(
+                    text: 'Cancel',
+                    onPressed: () => context.pop(),
+                    isTextButton: true),
+                SpacingFoundation.horizontalSpace4,
+                context.button(
+                  text: 'Ok',
+                  onPressed: () => context.pop(result: selectedDate),
+                )
+              ]),
+            ]))
+        .paddingSymmetric(
+            vertical: SpacingFoundation.verticalSpacing12,
+            horizontal: SpacingFoundation.horizontalSpacing12);
   }
 }

@@ -29,13 +29,12 @@ showUiKitGeneralFullScreenDialog(
     child: Dialog(
         clipBehavior: Clip.hardEdge,
         insetPadding: EdgeInsets.zero,
-        backgroundColor:
-            context.uiKitTheme?.buttonTheme.colorScheme?.background,
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadiusFoundation.onlyTop24),
+        backgroundColor: context.uiKitTheme?.bottomSheetTheme.backgroundColor,
+        shape: context.uiKitTheme?.bottomSheetTheme.shape,
         child: Column(
           children: [
-            const SlidingChip().paddingSymmetric(vertical: 12.h),
+            const SlidingChip().paddingSymmetric(
+                vertical: SpacingFoundation.verticalSpacing12),
             Expanded(
                 child: SingleChildScrollView(
               physics: const ClampingScrollPhysics(),

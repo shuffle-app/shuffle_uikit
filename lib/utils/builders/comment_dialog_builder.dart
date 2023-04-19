@@ -8,8 +8,6 @@ Future<T?> showUiKitPopover<T extends Object?>(BuildContext context,
     Widget? description,
     required String buttonText,
     VoidCallback? onPop}) {
-//TODO: move border radiuses to constants
-//TODO: move paddings constants
   return showPopover<T>(
     context: context,
     backgroundColor: context.uiKitTheme?.cardTheme.color ?? Colors.white,
@@ -17,19 +15,24 @@ Future<T?> showUiKitPopover<T extends Object?>(BuildContext context,
     bodyBuilder: (context) => Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        title.paddingOnly(bottom: 8.h),
-        if (description != null) description.paddingSymmetric(vertical: 8.h),
+        title.paddingOnly(bottom: SpacingFoundation.verticalSpacing8),
+        if (description != null)
+          description.paddingSymmetric(
+              vertical: SpacingFoundation.verticalSpacing8),
         //TODO romancores: change button to black one
         GeneralPurposeButton(
           text: buttonText,
           onPressed: () => context.pop(),
         ).paddingOnly(
-          top: 8.h,
+          top: SpacingFoundation.verticalSpacing8,
         )
       ],
-    ).paddingAll(24.sp),
-    radius: 24.r,
-    constraints: BoxConstraints(minWidth: 80.w, minHeight: 80.h),
+    ).paddingSymmetric(
+        vertical: SpacingFoundation.verticalSpacing24,
+        horizontal: SpacingFoundation.horizontalSpacing24),
+    //ставим зависимость от константы и берем значение любого угла, любого аксиса, так как они все одинаковые
+    radius: BorderRadiusFoundation.all24.topRight.x,
+    constraints: SizesFoundation.minimumSizeForCommentPopup,
     onPop: onPop,
     direction: PopoverDirection.bottom,
   );

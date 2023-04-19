@@ -9,3 +9,4 @@ export 'ui_kit_border_radius.dart';
 export 'ui_kit_gradient_borders.dart';
 export 'ui_kit_insets.dart';
 export 'ui_kit_spacing.dart';
+export 'ui_kit_sizes.dart';

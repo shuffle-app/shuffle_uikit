@@ -14,7 +14,7 @@ class ProfileStoryWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 100,
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadiusFoundation.all24,
         border: GradientFoundation.borderGradient,

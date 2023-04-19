@@ -17,7 +17,7 @@ class GradientButtonWithIcon extends StatelessWidget implements ButtonFactory {
   Widget build(BuildContext context) {
     return Container(
       height: 48,
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
         gradient: GradientFoundation.buttonGradient,
       ),

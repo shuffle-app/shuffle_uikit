@@ -13,7 +13,7 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
         backgroundColor: context.uiKitTheme?.cardTheme.color,
         clipBehavior: Clip.hardEdge,
         insetPadding: EdgeInsets.zero,
-        shape: const RoundedRectangleBorder(
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusFoundation.all24,
         ),
         titlePadding: const EdgeInsets.fromLTRB(24, 24, 24, 8),
