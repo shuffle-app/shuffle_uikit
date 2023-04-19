@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit/atoms/buttons/ui_kit_text_theme.dart';
 
 abstract class WidgetsAbstractFactory {
   ButtonFactory createButton({
@@ -9,6 +10,7 @@ abstract class WidgetsAbstractFactory {
     Color? color,
     double? height,
     bool gradient = false,
+    bool isTextButton = false,
   });
   // InputFieldFactory createInputField({
   //   required TextEditingController controller,
@@ -38,6 +40,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Color? color,
     double? height,
     bool gradient = false,
+    bool isTextButton = false,
   }) {
     final iconedButton = icon != null;
     if (gradient && !iconedButton) {
@@ -58,6 +61,11 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         icon: icon,
         color: color,
         height: height,
+      );
+    } else if (isTextButton) {
+      return OrdinaryTextButton(
+        text: text,
+        onPressed: onPressed,
       );
     } else {
       return GeneralPurposeButton(

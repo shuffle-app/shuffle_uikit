@@ -40,6 +40,14 @@ class ButtonsList extends StatelessWidget {
           icon: const CupertinoActivityIndicator(),
           text: 'GET CODE',
         ),
+        SpacingFoundation.verticalSpace16,
+        Center(
+          child: context.button(
+            text: 'GET CODE',
+            isTextButton: true,
+            onPressed: () {},
+          ),
+        ),
       ],
     );
   }

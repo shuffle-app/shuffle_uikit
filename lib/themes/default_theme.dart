@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/themes/bottom_sheet_theme.dart';
 import 'package:shuffle_uikit/themes/ui_kit_text_theme.dart';
 import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
 
@@ -142,6 +143,13 @@ class UiKitThemes {
         ),
         boldTextTheme: UiKitBoldTextTheme(),
         regularTextTheme: UiKitRegularTextTheme(),
+        bottomSheetTheme: const UiKitBottomSheetThemeData(
+          backgroundColor: Colors.black,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusFoundation.onlyTop40,
+          ),
+          sheetSliderColor: ColorsFoundation.darkNeutral,
+        ),
       ),
     ],
   );
