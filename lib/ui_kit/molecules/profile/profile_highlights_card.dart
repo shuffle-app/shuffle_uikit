@@ -22,6 +22,7 @@ class ProfileHighlightCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             '${value > 1000 ? '${value ~/ 1000}k+' : value}',

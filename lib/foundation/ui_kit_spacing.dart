@@ -4,17 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SpacingFoundation {
   SpacingFoundation._();
 
-  static final horizontalSpacing4 = 4.w;
-  static final horizontalSpacing8 = 8.w;
-  static final horizontalSpacing10 = 10.w;
-  static final horizontalSpacing12 = 12.w;
-  static final horizontalSpacing16 = 16.w;
-  static final verticalSpacing2 = 2.h;
-  static final verticalSpacing4 = 4.h;
-  static final verticalSpacing8 = 8.h;
-  static final verticalSpacing12 = 12.h;
-  static final verticalSpacing16 = 16.h;
-  static final verticalSpacing24 = 24.h;
+  static double get horizontalSpacing4 => 4.w;
+  static double get horizontalSpacing8 => 8.w;
+  static double get horizontalSpacing10 => 10.w;
+  static double get horizontalSpacing12 => 12.w;
+  static double get horizontalSpacing16 => 16.w;
+  static double get verticalSpacing2 => 2.h;
+  static double get verticalSpacing4 => 4.h;
+  static double get verticalSpacing8 => 8.h;
+  static double get verticalSpacing12 => 12.h;
+  static double get verticalSpacing16 => 16.h;
+  static double get verticalSpacing24 => 24.h;
 
   static Widget get horizontalSpace4 => horizontalSpacing4.horizontalSpace;
   static Widget get horizontalSpace8 => horizontalSpacing8.horizontalSpace;
