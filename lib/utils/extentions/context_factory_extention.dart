@@ -9,6 +9,7 @@ extension Factory on BuildContext {
     Color? color,
     double? height,
     bool? gradient,
+    bool? isTextButton,
   }) =>
       WidgetsFactory.of(this)!
           .createButton(
@@ -18,6 +19,7 @@ extension Factory on BuildContext {
             color: color,
             height: height,
             gradient: gradient ?? false,
+            isTextButton: isTextButton ?? false,
           )
           .build(this);
 }

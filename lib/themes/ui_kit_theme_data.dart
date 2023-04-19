@@ -17,6 +17,14 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final ButtonStyle ordinaryButtonStyle;
   final BottomSheetThemeData bottomSheetTheme;
 
+  ButtonStyle get textButtonStyle => ButtonStyle(
+        textStyle: MaterialStateTextStyle.resolveWith((states) {
+          return boldTextTheme.caption1UpperCase;
+        }),
+        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+        overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
+      );
+
   UiKitThemeData({
     required this.iconInputTheme,
     required this.ordinaryButtonStyle,
@@ -50,6 +58,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     UiKitChipThemeData? chipTheme,
     ButtonStyle? ordinaryButtonStyle,
     BottomSheetThemeData? bottomSheetTheme,
+    ButtonStyle? textButtonStyle,
   }) {
     return UiKitThemeData(
       customColor: customColor ?? this.customColor,
