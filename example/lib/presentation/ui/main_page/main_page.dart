@@ -1,4 +1,5 @@
 import 'package:example/presentation/routing/app_routes.dart';
+import 'package:example/presentation/ui/dialog_testings/dialog_testing_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -34,6 +35,8 @@ class _MainPageState extends State<MainPage> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            //TODO Murodkulov: предложение использовать купертино свитч с анимашкой
+            //https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html
             ToggleButtons(
               borderWidth: 2,
               borderColor: Colors.black,
@@ -97,6 +100,11 @@ class _MainPageState extends State<MainPage> {
             context.button(
               text: 'Influencer Profile',
               onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile),
+            ),
+            SpacingFoundation.verticalSpace16,
+            GeneralPurposeButton(
+              text: 'Dialog testing page',
+              onPressed: () => context.push(DialogTestingPage()),
             ),
           ],
         ),

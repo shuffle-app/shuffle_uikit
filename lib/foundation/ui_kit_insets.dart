@@ -5,9 +5,9 @@ class EdgeInsetsFoundation {
   EdgeInsetsFoundation._();
   static final zero = 0.w;
 
-  static double get all4 => 4.w;
-  static double get all8 => 8.w;
-  static double get all16 => 16.w;
+  static double get all4 => 4.sp;
+  static double get all8 => 8.sp;
+  static double get all16 => 16.sp;
 
   static double get horizontal16 => SpacingFoundation.horizontalSpacing16;
   static double get vertical16 => SpacingFoundation.verticalSpacing16;
