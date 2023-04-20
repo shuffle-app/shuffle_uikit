@@ -20,6 +20,7 @@ dependencies:
 
   #dialogs widgets
   popover: ^0.2.8+2
+  simple_gradient_text: ^1.2.4
 
 
 dev_dependencies:

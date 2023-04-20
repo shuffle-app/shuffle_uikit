@@ -5,7 +5,7 @@ import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 class GradientFoundation {
   GradientFoundation._();
 
-  static const borderGradient = GradientBoxBorder(
+  static const defaultGradient = GradientBoxBorder(
     gradient: RadialGradient(
       colors: [
         ColorsFoundation.orange,

@@ -62,6 +62,42 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               if (MediaQuery.of(context).size.width >= 720) const ButtonsGrid(),
               if (MediaQuery.of(context).size.width < 720) const ButtonsList(),
+              SpacingFoundation.verticalSpace16,
+              PlaceInfo(
+                place: Place(
+                  media: [
+                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.video),
+                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.image),
+                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.image),
+                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.image),
+                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.image),
+                  ],
+                  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                      'Sed euismod, nunc ut tincidunt lacinia, nisl nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
+                      'Nulla facilisi. '
+                      'Donec auctor, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
+                      'Nulla facilisi',
+                  rating: 4.8,
+                  tags: [
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                  ],
+                ),
+              ),
             ],
           ),
         ).paddingAll(EdgeInsetsFoundation.all16),

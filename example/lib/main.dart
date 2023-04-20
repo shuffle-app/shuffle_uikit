@@ -25,23 +25,23 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return UiKitTheme(
-      onThemeUpdated: (theme) => setState(() => _theme = theme),
-      child: WidgetsFactory(
-        child: ScreenUtilInit(
-          designSize: const Size(320, 480),
-          minTextAdapt: true,
-          builder: (context, child) {
-            return MaterialApp(
+    return ScreenUtilInit(
+      designSize: const Size(320, 480),
+      minTextAdapt: true,
+      builder: (context, child) {
+        return UiKitTheme(
+          onThemeUpdated: (theme) => setState(() => _theme = theme),
+          child: WidgetsFactory(
+            child: MaterialApp(
               title: 'Shuffle Demo',
               debugShowCheckedModeBanner: false,
               theme: _theme,
               onGenerateRoute: AppRouter.onGenerateRoute,
               initialRoute: AppRoutes.initial,
-            );
-          },
-        ),
-      ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
