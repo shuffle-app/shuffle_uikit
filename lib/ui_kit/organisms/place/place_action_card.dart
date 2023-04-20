@@ -21,6 +21,7 @@ class PlaceActionCard extends StatelessWidget {
     final valueStyle = context.uiKitTheme?.boldTextTheme.body.copyWith(color: Colors.white);
     return CardWrapper(
       child: Stack(
+        fit: StackFit.expand,
         children: [
           Column(
             mainAxisSize: MainAxisSize.min,
@@ -30,7 +31,6 @@ class PlaceActionCard extends StatelessWidget {
                 title,
                 style: titleStyle,
               ),
-              SpacingFoundation.verticalSpace2,
               Text(
                 value,
                 style: valueStyle,
@@ -41,10 +41,13 @@ class PlaceActionCard extends StatelessWidget {
             alignment: Alignment.centerRight,
             child: icon,
           ),
-          context.button(
-            text: 'See more',
-            small: true,
-            onPressed: action,
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: context.button(
+              text: 'See more',
+              small: true,
+              onPressed: action,
+            ),
           ),
         ],
       ).paddingAll(EdgeInsetsFoundation.all12),
@@ -55,19 +58,21 @@ class PlaceActionCard extends StatelessWidget {
 class UpcomingEventPlaceActionCard extends PlaceActionCard {
   const UpcomingEventPlaceActionCard({
     super.key,
-    required super.title,
     required super.value,
     required super.icon,
     required super.action,
-  });
+  }) : super(
+          title: 'Upcoming Event',
+        );
 }
 
 class PointBalancePlaceActionCard extends PlaceActionCard {
   const PointBalancePlaceActionCard({
     super.key,
-    required super.title,
     required super.value,
     required super.icon,
     required super.action,
-  });
+  }) : super(
+          title: 'Point Balance',
+        );
 }
