@@ -1,14 +1,23 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit/atoms/buttons/small_ordinary_button.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/ui_kit_text_theme.dart';
 
 abstract class WidgetsAbstractFactory {
-  ButtonFactory createButton({
+  ButtonFactory createOrdinaryButton({
     required String text,
     VoidCallback? onPressed,
     Widget? icon,
     Color? color,
-    double? height,
+    bool gradient = false,
+    bool isTextButton = false,
+  });
+
+  ButtonFactory createSmallButton({
+    required String text,
+    VoidCallback? onPressed,
+    Widget? icon,
+    Color? color,
     bool gradient = false,
     bool isTextButton = false,
   });
@@ -33,12 +42,11 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   const WidgetsFactory({required super.child, super.key});
 
   @override
-  ButtonFactory createButton({
+  ButtonFactory createOrdinaryButton({
     required String text,
     VoidCallback? onPressed,
     Widget? icon,
     Color? color,
-    double? height,
     bool gradient = false,
     bool isTextButton = false,
   }) {
@@ -59,8 +67,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         text: text,
         onPressed: onPressed,
         icon: icon,
-        color: color,
-        height: height,
       );
     } else if (isTextButton) {
       return OrdinaryTextButton(
@@ -83,6 +89,22 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   static WidgetsFactory? of(BuildContext context) {
     final instance = context.findAncestorWidgetOfExactType<WidgetsFactory>();
     return instance;
+  }
+
+  @override
+  ButtonFactory createSmallButton({
+    required String text,
+    VoidCallback? onPressed,
+    Widget? icon,
+    Color? color,
+    bool gradient = false,
+    bool isTextButton = false,
+  }) {
+    final iconedButton = icon != null;
+    return SmallGeneralPurposeButton(
+      text: text,
+      onPressed: onPressed,
+    );
   }
 
   // @override

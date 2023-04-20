@@ -7,19 +7,32 @@ extension Factory on BuildContext {
     VoidCallback? onPressed,
     Widget? icon,
     Color? color,
-    double? height,
     bool? gradient,
     bool? isTextButton,
-  }) =>
-      WidgetsFactory.of(this)!
-          .createButton(
+    bool? small,
+  }) {
+    if (small ?? false) {
+      return WidgetsFactory.of(this)!
+          .createSmallButton(
             text: text,
             onPressed: onPressed,
             icon: icon,
             color: color,
-            height: height,
             gradient: gradient ?? false,
             isTextButton: isTextButton ?? false,
           )
           .build(this);
+    } else {
+      return WidgetsFactory.of(this)!
+          .createOrdinaryButton(
+            text: text,
+            onPressed: onPressed,
+            icon: icon,
+            color: color,
+            gradient: gradient ?? false,
+            isTextButton: isTextButton ?? false,
+          )
+          .build(this);
+    }
+  }
 }

@@ -3,8 +3,6 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GeneralPurposeButtonWithIcon extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
-  final Color? color;
-  final double? height;
   final Widget icon;
   final String text;
 
@@ -13,8 +11,6 @@ class GeneralPurposeButtonWithIcon extends StatelessWidget implements ButtonFact
     this.onPressed,
     required this.icon,
     required this.text,
-    this.color,
-    this.height,
   }) : super(key: key);
 
   @override

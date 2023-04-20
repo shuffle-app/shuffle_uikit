@@ -34,6 +34,20 @@ class UiKitThemes {
           ),
           foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         ),
+        smallOrdinaryButtonStyle: ButtonStyle(
+          fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(28)),
+          backgroundColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.disabled)) {
+              return ColorsFoundation.disabledColor;
+            } else {
+              return Colors.white;
+            }
+          }),
+          shape: MaterialStateProperty.resolveWith(
+            (states) => const RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+          ),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+        ),
         iconInputTheme: const InputDecorationTheme(
           filled: true,
           fillColor: ColorsFoundation.solidSurface,

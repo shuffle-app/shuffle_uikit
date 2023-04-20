@@ -48,6 +48,14 @@ class ButtonsList extends StatelessWidget {
             onPressed: () {},
           ),
         ),
+        SpacingFoundation.verticalSpace16,
+        Center(
+          child: context.button(
+            text: 'GET CODE',
+            small: true,
+            onPressed: () {},
+          ),
+        ),
       ],
     );
   }
