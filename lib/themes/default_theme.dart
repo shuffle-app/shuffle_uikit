@@ -30,11 +30,11 @@ class UiKitThemes {
             }
           }),
           shape: MaterialStateProperty.resolveWith(
-            (states) =>  RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
           ),
           foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         ),
-        iconInputTheme:  InputDecorationTheme(
+        iconInputTheme: InputDecorationTheme(
           filled: true,
           fillColor: ColorsFoundation.solidSurface,
           border: OutlineInputBorder(
@@ -67,7 +67,7 @@ class UiKitThemes {
             ),
           ),
         ),
-        noIconInputTheme:  InputDecorationTheme(
+        noIconInputTheme: InputDecorationTheme(
           filled: true,
           fillColor: ColorsFoundation.solidSurface,
           border: OutlineInputBorder(
@@ -115,7 +115,7 @@ class UiKitThemes {
           backgroundColor: Colors.white.withOpacity(0.07),
           centerTitle: true,
         ),
-        uiKitTabBarTheme:  TabBarTheme(
+        uiKitTabBarTheme: TabBarTheme(
           indicatorSize: TabBarIndicatorSize.tab,
           dividerColor: Colors.transparent,
           labelColor: Colors.black,
@@ -126,14 +126,14 @@ class UiKitThemes {
           ),
         ),
         cardColor: ColorsFoundation.solidSurface,
-        buttonTheme:  ButtonThemeData(
+        buttonTheme: ButtonThemeData(
           buttonColor: Colors.white,
           textTheme: ButtonTextTheme.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusFoundation.max,
           ),
         ),
-        cardTheme:  CardTheme(
+        cardTheme: CardTheme(
           shadowColor: Colors.transparent,
           surfaceTintColor: ColorsFoundation.solidSurface,
           elevation: 0,
@@ -143,7 +143,7 @@ class UiKitThemes {
         ),
         boldTextTheme: UiKitBoldTextTheme(),
         regularTextTheme: UiKitRegularTextTheme(),
-        bottomSheetTheme:  UiKitBottomSheetThemeData(
+        bottomSheetTheme: UiKitBottomSheetThemeData(
           backgroundColor: Colors.black,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusFoundation.onlyTop24,
@@ -185,7 +185,7 @@ class UiKitThemes {
           }
         }),
         shape: MaterialStateProperty.resolveWith(
-          (states) =>  RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+          (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
         ),
         foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         overlayColor: MaterialStateProperty.resolveWith((states) {
@@ -203,7 +203,7 @@ class UiKitThemes {
       unselectedLabelColor: Colors.white,
       splashFactory: NoSplash.splashFactory,
       overlayColor: MaterialStateProperty.all(Colors.transparent),
-      indicator:  BoxDecoration(
+      indicator: BoxDecoration(
         borderRadius: BorderRadiusFoundation.max,
         color: Colors.white,
       ),
