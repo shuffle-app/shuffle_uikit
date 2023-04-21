@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
-import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 
 class $AssetsFontsGen {
   const $AssetsFontsGen();
@@ -40,12 +40,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
-  /// File path: assets/images/png/calendar.png
-  AssetGenImage get calendar => const AssetGenImage('assets/images/png/calendar.png');
-
-  /// File path: assets/images/png/coins.png
-  AssetGenImage get coins => const AssetGenImage('assets/images/png/coins.png');
-
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
@@ -62,17 +56,11 @@ class $AssetsImagesPngGen {
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [atmosphere, eventAvatar, profileAvatar, profilePost1, profileStory1];
+  List<AssetGenImage> get values => [atmosphere, eventAvatar, place, profileAvatar, profilePost1, profileStory1];
 }
 
 class $AssetsImagesSvgGen {
   const $AssetsImagesSvgGen();
-
-  /// File path: assets/images/svg/Events.svg
-  SvgGenImage get events => const SvgGenImage('assets/images/svg/Events.svg');
-
-  /// File path: assets/images/svg/calendar.svg
-  SvgGenImage get calendar => const SvgGenImage('assets/images/svg/calendar.svg');
 
   /// File path: assets/images/svg/chevron_left.svg
   SvgGenImage get chevronLeft => const SvgGenImage('assets/images/svg/chevron_left.svg');
@@ -83,14 +71,20 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/cocktail.svg
   SvgGenImage get cocktail => const SvgGenImage('assets/images/svg/cocktail.svg');
 
-  /// File path: assets/images/svg/coins.svg
-  SvgGenImage get coins => const SvgGenImage('assets/images/svg/coins.svg');
+  /// File path: assets/images/svg/influencer_account_mark.svg
+  SvgGenImage get influencerAccountMark => const SvgGenImage('assets/images/svg/influencer_account_mark.svg');
 
   /// File path: assets/images/svg/like.svg
   SvgGenImage get like => const SvgGenImage('assets/images/svg/like.svg');
 
   /// File path: assets/images/svg/play_arrow.svg
   SvgGenImage get playArrow => const SvgGenImage('assets/images/svg/play_arrow.svg');
+
+  /// File path: assets/images/svg/premium_account_mark.svg
+  SvgGenImage get premiumAccountMark => const SvgGenImage('assets/images/svg/premium_account_mark.svg');
+
+  /// File path: assets/images/svg/pro_account_mark.svg
+  SvgGenImage get proAccountMark => const SvgGenImage('assets/images/svg/pro_account_mark.svg');
 
   /// File path: assets/images/svg/star.svg
   SvgGenImage get star => const SvgGenImage('assets/images/svg/star.svg');
@@ -102,7 +96,19 @@ class $AssetsImagesSvgGen {
   SvgGenImage get whiteStar => const SvgGenImage('assets/images/svg/white_star.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [chevronLeft, chevronRight, cocktail, like, star, tripleArrow, whiteStar];
+  List<SvgGenImage> get values => [
+        chevronLeft,
+        chevronRight,
+        cocktail,
+        influencerAccountMark,
+        like,
+        playArrow,
+        premiumAccountMark,
+        proAccountMark,
+        star,
+        tripleArrow,
+        whiteStar
+      ];
 }
 
 class Assets {

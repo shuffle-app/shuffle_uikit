@@ -6,3 +6,4 @@ export 'profile/profile_attitude_tab.dart';
 export 'profile/profile_highlights_card.dart';
 export 'profile/profile_info.dart';
 export 'profile/profile_interests.dart';
+export 'user/user_tile.dart';

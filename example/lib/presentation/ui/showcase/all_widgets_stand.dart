@@ -81,7 +81,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       child: PointBalancePlaceActionCard(
                         value: '2 650',
                         icon: GraphicsFoundation.instance.svgPicture(
-                          asset: Assets.images.svg.events,
+                          asset: Assets.images.svg.star,
                         ),
                         action: () {},
                       ),
@@ -146,6 +146,38 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ),
                 ],
                 spacing: 16,
+              ),
+              SpacingFoundation.verticalSpace16,
+              OrdinaryUserTile(
+                info: UserTileInfo(
+                  name: 'Frankie Hansen',
+                  username: '@fr4nk1eh4',
+                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              PremiumUserTile(
+                info: UserTileInfo(
+                  name: 'Frankie Hansen',
+                  username: '@fr4nk1eh4',
+                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              ProUserTile(
+                info: UserTileInfo(
+                  name: 'Frankie Hansen',
+                  username: '@fr4nk1eh4',
+                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              InfluencerlUserTile(
+                info: UserTileInfo(
+                  name: 'Frankie Hansen',
+                  username: '@fr4nk1eh4',
+                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                ),
               ),
             ],
           ),
