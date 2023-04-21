@@ -9,20 +9,20 @@ abstract class PlaceMediaWidget extends StatelessWidget {
   }) : super(key: key);
 
   factory PlaceMediaWidget.image({
-    required PlaceMedia media,
+    required UiKitPlaceMedia media,
   }) {
     return _PlaceMediaImageWidget(media: media);
   }
 
   factory PlaceMediaWidget.video({
-    required PlaceMedia media,
+    required UiKitPlaceMedia media,
   }) {
     return _PlaceMediaVideoWidget(media: media);
   }
 }
 
 class _PlaceMediaImageWidget extends PlaceMediaWidget {
-  final PlaceMedia media;
+  final UiKitPlaceMedia media;
 
   const _PlaceMediaImageWidget({
     Key? key,
@@ -40,7 +40,7 @@ class _PlaceMediaImageWidget extends PlaceMediaWidget {
 }
 
 class _PlaceMediaVideoWidget extends PlaceMediaWidget {
-  final PlaceMedia media;
+  final UiKitPlaceMedia media;
 
   const _PlaceMediaVideoWidget({
     Key? key,
