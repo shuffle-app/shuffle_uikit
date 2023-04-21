@@ -50,6 +50,7 @@ class _PlaceMediaVideoWidget extends PlaceMediaWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      fit: StackFit.passthrough,
       children: [
         Image.asset(
           media.link,

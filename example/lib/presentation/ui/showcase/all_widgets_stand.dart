@@ -63,6 +63,33 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               if (MediaQuery.of(context).size.width >= 720) const ButtonsGrid(),
               if (MediaQuery.of(context).size.width < 720) const ButtonsList(),
               SpacingFoundation.verticalSpace16,
+              IntrinsicHeight(
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: UpcomingEventPlaceActionCard(
+                        value: 'in 2 days',
+                        icon: GraphicsFoundation.instance.svgPicture(
+                          asset: Assets.images.svg.star,
+                        ),
+                        action: () {},
+                      ),
+                    ),
+                    SpacingFoundation.horizontalSpace8,
+                    Expanded(
+                      child: PointBalancePlaceActionCard(
+                        value: '2 650',
+                        icon: GraphicsFoundation.instance.svgPicture(
+                          asset: Assets.images.svg.events,
+                        ),
+                        action: () {},
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               PlaceInfo(
                 place: Place(
                   media: [

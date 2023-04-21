@@ -34,6 +34,20 @@ class UiKitThemes {
           ),
           foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         ),
+        smallOrdinaryButtonStyle: ButtonStyle(
+          fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(28)),
+          backgroundColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.disabled)) {
+              return ColorsFoundation.disabledColor;
+            } else {
+              return Colors.white;
+            }
+          }),
+          shape: MaterialStateProperty.resolveWith(
+            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+          ),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+        ),
         iconInputTheme: InputDecorationTheme(
           filled: true,
           fillColor: ColorsFoundation.solidSurface,
@@ -94,7 +108,7 @@ class UiKitThemes {
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadiusFoundation.all24,
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: ColorsFoundation.error,
               width: 2,
             ),
@@ -146,7 +160,7 @@ class UiKitThemes {
         bottomSheetTheme: UiKitBottomSheetThemeData(
           backgroundColor: Colors.black,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadiusFoundation.onlyTop24,
+            borderRadius: BorderRadiusFoundation.onlyTop40,
           ),
           sheetSliderColor: ColorsFoundation.darkNeutral,
         ),
