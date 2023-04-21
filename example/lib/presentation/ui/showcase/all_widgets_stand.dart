@@ -125,6 +125,28 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ],
                 ),
               ),
+              SpacingFoundation.verticalSpace16,
+              const PlaceDescriptionGrid(
+                descriptionItems: [
+                  PlaceDescriptionItem(
+                    title: 'Address',
+                    description: 'Burj Khalifa 122nd Floor',
+                  ),
+                  PlaceDescriptionItem(
+                    title: 'Open now',
+                    description: '9:30 am - 10:30 pm',
+                  ),
+                  PlaceDescriptionItem(
+                    title: 'Website',
+                    description: 'atmosphere.com',
+                  ),
+                  PlaceDescriptionItem(
+                    title: 'Phone',
+                    description: '+971123596943',
+                  ),
+                ],
+                spacing: 16,
+              ),
             ],
           ),
         ).paddingAll(EdgeInsetsFoundation.all16),
