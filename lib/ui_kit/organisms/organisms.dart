@@ -2,6 +2,7 @@
 
 export 'place/place_info.dart';
 export 'place/place_media_widget.dart';
+export 'place/place_action_card.dart';
 export 'profile/profile_attitude_tabs.dart';
 export 'profile/profile_card.dart';
 export 'profile/profile_highlights.dart';

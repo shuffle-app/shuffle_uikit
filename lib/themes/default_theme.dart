@@ -34,7 +34,21 @@ class UiKitThemes {
           ),
           foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         ),
-        iconInputTheme: InputDecorationTheme(
+        smallOrdinaryButtonStyle: ButtonStyle(
+          fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(28)),
+          backgroundColor: MaterialStateProperty.resolveWith((states) {
+            if (states.contains(MaterialState.disabled)) {
+              return ColorsFoundation.disabledColor;
+            } else {
+              return Colors.white;
+            }
+          }),
+          shape: MaterialStateProperty.resolveWith(
+            (states) => const RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+          ),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+        ),
+        iconInputTheme: const InputDecorationTheme(
           filled: true,
           fillColor: ColorsFoundation.solidSurface,
           border: OutlineInputBorder(
@@ -43,7 +57,7 @@ class UiKitThemes {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadiusFoundation.all24,
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: Colors.white,
               width: 2,
             ),
@@ -54,20 +68,20 @@ class UiKitThemes {
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadiusFoundation.all24,
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: ColorsFoundation.error,
               width: 2,
             ),
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadiusFoundation.all24,
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: ColorsFoundation.error,
               width: 2,
             ),
           ),
         ),
-        noIconInputTheme: InputDecorationTheme(
+        noIconInputTheme: const InputDecorationTheme(
           filled: true,
           fillColor: ColorsFoundation.solidSurface,
           border: OutlineInputBorder(
@@ -76,7 +90,7 @@ class UiKitThemes {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadiusFoundation.all24,
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: Colors.white,
               width: 2,
             ),
@@ -87,7 +101,7 @@ class UiKitThemes {
           ),
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadiusFoundation.all24,
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
               color: ColorsFoundation.error,
               width: 2,
             ),
@@ -115,7 +129,7 @@ class UiKitThemes {
           backgroundColor: Colors.white.withOpacity(0.07),
           centerTitle: true,
         ),
-        uiKitTabBarTheme: TabBarTheme(
+        uiKitTabBarTheme: const TabBarTheme(
           indicatorSize: TabBarIndicatorSize.tab,
           dividerColor: Colors.transparent,
           labelColor: Colors.black,
@@ -126,14 +140,14 @@ class UiKitThemes {
           ),
         ),
         cardColor: ColorsFoundation.solidSurface,
-        buttonTheme: ButtonThemeData(
+        buttonTheme: const ButtonThemeData(
           buttonColor: Colors.white,
           textTheme: ButtonTextTheme.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusFoundation.max,
           ),
         ),
-        cardTheme: CardTheme(
+        cardTheme: const CardTheme(
           shadowColor: Colors.transparent,
           surfaceTintColor: ColorsFoundation.solidSurface,
           elevation: 0,
@@ -143,10 +157,10 @@ class UiKitThemes {
         ),
         boldTextTheme: UiKitBoldTextTheme(),
         regularTextTheme: UiKitRegularTextTheme(),
-        bottomSheetTheme: UiKitBottomSheetThemeData(
+        bottomSheetTheme: const UiKitBottomSheetThemeData(
           backgroundColor: Colors.black,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadiusFoundation.onlyTop24,
+            borderRadius: BorderRadiusFoundation.onlyTop40,
           ),
           sheetSliderColor: ColorsFoundation.darkNeutral,
         ),
@@ -185,7 +199,7 @@ class UiKitThemes {
           }
         }),
         shape: MaterialStateProperty.resolveWith(
-          (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+          (states) => const RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
         ),
         foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         overlayColor: MaterialStateProperty.resolveWith((states) {
@@ -203,7 +217,7 @@ class UiKitThemes {
       unselectedLabelColor: Colors.white,
       splashFactory: NoSplash.splashFactory,
       overlayColor: MaterialStateProperty.all(Colors.transparent),
-      indicator: BoxDecoration(
+      indicator: const BoxDecoration(
         borderRadius: BorderRadiusFoundation.max,
         color: Colors.white,
       ),
