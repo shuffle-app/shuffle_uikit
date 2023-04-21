@@ -1,12 +1,12 @@
-enum PlaceMediaType { image, video }
+enum UiKitPlaceMediaType { image, video }
 
-class Place {
-  final List<PlaceMedia> media;
+class UiKitPlace {
+  final List<UiKitPlaceMedia> media;
   final String description;
   final double rating;
-  final List<PlaceTag> tags;
+  final List<UiKitPlaceTag> tags;
 
-  Place({
+  UiKitPlace({
     required this.media,
     required this.description,
     required this.rating,
@@ -14,22 +14,22 @@ class Place {
   });
 }
 
-class PlaceMedia {
+class UiKitPlaceMedia {
   final String link;
-  final PlaceMediaType type;
+  final UiKitPlaceMediaType type;
 
-  PlaceMedia({
+  UiKitPlaceMedia({
     required this.link,
     required this.type,
   });
 }
 
-class PlaceTag {
+class UiKitPlaceTag {
   final String title;
   final String iconPath;
   final bool matching;
 
-  PlaceTag({
+  UiKitPlaceTag({
     required this.title,
     required this.iconPath,
     required this.matching,
