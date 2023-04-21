@@ -7,6 +7,7 @@ class EdgeInsetsFoundation {
 
   static double get all4 => 4.sp;
   static double get all8 => 8.sp;
+  static double get all12 => 12.sp;
   static double get all16 => 16.sp;
 
   static double get horizontal16 => SpacingFoundation.horizontalSpacing16;

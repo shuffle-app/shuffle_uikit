@@ -19,6 +19,7 @@ class BlurredPlaceVideoPlayButton extends StatelessWidget {
     return Container(
       width: 32.w,
       height: 24.h,
+      clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.15),
         borderRadius: BorderRadiusFoundation.all40,
