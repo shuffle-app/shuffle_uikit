@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ButtonsList extends StatelessWidget {
@@ -46,6 +47,33 @@ class ButtonsList extends StatelessWidget {
             text: 'GET CODE',
             isTextButton: true,
             onPressed: () {},
+          ),
+        ),
+        SpacingFoundation.verticalSpace16,
+        Center(
+          child: context.button(
+            text: 'GET CODE',
+            small: true,
+            onPressed: () {},
+          ),
+        ),
+        SpacingFoundation.verticalSpace16,
+        context.button(
+          onPressed: () {},
+          text: 'GET CODE',
+          small: true,
+          dialogButton: true,
+          dialogButtonType: DialogButtonType.buttonWhite,
+        ),
+        SpacingFoundation.verticalSpace16,
+        ColoredBox(
+          color: Colors.white,
+          child: context.button(
+            onPressed: () {},
+            text: 'GET CODE',
+            small: true,
+            dialogButton: true,
+            dialogButtonType: DialogButtonType.buttonBlack,
           ),
         ),
       ],
