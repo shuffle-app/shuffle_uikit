@@ -20,6 +20,8 @@ abstract class WidgetsAbstractFactory {
     Color? color,
     bool gradient = false,
     bool isTextButton = false,
+    bool? dialogButton,
+    DialogButtonType? dialogButtonType,
   });
   // InputFieldFactory createInputField({
   //   required TextEditingController controller,
@@ -33,10 +35,6 @@ abstract class WidgetsAbstractFactory {
 abstract class ButtonFactory {
   Widget build(BuildContext context);
 }
-// todo обсудить как сделать фабрику для инпутов, где есть стейт
-// abstract class InputFieldFactory {
-//   Widget build(BuildContext context);
-// }
 
 class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   const WidgetsFactory({required super.child, super.key});
@@ -49,9 +47,25 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Color? color,
     bool gradient = false,
     bool isTextButton = false,
+    bool? dialogButton,
+    DialogButtonType? dialogButtonType,
   }) {
     final iconedButton = icon != null;
-    if (gradient && !iconedButton) {
+    if (dialogButton ?? false) {
+      if (dialogButtonType == DialogButtonType.buttonBlack) {
+        return DialogButton.black(
+          text: text,
+          onPressed: onPressed,
+          small: true,
+        );
+      } else {
+        return DialogButton.white(
+          text: text,
+          onPressed: onPressed,
+          small: true,
+        );
+      }
+    } else if (gradient && !iconedButton) {
       return GradientButton(
         text: text,
         onPressed: onPressed,
@@ -99,8 +113,25 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Color? color,
     bool gradient = false,
     bool isTextButton = false,
+    bool? dialogButton,
+    DialogButtonType? dialogButtonType,
   }) {
     final iconedButton = icon != null;
+    if (dialogButton ?? false) {
+      if (dialogButtonType == DialogButtonType.buttonBlack) {
+        return DialogButton.black(
+          text: text,
+          onPressed: onPressed,
+          small: true,
+        );
+      } else {
+        return DialogButton.white(
+          text: text,
+          onPressed: onPressed,
+          small: true,
+        );
+      }
+    }
     return SmallGeneralPurposeButton(
       text: text,
       onPressed: onPressed,
