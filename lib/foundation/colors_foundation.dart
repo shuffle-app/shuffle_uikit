@@ -5,15 +5,18 @@ import 'package:shuffle_uikit/tokens/tokens.dart';
 class ColorsFoundation {
   ColorsFoundation._();
 
-  static const Color surface = UiKitColors.surface;
-  static const Color darkNeutral = UiKitColors.darkNeutral;
-  static const Color disabledColor = UiKitColors.darkNeutral;
-  static const Color solidSurface = UiKitColors.solidSurface;
-  static const Color solidGreyText = UiKitColors.solidGreyText;
-  static const Color dividerColor = UiKitColors.dividerColor;
-  static const Color inputLabelGrey = UiKitColors.inputLabelGrey;
+  static const Color surface = UiKitColors.surface3;
+  static const Color darkNeutral500 = UiKitColors.darkNeutral500;
+  static const Color darkNeutral300 = UiKitColors.darkNeutral300;
+  static const Color solidSurface = UiKitColors.surface1;
+  static const Color darkNeutral900 = UiKitColors.darkNeutral900;
+  static const Color surface2 = UiKitColors.surface2;
+  static const Color darkNeutral100 = UiKitColors.darkNeutral100;
   static const Color yellow = UiKitColors.yellow;
   static const Color orange = UiKitColors.orange;
   static const Color pink = UiKitColors.pink;
   static const Color error = UiKitColors.error;
+  static const Color warning = UiKitColors.warning;
+  static const Color success = UiKitColors.success;
+  static const Color info = UiKitColors.info;
 }

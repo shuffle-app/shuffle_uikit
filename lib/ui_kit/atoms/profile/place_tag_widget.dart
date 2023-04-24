@@ -23,7 +23,7 @@ class PlaceTagWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyle = context.uiKitTheme?.boldTextTheme.caption2.copyWith(
-      color: textColor ?? ColorsFoundation.solidGreyText,
+      color: textColor ?? ColorsFoundation.darkNeutral900,
     );
     return Row(
       mainAxisSize: MainAxisSize.min,

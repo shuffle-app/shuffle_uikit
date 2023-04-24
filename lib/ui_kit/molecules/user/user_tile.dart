@@ -47,7 +47,7 @@ abstract class _UserTile extends StatelessWidget {
               ),
               Text(
                 info.username,
-                style: textTheme?.caption1Medium.copyWith(color: ColorsFoundation.solidGreyText),
+                style: textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
               ),
             ],
           ),

@@ -16,7 +16,7 @@ class ProfileHighlightCard extends StatelessWidget {
     final textTheme = context.uiKitTheme?.boldTextTheme;
     TextStyle? valueStyle = textTheme?.title2;
     TextStyle? titleStyle = textTheme?.body;
-    titleStyle = titleStyle?.copyWith(color: ColorsFoundation.inputLabelGrey);
+    titleStyle = titleStyle?.copyWith(color: ColorsFoundation.darkNeutral100);
     return CardWrapper(
       height: 106,
       child: Column(

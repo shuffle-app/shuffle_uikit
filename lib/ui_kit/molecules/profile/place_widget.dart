@@ -49,7 +49,7 @@ class PlaceWidget extends StatelessWidget {
                     Text(
                       place.createdAt,
                       style: theme?.boldTextTheme.caption1Medium.copyWith(
-                        color: ColorsFoundation.solidGreyText,
+                        color: ColorsFoundation.darkNeutral900,
                       ),
                     ),
                     SpacingFoundation.verticalSpace8,
@@ -98,7 +98,7 @@ class PlaceWidget extends StatelessWidget {
                 Text(
                   'Helpful',
                   style: theme?.boldTextTheme.caption1.copyWith(
-                    color: ColorsFoundation.solidGreyText,
+                    color: ColorsFoundation.darkNeutral900,
                   ),
                 )
               ],
