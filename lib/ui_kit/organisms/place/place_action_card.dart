@@ -17,7 +17,7 @@ class PlaceActionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = context.uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: ColorsFoundation.solidGreyText);
+    final titleStyle = context.uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900);
     final valueStyle = context.uiKitTheme?.boldTextTheme.body.copyWith(color: Colors.white);
     return CardWrapper(
       child: Stack(

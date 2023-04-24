@@ -17,12 +17,13 @@ class GradientButtonWithIcon extends StatelessWidget implements ButtonFactory {
   Widget build(BuildContext context) {
     return Container(
       height: 48,
-      decoration:  BoxDecoration(
+      decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
         gradient: GradientFoundation.buttonGradient,
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             text,

@@ -22,7 +22,7 @@ class ProfilePostsPlaces extends StatelessWidget {
                 const Divider(
                   height: 32,
                   thickness: 1,
-                  color: ColorsFoundation.dividerColor,
+                  color: ColorsFoundation.surface2,
                 ),
               PlaceWidget(place: place),
             ],

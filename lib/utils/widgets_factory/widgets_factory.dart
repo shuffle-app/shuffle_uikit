@@ -11,6 +11,8 @@ abstract class WidgetsAbstractFactory {
     Color? color,
     bool gradient = false,
     bool isTextButton = false,
+    bool? onlyIcon,
+    bool? outlined,
   });
 
   ButtonFactory createSmallButton({
@@ -22,6 +24,8 @@ abstract class WidgetsAbstractFactory {
     bool isTextButton = false,
     bool? dialogButton,
     DialogButtonType? dialogButtonType,
+    bool? onlyIcon,
+    bool? outlined,
   });
   // InputFieldFactory createInputField({
   //   required TextEditingController controller,
@@ -49,8 +53,11 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool isTextButton = false,
     bool? dialogButton,
     DialogButtonType? dialogButtonType,
+    bool? onlyIcon,
+    bool? outlined,
   }) {
-    final iconedButton = icon != null;
+    final hasIcon = icon != null;
+    final onlyIconButton = (onlyIcon ?? false) && hasIcon;
     if (dialogButton ?? false) {
       if (dialogButtonType == DialogButtonType.buttonBlack) {
         return DialogButton.black(
@@ -65,18 +72,18 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           small: true,
         );
       }
-    } else if (gradient && !iconedButton) {
+    } else if (gradient && !hasIcon) {
       return GradientButton(
         text: text,
         onPressed: onPressed,
       );
-    } else if (iconedButton && gradient) {
+    } else if (hasIcon && gradient) {
       return GradientButtonWithIcon(
         text: text,
         icon: icon,
         onPressed: onPressed,
       );
-    } else if (iconedButton && !gradient) {
+    } else if (hasIcon && !gradient) {
       return GeneralPurposeButtonWithIcon(
         text: text,
         onPressed: onPressed,
@@ -85,6 +92,16 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     } else if (isTextButton) {
       return OrdinaryTextButton(
         text: text,
+        onPressed: onPressed,
+      );
+    } else if (onlyIconButton && (outlined ?? false)) {
+      return OutlinedIconButton(
+        icon: icon,
+        onPressed: onPressed,
+      );
+    } else if (onlyIconButton) {
+      return FilledIconButton(
+        icon: icon,
         onPressed: onPressed,
       );
     } else {
@@ -115,8 +132,10 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool isTextButton = false,
     bool? dialogButton,
     DialogButtonType? dialogButtonType,
+    bool? onlyIcon,
+    bool? outlined,
   }) {
-    final iconedButton = icon != null;
+    final hasIcon = icon != null;
     if (dialogButton ?? false) {
       if (dialogButtonType == DialogButtonType.buttonBlack) {
         return DialogButton.black(

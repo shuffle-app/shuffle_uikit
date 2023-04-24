@@ -13,12 +13,14 @@ class GraphicsFoundation {
     BoxFit? fit,
     double? height,
     double? width,
+    Color? color,
   }) =>
       asset.svg(
         package: 'shuffle_uikit',
         fit: fit ?? BoxFit.none,
         height: height,
         width: width,
+        color: color,
       );
 
   Image rasterPicture({

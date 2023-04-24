@@ -70,7 +70,7 @@ class _WhiteDialogButton extends DialogButton {
         }),
         backgroundColor: MaterialStateProperty.resolveWith((states) {
           if (states.contains(MaterialState.disabled)) {
-            return ColorsFoundation.disabledColor;
+            return ColorsFoundation.darkNeutral300;
           } else {
             return Colors.white;
           }
@@ -113,7 +113,7 @@ class _BlackDialogButton extends DialogButton {
         }),
         backgroundColor: MaterialStateProperty.resolveWith((states) {
           if (states.contains(MaterialState.disabled)) {
-            return ColorsFoundation.disabledColor;
+            return ColorsFoundation.darkNeutral300;
           } else {
             return Colors.black;
           }

@@ -20,11 +20,12 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
         gradient: enabled ? GradientFoundation.buttonGradient : null,
-        color: enabled ? null : ColorsFoundation.disabledColor,
+        color: enabled ? null : ColorsFoundation.darkNeutral300,
       ),
       child: Text(
         text.toUpperCase(),
         style: textStyle,
+        textAlign: TextAlign.center,
       ).paddingAll(EdgeInsetsFoundation.vertical12),
     );
   }

@@ -43,6 +43,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
+  /// File path: assets/images/png/mock_user_avatar.png
+  AssetGenImage get mockUserAvatar => const AssetGenImage('assets/images/png/mock_user_avatar.png');
+
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
 
@@ -56,7 +59,8 @@ class $AssetsImagesPngGen {
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [atmosphere, eventAvatar, place, profileAvatar, profilePost1, profileStory1];
+  List<AssetGenImage> get values =>
+      [atmosphere, eventAvatar, mockUserAvatar, place, profileAvatar, profilePost1, profileStory1];
 }
 
 class $AssetsImagesSvgGen {
@@ -86,6 +90,12 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/pro_account_mark.svg
   SvgGenImage get proAccountMark => const SvgGenImage('assets/images/svg/pro_account_mark.svg');
 
+  /// File path: assets/images/svg/route.svg
+  SvgGenImage get route => const SvgGenImage('assets/images/svg/route.svg');
+
+  /// File path: assets/images/svg/search-people.svg
+  SvgGenImage get searchPeople => const SvgGenImage('assets/images/svg/search-people.svg');
+
   /// File path: assets/images/svg/star.svg
   SvgGenImage get star => const SvgGenImage('assets/images/svg/star.svg');
 
@@ -105,6 +115,8 @@ class $AssetsImagesSvgGen {
         playArrow,
         premiumAccountMark,
         proAccountMark,
+        route,
+        searchPeople,
         star,
         tripleArrow,
         whiteStar
