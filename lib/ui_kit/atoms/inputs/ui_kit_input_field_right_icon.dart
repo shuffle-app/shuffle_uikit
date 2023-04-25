@@ -48,12 +48,12 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
     final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
-      color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.solidGreyText.withOpacity(0.16),
+      color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
     return Theme(
       data: Theme.of(context).copyWith(
         inputDecorationTheme: inputTheme,
-        disabledColor: ColorsFoundation.darkNeutral.withOpacity(0.16),
+        disabledColor: ColorsFoundation.darkNeutral500.withOpacity(0.16),
       ),
       child: TextFormField(
         key: _key,

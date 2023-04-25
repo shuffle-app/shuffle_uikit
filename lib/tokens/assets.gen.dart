@@ -90,6 +90,12 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/pro_account_mark.svg
   SvgGenImage get proAccountMark => const SvgGenImage('assets/images/svg/pro_account_mark.svg');
 
+  /// File path: assets/images/svg/route.svg
+  SvgGenImage get route => const SvgGenImage('assets/images/svg/route.svg');
+
+  /// File path: assets/images/svg/search-people.svg
+  SvgGenImage get searchPeople => const SvgGenImage('assets/images/svg/search-people.svg');
+
   /// File path: assets/images/svg/star.svg
   SvgGenImage get star => const SvgGenImage('assets/images/svg/star.svg');
 
@@ -109,6 +115,8 @@ class $AssetsImagesSvgGen {
         playArrow,
         premiumAccountMark,
         proAccountMark,
+        route,
+        searchPeople,
         star,
         tripleArrow,
         whiteStar
