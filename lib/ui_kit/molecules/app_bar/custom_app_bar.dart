@@ -1,18 +1,18 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/app_bar/app_bar_back_button.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/app_bar/app_bar_title.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class CustomAppBar extends PreferredSize {
   final String title;
   final bool centerTitle;
+  final bool? autoImplyLeading;
 
   const CustomAppBar({
     super.key,
     required this.title,
     this.centerTitle = false,
+    this.autoImplyLeading,
     super.preferredSize = const Size(double.infinity, 84),
   }) : super(child: const SizedBox());
 
@@ -36,10 +36,11 @@ class CustomAppBar extends PreferredSize {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 const AppBarBackButton(),
-                AppBarTitle(
-                  title: title,
-                  centerTitle: centerTitle,
-                ),
+                if (autoImplyLeading ?? context.canPop())
+                  AppBarTitle(
+                    title: title,
+                    centerTitle: centerTitle,
+                  ),
               ],
             ),
           ),

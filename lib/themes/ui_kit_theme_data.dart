@@ -15,6 +15,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final CardTheme cardTheme;
   final UiKitChipThemeData chipTheme;
   final ButtonStyle ordinaryButtonStyle;
+  final ButtonStyle smallOrdinaryButtonStyle;
   final BottomSheetThemeData bottomSheetTheme;
 
   ButtonStyle get textButtonStyle => ButtonStyle(
@@ -40,6 +41,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     required this.buttonTheme,
     required this.cardTheme,
     required this.bottomSheetTheme,
+    required this.smallOrdinaryButtonStyle,
   });
 
   @override
@@ -59,6 +61,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     ButtonStyle? ordinaryButtonStyle,
     BottomSheetThemeData? bottomSheetTheme,
     ButtonStyle? textButtonStyle,
+    ButtonStyle? smallOrdinaryButtonStyle,
   }) {
     return UiKitThemeData(
       customColor: customColor ?? this.customColor,
@@ -75,6 +78,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
       chipTheme: chipTheme ?? this.chipTheme,
       ordinaryButtonStyle: ordinaryButtonStyle ?? this.ordinaryButtonStyle,
       bottomSheetTheme: bottomSheetTheme ?? this.bottomSheetTheme,
+      smallOrdinaryButtonStyle: smallOrdinaryButtonStyle ?? this.smallOrdinaryButtonStyle,
     );
   }
 
@@ -98,6 +102,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
       chipTheme: chipTheme,
       ordinaryButtonStyle: ordinaryButtonStyle,
       bottomSheetTheme: bottomSheetTheme,
+      smallOrdinaryButtonStyle: smallOrdinaryButtonStyle,
     );
   }
 }

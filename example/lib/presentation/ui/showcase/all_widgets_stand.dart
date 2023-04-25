@@ -63,14 +63,41 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               if (MediaQuery.of(context).size.width >= 720) const ButtonsGrid(),
               if (MediaQuery.of(context).size.width < 720) const ButtonsList(),
               SpacingFoundation.verticalSpace16,
+              IntrinsicHeight(
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: UpcomingEventPlaceActionCard(
+                        value: 'in 2 days',
+                        icon: GraphicsFoundation.instance.svgPicture(
+                          asset: Assets.images.svg.star,
+                        ),
+                        action: () {},
+                      ),
+                    ),
+                    SpacingFoundation.horizontalSpace8,
+                    Expanded(
+                      child: PointBalancePlaceActionCard(
+                        value: '2 650',
+                        icon: GraphicsFoundation.instance.svgPicture(
+                          asset: Assets.images.svg.star,
+                        ),
+                        action: () {},
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               PlaceInfo(
-                place: Place(
+                place: UiKitPlace(
                   media: [
-                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.video),
-                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.image),
-                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.image),
-                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.image),
-                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.image),
+                    UiKitPlaceMedia(link: 'assets/images/png/place.png', type: UiKitPlaceMediaType.video),
+                    UiKitPlaceMedia(link: 'assets/images/png/place.png', type: UiKitPlaceMediaType.image),
+                    UiKitPlaceMedia(link: 'assets/images/png/place.png', type: UiKitPlaceMediaType.image),
+                    UiKitPlaceMedia(link: 'assets/images/png/place.png', type: UiKitPlaceMediaType.image),
+                    UiKitPlaceMedia(link: 'assets/images/png/place.png', type: UiKitPlaceMediaType.image),
                   ],
                   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
                       'Sed euismod, nunc ut tincidunt lacinia, nisl nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
@@ -79,23 +106,77 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       'Nulla facilisi',
                   rating: 4.8,
                   tags: [
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
                   ],
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              const PlaceDescriptionGrid(
+                descriptionItems: [
+                  PlaceDescriptionItem(
+                    title: 'Address',
+                    description: 'Burj Khalifa 122nd Floor',
+                  ),
+                  PlaceDescriptionItem(
+                    title: 'Open now',
+                    description: '9:30 am - 10:30 pm',
+                  ),
+                  PlaceDescriptionItem(
+                    title: 'Website',
+                    description: 'atmosphere.com',
+                  ),
+                  PlaceDescriptionItem(
+                    title: 'Phone',
+                    description: '+971123596943',
+                  ),
+                ],
+                spacing: 16,
+              ),
+              SpacingFoundation.verticalSpace16,
+              OrdinaryUserTile(
+                info: UserTileInfo(
+                  name: 'Frankie Hansen',
+                  username: '@fr4nk1eh4',
+                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              PremiumUserTile(
+                info: UserTileInfo(
+                  name: 'Frankie Hansen',
+                  username: '@fr4nk1eh4',
+                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              ProUserTile(
+                info: UserTileInfo(
+                  name: 'Frankie Hansen',
+                  username: '@fr4nk1eh4',
+                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              InfluencerlUserTile(
+                info: UserTileInfo(
+                  name: 'Frankie Hansen',
+                  username: '@fr4nk1eh4',
+                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
                 ),
               ),
             ],

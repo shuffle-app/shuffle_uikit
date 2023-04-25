@@ -1,5 +1,6 @@
 /// This file exports all the organisms in the UI Kit.
 
+export 'place/place_action_card.dart';
 export 'place/place_info.dart';
 export 'place/place_media_widget.dart';
 export 'profile/profile_attitude_tabs.dart';
