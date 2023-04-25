@@ -90,6 +90,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
+              TitleWithAvatar(
+                title: 'At.mosphere',
+                avatarUrl: Assets.images.png.atmosphere.path,
+              ),
+              SpacingFoundation.verticalSpace16,
               PlaceInfo(
                 place: UiKitPlace(
                   media: [
