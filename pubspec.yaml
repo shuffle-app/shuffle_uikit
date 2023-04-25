@@ -62,5 +62,5 @@ flutter_gen:
       enabled: false
     output:
       style: dot-delimiter
-      package_parameter_enabled: false
+      package_parameter_enabled: true
       synthetic-package: false
