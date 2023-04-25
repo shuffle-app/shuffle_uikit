@@ -16,6 +16,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final TextEditingController _controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  /// this key is used to scroll to the element the developer is working on
+  final GlobalKey _currentElementKey = GlobalKey();
+
   @override
   void dispose() {
     _controller.dispose();
@@ -29,6 +32,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       Future.delayed(
         const Duration(milliseconds: 1),
         () {
+          Scrollable.ensureVisible(
+            _currentElementKey.currentContext!,
+            duration: const Duration(milliseconds: 250),
+          );
           _formKey.currentState?.validate();
           setState(() {});
         },
@@ -177,6 +184,30 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   name: 'Frankie Hansen',
                   username: '@fr4nk1eh4',
                   avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              SlidablePlaceCard(
+                key: _currentElementKey,
+                slidablePlaceCardData: SlidablePlaceCardData(
+                  photos: [
+                    'assets/images/png/place.png',
+                    'assets/images/png/place.png',
+                    'assets/images/png/place.png',
+                    'assets/images/png/place.png',
+                    'assets/images/png/place.png',
+                  ],
+                  title: 'Virgins on the beach',
+                  placeTags: [
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
+                  ],
                 ),
               ),
             ],
