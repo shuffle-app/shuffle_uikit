@@ -3,13 +3,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/common/circular_avatar.dart';
 
 class TitleWithAvatar extends StatelessWidget {
-  final String title;
-  final String avatarUrl;
+  final String? title;
+  final String? avatarUrl;
 
   const TitleWithAvatar({
     Key? key,
-    required this.title,
-    required this.avatarUrl,
+    this.title,
+    this.avatarUrl,
   }) : super(key: key);
 
   @override
@@ -18,14 +18,16 @@ class TitleWithAvatar extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.max,
       children: [
-        CircularAvatar(
-          avatarUrl: avatarUrl,
-        ),
-        SpacingFoundation.horizontalSpace12,
-        Text(
-          title,
-          style: textStyle,
-        ),
+        if (avatarUrl != null)
+          CircularAvatar(
+            avatarUrl: avatarUrl ?? '',
+          ),
+        if (avatarUrl != null) SpacingFoundation.horizontalSpace12,
+        if (title != null)
+          Text(
+            title ?? '',
+            style: textStyle,
+          ),
       ],
     );
   }

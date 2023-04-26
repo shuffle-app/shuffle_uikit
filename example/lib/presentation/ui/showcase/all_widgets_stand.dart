@@ -132,6 +132,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               PlaceInfo(
                 place: UiKitPlace(
+                  title: '',
+                  logo: '',
                   media: [
                     UiKitPlaceMedia(link: Assets.images.png.place.path, type: UiKitPlaceMediaType.video),
                     UiKitPlaceMedia(link: Assets.images.png.place.path, type: UiKitPlaceMediaType.image),

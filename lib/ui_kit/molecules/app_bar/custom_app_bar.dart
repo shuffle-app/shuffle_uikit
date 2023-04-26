@@ -35,8 +35,8 @@ class CustomAppBar extends PreferredSize {
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                const AppBarBackButton(),
                 if (autoImplyLeading ?? context.canPop())
+                const AppBarBackButton(),
                   AppBarTitle(
                     title: title,
                     centerTitle: centerTitle,
