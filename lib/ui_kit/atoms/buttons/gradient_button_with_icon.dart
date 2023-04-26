@@ -15,24 +15,30 @@ class GradientButtonWithIcon extends StatelessWidget implements ButtonFactory {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 48,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadiusFoundation.all24,
-        gradient: GradientFoundation.buttonGradient,
+    final enabled = onPressed != null;
+    return GestureDetector(
+      onTap: enabled ? onPressed : null,
+      child: Container(
+        height: 48,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadiusFoundation.all24,
+          gradient: enabled ? GradientFoundation.buttonGradient : null,
+          color: enabled ? null : ColorsFoundation.darkNeutral300,
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              text,
+              style: context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black),
+            ),
+            SpacingFoundation.horizontalSpace8,
+            icon,
+          ],
+        ),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            text,
-            style: context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black),
-          ),
-          SpacingFoundation.horizontalSpace8,
-          icon,
-        ],
-      ).paddingSymmetric(vertical: EdgeInsetsFoundation.vertical12),
     );
   }
 }
