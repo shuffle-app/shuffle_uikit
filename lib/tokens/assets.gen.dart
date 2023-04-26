@@ -40,6 +40,12 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
+  /// File path: assets/images/png/calendar.png
+  AssetGenImage get calendar => const AssetGenImage('assets/images/png/calendar.png');
+
+  /// File path: assets/images/png/coins.png
+  AssetGenImage get coins => const AssetGenImage('assets/images/png/coins.png');
+
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
@@ -60,7 +66,7 @@ class $AssetsImagesPngGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [atmosphere, eventAvatar, mockUserAvatar, place, profileAvatar, profilePost1, profileStory1];
+      [atmosphere, calendar, coins, eventAvatar, mockUserAvatar, place, profileAvatar, profilePost1, profileStory1];
 }
 
 class $AssetsImagesSvgGen {
