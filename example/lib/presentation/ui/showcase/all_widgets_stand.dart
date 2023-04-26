@@ -67,24 +67,20 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Expanded(
-                      child: UpcomingEventPlaceActionCard(
-                        value: 'in 2 days',
-                        icon: GraphicsFoundation.instance.svgPicture(
-                          asset: Assets.images.svg.star,
-                        ),
-                        action: () {},
+                    UpcomingEventPlaceActionCard(
+                      value: 'in 2 days',
+                      icon: GraphicsFoundation.instance.rasterPicture(
+                        asset: Assets.images.png.calendar,
                       ),
+                      action: () {},
                     ),
                     SpacingFoundation.horizontalSpace8,
-                    Expanded(
-                      child: PointBalancePlaceActionCard(
-                        value: '2 650',
-                        icon: GraphicsFoundation.instance.svgPicture(
-                          asset: Assets.images.svg.star,
-                        ),
-                        action: () {},
+                    PointBalancePlaceActionCard(
+                      value: '2 650',
+                      icon: GraphicsFoundation.instance.rasterPicture(
+                        asset: Assets.images.png.coins,
                       ),
+                      action: () {},
                     ),
                   ],
                 ),
