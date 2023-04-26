@@ -72,18 +72,18 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           small: true,
         );
       }
-    } else if (gradient && !hasIcon) {
+    } else if (gradient && !hasIcon && !onlyIconButton) {
       return GradientButton(
         text: text,
         onPressed: onPressed,
       );
-    } else if (hasIcon && gradient) {
+    } else if (hasIcon && gradient && !onlyIconButton) {
       return GradientButtonWithIcon(
         text: text,
         icon: icon,
         onPressed: onPressed,
       );
-    } else if (hasIcon && !gradient) {
+    } else if (hasIcon && !gradient && !onlyIconButton) {
       return GeneralPurposeButtonWithIcon(
         text: text,
         onPressed: onPressed,

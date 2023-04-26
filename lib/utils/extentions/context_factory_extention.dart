@@ -14,6 +14,8 @@ extension Factory on BuildContext {
     bool? small,
     bool? dialogButton,
     DialogButtonType? dialogButtonType,
+    bool? onlyIcon,
+    bool? outlined,
   }) {
     if (small ?? false) {
       return WidgetsFactory.of(this)!
@@ -26,6 +28,8 @@ extension Factory on BuildContext {
             isTextButton: isTextButton ?? false,
             dialogButton: dialogButton,
             dialogButtonType: dialogButtonType,
+            onlyIcon: onlyIcon,
+            outlined: outlined,
           )
           .build(this);
     } else {
@@ -39,6 +43,8 @@ extension Factory on BuildContext {
             isTextButton: isTextButton ?? false,
             dialogButton: dialogButton,
             dialogButtonType: dialogButtonType,
+            onlyIcon: onlyIcon,
+            outlined: outlined,
           )
           .build(this);
     }

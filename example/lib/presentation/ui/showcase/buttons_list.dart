@@ -80,20 +80,26 @@ class ButtonsList extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.max,
           children: [
-            OutlinedIconButton(
+            context.button(
+              text: '',
               icon: GraphicsFoundation.instance.svgPicture(
                 asset: Assets.images.svg.route,
                 color: Colors.white,
               ),
               onPressed: () {},
+              onlyIcon: true,
+              outlined: true,
             ),
             SpacingFoundation.horizontalSpace8,
-            FilledIconButton(
+            context.button(
+              text: '',
               icon: GraphicsFoundation.instance.svgPicture(
                 asset: Assets.images.svg.route,
                 color: Colors.white,
               ),
               onPressed: () {},
+              onlyIcon: true,
+              outlined: true,
             ),
           ],
         ),
