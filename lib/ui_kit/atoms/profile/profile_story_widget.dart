@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/foundation/ui_kit_border_radius.dart';
 import 'package:shuffle_uikit/foundation/ui_kit_gradient_borders.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ProfileStoryWidget extends StatelessWidget {
   final String imagePath;
@@ -21,10 +22,10 @@ class ProfileStoryWidget extends StatelessWidget {
       ),
       child: ClipRRect(
         borderRadius: BorderRadiusFoundation.all24,
-        child: Image.asset(
-          imagePath,
+        child: ImageWidget(
+          link:imagePath,
           fit: BoxFit.cover,
-          package: 'shuffle_uikit',
+          // package: 'shuffle_uikit',
         ),
       ),
     );

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/foundation/images_foundation.dart';
 import 'package:shuffle_uikit/foundation/ui_kit_border_radius.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/tokens/assets.gen.dart';
 
 class BlurredPlaceVideoPlayButton extends StatelessWidget {
@@ -27,7 +28,7 @@ class BlurredPlaceVideoPlayButton extends StatelessWidget {
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
         child: Center(
-          child: GraphicsFoundation.instance.svgPicture(asset: Assets.images.svg.playArrow),
+          child: ImageWidget(svgAsset: Assets.images.svg.playArrow),
         ),
       ),
     );

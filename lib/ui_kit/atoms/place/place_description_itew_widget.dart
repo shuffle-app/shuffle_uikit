@@ -18,14 +18,14 @@ class PlaceDescriptionItemWidget extends StatelessWidget {
         Text(
           item.title,
           style: textStyle?.boldTextTheme.caption1Medium.copyWith(
-            color: ColorsFoundation.solidGreyText,
+            color: ColorsFoundation.darkNeutral900,
           ),
         ),
         SpacingFoundation.verticalSpace4,
         Text(
           item.description,
           style: textStyle?.boldTextTheme.body.copyWith(
-            color: ColorsFoundation.inputLabelGrey,
+            color: ColorsFoundation.darkNeutral100,
           ),
         ),
       ],

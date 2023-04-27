@@ -7,6 +7,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 showUiKitGeneralFullScreenDialog(
   BuildContext context, {
   required Widget child,
+  Widget? bottomBar,
   double? topPadding,
   Function onDismissed = _empty,
 }) {
@@ -33,17 +34,25 @@ showUiKitGeneralFullScreenDialog(
         shape: context.uiKitTheme?.bottomSheetTheme.shape,
         child: Column(
           children: [
-            const SlidingChip().paddingSymmetric(
-                vertical: SpacingFoundation.verticalSpacing12),
-            Expanded(
-                child: SingleChildScrollView(
-              physics: const ClampingScrollPhysics(),
-              padding: EdgeInsets.symmetric(
-                  horizontal: EdgeInsetsFoundation.horizontal16),
-              child: child,
-            ))
+            const SlidingChip().paddingOnly(
+                top: SpacingFoundation.verticalSpacing12,
+                bottom: SpacingFoundation.verticalSpacing4),
+            Container(
+                decoration: ShapeDecoration(
+                  shape: context.uiKitTheme?.bottomSheetTheme.shape ??
+                      const RoundedRectangleBorder(),
+                ),
+                clipBehavior: Clip.hardEdge,
+                child: Expanded(
+                    child: SingleChildScrollView(
+                  physics: const ClampingScrollPhysics(),
+                  padding: EdgeInsets.symmetric(
+                      horizontal: EdgeInsetsFoundation.horizontal16),
+                  child: child,
+                ))),
+            if (bottomBar != null) bottomBar
           ],
-        )).paddingOnly(top: topPadding ?? 50.h),
+        )).paddingOnly(top: topPadding ?? 30.h),
   );
 
   return showGeneralDialog(

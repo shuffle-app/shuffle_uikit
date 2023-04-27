@@ -16,9 +16,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final TextEditingController _controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  /// this key is used to scroll to the element the developer is working on
-  final GlobalKey _currentElementKey = GlobalKey();
-
   @override
   void dispose() {
     _controller.dispose();
@@ -32,10 +29,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       Future.delayed(
         const Duration(milliseconds: 1),
         () {
-          Scrollable.ensureVisible(
-            _currentElementKey.currentContext!,
-            duration: const Duration(milliseconds: 250),
-          );
           _formKey.currentState?.validate();
           setState(() {});
         },
@@ -70,6 +63,41 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               if (MediaQuery.of(context).size.width >= 720) const ButtonsGrid(),
               if (MediaQuery.of(context).size.width < 720) const ButtonsList(),
               SpacingFoundation.verticalSpace16,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  context.button(
+                    text: 'Button',
+                    onPressed: () {},
+                    onlyIcon: true,
+                    outlined: true,
+                    icon: ImageWidget(
+                      svgAsset: Assets.images.svg.route,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SpacingFoundation.horizontalSpace12,
+                  Expanded(
+                    child: context.button(
+                      text: 'Book it',
+                      onPressed: () {},
+                      gradient: true,
+                    ),
+                  ),
+                  SpacingFoundation.horizontalSpace12,
+                  context.button(
+                    text: 'Button',
+                    onPressed: () {},
+                    onlyIcon: true,
+                    outlined: true,
+                    icon: ImageWidget(
+                      svgAsset: Assets.images.svg.searchPeople,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
               IntrinsicHeight(
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
@@ -77,8 +105,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     Expanded(
                       child: UpcomingEventPlaceActionCard(
                         value: 'in 2 days',
-                        icon: GraphicsFoundation.instance.svgPicture(
-                          asset: Assets.images.svg.star,
+                        icon: ImageWidget(
+                          svgAsset: Assets.images.svg.star,
                         ),
                         action: () {},
                       ),
@@ -87,8 +115,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     Expanded(
                       child: PointBalancePlaceActionCard(
                         value: '2 650',
-                        icon: GraphicsFoundation.instance.svgPicture(
-                          asset: Assets.images.svg.star,
+                        icon: ImageWidget(
+                          svgAsset: Assets.images.svg.star,
                         ),
                         action: () {},
                       ),
@@ -97,14 +125,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
+              TitleWithAvatar(
+                title: 'At.mosphere',
+                avatarUrl: Assets.images.png.atmosphere.path,
+              ),
+              SpacingFoundation.verticalSpace16,
               PlaceInfo(
                 place: UiKitPlace(
+                  title: '',
+                  logo: '',
                   media: [
-                    UiKitMedia(link: 'assets/images/png/place.png', type: UiKitMediaType.video),
-                    UiKitMedia(link: 'assets/images/png/place.png', type: UiKitMediaType.image),
-                    UiKitMedia(link: 'assets/images/png/place.png', type: UiKitMediaType.image),
-                    UiKitMedia(link: 'assets/images/png/place.png', type: UiKitMediaType.image),
-                    UiKitMedia(link: 'assets/images/png/place.png', type: UiKitMediaType.image),
+                    UiKitPlaceMedia(link: Assets.images.png.place.path, type: UiKitPlaceMediaType.video),
+                    UiKitPlaceMedia(link: Assets.images.png.place.path, type: UiKitPlaceMediaType.image),
+                    UiKitPlaceMedia(link: Assets.images.png.place.path, type: UiKitPlaceMediaType.image),
+                    UiKitPlaceMedia(link: Assets.images.png.place.path, type: UiKitPlaceMediaType.image),
+                    UiKitPlaceMedia(link: Assets.images.png.place.path, type: UiKitPlaceMediaType.image),
                   ],
                   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
                       'Sed euismod, nunc ut tincidunt lacinia, nisl nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
@@ -159,7 +194,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 info: UserTileInfo(
                   name: 'Frankie Hansen',
                   username: '@fr4nk1eh4',
-                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                  avatarUrl: Assets.images.png.mockUserAvatar.path,
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -167,7 +202,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 info: UserTileInfo(
                   name: 'Frankie Hansen',
                   username: '@fr4nk1eh4',
-                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                  avatarUrl: Assets.images.png.mockUserAvatar.path,
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -175,7 +210,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 info: UserTileInfo(
                   name: 'Frankie Hansen',
                   username: '@fr4nk1eh4',
-                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                  avatarUrl: Assets.images.png.mockUserAvatar.path,
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -183,12 +218,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 info: UserTileInfo(
                   name: 'Frankie Hansen',
                   username: '@fr4nk1eh4',
-                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                  avatarUrl: Assets.images.png.mockUserAvatar.path,
                 ),
               ),
               SpacingFoundation.verticalSpace16,
               SlidablePlaceCard(
-                key: _currentElementKey,
                 slidablePlaceCardData: SlidablePlaceCardData(
                   media: [
                     UiKitMedia(link: 'assets/images/png/place.png', type: UiKitMediaType.video),

@@ -76,6 +76,33 @@ class ButtonsList extends StatelessWidget {
             dialogButtonType: DialogButtonType.buttonBlack,
           ),
         ),
+        SpacingFoundation.verticalSpace16,
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            context.button(
+              text: '',
+              icon: ImageWidget(
+                svgAsset: Assets.images.svg.route,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+              onlyIcon: true,
+              outlined: true,
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.button(
+              text: '',
+              icon: ImageWidget(
+                svgAsset: Assets.images.svg.route,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+              onlyIcon: true,
+              outlined: true,
+            ),
+          ],
+        ),
       ],
     );
   }

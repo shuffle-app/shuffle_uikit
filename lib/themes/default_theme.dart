@@ -12,7 +12,7 @@ class UiKitThemes {
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: Colors.white,
     ),
-    disabledColor: ColorsFoundation.disabledColor,
+    disabledColor: ColorsFoundation.darkNeutral300,
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
         customColor: Colors.red,
@@ -24,7 +24,7 @@ class UiKitThemes {
           fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(48)),
           backgroundColor: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.disabled)) {
-              return ColorsFoundation.disabledColor;
+              return ColorsFoundation.darkNeutral300;
             } else {
               return Colors.white;
             }
@@ -38,7 +38,7 @@ class UiKitThemes {
           fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(28)),
           backgroundColor: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.disabled)) {
-              return ColorsFoundation.disabledColor;
+              return ColorsFoundation.darkNeutral300;
             } else {
               return Colors.white;
             }
@@ -120,7 +120,7 @@ class UiKitThemes {
           errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
           focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
           focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
-          disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.solidGreyText, width: 0.5)),
+          disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
         ),
         customAppBapTheme: AppBarTheme(
           iconTheme: const IconThemeData(color: ColorsFoundation.surface),
@@ -162,7 +162,7 @@ class UiKitThemes {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusFoundation.onlyTop40,
           ),
-          sheetSliderColor: ColorsFoundation.darkNeutral,
+          sheetSliderColor: ColorsFoundation.darkNeutral500,
         ),
       ),
     ],
@@ -193,7 +193,7 @@ class UiKitThemes {
         fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(48)),
         backgroundColor: MaterialStateProperty.resolveWith((states) {
           if (states.contains(MaterialState.disabled)) {
-            return ColorsFoundation.disabledColor;
+            return ColorsFoundation.darkNeutral300;
           } else {
             return Colors.white;
           }
@@ -206,7 +206,7 @@ class UiKitThemes {
           if (states.contains(MaterialState.hovered)) {
             return Colors.white;
           }
-          return ColorsFoundation.disabledColor;
+          return ColorsFoundation.darkNeutral300;
         }),
       ),
     ),
