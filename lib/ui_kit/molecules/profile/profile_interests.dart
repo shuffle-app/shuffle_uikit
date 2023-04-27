@@ -22,7 +22,7 @@ class ProfileInterests extends StatelessWidget {
           UiKitChip(
             interest: interest,
             isSelected: userInterests.contains(interest),
-            border: profileInterests.indexOf(interest) == 0 ? GradientFoundation.defaultGradient : null,
+            border: profileInterests.indexOf(interest) == 0 ? GradientFoundation.gradientBorder : null,
           ),
       ],
     );

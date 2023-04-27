@@ -64,9 +64,22 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
 
+  /// File path: assets/images/png/weather_icon.png
+  AssetGenImage get weatherIcon => const AssetGenImage('assets/images/png/weather_icon.png');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [atmosphere, calendar, coins, eventAvatar, mockUserAvatar, place, profileAvatar, profilePost1, profileStory1];
+  List<AssetGenImage> get values => [
+        atmosphere,
+        calendar,
+        coins,
+        eventAvatar,
+        mockUserAvatar,
+        place,
+        profileAvatar,
+        profilePost1,
+        profileStory1,
+        weatherIcon
+      ];
 }
 
 class $AssetsImagesSvgGen {
@@ -80,6 +93,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/cocktail.svg
   SvgGenImage get cocktail => const SvgGenImage('assets/images/svg/cocktail.svg');
+
+  /// File path: assets/images/svg/fire_white.svg
+  SvgGenImage get fireWhite => const SvgGenImage('assets/images/svg/fire_white.svg');
 
   /// File path: assets/images/svg/influencer_account_mark.svg
   SvgGenImage get influencerAccountMark => const SvgGenImage('assets/images/svg/influencer_account_mark.svg');
@@ -96,6 +112,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/pro_account_mark.svg
   SvgGenImage get proAccountMark => const SvgGenImage('assets/images/svg/pro_account_mark.svg');
 
+  /// File path: assets/images/svg/rising_trend_icon.svg
+  SvgGenImage get risingTrendIcon => const SvgGenImage('assets/images/svg/rising_trend_icon.svg');
+
   /// File path: assets/images/svg/route.svg
   SvgGenImage get route => const SvgGenImage('assets/images/svg/route.svg');
 
@@ -108,6 +127,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/triple_arrow.svg
   SvgGenImage get tripleArrow => const SvgGenImage('assets/images/svg/triple_arrow.svg');
 
+  /// File path: assets/images/svg/tripple_arrow_black.svg
+  SvgGenImage get trippleArrowBlack => const SvgGenImage('assets/images/svg/tripple_arrow_black.svg');
+
   /// File path: assets/images/svg/white_star.svg
   SvgGenImage get whiteStar => const SvgGenImage('assets/images/svg/white_star.svg');
 
@@ -116,15 +138,18 @@ class $AssetsImagesSvgGen {
         chevronLeft,
         chevronRight,
         cocktail,
+        fireWhite,
         influencerAccountMark,
         like,
         playArrow,
         premiumAccountMark,
         proAccountMark,
+        risingTrendIcon,
         route,
         searchPeople,
         star,
         tripleArrow,
+        trippleArrowBlack,
         whiteStar
       ];
 }

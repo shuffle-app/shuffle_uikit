@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class BorderRadiusFoundation {
   BorderRadiusFoundation._();
 
+  static final all16 = const BorderRadius.all(Radius.circular(16));
   static final all24 = const BorderRadius.all(Radius.circular(24));
   static final all40 = const BorderRadius.all(Radius.circular(40));
   static final onlyTop40 = const BorderRadius.only(

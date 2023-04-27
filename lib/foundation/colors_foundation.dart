@@ -13,6 +13,7 @@ class ColorsFoundation {
   static const Color surface2 = UiKitColors.surface2;
   static const Color darkNeutral100 = UiKitColors.darkNeutral100;
   static const Color yellow = UiKitColors.yellow;
+  static const Color weatherYellow = UiKitColors.weatherYellow;
   static const Color orange = UiKitColors.orange;
   static const Color pink = UiKitColors.pink;
   static const Color error = UiKitColors.error;

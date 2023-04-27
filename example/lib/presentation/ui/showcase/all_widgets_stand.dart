@@ -51,6 +51,46 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              IntrinsicHeight(
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    const Expanded(
+                      child: GradientAttentionCard(
+                        message: 'Then check this out',
+                        textColor: Colors.black,
+                      ),
+                    ),
+                    SpacingFoundation.horizontalSpace16,
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          const Expanded(
+                            child: WeatherInfoCard(
+                              temperature: 32,
+                              weatherType: 'Sunny',
+                            ),
+                          ),
+                          SpacingFoundation.verticalSpace8,
+                          Expanded(
+                            child: MetricsCard(
+                              title: 'Burned today',
+                              value: 439,
+                              unit: 'kCal',
+                              icon: ImageWidget(
+                                svgAsset: Assets.images.svg.fireWhite,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               if (MediaQuery.of(context).size.width >= 720)
                 InputFieldsGrid(
                   controller: _controller,
