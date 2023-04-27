@@ -22,8 +22,9 @@ class SlidablePlaceCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             UiKitPhotoSlider(
-              photos: slidablePlaceCardData.photos,
+              media: slidablePlaceCardData.media,
               width: size.maxWidth,
+              height: 156.h,
             ),
             SpacingFoundation.verticalSpace12,
             Text(
