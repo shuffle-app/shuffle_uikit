@@ -37,7 +37,7 @@ class PlaceTagWidget extends StatelessWidget {
         if (showGradient)
           GradientText(
             title,
-            colors: GradientFoundation.defaultGradient.gradient.colors,
+            colors: GradientFoundation.gradientBorder.gradient.colors,
             gradientType: GradientType.radial,
             radius: 2,
             style: textStyle,
