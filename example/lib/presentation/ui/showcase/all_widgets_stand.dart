@@ -71,8 +71,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     onPressed: () {},
                     onlyIcon: true,
                     outlined: true,
-                    icon: GraphicsFoundation.instance.svgPicture(
-                      asset: Assets.images.svg.route,
+                    icon: ImageWidget(
+                      svgAsset: Assets.images.svg.route,
                       color: Colors.white,
                     ),
                   ),
@@ -90,8 +90,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     onPressed: () {},
                     onlyIcon: true,
                     outlined: true,
-                    icon: GraphicsFoundation.instance.svgPicture(
-                      asset: Assets.images.svg.searchPeople,
+                    icon: ImageWidget(
+                      svgAsset: Assets.images.svg.searchPeople,
                       color: Colors.white,
                     ),
                   ),

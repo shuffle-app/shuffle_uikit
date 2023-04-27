@@ -9,6 +9,7 @@ class ImageWidget extends StatelessWidget {
   final BoxFit? fit;
   final double? width;
   final double? height;
+  final Color? color;
 
   const ImageWidget(
       {Key? key,
@@ -17,13 +18,15 @@ class ImageWidget extends StatelessWidget {
       this.width,
       this.height,
       this.rasterAsset,
-      this.svgAsset})
+      this.svgAsset,
+      this.color})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     if (rasterAsset != null) {
       return rasterAsset!.image(
+        color: color,
         package: 'shuffle_uikit',
         fit: fit,
         height: height,
@@ -33,12 +36,14 @@ class ImageWidget extends StatelessWidget {
     if (svgAsset != null) {
       return svgAsset!.svg(
         package: 'shuffle_uikit',
-        fit: fit ?? BoxFit.none,
+        color: color,
+        fit: fit,
         height: height,
         width: width,
       );
     } else if (link == null) {
       return Placeholder(
+        color: color,
         child: SizedBox(
           width: width,
           height: height,
@@ -48,6 +53,7 @@ class ImageWidget extends StatelessWidget {
       return CachedNetworkImage(
         imageUrl: link!,
         fit: fit,
+        color: color,
         width: width,
         height: height,
         cacheManager: CustomCacheManager.instance,
@@ -58,6 +64,7 @@ class ImageWidget extends StatelessWidget {
         link!,
         fit: fit,
         width: width,
+        color: color,
         height: height,
         package: 'shuffle_uikit',
       );
