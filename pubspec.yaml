@@ -13,6 +13,8 @@ dependencies:
   flutter_web_plugins:
    sdk: flutter
   flutter_svg: ^2.0.4
+  flutter_cache_manager:
+  cached_network_image:
   gradient_borders: ^1.0.0
   flutter_gen_runner: ^5.2.0
   build_runner: ^2.3.3

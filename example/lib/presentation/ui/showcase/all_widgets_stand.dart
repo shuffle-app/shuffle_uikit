@@ -70,8 +70,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     Expanded(
                       child: UpcomingEventPlaceActionCard(
                         value: 'in 2 days',
-                        icon: GraphicsFoundation.instance.svgPicture(
-                          asset: Assets.images.svg.star,
+                        icon: ImageWidget(
+                          svgAsset: Assets.images.svg.star,
                         ),
                         action: () {},
                       ),
@@ -80,8 +80,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     Expanded(
                       child: PointBalancePlaceActionCard(
                         value: '2 650',
-                        icon: GraphicsFoundation.instance.svgPicture(
-                          asset: Assets.images.svg.star,
+                        icon: ImageWidget(
+                          svgAsset: Assets.images.svg.star,
                         ),
                         action: () {},
                       ),

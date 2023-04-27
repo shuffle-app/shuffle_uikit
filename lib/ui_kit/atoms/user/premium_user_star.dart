@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/foundation/images_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/tokens/assets.gen.dart';
 
 class PremiumAccountMark extends StatelessWidget {
@@ -7,7 +8,7 @@ class PremiumAccountMark extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GraphicsFoundation.instance.svgPicture(asset: Assets.images.svg.premiumAccountMark);
+    return ImageWidget(svgAsset: Assets.images.svg.premiumAccountMark);
   }
 }
 
@@ -16,7 +17,7 @@ class ProAccountMark extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GraphicsFoundation.instance.svgPicture(asset: Assets.images.svg.proAccountMark);
+    return ImageWidget(svgAsset: Assets.images.svg.proAccountMark);
   }
 }
 
@@ -25,6 +26,6 @@ class InfluencerAccountMark extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GraphicsFoundation.instance.svgPicture(asset: Assets.images.svg.influencerAccountMark);
+    return ImageWidget(svgAsset: Assets.images.svg.influencerAccountMark);
   }
 }

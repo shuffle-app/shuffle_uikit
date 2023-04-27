@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/foundation/ui_kit_border_radius.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ProfileAvatar extends StatelessWidget {
   final String avatarLink;
@@ -13,9 +14,9 @@ class ProfileAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadiusFoundation.all24,
-      child: Image.asset(
-        avatarLink,
-        package: 'shuffle_uikit',
+      child: ImageWidget(
+        link: avatarLink,
+        // package: 'shuffle_uikit',
       ),
     );
   }

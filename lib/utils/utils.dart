@@ -12,4 +12,5 @@ export 'builders/alert_dialog_builder.dart';
 export 'builders/calendar_builder.dart';
 export 'builders/comment_dialog_builder.dart';
 export 'builders/generalDialog_fullscreen_builder.dart';
+export 'cache/custom_cache_manager.dart';
 
