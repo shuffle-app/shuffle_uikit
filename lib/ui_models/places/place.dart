@@ -9,11 +9,11 @@ class UiKitPlace {
   final String? logo;
 
   UiKitPlace({
-     this.title,
+    this.title,
     required this.media,
-     this.logo,
+    this.logo,
     required this.description,
-     this.rating,
+    this.rating,
     required this.tags,
   });
 }

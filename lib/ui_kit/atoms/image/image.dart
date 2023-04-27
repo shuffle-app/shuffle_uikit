@@ -11,16 +11,16 @@ class ImageWidget extends StatelessWidget {
   final double? height;
   final Color? color;
 
-  const ImageWidget(
-      {Key? key,
-      this.link,
-      this.fit,
-      this.width,
-      this.height,
-      this.rasterAsset,
-      this.svgAsset,
-      this.color})
-      : super(key: key);
+  const ImageWidget({
+    Key? key,
+    this.link,
+    this.fit,
+    this.width,
+    this.height,
+    this.rasterAsset,
+    this.svgAsset,
+    this.color,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +37,13 @@ class ImageWidget extends StatelessWidget {
       return svgAsset!.svg(
         package: 'shuffle_uikit',
         color: color,
-        fit: fit,
+        fit: fit ?? BoxFit.contain,
         height: height,
         width: width,
       );
     } else if (link == null) {
       return Placeholder(
-        color: color,
+        color: color ?? Colors.transparent,
         child: SizedBox(
           width: width,
           height: height,
