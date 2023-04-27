@@ -5,22 +5,35 @@ import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 class GradientFoundation {
   GradientFoundation._();
 
-  static const defaultGradient = GradientBoxBorder(
-    gradient: RadialGradient(
-      colors: [
-        ColorsFoundation.orange,
-        ColorsFoundation.yellow,
-        ColorsFoundation.pink,
-      ],
-      radius: 2,
-      center: Alignment(-0.6, -0.9),
-      stops: [
-        0,
-        0.473,
-        1,
-      ],
-    ),
+  static const defaultRadialGradient = RadialGradient(
+    colors: [
+      ColorsFoundation.orange,
+      ColorsFoundation.yellow,
+      ColorsFoundation.pink,
+    ],
+    radius: 2,
+    center: Alignment(-0.6, -0.9),
+    stops: [
+      0,
+      0.473,
+      1,
+    ],
+  );
+
+  static const gradientBorder = GradientBoxBorder(
+    gradient: defaultRadialGradient,
     width: 2,
+  );
+
+  static final yellowLinearGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.weatherYellow.withOpacity(0.1),
+      ColorsFoundation.weatherYellow.withOpacity(0.031),
+    ],
+    stops: [
+      1,
+      0,
+    ],
   );
 
   static const buttonGradient = RadialGradient(
