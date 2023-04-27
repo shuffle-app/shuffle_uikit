@@ -19,7 +19,6 @@ dependencies:
   flutter_screenutil: ^5.7.0
 
   #ui widgets
-  flutter_card_swiper: ^4.1.3
   cached_network_image: ^3.2.3
   gradient_borders: ^1.0.0
 

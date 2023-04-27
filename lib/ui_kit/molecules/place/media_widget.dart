@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/blurred_place_video_play_button.dart';
 import 'package:shuffle_uikit/ui_models/places/place.dart';
 
@@ -34,10 +35,9 @@ class _MediaImageWidget extends MediaWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadiusFoundation.all24,
-      child: Image.asset(
-        media.link,
+      child: ImageWidget(
+        link: media.link,
         fit: BoxFit.cover,
-        package: 'shuffle_uikit',
       ),
     );
   }
@@ -58,10 +58,9 @@ class _MediaVideoWidget extends MediaWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadiusFoundation.all24,
-          child: Image.asset(
-            media.link,
+          child: ImageWidget(
+            link: media.link,
             fit: BoxFit.cover,
-            package: 'shuffle_uikit',
           ),
         ),
         Positioned(
