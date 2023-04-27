@@ -30,7 +30,7 @@ class PlaceStats extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                GraphicsFoundation.instance.svgPicture(asset: Assets.images.svg.star),
+                ImageWidget(svgAsset: Assets.images.svg.star),
                 SpacingFoundation.horizontalSpace8,
                 Text(
                   rating.toString(),

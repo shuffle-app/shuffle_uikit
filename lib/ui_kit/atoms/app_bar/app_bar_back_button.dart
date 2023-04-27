@@ -24,8 +24,8 @@ class AppBarBackButton extends StatelessWidget {
           ),
           width: 28.w,
           height: 28.h,
-          child: GraphicsFoundation.instance.svgPicture(
-            asset: Assets.images.svg.chevronLeft,
+          child: ImageWidget(
+            svgAsset: Assets.images.svg.chevronLeft,
             fit: BoxFit.scaleDown,
           ),
         ),

@@ -82,8 +82,8 @@ class ButtonsList extends StatelessWidget {
           children: [
             context.button(
               text: '',
-              icon: GraphicsFoundation.instance.svgPicture(
-                asset: Assets.images.svg.route,
+              icon: ImageWidget(
+                svgAsset: Assets.images.svg.route,
                 color: Colors.white,
               ),
               onPressed: () {},
@@ -93,8 +93,8 @@ class ButtonsList extends StatelessWidget {
             SpacingFoundation.horizontalSpace8,
             context.button(
               text: '',
-              icon: GraphicsFoundation.instance.svgPicture(
-                asset: Assets.images.svg.route,
+              icon: ImageWidget(
+                svgAsset: Assets.images.svg.route,
                 color: Colors.white,
               ),
               onPressed: () {},

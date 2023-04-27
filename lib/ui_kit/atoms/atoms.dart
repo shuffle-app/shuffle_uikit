@@ -13,3 +13,4 @@ export 'buttons/iconed_button.dart';
 export 'buttons/ordinary_button.dart';
 export 'buttons/ordinary_with_child.dart';
 export 'inputs/inputs.dart';
+export 'image/image.dart';

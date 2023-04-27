@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-showUiKitGeneralFullScreenDialog(BuildContext context, {
+showUiKitGeneralFullScreenDialog(
+  BuildContext context, {
   required Widget child,
+  Widget? bottomBar,
   double? topPadding,
   Function onDismissed = _empty,
 }) {
@@ -18,7 +20,7 @@ showUiKitGeneralFullScreenDialog(BuildContext context, {
       if (onDismissed != _empty) {
         await Future.delayed(
           const Duration(seconds: 1),
-              () => onDismissed(),
+          () => onDismissed(),
         );
       }
 
@@ -35,15 +37,22 @@ showUiKitGeneralFullScreenDialog(BuildContext context, {
             const SlidingChip().paddingOnly(
                 top: SpacingFoundation.verticalSpacing12,
                 bottom: SpacingFoundation.verticalSpacing4),
-            Expanded(
-                child: SingleChildScrollView(
+            Container(
+                decoration: ShapeDecoration(
+                  shape: context.uiKitTheme?.bottomSheetTheme.shape ??
+                      const RoundedRectangleBorder(),
+                ),
+                clipBehavior: Clip.hardEdge,
+                child: Expanded(
+                    child: SingleChildScrollView(
                   physics: const ClampingScrollPhysics(),
                   padding: EdgeInsets.symmetric(
                       horizontal: EdgeInsetsFoundation.horizontal16),
                   child: child,
-                ))
+                ))),
+            if (bottomBar != null) bottomBar
           ],
-        )).paddingOnly(top: topPadding ?? 50.h),
+        )).paddingOnly(top: topPadding ?? 30.h),
   );
 
   return showGeneralDialog(
@@ -58,9 +67,11 @@ showUiKitGeneralFullScreenDialog(BuildContext context, {
               sigmaX: 4 * animation1.value, sigmaY: 4 * animation2.value),
           child: Animations.slideAnimation(animation1, animation2, child));
     },
-    pageBuilder: (BuildContext context,
-        Animation<double> animation1,
-        Animation<double> animation2,) {
+    pageBuilder: (
+      BuildContext context,
+      Animation<double> animation1,
+      Animation<double> animation2,
+    ) {
       return dismissable;
     },
   );

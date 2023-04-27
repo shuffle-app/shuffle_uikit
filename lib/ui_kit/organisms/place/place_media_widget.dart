@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/blurred_place_video_play_button.dart';
 import 'package:shuffle_uikit/ui_models/places/place.dart';
 
@@ -31,10 +32,10 @@ class _PlaceMediaImageWidget extends PlaceMediaWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      media.link,
+    return ImageWidget(
+      link: media.link,
       fit: BoxFit.cover,
-      package: 'shuffle_uikit',
+      // package: 'shuffle_uikit',
     );
   }
 }
@@ -52,10 +53,10 @@ class _PlaceMediaVideoWidget extends PlaceMediaWidget {
     return Stack(
       fit: StackFit.passthrough,
       children: [
-        Image.asset(
-          media.link,
+        ImageWidget(
+          link: media.link,
           fit: BoxFit.cover,
-          package: 'shuffle_uikit',
+          // package: 'shuffle_uikit',
         ),
         Positioned(
           top: 12.h,

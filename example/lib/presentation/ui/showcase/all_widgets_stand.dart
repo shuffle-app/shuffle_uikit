@@ -71,8 +71,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     onPressed: () {},
                     onlyIcon: true,
                     outlined: true,
-                    icon: GraphicsFoundation.instance.svgPicture(
-                      asset: Assets.images.svg.route,
+                    icon: ImageWidget(
+                      svgAsset: Assets.images.svg.route,
                       color: Colors.white,
                     ),
                   ),
@@ -90,8 +90,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     onPressed: () {},
                     onlyIcon: true,
                     outlined: true,
-                    icon: GraphicsFoundation.instance.svgPicture(
-                      asset: Assets.images.svg.searchPeople,
+                    icon: ImageWidget(
+                      svgAsset: Assets.images.svg.searchPeople,
                       color: Colors.white,
                     ),
                   ),
@@ -102,20 +102,24 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    UpcomingEventPlaceActionCard(
-                      value: 'in 2 days',
-                      icon: GraphicsFoundation.instance.rasterPicture(
-                        asset: Assets.images.png.calendar,
+                    Expanded(
+                      child: UpcomingEventPlaceActionCard(
+                        value: 'in 2 days',
+                        icon: ImageWidget(
+                          svgAsset: Assets.images.svg.star,
+                        ),
+                        action: () {},
                       ),
-                      action: () {},
                     ),
                     SpacingFoundation.horizontalSpace8,
-                    PointBalancePlaceActionCard(
-                      value: '2 650',
-                      icon: GraphicsFoundation.instance.rasterPicture(
-                        asset: Assets.images.png.coins,
+                    Expanded(
+                      child: PointBalancePlaceActionCard(
+                        value: '2 650',
+                        icon: ImageWidget(
+                          svgAsset: Assets.images.svg.star,
+                        ),
+                        action: () {},
                       ),
-                      action: () {},
                     ),
                   ],
                 ),

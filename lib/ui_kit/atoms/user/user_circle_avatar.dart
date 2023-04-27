@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UserCircleAvatar extends StatelessWidget {
   final String imageUrl;
@@ -22,10 +23,10 @@ class UserCircleAvatar extends StatelessWidget {
         border: border,
       ),
       child: ClipOval(
-        child: Image.asset(
-          imageUrl,
+        child: ImageWidget(
+          link: imageUrl,
           fit: BoxFit.cover,
-          package: 'shuffle_uikit',
+          // package: 'shuffle_uikit',
         ),
       ),
     );
