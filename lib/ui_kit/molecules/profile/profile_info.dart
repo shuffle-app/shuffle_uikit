@@ -30,7 +30,7 @@ class ProfileInfo extends StatelessWidget {
               ),
               TextSpan(
                 text: '\nFollowers\n',
-                style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.solidGreyText) ?? fallBackStyle,
+                style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900) ?? fallBackStyle,
               ),
               TextSpan(
                 text: '2 650',

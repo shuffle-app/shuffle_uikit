@@ -6,7 +6,7 @@ import 'package:shuffle_uikit/ui_kit/atoms/profile/place_tag_widget.dart';
 
 class PlaceStats extends StatelessWidget {
   final double? rating;
-  final List<PlaceTag> tags;
+  final List<UiKitPlaceTag> tags;
   final ScrollController firstHalfController = ScrollController();
   late final ScrollController secondHalfController = ScrollController()
     ..addListener(() {

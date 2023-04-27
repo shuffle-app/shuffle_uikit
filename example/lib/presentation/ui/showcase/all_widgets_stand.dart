@@ -63,6 +63,41 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               if (MediaQuery.of(context).size.width >= 720) const ButtonsGrid(),
               if (MediaQuery.of(context).size.width < 720) const ButtonsList(),
               SpacingFoundation.verticalSpace16,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  context.button(
+                    text: 'Button',
+                    onPressed: () {},
+                    onlyIcon: true,
+                    outlined: true,
+                    icon: GraphicsFoundation.instance.svgPicture(
+                      asset: Assets.images.svg.route,
+                      color: Colors.white,
+                    ),
+                  ),
+                  SpacingFoundation.horizontalSpace12,
+                  Expanded(
+                    child: context.button(
+                      text: 'Book it',
+                      onPressed: () {},
+                      gradient: true,
+                    ),
+                  ),
+                  SpacingFoundation.horizontalSpace12,
+                  context.button(
+                    text: 'Button',
+                    onPressed: () {},
+                    onlyIcon: true,
+                    outlined: true,
+                    icon: GraphicsFoundation.instance.svgPicture(
+                      asset: Assets.images.svg.searchPeople,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
               IntrinsicHeight(
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
@@ -90,14 +125,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
+              TitleWithAvatar(
+                title: 'At.mosphere',
+                avatarUrl: Assets.images.png.atmosphere.path,
+              ),
+              SpacingFoundation.verticalSpace16,
               PlaceInfo(
-                place: Place(
+                place: UiKitPlace(
+                  title: '',
+                  logo: '',
                   media: [
-                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.video),
-                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.image),
-                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.image),
-                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.image),
-                    PlaceMedia(link: 'assets/images/png/place.png', type: PlaceMediaType.image),
+                    UiKitPlaceMedia(link: Assets.images.png.place.path, type: UiKitPlaceMediaType.video),
+                    UiKitPlaceMedia(link: Assets.images.png.place.path, type: UiKitPlaceMediaType.image),
+                    UiKitPlaceMedia(link: Assets.images.png.place.path, type: UiKitPlaceMediaType.image),
+                    UiKitPlaceMedia(link: Assets.images.png.place.path, type: UiKitPlaceMediaType.image),
+                    UiKitPlaceMedia(link: Assets.images.png.place.path, type: UiKitPlaceMediaType.image),
                   ],
                   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
                       'Sed euismod, nunc ut tincidunt lacinia, nisl nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
@@ -106,22 +148,22 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       'Nulla facilisi',
                   rating: 4.8,
                   tags: [
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: false),
-                    PlaceTag(title: 'Cheap', iconPath: 'assets/images/svg/cocktail.svg', matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                    UiKitPlaceTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
                   ],
                 ),
               ),
@@ -152,7 +194,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 info: UserTileInfo(
                   name: 'Frankie Hansen',
                   username: '@fr4nk1eh4',
-                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                  avatarUrl: Assets.images.png.mockUserAvatar.path,
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -160,7 +202,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 info: UserTileInfo(
                   name: 'Frankie Hansen',
                   username: '@fr4nk1eh4',
-                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                  avatarUrl: Assets.images.png.mockUserAvatar.path,
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -168,7 +210,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 info: UserTileInfo(
                   name: 'Frankie Hansen',
                   username: '@fr4nk1eh4',
-                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                  avatarUrl: Assets.images.png.mockUserAvatar.path,
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -176,7 +218,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 info: UserTileInfo(
                   name: 'Frankie Hansen',
                   username: '@fr4nk1eh4',
-                  avatarUrl: 'assets/images/png/mock_user_avatar.png',
+                  avatarUrl: Assets.images.png.mockUserAvatar.path,
                 ),
               ),
             ],

@@ -4,7 +4,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/place/place_stats.dart';
 
 class PlaceInfo extends StatelessWidget {
-  final Place place;
+  final UiKitPlace place;
 
   const PlaceInfo({
     Key? key,
@@ -24,7 +24,7 @@ class PlaceInfo extends StatelessWidget {
             itemCount: place.media.length,
             itemBuilder: (context, index) {
               final media = place.media[index];
-              if (media.type == PlaceMediaType.video) return PlaceMediaWidget.video(media: media);
+              if (media.type == UiKitPlaceMediaType.video) return PlaceMediaWidget.video(media: media);
               return PlaceMediaWidget.image(media: media);
             },
             separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
