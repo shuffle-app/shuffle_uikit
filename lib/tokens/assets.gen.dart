@@ -40,6 +40,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
+  /// File path: assets/images/png/balloons.png
+  AssetGenImage get balloons => const AssetGenImage('assets/images/png/balloons.png');
+
   /// File path: assets/images/png/calendar.png
   AssetGenImage get calendar => const AssetGenImage('assets/images/png/calendar.png');
 
@@ -76,6 +79,9 @@ class $AssetsImagesPngGen {
         calendar,
         coins,
         crazyEmoji,
+        balloons,
+        calendar,
+        coins,
         eventAvatar,
         mockUserAvatar,
         place,
