@@ -1,6 +1,7 @@
 /// This file exports all molecules in the molecules folder
 
 export 'app_bar/custom_app_bar.dart';
+export 'chips/blurred_chip.dart';
 export 'filter/titled_filter_chip.dart';
 export 'info_cards/gradient_attention_card.dart';
 export 'info_cards/message_card_with_icon.dart';
