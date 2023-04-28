@@ -57,7 +57,7 @@ class PlaceStats extends StatelessWidget {
                     child: Wrap(
                       spacing: 8.w,
                       children: firstHalf
-                          .map((e) => PlaceTagWidget(
+                          .map((e) => UiKitTagWidget(
                                 title: e.title,
                                 icon: e.iconPath,
                                 showGradient: e.matching,
@@ -72,7 +72,7 @@ class PlaceStats extends StatelessWidget {
                     child: Wrap(
                       spacing: 8.w,
                       children: secondHalf
-                          .map((e) => PlaceTagWidget(
+                          .map((e) => UiKitTagWidget(
                                 title: e.title,
                                 icon: e.iconPath,
                                 showGradient: e.matching,

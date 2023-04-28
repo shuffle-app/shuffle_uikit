@@ -38,7 +38,7 @@ class SlidablePlaceCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   for (final placeTag in slidablePlaceCardData.placeTags)
-                    PlaceTagWidget(
+                    UiKitTagWidget(
                       title: placeTag.title,
                       icon: placeTag.iconPath,
                     ).paddingOnly(right: 8.sp),

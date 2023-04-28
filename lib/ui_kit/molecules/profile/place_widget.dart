@@ -62,13 +62,13 @@ class PlaceWidget extends StatelessWidget {
                         child: Row(
                           children: [
                             if (place.stars != null)
-                              PlaceTagWidget(
+                              UiKitTagWidget(
                                 title: place.stars!.toStringAsFixed(0),
                                 icon: 'assets/images/svg/star.svg',
                                 textColor: Colors.white,
                               ),
                             ...place.tags
-                                .map<Widget>((e) => PlaceTagWidget(
+                                .map<Widget>((e) => UiKitTagWidget(
                                       title: e.title,
                                       icon: e.icon,
                                       showSpacing: place.stars != null || place.tags.indexOf(e) != 0,
