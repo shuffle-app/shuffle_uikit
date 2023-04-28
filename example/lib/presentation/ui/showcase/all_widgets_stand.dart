@@ -66,6 +66,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
+
+              const Center(
+                child: BlurredQuestionChip(
+                  label: 'how it works',
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              AccentCard(
+                  title: 'Ballooning festival',
+                  additionalInfo: '22-23 March',
+                  accentMessage: 'Don’t miss',
+                  image: ImageWidget(
+                    rasterAsset: Assets.images.png.balloons,
+                    fit: BoxFit.cover,
+                  )),
               const TitledAccentInfo(
                 title: 'Don’t miss it',
                 info: '11:00 am, November 20',
