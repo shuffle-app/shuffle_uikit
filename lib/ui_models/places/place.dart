@@ -3,8 +3,8 @@ enum UiKitMediaType { image, video }
 class UiKitPlace {
   final List<UiKitMedia> media;
   final String description;
-  final double? rating;
   final List<UiKitTag> tags;
+  final double? rating;
   final String? title;
   final String? logo;
 
