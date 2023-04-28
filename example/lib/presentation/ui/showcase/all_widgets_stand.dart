@@ -51,6 +51,16 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              const TitledAccentInfo(
+                title: 'Don’t miss it',
+                info: '11:00 am, November 20',
+              ),
+              SpacingFoundation.verticalSpace16,
+              const TitledAccentInfo(
+                title: 'Place',
+                info: 'Sardina Seafood Restaurant',
+              ),
+              SpacingFoundation.verticalSpace16,
               Row(
                 children: [
                   context.button(
