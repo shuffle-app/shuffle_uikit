@@ -6,6 +6,7 @@ export 'info_cards/metrics_card.dart';
 export 'info_cards/weather_info_card.dart';
 export 'place/place_description_grid.dart';
 export 'place/title_with_avatar.dart';
+export 'place/titled_accent_info.dart';
 export 'profile/profile_attitude_tab.dart';
 export 'profile/profile_highlights_card.dart';
 export 'profile/profile_info.dart';
