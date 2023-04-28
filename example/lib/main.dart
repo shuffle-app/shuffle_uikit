@@ -36,9 +36,8 @@ class _MyAppState extends State<MyApp> {
               title: 'Shuffle Demo',
               debugShowCheckedModeBanner: false,
               theme: _theme,
-              // onGenerateRoute: AppRouter.onGenerateRoute,
-              // initialRoute: AppRoutes.stand,
-              home: v(),
+              onGenerateRoute: AppRouter.onGenerateRoute,
+              initialRoute: AppRoutes.stand,
             ),
           ),
         );

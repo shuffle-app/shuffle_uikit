@@ -23,7 +23,6 @@ class UiKitPhotoSlider extends StatefulWidget {
 
 class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
     with TickerProviderStateMixin {
-  // final ValueNotifier _slideController = ValueNotifier(0);
   final _animDuration = const Duration(milliseconds: 150);
   late CardAnimation _cardAnimation;
   late AnimationController _animationController;
@@ -36,15 +35,11 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
 
   int? get _currentIndex => _undoableIndex.state;
 
-  // int? get _nextIndex => getValidIndexOffset(1);
-
   @override
   void initState() {
     super.initState();
 
     _undoableIndex.state = widget.initialIndex;
-
-    // _slideController.addListener(_controllerListener);
 
     _animationController = AnimationController(
       duration: _animDuration,
@@ -60,7 +55,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
 
   @override
   void dispose() {
-    // _slideController.dispose();
     _animationController.dispose();
     super.dispose();
   }
@@ -85,7 +79,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
                       context, media[index], (_currentIndex ?? 0) - index);
                 } else {
                   return _buildRightItem(
-                      context, media[index], index - (_currentIndex ?? 0));
+                      context, media[index], index - (_currentIndex ?? 0)+1);
                 }
               }).reversed.toList(),
               _buildFirstItem(context, widget.media[_currentIndex ?? 0]),
@@ -103,30 +97,22 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
               widget.width - _cardAnimation.left - _cardAnimation.right,
               widget.height * _cardAnimation.scale),
         ),
-
-        // onTap: () async {
-        //   if (widget.isDisabled) {
-        //     await widget.onTapDisabled?.call();
-        //   }
-        // },
         onHorizontalDragStart: (tapInfo) {
-          print('onHorizontalDragStart here with tapInfo $tapInfo');
-          // if (!widget.isDisabled) {
+
+
           final renderBox = context.findRenderObject()! as RenderBox;
           final position = renderBox.globalToLocal(tapInfo.globalPosition);
 
           if (position.dy < renderBox.size.height / 2) _tappedOnTop = true;
-          // }
+
         },
         onHorizontalDragUpdate: (tapInfo) {
           final isLastCard = _currentIndex! == widget.media.length - 1;
           final isFirstCard = _currentIndex! == 0;
           if (isLastCard && tapInfo.delta.dx < 0) return;
           if (isFirstCard && tapInfo.delta.dx > 0) return;
-          print('onHorizontalDragUpdate here with tapInfo $tapInfo');
-          // dragPosition -= details.delta.dx;
 
-          // if (!widget.isDisabled) {
+
           setState(
             () => _cardAnimation.update(
               tapInfo.delta.dx,
@@ -137,11 +123,10 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
           // }
         },
         onHorizontalDragEnd: (tapInfo) {
-          print('onHorizontalDragEnd here with tapInfo $tapInfo');
-          // if (_canSwipe) {
+
           _tappedOnTop = false;
           _onEndAnimation();
-          // }
+
         },
       ),
     );
@@ -151,7 +136,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
       BuildContext context, UiKitMedia item, int differenceFromFirstCard) {
     return Positioned(
       left: 40 / differenceFromFirstCard - 20,
-      // left: 0,
+
       child: SliderPhotoCard(
         media: item,
         givenSize: Size(widget.width / 2,
@@ -164,7 +149,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
       BuildContext context, UiKitMedia item, int differenceFromFirstCard) {
     return Positioned(
       right: 40 / differenceFromFirstCard - 20,
-      // right: 0,
+
       child: SliderPhotoCard(
         media: item,
         givenSize: Size(widget.width / 2,
@@ -172,25 +157,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
       ),
     );
   }
-
-  // void _controllerListener() {
-  //   switch (_slideController.state) {
-  //     case CardSwiperState.swipe:
-  //       return _swipe(widget.direction);
-  //     case CardSwiperState.swipeLeft:
-  //       return _swipe(CardSwiperDirection.left);
-  //     case CardSwiperState.swipeRight:
-  //       return _swipe(CardSwiperDirection.right);
-  //     case CardSwiperState.swipeTop:
-  //       return _swipe(CardSwiperDirection.top);
-  //     case CardSwiperState.swipeBottom:
-  //       return _swipe(CardSwiperDirection.bottom);
-  //     case CardSwiperState.undo:
-  //       return _undo();
-  //     default:
-  //       return;
-  //   }
-  // }
 
   void _animationListener() {
     if (_animationController.status == AnimationStatus.forward) {
@@ -215,20 +181,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
   Future<void> _handleCompleteSwipe() async {
     _undoableIndex.state = (_currentIndex ?? 0) +
         (_detectedDirection == CardSwiperDirection.left ? 1 : -1);
-    // final shouldCancelSwipe = await widget.onSwipe
-    //     ?.call(_currentIndex!, _nextIndex, _detectedDirection) ==
-    //     false;
-    //
-    // if (shouldCancelSwipe) {
-    //   return;
-    // }
-
-    // _undoableIndex.state = _nextIndex;
     _directionHistory.add(_detectedDirection);
-
-    // if (isLastCard) {
-    //   widget.onEnd?.call();
-    // }
   }
 
   void _reset() {
@@ -263,28 +216,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
     _detectedDirection = CardSwiperDirection.none;
     _cardAnimation.animateBack(context);
   }
-
-// void _undo() {
-//   if (_directionHistory.isEmpty) return;
-//   if (_undoableIndex.previousState == null) return;
-//
-//   final direction = _directionHistory.last;
-//   final shouldCancelUndo = widget.onUndo?.call(
-//     _currentIndex,
-//     _undoableIndex.previousState!,
-//     direction,
-//   ) ==
-//       false;
-//
-//   if (shouldCancelUndo) {
-//     return;
-//   }
-//
-//   _undoableIndex.undo();
-//   _directionHistory.removeLast();
-//   _swipeType = SwipeType.undo;
-//   _cardAnimation.animateUndo(context, direction);
-// }
 }
 
 class SliderPhotoCard extends StatelessWidget {
@@ -386,14 +317,9 @@ class CardAnimation {
   }
 
   void update(double dx, double dy, bool inverseAngle) {
-    print('on dragupdate here with dx $dx');
-    // if (isHorizontalSwipingEnabled) {
     left += dx;
     right -= dx;
-    // }
-    // if (isVerticalSwipingEnabled) {
-    //   top += dy;
-    // }
+
     total += dx;
     updateAngle(inverseAngle);
     updateScale();
@@ -455,7 +381,6 @@ class CardAnimation {
   }
 
   void animateBack(BuildContext context) {
-    print('here is animateBack');
     _leftAnimation = Tween<double>(
       begin: left,
       end: 0,

@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-showUiKitGeneralFullScreenDialog(
-  BuildContext context, {
+showUiKitGeneralFullScreenDialog(BuildContext context, {
   required Widget child,
   Widget? bottomBar,
   double? topPadding,
@@ -20,7 +19,7 @@ showUiKitGeneralFullScreenDialog(
       if (onDismissed != _empty) {
         await Future.delayed(
           const Duration(seconds: 1),
-          () => onDismissed(),
+              () => onDismissed(),
         );
       }
 
@@ -37,19 +36,17 @@ showUiKitGeneralFullScreenDialog(
             const SlidingChip().paddingOnly(
                 top: SpacingFoundation.verticalSpacing12,
                 bottom: SpacingFoundation.verticalSpacing4),
-            Container(
-                decoration: ShapeDecoration(
-                  shape: context.uiKitTheme?.bottomSheetTheme.shape ??
-                      const RoundedRectangleBorder(),
-                ),
-                clipBehavior: Clip.hardEdge,
-                child: Expanded(
+            Expanded(
+                child: Container(
+                    decoration: ShapeDecoration(
+                      shape: context.uiKitTheme?.bottomSheetTheme.shape ??
+                          const RoundedRectangleBorder(),
+                    ),
+                    clipBehavior: Clip.hardEdge,
                     child: SingleChildScrollView(
-                  physics: const ClampingScrollPhysics(),
-                  padding: EdgeInsets.symmetric(
-                      horizontal: EdgeInsetsFoundation.horizontal16),
-                  child: child,
-                ))),
+                      physics: const ClampingScrollPhysics(),
+                      child: child,
+                    ))),
             if (bottomBar != null) bottomBar
           ],
         )).paddingOnly(top: topPadding ?? 30.h),
@@ -67,11 +64,9 @@ showUiKitGeneralFullScreenDialog(
               sigmaX: 4 * animation1.value, sigmaY: 4 * animation2.value),
           child: Animations.slideAnimation(animation1, animation2, child));
     },
-    pageBuilder: (
-      BuildContext context,
-      Animation<double> animation1,
-      Animation<double> animation2,
-    ) {
+    pageBuilder: (BuildContext context,
+        Animation<double> animation1,
+        Animation<double> animation2,) {
       return dismissable;
     },
   );
