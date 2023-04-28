@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
-import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 
 class $AssetsFontsGen {
   const $AssetsFontsGen();
@@ -40,6 +40,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
+  /// File path: assets/images/png/balloons.png
+  AssetGenImage get balloons => const AssetGenImage('assets/images/png/balloons.png');
+
   /// File path: assets/images/png/calendar.png
   AssetGenImage get calendar => const AssetGenImage('assets/images/png/calendar.png');
 
@@ -68,8 +71,19 @@ class $AssetsImagesPngGen {
   AssetGenImage get weatherIcon => const AssetGenImage('assets/images/png/weather_icon.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [atmosphere, calendar, coins, eventAvatar, mockUserAvatar, place, profileAvatar, profilePost1, profileStory1, weatherIcon];
+  List<AssetGenImage> get values => [
+        atmosphere,
+        balloons,
+        calendar,
+        coins,
+        eventAvatar,
+        mockUserAvatar,
+        place,
+        profileAvatar,
+        profilePost1,
+        profileStory1,
+        weatherIcon
+      ];
 }
 
 class $AssetsImagesSvgGen {
@@ -131,8 +145,8 @@ class $AssetsImagesSvgGen {
         chevronLeft,
         chevronRight,
         cocktail,
-        fireWhite,
         dice,
+        fireWhite,
         influencerAccountMark,
         like,
         playArrow,

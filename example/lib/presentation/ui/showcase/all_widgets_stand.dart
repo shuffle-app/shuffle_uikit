@@ -51,6 +51,16 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              AccentCard(
+                title: 'Ballooning festival',
+                additionalInfo: '22-23 March',
+                accentMessage: 'Don’t miss',
+                image: ImageWidget(
+                  rasterAsset: Assets.images.png.balloons,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               Row(
                 children: [
                   context.button(
