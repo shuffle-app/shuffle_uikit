@@ -49,6 +49,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/coins.png
   AssetGenImage get coins => const AssetGenImage('assets/images/png/coins.png');
 
+  /// File path: assets/images/png/crazy_emoji.png
+  AssetGenImage get crazyEmoji => const AssetGenImage('assets/images/png/crazy_emoji.png');
+
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
@@ -73,6 +76,9 @@ class $AssetsImagesPngGen {
   /// List of all assets
   List<AssetGenImage> get values => [
         atmosphere,
+        calendar,
+        coins,
+        crazyEmoji,
         balloons,
         calendar,
         coins,
