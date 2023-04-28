@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit/atoms/buttons/gradient_icon_button.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/small_ordinary_button.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/ui_kit_text_theme.dart';
 
@@ -57,7 +58,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? outlined,
   }) {
     final hasIcon = icon != null;
-    final onlyIconButton = (onlyIcon ?? false) && hasIcon;
+    final gradientIconButton = gradient && hasIcon && text.isEmpty;
+    final onlyIconButton = (onlyIcon ?? false) && hasIcon && text.isEmpty;
     if (dialogButton ?? false) {
       if (dialogButtonType == DialogButtonType.buttonBlack) {
         return DialogButton.black(
@@ -72,6 +74,11 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           small: true,
         );
       }
+    } else if (gradientIconButton) {
+      return GradientIconButton(
+        icon: icon,
+        onPressed: onPressed,
+      );
     } else if (gradient && !hasIcon && !onlyIconButton) {
       return GradientButton(
         text: text,

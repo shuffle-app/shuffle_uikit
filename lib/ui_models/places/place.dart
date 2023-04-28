@@ -1,39 +1,39 @@
-enum UiKitPlaceMediaType { image, video }
+enum UiKitMediaType { image, video }
 
 class UiKitPlace {
-  final List<UiKitPlaceMedia> media;
+  final List<UiKitMedia> media;
   final String description;
   final double? rating;
-  final List<UiKitPlaceTag> tags;
+  final List<UiKitTag> tags;
   final String? title;
   final String? logo;
 
   UiKitPlace({
-     this.title,
+    this.title,
     required this.media,
-     this.logo,
+    this.logo,
     required this.description,
-     this.rating,
+    this.rating,
     required this.tags,
   });
 }
 
-class UiKitPlaceMedia {
+class UiKitMedia {
   final String link;
-  final UiKitPlaceMediaType type;
+  final UiKitMediaType type;
 
-  UiKitPlaceMedia({
+  UiKitMedia({
     required this.link,
     required this.type,
   });
 }
 
-class UiKitPlaceTag {
+class UiKitTag {
   final String title;
   final String iconPath;
   final bool matching;
 
-  UiKitPlaceTag({
+  UiKitTag({
     required this.title,
     required this.iconPath,
     required this.matching,
