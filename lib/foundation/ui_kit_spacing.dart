@@ -9,6 +9,7 @@ class SpacingFoundation {
   static double get horizontalSpacing10 => 10.w;
   static double get horizontalSpacing12 => 12.w;
   static double get horizontalSpacing16 => 16.w;
+  static double get horizontalSpacing20 => 20.w;
   static double get horizontalSpacing24 => 24.w;
   static double get verticalSpacing2 => 2.h;
   static double get verticalSpacing4 => 4.h;

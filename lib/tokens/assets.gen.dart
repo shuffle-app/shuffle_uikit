@@ -76,12 +76,10 @@ class $AssetsImagesPngGen {
   /// List of all assets
   List<AssetGenImage> get values => [
         atmosphere,
-        calendar,
-        coins,
-        crazyEmoji,
         balloons,
         calendar,
         coins,
+        crazyEmoji,
         eventAvatar,
         mockUserAvatar,
         place,
@@ -110,6 +108,12 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/fire_white.svg
   SvgGenImage get fireWhite => const SvgGenImage('assets/images/svg/fire_white.svg');
 
+  /// File path: assets/images/svg/home_fill.svg
+  SvgGenImage get homeFill => const SvgGenImage('assets/images/svg/home_fill.svg');
+
+  /// File path: assets/images/svg/home_outline.svg
+  SvgGenImage get homeOutline => const SvgGenImage('assets/images/svg/home_outline.svg');
+
   /// File path: assets/images/svg/influencer_account_mark.svg
   SvgGenImage get influencerAccountMark => const SvgGenImage('assets/images/svg/influencer_account_mark.svg');
 
@@ -125,6 +129,12 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/pro_account_mark.svg
   SvgGenImage get proAccountMark => const SvgGenImage('assets/images/svg/pro_account_mark.svg');
 
+  /// File path: assets/images/svg/profile_fill.svg
+  SvgGenImage get profileFill => const SvgGenImage('assets/images/svg/profile_fill.svg');
+
+  /// File path: assets/images/svg/profile_outline.svg
+  SvgGenImage get profileOutline => const SvgGenImage('assets/images/svg/profile_outline.svg');
+
   /// File path: assets/images/svg/rising_trend_icon.svg
   SvgGenImage get risingTrendIcon => const SvgGenImage('assets/images/svg/rising_trend_icon.svg');
 
@@ -133,6 +143,24 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/search-people.svg
   SvgGenImage get searchPeople => const SvgGenImage('assets/images/svg/search-people.svg');
+
+  /// File path: assets/images/svg/search_fill.svg
+  SvgGenImage get searchFill => const SvgGenImage('assets/images/svg/search_fill.svg');
+
+  /// File path: assets/images/svg/search_outline.svg
+  SvgGenImage get searchOutline => const SvgGenImage('assets/images/svg/search_outline.svg');
+
+  /// File path: assets/images/svg/shuffle_fill.svg
+  SvgGenImage get shuffleFill => const SvgGenImage('assets/images/svg/shuffle_fill.svg');
+
+  /// File path: assets/images/svg/shuffle_outline.svg
+  SvgGenImage get shuffleOutline => const SvgGenImage('assets/images/svg/shuffle_outline.svg');
+
+  /// File path: assets/images/svg/spinner_fill.svg
+  SvgGenImage get spinnerFill => const SvgGenImage('assets/images/svg/spinner_fill.svg');
+
+  /// File path: assets/images/svg/spinner_outline.svg
+  SvgGenImage get spinnerOutline => const SvgGenImage('assets/images/svg/spinner_outline.svg');
 
   /// File path: assets/images/svg/star.svg
   SvgGenImage get star => const SvgGenImage('assets/images/svg/star.svg');
@@ -153,14 +181,24 @@ class $AssetsImagesSvgGen {
         cocktail,
         dice,
         fireWhite,
+        homeFill,
+        homeOutline,
         influencerAccountMark,
         like,
         playArrow,
         premiumAccountMark,
         proAccountMark,
+        profileFill,
+        profileOutline,
         risingTrendIcon,
         route,
         searchPeople,
+        searchFill,
+        searchOutline,
+        shuffleFill,
+        shuffleOutline,
+        spinnerFill,
+        spinnerOutline,
         star,
         tripleArrow,
         trippleArrowBlack,

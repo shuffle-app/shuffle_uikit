@@ -51,11 +51,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              BlurredBottomNavigationBar(
-                onItemSelected: (index) {},
-                items: [],
-              ),
-              SpacingFoundation.verticalSpace16,
               AccentCard(
                 title: 'Ballooning festival',
                 additionalInfo: '22-23 March',
@@ -66,21 +61,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
-
               const Center(
                 child: BlurredQuestionChip(
                   label: 'how it works',
                 ),
               ),
               SpacingFoundation.verticalSpace16,
-              AccentCard(
-                  title: 'Ballooning festival',
-                  additionalInfo: '22-23 March',
-                  accentMessage: 'Don’t miss',
-                  image: ImageWidget(
-                    rasterAsset: Assets.images.png.balloons,
-                    fit: BoxFit.cover,
-                  )),
               const TitledAccentInfo(
                 title: 'Don’t miss it',
                 info: '11:00 am, November 20',
@@ -382,6 +368,31 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             ],
           ),
         ).paddingAll(EdgeInsetsFoundation.all16),
+      ),
+      bottomNavigationBar: BlurableBottomNavigationBar(
+        onItemSelected: (index) {},
+        items: [
+          BlurableBottomNavigationBarItem(
+            selectedIcon: Assets.images.svg.homeFill,
+            unselectedIcon: Assets.images.svg.homeOutline,
+          ),
+          BlurableBottomNavigationBarItem(
+            selectedIcon: Assets.images.svg.spinnerFill,
+            unselectedIcon: Assets.images.svg.spinnerOutline,
+          ),
+          BlurableBottomNavigationBarItem(
+            selectedIcon: Assets.images.svg.shuffleFill,
+            unselectedIcon: Assets.images.svg.shuffleOutline,
+          ),
+          BlurableBottomNavigationBarItem(
+            selectedIcon: Assets.images.svg.searchFill,
+            unselectedIcon: Assets.images.svg.searchOutline,
+          ),
+          BlurableBottomNavigationBarItem(
+            selectedIcon: Assets.images.svg.profileFill,
+            unselectedIcon: Assets.images.svg.profileOutline,
+          ),
+        ],
       ),
     );
   }

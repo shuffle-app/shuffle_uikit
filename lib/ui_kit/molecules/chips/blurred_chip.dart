@@ -14,7 +14,7 @@ class BlurredQuestionChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium?.copyWith(
+    final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: ColorsFoundation.darkNeutral900,
       fontSize: 10,
     );

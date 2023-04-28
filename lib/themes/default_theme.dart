@@ -12,6 +12,11 @@ class UiKitThemes {
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: Colors.white,
     ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      enableFeedback: true,
+    ),
     disabledColor: ColorsFoundation.darkNeutral300,
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
@@ -19,6 +24,9 @@ class UiKitThemes {
         chipTheme: UiKitChipThemeData(
           border: Border.all(color: Colors.white, width: 2),
           backgroundColor: ColorsFoundation.solidSurface,
+        ),
+        blurredBottomNavigationBarTheme: BlurredBottomNavigationBarTheme(
+          iconColors: Colors.white,
         ),
         ordinaryButtonStyle: ButtonStyle(
           fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(48)),
