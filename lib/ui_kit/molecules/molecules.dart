@@ -11,6 +11,7 @@ export 'place/place_description_grid.dart';
 export 'place/place_media_widget.dart';
 export 'place/place_stats.dart';
 export 'place/title_with_avatar.dart';
+export 'place/titled_accent_info.dart';
 export 'place/ui_kit_photo_slider.dart';
 export 'profile/profile_attitude_tab.dart';
 export 'profile/profile_highlights_card.dart';
