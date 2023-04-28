@@ -51,7 +51,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-
+              BlurredBottomNavigationBar(
+                onItemSelected: (index) {},
+                items: [],
+              ),
+              SpacingFoundation.verticalSpace16,
               AccentCard(
                 title: 'Ballooning festival',
                 additionalInfo: '22-23 March',
@@ -59,8 +63,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 image: ImageWidget(
                   rasterAsset: Assets.images.png.balloons,
                   fit: BoxFit.cover,
-                )),
-
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               const TitledAccentInfo(
                 title: 'Don’t miss it',
                 info: '11:00 am, November 20',
@@ -69,7 +74,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               const TitledAccentInfo(
                 title: 'Place',
                 info: 'Sardina Seafood Restaurant',
-
               ),
               SpacingFoundation.verticalSpace16,
               Row(
