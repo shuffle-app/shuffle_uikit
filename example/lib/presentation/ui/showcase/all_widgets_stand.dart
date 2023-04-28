@@ -72,6 +72,34 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               Row(
                 children: [
+                  MessageCardWithIcon(
+                    message: 'Want to have some fun',
+                    icon: ImageWidget(
+                      rasterAsset: Assets.images.png.crazyEmoji,
+                    ),
+                    layoutDirection: Axis.vertical,
+                  ),
+                  SpacingFoundation.horizontalSpace12,
+                  MessageCardWithIcon(
+                    message: 'Want to have some fun',
+                    icon: ImageWidget(
+                      rasterAsset: Assets.images.png.crazyEmoji,
+                    ),
+                    layoutDirection: Axis.vertical,
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
+              MessageCardWithIcon(
+                message: 'need to cool down a bit?',
+                icon: ImageWidget(
+                  rasterAsset: Assets.images.png.crazyEmoji,
+                ),
+                layoutDirection: Axis.horizontal,
+              ),
+              SpacingFoundation.verticalSpace16,
+              Row(
+                children: [
                   context.button(
                     text: '',
                     gradient: true,
