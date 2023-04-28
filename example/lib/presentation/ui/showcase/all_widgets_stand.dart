@@ -51,6 +51,33 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Row(
+                children: [
+                  context.button(
+                    text: '',
+                    gradient: true,
+                    icon: ImageWidget(
+                      svgAsset: Assets.images.svg.dice,
+                    ),
+                    onPressed: () {},
+                  ),
+                  SpacingFoundation.horizontalSpace12,
+                  TitledFilterChip(
+                    title: 'Favorites',
+                    icon: Assets.images.svg.star,
+                    selected: false,
+                    onPressed: () {},
+                  ),
+                  SpacingFoundation.horizontalSpace12,
+                  TitledFilterChip(
+                    title: 'Clubs',
+                    icon: Assets.images.svg.cocktail,
+                    selected: true,
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
               IntrinsicHeight(
                 child: Row(
                   mainAxisSize: MainAxisSize.max,

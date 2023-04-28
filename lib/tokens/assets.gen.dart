@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
+import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/services.dart';
 
 class $AssetsFontsGen {
   const $AssetsFontsGen();
@@ -68,18 +68,8 @@ class $AssetsImagesPngGen {
   AssetGenImage get weatherIcon => const AssetGenImage('assets/images/png/weather_icon.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
-        atmosphere,
-        calendar,
-        coins,
-        eventAvatar,
-        mockUserAvatar,
-        place,
-        profileAvatar,
-        profilePost1,
-        profileStory1,
-        weatherIcon
-      ];
+  List<AssetGenImage> get values =>
+      [atmosphere, calendar, coins, eventAvatar, mockUserAvatar, place, profileAvatar, profilePost1, profileStory1, weatherIcon];
 }
 
 class $AssetsImagesSvgGen {
@@ -93,6 +83,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/cocktail.svg
   SvgGenImage get cocktail => const SvgGenImage('assets/images/svg/cocktail.svg');
+
+  /// File path: assets/images/svg/dice.svg
+  SvgGenImage get dice => const SvgGenImage('assets/images/svg/dice.svg');
 
   /// File path: assets/images/svg/fire_white.svg
   SvgGenImage get fireWhite => const SvgGenImage('assets/images/svg/fire_white.svg');
@@ -139,6 +132,7 @@ class $AssetsImagesSvgGen {
         chevronRight,
         cocktail,
         fireWhite,
+        dice,
         influencerAccountMark,
         like,
         playArrow,

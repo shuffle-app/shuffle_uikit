@@ -1,11 +1,13 @@
 /// This file exports all molecules in the molecules folder
 
 export 'app_bar/custom_app_bar.dart';
+export 'filter/titled_filter_chip.dart';
 export 'info_cards/gradient_attention_card.dart';
 export 'info_cards/metrics_card.dart';
 export 'info_cards/weather_info_card.dart';
 export 'place/media_widget.dart';
 export 'place/place_description_grid.dart';
+export 'place/place_media_widget.dart';
 export 'place/title_with_avatar.dart';
 export 'place/ui_kit_photo_slider.dart';
 export 'profile/profile_attitude_tab.dart';
