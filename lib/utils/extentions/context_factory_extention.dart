@@ -5,7 +5,7 @@ enum DialogButtonType { buttonWhite, buttonBlack }
 
 extension Factory on BuildContext {
   Widget button({
-    required String text,
+    String? text,
     VoidCallback? onPressed,
     Widget? icon,
     Color? color,
@@ -20,7 +20,7 @@ extension Factory on BuildContext {
     if (small ?? false) {
       return WidgetsFactory.of(this)!
           .createSmallButton(
-            text: text,
+            text: text ?? '',
             onPressed: onPressed,
             icon: icon,
             color: color,
@@ -35,7 +35,7 @@ extension Factory on BuildContext {
     } else {
       return WidgetsFactory.of(this)!
           .createOrdinaryButton(
-            text: text,
+            text: text ?? '',
             onPressed: onPressed,
             icon: icon,
             color: color,

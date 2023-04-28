@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/tokens/assets.gen.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/place_tag_widget.dart';
 
 class PlaceStats extends StatelessWidget {
   final double? rating;
-  final List<UiKitPlaceTag> tags;
+  final List<UiKitTag> tags;
   final ScrollController firstHalfController = ScrollController();
   late final ScrollController secondHalfController = ScrollController()
     ..addListener(() {
