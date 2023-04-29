@@ -135,7 +135,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
   Widget _buildLeftItem(
       BuildContext context, UiKitMedia item, int differenceFromFirstCard) {
     return Positioned(
-      left: 40 / differenceFromFirstCard - 20,
+      left: 20 / differenceFromFirstCard - 35,
 
       child: SliderPhotoCard(
         media: item,
@@ -148,7 +148,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
   Widget _buildRightItem(
       BuildContext context, UiKitMedia item, int differenceFromFirstCard) {
     return Positioned(
-      right: 40 / differenceFromFirstCard - 20,
+      right: 20 / differenceFromFirstCard - 35,
 
       child: SliderPhotoCard(
         media: item,
@@ -285,12 +285,12 @@ class CardAnimation {
   final double initialScale;
   final AnimationController animationController;
 
-  double left = 40;
-  double right = 40;
+  double left = 0;
+  double right = 0;
   double total = 0;
   double firstCardAngle = 0;
   double scale;
-  double difference = 40;
+  double difference = 10;
 
   late Animation<double> _leftAnimation;
   late Animation<double> _rightAnimation;
@@ -308,12 +308,12 @@ class CardAnimation {
 
   void reset() {
     animationController.reset();
-    left = 40;
-    right = 40;
+    left = 0;
+    right = 0;
     total = 0;
     firstCardAngle = 0;
     scale = initialScale;
-    difference = 40;
+    difference = 20;
   }
 
   void update(double dx, double dy, bool inverseAngle) {
