@@ -76,12 +76,10 @@ class $AssetsImagesPngGen {
   /// List of all assets
   List<AssetGenImage> get values => [
         atmosphere,
-        calendar,
-        coins,
-        crazyEmoji,
         balloons,
         calendar,
         coins,
+        crazyEmoji,
         eventAvatar,
         mockUserAvatar,
         place,
@@ -116,6 +114,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/like.svg
   SvgGenImage get like => const SvgGenImage('assets/images/svg/like.svg');
 
+  /// File path: assets/images/svg/logo.svg
+  SvgGenImage get logo => const SvgGenImage('assets/images/svg/logo.svg');
+
   /// File path: assets/images/svg/play_arrow.svg
   SvgGenImage get playArrow => const SvgGenImage('assets/images/svg/play_arrow.svg');
 
@@ -137,6 +138,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/star.svg
   SvgGenImage get star => const SvgGenImage('assets/images/svg/star.svg');
 
+  /// File path: assets/images/svg/sufle.svg
+  SvgGenImage get sufle => const SvgGenImage('assets/images/svg/sufle.svg');
+
   /// File path: assets/images/svg/triple_arrow.svg
   SvgGenImage get tripleArrow => const SvgGenImage('assets/images/svg/triple_arrow.svg');
 
@@ -155,6 +159,7 @@ class $AssetsImagesSvgGen {
         fireWhite,
         influencerAccountMark,
         like,
+        logo,
         playArrow,
         premiumAccountMark,
         proAccountMark,
@@ -162,6 +167,7 @@ class $AssetsImagesSvgGen {
         route,
         searchPeople,
         star,
+        sufle,
         tripleArrow,
         trippleArrowBlack,
         whiteStar

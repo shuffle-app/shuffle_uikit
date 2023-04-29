@@ -285,7 +285,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
                     UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
                     UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.dice.path, matching: true),
                     UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
                     UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
                     UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),

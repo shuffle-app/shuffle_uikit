@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class CircularAvatar extends StatelessWidget {
   final String avatarUrl;
@@ -7,10 +8,11 @@ class CircularAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipOval(
-      child: Image.asset(
-        avatarUrl,
-        package: 'shuffle_uikit',
-        fit: BoxFit.cover,
+      child: ImageWidget(
+        height: SpacingFoundation.verticalSpacing24,
+        link: avatarUrl,
+        // package: 'shuffle_uikit',
+        fit: BoxFit.fitHeight,
       ),
     );
   }

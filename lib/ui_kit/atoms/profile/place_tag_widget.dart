@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
@@ -29,9 +30,11 @@ class UiKitTagWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         if (showSpacing) SpacingFoundation.horizontalSpace12,
-        SvgPicture.asset(
-          icon,
-          package: 'shuffle_uikit',
+        ImageWidget(
+          link: icon,
+          height: SpacingFoundation.horizontalSpacing12,
+          fit: BoxFit.fitHeight,
+          // package: 'shuffle_uikit',
         ),
         SpacingFoundation.horizontalSpace4,
         if (showGradient)
