@@ -120,6 +120,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/like.svg
   SvgGenImage get like => const SvgGenImage('assets/images/svg/like.svg');
 
+  /// File path: assets/images/svg/logo.svg
+  SvgGenImage get logo => const SvgGenImage('assets/images/svg/logo.svg');
+
   /// File path: assets/images/svg/play_arrow.svg
   SvgGenImage get playArrow => const SvgGenImage('assets/images/svg/play_arrow.svg');
 
@@ -165,6 +168,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/star.svg
   SvgGenImage get star => const SvgGenImage('assets/images/svg/star.svg');
 
+  /// File path: assets/images/svg/sufle.svg
+  SvgGenImage get sufle => const SvgGenImage('assets/images/svg/sufle.svg');
+
   /// File path: assets/images/svg/triple_arrow.svg
   SvgGenImage get tripleArrow => const SvgGenImage('assets/images/svg/triple_arrow.svg');
 
@@ -185,6 +191,7 @@ class $AssetsImagesSvgGen {
         homeOutline,
         influencerAccountMark,
         like,
+        logo,
         playArrow,
         premiumAccountMark,
         proAccountMark,
@@ -200,6 +207,7 @@ class $AssetsImagesSvgGen {
         spinnerFill,
         spinnerOutline,
         star,
+        sufle,
         tripleArrow,
         trippleArrowBlack,
         whiteStar

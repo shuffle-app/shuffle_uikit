@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-class PlaceTagWidget extends StatelessWidget {
+class UiKitTagWidget extends StatelessWidget {
   final String title;
   final String icon;
   final Color? textColor;
   final bool showSpacing;
   final bool showGradient;
 
-  const PlaceTagWidget({
+  const UiKitTagWidget({
     Key? key,
     required this.title,
     required this.icon,
@@ -29,9 +30,11 @@ class PlaceTagWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         if (showSpacing) SpacingFoundation.horizontalSpace12,
-        SvgPicture.asset(
-          icon,
-          package: 'shuffle_uikit',
+        ImageWidget(
+          link: icon,
+          height: SpacingFoundation.horizontalSpacing12,
+          fit: BoxFit.fitHeight,
+          // package: 'shuffle_uikit',
         ),
         SpacingFoundation.horizontalSpace4,
         if (showGradient)

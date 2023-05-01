@@ -13,4 +13,4 @@ export 'buttons/iconed_button.dart';
 export 'buttons/ordinary_button.dart';
 export 'buttons/ordinary_with_child.dart';
 export 'image/image.dart';
-export 'inputs/inputs.dart';
+export 'profile/place_tag_widget.dart';

@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ImageWidget extends StatelessWidget {
@@ -24,6 +25,9 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print(
+    //     'here is build ImageWidget with link $link and results link!.startsWith("http://") || link!.startsWith("https://") ${link?.startsWith("http://")} || ${link?.startsWith("https://")}');
+
     if (rasterAsset != null) {
       return rasterAsset!.image(
         color: color,
@@ -49,7 +53,7 @@ class ImageWidget extends StatelessWidget {
           height: height,
         ),
       );
-    } else if (link!.startsWith("http://") || link!.startsWith("https://")) {
+    } else if (link!.substring(0,4) == 'http') {// !.startsWith("http://") || link!.startsWith("https://")) {
       return CachedNetworkImage(
         imageUrl: link!,
         fit: fit,
@@ -60,6 +64,18 @@ class ImageWidget extends StatelessWidget {
         placeholder: (_, __) => const CircularProgressIndicator.adaptive(),
       );
     } else {
+
+      if(link!.contains('svg')) {
+        return SvgPicture.asset(link!,
+        fit: fit ?? BoxFit.none,
+        width: width,
+        color: color,
+        height: height,
+        package: 'shuffle_uikit',
+      );
+      }
+
+
       return Image.asset(
         link!,
         fit: fit,
