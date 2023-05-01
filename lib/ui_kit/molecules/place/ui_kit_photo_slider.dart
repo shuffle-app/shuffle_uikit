@@ -61,7 +61,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
 
   @override
   Widget build(BuildContext context) {
-    print('_currentIndex is $_currentIndex');
+    final List<Widget> backStack = _getBackStack();
 
     return SizedBox(
         height: widget.height,
@@ -71,19 +71,47 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
             fit: StackFit.expand,
             alignment: Alignment.center,
             children: [
-              ...List.generate(widget.media.length - 1, (index) {
-                final media = List.from(widget.media);
-                media.removeAt(_currentIndex ?? 0);
-                if ((index - (_currentIndex ?? 0)) < 0) {
-                  return _buildLeftItem(
-                      context, media[index], (_currentIndex ?? 0) - index);
-                } else {
-                  return _buildRightItem(
-                      context, media[index], index - (_currentIndex ?? 0)+1);
-                }
-              }).reversed.toList(),
+              //TODO add change to animation
+              //TODO right and left paddings
+              //TODO front-back aligment
+              // if (_cardAnimation.right < widget.width / 4)
+              //   ...backStack.reversed
+              // else
+              ...backStack,
+              //         ...List.generate(widget.media.length - 1, (index) {
+              // final media = List.from(widget.media);
+              // media.removeAt(_currentIndex ?? 0);
+              // if ((index - (_currentIndex ?? 0)) < 0) {
+              // return _buildLeftItem(
+              // context, media[index], (_currentIndex ?? 0) - index);
+              // } else {
+              // return _buildRightItem(
+              // context, media[index], index - (_currentIndex ?? 0) + 1);
+              // }
+              // }).reversed.toList(),
               _buildFirstItem(context, widget.media[_currentIndex ?? 0]),
             ]));
+  }
+
+  _getBackStack() {
+    final leftList = widget.media.sublist(0, _currentIndex ?? 0);
+
+    final rightList =
+        widget.media.sublist((_currentIndex ?? 0) + 1, widget.media.length);
+
+    return [
+      //build left stack
+      if (leftList.isNotEmpty)
+        ...leftList
+            .map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1))
+            .toList(),
+
+      //build right stack
+      if (rightList.isNotEmpty)
+        ...rightList
+            .map((e) => _buildRightItem(context, e, rightList.indexOf(e) + 1))
+            .toList().reversed,
+    ];
   }
 
   Widget _buildFirstItem(BuildContext context, UiKitMedia item) {
@@ -94,24 +122,21 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
         child: SliderPhotoCard(
           media: item,
           givenSize: Size(
-              widget.width - _cardAnimation.left - _cardAnimation.right,
+              double.infinity,
+              // widget.width - _cardAnimation.left - _cardAnimation.right,
               widget.height * _cardAnimation.scale),
         ),
         onHorizontalDragStart: (tapInfo) {
-
-
           final renderBox = context.findRenderObject()! as RenderBox;
           final position = renderBox.globalToLocal(tapInfo.globalPosition);
 
           if (position.dy < renderBox.size.height / 2) _tappedOnTop = true;
-
         },
         onHorizontalDragUpdate: (tapInfo) {
           final isLastCard = _currentIndex! == widget.media.length - 1;
           final isFirstCard = _currentIndex! == 0;
           if (isLastCard && tapInfo.delta.dx < 0) return;
           if (isFirstCard && tapInfo.delta.dx > 0) return;
-
 
           setState(
             () => _cardAnimation.update(
@@ -123,10 +148,8 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
           // }
         },
         onHorizontalDragEnd: (tapInfo) {
-
           _tappedOnTop = false;
           _onEndAnimation();
-
         },
       ),
     );
@@ -135,11 +158,10 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
   Widget _buildLeftItem(
       BuildContext context, UiKitMedia item, int differenceFromFirstCard) {
     return Positioned(
-      left: 20 / differenceFromFirstCard - 35,
-
+      left: 10 / differenceFromFirstCard - 20,
       child: SliderPhotoCard(
         media: item,
-        givenSize: Size(widget.width / 2,
+        givenSize: Size(widget.width - 55,
             widget.height * (1 - differenceFromFirstCard * 0.1)),
       ),
     );
@@ -148,11 +170,10 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
   Widget _buildRightItem(
       BuildContext context, UiKitMedia item, int differenceFromFirstCard) {
     return Positioned(
-      right: 20 / differenceFromFirstCard - 35,
-
+      right: 10 / differenceFromFirstCard - 20,
       child: SliderPhotoCard(
         media: item,
-        givenSize: Size(widget.width / 2,
+        givenSize: Size(widget.width - 55,
             widget.height * (1 - differenceFromFirstCard * 0.1)),
       ),
     );
@@ -164,7 +185,9 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
     }
   }
 
-  Future<void> _animationStatusListener(AnimationStatus status) async {
+  Future<void> _animationStatusListener(
+    AnimationStatus status,
+  ) async {
     if (status == AnimationStatus.completed) {
       switch (_swipeType) {
         case SwipeType.swipe:
@@ -173,8 +196,12 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
         default:
           break;
       }
-
-      _reset();
+      _reset(
+        20 /
+            widget.media.length *
+            (widget.media.length - (_currentIndex ?? 0) + 1),
+        20 / widget.media.length * (_currentIndex ?? 0),
+      );
     }
   }
 
@@ -184,10 +211,10 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
     _directionHistory.add(_detectedDirection);
   }
 
-  void _reset() {
+  void _reset(double rightMargin, double leftMargin) {
     setState(() {
       _animationController.reset();
-      _cardAnimation.reset();
+      _cardAnimation.reset(rightMargin, leftMargin);
       _swipeType = SwipeType.none;
     });
   }
@@ -272,7 +299,12 @@ extension Range on num {
 
 enum CardSwiperDirection { none, left, right, top, bottom }
 
-enum SwipeType { none, swipe, back, undo }
+enum SwipeType {
+  none,
+  swipe,
+  back,
+  undo,
+}
 
 class CardAnimation {
   CardAnimation({
@@ -306,10 +338,10 @@ class CardAnimation {
     difference = _differenceAnimation.value;
   }
 
-  void reset() {
+  void reset(double rightMargin, double leftMargin) {
     animationController.reset();
-    left = 0;
-    right = 0;
+    left = leftMargin;
+    right = rightMargin;
     total = 0;
     firstCardAngle = 0;
     scale = initialScale;
@@ -321,9 +353,9 @@ class CardAnimation {
     right -= dx;
 
     total += dx;
-    updateAngle(inverseAngle);
-    updateScale();
-    updateDifference();
+    // updateAngle(inverseAngle);
+    // updateScale();
+    // updateDifference();
   }
 
   void updateAngle(bool inverse) {

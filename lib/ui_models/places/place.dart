@@ -1,6 +1,7 @@
 enum UiKitMediaType { image, video }
 
 class UiKitPlace {
+  final String id;
   final List<UiKitMedia> media;
   final String description;
   final List<UiKitTag> tags;
@@ -9,6 +10,7 @@ class UiKitPlace {
   final String? logo;
 
   UiKitPlace({
+    required this.id,
     this.title,
     required this.media,
     this.logo,
