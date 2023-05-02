@@ -24,6 +24,7 @@ class AccentCard extends StatelessWidget {
     final accentMessageStyle = textTheme?.caption1.copyWith(color: ColorsFoundation.darkNeutral100);
     return IntrinsicHeight(
       child: Container(
+        width: double.infinity,
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
           borderRadius: BorderRadiusFoundation.all24,
