@@ -30,7 +30,7 @@ class _LoadingWidgetState extends State<LoadingWidget>
           svgAsset: Assets.images.svg.sufle,
         ),
         Positioned(
-            left: 90.w,
+            left: 100.w,
             width: 60.w,
             child: Assets.images.svg.logo
                 .svg(package: 'shuffle_uikit', fit: BoxFit.fitWidth))

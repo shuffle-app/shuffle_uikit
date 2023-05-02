@@ -19,13 +19,16 @@ Future<T?> showUiKitPopover<T extends Object?>(BuildContext context,
         if (description != null)
           description.paddingSymmetric(
               vertical: SpacingFoundation.verticalSpacing8),
-        //TODO romancores: change button to black one
-        GeneralPurposeButton(
-          text: buttonText,
-          onPressed: () => context.pop(),
-        ).paddingOnly(
-          top: SpacingFoundation.verticalSpacing8,
-        )
+        context
+            .button(
+              text: buttonText,
+              dialogButton: true,
+              dialogButtonType: DialogButtonType.buttonBlack,
+              onPressed: () => context.pop(),
+            )
+            .paddingOnly(
+              top: SpacingFoundation.verticalSpacing8,
+            )
       ],
     ).paddingSymmetric(
         vertical: SpacingFoundation.verticalSpacing24,

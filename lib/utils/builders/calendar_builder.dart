@@ -43,7 +43,8 @@ class _CustomCalendarPickerDialogState
   @override
   Widget build(BuildContext context) {
     return Container(
-            constraints: BoxConstraints.loose(SizesFoundation.standartCalendarPopupSize),
+            constraints:
+                BoxConstraints.loose(SizesFoundation.standartCalendarPopupSize),
             child: Column(mainAxisSize: MainAxisSize.min, children: [
               //TODO romancores or Murodkulov: add theming
               CalendarDatePicker(
@@ -62,6 +63,7 @@ class _CustomCalendarPickerDialogState
                 SpacingFoundation.horizontalSpace4,
                 context.button(
                   text: 'Ok',
+                  dialogButton: true,
                   onPressed: () => context.pop(result: selectedDate),
                 )
               ]),

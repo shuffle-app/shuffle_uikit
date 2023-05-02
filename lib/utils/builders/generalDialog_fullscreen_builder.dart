@@ -10,7 +10,7 @@ showUiKitGeneralFullScreenDialog(BuildContext context, {
   double? topPadding,
   Function onDismissed = _empty,
 }) {
-  final Widget dismissable = Dismissible(
+  dismissable(c) => Dismissible(
     key: Key(DateTime.now().toString()),
     direction: DismissDirection.down,
     onDismissed: (DismissDirection direction) async {
@@ -18,12 +18,12 @@ showUiKitGeneralFullScreenDialog(BuildContext context, {
 
       if (onDismissed != _empty) {
         await Future.delayed(
-          const Duration(seconds: 1),
+          const Duration(milliseconds: 200),
               () => onDismissed(),
         );
       }
 
-      context.pop();
+      Navigator.of(c, rootNavigator: true).pop();
     },
     // Отступ, чтобы не залезал на статусбар
     child: Dialog(
@@ -57,17 +57,17 @@ showUiKitGeneralFullScreenDialog(BuildContext context, {
     barrierLabel: '',
     barrierColor: Colors.black38,
     context: context,
-    transitionDuration: const Duration(milliseconds: 300),
+    transitionDuration: const Duration(milliseconds: 200),
     transitionBuilder: (context, animation1, animation2, child) {
       return BackdropFilter(
           filter: ImageFilter.blur(
-              sigmaX: 4 * animation1.value, sigmaY: 4 * animation2.value),
+              sigmaX: 2 * animation1.value, sigmaY: 2 * animation2.value),
           child: Animations.slideAnimation(animation1, animation2, child));
     },
     pageBuilder: (BuildContext context,
         Animation<double> animation1,
         Animation<double> animation2,) {
-      return dismissable;
+      return dismissable(context);
     },
   );
 }
