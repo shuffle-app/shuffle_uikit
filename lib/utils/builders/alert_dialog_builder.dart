@@ -23,9 +23,10 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
         contentTextStyle: context.uiKitTheme?.boldTextTheme.body,
         contentPadding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
         actions: [
-          //TODO romancores: change button to black one
-          GeneralPurposeButton(
+          context.button(
             text: buttonText,
+            dialogButton: true,
+            dialogButtonType: DialogButtonType.buttonBlack,
             onPressed: onPop ?? () => context.pop(),
           )
         ],

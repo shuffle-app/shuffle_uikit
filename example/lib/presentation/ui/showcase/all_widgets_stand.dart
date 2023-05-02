@@ -248,10 +248,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               PlaceInfo(
-                place: UiKitPlace(
-                  id: '1',
-                  title: '',
-                  logo: '',
+
                   media: [
                     UiKitMedia(link: Assets.images.png.place.path, type: UiKitMediaType.video),
                     UiKitMedia(link: Assets.images.png.place.path, type: UiKitMediaType.image),
@@ -283,7 +280,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
                     UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
                   ],
-                ),
+
               ),
               SpacingFoundation.verticalSpace16,
               const PlaceDescriptionGrid(
