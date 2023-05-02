@@ -369,31 +369,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ),
         ).paddingAll(EdgeInsetsFoundation.all16),
       ),
-      bottomNavigationBar: BlurableBottomNavigationBar(
-        onItemSelected: (index) {},
-        items: [
-          BlurableBottomNavigationBarItem(
-            selectedIcon: Assets.images.svg.homeFill,
-            unselectedIcon: Assets.images.svg.homeOutline,
-          ),
-          BlurableBottomNavigationBarItem(
-            selectedIcon: Assets.images.svg.spinnerFill,
-            unselectedIcon: Assets.images.svg.spinnerOutline,
-          ),
-          BlurableBottomNavigationBarItem(
-            selectedIcon: Assets.images.svg.shuffleFill,
-            unselectedIcon: Assets.images.svg.shuffleOutline,
-          ),
-          BlurableBottomNavigationBarItem(
-            selectedIcon: Assets.images.svg.searchFill,
-            unselectedIcon: Assets.images.svg.searchOutline,
-          ),
-          BlurableBottomNavigationBarItem(
-            selectedIcon: Assets.images.svg.profileFill,
-            unselectedIcon: Assets.images.svg.profileOutline,
-          ),
-        ],
-      ),
     );
   }
 }
