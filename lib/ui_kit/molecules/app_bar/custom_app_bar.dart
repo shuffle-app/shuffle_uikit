@@ -19,6 +19,7 @@ class CustomAppBar extends PreferredSize {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
+      borderRadius: BorderRadiusFoundation.onlyBottom24,
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
         child: Container(
@@ -35,12 +36,11 @@ class CustomAppBar extends PreferredSize {
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                if (autoImplyLeading ?? context.canPop())
-                const AppBarBackButton(),
-                  AppBarTitle(
-                    title: title,
-                    centerTitle: centerTitle,
-                  ),
+                if (autoImplyLeading ?? context.canPop()) const AppBarBackButton(),
+                AppBarTitle(
+                  title: title,
+                  centerTitle: centerTitle,
+                ),
               ],
             ),
           ),
