@@ -39,7 +39,7 @@ abstract class _UserTile extends StatelessWidget {
                 children: [
                   Text(
                     info.name,
-                    style: textTheme?.caption1.copyWith(color: Colors.white),
+                    style: textTheme?.caption1Bold.copyWith(color: Colors.white),
                   ),
                   SpacingFoundation.horizontalSpace8,
                   if (trailing != null) trailing!,

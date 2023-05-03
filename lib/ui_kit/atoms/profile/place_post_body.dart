@@ -13,7 +13,7 @@ class PlacePostBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) {
-        final textStyle = context.uiKitTheme?.boldTextTheme.caption1;
+        final textStyle = context.uiKitTheme?.boldTextTheme.caption1Bold;
         return Text(
           text,
           style: textStyle,

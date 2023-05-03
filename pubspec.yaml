@@ -48,14 +48,16 @@ flutter:
     - assets/fonts/
 
   fonts:
-    - family: Syne
+    - family: Unbounded
       fonts:
-        - asset: assets/fonts/Syne-Regular.ttf
+        - asset: assets/fonts/Unbounded-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Unbounded-Regular.ttf
           weight: 400
-        - asset: assets/fonts/Syne-SemiBold.ttf
+        - asset: assets/fonts/Unbounded-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Unbounded-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/Syne-Bold.ttf
-          weight: 700
 
 flutter_gen:
   output: lib/tokens

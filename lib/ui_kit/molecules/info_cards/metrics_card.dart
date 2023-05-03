@@ -18,7 +18,7 @@ class MetricsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = context.uiKitTheme?.boldTextTheme.caption2.copyWith(color: Colors.black);
+    final titleStyle = context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(color: Colors.black);
     final valueStyle = context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(color: Colors.black);
     return Container(
       clipBehavior: Clip.hardEdge,

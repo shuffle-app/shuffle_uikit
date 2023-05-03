@@ -172,7 +172,7 @@ class UiKitThemes {
     scaffoldBackgroundColor: Colors.black,
     primaryTextTheme: const TextTheme(
       titleMedium: TextStyle(
-        fontFamily: 'Syne',
+        fontFamily: 'Unbounded',
         fontSize: 24,
         fontWeight: FontWeight.w700,
         color: Color(0xffffffff),
@@ -181,7 +181,7 @@ class UiKitThemes {
     ),
     textTheme: const TextTheme(
       bodyMedium: TextStyle(
-        fontFamily: 'Syne',
+        fontFamily: 'Unbounded',
         fontSize: 16,
         fontWeight: FontWeight.w400,
         color: Color(0xffffffff),

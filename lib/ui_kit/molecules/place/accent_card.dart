@@ -20,8 +20,8 @@ class AccentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
     final titleStyle = textTheme?.subHeadline;
-    final additionalInfoStyle = textTheme?.caption2.copyWith(color: ColorsFoundation.darkNeutral500);
-    final accentMessageStyle = textTheme?.caption1.copyWith(color: ColorsFoundation.darkNeutral100);
+    final additionalInfoStyle = textTheme?.caption2Bold.copyWith(color: ColorsFoundation.darkNeutral500);
+    final accentMessageStyle = textTheme?.caption1Bold.copyWith(color: ColorsFoundation.darkNeutral100);
     return IntrinsicHeight(
       child: Container(
         width: double.infinity,
