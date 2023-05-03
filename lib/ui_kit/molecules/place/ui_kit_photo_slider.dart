@@ -1,5 +1,4 @@
 import 'dart:collection';
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -44,13 +43,10 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
     _animationController = AnimationController(
       duration: _animDuration,
       vsync: this,
-    )
-      ..addListener(_animationListener)
+    )..addListener(_animationListener)
       ..addStatusListener(_animationStatusListener);
 
-    _cardAnimation = CardAnimation(
-      animationController: _animationController,
-    );
+    _cardAnimation = CardAnimation(_animationController,);
   }
 
   @override
@@ -62,7 +58,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
   @override
   Widget build(BuildContext context) {
     final List<Widget> backStack =
-        _getBackStack(_cardAnimation.right < widget.width / 8);
+        _getBackStack(_cardAnimation.right < widget.width / 10);
 
     return SizedBox(
         height: widget.height,
@@ -115,10 +111,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
       child: GestureDetector(
         child: SliderPhotoCard(
           media: item,
-          givenSize: Size(
-              double.infinity,
-              // widget.width - _cardAnimation.left - _cardAnimation.right,
-              widget.height * _cardAnimation.scale),
+          givenSize: Size(double.infinity, widget.height),
         ),
         onHorizontalDragStart: (tapInfo) {
           final renderBox = context.findRenderObject()! as RenderBox;
@@ -151,33 +144,39 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
 
   Widget _buildLeftItem(
       BuildContext context, UiKitMedia item, int differenceFromFirstCard) {
-    return Positioned(
-      left: 20 /
-          widget.media.length *
-          ((_currentIndex ?? 0) + 1) -
-          differenceFromFirstCard*10,
-      // left: 10 / differenceFromFirstCard - 20 + _cardAnimation.difference,
-      child: SliderPhotoCard(
-        media: item,
-        givenSize: Size(widget.width - 55,
-            widget.height * (1 - differenceFromFirstCard * 0.1)),
-      ),
-    );
+    final theme = context.uiKitTheme;
+    return AnimatedPositioned(
+        duration: _animDuration,
+        left: 20 / widget.media.length * ((_currentIndex ?? 0) + 1) -
+            differenceFromFirstCard * 10,
+        // left: 10 / differenceFromFirstCard - 20 + _cardAnimation.difference,
+        child: Container(
+          color: theme?.bottomSheetTheme.backgroundColor?.withOpacity(0.85),
+          child: SliderPhotoCard(
+            media: item,
+            givenSize: Size(widget.width - 55,
+                widget.height * (1 - differenceFromFirstCard * 0.1)),
+          ),
+        ));
   }
 
   Widget _buildRightItem(
       BuildContext context, UiKitMedia item, int differenceFromFirstCard) {
-    return Positioned(
+    final theme = context.uiKitTheme;
+    return AnimatedPositioned(
+      duration: _animDuration,
       right: 20 /
-          widget.media.length *
-          (widget.media.length - (_currentIndex ?? 0) + 1) -
-          differenceFromFirstCard*10,
+              widget.media.length *
+              (widget.media.length - (_currentIndex ?? 0) + 1) -
+          differenceFromFirstCard * 10,
       // right:  differenceFromFirstCard/ _cardAnimation.difference.abs(),
-      child: SliderPhotoCard(
-        media: item,
-        givenSize: Size(widget.width - 55,
-            widget.height * (1 - differenceFromFirstCard * 0.1)),
-      ),
+      child: Container(
+          color: theme?.bottomSheetTheme.backgroundColor?.withOpacity(0.85),
+          child: SliderPhotoCard(
+            media: item,
+            givenSize: Size(widget.width - 55,
+                widget.height * (1 - differenceFromFirstCard * 0.1)),
+          )),
     );
   }
 
@@ -309,36 +308,20 @@ enum SwipeType {
 }
 
 class CardAnimation {
-  CardAnimation(
-      {required this.animationController,
-      this.maxAngle = 30,
-      this.initialScale = 1})
-      : scale = initialScale;
+  CardAnimation(this.animationController);
 
-  final double maxAngle;
-  final double initialScale;
   final AnimationController animationController;
 
   double left = 0;
   double right = 20;
   double total = 0;
-  double firstCardAngle = 0;
-  double scale;
-  double difference = 10;
 
   late Animation<double> _leftAnimation;
   late Animation<double> _rightAnimation;
-  late Animation<double> _scaleAnimation;
-
-  // late Animation<double> _differenceAnimation;
-
-  double get _maxAngleInRadian => maxAngle * (pi / 180);
 
   void sync() {
     left = _leftAnimation.value;
     right = _rightAnimation.value;
-    scale = _scaleAnimation.value;
-    // difference = _differenceAnimation.value;
   }
 
   void reset(double rightMargin, double leftMargin) {
@@ -346,9 +329,6 @@ class CardAnimation {
     left = leftMargin;
     right = rightMargin;
     total = 0;
-    firstCardAngle = 0;
-    scale = initialScale;
-    difference = leftMargin - rightMargin;
   }
 
   void update(double dx, double dy, bool inverseAngle) {
@@ -359,27 +339,6 @@ class CardAnimation {
     // updateAngle(inverseAngle);
     // updateScale();
     // updateDifference();
-  }
-
-  void updateAngle(bool inverse) {
-    if (firstCardAngle.isBetween(-_maxAngleInRadian, _maxAngleInRadian)) {
-      firstCardAngle = _maxAngleInRadian * left / 1000;
-      if (inverse) firstCardAngle *= -1;
-    }
-  }
-
-  void updateScale() {
-    if (scale.isBetween(initialScale, 1.0)) {
-      scale = (total > 0)
-          ? initialScale + (total / 5000)
-          : initialScale + -(total / 5000);
-    }
-  }
-
-  void updateDifference() {
-    if (difference.isBetween(0, difference)) {
-      difference = (total > 0) ? 40 - (total / 10) : 40 + (total / 10);
-    }
   }
 
   void animate(BuildContext context, CardSwiperDirection direction) {
@@ -404,14 +363,6 @@ class CardAnimation {
       begin: right,
       end: isToRight ? -screenWidth : screenWidth,
     ).animate(animationController);
-    _scaleAnimation = Tween<double>(
-      begin: scale,
-      end: 1.0,
-    ).animate(animationController);
-    // _differenceAnimation = Tween<double>(
-    //   begin: difference,
-    //   end: 0,
-    // ).animate(animationController);
     animationController.forward();
   }
 
@@ -424,14 +375,7 @@ class CardAnimation {
       begin: right,
       end: 0,
     ).animate(animationController);
-    _scaleAnimation = Tween<double>(
-      begin: scale,
-      end: initialScale,
-    ).animate(animationController);
-    // _differenceAnimation = Tween<double>(
-    //   begin: difference,
-    //   end: 40,
-    // ).animate(animationController);
+
     animationController.forward();
   }
 }
