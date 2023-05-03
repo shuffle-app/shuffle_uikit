@@ -10,7 +10,10 @@ class PlaceInfo extends StatelessWidget {
 
   const PlaceInfo({
     Key? key,
-    required this.media, this.rating, required this.tags, required this.description,
+    required this.media,
+    this.rating,
+    required this.tags,
+    required this.description,
   }) : super(key: key);
 
   @override
