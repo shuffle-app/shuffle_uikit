@@ -248,39 +248,37 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               PlaceInfo(
-
-                  media: [
-                    UiKitMedia(link: Assets.images.png.place.path, type: UiKitMediaType.video),
-                    UiKitMedia(link: Assets.images.png.place.path, type: UiKitMediaType.image),
-                    UiKitMedia(link: Assets.images.png.place.path, type: UiKitMediaType.image),
-                    UiKitMedia(link: Assets.images.png.place.path, type: UiKitMediaType.image),
-                    UiKitMedia(link: Assets.images.png.place.path, type: UiKitMediaType.image),
-                  ],
-                  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
-                      'Sed euismod, nunc ut tincidunt lacinia, nisl nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
-                      'Nulla facilisi. '
-                      'Donec auctor, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
-                      'Nulla facilisi',
-                  rating: 4.8,
-                  tags: [
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.dice.path, matching: true),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
-                    UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
-                  ],
-
+                media: [
+                  UiKitMedia(link: Assets.images.png.place.path, type: UiKitMediaType.video),
+                  UiKitMedia(link: Assets.images.png.place.path, type: UiKitMediaType.image),
+                  UiKitMedia(link: Assets.images.png.place.path, type: UiKitMediaType.image),
+                  UiKitMedia(link: Assets.images.png.place.path, type: UiKitMediaType.image),
+                  UiKitMedia(link: Assets.images.png.place.path, type: UiKitMediaType.image),
+                ],
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                    'Sed euismod, nunc ut tincidunt lacinia, nisl nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
+                    'Nulla facilisi. '
+                    'Donec auctor, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
+                    'Nulla facilisi',
+                rating: 4.8,
+                tags: [
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.dice.path, matching: true),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: false),
+                  UiKitTag(title: 'Cheap', iconPath: Assets.images.svg.cocktail.path, matching: true),
+                ],
               ),
               SpacingFoundation.verticalSpace16,
               const PlaceDescriptionGrid(
