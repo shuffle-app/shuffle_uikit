@@ -44,20 +44,21 @@ class _VerticalMessageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final messageStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium;
-    return ConstrainedBox(
-      constraints: BoxConstraints(
-        maxWidth: 106.w,
-      ),
+    return SizedBox(
+      height: 144.h,
+      width: 106.w,
       child: CardWrapper(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.max,
           children: [
             icon,
             SpacingFoundation.verticalSpace8,
-            Text(
-              message.toUpperCase(),
-              style: messageStyle,
-              textAlign: TextAlign.center,
+            Expanded(
+              child: Text(
+                message.toUpperCase(),
+                style: messageStyle,
+                textAlign: TextAlign.center,
+              ),
             ),
           ],
         ).paddingAll(EdgeInsetsFoundation.all16),
