@@ -16,7 +16,6 @@ class MessageCardWithIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final messageStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium;
     switch (layoutDirection) {
       case Axis.horizontal:
         return _HorizontalMessageCard(

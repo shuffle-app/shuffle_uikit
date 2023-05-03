@@ -15,7 +15,7 @@ class SmallGeneralPurposeButton extends StatelessWidget implements ButtonFactory
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final textStyle = theme?.boldTextTheme.caption1;
+    final textStyle = theme?.boldTextTheme.caption1Bold;
     return ElevatedButton(
       style: theme?.smallOrdinaryButtonStyle,
       onPressed: onPressed,

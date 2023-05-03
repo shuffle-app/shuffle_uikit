@@ -61,7 +61,7 @@ class _WhiteDialogButton extends DialogButton {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final textStyle = small ? theme?.boldTextTheme.caption1 : theme?.boldTextTheme.bodyUpperCase;
+    final textStyle = small ? theme?.boldTextTheme.caption1Bold : theme?.boldTextTheme.bodyUpperCase;
     return ElevatedButton(
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.resolveWith((states) {
@@ -104,7 +104,7 @@ class _BlackDialogButton extends DialogButton {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final textStyle = small ? theme?.boldTextTheme.caption1 : theme?.boldTextTheme.bodyUpperCase;
+    final textStyle = small ? theme?.boldTextTheme.caption1Bold : theme?.boldTextTheme.bodyUpperCase;
     return ElevatedButton(
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.resolveWith((states) {

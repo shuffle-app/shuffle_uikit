@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/place_post_body.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/place_tag_widget.dart';
-import 'package:shuffle_uikit/ui_models/profile/profile_post.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
-
-import '../../../foundation/shuffle_ui_kit_foundation.dart';
 
 class PlaceWidget extends StatelessWidget {
   final ProfilePlace place;
@@ -44,7 +39,7 @@ class PlaceWidget extends StatelessWidget {
                   children: [
                     Text(
                       place.title,
-                      style: theme?.boldTextTheme.caption1,
+                      style: theme?.boldTextTheme.caption1Bold,
                     ),
                     SpacingFoundation.verticalSpace2,
                     Text(
@@ -98,7 +93,7 @@ class PlaceWidget extends StatelessWidget {
                 SpacingFoundation.horizontalSpace8,
                 Text(
                   'Helpful',
-                  style: theme?.boldTextTheme.caption1.copyWith(
+                  style: theme?.boldTextTheme.caption1Bold.copyWith(
                     color: ColorsFoundation.darkNeutral900,
                   ),
                 )

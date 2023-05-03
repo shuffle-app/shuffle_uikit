@@ -17,7 +17,7 @@ class TitledFilterChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = context.uiKitTheme?.boldTextTheme.caption1;
+    final titleStyle = context.uiKitTheme?.boldTextTheme.caption1Bold;
     return GestureDetector(
       onTap: onPressed,
       child: Container(

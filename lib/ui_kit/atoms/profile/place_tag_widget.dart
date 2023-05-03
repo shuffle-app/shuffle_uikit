@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class UiKitTagWidget extends StatelessWidget {
@@ -23,7 +20,7 @@ class UiKitTagWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = context.uiKitTheme?.boldTextTheme.caption2.copyWith(
+    final textStyle = context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
       color: textColor ?? ColorsFoundation.darkNeutral900,
     );
     return Row(
