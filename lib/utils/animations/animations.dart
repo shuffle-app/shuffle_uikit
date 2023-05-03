@@ -1,4 +1,3 @@
-import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 class Animations {
@@ -57,8 +56,8 @@ class BackAnimStack extends StatelessWidget {
       children: [
         _FadeScaleAnim(child: backChild),
         _FadeScaleAnim(
+          startDelay: const Duration(milliseconds: 700),
           child: backChild,
-          startDelay: Duration(milliseconds: 700),
         ),
         child,
       ],
