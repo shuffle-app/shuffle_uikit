@@ -15,7 +15,7 @@ class WeatherInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final prefix = temperature.isNegative ? '-' : '+';
     final temperatureStyle = context.uiKitTheme?.boldTextTheme.subHeadline;
-    final weatherTypeStyle = context.uiKitTheme?.boldTextTheme.caption1;
+    final weatherTypeStyle = context.uiKitTheme?.boldTextTheme.caption1Bold;
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all16,

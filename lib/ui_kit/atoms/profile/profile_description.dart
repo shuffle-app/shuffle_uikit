@@ -13,7 +13,7 @@ class ProfileDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: context.uiKitTheme?.boldTextTheme.caption1,
+      style: context.uiKitTheme?.boldTextTheme.caption1Bold,
     );
   }
 }

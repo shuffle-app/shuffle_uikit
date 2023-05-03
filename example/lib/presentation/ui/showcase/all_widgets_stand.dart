@@ -40,7 +40,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
-        title: 'Shuffle UI Kit Showcase Stand',
+        title: 'Shuffle UI Kit Stand',
         centerTitle: true,
       ),
       body: SingleChildScrollView(

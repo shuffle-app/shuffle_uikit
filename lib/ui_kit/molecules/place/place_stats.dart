@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/place_tag_widget.dart';
 
 class PlaceStats extends StatelessWidget {
   final double? rating;
@@ -33,7 +32,7 @@ class PlaceStats extends StatelessWidget {
                 SpacingFoundation.horizontalSpace8,
                 Text(
                   rating.toString(),
-                  style: theme?.boldTextTheme.caption1.copyWith(color: Colors.white),
+                  style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
                 ),
               ],
             ).paddingSymmetric(
