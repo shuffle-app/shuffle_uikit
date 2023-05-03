@@ -34,3 +34,5 @@ build/
 # Android related
 **/android/local.properties
 /linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/
+# don't check in golden failure output
+**/failures/*.png
