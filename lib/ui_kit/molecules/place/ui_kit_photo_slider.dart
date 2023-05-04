@@ -74,10 +74,16 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
   }
 
   _getBackStack([bool reversed = false]) {
-    final leftList = widget.media.sublist(0, _currentIndex ?? 0);
+    List<UiKitMedia> leftList = widget.media.sublist(0, _currentIndex ?? 0);
+    if(leftList.length > 4) {
+      leftList = leftList.sublist(leftList.length-4);
+    }
 
-    final rightList =
+      List<UiKitMedia> rightList =
         widget.media.sublist((_currentIndex ?? 0) + 1, widget.media.length);
+    if(rightList.length>4){
+      rightList = rightList.sublist(0, 4);
+    }
 
     return [
       if (reversed)
@@ -147,11 +153,13 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
     final theme = context.uiKitTheme;
     return AnimatedPositioned(
         duration: _animDuration,
-        left: 20 / widget.media.length * ((_currentIndex ?? 0) + 1) -
+        left: 4 * ((_currentIndex ?? 0) + 1) -
             differenceFromFirstCard * 10,
         // left: 10 / differenceFromFirstCard - 20 + _cardAnimation.difference,
         child: Container(
-          color: theme?.bottomSheetTheme.backgroundColor?.withOpacity(0.85),
+          foregroundDecoration: BoxDecoration(
+            color: theme?.bottomSheetTheme.backgroundColor?.withOpacity(0.7),
+          ),
           child: SliderPhotoCard(
             media: item,
             givenSize: Size(widget.width - 55,
@@ -165,13 +173,14 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
     final theme = context.uiKitTheme;
     return AnimatedPositioned(
       duration: _animDuration,
-      right: 20 /
-              widget.media.length *
-              (widget.media.length - (_currentIndex ?? 0) + 1) -
+      right: 4 *
+              (5 - (_currentIndex ?? 0) + 1) -
           differenceFromFirstCard * 10,
       // right:  differenceFromFirstCard/ _cardAnimation.difference.abs(),
       child: Container(
-          color: theme?.bottomSheetTheme.backgroundColor?.withOpacity(0.85),
+         foregroundDecoration: BoxDecoration(
+           color: theme?.bottomSheetTheme.backgroundColor?.withOpacity(0.7),
+         ),
           child: SliderPhotoCard(
             media: item,
             givenSize: Size(widget.width - 55,
