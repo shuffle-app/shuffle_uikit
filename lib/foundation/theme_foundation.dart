@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/themes/default_theme.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class UiKitThemeFoundation {
   UiKitThemeFoundation._();

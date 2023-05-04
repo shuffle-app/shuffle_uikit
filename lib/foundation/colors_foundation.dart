@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:shuffle_uikit/tokens/tokens.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class ColorsFoundation {
   ColorsFoundation._();

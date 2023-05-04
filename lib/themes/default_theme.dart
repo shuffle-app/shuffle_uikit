@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/themes/bottom_sheet_theme.dart';
-import 'package:shuffle_uikit/themes/ui_kit_text_theme.dart';
-import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
-
-import '../foundation/shuffle_ui_kit_foundation.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class UiKitThemes {
   late final defaultThemeData = ThemeData(

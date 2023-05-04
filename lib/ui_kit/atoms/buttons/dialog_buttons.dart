@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 abstract class DialogButton extends StatelessWidget implements ButtonFactory {
   const DialogButton({

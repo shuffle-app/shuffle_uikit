@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
-class WeatherInfoCard extends StatelessWidget {
+class UiKitWeatherInfoCard extends StatelessWidget {
   final int temperature;
   final String weatherType;
 
-  const WeatherInfoCard({
+  const UiKitWeatherInfoCard({
     Key? key,
     required this.temperature,
     required this.weatherType,
@@ -50,7 +50,7 @@ class WeatherInfoCard extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: ImageWidget(
-              rasterAsset: Assets.images.png.weatherIcon,
+              rasterAsset: GraphicsFoundation.instance.png.weatherIcon,
             ),
           ),
         ],

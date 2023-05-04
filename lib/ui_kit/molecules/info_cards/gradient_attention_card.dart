@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
-class GradientAttentionCard extends StatelessWidget {
+class UiKitGradientAttentionCard extends StatelessWidget {
   final String message;
   final Color? textColor;
 
-  const GradientAttentionCard({
+  const UiKitGradientAttentionCard({
     Key? key,
     required this.message,
     this.textColor,
@@ -28,7 +28,7 @@ class GradientAttentionCard extends StatelessWidget {
             style: messageStyle?.copyWith(color: textColor),
           ).paddingAll(EdgeInsetsFoundation.all20),
           ImageWidget(
-            svgAsset: Assets.images.svg.trippleArrowBlack,
+            svgAsset: GraphicsFoundation.instance.svg.trippleArrowBlack,
           ),
         ],
       ),

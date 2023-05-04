@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/profile/place_widget.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class ProfilePostsPlaces extends StatelessWidget {
   final List<ProfilePlace> places;

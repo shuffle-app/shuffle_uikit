@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/common/circular_avatar.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class TitleWithAvatar extends StatelessWidget {
   final String? title;

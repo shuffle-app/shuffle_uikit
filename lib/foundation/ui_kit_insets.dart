@@ -1,5 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class EdgeInsetsFoundation {
   EdgeInsetsFoundation._();

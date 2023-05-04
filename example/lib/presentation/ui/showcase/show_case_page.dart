@@ -1,6 +1,6 @@
 import 'package:example/presentation/ui/showcase/all_widgets_stand.dart';
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class ShowCasePage extends StatelessWidget {
   const ShowCasePage({Key? key}) : super(key: key);

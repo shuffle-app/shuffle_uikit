@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class ButtonsList extends StatelessWidget {
   const ButtonsList({Key? key}) : super(key: key);
@@ -83,7 +83,7 @@ class ButtonsList extends StatelessWidget {
             context.button(
               text: '',
               icon: ImageWidget(
-                svgAsset: Assets.images.svg.route,
+                svgAsset: GraphicsFoundation.instance.svg.route,
                 color: Colors.white,
               ),
               onPressed: () {},
@@ -94,7 +94,7 @@ class ButtonsList extends StatelessWidget {
             context.button(
               text: '',
               icon: ImageWidget(
-                svgAsset: Assets.images.svg.route,
+                svgAsset: GraphicsFoundation.instance.svg.route,
                 color: Colors.white,
               ),
               onPressed: () {},

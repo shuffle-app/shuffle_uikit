@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class PlaceStats extends StatelessWidget {
   final double? rating;
@@ -28,7 +28,7 @@ class PlaceStats extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                ImageWidget(svgAsset: Assets.images.svg.star),
+                ImageWidget(svgAsset: GraphicsFoundation.instance.svg.star),
                 SpacingFoundation.horizontalSpace8,
                 Text(
                   rating.toString(),

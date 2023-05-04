@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class ButtonsGrid extends StatelessWidget {
   const ButtonsGrid({Key? key}) : super(key: key);

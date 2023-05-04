@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/gradient_icon_button.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/small_ordinary_button.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/ui_kit_text_theme.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 abstract class WidgetsAbstractFactory {
   ButtonFactory createOrdinaryButton({

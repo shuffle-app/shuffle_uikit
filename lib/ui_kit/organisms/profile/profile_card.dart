@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_avatar.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_description.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class ProfileCard extends StatelessWidget {
   final VisitingProfileData profileData;

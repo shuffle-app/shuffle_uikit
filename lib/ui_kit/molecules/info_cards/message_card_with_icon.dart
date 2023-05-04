@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
-class MessageCardWithIcon extends StatelessWidget {
+class UiKitMessageCardWithIcon extends StatelessWidget {
   final String message;
   final ImageWidget icon;
   final Axis layoutDirection;
 
-  const MessageCardWithIcon({
+  const UiKitMessageCardWithIcon({
     Key? key,
     required this.message,
     required this.icon,

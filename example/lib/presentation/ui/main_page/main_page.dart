@@ -1,7 +1,7 @@
 import 'package:example/presentation/routing/app_routes.dart';
 import 'package:example/presentation/ui/dialog_testings/dialog_testing_page.dart';
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
