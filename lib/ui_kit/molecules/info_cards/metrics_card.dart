@@ -4,7 +4,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMetricsCard extends StatelessWidget {
   final String title;
-  final int value;
+  final String value;
   final String unit;
   final Widget icon;
 
@@ -21,27 +21,30 @@ class UiKitMetricsCard extends StatelessWidget {
     final titleStyle = context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(color: Colors.black);
     final valueStyle = context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(color: Colors.black);
     return Container(
+      height: 35.h,
+      padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadiusFoundation.all16,
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.max,
         children: [
           Container(
             width: 26.w,
+            height: double.infinity,
             decoration: BoxDecoration(
               color: Colors.black,
               borderRadius: BorderRadiusFoundation.max,
             ),
             child: Center(child: icon),
           ),
-          SpacingFoundation.horizontalSpace8,
+          SpacingFoundation.horizontalSpace4,
           Expanded(
             child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   title,
@@ -52,7 +55,7 @@ class UiKitMetricsCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      value.toStringAsFixed(0),
+                      value,
                       style: valueStyle,
                     ),
                     SpacingFoundation.horizontalSpace4,
@@ -74,7 +77,7 @@ class UiKitMetricsCard extends StatelessWidget {
             ),
           ),
         ],
-      ).paddingAll(EdgeInsetsFoundation.all4),
+      ),
     );
   }
 }
