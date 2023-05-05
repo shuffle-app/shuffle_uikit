@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/colors_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class InputStateColor extends MaterialStateColor {
   const InputStateColor() : super(0xFFffffff);

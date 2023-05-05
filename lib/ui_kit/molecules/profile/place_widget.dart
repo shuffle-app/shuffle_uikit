@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/place_post_body.dart';
 
+/// думаю стоит перенепсти этот виджет в компонентную библиотеку разобрав его на атомы
 class PlaceWidget extends StatelessWidget {
   final ProfilePlace place;
 
@@ -16,6 +16,7 @@ class PlaceWidget extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, size) {
         final theme = context.uiKitTheme;
+        final postBodyStyle = context.uiKitTheme?.boldTextTheme.caption1Bold;
         return Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -78,8 +79,9 @@ class PlaceWidget extends StatelessWidget {
               ],
             ),
             SpacingFoundation.verticalSpace12,
-            PlacePostBody(
-              text: place.postBody,
+            Text(
+              place.postBody,
+              style: postBodyStyle,
             ),
             SpacingFoundation.verticalSpace12,
             Row(

@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class BlurredQuestionChip extends StatelessWidget {
+class UiKitBlurredQuestionChip extends StatelessWidget {
   final String label;
 
-  const BlurredQuestionChip({
+  const UiKitBlurredQuestionChip({
     Key? key,
     required this.label,
   }) : super(key: key);

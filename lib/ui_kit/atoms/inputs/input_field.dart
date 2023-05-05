@@ -9,14 +9,14 @@ import 'package:flutter/material.dart';
 /// [enabled] is a boolean that enables or disables the input field
 /// [validator] is a function that validates the input field. It returns a string when the input field is invalid
 ///
-abstract class UiKitInputField {
+abstract class BaseUiKitInputField {
   final TextEditingController controller;
   final String? hintText;
   final String? errorText;
   final bool enabled;
   final String? Function(String?)? validator;
 
-  const UiKitInputField({
+  const BaseUiKitInputField({
     required this.controller,
     this.hintText,
     this.enabled = true,

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class MetricsCard extends StatelessWidget {
+class UiKitMetricsCard extends StatelessWidget {
   final String title;
   final String value;
   final String unit;
   final Widget icon;
 
-  const MetricsCard({
+  const UiKitMetricsCard({
     Key? key,
     required this.title,
     required this.value,
@@ -63,7 +63,7 @@ class MetricsCard extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         ImageWidget(
-                          svgAsset: Assets.images.svg.risingTrendIcon,
+                          svgAsset: GraphicsFoundation.instance.svg.risingTrendIcon,
                         ),
                         Text(
                           unit,

@@ -1,6 +1,5 @@
 enum UiKitMediaType { image, video }
 
-
 class UiKitMedia {
   final String link;
   final UiKitMediaType type;

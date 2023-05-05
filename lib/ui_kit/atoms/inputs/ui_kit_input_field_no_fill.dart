@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/inputs/input_field.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-import '../../../foundation/colors_foundation.dart';
-
-class UiKitInputFieldNoFill extends StatefulWidget implements UiKitInputField {
+class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputField {
   const UiKitInputFieldNoFill({
     Key? key,
     required this.controller,

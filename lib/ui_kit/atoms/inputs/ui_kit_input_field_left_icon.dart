@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/colors_foundation.dart';
-import 'package:shuffle_uikit/themes/input_state_color.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/inputs/input_field.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitInputFieldLeftIcon extends StatefulWidget implements UiKitInputField {
+class UiKitInputFieldLeftIcon extends StatefulWidget implements BaseUiKitInputField {
   const UiKitInputFieldLeftIcon({
     Key? key,
     required this.controller,

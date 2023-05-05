@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class AppBarTitle extends StatelessWidget {
   final String title;

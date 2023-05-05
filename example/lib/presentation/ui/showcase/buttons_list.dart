@@ -83,7 +83,7 @@ class ButtonsList extends StatelessWidget {
             context.button(
               text: '',
               icon: ImageWidget(
-                svgAsset: Assets.images.svg.route,
+                svgAsset: GraphicsFoundation.instance.svg.route,
                 color: Colors.white,
               ),
               onPressed: () {},
@@ -94,7 +94,7 @@ class ButtonsList extends StatelessWidget {
             context.button(
               text: '',
               icon: ImageWidget(
-                svgAsset: Assets.images.svg.route,
+                svgAsset: GraphicsFoundation.instance.svg.route,
                 color: Colors.white,
               ),
               onPressed: () {},

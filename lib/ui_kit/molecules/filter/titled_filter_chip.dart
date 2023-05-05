@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class TitledFilterChip extends StatelessWidget {
+class UiKitTitledFilterChip extends StatelessWidget {
   final String title;
   final bool selected;
   final VoidCallback onPressed;
   final SvgGenImage icon;
 
-  const TitledFilterChip({
+  const UiKitTitledFilterChip({
     Key? key,
     required this.title,
     required this.selected,

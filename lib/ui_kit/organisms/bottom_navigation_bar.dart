@@ -97,28 +97,28 @@ class BlurableBottomNavigationBarItem extends TabType {
   final SvgGenImage unselectedIcon;
 
   static final home = BlurableBottomNavigationBarItem._(
-    selectedIcon: Assets.images.svg.homeFill,
-    unselectedIcon: Assets.images.svg.homeOutline,
+    selectedIcon: GraphicsFoundation.instance.svg.homeFill,
+    unselectedIcon: GraphicsFoundation.instance.svg.homeOutline,
     index: 0,
   );
   static final spinner = BlurableBottomNavigationBarItem._(
-    selectedIcon: Assets.images.svg.spinnerFill,
-    unselectedIcon: Assets.images.svg.spinnerOutline,
+    selectedIcon: GraphicsFoundation.instance.svg.spinnerFill,
+    unselectedIcon: GraphicsFoundation.instance.svg.spinnerOutline,
     index: 1,
   );
   static final shuffle = BlurableBottomNavigationBarItem._(
-    selectedIcon: Assets.images.svg.shuffleFill,
-    unselectedIcon: Assets.images.svg.shuffleOutline,
+    selectedIcon: GraphicsFoundation.instance.svg.shuffleFill,
+    unselectedIcon: GraphicsFoundation.instance.svg.shuffleOutline,
     index: 2,
   );
   static final search = BlurableBottomNavigationBarItem._(
-    selectedIcon: Assets.images.svg.searchFill,
-    unselectedIcon: Assets.images.svg.searchOutline,
+    selectedIcon: GraphicsFoundation.instance.svg.searchFill,
+    unselectedIcon: GraphicsFoundation.instance.svg.searchOutline,
     index: 3,
   );
   static final profile = BlurableBottomNavigationBarItem._(
-    selectedIcon: Assets.images.svg.profileFill,
-    unselectedIcon: Assets.images.svg.profileOutline,
+    selectedIcon: GraphicsFoundation.instance.svg.profileFill,
+    unselectedIcon: GraphicsFoundation.instance.svg.profileOutline,
     index: 4,
   );
 
