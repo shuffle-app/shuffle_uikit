@@ -79,10 +79,13 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          ImageWidget(
-            rasterAsset: pngImage,
-            svgAsset: svgImage,
-            fit: BoxFit.cover,
+          ClipRRect(
+            borderRadius: BorderRadiusFoundation.all40,
+            child: ImageWidget(
+              rasterAsset: pngImage,
+              svgAsset: svgImage,
+              fit: BoxFit.cover,
+            ),
           ),
           Column(
             mainAxisSize: MainAxisSize.max,
