@@ -38,11 +38,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(
-        title: 'Shuffle UI Kit Stand',
-        centerTitle: true,
-      ),
+    return BlurredAppBarPage(
+      title: 'Shuffle UI Kit Stand',
+      centerTitle: true,
       body: SingleChildScrollView(
         child: Form(
           key: _formKey,
