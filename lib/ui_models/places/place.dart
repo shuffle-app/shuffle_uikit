@@ -1,23 +1,41 @@
 enum UiKitMediaType { image, video }
 
-class UiKitMedia {
+abstract class BaseUiKitMedia {
   final String link;
   final UiKitMediaType type;
 
-  UiKitMedia({
+  BaseUiKitMedia({
     required this.link,
     required this.type,
   });
 }
 
+class UiKitMediaPhoto extends BaseUiKitMedia {
+  UiKitMediaPhoto({
+    required String link,
+  }) : super(
+          link: link,
+          type: UiKitMediaType.image,
+        );
+}
+
+class UiKitMediaVideo extends BaseUiKitMedia {
+  UiKitMediaVideo({
+    required String link,
+  }) : super(
+          link: link,
+          type: UiKitMediaType.video,
+        );
+}
+
 class UiKitTag {
   final String title;
   final String iconPath;
-  final bool matching;
+  final bool unique;
 
   UiKitTag({
     required this.title,
     required this.iconPath,
-    required this.matching,
+    required this.unique,
   });
 }

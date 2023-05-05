@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitPhotoSlider extends StatefulWidget {
-  final List<UiKitMedia> media;
+  final List<BaseUiKitMedia> media;
   final double width;
   final double height;
   final int initialIndex;
@@ -72,12 +72,12 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   }
 
   _getBackStack([bool reversed = false]) {
-    List<UiKitMedia> leftList = widget.media.sublist(0, _currentIndex ?? 0);
+    List<BaseUiKitMedia> leftList = widget.media.sublist(0, _currentIndex ?? 0);
     if (leftList.length > 4) {
       leftList = leftList.sublist(leftList.length - 4);
     }
 
-    List<UiKitMedia> rightList = widget.media.sublist((_currentIndex ?? 0) + 1, widget.media.length);
+    List<BaseUiKitMedia> rightList = widget.media.sublist((_currentIndex ?? 0) + 1, widget.media.length);
     if (rightList.length > 4) {
       rightList = rightList.sublist(0, 4);
     }
@@ -95,7 +95,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
     ];
   }
 
-  Widget _buildFirstItem(BuildContext context, UiKitMedia item) {
+  Widget _buildFirstItem(BuildContext context, BaseUiKitMedia item) {
     return Positioned(
       left: _cardAnimation.left,
       right: _cardAnimation.right,
@@ -133,7 +133,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
     );
   }
 
-  Widget _buildLeftItem(BuildContext context, UiKitMedia item, int differenceFromFirstCard) {
+  Widget _buildLeftItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
     final theme = context.uiKitTheme;
     return AnimatedPositioned(
         duration: _animDuration,
@@ -150,7 +150,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         ));
   }
 
-  Widget _buildRightItem(BuildContext context, UiKitMedia item, int differenceFromFirstCard) {
+  Widget _buildRightItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
     final theme = context.uiKitTheme;
     return AnimatedPositioned(
       duration: _animDuration,
@@ -229,7 +229,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 }
 
 class SliderPhotoCard extends StatelessWidget {
-  final UiKitMedia media;
+  final BaseUiKitMedia media;
   final Size givenSize;
 
   const SliderPhotoCard({
