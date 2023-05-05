@@ -150,7 +150,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                         children: [
                           const Expanded(
                             child: UiKitWeatherInfoCard(
-                              temperature: 32,
+                              temperature: '32',
                               weatherType: 'Sunny',
                             ),
                           ),
@@ -158,7 +158,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                           Expanded(
                             child: UiKitMetricsCard(
                               title: 'Burned today',
-                              value: 439,
+                              value: '439',
                               unit: 'kCal',
                               icon: ImageWidget(
                                 svgAsset: GraphicsFoundation.instance.svg.fireWhite,
