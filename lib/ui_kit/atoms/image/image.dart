@@ -12,15 +12,7 @@ class ImageWidget extends StatelessWidget {
   final double? height;
   final Color? color;
 
-  const ImageWidget(
-      {Key? key,
-      this.link,
-      this.fit,
-      this.width,
-      this.height,
-      this.rasterAsset,
-      this.svgAsset,
-      this.color})
+  const ImageWidget({Key? key, this.link, this.fit, this.width, this.height, this.rasterAsset, this.svgAsset, this.color})
       : super(key: key);
 
   @override
@@ -53,7 +45,8 @@ class ImageWidget extends StatelessWidget {
           height: height,
         ),
       );
-    } else if (link!.substring(0,4) == 'http') {// !.startsWith("http://") || link!.startsWith("https://")) {
+    } else if (link!.substring(0, 4) == 'http') {
+      // !.startsWith("http://") || link!.startsWith("https://")) {
       return CachedNetworkImage(
         imageUrl: link!,
         fit: fit,
@@ -64,17 +57,16 @@ class ImageWidget extends StatelessWidget {
         placeholder: (_, __) => const CircularProgressIndicator.adaptive(),
       );
     } else {
-
-      if(link!.contains('svg')) {
-        return SvgPicture.asset(link!,
-        fit: fit ?? BoxFit.none,
-        width: width,
-        color: color,
-        height: height,
-        package: 'shuffle_uikit',
-      );
+      if (link!.contains('svg')) {
+        return SvgPicture.asset(
+          link!,
+          fit: fit ?? BoxFit.none,
+          width: width,
+          color: color,
+          height: height,
+          package: 'shuffle_uikit',
+        );
       }
-
 
       return Image.asset(
         link!,

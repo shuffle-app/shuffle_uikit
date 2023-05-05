@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
-import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
   GradientFoundation._();
@@ -30,7 +30,7 @@ class GradientFoundation {
       ColorsFoundation.weatherYellow.withOpacity(0.1),
       ColorsFoundation.weatherYellow.withOpacity(0.031),
     ],
-    stops: [
+    stops: const [
       1,
       0,
     ],

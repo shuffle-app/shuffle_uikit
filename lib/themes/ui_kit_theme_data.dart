@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/themes/ui_kit_text_theme.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final Color customColor;

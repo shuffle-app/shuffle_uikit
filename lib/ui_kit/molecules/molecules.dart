@@ -11,7 +11,6 @@ export 'loading/loading_screen.dart';
 export 'place/accent_card.dart';
 export 'place/media_widget.dart';
 export 'place/place_description_grid.dart';
-export 'place/place_media_widget.dart';
 export 'place/place_stats.dart';
 export 'place/title_with_avatar.dart';
 export 'place/titled_accent_info.dart';

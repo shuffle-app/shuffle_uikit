@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/user/premium_user_star.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/user/user_circle_avatar.dart';
 
 abstract class _UserTile extends StatelessWidget {
-  final UserTileInfo info;
+  final String name;
+  final String avatarUrl;
+  final String username;
   final Widget? trailing;
   final Border border;
 
   const _UserTile({
     Key? key,
-    required this.info,
+    required this.name,
+    required this.avatarUrl,
+    required this.username,
     required this.border,
     this.trailing,
   }) : super(key: key);
@@ -25,7 +27,7 @@ abstract class _UserTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           UserCircleAvatar(
-            imageUrl: info.avatarUrl,
+            imageUrl: avatarUrl,
             size: 32.r,
             border: border,
           ),
@@ -38,7 +40,7 @@ abstract class _UserTile extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
-                    info.name,
+                    name,
                     style: textTheme?.caption1Bold.copyWith(color: Colors.white),
                   ),
                   SpacingFoundation.horizontalSpace8,
@@ -46,7 +48,7 @@ abstract class _UserTile extends StatelessWidget {
                 ],
               ),
               Text(
-                info.username,
+                username,
                 style: textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
               ),
             ],
@@ -60,10 +62,11 @@ abstract class _UserTile extends StatelessWidget {
 class OrdinaryUserTile extends _UserTile {
   const OrdinaryUserTile({
     Key? key,
-    required UserTileInfo info,
+    required super.name,
+    required super.avatarUrl,
+    required super.username,
   }) : super(
           key: key,
-          info: info,
           border: const Border(
             top: BorderSide(color: Colors.white, width: 2),
             right: BorderSide(color: Colors.white, width: 2),
@@ -76,7 +79,9 @@ class OrdinaryUserTile extends _UserTile {
 class PremiumUserTile extends _UserTile {
   const PremiumUserTile({
     super.key,
-    required super.info,
+    required super.name,
+    required super.avatarUrl,
+    required super.username,
   }) : super(
           border: const Border(
             top: BorderSide(color: Colors.white, width: 2),
@@ -91,7 +96,9 @@ class PremiumUserTile extends _UserTile {
 class ProUserTile extends _UserTile {
   const ProUserTile({
     super.key,
-    required super.info,
+    required super.name,
+    required super.avatarUrl,
+    required super.username,
   }) : super(
           border: const Border(
             top: BorderSide(color: Colors.white, width: 2),
@@ -104,8 +111,12 @@ class ProUserTile extends _UserTile {
 }
 
 class InfluencerlUserTile extends _UserTile {
-  const InfluencerlUserTile({super.key, required super.info})
-      : super(
+  const InfluencerlUserTile({
+    super.key,
+    required super.name,
+    required super.avatarUrl,
+    required super.username,
+  }) : super(
           border: const Border(
             top: BorderSide(color: Colors.white, width: 2),
             right: BorderSide(color: Colors.white, width: 2),

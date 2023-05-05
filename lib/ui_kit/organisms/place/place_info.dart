@@ -29,8 +29,8 @@ class PlaceInfo extends StatelessWidget {
             itemCount: media.length,
             itemBuilder: (context, index) {
               final mediaItem = media[index];
-              if (mediaItem.type == UiKitMediaType.video) return MediaWidget.video(media: mediaItem);
-              return MediaWidget.image(media: mediaItem);
+              if (mediaItem.type == UiKitMediaType.video) return UiKitMediaWidget.video(media: mediaItem);
+              return UiKitMediaWidget.image(media: mediaItem);
             },
             separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
           ),
