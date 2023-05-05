@@ -9,11 +9,15 @@ class UiKitTagWidget extends StatelessWidget {
   final bool showSpacing;
   final bool showGradient;
 
+  /// [customSpace] needs to be specified using [SpacingFoundation]
+  final Widget? customSpace;
+
   const UiKitTagWidget({
     Key? key,
     required this.title,
     required this.icon,
     this.textColor,
+    this.customSpace,
     this.showGradient = false,
     this.showSpacing = false,
   }) : super(key: key);
@@ -26,7 +30,7 @@ class UiKitTagWidget extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (showSpacing) SpacingFoundation.horizontalSpace12,
+        if (showSpacing) customSpace ?? SpacingFoundation.horizontalSpace12,
         ImageWidget(
           link: icon,
           height: SpacingFoundation.horizontalSpacing12,

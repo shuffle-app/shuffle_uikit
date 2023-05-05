@@ -14,17 +14,20 @@ import 'package:flutter/services.dart';
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
-  /// File path: assets/fonts/Syne-Bold.ttf
-  String get syneBold => 'assets/fonts/Syne-Bold.ttf';
+  /// File path: assets/fonts/Unbounded-Light.ttf
+  String get unboundedLight => 'assets/fonts/Unbounded-Light.ttf';
 
-  /// File path: assets/fonts/Syne-Regular.ttf
-  String get syneRegular => 'assets/fonts/Syne-Regular.ttf';
+  /// File path: assets/fonts/Unbounded-Medium.ttf
+  String get unboundedMedium => 'assets/fonts/Unbounded-Medium.ttf';
 
-  /// File path: assets/fonts/Syne-SemiBold.ttf
-  String get syneSemiBold => 'assets/fonts/Syne-SemiBold.ttf';
+  /// File path: assets/fonts/Unbounded-Regular.ttf
+  String get unboundedRegular => 'assets/fonts/Unbounded-Regular.ttf';
+
+  /// File path: assets/fonts/Unbounded-SemiBold.ttf
+  String get unboundedSemiBold => 'assets/fonts/Unbounded-SemiBold.ttf';
 
   /// List of all assets
-  List<String> get values => [syneBold, syneRegular, syneSemiBold];
+  List<String> get values => [unboundedLight, unboundedMedium, unboundedRegular, unboundedSemiBold];
 }
 
 class $AssetsImagesGen {
@@ -55,6 +58,12 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
+  /// File path: assets/images/png/mock_ad_banner.png
+  AssetGenImage get mockAdBanner => const AssetGenImage('assets/images/png/mock_ad_banner.png');
+
+  /// File path: assets/images/png/mock_swiper_card.png
+  AssetGenImage get mockSwiperCard => const AssetGenImage('assets/images/png/mock_swiper_card.png');
+
   /// File path: assets/images/png/mock_user_avatar.png
   AssetGenImage get mockUserAvatar => const AssetGenImage('assets/images/png/mock_user_avatar.png');
 
@@ -81,6 +90,8 @@ class $AssetsImagesPngGen {
         coins,
         crazyEmoji,
         eventAvatar,
+        mockAdBanner,
+        mockSwiperCard,
         mockUserAvatar,
         place,
         profileAvatar,

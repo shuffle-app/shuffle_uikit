@@ -51,6 +51,46 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              UiKitSwiperCard(
+                title: 'Dance Again',
+                subtitle: 'Unique place for unique people',
+                pngImage: Assets.images.png.mockSwiperCard,
+                tags: [
+                  UiKitTagWidget(
+                    title: 'Club',
+                    icon: Assets.images.svg.cocktail.path,
+                  ),
+                  UiKitTagWidget(
+                    title: 'Club',
+                    icon: Assets.images.svg.cocktail.path,
+                    customSpace: SpacingFoundation.horizontalSpace8,
+                    showSpacing: true,
+                  ),
+                  UiKitTagWidget(
+                    title: 'Club',
+                    icon: Assets.images.svg.cocktail.path,
+                    customSpace: SpacingFoundation.horizontalSpace8,
+                    showSpacing: true,
+                  ),
+                  UiKitTagWidget(
+                    title: 'Club',
+                    icon: Assets.images.svg.cocktail.path,
+                    customSpace: SpacingFoundation.horizontalSpace8,
+                    showSpacing: true,
+                  ),
+                  UiKitTagWidget(
+                    title: 'Club',
+                    icon: Assets.images.svg.cocktail.path,
+                    customSpace: SpacingFoundation.horizontalSpace8,
+                    showSpacing: true,
+                  ),
+                ],
+              ),
+              UiKitSwiperAdCard(
+                title: '',
+                subtitle: '',
+                pngImage: Assets.images.png.mockAdBanner,
+              ),
               AccentCard(
                 title: 'Ballooning festival',
                 additionalInfo: '22-23 March',

@@ -10,6 +10,6 @@
 class FontFamily {
   FontFamily._();
 
-  /// Font family: Syne
-  static const String syne = 'Syne';
+  /// Font family: Unbounded
+  static const String unbounded = 'Unbounded';
 }
