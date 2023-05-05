@@ -1,4 +1,4 @@
-import 'package:shuffle_uikit/ui_kit_internal.dart';
+import 'package:shuffle_uikit/shuffle_uikit_internal.dart';
 
 class GraphicsFoundation {
   const GraphicsFoundation._();

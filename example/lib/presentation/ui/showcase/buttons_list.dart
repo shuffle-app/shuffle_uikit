@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/ui_kit_external.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ButtonsList extends StatelessWidget {
   const ButtonsList({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/blurred_place_video_play_button.dart';
-import 'package:shuffle_uikit/ui_kit_external.dart';
 
 abstract class UiKitMediaWidget extends StatelessWidget {
   const UiKitMediaWidget({

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/ui_kit_internal.dart';
+import 'package:shuffle_uikit/shuffle_uikit_internal.dart';
 
 class ProfileDescription extends StatelessWidget {
   final String text;

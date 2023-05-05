@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:shuffle_uikit/ui_kit_external.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 /// думаю стоит перенепсти этот виджет в компонентную библиотеку разобрав его на атомы
 class PlaceWidget extends StatelessWidget {

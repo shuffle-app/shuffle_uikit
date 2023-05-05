@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:popover/popover.dart';
-import 'package:shuffle_uikit/ui_kit_external.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 Future<T?> showUiKitPopover<T extends Object?>(BuildContext context,
     {required Widget title, Widget? description, required String buttonText, VoidCallback? onPop}) {

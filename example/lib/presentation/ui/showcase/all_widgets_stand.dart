@@ -3,7 +3,7 @@ import 'package:example/presentation/ui/showcase/buttons_list.dart';
 import 'package:example/presentation/ui/showcase/input_fields.dart';
 import 'package:example/presentation/ui/showcase/input_fields_list.dart';
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/ui_kit_external.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class AllWidgetsStand extends StatefulWidget {
   const AllWidgetsStand({super.key});

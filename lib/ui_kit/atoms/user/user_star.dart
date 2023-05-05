@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/tokens/assets.gen.dart';
-import 'package:shuffle_uikit/ui_kit_external.dart';
 
 class PremiumAccountMark extends StatelessWidget {
   const PremiumAccountMark({Key? key}) : super(key: key);

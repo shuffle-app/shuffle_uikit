@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/ui_kit_external.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class UiKitTagWidget extends StatelessWidget {
