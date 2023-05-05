@@ -7,4 +7,5 @@ class GraphicsFoundation {
 
   $AssetsImagesSvgGen get svg => Assets.images.svg;
   $AssetsImagesPngGen get png => Assets.images.png;
+  $AssetsAnimationsGen get animations => Assets.animations;
 }
