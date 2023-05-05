@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/shuffle_uikit_internal.dart';
 
 class UiKitTitledFilterChip extends StatelessWidget {
   final String title;

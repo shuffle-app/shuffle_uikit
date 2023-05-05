@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shuffle_uikit/shuffle_uikit_internal.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ImageWidget extends StatelessWidget {
   final String? link;
