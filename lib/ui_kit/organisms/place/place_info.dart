@@ -2,23 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class PlaceInfo extends StatelessWidget {
-  final List<UiKitMedia> media;
+class UiKitMediaSliderWithTags extends StatelessWidget {
+  final List<UiKitMediaPhoto> photos;
+  final List<UiKitMediaVideo> videos;
   final double? rating;
   final String description;
-  final List<UiKitTag> tags;
+  final List<UiKitTag> baseTags;
+  final List<UiKitTag> uniqueTags;
 
-  const PlaceInfo({
+  const UiKitMediaSliderWithTags({
     Key? key,
-    required this.media,
+    required this.photos,
+    required this.videos,
     this.rating,
-    required this.tags,
+    required this.baseTags,
+    required this.uniqueTags,
     required this.description,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final media = [...videos, ...photos];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -28,7 +33,7 @@ class PlaceInfo extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: media.length,
             itemBuilder: (context, index) {
-              final mediaItem = media[index];
+              final mediaItem = media.elementAt(index);
               if (mediaItem.type == UiKitMediaType.video) return UiKitMediaWidget.video(media: mediaItem);
               return UiKitMediaWidget.image(media: mediaItem);
             },
@@ -36,9 +41,10 @@ class PlaceInfo extends StatelessWidget {
           ),
         ),
         SpacingFoundation.verticalSpace12,
-        PlaceStats(
+        UiKitTagsWidget(
           rating: rating,
-          tags: tags,
+          baseTags: baseTags,
+          uniqueTags: uniqueTags,
         ),
         SpacingFoundation.verticalSpace12,
         Text(

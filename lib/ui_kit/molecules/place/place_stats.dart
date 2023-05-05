@@ -2,19 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class PlaceStats extends StatelessWidget {
+class UiKitTagsWidget extends StatelessWidget {
   final double? rating;
-  final List<UiKitTag> tags;
-  final ScrollController firstHalfController = ScrollController();
-  late final ScrollController secondHalfController = ScrollController()
-    ..addListener(() {
-      firstHalfController.jumpTo(secondHalfController.offset);
-    });
+  final List<UiKitTag> baseTags;
+  final List<UiKitTag> uniqueTags;
 
-  PlaceStats({
+  const UiKitTagsWidget({
     Key? key,
     this.rating,
-    required this.tags,
+    required this.baseTags,
+    required this.uniqueTags,
   }) : super(key: key);
 
   @override
@@ -42,46 +39,40 @@ class PlaceStats extends StatelessWidget {
           ),
         SpacingFoundation.horizontalSpace8,
         Expanded(
-          child: Builder(
-            builder: (context) {
-              final firstHalf = tags.sublist(0, (tags.length ~/ 2) - 1);
-              final secondHalf = tags.sublist(tags.length ~/ 2);
-              return Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  SingleChildScrollView(
-                    controller: firstHalfController,
-                    scrollDirection: Axis.horizontal,
-                    child: Wrap(
-                      spacing: 8.w,
-                      children: firstHalf
-                          .map((e) => UiKitTagWidget(
-                                title: e.title,
-                                icon: e.iconPath,
-                                showGradient: e.matching,
-                              ))
-                          .toList(),
-                    ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Wrap(
+                  spacing: 8.w,
+                  children: baseTags
+                      .map((e) => UiKitTagWidget(
+                            title: e.title,
+                            icon: e.iconPath,
+                            showGradient: e.unique,
+                          ))
+                      .toList(),
+                ),
+              ),
+              if (uniqueTags.isNotEmpty) ...[
+                SpacingFoundation.verticalSpace4,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Wrap(
+                    spacing: 8.w,
+                    children: uniqueTags
+                        .map((e) => UiKitTagWidget(
+                              title: e.title,
+                              icon: e.iconPath,
+                              showGradient: e.unique,
+                            ))
+                        .toList(),
                   ),
-                  SpacingFoundation.verticalSpace4,
-                  SingleChildScrollView(
-                    controller: secondHalfController,
-                    scrollDirection: Axis.horizontal,
-                    child: Wrap(
-                      spacing: 8.w,
-                      children: secondHalf
-                          .map((e) => UiKitTagWidget(
-                                title: e.title,
-                                icon: e.iconPath,
-                                showGradient: e.matching,
-                              ))
-                          .toList(),
-                    ),
-                  ),
-                ],
-              );
-            },
+                ),
+              ],
+            ],
           ),
         ),
       ],
