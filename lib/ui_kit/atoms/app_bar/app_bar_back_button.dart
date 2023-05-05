@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/tokens/assets.gen.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
 class AppBarBackButton extends StatelessWidget {
   const AppBarBackButton({Key? key}) : super(key: key);
@@ -16,7 +14,9 @@ class AppBarBackButton extends StatelessWidget {
       elevation: 0,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
-        onTap: () => Navigator.pop(context),
+        onTap: () {
+          if (context.canPop()) Navigator.pop(context);
+        },
         child: Ink(
           decoration: BoxDecoration(
             shape: BoxShape.circle,

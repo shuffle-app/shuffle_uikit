@@ -1,14 +1,16 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
 
 class AppBarTitle extends StatelessWidget {
   final String title;
-  final bool centerTitle;
+  final bool? centerTitle;
 
   const AppBarTitle({
     Key? key,
     required this.title,
-    this.centerTitle = false,
+    this.centerTitle,
   }) : super(key: key);
 
   @override
@@ -19,7 +21,7 @@ class AppBarTitle extends StatelessWidget {
       child: Text(
         title,
         style: textStyle,
-        textAlign: centerTitle ? TextAlign.center : TextAlign.left,
+        textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
       ),
     );
   }

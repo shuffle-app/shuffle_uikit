@@ -32,16 +32,20 @@ class CustomAppBar extends PreferredSize {
           padding: const EdgeInsets.all(16),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                if (autoImplyLeading ?? context.canPop()) const AppBarBackButton(),
-                AppBarTitle(
-                  title: title,
-                  centerTitle: centerTitle,
-                ),
-              ],
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // if (autoImplyLeading ?? context.canPop())
+                  const AppBarBackButton(),
+                  AppBarTitle(
+                    title: title,
+                    centerTitle: centerTitle,
+                  ),
+                ],
+              ),
             ),
           ),
         ),

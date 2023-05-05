@@ -136,6 +136,8 @@ class UiKitThemes {
           shadowColor: Colors.transparent,
           backgroundColor: Colors.white.withOpacity(0.07),
           centerTitle: true,
+          elevation: 0,
+          scrolledUnderElevation: 0,
         ),
         uiKitTabBarTheme: TabBarTheme(
           indicatorSize: TabBarIndicatorSize.tab,
