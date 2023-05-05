@@ -14,7 +14,9 @@ class AppBarBackButton extends StatelessWidget {
       elevation: 0,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
-        onTap: () => Navigator.pop(context),
+        onTap: () {
+          if (context.canPop()) Navigator.pop(context);
+        },
         child: Ink(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
