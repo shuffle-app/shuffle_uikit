@@ -41,25 +41,5 @@ class BlurredAppBarPage extends StatelessWidget {
         ),
       ],
     );
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: CustomAppBar(
-        title: title,
-        autoImplyLeading: autoImplyLeading,
-        centerTitle: centerTitle,
-      ),
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).padding.top + (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 0),
-          ),
-          Expanded(
-            child: body,
-          ),
-        ],
-      ),
-    );
   }
 }

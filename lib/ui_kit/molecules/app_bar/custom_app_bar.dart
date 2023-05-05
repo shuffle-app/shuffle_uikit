@@ -18,6 +18,7 @@ class CustomAppBar extends PreferredSize {
 
   @override
   Widget build(BuildContext context) {
+    final showLeading = autoImplyLeading ?? context.canPop();
     return ClipRRect(
       borderRadius: BorderRadiusFoundation.onlyBottom24,
       child: BackdropFilter(
@@ -38,8 +39,8 @@ class CustomAppBar extends PreferredSize {
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // if (autoImplyLeading ?? context.canPop())
-                  const AppBarBackButton(),
+                  if (showLeading) const AppBarBackButton(),
+                  if (showLeading && !centerTitle) SpacingFoundation.horizontalSpace8,
                   AppBarTitle(
                     title: title,
                     centerTitle: centerTitle,
