@@ -49,6 +49,52 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SizedBox(
+                height: 568,
+                width: double.infinity,
+                child: UiKitCardSwiper(
+                  onSwipe: (index) {},
+                  cards: List<BaseUiKitSwiperCard>.generate(
+                    10,
+                    (index) => UiKitSwiperCard(
+                      title: 'Dance Again',
+                      subtitle: 'Unique place for unique people',
+                      pngImage: Assets.images.png.mockSwiperCard,
+                      tags: [
+                        UiKitTagWidget(
+                          title: 'Club',
+                          icon: Assets.images.svg.cocktail.path,
+                        ),
+                        UiKitTagWidget(
+                          title: 'Club',
+                          icon: Assets.images.svg.cocktail.path,
+                          customSpace: SpacingFoundation.horizontalSpace8,
+                          showSpacing: true,
+                        ),
+                        UiKitTagWidget(
+                          title: 'Club',
+                          icon: Assets.images.svg.cocktail.path,
+                          customSpace: SpacingFoundation.horizontalSpace8,
+                          showSpacing: true,
+                        ),
+                        UiKitTagWidget(
+                          title: 'Club',
+                          icon: Assets.images.svg.cocktail.path,
+                          customSpace: SpacingFoundation.horizontalSpace8,
+                          showSpacing: true,
+                        ),
+                        UiKitTagWidget(
+                          title: 'Club',
+                          icon: Assets.images.svg.cocktail.path,
+                          customSpace: SpacingFoundation.horizontalSpace8,
+                          showSpacing: true,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
