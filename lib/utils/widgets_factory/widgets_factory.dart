@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/buttons/gradient_icon_button.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/buttons/small_ordinary_button.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/buttons/ui_kit_text_theme.dart';
 
 abstract class WidgetsAbstractFactory {
   ButtonFactory createOrdinaryButton({
@@ -14,6 +11,7 @@ abstract class WidgetsAbstractFactory {
     bool isTextButton = false,
     bool? onlyIcon,
     bool? outlined,
+    bool? blurred,
   });
 
   ButtonFactory createSmallButton({
@@ -27,6 +25,7 @@ abstract class WidgetsAbstractFactory {
     DialogButtonType? dialogButtonType,
     bool? onlyIcon,
     bool? outlined,
+    bool? blurred,
   });
   // InputFieldFactory createInputField({
   //   required TextEditingController controller,
@@ -56,10 +55,12 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     DialogButtonType? dialogButtonType,
     bool? onlyIcon,
     bool? outlined,
+    bool? blurred,
   }) {
     final hasIcon = icon != null;
     final gradientIconButton = gradient && hasIcon && text.isEmpty;
     final onlyIconButton = (onlyIcon ?? false) && hasIcon && text.isEmpty;
+
     if (dialogButton ?? false) {
       if (dialogButtonType == DialogButtonType.buttonBlack) {
         return DialogButton.black(
@@ -90,7 +91,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         icon: icon,
         onPressed: onPressed,
       );
-    } else if (hasIcon && !gradient && !onlyIconButton) {
+    } else if (hasIcon && !gradient && !onlyIconButton && !(blurred ?? false)) {
       return GeneralPurposeButtonWithIcon(
         text: text,
         onPressed: onPressed,
@@ -108,6 +109,11 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     } else if (onlyIconButton) {
       return FilledIconButton(
+        icon: icon,
+        onPressed: onPressed,
+      );
+    } else if (hasIcon && (blurred ?? false)) {
+      return BlurredButtonWithIcon(
         icon: icon,
         onPressed: onPressed,
       );
@@ -141,6 +147,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     DialogButtonType? dialogButtonType,
     bool? onlyIcon,
     bool? outlined,
+    bool? blurred,
   }) {
     final hasIcon = icon != null;
     if (dialogButton ?? false) {
@@ -157,6 +164,12 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           small: true,
         );
       }
+    }
+    if (hasIcon && (blurred ?? false)) {
+      return SmallBlurredButtonWithIcon(
+        icon: icon,
+        onPressed: onPressed,
+      );
     }
     return SmallGeneralPurposeButton(
       text: text,
