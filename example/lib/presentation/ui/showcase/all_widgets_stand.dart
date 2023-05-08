@@ -49,6 +49,37 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  context.button(
+                    blurred: true,
+                    small: true,
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.star,
+                      color: Colors.white,
+                    ),
+                  ),
+                  context.button(
+                    blurred: true,
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.star,
+                      color: Colors.white,
+                    ),
+                    small: false,
+                  ),
+                  context.button(
+                    blurred: true,
+                    small: true,
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.star,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
               const UiKitShuffleLogo(),
               UiKitSwiperCard(
                 title: 'Dance Again',
