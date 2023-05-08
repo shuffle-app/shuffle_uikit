@@ -80,6 +80,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ],
               ),
               SpacingFoundation.verticalSpace16,
+              const UiKitShuffleLogo(),
               UiKitSwiperCard(
                 title: 'Dance Again',
                 subtitle: 'Unique place for unique people',

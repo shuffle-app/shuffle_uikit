@@ -21,5 +21,6 @@ export 'buttons/ui_kit_text_theme.dart';
 export 'image/image.dart';
 export 'inputs/inputs.dart';
 export 'profile/place_tag_widget.dart';
+export 'test_lottie.dart';
 export 'user/user_circle_avatar.dart';
 export 'user/user_star.dart';

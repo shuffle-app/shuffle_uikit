@@ -28,6 +28,7 @@ dependencies:
 
   #tab navigation
   tabnavigator: ^1.0.0
+  lottie: ^2.3.2
 
 
 dev_dependencies:
@@ -49,6 +50,7 @@ flutter:
     - assets/images/png/
     - assets/images/svg/
     - assets/fonts/
+    - assets/animations/lottie/
 
   fonts:
     - family: Unbounded
@@ -67,6 +69,7 @@ flutter_gen:
   line_length: 120
   integrations:
     flutter_svg: true
+    lottie: true
   assets:
     enabled: true
     fonts:
