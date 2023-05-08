@@ -49,6 +49,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              const UiKitShuffleLogo(),
               UiKitSwiperCard(
                 title: 'Dance Again',
                 subtitle: 'Unique place for unique people',
