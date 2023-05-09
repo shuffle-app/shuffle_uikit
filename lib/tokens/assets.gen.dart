@@ -66,6 +66,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/calendar.png
   AssetGenImage get calendar => const AssetGenImage('assets/images/png/calendar.png');
 
+  /// File path: assets/images/png/cloudy.png
+  AssetGenImage get cloudy => const AssetGenImage('assets/images/png/cloudy.png');
+
   /// File path: assets/images/png/coins.png
   AssetGenImage get coins => const AssetGenImage('assets/images/png/coins.png');
 
@@ -78,6 +81,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/holding_heart_emoji.png
   AssetGenImage get holdingHeartEmoji => const AssetGenImage('assets/images/png/holding_heart_emoji.png');
 
+  /// File path: assets/images/png/location.png
+  AssetGenImage get location => const AssetGenImage('assets/images/png/location.png');
+
   /// File path: assets/images/png/mock_ad_banner.png
   AssetGenImage get mockAdBanner => const AssetGenImage('assets/images/png/mock_ad_banner.png');
 
@@ -86,6 +92,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/mock_user_avatar.png
   AssetGenImage get mockUserAvatar => const AssetGenImage('assets/images/png/mock_user_avatar.png');
+
+  /// File path: assets/images/png/mood.png
+  AssetGenImage get mood => const AssetGenImage('assets/images/png/mood.png');
 
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
@@ -99,6 +108,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
 
+  /// File path: assets/images/png/target.png
+  AssetGenImage get target => const AssetGenImage('assets/images/png/target.png');
+
   /// File path: assets/images/png/weather_icon.png
   AssetGenImage get weatherIcon => const AssetGenImage('assets/images/png/weather_icon.png');
 
@@ -107,17 +119,21 @@ class $AssetsImagesPngGen {
         atmosphere,
         balloons,
         calendar,
+        cloudy,
         coins,
         crazyEmoji,
         eventAvatar,
         holdingHeartEmoji,
+        location,
         mockAdBanner,
         mockSwiperCard,
         mockUserAvatar,
+        mood,
         place,
         profileAvatar,
         profilePost1,
         profileStory1,
+        target,
         weatherIcon
       ];
 }
