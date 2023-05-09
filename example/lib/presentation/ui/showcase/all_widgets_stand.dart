@@ -52,6 +52,62 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               BlurredCardWithGradientBorder(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        ImageWidget(
+                          rasterAsset: GraphicsFoundation.instance.png.skiingGuy,
+                        ),
+                        SpacingFoundation.horizontalSpace12,
+                        Expanded(
+                          child: Text(
+                            'By the way, how often do you like to ski?',
+                            style: context.uiKitTheme?.boldTextTheme.body,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SpacingFoundation.verticalSpace8,
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: context.button(
+                            text: 'Not often',
+                            outlined: true,
+                            small: true,
+                            isTextButton: true,
+                            onPressed: () {},
+                          ),
+                        ),
+                        SpacingFoundation.horizontalSpace12,
+                        Expanded(
+                          child: context.button(
+                            text: 'Very often',
+                            small: true,
+                            onPressed: () {},
+                          ),
+                        ),
+                      ],
+                    ),
+                    SpacingFoundation.verticalSpace8,
+                    context.button(
+                      text: 'Hard to answer',
+                      outlined: true,
+                      small: true,
+                      isTextButton: true,
+                      color: Colors.white.withOpacity(0.1),
+                      onPressed: () {},
+                    ),
+                  ],
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              BlurredCardWithGradientBorder(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
                       'Thanks Now we know you better',

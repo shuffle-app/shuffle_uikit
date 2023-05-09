@@ -17,7 +17,13 @@ class BlurredCardWithGradientBorder extends StatelessWidget {
         border: GradientFoundation.gradientBorder,
         color: Colors.white.withOpacity(0.1),
       ),
-      child: child.paddingAll(EdgeInsetsFoundation.all16),
+      child: ClipRRect(
+        borderRadius: BorderRadiusFoundation.all24,
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+          child: child,
+        ).paddingAll(EdgeInsetsFoundation.all16),
+      ),
     );
   }
 }
