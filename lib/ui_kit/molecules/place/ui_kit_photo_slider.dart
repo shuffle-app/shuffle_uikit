@@ -1,6 +1,7 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitPhotoSlider extends StatefulWidget {
@@ -280,7 +281,7 @@ extension Range on num {
   }
 }
 
-enum CardSwiperDirection { none, left, right, top, bottom }
+// enum CardSwiperDirection { none, left, right, top, bottom }
 
 enum SwipeType {
   none,
