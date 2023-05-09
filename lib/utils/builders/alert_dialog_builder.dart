@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -31,5 +33,28 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
         actionsPadding: const EdgeInsets.fromLTRB(24, 8, 24, 24),
       );
     },
+  );
+}
+
+Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
+  BuildContext context, {
+  Color? backgroundColor = Colors.black,
+  required Widget child,
+}) {
+  return showDialog(
+    context: context,
+    barrierColor: Colors.white.withOpacity(0.1),
+    useSafeArea: false,
+    builder: (_) => BackdropFilter(
+      filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+      child: Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusFoundation.all40,
+        ),
+        backgroundColor: backgroundColor,
+        clipBehavior: Clip.hardEdge,
+        child: child.paddingAll(EdgeInsetsFoundation.all24),
+      ),
+    ),
   );
 }
