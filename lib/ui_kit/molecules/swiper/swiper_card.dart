@@ -116,10 +116,12 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                     children: [
                       Text(
                         title,
+                        maxLines: 1,
                         style: titleStyle,
                       ),
                       Text(
                         subtitle,
+                        maxLines: 2,
                         style: subtitleStyle,
                       ),
                       SpacingFoundation.verticalSpace4,
