@@ -7,8 +7,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 abstract class BaseUiKitSwiperCard extends StatelessWidget {
   final String title;
   final String subtitle;
-  final SvgGenImage? svgImage;
-  final AssetGenImage? pngImage;
+  final String? imageLink;
   final List<UiKitTagWidget> tags;
 
   const BaseUiKitSwiperCard({
@@ -16,18 +15,15 @@ abstract class BaseUiKitSwiperCard extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.tags,
-    this.svgImage,
-    this.pngImage,
-  })  : assert(svgImage != null || pngImage != null),
-        super(key: key);
+    this.imageLink,
+  }) : super(key: key);
 }
 
 class UiKitSwiperAdCard extends BaseUiKitSwiperCard {
   const UiKitSwiperAdCard({
     super.key,
-    super.svgImage,
     super.tags = const [],
-    super.pngImage,
+    super.imageLink,
     super.title = '',
     super.subtitle = '',
   });
@@ -45,8 +41,7 @@ class UiKitSwiperAdCard extends BaseUiKitSwiperCard {
         fit: StackFit.expand,
         children: [
           ImageWidget(
-            rasterAsset: pngImage,
-            svgAsset: svgImage,
+            link: imageLink,
             fit: BoxFit.cover,
           ),
         ],
@@ -58,8 +53,7 @@ class UiKitSwiperAdCard extends BaseUiKitSwiperCard {
 class UiKitSwiperCard extends BaseUiKitSwiperCard {
   const UiKitSwiperCard({
     super.key,
-    super.svgImage,
-    super.pngImage,
+    super.imageLink,
     required super.tags,
     required super.title,
     required super.subtitle,
@@ -82,8 +76,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
           ClipRRect(
             borderRadius: BorderRadiusFoundation.all40,
             child: ImageWidget(
-              rasterAsset: pngImage,
-              svgAsset: svgImage,
+              link: imageLink,
               fit: BoxFit.cover,
             ),
           ),
@@ -101,7 +94,8 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                   ),
                   child: Text(
                     '+20',
-                    style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(color: Colors.black),
+                    style: context.uiKitTheme?.boldTextTheme.caption1Bold
+                        .copyWith(color: Colors.black),
                   ).paddingSymmetric(
                     vertical: EdgeInsetsFoundation.vertical8,
                     horizontal: EdgeInsetsFoundation.horizontal12,
@@ -122,10 +116,12 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                     children: [
                       Text(
                         title,
+                        maxLines: 1,
                         style: titleStyle,
                       ),
                       Text(
                         subtitle,
+                        maxLines: 2,
                         style: subtitleStyle,
                       ),
                       SpacingFoundation.verticalSpace4,

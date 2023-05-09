@@ -1,3 +1,5 @@
+import 'package:shuffle_uikit/shuffle_uikit.dart';
+
 enum UiKitMediaType { image, video }
 
 abstract class BaseUiKitMedia {
@@ -38,4 +40,6 @@ class UiKitTag {
     required this.iconPath,
     required this.unique,
   });
+
+  UiKitTagWidget get widget => UiKitTagWidget(title: title,icon: iconPath,showGradient: unique,);
 }
