@@ -108,6 +108,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
 
+  /// File path: assets/images/png/skiing_guy.png
+  AssetGenImage get skiingGuy => const AssetGenImage('assets/images/png/skiing_guy.png');
+
   /// File path: assets/images/png/target.png
   AssetGenImage get target => const AssetGenImage('assets/images/png/target.png');
 
@@ -133,6 +136,7 @@ class $AssetsImagesPngGen {
         profileAvatar,
         profilePost1,
         profileStory1,
+        skiingGuy,
         target,
         weatherIcon
       ];

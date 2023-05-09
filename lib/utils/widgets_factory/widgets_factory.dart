@@ -164,8 +164,14 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           small: true,
         );
       }
-    }
-    if (hasIcon && (blurred ?? false)) {
+    } else if ((outlined ?? false) && isTextButton) {
+      return SmallOutlinedTextButton(
+        onPressed: onPressed,
+        text: text,
+        borderColor: color,
+        textColor: color,
+      );
+    } else if (hasIcon && (blurred ?? false)) {
       return SmallBlurredButtonWithIcon(
         icon: icon,
         onPressed: onPressed,
