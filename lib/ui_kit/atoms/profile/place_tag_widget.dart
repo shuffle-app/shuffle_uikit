@@ -34,6 +34,7 @@ class UiKitTagWidget extends StatelessWidget {
         ImageWidget(
           link: icon,
           height: SpacingFoundation.horizontalSpacing12,
+          color: ColorsFoundation.darkNeutral900,
           fit: BoxFit.fitHeight,
           // package: 'shuffle_uikit',
         ),

@@ -5,13 +5,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitTagsWidget extends StatelessWidget {
   final double? rating;
   final List<UiKitTag> baseTags;
-  final List<UiKitTag> uniqueTags;
+  final List<UiKitTag>? uniqueTags;
 
   const UiKitTagsWidget({
     Key? key,
     this.rating,
     required this.baseTags,
-    required this.uniqueTags,
+     this.uniqueTags,
   }) : super(key: key);
 
   @override
@@ -56,13 +56,13 @@ class UiKitTagsWidget extends StatelessWidget {
                       .toList(),
                 ),
               ),
-              if (uniqueTags.isNotEmpty) ...[
+              if (uniqueTags!=null && uniqueTags!.isNotEmpty) ...[
                 SpacingFoundation.verticalSpace4,
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Wrap(
                     spacing: 8.w,
-                    children: uniqueTags
+                    children: uniqueTags!
                         .map((e) => UiKitTagWidget(
                               title: e.title,
                               icon: e.iconPath,

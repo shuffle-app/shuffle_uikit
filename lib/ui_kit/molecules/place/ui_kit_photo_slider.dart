@@ -8,13 +8,14 @@ class UiKitPhotoSlider extends StatefulWidget {
   final double width;
   final double height;
   final int initialIndex;
+  final VoidCallback? onTap;
 
   const UiKitPhotoSlider({
     Key? key,
     required this.media,
     required this.width,
     this.initialIndex = 0,
-    required this.height,
+    required this.height, this.onTap,
   }) : super(key: key);
 
   @override
@@ -104,6 +105,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
           media: item,
           givenSize: Size(double.infinity, widget.height),
         ),
+        onTap: widget.onTap,
         onHorizontalDragStart: (tapInfo) {
           final renderBox = context.findRenderObject()! as RenderBox;
           final position = renderBox.globalToLocal(tapInfo.globalPosition);
