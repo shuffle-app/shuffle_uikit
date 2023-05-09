@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
-import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
@@ -96,6 +96,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
 
+  /// File path: assets/images/png/skiing_guy.png
+  AssetGenImage get skiingGuy => const AssetGenImage('assets/images/png/skiing_guy.png');
+
   /// File path: assets/images/png/weather_icon.png
   AssetGenImage get weatherIcon => const AssetGenImage('assets/images/png/weather_icon.png');
 
@@ -114,6 +117,7 @@ class $AssetsImagesPngGen {
         profileAvatar,
         profilePost1,
         profileStory1,
+        skiingGuy,
         weatherIcon
       ];
 }
@@ -451,8 +455,6 @@ class $AssetsImagesSvgGen {
         chevronRight,
         chevronUpLong,
         chevronUp,
-        chevronLeft,
-        chevronRight,
         clock,
         cocktail,
         connectionFill,

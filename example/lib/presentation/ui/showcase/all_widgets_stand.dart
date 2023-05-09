@@ -49,6 +49,58 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              BlurredCardWithGradientBorder(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        ImageWidget(
+                          rasterAsset: GraphicsFoundation.instance.png.skiingGuy,
+                        ),
+                        SpacingFoundation.horizontalSpace12,
+                        Expanded(
+                          child: Text(
+                            'By the way, how often do you like to ski?',
+                            style: context.uiKitTheme?.boldTextTheme.body,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SpacingFoundation.verticalSpace8,
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: context.button(
+                            text: 'Not often',
+                            outlined: true,
+                            small: true,
+                          ),
+                        ),
+                        SpacingFoundation.horizontalSpace12,
+                        Expanded(
+                          child: context.button(
+                            text: 'Very often',
+                            small: true,
+                            onPressed: () {},
+                          ),
+                        ),
+                      ],
+                    ),
+                    SpacingFoundation.verticalSpace8,
+                    context.button(
+                      text: 'Hard to answer',
+                      outlined: true,
+                      small: true,
+                      color: Colors.white.withOpacity(0.1),
+                    ),
+                  ],
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               SizedBox(
                 height: 568,
                 width: double.infinity,
