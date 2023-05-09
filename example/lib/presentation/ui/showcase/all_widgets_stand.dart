@@ -101,6 +101,22 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
+              BlurredCardWithGradientBorder(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'Thanks Now we know you better',
+                      style: context.uiKitTheme?.boldTextTheme.subHeadline,
+                    ),
+                    SpacingFoundation.verticalSpace8,
+                    ImageWidget(
+                      rasterAsset: GraphicsFoundation.instance.png.holdingHeartEmoji,
+                    )
+                  ],
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               SizedBox(
                 height: 568,
                 width: double.infinity,
