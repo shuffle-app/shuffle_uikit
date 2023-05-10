@@ -53,7 +53,9 @@ class _VerticalMessageCard extends StatelessWidget {
             icon,
             SpacingFoundation.verticalSpace8,
             Text(
-              message.toUpperCase(),
+              /// end line symbols added to make sure that the text is more than 4 lines
+              /// so that the card height is always fixed
+              '${message.toUpperCase()}\n\n\n\n',
               style: messageStyle,
               textAlign: TextAlign.center,
               maxLines: 4,
