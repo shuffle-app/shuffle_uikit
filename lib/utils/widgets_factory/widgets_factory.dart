@@ -196,10 +196,11 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 
   @override
   UserTileFactory createUserTile({
-    required String name,
-    required String username,
-    required String avatarUrl,
-    required UserTileType type,
+    String? name,
+    String? username,
+    String? avatarUrl,
+    UserTileType? type,
+    Border? border,
   }) {
     switch (type) {
       case UserTileType.pro:
@@ -207,24 +208,35 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           name: name,
           avatarUrl: avatarUrl,
           username: username,
+          border: border,
         );
       case UserTileType.ordinary:
         return OrdinaryUserTile(
           name: name,
           avatarUrl: avatarUrl,
           username: username,
+          border: border,
         );
       case UserTileType.premium:
         return PremiumUserTile(
           name: name,
           avatarUrl: avatarUrl,
           username: username,
+          border: border,
         );
       case UserTileType.influencer:
         return InfluencerUserTile(
           name: name,
           avatarUrl: avatarUrl,
           username: username,
+          border: border,
+        );
+      case null:
+        return OrdinaryUserTile(
+          name: name,
+          avatarUrl: avatarUrl,
+          username: username,
+          border: border,
         );
     }
   }
