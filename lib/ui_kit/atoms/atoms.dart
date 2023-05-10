@@ -17,6 +17,7 @@ export 'buttons/ordinary_button.dart';
 export 'buttons/ordinary_with_child.dart';
 export 'buttons/small_blurred_button_with_icon.dart';
 export 'buttons/small_ordinary_button.dart';
+export 'buttons/small_outlined_burron.dart';
 export 'buttons/ui_kit_text_theme.dart';
 export 'common/blurred_card_with_gradient_border.dart';
 export 'image/image.dart';
