@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-abstract class _UserTile extends StatelessWidget {
+enum UserTileType { ordinary, pro, premium, influencer }
+
+abstract class _UserTile extends StatelessWidget implements UserTileFactory {
   final String name;
   final String avatarUrl;
   final String username;
   final Widget? trailing;
-  final Border border;
+  final Border avatarBorder;
 
   const _UserTile({
     Key? key,
     required this.name,
     required this.avatarUrl,
     required this.username,
-    required this.border,
+    required this.avatarBorder,
     this.trailing,
   }) : super(key: key);
 
@@ -29,7 +31,7 @@ abstract class _UserTile extends StatelessWidget {
           UserCircleAvatar(
             imageUrl: avatarUrl,
             size: 32.r,
-            border: border,
+            border: avatarBorder,
           ),
           SpacingFoundation.horizontalSpace12,
           Column(
@@ -67,7 +69,7 @@ class OrdinaryUserTile extends _UserTile {
     required super.username,
   }) : super(
           key: key,
-          border: const Border(
+          avatarBorder: const Border(
             top: BorderSide(color: Colors.white, width: 2),
             right: BorderSide(color: Colors.white, width: 2),
             bottom: BorderSide(color: Colors.white, width: 2),
@@ -83,7 +85,7 @@ class PremiumUserTile extends _UserTile {
     required super.avatarUrl,
     required super.username,
   }) : super(
-          border: const Border(
+          avatarBorder: const Border(
             top: BorderSide(color: Colors.white, width: 2),
             right: BorderSide(color: Colors.white, width: 2),
             bottom: BorderSide(color: Colors.white, width: 2),
@@ -100,7 +102,7 @@ class ProUserTile extends _UserTile {
     required super.avatarUrl,
     required super.username,
   }) : super(
-          border: const Border(
+          avatarBorder: const Border(
             top: BorderSide(color: Colors.white, width: 2),
             right: BorderSide(color: Colors.white, width: 2),
             bottom: BorderSide(color: Colors.white, width: 2),
@@ -110,14 +112,14 @@ class ProUserTile extends _UserTile {
         );
 }
 
-class InfluencerlUserTile extends _UserTile {
-  const InfluencerlUserTile({
+class InfluencerUserTile extends _UserTile {
+  const InfluencerUserTile({
     super.key,
     required super.name,
     required super.avatarUrl,
     required super.username,
   }) : super(
-          border: const Border(
+          avatarBorder: const Border(
             top: BorderSide(color: Colors.white, width: 2),
             right: BorderSide(color: Colors.white, width: 2),
             bottom: BorderSide(color: Colors.white, width: 2),
