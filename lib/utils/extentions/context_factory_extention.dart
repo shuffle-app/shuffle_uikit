@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:shuffle_uikit/utils/widgets_factory/widgets_factory.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 enum DialogButtonType { buttonWhite, buttonBlack }
 
@@ -51,5 +51,21 @@ extension Factory on BuildContext {
           )
           .build(this);
     }
+  }
+
+  Widget userTile({
+    required String name,
+    required String username,
+    required String avatarUrl,
+    required UserTileType type,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createUserTile(
+          name: name,
+          username: username,
+          avatarUrl: avatarUrl,
+          type: type,
+        )
+        .build(this);
   }
 }
