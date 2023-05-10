@@ -439,28 +439,32 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ],
               ),
               SpacingFoundation.verticalSpace16,
-              OrdinaryUserTile(
+              context.userTile(
                 name: 'Frankie Hansen',
                 username: '@fr4nk1eh4',
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+                type: UserTileType.ordinary,
               ),
               SpacingFoundation.verticalSpace16,
-              PremiumUserTile(
+              context.userTile(
                 name: 'Frankie Hansen',
                 username: '@fr4nk1eh4',
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+                type: UserTileType.premium,
               ),
               SpacingFoundation.verticalSpace16,
-              ProUserTile(
+              context.userTile(
                 name: 'Frankie Hansen',
                 username: '@fr4nk1eh4',
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+                type: UserTileType.pro,
               ),
               SpacingFoundation.verticalSpace16,
-              InfluencerlUserTile(
+              context.userTile(
                 name: 'Frankie Hansen',
                 username: '@fr4nk1eh4',
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+                type: UserTileType.influencer,
               ),
               SpacingFoundation.verticalSpace16,
               SlidablePlaceCard(

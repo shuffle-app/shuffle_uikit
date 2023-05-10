@@ -27,6 +27,13 @@ abstract class WidgetsAbstractFactory {
     bool? outlined,
     bool? blurred,
   });
+
+  UserTileFactory createUserTile({
+    required String name,
+    required String username,
+    required String avatarUrl,
+    required UserTileType type,
+  });
   // InputFieldFactory createInputField({
   //   required TextEditingController controller,
   //   String? hintText,
@@ -37,6 +44,10 @@ abstract class WidgetsAbstractFactory {
 }
 
 abstract class ButtonFactory {
+  Widget build(BuildContext context);
+}
+
+abstract class UserTileFactory {
   Widget build(BuildContext context);
 }
 
@@ -175,6 +186,41 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       text: text,
       onPressed: onPressed,
     );
+  }
+
+  @override
+  UserTileFactory createUserTile({
+    required String name,
+    required String username,
+    required String avatarUrl,
+    required UserTileType type,
+  }) {
+    switch (type) {
+      case UserTileType.pro:
+        return ProUserTile(
+          name: name,
+          avatarUrl: avatarUrl,
+          username: username,
+        );
+      case UserTileType.ordinary:
+        return OrdinaryUserTile(
+          name: name,
+          avatarUrl: avatarUrl,
+          username: username,
+        );
+      case UserTileType.premium:
+        return PremiumUserTile(
+          name: name,
+          avatarUrl: avatarUrl,
+          username: username,
+        );
+      case UserTileType.influencer:
+        return InfluencerUserTile(
+          name: name,
+          avatarUrl: avatarUrl,
+          username: username,
+        );
+    }
   }
 
   // @override
