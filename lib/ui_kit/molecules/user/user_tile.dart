@@ -23,7 +23,9 @@ abstract class _UserTile extends StatelessWidget implements UserTileFactory {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
-    return CardWrapper(
+
+    return UiKitCardWrapper(
+      width: double.infinity,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.start,

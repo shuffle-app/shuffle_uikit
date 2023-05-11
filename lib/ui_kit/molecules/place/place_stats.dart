@@ -21,7 +21,7 @@ class UiKitTagsWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       children: [
         if (rating != null)
-          CardWrapper(
+          UiKitCardWrapper(
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [

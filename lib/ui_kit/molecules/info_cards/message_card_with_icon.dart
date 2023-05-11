@@ -46,7 +46,7 @@ class _VerticalMessageCard extends StatelessWidget {
     final messageStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium;
     return SizedBox(
       width: 102.w,
-      child: CardWrapper(
+      child: UiKitCardWrapper(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -80,7 +80,7 @@ class _HorizontalMessageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final messageStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase;
-    return CardWrapper(
+    return UiKitCardWrapper(
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: [

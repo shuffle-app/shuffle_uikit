@@ -6,10 +6,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitBlurredQuestionChip extends StatelessWidget {
   final String label;
+  final VoidCallback? onTap;
 
   const UiKitBlurredQuestionChip({
     Key? key,
     required this.label,
+    this.onTap
   }) : super(key: key);
 
   @override
@@ -29,6 +31,8 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
         color: ColorsFoundation.darkNeutral500,
         borderRadius: BorderRadiusFoundation.all12,
       ),
+      child: InkWell(
+      onTap: onTap,
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
         child: Row(
@@ -57,7 +61,7 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
             ),
           ],
         ).paddingAll(EdgeInsetsFoundation.all4),
-      ),
+      )),
     );
   }
 }

@@ -20,7 +20,7 @@ class ProfileAttitudeTabs extends StatelessWidget {
     );
     return Theme(
       data: Theme.of(context).copyWith(tabBarTheme: tabBarTheme),
-      child: CardWrapper(
+      child: UiKitCardWrapper(
         child: DefaultTabController(
           length: tabs.length,
           child: ClipRRect(
