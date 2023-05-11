@@ -20,6 +20,7 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
       color: ColorsFoundation.darkNeutral900,
       fontSize: 10,
     );
+
     return Container(
       width: 80.w,
       clipBehavior: Clip.hardEdge,

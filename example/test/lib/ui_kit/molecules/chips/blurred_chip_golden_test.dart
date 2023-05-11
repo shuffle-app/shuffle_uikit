@@ -8,21 +8,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() {
   group('Blurred Chip', () {
     testGoldens('Blurred Question Chip', (tester) async {
-      final builder = GoldenBuilder.column()
+      final builder = GoldenBuilder.column(
+          wrap: (child) =>  Center(
+                  child: child,
+              ))
         ..addScenario(
           'Like in stand',
-          const Center(
-            child: BlurredQuestionChip(
-              label: 'how it works',
-            ),
+          UiKitBlurredQuestionChip(
+            label: 'how it works',
+            onTap: () {},
           ),
         )
         ..addScenario(
           'Long text',
-          const Center(
-            child: BlurredQuestionChip(
-              label: 'Great, to bad forgot to mention this on the website',
-            ),
+          UiKitBlurredQuestionChip(
+            label: 'Great, to bad forgot to mention this on the website',
+            onTap: () {},
           ),
         );
 
