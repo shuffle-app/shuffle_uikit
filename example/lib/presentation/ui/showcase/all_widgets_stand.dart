@@ -439,13 +439,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               UiKitMediaSliderWithTags(
-                photos: [
+                media: [
                   UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
                   UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
                   UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
                   UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
-                ],
-                videos: [
                   UiKitMediaVideo(link: GraphicsFoundation.instance.png.place.path),
                 ],
                 description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '

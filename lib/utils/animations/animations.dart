@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math' as math;
 
 class Animations {
   static slideAnimation(Animation<double> animation,
@@ -84,7 +85,7 @@ class _FadeScaleAnimState extends State<_FadeScaleAnim>
   late final controller = AnimationController(
       duration: const Duration(milliseconds: 1600), vsync: this);
   late final curvedAnimation =
-  CurvedAnimation(parent: controller, curve: Curves.easeIn);
+      CurvedAnimation(parent: controller, curve: Curves.easeIn);
 
   final double multiplier = 1.7;
 
@@ -132,6 +133,69 @@ class _FadeScaleAnimState extends State<_FadeScaleAnim>
         },
         animation: controller,
       ),
+    );
+  }
+}
+
+class RotatableWidget extends StatefulWidget {
+  const RotatableWidget({
+    Key? key,
+    required this.child,
+    this.startDelay,
+    this.alignment = Alignment.centerLeft,
+  }) : super(key: key);
+
+  final Widget child;
+  final Alignment alignment;
+  final Duration? startDelay;
+
+  @override
+  State<RotatableWidget> createState() => _RotatableWidgetState();
+}
+
+class _RotatableWidgetState extends State<RotatableWidget>
+    with SingleTickerProviderStateMixin {
+  late final controller = AnimationController(
+      duration: const Duration(milliseconds: 1600), vsync: this);
+  late final curvedAnimation =
+      CurvedAnimation(parent: controller, curve: Curves.easeIn);
+
+  late final angle = Tween<double>(begin: 0, end: 1).animate(curvedAnimation);
+
+  @override
+  void initState() {
+    super.initState();
+    () async {
+      await Future.delayed(widget.startDelay ?? Duration.zero);
+      controller
+        ..forward()
+        ..addStatusListener(listenAnim);
+    }();
+  }
+
+  void listenAnim(AnimationStatus status) {
+    if (controller.isCompleted) {
+      controller.repeat();
+    }
+  }
+
+  @override
+  void dispose() {
+    controller.removeStatusListener(listenAnim);
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      builder: (context, child) {
+        return Transform.rotate(
+            angle: angle.value,
+            alignment: widget.alignment,
+            child: widget.child);
+      },
+      animation: controller,
     );
   }
 }

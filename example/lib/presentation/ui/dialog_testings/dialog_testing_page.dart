@@ -16,7 +16,10 @@ class DialogTestingPage extends StatelessWidget {
                 onPressed: () => showUiKitGeneralFullScreenDialog(
                   context,
                   child: Column(
-                    children: List.generate(10, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
+                    children: List.generate(
+                        10,
+                        (index) =>
+                            const Placeholder().paddingSymmetric(vertical: 8)),
                   ),
                 ),
               ),
@@ -35,7 +38,8 @@ class DialogTestingPage extends StatelessWidget {
                   onPressed: () => showUiKitPopover(c,
                       title: const Text('Premium account'),
                       buttonText: 'see more',
-                      description: const Text('Only premium account users can post reactions')),
+                      description: const Text(
+                          'Only premium account users can post reactions')),
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -45,17 +49,18 @@ class DialogTestingPage extends StatelessWidget {
                   context,
                   buttonText: 'text',
                   title: const Text('You sent an invitation to 2 people.'),
-                  content: const Text('Invitations can be viewed in private messages'),
+                  content: const Text(
+                      'Invitations can be viewed in private messages'),
                 ),
               ),
               SpacingFoundation.verticalSpace16,
               GeneralPurposeButton(
                 text: 'Fullscreen Dialog',
                 onPressed: () {
-                  final textStyle = context.uiKitTheme?.boldTextTheme.title2;
+                  // final textStyle = context.uiKitTheme?.boldTextTheme.title2;
                   showUiKitFullScreenAlertDialog(
                     context,
-                    child: Column(
+                    child: (context, textStyle) => Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
@@ -69,7 +74,8 @@ class DialogTestingPage extends StatelessWidget {
                             Expanded(
                               child: UiKitIconHintCard(
                                 icon: ImageWidget(
-                                  rasterAsset: GraphicsFoundation.instance.png.location,
+                                  rasterAsset:
+                                      GraphicsFoundation.instance.png.location,
                                 ),
                                 hint: 'your location',
                               ),
@@ -78,7 +84,8 @@ class DialogTestingPage extends StatelessWidget {
                             Expanded(
                               child: UiKitIconHintCard(
                                 icon: ImageWidget(
-                                  rasterAsset: GraphicsFoundation.instance.png.target,
+                                  rasterAsset:
+                                      GraphicsFoundation.instance.png.target,
                                 ),
                                 hint: 'your interests',
                               ),
@@ -92,7 +99,8 @@ class DialogTestingPage extends StatelessWidget {
                             Expanded(
                               child: UiKitIconHintCard(
                                 icon: ImageWidget(
-                                  rasterAsset: GraphicsFoundation.instance.png.cloudy,
+                                  rasterAsset:
+                                      GraphicsFoundation.instance.png.cloudy,
                                 ),
                                 hint: 'weather around',
                               ),
@@ -101,7 +109,8 @@ class DialogTestingPage extends StatelessWidget {
                             Expanded(
                               child: UiKitIconHintCard(
                                 icon: ImageWidget(
-                                  rasterAsset: GraphicsFoundation.instance.png.mood,
+                                  rasterAsset:
+                                      GraphicsFoundation.instance.png.mood,
                                 ),
                                 hint: 'and other 14 scales',
                               ),

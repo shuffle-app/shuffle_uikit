@@ -3,8 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMediaSliderWithTags extends StatelessWidget {
-  final List<UiKitMediaPhoto> photos;
-  final List<UiKitMediaVideo> videos;
+  final List<BaseUiKitMedia> media;
   final double? rating;
   final String description;
   final List<UiKitTag> baseTags;
@@ -12,8 +11,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
 
   const UiKitMediaSliderWithTags({
     Key? key,
-    required this.photos,
-    required this.videos,
+    required this.media,
     this.rating,
     required this.baseTags,
     required this.uniqueTags,
@@ -23,7 +21,6 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final media = [...videos, ...photos];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
