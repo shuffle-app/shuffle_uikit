@@ -74,29 +74,26 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
-                          child: context.button(
+                          child: context.smallButton(
                             text: 'Not often',
                             outlined: true,
-                            small: true,
                             isTextButton: true,
                             onPressed: () {},
                           ),
                         ),
                         SpacingFoundation.horizontalSpace12,
                         Expanded(
-                          child: context.button(
+                          child: context.smallButton(
                             text: 'Very often',
-                            small: true,
                             onPressed: () {},
                           ),
                         ),
                       ],
                     ),
                     SpacingFoundation.verticalSpace8,
-                    context.button(
+                    context.smallButton(
                       text: 'Hard to answer',
                       outlined: true,
-                      small: true,
                       isTextButton: true,
                       color: Colors.white.withOpacity(0.1),
                       onPressed: () {},
@@ -173,9 +170,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  context.button(
+                  context.smallButton(
                     blurred: true,
-                    small: true,
                     icon: ImageWidget(
                       svgAsset: GraphicsFoundation.instance.svg.star,
                       color: Colors.white,
@@ -187,11 +183,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       svgAsset: GraphicsFoundation.instance.svg.star,
                       color: Colors.white,
                     ),
-                    small: false,
                   ),
-                  context.button(
+                  context.smallButton(
                     blurred: true,
-                    small: true,
                     icon: ImageWidget(
                       svgAsset: GraphicsFoundation.instance.svg.star,
                       color: Colors.white,
@@ -390,7 +384,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 children: [
                   context.button(
                     onPressed: () {},
-                    onlyIcon: true,
                     outlined: true,
                     icon: ImageWidget(
                       svgAsset: GraphicsFoundation.instance.svg.route,
@@ -408,7 +401,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   SpacingFoundation.horizontalSpace12,
                   context.button(
                     onPressed: () {},
-                    onlyIcon: true,
                     outlined: true,
                     icon: ImageWidget(
                       svgAsset: GraphicsFoundation.instance.svg.searchPeople,

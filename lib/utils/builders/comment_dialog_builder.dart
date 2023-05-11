@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:popover/popover.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-Future<T?> showUiKitPopover<T extends Object?>(BuildContext context,
-    {required Widget title, Widget? description, required String buttonText, VoidCallback? onPop}) {
+Future<T?> showUiKitPopover<T extends Object?>(
+  BuildContext context, {
+  required Widget title,
+  Widget? description,
+  required String buttonText,
+  VoidCallback? onPop,
+}) {
   return showPopover<T>(
     context: context,
     backgroundColor: context.uiKitTheme?.cardTheme.color ?? Colors.white,
@@ -14,9 +19,9 @@ Future<T?> showUiKitPopover<T extends Object?>(BuildContext context,
         title.paddingOnly(bottom: SpacingFoundation.verticalSpacing8),
         if (description != null) description.paddingSymmetric(vertical: SpacingFoundation.verticalSpacing8),
         context
-            .button(
+            .dialogButton(
               text: buttonText,
-              dialogButton: true,
+              small: true,
               dialogButtonType: DialogButtonType.buttonBlack,
               onPressed: () => context.pop(),
             )
