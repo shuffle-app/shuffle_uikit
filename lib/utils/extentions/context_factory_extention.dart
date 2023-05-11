@@ -4,53 +4,66 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 enum DialogButtonType { buttonWhite, buttonBlack }
 
 extension Factory on BuildContext {
-  Widget button({
+  Widget smallButton({
     String? text,
     VoidCallback? onPressed,
     Widget? icon,
     Color? color,
     bool? gradient,
     bool? isTextButton,
-    bool? small,
-    bool? dialogButton,
-    DialogButtonType? dialogButtonType,
-    bool? onlyIcon,
     bool? outlined,
     bool? blurred,
   }) {
-    if (small ?? false) {
-      return WidgetsFactory.of(this)!
-          .createSmallButton(
-            text: text ?? '',
-            onPressed: onPressed,
-            icon: icon,
-            color: color,
-            gradient: gradient ?? false,
-            isTextButton: isTextButton ?? false,
-            dialogButton: dialogButton,
-            dialogButtonType: dialogButtonType,
-            onlyIcon: onlyIcon,
-            outlined: outlined,
-            blurred: blurred,
-          )
-          .build(this);
-    } else {
-      return WidgetsFactory.of(this)!
-          .createOrdinaryButton(
-            text: text ?? '',
-            onPressed: onPressed,
-            icon: icon,
-            color: color,
-            gradient: gradient ?? false,
-            isTextButton: isTextButton ?? false,
-            dialogButton: dialogButton,
-            dialogButtonType: dialogButtonType,
-            onlyIcon: onlyIcon,
-            outlined: outlined,
-            blurred: blurred,
-          )
-          .build(this);
-    }
+    return WidgetsFactory.of(this)!
+        .createSmallButton(
+          text: text ?? '',
+          onPressed: onPressed,
+          icon: icon,
+          color: color,
+          gradient: gradient ?? false,
+          isTextButton: isTextButton ?? false,
+          outlined: outlined,
+          blurred: blurred,
+        )
+        .build(this);
+  }
+
+  Widget dialogButton({
+    required String text,
+    VoidCallback? onPressed,
+    DialogButtonType? dialogButtonType,
+    bool? small,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createDialogButton(
+          text: text,
+          onPressed: onPressed,
+          dialogButtonType: dialogButtonType,
+          small: small,
+        )
+        .build(this);
+  }
+
+  Widget button({
+    String? text,
+    VoidCallback? onPressed,
+    Widget? icon,
+    bool? gradient,
+    bool? isTextButton,
+    bool? outlined,
+    bool? blurred,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createOrdinaryButton(
+          text: text ?? '',
+          onPressed: onPressed,
+          icon: icon,
+          gradient: gradient ?? false,
+          isTextButton: isTextButton ?? false,
+          outlined: outlined,
+          blurred: blurred,
+        )
+        .build(this);
   }
 
   Widget userTile({

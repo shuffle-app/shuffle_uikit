@@ -6,12 +6,17 @@ abstract class WidgetsAbstractFactory {
     required String text,
     VoidCallback? onPressed,
     Widget? icon,
-    Color? color,
     bool gradient = false,
     bool isTextButton = false,
-    bool? onlyIcon,
     bool? outlined,
     bool? blurred,
+  });
+
+  ButtonFactory createDialogButton({
+    required String text,
+    VoidCallback? onPressed,
+    DialogButtonType? dialogButtonType,
+    bool? small,
   });
 
   ButtonFactory createSmallButton({
@@ -21,9 +26,6 @@ abstract class WidgetsAbstractFactory {
     Color? color,
     bool gradient = false,
     bool isTextButton = false,
-    bool? dialogButton,
-    DialogButtonType? dialogButtonType,
-    bool? onlyIcon,
     bool? outlined,
     bool? blurred,
   });
@@ -59,34 +61,16 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     required String text,
     VoidCallback? onPressed,
     Widget? icon,
-    Color? color,
     bool gradient = false,
     bool isTextButton = false,
-    bool? dialogButton,
-    DialogButtonType? dialogButtonType,
-    bool? onlyIcon,
     bool? outlined,
     bool? blurred,
   }) {
     final hasIcon = icon != null;
     final gradientIconButton = gradient && hasIcon && text.isEmpty;
-    final onlyIconButton = (onlyIcon ?? false) && hasIcon && text.isEmpty;
+    final onlyIconButton = hasIcon && text.isEmpty && !isTextButton;
 
-    if (dialogButton ?? false) {
-      if (dialogButtonType == DialogButtonType.buttonBlack) {
-        return DialogButton.black(
-          text: text,
-          onPressed: onPressed,
-          small: true,
-        );
-      } else {
-        return DialogButton.white(
-          text: text,
-          onPressed: onPressed,
-          small: true,
-        );
-      }
-    } else if (gradientIconButton) {
+    if (gradientIconButton) {
       return GradientIconButton(
         icon: icon,
         onPressed: onPressed,
@@ -154,28 +138,11 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Color? color,
     bool gradient = false,
     bool isTextButton = false,
-    bool? dialogButton,
-    DialogButtonType? dialogButtonType,
-    bool? onlyIcon,
     bool? outlined,
     bool? blurred,
   }) {
     final hasIcon = icon != null;
-    if (dialogButton ?? false) {
-      if (dialogButtonType == DialogButtonType.buttonBlack) {
-        return DialogButton.black(
-          text: text,
-          onPressed: onPressed,
-          small: true,
-        );
-      } else {
-        return DialogButton.white(
-          text: text,
-          onPressed: onPressed,
-          small: true,
-        );
-      }
-    } else if ((outlined ?? false) && isTextButton) {
+    if ((outlined ?? false) && isTextButton) {
       return SmallOutlinedTextButton(
         onPressed: onPressed,
         text: text,
@@ -238,6 +205,28 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           username: username,
           border: border,
         );
+    }
+  }
+
+  @override
+  ButtonFactory createDialogButton({
+    required String text,
+    VoidCallback? onPressed,
+    DialogButtonType? dialogButtonType,
+    bool? small,
+  }) {
+    if (dialogButtonType == DialogButtonType.buttonBlack) {
+      return DialogButton.black(
+        text: text,
+        onPressed: onPressed,
+        small: small ?? false,
+      );
+    } else {
+      return DialogButton.white(
+        text: text,
+        onPressed: onPressed,
+        small: small ?? false,
+      );
     }
   }
 

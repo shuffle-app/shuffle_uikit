@@ -60,9 +60,8 @@ class PlaceActionCard extends StatelessWidget {
                 textAlign: TextAlign.left,
               ),
               SpacingFoundation.verticalSpace8,
-              context.button(
+              context.smallButton(
                 text: 'See more',
-                small: true,
                 onPressed: action,
               ),
             ],

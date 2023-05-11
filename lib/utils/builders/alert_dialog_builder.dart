@@ -22,9 +22,9 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
         contentTextStyle: context.uiKitTheme?.boldTextTheme.body,
         contentPadding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
         actions: [
-          context.button(
+          context.dialogButton(
             text: buttonText,
-            dialogButton: true,
+            small: true,
             dialogButtonType: DialogButtonType.buttonBlack,
             onPressed: onPop ?? () => context.pop(),
           )
