@@ -17,4 +17,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pull_request_comment: true
+          fatal_style: true
+          fatal_performance: true
+          fatal_warnings: true
           check_unused_files: true

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/themes/ui_kit_text_theme.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final Color customColor;
@@ -17,6 +17,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final ButtonStyle ordinaryButtonStyle;
   final ButtonStyle smallOrdinaryButtonStyle;
   final BottomSheetThemeData bottomSheetTheme;
+  final BlurredBottomNavigationBarTheme blurredBottomNavigationBarTheme;
 
   ButtonStyle get textButtonStyle => ButtonStyle(
         textStyle: MaterialStateTextStyle.resolveWith((states) {
@@ -28,6 +29,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
 
   UiKitThemeData({
     required this.iconInputTheme,
+    required this.blurredBottomNavigationBarTheme,
     required this.ordinaryButtonStyle,
     required this.noIconInputTheme,
     required this.noFillInputTheme,
@@ -62,9 +64,11 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     BottomSheetThemeData? bottomSheetTheme,
     ButtonStyle? textButtonStyle,
     ButtonStyle? smallOrdinaryButtonStyle,
+    BlurredBottomNavigationBarTheme? blurredBottomNavigationBarTheme,
   }) {
     return UiKitThemeData(
       customColor: customColor ?? this.customColor,
+      blurredBottomNavigationBarTheme: blurredBottomNavigationBarTheme ?? this.blurredBottomNavigationBarTheme,
       cardColor: cardColor ?? this.cardColor,
       iconInputTheme: iconInputTheme ?? this.iconInputTheme,
       noIconInputTheme: noIconInputTheme ?? this.noIconInputTheme,
@@ -103,6 +107,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
       ordinaryButtonStyle: ordinaryButtonStyle,
       bottomSheetTheme: bottomSheetTheme,
       smallOrdinaryButtonStyle: smallOrdinaryButtonStyle,
+      blurredBottomNavigationBarTheme: blurredBottomNavigationBarTheme,
     );
   }
 }
@@ -114,5 +119,13 @@ class UiKitChipThemeData {
   UiKitChipThemeData({
     required this.backgroundColor,
     this.border,
+  });
+}
+
+class BlurredBottomNavigationBarTheme {
+  final Color iconColors;
+
+  BlurredBottomNavigationBarTheme({
+    required this.iconColors,
   });
 }

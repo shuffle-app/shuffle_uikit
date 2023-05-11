@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class MessageCardWithIcon extends StatelessWidget {
+class UiKitMessageCardWithIcon extends StatelessWidget {
   final String message;
   final ImageWidget icon;
   final Axis layoutDirection;
 
-  const MessageCardWithIcon({
+  const UiKitMessageCardWithIcon({
     Key? key,
     required this.message,
     required this.icon,
@@ -16,7 +16,6 @@ class MessageCardWithIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final messageStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium;
     switch (layoutDirection) {
       case Axis.horizontal:
         return _HorizontalMessageCard(
@@ -45,20 +44,21 @@ class _VerticalMessageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final messageStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium;
-    return ConstrainedBox(
-      constraints: BoxConstraints(
-        maxWidth: 106.w,
-      ),
-      child: CardWrapper(
+    return SizedBox(
+      width: 102.w,
+      child: UiKitCardWrapper(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             icon,
             SpacingFoundation.verticalSpace8,
             Text(
-              message.toUpperCase(),
+              /// end line symbols added to make sure that the text is more than 4 lines
+              /// so that the card height is always fixed
+              '${message.toUpperCase()}\n\n\n\n',
               style: messageStyle,
               textAlign: TextAlign.center,
+              maxLines: 4,
             ),
           ],
         ).paddingAll(EdgeInsetsFoundation.all16),
@@ -80,7 +80,7 @@ class _HorizontalMessageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final messageStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase;
-    return CardWrapper(
+    return UiKitCardWrapper(
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: [

@@ -14,7 +14,7 @@ class ProfileStoriesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CardWrapper(
+    return UiKitCardWrapper(
       borderRadius: BorderRadius.zero,
       child: SizedBox(
         height: 180,

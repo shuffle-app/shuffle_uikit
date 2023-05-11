@@ -18,7 +18,7 @@ class UiKitChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final chipTheme = context.uiKitTheme?.chipTheme;
-    final chipTextStyle = context.uiKitTheme?.boldTextTheme.caption1;
+    final chipTextStyle = context.uiKitTheme?.boldTextTheme.caption1Bold;
     return Container(
       decoration: BoxDecoration(
         color: bordered ? chipTheme?.backgroundColor : Colors.transparent,

@@ -4,17 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class BlurredQuestionChip extends StatelessWidget {
+class UiKitBlurredQuestionChip extends StatelessWidget {
   final String label;
+  final VoidCallback? onTap;
 
-  const BlurredQuestionChip({
+  const UiKitBlurredQuestionChip({
     Key? key,
     required this.label,
+    this.onTap
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium?.copyWith(
+    final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: ColorsFoundation.darkNeutral900,
       fontSize: 10,
     );
@@ -29,6 +31,8 @@ class BlurredQuestionChip extends StatelessWidget {
         color: ColorsFoundation.darkNeutral500,
         borderRadius: BorderRadiusFoundation.all12,
       ),
+      child: InkWell(
+      onTap: onTap,
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
         child: Row(
@@ -57,7 +61,7 @@ class BlurredQuestionChip extends StatelessWidget {
             ),
           ],
         ).paddingAll(EdgeInsetsFoundation.all4),
-      ),
+      )),
     );
   }
 }

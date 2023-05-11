@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shuffle_uikit/foundation/colors_foundation.dart';
-import 'package:shuffle_uikit/utils/widgets_factory/widgets_factory.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
   final Widget icon;

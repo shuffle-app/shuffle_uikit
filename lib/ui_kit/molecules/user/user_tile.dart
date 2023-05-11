@@ -1,33 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/user/premium_user_star.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/user/user_circle_avatar.dart';
 
-abstract class _UserTile extends StatelessWidget {
-  final UserTileInfo info;
+enum UserTileType { ordinary, pro, premium, influencer }
+
+abstract class _UserTile extends StatelessWidget implements UserTileFactory {
+  final String? name;
+  final String? avatarUrl;
+  final String? username;
   final Widget? trailing;
-  final Border border;
+  final Border? avatarBorder;
 
   const _UserTile({
     Key? key,
-    required this.info,
-    required this.border,
+    this.name,
+    this.avatarUrl,
+    this.username,
+    this.avatarBorder,
     this.trailing,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
-    return CardWrapper(
+
+    return UiKitCardWrapper(
+      width: double.infinity,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           UserCircleAvatar(
-            imageUrl: info.avatarUrl,
+            imageUrl: avatarUrl,
             size: 32.r,
-            border: border,
+            border: avatarBorder,
           ),
           SpacingFoundation.horizontalSpace12,
           Column(
@@ -38,15 +44,15 @@ abstract class _UserTile extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
-                    info.name,
-                    style: textTheme?.caption1.copyWith(color: Colors.white),
+                    name ?? '',
+                    style: textTheme?.caption1Bold.copyWith(color: Colors.white),
                   ),
                   SpacingFoundation.horizontalSpace8,
                   if (trailing != null) trailing!,
                 ],
               ),
               Text(
-                info.username,
+                username ?? '',
                 style: textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
               ),
             ],
@@ -60,30 +66,37 @@ abstract class _UserTile extends StatelessWidget {
 class OrdinaryUserTile extends _UserTile {
   const OrdinaryUserTile({
     Key? key,
-    required UserTileInfo info,
+    required super.name,
+    required super.avatarUrl,
+    required super.username,
+    Border? border,
   }) : super(
           key: key,
-          info: info,
-          border: const Border(
-            top: BorderSide(color: Colors.white, width: 2),
-            right: BorderSide(color: Colors.white, width: 2),
-            bottom: BorderSide(color: Colors.white, width: 2),
-            left: BorderSide(color: Colors.white, width: 2),
-          ),
+          avatarBorder: border ??
+              const Border(
+                top: BorderSide(color: Colors.white, width: 2),
+                right: BorderSide(color: Colors.white, width: 2),
+                bottom: BorderSide(color: Colors.white, width: 2),
+                left: BorderSide(color: Colors.white, width: 2),
+              ),
         );
 }
 
 class PremiumUserTile extends _UserTile {
   const PremiumUserTile({
     super.key,
-    required super.info,
+    required super.name,
+    required super.avatarUrl,
+    required super.username,
+    Border? border,
   }) : super(
-          border: const Border(
-            top: BorderSide(color: Colors.white, width: 2),
-            right: BorderSide(color: Colors.white, width: 2),
-            bottom: BorderSide(color: Colors.white, width: 2),
-            left: BorderSide(color: Colors.white, width: 2),
-          ),
+          avatarBorder: border ??
+              const Border(
+                top: BorderSide(color: Colors.white, width: 2),
+                right: BorderSide(color: Colors.white, width: 2),
+                bottom: BorderSide(color: Colors.white, width: 2),
+                left: BorderSide(color: Colors.white, width: 2),
+              ),
           trailing: const PremiumAccountMark(),
         );
 }
@@ -91,27 +104,37 @@ class PremiumUserTile extends _UserTile {
 class ProUserTile extends _UserTile {
   const ProUserTile({
     super.key,
-    required super.info,
+    required super.name,
+    required super.avatarUrl,
+    required super.username,
+    Border? border,
   }) : super(
-          border: const Border(
-            top: BorderSide(color: Colors.white, width: 2),
-            right: BorderSide(color: Colors.white, width: 2),
-            bottom: BorderSide(color: Colors.white, width: 2),
-            left: BorderSide(color: Colors.white, width: 2),
-          ),
+          avatarBorder: border ??
+              const Border(
+                top: BorderSide(color: Colors.white, width: 2),
+                right: BorderSide(color: Colors.white, width: 2),
+                bottom: BorderSide(color: Colors.white, width: 2),
+                left: BorderSide(color: Colors.white, width: 2),
+              ),
           trailing: const ProAccountMark(),
         );
 }
 
-class InfluencerlUserTile extends _UserTile {
-  const InfluencerlUserTile({super.key, required super.info})
-      : super(
-          border: const Border(
-            top: BorderSide(color: Colors.white, width: 2),
-            right: BorderSide(color: Colors.white, width: 2),
-            bottom: BorderSide(color: Colors.white, width: 2),
-            left: BorderSide(color: Colors.white, width: 2),
-          ),
+class InfluencerUserTile extends _UserTile {
+  const InfluencerUserTile({
+    super.key,
+    required super.name,
+    required super.avatarUrl,
+    required super.username,
+    Border? border,
+  }) : super(
+          avatarBorder: border ??
+              const Border(
+                top: BorderSide(color: Colors.white, width: 2),
+                right: BorderSide(color: Colors.white, width: 2),
+                bottom: BorderSide(color: Colors.white, width: 2),
+                left: BorderSide(color: Colors.white, width: 2),
+              ),
           trailing: const InfluencerAccountMark(),
         );
 }

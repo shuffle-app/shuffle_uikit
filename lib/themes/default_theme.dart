@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/themes/bottom_sheet_theme.dart';
-import 'package:shuffle_uikit/themes/ui_kit_text_theme.dart';
-import 'package:shuffle_uikit/themes/ui_kit_theme_data.dart';
-
-import '../foundation/shuffle_ui_kit_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitThemes {
   late final defaultThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
     useMaterial3: false,
+    bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: Colors.transparent,
+        modalBackgroundColor: Colors.transparent),
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: Colors.white,
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      enableFeedback: true,
     ),
     disabledColor: ColorsFoundation.darkNeutral300,
     extensions: <ThemeExtension<UiKitThemeData>>[
@@ -20,8 +24,12 @@ class UiKitThemes {
           border: Border.all(color: Colors.white, width: 2),
           backgroundColor: ColorsFoundation.solidSurface,
         ),
+        blurredBottomNavigationBarTheme: BlurredBottomNavigationBarTheme(
+          iconColors: Colors.white,
+        ),
         ordinaryButtonStyle: ButtonStyle(
-          fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(48)),
+          fixedSize: MaterialStateProperty.resolveWith(
+              (states) => const Size.fromHeight(48)),
           backgroundColor: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.disabled)) {
               return ColorsFoundation.darkNeutral300;
@@ -30,12 +38,15 @@ class UiKitThemes {
             }
           }),
           shape: MaterialStateProperty.resolveWith(
-            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+            (states) => RoundedRectangleBorder(
+                borderRadius: BorderRadiusFoundation.all24),
           ),
-          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+          foregroundColor:
+              MaterialStateProperty.resolveWith((states) => Colors.black),
         ),
         smallOrdinaryButtonStyle: ButtonStyle(
-          fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(28)),
+          fixedSize: MaterialStateProperty.resolveWith(
+              (states) => const Size.fromHeight(28)),
           backgroundColor: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.disabled)) {
               return ColorsFoundation.darkNeutral300;
@@ -44,9 +55,11 @@ class UiKitThemes {
             }
           }),
           shape: MaterialStateProperty.resolveWith(
-            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+            (states) => RoundedRectangleBorder(
+                borderRadius: BorderRadiusFoundation.all24),
           ),
-          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+          foregroundColor:
+              MaterialStateProperty.resolveWith((states) => Colors.black),
         ),
         iconInputTheme: InputDecorationTheme(
           filled: true,
@@ -115,12 +128,21 @@ class UiKitThemes {
           ),
         ),
         noFillInputTheme: const InputDecorationTheme(
-          border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
-          enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
-          errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
-          focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
-          focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
-          disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
+          border: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          errorBorder: UnderlineInputBorder(
+              borderSide:
+                  BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          focusedErrorBorder: UnderlineInputBorder(
+              borderSide:
+                  BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          disabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                  color: ColorsFoundation.darkNeutral900, width: 0.5)),
         ),
         customAppBapTheme: AppBarTheme(
           iconTheme: const IconThemeData(color: ColorsFoundation.surface),
@@ -128,6 +150,8 @@ class UiKitThemes {
           shadowColor: Colors.transparent,
           backgroundColor: Colors.white.withOpacity(0.07),
           centerTitle: true,
+          elevation: 0,
+          scrolledUnderElevation: 0,
         ),
         uiKitTabBarTheme: TabBarTheme(
           indicatorSize: TabBarIndicatorSize.tab,
@@ -172,7 +196,7 @@ class UiKitThemes {
     scaffoldBackgroundColor: Colors.black,
     primaryTextTheme: const TextTheme(
       titleMedium: TextStyle(
-        fontFamily: 'Syne',
+        fontFamily: 'Unbounded',
         fontSize: 24,
         fontWeight: FontWeight.w700,
         color: Color(0xffffffff),
@@ -181,7 +205,7 @@ class UiKitThemes {
     ),
     textTheme: const TextTheme(
       bodyMedium: TextStyle(
-        fontFamily: 'Syne',
+        fontFamily: 'Unbounded',
         fontSize: 16,
         fontWeight: FontWeight.w400,
         color: Color(0xffffffff),
@@ -190,7 +214,8 @@ class UiKitThemes {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(48)),
+        fixedSize: MaterialStateProperty.resolveWith(
+            (states) => const Size.fromHeight(48)),
         backgroundColor: MaterialStateProperty.resolveWith((states) {
           if (states.contains(MaterialState.disabled)) {
             return ColorsFoundation.darkNeutral300;
@@ -199,9 +224,11 @@ class UiKitThemes {
           }
         }),
         shape: MaterialStateProperty.resolveWith(
-          (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+          (states) => RoundedRectangleBorder(
+              borderRadius: BorderRadiusFoundation.all24),
         ),
-        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+        foregroundColor:
+            MaterialStateProperty.resolveWith((states) => Colors.black),
         overlayColor: MaterialStateProperty.resolveWith((states) {
           if (states.contains(MaterialState.hovered)) {
             return Colors.white;

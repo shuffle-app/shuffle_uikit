@@ -51,28 +51,25 @@ class ButtonsList extends StatelessWidget {
         ),
         SpacingFoundation.verticalSpace16,
         Center(
-          child: context.button(
+          child: context.smallButton(
             text: 'GET CODE',
-            small: true,
             onPressed: () {},
           ),
         ),
         SpacingFoundation.verticalSpace16,
-        context.button(
+        context.dialogButton(
           onPressed: () {},
           text: 'GET CODE',
           small: true,
-          dialogButton: true,
           dialogButtonType: DialogButtonType.buttonWhite,
         ),
         SpacingFoundation.verticalSpace16,
         ColoredBox(
           color: Colors.white,
-          child: context.button(
+          child: context.dialogButton(
             onPressed: () {},
             text: 'GET CODE',
             small: true,
-            dialogButton: true,
             dialogButtonType: DialogButtonType.buttonBlack,
           ),
         ),
@@ -83,22 +80,20 @@ class ButtonsList extends StatelessWidget {
             context.button(
               text: '',
               icon: ImageWidget(
-                svgAsset: Assets.images.svg.route,
+                svgAsset: GraphicsFoundation.instance.svg.route,
                 color: Colors.white,
               ),
               onPressed: () {},
-              onlyIcon: true,
               outlined: true,
             ),
             SpacingFoundation.horizontalSpace8,
             context.button(
               text: '',
               icon: ImageWidget(
-                svgAsset: Assets.images.svg.route,
+                svgAsset: GraphicsFoundation.instance.svg.route,
                 color: Colors.white,
               ),
               onPressed: () {},
-              onlyIcon: true,
               outlined: true,
             ),
           ],

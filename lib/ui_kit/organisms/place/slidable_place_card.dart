@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/place_tag_widget.dart';
-import 'package:shuffle_uikit/ui_kit/molecules/place/ui_kit_photo_slider.dart';
 
 class SlidablePlaceCard extends StatelessWidget {
   final SlidablePlaceCardData slidablePlaceCardData;
@@ -29,7 +27,7 @@ class SlidablePlaceCard extends StatelessWidget {
             SpacingFoundation.verticalSpace12,
             Text(
               slidablePlaceCardData.title,
-              style: theme?.boldTextTheme.caption1.copyWith(color: Colors.white),
+              style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
             ),
             SpacingFoundation.verticalSpace4,
             SingleChildScrollView(

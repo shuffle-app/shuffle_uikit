@@ -1,43 +1,45 @@
+import 'package:shuffle_uikit/shuffle_uikit.dart';
+
 enum UiKitMediaType { image, video }
 
-class UiKitPlace {
-  final String id;
-  final List<UiKitMedia> media;
-  final String description;
-  final List<UiKitTag> tags;
-  final double? rating;
-  final String? title;
-  final String? logo;
-
-  UiKitPlace({
-    required this.id,
-    this.title,
-    required this.media,
-    this.logo,
-    required this.description,
-    this.rating,
-    required this.tags,
-  });
-}
-
-class UiKitMedia {
+abstract class BaseUiKitMedia {
   final String link;
   final UiKitMediaType type;
 
-  UiKitMedia({
+  BaseUiKitMedia({
     required this.link,
     required this.type,
   });
 }
 
+class UiKitMediaPhoto extends BaseUiKitMedia {
+  UiKitMediaPhoto({
+    required String link,
+  }) : super(
+          link: link,
+          type: UiKitMediaType.image,
+        );
+}
+
+class UiKitMediaVideo extends BaseUiKitMedia {
+  UiKitMediaVideo({
+    required String link,
+  }) : super(
+          link: link,
+          type: UiKitMediaType.video,
+        );
+}
+
 class UiKitTag {
   final String title;
   final String iconPath;
-  final bool matching;
+  final bool unique;
 
   UiKitTag({
     required this.title,
     required this.iconPath,
-    required this.matching,
+    required this.unique,
   });
+
+  UiKitTagWidget get widget => UiKitTagWidget(title: title,icon: iconPath,showGradient: unique,);
 }

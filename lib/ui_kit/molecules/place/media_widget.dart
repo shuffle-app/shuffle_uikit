@@ -1,32 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/blurred_place_video_play_button.dart';
-import 'package:shuffle_uikit/ui_models/places/place.dart';
 
-abstract class MediaWidget extends StatelessWidget {
-  const MediaWidget({
+abstract class UiKitMediaWidget extends StatelessWidget {
+  const UiKitMediaWidget({
     Key? key,
   }) : super(key: key);
 
-  factory MediaWidget.image({
-    required UiKitMedia media,
+  factory UiKitMediaWidget.image({
+    required BaseUiKitMedia media,
   }) {
-    return _MediaImageWidget(media: media);
+    return _UIKiMediaImageWidget(media: media);
   }
 
-  factory MediaWidget.video({
-    required UiKitMedia media,
+  factory UiKitMediaWidget.video({
+    required BaseUiKitMedia media,
   }) {
     return _MediaVideoWidget(media: media);
   }
 }
 
-class _MediaImageWidget extends MediaWidget {
-  final UiKitMedia media;
+class _UIKiMediaImageWidget extends UiKitMediaWidget {
+  final BaseUiKitMedia media;
 
-  const _MediaImageWidget({
+  const _UIKiMediaImageWidget({
     Key? key,
     required this.media,
   }) : super(key: key);
@@ -43,8 +41,8 @@ class _MediaImageWidget extends MediaWidget {
   }
 }
 
-class _MediaVideoWidget extends MediaWidget {
-  final UiKitMedia media;
+class _MediaVideoWidget extends UiKitMediaWidget {
+  final BaseUiKitMedia media;
 
   const _MediaVideoWidget({
     Key? key,

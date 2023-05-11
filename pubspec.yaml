@@ -26,6 +26,11 @@ dependencies:
   popover: ^0.2.8+2
   simple_gradient_text: ^1.2.4
 
+  #tab navigation
+  tabnavigator: ^1.0.0
+  lottie: ^2.3.2
+  flutter_card_swiper: ^5.0.0
+
 
 dev_dependencies:
   flutter_test:
@@ -33,6 +38,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_gen_runner: ^5.2.0
   build_runner: ^2.3.3
+  dart_code_metrics: ^5.7.3
 
 dependency_overrides:
   flutter_gen_core:
@@ -46,22 +52,26 @@ flutter:
     - assets/images/png/
     - assets/images/svg/
     - assets/fonts/
+    - assets/animations/lottie/
 
   fonts:
-    - family: Syne
+    - family: Unbounded
       fonts:
-        - asset: assets/fonts/Syne-Regular.ttf
+        - asset: assets/fonts/Unbounded-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Unbounded-Regular.ttf
           weight: 400
-        - asset: assets/fonts/Syne-SemiBold.ttf
+        - asset: assets/fonts/Unbounded-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Unbounded-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/Syne-Bold.ttf
-          weight: 700
 
 flutter_gen:
   output: lib/tokens
   line_length: 120
   integrations:
     flutter_svg: true
+    lottie: true
   assets:
     enabled: true
     fonts:

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
-import 'package:shuffle_uikit/utils/widgets_factory/widgets_factory.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GeneralPurposeButton extends StatelessWidget implements ButtonFactory {
   final String text;

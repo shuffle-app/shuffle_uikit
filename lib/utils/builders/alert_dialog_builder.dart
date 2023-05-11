@@ -1,11 +1,13 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
     {VoidCallback? onPop,
-    Widget? title,
-    Widget? content,
-    required String buttonText}) {
+      Widget? title,
+      Widget? content,
+      required String buttonText}) {
   return showDialog<T>(
     context: context,
     builder: (BuildContext context) {
@@ -18,14 +20,15 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
         ),
         titlePadding: const EdgeInsets.fromLTRB(24, 24, 24, 8),
         title: Center(child: title),
-        titleTextStyle: context.uiKitTheme?.boldTextTheme.caption2,
+        titleTextStyle: context.uiKitTheme?.boldTextTheme.caption2Bold,
         content: content,
         contentTextStyle: context.uiKitTheme?.boldTextTheme.body,
         contentPadding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
         actions: [
-          //TODO romancores: change button to black one
-          GeneralPurposeButton(
+          context.dialogButton(
             text: buttonText,
+            small: true,
+            dialogButtonType: DialogButtonType.buttonBlack,
             onPressed: onPop ?? () => context.pop(),
           )
         ],
@@ -33,5 +36,32 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
         actionsPadding: const EdgeInsets.fromLTRB(24, 8, 24, 24),
       );
     },
+  );
+}
+
+Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
+    BuildContext context, {
+      Color? backgroundColor = Colors.black,
+      required Function child,
+    }) {
+  final textStyle =
+      context.uiKitTheme?.boldTextTheme.title2;
+  return showDialog(
+    context: context,
+    barrierColor: Colors.white.withOpacity(0.1),
+    useSafeArea: false,
+    builder: (_) =>
+        BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+          child: Dialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadiusFoundation.all40,
+            ),
+            backgroundColor: backgroundColor,
+            clipBehavior: Clip.hardEdge,
+            child: (child(_, textStyle) as Widget).paddingAll(
+                EdgeInsetsFoundation.all24),
+          ),
+        ),
   );
 }

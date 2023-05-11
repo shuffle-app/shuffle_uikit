@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class WeatherInfoCard extends StatelessWidget {
-  final int temperature;
+class UiKitWeatherInfoCard extends StatelessWidget {
+  final String temperature;
   final String weatherType;
 
-  const WeatherInfoCard({
+  const UiKitWeatherInfoCard({
     Key? key,
     required this.temperature,
     required this.weatherType,
@@ -13,22 +14,24 @@ class WeatherInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final prefix = temperature.isNegative ? '-' : '+';
+    // final prefix = temperature.isNegative ? '-' : '+';
     final temperatureStyle = context.uiKitTheme?.boldTextTheme.subHeadline;
-    final weatherTypeStyle = context.uiKitTheme?.boldTextTheme.caption1;
+    final weatherTypeStyle = context.uiKitTheme?.boldTextTheme.caption1Bold;
     return Container(
+      height: 35.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all16,
         gradient: GradientFoundation.yellowLinearGradient,
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                '$prefix$temperature°C',
+                '$temperature°C',
                 style: temperatureStyle,
               ),
               Text(
@@ -50,13 +53,10 @@ class WeatherInfoCard extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: ImageWidget(
-              rasterAsset: Assets.images.png.weatherIcon,
+              rasterAsset: GraphicsFoundation.instance.png.weatherIcon,
             ),
           ),
         ],
-      ).paddingSymmetric(
-        horizontal: EdgeInsetsFoundation.horizontal16,
-        vertical: EdgeInsetsFoundation.vertical8,
       ),
     );
   }
