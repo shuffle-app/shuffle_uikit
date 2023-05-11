@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UserCircleAvatar extends StatelessWidget {
-  final String imageUrl;
-  final double size;
-  final Border border;
+  final String? imageUrl;
+  final double? size;
+  final Border? border;
 
   const UserCircleAvatar({
     Key? key,
-    required this.imageUrl,
-    required this.size,
-    required this.border,
+    this.imageUrl,
+    this.size,
+    this.border,
   }) : super(key: key);
 
   @override

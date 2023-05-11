@@ -54,10 +54,11 @@ extension Factory on BuildContext {
   }
 
   Widget userTile({
-    required String name,
-    required String username,
-    required String avatarUrl,
-    required UserTileType type,
+    String? name,
+    String? username,
+    String? avatarUrl,
+    Border? avatarBorder,
+    UserTileType? type,
   }) {
     return WidgetsFactory.of(this)!
         .createUserTile(
@@ -65,6 +66,7 @@ extension Factory on BuildContext {
           username: username,
           avatarUrl: avatarUrl,
           type: type,
+          border: avatarBorder,
         )
         .build(this);
   }
