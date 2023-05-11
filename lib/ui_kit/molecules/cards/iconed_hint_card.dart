@@ -14,7 +14,7 @@ class UiKitIconHintCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final hintStyle = context.uiKitTheme?.boldTextTheme.body;
-    return CardWrapper(
+    return UiKitCardWrapper(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

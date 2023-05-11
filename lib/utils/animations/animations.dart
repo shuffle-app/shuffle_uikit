@@ -156,11 +156,14 @@ class RotatableWidget extends StatefulWidget {
 class _RotatableWidgetState extends State<RotatableWidget>
     with SingleTickerProviderStateMixin {
   late final controller = AnimationController(
-      duration: const Duration(milliseconds: 1600), vsync: this);
+    duration: const Duration(milliseconds: 2600),
+    vsync: this,
+  );
   late final curvedAnimation =
       CurvedAnimation(parent: controller, curve: Curves.easeIn);
 
-  late final angle = Tween<double>(begin: 0, end: 1).animate(curvedAnimation);
+  late final angle = Tween<double>(begin: 0, end: 360 * math.pi / 180)
+      .animate(curvedAnimation);
 
   @override
   void initState() {
@@ -173,9 +176,12 @@ class _RotatableWidgetState extends State<RotatableWidget>
     }();
   }
 
+  //ignore: unused parameter
   void listenAnim(AnimationStatus status) {
-    if (controller.isCompleted) {
-      controller.repeat();
+
+    if (status == AnimationStatus.completed) {
+      Future.delayed(const Duration(seconds: 10))
+          .then((value) => controller.repeat());
     }
   }
 
@@ -191,9 +197,10 @@ class _RotatableWidgetState extends State<RotatableWidget>
     return AnimatedBuilder(
       builder: (context, child) {
         return Transform.rotate(
-            angle: angle.value,
-            alignment: widget.alignment,
-            child: widget.child);
+          angle: angle.value,
+          alignment: widget.alignment,
+          child: widget.child,
+        );
       },
       animation: controller,
     );

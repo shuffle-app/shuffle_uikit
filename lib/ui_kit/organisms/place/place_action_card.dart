@@ -28,7 +28,7 @@ class PlaceActionCard extends StatelessWidget {
     /// [matrixValues] взято из Figma
     // final List<double> matrixValues = [0.91, -0.42, 0.47, 0.88, 0, 0];
     final double radians = atan2(-0.42, 0.91);
-    return CardWrapper(
+    return UiKitCardWrapper(
       child: Stack(
         fit: StackFit.expand,
         children: [
