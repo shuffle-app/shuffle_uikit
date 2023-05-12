@@ -1,9 +1,22 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
   GradientFoundation._();
+
+  static const badgeIcon = LinearGradient(
+    colors: [
+      ColorsFoundation.pink,
+      ColorsFoundation.orange,
+      ColorsFoundation.yellow,
+    ],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+    transform: GradientRotation(-pi / 12),
+  );
 
   static const defaultRadialGradient = RadialGradient(
     colors: [
