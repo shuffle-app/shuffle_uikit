@@ -49,6 +49,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Center(
+                child: UiKitGradientQuestionChip(
+                  message: 'Tell us more',
+                  onTap: () {},
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               BlurredCardWithGradientBorder(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
