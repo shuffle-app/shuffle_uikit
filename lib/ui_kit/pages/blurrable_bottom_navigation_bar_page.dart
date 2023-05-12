@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/ui_kit/organisms/blurable_bottom_navigation_bar.dart';
+import 'package:shuffle_uikit/ui_kit/organisms/bottom_navigation_bar/blurable_bottom_navigation_bar.dart';
 import 'package:tabnavigator/tabnavigator.dart';
 
 /// this page has bottom navigation bar with separate navigation stack for each tab
-class PageWithBlurrableBottomNavigationBar extends StatefulWidget {
+class BlurrableBottomNavigationBarPage extends StatefulWidget {
   /// list of tabs to be shown in the bottom navigation bar
   /// [TabType] is the tab data type and [TabBuilder] is the builder function for the page
   final Map<BlurableBottomNavigationBarItem, TabBuilder> tabs;
 
-  const PageWithBlurrableBottomNavigationBar({
+  const BlurrableBottomNavigationBarPage({
     Key? key,
     required this.tabs,
   }) : super(key: key);
 
   @override
-  State<PageWithBlurrableBottomNavigationBar> createState() => _PageWithBlurrableBottomNavigationBarState();
+  State<BlurrableBottomNavigationBarPage> createState() => _BlurrableBottomNavigationBarPageState();
 }
 
-class _PageWithBlurrableBottomNavigationBarState extends State<PageWithBlurrableBottomNavigationBar> {
+class _BlurrableBottomNavigationBarPageState extends State<BlurrableBottomNavigationBarPage> {
   late final bottomNavBarController = BlurredBottomNavigationBarController(
     tabItemsCount: widget.tabs.values.length,
   );

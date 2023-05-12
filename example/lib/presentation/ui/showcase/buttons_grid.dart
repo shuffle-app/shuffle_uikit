@@ -13,17 +13,14 @@ class ButtonsGrid extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              context.button(
-                gradient: true,
+              context.gradientButton(
                 text: 'Book it (+20)',
                 onPressed: () {},
               ),
-              context.button(
-                gradient: true,
+              context.gradientButton(
                 text: 'Book it (+20)',
               ),
-              context.button(
-                gradient: true,
+              context.gradientButton(
                 icon: const CupertinoActivityIndicator(),
                 text: 'Book it (+20)',
               ),
@@ -58,17 +55,14 @@ class ButtonsGrid extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              context.button(
-                gradient: true,
+              context.gradientButton(
                 text: 'Book it (+20)',
                 onPressed: () {},
               ),
-              context.button(
-                gradient: true,
+              context.gradientButton(
                 text: 'Book it (+20)',
               ),
-              context.button(
-                gradient: true,
+              context.gradientButton(
                 icon: const CupertinoActivityIndicator(),
                 text: 'Book it (+20)',
               ),
@@ -82,17 +76,14 @@ class ButtonsGrid extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              context.button(
-                gradient: true,
+              context.gradientButton(
                 text: 'Book it (+20)',
                 onPressed: () {},
               ),
-              context.button(
-                gradient: true,
+              context.gradientButton(
                 text: 'Book it (+20)',
               ),
-              context.button(
-                gradient: true,
+              context.gradientButton(
                 icon: const CupertinoActivityIndicator(),
                 text: 'Book it (+20)',
               ),
@@ -106,17 +97,14 @@ class ButtonsGrid extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              context.button(
-                gradient: true,
+              context.gradientButton(
                 text: 'Book it (+20)',
                 onPressed: () {},
               ),
-              context.button(
-                gradient: true,
+              context.gradientButton(
                 text: 'Book it (+20)',
               ),
-              context.button(
-                gradient: true,
+              context.gradientButton(
                 icon: const CupertinoActivityIndicator(),
                 text: 'Book it (+20)',
               ),

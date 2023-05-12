@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class GradientButtonWithIcon extends StatelessWidget implements ButtonFactory {
+class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final String text;
   final Widget icon;
 
-  const GradientButtonWithIcon({
+  const GradientButtonWithTextAndIcon({
     Key? key,
     this.onPressed,
     required this.text,

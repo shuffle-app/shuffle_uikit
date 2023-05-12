@@ -32,9 +32,9 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
             itemCount: media.length,
             itemBuilder: (context, index) {
               final mediaItem = media.elementAt(index);
-              if (mediaItem.type == UiKitMediaType.video) return UiKitMediaWidget.video(media: mediaItem);
+              if (mediaItem.type == UiKitMediaType.video) return BaseUiKitMediaWidget.video(media: mediaItem);
 
-              return UiKitMediaWidget.image(media: mediaItem);
+              return BaseUiKitMediaWidget.image(media: mediaItem);
             },
             separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
           ),

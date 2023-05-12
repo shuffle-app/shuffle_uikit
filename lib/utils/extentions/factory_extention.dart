@@ -6,10 +6,7 @@ extension FactoryExtention on BuildContext {
     String? text,
     VoidCallback? onPressed,
     Widget? icon,
-    Color? color,
-    bool? gradient,
     bool? isTextButton,
-    bool? outlined,
     bool? blurred,
   }) {
     return WidgetsFactory.of(this)!
@@ -17,11 +14,40 @@ extension FactoryExtention on BuildContext {
           text: text ?? '',
           onPressed: onPressed,
           icon: icon,
-          color: color,
-          gradient: gradient ?? false,
           isTextButton: isTextButton ?? false,
-          outlined: outlined,
           blurred: blurred,
+        )
+        .build(this);
+  }
+
+  Widget outlinedButton({
+    String? text,
+    VoidCallback? onPressed,
+    Widget? icon,
+    Color? color,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createOutlinedButton(
+          text: text ?? '',
+          onPressed: onPressed,
+          icon: icon,
+          color: color,
+        )
+        .build(this);
+  }
+
+  Widget smallOutlinedButton({
+    required String text,
+    VoidCallback? onPressed,
+    Widget? icon,
+    Color? color,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createSmallOutlinedButton(
+          text: text,
+          onPressed: onPressed,
+          icon: icon,
+          color: color,
         )
         .build(this);
   }
@@ -46,9 +72,7 @@ extension FactoryExtention on BuildContext {
     String? text,
     VoidCallback? onPressed,
     Widget? icon,
-    bool? gradient,
     bool? isTextButton,
-    bool? outlined,
     bool? blurred,
   }) {
     return WidgetsFactory.of(this)!
@@ -56,10 +80,22 @@ extension FactoryExtention on BuildContext {
           text: text ?? '',
           onPressed: onPressed,
           icon: icon,
-          gradient: gradient ?? false,
           isTextButton: isTextButton ?? false,
-          outlined: outlined,
           blurred: blurred,
+        )
+        .build(this);
+  }
+
+  Widget gradientButton({
+    required String text,
+    VoidCallback? onPressed,
+    Widget? icon,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createGradientButton(
+          text: text,
+          onPressed: onPressed,
+          icon: icon,
         )
         .build(this);
   }
@@ -68,7 +104,6 @@ extension FactoryExtention on BuildContext {
     String? name,
     String? username,
     String? avatarUrl,
-    Border? avatarBorder,
     UserTileType? type,
     VoidCallback? onTap,
   }) {
@@ -78,7 +113,6 @@ extension FactoryExtention on BuildContext {
           username: username,
           avatarUrl: avatarUrl,
           type: type,
-          border: avatarBorder,
           onTap: onTap,
         )
         .build(this);

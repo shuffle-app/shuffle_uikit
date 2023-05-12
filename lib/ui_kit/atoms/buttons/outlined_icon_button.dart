@@ -3,12 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
-  final Widget icon;
+  final Widget? icon;
   final VoidCallback? onPressed;
 
   const OutlinedIconButton({
     Key? key,
-    required this.icon,
+    this.icon,
     this.onPressed,
   }) : super(key: key);
 
