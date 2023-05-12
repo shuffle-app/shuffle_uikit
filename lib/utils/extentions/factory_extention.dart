@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-enum DialogButtonType { buttonWhite, buttonBlack }
-
-extension Factory on BuildContext {
+extension FactoryExtention on BuildContext {
   Widget smallButton({
     String? text,
     VoidCallback? onPressed,
@@ -72,6 +70,7 @@ extension Factory on BuildContext {
     String? avatarUrl,
     Border? avatarBorder,
     UserTileType? type,
+    VoidCallback? onTap,
   }) {
     return WidgetsFactory.of(this)!
         .createUserTile(
@@ -80,7 +79,10 @@ extension Factory on BuildContext {
           avatarUrl: avatarUrl,
           type: type,
           border: avatarBorder,
+          onTap: onTap,
         )
         .build(this);
   }
 }
+
+enum DialogButtonType { buttonWhite, buttonBlack }

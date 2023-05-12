@@ -16,6 +16,7 @@ class ProfilePostsPlaces extends StatelessWidget {
       delegate: SliverChildBuilderDelegate(
         (context, index) {
           final place = places[index];
+
           return Column(
             children: [
               if (index != 0)

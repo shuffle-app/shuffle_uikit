@@ -17,6 +17,7 @@ class ProfileHighlightCard extends StatelessWidget {
     TextStyle? valueStyle = textTheme?.title2;
     TextStyle? titleStyle = textTheme?.body;
     titleStyle = titleStyle?.copyWith(color: ColorsFoundation.darkNeutral100);
+
     return UiKitCardWrapper(
       height: 106,
       child: Column(

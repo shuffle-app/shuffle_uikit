@@ -19,6 +19,7 @@ class CustomAppBar extends PreferredSize {
   @override
   Widget build(BuildContext context) {
     final showLeading = autoImplyLeading ?? false;
+
     return ClipRRect(
       borderRadius: BorderRadiusFoundation.onlyBottom24,
       child: BackdropFilter(

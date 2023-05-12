@@ -23,6 +23,7 @@ class ProfileStoriesList extends StatelessWidget {
           itemCount: stories.length,
           itemBuilder: (context, index) {
             final story = stories[index];
+
             return ProfileStoryWidget(
               imagePath: story.image,
             );

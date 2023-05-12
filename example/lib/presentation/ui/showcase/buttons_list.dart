@@ -26,6 +26,7 @@ class ButtonsList extends StatelessWidget {
           icon: const CupertinoActivityIndicator(),
           text: 'GET CODE',
           gradient: true,
+          onPressed: () {},
         ),
         SpacingFoundation.verticalSpace16,
         context.button(
@@ -78,7 +79,6 @@ class ButtonsList extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             context.button(
-              text: '',
               icon: ImageWidget(
                 svgAsset: GraphicsFoundation.instance.svg.route,
                 color: Colors.white,
@@ -88,13 +88,11 @@ class ButtonsList extends StatelessWidget {
             ),
             SpacingFoundation.horizontalSpace8,
             context.button(
-              text: '',
               icon: ImageWidget(
                 svgAsset: GraphicsFoundation.instance.svg.route,
                 color: Colors.white,
               ),
               onPressed: () {},
-              outlined: true,
             ),
           ],
         ),

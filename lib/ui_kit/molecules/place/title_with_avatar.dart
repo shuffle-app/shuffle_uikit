@@ -16,6 +16,7 @@ class TitleWithAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyle = context.uiKitTheme?.boldTextTheme.title2;
+
     return Row(
       mainAxisSize: MainAxisSize.max,
       children: [

@@ -49,6 +49,7 @@ class _UiKitInputFieldLeftIconState extends State<UiKitInputFieldLeftIcon> {
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
+
     return Theme(
       data: Theme.of(context).copyWith(
         inputDecorationTheme: inputTheme,

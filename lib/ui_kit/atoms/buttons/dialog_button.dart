@@ -29,20 +29,6 @@ abstract class DialogButton extends StatelessWidget implements ButtonFactory {
         text: text,
         onPressed: onPressed,
       );
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   final theme = context.uiKitTheme;
-  //   final textStyle = small ? theme?.boldTextTheme.caption1 : theme?.boldTextTheme.bodyUpperCase;
-  //   return ElevatedButton(
-  //     style: style,
-  //     onPressed: onPressed,
-  //     child: Text(
-  //       text.toUpperCase(),
-  //       style: textStyle?.copyWith(color: textColor),
-  //     ),
-  //   );
-  // }
 }
 
 class _WhiteDialogButton extends DialogButton {
@@ -60,24 +46,25 @@ class _WhiteDialogButton extends DialogButton {
 
   @override
   Widget build(BuildContext context) {
-    final theme = context.uiKitTheme;
-    final textStyle = small ? theme?.boldTextTheme.caption1Bold : theme?.boldTextTheme.bodyUpperCase;
+    final textTheme = context.uiKitTheme?.boldTextTheme;
+    final textStyle = small ? textTheme?.caption1Bold : textTheme?.bodyUpperCase;
+
     return ElevatedButton(
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.resolveWith((states) {
           if (small) return const Size.fromHeight(28);
+
           return const Size.fromHeight(48);
         }),
         backgroundColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.disabled)) {
-            return ColorsFoundation.darkNeutral300;
-          } else {
-            return Colors.white;
-          }
+          return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
         }),
         shape: MaterialStateProperty.resolveWith(
           (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
         ),
+        overlayColor: MaterialStateProperty.resolveWith((states) {
+          return ColorsFoundation.darkNeutral900;
+        }),
         foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
       ),
       onPressed: onPressed,
@@ -103,25 +90,27 @@ class _BlackDialogButton extends DialogButton {
   });
   @override
   Widget build(BuildContext context) {
-    final theme = context.uiKitTheme;
-    final textStyle = small ? theme?.boldTextTheme.caption1Bold : theme?.boldTextTheme.bodyUpperCase;
+    final textTheme = context.uiKitTheme?.boldTextTheme;
+    final textStyle = small ? textTheme?.caption1Bold : textTheme?.bodyUpperCase;
+
     return ElevatedButton(
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.resolveWith((states) {
           if (small) return const Size.fromHeight(28);
+
           return const Size.fromHeight(48);
         }),
         backgroundColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.disabled)) {
-            return ColorsFoundation.darkNeutral300;
-          } else {
-            return Colors.black;
-          }
+          return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.black;
         }),
         shape: MaterialStateProperty.resolveWith(
           (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
         ),
+        overlayColor: MaterialStateProperty.resolveWith((states) {
+          return ColorsFoundation.darkNeutral900;
+        }),
         foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+        splashFactory: InkSplash.splashFactory,
       ),
       onPressed: onPressed,
       child: Text(

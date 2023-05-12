@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitTagsWidget extends StatelessWidget {
@@ -11,12 +10,13 @@ class UiKitTagsWidget extends StatelessWidget {
     Key? key,
     this.rating,
     required this.baseTags,
-     this.uniqueTags,
+    this.uniqueTags,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+
     return Row(
       mainAxisSize: MainAxisSize.max,
       children: [
@@ -46,7 +46,7 @@ class UiKitTagsWidget extends StatelessWidget {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Wrap(
-                  spacing: 8.w,
+                  spacing: SpacingFoundation.horizontalSpacing8,
                   children: baseTags
                       .map((e) => UiKitTagWidget(
                             title: e.title,
@@ -56,12 +56,12 @@ class UiKitTagsWidget extends StatelessWidget {
                       .toList(),
                 ),
               ),
-              if (uniqueTags!=null && uniqueTags!.isNotEmpty) ...[
+              if (uniqueTags != null && uniqueTags!.isNotEmpty) ...[
                 SpacingFoundation.verticalSpace4,
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Wrap(
-                    spacing: 8.w,
+                    spacing: SpacingFoundation.horizontalSpacing8,
                     children: uniqueTags!
                         .map((e) => UiKitTagWidget(
                               title: e.title,

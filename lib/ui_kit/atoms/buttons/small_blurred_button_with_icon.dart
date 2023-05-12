@@ -15,17 +15,21 @@ class SmallBlurredButtonWithIcon extends StatelessWidget implements ButtonFactor
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPressed,
-      child: ClipOval(
-        child: Container(
-          decoration: const BoxDecoration(
+    return Material(
+      shape: const CircleBorder(),
+      child: InkWell(
+        onTap: onPressed,
+        borderRadius: BorderRadiusFoundation.max,
+        child: Ink(
+          decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.white,
+            color: Colors.white.withOpacity(0.1),
           ),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
-            child: icon.paddingAll(EdgeInsetsFoundation.all12),
+          child: ClipOval(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+              child: icon.paddingAll(EdgeInsetsFoundation.all12),
+            ),
           ),
         ),
       ),

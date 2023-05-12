@@ -8,6 +8,7 @@ class AppBarBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final iconColor = context.uiKitTheme?.customAppBapTheme.iconTheme?.color;
+
     return Material(
       shape: const CircleBorder(),
       color: iconColor ?? ColorsFoundation.surface,

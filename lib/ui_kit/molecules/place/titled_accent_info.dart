@@ -17,6 +17,7 @@ class TitledAccentInfo extends StatelessWidget {
       color: ColorsFoundation.darkNeutral900,
     );
     final infoStyle = context.uiKitTheme?.boldTextTheme.title2;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,

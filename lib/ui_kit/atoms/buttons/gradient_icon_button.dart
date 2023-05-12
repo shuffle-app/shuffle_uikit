@@ -14,15 +14,20 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
-    return GestureDetector(
-      onTap: enabled ? onPressed : null,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadiusFoundation.all24,
-          gradient: enabled ? GradientFoundation.buttonGradient : null,
-          color: enabled ? null : ColorsFoundation.darkNeutral300,
+
+    return Material(
+      borderRadius: BorderRadiusFoundation.all24,
+      child: InkWell(
+        borderRadius: BorderRadiusFoundation.all24,
+        onTap: enabled ? onPressed : null,
+        child: Ink(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadiusFoundation.all24,
+            gradient: enabled ? GradientFoundation.defaultRadialGradient : null,
+            color: enabled ? null : ColorsFoundation.darkNeutral300,
+          ),
+          child: icon.paddingAll(EdgeInsetsFoundation.all12),
         ),
-        child: icon.paddingAll(EdgeInsetsFoundation.all12),
       ),
     );
   }

@@ -17,6 +17,7 @@ class ProfileInfo extends StatelessWidget {
     final fallBackStyle = Theme.of(context).textTheme.bodyMedium;
     TextStyle? nickNameStyle = boldTextTheme?.bodyUpperCase ?? fallBackStyle;
     TextStyle? followersCountStyle = boldTextTheme?.title2 ?? fallBackStyle;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,

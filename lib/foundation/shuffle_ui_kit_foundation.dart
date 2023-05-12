@@ -2,12 +2,12 @@
 /// such as spacings, colors, typography, paddings and etc.
 
 export '../themes/themes.dart';
-export '../themes/ui_kit_theme_provider.dart';
+export '../themes/ui_kit_theme.dart';
+export 'border_radius_foundation.dart';
 export 'colors_foundation.dart';
+export 'edge_insets_foundation.dart';
+export 'gradient_foundation.dart';
 export 'graphics_foundation.dart';
-export 'theme_foundation.dart';
-export 'ui_kit_border_radius.dart';
-export 'ui_kit_gradient.dart';
-export 'ui_kit_insets.dart';
-export 'ui_kit_sizes.dart';
-export 'ui_kit_spacing.dart';
+export 'sizes_foundation.dart';
+export 'spacing_foundation.dart';
+export 'ui_kit_theme_foundation.dart';

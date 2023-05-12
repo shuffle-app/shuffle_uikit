@@ -17,6 +17,7 @@ class AppBarTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.title1 ?? Theme.of(context).primaryTextTheme.titleMedium;
     textStyle = textStyle?.copyWith(color: Colors.white);
+
     return Expanded(
       child: Text(
         title,

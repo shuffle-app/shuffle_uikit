@@ -1,6 +1,8 @@
 import 'package:flutter/painting.dart';
 
-class UiKitRegularTextTheme {
+abstract class UiKitTextTheme {}
+
+class UiKitRegularTextTheme extends UiKitTextTheme {
   final TextStyle labelSmall = const TextStyle(
     fontFamily: 'Unbounded',
     fontSize: 12,
@@ -56,7 +58,7 @@ class UiKitRegularTextTheme {
   );
 }
 
-class UiKitBoldTextTheme {
+class UiKitBoldTextTheme extends UiKitTextTheme {
   final TextStyle labelLarge = const TextStyle(
     fontFamily: 'Unbounded',
     fontSize: 16,

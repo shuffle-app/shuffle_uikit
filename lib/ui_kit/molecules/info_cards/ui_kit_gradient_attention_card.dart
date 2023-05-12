@@ -15,6 +15,7 @@ class UiKitGradientAttentionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final messageStyle = context.uiKitTheme?.boldTextTheme.subHeadline;
+
     return Container(
       height: 82.h,
       decoration: BoxDecoration(
@@ -22,21 +23,24 @@ class UiKitGradientAttentionCard extends StatelessWidget {
         borderRadius: BorderRadiusFoundation.all24,
       ),
       child: Stack(
-        // mainAxisSize: MainAxisSize.min,
-        // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
             message,
             style: messageStyle?.copyWith(color: textColor),
-          ).paddingOnly(left: 16.sp, top: 16.sp, right: 16.sp),
+          ).paddingOnly(
+            left: EdgeInsetsFoundation.all16,
+            top: EdgeInsetsFoundation.all16,
+            right: EdgeInsetsFoundation.all16,
+          ),
           Positioned(
-              bottom: 0,
-              left: 0,
-              child: ImageWidget(
-                height: 70.h,
-                fit: BoxFit.fitHeight,
-                svgAsset: GraphicsFoundation.instance.svg.trippleArrowBlack,
-              )),
+            bottom: 0,
+            left: 0,
+            child: ImageWidget(
+              height: 70.h,
+              fit: BoxFit.fitHeight,
+              svgAsset: GraphicsFoundation.instance.svg.trippleArrowBlack,
+            ),
+          ),
         ],
       ),
     );

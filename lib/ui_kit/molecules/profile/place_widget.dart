@@ -16,7 +16,10 @@ class PlaceWidget extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, size) {
         final theme = context.uiKitTheme;
+        final textTheme = theme?.boldTextTheme;
         final postBodyStyle = context.uiKitTheme?.boldTextTheme.caption1Bold;
+        final titleStyle = textTheme?.caption1Bold;
+
         return Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -40,12 +43,12 @@ class PlaceWidget extends StatelessWidget {
                   children: [
                     Text(
                       place.title,
-                      style: theme?.boldTextTheme.caption1Bold,
+                      style: titleStyle,
                     ),
                     SpacingFoundation.verticalSpace2,
                     Text(
                       place.createdAt,
-                      style: theme?.boldTextTheme.caption1Medium.copyWith(
+                      style: textTheme?.caption1Medium.copyWith(
                         color: ColorsFoundation.darkNeutral900,
                       ),
                     ),
@@ -95,7 +98,7 @@ class PlaceWidget extends StatelessWidget {
                 SpacingFoundation.horizontalSpace8,
                 Text(
                   'Helpful',
-                  style: theme?.boldTextTheme.caption1Bold.copyWith(
+                  style: titleStyle?.copyWith(
                     color: ColorsFoundation.darkNeutral900,
                   ),
                 )

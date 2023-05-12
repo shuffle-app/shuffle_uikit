@@ -68,7 +68,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }) {
     final hasIcon = icon != null;
     final gradientIconButton = gradient && hasIcon && text.isEmpty;
-    final onlyIconButton = hasIcon && text.isEmpty && !isTextButton;
+    final onlyIconButton = hasIcon && text.isEmpty && !isTextButton && !(blurred ?? false);
 
     if (gradientIconButton) {
       return GradientIconButton(
@@ -87,7 +87,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: onPressed,
       );
     } else if (hasIcon && !gradient && !onlyIconButton && !(blurred ?? false)) {
-      return GeneralPurposeButtonWithIcon(
+      return OrdinaryButtonWithIcon(
         text: text,
         onPressed: onPressed,
         icon: icon,
@@ -113,7 +113,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: onPressed,
       );
     } else {
-      return GeneralPurposeButton(
+      return OrdinaryButton(
         text: text,
         onPressed: onPressed,
       );
@@ -127,6 +127,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 
   static WidgetsFactory? of(BuildContext context) {
     final instance = context.findAncestorWidgetOfExactType<WidgetsFactory>();
+
     return instance;
   }
 
@@ -143,7 +144,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }) {
     final hasIcon = icon != null;
     if ((outlined ?? false) && isTextButton) {
-      return SmallOutlinedTextButton(
+      return SmallOutlinedButton(
         onPressed: onPressed,
         text: text,
         borderColor: color,
@@ -155,7 +156,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: onPressed,
       );
     }
-    return SmallGeneralPurposeButton(
+
+    return SmallOrdinaryButton(
       text: text,
       onPressed: onPressed,
     );
@@ -168,6 +170,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     String? avatarUrl,
     UserTileType? type,
     Border? border,
+    VoidCallback? onTap,
   }) {
     switch (type) {
       case UserTileType.pro:
@@ -176,13 +179,15 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           avatarUrl: avatarUrl,
           username: username,
           border: border,
+          onTap: onTap,
         );
       case UserTileType.ordinary:
-        return OrdinaryUserTile(
+        return UserTile(
           name: name,
           avatarUrl: avatarUrl,
           username: username,
           border: border,
+          onTap: onTap,
         );
       case UserTileType.premium:
         return PremiumUserTile(
@@ -190,6 +195,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           avatarUrl: avatarUrl,
           username: username,
           border: border,
+          onTap: onTap,
         );
       case UserTileType.influencer:
         return InfluencerUserTile(
@@ -197,13 +203,15 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           avatarUrl: avatarUrl,
           username: username,
           border: border,
+          onTap: onTap,
         );
       case null:
-        return OrdinaryUserTile(
+        return UserTile(
           name: name,
           avatarUrl: avatarUrl,
           username: username,
           border: border,
+          onTap: onTap,
         );
     }
   }
@@ -215,18 +223,21 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     DialogButtonType? dialogButtonType,
     bool? small,
   }) {
-    if (dialogButtonType == DialogButtonType.buttonBlack) {
-      return DialogButton.black(
-        text: text,
-        onPressed: onPressed,
-        small: small ?? false,
-      );
-    } else {
-      return DialogButton.white(
-        text: text,
-        onPressed: onPressed,
-        small: small ?? false,
-      );
+    switch (dialogButtonType) {
+      case DialogButtonType.buttonWhite:
+        return DialogButton.white(
+          text: text,
+          onPressed: onPressed,
+          small: small ?? false,
+        );
+      case DialogButtonType.buttonBlack:
+        return DialogButton.black(
+          text: text,
+          onPressed: onPressed,
+          small: small ?? false,
+        );
+      case null:
+        throw UnimplementedError();
     }
   }
 

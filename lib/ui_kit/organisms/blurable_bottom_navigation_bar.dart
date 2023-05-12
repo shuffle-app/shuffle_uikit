@@ -23,6 +23,7 @@ class BlurableBottomNavigationBar extends StatelessWidget {
       stream: controller.tabStream,
       builder: (context, snapshot) {
         final index = snapshot.data?.value ?? 0;
+
         return Container(
           height: kBottomNavigationBarHeight.h,
           width: double.infinity,
@@ -38,6 +39,7 @@ class BlurableBottomNavigationBar extends StatelessWidget {
               children: items.map((e) {
                 final elementIndex = items.indexOf(e);
                 final selected = index == elementIndex;
+
                 return Expanded(
                   child: GestureDetector(
                     onTap: () => controller.changeTab(e),
@@ -73,6 +75,7 @@ class _NavBarTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = context.uiKitTheme?.blurredBottomNavigationBarTheme.iconColors;
+
     return Column(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,

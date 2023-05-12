@@ -183,13 +183,15 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       svgAsset: GraphicsFoundation.instance.svg.star,
                       color: Colors.white,
                     ),
+                    onPressed: () {},
                   ),
                   context.button(
                     blurred: true,
                     icon: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.star,
+                      svgAsset: GraphicsFoundation.instance.svg.heartFill,
                       color: Colors.white,
                     ),
+                    onPressed: () {},
                   ),
                   context.smallButton(
                     blurred: true,
@@ -197,11 +199,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       svgAsset: GraphicsFoundation.instance.svg.star,
                       color: Colors.white,
                     ),
+                    onPressed: () {},
                   ),
                 ],
               ),
               SpacingFoundation.verticalSpace16,
-              const UiKitShuffleLogo(),
               UiKitSwiperCard(
                 title: 'Dance Again',
                 subtitle: 'Unique place for unique people',
@@ -274,25 +276,19 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   children: [
                     UiKitMessageCardWithIcon(
                       message: 'Want to have some fun',
-                      icon: ImageWidget(
-                        rasterAsset: GraphicsFoundation.instance.png.crazyEmoji,
-                      ),
+                      rasterAsset: GraphicsFoundation.instance.png.crazyEmoji,
                       layoutDirection: Axis.vertical,
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
                       message: 'Want to have',
-                      icon: ImageWidget(
-                        rasterAsset: GraphicsFoundation.instance.png.crazyEmoji,
-                      ),
+                      rasterAsset: GraphicsFoundation.instance.png.mockUserAvatar,
                       layoutDirection: Axis.vertical,
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
                       message: 'Want to haveWant to have',
-                      icon: ImageWidget(
-                        rasterAsset: GraphicsFoundation.instance.png.crazyEmoji,
-                      ),
+                      rasterAsset: GraphicsFoundation.instance.png.crazyEmoji,
                       layoutDirection: Axis.vertical,
                     ),
                   ],
@@ -301,9 +297,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               UiKitMessageCardWithIcon(
                 message: 'need to cool down a bit?',
-                icon: ImageWidget(
-                  rasterAsset: GraphicsFoundation.instance.png.crazyEmoji,
-                ),
+                rasterAsset: GraphicsFoundation.instance.png.crazyEmoji,
                 layoutDirection: Axis.horizontal,
               ),
               SpacingFoundation.verticalSpace16,
@@ -504,6 +498,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               context.userTile(
+                onTap: () {},
                 name: 'Frankie Hansen',
                 username: '@fr4nk1eh4',
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
@@ -511,6 +506,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               context.userTile(
+                onTap: () {},
                 name: 'Frankie Hansen',
                 username: '@fr4nk1eh4',
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
@@ -518,6 +514,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               context.userTile(
+                onTap: () {},
                 name: 'Frankie Hansen',
                 username: '@fr4nk1eh4',
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
@@ -525,6 +522,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               context.userTile(
+                onTap: () {},
                 name: 'Frankie Hansen',
                 username: '@fr4nk1eh4',
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,

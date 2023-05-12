@@ -1,4 +1,4 @@
-import 'package:shuffle_uikit/ui_models/places/place.dart';
+import 'package:shuffle_uikit/ui_models/places/base_ui_kit_media.dart';
 
 class SlidablePlaceCardData {
   final List<BaseUiKitMedia> media;

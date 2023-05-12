@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/utils/extentions/context_theme_extension.dart';
-import 'package:shuffle_uikit/utils/widgets_factory/widgets_factory.dart';
+import 'package:shuffle_uikit/utils/extentions/ui_kit_theme_extention.dart';
+import 'package:shuffle_uikit/utils/widgets_factory/widgets_abstract_factory.dart';
 
-class SmallGeneralPurposeButton extends StatelessWidget implements ButtonFactory {
+class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
 
-  const SmallGeneralPurposeButton({
+  const SmallOrdinaryButton({
     Key? key,
     required this.text,
     this.onPressed,
@@ -16,6 +16,7 @@ class SmallGeneralPurposeButton extends StatelessWidget implements ButtonFactory
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final textStyle = theme?.boldTextTheme.caption1Bold;
+
     return ElevatedButton(
       style: theme?.smallOrdinaryButtonStyle,
       onPressed: onPressed,
