@@ -91,6 +91,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     if (other is! UiKitThemeData) {
       return this;
     }
+
     return UiKitThemeData(
       customColor: Color.lerp(customColor, other.customColor, t) ?? Colors.white,
       iconInputTheme: iconInputTheme,

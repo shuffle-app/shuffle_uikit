@@ -13,20 +13,21 @@ class UiKitTitledDescriptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = context.uiKitTheme;
+    final textTheme = context.uiKitTheme?.boldTextTheme;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
           title,
-          style: textStyle?.boldTextTheme.caption1Medium.copyWith(
+          style: textTheme?.caption1Medium.copyWith(
             color: ColorsFoundation.darkNeutral900,
           ),
         ),
         SpacingFoundation.verticalSpace4,
         Text(
           description,
-          style: textStyle?.boldTextTheme.body.copyWith(
+          style: textTheme?.body.copyWith(
             color: ColorsFoundation.darkNeutral100,
           ),
         ),

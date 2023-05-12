@@ -16,7 +16,8 @@ class UiKitPhotoSlider extends StatefulWidget {
     required this.media,
     required this.width,
     this.initialIndex = 0,
-    required this.height, this.onTap,
+    required this.height,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -102,10 +103,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
       left: _cardAnimation.left,
       right: _cardAnimation.right,
       child: GestureDetector(
-        child: SliderPhotoCard(
-          media: item,
-          givenSize: Size(double.infinity, widget.height),
-        ),
         onTap: widget.onTap,
         onHorizontalDragStart: (tapInfo) {
           final renderBox = context.findRenderObject()! as RenderBox;
@@ -132,12 +129,17 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
           _tappedOnTop = false;
           _onEndAnimation();
         },
+        child: SliderPhotoCard(
+          media: item,
+          givenSize: Size(double.infinity, widget.height),
+        ),
       ),
     );
   }
 
   Widget _buildLeftItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
     final theme = context.uiKitTheme;
+
     return AnimatedPositioned(
         duration: _animDuration,
         left: 4 * ((_currentIndex ?? 0) + 1) - differenceFromFirstCard * 10,
@@ -155,6 +157,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 
   Widget _buildRightItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
     final theme = context.uiKitTheme;
+
     return AnimatedPositioned(
       duration: _animDuration,
       right: 4 * (5 - (_currentIndex ?? 0) + 1) - differenceFromFirstCard * 10,

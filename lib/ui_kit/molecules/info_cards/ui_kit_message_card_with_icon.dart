@@ -4,13 +4,15 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMessageCardWithIcon extends StatelessWidget {
   final String message;
-  final ImageWidget icon;
+  final AssetGenImage? rasterAsset;
+  final SvgGenImage? svgAsset;
   final Axis layoutDirection;
 
   const UiKitMessageCardWithIcon({
     Key? key,
     required this.message,
-    required this.icon,
+    this.rasterAsset,
+    this.svgAsset,
     required this.layoutDirection,
   }) : super(key: key);
 
@@ -20,12 +22,18 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
       case Axis.horizontal:
         return _HorizontalMessageCard(
           message: message,
-          icon: icon,
+          icon: ImageWidget(
+            rasterAsset: rasterAsset,
+            svgAsset: svgAsset,
+          ),
         );
       case Axis.vertical:
         return _VerticalMessageCard(
           message: message,
-          icon: icon,
+          icon: ImageWidget(
+            rasterAsset: rasterAsset,
+            svgAsset: svgAsset,
+          ),
         );
     }
   }
@@ -44,6 +52,7 @@ class _VerticalMessageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final messageStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium;
+
     return SizedBox(
       width: 102.w,
       child: UiKitCardWrapper(
@@ -80,6 +89,7 @@ class _HorizontalMessageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final messageStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase;
+
     return UiKitCardWrapper(
       child: Row(
         mainAxisSize: MainAxisSize.max,

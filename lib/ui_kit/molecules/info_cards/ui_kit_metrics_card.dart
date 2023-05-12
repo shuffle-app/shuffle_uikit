@@ -20,6 +20,7 @@ class UiKitMetricsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final titleStyle = context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(color: Colors.black);
     final valueStyle = context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(color: Colors.black);
+
     return Container(
       height: 35.h,
       padding: EdgeInsets.all(EdgeInsetsFoundation.all4),

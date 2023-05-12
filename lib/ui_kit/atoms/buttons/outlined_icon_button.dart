@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class FilledIconButton extends StatelessWidget implements ButtonFactory {
+class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
   final Widget icon;
   final VoidCallback? onPressed;
 
-  const FilledIconButton({
+  const OutlinedIconButton({
     Key? key,
     required this.icon,
     this.onPressed,
@@ -17,19 +17,23 @@ class FilledIconButton extends StatelessWidget implements ButtonFactory {
     final enabled = onPressed != null;
 
     return Material(
-      color: enabled ? Colors.white.withOpacity(0.1) : ColorsFoundation.darkNeutral300,
       shape: const CircleBorder(),
+      color: enabled ? Colors.white.withOpacity(0.01) : ColorsFoundation.darkNeutral300,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
-        onTap: onPressed,
         borderRadius: BorderRadiusFoundation.max,
+        onTap: onPressed,
         child: Ink(
           height: 48.h,
           width: 48.w,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             shape: BoxShape.circle,
+            border: Border.all(
+              color: enabled ? Colors.white : ColorsFoundation.darkNeutral500,
+              width: 2.w,
+            ),
           ),
-          child: Center(child: icon),
+          child: icon,
         ),
       ),
     );

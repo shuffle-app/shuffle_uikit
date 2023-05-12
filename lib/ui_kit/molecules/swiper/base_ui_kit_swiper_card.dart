@@ -61,8 +61,10 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = context.uiKitTheme?.boldTextTheme.body;
-    final subtitleStyle = context.uiKitTheme?.boldTextTheme.caption1Medium;
+    final textTheme = context.uiKitTheme?.boldTextTheme;
+    final titleStyle = textTheme?.body;
+    final subtitleStyle = textTheme?.caption1Medium;
+
     return Container(
       width: 267.w,
       height: 316.h,
@@ -94,8 +96,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                   ),
                   child: Text(
                     '+20',
-                    style: context.uiKitTheme?.boldTextTheme.caption1Bold
-                        .copyWith(color: Colors.black),
+                    style: textTheme?.caption1Bold.copyWith(color: Colors.black),
                   ).paddingSymmetric(
                     vertical: EdgeInsetsFoundation.vertical8,
                     horizontal: EdgeInsetsFoundation.horizontal12,

@@ -27,6 +27,7 @@ class UiKitTagWidget extends StatelessWidget {
     final textStyle = context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
       color: textColor ?? ColorsFoundation.darkNeutral900,
     );
+
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [

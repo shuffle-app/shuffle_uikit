@@ -102,9 +102,9 @@ class _MainPageState extends State<MainPage> {
               onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile),
             ),
             SpacingFoundation.verticalSpace16,
-            GeneralPurposeButton(
+            OrdinaryButton(
               text: 'Dialog testing page',
-              onPressed: () => context.push(DialogTestingPage()),
+              onPressed: () => context.push(const DialogTestingPage()),
             ),
           ],
         ),

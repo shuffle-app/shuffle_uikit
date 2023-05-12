@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -10,11 +9,13 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: LottieBuilder.asset(
-      GraphicsFoundation.instance.animations.lottie.shuffleLoader1.path,
-      repeat: true,
-      animate: true,
-      package: 'shuffle_uikit',
-    ));
+    return Center(
+      child: LottieBuilder.asset(
+        GraphicsFoundation.instance.animations.lottie.shuffleLoader1.path,
+        repeat: true,
+        animate: true,
+        package: 'shuffle_uikit',
+      ),
+    );
   }
 }

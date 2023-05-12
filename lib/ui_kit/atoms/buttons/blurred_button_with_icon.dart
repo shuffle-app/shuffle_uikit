@@ -21,13 +21,13 @@ class BlurredButtonWithIcon extends StatelessWidget implements ButtonFactory {
         onTap: onPressed,
         borderRadius: BorderRadiusFoundation.max,
         child: Ink(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.white,
+            color: Colors.white.withOpacity(0.1),
           ),
           child: ClipOval(
             child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
+              filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
               child: icon.paddingAll(EdgeInsetsFoundation.all16),
             ),
           ),

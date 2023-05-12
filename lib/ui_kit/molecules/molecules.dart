@@ -1,24 +1,24 @@
 /// This file exports all molecules in the molecules folder
 
 export 'app_bar/custom_app_bar.dart';
-export 'cards/iconed_hint_card.dart';
-export 'chips/blurred_chip.dart';
-export 'filter/titled_filter_chip.dart';
-export 'info_cards/gradient_attention_card.dart';
-export 'info_cards/message_card_with_icon.dart';
-export 'info_cards/metrics_card.dart';
-export 'info_cards/weather_info_card.dart';
-export 'loading/loading_screen.dart';
-export 'place/accent_card.dart';
-export 'place/media_widget.dart';
+export 'cards/ui_kit_icon_hint_card.dart';
+export 'chips/ui_kit_blurred_question_chip.dart';
+export 'filter/ui_kit_titled_filter_chip.dart';
+export 'info_cards/ui_kit_gradient_attention_card.dart';
+export 'info_cards/ui_kit_message_card_with_icon.dart';
+export 'info_cards/ui_kit_metrics_card.dart';
+export 'info_cards/ui_kit_weather_info_card.dart';
+export 'loading/loading_widget.dart';
 export 'place/place_description_grid.dart';
-export 'place/place_stats.dart';
 export 'place/title_with_avatar.dart';
 export 'place/titled_accent_info.dart';
+export 'place/ui_kit_accent_card.dart';
+export 'place/ui_kit_media_widget.dart';
 export 'place/ui_kit_photo_slider.dart';
+export 'place/ui_kit_tags_widget.dart';
 export 'profile/profile_attitude_tab.dart';
-export 'profile/profile_highlights_card.dart';
+export 'profile/profile_highlight_card.dart';
 export 'profile/profile_info.dart';
 export 'profile/profile_interests.dart';
-export 'swiper/swiper_card.dart';
+export 'swiper/base_ui_kit_swiper_card.dart';
 export 'user/user_tile.dart';

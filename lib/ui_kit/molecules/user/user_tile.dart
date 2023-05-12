@@ -2,16 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-enum UserTileType { ordinary, pro, premium, influencer }
-
-abstract class _UserTile extends StatelessWidget implements UserTileFactory {
+abstract class _BaseUserTile extends StatelessWidget implements UserTileFactory {
   final String? name;
   final String? avatarUrl;
   final String? username;
   final Widget? trailing;
   final Border? avatarBorder;
 
-  const _UserTile({
+  const _BaseUserTile({
     Key? key,
     this.name,
     this.avatarUrl,
@@ -63,8 +61,8 @@ abstract class _UserTile extends StatelessWidget implements UserTileFactory {
   }
 }
 
-class OrdinaryUserTile extends _UserTile {
-  const OrdinaryUserTile({
+class UserTile extends _BaseUserTile {
+  const UserTile({
     Key? key,
     required super.name,
     required super.avatarUrl,
@@ -82,8 +80,8 @@ class OrdinaryUserTile extends _UserTile {
         );
 }
 
-class PremiumUserTile extends _UserTile {
-  const PremiumUserTile({
+class PremiumUserTile extends _BaseUserTile {
+  PremiumUserTile({
     super.key,
     required super.name,
     required super.avatarUrl,
@@ -97,12 +95,12 @@ class PremiumUserTile extends _UserTile {
                 bottom: BorderSide(color: Colors.white, width: 2),
                 left: BorderSide(color: Colors.white, width: 2),
               ),
-          trailing: const PremiumAccountMark(),
+          trailing: PremiumAccountMark(),
         );
 }
 
-class ProUserTile extends _UserTile {
-  const ProUserTile({
+class ProUserTile extends _BaseUserTile {
+  ProUserTile({
     super.key,
     required super.name,
     required super.avatarUrl,
@@ -116,12 +114,12 @@ class ProUserTile extends _UserTile {
                 bottom: BorderSide(color: Colors.white, width: 2),
                 left: BorderSide(color: Colors.white, width: 2),
               ),
-          trailing: const ProAccountMark(),
+          trailing: ProAccountMark(),
         );
 }
 
-class InfluencerUserTile extends _UserTile {
-  const InfluencerUserTile({
+class InfluencerUserTile extends _BaseUserTile {
+  InfluencerUserTile({
     super.key,
     required super.name,
     required super.avatarUrl,
@@ -135,6 +133,8 @@ class InfluencerUserTile extends _UserTile {
                 bottom: BorderSide(color: Colors.white, width: 2),
                 left: BorderSide(color: Colors.white, width: 2),
               ),
-          trailing: const InfluencerAccountMark(),
+          trailing: InfluencerAccountMark(),
         );
 }
+
+enum UserTileType { ordinary, pro, premium, influencer }

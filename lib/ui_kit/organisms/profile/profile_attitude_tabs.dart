@@ -18,6 +18,7 @@ class ProfileAttitudeTabs extends StatelessWidget {
       unselectedLabelStyle: tabStyle?.copyWith(color: Colors.white),
       labelStyle: tabStyle,
     );
+
     return Theme(
       data: Theme.of(context).copyWith(tabBarTheme: tabBarTheme),
       child: UiKitCardWrapper(

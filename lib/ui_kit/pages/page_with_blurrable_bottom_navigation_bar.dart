@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/ui_kit/organisms/bottom_navigation_bar.dart';
+import 'package:shuffle_uikit/ui_kit/organisms/blurable_bottom_navigation_bar.dart';
 import 'package:tabnavigator/tabnavigator.dart';
 
 /// this page has bottom navigation bar with separate navigation stack for each tab

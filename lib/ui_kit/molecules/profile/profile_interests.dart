@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/ui_kit_gradient.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/interest_chip.dart';
+import 'package:shuffle_uikit/foundation/gradient_foundation.dart';
+import 'package:shuffle_uikit/ui_kit/atoms/profile/ui_kit_chip.dart';
 
 class ProfileInterests extends StatelessWidget {
   final List<String> profileInterests;

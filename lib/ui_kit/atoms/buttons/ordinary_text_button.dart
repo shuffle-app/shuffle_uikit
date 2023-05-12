@@ -14,6 +14,7 @@ class OrdinaryTextButton extends StatelessWidget implements ButtonFactory {
   @override
   Widget build(BuildContext context) {
     final style = context.uiKitTheme?.textButtonStyle;
+
     return TextButton(
       style: style,
       onPressed: onPressed,

@@ -17,7 +17,7 @@ class InfluencerProfile extends StatelessWidget {
             delegate: SliverChildListDelegate(
               [
                 ProfileCard(
-                  profileData: VisitingProfileData(
+                  profileData: Profile(
                     nickname: '@marywill',
                     description: 'Just walking here and there trying to find something unique and interesting to show you!',
                     avatarUrl: 'assets/images/png/profile_avatar.png',
