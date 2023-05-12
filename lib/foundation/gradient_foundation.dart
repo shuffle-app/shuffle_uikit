@@ -53,6 +53,15 @@ class GradientFoundation {
     ],
   );
 
+  static final blackLinearGradient =  LinearGradient(
+    colors: [
+      ColorsFoundation.surface,
+      ColorsFoundation.surface.withOpacity(0.7),
+    ],
+    begin: Alignment.bottomCenter,
+    end: Alignment.topCenter,
+  );
+
   static final yellowLinearGradient = LinearGradient(
     colors: [
       ColorsFoundation.weatherYellow.withOpacity(0.1),
@@ -63,6 +72,8 @@ class GradientFoundation {
       0,
     ],
   );
+
+
 
   GradientFoundation._();
 }

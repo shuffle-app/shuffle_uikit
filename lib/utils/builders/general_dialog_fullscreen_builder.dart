@@ -36,9 +36,11 @@ showUiKitGeneralFullScreenDialog(
           shape: shape,
           child: Column(
             children: [
-              const SlidingChip().paddingOnly(top: SpacingFoundation.verticalSpacing12, bottom: SpacingFoundation.verticalSpacing4),
-              Expanded(
-                child: Container(
+              const SlidingChip().paddingOnly(
+                  top: SpacingFoundation.verticalSpacing12,
+                  bottom: SpacingFoundation.verticalSpacing4),
+              Stack(fit: StackFit.expand, children: [
+                Container(
                   decoration: ShapeDecoration(
                     shape: shape ?? const RoundedRectangleBorder(),
                   ),
@@ -48,8 +50,15 @@ showUiKitGeneralFullScreenDialog(
                     child: child,
                   ),
                 ),
-              ),
-              if (bottomBar != null) bottomBar
+                if (bottomBar != null)
+                  Positioned(
+                      bottom: 0,
+                      child: Container(
+                          decoration: BoxDecoration(
+                              gradient: GradientFoundation.blackLinearGradient),
+                          width: double.infinity,
+                          child: bottomBar))
+              ])
             ],
           ),
         ).paddingOnly(top: topPadding ?? 30.h),
@@ -63,7 +72,8 @@ showUiKitGeneralFullScreenDialog(
     transitionDuration: const Duration(milliseconds: 200),
     transitionBuilder: (context, animation1, animation2, child) {
       return BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: animation1.value * 2, sigmaY: animation2.value * 2),
+          filter: ImageFilter.blur(
+              sigmaX: animation1.value * 2, sigmaY: animation2.value * 2),
           child: Animations.slideAnimation(animation1, animation2, child));
     },
     pageBuilder: (
