@@ -5,8 +5,6 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
-  GradientFoundation._();
-
   static const badgeIcon = LinearGradient(
     colors: [
       ColorsFoundation.pink,
@@ -37,18 +35,6 @@ class GradientFoundation {
     gradient: defaultRadialGradient,
     width: 2,
   );
-
-  static final yellowLinearGradient = LinearGradient(
-    colors: [
-      ColorsFoundation.weatherYellow.withOpacity(0.1),
-      ColorsFoundation.weatherYellow.withOpacity(0.031),
-    ],
-    stops: const [
-      1,
-      0,
-    ],
-  );
-
   static const buttonGradient = RadialGradient(
     center: Alignment(-0.5596, 0.99),
     radius: 8,
@@ -66,6 +52,30 @@ class GradientFoundation {
       1,
     ],
   );
+
+  static final blackLinearGradient =  LinearGradient(
+    colors: [
+      ColorsFoundation.surface,
+      ColorsFoundation.surface.withOpacity(0.7),
+    ],
+    begin: Alignment.bottomCenter,
+    end: Alignment.topCenter,
+  );
+
+  static final yellowLinearGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.weatherYellow.withOpacity(0.1),
+      ColorsFoundation.weatherYellow.withOpacity(0.031),
+    ],
+    stops: const [
+      1,
+      0,
+    ],
+  );
+
+
+
+  GradientFoundation._();
 }
 
 // radial-gradient(240.53% 266.28% at 7.36% 16.31%, #E32900 0%, #C6E216 47.3%, #D808FA 100%) // border gradient

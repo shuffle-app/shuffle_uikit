@@ -47,6 +47,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   });
 
   @override
+  //ignore: long-parameter-list
   ThemeExtension<UiKitThemeData> copyWith({
     Color? customColor,
     Color? cardColor,

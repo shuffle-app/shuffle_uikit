@@ -7,7 +7,7 @@ class ShowCasePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PageWithBlurrableBottomNavigationBar(
+    return BlurrableBottomNavigationBarPage(
       tabs: {
         BlurableBottomNavigationBarItem.home: () => const AllWidgetsStand(),
         BlurableBottomNavigationBarItem.spinner: () => const Center(child: Text('Page 2')),

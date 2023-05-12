@@ -3,8 +3,6 @@ import 'dart:ui';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ColorsFoundation {
-  ColorsFoundation._();
-
   static const Color surface = UiKitColors.surface3;
   static const Color darkNeutral500 = UiKitColors.darkNeutral500;
   static const Color darkNeutral300 = UiKitColors.darkNeutral300;
@@ -20,4 +18,6 @@ class ColorsFoundation {
   static const Color warning = UiKitColors.warning;
   static const Color success = UiKitColors.success;
   static const Color info = UiKitColors.info;
+
+  ColorsFoundation._();
 }

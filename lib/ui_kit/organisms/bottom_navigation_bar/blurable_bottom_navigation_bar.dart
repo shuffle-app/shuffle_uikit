@@ -44,7 +44,7 @@ class BlurableBottomNavigationBar extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () => controller.changeTab(e),
                     behavior: HitTestBehavior.opaque,
-                    child: _NavBarTile(
+                    child: NavBarTile(
                       icon: selected ? e.selectedIcon : e.unselectedIcon,
                       selected: selected,
                     ),
@@ -62,43 +62,7 @@ class BlurableBottomNavigationBar extends StatelessWidget {
   }
 }
 
-class _NavBarTile extends StatelessWidget {
-  final SvgGenImage icon;
-  final bool selected;
-
-  const _NavBarTile({
-    Key? key,
-    required this.icon,
-    required this.selected,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final color = context.uiKitTheme?.blurredBottomNavigationBarTheme.iconColors;
-
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        ImageWidget(
-          svgAsset: icon,
-          color: color,
-        ),
-        SpacingFoundation.verticalSpace4,
-        Icon(
-          Icons.circle,
-          size: 4,
-          color: selected ? color : Colors.transparent,
-        ),
-      ],
-    );
-  }
-}
-
 class BlurableBottomNavigationBarItem extends TabType {
-  final SvgGenImage selectedIcon;
-  final SvgGenImage unselectedIcon;
-
   static final home = BlurableBottomNavigationBarItem._(
     selectedIcon: GraphicsFoundation.instance.svg.homeFill,
     unselectedIcon: GraphicsFoundation.instance.svg.homeOutline,
@@ -125,6 +89,9 @@ class BlurableBottomNavigationBarItem extends TabType {
     index: 4,
   );
 
+  final SvgGenImage selectedIcon;
+  final SvgGenImage unselectedIcon;
+
   const BlurableBottomNavigationBarItem._({
     required this.selectedIcon,
     required this.unselectedIcon,
@@ -134,12 +101,11 @@ class BlurableBottomNavigationBarItem extends TabType {
 
 class BlurredBottomNavigationBarController {
   final int tabItemsCount;
-
-  BlurredBottomNavigationBarController({required this.tabItemsCount});
-
   final StreamController<TabType> _changeController = StreamController<TabType>.broadcast();
 
   Stream<TabType> get tabStream => _changeController.stream;
+
+  BlurredBottomNavigationBarController({required this.tabItemsCount});
 
   void changeTab(BlurableBottomNavigationBarItem item) {
     _changeController.add(item);

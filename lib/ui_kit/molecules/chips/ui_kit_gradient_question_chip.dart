@@ -43,6 +43,7 @@ class GradientQuestionChipClipper extends CustomClipper<Path> {
     path.lineTo(width - 32.w, 0);
     path.cubicTo(width, height * 0, width - 32.w, height * 0.75, width, height);
     path.close();
+
     return path;
   }
 

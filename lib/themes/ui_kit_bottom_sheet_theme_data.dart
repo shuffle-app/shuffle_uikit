@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class UiKitBottomSheetThemeData extends BottomSheetThemeData {
+  final Color sheetSliderColor;
+
   const UiKitBottomSheetThemeData({
     super.backgroundColor,
     super.surfaceTintColor,
@@ -13,6 +15,4 @@ class UiKitBottomSheetThemeData extends BottomSheetThemeData {
     super.constraints,
     required this.sheetSliderColor,
   });
-
-  final Color sheetSliderColor;
 }

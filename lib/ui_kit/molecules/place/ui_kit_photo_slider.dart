@@ -54,25 +54,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
     );
   }
 
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final List<Widget> backStack = _getBackStack(_cardAnimation.right < widget.width / 10);
-
-    return SizedBox(
-        height: widget.height,
-        width: widget.width,
-        child: Stack(clipBehavior: Clip.none, fit: StackFit.expand, alignment: Alignment.center, children: [
-          ...backStack,
-          _buildFirstItem(widget.media[_currentIndex ?? 0]),
-        ]));
-  }
-
   _getBackStack([bool reversed = false]) {
     List<BaseUiKitMedia> leftList = widget.media.sublist(0, _currentIndex ?? 0);
     if (leftList.length > 4) {
@@ -224,35 +205,31 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
     _detectedDirection = CardSwiperDirection.none;
     _cardAnimation.animateBack();
   }
-}
 
-class SliderPhotoCard extends StatelessWidget {
-  final BaseUiKitMedia media;
-  final Size givenSize;
-
-  const SliderPhotoCard({
-    Key? key,
-    required this.media,
-    required this.givenSize,
-  }) : super(key: key);
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox.fromSize(
-      size: givenSize,
-      child: media.type == UiKitMediaType.image ? UiKitMediaWidget.image(media: media) : UiKitMediaWidget.video(media: media),
-    );
+    final List<Widget> backStack = _getBackStack(_cardAnimation.right < widget.width / 10);
+
+    return SizedBox(
+        height: widget.height,
+        width: widget.width,
+        child: Stack(clipBehavior: Clip.none, fit: StackFit.expand, alignment: Alignment.center, children: [
+          ...backStack,
+          //ignore: avoid-returning-widgets
+          _buildFirstItem(widget.media[_currentIndex ?? 0]),
+        ]));
   }
 }
 
 ///helpers
 
 class Undoable<T> {
-  Undoable(this._value, {Undoable? previousValue}) : _previous = previousValue;
-
-  T _value;
-  Undoable? _previous;
-
   T get state => _value;
 
   T? get previousState => _previous?.state;
@@ -261,6 +238,12 @@ class Undoable<T> {
     _previous = Undoable(_value, previousValue: _previous);
     _value = newValue;
   }
+
+  T _value;
+
+  Undoable? _previous;
+
+  Undoable(this._value, {Undoable? previousValue}) : _previous = previousValue;
 
   void undo() {
     if (_previous != null) {
@@ -286,16 +269,14 @@ enum SwipeType {
 }
 
 class CardAnimation {
-  CardAnimation(this.animationController);
-
   final AnimationController animationController;
-
   double left = 0;
   double right = 20;
   double total = 0;
-
   late Animation<double> _leftAnimation;
   late Animation<double> _rightAnimation;
+
+  CardAnimation(this.animationController);
 
   void sync() {
     left = _leftAnimation.value;

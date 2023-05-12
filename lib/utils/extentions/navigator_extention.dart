@@ -36,12 +36,14 @@ extension NavigatorExtention on BuildContext {
       ));
 
   /// perform push and remove route
-  Future<dynamic> pushAndRemoveUntil(Widget screen,
-          {RouteSettings? settings,
-          bool maintainState = true,
-          bool fullscreenDialog = false,
-          bool routes = false,
-          RoutePredicate? routePredicate}) async =>
+  Future<dynamic> pushAndRemoveUntil(
+    Widget screen, {
+    RouteSettings? settings,
+    bool maintainState = true,
+    bool fullscreenDialog = false,
+    bool routes = false,
+    RoutePredicate? routePredicate,
+  }) async =>
       await Navigator.of(this).pushAndRemoveUntil(
           MaterialPageRoute(
             builder: (_) => screen,

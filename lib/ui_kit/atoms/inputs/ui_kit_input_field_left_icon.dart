@@ -12,9 +12,6 @@ class UiKitInputFieldLeftIcon extends StatefulWidget implements BaseUiKitInputFi
   }) : super(key: key);
 
   @override
-  State<UiKitInputFieldLeftIcon> createState() => _UiKitInputFieldLeftIconState();
-
-  @override
   final TextEditingController controller;
   @override
   final bool enabled;
@@ -24,6 +21,11 @@ class UiKitInputFieldLeftIcon extends StatefulWidget implements BaseUiKitInputFi
   final String? hintText;
   @override
   final String? Function(String? p1)? validator;
+
+  @override
+  State<UiKitInputFieldLeftIcon> createState() => _UiKitInputFieldLeftIconState();
+
+
 }
 
 class _UiKitInputFieldLeftIconState extends State<UiKitInputFieldLeftIcon> {
