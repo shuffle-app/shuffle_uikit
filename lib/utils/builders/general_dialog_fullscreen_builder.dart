@@ -49,7 +49,11 @@ showUiKitGeneralFullScreenDialog(
                     child: SingleChildScrollView(
                       primary: true,
                       physics: const ClampingScrollPhysics(),
-                      child: child,
+                      child: Column(children: [
+                        child,
+                        if (bottomBar != null)
+                          Opacity(opacity: 0, child: bottomBar)
+                      ]),
                     )),
                 if (bottomBar != null)
                   Positioned(

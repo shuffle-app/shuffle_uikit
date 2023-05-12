@@ -87,7 +87,7 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget gradientButton({
-    required String text,
+     String text = '',
     VoidCallback? onPressed,
     Widget? icon,
   }) {

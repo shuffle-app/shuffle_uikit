@@ -51,8 +51,9 @@ class _RotatableWidgetState extends State<RotatableWidget>
   void listenAnim(AnimationStatus status) {
     if (status == AnimationStatus.completed) {
       controller.reverse();
+    } else if (status == AnimationStatus.dismissed) {
       Future.delayed(const Duration(seconds: 10))
-          .then((value) => controller.repeat());
+          .then((value) => controller.forward());
     }
   }
 
