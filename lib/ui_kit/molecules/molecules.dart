@@ -3,6 +3,7 @@
 export 'app_bar/custom_app_bar.dart';
 export 'cards/ui_kit_icon_hint_card.dart';
 export 'chips/ui_kit_blurred_question_chip.dart';
+export 'chips/ui_kit_gradient_question_chip.dart';
 export 'filter/ui_kit_titled_filter_chip.dart';
 export 'info_cards/ui_kit_gradient_attention_card.dart';
 export 'info_cards/ui_kit_message_card_with_icon.dart';
