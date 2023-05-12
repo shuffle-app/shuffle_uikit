@@ -63,7 +63,7 @@ showUiKitGeneralFullScreenDialog(
     transitionDuration: const Duration(milliseconds: 200),
     transitionBuilder: (context, animation1, animation2, child) {
       return BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 2 * animation1.value, sigmaY: 2 * animation2.value),
+          filter: ImageFilter.blur(sigmaX: animation1.value * 2, sigmaY: animation2.value * 2),
           child: Animations.slideAnimation(animation1, animation2, child));
     },
     pageBuilder: (
@@ -76,4 +76,5 @@ showUiKitGeneralFullScreenDialog(
   );
 }
 
+//ignore: no-empty-block
 void _empty() {}

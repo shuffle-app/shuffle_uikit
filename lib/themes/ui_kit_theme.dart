@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class UiKitTheme extends InheritedWidget {
+  static UiKitTheme of(BuildContext context) =>
+      context.findAncestorWidgetOfExactType<UiKitTheme>()!;
   final ValueChanged<ThemeData> onThemeUpdated;
 
   const UiKitTheme({
@@ -8,8 +10,6 @@ class UiKitTheme extends InheritedWidget {
     required super.child,
     super.key,
   });
-
-  static UiKitTheme of(BuildContext context) => context.findAncestorWidgetOfExactType<UiKitTheme>()!;
 
   void updateTheme(ThemeData data) {
     onThemeUpdated(data);

@@ -90,8 +90,8 @@ class _FadeScaleAnimState extends State<_FadeScaleAnim> with SingleTickerProvide
 
   final double multiplier = 1.7;
 
-  late final scaleX = Tween<double>(begin: 1, end: 1 + 0.05769 * multiplier).animate(curvedAnimation);
-  late final scaleY = Tween<double>(begin: 1, end: 1 + 0.21126 * multiplier).animate(curvedAnimation);
+  late final scaleX = Tween<double>(begin: 1, end: 1 + multiplier * 0.05769).animate(curvedAnimation);
+  late final scaleY = Tween<double>(begin: 1, end: 1 + multiplier * 0.21126).animate(curvedAnimation);
   late final opacity = Tween<double>(begin: 1, end: 0).animate(curvedAnimation);
 
   @override
@@ -159,7 +159,7 @@ class _RotatableWidgetState extends State<RotatableWidget> with SingleTickerProv
   );
   late final curvedAnimation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 
-  late final angle = Tween<double>(begin: 0, end: 360 * math.pi / 180).animate(curvedAnimation);
+  late final angle = Tween<double>(begin: 0, end: math.pi * 360 / 180).animate(curvedAnimation);
 
   @override
   void initState() {

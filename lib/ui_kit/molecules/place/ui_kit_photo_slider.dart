@@ -24,7 +24,8 @@ class UiKitPhotoSlider extends StatefulWidget {
   State<UiKitPhotoSlider> createState() => _UiKitPhotoSliderState();
 }
 
-class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProviderStateMixin {
+class _UiKitPhotoSliderState extends State<UiKitPhotoSlider>
+    with TickerProviderStateMixin {
   final _animDuration = const Duration(milliseconds: 150);
   late CardAnimation _cardAnimation;
   late AnimationController _animationController;
@@ -54,36 +55,21 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
     );
   }
 
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final List<Widget> backStack = _getBackStack(_cardAnimation.right < widget.width / 10);
-
-    return SizedBox(
-        height: widget.height,
-        width: widget.width,
-        child: Stack(clipBehavior: Clip.none, fit: StackFit.expand, alignment: Alignment.center, children: [
-          ...backStack,
-          _buildFirstItem(widget.media[_currentIndex ?? 0]),
-        ]));
-  }
-
   _getBackStack([bool reversed = false]) {
     List<BaseUiKitMedia> leftList = widget.media.sublist(0, _currentIndex ?? 0);
     if (leftList.length > 4) {
       leftList = leftList.sublist(leftList.length - 4);
     }
 
-    List<BaseUiKitMedia> rightList = widget.media.sublist((_currentIndex ?? 0) + 1, widget.media.length);
+    List<BaseUiKitMedia> rightList =
+        widget.media.sublist((_currentIndex ?? 0) + 1, widget.media.length);
     if (rightList.length > 4) {
       rightList = rightList.sublist(0, 4);
     }
-    final items = rightList.map((e) => _buildRightItem(context, e, rightList.indexOf(e) + 1)).toList().reversed;
+    final items = rightList
+        .map((e) => _buildRightItem(context, e, rightList.indexOf(e) + 1))
+        .toList()
+        .reversed;
 
     return [
       if (reversed)
@@ -91,7 +77,11 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         if (rightList.isNotEmpty) ...items,
 
       //build left stack
-      if (leftList.isNotEmpty) ...leftList.map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1)).toList().reversed,
+      if (leftList.isNotEmpty)
+        ...leftList
+            .map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1))
+            .toList()
+            .reversed,
       if (!reversed)
         //build right stack if user wants to slide right
         if (rightList.isNotEmpty) ...items,
@@ -129,7 +119,8 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
     );
   }
 
-  Widget _buildLeftItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
+  Widget _buildLeftItem(
+      BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
     final theme = context.uiKitTheme;
 
     return AnimatedPositioned(
@@ -142,12 +133,14 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
           ),
           child: SliderPhotoCard(
             media: item,
-            givenSize: Size(widget.width - 55, widget.height * (1 - differenceFromFirstCard * 0.1)),
+            givenSize: Size(widget.width - 55,
+                widget.height * (1 - differenceFromFirstCard * 0.1)),
           ),
         ));
   }
 
-  Widget _buildRightItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
+  Widget _buildRightItem(
+      BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
     final theme = context.uiKitTheme;
 
     return AnimatedPositioned(
@@ -160,7 +153,8 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
           ),
           child: SliderPhotoCard(
             media: item,
-            givenSize: Size(widget.width - 55, widget.height * (1 - differenceFromFirstCard * 0.1)),
+            givenSize: Size(widget.width - 55,
+                widget.height * (1 - differenceFromFirstCard * 0.1)),
           )),
     );
   }
@@ -183,14 +177,17 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
           break;
       }
       _reset(
-        20 / widget.media.length * (widget.media.length - (_currentIndex ?? 0) + 1),
+        20 /
+            widget.media.length *
+            (widget.media.length - (_currentIndex ?? 0) + 1),
         20 / widget.media.length * (_currentIndex ?? 0),
       );
     }
   }
 
   void _handleCompleteSwipe() {
-    _undoableIndex.state = (_currentIndex ?? 0) + (_detectedDirection == CardSwiperDirection.left ? 1 : -1);
+    _undoableIndex.state = (_currentIndex ?? 0) +
+        (_detectedDirection == CardSwiperDirection.left ? 1 : -1);
     _directionHistory.add(_detectedDirection);
   }
 
@@ -204,7 +201,9 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 
   void _onEndAnimation() {
     if (_cardAnimation.left.abs() > 50) {
-      final direction = _cardAnimation.left.isNegative ? CardSwiperDirection.left : CardSwiperDirection.right;
+      final direction = _cardAnimation.left.isNegative
+          ? CardSwiperDirection.left
+          : CardSwiperDirection.right;
       _swipe(direction);
     } else {
       _goBack();
@@ -224,6 +223,31 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
     _detectedDirection = CardSwiperDirection.none;
     _cardAnimation.animateBack();
   }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final List<Widget> backStack =
+        _getBackStack(_cardAnimation.right < widget.width / 10);
+
+    return SizedBox(
+        height: widget.height,
+        width: widget.width,
+        child: Stack(
+            clipBehavior: Clip.none,
+            fit: StackFit.expand,
+            alignment: Alignment.center,
+            children: [
+              ...backStack,
+              //ignore: avoid-returning-widgets
+              _buildFirstItem(widget.media[_currentIndex ?? 0]),
+            ]));
+  }
 }
 
 class SliderPhotoCard extends StatelessWidget {
@@ -240,7 +264,9 @@ class SliderPhotoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox.fromSize(
       size: givenSize,
-      child: media.type == UiKitMediaType.image ? UiKitMediaWidget.image(media: media) : UiKitMediaWidget.video(media: media),
+      child: media.type == UiKitMediaType.image
+          ? UiKitMediaWidget.image(media: media)
+          : UiKitMediaWidget.video(media: media),
     );
   }
 }
@@ -286,16 +312,14 @@ enum SwipeType {
 }
 
 class CardAnimation {
-  CardAnimation(this.animationController);
-
   final AnimationController animationController;
-
   double left = 0;
   double right = 20;
   double total = 0;
-
   late Animation<double> _leftAnimation;
   late Animation<double> _rightAnimation;
+
+  CardAnimation(this.animationController);
 
   void sync() {
     left = _leftAnimation.value;

@@ -56,6 +56,12 @@ abstract class UserTileFactory {
 class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   const WidgetsFactory({required super.child, super.key});
 
+  static WidgetsFactory? of(BuildContext context) {
+    final instance = context.findAncestorWidgetOfExactType<WidgetsFactory>();
+
+    return instance;
+  }
+
   @override
   ButtonFactory createOrdinaryButton({
     required String text,
@@ -125,11 +131,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     return false;
   }
 
-  static WidgetsFactory? of(BuildContext context) {
-    final instance = context.findAncestorWidgetOfExactType<WidgetsFactory>();
 
-    return instance;
-  }
 
   @override
   ButtonFactory createSmallButton({
