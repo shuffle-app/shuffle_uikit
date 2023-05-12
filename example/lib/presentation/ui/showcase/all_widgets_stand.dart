@@ -491,6 +491,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               context.userTile(
+                onTap: () {},
                 name: 'Frankie Hansen',
                 username: '@fr4nk1eh4',
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
@@ -498,6 +499,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               context.userTile(
+                onTap: () {},
                 name: 'Frankie Hansen',
                 username: '@fr4nk1eh4',
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
@@ -505,6 +507,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               context.userTile(
+                onTap: () {},
                 name: 'Frankie Hansen',
                 username: '@fr4nk1eh4',
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
@@ -512,6 +515,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               context.userTile(
+                onTap: () {},
                 name: 'Frankie Hansen',
                 username: '@fr4nk1eh4',
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,

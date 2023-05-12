@@ -170,6 +170,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     String? avatarUrl,
     UserTileType? type,
     Border? border,
+    VoidCallback? onTap,
   }) {
     switch (type) {
       case UserTileType.pro:
@@ -178,6 +179,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           avatarUrl: avatarUrl,
           username: username,
           border: border,
+          onTap: onTap,
         );
       case UserTileType.ordinary:
         return UserTile(
@@ -185,6 +187,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           avatarUrl: avatarUrl,
           username: username,
           border: border,
+          onTap: onTap,
         );
       case UserTileType.premium:
         return PremiumUserTile(
@@ -192,6 +195,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           avatarUrl: avatarUrl,
           username: username,
           border: border,
+          onTap: onTap,
         );
       case UserTileType.influencer:
         return InfluencerUserTile(
@@ -199,6 +203,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           avatarUrl: avatarUrl,
           username: username,
           border: border,
+          onTap: onTap,
         );
       case null:
         return UserTile(
@@ -206,6 +211,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           avatarUrl: avatarUrl,
           username: username,
           border: border,
+          onTap: onTap,
         );
     }
   }

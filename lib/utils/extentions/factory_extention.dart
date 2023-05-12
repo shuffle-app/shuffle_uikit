@@ -70,6 +70,7 @@ extension FactoryExtention on BuildContext {
     String? avatarUrl,
     Border? avatarBorder,
     UserTileType? type,
+    VoidCallback? onTap,
   }) {
     return WidgetsFactory.of(this)!
         .createUserTile(
@@ -78,6 +79,7 @@ extension FactoryExtention on BuildContext {
           avatarUrl: avatarUrl,
           type: type,
           border: avatarBorder,
+          onTap: onTap,
         )
         .build(this);
   }
