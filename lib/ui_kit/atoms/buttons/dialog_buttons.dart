@@ -29,20 +29,6 @@ abstract class DialogButton extends StatelessWidget implements ButtonFactory {
         text: text,
         onPressed: onPressed,
       );
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   final theme = context.uiKitTheme;
-  //   final textStyle = small ? theme?.boldTextTheme.caption1 : theme?.boldTextTheme.bodyUpperCase;
-  //   return ElevatedButton(
-  //     style: style,
-  //     onPressed: onPressed,
-  //     child: Text(
-  //       text.toUpperCase(),
-  //       style: textStyle?.copyWith(color: textColor),
-  //     ),
-  //   );
-  // }
 }
 
 class _WhiteDialogButton extends DialogButton {
@@ -79,6 +65,7 @@ class _WhiteDialogButton extends DialogButton {
           (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
         ),
         foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+        splashFactory: InkSplash.splashFactory,
       ),
       onPressed: onPressed,
       child: Text(

@@ -188,6 +188,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       color: Colors.white,
                     ),
                     small: false,
+                    onPressed: () {},
                   ),
                   context.button(
                     blurred: true,
