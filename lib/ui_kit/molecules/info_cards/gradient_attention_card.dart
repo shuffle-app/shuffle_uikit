@@ -29,9 +29,14 @@ class UiKitGradientAttentionCard extends StatelessWidget {
             message,
             style: messageStyle?.copyWith(color: textColor),
           ).paddingOnly(left: 16.sp, top: 16.sp, right: 16.sp),
-          ImageWidget(
-            svgAsset: GraphicsFoundation.instance.svg.trippleArrowBlack,
-          ),
+          Positioned(
+              bottom: 0,
+              left: 0,
+              child: ImageWidget(
+                height: 70.h,
+                fit: BoxFit.fitHeight,
+                svgAsset: GraphicsFoundation.instance.svg.trippleArrowBlack,
+              )),
         ],
       ),
     );

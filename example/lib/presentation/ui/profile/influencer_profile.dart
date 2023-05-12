@@ -80,7 +80,6 @@ class InfluencerProfile extends StatelessWidget {
               [
                 context
                     .button(
-                      color: Colors.white,
                       onPressed: () {},
                       text: 'Next 5 reviews',
                       icon: const Icon(

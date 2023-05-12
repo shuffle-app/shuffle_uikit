@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class CardWrapper extends StatelessWidget {
+class UiKitCardWrapper extends StatelessWidget {
   final Widget child;
   final BorderRadius? borderRadius;
   final double? width;
   final double? height;
 
-  const CardWrapper({
+  const UiKitCardWrapper({
     Key? key,
     required this.child,
     this.borderRadius,
@@ -18,6 +18,7 @@ class CardWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+
     return Theme(
       data: Theme.of(context).copyWith(cardTheme: theme?.cardTheme, cardColor: theme?.cardColor),
       child: Card(
