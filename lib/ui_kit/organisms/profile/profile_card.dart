@@ -22,24 +22,24 @@ class ProfileCard extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              ProfileAvatar(avatarLink: profileData.avatarUrl),
+              ProfileAvatar(avatarLink: profileData.avatarUrl ?? ''),
               SpacingFoundation.horizontalSpace16,
               Expanded(
                 child: ProfileInfo(
-                  nickname: profileData.nickname,
-                  followers: profileData.followers,
+                  nickname: profileData.nickname ?? '',
+                  followers: profileData.followers ?? 0,
                 ),
               ),
             ],
           ),
           SpacingFoundation.verticalSpace16,
           ProfileDescription(
-            text: profileData.description,
+            text: profileData.description ?? '',
           ),
           SpacingFoundation.verticalSpace16,
           ProfileInterests(
-            userInterests: [profileData.interests.first],
-            profileInterests: profileData.interests,
+            userInterests: [profileData.interests?.first ?? ''],
+            profileInterests: profileData.interests ?? [],
           ),
         ],
       ).paddingAll(EdgeInsetsFoundation.all16),
