@@ -4,15 +4,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMessageCardWithIcon extends StatelessWidget {
   final String message;
-  final AssetGenImage? rasterAsset;
-  final SvgGenImage? svgAsset;
+  final Widget? icon;
   final Axis layoutDirection;
 
   const UiKitMessageCardWithIcon({
     Key? key,
     required this.message,
-    this.rasterAsset,
-    this.svgAsset,
+    this.icon,
     required this.layoutDirection,
   }) : super(key: key);
 
@@ -22,18 +20,12 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
       case Axis.horizontal:
         return _HorizontalMessageCard(
           message: message,
-          icon: ImageWidget(
-            rasterAsset: rasterAsset,
-            svgAsset: svgAsset,
-          ),
+          icon: icon,
         );
       case Axis.vertical:
         return _VerticalMessageCard(
           message: message,
-          icon: ImageWidget(
-            rasterAsset: rasterAsset,
-            svgAsset: svgAsset,
-          ),
+          icon: icon,
         );
     }
   }
@@ -41,12 +33,12 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
 
 class _VerticalMessageCard extends StatelessWidget {
   final String message;
-  final ImageWidget icon;
+  final Widget? icon;
 
   const _VerticalMessageCard({
     Key? key,
     required this.message,
-    required this.icon,
+     this.icon,
   }) : super(key: key);
 
   @override
@@ -59,8 +51,10 @@ class _VerticalMessageCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            icon,
-            SpacingFoundation.verticalSpace8,
+            if(icon!= null)
+            icon!,
+            if(icon!= null)
+              SpacingFoundation.verticalSpace8,
             Text(
               /// end line symbols added to make sure that the text is more than 4 lines
               /// so that the card height is always fixed
@@ -78,12 +72,12 @@ class _VerticalMessageCard extends StatelessWidget {
 
 class _HorizontalMessageCard extends StatelessWidget {
   final String message;
-  final ImageWidget icon;
+  final Widget? icon;
 
   const _HorizontalMessageCard({
     Key? key,
     required this.message,
-    required this.icon,
+    this.icon,
   }) : super(key: key);
 
   @override
@@ -94,8 +88,10 @@ class _HorizontalMessageCard extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: [
-          icon,
-          SpacingFoundation.horizontalSpace12,
+          if(icon!= null)
+            icon!,
+          if(icon!= null)
+            SpacingFoundation.horizontalSpace12,
           Expanded(
             child: Text(
               message.toUpperCase(),

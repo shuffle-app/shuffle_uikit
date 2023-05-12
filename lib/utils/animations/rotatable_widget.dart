@@ -26,7 +26,7 @@ class RotatableWidget extends StatefulWidget {
 class _RotatableWidgetState extends State<RotatableWidget>
     with SingleTickerProviderStateMixin {
   late final controller = AnimationController(
-    duration: const Duration(milliseconds: 2600),
+    duration: const Duration(milliseconds: 1600),
     vsync: this,
   );
   late final curvedAnimation =

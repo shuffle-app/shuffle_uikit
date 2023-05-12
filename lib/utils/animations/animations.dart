@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
+export 'back_anim_stack.dart';
+export 'rotatable_widget.dart';
+
 class Animations {
   static slideAnimation(
     Animation<double> animation,
     _,
     Widget child,
-  ) {
-    return SlideTransition(
-      position: Tween<Offset>(
-        end: Offset.zero,
-        begin: const Offset(0.0, 1.0),
-      ).animate(animation),
-      child: child,
-    );
-  }
+  ) =>
+      SlideTransition(
+        position: Tween<Offset>(
+          end: Offset.zero,
+          begin: const Offset(0.0, 1.0),
+        ).animate(animation),
+        child: child,
+      );
 
   static Tween<T> createImplicitTween<T>(T val) {
     return Tween<T>(begin: val, end: val);

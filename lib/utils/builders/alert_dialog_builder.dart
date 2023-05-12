@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
-    {VoidCallback? onPop, Widget? title, Widget? content, required String buttonText}) {
+    {VoidCallback? onPop,
+    Widget? title,
+    Widget? content,
+    required String buttonText}) {
   return showDialog<T>(
     context: context,
     builder: (BuildContext context) {
@@ -41,13 +44,15 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
 Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
   BuildContext context, {
   Color? backgroundColor = Colors.black,
-  required Widget child,
+  required Function child,
 }) {
+  final textStyle = context.uiKitTheme?.boldTextTheme.title2;
+
   return showDialog(
     context: context,
     barrierColor: Colors.white.withOpacity(0.1),
     useSafeArea: false,
-    builder: (context) => BackdropFilter(
+    builder: (_) => BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
       child: Dialog(
         shape: RoundedRectangleBorder(
@@ -55,7 +60,8 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
         ),
         backgroundColor: backgroundColor,
         clipBehavior: Clip.hardEdge,
-        child: child.paddingAll(EdgeInsetsFoundation.all24),
+        child: (child(_, textStyle) as Widget)
+            .paddingAll(EdgeInsetsFoundation.all24),
       ),
     ),
   );

@@ -39,26 +39,28 @@ showUiKitGeneralFullScreenDialog(
               const SlidingChip().paddingOnly(
                   top: SpacingFoundation.verticalSpacing12,
                   bottom: SpacingFoundation.verticalSpacing4),
-              Stack(fit: StackFit.expand, children: [
+              Expanded(
+                  child: Stack(fit: StackFit.expand, children: [
                 Container(
-                  decoration: ShapeDecoration(
-                    shape: shape ?? const RoundedRectangleBorder(),
-                  ),
-                  clipBehavior: Clip.hardEdge,
-                  child: SingleChildScrollView(
-                    physics: const ClampingScrollPhysics(),
-                    child: child,
-                  ),
-                ),
+                    decoration: ShapeDecoration(
+                      shape: shape ?? const RoundedRectangleBorder(),
+                    ),
+                    clipBehavior: Clip.hardEdge,
+                    child: SingleChildScrollView(
+                      primary: true,
+                      physics: const ClampingScrollPhysics(),
+                      child: child,
+                    )),
                 if (bottomBar != null)
                   Positioned(
                       bottom: 0,
+                      right: 0,
+                      left: 0,
                       child: Container(
                           decoration: BoxDecoration(
                               gradient: GradientFoundation.blackLinearGradient),
-                          width: double.infinity,
                           child: bottomBar))
-              ])
+              ])),
             ],
           ),
         ).paddingOnly(top: topPadding ?? 30.h),

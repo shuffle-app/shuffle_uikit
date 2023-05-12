@@ -16,7 +16,10 @@ class DialogTestingPage extends StatelessWidget {
                 onPressed: () => showUiKitGeneralFullScreenDialog(
                   context,
                   child: Column(
-                    children: List.generate(10, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
+                    children: List.generate(
+                        10,
+                        (index) =>
+                            const Placeholder().paddingSymmetric(vertical: 8)),
                   ),
                 ),
               ),
@@ -35,7 +38,8 @@ class DialogTestingPage extends StatelessWidget {
                   onPressed: () => showUiKitPopover(c,
                       title: const Text('Premium account'),
                       buttonText: 'see more',
-                      description: const Text('Only premium account users can post reactions')),
+                      description: const Text(
+                          'Only premium account users can post reactions')),
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -45,7 +49,8 @@ class DialogTestingPage extends StatelessWidget {
                   context,
                   buttonText: 'text',
                   title: const Text('You sent an invitation to 2 people.'),
-                  content: const Text('Invitations can be viewed in private messages'),
+                  content: const Text(
+                      'Invitations can be viewed in private messages'),
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -54,15 +59,17 @@ class DialogTestingPage extends StatelessWidget {
                 onPressed: () {
                   showUiKitFullScreenAlertDialog(
                     context,
-                    child: UiKitHintDialog(
+                    child: (_, textStyle) => UiKitHintDialog(
                       title: 'Fullscreen Dialog',
+                      textStyle: context.uiKitTheme?.boldTextTheme.title2,
                       subtitle: 'you get exactly what you need',
                       dismissText: 'OKAY, COOL!',
-                      onDismiss: () => Navigator.pop(context),
+                      onDismiss: () => Navigator.pop(_),
                       hintTiles: [
                         UiKitIconHintCard(
                           icon: ImageWidget(
-                            rasterAsset: GraphicsFoundation.instance.png.location,
+                            rasterAsset:
+                                GraphicsFoundation.instance.png.location,
                           ),
                           hint: 'your location',
                         ),
