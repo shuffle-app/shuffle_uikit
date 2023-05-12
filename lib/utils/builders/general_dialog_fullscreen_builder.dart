@@ -16,11 +16,11 @@ showUiKitGeneralFullScreenDialog(
   dismissable(c) => Dismissible(
         key: Key(DateTime.now().toString()),
         direction: DismissDirection.down,
-        onDismissed: (DismissDirection direction) async {
+        onDismissed: (DismissDirection direction) {
           // Чтобы закрыть сам диалог (убрать серый фон)
 
           if (onDismissed != _empty) {
-            await Future.delayed(
+            Future.delayed(
               const Duration(milliseconds: 200),
               () => onDismissed(),
             );

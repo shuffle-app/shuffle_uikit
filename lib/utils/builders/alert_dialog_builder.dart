@@ -41,15 +41,13 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
 Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
   BuildContext context, {
   Color? backgroundColor = Colors.black,
-  required Function child,
+  required Widget child,
 }) {
-  final textStyle = context.uiKitTheme?.boldTextTheme.title2;
-
   return showDialog(
     context: context,
     barrierColor: Colors.white.withOpacity(0.1),
     useSafeArea: false,
-    builder: (_) => BackdropFilter(
+    builder: (context) => BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
       child: Dialog(
         shape: RoundedRectangleBorder(
@@ -57,7 +55,7 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
         ),
         backgroundColor: backgroundColor,
         clipBehavior: Clip.hardEdge,
-        child: (child(_, textStyle) as Widget).paddingAll(EdgeInsetsFoundation.all24),
+        child: child.paddingAll(EdgeInsetsFoundation.all24),
       ),
     ),
   );

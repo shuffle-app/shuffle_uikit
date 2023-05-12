@@ -1,9 +1,13 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
+import 'package:flutter/material.dart';
+
 class Animations {
-  static slideAnimation(Animation<double> animation,
-      Animation<double> secondAnimation, Widget child) {
+  static slideAnimation(
+    Animation<double> animation,
+    _,
+    Widget child,
+  ) {
     return SlideTransition(
       position: Tween<Offset>(
         end: Offset.zero,
@@ -80,19 +84,14 @@ class _FadeScaleAnim extends StatefulWidget {
   State<_FadeScaleAnim> createState() => _FadeScaleAnimState();
 }
 
-class _FadeScaleAnimState extends State<_FadeScaleAnim>
-    with SingleTickerProviderStateMixin {
-  late final controller = AnimationController(
-      duration: const Duration(milliseconds: 1600), vsync: this);
-  late final curvedAnimation =
-      CurvedAnimation(parent: controller, curve: Curves.easeIn);
+class _FadeScaleAnimState extends State<_FadeScaleAnim> with SingleTickerProviderStateMixin {
+  late final controller = AnimationController(duration: const Duration(milliseconds: 1600), vsync: this);
+  late final curvedAnimation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 
   final double multiplier = 1.7;
 
-  late final scaleX = Tween<double>(begin: 1, end: 1 + 0.05769 * multiplier)
-      .animate(curvedAnimation);
-  late final scaleY = Tween<double>(begin: 1, end: 1 + 0.21126 * multiplier)
-      .animate(curvedAnimation);
+  late final scaleX = Tween<double>(begin: 1, end: 1 + 0.05769 * multiplier).animate(curvedAnimation);
+  late final scaleY = Tween<double>(begin: 1, end: 1 + 0.21126 * multiplier).animate(curvedAnimation);
   late final opacity = Tween<double>(begin: 1, end: 0).animate(curvedAnimation);
 
   @override
@@ -106,7 +105,7 @@ class _FadeScaleAnimState extends State<_FadeScaleAnim>
     }();
   }
 
-  void listenAnim(AnimationStatus status) {
+  void listenAnim(_) {
     if (controller.isCompleted) {
       controller.repeat();
     }
@@ -153,17 +152,14 @@ class RotatableWidget extends StatefulWidget {
   State<RotatableWidget> createState() => _RotatableWidgetState();
 }
 
-class _RotatableWidgetState extends State<RotatableWidget>
-    with SingleTickerProviderStateMixin {
+class _RotatableWidgetState extends State<RotatableWidget> with SingleTickerProviderStateMixin {
   late final controller = AnimationController(
     duration: const Duration(milliseconds: 2600),
     vsync: this,
   );
-  late final curvedAnimation =
-      CurvedAnimation(parent: controller, curve: Curves.easeIn);
+  late final curvedAnimation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 
-  late final angle = Tween<double>(begin: 0, end: 360 * math.pi / 180)
-      .animate(curvedAnimation);
+  late final angle = Tween<double>(begin: 0, end: 360 * math.pi / 180).animate(curvedAnimation);
 
   @override
   void initState() {
@@ -178,10 +174,8 @@ class _RotatableWidgetState extends State<RotatableWidget>
 
   //ignore: unused parameter
   void listenAnim(AnimationStatus status) {
-
     if (status == AnimationStatus.completed) {
-      Future.delayed(const Duration(seconds: 10))
-          .then((value) => controller.repeat());
+      Future.delayed(const Duration(seconds: 10)).then((value) => controller.repeat());
     }
   }
 
