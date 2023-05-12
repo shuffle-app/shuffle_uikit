@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class PlaceActionCard extends StatelessWidget {
+class BasePlaceActionCard extends StatelessWidget {
   final String title;
   final String value;
   final SvgGenImage? vectorIconAsset;
   final AssetGenImage? rasterIconAsset;
   final VoidCallback? action;
 
-  const PlaceActionCard({
+  const BasePlaceActionCard({
     Key? key,
     required this.title,
     required this.value,
@@ -71,28 +71,4 @@ class PlaceActionCard extends StatelessWidget {
       ),
     );
   }
-}
-
-class UpcomingEventPlaceActionCard extends PlaceActionCard {
-  const UpcomingEventPlaceActionCard({
-    super.key,
-    required super.value,
-    super.rasterIconAsset,
-    super.vectorIconAsset,
-    required super.action,
-  }) : super(
-          title: 'Upcoming Event',
-        );
-}
-
-class PointBalancePlaceActionCard extends PlaceActionCard {
-  const PointBalancePlaceActionCard({
-    super.key,
-    required super.value,
-    super.rasterIconAsset,
-    super.vectorIconAsset,
-    required super.action,
-  }) : super(
-          title: 'Point Balance',
-        );
 }

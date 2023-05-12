@@ -81,10 +81,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
-                          child: context.smallButton(
+                          child: context.smallOutlinedButton(
                             text: 'Not often',
-                            outlined: true,
-                            isTextButton: true,
                             onPressed: () {},
                           ),
                         ),
@@ -98,10 +96,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       ],
                     ),
                     SpacingFoundation.verticalSpace8,
-                    context.smallButton(
+                    context.smallOutlinedButton(
                       text: 'Hard to answer',
-                      outlined: true,
-                      isTextButton: true,
                       color: Colors.white.withOpacity(0.1),
                       onPressed: () {},
                     ),
@@ -303,9 +299,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               Row(
                 children: [
-                  context.button(
+                  context.gradientButton(
                     text: '',
-                    gradient: true,
                     icon: ImageWidget(
                       svgAsset: GraphicsFoundation.instance.svg.dice,
                     ),
@@ -383,9 +378,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  context.button(
+                  context.outlinedButton(
                     onPressed: () {},
-                    outlined: true,
                     icon: ImageWidget(
                       svgAsset: GraphicsFoundation.instance.svg.route,
                       color: Colors.white,
@@ -393,16 +387,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ),
                   SpacingFoundation.horizontalSpace12,
                   Expanded(
-                    child: context.button(
+                    child: context.gradientButton(
                       text: 'Book it',
                       onPressed: () {},
-                      gradient: true,
                     ),
                   ),
                   SpacingFoundation.horizontalSpace12,
-                  context.button(
+                  context.outlinedButton(
                     onPressed: () {},
-                    outlined: true,
                     icon: ImageWidget(
                       svgAsset: GraphicsFoundation.instance.svg.searchPeople,
                       color: Colors.white,

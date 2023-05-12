@@ -6,9 +6,7 @@ abstract class WidgetsAbstractFactory {
     required String text,
     VoidCallback? onPressed,
     Widget? icon,
-    bool gradient = false,
     bool isTextButton = false,
-    bool? outlined,
     bool? blurred,
   });
 
@@ -23,11 +21,28 @@ abstract class WidgetsAbstractFactory {
     required String text,
     VoidCallback? onPressed,
     Widget? icon,
-    Color? color,
-    bool gradient = false,
     bool isTextButton = false,
-    bool? outlined,
     bool? blurred,
+  });
+
+  ButtonFactory createOutlinedButton({
+    required String text,
+    VoidCallback? onPressed,
+    Widget? icon,
+    Color? color,
+  });
+
+  ButtonFactory createSmallOutlinedButton({
+    required String text,
+    VoidCallback? onPressed,
+    Widget? icon,
+    Color? color,
+  });
+
+  ButtonFactory createGradientButton({
+    required String text,
+    VoidCallback? onPressed,
+    Widget? icon,
   });
 
   UserTileFactory createUserTile({
@@ -63,36 +78,79 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  ButtonFactory createOrdinaryButton({
+  ButtonFactory createSmallOutlinedButton({
     required String text,
     VoidCallback? onPressed,
     Widget? icon,
-    bool gradient = false,
-    bool isTextButton = false,
-    bool? outlined,
+    Color? color,
+  }) {
+    return SmallOutlinedButton(
+      onPressed: onPressed,
+      text: text,
+      borderColor: color,
+      textColor: color,
+    );
+  }
+
+  @override
+  ButtonFactory createOutlinedButton({
+    required String text,
+    VoidCallback? onPressed,
+    Widget? icon,
     bool? blurred,
+    Color? color,
+  }) {
+    if (text.isEmpty && icon != null) {
+      return OutlinedIconButton(
+        icon: icon,
+        onPressed: onPressed,
+      );
+    } else {
+      throw UnimplementedError('Outlined button with your parameters is not implemented');
+    }
+  }
+
+  @override
+  ButtonFactory createGradientButton({
+    required String text,
+    VoidCallback? onPressed,
+    Widget? icon,
   }) {
     final hasIcon = icon != null;
-    final gradientIconButton = gradient && hasIcon && text.isEmpty;
-    final onlyIconButton = hasIcon && text.isEmpty && !isTextButton && !(blurred ?? false);
-
+    final gradientIconButton = hasIcon && text.isEmpty;
     if (gradientIconButton) {
       return GradientIconButton(
         icon: icon,
         onPressed: onPressed,
       );
-    } else if (gradient && !hasIcon && !onlyIconButton) {
+    } else if (!hasIcon && text.isNotEmpty) {
       return GradientButton(
         text: text,
         onPressed: onPressed,
       );
-    } else if (hasIcon && gradient && !onlyIconButton) {
-      return GradientButtonWithIcon(
+    } else if (hasIcon && text.isNotEmpty) {
+      return GradientButtonWithTextAndIcon(
         text: text,
         icon: icon,
         onPressed: onPressed,
       );
-    } else if (hasIcon && !gradient && !onlyIconButton && !(blurred ?? false)) {
+    } else {
+      throw UnimplementedError('Gradient button with your parameters is not implemented');
+    }
+  }
+
+  @override
+  ButtonFactory createOrdinaryButton({
+    required String text,
+    VoidCallback? onPressed,
+    Widget? icon,
+    bool isTextButton = false,
+    bool? blurred,
+  }) {
+    final hasIcon = icon != null;
+    final onlyIconButton = hasIcon && text.isEmpty && !isTextButton && !(blurred ?? false);
+
+    if (hasIcon && !onlyIconButton && !(blurred ?? false)) {
       return OrdinaryButtonWithIcon(
         text: text,
         onPressed: onPressed,
@@ -101,11 +159,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     } else if (isTextButton) {
       return OrdinaryTextButton(
         text: text,
-        onPressed: onPressed,
-      );
-    } else if (onlyIconButton && (outlined ?? false)) {
-      return OutlinedIconButton(
-        icon: icon,
         onPressed: onPressed,
       );
     } else if (onlyIconButton) {
@@ -131,28 +184,16 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     return false;
   }
 
-
-
   @override
   ButtonFactory createSmallButton({
     required String text,
     VoidCallback? onPressed,
     Widget? icon,
-    Color? color,
-    bool gradient = false,
     bool isTextButton = false,
-    bool? outlined,
     bool? blurred,
   }) {
     final hasIcon = icon != null;
-    if ((outlined ?? false) && isTextButton) {
-      return SmallOutlinedButton(
-        onPressed: onPressed,
-        text: text,
-        borderColor: color,
-        textColor: color,
-      );
-    } else if (hasIcon && (blurred ?? false)) {
+    if (hasIcon && (blurred ?? false)) {
       return SmallBlurredButtonWithIcon(
         icon: icon,
         onPressed: onPressed,
@@ -171,7 +212,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     String? username,
     String? avatarUrl,
     UserTileType? type,
-    Border? border,
     VoidCallback? onTap,
   }) {
     switch (type) {
@@ -180,15 +220,13 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           name: name,
           avatarUrl: avatarUrl,
           username: username,
-          border: border,
           onTap: onTap,
         );
       case UserTileType.ordinary:
-        return UserTile(
+        return OrdinaryUserTile(
           name: name,
           avatarUrl: avatarUrl,
           username: username,
-          border: border,
           onTap: onTap,
         );
       case UserTileType.premium:
@@ -196,7 +234,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           name: name,
           avatarUrl: avatarUrl,
           username: username,
-          border: border,
           onTap: onTap,
         );
       case UserTileType.influencer:
@@ -204,15 +241,13 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           name: name,
           avatarUrl: avatarUrl,
           username: username,
-          border: border,
           onTap: onTap,
         );
       case null:
-        return UserTile(
+        return OrdinaryUserTile(
           name: name,
           avatarUrl: avatarUrl,
           username: username,
-          border: border,
           onTap: onTap,
         );
     }

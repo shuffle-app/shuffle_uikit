@@ -11,21 +11,18 @@ class ButtonsList extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        context.button(
+        context.gradientButton(
           text: 'GET CODE',
           onPressed: () {},
-          gradient: true,
         ),
         SpacingFoundation.verticalSpace16,
-        context.button(
+        context.gradientButton(
           text: 'GET CODE',
-          gradient: true,
         ),
         SpacingFoundation.verticalSpace16,
-        context.button(
+        context.gradientButton(
           icon: const CupertinoActivityIndicator(),
           text: 'GET CODE',
-          gradient: true,
           onPressed: () {},
         ),
         SpacingFoundation.verticalSpace16,
@@ -78,13 +75,12 @@ class ButtonsList extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.max,
           children: [
-            context.button(
+            context.outlinedButton(
               icon: ImageWidget(
                 svgAsset: GraphicsFoundation.instance.svg.route,
                 color: Colors.white,
               ),
               onPressed: () {},
-              outlined: true,
             ),
             SpacingFoundation.horizontalSpace8,
             context.button(
