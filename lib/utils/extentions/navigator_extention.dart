@@ -40,7 +40,6 @@ extension NavigatorExtention on BuildContext {
     Widget screen, {
     RouteSettings? settings,
     bool maintainState = true,
-    bool fullscreenDialog = false,
     bool routes = false,
     RoutePredicate? routePredicate,
   }) async =>
@@ -49,7 +48,6 @@ extension NavigatorExtention on BuildContext {
             builder: (_) => screen,
             settings: settings,
             maintainState: maintainState,
-            fullscreenDialog: fullscreenDialog,
           ),
           routePredicate ?? ((Route<dynamic> route) => routes));
 
