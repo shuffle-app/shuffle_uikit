@@ -39,6 +39,7 @@ class UiKitHintDialog extends StatelessWidget {
         SpacingFoundation.verticalSpace8,
         Text(
           subtitle,
+          textAlign: TextAlign.center,
           style: textStyle,
         ),
         SpacingFoundation.verticalSpace8,

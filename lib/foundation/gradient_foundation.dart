@@ -53,10 +53,10 @@ class GradientFoundation {
     ],
   );
 
-  static final blackLinearGradient =  LinearGradient(
+  static const blackLinearGradient =  LinearGradient(
     colors: [
-      ColorsFoundation.surface,
-      ColorsFoundation.surface.withOpacity(0.7),
+      UiKitColors.surface,
+      Colors.transparent,
     ],
     begin: Alignment.bottomCenter,
     end: Alignment.topCenter,

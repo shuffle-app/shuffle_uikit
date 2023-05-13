@@ -61,7 +61,7 @@ showUiKitGeneralFullScreenDialog(
                       right: 0,
                       left: 0,
                       child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                               gradient: GradientFoundation.blackLinearGradient),
                           child: bottomBar))
               ])),

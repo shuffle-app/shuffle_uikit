@@ -16,7 +16,7 @@ class UiKitGradientQuestionChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipPath(
       clipper: GradientQuestionChipClipper(),
-      child: Container(
+      child: InkWell(onTap: onTap, child: Container(
         decoration: const BoxDecoration(
           gradient: GradientFoundation.badgeIcon,
         ),
@@ -27,7 +27,7 @@ class UiKitGradientQuestionChip extends StatelessWidget {
           vertical: EdgeInsetsFoundation.vertical12,
           horizontal: EdgeInsetsFoundation.horizontal32,
         ),
-      ),
+      )),
     );
   }
 }
