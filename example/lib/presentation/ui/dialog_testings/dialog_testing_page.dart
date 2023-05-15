@@ -11,7 +11,7 @@ class DialogTestingPage extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              GeneralPurposeButton(
+              OrdinaryButton(
                 text: 'Dialog bottom sheet fullscreen',
                 onPressed: () => showUiKitGeneralFullScreenDialog(
                   context,
@@ -24,7 +24,7 @@ class DialogTestingPage extends StatelessWidget {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
-              GeneralPurposeButton(
+              OrdinaryButton(
                 text: 'Dialog calendar picker',
                 onPressed: () => showUiKitCalendarDialog(
                   context,
@@ -33,7 +33,7 @@ class DialogTestingPage extends StatelessWidget {
               SpacingFoundation.verticalSpace16,
               //почему то работает только так отображение поповера, надо подумать
               Builder(
-                builder: (c) => GeneralPurposeButton(
+                builder: (c) => OrdinaryButton(
                   text: 'Dialog comment',
                   onPressed: () => showUiKitPopover(c,
                       title: const Text('Premium account'),
@@ -43,7 +43,7 @@ class DialogTestingPage extends StatelessWidget {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
-              GeneralPurposeButton(
+              OrdinaryButton(
                 text: 'Dialog alert',
                 onPressed: () => showUiKitAlertDialog(
                   context,
@@ -54,78 +54,42 @@ class DialogTestingPage extends StatelessWidget {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
-              GeneralPurposeButton(
+              OrdinaryButton(
                 text: 'Fullscreen Dialog',
                 onPressed: () {
-                  // final textStyle = context.uiKitTheme?.boldTextTheme.title2;
                   showUiKitFullScreenAlertDialog(
                     context,
-                    child: (context, textStyle) => Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Fullscreen Dialog',
-                          style: textStyle,
+                    child: (_, textStyle) => UiKitHintDialog(
+                      title: 'Fullscreen Dialog',
+                      textStyle: context.uiKitTheme?.boldTextTheme.title2,
+                      subtitle: 'you get exactly what you need',
+                      dismissText: 'OKAY, COOL!',
+                      onDismiss: () => Navigator.pop(_),
+                      hintTiles: [
+                        UiKitIconHintCard(
+                          icon: ImageWidget(
+                            rasterAsset:
+                                GraphicsFoundation.instance.png.location,
+                          ),
+                          hint: 'your location',
                         ),
-                        SpacingFoundation.verticalSpace8,
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: UiKitIconHintCard(
-                                icon: ImageWidget(
-                                  rasterAsset:
-                                      GraphicsFoundation.instance.png.location,
-                                ),
-                                hint: 'your location',
-                              ),
-                            ),
-                            SpacingFoundation.horizontalSpace16,
-                            Expanded(
-                              child: UiKitIconHintCard(
-                                icon: ImageWidget(
-                                  rasterAsset:
-                                      GraphicsFoundation.instance.png.target,
-                                ),
-                                hint: 'your interests',
-                              ),
-                            ),
-                          ],
+                        UiKitIconHintCard(
+                          icon: ImageWidget(
+                            rasterAsset: GraphicsFoundation.instance.png.target,
+                          ),
+                          hint: 'your interests',
                         ),
-                        SpacingFoundation.verticalSpace8,
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Expanded(
-                              child: UiKitIconHintCard(
-                                icon: ImageWidget(
-                                  rasterAsset:
-                                      GraphicsFoundation.instance.png.cloudy,
-                                ),
-                                hint: 'weather around',
-                              ),
-                            ),
-                            SpacingFoundation.horizontalSpace16,
-                            Expanded(
-                              child: UiKitIconHintCard(
-                                icon: ImageWidget(
-                                  rasterAsset:
-                                      GraphicsFoundation.instance.png.mood,
-                                ),
-                                hint: 'and other 14 scales',
-                              ),
-                            ),
-                          ],
+                        UiKitIconHintCard(
+                          icon: ImageWidget(
+                            rasterAsset: GraphicsFoundation.instance.png.cloudy,
+                          ),
+                          hint: 'weather around',
                         ),
-                        SpacingFoundation.verticalSpace8,
-                        Text(
-                          'you get exactly what you need',
-                          style: textStyle,
-                        ),
-                        SpacingFoundation.verticalSpace8,
-                        context.button(
-                          text: 'OKAY, COOL!',
-                          onPressed: () => Navigator.pop(context),
+                        UiKitIconHintCard(
+                          icon: ImageWidget(
+                            rasterAsset: GraphicsFoundation.instance.png.mood,
+                          ),
+                          hint: 'and other 14 scales',
                         ),
                       ],
                     ),

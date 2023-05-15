@@ -5,12 +5,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
     {VoidCallback? onPop,
-      Widget? title,
-      Widget? content,
-      required String buttonText}) {
+    Widget? title,
+    Widget? content,
+    required String buttonText}) {
   return showDialog<T>(
     context: context,
     builder: (BuildContext context) {
+      final textTheme = context.uiKitTheme?.boldTextTheme;
+
       return AlertDialog(
         backgroundColor: context.uiKitTheme?.cardTheme.color,
         clipBehavior: Clip.hardEdge,
@@ -20,9 +22,9 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
         ),
         titlePadding: const EdgeInsets.fromLTRB(24, 24, 24, 8),
         title: Center(child: title),
-        titleTextStyle: context.uiKitTheme?.boldTextTheme.caption2Bold,
+        titleTextStyle: textTheme?.caption2Bold,
         content: content,
-        contentTextStyle: context.uiKitTheme?.boldTextTheme.body,
+        contentTextStyle: textTheme?.body,
         contentPadding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
         actions: [
           context.dialogButton(
@@ -40,28 +42,27 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
 }
 
 Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
-    BuildContext context, {
-      Color? backgroundColor = Colors.black,
-      required Function child,
-    }) {
-  final textStyle =
-      context.uiKitTheme?.boldTextTheme.title2;
+  BuildContext context, {
+  Color? backgroundColor = Colors.black,
+  required Function child,
+}) {
+  final textStyle = context.uiKitTheme?.boldTextTheme.title2;
+
   return showDialog(
     context: context,
     barrierColor: Colors.white.withOpacity(0.1),
     useSafeArea: false,
-    builder: (_) =>
-        BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
-          child: Dialog(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadiusFoundation.all40,
-            ),
-            backgroundColor: backgroundColor,
-            clipBehavior: Clip.hardEdge,
-            child: (child(_, textStyle) as Widget).paddingAll(
-                EdgeInsetsFoundation.all24),
-          ),
+    builder: (_) => BackdropFilter(
+      filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+      child: Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusFoundation.all40,
         ),
+        backgroundColor: backgroundColor,
+        clipBehavior: Clip.hardEdge,
+        child: (child(_, textStyle) as Widget)
+            .paddingAll(EdgeInsetsFoundation.all24),
+      ),
+    ),
   );
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/ui_kit_spacing.dart';
-import 'package:shuffle_uikit/ui_kit/molecules/profile/profile_highlights_card.dart';
+import 'package:shuffle_uikit/foundation/spacing_foundation.dart';
+import 'package:shuffle_uikit/ui_kit/molecules/profile/profile_highlight_card.dart';
 
 class ProfileHighlights extends StatelessWidget {
   final int placesVisited;

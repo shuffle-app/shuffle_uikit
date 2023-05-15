@@ -48,16 +48,13 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
       color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
     );
     TextStyle? labelStyle = uiKitTheme?.regularTextTheme.labelSmall;
-    if (_key.currentState?.hasError ?? false) {
-      labelStyle = labelStyle?.copyWith(color: ColorsFoundation.error);
-    } else {
-      labelStyle = labelStyle?.copyWith(
-        color: widget.enabled ? ColorsFoundation.darkNeutral100 : ColorsFoundation.darkNeutral900,
-      );
-    }
+    labelStyle = _key.currentState?.hasError ?? false
+        ? labelStyle?.copyWith(color: ColorsFoundation.error)
+        : labelStyle?.copyWith(color: widget.enabled ? ColorsFoundation.darkNeutral100 : ColorsFoundation.darkNeutral900);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
+
     return Theme(
       data: Theme.of(context).copyWith(
         inputDecorationTheme: inputTheme,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
-extension SliverExt on Widget {
+extension SliverExtention on Widget {
   Widget get wrapSliverBox => SliverToBoxAdapter(child: this);
 }

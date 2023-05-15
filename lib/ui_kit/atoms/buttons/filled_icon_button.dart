@@ -15,17 +15,22 @@ class FilledIconButton extends StatelessWidget implements ButtonFactory {
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
-    return GestureDetector(
-      onTap: onPressed,
-      child: Container(
-        height: 48.h,
-        width: 48.w,
-        clipBehavior: Clip.hardEdge,
-        decoration: BoxDecoration(
-          color: enabled ? Colors.white.withOpacity(0.1) : ColorsFoundation.darkNeutral300,
-          shape: BoxShape.circle,
+
+    return Material(
+      color: enabled ? Colors.white.withOpacity(0.1) : ColorsFoundation.darkNeutral300,
+      shape: const CircleBorder(),
+      clipBehavior: Clip.hardEdge,
+      child: InkWell(
+        onTap: onPressed,
+        borderRadius: BorderRadiusFoundation.max,
+        child: Ink(
+          height: 48.h,
+          width: 48.w,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+          ),
+          child: Center(child: icon),
         ),
-        child: Center(child: icon),
       ),
     );
   }

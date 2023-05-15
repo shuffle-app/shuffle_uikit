@@ -1,6 +1,8 @@
 import 'package:flutter/painting.dart';
 
-class UiKitRegularTextTheme {
+abstract class UiKitTextTheme {}
+
+class UiKitRegularTextTheme extends UiKitTextTheme {
   final TextStyle labelSmall = const TextStyle(
     fontFamily: 'Unbounded',
     fontSize: 12,
@@ -15,7 +17,7 @@ class UiKitRegularTextTheme {
     color: Color(0xffffffff),
     package: 'shuffle_uikit',
   );
-  TextStyle get caption1UpperCase => caption1;
+
   final TextStyle caption2 = const TextStyle(
     fontFamily: 'Unbounded',
     fontSize: 12,
@@ -23,7 +25,7 @@ class UiKitRegularTextTheme {
     color: Color(0xffffffff),
     package: 'shuffle_uikit',
   );
-  TextStyle get subHeadline => body;
+
   final TextStyle body = const TextStyle(
     fontFamily: 'Unbounded',
     fontSize: 16,
@@ -31,7 +33,7 @@ class UiKitRegularTextTheme {
     color: Color(0xffffffff),
     package: 'shuffle_uikit',
   );
-  TextStyle get bodyUpperCase => body;
+
   final TextStyle title1 = const TextStyle(
     fontFamily: 'Unbounded',
     fontSize: 24,
@@ -54,9 +56,15 @@ class UiKitRegularTextTheme {
     color: Color(0xffffffff),
     package: 'shuffle_uikit',
   );
+
+  TextStyle get caption1UpperCase => caption1;
+
+  TextStyle get subHeadline => body;
+
+  TextStyle get bodyUpperCase => body;
 }
 
-class UiKitBoldTextTheme {
+class UiKitBoldTextTheme extends UiKitTextTheme {
   final TextStyle labelLarge = const TextStyle(
     fontFamily: 'Unbounded',
     fontSize: 16,
@@ -72,8 +80,7 @@ class UiKitBoldTextTheme {
     color: Color(0xffffffff),
     package: 'shuffle_uikit',
   );
-  TextStyle get caption1UpperCaseMedium => caption1Medium;
-  TextStyle get caption1UpperCase => caption1Bold;
+
   final TextStyle caption1Bold = const TextStyle(
     fontFamily: 'Unbounded',
     fontSize: 13,
@@ -95,7 +102,7 @@ class UiKitBoldTextTheme {
     color: Color(0xffffffff),
     package: 'shuffle_uikit',
   );
-  TextStyle get caption2UpperCaseMedium => caption2Medium;
+
   final TextStyle subHeadline = const TextStyle(
     fontFamily: 'Unbounded',
     fontSize: 16,
@@ -110,7 +117,7 @@ class UiKitBoldTextTheme {
     color: Color(0xffffffff),
     package: 'shuffle_uikit',
   );
-  TextStyle get bodyUpperCase => body;
+
   final TextStyle title1 = const TextStyle(
     fontFamily: 'Unbounded',
     fontSize: 24,
@@ -133,4 +140,12 @@ class UiKitBoldTextTheme {
     color: Color(0xffffffff),
     package: 'shuffle_uikit',
   );
+
+  TextStyle get caption1UpperCaseMedium => caption1Medium;
+
+  TextStyle get bodyUpperCase => body;
+
+  TextStyle get caption2UpperCaseMedium => caption2Medium;
+
+  TextStyle get caption1UpperCase => caption1Bold;
 }

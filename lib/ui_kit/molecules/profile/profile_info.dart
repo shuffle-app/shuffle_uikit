@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -17,6 +19,7 @@ class ProfileInfo extends StatelessWidget {
     final fallBackStyle = Theme.of(context).textTheme.bodyMedium;
     TextStyle? nickNameStyle = boldTextTheme?.bodyUpperCase ?? fallBackStyle;
     TextStyle? followersCountStyle = boldTextTheme?.title2 ?? fallBackStyle;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -43,7 +46,9 @@ class ProfileInfo extends StatelessWidget {
         SpacingFoundation.verticalSpace12,
         context.button(
           text: 'FOLLOW',
-          onPressed: () {},
+          onPressed: () {
+            log('FOLLOW', name: 'ProfileInfo');
+          },
         ),
       ],
     );

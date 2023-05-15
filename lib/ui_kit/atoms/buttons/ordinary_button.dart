@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class GeneralPurposeButton extends StatelessWidget implements ButtonFactory {
+class OrdinaryButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
 
-  const GeneralPurposeButton({
+  const OrdinaryButton({
     Key? key,
     required this.text,
     this.onPressed,
@@ -15,6 +15,7 @@ class GeneralPurposeButton extends StatelessWidget implements ButtonFactory {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final textStyle = theme?.boldTextTheme.bodyUpperCase;
+
     return ElevatedButton(
       style: theme?.ordinaryButtonStyle,
       onPressed: onPressed,

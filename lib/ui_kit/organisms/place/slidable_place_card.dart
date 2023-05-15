@@ -15,6 +15,7 @@ class SlidablePlaceCard extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, size) {
         final theme = context.uiKitTheme;
+
         return Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
