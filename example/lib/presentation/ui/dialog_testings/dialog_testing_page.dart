@@ -16,10 +16,7 @@ class DialogTestingPage extends StatelessWidget {
                 onPressed: () => showUiKitGeneralFullScreenDialog(
                   context,
                   child: Column(
-                    children: List.generate(
-                        10,
-                        (index) =>
-                            const Placeholder().paddingSymmetric(vertical: 8)),
+                    children: List.generate(10, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
                   ),
                 ),
               ),
@@ -38,8 +35,7 @@ class DialogTestingPage extends StatelessWidget {
                   onPressed: () => showUiKitPopover(c,
                       title: const Text('Premium account'),
                       buttonText: 'see more',
-                      description: const Text(
-                          'Only premium account users can post reactions')),
+                      description: const Text('Only premium account users can post reactions')),
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -49,8 +45,7 @@ class DialogTestingPage extends StatelessWidget {
                   context,
                   buttonText: 'text',
                   title: const Text('You sent an invitation to 2 people.'),
-                  content: const Text(
-                      'Invitations can be viewed in private messages'),
+                  content: const Text('Invitations can be viewed in private messages'),
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -68,26 +63,25 @@ class DialogTestingPage extends StatelessWidget {
                       hintTiles: [
                         UiKitIconHintCard(
                           icon: ImageWidget(
-                            rasterAsset:
-                                GraphicsFoundation.instance.png.location,
+                            svgAsset: GraphicsFoundation.instance.svg.location,
                           ),
                           hint: 'your location',
                         ),
                         UiKitIconHintCard(
                           icon: ImageWidget(
-                            rasterAsset: GraphicsFoundation.instance.png.target,
+                            svgAsset: GraphicsFoundation.instance.svg.dart,
                           ),
                           hint: 'your interests',
                         ),
                         UiKitIconHintCard(
                           icon: ImageWidget(
-                            rasterAsset: GraphicsFoundation.instance.png.cloudy,
+                            svgAsset: GraphicsFoundation.instance.svg.sunClouds,
                           ),
                           hint: 'weather around',
                         ),
                         UiKitIconHintCard(
                           icon: ImageWidget(
-                            rasterAsset: GraphicsFoundation.instance.png.mood,
+                            svgAsset: GraphicsFoundation.instance.svg.smileMood,
                           ),
                           hint: 'and other 14 scales',
                         ),

@@ -63,26 +63,8 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/balloons.png
   AssetGenImage get balloons => const AssetGenImage('assets/images/png/balloons.png');
 
-  /// File path: assets/images/png/calendar.png
-  AssetGenImage get calendar => const AssetGenImage('assets/images/png/calendar.png');
-
-  /// File path: assets/images/png/cloudy.png
-  AssetGenImage get cloudy => const AssetGenImage('assets/images/png/cloudy.png');
-
-  /// File path: assets/images/png/coins.png
-  AssetGenImage get coins => const AssetGenImage('assets/images/png/coins.png');
-
-  /// File path: assets/images/png/crazy_emoji.png
-  AssetGenImage get crazyEmoji => const AssetGenImage('assets/images/png/crazy_emoji.png');
-
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
-
-  /// File path: assets/images/png/holding_heart_emoji.png
-  AssetGenImage get holdingHeartEmoji => const AssetGenImage('assets/images/png/holding_heart_emoji.png');
-
-  /// File path: assets/images/png/location.png
-  AssetGenImage get location => const AssetGenImage('assets/images/png/location.png');
 
   /// File path: assets/images/png/mock_ad_banner.png
   AssetGenImage get mockAdBanner => const AssetGenImage('assets/images/png/mock_ad_banner.png');
@@ -92,9 +74,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/mock_user_avatar.png
   AssetGenImage get mockUserAvatar => const AssetGenImage('assets/images/png/mock_user_avatar.png');
-
-  /// File path: assets/images/png/mood.png
-  AssetGenImage get mood => const AssetGenImage('assets/images/png/mood.png');
 
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
@@ -108,42 +87,195 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
 
-  /// File path: assets/images/png/skiing_guy.png
-  AssetGenImage get skiingGuy => const AssetGenImage('assets/images/png/skiing_guy.png');
-
-  /// File path: assets/images/png/target.png
-  AssetGenImage get target => const AssetGenImage('assets/images/png/target.png');
-
-  /// File path: assets/images/png/weather_icon.png
-  AssetGenImage get weatherIcon => const AssetGenImage('assets/images/png/weather_icon.png');
-
   /// List of all assets
   List<AssetGenImage> get values => [
         atmosphere,
         balloons,
-        calendar,
-        cloudy,
-        coins,
-        crazyEmoji,
         eventAvatar,
-        holdingHeartEmoji,
-        location,
         mockAdBanner,
         mockSwiperCard,
         mockUserAvatar,
-        mood,
         place,
         profileAvatar,
         profilePost1,
-        profileStory1,
-        skiingGuy,
-        target,
-        weatherIcon
+        profileStory1
       ];
 }
 
 class $AssetsImagesSvgGen {
   const $AssetsImagesSvgGen();
+
+  /// File path: assets/images/svg/Angry-emoji.svg
+  SvgGenImage get angryEmoji => const SvgGenImage('assets/images/svg/Angry-emoji.svg');
+
+  /// File path: assets/images/svg/Aubergine.svg
+  SvgGenImage get aubergine => const SvgGenImage('assets/images/svg/Aubergine.svg');
+
+  /// File path: assets/images/svg/Baggage.svg
+  SvgGenImage get baggage => const SvgGenImage('assets/images/svg/Baggage.svg');
+
+  /// File path: assets/images/svg/Bell-notification.svg
+  SvgGenImage get bellNotification => const SvgGenImage('assets/images/svg/Bell-notification.svg');
+
+  /// File path: assets/images/svg/Binoculars.svg
+  SvgGenImage get binoculars => const SvgGenImage('assets/images/svg/Binoculars.svg');
+
+  /// File path: assets/images/svg/Clapperboard.svg
+  SvgGenImage get clapperboard => const SvgGenImage('assets/images/svg/Clapperboard.svg');
+
+  /// File path: assets/images/svg/Cocktail-2.svg
+  SvgGenImage get cocktail2 => const SvgGenImage('assets/images/svg/Cocktail-2.svg');
+
+  /// File path: assets/images/svg/Cocktail-3d.svg
+  SvgGenImage get cocktail3d => const SvgGenImage('assets/images/svg/Cocktail-3d.svg');
+
+  /// File path: assets/images/svg/Coin.svg
+  SvgGenImage get coin => const SvgGenImage('assets/images/svg/Coin.svg');
+
+  /// File path: assets/images/svg/Company.svg
+  SvgGenImage get company => const SvgGenImage('assets/images/svg/Company.svg');
+
+  /// File path: assets/images/svg/Dart.svg
+  SvgGenImage get dart => const SvgGenImage('assets/images/svg/Dart.svg');
+
+  /// File path: assets/images/svg/Discount.svg
+  SvgGenImage get discount => const SvgGenImage('assets/images/svg/Discount.svg');
+
+  /// File path: assets/images/svg/Donations.svg
+  SvgGenImage get donations => const SvgGenImage('assets/images/svg/Donations.svg');
+
+  /// File path: assets/images/svg/Events.svg
+  SvgGenImage get events => const SvgGenImage('assets/images/svg/Events.svg');
+
+  /// File path: assets/images/svg/Feedback.svg
+  SvgGenImage get feedback => const SvgGenImage('assets/images/svg/Feedback.svg');
+
+  /// File path: assets/images/svg/Femle.svg
+  SvgGenImage get femle => const SvgGenImage('assets/images/svg/Femle.svg');
+
+  /// File path: assets/images/svg/Fire.svg
+  SvgGenImage get fire => const SvgGenImage('assets/images/svg/Fire.svg');
+
+  /// File path: assets/images/svg/First-aid-kit.svg
+  SvgGenImage get firstAidKit => const SvgGenImage('assets/images/svg/First-aid-kit.svg');
+
+  /// File path: assets/images/svg/Followers.svg
+  SvgGenImage get followers => const SvgGenImage('assets/images/svg/Followers.svg');
+
+  /// File path: assets/images/svg/Giving-like-emoji.svg
+  SvgGenImage get givingLikeEmoji => const SvgGenImage('assets/images/svg/Giving-like-emoji.svg');
+
+  /// File path: assets/images/svg/Grinning-face-with-sweat-emoji.svg
+  SvgGenImage get grinningFaceWithSweatEmoji =>
+      const SvgGenImage('assets/images/svg/Grinning-face-with-sweat-emoji.svg');
+
+  /// File path: assets/images/svg/Hat.svg
+  SvgGenImage get hat => const SvgGenImage('assets/images/svg/Hat.svg');
+
+  /// File path: assets/images/svg/Heart-eyes-emoji.svg
+  SvgGenImage get heartEyesEmoji => const SvgGenImage('assets/images/svg/Heart-eyes-emoji.svg');
+
+  /// File path: assets/images/svg/Heart-in-hand-emoji.svg
+  SvgGenImage get heartInHandEmoji => const SvgGenImage('assets/images/svg/Heart-in-hand-emoji.svg');
+
+  /// File path: assets/images/svg/Hi-new-invitees.svg
+  SvgGenImage get hiNewInvitees => const SvgGenImage('assets/images/svg/Hi-new-invitees.svg');
+
+  /// File path: assets/images/svg/Icecream.svg
+  SvgGenImage get icecream => const SvgGenImage('assets/images/svg/Icecream.svg');
+
+  /// File path: assets/images/svg/Index-finger-hands.svg
+  SvgGenImage get indexFingerHands => const SvgGenImage('assets/images/svg/Index-finger-hands.svg');
+
+  /// File path: assets/images/svg/Key.svg
+  SvgGenImage get key => const SvgGenImage('assets/images/svg/Key.svg');
+
+  /// File path: assets/images/svg/Laptop-with-chart.svg
+  SvgGenImage get laptopWithChart => const SvgGenImage('assets/images/svg/Laptop-with-chart.svg');
+
+  /// File path: assets/images/svg/Laughing-with-tears-emoji.svg
+  SvgGenImage get laughingWithTearsEmoji => const SvgGenImage('assets/images/svg/Laughing-with-tears-emoji.svg');
+
+  /// File path: assets/images/svg/Lifebuoy-3d.svg
+  SvgGenImage get lifebuoy3d => const SvgGenImage('assets/images/svg/Lifebuoy-3d.svg');
+
+  /// File path: assets/images/svg/Like-hands.svg
+  SvgGenImage get likeHands => const SvgGenImage('assets/images/svg/Like-hands.svg');
+
+  /// File path: assets/images/svg/Male.svg
+  SvgGenImage get male => const SvgGenImage('assets/images/svg/Male.svg');
+
+  /// File path: assets/images/svg/Mango.svg
+  SvgGenImage get mango => const SvgGenImage('assets/images/svg/Mango.svg');
+
+  /// File path: assets/images/svg/Map.svg
+  SvgGenImage get map => const SvgGenImage('assets/images/svg/Map.svg');
+
+  /// File path: assets/images/svg/Money.svg
+  SvgGenImage get money => const SvgGenImage('assets/images/svg/Money.svg');
+
+  /// File path: assets/images/svg/Networking.svg
+  SvgGenImage get networking => const SvgGenImage('assets/images/svg/Networking.svg');
+
+  /// File path: assets/images/svg/Ok-hands.svg
+  SvgGenImage get okHands => const SvgGenImage('assets/images/svg/Ok-hands.svg');
+
+  /// File path: assets/images/svg/Other-gender.svg
+  SvgGenImage get otherGender => const SvgGenImage('assets/images/svg/Other-gender.svg');
+
+  /// File path: assets/images/svg/Outstanding.svg
+  SvgGenImage get outstanding => const SvgGenImage('assets/images/svg/Outstanding.svg');
+
+  /// File path: assets/images/svg/Pie-chart.svg
+  SvgGenImage get pieChart => const SvgGenImage('assets/images/svg/Pie-chart.svg');
+
+  /// File path: assets/images/svg/Pixelated-sunglasses-emoji.svg
+  SvgGenImage get pixelatedSunglassesEmoji => const SvgGenImage('assets/images/svg/Pixelated-sunglasses-emoji.svg');
+
+  /// File path: assets/images/svg/Porthole.svg
+  SvgGenImage get porthole => const SvgGenImage('assets/images/svg/Porthole.svg');
+
+  /// File path: assets/images/svg/Puzzle.svg
+  SvgGenImage get puzzle => const SvgGenImage('assets/images/svg/Puzzle.svg');
+
+  /// File path: assets/images/svg/Rockandroll-hands.svg
+  SvgGenImage get rockandrollHands => const SvgGenImage('assets/images/svg/Rockandroll-hands.svg');
+
+  /// File path: assets/images/svg/Rocket.svg
+  SvgGenImage get rocket => const SvgGenImage('assets/images/svg/Rocket.svg');
+
+  /// File path: assets/images/svg/Ski.svg
+  SvgGenImage get ski => const SvgGenImage('assets/images/svg/Ski.svg');
+
+  /// File path: assets/images/svg/Smile-in-mask-emoji.svg
+  SvgGenImage get smileInMaskEmoji => const SvgGenImage('assets/images/svg/Smile-in-mask-emoji.svg');
+
+  /// File path: assets/images/svg/Smile-mood.svg
+  SvgGenImage get smileMood => const SvgGenImage('assets/images/svg/Smile-mood.svg');
+
+  /// File path: assets/images/svg/Smiley-crazy-face-emoji.svg
+  SvgGenImage get smileyCrazyFaceEmoji => const SvgGenImage('assets/images/svg/Smiley-crazy-face-emoji.svg');
+
+  /// File path: assets/images/svg/Starry-eyed-excited-emoji.svg
+  SvgGenImage get starryEyedExcitedEmoji => const SvgGenImage('assets/images/svg/Starry-eyed-excited-emoji.svg');
+
+  /// File path: assets/images/svg/Sun-clouds.svg
+  SvgGenImage get sunClouds => const SvgGenImage('assets/images/svg/Sun-clouds.svg');
+
+  /// File path: assets/images/svg/Sun-wind.svg
+  SvgGenImage get sunWind => const SvgGenImage('assets/images/svg/Sun-wind.svg');
+
+  /// File path: assets/images/svg/Technologies.svg
+  SvgGenImage get technologies => const SvgGenImage('assets/images/svg/Technologies.svg');
+
+  /// File path: assets/images/svg/Training-apparatus.svg
+  SvgGenImage get trainingApparatus => const SvgGenImage('assets/images/svg/Training-apparatus.svg');
+
+  /// File path: assets/images/svg/Victory-hands.svg
+  SvgGenImage get victoryHands => const SvgGenImage('assets/images/svg/Victory-hands.svg');
+
+  /// File path: assets/images/svg/Yoga.svg
+  SvgGenImage get yoga => const SvgGenImage('assets/images/svg/Yoga.svg');
 
   /// File path: assets/images/svg/analytics-fill.svg
   SvgGenImage get analyticsFill => const SvgGenImage('assets/images/svg/analytics-fill.svg');
@@ -456,6 +588,63 @@ class $AssetsImagesSvgGen {
 
   /// List of all assets
   List<SvgGenImage> get values => [
+        angryEmoji,
+        aubergine,
+        baggage,
+        bellNotification,
+        binoculars,
+        clapperboard,
+        cocktail2,
+        cocktail3d,
+        coin,
+        company,
+        dart,
+        discount,
+        donations,
+        events,
+        feedback,
+        femle,
+        fire,
+        firstAidKit,
+        followers,
+        givingLikeEmoji,
+        grinningFaceWithSweatEmoji,
+        hat,
+        heartEyesEmoji,
+        heartInHandEmoji,
+        hiNewInvitees,
+        icecream,
+        indexFingerHands,
+        key,
+        laptopWithChart,
+        laughingWithTearsEmoji,
+        lifebuoy3d,
+        likeHands,
+        male,
+        mango,
+        map,
+        money,
+        networking,
+        okHands,
+        otherGender,
+        outstanding,
+        pieChart,
+        pixelatedSunglassesEmoji,
+        porthole,
+        puzzle,
+        rockandrollHands,
+        rocket,
+        ski,
+        smileInMaskEmoji,
+        smileMood,
+        smileyCrazyFaceEmoji,
+        starryEyedExcitedEmoji,
+        sunClouds,
+        sunWind,
+        technologies,
+        trainingApparatus,
+        victoryHands,
+        yoga,
         analyticsFill,
         analyticsOutline,
         analytics,

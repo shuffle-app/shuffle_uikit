@@ -54,7 +54,7 @@ class UiKitWeatherInfoCard extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: ImageWidget(
-              rasterAsset: GraphicsFoundation.instance.png.weatherIcon,
+              svgAsset: GraphicsFoundation.instance.svg.sunWind,
             ),
           ),
         ],
