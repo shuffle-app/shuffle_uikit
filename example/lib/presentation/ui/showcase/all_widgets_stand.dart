@@ -65,7 +65,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         ImageWidget(
-                          rasterAsset: GraphicsFoundation.instance.png.skiingGuy,
+                          svgAsset: GraphicsFoundation.instance.svg.ski,
                         ),
                         SpacingFoundation.horizontalSpace12,
                         Expanded(
@@ -115,7 +115,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     ),
                     SpacingFoundation.verticalSpace8,
                     ImageWidget(
-                      rasterAsset: GraphicsFoundation.instance.png.holdingHeartEmoji,
+                      svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
                     )
                   ],
                 ),
@@ -193,7 +193,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   children: [
                     UiKitMessageCardWithIcon(
                       message: 'Want to have some fun',
-                      icon: ImageWidget(rasterAsset: GraphicsFoundation.instance.png.crazyEmoji),
+                      icon: ImageWidget(
+                        svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
+                      ),
                       layoutDirection: Axis.vertical,
                     ),
                     SpacingFoundation.horizontalSpace12,
@@ -205,7 +207,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
                       message: 'Want to haveWant to have',
-                      icon: ImageWidget(rasterAsset: GraphicsFoundation.instance.png.crazyEmoji),
+                      icon: ImageWidget(
+                        svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
+                      ),
                       layoutDirection: Axis.vertical,
                     ),
                   ],
@@ -214,7 +218,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               UiKitMessageCardWithIcon(
                 message: 'need to cool down a bit?',
-                icon: ImageWidget(rasterAsset: GraphicsFoundation.instance.png.crazyEmoji),
+                icon: ImageWidget(
+                  svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
+                ),
                 layoutDirection: Axis.horizontal,
               ),
               SpacingFoundation.verticalSpace16,
@@ -349,7 +355,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     Expanded(
                       child: UpcomingEventPlaceActionCard(
                         value: 'in 2 days',
-                        rasterIconAsset: GraphicsFoundation.instance.png.calendar,
+                        vectorIconAsset: GraphicsFoundation.instance.svg.events,
                         action: () {},
                       ),
                     ),
@@ -357,7 +363,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     Expanded(
                       child: PointBalancePlaceActionCard(
                         value: '2 650',
-                        rasterIconAsset: GraphicsFoundation.instance.png.coins,
+                        vectorIconAsset: GraphicsFoundation.instance.svg.coin,
                         action: () {},
                       ),
                     ),
