@@ -27,7 +27,7 @@ class UiKitMetricsCard extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadiusFoundation.all16,
+        borderRadius: BorderRadiusFoundation.all20,
       ),
       child: Row(
         children: [

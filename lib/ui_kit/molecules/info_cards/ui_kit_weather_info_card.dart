@@ -21,7 +21,7 @@ class UiKitWeatherInfoCard extends StatelessWidget {
     return Container(
       height: 35.h,
       decoration: BoxDecoration(
-        borderRadius: BorderRadiusFoundation.all16,
+        borderRadius: BorderRadiusFoundation.all20,
         gradient: GradientFoundation.yellowLinearGradient,
       ),
       child: Row(
