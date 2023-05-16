@@ -20,14 +20,13 @@ class BlurredAppBarPage extends StatelessWidget {
     return CustomScrollView(
       slivers: [
         SliverAppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.transparent,
           pinned: true,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusFoundation.onlyBottom24,
           ),
-          toolbarHeight: context.uiKitTheme?.customAppBapTheme.toolbarHeight ??
-              Theme.of(context).appBarTheme.toolbarHeight ??
-              0,
+          toolbarHeight: context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? Theme.of(context).appBarTheme.toolbarHeight ?? 0,
           flexibleSpace: CustomAppBar(
             title: title,
             autoImplyLeading: autoImplyLeading,
