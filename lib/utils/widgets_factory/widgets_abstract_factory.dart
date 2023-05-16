@@ -2,6 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class WidgetsAbstractFactory {
+  NotificationPopUpFactory createNotificationPopUp({
+    required NotificationPopupRequiredData requiredData,
+    Widget? primaryActionWidget,
+    Widget? secondaryActionWidget,
+    Widget? dismissActionWidget,
+    bool? hasShadow,
+  });
+
   ButtonFactory createOrdinaryButton({
     required String text,
     VoidCallback? onPressed,
@@ -68,6 +76,10 @@ abstract class UserTileFactory {
   Widget build(BuildContext context);
 }
 
+abstract class NotificationPopUpFactory {
+  Widget build(BuildContext context);
+}
+
 class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   const WidgetsFactory({required super.child, super.key});
 
@@ -122,6 +134,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       return GradientIconButton(
         icon: icon,
         onPressed: onPressed,
+        borderRadius: BorderRadiusFoundation.max,
       );
     } else if (!hasIcon && text.isNotEmpty) {
       return GradientButton(
@@ -262,13 +275,13 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }) {
     switch (dialogButtonType) {
       case DialogButtonType.buttonWhite:
-        return DialogButton.white(
+        return WhiteDialogButton(
           text: text,
           onPressed: onPressed,
           small: small ?? false,
         );
       case DialogButtonType.buttonBlack:
-        return DialogButton.black(
+        return BlackDialogButton(
           text: text,
           onPressed: onPressed,
           small: small ?? false,
@@ -276,6 +289,33 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       case null:
         throw UnimplementedError();
     }
+  }
+
+  @override
+  NotificationPopUpFactory createNotificationPopUp({
+    required NotificationPopupRequiredData requiredData,
+    Widget? primaryActionWidget,
+    Widget? secondaryActionWidget,
+    Widget? dismissActionWidget,
+    bool? hasShadow,
+  }) {
+    final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
+    if (hasAllActions) {
+      return AdditionalActionNotificationPopUp(
+        requiredData: requiredData,
+        primaryActionWidget: primaryActionWidget,
+        secondaryActionWidget: secondaryActionWidget,
+        dismissActionWidget: dismissActionWidget,
+        hasShadow: hasShadow,
+      );
+    }
+
+    return OrdinaryNotificationPopUp(
+      requiredData: requiredData,
+      primaryActionWidget: primaryActionWidget,
+      dismissActionWidget: dismissActionWidget,
+      hasShadow: hasShadow,
+    );
   }
 
   // @override

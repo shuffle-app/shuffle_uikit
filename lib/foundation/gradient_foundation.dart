@@ -26,7 +26,7 @@ class GradientFoundation {
     center: Alignment(-0.6, -0.9),
     stops: [
       0,
-      0.473,
+      0.203,
       1,
     ],
   );
@@ -53,13 +53,26 @@ class GradientFoundation {
     ],
   );
 
-  static const blackLinearGradient =  LinearGradient(
+  static const solidSurfaceLinearGradient = LinearGradient(
     colors: [
       UiKitColors.surface,
       Colors.transparent,
     ],
     begin: Alignment.bottomCenter,
     end: Alignment.topCenter,
+  );
+
+  static const blackLinearGradient = LinearGradient(
+    colors: [
+      Colors.transparent,
+      Colors.black,
+    ],
+    stops: [
+      0,
+      0.9563,
+    ],
+    end: Alignment.bottomCenter,
+    begin: Alignment.topCenter,
   );
 
   static final yellowLinearGradient = LinearGradient(
@@ -72,8 +85,6 @@ class GradientFoundation {
       0,
     ],
   );
-
-
 
   GradientFoundation._();
 }

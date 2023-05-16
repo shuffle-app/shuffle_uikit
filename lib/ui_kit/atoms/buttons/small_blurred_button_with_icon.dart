@@ -17,6 +17,7 @@ class SmallBlurredButtonWithIcon extends StatelessWidget implements ButtonFactor
   Widget build(BuildContext context) {
     return Material(
       shape: const CircleBorder(),
+      color: Colors.white.withOpacity(0.1),
       child: InkWell(
         onTap: onPressed,
         borderRadius: BorderRadiusFoundation.max,

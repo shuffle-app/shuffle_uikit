@@ -2,70 +2,53 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitTitledFilterChip extends StatefulWidget {
+class UiKitTitledFilterChip extends StatelessWidget {
   final String title;
   final bool selected;
-  final ValueChanged<bool> onPressed;
-  final SvgGenImage icon;
+  final VoidCallback? onPressed;
+  final String icon;
 
   const UiKitTitledFilterChip({
     Key? key,
     required this.title,
     this.selected = false,
-    required this.onPressed,
+     this.onPressed,
     required this.icon,
   }) : super(key: key);
-
-  @override
-  State<UiKitTitledFilterChip> createState() => _UiKitTitledFilterChipState();
-}
-
-class _UiKitTitledFilterChipState extends State<UiKitTitledFilterChip> {
-  late bool _selected = widget.selected;
 
   @override
   Widget build(BuildContext context) {
     final titleStyle = context.uiKitTheme?.boldTextTheme.caption1Bold;
 
-    return Material(
-      color: _selected ? Colors.white : ColorsFoundation.surface2,
-      borderRadius: BorderRadiusFoundation.all24,
-      clipBehavior: Clip.hardEdge,
-      child: InkWell(
+    return InkWell(
         borderRadius: BorderRadiusFoundation.all24,
-        onTap: () {
-          setState(() {
-            _selected = !_selected;
-          });
-          widget.onPressed(_selected);
-        },
-        child: Ink(
-          height: 40.h,
+        onTap: onPressed,
+        child: DecoratedBox(
           decoration: BoxDecoration(
-            color: _selected ? Colors.white : ColorsFoundation.surface2,
+            color: selected ? Colors.white : ColorsFoundation.surface2,
             borderRadius: BorderRadiusFoundation.all24,
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               ImageWidget(
-                svgAsset: widget.icon,
-                color: _selected ? Colors.black : Colors.white,
+                link: icon,
+                color: selected ? Colors.black : Colors.white,
               ),
-              SpacingFoundation.horizontalSpace12,
+              SpacingFoundation.horizontalSpace8,
               Text(
-                widget.title,
+                title,
                 style: titleStyle?.copyWith(
-                  color: _selected ? Colors.black : Colors.white,
+                  color: selected ? Colors.black : Colors.white,
                 ),
               ),
             ],
           ).paddingSymmetric(
-            horizontal: EdgeInsetsFoundation.horizontal12,
-            vertical: EdgeInsetsFoundation.vertical8,
+            horizontal: SpacingFoundation.horizontalSpacing16,
+            vertical: SpacingFoundation.verticalSpacing12,
           ),
         ),
-      ),
+
     );
   }
 }

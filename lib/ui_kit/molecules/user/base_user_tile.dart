@@ -33,6 +33,7 @@ abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
         onTap: onTap,
         borderRadius: BorderRadiusFoundation.all24,
         child: Ink(
+          width: double.infinity,
           decoration: BoxDecoration(
             color: context.uiKitTheme?.cardColor,
             borderRadius: BorderRadiusFoundation.all24,

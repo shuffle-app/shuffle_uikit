@@ -13,7 +13,7 @@ class UiKitThemes {
       cursorColor: Colors.white,
     ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       elevation: 0,
       enableFeedback: true,
     ),
@@ -129,7 +129,9 @@ class UiKitThemes {
           disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
         ),
         customAppBapTheme: AppBarTheme(
-          iconTheme: const IconThemeData(color: ColorsFoundation.surface),
+          iconTheme: const IconThemeData(
+            color: Colors.white,
+          ),
           toolbarHeight: 84,
           shadowColor: Colors.transparent,
           backgroundColor: Colors.white.withOpacity(0.07),

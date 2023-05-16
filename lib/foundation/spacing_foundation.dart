@@ -1,8 +1,10 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SpacingFoundation {
   static double get horizontalSpacing4 => 4.w;
+
+  static double get horizontalSpacing6 => 6.w;
 
   static double get horizontalSpacing8 => 8.w;
 
@@ -25,6 +27,8 @@ class SpacingFoundation {
   static double get verticalSpacing8 => 8.h;
 
   static double get verticalSpacing12 => 12.h;
+
+  static double get verticalSpacing14 => 14.h;
 
   static double get verticalSpacing16 => 16.h;
 
@@ -50,9 +54,13 @@ class SpacingFoundation {
 
   static Widget get verticalSpace12 => verticalSpacing12.verticalSpace;
 
+  static Widget get verticalSpace14 => verticalSpacing14.verticalSpace;
   static Widget get verticalSpace16 => verticalSpacing16.verticalSpace;
 
   static Widget get verticalSpace24 => verticalSpacing24.verticalSpace;
+
+  static Widget get bottomNavigationBarSpacing =>
+      kBottomNavigationBarHeight.verticalSpace;
 
   SpacingFoundation._();
 }

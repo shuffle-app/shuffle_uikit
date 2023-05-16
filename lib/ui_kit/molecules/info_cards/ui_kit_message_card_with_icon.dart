@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMessageCardWithIcon extends StatelessWidget {
   final String message;
   final Widget? icon;
   final Axis layoutDirection;
+  final VoidCallback? onPressed;
 
   const UiKitMessageCardWithIcon({
     Key? key,
     required this.message,
     this.icon,
+    this.onPressed,
     required this.layoutDirection,
   }) : super(key: key);
 
@@ -18,88 +19,17 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (layoutDirection) {
       case Axis.horizontal:
-        return _HorizontalMessageCard(
+        return HorizontalMessageCard(
           message: message,
           icon: icon,
+          onPressed: onPressed,
         );
       case Axis.vertical:
-        return _VerticalMessageCard(
+        return VerticalMessageCard(
           message: message,
           icon: icon,
+          onPressed: onPressed,
         );
     }
-  }
-}
-
-class _VerticalMessageCard extends StatelessWidget {
-  final String message;
-  final Widget? icon;
-
-  const _VerticalMessageCard({
-    Key? key,
-    required this.message,
-     this.icon,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final messageStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium;
-
-    return SizedBox(
-      width: 102.w,
-      child: UiKitCardWrapper(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if(icon!= null)
-            icon!,
-            if(icon!= null)
-              SpacingFoundation.verticalSpace8,
-            Text(
-              /// end line symbols added to make sure that the text is more than 4 lines
-              /// so that the card height is always fixed
-              '${message.toUpperCase()}\n\n\n\n',
-              style: messageStyle,
-              textAlign: TextAlign.center,
-              maxLines: 4,
-            ),
-          ],
-        ).paddingAll(EdgeInsetsFoundation.all16),
-      ),
-    );
-  }
-}
-
-class _HorizontalMessageCard extends StatelessWidget {
-  final String message;
-  final Widget? icon;
-
-  const _HorizontalMessageCard({
-    Key? key,
-    required this.message,
-    this.icon,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final messageStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase;
-
-    return UiKitCardWrapper(
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        children: [
-          if(icon!= null)
-            icon!,
-          if(icon!= null)
-            SpacingFoundation.horizontalSpace12,
-          Expanded(
-            child: Text(
-              message.toUpperCase(),
-              style: messageStyle,
-            ),
-          ),
-        ],
-      ).paddingAll(EdgeInsetsFoundation.all16),
-    );
   }
 }

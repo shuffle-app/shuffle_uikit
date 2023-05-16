@@ -60,7 +60,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
               Container(
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadiusFoundation.all40,
+                  borderRadius: BorderRadiusFoundation.all20,
                   color: Colors.white.withOpacity(0.05),
                 ),
                 child: BackdropFilter(
@@ -82,9 +82,8 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                       SpacingFoundation.verticalSpace4,
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
+                        child:  Wrap(
+                          spacing: SpacingFoundation.horizontalSpacing8,
                           children: tags,
                         ),
                       ),

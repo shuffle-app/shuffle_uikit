@@ -22,21 +22,20 @@ class UiKitMetricsCard extends StatelessWidget {
     final valueStyle = context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(color: Colors.black);
 
     return Container(
-      height: 35.h,
+      height: 60.h,
       padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadiusFoundation.all16,
+        borderRadius: BorderRadiusFoundation.all20,
       ),
       child: Row(
         children: [
           Container(
             width: 26.w,
-            height: double.infinity,
             decoration: BoxDecoration(
               color: Colors.black,
-              borderRadius: BorderRadiusFoundation.max,
+              borderRadius: BorderRadiusFoundation.all20,
             ),
             child: Center(child: icon),
           ),
