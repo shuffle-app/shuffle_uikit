@@ -82,9 +82,8 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                       SpacingFoundation.verticalSpace4,
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
+                        child:  Wrap(
+                          spacing: SpacingFoundation.horizontalSpacing8,
                           children: tags,
                         ),
                       ),

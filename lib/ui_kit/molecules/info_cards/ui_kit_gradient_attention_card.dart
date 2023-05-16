@@ -17,7 +17,7 @@ class UiKitGradientAttentionCard extends StatelessWidget {
     final messageStyle = context.uiKitTheme?.boldTextTheme.subHeadline;
 
     return Container(
-      height: 82.h,
+      height: 136.h,
       decoration: BoxDecoration(
         gradient: GradientFoundation.defaultRadialGradient,
         borderRadius: BorderRadiusFoundation.all24,

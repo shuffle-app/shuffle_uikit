@@ -5,14 +5,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitTitledFilterChip extends StatelessWidget {
   final String title;
   final bool selected;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final String icon;
 
   const UiKitTitledFilterChip({
     Key? key,
     required this.title,
     this.selected = false,
-    required this.onPressed,
+     this.onPressed,
     required this.icon,
   }) : super(key: key);
 
@@ -20,16 +20,10 @@ class UiKitTitledFilterChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final titleStyle = context.uiKitTheme?.boldTextTheme.caption1Bold;
 
-    return Material(
-      color: selected ? Colors.white : ColorsFoundation.surface2,
-      borderRadius: BorderRadiusFoundation.all24,
-      clipBehavior: Clip.hardEdge,
-      child: InkWell(
+    return InkWell(
         borderRadius: BorderRadiusFoundation.all24,
         onTap: onPressed,
-        child: Ink(
-          //TODO: зачем тут фикс высоты
-          height: 40.h,
+        child: DecoratedBox(
           decoration: BoxDecoration(
             color: selected ? Colors.white : ColorsFoundation.surface2,
             borderRadius: BorderRadiusFoundation.all24,
@@ -41,7 +35,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
                 link: icon,
                 color: selected ? Colors.black : Colors.white,
               ),
-              SpacingFoundation.horizontalSpace12,
+              SpacingFoundation.horizontalSpace8,
               Text(
                 title,
                 style: titleStyle?.copyWith(
@@ -50,11 +44,11 @@ class UiKitTitledFilterChip extends StatelessWidget {
               ),
             ],
           ).paddingSymmetric(
-            horizontal: EdgeInsetsFoundation.horizontal12,
-            vertical: EdgeInsetsFoundation.vertical8,
+            horizontal: SpacingFoundation.horizontalSpacing16,
+            vertical: SpacingFoundation.verticalSpacing12,
           ),
         ),
-      ),
+
     );
   }
 }
