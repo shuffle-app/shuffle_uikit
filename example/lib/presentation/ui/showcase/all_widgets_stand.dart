@@ -253,6 +253,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   rasterAsset: GraphicsFoundation.instance.png.balloons,
                   fit: BoxFit.cover,
                 ),
+                onPressed: () {},
               ),
               SpacingFoundation.verticalSpace16,
               const Center(
@@ -319,11 +320,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: Row(
                   children: [
                     context.gradientButton(
-                      text: '',
                       icon: ImageWidget(
                         svgAsset: GraphicsFoundation.instance.svg.dice,
                       ),
-                      borderRadius: BorderRadiusFoundation.max,
                       onPressed: () {},
                     ),
                     SpacingFoundation.horizontalSpace12,

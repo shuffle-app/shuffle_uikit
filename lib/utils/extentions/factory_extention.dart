@@ -90,14 +90,12 @@ extension FactoryExtention on BuildContext {
     String text = '',
     VoidCallback? onPressed,
     Widget? icon,
-    BorderRadius? borderRadius,
   }) {
     return WidgetsFactory.of(this)!
         .createGradientButton(
           text: text,
           onPressed: onPressed,
           icon: icon,
-          borderRadius: borderRadius,
         )
         .build(this);
   }

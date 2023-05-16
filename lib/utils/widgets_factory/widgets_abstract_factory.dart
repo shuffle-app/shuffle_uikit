@@ -127,7 +127,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     required String text,
     VoidCallback? onPressed,
     Widget? icon,
-    BorderRadius? borderRadius,
   }) {
     final hasIcon = icon != null;
     final gradientIconButton = hasIcon && text.isEmpty;
@@ -135,7 +134,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       return GradientIconButton(
         icon: icon,
         onPressed: onPressed,
-        borderRadius: borderRadius,
+        borderRadius: BorderRadiusFoundation.max,
       );
     } else if (!hasIcon && text.isNotEmpty) {
       return GradientButton(
