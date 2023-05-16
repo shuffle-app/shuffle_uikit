@@ -60,7 +60,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
               Container(
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadiusFoundation.all40,
+                  borderRadius: BorderRadiusFoundation.all20,
                   color: Colors.white.withOpacity(0.05),
                 ),
                 child: BackdropFilter(

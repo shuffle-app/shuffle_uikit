@@ -36,7 +36,9 @@ showUiKitGeneralFullScreenDialog(
           shape: shape,
           child: Column(
             children: [
-              const SlidingChip().paddingOnly(top: SpacingFoundation.verticalSpacing12, bottom: SpacingFoundation.verticalSpacing4),
+              const SlidingChip().paddingOnly(
+                  top: SpacingFoundation.verticalSpacing12,
+                  bottom: SpacingFoundation.verticalSpacing4),
               Expanded(
                   child: Stack(fit: StackFit.expand, children: [
                 Container(
@@ -47,7 +49,11 @@ showUiKitGeneralFullScreenDialog(
                     child: SingleChildScrollView(
                       primary: true,
                       physics: const ClampingScrollPhysics(),
-                      child: Column(children: [child, if (bottomBar != null) Opacity(opacity: 0, child: bottomBar)]),
+                      child: Column(children: [
+                        child,
+                        if (bottomBar != null)
+                          Opacity(opacity: 0, child: bottomBar)
+                      ]),
                     )),
                 if (bottomBar != null)
                   Positioned(
@@ -55,7 +61,10 @@ showUiKitGeneralFullScreenDialog(
                       right: 0,
                       left: 0,
                       child: Container(
-                          decoration: const BoxDecoration(gradient: GradientFoundation.solidSurfaceLinearGradient), child: bottomBar))
+                          decoration: const BoxDecoration(
+                              gradient: GradientFoundation
+                                  .solidSurfaceLinearGradient),
+                          child: bottomBar))
               ])),
             ],
           ),
@@ -70,7 +79,8 @@ showUiKitGeneralFullScreenDialog(
     transitionDuration: const Duration(milliseconds: 200),
     transitionBuilder: (context, animation1, animation2, child) {
       return BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: animation1.value * 2, sigmaY: animation2.value * 2),
+          filter: ImageFilter.blur(
+              sigmaX: animation1.value * 4, sigmaY: animation2.value * 4),
           child: Animations.slideAnimation(animation1, animation2, child));
     },
     pageBuilder: (
