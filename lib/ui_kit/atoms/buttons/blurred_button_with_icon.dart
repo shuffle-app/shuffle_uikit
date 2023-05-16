@@ -17,6 +17,7 @@ class BlurredButtonWithIcon extends StatelessWidget implements ButtonFactory {
   Widget build(BuildContext context) {
     return Material(
       shape: const CircleBorder(),
+      color: Colors.white.withOpacity(0.1),
       child: InkWell(
         onTap: onPressed,
         borderRadius: BorderRadiusFoundation.max,

@@ -87,15 +87,17 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget gradientButton({
-     String text = '',
+    String text = '',
     VoidCallback? onPressed,
     Widget? icon,
+    BorderRadius? borderRadius,
   }) {
     return WidgetsFactory.of(this)!
         .createGradientButton(
           text: text,
           onPressed: onPressed,
           icon: icon,
+          borderRadius: borderRadius,
         )
         .build(this);
   }

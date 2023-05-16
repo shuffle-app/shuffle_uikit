@@ -36,7 +36,7 @@ class UiKitMetricsCard extends StatelessWidget {
             height: double.infinity,
             decoration: BoxDecoration(
               color: Colors.black,
-              borderRadius: BorderRadiusFoundation.max,
+              borderRadius: BorderRadiusFoundation.all20,
             ),
             child: Center(child: icon),
           ),

@@ -51,7 +51,7 @@ class UiKitTagsWidget extends StatelessWidget {
                       .map((e) => UiKitTagWidget(
                             title: e.title,
                             icon: e.iconPath,
-                            showGradient: e.unique,
+                            uniqueTag: e.unique,
                           ))
                       .toList(),
                 ),
@@ -66,7 +66,7 @@ class UiKitTagsWidget extends StatelessWidget {
                         .map((e) => UiKitTagWidget(
                               title: e.title,
                               icon: e.iconPath,
-                              showGradient: e.unique,
+                              uniqueTag: e.unique,
                             ))
                         .toList(),
                   ),

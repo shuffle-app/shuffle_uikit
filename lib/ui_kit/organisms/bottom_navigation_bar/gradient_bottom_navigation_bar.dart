@@ -1,16 +1,15 @@
 import 'dart:async';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:tabnavigator/tabnavigator.dart';
 
-class BlurableBottomNavigationBar extends StatelessWidget {
-  final List<BlurableBottomNavigationBarItem> items;
-  final BlurredBottomNavigationBarController controller;
+class GradientBottomNavigationBar extends StatelessWidget {
+  final List<GradientBottomNavigationBarItem> items;
+  final GradientBottomNavigationBarController controller;
 
-  BlurableBottomNavigationBar({
+  GradientBottomNavigationBar({
     Key? key,
     required this.items,
     required this.controller,
@@ -28,33 +27,30 @@ class BlurableBottomNavigationBar extends StatelessWidget {
           height: kBottomNavigationBarHeight.h,
           width: double.infinity,
           clipBehavior: Clip.hardEdge,
-          decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.05),
+          decoration: const BoxDecoration(
+            gradient: GradientFoundation.blackLinearGradient,
           ),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: items.map((e) {
-                final elementIndex = items.indexOf(e);
-                final selected = index == elementIndex;
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: items.map((e) {
+              final elementIndex = items.indexOf(e);
+              final selected = index == elementIndex;
 
-                return Expanded(
-                  child: GestureDetector(
-                    onTap: () => controller.changeTab(e),
-                    behavior: HitTestBehavior.opaque,
-                    child: NavBarTile(
-                      icon: selected ? e.selectedIcon : e.unselectedIcon,
-                      selected: selected,
-                    ),
+              return Expanded(
+                child: GestureDetector(
+                  onTap: () => controller.changeTab(e),
+                  behavior: HitTestBehavior.opaque,
+                  child: NavBarTile(
+                    icon: selected ? e.selectedIcon : e.unselectedIcon,
+                    selected: selected,
                   ),
-                );
-              }).toList(),
-            ).paddingSymmetric(
-              vertical: EdgeInsetsFoundation.vertical8,
-              horizontal: EdgeInsetsFoundation.horizontal20,
-            ),
+                ),
+              );
+            }).toList(),
+          ).paddingSymmetric(
+            vertical: EdgeInsetsFoundation.vertical8,
+            horizontal: EdgeInsetsFoundation.horizontal20,
           ),
         );
       },
@@ -62,28 +58,28 @@ class BlurableBottomNavigationBar extends StatelessWidget {
   }
 }
 
-class BlurableBottomNavigationBarItem extends TabType {
-  static final home = BlurableBottomNavigationBarItem._(
+class GradientBottomNavigationBarItem extends TabType {
+  static final home = GradientBottomNavigationBarItem._(
     selectedIcon: GraphicsFoundation.instance.svg.homeFill,
     unselectedIcon: GraphicsFoundation.instance.svg.homeOutline,
     index: 0,
   );
-  static final spinner = BlurableBottomNavigationBarItem._(
+  static final spinner = GradientBottomNavigationBarItem._(
     selectedIcon: GraphicsFoundation.instance.svg.spinnerFill,
     unselectedIcon: GraphicsFoundation.instance.svg.spinnerOutline,
     index: 1,
   );
-  static final shuffle = BlurableBottomNavigationBarItem._(
+  static final shuffle = GradientBottomNavigationBarItem._(
     selectedIcon: GraphicsFoundation.instance.svg.shuffleFill,
     unselectedIcon: GraphicsFoundation.instance.svg.shuffleOutline,
     index: 2,
   );
-  static final search = BlurableBottomNavigationBarItem._(
+  static final search = GradientBottomNavigationBarItem._(
     selectedIcon: GraphicsFoundation.instance.svg.searchFill,
     unselectedIcon: GraphicsFoundation.instance.svg.searchOutline,
     index: 3,
   );
-  static final profile = BlurableBottomNavigationBarItem._(
+  static final profile = GradientBottomNavigationBarItem._(
     selectedIcon: GraphicsFoundation.instance.svg.profileFill,
     unselectedIcon: GraphicsFoundation.instance.svg.profileOutline,
     index: 4,
@@ -92,22 +88,22 @@ class BlurableBottomNavigationBarItem extends TabType {
   final SvgGenImage selectedIcon;
   final SvgGenImage unselectedIcon;
 
-  const BlurableBottomNavigationBarItem._({
+  const GradientBottomNavigationBarItem._({
     required this.selectedIcon,
     required this.unselectedIcon,
     required int index,
   }) : super(index);
 }
 
-class BlurredBottomNavigationBarController {
+class GradientBottomNavigationBarController {
   final int tabItemsCount;
   final StreamController<TabType> _changeController = StreamController<TabType>.broadcast();
 
   Stream<TabType> get tabStream => _changeController.stream;
 
-  BlurredBottomNavigationBarController({required this.tabItemsCount});
+  GradientBottomNavigationBarController({required this.tabItemsCount});
 
-  void changeTab(BlurableBottomNavigationBarItem item) {
+  void changeTab(GradientBottomNavigationBarItem item) {
     _changeController.add(item);
   }
 

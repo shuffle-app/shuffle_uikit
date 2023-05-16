@@ -23,6 +23,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
     return Material(
       borderRadius: BorderRadiusFoundation.max,
       clipBehavior: Clip.hardEdge,
+      color: Colors.transparent,
       child: InkWell(
         onTap: onPressed,
         borderRadius: BorderRadiusFoundation.max,
