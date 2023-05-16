@@ -21,7 +21,7 @@ export 'buttons/small_blurred_button_with_icon.dart';
 export 'buttons/small_ordinary_button.dart';
 export 'buttons/small_outlined_button.dart';
 export 'buttons/white_dialog_button.dart';
-export 'common/blurred_card_with_gradient_border.dart';
+export 'common/blurred_card_with_border.dart';
 export 'image/image_widget.dart';
 export 'inputs/inputs.dart';
 export 'profile/ui_kit_tag_widget.dart';

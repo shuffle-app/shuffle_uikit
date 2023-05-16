@@ -3,10 +3,17 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class BlurredCardWithGradientBorder extends StatelessWidget {
+class BlurredCardWithBorder extends StatelessWidget {
   final Widget child;
+  final BoxBorder? border;
+  final bool? hasShadow;
 
-  const BlurredCardWithGradientBorder({Key? key, required this.child}) : super(key: key);
+  const BlurredCardWithBorder({
+    Key? key,
+    required this.child,
+    this.border,
+    this.hasShadow,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +21,18 @@ class BlurredCardWithGradientBorder extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
-        border: GradientFoundation.gradientBorder,
+        border: border ?? Border.all(color: Colors.white, width: 2),
         color: Colors.white.withOpacity(0.1),
+        boxShadow: [
+          if (hasShadow ?? false)
+            const BoxShadow(
+              color: ColorsFoundation.shadowPink,
+              blurRadius: 18,
+              spreadRadius: 0,
+              offset: Offset.zero,
+              blurStyle: BlurStyle.outer,
+            ),
+        ],
       ),
       child: ClipRRect(
         borderRadius: BorderRadiusFoundation.all24,

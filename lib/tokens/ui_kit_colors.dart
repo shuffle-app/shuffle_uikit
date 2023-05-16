@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 class UiKitColors {
-
   static const surface = Color(0xff000000);
   static const surface1 = Color(0xff131313);
   static const surface2 = Color(0xff1A1A1A);
@@ -25,6 +24,7 @@ class UiKitColors {
   static const pink = Color(0xffD808FA);
   static const error = Color(0xffFF453A);
   static const warning = Color(0xffFF9F0A);
+  static const shadowPink = Color(0xffEFD6CC);
   static const success = Color(0xff30D158);
   static const info = Color(0xff0A84FF);
   UiKitColors._();

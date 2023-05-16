@@ -18,6 +18,7 @@ class ColorsFoundation {
   static const Color warning = UiKitColors.warning;
   static const Color success = UiKitColors.success;
   static const Color info = UiKitColors.info;
+  static const Color shadowPink = UiKitColors.shadowPink;
 
   ColorsFoundation._();
 }

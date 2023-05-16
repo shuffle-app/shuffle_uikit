@@ -119,6 +119,24 @@ extension FactoryExtention on BuildContext {
         )
         .build(this);
   }
+
+  Widget notificationPopUp({
+    required NotificationPopupRequiredData requiredData,
+    Widget? primaryActionWidget,
+    Widget? secondaryActionWidget,
+    Widget? dismissActionWidget,
+    bool? hasShadow,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createNotificationPopUp(
+          requiredData: requiredData,
+          primaryActionWidget: primaryActionWidget,
+          secondaryActionWidget: secondaryActionWidget,
+          dismissActionWidget: dismissActionWidget,
+          hasShadow: hasShadow,
+        )
+        .build(this);
+  }
 }
 
 enum DialogButtonType { buttonWhite, buttonBlack }
