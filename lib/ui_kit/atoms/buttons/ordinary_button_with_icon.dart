@@ -20,7 +20,7 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
 
     return ElevatedButton(
       style: buttonStyle,
-      onPressed: onPressed ?? () {},
+      onPressed: onPressed,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

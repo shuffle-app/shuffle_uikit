@@ -262,13 +262,13 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }) {
     switch (dialogButtonType) {
       case DialogButtonType.buttonWhite:
-        return DialogButton.white(
+        return WhiteDialogButton(
           text: text,
           onPressed: onPressed,
           small: small ?? false,
         );
       case DialogButtonType.buttonBlack:
-        return DialogButton.black(
+        return BlackDialogButton(
           text: text,
           onPressed: onPressed,
           small: small ?? false,
