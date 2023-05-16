@@ -49,6 +49,88 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              context.notificationPopUp(
+                primaryActionWidget: context.smallButton(
+                  text: 'Ok',
+                  onPressed: () {},
+                ),
+                dismissActionWidget: context.smallOutlinedButton(
+                  text: 'Cancel',
+                  onPressed: () {},
+                  color: Colors.white.withOpacity(0.5),
+                ),
+                requiredData: NotificationPopupRequiredData(
+                  titleString: 'Yoga today at Palm Jumeirah. You go?',
+                  icon: ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
+                  ),
+                ),
+                hasShadow: true,
+              ),
+              SpacingFoundation.verticalSpace16,
+              context.notificationPopUp(
+                primaryActionWidget: context.smallButton(
+                  text: 'Ok',
+                  onPressed: () {},
+                ),
+                dismissActionWidget: context.smallOutlinedButton(
+                  text: 'Cancel',
+                  onPressed: () {},
+                  color: Colors.white.withOpacity(0.5),
+                ),
+                requiredData: NotificationPopupRequiredData(
+                  titleString: 'Yoga today at Palm Jumeirah. You go?',
+                  icon: ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
+                  ),
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              context.notificationPopUp(
+                hasShadow: true,
+                primaryActionWidget: context.smallButton(
+                  text: 'Ok',
+                  onPressed: () {},
+                ),
+                secondaryActionWidget: context.smallOutlinedButton(
+                  text: 'text',
+                  onPressed: () {},
+                ),
+                dismissActionWidget: context.smallOutlinedButton(
+                  text: 'Cancel',
+                  onPressed: () {},
+                  color: Colors.white.withOpacity(0.5),
+                ),
+                requiredData: NotificationPopupRequiredData(
+                  titleString: 'Yoga today at Palm Jumeirah. You go?',
+                  icon: ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
+                  ),
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              context.notificationPopUp(
+                primaryActionWidget: context.smallButton(
+                  text: 'Ok',
+                  onPressed: () {},
+                ),
+                dismissActionWidget: context.smallOutlinedButton(
+                  text: 'Cancel',
+                  onPressed: () {},
+                  color: Colors.white.withOpacity(0.5),
+                ),
+                secondaryActionWidget: context.smallOutlinedButton(
+                  text: 'text',
+                  onPressed: () {},
+                ),
+                requiredData: NotificationPopupRequiredData(
+                  titleString: 'Yoga today at Palm Jumeirah. You go?',
+                  icon: ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
+                  ),
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               Center(
                 child: UiKitGradientQuestionChip(
                   message: 'Tell us more',
@@ -56,7 +138,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
-              BlurredCardWithGradientBorder(
+              BlurredCardWithBorder(
+                border: GradientFoundation.gradientBorder,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -105,7 +188,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
-              BlurredCardWithGradientBorder(
+              BlurredCardWithBorder(
+                border: GradientFoundation.gradientBorder,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [

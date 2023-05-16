@@ -2,6 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class WidgetsAbstractFactory {
+  NotificationPopUpFactory createNotificationPopUp({
+    required NotificationPopupRequiredData requiredData,
+    Widget? primaryActionWidget,
+    Widget? secondaryActionWidget,
+    Widget? dismissActionWidget,
+    bool? hasShadow,
+  });
+
   ButtonFactory createOrdinaryButton({
     required String text,
     VoidCallback? onPressed,
@@ -65,6 +73,10 @@ abstract class ButtonFactory {
 }
 
 abstract class UserTileFactory {
+  Widget build(BuildContext context);
+}
+
+abstract class NotificationPopUpFactory {
   Widget build(BuildContext context);
 }
 
@@ -276,6 +288,33 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       case null:
         throw UnimplementedError();
     }
+  }
+
+  @override
+  NotificationPopUpFactory createNotificationPopUp({
+    required NotificationPopupRequiredData requiredData,
+    Widget? primaryActionWidget,
+    Widget? secondaryActionWidget,
+    Widget? dismissActionWidget,
+    bool? hasShadow,
+  }) {
+    final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
+    if (hasAllActions) {
+      return AdditionalActionNotificationPopUp(
+        requiredData: requiredData,
+        primaryActionWidget: primaryActionWidget,
+        secondaryActionWidget: secondaryActionWidget,
+        dismissActionWidget: dismissActionWidget,
+        hasShadow: hasShadow,
+      );
+    }
+
+    return OrdinaryNotificationPopUp(
+      requiredData: requiredData,
+      primaryActionWidget: primaryActionWidget,
+      dismissActionWidget: dismissActionWidget,
+      hasShadow: hasShadow,
+    );
   }
 
   // @override

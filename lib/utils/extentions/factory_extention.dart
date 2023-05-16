@@ -87,7 +87,7 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget gradientButton({
-     String text = '',
+    String text = '',
     VoidCallback? onPressed,
     Widget? icon,
   }) {
@@ -114,6 +114,24 @@ extension FactoryExtention on BuildContext {
           avatarUrl: avatarUrl,
           type: type,
           onTap: onTap,
+        )
+        .build(this);
+  }
+
+  Widget notificationPopUp({
+    required NotificationPopupRequiredData requiredData,
+    Widget? primaryActionWidget,
+    Widget? secondaryActionWidget,
+    Widget? dismissActionWidget,
+    bool? hasShadow,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createNotificationPopUp(
+          requiredData: requiredData,
+          primaryActionWidget: primaryActionWidget,
+          secondaryActionWidget: secondaryActionWidget,
+          dismissActionWidget: dismissActionWidget,
+          hasShadow: hasShadow,
         )
         .build(this);
   }
