@@ -4,7 +4,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitHintDialog extends StatelessWidget {
   final String title;
-  final textStyle;
+  final TextStyle? textStyle;
   final List<UiKitIconHintCard> hintTiles;
   final String subtitle;
   final String dismissText;
@@ -22,7 +22,6 @@ class UiKitHintDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
