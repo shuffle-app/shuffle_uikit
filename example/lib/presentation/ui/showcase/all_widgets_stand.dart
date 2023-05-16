@@ -201,7 +201,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
                       message: 'Want to have',
-                      icon: ImageWidget(rasterAsset: GraphicsFoundation.instance.png.mockUserAvatar),
+                      icon: ImageWidget(
+                        svgAsset: GraphicsFoundation.instance.svg.angryEmoji,
+                      ),
                       layoutDirection: Axis.vertical,
                     ),
                     SpacingFoundation.horizontalSpace12,
