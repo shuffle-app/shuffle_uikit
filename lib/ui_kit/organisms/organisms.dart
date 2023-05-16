@@ -1,10 +1,10 @@
 /// This file exports all the organisms in the UI Kit.
 
 export '../molecules/place/base_ui_kit_media_widget.dart';
-export 'bottom_navigation_bar/blurable_bottom_navigation_bar.dart';
+export 'bottom_navigation_bar/gradient_bottom_navigation_bar.dart';
 export 'place/base_place_action_card.dart';
 export 'place/point_balance_place_action_card.dart';
-export 'place/slidable_place_card.dart';
+export 'place/slider_place_card.dart';
 export 'place/ui_kit_media_slider_with_tags.dart';
 export 'place/upcoming_event_place_action_card.dart';
 export 'popups/additional_action_notification_popup.dart';

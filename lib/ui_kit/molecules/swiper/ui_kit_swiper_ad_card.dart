@@ -25,7 +25,7 @@ class UiKitSwiperAdCard extends BaseUiKitSwiperCard {
         children: [
           ImageWidget(
             link: imageLink,
-            fit: BoxFit.cover,
+            fit: BoxFit.fitWidth,
           ),
         ],
       ),

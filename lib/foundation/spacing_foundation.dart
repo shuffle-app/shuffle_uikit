@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SpacingFoundation {
@@ -53,6 +53,8 @@ class SpacingFoundation {
   static Widget get verticalSpace16 => verticalSpacing16.verticalSpace;
 
   static Widget get verticalSpace24 => verticalSpacing24.verticalSpace;
+
+  static Widget get bottomNavigationBarSpacing => kBottomNavigationBarHeight.verticalSpace;
 
   SpacingFoundation._();
 }

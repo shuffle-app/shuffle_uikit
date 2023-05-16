@@ -34,18 +34,16 @@ class UiKitTag {
   final bool unique;
 
   UiKitTagWidget get widget => UiKitTagWidget(
-    title: title,
-    icon: iconPath,
-    showGradient: unique,
-  );
+        title: title,
+        icon: iconPath,
+        uniqueTag: unique,
+      );
 
   UiKitTag({
     required this.title,
     required this.iconPath,
-    required this.unique,
+    this.unique = false,
   });
-
-
 }
 
 enum UiKitMediaType { image, video }
