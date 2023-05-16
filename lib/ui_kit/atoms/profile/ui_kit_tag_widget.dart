@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 class UiKitTagWidget extends StatelessWidget {
   final String title;
   final String icon;
   final Color? textColor;
   final bool showSpacing;
-  final bool showGradient;
+  final bool uniqueTag;
 
   /// [customSpace] needs to be specified using [SpacingFoundation]
   final Widget? customSpace;
@@ -18,7 +17,7 @@ class UiKitTagWidget extends StatelessWidget {
     required this.icon,
     this.textColor,
     this.customSpace,
-    this.showGradient = false,
+    this.uniqueTag = false,
     this.showSpacing = false,
   }) : super(key: key);
 
@@ -35,24 +34,15 @@ class UiKitTagWidget extends StatelessWidget {
         ImageWidget(
           link: icon,
           height: SpacingFoundation.horizontalSpacing12,
-          color: ColorsFoundation.darkNeutral900,
+          color: uniqueTag ? Colors.white : ColorsFoundation.darkNeutral900,
           fit: BoxFit.fitHeight,
           // package: 'shuffle_uikit',
         ),
         SpacingFoundation.horizontalSpace4,
-        if (showGradient)
-          GradientText(
-            title,
-            colors: GradientFoundation.gradientBorder.gradient.colors,
-            gradientType: GradientType.radial,
-            radius: 2,
-            style: textStyle,
-          ),
-        if (!showGradient)
-          Text(
-            title,
-            style: textStyle,
-          )
+        Text(
+          title,
+          style: textStyle,
+        ),
       ],
     );
   }

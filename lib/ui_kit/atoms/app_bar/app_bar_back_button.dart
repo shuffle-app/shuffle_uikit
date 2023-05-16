@@ -11,24 +11,25 @@ class AppBarBackButton extends StatelessWidget {
 
     return Material(
       shape: const CircleBorder(),
-      color: iconColor ?? ColorsFoundation.surface,
+      color: ColorsFoundation.surface,
       elevation: 0,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
         onTap: () {
-          if (context.canPop()) Navigator.pop(context);
+          Navigator.pop(context);
         },
         child: Ink(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
-            color: iconColor ?? ColorsFoundation.surface,
+            color: ColorsFoundation.surface,
           ),
           width: 28.w,
           height: 28.h,
           child: ImageWidget(
             svgAsset: GraphicsFoundation.instance.svg.chevronLeft,
             fit: BoxFit.scaleDown,
-          ),
+            color: iconColor,
+          ).paddingAll(EdgeInsetsFoundation.all8),
         ),
       ),
     );

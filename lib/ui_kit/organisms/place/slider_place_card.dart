@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class SlidablePlaceCard extends StatelessWidget {
+class SliderPlaceCard extends StatelessWidget {
   final SlidablePlaceCardData slidablePlaceCardData;
 
-  const SlidablePlaceCard({
+  const SliderPlaceCard({
     Key? key,
     required this.slidablePlaceCardData,
   }) : super(key: key);
@@ -21,13 +21,13 @@ class SlidablePlaceCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             UiKitPhotoSlider(
-              media: slidablePlaceCardData.media,
+              media: slidablePlaceCardData.media ?? [],
               width: size.maxWidth,
               height: 156.h,
             ),
             SpacingFoundation.verticalSpace12,
             Text(
-              slidablePlaceCardData.title,
+              '${slidablePlaceCardData.title}',
               style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
             ),
             SpacingFoundation.verticalSpace4,
@@ -36,7 +36,7 @@ class SlidablePlaceCard extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  for (final placeTag in slidablePlaceCardData.placeTags)
+                  for (final placeTag in slidablePlaceCardData.placeTags ?? [])
                     UiKitTagWidget(
                       title: placeTag.title,
                       icon: placeTag.iconPath,
