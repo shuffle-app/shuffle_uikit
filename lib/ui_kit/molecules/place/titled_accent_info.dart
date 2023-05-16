@@ -28,6 +28,7 @@ class TitledAccentInfo extends StatelessWidget {
         ),
         Text(
           info,
+          maxLines: 2,
           style: infoStyle,
         ),
       ],

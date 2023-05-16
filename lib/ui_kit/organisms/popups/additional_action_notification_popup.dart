@@ -24,6 +24,7 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
 
     return BlurredCardWithBorder(
       hasShadow: hasShadow,
+      border: requiredData.gradientBorder ? GradientFoundation.gradientBorder : null,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,

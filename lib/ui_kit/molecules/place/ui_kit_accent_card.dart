@@ -7,6 +7,7 @@ class UiKitAccentCard extends StatelessWidget {
   final String additionalInfo;
   final String accentMessage;
   final ImageWidget image;
+  final VoidCallback? onPressed;
 
   const UiKitAccentCard({
     Key? key,
@@ -14,6 +15,7 @@ class UiKitAccentCard extends StatelessWidget {
     required this.additionalInfo,
     required this.accentMessage,
     required this.image,
+    this.onPressed,
   }) : super(key: key);
 
   @override
@@ -58,17 +60,26 @@ class UiKitAccentCard extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    Colors.transparent,
-                    Colors.black.withOpacity(0.5),
-                  ],
-                ),
+            Material(
+              clipBehavior: Clip.hardEdge,
+              borderRadius: BorderRadiusFoundation.all24,
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: onPressed,
                 borderRadius: BorderRadiusFoundation.all24,
+                child: Ink(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        Colors.black.withOpacity(0.5),
+                      ],
+                    ),
+                    borderRadius: BorderRadiusFoundation.all24,
+                  ),
+                ),
               ),
             ),
             Positioned(

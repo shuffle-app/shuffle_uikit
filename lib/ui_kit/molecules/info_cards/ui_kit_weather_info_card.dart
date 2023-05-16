@@ -19,11 +19,13 @@ class UiKitWeatherInfoCard extends StatelessWidget {
     final weatherTypeStyle = textTheme?.caption1Bold;
 
     return Container(
-      height: 35.h,
+      height: 60.h,
+      // padding: EdgeInsets.symmetric(vertical: 11.h,horizontal: 16.w),
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all20,
         gradient: GradientFoundation.yellowLinearGradient,
       ),
+      clipBehavior: Clip.hardEdge,
       child: Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,

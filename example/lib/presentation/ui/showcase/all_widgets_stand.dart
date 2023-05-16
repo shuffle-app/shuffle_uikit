@@ -253,6 +253,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   rasterAsset: GraphicsFoundation.instance.png.balloons,
                   fit: BoxFit.cover,
                 ),
+                onPressed: () {},
               ),
               SpacingFoundation.verticalSpace16,
               const Center(
@@ -276,6 +277,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: Row(
                   children: [
                     UiKitMessageCardWithIcon(
+                      onPressed: () {},
                       message: 'Want to have some fun',
                       icon: ImageWidget(
                         svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
@@ -284,6 +286,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
+                      onPressed: () {},
                       message: 'Want to have',
                       icon: ImageWidget(
                         svgAsset: GraphicsFoundation.instance.svg.angryEmoji,
@@ -292,6 +295,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
+                      onPressed: () {},
                       message: 'Want to haveWant to have',
                       icon: ImageWidget(
                         svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
@@ -303,6 +307,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               UiKitMessageCardWithIcon(
+                onPressed: () {},
                 message: 'need to cool down a bit?',
                 icon: ImageWidget(
                   svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
@@ -315,40 +320,38 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: Row(
                   children: [
                     context.gradientButton(
-                      text: '',
                       icon: ImageWidget(
                         svgAsset: GraphicsFoundation.instance.svg.dice,
                       ),
-                      borderRadius: BorderRadiusFoundation.max,
                       onPressed: () {},
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitTitledFilterChip(
                       title: 'Favorites',
-                      icon: GraphicsFoundation.instance.svg.star,
+                      icon: GraphicsFoundation.instance.svg.star.path,
                       selected: false,
-                      onPressed: (selected) {},
+                      onPressed: () {},
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitTitledFilterChip(
                       title: 'Clubs',
-                      icon: GraphicsFoundation.instance.svg.cocktail,
+                      icon: GraphicsFoundation.instance.svg.cocktail.path,
                       selected: true,
-                      onPressed: (selected) {},
+                      onPressed: () {},
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitTitledFilterChip(
                       title: 'Clubs',
-                      icon: GraphicsFoundation.instance.svg.cocktail,
+                      icon: GraphicsFoundation.instance.svg.cocktail.path,
                       selected: false,
-                      onPressed: (selected) {},
+                      onPressed: () {},
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitTitledFilterChip(
                       title: 'Favorites',
-                      icon: GraphicsFoundation.instance.svg.star,
+                      icon: GraphicsFoundation.instance.svg.star.path,
                       selected: false,
-                      onPressed: (selected) {},
+                      onPressed: () {},
                     ),
                   ],
                 ),
