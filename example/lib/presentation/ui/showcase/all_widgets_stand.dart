@@ -276,6 +276,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: Row(
                   children: [
                     UiKitMessageCardWithIcon(
+                      onPressed: () {},
                       message: 'Want to have some fun',
                       icon: ImageWidget(
                         svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
@@ -284,6 +285,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
+                      onPressed: () {},
                       message: 'Want to have',
                       icon: ImageWidget(
                         svgAsset: GraphicsFoundation.instance.svg.angryEmoji,
@@ -292,6 +294,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
+                      onPressed: () {},
                       message: 'Want to haveWant to have',
                       icon: ImageWidget(
                         svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
@@ -303,6 +306,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               UiKitMessageCardWithIcon(
+                onPressed: () {},
                 message: 'need to cool down a bit?',
                 icon: ImageWidget(
                   svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
