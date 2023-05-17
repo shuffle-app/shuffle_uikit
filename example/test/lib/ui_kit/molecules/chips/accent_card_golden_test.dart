@@ -10,6 +10,9 @@ void main() {
     ThemeData _theme = UiKitThemeFoundation.defaultTheme;
 
     testGoldens('Blurred Question Chip', (tester) async {
+
+      debugDisableShadows = false;
+
       final builder = GoldenBuilder.grid(
         columns: 2,
         widthToHeightRatio: 1.3,
