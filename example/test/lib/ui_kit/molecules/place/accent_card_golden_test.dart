@@ -5,11 +5,11 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  group('Blurred Chip', () {
+  group('Place card', () {
 
     ThemeData _theme = UiKitThemeFoundation.defaultTheme;
 
-    testGoldens('Blurred Question Chip', (tester) async {
+    testGoldens('Place card', (tester) async {
 
       debugDisableShadows = false;
 
@@ -91,7 +91,7 @@ void main() {
           // ),
           );
 
-      await screenMatchesGolden(tester, 'blurred_chip',autoHeight: true);
+      await screenMatchesGolden(tester, 'place_card',autoHeight: true);
     });
   });
 }
