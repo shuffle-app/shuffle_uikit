@@ -327,32 +327,36 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       onPressed: () {},
                     ),
                     SpacingFoundation.horizontalSpace12,
-                    UiKitTitledFilterChip(
+                    UiKitTitledFilterChip<String>(
                       title: 'Favorites',
                       icon: GraphicsFoundation.instance.svg.star.path,
                       selected: false,
-                      onPressed: () {},
+                      value: 'value',
+                      onPressed: (value) {},
                     ),
                     SpacingFoundation.horizontalSpace12,
-                    UiKitTitledFilterChip(
+                    UiKitTitledFilterChip<String>(
                       title: 'Clubs',
                       icon: GraphicsFoundation.instance.svg.cocktail.path,
                       selected: true,
-                      onPressed: () {},
+                      value: 'value',
+                      onPressed: (value) {},
                     ),
                     SpacingFoundation.horizontalSpace12,
-                    UiKitTitledFilterChip(
+                    UiKitTitledFilterChip<String>(
                       title: 'Clubs',
                       icon: GraphicsFoundation.instance.svg.cocktail.path,
                       selected: false,
-                      onPressed: () {},
+                      value: 'value',
+                      onPressed: (value) {},
                     ),
                     SpacingFoundation.horizontalSpace12,
-                    UiKitTitledFilterChip(
+                    UiKitTitledFilterChip<String>(
                       title: 'Favorites',
                       icon: GraphicsFoundation.instance.svg.star.path,
                       selected: false,
-                      onPressed: () {},
+                      value: 'value',
+                      onPressed: (value) {},
                     ),
                   ],
                 ),

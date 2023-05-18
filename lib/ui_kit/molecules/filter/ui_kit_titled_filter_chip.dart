@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitTitledFilterChip extends StatefulWidget {
+class UiKitTitledFilterChip<T> extends StatefulWidget {
   final String title;
   final bool selected;
-  final VoidCallback? onPressed;
+  final T? value;
+  final ValueChanged<T?>? onPressed;
   final String icon;
 
   const UiKitTitledFilterChip({
     Key? key,
     required this.title,
     this.selected = false,
+    this.value,
     this.onPressed,
     required this.icon,
   }) : super(key: key);
 
   @override
-  State<UiKitTitledFilterChip> createState() => _UiKitTitledFilterChipState();
+  State<UiKitTitledFilterChip<T>> createState() => _UiKitTitledFilterChipState<T>();
 }
 
-class _UiKitTitledFilterChipState extends State<UiKitTitledFilterChip> {
+class _UiKitTitledFilterChipState<T> extends State<UiKitTitledFilterChip<T>> {
   late bool _selected = widget.selected;
 
   @override
@@ -33,7 +35,11 @@ class _UiKitTitledFilterChipState extends State<UiKitTitledFilterChip> {
       child: InkWell(
         onTap: () {
           setState(() => _selected = !_selected);
-          widget.onPressed?.call();
+          if (_selected) {
+            widget.onPressed?.call(widget.value);
+          } else {
+            widget.onPressed?.call(null);
+          }
         },
         child: Ink(
           child: Row(
