@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitTitledFilterChip extends StatelessWidget {
   final String title;
   final bool selected;
+
   final VoidCallback? onPressed;
   final String icon;
 
@@ -12,7 +12,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
     Key? key,
     required this.title,
     this.selected = false,
-     this.onPressed,
+    this.onPressed,
     required this.icon,
   }) : super(key: key);
 
@@ -20,14 +20,13 @@ class UiKitTitledFilterChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final titleStyle = context.uiKitTheme?.boldTextTheme.caption1Bold;
 
-    return InkWell(
-        borderRadius: BorderRadiusFoundation.all24,
+    return Material(
+      borderRadius: BorderRadiusFoundation.all24,
+      color: selected ? Colors.white : ColorsFoundation.surface2,
+      clipBehavior: Clip.hardEdge,
+      child: InkWell(
         onTap: onPressed,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: selected ? Colors.white : ColorsFoundation.surface2,
-            borderRadius: BorderRadiusFoundation.all24,
-          ),
+        child: Ink(
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -48,7 +47,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
             vertical: SpacingFoundation.verticalSpacing12,
           ),
         ),
-
+      ),
     );
   }
 }

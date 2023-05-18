@@ -31,7 +31,7 @@ class BasePlaceActionCard extends StatelessWidget {
 
     return UiKitCardWrapper(
       child: Stack(
-        fit: StackFit.expand,
+        fit: StackFit.passthrough,
         children: [
           Positioned(
             right: -8.w,
@@ -47,7 +47,7 @@ class BasePlaceActionCard extends StatelessWidget {
             ),
           ),
           Column(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(

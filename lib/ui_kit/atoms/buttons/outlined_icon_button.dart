@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -17,23 +19,25 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
     final enabled = onPressed != null;
 
     return Material(
-      shape: const CircleBorder(),
-      color: enabled ? Colors.white.withOpacity(0.01) : ColorsFoundation.darkNeutral300,
       clipBehavior: Clip.hardEdge,
+      color: enabled ? Colors.white.withOpacity(0.01) : ColorsFoundation.darkNeutral300,
+      shape: CircleBorder(
+        side: BorderSide(
+          color: enabled ? Colors.white : ColorsFoundation.darkNeutral500,
+          width: 2.w,
+        ),
+      ),
       child: InkWell(
-        borderRadius: BorderRadiusFoundation.max,
         onTap: onPressed,
+        borderRadius: BorderRadiusFoundation.max,
         child: Ink(
-          height: 48.h,
-          width: 48.w,
           decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: enabled ? Colors.white : ColorsFoundation.darkNeutral500,
-              width: 2.w,
-            ),
+            borderRadius: BorderRadiusFoundation.max,
           ),
-          child: icon,
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+            child: icon?.paddingAll(EdgeInsetsFoundation.all16),
+          ),
         ),
       ),
     );

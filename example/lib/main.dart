@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(320, 480),
+      designSize: const Size(320, 568),
       minTextAdapt: true,
       builder: (context, child) {
         return UiKitTheme(

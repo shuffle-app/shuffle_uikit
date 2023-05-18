@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitTitledDescriptionGridWidget extends StatelessWidget {
@@ -18,7 +19,7 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
     return SizedBox(
-      width: (MediaQuery.of(context).size.width / 2) - (spacing * 2),
+      width: (0.5.sw) - (spacing * 2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
