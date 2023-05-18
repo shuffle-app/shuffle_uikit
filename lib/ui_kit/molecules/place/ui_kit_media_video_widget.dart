@@ -21,7 +21,7 @@ class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
           borderRadius: BorderRadiusFoundation.all24,
           child: ImageWidget(
             link: media.link,
-            width: MediaQuery.of(context).size.width * 0.75,
+            width: 0.75.sw,
             fit: BoxFit.cover,
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMediaImageWidget extends BaseUiKitMediaWidget {
@@ -15,7 +16,7 @@ class UiKitMediaImageWidget extends BaseUiKitMediaWidget {
       borderRadius: BorderRadiusFoundation.all24,
       child: ImageWidget(
         link: media.link,
-        width: MediaQuery.of(context).size.width * 0.75,
+        width: 0.75.sw,
         fit: BoxFit.cover,
       ),
     );
