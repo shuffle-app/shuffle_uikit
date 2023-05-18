@@ -63,7 +63,7 @@ class DialogTestingPage extends StatelessWidget {
                       hintTiles: [
                         UiKitIconHintCard(
                           icon: ImageWidget(
-                            svgAsset: GraphicsFoundation.instance.svg.location,
+                            svgAsset: GraphicsFoundation.instance.svg.map,
                           ),
                           hint: 'your location',
                         ),

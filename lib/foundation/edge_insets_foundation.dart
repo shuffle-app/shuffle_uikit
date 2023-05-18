@@ -4,6 +4,8 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class EdgeInsetsFoundation {
   static final zero = 0.w;
 
+  static double get all2 => 2.sp;
+
   static double get all4 => 4.sp;
 
   static double get all8 => 8.sp;
@@ -12,9 +14,9 @@ class EdgeInsetsFoundation {
 
   static double get all16 => 16.sp;
 
-  static double get all20 => 20.sp;
+  static double get all20 => 20;
 
-  static double get all24 => 24.sp;
+  static double get all24 => 24;
 
   static double get horizontal8 => SpacingFoundation.horizontalSpacing8;
 

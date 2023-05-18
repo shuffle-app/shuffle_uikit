@@ -256,9 +256,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 onPressed: () {},
               ),
               SpacingFoundation.verticalSpace16,
-              const Center(
+              Center(
                 child: UiKitBlurredQuestionChip(
-                  label: 'how it works',
+                  label: 'how it\nworks',
+                  onTap: () {},
                 ),
               ),
               SpacingFoundation.verticalSpace16,

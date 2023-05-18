@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class VerticalMessageCard extends StatelessWidget {
@@ -16,6 +15,7 @@ class VerticalMessageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width / 3 - SpacingFoundation.horizontalSpacing12;
     final messageStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium;
 
     return Material(
@@ -25,7 +25,7 @@ class VerticalMessageCard extends StatelessWidget {
         borderRadius: BorderRadiusFoundation.all24,
         onTap: onPressed,
         child: Ink(
-          width: 102.w,
+          width: width,
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all24,
             color: context.uiKitTheme?.cardColor,

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitTitledFilterChip extends StatelessWidget {
+class UiKitTitledFilterChip extends StatefulWidget {
   final String title;
   final bool selected;
   final VoidCallback? onPressed;
@@ -12,34 +11,43 @@ class UiKitTitledFilterChip extends StatelessWidget {
     Key? key,
     required this.title,
     this.selected = false,
-     this.onPressed,
+    this.onPressed,
     required this.icon,
   }) : super(key: key);
+
+  @override
+  State<UiKitTitledFilterChip> createState() => _UiKitTitledFilterChipState();
+}
+
+class _UiKitTitledFilterChipState extends State<UiKitTitledFilterChip> {
+  late bool _selected = widget.selected;
 
   @override
   Widget build(BuildContext context) {
     final titleStyle = context.uiKitTheme?.boldTextTheme.caption1Bold;
 
-    return InkWell(
-        borderRadius: BorderRadiusFoundation.all24,
-        onTap: onPressed,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: selected ? Colors.white : ColorsFoundation.surface2,
-            borderRadius: BorderRadiusFoundation.all24,
-          ),
+    return Material(
+      borderRadius: BorderRadiusFoundation.all24,
+      color: _selected ? Colors.white : ColorsFoundation.surface2,
+      clipBehavior: Clip.hardEdge,
+      child: InkWell(
+        onTap: () {
+          setState(() => _selected = !_selected);
+          widget.onPressed?.call();
+        },
+        child: Ink(
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               ImageWidget(
-                link: icon,
-                color: selected ? Colors.black : Colors.white,
+                link: widget.icon,
+                color: _selected ? Colors.black : Colors.white,
               ),
               SpacingFoundation.horizontalSpace8,
               Text(
-                title,
+                widget.title,
                 style: titleStyle?.copyWith(
-                  color: selected ? Colors.black : Colors.white,
+                  color: _selected ? Colors.black : Colors.white,
                 ),
               ),
             ],
@@ -48,7 +56,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
             vertical: SpacingFoundation.verticalSpacing12,
           ),
         ),
-
+      ),
     );
   }
 }
