@@ -89,7 +89,7 @@ class UiKitSpinnerCard extends StatelessWidget {
                     color: Colors.white,
                     fit: BoxFit.cover,
                   ),
-                  onPressed: () {},
+                  onPressed: onFavoriteTap,
                 ),
               ),
             ],
