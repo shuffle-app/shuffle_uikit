@@ -15,6 +15,7 @@ class AllWidgetsStand extends StatefulWidget {
 class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final TextEditingController _controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
@@ -42,6 +43,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       title: 'Shuffle UI Kit Stand',
       centerTitle: true,
       body: SingleChildScrollView(
+        controller: _scrollController,
         child: Form(
           key: _formKey,
           child: Column(
@@ -49,6 +51,26 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              UiKitHorizontalScrollableList(
+                spacing: SpacingFoundation.horizontalSpacing12,
+                children: List<Widget>.generate(
+                  5,
+                  (index) => UiKitSpinnerCard(
+                    photoLink: GraphicsFoundation.instance.png.spinnerEvent.path,
+                    title: 'Yoga today at Palm Jumeirah. You go? Yes, you go!',
+                    date: DateTime.now(),
+                    favourite: index % 2 > 0,
+                    onTap: () {},
+                    onFavoriteTap: () {},
+                    ownerPhotoLink: GraphicsFoundation.instance.png.mockUserAvatar.path,
+                    ownerTileTitle: 'John Doe',
+                    ownerTileTitleTrailing: ProAccountMark(),
+                    ownerTileSubtitle: '@johndoe',
+                  ),
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              SpacingFoundation.verticalSpace16,
               context.notificationPopUp(
                 primaryActionWidget: context.smallButton(
                   text: 'Ok',
@@ -438,27 +460,25 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ],
               ),
               SpacingFoundation.verticalSpace16,
-              IntrinsicHeight(
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Expanded(
-                      child: UpcomingEventPlaceActionCard(
-                        value: 'in 2 days',
-                        vectorIconAsset: GraphicsFoundation.instance.svg.events,
-                        action: () {},
-                      ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: UpcomingEventPlaceActionCard(
+                      value: 'in 2 days',
+                      vectorIconAsset: GraphicsFoundation.instance.svg.events,
+                      action: () {},
                     ),
-                    SpacingFoundation.horizontalSpace8,
-                    Expanded(
-                      child: PointBalancePlaceActionCard(
-                        value: '2 650',
-                        vectorIconAsset: GraphicsFoundation.instance.svg.coin,
-                        action: () {},
-                      ),
+                  ),
+                  SpacingFoundation.horizontalSpace8,
+                  Expanded(
+                    child: PointBalancePlaceActionCard(
+                      value: '2 650',
+                      vectorIconAsset: GraphicsFoundation.instance.svg.money,
+                      action: () {},
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               SpacingFoundation.verticalSpace16,
               TitleWithAvatar(

@@ -27,6 +27,8 @@ class SpacingFoundation {
 
   static double get verticalSpacing8 => 8.h;
 
+  static double get verticalSpacing10 => 10.h;
+
   static double get verticalSpacing12 => 12.h;
 
   static double get verticalSpacing14 => 14.h;
@@ -43,9 +45,11 @@ class SpacingFoundation {
 
   static Widget get horizontalSpace10 => horizontalSpacing10.horizontalSpace;
 
-  static Widget get horizontalSpace12 => horizontalSpacing12.horizontalSpace;
+  static Widget get horizontalSpace12 => horizontalSpacing12.widthBox;
 
   static Widget get horizontalSpace16 => horizontalSpacing16.widthBox;
+
+  static Widget get horizontalSpace24 => horizontalSpacing24.widthBox;
 
   static Widget get verticalSpace2 => verticalSpacing2.verticalSpace;
 
@@ -53,9 +57,10 @@ class SpacingFoundation {
 
   static Widget get verticalSpace8 => verticalSpacing8.verticalSpace;
 
-  static Widget get verticalSpace12 => verticalSpacing12.verticalSpace;
+  static Widget get verticalSpace12 => verticalSpacing12.heightBox;
 
-  static Widget get verticalSpace14 => verticalSpacing14.verticalSpace;
+  static Widget get verticalSpace14 => verticalSpacing14.heightBox;
+
   static Widget get verticalSpace16 => verticalSpacing16.heightBox;
 
   static Widget get verticalSpace24 => verticalSpacing24.heightBox;
