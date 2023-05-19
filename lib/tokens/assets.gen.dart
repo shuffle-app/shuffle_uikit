@@ -87,6 +87,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
 
+  /// File path: assets/images/png/spinner_event.png
+  AssetGenImage get spinnerEvent => const AssetGenImage('assets/images/png/spinner_event.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         atmosphere,
@@ -98,7 +101,8 @@ class $AssetsImagesPngGen {
         place,
         profileAvatar,
         profilePost1,
-        profileStory1
+        profileStory1,
+        spinnerEvent
       ];
 }
 
@@ -529,6 +533,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/spinner_outline.svg
   SvgGenImage get spinnerOutline => const SvgGenImage('assets/images/svg/spinner_outline.svg');
 
+  /// File path: assets/images/svg/spinner_wheel.svg
+  SvgGenImage get spinnerWheel => const SvgGenImage('assets/images/svg/spinner_wheel.svg');
+
   /// File path: assets/images/svg/star-2.svg
   SvgGenImage get star2 => const SvgGenImage('assets/images/svg/star-2.svg');
 
@@ -729,6 +736,7 @@ class $AssetsImagesSvgGen {
         shuffleOutline,
         spinnerFill,
         spinnerOutline,
+        spinnerWheel,
         star2,
         starFill,
         starOutline,

@@ -30,6 +30,7 @@ dependencies:
   tabnavigator: ^1.0.0
   lottie: ^2.3.2
   flutter_card_swiper: ^5.0.0
+  intl: ^0.18.1
 
 
 dev_dependencies:

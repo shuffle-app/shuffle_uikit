@@ -34,3 +34,7 @@ build/
 # Android related
 **/android/local.properties
 /linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/
+
+# iOS/XCode related
+/ios/Flutter/flutter_export_environment.sh
+/ios/*.xcconfig

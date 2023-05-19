@@ -206,8 +206,15 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? blurred,
   }) {
     final hasIcon = icon != null;
-    if (hasIcon && (blurred ?? false)) {
+    final hasBlur = blurred ?? false;
+    if (hasIcon && hasBlur) {
       return SmallBlurredButtonWithIcon(
+        icon: icon,
+        onPressed: onPressed,
+      );
+    }
+    if (hasIcon && !hasBlur) {
+      return SmallButtonWithIcon(
         icon: icon,
         onPressed: onPressed,
       );
