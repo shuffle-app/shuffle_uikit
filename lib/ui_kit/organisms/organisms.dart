@@ -15,4 +15,5 @@ export 'profile/profile_card.dart';
 export 'profile/profile_highlights.dart';
 export 'profile/profile_posts_places.dart';
 export 'profile/profile_stories_list.dart';
+export 'spinner/ui_kit_spinner_card.dart';
 export 'ui_kit_card_swiper.dart';
