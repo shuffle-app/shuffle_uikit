@@ -41,9 +41,9 @@ abstract class WidgetsAbstractFactory {
   });
 
   ButtonFactory createSmallOutlinedButton({
-    required String text,
+    String? text,
     VoidCallback? onPressed,
-    Widget? icon,
+    ImageWidget? icon,
     Color? color,
   });
 
@@ -59,13 +59,13 @@ abstract class WidgetsAbstractFactory {
     required String avatarUrl,
     required UserTileType type,
   });
-  // InputFieldFactory createInputField({
-  //   required TextEditingController controller,
-  //   String? hintText,
-  //   String? errorText,
-  //   bool enabled = true,
-  //   String? Function(String?)? validator,
-  // });
+// InputFieldFactory createInputField({
+//   required TextEditingController controller,
+//   String? hintText,
+//   String? errorText,
+//   bool enabled = true,
+//   String? Function(String?)? validator,
+// });
 }
 
 abstract class ButtonFactory {
@@ -91,17 +91,23 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 
   @override
   ButtonFactory createSmallOutlinedButton({
-    required String text,
+    String? text,
     VoidCallback? onPressed,
-    Widget? icon,
+    ImageWidget? icon,
     Color? color,
   }) {
-    return SmallOutlinedButton(
-      onPressed: onPressed,
-      text: text,
-      borderColor: color,
-      textColor: color,
-    );
+    if ((text!=null && text.isNotEmpty) || icon != null) {
+      return SmallOutlinedButton(
+          onPressed: onPressed,
+          text: text ?? '',
+          borderColor: color,
+          textColor: color,
+          icon: icon
+      );
+    } else {
+      throw UnimplementedError(
+          'Outlined button with your parameters is not implemented');
+    }
   }
 
   @override
@@ -118,7 +124,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: onPressed,
       );
     } else {
-      throw UnimplementedError('Outlined button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Outlined button with your parameters is not implemented');
     }
   }
 
@@ -148,7 +155,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: onPressed,
       );
     } else {
-      throw UnimplementedError('Gradient button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Gradient button with your parameters is not implemented');
     }
   }
 
@@ -161,7 +169,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? blurred,
   }) {
     final hasIcon = icon != null;
-    final onlyIconButton = hasIcon && text.isEmpty && !isTextButton && !(blurred ?? false);
+    final onlyIconButton = hasIcon && text.isEmpty && !isTextButton &&
+        !(blurred ?? false);
 
     if (hasIcon && !onlyIconButton && !(blurred ?? false)) {
       return OrdinaryButtonWithIcon(
@@ -299,7 +308,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? dismissActionWidget,
     bool? hasShadow,
   }) {
-    final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
+    final hasAllActions = primaryActionWidget != null &&
+        secondaryActionWidget != null && dismissActionWidget != null;
     if (hasAllActions) {
       return AdditionalActionNotificationPopUp(
         requiredData: requiredData,
@@ -318,14 +328,14 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     );
   }
 
-  // @override
-  // InputFieldFactory createInputField({
-  //   required TextEditingController controller,
-  //   String? hintText,
-  //   String? errorText,
-  //   bool enabled = true,
-  //   String? Function(String?)? validator,
-  // }) {
-  //   return InputField();
-  // }
+// @override
+// InputFieldFactory createInputField({
+//   required TextEditingController controller,
+//   String? hintText,
+//   String? errorText,
+//   bool enabled = true,
+//   String? Function(String?)? validator,
+// }) {
+//   return InputField();
+// }
 }
