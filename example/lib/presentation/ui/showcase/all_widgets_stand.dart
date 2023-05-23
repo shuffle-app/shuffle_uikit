@@ -51,26 +51,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              UiKitHorizontalScrollableList(
-                spacing: SpacingFoundation.horizontalSpacing12,
-                children: List<Widget>.generate(
-                  5,
-                  (index) => UiKitSpinnerCard(
-                    photoLink: GraphicsFoundation.instance.png.spinnerEvent.path,
-                    title: 'Yoga today at Palm Jumeirah. You go? Yes, you go!',
-                    date: DateTime.now(),
-                    favourite: index % 2 > 0,
-                    onTap: () {},
-                    onFavoriteTap: () {},
-                    ownerPhotoLink: GraphicsFoundation.instance.png.mockUserAvatar.path,
-                    ownerTileTitle: 'John Doe',
-                    ownerTileTitleTrailing: ProAccountMark(),
-                    ownerTileSubtitle: '@johndoe',
-                  ),
-                ),
-              ),
-              SpacingFoundation.verticalSpace16,
-              SpacingFoundation.verticalSpace16,
               context.notificationPopUp(
                 primaryActionWidget: context.smallButton(
                   text: 'Ok',
