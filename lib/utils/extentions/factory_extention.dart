@@ -11,12 +11,12 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createSmallButton(
-          text: text ?? '',
-          onPressed: onPressed,
-          icon: icon,
-          isTextButton: isTextButton ?? false,
-          blurred: blurred,
-        )
+      text: text ?? '',
+      onPressed: onPressed,
+      icon: icon,
+      isTextButton: isTextButton ?? false,
+      blurred: blurred,
+    )
         .build(this);
   }
 
@@ -28,27 +28,27 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createOutlinedButton(
-          text: text ?? '',
-          onPressed: onPressed,
-          icon: icon,
-          color: color,
-        )
+      text: text ?? '',
+      onPressed: onPressed,
+      icon: icon,
+      color: color,
+    )
         .build(this);
   }
 
   Widget smallOutlinedButton({
-    required String text,
+    String? text,
     VoidCallback? onPressed,
-    Widget? icon,
+    ImageWidget? icon,
     Color? color,
   }) {
     return WidgetsFactory.of(this)!
         .createSmallOutlinedButton(
-          text: text,
-          onPressed: onPressed,
-          icon: icon,
-          color: color,
-        )
+      text: text,
+      onPressed: onPressed,
+      icon: icon,
+      color: color,
+    )
         .build(this);
   }
 
@@ -60,11 +60,11 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createDialogButton(
-          text: text,
-          onPressed: onPressed,
-          dialogButtonType: dialogButtonType,
-          small: small,
-        )
+      text: text,
+      onPressed: onPressed,
+      dialogButtonType: dialogButtonType,
+      small: small,
+    )
         .build(this);
   }
 
@@ -77,12 +77,12 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createOrdinaryButton(
-          text: text ?? '',
-          onPressed: onPressed,
-          icon: icon,
-          isTextButton: isTextButton ?? false,
-          blurred: blurred,
-        )
+      text: text ?? '',
+      onPressed: onPressed,
+      icon: icon,
+      isTextButton: isTextButton ?? false,
+      blurred: blurred,
+    )
         .build(this);
   }
 
@@ -93,10 +93,10 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createGradientButton(
-          text: text,
-          onPressed: onPressed,
-          icon: icon,
-        )
+      text: text,
+      onPressed: onPressed,
+      icon: icon,
+    )
         .build(this);
   }
 
@@ -109,12 +109,12 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createUserTile(
-          name: name,
-          username: username,
-          avatarUrl: avatarUrl,
-          type: type,
-          onTap: onTap,
-        )
+      name: name,
+      username: username,
+      avatarUrl: avatarUrl,
+      type: type,
+      onTap: onTap,
+    )
         .build(this);
   }
 
@@ -127,12 +127,12 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createNotificationPopUp(
-          requiredData: requiredData,
-          primaryActionWidget: primaryActionWidget,
-          secondaryActionWidget: secondaryActionWidget,
-          dismissActionWidget: dismissActionWidget,
-          hasShadow: hasShadow,
-        )
+      requiredData: requiredData,
+      primaryActionWidget: primaryActionWidget,
+      secondaryActionWidget: secondaryActionWidget,
+      dismissActionWidget: dismissActionWidget,
+      hasShadow: hasShadow,
+    )
         .build(this);
   }
 }
