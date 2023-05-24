@@ -48,58 +48,58 @@ class UiKitSpinnerCard extends StatelessWidget {
         children: [
           SpacingFoundation.verticalSpace8,
           Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadiusFoundation.all24,
-              child: Stack(
-                clipBehavior: Clip.none,
-                fit: StackFit.passthrough,
-                children: [
-                  ImageWidget(
+            child: Stack(
+              clipBehavior: Clip.none,
+              fit: StackFit.passthrough,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadiusFoundation.all24,
+                  child: ImageWidget(
                     link: photoLink,
                     fit: BoxFit.cover,
                   ),
-                  Positioned(
-                    bottom: SpacingFoundation.verticalSpacing10,
-                    left: SpacingFoundation.horizontalSpacing10,
-                    right: SpacingFoundation.horizontalSpacing10,
-                    child: UiKitBlurredListTile(
-                      title: ownerTileTitle,
-                      titleTrailing: ownerTileTitleTrailing,
-                      subtitle: ownerTileSubtitle,
-                      photoLink: ownerPhotoLink,
+                ),
+                Positioned(
+                  bottom: SpacingFoundation.verticalSpacing10,
+                  left: SpacingFoundation.horizontalSpacing10,
+                  right: SpacingFoundation.horizontalSpacing10,
+                  child: UiKitBlurredListTile(
+                    title: ownerTileTitle,
+                    titleTrailing: ownerTileTitleTrailing,
+                    subtitle: ownerTileSubtitle,
+                    photoLink: ownerPhotoLink,
+                  ),
+                ),
+                Positioned.fill(
+                  child: Material(
+                    elevation: 0,
+                    clipBehavior: Clip.hardEdge,
+                    color: Colors.transparent,
+                    type: MaterialType.card,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadiusFoundation.all24,
+                    ),
+                    child: InkWell(
+                      splashColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
+                      onTap: onTap,
+                      child: Ink(),
                     ),
                   ),
-                  Positioned.fill(
-                    child: Material(
-                      elevation: 0,
-                      clipBehavior: Clip.hardEdge,
-                      color: Colors.transparent,
-                      type: MaterialType.card,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadiusFoundation.all24,
-                      ),
-                      child: InkWell(
-                        splashColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
-                        onTap: onTap,
-                        child: Ink(),
-                      ),
+                ),
+                Positioned(
+                  top: -SpacingFoundation.verticalSpacing8,
+                  right: -SpacingFoundation.horizontalSpacing8,
+                  child: context.smallButton(
+                    icon: ImageWidget(
+                      svgAsset:
+                          favourite == true ? GraphicsFoundation.instance.svg.starFill : GraphicsFoundation.instance.svg.starOutline,
+                      color: Colors.white,
+                      fit: BoxFit.cover,
                     ),
+                    onPressed: onFavoriteTap,
                   ),
-                  Positioned(
-                    top: -SpacingFoundation.verticalSpacing8,
-                    right: -SpacingFoundation.horizontalSpacing8,
-                    child: context.smallButton(
-                      icon: ImageWidget(
-                        svgAsset:
-                            favourite == true ? GraphicsFoundation.instance.svg.starFill : GraphicsFoundation.instance.svg.starOutline,
-                        color: Colors.white,
-                        fit: BoxFit.cover,
-                      ),
-                      onPressed: onFavoriteTap,
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           SpacingFoundation.verticalSpace12,

@@ -18,6 +18,16 @@ class $AssetsAnimationsGen {
   $AssetsAnimationsLottieGen get lottie => const $AssetsAnimationsLottieGen();
 }
 
+class $AssetsAudioGen {
+  const $AssetsAudioGen();
+
+  /// File path: assets/audio/rachet_click.mp3
+  String get rachetClick => 'assets/audio/rachet_click.mp3';
+
+  /// List of all assets
+  List<String> get values => [rachetClick];
+}
+
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
@@ -763,6 +773,7 @@ class Assets {
   Assets._();
 
   static const $AssetsAnimationsGen animations = $AssetsAnimationsGen();
+  static const $AssetsAudioGen audio = $AssetsAudioGen();
   static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }

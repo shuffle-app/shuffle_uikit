@@ -31,6 +31,7 @@ dependencies:
   lottie: ^2.3.2
   flutter_card_swiper: ^5.0.0
   intl: ^0.18.1
+  just_audio: ^0.9.33
 
 
 dev_dependencies:
@@ -53,6 +54,7 @@ flutter:
     - assets/images/png/
     - assets/images/svg/
     - assets/fonts/
+    - assets/audio/
     - assets/animations/lottie/
 
   fonts:

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:shuffle_uikit/foundation/audio_foundation.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitSpinner extends StatefulWidget {
@@ -20,24 +23,46 @@ class UiKitSpinner extends StatefulWidget {
 
 class _UiKitSpinnerState extends State<UiKitSpinner> {
   final _animDuration = const Duration(milliseconds: 150);
-  final ValueNotifier<double> _notifier = ValueNotifier<double>(0);
-  final ValueNotifier<double> _scrollNotifier = ValueNotifier<double>(0);
+  final ValueNotifier<double> _rotationNotifier = ValueNotifier<double>(0);
+  final ValueNotifier<double> _lastScrollPositionOffsetNotifier = ValueNotifier<double>(0);
+  final ValueNotifier<double> _scrollStartNotifier = ValueNotifier<double>(0);
+  bool manuallyScrolling = false;
+  final _player = AudioPlayer();
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      /// to update render objects after first frame
-      setState(() {
-        _notifier.value = 100;
-      });
+      widget.scrollController.addListener(_scrollListener);
+      _player.setAsset(
+        AudioFoundation.instance.audio.rachetClick,
+        package: 'shuffle_uikit',
+      );
     });
+  }
+
+  void _enableFeedback() {
+    _player.play().then((value) => _player.seek(Duration.zero));
+    HapticFeedback.lightImpact();
+  }
+
+  void _scrollListener() {
+    if (!manuallyScrolling) return;
+
+    if (widget.scrollController.offset.toInt() % 20 == 0) {
+      _enableFeedback();
+    }
+    final scrollDelta = widget.scrollController.offset - _lastScrollPositionOffsetNotifier.value;
+
+    _rotationNotifier.value -= scrollDelta / 500;
+    _lastScrollPositionOffsetNotifier.value = widget.scrollController.offset;
   }
 
   void _scrollByPixels({
     required double pixelsToScroll,
     bool animate = false,
   }) {
+    if (manuallyScrolling) _setManuallyScrolling(value: false);
     final maxScrollOffset = widget.scrollController.position.maxScrollExtent;
     final computedOffset = widget.scrollController.offset - pixelsToScroll;
     double scrollOffset = 0;
@@ -52,24 +77,44 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     } else {
       widget.scrollController.jumpTo(scrollOffset);
     }
+    _lastScrollPositionOffsetNotifier.value = scrollOffset;
   }
 
-  void _shouldSwitchCategory({required double currentOffset}) {
+  void _shouldSwitchCategory() {
+    final currentOffset = widget.scrollController.offset;
+    print('currentOffset: $currentOffset');
     final screenWidth = 1.sw;
     final nearestElementIndex = (currentOffset / screenWidth).round();
-    if (nearestElementIndex < 0) {
+    if (nearestElementIndex <= 0) {
       widget.onSpinChangedCategory?.call(widget.categories.first);
     } else if (nearestElementIndex >= widget.categories.length) {
       widget.onSpinChangedCategory?.call(widget.categories.last);
     } else {
       widget.onSpinChangedCategory?.call(widget.categories.elementAt(nearestElementIndex));
     }
+    final nearestElementOffset = nearestElementIndex * screenWidth;
+
+    widget.scrollController.animateTo(
+      nearestElementOffset,
+      duration: _animDuration,
+      curve: Curves.decelerate,
+    );
+
+    _enableFeedback();
+  }
+
+  _setManuallyScrolling({bool value = true}) {
+    _lastScrollPositionOffsetNotifier.value = widget.scrollController.offset;
+    setState(() => manuallyScrolling = value);
   }
 
   @override
   void dispose() {
-    _notifier.dispose();
-    _scrollNotifier.dispose();
+    widget.scrollController.removeListener(_scrollListener);
+    _rotationNotifier.dispose();
+    _lastScrollPositionOffsetNotifier.dispose();
+    _scrollStartNotifier.dispose();
+    _player.dispose();
     super.dispose();
   }
 
@@ -83,21 +128,24 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            UiKitHorizontalScrollableList(
-              scrollController: widget.scrollController,
-              children: widget.categories
-                  .map<Widget>(
-                    (e) => SizedBox(
-                      width: 1.sw,
-                      child: Center(
-                        child: Text(
-                          e,
-                          style: context.uiKitTheme?.boldTextTheme.title1,
+            GestureDetector(
+              onTapDown: (tapDetails) => _setManuallyScrolling(value: true),
+              child: UiKitHorizontalScrollableList(
+                scrollController: widget.scrollController,
+                children: widget.categories
+                    .map<Widget>(
+                      (e) => SizedBox(
+                        width: 1.sw,
+                        child: Center(
+                          child: Text(
+                            e,
+                            style: context.uiKitTheme?.boldTextTheme.title1,
+                          ),
                         ),
                       ),
-                    ),
-                  )
-                  .toList(),
+                    )
+                    .toList(),
+              ),
             ),
             SizesFoundation.screenWidth <= 275 ? SpacingFoundation.verticalSpace16 : SpacingFoundation.verticalSpace24,
             SizedBox(
@@ -110,24 +158,27 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     left: (availableWidth / 2) - 345,
                     child: GestureDetector(
                       onPanUpdate: (details) {
+                        _setManuallyScrolling();
                         final delta = details.delta.dx;
-                        if (widget.scrollController.offset == 0 && !delta.isNegative) return;
-                        _scrollNotifier.value = details.localPosition.dx;
-                        _notifier.value += delta / 500;
+                        final inScrollBeginning = widget.scrollController.offset == 0 && !delta.isNegative;
+                        final inScrollEnd =
+                            widget.scrollController.offset == widget.scrollController.position.maxScrollExtent && delta.isNegative;
+                        if (inScrollBeginning || inScrollEnd) return;
+                        if (details.localPosition.dx.toInt() % 20 == 0) _enableFeedback();
+                        _rotationNotifier.value += delta / 500;
                         _scrollByPixels(
                           pixelsToScroll: delta,
                         );
                       },
-                      onPanEnd: (details) {
-                        _shouldSwitchCategory(
-                          currentOffset: widget.scrollController.offset,
-                        );
+                      onPanStart: (details) {
+                        _scrollStartNotifier.value = widget.scrollController.offset;
                       },
+                      onPanEnd: (details) => _shouldSwitchCategory(),
                       child: AnimatedBuilder(
-                        animation: _notifier,
+                        animation: _rotationNotifier,
                         builder: (context, child) {
                           return Transform.rotate(
-                            angle: _notifier.value,
+                            angle: _rotationNotifier.value,
                             // duration: _animDuration,
                             child: child,
                           );
