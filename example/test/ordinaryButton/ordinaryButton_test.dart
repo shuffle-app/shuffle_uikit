@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   group('OrdinaryButton', () {
-    ThemeData _theme = UiKitThemeFoundation.fallbackTheme;
+    ThemeData theme = UiKitThemeFoundation.fallbackTheme;
 
     testGoldens('OrdinaryButton', (tester) async {
       debugDisableShadows = false;

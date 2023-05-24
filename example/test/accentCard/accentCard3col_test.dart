@@ -6,19 +6,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   group('AccentCard', () {
-
-    ThemeData _theme = UiKitThemeFoundation.defaultTheme;
+    ThemeData theme = UiKitThemeFoundation.defaultTheme;
 
     testGoldens('AccentCard', (tester) async {
-
       debugDisableShadows = false;
 
       final builder = GoldenBuilder.grid(
         columns: 3,
         widthToHeightRatio: 1,
-          bgColor: _theme.scaffoldBackgroundColor,
-          wrap: (child) =>child,
-              )
+        bgColor: theme.scaffoldBackgroundColor,
+        wrap: (child) => child,
+      )
         ..addScenario(
           'Like in stand',
           UiKitAccentCard(
@@ -35,7 +33,8 @@ void main() {
         ..addScenario(
           'Long text',
           UiKitAccentCard(
-            title: 'Ballooning festival with Eminem, Snoop Dog, Ice Cube and Juicy Jay!',
+            title:
+                'Ballooning festival with Eminem, Snoop Dog, Ice Cube and Juicy Jay!',
             additionalInfo: '22-23 March only',
             accentMessage: 'Don’t miss that great event!',
             image: ImageWidget(
@@ -44,7 +43,8 @@ void main() {
             ),
             onPressed: () {},
           ),
-        ) ..addScenario(
+        )
+        ..addScenario(
           'Without accent Message',
           UiKitAccentCard(
             title: 'Ballooning festival',
@@ -56,7 +56,8 @@ void main() {
             ),
             onPressed: () {},
           ),
-        ) ..addScenario(
+        )
+        ..addScenario(
           'Without accent Message and additional info',
           UiKitAccentCard(
             title: 'Ballooning festival',
@@ -70,28 +71,17 @@ void main() {
           ),
         );
 
-
-
       await tester.pumpWidgetBuilder(ScreenUtilInit(
-              designSize: const Size(700, 800),
-              child: builder.build(),
-              builder: (BuildContext context, Widget? child) =>
-                  StatefulBuilder(builder: (context, setState) {
-                    return UiKitTheme(
-                        onThemeUpdated: (theme) =>
-                            setState(() => _theme = theme),
-                        child: Material(
-                            child:
-                                Theme(data: _theme, child: child!)));
-                  }))
-          //   },
-          // ),
-          // wrapper: materialAppWrapper(
-          //   theme: theme,
-          // ),
-          );
+          designSize: const Size(700, 800),
+          child: builder.build(),
+          builder: (BuildContext context, Widget? child) =>
+              StatefulBuilder(builder: (context, setState) {
+                return UiKitTheme(
+                    onThemeUpdated: (theme) => setState(() => theme = theme),
+                    child: Material(child: Theme(data: theme, child: child!)));
+              })));
 
-      await screenMatchesGolden(tester, 'AccentCard3column',autoHeight: true);
+      await screenMatchesGolden(tester, 'AccentCard3column', autoHeight: true);
     });
   });
 }

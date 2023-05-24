@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   group('AccentCard', () {
-    ThemeData _theme = UiKitThemeFoundation.defaultTheme;
+    ThemeData theme = UiKitThemeFoundation.defaultTheme;
 
     testGoldens('AccentCard', (tester) async {
       debugDisableShadows = false;
@@ -14,7 +14,7 @@ void main() {
       final builder = GoldenBuilder.grid(
         columns: 2,
         widthToHeightRatio: 1,
-        bgColor: _theme.scaffoldBackgroundColor,
+        bgColor: theme.scaffoldBackgroundColor,
         wrap: (child) => child,
       )
         ..addScenario(
@@ -77,8 +77,8 @@ void main() {
           builder: (BuildContext context, Widget? child) =>
               StatefulBuilder(builder: (context, setState) {
                 return UiKitTheme(
-                    onThemeUpdated: (theme) => setState(() => _theme = theme),
-                    child: Material(child: Theme(data: _theme, child: child!)));
+                    onThemeUpdated: (theme) => setState(() => theme = theme),
+                    child: Material(child: Theme(data: theme, child: child!)));
               })));
 
       await screenMatchesGolden(tester, 'AccentCard2column', autoHeight: true);

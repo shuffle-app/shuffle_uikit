@@ -7,10 +7,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() {
   group('UiKitIconHintCard', () {
     ThemeData theme = UiKitThemeFoundation.fallbackTheme;
-   
+
     testGoldens('UiKitIconHintCard', (tester) async {
       debugDisableShadows = false;
-    
+
       final builder = GoldenBuilder.column(
         bgColor: theme.scaffoldBackgroundColor,
         wrap: (child) => child,
@@ -51,12 +51,6 @@ void main() {
                       child:
                           Material(child: Theme(data: theme, child: child!)));
                 })),
-
-        //   },
-        // ),
-        // wrapper: materialAppWrapper(
-        //   theme: theme,
-        // ),
       );
 
       await screenMatchesGolden(tester, 'UiKitIconHintCard', autoHeight: true);
