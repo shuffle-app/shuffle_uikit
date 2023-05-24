@@ -22,10 +22,8 @@ class UiKitHorizontalScrollableList extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Wrap(
         spacing: spacing ?? SpacingFoundation.zero,
-        children: children,
+        children: [(leftPadding ?? 0).widthBox, ...children],
       ),
-    ).paddingOnly(
-      left: leftPadding ?? SpacingFoundation.zero,
     );
   }
 }
