@@ -18,3 +18,4 @@ export 'profile/profile_stories_list.dart';
 export 'spinner/ui_kit_spinner.dart';
 export 'spinner/ui_kit_spinner_card.dart';
 export 'ui_kit_card_swiper.dart';
+export 'wheel_value_selector/ui_kit_horizontal_wheel_number_selector.dart';

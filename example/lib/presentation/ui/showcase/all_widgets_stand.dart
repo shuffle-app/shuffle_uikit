@@ -51,6 +51,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              UiKitHorizontalWheelNumberSelector(
+                title: 'Your age',
+                values: List<int>.generate(70, (index) => 10+index),
+                onValueChanged: (value) {},
+              ),
+              SpacingFoundation.verticalSpace16,
               context.notificationPopUp(
                 primaryActionWidget: context.smallButton(
                   text: 'Ok',
