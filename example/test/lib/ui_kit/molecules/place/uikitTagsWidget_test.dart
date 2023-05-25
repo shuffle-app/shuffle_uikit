@@ -12,11 +12,26 @@ void main() {
       debugDisableShadows = false;
 
       final builder = GoldenBuilder.grid(
-        columns: 1,
-        widthToHeightRatio: 1,
+        columns: 3,
+        widthToHeightRatio: 2,
         bgColor: theme.scaffoldBackgroundColor,
         wrap: (child) => child,
-      )..addScenario(
+      )
+        ..addScenario(
+          'UiKitTagsWidget',
+          UiKitTagWidget(
+            title: 'Club',
+            icon: Assets.images.svg.cocktail.path,
+          ),
+        )
+        ..addScenario(
+          'UiKitTagsWidget',
+          UiKitTagWidget(
+            title: 'Club',
+            icon: Assets.images.svg.cocktail.path,
+          ),
+        )
+        ..addScenario(
           'UiKitTagsWidget',
           UiKitTagWidget(
             title: 'Club',
@@ -34,7 +49,7 @@ void main() {
                     child: Material(child: Theme(data: theme, child: child!)));
               })));
 
-      await screenMatchesGolden(tester, 'UiKitTagsWidget_width414',
+      await screenMatchesGolden(tester, 'UiKitTagsWidget_width414_3cards',
           autoHeight: true);
     });
   });
