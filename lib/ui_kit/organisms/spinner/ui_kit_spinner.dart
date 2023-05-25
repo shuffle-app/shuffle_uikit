@@ -24,7 +24,8 @@ class UiKitSpinner extends StatefulWidget {
 class _UiKitSpinnerState extends State<UiKitSpinner> {
   final _animDuration = const Duration(milliseconds: 150);
   final ValueNotifier<double> _rotationNotifier = ValueNotifier<double>(0);
-  final ValueNotifier<double> _lastScrollPositionOffsetNotifier = ValueNotifier<double>(0);
+  final ValueNotifier<double> _lastScrollPositionOffsetNotifier =
+      ValueNotifier<double>(0);
   final ValueNotifier<double> _scrollStartNotifier = ValueNotifier<double>(0);
   bool manuallyScrolling = false;
   final _player = AudioPlayer();
@@ -47,12 +48,13 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
   }
 
   void _scrollListener() {
-    if (!manuallyScrolling) return;
+    // if (!manuallyScrolling) return;
 
     if (widget.scrollController.offset.toInt() % 20 == 0) {
       _enableFeedback();
     }
-    final scrollDelta = widget.scrollController.offset - _lastScrollPositionOffsetNotifier.value;
+    final scrollDelta = widget.scrollController.offset -
+        _lastScrollPositionOffsetNotifier.value;
 
     _rotationNotifier.value -= scrollDelta / 500;
     _lastScrollPositionOffsetNotifier.value = widget.scrollController.offset;
@@ -80,7 +82,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     _lastScrollPositionOffsetNotifier.value = scrollOffset;
   }
 
-  void _shouldSwitchCategory() {
+  void _shouldSwitchCategory([bool onEndNotified = false]) {
     final currentOffset = widget.scrollController.offset;
     print('currentOffset: $currentOffset');
     final screenWidth = 1.sw;
@@ -90,16 +92,27 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     } else if (nearestElementIndex >= widget.categories.length) {
       widget.onSpinChangedCategory?.call(widget.categories.last);
     } else {
-      widget.onSpinChangedCategory?.call(widget.categories.elementAt(nearestElementIndex));
+      widget.onSpinChangedCategory
+          ?.call(widget.categories.elementAt(nearestElementIndex));
     }
     final nearestElementOffset = nearestElementIndex * screenWidth;
-
+    print('nearestElementOffset: $nearestElementOffset');
+    print('widget.scrollController.offset: ${widget.scrollController.offset}');
+    if(onEndNotified) {
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) =>
     widget.scrollController.animateTo(
       nearestElementOffset,
       duration: _animDuration,
       curve: Curves.decelerate,
-    );
-
+    ));
+    } else {
+      widget.scrollController.animateTo(
+        nearestElementOffset,
+        duration: _animDuration,
+        curve: Curves.decelerate,
+      );
+    }
+    _lastScrollPositionOffsetNotifier.value = nearestElementOffset;
     _enableFeedback();
   }
 
@@ -128,9 +141,23 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            GestureDetector(
-              onTapDown: (tapDetails) => _setManuallyScrolling(value: true),
+            NotificationListener<ScrollNotification>(
+              onNotification: (scrollNotification) {
+                // if (scrollNotification is ScrollStartNotification) {
+                //   _onStartScroll(scrollNotification.metrics);
+                // } else
+                // if (scrollNotification is ScrollUpdateNotification) {
+                //   _onUpdateScroll(scrollNotification.metrics);
+                // } else
+                  if (scrollNotification is ScrollEndNotification) {
+                    _shouldSwitchCategory(true);
+                  // _onEndScroll(scrollNotification.metrics);
+                }
+
+                return true;
+              },
               child: UiKitHorizontalScrollableList(
+                physics: const PageScrollPhysics(),
                 scrollController: widget.scrollController,
                 children: widget.categories
                     .map<Widget>(
@@ -147,7 +174,9 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     .toList(),
               ),
             ),
-            SizesFoundation.screenWidth <= 275 ? SpacingFoundation.verticalSpace16 : SpacingFoundation.verticalSpace24,
+            SizesFoundation.screenWidth <= 275
+                ? SpacingFoundation.verticalSpace16
+                : SpacingFoundation.verticalSpace24,
             SizedBox(
               height: 155,
               width: 1.sw,
@@ -160,18 +189,24 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       onPanUpdate: (details) {
                         _setManuallyScrolling();
                         final delta = details.delta.dx;
-                        final inScrollBeginning = widget.scrollController.offset == 0 && !delta.isNegative;
-                        final inScrollEnd =
-                            widget.scrollController.offset == widget.scrollController.position.maxScrollExtent && delta.isNegative;
+                        final inScrollBeginning =
+                            widget.scrollController.offset == 0 &&
+                                !delta.isNegative;
+                        final inScrollEnd = widget.scrollController.offset ==
+                                widget.scrollController.position
+                                    .maxScrollExtent &&
+                            delta.isNegative;
                         if (inScrollBeginning || inScrollEnd) return;
-                        if (details.localPosition.dx.toInt() % 20 == 0) _enableFeedback();
+                        if (details.localPosition.dx.toInt() % 20 == 0)
+                          _enableFeedback();
                         _rotationNotifier.value += delta / 500;
                         _scrollByPixels(
                           pixelsToScroll: delta,
                         );
                       },
                       onPanStart: (details) {
-                        _scrollStartNotifier.value = widget.scrollController.offset;
+                        _scrollStartNotifier.value =
+                            widget.scrollController.offset;
                       },
                       onPanEnd: (details) => _shouldSwitchCategory(),
                       child: AnimatedBuilder(
@@ -185,7 +220,8 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                         },
                         child: Center(
                           child: ImageWidget(
-                            svgAsset: GraphicsFoundation.instance.svg.spinnerWheel,
+                            svgAsset:
+                                GraphicsFoundation.instance.svg.spinnerWheel,
                           ),
                         ),
                       ),
