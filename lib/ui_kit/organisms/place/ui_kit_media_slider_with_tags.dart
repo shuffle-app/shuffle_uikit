@@ -8,6 +8,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
   final String description;
   final List<UiKitTag> baseTags;
   final List<UiKitTag> uniqueTags;
+  final double horizontalMargin;
 
   const UiKitMediaSliderWithTags({
     Key? key,
@@ -16,6 +17,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
     required this.baseTags,
     required this.uniqueTags,
     required this.description,
+    this.horizontalMargin=0,
   }) : super(key: key);
 
   @override
@@ -29,8 +31,9 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           height: 135.h,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            itemCount: media.length,
+            itemCount: media.length + 1,
             itemBuilder: (context, index) {
+              if(index==0) return horizontalMargin.widthBox;
               final mediaItem = media.elementAt(index);
               if (mediaItem.type == UiKitMediaType.video) return BaseUiKitMediaWidget.video(media: mediaItem);
 
@@ -44,12 +47,12 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           rating: rating,
           baseTags: baseTags,
           uniqueTags: uniqueTags,
-        ),
+        ).paddingSymmetric(horizontal: horizontalMargin),
         SpacingFoundation.verticalSpace12,
         Text(
           description,
           style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
-        ),
+        ).paddingSymmetric(horizontal: horizontalMargin),
       ],
     );
   }

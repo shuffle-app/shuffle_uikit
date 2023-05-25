@@ -4,12 +4,12 @@ import 'package:shuffle_uikit/ui_kit/atoms/profile/ui_kit_chip.dart';
 
 class ProfileInterests extends StatelessWidget {
   final List<String> profileInterests;
-  final List<String> userInterests;
+  final List<String>? matchingInterests;
 
   const ProfileInterests({
     Key? key,
     required this.profileInterests,
-    required this.userInterests,
+     this.matchingInterests,
   }) : super(key: key);
 
   @override
@@ -21,8 +21,8 @@ class ProfileInterests extends StatelessWidget {
         for (final interest in profileInterests)
           UiKitChip(
             interest: interest,
-            isSelected: userInterests.contains(interest),
-            border: profileInterests.indexOf(interest) == 0 ? GradientFoundation.gradientBorder : null,
+            isSelected: matchingInterests?.contains(interest) ?? false,
+            // border: profileInterests.indexOf(interest) == 0 ? GradientFoundation.gradientBorder : null,
           ),
       ],
     );

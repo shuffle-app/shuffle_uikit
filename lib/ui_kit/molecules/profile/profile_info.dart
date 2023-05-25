@@ -5,51 +5,65 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ProfileInfo extends StatelessWidget {
   final String nickname;
-  final int followers;
+  final String? name;
+  final int? followers;
+  final VoidCallback? onFollow;
 
   const ProfileInfo({
     Key? key,
     required this.nickname,
-    required this.followers,
+    this.name,
+    this.followers,
+    this.onFollow,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final fallBackStyle = Theme.of(context).textTheme.bodyMedium;
-    TextStyle? nickNameStyle = boldTextTheme?.bodyUpperCase ?? fallBackStyle;
+    TextStyle? nickNameStyle = boldTextTheme?.subHeadline ?? fallBackStyle;
     TextStyle? followersCountStyle = boldTextTheme?.title2 ?? fallBackStyle;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      crossAxisAlignment:
+          name == null ? CrossAxisAlignment.stretch : CrossAxisAlignment.start,
       children: [
         RichText(
           text: TextSpan(
             children: [
               TextSpan(
-                text: nickname,
+                text: name ?? nickname,
                 style: nickNameStyle,
               ),
-              TextSpan(
-                text: '\nFollowers\n',
-                style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900) ?? fallBackStyle,
-              ),
-              TextSpan(
-                text: '2 650',
-                style: followersCountStyle,
-              ),
+              if (followers != null) ...[
+                TextSpan(
+                  text: '\nFollowers\n',
+                  style: boldTextTheme?.caption1Medium
+                          .copyWith(color: ColorsFoundation.darkNeutral900) ??
+                      fallBackStyle,
+                ),
+                TextSpan(
+                  text: followers!.toString(),
+                  style: followersCountStyle,
+                )
+              ] else
+                TextSpan(
+                  text: '\n$nickname',
+                  style: boldTextTheme?.body ??
+                      fallBackStyle,
+                )
             ],
           ),
-          textAlign: TextAlign.center,
+          textAlign: name == null ? TextAlign.center:TextAlign.start,
         ),
-        SpacingFoundation.verticalSpace12,
-        context.button(
-          text: 'FOLLOW',
-          onPressed: () {
-            log('FOLLOW', name: 'ProfileInfo');
-          },
-        ),
+        if (onFollow != null) ...[
+          SpacingFoundation.verticalSpace12,
+          context.button(
+            text: 'follow'.toUpperCase(),
+            onPressed: onFollow,
+          )
+        ],
       ],
     );
   }

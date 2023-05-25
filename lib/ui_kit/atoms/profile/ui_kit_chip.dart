@@ -12,8 +12,11 @@ class UiKitChip extends StatelessWidget {
     required this.interest,
     required this.isSelected,
     this.bordered = false,
-    this.border,
-  }) : super(key: key);
+    BoxBorder? border,
+  })
+      : border =
+      border ?? (isSelected ? GradientFoundation.gradientBorder : null),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +27,16 @@ class UiKitChip extends StatelessWidget {
       decoration: BoxDecoration(
         color: bordered ? chipTheme?.backgroundColor : Colors.transparent,
         borderRadius: BorderRadiusFoundation.max,
-        border: border ?? chipTheme?.border ?? Border.all(color: Colors.white, width: 2),
+        border: border ??
+            chipTheme?.border ??
+            Border.all(color: Colors.white, width: 2),
       ),
       child: Text(
         interest,
         style: chipTextStyle,
-      ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12, vertical: EdgeInsetsFoundation.vertical8),
+      ).paddingSymmetric(
+          horizontal: EdgeInsetsFoundation.horizontal12,
+          vertical: EdgeInsetsFoundation.vertical6),
     );
   }
 }
