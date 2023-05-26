@@ -1,10 +1,12 @@
 /// This file exports all molecules in the molecules folder
 
+export '../content_wrappers/ui_kit_titled_section.dart';
 export 'app_bar/custom_app_bar.dart';
 export 'cards/ui_kit_icon_hint_card.dart';
 export 'chips/default_importance_chip.dart';
 export 'chips/high_importance_chip.dart';
 export 'chips/medium_importance_chip.dart';
+export 'cards/ui_kit_sign_with_caption.dart';
 export 'chips/ui_kit_blurred_question_chip.dart';
 export 'chips/ui_kit_gradient_question_chip.dart';
 export 'chips/ui_kit_importance_chip.dart';
