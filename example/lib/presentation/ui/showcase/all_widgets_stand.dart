@@ -51,7 +51,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const Center(
+              Center(
                 child: UiKitImportanceChip(
                   title: 'Importance',
                   importance: ImportanceChip.none,
