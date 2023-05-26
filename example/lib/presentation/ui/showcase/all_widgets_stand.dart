@@ -90,6 +90,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
+              Center(
+                child: UiKitImportanceChip(
+                  title: 'Importance',
+                  importance: ImportanceChip.none,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitHorizontalWheelNumberSelector(
                 title: 'Your age',
                 values: List<int>.generate(70, (index) => 10 + index),
