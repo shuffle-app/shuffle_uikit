@@ -6,6 +6,7 @@ class UiKitCardWrapper extends StatelessWidget {
   final BorderRadius? borderRadius;
   final double? width;
   final double? height;
+  final Color? color;
 
   const UiKitCardWrapper({
     Key? key,
@@ -13,6 +14,7 @@ class UiKitCardWrapper extends StatelessWidget {
     this.borderRadius,
     this.width,
     this.height,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -22,6 +24,7 @@ class UiKitCardWrapper extends StatelessWidget {
     return Theme(
       data: Theme.of(context).copyWith(cardTheme: theme?.cardTheme, cardColor: theme?.cardColor),
       child: Card(
+        color: color ?? theme?.cardColor ?? ColorsFoundation.surface,
         shape: RoundedRectangleBorder(
           borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
         ),
