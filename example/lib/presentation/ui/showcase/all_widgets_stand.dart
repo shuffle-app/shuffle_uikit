@@ -51,9 +51,16 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              const Center(
+                child: UiKitImportanceChip(
+                  title: 'Importance',
+                  importance: ImportanceChip.none,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitHorizontalWheelNumberSelector(
                 title: 'Your age',
-                values: List<int>.generate(70, (index) => 10+index),
+                values: List<int>.generate(70, (index) => 10 + index),
                 onValueChanged: (value) {},
               ),
               SpacingFoundation.verticalSpace16,
