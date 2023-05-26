@@ -18,11 +18,12 @@ class ActionsMenu extends StatelessWidget {
       itemBuilder: (ctx) => [
         PopupMenuItem(
           child: GestureDetector(
-            onTap: () => context.push(
-              SingleWidgetViewPage(
+            onTap: () {
+              Navigator.of(context).pop();
+              context.push(SingleWidgetViewPage(
                 widget: widget,
-              ),
-            ),
+              ));
+            },
             child: const Text(
               'Open widget in new page',
               style: TextStyle(color: Colors.white),
