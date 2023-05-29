@@ -291,6 +291,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/Yoga.svg
   SvgGenImage get yoga => const SvgGenImage('assets/images/svg/Yoga.svg');
 
+  /// File path: assets/images/svg/adventure.svg
+  SvgGenImage get adventure => const SvgGenImage('assets/images/svg/adventure.svg');
+
   /// File path: assets/images/svg/analytics-fill.svg
   SvgGenImage get analyticsFill => const SvgGenImage('assets/images/svg/analytics-fill.svg');
 
@@ -308,6 +311,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/arrow-left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/images/svg/arrow-left.svg');
+
+  /// File path: assets/images/svg/athlete.svg
+  SvgGenImage get athlete => const SvgGenImage('assets/images/svg/athlete.svg');
 
   /// File path: assets/images/svg/barcode.svg
   SvgGenImage get barcode => const SvgGenImage('assets/images/svg/barcode.svg');
@@ -389,6 +395,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/flag.svg
   SvgGenImage get flag => const SvgGenImage('assets/images/svg/flag.svg');
+
+  /// File path: assets/images/svg/food.svg
+  SvgGenImage get food => const SvgGenImage('assets/images/svg/food.svg');
 
   /// File path: assets/images/svg/hand-shake.svg
   SvgGenImage get handShake => const SvgGenImage('assets/images/svg/hand-shake.svg');
@@ -537,6 +546,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/shuffle_outline.svg
   SvgGenImage get shuffleOutline => const SvgGenImage('assets/images/svg/shuffle_outline.svg');
 
+  /// File path: assets/images/svg/sleep.svg
+  SvgGenImage get sleep => const SvgGenImage('assets/images/svg/sleep.svg');
+
   /// File path: assets/images/svg/spinner_fill.svg
   SvgGenImage get spinnerFill => const SvgGenImage('assets/images/svg/spinner_fill.svg');
 
@@ -564,8 +576,14 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/sufle.svg
   SvgGenImage get sufle => const SvgGenImage('assets/images/svg/sufle.svg');
 
+  /// File path: assets/images/svg/swim.svg
+  SvgGenImage get swim => const SvgGenImage('assets/images/svg/swim.svg');
+
   /// File path: assets/images/svg/thumb-up.svg
   SvgGenImage get thumbUp => const SvgGenImage('assets/images/svg/thumb-up.svg');
+
+  /// File path: assets/images/svg/tiger.svg
+  SvgGenImage get tiger => const SvgGenImage('assets/images/svg/tiger.svg');
 
   /// File path: assets/images/svg/trash.svg
   SvgGenImage get trash => const SvgGenImage('assets/images/svg/trash.svg');
@@ -662,12 +680,14 @@ class $AssetsImagesSvgGen {
         trainingApparatus,
         victoryHands,
         yoga,
+        adventure,
         analyticsFill,
         analyticsOutline,
         analytics,
         archive,
         armchair,
         arrowLeft,
+        athlete,
         barcode,
         bath,
         bell,
@@ -695,6 +715,7 @@ class $AssetsImagesSvgGen {
         files,
         fireWhite,
         flag,
+        food,
         handShake,
         heartBrokenFill,
         heartFill,
@@ -744,6 +765,7 @@ class $AssetsImagesSvgGen {
         settings,
         shuffleFill,
         shuffleOutline,
+        sleep,
         spinnerFill,
         spinnerOutline,
         spinnerWheel,
@@ -753,7 +775,9 @@ class $AssetsImagesSvgGen {
         star,
         stop,
         sufle,
+        swim,
         thumbUp,
+        tiger,
         trash,
         trendDown,
         trendUp,

@@ -16,6 +16,51 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final TextEditingController _controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final ScrollController _scrollController = ScrollController();
+  final List<UiKitMenuItem<String>> _menuItems = [
+    UiKitMenuItem<String>(
+      title: 'Active Tiger',
+      value: 'tiger',
+      icon: ImageWidget(
+        svgAsset: GraphicsFoundation.instance.svg.tiger,
+      ),
+    ),
+    UiKitMenuItem<String>(
+      title: 'interested Adventurer',
+      value: 'adventurer',
+      icon: ImageWidget(
+        svgAsset: GraphicsFoundation.instance.svg.adventure,
+      ),
+    ),
+    UiKitMenuItem<String>(
+      title: 'forever Resting sloth',
+      value: 'resting sloth',
+      icon: ImageWidget(
+        svgAsset: GraphicsFoundation.instance.svg.sleep,
+      ),
+    ),
+    UiKitMenuItem<String>(
+      title: 'Active Tiger',
+      value: 'tiger',
+      icon: ImageWidget(
+        svgAsset: GraphicsFoundation.instance.svg.swim,
+      ),
+    ),
+    UiKitMenuItem<String>(
+      title: 'Active Tiger',
+      value: 'tiger',
+      icon: ImageWidget(
+        svgAsset: GraphicsFoundation.instance.svg.athlete,
+      ),
+    ),
+    UiKitMenuItem<String>(
+      title: 'Active Tiger',
+      value: 'tiger',
+      icon: ImageWidget(
+        svgAsset: GraphicsFoundation.instance.svg.food,
+      ),
+    ),
+  ];
+  UiKitMenuItem<String?>? _selectedMenuItem;
 
   @override
   void dispose() {
@@ -51,6 +96,15 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              UiKitMenu<String>(
+                title: 'Describe yourself',
+                selectedItem: _selectedMenuItem,
+                items: _menuItems,
+                onSelected: (value) {
+                  setState(() => _selectedMenuItem = value);
+                },
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitTitledSection(
                 title: 'Gender',
                 child: Row(

@@ -229,7 +229,7 @@ class UiKitThemes {
         color: Colors.white,
       ),
     ),
-    cardColor: ColorsFoundation.surface,
+    cardColor: ColorsFoundation.surface3,
     appBarTheme: AppBarTheme(
       toolbarHeight: 84,
       shadowColor: Colors.transparent,

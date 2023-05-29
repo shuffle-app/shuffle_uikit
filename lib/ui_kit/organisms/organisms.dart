@@ -2,6 +2,7 @@
 
 export '../molecules/place/base_ui_kit_media_widget.dart';
 export 'bottom_navigation_bar/gradient_bottom_navigation_bar.dart';
+export 'menu/ui_kit_menu.dart';
 export 'place/base_place_action_card.dart';
 export 'place/point_balance_place_action_card.dart';
 export 'place/slider_place_card.dart';
