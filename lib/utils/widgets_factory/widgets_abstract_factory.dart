@@ -10,6 +10,13 @@ abstract class WidgetsAbstractFactory {
     bool? hasShadow,
   });
 
+  ButtonFactory createBadgeButton({
+    String? text,
+    VoidCallback? onPressed,
+    Widget? icon,
+    int? badgeValue,
+  });
+
   ButtonFactory createOrdinaryButton({
     required String text,
     VoidCallback? onPressed,
@@ -96,17 +103,10 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     ImageWidget? icon,
     Color? color,
   }) {
-    if ((text!=null && text.isNotEmpty) || icon != null) {
-      return SmallOutlinedButton(
-          onPressed: onPressed,
-          text: text ?? '',
-          borderColor: color,
-          textColor: color,
-          icon: icon
-      );
+    if ((text != null && text.isNotEmpty) || icon != null) {
+      return SmallOutlinedButton(onPressed: onPressed, text: text ?? '', borderColor: color, textColor: color, icon: icon);
     } else {
-      throw UnimplementedError(
-          'Outlined button with your parameters is not implemented');
+      throw UnimplementedError('Outlined button with your parameters is not implemented');
     }
   }
 
@@ -124,8 +124,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: onPressed,
       );
     } else {
-      throw UnimplementedError(
-          'Outlined button with your parameters is not implemented');
+      throw UnimplementedError('Outlined button with your parameters is not implemented');
     }
   }
 
@@ -155,8 +154,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: onPressed,
       );
     } else {
-      throw UnimplementedError(
-          'Gradient button with your parameters is not implemented');
+      throw UnimplementedError('Gradient button with your parameters is not implemented');
     }
   }
 
@@ -169,8 +167,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? blurred,
   }) {
     final hasIcon = icon != null;
-    final onlyIconButton = hasIcon && text.isEmpty && !isTextButton &&
-        !(blurred ?? false);
+    final onlyIconButton = hasIcon && text.isEmpty && !isTextButton && !(blurred ?? false);
 
     if (hasIcon && !onlyIconButton && !(blurred ?? false)) {
       return OrdinaryButtonWithIcon(
@@ -315,8 +312,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? dismissActionWidget,
     bool? hasShadow,
   }) {
-    final hasAllActions = primaryActionWidget != null &&
-        secondaryActionWidget != null && dismissActionWidget != null;
+    final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
     if (hasAllActions) {
       return AdditionalActionNotificationPopUp(
         requiredData: requiredData,
@@ -332,6 +328,23 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       primaryActionWidget: primaryActionWidget,
       dismissActionWidget: dismissActionWidget,
       hasShadow: hasShadow,
+    );
+  }
+
+  @override
+  ButtonFactory createBadgeButton({
+    String? text,
+    VoidCallback? onPressed,
+    Widget? icon,
+    int? badgeValue,
+  }) {
+    final hasIcon = icon != null;
+    final iconButton = hasIcon && (text?.isEmpty ?? true);
+
+    return BadgeIconButton(
+      icon: icon,
+      onPressed: onPressed,
+      badgeValue: badgeValue,
     );
   }
 
