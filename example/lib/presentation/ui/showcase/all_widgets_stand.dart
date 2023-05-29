@@ -51,6 +51,52 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              UiKitTitledSection(
+                title: 'Gender',
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: UiKitSignWithCaption(
+                        caption: 'Male',
+                        sign: ImageWidget(
+                          svgAsset: GraphicsFoundation.instance.svg.male,
+                        ),
+                      ),
+                    ),
+                    SpacingFoundation.horizontalSpace4,
+                    Expanded(
+                      child: UiKitSignWithCaption(
+                        caption: 'Female',
+                        sign: ImageWidget(
+                          svgAsset: GraphicsFoundation.instance.svg.femle,
+                        ),
+                      ),
+                    ),
+                    SpacingFoundation.horizontalSpace4,
+                    Expanded(
+                      child: UiKitSignWithCaption(
+                        caption: 'Other',
+                        sign: ImageWidget(
+                          svgAsset: GraphicsFoundation.instance.svg.otherGender,
+                        ),
+                      ),
+                    ),
+                  ],
+                ).paddingOnly(
+                  bottom: EdgeInsetsFoundation.vertical16,
+                  left: EdgeInsetsFoundation.horizontal16,
+                  right: EdgeInsetsFoundation.horizontal16,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              Center(
+                child: UiKitImportanceChip(
+                  title: 'Importance',
+                  importance: ImportanceChip.none,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               Center(
                 child: context.badgeButton(
                   icon: ImageWidget(
