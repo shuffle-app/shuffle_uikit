@@ -51,9 +51,20 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Center(
+                child: context.badgeButton(
+                  icon: ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.message,
+                    color: Colors.white,
+                  ),
+                  badgeValue: 2,
+                  onPressed: () {},
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitHorizontalWheelNumberSelector(
                 title: 'Your age',
-                values: List<int>.generate(70, (index) => 10+index),
+                values: List<int>.generate(70, (index) => 10 + index),
                 onValueChanged: (value) {},
               ),
               SpacingFoundation.verticalSpace16,

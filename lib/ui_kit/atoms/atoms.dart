@@ -6,6 +6,7 @@ export './common/ui_kit_card_wrapper.dart';
 export './place/ui_kit_titled_description_grid_widget.dart';
 export 'app_bar/app_bar_back_button.dart';
 export 'app_bar/app_bar_title.dart';
+export 'buttons/badge_icon_button.dart';
 export 'buttons/black_dialog_button.dart';
 export 'buttons/blurred_button_with_icon.dart';
 export 'buttons/blurred_place_video_play_button.dart';
