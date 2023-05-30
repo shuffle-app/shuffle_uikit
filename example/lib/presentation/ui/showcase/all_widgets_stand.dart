@@ -16,6 +16,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final TextEditingController _controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final ScrollController _scrollController = ScrollController();
+
+  bool selection = false;
   final List<UiKitMenuItem<String>> _menuItems = [
     UiKitMenuItem<String>(
       title: 'Active Tiger',
@@ -121,6 +123,15 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              UiKitBorderedChipWithIcon(
+                title: 'Active',
+                icon: ImageWidget(
+                  svgAsset: GraphicsFoundation.instance.svg.map,
+                ),
+                onPressed: () => setState(() => selection = !selection),
+                isSelected: selection,
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitMenu<String>(
                 title: 'Describe yourself',
                 selectedItem: _selectedMenuItem,

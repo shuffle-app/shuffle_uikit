@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
+
+class UiKitBorderedChipWithIcon extends StatelessWidget {
+  final String title;
+  final ImageWidget icon;
+  final VoidCallback? onPressed;
+  final bool isSelected;
+
+  const UiKitBorderedChipWithIcon({
+    Key? key,
+    required this.title,
+    required this.icon,
+    this.onPressed,
+    this.isSelected = false,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadiusFoundation.all24,
+        side: BorderSide(
+          width: 2,
+          color: isSelected ? Colors.transparent : Colors.white,
+        ),
+      ),
+      color: isSelected ? Colors.white : Colors.black,
+      clipBehavior: Clip.hardEdge,
+      child: InkWell(
+        onTap: onPressed,
+        child: Ink(
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              SpacingFoundation.horizontalSpace8,
+              ClipRRect(
+                borderRadius: BorderRadiusFoundation.all24,
+                child: icon,
+              ),
+              SpacingFoundation.horizontalSpace8,
+              Text(
+                title,
+                style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(
+                  color: isSelected ? Colors.black : Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class UiKitBorderedChipWithIconData {
+  final String title;
+  final ImageWidget icon;
+  final bool isSelected;
+  final VoidCallback? onPressed;
+
+  UiKitBorderedChipWithIconData({
+    required this.title,
+    required this.icon,
+    required this.isSelected,
+    this.onPressed,
+  });
+}

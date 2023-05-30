@@ -8,6 +8,7 @@ export 'chips/default_importance_chip.dart';
 export 'chips/high_importance_chip.dart';
 export 'chips/medium_importance_chip.dart';
 export 'chips/ui_kit_blurred_question_chip.dart';
+export 'chips/ui_kit_bordered_chip_with_icon.dart';
 export 'chips/ui_kit_gradient_question_chip.dart';
 export 'chips/ui_kit_importance_chip.dart';
 export 'filter/ui_kit_titled_filter_chip.dart';

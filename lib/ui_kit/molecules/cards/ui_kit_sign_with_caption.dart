@@ -29,3 +29,13 @@ class UiKitSignWithCaption extends StatelessWidget {
     );
   }
 }
+
+class UiKitSignWithCaptionModel {
+  final String caption;
+  final ImageWidget sign;
+
+  UiKitSignWithCaptionModel({
+    required this.caption,
+    required this.sign,
+  });
+}
