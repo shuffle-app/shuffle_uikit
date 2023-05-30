@@ -21,6 +21,7 @@ class BadgeIconButton extends StatelessWidget implements ButtonFactory {
       color: Colors.transparent,
       child: InkWell(
         onTap: onPressed,
+        borderRadius: BorderRadiusFoundation.max,
         child: Ink(
           child: Stack(
             clipBehavior: Clip.none,

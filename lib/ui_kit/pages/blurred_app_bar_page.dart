@@ -5,12 +5,16 @@ class BlurredAppBarPage extends StatelessWidget {
   final String title;
   final bool? autoImplyLeading;
   final bool centerTitle;
+  final Widget? appBarBody;
+  final Widget? appBarTrailing;
   final Widget body;
 
   const BlurredAppBarPage({
     Key? key,
     required this.title,
     this.autoImplyLeading,
+    this.appBarBody,
+    this.appBarTrailing,
     this.centerTitle = false,
     required this.body,
   }) : super(key: key);
@@ -26,9 +30,14 @@ class BlurredAppBarPage extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusFoundation.onlyBottom24,
           ),
-          toolbarHeight: context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? Theme.of(context).appBarTheme.toolbarHeight ?? 0,
+          collapsedHeight: context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 84,
+
+          /// нужно подумать как избежать хардкоженной высоты
+          expandedHeight: 180,
           flexibleSpace: CustomAppBar(
             title: title,
+            appBarBody: appBarBody,
+            appBarTrailing: appBarTrailing,
             autoImplyLeading: autoImplyLeading,
             centerTitle: centerTitle,
           ),
