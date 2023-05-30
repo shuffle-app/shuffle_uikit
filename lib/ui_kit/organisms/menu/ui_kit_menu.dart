@@ -1,4 +1,7 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMenu<T> extends StatelessWidget {
@@ -39,22 +42,35 @@ class UiKitMenu<T> extends StatelessWidget {
             ),
           ),
           child: InkWell(
-            onTap: () => showUiKitBottomSheet(
-              context,
-              title: title,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: items
-                    .map<Widget>(
-                      (e) => UiKitMenuItemTile(
-                        item: e,
-                        onTap: () => onSelected?.call(e),
-                      ),
-                    )
-                    .toList(),
-              ),
-            ),
+            onTap: () {
+              final elementsHeight = ((items.length + 1) * 52) + (SpacingFoundation.verticalSpacing16 * 3);
+              final topPadding = max(1.sh - elementsHeight, 0.0);
+              showUiKitGeneralFullScreenDialog(
+                context,
+                topPadding: topPadding,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    SpacingFoundation.verticalSpace16,
+                    Text(
+                      title,
+                      style: boldTextTheme?.subHeadline,
+                      textAlign: TextAlign.center,
+                    ),
+                    SpacingFoundation.verticalSpace16,
+                    ...items
+                        .map<Widget>(
+                          (e) => UiKitMenuItemTile(
+                            item: e,
+                            onTap: () => onSelected?.call(e),
+                          ),
+                        )
+                        .toList(),
+                  ],
+                ),
+              );
+            },
             child: Ink(
               child: Row(
                 mainAxisSize: MainAxisSize.max,

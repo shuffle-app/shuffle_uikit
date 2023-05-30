@@ -17,7 +17,6 @@ export 'utils/builders/alert_dialog_builder.dart';
 export 'utils/builders/comment_dialog_builder.dart';
 export 'utils/builders/custom_calendar_picker_dialog.dart';
 export 'utils/builders/general_dialog_fullscreen_builder.dart';
-export 'utils/builders/general_flexible_height_bottom_sheet.dart';
 export 'utils/cache/custom_cache_manager.dart';
 export 'utils/extentions/factory_extention.dart';
 export 'utils/extentions/navigator_extention.dart';
