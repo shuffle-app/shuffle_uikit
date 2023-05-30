@@ -87,6 +87,31 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
     return BlurredAppBarPage(
       title: 'Shuffle UI Kit Stand',
       centerTitle: true,
+      autoImplyLeading: true,
+      appBarBody: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ImageWidget(
+            rasterAsset: GraphicsFoundation.instance.png.mockUserAvatar,
+            height: 48,
+          ),
+          SpacingFoundation.verticalSpace8,
+          Text(
+            'John Doe',
+            style: context.uiKitTheme?.boldTextTheme.caption2Bold,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+      appBarTrailing: context.badgeButton(
+        badgeValue: 2,
+        icon: ImageWidget(
+          svgAsset: GraphicsFoundation.instance.svg.message,
+          color: Colors.white,
+        ),
+        onPressed: () {},
+      ),
       body: SingleChildScrollView(
         controller: _scrollController,
         child: Form(
@@ -148,6 +173,17 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: UiKitImportanceChip(
                   title: 'Importance',
                   importance: ImportanceChip.none,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              Center(
+                child: context.badgeButton(
+                  icon: ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.message,
+                    color: Colors.white,
+                  ),
+                  badgeValue: 2,
+                  onPressed: () {},
                 ),
               ),
               SpacingFoundation.verticalSpace16,
