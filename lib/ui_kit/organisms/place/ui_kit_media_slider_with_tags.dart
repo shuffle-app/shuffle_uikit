@@ -28,13 +28,13 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: 135.h,
+          height: 0.58.sw,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: media.length + 1,
             itemBuilder: (context, index) {
               if(index==0) return horizontalMargin.widthBox;
-              final mediaItem = media.elementAt(index);
+              final mediaItem = media.elementAt(index-1);
               if (mediaItem.type == UiKitMediaType.video) return BaseUiKitMediaWidget.video(media: mediaItem);
 
               return BaseUiKitMediaWidget.image(media: mediaItem);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TitleWithAvatar extends StatelessWidget {
   final String? title;
@@ -22,6 +23,7 @@ class TitleWithAvatar extends StatelessWidget {
       children: [
         if (avatarUrl != null)
           CircularAvatar(
+            height: 40.h,
             avatarUrl: avatarUrl ?? '',
           ),
         if (avatarUrl != null) SpacingFoundation.horizontalSpace12,
