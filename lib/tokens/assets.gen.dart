@@ -73,8 +73,14 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/balloons.png
   AssetGenImage get balloons => const AssetGenImage('assets/images/png/balloons.png');
 
+  /// File path: assets/images/png/buddism_flag.png
+  AssetGenImage get buddismFlag => const AssetGenImage('assets/images/png/buddism_flag.png');
+
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
+
+  /// File path: assets/images/png/jordan_flag.png
+  AssetGenImage get jordanFlag => const AssetGenImage('assets/images/png/jordan_flag.png');
 
   /// File path: assets/images/png/mock_ad_banner.png
   AssetGenImage get mockAdBanner => const AssetGenImage('assets/images/png/mock_ad_banner.png');
@@ -84,6 +90,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/mock_user_avatar.png
   AssetGenImage get mockUserAvatar => const AssetGenImage('assets/images/png/mock_user_avatar.png');
+
+  /// File path: assets/images/png/muslim_flag.png
+  AssetGenImage get muslimFlag => const AssetGenImage('assets/images/png/muslim_flag.png');
 
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
@@ -104,10 +113,13 @@ class $AssetsImagesPngGen {
   List<AssetGenImage> get values => [
         atmosphere,
         balloons,
+        buddismFlag,
         eventAvatar,
+        jordanFlag,
         mockAdBanner,
         mockSwiperCard,
         mockUserAvatar,
+        muslimFlag,
         place,
         profileAvatar,
         profilePost1,
