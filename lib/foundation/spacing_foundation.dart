@@ -33,7 +33,7 @@ class SpacingFoundation {
 
   static double get verticalSpacing10 => 10.h;
 
-  static double get verticalSpacing12 => 12.h;
+  static double get verticalSpacing12 => 12;
 
   static double get verticalSpacing14 => 14.h;
 
@@ -69,8 +69,7 @@ class SpacingFoundation {
 
   static Widget get verticalSpace24 => verticalSpacing24.heightBox;
 
-  static Widget get bottomNavigationBarSpacing =>
-      kBottomNavigationBarHeight.verticalSpace;
+  static Widget get bottomNavigationBarSpacing => kBottomNavigationBarHeight.verticalSpace;
 
   SpacingFoundation._();
 }

@@ -11,7 +11,7 @@ class AppBarBackButton extends StatelessWidget {
 
     return Material(
       shape: const CircleBorder(),
-      color: ColorsFoundation.surface,
+      color: ColorsFoundation.surface3,
       elevation: 0,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
@@ -21,7 +21,7 @@ class AppBarBackButton extends StatelessWidget {
         child: Ink(
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
-            color: ColorsFoundation.surface,
+            color: ColorsFoundation.surface3,
           ),
           width: 28.w,
           height: 28.h,
