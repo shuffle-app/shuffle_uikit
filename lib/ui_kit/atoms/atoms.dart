@@ -32,3 +32,4 @@ export 'user/influencer_account_mark.dart';
 export 'user/premium_account_mark.dart';
 export 'user/pro_account_mark.dart';
 export 'user/user_circle_avatar.dart';
+export 'common/gradientable_widget.dart';

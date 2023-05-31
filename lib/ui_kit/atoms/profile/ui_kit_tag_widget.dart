@@ -31,13 +31,16 @@ class UiKitTagWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         if (showSpacing) customSpace ?? SpacingFoundation.horizontalSpace12,
-        ImageWidget(
-          link: icon,
-          height: SpacingFoundation.horizontalSpacing12,
-          color: uniqueTag ? Colors.white : ColorsFoundation.darkNeutral900,
-          fit: BoxFit.fitHeight,
-          // package: 'shuffle_uikit',
-        ),
+        GradientableWidget(
+            active: uniqueTag,
+            gradient: GradientFoundation.badgeIcon,
+            child: ImageWidget(
+              link: icon,
+              height: SpacingFoundation.horizontalSpacing12,
+              color: Colors.white,
+              fit: BoxFit.fitHeight,
+              // package: 'shuffle_uikit',
+            )),
         SpacingFoundation.horizontalSpace4,
         Text(
           title,

@@ -33,44 +33,59 @@ class UiKitImportanceChip extends StatelessWidget {
           child: importance == ImportanceChip.high
               ? HighImportanceChip(
                   text: title,
-                  onTap: () => _valueNotifier.value = ImportanceChip.none,
+            onTap: () {
+              onImportanceChanged?.call(ImportanceChip.none);
+              _valueNotifier.value = ImportanceChip.none;
+
+            },
                 )
               : importance == ImportanceChip.medium
                   ? MediumImportanceChip(
                       text: title,
-                      onTap: () => _valueNotifier.value = ImportanceChip.high,
+            onTap: () {
+              onImportanceChanged?.call(ImportanceChip.high);
+              _valueNotifier.value = ImportanceChip.high;
+
+            },
                     )
                   : DefaultImportanceChip(
                       text: title,
-                      onTap: () => _valueNotifier.value = ImportanceChip.medium,
+            onTap: () {
+              onImportanceChanged?.call(ImportanceChip.medium);
+              _valueNotifier.value = ImportanceChip.medium;
+
+            },
                     ),
         );
-        switch (importance) {
-          case ImportanceChip.none:
-            return DefaultImportanceChip(
-              text: title,
-              onTap: () {
-                _valueNotifier.value = ImportanceChip.medium;
-                onImportanceChanged?.call(ImportanceChip.medium);
-              },
-            );
-          case ImportanceChip.medium:
-            return MediumImportanceChip(
-              text: title,
-              onTap: () {
-                _valueNotifier.value = ImportanceChip.high;
-                onImportanceChanged?.call(ImportanceChip.high);
-              },
-            );
-          case ImportanceChip.high:
-            return HighImportanceChip(
-              text: title,
-              onTap: () {
-                _valueNotifier.value = ImportanceChip.none;
-                onImportanceChanged?.call(ImportanceChip.none);
-              },
-            );
-        }
+        // switch (importance) {
+      //   case ImportanceChip.none:
+      //     return DefaultImportanceChip(
+      //       text: title,
+      //       onTap: () {
+      //         onImportanceChanged?.call(ImportanceChip.medium);
+      //         _valueNotifier.value = ImportanceChip.medium;
+      //
+      //       },
+      //     );
+      //   case ImportanceChip.medium:
+      //     return MediumImportanceChip(
+      //       text: title,
+      //       onTap: () {
+      //         onImportanceChanged?.call(ImportanceChip.high);
+      //         _valueNotifier.value = ImportanceChip.high;
+      //
+      //       },
+      //     );
+      //   case ImportanceChip.high:
+      //     return HighImportanceChip(
+      //       text: title,
+      //       onTap: () {
+      //         onImportanceChanged?.call(ImportanceChip.none);
+      //         _valueNotifier.value = ImportanceChip.none;
+      //
+      //       },
+      //     );
+      //   }
       },
     );
 
