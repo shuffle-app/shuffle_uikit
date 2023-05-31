@@ -18,6 +18,7 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
         side: BorderSide(
@@ -31,7 +32,7 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
         onTap: onPressed,
         child: Ink(
           child: Row(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             children: [
               SpacingFoundation.horizontalSpace8,
               ClipRRect(
@@ -46,7 +47,7 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
                 ),
               ),
             ],
-          ),
+          ).paddingOnly(right: SpacingFoundation.horizontalSpacing8),
         ),
       ),
     );

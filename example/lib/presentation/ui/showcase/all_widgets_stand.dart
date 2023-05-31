@@ -62,7 +62,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
     ),
   ];
-  UiKitMenuItem<String?>? _selectedMenuItem;
+  UiKitMenuItem<String>? _selectedMenuItem;
 
   @override
   void dispose() {
@@ -123,6 +123,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              GradientableWidget(
+                  gradient: GradientFoundation.badgeIcon,
+                  // child: Text('Describe yourself',style: context.uiKitTheme?.boldTextTheme.subHeadline)),
+                  child: ImageWidget(svgAsset: GraphicsFoundation.instance.svg.cocktail,height: 80,color: Colors.white),),
               UiKitBorderedChipWithIcon(
                 title: 'Active',
                 icon: ImageWidget(
@@ -360,7 +364,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     ),
                     SpacingFoundation.verticalSpace8,
                     ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
+                      svgAsset:
+                          GraphicsFoundation.instance.svg.heartInHandEmoji,
                     )
                   ],
                 ),
@@ -442,7 +447,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       onPressed: () {},
                       message: 'Want to have some fun',
                       icon: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
+                        svgAsset: GraphicsFoundation
+                            .instance.svg.smileyCrazyFaceEmoji,
                       ),
                       layoutDirection: Axis.vertical,
                     ),
@@ -460,7 +466,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       onPressed: () {},
                       message: 'Want to haveWant to have',
                       icon: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
+                        svgAsset: GraphicsFoundation
+                            .instance.svg.smileyCrazyFaceEmoji,
                       ),
                       layoutDirection: Axis.vertical,
                     ),
@@ -472,7 +479,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 onPressed: () {},
                 message: 'need to cool down a bit?',
                 icon: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
+                  svgAsset:
+                      GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
                 ),
                 layoutDirection: Axis.horizontal,
               ),
@@ -548,7 +556,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                               value: '439',
                               unit: 'kCal',
                               icon: ImageWidget(
-                                svgAsset: GraphicsFoundation.instance.svg.fireWhite,
+                                svgAsset:
+                                    GraphicsFoundation.instance.svg.fireWhite,
                               ),
                             ),
                           ),
@@ -627,37 +636,83 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               UiKitMediaSliderWithTags(
                 media: [
-                  UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
-                  UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
-                  UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
-                  UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
-                  UiKitMediaVideo(link: GraphicsFoundation.instance.png.place.path),
+                  UiKitMediaPhoto(
+                      link: GraphicsFoundation.instance.png.place.path),
+                  UiKitMediaPhoto(
+                      link: GraphicsFoundation.instance.png.place.path),
+                  UiKitMediaPhoto(
+                      link: GraphicsFoundation.instance.png.place.path),
+                  UiKitMediaPhoto(
+                      link: GraphicsFoundation.instance.png.place.path),
+                  UiKitMediaVideo(
+                      link: GraphicsFoundation.instance.png.place.path),
                 ],
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                description:
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
                     'Sed euismod, nunc ut tincidunt lacinia, nisl nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
                     'Nulla facilisi. '
                     'Donec auctor, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
                     'Nulla facilisi',
                 rating: 4.8,
                 baseTags: [
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
                 ],
                 uniqueTags: [
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
                 ],
               ),
               SpacingFoundation.verticalSpace16,
@@ -718,24 +773,59 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SliderPlaceCard(
                 slidablePlaceCardData: SlidablePlaceCardData(
                   media: [
-                    UiKitMediaVideo(link: GraphicsFoundation.instance.png.place.path),
-                    UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
-                    UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
-                    UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
-                    UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
+                    UiKitMediaVideo(
+                        link: GraphicsFoundation.instance.png.place.path),
+                    UiKitMediaPhoto(
+                        link: GraphicsFoundation.instance.png.place.path),
+                    UiKitMediaPhoto(
+                        link: GraphicsFoundation.instance.png.place.path),
+                    UiKitMediaPhoto(
+                        link: GraphicsFoundation.instance.png.place.path),
+                    UiKitMediaPhoto(
+                        link: GraphicsFoundation.instance.png.place.path),
                   ],
                   title: 'Virgins on the beach',
                   placeTags: [
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
                   ],
                 ),
               ),
