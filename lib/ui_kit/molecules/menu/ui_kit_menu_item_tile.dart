@@ -51,3 +51,15 @@ class UiKitMenuItemTile extends StatelessWidget {
     );
   }
 }
+
+class UiKitMenuItemTileModel<T> {
+  final String title;
+  final Widget? icon;
+  final T value;
+
+  UiKitMenuItemTileModel({
+    required this.title,
+    required this.value,
+    this.icon,
+  });
+}

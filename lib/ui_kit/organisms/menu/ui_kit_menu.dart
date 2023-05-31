@@ -8,7 +8,7 @@ class UiKitMenu<T> extends StatelessWidget {
   final String title;
   final ValueChanged<UiKitMenuItem<T?>>? onSelected;
   final List<UiKitMenuItem<T?>> items;
-  final UiKitMenuItem? selectedItem;
+  final UiKitMenuItem<T?>? selectedItem;
 
   const UiKitMenu({
     Key? key,
