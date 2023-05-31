@@ -147,29 +147,35 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
-                      child: UiKitSignWithCaption(
+                      child: UiKitVerticalChip(
+                        selected: selection,
                         caption: 'Male',
                         sign: ImageWidget(
                           svgAsset: GraphicsFoundation.instance.svg.male,
                         ),
+                        onTap: () => setState(() => selection = !selection),
                       ),
                     ),
                     SpacingFoundation.horizontalSpace4,
                     Expanded(
-                      child: UiKitSignWithCaption(
+                      child: UiKitVerticalChip(
+                        selected: selection,
                         caption: 'Female',
                         sign: ImageWidget(
                           svgAsset: GraphicsFoundation.instance.svg.femle,
                         ),
+                        onTap: () => setState(() => selection = !selection),
                       ),
                     ),
                     SpacingFoundation.horizontalSpace4,
                     Expanded(
-                      child: UiKitSignWithCaption(
+                      child: UiKitVerticalChip(
+                        selected: selection,
                         caption: 'Other',
                         sign: ImageWidget(
                           svgAsset: GraphicsFoundation.instance.svg.otherGender,
                         ),
+                        onTap: () => setState(() => selection = !selection),
                       ),
                     ),
                   ],

@@ -6,6 +6,7 @@ class ColorsFoundation {
   static const Color surface3 = UiKitColors.surface3;
   static const Color darkNeutral500 = UiKitColors.darkNeutral500;
   static const Color darkNeutral300 = UiKitColors.darkNeutral300;
+  static const Color darkNeutral400 = UiKitColors.darkNeutral400;
   static const Color solidSurface = UiKitColors.surface1;
   static const Color darkNeutral900 = UiKitColors.darkNeutral900;
   static const Color surface2 = UiKitColors.surface2;

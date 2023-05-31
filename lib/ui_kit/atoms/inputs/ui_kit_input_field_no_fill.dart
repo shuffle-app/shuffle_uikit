@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputField {
@@ -6,6 +7,9 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
     Key? key,
     required this.controller,
     this.errorText,
+    this.inputFormatters,
+    this.prefixText,
+    this.onChanged,
     this.hintText,
     this.validator,
     this.enabled = true,
@@ -23,6 +27,12 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
   final String? hintText;
   @override
   final String? Function(String? p1)? validator;
+
+  final String? prefixText;
+
+  final List<TextInputFormatter>? inputFormatters;
+
+  final ValueChanged<String>? onChanged;
 
   @override
   State<UiKitInputFieldNoFill> createState() => _UiKitInputFieldNoFillState();
@@ -65,9 +75,12 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         enabled: widget.enabled,
         controller: widget.enabled ? widget.controller : null,
         style: inputTextStyle,
+        onChanged: widget.onChanged,
         validator: widget.validator,
+        inputFormatters: widget.inputFormatters,
         decoration: InputDecoration(
           hintText: widget.hintText,
+          prefixText: widget.prefixText,
           labelText: widget.label,
           labelStyle: labelStyle,
           hintStyle: hintStyle,
