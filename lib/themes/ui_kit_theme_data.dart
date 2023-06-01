@@ -84,6 +84,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
       ordinaryButtonStyle: ordinaryButtonStyle ?? this.ordinaryButtonStyle,
       bottomSheetTheme: bottomSheetTheme ?? this.bottomSheetTheme,
       smallOrdinaryButtonStyle: smallOrdinaryButtonStyle ?? this.smallOrdinaryButtonStyle,
+
     );
   }
 

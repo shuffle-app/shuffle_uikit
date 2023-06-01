@@ -9,12 +9,14 @@ class BlurredAppBarPage extends StatelessWidget {
   final bool centerTitle;
   final Widget? appBarBody;
   final Widget? appBarTrailing;
+  final Widget? leading;
   final Widget body;
 
   const BlurredAppBarPage({
     Key? key,
     required this.title,
     this.autoImplyLeading,
+    this.leading,
     this.appBarBody,
     this.appBarTrailing,
     this.centerTitle = false,
@@ -30,15 +32,16 @@ class BlurredAppBarPage extends StatelessWidget {
       slivers: [
         SliverLayoutBuilder(
           builder: (context, sliverConstraints) {
-            final animDuration = const Duration(milliseconds: 250);
+            const animDuration = Duration(milliseconds: 250);
             final toolbarHeight = (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 84);
             final expandedHeight = appBarBody == null ? toolbarHeight : 180.0;
             final hideAppBarBody = sliverConstraints.scrollOffset > expandedHeight;
 
             return SliverAppBar(
-              automaticallyImplyLeading: false,
+              automaticallyImplyLeading: leading!=null,
               backgroundColor: Colors.transparent,
               pinned: true,
+              leading: leading,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadiusFoundation.onlyBottom24,
               ),

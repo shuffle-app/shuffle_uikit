@@ -104,9 +104,15 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Color? color,
   }) {
     if ((text != null && text.isNotEmpty) || icon != null) {
-      return SmallOutlinedButton(onPressed: onPressed, text: text ?? '', borderColor: color, textColor: color, icon: icon);
+      return SmallOutlinedButton(
+          onPressed: onPressed,
+          text: text ?? '',
+          borderColor: color,
+          textColor: color,
+          icon: icon);
     } else {
-      throw UnimplementedError('Outlined button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Outlined button with your parameters is not implemented');
     }
   }
 
@@ -124,7 +130,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: onPressed,
       );
     } else {
-      throw UnimplementedError('Outlined button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Outlined button with your parameters is not implemented');
     }
   }
 
@@ -154,7 +161,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: onPressed,
       );
     } else {
-      throw UnimplementedError('Gradient button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Gradient button with your parameters is not implemented');
     }
   }
 
@@ -167,18 +175,19 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? blurred,
   }) {
     final hasIcon = icon != null;
-    final onlyIconButton = hasIcon && text.isEmpty && !isTextButton && !(blurred ?? false);
-
-    if (hasIcon && !onlyIconButton && !(blurred ?? false)) {
-      return OrdinaryButtonWithIcon(
+    final onlyIconButton =
+        hasIcon && text.isEmpty && !isTextButton && !(blurred ?? false);
+    if (isTextButton) {
+      return OrdinaryTextButton(
         text: text,
         onPressed: onPressed,
         icon: icon,
       );
-    } else if (isTextButton) {
-      return OrdinaryTextButton(
+    } else if (hasIcon && !onlyIconButton && !(blurred ?? false)) {
+      return OrdinaryButtonWithIcon(
         text: text,
         onPressed: onPressed,
+        icon: icon,
       );
     } else if (onlyIconButton) {
       return FilledIconButton(
@@ -301,6 +310,12 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         );
       case null:
         throw UnimplementedError();
+      case DialogButtonType.buttonRed:
+        return RedDialogButton(
+          text: text,
+          onPressed: onPressed,
+          small: small ?? false,
+        );
     }
   }
 
@@ -312,7 +327,9 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? dismissActionWidget,
     bool? hasShadow,
   }) {
-    final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
+    final hasAllActions = primaryActionWidget != null &&
+        secondaryActionWidget != null &&
+        dismissActionWidget != null;
     if (hasAllActions) {
       return AdditionalActionNotificationPopUp(
         requiredData: requiredData,
