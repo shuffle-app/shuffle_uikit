@@ -3,7 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitTagSelector extends StatelessWidget {
   final List<String> tags;
-  final ValueChanged<String>? onTagSelected;
+  final ValueChanged<List<String>>? onTagsSelected;
 
   late final TextEditingController controller = TextEditingController()..addListener(_onTypedTagName);
   ValueNotifier<List<String>> searchListNotifier = ValueNotifier(List.empty(growable: true));
@@ -22,7 +22,7 @@ class UiKitTagSelector extends StatelessWidget {
   UiKitTagSelector({
     Key? key,
     required this.tags,
-    this.onTagSelected,
+    this.onTagsSelected,
   }) : super(key: key);
 
   @override
@@ -53,6 +53,7 @@ class UiKitTagSelector extends StatelessWidget {
                         onTap: () {
                           if (selectedListNotifier.value.contains(e)) return;
                           selectedListNotifier.value = [...selectedListNotifier.value, e];
+                          onTagsSelected?.call(selectedListNotifier.value);
                           if (searchListNotifier.value.contains(e)) {
                             final list = List<String>.from(searchListNotifier.value, growable: true);
                             list.remove(e);

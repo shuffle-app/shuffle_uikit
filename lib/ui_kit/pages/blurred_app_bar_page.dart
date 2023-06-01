@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -29,8 +31,8 @@ class BlurredAppBarPage extends StatelessWidget {
         SliverLayoutBuilder(
           builder: (context, sliverConstraints) {
             final animDuration = const Duration(milliseconds: 250);
-            final expandedHeight = 180.0;
             final toolbarHeight = (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 84);
+            final expandedHeight = appBarBody == null ? toolbarHeight : 180.0;
             final hideAppBarBody = sliverConstraints.scrollOffset > expandedHeight;
 
             return SliverAppBar(
@@ -47,7 +49,7 @@ class BlurredAppBarPage extends StatelessWidget {
                 title: title,
                 appBarBody: AnimatedContainer(
                   duration: animDuration,
-                  height: hideAppBarBody ? 0 : expandedHeight - toolbarHeight - SpacingFoundation.verticalSpacing16,
+                  height: hideAppBarBody ? 0 : max(0, expandedHeight - toolbarHeight - SpacingFoundation.verticalSpacing16),
                   child: appBarBody,
                 ),
                 appBarTrailing: appBarTrailing,
