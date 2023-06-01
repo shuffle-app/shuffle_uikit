@@ -23,6 +23,7 @@ export 'buttons/small_button_with_icon.dart';
 export 'buttons/small_ordinary_button.dart';
 export 'buttons/small_outlined_button.dart';
 export 'buttons/white_dialog_button.dart';
+export 'buttons/red_dialog_button.dart';
 export 'common/blurred_card_with_border.dart';
 export 'common/gradientable_widget.dart';
 export 'image/image_widget.dart';

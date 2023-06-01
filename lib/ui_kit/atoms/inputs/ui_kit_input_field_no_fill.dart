@@ -12,11 +12,13 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
     this.onChanged,
     this.hintText,
     this.validator,
+    this.keyboardType,
     this.enabled = true,
     required this.label,
   }) : super(key: key);
 
   final String label;
+  final TextInputType? keyboardType;
   @override
   final TextEditingController controller;
   @override
@@ -73,6 +75,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
       child: TextFormField(
         key: _key,
         enabled: widget.enabled,
+        keyboardType: widget.keyboardType,
         controller: widget.enabled ? widget.controller : null,
         style: inputTextStyle,
         onChanged: widget.onChanged,

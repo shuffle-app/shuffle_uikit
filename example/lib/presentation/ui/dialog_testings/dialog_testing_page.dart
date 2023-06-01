@@ -42,10 +42,10 @@ class DialogTestingPage extends StatelessWidget {
               OrdinaryButton(
                 text: 'Dialog alert',
                 onPressed: () => showUiKitAlertDialog(
-                  context,
-                  buttonText: 'text',
+                  context, AlertDialogData(
+                  defaultButtonText: 'text',
                   title: const Text('You sent an invitation to 2 people.'),
-                  content: const Text('Invitations can be viewed in private messages'),
+                  content: const Text('Invitations can be viewed in private messages')),
                 ),
               ),
               SpacingFoundation.verticalSpace16,

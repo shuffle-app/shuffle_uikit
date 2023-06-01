@@ -4,10 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
-    {VoidCallback? onPop,
-    Widget? title,
-    Widget? content,
-    required String buttonText}) {
+    AlertDialogData data) {
   return showDialog<T>(
     context: context,
     builder: (BuildContext context) {
@@ -21,17 +18,19 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
           borderRadius: BorderRadiusFoundation.all24,
         ),
         titlePadding: const EdgeInsets.fromLTRB(24, 24, 24, 8),
-        title: Center(child: title),
+        title: Center(child: data.title),
         titleTextStyle: textTheme?.caption2Bold,
-        content: content,
+        content: data.content,
         contentTextStyle: textTheme?.body,
         contentPadding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
         actions: [
+          if (data.additionalButton != null) data.additionalButton!,
           context.dialogButton(
-            text: buttonText,
+            text: data.defaultButtonText,
             small: true,
-            dialogButtonType: DialogButtonType.buttonBlack,
-            onPressed: onPop ?? () => context.pop(),
+            dialogButtonType: data.additionalButton != null ? DialogButtonType
+                .buttonWhite : DialogButtonType.buttonBlack,
+            onPressed: data.onPop ?? () => context.pop(),
           )
         ],
         actionsAlignment: MainAxisAlignment.center,
@@ -42,27 +41,43 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context,
 }
 
 Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
-  BuildContext context, {
-  Color? backgroundColor = Colors.black,
-  required Function child,
-}) {
+    BuildContext context, {
+      Color? backgroundColor = Colors.black,
+      required Function child,
+    }) {
   final textStyle = context.uiKitTheme?.boldTextTheme.title2;
 
   return showDialog(
     context: context,
     barrierColor: Colors.white.withOpacity(0.1),
     useSafeArea: false,
-    builder: (_) => BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
-      child: Dialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusFoundation.all40,
+    builder: (_) =>
+        BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
+          child: Dialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadiusFoundation.all40,
+            ),
+            backgroundColor: backgroundColor,
+            clipBehavior: Clip.hardEdge,
+            child: (child(_, textStyle) as Widget)
+                .paddingAll(EdgeInsetsFoundation.all24),
+          ),
         ),
-        backgroundColor: backgroundColor,
-        clipBehavior: Clip.hardEdge,
-        child: (child(_, textStyle) as Widget)
-            .paddingAll(EdgeInsetsFoundation.all24),
-      ),
-    ),
   );
+}
+
+//ignore: prefer-match-file-name
+class AlertDialogData {
+  final VoidCallback? onPop;
+  final Widget? title;
+  final Widget? content;
+  final Widget? additionalButton;
+  final String defaultButtonText;
+
+  AlertDialogData({this.onPop,
+    this.title,
+    this.content,
+    this.additionalButton,
+    required this.defaultButtonText});
 }

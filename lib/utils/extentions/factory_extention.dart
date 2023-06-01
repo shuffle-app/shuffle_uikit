@@ -153,4 +153,4 @@ extension FactoryExtention on BuildContext {
   }
 }
 
-enum DialogButtonType { buttonWhite, buttonBlack }
+enum DialogButtonType { buttonWhite, buttonBlack,buttonRed }
