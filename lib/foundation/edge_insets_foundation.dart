@@ -32,6 +32,8 @@ class EdgeInsetsFoundation {
 
   static double get vertical16 => SpacingFoundation.verticalSpacing16;
 
+  static double get vertical24 => SpacingFoundation.verticalSpacing24;
+
   static double get vertical12 => SpacingFoundation.verticalSpacing12;
 
   static double get vertical20 => SpacingFoundation.verticalSpacing20;
