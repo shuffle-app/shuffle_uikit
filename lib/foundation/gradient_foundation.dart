@@ -35,21 +35,20 @@ class GradientFoundation {
     gradient: defaultRadialGradient,
     width: 2,
   );
+  // radial-gradient(112.31% 397% at 55.96% -99%, #E32900 0%, #C6E216 60.17%, #D808FA 100%)
   static const buttonGradient = RadialGradient(
-    center: Alignment(-0.5596, 0.99),
-    radius: 8,
+    center: Alignment(0.25, -1),
+    radius: 10,
     colors: [
-      ColorsFoundation.pink,
-      ColorsFoundation.yellow,
       ColorsFoundation.orange,
       ColorsFoundation.yellow,
+      ColorsFoundation.pink,
     ],
-    transform: GradientRotation(1),
+    transform: GradientRotation(-0.75),
     stops: [
       0,
       0.3017,
-      0.6,
-      1,
+      0.5,
     ],
   );
 

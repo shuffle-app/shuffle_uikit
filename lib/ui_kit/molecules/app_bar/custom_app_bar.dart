@@ -7,12 +7,14 @@ class CustomAppBar extends PreferredSize {
   final String title;
   final bool centerTitle;
   final bool? autoImplyLeading;
+  final double? bodySpacing;
   final Widget? appBarBody;
   final Widget? appBarTrailing;
 
   const CustomAppBar({
     super.key,
     required this.title,
+    this.bodySpacing,
     this.centerTitle = false,
     this.autoImplyLeading,
     this.appBarBody,
@@ -48,6 +50,7 @@ class CustomAppBar extends PreferredSize {
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     if (showLeading) const AppBarBackButton(),
                     if (showLeading && !centerTitle) SpacingFoundation.horizontalSpace8,
@@ -57,9 +60,10 @@ class CustomAppBar extends PreferredSize {
                     ),
                     if (appBarTrailing != null && !centerTitle) SpacingFoundation.horizontalSpace8,
                     if (appBarTrailing != null) appBarTrailing!,
+                    if (appBarTrailing == null && showLeading) const SizedBox(),
                   ],
                 ),
-                SpacingFoundation.verticalSpace16,
+                bodySpacing?.heightBox ?? SpacingFoundation.verticalSpace16,
                 if (appBarBody != null) appBarBody!,
               ],
             ),

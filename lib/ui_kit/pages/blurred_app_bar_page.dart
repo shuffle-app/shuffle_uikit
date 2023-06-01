@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -21,26 +23,41 @@ class BlurredAppBarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        SliverAppBar(
-          automaticallyImplyLeading: false,
-          backgroundColor: Colors.transparent,
-          pinned: true,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadiusFoundation.onlyBottom24,
-          ),
-          collapsedHeight: context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 84,
+    final showLeading = autoImplyLeading ?? false;
 
-          /// нужно подумать как избежать хардкоженной высоты
-          expandedHeight: 180,
-          flexibleSpace: CustomAppBar(
-            title: title,
-            appBarBody: appBarBody,
-            appBarTrailing: appBarTrailing,
-            autoImplyLeading: autoImplyLeading,
-            centerTitle: centerTitle,
-          ),
+    return CustomScrollView(
+      physics: const ClampingScrollPhysics(),
+      slivers: [
+        SliverLayoutBuilder(
+          builder: (context, sliverConstraints) {
+            final animDuration = const Duration(milliseconds: 250);
+            final toolbarHeight = (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 84);
+            final expandedHeight = appBarBody == null ? toolbarHeight : 180.0;
+            final hideAppBarBody = sliverConstraints.scrollOffset > expandedHeight;
+
+            return SliverAppBar(
+              automaticallyImplyLeading: false,
+              backgroundColor: Colors.transparent,
+              pinned: true,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadiusFoundation.onlyBottom24,
+              ),
+              collapsedHeight: toolbarHeight,
+              expandedHeight: expandedHeight,
+              flexibleSpace: CustomAppBar(
+                bodySpacing: SpacingFoundation.verticalSpacing16,
+                title: title,
+                appBarBody: AnimatedContainer(
+                  duration: animDuration,
+                  height: hideAppBarBody ? 0 : max(0, expandedHeight - toolbarHeight - SpacingFoundation.verticalSpacing16),
+                  child: appBarBody,
+                ),
+                appBarTrailing: appBarTrailing,
+                autoImplyLeading: autoImplyLeading,
+                centerTitle: centerTitle,
+              ),
+            );
+          },
         ),
         body.wrapSliverBox,
       ],

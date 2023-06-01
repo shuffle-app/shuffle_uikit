@@ -80,6 +80,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         inputFormatters: widget.inputFormatters,
         decoration: InputDecoration(
           hintText: widget.hintText,
+          prefixStyle: inputTextStyle,
           prefixText: widget.prefixText,
           labelText: widget.label,
           labelStyle: labelStyle,
