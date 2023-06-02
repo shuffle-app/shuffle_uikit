@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,15 +13,22 @@ class ImageWidget extends StatelessWidget {
   final double? width;
   final double? height;
   final Color? color;
+  final Widget? errorWidget;
 
-  const ImageWidget({Key? key, this.link, this.fit, this.width, this.height, this.rasterAsset, this.svgAsset, this.color})
-      : super(key: key);
+  const ImageWidget({
+    Key? key,
+    this.link,
+    this.fit,
+    this.width,
+    this.height,
+    this.rasterAsset,
+    this.svgAsset,
+    this.color,
+    this.errorWidget,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // print(
-    //     'here is build ImageWidget with link $link and results link!.startsWith("http://") || link!.startsWith("https://") ${link?.startsWith("http://")} || ${link?.startsWith("https://")}');
-
     if (rasterAsset != null) {
       return rasterAsset!.image(
         color: color,
@@ -54,6 +63,11 @@ class ImageWidget extends StatelessWidget {
         width: width,
         height: height,
         cacheManager: CustomCacheManager.instance,
+        errorWidget: (context, url, trace) {
+          log('Got error while downloading $url', name: 'ImageWidget');
+
+          return errorWidget ?? const DefaultImageErrorWidget();
+        },
         placeholder: (_, __) => const CircularProgressIndicator.adaptive(),
       );
     } else {
