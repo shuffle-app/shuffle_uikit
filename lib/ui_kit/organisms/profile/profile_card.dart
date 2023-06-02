@@ -48,14 +48,6 @@ class ProfileCard extends StatelessWidget {
                   name: name,
                 ),
               if (followers != null && onFollow != null) SpacingFoundation.horizontalSpace16 else SpacingFoundation.horizontalSpace12,
-              if (followers != null && onFollow != null)
-                ProfileAvatar(avatarLink: avatarUrl ?? '')
-              else
-                CircularAvatar(
-                  height: 48,
-                  avatarUrl: avatarUrl ?? '',
-                ),
-              if (followers != null && onFollow != null) SpacingFoundation.horizontalSpace16 else SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: ProfileInfo(
                   name: name,
