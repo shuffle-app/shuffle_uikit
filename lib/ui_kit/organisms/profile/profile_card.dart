@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_avatar.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_description.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileCard extends StatelessWidget {
   final String? nickname;
@@ -37,17 +36,11 @@ class ProfileCard extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              if (followers != null && onFollow != null)
-                ProfileAvatar(avatarLink: avatarUrl ?? '')
-              else
-                CircularAvatar(
-                  height: 48.h,
-                  avatarUrl: avatarUrl ?? '',
-                ),
-              if (followers != null && onFollow != null)
-                SpacingFoundation.horizontalSpace16
-              else
-                SpacingFoundation.horizontalSpace12,
+              ProfileAvatar(
+                avatarLink: avatarUrl ?? '',
+                name: name,
+              ),
+              if (followers != null && onFollow != null) SpacingFoundation.horizontalSpace16 else SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: ProfileInfo(
                   name: name,
