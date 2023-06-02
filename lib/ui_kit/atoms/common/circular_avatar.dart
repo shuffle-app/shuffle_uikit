@@ -14,7 +14,7 @@ class CircularAvatar extends StatelessWidget {
       child: ImageWidget(
         height: height ?? SpacingFoundation
             .verticalSpacing24,
-        link: avatarUrl,
+        link: avatarUrl.isEmpty ? GraphicsFoundation.instance.png.mockUserAvatar.path : avatarUrl,
         // package: 'shuffle_uikit',
         fit: BoxFit.fitHeight,
       ),
