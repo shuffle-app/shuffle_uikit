@@ -41,7 +41,7 @@ class ProfileCard extends StatelessWidget {
                 ProfileAvatar(avatarLink: avatarUrl ?? '')
               else
                 CircularAvatar(
-                  height: 48.h,
+                  height: 48,
                   avatarUrl: avatarUrl ?? '',
                 ),
               if (followers != null && onFollow != null)
@@ -51,7 +51,7 @@ class ProfileCard extends StatelessWidget {
               Expanded(
                 child: ProfileInfo(
                   name: name,
-                  nickname: nickname ?? '',
+                  nickname: '@${nickname ?? ''}',
                   followers: followers,
                   onFollow: onFollow,
                 ),
