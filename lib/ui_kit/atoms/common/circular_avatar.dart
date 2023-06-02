@@ -4,13 +4,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class CircularAvatar extends StatelessWidget {
   final String avatarUrl;
   final double? height;
-  final Widget? errorWidget;
+  final String? name;
 
   const CircularAvatar({
     Key? key,
     required this.avatarUrl,
     this.height,
-    this.errorWidget,
+    this.name,
   }) : super(key: key);
 
   @override
@@ -19,7 +19,7 @@ class CircularAvatar extends StatelessWidget {
       child: ImageWidget(
         height: height ?? SpacingFoundation.verticalSpacing24,
         link: avatarUrl,
-        errorWidget: errorWidget,
+        errorWidget: LargeCircularAvatarErrorWidget(text: name ?? ''),
         fit: BoxFit.fitHeight,
       ),
     );

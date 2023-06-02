@@ -36,10 +36,17 @@ class ProfileCard extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              ProfileAvatar(
-                avatarLink: avatarUrl ?? '',
-                name: name,
-              ),
+              if (followers != null && onFollow != null)
+                ProfileAvatar(
+                  avatarLink: avatarUrl ?? '',
+                  name: name,
+                )
+              else
+                CircularAvatar(
+                  height: 48,
+                  avatarUrl: avatarUrl ?? '',
+                  name: name,
+                ),
               if (followers != null && onFollow != null) SpacingFoundation.horizontalSpace16 else SpacingFoundation.horizontalSpace12,
               if (followers != null && onFollow != null)
                 ProfileAvatar(avatarLink: avatarUrl ?? '')
