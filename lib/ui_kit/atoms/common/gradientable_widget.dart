@@ -14,9 +14,11 @@ class GradientableWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if(!active) return child;
+    
     return ShaderMask(
         shaderCallback: (final Rect bounds) {
-          return gradient.scale(active ? 1 : 0).createShader(bounds);
+          return gradient.createShader(bounds);
         },
         child: child);
   }
