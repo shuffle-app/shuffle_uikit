@@ -48,10 +48,7 @@ class ProfileCard extends StatelessWidget {
                   height: 48,
                   avatarUrl: avatarUrl ?? '',
                 ),
-              if (followers != null && onFollow != null)
-                SpacingFoundation.horizontalSpace16
-              else
-                SpacingFoundation.horizontalSpace12,
+              if (followers != null && onFollow != null) SpacingFoundation.horizontalSpace16 else SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: ProfileInfo(
                   name: name,
