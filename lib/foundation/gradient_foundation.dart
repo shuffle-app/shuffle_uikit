@@ -37,7 +37,7 @@ class GradientFoundation {
   );
   // radial-gradient(112.31% 397% at 55.96% -99%, #E32900 0%, #C6E216 60.17%, #D808FA 100%)
   static const buttonGradient = RadialGradient(
-    center: Alignment(0.25, -1),
+    center: Alignment(0.6, -1),
     radius: 10,
     colors: [
       ColorsFoundation.orange,
