@@ -40,7 +40,7 @@ void main() {
         );
 
       await tester.pumpWidgetBuilder(ScreenUtilInit(
-          designSize: const Size(414, 800),
+          designSize: const Size(450, 800),
           child: builder.build(),
           builder: (BuildContext context, Widget? child) =>
               StatefulBuilder(builder: (context, setState) {
@@ -49,7 +49,7 @@ void main() {
                     child: Material(child: Theme(data: theme, child: child!)));
               })));
 
-      await screenMatchesGolden(tester, 'UiKitTagsWidget_width414_3cards',
+      await screenMatchesGolden(tester, 'UiKitTagsWidget_width450_3cards',
           autoHeight: true);
     });
   });
