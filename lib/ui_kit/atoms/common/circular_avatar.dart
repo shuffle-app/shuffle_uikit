@@ -18,7 +18,7 @@ class CircularAvatar extends StatelessWidget {
     return ClipOval(
       child: ImageWidget(
         height: height ?? SpacingFoundation.verticalSpacing24,
-        link: avatarUrl,
+        link: avatarUrl.isEmpty ? GraphicsFoundation.instance.png.mockUserAvatar.path : avatarUrl,
         errorWidget: LargeCircularAvatarErrorWidget(text: name ?? ''),
         fit: BoxFit.fitHeight,
       ),
