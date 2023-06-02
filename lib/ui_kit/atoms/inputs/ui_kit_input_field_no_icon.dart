@@ -9,6 +9,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.hintText,
     this.validator,
     this.onChanged,
+    this.fillColor,
     this.enabled = true,
   }) : super(key: key);
 
@@ -24,6 +25,8 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
   final String? Function(String? p1)? validator;
 
   final ValueChanged<String>? onChanged;
+
+  final Color? fillColor;
 
   @override
   State<UiKitInputFieldNoIcon> createState() => _UiKitInputFieldNoIconState();
@@ -68,6 +71,8 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
           hintText: widget.hintText,
           errorText: widget.errorText,
           errorMaxLines: 1,
+          filled: widget.fillColor != null,
+          fillColor: widget.fillColor,
           errorStyle: errorStyle,
           hintStyle: hintStyle,
         ),

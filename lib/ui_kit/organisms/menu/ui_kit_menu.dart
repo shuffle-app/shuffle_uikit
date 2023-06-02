@@ -77,7 +77,7 @@ class UiKitMenu<T> extends StatelessWidget {
                 children: [
                   if (selectedItem == null)
                     Text(
-                      'Choose option',
+                      'CHOOSE OPTION',
                       style: boldTextTheme?.caption1Medium,
                     ),
                   if (selectedItem != null) ...[
