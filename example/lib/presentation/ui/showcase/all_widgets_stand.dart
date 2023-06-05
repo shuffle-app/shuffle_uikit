@@ -123,6 +123,29 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Center(
+                child: context.badgeButtonNoValue(
+                  icon: ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.message,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {},
+                  badgeAlignment: Alignment.topRight,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              const Center(
+                child: BigAvatarErrorWidget(
+                  text: 'Mellony Martinez Jr',
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              const Center(
+                child: LargeCircularAvatarErrorWidget(
+                  text: 'Mellony Martinez Jr',
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitTagSelector(
                 tags: [
                   'Sport',

@@ -2,6 +2,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 extension FactoryExtention on BuildContext {
+  Widget badgeButtonNoValue({
+    String? text,
+    VoidCallback? onPressed,
+    Widget? icon,
+    Alignment? badgeAlignment,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createBadgeButtonNoValue(
+          text: text,
+          onPressed: onPressed,
+          icon: icon,
+          badgeAlignment: badgeAlignment,
+        )
+        .build(this);
+  }
+
   Widget smallButton({
     String? text,
     VoidCallback? onPressed,
@@ -73,13 +89,15 @@ extension FactoryExtention on BuildContext {
     VoidCallback? onPressed,
     Widget? icon,
     int? badgeValue,
+    Alignment? badgeAlignment,
   }) {
     return WidgetsFactory.of(this)!
-        .createBadgeButton(
+        .createBadgeButtonWithValue(
           text: text,
           onPressed: onPressed,
           icon: icon,
           badgeValue: badgeValue,
+          alignment: badgeAlignment,
         )
         .build(this);
   }
@@ -153,4 +171,4 @@ extension FactoryExtention on BuildContext {
   }
 }
 
-enum DialogButtonType { buttonWhite, buttonBlack,buttonRed }
+enum DialogButtonType { buttonWhite, buttonBlack, buttonRed }

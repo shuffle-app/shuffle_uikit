@@ -10,11 +10,13 @@ class CustomAppBar extends PreferredSize {
   final double? bodySpacing;
   final Widget? appBarBody;
   final Widget? appBarTrailing;
+  final Widget? leading;
 
   const CustomAppBar({
     super.key,
     required this.title,
     this.bodySpacing,
+    this.leading,
     this.centerTitle = false,
     this.autoImplyLeading,
     this.appBarBody,
@@ -24,7 +26,7 @@ class CustomAppBar extends PreferredSize {
 
   @override
   Widget build(BuildContext context) {
-    final showLeading = autoImplyLeading ?? false;
+    final showLeading = autoImplyLeading ?? false || leading != null;
 
     return ClipRRect(
       borderRadius: BorderRadiusFoundation.onlyBottom24,
@@ -52,7 +54,7 @@ class CustomAppBar extends PreferredSize {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    if (showLeading) const AppBarBackButton(),
+                    if (showLeading) leading ?? const AppBarBackButton(),
                     if (showLeading && !centerTitle) SpacingFoundation.horizontalSpace8,
                     AppBarTitle(
                       title: title,

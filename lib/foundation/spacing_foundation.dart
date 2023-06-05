@@ -5,6 +5,8 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class SpacingFoundation {
   static double get zero => 0.sp;
 
+  static double get horizontalSpacing2 => 2.w;
+
   static double get horizontalSpacing4 => 4.w;
 
   static double get horizontalSpacing6 => 6.w;
