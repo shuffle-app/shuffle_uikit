@@ -1,36 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class BadgeIconButton extends StatelessWidget implements ButtonFactory {
+class BadgeIconButtonNoValue extends StatelessWidget implements ButtonFactory {
   final Widget? icon;
   final VoidCallback? onPressed;
   final int? badgeValue;
-  final Alignment? alignment;
+  final Alignment? badgeAlignment;
 
-  const BadgeIconButton({
-    Key? key,
+  const BadgeIconButtonNoValue({
+    super.key,
     this.icon,
     this.onPressed,
     this.badgeValue,
-    this.alignment,
-  }) : super(key: key);
+    this.badgeAlignment,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final topLeftBadge = alignment == Alignment.topLeft;
-    final topRightBadge = alignment == Alignment.topRight;
+    final topLeftBadge = badgeAlignment == Alignment.topLeft;
+    final topRightBadge = badgeAlignment == Alignment.topRight;
     final child = Container(
-      alignment: alignment,
+      alignment: badgeAlignment,
       decoration: const BoxDecoration(
         shape: BoxShape.circle,
-        gradient: GradientFoundation.defaultRadialGradient,
+        color: ColorsFoundation.error,
       ),
-      child: Text(
-        '$badgeValue',
-        style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(
-          color: Colors.black,
-        ),
-      ).paddingAll(EdgeInsetsFoundation.all2),
+      child: const SizedBox().paddingAll(EdgeInsetsFoundation.all4),
     );
 
     return Material(
@@ -46,16 +41,16 @@ class BadgeIconButton extends StatelessWidget implements ButtonFactory {
             fit: StackFit.passthrough,
             children: [
               if (icon != null) icon!,
-              if (topLeftBadge || alignment == null)
+              if (topLeftBadge)
                 Positioned(
-                  top: -SpacingFoundation.verticalSpacing4,
-                  left: -SpacingFoundation.horizontalSpacing4,
+                  top: -SpacingFoundation.verticalSpacing2,
+                  left: -SpacingFoundation.horizontalSpacing2,
                   child: child,
                 ),
               if (topRightBadge)
                 Positioned(
-                  right: -SpacingFoundation.horizontalSpacing4,
-                  top: -SpacingFoundation.verticalSpacing4,
+                  top: -SpacingFoundation.verticalSpacing2,
+                  right: -SpacingFoundation.horizontalSpacing2,
                   child: child,
                 ),
             ],

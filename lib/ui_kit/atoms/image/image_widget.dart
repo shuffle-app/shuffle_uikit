@@ -79,6 +79,7 @@ class ImageWidget extends StatelessWidget {
           color: color,
           height: height,
           package: 'shuffle_uikit',
+          placeholderBuilder: (context) => errorWidget ?? const DefaultImageErrorWidget(),
         );
       }
 
@@ -89,6 +90,7 @@ class ImageWidget extends StatelessWidget {
         color: color,
         height: height,
         package: 'shuffle_uikit',
+        errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
       );
     }
   }

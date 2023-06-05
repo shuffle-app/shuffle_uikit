@@ -16,7 +16,7 @@ class BigAvatarErrorWidget extends StatelessWidget {
       width: 120,
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all20,
-        color: Colors.grey.withOpacity(0.4),
+        color: ColorsFoundation.darkNeutral400.withOpacity(0.4),
       ),
       child: Container(
         decoration: BoxDecoration(
@@ -25,10 +25,11 @@ class BigAvatarErrorWidget extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            text,
+            text.split(' ').map((e) => e.characters.first).join(''),
             style: context.uiKitTheme?.boldTextTheme.body.copyWith(
               color: ColorsFoundation.darkNeutral900,
             ),
+            textAlign: TextAlign.center,
           ),
         ),
       ).paddingAll(EdgeInsetsFoundation.all8),

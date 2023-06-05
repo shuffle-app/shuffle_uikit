@@ -38,16 +38,16 @@ class BlurredAppBarPage extends StatelessWidget {
             final hideAppBarBody = sliverConstraints.scrollOffset > expandedHeight;
 
             return SliverAppBar(
-              automaticallyImplyLeading: leading!=null,
+              automaticallyImplyLeading: showLeading,
               backgroundColor: Colors.transparent,
               pinned: true,
-              leading: leading,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadiusFoundation.onlyBottom24,
               ),
               collapsedHeight: toolbarHeight,
               expandedHeight: expandedHeight,
               flexibleSpace: CustomAppBar(
+                leading: leading,
                 bodySpacing: SpacingFoundation.verticalSpacing16,
                 title: title,
                 appBarBody: AnimatedContainer(

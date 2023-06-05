@@ -15,7 +15,7 @@ class LargeCircularAvatarErrorWidget extends StatelessWidget {
       height: 48,
       width: 48,
       decoration: BoxDecoration(
-        color: ColorsFoundation.darkNeutral500.withOpacity(0.4),
+        color: ColorsFoundation.darkNeutral400.withOpacity(0.4),
         shape: BoxShape.circle,
       ),
       child: Container(
@@ -23,13 +23,17 @@ class LargeCircularAvatarErrorWidget extends StatelessWidget {
           color: ColorsFoundation.darkNeutral400,
           shape: BoxShape.circle,
         ),
-        child: Text(
-          text,
-          style: context.uiKitTheme?.boldTextTheme.body.copyWith(
-            color: ColorsFoundation.darkNeutral900,
+        child: Center(
+          child: Text(
+            text.split(' ').map((e) => e.characters.first).join(''),
+            style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(
+              color: ColorsFoundation.darkNeutral900,
+            ),
+            maxLines: 1,
+            textAlign: TextAlign.center,
           ),
         ),
-      ),
+      ).paddingAll(EdgeInsetsFoundation.all4),
     );
   }
 }
