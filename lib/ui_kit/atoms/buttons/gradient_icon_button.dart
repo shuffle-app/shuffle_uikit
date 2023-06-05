@@ -28,7 +28,7 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
             gradient: enabled ? GradientFoundation.defaultRadialGradient : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
           ),
-          child: icon.paddingAll(EdgeInsetsFoundation.all12),
+          child: icon.paddingAll(SpacingFoundation.verticalSpacing12),
         ),
       ),
     );

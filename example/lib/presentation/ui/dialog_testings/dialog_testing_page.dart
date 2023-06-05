@@ -14,11 +14,11 @@ class DialogTestingPage extends StatelessWidget {
               OrdinaryButton(
                 text: 'Dialog bottom sheet fullscreen',
                 onPressed: () => showUiKitGeneralFullScreenDialog(
-                  context,
+                  context,GeneralDialogData(
                   child: Column(
                     children: List.generate(10, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
                   ),
-                ),
+                )),
               ),
               SpacingFoundation.verticalSpace16,
               OrdinaryButton(

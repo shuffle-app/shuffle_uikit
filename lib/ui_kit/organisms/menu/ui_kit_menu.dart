@@ -43,10 +43,12 @@ class UiKitMenu<T> extends StatelessWidget {
           ),
           child: InkWell(
             onTap: () {
-              final elementsHeight = ((items.length + 1) * 52) + (SpacingFoundation.verticalSpacing16 * 3);
+              final elementsHeight = ((items.length + 1) * 52) +
+                  (SpacingFoundation.verticalSpacing16 * 3);
               final topPadding = max(1.sh - elementsHeight, 0.0);
               showUiKitGeneralFullScreenDialog(
-                context,
+                  context, GeneralDialogData(
+                useRootNavigator: false,
                 topPadding: topPadding,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -61,15 +63,16 @@ class UiKitMenu<T> extends StatelessWidget {
                     SpacingFoundation.verticalSpace16,
                     ...items
                         .map<Widget>(
-                          (e) => UiKitMenuItemTile(
+                          (e) =>
+                          UiKitMenuItemTile(
                             item: e,
                             onTap: () => onSelected?.call(e),
                           ),
-                        )
+                    )
                         .toList(),
                   ],
                 ),
-              );
+              ));
             },
             child: Ink(
               child: Row(
@@ -118,7 +121,8 @@ class UiKitMenuItem<T> {
     this.icon,
   });
 
-  factory UiKitMenuItem.empty() => UiKitMenuItem(
+  factory UiKitMenuItem.empty() =>
+      UiKitMenuItem(
         title: '',
         value: null,
       );

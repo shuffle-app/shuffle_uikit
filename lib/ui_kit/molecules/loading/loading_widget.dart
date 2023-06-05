@@ -18,12 +18,14 @@ class LoadingWidget extends StatelessWidget {
     }
 
     return Center(
-      child: LottieBuilder.asset(
+      child: Hero(
+        tag: 'hero-loading',
+        child: LottieBuilder.asset(
         GraphicsFoundation.instance.animations.lottie.shuffleLoader1.path,
         repeat: true,
         animate: true,
         package: 'shuffle_uikit',
-      ),
+      )),
     );
   }
 }

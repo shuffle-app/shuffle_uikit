@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UiKitHorizontalScrollableList extends StatelessWidget {
   final List<Widget> children;
@@ -25,7 +26,7 @@ class UiKitHorizontalScrollableList extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Wrap(
         spacing: spacing ?? SpacingFoundation.zero,
-        children: [(leftPadding ?? 0).widthBox, ...children],
+        children: [(leftPadding ?? 0).widthBox, ...children, 20.w.widthBox],
       ),
     );
   }

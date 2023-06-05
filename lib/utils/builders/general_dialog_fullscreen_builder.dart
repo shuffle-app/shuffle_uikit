@@ -4,13 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-showUiKitGeneralFullScreenDialog(
-  BuildContext context, {
-  required Widget child,
-  Widget? bottomBar,
-  double? topPadding,
-  Function onDismissed = _empty,
-}) {
+showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
   final bottomSheetTheme = context.uiKitTheme?.bottomSheetTheme;
   final shape = bottomSheetTheme?.shape;
   dismissable(c) => Dismissible(
@@ -19,10 +13,10 @@ showUiKitGeneralFullScreenDialog(
         onDismissed: (DismissDirection direction) {
           // Чтобы закрыть сам диалог (убрать серый фон)
 
-          if (onDismissed != _empty) {
+          if (data.onDismissed != _empty) {
             Future.delayed(
               const Duration(milliseconds: 200),
-              () => onDismissed(),
+              () => data.onDismissed(),
             );
           }
 
@@ -50,12 +44,12 @@ showUiKitGeneralFullScreenDialog(
                       primary: true,
                       physics: const ClampingScrollPhysics(),
                       child: Column(children: [
-                        child,
-                        if (bottomBar != null)
-                          Opacity(opacity: 0, child: bottomBar)
+                        data.child,
+                        if (data.bottomBar != null)
+                          Opacity(opacity: 0, child: data.bottomBar)
                       ]),
                     )),
-                if (bottomBar != null)
+                if (data.bottomBar != null)
                   Positioned(
                       bottom: 0,
                       right: 0,
@@ -64,25 +58,27 @@ showUiKitGeneralFullScreenDialog(
                           decoration: const BoxDecoration(
                               gradient: GradientFoundation
                                   .solidSurfaceLinearGradient),
-                          child: bottomBar))
+                          child: data.bottomBar))
               ])),
             ],
           ),
-        ).paddingOnly(top: topPadding ?? 30.h),
+        ).paddingOnly(top: data.topPadding ?? 30.h),
       );
 
   return showGeneralDialog(
     barrierDismissible: true,
     barrierLabel: '',
+    useRootNavigator: data.useRootNavigator,
     barrierColor: Colors.black38,
     context: context,
     transitionDuration: const Duration(milliseconds: 200),
     transitionBuilder: (context, animation1, animation2, child) {
       return BackdropFilter(
           filter: ImageFilter.blur(
-              sigmaX: animation1.value * 2,
-              sigmaY: animation2.value * 2,
-              tileMode: TileMode.decal),
+              sigmaX: animation1.value * 4,
+              sigmaY: animation2.value * 4,
+              // tileMode: TileMode.decal
+          ),
           child: Animations.slideAnimation(animation1, animation2, child));
     },
     pageBuilder: (
@@ -97,3 +93,21 @@ showUiKitGeneralFullScreenDialog(
 
 //ignore: no-empty-block
 void _empty() {}
+
+//ignore: prefer-match-file-name
+class GeneralDialogData {
+  final bool useRootNavigator;
+  final Widget child;
+
+  final Widget? bottomBar;
+  final double? topPadding;
+
+  final Function onDismissed;
+
+  GeneralDialogData(
+      {this.useRootNavigator = true,
+      required this.child,
+      this.bottomBar,
+      this.topPadding,
+      this.onDismissed = _empty});
+}
