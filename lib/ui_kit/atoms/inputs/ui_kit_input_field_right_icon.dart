@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputField {
+class UiKitInputFieldRightIcon extends StatefulWidget
+    implements BaseUiKitInputField {
   const UiKitInputFieldRightIcon({
     Key? key,
     required this.controller,
@@ -9,6 +10,8 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
     this.hintText,
     this.validator,
     this.enabled = true,
+    this.icon,
+    this.onPressed,
   }) : super(key: key);
 
   @override
@@ -22,8 +25,13 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
   @override
   final String? Function(String? p1)? validator;
 
+  final Widget? icon;
+
+  final VoidCallback? onPressed;
+
   @override
-  State<UiKitInputFieldRightIcon> createState() => _UiKitInputFieldRightIconState();
+  State<UiKitInputFieldRightIcon> createState() =>
+      _UiKitInputFieldRightIconState();
 }
 
 class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
@@ -42,10 +50,15 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
   Widget build(BuildContext context) {
     final uiKitTheme = context.uiKitTheme;
     final inputTheme = uiKitTheme?.iconInputTheme;
-    final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
-    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
-    final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
-      color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.darkNeutral900.withOpacity(0.16),
+    final errorStyle = uiKitTheme?.regularTextTheme.caption2
+        .copyWith(color: ColorsFoundation.error);
+    final inputTextStyle =
+        uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
+    final hintStyle =
+        uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
+      color: widget.enabled
+          ? Colors.white.withOpacity(0.48)
+          : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
 
     return Theme(
@@ -59,7 +72,9 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
         controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
         style: inputTextStyle?.copyWith(
-          color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
+          color: _key.currentState?.hasError ?? false
+              ? ColorsFoundation.error
+              : Colors.white,
         ),
         decoration: InputDecoration(
           hintText: widget.hintText,
@@ -69,10 +84,11 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           hintStyle: hintStyle,
           suffixIconColor: inputPropertiesColor,
           suffixIcon: IconButton(
-            icon: const Icon(Icons.close),
-            onPressed: () {
-              widget.controller.clear();
-            },
+            icon: widget.icon ?? const Icon(Icons.close),
+            onPressed: widget.onPressed ??
+                () {
+                  widget.controller.clear();
+                },
             visualDensity: VisualDensity.compact,
             splashRadius: 5,
           ),
