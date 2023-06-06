@@ -42,13 +42,6 @@ dev_dependencies:
   build_runner: ^2.3.3
   dart_code_metrics: ^5.7.3
 
-dependency_overrides:
-  flutter_gen_core:
-    git:
-      url: https://github.com/jetpeter/flutter_gen
-      path: packages/core
-      ref: 785161759cf07319c59d5ecc9de4ef66662bcd95
-
 flutter:
   assets:
     - assets/images/png/

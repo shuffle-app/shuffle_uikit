@@ -106,6 +106,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
 
+  /// File path: assets/images/png/shuffle_card.jpg
+  AssetGenImage get shuffleCard => const AssetGenImage('assets/images/png/shuffle_card.jpg');
+
   /// File path: assets/images/png/spinner_event.png
   AssetGenImage get spinnerEvent => const AssetGenImage('assets/images/png/spinner_event.png');
 
@@ -124,6 +127,7 @@ class $AssetsImagesPngGen {
         profileAvatar,
         profilePost1,
         profileStory1,
+        shuffleCard,
         spinnerEvent
       ];
 }
@@ -872,7 +876,16 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider() => AssetImage(_assetName);
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
 
   String get path => _assetName;
 
@@ -899,9 +912,9 @@ class SvgGenImage {
     bool excludeFromSemantics = false,
     SvgTheme theme = const SvgTheme(),
     ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
-    @deprecated Clip clipBehavior = Clip.hardEdge,
     @deprecated bool cacheColorFilter = false,
   }) {
     return SvgPicture.asset(
