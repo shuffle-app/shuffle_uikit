@@ -69,14 +69,15 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
     barrierDismissible: true,
     barrierLabel: '',
     useRootNavigator: data.useRootNavigator,
-    barrierColor: Colors.black38,
+    barrierColor: ColorsFoundation.darkNeutral900.withOpacity(0.5),
     context: context,
-    transitionDuration: const Duration(milliseconds: 200),
+    transitionDuration: const Duration(milliseconds: 350),
     transitionBuilder: (context, animation1, animation2, child) {
+
       return BackdropFilter(
           filter: ImageFilter.blur(
-              sigmaX: animation1.value * 4,
-              sigmaY: animation2.value * 4,
+              sigmaX: animation1.value * 2,
+              sigmaY: animation1.value * 2,
               // tileMode: TileMode.decal
           ),
           child: Animations.slideAnimation(animation1, animation2, child));

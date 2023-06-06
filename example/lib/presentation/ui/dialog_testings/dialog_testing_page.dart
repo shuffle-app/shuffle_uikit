@@ -15,6 +15,8 @@ class DialogTestingPage extends StatelessWidget {
                 text: 'Dialog bottom sheet fullscreen',
                 onPressed: () => showUiKitGeneralFullScreenDialog(
                   context,GeneralDialogData(
+                  topPadding: 100,
+                  useRootNavigator: false,
                   child: Column(
                     children: List.generate(10, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
                   ),
