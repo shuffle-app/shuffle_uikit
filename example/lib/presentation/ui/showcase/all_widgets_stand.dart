@@ -147,7 +147,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               UiKitTagSelector(
-                tags: [
+                tags: const [
                   'Sport',
                   'More Sport',
                   'Another Sport',

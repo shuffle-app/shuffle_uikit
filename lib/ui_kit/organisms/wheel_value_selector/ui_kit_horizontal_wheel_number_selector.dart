@@ -52,7 +52,6 @@ class _UiKitHorizontalWheelNumberSelectorState
 
     return LayoutBuilder(
       builder: (context, size) {
-        final width = size.maxWidth;
 
         return UiKitCardWrapper(
           child: Column(
@@ -112,6 +111,7 @@ class _UiKitHorizontalWheelNumberSelectorState
                             diameterRatio: 100000,
                             children: widget.values.map(
                               (e) {
+
                                 return RepaintBoundary(
                                   child: AnimatedBuilder(
                                     animation: _currentValueNotifier,
@@ -190,15 +190,5 @@ class _UiKitHorizontalWheelNumberSelectorState
         );
       },
     );
-  }
-
-  bool _isValueInTheCenter(int valueIndex, int listLength) {
-    int range = (listLength / 7).floor();
-    if (valueIndex + range >= listLength) {
-      return false;
-    } else if (valueIndex - range <= 0) {
-      return false;
-    }
-    return true;
   }
 }

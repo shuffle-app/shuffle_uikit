@@ -125,7 +125,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? icon,
     Alignment? badgeAlignment,
   }) {
-    final hasIcon = icon != null;
 
     return BadgeIconButtonNoValue(
       onPressed: onPressed,
@@ -369,8 +368,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     int? badgeValue,
     Alignment? alignment,
   }) {
-    final hasIcon = icon != null;
-    final iconButton = hasIcon && (text?.isEmpty ?? true);
 
     return BadgeIconButton(
       icon: icon,
