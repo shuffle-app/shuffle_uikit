@@ -94,8 +94,8 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/muslim_flag.png
   AssetGenImage get muslimFlag => const AssetGenImage('assets/images/png/muslim_flag.png');
 
-  /// File path: assets/images/png/place.png
-  AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
+  /// File path: assets/images/png/place.jpg
+  AssetGenImage get place => const AssetGenImage('assets/images/png/place.jpg');
 
   /// File path: assets/images/png/profile_avatar.png
   AssetGenImage get profileAvatar => const AssetGenImage('assets/images/png/profile_avatar.png');
@@ -872,7 +872,16 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider() => AssetImage(_assetName);
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
 
   String get path => _assetName;
 
@@ -899,9 +908,9 @@ class SvgGenImage {
     bool excludeFromSemantics = false,
     SvgTheme theme = const SvgTheme(),
     ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
-    @deprecated Clip clipBehavior = Clip.hardEdge,
     @deprecated bool cacheColorFilter = false,
   }) {
     return SvgPicture.asset(
