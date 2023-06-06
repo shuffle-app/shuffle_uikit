@@ -94,8 +94,8 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/muslim_flag.png
   AssetGenImage get muslimFlag => const AssetGenImage('assets/images/png/muslim_flag.png');
 
-  /// File path: assets/images/png/place.png
-  AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
+  /// File path: assets/images/png/place.jpg
+  AssetGenImage get place => const AssetGenImage('assets/images/png/place.jpg');
 
   /// File path: assets/images/png/profile_avatar.png
   AssetGenImage get profileAvatar => const AssetGenImage('assets/images/png/profile_avatar.png');
@@ -105,9 +105,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
-
-  /// File path: assets/images/png/shuffle_card.jpg
-  AssetGenImage get shuffleCard => const AssetGenImage('assets/images/png/shuffle_card.jpg');
 
   /// File path: assets/images/png/spinner_event.png
   AssetGenImage get spinnerEvent => const AssetGenImage('assets/images/png/spinner_event.png');
@@ -127,7 +124,6 @@ class $AssetsImagesPngGen {
         profileAvatar,
         profilePost1,
         profileStory1,
-        shuffleCard,
         spinnerEvent
       ];
 }
