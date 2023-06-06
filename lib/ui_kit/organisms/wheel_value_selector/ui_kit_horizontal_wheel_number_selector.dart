@@ -52,7 +52,6 @@ class _UiKitHorizontalWheelNumberSelectorState
 
     return LayoutBuilder(
       builder: (context, size) {
-        final width = size.maxWidth;
 
         return UiKitCardWrapper(
           child: Column(
