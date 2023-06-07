@@ -23,7 +23,7 @@ void main() {
         );
 
       await tester.pumpWidgetBuilder(ScreenUtilInit(
-          designSize: const Size(414, 568),
+          designSize: const Size(300, 568),
           child: builder.build(),
           builder: (BuildContext context, Widget? child) =>
               StatefulBuilder(builder: (context, setState) {
@@ -32,7 +32,7 @@ void main() {
                     child: Material(child: Theme(data: theme, child: child!)));
               })));
 
-      await screenMatchesGolden(tester, 'TitledAccentInfo_width414_more_content',
+      await screenMatchesGolden(tester, 'TitledAccentInfo_width300_more_content',
           autoHeight: true);
     });
   });
