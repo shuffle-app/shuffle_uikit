@@ -12,6 +12,8 @@ Future<void> main(List<String> arguments) async {
 
   var resultCode = testable_widgets_generator.wrapWidgetsChild(sourceCode);
   resultCode = testable_widgets_generator.wrapWidgetsChildren(resultCode);
+  // resultCode = testable_widgets_generator.setClassNameIfNotChanged(
+  //     resultCode, resultCode.length - 1);
 
   print(resultCode);
 

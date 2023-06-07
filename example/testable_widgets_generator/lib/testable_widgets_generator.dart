@@ -37,6 +37,7 @@ String wrapWidgetsChild(String source) {
 
     source = source.replaceRange(
         twoDotsIndex + 1, twoDotsIndex + 1, 'MenuWrap(child:');
+    source = setClassNameIfNotChanged(source, twoDotsIndex);
   }
 
   return source;
@@ -58,7 +59,6 @@ String wrapWidgetsChildren(String source) {
       continue;
     }
 
-
     openingSquareBracketIndex = source.indexOf('[', childKeywordIndex);
     bracketBalance = 1;
 
@@ -78,9 +78,24 @@ String wrapWidgetsChildren(String source) {
         closingSquareBracketIndex + 1,
         closingSquareBracketIndex + 1,
         '.map((e) => MenuWrap(child: e)).toList()');
+    source = setClassNameIfNotChanged(source, openingSquareBracketIndex);
   }
 
   source = source.replaceRange(0, 0,
       "import 'package:example/presentation/ui/widget_view/widget_menu_wrap.dart';\n");
+  return source;
+}
+
+String setClassNameIfNotChanged(String source, int classNameIsBeforeThisIndex) {
+  final classKeywordIndex =
+      source.substring(0, classNameIsBeforeThisIndex).lastIndexOf('class ');
+  final firstWhitespaceAfterClassNameIndex =
+      source.indexOf(' ', classKeywordIndex + 6);
+  final className = source.substring(
+      classKeywordIndex + 6, firstWhitespaceAfterClassNameIndex);
+  if (!className.endsWith('WrapForTesting')) {
+    source = source.replaceAll(className, '${className}WrapForTesting');
+  }
+  print('|$className|');
   return source;
 }
