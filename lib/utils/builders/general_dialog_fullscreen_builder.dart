@@ -30,9 +30,7 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
           shape: shape,
           child: Column(
             children: [
-              const SlidingChip().paddingOnly(
-                  top: SpacingFoundation.verticalSpacing12,
-                  bottom: SpacingFoundation.verticalSpacing4),
+              const SlidingChip().paddingOnly(top: SpacingFoundation.verticalSpacing12, bottom: SpacingFoundation.verticalSpacing4),
               Expanded(
                   child: Stack(fit: StackFit.expand, children: [
                 Container(
@@ -43,11 +41,7 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
                     child: SingleChildScrollView(
                       primary: true,
                       physics: const ClampingScrollPhysics(),
-                      child: Column(children: [
-                        data.child,
-                        if (data.bottomBar != null)
-                          Opacity(opacity: 0, child: data.bottomBar)
-                      ]),
+                      child: Column(children: [data.child, if (data.bottomBar != null) Opacity(opacity: 0, child: data.bottomBar)]),
                     )),
                 if (data.bottomBar != null)
                   Positioned(
@@ -55,9 +49,7 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
                       right: 0,
                       left: 0,
                       child: Container(
-                          decoration: const BoxDecoration(
-                              gradient: GradientFoundation
-                                  .solidSurfaceLinearGradient),
+                          decoration: const BoxDecoration(gradient: GradientFoundation.solidSurfaceLinearGradient),
                           child: data.bottomBar))
               ])),
             ],
@@ -69,16 +61,15 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
     barrierDismissible: true,
     barrierLabel: '',
     useRootNavigator: data.useRootNavigator,
-    barrierColor: ColorsFoundation.darkNeutral900.withOpacity(0.5),
+    barrierColor: Colors.white.withOpacity(0.07),
     context: context,
     transitionDuration: const Duration(milliseconds: 350),
     transitionBuilder: (context, animation1, animation2, child) {
-
       return BackdropFilter(
           filter: ImageFilter.blur(
-              sigmaX: animation1.value * 2,
-              sigmaY: animation1.value * 2,
-              // tileMode: TileMode.decal
+            sigmaX: animation1.value * 50,
+            sigmaY: animation1.value * 50,
+            // tileMode: TileMode.decal
           ),
           child: Animations.slideAnimation(animation1, animation2, child));
     },
@@ -105,10 +96,5 @@ class GeneralDialogData {
 
   final Function onDismissed;
 
-  GeneralDialogData(
-      {this.useRootNavigator = true,
-      required this.child,
-      this.bottomBar,
-      this.topPadding,
-      this.onDismissed = _empty});
+  GeneralDialogData({this.useRootNavigator = true, required this.child, this.bottomBar, this.topPadding, this.onDismissed = _empty});
 }
