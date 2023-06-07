@@ -12,7 +12,7 @@ dart run
 ```
 That will generate code similar to the example for every file
 
-## Adding new files to process
+## Adding new files to the process
 Copy shuffle_uikit's file's relative path (for example, `lib/ui_kit/atoms/buttons/black_dialog_button.dart`) and paste it into `source_files.txt`
 
 
