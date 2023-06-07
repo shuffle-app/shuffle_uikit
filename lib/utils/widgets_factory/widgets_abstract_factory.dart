@@ -262,6 +262,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     String? avatarUrl,
     UserTileType? type,
     VoidCallback? onTap,
+    
   }) {
     switch (type) {
       case UserTileType.pro:
@@ -270,6 +271,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           avatarUrl: avatarUrl,
           username: username,
           onTap: onTap,
+
         );
       case UserTileType.ordinary:
         return OrdinaryUserTile(

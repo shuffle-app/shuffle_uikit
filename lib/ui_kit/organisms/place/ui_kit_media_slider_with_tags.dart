@@ -52,7 +52,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
         Text(
           description,
           style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
-        ).paddingSymmetric(horizontal: horizontalMargin),
+        ).paddingOnly(left: horizontalMargin*2,right: horizontalMargin),
       ],
     );
   }
