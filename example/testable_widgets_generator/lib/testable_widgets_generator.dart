@@ -1,3 +1,5 @@
+import 'dart:io';
+
 String wrapWidgetsChild(String source) {
   var childKeywordIndex = 0;
   var twoDotsIndex = 0;
@@ -98,4 +100,21 @@ String setClassNameIfNotChanged(String source, int classNameIsBeforeThisIndex) {
   }
   print('|$className|');
   return source;
+}
+
+Future<void> generateForFile(String path) async {
+  final sourceFile = File(
+      '../../$path'); // path = lib/ui_kit/atoms/buttons/gradient_button_with_text_and_icon.dart
+  final sourceCode = await sourceFile.readAsString();
+
+  var resultCode = wrapWidgetsChild(sourceCode);
+  resultCode = wrapWidgetsChildren(resultCode);
+
+  print(resultCode);
+
+  final generatedFile = File(
+      '../../example/lib/generated/${path.split("lib/").last}')
+    ..createSync(recursive: true);
+  print(generatedFile.absolute);
+  generatedFile.writeAsStringSync(resultCode);
 }
