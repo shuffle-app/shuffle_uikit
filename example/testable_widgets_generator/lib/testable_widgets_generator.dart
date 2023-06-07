@@ -4,10 +4,15 @@ String wrapWidgetsChild(String source) {
   var openingRoundBracketIndex = 0;
   var closingRoundBracketIndex = 0;
   var bracketBalance = 0;
-  while (true) {
+  while (childKeywordIndex < source.length) {
     childKeywordIndex = source.indexOf('child:', childKeywordIndex + 20);
     if (childKeywordIndex == -1) {
       break;
+    }
+    final lastMenuWrapIndex = source.lastIndexOf('MenuWrap');
+    if (childKeywordIndex < lastMenuWrapIndex) {
+      childKeywordIndex += 10;
+      continue;
     }
 
     twoDotsIndex = source.indexOf(':', childKeywordIndex);
@@ -27,15 +32,6 @@ String wrapWidgetsChild(String source) {
 
     closingRoundBracketIndex = i;
 
-    print(childKeywordIndex);
-    print(source[childKeywordIndex]);
-    print(twoDotsIndex);
-    print(source[twoDotsIndex]);
-    print(openingRoundBracketIndex);
-    print(source[openingRoundBracketIndex]);
-    print(closingRoundBracketIndex);
-    print(source[closingRoundBracketIndex]);
-
     source = source.replaceRange(
         closingRoundBracketIndex + 1, closingRoundBracketIndex + 1, ')');
 
@@ -48,17 +44,20 @@ String wrapWidgetsChild(String source) {
 
 String wrapWidgetsChildren(String source) {
   var childKeywordIndex = 0;
-  var twoDotsIndex = 0;
   var openingSquareBracketIndex = 0;
   var closingSquareBracketIndex = 0;
   var bracketBalance = 0;
-  while (true) {
-    childKeywordIndex = source.indexOf('children:', childKeywordIndex + 20);
+  while (childKeywordIndex < source.length) {
+    childKeywordIndex = source.indexOf('children:', childKeywordIndex + 10);
     if (childKeywordIndex == -1) {
       break;
     }
+    final lastMenuWrapIndex = source.lastIndexOf('MenuWrap');
+    if (childKeywordIndex < lastMenuWrapIndex) {
+      childKeywordIndex += 10;
+      continue;
+    }
 
-    twoDotsIndex = source.indexOf(':', childKeywordIndex);
 
     openingSquareBracketIndex = source.indexOf('[', childKeywordIndex);
     bracketBalance = 1;
@@ -74,15 +73,6 @@ String wrapWidgetsChildren(String source) {
     }
 
     closingSquareBracketIndex = i;
-
-    print(childKeywordIndex);
-    print(source[childKeywordIndex]);
-    print(twoDotsIndex);
-    print(source[twoDotsIndex]);
-    print(openingSquareBracketIndex);
-    print(source[openingSquareBracketIndex]);
-    print(closingSquareBracketIndex);
-    print(source[closingSquareBracketIndex]);
 
     source = source.replaceRange(
         closingSquareBracketIndex + 1,
