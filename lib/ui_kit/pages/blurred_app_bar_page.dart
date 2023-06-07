@@ -25,8 +25,6 @@ class BlurredAppBarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final showLeading = autoImplyLeading ?? false;
-
     return CustomScrollView(
       physics: const ClampingScrollPhysics(),
       slivers: [
@@ -38,7 +36,7 @@ class BlurredAppBarPage extends StatelessWidget {
             final hideAppBarBody = sliverConstraints.scrollOffset > expandedHeight;
 
             return SliverAppBar(
-              automaticallyImplyLeading: showLeading,
+              automaticallyImplyLeading: false,
               backgroundColor: Colors.transparent,
               pinned: true,
               shape: RoundedRectangleBorder(
