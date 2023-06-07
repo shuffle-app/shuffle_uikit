@@ -17,12 +17,12 @@ void main() {
       )..addScenario(
           'Tell us more',
           const UiKitGradientQuestionChip(
-            message: 'Tell us more Tell us more Tell us more',
+            message: 'Tell us more Tell us more Tell us more Tell us moreTell us more Tell us more   Tell us more',
           ),
         );
 
       await tester.pumpWidgetBuilder(ScreenUtilInit(
-          designSize: const Size(414, 568),
+          designSize: const Size(800, 568),
           child: builder.build(),
           builder: (BuildContext context, Widget? child) =>
               StatefulBuilder(builder: (context, setState) {
@@ -31,7 +31,7 @@ void main() {
                     child: Material(child: Theme(data: theme, child: child!)));
               })));
 
-      await screenMatchesGolden(tester, 'UiKitGradientQuestionChip_more_content',
+      await screenMatchesGolden(tester, 'UiKitGradientQuestionChip_200_no_content',
           autoHeight: true);
     });
   });
