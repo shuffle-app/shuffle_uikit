@@ -94,8 +94,8 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/muslim_flag.png
   AssetGenImage get muslimFlag => const AssetGenImage('assets/images/png/muslim_flag.png');
 
-  /// File path: assets/images/png/place.jpg
-  AssetGenImage get place => const AssetGenImage('assets/images/png/place.jpg');
+  /// File path: assets/images/png/place.png
+  AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
 
   /// File path: assets/images/png/profile_avatar.png
   AssetGenImage get profileAvatar => const AssetGenImage('assets/images/png/profile_avatar.png');

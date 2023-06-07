@@ -6,10 +6,10 @@ class UiKitTagSelector extends StatelessWidget {
   final ValueChanged<List<String>>? onTagsSelected;
 
   late final TextEditingController controller = TextEditingController()..addListener(_onTypedTagName);
-  ValueNotifier<List<String>> searchListNotifier = ValueNotifier(List.empty(growable: true));
-  ValueNotifier<List<String>> selectedListNotifier = ValueNotifier(List.empty(growable: true));
+  late final ValueNotifier<List<String>> searchListNotifier = ValueNotifier(List.empty(growable: true));
+  late final ValueNotifier<List<String>> selectedListNotifier = ValueNotifier(List.empty(growable: true));
 
-  List<String> searchedList = List.empty(growable: true);
+  late final List<String> searchedList = List.empty(growable: true);
 
   void _onTypedTagName() {
     final text = controller.text;
