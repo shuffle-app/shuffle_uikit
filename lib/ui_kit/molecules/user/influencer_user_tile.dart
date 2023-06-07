@@ -8,6 +8,7 @@ class InfluencerUserTile extends BaseUserTile {
     super.avatarUrl,
     super.username,
     super.onTap,
+
   }) : super(
           avatarBorder: const Border(
             top: BorderSide(color: Colors.white, width: 2),
