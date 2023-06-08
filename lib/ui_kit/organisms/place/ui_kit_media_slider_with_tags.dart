@@ -17,7 +17,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
     required this.baseTags,
     required this.uniqueTags,
     required this.description,
-    this.horizontalMargin=0,
+    this.horizontalMargin = 0,
   }) : super(key: key);
 
   @override
@@ -33,8 +33,8 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: media.length + 1,
             itemBuilder: (context, index) {
-              if(index==0) return horizontalMargin.widthBox;
-              final mediaItem = media.elementAt(index-1);
+              if (index == 0) return horizontalMargin.widthBox;
+              final mediaItem = media.elementAt(index - 1);
               if (mediaItem.type == UiKitMediaType.video) return BaseUiKitMediaWidget.video(media: mediaItem);
 
               return BaseUiKitMediaWidget.image(media: mediaItem);
@@ -52,7 +52,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
         Text(
           description,
           style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
-        ).paddingOnly(left: horizontalMargin*2,right: horizontalMargin),
+        ).paddingOnly(left: horizontalMargin * 2, right: horizontalMargin),
       ],
     );
   }
