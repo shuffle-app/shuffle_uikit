@@ -154,6 +154,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                             child: Text(
                               parseFragment(e).text ?? e,
                               style: context.uiKitTheme?.boldTextTheme.title1,
+                              textAlign: TextAlign.center,
                             ),
                           ),
                         ),
