@@ -34,7 +34,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
             child: ImageWidget(
               link: imageLink,
               fit: BoxFit.cover,
-              errorWidget: const UiKitSwiperCardErrorWidget(),
+              errorWidget: const UiKitBigPhotoErrorWidget(),
             ),
           ),
           Column(

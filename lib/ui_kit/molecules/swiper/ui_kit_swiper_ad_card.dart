@@ -26,7 +26,7 @@ class UiKitSwiperAdCard extends BaseUiKitSwiperCard {
           ImageWidget(
             link: imageLink,
             fit: BoxFit.fitWidth,
-            errorWidget: const UiKitSwiperCardErrorWidget(),
+            errorWidget: const UiKitBigPhotoErrorWidget(),
           ),
         ],
       ),
