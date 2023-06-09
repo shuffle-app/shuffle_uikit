@@ -18,12 +18,14 @@ extension FactoryExtention on BuildContext {
     required BaseUiKitButtonData data,
     bool? isTextButton,
     bool? blurred,
+    bool uppercase
   }) {
     return WidgetsFactory.of(this)!
         .createSmallButton(
           data:data,
           isTextButton: isTextButton ?? false,
           blurred: blurred,
+      uppercase: uppercase
         )
         .build(this);
   }
