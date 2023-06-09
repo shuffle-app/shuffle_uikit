@@ -17,17 +17,13 @@ class GradientBottomNavigationBarPage extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<GradientBottomNavigationBarPage> createState() =>
-      _GradientBottomNavigationBarPageState();
+  State<GradientBottomNavigationBarPage> createState() => _GradientBottomNavigationBarPageState();
 }
 
-class _GradientBottomNavigationBarPageState
-    extends State<GradientBottomNavigationBarPage> {
+class _GradientBottomNavigationBarPageState extends State<GradientBottomNavigationBarPage> {
   late final bottomNavBarController = GradientBottomNavigationBarController(
     tabItemsCount: widget.tabs.values.length,
   );
-
-
 
   @override
   Widget build(BuildContext context) {
