@@ -55,8 +55,13 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
     final dateTextStyle = textTheme?.caption1Bold.copyWith(
       color: ColorsFoundation.darkNeutral900,
     );
-    final bigPhoto = (widget.availableHeight - 48) > 192;
-    final errorWidget = bigPhoto ? const UiKitBigPhotoErrorWidget() : const UiKitCompactPhotoErrorWidget();
+
+    final bigPhoto = widget.availableHeight > 360;
+    final errorWidget = bigPhoto
+        ? const UiKitBigPhotoErrorWidget()
+        : UiKitCompactPhotoErrorWidget(
+            topSpacing: widget.availableHeight / 8,
+          );
 
     return AnimatedOpacity(
       duration: const Duration(milliseconds: 150),
@@ -77,7 +82,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                   ClipRRect(
                     borderRadius: BorderRadiusFoundation.all24,
                     child: ImageWidget(
-                      link: widget.photoLink,
+                      link: 'widget.photoLink',
                       fit: BoxFit.cover,
                       errorWidget: errorWidget,
                     ),

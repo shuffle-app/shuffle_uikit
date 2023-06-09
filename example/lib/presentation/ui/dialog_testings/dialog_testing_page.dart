@@ -14,13 +14,20 @@ class DialogTestingPage extends StatelessWidget {
               OrdinaryButton(
                 text: 'Dialog bottom sheet fullscreen',
                 onPressed: () => showUiKitGeneralFullScreenDialog(
-                  context,GeneralDialogData(
-                  topPadding: 100,
-                  useRootNavigator: false,
-                  child: Column(
-                    children: List.generate(10, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
-                  ),
-                )),
+                    context,
+                    GeneralDialogData(
+                        topPadding: 100,
+                        useRootNavigator: false,
+                        child: Column(
+                          children: List.generate(10, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
+                        ),
+                        bottomBar: Center(
+                          child: Container(
+                            width: 100,
+                            height: 56,
+                            color: Colors.red,
+                          ),
+                        ))),
               ),
               SpacingFoundation.verticalSpace16,
               OrdinaryButton(
@@ -44,10 +51,11 @@ class DialogTestingPage extends StatelessWidget {
               OrdinaryButton(
                 text: 'Dialog alert',
                 onPressed: () => showUiKitAlertDialog(
-                  context, AlertDialogData(
-                  defaultButtonText: 'text',
-                  title: const Text('You sent an invitation to 2 people.'),
-                  content: const Text('Invitations can be viewed in private messages')),
+                  context,
+                  AlertDialogData(
+                      defaultButtonText: 'text',
+                      title: const Text('You sent an invitation to 2 people.'),
+                      content: const Text('Invitations can be viewed in private messages')),
                 ),
               ),
               SpacingFoundation.verticalSpace16,

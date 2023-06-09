@@ -42,6 +42,7 @@ export 'profile/profile_interests.dart';
 export 'swiper/base_ui_kit_swiper_card.dart';
 export 'swiper/ui_kit_swiper_ad_card.dart';
 export 'swiper/ui_kit_swiper_card.dart';
+export 'swiper/ui_kit_swiper_card_info.dart';
 export 'user/base_user_tile.dart';
 export 'user/influencer_user_tile.dart';
 export 'user/ordinary_user_tile.dart';

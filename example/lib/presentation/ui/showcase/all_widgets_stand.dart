@@ -123,6 +123,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              UiKitSpinnerCard(
+                availableHeight: 300,
+                photoLink: '',
+              ),
               Center(
                 child: context.badgeButtonNoValue(
                   icon: ImageWidget(
