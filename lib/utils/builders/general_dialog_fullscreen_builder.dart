@@ -36,28 +36,28 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
                   fit: StackFit.expand,
                   children: [
                     Container(
-                        decoration: ShapeDecoration(
-                          shape: shape ?? const RoundedRectangleBorder(),
-                        ),
-                        clipBehavior: Clip.hardEdge,
-                        child: SingleChildScrollView(
-                          primary: true,
-                          physics: const ClampingScrollPhysics(),
-                          child:
-                              Column(children: [data.child, if (data.bottomBar != null) Opacity(opacity: 0, child: data.bottomBar)]),
-                        )),
+                      decoration: ShapeDecoration(
+                        shape: shape ?? const RoundedRectangleBorder(),
+                      ),
+                      clipBehavior: Clip.hardEdge,
+                      child: SingleChildScrollView(
+                        primary: true,
+                        physics: const ClampingScrollPhysics(),
+                        child: Column(children: [data.child, if (data.bottomBar != null) Opacity(opacity: 0, child: data.bottomBar)]),
+                      ),
+                    ),
                     if (data.bottomBar != null)
                       Positioned(
                         bottom: 0,
                         right: 0,
                         left: 0,
                         child: Container(
-                          decoration: const BoxDecoration(gradient: GradientFoundation.solidSurfaceLinearGradient),
-                          child: data.bottomBar?.paddingOnly(
-                            bottom: EdgeInsetsFoundation.vertical24,
-                            left: EdgeInsetsFoundation.horizontal16,
-                            right: EdgeInsetsFoundation.horizontal16,
-                            top: EdgeInsetsFoundation.zero,
+                          decoration: const BoxDecoration(
+                            gradient: GradientFoundation.solidSurfaceLinearGradient,
+                          ),
+                          child: data.bottomBar?.paddingSymmetric(
+                            vertical: EdgeInsetsFoundation.vertical24,
+                            horizontal: EdgeInsetsFoundation.horizontal16,
                           ),
                         ),
                       )

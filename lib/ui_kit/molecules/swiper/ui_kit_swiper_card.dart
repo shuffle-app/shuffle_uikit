@@ -63,7 +63,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
             ],
           ).paddingAll(EdgeInsetsFoundation.all16),
         ],
-      ),
+      ).paddingAll(EdgeInsetsFoundation.all16),
     );
   }
 }
