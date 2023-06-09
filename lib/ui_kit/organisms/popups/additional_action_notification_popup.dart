@@ -56,7 +56,7 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
               ),
             ],
           ),
-          SpacingFoundation.verticalSpace8,
+          // SpacingFoundation.verticalSpace8,
           dismissActionWidget ?? const SizedBox(),
         ],
       ),

@@ -43,11 +43,13 @@ extension FactoryExtention on BuildContext {
   Widget smallOutlinedButton({
     BaseUiKitButtonData? data,
     Color? color,
+    bool? blurred,
   }) {
     return WidgetsFactory.of(this)!
         .createSmallOutlinedButton(
           data: data,
           color: color,
+        blurred:blurred
         )
         .build(this);
   }

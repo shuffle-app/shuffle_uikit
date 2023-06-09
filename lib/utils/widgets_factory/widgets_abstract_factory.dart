@@ -94,11 +94,18 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   ButtonFactory createSmallOutlinedButton({
     BaseUiKitButtonData? data,
     Color? color,
+    bool? blurred
   }) {
     if ((data?.text != null && data!.text.isNotEmpty) || data?.icon != null) {
-      return SmallOutlinedButton(onPressed: data?.onPressed, text: data?.text ?? '', borderColor: color, textColor: color, icon: data!.icon! as ImageWidget);
+      return SmallOutlinedButton(onPressed: data?.onPressed,
+          blurred: blurred ?? false,
+          text: data?.text ?? '',
+          borderColor: color,
+          textColor: color,
+          icon: data!.icon as ImageWidget?);
     } else {
-      throw UnimplementedError('Outlined button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Outlined button with your parameters is not implemented');
     }
   }
 
@@ -107,7 +114,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     BaseUiKitButtonData? data,
     Alignment? badgeAlignment,
   }) {
-
     return BadgeIconButtonNoValue(
       onPressed: data?.onPressed,
       icon: data?.icon,
@@ -127,7 +133,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: data.onPressed,
       );
     } else {
-      throw UnimplementedError('Outlined button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Outlined button with your parameters is not implemented');
     }
   }
 
@@ -155,7 +162,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: data.onPressed,
       );
     } else {
-      throw UnimplementedError('Gradient button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Gradient button with your parameters is not implemented');
     }
   }
 
@@ -166,7 +174,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? blurred,
   }) {
     final hasIcon = data.icon != null;
-    final onlyIconButton = hasIcon && data.text.isEmpty && !isTextButton && !(blurred ?? false);
+    final onlyIconButton = hasIcon && data.text.isEmpty && !isTextButton &&
+        !(blurred ?? false);
     if (isTextButton) {
       return OrdinaryTextButton(
         text: data.text,
@@ -225,9 +234,9 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     }
 
     return SmallOrdinaryButton(
-      text: data.text,
-      onPressed: data.onPressed,
-        uppercase:uppercase
+        text: data.text,
+        onPressed: data.onPressed,
+        uppercase: uppercase
     );
   }
 
@@ -238,7 +247,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     String? avatarUrl,
     UserTileType? type,
     VoidCallback? onTap,
-    
+
   }) {
     switch (type) {
       case UserTileType.pro:
@@ -318,7 +327,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? dismissActionWidget,
     bool? hasShadow,
   }) {
-    final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
+    final hasAllActions = primaryActionWidget != null &&
+        secondaryActionWidget != null && dismissActionWidget != null;
     if (hasAllActions) {
       return AdditionalActionNotificationPopUp(
         requiredData: requiredData,
@@ -343,7 +353,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     int? badgeValue,
     Alignment? alignment,
   }) {
-
     return BadgeIconButton(
       icon: data?.icon,
       onPressed: data?.onPressed,
