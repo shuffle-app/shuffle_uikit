@@ -1,59 +1,60 @@
 import 'package:flutter/painting.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 abstract class UiKitTextTheme {}
 
 class UiKitRegularTextTheme extends UiKitTextTheme {
-  final TextStyle labelSmall = const TextStyle(
+  final TextStyle labelSmall = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 12,
+    fontSize: 12.w,
     fontWeight: FontWeight.w300,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
-  final TextStyle caption1 = const TextStyle(
+  final TextStyle caption1 = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 13,
+    fontSize: 13.w,
     fontWeight: FontWeight.w300,
-    color: Color(0xffffffff),
-    package: 'shuffle_uikit',
-  );
-
-  final TextStyle caption2 = const TextStyle(
-    fontFamily: 'Unbounded',
-    fontSize: 12,
-    fontWeight: FontWeight.w300,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
 
-  final TextStyle body = const TextStyle(
+  final TextStyle caption2 = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 16,
+    fontSize: 12.w,
     fontWeight: FontWeight.w300,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
 
-  final TextStyle title1 = const TextStyle(
+  final TextStyle body = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 24,
+    fontSize: 16.w,
     fontWeight: FontWeight.w300,
-    color: Color(0xffffffff),
-    package: 'shuffle_uikit',
-  );
-  final TextStyle title2 = const TextStyle(
-    fontFamily: 'Unbounded',
-    fontSize: 20,
-    fontWeight: FontWeight.w300,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
 
-  final TextStyle titleLarge = const TextStyle(
+  final TextStyle title1 = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 34,
+    fontSize: 24.w,
     fontWeight: FontWeight.w300,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
+    package: 'shuffle_uikit',
+  );
+  final TextStyle title2 = TextStyle(
+    fontFamily: 'Unbounded',
+    fontSize: 20.w,
+    fontWeight: FontWeight.w300,
+    color: const Color(0xffffffff),
+    package: 'shuffle_uikit',
+  );
+
+  final TextStyle titleLarge = TextStyle(
+    fontFamily: 'Unbounded',
+    fontSize: 34.w,
+    fontWeight: FontWeight.w300,
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
 
@@ -65,79 +66,79 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
 }
 
 class UiKitBoldTextTheme extends UiKitTextTheme {
-  final TextStyle labelLarge = const TextStyle(
+  final TextStyle labelLarge = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 16,
+    fontSize: 16.w,
     fontWeight: FontWeight.w400,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
 
-  final TextStyle caption1Medium = const TextStyle(
+  final TextStyle caption1Medium = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 13,
+    fontSize: 13.w,
     fontWeight: FontWeight.w400,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
 
-  final TextStyle caption1Bold = const TextStyle(
+  final TextStyle caption1Bold = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 13,
+    fontSize: 13.w,
     fontWeight: FontWeight.w500,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
-  final TextStyle caption2Bold = const TextStyle(
+  final TextStyle caption2Bold = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 12,
+    fontSize: 12.w,
     fontWeight: FontWeight.w500,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
-  final TextStyle caption2Medium = const TextStyle(
+  final TextStyle caption2Medium = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 12,
+    fontSize: 12.w,
     fontWeight: FontWeight.w400,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
 
-  final TextStyle subHeadline = const TextStyle(
+  final TextStyle subHeadline = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 16,
+    fontSize: 16.w,
     fontWeight: FontWeight.w600,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
-  final TextStyle body = const TextStyle(
+  final TextStyle body = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 16,
+    fontSize: 16.w,
     fontWeight: FontWeight.w400,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
 
-  final TextStyle title1 = const TextStyle(
+  final TextStyle title1 = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 24,
+    fontSize: 24.w,
     fontWeight: FontWeight.w600,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
 
-  final TextStyle title2 = const TextStyle(
+  final TextStyle title2 = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 20,
+    fontSize: 20.w,
     fontWeight: FontWeight.w500,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
-  final TextStyle titleLarge = const TextStyle(
+  final TextStyle titleLarge = TextStyle(
     fontFamily: 'Unbounded',
-    fontSize: 34,
+    fontSize: 34.w,
     fontWeight: FontWeight.w600,
-    color: Color(0xffffffff),
+    color: const Color(0xffffffff),
     package: 'shuffle_uikit',
   );
 

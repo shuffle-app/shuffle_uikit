@@ -146,6 +146,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                 },
                 child: UiKitHorizontalScrollableList(
                   scrollController: widget.scrollController,
+                  physics: const PageScrollPhysics(),
                   children: widget.categories
                       .map<Widget>(
                         (e) => SizedBox(

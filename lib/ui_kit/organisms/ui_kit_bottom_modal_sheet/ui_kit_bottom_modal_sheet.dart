@@ -24,26 +24,13 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet>
   void initState() {
     controller = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 200));
-    // controller.addListener(() { setState(() {
-    //   opacity=controller.value;
-    // });});
-    // controller.animateTo(1);
     controller.forward();
     super.initState();
   }
 
   _onUpdate(DismissUpdateDetails details) {
-    print('_onUpdate here');
     if(details.reached) {
-      // setState(() {
-      // if(controller.value>details.progress) {
-      //   controller.animateBack(details.progress);
-      // } else {
-      //   controller.animateTo(details.progress);
-      // }
       controller.reverse();
-      // opacity = ((details.progress/0.4)-1).abs();
-    // });
     }
   }
 

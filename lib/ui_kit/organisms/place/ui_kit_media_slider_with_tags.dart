@@ -22,13 +22,12 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = context.uiKitTheme;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: 0.58.sw,
+          height: 0.48.sw,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: media.length + 1,
@@ -37,14 +36,17 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
               final mediaItem = media.elementAt(index - 1);
               if (mediaItem.type == UiKitMediaType.video) {
                 return BaseUiKitMediaWidget.video(
-                  media: mediaItem, width: media.length == 1 ? 1.sw : null,);
+                  media: mediaItem,
+                  width: media.length == 1 ? 1.sw : null,
+                );
               }
 
               return BaseUiKitMediaWidget.image(
                   media: mediaItem, width: media.length == 1 ? 1.sw : null);
             },
-            separatorBuilder: (context, index) =>
-            index == 0 ? const SizedBox.shrink() : SpacingFoundation.horizontalSpace16,
+            separatorBuilder: (context, index) => index == 0
+                ? const SizedBox.shrink()
+                : SpacingFoundation.horizontalSpace16,
           ),
         ),
         SpacingFoundation.verticalSpace12,
@@ -54,11 +56,8 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           uniqueTags: uniqueTags,
         ).paddingSymmetric(horizontal: horizontalMargin),
         SpacingFoundation.verticalSpace12,
-        Text(
-          description,
-          style: theme?.boldTextTheme.caption1Bold.copyWith(
-              color: Colors.white),
-        ).paddingOnly(left: horizontalMargin, right: horizontalMargin),
+        DescriptionWidget(description: description)
+            .paddingOnly(left: horizontalMargin, right: horizontalMargin),
       ],
     );
   }
