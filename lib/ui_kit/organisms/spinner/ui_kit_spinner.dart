@@ -26,8 +26,8 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
   final ValueNotifier<double> _rotationNotifier = ValueNotifier<double>(0);
   final ValueNotifier<double> _lastScrollPositionOffsetNotifier = ValueNotifier<double>(0);
   final ValueNotifier<double> _scrollStartNotifier = ValueNotifier<double>(0);
-  bool manuallyScrolling = false;
   final _player = AudioPlayer();
+  SpinningType _spinningType = SpinningType.wheel;
 
   @override
   void initState() {
@@ -41,6 +41,10 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     });
   }
 
+  void setSpinningType(SpinningType type) {
+    setState(() => _spinningType = type);
+  }
+
   void _enableFeedback() {
     _player.play().then((value) => _player.seek(Duration.zero));
     HapticFeedback.lightImpact();
@@ -50,9 +54,11 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     if (widget.scrollController.offset.toInt() % 20 == 0) {
       _enableFeedback();
     }
-    final scrollDelta = widget.scrollController.offset - _lastScrollPositionOffsetNotifier.value;
 
-    _rotationNotifier.value -= scrollDelta / 250;
+    if (_spinningType == SpinningType.categories) {
+      final scrollDelta = widget.scrollController.offset - _lastScrollPositionOffsetNotifier.value;
+      _rotationNotifier.value -= scrollDelta / 200;
+    }
     _lastScrollPositionOffsetNotifier.value = widget.scrollController.offset;
   }
 
@@ -60,7 +66,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     required double pixelsToScroll,
     bool animate = false,
   }) {
-    if (manuallyScrolling) _setManuallyScrolling(value: false);
     final maxScrollOffset = widget.scrollController.position.maxScrollExtent;
     final computedOffset = widget.scrollController.offset - pixelsToScroll;
     double scrollOffset = 0;
@@ -107,11 +112,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     _enableFeedback();
   }
 
-  _setManuallyScrolling({bool value = true}) {
-    _lastScrollPositionOffsetNotifier.value = widget.scrollController.offset;
-    setState(() => manuallyScrolling = value);
-  }
-
   @override
   void dispose() {
     widget.scrollController.removeListener(_scrollListener);
@@ -132,22 +132,34 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            UiKitHorizontalScrollableList(
-              physics: const PageScrollPhysics(),
-              scrollController: widget.scrollController,
-              children: widget.categories
-                  .map<Widget>(
-                    (e) => SizedBox(
-                      width: 1.sw,
-                      child: Center(
-                        child: Text(
-                          e,
-                          style: context.uiKitTheme?.boldTextTheme.title1,
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTapDown: (details) {
+                if (_spinningType != SpinningType.categories) setState(() => _spinningType = SpinningType.categories);
+              },
+              child: NotificationListener<ScrollEndNotification>(
+                onNotification: (notification) {
+                  if (_spinningType != SpinningType.wheel) _shouldSwitchCategory(true);
+
+                  return true;
+                },
+                child: UiKitHorizontalScrollableList(
+                  scrollController: widget.scrollController,
+                  children: widget.categories
+                      .map<Widget>(
+                        (e) => SizedBox(
+                          width: 1.sw,
+                          child: Center(
+                            child: Text(
+                              e,
+                              style: context.uiKitTheme?.boldTextTheme.title1,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                  )
-                  .toList(),
+                      )
+                      .toList(),
+                ),
+              ),
             ),
             SizesFoundation.screenWidth <= 275 ? SpacingFoundation.verticalSpace16 : SpacingFoundation.verticalSpace24,
             SizedBox(
@@ -160,14 +172,14 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     left: (availableWidth / 2) - 345,
                     child: GestureDetector(
                       onPanUpdate: (details) {
-                        _setManuallyScrolling();
+                        if (_spinningType != SpinningType.wheel) setSpinningType(SpinningType.wheel);
                         final delta = details.delta.dx;
                         final inScrollBeginning = widget.scrollController.offset == 0 && !delta.isNegative;
                         final inScrollEnd =
                             widget.scrollController.offset == widget.scrollController.position.maxScrollExtent && delta.isNegative;
                         if (inScrollBeginning || inScrollEnd) return;
                         if (details.localPosition.dx.toInt() % 20 == 0) _enableFeedback();
-                        _rotationNotifier.value += delta / 250;
+                        _rotationNotifier.value += delta / 200;
                         _scrollByPixels(
                           pixelsToScroll: delta,
                         );
@@ -175,7 +187,9 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       onPanStart: (details) {
                         _scrollStartNotifier.value = widget.scrollController.offset;
                       },
-                      onPanEnd: (details) => _shouldSwitchCategory(),
+                      onPanEnd: (details) {
+                        _shouldSwitchCategory(false);
+                      },
                       child: AnimatedBuilder(
                         animation: _rotationNotifier,
                         builder: (context, child) {
@@ -201,4 +215,16 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
       },
     );
   }
+}
+
+enum SpinningType { categories, wheel }
+
+class UiKitSpinnerChangeData {
+  final String category;
+  final SpinningType spinType;
+
+  UiKitSpinnerChangeData({
+    required this.category,
+    required this.spinType,
+  });
 }

@@ -59,8 +59,8 @@ class SpinnerPage extends StatelessWidget {
               10,
               (index) => 'Category ${index + 1}',
             ),
-            onSpinChangedCategory: (category) {
-              print('Category changed to $category');
+            onSpinChangedCategory: (spinData) {
+              print('Category changed to ${spinData}');
             },
           ),
         ],
