@@ -47,12 +47,10 @@ class ImageWidget extends StatelessWidget {
         width: width,
       );
     } else if (link == null || link!.isEmpty) {
-      return Placeholder(
-        color: color ?? context.uiKitTheme?.cardColor ?? Colors.white,
-        child: SizedBox(
-          width: width,
-          height: height,
-        ),
+      return UiKitCardWrapper(
+        width: width,
+        height: height,
+        child: errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else if (link!.substring(0, 4) == 'http') {
       // !.startsWith("http://") || link!.startsWith("https://")) {

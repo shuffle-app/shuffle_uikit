@@ -35,6 +35,7 @@ class UiKitBlurredListTile extends StatelessWidget {
           children: [
             ImageWidget(
               link: photoLink,
+              height: 56,
             ),
             SpacingFoundation.horizontalSpace12,
             Expanded(

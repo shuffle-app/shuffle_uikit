@@ -10,15 +10,14 @@ class UiKitBigPhotoErrorWidget extends StatelessWidget {
 
     return UiKitCardWrapper(
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SpacingFoundation.verticalSpace16,
-          SpacingFoundation.verticalSpace24,
-          SpacingFoundation.verticalSpace12,
-          SpacingFoundation.verticalSpace16,
           Text(
             'Ooops!',
-            style: textTheme?.body,
+            style: textTheme?.body.copyWith(
+              color: ColorsFoundation.darkNeutral900,
+            ),
           ),
           SpacingFoundation.verticalSpace4,
           ImageWidget(
@@ -27,7 +26,10 @@ class UiKitBigPhotoErrorWidget extends StatelessWidget {
           SpacingFoundation.verticalSpace4,
           Text(
             'No photo here yet!',
-            style: textTheme?.body,
+            style: textTheme?.body.copyWith(
+              color: ColorsFoundation.darkNeutral900,
+            ),
+            textAlign: TextAlign.center,
           ),
         ],
       ),

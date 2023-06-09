@@ -32,26 +32,38 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
             children: [
               const SlidingChip().paddingOnly(top: SpacingFoundation.verticalSpacing12, bottom: SpacingFoundation.verticalSpacing4),
               Expanded(
-                  child: Stack(fit: StackFit.expand, children: [
-                Container(
-                    decoration: ShapeDecoration(
-                      shape: shape ?? const RoundedRectangleBorder(),
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Container(
+                      decoration: ShapeDecoration(
+                        shape: shape ?? const RoundedRectangleBorder(),
+                      ),
+                      clipBehavior: Clip.hardEdge,
+                      child: SingleChildScrollView(
+                        primary: true,
+                        physics: const ClampingScrollPhysics(),
+                        child: Column(children: [data.child, if (data.bottomBar != null) Opacity(opacity: 0, child: data.bottomBar)]),
+                      ),
                     ),
-                    clipBehavior: Clip.hardEdge,
-                    child: SingleChildScrollView(
-                      primary: true,
-                      physics: const ClampingScrollPhysics(),
-                      child: Column(children: [data.child, if (data.bottomBar != null) Opacity(opacity: 0, child: data.bottomBar)]),
-                    )),
-                if (data.bottomBar != null)
-                  Positioned(
-                      bottom: 0,
-                      right: 0,
-                      left: 0,
-                      child: Container(
-                          decoration: const BoxDecoration(gradient: GradientFoundation.solidSurfaceLinearGradient),
-                          child: data.bottomBar))
-              ])),
+                    if (data.bottomBar != null)
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        left: 0,
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            gradient: GradientFoundation.solidSurfaceLinearGradient,
+                          ),
+                          child: data.bottomBar?.paddingSymmetric(
+                            vertical: EdgeInsetsFoundation.vertical24,
+                            horizontal: EdgeInsetsFoundation.horizontal16,
+                          ),
+                        ),
+                      )
+                  ],
+                ),
+              ),
             ],
           ),
         ).paddingOnly(top: data.topPadding ?? 30.h),
