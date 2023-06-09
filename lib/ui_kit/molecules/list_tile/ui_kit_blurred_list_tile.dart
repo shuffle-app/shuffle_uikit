@@ -36,7 +36,7 @@ class UiKitBlurredListTile extends StatelessWidget {
             if (photoLink != null)
               CircularAvatar(
                 avatarUrl: photoLink!,
-                height: 40,
+                height: 56,
               ),
             SpacingFoundation.horizontalSpace12,
             Expanded(
