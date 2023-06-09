@@ -483,6 +483,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/music.svg
   SvgGenImage get music => const SvgGenImage('assets/images/svg/music.svg');
 
+  /// File path: assets/images/svg/no_photo.svg
+  SvgGenImage get noPhoto => const SvgGenImage('assets/images/svg/no_photo.svg');
+
   /// File path: assets/images/svg/pause.svg
   SvgGenImage get pause => const SvgGenImage('assets/images/svg/pause.svg');
 
@@ -752,6 +755,7 @@ class $AssetsImagesSvgGen {
         minus,
         moreVert,
         music,
+        noPhoto,
         pause,
         pencil,
         playFill,
