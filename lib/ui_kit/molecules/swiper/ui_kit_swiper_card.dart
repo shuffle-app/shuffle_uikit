@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -16,8 +14,11 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
-    final titleStyle = textTheme?.body;
-    final subtitleStyle = textTheme?.caption1Medium;
+    final infoCard = UiKitSwiperCardInfo(
+      title: title,
+      subtitle: subtitle,
+      tags: tags,
+    );
 
     return Container(
       width: 267.w,
@@ -58,40 +59,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                   ),
                 ),
               ),
-              Container(
-                clipBehavior: Clip.hardEdge,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadiusFoundation.all20,
-                  color: Colors.white.withOpacity(0.05),
-                ),
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Text(
-                        title,
-                        maxLines: 1,
-                        style: titleStyle,
-                      ),
-                      Text(
-                        subtitle,
-                        maxLines: 2,
-                        style: subtitleStyle,
-                      ),
-                      SpacingFoundation.verticalSpace4,
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Wrap(
-                          spacing: SpacingFoundation.horizontalSpacing8,
-                          children: tags,
-                        ),
-                      ),
-                    ],
-                  ).paddingAll(EdgeInsetsFoundation.all12),
-                ),
-              ),
+              infoCard,
             ],
           ).paddingAll(EdgeInsetsFoundation.all16),
         ],
