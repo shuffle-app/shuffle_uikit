@@ -7,6 +7,7 @@ export 'cards/ui_kit_icon_hint_card.dart';
 export 'cards/ui_kit_vertical_chip.dart';
 export 'chips/default_importance_chip.dart';
 export 'chips/high_importance_chip.dart';
+export 'error_widgets/ui_kit_swiper_card_error_widget.dart';
 export 'chips/medium_importance_chip.dart';
 export 'chips/ui_kit_blurred_question_chip.dart';
 export 'chips/ui_kit_bordered_chip_with_icon.dart';

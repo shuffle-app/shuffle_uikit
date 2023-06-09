@@ -34,6 +34,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
             child: ImageWidget(
               link: imageLink,
               fit: BoxFit.cover,
+              errorWidget: const UiKitSwiperCardErrorWidget(),
             ),
           ),
           Column(
@@ -82,7 +83,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                       SpacingFoundation.verticalSpace4,
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
-                        child:  Wrap(
+                        child: Wrap(
                           spacing: SpacingFoundation.horizontalSpacing8,
                           children: tags,
                         ),
