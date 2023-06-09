@@ -82,7 +82,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                   ClipRRect(
                     borderRadius: BorderRadiusFoundation.all24,
                     child: ImageWidget(
-                      link: 'widget.photoLink',
+                      link: widget.photoLink,
                       fit: BoxFit.cover,
                       errorWidget: errorWidget,
                     ),

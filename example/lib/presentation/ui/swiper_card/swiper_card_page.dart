@@ -27,7 +27,7 @@ class SwiperCardPage extends StatelessWidget {
                   (index) => UiKitSwiperCard(
                     title: 'Dance Again',
                     subtitle: 'Unique place for unique people',
-                    imageLink: 'Assets.images.png.mockSwiperCard.path',
+                    imageLink: Assets.images.png.mockSwiperCard.path,
                     tags: [
                       UiKitTagWidget(
                         title: 'Club',
