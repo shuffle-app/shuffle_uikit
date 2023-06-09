@@ -18,12 +18,11 @@ class TitleWithAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyle = context.uiKitTheme?.boldTextTheme.title2;
-    final horizontalSpacing = (horizontalMargin ?? 0).widthBox;
 
     return Row(
       mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        horizontalSpacing,
         if (avatarUrl != null)
           CircularAvatar(
             height: 40,
@@ -35,8 +34,7 @@ class TitleWithAvatar extends StatelessWidget {
             title ?? '',
             style: textStyle,
           ),
-        horizontalSpacing,
       ],
-    );
+    ).paddingSymmetric(horizontal: horizontalMargin ?? 0);
   }
 }

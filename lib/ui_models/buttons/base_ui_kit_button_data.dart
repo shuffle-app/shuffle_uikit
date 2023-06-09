@@ -5,5 +5,5 @@ class BaseUiKitButtonData {
   final String text;
   final Widget? icon;
 
-  BaseUiKitButtonData({this.onPressed, required this.text, this.icon});
+  BaseUiKitButtonData({this.onPressed, this.text = '', this.icon});
 }

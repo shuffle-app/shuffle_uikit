@@ -30,13 +30,14 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
         contentPadding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
         actions: [
           if (data.additionalButton != null) data.additionalButton!,
-          context.dialogButton(
-            text: data.defaultButtonText,
+          context.dialogButton( data: BaseUiKitButtonData(
+              onPressed: data.onPop ?? () => context.pop(),
+            text: data.defaultButtonText),
             small: true,
             dialogButtonType: data.additionalButton != null
                 ? DialogButtonType.buttonWhite
                 : DialogButtonType.buttonBlack,
-            onPressed: data.onPop ?? () => context.pop(),
+
           )
         ],
         actionsAlignment: MainAxisAlignment.center,

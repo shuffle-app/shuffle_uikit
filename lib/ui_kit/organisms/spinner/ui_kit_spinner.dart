@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:html/parser.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:shuffle_uikit/foundation/audio_foundation.dart';
@@ -132,7 +133,22 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            UiKitHorizontalScrollableList(
+        NotificationListener<ScrollNotification>(
+        onNotification: (scrollNotification) {
+          // if (scrollNotification is ScrollStartNotification) {
+          //   _onStartScroll(scrollNotification.metrics);
+          // } else
+          // if (scrollNotification is ScrollUpdateNotification) {
+          //   _onUpdateScroll(scrollNotification.metrics);
+          // } else
+          if (scrollNotification is ScrollEndNotification) {
+            _shouldSwitchCategory(true);
+            // _onEndScroll(scrollNotification.metrics);
+          }
+
+          return true;
+        },
+        child:UiKitHorizontalScrollableList(
               physics: const PageScrollPhysics(),
               scrollController: widget.scrollController,
               children: widget.categories
@@ -141,14 +157,16 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       width: 1.sw,
                       child: Center(
                         child: Text(
-                          e,
+                          parseFragment(e).text ?? e
+                          ,
                           style: context.uiKitTheme?.boldTextTheme.title1,
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
                   )
                   .toList(),
-            ),
+            )),
             SizesFoundation.screenWidth <= 275 ? SpacingFoundation.verticalSpace16 : SpacingFoundation.verticalSpace24,
             SizedBox(
               height: 155,

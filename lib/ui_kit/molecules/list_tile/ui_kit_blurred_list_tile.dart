@@ -33,9 +33,11 @@ class UiKitBlurredListTile extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
-            ImageWidget(
-              link: photoLink,
-            ),
+            if (photoLink != null)
+              CircularAvatar(
+                avatarUrl: photoLink!,
+                height: 40,
+              ),
             SpacingFoundation.horizontalSpace12,
             Expanded(
               child: Column(

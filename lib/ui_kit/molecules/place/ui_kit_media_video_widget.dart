@@ -6,10 +6,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
   final BaseUiKitMedia media;
+  final double? width;
 
   const UiKitMediaVideoWidget({
     Key? key,
     required this.media,
+    this.width,
   }) : super(key: key);
 
   @override
@@ -21,7 +23,7 @@ class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
           borderRadius: BorderRadiusFoundation.all24,
           child: ImageWidget(
             link: media.link,
-            width: 0.75.sw,
+            width: width ??  0.75.sw,
             fit: BoxFit.cover,
           ),
         ),

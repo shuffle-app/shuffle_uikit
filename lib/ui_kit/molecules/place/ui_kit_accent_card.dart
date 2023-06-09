@@ -70,11 +70,11 @@ class UiKitAccentCard extends StatelessWidget {
                 child: Ink(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      begin: Alignment.topCenter,
+                      begin: Alignment.center,
                       end: Alignment.bottomCenter,
                       colors: [
                         Colors.transparent,
-                        Colors.black.withOpacity(0.5),
+                        Colors.black.withOpacity(0.2),
                       ],
                     ),
                     borderRadius: BorderRadiusFoundation.all24,

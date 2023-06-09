@@ -3,33 +3,25 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 extension FactoryExtention on BuildContext {
   Widget badgeButtonNoValue({
-    String? text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    BaseUiKitButtonData? data,
     Alignment? badgeAlignment,
   }) {
     return WidgetsFactory.of(this)!
         .createBadgeButtonNoValue(
-          text: text,
-          onPressed: onPressed,
-          icon: icon,
+          data: data,
           badgeAlignment: badgeAlignment,
         )
         .build(this);
   }
 
   Widget smallButton({
-    String? text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    required BaseUiKitButtonData data,
     bool? isTextButton,
     bool? blurred,
   }) {
     return WidgetsFactory.of(this)!
         .createSmallButton(
-          text: text ?? '',
-          onPressed: onPressed,
-          icon: icon,
+          data:data,
           isTextButton: isTextButton ?? false,
           blurred: blurred,
         )
@@ -37,47 +29,37 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget outlinedButton({
-    String? text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    required BaseUiKitButtonData data,
     Color? color,
   }) {
     return WidgetsFactory.of(this)!
         .createOutlinedButton(
-          text: text ?? '',
-          onPressed: onPressed,
-          icon: icon,
+          data:data,
           color: color,
         )
         .build(this);
   }
 
   Widget smallOutlinedButton({
-    String? text,
-    VoidCallback? onPressed,
-    ImageWidget? icon,
+     BaseUiKitButtonData? data,
     Color? color,
   }) {
     return WidgetsFactory.of(this)!
         .createSmallOutlinedButton(
-          text: text,
-          onPressed: onPressed,
-          icon: icon,
+          data: data,
           color: color,
         )
         .build(this);
   }
 
   Widget dialogButton({
-    required String text,
-    VoidCallback? onPressed,
+    required BaseUiKitButtonData data,
     DialogButtonType? dialogButtonType,
     bool? small,
   }) {
     return WidgetsFactory.of(this)!
         .createDialogButton(
-          text: text,
-          onPressed: onPressed,
+          data: data,
           dialogButtonType: dialogButtonType,
           small: small,
         )
@@ -85,17 +67,13 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget badgeButton({
-    String? text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    BaseUiKitButtonData? data,
     int? badgeValue,
     Alignment? badgeAlignment,
   }) {
     return WidgetsFactory.of(this)!
         .createBadgeButtonWithValue(
-          text: text,
-          onPressed: onPressed,
-          icon: icon,
+          data: data,
           badgeValue: badgeValue,
           alignment: badgeAlignment,
         )
@@ -103,17 +81,13 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget button({
-    String? text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    required BaseUiKitButtonData data,
     bool? isTextButton,
     bool? blurred,
   }) {
     return WidgetsFactory.of(this)!
         .createOrdinaryButton(
-          text: text ?? '',
-          onPressed: onPressed,
-          icon: icon,
+          data: data,
           isTextButton: isTextButton ?? false,
           blurred: blurred,
         )
@@ -121,15 +95,11 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget gradientButton({
-    String text = '',
-    VoidCallback? onPressed,
-    Widget? icon,
+    required BaseUiKitButtonData data
   }) {
     return WidgetsFactory.of(this)!
         .createGradientButton(
-          text: text,
-          onPressed: onPressed,
-          icon: icon,
+          data: data,
         )
         .build(this);
   }

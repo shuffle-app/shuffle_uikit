@@ -35,11 +35,16 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
             itemBuilder: (context, index) {
               if (index == 0) return horizontalMargin.widthBox;
               final mediaItem = media.elementAt(index - 1);
-              if (mediaItem.type == UiKitMediaType.video) return BaseUiKitMediaWidget.video(media: mediaItem);
+              if (mediaItem.type == UiKitMediaType.video) {
+                return BaseUiKitMediaWidget.video(
+                  media: mediaItem, width: media.length == 1 ? 1.sw : null,);
+              }
 
-              return BaseUiKitMediaWidget.image(media: mediaItem);
+              return BaseUiKitMediaWidget.image(
+                  media: mediaItem, width: media.length == 1 ? 1.sw : null);
             },
-            separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+            separatorBuilder: (context, index) =>
+            index == 0 ? const SizedBox.shrink() : SpacingFoundation.horizontalSpace16,
           ),
         ),
         SpacingFoundation.verticalSpace12,
@@ -51,8 +56,9 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
         SpacingFoundation.verticalSpace12,
         Text(
           description,
-          style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
-        ).paddingOnly(left: horizontalMargin * 2, right: horizontalMargin),
+          style: theme?.boldTextTheme.caption1Bold.copyWith(
+              color: Colors.white),
+        ).paddingOnly(left: horizontalMargin, right: horizontalMargin),
       ],
     );
   }

@@ -82,7 +82,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   Widget _buildFirstItem(BaseUiKitMedia item) {
     return Positioned(
       left: _cardAnimation.left,
-      right: _cardAnimation.right,
+      right: widget.media.length == 1? 0: _cardAnimation.right,
       child: GestureDetector(
         onTap: widget.onTap,
         onHorizontalDragUpdate: (tapInfo) {

@@ -62,8 +62,9 @@ class BasePlaceActionCard extends StatelessWidget {
               ),
               SpacingFoundation.verticalSpace8,
               context.smallButton(
+                data: BaseUiKitButtonData(
                 text: 'See more',
-                onPressed: action,
+                onPressed: action,)
               ),
             ],
           ).paddingAll(EdgeInsetsFoundation.all12),

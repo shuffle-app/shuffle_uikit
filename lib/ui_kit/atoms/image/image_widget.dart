@@ -47,7 +47,7 @@ class ImageWidget extends StatelessWidget {
         width: width,
       );
     } else if (link == null || link!.isEmpty) {
-      return Placeholder(
+      return errorWidget ?? Placeholder(
         color: color ?? context.uiKitTheme?.cardColor ?? Colors.white,
         child: SizedBox(
           width: width,

@@ -56,8 +56,10 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
       color: ColorsFoundation.darkNeutral900,
     );
 
+    const widgetAnimDurations = Duration(milliseconds: 150);
+
     return AnimatedOpacity(
-      duration: const Duration(milliseconds: 150),
+      duration: widgetAnimDurations,
       opacity: opacity,
       child: SizedBox(
         width: 0.75.sw,
@@ -100,7 +102,8 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                         borderRadius: BorderRadiusFoundation.all24,
                       ),
                       child: InkWell(
-                        splashColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
+                        splashColor:
+                            ColorsFoundation.darkNeutral500.withOpacity(0.24),
                         onTap: widget.onTap,
                         child: Ink(),
                       ),
@@ -110,14 +113,23 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                     top: -SpacingFoundation.verticalSpacing8,
                     right: -SpacingFoundation.horizontalSpacing8,
                     child: context.smallButton(
-                      icon: ImageWidget(
-                        svgAsset: widget.favourite == true
-                            ? GraphicsFoundation.instance.svg.starFill
-                            : GraphicsFoundation.instance.svg.starOutline,
-                        color: Colors.white,
-                        fit: BoxFit.cover,
-                      ),
-                      onPressed: widget.onFavoriteTap,
+                      data: BaseUiKitButtonData(
+                      icon: AnimatedSwitcher(
+                          duration: widgetAnimDurations,
+                          child: widget.favourite == true
+                              ? ImageWidget(
+                                  svgAsset:
+                                      GraphicsFoundation.instance.svg.starFill,
+                                  color: Colors.white,
+                                  fit: BoxFit.cover,
+                                )
+                              : ImageWidget(
+                                  svgAsset: GraphicsFoundation
+                                      .instance.svg.starOutline,
+                                  color: Colors.white,
+                                  fit: BoxFit.cover,
+                                )),
+                      onPressed: widget.onFavoriteTap),
                     ),
                   ),
                 ],
@@ -138,7 +150,9 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                 ),
                 SpacingFoundation.horizontalSpace4,
                 Text(
-                  widget.date != null ? DateFormat('HH:MM a, MMM dd').format(widget.date!) : 'Coming soon',
+                  widget.date != null
+                      ? DateFormat('HH:MM a, MMM dd').format(widget.date!)
+                      : 'Coming soon',
                   style: dateTextStyle,
                 ),
               ],
