@@ -5,11 +5,13 @@ import 'package:shuffle_uikit/utils/widgets_factory/widgets_abstract_factory.dar
 class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
+  final bool uppercase;
 
   const SmallOrdinaryButton({
     Key? key,
     required this.text,
     this.onPressed,
+    this.uppercase = true,
   }) : super(key: key);
 
   @override
@@ -21,7 +23,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
       style: theme?.smallOrdinaryButtonStyle,
       onPressed: onPressed,
       child: Text(
-        text.toUpperCase(),
+        uppercase? text.toUpperCase() : text,
         style: textStyle?.copyWith(color: Colors.black),
       ),
     );

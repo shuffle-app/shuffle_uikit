@@ -58,12 +58,13 @@ class _CustomCalendarPickerDialogState extends State<_CustomCalendarPickerDialog
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               //TODO check if this is link in design - outlined
-              context.button(text: 'Cancel', onPressed: () => context.pop(), isTextButton: true),
+              context.button( data: BaseUiKitButtonData(text: 'Cancel', onPressed: () => context.pop()), isTextButton: true),
               SpacingFoundation.horizontalSpace4,
               context.dialogButton(
+                data: BaseUiKitButtonData(
                 text: 'Ok',
-                small: true,
-                onPressed: () => context.pop(result: selectedDate),
+
+                onPressed: () => context.pop(result: selectedDate)),small: true,
               )
             ],
           ),

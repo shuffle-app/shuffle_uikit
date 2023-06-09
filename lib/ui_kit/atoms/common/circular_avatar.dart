@@ -19,7 +19,7 @@ class CircularAvatar extends StatelessWidget {
       child: ImageWidget(
         height: height ?? SpacingFoundation.verticalSpacing24,
         width: height ?? SpacingFoundation.verticalSpacing24,
-        link: avatarUrl.isEmpty ? GraphicsFoundation.instance.png.mockUserAvatar.path : avatarUrl,
+        link: avatarUrl,
         errorWidget: LargeCircularAvatarErrorWidget(text: name?.split(' ').map((e) => e.characters.first).join('') ?? ''),
         fit: BoxFit.cover,
       ),

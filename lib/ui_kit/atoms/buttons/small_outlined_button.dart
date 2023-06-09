@@ -10,6 +10,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
   final Color? borderColor;
   final Color? textColor;
   final ImageWidget? icon;
+  final bool blurred;
 
   const SmallOutlinedButton({
     Key? key,
@@ -17,6 +18,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
     this.onPressed,
     this.borderColor,
     this.textColor,
+    required this.blurred,
     this.icon,
   }) : super(key: key);
 
@@ -43,20 +45,24 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
             ),
             color: text.isEmpty ? Colors.white.withOpacity(0.1) : null,
           ),
-          child: text.isEmpty && icon != null
+          child: BackdropFilter(
+              filter: ImageFilter.blur(
+                  sigmaX: blurred && !(text.isEmpty && icon != null) ? 18 : 0,
+                  sigmaY: blurred && !(text.isEmpty && icon != null) ? 18 : 0),
+              child: text.isEmpty && icon != null
                   ? ClipOval(
-                      child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
-                          child: icon!.paddingAll(EdgeInsetsFoundation.all8)))
+                  child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 18, sigmaY: 18),
+                      child: icon!.paddingAll(EdgeInsetsFoundation.all8)))
                   : Center(
-                      child: Text(
-                      text,
-                      style: textStyle,
-                    ))
-              .paddingSymmetric(
-            vertical: EdgeInsetsFoundation.vertical4,
-            horizontal: EdgeInsetsFoundation.horizontal16,
-          ),
+                  child: Text(
+                    text,
+                    style: textStyle,
+                  ))
+                  .paddingSymmetric(
+                vertical: EdgeInsetsFoundation.vertical4,
+                horizontal: EdgeInsetsFoundation.horizontal16,
+              )),
         ),
       ),
     );

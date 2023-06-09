@@ -69,27 +69,31 @@ class SwiperCardPage extends StatelessWidget {
               children: [
                 context.smallButton(
                   blurred: true,
-                  icon: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.heartBrokenFill,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {},
+                  data: BaseUiKitButtonData(
+                      icon: ImageWidget(
+                        svgAsset:
+                            GraphicsFoundation.instance.svg.heartBrokenFill,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {}),
                 ),
                 context.button(
                   blurred: true,
-                  icon: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.starOutline,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {},
+                  data: BaseUiKitButtonData(
+                      icon: ImageWidget(
+                        svgAsset: GraphicsFoundation.instance.svg.starOutline,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {}),
                 ),
                 context.smallButton(
                   blurred: true,
-                  icon: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.heartFill,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {},
+                  data: BaseUiKitButtonData(
+                      icon: ImageWidget(
+                        svgAsset: GraphicsFoundation.instance.svg.heartFill,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {}),
                 ),
               ],
             ),

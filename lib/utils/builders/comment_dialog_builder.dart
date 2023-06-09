@@ -19,11 +19,12 @@ Future<T?> showUiKitPopover<T extends Object?>(
         title.paddingOnly(bottom: SpacingFoundation.verticalSpacing8),
         if (description != null) description.paddingSymmetric(vertical: SpacingFoundation.verticalSpacing8),
         context
-            .dialogButton(
+            .dialogButton( data: BaseUiKitButtonData(
               text: buttonText,
-              small: true,
-              dialogButtonType: DialogButtonType.buttonBlack,
-              onPressed: () => context.pop(),
+
+              onPressed: () => context.pop()),
+          small: true,
+          dialogButtonType: DialogButtonType.buttonBlack,
             )
             .paddingOnly(
               top: SpacingFoundation.verticalSpacing8,

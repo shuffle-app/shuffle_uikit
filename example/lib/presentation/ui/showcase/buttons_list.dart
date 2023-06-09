@@ -12,61 +12,62 @@ class ButtonsList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         context.gradientButton(
+    data: BaseUiKitButtonData(
           text: 'GET CODE',
-          onPressed: () {},
+          onPressed: () {},)
         ),
         SpacingFoundation.verticalSpace16,
-        context.gradientButton(
-          text: 'GET CODE',
+        context.gradientButton(data: BaseUiKitButtonData(
+          text: 'GET CODE',)
         ),
         SpacingFoundation.verticalSpace16,
-        context.gradientButton(
+        context.gradientButton(data: BaseUiKitButtonData(
           icon: const CupertinoActivityIndicator(),
           text: 'GET CODE',
-          onPressed: () {},
+          onPressed: () {},)
         ),
         SpacingFoundation.verticalSpace16,
-        context.button(
+        context.button(data: BaseUiKitButtonData(
           text: 'GET CODE',
-          onPressed: () {},
+          onPressed: () {},)
         ),
         SpacingFoundation.verticalSpace16,
-        context.button(
-          text: 'GET CODE',
+        context.button(data: BaseUiKitButtonData(
+          text: 'GET CODE',)
         ),
         SpacingFoundation.verticalSpace16,
-        context.button(
+        context.button(data: BaseUiKitButtonData(
           icon: const CupertinoActivityIndicator(),
-          text: 'GET CODE',
+          text: 'GET CODE',)
         ),
         SpacingFoundation.verticalSpace16,
         Center(
-          child: context.button(
+          child: context.button(data: BaseUiKitButtonData(
             text: 'GET CODE',
-            isTextButton: true,
-            onPressed: () {},
+
+            onPressed: () {},), isTextButton: true,
           ),
         ),
         SpacingFoundation.verticalSpace16,
         Center(
-          child: context.smallButton(
+          child: context.smallButton(data: BaseUiKitButtonData(
             text: 'GET CODE',
-            onPressed: () {},
+            onPressed: () {},)
           ),
         ),
         SpacingFoundation.verticalSpace16,
-        context.dialogButton(
+        context.dialogButton(data: BaseUiKitButtonData(
           onPressed: () {},
-          text: 'GET CODE',
+          text: 'GET CODE'),
           small: true,
           dialogButtonType: DialogButtonType.buttonWhite,
         ),
         SpacingFoundation.verticalSpace16,
         ColoredBox(
           color: Colors.white,
-          child: context.dialogButton(
+          child: context.dialogButton(data: BaseUiKitButtonData(
             onPressed: () {},
-            text: 'GET CODE',
+            text: 'GET CODE'),
             small: true,
             dialogButtonType: DialogButtonType.buttonBlack,
           ),
@@ -75,20 +76,20 @@ class ButtonsList extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.max,
           children: [
-            context.outlinedButton(
+            context.outlinedButton(data: BaseUiKitButtonData(
               icon: ImageWidget(
                 svgAsset: GraphicsFoundation.instance.svg.route,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {},)
             ),
             SpacingFoundation.horizontalSpace8,
-            context.button(
+            context.button(data: BaseUiKitButtonData(
               icon: ImageWidget(
                 svgAsset: GraphicsFoundation.instance.svg.route,
                 color: Colors.white,
               ),
-              onPressed: () {},
+              onPressed: () {},)
             ),
           ],
         ),
