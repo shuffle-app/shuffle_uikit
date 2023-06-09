@@ -152,7 +152,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                           width: 1.sw,
                           child: Center(
                             child: Text(
-                              e,
+                              parseFragment(e).text ?? e,
                               style: context.uiKitTheme?.boldTextTheme.title1,
                             ),
                           ),

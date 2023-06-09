@@ -14,19 +14,17 @@ extension FactoryExtention on BuildContext {
         .build(this);
   }
 
-  Widget smallButton({
-    required BaseUiKitButtonData data,
-    bool? isTextButton,
-    bool? blurred,
-    bool uppercase
-  }) {
+  Widget smallButton(
+      {required BaseUiKitButtonData data,
+      bool? isTextButton,
+      bool? blurred,
+      bool uppercase = true}) {
     return WidgetsFactory.of(this)!
         .createSmallButton(
-          data:data,
-          isTextButton: isTextButton ?? false,
-          blurred: blurred,
-      uppercase: uppercase
-        )
+            data: data,
+            isTextButton: isTextButton ?? false,
+            blurred: blurred,
+            uppercase: uppercase)
         .build(this);
   }
 
@@ -36,14 +34,14 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createOutlinedButton(
-          data:data,
+          data: data,
           color: color,
         )
         .build(this);
   }
 
   Widget smallOutlinedButton({
-     BaseUiKitButtonData? data,
+    BaseUiKitButtonData? data,
     Color? color,
   }) {
     return WidgetsFactory.of(this)!
@@ -96,9 +94,7 @@ extension FactoryExtention on BuildContext {
         .build(this);
   }
 
-  Widget gradientButton({
-    required BaseUiKitButtonData data
-  }) {
+  Widget gradientButton({required BaseUiKitButtonData data}) {
     return WidgetsFactory.of(this)!
         .createGradientButton(
           data: data,
