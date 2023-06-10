@@ -38,7 +38,7 @@ class OrdinaryNotificationPopUp extends BaseNotificationPopup {
                     Text(
                       requiredData.titleString ?? '',
                       style: titleStyle,
-                      textAlign: TextAlign.left,
+                      textAlign: requiredData.textAlign,
                     ),
               ),
             ],

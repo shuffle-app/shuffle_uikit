@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitBottomModalSheet extends StatefulWidget {
@@ -125,7 +126,7 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet>
               ),
             ).paddingOnly(
                 top: widget.data.topPadding ??
-                    (MediaQuery.of(context).viewPadding.top)),
+                    (MediaQuery.of(context).viewPadding.top == 0 ? 30.h : MediaQuery.of(context).viewPadding.top)),
           )),
     );
   }
