@@ -49,13 +49,13 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                 : SpacingFoundation.horizontalSpace16,
           ),
         ),
-        SpacingFoundation.verticalSpace12,
+        SpacingFoundation.verticalSpace14,
         UiKitTagsWidget(
           rating: rating,
           baseTags: baseTags,
           uniqueTags: uniqueTags,
         ).paddingSymmetric(horizontal: horizontalMargin),
-        SpacingFoundation.verticalSpace12,
+        SpacingFoundation.verticalSpace14,
         DescriptionWidget(description: description)
             .paddingOnly(left: horizontalMargin, right: horizontalMargin),
       ],
