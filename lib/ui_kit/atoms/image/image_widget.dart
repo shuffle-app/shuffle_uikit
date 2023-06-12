@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -37,8 +38,7 @@ class ImageWidget extends StatelessWidget {
         height: height,
         width: width,
       );
-    }
-    if (svgAsset != null) {
+    } else if (svgAsset != null) {
       return svgAsset!.svg(
         package: 'shuffle_uikit',
         color: color,
@@ -68,19 +68,18 @@ class ImageWidget extends StatelessWidget {
         },
         placeholder: (_, __) => const CircularProgressIndicator.adaptive(),
       );
-    } else {
-      if (link!.contains('svg')) {
-        return SvgPicture.asset(
-          link!,
-          fit: fit ?? BoxFit.none,
-          width: width,
-          color: color,
-          height: height,
-          package: 'shuffle_uikit',
-          placeholderBuilder: (context) => errorWidget ?? const DefaultImageErrorWidget(),
-        );
-      }
-
+    } else if (link!.contains('svg')) {
+      return SvgPicture.asset(
+        link!,
+        fit: fit ?? BoxFit.none,
+        width: width,
+        color: color,
+        height: height,
+        package: 'shuffle_uikit',
+        placeholderBuilder: (context) =>
+            errorWidget ?? const DefaultImageErrorWidget(),
+      );
+    } else if (link!.contains('asset')) {
       return Image.asset(
         link!,
         fit: fit,
@@ -88,7 +87,18 @@ class ImageWidget extends StatelessWidget {
         color: color,
         height: height,
         package: 'shuffle_uikit',
-        errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
+        errorBuilder: (context, error, trace) =>
+            errorWidget ?? const DefaultImageErrorWidget(),
+      );
+    } else {
+      return Image.file(
+        File(link!),
+        fit: fit,
+        width: width,
+        color: color,
+        height: height,
+        errorBuilder: (context, error, trace) =>
+            errorWidget ?? const DefaultImageErrorWidget(),
       );
     }
   }
