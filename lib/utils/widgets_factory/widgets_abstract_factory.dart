@@ -7,7 +7,6 @@ abstract class WidgetsAbstractFactory {
     Widget? primaryActionWidget,
     Widget? secondaryActionWidget,
     Widget? dismissActionWidget,
-    bool? hasShadow,
   });
 
   ButtonFactory createBadgeButtonNoValue({
@@ -33,12 +32,7 @@ abstract class WidgetsAbstractFactory {
     bool? small,
   });
 
-  ButtonFactory createSmallButton({
-    required BaseUiKitButtonData data,
-    bool isTextButton = false,
-    bool? blurred,
-    bool uppercase
-  });
+  ButtonFactory createSmallButton({required BaseUiKitButtonData data, bool isTextButton = false, bool? blurred, bool uppercase});
 
   ButtonFactory createOutlinedButton({
     required BaseUiKitButtonData data,
@@ -91,21 +85,17 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  ButtonFactory createSmallOutlinedButton({
-    BaseUiKitButtonData? data,
-    Color? color,
-    bool? blurred
-  }) {
+  ButtonFactory createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred}) {
     if ((data?.text != null && data!.text.isNotEmpty) || data?.icon != null) {
-      return SmallOutlinedButton(onPressed: data?.onPressed,
+      return SmallOutlinedButton(
+          onPressed: data?.onPressed,
           blurred: blurred ?? false,
           text: data?.text ?? '',
           borderColor: color,
           textColor: color,
           icon: data!.icon as ImageWidget?);
     } else {
-      throw UnimplementedError(
-          'Outlined button with your parameters is not implemented');
+      throw UnimplementedError('Outlined button with your parameters is not implemented');
     }
   }
 
@@ -133,8 +123,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: data.onPressed,
       );
     } else {
-      throw UnimplementedError(
-          'Outlined button with your parameters is not implemented');
+      throw UnimplementedError('Outlined button with your parameters is not implemented');
     }
   }
 
@@ -162,8 +151,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: data.onPressed,
       );
     } else {
-      throw UnimplementedError(
-          'Gradient button with your parameters is not implemented');
+      throw UnimplementedError('Gradient button with your parameters is not implemented');
     }
   }
 
@@ -174,8 +162,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? blurred,
   }) {
     final hasIcon = data.icon != null;
-    final onlyIconButton = hasIcon && data.text.isEmpty && !isTextButton &&
-        !(blurred ?? false);
+    final onlyIconButton = hasIcon && data.text.isEmpty && !isTextButton && !(blurred ?? false);
     if (isTextButton) {
       return OrdinaryTextButton(
         text: data.text,
@@ -212,12 +199,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  ButtonFactory createSmallButton({
-    required BaseUiKitButtonData data,
-    bool isTextButton = false,
-    bool? blurred,
-    bool uppercase = true
-  }) {
+  ButtonFactory createSmallButton(
+      {required BaseUiKitButtonData data, bool isTextButton = false, bool? blurred, bool uppercase = true}) {
     final hasIcon = data.icon != null;
     final hasBlur = blurred ?? false;
     if (hasIcon && hasBlur) {
@@ -233,11 +216,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     }
 
-    return SmallOrdinaryButton(
-        text: data.text,
-        onPressed: data.onPressed,
-        uppercase: uppercase
-    );
+    return SmallOrdinaryButton(text: data.text, onPressed: data.onPressed, uppercase: uppercase);
   }
 
   @override
@@ -247,7 +226,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     String? avatarUrl,
     UserTileType? type,
     VoidCallback? onTap,
-
   }) {
     switch (type) {
       case UserTileType.pro:
@@ -256,7 +234,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           avatarUrl: avatarUrl,
           username: username,
           onTap: onTap,
-
         );
       case UserTileType.ordinary:
         return OrdinaryUserTile(
@@ -325,17 +302,14 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? primaryActionWidget,
     Widget? secondaryActionWidget,
     Widget? dismissActionWidget,
-    bool? hasShadow,
   }) {
-    final hasAllActions = primaryActionWidget != null &&
-        secondaryActionWidget != null && dismissActionWidget != null;
+    final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
     if (hasAllActions) {
       return AdditionalActionNotificationPopUp(
         requiredData: requiredData,
         primaryActionWidget: primaryActionWidget,
         secondaryActionWidget: secondaryActionWidget,
         dismissActionWidget: dismissActionWidget,
-        hasShadow: hasShadow,
       );
     }
 
@@ -343,7 +317,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       requiredData: requiredData,
       primaryActionWidget: primaryActionWidget,
       dismissActionWidget: dismissActionWidget,
-      hasShadow: hasShadow,
     );
   }
 
