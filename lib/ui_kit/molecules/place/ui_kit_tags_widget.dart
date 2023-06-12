@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitTagsWidget extends StatelessWidget {
@@ -25,7 +26,7 @@ class UiKitTagsWidget extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                ImageWidget(svgAsset: GraphicsFoundation.instance.svg.star),
+                ImageWidget(svgAsset: GraphicsFoundation.instance.svg.star,height: 16.h, fit: BoxFit.fitHeight,),
                 SpacingFoundation.horizontalSpace8,
                 Text(
                   rating.toString(),

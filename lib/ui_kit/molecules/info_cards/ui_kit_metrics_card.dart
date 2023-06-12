@@ -7,6 +7,8 @@ class UiKitMetricsCard extends StatelessWidget {
   final String value;
   final String unit;
   final Widget icon;
+  final bool active;
+  final double height;
 
   const UiKitMetricsCard({
     Key? key,
@@ -14,27 +16,31 @@ class UiKitMetricsCard extends StatelessWidget {
     required this.value,
     required this.unit,
     required this.icon,
+    this.active = true,
+    this.height = 60,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(color: Colors.black);
-    final valueStyle = context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(color: Colors.black);
+    final titleStyle = context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
+        color: active ? Colors.black : ColorsFoundation.darkNeutral900);
+    final valueStyle = context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(
+        color: active ? Colors.black : ColorsFoundation.darkNeutral900);
 
     return Container(
-      height: 60.h,
+      height: height,
       padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: active ? Colors.white : UiKitColors.darkNeutral200,
         borderRadius: BorderRadiusFoundation.all20,
       ),
       child: Row(
         children: [
           Container(
-            width: 26.w,
+            width: height / 2.1,
             decoration: BoxDecoration(
-              color: Colors.black,
+              color: active ? Colors.black : ColorsFoundation.darkNeutral900,
               borderRadius: BorderRadiusFoundation.all20,
             ),
             child: Center(child: icon),
@@ -47,23 +53,27 @@ class UiKitMetricsCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  title,
-                  style: titleStyle,
+                  active ? title : 'OFF',
+                  style: active ? titleStyle : valueStyle,
                 ),
                 SpacingFoundation.verticalSpace2,
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      value,
-                      style: valueStyle,
+                      active ? value : 'Health kit',
+                      style: active ? valueStyle : titleStyle,
                     ),
                     SpacingFoundation.horizontalSpace4,
+                    if(active)
                     Column(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.risingTrendIcon,
+                          svgAsset: GraphicsFoundation.instance.svg
+                              .risingTrendIcon,
                         ),
                         Text(
                           unit,

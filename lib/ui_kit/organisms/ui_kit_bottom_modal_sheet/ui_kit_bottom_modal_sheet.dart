@@ -19,7 +19,7 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet>
     with TickerProviderStateMixin {
   late final AnimationController controller;
 
-   double opacity=0;
+  double opacity = 0;
 
   @override
   void initState() {
@@ -30,7 +30,7 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet>
   }
 
   _onUpdate(DismissUpdateDetails details) {
-    if(details.reached) {
+    if (details.reached) {
       controller.reverse();
     }
   }
@@ -49,7 +49,7 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet>
     return AnimatedBuilder(
       animation: controller,
       builder: (_, child) {
-        return  BackdropFilter(
+        return BackdropFilter(
             filter: ImageFilter.blur(
               // sigmaX: opacity * 50,
               sigmaX: controller.value * 50,
@@ -66,7 +66,7 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet>
           ).animate(widget.startAnimation),
           child: Dismissible(
             onUpdate: _onUpdate,
-              // dismissThresholds:{DismissDirection.down:0.5},
+            // dismissThresholds:{DismissDirection.down:0.5},
             key: Key(DateTime.now().toString()),
             direction: DismissDirection.down,
             onDismissed: (DismissDirection direction) {
@@ -126,7 +126,9 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet>
               ),
             ).paddingOnly(
                 top: widget.data.topPadding ??
-                    (MediaQuery.of(context).viewPadding.top == 0 ? 30.h : MediaQuery.of(context).viewPadding.top)),
+                    (MediaQuery.of(context).viewPadding.top == 0
+                        ? 30.h
+                        : MediaQuery.of(context).viewPadding.top + 15.h)),
           )),
     );
   }

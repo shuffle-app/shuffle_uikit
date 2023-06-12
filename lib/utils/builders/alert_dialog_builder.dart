@@ -51,6 +51,7 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
   BuildContext context, {
   Color? backgroundColor = Colors.black,
   required Function child,
+      double? paddingAll
 }) {
   final textStyle = context.uiKitTheme?.boldTextTheme.title2;
 
@@ -67,7 +68,7 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
         backgroundColor: backgroundColor,
         clipBehavior: Clip.hardEdge,
         child: (child(_, textStyle) as Widget)
-            .paddingAll(EdgeInsetsFoundation.all24),
+            .paddingAll(paddingAll ?? EdgeInsetsFoundation.all24),
       ),
     ),
   );

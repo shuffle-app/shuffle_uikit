@@ -8,8 +8,8 @@ class GradientBottomNavigationBarPage extends StatefulWidget {
   /// [TabType] is the tab data type and [TabBuilder] is the builder function for the page
   final Map<GradientBottomNavigationBarItem, TabBuilder> tabs;
 
-  /// Состояние таббара
-  final GlobalKey<TabNavigatorState> tabState = GlobalKey<TabNavigatorState>();
+
+
 
   GradientBottomNavigationBarPage({
     Key? key,
@@ -31,7 +31,7 @@ class _GradientBottomNavigationBarPageState extends State<GradientBottomNavigati
       extendBody: true,
       resizeToAvoidBottomInset: true,
       body: TabNavigator(
-        key: widget.tabState,
+        key: tabState,
         selectedTabStream: bottomNavBarController.tabStream,
         initialTab: GradientBottomNavigationBarItem.home,
         mappedTabs: widget.tabs,
@@ -43,3 +43,6 @@ class _GradientBottomNavigationBarPageState extends State<GradientBottomNavigati
     );
   }
 }
+
+/// Состояние таббара
+final GlobalKey<TabNavigatorState> tabState = GlobalKey<TabNavigatorState>();

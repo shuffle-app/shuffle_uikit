@@ -5,11 +5,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitGradientAttentionCard extends StatelessWidget {
   final String message;
   final Color? textColor;
+  final double width;
 
   const UiKitGradientAttentionCard({
     Key? key,
     required this.message,
     this.textColor,
+    required this.width,
   }) : super(key: key);
 
   @override
@@ -17,9 +19,9 @@ class UiKitGradientAttentionCard extends StatelessWidget {
     final messageStyle = context.uiKitTheme?.boldTextTheme.subHeadline;
 
     return Container(
-      height: 136.h,
+      height: width,
       decoration: BoxDecoration(
-        gradient: GradientFoundation.defaultRadialGradient,
+        gradient: GradientFoundation.attentionCard,
         borderRadius: BorderRadiusFoundation.all24,
       ),
       child: Stack(
@@ -36,8 +38,8 @@ class UiKitGradientAttentionCard extends StatelessWidget {
             bottom: 0,
             left: 0,
             child: ImageWidget(
-              height: 70.h,
-              fit: BoxFit.fitHeight,
+              width: width,
+              fit: BoxFit.fitWidth,
               svgAsset: GraphicsFoundation.instance.svg.trippleArrowBlack,
             ),
           ),
