@@ -159,15 +159,22 @@ extension FactoryExtention on BuildContext {
     Widget? dismissActionWidget,
     bool? hasShadow,
   }) {
-    return WidgetsFactory.of(this)!
+    Widget popUp = WidgetsFactory.of(this)!
         .createNotificationPopUp(
           requiredData: requiredData,
           primaryActionWidget: primaryActionWidget,
           secondaryActionWidget: secondaryActionWidget,
           dismissActionWidget: dismissActionWidget,
-          hasShadow: hasShadow,
         )
         .build(this);
+    if (hasShadow ?? false) {
+      return UiKitShadowWrapper(
+        borderRadius: BorderRadiusFoundation.all24,
+        child: popUp,
+      );
+    }
+
+    return popUp;
   }
 }
 

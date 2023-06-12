@@ -7,7 +7,6 @@ abstract class WidgetsAbstractFactory {
     Widget? primaryActionWidget,
     Widget? secondaryActionWidget,
     Widget? dismissActionWidget,
-    bool? hasShadow,
   });
 
   ButtonFactory createBadgeButtonNoValue({
@@ -125,7 +124,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? icon,
     Alignment? badgeAlignment,
   }) {
-
     return BadgeIconButtonNoValue(
       onPressed: onPressed,
       icon: icon,
@@ -262,7 +260,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     String? avatarUrl,
     UserTileType? type,
     VoidCallback? onTap,
-    
   }) {
     switch (type) {
       case UserTileType.pro:
@@ -271,7 +268,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           avatarUrl: avatarUrl,
           username: username,
           onTap: onTap,
-
         );
       case UserTileType.ordinary:
         return OrdinaryUserTile(
@@ -341,7 +337,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? primaryActionWidget,
     Widget? secondaryActionWidget,
     Widget? dismissActionWidget,
-    bool? hasShadow,
   }) {
     final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
     if (hasAllActions) {
@@ -350,7 +345,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         primaryActionWidget: primaryActionWidget,
         secondaryActionWidget: secondaryActionWidget,
         dismissActionWidget: dismissActionWidget,
-        hasShadow: hasShadow,
       );
     }
 
@@ -358,7 +352,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       requiredData: requiredData,
       primaryActionWidget: primaryActionWidget,
       dismissActionWidget: dismissActionWidget,
-      hasShadow: hasShadow,
     );
   }
 
@@ -370,7 +363,6 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     int? badgeValue,
     Alignment? alignment,
   }) {
-
     return BadgeIconButton(
       icon: icon,
       onPressed: onPressed,

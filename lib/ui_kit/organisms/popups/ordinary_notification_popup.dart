@@ -10,11 +10,9 @@ class OrdinaryNotificationPopUp extends BaseNotificationPopup {
     required NotificationPopupRequiredData requiredData,
     this.dismissActionWidget,
     this.primaryActionWidget,
-    bool? hasShadow,
   }) : super(
           key: key,
           requiredData: requiredData,
-          hasShadow: hasShadow,
         );
 
   @override
@@ -22,7 +20,6 @@ class OrdinaryNotificationPopUp extends BaseNotificationPopup {
     final titleStyle = context.uiKitTheme?.boldTextTheme.body;
 
     return BlurredCardWithBorder(
-      hasShadow: hasShadow,
       border: requiredData.gradientBorder ? GradientFoundation.gradientBorder : null,
       child: Column(
         mainAxisSize: MainAxisSize.min,
