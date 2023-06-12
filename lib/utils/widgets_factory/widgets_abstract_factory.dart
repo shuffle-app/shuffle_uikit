@@ -10,61 +10,47 @@ abstract class WidgetsAbstractFactory {
   });
 
   ButtonFactory createBadgeButtonNoValue({
-    String? text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    BaseUiKitButtonData? data,
     Alignment? badgeAlignment,
   });
 
   ButtonFactory createBadgeButtonWithValue({
-    String? text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    BaseUiKitButtonData? data,
     int? badgeValue,
     Alignment? alignment,
   });
 
   ButtonFactory createOrdinaryButton({
-    required String text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    required BaseUiKitButtonData data,
     bool isTextButton = false,
     bool? blurred,
   });
 
   ButtonFactory createDialogButton({
-    required String text,
-    VoidCallback? onPressed,
+    required BaseUiKitButtonData data,
     DialogButtonType? dialogButtonType,
     bool? small,
   });
 
   ButtonFactory createSmallButton({
-    required String text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    required BaseUiKitButtonData data,
     bool isTextButton = false,
     bool? blurred,
+    bool uppercase
   });
 
   ButtonFactory createOutlinedButton({
-    required String text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    required BaseUiKitButtonData data,
     Color? color,
   });
 
   ButtonFactory createSmallOutlinedButton({
-    String? text,
-    VoidCallback? onPressed,
-    ImageWidget? icon,
+    BaseUiKitButtonData? data,
     Color? color,
   });
 
   ButtonFactory createGradientButton({
-    required String text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    required BaseUiKitButtonData data,
   });
 
   UserTileFactory createUserTile({
@@ -105,116 +91,116 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 
   @override
   ButtonFactory createSmallOutlinedButton({
-    String? text,
-    VoidCallback? onPressed,
-    ImageWidget? icon,
+    BaseUiKitButtonData? data,
     Color? color,
+    bool? blurred
   }) {
-    if ((text != null && text.isNotEmpty) || icon != null) {
-      return SmallOutlinedButton(onPressed: onPressed, text: text ?? '', borderColor: color, textColor: color, icon: icon);
+    if ((data?.text != null && data!.text.isNotEmpty) || data?.icon != null) {
+      return SmallOutlinedButton(onPressed: data?.onPressed,
+          blurred: blurred ?? false,
+          text: data?.text ?? '',
+          borderColor: color,
+          textColor: color,
+          icon: data!.icon as ImageWidget?);
     } else {
-      throw UnimplementedError('Outlined button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Outlined button with your parameters is not implemented');
     }
   }
 
   @override
   ButtonFactory createBadgeButtonNoValue({
-    String? text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    BaseUiKitButtonData? data,
     Alignment? badgeAlignment,
   }) {
     return BadgeIconButtonNoValue(
-      onPressed: onPressed,
-      icon: icon,
+      onPressed: data?.onPressed,
+      icon: data?.icon,
       badgeAlignment: badgeAlignment,
     );
   }
 
   @override
   ButtonFactory createOutlinedButton({
-    required String text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    required BaseUiKitButtonData data,
     bool? blurred,
     Color? color,
   }) {
-    if (text.isEmpty && icon != null) {
+    if (data.text.isEmpty && data.icon != null) {
       return OutlinedIconButton(
-        icon: icon,
-        onPressed: onPressed,
+        icon: data.icon,
+        onPressed: data.onPressed,
       );
     } else {
-      throw UnimplementedError('Outlined button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Outlined button with your parameters is not implemented');
     }
   }
 
   @override
   ButtonFactory createGradientButton({
-    required String text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    required BaseUiKitButtonData data,
   }) {
-    final hasIcon = icon != null;
-    final gradientIconButton = hasIcon && text.isEmpty;
+    final hasIcon = data.icon != null;
+    final gradientIconButton = hasIcon && data.text.isEmpty;
     if (gradientIconButton) {
       return GradientIconButton(
-        icon: icon,
-        onPressed: onPressed,
+        icon: data.icon!,
+        onPressed: data.onPressed,
         borderRadius: BorderRadiusFoundation.max,
       );
-    } else if (!hasIcon && text.isNotEmpty) {
+    } else if (!hasIcon && data.text.isNotEmpty) {
       return GradientButton(
-        text: text,
-        onPressed: onPressed,
+        text: data.text,
+        onPressed: data.onPressed,
       );
-    } else if (hasIcon && text.isNotEmpty) {
+    } else if (hasIcon && data.text.isNotEmpty) {
       return GradientButtonWithTextAndIcon(
-        text: text,
-        icon: icon,
-        onPressed: onPressed,
+        text: data.text,
+        icon: data.icon!,
+        onPressed: data.onPressed,
       );
     } else {
-      throw UnimplementedError('Gradient button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Gradient button with your parameters is not implemented');
     }
   }
 
   @override
   ButtonFactory createOrdinaryButton({
-    required String text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    required BaseUiKitButtonData data,
     bool isTextButton = false,
     bool? blurred,
   }) {
-    final hasIcon = icon != null;
-    final onlyIconButton = hasIcon && text.isEmpty && !isTextButton && !(blurred ?? false);
+    final hasIcon = data.icon != null;
+    final onlyIconButton = hasIcon && data.text.isEmpty && !isTextButton &&
+        !(blurred ?? false);
     if (isTextButton) {
       return OrdinaryTextButton(
-        text: text,
-        onPressed: onPressed,
-        icon: icon,
+        text: data.text,
+        onPressed: data.onPressed,
+        icon: data.icon,
       );
     } else if (hasIcon && !onlyIconButton && !(blurred ?? false)) {
       return OrdinaryButtonWithIcon(
-        text: text,
-        onPressed: onPressed,
-        icon: icon,
+        text: data.text,
+        onPressed: data.onPressed,
+        icon: data.icon!,
       );
     } else if (onlyIconButton) {
       return FilledIconButton(
-        icon: icon,
-        onPressed: onPressed,
+        icon: data.icon!,
+        onPressed: data.onPressed,
       );
     } else if (hasIcon && (blurred ?? false)) {
       return BlurredButtonWithIcon(
-        icon: icon,
-        onPressed: onPressed,
+        icon: data.icon!,
+        onPressed: data.onPressed,
       );
     } else {
       return OrdinaryButton(
-        text: text,
-        onPressed: onPressed,
+        text: data.text,
+        onPressed: data.onPressed,
       );
     }
   }
@@ -226,30 +212,30 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 
   @override
   ButtonFactory createSmallButton({
-    required String text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    required BaseUiKitButtonData data,
     bool isTextButton = false,
     bool? blurred,
+    bool uppercase = true
   }) {
-    final hasIcon = icon != null;
+    final hasIcon = data.icon != null;
     final hasBlur = blurred ?? false;
     if (hasIcon && hasBlur) {
       return SmallBlurredButtonWithIcon(
-        icon: icon,
-        onPressed: onPressed,
+        icon: data.icon!,
+        onPressed: data.onPressed,
       );
     }
     if (hasIcon && !hasBlur) {
       return SmallButtonWithIcon(
-        icon: icon,
-        onPressed: onPressed,
+        icon: data.icon,
+        onPressed: data.onPressed,
       );
     }
 
     return SmallOrdinaryButton(
-      text: text,
-      onPressed: onPressed,
+        text: data.text,
+        onPressed: data.onPressed,
+        uppercase: uppercase
     );
   }
 
@@ -260,6 +246,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     String? avatarUrl,
     UserTileType? type,
     VoidCallback? onTap,
+
   }) {
     switch (type) {
       case UserTileType.pro:
@@ -302,30 +289,29 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 
   @override
   ButtonFactory createDialogButton({
-    required String text,
-    VoidCallback? onPressed,
+    required BaseUiKitButtonData data,
     DialogButtonType? dialogButtonType,
     bool? small,
   }) {
     switch (dialogButtonType) {
       case DialogButtonType.buttonWhite:
         return WhiteDialogButton(
-          text: text,
-          onPressed: onPressed,
+          text: data.text,
+          onPressed: data.onPressed,
           small: small ?? false,
         );
       case DialogButtonType.buttonBlack:
         return BlackDialogButton(
-          text: text,
-          onPressed: onPressed,
+          text: data.text,
+          onPressed: data.onPressed,
           small: small ?? false,
         );
       case null:
         throw UnimplementedError();
       case DialogButtonType.buttonRed:
         return RedDialogButton(
-          text: text,
-          onPressed: onPressed,
+          text: data.text,
+          onPressed: data.onPressed,
           small: small ?? false,
         );
     }
@@ -338,7 +324,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? secondaryActionWidget,
     Widget? dismissActionWidget,
   }) {
-    final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
+    final hasAllActions = primaryActionWidget != null &&
+        secondaryActionWidget != null && dismissActionWidget != null;
     if (hasAllActions) {
       return AdditionalActionNotificationPopUp(
         requiredData: requiredData,
@@ -357,15 +344,13 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 
   @override
   ButtonFactory createBadgeButtonWithValue({
-    String? text,
-    VoidCallback? onPressed,
-    Widget? icon,
+    BaseUiKitButtonData? data,
     int? badgeValue,
     Alignment? alignment,
   }) {
     return BadgeIconButton(
-      icon: icon,
-      onPressed: onPressed,
+      icon: data?.icon,
+      onPressed: data?.onPressed,
       badgeValue: badgeValue,
     );
   }

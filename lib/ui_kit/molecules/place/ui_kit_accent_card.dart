@@ -71,11 +71,11 @@ class UiKitAccentCard extends StatelessWidget {
                   height: height / 2,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      begin: Alignment.topCenter,
+                      begin: Alignment.center,
                       end: Alignment.bottomCenter,
                       colors: [
                         Colors.transparent,
-                        Colors.black.withOpacity(0.5),
+                        Colors.black.withOpacity(0.2),
                       ],
                     ),
                   ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:html/parser.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:shuffle_uikit/foundation/audio_foundation.dart';
@@ -145,14 +146,16 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                 },
                 child: UiKitHorizontalScrollableList(
                   scrollController: widget.scrollController,
+                  physics: const PageScrollPhysics(),
                   children: widget.categories
                       .map<Widget>(
                         (e) => SizedBox(
                           width: 1.sw,
                           child: Center(
                             child: Text(
-                              e,
+                              parseFragment(e).text ?? e,
                               style: context.uiKitTheme?.boldTextTheme.title1,
+                              textAlign: TextAlign.center,
                             ),
                           ),
                         ),

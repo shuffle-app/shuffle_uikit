@@ -5,11 +5,13 @@ class NotificationPopupRequiredData {
   final Widget? customTitle;
   final Widget icon;
   final bool gradientBorder;
+  final TextAlign textAlign;
 
   NotificationPopupRequiredData({
     this.titleString,
     required this.icon,
     this.customTitle,
+    this.textAlign = TextAlign.left,
     this.gradientBorder = false,
   }) : assert(
           titleString != null || customTitle != null,

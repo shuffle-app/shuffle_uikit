@@ -92,14 +92,15 @@ class _MainPageState extends State<MainPage> {
               ],
             ),
             SpacingFoundation.verticalSpace24,
-            context.button(
+            context.button(data: BaseUiKitButtonData(
               text: 'UI Kit Showcase Stand',
-              onPressed: () => Navigator.pushNamed(context, AppRoutes.stand),
+              onPressed: () => Navigator.pushNamed(context, AppRoutes.stand)),
             ),
             SpacingFoundation.verticalSpace16,
             context.button(
+              data: BaseUiKitButtonData(
               text: 'Influencer Profile',
-              onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile),
+              onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile)),
             ),
             SpacingFoundation.verticalSpace16,
             OrdinaryButton(

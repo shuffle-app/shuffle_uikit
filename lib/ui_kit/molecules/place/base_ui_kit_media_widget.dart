@@ -8,13 +8,15 @@ abstract class BaseUiKitMediaWidget extends StatelessWidget {
 
   factory BaseUiKitMediaWidget.image({
     required BaseUiKitMedia media,
+    double? width,
   }) {
-    return UiKitMediaImageWidget(media: media);
+    return UiKitMediaImageWidget(media: media,width:width);
   }
 
   factory BaseUiKitMediaWidget.video({
     required BaseUiKitMedia media,
+    double? width,
   }) {
-    return UiKitMediaVideoWidget(media: media);
+    return UiKitMediaVideoWidget(media: media,width:width);
   }
 }

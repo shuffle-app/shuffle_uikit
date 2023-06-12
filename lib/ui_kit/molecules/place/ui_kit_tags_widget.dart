@@ -20,7 +20,7 @@ class UiKitTagsWidget extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.max,
       children: [
-        if (rating != null)
+        if (rating != null) ...[
           UiKitCardWrapper(
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -37,7 +37,7 @@ class UiKitTagsWidget extends StatelessWidget {
               vertical: EdgeInsetsFoundation.vertical12,
             ),
           ),
-        SpacingFoundation.horizontalSpace8,
+        SpacingFoundation.horizontalSpace8],
         Expanded(
           child: Column(
             mainAxisSize: MainAxisSize.min,

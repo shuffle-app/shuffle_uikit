@@ -49,3 +49,4 @@ export 'user/influencer_user_tile.dart';
 export 'user/ordinary_user_tile.dart';
 export 'user/premium_user_tile.dart';
 export 'user/pro_user_tile.dart';
+export 'place/description_widget.dart';

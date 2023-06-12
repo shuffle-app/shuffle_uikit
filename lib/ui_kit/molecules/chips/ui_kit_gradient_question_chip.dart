@@ -14,12 +14,12 @@ class UiKitGradientQuestionChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ClipPath(
+    return InkWell(
+      onTap: onTap,
+      child: ClipPath(
       clipper: GradientQuestionChipClipper(),
       child: Material(
-        child: InkWell(
-          onTap: onTap,
-          child: Ink(
+        child:  Ink(
             decoration: const BoxDecoration(
               gradient: GradientFoundation.badgeIcon,
             ),
