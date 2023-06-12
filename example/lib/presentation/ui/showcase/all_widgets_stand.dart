@@ -108,12 +108,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       appBarTrailing: context.badgeButton(
         badgeValue: 2,
-    data: BaseUiKitButtonData(
-        icon: ImageWidget(
-          svgAsset: GraphicsFoundation.instance.svg.message,
-          color: Colors.white,
-        ),
-        onPressed: () {}),
+        data: BaseUiKitButtonData(
+            icon: ImageWidget(
+              svgAsset: GraphicsFoundation.instance.svg.message,
+              color: Colors.white,
+            ),
+            onPressed: () {}),
       ),
       body: SingleChildScrollView(
         controller: _scrollController,
@@ -124,18 +124,30 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              UiKitAccentCard(
+                title: 'Ballooning festival',
+                additionalInfo: '22-23 March',
+                accentMessage: 'Don’t miss',
+                image: ImageWidget(
+                  rasterAsset: GraphicsFoundation.instance.png.balloons,
+                  fit: BoxFit.cover,
+                ),
+                onPressed: () {},
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitSpinnerCard(
                 availableHeight: 300,
                 photoLink: '',
               ),
               Center(
                 child: context.badgeButtonNoValue(
-          data: BaseUiKitButtonData(
-                  icon: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.message,
-                    color: Colors.white,
+                  data: BaseUiKitButtonData(
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.message,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
                   ),
-                  onPressed: () {}),
                   badgeAlignment: Alignment.topRight,
                 ),
               ),
@@ -277,12 +289,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               Center(
                 child: context.badgeButton(
                   data: BaseUiKitButtonData(
-                  icon: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.message,
-                    color: Colors.white,
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.message,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
                   ),
-
-                  onPressed: () {},), badgeValue: 2,
+                  badgeValue: 2,
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -294,14 +307,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               context.notificationPopUp(
                 primaryActionWidget: context.smallButton(
-                  data: BaseUiKitButtonData(
+                    data: BaseUiKitButtonData(
                   text: 'Ok',
-                  onPressed: () {},)
-                ),
+                  onPressed: () {},
+                )),
                 dismissActionWidget: context.smallOutlinedButton(
-                  data: BaseUiKitButtonData(
-                  text: 'Cancel',
-                  onPressed: () {}),
+                  data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
                   color: Colors.white.withOpacity(0.5),
                 ),
                 requiredData: NotificationPopupRequiredData(
@@ -315,14 +326,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               context.notificationPopUp(
                 primaryActionWidget: context.smallButton(
-                  data: BaseUiKitButtonData(
-                  text: 'Ok',
-                  onPressed: () {}),
+                  data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
                 ),
                 dismissActionWidget: context.smallOutlinedButton(
-                  data: BaseUiKitButtonData(
-                  text: 'Cancel',
-                  onPressed: () {}),
+                  data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
                   color: Colors.white.withOpacity(0.5),
                 ),
                 requiredData: NotificationPopupRequiredData(
@@ -336,19 +343,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               context.notificationPopUp(
                 hasShadow: true,
                 primaryActionWidget: context.smallButton(
-                  data: BaseUiKitButtonData(
-                  text: 'Ok',
-                  onPressed: () {}),
+                  data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
                 ),
                 secondaryActionWidget: context.smallOutlinedButton(
-                  data: BaseUiKitButtonData(
-                  text: 'text',
-                  onPressed: () {}),
+                  data: BaseUiKitButtonData(text: 'text', onPressed: () {}),
                 ),
                 dismissActionWidget: context.smallOutlinedButton(
-                  data: BaseUiKitButtonData(
-                  text: 'Cancel',
-                  onPressed: () {}),
+                  data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
                   color: Colors.white.withOpacity(0.5),
                 ),
                 requiredData: NotificationPopupRequiredData(
@@ -361,20 +362,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               context.notificationPopUp(
                 primaryActionWidget: context.smallButton(
-                  data: BaseUiKitButtonData(
-                  text: 'Ok',
-                  onPressed: () {}),
+                  data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
                 ),
                 dismissActionWidget: context.smallOutlinedButton(
-                  data: BaseUiKitButtonData(
-                  text: 'Cancel',
-                  onPressed: () {}),
+                  data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
                   color: Colors.white.withOpacity(0.5),
                 ),
                 secondaryActionWidget: context.smallOutlinedButton(
-                  data: BaseUiKitButtonData(
-                  text: 'text',
-                  onPressed: () {}),
+                  data: BaseUiKitButtonData(text: 'text', onPressed: () {}),
                 ),
                 requiredData: NotificationPopupRequiredData(
                   titleString: 'Yoga today at Palm Jumeirah. You go?',
@@ -418,28 +413,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       children: [
                         Expanded(
                           child: context.smallOutlinedButton(
-                            data: BaseUiKitButtonData(
-                            text: 'Not often',
-                            onPressed: () {}),
+                            data: BaseUiKitButtonData(text: 'Not often', onPressed: () {}),
                           ),
                         ),
                         SpacingFoundation.horizontalSpace12,
                         Expanded(
                           child: context.smallButton(
-                            data: BaseUiKitButtonData(
-                            text: 'Very often',
-                            onPressed: () {}),
+                            data: BaseUiKitButtonData(text: 'Very often', onPressed: () {}),
                           ),
                         ),
                       ],
                     ),
                     SpacingFoundation.verticalSpace8,
                     context.smallOutlinedButton(
-
                       color: Colors.white.withOpacity(0.5),
-                      data: BaseUiKitButtonData(
-                      text: 'Hard to answer',
-                      onPressed: () {}),
+                      data: BaseUiKitButtonData(text: 'Hard to answer', onPressed: () {}),
                     ),
                   ],
                 ),
@@ -578,11 +566,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: Row(
                   children: [
                     context.gradientButton(
-                data: BaseUiKitButtonData(
-                      icon: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.dice,
-                      ),
-                      onPressed: () {}),
+                      data: BaseUiKitButtonData(
+                          icon: ImageWidget(
+                            svgAsset: GraphicsFoundation.instance.svg.dice,
+                          ),
+                          onPressed: () {}),
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitTitledFilterChip(
@@ -672,29 +660,27 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   context.outlinedButton(
-    data: BaseUiKitButtonData(
-                    onPressed: () {},
-                    icon: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.route,
-                      color: Colors.white,
-                    )),
+                    data: BaseUiKitButtonData(
+                        onPressed: () {},
+                        icon: ImageWidget(
+                          svgAsset: GraphicsFoundation.instance.svg.route,
+                          color: Colors.white,
+                        )),
                   ),
                   SpacingFoundation.horizontalSpace12,
                   Expanded(
                     child: context.gradientButton(
-                  data: BaseUiKitButtonData(
-                      text: 'Book it',
-                      onPressed: () {}),
+                      data: BaseUiKitButtonData(text: 'Book it', onPressed: () {}),
                     ),
                   ),
                   SpacingFoundation.horizontalSpace12,
                   context.outlinedButton(
-                  data: BaseUiKitButtonData(
-                    onPressed: () {},
-                    icon: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.searchPeople,
-                      color: Colors.white,
-                    )),
+                    data: BaseUiKitButtonData(
+                        onPressed: () {},
+                        icon: ImageWidget(
+                          svgAsset: GraphicsFoundation.instance.svg.searchPeople,
+                          color: Colors.white,
+                        )),
                   ),
                 ],
               ),

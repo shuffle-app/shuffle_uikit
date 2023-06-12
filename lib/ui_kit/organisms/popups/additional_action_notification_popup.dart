@@ -11,11 +11,9 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
     this.primaryActionWidget,
     this.secondaryActionWidget,
     this.dismissActionWidget,
-    bool? hasShadow,
   }) : super(
           key: key,
           requiredData: requiredData,
-          hasShadow: hasShadow,
         );
 
   @override
@@ -23,7 +21,6 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
     final titleStyle = context.uiKitTheme?.boldTextTheme.body;
 
     return BlurredCardWithBorder(
-      hasShadow: hasShadow,
       border: requiredData.gradientBorder ? GradientFoundation.gradientBorder : null,
       child: Column(
         mainAxisSize: MainAxisSize.min,

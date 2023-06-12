@@ -99,6 +99,7 @@ class UiKitAccentCard extends StatelessWidget {
               Positioned(
                 bottom: SpacingFoundation.verticalSpacing16,
                 left: SpacingFoundation.horizontalSpacing16,
+                width: size.maxWidth,
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -109,7 +110,10 @@ class UiKitAccentCard extends StatelessWidget {
                     ),
                     Text(
                       title,
-                      style: titleStyle,
+                      style: titleStyle?.copyWith(
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      maxLines: 2,
                     ),
                   ],
                 ),
