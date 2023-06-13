@@ -57,20 +57,20 @@ double? _getSplashRadiusForPositionInSize(
   Size bounds,
   Offset position,
 ) {
-  final double d1 = (position - bounds.topLeft(Offset.zero)).distance;
-  final double d2 = (position - bounds.topRight(Offset.zero)).distance;
-  final double d3 = (position - bounds.bottomLeft(Offset.zero)).distance;
-  final double d4 = (position - bounds.bottomRight(Offset.zero)).distance;
+  final double dis1 = (position - bounds.topLeft(Offset.zero)).distance;
+  final double dis2 = (position - bounds.topRight(Offset.zero)).distance;
+  final double dis3 = (position - bounds.bottomLeft(Offset.zero)).distance;
+  final double dis4 = (position - bounds.bottomRight(Offset.zero)).distance;
 
   return math
       .max(
         math.max(
-          d1,
-          d2,
+          dis1,
+          dis2,
         ),
         math.max(
-          d3,
-          d4,
+          dis3,
+          dis4,
         ),
       )
       .ceilToDouble();
