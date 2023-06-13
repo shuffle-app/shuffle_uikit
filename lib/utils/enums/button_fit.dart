@@ -1,0 +1,1 @@
+enum ButtonFit { fitWidth, hugContent }

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/utils/animations/wave_splash.dart';
 
 class UiKitThemes {
   late final defaultThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
     useMaterial3: false,
+    splashColor: Colors.transparent,
+    splashFactory: WaveSplash.splashFactory,
     bottomSheetTheme: const BottomSheetThemeData(
       backgroundColor: Colors.transparent,
       modalBackgroundColor: Colors.transparent,
@@ -28,10 +31,8 @@ class UiKitThemes {
           package: 'shuffle_uikit',
         );
       }),
-      foregroundColor:
-          MaterialStateProperty.resolveWith((states) => Colors.white),
-      overlayColor:
-          MaterialStateProperty.resolveWith((states) => Colors.transparent),
+      foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+      overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
     )),
     disabledColor: ColorsFoundation.darkNeutral300,
     extensions: <ThemeExtension<UiKitThemeData>>[
@@ -46,39 +47,31 @@ class UiKitThemes {
         ),
         ordinaryButtonStyle: ButtonStyle(
           fixedSize: MaterialStateProperty.resolveWith(
-              (states) => const Size.fromHeight(48)),
+            (states) => const Size.fromHeight(48),
+          ),
           backgroundColor: MaterialStateProperty.resolveWith((states) {
-            return states.contains(MaterialState.disabled)
-                ? ColorsFoundation.darkNeutral300
-                : Colors.white;
+            return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
           }),
           shape: MaterialStateProperty.resolveWith(
-            (states) => RoundedRectangleBorder(
-                borderRadius: BorderRadiusFoundation.all24),
+            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
           ),
           overlayColor: MaterialStateProperty.resolveWith((states) {
             return ColorsFoundation.darkNeutral900;
           }),
-          foregroundColor:
-              MaterialStateProperty.resolveWith((states) => Colors.black),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         ),
         smallOrdinaryButtonStyle: ButtonStyle(
-          fixedSize: MaterialStateProperty.resolveWith(
-              (states) => const Size.fromHeight(28)),
+          fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(28)),
           backgroundColor: MaterialStateProperty.resolveWith((states) {
-            return states.contains(MaterialState.disabled)
-                ? ColorsFoundation.darkNeutral300
-                : Colors.white;
+            return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
           }),
           overlayColor: MaterialStateProperty.resolveWith((states) {
             return ColorsFoundation.darkNeutral900;
           }),
           shape: MaterialStateProperty.resolveWith(
-            (states) => RoundedRectangleBorder(
-                borderRadius: BorderRadiusFoundation.all24),
+            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
           ),
-          foregroundColor:
-              MaterialStateProperty.resolveWith((states) => Colors.black),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         ),
         iconInputTheme: InputDecorationTheme(
           filled: true,
@@ -147,21 +140,12 @@ class UiKitThemes {
           ),
         ),
         noFillInputTheme: const InputDecorationTheme(
-          border: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.white, width: 0.5)),
-          enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.white, width: 0.5)),
-          errorBorder: UnderlineInputBorder(
-              borderSide:
-                  BorderSide(color: ColorsFoundation.error, width: 0.5)),
-          focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.white, width: 0.5)),
-          focusedErrorBorder: UnderlineInputBorder(
-              borderSide:
-                  BorderSide(color: ColorsFoundation.error, width: 0.5)),
-          disabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                  color: ColorsFoundation.darkNeutral900, width: 0.5)),
+          border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
         ),
         customAppBapTheme: AppBarTheme(
           iconTheme: const IconThemeData(
@@ -235,19 +219,14 @@ class UiKitThemes {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        fixedSize: MaterialStateProperty.resolveWith(
-            (states) => const Size.fromHeight(48)),
+        fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(48)),
         backgroundColor: MaterialStateProperty.resolveWith((states) {
-          return states.contains(MaterialState.disabled)
-              ? ColorsFoundation.darkNeutral300
-              : Colors.white;
+          return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
         }),
         shape: MaterialStateProperty.resolveWith(
-          (states) => RoundedRectangleBorder(
-              borderRadius: BorderRadiusFoundation.all24),
+          (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
         ),
-        foregroundColor:
-            MaterialStateProperty.resolveWith((states) => Colors.black),
+        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         overlayColor: MaterialStateProperty.resolveWith((states) {
           if (states.contains(MaterialState.hovered)) {
             return Colors.white;
