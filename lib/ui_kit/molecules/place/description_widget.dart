@@ -25,7 +25,7 @@ class DescriptionWidget extends StatelessWidget {
                     style: theme?.boldTextTheme.caption1Bold
                         .copyWith(color: Colors.white),
                   ),
-                  if(description.codeUnits.length * 4 / 0.9.sw > 7)
+                  if(description.codeUnits.length * 3 / 0.9.sw > 7)
                   InkWell(
                     onTap: () => s(() => hide = !hide),
                     child: Text(

@@ -23,12 +23,12 @@ class HighImportanceChip extends StatelessWidget {
           width: 120,
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
-            gradient: GradientFoundation.defaultRadialGradient,
+            gradient: GradientFoundation.attentionCard,
           ),
           child: Center(
             child: Text(
               text,
-              style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(
+              style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
                 color: Colors.black,
               ),
               textAlign: TextAlign.center,

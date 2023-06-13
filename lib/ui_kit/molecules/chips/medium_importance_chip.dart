@@ -29,7 +29,7 @@ class MediumImportanceChip extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(
+              style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
                 color: Colors.black,
               ),
               maxLines: 2,

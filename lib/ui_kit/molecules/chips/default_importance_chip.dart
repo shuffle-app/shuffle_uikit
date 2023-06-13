@@ -29,7 +29,7 @@ class DefaultImportanceChip extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(
+              style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
                 color: ColorsFoundation.darkNeutral900,
               ),
               textAlign: TextAlign.center,
