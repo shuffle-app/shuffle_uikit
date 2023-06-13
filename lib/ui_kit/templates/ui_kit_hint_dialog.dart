@@ -43,9 +43,11 @@ class UiKitHintDialog extends StatelessWidget {
         ),
         SpacingFoundation.verticalSpace8,
         context.button(
-    data: BaseUiKitButtonData(
-          text: dismissText,
-          onPressed: onDismiss),
+          data: BaseUiKitButtonData(
+            text: dismissText,
+            onPressed: onDismiss,
+            fit: ButtonFit.fitWidth,
+          ),
         ),
       ],
     );

@@ -18,16 +18,22 @@ class UiKitCardSwiper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CardSwiper(
-      controller: controller,
-      cardsCount: cards.length,
-      onSwipe: onSwipe,
-      maxAngle: 180,
-      numberOfCardsDisplayed: cards.length,
-      backCardOffset: Offset.zero,
-      padding: EdgeInsets.zero,
-      scale: 0.5,
-      cardBuilder: (context, index) => cards[index],
+    return LayoutBuilder(
+      builder: (context, size) {
+        // final allCards = [...cards ],
+
+        return CardSwiper(
+          controller: controller,
+          cardsCount: cards.length,
+          onSwipe: onSwipe,
+          maxAngle: 180,
+          numberOfCardsDisplayed: cards.length,
+          backCardOffset: Offset.zero,
+          padding: EdgeInsets.zero,
+          scale: 0.5,
+          cardBuilder: (context, index) => cards[index],
+        );
+      },
     );
   }
 }

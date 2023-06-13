@@ -187,6 +187,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     } else {
       return OrdinaryButton(
+        fit: data.fit,
         text: data.text,
         onPressed: data.onPressed,
       );
