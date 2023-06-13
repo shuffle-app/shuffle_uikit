@@ -14,7 +14,7 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: ColorsFoundation.darkNeutral900,
-      fontSize: 10.sp,
+      fontSize: 7.w,
     );
 
     return Material(
@@ -38,7 +38,7 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    padding: EdgeInsets.all(7.4.sp),
+                    padding: EdgeInsets.all(5.sp),
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: ColorsFoundation.darkNeutral900,
@@ -56,7 +56,7 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
                   ),
                 ],
               ).paddingSymmetric(
-                vertical: SpacingFoundation.verticalSpacing4,
+                vertical: SpacingFoundation.horizontalSpacing4,
                 horizontal: SpacingFoundation.horizontalSpacing8,
               ),
             ),

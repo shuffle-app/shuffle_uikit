@@ -16,7 +16,7 @@ class VerticalMessageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = 0.33.sw - SpacingFoundation.horizontalSpacing12;
+    final width = 0.33.sw;
     final messageStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium;
 
     return Material(

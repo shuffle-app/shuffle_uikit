@@ -16,6 +16,18 @@ class GradientFoundation {
     transform: GradientRotation(-pi / 12),
   );
 
+  static const attentionCard = LinearGradient(
+    colors: [
+
+      ColorsFoundation.error,
+      ColorsFoundation.yellow,
+      ColorsFoundation.pink,
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    transform: GradientRotation(-pi / 12),
+  );
+
   static const defaultRadialGradient = RadialGradient(
     colors: [
       ColorsFoundation.orange,
@@ -50,6 +62,19 @@ class GradientFoundation {
       0.3017,
       0.5,
     ],
+  );
+
+  static const weatherOffState = LinearGradient(
+    colors: [
+      ColorsFoundation.surface2,
+      ColorsFoundation.darkNeutral900,
+    ],
+    // stops: [
+    //   0,
+    //   0.9563,
+    // ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
   );
 
   static const solidSurfaceLinearGradient = LinearGradient(

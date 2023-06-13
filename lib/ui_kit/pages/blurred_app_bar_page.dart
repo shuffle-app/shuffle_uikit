@@ -11,29 +11,36 @@ class BlurredAppBarPage extends StatelessWidget {
   final Widget? appBarTrailing;
   final Widget? leading;
   final Widget body;
+  final ScrollController controller;
 
-  const BlurredAppBarPage({
+  BlurredAppBarPage({
     Key? key,
     required this.title,
     this.autoImplyLeading,
     this.leading,
     this.appBarBody,
+    ScrollController? controller,
     this.appBarTrailing,
     this.centerTitle = false,
     required this.body,
-  }) : super(key: key);
+  })  : controller = controller ?? ScrollController(),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      // primary: true,
+      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
       physics: const ClampingScrollPhysics(),
       slivers: [
         SliverLayoutBuilder(
           builder: (context, sliverConstraints) {
             const animDuration = Duration(milliseconds: 250);
-            final toolbarHeight = (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 84);
+            final toolbarHeight =
+                (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 84);
             final expandedHeight = appBarBody == null ? toolbarHeight : 180.0;
-            final hideAppBarBody = sliverConstraints.scrollOffset > expandedHeight;
+            final hideAppBarBody =
+                sliverConstraints.scrollOffset > expandedHeight;
 
             return SliverAppBar(
               automaticallyImplyLeading: false,
@@ -50,7 +57,13 @@ class BlurredAppBarPage extends StatelessWidget {
                 title: title,
                 appBarBody: AnimatedContainer(
                   duration: animDuration,
-                  height: hideAppBarBody ? 0 : max(0, expandedHeight - toolbarHeight - SpacingFoundation.verticalSpacing16),
+                  height: hideAppBarBody
+                      ? 0
+                      : max(
+                          0,
+                          expandedHeight -
+                              toolbarHeight -
+                              SpacingFoundation.verticalSpacing16),
                   child: appBarBody,
                 ),
                 appBarTrailing: appBarTrailing,

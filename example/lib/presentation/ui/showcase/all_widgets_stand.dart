@@ -608,10 +608,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    const Expanded(
+                     Expanded(
                       child: UiKitGradientAttentionCard(
                         message: 'Then check this out',
-                        textColor: Colors.black,
+                        textColor: Colors.black, width: 70,
                       ),
                     ),
                     SpacingFoundation.horizontalSpace16,
