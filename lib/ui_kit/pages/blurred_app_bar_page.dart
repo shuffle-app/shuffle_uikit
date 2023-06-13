@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BlurredAppBarPage extends StatelessWidget {
+// class BlurredAppBarPage extends StatefulWidget {
   final String title;
   final bool? autoImplyLeading;
   final bool centerTitle;
@@ -12,24 +13,48 @@ class BlurredAppBarPage extends StatelessWidget {
   final Widget? leading;
   final Widget body;
   final ScrollController controller;
+  final bool wrapSliverBox;
 
   BlurredAppBarPage({
     Key? key,
     required this.title,
+    required this.body,
     this.autoImplyLeading,
     this.leading,
     this.appBarBody,
+    this.wrapSliverBox = true,
     ScrollController? controller,
     this.appBarTrailing,
     this.centerTitle = false,
-    required this.body,
+
   })  : controller = controller ?? ScrollController(),
         super(key: key);
+//
+//   @override
+//   State<BlurredAppBarPage> createState() => _BlurredAppBarPageState();
+// }
+//
+// class _BlurredAppBarPageState extends State<BlurredAppBarPage>
+//     with WidgetsBindingObserver {
+//   @override
+//   void didChangeMetrics() {
+//     final focusedCtx = FocusManager.instance.primaryFocus!.context;
+//     if (focusedCtx != null) {
+//       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+//         Scrollable.ensureVisible(
+//           focusedCtx,
+//           duration: const Duration(milliseconds: 200),
+//           curve: Curves.easeIn,
+//         );
+//       });
+//     }
+//     super.didChangeMetrics();
+//   }
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      // primary: true,
+      controller: controller,
       keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
       physics: const ClampingScrollPhysics(),
       slivers: [
@@ -38,9 +63,11 @@ class BlurredAppBarPage extends StatelessWidget {
             const animDuration = Duration(milliseconds: 250);
             final toolbarHeight =
                 (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 84);
-            final expandedHeight = appBarBody == null ? toolbarHeight : 180.0;
+            final expandedHeight =
+                appBarBody == null ? toolbarHeight : 180.0;
             final hideAppBarBody =
-                sliverConstraints.scrollOffset > expandedHeight;
+                sliverConstraints.scrollOffset > toolbarHeight;
+                // sliverConstraints.scrollOffset > expandedHeight;
 
             return SliverAppBar(
               automaticallyImplyLeading: false,
@@ -73,7 +100,10 @@ class BlurredAppBarPage extends StatelessWidget {
             );
           },
         ),
-        body.wrapSliverBox,
+        // SliverList.builder(
+        //     itemBuilder: (c, i) =>
+                body.wrapSliverBox,
+            // itemCount: 1)
       ],
     );
   }

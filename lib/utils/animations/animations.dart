@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 export 'back_anim_stack.dart';
 export 'rotatable_widget.dart';
+export 'triggering_widget.dart';
 
 class Animations {
   static slideAnimation(

@@ -77,6 +77,9 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
           children: [
             SpacingFoundation.verticalSpace8,
             Expanded(
+                child: ConstrainedBox(
+              constraints:
+                  BoxConstraints(maxHeight: widget.availableHeight * 0.8),
               child: Stack(
                 clipBehavior: Clip.none,
                 fit: StackFit.passthrough,
@@ -122,30 +125,32 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                     right: -SpacingFoundation.horizontalSpacing8,
                     child: context.smallButton(
                       data: BaseUiKitButtonData(
-                      icon: AnimatedSwitcher(
-                          duration: widgetAnimDurations,
-                          child: widget.favourite == true
-                              ? ImageWidget(
-                                  svgAsset:
-                                      GraphicsFoundation.instance.svg.starFill,
-                                  color: Colors.white,
-                                  fit: BoxFit.cover,
-                                )
-                              : ImageWidget(
-                                  svgAsset: GraphicsFoundation
-                                      .instance.svg.starOutline,
-                                  color: Colors.white,
-                                  fit: BoxFit.cover,
-                                )),
-                      onPressed: widget.onFavoriteTap),
+                          icon: AnimatedSwitcher(
+                              duration: widgetAnimDurations,
+                              child: widget.favourite == true
+                                  ? ImageWidget(
+                                      svgAsset: GraphicsFoundation
+                                          .instance.svg.starFill,
+                                      color: Colors.white,
+                                      fit: BoxFit.cover,
+                                    )
+                                  : ImageWidget(
+                                      svgAsset: GraphicsFoundation
+                                          .instance.svg.starOutline,
+                                      color: Colors.white,
+                                      fit: BoxFit.cover,
+                                    )),
+                          onPressed: widget.onFavoriteTap),
                     ),
                   ),
                 ],
               ),
-            ),
+            )),
             SpacingFoundation.verticalSpace12,
             Text(
               '${widget.title}',
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
               style: titleStyle,
             ),
             SpacingFoundation.verticalSpace4,
