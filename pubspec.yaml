@@ -34,6 +34,10 @@ dependencies:
   just_audio: ^0.9.33
   html: ^0.15.4
 
+  #custom splash factory
+  flutter_platform_widgets: ^4.0.0-beta.1
+  dynamic_color: ^1.6.5
+
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/utils/animations/wave_splash.dart';
 
 class UiKitAccentCard extends StatelessWidget {
   final String title;
@@ -71,11 +72,11 @@ class UiKitAccentCard extends StatelessWidget {
                   height: height / 2,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      begin: Alignment.center,
+                      begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
                         Colors.transparent,
-                        Colors.black.withOpacity(0.2),
+                        Colors.black.withOpacity(0.5),
                       ],
                     ),
                   ),
@@ -86,6 +87,7 @@ class UiKitAccentCard extends StatelessWidget {
                 borderRadius: BorderRadiusFoundation.all24,
                 color: Colors.transparent,
                 child: InkWell(
+                  splashFactory: WaveSplash.splashFactory,
                   onTap: onPressed,
                   borderRadius: BorderRadiusFoundation.all24,
                   child: Ink(
