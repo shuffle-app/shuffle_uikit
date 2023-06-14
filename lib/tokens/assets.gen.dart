@@ -67,6 +67,159 @@ class $AssetsAnimationsLottieGen {
 class $AssetsImagesPngGen {
   const $AssetsImagesPngGen();
 
+  /// File path: assets/images/png/Aubergine.png
+  AssetGenImage get aubergine => const AssetGenImage('assets/images/png/Aubergine.png');
+
+  /// File path: assets/images/png/Baggage.png
+  AssetGenImage get baggage => const AssetGenImage('assets/images/png/Baggage.png');
+
+  /// File path: assets/images/png/Bell.png
+  AssetGenImage get bell => const AssetGenImage('assets/images/png/Bell.png');
+
+  /// File path: assets/images/png/Binoculars.png
+  AssetGenImage get binoculars => const AssetGenImage('assets/images/png/Binoculars.png');
+
+  /// File path: assets/images/png/Clapperboard.png
+  AssetGenImage get clapperboard => const AssetGenImage('assets/images/png/Clapperboard.png');
+
+  /// File path: assets/images/png/Cocktail-2.png
+  AssetGenImage get cocktail2 => const AssetGenImage('assets/images/png/Cocktail-2.png');
+
+  /// File path: assets/images/png/Cocktail.png
+  AssetGenImage get cocktail => const AssetGenImage('assets/images/png/Cocktail.png');
+
+  /// File path: assets/images/png/Coin.png
+  AssetGenImage get coin => const AssetGenImage('assets/images/png/Coin.png');
+
+  /// File path: assets/images/png/Company.png
+  AssetGenImage get company => const AssetGenImage('assets/images/png/Company.png');
+
+  /// File path: assets/images/png/Dart.png
+  AssetGenImage get dart => const AssetGenImage('assets/images/png/Dart.png');
+
+  /// File path: assets/images/png/Discount.png
+  AssetGenImage get discount => const AssetGenImage('assets/images/png/Discount.png');
+
+  /// File path: assets/images/png/Donations.png
+  AssetGenImage get donations => const AssetGenImage('assets/images/png/Donations.png');
+
+  /// File path: assets/images/png/Events.png
+  AssetGenImage get events => const AssetGenImage('assets/images/png/Events.png');
+
+  /// File path: assets/images/png/Feedback.png
+  AssetGenImage get feedback => const AssetGenImage('assets/images/png/Feedback.png');
+
+  /// File path: assets/images/png/Female.png
+  AssetGenImage get female => const AssetGenImage('assets/images/png/Female.png');
+
+  /// File path: assets/images/png/Fire.png
+  AssetGenImage get fire => const AssetGenImage('assets/images/png/Fire.png');
+
+  /// File path: assets/images/png/First-aid-kit.png
+  AssetGenImage get firstAidKit => const AssetGenImage('assets/images/png/First-aid-kit.png');
+
+  /// File path: assets/images/png/Followers.png
+  AssetGenImage get followers => const AssetGenImage('assets/images/png/Followers.png');
+
+  /// File path: assets/images/png/Hat.png
+  AssetGenImage get hat => const AssetGenImage('assets/images/png/Hat.png');
+
+  /// File path: assets/images/png/Hi-new-invitees.png
+  AssetGenImage get hiNewInvitees => const AssetGenImage('assets/images/png/Hi-new-invitees.png');
+
+  /// File path: assets/images/png/Icecream.png
+  AssetGenImage get icecream => const AssetGenImage('assets/images/png/Icecream.png');
+
+  /// File path: assets/images/png/Index-finger-hands.png
+  AssetGenImage get indexFingerHands => const AssetGenImage('assets/images/png/Index-finger-hands.png');
+
+  /// File path: assets/images/png/Key.png
+  AssetGenImage get key => const AssetGenImage('assets/images/png/Key.png');
+
+  /// File path: assets/images/png/Laptop-with-chart.png
+  AssetGenImage get laptopWithChart => const AssetGenImage('assets/images/png/Laptop-with-chart.png');
+
+  /// File path: assets/images/png/Lifebuoy.png
+  AssetGenImage get lifebuoy => const AssetGenImage('assets/images/png/Lifebuoy.png');
+
+  /// File path: assets/images/png/Like-hands.png
+  AssetGenImage get likeHands => const AssetGenImage('assets/images/png/Like-hands.png');
+
+  /// File path: assets/images/png/Male.png
+  AssetGenImage get male => const AssetGenImage('assets/images/png/Male.png');
+
+  /// File path: assets/images/png/Mango.png
+  AssetGenImage get mango => const AssetGenImage('assets/images/png/Mango.png');
+
+  /// File path: assets/images/png/Map.png
+  AssetGenImage get map => const AssetGenImage('assets/images/png/Map.png');
+
+  /// File path: assets/images/png/Money.png
+  AssetGenImage get money => const AssetGenImage('assets/images/png/Money.png');
+
+  /// File path: assets/images/png/Networking.png
+  AssetGenImage get networking => const AssetGenImage('assets/images/png/Networking.png');
+
+  /// File path: assets/images/png/No-photo.png
+  AssetGenImage get noPhoto => const AssetGenImage('assets/images/png/No-photo.png');
+
+  /// File path: assets/images/png/Ok-hands.png
+  AssetGenImage get okHands => const AssetGenImage('assets/images/png/Ok-hands.png');
+
+  /// File path: assets/images/png/Other-gender.png
+  AssetGenImage get otherGender => const AssetGenImage('assets/images/png/Other-gender.png');
+
+  /// File path: assets/images/png/Outstanding.png
+  AssetGenImage get outstanding => const AssetGenImage('assets/images/png/Outstanding.png');
+
+  /// File path: assets/images/png/Pie-chart.png
+  AssetGenImage get pieChart => const AssetGenImage('assets/images/png/Pie-chart.png');
+
+  /// File path: assets/images/png/Porthole.png
+  AssetGenImage get porthole => const AssetGenImage('assets/images/png/Porthole.png');
+
+  /// File path: assets/images/png/Puzzle.png
+  AssetGenImage get puzzle => const AssetGenImage('assets/images/png/Puzzle.png');
+
+  /// File path: assets/images/png/Rock-n-roll-hands.png
+  AssetGenImage get rockNRollHands => const AssetGenImage('assets/images/png/Rock-n-roll-hands.png');
+
+  /// File path: assets/images/png/Rocket.png
+  AssetGenImage get rocket => const AssetGenImage('assets/images/png/Rocket.png');
+
+  /// File path: assets/images/png/Ski.png
+  AssetGenImage get ski => const AssetGenImage('assets/images/png/Ski.png');
+
+  /// File path: assets/images/png/Smile-mood.png
+  AssetGenImage get smileMood => const AssetGenImage('assets/images/png/Smile-mood.png');
+
+  /// File path: assets/images/png/Smiley-crazy-face-emoji.png
+  AssetGenImage get smileyCrazyFaceEmoji => const AssetGenImage('assets/images/png/Smiley-crazy-face-emoji.png');
+
+  /// File path: assets/images/png/Sun-clouds.png
+  AssetGenImage get sunClouds => const AssetGenImage('assets/images/png/Sun-clouds.png');
+
+  /// File path: assets/images/png/Sun-wind.png
+  AssetGenImage get sunWind => const AssetGenImage('assets/images/png/Sun-wind.png');
+
+  /// File path: assets/images/png/Technologies.png
+  AssetGenImage get technologies => const AssetGenImage('assets/images/png/Technologies.png');
+
+  /// File path: assets/images/png/Training-apparatus.png
+  AssetGenImage get trainingApparatus => const AssetGenImage('assets/images/png/Training-apparatus.png');
+
+  /// File path: assets/images/png/Victory-hands.png
+  AssetGenImage get victoryHands => const AssetGenImage('assets/images/png/Victory-hands.png');
+
+  /// File path: assets/images/png/Yoga.png
+  AssetGenImage get yoga => const AssetGenImage('assets/images/png/Yoga.png');
+
+  /// File path: assets/images/png/angry-emoji.png
+  AssetGenImage get angryEmoji => const AssetGenImage('assets/images/png/angry-emoji.png');
+
+  /// File path: assets/images/png/anxiety-emogi.png
+  AssetGenImage get anxietyEmogi => const AssetGenImage('assets/images/png/anxiety-emogi.png');
+
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
@@ -76,11 +229,23 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/buddism_flag.png
   AssetGenImage get buddismFlag => const AssetGenImage('assets/images/png/buddism_flag.png');
 
+  /// File path: assets/images/png/calmness-emoji.png
+  AssetGenImage get calmnessEmoji => const AssetGenImage('assets/images/png/calmness-emoji.png');
+
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
+  /// File path: assets/images/png/fatigue-emoji.png
+  AssetGenImage get fatigueEmoji => const AssetGenImage('assets/images/png/fatigue-emoji.png');
+
   /// File path: assets/images/png/jordan_flag.png
   AssetGenImage get jordanFlag => const AssetGenImage('assets/images/png/jordan_flag.png');
+
+  /// File path: assets/images/png/joy-emoji.png
+  AssetGenImage get joyEmoji => const AssetGenImage('assets/images/png/joy-emoji.png');
+
+  /// File path: assets/images/png/love-emoji.png
+  AssetGenImage get loveEmoji => const AssetGenImage('assets/images/png/love-emoji.png');
 
   /// File path: assets/images/png/mock_ad_banner.png
   AssetGenImage get mockAdBanner => const AssetGenImage('assets/images/png/mock_ad_banner.png');
@@ -106,16 +271,77 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
 
+  /// File path: assets/images/png/sadness-emogi.png
+  AssetGenImage get sadnessEmogi => const AssetGenImage('assets/images/png/sadness-emogi.png');
+
   /// File path: assets/images/png/spinner_event.png
   AssetGenImage get spinnerEvent => const AssetGenImage('assets/images/png/spinner_event.png');
 
+  /// File path: assets/images/png/surprise-emoji.png
+  AssetGenImage get surpriseEmoji => const AssetGenImage('assets/images/png/surprise-emoji.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
+        aubergine,
+        baggage,
+        bell,
+        binoculars,
+        clapperboard,
+        cocktail2,
+        cocktail,
+        coin,
+        company,
+        dart,
+        discount,
+        donations,
+        events,
+        feedback,
+        female,
+        fire,
+        firstAidKit,
+        followers,
+        hat,
+        hiNewInvitees,
+        icecream,
+        indexFingerHands,
+        key,
+        laptopWithChart,
+        lifebuoy,
+        likeHands,
+        male,
+        mango,
+        map,
+        money,
+        networking,
+        noPhoto,
+        okHands,
+        otherGender,
+        outstanding,
+        pieChart,
+        porthole,
+        puzzle,
+        rockNRollHands,
+        rocket,
+        ski,
+        smileMood,
+        smileyCrazyFaceEmoji,
+        sunClouds,
+        sunWind,
+        technologies,
+        trainingApparatus,
+        victoryHands,
+        yoga,
+        angryEmoji,
+        anxietyEmogi,
         atmosphere,
         balloons,
         buddismFlag,
+        calmnessEmoji,
         eventAvatar,
+        fatigueEmoji,
         jordanFlag,
+        joyEmoji,
+        loveEmoji,
         mockAdBanner,
         mockSwiperCard,
         mockUserAvatar,
@@ -124,7 +350,9 @@ class $AssetsImagesPngGen {
         profileAvatar,
         profilePost1,
         profileStory1,
-        spinnerEvent
+        sadnessEmogi,
+        spinnerEvent,
+        surpriseEmoji
       ];
 }
 

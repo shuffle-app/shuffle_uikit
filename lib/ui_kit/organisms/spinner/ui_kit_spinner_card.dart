@@ -76,13 +76,12 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SpacingFoundation.verticalSpace8,
-            Expanded(
-                child: ConstrainedBox(
+            ConstrainedBox(
                   constraints:
-                  BoxConstraints(maxHeight: widget.availableHeight * 0.8),
+                  BoxConstraints(maxHeight: widget.availableHeight * 0.75),
                   child: Stack(
-                    clipBehavior: Clip.none,
-                    fit: StackFit.passthrough,
+                    // clipBehavior: Clip.none,
+                    fit: StackFit.expand,
                     children: [
                       ClipRRect(
                         borderRadius: BorderRadiusFoundation.all24,
@@ -145,7 +144,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                       ),
                     ],
                   ),
-                )),
+                ),
             SpacingFoundation.verticalSpace12,
             Text(
               '${widget.title}',

@@ -6,12 +6,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitCardSwiper extends StatelessWidget {
   final List<BaseUiKitSwiperCard> cards;
   final CardSwiperOnSwipe onSwipe;
+  final VoidCallback? onEnd;
   final CardSwiperController controller;
 
   UiKitCardSwiper({
     Key? key,
     required this.cards,
     required this.onSwipe,
+     this.onEnd,
     CardSwiperController? controller,
   })  : controller = controller ?? CardSwiperController(),
         super(key: key);
@@ -20,26 +22,20 @@ class UiKitCardSwiper extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, size) {
-        final allCards = [
-          ...cards,
-          UiKitLastSwiperCard(),
-        ];
+
 
         return CardSwiper(
           controller: controller,
-          cardsCount: allCards.length,
-          onSwipe: (prev, current, direction) async {
-            if (prev == allCards.length - 1) return false;
-
-            return true;
-          },
+          cardsCount: cards.length,
+          onSwipe: onSwipe,
+          onEnd: onEnd,
           maxAngle: 180,
           isLoop: false,
-          numberOfCardsDisplayed: allCards.length,
+          numberOfCardsDisplayed: cards.length,
           backCardOffset: Offset.zero,
           padding: EdgeInsets.zero,
           scale: 0.5,
-          cardBuilder: (context, index) => allCards[index],
+          cardBuilder: (context, index) => cards[index],
         );
       },
     );

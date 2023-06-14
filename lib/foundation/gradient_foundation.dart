@@ -28,6 +28,18 @@ class GradientFoundation {
     transform: GradientRotation(-pi / 12),
   );
 
+  static const buttonGradientLinear = LinearGradient(
+    colors: [
+
+      ColorsFoundation.error,
+      ColorsFoundation.yellow,
+      ColorsFoundation.pink,
+    ],
+    end: Alignment.bottomLeft,
+    begin: Alignment.topRight,
+    transform: GradientRotation(-pi / 12),
+  );
+
   static const defaultRadialGradient = RadialGradient(
     colors: [
       ColorsFoundation.orange,
