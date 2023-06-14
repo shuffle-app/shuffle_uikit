@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/utils/animations/wave_splash.dart';
 
 class UiKitAccentCard extends StatelessWidget {
   final String title;
@@ -87,7 +86,6 @@ class UiKitAccentCard extends StatelessWidget {
                 borderRadius: BorderRadiusFoundation.all24,
                 color: Colors.transparent,
                 child: InkWell(
-                  splashFactory: WaveSplash.splashFactory,
                   onTap: onPressed,
                   borderRadius: BorderRadiusFoundation.all24,
                   child: Ink(

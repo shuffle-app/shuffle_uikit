@@ -20,18 +20,26 @@ class UiKitCardSwiper extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, size) {
-        // final allCards = [...cards ],
+        final allCards = [
+          ...cards,
+          UiKitLastSwiperCard(),
+        ];
 
         return CardSwiper(
           controller: controller,
-          cardsCount: cards.length,
-          onSwipe: onSwipe,
+          cardsCount: allCards.length,
+          onSwipe: (prev, current, direction) async {
+            if (prev == allCards.length - 1) return false;
+
+            return true;
+          },
           maxAngle: 180,
-          numberOfCardsDisplayed: cards.length,
+          isLoop: false,
+          numberOfCardsDisplayed: allCards.length,
           backCardOffset: Offset.zero,
           padding: EdgeInsets.zero,
           scale: 0.5,
-          cardBuilder: (context, index) => cards[index],
+          cardBuilder: (context, index) => allCards[index],
         );
       },
     );

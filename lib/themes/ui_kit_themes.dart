@@ -6,7 +6,7 @@ class UiKitThemes {
   late final defaultThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
     useMaterial3: false,
-    splashColor: Colors.transparent,
+    splashColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
     splashFactory: WaveSplash.splashFactory,
     bottomSheetTheme: const BottomSheetThemeData(
       backgroundColor: Colors.transparent,

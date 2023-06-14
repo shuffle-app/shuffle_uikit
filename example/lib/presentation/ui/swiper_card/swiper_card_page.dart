@@ -23,7 +23,7 @@ class SwiperCardPage extends StatelessWidget {
                   return true;
                 },
                 cards: List<BaseUiKitSwiperCard>.generate(
-                  10,
+                  3,
                   (index) => UiKitSwiperCard(
                     title: 'Dance Again',
                     subtitle: 'Unique place for unique people',
@@ -71,8 +71,7 @@ class SwiperCardPage extends StatelessWidget {
                   blurred: true,
                   data: BaseUiKitButtonData(
                       icon: ImageWidget(
-                        svgAsset:
-                            GraphicsFoundation.instance.svg.heartBrokenFill,
+                        svgAsset: GraphicsFoundation.instance.svg.heartBrokenFill,
                         color: Colors.white,
                       ),
                       onPressed: () {}),
