@@ -14,11 +14,6 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
-    final infoCard = UiKitSwiperCardInfo(
-      title: title,
-      subtitle: subtitle,
-      tags: tags,
-    );
 
     return Container(
       width: 267.w,
@@ -59,7 +54,11 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                   ),
                 ),
               ),
-              infoCard,
+              UiKitSwiperCardInfo(
+                title: title,
+                subtitle: subtitle,
+                tags: tags,
+              ),
             ],
           ).paddingAll(EdgeInsetsFoundation.all16),
         ],

@@ -348,6 +348,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/check.svg
   SvgGenImage get check => const SvgGenImage('assets/images/svg/check.svg');
 
+  /// File path: assets/images/svg/check_circle.svg
+  SvgGenImage get checkCircle => const SvgGenImage('assets/images/svg/check_circle.svg');
+
   /// File path: assets/images/svg/chess.svg
   SvgGenImage get chess => const SvgGenImage('assets/images/svg/chess.svg');
 
@@ -710,6 +713,7 @@ class $AssetsImagesSvgGen {
         calendar,
         cameraPlus,
         check,
+        checkCircle,
         chess,
         chevronDown,
         chevronLeft,
