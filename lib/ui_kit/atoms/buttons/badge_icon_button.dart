@@ -30,7 +30,7 @@ class BadgeIconButton extends StatelessWidget implements ButtonFactory {
         style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(
           color: Colors.black,
         ),
-      ).paddingAll(EdgeInsetsFoundation.all4),
+      ).paddingAll(EdgeInsetsFoundation.all2),
     );
 
     return Material(

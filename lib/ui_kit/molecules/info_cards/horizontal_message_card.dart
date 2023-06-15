@@ -31,7 +31,14 @@ class HorizontalMessageCard extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              if (icon != null) icon!,
+              if (icon != null)
+                ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    maxWidth: 60,
+                    maxHeight: 60,
+                  ),
+                  child: icon!,
+                ),
               if (icon != null) SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: Text(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:html/parser.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:html/parser.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:shuffle_uikit/foundation/audio_foundation.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -85,6 +85,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
   }
 
   void _shouldSwitchCategory([bool onEndNotified = false]) {
+    print('should switch category');
     final currentOffset = widget.scrollController.offset;
     final screenWidth = 1.sw;
     final nearestElementIndex = (currentOffset / screenWidth).round();
