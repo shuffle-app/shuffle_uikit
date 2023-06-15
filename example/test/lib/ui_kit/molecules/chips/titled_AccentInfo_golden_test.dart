@@ -11,15 +11,34 @@ void main() {
     testGoldens('TitledAccentInfo', (tester) async {
       debugDisableShadows = false;
 
-      final builder = GoldenBuilder.column(
+      final builder = GoldenBuilder.grid(
+        columns: 2,
+        widthToHeightRatio: 1.3,
         bgColor: theme.scaffoldBackgroundColor,
         wrap: (child) => child,
-      )..addScenario(
-          'TitledAccentInfo',
-          TitledAccentInfo(
-                title: 'Don’t miss it',
-                info: '11:00 am, November 20    golden was used in the test "TitledAccentInfo TitledAccentInfo"',
-              ),
+      )
+        ..addScenario(
+          'normal text',
+          const TitledAccentInfo(
+            title: 'Don’t miss it',
+            info: '11:00 am, November 20  ',
+          ),
+        )
+        ..addScenario(
+          'Long title',
+          const TitledAccentInfo(
+            title:
+                'Don’t miss it Don’t miss it Don’t miss it Don’t miss it  Don’t miss it  Don’t miss it  Don’t miss it   Don’t miss it  Don’t miss it',
+            info: '11:00 am, November 20    ',
+          ),
+        )
+        ..addScenario(
+          'long info',
+          const TitledAccentInfo(
+            title: 'Don’t miss it',
+            info:
+                '11:00 am, November 20    golden was used in the test "TitledAccentInfo TitledAccentInfo 11:00 am, November 20    golden was used in the test "TitledAccentInfo TitledAccentInfo 11:00 am, November 20    golden was used in the test "TitledAccentInfo TitledAccentInfo 11:00 am, November 20    golden was used in the test "TitledAccentInfo TitledAccentInfo',
+          ),
         );
 
       await tester.pumpWidgetBuilder(ScreenUtilInit(
@@ -32,7 +51,8 @@ void main() {
                     child: Material(child: Theme(data: theme, child: child!)));
               })));
 
-      await screenMatchesGolden(tester, 'TitledAccentInfo_width300_more_content',
+      await screenMatchesGolden(
+          tester, 'TitledAccentInfo_width300',
           autoHeight: true);
     });
   });
