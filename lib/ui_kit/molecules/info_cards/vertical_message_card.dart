@@ -36,9 +36,9 @@ class VerticalMessageCard extends StatelessWidget {
             children: [
               if (icon != null)
                 ConstrainedBox(
-                  constraints: const BoxConstraints(
-                    maxWidth: 60,
-                    maxHeight: 60,
+                  constraints: BoxConstraints(
+                    maxHeight: width * 0.56,
+                    maxWidth: width * 0.56,
                   ),
                   child: icon,
                 ),
