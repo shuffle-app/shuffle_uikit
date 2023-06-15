@@ -27,8 +27,6 @@ class UiKitWeatherInfoCard extends StatelessWidget {
 
     return Container(
       height: height,
-      // padding: EdgeInsets.symmetric(vertical: 11.h,horizontal: 16.w),
-
       decoration: BoxDecoration(
         color: active? null : ColorsFoundation.surface2,
         borderRadius: BorderRadiusFoundation.all20,
@@ -69,8 +67,10 @@ class UiKitWeatherInfoCard extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: ImageWidget(
-              svgAsset: GraphicsFoundation.instance.svg.sunWind,
+              rasterAsset: GraphicsFoundation.instance.png.sunWind,
               color: active ? null : offColor,
+              width: 40.w,
+              fit: BoxFit.fitWidth  ,
             ),
           ),
         ],

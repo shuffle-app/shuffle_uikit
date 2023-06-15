@@ -25,14 +25,20 @@ class DescriptionWidget extends StatelessWidget {
                     style: theme?.boldTextTheme.caption1Bold
                         .copyWith(color: Colors.white),
                   ),
-                  if(description.codeUnits.length * 3 / 0.9.sw > 7)
-                  InkWell(
-                    onTap: () => s(() => hide = !hide),
-                    child: Text(
-                      'Read ${hide ?'more':'less'}',
-                      style: theme?.boldTextTheme.caption1Bold.copyWith(color: ColorsFoundation.darkNeutral300),
-                    ),
-                  ).paddingOnly(top: SpacingFoundation.verticalSpacing12)
+                  if ((description.replaceAll('\n', '').codeUnits.length *
+                              2.w /
+                              0.9.sw +
+                          description.characters
+                              .where((p0) => p0 == '\n')
+                              .length) > 7)
+                    InkWell(
+                      onTap: () => s(() => hide = !hide),
+                      child: Text(
+                        'Read ${hide ? 'more' : 'less'}',
+                        style: theme?.boldTextTheme.caption1Bold
+                            .copyWith(color: ColorsFoundation.darkNeutral300),
+                      ),
+                    ).paddingOnly(top: SpacingFoundation.verticalSpacing12)
                 ]));
   }
 }

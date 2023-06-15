@@ -17,7 +17,8 @@ class VerticalMessageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = 0.33.sw;
-    final messageStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium;
+    final messageStyle = context.uiKitTheme?.boldTextTheme
+        .caption1UpperCaseMedium;
 
     return Material(
       borderRadius: BorderRadiusFoundation.all24,
@@ -34,9 +35,10 @@ class VerticalMessageCard extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              if (icon != null) icon!,
+              if (icon != null) SizedBox(width: width * 0.38, child: icon),
               if (icon != null) SpacingFoundation.verticalSpace8,
               Text(
+
                 /// end line symbols added to make sure that the text is more than 4 lines
                 /// so that the card height is always fixed
                 '${message.toUpperCase()}\n\n\n\n',

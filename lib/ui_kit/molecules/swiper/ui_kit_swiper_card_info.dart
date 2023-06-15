@@ -25,7 +25,7 @@ class UiKitSwiperCardInfo extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all20,
-        color: Colors.white.withOpacity(0.05),
+        color: ColorsFoundation.darkNeutral500.withOpacity(0.16),
       ),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),

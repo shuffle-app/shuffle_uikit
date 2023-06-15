@@ -25,7 +25,7 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
           height: 48,
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all24,
-            gradient: enabled ? GradientFoundation.buttonGradient : null,
+            gradient: enabled ? GradientFoundation.buttonGradientLinear : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
           ),
           child: Center(

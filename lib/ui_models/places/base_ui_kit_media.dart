@@ -14,18 +14,18 @@ class UiKitMediaPhoto extends BaseUiKitMedia {
   UiKitMediaPhoto({
     required String link,
   }) : super(
-          link: link,
-          type: UiKitMediaType.image,
-        );
+    link: link,
+    type: UiKitMediaType.image,
+  );
 }
 
 class UiKitMediaVideo extends BaseUiKitMedia {
   UiKitMediaVideo({
     required String link,
   }) : super(
-          link: link,
-          type: UiKitMediaType.video,
-        );
+    link: link,
+    type: UiKitMediaType.video,
+  );
 }
 
 class UiKitTag {
@@ -33,10 +33,12 @@ class UiKitTag {
   final String iconPath;
   final bool unique;
 
-  UiKitTagWidget get widget => UiKitTagWidget(
+  UiKitTagWidget get widget =>
+      UiKitTagWidget(
         title: title,
         icon: iconPath,
         uniqueTag: unique,
+        textColor: ColorsFoundation.darkNeutral500,
       );
 
   UiKitTag({
