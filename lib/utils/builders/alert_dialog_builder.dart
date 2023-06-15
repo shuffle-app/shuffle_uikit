@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-Future<T?> showUiKitAlertDialog<T extends Object?>(
-    BuildContext context, AlertDialogData data) {
+Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context, AlertDialogData data) {
   return showDialog<T>(
     context: context,
     builder: (BuildContext context) {
@@ -30,14 +29,10 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
         contentPadding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
         actions: [
           if (data.additionalButton != null) data.additionalButton!,
-          context.dialogButton( data: BaseUiKitButtonData(
-              onPressed: data.onPop ?? () => context.pop(),
-            text: data.defaultButtonText),
+          context.dialogButton(
+            data: BaseUiKitButtonData(onPressed: data.onPop ?? () => context.pop(), text: data.defaultButtonText),
             small: true,
-            dialogButtonType: data.additionalButton != null
-                ? DialogButtonType.buttonWhite
-                : DialogButtonType.buttonBlack,
-
+            dialogButtonType: data.additionalButton != null ? DialogButtonType.buttonWhite : DialogButtonType.buttonBlack,
           )
         ],
         actionsAlignment: MainAxisAlignment.center,
@@ -47,12 +42,8 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
   );
 }
 
-Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
-  BuildContext context, {
-  Color? backgroundColor = Colors.black,
-  required Function child,
-      double? paddingAll
-}) {
+Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(BuildContext context,
+    {Color? backgroundColor = Colors.black, required Function child, double? paddingAll}) {
   final textStyle = context.uiKitTheme?.boldTextTheme.title2;
 
   return showDialog(
@@ -62,13 +53,15 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
     builder: (_) => BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
       child: Dialog(
+        insetPadding: EdgeInsets.symmetric(
+          horizontal: EdgeInsetsFoundation.horizontal16,
+        ),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusFoundation.all40,
         ),
         backgroundColor: backgroundColor,
         clipBehavior: Clip.hardEdge,
-        child: (child(_, textStyle) as Widget)
-            .paddingAll(paddingAll ?? EdgeInsetsFoundation.all24),
+        child: (child(_, textStyle) as Widget).paddingAll(paddingAll ?? EdgeInsetsFoundation.all24),
       ),
     ),
   );
@@ -82,10 +75,5 @@ class AlertDialogData {
   final Widget? additionalButton;
   final String defaultButtonText;
 
-  AlertDialogData(
-      {this.onPop,
-      this.title,
-      this.content,
-      this.additionalButton,
-      required this.defaultButtonText});
+  AlertDialogData({this.onPop, this.title, this.content, this.additionalButton, required this.defaultButtonText});
 }

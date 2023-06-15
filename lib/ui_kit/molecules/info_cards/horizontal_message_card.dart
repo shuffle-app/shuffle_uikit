@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class HorizontalMessageCard extends StatelessWidget {
@@ -15,6 +16,7 @@ class HorizontalMessageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = 0.15.sh;
     final messageStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase;
 
     return Material(
@@ -31,7 +33,14 @@ class HorizontalMessageCard extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              if (icon != null) icon!,
+              if (icon != null)
+                ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxHeight: height * 0.55,
+                    maxWidth: height * 0.55,
+                  ),
+                  child: icon!,
+                ),
               if (icon != null) SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: Text(

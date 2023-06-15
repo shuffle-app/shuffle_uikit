@@ -6,6 +6,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class CustomAppBar extends PreferredSize {
   final String title;
   final bool centerTitle;
+  final bool hideBody;
   final bool? autoImplyLeading;
   final double? bodySpacing;
   final Widget? appBarBody;
@@ -15,6 +16,7 @@ class CustomAppBar extends PreferredSize {
   const CustomAppBar({
     super.key,
     required this.title,
+    this.hideBody = true,
     this.bodySpacing,
     this.leading,
     this.centerTitle = false,
@@ -65,7 +67,7 @@ class CustomAppBar extends PreferredSize {
                     if (appBarTrailing == null && showLeading) const SizedBox(),
                   ],
                 ),
-                bodySpacing?.heightBox ?? SpacingFoundation.verticalSpace16,
+                if (!hideBody) bodySpacing?.heightBox ?? SpacingFoundation.verticalSpace8,
                 if (appBarBody != null) appBarBody!,
               ],
             ),

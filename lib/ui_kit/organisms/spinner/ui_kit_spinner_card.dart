@@ -60,8 +60,8 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
     final errorWidget = bigPhoto
         ? const UiKitBigPhotoErrorWidget()
         : UiKitCompactPhotoErrorWidget(
-      topSpacing: widget.availableHeight / 8,
-    );
+            topSpacing: widget.availableHeight / 8,
+          );
 
     const widgetAnimDurations = Duration(milliseconds: 150);
 
@@ -77,74 +77,70 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
           children: [
             SpacingFoundation.verticalSpace8,
             ConstrainedBox(
-                  constraints:
-                  BoxConstraints(maxHeight: widget.availableHeight * 0.75),
-                  child: Stack(
-                    // clipBehavior: Clip.none,
-                    fit: StackFit.expand,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadiusFoundation.all24,
-                        child: ImageWidget(
-                          link: widget.photoLink,
-                          fit: BoxFit.cover,
-                          errorWidget: errorWidget,
-                        ),
-                      ),
-                      Positioned(
-                        bottom: SpacingFoundation.verticalSpacing10,
-                        left: SpacingFoundation.horizontalSpacing10,
-                        right: SpacingFoundation.horizontalSpacing10,
-                        child: UiKitBlurredListTile(
-                          title: widget.ownerTileTitle,
-                          titleTrailing: widget.ownerTileTitleTrailing,
-                          subtitle: widget.ownerTileSubtitle,
-                          photoLink: widget.ownerPhotoLink,
-                        ),
-                      ),
-                      Positioned.fill(
-                        child: Material(
-                          elevation: 0,
-                          clipBehavior: Clip.hardEdge,
-                          color: Colors.transparent,
-                          type: MaterialType.card,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadiusFoundation.all24,
-                          ),
-                          child: InkWell(
-                            splashColor:
-                            ColorsFoundation.darkNeutral500.withOpacity(0.24),
-                            onTap: widget.onTap,
-                            child: Ink(),
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        top: -SpacingFoundation.verticalSpacing8,
-                        right: -SpacingFoundation.horizontalSpacing8,
-                        child: context.smallButton(
-                          data: BaseUiKitButtonData(
-                              icon: AnimatedSwitcher(
-                                  duration: widgetAnimDurations,
-                                  child: widget.favourite == true
-                                      ? ImageWidget(
-                                    svgAsset: GraphicsFoundation
-                                        .instance.svg.starFill,
-                                    color: Colors.white,
-                                    fit: BoxFit.cover,
-                                  )
-                                      : ImageWidget(
-                                    svgAsset: GraphicsFoundation
-                                        .instance.svg.starOutline,
-                                    color: Colors.white,
-                                    fit: BoxFit.cover,
-                                  )),
-                              onPressed: widget.onFavoriteTap),
-                        ),
-                      ),
-                    ],
+              constraints: BoxConstraints(maxHeight: widget.availableHeight * 0.75),
+              child: Stack(
+                clipBehavior: Clip.none,
+                fit: StackFit.expand,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadiusFoundation.all24,
+                    child: ImageWidget(
+                      link: widget.photoLink,
+                      fit: BoxFit.cover,
+                      errorWidget: errorWidget,
+                    ),
                   ),
-                ),
+                  Positioned(
+                    bottom: SpacingFoundation.verticalSpacing10,
+                    left: SpacingFoundation.horizontalSpacing10,
+                    right: SpacingFoundation.horizontalSpacing10,
+                    child: UiKitBlurredListTile(
+                      title: widget.ownerTileTitle,
+                      titleTrailing: widget.ownerTileTitleTrailing,
+                      subtitle: widget.ownerTileSubtitle,
+                      photoLink: widget.ownerPhotoLink,
+                    ),
+                  ),
+                  Positioned.fill(
+                    child: Material(
+                      elevation: 0,
+                      clipBehavior: Clip.hardEdge,
+                      color: Colors.transparent,
+                      type: MaterialType.card,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadiusFoundation.all24,
+                      ),
+                      child: InkWell(
+                        splashColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
+                        onTap: widget.onTap,
+                        child: Ink(),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: -SpacingFoundation.verticalSpacing8,
+                    right: -SpacingFoundation.horizontalSpacing8,
+                    child: context.smallButton(
+                      data: BaseUiKitButtonData(
+                          icon: AnimatedSwitcher(
+                              duration: widgetAnimDurations,
+                              child: widget.favourite == true
+                                  ? ImageWidget(
+                                      svgAsset: GraphicsFoundation.instance.svg.starFill,
+                                      color: Colors.white,
+                                      fit: BoxFit.cover,
+                                    )
+                                  : ImageWidget(
+                                      svgAsset: GraphicsFoundation.instance.svg.starOutline,
+                                      color: Colors.white,
+                                      fit: BoxFit.cover,
+                                    )),
+                          onPressed: widget.onFavoriteTap),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             SpacingFoundation.verticalSpace12,
             Text(
               '${widget.title}',
@@ -162,9 +158,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                 ),
                 SpacingFoundation.horizontalSpace4,
                 Text(
-                  widget.date != null
-                      ? DateFormat('HH:MM a, MMM dd').format(widget.date!)
-                      : 'Coming soon',
+                  widget.date != null ? DateFormat('HH:MM a, MMM dd').format(widget.date!) : 'Coming soon',
                   style: dateTextStyle,
                 ),
               ],

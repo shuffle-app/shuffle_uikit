@@ -16,16 +16,13 @@ class LoadingWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (onLoad != null) {
-      WidgetsBinding.instance
-          .addPostFrameCallback((timeStamp) => onLoad!(context));
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) => onLoad!(context));
     }
 
     return Center(
       child: Hero(
           tag: 'hero-loading',
-          child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
+          child: Column(mainAxisSize: MainAxisSize.min, children: [
             LottieBuilder.asset(
               GraphicsFoundation.instance.animations.lottie.shuffleLoader1.path,
               repeat: true,
@@ -33,13 +30,12 @@ class LoadingWidget extends StatelessWidget {
               package: 'shuffle_uikit',
             ),
             if (showLoadingText) ...[
-              SpacingFoundation.verticalSpace12,
+              SpacingFoundation.verticalSpace8,
               Shimmer(
                   gradient: GradientFoundation.buttonGradient,
-                  child: Text('Loading...',
-                      style: context.uiKitTheme?.boldTextTheme.caption1Bold))
+                  child: Text('Loading...', style: context.uiKitTheme?.boldTextTheme.caption1Bold))
             ]
           ])),
-    );
+    ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing32);
   }
 }
