@@ -87,7 +87,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   @override
   Widget build(BuildContext context) {
     return BlurredAppBarPage(
-      title: 'Shuffle UI Kit Stand',
+      title: 'UI Kit Stand',
       centerTitle: true,
       autoImplyLeading: true,
       appBarBody: Column(
@@ -109,11 +109,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       appBarTrailing: context.badgeButton(
         badgeValue: 2,
         data: BaseUiKitButtonData(
-            icon: ImageWidget(
-              svgAsset: GraphicsFoundation.instance.svg.message,
-              color: Colors.white,
-            ),
-            onPressed: () {}),
+          icon: ImageWidget(
+            svgAsset: GraphicsFoundation.instance.svg.message,
+            color: Colors.white,
+          ),
+          onPressed: () {},
+        ),
       ),
       body: SingleChildScrollView(
         controller: _scrollController,
