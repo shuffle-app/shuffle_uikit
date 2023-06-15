@@ -25,9 +25,9 @@ class DescriptionWidget extends StatelessWidget {
                     style: theme?.boldTextTheme.caption1Bold
                         .copyWith(color: Colors.white),
                   ),
-                  if ((description.replaceAll('\n', '').codeUnits.length *
-                              2.w /
-                              0.9.sw +
+                  if ((description.replaceAll('\n', '').characters.length *
+                              5.8.w ~/
+                              0.8.sw +
                           description.characters
                               .where((p0) => p0 == '\n')
                               .length) > 7)
