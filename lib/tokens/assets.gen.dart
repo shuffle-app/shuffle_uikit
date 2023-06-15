@@ -232,6 +232,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/calmness-emoji.png
   AssetGenImage get calmnessEmoji => const AssetGenImage('assets/images/png/calmness-emoji.png');
 
+  /// File path: assets/images/png/christianity.png
+  AssetGenImage get christianity => const AssetGenImage('assets/images/png/christianity.png');
+
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
@@ -243,6 +246,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/joy-emoji.png
   AssetGenImage get joyEmoji => const AssetGenImage('assets/images/png/joy-emoji.png');
+
+  /// File path: assets/images/png/judaism.png
+  AssetGenImage get judaism => const AssetGenImage('assets/images/png/judaism.png');
 
   /// File path: assets/images/png/love-emoji.png
   AssetGenImage get loveEmoji => const AssetGenImage('assets/images/png/love-emoji.png');
@@ -337,10 +343,12 @@ class $AssetsImagesPngGen {
         balloons,
         buddismFlag,
         calmnessEmoji,
+        christianity,
         eventAvatar,
         fatigueEmoji,
         jordanFlag,
         joyEmoji,
+        judaism,
         loveEmoji,
         mockAdBanner,
         mockSwiperCard,
@@ -630,6 +638,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/exclamation.svg
   SvgGenImage get exclamation => const SvgGenImage('assets/images/svg/exclamation.svg');
 
+  /// File path: assets/images/svg/family.svg
+  SvgGenImage get family => const SvgGenImage('assets/images/svg/family.svg');
+
   /// File path: assets/images/svg/files.svg
   SvgGenImage get files => const SvgGenImage('assets/images/svg/files.svg');
 
@@ -734,6 +745,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/plus.svg
   SvgGenImage get plus => const SvgGenImage('assets/images/svg/plus.svg');
+
+  /// File path: assets/images/svg/pointy-head.svg
+  SvgGenImage get pointyHead => const SvgGenImage('assets/images/svg/pointy-head.svg');
 
   /// File path: assets/images/svg/premium_account_mark.svg
   SvgGenImage get premiumAccountMark => const SvgGenImage('assets/images/svg/premium_account_mark.svg');
@@ -959,6 +973,7 @@ class $AssetsImagesSvgGen {
         docsOutline,
         dollar,
         exclamation,
+        family,
         files,
         fireWhite,
         flag,
@@ -994,6 +1009,7 @@ class $AssetsImagesSvgGen {
         play,
         playArrow,
         plus,
+        pointyHead,
         premiumAccountMark,
         proAccountMark,
         profilePlus,
