@@ -1,48 +1,52 @@
 import 'dart:io';
 
 String wrapWidgetsChild(String source) {
-  var childKeywordIndex = 0;
-  var twoDotsIndex = 0;
-  var openingRoundBracketIndex = 0;
-  var closingRoundBracketIndex = 0;
-  var bracketBalance = 0;
-  while (childKeywordIndex < source.length) {
-    childKeywordIndex = source.indexOf('child:', childKeywordIndex + 20);
-    if (childKeywordIndex == -1) {
-      break;
-    }
-    final lastMenuWrapIndex = source.lastIndexOf('MenuWrap');
-    if (childKeywordIndex < lastMenuWrapIndex) {
-      childKeywordIndex += 10;
-      continue;
-    }
-
-    twoDotsIndex = source.indexOf(':', childKeywordIndex);
-
-    openingRoundBracketIndex = source.indexOf('(', childKeywordIndex);
-    bracketBalance = 1;
-
-    var i = openingRoundBracketIndex;
-    while (bracketBalance > 0) {
-      i++;
-      if (source[i] == '(') {
-        bracketBalance++;
-      } else if (source[i] == ')') {
-        bracketBalance--;
+  try {
+    var childKeywordIndex = 0;
+    var twoDotsIndex = 0;
+    var openingRoundBracketIndex = 0;
+    var closingRoundBracketIndex = 0;
+    var bracketBalance = 0;
+    while (childKeywordIndex < source.length) {
+      childKeywordIndex = source.indexOf('child:', childKeywordIndex + 20);
+      if (childKeywordIndex == -1) {
+        break;
       }
+      final lastMenuWrapIndex = source.lastIndexOf('MenuWrap');
+      if (childKeywordIndex < lastMenuWrapIndex) {
+        childKeywordIndex += 10;
+        continue;
+      }
+
+      twoDotsIndex = source.indexOf(':', childKeywordIndex);
+
+      openingRoundBracketIndex = source.indexOf('(', childKeywordIndex);
+      bracketBalance = 1;
+
+      var i = openingRoundBracketIndex;
+      while (bracketBalance > 0) {
+        i++;
+        if (source[i] == '(') {
+          bracketBalance++;
+        } else if (source[i] == ')') {
+          bracketBalance--;
+        }
+      }
+
+      closingRoundBracketIndex = i;
+
+      source = source.replaceRange(
+          closingRoundBracketIndex + 1, closingRoundBracketIndex + 1, ')');
+
+      source = source.replaceRange(
+          twoDotsIndex + 1, twoDotsIndex + 1, 'MenuWrap(child:');
+      source = setClassNameIfNotChanged(source, twoDotsIndex);
     }
 
-    closingRoundBracketIndex = i;
-
-    source = source.replaceRange(
-        closingRoundBracketIndex + 1, closingRoundBracketIndex + 1, ')');
-
-    source = source.replaceRange(
-        twoDotsIndex + 1, twoDotsIndex + 1, 'MenuWrap(child:');
-    source = setClassNameIfNotChanged(source, twoDotsIndex);
+    return source;
+  } on RangeError {
+    return source;
   }
-
-  return source;
 }
 
 String wrapWidgetsChildren(String source) {
@@ -98,23 +102,25 @@ String setClassNameIfNotChanged(String source, int classNameIsBeforeThisIndex) {
   if (!className.endsWith('WrapForTesting')) {
     source = source.replaceAll(className, '${className}WrapForTesting');
   }
-  print('|$className|');
   return source;
 }
 
 Future<void> generateForFile(String path) async {
-  final sourceFile = File(
-      '../../$path'); // path = lib/ui_kit/atoms/buttons/gradient_button_with_text_and_icon.dart
-  final sourceCode = await sourceFile.readAsString();
+  try {
+    final sourceFile = File(
+        '../../$path'); // path = lib/ui_kit/atoms/buttons/gradient_button_with_text_and_icon.dart
+    final sourceCode = await sourceFile.readAsString();
 
-  var resultCode = wrapWidgetsChild(sourceCode);
-  resultCode = wrapWidgetsChildren(resultCode);
+    var resultCode = wrapWidgetsChild(sourceCode);
+    resultCode = wrapWidgetsChildren(resultCode);
 
-  print(resultCode);
+    final generatedFile =
+        File('../../example/lib/generated/${path.split("lib/").last}')
+          ..createSync(recursive: true, exclusive: true);
 
-  final generatedFile = File(
-      '../../example/lib/generated/${path.split("lib/").last}')
-    ..createSync(recursive: true);
-  print(generatedFile.absolute);
-  generatedFile.writeAsStringSync(resultCode);
+    generatedFile.writeAsStringSync(resultCode);
+  } on Exception {
+    print(
+        'if you want to overwrite generated file, delete it: example/lib/generated/${path.split("lib/").last}');
+  }
 }
