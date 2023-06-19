@@ -2,6 +2,7 @@ import 'package:example/presentation/ui/showcase/buttons_grid.dart';
 import 'package:example/presentation/ui/showcase/buttons_list.dart';
 import 'package:example/presentation/ui/showcase/input_fields.dart';
 import 'package:example/presentation/ui/showcase/input_fields_list.dart';
+import 'package:example/presentation/ui/widget_view/widget_menu_wrap.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -580,7 +581,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.bottomNavigationBarSpacing,
-            ],
+            ]
+            .map((e) => MenuWrap(child: e)).toList()
+            ,
           ),
         ).paddingAll(EdgeInsetsFoundation.all16),
       ),
