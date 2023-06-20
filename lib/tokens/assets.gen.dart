@@ -220,6 +220,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/anxiety-emogi.png
   AssetGenImage get anxietyEmogi => const AssetGenImage('assets/images/png/anxiety-emogi.png');
 
+  /// File path: assets/images/png/atheist.png
+  AssetGenImage get atheist => const AssetGenImage('assets/images/png/atheist.png');
+
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
@@ -232,17 +235,26 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/calmness-emoji.png
   AssetGenImage get calmnessEmoji => const AssetGenImage('assets/images/png/calmness-emoji.png');
 
+  /// File path: assets/images/png/christianity.png
+  AssetGenImage get christianity => const AssetGenImage('assets/images/png/christianity.png');
+
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
   /// File path: assets/images/png/fatigue-emoji.png
   AssetGenImage get fatigueEmoji => const AssetGenImage('assets/images/png/fatigue-emoji.png');
 
+  /// File path: assets/images/png/hindu.png
+  AssetGenImage get hindu => const AssetGenImage('assets/images/png/hindu.png');
+
   /// File path: assets/images/png/jordan_flag.png
   AssetGenImage get jordanFlag => const AssetGenImage('assets/images/png/jordan_flag.png');
 
   /// File path: assets/images/png/joy-emoji.png
   AssetGenImage get joyEmoji => const AssetGenImage('assets/images/png/joy-emoji.png');
+
+  /// File path: assets/images/png/judaism.png
+  AssetGenImage get judaism => const AssetGenImage('assets/images/png/judaism.png');
 
   /// File path: assets/images/png/love-emoji.png
   AssetGenImage get loveEmoji => const AssetGenImage('assets/images/png/love-emoji.png');
@@ -333,14 +345,18 @@ class $AssetsImagesPngGen {
         yoga,
         angryEmoji,
         anxietyEmogi,
+        atheist,
         atmosphere,
         balloons,
         buddismFlag,
         calmnessEmoji,
+        christianity,
         eventAvatar,
         fatigueEmoji,
+        hindu,
         jordanFlag,
         joyEmoji,
+        judaism,
         loveEmoji,
         mockAdBanner,
         mockSwiperCard,
