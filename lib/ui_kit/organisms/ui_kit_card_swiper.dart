@@ -13,7 +13,7 @@ class UiKitCardSwiper extends StatelessWidget {
     Key? key,
     required this.cards,
     required this.onSwipe,
-     this.onEnd,
+    this.onEnd,
     CardSwiperController? controller,
   })  : controller = controller ?? CardSwiperController(),
         super(key: key);
@@ -22,15 +22,13 @@ class UiKitCardSwiper extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, size) {
-
-
         return CardSwiper(
           controller: controller,
           cardsCount: cards.length,
           onSwipe: onSwipe,
           onEnd: onEnd,
           maxAngle: 180,
-          isLoop: false,
+          isLoop: true,
           numberOfCardsDisplayed: cards.length,
           backCardOffset: Offset.zero,
           padding: EdgeInsets.zero,

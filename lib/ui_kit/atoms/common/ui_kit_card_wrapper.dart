@@ -4,6 +4,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitCardWrapper extends StatelessWidget {
   final Widget child;
   final BorderRadius? borderRadius;
+  final BorderSide? border;
   final double? width;
   final double? height;
   final Color? color;
@@ -15,6 +16,7 @@ class UiKitCardWrapper extends StatelessWidget {
     this.width,
     this.height,
     this.color,
+    this.border,
   }) : super(key: key);
 
   @override
@@ -27,6 +29,7 @@ class UiKitCardWrapper extends StatelessWidget {
         color: color ?? theme?.cardColor ?? ColorsFoundation.surface3,
         shape: RoundedRectangleBorder(
           borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
+          side: border ?? BorderSide.none,
         ),
         child: Container(
           width: width,

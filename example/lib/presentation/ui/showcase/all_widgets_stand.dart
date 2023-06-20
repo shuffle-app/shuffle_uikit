@@ -236,6 +236,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               UiKitTitledSection(
+                hasError: true,
+                errorText: 'Please fill in this field',
                 title: 'Gender',
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
