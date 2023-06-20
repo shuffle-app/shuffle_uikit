@@ -50,7 +50,7 @@ void main() {
       ));
       await multiScreenGolden(
         tester,
-        'TitledAccentInfo',
+        '',
         devices: [
           const Device(
             name: 'iPhone 11 pro max,11 ,XR,XS max  414 x 896 ',
