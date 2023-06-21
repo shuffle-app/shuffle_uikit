@@ -14,8 +14,10 @@ extension NavigatorExtention on BuildContext {
     bool maintainState = true,
     bool fullscreenDialog = false,
   }) async =>
-      await Navigator.of(this).push(MaterialPageRoute(
-        builder: (_) => screen,
+      await Navigator.of(this).push(
+          PageRouteBuilder(pageBuilder: (context,animation,_)=>FadeTransition(opacity: animation,child: screen,),
+          // MaterialPageRoute(
+        // builder: (_) => screen,
         settings: settings,
         maintainState: maintainState,
         fullscreenDialog: fullscreenDialog,
