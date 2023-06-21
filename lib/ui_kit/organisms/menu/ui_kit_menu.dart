@@ -26,11 +26,12 @@ class UiKitMenu<T> extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          title,
-          style: boldTextTheme?.labelLarge,
-        ),
-        SpacingFoundation.verticalSpace4,
+        // if(title!=null)...[
+        // Text(
+        //   title!,
+        //   style: boldTextTheme?.labelLarge,
+        // ),
+        // SpacingFoundation.verticalSpace4],
         Material(
           clipBehavior: Clip.hardEdge,
           color: ColorsFoundation.surface3,

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -6,12 +7,14 @@ class UiKitVerticalChip extends StatelessWidget {
   final ImageWidget sign;
   final VoidCallback? onTap;
   final bool selected;
+  final AutoSizeGroup? autoSizeGroup;
 
   const UiKitVerticalChip({
     Key? key,
     required this.caption,
     required this.sign,
     this.onTap,
+    this.autoSizeGroup,
     this.selected = false,
   }) : super(key: key);
 
@@ -32,8 +35,10 @@ class UiKitVerticalChip extends StatelessWidget {
             children: [
               sign,
               SpacingFoundation.verticalSpace12,
-              Text(
+              AutoSizeText(
                 caption,
+                group: autoSizeGroup,
+                maxLines: 1,
                 style: context.uiKitTheme?.boldTextTheme.caption1Bold,
               ),
             ],

@@ -48,7 +48,8 @@ class _UiKitHorizontalWheelNumberSelectorState
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
-    final itemHeight = 36.h;
+    final itemWidth = 49.w;
+    final itemHeight = itemWidth*0.82;
 
     return LayoutBuilder(
       builder: (context, size) {
@@ -77,15 +78,11 @@ class _UiKitHorizontalWheelNumberSelectorState
                         child: NotificationListener<ScrollNotification>(
                           onNotification: (scrollNotification) {
                             if (scrollNotification is ScrollEndNotification) {
-                              log('scrollNotification got on _currentValueNotifier.value ${_currentValueNotifier.value}');
-                              log('_scrollController got on _scrollController.selectedItem ${_scrollController.selectedItem}');
-                              // log('_scrollController got on _scrollController.position ${_scrollController.position}');
-                              // log('_scrollController got on _scrollController.positions ${_scrollController.positions}');
                               WidgetsBinding.instance.addPostFrameCallback(
                                   (timeStamp) => _scrollController.animateTo(
                                       widget.values.indexOf(
                                               _currentValueNotifier.value) *
-                                          itemHeight,
+                                          itemWidth,
                                       duration:
                                           const Duration(milliseconds: 100),
                                       curve: Curves.easeIn));
@@ -95,7 +92,6 @@ class _UiKitHorizontalWheelNumberSelectorState
                           },
                           child: ListWheelScrollView(
                             controller: _scrollController,
-                            // physics: const PageScrollPhysics(),
                             onSelectedItemChanged: (index) {
                               widget.onValueChanged?.call(widget.values[index]);
                               _currentValueNotifier.value =
@@ -104,9 +100,7 @@ class _UiKitHorizontalWheelNumberSelectorState
                             renderChildrenOutsideViewport: true,
                             clipBehavior: Clip.none,
                             perspective: 0.003,
-                            // physics: const BouncingScrollPhysics(),
-                            // overAndUnderCenterOpacity: 0.99,
-                            itemExtent: itemHeight,
+                            itemExtent: itemWidth,
                             useMagnifier: false,
                             diameterRatio: 100000,
                             children: widget.values.map(
@@ -123,8 +117,8 @@ class _UiKitHorizontalWheelNumberSelectorState
                                           (index - currentValueIndex).abs();
                                       double opacity = 1;
                                       if (deltaIndex > 2) opacity = 0.05;
-                                      if (deltaIndex == 2) opacity = 0.5;
-                                      if (deltaIndex == 1) opacity = 1;
+                                      if (deltaIndex == 2) opacity = 0.2;
+                                      if (deltaIndex == 1) opacity = 0.5;
 
                                       return RotatedBox(
                                         quarterTurns: 1,
@@ -147,10 +141,11 @@ class _UiKitHorizontalWheelNumberSelectorState
                             ).toList(),
                           ),
                         )),
-                    Positioned(
-                      bottom: itemHeight / 16,
-                      left: 0,
-                      right: 0,
+                    Center(
+                    // Positioned(
+                      // bottom: itemHeight / 16,
+                      // left: 0,
+                      // right: 0,
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -159,23 +154,14 @@ class _UiKitHorizontalWheelNumberSelectorState
                               animation: _currentValueNotifier,
                               builder: (context, child) {
                                 return Container(
-                                  width: itemHeight,
-                                  height: itemHeight * 0.9,
+                                  width: itemWidth,
+                                  height: itemHeight,
                                   decoration: BoxDecoration(
                                     color: Colors.transparent,
-                                    //context.uiKitTheme?.cardColor,
                                     borderRadius: BorderRadiusFoundation.all10,
                                     border: Border.all(
                                         color: Colors.white, width: 2),
                                   ),
-                                  // child:
-
-                                  // Center(
-                                  //   child: Text(
-                                  //     _currentValueNotifier.value.toString(),
-                                  //     style: boldTextTheme?.title1,
-                                  //   ).paddingAll(EdgeInsetsFoundation.all4),
-                                  // ),
                                 );
                               },
                             )

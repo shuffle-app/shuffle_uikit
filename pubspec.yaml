@@ -23,6 +23,7 @@ dependencies:
   gradient_borders: ^1.0.0
   shimmer: ^3.0.0
   html: ^0.15.4
+  auto_size_text: ^3.0.0
 
   #dialogs widgets
   popover: ^0.2.8+2
