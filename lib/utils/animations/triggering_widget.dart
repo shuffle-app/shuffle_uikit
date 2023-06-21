@@ -5,15 +5,15 @@ class TriggeringWidget extends StatefulWidget {
     Key? key,
     required this.child,
     this.startDelay,
+    this.animDuration = const Duration(milliseconds: 1600),
     this.startOffset = const Offset(0,0),
     this.endOffset = const Offset(0,10),
-    this.applyReverseOnEnd = false,
-    this.alignment = Alignment.centerLeft,
+    this.applyReverseOnEnd = true,
   }) : super(key: key);
 
   final Widget child;
-  final Alignment alignment;
   final Duration? startDelay;
+  final Duration animDuration;
   final Offset startOffset;
   final Offset endOffset;
   final bool applyReverseOnEnd;
@@ -25,7 +25,7 @@ class TriggeringWidget extends StatefulWidget {
 class _TriggeringWidgetState extends State<TriggeringWidget>
     with SingleTickerProviderStateMixin {
   late final controller = AnimationController(
-    duration: const Duration(milliseconds: 1600),
+    duration: widget.animDuration,
     vsync: this,
   );
   late final curvedAnimation =
@@ -48,7 +48,7 @@ class _TriggeringWidgetState extends State<TriggeringWidget>
 
   //ignore: unused parameter
   void listenAnim(AnimationStatus status) {
-    if (status == AnimationStatus.completed) {
+    if (status == AnimationStatus.completed && widget.applyReverseOnEnd) {
       controller.reverse();
     } else if (status == AnimationStatus.dismissed) {
       Future.delayed(const Duration(seconds: 10))
