@@ -16,6 +16,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final TextEditingController _controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final ScrollController _scrollController = ScrollController();
+  final GlobalKey _gradientTextKey = GlobalKey();
 
   bool selection = false;
   final List<UiKitMenuItem<String>> _menuItems = [
@@ -125,6 +126,37 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              UiKitOverflownActionCard(
+                action: context.smallButton(
+                  data: BaseUiKitButtonData(
+                    onPressed: () {},
+                    text: 'Check out it',
+                  ),
+                ),
+                title: RichText(
+                  key: _gradientTextKey,
+                  text: TextSpan(
+                    style: context.uiKitTheme?.boldTextTheme.body,
+                    children: [
+                      const TextSpan(
+                        text: 'Selection of the best',
+                      ),
+                      TextSpan(
+                        text: ' free places',
+                        style: context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(
+                            foreground: Paint()
+                              ..style = PaintingStyle.fill
+                              ..shader = GradientFoundation.buttonGradient
+                                  .createShader(_gradientTextKey.currentContext?.findRenderObject()?.paintBounds ?? Rect.zero)),
+                      ),
+                    ],
+                  ),
+                ),
+                overflownIcon: ImageWidget(
+                  svgAsset: GraphicsFoundation.instance.svg.map,
+                ),
+                decorationIcons: [],
+              ),
               UiKitAccentCard(
                 title: 'Ballooning festival',
                 additionalInfo: '22-23 March',
