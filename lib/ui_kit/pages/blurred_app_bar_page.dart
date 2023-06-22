@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BlurredAppBarPage extends StatelessWidget {
-// class BlurredAppBarPage extends StatefulWidget {
   final String title;
   final bool? autoImplyLeading;
   final bool centerTitle;
@@ -13,7 +12,8 @@ class BlurredAppBarPage extends StatelessWidget {
   final Widget? leading;
   final Widget body;
   final ScrollController controller;
-  final bool wrapSliverBox;
+  // final bool wrapSliverBox;
+  // final PreferredSizeWidget? bottom;
 
   BlurredAppBarPage({
     Key? key,
@@ -22,33 +22,14 @@ class BlurredAppBarPage extends StatelessWidget {
     this.autoImplyLeading,
     this.leading,
     this.appBarBody,
-    this.wrapSliverBox = true,
+    // this.wrapSliverBox = true,
     ScrollController? controller,
     this.appBarTrailing,
+    // this.bottom,
     this.centerTitle = false,
   })  : controller = controller ?? ScrollController(),
         super(key: key);
-//
-//   @override
-//   State<BlurredAppBarPage> createState() => _BlurredAppBarPageState();
-// }
-//
-// class _BlurredAppBarPageState extends State<BlurredAppBarPage>
-//     with WidgetsBindingObserver {
-//   @override
-//   void didChangeMetrics() {
-//     final focusedCtx = FocusManager.instance.primaryFocus!.context;
-//     if (focusedCtx != null) {
-//       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-//         Scrollable.ensureVisible(
-//           focusedCtx,
-//           duration: const Duration(milliseconds: 200),
-//           curve: Curves.easeIn,
-//         );
-//       });
-//     }
-//     super.didChangeMetrics();
-//   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -88,12 +69,14 @@ class BlurredAppBarPage extends StatelessWidget {
                 autoImplyLeading: autoImplyLeading,
                 centerTitle: centerTitle,
               ),
+              // bottom: bottom,
             );
           },
         ),
-        // SliverList.builder(
-        //     itemBuilder: (c, i) =>
-        body.wrapSliverBox,
+        // if(wrapSliverBox)
+        body.wrapSliverBox
+        // else
+        //   body.wrapSliverFillRemaining
         // itemCount: 1)
       ],
     );
