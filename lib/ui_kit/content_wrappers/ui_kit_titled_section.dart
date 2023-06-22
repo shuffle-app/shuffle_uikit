@@ -6,14 +6,18 @@ class UiKitTitledSection extends StatelessWidget {
   final Widget child;
   final bool? hasError;
   final String? errorText;
+  final Color? color;
 
   const UiKitTitledSection({
     Key? key,
     this.hasError,
+    this.color,
     this.errorText,
     required this.title,
     required this.child,
-  })  : assert((hasError ?? false) && errorText != null, 'When has error is true, error text must be provided'),
+  })
+      : assert(!((hasError ?? false) && errorText ==
+      null), 'When has error is $hasError, error text must be provided'),
         super(key: key);
 
   @override
@@ -23,11 +27,12 @@ class UiKitTitledSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         UiKitCardWrapper(
+          color: color,
           border: hasError == true
               ? const BorderSide(
-                  color: ColorsFoundation.error,
-                  width: 1,
-                )
+            color: ColorsFoundation.error,
+            width: 1,
+          )
               : null,
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -52,7 +57,7 @@ class UiKitTitledSection extends StatelessWidget {
             style: context.uiKitTheme?.regularTextTheme.caption2.copyWith(
               color: ColorsFoundation.error,
             ),
-          ),
+          ).paddingSymmetric(horizontal:  context.uiKitTheme?.cardTheme?.margin?.horizontal ?? 4),
         ],
       ],
     );

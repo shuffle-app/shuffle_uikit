@@ -646,6 +646,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/exclamation.svg
   SvgGenImage get exclamation => const SvgGenImage('assets/images/svg/exclamation.svg');
 
+  /// File path: assets/images/svg/family.svg
+  SvgGenImage get family => const SvgGenImage('assets/images/svg/family.svg');
+
   /// File path: assets/images/svg/files.svg
   SvgGenImage get files => const SvgGenImage('assets/images/svg/files.svg');
 
@@ -750,6 +753,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/plus.svg
   SvgGenImage get plus => const SvgGenImage('assets/images/svg/plus.svg');
+
+  /// File path: assets/images/svg/pointy-head.svg
+  SvgGenImage get pointyHead => const SvgGenImage('assets/images/svg/pointy-head.svg');
 
   /// File path: assets/images/svg/premium_account_mark.svg
   SvgGenImage get premiumAccountMark => const SvgGenImage('assets/images/svg/premium_account_mark.svg');
@@ -975,6 +981,7 @@ class $AssetsImagesSvgGen {
         docsOutline,
         dollar,
         exclamation,
+        family,
         files,
         fireWhite,
         flag,
@@ -1010,6 +1017,7 @@ class $AssetsImagesSvgGen {
         play,
         playArrow,
         plus,
+        pointyHead,
         premiumAccountMark,
         proAccountMark,
         profilePlus,

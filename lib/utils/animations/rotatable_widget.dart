@@ -6,15 +6,17 @@ class RotatableWidget extends StatefulWidget {
     Key? key,
     required this.child,
     this.startDelay,
+    this.animDuration = const Duration(milliseconds: 1600),
     this.startAngle = 0,
     this.endAngle = math.pi * 360 / 180,
-    this.applyReverseOnEnd = false,
+    this.applyReverseOnEnd = true,
     this.alignment = Alignment.centerLeft,
   }) : super(key: key);
 
   final Widget child;
   final Alignment alignment;
   final Duration? startDelay;
+  final Duration animDuration;
   final double startAngle;
   final double endAngle;
   final bool applyReverseOnEnd;
@@ -26,7 +28,7 @@ class RotatableWidget extends StatefulWidget {
 class _RotatableWidgetState extends State<RotatableWidget>
     with SingleTickerProviderStateMixin {
   late final controller = AnimationController(
-    duration: const Duration(milliseconds: 1600),
+    duration: widget.animDuration,
     vsync: this,
   );
   late final curvedAnimation =
@@ -49,7 +51,7 @@ class _RotatableWidgetState extends State<RotatableWidget>
 
   //ignore: unused parameter
   void listenAnim(AnimationStatus status) {
-    if (status == AnimationStatus.completed) {
+    if (status == AnimationStatus.completed&& widget.applyReverseOnEnd) {
       controller.reverse();
     } else if (status == AnimationStatus.dismissed) {
       Future.delayed(const Duration(seconds: 10))
