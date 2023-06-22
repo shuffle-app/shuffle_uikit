@@ -8,23 +8,22 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createBadgeButtonNoValue(
-          data: data,
-          badgeAlignment: badgeAlignment,
-        )
+      data: data,
+      badgeAlignment: badgeAlignment,
+    )
         .build(this);
   }
 
-  Widget smallButton(
-      {required BaseUiKitButtonData data,
-      bool? isTextButton,
-      bool? blurred,
-      bool uppercase = true}) {
+  Widget smallButton({required BaseUiKitButtonData data,
+    bool? isTextButton,
+    bool? blurred,
+    bool uppercase = true}) {
     return WidgetsFactory.of(this)!
         .createSmallButton(
-            data: data,
-            isTextButton: isTextButton ?? false,
-            blurred: blurred,
-            uppercase: uppercase)
+        data: data,
+        isTextButton: isTextButton ?? false,
+        blurred: blurred,
+        uppercase: uppercase)
         .build(this);
   }
 
@@ -34,9 +33,9 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createOutlinedButton(
-          data: data,
-          color: color,
-        )
+      data: data,
+      color: color,
+    )
         .build(this);
   }
 
@@ -47,10 +46,10 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createSmallOutlinedButton(
-          data: data,
-          color: color,
-        blurred:blurred
-        )
+        data: data,
+        color: color,
+        blurred: blurred
+    )
         .build(this);
   }
 
@@ -61,10 +60,10 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createDialogButton(
-          data: data,
-          dialogButtonType: dialogButtonType,
-          small: small,
-        )
+      data: data,
+      dialogButtonType: dialogButtonType,
+      small: small,
+    )
         .build(this);
   }
 
@@ -75,10 +74,10 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createBadgeButtonWithValue(
-          data: data,
-          badgeValue: badgeValue,
-          alignment: badgeAlignment,
-        )
+      data: data,
+      badgeValue: badgeValue,
+      alignment: badgeAlignment,
+    )
         .build(this);
   }
 
@@ -89,18 +88,18 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createOrdinaryButton(
-          data: data,
-          isTextButton: isTextButton ?? false,
-          blurred: blurred,
-        )
+      data: data,
+      isTextButton: isTextButton ?? false,
+      blurred: blurred,
+    )
         .build(this);
   }
 
   Widget gradientButton({required BaseUiKitButtonData data}) {
     return WidgetsFactory.of(this)!
         .createGradientButton(
-          data: data,
-        )
+      data: data,
+    )
         .build(this);
   }
 
@@ -113,12 +112,12 @@ extension FactoryExtention on BuildContext {
   }) {
     return WidgetsFactory.of(this)!
         .createUserTile(
-          name: name,
-          username: username,
-          avatarUrl: avatarUrl,
-          type: type,
-          onTap: onTap,
-        )
+      name: name,
+      username: username,
+      avatarUrl: avatarUrl,
+      type: type,
+      onTap: onTap,
+    )
         .build(this);
   }
 
@@ -131,11 +130,11 @@ extension FactoryExtention on BuildContext {
   }) {
     Widget popUp = WidgetsFactory.of(this)!
         .createNotificationPopUp(
-          requiredData: requiredData,
-          primaryActionWidget: primaryActionWidget,
-          secondaryActionWidget: secondaryActionWidget,
-          dismissActionWidget: dismissActionWidget,
-        )
+      requiredData: requiredData,
+      primaryActionWidget: primaryActionWidget,
+      secondaryActionWidget: secondaryActionWidget,
+      dismissActionWidget: dismissActionWidget,
+    )
         .build(this);
     if (hasShadow ?? false) {
       return UiKitShadowWrapper(
