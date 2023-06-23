@@ -126,6 +126,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SpacingFoundation.verticalSpace16,
               UiKitOverflownActionCard(
                 action: context.smallButton(
                   data: BaseUiKitButtonData(
@@ -142,21 +143,66 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                         text: 'Selection of the best',
                       ),
                       TextSpan(
-                        text: ' free places',
+                        text: '\nfree places',
                         style: context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(
-                            foreground: Paint()
-                              ..style = PaintingStyle.fill
-                              ..shader = GradientFoundation.buttonGradient
-                                  .createShader(_gradientTextKey.currentContext?.findRenderObject()?.paintBounds ?? Rect.zero)),
+                            // foreground: Paint()
+                            //   ..style = PaintingStyle.fill
+                            //   ..shader = GradientFoundation.buttonGradient
+                            //       .createShader(_gradientTextKey.currentContext?.findRenderObject()?.paintBounds ?? Rect.zero),
+                            ),
                       ),
                     ],
                   ),
                 ),
-                overflownIcon: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.map,
-                ),
-                decorationIcons: [],
+                overflownIconLink: GraphicsFoundation.instance.svg.map.path,
+                decorationIcons: [
+                  OverflownActionCardDecorationIconData(
+                    iconLink: GraphicsFoundation.instance.svg.coin.path,
+                    position: DecorationIconPosition(
+                      top: 4,
+                      right: -4,
+                    ),
+                    iconSize: 24,
+                    rotationAngle: -26,
+                  ),
+                  OverflownActionCardDecorationIconData(
+                    iconLink: GraphicsFoundation.instance.svg.coin.path,
+                    iconSize: 27,
+                    position: DecorationIconPosition(
+                      bottom: 0,
+                      right: 64,
+                    ),
+                    rotationAngle: 47.5,
+                  ),
+                  OverflownActionCardDecorationIconData(
+                    iconLink: GraphicsFoundation.instance.svg.icecream.path,
+                    position: DecorationIconPosition(
+                      right: 86,
+                      bottom: 0,
+                    ),
+                    rotationAngle: -15,
+                  ),
+                  OverflownActionCardDecorationIconData(
+                    iconLink: GraphicsFoundation.instance.svg.firstAidKit.path,
+                    iconSize: 44,
+                    position: DecorationIconPosition(
+                      top: 32,
+                      right: 69,
+                    ),
+                    rotationAngle: 30,
+                  ),
+                  OverflownActionCardDecorationIconData(
+                    iconLink: GraphicsFoundation.instance.svg.coin.path,
+                    iconSize: 34,
+                    position: DecorationIconPosition(
+                      top: 8,
+                      right: 30,
+                    ),
+                    rotationAngle: 0,
+                  ),
+                ],
               ),
+              SpacingFoundation.verticalSpace16,
               UiKitAccentCard(
                 title: 'Ballooning festival',
                 additionalInfo: '22-23 March',
@@ -864,7 +910,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.bottomNavigationBarSpacing,
             ],
           ),
-        ).paddingAll(EdgeInsetsFoundation.all16),
+        ).paddingAll(EdgeInsetsFoundation.zero),
       ),
     );
   }
