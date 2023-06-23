@@ -3,6 +3,7 @@
 export '../content_wrappers/ui_kit_shadow_wrapper.dart';
 export '../content_wrappers/ui_kit_titled_section.dart';
 export 'app_bar/custom_app_bar.dart';
+export 'cards/ui_kit_compact_ordered_rating_card.dart';
 export 'cards/ui_kit_compact_text_card.dart';
 export 'cards/ui_kit_icon_hint_card.dart';
 export 'cards/ui_kit_overflown_action_card.dart';
