@@ -127,6 +127,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              UiKitCompactOrderedRatingCard(
+                order: 1,
+                rating: 4.5,
+                title: 'Adventure Water Park',
+                imageLink: GraphicsFoundation.instance.png.compactRatingCardMock.path,
+                onPressed: () {},
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitOverflownActionCard(
                 action: context.smallButton(
                   data: BaseUiKitButtonData(
