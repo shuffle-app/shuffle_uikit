@@ -6,6 +6,7 @@ export 'app_bar/custom_app_bar.dart';
 export 'cards/ui_kit_compact_text_card.dart';
 export 'cards/ui_kit_icon_hint_card.dart';
 export 'cards/ui_kit_overflown_action_card.dart';
+export 'cards/ui_kit_titled_card_with_background.dart';
 export 'cards/ui_kit_vertical_chip.dart';
 export 'chips/default_importance_chip.dart';
 export 'chips/high_importance_chip.dart';

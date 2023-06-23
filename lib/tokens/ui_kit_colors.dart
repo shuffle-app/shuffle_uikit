@@ -19,8 +19,10 @@ class UiKitColors {
   static const darkNeutral900 = Color(0xff7E8083);
 
   static const yellow = Color(0xffC6E216);
+  static const brightYellow = Color(0xffFAE634);
   static const weatherYellow = Color(0xffE5C130);
   static const orange = Color(0xffE32900);
+  static const red = Color(0xffFA4C34);
   static const pink = Color(0xffD808FA);
   static const error = Color(0xffFF453A);
   static const warning = Color(0xffFF9F0A);
