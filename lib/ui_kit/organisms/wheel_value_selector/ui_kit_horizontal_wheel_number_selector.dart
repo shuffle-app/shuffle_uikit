@@ -51,10 +51,7 @@ class _UiKitHorizontalWheelNumberSelectorState
     final itemWidth = 49.w;
     final itemHeight = itemWidth*0.82;
 
-    return LayoutBuilder(
-      builder: (context, size) {
-
-        return UiKitCardWrapper(
+    return UiKitCardWrapper(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -106,8 +103,7 @@ class _UiKitHorizontalWheelNumberSelectorState
                             children: widget.values.map(
                               (e) {
 
-                                return RepaintBoundary(
-                                  child: AnimatedBuilder(
+                                return AnimatedBuilder(
                                     animation: _currentValueNotifier,
                                     builder: (context, child) {
                                       final index = widget.values.indexOf(e);
@@ -135,7 +131,7 @@ class _UiKitHorizontalWheelNumberSelectorState
                                           horizontal: SpacingFoundation
                                               .horizontalSpacing4);
                                     },
-                                  ),
+                                  // ),
                                 );
                               },
                             ).toList(),
@@ -173,8 +169,8 @@ class _UiKitHorizontalWheelNumberSelectorState
               SpacingFoundation.verticalSpace4,
             ],
           ),
-        );
-      },
+
+
     );
   }
 }
