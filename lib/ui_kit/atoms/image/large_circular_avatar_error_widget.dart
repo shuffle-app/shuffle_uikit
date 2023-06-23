@@ -25,7 +25,8 @@ class LargeCircularAvatarErrorWidget extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            text.split(' ').map((e) => e.characters.first).join(''),
+            text.isEmpty ? '?':
+            text.trim().split(' ').map((e) => e.characters.first).join(''),
             style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(
               color: ColorsFoundation.darkNeutral900,
             ),

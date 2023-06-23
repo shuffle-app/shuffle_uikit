@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitBorderedChipWithIcon extends StatelessWidget {
@@ -35,10 +36,11 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               SpacingFoundation.horizontalSpace8,
+              ConstrainedBox(constraints: BoxConstraints(maxHeight: 16.w),child:
               ClipRRect(
                 borderRadius: BorderRadiusFoundation.all24,
                 child: icon,
-              ),
+              )),
               SpacingFoundation.horizontalSpace8,
               Text(
                 title,

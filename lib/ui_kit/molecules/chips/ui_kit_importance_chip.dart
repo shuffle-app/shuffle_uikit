@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitImportanceChip extends StatelessWidget {
   final String title;
+  final bool joke;
   final ImportanceChip importance;
   final ValueChanged<ImportanceChip>? onImportanceChanged;
 
-  late final ValueNotifier<ImportanceChip> _valueNotifier = ValueNotifier<ImportanceChip>(importance);
+  late final ValueNotifier<ImportanceChip> _valueNotifier =
+      ValueNotifier<ImportanceChip>(importance);
 
   UiKitImportanceChip({
     Key? key,
     required this.title,
+    this.joke = false,
     required this.importance,
     this.onImportanceChanged,
   }) : super(key: key);
@@ -23,89 +27,43 @@ class UiKitImportanceChip extends StatelessWidget {
         final importance = _valueNotifier.value;
 
         return AnimatedSwitcher(
-          duration: const Duration(milliseconds: 50),
-          transitionBuilder: (child, animation) {
-            return FadeTransition(
-              opacity: animation,
-              child: child,
-            );
-          },
-          child: importance == ImportanceChip.high
-              ? HighImportanceChip(
-                  text: title,
-            onTap: () {
-              onImportanceChanged?.call(ImportanceChip.none);
-              _valueNotifier.value = ImportanceChip.none;
-
+            duration: const Duration(milliseconds: 50),
+            transitionBuilder: (child, animation) {
+              return FadeTransition(
+                opacity: animation,
+                child: child,
+              );
             },
-                )
-              : importance == ImportanceChip.medium
-                  ? MediumImportanceChip(
+            child: UiKitShadowWrapper(
+              applyShadow: joke,
+              color: UiKitColors.pinkLight,
+              shape: BoxShape.circle,
+              child: importance == ImportanceChip.high
+                  ? HighImportanceChip(
                       text: title,
-            onTap: () {
-              onImportanceChanged?.call(ImportanceChip.high);
-              _valueNotifier.value = ImportanceChip.high;
-
-            },
+                      onTap: () {
+                        onImportanceChanged?.call(ImportanceChip.none);
+                        _valueNotifier.value = ImportanceChip.none;
+                      },
                     )
-                  : DefaultImportanceChip(
-                      text: title,
-            onTap: () {
-              onImportanceChanged?.call(ImportanceChip.medium);
-              _valueNotifier.value = ImportanceChip.medium;
-
-            },
-                    ),
-        );
-        // switch (importance) {
-      //   case ImportanceChip.none:
-      //     return DefaultImportanceChip(
-      //       text: title,
-      //       onTap: () {
-      //         onImportanceChanged?.call(ImportanceChip.medium);
-      //         _valueNotifier.value = ImportanceChip.medium;
-      //
-      //       },
-      //     );
-      //   case ImportanceChip.medium:
-      //     return MediumImportanceChip(
-      //       text: title,
-      //       onTap: () {
-      //         onImportanceChanged?.call(ImportanceChip.high);
-      //         _valueNotifier.value = ImportanceChip.high;
-      //
-      //       },
-      //     );
-      //   case ImportanceChip.high:
-      //     return HighImportanceChip(
-      //       text: title,
-      //       onTap: () {
-      //         onImportanceChanged?.call(ImportanceChip.none);
-      //         _valueNotifier.value = ImportanceChip.none;
-      //
-      //       },
-      //     );
-      //   }
+                  : importance == ImportanceChip.medium
+                      ? MediumImportanceChip(
+                          text: title,
+                          onTap: () {
+                            onImportanceChanged?.call(ImportanceChip.high);
+                            _valueNotifier.value = ImportanceChip.high;
+                          },
+                        )
+                      : DefaultImportanceChip(
+                          text: title,
+                          onTap: () {
+                            onImportanceChanged?.call(ImportanceChip.medium);
+                            _valueNotifier.value = ImportanceChip.medium;
+                          },
+                        ),
+            ));
       },
     );
-
-    // switch (importance) {
-    //   case ImportanceChip.none:
-    //     return DefaultImportanceChip(
-    //       text: widget.title,
-    //       onTap: () => setState(() => importance = ImportanceChip.medium),
-    //     );
-    //   case ImportanceChip.medium:
-    //     return MediumImportanceChip(
-    //       text: widget.title,
-    //       onTap: () => setState(() => importance = ImportanceChip.high),
-    //     );
-    //   case ImportanceChip.high:
-    //     return HighImportanceChip(
-    //       text: widget.title,
-    //       onTap: () => setState(() => importance = ImportanceChip.none),
-    //     );
-    // }
   }
 }
 
