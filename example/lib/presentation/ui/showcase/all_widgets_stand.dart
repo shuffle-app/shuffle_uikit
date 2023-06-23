@@ -222,6 +222,30 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 onPressed: () {},
               ),
               SpacingFoundation.verticalSpace16,
+              Center(
+                child: UiKitTitledCardWithBackground(
+                  title: 'Active Holidays',
+                  backgroundImageLink: GraphicsFoundation.instance.png.titledCardBackground1.path,
+                  backgroundColor: ColorsFoundation.brightYellow,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              Center(
+                child: UiKitTitledCardWithBackground(
+                  title: 'Big Company',
+                  backgroundImageLink: GraphicsFoundation.instance.png.titledCardBackground2.path,
+                  backgroundColor: ColorsFoundation.red,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              Center(
+                child: UiKitTitledCardWithBackground(
+                  title: 'Electronic Music',
+                  backgroundImageLink: GraphicsFoundation.instance.png.titledCardBackground3.path,
+                  backgroundColor: ColorsFoundation.pink,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitSpinnerCard(
                 availableHeight: 300,
                 photoLink: '',

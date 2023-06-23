@@ -295,6 +295,18 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/surprise-emoji.png
   AssetGenImage get surpriseEmoji => const AssetGenImage('assets/images/png/surprise-emoji.png');
 
+  /// File path: assets/images/png/titled_card_background_1.png
+  AssetGenImage get titledCardBackground1 => const AssetGenImage('assets/images/png/titled_card_background_1.png');
+
+  /// File path: assets/images/png/titled_card_background_2.png
+  AssetGenImage get titledCardBackground2 => const AssetGenImage('assets/images/png/titled_card_background_2.png');
+
+  /// File path: assets/images/png/titled_card_background_3.png
+  AssetGenImage get titledCardBackground3 => const AssetGenImage('assets/images/png/titled_card_background_3.png');
+
+  /// File path: assets/images/png/titled_card_background_4.png
+  AssetGenImage get titledCardBackground4 => const AssetGenImage('assets/images/png/titled_card_background_4.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         aubergine,
@@ -372,7 +384,11 @@ class $AssetsImagesPngGen {
         profileStory1,
         sadnessEmoji,
         spinnerEvent,
-        surpriseEmoji
+        surpriseEmoji,
+        titledCardBackground1,
+        titledCardBackground2,
+        titledCardBackground3,
+        titledCardBackground4
       ];
 }
 
