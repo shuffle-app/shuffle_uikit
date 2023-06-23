@@ -172,7 +172,8 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
             ),
             SizesFoundation.screenWidth <= 275 ? SpacingFoundation.verticalSpace16 : SpacingFoundation.verticalSpace24,
             SizedBox(
-              height: 100.h,
+              height: 155,
+              // height: 100.h,
               width: 1.sw,
               child: Stack(
                 children: [
