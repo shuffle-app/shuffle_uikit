@@ -283,8 +283,8 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
 
-  /// File path: assets/images/png/sadness-emogi.png
-  AssetGenImage get sadnessEmogi => const AssetGenImage('assets/images/png/sadness-emogi.png');
+  /// File path: assets/images/png/sadness-emoji.png
+  AssetGenImage get sadnessEmoji => const AssetGenImage('assets/images/png/sadness-emoji.png');
 
   /// File path: assets/images/png/spinner_event.png
   AssetGenImage get spinnerEvent => const AssetGenImage('assets/images/png/spinner_event.png');
@@ -366,7 +366,7 @@ class $AssetsImagesPngGen {
         profileAvatar,
         profilePost1,
         profileStory1,
-        sadnessEmogi,
+        sadnessEmoji,
         spinnerEvent,
         surpriseEmoji
       ];

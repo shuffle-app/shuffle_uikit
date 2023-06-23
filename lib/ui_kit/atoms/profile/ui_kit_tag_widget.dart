@@ -36,12 +36,12 @@ class UiKitTagWidget extends StatelessWidget {
             gradient: GradientFoundation.badgeIcon,
             child: ImageWidget(
               link: icon,
-              height: SpacingFoundation.horizontalSpacing12,
+              height: SpacingFoundation.horizontalSpacing16,
               color: uniqueTag ? Colors.white : textColor ?? ColorsFoundation.darkNeutral900,
               fit: BoxFit.fitHeight,
               // package: 'shuffle_uikit',
             )),
-        SpacingFoundation.horizontalSpace4,
+        SpacingFoundation.horizontalSpace2,
         Text(
           title,
           style: textStyle,

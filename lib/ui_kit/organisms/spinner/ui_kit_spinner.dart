@@ -52,9 +52,12 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
   }
 
   void _scrollListener() {
-    if (widget.scrollController.offset.toInt() % 20 == 0) {
-      _enableFeedback();
-    }
+    // if (widget.scrollController.offset.toInt() % 20 == 0 && _spinningType!=SpinningType.wheel) {
+    //   _enableFeedback();
+    // }
+
+    // widget.scrollController.initialScrollOffset %
+
 
     if (_spinningType == SpinningType.categories) {
       final scrollDelta = widget.scrollController.offset - _lastScrollPositionOffsetNotifier.value;
@@ -85,7 +88,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
   }
 
   void _shouldSwitchCategory([bool onEndNotified = false]) {
-    print('should switch category');
     final currentOffset = widget.scrollController.offset;
     final screenWidth = 1.sw;
     final nearestElementIndex = (currentOffset / screenWidth).round();
@@ -104,6 +106,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
             curve: Curves.decelerate,
           ));
     } else {
+
       widget.scrollController.animateTo(
         nearestElementOffset,
         duration: _animDuration,
@@ -111,8 +114,10 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
       );
     }
     _lastScrollPositionOffsetNotifier.value = nearestElementOffset;
-    _enableFeedback();
+
   }
+
+  double _lastRotationValue = 0;
 
   @override
   void dispose() {
@@ -136,8 +141,8 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
           children: [
             GestureDetector(
               behavior: HitTestBehavior.opaque,
-              onTapDown: (details) {
-                if (_spinningType != SpinningType.categories) setState(() => _spinningType = SpinningType.categories);
+              onPanDown: (details) {
+                if (_spinningType != SpinningType.categories) setSpinningType(SpinningType.categories);
               },
               child: NotificationListener<ScrollEndNotification>(
                 onNotification: (notification) {
@@ -168,6 +173,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
             SizesFoundation.screenWidth <= 275 ? SpacingFoundation.verticalSpace16 : SpacingFoundation.verticalSpace24,
             SizedBox(
               height: 155,
+              // height: 100.h,
               width: 1.sw,
               child: Stack(
                 children: [
@@ -182,7 +188,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                         final inScrollEnd =
                             widget.scrollController.offset == widget.scrollController.position.maxScrollExtent && delta.isNegative;
                         if (inScrollBeginning || inScrollEnd) return;
-                        if (details.localPosition.dx.toInt() % 20 == 0) _enableFeedback();
+                        // if (details.localPosition.dx.toInt() % 20 == 0) _enableFeedback();
                         _rotationNotifier.value += delta / 200;
                         _scrollByPixels(
                           pixelsToScroll: delta,
@@ -197,6 +203,16 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       child: AnimatedBuilder(
                         animation: _rotationNotifier,
                         builder: (context, child) {
+
+                          if((_rotationNotifier.value-_lastRotationValue).abs()>=0.8)
+                            {
+                              _enableFeedback();
+                              WidgetsBinding.instance.addPostFrameCallback((timeStamp) =>
+                              setState(() {
+                                _lastRotationValue = _rotationNotifier.value;
+                              }));
+                            }
+
                           return Transform.rotate(
                             angle: _rotationNotifier.value,
                             // duration: _animDuration,
