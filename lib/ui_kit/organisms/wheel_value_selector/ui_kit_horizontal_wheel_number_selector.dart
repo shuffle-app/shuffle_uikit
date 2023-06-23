@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -26,16 +27,17 @@ class UiKitHorizontalWheelNumberSelector extends StatefulWidget {
 class _UiKitHorizontalWheelNumberSelectorState
     extends State<UiKitHorizontalWheelNumberSelector> {
   late final ValueNotifier<int> _currentValueNotifier;
-
+final AutoSizeGroup autoSizeGroup = AutoSizeGroup();
   final _animDuration = const Duration(milliseconds: 250);
   late final FixedExtentScrollController _scrollController;
 
   @override
   void initState() {
     _scrollController =
-        FixedExtentScrollController(initialItem: widget.initialValue);
+    FixedExtentScrollController(initialItem: widget.initialValue);
     _currentValueNotifier =
         ValueNotifier<int>(widget.values[widget.initialValue]);
+
     super.initState();
   }
 
@@ -49,128 +51,127 @@ class _UiKitHorizontalWheelNumberSelectorState
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final itemWidth = 49.w;
-    final itemHeight = itemWidth*0.82;
+    final itemHeight = itemWidth * 0.82;
 
     return UiKitCardWrapper(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                widget.title,
-                style: boldTextTheme?.labelLarge,
-              ).paddingOnly(
-                top: EdgeInsetsFoundation.vertical16,
-                left: EdgeInsetsFoundation.horizontal16,
-                right: EdgeInsetsFoundation.horizontal16,
-              ),
-              SizedBox(
-                width: 1.sw,
-                height: itemHeight,
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    RotatedBox(
-                        quarterTurns: 3,
-                        child: NotificationListener<ScrollNotification>(
-                          onNotification: (scrollNotification) {
-                            if (scrollNotification is ScrollEndNotification) {
-                              WidgetsBinding.instance.addPostFrameCallback(
-                                  (timeStamp) => _scrollController.animateTo(
-                                      widget.values.indexOf(
-                                              _currentValueNotifier.value) *
-                                          itemWidth,
-                                      duration:
-                                          const Duration(milliseconds: 100),
-                                      curve: Curves.easeIn));
-                            }
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            widget.title,
+            style: boldTextTheme?.labelLarge,
+          ).paddingOnly(
+            top: EdgeInsetsFoundation.vertical16,
+            left: EdgeInsetsFoundation.horizontal16,
+            right: EdgeInsetsFoundation.horizontal16,
+          ),
+          SizedBox(
+            width: 1.sw,
+            height: itemHeight,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                RotatedBox(
+                    quarterTurns: 3,
+                    child:
+                NotificationListener<ScrollNotification>(
+                    onNotification: (scrollNotification) {
 
-                            return true;
-                          },
-                          child: ListWheelScrollView(
-                            controller: _scrollController,
-                            onSelectedItemChanged: (index) {
-                              widget.onValueChanged?.call(widget.values[index]);
-                              _currentValueNotifier.value =
-                                  widget.values[index];
-                            },
-                            renderChildrenOutsideViewport: true,
-                            clipBehavior: Clip.none,
-                            perspective: 0.003,
-                            itemExtent: itemWidth,
-                            useMagnifier: false,
-                            diameterRatio: 100000,
-                            children: widget.values.map(
-                              (e) {
+                      if (scrollNotification is ScrollEndNotification) {
+                        WidgetsBinding.instance.addPostFrameCallback(
+                            (timeStamp) => _scrollController.animateTo(
+                                widget.values
+                                        .indexOf(_currentValueNotifier.value) *
+                                    itemWidth,
+                                duration: const Duration(milliseconds: 100),
+                                curve: Curves.easeIn));
+                      }
 
-                                return AnimatedBuilder(
-                                    animation: _currentValueNotifier,
-                                    builder: (context, child) {
-                                      final index = widget.values.indexOf(e);
-                                      final currentValueIndex = widget.values
-                                          .indexOf(_currentValueNotifier.value);
-                                      final deltaIndex =
-                                          (index - currentValueIndex).abs();
-                                      double opacity = 1;
-                                      if (deltaIndex > 2) opacity = 0.05;
-                                      if (deltaIndex == 2) opacity = 0.2;
-                                      if (deltaIndex == 1) opacity = 0.5;
-
-                                      return RotatedBox(
-                                        quarterTurns: 1,
-                                        child: AnimatedOpacity(
-                                          duration: _animDuration,
-                                          opacity: opacity,
-                                          child: Text(
-                                            e.toString(),
-                                            style: boldTextTheme?.title1,
-                                            textAlign: TextAlign.center,
-                                          ),
-                                        ),
-                                      ).paddingSymmetric(
-                                          horizontal: SpacingFoundation
-                                              .horizontalSpacing4);
-                                    },
-                                  // ),
-                                );
-                              },
-                            ).toList(),
-                          ),
-                        )),
-                    Center(
-                    // Positioned(
-                      // bottom: itemHeight / 16,
-                      // left: 0,
-                      // right: 0,
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            AnimatedBuilder(
+                      return true;
+                    },
+                    child:
+                      ListWheelScrollView(
+                      controller: _scrollController,
+                      onSelectedItemChanged: (index) {
+                        widget.onValueChanged?.call(widget.values[index]);
+                        _currentValueNotifier.value = widget.values[index];
+                      },
+                      renderChildrenOutsideViewport: false,
+                      clipBehavior: Clip.none,
+                      perspective: 0.003,
+                      itemExtent: itemWidth,
+                      useMagnifier: false,
+                      diameterRatio: 100000,
+                        children: widget.values.map(
+                          (e) {
+                            return AnimatedBuilder(
                               animation: _currentValueNotifier,
                               builder: (context, child) {
-                                return Container(
-                                  width: itemWidth,
-                                  height: itemHeight,
-                                  decoration: BoxDecoration(
-                                    color: Colors.transparent,
-                                    borderRadius: BorderRadiusFoundation.all10,
-                                    border: Border.all(
-                                        color: Colors.white, width: 2),
+                                final index = widget.values.indexOf(e);
+                                final currentValueIndex = widget.values
+                                    .indexOf(_currentValueNotifier.value);
+                                final deltaIndex =
+                                    (index - currentValueIndex).abs();
+                                double opacity = 1;
+                                if (deltaIndex > 2) opacity = 0.05;
+                                if (deltaIndex == 2) opacity = 0.2;
+                                if (deltaIndex == 1) opacity = 0.5;
+
+                                return Center(child:
+                                    RotatedBox(
+                                    quarterTurns: 1,
+                                    child:
+
+                                    AnimatedOpacity(
+                                  duration: _animDuration,
+                                  opacity: opacity,
+                                  child: AutoSizeText(
+                                    e.toString(),
+                                    group: autoSizeGroup,
+                                    maxLines: 1,
+                                    style: boldTextTheme?.title1,
+                                    textAlign: TextAlign.center,
                                   ),
-                                );
+                                  // ),
+                                )).paddingSymmetric(
+                                        horizontal: SpacingFoundation
+                                            .horizontalSpacing4));
                               },
-                            )
-                          ]),
-                    ),
-                  ],
-                ),
-              ),
-              SpacingFoundation.verticalSpace4,
-            ],
+                              // ),
+                            );
+                          },
+                        ).toList(),
+                      ),
+                    )),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      // GestureDetector(
+                      //     onPanUpdate: (details){
+                      //       _scrollController.jumpTo(_scrollController.offset + details.localPosition.dx);
+                      //       // _scrollController.offset = details.localPosition.dx;
+                      //     },
+                      //     child:
+                      IgnorePointer(child:
+                      SizedBox(
+                          width: itemWidth,
+                          height: itemHeight,
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              borderRadius: BorderRadiusFoundation.all10,
+                              border: Border.all(color: Colors.white, width: 2),
+                            ),
+                          )))
+                    ]),
+              ],
+            ),
           ),
-
-
+          SpacingFoundation.verticalSpace4,
+        ],
+      ),
     );
   }
 }

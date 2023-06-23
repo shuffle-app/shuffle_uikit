@@ -77,7 +77,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
           children: [
             SpacingFoundation.verticalSpace8,
             ConstrainedBox(
-              constraints: BoxConstraints(maxHeight: widget.availableHeight * 0.75),
+              constraints: BoxConstraints(maxHeight: widget.availableHeight * 0.76),
               child: Stack(
                 clipBehavior: Clip.none,
                 fit: StackFit.expand,

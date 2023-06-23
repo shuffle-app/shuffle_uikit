@@ -22,10 +22,13 @@ class HighImportanceChip extends StatelessWidget {
         child: Ink(
           height: 120,
           width: 120,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            gradient: GradientFoundation.attentionCard,
-          ),
+          decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: GradientFoundation.attentionCard,
+              border: Border.fromBorderSide(BorderSide(
+                color: Colors.white.withOpacity(0.2),
+                width: 2,
+              ))),
           child: Center(
             child: AutoSizeText(
               text,

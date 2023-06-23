@@ -2,23 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitShadowWrapper extends StatelessWidget {
-  final BorderRadius borderRadius;
+  final BorderRadius? borderRadius;
+  final BoxShape? shape;
   final Widget child;
+  final bool applyShadow;
+  final Color? color;
 
   const UiKitShadowWrapper({
     super.key,
-    required this.borderRadius,
+     this.borderRadius,
+     this.color,
+     this.shape,
     required this.child,
+    this.applyShadow = true
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DecoratedBox(
       decoration: BoxDecoration(
+        shape: shape ?? BoxShape.rectangle,
         borderRadius: borderRadius,
-        boxShadow: const [
-          BoxShadow(
-            color: ColorsFoundation.shadowPink,
+        boxShadow:  [
+          if(applyShadow)
+           BoxShadow(
+            color: color ?? ColorsFoundation.shadowPink,
             blurRadius: 18,
             spreadRadius: 0,
             offset: Offset.zero,

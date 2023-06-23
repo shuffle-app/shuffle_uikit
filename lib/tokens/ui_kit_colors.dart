@@ -24,6 +24,7 @@ class UiKitColors {
   static const orange = Color(0xffE32900);
   static const red = Color(0xffFA4C34);
   static const pink = Color(0xffD808FA);
+  static const pinkLight = Color(0xffE379C5);
   static const error = Color(0xffFF453A);
   static const warning = Color(0xffFF9F0A);
   static const shadowPink = Color(0xffEFD6CC);
