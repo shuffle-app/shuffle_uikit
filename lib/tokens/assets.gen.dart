@@ -238,6 +238,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/christianity.png
   AssetGenImage get christianity => const AssetGenImage('assets/images/png/christianity.png');
 
+  /// File path: assets/images/png/compact_rating_card_mock.png
+  AssetGenImage get compactRatingCardMock => const AssetGenImage('assets/images/png/compact_rating_card_mock.png');
+
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
@@ -363,6 +366,7 @@ class $AssetsImagesPngGen {
         buddismFlag,
         calmnessEmoji,
         christianity,
+        compactRatingCardMock,
         eventAvatar,
         fatigueEmoji,
         hindu,

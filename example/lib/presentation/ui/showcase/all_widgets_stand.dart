@@ -88,23 +88,25 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   @override
   Widget build(BuildContext context) {
     return BlurredAppBarPage(
-      title: 'UI Kit Stand',
-      centerTitle: true,
+      title: 'Edit Profile',
       autoImplyLeading: true,
+      centerTitle: true,
       appBarBody: Column(
         mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ImageWidget(
-            rasterAsset: GraphicsFoundation.instance.png.mockUserAvatar,
+          CircularAvatar(
+            avatarUrl: '',
+            name: 'true false',
             height: 48,
           ),
           SpacingFoundation.verticalSpace4,
-          Text(
-            'John Doe',
-            style: context.uiKitTheme?.boldTextTheme.caption2Bold,
-            textAlign: TextAlign.center,
-          ),
+          InkWell(
+              onTap: () {},
+              child: Text(
+                'Change Photo',
+                style: context.uiKitTheme?.boldTextTheme.caption1Bold,
+              )),
         ],
       ),
       appBarTrailing: context.badgeButton(
@@ -126,6 +128,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SpacingFoundation.verticalSpace16,
+              UiKitCompactOrderedRatingCard(
+                order: 1,
+                rating: 4.5,
+                title: 'Adventure Water Park',
+                imageLink: GraphicsFoundation.instance.png.compactRatingCardMock.path,
+                onPressed: () {},
+              ),
               SpacingFoundation.verticalSpace16,
               UiKitOverflownActionCard(
                 action: context.smallButton(
