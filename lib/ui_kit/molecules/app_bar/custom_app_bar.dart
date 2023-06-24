@@ -46,7 +46,7 @@ class CustomAppBar extends PreferredSize {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: hideBody ? MainAxisAlignment.end : MainAxisAlignment.start,
               children: [
                 SizedBox(
                   height: MediaQuery.of(context).viewPadding.top,

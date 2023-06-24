@@ -30,7 +30,6 @@ class BlurredAppBarPage extends StatelessWidget {
   })  : controller = controller ?? ScrollController(),
         super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -40,9 +39,14 @@ class BlurredAppBarPage extends StatelessWidget {
       slivers: [
         SliverLayoutBuilder(
           builder: (context, sliverConstraints) {
+            final width = sliverConstraints.asBoxConstraints().maxWidth;
             const animDuration = Duration(milliseconds: 250);
-            final toolbarHeight = (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90);
-            final expandedHeight = appBarBody == null ? toolbarHeight : 180.0;
+            final toolbarHeight = (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
+            final expandedHeight = appBarBody == null
+                ? toolbarHeight
+                : width > 400
+                    ? 190.0
+                    : 180.0;
             final hideAppBarBody = sliverConstraints.scrollOffset > toolbarHeight;
             // sliverConstraints.scrollOffset > expandedHeight;
 
@@ -58,11 +62,11 @@ class BlurredAppBarPage extends StatelessWidget {
               flexibleSpace: CustomAppBar(
                 hideBody: hideAppBarBody,
                 leading: leading,
-                bodySpacing: SpacingFoundation.verticalSpacing16,
+                bodySpacing: appBarBody == null ? SpacingFoundation.zero : SpacingFoundation.verticalSpacing8,
                 title: title,
                 appBarBody: AnimatedContainer(
                   duration: animDuration,
-                  height: hideAppBarBody ? 0 : max(0, expandedHeight - toolbarHeight - SpacingFoundation.verticalSpacing16),
+                  height: hideAppBarBody ? 0 : max(0, expandedHeight - toolbarHeight - SpacingFoundation.verticalSpacing8),
                   child: appBarBody,
                 ),
                 appBarTrailing: appBarTrailing,
