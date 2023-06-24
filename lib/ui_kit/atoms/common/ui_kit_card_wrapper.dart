@@ -26,6 +26,7 @@ class UiKitCardWrapper extends StatelessWidget {
     return Theme(
       data: Theme.of(context).copyWith(cardTheme: theme?.cardTheme, cardColor: theme?.cardColor),
       child: Card(
+        margin: EdgeInsets.zero,
         color: color ?? theme?.cardColor ?? ColorsFoundation.surface3,
         clipBehavior: Clip.hardEdge,
         shape: RoundedRectangleBorder(
