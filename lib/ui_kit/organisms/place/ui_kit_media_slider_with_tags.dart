@@ -31,6 +31,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemCount: media.length + 1,
+            addRepaintBoundaries: false,
             itemBuilder: (context, index) {
               if (index == 0) return horizontalMargin.widthBox;
               final mediaItem = media.elementAt(index - 1);

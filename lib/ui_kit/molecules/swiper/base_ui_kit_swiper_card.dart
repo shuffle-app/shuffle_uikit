@@ -6,6 +6,7 @@ abstract class BaseUiKitSwiperCard extends StatelessWidget {
   final String subtitle;
   final String? imageLink;
   final List<UiKitTagWidget> tags;
+  final VoidCallback? onTap;
 
   const BaseUiKitSwiperCard({
     Key? key,
@@ -13,5 +14,6 @@ abstract class BaseUiKitSwiperCard extends StatelessWidget {
     required this.subtitle,
     required this.tags,
     this.imageLink,
+    this.onTap,
   }) : super(key: key);
 }

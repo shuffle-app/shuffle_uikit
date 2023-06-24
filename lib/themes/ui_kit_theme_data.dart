@@ -21,7 +21,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
 
   ButtonStyle get textButtonStyle => ButtonStyle(
         textStyle: MaterialStateTextStyle.resolveWith((states) {
-          return boldTextTheme.caption1UpperCase;
+          return boldTextTheme.title2;
         }),
         foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
         overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),

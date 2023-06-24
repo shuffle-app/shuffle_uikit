@@ -11,12 +11,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitOverflownActionCard extends StatelessWidget {
   final Widget title;
   final Widget action;
+  final double? horizontalMargin;
   final String overflownIconLink;
   final List<OverflownActionCardDecorationIconData> decorationIcons;
 
   const UiKitOverflownActionCard({
     super.key,
     required this.title,
+     this.horizontalMargin,
     required this.action,
     required this.overflownIconLink,
     required this.decorationIcons,
@@ -38,10 +40,9 @@ class UiKitOverflownActionCard extends StatelessWidget {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              Align(
-                child: UiKitCardWrapper(
+               UiKitCardWrapper(
                   height: calculatedHeight,
-                  width: size.maxWidth - 32,
+                  width: size.maxWidth - (horizontalMargin ?? 32),
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
@@ -82,7 +83,7 @@ class UiKitOverflownActionCard extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
+
               Positioned(
                 right: -overflownIconWidth * 0.25,
                 bottom: -8,
@@ -99,7 +100,7 @@ class UiKitOverflownActionCard extends StatelessWidget {
           ),
         );
       },
-    );
+    ).paddingOnly(left: horizontalMargin ?? 0);
   }
 }
 

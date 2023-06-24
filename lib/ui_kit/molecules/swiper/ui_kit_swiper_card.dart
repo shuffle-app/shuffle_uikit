@@ -6,6 +6,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
   const UiKitSwiperCard({
     super.key,
     super.imageLink,
+    super.onTap,
     required super.tags,
     required super.title,
     required super.subtitle,
@@ -15,7 +16,9 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
-    return Container(
+    return GestureDetector(
+        onTap: onTap,
+    child:  Container(
       width: 267.w,
       height: 316.h,
       clipBehavior: Clip.hardEdge,
@@ -63,6 +66,6 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
           ).paddingAll(EdgeInsetsFoundation.all16),
         ],
       ).paddingAll(EdgeInsetsFoundation.all16),
-    );
+    ));
   }
 }
