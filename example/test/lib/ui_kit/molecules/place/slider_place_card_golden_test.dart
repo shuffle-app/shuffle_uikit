@@ -11,9 +11,7 @@ void main() {
     testGoldens('Slider Place card', (tester) async {
       debugDisableShadows = false;
 
-      final builder = GoldenBuilder.grid(
-        columns: 2,
-        widthToHeightRatio: 1.3,
+      final builder = GoldenBuilder.column(
         bgColor: _theme.scaffoldBackgroundColor,
         wrap: (child) => child,
       )
@@ -126,25 +124,21 @@ void main() {
           ),
         );
 
-      await tester.pumpWidgetBuilder(ScreenUtilInit(
-              designSize: const Size(320, 568),
-              child: builder.build(),
-              builder: (BuildContext context, Widget? child) =>
-                  StatefulBuilder(builder: (context, setState) {
-                    return UiKitTheme(
-                        onThemeUpdated: (theme) =>
-                            setState(() => _theme = theme),
-                        child: Material(
-                            child: Theme(data: _theme, child: child!)));
-                  }))
-          //   },
-          // ),
-          // wrapper: materialAppWrapper(
-          //   theme: theme,
-          // ),
-          );
+      await tester.pumpWidgetBuilder(
+        ScreenUtilInit(
+          designSize: const Size(220, 1568),
+          child: builder.build(),
+          builder: (BuildContext context, Widget? child) => StatefulBuilder(
+            builder: (context, setState) {
+              return UiKitTheme(
+                  onThemeUpdated: (theme) => setState(() => _theme = theme),
+                  child: Material(child: Theme(data: _theme, child: child!)));
+            },
+          ),
+        ),
+      );
 
-      await screenMatchesGolden(tester, 'slider_place_card', autoHeight: true);
+      await screenMatchesGolden(tester, 'slider_place_card');
     });
   });
 }
