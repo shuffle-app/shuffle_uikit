@@ -85,6 +85,7 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                       horizontal: EdgeInsetsFoundation.horizontal8,
                     ),
                   ),
+                  if(rating!=null)
                   Ink(
                     width: sideInfoCardsWidth,
                     color: ColorsFoundation.darkNeutral500.withOpacity(0.08),

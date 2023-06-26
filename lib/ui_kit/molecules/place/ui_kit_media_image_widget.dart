@@ -13,6 +13,7 @@ class UiKitMediaImageWidget extends BaseUiKitMediaWidget {
     return ClipRRect(
       borderRadius: BorderRadiusFoundation.all24,
       child: ImageWidget(
+        lowerQuality: true,
         link: media.link,
         width: width ?? 0.83.sw,
         fit: BoxFit.cover,

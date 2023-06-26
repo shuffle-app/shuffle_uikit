@@ -5,6 +5,8 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class MemberPlate extends StatelessWidget {
   const MemberPlate({super.key});
 
+  double? get width => 1.sw * 0.55625;
+
   @override
   Widget build(BuildContext context) {
     final width = 1.sw * 0.55625;

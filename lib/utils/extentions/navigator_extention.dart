@@ -12,46 +12,69 @@ extension NavigatorExtention on BuildContext {
     Widget screen, {
     RouteSettings? settings,
     bool maintainState = true,
-    bool fullscreenDialog = false,
+    bool nativeTransition = true,
   }) async =>
-      await Navigator.of(this).push(
-          PageRouteBuilder(pageBuilder: (context,animation,_)=>FadeTransition(opacity: animation,child: screen,),
-          // MaterialPageRoute(
-        // builder: (_) => screen,
-        settings: settings,
-        maintainState: maintainState,
-        fullscreenDialog: fullscreenDialog,
-      ));
+      await Navigator.of(this).push(nativeTransition
+          ? MaterialPageRoute(
+              builder: (_) => screen,
+              settings: settings,
+              maintainState: maintainState,
+            )
+          : PageRouteBuilder(
+              pageBuilder: (context, animation, _) => FadeTransition(
+                opacity: animation,
+                child: screen,
+              ),
+              settings: settings,
+              maintainState: maintainState,
+            ));
 
   /// performs a simple [Navigator.pushReplacement] action with given [route]
   Future<dynamic> pushReplacement(
     Widget screen, {
     RouteSettings? settings,
     bool maintainState = true,
-    bool fullscreenDialog = false,
+    bool nativeTransition = true,
   }) async =>
-      await Navigator.of(this).pushReplacement(MaterialPageRoute(
-        builder: (_) => screen,
-        settings: settings,
-        maintainState: maintainState,
-        fullscreenDialog: fullscreenDialog,
-      ));
+      await Navigator.of(this).pushReplacement(nativeTransition
+          ? MaterialPageRoute(
+              builder: (_) => screen,
+              settings: settings,
+              maintainState: maintainState,
+            )
+          : PageRouteBuilder(
+              pageBuilder: (context, animation, _) => FadeTransition(
+                opacity: animation,
+                child: screen,
+              ),
+              settings: settings,
+              maintainState: maintainState,
+            ));
 
   /// perform push and remove route
   Future<dynamic> pushAndRemoveUntil(
     Widget screen, {
     RouteSettings? settings,
     bool maintainState = true,
-    bool routes = false,
     RoutePredicate? routePredicate,
+    bool nativeTransition = true,
   }) async =>
       await Navigator.of(this).pushAndRemoveUntil(
-          MaterialPageRoute(
-            builder: (_) => screen,
-            settings: settings,
-            maintainState: maintainState,
-          ),
-          routePredicate ?? ((Route<dynamic> route) => routes));
+          nativeTransition
+              ? MaterialPageRoute(
+                  builder: (_) => screen,
+                  settings: settings,
+                  maintainState: maintainState,
+                )
+              : PageRouteBuilder(
+                  pageBuilder: (context, animation, _) => FadeTransition(
+                    opacity: animation,
+                    child: screen,
+                  ),
+                  settings: settings,
+                  maintainState: maintainState,
+                ),
+          routePredicate ?? ((Route<dynamic> route) => false));
 
   /// perform push with routeName
   Future<dynamic> pushNamed(
@@ -78,5 +101,7 @@ extension NavigatorExtention on BuildContext {
     Object? arguments,
     bool routes = false,
   }) async =>
-      await Navigator.of(this).pushNamedAndRemoveUntil(screenName, (Route<dynamic> route) => routes, arguments: arguments);
+      await Navigator.of(this).pushNamedAndRemoveUntil(
+          screenName, (Route<dynamic> route) => routes,
+          arguments: arguments);
 }
