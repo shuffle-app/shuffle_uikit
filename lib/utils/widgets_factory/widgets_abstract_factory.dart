@@ -2,6 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class WidgetsAbstractFactory {
+  ButtonFactory createButtonWithProgress({
+    BaseUiKitButtonData? data,
+    double? progress,
+    bool? blurred,
+  });
+
   NotificationPopUpFactory createNotificationPopUp({
     required NotificationPopupRequiredData requiredData,
     Widget? primaryActionWidget,
@@ -331,6 +337,19 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       icon: data?.icon,
       onPressed: data?.onPressed,
       badgeValue: badgeValue,
+    );
+  }
+
+  @override
+  ButtonFactory createButtonWithProgress({
+    BaseUiKitButtonData? data,
+    double? progress,
+    bool? blurred,
+  }) {
+    return BlurredProgressButton(
+      text: data?.text,
+      onPressed: data?.onPressed,
+      progress: progress,
     );
   }
 

@@ -1,5 +1,6 @@
 import 'package:example/presentation/routing/app_routes.dart';
 import 'package:example/presentation/ui/main_page/main_page.dart';
+import 'package:example/presentation/ui/onboarding/onboarding_page.dart';
 import 'package:example/presentation/ui/profile/influencer_profile.dart';
 import 'package:example/presentation/ui/showcase/show_case_page.dart';
 import 'package:example/presentation/ui/spinner/spinner_page.dart';
@@ -34,6 +35,11 @@ class AppRouter {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => SpinnerPage(),
+        );
+      case AppRoutes.onBoardingPage:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => const OnBoardingPage(),
         );
       default:
         return MaterialPageRoute(

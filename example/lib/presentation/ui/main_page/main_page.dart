@@ -92,20 +92,25 @@ class _MainPageState extends State<MainPage> {
               ],
             ),
             SpacingFoundation.verticalSpace24,
-            context.button(data: BaseUiKitButtonData(
-              text: 'UI Kit Showcase Stand',
-              onPressed: () => Navigator.pushNamed(context, AppRoutes.stand)),
+            context.button(
+              data: BaseUiKitButtonData(text: 'UI Kit Showcase Stand', onPressed: () => Navigator.pushNamed(context, AppRoutes.stand)),
             ),
             SpacingFoundation.verticalSpace16,
             context.button(
               data: BaseUiKitButtonData(
-              text: 'Influencer Profile',
-              onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile)),
+                  text: 'Influencer Profile', onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile)),
             ),
             SpacingFoundation.verticalSpace16,
             OrdinaryButton(
               text: 'Dialog testing page',
               onPressed: () => context.push(const DialogTestingPage()),
+            ),
+            SpacingFoundation.verticalSpace16,
+            context.button(
+              data: BaseUiKitButtonData(
+                text: 'On Boarding Page',
+                onPressed: () => Navigator.pushNamed(context, AppRoutes.onBoardingPage),
+              ),
             ),
           ],
         ),

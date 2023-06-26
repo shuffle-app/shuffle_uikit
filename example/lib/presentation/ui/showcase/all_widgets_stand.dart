@@ -17,6 +17,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final ScrollController _scrollController = ScrollController();
   final GlobalKey _gradientTextKey = GlobalKey();
+  double progress = 0.0;
 
   bool selection = false;
   final List<UiKitMenuItem<String>> _menuItems = [
@@ -102,11 +103,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ),
           SpacingFoundation.verticalSpace4,
           InkWell(
-              onTap: () {},
-              child: Text(
-                'Change Photo',
-                style: context.uiKitTheme?.boldTextTheme.caption1Bold,
-              )),
+            onTap: () {},
+            child: Text(
+              'Change Photo',
+              style: context.uiKitTheme?.boldTextTheme.caption1Bold,
+            ),
+          ),
         ],
       ),
       appBarTrailing: context.badgeButton(
@@ -128,6 +130,17 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SpacingFoundation.verticalSpace16,
+              context.buttonWithProgress(
+                data: BaseUiKitButtonData(
+                  text: 'NEXT >>>',
+                  onPressed: () => setState(() {
+                    progress += 0.33;
+                    if (progress > 1) progress = 0;
+                  }),
+                ),
+                progress: progress,
+              ),
               SpacingFoundation.verticalSpace16,
               UiKitCompactOrderedRatingCard(
                 order: 1,

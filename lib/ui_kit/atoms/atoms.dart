@@ -12,6 +12,7 @@ export 'buttons/badge_icon_button_no_value.dart';
 export 'buttons/black_dialog_button.dart';
 export 'buttons/blurred_button_with_icon.dart';
 export 'buttons/blurred_place_video_play_button.dart';
+export 'buttons/blurred_progress_button.dart';
 export 'buttons/filled_icon_button.dart';
 export 'buttons/gradient_button.dart';
 export 'buttons/gradient_button_with_text_and_icon.dart';

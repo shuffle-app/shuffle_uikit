@@ -274,6 +274,15 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/muslim_flag.png
   AssetGenImage get muslimFlag => const AssetGenImage('assets/images/png/muslim_flag.png');
 
+  /// File path: assets/images/png/onboarding_mock_1.png
+  AssetGenImage get onboardingMock1 => const AssetGenImage('assets/images/png/onboarding_mock_1.png');
+
+  /// File path: assets/images/png/onboarding_mock_2.png
+  AssetGenImage get onboardingMock2 => const AssetGenImage('assets/images/png/onboarding_mock_2.png');
+
+  /// File path: assets/images/png/onboarding_mock_3.png
+  AssetGenImage get onboardingMock3 => const AssetGenImage('assets/images/png/onboarding_mock_3.png');
+
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
 
@@ -378,6 +387,9 @@ class $AssetsImagesPngGen {
         mockSwiperCard,
         mockUserAvatar,
         muslimFlag,
+        onboardingMock1,
+        onboardingMock2,
+        onboardingMock3,
         place,
         profileAvatar,
         profilePost1,
@@ -834,6 +846,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/shuffle_outline.svg
   SvgGenImage get shuffleOutline => const SvgGenImage('assets/images/svg/shuffle_outline.svg');
 
+  /// File path: assets/images/svg/shuffle_white.svg
+  SvgGenImage get shuffleWhite => const SvgGenImage('assets/images/svg/shuffle_white.svg');
+
   /// File path: assets/images/svg/sleep.svg
   SvgGenImage get sleep => const SvgGenImage('assets/images/svg/sleep.svg');
 
@@ -1057,6 +1072,7 @@ class $AssetsImagesSvgGen {
         settings,
         shuffleFill,
         shuffleOutline,
+        shuffleWhite,
         sleep,
         spinnerFill,
         spinnerOutline,
