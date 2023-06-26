@@ -6,4 +6,5 @@ class AppRoutes {
   static const String stand = '/stand';
   static const String testPage = '/test';
   static const String spinner = '/spinner';
+  static const String onBoardingPage = '/onBoardingPage';
 }
