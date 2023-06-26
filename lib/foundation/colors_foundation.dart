@@ -7,6 +7,9 @@ class ColorsFoundation {
   static const Color surface1 = UiKitColors.surface1;
   static const Color brightYellow = UiKitColors.brightYellow;
   static const Color red = UiKitColors.red;
+  static const Color gradientGreyLight1 = UiKitColors.gradientGreyLight1;
+  static const Color gradientGreyLight2 = UiKitColors.gradientGreyLight2;
+  static const Color gradientGreyLight3 = UiKitColors.gradientGreyLight3;
   static const Color darkNeutral500 = UiKitColors.darkNeutral500;
   static const Color darkNeutral300 = UiKitColors.darkNeutral300;
   static const Color darkNeutral400 = UiKitColors.darkNeutral400;

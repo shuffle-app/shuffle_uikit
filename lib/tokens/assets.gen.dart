@@ -753,6 +753,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/mask.svg
   SvgGenImage get mask => const SvgGenImage('assets/images/svg/mask.svg');
 
+  /// File path: assets/images/svg/memeber_gradient_star.svg
+  SvgGenImage get memeberGradientStar => const SvgGenImage('assets/images/svg/memeber_gradient_star.svg');
+
   /// File path: assets/images/svg/message.svg
   SvgGenImage get message => const SvgGenImage('assets/images/svg/message.svg');
 
@@ -1041,6 +1044,7 @@ class $AssetsImagesSvgGen {
         logo,
         logout,
         mask,
+        memeberGradientStar,
         message,
         minus,
         moreVert,

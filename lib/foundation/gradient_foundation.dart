@@ -5,6 +5,26 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
+  static const greyGradient = LinearGradient(
+    colors: [
+      Colors.white,
+      ColorsFoundation.gradientGreyLight1,
+      Colors.white,
+      ColorsFoundation.gradientGreyLight2,
+      Colors.white,
+      ColorsFoundation.gradientGreyLight3,
+    ],
+    stops: [
+      0,
+      0.2135,
+      0.4271,
+      0.6094,
+      0.821,
+      1,
+    ],
+    transform: GradientRotation(-pi / 12),
+  );
+
   static const badgeIcon = LinearGradient(
     colors: [
       ColorsFoundation.pink,
@@ -18,7 +38,6 @@ class GradientFoundation {
 
   static const attentionCard = LinearGradient(
     colors: [
-
       ColorsFoundation.error,
       ColorsFoundation.yellow,
       ColorsFoundation.pink,
@@ -30,7 +49,6 @@ class GradientFoundation {
 
   static const buttonGradientLinear = LinearGradient(
     colors: [
-
       ColorsFoundation.error,
       ColorsFoundation.yellow,
       ColorsFoundation.pink,

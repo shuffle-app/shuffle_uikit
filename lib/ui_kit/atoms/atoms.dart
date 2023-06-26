@@ -38,6 +38,7 @@ export 'inputs/ui_kit_input_field_with_chips.dart';
 export 'profile/ui_kit_tag_widget.dart';
 export 'user/base_account_mark.dart';
 export 'user/influencer_account_mark.dart';
+export 'user/member_plate.dart';
 export 'user/premium_account_mark.dart';
 export 'user/pro_account_mark.dart';
 export 'user/user_circle_avatar.dart';
