@@ -12,6 +12,10 @@ class UiKitInputFieldRightIcon extends StatefulWidget
     this.enabled = true,
     this.icon,
     this.onPressed,
+    this.onTap,
+    this.focusNode,
+    this.autofocus = false,
+    this.onFieldSubmitted,
   }) : super(key: key);
 
   @override
@@ -26,8 +30,12 @@ class UiKitInputFieldRightIcon extends StatefulWidget
   final String? Function(String? p1)? validator;
 
   final Widget? icon;
+  final bool autofocus;
+  final FocusNode? focusNode;
 
   final VoidCallback? onPressed;
+  final VoidCallback? onTap;
+  final ValueChanged<String>? onFieldSubmitted;
 
   @override
   State<UiKitInputFieldRightIcon> createState() =>
@@ -53,9 +61,9 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
     final errorStyle = uiKitTheme?.regularTextTheme.caption2
         .copyWith(color: ColorsFoundation.error);
     final inputTextStyle =
-        uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
+    uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
     final hintStyle =
-        uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
+    uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
           ? Colors.white.withOpacity(0.48)
           : ColorsFoundation.darkNeutral900.withOpacity(0.16),
@@ -68,6 +76,10 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
       ),
       child: TextFormField(
         key: _key,
+        autofocus: widget.autofocus,
+        focusNode: widget.focusNode,
+        onTap: widget.onTap,
+        onFieldSubmitted: widget.onFieldSubmitted,
         enabled: widget.enabled,
         controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
@@ -86,7 +98,7 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           suffixIcon: IconButton(
             icon: widget.icon ?? const Icon(Icons.close),
             onPressed: widget.onPressed ??
-                () {
+                    () {
                   widget.controller.clear();
                 },
             visualDensity: VisualDensity.compact,

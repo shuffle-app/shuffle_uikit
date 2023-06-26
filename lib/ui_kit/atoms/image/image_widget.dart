@@ -15,6 +15,7 @@ class ImageWidget extends StatelessWidget {
   final double? height;
   final Color? color;
   final Widget? errorWidget;
+  final bool lowerQuality;
 
   const ImageWidget({
     Key? key,
@@ -22,6 +23,7 @@ class ImageWidget extends StatelessWidget {
     this.fit,
     this.width,
     this.height,
+    this.lowerQuality = false,
     this.rasterAsset,
     this.svgAsset,
     this.color,
@@ -59,6 +61,7 @@ class ImageWidget extends StatelessWidget {
         fit: fit,
         color: color,
         width: width,
+        filterQuality: lowerQuality ? FilterQuality.low : FilterQuality.high,
         height: height,
         cacheManager: CustomCacheManager.instance,
         errorWidget: (context, url, trace) {
