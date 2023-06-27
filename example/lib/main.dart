@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
               debugShowCheckedModeBanner: false,
               theme: _theme,
               onGenerateRoute: AppRouter.onGenerateRoute,
-              initialRoute: AppRoutes.onBoardingPage,
+              initialRoute: AppRoutes.initial,
             ),
           ),
         );
