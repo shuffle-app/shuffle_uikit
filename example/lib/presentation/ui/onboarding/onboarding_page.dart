@@ -2,49 +2,65 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class OnBoardingPage extends StatefulWidget {
-  const OnBoardingPage({super.key});
+  final Duration transitionDuration;
+  final VoidCallback? onFinished;
+  final List<OnBoardingPageItem> items;
+  final String logoLink;
+
+  const OnBoardingPage({
+    super.key,
+    this.transitionDuration = const Duration(milliseconds: 500),
+    this.onFinished,
+    required this.logoLink,
+    required this.items,
+  });
 
   @override
   State<OnBoardingPage> createState() => _OnBoardingPageState();
 }
 
-class _OnBoardingPageState extends State<OnBoardingPage> {
-  final _animDuration = const Duration(milliseconds: 250);
-  late double _progress = 1 / _items.length;
+class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProviderStateMixin {
+  late final AnimationController _progressAnimationController = AnimationController(
+    vsync: this,
+    duration: overallDuration,
+    value: 0,
+  )..addListener(_animationListener);
+
+  final _firstItemFadeInDuration = const Duration(milliseconds: 500);
+
   double _textOpacity = 0;
   double _logoOpacity = 0;
   double _imageOpacity = 0;
 
-  int get currentIndex {
-    if (_progress == 0) return 0;
-    final index = _progress ~/ (1 / _items.length);
-    return index - 1;
-  }
+  int currentIndex = 0;
 
-  final List<OnBoardingPageItem> _items = [
-    OnBoardingPageItem(
-      imageLink: GraphicsFoundation.instance.png.onboardingMock1.path,
-      title: 'to have some fun',
-    ),
-    OnBoardingPageItem(
-      imageLink: GraphicsFoundation.instance.png.onboardingMock2.path,
-      title: 'to explore leisure and business',
-    ),
-    OnBoardingPageItem(
-      imageLink: GraphicsFoundation.instance.png.onboardingMock3.path,
-      title: 'to just chill out',
-    ),
-  ];
+  double get currentItemProgressPortion =>
+      ((widget.items.elementAt(currentIndex).autoSwitchDuration.inMilliseconds + (widget.transitionDuration * 3).inMilliseconds) /
+          overallDuration.inMilliseconds) *
+      (currentIndex + 1);
+
+  double get divisionWidth => 1 / widget.items.length;
+
+  Duration get overallDuration {
+    Duration duration = Duration.zero;
+    for (final item in widget.items) {
+      /// add total duration for the item with fade in and fade out durations
+      duration += item.autoSwitchDuration + (widget.transitionDuration * 3);
+    }
+    return duration;
+  }
 
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      _progressAnimationController.forward(from: 0);
+      await Future.delayed(_firstItemFadeInDuration);
       setState(() {
         _textOpacity = 1;
         _logoOpacity = 1;
       });
-      Future.delayed(_animDuration * 2, () => setState(() => _imageOpacity = 1));
+      Future.delayed(_firstItemFadeInDuration * 2, () => setState(() => _imageOpacity = 1));
     });
   }
 
@@ -57,13 +73,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           Positioned(
             bottom: 0,
             child: AnimatedOpacity(
-              duration: _animDuration,
+              duration: widget.transitionDuration,
               opacity: _imageOpacity,
               child: AnimatedSwitcher(
-                duration: _animDuration,
+                duration: widget.transitionDuration,
                 child: ImageWidget(
                   key: UniqueKey(),
-                  link: _items.elementAt(currentIndex).imageLink,
+                  link: widget.items.elementAt(currentIndex).imageLink,
                   width: MediaQuery.of(context).size.width,
                   fit: BoxFit.fitWidth,
                 ),
@@ -79,49 +95,45 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ),
               SpacingFoundation.verticalSpace24,
               AnimatedOpacity(
-                duration: _animDuration,
+                duration: widget.transitionDuration,
                 opacity: _logoOpacity,
                 child: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.shuffleWhite,
+                  link: widget.logoLink,
                   fit: BoxFit.fitWidth,
                 ).paddingSymmetric(horizontal: MediaQuery.of(context).size.width * 0.215625),
               ),
               SpacingFoundation.verticalSpace24,
               AnimatedOpacity(
-                duration: _animDuration,
+                duration: widget.transitionDuration,
                 opacity: _textOpacity,
                 child: Text(
                   key: UniqueKey(),
-                  _items.elementAt(currentIndex).title,
+                  widget.items.elementAt(currentIndex).title,
                   style: context.uiKitTheme?.boldTextTheme.titleLarge,
                   textAlign: TextAlign.center,
                 ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal32),
               ),
               const Spacer(),
-              context
-                  .buttonWithProgress(
-                    data: BaseUiKitButtonData(
-                      text: 'NEXT >>>',
-                      onPressed: () {
-                        setState(() {
-                          _textOpacity = 0;
-                          _imageOpacity = 0;
-                        });
-                        Future.delayed(
-                          _animDuration,
-                          () => setState(() {
-                            _progress += 1 / _items.length;
-                            if (_progress > 1) _progress = 1 / _items.length;
-                          }),
-                        );
-                        Future.delayed(_animDuration, () => setState(() => _textOpacity = 1));
-                        Future.delayed(_animDuration * 3, () => setState(() => _imageOpacity = 1));
-                      },
-                    ),
-                    progress: _progress,
-                    blurred: true,
-                  )
-                  .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+              AnimatedBuilder(
+                animation: _progressAnimationController,
+                builder: (context, value) {
+                  return context
+                      .buttonWithProgress(
+                        data: BaseUiKitButtonData(
+                          text: 'NEXT >>>',
+                          onPressed: () {
+                            _progressAnimationController.forward(from: 0);
+                            setState(() {
+                              currentIndex = 0;
+                            });
+                          },
+                        ),
+                        progress: _progressAnimationController.value,
+                        blurred: true,
+                      )
+                      .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16);
+                },
+              ),
               SpacingFoundation.verticalSpace24,
             ],
           ),
@@ -129,14 +141,49 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       ),
     );
   }
+
+  void _animationListener() async {
+    final value = _progressAnimationController.value;
+
+    if (value >= currentItemProgressPortion) {
+      if (currentIndex != widget.items.length - 1 && _textOpacity != 0) {
+        _switchToNextPage();
+      }
+    }
+    if (value == 1.0) widget.onFinished?.call();
+  }
+
+  Future<void> _switchToNextPage() async {
+    setState(() {
+      _textOpacity = 0;
+      _imageOpacity = 0;
+    });
+
+    await Future.delayed(widget.transitionDuration);
+
+    setState(() {
+      _textOpacity = 1;
+      currentIndex++;
+    });
+    await Future.delayed(widget.transitionDuration * 2);
+    setState(() => _imageOpacity = 1);
+  }
 }
 
 class OnBoardingPageItem {
+  /// the image link can be a network image or an asset image
   final String imageLink;
+
+  /// the title of the page
   final String title;
+
+  /// if you need an item to stay longer than the default duration
+  /// you can pass a custom duration
+  final Duration autoSwitchDuration;
 
   const OnBoardingPageItem({
     required this.imageLink,
     required this.title,
+    this.autoSwitchDuration = const Duration(milliseconds: 1500),
   });
 }

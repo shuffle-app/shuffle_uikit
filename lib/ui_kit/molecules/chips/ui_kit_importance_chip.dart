@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitImportanceChip extends StatelessWidget {
@@ -8,8 +7,7 @@ class UiKitImportanceChip extends StatelessWidget {
   final ImportanceChip importance;
   final ValueChanged<ImportanceChip>? onImportanceChanged;
 
-  late final ValueNotifier<ImportanceChip> _valueNotifier =
-      ValueNotifier<ImportanceChip>(importance);
+  late final ValueNotifier<ImportanceChip> _valueNotifier = ValueNotifier<ImportanceChip>(importance);
 
   UiKitImportanceChip({
     Key? key,

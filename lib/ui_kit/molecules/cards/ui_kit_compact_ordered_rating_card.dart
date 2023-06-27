@@ -25,7 +25,6 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
       builder: (context, size) {
         final calculatedHeight = size.maxWidth * 0.2916;
         final sideInfoCardsWidth = size.maxWidth * 0.1597;
-        print(calculatedHeight);
 
         return Material(
           borderRadius: BorderRadiusFoundation.all24,
@@ -85,28 +84,28 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                       horizontal: EdgeInsetsFoundation.horizontal8,
                     ),
                   ),
-                  if(rating!=null)
-                  Ink(
-                    width: sideInfoCardsWidth,
-                    color: ColorsFoundation.darkNeutral500.withOpacity(0.08),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.star,
-                        ),
-                        SpacingFoundation.verticalSpace4,
-                        Text(
-                          rating?.toStringAsFixed(1) ?? '',
-                          style: textTheme?.body,
-                        ),
-                      ],
-                    ).paddingSymmetric(
-                      horizontal: EdgeInsetsFoundation.horizontal8,
+                  if (rating != null)
+                    Ink(
+                      width: sideInfoCardsWidth,
+                      color: ColorsFoundation.darkNeutral500.withOpacity(0.08),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ImageWidget(
+                            svgAsset: GraphicsFoundation.instance.svg.star,
+                          ),
+                          SpacingFoundation.verticalSpace4,
+                          Text(
+                            rating?.toStringAsFixed(1) ?? '',
+                            style: textTheme?.body,
+                          ),
+                        ],
+                      ).paddingSymmetric(
+                        horizontal: EdgeInsetsFoundation.horizontal8,
+                      ),
                     ),
-                  ),
                 ],
               ),
             ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMetricsCard extends StatelessWidget {
@@ -22,10 +21,10 @@ class UiKitMetricsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
-        color: active ? Colors.black : ColorsFoundation.darkNeutral900);
-    final valueStyle = context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(
-        color: active ? Colors.black : ColorsFoundation.darkNeutral900);
+    final titleStyle =
+        context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(color: active ? Colors.black : ColorsFoundation.darkNeutral900);
+    final valueStyle =
+        context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(color: active ? Colors.black : ColorsFoundation.darkNeutral900);
 
     return Container(
       height: height,
@@ -65,22 +64,21 @@ class UiKitMetricsCard extends StatelessWidget {
                       style: active ? valueStyle : titleStyle,
                     ),
                     SpacingFoundation.horizontalSpace4,
-                    if(active)
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg
-                              .risingTrendIcon,
-                        ),
-                        Text(
-                          unit,
-                          style: titleStyle?.copyWith(fontSize: 8),
-                        ),
-                      ],
-                    ),
+                    if (active)
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ImageWidget(
+                            svgAsset: GraphicsFoundation.instance.svg.risingTrendIcon,
+                          ),
+                          Text(
+                            unit,
+                            style: titleStyle?.copyWith(fontSize: 8),
+                          ),
+                        ],
+                      ),
                   ],
                 ),
               ],

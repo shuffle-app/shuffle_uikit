@@ -67,9 +67,7 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
               10,
               (index) => 'Category ${index + 1}',
             ),
-            onSpinChangedCategory: (category) {
-              print('Category changed to $category');
-            },
+            onSpinChangedCategory: (category) {},
           ),
         ],
       ),
