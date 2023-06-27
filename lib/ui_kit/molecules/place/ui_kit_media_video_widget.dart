@@ -25,7 +25,7 @@ class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
             link: media.link,
             width: width ?? 0.83.sw,
             fit: BoxFit.cover,
-            errorWidget: UiKitBigPhotoErrorWidget(),
+            errorWidget: const UiKitBigPhotoErrorWidget(),
           ),
         ),
         Positioned(

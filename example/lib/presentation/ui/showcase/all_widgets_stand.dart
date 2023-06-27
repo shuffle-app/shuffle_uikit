@@ -96,7 +96,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CircularAvatar(
+          const CircularAvatar(
             avatarUrl: '',
             name: 'true false',
             height: 48,
@@ -263,7 +263,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
-              UiKitSpinnerCard(
+              const UiKitSpinnerCard(
                 availableHeight: 300,
                 photoLink: '',
               ),
@@ -738,7 +738,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: UiKitGradientAttentionCard(
                         message: 'Then check this out',
                         textColor: Colors.black,

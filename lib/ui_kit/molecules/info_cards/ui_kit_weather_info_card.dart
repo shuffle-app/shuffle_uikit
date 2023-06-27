@@ -12,27 +12,23 @@ class UiKitWeatherInfoCard extends StatelessWidget {
     Key? key,
     required this.temperature,
     required this.weatherType,
-     this.active = true,
-     this.height = 60,
+    this.active = true,
+    this.height = 60,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final offColor = ColorsFoundation.darkNeutral900;
+    const offColor = ColorsFoundation.darkNeutral900;
     final textTheme = context.uiKitTheme?.boldTextTheme;
     final temperatureStyle = textTheme?.subHeadline.copyWith(color: active ? null : offColor);
     final weatherTypeStyle = textTheme?.caption1Bold.copyWith(color: active ? null : offColor);
 
-
-
     return Container(
       height: height,
       decoration: BoxDecoration(
-        color: active? null : ColorsFoundation.surface2,
+        color: active ? null : ColorsFoundation.surface2,
         borderRadius: BorderRadiusFoundation.all20,
-        border: Border.fromBorderSide(
-            BorderSide(width: 1,color: offColor.withOpacity(0.1))
-        ),
+        border: Border.fromBorderSide(BorderSide(width: 1, color: offColor.withOpacity(0.1))),
         gradient: active ? GradientFoundation.yellowLinearGradient : null,
       ),
       clipBehavior: Clip.hardEdge,
@@ -56,7 +52,7 @@ class UiKitWeatherInfoCard extends StatelessWidget {
           ),
           SpacingFoundation.horizontalSpace16,
           Container(
-            decoration:  BoxDecoration(
+            decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(
                   color: active ? ColorsFoundation.weatherYellow : offColor,
@@ -70,7 +66,7 @@ class UiKitWeatherInfoCard extends StatelessWidget {
               rasterAsset: GraphicsFoundation.instance.png.sunWind,
               color: active ? null : offColor,
               width: 40.w,
-              fit: BoxFit.fitWidth  ,
+              fit: BoxFit.fitWidth,
             ),
           ),
         ],

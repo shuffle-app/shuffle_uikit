@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,12 +18,10 @@ class UiKitHorizontalWheelNumberSelector extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<UiKitHorizontalWheelNumberSelector> createState() =>
-      _UiKitHorizontalWheelNumberSelectorState();
+  State<UiKitHorizontalWheelNumberSelector> createState() => _UiKitHorizontalWheelNumberSelectorState();
 }
 
-class _UiKitHorizontalWheelNumberSelectorState
-    extends State<UiKitHorizontalWheelNumberSelector> {
+class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWheelNumberSelector> {
   late final ValueNotifier<int> _currentValueNotifier;
   final AutoSizeGroup autoSizeGroup = AutoSizeGroup();
   final _animDuration = const Duration(milliseconds: 250);
@@ -33,10 +29,8 @@ class _UiKitHorizontalWheelNumberSelectorState
 
   @override
   void initState() {
-    _scrollController =
-        FixedExtentScrollController(initialItem: widget.initialValue);
-    _currentValueNotifier =
-        ValueNotifier<int>(widget.values[widget.initialValue]);
+    _scrollController = FixedExtentScrollController(initialItem: widget.initialValue);
+    _currentValueNotifier = ValueNotifier<int>(widget.values[widget.initialValue]);
 
     super.initState();
   }
@@ -74,26 +68,18 @@ class _UiKitHorizontalWheelNumberSelectorState
               children: [
                 RotatedBox(
                     quarterTurns: 3,
-                    child:
-                    NotificationListener<ScrollNotification>(
+                    child: NotificationListener<ScrollNotification>(
                       onNotification: (scrollNotification) {
                         if (scrollNotification is ScrollEndNotification) {
-                          WidgetsBinding.instance.addPostFrameCallback(
-                                  (timeStamp) =>
-                                  _scrollController.animateTo(
-                                      widget.values
-                                          .indexOf(
-                                          _currentValueNotifier.value) *
-                                          itemWidth,
-                                      duration: const Duration(
-                                          milliseconds: 100),
-                                      curve: Curves.easeIn));
+                          WidgetsBinding.instance.addPostFrameCallback((timeStamp) => _scrollController.animateTo(
+                              widget.values.indexOf(_currentValueNotifier.value) * itemWidth,
+                              duration: const Duration(milliseconds: 100),
+                              curve: Curves.easeIn));
                         }
 
                         return true;
                       },
-                      child:
-                      ListWheelScrollView(
+                      child: ListWheelScrollView(
                         controller: _scrollController,
                         onSelectedItemChanged: (index) {
                           widget.onValueChanged?.call(widget.values[index]);
@@ -106,39 +92,33 @@ class _UiKitHorizontalWheelNumberSelectorState
                         useMagnifier: false,
                         diameterRatio: 100000,
                         children: widget.values.map(
-                              (e) {
+                          (e) {
                             return AnimatedBuilder(
                               animation: _currentValueNotifier,
                               builder: (context, child) {
                                 final index = widget.values.indexOf(e);
-                                final currentValueIndex = widget.values
-                                    .indexOf(_currentValueNotifier.value);
-                                final deltaIndex =
-                                (index - currentValueIndex).abs();
+                                final currentValueIndex = widget.values.indexOf(_currentValueNotifier.value);
+                                final deltaIndex = (index - currentValueIndex).abs();
                                 double opacity = 1;
                                 if (deltaIndex > 2) opacity = 0.05;
                                 if (deltaIndex == 2) opacity = 0.2;
                                 if (deltaIndex == 1) opacity = 0.5;
 
-                                return Center(child:
-                                RotatedBox(
-                                    quarterTurns: 1,
-                                    child:
-
-                                    AnimatedOpacity(
-                                      duration: _animDuration,
-                                      opacity: opacity,
-                                      child: AutoSizeText(
-                                        e.toString(),
-                                        group: autoSizeGroup,
-                                        maxLines: 1,
-                                        style: boldTextTheme?.title1,
-                                        textAlign: TextAlign.center,
-                                      ),
-                                      // ),
-                                    )).paddingSymmetric(
-                                    horizontal: SpacingFoundation
-                                        .horizontalSpacing4));
+                                return Center(
+                                    child: RotatedBox(
+                                        quarterTurns: 1,
+                                        child: AnimatedOpacity(
+                                          duration: _animDuration,
+                                          opacity: opacity,
+                                          child: AutoSizeText(
+                                            e.toString(),
+                                            group: autoSizeGroup,
+                                            maxLines: 1,
+                                            style: boldTextTheme?.title1,
+                                            textAlign: TextAlign.center,
+                                          ),
+                                          // ),
+                                        )).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing4));
                               },
                               // ),
                             );
@@ -146,12 +126,9 @@ class _UiKitHorizontalWheelNumberSelectorState
                         ).toList(),
                       ),
                     )),
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      IgnorePointer(child:
-                      SizedBox(
+                Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                  IgnorePointer(
+                      child: SizedBox(
                           width: itemWidth,
                           height: itemHeight,
                           child: DecoratedBox(
@@ -161,7 +138,7 @@ class _UiKitHorizontalWheelNumberSelectorState
                               border: Border.all(color: Colors.white, width: 2),
                             ),
                           )))
-                    ]),
+                ]),
               ],
             ),
           ),
