@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-/// all sizes in [OverflownActionCardDecorationIconData] and [DecorationIconPosition]
+/// all sizes in [ActionCardDecorationIconData] and [DecorationIconPosition]
 /// are relative to the design size of the card
 /// so, they are responsive to the card size
 
@@ -13,12 +13,12 @@ class UiKitOverflownActionCard extends StatelessWidget {
   final Widget action;
   final double? horizontalMargin;
   final String overflownIconLink;
-  final List<OverflownActionCardDecorationIconData> decorationIcons;
+  final List<ActionCardDecorationIconData> decorationIcons;
 
   const UiKitOverflownActionCard({
     super.key,
     required this.title,
-     this.horizontalMargin,
+    this.horizontalMargin,
     required this.action,
     required this.overflownIconLink,
     required this.decorationIcons,
@@ -40,50 +40,49 @@ class UiKitOverflownActionCard extends StatelessWidget {
           child: Stack(
             fit: StackFit.expand,
             children: [
-               UiKitCardWrapper(
-                  height: calculatedHeight,
-                  width: size.maxWidth - (horizontalMargin ?? 32),
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          title,
-                          action,
-                        ],
-                      ).paddingAll(EdgeInsetsFoundation.all16),
-                      ...decorationIcons.map<Widget>(
-                        (e) {
-                          final relativeTop = e.position.top == null ? null : (e.position.top! / designHeight) * calculatedHeight;
-                          final relativeBottom =
-                              e.position.bottom == null ? null : (e.position.bottom! / designHeight) * calculatedHeight;
-                          final relativeLeft = e.position.left == null ? null : (e.position.left! / designWidth) * size.maxWidth;
-                          final relativeRight = e.position.right == null ? null : (e.position.right! / designWidth) * size.maxWidth;
-                          final relativeIconHeight = e.iconSize == null ? null : (e.iconSize! / designHeight) * calculatedHeight;
+              UiKitCardWrapper(
+                height: calculatedHeight,
+                width: size.maxWidth - (horizontalMargin ?? 32),
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        title,
+                        action,
+                      ],
+                    ).paddingAll(EdgeInsetsFoundation.all16),
+                    ...decorationIcons.map<Widget>(
+                      (e) {
+                        final relativeTop = e.position.top == null ? null : (e.position.top! / designHeight) * calculatedHeight;
+                        final relativeBottom =
+                            e.position.bottom == null ? null : (e.position.bottom! / designHeight) * calculatedHeight;
+                        final relativeLeft = e.position.left == null ? null : (e.position.left! / designWidth) * size.maxWidth;
+                        final relativeRight = e.position.right == null ? null : (e.position.right! / designWidth) * size.maxWidth;
+                        final relativeIconHeight = e.iconSize == null ? null : (e.iconSize! / designHeight) * calculatedHeight;
 
-                          return Positioned(
-                            top: relativeTop,
-                            bottom: relativeBottom,
-                            left: relativeLeft,
-                            right: relativeRight,
-                            child: Transform.rotate(
-                              angle: e.rotationAngle * (pi / 180),
-                              child: ImageWidget(
-                                link: e.iconLink,
-                                width: relativeIconHeight,
-                                fit: BoxFit.cover,
-                              ),
+                        return Positioned(
+                          top: relativeTop,
+                          bottom: relativeBottom,
+                          left: relativeLeft,
+                          right: relativeRight,
+                          child: Transform.rotate(
+                            angle: e.rotationAngle * (pi / 180),
+                            child: ImageWidget(
+                              link: e.iconLink,
+                              width: relativeIconHeight,
+                              fit: BoxFit.cover,
                             ),
-                          );
-                        },
-                      ),
-                    ],
-                  ),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
                 ),
-
+              ),
               Positioned(
                 right: -overflownIconWidth * 0.25,
                 bottom: -8,
@@ -102,32 +101,4 @@ class UiKitOverflownActionCard extends StatelessWidget {
       },
     ).paddingOnly(left: horizontalMargin ?? 0);
   }
-}
-
-class OverflownActionCardDecorationIconData {
-  final String iconLink;
-  final double? iconSize;
-  final DecorationIconPosition position;
-  final double rotationAngle;
-
-  OverflownActionCardDecorationIconData({
-    required this.iconLink,
-    required this.position,
-    this.iconSize,
-    this.rotationAngle = 0,
-  });
-}
-
-class DecorationIconPosition {
-  final double? top;
-  final double? bottom;
-  final double? left;
-  final double? right;
-
-  DecorationIconPosition({
-    this.top,
-    this.bottom,
-    this.left,
-    this.right,
-  });
 }
