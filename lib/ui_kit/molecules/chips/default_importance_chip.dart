@@ -16,7 +16,7 @@ class DefaultImportanceChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       shape: const CircleBorder(),
-      clipBehavior: Clip.antiAlias,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
       color: ColorsFoundation.surface2,
       child: InkWell(
         onTap: onTap,
