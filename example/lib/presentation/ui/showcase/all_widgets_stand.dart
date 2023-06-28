@@ -131,6 +131,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              UiKitGradientSwitchTile(
+                title: 'Show my profile',
+                switchedOn: selection,
+                onChanged: (value) => setState(() => selection = value),
+              ),
+              SpacingFoundation.verticalSpace16,
               const Center(child: MemberPlate()),
               SpacingFoundation.verticalSpace16,
               context.buttonWithProgress(
