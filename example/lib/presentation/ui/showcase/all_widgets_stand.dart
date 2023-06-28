@@ -131,6 +131,66 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              UiKitPopUpMenuTile(
+                title: 'Eugene Carter',
+                titleIcon: ImageWidget(
+                  svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
+                ),
+                subtitle: '@raceboi',
+                leading: BorderedUserCircleAvatar(
+                  imageUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+                  name: 'Eugene Carter',
+                  size: 48,
+                  border: GradientFoundation.gradientBorder,
+                ),
+                menuOptions: [
+                  UiKitPopUpMenuButtonOption(
+                    title: 'Follow',
+                    value: 'Follow',
+                    onTap: () {
+                      print('Follow');
+                    },
+                  ),
+                  UiKitPopUpMenuButtonOption(
+                    title: 'Message',
+                    value: 'message',
+                    onTap: () {
+                      print('message');
+                    },
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
+              UiKitPopUpMenuTile(
+                title: 'Eugene Carter',
+                titleIcon: ImageWidget(
+                  svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
+                ),
+                subtitle: '@raceboi',
+                leading: BorderedUserCircleAvatar(
+                  imageUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+                  name: 'Eugene Carter',
+                  size: 48,
+                  border: GradientFoundation.gradientBorder,
+                ),
+                menuOptions: [
+                  UiKitPopUpMenuButtonOption(
+                    title: 'Unfollow',
+                    value: 'unfollow',
+                    onTap: () {
+                      print('unfollow');
+                    },
+                  ),
+                  UiKitPopUpMenuButtonOption(
+                    title: 'Message',
+                    value: 'message',
+                    onTap: () {
+                      print('message');
+                    },
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
               const Center(child: MemberPlate()),
               SpacingFoundation.verticalSpace16,
               context.buttonWithProgress(

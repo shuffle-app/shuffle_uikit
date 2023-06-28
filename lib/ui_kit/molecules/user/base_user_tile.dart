@@ -42,7 +42,7 @@ abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              UserCircleAvatar(
+              BorderedUserCircleAvatar(
                 imageUrl: avatarUrl,
                 size: 32.r,
                 border: avatarBorder,
