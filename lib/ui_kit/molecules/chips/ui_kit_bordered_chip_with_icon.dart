@@ -56,16 +56,16 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
   }
 }
 
-class UiKitBorderedChipWithIconData {
-  final String title;
-  final ImageWidget icon;
-  final bool isSelected;
-  final VoidCallback? onPressed;
-
-  UiKitBorderedChipWithIconData({
-    required this.title,
-    required this.icon,
-    required this.isSelected,
-    this.onPressed,
-  });
-}
+// class UiKitBorderedChipWithIconData {
+//   final String title;
+//   final ImageWidget icon;
+//   final bool isSelected;
+//   final VoidCallback? onPressed;
+//
+//   UiKitBorderedChipWithIconData({
+//     required this.title,
+//     required this.icon,
+//     required this.isSelected,
+//     this.onPressed,
+//   });
+// }
