@@ -241,25 +241,34 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ),
                 ],
               ),
-              UiKitSwiperAdCard(
-                title: '',
-                subtitle: '',
-                imageLink: Assets.images.png.mockAdBanner.path,
-              ),
-              UiKitAccentCard(
-                title: 'Ballooning festival',
-                additionalInfo: '22-23 March',
-                accentMessage: 'Don’t miss',
-                image: ImageWidget(
-                  rasterAsset: GraphicsFoundation.instance.png.balloons,
-                  fit: BoxFit.cover,
+              MenuWrap(
+                filepathToMasterImage: 'goldens/swiper_ad_card',
+                child: UiKitSwiperAdCard(
+                  title: '',
+                  subtitle: '',
+                  imageLink: Assets.images.png.mockAdBanner.path,
                 ),
-                onPressed: () {},
+              ),
+              MenuWrap(
+                filepathToMasterImage: 'goldens/place_card.png',
+                child: UiKitAccentCard(
+                  title: 'Ballooning festival',
+                  additionalInfo: '22-23 March',
+                  accentMessage: 'Don’t miss',
+                  image: ImageWidget(
+                    rasterAsset: GraphicsFoundation.instance.png.balloons,
+                    fit: BoxFit.cover,
+                  ),
+                  onPressed: () {},
+                ),
               ),
               SpacingFoundation.verticalSpace16,
-              const Center(
-                child: UiKitBlurredQuestionChip(
-                  label: 'how it works',
+              const MenuWrap(
+                filepathToMasterImage: 'goldens/blurred_chip.png',
+                child: Center(
+                  child: UiKitBlurredQuestionChip(
+                    label: 'how it works',
+                  ),
                 ),
               ),
               SpacingFoundation.verticalSpace16,

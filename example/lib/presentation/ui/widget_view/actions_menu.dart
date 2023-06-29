@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ActionsMenu extends StatelessWidget {
-  const ActionsMenu({super.key, required this.widget});
+  const ActionsMenu(
+      {super.key, required this.widget, this.filepathToMasterImage});
 
   final Widget widget;
+  final String? filepathToMasterImage;
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +21,12 @@ class ActionsMenu extends StatelessWidget {
         PopupMenuItem(
           child: GestureDetector(
             onTap: () {
-              Navigator.of(context).pop();
-              context.push(SingleWidgetViewPage(
-                widget: widget,
-              ));
+              context.pop();
+              context.push(
+                SingleWidgetViewPage(
+                  widget: widget,
+                ),
+              );
             },
             child: const Text(
               'Open widget in new page',
@@ -30,6 +34,23 @@ class ActionsMenu extends StatelessWidget {
             ),
           ),
         ),
+        if (filepathToMasterImage != null)
+          PopupMenuItem(
+            child: GestureDetector(
+              onTap: () {
+                context.pop();
+                context.push(
+                  SingleWidgetViewPage(
+                    widget: Image.asset(filepathToMasterImage!),
+                  ),
+                );
+              },
+              child: const Text(
+                'Open Testcases',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
       ],
     );
   }
