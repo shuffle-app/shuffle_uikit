@@ -131,6 +131,20 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              UiKitFeedbackCard(
+                avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
+                title: 'At.mosphere',
+                datePosted: DateTime.now().subtract(const Duration(days: 2)),
+                rating: 5,
+                companyAnswered: false,
+                helpfulCount: 1,
+                text: 'Came for lunch with my sister. '
+                    'We loved our Thai-style mains which were amazing with lots of flavour, very impressive for a vegetarian restaurant. '
+                    'But the service was below average and the chips were too terrible to finish.',
+                onPressed: () {},
+                onLike: () {},
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitPopUpMenuTile(
                 title: 'Eugene Carter',
                 titleIcon: ImageWidget(
