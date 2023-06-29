@@ -51,6 +51,7 @@ export 'swiper/ui_kit_swiper_ad_card.dart';
 export 'swiper/ui_kit_swiper_card.dart';
 export 'swiper/ui_kit_swiper_card_info.dart';
 export 'tiles/ui_kit_gradient_switch_tile.dart';
+export 'tiles/ui_kit_pop_up_menu_tile.dart';
 export 'user/base_user_tile.dart';
 export 'user/influencer_user_tile.dart';
 export 'user/ordinary_user_tile.dart';
