@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_story_widget.dart';
+import 'package:shuffle_uikit/ui_kit/atoms/profile/ui_kit_video_preview.dart';
 
 /// [ProfileStoriesList] accepts [List] of [ProfileStory]
 /// and displays them in a horizontal list.
@@ -24,7 +24,7 @@ class ProfileStoriesList extends StatelessWidget {
           itemBuilder: (context, index) {
             final story = stories[index];
 
-            return ProfileStoryWidget(
+            return UiKitVideoPreview(
               imagePath: story.image,
             );
           },

@@ -16,6 +16,7 @@ class ImageWidget extends StatelessWidget {
   final Color? color;
   final Widget? errorWidget;
   final bool lowerQuality;
+  final BlendMode? colorBlendMode;
 
   const ImageWidget({
     Key? key,
@@ -28,6 +29,7 @@ class ImageWidget extends StatelessWidget {
     this.svgAsset,
     this.color,
     this.errorWidget,
+    this.colorBlendMode,
   }) : super(key: key);
 
   @override
@@ -39,6 +41,7 @@ class ImageWidget extends StatelessWidget {
         fit: fit,
         height: height,
         width: width,
+        colorBlendMode: colorBlendMode,
       );
     } else if (svgAsset != null) {
       return svgAsset!.svg(
@@ -63,6 +66,7 @@ class ImageWidget extends StatelessWidget {
         width: width,
         filterQuality: lowerQuality ? FilterQuality.low : FilterQuality.high,
         height: height,
+        colorBlendMode: colorBlendMode,
         cacheManager: CustomCacheManager.instance,
         errorWidget: (context, url, trace) {
           log('Got error while downloading $url', name: 'ImageWidget');
@@ -79,8 +83,7 @@ class ImageWidget extends StatelessWidget {
         color: color,
         height: height,
         package: 'shuffle_uikit',
-        placeholderBuilder: (context) =>
-            errorWidget ?? const DefaultImageErrorWidget(),
+        placeholderBuilder: (context) => errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else if (link!.contains('asset')) {
       return Image.asset(
@@ -89,9 +92,9 @@ class ImageWidget extends StatelessWidget {
         width: width,
         color: color,
         height: height,
+        colorBlendMode: colorBlendMode,
         package: 'shuffle_uikit',
-        errorBuilder: (context, error, trace) =>
-            errorWidget ?? const DefaultImageErrorWidget(),
+        errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else {
       return Image.file(
@@ -100,8 +103,7 @@ class ImageWidget extends StatelessWidget {
         width: width,
         color: color,
         height: height,
-        errorBuilder: (context, error, trace) =>
-            errorWidget ?? const DefaultImageErrorWidget(),
+        errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
       );
     }
   }

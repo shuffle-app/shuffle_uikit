@@ -131,6 +131,23 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  UiKitVideoPreview(
+                    imagePath: 'assets/images/png/profile_story_1.png',
+                    viewed: false,
+                    onTap: () {},
+                  ),
+                  SpacingFoundation.horizontalSpace16,
+                  UiKitVideoPreview(
+                    imagePath: 'assets/images/png/profile_story_1.png',
+                    viewed: true,
+                    onTap: () {},
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitDecoratedActionCard(
                 title: 'Notifications',
                 action: context.smallButton(
