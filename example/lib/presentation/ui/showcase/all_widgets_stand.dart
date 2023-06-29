@@ -134,13 +134,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  UiKitVideoPreview(
+                  UiKitReactionPreview(
                     imagePath: 'assets/images/png/profile_story_1.png',
                     viewed: false,
                     onTap: () {},
                   ),
                   SpacingFoundation.horizontalSpace16,
-                  UiKitVideoPreview(
+                  UiKitReactionPreview(
                     imagePath: 'assets/images/png/profile_story_1.png',
                     viewed: true,
                     onTap: () {},

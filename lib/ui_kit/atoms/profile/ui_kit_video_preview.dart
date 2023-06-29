@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitVideoPreview extends StatelessWidget {
+class UiKitReactionPreview extends StatelessWidget {
   final String imagePath;
   final bool viewed;
   final VoidCallback? onTap;
 
-  const UiKitVideoPreview({
+  const UiKitReactionPreview({
     Key? key,
     required this.imagePath,
     this.viewed = false,
