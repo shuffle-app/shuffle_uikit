@@ -131,6 +131,23 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  UiKitReactionPreview(
+                    imagePath: 'assets/images/png/profile_story_1.png',
+                    viewed: false,
+                    onTap: () {},
+                  ),
+                  SpacingFoundation.horizontalSpace16,
+                  UiKitReactionPreview(
+                    imagePath: 'assets/images/png/profile_story_1.png',
+                    viewed: true,
+                    onTap: () {},
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitFeedbackCard(
                 avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
                 title: 'At.mosphere',

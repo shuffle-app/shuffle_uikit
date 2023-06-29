@@ -37,6 +37,7 @@ export 'image/large_circular_avatar_error_widget.dart';
 export 'inputs/inputs.dart';
 export 'inputs/ui_kit_input_field_with_chips.dart';
 export 'profile/ui_kit_tag_widget.dart';
+export 'profile/ui_kit_video_preview.dart';
 export 'user/base_account_mark.dart';
 export 'user/bordered_user_circle_avatar.dart';
 export 'user/influencer_account_mark.dart';
