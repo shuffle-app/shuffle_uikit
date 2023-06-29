@@ -178,7 +178,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     title: 'Unfollow',
                     value: 'unfollow',
                     onTap: () {
-                      print('unfollow');
+                      showDialog(
+                        context: context,
+                        useSafeArea: false,
+                        builder: (context) => CompactAlertPopUp(
+                          title: 'You unsubscribed from',
+                          body: 'Eugene Carter',
+                          action: context.dialogButton(
+                            dialogButtonType: DialogButtonType.buttonBlack,
+                            data: BaseUiKitButtonData(
+                              text: 'okay, cool!',
+                              onPressed: () => Navigator.pop(context),
+                            ),
+                          ),
+                        ),
+                      );
                     },
                   ),
                   UiKitPopUpMenuButtonOption(
