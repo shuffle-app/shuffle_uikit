@@ -14,6 +14,7 @@ class BlurredAppBarPage extends StatelessWidget {
   final ScrollController controller;
   final bool wrapSliverBox;
   final Widget? topFixedAddition;
+  final ScrollPhysics physics;
 
   // final PreferredSizeWidget? bottom;
 
@@ -26,11 +27,13 @@ class BlurredAppBarPage extends StatelessWidget {
     this.appBarBody,
     this.wrapSliverBox = true,
     ScrollController? controller,
+    ScrollPhysics? physics,
     this.appBarTrailing,
     // this.bottom,
     this.centerTitle = false, this.topFixedAddition,
   })
       : controller = controller ?? ScrollController(),
+        physics = physics ?? const ClampingScrollPhysics(),
         super(key: key);
 
   @override
@@ -42,7 +45,7 @@ class BlurredAppBarPage extends StatelessWidget {
       // return CustomScrollView(
       controller: controller,
       // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-      physics: const ClampingScrollPhysics(),
+      physics: physics,
       headerSliverBuilder: (c, _) =>
       [
         // slivers: [

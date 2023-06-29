@@ -205,6 +205,40 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ],
               ),
               SpacingFoundation.verticalSpace16,
+              UiKitDecoratedActionCard(
+                title: 'Notifications',
+                action: context.smallButton(
+                  data: BaseUiKitButtonData(
+                    onPressed: () {},
+                    text: 'SEE ALL',
+                  ),
+                ),
+                decorationIcons: [
+                  ActionCardDecorationIconData(
+                    iconLink: GraphicsFoundation.instance.svg.networking.path,
+                    position: DecorationIconPosition(
+                      right: 42,
+                      top: -5,
+                    ),
+                    iconSize: 92,
+                  ),
+                  ActionCardDecorationIconData(
+                    iconLink: GraphicsFoundation.instance.svg.bellNotification.path,
+                    position: DecorationIconPosition(
+                      right: 0,
+                      top: 4,
+                    ),
+                    rotationAngle: 24,
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
+              UiKitGradientSwitchTile(
+                title: 'Show my profile',
+                switchedOn: selection,
+                onChanged: (value) => setState(() => selection = value),
+              ),
+              SpacingFoundation.verticalSpace16,
               const Center(child: MemberPlate()),
               SpacingFoundation.verticalSpace16,
               context.buttonWithProgress(
@@ -255,7 +289,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
                 overflownIconLink: GraphicsFoundation.instance.svg.map.path,
                 decorationIcons: [
-                  OverflownActionCardDecorationIconData(
+                  ActionCardDecorationIconData(
                     iconLink: GraphicsFoundation.instance.svg.coin.path,
                     position: DecorationIconPosition(
                       top: 4,
@@ -264,7 +298,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     iconSize: 24,
                     rotationAngle: -26,
                   ),
-                  OverflownActionCardDecorationIconData(
+                  ActionCardDecorationIconData(
                     iconLink: GraphicsFoundation.instance.svg.coin.path,
                     iconSize: 27,
                     position: DecorationIconPosition(
@@ -273,7 +307,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     ),
                     rotationAngle: 47.5,
                   ),
-                  OverflownActionCardDecorationIconData(
+                  ActionCardDecorationIconData(
                     iconLink: GraphicsFoundation.instance.svg.icecream.path,
                     position: DecorationIconPosition(
                       right: 86,
@@ -281,7 +315,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     ),
                     rotationAngle: -15,
                   ),
-                  OverflownActionCardDecorationIconData(
+                  ActionCardDecorationIconData(
                     iconLink: GraphicsFoundation.instance.svg.firstAidKit.path,
                     iconSize: 44,
                     position: DecorationIconPosition(
@@ -290,7 +324,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     ),
                     rotationAngle: 30,
                   ),
-                  OverflownActionCardDecorationIconData(
+                  ActionCardDecorationIconData(
                     iconLink: GraphicsFoundation.instance.svg.coin.path,
                     iconSize: 34,
                     position: DecorationIconPosition(

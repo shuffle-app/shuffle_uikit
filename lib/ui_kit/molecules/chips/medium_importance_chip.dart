@@ -16,7 +16,7 @@ class MediumImportanceChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       shape: const CircleBorder(),
-      clipBehavior: Clip.antiAlias,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
       color: Colors.white,
       child: InkWell(
         onTap: onTap,
