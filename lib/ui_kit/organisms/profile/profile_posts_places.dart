@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/molecules/profile/place_widget.dart';
 
 class ProfilePostsPlaces extends StatelessWidget {
   final List<ProfilePlace> places;
@@ -25,7 +24,15 @@ class ProfilePostsPlaces extends StatelessWidget {
                   thickness: 1,
                   color: ColorsFoundation.surface2,
                 ),
-              PlaceWidget(place: place),
+              UiKitExtendedInfluencerFeedbackCard(
+                title: place.title,
+                imageUrl: place.image,
+                datePosted: place.createdAt,
+                tags: place.tags,
+                text: place.postBody,
+                helpfulCount: place.helpfulCount,
+                rating: place.stars,
+              ),
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16);
         },

@@ -17,13 +17,11 @@ class InfluencerProfile extends StatelessWidget {
             delegate: SliverChildListDelegate(
               [
                 const ProfileCard(
-
-                    nickname: '@marywill',
-                    description: 'Just walking here and there trying to find something unique and interesting to show you!',
-                    avatarUrl: 'assets/images/png/profile_avatar.png',
-                    interests: ['Restaurants', 'Hookah', 'Roller Coaster', 'Swimmings'],
-                    followers: 2650,
-
+                  nickname: '@marywill',
+                  description: 'Just walking here and there trying to find something unique and interesting to show you!',
+                  avatarUrl: 'assets/images/png/profile_avatar.png',
+                  interests: ['Restaurants', 'Hookah', 'Roller Coaster', 'Swimmings'],
+                  followers: 2650,
                 ).paddingAll(EdgeInsetsFoundation.all16),
                 const ProfileHighlights(
                   placesVisited: 934,
@@ -57,19 +55,21 @@ class InfluencerProfile extends StatelessWidget {
               (index) => ProfilePlace(
                 image: 'assets/images/png/profile_post_1.png',
                 title: 'Virgins on the beach',
-                createdAt: '2 hours ago',
+                createdAt: DateTime.now().subtract(Duration(days: index + 1)),
                 stars: index == 0 ? 5 : null,
-                postReactionCount: index + 1,
+                helpfulCount: index + 1,
                 postBody:
                     'It’s certainly hidden away, found around a corner past a couple of closed-down outlets and facing the back of a health centre in Cluster F, crammed into one of the tiniest spaces in the teeming JLT neighbourhood.',
                 tags: [
-                  ProfilePlaceTag(
-                    icon: 'assets/images/svg/cocktail.svg',
+                  UiKitTag(
+                    iconPath: 'assets/images/svg/cocktail.svg',
                     title: 'Club',
+                    unique: false,
                   ),
-                  ProfilePlaceTag(
-                    icon: 'assets/images/svg/cocktail.svg',
+                  UiKitTag(
+                    iconPath: 'assets/images/svg/cocktail.svg',
                     title: 'Restaurant',
+                    unique: false,
                   ),
                 ],
               ),
@@ -80,13 +80,13 @@ class InfluencerProfile extends StatelessWidget {
               [
                 context
                     .button(
-                data: BaseUiKitButtonData(
-                      onPressed: () {},
-                      text: 'Next 5 reviews',
-                      icon: const Icon(
-                        Icons.keyboard_arrow_down_rounded,
-                        color: Colors.black,
-                      )),
+                      data: BaseUiKitButtonData(
+                          onPressed: () {},
+                          text: 'Next 5 reviews',
+                          icon: const Icon(
+                            Icons.keyboard_arrow_down_rounded,
+                            color: Colors.black,
+                          )),
                     )
                     .paddingAll(EdgeInsetsFoundation.all16),
                 SpacingFoundation.verticalSpace24
