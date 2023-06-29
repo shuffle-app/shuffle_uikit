@@ -148,6 +148,94 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ],
               ),
               SpacingFoundation.verticalSpace16,
+              UiKitFeedbackCard(
+                avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
+                title: 'At.mosphere',
+                datePosted: DateTime.now().subtract(const Duration(days: 2)),
+                rating: 5,
+                companyAnswered: false,
+                helpfulCount: 1,
+                text: 'Came for lunch with my sister. '
+                    'We loved our Thai-style mains which were amazing with lots of flavour, very impressive for a vegetarian restaurant. '
+                    'But the service was below average and the chips were too terrible to finish.',
+                onPressed: () {},
+                onLike: () {},
+              ),
+              SpacingFoundation.verticalSpace16,
+              UiKitPopUpMenuTile(
+                title: 'Eugene Carter',
+                titleIcon: ImageWidget(
+                  svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
+                ),
+                subtitle: '@raceboi',
+                leading: BorderedUserCircleAvatar(
+                  imageUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+                  name: 'Eugene Carter',
+                  size: 48,
+                  border: GradientFoundation.gradientBorder,
+                ),
+                menuOptions: [
+                  UiKitPopUpMenuButtonOption(
+                    title: 'Follow',
+                    value: 'Follow',
+                    onTap: () {
+                      print('Follow');
+                    },
+                  ),
+                  UiKitPopUpMenuButtonOption(
+                    title: 'Message',
+                    value: 'message',
+                    onTap: () {
+                      print('message');
+                    },
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
+              UiKitPopUpMenuTile(
+                title: 'Eugene Carter',
+                titleIcon: ImageWidget(
+                  svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
+                ),
+                subtitle: '@raceboi',
+                leading: BorderedUserCircleAvatar(
+                  imageUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+                  name: 'Eugene Carter',
+                  size: 48,
+                  border: GradientFoundation.gradientBorder,
+                ),
+                menuOptions: [
+                  UiKitPopUpMenuButtonOption(
+                    title: 'Unfollow',
+                    value: 'unfollow',
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        useSafeArea: false,
+                        builder: (context) => CompactAlertPopUp(
+                          title: 'You unsubscribed from',
+                          body: 'Eugene Carter',
+                          action: context.dialogButton(
+                            dialogButtonType: DialogButtonType.buttonBlack,
+                            data: BaseUiKitButtonData(
+                              text: 'okay, cool!',
+                              onPressed: () => Navigator.pop(context),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                  UiKitPopUpMenuButtonOption(
+                    title: 'Message',
+                    value: 'message',
+                    onTap: () {
+                      print('message');
+                    },
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitDecoratedActionCard(
                 title: 'Notifications',
                 action: context.smallButton(

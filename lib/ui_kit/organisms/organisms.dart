@@ -10,6 +10,7 @@ export 'place/ui_kit_media_slider_with_tags.dart';
 export 'place/upcoming_event_place_action_card.dart';
 export 'popups/additional_action_notification_popup.dart';
 export 'popups/base_notification_popup.dart';
+export 'popups/compact_alert_pop_up.dart';
 export 'popups/ordinary_notification_popup.dart';
 export 'profile/profile_attitude_tabs.dart';
 export 'profile/profile_card.dart';
