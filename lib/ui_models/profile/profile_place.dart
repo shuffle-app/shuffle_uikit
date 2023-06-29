@@ -1,11 +1,13 @@
+import 'package:shuffle_uikit/shuffle_uikit.dart';
+
 class ProfilePlace {
   final String image;
   final String title;
-  final String createdAt;
+  final DateTime createdAt;
   final String postBody;
-  final int? stars;
-  final int postReactionCount;
-  final List<ProfilePlaceTag> tags;
+  final double? stars;
+  final int helpfulCount;
+  final List<UiKitTag> tags;
 
   ProfilePlace({
     required this.image,
@@ -13,7 +15,7 @@ class ProfilePlace {
     required this.postBody,
     required this.createdAt,
     this.stars,
-    required this.postReactionCount,
+    required this.helpfulCount,
     required this.tags,
   });
 }

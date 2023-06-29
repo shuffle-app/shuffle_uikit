@@ -131,6 +131,18 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              UiKitExtendedFeedbackCard(
+                title: 'Marry Williams',
+                avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+                datePosted: DateTime.now().subtract(const Duration(days: 2)),
+                text: 'Came for lunch with my sister. '
+                    'We loved our Thai-style mains which were amazing with lots of flavour, very impressive for a vegetarian restaurant. '
+                    'But the service was below average and the chips were too terrible to finish.',
+                helpfulCount: 1,
+                onEdit: () {},
+                onDelete: () {},
+              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal32),
+              SpacingFoundation.verticalSpace16,
               UiKitDecoratedActionCard(
                 title: 'Notifications',
                 action: context.smallButton(
