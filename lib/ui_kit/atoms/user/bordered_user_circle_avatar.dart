@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UserCircleAvatar extends StatelessWidget {
+class BorderedUserCircleAvatar extends StatelessWidget {
   final String? imageUrl;
   final double? size;
-  final Border? border;
+  final BoxBorder? border;
+  final String? name;
 
-  const UserCircleAvatar({
+  const BorderedUserCircleAvatar({
     Key? key,
     this.imageUrl,
     this.size,
     this.border,
+    this.name,
   }) : super(key: key);
 
   @override
@@ -18,6 +20,7 @@ class UserCircleAvatar extends StatelessWidget {
     return Container(
       width: size,
       height: size,
+      clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: border,
@@ -26,7 +29,15 @@ class UserCircleAvatar extends StatelessWidget {
         child: ImageWidget(
           link: imageUrl,
           fit: BoxFit.cover,
-          // package: 'shuffle_uikit',
+          errorWidget: LargeCircularAvatarErrorWidget(
+            text: name
+                    ?.split(' ')
+                    .map(
+                      (e) => e.isNotEmpty ? e.characters.first : '',
+                    )
+                    .join('') ??
+                '',
+          ),
         ),
       ),
     );
