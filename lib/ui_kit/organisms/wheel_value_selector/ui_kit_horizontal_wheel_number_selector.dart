@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:just_audio/just_audio.dart';
+import 'package:shuffle_uikit/foundation/audio_foundation.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitHorizontalWheelNumberSelector extends StatefulWidget {
@@ -26,6 +28,7 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
   final AutoSizeGroup autoSizeGroup = AutoSizeGroup();
   final _animDuration = const Duration(milliseconds: 250);
   late final FixedExtentScrollController _scrollController;
+  final player = AudioPlayer();
 
   @override
   void initState() {
@@ -33,6 +36,16 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
     _currentValueNotifier = ValueNotifier<int>(widget.values[widget.initialValue]);
 
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      await player.setAsset(
+        AudioFoundation.instance.audio.rachetClick,
+        package: 'shuffle_uikit',
+      );
+      await player.seek(Duration.zero);
+      _currentValueNotifier.addListener(() {
+        player.play().then((value) => player.seek(Duration.zero));
+      });
+    });
   }
 
   @override
