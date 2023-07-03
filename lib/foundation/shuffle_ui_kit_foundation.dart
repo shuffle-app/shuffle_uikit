@@ -3,6 +3,7 @@
 
 export '../themes/themes.dart';
 export '../themes/ui_kit_theme.dart';
+export 'audio_foundation.dart';
 export 'border_radius_foundation.dart';
 export 'colors_foundation.dart';
 export 'edge_insets_foundation.dart';
