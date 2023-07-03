@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:html/parser.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:shuffle_uikit/foundation/audio_foundation.dart';
@@ -58,7 +57,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
 
     // widget.scrollController.initialScrollOffset %
 
-
     if (_spinningType == SpinningType.categories) {
       final scrollDelta = widget.scrollController.offset - _lastScrollPositionOffsetNotifier.value;
       _rotationNotifier.value -= scrollDelta / 200;
@@ -106,7 +104,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
             curve: Curves.decelerate,
           ));
     } else {
-
       widget.scrollController.animateTo(
         nearestElementOffset,
         duration: _animDuration,
@@ -114,7 +111,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
       );
     }
     _lastScrollPositionOffsetNotifier.value = nearestElementOffset;
-
   }
 
   double _lastRotationValue = 0;
@@ -203,15 +199,12 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       child: AnimatedBuilder(
                         animation: _rotationNotifier,
                         builder: (context, child) {
-
-                          if((_rotationNotifier.value-_lastRotationValue).abs()>=0.8)
-                            {
-                              _enableFeedback();
-                              WidgetsBinding.instance.addPostFrameCallback((timeStamp) =>
-                              setState(() {
-                                _lastRotationValue = _rotationNotifier.value;
-                              }));
-                            }
+                          if ((_rotationNotifier.value - _lastRotationValue).abs() >= 0.8) {
+                            _enableFeedback();
+                            WidgetsBinding.instance.addPostFrameCallback((timeStamp) => setState(() {
+                                  _lastRotationValue = _rotationNotifier.value;
+                                }));
+                          }
 
                           return Transform.rotate(
                             angle: _rotationNotifier.value,

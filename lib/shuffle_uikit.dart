@@ -1,5 +1,6 @@
 library shuffle_uikit;
 
+export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:shuffle_uikit/foundation/shuffle_ui_kit_foundation.dart';
 export 'package:shuffle_uikit/tokens/assets.gen.dart';
 export 'package:shuffle_uikit/tokens/fonts.gen.dart';

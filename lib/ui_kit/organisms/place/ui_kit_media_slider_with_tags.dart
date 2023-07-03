@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMediaSliderWithTags extends StatelessWidget {
@@ -22,7 +21,6 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -42,12 +40,9 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                 );
               }
 
-              return BaseUiKitMediaWidget.image(
-                  media: mediaItem, width: media.length == 1 ? 1.sw : null);
+              return BaseUiKitMediaWidget.image(media: mediaItem, width: media.length == 1 ? 1.sw : null);
             },
-            separatorBuilder: (context, index) => index == 0
-                ? const SizedBox.shrink()
-                : SpacingFoundation.horizontalSpace16,
+            separatorBuilder: (context, index) => index == 0 ? const SizedBox.shrink() : SpacingFoundation.horizontalSpace16,
           ),
         ),
         SpacingFoundation.verticalSpace14,
@@ -57,8 +52,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           uniqueTags: uniqueTags,
         ).paddingSymmetric(horizontal: horizontalMargin),
         SpacingFoundation.verticalSpace14,
-        DescriptionWidget(description: description)
-            .paddingOnly(left: horizontalMargin, right: horizontalMargin),
+        DescriptionWidget(description: description).paddingOnly(left: horizontalMargin, right: horizontalMargin),
       ],
     );
   }

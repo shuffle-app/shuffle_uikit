@@ -184,16 +184,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   UiKitPopUpMenuButtonOption(
                     title: 'Follow',
                     value: 'Follow',
-                    onTap: () {
-                      print('Follow');
-                    },
+                    onTap: () {},
                   ),
                   UiKitPopUpMenuButtonOption(
                     title: 'Message',
                     value: 'message',
-                    onTap: () {
-                      print('message');
-                    },
+                    onTap: () {},
                   ),
                 ],
               ),
@@ -235,9 +231,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   UiKitPopUpMenuButtonOption(
                     title: 'Message',
                     value: 'message',
-                    onTap: () {
-                      print('message');
-                    },
+                    onTap: () {},
                   ),
                 ],
               ),

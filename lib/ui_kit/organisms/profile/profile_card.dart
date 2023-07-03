@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_avatar.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_description.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProfileCard extends StatelessWidget {
   final String? nickname;
@@ -48,10 +47,7 @@ class ProfileCard extends StatelessWidget {
                   avatarUrl: avatarUrl ?? '',
                   name: name,
                 ),
-              if (followers != null && onFollow != null)
-                SpacingFoundation.horizontalSpace16
-              else
-                SpacingFoundation.horizontalSpace12,
+              if (followers != null && onFollow != null) SpacingFoundation.horizontalSpace16 else SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: ProfileInfo(
                   name: name,
@@ -70,25 +66,20 @@ class ProfileCard extends StatelessWidget {
           ],
           Stack(children: [
             ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: 100.h),
-                    child: SingleChildScrollView(
-                        child: ProfileInterests(
-                      matchingInterests: matchingInterests,
-                      profileInterests: interests ?? [],
-                    ).paddingSymmetric(
-                            vertical: SpacingFoundation.verticalSpacing16)))
-                ,
+                constraints: BoxConstraints(maxHeight: 100.h),
+                child: SingleChildScrollView(
+                    child: ProfileInterests(
+                  matchingInterests: matchingInterests,
+                  profileInterests: interests ?? [],
+                ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing16))),
             Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [
-                      context.uiKitTheme?.cardColor ?? ColorsFoundation.surface3,
-                      Colors.transparent
-                    ],
-                    tileMode: TileMode.decal,
-                    end: Alignment.bottomCenter,
-                    begin: Alignment.topCenter,
-                  )),
+                colors: [context.uiKitTheme?.cardColor ?? ColorsFoundation.surface3, Colors.transparent],
+                tileMode: TileMode.decal,
+                end: Alignment.bottomCenter,
+                begin: Alignment.topCenter,
+              )),
               height: 16.sp,
               width: double.infinity,
             ),
@@ -100,22 +91,16 @@ class ProfileCard extends StatelessWidget {
                   alignment: Alignment.bottomCenter,
                   decoration: BoxDecoration(
                       gradient: LinearGradient(
-                        colors: [
-                          context.uiKitTheme?.cardColor ??
-                              ColorsFoundation.surface3,
-                          Colors.transparent
-                        ],
-                        tileMode: TileMode.decal,
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter,
-                      )),
+                    colors: [context.uiKitTheme?.cardColor ?? ColorsFoundation.surface3, Colors.transparent],
+                    tileMode: TileMode.decal,
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                  )),
                   height: 16.sp,
                 )),
-          ]).paddingSymmetric(
-              vertical: SpacingFoundation.verticalSpacing16),
+          ]).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing16),
         ],
-      ).paddingLTRB(EdgeInsetsFoundation.all16, EdgeInsetsFoundation.all16,
-          EdgeInsetsFoundation.all16, 0),
+      ).paddingLTRB(EdgeInsetsFoundation.all16, EdgeInsetsFoundation.all16, EdgeInsetsFoundation.all16, 0),
     );
   }
 }

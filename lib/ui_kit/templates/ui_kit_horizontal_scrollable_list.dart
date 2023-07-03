@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UiKitHorizontalScrollableList extends StatelessWidget {
   final List<Widget> children;

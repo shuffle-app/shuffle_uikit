@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class DescriptionWidget extends StatelessWidget {
@@ -13,32 +12,24 @@ class DescriptionWidget extends StatelessWidget {
     bool hide = true;
 
     return StatefulBuilder(
-        builder: (c, s) => Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    description,
-                    maxLines: hide ? 7 : null,
-                    softWrap: true,
-                    overflow: hide ? TextOverflow.ellipsis : null,
-                    style: theme?.boldTextTheme.caption1Bold
-                        .copyWith(color: Colors.white),
+        builder: (c, s) => Column(crossAxisAlignment: CrossAxisAlignment.stretch, mainAxisSize: MainAxisSize.min, children: [
+              Text(
+                description,
+                maxLines: hide ? 7 : null,
+                softWrap: true,
+                overflow: hide ? TextOverflow.ellipsis : null,
+                style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
+              ),
+              if ((description.replaceAll('\n', '').characters.length * 5.8.w ~/ 0.8.sw +
+                      description.characters.where((p0) => p0 == '\n').length) >
+                  7)
+                InkWell(
+                  onTap: () => s(() => hide = !hide),
+                  child: Text(
+                    'Read ${hide ? 'more' : 'less'}',
+                    style: theme?.boldTextTheme.caption1Bold.copyWith(color: ColorsFoundation.darkNeutral300),
                   ),
-                  if ((description.replaceAll('\n', '').characters.length *
-                              5.8.w ~/
-                              0.8.sw +
-                          description.characters
-                              .where((p0) => p0 == '\n')
-                              .length) > 7)
-                    InkWell(
-                      onTap: () => s(() => hide = !hide),
-                      child: Text(
-                        'Read ${hide ? 'more' : 'less'}',
-                        style: theme?.boldTextTheme.caption1Bold
-                            .copyWith(color: ColorsFoundation.darkNeutral300),
-                      ),
-                    ).paddingOnly(top: SpacingFoundation.verticalSpacing12)
-                ]));
+                ).paddingOnly(top: SpacingFoundation.verticalSpacing12)
+            ]));
   }
 }
