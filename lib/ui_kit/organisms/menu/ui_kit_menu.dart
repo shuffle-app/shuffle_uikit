@@ -43,6 +43,8 @@ class UiKitMenu<T> extends StatelessWidget {
           ),
           child: InkWell(
             onTap: () {
+              //if keyboard is opened, unfocus it
+              FocusManager.instance.primaryFocus?.unfocus();
               final elementsHeight = ((items.length + 1) * 52) + (SpacingFoundation.verticalSpacing16 * 3);
               final topPadding = max(1.sh - elementsHeight, 0.0);
               showUiKitGeneralFullScreenDialog(

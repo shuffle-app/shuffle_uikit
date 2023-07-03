@@ -30,11 +30,12 @@ class UiKitShadowWrapper extends StatelessWidget {
             blurRadius: 18,
             spreadRadius: 0,
             offset: Offset.zero,
-            blurStyle: BlurStyle.outer,
+            // blurStyle: BlurStyle.outer,
           ),
         ],
       ),
       child: child,
     );
+    
   }
 }

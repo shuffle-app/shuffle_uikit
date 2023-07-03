@@ -51,7 +51,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
     final titleStyle = textTheme?.caption1Bold;
-    final dateTextStyle = textTheme?.caption1Bold.copyWith(
+    final dateTextStyle = textTheme?.caption2Bold.copyWith(
       color: ColorsFoundation.darkNeutral900,
     );
 
