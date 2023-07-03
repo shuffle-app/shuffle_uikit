@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/utils/extentions/date_time_time_ago_extention.dart';
 
 /// думаю стоит перенепсти этот виджет в компонентную библиотеку разобрав его на атомы
 class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {

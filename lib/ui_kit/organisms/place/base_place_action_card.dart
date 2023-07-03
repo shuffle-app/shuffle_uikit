@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BasePlaceActionCard extends StatelessWidget {
@@ -62,10 +61,10 @@ class BasePlaceActionCard extends StatelessWidget {
               ),
               SpacingFoundation.verticalSpace8,
               context.smallButton(
-                data: BaseUiKitButtonData(
+                  data: BaseUiKitButtonData(
                 text: 'See more',
-                onPressed: action,)
-              ),
+                onPressed: action,
+              )),
             ],
           ).paddingAll(EdgeInsetsFoundation.all12),
         ],

@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:html/parser.dart';
-import 'package:just_audio/just_audio.dart';
-import 'package:shuffle_uikit/foundation/audio_foundation.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitSpinner extends StatefulWidget {
@@ -27,7 +23,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
   final ValueNotifier<double> _rotationNotifier = ValueNotifier<double>(0);
   final ValueNotifier<double> _lastScrollPositionOffsetNotifier = ValueNotifier<double>(0);
   final ValueNotifier<double> _scrollStartNotifier = ValueNotifier<double>(0);
-  final _player = AudioPlayer();
   SpinningType _spinningType = SpinningType.wheel;
 
   @override
@@ -35,10 +30,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       widget.scrollController.addListener(_scrollListener);
-      _player.setAsset(
-        AudioFoundation.instance.audio.rachetClick,
-        package: 'shuffle_uikit',
-      );
     });
   }
 
@@ -47,18 +38,10 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
   }
 
   void _enableFeedback() {
-    _player.play().then((value) => _player.seek(Duration.zero));
-    HapticFeedback.lightImpact();
+    FeedbackIsolate.instance.addEvent(FeedbackIsolateRachetClickAndHaptics());
   }
 
   void _scrollListener() {
-    // if (widget.scrollController.offset.toInt() % 20 == 0 && _spinningType!=SpinningType.wheel) {
-    //   _enableFeedback();
-    // }
-
-    // widget.scrollController.initialScrollOffset %
-
-
     if (_spinningType == SpinningType.categories) {
       final scrollDelta = widget.scrollController.offset - _lastScrollPositionOffsetNotifier.value;
       _rotationNotifier.value -= scrollDelta / 200;
@@ -106,7 +89,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
             curve: Curves.decelerate,
           ));
     } else {
-
       widget.scrollController.animateTo(
         nearestElementOffset,
         duration: _animDuration,
@@ -114,7 +96,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
       );
     }
     _lastScrollPositionOffsetNotifier.value = nearestElementOffset;
-
   }
 
   double _lastRotationValue = 0;
@@ -125,7 +106,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     _rotationNotifier.dispose();
     _lastScrollPositionOffsetNotifier.dispose();
     _scrollStartNotifier.dispose();
-    _player.dispose();
     super.dispose();
   }
 
@@ -203,15 +183,12 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       child: AnimatedBuilder(
                         animation: _rotationNotifier,
                         builder: (context, child) {
-
-                          if((_rotationNotifier.value-_lastRotationValue).abs()>=0.8)
-                            {
-                              _enableFeedback();
-                              WidgetsBinding.instance.addPostFrameCallback((timeStamp) =>
-                              setState(() {
-                                _lastRotationValue = _rotationNotifier.value;
-                              }));
-                            }
+                          if ((_rotationNotifier.value - _lastRotationValue).abs() >= 0.8) {
+                            _enableFeedback();
+                            WidgetsBinding.instance.addPostFrameCallback((timeStamp) => setState(() {
+                                  _lastRotationValue = _rotationNotifier.value;
+                                }));
+                          }
 
                           return Transform.rotate(
                             angle: _rotationNotifier.value,

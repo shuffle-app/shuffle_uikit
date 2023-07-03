@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitTagsWidget extends StatelessWidget {
@@ -26,7 +25,11 @@ class UiKitTagsWidget extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                ImageWidget(svgAsset: GraphicsFoundation.instance.svg.star,height: 16.h, fit: BoxFit.fitHeight,),
+                ImageWidget(
+                  svgAsset: GraphicsFoundation.instance.svg.star,
+                  height: 16.h,
+                  fit: BoxFit.fitHeight,
+                ),
                 SpacingFoundation.horizontalSpace8,
                 Text(
                   rating.toString(),
@@ -38,7 +41,8 @@ class UiKitTagsWidget extends StatelessWidget {
               vertical: EdgeInsetsFoundation.vertical12,
             ),
           ),
-        SpacingFoundation.horizontalSpace8],
+          SpacingFoundation.horizontalSpace8
+        ],
         Expanded(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -63,13 +67,7 @@ class UiKitTagsWidget extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   child: Wrap(
                     spacing: SpacingFoundation.horizontalSpacing8,
-                    children: uniqueTags!
-                        .map((e) => UiKitTagWidget(
-                              title: e.title,
-                              icon: e.iconPath,
-                              uniqueTag: true
-                            ))
-                        .toList(),
+                    children: uniqueTags!.map((e) => UiKitTagWidget(title: e.title, icon: e.iconPath, uniqueTag: true)).toList(),
                   ),
                 ),
               ],

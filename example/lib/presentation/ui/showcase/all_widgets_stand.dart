@@ -131,6 +131,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              UiKitHorizontalWheelNumberSelector(
+                title: 'Your age',
+                values: List<int>.generate(70, (index) => 10 + index),
+                onValueChanged: (value) {},
+              ),
+              SpacingFoundation.verticalSpace16,
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -178,16 +184,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   UiKitPopUpMenuButtonOption(
                     title: 'Follow',
                     value: 'Follow',
-                    onTap: () {
-                      print('Follow');
-                    },
+                    onTap: () {},
                   ),
                   UiKitPopUpMenuButtonOption(
                     title: 'Message',
                     value: 'message',
-                    onTap: () {
-                      print('message');
-                    },
+                    onTap: () {},
                   ),
                 ],
               ),
@@ -229,9 +231,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   UiKitPopUpMenuButtonOption(
                     title: 'Message',
                     value: 'message',
-                    onTap: () {
-                      print('message');
-                    },
+                    onTap: () {},
                   ),
                 ],
               ),
@@ -392,6 +392,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               Center(
                 child: UiKitTitledCardWithBackground(
+                  onPressed: () {},
                   title: 'Active Holidays',
                   backgroundImageLink: GraphicsFoundation.instance.png.titledCardBackground1.path,
                   backgroundColor: ColorsFoundation.brightYellow,
@@ -400,6 +401,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               Center(
                 child: UiKitTitledCardWithBackground(
+                  onPressed: () {},
                   title: 'Big Company',
                   backgroundImageLink: GraphicsFoundation.instance.png.titledCardBackground2.path,
                   backgroundColor: ColorsFoundation.red,
@@ -408,6 +410,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               Center(
                 child: UiKitTitledCardWithBackground(
+                  onPressed: () {},
                   title: 'Electronic Music',
                   backgroundImageLink: GraphicsFoundation.instance.png.titledCardBackground3.path,
                   backgroundColor: ColorsFoundation.pink,
@@ -415,7 +418,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               const UiKitSpinnerCard(
-                availableHeight: 300,
+                availableHeight: 400,
                 photoLink: '',
               ),
               Center(
@@ -578,12 +581,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ),
                   badgeValue: 2,
                 ),
-              ),
-              SpacingFoundation.verticalSpace16,
-              UiKitHorizontalWheelNumberSelector(
-                title: 'Your age',
-                values: List<int>.generate(70, (index) => 10 + index),
-                onValueChanged: (value) {},
               ),
               SpacingFoundation.verticalSpace16,
               context.notificationPopUp(

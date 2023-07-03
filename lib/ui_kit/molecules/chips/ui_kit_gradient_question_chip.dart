@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitGradientQuestionChip extends StatelessWidget {
@@ -17,9 +16,9 @@ class UiKitGradientQuestionChip extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: ClipPath(
-      clipper: GradientQuestionChipClipper(),
-      child: Material(
-        child:  Ink(
+        clipper: GradientQuestionChipClipper(),
+        child: Material(
+          child: Ink(
             decoration: const BoxDecoration(
               gradient: GradientFoundation.badgeIcon,
             ),

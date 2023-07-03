@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -70,7 +69,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
       opacity: opacity,
       child: SizedBox(
         width: 0.75.sw,
-        height: widget.availableHeight,
+        height: widget.availableHeight + SpacingFoundation.verticalSpacing8,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,

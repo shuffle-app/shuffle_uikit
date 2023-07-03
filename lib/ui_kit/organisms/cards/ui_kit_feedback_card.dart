@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/molecules/badges/ui_kit_rating_badge.dart';
 
 class UiKitFeedbackCard extends StatelessWidget {
   final String? title;
@@ -26,12 +25,6 @@ class UiKitFeedbackCard extends StatelessWidget {
     this.onPressed,
   });
 
-  String _timeAgo(DateTime? date) {
-    if (date == null) return 'some time ago';
-
-    return '${DateTime.now().difference(date).inDays} days ago';
-  }
-
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
@@ -54,34 +47,15 @@ class UiKitFeedbackCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      CircularAvatar(
-                        avatarUrl: avatarUrl ?? '',
-                        name: title,
-                        height: calculatedHeight * 0.25,
-                      ),
-                      SpacingFoundation.horizontalSpace12,
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              title ?? '',
-                              style: boldTextTheme?.caption1Bold,
-                            ),
-                            SpacingFoundation.verticalSpace2,
-                            Text(
-                              _timeAgo(datePosted),
-                              style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
-                            ),
-                          ],
-                        ),
-                      ),
-                      if (rating != null) UiKitRatingBadge(rating: rating!),
-                    ],
+                  UiKitHeaderWithLeading(
+                    title: title ?? '',
+                    leading: CircularAvatar(
+                      avatarUrl: avatarUrl ?? '',
+                      name: title,
+                      height: calculatedHeight * 0.25,
+                    ),
+                    subtitle: datePosted?.timeAgo ?? '',
+                    trailing: rating != null ? UiKitRatingBadge(rating: rating!) : null,
                   ),
                   Text(
                     text ?? '',

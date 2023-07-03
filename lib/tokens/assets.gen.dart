@@ -816,6 +816,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/route.svg
   SvgGenImage get route => const SvgGenImage('assets/images/svg/route.svg');
 
+  /// File path: assets/images/svg/satelite.svg
+  SvgGenImage get satelite => const SvgGenImage('assets/images/svg/satelite.svg');
+
   /// File path: assets/images/svg/scan.svg
   SvgGenImage get scan => const SvgGenImage('assets/images/svg/scan.svg');
 
@@ -1065,6 +1068,7 @@ class $AssetsImagesSvgGen {
         question,
         risingTrendIcon,
         route,
+        satelite,
         scan,
         searchPeople,
         search,

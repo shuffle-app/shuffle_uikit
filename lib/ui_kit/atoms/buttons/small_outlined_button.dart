@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
@@ -24,8 +23,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium
-        .copyWith(color: textColor);
+    final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(color: textColor);
 
     return Material(
       borderRadius: text.isEmpty ? null : BorderRadiusFoundation.max,
@@ -46,26 +44,26 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
             color: text.isEmpty ? Colors.white.withOpacity(0.1) : null,
           ),
           child:
-          // BackdropFilter(
-          //     filter: ImageFilter.blur(
-          //         sigmaX: blurred && !(text.isEmpty && icon != null) ? 18 : 0,
-          //         sigmaY: blurred && !(text.isEmpty && icon != null) ? 18 : 0),
-          //     child:
+              // BackdropFilter(
+              //     filter: ImageFilter.blur(
+              //         sigmaX: blurred && !(text.isEmpty && icon != null) ? 18 : 0,
+              //         sigmaY: blurred && !(text.isEmpty && icon != null) ? 18 : 0),
+              //     child:
               text.isEmpty && icon != null
                   ? ClipOval(
-                  child: BackdropFilter(
-                      filter: ImageFilter.blur(sigmaX: blurred ? 18 : 0, sigmaY: blurred ? 18 : 0),
-                      child: icon!.paddingAll(EdgeInsetsFoundation.all8)))
+                      child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: blurred ? 18 : 0, sigmaY: blurred ? 18 : 0),
+                          child: icon!.paddingAll(EdgeInsetsFoundation.all8)))
                   : Center(
-                  child: Text(
-                    text,
-                    style: textStyle,
-                  )
-              // )
-                  .paddingSymmetric(
-                vertical: EdgeInsetsFoundation.vertical4,
-                horizontal: EdgeInsetsFoundation.horizontal16,
-              )),
+                      child: Text(
+                      text,
+                      style: textStyle,
+                    )
+                          // )
+                          .paddingSymmetric(
+                      vertical: EdgeInsetsFoundation.vertical4,
+                      horizontal: EdgeInsetsFoundation.horizontal16,
+                    )),
         ),
       ),
     );

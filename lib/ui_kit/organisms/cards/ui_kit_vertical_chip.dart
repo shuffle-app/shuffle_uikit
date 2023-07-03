@@ -21,7 +21,7 @@ class UiKitVerticalChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: selected ? Colors.white.withOpacity(0.07) : ColorsFoundation.surface2,
+      color: selected ? Colors.white.withOpacity(0.12) : ColorsFoundation.surface2,
       borderRadius: BorderRadiusFoundation.all24,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
