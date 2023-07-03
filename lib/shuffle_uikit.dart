@@ -25,4 +25,5 @@ export 'utils/extentions/padding_extention.dart';
 export 'utils/extentions/sizebox_extention.dart';
 export 'utils/extentions/sliver_extention.dart';
 export 'utils/extentions/ui_kit_theme_extention.dart';
+export 'utils/isolate/feedback_isolate.dart';
 export 'utils/widgets_factory/widgets_abstract_factory.dart';

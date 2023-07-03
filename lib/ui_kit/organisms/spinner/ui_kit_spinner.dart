@@ -1,6 +1,6 @@
-import 'package:flutter/material';
+import 'package:flutter/material.dart';
+import 'package:html/parser.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/utils/isolate/system_sound_isolate.dart';
 
 class UiKitSpinner extends StatefulWidget {
   final List<String> categories;
@@ -183,7 +183,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       child: AnimatedBuilder(
                         animation: _rotationNotifier,
                         builder: (context, child) {
-                          if ((_rotationNotifier.value - _lastRotationValue).abs() >= 0.6) {
+                          if ((_rotationNotifier.value - _lastRotationValue).abs() >= 0.8) {
                             _enableFeedback();
                             WidgetsBinding.instance.addPostFrameCallback((timeStamp) => setState(() {
                                   _lastRotationValue = _rotationNotifier.value;

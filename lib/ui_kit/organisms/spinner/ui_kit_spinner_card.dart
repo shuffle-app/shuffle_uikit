@@ -69,11 +69,12 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
       opacity: opacity,
       child: SizedBox(
         width: 0.75.sw,
-        height: widget.availableHeight,
+        height: widget.availableHeight + SpacingFoundation.verticalSpacing8,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            SpacingFoundation.verticalSpace8,
             ConstrainedBox(
               constraints: BoxConstraints(maxHeight: widget.availableHeight * 0.76),
               child: Stack(

@@ -14,7 +14,7 @@ class ShowCasePage extends StatelessWidget {
         GradientBottomNavigationBarItem.home: () => const AllWidgetsStand(),
         GradientBottomNavigationBarItem.spinner: () => SpinnerPage(),
         GradientBottomNavigationBarItem.shuffle: () => const SwiperCardPage(),
-        GradientBottomNavigationBarItem.search: () => const Center(child: Text('Page 4')),
+        GradientBottomNavigationBarItem.search: () => const NoInternetPageTemplate(),
         GradientBottomNavigationBarItem.profile: () => const Center(child: Text('Page 5')),
       },
     );
