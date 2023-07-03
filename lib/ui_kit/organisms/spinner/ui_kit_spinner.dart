@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:html/parser.dart';
+import 'package:flutter/material';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/utils/isolate/system_sound_isolate.dart';
 
@@ -40,8 +38,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
   }
 
   void _enableFeedback() {
-    SystemSoundIsolate.instance.addEvent(SystemSoundIsolateRachetClick());
-    HapticFeedback.lightImpact();
+    FeedbackIsolate.instance.addEvent(FeedbackIsolateRachetClickAndHaptics());
   }
 
   void _scrollListener() {

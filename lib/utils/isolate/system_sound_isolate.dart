@@ -1,11 +1,12 @@
 import 'dart:async';
 import 'dart:isolate';
 
+import 'package:flutter/services.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class SystemSoundIsolate {
-  static SystemSoundIsolate instance = SystemSoundIsolate._();
+class FeedbackIsolate {
+  static FeedbackIsolate instance = FeedbackIsolate._();
 
   final rachet = AudioFoundation.instance.audio.rachetClick;
 
@@ -24,14 +25,16 @@ class SystemSoundIsolate {
 
   late String _currentSource = rachet;
 
-  SystemSoundIsolate._() {
+  FeedbackIsolate._() {
     _receivePort.listen((event) async {
       if (event is SystemSoundIsolateRachetClick) {
-        if (_currentSource != rachet) {
-          _currentSource = rachet;
-          await _setAsset(asset: rachet);
-        }
+        await _setAsset(asset: rachet);
         await _player.play();
+      }
+      if (event is FeedbackIsolateRachetClickAndHaptics) {
+        await _setAsset(asset: rachet);
+        await _player.play();
+        await HapticFeedback.mediumImpact();
       }
     });
   }
@@ -47,10 +50,9 @@ class SystemSoundIsolate {
   }
 
   Future<void> _setAsset({required String asset}) async {
-    try {
+    if (_currentSource != asset) {
+      _currentSource = asset;
       await _player.setAsset(asset, package: 'shuffle_uikit');
-    } catch (e) {
-      print(e.toString());
     }
   }
 }
@@ -58,3 +60,5 @@ class SystemSoundIsolate {
 abstract class SystemSoundIsolateEvent {}
 
 class SystemSoundIsolateRachetClick extends SystemSoundIsolateEvent {}
+
+class FeedbackIsolateRachetClickAndHaptics extends SystemSoundIsolateEvent {}

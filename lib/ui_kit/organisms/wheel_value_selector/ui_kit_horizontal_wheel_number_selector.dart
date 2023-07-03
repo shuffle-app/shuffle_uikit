@@ -35,7 +35,7 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       _currentValueNotifier.addListener(() {
-        SystemSoundIsolate.instance.addEvent(SystemSoundIsolateRachetClick());
+        FeedbackIsolate.instance.addEvent(SystemSoundIsolateRachetClick());
       });
     });
   }
