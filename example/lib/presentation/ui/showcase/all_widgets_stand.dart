@@ -398,6 +398,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               Center(
                 child: UiKitTitledCardWithBackground(
+                  onPressed: () {},
                   title: 'Active Holidays',
                   backgroundImageLink: GraphicsFoundation.instance.png.titledCardBackground1.path,
                   backgroundColor: ColorsFoundation.brightYellow,
@@ -406,6 +407,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               Center(
                 child: UiKitTitledCardWithBackground(
+                  onPressed: () {},
                   title: 'Big Company',
                   backgroundImageLink: GraphicsFoundation.instance.png.titledCardBackground2.path,
                   backgroundColor: ColorsFoundation.red,
@@ -414,6 +416,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               Center(
                 child: UiKitTitledCardWithBackground(
+                  onPressed: () {},
                   title: 'Electronic Music',
                   backgroundImageLink: GraphicsFoundation.instance.png.titledCardBackground3.path,
                   backgroundColor: ColorsFoundation.pink,
@@ -421,7 +424,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               const UiKitSpinnerCard(
-                availableHeight: 300,
+                availableHeight: 400,
                 photoLink: '',
               ),
               Center(

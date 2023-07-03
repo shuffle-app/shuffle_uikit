@@ -6,12 +6,14 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
   final String title;
   final String backgroundImageLink;
   final Color backgroundColor;
+  final VoidCallback? onPressed;
 
   const UiKitTitledCardWithBackground({
     super.key,
     required this.title,
     required this.backgroundImageLink,
     required this.backgroundColor,
+    this.onPressed,
   });
 
   @override
@@ -32,10 +34,6 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          ImageWidget(
-            link: backgroundImageLink,
-            fit: BoxFit.cover,
-          ),
           Align(
             alignment: Alignment.topCenter,
             child: Text(
@@ -47,6 +45,18 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
             top: EdgeInsetsFoundation.vertical12,
             left: EdgeInsetsFoundation.horizontal12,
             right: EdgeInsetsFoundation.horizontal12,
+          ),
+          ImageWidget(
+            link: backgroundImageLink,
+            fit: BoxFit.cover,
+          ),
+          Material(
+            clipBehavior: Clip.hardEdge,
+            borderRadius: BorderRadiusFoundation.all24,
+            color: Colors.transparent,
+            child: InkWell(
+              onTap: onPressed,
+            ),
           ),
         ],
       ),

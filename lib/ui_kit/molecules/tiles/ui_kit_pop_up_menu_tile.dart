@@ -21,33 +21,17 @@ class UiKitPopUpMenuTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
-    return Row(
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        if (leading != null) leading!,
-        SpacingFoundation.horizontalSpace12,
-        Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: textTheme?.caption1Medium,
-            ),
-            SpacingFoundation.verticalSpace2,
-            Text(
-              subtitle ?? '',
-              style: textTheme?.caption1Bold.copyWith(
-                color: ColorsFoundation.darkNeutral900,
-              ),
-            ),
-          ],
-        ),
-        const Spacer(),
-        UiKitPopUpMenuButton(
-          options: menuOptions ?? [],
-        ),
-      ],
+    return UiKitHeaderWithLeading(
+      title: title,
+      titleStyle: textTheme?.caption1Medium,
+      subtitle: subtitle,
+      subtitleStyle: textTheme?.caption1Bold.copyWith(
+        color: ColorsFoundation.darkNeutral900,
+      ),
+      leading: leading,
+      trailing: UiKitPopUpMenuButton(
+        options: menuOptions ?? [],
+      ),
     );
   }
 }

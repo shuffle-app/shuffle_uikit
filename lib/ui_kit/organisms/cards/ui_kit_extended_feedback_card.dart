@@ -34,50 +34,34 @@ class UiKitExtendedFeedbackCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CircularAvatar(
-                  avatarUrl: avatarUrl ?? '',
-                  name: title,
-                  height: width * 0.11,
-                ),
-                SpacingFoundation.horizontalSpace12,
-                Expanded(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title ?? '',
-                        style: textTheme?.caption1Bold,
-                      ),
-                      SpacingFoundation.verticalSpace2,
-                      Text(
-                        datePosted?.timeAgo ?? '',
-                        style: textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
-                      ),
-                    ],
+            UiKitHeaderWithLeading(
+              leading: CircularAvatar(
+                avatarUrl: avatarUrl ?? '',
+                name: title,
+                height: width * 0.11,
+              ),
+              title: title ?? '',
+              subtitle: datePosted?.timeAgo,
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  GestureDetector(
+                    onTap: onEdit,
+                    child: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.pencil,
+                      color: ColorsFoundation.darkNeutral900,
+                    ),
                   ),
-                ),
-                SpacingFoundation.horizontalSpace12,
-                GestureDetector(
-                  onTap: onEdit,
-                  child: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.pencil,
-                    color: ColorsFoundation.darkNeutral900,
+                  SpacingFoundation.horizontalSpace12,
+                  GestureDetector(
+                    onTap: onDelete,
+                    child: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.trash,
+                      color: ColorsFoundation.darkNeutral900,
+                    ),
                   ),
-                ),
-                SpacingFoundation.horizontalSpace12,
-                GestureDetector(
-                  onTap: onDelete,
-                  child: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.trash,
-                    color: ColorsFoundation.darkNeutral900,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
             SpacingFoundation.verticalSpace12,
             Text(
