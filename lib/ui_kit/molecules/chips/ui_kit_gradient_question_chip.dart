@@ -4,12 +4,15 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitGradientQuestionChip extends StatelessWidget {
   final String? message;
   final VoidCallback? onTap;
+  final LinearGradient gradient;
 
-  const UiKitGradientQuestionChip({
-    Key? key,
+  const UiKitGradientQuestionChip({Key? key,
     this.message,
     this.onTap,
-  }) : super(key: key);
+    LinearGradient? gradient})
+      :
+        this.gradient = gradient ?? GradientFoundation.badgeIcon,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +22,8 @@ class UiKitGradientQuestionChip extends StatelessWidget {
         clipper: GradientQuestionChipClipper(),
         child: Material(
           child: Ink(
-            decoration: const BoxDecoration(
-              gradient: GradientFoundation.badgeIcon,
+            decoration: BoxDecoration(
+              gradient: gradient,
             ),
             child: Text(
               message ?? '',

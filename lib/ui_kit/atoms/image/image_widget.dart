@@ -24,7 +24,7 @@ class ImageWidget extends StatelessWidget {
     this.fit,
     this.width,
     this.height,
-    this.lowerQuality = false,
+    this.lowerQuality = true,
     this.rasterAsset,
     this.svgAsset,
     this.color,

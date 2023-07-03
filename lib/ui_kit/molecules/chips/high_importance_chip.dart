@@ -16,7 +16,7 @@ class HighImportanceChip extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       shape: const CircleBorder(),
-      clipBehavior: Clip.hardEdge,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
       child: InkWell(
         onTap: onTap,
         child: Ink(
