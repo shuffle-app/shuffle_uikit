@@ -2,6 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class WidgetsAbstractFactory {
+  ButtonFactory createBouncingIconButton({
+    required BaseUiKitButtonData data,
+    bool? blurred,
+  });
+
   ButtonFactory createButtonWithProgress({
     BaseUiKitButtonData? data,
     double? progress,
@@ -350,6 +355,25 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       text: data?.text,
       onPressed: data?.onPressed,
       progress: progress,
+    );
+  }
+
+  @override
+  ButtonFactory createBouncingIconButton({
+    required BaseUiKitButtonData data,
+    bool? blurred,
+    bool? small,
+  }) {
+    if (small ?? false) {
+      return SmallBouncingBlurIconButton(
+        onPressed: data.onPressed,
+        icon: data.icon!,
+      );
+    }
+
+    return BouncingBlurButton(
+      icon: data.icon!,
+      onPressed: data.onPressed,
     );
   }
 

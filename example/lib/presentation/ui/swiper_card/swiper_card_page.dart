@@ -67,32 +67,38 @@ class SwiperCardPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                context.smallButton(
+                context.bouncingButton(
+                  small: true,
                   blurred: true,
                   data: BaseUiKitButtonData(
-                      icon: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.heartBrokenFill,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {}),
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.heartBrokenFill,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
+                  ),
                 ),
-                context.button(
+                context.bouncingButton(
+                  small: false,
                   blurred: true,
                   data: BaseUiKitButtonData(
-                      icon: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.starOutline,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {}),
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.starOutline,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
+                  ),
                 ),
-                context.smallButton(
+                context.bouncingButton(
+                  small: true,
                   blurred: true,
                   data: BaseUiKitButtonData(
-                      icon: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.heartFill,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {}),
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.heartFill,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
+                  ),
                 ),
               ],
             ),
