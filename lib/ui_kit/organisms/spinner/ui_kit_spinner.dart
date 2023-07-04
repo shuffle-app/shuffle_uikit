@@ -21,7 +21,8 @@ class UiKitSpinner extends StatefulWidget {
 class _UiKitSpinnerState extends State<UiKitSpinner> {
   final _animDuration = const Duration(milliseconds: 150);
   final ValueNotifier<double> _rotationNotifier = ValueNotifier<double>(0);
-  final ValueNotifier<double> _lastScrollPositionOffsetNotifier = ValueNotifier<double>(0);
+  final ValueNotifier<double> _lastScrollPositionOffsetNotifier =
+  ValueNotifier<double>(0);
   final ValueNotifier<double> _scrollStartNotifier = ValueNotifier<double>(0);
   SpinningType _spinningType = SpinningType.wheel;
 
@@ -43,7 +44,8 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
 
   void _scrollListener() {
     if (_spinningType == SpinningType.categories) {
-      final scrollDelta = widget.scrollController.offset - _lastScrollPositionOffsetNotifier.value;
+      final scrollDelta = widget.scrollController.offset -
+          _lastScrollPositionOffsetNotifier.value;
       _rotationNotifier.value -= scrollDelta / 200;
     }
     _lastScrollPositionOffsetNotifier.value = widget.scrollController.offset;
@@ -79,15 +81,18 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     } else if (nearestElementIndex >= widget.categories.length) {
       widget.onSpinChangedCategory?.call(widget.categories.last);
     } else {
-      widget.onSpinChangedCategory?.call(widget.categories.elementAt(nearestElementIndex));
+      widget.onSpinChangedCategory
+          ?.call(widget.categories.elementAt(nearestElementIndex));
     }
     final nearestElementOffset = nearestElementIndex * screenWidth;
     if (onEndNotified) {
-      WidgetsBinding.instance.addPostFrameCallback((timeStamp) => widget.scrollController.animateTo(
-            nearestElementOffset,
-            duration: _animDuration,
-            curve: Curves.decelerate,
-          ));
+      WidgetsBinding.instance.addPostFrameCallback(
+              (timeStamp) =>
+              widget.scrollController.animateTo(
+                nearestElementOffset,
+                duration: _animDuration,
+                curve: Curves.decelerate,
+              ));
     } else {
       widget.scrollController.animateTo(
         nearestElementOffset,
@@ -111,22 +116,26 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, size) {
-        final availableWidth = size.maxWidth;
+    // return LayoutBuilder(
+    //   builder: (context, size) {
+    //     final availableWidth = size.maxWidth;
 
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            GestureDetector(
-              behavior: HitTestBehavior.opaque,
-              onPanDown: (details) {
-                if (_spinningType != SpinningType.categories) setSpinningType(SpinningType.categories);
-              },
-              child: NotificationListener<ScrollEndNotification>(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        //TODO remove const height
+        SizedBox(height: 24.h,
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onPanDown: (details) {
+              if (_spinningType != SpinningType.categories)
+                setSpinningType(SpinningType.categories);
+            },
+            child: NotificationListener<ScrollEndNotification>(
                 onNotification: (notification) {
-                  if (_spinningType != SpinningType.wheel) _shouldSwitchCategory(true);
+                  if (_spinningType != SpinningType.wheel)
+                    _shouldSwitchCategory(true);
 
                   return true;
                 },
@@ -135,82 +144,98 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                   physics: const PageScrollPhysics(),
                   children: widget.categories
                       .map<Widget>(
-                        (e) => SizedBox(
+                        (e) =>
+                        SizedBox(
                           width: 1.sw,
                           child: Center(
                             child: Text(
                               parseFragment(e).text ?? e,
+                              maxLines: 2,
                               style: context.uiKitTheme?.boldTextTheme.title1,
                               textAlign: TextAlign.center,
                             ),
                           ),
                         ),
-                      )
+                  )
                       .toList(),
-                ),
-              ),
-            ),
-            SizesFoundation.screenWidth <= 275 ? SpacingFoundation.verticalSpace16 : SpacingFoundation.verticalSpace24,
-            SizedBox(
-              height: 155,
-              // height: 100.h,
-              width: 1.sw,
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: 0,
-                    left: (availableWidth / 2) - 345,
-                    child: GestureDetector(
-                      onPanUpdate: (details) {
-                        if (_spinningType != SpinningType.wheel) setSpinningType(SpinningType.wheel);
-                        final delta = details.delta.dx;
-                        final inScrollBeginning = widget.scrollController.offset == 0 && !delta.isNegative;
-                        final inScrollEnd =
-                            widget.scrollController.offset == widget.scrollController.position.maxScrollExtent && delta.isNegative;
-                        if (inScrollBeginning || inScrollEnd) return;
-                        // if (details.localPosition.dx.toInt() % 20 == 0) _enableFeedback();
-                        _rotationNotifier.value += delta / 200;
-                        _scrollByPixels(
-                          pixelsToScroll: delta,
-                        );
-                      },
-                      onPanStart: (details) {
-                        _scrollStartNotifier.value = widget.scrollController.offset;
-                      },
-                      onPanEnd: (details) {
-                        _shouldSwitchCategory(false);
-                      },
-                      child: AnimatedBuilder(
-                        animation: _rotationNotifier,
-                        builder: (context, child) {
-                          if ((_rotationNotifier.value - _lastRotationValue).abs() >= 0.8) {
-                            _enableFeedback();
-                            WidgetsBinding.instance.addPostFrameCallback((timeStamp) => setState(() {
-                                  _lastRotationValue = _rotationNotifier.value;
+                )),
+          ),
+        ),
+        SizesFoundation.screenWidth <= 275
+            ? SpacingFoundation.verticalSpace16
+            : SpacingFoundation.verticalSpace24,
+        SizedBox(
+          height: 155,
+          // height: 100.h,
+          width: 1.sw,
+          child: Stack(
+            children: [
+              Positioned(
+                top: 0,
+                left: (1.sw / 2) - 345,
+                child: GestureDetector(
+                  onPanUpdate: (details) {
+                    if (_spinningType != SpinningType.wheel)
+                      setSpinningType(SpinningType.wheel);
+                    final delta = details.delta.dx;
+                    final inScrollBeginning =
+                        widget.scrollController.offset == 0 &&
+                            !delta.isNegative;
+                    final inScrollEnd = widget.scrollController.offset ==
+                        widget.scrollController.position
+                            .maxScrollExtent &&
+                        delta.isNegative;
+                    if (inScrollBeginning || inScrollEnd) return;
+                    // if (details.localPosition.dx.toInt() % 20 == 0) _enableFeedback();
+                    _rotationNotifier.value += delta / 200;
+                    _scrollByPixels(
+                      pixelsToScroll: delta,
+                    );
+                  },
+                  onPanStart: (details) {
+                    _scrollStartNotifier.value =
+                        widget.scrollController.offset;
+                  },
+                  onPanEnd: (details) {
+                    _shouldSwitchCategory(false);
+                  },
+                  child: AnimatedBuilder(
+                    animation: _rotationNotifier,
+                    builder: (context, child) {
+                      if ((_rotationNotifier.value - _lastRotationValue)
+                          .abs() >=
+                          0.8) {
+                        _enableFeedback();
+                        WidgetsBinding.instance.addPostFrameCallback(
+                                (timeStamp) =>
+                                setState(() {
+                                  _lastRotationValue =
+                                      _rotationNotifier.value;
                                 }));
-                          }
+                      }
 
-                          return Transform.rotate(
-                            angle: _rotationNotifier.value,
-                            // duration: _animDuration,
-                            child: child,
-                          );
-                        },
-                        child: Center(
-                          child: ImageWidget(
-                            svgAsset: GraphicsFoundation.instance.svg.spinnerWheel,
-                          ),
-                        ),
+                      return Transform.rotate(
+                        angle: _rotationNotifier.value,
+                        // duration: _animDuration,
+                        child: child,
+                      );
+                    },
+                    child: Center(
+                      child: ImageWidget(
+                        svgAsset:
+                        GraphicsFoundation.instance.svg.spinnerWheel,
                       ),
                     ),
                   ),
-                ],
+                ),
               ),
-            ),
-          ],
-        );
-      },
+            ],
+          ),
+        ),
+      ],
     );
+    // },
+    // );
   }
 }
 

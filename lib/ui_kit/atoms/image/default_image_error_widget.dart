@@ -6,12 +6,12 @@ class DefaultImageErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DecoratedBox(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: ColorsFoundation.darkNeutral500.withOpacity(0.4),
       ),
-      child: Container(
+      child: DecoratedBox(
         decoration: const BoxDecoration(
           shape: BoxShape.circle,
           color: ColorsFoundation.darkNeutral400,
