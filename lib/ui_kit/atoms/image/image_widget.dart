@@ -73,7 +73,7 @@ class ImageWidget extends StatelessWidget {
 
           return errorWidget ?? const DefaultImageErrorWidget();
         },
-        placeholder: (_, __) => const CircularProgressIndicator.adaptive(),
+        placeholder: (_, __) => CircularProgressIndicator.adaptive(backgroundColor: color,),
       );
     } else if (link!.contains('svg')) {
       return SvgPicture.asset(

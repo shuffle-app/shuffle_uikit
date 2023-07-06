@@ -27,6 +27,13 @@ class UiKitTagWidget extends StatelessWidget {
       color: textColor ?? ColorsFoundation.darkNeutral900,
     );
 
+    // if(title == 'Awarded'){
+    print('TAG is $icon');
+    // }
+
+    final iconColor = uniqueTag ? Colors.white : textColor ??
+        ColorsFoundation.darkNeutral900;
+
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -36,8 +43,11 @@ class UiKitTagWidget extends StatelessWidget {
           gradient: GradientFoundation.badgeIcon,
           child: ImageWidget(
             link: icon,
+            errorWidget: ImageWidget(
+                svgAsset: GraphicsFoundation.instance.svg.exclamation,
+                color: iconColor),
             height: SpacingFoundation.horizontalSpacing16,
-            color: uniqueTag ? Colors.white : textColor ?? ColorsFoundation.darkNeutral900,
+            color: iconColor,
             fit: BoxFit.fitHeight,
           ),
         ),
