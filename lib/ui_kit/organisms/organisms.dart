@@ -1,6 +1,8 @@
 /// This file exports all the organisms in the UI Kit.
 
 export '../molecules/place/base_ui_kit_media_widget.dart';
+export 'animated_buttons/bouncing_blur_button.dart';
+export 'animated_buttons/small_bouncing_blur_icon_button.dart';
 export 'bottom_navigation_bar/gradient_bottom_navigation_bar.dart';
 export 'cards/ui_kit_card_swiper.dart';
 export 'cards/ui_kit_compact_ordered_rating_card.dart';
