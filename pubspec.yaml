@@ -30,6 +30,7 @@ dependencies:
 
   #tab navigation
   tabnavigator: ^1.0.0
+  rxdart: any
   lottie: ^2.3.2
   flutter_card_swiper: ^5.0.0
   intl: ^0.18.1
