@@ -27,10 +27,6 @@ class UiKitTagWidget extends StatelessWidget {
       color: textColor ?? ColorsFoundation.darkNeutral900,
     );
 
-    // if(title == 'Awarded'){
-    print('TAG is $icon');
-    // }
-
     final iconColor = uniqueTag ? Colors.white : textColor ??
         ColorsFoundation.darkNeutral900;
 
