@@ -18,10 +18,11 @@ void main() {
         ])
         ..addScenario(
           widget: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               UiKitMessageCardWithIcon(
                 onPressed: () {},
-                message: 'need to ',
+                message: 'Need to cool down ',
                 icon: ImageWidget(
                   svgAsset:
                       GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
@@ -30,12 +31,30 @@ void main() {
               ),
               UiKitMessageCardWithIcon(
                 onPressed: () {},
-                message: 'need to cool down',
+                message: ' ',
                 icon: ImageWidget(
                   svgAsset:
                       GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
                 ),
                 layoutDirection: Axis.horizontal,
+              ),
+              UiKitMessageCardWithIcon(
+                onPressed: () {},
+                message: 'need to cool down ',
+                icon: ImageWidget(
+                  svgAsset:
+                      GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
+                ),
+                layoutDirection: Axis.vertical,
+              ),
+               UiKitMessageCardWithIcon(
+                onPressed: () {},
+                message: '',
+                icon: ImageWidget(
+                  svgAsset:
+                      GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
+                ),
+                layoutDirection: Axis.vertical,
               ),
             ],
           ),
@@ -52,15 +71,18 @@ void main() {
                       child: Material(
                           child: Theme(
                         data: theme,
-                        child: ListView(children: [
-                          SingleChildScrollView(
-                              scrollDirection: Axis.horizontal, child: child!)
-                        ]),
+                        child: child!,
                       )));
                 })),
       );
-      await screenMatchesGolden(tester, 'UiKitMessageCardWithIcon',
-          autoHeight: true);
+      // await screenMatchesGolden(tester, 'UiKitMessageCardWithIcon',
+      //    autoHeight: false);
+      await multiScreenGolden(tester, '', autoHeight: true, devices: [
+        const Device(
+          name: '2 devices ',
+          size: Size(1100, 1000),
+        ),
+      ]);
     });
   });
 }
