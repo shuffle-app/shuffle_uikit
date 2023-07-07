@@ -3,6 +3,7 @@
 export './common/circular_avatar.dart';
 export './common/sliding_chip.dart';
 export './common/ui_kit_card_wrapper.dart';
+export './common/ui_kit_html_presenter.dart';
 export './place/ui_kit_titled_description_grid_widget.dart';
 export 'animation/lottie_animation.dart';
 export 'app_bar/app_bar_back_button.dart';
@@ -24,6 +25,7 @@ export 'buttons/outlined_icon_button.dart';
 export 'buttons/red_dialog_button.dart';
 export 'buttons/small_blurred_button_with_icon.dart';
 export 'buttons/small_button_with_icon.dart';
+export 'buttons/ordinary_reversed_text_button.dart';
 export 'buttons/small_ordinary_button.dart';
 export 'buttons/small_outlined_button.dart';
 export 'buttons/ui_kit_pop_up_menu_button.dart';
