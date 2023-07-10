@@ -1,13 +1,14 @@
 import 'package:example/presentation/ui/widget_view/single_widget_view_page.dart';
+import 'package:example/presentation/ui/widget_view/testcases_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ActionsMenu extends StatelessWidget {
   const ActionsMenu(
-      {super.key, required this.widget, this.filepathToMasterImage});
+      {super.key, required this.widget, this.prefix});
 
   final Widget widget;
-  final String? filepathToMasterImage;
+  final String? prefix;
 
   @override
   Widget build(BuildContext context) {
@@ -34,14 +35,13 @@ class ActionsMenu extends StatelessWidget {
             ),
           ),
         ),
-        if (filepathToMasterImage != null)
+        if (prefix != null)
           PopupMenuItem(
             child: GestureDetector(
               onTap: () {
-                context.pop();
                 context.push(
-                  SingleWidgetViewPage(
-                    widget: Image.asset(filepathToMasterImage!),
+                  TestCasesPage(
+                    prefix: prefix!,
                   ),
                 );
               },

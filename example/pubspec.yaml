@@ -27,6 +27,15 @@ flutter:
   uses-material-design: true
   assets:
     - assets/goldens/
+    - assets/goldens/chips_isolatedDiff.png
+    - assets/goldens/chips_maskedDiff.png
+    - assets/goldens/chips_master.png
+    - assets/goldens/chips_testImage.png
+    - assets/goldens/place_isolatedDiff.png
+    - assets/goldens/place_maskedDiff.png
+    - assets/goldens/place_master.png
+    - assets/goldens/place_testImage.png
+    - assets/goldens/swiper_ad_card_master.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -2,10 +2,10 @@ import 'package:example/presentation/ui/widget_view/actions_menu.dart';
 import 'package:flutter/material.dart';
 
 class MenuWrap extends StatelessWidget {
-  const MenuWrap({super.key, required this.child, this.filepathToMasterImage});
+  const MenuWrap({super.key, required this.child, this.prefix});
 
   final Widget child;
-  final String? filepathToMasterImage;
+  final String? prefix;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class MenuWrap extends StatelessWidget {
       children: [
         ActionsMenu(
           widget: child,
-          filepathToMasterImage: filepathToMasterImage,
+          prefix: prefix,
         ),
         child,
       ],
