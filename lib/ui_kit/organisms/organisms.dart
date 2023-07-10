@@ -30,6 +30,7 @@ export 'profile/profile_card.dart';
 export 'profile/profile_highlights.dart';
 export 'profile/profile_posts_places.dart';
 export 'profile/profile_stories_list.dart';
+export 'selectors/ui_kit_country_selector.dart';
 export 'selectors/ui_kit_tag_selector.dart';
 export 'spinner/ui_kit_spinner.dart';
 export 'spinner/ui_kit_spinner_card.dart';

@@ -42,6 +42,7 @@ dependencies:
   #custom splash factory
   flutter_platform_widgets: ^4.0.0-beta.1
   dynamic_color: ^1.6.5
+  countries_flag: ^1.0.0
 
 
 dev_dependencies:
