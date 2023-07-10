@@ -65,7 +65,7 @@ class _TestCasesPageState extends State<TestCasesPage> {
             height: 100,
             errorBuilder: (context, error, stackTrace) => const Text(
                   'no image',
-                  style: TextStyle(color: Colors.redAccent, fontSize: 30),
+                  style: TextStyle(color: Colors.green, fontSize: 30),
                 ),
           ),
         ],
