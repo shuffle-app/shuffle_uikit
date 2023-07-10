@@ -116,12 +116,14 @@ extension FactoryExtention on BuildContext {
     required BaseUiKitButtonData data,
     bool? isTextButton,
     bool? blurred,
+    bool reversed = false
   }) {
     return WidgetsFactory.of(this)!
         .createOrdinaryButton(
           data: data,
           isTextButton: isTextButton ?? false,
           blurred: blurred,
+        reversed:reversed
         )
         .build(this);
   }

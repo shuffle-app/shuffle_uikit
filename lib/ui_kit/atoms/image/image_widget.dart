@@ -67,13 +67,13 @@ class ImageWidget extends StatelessWidget {
         filterQuality: lowerQuality ? FilterQuality.low : FilterQuality.high,
         height: height,
         colorBlendMode: colorBlendMode,
-        cacheManager: CustomCacheManager.instance,
+        cacheManager: CustomCacheManager.imageInstance,
         errorWidget: (context, url, trace) {
           log('Got error while downloading $url', name: 'ImageWidget');
 
           return errorWidget ?? const DefaultImageErrorWidget();
         },
-        placeholder: (_, __) => const CircularProgressIndicator.adaptive(),
+        placeholder: (_, __) => CircularProgressIndicator.adaptive(backgroundColor: color,),
       );
     } else if (link!.contains('svg')) {
       return SvgPicture.asset(

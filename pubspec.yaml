@@ -22,14 +22,18 @@ dependencies:
   cached_network_image: ^3.2.3
   gradient_borders: ^1.0.0
   shimmer: ^3.0.0
-  html: ^0.15.4
+  flutter_html: ^3.0.0-beta.2
   auto_size_text: ^3.0.0
+  url_launcher: ^6.1.11
+  flutter_html_iframe: any
+  flutter_html_svg: any
 
   #dialogs widgets
   popover: ^0.2.8+2
 
   #tab navigation
   tabnavigator: ^1.0.0
+  rxdart: any
   lottie: ^2.3.2
   flutter_card_swiper: ^5.0.0
   intl: ^0.18.1

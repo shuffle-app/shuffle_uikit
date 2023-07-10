@@ -33,7 +33,8 @@ class UiKitTagsWidget extends StatelessWidget {
                 SpacingFoundation.horizontalSpace8,
                 Text(
                   rating.toString(),
-                  style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
+                  style: theme?.boldTextTheme.caption1Bold
+                      .copyWith(color: Colors.white),
                 ),
               ],
             ).paddingSymmetric(
@@ -63,13 +64,28 @@ class UiKitTagsWidget extends StatelessWidget {
               ),
               if (uniqueTags != null && uniqueTags!.isNotEmpty) ...[
                 SpacingFoundation.verticalSpace4,
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Wrap(
-                    spacing: SpacingFoundation.horizontalSpacing8,
-                    children: uniqueTags!.map((e) => UiKitTagWidget(title: e.title, icon: e.iconPath, uniqueTag: true)).toList(),
-                  ),
-                ),
+                // SingleChildScrollView(
+                //   scrollDirection: Axis.horizontal,
+                //   child: Wrap(
+                //     spacing: SpacingFoundation.horizontalSpacing8,
+                //     children: uniqueTags!.map((e) => UiKitTagWidget(title: e.title, icon: e.iconPath, uniqueTag: true)).toList(),
+                //   ),
+                // ),
+                SizedBox(
+                    height: SpacingFoundation.horizontalSpacing16,
+                    child: ListView.separated(
+                      padding: EdgeInsets.zero,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      primary: false,
+                      separatorBuilder: (_, __) =>
+                          SpacingFoundation.horizontalSpace8,
+                      itemCount: uniqueTags!.length,
+                      itemBuilder: (_, index) => UiKitTagWidget(
+                          title: uniqueTags![index].title,
+                          icon: uniqueTags![index].iconPath,
+                          uniqueTag: true),
+                    ))
               ],
             ],
           ),
