@@ -27,6 +27,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       icon: ImageWidget(
         svgAsset: GraphicsFoundation.instance.svg.tiger,
       ),
+      type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'interested Adventurer',
@@ -34,6 +35,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       icon: ImageWidget(
         svgAsset: GraphicsFoundation.instance.svg.adventure,
       ),
+      type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'forever Resting sloth',
@@ -41,6 +43,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       icon: ImageWidget(
         svgAsset: GraphicsFoundation.instance.svg.sleep,
       ),
+      type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
@@ -48,6 +51,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       icon: ImageWidget(
         svgAsset: GraphicsFoundation.instance.svg.swim,
       ),
+      type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
@@ -55,6 +59,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       icon: ImageWidget(
         svgAsset: GraphicsFoundation.instance.svg.athlete,
       ),
+      type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
@@ -62,6 +67,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       icon: ImageWidget(
         svgAsset: GraphicsFoundation.instance.svg.food,
       ),
+      type: 'leisure',
     ),
   ];
   UiKitMenuItem<String>? _selectedMenuItem;
@@ -511,6 +517,41 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 title: 'Describe yourself',
                 selectedItem: _selectedMenuItem,
                 items: _menuItems,
+                onSelected: (value) {
+                  setState(() => _selectedMenuItem = value);
+                },
+              ),
+              SpacingFoundation.verticalSpace16,
+              UiKitMenu<String>(
+                title: 'Describe yourself',
+                selectedItem: _selectedMenuItem,
+                items: [
+                  ..._menuItems,
+                  UiKitMenuItem<String>(
+                    title: 'Active Tiger Business',
+                    value: 'tiger',
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.swim,
+                    ),
+                    type: 'business',
+                  ),
+                  UiKitMenuItem<String>(
+                    title: 'Active Tiger Business',
+                    value: 'tiger',
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.athlete,
+                    ),
+                    type: 'business',
+                  ),
+                  UiKitMenuItem<String>(
+                    title: 'Active Tiger Business',
+                    value: 'tiger',
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.food,
+                    ),
+                    type: 'business',
+                  ),
+                ],
                 onSelected: (value) {
                   setState(() => _selectedMenuItem = value);
                 },
