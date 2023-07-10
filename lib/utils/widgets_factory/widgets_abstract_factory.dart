@@ -176,13 +176,14 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     final hasIcon = data.icon != null;
     final onlyIconButton = hasIcon && data.text.isEmpty && !isTextButton && !(blurred ?? false);
     if (isTextButton) {
-      if(reversed) {
+      if (reversed) {
         return OrdinaryReversedTextButton(
           text: data.text,
           onPressed: data.onPressed,
           icon: data.icon,
         );
       }
+
       return OrdinaryTextButton(
         text: data.text,
         onPressed: data.onPressed,
