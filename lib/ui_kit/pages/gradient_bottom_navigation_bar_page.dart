@@ -7,17 +7,19 @@ class GradientBottomNavigationBarPage extends StatefulWidget {
   /// list of tabs to be shown in the bottom navigation bar
   /// [TabType] is the tab data type and [TabBuilder] is the builder function for the page
   final Map<GradientBottomNavigationBarItem, TabBuilder> tabs;
+  final RouteFactory? onGenerateRoute;
 
   const GradientBottomNavigationBarPage({
     Key? key,
     required this.tabs,
+     this.onGenerateRoute,
   }) : super(key: key);
 
   @override
-  State<GradientBottomNavigationBarPage> createState() => _GradientBottomNavigationBarPageState();
+  State<GradientBottomNavigationBarPage> createState() => GradientBottomNavigationBarPageState();
 }
 
-class _GradientBottomNavigationBarPageState extends State<GradientBottomNavigationBarPage> {
+class GradientBottomNavigationBarPageState extends State<GradientBottomNavigationBarPage> {
   late final bottomNavBarController = GradientBottomNavigationBarController(
     tabItemsCount: widget.tabs.values.length,
   );
@@ -32,6 +34,7 @@ class _GradientBottomNavigationBarPageState extends State<GradientBottomNavigati
         selectedTabStream: bottomNavBarController.tabStream,
         initialTab: GradientBottomNavigationBarItem.home,
         mappedTabs: widget.tabs,
+        onGenerateRoute: widget.onGenerateRoute,
       ),
       bottomNavigationBar: GradientBottomNavigationBar(
         items: widget.tabs.keys.toList(),
