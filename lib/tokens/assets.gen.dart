@@ -247,6 +247,12 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/fatigue-emoji.png
   AssetGenImage get fatigueEmoji => const AssetGenImage('assets/images/png/fatigue-emoji.png');
 
+  /// File path: assets/images/png/geo-permit.png
+  AssetGenImage get geoPermit => const AssetGenImage('assets/images/png/geo-permit.png');
+
+  /// File path: assets/images/png/health-permit.png
+  AssetGenImage get healthPermit => const AssetGenImage('assets/images/png/health-permit.png');
+
   /// File path: assets/images/png/hindu.png
   AssetGenImage get hindu => const AssetGenImage('assets/images/png/hindu.png');
 
@@ -273,6 +279,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/muslim_flag.png
   AssetGenImage get muslimFlag => const AssetGenImage('assets/images/png/muslim_flag.png');
+
+  /// File path: assets/images/png/notif-permit.png
+  AssetGenImage get notifPermit => const AssetGenImage('assets/images/png/notif-permit.png');
 
   /// File path: assets/images/png/onboarding_mock_1.png
   AssetGenImage get onboardingMock1 => const AssetGenImage('assets/images/png/onboarding_mock_1.png');
@@ -378,6 +387,8 @@ class $AssetsImagesPngGen {
         compactRatingCardMock,
         eventAvatar,
         fatigueEmoji,
+        geoPermit,
+        healthPermit,
         hindu,
         jordanFlag,
         joyEmoji,
@@ -387,6 +398,7 @@ class $AssetsImagesPngGen {
         mockSwiperCard,
         mockUserAvatar,
         muslimFlag,
+        notifPermit,
         onboardingMock1,
         onboardingMock2,
         onboardingMock3,
