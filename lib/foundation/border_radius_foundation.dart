@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BorderRadiusFoundation {
+  static BorderRadius get all4 => const BorderRadius.all(Radius.circular(4));
   static BorderRadius get all10 => const BorderRadius.all(Radius.circular(10));
   static BorderRadius get all12 => const BorderRadius.all(Radius.circular(12));
   static BorderRadius get all16 => const BorderRadius.all(Radius.circular(16));
