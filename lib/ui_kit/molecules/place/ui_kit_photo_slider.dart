@@ -214,6 +214,9 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 
   @override
   Widget build(BuildContext context) {
+
+    if(widget.media.isEmpty) return SizedBox.shrink();
+
     final List<Widget> backStack = _getBackStack(_cardAnimation.right < widget.width / 10);
 
     return SizedBox(

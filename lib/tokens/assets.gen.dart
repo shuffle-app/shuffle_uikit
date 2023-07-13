@@ -280,6 +280,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/muslim_flag.png
   AssetGenImage get muslimFlag => const AssetGenImage('assets/images/png/muslim_flag.png');
 
+  /// File path: assets/images/png/no_internet.png
+  AssetGenImage get noInternet => const AssetGenImage('assets/images/png/no_internet.png');
+
   /// File path: assets/images/png/notif-permit.png
   AssetGenImage get notifPermit => const AssetGenImage('assets/images/png/notif-permit.png');
 
@@ -398,6 +401,7 @@ class $AssetsImagesPngGen {
         mockSwiperCard,
         mockUserAvatar,
         muslimFlag,
+        noInternet,
         notifPermit,
         onboardingMock1,
         onboardingMock2,
