@@ -2,8 +2,6 @@ import 'package:countries_flag/countries_flag.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class CountriesFoundation {
-  static final _filter = {'_': RegExp(r'[0-9]')};
-
   static CountriesFoundation instance = CountriesFoundation._();
 
   final abkhazia = CountryModel(
