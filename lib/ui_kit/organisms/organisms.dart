@@ -15,6 +15,7 @@ export 'cards/ui_kit_icon_hint_card.dart';
 export 'cards/ui_kit_overflown_action_card.dart';
 export 'cards/ui_kit_titled_card_with_background.dart';
 export 'cards/ui_kit_vertical_chip.dart';
+export 'lists/ui_kit_searchable_list_body.dart';
 export 'menu/ui_kit_menu.dart';
 export 'place/base_place_action_card.dart';
 export 'place/point_balance_place_action_card.dart';

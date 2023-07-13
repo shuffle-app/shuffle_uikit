@@ -3,6 +3,7 @@ import 'package:example/presentation/ui/showcase/buttons_list.dart';
 import 'package:example/presentation/ui/showcase/input_fields.dart';
 import 'package:example/presentation/ui/showcase/input_fields_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class AllWidgetsStand extends StatefulWidget {
@@ -18,6 +19,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final ScrollController _scrollController = ScrollController();
   final GlobalKey _gradientTextKey = GlobalKey();
   double progress = 0.0;
+  CountryModel? _selectedCountry;
 
   bool selection = false;
   final List<UiKitMenuItem<String>> _menuItems = [
@@ -131,9 +133,22 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              UiKitPhoneNumberInput(
+                controller: TextEditingController(),
+                enabled: true,
+                countryCode: _selectedCountry?.countryPhoneCode,
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitCountrySelector(
                 title: 'Where are you located',
-                onSelected: (country) {},
+                onSelected: (country) => setState(() {
+                  _selectedCountry = country;
+                  Navigator.pop(context);
+                }),
+                selectedCountry: _selectedCountry,
               ),
               SpacingFoundation.verticalSpace16,
               UiKitHorizontalWheelNumberSelector(

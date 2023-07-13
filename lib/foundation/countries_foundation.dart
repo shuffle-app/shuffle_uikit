@@ -1,1840 +1,1828 @@
 import 'package:countries_flag/countries_flag.dart';
-import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class CountriesFoundation {
+  static final _filter = {'_': RegExp(r'[0-9]')};
+
   static CountriesFoundation instance = CountriesFoundation._();
 
   final abkhazia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.abkhazia),
-    ),
-    phoneMask: '___-___-____',
+    countryName: 'abkhazia'.toUpperCase(),
+    countryPhoneCode: '+7',
+    flag: Flags.abkhazia,
   );
+
   final afghanistan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.afghanistan),
-    ),
-    phoneMask: '',
+    countryName: 'afghanistan'.toUpperCase(),
+    countryPhoneCode: '+93',
+    flag: Flags.afghanistan,
   );
-  final african = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.african),
-    ),
-    phoneMask: '',
-  );
-  final alandIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.alandIslands),
-    ),
-    phoneMask: '',
-  );
+
   final albania = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.albania),
-    ),
-    phoneMask: '',
+    countryName: 'albania'.toUpperCase(),
+    countryPhoneCode: '+355',
+    flag: Flags.albania,
   );
+
   final algeria = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.algeria),
-    ),
-    phoneMask: '',
+    countryName: 'algeria'.toUpperCase(),
+    countryPhoneCode: '+213',
+    flag: Flags.algeria,
   );
+
   final americanSamoa = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.americanSamoa),
-    ),
-    phoneMask: '',
+    countryName: 'american Samoa'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.americanSamoa,
   );
+
   final andorra = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.andorra),
-    ),
-    phoneMask: '',
+    countryName: 'andorra'.toUpperCase(),
+    countryPhoneCode: '+376',
+    flag: Flags.andorra,
   );
+
   final angola = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.angola),
-    ),
-    phoneMask: '',
+    countryName: 'angola'.toUpperCase(),
+    countryPhoneCode: '+244',
+    flag: Flags.angola,
   );
+
   final anguilla = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.anguilla),
-    ),
-    phoneMask: '',
+    countryName: 'anguilla'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.anguilla,
   );
+
   final antiguaAndBarbuda = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.antiguaAndBarbuda),
-    ),
-    phoneMask: '',
+    countryName: 'antigua And Barbuda'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.antiguaAndBarbuda,
   );
+
   final argentina = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.argentina),
-    ),
-    phoneMask: '',
+    countryName: 'argentina'.toUpperCase(),
+    countryPhoneCode: '+54',
+    flag: Flags.argentina,
   );
+
   final armenia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.armenia),
-    ),
-    phoneMask: '',
+    countryName: 'armenia'.toUpperCase(),
+    countryPhoneCode: '+374',
+    flag: Flags.armenia,
   );
-  final aruba = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.aruba),
-    ),
-    phoneMask: '',
-  );
+
   final australia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.australia),
-    ),
-    phoneMask: '',
+    countryName: 'australia'.toUpperCase(),
+    countryPhoneCode: '+61',
+    flag: Flags.australia,
   );
+
   final austria = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.austria),
-    ),
-    phoneMask: '',
+    countryName: 'austria'.toUpperCase(),
+    countryPhoneCode: '+43',
+    flag: Flags.austria,
   );
+
   final azerbaijan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.azerbaijan),
-    ),
-    phoneMask: '',
+    countryName: 'azerbaijan'.toUpperCase(),
+    countryPhoneCode: '+994',
+    flag: Flags.azerbaijan,
   );
+
   final azoresIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.azoresIslands),
-    ),
-    phoneMask: '',
+    countryName: 'azores Islands'.toUpperCase(),
+    countryPhoneCode: '+351',
+    flag: Flags.azoresIslands,
   );
+
   final bahamas = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.bahamas),
-    ),
-    phoneMask: '',
+    countryName: 'bahamas'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.bahamas,
   );
+
   final bahrain = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.bahrain),
-    ),
-    phoneMask: '',
+    countryName: 'bahrain'.toUpperCase(),
+    countryPhoneCode: '+973',
+    flag: Flags.bahrain,
   );
+
   final balearicIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.balearicIslands),
-    ),
-    phoneMask: '',
+    countryName: 'balearic Islands'.toUpperCase(),
+    countryPhoneCode: '+34',
+    flag: Flags.balearicIslands,
   );
+
   final bangladesh = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.bangladesh),
-    ),
-    phoneMask: '',
+    countryName: 'bangladesh'.toUpperCase(),
+    countryPhoneCode: '+880',
+    flag: Flags.bangladesh,
   );
+
   final barbados = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.barbados),
-    ),
-    phoneMask: '',
+    countryName: 'barbados'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.barbados,
   );
+
   final basqueCountry = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.basqueCountry),
-    ),
-    phoneMask: '',
+    countryName: 'basque Country'.toUpperCase(),
+    countryPhoneCode: '+34',
+    flag: Flags.basqueCountry,
   );
+
   final belarus = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.belarus),
-    ),
-    phoneMask: '',
+    countryName: 'belarus'.toUpperCase(),
+    countryPhoneCode: '+375',
+    flag: Flags.belarus,
   );
+
   final belgium = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.belgium),
-    ),
-    phoneMask: '',
+    countryName: 'belgium'.toUpperCase(),
+    countryPhoneCode: '+32',
+    flag: Flags.belgium,
   );
+
   final belize = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.belize),
-    ),
-    phoneMask: '',
+    countryName: 'belize'.toUpperCase(),
+    countryPhoneCode: '+501',
+    flag: Flags.belize,
   );
+
   final benin = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.benin),
-    ),
-    phoneMask: '',
+    countryName: 'benin'.toUpperCase(),
+    countryPhoneCode: '+229',
+    flag: Flags.benin,
   );
+
   final bermuda = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.bermuda),
-    ),
-    phoneMask: '',
+    countryName: 'bermuda'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.bermuda,
   );
+
   final bhutan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.bhutan),
-    ),
-    phoneMask: '',
+    countryName: 'bhutan'.toUpperCase(),
+    countryPhoneCode: '+975',
+    flag: Flags.bhutan,
   );
+
   final bolivia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.bolivia),
-    ),
-    phoneMask: '',
+    countryName: 'bolivia'.toUpperCase(),
+    countryPhoneCode: '+591',
+    flag: Flags.bolivia,
   );
+
   final bonaire = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.bonaire),
-    ),
-    phoneMask: '',
+    countryName: 'bonaire'.toUpperCase(),
+    countryPhoneCode: '+599',
+    flag: Flags.bonaire,
   );
+
   final bosniaAndHerzegovina = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.bosniaAndHerzegovina),
-    ),
-    phoneMask: '',
+    countryName: 'bosnia And Herzegovina'.toUpperCase(),
+    countryPhoneCode: '+387',
+    flag: Flags.bosniaAndHerzegovina,
   );
+
   final botswana = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.botswana),
-    ),
-    phoneMask: '',
+    countryName: 'botswana'.toUpperCase(),
+    countryPhoneCode: '+267',
+    flag: Flags.botswana,
   );
+
   final brazil = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.brazil),
-    ),
-    phoneMask: '',
+    countryName: 'brazil'.toUpperCase(),
+    countryPhoneCode: '+55',
+    flag: Flags.brazil,
   );
+
   final britishColumbia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.britishColumbia),
-    ),
-    phoneMask: '',
+    countryName: 'british Columbia'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.britishColumbia,
   );
-  final britishIndianOceanTerritory = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.britishIndianOceanTerritory),
-    ),
-    phoneMask: '',
-  );
+
   final britishVirginIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.britishVirginIslands),
-    ),
-    phoneMask: '',
+    countryName: 'british Virgin Islands'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.britishVirginIslands,
   );
+
   final brunei = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.brunei),
-    ),
-    phoneMask: '',
+    countryName: 'brunei'.toUpperCase(),
+    countryPhoneCode: '+673',
+    flag: Flags.brunei,
   );
+
   final bulgaria = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.bulgaria),
-    ),
-    phoneMask: '',
+    countryName: 'bulgaria'.toUpperCase(),
+    countryPhoneCode: '+359',
+    flag: Flags.bulgaria,
   );
+
   final burkinaFaso = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.burkinaFaso),
-    ),
-    phoneMask: '',
+    countryName: 'burkina-Faso'.toUpperCase(),
+    countryPhoneCode: '+226',
+    flag: Flags.burkinaFaso,
   );
+
   final burundi = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.burundi),
-    ),
-    phoneMask: '',
+    countryName: 'burundi'.toUpperCase(),
+    countryPhoneCode: '+257',
+    flag: Flags.burundi,
   );
+
   final cambodia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.cambodia),
-    ),
-    phoneMask: '',
+    countryName: 'cambodia'.toUpperCase(),
+    countryPhoneCode: '+855',
+    flag: Flags.cambodia,
   );
+
   final cameroon = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.cameroon),
-    ),
-    phoneMask: '',
+    countryName: 'cameroon'.toUpperCase(),
+    countryPhoneCode: '+237',
+    flag: Flags.cameroon,
   );
+
   final canada = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.canada),
-    ),
-    phoneMask: '',
+    countryName: 'canada'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.canada,
   );
+
   final canaryIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.canaryIslands),
-    ),
-    phoneMask: '',
+    countryName: 'canary Islands'.toUpperCase(),
+    countryPhoneCode: '+34',
+    flag: Flags.canaryIslands,
   );
+
   final capeVerde = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.capeVerde),
-    ),
-    phoneMask: '',
+    countryName: 'cape Verde'.toUpperCase(),
+    countryPhoneCode: '+238',
+    flag: Flags.capeVerde,
   );
+
   final caymanIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.caymanIslands),
-    ),
-    phoneMask: '',
+    countryName: 'cayman Islands'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.caymanIslands,
   );
+
   final centralAfricanRepublic = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.centralAfricanRepublic),
-    ),
-    phoneMask: '',
+    countryName: 'central African Republic'.toUpperCase(),
+    countryPhoneCode: '+236',
+    flag: Flags.centralAfricanRepublic,
   );
+
   final ceuta = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.ceuta),
-    ),
-    phoneMask: '',
+    countryName: 'ceuta'.toUpperCase(),
+    countryPhoneCode: '+34',
+    flag: Flags.ceuta,
   );
+
   final chad = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.chad),
-    ),
-    phoneMask: '',
+    countryName: 'chad'.toUpperCase(),
+    countryPhoneCode: '+235',
+    flag: Flags.chad,
   );
+
   final chile = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.chile),
-    ),
-    phoneMask: '',
+    countryName: 'chile'.toUpperCase(),
+    countryPhoneCode: '+56',
+    flag: Flags.chile,
   );
+
   final china = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.china),
-    ),
-    phoneMask: '',
+    countryName: 'china'.toUpperCase(),
+    countryPhoneCode: '+86',
+    flag: Flags.china,
   );
+
   final christmasIsland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.christmasIsland),
-    ),
-    phoneMask: '',
+    countryName: 'christmas Island'.toUpperCase(),
+    countryPhoneCode: '+61',
+    flag: Flags.christmasIsland,
   );
+
   final cocosIsland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.cocosIsland),
-    ),
-    phoneMask: '',
+    countryName: 'cocos Island'.toUpperCase(),
+    countryPhoneCode: '+61',
+    flag: Flags.cocosIsland,
   );
+
   final colombia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.colombia),
-    ),
-    phoneMask: '',
+    countryName: 'colombia'.toUpperCase(),
+    countryPhoneCode: '+57',
+    flag: Flags.colombia,
   );
+
   final comoros = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.comoros),
-    ),
-    phoneMask: '',
+    countryName: 'comoros'.toUpperCase(),
+    countryPhoneCode: '+269',
+    flag: Flags.comoros,
   );
-  final cookIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.cookIslands),
-    ),
-    phoneMask: '',
-  );
+
   final corsica = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.corsica),
-    ),
-    phoneMask: '',
+    countryName: 'corsica'.toUpperCase(),
+    countryPhoneCode: '+33',
+    flag: Flags.corsica,
   );
+
   final costaRica = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.costaRica),
-    ),
-    phoneMask: '',
+    countryName: 'costa-Rica'.toUpperCase(),
+    countryPhoneCode: '+506',
+    flag: Flags.costaRica,
   );
+
   final croatia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.croatia),
-    ),
-    phoneMask: '',
+    countryName: 'croatia'.toUpperCase(),
+    countryPhoneCode: '+385',
+    flag: Flags.croatia,
   );
+
   final cuba = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.cuba),
-    ),
-    phoneMask: '',
+    countryName: 'cuba'.toUpperCase(),
+    countryPhoneCode: '+53',
+    flag: Flags.cuba,
   );
+
   final curacao = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.curacao),
-    ),
-    phoneMask: '',
+    countryName: 'curacao'.toUpperCase(),
+    countryPhoneCode: '+599',
+    flag: Flags.curacao,
   );
+
   final cyprus = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.cyprus),
-    ),
-    phoneMask: '',
+    countryName: 'cyprus'.toUpperCase(),
+    countryPhoneCode: '+357',
+    flag: Flags.cyprus,
   );
+
   final czechRepublic = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.czechRepublic),
-    ),
-    phoneMask: '',
+    countryName: 'czech Republic'.toUpperCase(),
+    countryPhoneCode: '+420',
+    flag: Flags.czechRepublic,
   );
+
   final democraticRepublicOfCongo = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.democraticRepublicOfCongo),
-    ),
-    phoneMask: '',
+    countryName: 'democratic Republic Of Congo'.toUpperCase(),
+    countryPhoneCode: '+243',
+    flag: Flags.democraticRepublicOfCongo,
   );
+
   final denmark = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.denmark),
-    ),
-    phoneMask: '',
+    countryName: 'denmark'.toUpperCase(),
+    countryPhoneCode: '+45',
+    flag: Flags.denmark,
   );
+
   final djibouti = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.djibouti),
-    ),
-    phoneMask: '',
+    countryName: 'djibouti'.toUpperCase(),
+    countryPhoneCode: '+253',
+    flag: Flags.djibouti,
   );
+
   final dominica = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.dominica),
-    ),
-    phoneMask: '',
+    countryName: 'dominica'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.dominica,
   );
+
   final dominicanRepublic = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.dominicanRepublic),
-    ),
-    phoneMask: '',
+    countryName: 'dominican Republic'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.dominicanRepublic,
   );
+
   final eastTimor = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.eastTimor),
-    ),
-    phoneMask: '',
+    countryName: 'east Timor'.toUpperCase(),
+    countryPhoneCode: '+670',
+    flag: Flags.eastTimor,
   );
+
   final ecuador = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.ecuador),
-    ),
-    phoneMask: '',
+    countryName: 'ecuador'.toUpperCase(),
+    countryPhoneCode: '+593',
+    flag: Flags.ecuador,
   );
+
   final egypt = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.egypt),
-    ),
-    phoneMask: '',
+    countryName: 'egypt'.toUpperCase(),
+    countryPhoneCode: '+20',
+    flag: Flags.egypt,
   );
+
   final elSalvador = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.elSalvador),
-    ),
-    phoneMask: '',
+    countryName: 'elSalvador'.toUpperCase(),
+    countryPhoneCode: '+503',
+    flag: Flags.elSalvador,
   );
+
   final england = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.england),
-    ),
-    phoneMask: '',
+    countryName: 'england'.toUpperCase(),
+    countryPhoneCode: '+44',
+    flag: Flags.england,
   );
+
   final equatorialGuinea = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.equatorialGuinea),
-    ),
-    phoneMask: '',
+    countryName: 'equatorial Guinea'.toUpperCase(),
+    countryPhoneCode: '+240',
+    flag: Flags.equatorialGuinea,
   );
+
   final eritrea = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.eritrea),
-    ),
-    phoneMask: '',
+    countryName: 'eritrea'.toUpperCase(),
+    countryPhoneCode: '+291',
+    flag: Flags.eritrea,
   );
+
   final estonia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.estonia),
-    ),
-    phoneMask: '',
+    countryName: 'estonia'.toUpperCase(),
+    countryPhoneCode: '+372',
+    flag: Flags.estonia,
   );
+
   final ethiopia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.ethiopia),
-    ),
-    phoneMask: '',
+    countryName: 'ethiopia'.toUpperCase(),
+    countryPhoneCode: '+251',
+    flag: Flags.ethiopia,
   );
-  final europeanUnion = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.europeanUnion),
-    ),
-    phoneMask: '',
-  );
+
   final falklandIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.falklandIslands),
-    ),
-    phoneMask: '',
+    countryName: 'falkland Islands'.toUpperCase(),
+    countryPhoneCode: '+500',
+    flag: Flags.falklandIslands,
   );
+
   final faroeIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.faroeIslands),
-    ),
-    phoneMask: '',
+    countryName: 'faroe Islands'.toUpperCase(),
+    countryPhoneCode: '+45',
+    flag: Flags.faroeIslands,
   );
+
   final fiji = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.fiji),
-    ),
-    phoneMask: '',
+    countryName: 'fiji'.toUpperCase(),
+    countryPhoneCode: '+679',
+    flag: Flags.fiji,
   );
+
   final finland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.finland),
-    ),
-    phoneMask: '',
+    countryName: 'finland'.toUpperCase(),
+    countryPhoneCode: '+358',
+    flag: Flags.finland,
   );
+
   final france = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.france),
-    ),
-    phoneMask: '',
+    countryName: 'france'.toUpperCase(),
+    countryPhoneCode: '+33',
+    flag: Flags.france,
   );
+
   final frenchPolynesia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.frenchPolynesia),
-    ),
-    phoneMask: '',
+    countryName: 'french Polynesia'.toUpperCase(),
+    countryPhoneCode: '+689',
+    flag: Flags.frenchPolynesia,
   );
+
   final gabon = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.gabon),
-    ),
-    phoneMask: '',
+    countryName: 'gabon'.toUpperCase(),
+    countryPhoneCode: '+241',
+    flag: Flags.gabon,
   );
+
   final galapagosIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.galapagosIslands),
-    ),
-    phoneMask: '',
+    countryName: 'galapagos Islands'.toUpperCase(),
+    countryPhoneCode: '+593',
+    flag: Flags.galapagosIslands,
   );
+
   final gambia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.gambia),
-    ),
-    phoneMask: '',
+    countryName: 'gambia'.toUpperCase(),
+    countryPhoneCode: '+220',
+    flag: Flags.gambia,
   );
+
   final georgia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.georgia),
-    ),
-    phoneMask: '',
+    countryName: 'georgia'.toUpperCase(),
+    countryPhoneCode: '+995',
+    flag: Flags.georgia,
   );
+
   final germany = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.germany),
-    ),
-    phoneMask: '',
+    countryName: 'germany'.toUpperCase(),
+    countryPhoneCode: '+49',
+    flag: Flags.germany,
   );
+
   final ghana = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.ghana),
-    ),
-    phoneMask: '',
+    countryName: 'ghana'.toUpperCase(),
+    countryPhoneCode: '+233',
+    flag: Flags.ghana,
   );
+
   final gibraltar = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.gibraltar),
-    ),
-    phoneMask: '',
+    countryName: 'gibraltar'.toUpperCase(),
+    countryPhoneCode: '+350',
+    flag: Flags.gibraltar,
   );
+
   final greece = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.greece),
-    ),
-    phoneMask: '',
+    countryName: 'greece'.toUpperCase(),
+    countryPhoneCode: '+30',
+    flag: Flags.greece,
   );
+
   final greenland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.greenland),
-    ),
-    phoneMask: '',
+    countryName: 'greenland'.toUpperCase(),
+    countryPhoneCode: '+299',
+    flag: Flags.greenland,
   );
+
   final grenada = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.grenada),
-    ),
-    phoneMask: '',
+    countryName: 'grenada'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.grenada,
   );
+
   final guam = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.guam),
-    ),
-    phoneMask: '',
+    countryName: 'guam'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.guam,
   );
+
   final guatemala = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.guatemala),
-    ),
-    phoneMask: '',
+    countryName: 'guatemala'.toUpperCase(),
+    countryPhoneCode: '+502',
+    flag: Flags.guatemala,
   );
+
   final guernsey = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.guernsey),
-    ),
-    phoneMask: '',
+    countryName: 'guernsey'.toUpperCase(),
+    countryPhoneCode: '+44',
+    flag: Flags.guernsey,
   );
+
   final guineaBissau = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.guineaBissau),
-    ),
-    phoneMask: '',
+    countryName: 'guinea Bissau'.toUpperCase(),
+    countryPhoneCode: '+245',
+    flag: Flags.guineaBissau,
   );
+
   final guinea = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.guinea),
-    ),
-    phoneMask: '',
+    countryName: 'guinea'.toUpperCase(),
+    countryPhoneCode: '+224',
+    flag: Flags.guinea,
   );
+
   final haiti = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.haiti),
-    ),
-    phoneMask: '',
+    countryName: 'haiti'.toUpperCase(),
+    countryPhoneCode: '+509',
+    flag: Flags.haiti,
   );
+
   final hawaii = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.hawaii),
-    ),
-    phoneMask: '',
+    countryName: 'hawaii'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.hawaii,
   );
+
   final honduras = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.honduras),
-    ),
-    phoneMask: '',
+    countryName: 'honduras'.toUpperCase(),
+    countryPhoneCode: '+504',
+    flag: Flags.honduras,
   );
+
   final hongKong = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.hongKong),
-    ),
-    phoneMask: '',
+    countryName: 'hong-Kong'.toUpperCase(),
+    countryPhoneCode: '+852',
+    flag: Flags.hongKong,
   );
+
   final hungary = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.hungary),
-    ),
-    phoneMask: '',
+    countryName: 'hungary'.toUpperCase(),
+    countryPhoneCode: '+36',
+    flag: Flags.hungary,
   );
+
   final iceland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.iceland),
-    ),
-    phoneMask: '',
+    countryName: 'iceland'.toUpperCase(),
+    countryPhoneCode: '+354',
+    flag: Flags.iceland,
   );
+
   final india = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.india),
-    ),
-    phoneMask: '',
+    countryName: 'india'.toUpperCase(),
+    countryPhoneCode: '+91',
+    flag: Flags.india,
   );
+
   final indonesia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.indonesia),
-    ),
-    phoneMask: '',
+    countryName: 'indonesia'.toUpperCase(),
+    countryPhoneCode: '+62',
+    flag: Flags.indonesia,
   );
+
   final iran = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.iran),
-    ),
-    phoneMask: '',
+    countryName: 'iran'.toUpperCase(),
+    countryPhoneCode: '+98',
+    flag: Flags.iran,
   );
+
   final iraq = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.iraq),
-    ),
-    phoneMask: '',
+    countryName: 'iraq'.toUpperCase(),
+    countryPhoneCode: '+964',
+    flag: Flags.iraq,
   );
+
   final ireland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.ireland),
-    ),
-    phoneMask: '',
+    countryName: 'ireland'.toUpperCase(),
+    countryPhoneCode: '+353',
+    flag: Flags.ireland,
   );
+
   final isleOfMan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.isleOfMan),
-    ),
-    phoneMask: '',
+    countryName: 'isle Of Man'.toUpperCase(),
+    countryPhoneCode: '+44',
+    flag: Flags.isleOfMan,
   );
+
   final israel = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.israel),
-    ),
-    phoneMask: '',
+    countryName: 'israel'.toUpperCase(),
+    countryPhoneCode: '+972',
+    flag: Flags.israel,
   );
+
   final italy = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.italy),
-    ),
-    phoneMask: '',
+    countryName: 'italy'.toUpperCase(),
+    countryPhoneCode: '+39',
+    flag: Flags.italy,
   );
+
   final ivoryCoast = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.ivoryCoast),
-    ),
-    phoneMask: '',
+    countryName: 'ivory Coast'.toUpperCase(),
+    countryPhoneCode: '+225',
+    flag: Flags.ivoryCoast,
   );
+
   final jamaica = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.jamaica),
-    ),
-    phoneMask: '',
+    countryName: 'jamaica'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.jamaica,
   );
+
   final japan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.japan),
-    ),
-    phoneMask: '',
+    countryName: 'japan'.toUpperCase(),
+    countryPhoneCode: '+81',
+    flag: Flags.japan,
   );
+
   final jersey = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.jersey),
-    ),
-    phoneMask: '',
+    countryName: 'jersey'.toUpperCase(),
+    countryPhoneCode: '+44',
+    flag: Flags.jersey,
   );
+
   final jordan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.jordan),
-    ),
-    phoneMask: '',
+    countryName: 'jordan'.toUpperCase(),
+    countryPhoneCode: '+962',
+    flag: Flags.jordan,
   );
+
   final kazakhstan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.kazakhstan),
-    ),
-    phoneMask: '',
+    countryName: 'kazakhstan'.toUpperCase(),
+    countryPhoneCode: '+7',
+    flag: Flags.kazakhstan,
   );
+
   final kenya = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.kenya),
-    ),
-    phoneMask: '',
+    countryName: 'kenya'.toUpperCase(),
+    countryPhoneCode: '+254',
+    flag: Flags.kenya,
   );
+
   final kosovo = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.kosovo),
-    ),
-    phoneMask: '',
+    countryName: 'kosovo'.toUpperCase(),
+    countryPhoneCode: '+383',
+    flag: Flags.kosovo,
   );
+
   final kuwait = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.kuwait),
-    ),
-    phoneMask: '',
+    countryName: 'kuwait'.toUpperCase(),
+    countryPhoneCode: '+965',
+    flag: Flags.kuwait,
   );
+
   final kyrgyzstan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.kyrgyzstan),
-    ),
-    phoneMask: '',
+    countryName: 'kyrgyzstan'.toUpperCase(),
+    countryPhoneCode: '+996',
+    flag: Flags.kyrgyzstan,
   );
+
   final laos = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.laos),
-    ),
-    phoneMask: '',
+    countryName: 'laos'.toUpperCase(),
+    countryPhoneCode: '+856',
+    flag: Flags.laos,
   );
+
   final latvia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.latvia),
-    ),
-    phoneMask: '',
+    countryName: 'latvia'.toUpperCase(),
+    countryPhoneCode: '+371',
+    flag: Flags.latvia,
   );
+
   final lebanon = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.lebanon),
-    ),
-    phoneMask: '',
+    countryName: 'lebanon'.toUpperCase(),
+    countryPhoneCode: '+961',
+    flag: Flags.lebanon,
   );
+
   final lesotho = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.lesotho),
-    ),
-    phoneMask: '',
+    countryName: 'lesotho'.toUpperCase(),
+    countryPhoneCode: '+266',
+    flag: Flags.lesotho,
   );
+
   final liberia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.liberia),
-    ),
-    phoneMask: '',
+    countryName: 'liberia'.toUpperCase(),
+    countryPhoneCode: '+231',
+    flag: Flags.liberia,
   );
+
   final libya = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.libya),
-    ),
-    phoneMask: '',
+    countryName: 'libya'.toUpperCase(),
+    countryPhoneCode: '+218',
+    flag: Flags.libya,
   );
+
   final liechtenstein = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.liechtenstein),
-    ),
-    phoneMask: '',
+    countryName: 'liechtenstein'.toUpperCase(),
+    countryPhoneCode: '+423',
+    flag: Flags.liechtenstein,
   );
+
   final lithuania = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.lithuania),
-    ),
-    phoneMask: '',
+    countryName: 'lithuania'.toUpperCase(),
+    countryPhoneCode: '+370',
+    flag: Flags.lithuania,
   );
+
   final luxembourg = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.luxembourg),
-    ),
-    phoneMask: '',
+    countryName: 'luxembourg'.toUpperCase(),
+    countryPhoneCode: '+352',
+    flag: Flags.luxembourg,
   );
+
   final macao = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.macao),
-    ),
-    phoneMask: '',
+    countryName: 'macao'.toUpperCase(),
+    countryPhoneCode: '+853',
+    flag: Flags.macao,
   );
+
   final madagascar = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.madagascar),
-    ),
-    phoneMask: '',
+    countryName: 'madagascar'.toUpperCase(),
+    countryPhoneCode: '+261',
+    flag: Flags.madagascar,
   );
+
   final madeira = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.madeira),
-    ),
-    phoneMask: '',
+    countryName: 'madeira'.toUpperCase(),
+    countryPhoneCode: '+351',
+    flag: Flags.madeira,
   );
+
   final malawi = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.malawi),
-    ),
-    phoneMask: '',
+    countryName: 'malawi'.toUpperCase(),
+    countryPhoneCode: '+265',
+    flag: Flags.malawi,
   );
+
   final malaysia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.malaysia),
-    ),
-    phoneMask: '',
+    countryName: 'malaysia'.toUpperCase(),
+    countryPhoneCode: '+60',
+    flag: Flags.malaysia,
   );
+
   final maldives = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.maldives),
-    ),
-    phoneMask: '',
+    countryName: 'maldives'.toUpperCase(),
+    countryPhoneCode: '+960',
+    flag: Flags.maldives,
   );
+
   final mali = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.mali),
-    ),
-    phoneMask: '',
+    countryName: 'mali'.toUpperCase(),
+    countryPhoneCode: '+223',
+    flag: Flags.mali,
   );
+
   final malta = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.malta),
-    ),
-    phoneMask: '',
+    countryName: 'malta'.toUpperCase(),
+    countryPhoneCode: '+356',
+    flag: Flags.malta,
   );
+
   final marshallIsland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.marshallIsland),
-    ),
-    phoneMask: '',
+    countryName: 'marshall Island'.toUpperCase(),
+    countryPhoneCode: '+692',
+    flag: Flags.marshallIsland,
   );
+
   final martinique = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.martinique),
-    ),
-    phoneMask: '',
+    countryName: 'martinique'.toUpperCase(),
+    countryPhoneCode: '+596',
+    flag: Flags.martinique,
   );
+
   final mauritania = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.mauritania),
-    ),
-    phoneMask: '',
+    countryName: 'mauritania'.toUpperCase(),
+    countryPhoneCode: '+222',
+    flag: Flags.mauritania,
   );
+
   final mauritius = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.mauritius),
-    ),
-    phoneMask: '',
+    countryName: 'mauritius'.toUpperCase(),
+    countryPhoneCode: '+230',
+    flag: Flags.mauritius,
   );
+
   final melilla = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.melilla),
-    ),
-    phoneMask: '',
+    countryName: 'melilla'.toUpperCase(),
+    countryPhoneCode: '+34',
+    flag: Flags.melilla,
   );
+
   final mexico = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.mexico),
-    ),
-    phoneMask: '',
+    countryName: 'mexico'.toUpperCase(),
+    countryPhoneCode: '+52',
+    flag: Flags.mexico,
   );
+
   final micronesia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.micronesia),
-    ),
-    phoneMask: '',
+    countryName: 'micronesia'.toUpperCase(),
+    countryPhoneCode: '+691',
+    flag: Flags.micronesia,
   );
+
   final moldova = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.moldova),
-    ),
-    phoneMask: '',
+    countryName: 'moldova'.toUpperCase(),
+    countryPhoneCode: '+373',
+    flag: Flags.moldova,
   );
+
   final monaco = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.monaco),
-    ),
-    phoneMask: '',
+    countryName: 'monaco'.toUpperCase(),
+    countryPhoneCode: '+377',
+    flag: Flags.monaco,
   );
+
   final mongolia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.mongolia),
-    ),
-    phoneMask: '',
+    countryName: 'mongolia'.toUpperCase(),
+    countryPhoneCode: '+976',
+    flag: Flags.mongolia,
   );
+
   final montenegro = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.montenegro),
-    ),
-    phoneMask: '',
+    countryName: 'montenegro'.toUpperCase(),
+    countryPhoneCode: '+382',
+    flag: Flags.montenegro,
   );
+
   final montserrat = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.montserrat),
-    ),
-    phoneMask: '',
+    countryName: 'montserrat'.toUpperCase(),
+    countryPhoneCode: '+1664',
+    flag: Flags.montserrat,
   );
+
   final morocco = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.morocco),
-    ),
-    phoneMask: '',
+    countryName: 'morocco'.toUpperCase(),
+    countryPhoneCode: '+212',
+    flag: Flags.morocco,
   );
+
   final mozambique = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.mozambique),
-    ),
-    phoneMask: '',
+    countryName: 'mozambique'.toUpperCase(),
+    countryPhoneCode: '+258',
+    flag: Flags.mozambique,
   );
+
   final myanmar = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.myanmar),
-    ),
-    phoneMask: '',
+    countryName: 'myanmar'.toUpperCase(),
+    countryPhoneCode: '+95',
+    flag: Flags.myanmar,
   );
+
   final namibia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.namibia),
-    ),
-    phoneMask: '',
+    countryName: 'namibia'.toUpperCase(),
+    countryPhoneCode: '+264',
+    flag: Flags.namibia,
   );
+
   final nauru = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.nauru),
-    ),
-    phoneMask: '',
+    countryName: 'nauru'.toUpperCase(),
+    countryPhoneCode: '+674',
+    flag: Flags.nauru,
   );
+
   final nepal = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.nepal),
-    ),
-    phoneMask: '',
+    countryName: 'nepal'.toUpperCase(),
+    countryPhoneCode: '+977',
+    flag: Flags.nepal,
   );
+
   final netherlands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.netherlands),
-    ),
-    phoneMask: '',
+    countryName: 'netherlands'.toUpperCase(),
+    countryPhoneCode: '+31',
+    flag: Flags.netherlands,
   );
+
   final newZealand = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.newZealand),
-    ),
-    phoneMask: '',
+    countryName: 'new Zealand'.toUpperCase(),
+    countryPhoneCode: '+64',
+    flag: Flags.newZealand,
   );
+
   final nicaragua = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.nicaragua),
-    ),
-    phoneMask: '',
+    countryName: 'nicaragua'.toUpperCase(),
+    countryPhoneCode: '+505',
+    flag: Flags.nicaragua,
   );
+
   final niger = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.niger),
-    ),
-    phoneMask: '',
+    countryName: 'niger'.toUpperCase(),
+    countryPhoneCode: '+227',
+    flag: Flags.niger,
   );
+
   final nigeria = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.nigeria),
-    ),
-    phoneMask: '',
+    countryName: 'nigeria'.toUpperCase(),
+    countryPhoneCode: '+234',
+    flag: Flags.nigeria,
   );
+
   final niue = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.niue),
-    ),
-    phoneMask: '',
+    countryName: 'niue'.toUpperCase(),
+    countryPhoneCode: '+683',
+    flag: Flags.niue,
   );
+
   final norfolkIsland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.norfolkIsland),
-    ),
-    phoneMask: '',
+    countryName: 'norfolk Island'.toUpperCase(),
+    countryPhoneCode: '+672',
+    flag: Flags.norfolkIsland,
   );
+
   final northKorea = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.northKorea),
-    ),
-    phoneMask: '',
+    countryName: 'north Korea'.toUpperCase(),
+    countryPhoneCode: '+850',
+    flag: Flags.northKorea,
   );
+
   final northenCyprus = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.northenCyprus),
-    ),
-    phoneMask: '',
+    countryName: 'northen Cyprus'.toUpperCase(),
+    countryPhoneCode: '+90',
+    flag: Flags.northenCyprus,
   );
+
   final northernMarianasIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.northernMarianasIslands),
-    ),
-    phoneMask: '',
+    countryName: 'northern Marianas Islands'.toUpperCase(),
+    countryPhoneCode: '+1670',
+    flag: Flags.northernMarianasIslands,
   );
+
   final norway = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.norway),
-    ),
-    phoneMask: '',
+    countryName: 'norway'.toUpperCase(),
+    countryPhoneCode: '+47',
+    flag: Flags.norway,
   );
+
   final oman = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.oman),
-    ),
-    phoneMask: '',
+    countryName: 'oman'.toUpperCase(),
+    countryPhoneCode: '+968',
+    flag: Flags.oman,
   );
+
   final orkneyIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.orkneyIslands),
-    ),
-    phoneMask: '',
+    countryName: 'orkney Islands'.toUpperCase(),
+    countryPhoneCode: '+44',
+    flag: Flags.orkneyIslands,
   );
+
   final ossetia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.ossetia),
-    ),
-    phoneMask: '',
+    countryName: 'ossetia'.toUpperCase(),
+    countryPhoneCode: '+7',
+    flag: Flags.ossetia,
   );
+
   final otan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.otan),
-    ),
-    phoneMask: '',
+    countryName: 'otan'.toUpperCase(),
+    countryPhoneCode: '+7',
+    flag: Flags.otan,
   );
+
   final pakistan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.pakistan),
-    ),
-    phoneMask: '',
+    countryName: 'pakistan'.toUpperCase(),
+    countryPhoneCode: '+92',
+    flag: Flags.pakistan,
   );
+
   final palau = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.palau),
-    ),
-    phoneMask: '',
+    countryName: 'palau'.toUpperCase(),
+    countryPhoneCode: '+680',
+    flag: Flags.palau,
   );
+
   final palestine = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.palestine),
-    ),
-    phoneMask: '',
+    countryName: 'palestine'.toUpperCase(),
+    countryPhoneCode: '+970',
+    flag: Flags.palestine,
   );
+
   final panama = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.panama),
-    ),
-    phoneMask: '',
+    countryName: 'panama'.toUpperCase(),
+    countryPhoneCode: '+507',
+    flag: Flags.panama,
   );
+
   final papuaNewGuinea = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.papuaNewGuinea),
-    ),
-    phoneMask: '',
+    countryName: 'papua New Guinea'.toUpperCase(),
+    countryPhoneCode: '+675',
+    flag: Flags.papuaNewGuinea,
   );
+
   final paraguay = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.paraguay),
-    ),
-    phoneMask: '',
+    countryName: 'paraguay'.toUpperCase(),
+    countryPhoneCode: '+595',
+    flag: Flags.paraguay,
   );
+
   final peru = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.peru),
-    ),
-    phoneMask: '',
+    countryName: 'peru'.toUpperCase(),
+    countryPhoneCode: '+51',
+    flag: Flags.peru,
   );
+
   final philippines = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.philippines),
-    ),
-    phoneMask: '',
+    countryName: 'philippines'.toUpperCase(),
+    countryPhoneCode: '+63',
+    flag: Flags.philippines,
   );
+
   final pitcairnIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.pitcairnIslands),
-    ),
-    phoneMask: '',
+    countryName: 'pitcairn Islands'.toUpperCase(),
+    countryPhoneCode: '+64',
+    flag: Flags.pitcairnIslands,
   );
+
   final poland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.poland),
-    ),
-    phoneMask: '',
+    countryName: 'poland'.toUpperCase(),
+    countryPhoneCode: '+48',
+    flag: Flags.poland,
   );
+
   final portugal = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.portugal),
-    ),
-    phoneMask: '',
+    countryName: 'portugal'.toUpperCase(),
+    countryPhoneCode: '+351',
+    flag: Flags.portugal,
   );
+
   final puertoRico = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.puertoRico),
-    ),
-    phoneMask: '',
+    countryName: 'puerto-Rico'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.puertoRico,
   );
+
   final qatar = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.qatar),
-    ),
-    phoneMask: '',
+    countryName: 'qatar'.toUpperCase(),
+    countryPhoneCode: '+974',
+    flag: Flags.qatar,
   );
+
   final rapaNui = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.rapaNui),
-    ),
-    phoneMask: '',
+    countryName: 'rapaNui'.toUpperCase(),
+    countryPhoneCode: '+56',
+    flag: Flags.rapaNui,
   );
+
   final republicOfMacedonia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.republicOfMacedonia),
-    ),
-    phoneMask: '',
+    countryName: 'republic Of Macedonia'.toUpperCase(),
+    countryPhoneCode: '+389',
+    flag: Flags.republicOfMacedonia,
   );
+
   final republicOfTheCongo = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.republicOfTheCongo),
-    ),
-    phoneMask: '',
+    countryName: 'republic Of The Congo'.toUpperCase(),
+    countryPhoneCode: '+242',
+    flag: Flags.republicOfTheCongo,
   );
+
   final romania = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.romania),
-    ),
-    phoneMask: '',
+    countryName: 'romania'.toUpperCase(),
+    countryPhoneCode: '+40',
+    flag: Flags.romania,
   );
+
   final russia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.russia),
-    ),
-    phoneMask: '',
+    countryName: 'russia'.toUpperCase(),
+    countryPhoneCode: '+7',
+    flag: Flags.russia,
   );
+
   final rwanda = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.rwanda),
-    ),
-    phoneMask: '',
+    countryName: 'rwanda'.toUpperCase(),
+    countryPhoneCode: '+250',
+    flag: Flags.rwanda,
   );
+
   final sabaIsland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.sabaIsland),
-    ),
-    phoneMask: '',
+    countryName: 'saba Island'.toUpperCase(),
+    countryPhoneCode: '+599',
+    flag: Flags.sabaIsland,
   );
+
   final sahrawiArabDemocraticRepublic = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.sahrawiArabDemocraticRepublic),
-    ),
-    phoneMask: '',
+    countryName: 'sahrawi Arab Democratic Republic'.toUpperCase(),
+    countryPhoneCode: '+212',
+    flag: Flags.sahrawiArabDemocraticRepublic,
   );
+
   final saintKittsAndNevis = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.saintKittsAndNevis),
-    ),
-    phoneMask: '',
+    countryName: 'saint Kitts And Nevis'.toUpperCase(),
+    countryPhoneCode: '+1869',
+    flag: Flags.saintKittsAndNevis,
   );
+
   final samoa = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.samoa),
-    ),
-    phoneMask: '',
+    countryName: 'samoa'.toUpperCase(),
+    countryPhoneCode: '+685',
+    flag: Flags.samoa,
   );
+
   final sanMarino = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.sanMarino),
-    ),
-    phoneMask: '',
+    countryName: 'san-Marino'.toUpperCase(),
+    countryPhoneCode: '+378',
+    flag: Flags.sanMarino,
   );
+
   final saoTomeAndPrincipe = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.saoTomeAndPrincipe),
-    ),
-    phoneMask: '',
+    countryName: 'sao-Tome And Principe'.toUpperCase(),
+    countryPhoneCode: '+239',
+    flag: Flags.saoTomeAndPrincipe,
   );
+
   final sardinia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.sardinia),
-    ),
-    phoneMask: '',
+    countryName: 'sardinia'.toUpperCase(),
+    countryPhoneCode: '+39',
+    flag: Flags.sardinia,
   );
+
   final saudiArabia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.saudiArabia),
-    ),
-    phoneMask: '',
+    countryName: 'saudi Arabia'.toUpperCase(),
+    countryPhoneCode: '+966',
+    flag: Flags.saudiArabia,
   );
+
   final scotland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.scotland),
-    ),
-    phoneMask: '',
+    countryName: 'scotland'.toUpperCase(),
+    countryPhoneCode: '+44',
+    flag: Flags.scotland,
   );
+
   final senegal = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.senegal),
-    ),
-    phoneMask: '',
+    countryName: 'senegal'.toUpperCase(),
+    countryPhoneCode: '+221',
+    flag: Flags.senegal,
   );
+
   final serbia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.serbia),
-    ),
-    phoneMask: '',
+    countryName: 'serbia'.toUpperCase(),
+    countryPhoneCode: '+381',
+    flag: Flags.serbia,
   );
+
   final seychelles = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.seychelles),
-    ),
-    phoneMask: '',
+    countryName: 'seychelles'.toUpperCase(),
+    countryPhoneCode: '+248',
+    flag: Flags.seychelles,
   );
+
   final sicily = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.sicily),
-    ),
-    phoneMask: '',
+    countryName: 'sicily'.toUpperCase(),
+    countryPhoneCode: '+39',
+    flag: Flags.sicily,
   );
+
   final sierraLeone = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.sierraLeone),
-    ),
-    phoneMask: '',
+    countryName: 'sierra-Leone'.toUpperCase(),
+    countryPhoneCode: '+232',
+    flag: Flags.sierraLeone,
   );
+
   final singapore = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.singapore),
-    ),
-    phoneMask: '',
+    countryName: 'singapore'.toUpperCase(),
+    countryPhoneCode: '+65',
+    flag: Flags.singapore,
   );
+
   final sintEustatius = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.sintEustatius),
-    ),
-    phoneMask: '',
+    countryName: 'saint Eustatius'.toUpperCase(),
+    countryPhoneCode: '+599',
+    flag: Flags.sintEustatius,
   );
+
   final sintMaarten = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.sintMaarten),
-    ),
-    phoneMask: '',
+    countryName: 'saint Maarten'.toUpperCase(),
+    countryPhoneCode: '+1721',
+    flag: Flags.sintMaarten,
   );
+
   final slovakia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.slovakia),
-    ),
-    phoneMask: '',
+    countryName: 'slovakia'.toUpperCase(),
+    countryPhoneCode: '+421',
+    flag: Flags.slovakia,
   );
+
   final slovenia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.slovenia),
-    ),
-    phoneMask: '',
+    countryName: 'slovenia'.toUpperCase(),
+    countryPhoneCode: '+386',
+    flag: Flags.slovenia,
   );
+
   final solomonIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.solomonIslands),
-    ),
-    phoneMask: '',
+    countryName: 'solomon Islands'.toUpperCase(),
+    countryPhoneCode: '+677',
+    flag: Flags.solomonIslands,
   );
+
   final somalia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.somalia),
-    ),
-    phoneMask: '',
+    countryName: 'somalia'.toUpperCase(),
+    countryPhoneCode: '+252',
+    flag: Flags.somalia,
   );
+
   final somaliland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.somaliland),
-    ),
-    phoneMask: '',
+    countryName: 'somaliland'.toUpperCase(),
+    countryPhoneCode: '+252',
+    flag: Flags.somaliland,
   );
+
   final southAfrica = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.southAfrica),
-    ),
-    phoneMask: '',
+    countryName: 'south Africa'.toUpperCase(),
+    countryPhoneCode: '+27',
+    flag: Flags.southAfrica,
   );
+
   final southKorea = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.southKorea),
-    ),
-    phoneMask: '',
+    countryName: 'south Korea'.toUpperCase(),
+    countryPhoneCode: '+82',
+    flag: Flags.southKorea,
   );
+
   final southSudan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.southSudan),
-    ),
-    phoneMask: '',
+    countryName: 'south Sudan'.toUpperCase(),
+    countryPhoneCode: '+211',
+    flag: Flags.southSudan,
   );
+
   final spain = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.spain),
-    ),
-    phoneMask: '',
+    countryName: 'spain'.toUpperCase(),
+    countryPhoneCode: '+34',
+    flag: Flags.spain,
   );
+
   final sriLanka = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.sriLanka),
-    ),
-    phoneMask: '',
+    countryName: 'sri-Lanka'.toUpperCase(),
+    countryPhoneCode: '+94',
+    flag: Flags.sriLanka,
   );
+
   final stBarts = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.stBarts),
-    ),
-    phoneMask: '',
+    countryName: 'st. Barts'.toUpperCase(),
+    countryPhoneCode: '+590',
+    flag: Flags.stBarts,
   );
+
   final stVincentAndTheGrenadines = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.stVincentAndTheGrenadines),
-    ),
-    phoneMask: '',
+    countryName: 'st. Vincent And The Grenadines'.toUpperCase(),
+    countryPhoneCode: '+1784',
+    flag: Flags.stVincentAndTheGrenadines,
   );
+
   final sudan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.sudan),
-    ),
-    phoneMask: '',
+    countryName: 'sudan'.toUpperCase(),
+    countryPhoneCode: '+249',
+    flag: Flags.sudan,
   );
+
   final suriname = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.suriname),
-    ),
-    phoneMask: '',
+    countryName: 'suriname'.toUpperCase(),
+    countryPhoneCode: '+597',
+    flag: Flags.suriname,
   );
+
   final sweden = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.sweden),
-    ),
-    phoneMask: '',
+    countryName: 'sweden'.toUpperCase(),
+    countryPhoneCode: '+46',
+    flag: Flags.sweden,
   );
+
   final switzerland = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.switzerland),
-    ),
-    phoneMask: '',
+    countryName: 'switzerland'.toUpperCase(),
+    countryPhoneCode: '+41',
+    flag: Flags.switzerland,
   );
+
   final syria = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.syria),
-    ),
-    phoneMask: '',
+    countryName: 'syria'.toUpperCase(),
+    countryPhoneCode: '+963',
+    flag: Flags.syria,
   );
+
   final taiwan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.taiwan),
-    ),
-    phoneMask: '',
+    countryName: 'taiwan'.toUpperCase(),
+    countryPhoneCode: '+886',
+    flag: Flags.taiwan,
   );
+
   final tajikistan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.tajikistan),
-    ),
-    phoneMask: '',
+    countryName: 'tajikistan'.toUpperCase(),
+    countryPhoneCode: '+992',
+    flag: Flags.tajikistan,
   );
+
   final tanzania = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.tanzania),
-    ),
-    phoneMask: '',
+    countryName: 'tanzania'.toUpperCase(),
+    countryPhoneCode: '+255',
+    flag: Flags.tanzania,
   );
+
   final thailand = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.thailand),
-    ),
-    phoneMask: '',
+    countryName: 'thailand'.toUpperCase(),
+    countryPhoneCode: '+66',
+    flag: Flags.thailand,
   );
+
   final tibet = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.tibet),
-    ),
-    phoneMask: '',
+    countryName: 'tibet'.toUpperCase(),
+    countryPhoneCode: '+86',
+    flag: Flags.tibet,
   );
+
   final togo = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.togo),
-    ),
-    phoneMask: '',
+    countryName: 'togo'.toUpperCase(),
+    countryPhoneCode: '+228',
+    flag: Flags.togo,
   );
+
   final tokelau = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.tokelau),
-    ),
-    phoneMask: '',
+    countryName: 'tokelau'.toUpperCase(),
+    countryPhoneCode: '+690',
+    flag: Flags.tokelau,
   );
+
   final tonga = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.tonga),
-    ),
-    phoneMask: '',
+    countryName: 'tonga'.toUpperCase(),
+    countryPhoneCode: '+676',
+    flag: Flags.tonga,
   );
+
   final transnistria = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.transnistria),
-    ),
-    phoneMask: '',
+    countryName: 'transnistria'.toUpperCase(),
+    countryPhoneCode: '+373',
+    flag: Flags.transnistria,
   );
+
   final trinidadAndTobago = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.trinidadAndTobago),
-    ),
-    phoneMask: '',
+    countryName: 'trinidad And Tobago'.toUpperCase(),
+    countryPhoneCode: '+1868',
+    flag: Flags.trinidadAndTobago,
   );
+
   final tubalu = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.tubalu),
-    ),
-    phoneMask: '',
+    countryName: 'tubalu'.toUpperCase(),
+    countryPhoneCode: '+688',
+    flag: Flags.tubalu,
   );
+
   final tunisia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.tunisia),
-    ),
-    phoneMask: '',
+    countryName: 'tunisia'.toUpperCase(),
+    countryPhoneCode: '+216',
+    flag: Flags.tunisia,
   );
+
   final turkey = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.turkey),
-    ),
-    phoneMask: '',
+    countryName: 'turkey'.toUpperCase(),
+    countryPhoneCode: '+90',
+    flag: Flags.turkey,
   );
+
   final turkmenistan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.turkmenistan),
-    ),
-    phoneMask: '',
+    countryName: 'turkmenistan'.toUpperCase(),
+    countryPhoneCode: '+993',
+    flag: Flags.turkmenistan,
   );
+
   final turksAndCaicos = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.turksAndCaicos),
-    ),
-    phoneMask: '',
+    countryName: 'turks And Caicos'.toUpperCase(),
+    countryPhoneCode: '+1649',
+    flag: Flags.turksAndCaicos,
   );
+
   final uganda = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.uganda),
-    ),
-    phoneMask: '',
+    countryName: 'uganda'.toUpperCase(),
+    countryPhoneCode: '+256',
+    flag: Flags.uganda,
   );
+
   final ukraine = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.ukraine),
-    ),
-    phoneMask: '',
+    countryName: 'ukraine'.toUpperCase(),
+    countryPhoneCode: '+380',
+    flag: Flags.ukraine,
   );
+
   final unitedArabEmirates = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.unitedArabEmirates),
-    ),
-    phoneMask: '',
+    countryName: 'united Arab Emirates'.toUpperCase(),
+    countryPhoneCode: '+971',
+    flag: Flags.unitedArabEmirates,
   );
+
   final unitedKingdom = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.unitedKingdom),
-    ),
-    phoneMask: '',
+    countryName: 'united Kingdom'.toUpperCase(),
+    countryPhoneCode: '+44',
+    flag: Flags.unitedKingdom,
   );
-  final unitedNations = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.unitedNations),
-    ),
-    phoneMask: '',
-  );
+
   final unitedStatesOfAmerica = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.unitedStatesOfAmerica),
-    ),
-    phoneMask: '',
+    countryName: 'united States Of America'.toUpperCase(),
+    countryPhoneCode: '+1',
+    flag: Flags.unitedStatesOfAmerica,
   );
+
   final uruguay = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.uruguay),
-    ),
-    phoneMask: '',
+    countryName: 'uruguay'.toUpperCase(),
+    countryPhoneCode: '+598',
+    flag: Flags.uruguay,
   );
+
   final uzbekistan = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.uzbekistan),
-    ),
-    phoneMask: '',
+    countryName: 'uzbekistan'.toUpperCase(),
+    countryPhoneCode: '+998',
+    flag: Flags.uzbekistan,
   );
+
   final vanuatu = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.vanuatu),
-    ),
-    phoneMask: '',
+    countryName: 'vanuatu'.toUpperCase(),
+    countryPhoneCode: '+678',
+    flag: Flags.vanuatu,
   );
+
   final vaticanCity = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.vaticanCity),
-    ),
-    phoneMask: '',
+    countryName: 'vatican City'.toUpperCase(),
+    countryPhoneCode: '+39',
+    flag: Flags.vaticanCity,
   );
+
   final venezuela = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.venezuela),
-    ),
-    phoneMask: '',
+    countryName: 'venezuela'.toUpperCase(),
+    countryPhoneCode: '+58',
+    flag: Flags.venezuela,
   );
+
   final vietnam = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.vietnam),
-    ),
-    phoneMask: '',
+    countryName: 'vietnam'.toUpperCase(),
+    countryPhoneCode: '+84',
+    flag: Flags.vietnam,
   );
+
   final virginIslands = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.virginIslands),
-    ),
-    phoneMask: '',
+    countryName: 'virgin Islands'.toUpperCase(),
+    countryPhoneCode: '+1284',
+    flag: Flags.virginIslands,
   );
+
   final wales = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.wales),
-    ),
-    phoneMask: '',
+    countryName: 'wales'.toUpperCase(),
+    countryPhoneCode: '+44',
+    flag: Flags.wales,
   );
+
   final yemen = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.yemen),
-    ),
-    phoneMask: '',
+    countryName: 'yemen'.toUpperCase(),
+    countryPhoneCode: '+967',
+    flag: Flags.yemen,
   );
+
   final zambia = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.zambia),
-    ),
-    phoneMask: '',
+    countryName: 'zambia'.toUpperCase(),
+    countryPhoneCode: '+260',
+    flag: Flags.zambia,
   );
+
   final zimbabwe = CountryModel(
-    flag: ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
-      child: CountriesFlag(Flags.zimbabwe),
-    ),
-    phoneMask: '',
+    countryName: 'zimbabwe'.toUpperCase(),
+    countryPhoneCode: '+263',
+    flag: Flags.zimbabwe,
   );
+
+  final alandIslands = CountryModel(
+    flag: Flags.alandIslands,
+    countryPhoneCode: '+358',
+    countryName: 'alandIslands'.toUpperCase(),
+  );
+
+  final aruba = CountryModel(
+    flag: Flags.aruba,
+    countryPhoneCode: '+297',
+    countryName: 'aruba'.toUpperCase(),
+  );
+
+  final britishIndianOceanTerritory = CountryModel(
+    flag: Flags.britishIndianOceanTerritory,
+    countryPhoneCode: '+246',
+    countryName: 'britishIndianOceanTerritory'.toUpperCase(),
+  );
+
+  final cookIslands = CountryModel(
+    flag: Flags.cookIslands,
+    countryPhoneCode: '+682',
+    countryName: 'cookIslands'.toUpperCase(),
+  );
+
+  List<CountryModel> get countries => [
+        abkhazia,
+        afghanistan,
+        alandIslands,
+        albania,
+        algeria,
+        americanSamoa,
+        andorra,
+        angola,
+        anguilla,
+        antiguaAndBarbuda,
+        argentina,
+        armenia,
+        aruba,
+        australia,
+        austria,
+        azerbaijan,
+        azoresIslands,
+        bahamas,
+        bahrain,
+        balearicIslands,
+        bangladesh,
+        barbados,
+        basqueCountry,
+        belarus,
+        belgium,
+        belize,
+        benin,
+        bermuda,
+        bhutan,
+        bolivia,
+        bonaire,
+        bosniaAndHerzegovina,
+        botswana,
+        brazil,
+        britishColumbia,
+        britishIndianOceanTerritory,
+        britishVirginIslands,
+        brunei,
+        bulgaria,
+        burkinaFaso,
+        burundi,
+        cambodia,
+        cameroon,
+        canada,
+        canaryIslands,
+        capeVerde,
+        caymanIslands,
+        centralAfricanRepublic,
+        ceuta,
+        chad,
+        chile,
+        china,
+        christmasIsland,
+        cocosIsland,
+        colombia,
+        comoros,
+        cookIslands,
+        corsica,
+        costaRica,
+        croatia,
+        cuba,
+        curacao,
+        cyprus,
+        czechRepublic,
+        democraticRepublicOfCongo,
+        denmark,
+        djibouti,
+        dominica,
+        dominicanRepublic,
+        eastTimor,
+        ecuador,
+        egypt,
+        elSalvador,
+        england,
+        equatorialGuinea,
+        eritrea,
+        estonia,
+        ethiopia,
+        falklandIslands,
+        faroeIslands,
+        fiji,
+        finland,
+        france,
+        frenchPolynesia,
+        gabon,
+        galapagosIslands,
+        gambia,
+        georgia,
+        germany,
+        ghana,
+        gibraltar,
+        greece,
+        greenland,
+        grenada,
+        guam,
+        guatemala,
+        guernsey,
+        guineaBissau,
+        guinea,
+        haiti,
+        hawaii,
+        honduras,
+        hongKong,
+        hungary,
+        iceland,
+        india,
+        indonesia,
+        iran,
+        iraq,
+        ireland,
+        isleOfMan,
+        israel,
+        italy,
+        ivoryCoast,
+        jamaica,
+        japan,
+        jersey,
+        jordan,
+        kazakhstan,
+        kenya,
+        kosovo,
+        kuwait,
+        kyrgyzstan,
+        laos,
+        latvia,
+        lebanon,
+        lesotho,
+        liberia,
+        libya,
+        liechtenstein,
+        lithuania,
+        luxembourg,
+        macao,
+        madagascar,
+        madeira,
+        malawi,
+        malaysia,
+        maldives,
+        mali,
+        malta,
+        marshallIsland,
+        martinique,
+        mauritania,
+        mauritius,
+        melilla,
+        mexico,
+        micronesia,
+        moldova,
+        monaco,
+        mongolia,
+        montenegro,
+        montserrat,
+        morocco,
+        mozambique,
+        myanmar,
+        namibia,
+        nauru,
+        nepal,
+        netherlands,
+        newZealand,
+        nicaragua,
+        niger,
+        nigeria,
+        niue,
+        norfolkIsland,
+        northKorea,
+        northenCyprus,
+        northernMarianasIslands,
+        norway,
+        oman,
+        orkneyIslands,
+        ossetia,
+        otan,
+        pakistan,
+        palau,
+        palestine,
+        panama,
+        papuaNewGuinea,
+        paraguay,
+        peru,
+        philippines,
+        pitcairnIslands,
+        poland,
+        portugal,
+        puertoRico,
+        qatar,
+        rapaNui,
+        republicOfMacedonia,
+        republicOfTheCongo,
+        romania,
+        russia,
+        rwanda,
+        sabaIsland,
+        sahrawiArabDemocraticRepublic,
+        saintKittsAndNevis,
+        samoa,
+        sanMarino,
+        saoTomeAndPrincipe,
+        sardinia,
+        saudiArabia,
+        scotland,
+        senegal,
+        serbia,
+        seychelles,
+        sicily,
+        sierraLeone,
+        singapore,
+        sintEustatius,
+        sintMaarten,
+        slovakia,
+        slovenia,
+        solomonIslands,
+        somalia,
+        somaliland,
+        southAfrica,
+        southKorea,
+        southSudan,
+        spain,
+        sriLanka,
+        stBarts,
+        stVincentAndTheGrenadines,
+        sudan,
+        suriname,
+        sweden,
+        switzerland,
+        syria,
+        taiwan,
+        tajikistan,
+        tanzania,
+        thailand,
+        tibet,
+        togo,
+        tokelau,
+        tonga,
+        transnistria,
+        trinidadAndTobago,
+        tubalu,
+        tunisia,
+        turkey,
+        turkmenistan,
+        turksAndCaicos,
+        uganda,
+        ukraine,
+        unitedArabEmirates,
+        unitedKingdom,
+        unitedStatesOfAmerica,
+        uruguay,
+        uzbekistan,
+        vanuatu,
+        vaticanCity,
+        venezuela,
+        vietnam,
+        virginIslands,
+        wales,
+        yemen,
+        zambia,
+        zimbabwe,
+      ];
 
   CountriesFoundation._();
 }
 
-class CountryModel {
-  final Widget flag;
-  final String phoneMask;
+class CountryModel extends UiKitSearchableListBodyItem {
+  final String flag;
+  final String countryPhoneCode;
+  final String countryName;
 
   CountryModel({
     required this.flag,
-    required this.phoneMask,
-  });
+    required this.countryPhoneCode,
+    required this.countryName,
+  }) : super(
+          title: countryName,
+          trailingText: countryPhoneCode,
+          leadingPath: flag,
+        );
 }
