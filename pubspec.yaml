@@ -27,6 +27,7 @@ dependencies:
   url_launcher: ^6.1.11
   flutter_html_iframe: any
   flutter_html_svg: any
+  sliver_tools: ^0.2.10
 
   #dialogs widgets
   popover: ^0.2.8+2

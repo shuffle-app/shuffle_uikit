@@ -133,7 +133,12 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         icon: data.icon,
         onPressed: data.onPressed,
       );
-    } else {
+    } if(data.text.isNotEmpty){
+      return OutlinedTextButton(
+        text: data.text,
+        onPressed: data.onPressed,
+      );
+  } else {
       throw UnimplementedError('Outlined button with your parameters is not implemented');
     }
   }

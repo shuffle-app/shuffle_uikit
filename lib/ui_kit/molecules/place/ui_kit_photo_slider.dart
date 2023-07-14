@@ -9,6 +9,7 @@ class UiKitPhotoSlider extends StatefulWidget {
   final double width;
   final double height;
   final int initialIndex;
+  final int maxShowImage;
   final VoidCallback? onTap;
 
   const UiKitPhotoSlider({
@@ -16,6 +17,7 @@ class UiKitPhotoSlider extends StatefulWidget {
     required this.media,
     required this.width,
     this.initialIndex = 0,
+    this.maxShowImage = 3,
     required this.height,
     this.onTap,
   }) : super(key: key);
@@ -56,13 +58,13 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 
   _getBackStack([bool reversed = false]) {
     List<BaseUiKitMedia> leftList = widget.media.sublist(0, _currentIndex ?? 0);
-    if (leftList.length > 4) {
-      leftList = leftList.sublist(leftList.length - 4);
+    if (leftList.length > widget.maxShowImage) {
+      leftList = leftList.sublist(leftList.length - widget.maxShowImage);
     }
 
     List<BaseUiKitMedia> rightList = widget.media.sublist((_currentIndex ?? 0) + 1, widget.media.length);
-    if (rightList.length > 4) {
-      rightList = rightList.sublist(0, 4);
+    if (rightList.length > widget.maxShowImage) {
+      rightList = rightList.sublist(0, widget.maxShowImage);
     }
     final items = rightList.map((e) => _buildRightItem(context, e, rightList.indexOf(e) + 1)).toList().reversed;
 
