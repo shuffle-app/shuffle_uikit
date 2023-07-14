@@ -31,6 +31,7 @@ dependencies:
     git:
       url: https://github.com/donik1998/Flutter_Pinput.git
       ref: master
+  sliver_tools: ^0.2.10
 
   #dialogs widgets
   popover: ^0.2.8+2
@@ -46,6 +47,7 @@ dependencies:
   #custom splash factory
   flutter_platform_widgets: ^4.0.0-beta.1
   dynamic_color: ^1.6.5
+  countries_flag: ^1.0.0
 
 
 dev_dependencies:
