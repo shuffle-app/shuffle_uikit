@@ -27,6 +27,10 @@ dependencies:
   url_launcher: ^6.1.11
   flutter_html_iframe: any
   flutter_html_svg: any
+  pinput:
+    git:
+      url: https://github.com/donik1998/Flutter_Pinput.git
+      ref: master
 
   #dialogs widgets
   popover: ^0.2.8+2

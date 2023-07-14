@@ -137,6 +137,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              const UiKitCodeInputField(codeDigitsCount: 4),
+              SpacingFoundation.verticalSpace16,
               UiKitHorizontalWheelNumberSelector(
                 title: 'Your age',
                 values: List<int>.generate(70, (index) => 10 + index),
