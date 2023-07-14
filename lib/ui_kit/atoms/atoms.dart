@@ -27,6 +27,7 @@ export 'buttons/small_blurred_button_with_icon.dart';
 export 'buttons/small_button_with_icon.dart';
 export 'buttons/ordinary_reversed_text_button.dart';
 export 'buttons/ui_kit_checkbox.dart';
+export 'buttons/outlined_text_button.dart';
 export 'buttons/small_ordinary_button.dart';
 export 'buttons/small_outlined_button.dart';
 export 'buttons/ui_kit_pop_up_menu_button.dart';

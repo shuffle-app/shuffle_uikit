@@ -9,7 +9,7 @@ extension LoadingExtension on Widget {
       alignment: Alignment.center,
       children: [
         Opacity(opacity: 0.5, child: this),
-        const CircularProgressIndicator.adaptive(),
+        const SizedBox(width: 20, height: 20,child:CircularProgressIndicator.adaptive()),
       ],
     );
   }

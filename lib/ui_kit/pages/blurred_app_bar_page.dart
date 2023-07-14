@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:sliver_tools/sliver_tools.dart';
 
 class BlurredAppBarPage extends StatelessWidget {
   final String title;
@@ -11,7 +12,7 @@ class BlurredAppBarPage extends StatelessWidget {
   final Widget? appBarTrailing;
   final Widget? leading;
   final Widget body;
-  final ScrollController controller;
+  final ScrollController? controller;
   final bool wrapSliverBox;
   final Widget? topFixedAddition;
   final ScrollPhysics physics;
@@ -26,13 +27,15 @@ class BlurredAppBarPage extends StatelessWidget {
     this.leading,
     this.appBarBody,
     this.wrapSliverBox = true,
-    ScrollController? controller,
+    this.controller,
+    // ScrollController? controller,
     ScrollPhysics? physics,
     this.appBarTrailing,
     // this.bottom,
     this.centerTitle = false, this.topFixedAddition,
   })
-      : controller = controller ?? ScrollController(),
+      : 
+        // controller = controller ?? ScrollController(),
         physics = physics ?? const ClampingScrollPhysics(),
         super(key: key);
 
@@ -42,6 +45,7 @@ class BlurredAppBarPage extends StatelessWidget {
         .toolbarHeight ?? 90.0);
 
     return NestedScrollView(
+    // return NestedScrollView(
       // return CustomScrollView(
       controller: controller,
       // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
@@ -89,7 +93,8 @@ class BlurredAppBarPage extends StatelessWidget {
           },
         ),
         if(topFixedAddition != null)
-          topFixedAddition!.wrapSliverBox
+          SliverPinnedHeader(child: topFixedAddition!)
+          // topFixedAddition!.wrapSliverBox
       ],
       body: body,
       // if(wrapSliverBox)
