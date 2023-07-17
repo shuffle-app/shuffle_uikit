@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
+import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
@@ -484,8 +484,7 @@ class $AssetsImagesSvgGen {
   SvgGenImage get givingLikeEmoji => const SvgGenImage('assets/images/svg/Giving-like-emoji.svg');
 
   /// File path: assets/images/svg/Grinning-face-with-sweat-emoji.svg
-  SvgGenImage get grinningFaceWithSweatEmoji =>
-      const SvgGenImage('assets/images/svg/Grinning-face-with-sweat-emoji.svg');
+  SvgGenImage get grinningFaceWithSweatEmoji => const SvgGenImage('assets/images/svg/Grinning-face-with-sweat-emoji.svg');
 
   /// File path: assets/images/svg/Hat.svg
   SvgGenImage get hat => const SvgGenImage('assets/images/svg/Hat.svg');
@@ -627,6 +626,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/bell.svg
   SvgGenImage get bell => const SvgGenImage('assets/images/svg/bell.svg');
+
+  /// File path: assets/images/svg/big_arrow.svg
+  SvgGenImage get bigArrow => const SvgGenImage('assets/images/svg/big_arrow.svg');
 
   /// File path: assets/images/svg/building.svg
   SvgGenImage get building => const SvgGenImage('assets/images/svg/building.svg');
@@ -1016,6 +1018,7 @@ class $AssetsImagesSvgGen {
         barcode,
         bath,
         bell,
+        bigArrow,
         building,
         calendar,
         cameraPlus,

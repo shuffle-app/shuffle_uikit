@@ -37,11 +37,13 @@ class UiKitSearchableListBodyItemTile extends StatelessWidget {
                 ),
                 SpacingFoundation.horizontalSpace8,
               ],
-              Text(
-                item.title,
-                style: context.uiKitTheme?.boldTextTheme.caption1Medium,
+              Expanded(
+                child: Text(
+                  item.title,
+                  style: context.uiKitTheme?.boldTextTheme.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
+                ),
               ),
-              const Spacer(),
+              SpacingFoundation.horizontalSpace12,
               if (item.trailingText != null)
                 Text(
                   item.trailingText!,

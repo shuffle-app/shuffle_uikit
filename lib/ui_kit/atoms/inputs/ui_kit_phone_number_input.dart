@@ -20,10 +20,13 @@ class UiKitPhoneNumberInput extends StatelessWidget implements BaseUiKitInputFie
 
   final GlobalKey<FormFieldState> _key = GlobalKey<FormFieldState>();
 
+  final Color? fillColor;
+
   UiKitPhoneNumberInput({
     super.key,
     required this.controller,
     required this.enabled,
+    this.fillColor,
     this.countryCode,
     this.inputFormatters,
     this.errorText,
@@ -58,6 +61,8 @@ class UiKitPhoneNumberInput extends StatelessWidget implements BaseUiKitInputFie
         inputFormatters: inputFormatters,
         keyboardType: TextInputType.phone,
         decoration: InputDecoration(
+          filled: fillColor != null,
+          fillColor: fillColor,
           contentPadding: EdgeInsets.symmetric(horizontal: EdgeInsetsFoundation.horizontal16),
           hintText: hintText,
           errorText: errorText,
