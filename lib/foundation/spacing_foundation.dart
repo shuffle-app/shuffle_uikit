@@ -44,6 +44,8 @@ class SpacingFoundation {
 
   static double get verticalSpacing24 => 24;
 
+  static double get verticalSpacing32 => 32;
+
   static Widget get horizontalSpace2 => horizontalSpacing2.horizontalSpace;
 
   static Widget get horizontalSpace4 => horizontalSpacing4.horizontalSpace;
