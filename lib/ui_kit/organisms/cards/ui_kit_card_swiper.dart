@@ -28,7 +28,7 @@ class UiKitCardSwiper extends StatelessWidget {
           onSwipe: onSwipe,
           onEnd: onEnd,
           maxAngle: 180,
-          isLoop: true,
+          isLoop: false,
           // numberOfCardsDisplayed: cards.length,
           backCardOffset: Offset.zero,
           padding: EdgeInsets.zero,
