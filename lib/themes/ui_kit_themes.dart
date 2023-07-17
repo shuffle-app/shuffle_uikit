@@ -77,29 +77,29 @@ class UiKitThemes {
           filled: true,
           fillColor: ColorsFoundation.solidSurface,
           border: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.max,
             borderSide: BorderSide.none,
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.max,
             borderSide: const BorderSide(
               color: Colors.white,
               width: 2,
             ),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.max,
             borderSide: BorderSide.none,
           ),
           errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.max,
             borderSide: const BorderSide(
               color: ColorsFoundation.error,
               width: 2,
             ),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.max,
             borderSide: const BorderSide(
               color: ColorsFoundation.error,
               width: 2,
@@ -110,29 +110,29 @@ class UiKitThemes {
           filled: true,
           fillColor: ColorsFoundation.solidSurface,
           border: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.max,
             borderSide: BorderSide.none,
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.max,
             borderSide: const BorderSide(
               color: Colors.white,
               width: 2,
             ),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.max,
             borderSide: BorderSide.none,
           ),
           errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.max,
             borderSide: const BorderSide(
               color: ColorsFoundation.error,
               width: 2,
             ),
           ),
           focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.max,
             borderSide: const BorderSide(
               color: ColorsFoundation.error,
               width: 2,

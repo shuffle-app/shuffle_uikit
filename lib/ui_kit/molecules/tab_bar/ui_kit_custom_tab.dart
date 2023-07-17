@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class UiKitAttitudeTab extends StatelessWidget {
+class UiKitCustomTab extends StatelessWidget {
   final String title;
   final double height;
 
-  const UiKitAttitudeTab({
+  const UiKitCustomTab({
     Key? key,
     required this.title,
     this.height = 40,

@@ -38,7 +38,7 @@ class _MultipleTypeMenuBodyState<T> extends State<MultipleTypeMenuBody<T>> {
         ),
         SpacingFoundation.verticalSpace16,
         UiKitCustomTabBar(
-          tabs: widget.allTypes?.map<UiKitAttitudeTab>((e) => UiKitAttitudeTab(title: e?.toUpperCase() ?? '')).toList() ?? [],
+          tabs: widget.allTypes?.map<UiKitCustomTab>((e) => UiKitCustomTab(title: e?.toUpperCase() ?? '')).toList() ?? [],
           onTappedTab: (index) => setState(
             () => _selectedType = widget.allTypes?.elementAt(index),
           ),

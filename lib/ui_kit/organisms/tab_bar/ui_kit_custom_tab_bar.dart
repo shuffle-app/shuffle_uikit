@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitCustomTabBar extends StatelessWidget {
-  final List<UiKitAttitudeTab> tabs;
+  final List<UiKitCustomTab> tabs;
   final ValueChanged<int> onTappedTab;
 
   const UiKitCustomTabBar({

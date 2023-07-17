@@ -152,10 +152,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 title: 'Where are you located',
                 onSelected: (country) => setState(() {
                   _selectedCountry = country;
-                  Navigator.pop(context);
                 }),
                 selectedCountry: _selectedCountry,
               ),
+              SpacingFoundation.verticalSpace16,
+              const UiKitCodeInputField(codeDigitsCount: 4),
               SpacingFoundation.verticalSpace16,
               UiKitHorizontalWheelNumberSelector(
                 title: 'Your age',

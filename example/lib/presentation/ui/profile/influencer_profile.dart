@@ -32,8 +32,8 @@ class InfluencerProfile extends StatelessWidget {
                 UiKitCustomTabBar(
                   onTappedTab: (index) {},
                   tabs: const [
-                    UiKitAttitudeTab(title: 'LOVED'),
-                    UiKitAttitudeTab(title: 'HATED'),
+                    UiKitCustomTab(title: 'LOVED'),
+                    UiKitCustomTab(title: 'HATED'),
                   ],
                 ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
                 SpacingFoundation.verticalSpace24,

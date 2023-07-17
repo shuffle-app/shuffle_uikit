@@ -38,6 +38,7 @@ class UiKitCountrySelector extends StatelessWidget {
               items: CountriesFoundation.instance.countries,
               onItemSelected: (item) {
                 onSelected?.call(item);
+                Navigator.pop(context);
               },
             ),
           ),
