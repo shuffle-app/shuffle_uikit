@@ -38,6 +38,8 @@ dependencies:
   #custom splash factory
   flutter_platform_widgets: ^4.0.0-beta.1
   dynamic_color: ^1.6.5
+  video_player: ^2.7.0
+  smooth_video_progress: ^0.0.4
 
 
 dev_dependencies:

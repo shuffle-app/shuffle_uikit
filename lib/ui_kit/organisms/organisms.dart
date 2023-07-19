@@ -34,3 +34,4 @@ export 'spinner/ui_kit_spinner_card.dart';
 export 'titled_selection/ui_kit_titled_selection_tile.dart';
 export 'ui_kit_bottom_modal_sheet/ui_kit_bottom_modal_sheet.dart';
 export 'wheel_value_selector/ui_kit_horizontal_wheel_number_selector.dart';
+export 'video_player/popup_video_player.dart';

@@ -753,11 +753,17 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/mask.svg
   SvgGenImage get mask => const SvgGenImage('assets/images/svg/mask.svg');
 
+  /// File path: assets/images/svg/maximize.svg
+  SvgGenImage get maximize => const SvgGenImage('assets/images/svg/maximize.svg');
+
   /// File path: assets/images/svg/memeber_gradient_star.svg
   SvgGenImage get memeberGradientStar => const SvgGenImage('assets/images/svg/memeber_gradient_star.svg');
 
   /// File path: assets/images/svg/message.svg
   SvgGenImage get message => const SvgGenImage('assets/images/svg/message.svg');
+
+  /// File path: assets/images/svg/minimize.svg
+  SvgGenImage get minimize => const SvgGenImage('assets/images/svg/minimize.svg');
 
   /// File path: assets/images/svg/minus.svg
   SvgGenImage get minus => const SvgGenImage('assets/images/svg/minus.svg');
@@ -915,6 +921,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/video-plus.svg
   SvgGenImage get videoPlus => const SvgGenImage('assets/images/svg/video-plus.svg');
 
+  /// File path: assets/images/svg/volume.svg
+  SvgGenImage get volume => const SvgGenImage('assets/images/svg/volume.svg');
+
   /// File path: assets/images/svg/wallet.svg
   SvgGenImage get wallet => const SvgGenImage('assets/images/svg/wallet.svg');
 
@@ -1047,8 +1056,10 @@ class $AssetsImagesSvgGen {
         logo,
         logout,
         mask,
+        maximize,
         memeberGradientStar,
         message,
+        minimize,
         minus,
         moreVert,
         music,
@@ -1101,6 +1112,7 @@ class $AssetsImagesSvgGen {
         trippleArrowBlack,
         user,
         videoPlus,
+        volume,
         wallet,
         warning,
         water,

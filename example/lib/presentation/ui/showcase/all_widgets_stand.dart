@@ -1104,6 +1104,20 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ],
                 ),
               ),
+              SpacingFoundation.verticalSpace16,
+              MaterialButton(
+                onPressed: () {
+                  Navigator.of(context).push(PopUpVideoPlayer(
+                      videoUri:
+                          'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+                },
+                child: const Text(
+                  'Show Video',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
               SpacingFoundation.bottomNavigationBarSpacing,
             ],
           ),
