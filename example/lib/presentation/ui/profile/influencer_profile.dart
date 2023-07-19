@@ -29,11 +29,11 @@ class InfluencerProfile extends StatelessWidget {
                   points: 32040,
                 ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
                 SpacingFoundation.verticalSpace24,
-                ProfileAttitudeTabs(
+                UiKitCustomTabBar(
                   onTappedTab: (index) {},
                   tabs: const [
-                    ProfileAttitudeTab(title: 'LOVED'),
-                    ProfileAttitudeTab(title: 'HATED'),
+                    UiKitCustomTab(title: 'LOVED'),
+                    UiKitCustomTab(title: 'HATED'),
                   ],
                 ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
                 SpacingFoundation.verticalSpace24,

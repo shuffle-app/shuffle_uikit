@@ -15,13 +15,21 @@ class UiKitLastSwiperCard extends BaseUiKitSwiperCard {
           subtitle: '',
         );
 
+  UiKitLastSwiperCard.fixed({super.key})
+      : width = 267.w,
+        height = 316.h,
+        super(
+          tags: [],
+          title: '',
+          subtitle: '',
+        );
+
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
-    return UiKitCardWrapper(
-      height: height,
-      width: width,
+    return  UiKitCardWrapper(
+      borderRadius:BorderRadiusFoundation.all40,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -29,7 +37,8 @@ class UiKitLastSwiperCard extends BaseUiKitSwiperCard {
         children: [
           Text(
             'Oops!',
-            style: textTheme?.body.copyWith(color: ColorsFoundation.darkNeutral900),
+            style: textTheme?.body
+                .copyWith(color: ColorsFoundation.darkNeutral900),
             textAlign: TextAlign.center,
           ),
           SpacingFoundation.verticalSpace4,
@@ -39,11 +48,12 @@ class UiKitLastSwiperCard extends BaseUiKitSwiperCard {
           SpacingFoundation.verticalSpace4,
           Text(
             'That\'s all for now!',
-            style: textTheme?.body.copyWith(color: ColorsFoundation.darkNeutral900),
+            style: textTheme?.body
+                .copyWith(color: ColorsFoundation.darkNeutral900),
             textAlign: TextAlign.center,
           ),
         ],
       ),
-    );
+    ).paddingAll(EdgeInsetsFoundation.all16);
   }
 }

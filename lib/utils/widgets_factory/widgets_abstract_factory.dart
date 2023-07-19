@@ -2,6 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class WidgetsAbstractFactory {
+  ButtonFactory createBouncingIconButton({
+    required BaseUiKitButtonData data,
+    bool? blurred,
+  });
+
   ButtonFactory createButtonWithProgress({
     BaseUiKitButtonData? data,
     double? progress,
@@ -128,7 +133,12 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         icon: data.icon,
         onPressed: data.onPressed,
       );
-    } else {
+    } if(data.text.isNotEmpty){
+      return OutlinedTextButton(
+        text: data.text,
+        onPressed: data.onPressed,
+      );
+  } else {
       throw UnimplementedError('Outlined button with your parameters is not implemented');
     }
   }
@@ -166,10 +176,19 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     required BaseUiKitButtonData data,
     bool isTextButton = false,
     bool? blurred,
+    bool reversed = false,
   }) {
     final hasIcon = data.icon != null;
     final onlyIconButton = hasIcon && data.text.isEmpty && !isTextButton && !(blurred ?? false);
     if (isTextButton) {
+      if (reversed) {
+        return OrdinaryReversedTextButton(
+          text: data.text,
+          onPressed: data.onPressed,
+          icon: data.icon,
+        );
+      }
+
       return OrdinaryTextButton(
         text: data.text,
         onPressed: data.onPressed,
@@ -350,6 +369,25 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       text: data?.text,
       onPressed: data?.onPressed,
       progress: progress,
+    );
+  }
+
+  @override
+  ButtonFactory createBouncingIconButton({
+    required BaseUiKitButtonData data,
+    bool? blurred,
+    bool? small,
+  }) {
+    if (small ?? false) {
+      return SmallBouncingBlurIconButton(
+        onPressed: data.onPressed,
+        icon: data.icon!,
+      );
+    }
+
+    return BouncingBlurButton(
+      icon: data.icon!,
+      onPressed: data.onPressed,
     );
   }
 

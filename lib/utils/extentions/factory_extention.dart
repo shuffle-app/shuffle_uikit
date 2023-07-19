@@ -28,9 +28,33 @@ extension FactoryExtention on BuildContext {
         .build(this);
   }
 
-  Widget smallButton({required BaseUiKitButtonData data, bool? isTextButton, bool? blurred, bool uppercase = true}) {
+  Widget smallButton({
+    required BaseUiKitButtonData data,
+    bool? isTextButton,
+    bool? blurred,
+    bool uppercase = true,
+  }) {
     return WidgetsFactory.of(this)!
-        .createSmallButton(data: data, isTextButton: isTextButton ?? false, blurred: blurred, uppercase: uppercase)
+        .createSmallButton(
+          data: data,
+          isTextButton: isTextButton ?? false,
+          blurred: blurred,
+          uppercase: uppercase,
+        )
+        .build(this);
+  }
+
+  Widget bouncingButton({
+    required BaseUiKitButtonData data,
+    bool? blurred,
+    bool? small,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createBouncingIconButton(
+          data: data,
+          blurred: blurred,
+          small: small,
+        )
         .build(this);
   }
 
@@ -51,7 +75,13 @@ extension FactoryExtention on BuildContext {
     Color? color,
     bool? blurred,
   }) {
-    return WidgetsFactory.of(this)!.createSmallOutlinedButton(data: data, color: color, blurred: blurred).build(this);
+    return WidgetsFactory.of(this)!
+        .createSmallOutlinedButton(
+          data: data,
+          color: color,
+          blurred: blurred,
+        )
+        .build(this);
   }
 
   Widget dialogButton({
@@ -86,12 +116,14 @@ extension FactoryExtention on BuildContext {
     required BaseUiKitButtonData data,
     bool? isTextButton,
     bool? blurred,
+    bool reversed = false
   }) {
     return WidgetsFactory.of(this)!
         .createOrdinaryButton(
           data: data,
           isTextButton: isTextButton ?? false,
           blurred: blurred,
+        reversed:reversed
         )
         .build(this);
   }

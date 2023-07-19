@@ -15,7 +15,7 @@ class NoInternetPageTemplate extends StatelessWidget {
         children: [
           SizedBox(height: 0.12.sh),
           ImageWidget(
-            svgAsset: GraphicsFoundation.instance.svg.satelite,
+            rasterAsset: GraphicsFoundation.instance.png.noInternet,
           ),
           SpacingFoundation.verticalSpace8,
           Text(

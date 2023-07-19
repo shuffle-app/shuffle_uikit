@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class ProfileAttitudeTabs extends StatelessWidget {
-  final List<ProfileAttitudeTab> tabs;
+class UiKitCustomTabBar extends StatelessWidget {
+  final List<UiKitCustomTab> tabs;
   final ValueChanged<int> onTappedTab;
 
-  const ProfileAttitudeTabs({
+  const UiKitCustomTabBar({
     Key? key,
     required this.tabs,
     required this.onTappedTab,

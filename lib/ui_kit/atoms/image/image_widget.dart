@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ImageWidget extends StatelessWidget {
@@ -24,7 +25,7 @@ class ImageWidget extends StatelessWidget {
     this.fit,
     this.width,
     this.height,
-    this.lowerQuality = true,
+    this.lowerQuality = false,
     this.rasterAsset,
     this.svgAsset,
     this.color,
@@ -62,18 +63,23 @@ class ImageWidget extends StatelessWidget {
       return CachedNetworkImage(
         imageUrl: link!,
         fit: fit,
+        fadeInDuration: const Duration(milliseconds: 200),
+        fadeOutDuration: const Duration(milliseconds: 200),
         color: color,
         width: width,
         filterQuality: lowerQuality ? FilterQuality.low : FilterQuality.high,
         height: height,
         colorBlendMode: colorBlendMode,
-        cacheManager: CustomCacheManager.instance,
+        cacheManager: CustomCacheManager.imageInstance,
         errorWidget: (context, url, trace) {
           log('Got error while downloading $url', name: 'ImageWidget');
 
           return errorWidget ?? const DefaultImageErrorWidget();
         },
-        placeholder: (_, __) => const CircularProgressIndicator.adaptive(),
+        placeholder: (_, __) => const Shimmer(
+          gradient: GradientFoundation.greyGradient,
+          child: UiKitBigPhotoErrorWidget()),
+        // placeholder: (_, __) => CircularProgressIndicator.adaptive(backgroundColor: color,),
       );
     } else if (link!.contains('svg')) {
       return SvgPicture.asset(
@@ -83,7 +89,8 @@ class ImageWidget extends StatelessWidget {
         color: color,
         height: height,
         package: 'shuffle_uikit',
-        placeholderBuilder: (context) => errorWidget ?? const DefaultImageErrorWidget(),
+        placeholderBuilder: (context) =>
+            errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else if (link!.contains('asset')) {
       return Image.asset(
@@ -94,7 +101,8 @@ class ImageWidget extends StatelessWidget {
         height: height,
         colorBlendMode: colorBlendMode,
         package: 'shuffle_uikit',
-        errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
+        errorBuilder: (context, error, trace) =>
+            errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else {
       return Image.file(
@@ -103,7 +111,8 @@ class ImageWidget extends StatelessWidget {
         width: width,
         color: color,
         height: height,
-        errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
+        errorBuilder: (context, error, trace) =>
+            errorWidget ?? const DefaultImageErrorWidget(),
       );
     }
   }

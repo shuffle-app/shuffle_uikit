@@ -189,7 +189,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     // if (details.localPosition.dx.toInt() % 20 == 0) _enableFeedback();
                     _rotationNotifier.value += delta / 200;
                     _scrollByPixels(
-                      pixelsToScroll: delta,
+                      pixelsToScroll: delta*1.5,
                     );
                   },
                   onPanStart: (details) {

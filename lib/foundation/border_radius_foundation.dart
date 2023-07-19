@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BorderRadiusFoundation {
+  static BorderRadius get all4 => const BorderRadius.all(Radius.circular(4));
+  static BorderRadius get all8 => const BorderRadius.all(Radius.circular(8));
   static BorderRadius get all10 => const BorderRadius.all(Radius.circular(10));
   static BorderRadius get all12 => const BorderRadius.all(Radius.circular(12));
   static BorderRadius get all16 => const BorderRadius.all(Radius.circular(16));
@@ -21,7 +22,13 @@ class BorderRadiusFoundation {
   static BorderRadius get onlyBottom24 => const BorderRadius.only(
         bottomLeft: Radius.circular(24),
         bottomRight: Radius.circular(24),
-      ).r;
+      );
+
+  static BorderRadius get onlyLeft24 => const BorderRadius.only(
+        topLeft: Radius.circular(24),
+        bottomLeft: Radius.circular(24),
+      );
+
   static BorderRadius get max => const BorderRadius.all(Radius.circular(9999));
 
   BorderRadiusFoundation._();

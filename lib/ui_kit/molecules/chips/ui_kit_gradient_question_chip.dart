@@ -6,12 +6,8 @@ class UiKitGradientQuestionChip extends StatelessWidget {
   final VoidCallback? onTap;
   final LinearGradient gradient;
 
-  const UiKitGradientQuestionChip({Key? key,
-    this.message,
-    this.onTap,
-    LinearGradient? gradient})
-      :
-        this.gradient = gradient ?? GradientFoundation.badgeIcon,
+  const UiKitGradientQuestionChip({Key? key, this.message, this.onTap, LinearGradient? gradient})
+      : gradient = gradient ?? GradientFoundation.badgeIcon,
         super(key: key);
 
   @override

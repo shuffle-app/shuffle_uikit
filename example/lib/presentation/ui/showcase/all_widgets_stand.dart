@@ -3,6 +3,7 @@ import 'package:example/presentation/ui/showcase/buttons_list.dart';
 import 'package:example/presentation/ui/showcase/input_fields.dart';
 import 'package:example/presentation/ui/showcase/input_fields_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class AllWidgetsStand extends StatefulWidget {
@@ -18,6 +19,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final ScrollController _scrollController = ScrollController();
   final GlobalKey _gradientTextKey = GlobalKey();
   double progress = 0.0;
+  CountryModel? _selectedCountry;
 
   bool selection = false;
   final List<UiKitMenuItem<String>> _menuItems = [
@@ -27,6 +29,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       icon: ImageWidget(
         svgAsset: GraphicsFoundation.instance.svg.tiger,
       ),
+      type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'interested Adventurer',
@@ -34,6 +37,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       icon: ImageWidget(
         svgAsset: GraphicsFoundation.instance.svg.adventure,
       ),
+      type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'forever Resting sloth',
@@ -41,6 +45,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       icon: ImageWidget(
         svgAsset: GraphicsFoundation.instance.svg.sleep,
       ),
+      type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
@@ -48,6 +53,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       icon: ImageWidget(
         svgAsset: GraphicsFoundation.instance.svg.swim,
       ),
+      type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
@@ -55,6 +61,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       icon: ImageWidget(
         svgAsset: GraphicsFoundation.instance.svg.athlete,
       ),
+      type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
@@ -62,6 +69,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       icon: ImageWidget(
         svgAsset: GraphicsFoundation.instance.svg.food,
       ),
+      type: 'leisure',
     ),
   ];
   UiKitMenuItem<String>? _selectedMenuItem;
@@ -130,6 +138,25 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              SpacingFoundation.verticalSpace16,
+              UiKitPhoneNumberInput(
+                controller: TextEditingController(),
+                enabled: true,
+                countryCode: _selectedCountry?.countryPhoneCode,
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
+              UiKitCountrySelector(
+                title: 'Where are you located',
+                onSelected: (country) => setState(() {
+                  _selectedCountry = country;
+                }),
+                selectedCountry: _selectedCountry,
+              ),
+              SpacingFoundation.verticalSpace16,
+              const UiKitCodeInputField(codeDigitsCount: 4),
               SpacingFoundation.verticalSpace16,
               UiKitHorizontalWheelNumberSelector(
                 title: 'Your age',
@@ -511,6 +538,41 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 title: 'Describe yourself',
                 selectedItem: _selectedMenuItem,
                 items: _menuItems,
+                onSelected: (value) {
+                  setState(() => _selectedMenuItem = value);
+                },
+              ),
+              SpacingFoundation.verticalSpace16,
+              UiKitMenu<String>(
+                title: 'Describe yourself',
+                selectedItem: _selectedMenuItem,
+                items: [
+                  ..._menuItems,
+                  UiKitMenuItem<String>(
+                    title: 'Active Tiger Business',
+                    value: 'tiger',
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.swim,
+                    ),
+                    type: 'business',
+                  ),
+                  UiKitMenuItem<String>(
+                    title: 'Active Tiger Business',
+                    value: 'tiger',
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.athlete,
+                    ),
+                    type: 'business',
+                  ),
+                  UiKitMenuItem<String>(
+                    title: 'Active Tiger Business',
+                    value: 'tiger',
+                    icon: ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.food,
+                    ),
+                    type: 'business',
+                  ),
+                ],
                 onSelected: (value) {
                   setState(() => _selectedMenuItem = value);
                 },

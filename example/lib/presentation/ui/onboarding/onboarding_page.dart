@@ -122,10 +122,15 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
                         data: BaseUiKitButtonData(
                           text: 'NEXT >>>',
                           onPressed: () {
-                            _progressAnimationController.forward(from: 0);
-                            setState(() {
-                              currentIndex = 0;
-                            });
+                            if(currentIndex != widget.items.length) {
+                              _switchToNextPage();
+                            } else {
+                              widget.onFinished?.call();
+                            }
+                            // _progressAnimationController.forward(from: 0);
+                            // setState(() {
+                            //   currentIndex = 0;
+                            // });
                           },
                         ),
                         progress: _progressAnimationController.value,
