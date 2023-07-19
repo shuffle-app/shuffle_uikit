@@ -1,16 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitHorizontalScrollableList extends StatelessWidget {
-  final List<Widget> children;
+class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
+  // final List<Widget> children;
   final double? spacing;
   final double? leftPadding;
   final ScrollController? scrollController;
+  final PagingController<int,ItemType> pagingController;
   final ScrollPhysics? physics;
+  final ItemWidgetBuilder<ItemType> itemBuilder;
+
+  final progressIndicator =const SizedBox(width: 20, height: 20,child:  GradientableWidget(
+      gradient: GradientFoundation.attentionCard,
+      active: true,
+      child: CircularProgressIndicator.adaptive(
+          backgroundColor: Colors.white)));
 
   const UiKitHorizontalScrollableList({
     Key? key,
-    required this.children,
+    required this.itemBuilder,
+    required this.pagingController,
     this.spacing,
     this.leftPadding,
     this.physics,
@@ -19,25 +29,33 @@ class UiKitHorizontalScrollableList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
+
+    return PagedListView<int,ItemType>.separated(
         physics: physics ?? const BouncingScrollPhysics(),
-        controller: scrollController,
+        scrollController: scrollController,
+        pagingController: pagingController,
         shrinkWrap: true,
         primary: false,
         scrollDirection: Axis.horizontal,
-        itemCount: children.length + (leftPadding == null ? 1 : 2),
+
         separatorBuilder: (_, index) =>
             spacing?.widthBox ?? SpacingFoundation.zero.widthBox,
-        itemBuilder: (c, index) {
-          if (index == 0 && leftPadding != null) {
-            return (leftPadding! - (spacing ?? 0)).widthBox;
-          }
-          final newIndex = index - (leftPadding == null ? 0 : 1);
-
-          return newIndex == children.length
-              ? 20.w.widthBox
-              : children[newIndex];
-        }
+        builderDelegate: PagedChildBuilderDelegate<ItemType>(
+            animateTransitions: true,
+            firstPageProgressIndicatorBuilder: (c)=>progressIndicator,
+            newPageProgressIndicatorBuilder: (c) => progressIndicator,
+      // itemCount: children.length + (leftPadding == null ? 1 : 2),
+            itemBuilder: itemBuilder
+              // if (index == 0 && leftPadding != null) {
+              //   return (leftPadding! - (spacing ?? 0)).widthBox;
+              // }
+              // final newIndex = index - (leftPadding == null ? 0 : 1);
+              //
+              // return newIndex == children.length
+              //     ? 20.w.widthBox
+              //     : children[newIndex];
+            // }
+    ),
         // children: [(leftPadding ?? 0).widthBox, ...children, 20.w.widthBox],
         // ),
         );

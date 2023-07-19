@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:html/parser.dart';
+import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitSpinner extends StatefulWidget {
-  final List<String> categories;
+  // final List<String> categories;
   final ScrollController scrollController;
+  final PagingController<int,String> pagingController;
   final ValueChanged<String>? onSpinChangedCategory;
 
   const UiKitSpinner({
     Key? key,
-    required this.categories,
+    // required this.categories,
     required this.scrollController,
+    required this.pagingController,
     this.onSpinChangedCategory,
   }) : super(key: key);
 
@@ -77,12 +80,12 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     final screenWidth = 1.sw;
     final nearestElementIndex = (currentOffset / screenWidth).round();
     if (nearestElementIndex <= 0) {
-      widget.onSpinChangedCategory?.call(widget.categories.first);
-    } else if (nearestElementIndex >= widget.categories.length) {
-      widget.onSpinChangedCategory?.call(widget.categories.last);
+      widget.onSpinChangedCategory?.call(widget.pagingController.itemList!.first);
+    } else if (nearestElementIndex >= widget.pagingController.itemList!.length) {
+      widget.onSpinChangedCategory?.call(widget.pagingController.itemList!.last);
     } else {
       widget.onSpinChangedCategory
-          ?.call(widget.categories.elementAt(nearestElementIndex));
+          ?.call(widget.pagingController.itemList!.elementAt(nearestElementIndex));
     }
     final nearestElementOffset = nearestElementIndex * screenWidth;
     if (onEndNotified) {
@@ -129,35 +132,41 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
           child: GestureDetector(
             behavior: HitTestBehavior.opaque,
             onPanDown: (details) {
-              if (_spinningType != SpinningType.categories)
+              if (_spinningType != SpinningType.categories) {
                 setSpinningType(SpinningType.categories);
+              }
             },
             child: NotificationListener<ScrollEndNotification>(
                 onNotification: (notification) {
-                  if (_spinningType != SpinningType.wheel)
+                  if (_spinningType != SpinningType.wheel) {
                     _shouldSwitchCategory(true);
+                  }
 
                   return true;
                 },
-                child: UiKitHorizontalScrollableList(
+                child: UiKitHorizontalScrollableList<String>(
+                  pagingController: widget.pagingController,
                   scrollController: widget.scrollController,
                   physics: const PageScrollPhysics(),
-                  children: widget.categories
-                      .map<Widget>(
-                        (e) =>
+                  itemBuilder: (_,item,index)=>
                         SizedBox(
                           width: 1.sw,
                           child: Center(
-                            child: Text(
-                              parseFragment(e).text ?? e,
+                            child: Text( (){
+                              
+                              final category =
+                              parseFragment(item).text ?? item ;
+                              
+                              return category.substring(0,1).toUpperCase() +category.substring(1);
+                            }(),
                               maxLines: 2,
                               style: context.uiKitTheme?.boldTextTheme.title1,
                               textAlign: TextAlign.center,
                             ),
                           ),
                         ),
-                  )
-                      .toList(),
+                  // )
+                      // .toList(),
                 )),
           ),
         ),
