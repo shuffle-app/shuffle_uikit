@@ -8,7 +8,7 @@ class ProfileInterests extends StatelessWidget {
   const ProfileInterests({
     Key? key,
     required this.profileInterests,
-     this.matchingInterests,
+    this.matchingInterests,
   }) : super(key: key);
 
   @override
@@ -19,7 +19,7 @@ class ProfileInterests extends StatelessWidget {
       children: [
         for (final interest in profileInterests)
           UiKitChip(
-            interest: interest,
+            title: interest,
             isSelected: matchingInterests?.contains(interest) ?? false,
             // border: profileInterests.indexOf(interest) == 0 ? GradientFoundation.gradientBorder : null,
           ),
