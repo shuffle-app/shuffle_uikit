@@ -2,20 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitChip extends StatelessWidget {
-  final String interest;
+  final String title;
   final bool isSelected;
   final bool bordered;
   final BoxBorder? border;
 
   const UiKitChip({
     Key? key,
-    required this.interest,
+    required this.title,
     required this.isSelected,
     this.bordered = false,
     BoxBorder? border,
-  })
-      : border =
-      border ?? (isSelected ? GradientFoundation.gradientBorder : null),
+  })  : border = border ?? (isSelected ? GradientFoundation.gradientBorder : null),
         super(key: key);
 
   @override
@@ -27,16 +25,12 @@ class UiKitChip extends StatelessWidget {
       decoration: BoxDecoration(
         color: bordered ? chipTheme?.backgroundColor : Colors.transparent,
         borderRadius: BorderRadiusFoundation.max,
-        border: border ??
-            chipTheme?.border ??
-            Border.all(color: Colors.white, width: 2),
+        border: border ?? chipTheme?.border ?? Border.all(color: Colors.white, width: 2),
       ),
       child: Text(
-        interest,
+        title,
         style: chipTextStyle,
-      ).paddingSymmetric(
-          horizontal: EdgeInsetsFoundation.horizontal12,
-          vertical: EdgeInsetsFoundation.vertical6),
+      ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12, vertical: EdgeInsetsFoundation.vertical6),
     );
   }
 }
