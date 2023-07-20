@@ -1174,7 +1174,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                           'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
                 },
                 child: const Text(
-                  'Show Video',
+                  'Show Horizontal Video',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              MaterialButton(
+                onPressed: () {
+                  Navigator.of(context).push(PopUpVideoPlayer(
+                      videoUri:
+                          'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+                },
+                child: const Text(
+                  'Show Vertical Video',
                   style: TextStyle(
                     color: Colors.white,
                   ),
