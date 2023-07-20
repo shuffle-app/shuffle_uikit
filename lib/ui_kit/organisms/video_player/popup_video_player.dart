@@ -201,7 +201,9 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
                           icon: GradientableWidget(
                             gradient: GradientFoundation.badgeIcon,
                             child: ImageWidget(
-                              svgAsset: GraphicsFoundation.instance.svg.volume,
+                              svgAsset: _controller.value.volume == 1
+                              ? GraphicsFoundation.instance.svg.volume
+                              : GraphicsFoundation.instance.svg.volumeOff,
                               height: 80,
                               color: Colors.white,
                             ),
