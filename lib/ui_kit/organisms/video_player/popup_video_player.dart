@@ -1,34 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/organisms/video_player/sound_slider.dart';
 import 'package:smooth_video_progress/smooth_video_progress.dart';
 import 'package:video_player/video_player.dart';
-
+ 
 import 'video_progress_slider.dart';
-
+ 
 class PopUpVideoPlayer extends ModalRoute<void> {
   final String videoUri;
-
+ 
   @override
   Duration get transitionDuration => const Duration(milliseconds: 500);
-
+ 
   @override
   bool get opaque => false;
-
+ 
   @override
   bool get barrierDismissible => false;
-
+ 
   @override
   Color get barrierColor => Colors.black.withOpacity(0.5);
-
+ 
   @override
   String get barrierLabel => 'null';
-
+ 
   @override
   bool get maintainState => true;
-
+ 
   PopUpVideoPlayer({required this.videoUri});
-
+ 
   @override
   Widget buildPage(
     BuildContext context,
@@ -37,20 +36,18 @@ class PopUpVideoPlayer extends ModalRoute<void> {
   ) {
     return const Material(
       type: MaterialType.transparency,
-      child: Expanded(
-        child: PopupVideoPlayer(),
-      ),
+      child: PopupVideoPlayer(),
     );
   }
 }
-
+ 
 class PopupVideoPlayer extends StatefulWidget {
   const PopupVideoPlayer({super.key});
-
+ 
   @override
   State<PopupVideoPlayer> createState() => _PopupVideoPlayerState();
 }
-
+ 
 class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
   var _fullScreen = false;
   final _animationDuration = const Duration(milliseconds: 200);
@@ -58,12 +55,11 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
   final _partScreenHeight = 200.h;
   final _barHeight = 40.h;
   final _partScreenHorizontalPadding = 20.w;
-
+ 
   late VideoPlayerController _controller;
-
+ 
   Duration _currentPosition = Duration.zero;
-  late bool _setVolumeMode;
-
+ 
   @override
   void initState() {
     super.initState();
@@ -79,25 +75,23 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
     _controller.addListener(() {
       setState(() => _currentPosition = _controller.value.position);
     });
-    _setVolumeMode = false;
-    _fullScreenHeight = context.size!.height;
   }
-
+ 
   String _formatedTime({required int timeInSecond}) {
     int sec = timeInSecond % 60;
     int min = (timeInSecond / 60).floor();
     String minute = min.toString().length <= 1 ? '0$min' : '$min';
     String second = sec.toString().length <= 1 ? '0$sec' : '$sec';
-
+ 
     return '$minute:$second';
   }
-
+ 
   @override
   void dispose() {
     super.dispose();
     _controller.dispose();
   }
-
+ 
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
@@ -124,10 +118,12 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
                       color: Colors.black,
                       width: double.infinity,
                       child: _controller.value.isInitialized
-                          ? AspectRatio(
-                              aspectRatio: _controller.value.aspectRatio,
-                              child: VideoPlayer(_controller),
-                            )
+                          ? Center(
+                            child: AspectRatio(
+                                aspectRatio: _controller.value.aspectRatio,
+                                child: VideoPlayer(_controller),
+                              ),
+                          )
                           : Container(),
                     ),
                     Positioned(
@@ -191,7 +187,11 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
                         onPressed: () {
                           setState(
                             () {
-                              _setVolumeMode = !_setVolumeMode;
+                              if (_controller.value.volume == 1) {
+                                _controller.setVolume(0);
+                              } else {
+                                _controller.setVolume(1);
+                              }
                             },
                           );
                         },
@@ -204,10 +204,10 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
                           ),
                         ),
                       ),
-                      if (_setVolumeMode)
-                        SoundSlider(
-                          controller: _controller,
-                        ),
+                      // if (_setVolumeMode)
+                      //   SoundSlider(
+                      //     controller: _controller,
+                      //   ),
                       IconButton(
                         splashRadius: double.minPositive,
                         onPressed: () {
