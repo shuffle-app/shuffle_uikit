@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
-import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
@@ -484,7 +484,8 @@ class $AssetsImagesSvgGen {
   SvgGenImage get givingLikeEmoji => const SvgGenImage('assets/images/svg/Giving-like-emoji.svg');
 
   /// File path: assets/images/svg/Grinning-face-with-sweat-emoji.svg
-  SvgGenImage get grinningFaceWithSweatEmoji => const SvgGenImage('assets/images/svg/Grinning-face-with-sweat-emoji.svg');
+  SvgGenImage get grinningFaceWithSweatEmoji =>
+      const SvgGenImage('assets/images/svg/Grinning-face-with-sweat-emoji.svg');
 
   /// File path: assets/images/svg/Hat.svg
   SvgGenImage get hat => const SvgGenImage('assets/images/svg/Hat.svg');
@@ -816,6 +817,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/pro_account_mark.svg
   SvgGenImage get proAccountMark => const SvgGenImage('assets/images/svg/pro_account_mark.svg');
 
+  /// File path: assets/images/svg/profile-delete.svg
+  SvgGenImage get profileDelete => const SvgGenImage('assets/images/svg/profile-delete.svg');
+
   /// File path: assets/images/svg/profile-plus.svg
   SvgGenImage get profilePlus => const SvgGenImage('assets/images/svg/profile-plus.svg');
 
@@ -1081,6 +1085,7 @@ class $AssetsImagesSvgGen {
         pointyHead,
         premiumAccountMark,
         proAccountMark,
+        profileDelete,
         profilePlus,
         profileFill,
         profileOutline,

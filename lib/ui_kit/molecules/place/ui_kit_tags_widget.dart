@@ -64,27 +64,21 @@ class UiKitTagsWidget extends StatelessWidget {
               ),
               if (uniqueTags != null && uniqueTags!.isNotEmpty) ...[
                 SpacingFoundation.verticalSpace4,
-                // SingleChildScrollView(
-                //   scrollDirection: Axis.horizontal,
-                //   child: Wrap(
-                //     spacing: SpacingFoundation.horizontalSpacing8,
-                //     children: uniqueTags!.map((e) => UiKitTagWidget(title: e.title, icon: e.iconPath, uniqueTag: true)).toList(),
-                //   ),
-                // ),
                 SizedBox(
-                    height: SpacingFoundation.horizontalSpacing16,
-                    child: ListView.separated(
+                    height: SpacingFoundation.horizontalSpacing16 +2,
+                    child: ListView.builder(
+                      clipBehavior: Clip.none,
                       padding: EdgeInsets.zero,
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       primary: false,
-                      separatorBuilder: (_, __) =>
-                          SpacingFoundation.horizontalSpace8,
+                      // separatorBuilder: (_, __) =>
+                      //     SpacingFoundation.horizontalSpace8,
                       itemCount: uniqueTags!.length,
                       itemBuilder: (_, index) => UiKitTagWidget(
                           title: uniqueTags![index].title,
                           icon: uniqueTags![index].iconPath,
-                          uniqueTag: true),
+                          uniqueTag: true).paddingOnly(right:uniqueTags!.length-1==index?0: SpacingFoundation.horizontalSpacing8),
                     ))
               ],
             ],

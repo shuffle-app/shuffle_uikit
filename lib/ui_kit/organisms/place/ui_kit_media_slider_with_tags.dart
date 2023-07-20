@@ -32,12 +32,13 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
             child: GestureDetector(
               behavior: HitTestBehavior.opaque,
               onTapUp: (TapUpDetails details) {
-                print('onTapUp here with details.globalPosition.dx ${details.globalPosition.dx}');
-                if (details.globalPosition.dx > 1.sw/2) {
+                print(
+                    'onTapUp here with details.globalPosition.dx ${details.globalPosition.dx}');
+                if (details.globalPosition.dx > 1.sw / 2) {
                   scrollController.animateTo(scrollController.offset + 0.83.sw,
                       duration: const Duration(milliseconds: 200),
                       curve: Curves.easeInOut);
-                } else if (scrollController.offset < 1.sw/2) {
+                } else if (scrollController.offset < 1.sw / 2) {
                   scrollController.animateTo(0,
                       duration: const Duration(milliseconds: 200),
                       curve: Curves.easeInOut);
@@ -47,27 +48,35 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                       curve: Curves.easeInOut);
                 }
               },
-              child: ListView.separated(
+              child: ListView.builder(
                 controller: scrollController,
                 scrollDirection: Axis.horizontal,
                 itemCount: media.length + 1,
                 addRepaintBoundaries: false,
                 itemBuilder: (context, index) {
                   if (index == 0) return horizontalMargin.widthBox;
-                  final mediaItem = media.elementAt(index - 1);
-                  if (mediaItem.type == UiKitMediaType.video) {
-                    return BaseUiKitMediaWidget.video(
-                      media: mediaItem,
-                      width: media.length == 1 ? 1.sw : null,
-                    );
-                  }
 
-                  return BaseUiKitMediaWidget.image(
-                      media: mediaItem, width: media.length == 1 ? 1.sw : null);
+                  return () {
+                    final mediaItem = media.elementAt(index - 1);
+                    if (mediaItem.type == UiKitMediaType.video) {
+                      return BaseUiKitMediaWidget.video(
+                        media: mediaItem,
+                        width: media.length == 1 ? 1.sw : null,
+                      );
+                    }
+
+                    return BaseUiKitMediaWidget.image(
+                        media: mediaItem,
+                        width: media.length == 1 ? 1.sw : null);
+                  }()
+                      .paddingOnly(
+                          right: media.length == index
+                              ? 0
+                              : SpacingFoundation.horizontalSpacing16);
                 },
-                separatorBuilder: (context, index) => index == 0
-                    ? const SizedBox.shrink()
-                    : SpacingFoundation.horizontalSpace16,
+                // separatorBuilder: (context, index) => index == 0
+                //     ? const SizedBox.shrink()
+                //     : SpacingFoundation.horizontalSpace16,
               ),
             )),
         SpacingFoundation.verticalSpace14,
