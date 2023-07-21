@@ -15,6 +15,7 @@ class VideoProgressSlider extends StatelessWidget {
   final double bottomPadding = 4.h;
   final double horizontalPadding = 4.h;
   final double thickness = 3.h;
+  var wasPlaying = false;
 
   @override
   Widget build(BuildContext context) {
@@ -24,41 +25,47 @@ class VideoProgressSlider extends StatelessWidget {
           horizontal: horizontalPadding,
           vertical: bottomPadding,
         ),
-        child: Stack(
-          alignment: Alignment.bottomLeft,
-          children: [
-            Container(
-              width: width - horizontalPadding * 2,
-              height: thickness,
-              decoration: const BoxDecoration(
-                color: Color.fromRGBO(255, 255, 255, 0.1),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(4),
+        child: ValueListenableBuilder(
+          valueListenable: controller,
+          builder: (context, VideoPlayerValue playerState, child) {
+            return SliderTheme(
+              data: const SliderThemeData(
+                  thumbShape: RoundSliderThumbShape(
+                    enabledThumbRadius: 0,
+                  ),
+                  overlayColor: Colors.transparent,
+                  activeTrackColor: Colors.white,
+                  inactiveTrackColor: Colors.white24,
                 ),
-              ),
-            ),
-            ValueListenableBuilder(
-                valueListenable: controller,
-                builder: (context, VideoPlayerValue value, child) {
-                  return Container(
-                    width: (width - horizontalPadding * 2) *
-                                value.position.inSeconds /
-                                value.duration.inSeconds >
-                            1.w
-                        ? (width - horizontalPadding * 2) *
-                            value.position.inSeconds /
-                            value.duration.inSeconds
-                        : 1.w,
-                    height: thickness,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(4),
-                      ),
-                    ),
+              child: Slider(
+                // thumbColor: Colors.transparent,
+                // inactiveColor: Colors.white30,
+                // activeColor: Colors.white,
+                // secondaryActiveColor: Colors.transparent,
+                value: playerState.position.inMilliseconds * 1.0,
+                min: 0,
+                max: playerState.duration.inMilliseconds * 1.0,
+                onChangeStart: (value) {
+                  wasPlaying = playerState.isPlaying;
+                  controller.pause();
+                },
+                onChangeEnd: (value) {
+                  controller
+                      .seekTo(
+                    Duration(milliseconds: value.toInt()),
+                  )
+                      .whenComplete(
+                    () {
+                      if (wasPlaying) {
+                        controller.play();
+                      }
+                    },
                   );
-                }),
-          ],
+                },
+                onChanged: (double value) {},
+              ),
+            );
+          },
         ),
       ),
     );
