@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit/organisms/video_player/video_player_bottom_bar.dart';
 import 'package:smooth_video_progress/smooth_video_progress.dart';
 import 'package:video_player/video_player.dart';
 
@@ -18,7 +19,8 @@ class PopUpVideoPlayer extends ModalRoute<void> {
   bool get barrierDismissible => false;
 
   @override
-  Color get barrierColor => Colors.black.withOpacity(0.5);
+  // Color get barrierColor => Colors.black.withOpacity(0.5);
+  Color get barrierColor => Colors.transparent;
 
   @override
   String get barrierLabel => 'null';
@@ -36,14 +38,16 @@ class PopUpVideoPlayer extends ModalRoute<void> {
   ) {
     return Material(
       type: MaterialType.transparency,
-      child: PopupVideoPlayer(videoUri: videoUri,),
+      child: PopupVideoPlayer(
+        videoUri: videoUri,
+      ),
     );
   }
 }
 
 class PopupVideoPlayer extends StatefulWidget {
   const PopupVideoPlayer({super.key, required this.videoUri});
-  
+
   final String videoUri;
 
   @override
@@ -51,41 +55,20 @@ class PopupVideoPlayer extends StatefulWidget {
 }
 
 class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
-  var _fullScreen = false;
-  final _animationDuration = const Duration(milliseconds: 200);
-  late final _fullScreenHeight = 480.h;
   final _partScreenHeight = 200.h;
   final _barHeight = 40.h;
-  final _partScreenHorizontalPadding = 20.w;
 
   late VideoPlayerController _controller;
-
-  Duration _currentPosition = Duration.zero;
 
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.networkUrl(Uri.parse(
-        widget.videoUri))
+    _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUri))
       ..initialize().then((_) {
-        // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {
-          _controller.setLooping(true);
           _controller.play();
         });
       });
-    _controller.addListener(() {
-      setState(() => _currentPosition = _controller.value.position);
-    });
-  }
-
-  String _formatedTime({required int timeInSecond}) {
-    int sec = timeInSecond % 60;
-    int min = (timeInSecond / 60).floor();
-    String minute = min.toString().length <= 1 ? '0$min' : '$min';
-    String second = sec.toString().length <= 1 ? '0$sec' : '$sec';
-
-    return '$minute:$second';
   }
 
   @override
@@ -98,142 +81,44 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
   Widget build(BuildContext context) {
     return SafeArea(
       bottom: false,
-      child: AnimatedContainer(
-        duration: _animationDuration,
-        padding: EdgeInsets.symmetric(
-          horizontal: _fullScreen ? 0 : _partScreenHorizontalPadding,
-          vertical: _fullScreen ? 0 : 100.h,
-        ),
+      child: Padding(
+        padding: EdgeInsets.only(left: 8.w, right: 8.w, top: 100.h),
         child: Stack(
           children: [
-            AnimatedContainer(
-              height: _fullScreen ? _fullScreenHeight : _partScreenHeight,
-              duration: _animationDuration,
-              child: Column(
-                children: [
-                  Stack(
-                    children: [
-                      AnimatedContainer(
-                        duration: _animationDuration,
-                        height: _fullScreen
-                            ? _fullScreenHeight - _barHeight
-                            : _partScreenHeight - _barHeight,
-                        color: Colors.black,
-                        width: double.infinity,
-                        child: _controller.value.isInitialized
-                            ? Center(
-                                child: AspectRatio(
-                                  aspectRatio: _controller.value.aspectRatio,
-                                  child: VideoPlayer(_controller),
-                                ),
-                              )
-                            : Container(),
-                      ),
-                      Positioned(
-                        bottom: 1.h,
-                        right: 5.h,
-                        left: 5.h,
-                        child: SizedBox(
-                          width: 200.w,
-                          child: SmoothVideoProgress(
-                            controller: _controller,
-                            builder: (context, position, duration, _) =>
-                                VideoProgressSlider(
-                              position: position,
-                              duration: duration,
-                              controller: _controller,
-                              swatch: Colors.white12,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Container(
-                    color: const Color.fromARGB(255, 26, 26, 26),
-                    height: _barHeight,
-                    width: double.infinity,
-                    child: Row(
-                      children: [
-                        IconButton(
-                          splashRadius: double.minPositive,
-                          onPressed: () {
-                            setState(
-                              () {
-                                _controller.value.isPlaying
-                                    ? _controller.pause()
-                                    : _controller.play();
-                              },
-                            );
-                          },
-                          icon: GradientableWidget(
-                            gradient: GradientFoundation.badgeIcon,
-                            child: ImageWidget(
-                              svgAsset: _controller.value.isPlaying
-                                  ? GraphicsFoundation.instance.svg.pause
-                                  : GraphicsFoundation.instance.svg.play,
-                              height: 80,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        Text(
-                          '${_formatedTime(timeInSecond: _currentPosition.inSeconds)}/${_formatedTime(timeInSecond: _controller.value.duration.inSeconds)}',
-                          style:
-                              context.uiKitTheme?.regularTextTheme.body.copyWith(
-                            fontSize: 14,
-                          ),
-                        ),
-                        const Spacer(),
-                        IconButton(
-                          splashRadius: double.minPositive,
-                          onPressed: () {
-                            setState(
-                              () {
-                                if (_controller.value.volume == 1) {
-                                  _controller.setVolume(0);
-                                } else {
-                                  _controller.setVolume(1);
-                                }
-                              },
-                            );
-                          },
-                          icon: GradientableWidget(
-                            gradient: GradientFoundation.badgeIcon,
-                            child: ImageWidget(
-                              svgAsset: _controller.value.volume == 1
-                              ? GraphicsFoundation.instance.svg.volume
-                              : GraphicsFoundation.instance.svg.volumeOff,
-                              height: 80,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        IconButton(
-                          splashRadius: double.minPositive,
-                          onPressed: () {
-                            setState(
-                              () {
-                                _fullScreen = !_fullScreen;
-                              },
-                            );
-                          },
-                          icon: GradientableWidget(
-                            gradient: GradientFoundation.badgeIcon,
-                            child: ImageWidget(
-                              svgAsset: _fullScreen
-                                  ? GraphicsFoundation.instance.svg.minimize
-                                  : GraphicsFoundation.instance.svg.maximize,
-                              height: 80,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
+            Column(
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      height: _partScreenHeight - _barHeight,
+                      color: Colors.black,
+                      width: double.infinity,
+                      child: _controller.value.isInitialized
+                          ? Center(
+                              child: AspectRatio(
+                                aspectRatio: _controller.value.aspectRatio,
+                                child: VideoPlayer(_controller),
+                              ),
+                            )
+                          : Container(),
                     ),
-                  ),
-                ],
-              ),
+                    Positioned(
+                      bottom: 0,
+                      right: 4.w,
+                      left: 4.w,
+                      child: VideoProgressSlider(
+                        controller: _controller,
+                        width: 280.w,
+                      ),
+                    ),
+                  ],
+                ),
+                VideoPlayerBottomBar(
+                  controller: _controller,
+                  context: context,
+                  isFullScreen: false,
+                ),
+              ],
             ),
             Positioned(
               top: 10.h,

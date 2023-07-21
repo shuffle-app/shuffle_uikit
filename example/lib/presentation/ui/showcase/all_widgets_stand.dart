@@ -1194,6 +1194,20 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ),
                 ),
               ),
+              SpacingFoundation.verticalSpace16,
+              MaterialButton(
+                onPressed: () {
+                  Navigator.of(context).push(PopUpVideoPlayer(
+                      videoUri:
+                          'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
+                },
+                child: const Text(
+                  'Show Another Horizontal Video',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
               SpacingFoundation.bottomNavigationBarSpacing,
             ],
           ),

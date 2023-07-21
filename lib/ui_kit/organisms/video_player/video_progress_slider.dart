@@ -1,40 +1,65 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoProgressSlider extends StatelessWidget {
-  const VideoProgressSlider({
+  VideoProgressSlider({
     super.key,
-    required this.position,
-    required this.duration,
     required this.controller,
-    required this.swatch,
+    required this.width,
   });
 
-  final Duration position;
-  final Duration duration;
   final VideoPlayerController controller;
-  final Color swatch;
+  final double width;
+
+  final double bottomPadding = 4.h;
+  final double horizontalPadding = 4.h;
+  final double thickness = 3.h;
 
   @override
   Widget build(BuildContext context) {
-    final max = duration.inMilliseconds.toDouble();
-    final value = position.inMilliseconds.clamp(0, max).toDouble();
-
-    return SliderTheme(
-      data: SliderThemeData(
-        activeTrackColor: Colors.white,
-        inactiveTrackColor: Colors.white54,
-        thumbShape: SliderComponentShape.noThumb,
-        overlayColor: Colors.transparent,
-      ),
-      child: Slider(
-        min: 0,
-        max: max,
-        value: value,
-        onChanged: (value) =>
-            controller.seekTo(Duration(milliseconds: value.toInt())),
-        onChangeStart: (_) => controller.pause(),
-        onChangeEnd: (_) => controller.play(),
+    return Center(
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: horizontalPadding,
+          vertical: bottomPadding,
+        ),
+        child: Stack(
+          alignment: Alignment.bottomLeft,
+          children: [
+            Container(
+              width: width - horizontalPadding * 2,
+              height: thickness,
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(68, 170, 174, 0.4),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(4),
+                ),
+              ),
+            ),
+            ValueListenableBuilder(
+                valueListenable: controller,
+                builder: (context, VideoPlayerValue value, child) {
+                  return Container(
+                    width: (width - horizontalPadding * 2) *
+                                value.position.inSeconds /
+                                value.duration.inSeconds >
+                            1.w
+                        ? (width - horizontalPadding * 2) *
+                            value.position.inSeconds /
+                            value.duration.inSeconds
+                        : 1.w,
+                    height: thickness,
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(4),
+                      ),
+                    ),
+                  );
+                }),
+          ],
+        ),
       ),
     );
   }
