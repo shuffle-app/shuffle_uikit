@@ -31,7 +31,7 @@ class VideoProgressSlider extends StatelessWidget {
               width: width - horizontalPadding * 2,
               height: thickness,
               decoration: const BoxDecoration(
-                color: Color.fromRGBO(68, 170, 174, 0.4),
+                color: Color.fromRGBO(255, 255, 255, 0.1),
                 borderRadius: BorderRadius.all(
                   Radius.circular(4),
                 ),

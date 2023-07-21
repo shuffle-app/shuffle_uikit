@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/organisms/video_player/video_player_bottom_bar.dart';
-import 'package:smooth_video_progress/smooth_video_progress.dart';
 import 'package:video_player/video_player.dart';
 
 import 'video_progress_slider.dart';

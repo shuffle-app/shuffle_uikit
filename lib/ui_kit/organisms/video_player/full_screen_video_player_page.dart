@@ -48,7 +48,7 @@ class _FullScreenVideoPlayerPageState extends State<FullScreenVideoPlayerPage> {
                         ),
                       ),
                       Positioned(
-                      bottom: 0,
+                      bottom: _showBar ? 40.h : 0,
                       right: 4.w,
                       left: 4.w,
                       child: VideoProgressSlider(
