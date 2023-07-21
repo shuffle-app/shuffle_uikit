@@ -69,7 +69,6 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
               valueListenable: widget.controller,
               builder: (context, VideoPlayerValue value, child) {
                 return Text(
-                  // TODO
                   '${_formatedTime(timeInSecond: value.position.inSeconds)}/${_formatedTime(timeInSecond: widget.controller.value.duration.inSeconds)}',
                   style: context.uiKitTheme?.regularTextTheme.body.copyWith(
                     fontSize: 14.h,
