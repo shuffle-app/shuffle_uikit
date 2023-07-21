@@ -82,59 +82,68 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
       bottom: false,
       child: Padding(
         padding: EdgeInsets.only(left: 8.w, right: 8.w, top: 100.h),
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                Stack(
-                  children: [
-                    Container(
-                      height: _partScreenHeight - _barHeight,
-                      color: Colors.black,
-                      width: double.infinity,
-                      child: _controller.value.isInitialized
-                          ? Center(
-                              child: AspectRatio(
-                                aspectRatio: _controller.value.aspectRatio,
-                                child: VideoPlayer(_controller),
-                              ),
-                            )
-                          : Container(),
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      right: 4.w,
-                      left: 4.w,
-                      child: VideoProgressSlider(
-                        controller: _controller,
-                        width: 280.w,
+        child: GestureDetector(
+          onDoubleTap: () {
+            setState(() {
+              _controller.value.isPlaying
+                  ? _controller.pause()
+                  : _controller.play();
+            });
+          },
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  Stack(
+                    children: [
+                      Container(
+                        height: _partScreenHeight - _barHeight,
+                        color: Colors.black,
+                        width: double.infinity,
+                        child: _controller.value.isInitialized
+                            ? Center(
+                                child: AspectRatio(
+                                  aspectRatio: _controller.value.aspectRatio,
+                                  child: VideoPlayer(_controller),
+                                ),
+                              )
+                            : Container(),
                       ),
-                    ),
-                  ],
-                ),
-                VideoPlayerBottomBar(
-                  controller: _controller,
-                  context: context,
-                  isFullScreen: false,
-                ),
-              ],
-            ),
-            Positioned(
-              top: 10.h,
-              right: 10.h,
-              child: IconButton(
-                splashRadius: double.minPositive,
-                icon: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.x,
-                  height: 80,
-                  color: Colors.white,
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                      Positioned(
+                        bottom: 0,
+                        right: 4.w,
+                        left: 4.w,
+                        child: VideoProgressSlider(
+                          controller: _controller,
+                          width: 280.w,
+                        ),
+                      ),
+                    ],
+                  ),
+                  VideoPlayerBottomBar(
+                    controller: _controller,
+                    context: context,
+                    isFullScreen: false,
+                  ),
+                ],
               ),
-            ),
-          ],
+              Positioned(
+                top: 10.h,
+                right: 10.h,
+                child: IconButton(
+                  splashRadius: double.minPositive,
+                  icon: ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.x,
+                    height: 80,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
