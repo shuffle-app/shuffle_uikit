@@ -19,9 +19,9 @@ class VideoPlayerBottomBar extends StatefulWidget {
 }
 
 class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
-  final height = 40.h;
+  final height = 40.0;
 
-  String _formatedTime({required int timeInSecond}) {
+  String _formattedTime({required int timeInSecond}) {
     int sec = timeInSecond % 60;
     int min = (timeInSecond / 60).floor();
     String minute = min.toString().length <= 1 ? '0$min' : '$min';
@@ -34,97 +34,107 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
   Widget build(BuildContext context) {
     return Container(
       color: const Color.fromARGB(255, 26, 26, 26),
-      height: height,
+      height: widget.isFullScreen
+          ? height + MediaQuery.of(context).padding.bottom
+          : height,
       width: double.infinity,
-      child: Row(
-        children: [
-          IconButton(
-            splashRadius: double.minPositive,
-            onPressed: () {
-              setState(
-                () {
-                  widget.controller.value.isPlaying
-                      ? widget.controller.pause()
-                      : widget.controller.play();
-                },
-              );
-            },
-            icon: GradientableWidget(
-              gradient: GradientFoundation.badgeIcon,
-              child: ValueListenableBuilder(
-                valueListenable: widget.controller,
-                builder: (context, VideoPlayerValue value, child) {
-                  return ImageWidget(
-                    svgAsset: value.isPlaying
-                        ? GraphicsFoundation.instance.svg.pause
-                        : GraphicsFoundation.instance.svg.play,
-                    height: height,
-                    color: Colors.white,
-                  );
-                },
-              ),
-            ),
-          ),
-          ValueListenableBuilder(
-              valueListenable: widget.controller,
-              builder: (context, VideoPlayerValue value, child) {
-                return Text(
-                  '${_formatedTime(timeInSecond: value.position.inSeconds)}/${_formatedTime(timeInSecond: widget.controller.value.duration.inSeconds)}',
-                  style: context.uiKitTheme?.regularTextTheme.body.copyWith(
-                    fontSize: 14.h,
-                  ),
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: MediaQuery.of(context).padding.left,
+          right: MediaQuery.of(context).padding.right,
+          bottom:
+              widget.isFullScreen ? MediaQuery.of(context).padding.bottom : 0,
+        ),
+        child: Row(
+          children: [
+            IconButton(
+              splashRadius: double.minPositive,
+              onPressed: () {
+                setState(
+                  () {
+                    widget.controller.value.isPlaying
+                        ? widget.controller.pause()
+                        : widget.controller.play();
+                  },
                 );
-              }),
-          const Spacer(),
-          IconButton(
-            splashRadius: double.minPositive,
-            onPressed: () {
-              if (widget.controller.value.volume == 1) {
-                widget.controller.setVolume(0);
-              } else {
-                widget.controller.setVolume(1);
-              }
-            },
-            icon: GradientableWidget(
-              gradient: GradientFoundation.badgeIcon,
-              child: ValueListenableBuilder(
+              },
+              icon: GradientableWidget(
+                gradient: GradientFoundation.badgeIcon,
+                child: ValueListenableBuilder(
+                  valueListenable: widget.controller,
+                  builder: (context, VideoPlayerValue value, child) {
+                    return ImageWidget(
+                      svgAsset: value.isPlaying
+                          ? GraphicsFoundation.instance.svg.pause
+                          : GraphicsFoundation.instance.svg.play,
+                      height: height,
+                      color: Colors.white,
+                    );
+                  },
+                ),
+              ),
+            ),
+            ValueListenableBuilder(
                 valueListenable: widget.controller,
                 builder: (context, VideoPlayerValue value, child) {
-                  return ImageWidget(
-                    svgAsset: value.volume == 1
-                        ? GraphicsFoundation.instance.svg.volume
-                        : GraphicsFoundation.instance.svg.volumeOff,
-                    height: height,
-                    color: Colors.white,
+                  return Text(
+                    '${_formattedTime(timeInSecond: value.position.inSeconds)}/${_formattedTime(timeInSecond: widget.controller.value.duration.inSeconds)}',
+                    style: context.uiKitTheme?.regularTextTheme.body.copyWith(
+                      fontSize: 14,
+                    ),
                   );
-                },
-              ),
-            ),
-          ),
-          IconButton(
-            splashRadius: double.minPositive,
-            onPressed: () {
-              widget.isFullScreen
-                  ? Navigator.of(widget.context).pop()
-                  : Navigator.of(widget.context, rootNavigator: true).push(
-                      MaterialPageRoute(
-                        builder: (context) => FullScreenVideoPlayerPage(
-                            controller: widget.controller),
-                      ),
+                }),
+            const Spacer(),
+            IconButton(
+              splashRadius: double.minPositive,
+              onPressed: () {
+                if (widget.controller.value.volume == 1) {
+                  widget.controller.setVolume(0);
+                } else {
+                  widget.controller.setVolume(1);
+                }
+              },
+              icon: GradientableWidget(
+                gradient: GradientFoundation.badgeIcon,
+                child: ValueListenableBuilder(
+                  valueListenable: widget.controller,
+                  builder: (context, VideoPlayerValue value, child) {
+                    return ImageWidget(
+                      svgAsset: value.volume == 1
+                          ? GraphicsFoundation.instance.svg.volume
+                          : GraphicsFoundation.instance.svg.volumeOff,
+                      height: height,
+                      color: Colors.white,
                     );
-            },
-            icon: GradientableWidget(
-              gradient: GradientFoundation.badgeIcon,
-              child: ImageWidget(
-                svgAsset: widget.isFullScreen
-                    ? GraphicsFoundation.instance.svg.minimize
-                    : GraphicsFoundation.instance.svg.maximize,
-                height: height,
-                color: Colors.white,
+                  },
+                ),
               ),
             ),
-          ),
-        ],
+            IconButton(
+              splashRadius: double.minPositive,
+              onPressed: () {
+                widget.isFullScreen
+                    ? Navigator.of(widget.context).pop()
+                    : Navigator.of(widget.context, rootNavigator: true).push(
+                        MaterialPageRoute(
+                          builder: (context) => FullScreenVideoPlayerPage(
+                              controller: widget.controller),
+                        ),
+                      );
+              },
+              icon: GradientableWidget(
+                gradient: GradientFoundation.badgeIcon,
+                child: ImageWidget(
+                  svgAsset: widget.isFullScreen
+                      ? GraphicsFoundation.instance.svg.minimize
+                      : GraphicsFoundation.instance.svg.maximize,
+                  height: height,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -39,8 +39,8 @@ class _FullScreenVideoPlayerPageState extends State<FullScreenVideoPlayerPage> {
           children: [
             widget.controller.value.isInitialized
                 ? Stack(
-                  children: [
-                    Align(
+                    children: [
+                      Align(
                         alignment: Alignment.center,
                         child: AspectRatio(
                           aspectRatio: widget.controller.value.aspectRatio,
@@ -48,16 +48,18 @@ class _FullScreenVideoPlayerPageState extends State<FullScreenVideoPlayerPage> {
                         ),
                       ),
                       Positioned(
-                      bottom: _showBar ? 40.h : 0,
-                      right: 4.w,
-                      left: 4.w,
-                      child: VideoProgressSlider(
-                        controller: widget.controller,
-                        width: 280.w,
+                        bottom: _showBar
+                            ? MediaQuery.of(context).padding.bottom + 40
+                            : MediaQuery.of(context).padding.bottom,
+                        right: 4.w,
+                        left: 4.w,
+                        child: VideoProgressSlider(
+                          controller: widget.controller,
+                          width: 280.w,
+                        ),
                       ),
-                    ),
-                  ],
-                )
+                    ],
+                  )
                 : Container(),
             Visibility(
               visible: _showBar,
