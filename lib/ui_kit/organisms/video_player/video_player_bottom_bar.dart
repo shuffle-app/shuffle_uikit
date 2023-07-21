@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/organisms/video_player/full_screen_video_player_page.dart';
 import 'package:video_player/video_player.dart';
@@ -52,49 +51,54 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
             },
             icon: GradientableWidget(
               gradient: GradientFoundation.badgeIcon,
-              child: ImageWidget(
-                svgAsset: widget.controller.value.isPlaying
-                    ? GraphicsFoundation.instance.svg.pause
-                    : GraphicsFoundation.instance.svg.play,
-                height: height,
-                color: Colors.white,
+              child: ValueListenableBuilder(
+                valueListenable: widget.controller,
+                builder: (context, VideoPlayerValue value, child) {
+                  return ImageWidget(
+                    svgAsset: value.isPlaying
+                        ? GraphicsFoundation.instance.svg.pause
+                        : GraphicsFoundation.instance.svg.play,
+                    height: height,
+                    color: Colors.white,
+                  );
+                },
               ),
             ),
           ),
           ValueListenableBuilder(
-            valueListenable: widget.controller,
-            builder: (context, VideoPlayerValue value, child) {
-              return Text(
-                // TODO
-                '${_formatedTime(timeInSecond: value.position.inSeconds)}/${_formatedTime(timeInSecond: widget.controller.value.duration.inSeconds)}',
-                style: context.uiKitTheme?.regularTextTheme.body.copyWith(
-                  fontSize: 14.h,
-                ),
-              );
-            }
-          ),
+              valueListenable: widget.controller,
+              builder: (context, VideoPlayerValue value, child) {
+                return Text(
+                  // TODO
+                  '${_formatedTime(timeInSecond: value.position.inSeconds)}/${_formatedTime(timeInSecond: widget.controller.value.duration.inSeconds)}',
+                  style: context.uiKitTheme?.regularTextTheme.body.copyWith(
+                    fontSize: 14.h,
+                  ),
+                );
+              }),
           const Spacer(),
           IconButton(
             splashRadius: double.minPositive,
             onPressed: () {
-              setState(
-                () {
-                  if (widget.controller.value.volume == 1) {
-                    widget.controller.setVolume(0);
-                  } else {
-                    widget.controller.setVolume(1);
-                  }
-                },
-              );
+              if (widget.controller.value.volume == 1) {
+                widget.controller.setVolume(0);
+              } else {
+                widget.controller.setVolume(1);
+              }
             },
             icon: GradientableWidget(
               gradient: GradientFoundation.badgeIcon,
-              child: ImageWidget(
-                svgAsset: widget.controller.value.volume == 1
-                    ? GraphicsFoundation.instance.svg.volume
-                    : GraphicsFoundation.instance.svg.volumeOff,
-                height: height,
-                color: Colors.white,
+              child: ValueListenableBuilder(
+                valueListenable: widget.controller,
+                builder: (context, VideoPlayerValue value, child) {
+                  return ImageWidget(
+                    svgAsset: value.volume == 1
+                        ? GraphicsFoundation.instance.svg.volume
+                        : GraphicsFoundation.instance.svg.volumeOff,
+                    height: height,
+                    color: Colors.white,
+                  );
+                },
               ),
             ),
           ),
