@@ -13,59 +13,52 @@ class VideoProgressSlider extends StatelessWidget {
   final VideoPlayerController controller;
   final double width;
 
-  final double bottomPadding = 4.h;
-  final double horizontalPadding = 4.h;
-  final double thickness = 3.h;
+  final horizontalPadding = 4.h;
+  final thickness = 3.0;
   var wasPlaying = false;
 
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: horizontalPadding,
-          vertical: bottomPadding,
-        ),
-        child: ValueListenableBuilder(
-          valueListenable: controller,
-          builder: (context, VideoPlayerValue playerState, child) {
-            return SliderTheme(
-              data: const SliderThemeData(
-                  thumbShape: RoundSliderThumbShape(
-                    enabledThumbRadius: 3,
-                    elevation: 0,
-                  ),
-                  thumbColor: Colors.white,
-                  overlayColor: Colors.transparent,
-                  activeTrackColor: Colors.white,
-                  inactiveTrackColor: Colors.white24,
+      child: ValueListenableBuilder(
+        valueListenable: controller,
+        builder: (context, VideoPlayerValue playerState, child) {
+          return SliderTheme(
+            data: SliderThemeData(
+                thumbShape: RoundSliderThumbShape(
+                  enabledThumbRadius: thickness,
+                  elevation: 0,
                 ),
-              child: Slider(
-                value: playerState.position.inMilliseconds * 1.0,
-                min: 0,
-                max: playerState.duration.inMilliseconds * 1.0,
-                onChangeStart: (value) {
-                  wasPlaying = playerState.isPlaying;
-                  controller.pause();
-                },
-                onChangeEnd: (value) {
-                  controller
-                      .seekTo(
-                    Duration(milliseconds: value.toInt()),
-                  )
-                      .whenComplete(
-                    () {
-                      if (wasPlaying) {
-                        controller.play();
-                      }
-                    },
-                  );
-                },
-                onChanged: (double value) {},
+                thumbColor: Colors.white,
+                overlayColor: Colors.transparent,
+                activeTrackColor: Colors.white,
+                inactiveTrackColor: Colors.white24,
               ),
-            );
-          },
-        ),
+            child: Slider(
+              value: playerState.position.inMilliseconds * 1.0,
+              min: 0,
+              max: playerState.duration.inMilliseconds * 1.0,
+              onChangeStart: (value) {
+                wasPlaying = playerState.isPlaying;
+                controller.pause();
+              },
+              onChangeEnd: (value) {
+                controller
+                    .seekTo(
+                  Duration(milliseconds: value.toInt()),
+                )
+                    .whenComplete(
+                  () {
+                    if (wasPlaying) {
+                      controller.play();
+                    }
+                  },
+                );
+              },
+              onChanged: (double value) {},
+            ),
+          );
+        },
       ),
     );
   }

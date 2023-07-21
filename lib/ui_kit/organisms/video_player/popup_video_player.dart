@@ -55,7 +55,7 @@ class PopupVideoPlayer extends StatefulWidget {
 
 class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
   final _partScreenHeight = 200.h;
-  final _barHeight = 40.h;
+  final _barHeight = 40.0;
 
   late VideoPlayerController _controller;
 
