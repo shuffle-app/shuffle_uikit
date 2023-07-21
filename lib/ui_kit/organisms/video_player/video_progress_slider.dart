@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:video_player/video_player.dart';
 
+
 class VideoProgressSlider extends StatelessWidget {
   VideoProgressSlider({
     super.key,
@@ -31,17 +32,15 @@ class VideoProgressSlider extends StatelessWidget {
             return SliderTheme(
               data: const SliderThemeData(
                   thumbShape: RoundSliderThumbShape(
-                    enabledThumbRadius: 0,
+                    enabledThumbRadius: 3,
+                    elevation: 0,
                   ),
+                  thumbColor: Colors.white,
                   overlayColor: Colors.transparent,
                   activeTrackColor: Colors.white,
                   inactiveTrackColor: Colors.white24,
                 ),
               child: Slider(
-                // thumbColor: Colors.transparent,
-                // inactiveColor: Colors.white30,
-                // activeColor: Colors.white,
-                // secondaryActiveColor: Colors.transparent,
                 value: playerState.position.inMilliseconds * 1.0,
                 min: 0,
                 max: playerState.duration.inMilliseconds * 1.0,
