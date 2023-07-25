@@ -221,7 +221,7 @@ class CountriesFoundation {
   );
 
   final burkinaFaso = CountryModel(
-    countryName: 'burkina-Faso'.toUpperCase(),
+    countryName: 'burkina Faso'.toUpperCase(),
     countryPhoneCode: '+226',
     flag: Flags.burkinaFaso,
   );
@@ -329,7 +329,7 @@ class CountriesFoundation {
   );
 
   final costaRica = CountryModel(
-    countryName: 'costa-Rica'.toUpperCase(),
+    countryName: 'costa Rica'.toUpperCase(),
     countryPhoneCode: '+506',
     flag: Flags.costaRica,
   );
@@ -593,7 +593,7 @@ class CountriesFoundation {
   );
 
   final hongKong = CountryModel(
-    countryName: 'hong-Kong'.toUpperCase(),
+    countryName: 'hong Kong'.toUpperCase(),
     countryPhoneCode: '+852',
     flag: Flags.hongKong,
   );
@@ -1085,7 +1085,7 @@ class CountriesFoundation {
   );
 
   final puertoRico = CountryModel(
-    countryName: 'puerto-Rico'.toUpperCase(),
+    countryName: 'puerto Rico'.toUpperCase(),
     countryPhoneCode: '+1',
     flag: Flags.puertoRico,
   );
@@ -1157,13 +1157,13 @@ class CountriesFoundation {
   );
 
   final sanMarino = CountryModel(
-    countryName: 'san-Marino'.toUpperCase(),
+    countryName: 'san Marino'.toUpperCase(),
     countryPhoneCode: '+378',
     flag: Flags.sanMarino,
   );
 
   final saoTomeAndPrincipe = CountryModel(
-    countryName: 'sao-Tome And Principe'.toUpperCase(),
+    countryName: 'sao Tome And Principe'.toUpperCase(),
     countryPhoneCode: '+239',
     flag: Flags.saoTomeAndPrincipe,
   );
@@ -1211,7 +1211,7 @@ class CountriesFoundation {
   );
 
   final sierraLeone = CountryModel(
-    countryName: 'sierra-Leone'.toUpperCase(),
+    countryName: 'sierra Leone'.toUpperCase(),
     countryPhoneCode: '+232',
     flag: Flags.sierraLeone,
   );
@@ -1289,7 +1289,7 @@ class CountriesFoundation {
   );
 
   final sriLanka = CountryModel(
-    countryName: 'sri-Lanka'.toUpperCase(),
+    countryName: 'sri Lanka'.toUpperCase(),
     countryPhoneCode: '+94',
     flag: Flags.sriLanka,
   );
@@ -1823,4 +1823,10 @@ class CountryModel extends UiKitSearchableListBodyItem {
           trailingText: countryPhoneCode,
           leadingPath: flag,
         );
+
+  factory CountryModel.empty() => CountryModel(
+        flag: '',
+        countryPhoneCode: '',
+        countryName: '',
+      );
 }
