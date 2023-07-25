@@ -1166,6 +1166,48 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ],
                 ),
               ),
+              SpacingFoundation.verticalSpace16,
+              MaterialButton(
+                onPressed: () {
+                  Navigator.of(context).push(PopUpVideoPlayer(
+                      videoUri:
+                          'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+                },
+                child: const Text(
+                  'Show Horizontal Video',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              MaterialButton(
+                onPressed: () {
+                  Navigator.of(context).push(PopUpVideoPlayer(
+                      videoUri:
+                          'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+                },
+                child: const Text(
+                  'Show Vertical Video',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              MaterialButton(
+                onPressed: () {
+                  Navigator.of(context).push(PopUpVideoPlayer(
+                      videoUri:
+                          'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
+                },
+                child: const Text(
+                  'Show Another Horizontal Video',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
               SpacingFoundation.bottomNavigationBarSpacing,
             ],
           ),
