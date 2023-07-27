@@ -5,9 +5,8 @@ class UiKitFindSomeoneCard extends StatelessWidget {
   final String? avatarUrl;
   final String? userNickName;
   final String? userName;
-
   final int? userPoints;
-  final String? sameInterests;
+  final int? sameInterests;
   final VoidCallback? onMessage;
 
   const UiKitFindSomeoneCard({
@@ -22,135 +21,79 @@ class UiKitFindSomeoneCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double calculatedWidth = MediaQuery.of(context).size.width;
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
 
-    return LayoutBuilder(
-      builder: (context, size) {
-        final calculatedHeight = size.maxWidth * 0.55;
-
-        return Padding(
-          padding: const EdgeInsets.fromLTRB(30, 5, 30, 5),
-          child: Material(
-            color: ColorsFoundation.surface3,
-            borderRadius: BorderRadiusFoundation.all24,
-            clipBehavior: Clip.hardEdge,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
+    return Material(
+      color: ColorsFoundation.surface3,
+      borderRadius: BorderRadiusFoundation.all24,
+      clipBehavior: Clip.hardEdge,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          CircularAvatar(
-                            avatarUrl: avatarUrl ?? '',
-                            name: '',
-                            height: calculatedHeight * 0.3,
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            userNickName ?? '',
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Unbounded',
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            userName ?? '',
-                            style: const TextStyle(
-                                color: Colors.grey,
-                                fontFamily: 'Unbounded',
-                                fontSize: 13),
-                          ),
-                        ],
-                      ),
+                    CircularAvatar(
+                      avatarUrl: avatarUrl ?? '',
+                      height: calculatedWidth * 0.2,
                     ),
-                    Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Container(
-                            height: calculatedHeight * 0.15,
-                            width: calculatedHeight,
-                            decoration: BoxDecoration(
-                                gradient: const LinearGradient(
-                                  begin: Alignment.centerLeft,
-                                  end: Alignment.centerRight,
-                                  colors: [
-                                    Color(0xFFE32900),
-                                    Color(0xFFC6E216),
-                                  ],
-                                ),
-                                borderRadius: BorderRadius.circular(20)),
-                            child: Center(
-                              child: Text(
-                                userPoints.toString() + '  points',
-                                style: const TextStyle(
-                                  fontFamily: 'Unbounded',
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Text(
-                            sameInterests!,
-                            style: const TextStyle(
-                              color: Colors.grey,
-                              fontFamily: 'Unbounded',
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          InkWell(
-                              onTap: onMessage,
-                              child: Container(
-                                height: calculatedHeight * 0.15,
-                                width: calculatedHeight,
-                                decoration: const BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20)),
-                                ),
-                                child: const Center(
-                                    child: Text(
-                                  'MESSAGE',
-                                  style: TextStyle(
-                                    fontFamily: 'Unbounded',
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                )),
-                              )),
-                        ],
-                      ),
+                    Text(
+                      '@$userNickName',
+                      style: boldTextTheme?.caption2Bold,
+                    ),
+                    SpacingFoundation.verticalSpace4,
+                    Text(
+                      userName ?? '',
+                      style: boldTextTheme?.caption2Bold
+                          .copyWith(color: Colors.grey),
                     ),
                   ],
                 ),
-              ],
-            ).paddingAll(15),
+              ),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Container(
+                      height: calculatedWidth * 0.12,
+                      width: calculatedWidth * 0.8,
+                      decoration: BoxDecoration(
+                          gradient: GradientFoundation.findSomeoneGradient,
+                          borderRadius: BorderRadiusFoundation.all24),
+                      child: Center(
+                        child: Text('$userPoints  points',
+                            style: boldTextTheme?.caption2Bold
+                                .copyWith(fontSize: 15.w, color: Colors.black)),
+                      ),
+                    ),
+                    SpacingFoundation.verticalSpace12,
+                    Center(
+                      child: Text('${sameInterests} same interests',
+                          style: boldTextTheme?.caption2Bold
+                              .copyWith(fontSize: 15.w, color: Colors.grey)),
+                    ),
+                    SpacingFoundation.verticalSpace12,
+                    context.button(
+                        data: BaseUiKitButtonData(
+                            onPressed: onMessage,
+                            text: 'MESSAGE',
+                            fit: ButtonFit.fitWidth)),
+                  ],
+                ),
+              ),
+            ],
           ),
-        );
-      },
+        ],
+      ).paddingSymmetric(vertical: 10, horizontal: 5),
     );
   }
 }

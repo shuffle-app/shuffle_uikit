@@ -184,10 +184,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               UiKitFindSomeoneCard(
                   avatarUrl:
                       GraphicsFoundation.instance.png.mockUserAvatar.path,
-                  userNickName: '@naveen',
+                  userNickName: 'naveen',
                   userName: 'Naveen Sheoran',
-                  userPoints: 5555,
-                  sameInterests: '4 same interests',
+                  userPoints: 555,
+                  sameInterests: 4,
                   onMessage: () {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(

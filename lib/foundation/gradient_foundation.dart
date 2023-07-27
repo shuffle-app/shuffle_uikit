@@ -128,6 +128,14 @@ class GradientFoundation {
     end: Alignment.bottomCenter,
     begin: Alignment.topCenter,
   );
+  static const findSomeoneGradient = LinearGradient(
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+    colors: [
+      Color(0xFFE32900),
+      Color(0xFFC6E216),
+    ],
+  );
 
   static final yellowLinearGradient = LinearGradient(
     colors: [
