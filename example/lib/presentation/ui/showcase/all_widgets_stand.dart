@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
+
 class AllWidgetsStand extends StatefulWidget {
   const AllWidgetsStand({super.key});
 
@@ -195,6 +196,17 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 onLike: () {},
               ),
               SpacingFoundation.verticalSpace16,
+            //  UiKitFindSomeoneCard(
+            //  avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
+            //  userNickName: '@naveen',
+            //  userName: 'Naveen Sheoran',
+            //  userPoints: 55,
+            //  sameInterests: '4 same interests',
+            //  onMessage: (){
+
+            //  }
+            //  ) ,
+             SpacingFoundation.verticalSpace16,
               UiKitPopUpMenuTile(
                 title: 'Eugene Carter',
                 titleIcon: ImageWidget(
