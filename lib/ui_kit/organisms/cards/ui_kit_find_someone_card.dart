@@ -33,47 +33,84 @@ class UiKitFindSomeoneCard extends StatelessWidget {
           borderRadius: BorderRadiusFoundation.all24,
           clipBehavior: Clip.hardEdge,
           child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CircularAvatar(
-                    avatarUrl: avatarUrl ?? '',
-                    name: '',
-                    height: calculatedHeight * 0.25,
+                  Column(
+                    children: [
+                      CircularAvatar(
+                        avatarUrl: avatarUrl ?? '',
+                        name: '',
+                        height: calculatedHeight * 0.25,
+                      ),
+                      Text(
+                        userNickName ?? '',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        userName ?? '',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ],
                   ),
-                  Expanded(
-                    child: Text(
-                      userNickName ?? '',
-                    ),
+                  SizedBox(
+                    width: 10,
                   ),
-                  Expanded(
-                    child: Text(
-                      userName ?? '',
-                    ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 30,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.centerLeft,
+                              end: Alignment.centerRight,
+                              colors: [
+                                Color(0xFFE32900),
+                                Color(0xFFC6E216),
+                              ],
+                            ),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Center(
+                          child: Text(
+                            userPoints.toString() + '  points',
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        sameInterests!,
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      InkWell(
+                          onTap: onMessage,
+                          child: Container(
+                            height: 30,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Center(child: Text("Message")),
+                          )),
+                    ],
                   ),
-                ],
-              ),
-              Row(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      gradient: GradientFoundation.attentionCard,
-                    ),
-                    child: Text(
-                      userPoints.toString(),
-                      style: boldTextTheme?.caption2Medium
-                          .copyWith(color: ColorsFoundation.darkNeutral900),
-                    ),
-                  ),
-                  const Spacer(),
-                  GestureDetector(onTap: onMessage, child: Text('Message')),
                 ],
               ),
             ],
-          ).paddingAll(EdgeInsetsFoundation.all16),
+          ).paddingAll(EdgeInsetsFoundation.all20),
         );
       },
     );
