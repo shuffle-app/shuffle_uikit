@@ -181,6 +181,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ],
               ),
               SpacingFoundation.verticalSpace16,
+              UiKitFindSomeoneCard(
+                  avatarUrl:
+                      GraphicsFoundation.instance.png.mockUserAvatar.path,
+                  userNickName: '@naveen',
+                  userName: 'Naveen Sheoran',
+                  userPoints: 55,
+                  sameInterests: '4 same interests',
+                  onMessage: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: const Text('Send message'),
+                      ),
+                    );
+                  }),
+              SpacingFoundation.verticalSpace16,
               UiKitFeedbackCard(
                 avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
                 title: 'At.mosphere',
@@ -194,14 +209,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 onPressed: () {},
                 onLike: () {},
               ),
-              SpacingFoundation.verticalSpace16,
-              UiKitFindSomeoneCard(
-                  avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
-                  userNickName: '@naveen',
-                  userName: 'Naveen Sheoran',
-                  userPoints: 55,
-                  sameInterests: '4 same interests',
-                  onMessage: () {}),
               SpacingFoundation.verticalSpace16,
               UiKitPopUpMenuTile(
                 title: 'Eugene Carter',

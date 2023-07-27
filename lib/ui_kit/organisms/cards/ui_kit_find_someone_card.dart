@@ -28,89 +28,125 @@ class UiKitFindSomeoneCard extends StatelessWidget {
       builder: (context, size) {
         final calculatedHeight = size.maxWidth * 0.55;
 
-        return Material(
-          color: ColorsFoundation.surface3,
-          borderRadius: BorderRadiusFoundation.all24,
-          clipBehavior: Clip.hardEdge,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    children: [
-                      CircularAvatar(
-                        avatarUrl: avatarUrl ?? '',
-                        name: '',
-                        height: calculatedHeight * 0.25,
-                      ),
-                      Text(
-                        userNickName ?? '',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      Text(
-                        userName ?? '',
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: 30,
-                        width: 150,
-                        decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                              colors: [
-                                Color(0xFFE32900),
-                                Color(0xFFC6E216),
-                              ],
-                            ),
-                            borderRadius: BorderRadius.circular(20)),
-                        child: Center(
-                          child: Text(
-                            userPoints.toString() + '  points',
+        return Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: Material(
+            color: ColorsFoundation.surface3,
+            borderRadius: BorderRadiusFoundation.all24,
+            clipBehavior: Clip.hardEdge,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      children: [
+                        CircularAvatar(
+                          avatarUrl: avatarUrl ?? '',
+                          name: '',
+                          height: calculatedHeight * 0.25,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          userNickName ?? '',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Unbounded',
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        sameInterests!,
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      InkWell(
-                          onTap: onMessage,
-                          child: Container(
-                            height: 30,
-                            width: 150,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          userName ?? '',
+                          style: const TextStyle(
+                              color: Colors.grey,
+                              fontFamily: 'Unbounded',
+                              fontSize: 13),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      width: 30,
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      //  crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: calculatedHeight * 0.2,
+                          width: calculatedHeight,
+                          decoration: BoxDecoration(
+                              gradient: const LinearGradient(
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                                colors: [
+                                  Color(0xFFE32900),
+                                  Color(0xFFC6E216),
+                                ],
+                              ),
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Center(
+                            child: Text(
+                              userPoints.toString() + '  points',
+                              style: const TextStyle(
+                                fontFamily: 'Unbounded',
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                            child: Center(child: Text("Message")),
-                          )),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ).paddingAll(EdgeInsetsFoundation.all20),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          sameInterests!,
+                          style: const TextStyle(
+                            color: Colors.grey,
+                            fontFamily: 'Unbounded',
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        InkWell(
+                            onTap: onMessage,
+                            child: Container(
+                              height: calculatedHeight * 0.2,
+                              width: calculatedHeight,
+                              decoration: const BoxDecoration(
+                                color: Colors.white,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20)),
+                              ),
+                              child: const Center(
+                                  child: Text(
+                                'Message',
+                                style: TextStyle(
+                                  fontFamily: 'Unbounded',
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )),
+                            )),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ).paddingAll(EdgeInsetsFoundation.all20),
+          ),
         );
       },
     );
