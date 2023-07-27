@@ -186,7 +186,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       GraphicsFoundation.instance.png.mockUserAvatar.path,
                   userNickName: '@naveen',
                   userName: 'Naveen Sheoran',
-                  userPoints: 55,
+                  userPoints: 5555,
                   sameInterests: '4 same interests',
                   onMessage: () {
                     ScaffoldMessenger.of(context).showSnackBar(
