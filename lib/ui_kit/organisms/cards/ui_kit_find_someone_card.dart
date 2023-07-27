@@ -29,7 +29,7 @@ class UiKitFindSomeoneCard extends StatelessWidget {
         final calculatedHeight = size.maxWidth * 0.55;
 
         return Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.fromLTRB(30, 5, 30, 5),
           child: Material(
             color: ColorsFoundation.surface3,
             borderRadius: BorderRadiusFoundation.all24,
