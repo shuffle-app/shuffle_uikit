@@ -65,7 +65,7 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Container(
-                      height: calculatedWidth * 0.12,
+                      height: calculatedWidth * 0.1,
                       width: calculatedWidth * 0.7,
                       decoration: BoxDecoration(
                           gradient: GradientFoundation.findSomeoneGradient,
@@ -85,11 +85,14 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                           )),
                     ),
                     SpacingFoundation.verticalSpace12,
-                    context.button(
-                        data: BaseUiKitButtonData(
-                            onPressed: onMessage,
-                            text: 'MESSAGE',
-                            fit: ButtonFit.fitWidth)),
+                    SizedBox(
+                      height: calculatedWidth * 0.1,
+                      child: context.button(
+                          data: BaseUiKitButtonData(
+                              onPressed: onMessage,
+                              text: 'MESSAGE',
+                              fit: ButtonFit.fitWidth)),
+                    ),
                   ],
                 ),
               ),
