@@ -132,8 +132,8 @@ class GradientFoundation {
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
     colors: [
-      Color(0xFFE32900),
-      Color(0xFFC6E216),
+      ColorsFoundation.orange,
+      ColorsFoundation.yellow,
     ],
   );
 
