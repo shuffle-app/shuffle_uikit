@@ -607,6 +607,12 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/analytics.svg
   SvgGenImage get analytics => const SvgGenImage('assets/images/svg/analytics.svg');
 
+  /// File path: assets/images/svg/analytics_business.svg
+  SvgGenImage get analyticsBusiness => const SvgGenImage('assets/images/svg/analytics_business.svg');
+
+  /// File path: assets/images/svg/aquapark.svg
+  SvgGenImage get aquapark => const SvgGenImage('assets/images/svg/aquapark.svg');
+
   /// File path: assets/images/svg/archive.svg
   SvgGenImage get archive => const SvgGenImage('assets/images/svg/archive.svg');
 
@@ -633,6 +639,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/building.svg
   SvgGenImage get building => const SvgGenImage('assets/images/svg/building.svg');
+
+  /// File path: assets/images/svg/businessman.svg
+  SvgGenImage get businessman => const SvgGenImage('assets/images/svg/businessman.svg');
 
   /// File path: assets/images/svg/calendar.svg
   SvgGenImage get calendar => const SvgGenImage('assets/images/svg/calendar.svg');
@@ -667,14 +676,23 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/clock.svg
   SvgGenImage get clock => const SvgGenImage('assets/images/svg/clock.svg');
 
+  /// File path: assets/images/svg/club.svg
+  SvgGenImage get club => const SvgGenImage('assets/images/svg/club.svg');
+
   /// File path: assets/images/svg/cocktail.svg
   SvgGenImage get cocktail => const SvgGenImage('assets/images/svg/cocktail.svg');
+
+  /// File path: assets/images/svg/conferences.svg
+  SvgGenImage get conferences => const SvgGenImage('assets/images/svg/conferences.svg');
 
   /// File path: assets/images/svg/connection-fill.svg
   SvgGenImage get connectionFill => const SvgGenImage('assets/images/svg/connection-fill.svg');
 
   /// File path: assets/images/svg/connection-outline.svg
   SvgGenImage get connectionOutline => const SvgGenImage('assets/images/svg/connection-outline.svg');
+
+  /// File path: assets/images/svg/coworking.svg
+  SvgGenImage get coworking => const SvgGenImage('assets/images/svg/coworking.svg');
 
   /// File path: assets/images/svg/cutlery.svg
   SvgGenImage get cutlery => const SvgGenImage('assets/images/svg/cutlery.svg');
@@ -703,6 +721,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/files.svg
   SvgGenImage get files => const SvgGenImage('assets/images/svg/files.svg');
 
+  /// File path: assets/images/svg/finance.svg
+  SvgGenImage get finance => const SvgGenImage('assets/images/svg/finance.svg');
+
   /// File path: assets/images/svg/fire_white.svg
   SvgGenImage get fireWhite => const SvgGenImage('assets/images/svg/fire_white.svg');
 
@@ -711,6 +732,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/food.svg
   SvgGenImage get food => const SvgGenImage('assets/images/svg/food.svg');
+
+  /// File path: assets/images/svg/gym.svg
+  SvgGenImage get gym => const SvgGenImage('assets/images/svg/gym.svg');
 
   /// File path: assets/images/svg/hand-shake.svg
   SvgGenImage get handShake => const SvgGenImage('assets/images/svg/hand-shake.svg');
@@ -741,6 +765,12 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/info.svg
   SvgGenImage get info => const SvgGenImage('assets/images/svg/info.svg');
+
+  /// File path: assets/images/svg/investment.svg
+  SvgGenImage get investment => const SvgGenImage('assets/images/svg/investment.svg');
+
+  /// File path: assets/images/svg/karaoke.svg
+  SvgGenImage get karaoke => const SvgGenImage('assets/images/svg/karaoke.svg');
 
   /// File path: assets/images/svg/keyboard.svg
   SvgGenImage get keyboard => const SvgGenImage('assets/images/svg/keyboard.svg');
@@ -837,6 +867,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/question.svg
   SvgGenImage get question => const SvgGenImage('assets/images/svg/question.svg');
+
+  /// File path: assets/images/svg/restaurant.svg
+  SvgGenImage get restaurant => const SvgGenImage('assets/images/svg/restaurant.svg');
 
   /// File path: assets/images/svg/rising_trend_icon.svg
   SvgGenImage get risingTrendIcon => const SvgGenImage('assets/images/svg/rising_trend_icon.svg');
@@ -958,6 +991,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/water.svg
   SvgGenImage get water => const SvgGenImage('assets/images/svg/water.svg');
 
+  /// File path: assets/images/svg/waterpool.svg
+  SvgGenImage get waterpool => const SvgGenImage('assets/images/svg/waterpool.svg');
+
   /// File path: assets/images/svg/white_star.svg
   SvgGenImage get whiteStar => const SvgGenImage('assets/images/svg/white_star.svg');
 
@@ -1027,6 +1063,8 @@ class $AssetsImagesSvgGen {
         analyticsFill,
         analyticsOutline,
         analytics,
+        analyticsBusiness,
+        aquapark,
         archive,
         armchair,
         arrowLeft,
@@ -1036,6 +1074,7 @@ class $AssetsImagesSvgGen {
         bell,
         bigArrow,
         building,
+        businessman,
         calendar,
         cameraPlus,
         check,
@@ -1047,9 +1086,12 @@ class $AssetsImagesSvgGen {
         chevronUpLong,
         chevronUp,
         clock,
+        club,
         cocktail,
+        conferences,
         connectionFill,
         connectionOutline,
+        coworking,
         cutlery,
         diamond,
         dice,
@@ -1059,9 +1101,11 @@ class $AssetsImagesSvgGen {
         exclamation,
         family,
         files,
+        finance,
         fireWhite,
         flag,
         food,
+        gym,
         handShake,
         heartBrokenFill,
         heartFill,
@@ -1072,6 +1116,8 @@ class $AssetsImagesSvgGen {
         hookah,
         influencerAccountMark,
         info,
+        investment,
+        karaoke,
         keyboard,
         label,
         landmark,
@@ -1104,6 +1150,7 @@ class $AssetsImagesSvgGen {
         profileFill,
         profileOutline,
         question,
+        restaurant,
         risingTrendIcon,
         route,
         satelite,
@@ -1144,6 +1191,7 @@ class $AssetsImagesSvgGen {
         wallet,
         warning,
         water,
+        waterpool,
         whiteStar,
         x
       ];
