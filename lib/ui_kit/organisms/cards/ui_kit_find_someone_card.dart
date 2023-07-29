@@ -25,83 +25,86 @@ class UiKitFindSomeoneCard extends StatelessWidget {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
 
     return Material(
-      color: ColorsFoundation.surface3,
-      borderRadius: BorderRadiusFoundation.all24,
-      clipBehavior: Clip.hardEdge,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    CircularAvatar(
-                      avatarUrl: avatarUrl ?? '',
-                      height: calculatedWidth * 0.2,
-                    ),
-                    Text(
-                      '@$userNickName',
-                      style: boldTextTheme?.caption2Bold,
-                    ),
-                    SpacingFoundation.verticalSpace4,
-                    Text(
-                      userName ?? '',
-                      style: boldTextTheme?.caption2Bold.copyWith(
-                        color: ColorsFoundation.darkNeutral900,
+      color: ColorsFoundation.transparent,
+      child: Container(
+        clipBehavior: Clip.hardEdge,
+        decoration: BoxDecoration(
+          color: ColorsFoundation.surface3,
+          borderRadius: BorderRadiusFoundation.all24,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      CircularAvatar(
+                        avatarUrl: avatarUrl ?? '',
+                        height: calculatedWidth * 0.18,
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      height: calculatedWidth * 0.1,
-                      width: calculatedWidth * 0.7,
-                      decoration: BoxDecoration(
-                          gradient: GradientFoundation.findSomeoneGradient,
-                          borderRadius: BorderRadiusFoundation.all24),
-                      child: Center(
-                        child: Text('$userPoints  points',
-                            style: boldTextTheme?.caption2Bold
-                                .copyWith(fontSize: 15.w, color: Colors.black)),
-                      ),
-                    ),
-                    SpacingFoundation.verticalSpace12,
-                    Center(
-                      child: Text('${sameInterests} same interests',
-                          style: boldTextTheme?.caption2Bold.copyWith(
-                            fontSize: 15.w,
+                      Text('@$userNickName',
+                          style: boldTextTheme?.caption1Bold),
+                      Text(
+                        userName ?? '',
+                        style: boldTextTheme?.caption1Bold.copyWith(
                             color: ColorsFoundation.darkNeutral900,
-                          )),
-                    ),
-                    SpacingFoundation.verticalSpace12,
-                    SizedBox(
-                      height: calculatedWidth * 0.1,
-                      child: context.button(
-                          data: BaseUiKitButtonData(
-                              onPressed: onMessage,
-                              text: 'MESSAGE',
-                              fit: ButtonFit.fitWidth)),
-                    ),
-                  ],
+                            fontWeight: FontWeight.w400,
+                            fontSize: 13.w),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ],
-      ).paddingSymmetric(
-          vertical: SpacingFoundation.verticalSpacing10,
-          horizontal: SpacingFoundation.horizontalSpacing4),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        height: calculatedWidth * 0.08,
+                        decoration: BoxDecoration(
+                            gradient: GradientFoundation.findSomeoneGradient,
+                            borderRadius: BorderRadiusFoundation.all24),
+                        child: Center(
+                          child: Text('$userPoints  points',
+                              style: boldTextTheme?.caption1Bold.copyWith(
+                                  fontSize: 13.w, color: Colors.black)),
+                        ),
+                      ),
+                      SpacingFoundation.verticalSpace16,
+                      Center(
+                        child: Text('${sameInterests} same interests',
+                            style: boldTextTheme?.caption1Bold.copyWith(
+                                fontSize: 13.w,
+                                color: ColorsFoundation.darkNeutral900,
+                                fontWeight: FontWeight.w500)),
+                      ),
+                      SpacingFoundation.verticalSpace16,
+                      SizedBox(
+                        height: calculatedWidth * 0.08,
+                        width: calculatedWidth,
+                        child: context.smallButton(
+                            data: BaseUiKitButtonData(
+                                onPressed: onMessage,
+                                text: 'Message',
+                                fit: ButtonFit.fitWidth)),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ).paddingSymmetric(
+            vertical: SpacingFoundation.verticalSpacing16,
+            horizontal: SpacingFoundation.horizontalSpacing16),
+      ),
     );
   }
 }

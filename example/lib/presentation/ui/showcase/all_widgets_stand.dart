@@ -185,7 +185,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   avatarUrl:
                       GraphicsFoundation.instance.png.mockUserAvatar.path,
                   userNickName: 'naveen',
-                  userName: 'Naveen Sheoran',
+                  userName: 'Naveen',
                   userPoints: 555,
                   sameInterests: 4,
                   onMessage: () {

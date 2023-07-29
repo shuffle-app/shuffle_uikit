@@ -51,6 +51,9 @@ dependencies:
   video_player: ^2.7.0
   smooth_video_progress: ^0.0.4
   countries_flag: ^1.0.0
+  carousel_slider: ^4.2.1
+  wheel_chooser: ^1.1.2
+  wheel_slider: ^1.1.1
 
 
 dev_dependencies:
