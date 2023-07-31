@@ -18,8 +18,6 @@ class UiKitHorizontalStraightScroll extends StatelessWidget {
         autoPlay: false,
         enlargeCenterPage: true,
         viewportFraction: 0.75,
-        enlargeFactor: 0.4,
-        enlargeStrategy: CenterPageEnlargeStrategy.height,
         aspectRatio: 2,
         initialPage: 2,
       ),
