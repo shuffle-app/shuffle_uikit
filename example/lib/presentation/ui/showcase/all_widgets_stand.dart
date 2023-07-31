@@ -180,6 +180,43 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ),
                 ],
               ),
+               SpacingFoundation.verticalSpace16,
+              UiKitHorizontalScrollCardCover(
+                itemCount: 5,
+                itemBuilder: (BuildContext context, int index) =>
+                    UiKitFeedbackCard(
+                  avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
+                  title: 'At.mosphere',
+                  datePosted: DateTime.now().subtract(const Duration(days: 2)),
+                  rating: 5,
+                  companyAnswered: false,
+                  helpfulCount: 1,
+                  text: 'Came for lunch with my sister. '
+                      'We loved our Thai-style mains which were amazing with lots of flavour, very impressive for a vegetarian restaurant. '
+                      'But the service was below average and the chips were too terrible to finish.',
+                  onPressed: () {},
+                  onLike: () {},
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              UiKitHorizontalStraightScroll(
+                  children: List.generate(
+                5,
+                (index) => UiKitFeedbackCard(
+                  avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
+                  title: 'At.mosphere',
+                  datePosted: DateTime.now().subtract(const Duration(days: 2)),
+                  rating: 5,
+                  companyAnswered: false,
+                  helpfulCount: 1,
+                  text: 'Came for lunch with my sister. '
+                      'We loved our Thai-style mains which were amazing with lots of flavour, very impressive for a vegetarian restaurant. '
+                      'But the service was below average and the chips were too terrible to finish.',
+                  onPressed: () {},
+                  onLike: () {},
+                ),
+              )),
+              SpacingFoundation.verticalSpace16,
               UiKitHorizontalScroll(
                   itemSize: 5,
                   totalCount: 5,

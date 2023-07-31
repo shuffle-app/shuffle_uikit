@@ -40,3 +40,5 @@ export 'ui_kit_bottom_modal_sheet/ui_kit_bottom_modal_sheet.dart';
 export 'wheel_value_selector/ui_kit_horizontal_wheel_number_selector.dart';
 export 'video_player/popup_video_player.dart';
 export 'horizontal_scroll/ui_kit_horizontal_scroll.dart';
+export 'horizontal_scroll/ui_kit_horizontal_straight_scroll .dart';
+export 'horizontal_scroll/ui_kit_horizontal_scroll_card_cover.dart';
