@@ -6,8 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:video_player/video_player.dart';
 
 class ImageWidget extends StatelessWidget {
+  static const placeholder = Shimmer(
+      gradient: GradientFoundation.greyGradient,
+      child: UiKitBigPhotoErrorWidget());
+
   final String? link;
   final AssetGenImage? rasterAsset;
   final SvgGenImage? svgAsset;
@@ -32,6 +37,15 @@ class ImageWidget extends StatelessWidget {
     this.errorWidget,
     this.colorBlendMode,
   }) : super(key: key);
+
+  Future _takeFrameFromVideo(String link) async {
+    final VideoPlayerController controller =
+        VideoPlayerController.networkUrl(Uri.parse(link));
+    await controller.initialize();
+    await controller.seekTo(const Duration(seconds: 1));
+
+    return controller;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +73,16 @@ class ImageWidget extends StatelessWidget {
         child: errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else if (link!.substring(0, 4) == 'http') {
+      if (link!.split('.').lastOrNull == 'mp4') {
+        FutureBuilder(
+            future: _takeFrameFromVideo(link!),
+            builder: (context, snapshot) {
+              return snapshot.connectionState == ConnectionState.done
+                  ? VideoPlayer(snapshot.data as VideoPlayerController)
+                  : placeholder;
+            });
+      }
+
       // !.startsWith("http://") || link!.startsWith("https://")) {
       return CachedNetworkImage(
         imageUrl: link!,
@@ -76,10 +100,7 @@ class ImageWidget extends StatelessWidget {
 
           return errorWidget ?? const DefaultImageErrorWidget();
         },
-        placeholder: (_, __) => const Shimmer(
-          gradient: GradientFoundation.greyGradient,
-          child: UiKitBigPhotoErrorWidget()),
-        // placeholder: (_, __) => CircularProgressIndicator.adaptive(backgroundColor: color,),
+        placeholder: (_, __) => placeholder,
       );
     } else if (link!.contains('svg')) {
       return SvgPicture.asset(

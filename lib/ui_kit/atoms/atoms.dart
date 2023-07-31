@@ -49,3 +49,5 @@ export 'user/influencer_account_mark.dart';
 export 'user/member_plate.dart';
 export 'user/premium_account_mark.dart';
 export 'user/pro_account_mark.dart';
+export 'badges/ui_kit_badge_colored.dart';
+export 'badges/ui_kit_badge_outlined.dart';
