@@ -42,3 +42,4 @@ export 'video_player/popup_video_player.dart';
 export 'horizontal_scroll/ui_kit_horizontal_scroll.dart';
 export 'horizontal_scroll/ui_kit_horizontal_straight_scroll .dart';
 export 'horizontal_scroll/ui_kit_horizontal_scroll_card_cover.dart';
+export 'horizontal_scroll/ui_kit_horizontal_scroll_3D.dart';

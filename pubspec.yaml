@@ -36,6 +36,7 @@ dependencies:
   wheel_slider: ^1.1.1
   carousel_slider: ^4.2.1
   card_swiper: ^3.0.1
+  flutter_gallery_3d: ^1.1.1
 
   #dialogs widgets
   popover: ^0.2.8+2
