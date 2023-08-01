@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -31,9 +29,8 @@ class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
           top: 12.h,
           left: 12.w,
           child: BlurredPlaceVideoPlayButton(
-            onPressed: () {
-              log('Play', name: 'UiKitMediaWidget');
-            },
+            onPressed: () => Navigator.of(context, rootNavigator: true)
+                .push(PopUpVideoPlayer(videoUri: media.videoLink!)),
           ),
         ),
       ],
