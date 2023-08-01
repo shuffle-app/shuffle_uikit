@@ -11,6 +11,7 @@ export 'cards/ui_kit_decorated_action_card.dart';
 export 'cards/ui_kit_extended_feedback_card.dart';
 export 'cards/ui_kit_extended_influencer_feedback_card.dart';
 export 'cards/ui_kit_feedback_card.dart';
+export 'cards/ui_kit_find_someone_card.dart';
 export 'cards/ui_kit_icon_hint_card.dart';
 export 'cards/ui_kit_overflown_action_card.dart';
 export 'cards/ui_kit_titled_card_with_background.dart';
