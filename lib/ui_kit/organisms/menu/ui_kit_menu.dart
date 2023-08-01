@@ -59,7 +59,8 @@ class UiKitMenu<T> extends StatelessWidget {
         onTap: () {
           //if keyboard is opened, unfocus it
           FocusManager.instance.primaryFocus?.unfocus();
-          final elementsHeight = ((items.length + 1) * 41.h) ;
+          final elementsHeight =
+              singleType ? (items.length + 1) * 41.h : (items.where((element) => element.type == allTypes?.first).length + 1) * 41.h;
           // final elementsHeight = ((items.length + 1) * 52) + (SpacingFoundation.verticalSpacing16 * 3);
           final topPadding = max(1.sh - elementsHeight, 0.0);
           showUiKitGeneralFullScreenDialog(
