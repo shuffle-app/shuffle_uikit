@@ -5,6 +5,7 @@ export './common/sliding_chip.dart';
 export './common/ui_kit_card_wrapper.dart';
 export './common/ui_kit_html_presenter.dart';
 export './place/ui_kit_titled_description_grid_widget.dart';
+export 'animation/adaptive_loader.dart';
 export 'animation/lottie_animation.dart';
 export 'app_bar/app_bar_back_button.dart';
 export 'app_bar/app_bar_title.dart';

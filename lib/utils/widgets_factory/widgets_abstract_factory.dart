@@ -99,12 +99,14 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   ButtonFactory createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred}) {
     if ((data?.text != null && data!.text.isNotEmpty) || data?.icon != null) {
       return SmallOutlinedButton(
-          onPressed: data?.onPressed,
-          blurred: blurred ?? false,
-          text: data?.text ?? '',
-          borderColor: color,
-          textColor: color,
-          icon: data!.icon as ImageWidget?);
+        onPressed: data?.onPressed,
+        blurred: blurred ?? false,
+        text: data?.text ?? '',
+        borderColor: color,
+        textColor: color,
+        icon: data!.icon as ImageWidget?,
+        loading: data.loading,
+      );
     } else {
       throw UnimplementedError('Outlined button with your parameters is not implemented');
     }
@@ -132,13 +134,16 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       return OutlinedIconButton(
         icon: data.icon,
         onPressed: data.onPressed,
+        loading: data.loading,
       );
-    } if(data.text.isNotEmpty){
+    }
+    if (data.text.isNotEmpty) {
       return OutlinedTextButton(
         text: data.text,
         onPressed: data.onPressed,
+        loading: data.loading,
       );
-  } else {
+    } else {
       throw UnimplementedError('Outlined button with your parameters is not implemented');
     }
   }
@@ -154,17 +159,20 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         icon: data.icon!,
         onPressed: data.onPressed,
         borderRadius: BorderRadiusFoundation.max,
+        loading: data.loading,
       );
     } else if (!hasIcon && data.text.isNotEmpty) {
       return GradientButton(
         text: data.text,
         onPressed: data.onPressed,
+        loading: data.loading,
       );
     } else if (hasIcon && data.text.isNotEmpty) {
       return GradientButtonWithTextAndIcon(
         text: data.text,
         icon: data.icon!,
         onPressed: data.onPressed,
+        loading: data.loading,
       );
     } else {
       throw UnimplementedError('Gradient button with your parameters is not implemented');
@@ -199,6 +207,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         text: data.text,
         onPressed: data.onPressed,
         icon: data.icon!,
+        loading: data.loading,
       );
     } else if (onlyIconButton) {
       return FilledIconButton(
@@ -215,6 +224,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         fit: data.fit,
         text: data.text,
         onPressed: data.onPressed,
+        loading: data.loading,
       );
     }
   }
@@ -242,7 +252,12 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     }
 
-    return SmallOrdinaryButton(text: data.text, onPressed: data.onPressed, uppercase: uppercase);
+    return SmallOrdinaryButton(
+      text: data.text,
+      onPressed: data.onPressed,
+      uppercase: uppercase,
+      loading: data.loading,
+    );
   }
 
   @override

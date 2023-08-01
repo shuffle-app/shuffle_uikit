@@ -8,12 +8,14 @@ class UiKitVerticalChip extends StatelessWidget {
   final VoidCallback? onTap;
   final bool selected;
   final AutoSizeGroup? autoSizeGroup;
+  final Size? size;
 
   const UiKitVerticalChip({
     Key? key,
     required this.caption,
     required this.sign,
     this.onTap,
+    this.size,
     this.autoSizeGroup,
     this.selected = false,
   }) : super(key: key);
@@ -27,6 +29,8 @@ class UiKitVerticalChip extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Ink(
+          width: size?.width,
+          height: size?.height,
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all24,
           ),
