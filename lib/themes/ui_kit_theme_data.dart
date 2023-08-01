@@ -26,6 +26,13 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
         foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
         overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
       );
+  ButtonStyle get textButtonLabelSmallStyle => ButtonStyle(
+    textStyle: MaterialStateTextStyle.resolveWith((states) {
+      return regularTextTheme.labelSmall;
+    }),
+    foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+    overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
+  );
 
   UiKitThemeData({
     required this.iconInputTheme,

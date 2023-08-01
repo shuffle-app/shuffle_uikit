@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class BaseUiKitMedia {
@@ -10,6 +11,9 @@ abstract class BaseUiKitMedia {
     required this.type,
     this.videoLink,
   });
+
+  ImageWidget widget(Size size) =>
+      ImageWidget(link: link, height: size.height, width: size.width,fit: BoxFit.cover);
 }
 
 class UiKitMediaPhoto extends BaseUiKitMedia {
