@@ -135,7 +135,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       return OutlinedIconButton(
         icon: data.icon,
         onPressed: data.onPressed,
-          hideBorder: hideBorder ?? false
+        hideBorder: hideBorder ?? false,
         loading: data.loading,
       );
     }
