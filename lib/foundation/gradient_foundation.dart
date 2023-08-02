@@ -128,6 +128,17 @@ class GradientFoundation {
     end: Alignment.bottomCenter,
     begin: Alignment.topCenter,
   );
+  static const findSomeoneGradient = RadialGradient(
+    center: Alignment(1.1, 1.0),
+    focal: Alignment(1.1, 1.0),
+    radius: 8,
+    colors: [
+      ColorsFoundation.yellow,
+      ColorsFoundation.orange,
+      ColorsFoundation.pink,
+    ],
+    stops: [0.2, 0.8, 1.0],
+  );
 
   static final yellowLinearGradient = LinearGradient(
     colors: [

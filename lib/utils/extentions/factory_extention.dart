@@ -61,11 +61,13 @@ extension FactoryExtention on BuildContext {
   Widget outlinedButton({
     required BaseUiKitButtonData data,
     Color? color,
+    bool? hideBorder
   }) {
     return WidgetsFactory.of(this)!
         .createOutlinedButton(
           data: data,
           color: color,
+        hideBorder:hideBorder
         )
         .build(this);
   }

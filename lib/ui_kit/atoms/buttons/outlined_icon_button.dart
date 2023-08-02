@@ -7,12 +7,14 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
   final Widget? icon;
   final VoidCallback? onPressed;
   final bool? loading;
+  final bool hideBorder;
 
   const OutlinedIconButton({
     Key? key,
     this.icon,
     this.onPressed,
     this.loading,
+    this.hideBorder = false,
   }) : super(key: key);
 
   @override
@@ -23,7 +25,7 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
       clipBehavior: Clip.hardEdge,
       color: enabled ? Colors.white.withOpacity(0.01) : ColorsFoundation.darkNeutral300,
       shape: CircleBorder(
-        side: BorderSide(
+        side: hideBorder ? BorderSide.none: BorderSide(
           color: enabled ? Colors.white : ColorsFoundation.darkNeutral500,
           width: 2.w,
         ),

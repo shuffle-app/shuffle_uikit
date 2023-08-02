@@ -129,11 +129,13 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     required BaseUiKitButtonData data,
     bool? blurred,
     Color? color,
+    bool? hideBorder,
   }) {
     if (data.text.isEmpty && data.icon != null) {
       return OutlinedIconButton(
         icon: data.icon,
         onPressed: data.onPressed,
+          hideBorder: hideBorder ?? false
         loading: data.loading,
       );
     }

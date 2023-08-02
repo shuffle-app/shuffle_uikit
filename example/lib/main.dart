@@ -28,7 +28,11 @@ class _MyAppState extends State<MyApp> {
       designSize: const Size(320, 568),
       minTextAdapt: true,
       builder: (context, child) {
-        return UiKitTheme(
+        return GestureDetector(
+            onTap: (){
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
+            child: UiKitTheme(
           onThemeUpdated: (theme) => setState(() => _theme = theme),
           child: WidgetsFactory(
             child: MaterialApp(
@@ -39,7 +43,7 @@ class _MyAppState extends State<MyApp> {
               initialRoute: AppRoutes.initial,
             ),
           ),
-        );
+        ));
       },
     );
   }
