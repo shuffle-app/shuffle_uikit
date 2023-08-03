@@ -36,19 +36,16 @@ class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFac
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              if (loading ?? false) const AdaptiveLoader(),
-              if (!(loading ?? false)) ...[
-                Text(
-                  text,
-                  style: context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black),
-                ),
-                SpacingFoundation.horizontalSpace8,
-                icon,
-              ],
+              Text(
+                text,
+                style: context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black),
+              ),
+              SpacingFoundation.horizontalSpace8,
+              icon,
             ],
           ),
         ),
       ),
-    );
+    ).loadingWrap(loading ?? false);
   }
 }

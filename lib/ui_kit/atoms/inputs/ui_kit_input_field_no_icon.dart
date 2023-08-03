@@ -38,14 +38,6 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
   final GlobalKey<FormFieldState> _key = GlobalKey<FormFieldState>();
 
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      _key.currentState?.validate();
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     final uiKitTheme = context.uiKitTheme;
     final inputTheme = uiKitTheme?.noIconInputTheme;

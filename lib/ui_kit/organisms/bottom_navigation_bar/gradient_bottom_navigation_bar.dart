@@ -1,7 +1,8 @@
 import 'dart:async';
+
+import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:rxdart/subjects.dart';
-import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:tabnavigator/tabnavigator.dart';
 
@@ -69,9 +70,19 @@ class GradientBottomNavigationBarItem extends TabType {
     unselectedIcon: GraphicsFoundation.instance.svg.spinnerOutline,
     index: 1,
   );
+  static final docs = GradientBottomNavigationBarItem._(
+    selectedIcon: GraphicsFoundation.instance.svg.docsFill,
+    unselectedIcon: GraphicsFoundation.instance.svg.docsOutline,
+    index: 1,
+  );
   static final shuffle = GradientBottomNavigationBarItem._(
     selectedIcon: GraphicsFoundation.instance.svg.shuffleFill,
     unselectedIcon: GraphicsFoundation.instance.svg.shuffleOutline,
+    index: 2,
+  );
+  static final analytics = GradientBottomNavigationBarItem._(
+    selectedIcon: GraphicsFoundation.instance.svg.analyticsFill,
+    unselectedIcon: GraphicsFoundation.instance.svg.analyticsOutline,
     index: 2,
   );
   static final search = GradientBottomNavigationBarItem._(
@@ -79,9 +90,19 @@ class GradientBottomNavigationBarItem extends TabType {
     unselectedIcon: GraphicsFoundation.instance.svg.searchOutline,
     index: 3,
   );
+  static final connection = GradientBottomNavigationBarItem._(
+    selectedIcon: GraphicsFoundation.instance.svg.connectionFill,
+    unselectedIcon: GraphicsFoundation.instance.svg.connectionOutline,
+    index: 3,
+  );
   static final profile = GradientBottomNavigationBarItem._(
     selectedIcon: GraphicsFoundation.instance.svg.profileFill,
     unselectedIcon: GraphicsFoundation.instance.svg.profileOutline,
+    index: 4,
+  );
+  static final settings = GradientBottomNavigationBarItem._(
+    selectedIcon: GraphicsFoundation.instance.svg.settingsFill,
+    unselectedIcon: GraphicsFoundation.instance.svg.settingsOutline,
     index: 4,
   );
 
@@ -97,13 +118,11 @@ class GradientBottomNavigationBarItem extends TabType {
 
 class GradientBottomNavigationBarController {
   final int tabItemsCount;
-  final BehaviorSubject<GradientBottomNavigationBarItem> _changeController =
-      BehaviorSubject<GradientBottomNavigationBarItem>();
+  final BehaviorSubject<GradientBottomNavigationBarItem> _changeController = BehaviorSubject<GradientBottomNavigationBarItem>();
 
   Stream<TabType> get tabStream => _changeController.stream;
 
-  GradientBottomNavigationBarItem? get selectedTabState =>
-      _changeController.valueOrNull;
+  GradientBottomNavigationBarItem? get selectedTabState => _changeController.valueOrNull;
 
   GradientBottomNavigationBarController({required this.tabItemsCount});
 
@@ -119,17 +138,13 @@ class GradientBottomNavigationBarController {
     // Если нажатый таб уже выбран
     // удаляем другие страницы, оставляем только первую страницу
     if (_isTappedTabSelectedAlready && await _isNotLastPage(item)) {
-      tabState.currentState?.mappedNavKeys[item]?.currentState
-          ?.popUntil((route) => route.isFirst);
+      tabState.currentState?.mappedNavKeys[item]?.currentState?.popUntil((route) => route.isFirst);
     } else {
       _changeController.add(item);
     }
   }
 
   /// Возвращает true если имеет дочерние можно вернуться назад
-  Future<bool> _isNotLastPage(
-          GradientBottomNavigationBarItem selectedTab) async =>
-      await tabState.currentState?.mappedNavKeys[selectedTab]?.currentState
-          ?.maybePop() ??
-      false;
+  Future<bool> _isNotLastPage(GradientBottomNavigationBarItem selectedTab) async =>
+      await tabState.currentState?.mappedNavKeys[selectedTab]?.currentState?.maybePop() ?? false;
 }
