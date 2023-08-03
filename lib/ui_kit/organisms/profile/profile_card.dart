@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_avatar.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_description.dart';
+import 'package:shuffle_uikit/ui_kit/organisms/profile/profile_card_body.dart';
 
 class ProfileCard extends StatelessWidget {
   final String? nickname;
@@ -12,95 +11,61 @@ class ProfileCard extends StatelessWidget {
   final VoidCallback? onFollow;
   final List<String>? interests;
   final List<String>? matchingInterests;
+  final List<UiKitStats>? profileStats;
+  final Widget? badge;
+  final ProfileCardType? profileType;
+  final List<UiKitTag>? tags;
 
   const ProfileCard({
     Key? key,
     this.nickname,
+    this.profileStats,
     this.description,
     this.avatarUrl,
     this.name,
+    this.badge,
     this.followers,
     this.onFollow,
     this.interests,
     this.matchingInterests,
+    this.profileType,
+    this.tags,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return UiKitCardWrapper(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          /// Frame 359 in Figma
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              if (followers != null && onFollow != null)
-                ProfileAvatar(
-                  avatarLink: avatarUrl ?? '',
-                  name: name,
-                )
-              else
-                CircularAvatar(
-                  height: 48,
-                  avatarUrl: avatarUrl ?? '',
-                  name: name,
-                ),
-              if (followers != null && onFollow != null) SpacingFoundation.horizontalSpace16 else SpacingFoundation.horizontalSpace12,
-              Expanded(
-                child: ProfileInfo(
-                  name: name,
-                  nickname: '@${nickname ?? ''}',
-                  followers: followers,
-                  onFollow: onFollow,
-                ),
-              ),
-            ],
-          ),
-          if (description != null) ...[
-            SpacingFoundation.verticalSpace16,
-            ProfileDescription(
-              text: description ?? '',
-            )
-          ],
-          Stack(children: [
-            ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: 100.h),
-                child: SingleChildScrollView(
-                    child: ProfileInterests(
-                  matchingInterests: matchingInterests,
-                  profileInterests: interests ?? [],
-                ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing16))),
-            Container(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                colors: [context.uiKitTheme?.cardColor ?? ColorsFoundation.surface3, Colors.transparent],
-                tileMode: TileMode.decal,
-                end: Alignment.bottomCenter,
-                begin: Alignment.topCenter,
-              )),
-              height: 16.sp,
-              width: double.infinity,
-            ),
-            Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  alignment: Alignment.bottomCenter,
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                    colors: [context.uiKitTheme?.cardColor ?? ColorsFoundation.surface3, Colors.transparent],
-                    tileMode: TileMode.decal,
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                  )),
-                  height: 16.sp,
-                )),
-          ]).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing16),
-        ],
-      ).paddingLTRB(EdgeInsetsFoundation.all16, EdgeInsetsFoundation.all16, EdgeInsetsFoundation.all16, 0),
+    final child = ProfileCardBody(
+      description: description,
+      avatarUrl: avatarUrl,
+      interests: interests,
+      matchingInterests: matchingInterests,
+      canFollow: followers != null && onFollow != null,
+      name: name,
+      nickname: nickname ?? '',
+      followers: followers,
+      onFollow: onFollow,
+      profileType: profileType,
+      tags: tags,
+      profileStats: profileStats,
     );
+    if (badge != null) {
+      return Stack(
+        fit: StackFit.passthrough,
+        children: [
+          child.paddingOnly(
+            top: EdgeInsetsFoundation.vertical4,
+            right: EdgeInsetsFoundation.horizontal4,
+          ),
+          Align(
+            alignment: Alignment.topRight,
+            child: badge,
+          ),
+        ],
+      );
+    }
+
+    return child;
   }
 }
+
+enum ProfileCardType { personal, company }
