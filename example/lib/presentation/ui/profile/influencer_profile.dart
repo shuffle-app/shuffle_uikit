@@ -16,12 +16,14 @@ class InfluencerProfile extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                const ProfileCard(
+                ProfileCard(
                   nickname: '@marywill',
                   description: 'Just walking here and there trying to find something unique and interesting to show you!',
                   avatarUrl: 'assets/images/png/profile_avatar.png',
                   interests: ['Restaurants', 'Hookah', 'Roller Coaster', 'Swimmings'],
+                  profileType: ProfileCardType.personal,
                   followers: 2650,
+                  onFollow: () {},
                 ).paddingAll(EdgeInsetsFoundation.all16),
                 const ProfileHighlights(
                   placesVisited: 934,

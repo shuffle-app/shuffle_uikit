@@ -5,10 +5,12 @@ class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFac
   final VoidCallback? onPressed;
   final String text;
   final Widget icon;
+  final bool? loading;
 
   const GradientButtonWithTextAndIcon({
     Key? key,
     this.onPressed,
+    this.loading,
     required this.text,
     required this.icon,
   }) : super(key: key);
@@ -44,6 +46,6 @@ class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFac
           ),
         ),
       ),
-    );
+    ).loadingWrap(loading ?? false);
   }
 }

@@ -10,6 +10,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
   final Color? textColor;
   final ImageWidget? icon;
   final bool blurred;
+  final bool? loading;
 
   const SmallOutlinedButton({
     Key? key,
@@ -19,11 +20,14 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
     this.textColor,
     required this.blurred,
     this.icon,
+    this.loading,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(color: textColor);
+    double blurValue = 0;
+    if (blurred) blurValue = 18;
 
     return Material(
       borderRadius: text.isEmpty ? null : BorderRadiusFoundation.max,
@@ -43,29 +47,24 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
             ),
             color: text.isEmpty ? Colors.white.withOpacity(0.1) : null,
           ),
-          child:
-              // BackdropFilter(
-              //     filter: ImageFilter.blur(
-              //         sigmaX: blurred && !(text.isEmpty && icon != null) ? 18 : 0,
-              //         sigmaY: blurred && !(text.isEmpty && icon != null) ? 18 : 0),
-              //     child:
-              text.isEmpty && icon != null
-                  ? ClipOval(
-                      child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: blurred ? 18 : 0, sigmaY: blurred ? 18 : 0),
-                          child: icon!.paddingAll(EdgeInsetsFoundation.all8)))
-                  : Center(
-                      child: Text(
-                      text,
-                      style: textStyle,
-                    )
-                          // )
-                          .paddingSymmetric(
-                      vertical: EdgeInsetsFoundation.vertical4,
-                      horizontal: EdgeInsetsFoundation.horizontal16,
-                    )),
+          child: text.isEmpty && icon != null
+              ? ClipOval(
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: blurValue, sigmaY: blurValue),
+                    child: icon!.paddingAll(EdgeInsetsFoundation.all8),
+                  ),
+                )
+              : Center(
+                  child: Text(
+                    text,
+                    style: textStyle,
+                  ).paddingSymmetric(
+                    vertical: EdgeInsetsFoundation.vertical4,
+                    horizontal: EdgeInsetsFoundation.horizontal16,
+                  ),
+                ),
         ),
       ),
-    );
+    ).loadingWrap(loading ?? false);
   }
 }

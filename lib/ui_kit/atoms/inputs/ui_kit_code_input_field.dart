@@ -9,10 +9,12 @@ class UiKitCodeInputField extends StatelessWidget {
   /// the user should enter
   final int codeDigitsCount;
   final ValueChanged<String>? onDone;
+  final TextEditingController? controller;
 
   const UiKitCodeInputField({
     super.key,
     required this.codeDigitsCount,
+    this.controller,
     this.onDone,
   });
 
@@ -35,6 +37,7 @@ class UiKitCodeInputField extends StatelessWidget {
       }
 
       return Pinput(
+        controller: controller,
         separator: SpacingFoundation.horizontalSpace12,
         length: codeDigitsCount,
         autofocus: true,

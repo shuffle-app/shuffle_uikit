@@ -256,6 +256,21 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/hindu.png
   AssetGenImage get hindu => const AssetGenImage('assets/images/png/hindu.png');
 
+  /// File path: assets/images/png/invite_mock_1.png
+  AssetGenImage get inviteMock1 => const AssetGenImage('assets/images/png/invite_mock_1.png');
+
+  /// File path: assets/images/png/invite_mock_2.png
+  AssetGenImage get inviteMock2 => const AssetGenImage('assets/images/png/invite_mock_2.png');
+
+  /// File path: assets/images/png/invite_mock_3.png
+  AssetGenImage get inviteMock3 => const AssetGenImage('assets/images/png/invite_mock_3.png');
+
+  /// File path: assets/images/png/invite_mock_4.png
+  AssetGenImage get inviteMock4 => const AssetGenImage('assets/images/png/invite_mock_4.png');
+
+  /// File path: assets/images/png/invite_mock_5.png
+  AssetGenImage get inviteMock5 => const AssetGenImage('assets/images/png/invite_mock_5.png');
+
   /// File path: assets/images/png/jordan_flag.png
   AssetGenImage get jordanFlag => const AssetGenImage('assets/images/png/jordan_flag.png');
 
@@ -270,6 +285,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/mock_ad_banner.png
   AssetGenImage get mockAdBanner => const AssetGenImage('assets/images/png/mock_ad_banner.png');
+
+  /// File path: assets/images/png/mock_avatar.png
+  AssetGenImage get mockAvatar => const AssetGenImage('assets/images/png/mock_avatar.png');
 
   /// File path: assets/images/png/mock_swiper_card.png
   AssetGenImage get mockSwiperCard => const AssetGenImage('assets/images/png/mock_swiper_card.png');
@@ -393,11 +411,17 @@ class $AssetsImagesPngGen {
         geoPermit,
         healthPermit,
         hindu,
+        inviteMock1,
+        inviteMock2,
+        inviteMock3,
+        inviteMock4,
+        inviteMock5,
         jordanFlag,
         joyEmoji,
         judaism,
         loveEmoji,
         mockAdBanner,
+        mockAvatar,
         mockSwiperCard,
         mockUserAvatar,
         muslimFlag,

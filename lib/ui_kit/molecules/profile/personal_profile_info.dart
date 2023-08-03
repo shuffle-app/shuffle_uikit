@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class ProfileInfo extends StatelessWidget {
+class PersonalProfileInfo extends StatelessWidget {
   final String nickname;
   final String? name;
   final int? followers;
   final VoidCallback? onFollow;
 
-  const ProfileInfo({
+  const PersonalProfileInfo({
     Key? key,
     required this.nickname,
     this.name,
@@ -24,8 +24,7 @@ class ProfileInfo extends StatelessWidget {
 
     return Column(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment:
-          name == null ? CrossAxisAlignment.stretch : CrossAxisAlignment.start,
+      crossAxisAlignment: name == null ? CrossAxisAlignment.stretch : CrossAxisAlignment.start,
       children: [
         RichText(
           text: TextSpan(
@@ -37,9 +36,7 @@ class ProfileInfo extends StatelessWidget {
               if (followers != null) ...[
                 TextSpan(
                   text: '\nFollowers\n',
-                  style: boldTextTheme?.caption1Medium
-                          .copyWith(color: ColorsFoundation.darkNeutral900) ??
-                      fallBackStyle,
+                  style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900) ?? fallBackStyle,
                 ),
                 TextSpan(
                   text: followers!.toString(),
@@ -48,19 +45,16 @@ class ProfileInfo extends StatelessWidget {
               ] else
                 TextSpan(
                   text: '\n$nickname',
-                  style: boldTextTheme?.body ??
-                      fallBackStyle,
+                  style: boldTextTheme?.body ?? fallBackStyle,
                 )
             ],
           ),
-          textAlign: name == null ? TextAlign.center:TextAlign.start,
+          textAlign: name == null ? TextAlign.center : TextAlign.start,
         ),
         if (onFollow != null) ...[
           SpacingFoundation.verticalSpace12,
           context.button(
-          data: BaseUiKitButtonData(
-            text: 'follow'.toUpperCase(),
-            onPressed: onFollow),
+            data: BaseUiKitButtonData(text: 'follow'.toUpperCase(), onPressed: onFollow),
           )
         ],
       ],

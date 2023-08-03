@@ -5,10 +5,12 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final Widget icon;
   final String text;
+  final bool? loading;
 
   const OrdinaryButtonWithIcon({
     Key? key,
     this.onPressed,
+    this.loading,
     required this.icon,
     required this.text,
   }) : super(key: key);
@@ -32,6 +34,6 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
           icon,
         ],
       ),
-    );
+    ).loadingWrap(loading ?? false);
   }
 }

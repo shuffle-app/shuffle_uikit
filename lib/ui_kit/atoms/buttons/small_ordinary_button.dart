@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/utils/extentions/ui_kit_theme_extention.dart';
-import 'package:shuffle_uikit/utils/widgets_factory/widgets_abstract_factory.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
   final bool uppercase;
+  final bool? loading;
 
   const SmallOrdinaryButton({
     Key? key,
     required this.text,
     this.onPressed,
+    this.loading,
     this.uppercase = true,
   }) : super(key: key);
 
@@ -23,9 +24,9 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
       style: theme?.smallOrdinaryButtonStyle,
       onPressed: onPressed,
       child: Text(
-        uppercase? text.toUpperCase() : text,
+        uppercase ? text.toUpperCase() : text,
         style: textStyle?.copyWith(color: Colors.black),
       ),
-    );
+    ).loadingWrap(loading ?? false);
   }
 }
