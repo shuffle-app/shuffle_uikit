@@ -5,7 +5,7 @@ extension NavigatorExtention on BuildContext {
   bool canPop() => Navigator.canPop(this);
 
   /// performs a simple [Navigator.pop] action and returns given [result]
-  void pop<T>({result}) => Navigator.pop(this, result);
+  void pop<T>({T? result}) => Navigator.pop(this, result);
 
   /// performs a simple [Navigator.push] action with given [route]
   Future<dynamic> push(

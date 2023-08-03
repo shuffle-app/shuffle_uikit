@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/organisms/switches/ui_kit_gradient_switch.dart';
 
 class UiKitGradientSwitchTile extends StatelessWidget {
   final String title;
