@@ -47,26 +47,24 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
             ),
             color: text.isEmpty ? Colors.white.withOpacity(0.1) : null,
           ),
-          child: loading ?? false
-              ? const AdaptiveLoader()
-              : text.isEmpty && icon != null
-                  ? ClipOval(
-                      child: BackdropFilter(
-                        filter: ImageFilter.blur(sigmaX: blurValue, sigmaY: blurValue),
-                        child: icon!.paddingAll(EdgeInsetsFoundation.all8),
-                      ),
-                    )
-                  : Center(
-                      child: Text(
-                        text,
-                        style: textStyle,
-                      ).paddingSymmetric(
-                        vertical: EdgeInsetsFoundation.vertical4,
-                        horizontal: EdgeInsetsFoundation.horizontal16,
-                      ),
-                    ),
+          child: text.isEmpty && icon != null
+              ? ClipOval(
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: blurValue, sigmaY: blurValue),
+                    child: icon!.paddingAll(EdgeInsetsFoundation.all8),
+                  ),
+                )
+              : Center(
+                  child: Text(
+                    text,
+                    style: textStyle,
+                  ).paddingSymmetric(
+                    vertical: EdgeInsetsFoundation.vertical4,
+                    horizontal: EdgeInsetsFoundation.horizontal16,
+                  ),
+                ),
         ),
       ),
-    );
+    ).loadingWrap(loading ?? false);
   }
 }

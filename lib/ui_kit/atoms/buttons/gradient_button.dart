@@ -30,17 +30,15 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
             gradient: enabled ? GradientFoundation.buttonGradientLinear : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
           ),
-          child: loading ?? false
-              ? const AdaptiveLoader()
-              : Center(
-                  child: Text(
-                    text.toUpperCase(),
-                    style: textStyle,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
+          child: Center(
+            child: Text(
+              text.toUpperCase(),
+              style: textStyle,
+              textAlign: TextAlign.center,
+            ),
+          ),
         ),
       ),
-    );
+    ).loadingWrap(loading ?? false);
   }
 }

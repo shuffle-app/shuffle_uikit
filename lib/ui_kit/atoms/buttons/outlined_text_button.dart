@@ -41,13 +41,11 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all24,
           ),
-          child: loading ?? false
-              ? const AdaptiveLoader()
-              : Center(
-                  child: textWidget.paddingSymmetric(vertical: SpacingFoundation.verticalSpacing8),
-                ),
+          child: Center(
+            child: textWidget.paddingSymmetric(vertical: SpacingFoundation.verticalSpacing8),
+          ),
         ),
       ),
-    );
+    ).loadingWrap(loading ?? false);
   }
 }

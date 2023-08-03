@@ -19,24 +19,21 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
   Widget build(BuildContext context) {
     final buttonStyle = context.uiKitTheme?.ordinaryButtonStyle;
     TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase;
-    final inLoading = loading ?? false;
 
     return ElevatedButton(
       style: buttonStyle,
       onPressed: onPressed,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children: inLoading
-            ? [const AdaptiveLoader()]
-            : [
-                Text(
-                  text.toUpperCase(),
-                  style: textStyle?.copyWith(color: Colors.black),
-                ),
-                SpacingFoundation.horizontalSpace8,
-                icon,
-              ],
+        children: [
+          Text(
+            text.toUpperCase(),
+            style: textStyle?.copyWith(color: Colors.black),
+          ),
+          SpacingFoundation.horizontalSpace8,
+          icon,
+        ],
       ),
-    );
+    ).loadingWrap(loading ?? false);
   }
 }

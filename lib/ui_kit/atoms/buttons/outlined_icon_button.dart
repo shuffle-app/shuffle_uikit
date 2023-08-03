@@ -25,10 +25,12 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
       clipBehavior: Clip.hardEdge,
       color: enabled ? Colors.white.withOpacity(0.01) : ColorsFoundation.darkNeutral300,
       shape: CircleBorder(
-        side: hideBorder ? BorderSide.none: BorderSide(
-          color: enabled ? Colors.white : ColorsFoundation.darkNeutral500,
-          width: 2.w,
-        ),
+        side: hideBorder
+            ? BorderSide.none
+            : BorderSide(
+                color: enabled ? Colors.white : ColorsFoundation.darkNeutral500,
+                width: 2.w,
+              ),
       ),
       child: InkWell(
         onTap: onPressed,
@@ -37,14 +39,12 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.max,
           ),
-          child: loading ?? false
-              ? const AdaptiveLoader()
-              : BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
-                  child: icon?.paddingAll(EdgeInsetsFoundation.all16),
-                ),
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+            child: icon?.paddingAll(EdgeInsetsFoundation.all16),
+          ),
         ),
       ),
-    );
+    ).loadingWrap(loading ?? false);
   }
 }

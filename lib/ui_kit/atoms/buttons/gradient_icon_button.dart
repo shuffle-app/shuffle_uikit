@@ -30,9 +30,9 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
             gradient: enabled ? GradientFoundation.attentionCard : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
           ),
-          child: loading ?? false ? const AdaptiveLoader() : icon.paddingAll(SpacingFoundation.verticalSpacing12),
+          child: icon.paddingAll(SpacingFoundation.verticalSpacing12),
         ),
       ),
-    );
+    ).loadingWrap(loading ?? false);
   }
 }

@@ -23,12 +23,10 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
     return ElevatedButton(
       style: theme?.smallOrdinaryButtonStyle,
       onPressed: onPressed,
-      child: loading ?? false
-          ? const AdaptiveLoader()
-          : Text(
-              uppercase ? text.toUpperCase() : text,
-              style: textStyle?.copyWith(color: Colors.black),
-            ),
-    );
+      child: Text(
+        uppercase ? text.toUpperCase() : text,
+        style: textStyle?.copyWith(color: Colors.black),
+      ),
+    ).loadingWrap(loading ?? false);
   }
 }
