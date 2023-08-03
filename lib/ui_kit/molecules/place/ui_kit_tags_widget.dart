@@ -33,8 +33,7 @@ class UiKitTagsWidget extends StatelessWidget {
                 SpacingFoundation.horizontalSpace8,
                 Text(
                   rating.toString(),
-                  style: theme?.boldTextTheme.caption1Bold
-                      .copyWith(color: Colors.white),
+                  style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
                 ),
               ],
             ).paddingSymmetric(
@@ -65,7 +64,7 @@ class UiKitTagsWidget extends StatelessWidget {
               if (uniqueTags != null && uniqueTags!.isNotEmpty) ...[
                 SpacingFoundation.verticalSpace4,
                 SizedBox(
-                    height: SpacingFoundation.horizontalSpacing16 +2,
+                    height: SpacingFoundation.horizontalSpacing16 + 2,
                     child: ListView.builder(
                       clipBehavior: Clip.none,
                       padding: EdgeInsets.zero,
@@ -75,10 +74,9 @@ class UiKitTagsWidget extends StatelessWidget {
                       // separatorBuilder: (_, __) =>
                       //     SpacingFoundation.horizontalSpace8,
                       itemCount: uniqueTags!.length,
-                      itemBuilder: (_, index) => UiKitTagWidget(
-                          title: uniqueTags![index].title,
-                          icon: uniqueTags![index].iconPath,
-                          uniqueTag: true).paddingOnly(right:uniqueTags!.length-1==index?0: SpacingFoundation.horizontalSpacing8),
+                      itemBuilder: (_, index) =>
+                          UiKitTagWidget(title: uniqueTags![index].title, icon: uniqueTags![index].iconPath, uniqueTag: true)
+                              .paddingOnly(right: uniqueTags!.length - 1 == index ? 0 : SpacingFoundation.horizontalSpacing8),
                     ))
               ],
             ],
