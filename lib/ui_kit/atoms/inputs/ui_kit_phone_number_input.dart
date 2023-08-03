@@ -18,8 +18,6 @@ class UiKitPhoneNumberInput extends StatelessWidget implements BaseUiKitInputFie
 
   final List<TextInputFormatter>? inputFormatters;
 
-  final GlobalKey<FormFieldState> _key = GlobalKey<FormFieldState>();
-
   final Color? fillColor;
 
   UiKitPhoneNumberInput({
@@ -40,9 +38,7 @@ class UiKitPhoneNumberInput extends StatelessWidget implements BaseUiKitInputFie
     final inputTheme = uiKitTheme?.iconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
     final countryCodeStyle = uiKitTheme?.boldTextTheme.caption1Medium;
-    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
-      color: (_key.currentState?.hasError ?? false) ? ColorsFoundation.error : Colors.white,
-    );
+    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium;
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
@@ -53,12 +49,14 @@ class UiKitPhoneNumberInput extends StatelessWidget implements BaseUiKitInputFie
         disabledColor: ColorsFoundation.darkNeutral500.withOpacity(0.16),
       ),
       child: TextFormField(
-        key: _key,
         style: inputTextStyle,
         enabled: enabled,
         controller: enabled ? controller : null,
         validator: validator,
-        inputFormatters: inputFormatters,
+        inputFormatters: [
+          ...inputFormatters ?? [],
+          FilteringTextInputFormatter.digitsOnly,
+        ],
         keyboardType: TextInputType.phone,
         decoration: InputDecoration(
           filled: fillColor != null,

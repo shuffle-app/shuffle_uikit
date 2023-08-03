@@ -15,14 +15,15 @@ class OrdinaryTextButton extends StatelessWidget implements ButtonFactory {
 
   @override
   Widget build(BuildContext context) {
-    // final style = context.uiKitTheme?.textButtonStyle;
-
     return TextButton(
-      // style: style,
       onPressed: onPressed,
       child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [if (icon != null) ...[icon!,SpacingFoundation.horizontalSpace8], Text(text.toUpperCase())]),
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (icon != null) ...[icon!, SpacingFoundation.horizontalSpace8],
+          Text(text.toUpperCase()),
+        ],
+      ),
     );
   }
 }

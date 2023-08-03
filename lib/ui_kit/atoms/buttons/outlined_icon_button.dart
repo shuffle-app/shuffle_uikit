@@ -6,12 +6,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
   final Widget? icon;
   final VoidCallback? onPressed;
+  final bool? loading;
   final bool hideBorder;
 
   const OutlinedIconButton({
     Key? key,
     this.icon,
     this.onPressed,
+    this.loading,
     this.hideBorder = false,
   }) : super(key: key);
 
@@ -35,10 +37,12 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.max,
           ),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
-            child: icon?.paddingAll(EdgeInsetsFoundation.all16),
-          ),
+          child: loading ?? false
+              ? const AdaptiveLoader()
+              : BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+                  child: icon?.paddingAll(EdgeInsetsFoundation.all16),
+                ),
         ),
       ),
     );

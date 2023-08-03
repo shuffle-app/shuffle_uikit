@@ -5,10 +5,12 @@ class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFac
   final VoidCallback? onPressed;
   final String text;
   final Widget icon;
+  final bool? loading;
 
   const GradientButtonWithTextAndIcon({
     Key? key,
     this.onPressed,
+    this.loading,
     required this.text,
     required this.icon,
   }) : super(key: key);
@@ -34,12 +36,15 @@ class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFac
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                text,
-                style: context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black),
-              ),
-              SpacingFoundation.horizontalSpace8,
-              icon,
+              if (loading ?? false) const AdaptiveLoader(),
+              if (!(loading ?? false)) ...[
+                Text(
+                  text,
+                  style: context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black),
+                ),
+                SpacingFoundation.horizontalSpace8,
+                icon,
+              ],
             ],
           ),
         ),

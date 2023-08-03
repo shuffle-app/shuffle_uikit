@@ -5,12 +5,14 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
   final Widget icon;
   final VoidCallback? onPressed;
   final BorderRadius? borderRadius;
+  final bool? loading;
 
   const GradientIconButton({
     Key? key,
     required this.icon,
     this.onPressed,
     this.borderRadius,
+    this.loading,
   }) : super(key: key);
 
   @override
@@ -28,7 +30,7 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
             gradient: enabled ? GradientFoundation.attentionCard : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
           ),
-          child: icon.paddingAll(SpacingFoundation.verticalSpacing12),
+          child: loading ?? false ? const AdaptiveLoader() : icon.paddingAll(SpacingFoundation.verticalSpacing12),
         ),
       ),
     );

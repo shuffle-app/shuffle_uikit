@@ -5,11 +5,13 @@ class OrdinaryButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
   final ButtonFit? fit;
+  final bool? loading;
 
   const OrdinaryButton({
     Key? key,
     required this.text,
     this.onPressed,
+    this.loading,
     this.fit,
   }) : super(key: key);
 
@@ -21,11 +23,12 @@ class OrdinaryButton extends StatelessWidget implements ButtonFactory {
       text.toUpperCase(),
       style: textStyle?.copyWith(color: Colors.black),
     );
+    final child = loading ?? false ? const AdaptiveLoader() : textWidget;
 
     return ElevatedButton(
       style: theme?.ordinaryButtonStyle,
       onPressed: onPressed,
-      child: fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget,
+      child: fit == ButtonFit.fitWidth ? Center(child: child) : child,
     );
   }
 }

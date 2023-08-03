@@ -15,16 +15,16 @@ class OrdinaryReversedTextButton extends StatelessWidget implements ButtonFactor
 
   @override
   Widget build(BuildContext context) {
-    // final style = context.uiKitTheme?.textButtonStyle;
-
     return TextButton(
-
-      // style: style,
       onPressed: onPressed,
       child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [ Text(text),if (icon != null) icon!]),
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(text),
+          if (icon != null) icon!,
+        ],
+      ),
     );
   }
 }

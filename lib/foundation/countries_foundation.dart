@@ -1096,11 +1096,12 @@ class CountriesFoundation {
     flag: Flags.qatar,
   );
 
-  final rapaNui = CountryModel(
-    countryName: 'rapaNui'.toUpperCase(),
-    countryPhoneCode: '+56',
-    flag: Flags.rapaNui,
-  );
+  /// has no flag
+  // final rapaNui = CountryModel(
+  //   countryName: 'rapaNui'.toUpperCase(),
+  //   countryPhoneCode: '+56',
+  //   flag: Flags.rapaNui,
+  // );
 
   final republicOfMacedonia = CountryModel(
     countryName: 'republic Of Macedonia'.toUpperCase(),
@@ -1733,7 +1734,6 @@ class CountriesFoundation {
         portugal,
         puertoRico,
         qatar,
-        rapaNui,
         republicOfMacedonia,
         republicOfTheCongo,
         romania,

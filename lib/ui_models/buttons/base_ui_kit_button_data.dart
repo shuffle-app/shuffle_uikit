@@ -6,11 +6,13 @@ class BaseUiKitButtonData {
   final String text;
   final Widget? icon;
   final ButtonFit? fit;
+  final bool? loading;
 
   BaseUiKitButtonData({
     this.onPressed,
     this.text = '',
     this.icon,
     this.fit,
+    this.loading,
   });
 }

@@ -4,11 +4,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class GradientButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final String text;
+  final bool? loading;
 
   const GradientButton({
     Key? key,
     this.onPressed,
     required this.text,
+    this.loading,
   }) : super(key: key);
 
   @override
@@ -28,13 +30,15 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
             gradient: enabled ? GradientFoundation.buttonGradientLinear : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
           ),
-          child: Center(
-            child: Text(
-              text.toUpperCase(),
-              style: textStyle,
-              textAlign: TextAlign.center,
-            ),
-          ),
+          child: loading ?? false
+              ? const AdaptiveLoader()
+              : Center(
+                  child: Text(
+                    text.toUpperCase(),
+                    style: textStyle,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
         ),
       ),
     );
