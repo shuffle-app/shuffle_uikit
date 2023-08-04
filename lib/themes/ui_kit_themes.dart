@@ -12,7 +12,6 @@ class UiKitThemes {
   );
   late final defaultThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
-
     useMaterial3: false,
     splashColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
     splashFactory: WaveSplash.splashFactory,
@@ -101,7 +100,9 @@ class UiKitThemes {
       shape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all28),
       // dialBackgroundColor: ColorsFoundation.darkNeutral500
     ),
-    colorScheme: const ColorScheme.dark(),
+
+    colorScheme:  ColorScheme.fromSeed(seedColor: UiKitColors.info,onSurface: Colors.white),
+    // colorScheme:  const ColorScheme.light().copyWith(onSurface: Colors.white),
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
         customColor: Colors.red,

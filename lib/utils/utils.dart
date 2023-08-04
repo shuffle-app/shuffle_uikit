@@ -4,6 +4,7 @@ export 'animations/animations.dart';
 export 'animations/bouncing_icon_button_animation.dart';
 export 'builders/alert_dialog_builder.dart';
 export 'builders/comment_dialog_builder.dart';
+export 'builders/week_days_selector_builder.dart';
 export 'builders/custom_calendar_picker_dialog.dart';
 export 'builders/custom_time_picker_dialog.dart';
 export 'builders/general_dialog_fullscreen_builder.dart';

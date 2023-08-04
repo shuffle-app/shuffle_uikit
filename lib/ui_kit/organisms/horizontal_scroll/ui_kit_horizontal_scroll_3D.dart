@@ -24,8 +24,8 @@ class UiKitHorizontalScroll3D extends StatelessWidget {
             ellipseHeight: 0,
             minScale: 0.5),
         itemConfig: GalleryItemConfig(
-          width: calculatedWidth * 0.7,
-          height: calculatedWidth * 0.55,
+          width: calculatedWidth * 0.75,
+          height: calculatedWidth * 0.45,
           radius: 10,
           isShowTransformMask: true,
           shadows: [
@@ -38,7 +38,7 @@ class UiKitHorizontalScroll3D extends StatelessWidget {
           ],
         ),
         width: calculatedWidth,
-        height: calculatedWidth * 0.55,
+        height: calculatedWidth * 0.45,
         isClip: true,
         itemBuilder: itemBuilder,
       ),
