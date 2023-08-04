@@ -93,7 +93,9 @@ class UiKitMenu<T> extends StatelessWidget {
                   style: boldTextTheme?.caption1Medium,
                 ),
               if (selectedItem != null) ...[
-                selectedItem!.icon!,
+                ImageWidget(
+                  link: selectedItem!.iconPath!,
+                ),
                 SpacingFoundation.horizontalSpace8,
                 Expanded(
                   child: Text(
@@ -120,14 +122,14 @@ class UiKitMenu<T> extends StatelessWidget {
 class UiKitMenuItem<T> {
   final String title;
   final T? value;
-  final Widget? icon;
+  final String? iconPath;
   final String? type;
 
   UiKitMenuItem({
     required this.title,
     required this.value,
     this.type,
-    this.icon,
+    this.iconPath,
   });
 
   factory UiKitMenuItem.empty() => UiKitMenuItem(

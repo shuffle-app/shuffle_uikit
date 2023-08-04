@@ -31,8 +31,10 @@ class UiKitMenuItemTile extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              if (item.icon != null) ...[
-                item.icon!,
+              if (item.iconPath != null) ...[
+                ImageWidget(
+                  link: item.iconPath!,
+                ),
                 SpacingFoundation.horizontalSpace8,
               ],
               Expanded(
