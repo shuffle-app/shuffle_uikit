@@ -15,6 +15,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget
     this.onTap,
     this.focusNode,
     this.autofocus = false,
+    this.expands = false,
     this.onFieldSubmitted,
   }) : super(key: key);
 
@@ -31,6 +32,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget
 
   final Widget? icon;
   final bool autofocus;
+  final bool expands;
   final FocusNode? focusNode;
 
   final VoidCallback? onPressed;
@@ -76,6 +78,8 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
       ),
       child: TextFormField(
         key: _key,
+        expands: widget.expands,
+        maxLines: widget.expands ? null : 1,
         autofocus: widget.autofocus,
         focusNode: widget.focusNode,
         onTap: widget.onTap,
