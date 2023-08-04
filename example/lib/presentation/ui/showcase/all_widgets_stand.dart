@@ -26,49 +26,37 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
     UiKitMenuItem<String>(
       title: 'Active Tiger',
       value: 'tiger',
-      icon: ImageWidget(
-        svgAsset: GraphicsFoundation.instance.svg.tiger,
-      ),
+      iconPath: GraphicsFoundation.instance.svg.tiger.path,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'interested Adventurer',
       value: 'adventurer',
-      icon: ImageWidget(
-        svgAsset: GraphicsFoundation.instance.svg.adventure,
-      ),
+      iconPath: GraphicsFoundation.instance.svg.adventure.path,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'forever Resting sloth',
       value: 'resting sloth',
-      icon: ImageWidget(
-        svgAsset: GraphicsFoundation.instance.svg.sleep,
-      ),
+      iconPath: GraphicsFoundation.instance.svg.sleep.path,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
       value: 'tiger',
-      icon: ImageWidget(
-        svgAsset: GraphicsFoundation.instance.svg.swim,
-      ),
+      iconPath: GraphicsFoundation.instance.svg.swim.path,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
       value: 'tiger',
-      icon: ImageWidget(
-        svgAsset: GraphicsFoundation.instance.svg.athlete,
-      ),
+      iconPath: GraphicsFoundation.instance.svg.athlete.path,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
       value: 'tiger',
-      icon: ImageWidget(
-        svgAsset: GraphicsFoundation.instance.svg.food,
-      ),
+      iconPath: GraphicsFoundation.instance.svg.food.path,
       type: 'leisure',
     ),
   ];
@@ -646,25 +634,19 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   UiKitMenuItem<String>(
                     title: 'Active Tiger Business',
                     value: 'tiger',
-                    icon: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.swim,
-                    ),
+                    iconPath: GraphicsFoundation.instance.svg.swim.path,
                     type: 'business',
                   ),
                   UiKitMenuItem<String>(
                     title: 'Active Tiger Business',
                     value: 'tiger',
-                    icon: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.athlete,
-                    ),
+                    iconPath: GraphicsFoundation.instance.svg.athlete.path,
                     type: 'business',
                   ),
                   UiKitMenuItem<String>(
                     title: 'Active Tiger Business',
                     value: 'tiger',
-                    icon: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.food,
-                    ),
+                    iconPath: GraphicsFoundation.instance.svg.food.path,
                     type: 'business',
                   ),
                 ],
