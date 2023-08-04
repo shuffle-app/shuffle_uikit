@@ -48,9 +48,11 @@ class UiKitCountrySelector extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: [
               if (selectedCountry == null)
-                Text(
-                  'Select option',
-                  style: boldTextTheme?.caption1Medium,
+                Expanded(
+                  child: Text(
+                    'Select option',
+                    style: boldTextTheme?.caption1Medium,
+                  ),
                 ),
               if (selectedCountry != null) ...[
                 ClipRRect(
@@ -62,12 +64,16 @@ class UiKitCountrySelector extends StatelessWidget {
                   ),
                 ),
                 SpacingFoundation.horizontalSpace8,
-                Text(
-                  selectedCountry!.countryName,
-                  style: boldTextTheme?.caption1Medium,
+                Expanded(
+                  child: Text(
+                    selectedCountry!.countryName,
+                    style: boldTextTheme?.caption1Medium.copyWith(
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
                 ),
               ],
-              const Spacer(),
+              SpacingFoundation.horizontalSpace4,
               ImageWidget(
                 svgAsset: GraphicsFoundation.instance.svg.chevronRight,
                 color: Colors.white,
