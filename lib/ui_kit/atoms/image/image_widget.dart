@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shimmer/shimmer.dart';
@@ -126,7 +127,17 @@ class ImageWidget extends StatelessWidget {
             errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else {
-      return Image.file(
+      return kIsWeb ?
+      Image.network(
+        link!,
+        fit: fit,
+        width: width,
+        color: color,
+        height: height,
+        errorBuilder: (context, error, trace) =>
+        errorWidget ?? const DefaultImageErrorWidget(),
+      )
+      :Image.file(
         File(link!),
         fit: fit,
         width: width,

@@ -37,6 +37,13 @@ class DialogTestingPage extends StatelessWidget {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
+              OrdinaryButton(
+                text: 'Dialog time picker',
+                onPressed: () => showUiKitTimeDialog(
+                  context,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               //почему то работает только так отображение поповера, надо подумать
               Builder(
                 builder: (c) => OrdinaryButton(

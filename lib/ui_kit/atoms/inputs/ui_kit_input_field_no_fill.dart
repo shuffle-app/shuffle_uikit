@@ -10,11 +10,14 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
     this.inputFormatters,
     this.prefixText,
     this.onChanged,
+    this.onFieldSubmitted,
     this.hintText,
     this.validator,
     this.keyboardType,
+    this.icon,
     this.enabled = true,
     this.expands = false,
+    this.autofocus = false,
     required this.label,
   }) : super(key: key);
 
@@ -32,11 +35,13 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
   final String? Function(String? p1)? validator;
 
   final String? prefixText;
-
+  final Widget? icon;
   final List<TextInputFormatter>? inputFormatters;
 
   final ValueChanged<String>? onChanged;
+  final ValueChanged<String>? onFieldSubmitted;
   final bool expands;
+  final bool autofocus;
 
   @override
   State<UiKitInputFieldNoFill> createState() => _UiKitInputFieldNoFillState();
@@ -80,10 +85,12 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         expands: widget.expands,
         maxLines: widget.expands ? null : 1,
         enabled: widget.enabled,
+        autofocus: widget.autofocus,
         keyboardType: widget.keyboardType,
         controller: widget.enabled ? widget.controller : null,
         style: inputTextStyle,
         onChanged: widget.onChanged,
+        onFieldSubmitted: widget.onFieldSubmitted,
         validator: widget.validator,
         inputFormatters: widget.inputFormatters,
         decoration: InputDecoration(
@@ -96,6 +103,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
           errorText: widget.errorText,
           errorMaxLines: 1,
           errorStyle: errorStyle,
+
         ),
       ),
     );
