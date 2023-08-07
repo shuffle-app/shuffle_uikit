@@ -131,6 +131,24 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               UiKitTitledActionCard(
                 title: 'Create your place and invite people',
+                body: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    UiKitActionCardTile(
+                      title: '80’s theme invites only party ',
+                      subtitle: 'in 1 day',
+                      onTap: () {},
+                      leadingImagePath: GraphicsFoundation.instance.png.eventAvatar.path,
+                    ),
+                    SpacingFoundation.verticalSpace16,
+                    UiKitActionCardTile(
+                      title: '80’s theme invites only party ',
+                      subtitle: 'in 1 day',
+                      onTap: () {},
+                      leadingImagePath: GraphicsFoundation.instance.png.mockAvatar.path,
+                    ),
+                  ],
+                ),
                 actionButton: context.gradientButton(
                   data: BaseUiKitButtonData(
                     text: 'Create place'.toUpperCase(),

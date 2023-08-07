@@ -4,11 +4,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitTitledActionCard extends StatelessWidget {
   final String title;
   final Widget actionButton;
+  final Widget? body;
 
   const UiKitTitledActionCard({
     super.key,
     required this.title,
     required this.actionButton,
+    this.body,
   });
 
   @override
@@ -25,6 +27,10 @@ class UiKitTitledActionCard extends StatelessWidget {
             style: textTheme?.subHeadline,
           ),
           SpacingFoundation.verticalSpace16,
+          if (body != null) ...[
+            body!,
+            SpacingFoundation.verticalSpace16,
+          ],
           actionButton,
         ],
       ).paddingAll(EdgeInsetsFoundation.all16),
