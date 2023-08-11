@@ -13,8 +13,9 @@ extension NavigatorExtention on BuildContext {
     RouteSettings? settings,
     bool maintainState = true,
     bool nativeTransition = true,
+        bool useRootNavigator = false,
   }) async =>
-      await Navigator.of(this).push(nativeTransition
+      await Navigator.of(this,rootNavigator: useRootNavigator).push(nativeTransition
           ? MaterialPageRoute(
               builder: (_) => screen,
               settings: settings,
