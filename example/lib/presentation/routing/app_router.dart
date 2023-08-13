@@ -1,4 +1,5 @@
 import 'package:example/presentation/routing/app_routes.dart';
+import 'package:example/presentation/ui/location_picker/location_picker_page.dart';
 import 'package:example/presentation/ui/main_page/main_page.dart';
 import 'package:example/presentation/ui/onboarding/onboarding_page.dart';
 import 'package:example/presentation/ui/profile/influencer_profile.dart';
@@ -62,6 +63,11 @@ class AppRouter {
               ),
             ],
           ),
+        );
+      case AppRoutes.locationPicker:
+        return MaterialPageRoute(
+          builder: (context) => const LocationPickerPage(),
+          settings: settings,
         );
       default:
         return MaterialPageRoute(

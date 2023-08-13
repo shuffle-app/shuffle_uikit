@@ -112,6 +112,13 @@ class _MainPageState extends State<MainPage> {
                 onPressed: () => Navigator.pushNamed(context, AppRoutes.onBoardingPage),
               ),
             ),
+            SpacingFoundation.verticalSpace16,
+            context.button(
+              data: BaseUiKitButtonData(
+                text: 'Location Picker Page',
+                onPressed: () => Navigator.pushNamed(context, AppRoutes.locationPicker),
+              ),
+            ),
           ],
         ),
       ),

@@ -43,6 +43,7 @@ export 'image/image_widget.dart';
 export 'image/large_circular_avatar_error_widget.dart';
 export 'inputs/inputs.dart';
 export 'inputs/ui_kit_code_input_field.dart';
+export 'inputs/ui_kit_elevated_input_with_switching_prefix.dart';
 export 'inputs/ui_kit_input_field_with_chips.dart';
 export 'profile/ui_kit_reaction_preview.dart';
 export 'profile/ui_kit_tag_widget.dart';

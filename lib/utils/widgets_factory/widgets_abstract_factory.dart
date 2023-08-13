@@ -47,7 +47,7 @@ abstract class WidgetsAbstractFactory {
 
   ButtonFactory createOutlinedButton({
     required BaseUiKitButtonData data,
-    Color? color,
+    Color? borderColor,
   });
 
   ButtonFactory createSmallOutlinedButton({
@@ -96,7 +96,11 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  ButtonFactory createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred}) {
+  ButtonFactory createSmallOutlinedButton({
+    BaseUiKitButtonData? data,
+    Color? color,
+    bool? blurred,
+  }) {
     if ((data?.text != null && data!.text.isNotEmpty) || data?.icon != null) {
       return SmallOutlinedButton(
         onPressed: data?.onPressed,
@@ -128,7 +132,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   ButtonFactory createOutlinedButton({
     required BaseUiKitButtonData data,
     bool? blurred,
-    Color? color,
+    Color? borderColor,
     bool? hideBorder,
   }) {
     if (data.text.isEmpty && data.icon != null) {
@@ -137,6 +141,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: data.onPressed,
         hideBorder: hideBorder ?? false,
         loading: data.loading,
+        borderColor: borderColor,
       );
     }
     if (data.text.isNotEmpty) {
@@ -144,6 +149,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         text: data.text,
         onPressed: data.onPressed,
         loading: data.loading,
+        borderColor: borderColor,
       );
     } else {
       throw UnimplementedError('Outlined button with your parameters is not implemented');
