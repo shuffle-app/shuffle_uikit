@@ -5,12 +5,14 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
   final bool? loading;
+  final Color? borderColor;
 
   const OutlinedTextButton({
     Key? key,
     required this.text,
     this.onPressed,
     this.loading,
+    this.borderColor,
   }) : super(key: key);
 
   @override
@@ -30,7 +32,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
         side: BorderSide(
-          color: enabled ? Colors.white : ColorsFoundation.darkNeutral500,
+          color: enabled ? borderColor ?? Colors.white : ColorsFoundation.darkNeutral500,
           width: 2.w,
         ),
       ),

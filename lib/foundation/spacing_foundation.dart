@@ -24,6 +24,8 @@ class SpacingFoundation {
 
   static double get horizontalSpacing32 => 32;
 
+  static double get horizontalSpacing40 => 40;
+
   static double get verticalSpacing2 => 2.h;
 
   static double get verticalSpacing4 => 4.h;

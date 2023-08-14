@@ -7,4 +7,5 @@ class AppRoutes {
   static const String testPage = '/test';
   static const String spinner = '/spinner';
   static const String onBoardingPage = '/onBoardingPage';
+  static const String locationPicker = '/locationPicker';
 }

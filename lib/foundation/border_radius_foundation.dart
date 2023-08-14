@@ -30,6 +30,8 @@ class BorderRadiusFoundation {
         bottomLeft: Radius.circular(24),
       );
 
+  static BorderRadius get zero => BorderRadius.zero;
+
   static BorderRadius get max => const BorderRadius.all(Radius.circular(9999));
 
   BorderRadiusFoundation._();

@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 class UiKitColors {
+  static const lightSurface2 = Color(0xffF2F3F5);
   static const surface = Color(0xff000000);
   static const surface1 = Color(0xff131313);
   static const surface2 = Color(0xff1A1A1A);

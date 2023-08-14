@@ -1,9 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ColorsFoundation {
+  static const Color lightSurface2 = UiKitColors.lightSurface2;
   static const Color surface3 = UiKitColors.surface3;
   static const Color surface1 = UiKitColors.surface1;
   static const Color brightYellow = UiKitColors.brightYellow;
@@ -29,8 +28,7 @@ class ColorsFoundation {
   static const Color success = UiKitColors.success;
   static const Color info = UiKitColors.info;
   static const Color shadowPink = UiKitColors.shadowPink;
-  static const Color transparent= Colors.transparent;
-
+  static const Color transparent = Colors.transparent;
 
   ColorsFoundation._();
 }
