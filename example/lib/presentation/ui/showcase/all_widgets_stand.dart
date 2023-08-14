@@ -256,7 +256,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                    UiKitFindSomeoneCard(
                   avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
                   userNickName: 'naveen',
-                  userName: 'Naveen sheoran',
+                  userName: 'Naveen Sheoran',
                   userPoints: 555,
                   sameInterests: 4,
                   onMessage: () {
@@ -269,21 +269,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       ),
                   itemCount: 5),
               SpacingFoundation.verticalSpace16,
-              SpacingFoundation.verticalSpace16,
-              UiKitFindSomeoneCard(
-                  avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
-                  userNickName: 'naveen',
-                  userName: 'Naveen',
-                  userPoints: 555,
-                  sameInterests: 4,
-                  onMessage: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: const Text('Send message'),
-                      ),
-                    );
-                  }),
-              SpacingFoundation.verticalSpace16,
+             
               UiKitFeedbackCard(
                 avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
                 title: 'At.mosphere',
