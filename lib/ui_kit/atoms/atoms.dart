@@ -37,6 +37,7 @@ export 'buttons/ui_kit_pop_up_menu_button.dart';
 export 'buttons/white_dialog_button.dart';
 export 'common/blurred_card_with_border.dart';
 export 'common/gradientable_widget.dart';
+export 'common/ui_kit_switchable_input_prefix.dart';
 export 'image/big_avatar_error_widget.dart';
 export 'image/default_image_error_widget.dart';
 export 'image/image_widget.dart';

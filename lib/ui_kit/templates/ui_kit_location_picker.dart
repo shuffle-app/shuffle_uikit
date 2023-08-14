@@ -6,6 +6,7 @@ class UiKitLocationPicker extends StatelessWidget {
   final MapWidget map;
   final VoidCallback? onSearchTapped;
   final VoidCallback? onPickFromMap;
+  final VoidCallback? onSearchInputCleaned;
   final ValueChanged<LocationSuggestion>? onSuggestionChosen;
   final LocationPickerSearchOverlayController locationPickerSearchOverlayController;
 
@@ -15,6 +16,7 @@ class UiKitLocationPicker extends StatelessWidget {
     this.onSearchTapped,
     this.onPickFromMap,
     this.onSuggestionChosen,
+    this.onSearchInputCleaned,
     required this.map,
     required this.locationPickerSearchOverlayController,
   });
@@ -38,7 +40,6 @@ class UiKitLocationPicker extends StatelessWidget {
         LocationPickerSearchOverlay(
           onSuggestionChosen: (suggestion) {
             locationPickerSearchOverlayController.updateState(LocationPickerOverlayState.hidden);
-            searchController.text = suggestion.title;
             _focusNode.unfocus();
             onSuggestionChosen?.call(suggestion);
           },
@@ -58,11 +59,13 @@ class UiKitLocationPicker extends StatelessWidget {
             onTap: onSearchTapped,
             controller: searchController,
             hintText: 'Search',
-            prefix: SwitchablePrefix(
+            onInputCleaned: onSearchInputCleaned,
+            prefix: UiKitSwitchableInputPrefix(
               secondary: GestureDetector(
                 onTap: () {
                   locationPickerSearchOverlayController.updateState(LocationPickerOverlayState.hidden);
                   _focusNode.unfocus();
+                  searchController.clear();
                 },
                 child: ImageWidget(
                   svgAsset: GraphicsFoundation.instance.svg.arrowLeft,

@@ -48,33 +48,36 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
               SizedBox(
                 height: 1.sh * 0.15,
               ),
-              Expanded(
-                child: loaded
-                    ? noSuggestions
-                        ? Center(
-                            child: Text(
-                              'No suggestions',
-                              style: textTheme?.title1,
-                            ),
-                          )
-                        : ListView.builder(
-                            padding: EdgeInsets.zero,
-                            itemBuilder: (context, index) {
-                              final suggestion = locationSuggestions.elementAt(index);
+              if (loaded)
+                Expanded(
+                  child: ListView.builder(
+                    padding: EdgeInsets.zero,
+                    itemBuilder: (context, index) {
+                      final suggestion = locationSuggestions.elementAt(index);
 
-                              return UiKitLocationSearchTile(
-                                isLast: (index + 1) == locationSuggestions.length,
-                                title: suggestion.title,
-                                subtitle: suggestion.subtitle,
-                                onTap: () => widget.onSuggestionChosen?.call(suggestion),
-                              );
-                            },
-                            itemCount: locationSuggestions.length,
-                          )
-                    : loading
-                        ? const AdaptiveLoader()
-                        : SpacingFoundation.none,
-              ),
+                      return UiKitLocationSearchTile(
+                        isLast: (index + 1) == locationSuggestions.length,
+                        title: suggestion.title,
+                        subtitle: suggestion.subtitle,
+                        onTap: () => widget.onSuggestionChosen?.call(suggestion),
+                      );
+                    },
+                    itemCount: locationSuggestions.length,
+                  ),
+                ),
+              if (noSuggestions)
+                Expanded(
+                  child: Center(
+                    child: Text(
+                      'No suggestions',
+                      style: textTheme?.subHeadline.copyWith(color: Colors.black),
+                    ),
+                  ),
+                ),
+              if (loading)
+                const Expanded(
+                  child: AdaptiveLoader(),
+                ),
               SpacingFoundation.verticalSpace16,
               Row(
                 mainAxisSize: MainAxisSize.max,
@@ -102,7 +105,6 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
                   ),
                 ],
               ),
-              SpacingFoundation.verticalSpace16,
               SpacingFoundation.verticalSpace24,
             ],
           ).paddingSymmetric(
@@ -115,13 +117,17 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
 }
 
 class LocationPickerSearchOverlayController {
-  final StreamController<LocationPickerOverlayState> _overlayStateStreamController = StreamController<LocationPickerOverlayState>();
+  LocationSuggestion? selectedSuggestion;
+
+  final StreamController<LocationPickerOverlayState> _overlayStateStreamController =
+      StreamController<LocationPickerOverlayState>();
 
   List<LocationSuggestion> searchSuggestions = List<LocationSuggestion>.empty(growable: true);
 
   LocationPickerOverlayState currentState = LocationPickerOverlayState.hidden;
 
-  late Stream<LocationPickerOverlayState> overlayStateStream = _overlayStateStreamController.stream.asBroadcastStream();
+  late Stream<LocationPickerOverlayState> overlayStateStream =
+      _overlayStateStreamController.stream.asBroadcastStream();
 
   LocationPickerSearchOverlayController() {
     _overlayStateStreamController.add(LocationPickerOverlayState.hidden);
@@ -134,6 +140,11 @@ class LocationPickerSearchOverlayController {
 
   void updateState(LocationPickerOverlayState state) {
     _overlayStateStreamController.add(state);
+  }
+
+  void updateSelectedSuggestion(LocationSuggestion? suggestion) {
+    selectedSuggestion = suggestion;
+    print(selectedSuggestion);
   }
 
   void dispose() {

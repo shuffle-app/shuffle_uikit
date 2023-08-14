@@ -9,6 +9,7 @@ class UiKitElevatedInputWithSwitchingPrefix extends StatelessWidget {
   final Color? fillColor;
   final VoidCallback? onTap;
   final FocusNode? focusNode;
+  final VoidCallback? onInputCleaned;
 
   const UiKitElevatedInputWithSwitchingPrefix({
     super.key,
@@ -19,6 +20,7 @@ class UiKitElevatedInputWithSwitchingPrefix extends StatelessWidget {
     this.fillColor,
     this.focusNode,
     this.onTap,
+    this.onInputCleaned,
   });
 
   @override
@@ -49,10 +51,14 @@ class UiKitElevatedInputWithSwitchingPrefix extends StatelessWidget {
                 filled: fillColor != null,
                 fillColor: fillColor,
                 hintText: hintText,
-                hintStyle: textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
+                hintStyle:
+                    textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                 suffix: suffixIcon ??
                     GestureDetector(
-                      onTap: () => controller.clear(),
+                      onTap: () {
+                        controller.clear();
+                        if (focusNode?.hasFocus ?? true) onInputCleaned?.call();
+                      },
                       child: ImageWidget(
                         svgAsset: GraphicsFoundation.instance.svg.cross,
                         color: ColorsFoundation.darkNeutral900,
@@ -63,36 +69,6 @@ class UiKitElevatedInputWithSwitchingPrefix extends StatelessWidget {
           ),
         ],
       ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
-    );
-  }
-}
-
-class SwitchablePrefix extends StatelessWidget {
-  final Widget primary;
-  final Widget secondary;
-  final ValueNotifier<bool> notifier;
-
-  const SwitchablePrefix({
-    super.key,
-    required this.primary,
-    required this.secondary,
-    required this.notifier,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ValueListenableBuilder<bool>(
-      valueListenable: notifier,
-      builder: (context, value, child) {
-        return AnimatedSwitcher(
-          duration: const Duration(milliseconds: 250),
-          transitionBuilder: (child, animation) => ScaleTransition(
-            scale: animation,
-            child: child,
-          ),
-          child: value ? secondary : primary,
-        );
-      },
     );
   }
 }
