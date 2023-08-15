@@ -7,6 +7,10 @@ abstract class WidgetsAbstractFactory {
     bool? blurred,
   });
 
+  ButtonFactory createSmallGradientButton({
+    required BaseUiKitButtonData data,
+  });
+
   ButtonFactory createButtonWithProgress({
     BaseUiKitButtonData? data,
     double? progress,
@@ -97,7 +101,16 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 
   @override
   ButtonFactory createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred}) {
-    if ((data?.text != null && data!.text.isNotEmpty) || data?.icon != null) {
+    if (!(blurred ?? false)) {
+      return SmallOutlinedButtonNoBlur(
+        onPressed: data?.onPressed,
+        text: data?.text ?? '',
+        borderColor: color,
+        textColor: color,
+        icon: data?.icon,
+        loading: data?.loading,
+      );
+    } else if ((data?.text != null && data!.text.isNotEmpty) || data?.icon != null) {
       return SmallOutlinedButton(
         onPressed: data?.onPressed,
         blurred: blurred ?? false,
@@ -405,6 +418,17 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     return BouncingBlurButton(
       icon: data.icon!,
       onPressed: data.onPressed,
+    );
+  }
+
+  @override
+  ButtonFactory createSmallGradientButton({
+    required BaseUiKitButtonData data,
+  }) {
+    return SmallGradientButton(
+      text: data.text,
+      onPressed: data.onPressed,
+      loading: data.loading,
     );
   }
 

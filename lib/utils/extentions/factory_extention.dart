@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 extension FactoryExtention on BuildContext {
+  Widget smallGradientButton({required BaseUiKitButtonData data}) {
+    return WidgetsFactory.of(this)!.createSmallGradientButton(data: data).build(this);
+  }
+
   Widget buttonWithProgress({
     BaseUiKitButtonData? data,
     double? progress,
@@ -58,18 +62,8 @@ extension FactoryExtention on BuildContext {
         .build(this);
   }
 
-  Widget outlinedButton({
-    required BaseUiKitButtonData data,
-    Color? color,
-    bool? hideBorder
-  }) {
-    return WidgetsFactory.of(this)!
-        .createOutlinedButton(
-          data: data,
-          color: color,
-        hideBorder:hideBorder
-        )
-        .build(this);
+  Widget outlinedButton({required BaseUiKitButtonData data, Color? color, bool? hideBorder}) {
+    return WidgetsFactory.of(this)!.createOutlinedButton(data: data, color: color, hideBorder: hideBorder).build(this);
   }
 
   Widget smallOutlinedButton({
@@ -114,19 +108,9 @@ extension FactoryExtention on BuildContext {
         .build(this);
   }
 
-  Widget button({
-    required BaseUiKitButtonData data,
-    bool? isTextButton,
-    bool? blurred,
-    bool reversed = false
-  }) {
+  Widget button({required BaseUiKitButtonData data, bool? isTextButton, bool? blurred, bool reversed = false}) {
     return WidgetsFactory.of(this)!
-        .createOrdinaryButton(
-          data: data,
-          isTextButton: isTextButton ?? false,
-          blurred: blurred,
-        reversed:reversed
-        )
+        .createOrdinaryButton(data: data, isTextButton: isTextButton ?? false, blurred: blurred, reversed: reversed)
         .build(this);
   }
 
