@@ -4,6 +4,7 @@ export './common/circular_avatar.dart';
 export './common/sliding_chip.dart';
 export './common/ui_kit_card_wrapper.dart';
 export './common/ui_kit_html_presenter.dart';
+export './common/ui_kit_radio.dart';
 export './place/ui_kit_titled_description_grid_widget.dart';
 export 'animation/adaptive_loader.dart';
 export 'animation/lottie_animation.dart';
