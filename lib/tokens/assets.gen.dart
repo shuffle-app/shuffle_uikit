@@ -736,6 +736,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/dollar.svg
   SvgGenImage get dollar => const SvgGenImage('assets/images/svg/dollar.svg');
 
+  /// File path: assets/images/svg/empty_radio.svg
+  SvgGenImage get emptyRadio => const SvgGenImage('assets/images/svg/empty_radio.svg');
+
   /// File path: assets/images/svg/exclamation.svg
   SvgGenImage get exclamation => const SvgGenImage('assets/images/svg/exclamation.svg');
 
@@ -744,6 +747,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/files.svg
   SvgGenImage get files => const SvgGenImage('assets/images/svg/files.svg');
+
+  /// File path: assets/images/svg/filled_radio.svg
+  SvgGenImage get filledRadio => const SvgGenImage('assets/images/svg/filled_radio.svg');
 
   /// File path: assets/images/svg/finance.svg
   SvgGenImage get finance => const SvgGenImage('assets/images/svg/finance.svg');
@@ -1122,9 +1128,11 @@ class $AssetsImagesSvgGen {
         docsFill,
         docsOutline,
         dollar,
+        emptyRadio,
         exclamation,
         family,
         files,
+        filledRadio,
         finance,
         fireWhite,
         flag,
