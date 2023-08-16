@@ -67,7 +67,9 @@ extension FactoryExtention on BuildContext {
     bool? hideBorder,
     Color? borderColor,
   }) {
-    return WidgetsFactory.of(this)!.createOutlinedButton(data: data, borderColor: borderColor, hideBorder: hideBorder).build(this);
+    return WidgetsFactory.of(this)!
+        .createOutlinedButton(data: data, borderColor: borderColor, hideBorder: hideBorder)
+        .build(this);
   }
 
   Widget smallOutlinedButton({
@@ -112,19 +114,9 @@ extension FactoryExtention on BuildContext {
         .build(this);
   }
 
-  Widget button({
-    required BaseUiKitButtonData data,
-    bool? isTextButton,
-    bool? blurred,
-    bool reversed = false
-  }) {
+  Widget button({required BaseUiKitButtonData data, bool? isTextButton, bool? blurred, bool reversed = false}) {
     return WidgetsFactory.of(this)!
-        .createOrdinaryButton(
-          data: data,
-          isTextButton: isTextButton ?? false,
-          blurred: blurred,
-        reversed:reversed
-        )
+        .createOrdinaryButton(data: data, isTextButton: isTextButton ?? false, blurred: blurred, reversed: reversed)
         .build(this);
   }
 
