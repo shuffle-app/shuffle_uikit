@@ -52,6 +52,7 @@ export 'swiper/ui_kit_swiper_card_info.dart';
 export 'tab_bar/ui_kit_custom_tab.dart';
 export 'tiles/ui_kit_action_card_tile.dart';
 export 'tiles/ui_kit_gradient_switch_tile.dart';
+export 'tiles/ui_kit_location_search_tile.dart';
 export 'tiles/ui_kit_pop_up_menu_tile.dart';
 export 'user/base_user_tile.dart';
 export 'user/influencer_user_tile.dart';

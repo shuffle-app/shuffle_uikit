@@ -718,6 +718,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/coworking.svg
   SvgGenImage get coworking => const SvgGenImage('assets/images/svg/coworking.svg');
 
+  /// File path: assets/images/svg/cross.svg
+  SvgGenImage get cross => const SvgGenImage('assets/images/svg/cross.svg');
+
   /// File path: assets/images/svg/cutlery.svg
   SvgGenImage get cutlery => const SvgGenImage('assets/images/svg/cutlery.svg');
 
@@ -828,6 +831,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/logout.svg
   SvgGenImage get logout => const SvgGenImage('assets/images/svg/logout.svg');
+
+  /// File path: assets/images/svg/map_outlined.svg
+  SvgGenImage get mapOutlined => const SvgGenImage('assets/images/svg/map_outlined.svg');
 
   /// File path: assets/images/svg/mask.svg
   SvgGenImage get mask => const SvgGenImage('assets/images/svg/mask.svg');
@@ -1122,6 +1128,7 @@ class $AssetsImagesSvgGen {
         connectionFill,
         connectionOutline,
         coworking,
+        cross,
         cutlery,
         diamond,
         dice,
@@ -1159,6 +1166,7 @@ class $AssetsImagesSvgGen {
         location,
         logo,
         logout,
+        mapOutlined,
         mask,
         maximize,
         memeberGradientStar,

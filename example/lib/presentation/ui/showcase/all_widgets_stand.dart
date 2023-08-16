@@ -273,26 +273,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               UiKitHorizontalScroll3D(
-                  itemBuilder: (BuildContext context, int index) => UiKitFeedbackCard(
-                        avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
-                        title: 'Atmosphere',
-                        datePosted: DateTime.now().subtract(const Duration(days: 2)),
-                        rating: 5,
-                        companyAnswered: false,
-                        helpfulCount: 1,
-                        text: 'Came for lunch with my sister. '
-                            'We loved our Thai-style mains which were amazing with lots of flavour, very impressive for a vegetarian restaurant. '
-                            'But the service was below average and the chips were too terrible to finish.',
-                        onPressed: () {},
-                        onLike: () {},
-                      ),
-                  itemCount: 5),
-              SpacingFoundation.verticalSpace16,
-              SpacingFoundation.verticalSpace16,
-              UiKitFindSomeoneCard(
+                  itemBuilder: (BuildContext context, int index) => 
+                   UiKitFindSomeoneCard(
                   avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
                   userNickName: 'naveen',
-                  userName: 'Naveen',
+                  userName: 'Naveen Sheoran',
                   userPoints: 555,
                   sameInterests: 4,
                   onMessage: () {
@@ -301,8 +286,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                         content: const Text('Send message'),
                       ),
                     );
-                  }),
+                  }
+                      ),
+                  itemCount: 5),
               SpacingFoundation.verticalSpace16,
+             
               UiKitFeedbackCard(
                 avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
                 title: 'At.mosphere',
