@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitLocationPicker extends StatelessWidget {
   final TextEditingController searchController;
-  final MapWidget map;
   final VoidCallback? onSearchTapped;
   final VoidCallback? onPickFromMap;
   final VoidCallback? onSearchInputCleaned;
   final ValueChanged<LocationSuggestion>? onSuggestionChosen;
   final LocationPickerSearchOverlayController locationPickerSearchOverlayController;
+  final ValueChanged<GoogleMapController> onMapCreated;
+  final ValueChanged<CameraPosition> onCameraMoved;
+  final ValueChanged<LatLng>? onMapTapped;
+  final CameraPosition initialCameraPosition;
+  final Set<Marker> markers;
 
   UiKitLocationPicker({
     super.key,
@@ -17,8 +22,12 @@ class UiKitLocationPicker extends StatelessWidget {
     this.onPickFromMap,
     this.onSuggestionChosen,
     this.onSearchInputCleaned,
-    required this.map,
     required this.locationPickerSearchOverlayController,
+    required this.onMapCreated,
+    required this.onCameraMoved,
+    this.onMapTapped,
+    required this.initialCameraPosition,
+    required this.markers,
   });
 
   late final FocusNode _focusNode = FocusNode()
@@ -33,9 +42,12 @@ class UiKitLocationPicker extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        Container(
-          color: Colors.cyan,
-          child: map,
+        GoogleMap(
+          onMapCreated: onMapCreated,
+          initialCameraPosition: initialCameraPosition,
+          onCameraMove: onCameraMoved,
+          markers: markers,
+          onTap: onMapTapped,
         ),
         LocationPickerSearchOverlay(
           onSuggestionChosen: (suggestion) {
