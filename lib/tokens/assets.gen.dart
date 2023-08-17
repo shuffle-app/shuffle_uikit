@@ -643,8 +643,23 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/armchair.svg
   SvgGenImage get armchair => const SvgGenImage('assets/images/svg/armchair.svg');
 
+  /// File path: assets/images/svg/arrow-down.svg
+  SvgGenImage get arrowDown => const SvgGenImage('assets/images/svg/arrow-down.svg');
+
   /// File path: assets/images/svg/arrow-left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/images/svg/arrow-left.svg');
+
+  /// File path: assets/images/svg/arrow-result.svg
+  SvgGenImage get arrowResult => const SvgGenImage('assets/images/svg/arrow-result.svg');
+
+  /// File path: assets/images/svg/arrow-right.svg
+  SvgGenImage get arrowRight => const SvgGenImage('assets/images/svg/arrow-right.svg');
+
+  /// File path: assets/images/svg/arrow-up.svg
+  SvgGenImage get arrowUp => const SvgGenImage('assets/images/svg/arrow-up.svg');
+
+  /// File path: assets/images/svg/arrows-sort.svg
+  SvgGenImage get arrowsSort => const SvgGenImage('assets/images/svg/arrows-sort.svg');
 
   /// File path: assets/images/svg/athlete.svg
   SvgGenImage get athlete => const SvgGenImage('assets/images/svg/athlete.svg');
@@ -673,11 +688,12 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/camera-plus.svg
   SvgGenImage get cameraPlus => const SvgGenImage('assets/images/svg/camera-plus.svg');
 
+  /// File path: assets/images/svg/check-circle.svg
+  SvgGenImage get checkCircle => const SvgGenImage('assets/images/svg/check-circle.svg');
+
   /// File path: assets/images/svg/check.svg
   SvgGenImage get check => const SvgGenImage('assets/images/svg/check.svg');
 
-  /// File path: assets/images/svg/check_circle.svg
-  SvgGenImage get checkCircle => const SvgGenImage('assets/images/svg/check_circle.svg');
 
   /// File path: assets/images/svg/chess.svg
   SvgGenImage get chess => const SvgGenImage('assets/images/svg/chess.svg');
@@ -721,6 +737,12 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/cross.svg
   SvgGenImage get cross => const SvgGenImage('assets/images/svg/cross.svg');
 
+  /// File path: assets/images/svg/current-location.svg
+  SvgGenImage get currentLocation => const SvgGenImage('assets/images/svg/current-location.svg');
+
+  /// File path: assets/images/svg/cursor.svg
+  SvgGenImage get cursor => const SvgGenImage('assets/images/svg/cursor.svg');
+
   /// File path: assets/images/svg/cutlery.svg
   SvgGenImage get cutlery => const SvgGenImage('assets/images/svg/cutlery.svg');
 
@@ -729,6 +751,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/dice.svg
   SvgGenImage get dice => const SvgGenImage('assets/images/svg/dice.svg');
+
+  /// File path: assets/images/svg/diskette.svg
+  SvgGenImage get diskette => const SvgGenImage('assets/images/svg/diskette.svg');
 
   /// File path: assets/images/svg/docs-fill.svg
   SvgGenImage get docsFill => const SvgGenImage('assets/images/svg/docs-fill.svg');
@@ -753,6 +778,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/filled_radio.svg
   SvgGenImage get filledRadio => const SvgGenImage('assets/images/svg/filled_radio.svg');
+
+  /// File path: assets/images/svg/filter.svg
+  SvgGenImage get filter => const SvgGenImage('assets/images/svg/filter.svg');
 
   /// File path: assets/images/svg/finance.svg
   SvgGenImage get finance => const SvgGenImage('assets/images/svg/finance.svg');
@@ -784,6 +812,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/history.svg
   SvgGenImage get history => const SvgGenImage('assets/images/svg/history.svg');
 
+  /// File path: assets/images/svg/home.svg
+  SvgGenImage get home => const SvgGenImage('assets/images/svg/home.svg');
+
   /// File path: assets/images/svg/home_fill.svg
   SvgGenImage get homeFill => const SvgGenImage('assets/images/svg/home_fill.svg');
 
@@ -813,6 +844,12 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/landmark.svg
   SvgGenImage get landmark => const SvgGenImage('assets/images/svg/landmark.svg');
+
+  /// File path: assets/images/svg/layout-grid.svg
+  SvgGenImage get layoutGrid => const SvgGenImage('assets/images/svg/layout-grid.svg');
+
+  /// File path: assets/images/svg/layout-sidebar.svg
+  SvgGenImage get layoutSidebar => const SvgGenImage('assets/images/svg/layout-sidebar.svg');
 
   /// File path: assets/images/svg/lifebuoy.svg
   SvgGenImage get lifebuoy => const SvgGenImage('assets/images/svg/lifebuoy.svg');
@@ -862,6 +899,12 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/no_photo.svg
   SvgGenImage get noPhoto => const SvgGenImage('assets/images/svg/no_photo.svg');
 
+  /// File path: assets/images/svg/pause-fill.svg
+  SvgGenImage get pauseFill => const SvgGenImage('assets/images/svg/pause-fill.svg');
+
+  /// File path: assets/images/svg/pause-outline.svg
+  SvgGenImage get pauseOutline => const SvgGenImage('assets/images/svg/pause-outline.svg');
+
   /// File path: assets/images/svg/pause.svg
   SvgGenImage get pause => const SvgGenImage('assets/images/svg/pause.svg');
 
@@ -870,6 +913,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/play-fill.svg
   SvgGenImage get playFill => const SvgGenImage('assets/images/svg/play-fill.svg');
+
+  /// File path: assets/images/svg/play-outline.svg
+  SvgGenImage get playOutline => const SvgGenImage('assets/images/svg/play-outline.svg');
 
   /// File path: assets/images/svg/play.svg
   SvgGenImage get play => const SvgGenImage('assets/images/svg/play.svg');
@@ -880,6 +926,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/plus.svg
   SvgGenImage get plus => const SvgGenImage('assets/images/svg/plus.svg');
 
+  /// File path: assets/images/svg/point.svg
+  SvgGenImage get point => const SvgGenImage('assets/images/svg/point.svg');
+
   /// File path: assets/images/svg/pointy-head.svg
   SvgGenImage get pointyHead => const SvgGenImage('assets/images/svg/pointy-head.svg');
 
@@ -888,6 +937,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/pro_account_mark.svg
   SvgGenImage get proAccountMark => const SvgGenImage('assets/images/svg/pro_account_mark.svg');
+
+  /// File path: assets/images/svg/profile-check.svg
+  SvgGenImage get profileCheck => const SvgGenImage('assets/images/svg/profile-check.svg');
 
   /// File path: assets/images/svg/profile-delete.svg
   SvgGenImage get profileDelete => const SvgGenImage('assets/images/svg/profile-delete.svg');
@@ -903,6 +955,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/question.svg
   SvgGenImage get question => const SvgGenImage('assets/images/svg/question.svg');
+
+  /// File path: assets/images/svg/refresh.svg
+  SvgGenImage get refresh => const SvgGenImage('assets/images/svg/refresh.svg');
 
   /// File path: assets/images/svg/restaurant.svg
   SvgGenImage get restaurant => const SvgGenImage('assets/images/svg/restaurant.svg');
@@ -976,6 +1031,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/star.svg
   SvgGenImage get star => const SvgGenImage('assets/images/svg/star.svg');
 
+  /// File path: assets/images/svg/stop-outline.svg
+  SvgGenImage get stopOutline => const SvgGenImage('assets/images/svg/stop-outline.svg');
+
   /// File path: assets/images/svg/stop.svg
   SvgGenImage get stop => const SvgGenImage('assets/images/svg/stop.svg');
 
@@ -984,6 +1042,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/swim.svg
   SvgGenImage get swim => const SvgGenImage('assets/images/svg/swim.svg');
+
+  /// File path: assets/images/svg/table.svg
+  SvgGenImage get table => const SvgGenImage('assets/images/svg/table.svg');
 
   /// File path: assets/images/svg/thumb-up.svg
   SvgGenImage get thumbUp => const SvgGenImage('assets/images/svg/thumb-up.svg');
@@ -1006,11 +1067,17 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/tripple_arrow_black.svg
   SvgGenImage get trippleArrowBlack => const SvgGenImage('assets/images/svg/tripple_arrow_black.svg');
 
+  /// File path: assets/images/svg/unlink.svg
+  SvgGenImage get unlink => const SvgGenImage('assets/images/svg/unlink.svg');
+
   /// File path: assets/images/svg/user.svg
   SvgGenImage get user => const SvgGenImage('assets/images/svg/user.svg');
 
   /// File path: assets/images/svg/video-plus.svg
   SvgGenImage get videoPlus => const SvgGenImage('assets/images/svg/video-plus.svg');
+
+  /// File path: assets/images/svg/view-action.svg
+  SvgGenImage get viewAction => const SvgGenImage('assets/images/svg/view-action.svg');
 
   /// File path: assets/images/svg/volume-off.svg
   SvgGenImage get volumeOff => const SvgGenImage('assets/images/svg/volume-off.svg');
@@ -1103,7 +1170,12 @@ class $AssetsImagesSvgGen {
         aquapark,
         archive,
         armchair,
+        arrowDown,
         arrowLeft,
+        arrowResult,
+        arrowRight,
+        arrowUp,
+        arrowsSort,
         athlete,
         barcode,
         bath,
@@ -1113,6 +1185,7 @@ class $AssetsImagesSvgGen {
         businessman,
         calendar,
         cameraPlus,
+        checkCircle,
         check,
         checkCircle,
         chess,
@@ -1129,9 +1202,12 @@ class $AssetsImagesSvgGen {
         connectionOutline,
         coworking,
         cross,
+        currentLocation,
+        cursor,
         cutlery,
         diamond,
         dice,
+        diskette,
         docsFill,
         docsOutline,
         dollar,
@@ -1140,6 +1216,7 @@ class $AssetsImagesSvgGen {
         family,
         files,
         filledRadio,
+        filter,
         finance,
         fireWhite,
         flag,
@@ -1150,6 +1227,7 @@ class $AssetsImagesSvgGen {
         heartFill,
         heartOutline,
         history,
+        home,
         homeFill,
         homeOutline,
         hookah,
@@ -1160,6 +1238,8 @@ class $AssetsImagesSvgGen {
         keyboard,
         label,
         landmark,
+        layoutGrid,
+        layoutSidebar,
         lifebuoy,
         like,
         loader,
@@ -1176,20 +1256,26 @@ class $AssetsImagesSvgGen {
         moreVert,
         music,
         noPhoto,
+        pauseFill,
+        pauseOutline,
         pause,
         pencil,
         playFill,
+        playOutline,
         play,
         playArrow,
         plus,
+        point,
         pointyHead,
         premiumAccountMark,
         proAccountMark,
+        profileCheck,
         profileDelete,
         profilePlus,
         profileFill,
         profileOutline,
         question,
+        refresh,
         restaurant,
         risingTrendIcon,
         route,
@@ -1214,9 +1300,11 @@ class $AssetsImagesSvgGen {
         starFill,
         starOutline,
         star,
+        stopOutline,
         stop,
         sufle,
         swim,
+        table,
         thumbUp,
         tiger,
         trash,
@@ -1224,8 +1312,10 @@ class $AssetsImagesSvgGen {
         trendUp,
         tripleArrow,
         trippleArrowBlack,
+        unlink,
         user,
         videoPlus,
+        viewAction,
         volumeOff,
         volume,
         wallet,

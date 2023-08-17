@@ -39,7 +39,11 @@ dependencies:
   popover: ^0.2.8+2
 
   #tab navigation
-  tabnavigator: ^1.0.0
+  tabnavigator:
+#    path: ../tabnavigator_plus
+    git:
+     url: https://github.com/shuffle-app/tabnavigator_plus
+     ref: main
   rxdart: any
   lottie: ^2.3.2
   flutter_card_swiper: ^5.0.0
