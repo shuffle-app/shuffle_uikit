@@ -57,6 +57,8 @@ dependencies:
   smooth_video_progress: ^0.0.4
   countries_flag: ^1.0.0
 
+  #maps
+  google_maps_flutter: ^2.4.0
 
 dev_dependencies:
   flutter_test:

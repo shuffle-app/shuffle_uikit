@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class LocationPickerPage extends StatefulWidget {
@@ -12,11 +13,13 @@ class LocationPickerPage extends StatefulWidget {
 class _LocationPickerPageState extends State<LocationPickerPage> {
   final searchController = TextEditingController();
   final LocationPickerSearchOverlayController locationPickerSearchOverlayController = LocationPickerSearchOverlayController();
+  final LocationDetailsSheetController locationDetailsSheetController = LocationDetailsSheetController();
 
   @override
   void dispose() {
     searchController.dispose();
     locationPickerSearchOverlayController.dispose();
+    locationDetailsSheetController.dispose();
     super.dispose();
   }
 
@@ -24,6 +27,16 @@ class _LocationPickerPageState extends State<LocationPickerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: UiKitLocationPicker(
+        onMapCreated: (controller) {},
+        initialCameraPosition: const CameraPosition(
+          target: LatLng(0, 0),
+          zoom: 16,
+        ),
+        onCameraMoved: (position) {},
+        onMapTapped: (latLng) {},
+        markers: const {},
+        onSuggestionChosen: (suggestion) {},
+        onSearchInputCleaned: () {},
         searchController: searchController,
         locationPickerSearchOverlayController: locationPickerSearchOverlayController,
         onSearchTapped: () {
@@ -37,7 +50,10 @@ class _LocationPickerPageState extends State<LocationPickerPage> {
             const SystemUiOverlayStyle(statusBarBrightness: Brightness.dark),
           );
         },
-        map: const ExampleMap(),
+        locationDetailsSheetController: locationDetailsSheetController,
+        onCurrentLocationTapped: () {},
+        onKnownLocationConfirmed: (location) {},
+        onLocationConfirmed: () {},
       ),
     );
   }

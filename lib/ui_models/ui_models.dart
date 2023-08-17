@@ -2,6 +2,7 @@
 
 export 'buttons/base_ui_kit_button_data.dart';
 export 'cards/action_card_decoration_icon_data.dart';
+export 'location/known_location.dart';
 export 'location/location_suggestion.dart';
 export 'places/base_ui_kit_media.dart';
 export 'places/slidable_place_card_data.dart';

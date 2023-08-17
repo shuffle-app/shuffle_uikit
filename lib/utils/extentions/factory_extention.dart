@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 extension FactoryExtention on BuildContext {
+  Widget smallGradientButton({required BaseUiKitButtonData data}) {
+    return WidgetsFactory.of(this)!.createSmallGradientButton(data: data).build(this);
+  }
+
   Widget buttonWithProgress({
     BaseUiKitButtonData? data,
     double? progress,
@@ -33,6 +37,7 @@ extension FactoryExtention on BuildContext {
     bool? isTextButton,
     bool? blurred,
     bool uppercase = true,
+    Color? color,
   }) {
     return WidgetsFactory.of(this)!
         .createSmallButton(
@@ -40,6 +45,7 @@ extension FactoryExtention on BuildContext {
           isTextButton: isTextButton ?? false,
           blurred: blurred,
           uppercase: uppercase,
+          color: color,
         )
         .build(this);
   }
@@ -63,7 +69,9 @@ extension FactoryExtention on BuildContext {
     bool? hideBorder,
     Color? borderColor,
   }) {
-    return WidgetsFactory.of(this)!.createOutlinedButton(data: data, borderColor: borderColor, hideBorder: hideBorder).build(this);
+    return WidgetsFactory.of(this)!
+        .createOutlinedButton(data: data, borderColor: borderColor, hideBorder: hideBorder)
+        .build(this);
   }
 
   Widget smallOutlinedButton({
