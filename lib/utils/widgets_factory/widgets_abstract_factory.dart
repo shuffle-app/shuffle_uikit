@@ -252,20 +252,27 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  ButtonFactory createSmallButton(
-      {required BaseUiKitButtonData data, bool isTextButton = false, bool? blurred, bool uppercase = true}) {
+  ButtonFactory createSmallButton({
+    required BaseUiKitButtonData data,
+    bool isTextButton = false,
+    bool? blurred,
+    bool uppercase = true,
+    Color? color,
+  }) {
     final hasIcon = data.icon != null;
     final hasBlur = blurred ?? false;
     if (hasIcon && hasBlur) {
       return SmallBlurredButtonWithIcon(
         icon: data.icon!,
         onPressed: data.onPressed,
+        color: color,
       );
     }
     if (hasIcon && !hasBlur) {
       return SmallButtonWithIcon(
         icon: data.icon,
         onPressed: data.onPressed,
+        color: color,
       );
     }
 
@@ -274,6 +281,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       onPressed: data.onPressed,
       uppercase: uppercase,
       loading: data.loading,
+      color: color,
     );
   }
 

@@ -6,10 +6,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class SmallBlurredButtonWithIcon extends StatelessWidget implements ButtonFactory {
   final Widget icon;
   final VoidCallback? onPressed;
+  final Color? color;
 
   const SmallBlurredButtonWithIcon({
     Key? key,
     required this.icon,
+    this.color,
     this.onPressed,
   }) : super(key: key);
 
@@ -17,14 +19,14 @@ class SmallBlurredButtonWithIcon extends StatelessWidget implements ButtonFactor
   Widget build(BuildContext context) {
     return Material(
       shape: const CircleBorder(),
-      color: Colors.white.withOpacity(0.1),
+      color: color ?? Colors.white.withOpacity(0.1),
       child: InkWell(
         onTap: onPressed,
         borderRadius: BorderRadiusFoundation.max,
         child: Ink(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: Colors.white.withOpacity(0.1),
+            color: color ?? Colors.white.withOpacity(0.1),
           ),
           child: ClipOval(
             child: BackdropFilter(

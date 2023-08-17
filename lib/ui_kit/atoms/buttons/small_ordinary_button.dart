@@ -6,6 +6,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final bool uppercase;
   final bool? loading;
+  final Color? color;
 
   const SmallOrdinaryButton({
     Key? key,
@@ -13,6 +14,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
     this.onPressed,
     this.loading,
     this.uppercase = true,
+    this.color,
   }) : super(key: key);
 
   @override
@@ -21,11 +23,15 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
     final textStyle = theme?.boldTextTheme.caption1Bold;
 
     return ElevatedButton(
-      style: theme?.smallOrdinaryButtonStyle,
+      style: theme?.smallOrdinaryButtonStyle.copyWith(
+        backgroundColor: MaterialStateProperty.resolveWith((states) {
+          return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : color ?? Colors.white;
+        }),
+      ),
       onPressed: onPressed,
       child: Text(
         uppercase ? text.toUpperCase() : text,
-        style: textStyle?.copyWith(color: Colors.black),
+        style: textStyle?.copyWith(color: color == Colors.white ? Colors.black : Colors.white),
       ),
     ).loadingWrap(loading ?? false);
   }

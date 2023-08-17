@@ -117,17 +117,16 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
 }
 
 class LocationPickerSearchOverlayController {
-  LocationSuggestion? selectedSuggestion;
-
   final StreamController<LocationPickerOverlayState> _overlayStateStreamController =
       StreamController<LocationPickerOverlayState>();
+
+  LocationSuggestion? selectedSuggestion;
 
   List<LocationSuggestion> searchSuggestions = List<LocationSuggestion>.empty(growable: true);
 
   LocationPickerOverlayState currentState = LocationPickerOverlayState.hidden;
 
-  late Stream<LocationPickerOverlayState> overlayStateStream =
-      _overlayStateStreamController.stream.asBroadcastStream();
+  late Stream<LocationPickerOverlayState> overlayStateStream = _overlayStateStreamController.stream.asBroadcastStream();
 
   LocationPickerSearchOverlayController() {
     _overlayStateStreamController.add(LocationPickerOverlayState.hidden);
@@ -140,11 +139,11 @@ class LocationPickerSearchOverlayController {
 
   void updateState(LocationPickerOverlayState state) {
     _overlayStateStreamController.add(state);
+    currentState = state;
   }
 
   void updateSelectedSuggestion(LocationSuggestion? suggestion) {
     selectedSuggestion = suggestion;
-    print(selectedSuggestion);
   }
 
   void dispose() {
@@ -152,4 +151,4 @@ class LocationPickerSearchOverlayController {
   }
 }
 
-enum LocationPickerOverlayState { hidden, loading, loaded, noSuggestions }
+enum LocationPickerOverlayState { show, hidden, loading, loaded, noSuggestions }
