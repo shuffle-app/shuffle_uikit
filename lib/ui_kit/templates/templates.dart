@@ -1,3 +1,4 @@
+export 'location_details_sheet.dart';
 export 'location_picker_search_overlay.dart';
 export 'no_internet_page_template.dart';
 export 'ui_kit_hint_dialog.dart';

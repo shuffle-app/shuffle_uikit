@@ -13,11 +13,13 @@ class LocationPickerPage extends StatefulWidget {
 class _LocationPickerPageState extends State<LocationPickerPage> {
   final searchController = TextEditingController();
   final LocationPickerSearchOverlayController locationPickerSearchOverlayController = LocationPickerSearchOverlayController();
+  final LocationDetailsSheetController locationDetailsSheetController = LocationDetailsSheetController();
 
   @override
   void dispose() {
     searchController.dispose();
     locationPickerSearchOverlayController.dispose();
+    locationDetailsSheetController.dispose();
     super.dispose();
   }
 
@@ -48,6 +50,10 @@ class _LocationPickerPageState extends State<LocationPickerPage> {
             const SystemUiOverlayStyle(statusBarBrightness: Brightness.dark),
           );
         },
+        locationDetailsSheetController: locationDetailsSheetController,
+        onCurrentLocationTapped: () {},
+        onKnownLocationConfirmed: (location) {},
+        onLocationConfirmed: () {},
       ),
     );
   }
