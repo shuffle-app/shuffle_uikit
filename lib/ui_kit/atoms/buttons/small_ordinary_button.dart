@@ -31,7 +31,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
       onPressed: onPressed,
       child: Text(
         uppercase ? text.toUpperCase() : text,
-        style: textStyle?.copyWith(color: color == Colors.white ? Colors.black : Colors.white),
+        style: textStyle?.copyWith(color: (color ?? Colors.white) == Colors.white ? Colors.black : Colors.white),
       ),
     ).loadingWrap(loading ?? false);
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:flutter/foundation.dart';
 
 class UiKitMediaSliderWithTags extends StatelessWidget {
   final List<BaseUiKitMedia> media;
@@ -24,11 +25,13 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaWidth = kIsWeb ? 200.0 : 1.sw;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-            height: 0.48.sw,
+            height: kIsWeb ? 156: 0.48.sw,
             child: GestureDetector(
               behavior: HitTestBehavior.opaque,
               onTapUp: (TapUpDetails details) {
@@ -61,13 +64,13 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                     if (mediaItem.type == UiKitMediaType.video) {
                       return BaseUiKitMediaWidget.video(
                         media: mediaItem,
-                        width: media.length == 1 ? 1.sw : null,
+                        width: media.length == 1 ? mediaWidth : null,
                       );
                     }
 
                     return BaseUiKitMediaWidget.image(
                         media: mediaItem,
-                        width: media.length == 1 ? 1.sw : null);
+                        width: media.length == 1 ? mediaWidth : null);
                   }()
                       .paddingOnly(
                           right: media.length == index
