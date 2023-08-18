@@ -109,7 +109,7 @@ class GradientBottomNavigationBarItem extends TabType {
   final SvgGenImage selectedIcon;
   final SvgGenImage unselectedIcon;
 
-  const GradientBottomNavigationBarItem._({
+   GradientBottomNavigationBarItem._({
     required this.selectedIcon,
     required this.unselectedIcon,
     required int index,

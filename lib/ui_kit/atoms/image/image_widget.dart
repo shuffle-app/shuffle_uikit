@@ -73,7 +73,7 @@ class ImageWidget extends StatelessWidget {
         height: height,
         child: errorWidget ?? const DefaultImageErrorWidget(),
       );
-    } else if (link!.substring(0, 4) == 'http') {
+    } else if (link!.length > 4 && link!.substring(0, 4) == 'http') {
       if (link!.split('.').lastOrNull == 'mp4') {
         FutureBuilder(
             future: _takeFrameFromVideo(link!),
