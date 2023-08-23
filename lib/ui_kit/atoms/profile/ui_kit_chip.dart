@@ -19,7 +19,7 @@ class UiKitChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final chipTheme = context.uiKitTheme?.chipTheme;
-    final chipTextStyle = context.uiKitTheme?.boldTextTheme.caption1Bold;
+    final chipTextStyle = context.uiKitTheme?.regularTextTheme.caption2;
 
     return Container(
       decoration: BoxDecoration(
@@ -30,7 +30,7 @@ class UiKitChip extends StatelessWidget {
       child: Text(
         title,
         style: chipTextStyle,
-      ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12, vertical: EdgeInsetsFoundation.vertical6),
+      ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12, vertical: EdgeInsetsFoundation.vertical4˚),
     );
   }
 }
