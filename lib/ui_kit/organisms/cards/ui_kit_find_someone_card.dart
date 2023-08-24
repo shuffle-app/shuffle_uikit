@@ -34,13 +34,15 @@ class UiKitFindSomeoneCard extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
               children: [
                 Expanded(
+                  flex: 4,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -49,22 +51,23 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                         avatarUrl: avatarUrl ?? '',
                         height: calculatedWidth * 0.18,
                       ),
-                      Text('@$userNickName',
-                          style: boldTextTheme?.caption1Bold),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 25.0),
-                        child: Text(
-                          userName ?? '',
-                          style: boldTextTheme?.caption1Bold.copyWith(
-                              color: ColorsFoundation.darkNeutral900,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 13.w),
-                        ),
+                      Text(
+                        '@$userNickName',
+                        style: boldTextTheme?.caption1Bold,
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        userName ?? '',
+                        style: boldTextTheme?.caption1Bold
+                            .copyWith(color: ColorsFoundation.darkNeutral900, fontWeight: FontWeight.w400, fontSize: 13.w),
+                        textAlign: TextAlign.center,
                       ),
                     ],
                   ),
                 ),
+                SpacingFoundation.horizontalSpace8,
                 Expanded(
+                  flex: 5,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     mainAxisSize: MainAxisSize.max,
@@ -72,31 +75,29 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                       Container(
                         height: calculatedWidth * 0.08,
                         decoration: BoxDecoration(
-                            gradient: GradientFoundation.findSomeoneGradient,
-                            borderRadius: BorderRadiusFoundation.all24),
+                            gradient: GradientFoundation.findSomeoneGradient, borderRadius: BorderRadiusFoundation.all24),
                         child: Center(
-                          child: Text('$userPoints  points',
-                              style: boldTextTheme?.caption1Bold.copyWith(
-                                  fontSize: 13.w, color: Colors.black)),
+                          child: Text(
+                            '$userPoints points',
+                            style: boldTextTheme?.caption1Bold.copyWith(fontSize: 13.w, color: Colors.black),
+                          ),
                         ),
                       ),
                       SpacingFoundation.verticalSpace16,
                       Center(
-                        child: Text('${sameInterests} same interests',
-                            style: boldTextTheme?.caption1Bold.copyWith(
-                                fontSize: 13.w,
-                                color: ColorsFoundation.darkNeutral900,
-                                fontWeight: FontWeight.w500)),
+                        child: Text(
+                          '${sameInterests} same interests',
+                          style: boldTextTheme?.caption1Bold
+                              .copyWith(fontSize: 13.w, color: ColorsFoundation.darkNeutral900, fontWeight: FontWeight.w500),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                       SpacingFoundation.verticalSpace16,
                       SizedBox(
                         height: calculatedWidth * 0.08,
                         width: calculatedWidth,
                         child: context.smallButton(
-                            data: BaseUiKitButtonData(
-                                onPressed: onMessage,
-                                text: 'Message',
-                                fit: ButtonFit.fitWidth)),
+                            data: BaseUiKitButtonData(onPressed: onMessage, text: 'Message', fit: ButtonFit.fitWidth)),
                       ),
                     ],
                   ),
@@ -104,9 +105,7 @@ class UiKitFindSomeoneCard extends StatelessWidget {
               ],
             ),
           ],
-        ).paddingSymmetric(
-            vertical: SpacingFoundation.verticalSpacing16,
-            horizontal: SpacingFoundation.horizontalSpacing12),
+        ).paddingAll(EdgeInsetsFoundation.all16),
       ),
     );
   }

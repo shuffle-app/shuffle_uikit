@@ -16,6 +16,7 @@ class BlurredAppBarPage extends StatelessWidget {
   final bool wrapSliverBox;
   final Widget? topFixedAddition;
   final ScrollPhysics physics;
+  final double? customToolbarHeight;
 
   // final PreferredSizeWidget? bottom;
 
@@ -32,21 +33,21 @@ class BlurredAppBarPage extends StatelessWidget {
     ScrollPhysics? physics,
     this.appBarTrailing,
     // this.bottom,
-    this.centerTitle = false, this.topFixedAddition,
-  })
-      : 
+    this.customToolbarHeight,
+    this.centerTitle = false,
+    this.topFixedAddition,
+  })  :
         // controller = controller ?? ScrollController(),
         physics = physics ?? const ClampingScrollPhysics(),
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final toolbarHeight = (context.uiKitTheme?.customAppBapTheme
-        .toolbarHeight ?? 90.0);
+    final toolbarHeight = (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
     final expandedHeight = appBarBody == null ? toolbarHeight : 190.0;
 
     // return NestedScrollView(
-    // return MultiSliver(
+      // return MultiSliver(
       return CustomScrollView(
       controller: controller,
       // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
@@ -64,9 +65,8 @@ class BlurredAppBarPage extends StatelessWidget {
         SliverLayoutBuilder(
           builder: (context, sliverConstraints) {
             const animDuration = Duration(milliseconds: 250);
-
-            final hideAppBarBody = appBarBody == null ? true : sliverConstraints
-                .scrollOffset > toolbarHeight;
+            final expandedHeight = appBarBody == null ? toolbarHeight : customToolbarHeight ?? 190.0;
+            final hideAppBarBody = appBarBody == null ? true : sliverConstraints.scrollOffset > toolbarHeight;
             // sliverConstraints.scrollOffset > expandedHeight;
 
             return SliverAppBar(
@@ -81,15 +81,11 @@ class BlurredAppBarPage extends StatelessWidget {
               flexibleSpace: CustomAppBar(
                 hideBody: hideAppBarBody,
                 leading: leading,
-                bodySpacing: appBarBody == null
-                    ? SpacingFoundation.zero
-                    : SpacingFoundation.verticalSpacing16,
+                bodySpacing: appBarBody == null ? SpacingFoundation.zero : SpacingFoundation.verticalSpacing16,
                 title: title,
                 appBarBody: AnimatedContainer(
                   duration: animDuration,
-                  height: hideAppBarBody ? 0 : max(0,
-                      expandedHeight - toolbarHeight -
-                          SpacingFoundation.verticalSpacing16),
+                  height: hideAppBarBody ? 0 : max(0, expandedHeight - toolbarHeight - SpacingFoundation.verticalSpacing16),
                   child: appBarBody,
                 ),
                 appBarTrailing: appBarTrailing,
@@ -101,9 +97,8 @@ class BlurredAppBarPage extends StatelessWidget {
           },
         // )
         ),
-        if(topFixedAddition != null)
-          SliverPinnedHeader(child: topFixedAddition!),
-          // topFixedAddition!.wrapSliverBox
+        if (topFixedAddition != null) SliverPinnedHeader(child: topFixedAddition!),
+        // topFixedAddition!.wrapSliverBox
       ]),
       // body: body.paddingOnly(top: expandedHeight),
       // if(wrapSliverBox)
