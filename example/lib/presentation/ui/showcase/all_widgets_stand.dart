@@ -120,7 +120,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
       ),
       body: SingleChildScrollView(
-        controller: _scrollController,
         child: Form(
           key: _formKey,
           child: Column(
@@ -273,24 +272,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               UiKitHorizontalScroll3D(
-                  itemBuilder: (BuildContext context, int index) => 
-                   UiKitFindSomeoneCard(
-                  avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
-                  userNickName: 'naveen',
-                  userName: 'Naveen Sheoran',
-                  userPoints: 555,
-                  sameInterests: 4,
-                  onMessage: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: const Text('Send message'),
-                      ),
-                    );
-                  }
-                      ),
+                  itemBuilder: (BuildContext context, int index) => UiKitFindSomeoneCard(
+                      avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+                      userNickName: 'naveen',
+                      userName: 'Naveen Sheoran',
+                      userPoints: 555,
+                      sameInterests: 4,
+                      onMessage: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: const Text('Send message'),
+                          ),
+                        );
+                      }),
                   itemCount: 5),
               SpacingFoundation.verticalSpace16,
-             
               UiKitFeedbackCard(
                 avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
                 title: 'At.mosphere',
@@ -1181,38 +1177,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
                 ],
                 uniqueTags: [
-                  UiKitTag(
-                      title: 'Cheap',
-                      iconPath: GraphicsFoundation.instance.svg.dice.path,
-                      unique: true),
-                  UiKitTag(
-                      title: 'Cheap',
-                      iconPath: GraphicsFoundation.instance.svg.dice.path,
-                      unique: true),
-                  UiKitTag(
-                      title: 'Cheap',
-                      iconPath: GraphicsFoundation.instance.svg.dice.path,
-                      unique: true),
-                  UiKitTag(
-                      title: 'Cheap',
-                      iconPath: GraphicsFoundation.instance.svg.dice.path,
-                      unique: true),
-                  UiKitTag(
-                      title: 'Cheap',
-                      iconPath: GraphicsFoundation.instance.svg.dice.path,
-                      unique: true),
-                  UiKitTag(
-                      title: 'Cheap',
-                      iconPath: GraphicsFoundation.instance.svg.dice.path,
-                      unique: true),
-                  UiKitTag(
-                      title: 'Cheap',
-                      iconPath: GraphicsFoundation.instance.svg.dice.path,
-                      unique: true),
-                  UiKitTag(
-                      title: 'Cheap',
-                      iconPath: GraphicsFoundation.instance.svg.dice.path,
-                      unique: true),
+                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
+                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
+                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
+                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
+                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
+                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
+                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
+                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
                 ],
               ),
               SpacingFoundation.verticalSpace16,
@@ -1281,35 +1253,24 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ],
                   title: 'Virgins on the beach',
                   placeTags: [
-                    UiKitTag(
-                        title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(
-                        title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(
-                        title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(
-                        title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(
-                        title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(
-                        title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(
-                        title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(
-                        title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(
-                        title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(
-                        title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
                   ],
                 ),
               ),
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context).push(PopUpVideoPlayer(
-                      videoUri:
-                          'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+                  Navigator.of(context)
+                      .push(PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
                 },
                 child: const Text(
                   'Show Horizontal Video',
@@ -1321,8 +1282,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context).push(PopUpVideoPlayer(
-                      videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+                  Navigator.of(context).push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
                 },
                 child: const Text(
                   'Show Vertical Video',
@@ -1335,8 +1295,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               MaterialButton(
                 onPressed: () {
                   Navigator.of(context).push(PopUpVideoPlayer(
-                      videoUri:
-                          'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
+                      videoUri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
                 },
                 child: const Text(
                   'Show Another Horizontal Video',
