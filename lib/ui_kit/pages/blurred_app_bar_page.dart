@@ -113,7 +113,7 @@ class BlurredAppBarPage extends StatelessWidget {
         ]),
         // body: body.paddingOnly(top: expandedHeight),
         // if(wrapSliverBox)
-        body.wrapSliverBox
+        body.wrapSliverFillRemaining
         // else
         //   body.wrapSliverFillRemaining
         // itemCount: 1)

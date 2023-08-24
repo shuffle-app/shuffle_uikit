@@ -20,7 +20,8 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
     required this.uniqueTags,
     required this.description,
     this.horizontalMargin = 0,
-  })  : this.scrollController = scrollController ?? ScrollController(),
+  })
+      : this.scrollController = scrollController ?? ScrollController(),
         super(key: key);
 
   @override
@@ -37,34 +38,41 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
               onTapUp: (TapUpDetails details) {
                 if (details.globalPosition.dx > 1.sw / 2) {
                   scrollController.animateTo(scrollController.offset + 0.83.sw,
-                      duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.easeInOut);
                 } else if (scrollController.offset < 1.sw / 2) {
-                  scrollController.animateTo(0, duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
+                  scrollController.animateTo(
+                      0, duration: const Duration(milliseconds: 200),
+                      curve: Curves.easeInOut);
                 } else {
                   scrollController.animateTo(scrollController.offset - 0.83.sw,
-                      duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.easeInOut);
                 }
               },
               child: ListView.builder(
                 controller: scrollController,
+                physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 itemCount: media.length + 1,
-                addRepaintBoundaries: false,
                 itemBuilder: (context, index) {
                   if (index == 0) return horizontalMargin.widthBox;
 
-                  return () {
-                    final mediaItem = media.elementAt(index - 1);
-                    if (mediaItem.type == UiKitMediaType.video) {
-                      return BaseUiKitMediaWidget.video(
-                        media: mediaItem,
-                        width: media.length == 1 ? mediaWidth : null,
-                      );
-                    }
 
-                    return BaseUiKitMediaWidget.image(media: mediaItem, width: media.length == 1 ? mediaWidth : null);
-                  }()
-                      .paddingOnly(right: media.length == index ? 0 : SpacingFoundation.horizontalSpacing16);
+                  final mediaItem = media.elementAt(index - 1);
+                  if (mediaItem.type == UiKitMediaType.video) {
+                    return BaseUiKitMediaWidget.video(
+                      media: mediaItem,
+                      width: media.length == 1 ? mediaWidth : null,
+                    ).paddingOnly(
+                        right: media.length == index ? 0 : SpacingFoundation
+                            .horizontalSpacing16);
+                  }
+
+                  return BaseUiKitMediaWidget.image(media: mediaItem,
+                      width: media.length == 1 ? mediaWidth : null).paddingOnly(
+                      right: media.length == index ? 0 : SpacingFoundation
+                          .horizontalSpacing16);
                 },
                 // separatorBuilder: (context, index) => index == 0
                 //     ? const SizedBox.shrink()
@@ -78,7 +86,8 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           uniqueTags: uniqueTags,
         ).paddingSymmetric(horizontal: horizontalMargin),
         SpacingFoundation.verticalSpace14,
-        DescriptionWidget(description: description).paddingOnly(left: horizontalMargin, right: horizontalMargin),
+        DescriptionWidget(description: description).paddingOnly(
+            left: horizontalMargin, right: horizontalMargin),
       ],
     );
   }

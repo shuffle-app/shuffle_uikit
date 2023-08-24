@@ -11,9 +11,9 @@ class UiKitBottomModalSheet extends StatefulWidget {
 
   UiKitBottomModalSheet(
       {super.key,
-        required this.startAnimation,
-        required this.dissmissKey,
-        required this.data});
+      required this.startAnimation,
+      required this.dissmissKey,
+      required this.data});
 
   @override
   State<UiKitBottomModalSheet> createState() => _UiKitBottomModalSheetState();
@@ -50,7 +50,6 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet>
     final bottomSheetTheme = context.uiKitTheme?.bottomSheetTheme;
     final shape = bottomSheetTheme?.shape;
 
-
     return AnimatedBuilder(
       animation: controller,
       builder: (_, child) {
@@ -80,7 +79,7 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet>
               if (widget.data.onDismissed != _empty) {
                 Future.delayed(
                   const Duration(milliseconds: 200),
-                      () => widget.data.onDismissed(),
+                  () => widget.data.onDismissed(),
                 );
               }
 
@@ -97,47 +96,42 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet>
               shape: shape,
               child: Column(
                 children: [
-                  const SlidingChip()
-                      .paddingOnly(top: SpacingFoundation.verticalSpacing12,
+                  const SlidingChip().paddingOnly(
+                      top: SpacingFoundation.verticalSpacing12,
                       bottom: SpacingFoundation.verticalSpacing4),
                   Expanded(
                       child: Stack(fit: StackFit.expand, children: [
-                        Container(
-                            decoration: ShapeDecoration(
-                              shape: shape ?? const RoundedRectangleBorder(),
-                            ),
-                            clipBehavior: Clip.hardEdge,
-                            child: SingleChildScrollView(
-                              primary: true,
-                              physics: const ClampingScrollPhysics(),
-                              child: Column(children: [
-                                widget.data.child,
-                                if (widget.data.bottomBar != null) Opacity(
-                                    opacity: 0, child: widget.data.bottomBar)
-                              ]),
-                            )),
-                        if (widget.data.bottomBar != null)
-                          Positioned(
-                              bottom: 0,
-                              right: 0,
-                              left: 0,
-                              child: Container(
-                                  decoration: const BoxDecoration(
-                                      gradient: GradientFoundation
-                                          .solidSurfaceLinearGradient),
-                                  child: widget.data.bottomBar))
-                      ])),
+                    Container(
+                        decoration: ShapeDecoration(
+                          shape: shape ?? const RoundedRectangleBorder(),
+                        ),
+                        clipBehavior: Clip.hardEdge,
+                        child: SingleChildScrollView(
+                            primary: true,
+                            physics: const ClampingScrollPhysics(),
+                            child: widget.data.child.paddingOnly(
+                              bottom: widget.data.bottomBar != null
+                                  ? kBottomNavigationBarHeight * 1.5
+                                  : 0.0,
+                            ))),
+                    if (widget.data.bottomBar != null)
+                      Positioned(
+                          bottom: 0,
+                          right: 0,
+                          left: 0,
+                          child: Container(
+                              decoration: const BoxDecoration(
+                                  gradient: GradientFoundation
+                                      .solidSurfaceLinearGradient),
+                              child: widget.data.bottomBar))
+                  ])),
                 ],
               ),
             ).paddingOnly(
                 top: widget.data.topPadding ??
-                    (MediaQuery
-                        .of(context)
-                        .viewPadding
-                        .top == 0 ? 30.h : MediaQuery
-                        .of(context)
-                        .viewPadding
-                        .top + 15.h)),
+                    (MediaQuery.viewPaddingOf(context).top == 0
+                        ? 30.h
+                        : MediaQuery.viewPaddingOf(context).top + 15.h)),
           )),
     );
   }
