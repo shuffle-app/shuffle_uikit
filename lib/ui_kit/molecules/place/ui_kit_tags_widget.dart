@@ -66,7 +66,7 @@ class UiKitTagsWidget extends StatelessWidget {
                 SizedBox(
                     height: SpacingFoundation.horizontalSpacing16 + 2,
                     child: ListView.builder(
-                      clipBehavior: Clip.none,
+                      clipBehavior: Clip.hardEdge,
                       padding: EdgeInsets.zero,
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,

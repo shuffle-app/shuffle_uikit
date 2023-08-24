@@ -44,7 +44,7 @@ class PersonalProfileInfo extends StatelessWidget {
                 )
               ] else
                 TextSpan(
-                  text: '\n$nickname',
+                  text: '\n@$nickname',
                   style: boldTextTheme?.body ?? fallBackStyle,
                 )
             ],
