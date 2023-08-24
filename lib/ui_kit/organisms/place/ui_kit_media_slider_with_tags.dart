@@ -1,6 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:flutter/foundation.dart';
 
 class UiKitMediaSliderWithTags extends StatelessWidget {
   final List<BaseUiKitMedia> media;
@@ -31,24 +31,18 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-            height: kIsWeb ? 156: 0.48.sw,
+            height: kIsWeb ? 156 : 0.48.sw,
             child: GestureDetector(
               behavior: HitTestBehavior.opaque,
               onTapUp: (TapUpDetails details) {
-                print(
-                    'onTapUp here with details.globalPosition.dx ${details.globalPosition.dx}');
                 if (details.globalPosition.dx > 1.sw / 2) {
                   scrollController.animateTo(scrollController.offset + 0.83.sw,
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeInOut);
+                      duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
                 } else if (scrollController.offset < 1.sw / 2) {
-                  scrollController.animateTo(0,
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeInOut);
+                  scrollController.animateTo(0, duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
                 } else {
                   scrollController.animateTo(scrollController.offset - 0.83.sw,
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeInOut);
+                      duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
                 }
               },
               child: ListView.builder(
@@ -68,14 +62,9 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                       );
                     }
 
-                    return BaseUiKitMediaWidget.image(
-                        media: mediaItem,
-                        width: media.length == 1 ? mediaWidth : null);
+                    return BaseUiKitMediaWidget.image(media: mediaItem, width: media.length == 1 ? mediaWidth : null);
                   }()
-                      .paddingOnly(
-                          right: media.length == index
-                              ? 0
-                              : SpacingFoundation.horizontalSpacing16);
+                      .paddingOnly(right: media.length == index ? 0 : SpacingFoundation.horizontalSpacing16);
                 },
                 // separatorBuilder: (context, index) => index == 0
                 //     ? const SizedBox.shrink()
@@ -89,8 +78,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           uniqueTags: uniqueTags,
         ).paddingSymmetric(horizontal: horizontalMargin),
         SpacingFoundation.verticalSpace14,
-        DescriptionWidget(description: description)
-            .paddingOnly(left: horizontalMargin, right: horizontalMargin),
+        DescriptionWidget(description: description).paddingOnly(left: horizontalMargin, right: horizontalMargin),
       ],
     );
   }
