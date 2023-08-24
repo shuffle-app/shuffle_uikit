@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'dart:developer';
 
 class UiKitSearchableListBody<T extends UiKitSearchableListBodyItem> extends StatelessWidget {
   final List<T> items;
@@ -9,7 +8,6 @@ class UiKitSearchableListBody<T extends UiKitSearchableListBodyItem> extends Sta
 
   late final TextEditingController searchController = TextEditingController()
     ..addListener(() {
-      log('here is notifier',name:'UiKitSearchableListBody');
       final text = searchController.text;
       _itemsNotifier.value =
           text.length >= 3 ? items.where((element) => element.title.toLowerCase().contains(text.toLowerCase())).toList() : items;
@@ -28,8 +26,6 @@ class UiKitSearchableListBody<T extends UiKitSearchableListBodyItem> extends Sta
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
 
-    log('here is rebuild',name:'UiKitSearchableListBody');
-
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -42,7 +38,6 @@ class UiKitSearchableListBody<T extends UiKitSearchableListBodyItem> extends Sta
         ),
         SpacingFoundation.verticalSpace12,
         UiKitInputFieldRightIcon(
-          // autofocus: true,
           controller: searchController,
           hintText: 'SEARCH',
           icon: ImageWidget(
