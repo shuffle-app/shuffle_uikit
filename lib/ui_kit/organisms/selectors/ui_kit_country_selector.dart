@@ -7,7 +7,9 @@ class UiKitCountrySelector extends StatelessWidget {
   final ValueChanged<CountryModel>? onSelected;
   final CountryModel? selectedCountry;
 
-  const UiKitCountrySelector({
+  final UniqueKey contrySelectorKey = UniqueKey();
+
+   UiKitCountrySelector({
     super.key,
     required this.title,
     this.onSelected,
@@ -33,14 +35,17 @@ class UiKitCountrySelector extends StatelessWidget {
           context,
           GeneralDialogData(
             useRootNavigator: false,
-            child: UiKitSearchableListBody<CountryModel>(
+            child: SafeArea(
+                top:false,
+                child: UiKitSearchableListBody<CountryModel>(
+              key: contrySelectorKey,
               title: title,
               items: CountriesFoundation.instance.countries,
               onItemSelected: (item) {
                 onSelected?.call(item);
                 Navigator.pop(context);
               },
-            ),
+            )),
           ),
         ),
         child: Ink(

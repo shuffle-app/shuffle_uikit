@@ -43,20 +43,28 @@ class BlurredAppBarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final toolbarHeight = (context.uiKitTheme?.customAppBapTheme
         .toolbarHeight ?? 90.0);
+    final expandedHeight = appBarBody == null ? toolbarHeight : 190.0;
 
-    return NestedScrollView(
     // return NestedScrollView(
-      // return CustomScrollView(
+    // return MultiSliver(
+      return CustomScrollView(
       controller: controller,
       // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
       physics: physics,
-      headerSliverBuilder: (c, _) =>
-      [
-        // slivers: [
+      // headerSliverBuilder: (c, _) =>
+        slivers: [
+
+        MultiSliver(
+      children: [
+      // [
+      //   SliverOverlapAbsorber(
+      //     handle:NestedScrollView.sliverOverlapAbsorberHandleFor(c),
+      //     sliver:
+          // slivers: [
         SliverLayoutBuilder(
           builder: (context, sliverConstraints) {
             const animDuration = Duration(milliseconds: 250);
-            final expandedHeight = appBarBody == null ? toolbarHeight : 190.0;
+
             final hideAppBarBody = appBarBody == null ? true : sliverConstraints
                 .scrollOffset > toolbarHeight;
             // sliverConstraints.scrollOffset > expandedHeight;
@@ -91,18 +99,19 @@ class BlurredAppBarPage extends StatelessWidget {
               // bottom: bottom,
             );
           },
+        // )
         ),
         if(topFixedAddition != null)
-          SliverPinnedHeader(child: topFixedAddition!)
+          SliverPinnedHeader(child: topFixedAddition!),
           // topFixedAddition!.wrapSliverBox
-      ],
-      body: body,
+      ]),
+      // body: body.paddingOnly(top: expandedHeight),
       // if(wrapSliverBox)
-      // body.wrapSliverBox
+      body.wrapSliverBox
       // else
       //   body.wrapSliverFillRemaining
       // itemCount: 1)
-      // ],
+      ],
     );
   }
 }

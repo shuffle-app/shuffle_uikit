@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'dart:developer';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
+  final Key key=UniqueKey();
+  // final Key key=Key(DateTime.now().toString());
   dismissable(animation) =>
-      UiKitBottomModalSheet(data: data, startAnimation: animation);
+      UiKitBottomModalSheet(data: data, startAnimation: animation,dissmissKey: key,);
+
 
   return showGeneralDialog(
     barrierDismissible: true,
@@ -17,6 +21,7 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
       Animation<double> animation1,
       Animation<double> animation2,
     ) {
+      log('here is pageBuilder',name:'showUiKitGeneralFullScreenDialog');
       return dismissable(animation1);
     },
   );
