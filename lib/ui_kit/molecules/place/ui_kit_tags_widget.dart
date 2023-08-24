@@ -65,19 +65,36 @@ class UiKitTagsWidget extends StatelessWidget {
                 SpacingFoundation.verticalSpace4,
                 SizedBox(
                     height: SpacingFoundation.horizontalSpacing16 + 2,
-                    child: ListView.builder(
-                      clipBehavior: Clip.none,
-                      padding: EdgeInsets.zero,
-                      shrinkWrap: true,
+                    child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
-                      primary: false,
-                      // separatorBuilder: (_, __) =>
-                      //     SpacingFoundation.horizontalSpace8,
-                      itemCount: uniqueTags!.length,
-                      itemBuilder: (_, index) =>
-                          UiKitTagWidget(title: uniqueTags![index].title, icon: uniqueTags![index].iconPath, uniqueTag: true)
-                              .paddingOnly(right: uniqueTags!.length - 1 == index ? 0 : SpacingFoundation.horizontalSpacing8),
-                    ))
+                      child: Wrap(
+                        spacing: SpacingFoundation.horizontalSpacing8,
+                        children: uniqueTags!
+                            .map((e) => UiKitTagWidget(
+                                  title: e.title,
+                                  icon: e.iconPath,
+                                  uniqueTag: e.unique,
+                                ))
+                            .toList(),
+                      ),
+                    )
+                    // ListView.builder(
+                    //   addAutomaticKeepAlives: false,
+                    //   clipBehavior: Clip.none,
+                    //   padding: EdgeInsets.zero,
+                    //   shrinkWrap: true,
+                    //   scrollDirection: Axis.horizontal,
+                    //   primary: false,
+                    // //  separatorBuilder: (_, __) =>
+                    // //      SpacingFoundation.horizontalSpace8,
+                    // itemCount: uniqueTags!.length,
+                    // itemBuilder: (_, index) => UiKitTagWidget(
+                    //   title: uniqueTags![index].title,
+                    //   icon: uniqueTags![index].iconPath,
+                    //   uniqueTag: true,
+                    // ).paddingOnly(right: uniqueTags!.length - 1 == index ? 0 : SpacingFoundation.horizontalSpacing8),
+                    // ),
+                    ),
               ],
             ],
           ),
