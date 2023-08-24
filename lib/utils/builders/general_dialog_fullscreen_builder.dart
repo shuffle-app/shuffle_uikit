@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
+  final Key key=UniqueKey();
+  // final Key key=Key(DateTime.now().toString());
   dismissable(animation) =>
-      UiKitBottomModalSheet(data: data, startAnimation: animation);
+      UiKitBottomModalSheet(data: data, startAnimation: animation,dissmissKey: key,);
+
 
   return showGeneralDialog(
     barrierDismissible: true,

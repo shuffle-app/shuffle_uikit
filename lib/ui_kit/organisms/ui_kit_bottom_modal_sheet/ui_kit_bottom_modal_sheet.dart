@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -6,21 +7,28 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitBottomModalSheet extends StatefulWidget {
   final Animation<double> startAnimation;
   final GeneralDialogData data;
+  final Key dissmissKey;
 
-  const UiKitBottomModalSheet({super.key, required this.startAnimation, required this.data});
+  UiKitBottomModalSheet(
+      {super.key,
+        required this.startAnimation,
+        required this.dissmissKey,
+        required this.data});
 
   @override
   State<UiKitBottomModalSheet> createState() => _UiKitBottomModalSheetState();
 }
 
-class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet> with TickerProviderStateMixin {
+class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet>
+    with TickerProviderStateMixin {
   late final AnimationController controller;
 
   double opacity = 0;
 
   @override
   void initState() {
-    controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 200));
+    controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 200));
     controller.forward();
     super.initState();
   }
@@ -41,6 +49,7 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet> with Tick
   Widget build(BuildContext context) {
     final bottomSheetTheme = context.uiKitTheme?.bottomSheetTheme;
     final shape = bottomSheetTheme?.shape;
+
 
     return AnimatedBuilder(
       animation: controller,
@@ -63,7 +72,7 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet> with Tick
           child: Dismissible(
             onUpdate: _onUpdate,
             // dismissThresholds:{DismissDirection.down:0.5},
-            key: Key(DateTime.now().toString()),
+            key: widget.dissmissKey,
             direction: DismissDirection.down,
             onDismissed: (DismissDirection direction) {
               // Чтобы закрыть сам диалог (убрать серый фон)
@@ -71,7 +80,7 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet> with Tick
               if (widget.data.onDismissed != _empty) {
                 Future.delayed(
                   const Duration(milliseconds: 200),
-                  () => widget.data.onDismissed(),
+                      () => widget.data.onDismissed(),
                 );
               }
 
@@ -89,36 +98,46 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet> with Tick
               child: Column(
                 children: [
                   const SlidingChip()
-                      .paddingOnly(top: SpacingFoundation.verticalSpacing12, bottom: SpacingFoundation.verticalSpacing4),
+                      .paddingOnly(top: SpacingFoundation.verticalSpacing12,
+                      bottom: SpacingFoundation.verticalSpacing4),
                   Expanded(
                       child: Stack(fit: StackFit.expand, children: [
-                    Container(
-                        decoration: ShapeDecoration(
-                          shape: shape ?? const RoundedRectangleBorder(),
-                        ),
-                        clipBehavior: Clip.hardEdge,
-                        child: SingleChildScrollView(
-                          primary: true,
-                          physics: const ClampingScrollPhysics(),
-                          child: Column(children: [
-                            widget.data.child,
-                            if (widget.data.bottomBar != null) Opacity(opacity: 0, child: widget.data.bottomBar)
-                          ]),
-                        )),
-                    if (widget.data.bottomBar != null)
-                      Positioned(
-                          bottom: 0,
-                          right: 0,
-                          left: 0,
-                          child: Container(
-                              decoration: const BoxDecoration(gradient: GradientFoundation.solidSurfaceLinearGradient),
-                              child: widget.data.bottomBar))
-                  ])),
+                        Container(
+                            decoration: ShapeDecoration(
+                              shape: shape ?? const RoundedRectangleBorder(),
+                            ),
+                            clipBehavior: Clip.hardEdge,
+                            child: SingleChildScrollView(
+                              primary: true,
+                              physics: const ClampingScrollPhysics(),
+                              child: Column(children: [
+                                widget.data.child,
+                                if (widget.data.bottomBar != null) Opacity(
+                                    opacity: 0, child: widget.data.bottomBar)
+                              ]),
+                            )),
+                        if (widget.data.bottomBar != null)
+                          Positioned(
+                              bottom: 0,
+                              right: 0,
+                              left: 0,
+                              child: Container(
+                                  decoration: const BoxDecoration(
+                                      gradient: GradientFoundation
+                                          .solidSurfaceLinearGradient),
+                                  child: widget.data.bottomBar))
+                      ])),
                 ],
               ),
             ).paddingOnly(
                 top: widget.data.topPadding ??
-                    (MediaQuery.of(context).viewPadding.top == 0 ? 30.h : MediaQuery.of(context).viewPadding.top + 15.h)),
+                    (MediaQuery
+                        .of(context)
+                        .viewPadding
+                        .top == 0 ? 30.h : MediaQuery
+                        .of(context)
+                        .viewPadding
+                        .top + 15.h)),
           )),
     );
   }
