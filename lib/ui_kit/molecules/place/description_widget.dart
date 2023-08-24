@@ -8,7 +8,7 @@ class DescriptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = context.uiKitTheme;
+    final textTheme = context.uiKitTheme?.boldTextTheme.caption1Medium;
     bool hide = true;
 
     return StatefulBuilder(
@@ -18,7 +18,7 @@ class DescriptionWidget extends StatelessWidget {
                 maxLines: hide ? 7 : null,
                 softWrap: true,
                 overflow: hide ? TextOverflow.ellipsis : null,
-                style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
+                style: textTheme?.copyWith(color: Colors.white),
               ),
               if ((description.replaceAll('\n', '').characters.length * 5.8.w ~/ 0.8.sw +
                       description.characters.where((p0) => p0 == '\n').length) >
@@ -27,7 +27,7 @@ class DescriptionWidget extends StatelessWidget {
                   onTap: () => s(() => hide = !hide),
                   child: Text(
                     'Read ${hide ? 'more' : 'less'}',
-                    style: theme?.boldTextTheme.caption1Bold.copyWith(color: ColorsFoundation.darkNeutral300),
+                    style: textTheme?.copyWith(color: ColorsFoundation.darkNeutral300),
                   ),
                 ).paddingOnly(top: SpacingFoundation.verticalSpacing12)
             ]));

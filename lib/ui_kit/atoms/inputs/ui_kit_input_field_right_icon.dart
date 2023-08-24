@@ -86,7 +86,7 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
         ),
         decoration: InputDecoration(
-          filled: widget.fillColor != null,
+          filled: true,
           fillColor: widget.fillColor,
           contentPadding: EdgeInsets.symmetric(horizontal: EdgeInsetsFoundation.horizontal16),
           hintText: widget.hintText,
