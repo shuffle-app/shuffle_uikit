@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:html/parser.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -152,7 +153,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                         SizedBox(
                           width: 1.sw,
                           child: Center(
-                            child: Text( (){
+                            child: AutoSizeText( (){
                               
                               final category =
                               parseFragment(item).text ?? item ;

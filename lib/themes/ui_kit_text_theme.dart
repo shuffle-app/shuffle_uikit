@@ -4,6 +4,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 abstract class UiKitTextTheme {}
 
 class UiKitRegularTextTheme extends UiKitTextTheme {
+
+  TextStyle get caption4 => TextStyle(
+    fontFamily: 'Unbounded',
+    fontSize: 8.w,
+    fontWeight: FontWeight.w300,
+    color: const Color(0xffffffff),
+    package: 'shuffle_uikit',
+  );
+
   TextStyle get labelSmall => TextStyle(
         fontFamily: 'Unbounded',
         fontSize: 12.w,
