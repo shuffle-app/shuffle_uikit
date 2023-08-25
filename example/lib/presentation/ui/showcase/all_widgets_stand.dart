@@ -129,7 +129,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
-              const UiKitFingerWidget(),
+              const UiKitFingerPrintSlider(),
               SpacingFoundation.verticalSpace16,
               UiKitLeadingRadioTile(
                 selected: selection,
@@ -1423,17 +1423,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   }
 }
 
-class UiKitFingerWidget extends StatefulWidget {
-  const UiKitFingerWidget({
+class UiKitFingerPrintSlider extends StatelessWidget {
+  const UiKitFingerPrintSlider({
     super.key,
   });
 
-  @override
-  State<UiKitFingerWidget> createState() => _UiKitFingerWidgetState();
-}
-
-class _UiKitFingerWidgetState extends State<UiKitFingerWidget>
-    with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final width = 0.27.sw;
@@ -1443,10 +1437,11 @@ class _UiKitFingerWidgetState extends State<UiKitFingerWidget>
       children: [
         CardWithBorderWrapper(
           height: height,
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: ClipRRect(
-              borderRadius: BorderRadiusFoundation.all28,
+          child: ClipRRect(
+            borderRadius: BorderRadiusFoundation.all28,
+            child: Transform(
+              alignment: Alignment.bottomCenter,
+              transform: Matrix4.identity()..scale(1.0, 0.7),
               child: ImageWidget(
                 width: double.infinity,
                 rasterAsset: GraphicsFoundation.instance.png.dubaiSilhouette,
@@ -1457,8 +1452,12 @@ class _UiKitFingerWidgetState extends State<UiKitFingerWidget>
           ),
         ),
         UiKitFingerPrintButton(
-          height: height,
+          height: height - 8.h,
           path: 'assets/animation_touch_id.json',
+          title: Text(
+            'Guess',
+            style: context.uiKitTheme?.boldTextTheme.subHeadline,
+          ),
         ),
       ],
     );
@@ -1470,10 +1469,16 @@ class UiKitFingerPrintButton extends StatefulWidget {
     super.key,
     required this.height,
     required this.path,
+    required this.title,
+    this.width,
+    this.onPressed,
   });
 
-  final double height;
   final String path;
+  final Widget title;
+  final double height;
+  final double? width;
+  final VoidCallback? onPressed;
   @override
   State<UiKitFingerPrintButton> createState() => _UiKitFingerPrintButtonState();
 }
@@ -1487,10 +1492,10 @@ class _UiKitFingerPrintButtonState extends State<UiKitFingerPrintButton>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 5),
+      duration: const Duration(seconds: 2),
       vsync: this,
     );
-    _setShadowListener();
+    _setAnimationListener();
   }
 
   @override
@@ -1499,11 +1504,12 @@ class _UiKitFingerPrintButtonState extends State<UiKitFingerPrintButton>
     super.dispose();
   }
 
-  void _setShadowListener() {
+  void _setAnimationListener() {
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         setState(() {
           _isPressed = true;
+          widget.onPressed;
         });
       } else if (status == AnimationStatus.dismissed) {
         setState(() {
@@ -1521,6 +1527,21 @@ class _UiKitFingerPrintButtonState extends State<UiKitFingerPrintButton>
     _controller.reverse();
   }
 
+  List<BoxShadow>? _getShadow(bool isPressed) {
+    if (_isPressed) {
+      return const [
+        BoxShadow(
+          color: ColorsFoundation.shadowPink,
+          blurRadius: 10,
+          spreadRadius: -5,
+          offset: Offset.zero,
+        ),
+      ];
+    } else {
+      return [];
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -1530,31 +1551,18 @@ class _UiKitFingerPrintButtonState extends State<UiKitFingerPrintButton>
         duration: const Duration(seconds: 0),
         decoration: BoxDecoration(
           borderRadius: BorderRadiusFoundation.all28,
-          boxShadow: _isPressed
-              ? const [
-                  BoxShadow(
-                    color: ColorsFoundation.shadowPink,
-                    blurRadius: 10,
-                    spreadRadius: -5,
-                    offset: Offset.zero,
-                  ),
-                ]
-              : [],
+          boxShadow: _getShadow(_isPressed),
         ),
         child: UiKitCardWrapper(
-          width: 106.w,
-          height: widget.height - 10,
-          color: ColorsFoundation.surface3,
+          width: widget.width ?? 106.w,
+          height: widget.height,
+          color: context.uiKitTheme?.cardColor ?? ColorsFoundation.surface3,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SpacingFoundation.verticalSpace24,
               GradientableWidget(
                 gradient: GradientFoundation.touchIdLinearGradient,
-                child: Text(
-                  'Guess',
-                  style: context.uiKitTheme?.boldTextTheme.subHeadline,
-                ),
+                child: widget.title,
               ),
               SpacingFoundation.verticalSpace12,
               ClipRRect(
@@ -1572,10 +1580,7 @@ class _UiKitFingerPrintButtonState extends State<UiKitFingerPrintButton>
                   ),
                 ),
               ),
-              SpacingFoundation.verticalSpace24,
             ],
-          ).paddingSymmetric(
-            horizontal: EdgeInsetsFoundation.horizontal16,
           ),
         ).paddingAll(EdgeInsetsFoundation.all4),
       ),
@@ -1586,8 +1591,8 @@ class _UiKitFingerPrintButtonState extends State<UiKitFingerPrintButton>
 class CardWithBorderWrapper extends StatelessWidget {
   const CardWithBorderWrapper({
     super.key,
-    required this.height,
     required this.child,
+    required this.height,
   });
 
   final double height;
@@ -1601,7 +1606,7 @@ class CardWithBorderWrapper extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all28,
         border: GradientFoundation.touchIdgradientBorder,
-        color: ColorsFoundation.surface1,
+        color: context.uiKitTheme?.cardTheme.color,
       ),
       child: child,
     );
