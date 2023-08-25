@@ -47,6 +47,17 @@ class GradientFoundation {
     transform: GradientRotation(-pi / 12),
   );
 
+  static const touchIdLinearGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.pink,
+      ColorsFoundation.yellow,
+      ColorsFoundation.error,
+    ],
+    begin: Alignment.bottomRight,
+    end: Alignment.topLeft,
+    transform: GradientRotation(pi / 6),
+  );
+
   static const buttonGradientLinear = LinearGradient(
     colors: [
       ColorsFoundation.error,
@@ -77,6 +88,12 @@ class GradientFoundation {
     gradient: defaultRadialGradient,
     width: 2,
   );
+
+  static const touchIdgradientBorder = GradientBoxBorder(
+    gradient: touchIdLinearGradient,
+    width: 2,
+  );
+
   // radial-gradient(112.31% 397% at 55.96% -99%, #E32900 0%, #C6E216 60.17%, #D808FA 100%)
   static const buttonGradient = RadialGradient(
     center: Alignment(0.6, -1),

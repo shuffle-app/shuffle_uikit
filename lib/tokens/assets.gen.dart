@@ -241,6 +241,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/compact_rating_card_mock.png
   AssetGenImage get compactRatingCardMock => const AssetGenImage('assets/images/png/compact_rating_card_mock.png');
 
+  /// File path: assets/images/png/dubai_silhouette.png
+  AssetGenImage get dubaiSilhouette => const AssetGenImage('assets/images/png/dubai_silhouette.png');
+
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
@@ -328,6 +331,33 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/sadness-emoji.png
   AssetGenImage get sadnessEmoji => const AssetGenImage('assets/images/png/sadness-emoji.png');
 
+  /// File path: assets/images/png/search_category_adventure.png
+  AssetGenImage get searchCategoryAdventure => const AssetGenImage('assets/images/png/search_category_adventure.png');
+
+  /// File path: assets/images/png/search_category_chill.png
+  AssetGenImage get searchCategoryChill => const AssetGenImage('assets/images/png/search_category_chill.png');
+
+  /// File path: assets/images/png/search_category_extreme.png
+  AssetGenImage get searchCategoryExtreme => const AssetGenImage('assets/images/png/search_category_extreme.png');
+
+  /// File path: assets/images/png/search_category_family.png
+  AssetGenImage get searchCategoryFamily => const AssetGenImage('assets/images/png/search_category_family.png');
+
+  /// File path: assets/images/png/search_category_food.png
+  AssetGenImage get searchCategoryFood => const AssetGenImage('assets/images/png/search_category_food.png');
+
+  /// File path: assets/images/png/search_category_party.png
+  AssetGenImage get searchCategoryParty => const AssetGenImage('assets/images/png/search_category_party.png');
+
+  /// File path: assets/images/png/search_category_self_care.png
+  AssetGenImage get searchCategorySelfCare => const AssetGenImage('assets/images/png/search_category_self_care.png');
+
+  /// File path: assets/images/png/search_category_sport.png
+  AssetGenImage get searchCategorySport => const AssetGenImage('assets/images/png/search_category_sport.png');
+
+  /// File path: assets/images/png/search_category_zadrot.png
+  AssetGenImage get searchCategoryZadrot => const AssetGenImage('assets/images/png/search_category_zadrot.png');
+
   /// File path: assets/images/png/spinner_event.png
   AssetGenImage get spinnerEvent => const AssetGenImage('assets/images/png/spinner_event.png');
 
@@ -406,6 +436,7 @@ class $AssetsImagesPngGen {
         calmnessEmoji,
         christianity,
         compactRatingCardMock,
+        dubaiSilhouette,
         eventAvatar,
         fatigueEmoji,
         geoPermit,
@@ -435,6 +466,15 @@ class $AssetsImagesPngGen {
         profilePost1,
         profileStory1,
         sadnessEmoji,
+        searchCategoryAdventure,
+        searchCategoryChill,
+        searchCategoryExtreme,
+        searchCategoryFamily,
+        searchCategoryFood,
+        searchCategoryParty,
+        searchCategorySelfCare,
+        searchCategorySport,
+        searchCategoryZadrot,
         spinnerEvent,
         surpriseEmoji,
         titledCardBackground1,
@@ -688,12 +728,11 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/camera-plus.svg
   SvgGenImage get cameraPlus => const SvgGenImage('assets/images/svg/camera-plus.svg');
 
-  /// File path: assets/images/svg/check-circle.svg
-  SvgGenImage get checkCircle => const SvgGenImage('assets/images/svg/check-circle.svg');
-
   /// File path: assets/images/svg/check.svg
   SvgGenImage get check => const SvgGenImage('assets/images/svg/check.svg');
 
+  /// File path: assets/images/svg/check_circle.svg
+  SvgGenImage get checkCircle => const SvgGenImage('assets/images/svg/check_circle.svg');
 
   /// File path: assets/images/svg/chess.svg
   SvgGenImage get chess => const SvgGenImage('assets/images/svg/chess.svg');
@@ -1185,7 +1224,6 @@ class $AssetsImagesSvgGen {
         businessman,
         calendar,
         cameraPlus,
-        checkCircle,
         check,
         checkCircle,
         chess,
