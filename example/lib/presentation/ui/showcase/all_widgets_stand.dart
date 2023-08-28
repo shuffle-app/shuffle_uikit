@@ -4,10 +4,7 @@ import 'package:example/presentation/ui/showcase/input_fields.dart';
 import 'package:example/presentation/ui/showcase/input_fields_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:shuffle_uikit/ui_kit/content_wrappers/ui_kit_border_wrapper.dart';
-import 'package:shuffle_uikit/ui_kit/organisms/organisms.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:lottie/lottie.dart';
 
 class AllWidgetsStand extends StatefulWidget {
   const AllWidgetsStand({super.key});
@@ -19,7 +16,7 @@ class AllWidgetsStand extends StatefulWidget {
 class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final TextEditingController _controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final ScrollController _scrollController = ScrollController();
+  // final ScrollController _scrollController = ScrollController();
   final GlobalKey _gradientTextKey = GlobalKey();
   double progress = 0.0;
   CountryModel? _selectedCountry;
@@ -131,10 +128,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
-              FingerPrintSlider(
-                child: FingerPrintButton(
-                  height: 0.27.sw * 1.68 - 8.h,
-                  path: 'assets/animation_touch_id.json',
+              FingerprintSwitch(
+                child: FingerprintButton(
+                  animationPath: 'assets/animation_touch_id.json',
                   title: Text(
                     'Guess',
                     style: context.uiKitTheme?.boldTextTheme.subHeadline,
@@ -1430,43 +1426,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ),
         ).paddingAll(EdgeInsetsFoundation.zero),
       ),
-    );
-  }
-}
-
-class FingerPrintSlider extends StatelessWidget {
-  const FingerPrintSlider({
-    super.key,
-    required this.child,
-  });
-
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    final width = 0.27.sw;
-    final height = width * 1.68;
-
-    return Stack(
-      children: [
-        UiKitBorderWrapper(
-          height: height,
-          child: ClipRRect(
-            borderRadius: BorderRadiusFoundation.all28,
-            child: Transform(
-              alignment: Alignment.bottomCenter,
-              transform: Matrix4.identity()..scale(1.0, 0.7),
-              child: ImageWidget(
-                width: double.infinity,
-                rasterAsset: GraphicsFoundation.instance.png.dubaiSilhouette,
-                fit: BoxFit.cover,
-                color: ColorsFoundation.surface2,
-              ),
-            ),
-          ),
-        ),
-        child,
-      ],
     );
   }
 }
