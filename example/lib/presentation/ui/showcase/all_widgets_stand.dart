@@ -272,20 +272,22 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               UiKitHorizontalScroll3D(
-                  itemBuilder: (BuildContext context, int index) => UiKitFindSomeoneCard(
-                      avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
-                      userNickName: 'naveen',
-                      userName: 'Naveen Sheoran',
-                      userPoints: 555,
-                      sameInterests: 4,
-                      onMessage: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: const Text('Send message'),
-                          ),
-                        );
-                      }),
-                  itemCount: 5),
+                itemBuilder: (BuildContext context, int index) => UiKitFindSomeoneCard(
+                  avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+                  userNickName: 'naveen',
+                  userName: 'Naveen Sheoran',
+                  userPoints: 555,
+                  sameInterests: 4,
+                  onMessage: () {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: const Text('Send message'),
+                      ),
+                    );
+                  },
+                ),
+                itemCount: 5,
+              ),
               SpacingFoundation.verticalSpace16,
               UiKitFeedbackCard(
                 avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
