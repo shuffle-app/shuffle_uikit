@@ -59,14 +59,15 @@ class UiKitMenu<T> extends StatelessWidget {
         onTap: () {
           //if keyboard is opened, unfocus it
           FocusManager.instance.primaryFocus?.unfocus();
-          final elementsHeight =
-              singleType ? (items.length + 1) * 41.h : (items.where((element) => element.type == allTypes?.first).length + 3) * 41.h;
+          final elementsHeight = singleType
+              ? (items.length + 1) * 41.h
+              : (items.where((element) => element.type == allTypes?.first).length + 3) * 41.h;
           // final elementsHeight = ((items.length + 1) * 52) + (SpacingFoundation.verticalSpacing16 * 3);
           final topPadding = max(1.sh - elementsHeight, 0.0);
           showUiKitGeneralFullScreenDialog(
             context,
             GeneralDialogData(
-              useRootNavigator: false,
+              useRootNavigator: true,
               topPadding: topPadding,
               child: singleType
                   ? SingleTypeMenuBody<T>(
@@ -95,6 +96,9 @@ class UiKitMenu<T> extends StatelessWidget {
               if (selectedItem != null) ...[
                 ImageWidget(
                   link: selectedItem!.iconPath!,
+                  height: 0.0625.sw,
+                  width: 0.0625.sw,
+                  fit: BoxFit.cover,
                 ),
                 SpacingFoundation.horizontalSpace8,
                 Expanded(

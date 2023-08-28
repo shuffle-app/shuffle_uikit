@@ -27,8 +27,9 @@ class UiKitTagsWidget extends StatelessWidget {
               children: [
                 ImageWidget(
                   svgAsset: GraphicsFoundation.instance.svg.star,
-                  height: 16.h,
-                  fit: BoxFit.fitHeight,
+                  height: 0.05.sw,
+                  width: 0.05.sw,
+                  fit: BoxFit.cover,
                 ),
                 SpacingFoundation.horizontalSpace8,
                 Text(

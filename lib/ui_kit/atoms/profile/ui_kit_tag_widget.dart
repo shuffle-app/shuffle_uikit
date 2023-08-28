@@ -39,9 +39,10 @@ class UiKitTagWidget extends StatelessWidget {
           child: ImageWidget(
             link: icon,
             errorWidget: ImageWidget(svgAsset: GraphicsFoundation.instance.svg.exclamation, color: iconColor),
-            height: SpacingFoundation.horizontalSpacing16,
+            height: 0.05.sw,
+            width: 0.05.sw,
             color: iconColor,
-            fit: BoxFit.fitHeight,
+            fit: BoxFit.cover,
           ),
         ),
         SpacingFoundation.horizontalSpace2,

@@ -1,6 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter/foundation.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitSpinnerCard extends StatefulWidget {
@@ -155,6 +155,9 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                 ImageWidget(
                   svgAsset: GraphicsFoundation.instance.svg.clock,
                   color: ColorsFoundation.darkNeutral900,
+                  width: 0.05.sw,
+                  height: 0.05.sw,
+                  fit: BoxFit.cover,
                 ),
                 SpacingFoundation.horizontalSpace4,
                 Text(

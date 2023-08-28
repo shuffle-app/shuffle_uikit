@@ -34,13 +34,16 @@ class UiKitMenuItemTile extends StatelessWidget {
               if (item.iconPath != null) ...[
                 ImageWidget(
                   link: item.iconPath!,
+                  height: 0.0625.sw,
+                  width: 0.0625.sw,
+                  fit: BoxFit.cover,
                 ),
                 SpacingFoundation.horizontalSpace8,
               ],
               Expanded(
                 child: Text(
                   item.title.toUpperCase(),
-                  style: boldTextTheme?.caption1Medium.copyWith(color: Colors.white),
+                  style: boldTextTheme?.caption1UpperCaseMedium.copyWith(color: Colors.white),
                 ),
               ),
             ],
