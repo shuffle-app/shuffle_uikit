@@ -61,9 +61,9 @@ class _FingerprintButtonState extends State<FingerprintButton>
 
   List<BoxShadow>? _getShadow(bool isPressed) {
     return isPressed
-        ? const [
+        ? [
             BoxShadow(
-              color: ColorsFoundation.shadowPink,
+              color: ColorsFoundation.shadowPink.withOpacity(0.9),
               blurRadius: 10,
               spreadRadius: -5,
               offset: Offset.zero,

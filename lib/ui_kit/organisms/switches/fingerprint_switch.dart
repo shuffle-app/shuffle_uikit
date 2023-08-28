@@ -22,7 +22,7 @@ class FingerprintSwitch extends StatelessWidget {
             borderRadius: BorderRadiusFoundation.all28,
             child: Transform(
               alignment: Alignment.bottomCenter,
-              transform: Matrix4.identity()..scale(1.0, 0.7),
+              transform: Matrix4.identity()..scale(1.0, 0.8),
               child: ImageWidget(
                 width: double.infinity,
                 rasterAsset: GraphicsFoundation.instance.png.dubaiSilhouette,
