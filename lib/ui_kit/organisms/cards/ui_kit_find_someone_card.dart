@@ -24,89 +24,84 @@ class UiKitFindSomeoneCard extends StatelessWidget {
     double calculatedWidth = SizesFoundation.screenWidth;
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
 
-    return Material(
-      color: ColorsFoundation.transparent,
-      child: Container(
-        clipBehavior: Clip.hardEdge,
-        decoration: BoxDecoration(
-          color: ColorsFoundation.surface3,
-          borderRadius: BorderRadiusFoundation.all24,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
+    return Container(
+      clipBehavior: Clip.hardEdge,
+      decoration: BoxDecoration(
+        color: ColorsFoundation.surface3,
+        borderRadius: BorderRadiusFoundation.all24,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Expanded(
+            flex: 3,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  flex: 4,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      CircularAvatar(
-                        avatarUrl: avatarUrl ?? '',
-                        height: calculatedWidth * 0.18,
-                      ),
-                      Text(
-                        '@$userNickName',
-                        style: boldTextTheme?.caption1Bold,
-                        textAlign: TextAlign.center,
-                      ),
-                      Text(
-                        userName ?? '',
-                        style: boldTextTheme?.caption1Bold
-                            .copyWith(color: ColorsFoundation.darkNeutral900, fontWeight: FontWeight.w400, fontSize: 13.w),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+                Center(
+                  child: CircularAvatar(
+                    avatarUrl: avatarUrl ?? '',
+                    height: calculatedWidth * 0.1875,
                   ),
                 ),
-                SpacingFoundation.horizontalSpace8,
-                Expanded(
-                  flex: 5,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Container(
-                        height: calculatedWidth * 0.08,
-                        decoration: BoxDecoration(
-                            gradient: GradientFoundation.findSomeoneGradient, borderRadius: BorderRadiusFoundation.all24),
-                        child: Center(
-                          child: Text(
-                            '$userPoints points',
-                            style: boldTextTheme?.caption1Bold.copyWith(fontSize: 13.w, color: Colors.black),
-                          ),
-                        ),
-                      ),
-                      SpacingFoundation.verticalSpace16,
-                      Center(
-                        child: Text(
-                          '${sameInterests} same interests',
-                          style: boldTextTheme?.caption1Bold
-                              .copyWith(fontSize: 13.w, color: ColorsFoundation.darkNeutral900, fontWeight: FontWeight.w500),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      SpacingFoundation.verticalSpace16,
-                      SizedBox(
-                        height: calculatedWidth * 0.08,
-                        width: calculatedWidth,
-                        child: context.smallButton(
-                            data: BaseUiKitButtonData(onPressed: onMessage, text: 'Message', fit: ButtonFit.fitWidth)),
-                      ),
-                    ],
-                  ),
+                SpacingFoundation.verticalSpace4,
+                Text(
+                  '@$userNickName',
+                  style: boldTextTheme?.caption1Bold,
+                  textAlign: TextAlign.center,
+                ),
+                SpacingFoundation.verticalSpace2,
+                Text(
+                  userName ?? '',
+                  style: boldTextTheme?.caption1Bold
+                      .copyWith(color: ColorsFoundation.darkNeutral900, fontWeight: FontWeight.w400, fontSize: 13.w),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),
-          ],
-        ).paddingAll(EdgeInsetsFoundation.all16),
-      ),
+          ),
+          SpacingFoundation.horizontalSpace8,
+          Expanded(
+            flex: 5,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  height: calculatedWidth * 0.0875,
+                  decoration:
+                      BoxDecoration(gradient: GradientFoundation.findSomeoneGradient, borderRadius: BorderRadiusFoundation.all24),
+                  child: Center(
+                    child: Text(
+                      '$userPoints points',
+                      style: boldTextTheme?.caption1Bold.copyWith(fontSize: 13.w, color: Colors.black),
+                    ),
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                Center(
+                  child: Text(
+                    '${sameInterests} same interests',
+                    style: boldTextTheme?.caption1Bold
+                        .copyWith(fontSize: 13.w, color: ColorsFoundation.darkNeutral900, fontWeight: FontWeight.w500),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                SizedBox(
+                  height: calculatedWidth * 0.08,
+                  width: calculatedWidth,
+                  child: context.smallButton(
+                      data: BaseUiKitButtonData(onPressed: onMessage, text: 'Message', fit: ButtonFit.fitWidth)),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ).paddingAll(EdgeInsetsFoundation.all16),
     );
   }
 }
