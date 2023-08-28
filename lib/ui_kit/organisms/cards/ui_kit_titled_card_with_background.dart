@@ -17,50 +17,41 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenUtil = ScreenUtil();
-    final designHeight = screenUtil.screenHeight / screenUtil.scaleHeight;
-    const designCardHeight = 116;
-    final relativeSize = (designCardHeight / designHeight) * screenUtil.screenHeight;
+    final relativeSize = SizesFoundation.screenWidth * 0.375;
 
-    return Container(
+    return Material(
       clipBehavior: Clip.hardEdge,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadiusFoundation.all24,
-        color: backgroundColor,
-      ),
-      width: relativeSize,
-      height: relativeSize,
-      child:InkWell(
-    onTap: onPressed,
-    child:Stack(
-      alignment: Alignment.topCenter,
-        fit: StackFit.expand,
-        children: [
-
-
-          ImageWidget(
-            link: backgroundImageLink,
-            fit: BoxFit.cover,
+      borderRadius: BorderRadiusFoundation.all24,
+      child: InkWell(
+        onTap: onPressed,
+        child: Ink(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadiusFoundation.all24,
+            color: backgroundColor,
           ),
-          Text(
-            title,
-            style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(color: Colors.black),
-            textAlign: TextAlign.center,
-
-          ).paddingOnly(
-              top: EdgeInsetsFoundation.vertical8,
-              left: EdgeInsetsFoundation.horizontal12,
-              right: EdgeInsetsFoundation.horizontal12),
-          // Material(
-          //   clipBehavior: Clip.hardEdge,
-          //   borderRadius: BorderRadiusFoundation.all24,
-          //   color: Colors.transparent,
-          //   child: InkWell(
-          //     onTap: onPressed,
-          //   ),
-          // ),
-        ],
-      )),
+          width: relativeSize,
+          height: relativeSize,
+          child: Stack(
+            alignment: Alignment.topCenter,
+            fit: StackFit.expand,
+            children: [
+              ImageWidget(
+                link: backgroundImageLink,
+                fit: BoxFit.cover,
+              ),
+              Text(
+                title,
+                style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(color: Colors.black),
+                textAlign: TextAlign.center,
+              ).paddingOnly(
+                top: EdgeInsetsFoundation.vertical8,
+                left: EdgeInsetsFoundation.horizontal12,
+                right: EdgeInsetsFoundation.horizontal12,
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

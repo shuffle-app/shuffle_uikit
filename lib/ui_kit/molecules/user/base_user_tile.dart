@@ -38,7 +38,7 @@ abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
             borderRadius: BorderRadiusFoundation.all24,
           ),
           child: Row(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               BorderedUserCircleAvatar(
@@ -47,26 +47,33 @@ abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
                 border: avatarBorder,
               ),
               SpacingFoundation.horizontalSpace12,
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        name ?? '',
-                        style: textTheme?.caption1Bold.copyWith(color: Colors.white),
-                      ),
-                      SpacingFoundation.horizontalSpace8,
-                      if (trailing != null) trailing!,
-                    ],
-                  ),
-                  Text(
-                    username ?? '',
-                    style: textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
-                  ),
-                ],
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Flexible(
+                          child: Text(
+                            name ?? '',
+                            style: textTheme?.caption1Bold.copyWith(
+                              color: Colors.white,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ),
+                        SpacingFoundation.horizontalSpace8,
+                        if (trailing != null) trailing!,
+                      ],
+                    ),
+                    Text(
+                      username ?? '',
+                      style: textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
+                    ),
+                  ],
+                ),
               ),
             ],
           ).paddingAll(EdgeInsetsFoundation.all12),

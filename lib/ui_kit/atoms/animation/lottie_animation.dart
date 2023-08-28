@@ -3,10 +3,12 @@ import 'package:lottie/lottie.dart';
 
 class LottieAnimation extends StatelessWidget {
   final String lottiePath;
+  final Animation<double>? controller;
 
   const LottieAnimation({
     super.key,
     required this.lottiePath,
+    this.controller,
   });
 
   @override
@@ -16,6 +18,7 @@ class LottieAnimation extends StatelessWidget {
       repeat: true,
       fit: BoxFit.cover,
       animate: true,
+      controller: controller,
       package: 'shuffle_uikit',
     );
   }
