@@ -61,11 +61,14 @@ class $AssetsAnimationsLottieGen {
   LottieGenImage get animationBrokenHeart =>
       const LottieGenImage('assets/animations/lottie/animation_broken_heart.json');
 
+  /// File path: assets/animations/lottie/animation_touch_id.json
+  LottieGenImage get animationTouchId => const LottieGenImage('assets/animations/lottie/animation_touch_id.json');
+
   /// File path: assets/animations/lottie/shuffle-loader-1.json
   LottieGenImage get shuffleLoader1 => const LottieGenImage('assets/animations/lottie/shuffle-loader-1.json');
 
   /// List of all assets
-  List<LottieGenImage> get values => [animationBrokenHeart, shuffleLoader1];
+  List<LottieGenImage> get values => [animationBrokenHeart, animationTouchId, shuffleLoader1];
 }
 
 class $AssetsImagesPngGen {
@@ -244,6 +247,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/compact_rating_card_mock.png
   AssetGenImage get compactRatingCardMock => const AssetGenImage('assets/images/png/compact_rating_card_mock.png');
+
+  /// File path: assets/images/png/dubai_silhouette.png
+  AssetGenImage get dubaiSilhouette => const AssetGenImage('assets/images/png/dubai_silhouette.png');
 
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
@@ -437,6 +443,7 @@ class $AssetsImagesPngGen {
         calmnessEmoji,
         christianity,
         compactRatingCardMock,
+        dubaiSilhouette,
         eventAvatar,
         fatigueEmoji,
         geoPermit,
