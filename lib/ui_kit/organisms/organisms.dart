@@ -1,7 +1,7 @@
 /// This file exports all the organisms in the UI Kit.
 
 export '../molecules/place/base_ui_kit_media_widget.dart';
-export 'animated_buttons/finger_print_button.dart';
+export 'animated_buttons/fingerprint_button.dart';
 export 'animated_buttons/bouncing_blur_button.dart';
 export 'animated_buttons/small_bouncing_blur_icon_button.dart';
 export 'bottom_navigation_bar/gradient_bottom_navigation_bar.dart';
@@ -45,3 +45,4 @@ export 'ui_kit_bottom_modal_sheet/ui_kit_bottom_modal_sheet.dart';
 export 'video_player/popup_video_player.dart';
 export 'wheel_value_selector/ui_kit_horizontal_wheel_number_selector.dart';
 export 'switches/ui_kit_gradient_switch.dart';
+export 'switches/fingerprint_switch.dart';
