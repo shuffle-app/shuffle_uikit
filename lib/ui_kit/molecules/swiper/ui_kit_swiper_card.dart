@@ -1,6 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:flutter/foundation.dart';
 
 class UiKitSwiperCard extends BaseUiKitSwiperCard {
   const UiKitSwiperCard({
@@ -20,7 +20,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
         onTap: onTap,
         child: Container(
           width: kIsWeb ? 267 : 267.w,
-          height: kIsWeb ? 316: 316.h,
+          height: kIsWeb ? 316 : 316.h,
           clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all40,

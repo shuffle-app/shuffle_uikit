@@ -43,60 +43,81 @@ class BlurredAppBarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final toolbarHeight = (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
+    final toolbarHeight =
+        (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
 
-    return NestedScrollView(
-      // return NestedScrollView(
-      // return CustomScrollView(
+    // return NestedScrollView(
+    // return MultiSliver(
+    return CustomScrollView(
       controller: controller,
       // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
       physics: physics,
-      headerSliverBuilder: (c, _) => [
-        // slivers: [
-        SliverLayoutBuilder(
-          builder: (context, sliverConstraints) {
-            const animDuration = Duration(milliseconds: 250);
-            final expandedHeight = appBarBody == null ? toolbarHeight : customToolbarHeight ?? 190.0;
-            final hideAppBarBody = appBarBody == null ? true : sliverConstraints.scrollOffset > toolbarHeight;
-            // sliverConstraints.scrollOffset > expandedHeight;
+      // headerSliverBuilder: (c, _) =>
+      slivers: [
+        MultiSliver(children: [
+          // [
+          //   SliverOverlapAbsorber(
+          //     handle:NestedScrollView.sliverOverlapAbsorberHandleFor(c),
+          //     sliver:
+          // slivers: [
+          SliverLayoutBuilder(
+            builder: (context, sliverConstraints) {
+              const animDuration = Duration(milliseconds: 250);
+              final expandedHeight = appBarBody == null
+                  ? toolbarHeight
+                  : customToolbarHeight ?? 190.0;
+              final hideAppBarBody = appBarBody == null
+                  ? true
+                  : sliverConstraints.scrollOffset > toolbarHeight;
+              // sliverConstraints.scrollOffset > expandedHeight;
 
-            return SliverAppBar(
-              automaticallyImplyLeading: false,
-              backgroundColor: Colors.transparent,
-              pinned: true,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadiusFoundation.onlyBottom24,
-              ),
-              collapsedHeight: toolbarHeight,
-              expandedHeight: expandedHeight,
-              flexibleSpace: CustomAppBar(
-                hideBody: hideAppBarBody,
-                leading: leading,
-                bodySpacing: appBarBody == null ? SpacingFoundation.zero : SpacingFoundation.verticalSpacing16,
-                title: title,
-                appBarBody: AnimatedContainer(
-                  duration: animDuration,
-                  height: hideAppBarBody ? 0 : max(0, expandedHeight - toolbarHeight - SpacingFoundation.verticalSpacing16),
-                  child: appBarBody,
+              return SliverAppBar(
+                automaticallyImplyLeading: false,
+                backgroundColor: Colors.transparent,
+                pinned: true,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadiusFoundation.onlyBottom24,
                 ),
-                appBarTrailing: appBarTrailing,
-                autoImplyLeading: autoImplyLeading,
-                centerTitle: centerTitle,
-              ),
-              // bottom: bottom,
-            );
-          },
-        ),
-        if (topFixedAddition != null) SliverPinnedHeader(child: topFixedAddition!)
-        // topFixedAddition!.wrapSliverBox
+                collapsedHeight: toolbarHeight,
+                expandedHeight: expandedHeight,
+                flexibleSpace: CustomAppBar(
+                  hideBody: hideAppBarBody,
+                  leading: leading,
+                  bodySpacing: appBarBody == null
+                      ? SpacingFoundation.zero
+                      : SpacingFoundation.verticalSpacing16,
+                  title: title,
+                  appBarBody: AnimatedContainer(
+                    duration: animDuration,
+                    height: hideAppBarBody
+                        ? 0
+                        : max(
+                            0,
+                            expandedHeight -
+                                toolbarHeight -
+                                SpacingFoundation.verticalSpacing16),
+                    child: appBarBody,
+                  ),
+                  appBarTrailing: appBarTrailing,
+                  autoImplyLeading: autoImplyLeading,
+                  centerTitle: centerTitle,
+                ),
+                // bottom: bottom,
+              );
+            },
+            // )
+          ),
+          if (topFixedAddition != null)
+            SliverPinnedHeader(child: topFixedAddition!),
+          // topFixedAddition!.wrapSliverBox
+        ]),
+        // body: body.paddingOnly(top: expandedHeight),
+        // if(wrapSliverBox)
+        body.wrapSliverFillRemaining
+        // else
+        //   body.wrapSliverFillRemaining
+        // itemCount: 1)
       ],
-      body: body,
-      // if(wrapSliverBox)
-      // body.wrapSliverBox
-      // else
-      //   body.wrapSliverFillRemaining
-      // itemCount: 1)
-      // ],
     );
   }
 }

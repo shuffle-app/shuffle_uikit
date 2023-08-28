@@ -8,21 +8,26 @@ class UiKitCardSwiper extends StatelessWidget {
   final CardSwiperOnSwipe onSwipe;
   final VoidCallback? onEnd;
   final CardSwiperController controller;
+  final Widget? customLikeAnimation;
+  final Widget? customDislikeAnimation;
 
   UiKitCardSwiper({
     Key? key,
     required this.cards,
     required this.onSwipe,
     this.onEnd,
+    this.customDislikeAnimation,
+    this.customLikeAnimation,
     CardSwiperController? controller,
   })  : controller = controller ?? CardSwiperController(),
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, size) {
-        return CardSwiper(
+    return Stack(
+      fit: StackFit.passthrough,
+      children: [
+        CardSwiper(
           controller: controller,
           cardsCount: cards.length,
           onSwipe: onSwipe,
@@ -34,8 +39,16 @@ class UiKitCardSwiper extends StatelessWidget {
           padding: EdgeInsets.zero,
           scale: 0.5,
           cardBuilder: (context, index) => cards[index],
-        );
-      },
+        ),
+        if (customLikeAnimation != null)
+          Center(
+            child: customLikeAnimation,
+          ),
+        if (customDislikeAnimation != null)
+          Center(
+            child: customDislikeAnimation,
+          ),
+      ],
     );
   }
 }

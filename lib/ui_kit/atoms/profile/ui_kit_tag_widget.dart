@@ -24,11 +24,10 @@ class UiKitTagWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyle = context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
-      color: textColor ?? ColorsFoundation.darkNeutral900,
+      color: textColor ?? ColorsFoundation.darkNeutral500,
     );
 
-    final iconColor = uniqueTag ? Colors.white : textColor ??
-        ColorsFoundation.darkNeutral900;
+    final iconColor = uniqueTag ? Colors.white : textColor ?? ColorsFoundation.darkNeutral500;
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -39,9 +38,7 @@ class UiKitTagWidget extends StatelessWidget {
           gradient: GradientFoundation.badgeIcon,
           child: ImageWidget(
             link: icon,
-            errorWidget: ImageWidget(
-                svgAsset: GraphicsFoundation.instance.svg.exclamation,
-                color: iconColor),
+            errorWidget: ImageWidget(svgAsset: GraphicsFoundation.instance.svg.exclamation, color: iconColor),
             height: SpacingFoundation.horizontalSpacing16,
             color: iconColor,
             fit: BoxFit.fitHeight,

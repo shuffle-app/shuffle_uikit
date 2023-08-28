@@ -5,5 +5,5 @@ extension SliverExtention on Widget {
 
   // Widget get wrapSliverFillViewport => SliverFillViewport(delegate: SliverChildBuilderDelegate() this);
   Widget get wrapSliverFillRemaining =>
-      SliverFillRemaining(hasScrollBody: false, child: this);
+      SliverFillRemaining(hasScrollBody: true, child: this);
 }

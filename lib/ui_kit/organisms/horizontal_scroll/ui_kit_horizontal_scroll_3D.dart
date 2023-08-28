@@ -14,31 +14,32 @@ class UiKitHorizontalScroll3D extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double calculatedWidth = SizesFoundation.screenWidth;
+    double screenWidth = SizesFoundation.screenWidth;
 
     return Center(
       child: Gallery3D(
         controller: Gallery3DController(
-            itemCount: itemCount,
-            autoLoop: false,
-            ellipseHeight: 0,
-            minScale: 0.5),
+          itemCount: itemCount,
+          autoLoop: false,
+          ellipseHeight: 0,
+          minScale: 0.5,
+        ),
         itemConfig: GalleryItemConfig(
-          width: calculatedWidth * 0.75,
-          height: calculatedWidth * 0.45,
+          width: screenWidth * 0.85,
+          height: screenWidth * 0.5,
           radius: 10,
           isShowTransformMask: true,
           shadows: [
             BoxShadow(
               color: Colors.black.withOpacity(0.5),
-              spreadRadius: calculatedWidth,
-              blurRadius: calculatedWidth,
+              spreadRadius: screenWidth,
+              blurRadius: screenWidth,
               offset: const Offset(0, 2),
             ),
           ],
         ),
-        width: calculatedWidth,
-        height: calculatedWidth * 0.45,
+        width: screenWidth,
+        height: screenWidth * 0.5,
         isClip: true,
         itemBuilder: itemBuilder,
       ),
