@@ -57,11 +57,14 @@ class $AssetsImagesGen {
 class $AssetsAnimationsLottieGen {
   const $AssetsAnimationsLottieGen();
 
+  /// File path: assets/animations/lottie/animation_touch_id.json
+  LottieGenImage get animationTouchId => const LottieGenImage('assets/animations/lottie/animation_touch_id.json');
+
   /// File path: assets/animations/lottie/shuffle-loader-1.json
   LottieGenImage get shuffleLoader1 => const LottieGenImage('assets/animations/lottie/shuffle-loader-1.json');
 
   /// List of all assets
-  List<LottieGenImage> get values => [shuffleLoader1];
+  List<LottieGenImage> get values => [animationTouchId, shuffleLoader1];
 }
 
 class $AssetsImagesPngGen {

@@ -118,6 +118,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
                     child: FittedBox(
                       fit: BoxFit.cover,
                       child: LottieBuilder.asset(
+                        package: 'shuffle_uikit',
                         widget.animationPath,
                         fit: BoxFit.cover,
                         controller: _controller,

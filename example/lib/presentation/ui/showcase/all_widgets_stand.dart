@@ -130,7 +130,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               FingerprintSwitch(
                 child: FingerprintButton(
-                  animationPath: 'assets/animation_touch_id.json',
+                  animationPath: GraphicsFoundation
+                      .instance.animations.lottie.animationTouchId.path,
                   title: Text(
                     'Guess',
                     style: context.uiKitTheme?.boldTextTheme.subHeadline,

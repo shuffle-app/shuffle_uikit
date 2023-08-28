@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-
-import '../../content_wrappers/ui_kit_border_wrapper.dart';
+import 'package:shuffle_uikit/ui_kit/content_wrappers/ui_kit_border_wrapper.dart';
 
 class FingerprintSwitch extends StatelessWidget {
   const FingerprintSwitch({
@@ -13,8 +12,7 @@ class FingerprintSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = 0.27.sw;
-    final height = width * 1.68;
+    final height = 0.27.sw * 1.68;
 
     return Stack(
       children: [
