@@ -68,7 +68,7 @@ class CustomAppBar extends PreferredSize {
                   ],
                 ),
                 if (!hideBody) bodySpacing?.heightBox ?? SpacingFoundation.verticalSpace8,
-                if (appBarBody != null) appBarBody!,
+                if (appBarBody != null && !hideBody) appBarBody!,
               ],
             ),
           ),
