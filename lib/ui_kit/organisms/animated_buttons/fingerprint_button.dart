@@ -7,15 +7,17 @@ class FingerprintButton extends StatefulWidget {
     super.key,
     required this.animationPath,
     required this.title,
+    required this.parentWidth,
     this.height,
     this.width,
     this.onPressed,
   });
 
+  final double parentWidth;
   final String animationPath;
   final Widget title;
-  final double? height;
   final double? width;
+  final double? height;
   final VoidCallback? onPressed;
   @override
   State<FingerprintButton> createState() => _FingerprintButtonState();
@@ -29,7 +31,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
   final ValueNotifier<Offset> _currentPosition =
       ValueNotifier<Offset>(Offset.zero);
   final Offset _startPosition = Offset.zero;
-  late final Offset _finishPosition;
+  late Offset _finishPosition;
 
   @override
   void initState() {
@@ -39,6 +41,26 @@ class _FingerprintButtonState extends State<FingerprintButton>
       vsync: this,
     );
     _setAnimationListener();
+    _setVibrationListener();
+    _finishPosition = Offset(widget.parentWidth, 0);
+  }
+
+  void _setVibrationListener() {
+    _currentPosition.addListener(() {
+      if (_currentPosition.value.dx >= _finishPosition.dx / 1.3) {
+        FeedbackIsolate.instance.addVibrationEvent(
+          SystemHeavyVibrationIsolate(),
+        );
+      } else if (_currentPosition.value.dx >= _finishPosition.dx / 2) {
+        FeedbackIsolate.instance.addVibrationEvent(
+          SystemMediumVibrationIsolate(),
+        );
+      } else if (_currentPosition.value.dx >= _startPosition.dx) {
+        FeedbackIsolate.instance.addVibrationEvent(
+          SystemLightVibrationIsolate(),
+        );
+      }
+    });
   }
 
   void _setAnimationListener() {
@@ -110,10 +132,9 @@ class _FingerprintButtonState extends State<FingerprintButton>
   }
 
   @override
-  void didChangeDependencies() {
-    _finishPosition =
-        Offset(MediaQuery.sizeOf(context).width - (widget.width ?? 105.w), 0);
-    super.didChangeDependencies();
+  void didUpdateWidget(oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    _finishPosition = Offset(widget.parentWidth - (widget.width ?? 105.w), 0);
   }
 
   @override

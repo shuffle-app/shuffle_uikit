@@ -2,9 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/content_wrappers/ui_kit_border_wrapper.dart';
 
-class FingerprintSwitch extends StatelessWidget {
-  const FingerprintSwitch({super.key, required this.child});
-  final Widget child;
+class FingerprintSwitch extends StatefulWidget {
+  const FingerprintSwitch({super.key});
+
+  @override
+  State<FingerprintSwitch> createState() => _FingerprintSwitchState();
+}
+
+class _FingerprintSwitchState extends State<FingerprintSwitch> {
+  double _currentWidth = 0.0;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _getParentSize();
+    });
+  }
+
+  void _getParentSize() {
+    final RenderBox renderBox = context.findRenderObject() as RenderBox;
+    setState(() => _currentWidth = renderBox.size.width);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +47,15 @@ class FingerprintSwitch extends StatelessWidget {
             ),
           ),
         ),
-        child,
+        FingerprintButton(
+          animationPath: GraphicsFoundation
+              .instance.animations.lottie.animationTouchId.path,
+          title: Text(
+            'Guess',
+            style: context.uiKitTheme?.boldTextTheme.subHeadline,
+          ),
+          parentWidth: _currentWidth,
+        ),
       ],
     );
   }

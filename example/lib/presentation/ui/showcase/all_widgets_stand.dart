@@ -128,16 +128,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
-              FingerprintSwitch(
-                child: FingerprintButton(
-                  animationPath: GraphicsFoundation
-                      .instance.animations.lottie.animationTouchId.path,
-                  title: Text(
-                    'Guess',
-                    style: context.uiKitTheme?.boldTextTheme.subHeadline,
-                  ),
-                ),
-              ),
+              FingerprintSwitch().paddingSymmetric(horizontal: 20),
               SpacingFoundation.verticalSpace16,
               UiKitLeadingRadioTile(
                 selected: selection,
