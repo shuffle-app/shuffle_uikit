@@ -54,6 +54,18 @@ class UiKitOverflownActionCard extends StatelessWidget {
                         action,
                       ],
                     ).paddingAll(EdgeInsetsFoundation.all16),
+                    Positioned(
+                      right: -overflownIconWidth * 0.25,
+                      bottom: -8,
+                      child: Transform.rotate(
+                        angle: -pi / 12,
+                        child: ImageWidget(
+                          link: overflownIconLink,
+                          fit: BoxFit.fitHeight,
+                          height: calculatedHeight * 0.92,
+                        ),
+                      ),
+                    ),
                     ...decorationIcons.map<Widget>(
                       (e) {
                         final relativeTop = e.position.top == null ? null : (e.position.top! / designHeight) * calculatedHeight;
@@ -80,18 +92,6 @@ class UiKitOverflownActionCard extends StatelessWidget {
                       },
                     ),
                   ],
-                ),
-              ),
-              Positioned(
-                right: -overflownIconWidth * 0.25,
-                bottom: -8,
-                child: Transform.rotate(
-                  angle: -pi / 12,
-                  child: ImageWidget(
-                    link: overflownIconLink,
-                    fit: BoxFit.fitHeight,
-                    height: calculatedHeight * 0.92,
-                  ),
                 ),
               ),
             ],

@@ -64,9 +64,12 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        ImageWidget(
-                          link: imageLink,
-                          fit: BoxFit.cover,
+                        ClipRRect(
+                          borderRadius: BorderRadiusFoundation.all24,
+                          child: ImageWidget(
+                            link: imageLink,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         SpacingFoundation.horizontalSpace8,
                         Expanded(
