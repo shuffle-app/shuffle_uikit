@@ -3,11 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/content_wrappers/ui_kit_border_wrapper.dart';
 
 class FingerprintSwitch extends StatelessWidget {
-  const FingerprintSwitch({
-    super.key,
-    required this.child,
-  });
-
+  const FingerprintSwitch({super.key, required this.child});
   final Widget child;
 
   @override
