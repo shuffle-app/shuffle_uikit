@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputField {
+class UiKitInputFieldNoIcon extends StatefulWidget
+    implements BaseUiKitInputField {
   const UiKitInputFieldNoIcon({
     Key? key,
     required this.controller,
@@ -12,6 +13,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.fillColor,
     this.minLines,
     this.enabled = true,
+    this.borderRadius
   }) : super(key: key);
 
   @override
@@ -29,6 +31,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
 
   final Color? fillColor;
   final int? minLines;
+  final BorderRadius? borderRadius;
 
   @override
   State<UiKitInputFieldNoIcon> createState() => _UiKitInputFieldNoIconState();
@@ -40,13 +43,27 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
   @override
   Widget build(BuildContext context) {
     final uiKitTheme = context.uiKitTheme;
-    final inputTheme = uiKitTheme?.noIconInputTheme;
-    final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
+    final inputTheme = widget.borderRadius != null
+        ? uiKitTheme?.noIconInputTheme.copyWith(
+      focusedBorder: OutlineInputBorder(
+        borderRadius: widget.borderRadius!, borderSide: const BorderSide(
+        color: Colors.white,
+        width: 2,
+      ),),
+      enabledBorder: OutlineInputBorder(
+          borderRadius: widget.borderRadius!, borderSide: BorderSide.none),)
+        : uiKitTheme?.noIconInputTheme;
+    final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(
+        color: ColorsFoundation.error);
     final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
-      color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
+      color: _key.currentState?.hasError ?? false
+          ? ColorsFoundation.error
+          : Colors.white,
     );
-    final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
-      color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.darkNeutral900.withOpacity(0.16),
+    final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium
+        .copyWith(
+      color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation
+          .darkNeutral900.withOpacity(0.16),
     );
 
     return Theme(
