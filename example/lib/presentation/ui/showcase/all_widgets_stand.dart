@@ -128,7 +128,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
-              FingerprintSwitch().paddingSymmetric(horizontal: 20),
+              FingerprintSwitch(
+                isHealthKitEnabled: true,
+                title: Text(
+                  'Guess',
+                  style: context.uiKitTheme?.boldTextTheme.subHeadline,
+                ),
+                backgroundImage: ImageWidget(
+                  width: double.infinity,
+                  rasterAsset: GraphicsFoundation.instance.png.dubaiSilhouette,
+                  fit: BoxFit.cover,
+                  color: ColorsFoundation.surface2,
+                ),
+                animationPath: GraphicsFoundation
+                    .instance.animations.lottie.animationTouchId.path,
+              ),
               SpacingFoundation.verticalSpace16,
               UiKitLeadingRadioTile(
                 selected: selection,

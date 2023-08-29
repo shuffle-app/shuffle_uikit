@@ -3,7 +3,20 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/content_wrappers/ui_kit_border_wrapper.dart';
 
 class FingerprintSwitch extends StatefulWidget {
-  const FingerprintSwitch({super.key});
+  const FingerprintSwitch({
+    super.key,
+    required this.title,
+    required this.isHealthKitEnabled,
+    required this.backgroundImage,
+    this.subtitle,
+    this.animationPath,
+  });
+
+  final Widget title;
+  final Widget? subtitle;
+  final ImageWidget backgroundImage;
+  final bool isHealthKitEnabled;
+  final String? animationPath;
 
   @override
   State<FingerprintSwitch> createState() => _FingerprintSwitchState();
@@ -38,22 +51,14 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> {
             child: Transform(
               alignment: Alignment.bottomCenter,
               transform: Matrix4.identity()..scale(1.0, 0.8),
-              child: ImageWidget(
-                width: double.infinity,
-                rasterAsset: GraphicsFoundation.instance.png.dubaiSilhouette,
-                fit: BoxFit.cover,
-                color: ColorsFoundation.surface2,
-              ),
+              child: widget.backgroundImage,
             ),
           ),
         ),
         FingerprintButton(
-          animationPath: GraphicsFoundation
-              .instance.animations.lottie.animationTouchId.path,
-          title: Text(
-            'Guess',
-            style: context.uiKitTheme?.boldTextTheme.subHeadline,
-          ),
+          animationPath: widget.animationPath,
+          title: widget.title,
+          subtitle: widget.subtitle,
           parentWidth: _currentWidth,
         ),
       ],

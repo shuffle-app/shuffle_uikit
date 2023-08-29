@@ -5,33 +5,38 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class FingerprintButton extends StatefulWidget {
   const FingerprintButton({
     super.key,
-    required this.animationPath,
+    this.width,
+    this.height,
+    this.subtitle,
+    this.onPressed,
     required this.title,
     required this.parentWidth,
-    this.height,
-    this.width,
-    this.onPressed,
+    required this.animationPath,
   });
 
-  final double parentWidth;
-  final String animationPath;
   final Widget title;
+  final double parentWidth;
   final double? width;
   final double? height;
+  final String? animationPath;
+  final Widget? subtitle;
   final VoidCallback? onPressed;
+
   @override
   State<FingerprintButton> createState() => _FingerprintButtonState();
 }
 
 class _FingerprintButtonState extends State<FingerprintButton>
     with TickerProviderStateMixin {
-  late final AnimationController _controller;
-  bool _isPressed = false;
-  bool _isCompleted = false;
   final ValueNotifier<Offset> _currentPosition =
       ValueNotifier<Offset>(Offset.zero);
   final Offset _startPosition = Offset.zero;
   late Offset _finishPosition;
+
+  late final AnimationController _controller;
+
+  bool _isPressed = false;
+  bool _isCompleted = false;
 
   @override
   void initState() {
@@ -40,6 +45,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
       duration: const Duration(seconds: 2),
       vsync: this,
     );
+
     _setAnimationListener();
     _setVibrationListener();
     _finishPosition = Offset(widget.parentWidth, 0);
@@ -190,12 +196,14 @@ class _FingerprintButtonState extends State<FingerprintButton>
                         width: 48.w,
                         child: FittedBox(
                           fit: BoxFit.cover,
-                          child: LottieBuilder.asset(
-                            package: 'shuffle_uikit',
-                            widget.animationPath,
-                            fit: BoxFit.cover,
-                            controller: _controller,
-                          ),
+                          child: widget.animationPath != null
+                              ? LottieBuilder.asset(
+                                  package: 'shuffle_uikit',
+                                  widget.animationPath!,
+                                  fit: BoxFit.cover,
+                                  controller: _controller,
+                                )
+                              : widget.subtitle,
                         ),
                       ),
                     ),
