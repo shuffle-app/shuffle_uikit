@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:isolate';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -49,6 +50,25 @@ class FeedbackIsolate {
     _isolate.controlPort.send(event);
   }
 
+  void addVibrationEvent(SystemVibrationIsolateEvent event) {
+    switch (event.runtimeType) {
+      case SystemLightVibrationIsolate:
+        HapticFeedback.lightImpact();
+        break;
+      case SystemMediumVibrationIsolate:
+        HapticFeedback.mediumImpact();
+        break;
+      case SystemHeavyVibrationIsolate:
+        HapticFeedback.heavyImpact();
+        break;
+      default:
+        if (kDebugMode) {
+          print('Undefined type for Vibration event.');
+        }
+        break;
+    }
+  }
+
   Future<void> _setAsset({required String asset}) async {
     if (_currentSource != asset) {
       _currentSource = asset;
@@ -62,3 +82,11 @@ abstract class SystemSoundIsolateEvent {}
 class SystemSoundIsolateRachetClick extends SystemSoundIsolateEvent {}
 
 class FeedbackIsolateRachetClickAndHaptics extends SystemSoundIsolateEvent {}
+
+abstract class SystemVibrationIsolateEvent {}
+
+class SystemLightVibrationIsolate extends SystemVibrationIsolateEvent {}
+
+class SystemMediumVibrationIsolate extends SystemVibrationIsolateEvent {}
+
+class SystemHeavyVibrationIsolate extends SystemVibrationIsolateEvent {}
