@@ -61,11 +61,6 @@ class FeedbackIsolate {
       case SystemHeavyVibrationIsolate:
         HapticFeedback.heavyImpact();
         break;
-      default:
-        if (kDebugMode) {
-          print('Undefined type for Vibration event.');
-        }
-        break;
     }
   }
 
