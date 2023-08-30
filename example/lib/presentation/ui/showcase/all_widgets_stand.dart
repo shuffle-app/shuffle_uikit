@@ -22,6 +22,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   CountryModel? _selectedCountry;
 
   bool selection = false;
+  bool switchValue = false;
   final List<UiKitMenuItem<String>> _menuItems = [
     UiKitMenuItem<String>(
       title: 'Active Tiger',
@@ -436,8 +437,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               UiKitGradientSwitchTile(
                 title: 'Show my profile',
-                switchedOn: selection,
-                onChanged: (value) => setState(() => selection = value),
+                switchedOn: switchValue,
+                onChanged: (value) => setState(() => switchValue = value),
               ),
               SpacingFoundation.verticalSpace16,
               const Center(child: MemberPlate()),
@@ -999,29 +1000,23 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     UiKitMessageCardWithIcon(
                       onPressed: () {},
                       message: 'Want to have some fun',
-                      icon: ImageWidget(
-                        svgAsset: GraphicsFoundation
-                            .instance.svg.smileyCrazyFaceEmoji,
-                      ),
+                      iconLink: GraphicsFoundation
+                          .instance.svg.smileyCrazyFaceEmoji.path,
                       layoutDirection: Axis.vertical,
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
                       onPressed: () {},
                       message: 'Want to have',
-                      icon: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.angryEmoji,
-                      ),
+                      iconLink: GraphicsFoundation.instance.svg.angryEmoji.path,
                       layoutDirection: Axis.vertical,
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
                       onPressed: () {},
-                      message: 'Want to haveWant to have',
-                      icon: ImageWidget(
-                        svgAsset: GraphicsFoundation
-                            .instance.svg.smileyCrazyFaceEmoji,
-                      ),
+                      message: 'Want to have Want to have',
+                      iconLink: GraphicsFoundation
+                          .instance.svg.smileyCrazyFaceEmoji.path,
                       layoutDirection: Axis.vertical,
                     ),
                   ],
@@ -1031,10 +1026,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               UiKitMessageCardWithIcon(
                 onPressed: () {},
                 message: 'need to cool down a bit?',
-                icon: ImageWidget(
-                  svgAsset:
-                      GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
-                ),
+                iconLink:
+                    GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji.path,
                 layoutDirection: Axis.horizontal,
               ),
               SpacingFoundation.verticalSpace16,

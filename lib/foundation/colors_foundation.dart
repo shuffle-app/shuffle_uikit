@@ -29,6 +29,7 @@ class ColorsFoundation {
   static const Color info = UiKitColors.info;
   static const Color shadowPink = UiKitColors.shadowPink;
   static const Color transparent = Colors.transparent;
+  static const Color lightGrey = UiKitColors.lightGrey;
 
   ColorsFoundation._();
 }

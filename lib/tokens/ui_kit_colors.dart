@@ -31,6 +31,7 @@ class UiKitColors {
   static const shadowPink = Color(0xffEFD6CC);
   static const success = Color(0xff30D158);
   static const info = Color(0xff0A84FF);
+  static const lightGrey = Color(0xffD0D0D0);
   static const gradientGreyLight1 = Color(0xffC9C9C9);
   static const gradientGreyLight2 = Color(0xffBCBCBC);
   static const gradientGreyLight3 = Color(0xffC1C1C1);

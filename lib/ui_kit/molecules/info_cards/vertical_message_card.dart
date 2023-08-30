@@ -3,13 +3,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class VerticalMessageCard extends StatelessWidget {
   final String message;
-  final Widget? icon;
+  final String? iconLink;
   final VoidCallback? onPressed;
 
   const VerticalMessageCard({
     Key? key,
     required this.message,
-    this.icon,
+    this.iconLink,
     this.onPressed,
   }) : super(key: key);
 
@@ -33,25 +33,24 @@ class VerticalMessageCard extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              if (icon != null)
-                ConstrainedBox(
-                  constraints: BoxConstraints(
-                    maxHeight: width * 0.56,
-                    maxWidth: width * 0.56,
-                  ),
-                  child: icon,
+              if (iconLink != null)
+                ImageWidget(
+                  link: iconLink!,
+                  height: 0.1875.sw,
+                  width: 0.1875.sw,
+                  fit: BoxFit.cover,
                 ),
-              if (icon != null) SpacingFoundation.verticalSpace8,
+              if (iconLink != null) SpacingFoundation.verticalSpace2,
               Text(
                 /// end line symbols added to make sure that the text is more than 4 lines
                 /// so that the card height is always fixed
                 '${message.toUpperCase()}\n\n\n\n',
                 style: messageStyle,
                 textAlign: TextAlign.center,
-                maxLines: 4,
+                maxLines: 3,
               ),
             ],
-          ).paddingAll(EdgeInsetsFoundation.all16),
+          ).paddingAll(EdgeInsetsFoundation.all12),
         ),
       ),
     );
