@@ -37,6 +37,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
 
   bool _isPressed = false;
   bool _isCompleted = false;
+  Duration _duration = const Duration(milliseconds: 100);
 
   @override
   void initState() {
@@ -92,9 +93,24 @@ class _FingerprintButtonState extends State<FingerprintButton>
     if (!_isCompleted) {
       _controller.reverse().then((value) {
         if (_currentPosition.value.dx < _finishPosition.dx / 2) {
+          setState(() {
+            _duration = const Duration(milliseconds: 800);
+          });
           _currentPosition.value = _startPosition;
         }
       });
+    }
+  }
+
+  void _resetPosition() {
+    if (_currentPosition.value.dx >= _finishPosition.dx / 2) {
+      setState(() {
+        _duration = const Duration(milliseconds: 300);
+        _isCompleted = true;
+      });
+      _currentPosition.value = _finishPosition;
+    } else {
+      _reverseAnimation();
     }
   }
 
@@ -112,7 +128,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
   }
 
   double _updatePosition(double distance) {
-    if (distance < _startPosition.dx) {
+    if (distance <= _startPosition.dx) {
       return _startPosition.dx;
     }
     if (distance >= _finishPosition.dx) {
@@ -125,15 +141,6 @@ class _FingerprintButtonState extends State<FingerprintButton>
   void _setPosition(details) {
     if (_isPressed && !_isCompleted) {
       _currentPosition.value = details.localPosition;
-    }
-  }
-
-  void _resetPosition() {
-    if (_currentPosition.value >= _finishPosition / 2) {
-      setState(() => _isCompleted = true);
-      _currentPosition.value = _finishPosition;
-    } else {
-      _reverseAnimation();
     }
   }
 
@@ -158,7 +165,9 @@ class _FingerprintButtonState extends State<FingerprintButton>
     return ValueListenableBuilder(
       valueListenable: _currentPosition,
       builder: (_, currentPosition, __) => AnimatedPositioned(
-        duration: const Duration(milliseconds: 100),
+        curve: Curves.bounceOut,
+        duration: _duration,
+        onEnd: () => _duration = Duration.zero,
         left: _updatePosition(currentPosition.dx),
         child: ConstrainedBox(
           constraints: BoxConstraints(
