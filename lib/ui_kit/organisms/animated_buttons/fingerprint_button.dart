@@ -34,10 +34,11 @@ class _FingerprintButtonState extends State<FingerprintButton>
   late Offset _finishPosition;
 
   late final AnimationController _controller;
+  late final double _buttonCenter;
 
   bool _isPressed = false;
   bool _isCompleted = false;
-  Duration _duration = const Duration(milliseconds: 100);
+  Duration _animationDuration = const Duration(milliseconds: 100);
 
   @override
   void initState() {
@@ -50,6 +51,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
     _setAnimationListener();
     _setVibrationListener();
     _finishPosition = Offset(widget.parentWidth, 0);
+    _buttonCenter = (widget.width ?? 105.w) / 2;
   }
 
   void _setVibrationListener() {
@@ -71,6 +73,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
         );
       }
     });
+
     _currentPosition.addListener(() {
       if (_currentPosition.value.dx >= _finishPosition.dx / 1.3) {
         FeedbackIsolate.instance.addVibrationEvent(
@@ -93,7 +96,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
       if (status == AnimationStatus.completed) {
         setState(() {
           _isPressed = true;
-          _duration = const Duration(milliseconds: 100);
+          _animationDuration = const Duration(milliseconds: 100);
           widget.onPressed;
         });
       } else if (status == AnimationStatus.dismissed) {
@@ -109,22 +112,22 @@ class _FingerprintButtonState extends State<FingerprintButton>
   }
 
   void _reverseAnimation() {
-    if (!_isCompleted) {
-      _controller.reverse().then((value) {
-        if (_currentPosition.value.dx < _finishPosition.dx / 2 + 106.w / 2) {
-          setState(() {
-            _duration = const Duration(milliseconds: 800);
-          });
-          _currentPosition.value = _startPosition;
-        }
-      });
-    }
+    _controller.reverse().then((value) {
+      final touchCenter = _finishPosition.dx / 2 + _buttonCenter;
+      if (_currentPosition.value.dx < touchCenter) {
+        setState(() {
+          _animationDuration = const Duration(milliseconds: 800);
+        });
+        _currentPosition.value = _startPosition;
+      }
+    });
   }
 
   void _resetPosition() {
-    if (_currentPosition.value.dx >= _finishPosition.dx / 2 + 106.w / 2) {
+    final touchCenter = _finishPosition.dx / 2 + _buttonCenter;
+    if (_currentPosition.value.dx >= touchCenter) {
       setState(() {
-        _duration = const Duration(milliseconds: 400);
+        _animationDuration = const Duration(milliseconds: 400);
         _isCompleted = true;
       });
       _currentPosition.value = _finishPosition;
@@ -140,17 +143,15 @@ class _FingerprintButtonState extends State<FingerprintButton>
   }
 
   double _updatePosition(double distance) {
-    final buttonCenter = 105.w / 2;
-    final actualPosition = distance - buttonCenter;
-    if (distance <= _startPosition.dx || actualPosition <= _startPosition.dx) {
+    final touchPosition = distance - _buttonCenter;
+    if (distance <= _startPosition.dx || touchPosition <= _startPosition.dx) {
       return _startPosition.dx;
     }
-    if (distance >= _finishPosition.dx ||
-        actualPosition >= _finishPosition.dx) {
+    if (distance >= _finishPosition.dx || touchPosition >= _finishPosition.dx) {
       return _finishPosition.dx;
     }
 
-    return actualPosition;
+    return touchPosition;
   }
 
   List<BoxShadow>? _getShadow(bool isPressed) {
@@ -182,18 +183,17 @@ class _FingerprintButtonState extends State<FingerprintButton>
   @override
   Widget build(BuildContext context) {
     final height = 0.27.sw * 1.68;
-    final width = 105.w;
 
     return ValueListenableBuilder(
       valueListenable: _currentPosition,
       builder: (_, currentPosition, __) => AnimatedPositioned(
         curve: _isCompleted ? Curves.easeIn : Curves.bounceOut,
-        duration: _duration,
+        duration: _animationDuration,
         left: _updatePosition(currentPosition.dx),
         child: ConstrainedBox(
           constraints: BoxConstraints(
             maxHeight: widget.height ?? height,
-            maxWidth: widget.width ?? width,
+            maxWidth: widget.width ?? 105.w,
           ),
           child: GestureDetector(
             onTapDown: (_) => _startAnimation(),
@@ -208,7 +208,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
                 boxShadow: _getShadow(_isPressed),
               ),
               child: UiKitCardWrapper(
-                width: widget.width ?? width,
+                width: widget.width ?? 105.w,
                 height: widget.height ?? height,
                 color: ColorsFoundation.surface3,
                 child: Column(

@@ -29,11 +29,11 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _getParentSize();
+      _getCurrentWidth();
     });
   }
 
-  void _getParentSize() {
+  void _getCurrentWidth() {
     final RenderBox renderBox = context.findRenderObject() as RenderBox;
     setState(() => _currentWidth = renderBox.size.width);
   }
