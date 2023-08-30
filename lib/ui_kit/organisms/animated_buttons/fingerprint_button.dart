@@ -53,12 +53,30 @@ class _FingerprintButtonState extends State<FingerprintButton>
   }
 
   void _setVibrationListener() {
+    _controller.addListener(() {
+      if (_controller.status == AnimationStatus.completed ||
+          _controller.status == AnimationStatus.reverse) {
+        return;
+      } else if (_controller.value > 0.75) {
+        FeedbackIsolate.instance.addVibrationEvent(
+          SystemHeavyVibrationIsolate(),
+        );
+      } else if (_controller.value > 0.4) {
+        FeedbackIsolate.instance.addVibrationEvent(
+          SystemMediumVibrationIsolate(),
+        );
+      } else if (_controller.value > 0) {
+        FeedbackIsolate.instance.addVibrationEvent(
+          SystemLightVibrationIsolate(),
+        );
+      }
+    });
     _currentPosition.addListener(() {
       if (_currentPosition.value.dx >= _finishPosition.dx / 1.3) {
         FeedbackIsolate.instance.addVibrationEvent(
           SystemHeavyVibrationIsolate(),
         );
-      } else if (_currentPosition.value.dx >= _finishPosition.dx / 2) {
+      } else if (_currentPosition.value.dx >= _finishPosition.dx / 2.3) {
         FeedbackIsolate.instance.addVibrationEvent(
           SystemMediumVibrationIsolate(),
         );
@@ -75,6 +93,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
       if (status == AnimationStatus.completed) {
         setState(() {
           _isPressed = true;
+          _duration = const Duration(milliseconds: 100);
           widget.onPressed;
         });
       } else if (status == AnimationStatus.dismissed) {
@@ -92,7 +111,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
   void _reverseAnimation() {
     if (!_isCompleted) {
       _controller.reverse().then((value) {
-        if (_currentPosition.value.dx < _finishPosition.dx / 2) {
+        if (_currentPosition.value.dx < _finishPosition.dx / 2 + 106.w / 2) {
           setState(() {
             _duration = const Duration(milliseconds: 800);
           });
@@ -103,15 +122,35 @@ class _FingerprintButtonState extends State<FingerprintButton>
   }
 
   void _resetPosition() {
-    if (_currentPosition.value.dx >= _finishPosition.dx / 2) {
+    if (_currentPosition.value.dx >= _finishPosition.dx / 2 + 106.w / 2) {
       setState(() {
-        _duration = const Duration(milliseconds: 300);
+        _duration = const Duration(milliseconds: 400);
         _isCompleted = true;
       });
       _currentPosition.value = _finishPosition;
     } else {
       _reverseAnimation();
     }
+  }
+
+  void _setPosition(details) {
+    if (_isPressed && !_isCompleted) {
+      _currentPosition.value = details.localPosition;
+    }
+  }
+
+  double _updatePosition(double distance) {
+    final buttonCenter = 105.w / 2;
+    final actualPosition = distance - buttonCenter;
+    if (distance <= _startPosition.dx || actualPosition <= _startPosition.dx) {
+      return _startPosition.dx;
+    }
+    if (distance >= _finishPosition.dx ||
+        actualPosition >= _finishPosition.dx) {
+      return _finishPosition.dx;
+    }
+
+    return actualPosition;
   }
 
   List<BoxShadow>? _getShadow(bool isPressed) {
@@ -125,23 +164,6 @@ class _FingerprintButtonState extends State<FingerprintButton>
             )
           ]
         : [];
-  }
-
-  double _updatePosition(double distance) {
-    if (distance <= _startPosition.dx) {
-      return _startPosition.dx;
-    }
-    if (distance >= _finishPosition.dx) {
-      return _finishPosition.dx;
-    }
-
-    return distance;
-  }
-
-  void _setPosition(details) {
-    if (_isPressed && !_isCompleted) {
-      _currentPosition.value = details.localPosition;
-    }
   }
 
   @override
@@ -165,9 +187,8 @@ class _FingerprintButtonState extends State<FingerprintButton>
     return ValueListenableBuilder(
       valueListenable: _currentPosition,
       builder: (_, currentPosition, __) => AnimatedPositioned(
-        curve: Curves.bounceOut,
+        curve: _isCompleted ? Curves.easeIn : Curves.bounceOut,
         duration: _duration,
-        onEnd: () => _duration = Duration.zero,
         left: _updatePosition(currentPosition.dx),
         child: ConstrainedBox(
           constraints: BoxConstraints(
