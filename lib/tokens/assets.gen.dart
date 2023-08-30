@@ -768,6 +768,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/cocktail.svg
   SvgGenImage get cocktail => const SvgGenImage('assets/images/svg/cocktail.svg');
 
+  /// File path: assets/images/svg/company_layered.svg
+  SvgGenImage get companyLayered => const SvgGenImage('assets/images/svg/company_layered.svg');
+
   /// File path: assets/images/svg/conferences.svg
   SvgGenImage get conferences => const SvgGenImage('assets/images/svg/conferences.svg');
 
@@ -956,6 +959,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/pencil.svg
   SvgGenImage get pencil => const SvgGenImage('assets/images/svg/pencil.svg');
+
+  /// File path: assets/images/svg/person_layered.svg
+  SvgGenImage get personLayered => const SvgGenImage('assets/images/svg/person_layered.svg');
 
   /// File path: assets/images/svg/play-fill.svg
   SvgGenImage get playFill => const SvgGenImage('assets/images/svg/play-fill.svg');
@@ -1242,6 +1248,7 @@ class $AssetsImagesSvgGen {
         clock,
         club,
         cocktail,
+        companyLayered,
         conferences,
         connectionFill,
         connectionOutline,
@@ -1305,6 +1312,7 @@ class $AssetsImagesSvgGen {
         pauseOutline,
         pause,
         pencil,
+        personLayered,
         playFill,
         playOutline,
         play,
