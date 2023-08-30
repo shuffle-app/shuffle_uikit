@@ -50,8 +50,8 @@ class _FingerprintButtonState extends State<FingerprintButton>
       duration: const Duration(seconds: 2),
       vsync: this,
     );
-    _setAnimationListener();
-    _setVibrationListener();
+    _controller.addStatusListener((status) => _setAnimationListener(status));
+    _controller.addStatusListener((_) => _setVibrationListener());
 
     _animationDuration = _initialDuration;
     _finishPosition = Offset(widget.parentWidth, 0);
@@ -59,45 +59,41 @@ class _FingerprintButtonState extends State<FingerprintButton>
   }
 
   void _setVibrationListener() {
-    _controller.addStatusListener((status) {
-      Timer.periodic(_initialDuration, (timer) {
-        if (_currentPosition.value.dx >= _finishPosition.dx / 1.3) {
-          FeedbackIsolate.instance.addVibrationEvent(
-            SystemHeavyVibrationIsolate(),
-          );
-        } else if (_currentPosition.value.dx >= _finishPosition.dx / 2) {
-          FeedbackIsolate.instance.addVibrationEvent(
-            SystemMediumVibrationIsolate(),
-          );
-        } else if (_currentPosition.value.dx >= _startPosition.dx) {
-          FeedbackIsolate.instance.addVibrationEvent(
-            SystemLightVibrationIsolate(),
-          );
-        }
-        if ((!_isPressed && _controller.isDismissed) || _isCompleted) {
-          timer.cancel();
-        }
-      });
-    });
-  }
-
-  void _setAnimationListener() {
-    _controller.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        setState(() {
-          _isPressed = true;
-          _animationDuration = _initialDuration;
-          widget.onPressed;
-        });
-      } else if (status == AnimationStatus.dismissed) {
-        setState(() {
-          _isPressed = false;
-        });
+    Timer.periodic(_initialDuration, (timer) {
+      if (_currentPosition.value.dx >= _finishPosition.dx / 1.3) {
+        FeedbackIsolate.instance.addVibrationEvent(
+          SystemHeavyVibrationIsolate(),
+        );
+      } else if (_currentPosition.value.dx >= _finishPosition.dx / 2) {
+        FeedbackIsolate.instance.addVibrationEvent(
+          SystemMediumVibrationIsolate(),
+        );
+      } else if (_currentPosition.value.dx >= _startPosition.dx) {
+        FeedbackIsolate.instance.addVibrationEvent(
+          SystemLightVibrationIsolate(),
+        );
+      }
+      if ((!_isPressed && _controller.isDismissed) || _isCompleted) {
+        timer.cancel();
       }
     });
   }
 
-  void _startAnimation() {
+  void _setAnimationListener(status) {
+    if (status == AnimationStatus.completed) {
+      setState(() {
+        _isPressed = true;
+        _animationDuration = _initialDuration;
+        widget.onPressed;
+      });
+    } else if (status == AnimationStatus.dismissed) {
+      setState(() {
+        _isPressed = false;
+      });
+    }
+  }
+
+  _startAnimation() {
     _controller.forward();
   }
 
@@ -165,39 +161,8 @@ class _FingerprintButtonState extends State<FingerprintButton>
 
   @override
   void dispose() {
-    _controller.removeStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        setState(() {
-          _isPressed = true;
-          _animationDuration = _initialDuration;
-          widget.onPressed;
-        });
-      } else if (status == AnimationStatus.dismissed) {
-        setState(() {
-          _isPressed = false;
-        });
-      }
-    });
-    _controller.removeStatusListener((status) {
-      Timer.periodic(_initialDuration, (timer) {
-        if (_currentPosition.value.dx >= _finishPosition.dx / 1.3) {
-          FeedbackIsolate.instance.addVibrationEvent(
-            SystemHeavyVibrationIsolate(),
-          );
-        } else if (_currentPosition.value.dx >= _finishPosition.dx / 2) {
-          FeedbackIsolate.instance.addVibrationEvent(
-            SystemMediumVibrationIsolate(),
-          );
-        } else if (_currentPosition.value.dx >= _startPosition.dx) {
-          FeedbackIsolate.instance.addVibrationEvent(
-            SystemLightVibrationIsolate(),
-          );
-        }
-        if ((!_isPressed && _controller.isDismissed) || _isCompleted) {
-          timer.cancel();
-        }
-      });
-    });
+    _controller.removeStatusListener((status) => _setAnimationListener(status));
+    _controller.removeStatusListener((_) => _setVibrationListener());
     _controller.dispose();
     _currentPosition.dispose();
     super.dispose();
@@ -246,16 +211,17 @@ class _FingerprintButtonState extends State<FingerprintButton>
                         height: 48.w,
                         width: 48.w,
                         child: FittedBox(
+                          fit: BoxFit.cover,
+                          child: LottieBuilder.asset(
+                            package: 'shuffle_uikit',
+                            widget.animationPath != null
+                                ? widget.animationPath!
+                                : GraphicsFoundation.instance.animations.lottie
+                                    .animationTouchId.path,
                             fit: BoxFit.cover,
-                            child: LottieBuilder.asset(
-                              package: 'shuffle_uikit',
-                              widget.animationPath != null
-                                  ? widget.animationPath!
-                                  : GraphicsFoundation.instance.animations
-                                      .lottie.animationTouchId.path,
-                              fit: BoxFit.cover,
-                              controller: _controller,
-                            )),
+                            controller: _controller,
+                          ),
+                        ),
                       ),
                     ),
                   ],
