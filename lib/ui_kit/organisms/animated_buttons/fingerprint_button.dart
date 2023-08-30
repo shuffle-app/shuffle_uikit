@@ -34,13 +34,14 @@ class _FingerprintButtonState extends State<FingerprintButton>
       ValueNotifier<Offset>(Offset.zero);
   final Offset _startPosition = Offset.zero;
   late Offset _finishPosition;
+  late Duration _animationDuration;
 
   late final AnimationController _controller;
   late final double _buttonCenter;
+  final Duration _initialDuration = const Duration(milliseconds: 100);
 
   bool _isPressed = false;
   bool _isCompleted = false;
-  Duration _animationDuration = const Duration(milliseconds: 100);
 
   @override
   void initState() {
@@ -49,16 +50,17 @@ class _FingerprintButtonState extends State<FingerprintButton>
       duration: const Duration(seconds: 2),
       vsync: this,
     );
-
     _setAnimationListener();
     _setVibrationListener();
+
+    _animationDuration = _initialDuration;
     _finishPosition = Offset(widget.parentWidth, 0);
     _buttonCenter = (widget.width ?? 105.w) / 2;
   }
 
   void _setVibrationListener() {
     _controller.addStatusListener((status) {
-      Timer.periodic(const Duration(milliseconds: 100), (timer) {
+      Timer.periodic(_initialDuration, (timer) {
         if (_currentPosition.value.dx >= _finishPosition.dx / 1.3) {
           FeedbackIsolate.instance.addVibrationEvent(
             SystemHeavyVibrationIsolate(),
@@ -84,7 +86,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
       if (status == AnimationStatus.completed) {
         setState(() {
           _isPressed = true;
-          _animationDuration = const Duration(milliseconds: 100);
+          _animationDuration = _initialDuration;
           widget.onPressed;
         });
       } else if (status == AnimationStatus.dismissed) {
@@ -147,8 +149,8 @@ class _FingerprintButtonState extends State<FingerprintButton>
         ? [
             BoxShadow(
               color: ColorsFoundation.shadowPink.withOpacity(0.9),
-              blurRadius: 10,
-              spreadRadius: -5,
+              blurRadius: 20,
+              spreadRadius: -10,
               offset: Offset.zero,
             )
           ]
@@ -163,6 +165,39 @@ class _FingerprintButtonState extends State<FingerprintButton>
 
   @override
   void dispose() {
+    _controller.removeStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        setState(() {
+          _isPressed = true;
+          _animationDuration = _initialDuration;
+          widget.onPressed;
+        });
+      } else if (status == AnimationStatus.dismissed) {
+        setState(() {
+          _isPressed = false;
+        });
+      }
+    });
+    _controller.removeStatusListener((status) {
+      Timer.periodic(_initialDuration, (timer) {
+        if (_currentPosition.value.dx >= _finishPosition.dx / 1.3) {
+          FeedbackIsolate.instance.addVibrationEvent(
+            SystemHeavyVibrationIsolate(),
+          );
+        } else if (_currentPosition.value.dx >= _finishPosition.dx / 2) {
+          FeedbackIsolate.instance.addVibrationEvent(
+            SystemMediumVibrationIsolate(),
+          );
+        } else if (_currentPosition.value.dx >= _startPosition.dx) {
+          FeedbackIsolate.instance.addVibrationEvent(
+            SystemLightVibrationIsolate(),
+          );
+        }
+        if ((!_isPressed && _controller.isDismissed) || _isCompleted) {
+          timer.cancel();
+        }
+      });
+    });
     _controller.dispose();
     _currentPosition.dispose();
     super.dispose();
@@ -189,10 +224,8 @@ class _FingerprintButtonState extends State<FingerprintButton>
             onPanUpdate: (details) => _setPosition(details),
             onPanEnd: (_) => _resetPosition(),
             onPanStart: (details) => _setPosition(details),
-            child: AnimatedContainer(
-              duration: Duration.zero,
+            child: DecoratedBox(
               decoration: BoxDecoration(
-                borderRadius: BorderRadiusFoundation.all28,
                 boxShadow: _getShadow(_isPressed),
               ),
               child: UiKitCardWrapper(
@@ -213,16 +246,16 @@ class _FingerprintButtonState extends State<FingerprintButton>
                         height: 48.w,
                         width: 48.w,
                         child: FittedBox(
-                          fit: BoxFit.cover,
-                          child: widget.animationPath != null
-                              ? LottieBuilder.asset(
-                                  package: 'shuffle_uikit',
-                                  widget.animationPath!,
-                                  fit: BoxFit.cover,
-                                  controller: _controller,
-                                )
-                              : widget.subtitle,
-                        ),
+                            fit: BoxFit.cover,
+                            child: LottieBuilder.asset(
+                              package: 'shuffle_uikit',
+                              widget.animationPath != null
+                                  ? widget.animationPath!
+                                  : GraphicsFoundation.instance.animations
+                                      .lottie.animationTouchId.path,
+                              fit: BoxFit.cover,
+                              controller: _controller,
+                            )),
                       ),
                     ),
                   ],
