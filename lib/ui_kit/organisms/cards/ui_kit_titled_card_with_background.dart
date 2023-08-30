@@ -21,13 +21,23 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
 
     return Material(
       clipBehavior: Clip.hardEdge,
-      borderRadius: BorderRadiusFoundation.all24,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadiusFoundation.all24,
+        side: BorderSide(
+          color: ColorsFoundation.lightGrey.withOpacity(0.3),
+          width: 1,
+        ),
+      ),
       child: InkWell(
         onTap: onPressed,
         child: Ink(
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all24,
             color: backgroundColor,
+            // border: Border.all(
+            //   color: ColorsFoundation.lightGrey,
+            //   width: 1,
+            // ),
           ),
           width: relativeSize,
           height: relativeSize,
@@ -35,9 +45,12 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
             alignment: Alignment.topCenter,
             fit: StackFit.expand,
             children: [
-              ImageWidget(
-                link: backgroundImageLink,
-                fit: BoxFit.cover,
+              ClipRRect(
+                borderRadius: BorderRadiusFoundation.all24,
+                child: ImageWidget(
+                  link: backgroundImageLink,
+                  fit: BoxFit.cover,
+                ),
               ),
               Text(
                 title,

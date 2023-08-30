@@ -26,6 +26,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   );
 
   bool selection = false;
+  bool switchValue = false;
   final List<UiKitMenuItem<String>> _menuItems = [
     UiKitMenuItem<String>(
       title: 'Active Tiger',
@@ -442,8 +443,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               UiKitGradientSwitchTile(
                 title: 'Show my profile',
-                switchedOn: selection,
-                onChanged: (value) => setState(() => selection = value),
+                switchedOn: switchValue,
+                onChanged: (value) => setState(() => switchValue = value),
               ),
               SpacingFoundation.verticalSpace16,
               const Center(child: MemberPlate()),
@@ -996,27 +997,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     UiKitMessageCardWithIcon(
                       onPressed: () {},
                       message: 'Want to have some fun',
-                      icon: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
-                      ),
+                      iconLink: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji.path,
                       layoutDirection: Axis.vertical,
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
                       onPressed: () {},
                       message: 'Want to have',
-                      icon: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.angryEmoji,
-                      ),
+                      iconLink: GraphicsFoundation.instance.svg.angryEmoji.path,
                       layoutDirection: Axis.vertical,
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
                       onPressed: () {},
-                      message: 'Want to haveWant to have',
-                      icon: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
-                      ),
+                      message: 'Want to have Want to have',
+                      iconLink: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji.path,
                       layoutDirection: Axis.vertical,
                     ),
                   ],
@@ -1026,9 +1021,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               UiKitMessageCardWithIcon(
                 onPressed: () {},
                 message: 'need to cool down a bit?',
-                icon: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji,
-                ),
+                iconLink: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji.path,
                 layoutDirection: Axis.horizontal,
               ),
               SpacingFoundation.verticalSpace16,
@@ -1191,31 +1184,72 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
                   UiKitMediaVideo(link: GraphicsFoundation.instance.png.place.path),
                 ],
-                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                description:
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
                     'Sed euismod, nunc ut tincidunt lacinia, nisl nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
                     'Nulla facilisi. '
                     'Donec auctor, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
                     'Nulla facilisi',
                 rating: 4.8,
                 baseTags: [
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.cocktail.path),
                 ],
                 uniqueTags: [
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
+                  UiKitTag(
+                      title: 'Cheap',
+                      iconPath: GraphicsFoundation.instance.svg.dice.path,
+                      unique: true),
                 ],
               ),
               SpacingFoundation.verticalSpace16,
@@ -1276,32 +1310,68 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SliderPlaceCard(
                 slidablePlaceCardData: SlidablePlaceCardData(
                   media: [
-                    UiKitMediaVideo(link: GraphicsFoundation.instance.png.place.path),
-                    UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
-                    UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
-                    UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
-                    UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
+                    UiKitMediaVideo(
+                        link: GraphicsFoundation.instance.png.place.path),
+                    UiKitMediaPhoto(
+                        link: GraphicsFoundation.instance.png.place.path),
+                    UiKitMediaPhoto(
+                        link: GraphicsFoundation.instance.png.place.path),
+                    UiKitMediaPhoto(
+                        link: GraphicsFoundation.instance.png.place.path),
+                    UiKitMediaPhoto(
+                        link: GraphicsFoundation.instance.png.place.path),
                   ],
                   title: 'Virgins on the beach',
                   placeTags: [
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(
+                        title: 'Cheap',
+                        iconPath:
+                            GraphicsFoundation.instance.svg.cocktail.path),
                   ],
                 ),
               ),
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .push(PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+                  Navigator.of(context).push(PopUpVideoPlayer(
+                      videoUri:
+                          'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
                 },
                 child: const Text(
                   'Show Horizontal Video',
@@ -1313,7 +1383,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context).push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+                  Navigator.of(context).push(PopUpVideoPlayer(
+                      videoUri:
+                          'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
                 },
                 child: const Text(
                   'Show Vertical Video',
@@ -1326,7 +1398,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               MaterialButton(
                 onPressed: () {
                   Navigator.of(context).push(PopUpVideoPlayer(
-                      videoUri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
+                      videoUri:
+                          'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
                 },
                 child: const Text(
                   'Show Another Horizontal Video',
