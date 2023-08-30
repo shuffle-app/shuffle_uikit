@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -55,39 +57,25 @@ class _FingerprintButtonState extends State<FingerprintButton>
   }
 
   void _setVibrationListener() {
-    _controller.addListener(() {
-      if (_controller.status == AnimationStatus.completed ||
-          _controller.status == AnimationStatus.reverse) {
-        return;
-      } else if (_controller.value > 0.75) {
-        FeedbackIsolate.instance.addVibrationEvent(
-          SystemHeavyVibrationIsolate(),
-        );
-      } else if (_controller.value > 0.4) {
-        FeedbackIsolate.instance.addVibrationEvent(
-          SystemMediumVibrationIsolate(),
-        );
-      } else if (_controller.value > 0) {
-        FeedbackIsolate.instance.addVibrationEvent(
-          SystemLightVibrationIsolate(),
-        );
-      }
-    });
-
-    _currentPosition.addListener(() {
-      if (_currentPosition.value.dx >= _finishPosition.dx / 1.3) {
-        FeedbackIsolate.instance.addVibrationEvent(
-          SystemHeavyVibrationIsolate(),
-        );
-      } else if (_currentPosition.value.dx >= _finishPosition.dx / 2.3) {
-        FeedbackIsolate.instance.addVibrationEvent(
-          SystemMediumVibrationIsolate(),
-        );
-      } else if (_currentPosition.value.dx >= _startPosition.dx) {
-        FeedbackIsolate.instance.addVibrationEvent(
-          SystemLightVibrationIsolate(),
-        );
-      }
+    _controller.addStatusListener((status) {
+      Timer.periodic(const Duration(milliseconds: 100), (timer) {
+        if (_currentPosition.value.dx >= _finishPosition.dx / 1.3) {
+          FeedbackIsolate.instance.addVibrationEvent(
+            SystemHeavyVibrationIsolate(),
+          );
+        } else if (_currentPosition.value.dx >= _finishPosition.dx / 2) {
+          FeedbackIsolate.instance.addVibrationEvent(
+            SystemMediumVibrationIsolate(),
+          );
+        } else if (_currentPosition.value.dx >= _startPosition.dx) {
+          FeedbackIsolate.instance.addVibrationEvent(
+            SystemLightVibrationIsolate(),
+          );
+        }
+        if ((!_isPressed && _controller.isDismissed) || _isCompleted) {
+          timer.cancel();
+        }
+      });
     });
   }
 
