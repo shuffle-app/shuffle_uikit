@@ -25,7 +25,7 @@ class UiKitStatsActionCard extends StatelessWidget {
             ),
           ),
           Text(
-            '${stats.value}',
+            stats.value,
             style: textTheme?.title2,
           ),
           SpacingFoundation.verticalSpace4,

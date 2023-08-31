@@ -24,7 +24,7 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
         borderRadius: BorderRadiusFoundation.all24,
         onTap: enabled ? onPressed : null,
         child: Ink(
-          height: 48,
+          height: 48.sp,
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all24,
             gradient: enabled ? GradientFoundation.buttonGradientLinear : null,
