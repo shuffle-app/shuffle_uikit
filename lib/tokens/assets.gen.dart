@@ -86,6 +86,12 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Binoculars.png
   AssetGenImage get binoculars => const AssetGenImage('assets/images/png/Binoculars.png');
 
+  /// File path: assets/images/png/Booking.png
+  AssetGenImage get booking => const AssetGenImage('assets/images/png/Booking.png');
+
+  /// File path: assets/images/png/Chips-select.png
+  AssetGenImage get chipsSelect => const AssetGenImage('assets/images/png/Chips-select.png');
+
   /// File path: assets/images/png/Clapperboard.png
   AssetGenImage get clapperboard => const AssetGenImage('assets/images/png/Clapperboard.png');
 
@@ -97,6 +103,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Coin.png
   AssetGenImage get coin => const AssetGenImage('assets/images/png/Coin.png');
+
+  /// File path: assets/images/png/Companions.png
+  AssetGenImage get companions => const AssetGenImage('assets/images/png/Companions.png');
 
   /// File path: assets/images/png/Company.png
   AssetGenImage get company => const AssetGenImage('assets/images/png/Company.png');
@@ -119,14 +128,23 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Female.png
   AssetGenImage get female => const AssetGenImage('assets/images/png/Female.png');
 
+  /// File path: assets/images/png/Filtering.png
+  AssetGenImage get filtering => const AssetGenImage('assets/images/png/Filtering.png');
+
   /// File path: assets/images/png/Fire.png
   AssetGenImage get fire => const AssetGenImage('assets/images/png/Fire.png');
 
   /// File path: assets/images/png/First-aid-kit.png
   AssetGenImage get firstAidKit => const AssetGenImage('assets/images/png/First-aid-kit.png');
 
+  /// File path: assets/images/png/Foe.png
+  AssetGenImage get foe => const AssetGenImage('assets/images/png/Foe.png');
+
   /// File path: assets/images/png/Followers.png
   AssetGenImage get followers => const AssetGenImage('assets/images/png/Followers.png');
+
+  /// File path: assets/images/png/Giving-like-emoji.png
+  AssetGenImage get givingLikeEmoji => const AssetGenImage('assets/images/png/Giving-like-emoji.png');
 
   /// File path: assets/images/png/Hat.png
   AssetGenImage get hat => const AssetGenImage('assets/images/png/Hat.png');
@@ -148,6 +166,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Lifebuoy.png
   AssetGenImage get lifebuoy => const AssetGenImage('assets/images/png/Lifebuoy.png');
+
+  /// File path: assets/images/png/Like-dislike.png
+  AssetGenImage get likeDislike => const AssetGenImage('assets/images/png/Like-dislike.png');
 
   /// File path: assets/images/png/Like-hands.png
   AssetGenImage get likeHands => const AssetGenImage('assets/images/png/Like-hands.png');
@@ -182,17 +203,41 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Pie-chart.png
   AssetGenImage get pieChart => const AssetGenImage('assets/images/png/Pie-chart.png');
 
+  /// File path: assets/images/png/Pixelated-sunglasses-emoji.png
+  AssetGenImage get pixelatedSunglassesEmoji => const AssetGenImage('assets/images/png/Pixelated-sunglasses-emoji.png');
+
+  /// File path: assets/images/png/Place-events.png
+  AssetGenImage get placeEvents => const AssetGenImage('assets/images/png/Place-events.png');
+
+  /// File path: assets/images/png/Points-reputation.png
+  AssetGenImage get pointsReputation => const AssetGenImage('assets/images/png/Points-reputation.png');
+
   /// File path: assets/images/png/Porthole.png
   AssetGenImage get porthole => const AssetGenImage('assets/images/png/Porthole.png');
 
+  /// File path: assets/images/png/Preferences.png
+  AssetGenImage get preferences => const AssetGenImage('assets/images/png/Preferences.png');
+
+  /// File path: assets/images/png/Press-scroll.png
+  AssetGenImage get pressScroll => const AssetGenImage('assets/images/png/Press-scroll.png');
+
   /// File path: assets/images/png/Puzzle.png
   AssetGenImage get puzzle => const AssetGenImage('assets/images/png/Puzzle.png');
+
+  /// File path: assets/images/png/Rating.png
+  AssetGenImage get rating => const AssetGenImage('assets/images/png/Rating.png');
+
+  /// File path: assets/images/png/Result.png
+  AssetGenImage get result => const AssetGenImage('assets/images/png/Result.png');
 
   /// File path: assets/images/png/Rock-n-roll-hands.png
   AssetGenImage get rockNRollHands => const AssetGenImage('assets/images/png/Rock-n-roll-hands.png');
 
   /// File path: assets/images/png/Rocket.png
   AssetGenImage get rocket => const AssetGenImage('assets/images/png/Rocket.png');
+
+  /// File path: assets/images/png/Shuffle-any.png
+  AssetGenImage get shuffleAny => const AssetGenImage('assets/images/png/Shuffle-any.png');
 
   /// File path: assets/images/png/Ski.png
   AssetGenImage get ski => const AssetGenImage('assets/images/png/Ski.png');
@@ -208,6 +253,15 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Sun-wind.png
   AssetGenImage get sunWind => const AssetGenImage('assets/images/png/Sun-wind.png');
+
+  /// File path: assets/images/png/Swipe-category.png
+  AssetGenImage get swipeCategory => const AssetGenImage('assets/images/png/Swipe-category.png');
+
+  /// File path: assets/images/png/Swipe-properties.png
+  AssetGenImage get swipeProperties => const AssetGenImage('assets/images/png/Swipe-properties.png');
+
+  /// File path: assets/images/png/Teach.png
+  AssetGenImage get teach => const AssetGenImage('assets/images/png/Teach.png');
 
   /// File path: assets/images/png/Technologies.png
   AssetGenImage get technologies => const AssetGenImage('assets/images/png/Technologies.png');
@@ -241,6 +295,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/calmness-emoji.png
   AssetGenImage get calmnessEmoji => const AssetGenImage('assets/images/png/calmness-emoji.png');
+
+  /// File path: assets/images/png/choosePlan.png
+  AssetGenImage get choosePlan => const AssetGenImage('assets/images/png/choosePlan.png');
 
   /// File path: assets/images/png/christianity.png
   AssetGenImage get christianity => const AssetGenImage('assets/images/png/christianity.png');
@@ -395,10 +452,13 @@ class $AssetsImagesPngGen {
         baggage,
         bell,
         binoculars,
+        booking,
+        chipsSelect,
         clapperboard,
         cocktail2,
         cocktail,
         coin,
+        companions,
         company,
         dart,
         discount,
@@ -406,9 +466,12 @@ class $AssetsImagesPngGen {
         events,
         feedback,
         female,
+        filtering,
         fire,
         firstAidKit,
+        foe,
         followers,
+        givingLikeEmoji,
         hat,
         hiNewInvitees,
         icecream,
@@ -416,6 +479,7 @@ class $AssetsImagesPngGen {
         key,
         laptopWithChart,
         lifebuoy,
+        likeDislike,
         likeHands,
         male,
         mango,
@@ -427,15 +491,26 @@ class $AssetsImagesPngGen {
         otherGender,
         outstanding,
         pieChart,
+        pixelatedSunglassesEmoji,
+        placeEvents,
+        pointsReputation,
         porthole,
+        preferences,
+        pressScroll,
         puzzle,
+        rating,
+        result,
         rockNRollHands,
         rocket,
+        shuffleAny,
         ski,
         smileMood,
         smileyCrazyFaceEmoji,
         sunClouds,
         sunWind,
+        swipeCategory,
+        swipeProperties,
+        teach,
         technologies,
         trainingApparatus,
         victoryHands,
@@ -447,6 +522,7 @@ class $AssetsImagesPngGen {
         balloons,
         buddismFlag,
         calmnessEmoji,
+        choosePlan,
         christianity,
         compactRatingCardMock,
         dubaiSilhouette,
