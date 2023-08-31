@@ -21,8 +21,8 @@ class DefaultImportanceChip extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Ink(
-          height: 104,
-          width: 104,
+          height: 120,
+          width: 120,
           decoration: const BoxDecoration(
             color: ColorsFoundation.surface2,
             shape: BoxShape.circle,
