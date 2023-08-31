@@ -143,6 +143,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
                 animationPath: GraphicsFoundation
                     .instance.animations.lottie.animationTouchId.path,
+                onCompletedWidget: Container(
+                  color: ColorsFoundation.error,
+                  height: 100,
+                  width: 100,
+                  child: const Center(child: Text('No Widget found')),
+                ),
               ),
               SpacingFoundation.verticalSpace16,
               UiKitLeadingRadioTile(
