@@ -124,6 +124,25 @@ class GradientFoundation {
     end: Alignment.centerRight,
   );
 
+  static const surfaceLinearGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.surfaceGradientBegin,
+      ColorsFoundation.surfaceGradientMid,
+      ColorsFoundation.surfaceGradientEnd,
+    ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
+
+  static const darkSurfaceGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.surface5,
+      ColorsFoundation.surface3,
+    ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
+
   static const solidSurfaceLinearGradient = LinearGradient(
     colors: [
       UiKitColors.surface,

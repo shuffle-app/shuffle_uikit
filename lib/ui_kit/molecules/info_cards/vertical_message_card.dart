@@ -20,7 +20,7 @@ class VerticalMessageCard extends StatelessWidget {
 
     return Material(
       borderRadius: BorderRadiusFoundation.all24,
-      color: context.uiKitTheme?.cardColor,
+      color: ColorsFoundation.surface3,
       child: InkWell(
         borderRadius: BorderRadiusFoundation.all24,
         onTap: onPressed,
@@ -28,7 +28,7 @@ class VerticalMessageCard extends StatelessWidget {
           width: width,
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all24,
-            color: context.uiKitTheme?.cardColor,
+            color: ColorsFoundation.surface3,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
