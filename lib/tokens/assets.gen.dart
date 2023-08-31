@@ -86,12 +86,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Binoculars.png
   AssetGenImage get binoculars => const AssetGenImage('assets/images/png/Binoculars.png');
 
-  /// File path: assets/images/png/Booking.png
-  AssetGenImage get booking => const AssetGenImage('assets/images/png/Booking.png');
-
-  /// File path: assets/images/png/Chips-select.png
-  AssetGenImage get chipsSelect => const AssetGenImage('assets/images/png/Chips-select.png');
-
   /// File path: assets/images/png/Clapperboard.png
   AssetGenImage get clapperboard => const AssetGenImage('assets/images/png/Clapperboard.png');
 
@@ -103,9 +97,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Coin.png
   AssetGenImage get coin => const AssetGenImage('assets/images/png/Coin.png');
-
-  /// File path: assets/images/png/Companions.png
-  AssetGenImage get companions => const AssetGenImage('assets/images/png/Companions.png');
 
   /// File path: assets/images/png/Company.png
   AssetGenImage get company => const AssetGenImage('assets/images/png/Company.png');
@@ -452,13 +443,10 @@ class $AssetsImagesPngGen {
         baggage,
         bell,
         binoculars,
-        booking,
-        chipsSelect,
         clapperboard,
         cocktail2,
         cocktail,
         coin,
-        companions,
         company,
         dart,
         discount,

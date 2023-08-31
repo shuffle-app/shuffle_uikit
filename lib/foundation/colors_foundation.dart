@@ -30,6 +30,9 @@ class ColorsFoundation {
   static const Color shadowPink = UiKitColors.shadowPink;
   static const Color transparent = Colors.transparent;
   static const Color lightGrey = UiKitColors.lightGrey;
+  static const surfaceGradientBegin = UiKitColors.surfaceGradientBegin;
+  static const surfaceGradientMid = UiKitColors.surfaceGradientMid;
+  static const surfaceGradientEnd = UiKitColors.surfaceGradientEnd;
 
   ColorsFoundation._();
 }
