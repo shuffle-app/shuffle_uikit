@@ -2,13 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/content_wrappers/ui_kit_border_wrapper.dart';
 
-class FingerprintSwitch extends StatelessWidget {
+class FingerprintSwitch extends StatefulWidget {
   const FingerprintSwitch({
     super.key,
-    required this.child,
+    required this.title,
+    required this.isHealthKitEnabled,
+    required this.backgroundImage,
+    this.subtitle,
+    this.animationPath,
   });
 
-  final Widget child;
+  final Widget title;
+  final Widget? subtitle;
+  final ImageWidget backgroundImage;
+  final bool isHealthKitEnabled;
+  final String? animationPath;
+
+  @override
+  State<FingerprintSwitch> createState() => _FingerprintSwitchState();
+}
+
+class _FingerprintSwitchState extends State<FingerprintSwitch> {
+  double _currentWidth = 0.0;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _getCurrentWidth();
+    });
+  }
+
+  void _getCurrentWidth() {
+    final RenderBox renderBox = context.findRenderObject() as RenderBox;
+    setState(() => _currentWidth = renderBox.size.width);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +51,16 @@ class FingerprintSwitch extends StatelessWidget {
             child: Transform(
               alignment: Alignment.bottomCenter,
               transform: Matrix4.identity()..scale(1.0, 0.8),
-              child: ImageWidget(
-                width: double.infinity,
-                rasterAsset: GraphicsFoundation.instance.png.dubaiSilhouette,
-                fit: BoxFit.cover,
-                color: ColorsFoundation.surface2,
-              ),
+              child: widget.backgroundImage,
             ),
           ),
         ),
-        child,
+        FingerprintButton(
+          animationPath: widget.animationPath,
+          title: widget.title,
+          subtitle: widget.subtitle,
+          parentWidth: _currentWidth,
+        ),
       ],
     );
   }
