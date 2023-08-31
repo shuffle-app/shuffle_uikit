@@ -35,6 +35,9 @@ class UiKitColors {
   static const gradientGreyLight1 = Color(0xffC9C9C9);
   static const gradientGreyLight2 = Color(0xffBCBCBC);
   static const gradientGreyLight3 = Color(0xffC1C1C1);
+  static const surfaceGradientBegin = Color(0xff2E2E2E);
+  static const surfaceGradientMid = Color(0xff5B5B5B);
+  static const surfaceGradientEnd = Color(0xff7F7E7E);
 
   UiKitColors._();
 }

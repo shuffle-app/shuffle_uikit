@@ -86,12 +86,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Binoculars.png
   AssetGenImage get binoculars => const AssetGenImage('assets/images/png/Binoculars.png');
 
-  /// File path: assets/images/png/Booking.png
-  AssetGenImage get booking => const AssetGenImage('assets/images/png/Booking.png');
-
-  /// File path: assets/images/png/Chips-select.png
-  AssetGenImage get chipsSelect => const AssetGenImage('assets/images/png/Chips-select.png');
-
   /// File path: assets/images/png/Clapperboard.png
   AssetGenImage get clapperboard => const AssetGenImage('assets/images/png/Clapperboard.png');
 
@@ -103,9 +97,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Coin.png
   AssetGenImage get coin => const AssetGenImage('assets/images/png/Coin.png');
-
-  /// File path: assets/images/png/Companions.png
-  AssetGenImage get companions => const AssetGenImage('assets/images/png/Companions.png');
 
   /// File path: assets/images/png/Company.png
   AssetGenImage get company => const AssetGenImage('assets/images/png/Company.png');
@@ -440,19 +431,22 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/titled_card_background_4.png
   AssetGenImage get titledCardBackground4 => const AssetGenImage('assets/images/png/titled_card_background_4.png');
 
+  /// File path: assets/images/png/welcome_slide_1.png
+  AssetGenImage get welcomeSlide1 => const AssetGenImage('assets/images/png/welcome_slide_1.png');
+
+  /// File path: assets/images/png/welcome_slide_2.png
+  AssetGenImage get welcomeSlide2 => const AssetGenImage('assets/images/png/welcome_slide_2.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         aubergine,
         baggage,
         bell,
         binoculars,
-        booking,
-        chipsSelect,
         clapperboard,
         cocktail2,
         cocktail,
         coin,
-        companions,
         company,
         dart,
         discount,
@@ -563,7 +557,9 @@ class $AssetsImagesPngGen {
         titledCardBackground1,
         titledCardBackground2,
         titledCardBackground3,
-        titledCardBackground4
+        titledCardBackground4,
+        welcomeSlide1,
+        welcomeSlide2
       ];
 }
 
@@ -799,6 +795,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/big_arrow.svg
   SvgGenImage get bigArrow => const SvgGenImage('assets/images/svg/big_arrow.svg');
 
+  /// File path: assets/images/svg/big_cutted_logo.svg
+  SvgGenImage get bigCuttedLogo => const SvgGenImage('assets/images/svg/big_cutted_logo.svg');
+
   /// File path: assets/images/svg/building.svg
   SvgGenImage get building => const SvgGenImage('assets/images/svg/building.svg');
 
@@ -843,6 +842,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/cocktail.svg
   SvgGenImage get cocktail => const SvgGenImage('assets/images/svg/cocktail.svg');
+
+  /// File path: assets/images/svg/company_layered.svg
+  SvgGenImage get companyLayered => const SvgGenImage('assets/images/svg/company_layered.svg');
 
   /// File path: assets/images/svg/conferences.svg
   SvgGenImage get conferences => const SvgGenImage('assets/images/svg/conferences.svg');
@@ -1033,6 +1035,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/pencil.svg
   SvgGenImage get pencil => const SvgGenImage('assets/images/svg/pencil.svg');
 
+  /// File path: assets/images/svg/person_layered.svg
+  SvgGenImage get personLayered => const SvgGenImage('assets/images/svg/person_layered.svg');
+
   /// File path: assets/images/svg/play-fill.svg
   SvgGenImage get playFill => const SvgGenImage('assets/images/svg/play-fill.svg');
 
@@ -1222,6 +1227,10 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/white_star.svg
   SvgGenImage get whiteStar => const SvgGenImage('assets/images/svg/white_star.svg');
 
+  /// File path: assets/images/svg/white_star_transparent_center.svg
+  SvgGenImage get whiteStarTransparentCenter =>
+      const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
+
   /// File path: assets/images/svg/x.svg
   SvgGenImage get x => const SvgGenImage('assets/images/svg/x.svg');
 
@@ -1303,6 +1312,7 @@ class $AssetsImagesSvgGen {
         bath,
         bell,
         bigArrow,
+        bigCuttedLogo,
         building,
         businessman,
         calendar,
@@ -1318,6 +1328,7 @@ class $AssetsImagesSvgGen {
         clock,
         club,
         cocktail,
+        companyLayered,
         conferences,
         connectionFill,
         connectionOutline,
@@ -1381,6 +1392,7 @@ class $AssetsImagesSvgGen {
         pauseOutline,
         pause,
         pencil,
+        personLayered,
         playFill,
         playOutline,
         play,
@@ -1444,6 +1456,7 @@ class $AssetsImagesSvgGen {
         water,
         waterpool,
         whiteStar,
+        whiteStarTransparentCenter,
         x
       ];
 }

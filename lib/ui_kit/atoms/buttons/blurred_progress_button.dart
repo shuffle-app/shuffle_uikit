@@ -19,7 +19,7 @@ class BlurredProgressButton extends StatelessWidget implements ButtonFactory {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, size) {
-        final height = size.maxWidth * 0.125;
+        final height = size.maxWidth * 0.16;
 
         return Material(
           color: Colors.white.withOpacity(0.2),

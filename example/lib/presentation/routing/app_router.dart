@@ -6,6 +6,7 @@ import 'package:example/presentation/ui/profile/influencer_profile.dart';
 import 'package:example/presentation/ui/showcase/show_case_page.dart';
 import 'package:example/presentation/ui/spinner/spinner_page.dart';
 import 'package:example/presentation/ui/unknown_page/unknown_page.dart';
+import 'package:example/presentation/ui/welcome/welcome_page.dart';
 import 'package:example/test_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -67,6 +68,16 @@ class AppRouter {
       case AppRoutes.locationPicker:
         return MaterialPageRoute(
           builder: (context) => const LocationPickerPage(),
+          settings: settings,
+        );
+      case AppRoutes.welcomePage:
+        return MaterialPageRoute(
+          builder: (context) => WelcomePage(
+            onFinished: () => Navigator.pushNamed(
+              context,
+              AppRoutes.initial,
+            ),
+          ),
           settings: settings,
         );
       default:
