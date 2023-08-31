@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 class UiKitStats {
   final String title;
-  final int value;
+  final String value;
   final Widget actionButton;
 
   UiKitStats({

@@ -118,7 +118,7 @@ class UiKitMenu<T> extends StatelessWidget {
             vertical: EdgeInsetsFoundation.vertical12,
           ),
         ),
-      ),
+      ).paddingAll(2),
     );
   }
 }

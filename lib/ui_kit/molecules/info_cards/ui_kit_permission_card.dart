@@ -26,6 +26,7 @@ class UiKitPermissionCard extends StatelessWidget {
 
 
     return InkWell(
+      borderRadius: BorderRadiusFoundation.all8,
       onTap: onPress,
       child: Column(
         mainAxisSize: MainAxisSize.min,

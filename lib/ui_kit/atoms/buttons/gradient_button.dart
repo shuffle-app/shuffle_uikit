@@ -19,14 +19,14 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
     TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black);
 
     return Material(
-      borderRadius: BorderRadiusFoundation.all24,
+      borderRadius: BorderRadiusFoundation.all24r,
       child: InkWell(
-        borderRadius: BorderRadiusFoundation.all24,
+        borderRadius: BorderRadiusFoundation.all24r,
         onTap: enabled ? onPressed : null,
         child: Ink(
-          height: 48,
+          height: 48.sp,
           decoration: BoxDecoration(
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.all24r,
             gradient: enabled ? GradientFoundation.buttonGradientLinear : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
           ),

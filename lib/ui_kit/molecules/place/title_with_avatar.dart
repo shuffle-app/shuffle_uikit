@@ -25,7 +25,7 @@ class TitleWithAvatar extends StatelessWidget {
       children: [
         if (avatarUrl != null)
           CircularAvatar(
-            height: 40,
+            height: 48.sp,
             avatarUrl: avatarUrl ?? '',
           ),
         if (avatarUrl != null) SpacingFoundation.horizontalSpace12,
