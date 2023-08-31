@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -20,7 +22,7 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
     final relativeSize = SizesFoundation.screenWidth * 0.375;
 
     return Material(
-      clipBehavior: Clip.hardEdge,
+      clipBehavior: Platform.isAndroid ? Clip.antiAliasWithSaveLayer : Clip.hardEdge,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
         side: BorderSide(
@@ -33,16 +35,11 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
         child: Ink(
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all24,
-            color: backgroundColor,
-            // border: Border.all(
-            //   color: ColorsFoundation.lightGrey,
-            //   width: 1,
-            // ),
+            color: ColorsFoundation.transparent,
           ),
           width: relativeSize,
           height: relativeSize,
           child: Stack(
-            alignment: Alignment.topCenter,
             fit: StackFit.expand,
             children: [
               ClipRRect(

@@ -93,7 +93,8 @@ class _MainPageState extends State<MainPage> {
             ),
             SpacingFoundation.verticalSpace24,
             context.button(
-              data: BaseUiKitButtonData(text: 'UI Kit Showcase Stand', onPressed: () => Navigator.pushNamed(context, AppRoutes.stand)),
+              data: BaseUiKitButtonData(
+                  text: 'UI Kit Showcase Stand', onPressed: () => Navigator.pushNamed(context, AppRoutes.stand)),
             ),
             SpacingFoundation.verticalSpace16,
             context.button(
@@ -110,6 +111,13 @@ class _MainPageState extends State<MainPage> {
               data: BaseUiKitButtonData(
                 text: 'On Boarding Page',
                 onPressed: () => Navigator.pushNamed(context, AppRoutes.onBoardingPage),
+              ),
+            ),
+            SpacingFoundation.verticalSpace16,
+            context.button(
+              data: BaseUiKitButtonData(
+                text: 'Welcome page',
+                onPressed: () => Navigator.pushNamed(context, AppRoutes.welcomePage),
               ),
             ),
             SpacingFoundation.verticalSpace16,

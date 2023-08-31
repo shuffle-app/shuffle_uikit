@@ -19,6 +19,7 @@ export 'error_widgets/ui_kit_compact_photo_error_widget.dart';
 export 'filter/ui_kit_titled_filter_chip.dart';
 export 'info_cards/horizontal_message_card.dart';
 export 'info_cards/ui_kit_gradient_attention_card.dart';
+export 'info_cards/ui_kit_iconed_blur_message_card.dart';
 export 'info_cards/ui_kit_message_card_with_icon.dart';
 export 'info_cards/ui_kit_metrics_card.dart';
 export 'info_cards/ui_kit_permission_card.dart';

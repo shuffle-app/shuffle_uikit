@@ -405,7 +405,15 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     double? progress,
     bool? blurred,
   }) {
-    return BlurredProgressButton(
+    if (blurred ?? false) {
+      return BlurredProgressButton(
+        text: data?.text,
+        onPressed: data?.onPressed,
+        progress: progress,
+      );
+    }
+
+    return OrdinaryProgressButton(
       text: data?.text,
       onPressed: data?.onPressed,
       progress: progress,

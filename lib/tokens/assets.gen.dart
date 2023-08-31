@@ -383,6 +383,12 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/titled_card_background_4.png
   AssetGenImage get titledCardBackground4 => const AssetGenImage('assets/images/png/titled_card_background_4.png');
 
+  /// File path: assets/images/png/welcome_slide_1.png
+  AssetGenImage get welcomeSlide1 => const AssetGenImage('assets/images/png/welcome_slide_1.png');
+
+  /// File path: assets/images/png/welcome_slide_2.png
+  AssetGenImage get welcomeSlide2 => const AssetGenImage('assets/images/png/welcome_slide_2.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
         aubergine,
@@ -487,7 +493,9 @@ class $AssetsImagesPngGen {
         titledCardBackground1,
         titledCardBackground2,
         titledCardBackground3,
-        titledCardBackground4
+        titledCardBackground4,
+        welcomeSlide1,
+        welcomeSlide2
       ];
 }
 
@@ -722,6 +730,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/big_arrow.svg
   SvgGenImage get bigArrow => const SvgGenImage('assets/images/svg/big_arrow.svg');
+
+  /// File path: assets/images/svg/big_cutted_logo.svg
+  SvgGenImage get bigCuttedLogo => const SvgGenImage('assets/images/svg/big_cutted_logo.svg');
 
   /// File path: assets/images/svg/building.svg
   SvgGenImage get building => const SvgGenImage('assets/images/svg/building.svg');
@@ -1152,6 +1163,10 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/white_star.svg
   SvgGenImage get whiteStar => const SvgGenImage('assets/images/svg/white_star.svg');
 
+  /// File path: assets/images/svg/white_star_transparent_center.svg
+  SvgGenImage get whiteStarTransparentCenter =>
+      const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
+
   /// File path: assets/images/svg/x.svg
   SvgGenImage get x => const SvgGenImage('assets/images/svg/x.svg');
 
@@ -1233,6 +1248,7 @@ class $AssetsImagesSvgGen {
         bath,
         bell,
         bigArrow,
+        bigCuttedLogo,
         building,
         businessman,
         calendar,
@@ -1376,6 +1392,7 @@ class $AssetsImagesSvgGen {
         water,
         waterpool,
         whiteStar,
+        whiteStarTransparentCenter,
         x
       ];
 }

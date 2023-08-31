@@ -122,7 +122,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
                         data: BaseUiKitButtonData(
                           text: 'NEXT >>>',
                           onPressed: () {
-                            if(currentIndex != widget.items.length) {
+                            if (currentIndex != widget.items.length) {
                               _switchToNextPage();
                             } else {
                               widget.onFinished?.call();
