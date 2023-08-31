@@ -35,7 +35,6 @@ class _FingerprintSwitchState extends State<FingerprintSwitch>
   late final AnimationController _controller;
   late final Animation<double> _animation;
 
-  bool _isClosed = false;
   double _currentWidth = 0.0;
 
   @override
