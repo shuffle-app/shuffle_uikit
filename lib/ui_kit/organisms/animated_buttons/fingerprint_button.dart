@@ -1,7 +1,10 @@
 import 'dart:async';
 
+import 'package:flip_card/flip_card.dart';
+import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class FingerprintButton extends StatefulWidget {
@@ -43,6 +46,8 @@ class _FingerprintButtonState extends State<FingerprintButton>
   late Duration _animationDuration;
 
   late final AnimationController _controller;
+  late final FlipCardController _flipController;
+
   late final double _buttonCenter;
   final Duration _initialDuration = const Duration(milliseconds: 100);
 
@@ -57,6 +62,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
       duration: const Duration(seconds: 2),
       vsync: this,
     );
+    _flipController = FlipCardController();
     _isCompleted = widget.isCompleted ?? false;
 
     _controller.addStatusListener((status) => _setAnimationListener(status));
@@ -127,6 +133,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
         _animationDuration = const Duration(milliseconds: 400);
         _isCompleted = true;
       });
+      _flipController.toggleCard();
       _currentPosition.value = _finishPosition;
       widget.onCompleted?.call();
     } else {
@@ -176,6 +183,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
     _controller.removeStatusListener((status) => _setAnimationListener(status));
     _controller.removeStatusListener((_) => _setVibrationListener());
     _controller.dispose();
+    _flipController.controller?.dispose();
     _currentPosition.dispose();
     super.dispose();
   }
@@ -192,57 +200,68 @@ class _FingerprintButtonState extends State<FingerprintButton>
         left: _updatePosition(currentPosition.dx),
         child: ConstrainedBox(
           constraints: BoxConstraints(
+            minHeight: widget.height ?? height,
             maxHeight: widget.height ?? height,
             maxWidth: widget.width ?? 105.w,
           ),
-          child: !_isCompleted
-              ? GestureDetector(
-                  onTapDown: (_) => _startAnimation(),
-                  onTapUp: (_) => _reverseAnimation(),
-                  onPanUpdate: (details) => _setPosition(details),
-                  onPanEnd: (_) => _resetPosition(),
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      boxShadow: _getShadow(_isPressed),
-                    ),
-                    child: UiKitCardWrapper(
-                      width: widget.width ?? 105.w,
-                      height: widget.height ?? height,
-                      color: ColorsFoundation.surface3,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          GradientableWidget(
-                            gradient: GradientFoundation.touchIdLinearGradient,
-                            child: widget.title,
-                          ),
-                          SpacingFoundation.verticalSpace12,
-                          ClipRRect(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(50)),
-                            child: SizedBox(
-                              height: 48.w,
-                              width: 48.w,
-                              child: FittedBox(
-                                fit: BoxFit.cover,
-                                child: LottieBuilder.asset(
-                                  package: 'shuffle_uikit',
-                                  widget.animationPath != null
-                                      ? widget.animationPath!
-                                      : GraphicsFoundation.instance.animations
-                                          .lottie.animationTouchId.path,
-                                  fit: BoxFit.cover,
-                                  controller: _controller,
-                                ),
-                              ),
+          child: FlipCard(
+            controller: _flipController,
+            fill: Fill.fillBack,
+            flipOnTouch: false,
+            direction: FlipDirection.HORIZONTAL,
+            side: CardSide.FRONT,
+            front: GestureDetector(
+              onTapDown: (_) => _startAnimation(),
+              onTapUp: (_) => _reverseAnimation(),
+              onPanUpdate: (details) => _setPosition(details),
+              onPanEnd: (_) => _resetPosition(),
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  boxShadow: _getShadow(_isPressed),
+                ),
+                child: UiKitCardWrapper(
+                  width: widget.width ?? 105.w,
+                  height: widget.height ?? height,
+                  color: ColorsFoundation.surface3,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GradientableWidget(
+                        gradient: GradientFoundation.touchIdLinearGradient,
+                        child: widget.title,
+                      ),
+                      SpacingFoundation.verticalSpace12,
+                      ClipRRect(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(50),
+                        ),
+                        child: SizedBox(
+                          height: 48.w,
+                          width: 48.w,
+                          child: FittedBox(
+                            fit: BoxFit.cover,
+                            child: LottieBuilder.asset(
+                              package: 'shuffle_uikit',
+                              widget.animationPath != null
+                                  ? widget.animationPath!
+                                  : GraphicsFoundation.instance.animations
+                                      .lottie.animationTouchId.path,
+                              fit: BoxFit.cover,
+                              controller: _controller,
                             ),
                           ),
-                        ],
+                        ),
                       ),
-                    ).paddingAll(EdgeInsetsFoundation.all4),
+                    ],
                   ),
-                )
-              : widget.onCompletedWidget,
+                ),
+              ),
+            ).paddingAll(EdgeInsetsFoundation.all4),
+            back: Padding(
+              padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
+              child: widget.onCompletedWidget,
+            ),
+          ),
         ),
       ),
     );
