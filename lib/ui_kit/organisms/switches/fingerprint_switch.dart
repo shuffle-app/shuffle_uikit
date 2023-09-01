@@ -30,8 +30,7 @@ class FingerprintSwitch extends StatefulWidget {
   State<FingerprintSwitch> createState() => _FingerprintSwitchState();
 }
 
-class _FingerprintSwitchState extends State<FingerprintSwitch>
-    with TickerProviderStateMixin {
+class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<double> _animation;
 
@@ -41,13 +40,8 @@ class _FingerprintSwitchState extends State<FingerprintSwitch>
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _getCurrentWidth();
-    });
-    _controller = AnimationController(
-      duration: const Duration(milliseconds: 500),
-      vsync: this,
-    );
+    WidgetsBinding.instance.addPostFrameCallback((_) => _getCurrentWidth());
+    _controller = AnimationController(duration: const Duration(milliseconds: 500), vsync: this);
     _animation = Tween<double>(begin: 1, end: 0).animate(
       CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn),
     );
@@ -65,10 +59,10 @@ class _FingerprintSwitchState extends State<FingerprintSwitch>
 
   @override
   void didUpdateWidget(covariant FingerprintSwitch oldWidget) {
+    super.didUpdateWidget(oldWidget);
     if (!widget.isHealthKitEnabled && oldWidget.isHealthKitEnabled) {
       _controller.reverse();
     }
-    super.didUpdateWidget(oldWidget);
   }
 
   @override
@@ -156,7 +150,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch>
                   ),
                   Text(
                     'No health kit available on your device, so the result will be random',
-                    style: context.uiKitTheme?.boldTextTheme.body.copyWith(
+                    style: context.uiKitTheme?.regularTextTheme.body.copyWith(
                       color: ColorsFoundation.warning,
                     ),
                   ).paddingSymmetric(
