@@ -91,11 +91,12 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                   ),
                 ),
                 SpacingFoundation.verticalSpace16,
-                SizedBox(
-                  height: calculatedWidth * 0.08,
-                  width: calculatedWidth,
-                  child: context.smallButton(
-                      data: BaseUiKitButtonData(onPressed: onMessage, text: 'Message', fit: ButtonFit.fitWidth)),
+                context.smallButton(
+                  data: BaseUiKitButtonData(
+                    onPressed: onMessage,
+                    text: 'Message',
+                    fit: ButtonFit.fitWidth,
+                  ),
                 ),
               ],
             ),

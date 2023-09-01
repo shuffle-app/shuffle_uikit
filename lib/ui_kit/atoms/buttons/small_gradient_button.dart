@@ -16,16 +16,21 @@ class SmallGradientButton extends StatelessWidget implements ButtonFactory {
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
-    TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black);
+    TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCase.copyWith(color: Colors.black);
 
     return Material(
-      borderRadius: BorderRadiusFoundation.all24,
+      borderRadius: BorderRadiusFoundation.max,
+      clipBehavior: Clip.hardEdge,
       child: InkWell(
-        borderRadius: BorderRadiusFoundation.all24,
-        onTap: enabled ? onPressed : null,
+        borderRadius: BorderRadiusFoundation.max,
+        onTap: enabled && !(loading ?? false) ? onPressed : null,
         child: Ink(
+          padding: EdgeInsets.symmetric(
+            vertical: EdgeInsetsFoundation.vertical6,
+            horizontal: EdgeInsetsFoundation.horizontal16,
+          ),
           decoration: BoxDecoration(
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.max,
             gradient: enabled ? GradientFoundation.buttonGradientLinear : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
           ),
@@ -33,12 +38,9 @@ class SmallGradientButton extends StatelessWidget implements ButtonFactory {
             text.toUpperCase(),
             style: textStyle,
             textAlign: TextAlign.center,
-          ).paddingSymmetric(
-            horizontal: EdgeInsetsFoundation.horizontal16,
-            vertical: EdgeInsetsFoundation.vertical6,
-          ),
+          ).loadingWrap(loading ?? false),
         ),
       ),
-    ).loadingWrap(loading ?? false);
+    );
   }
 }
