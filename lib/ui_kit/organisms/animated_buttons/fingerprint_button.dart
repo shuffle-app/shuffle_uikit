@@ -135,7 +135,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
       });
       _flipController.toggleCard();
       _currentPosition.value = _finishPosition;
-      widget.onCompleted;
+      widget.onCompleted?.call();
     } else {
       _reverseAnimation();
     }
@@ -232,8 +232,9 @@ class _FingerprintButtonState extends State<FingerprintButton>
                       ),
                       SpacingFoundation.verticalSpace12,
                       ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(50)),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(50),
+                        ),
                         child: SizedBox(
                           height: 48.w,
                           width: 48.w,

@@ -36,6 +36,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch>
   late final Animation<double> _animation;
 
   double _currentWidth = 0.0;
+  late ValueNotifier<bool> _isCompleted;
 
   @override
   void initState() {
@@ -50,6 +51,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch>
     _animation = Tween<double>(begin: 1, end: 0).animate(
       CurvedAnimation(parent: _controller, curve: Curves.fastOutSlowIn),
     );
+    _isCompleted = ValueNotifier<bool>(widget.isCompleted ?? false);
   }
 
   void _startAnimation() {
@@ -98,8 +100,30 @@ class _FingerprintSwitchState extends State<FingerprintSwitch>
           subtitle: widget.subtitle,
           parentWidth: _currentWidth,
           onPressed: widget.onPressed,
-          onCompleted: widget.onCompleted,
+          onCompleted: () {
+            _isCompleted.value = true;
+            widget.onCompleted?.call();
+          },
+          isCompleted: _isCompleted.value,
           onCompletedWidget: widget.onCompletedWidget,
+        ),
+        ValueListenableBuilder(
+          valueListenable: _isCompleted,
+          builder: (_, isCompleted, __) => Positioned(
+            left: 50.w,
+            top: 65.w,
+            child: AnimatedOpacity(
+              opacity: isCompleted ? 1.0 : 0.0,
+              duration: const Duration(milliseconds: 300),
+              child: GradientableWidget(
+                gradient: GradientFoundation.touchIdLinearGradient,
+                child: Text(
+                  'Tap it',
+                  style: context.uiKitTheme?.boldTextTheme.subHeadline,
+                ),
+              ),
+            ),
+          ),
         ),
         if (!widget.isHealthKitEnabled)
           SizeTransition(
