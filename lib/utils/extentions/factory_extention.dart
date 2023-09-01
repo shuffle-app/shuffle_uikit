@@ -6,6 +6,10 @@ extension FactoryExtention on BuildContext {
     return WidgetsFactory.of(this)!.createSmallGradientButton(data: data).build(this);
   }
 
+  Widget createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred}) {
+    return WidgetsFactory.of(this)!.createSmallOutlinedButton(data: data, color: color, blurred: blurred).build(this);
+  }
+
   Widget buttonWithProgress({
     BaseUiKitButtonData? data,
     double? progress,

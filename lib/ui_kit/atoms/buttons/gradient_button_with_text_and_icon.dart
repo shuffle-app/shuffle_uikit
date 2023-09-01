@@ -23,7 +23,7 @@ class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFac
       borderRadius: BorderRadiusFoundation.all24,
       child: InkWell(
         borderRadius: BorderRadiusFoundation.all24,
-        onTap: enabled ? onPressed : null,
+        onTap: enabled && !(loading ?? false) ? onPressed : null,
         child: Ink(
           height: 48,
           decoration: BoxDecoration(
@@ -36,12 +36,14 @@ class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFac
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(
-                text,
-                style: context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black),
-              ),
-              SpacingFoundation.horizontalSpace8,
-              icon,
+              if (!(loading ?? false)) ...[
+                Text(
+                  text,
+                  style: context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black),
+                ),
+                SpacingFoundation.horizontalSpace8,
+                icon,
+              ],
             ],
           ),
         ),

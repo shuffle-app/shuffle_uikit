@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:isolate';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -30,12 +29,16 @@ class FeedbackIsolate {
     _receivePort.listen((event) async {
       if (event is SystemSoundIsolateRachetClick) {
         await _setAsset(asset: rachet);
+        await _player.seek(Duration.zero);
         await _player.play();
       }
       if (event is FeedbackIsolateRachetClickAndHaptics) {
         await _setAsset(asset: rachet);
         await _player.play();
         await HapticFeedback.mediumImpact();
+      }
+      if (event is FeedbackIsolateHaptics) {
+        await HapticFeedback.heavyImpact();
       }
     });
   }
@@ -46,7 +49,6 @@ class FeedbackIsolate {
   }
 
   void addEvent(SystemSoundIsolateEvent event) {
-    _player.seek(Duration.zero).then((value) => _player.play());
     _isolate.controlPort.send(event);
   }
 
@@ -73,6 +75,8 @@ class FeedbackIsolate {
 }
 
 abstract class SystemSoundIsolateEvent {}
+
+class FeedbackIsolateHaptics extends SystemSoundIsolateEvent {}
 
 class SystemSoundIsolateRachetClick extends SystemSoundIsolateEvent {}
 

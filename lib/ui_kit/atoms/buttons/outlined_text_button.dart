@@ -37,15 +37,17 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
         ),
       ),
       child: InkWell(
-        onTap: onPressed,
+        onTap: enabled && !(loading ?? false) ? onPressed : null,
         borderRadius: BorderRadiusFoundation.all24,
         child: Ink(
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all24,
           ),
-          child: Center(
-            child: textWidget.paddingSymmetric(vertical: SpacingFoundation.verticalSpacing8),
-          ),
+          child: loading ?? false
+              ? SpacingFoundation.none
+              : Center(
+                  child: textWidget.paddingSymmetric(vertical: SpacingFoundation.verticalSpacing8),
+                ),
         ),
       ),
     ).loadingWrap(loading ?? false);

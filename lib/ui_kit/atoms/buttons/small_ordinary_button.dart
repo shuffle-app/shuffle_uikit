@@ -7,12 +7,14 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
   final bool uppercase;
   final bool? loading;
   final Color? color;
+  final ButtonFit? fit;
 
   const SmallOrdinaryButton({
     Key? key,
     required this.text,
     this.onPressed,
     this.loading,
+    this.fit,
     this.uppercase = true,
     this.color,
   }) : super(key: key);
@@ -21,18 +23,30 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final textStyle = theme?.boldTextTheme.caption1Bold;
-
-    return ElevatedButton(
-      style: theme?.smallOrdinaryButtonStyle.copyWith(
-        backgroundColor: MaterialStateProperty.resolveWith((states) {
-          return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : color ?? Colors.white;
-        }),
-      ),
-      onPressed: onPressed,
-      child: Text(
-        uppercase ? text.toUpperCase() : text,
-        style: textStyle?.copyWith(color: (color ?? Colors.white) == Colors.white ? Colors.black : Colors.white),
-      ),
+    final textWidget = Text(
+      loading ?? false
+          ? ''
+          : uppercase
+              ? text.toUpperCase()
+              : text,
+      style: textStyle?.copyWith(color: (color ?? Colors.white) == Colors.white ? Colors.black : Colors.white),
+      textAlign: TextAlign.center,
     ).loadingWrap(loading ?? false);
+
+    return Material(
+      color: Colors.white,
+      clipBehavior: Clip.hardEdge,
+      borderRadius: BorderRadiusFoundation.max,
+      child: InkWell(
+        onTap: loading ?? false ? null : onPressed,
+        child: Ink(
+          padding: EdgeInsets.symmetric(
+            horizontal: EdgeInsetsFoundation.horizontal16,
+            vertical: EdgeInsetsFoundation.vertical6,
+          ),
+          child: fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget,
+        ),
+      ),
+    );
   }
 }

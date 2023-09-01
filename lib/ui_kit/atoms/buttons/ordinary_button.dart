@@ -20,14 +20,25 @@ class OrdinaryButton extends StatelessWidget implements ButtonFactory {
     final theme = context.uiKitTheme;
     final textStyle = theme?.boldTextTheme.bodyUpperCase;
     final textWidget = Text(
-      text.toUpperCase(),
+      (loading ?? false) ? '' : text.toUpperCase(),
       style: textStyle?.copyWith(color: Colors.black),
-    );
-
-    return ElevatedButton(
-      style: theme?.ordinaryButtonStyle,
-      onPressed: onPressed,
-      child: fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget,
+      textAlign: TextAlign.center,
     ).loadingWrap(loading ?? false);
+
+    return Material(
+      color: Colors.white,
+      borderRadius: BorderRadiusFoundation.max,
+      clipBehavior: Clip.hardEdge,
+      child: InkWell(
+        onTap: loading ?? false ? null : onPressed,
+        child: Ink(
+          padding: EdgeInsets.symmetric(
+            vertical: EdgeInsetsFoundation.vertical14,
+            horizontal: EdgeInsetsFoundation.horizontal44,
+          ),
+          child: fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget,
+        ),
+      ),
+    );
   }
 }
