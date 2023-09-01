@@ -52,14 +52,6 @@ class _FingerprintSwitchState extends State<FingerprintSwitch>
     );
   }
 
-@override
-  void didUpdateWidget(covariant FingerprintSwitch oldWidget) {
-    if(!widget.isHealthKitEnabled && oldWidget.isHealthKitEnabled){
-      _controller.reverse();
-    }
-    super.didUpdateWidget(oldWidget);
-  }
-
   void _startAnimation() {
     _controller.forward();
   }
@@ -67,6 +59,14 @@ class _FingerprintSwitchState extends State<FingerprintSwitch>
   void _getCurrentWidth() {
     final RenderBox renderBox = context.findRenderObject() as RenderBox;
     setState(() => _currentWidth = renderBox.size.width);
+  }
+
+  @override
+  void didUpdateWidget(covariant FingerprintSwitch oldWidget) {
+    if (!widget.isHealthKitEnabled && oldWidget.isHealthKitEnabled) {
+      _controller.reverse();
+    }
+    super.didUpdateWidget(oldWidget);
   }
 
   @override
@@ -80,70 +80,69 @@ class _FingerprintSwitchState extends State<FingerprintSwitch>
     final height = 0.27.sw * 1.68;
 
     return Stack(
-            children: [
-              UiKitBorderWrapper(
-                height: height,
-                child: ClipRRect(
-                  borderRadius: BorderRadiusFoundation.all28,
-                  child: Transform(
-                    alignment: Alignment.bottomCenter,
-                    transform: Matrix4.identity()..scale(1.0, 0.8),
-                    child: widget.backgroundImage,
-                  ),
-                ),
-              ),
-              FingerprintButton(
-                animationPath: widget.animationPath,
-                title: widget.title,
-                subtitle: widget.subtitle,
-                parentWidth: _currentWidth,
-                onPressed: widget.onPressed,
-                onCompleted: widget.onCompleted,
-                onCompletedWidget: widget.onCompletedWidget,
-              ),
-              if(!widget.isHealthKitEnabled)
-                SizeTransition(
-                  axisAlignment: 1.0,
-                  sizeFactor: _animation,
-                  child: UiKitCardWrapper(
-                    height: height,
-                    color: ColorsFoundation.surface3,
-                    borderRadius: BorderRadiusFoundation.all28,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Theme(
-                          data: Theme.of(context).copyWith(
-                            highlightColor: ColorsFoundation.transparent,
-                            splashColor: ColorsFoundation.transparent,
-                            hoverColor: ColorsFoundation.transparent,
-                          ),
-                          child: IconButton(
-                            onPressed: () => _startAnimation(),
-                            icon: const Icon(
-                              Icons.close,
-                              color: ColorsFoundation.warning,
-                              size: 20,
-                            ),
-                          ),
-                        ).paddingOnly(
-                          top: EdgeInsetsFoundation.vertical12,
-                          right: EdgeInsetsFoundation.horizontal12,
-                        ),
-                        Text(
-                          'No health kit available on your device, so the result will be random',
-                          style: context.uiKitTheme?.boldTextTheme.body.copyWith(
-                            color: ColorsFoundation.warning,
-                          ),
-                        ).paddingSymmetric(
-                          horizontal: EdgeInsetsFoundation.horizontal20,
-                        ),
-                      ],
+      children: [
+        UiKitBorderWrapper(
+          height: height,
+          child: ClipRRect(
+            borderRadius: BorderRadiusFoundation.all28,
+            child: Transform(
+              alignment: Alignment.bottomCenter,
+              transform: Matrix4.identity()..scale(1.0, 0.8),
+              child: widget.backgroundImage,
+            ),
+          ),
+        ),
+        FingerprintButton(
+          animationPath: widget.animationPath,
+          title: widget.title,
+          subtitle: widget.subtitle,
+          parentWidth: _currentWidth,
+          onPressed: widget.onPressed,
+          onCompleted: widget.onCompleted,
+          onCompletedWidget: widget.onCompletedWidget,
+        ),
+        if (!widget.isHealthKitEnabled)
+          SizeTransition(
+            axisAlignment: 1.0,
+            sizeFactor: _animation,
+            child: UiKitCardWrapper(
+              height: height,
+              color: ColorsFoundation.surface3,
+              borderRadius: BorderRadiusFoundation.all28,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Theme(
+                    data: Theme.of(context).copyWith(
+                      highlightColor: ColorsFoundation.transparent,
+                      splashColor: ColorsFoundation.transparent,
+                      hoverColor: ColorsFoundation.transparent,
                     ),
+                    child: IconButton(
+                      onPressed: () => _startAnimation(),
+                      icon: const Icon(
+                        Icons.close,
+                        color: ColorsFoundation.warning,
+                        size: 20,
+                      ),
+                    ),
+                  ).paddingOnly(
+                    top: EdgeInsetsFoundation.vertical12,
+                    right: EdgeInsetsFoundation.horizontal12,
                   ),
-                )
-            ],
+                  Text(
+                    'No health kit available on your device, so the result will be random',
+                    style: context.uiKitTheme?.boldTextTheme.body.copyWith(
+                      color: ColorsFoundation.warning,
+                    ),
+                  ).paddingSymmetric(
+                    horizontal: EdgeInsetsFoundation.horizontal20,
+                  ),
+                ],
+              ),
+            ),
           )
-         ;
+      ],
+    );
   }
 }
