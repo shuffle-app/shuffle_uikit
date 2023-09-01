@@ -22,32 +22,37 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
     final relativeSize = SizesFoundation.screenWidth * 0.375;
 
     return Material(
-      clipBehavior: Platform.isAndroid ? Clip.antiAliasWithSaveLayer : Clip.hardEdge,
+      clipBehavior: Clip.hardEdge,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
         side: BorderSide(
           color: ColorsFoundation.lightGrey.withOpacity(0.3),
-          width: 1,
+          width: 1.w,
         ),
       ),
       child: InkWell(
         onTap: onPressed,
         child: Ink(
           decoration: BoxDecoration(
-            borderRadius: BorderRadiusFoundation.all24,
-            color: ColorsFoundation.transparent,
+            // borderRadius: BorderRadiusFoundation.all24,
+            color: backgroundColor,
+            // border: Border.all(
+            //   color: ColorsFoundation.lightGrey,
+            //   width: 1,
+            // ),
           ),
           width: relativeSize,
           height: relativeSize,
           child: Stack(
             fit: StackFit.expand,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadiusFoundation.all24,
-                child: ImageWidget(
+              // ClipRRect(
+              //   borderRadius: BorderRadiusFoundation.all24,
+              //   child:
+                ImageWidget(
                   link: backgroundImageLink,
                   fit: BoxFit.cover,
-                ),
+                // ),
               ),
               Text(
                 title,

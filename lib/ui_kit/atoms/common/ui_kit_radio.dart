@@ -1,13 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitRadio extends StatelessWidget {
+class UiKitRadio extends StatefulWidget {
   final bool selected;
 
   const UiKitRadio({
     super.key,
     this.selected = false,
   });
+
+  @override
+  State<UiKitRadio> createState() => _UiKitRadioState();
+}
+
+class _UiKitRadioState extends State<UiKitRadio> {
+  bool _selected = false;
+  final offKey = UniqueKey();
+  final onKey = UniqueKey();
+
+  @override
+  void initState() {
+    _selected = widget.selected;
+    super.initState();
+  }
+
+  @override
+  void didUpdateWidget(covariant UiKitRadio oldWidget) {
+    _selected = widget.selected;
+    super.didUpdateWidget(oldWidget);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,25 +38,25 @@ class UiKitRadio extends StatelessWidget {
         scale: animation,
         child: child,
       ),
-      child: selected
+      child: _selected
           ? ImageWidget(
-              key: UniqueKey(),
+              key: onKey,
               svgAsset: GraphicsFoundation.instance.svg.filledRadio,
             )
           : ImageWidget(
-              key: UniqueKey(),
+              key: offKey,
               svgAsset: GraphicsFoundation.instance.svg.emptyRadio,
             ),
     );
 
-    if (selected) {
-      return ImageWidget(
-        svgAsset: GraphicsFoundation.instance.svg.filledRadio,
-      );
-    }
-
-    return ImageWidget(
-      svgAsset: GraphicsFoundation.instance.svg.emptyRadio,
-    );
+    // if (_selected) {
+    //   return ImageWidget(
+    //     svgAsset: GraphicsFoundation.instance.svg.filledRadio,
+    //   );
+    // }
+    //
+    // return ImageWidget(
+    //   svgAsset: GraphicsFoundation.instance.svg.emptyRadio,
+    // );
   }
 }

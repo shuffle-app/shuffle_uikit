@@ -90,7 +90,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
   void _setAnimationListener(status) {
     if (status == AnimationStatus.completed) {
       if (!_isOnPressedCallbackCalled) {
-        widget.onPressed;
+        widget.onPressed?.call();
       }
       setState(() {
         _isPressed = true;
@@ -128,7 +128,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
         _isCompleted = true;
       });
       _currentPosition.value = _finishPosition;
-      widget.onCompleted;
+      widget.onCompleted?.call();
     } else {
       _reverseAnimation();
     }

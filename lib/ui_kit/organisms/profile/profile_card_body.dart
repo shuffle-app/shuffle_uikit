@@ -51,7 +51,7 @@ class ProfileCardBody extends StatelessWidget {
                 )
               else
                 CircularAvatar(
-                  height: 48,
+                  height: 48.sp,
                   avatarUrl: avatarUrl ?? '',
                   name: name,
                 ),

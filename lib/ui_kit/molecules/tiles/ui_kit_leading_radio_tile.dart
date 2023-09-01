@@ -25,6 +25,7 @@ class UiKitLeadingRadioTile extends StatelessWidget {
       color: Colors.transparent,
       borderRadius: BorderRadius.zero,
       child: InkWell(
+        borderRadius: BorderRadiusFoundation.all16,
         onTap: onTap,
         child: Ink(
           child: Row(

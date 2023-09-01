@@ -233,7 +233,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 profileStats: [
                   UiKitStats(
                     title: 'Invited',
-                    value: 934,
+                    value: '934',
                     actionButton: context.smallButton(
                       data: BaseUiKitButtonData(
                         text: 'MORE',
@@ -243,7 +243,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ),
                   UiKitStats(
                     title: 'Booked',
-                    value: 133,
+                    value: '133',
                     actionButton: context.smallButton(
                       data: BaseUiKitButtonData(
                         text: 'MORE',
