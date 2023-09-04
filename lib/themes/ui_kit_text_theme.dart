@@ -4,11 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 abstract class UiKitTextTheme {}
 
 class UiKitRegularTextTheme extends UiKitTextTheme {
+  final Color _white = const Color(0xffffffff);
+  Color? foregroundColor;
+
   TextStyle get caption4 => TextStyle(
         fontFamily: 'Unbounded',
         fontSize: 8.w,
         fontWeight: FontWeight.w300,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -16,7 +19,7 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 9.w,
         fontWeight: FontWeight.w400,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -24,7 +27,7 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 12.w,
         fontWeight: FontWeight.w300,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -32,7 +35,7 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 13.w,
         fontWeight: FontWeight.w300,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -40,7 +43,7 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 12.w,
         fontWeight: FontWeight.w300,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -48,7 +51,7 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 16.w,
         fontWeight: FontWeight.w300,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -56,7 +59,7 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 24.w,
         fontWeight: FontWeight.w300,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -64,7 +67,7 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 20.w,
         fontWeight: FontWeight.w300,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -72,7 +75,7 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 34.w,
         fontWeight: FontWeight.w300,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -81,14 +84,19 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
   TextStyle get subHeadline => body;
 
   TextStyle get bodyUpperCase => body;
+
+  UiKitRegularTextTheme({this.foregroundColor});
 }
 
 class UiKitBoldTextTheme extends UiKitTextTheme {
+  final Color _white = const Color(0xffffffff);
+  Color? foregroundColor;
+
   TextStyle get labelLarge => TextStyle(
         fontFamily: 'Unbounded',
         fontSize: 16.w,
         fontWeight: FontWeight.w400,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -96,7 +104,7 @@ class UiKitBoldTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 13.w,
         fontWeight: FontWeight.w400,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -104,7 +112,7 @@ class UiKitBoldTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 13.w,
         fontWeight: FontWeight.w500,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -112,7 +120,7 @@ class UiKitBoldTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 12.w,
         fontWeight: FontWeight.w500,
-        color: const Color(0xffffffff),
+        color: _white,
         package: 'shuffle_uikit',
       );
 
@@ -120,7 +128,7 @@ class UiKitBoldTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 12.w,
         fontWeight: FontWeight.w400,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -128,7 +136,7 @@ class UiKitBoldTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 16.w,
         fontWeight: FontWeight.w600,
-        color: const Color(0xffffffff),
+        color: _white,
         package: 'shuffle_uikit',
       );
 
@@ -136,7 +144,7 @@ class UiKitBoldTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 16.w,
         fontWeight: FontWeight.w400,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -144,7 +152,7 @@ class UiKitBoldTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 24.w,
         fontWeight: FontWeight.w600,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -152,7 +160,7 @@ class UiKitBoldTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 20.w,
         fontWeight: FontWeight.w500,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -160,7 +168,7 @@ class UiKitBoldTextTheme extends UiKitTextTheme {
         fontFamily: 'Unbounded',
         fontSize: 34.w,
         fontWeight: FontWeight.w600,
-        color: const Color(0xffffffff),
+        color: foregroundColor ?? _white,
         package: 'shuffle_uikit',
       );
 
@@ -171,4 +179,6 @@ class UiKitBoldTextTheme extends UiKitTextTheme {
   TextStyle get caption2UpperCaseMedium => caption2Medium;
 
   TextStyle get caption1UpperCase => caption1Bold;
+
+  UiKitBoldTextTheme({this.foregroundColor});
 }

@@ -10,105 +10,16 @@ class UiKitThemes {
     color: Color(0xffffffff),
     package: 'shuffle_uikit',
   );
-  late final defaultThemeData = ThemeData(
-    scaffoldBackgroundColor: Colors.black,
-    useMaterial3: false,
-    splashColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
-    splashFactory: WaveSplash.splashFactory,
-    bottomSheetTheme: const BottomSheetThemeData(
-      backgroundColor: Colors.transparent,
-      modalBackgroundColor: Colors.transparent,
-    ),
-    textSelectionTheme: const TextSelectionThemeData(
-      cursorColor: Colors.white,
-    ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      backgroundColor: Colors.white,
-      elevation: 0,
-      enableFeedback: true,
-    ),
-    textButtonTheme: TextButtonThemeData(
-        style: ButtonStyle(
-      textStyle: MaterialStateTextStyle.resolveWith((states) {
-        return const TextStyle(
-          fontFamily: 'Unbounded',
-          fontSize: 13,
-          fontWeight: FontWeight.w500,
-          color: Color(0xffffffff),
-          package: 'shuffle_uikit',
-        );
-      }),
-      foregroundColor:
-          MaterialStateProperty.resolveWith((states) => Colors.white),
-      overlayColor:
-          MaterialStateProperty.resolveWith((states) => Colors.transparent),
-    )),
-    dropdownMenuTheme: const DropdownMenuThemeData(
-      textStyle: _pickerTextStyle,
-    ),
-    iconButtonTheme: IconButtonThemeData(
-        style:ButtonStyle(
-          textStyle: MaterialStateTextStyle.resolveWith((states) {
-            return const TextStyle(
-              fontFamily: 'Unbounded',
-              fontSize: 13,
-              fontWeight: FontWeight.w500,
-              color: Color(0xffffffff),
-              package: 'shuffle_uikit',
-            );
-          }),
-          foregroundColor:
-          MaterialStateProperty.resolveWith((states) => Colors.white),
-          overlayColor:
-          MaterialStateProperty.resolveWith((states) => Colors.transparent),
-        )
-    ),
-    disabledColor: ColorsFoundation.darkNeutral300,
-    timePickerTheme: TimePickerThemeData(
-        helpTextStyle: _pickerTextStyle.copyWith(fontSize: 16),
-        backgroundColor: UiKitColors.surface4,
-        hourMinuteShape:
-            RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all8),
-        hourMinuteColor: ColorsFoundation.info,
-        dialHandColor: ColorsFoundation.info,
-        hourMinuteTextColor: Colors.white,
-        entryModeIconColor: Colors.white,
-        dialTextColor: Colors.white,
-        dayPeriodTextColor: Colors.white,
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all28),
-        dialBackgroundColor: ColorsFoundation.darkNeutral500.withOpacity(0.24)),
-    datePickerTheme: DatePickerThemeData(
-      rangeSelectionBackgroundColor:
-          ColorsFoundation.darkNeutral500.withOpacity(0.24),
-      dayForegroundColor:
-          MaterialStateProperty.resolveWith((states) => Colors.white),
-      yearForegroundColor:
-          MaterialStateProperty.resolveWith((states) => Colors.white),
-      surfaceTintColor: ColorsFoundation.info,
-      rangePickerHeaderHelpStyle: _pickerTextStyle,
-      yearStyle: _pickerTextStyle,
-      headerHelpStyle: _pickerTextStyle,
-      rangePickerHeaderHeadlineStyle: _pickerTextStyle,
-      rangePickerShape:
-          const CircleBorder(side: BorderSide(color: Colors.white, width: 1)),
-      weekdayStyle:
-          _pickerTextStyle.copyWith(color: ColorsFoundation.darkNeutral900),
-      headerHeadlineStyle: _pickerTextStyle,
-      dayStyle: _pickerTextStyle.copyWith(fontSize: 16),
-      backgroundColor: UiKitColors.surface4,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all28),
-      // dialBackgroundColor: ColorsFoundation.darkNeutral500
-    ),
 
-    colorScheme:  ColorScheme.fromSeed(seedColor: UiKitColors.info,onSurface: Colors.white),
-    // colorScheme:  const ColorScheme.light().copyWith(onSurface: Colors.white),
+  // Light theme
+  late final lightThemeData = defaultThemeData.copyWith(
+    scaffoldBackgroundColor: Colors.white,
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
         customColor: Colors.red,
         chipTheme: UiKitChipThemeData(
           border: Border.all(color: Colors.white, width: 2),
-          backgroundColor: ColorsFoundation.solidSurface,
+          backgroundColor: ColorsFoundation.solidLightSurface,
         ),
         blurredBottomNavigationBarTheme: BlurredBottomNavigationBarTheme(
           iconColors: Colors.white,
@@ -118,37 +29,28 @@ class UiKitThemes {
             (states) => const Size.fromHeight(48),
           ),
           backgroundColor: MaterialStateProperty.resolveWith((states) {
-            return states.contains(MaterialState.disabled)
-                ? ColorsFoundation.darkNeutral300
-                : Colors.white;
+            return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
           }),
           shape: MaterialStateProperty.resolveWith(
-            (states) => RoundedRectangleBorder(
-                borderRadius: BorderRadiusFoundation.all24),
+            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
           ),
           overlayColor: MaterialStateProperty.resolveWith((states) {
             return ColorsFoundation.darkNeutral900;
           }),
-          foregroundColor:
-              MaterialStateProperty.resolveWith((states) => Colors.black),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         ),
         smallOrdinaryButtonStyle: ButtonStyle(
-          fixedSize: MaterialStateProperty.resolveWith(
-              (states) => const Size.fromHeight(28)),
+          fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(28)),
           backgroundColor: MaterialStateProperty.resolveWith((states) {
-            return states.contains(MaterialState.disabled)
-                ? ColorsFoundation.darkNeutral300
-                : Colors.white;
+            return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
           }),
           overlayColor: MaterialStateProperty.resolveWith((states) {
             return ColorsFoundation.darkNeutral900;
           }),
           shape: MaterialStateProperty.resolveWith(
-            (states) => RoundedRectangleBorder(
-                borderRadius: BorderRadiusFoundation.all24),
+            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
           ),
-          foregroundColor:
-              MaterialStateProperty.resolveWith((states) => Colors.black),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         ),
         iconInputTheme: InputDecorationTheme(
           filled: true,
@@ -217,21 +119,258 @@ class UiKitThemes {
           ),
         ),
         noFillInputTheme: const InputDecorationTheme(
-          border: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.white, width: 0.5)),
-          enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.white, width: 0.5)),
-          errorBorder: UnderlineInputBorder(
-              borderSide:
-                  BorderSide(color: ColorsFoundation.error, width: 0.5)),
-          focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.white, width: 0.5)),
-          focusedErrorBorder: UnderlineInputBorder(
-              borderSide:
-                  BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
           disabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                  color: ColorsFoundation.darkNeutral900, width: 0.5)),
+            borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5),
+          ),
+        ),
+        customAppBapTheme: AppBarTheme(
+          iconTheme: const IconThemeData(
+            color: Colors.black,
+          ),
+          toolbarHeight: 84,
+          shadowColor: Colors.transparent,
+          backgroundColor: Colors.white.withOpacity(0.07),
+          centerTitle: true,
+          elevation: 0,
+          scrolledUnderElevation: 0,
+        ),
+        uiKitTabBarTheme: TabBarTheme(
+          indicatorSize: TabBarIndicatorSize.tab,
+          dividerColor: Colors.transparent,
+          labelColor: Colors.black,
+          unselectedLabelColor: Colors.white,
+          indicator: BoxDecoration(
+            borderRadius: BorderRadiusFoundation.max,
+            color: Colors.white,
+          ),
+        ),
+        cardColor: ColorsFoundation.solidSurface,
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.white,
+          textTheme: ButtonTextTheme.primary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusFoundation.max,
+          ),
+        ),
+        cardTheme: CardTheme(
+          shadowColor: Colors.transparent,
+          surfaceTintColor: ColorsFoundation.solidSurface,
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusFoundation.all24,
+          ),
+        ),
+        boldTextTheme: UiKitBoldTextTheme(foregroundColor: Colors.black),
+        regularTextTheme: UiKitRegularTextTheme(foregroundColor: Colors.black),
+        bottomSheetTheme: UiKitBottomSheetThemeData(
+          backgroundColor: Colors.black,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusFoundation.onlyTop40,
+          ),
+          sheetSliderColor: ColorsFoundation.darkNeutral500,
+        ),
+      ),
+    ],
+  );
+
+  late final defaultThemeData = ThemeData(
+    scaffoldBackgroundColor: Colors.black,
+    useMaterial3: false,
+    splashColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
+    splashFactory: WaveSplash.splashFactory,
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: Colors.transparent,
+      modalBackgroundColor: Colors.transparent,
+    ),
+    textSelectionTheme: const TextSelectionThemeData(
+      cursorColor: Colors.white,
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: Colors.white,
+      elevation: 0,
+      enableFeedback: true,
+    ),
+    textButtonTheme: TextButtonThemeData(
+        style: ButtonStyle(
+      textStyle: MaterialStateTextStyle.resolveWith((states) {
+        return const TextStyle(
+          fontFamily: 'Unbounded',
+          fontSize: 13,
+          fontWeight: FontWeight.w500,
+          color: Color(0xffffffff),
+          package: 'shuffle_uikit',
+        );
+      }),
+      foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+      overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
+    )),
+    dropdownMenuTheme: const DropdownMenuThemeData(
+      textStyle: _pickerTextStyle,
+    ),
+    iconButtonTheme: IconButtonThemeData(
+        style: ButtonStyle(
+      textStyle: MaterialStateTextStyle.resolveWith((states) {
+        return const TextStyle(
+          fontFamily: 'Unbounded',
+          fontSize: 13,
+          fontWeight: FontWeight.w500,
+          color: Color(0xffffffff),
+          package: 'shuffle_uikit',
+        );
+      }),
+      foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+      overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
+    )),
+    disabledColor: ColorsFoundation.darkNeutral300,
+    timePickerTheme: TimePickerThemeData(
+        helpTextStyle: _pickerTextStyle.copyWith(fontSize: 16),
+        backgroundColor: UiKitColors.surface4,
+        hourMinuteShape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all8),
+        hourMinuteColor: ColorsFoundation.info,
+        dialHandColor: ColorsFoundation.info,
+        hourMinuteTextColor: Colors.white,
+        entryModeIconColor: Colors.white,
+        dialTextColor: Colors.white,
+        dayPeriodTextColor: Colors.white,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all28),
+        dialBackgroundColor: ColorsFoundation.darkNeutral500.withOpacity(0.24)),
+    datePickerTheme: DatePickerThemeData(
+      rangeSelectionBackgroundColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
+      dayForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+      yearForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+      surfaceTintColor: ColorsFoundation.info,
+      rangePickerHeaderHelpStyle: _pickerTextStyle,
+      yearStyle: _pickerTextStyle,
+      headerHelpStyle: _pickerTextStyle,
+      rangePickerHeaderHeadlineStyle: _pickerTextStyle,
+      rangePickerShape: const CircleBorder(side: BorderSide(color: Colors.white, width: 1)),
+      weekdayStyle: _pickerTextStyle.copyWith(color: ColorsFoundation.darkNeutral900),
+      headerHeadlineStyle: _pickerTextStyle,
+      dayStyle: _pickerTextStyle.copyWith(fontSize: 16),
+      backgroundColor: UiKitColors.surface4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all28),
+      // dialBackgroundColor: ColorsFoundation.darkNeutral500
+    ),
+
+    colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.info, onSurface: Colors.white),
+    // colorScheme:  const ColorScheme.light().copyWith(onSurface: Colors.white),
+    extensions: <ThemeExtension<UiKitThemeData>>[
+      UiKitThemeData(
+        customColor: Colors.red,
+        chipTheme: UiKitChipThemeData(
+          border: Border.all(color: Colors.white, width: 2),
+          backgroundColor: ColorsFoundation.solidSurface,
+        ),
+        blurredBottomNavigationBarTheme: BlurredBottomNavigationBarTheme(
+          iconColors: Colors.white,
+        ),
+        ordinaryButtonStyle: ButtonStyle(
+          fixedSize: MaterialStateProperty.resolveWith(
+            (states) => const Size.fromHeight(48),
+          ),
+          backgroundColor: MaterialStateProperty.resolveWith((states) {
+            return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
+          }),
+          shape: MaterialStateProperty.resolveWith(
+            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+          ),
+          overlayColor: MaterialStateProperty.resolveWith((states) {
+            return ColorsFoundation.darkNeutral900;
+          }),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+        ),
+        smallOrdinaryButtonStyle: ButtonStyle(
+          fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(28)),
+          backgroundColor: MaterialStateProperty.resolveWith((states) {
+            return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
+          }),
+          overlayColor: MaterialStateProperty.resolveWith((states) {
+            return ColorsFoundation.darkNeutral900;
+          }),
+          shape: MaterialStateProperty.resolveWith(
+            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+          ),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+        ),
+        iconInputTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: ColorsFoundation.solidSurface,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: Colors.white,
+              width: 2,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: BorderSide.none,
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+        ),
+        noIconInputTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: ColorsFoundation.solidSurface,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: Colors.white,
+              width: 2,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: BorderSide.none,
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+        ),
+        noFillInputTheme: const InputDecorationTheme(
+          border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          disabledBorder:
+              UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
         ),
         customAppBapTheme: AppBarTheme(
           iconTheme: const IconThemeData(
@@ -305,19 +444,14 @@ class UiKitThemes {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        fixedSize: MaterialStateProperty.resolveWith(
-            (states) => const Size.fromHeight(48)),
+        fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(48)),
         backgroundColor: MaterialStateProperty.resolveWith((states) {
-          return states.contains(MaterialState.disabled)
-              ? ColorsFoundation.darkNeutral300
-              : Colors.white;
+          return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
         }),
         shape: MaterialStateProperty.resolveWith(
-          (states) => RoundedRectangleBorder(
-              borderRadius: BorderRadiusFoundation.all24),
+          (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
         ),
-        foregroundColor:
-            MaterialStateProperty.resolveWith((states) => Colors.black),
+        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         overlayColor: MaterialStateProperty.resolveWith((states) {
           if (states.contains(MaterialState.hovered)) {
             return Colors.white;
