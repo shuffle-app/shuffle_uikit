@@ -1,16 +1,21 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 extension LoadingExtension on Widget {
-  Widget loadingWrap(bool active) {
+  Widget loadingWrap(bool active, {Color? color, double? opacity}) {
     if (!active) return this;
 
     return Stack(
       fit: StackFit.passthrough,
       alignment: Alignment.center,
       children: [
-        Opacity(opacity: 0.5, child: this),
-        const SizedBox(
-            width: 20, height: 20, child: CircularProgressIndicator.adaptive()),
+        Opacity(opacity: opacity ?? 0, child: this),
+        SizedBox(
+          width: 20,
+          height: 20,
+          child: CupertinoActivityIndicator(
+            color: color ?? CupertinoColors.black,
+          ),
+        ),
       ],
     );
   }

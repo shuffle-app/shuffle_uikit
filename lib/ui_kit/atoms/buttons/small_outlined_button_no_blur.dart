@@ -8,6 +8,7 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
   final Color? textColor;
   final Widget? icon;
   final bool? loading;
+  final ButtonFit? fit;
 
   bool get textIsEmpty => text?.isEmpty ?? true;
 
@@ -19,6 +20,7 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
     this.textColor,
     this.icon,
     this.loading,
+    this.fit,
   });
 
   @override
@@ -31,9 +33,13 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
       clipBehavior: Clip.hardEdge,
       color: Colors.transparent,
       child: InkWell(
-        onTap: onPressed,
+        onTap: loading ?? false ? null : onPressed,
         borderRadius: BorderRadiusFoundation.max,
         child: Ink(
+          padding: EdgeInsets.symmetric(
+            vertical: EdgeInsetsFoundation.vertical6,
+            horizontal: EdgeInsetsFoundation.horizontal16,
+          ),
           decoration: BoxDecoration(
             borderRadius: textIsEmpty ? null : BorderRadiusFoundation.max,
             shape: textIsEmpty ? BoxShape.circle : BoxShape.rectangle,
@@ -47,17 +53,13 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
               ? ClipOval(
                   child: icon!.paddingAll(EdgeInsetsFoundation.all6),
                 )
-              : Center(
-                  child: Text(
-                    text ?? '',
-                    style: textStyle,
-                  ).paddingSymmetric(
-                    vertical: EdgeInsetsFoundation.vertical4,
-                    horizontal: EdgeInsetsFoundation.horizontal16,
-                  ),
-                ),
+              : Text(
+                  text ?? '',
+                  style: textStyle,
+                  textAlign: TextAlign.center,
+                ).loadingWrap(loading ?? false, color: Colors.white),
         ),
       ),
-    ).loadingWrap(loading ?? false);
+    );
   }
 }

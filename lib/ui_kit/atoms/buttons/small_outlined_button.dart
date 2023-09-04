@@ -35,9 +35,13 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
       clipBehavior: Clip.hardEdge,
       color: text.isEmpty ? Colors.white.withOpacity(0.1) : Colors.transparent,
       child: InkWell(
-        onTap: onPressed,
+        onTap: loading ?? false ? null : onPressed,
         borderRadius: BorderRadiusFoundation.max,
         child: Ink(
+          padding: EdgeInsets.symmetric(
+            vertical: EdgeInsetsFoundation.vertical6,
+            horizontal: EdgeInsetsFoundation.horizontal16,
+          ),
           decoration: BoxDecoration(
             borderRadius: text.isEmpty ? null : BorderRadiusFoundation.max,
             shape: text.isEmpty ? BoxShape.circle : BoxShape.rectangle,
@@ -54,14 +58,10 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
                     child: icon!.paddingAll(EdgeInsetsFoundation.all8),
                   ),
                 )
-              : Center(
-                  child: Text(
-                    text,
-                    style: textStyle,
-                  ).paddingSymmetric(
-                    vertical: EdgeInsetsFoundation.vertical4,
-                    horizontal: EdgeInsetsFoundation.horizontal16,
-                  ),
+              : Text(
+                  text,
+                  style: textStyle,
+                  textAlign: TextAlign.center,
                 ),
         ),
       ),

@@ -6,33 +6,45 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
   final Widget icon;
   final String text;
   final bool? loading;
+  final ButtonFit? fit;
 
   const OrdinaryButtonWithIcon({
     Key? key,
     this.onPressed,
     this.loading,
+    this.fit,
     required this.icon,
     required this.text,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final buttonStyle = context.uiKitTheme?.ordinaryButtonStyle;
     TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase;
 
-    return ElevatedButton(
-      style: buttonStyle,
-      onPressed: onPressed,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            text.toUpperCase(),
-            style: textStyle?.copyWith(color: Colors.black),
+    return Material(
+      color: Colors.white,
+      borderRadius: BorderRadiusFoundation.max,
+      clipBehavior: Clip.hardEdge,
+      child: InkWell(
+        onTap: loading ?? false ? null : onPressed,
+        child: Ink(
+          padding: EdgeInsets.symmetric(
+            vertical: EdgeInsetsFoundation.vertical14,
+            horizontal: EdgeInsetsFoundation.horizontal44,
           ),
-          SpacingFoundation.horizontalSpace8,
-          icon,
-        ],
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: fit == ButtonFit.fitWidth ? MainAxisAlignment.center : MainAxisAlignment.start,
+            children: [
+              Text(
+                (loading ?? false) ? '' : text.toUpperCase(),
+                style: textStyle?.copyWith(color: Colors.black),
+              ),
+              SpacingFoundation.horizontalSpace8,
+              if (!(loading ?? false)) icon,
+            ],
+          ),
+        ),
       ),
     ).loadingWrap(loading ?? false);
   }

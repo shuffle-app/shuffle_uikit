@@ -109,15 +109,24 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         textColor: color,
         icon: data?.icon,
         loading: data?.loading,
+        fit: data?.fit,
       );
-    } else if ((data?.text != null && data!.text.isNotEmpty) || data?.icon != null) {
+    } else if ((data?.text != null && data!.text.isNotEmpty) || data?.icon == null) {
       return SmallOutlinedButton(
         onPressed: data?.onPressed,
         blurred: blurred ?? false,
         text: data?.text ?? '',
         borderColor: color,
         textColor: color,
-        icon: data!.icon as ImageWidget?,
+        loading: data!.loading,
+      );
+    } else if ((blurred ?? false) && data?.icon != null) {
+      return SmallOutlinedIconButton(
+        onPressed: data?.onPressed,
+        blurred: blurred ?? false,
+        icon: data!.icon!,
+        borderColor: color,
+        textColor: color,
         loading: data.loading,
       );
     } else {
@@ -221,6 +230,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     } else if (hasIcon && !onlyIconButton && !(blurred ?? false)) {
       return OrdinaryButtonWithIcon(
+        fit: data.fit,
         text: data.text,
         onPressed: data.onPressed,
         icon: data.icon!,
@@ -282,6 +292,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       uppercase: uppercase,
       loading: data.loading,
       color: color,
+      fit: data.fit,
     );
   }
 
