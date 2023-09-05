@@ -153,7 +153,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               FingerprintSwitch(
-                isHealthKitEnabled: true,
+                isHealthKitEnabled: false,
                 title: Text(
                   'Guess',
                   style: context.uiKitTheme?.boldTextTheme.subHeadline,
@@ -165,11 +165,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   color: ColorsFoundation.surface2,
                 ),
                 animationPath: GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
-                onCompletedWidget: Container(
-                  color: ColorsFoundation.error,
-                  height: 100,
-                  width: 100,
-                  child: const Center(child: Text('No Widget found')),
+                onCompletedWidget: UiKitMessageCardWithIcon(
+                  message: 'La Vue Citytel',
+                  iconLink: GraphicsFoundation.instance.png.angryEmoji.path,
+                  layoutDirection: Axis.vertical,
+                  onPressed: () {},
                 ),
               ),
               SpacingFoundation.verticalSpace16,

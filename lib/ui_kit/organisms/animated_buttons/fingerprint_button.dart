@@ -1,7 +1,10 @@
 import 'dart:async';
 
+import 'package:flip_card/flip_card.dart';
+import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class FingerprintButton extends StatefulWidget {
@@ -34,17 +37,18 @@ class FingerprintButton extends StatefulWidget {
   State<FingerprintButton> createState() => _FingerprintButtonState();
 }
 
-class _FingerprintButtonState extends State<FingerprintButton>
-    with TickerProviderStateMixin {
-  final ValueNotifier<Offset> _currentPosition =
-      ValueNotifier<Offset>(Offset.zero);
+class _FingerprintButtonState extends State<FingerprintButton> with TickerProviderStateMixin {
+  final ValueNotifier<Offset> _currentPosition = ValueNotifier<Offset>(Offset.zero);
   final Offset _startPosition = Offset.zero;
   late Offset _finishPosition;
   late Duration _animationDuration;
 
   late final AnimationController _controller;
+  late final FlipCardController _flipController;
+
   late final double _buttonCenter;
   final Duration _initialDuration = const Duration(milliseconds: 100);
+  final Duration _vibrationDuration = const Duration(milliseconds: 50);
 
   bool _isOnPressedCallbackCalled = false;
   bool _isPressed = false;
@@ -53,33 +57,25 @@ class _FingerprintButtonState extends State<FingerprintButton>
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
-      duration: const Duration(seconds: 2),
-      vsync: this,
-    );
+    _controller = AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    _flipController = FlipCardController();
     _isCompleted = widget.isCompleted ?? false;
-
-    _controller.addStatusListener((status) => _setAnimationListener(status));
-    _controller.addStatusListener((_) => _setVibrationListener());
     _animationDuration = _initialDuration;
     _finishPosition = Offset(widget.parentWidth, 0);
     _buttonCenter = (widget.width ?? 105.w) / 2;
+
+    _controller.addStatusListener((status) => _setAnimationListener(status));
+    _controller.addStatusListener((_) => _setVibrationListener());
   }
 
   void _setVibrationListener() {
-    Timer.periodic(_initialDuration, (timer) {
-      if (_currentPosition.value.dx >= _finishPosition.dx / 1.3) {
-        FeedbackIsolate.instance.addVibrationEvent(
-          SystemHeavyVibrationIsolate(),
-        );
-      } else if (_currentPosition.value.dx >= _finishPosition.dx / 2) {
-        FeedbackIsolate.instance.addVibrationEvent(
-          SystemMediumVibrationIsolate(),
-        );
+    Timer.periodic(_vibrationDuration, (timer) {
+      if (_currentPosition.value.dx >= _finishPosition.dx / 1.2) {
+        FeedbackIsolate.instance.addVibrationEvent(SystemHeavyVibrationIsolate());
+      } else if (_currentPosition.value.dx >= _finishPosition.dx / 1.8) {
+        FeedbackIsolate.instance.addVibrationEvent(SystemMediumVibrationIsolate());
       } else if (_currentPosition.value.dx >= _startPosition.dx) {
-        FeedbackIsolate.instance.addVibrationEvent(
-          SystemLightVibrationIsolate(),
-        );
+        FeedbackIsolate.instance.addVibrationEvent(SystemLightVibrationIsolate());
       }
       if ((!_isPressed && _controller.isDismissed) || _isCompleted) {
         timer.cancel();
@@ -98,9 +94,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
         _isOnPressedCallbackCalled = true;
       });
     } else if (status == AnimationStatus.dismissed) {
-      setState(() {
-        _isPressed = false;
-      });
+      setState(() => _isPressed = false);
     }
   }
 
@@ -112,9 +106,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
     _controller.reverse().then((value) {
       final touchCenter = _finishPosition.dx / 2 + _buttonCenter;
       if (_currentPosition.value.dx < touchCenter) {
-        setState(() {
-          _animationDuration = const Duration(milliseconds: 800);
-        });
+        setState(() => _animationDuration = const Duration(milliseconds: 800));
         _currentPosition.value = _startPosition;
       }
     });
@@ -127,6 +119,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
         _animationDuration = const Duration(milliseconds: 400);
         _isCompleted = true;
       });
+      _flipController.toggleCard();
       _currentPosition.value = _finishPosition;
       widget.onCompleted?.call();
     } else {
@@ -166,9 +159,12 @@ class _FingerprintButtonState extends State<FingerprintButton>
   }
 
   @override
-  void didUpdateWidget(oldWidget) {
+  void didUpdateWidget(covariant FingerprintButton oldWidget) {
     super.didUpdateWidget(oldWidget);
     _finishPosition = Offset(widget.parentWidth - (widget.width ?? 105.w), 0);
+    if (widget.isCompleted != oldWidget.isCompleted && widget.isCompleted != null) {
+      _isCompleted = widget.isCompleted!;
+    }
   }
 
   @override
@@ -176,6 +172,7 @@ class _FingerprintButtonState extends State<FingerprintButton>
     _controller.removeStatusListener((status) => _setAnimationListener(status));
     _controller.removeStatusListener((_) => _setVibrationListener());
     _controller.dispose();
+    _flipController.controller?.dispose();
     _currentPosition.dispose();
     super.dispose();
   }
@@ -192,57 +189,64 @@ class _FingerprintButtonState extends State<FingerprintButton>
         left: _updatePosition(currentPosition.dx),
         child: ConstrainedBox(
           constraints: BoxConstraints(
+            minHeight: widget.height ?? height,
             maxHeight: widget.height ?? height,
             maxWidth: widget.width ?? 105.w,
           ),
-          child: !_isCompleted
-              ? GestureDetector(
-                  onTapDown: (_) => _startAnimation(),
-                  onTapUp: (_) => _reverseAnimation(),
-                  onPanUpdate: (details) => _setPosition(details),
-                  onPanEnd: (_) => _resetPosition(),
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      boxShadow: _getShadow(_isPressed),
-                    ),
-                    child: UiKitCardWrapper(
-                      width: widget.width ?? 105.w,
-                      height: widget.height ?? height,
-                      color: ColorsFoundation.surface3,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          GradientableWidget(
-                            gradient: GradientFoundation.touchIdLinearGradient,
-                            child: widget.title,
-                          ),
-                          SpacingFoundation.verticalSpace12,
-                          ClipRRect(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(50)),
-                            child: SizedBox(
-                              height: 48.w,
-                              width: 48.w,
-                              child: FittedBox(
-                                fit: BoxFit.cover,
-                                child: LottieBuilder.asset(
-                                  package: 'shuffle_uikit',
-                                  widget.animationPath != null
-                                      ? widget.animationPath!
-                                      : GraphicsFoundation.instance.animations
-                                          .lottie.animationTouchId.path,
-                                  fit: BoxFit.cover,
-                                  controller: _controller,
-                                ),
-                              ),
+          child: FlipCard(
+            controller: _flipController,
+            fill: Fill.fillBack,
+            flipOnTouch: false,
+            direction: FlipDirection.HORIZONTAL,
+            side: CardSide.FRONT,
+            front: GestureDetector(
+              onTapDown: (_) => _startAnimation(),
+              onTapUp: (_) => _reverseAnimation(),
+              onPanUpdate: (details) => _setPosition(details),
+              onPanEnd: (_) => _resetPosition(),
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  boxShadow: _getShadow(_isPressed),
+                ),
+                child: UiKitCardWrapper(
+                  width: widget.width ?? 105.w,
+                  height: widget.height ?? height,
+                  color: ColorsFoundation.surface3,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GradientableWidget(
+                        gradient: GradientFoundation.touchIdLinearGradient,
+                        child: widget.title,
+                      ),
+                      SpacingFoundation.verticalSpace12,
+                      ClipRRect(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(50),
+                        ),
+                        child: SizedBox(
+                          height: 48.w,
+                          width: 48.w,
+                          child: FittedBox(
+                            fit: BoxFit.cover,
+                            child: LottieBuilder.asset(
+                              package: 'shuffle_uikit',
+                              controller: _controller,
+                              fit: BoxFit.cover,
+                              widget.animationPath != null
+                                  ? widget.animationPath!
+                                  : GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
                             ),
                           ),
-                        ],
+                        ),
                       ),
-                    ).paddingAll(EdgeInsetsFoundation.all4),
+                    ],
                   ),
-                )
-              : widget.onCompletedWidget,
+                ),
+              ),
+            ).paddingAll(EdgeInsetsFoundation.all4),
+            back: widget.onCompletedWidget.paddingAll(EdgeInsetsFoundation.all4),
+          ),
         ),
       ),
     );
