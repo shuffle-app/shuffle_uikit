@@ -5,18 +5,25 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final String text;
   final bool? loading;
+  final ButtonFit? fit;
 
   const GradientButton({
     Key? key,
     this.onPressed,
     required this.text,
     this.loading,
+    this.fit,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
     TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black);
+    final textWidget = Text(
+      (loading ?? false) ? '' : text.toUpperCase(),
+      style: textStyle,
+      textAlign: TextAlign.center,
+    ).loadingWrap(loading ?? false);
 
     return Material(
       borderRadius: BorderRadiusFoundation.max,
@@ -34,11 +41,7 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
             gradient: enabled ? GradientFoundation.buttonGradientLinear : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
           ),
-          child: Text(
-            (loading ?? false) ? '' : text.toUpperCase(),
-            style: textStyle,
-            textAlign: TextAlign.center,
-          ).loadingWrap(loading ?? false),
+          child: fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget,
         ),
       ),
     );
