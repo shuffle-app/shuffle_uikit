@@ -32,6 +32,7 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
         borderRadius: BorderRadiusFoundation.max,
         onTap: enabled && !(loading ?? false) ? onPressed : null,
         child: Ink(
+          width: fit == ButtonFit.fitWidth? double.infinity : null,
           padding: EdgeInsets.symmetric(
             vertical: EdgeInsetsFoundation.vertical14,
             horizontal: EdgeInsetsFoundation.horizontal44,
