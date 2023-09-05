@@ -13,12 +13,21 @@ class UiKitThemes {
 
   // Light theme
   late final lightThemeData = defaultThemeData.copyWith(
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: UiKitColors.info,
+      onSurface: Colors.white,
+      primary: ColorsFoundation.lightSurface1,
+      secondary: ColorsFoundation.lightSurface2,
+      tertiary: ColorsFoundation.lightSurface3,
+      surface: ColorsFoundation.lightSurface5,
+      inversePrimary: ColorsFoundation.solidSurface,
+    ),
     scaffoldBackgroundColor: Colors.white,
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
         customColor: Colors.red,
         chipTheme: UiKitChipThemeData(
-          border: Border.all(color: Colors.white, width: 2),
+          border: Border.all(color: Colors.black, width: 2),
           backgroundColor: ColorsFoundation.solidLightSurface,
         ),
         blurredBottomNavigationBarTheme: BlurredBottomNavigationBarTheme(
@@ -134,7 +143,7 @@ class UiKitThemes {
           ),
           toolbarHeight: 84,
           shadowColor: Colors.transparent,
-          backgroundColor: Colors.white.withOpacity(0.07),
+          backgroundColor: Colors.black.withOpacity(0.07),
           centerTitle: true,
           elevation: 0,
           scrolledUnderElevation: 0,
@@ -149,17 +158,18 @@ class UiKitThemes {
             color: Colors.white,
           ),
         ),
-        cardColor: ColorsFoundation.solidSurface,
+        cardColor: ColorsFoundation.lightSurface3,
         buttonTheme: ButtonThemeData(
-          buttonColor: Colors.white,
+          buttonColor: ColorsFoundation.lightSurface3,
           textTheme: ButtonTextTheme.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusFoundation.max,
           ),
         ),
         cardTheme: CardTheme(
+          color: ColorsFoundation.lightSurface2,
           shadowColor: Colors.transparent,
-          surfaceTintColor: ColorsFoundation.solidSurface,
+          surfaceTintColor: ColorsFoundation.solidLightSurface,
           elevation: 0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusFoundation.all24,
@@ -168,7 +178,7 @@ class UiKitThemes {
         boldTextTheme: UiKitBoldTextTheme(foregroundColor: Colors.black),
         regularTextTheme: UiKitRegularTextTheme(foregroundColor: Colors.black),
         bottomSheetTheme: UiKitBottomSheetThemeData(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusFoundation.onlyTop40,
           ),
@@ -257,10 +267,19 @@ class UiKitThemes {
       // dialBackgroundColor: ColorsFoundation.darkNeutral500
     ),
 
-    colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.info, onSurface: Colors.white),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: UiKitColors.info,
+      onSurface: Colors.white,
+      primary: ColorsFoundation.surface1,
+      secondary: ColorsFoundation.surface2,
+      tertiary: ColorsFoundation.surface3,
+      surface: ColorsFoundation.surface5,
+      inversePrimary: ColorsFoundation.solidLightSurface,
+    ),
     // colorScheme:  const ColorScheme.light().copyWith(onSurface: Colors.white),
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
+        cardColor: ColorsFoundation.surface1,
         customColor: Colors.red,
         chipTheme: UiKitChipThemeData(
           border: Border.all(color: Colors.white, width: 2),
@@ -393,7 +412,6 @@ class UiKitThemes {
             color: Colors.white,
           ),
         ),
-        cardColor: ColorsFoundation.solidSurface,
         buttonTheme: ButtonThemeData(
           buttonColor: Colors.white,
           textTheme: ButtonTextTheme.primary,
