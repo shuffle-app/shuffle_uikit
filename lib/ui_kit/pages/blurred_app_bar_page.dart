@@ -18,6 +18,7 @@ class BlurredAppBarPage extends StatelessWidget {
   final ScrollPhysics physics;
   final double? customToolbarHeight;
   final animDuration = const Duration(milliseconds: 250);
+  final bool? canFoldAppBar;
 
   // final PreferredSizeWidget? bottom;
 
@@ -27,6 +28,7 @@ class BlurredAppBarPage extends StatelessWidget {
     required this.body,
     this.autoImplyLeading,
     this.leading,
+    this.canFoldAppBar,
     this.appBarBody,
     this.wrapSliverBox = true,
     this.controller,
@@ -42,8 +44,6 @@ class BlurredAppBarPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final toolbarHeight = (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
-
     return CustomScrollView(
       controller: controller,
       physics: physics,
@@ -52,8 +52,11 @@ class BlurredAppBarPage extends StatelessWidget {
           children: [
             SliverLayoutBuilder(
               builder: (context, sliverConstraints) {
-                final expandedHeight = appBarBody == null ? toolbarHeight : customToolbarHeight ?? 190.0;
-                final hideAppBarBody = appBarBody == null ? true : sliverConstraints.scrollOffset > toolbarHeight;
+                double toolbarHeight = (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
+                double expandedHeight = appBarBody == null ? toolbarHeight : customToolbarHeight ?? 190.0;
+
+                final hideAppBarBody =
+                    appBarBody == null ? true : canFoldAppBar ?? sliverConstraints.scrollOffset > toolbarHeight;
 
                 return SliverAppBar(
                   automaticallyImplyLeading: false,
@@ -62,7 +65,7 @@ class BlurredAppBarPage extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadiusFoundation.onlyBottom24,
                   ),
-                  collapsedHeight: toolbarHeight,
+                  collapsedHeight: canFoldAppBar ?? true ? toolbarHeight : expandedHeight,
                   expandedHeight: expandedHeight,
                   flexibleSpace: CustomAppBar(
                     hideBody: hideAppBarBody,
