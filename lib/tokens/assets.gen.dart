@@ -317,6 +317,12 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/buddism_flag.png
   AssetGenImage get buddismFlag => const AssetGenImage('assets/images/png/buddism_flag.png');
 
+  /// File path: assets/images/png/business_mock_1.png
+  AssetGenImage get businessMock1 => const AssetGenImage('assets/images/png/business_mock_1.png');
+
+  /// File path: assets/images/png/business_mock_2.png
+  AssetGenImage get businessMock2 => const AssetGenImage('assets/images/png/business_mock_2.png');
+
   /// File path: assets/images/png/calmness-emoji.png
   AssetGenImage get calmnessEmoji => const AssetGenImage('assets/images/png/calmness-emoji.png');
 
@@ -559,6 +565,8 @@ class $AssetsImagesPngGen {
         atmosphere,
         balloons,
         buddismFlag,
+        businessMock1,
+        businessMock2,
         calmnessEmoji,
         catering,
         choosePlan,

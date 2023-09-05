@@ -14,6 +14,7 @@ export 'cards/ui_kit_extended_influencer_feedback_card.dart';
 export 'cards/ui_kit_feedback_card.dart';
 export 'cards/ui_kit_find_someone_card.dart';
 export 'cards/ui_kit_icon_hint_card.dart';
+export 'cards/ui_kit_image_with_description_card.dart';
 export 'cards/ui_kit_overflown_action_card.dart';
 export 'cards/ui_kit_stats_action_card.dart';
 export 'cards/ui_kit_titled_action_card.dart';
