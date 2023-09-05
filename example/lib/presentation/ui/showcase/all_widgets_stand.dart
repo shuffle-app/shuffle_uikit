@@ -133,6 +133,51 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    SpacingFoundation.horizontalSpace16,
+                    UiKitImageWithDescriptionCard(
+                      title: 'cakjn',
+                      subtitle: 'ascsacas',
+                      imageUrl: GraphicsFoundation.instance.png.businessMock1.path,
+                      tags: [
+                        UiKitTag(
+                          title: 'title',
+                          iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                          unique: false,
+                        ),
+                        UiKitTag(
+                          title: 'title',
+                          iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                          unique: false,
+                        ),
+                      ],
+                    ),
+                    SpacingFoundation.horizontalSpace12,
+                    UiKitImageWithDescriptionCard(
+                      title: 'cakjn',
+                      subtitle: 'ascsacas',
+                      imageUrl: GraphicsFoundation.instance.png.businessMock2.path,
+                      tags: [
+                        UiKitTag(
+                          title: 'title',
+                          iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                          unique: false,
+                        ),
+                        UiKitTag(
+                          title: 'title',
+                          iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                          unique: false,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               Center(
                 child: UiKitSwitchWithCustomBackground(
                   firstOption: CustomBackgroundSwitchOption(
