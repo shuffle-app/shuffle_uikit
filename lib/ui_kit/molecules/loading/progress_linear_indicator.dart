@@ -69,7 +69,7 @@ class _ProgressLinearIndicatorState extends State<ProgressLinearIndicator> {
                   curve: Curves.ease,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadiusFoundation.all40,
-                    gradient: GradientFoundation.touchIdLinearGradient,
+                    gradient: GradientFoundation.defaultLinearGradient,
                     color: Colors.white,
                   ),
                   duration: const Duration(milliseconds: 300),
