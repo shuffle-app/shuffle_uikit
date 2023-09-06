@@ -115,10 +115,10 @@ class DialogTestingPage extends StatelessWidget {
                   context,
                   GeneralDialogData(
                     useRootNavigator: false,
-                    child: const DonationListView().paddingOnly(left: EdgeInsetsFoundation.horizontal16),
-                    bottomBar: Center(
-                      child: Container(width: 100, height: 56, color: Colors.red),
-                    ),
+                    child: const DonationListView(
+                      sum: 900,
+                      actualSum: 310,
+                    ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
                   ),
                 ),
               ),
@@ -130,8 +130,41 @@ class DialogTestingPage extends StatelessWidget {
   }
 }
 
-class DonationListView extends StatelessWidget {
-  const DonationListView({super.key});
+class DonationListView extends StatefulWidget {
+  const DonationListView({super.key, required this.actualSum, required this.sum});
+
+  final double actualSum;
+  final double sum;
+
+  @override
+  State<DonationListView> createState() => _DonationListViewState();
+}
+
+class _DonationListViewState extends State<DonationListView> {
+  late double _progressValue;
+  late double _progressPosition;
+  final double _finishPosition = 256.w;
+  @override
+  void initState() {
+    super.initState();
+    _setPercentage();
+    _setPositionWithPercentage();
+  }
+
+  void _setPercentage() {
+    _progressValue = ((widget.actualSum / widget.sum) * 100);
+  }
+
+  void _setPositionWithPercentage() {
+    _progressPosition = _finishPosition * (_progressValue / 100);
+  }
+
+  double _getCurrentPosition() {
+    if (_progressPosition > _finishPosition - 4.w) {
+      return _finishPosition - 4.w;
+    }
+    return _progressPosition;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -139,7 +172,6 @@ class DonationListView extends StatelessWidget {
     return ListView(
       //TODO: remove shrinkWrap
       shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
       children: [
         Text('Ask people', style: textTheme?.boldTextTheme.title1),
         SpacingFoundation.verticalSpace16,
@@ -174,36 +206,34 @@ class DonationListView extends StatelessWidget {
                     Positioned(
                       left: 2.h,
                       top: 2.h,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(40),
-                        child: GradientableWidget(
-                          gradient: GradientFoundation.touchIdLinearGradient,
-                          child: ColoredBox(
+                      child: GradientableWidget(
+                        gradient: GradientFoundation.touchIdLinearGradient,
+                        child: AnimatedContainer(
+                          curve: Curves.ease,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
                             color: Colors.white,
-                            child: SizedBox(
-                              height: 28.h,
-                              width: 94.w,
-                            ),
                           ),
+                          duration: const Duration(milliseconds: 300),
+                          height: 28.h,
+                          width: _getCurrentPosition(),
                         ),
                       ),
                     ),
                     Positioned.fill(
                       child: Center(
                         child: Text(
-                          'raised 310/900 \$',
-                          style: textTheme?.boldTextTheme.caption1Bold.copyWith(
-                            color: Colors.black,
-                          ),
+                          'raised ${widget.actualSum.toStringAsFixed(0)}/${widget.sum.toStringAsFixed(0)} \$',
+                          style: textTheme?.boldTextTheme.caption1Bold.copyWith(color: Colors.black),
                         ),
                       ),
                     ),
                     Positioned(
                       right: 1.w,
-                      top: 1.h,
+                      top: 1.w,
                       child: context.badgeButtonNoValue(
                         data: BaseUiKitButtonData(
-                          onPressed: () {},
+                          onPressed: () => setState(() => _progressPosition += 25.w),
                           icon: const Icon(
                             CupertinoIcons.chevron_right_circle,
                             size: 40,
