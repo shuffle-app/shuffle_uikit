@@ -21,13 +21,14 @@ class ProgressLinearIndicator extends StatefulWidget {
 class _ProgressLinearIndicatorState extends State<ProgressLinearIndicator> {
   late double _progressPosition;
   late final double _progressValue;
-  late final double _finishPosition;
+  late final double _indicatorWidth;
+  final double _rightIndicatorEdge = 4.w;
 
   @override
   void initState() {
     super.initState();
     _setPercentage();
-    _finishPosition = widget.width ?? 256.w;
+    _indicatorWidth = widget.width ?? 256.w;
     _setPositionWithPercentage();
   }
 
@@ -36,12 +37,12 @@ class _ProgressLinearIndicatorState extends State<ProgressLinearIndicator> {
   }
 
   void _setPositionWithPercentage() {
-    _progressPosition = _finishPosition * (_progressValue / 100);
+    _progressPosition = _indicatorWidth * (_progressValue / 100);
   }
 
   double _getCurrentPosition(double currentPosition) {
-    if (currentPosition > _finishPosition - 4.w) {
-      return _finishPosition - 4.w;
+    if (currentPosition > _indicatorWidth - _rightIndicatorEdge) {
+      return _indicatorWidth - _rightIndicatorEdge;
     }
 
     return currentPosition;
@@ -59,22 +60,24 @@ class _ProgressLinearIndicatorState extends State<ProgressLinearIndicator> {
             color: Colors.white,
             child: SizedBox(
               height: 32.h,
-              width: 256.w,
-            ),
-          ),
-          Positioned(
-            left: 2.h,
-            top: 2.h,
-            child: AnimatedContainer(
-              curve: Curves.ease,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadiusFoundation.all40,
-                gradient: GradientFoundation.touchIdLinearGradient,
-                color: Colors.white,
+              width: _indicatorWidth,
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: AnimatedContainer(
+                  height: 28.h,
+                  width: _getCurrentPosition(_progressPosition),
+                  curve: Curves.ease,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadiusFoundation.all40,
+                    gradient: GradientFoundation.touchIdLinearGradient,
+                    color: Colors.white,
+                  ),
+                  duration: const Duration(milliseconds: 300),
+                ).paddingSymmetric(
+                  horizontal: EdgeInsetsFoundation.all2,
+                  vertical: EdgeInsetsFoundation.all2,
+                ),
               ),
-              duration: const Duration(milliseconds: 300),
-              height: 28.h,
-              width: _getCurrentPosition(_progressPosition),
             ),
           ),
           Positioned.fill(
@@ -91,10 +94,7 @@ class _ProgressLinearIndicatorState extends State<ProgressLinearIndicator> {
             child: context.badgeButtonNoValue(
               data: BaseUiKitButtonData(
                 onPressed: () => setState(() => _progressPosition += 25.w),
-                icon: const Icon(
-                  CupertinoIcons.chevron_right_circle,
-                  size: 40,
-                ),
+                icon: const Icon(CupertinoIcons.chevron_right_circle, size: 40),
               ),
             ),
           ),
