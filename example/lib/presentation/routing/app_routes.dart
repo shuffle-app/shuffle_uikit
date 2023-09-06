@@ -9,4 +9,5 @@ class AppRoutes {
   static const String onBoardingPage = '/onBoardingPage';
   static const String locationPicker = '/locationPicker';
   static const String welcomePage = '/welcomePage';
+  static const String animationsPage = '/animationsPage';
 }
