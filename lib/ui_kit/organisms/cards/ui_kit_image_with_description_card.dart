@@ -5,6 +5,7 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
   final String title;
   final String imageUrl;
   final String? subtitle;
+  final String? subtitleIcon;
   final List<UiKitTag> tags;
 
   const UiKitImageWithDescriptionCard({
@@ -13,6 +14,7 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
     required this.imageUrl,
     this.tags = const [],
     this.subtitle,
+    this.subtitleIcon,
   }) : super(key: key);
 
   @override
@@ -45,9 +47,23 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
             style: textTheme?.caption1Bold,
           ),
           SpacingFoundation.verticalSpace4,
-          Text(
-            subtitle ?? '',
-            style: textTheme?.caption2Bold.copyWith(color: ColorsFoundation.darkNeutral900),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (subtitleIcon != null)
+                ImageWidget(
+                  link: subtitleIcon,
+                  color: ColorsFoundation.darkNeutral900,
+                  width: 0.05.sw,
+                  height: 0.05.sw,
+                  fit: BoxFit.cover,
+                ),
+              if (subtitleIcon != null) SpacingFoundation.horizontalSpace2,
+              Text(
+                subtitle ?? '',
+                style: textTheme?.caption2Bold.copyWith(color: ColorsFoundation.darkNeutral900),
+              ),
+            ],
           ),
           SpacingFoundation.verticalSpace2,
           Wrap(
@@ -56,6 +72,7 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
             children: tags
                 .map<Widget>(
                   (e) => UiKitTagWidget(
+                    tagSize: 0.05.sw,
                     title: e.title,
                     icon: e.iconPath,
                     textColor: ColorsFoundation.darkNeutral900,

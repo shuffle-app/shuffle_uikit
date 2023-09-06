@@ -26,6 +26,7 @@ export 'info_cards/ui_kit_permission_card.dart';
 export 'info_cards/ui_kit_weather_info_card.dart';
 export 'info_cards/vertical_message_card.dart';
 export 'info_cards/donation_info_indicator_card.dart';
+export 'info_cards/wide_vertical_message_card.dart';
 export 'loading/loading_widget.dart';
 export 'loading/progress_linear_indicator.dart';
 export 'menu/ui_kit_menu_item_tile.dart';

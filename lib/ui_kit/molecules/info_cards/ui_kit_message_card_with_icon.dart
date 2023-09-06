@@ -6,6 +6,7 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
   final String? iconLink;
   final Axis layoutDirection;
   final VoidCallback? onPressed;
+  final MessageCardType type;
 
   const UiKitMessageCardWithIcon({
     Key? key,
@@ -13,6 +14,7 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
     this.iconLink,
     this.onPressed,
     required this.layoutDirection,
+    this.type = MessageCardType.narrow,
   }) : super(key: key);
 
   @override
@@ -25,6 +27,14 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
           onPressed: onPressed,
         );
       case Axis.vertical:
+        if (type == MessageCardType.wide) {
+          return WideVerticalMessageCard(
+            message: message,
+            iconLink: iconLink,
+            onPressed: onPressed,
+          );
+        }
+
         return VerticalMessageCard(
           message: message,
           iconLink: iconLink,
@@ -33,3 +43,5 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
     }
   }
 }
+
+enum MessageCardType { narrow, wide }
