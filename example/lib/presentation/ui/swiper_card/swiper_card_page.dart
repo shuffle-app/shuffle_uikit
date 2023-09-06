@@ -10,10 +10,15 @@ class SwiperCardPage extends StatefulWidget {
   State<SwiperCardPage> createState() => _SwiperCardPageState();
 }
 
-class _SwiperCardPageState extends State<SwiperCardPage> with SingleTickerProviderStateMixin {
-  late final lottieController = AnimationController(
+class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStateMixin {
+  late final dislikeController = AnimationController(
     vsync: this,
-    duration: const Duration(seconds: 1),
+    duration: const Duration(seconds: 1, milliseconds: 500),
+    value: 0,
+  );
+  late final likeController = AnimationController(
+    vsync: this,
+    duration: const Duration(seconds: 1, milliseconds: 500),
     value: 0,
   );
 
@@ -81,23 +86,21 @@ class _SwiperCardPageState extends State<SwiperCardPage> with SingleTickerProvid
                     shouldHide: false,
                     child: child ?? const SizedBox(),
                   ),
-                  animation: lottieController,
-                  child: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.heartBrokenFill,
-                    height: 150,
-                    width: 150,
-                    fit: BoxFit.cover,
+                  animation: dislikeController,
+                  child: LottieAnimation(
+                    controller: dislikeController,
+                    lottiePath: GraphicsFoundation.instance.animations.lottie.brokenHeart.path,
                   ),
                 ),
                 customDislikeAnimation: AnimatedBuilder(
                   builder: (context, child) => HideWrapper(
-                    shouldHide: lottieController.value == 0 || lottieController.value == 1,
+                    shouldHide: false,
                     child: child ?? const SizedBox(),
                   ),
-                  animation: lottieController,
+                  animation: likeController,
                   child: LottieAnimation(
-                    lottiePath: GraphicsFoundation.instance.animations.lottie.animationBrokenHeart.path,
-                    controller: lottieController,
+                    lottiePath: GraphicsFoundation.instance.animations.lottie.wholeHeart.path,
+                    controller: likeController,
                   ),
                 ),
               ),
@@ -116,7 +119,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with SingleTickerProvid
                       color: Colors.white,
                     ),
                     onPressed: () {
-                      lottieController.forward(from: 0);
+                      dislikeController.forward(from: 0);
                     },
                   ),
                 ),
@@ -139,7 +142,9 @@ class _SwiperCardPageState extends State<SwiperCardPage> with SingleTickerProvid
                       svgAsset: GraphicsFoundation.instance.svg.heartFill,
                       color: Colors.white,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      likeController.forward(from: 0);
+                    },
                   ),
                 ),
               ],

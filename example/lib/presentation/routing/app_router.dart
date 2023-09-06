@@ -1,4 +1,5 @@
 import 'package:example/presentation/routing/app_routes.dart';
+import 'package:example/presentation/ui/animations/animations_page.dart';
 import 'package:example/presentation/ui/location_picker/location_picker_page.dart';
 import 'package:example/presentation/ui/main_page/main_page.dart';
 import 'package:example/presentation/ui/onboarding/onboarding_page.dart';
@@ -78,6 +79,11 @@ class AppRouter {
               AppRoutes.initial,
             ),
           ),
+          settings: settings,
+        );
+      case AppRoutes.animationsPage:
+        return MaterialPageRoute(
+          builder: (context) => const AnimationsPage(),
           settings: settings,
         );
       default:

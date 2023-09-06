@@ -7,6 +7,7 @@ class UiKitTagWidget extends StatelessWidget {
   final Color? textColor;
   final bool showSpacing;
   final bool uniqueTag;
+  final double? tagSize;
 
   /// [customSpace] needs to be specified using [SpacingFoundation]
   final Widget? customSpace;
@@ -16,6 +17,7 @@ class UiKitTagWidget extends StatelessWidget {
     required this.title,
     required this.icon,
     this.textColor,
+    this.tagSize,
     this.customSpace,
     this.uniqueTag = false,
     this.showSpacing = false,
@@ -39,9 +41,10 @@ class UiKitTagWidget extends StatelessWidget {
           child: ImageWidget(
             link: icon,
             errorWidget: ImageWidget(svgAsset: GraphicsFoundation.instance.svg.exclamation, color: iconColor),
-            height: SpacingFoundation.horizontalSpacing16,
+            height: tagSize ?? SpacingFoundation.horizontalSpacing16,
+            width: tagSize ?? SpacingFoundation.horizontalSpacing16,
             color: iconColor,
-            fit: BoxFit.fitHeight,
+            fit: tagSize != null ? BoxFit.cover : BoxFit.fitHeight,
           ),
         ),
         SpacingFoundation.horizontalSpace2,
