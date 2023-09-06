@@ -115,10 +115,20 @@ class DialogTestingPage extends StatelessWidget {
                   context,
                   GeneralDialogData(
                     useRootNavigator: false,
-                    child: const DonationListView(
-                      sum: 900,
-                      actualSum: 310,
-                    ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+                    child: ListView(
+                      shrinkWrap: true,
+                      padding: EdgeInsets.symmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+                      children: [
+                        Text('Ask people', style: context.uiKitTheme?.boldTextTheme.title1),
+                        SpacingFoundation.verticalSpace16,
+                        const DonationInfoIndicatorWidget(
+                          number: '1',
+                          title: 'Help me visit Nusr-Et restaurant',
+                          sum: 900,
+                          actualSum: 310,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -130,24 +140,75 @@ class DialogTestingPage extends StatelessWidget {
   }
 }
 
-class DonationListView extends StatefulWidget {
-  const DonationListView({super.key, required this.actualSum, required this.sum});
+class DonationInfoIndicatorWidget extends StatelessWidget {
+  const DonationInfoIndicatorWidget({
+    super.key,
+    required this.number,
+    required this.title,
+    required this.sum,
+    required this.actualSum,
+    this.indicatorWidth,
+  });
+
+  final String number;
+  final String title;
+  final double sum;
+  final double actualSum;
+  final double? indicatorWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
+    return UiKitCardWrapper(
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text('#$number', style: theme?.boldTextTheme.subHeadline),
+              SpacingFoundation.horizontalSpace12,
+              Flexible(
+                child: Text(
+                  title,
+                  style: theme?.boldTextTheme.subHeadline,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            ],
+          ),
+          SpacingFoundation.verticalSpace16,
+          ProgressDonationIndicator(actualSum: actualSum, sum: sum, width: indicatorWidth),
+        ],
+      ).paddingAll(EdgeInsetsFoundation.all16),
+    );
+  }
+}
+
+class ProgressDonationIndicator extends StatefulWidget {
+  const ProgressDonationIndicator({
+    super.key,
+    required this.actualSum,
+    required this.sum,
+    this.width,
+  });
 
   final double actualSum;
   final double sum;
+  final double? width;
 
   @override
-  State<DonationListView> createState() => _DonationListViewState();
+  State<ProgressDonationIndicator> createState() => _ProgressDonationIndicatorState();
 }
 
-class _DonationListViewState extends State<DonationListView> {
-  late double _progressValue;
+class _ProgressDonationIndicatorState extends State<ProgressDonationIndicator> {
   late double _progressPosition;
-  final double _finishPosition = 256.w;
+  late final double _progressValue;
+  late final double _finishPosition;
+
   @override
   void initState() {
     super.initState();
     _setPercentage();
+    _finishPosition = widget.width ?? 256.w;
     _setPositionWithPercentage();
   }
 
@@ -159,95 +220,65 @@ class _DonationListViewState extends State<DonationListView> {
     _progressPosition = _finishPosition * (_progressValue / 100);
   }
 
-  double _getCurrentPosition() {
-    if (_progressPosition > _finishPosition - 4.w) {
+  double _getCurrentPosition(double currentPosition) {
+    if (currentPosition > _finishPosition - 4.w) {
       return _finishPosition - 4.w;
     }
-    return _progressPosition;
+    return currentPosition;
   }
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = context.uiKitTheme;
-    return ListView(
-      //TODO: remove shrinkWrap
-      shrinkWrap: true,
-      children: [
-        Text('Ask people', style: textTheme?.boldTextTheme.title1),
-        SpacingFoundation.verticalSpace16,
-        UiKitCardWrapper(
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Text('#1', style: textTheme?.boldTextTheme.subHeadline),
-                  SpacingFoundation.horizontalSpace12,
-                  Flexible(
-                    child: Text(
-                      'Help me visit Nusr-Et restaurant',
-                      style: textTheme?.boldTextTheme.subHeadline,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
+    final theme = context.uiKitTheme;
+    return ClipRRect(
+      borderRadius: BorderRadiusFoundation.all40,
+      child: Stack(
+        children: [
+          ColoredBox(
+            color: Colors.white,
+            child: SizedBox(
+              height: 32.h,
+              width: 256.w,
+            ),
+          ),
+          Positioned(
+            left: 2.h,
+            top: 2.h,
+            child: AnimatedContainer(
+              curve: Curves.ease,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadiusFoundation.all40,
+                gradient: GradientFoundation.touchIdLinearGradient,
+                color: Colors.white,
               ),
-              SpacingFoundation.verticalSpace12,
-              ClipRRect(
-                borderRadius: BorderRadius.circular(40),
-                child: Stack(
-                  children: [
-                    ColoredBox(
-                      color: Colors.white,
-                      child: SizedBox(
-                        height: 32.h,
-                        width: 256.w,
-                      ),
-                    ),
-                    Positioned(
-                      left: 2.h,
-                      top: 2.h,
-                      child: GradientableWidget(
-                        gradient: GradientFoundation.touchIdLinearGradient,
-                        child: AnimatedContainer(
-                          curve: Curves.ease,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            color: Colors.white,
-                          ),
-                          duration: const Duration(milliseconds: 300),
-                          height: 28.h,
-                          width: _getCurrentPosition(),
-                        ),
-                      ),
-                    ),
-                    Positioned.fill(
-                      child: Center(
-                        child: Text(
-                          'raised ${widget.actualSum.toStringAsFixed(0)}/${widget.sum.toStringAsFixed(0)} \$',
-                          style: textTheme?.boldTextTheme.caption1Bold.copyWith(color: Colors.black),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      right: 1.w,
-                      top: 1.w,
-                      child: context.badgeButtonNoValue(
-                        data: BaseUiKitButtonData(
-                          onPressed: () => setState(() => _progressPosition += 25.w),
-                          icon: const Icon(
-                            CupertinoIcons.chevron_right_circle,
-                            size: 40,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+              duration: const Duration(milliseconds: 300),
+              height: 28.h,
+              width: _getCurrentPosition(_progressPosition),
+            ),
+          ),
+          Positioned.fill(
+            child: Center(
+              child: Text(
+                'raised ${widget.actualSum.toStringAsFixed(0)}/${widget.sum.toStringAsFixed(0)} \$',
+                style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.black),
+              ),
+            ),
+          ),
+          Positioned(
+            right: 1.w,
+            top: 1.w,
+            child: context.badgeButtonNoValue(
+              data: BaseUiKitButtonData(
+                onPressed: () => setState(() => _progressPosition += 25.w),
+                icon: const Icon(
+                  CupertinoIcons.chevron_right_circle,
+                  size: 40,
                 ),
               ),
-            ],
-          ).paddingAll(EdgeInsetsFoundation.all16),
-        ),
-      ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
