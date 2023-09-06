@@ -21,7 +21,7 @@ class WideVerticalMessageCard extends StatelessWidget {
 
     return Material(
       borderRadius: BorderRadiusFoundation.all24,
-      color: Theme.of(context).colorScheme.secondary,
+      color: ColorsFoundation.surface2,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
         onTap: onPressed,
