@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -107,10 +108,116 @@ class DialogTestingPage extends StatelessWidget {
                   );
                 },
               ),
+              SpacingFoundation.verticalSpace16,
+              OrdinaryButton(
+                text: 'Donation Bottom Sheet',
+                onPressed: () => showUiKitGeneralFullScreenDialog(
+                  context,
+                  GeneralDialogData(
+                    useRootNavigator: false,
+                    child: const DonationListView().paddingOnly(left: EdgeInsetsFoundation.horizontal16),
+                    bottomBar: Center(
+                      child: Container(width: 100, height: 56, color: Colors.red),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class DonationListView extends StatelessWidget {
+  const DonationListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = context.uiKitTheme;
+    return ListView(
+      //TODO: remove shrinkWrap
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      children: [
+        Text('Ask people', style: textTheme?.boldTextTheme.title1),
+        SpacingFoundation.verticalSpace16,
+        UiKitCardWrapper(
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Text('#1', style: textTheme?.boldTextTheme.subHeadline),
+                  SpacingFoundation.horizontalSpace12,
+                  Flexible(
+                    child: Text(
+                      'Help me visit Nusr-Et restaurant',
+                      style: textTheme?.boldTextTheme.subHeadline,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace12,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(40),
+                child: Stack(
+                  children: [
+                    ColoredBox(
+                      color: Colors.white,
+                      child: SizedBox(
+                        height: 32.h,
+                        width: 256.w,
+                      ),
+                    ),
+                    Positioned(
+                      left: 2.h,
+                      top: 2.h,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(40),
+                        child: GradientableWidget(
+                          gradient: GradientFoundation.touchIdLinearGradient,
+                          child: ColoredBox(
+                            color: Colors.white,
+                            child: SizedBox(
+                              height: 28.h,
+                              width: 94.w,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned.fill(
+                      child: Center(
+                        child: Text(
+                          'raised 310/900 \$',
+                          style: textTheme?.boldTextTheme.caption1Bold.copyWith(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      right: 1.w,
+                      top: 1.h,
+                      child: context.badgeButtonNoValue(
+                        data: BaseUiKitButtonData(
+                          onPressed: () {},
+                          icon: const Icon(
+                            CupertinoIcons.chevron_right_circle,
+                            size: 40,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ).paddingAll(EdgeInsetsFoundation.all16),
+        ),
+      ],
     );
   }
 }
