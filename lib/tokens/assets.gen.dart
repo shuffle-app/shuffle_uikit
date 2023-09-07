@@ -385,6 +385,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/love-emoji.png
   AssetGenImage get loveEmoji => const AssetGenImage('assets/images/png/love-emoji.png');
 
+  /// File path: assets/images/png/map_mock.png
+  AssetGenImage get mapMock => const AssetGenImage('assets/images/png/map_mock.png');
+
   /// File path: assets/images/png/mock_ad_banner.png
   AssetGenImage get mockAdBanner => const AssetGenImage('assets/images/png/mock_ad_banner.png');
 
@@ -483,6 +486,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/spinner_event.png
   AssetGenImage get spinnerEvent => const AssetGenImage('assets/images/png/spinner_event.png');
+
+  /// File path: assets/images/png/star_2.png
+  AssetGenImage get star2 => const AssetGenImage('assets/images/png/star_2.png');
 
   /// File path: assets/images/png/surprise-emoji.png
   AssetGenImage get surpriseEmoji => const AssetGenImage('assets/images/png/surprise-emoji.png');
@@ -610,6 +616,7 @@ class $AssetsImagesPngGen {
         joyEmoji,
         judaism,
         loveEmoji,
+        mapMock,
         mockAdBanner,
         mockAvatar,
         mockSwiperCard,
@@ -643,6 +650,7 @@ class $AssetsImagesPngGen {
         searchCategorySport,
         searchCategoryZadrot,
         spinnerEvent,
+        star2,
         surpriseEmoji,
         titledCardBackground1,
         titledCardBackground2,

@@ -108,29 +108,6 @@ class DialogTestingPage extends StatelessWidget {
                 },
               ),
               SpacingFoundation.verticalSpace16,
-              OrdinaryButton(
-                text: 'Donation Bottom Sheet',
-                onPressed: () => showUiKitGeneralFullScreenDialog(
-                  context,
-                  GeneralDialogData(
-                    useRootNavigator: false,
-                    child: ListView(
-                      shrinkWrap: true,
-                      padding: EdgeInsets.symmetric(horizontal: EdgeInsetsFoundation.horizontal16),
-                      children: [
-                        Text('Ask people', style: context.uiKitTheme?.boldTextTheme.title1),
-                        SpacingFoundation.verticalSpace16,
-                        const DonationInfoIndicatorCard(
-                          number: '1',
-                          title: 'Help me visit Nusr-Et restaurant',
-                          sum: 900,
-                          actualSum: 310,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
