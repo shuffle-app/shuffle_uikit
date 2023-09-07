@@ -69,6 +69,20 @@ class GradientFoundation {
     transform: GradientRotation(pi / 6),
   );
 
+  static const donationLinearGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.yellow,
+      ColorsFoundation.orange,
+    ],
+    begin: Alignment.centerRight,
+    end: Alignment.bottomLeft,
+    stops: [
+      0.4,
+      1,
+    ],
+    transform: GradientRotation(pi / 6),
+  );
+
   static const buttonGradientLinear = LinearGradient(
     colors: [
       ColorsFoundation.error,
