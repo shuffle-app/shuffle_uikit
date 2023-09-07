@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class DialogTestingPage extends StatelessWidget {
   const DialogTestingPage({Key? key}) : super(key: key);
@@ -194,10 +195,22 @@ class DonationListView extends StatelessWidget {
               ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
               SpacingFoundation.verticalSpace16,
               UiKitCustomTabBar(
-                tabs: const [
-                  UiKitCustomTab(title: 'DAY'),
-                  UiKitCustomTab(title: 'MONTH'),
-                  UiKitCustomTab(title: 'YEAR'),
+                tabs: [
+                  UiKitCustomTab(
+                    title: 'DAY',
+                    height: 24.h,
+                    isAutoSizeEnabled: true,
+                  ),
+                  UiKitCustomTab(
+                    title: 'MONTH',
+                    height: 24.h,
+                    isAutoSizeEnabled: true,
+                  ),
+                  UiKitCustomTab(
+                    title: 'YEAR',
+                    height: 24.h,
+                    isAutoSizeEnabled: true,
+                  ),
                 ],
                 onTappedTab: (int value) {},
               ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
