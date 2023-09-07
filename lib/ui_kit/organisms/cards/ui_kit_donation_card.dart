@@ -27,10 +27,7 @@ class UiKitDonationCard extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(
-              '#$number',
-              style: boldTextTheme?.subHeadline.copyWith(color: Colors.white),
-            ),
+            Text('#$number', style: boldTextTheme?.subHeadline),
             SpacingFoundation.horizontalSpace12,
             ClipRRect(
               borderRadius: BorderRadiusFoundation.max,
@@ -46,12 +43,7 @@ class UiKitDonationCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      title,
-                      style: boldTextTheme?.caption1Bold.copyWith(
-                        color: Colors.white,
-                      ),
-                    ),
+                    Text(title, style: boldTextTheme?.caption1Bold),
                     SpacingFoundation.horizontalSpace4,
                     if (isStarEnabled != null && isStarEnabled!)
                       ImageWidget(
@@ -74,10 +66,7 @@ class UiKitDonationCard extends StatelessWidget {
                       ),
                     ),
                     SpacingFoundation.horizontalSpace12,
-                    Text(
-                      '$sum \$',
-                      style: boldTextTheme?.body.copyWith(color: Colors.white),
-                    ),
+                    Text('$sum \$', style: boldTextTheme?.body),
                   ],
                 ),
               ],
