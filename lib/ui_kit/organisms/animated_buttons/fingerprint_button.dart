@@ -66,6 +66,12 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
 
     _controller.addStatusListener((status) => _setAnimationListener(status));
     _controller.addStatusListener((_) => _setVibrationListener());
+
+    if (_isCompleted) {
+      Future.delayed(Duration.zero, () {
+        _flipController.toggleCard();
+      });
+    }
   }
 
   void _setVibrationListener() {
@@ -148,13 +154,13 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
   List<BoxShadow>? _getShadow(bool isPressed) {
     return isPressed
         ? [
-            BoxShadow(
-              color: ColorsFoundation.shadowPink.withOpacity(0.9),
-              blurRadius: 20,
-              spreadRadius: -10,
-              offset: Offset.zero,
-            )
-          ]
+      BoxShadow(
+        color: ColorsFoundation.shadowPink.withOpacity(0.9),
+        blurRadius: 20,
+        spreadRadius: -10,
+        offset: Offset.zero,
+      )
+    ]
         : [];
   }
 
@@ -164,6 +170,10 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
     _finishPosition = Offset(widget.parentWidth - (widget.width ?? 105.w), 0);
     if (widget.isCompleted != oldWidget.isCompleted && widget.isCompleted != null) {
       _isCompleted = widget.isCompleted!;
+      if (_isCompleted) {
+        _flipController.toggleCard();
+        _currentPosition.value = _finishPosition;
+      }
     }
   }
 
@@ -183,72 +193,75 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
 
     return ValueListenableBuilder(
       valueListenable: _currentPosition,
-      builder: (_, currentPosition, __) => AnimatedPositioned(
-        curve: _isCompleted ? Curves.easeIn : Curves.bounceOut,
-        duration: _animationDuration,
-        left: _updatePosition(currentPosition.dx),
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            minHeight: widget.height ?? height,
-            maxHeight: widget.height ?? height,
-            maxWidth: widget.width ?? 105.w,
-          ),
-          child: FlipCard(
-            controller: _flipController,
-            fill: Fill.fillBack,
-            flipOnTouch: false,
-            direction: FlipDirection.HORIZONTAL,
-            side: CardSide.FRONT,
-            front: GestureDetector(
-              onTapDown: (_) => _startAnimation(),
-              onTapUp: (_) => _reverseAnimation(),
-              onPanUpdate: (details) => _setPosition(details),
-              onPanEnd: (_) => _resetPosition(),
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  boxShadow: _getShadow(_isPressed),
-                ),
-                child: UiKitCardWrapper(
-                  width: widget.width ?? 105.w,
-                  height: widget.height ?? height,
-                  color: ColorsFoundation.surface3,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GradientableWidget(
-                        gradient: GradientFoundation.touchIdLinearGradient,
-                        child: widget.title,
-                      ),
-                      SpacingFoundation.verticalSpace12,
-                      ClipRRect(
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(50),
-                        ),
-                        child: SizedBox(
-                          height: 48.w,
-                          width: 48.w,
-                          child: FittedBox(
-                            fit: BoxFit.cover,
-                            child: LottieBuilder.asset(
-                              package: 'shuffle_uikit',
-                              controller: _controller,
-                              fit: BoxFit.cover,
-                              widget.animationPath != null
-                                  ? widget.animationPath!
-                                  : GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
+      builder: (_, currentPosition, __) =>
+          AnimatedPositioned(
+            curve: _isCompleted ? Curves.easeIn : Curves.bounceOut,
+            duration: _animationDuration,
+            left: (widget.isCompleted ?? false) ? null : _updatePosition(currentPosition.dx),
+            right: (widget.isCompleted ?? false) ? 0 : null,
+            // left: _isCompleted ? _finishPosition.dx : _updatePosition(currentPosition.dx),
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: widget.height ?? height,
+                maxHeight: widget.height ?? height,
+                maxWidth: widget.width ?? 105.w,
+              ),
+              child: FlipCard(
+                controller: _flipController,
+                fill: Fill.fillBack,
+                flipOnTouch: false,
+                direction: FlipDirection.HORIZONTAL,
+                side: CardSide.FRONT,
+                front: GestureDetector(
+                  onTapDown: (_) => _startAnimation(),
+                  onTapUp: (_) => _reverseAnimation(),
+                  onPanUpdate: (details) => _setPosition(details),
+                  onPanEnd: (_) => _resetPosition(),
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      boxShadow: _getShadow(_isPressed),
+                    ),
+                    child: UiKitCardWrapper(
+                      width: widget.width ?? 105.w,
+                      height: widget.height ?? height,
+                      color: ColorsFoundation.surface3,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GradientableWidget(
+                            gradient: GradientFoundation.touchIdLinearGradient,
+                            child: widget.title,
+                          ),
+                          SpacingFoundation.verticalSpace12,
+                          ClipRRect(
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(50),
+                            ),
+                            child: SizedBox(
+                              height: 48.w,
+                              width: 48.w,
+                              child: FittedBox(
+                                fit: BoxFit.cover,
+                                child: LottieBuilder.asset(
+                                  package: 'shuffle_uikit',
+                                  controller: _controller,
+                                  fit: BoxFit.cover,
+                                  widget.animationPath != null
+                                      ? widget.animationPath!
+                                      : GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                ).paddingAll(EdgeInsetsFoundation.all4),
+                back: widget.onCompletedWidget.paddingAll(EdgeInsetsFoundation.all4),
               ),
-            ).paddingAll(EdgeInsetsFoundation.all4),
-            back: widget.onCompletedWidget.paddingAll(EdgeInsetsFoundation.all4),
+            ),
           ),
-        ),
-      ),
     );
   }
 }

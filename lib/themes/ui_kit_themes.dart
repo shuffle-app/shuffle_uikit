@@ -43,8 +43,45 @@ class UiKitThemes {
       overlayColor:
           MaterialStateProperty.resolveWith((states) => Colors.transparent),
     )),
-    dropdownMenuTheme: const DropdownMenuThemeData(
+    dropdownMenuTheme:  DropdownMenuThemeData(
       textStyle: _pickerTextStyle,
+      menuStyle: MenuStyle(
+        backgroundColor: MaterialStateProperty.resolveWith((states) =>UiKitColors.surface4),
+        // elevation: 0,
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: ColorsFoundation.solidSurface,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadiusFoundation.max,
+          borderSide: BorderSide.none,
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadiusFoundation.max,
+          borderSide: const BorderSide(
+            color: Colors.white,
+            width: 2,
+          ),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadiusFoundation.max,
+          borderSide: BorderSide.none,
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadiusFoundation.max,
+          borderSide: const BorderSide(
+            color: ColorsFoundation.error,
+            width: 2,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadiusFoundation.max,
+          borderSide: const BorderSide(
+            color: ColorsFoundation.error,
+            width: 2,
+          ),
+        ),
+      )
     ),
     iconButtonTheme: IconButtonThemeData(
         style:ButtonStyle(

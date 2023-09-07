@@ -37,7 +37,7 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
         borderRadius: BorderRadiusFoundation.max,
         child: Ink(
           padding: EdgeInsets.symmetric(
-            vertical: EdgeInsetsFoundation.vertical6,
+            vertical: EdgeInsetsFoundation.vertical4,
             horizontal: EdgeInsetsFoundation.horizontal16,
           ),
           decoration: BoxDecoration(
