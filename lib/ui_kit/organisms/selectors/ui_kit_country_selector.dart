@@ -9,7 +9,7 @@ class UiKitCountrySelector extends StatelessWidget {
 
   final UniqueKey contrySelectorKey = UniqueKey();
 
-   UiKitCountrySelector({
+  UiKitCountrySelector({
     super.key,
     required this.title,
     this.onSelected,
@@ -22,7 +22,7 @@ class UiKitCountrySelector extends StatelessWidget {
 
     return Material(
       clipBehavior: Clip.hardEdge,
-      color: ColorsFoundation.surface3,
+      color: context.uiKitTheme?.colorScheme.surface3,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
         side: BorderSide(
@@ -36,16 +36,16 @@ class UiKitCountrySelector extends StatelessWidget {
           GeneralDialogData(
             useRootNavigator: false,
             child: SafeArea(
-                top:false,
+                top: false,
                 child: UiKitSearchableListBody<CountryModel>(
-              key: contrySelectorKey,
-              title: title,
-              items: CountriesFoundation.instance.countries,
-              onItemSelected: (item) {
-                onSelected?.call(item);
-                Navigator.pop(context);
-              },
-            )),
+                  key: contrySelectorKey,
+                  title: title,
+                  items: CountriesFoundation.instance.countries,
+                  onItemSelected: (item) {
+                    onSelected?.call(item);
+                    Navigator.pop(context);
+                  },
+                )),
           ),
         ),
         child: Ink(
@@ -80,9 +80,8 @@ class UiKitCountrySelector extends StatelessWidget {
               ],
               SpacingFoundation.horizontalSpace4,
               ImageWidget(
-                svgAsset: GraphicsFoundation.instance.svg.chevronRight,
-                color: Colors.white,
-              ),
+                  svgAsset: GraphicsFoundation.instance.svg.chevronRight,
+                  color: context.uiKitTheme?.colorScheme.inversePrimary),
             ],
           ).paddingSymmetric(
             horizontal: EdgeInsetsFoundation.horizontal16,

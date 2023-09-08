@@ -36,7 +36,7 @@ class UiKitGradientSwitch extends StatelessWidget {
                 width: 0.035.sh / 0.6,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadiusFoundation.max,
-                  color: switchedOn ? null : ColorsFoundation.surface5,
+                  color: switchedOn ? null : context.uiKitTheme?.colorScheme.surface5,
                   gradient: switchedOn ? GradientFoundation.defaultRadialGradient : null,
                 ),
               ),
@@ -55,7 +55,7 @@ class UiKitGradientSwitch extends StatelessWidget {
                 duration: _duration,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: switchedOn ? Colors.black : ColorsFoundation.darkNeutral500,
+                  color: switchedOn ? context.uiKitTheme?.colorScheme.primary : ColorsFoundation.darkNeutral500,
                 ),
               ),
             ),

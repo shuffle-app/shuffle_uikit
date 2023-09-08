@@ -14,7 +14,7 @@ class UiKitStatsActionCard extends StatelessWidget {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
     return UiKitCardWrapper(
-      color: ColorsFoundation.surface3,
+      color: context.uiKitTheme?.colorScheme.surface3,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

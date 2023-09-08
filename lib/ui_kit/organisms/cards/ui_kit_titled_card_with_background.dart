@@ -49,14 +49,16 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
               // ClipRRect(
               //   borderRadius: BorderRadiusFoundation.all24,
               //   child:
-                ImageWidget(
-                  link: backgroundImageLink,
-                  fit: BoxFit.cover,
+              ImageWidget(
+                link: backgroundImageLink,
+                fit: BoxFit.cover,
                 // ),
               ),
               Text(
                 title,
-                style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(color: Colors.black),
+                style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
+                  color: context.uiKitTheme?.colorScheme.primary,
+                ),
                 textAlign: TextAlign.center,
               ).paddingOnly(
                 top: EdgeInsetsFoundation.vertical8,

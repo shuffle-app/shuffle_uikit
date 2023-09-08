@@ -27,7 +27,7 @@ class SliderPlaceCard extends StatelessWidget {
             SpacingFoundation.verticalSpace12,
             Text(
               '${slidablePlaceCardData.title}',
-              style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
+              style: theme?.boldTextTheme.caption1Bold,
             ),
             SpacingFoundation.verticalSpace4,
             SingleChildScrollView(

@@ -54,7 +54,7 @@ class UiKitSwitchWithCustomBackground extends StatelessWidget {
         child: UiKitCardWrapper(
           borderRadius: BorderRadiusFoundation.all32,
           height: height,
-          color: ColorsFoundation.surface2,
+          color: context.uiKitTheme?.colorScheme.surface2,
           width: width,
           child: Stack(
             fit: StackFit.expand,
@@ -70,7 +70,9 @@ class UiKitSwitchWithCustomBackground extends StatelessWidget {
                       scale: animation,
                       child: child,
                     ),
-                    child: firstOptionSelected ? UiKitCustomBackgroundSwitchOptionWidget(option: firstOption) : const Spacer(),
+                    child: firstOptionSelected
+                        ? UiKitCustomBackgroundSwitchOptionWidget(option: firstOption)
+                        : const Spacer(),
                   ),
                   const Spacer(),
                   AnimatedSwitcher(
@@ -79,7 +81,9 @@ class UiKitSwitchWithCustomBackground extends StatelessWidget {
                       scale: animation,
                       child: child,
                     ),
-                    child: firstOptionSelected ? const Spacer() : UiKitCustomBackgroundSwitchOptionWidget(option: secondOption),
+                    child: firstOptionSelected
+                        ? const Spacer()
+                        : UiKitCustomBackgroundSwitchOptionWidget(option: secondOption),
                   ),
                   SpacingFoundation.horizontalSpace24,
                 ],
