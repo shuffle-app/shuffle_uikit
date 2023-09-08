@@ -59,6 +59,7 @@ class UiKitSwitchWithCustomBackground extends StatelessWidget {
           child: Stack(
             fit: StackFit.expand,
             children: [
+
               Row(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -66,20 +67,25 @@ class UiKitSwitchWithCustomBackground extends StatelessWidget {
                   SpacingFoundation.horizontalSpace24,
                   AnimatedSwitcher(
                     duration: const Duration(milliseconds: 250),
-                    transitionBuilder: (child, animation) => ScaleTransition(
-                      scale: animation,
-                      child: child,
-                    ),
-                    child: firstOptionSelected ? UiKitCustomBackgroundSwitchOptionWidget(option: firstOption) : const Spacer(),
+                    transitionBuilder: (child, animation) =>
+                        ScaleTransition(
+                          scale: animation,
+                          child: child,
+                        ),
+                    child: firstOptionSelected
+                        ? UiKitCustomBackgroundSwitchOptionWidget(option: firstOption)
+                        : const SizedBox.shrink(),
                   ),
                   const Spacer(),
                   AnimatedSwitcher(
                     duration: const Duration(milliseconds: 250),
-                    transitionBuilder: (child, animation) => ScaleTransition(
-                      scale: animation,
-                      child: child,
-                    ),
-                    child: firstOptionSelected ? const Spacer() : UiKitCustomBackgroundSwitchOptionWidget(option: secondOption),
+                    transitionBuilder: (child, animation) =>
+                        ScaleTransition(
+                          scale: animation,
+                          child: child,
+                        ),
+                    child: firstOptionSelected ? const SizedBox.shrink() : UiKitCustomBackgroundSwitchOptionWidget(
+                        option: secondOption),
                   ),
                   SpacingFoundation.horizontalSpace24,
                 ],
@@ -121,7 +127,8 @@ class CustomBackgroundSwitchOption {
     required this.imageLink,
   });
 
-  factory CustomBackgroundSwitchOption.empty() => const CustomBackgroundSwitchOption(
+  factory CustomBackgroundSwitchOption.empty() =>
+      const CustomBackgroundSwitchOption(
         title: '',
         imageLink: '',
       );
