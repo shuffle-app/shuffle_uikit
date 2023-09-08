@@ -17,6 +17,8 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.uiKitTheme?.colorScheme;
+
     return Material(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
@@ -25,7 +27,7 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
           color: isSelected ? Colors.transparent : Colors.white,
         ),
       ),
-      color: isSelected ? Colors.white : Colors.black,
+      color: isSelected ? colorScheme?.primary : colorScheme?.inversePrimary,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
         onTap: onPressed,

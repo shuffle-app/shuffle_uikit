@@ -111,6 +111,7 @@ class UiKitAccentCard extends StatelessWidget {
                       title,
                       style: titleStyle?.copyWith(
                         overflow: TextOverflow.ellipsis,
+                        color: Colors.white,
                       ),
                       maxLines: 2,
                     ),
