@@ -118,7 +118,7 @@ class GradientBottomNavigationBarItem extends TabType {
 
 class GradientBottomNavigationBarController {
   /// Состояние таббара
-  final GlobalKey<TabNavigatorState> tabState = GlobalKey<TabNavigatorState>();
+  final GlobalKey<TabNavigatorState> tabState;
 
   final int tabItemsCount;
   final BehaviorSubject<GradientBottomNavigationBarItem> _changeController = BehaviorSubject<GradientBottomNavigationBarItem>();
@@ -131,7 +131,8 @@ class GradientBottomNavigationBarController {
 
   GradientBottomNavigationBarItem? get selectedTabState => _changeController.valueOrNull;
 
-  GradientBottomNavigationBarController({required this.tabItemsCount});
+  GradientBottomNavigationBarController({required this.tabItemsCount, GlobalKey<TabNavigatorState>? tabState})
+      : tabState = tabState ?? GlobalKey<TabNavigatorState>();
 
   void hideBottomNavigationBar() => _visibilityController.add(GradientBottomNavigationBarVisibility.hidden);
 

@@ -8,10 +8,12 @@ class GradientBottomNavigationBarPage extends StatefulWidget {
   /// [TabType] is the tab data type and [TabBuilder] is the builder function for the page
   final Map<GradientBottomNavigationBarItem, TabBuilder> tabs;
   final RouteFactory? onGenerateRoute;
+  final GradientBottomNavigationBarController controller;
 
   const GradientBottomNavigationBarPage({
     Key? key,
     required this.tabs,
+    required this.controller,
     this.onGenerateRoute,
   }) : super(key: key);
 

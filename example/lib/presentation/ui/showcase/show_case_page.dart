@@ -10,6 +10,7 @@ class ShowCasePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GradientBottomNavigationBarPage(
+      controller: GradientBottomNavigationBarController(tabItemsCount: 5),
       tabs: {
         GradientBottomNavigationBarItem.home: () => const AllWidgetsStand(),
         GradientBottomNavigationBarItem.spinner: () => SpinnerPage(),
