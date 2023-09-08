@@ -38,10 +38,8 @@ class UiKitThemes {
           package: 'shuffle_uikit',
         );
       }),
-      foregroundColor:
-          MaterialStateProperty.resolveWith((states) => Colors.white),
-      overlayColor:
-          MaterialStateProperty.resolveWith((states) => Colors.transparent),
+      foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+      overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
     )),
     dropdownMenuTheme:  DropdownMenuThemeData(
       textStyle: _pickerTextStyle,
@@ -84,53 +82,43 @@ class UiKitThemes {
       )
     ),
     iconButtonTheme: IconButtonThemeData(
-        style:ButtonStyle(
-          textStyle: MaterialStateTextStyle.resolveWith((states) {
-            return const TextStyle(
-              fontFamily: 'Unbounded',
-              fontSize: 13,
-              fontWeight: FontWeight.w500,
-              color: Color(0xffffffff),
-              package: 'shuffle_uikit',
-            );
-          }),
-          foregroundColor:
-          MaterialStateProperty.resolveWith((states) => Colors.white),
-          overlayColor:
-          MaterialStateProperty.resolveWith((states) => Colors.transparent),
-        )
-    ),
+        style: ButtonStyle(
+      textStyle: MaterialStateTextStyle.resolveWith((states) {
+        return const TextStyle(
+          fontFamily: 'Unbounded',
+          fontSize: 13,
+          fontWeight: FontWeight.w500,
+          color: Color(0xffffffff),
+          package: 'shuffle_uikit',
+        );
+      }),
+      foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+      overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
+    )),
     disabledColor: ColorsFoundation.darkNeutral300,
     timePickerTheme: TimePickerThemeData(
         helpTextStyle: _pickerTextStyle.copyWith(fontSize: 16),
         backgroundColor: UiKitColors.surface4,
-        hourMinuteShape:
-            RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all8),
+        hourMinuteShape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all8),
         hourMinuteColor: ColorsFoundation.info,
         dialHandColor: ColorsFoundation.info,
         hourMinuteTextColor: Colors.white,
         entryModeIconColor: Colors.white,
         dialTextColor: Colors.white,
         dayPeriodTextColor: Colors.white,
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all28),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all28),
         dialBackgroundColor: ColorsFoundation.darkNeutral500.withOpacity(0.24)),
     datePickerTheme: DatePickerThemeData(
-      rangeSelectionBackgroundColor:
-          ColorsFoundation.darkNeutral500.withOpacity(0.24),
-      dayForegroundColor:
-          MaterialStateProperty.resolveWith((states) => Colors.white),
-      yearForegroundColor:
-          MaterialStateProperty.resolveWith((states) => Colors.white),
+      rangeSelectionBackgroundColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
+      dayForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+      yearForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
       surfaceTintColor: ColorsFoundation.info,
       rangePickerHeaderHelpStyle: _pickerTextStyle,
       yearStyle: _pickerTextStyle,
       headerHelpStyle: _pickerTextStyle,
       rangePickerHeaderHeadlineStyle: _pickerTextStyle,
-      rangePickerShape:
-          const CircleBorder(side: BorderSide(color: Colors.white, width: 1)),
-      weekdayStyle:
-          _pickerTextStyle.copyWith(color: ColorsFoundation.darkNeutral900),
+      rangePickerShape: const CircleBorder(side: BorderSide(color: Colors.white, width: 1)),
+      weekdayStyle: _pickerTextStyle.copyWith(color: ColorsFoundation.darkNeutral900),
       headerHeadlineStyle: _pickerTextStyle,
       dayStyle: _pickerTextStyle.copyWith(fontSize: 16),
       backgroundColor: UiKitColors.surface4,
@@ -138,10 +126,11 @@ class UiKitThemes {
       // dialBackgroundColor: ColorsFoundation.darkNeutral500
     ),
 
-    colorScheme:  ColorScheme.fromSeed(seedColor: UiKitColors.info,onSurface: Colors.white),
+    colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.info, onSurface: Colors.white),
     // colorScheme:  const ColorScheme.light().copyWith(onSurface: Colors.white),
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
+        cardColor: ColorsFoundation.surface1,
         customColor: Colors.red,
         chipTheme: UiKitChipThemeData(
           border: Border.all(color: Colors.white, width: 2),
@@ -155,37 +144,28 @@ class UiKitThemes {
             (states) => const Size.fromHeight(48),
           ),
           backgroundColor: MaterialStateProperty.resolveWith((states) {
-            return states.contains(MaterialState.disabled)
-                ? ColorsFoundation.darkNeutral300
-                : Colors.white;
+            return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
           }),
           shape: MaterialStateProperty.resolveWith(
-            (states) => RoundedRectangleBorder(
-                borderRadius: BorderRadiusFoundation.all24),
+            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
           ),
           overlayColor: MaterialStateProperty.resolveWith((states) {
             return ColorsFoundation.darkNeutral900;
           }),
-          foregroundColor:
-              MaterialStateProperty.resolveWith((states) => Colors.black),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         ),
         smallOrdinaryButtonStyle: ButtonStyle(
-          fixedSize: MaterialStateProperty.resolveWith(
-              (states) => const Size.fromHeight(28)),
+          fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(28)),
           backgroundColor: MaterialStateProperty.resolveWith((states) {
-            return states.contains(MaterialState.disabled)
-                ? ColorsFoundation.darkNeutral300
-                : Colors.white;
+            return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
           }),
           overlayColor: MaterialStateProperty.resolveWith((states) {
             return ColorsFoundation.darkNeutral900;
           }),
           shape: MaterialStateProperty.resolveWith(
-            (states) => RoundedRectangleBorder(
-                borderRadius: BorderRadiusFoundation.all24),
+            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
           ),
-          foregroundColor:
-              MaterialStateProperty.resolveWith((states) => Colors.black),
+          foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         ),
         iconInputTheme: InputDecorationTheme(
           filled: true,
@@ -254,21 +234,13 @@ class UiKitThemes {
           ),
         ),
         noFillInputTheme: const InputDecorationTheme(
-          border: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.white, width: 0.5)),
-          enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.white, width: 0.5)),
-          errorBorder: UnderlineInputBorder(
-              borderSide:
-                  BorderSide(color: ColorsFoundation.error, width: 0.5)),
-          focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: Colors.white, width: 0.5)),
-          focusedErrorBorder: UnderlineInputBorder(
-              borderSide:
-                  BorderSide(color: ColorsFoundation.error, width: 0.5)),
-          disabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(
-                  color: ColorsFoundation.darkNeutral900, width: 0.5)),
+          border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
+          focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          disabledBorder:
+              UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
         ),
         customAppBapTheme: AppBarTheme(
           iconTheme: const IconThemeData(
@@ -291,7 +263,6 @@ class UiKitThemes {
             color: Colors.white,
           ),
         ),
-        cardColor: ColorsFoundation.solidSurface,
         buttonTheme: ButtonThemeData(
           buttonColor: Colors.white,
           textTheme: ButtonTextTheme.primary,
@@ -342,19 +313,14 @@ class UiKitThemes {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
-        fixedSize: MaterialStateProperty.resolveWith(
-            (states) => const Size.fromHeight(48)),
+        fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(48)),
         backgroundColor: MaterialStateProperty.resolveWith((states) {
-          return states.contains(MaterialState.disabled)
-              ? ColorsFoundation.darkNeutral300
-              : Colors.white;
+          return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
         }),
         shape: MaterialStateProperty.resolveWith(
-          (states) => RoundedRectangleBorder(
-              borderRadius: BorderRadiusFoundation.all24),
+          (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
         ),
-        foregroundColor:
-            MaterialStateProperty.resolveWith((states) => Colors.black),
+        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
         overlayColor: MaterialStateProperty.resolveWith((states) {
           if (states.contains(MaterialState.hovered)) {
             return Colors.white;
