@@ -91,7 +91,7 @@ class GradientFoundation {
 
   static const touchIdgradientBorder = GradientBoxBorder(
     gradient: touchIdLinearGradient,
-    width: 2,
+    width: 1,
   );
 
   // radial-gradient(112.31% 397% at 55.96% -99%, #E32900 0%, #C6E216 60.17%, #D808FA 100%)

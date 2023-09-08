@@ -200,6 +200,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
             direction: FlipDirection.HORIZONTAL,
             side: CardSide.FRONT,
             front: GestureDetector(
+              behavior: HitTestBehavior.deferToChild,
               onTapDown: (_) => _startAnimation(),
               onTapUp: (_) => _reverseAnimation(),
               onPanUpdate: (details) => _setPosition(details),

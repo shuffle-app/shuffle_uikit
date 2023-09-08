@@ -109,13 +109,15 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
             child: AnimatedOpacity(
               opacity: isCompleted ? 1.0 : 0.0,
               duration: const Duration(milliseconds: 300),
-              child: GradientableWidget(
-                gradient: GradientFoundation.touchIdLinearGradient,
-                child: Text(
-                  'Tap it',
-                  style: context.uiKitTheme?.boldTextTheme.subHeadline,
-                ),
-              ),
+              child: isCompleted
+                  ? GradientableWidget(
+                      gradient: GradientFoundation.touchIdLinearGradient,
+                      child: Text(
+                        'Tap it',
+                        style: context.uiKitTheme?.boldTextTheme.subHeadline,
+                      ),
+                    )
+                  : const SizedBox.shrink(),
             ),
           ),
         ),
