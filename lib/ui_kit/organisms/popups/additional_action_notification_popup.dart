@@ -5,6 +5,7 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
   final Widget? primaryActionWidget;
   final Widget? secondaryActionWidget;
   final Widget? dismissActionWidget;
+
   const AdditionalActionNotificationPopUp({
     Key? key,
     required NotificationPopupRequiredData requiredData,
@@ -41,6 +42,7 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
               ),
             ],
           ),
+          SpacingFoundation.verticalSpace4,
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -53,8 +55,7 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
               ),
             ],
           ),
-          // SpacingFoundation.verticalSpace8,
-          dismissActionWidget ?? const SizedBox(),
+          if (dismissActionWidget != null) ...[SpacingFoundation.verticalSpace4, dismissActionWidget!]
         ],
       ),
     );

@@ -55,8 +55,8 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
                   ),
                 ],
               ).paddingSymmetric(
-                vertical: SpacingFoundation.horizontalSpacing4,
-                horizontal: SpacingFoundation.horizontalSpacing8,
+                vertical: SpacingFoundation.horizontalSpacing2,
+                horizontal: SpacingFoundation.horizontalSpacing6,
               ),
             ),
           ),
