@@ -8,16 +8,16 @@ class UiKitCardSwiper extends StatelessWidget {
   final CardSwiperOnSwipe onSwipe;
   final VoidCallback? onEnd;
   final CardSwiperController controller;
-  final Widget? customLikeAnimation;
-  final Widget? customDislikeAnimation;
+  final AnimationController dislikeController;
+  final AnimationController likeController;
 
   UiKitCardSwiper({
     Key? key,
     required this.cards,
     required this.onSwipe,
+    required this.dislikeController,
+    required this.likeController,
     this.onEnd,
-    this.customDislikeAnimation,
-    this.customLikeAnimation,
     CardSwiperController? controller,
   })  : controller = controller ?? CardSwiperController(),
         super(key: key);
@@ -40,14 +40,32 @@ class UiKitCardSwiper extends StatelessWidget {
           scale: 0.5,
           cardBuilder: (context, index) => cards[index],
         ),
-        if (customLikeAnimation != null)
-          Center(
-            child: customLikeAnimation,
+        Center(
+          child: AnimatedBuilder(
+            builder: (context, child) => UiKitHideWrapper(
+              shouldHide: false,
+              child: child ?? const SizedBox(),
+            ),
+            animation: dislikeController,
+            child: LottieAnimation(
+              controller: dislikeController,
+              lottiePath: GraphicsFoundation.instance.animations.lottie.brokenHeart.path,
+            ),
           ),
-        if (customDislikeAnimation != null)
-          Center(
-            child: customDislikeAnimation,
+        ),
+        Center(
+          child: AnimatedBuilder(
+            builder: (context, child) => UiKitHideWrapper(
+              shouldHide: false,
+              child: child ?? const SizedBox(),
+            ),
+            animation: likeController,
+            child: LottieAnimation(
+              lottiePath: GraphicsFoundation.instance.animations.lottie.wholeHeart.path,
+              controller: likeController,
+            ),
           ),
+        )
       ],
     );
   }

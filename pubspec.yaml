@@ -60,6 +60,7 @@ dependencies:
 
   #maps
   google_maps_flutter: ^2.4.0
+  vibration: ^1.8.1
 
 dev_dependencies:
   flutter_test:

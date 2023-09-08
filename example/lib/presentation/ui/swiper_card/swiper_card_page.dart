@@ -81,28 +81,8 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
                     ],
                   ),
                 ),
-                customLikeAnimation: AnimatedBuilder(
-                  builder: (context, child) => HideWrapper(
-                    shouldHide: false,
-                    child: child ?? const SizedBox(),
-                  ),
-                  animation: dislikeController,
-                  child: LottieAnimation(
-                    controller: dislikeController,
-                    lottiePath: GraphicsFoundation.instance.animations.lottie.brokenHeart.path,
-                  ),
-                ),
-                customDislikeAnimation: AnimatedBuilder(
-                  builder: (context, child) => HideWrapper(
-                    shouldHide: false,
-                    child: child ?? const SizedBox(),
-                  ),
-                  animation: likeController,
-                  child: LottieAnimation(
-                    lottiePath: GraphicsFoundation.instance.animations.lottie.wholeHeart.path,
-                    controller: likeController,
-                  ),
-                ),
+                likeController: likeController,
+                dislikeController: dislikeController,
               ),
             ),
             SpacingFoundation.verticalSpace16,
@@ -153,22 +133,5 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
         ).paddingAll(EdgeInsetsFoundation.all24),
       ),
     );
-  }
-}
-
-class HideWrapper extends StatelessWidget {
-  final bool shouldHide;
-  final Widget child;
-
-  const HideWrapper({
-    Key? key,
-    required this.shouldHide,
-    required this.child,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    if (shouldHide) return const SizedBox();
-    return child;
   }
 }
