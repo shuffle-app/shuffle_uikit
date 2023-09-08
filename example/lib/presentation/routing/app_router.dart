@@ -1,5 +1,6 @@
 import 'package:example/presentation/routing/app_routes.dart';
 import 'package:example/presentation/ui/animations/animations_page.dart';
+import 'package:example/presentation/ui/examples/user_content_type_switch_animation.dart';
 import 'package:example/presentation/ui/location_picker/location_picker_page.dart';
 import 'package:example/presentation/ui/main_page/main_page.dart';
 import 'package:example/presentation/ui/onboarding/onboarding_page.dart';
@@ -40,10 +41,19 @@ class AppRouter {
           settings: settings,
           builder: (_) => SpinnerPage(),
         );
+      case AppRoutes.animexample:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => const ExamplesPage(),
+        );
       case AppRoutes.onBoardingPage:
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => OnBoardingPage(
+            onFinished: () => Navigator.pushNamed(
+              _,
+              AppRoutes.animexample,
+            ),
             logoLink: GraphicsFoundation.instance.svg.shuffleWhite.path,
             transitionDuration: const Duration(milliseconds: 500),
             items: [

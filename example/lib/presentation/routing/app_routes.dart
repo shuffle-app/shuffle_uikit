@@ -10,4 +10,5 @@ class AppRoutes {
   static const String locationPicker = '/locationPicker';
   static const String welcomePage = '/welcomePage';
   static const String animationsPage = '/animationsPage';
+  static const String animexample = '/animexample';
 }
