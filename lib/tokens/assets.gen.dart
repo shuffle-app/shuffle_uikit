@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
+import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
@@ -57,9 +57,11 @@ class $AssetsImagesGen {
 class $AssetsAnimationsLottieGen {
   const $AssetsAnimationsLottieGen();
 
-  /// File path: assets/animations/lottie/animation_broken_heart.json
-  LottieGenImage get animationBrokenHeart =>
-      const LottieGenImage('assets/animations/lottie/animation_broken_heart.json');
+  /// File path: assets/animations/lottie/Broken heart.json
+  LottieGenImage get brokenHeart => const LottieGenImage('assets/animations/lottie/Broken heart.json');
+
+  /// File path: assets/animations/lottie/Whole heart.json
+  LottieGenImage get wholeHeart => const LottieGenImage('assets/animations/lottie/Whole heart.json');
 
   /// File path: assets/animations/lottie/animation_touch_id.json
   LottieGenImage get animationTouchId => const LottieGenImage('assets/animations/lottie/animation_touch_id.json');
@@ -68,7 +70,7 @@ class $AssetsAnimationsLottieGen {
   LottieGenImage get shuffleLoader1 => const LottieGenImage('assets/animations/lottie/shuffle-loader-1.json');
 
   /// List of all assets
-  List<LottieGenImage> get values => [animationBrokenHeart, animationTouchId, shuffleLoader1];
+  List<LottieGenImage> get values => [brokenHeart, wholeHeart, animationTouchId, shuffleLoader1];
 }
 
 class $AssetsImagesPngGen {
@@ -383,6 +385,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/love-emoji.png
   AssetGenImage get loveEmoji => const AssetGenImage('assets/images/png/love-emoji.png');
 
+  /// File path: assets/images/png/map_mock.png
+  AssetGenImage get mapMock => const AssetGenImage('assets/images/png/map_mock.png');
+
   /// File path: assets/images/png/mock_ad_banner.png
   AssetGenImage get mockAdBanner => const AssetGenImage('assets/images/png/mock_ad_banner.png');
 
@@ -431,6 +436,27 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/sadness-emoji.png
   AssetGenImage get sadnessEmoji => const AssetGenImage('assets/images/png/sadness-emoji.png');
 
+  /// File path: assets/images/png/search_business_clubs.png
+  AssetGenImage get searchBusinessClubs => const AssetGenImage('assets/images/png/search_business_clubs.png');
+
+  /// File path: assets/images/png/search_business_conferences.png
+  AssetGenImage get searchBusinessConferences => const AssetGenImage('assets/images/png/search_business_conferences.png');
+
+  /// File path: assets/images/png/search_business_exhibition.png
+  AssetGenImage get searchBusinessExhibition => const AssetGenImage('assets/images/png/search_business_exhibition.png');
+
+  /// File path: assets/images/png/search_business_games.png
+  AssetGenImage get searchBusinessGames => const AssetGenImage('assets/images/png/search_business_games.png');
+
+  /// File path: assets/images/png/search_business_networking.png
+  AssetGenImage get searchBusinessNetworking => const AssetGenImage('assets/images/png/search_business_networking.png');
+
+  /// File path: assets/images/png/search_business_speech.png
+  AssetGenImage get searchBusinessSpeech => const AssetGenImage('assets/images/png/search_business_speech.png');
+
+  /// File path: assets/images/png/search_business_training.png
+  AssetGenImage get searchBusinessTraining => const AssetGenImage('assets/images/png/search_business_training.png');
+
   /// File path: assets/images/png/search_category_adventure.png
   AssetGenImage get searchCategoryAdventure => const AssetGenImage('assets/images/png/search_category_adventure.png');
 
@@ -460,6 +486,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/spinner_event.png
   AssetGenImage get spinnerEvent => const AssetGenImage('assets/images/png/spinner_event.png');
+
+  /// File path: assets/images/png/star_2.png
+  AssetGenImage get star2 => const AssetGenImage('assets/images/png/star_2.png');
 
   /// File path: assets/images/png/surprise-emoji.png
   AssetGenImage get surpriseEmoji => const AssetGenImage('assets/images/png/surprise-emoji.png');
@@ -587,6 +616,7 @@ class $AssetsImagesPngGen {
         joyEmoji,
         judaism,
         loveEmoji,
+        mapMock,
         mockAdBanner,
         mockAvatar,
         mockSwiperCard,
@@ -603,6 +633,13 @@ class $AssetsImagesPngGen {
         profilePost1,
         profileStory1,
         sadnessEmoji,
+        searchBusinessClubs,
+        searchBusinessConferences,
+        searchBusinessExhibition,
+        searchBusinessGames,
+        searchBusinessNetworking,
+        searchBusinessSpeech,
+        searchBusinessTraining,
         searchCategoryAdventure,
         searchCategoryChill,
         searchCategoryExtreme,
@@ -613,6 +650,7 @@ class $AssetsImagesPngGen {
         searchCategorySport,
         searchCategoryZadrot,
         spinnerEvent,
+        star2,
         surpriseEmoji,
         titledCardBackground1,
         titledCardBackground2,
@@ -687,8 +725,7 @@ class $AssetsImagesSvgGen {
   SvgGenImage get givingLikeEmoji => const SvgGenImage('assets/images/svg/Giving-like-emoji.svg');
 
   /// File path: assets/images/svg/Grinning-face-with-sweat-emoji.svg
-  SvgGenImage get grinningFaceWithSweatEmoji =>
-      const SvgGenImage('assets/images/svg/Grinning-face-with-sweat-emoji.svg');
+  SvgGenImage get grinningFaceWithSweatEmoji => const SvgGenImage('assets/images/svg/Grinning-face-with-sweat-emoji.svg');
 
   /// File path: assets/images/svg/Hat.svg
   SvgGenImage get hat => const SvgGenImage('assets/images/svg/Hat.svg');
@@ -1288,8 +1325,7 @@ class $AssetsImagesSvgGen {
   SvgGenImage get whiteStar => const SvgGenImage('assets/images/svg/white_star.svg');
 
   /// File path: assets/images/svg/white_star_transparent_center.svg
-  SvgGenImage get whiteStarTransparentCenter =>
-      const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
+  SvgGenImage get whiteStarTransparentCenter => const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
 
   /// File path: assets/images/svg/x.svg
   SvgGenImage get x => const SvgGenImage('assets/images/svg/x.svg');

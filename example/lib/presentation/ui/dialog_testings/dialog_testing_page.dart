@@ -107,6 +107,7 @@ class DialogTestingPage extends StatelessWidget {
                   );
                 },
               ),
+              SpacingFoundation.verticalSpace16,
             ],
           ),
         ),

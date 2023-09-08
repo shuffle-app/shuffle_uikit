@@ -10,10 +10,15 @@ class SwiperCardPage extends StatefulWidget {
   State<SwiperCardPage> createState() => _SwiperCardPageState();
 }
 
-class _SwiperCardPageState extends State<SwiperCardPage> with SingleTickerProviderStateMixin {
-  late final lottieController = AnimationController(
+class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStateMixin {
+  late final dislikeController = AnimationController(
     vsync: this,
-    duration: const Duration(seconds: 1),
+    duration: const Duration(seconds: 1, milliseconds: 500),
+    value: 0,
+  );
+  late final likeController = AnimationController(
+    vsync: this,
+    duration: const Duration(seconds: 1, milliseconds: 500),
     value: 0,
   );
 
@@ -76,30 +81,8 @@ class _SwiperCardPageState extends State<SwiperCardPage> with SingleTickerProvid
                     ],
                   ),
                 ),
-                customLikeAnimation: AnimatedBuilder(
-                  builder: (context, child) => HideWrapper(
-                    shouldHide: false,
-                    child: child ?? const SizedBox(),
-                  ),
-                  animation: lottieController,
-                  child: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.heartBrokenFill,
-                    height: 150,
-                    width: 150,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                customDislikeAnimation: AnimatedBuilder(
-                  builder: (context, child) => HideWrapper(
-                    shouldHide: lottieController.value == 0 || lottieController.value == 1,
-                    child: child ?? const SizedBox(),
-                  ),
-                  animation: lottieController,
-                  child: LottieAnimation(
-                    lottiePath: GraphicsFoundation.instance.animations.lottie.animationBrokenHeart.path,
-                    controller: lottieController,
-                  ),
-                ),
+                likeController: likeController,
+                dislikeController: dislikeController,
               ),
             ),
             SpacingFoundation.verticalSpace16,
@@ -116,7 +99,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with SingleTickerProvid
                       color: Colors.white,
                     ),
                     onPressed: () {
-                      lottieController.forward(from: 0);
+                      dislikeController.forward(from: 0);
                     },
                   ),
                 ),
@@ -139,7 +122,9 @@ class _SwiperCardPageState extends State<SwiperCardPage> with SingleTickerProvid
                       svgAsset: GraphicsFoundation.instance.svg.heartFill,
                       color: Colors.white,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      likeController.forward(from: 0);
+                    },
                   ),
                 ),
               ],
@@ -148,22 +133,5 @@ class _SwiperCardPageState extends State<SwiperCardPage> with SingleTickerProvid
         ).paddingAll(EdgeInsetsFoundation.all24),
       ),
     );
-  }
-}
-
-class HideWrapper extends StatelessWidget {
-  final bool shouldHide;
-  final Widget child;
-
-  const HideWrapper({
-    Key? key,
-    required this.shouldHide,
-    required this.child,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    if (shouldHide) return const SizedBox();
-    return child;
   }
 }

@@ -17,7 +17,7 @@ class OrdinaryProgressButton extends StatelessWidget implements ButtonFactory {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, size) {
-        final height = size.maxWidth * 0.16;
+        final height = size.maxWidth * 0.15;
 
         return Material(
           color: Colors.white,
@@ -48,7 +48,7 @@ class OrdinaryProgressButton extends StatelessWidget implements ButtonFactory {
                       text ?? '',
                       style: context.uiKitTheme?.boldTextTheme.body.copyWith(color: Colors.black),
                     ),
-                  ),
+                  ).paddingSymmetric(vertical: EdgeInsetsFoundation.vertical14),
                 ],
               ),
             ),

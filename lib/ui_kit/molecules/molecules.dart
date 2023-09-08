@@ -1,5 +1,6 @@
 /// This file exports all molecules in the molecules folder
 
+export '../content_wrappers/ui_kit_hide_wrapper.dart';
 export '../content_wrappers/ui_kit_shadow_wrapper.dart';
 export '../content_wrappers/ui_kit_titled_section.dart';
 export 'app_bar/custom_app_bar.dart';
@@ -17,6 +18,7 @@ export 'chips/ui_kit_ordinary_chip.dart';
 export 'error_widgets/ui_kit_big_photo_error_widget.dart';
 export 'error_widgets/ui_kit_compact_photo_error_widget.dart';
 export 'filter/ui_kit_titled_filter_chip.dart';
+export 'info_cards/donation_info_indicator_card.dart';
 export 'info_cards/horizontal_message_card.dart';
 export 'info_cards/ui_kit_gradient_attention_card.dart';
 export 'info_cards/ui_kit_iconed_blur_message_card.dart';
@@ -25,7 +27,9 @@ export 'info_cards/ui_kit_metrics_card.dart';
 export 'info_cards/ui_kit_permission_card.dart';
 export 'info_cards/ui_kit_weather_info_card.dart';
 export 'info_cards/vertical_message_card.dart';
+export 'info_cards/wide_vertical_message_card.dart';
 export 'loading/loading_widget.dart';
+export 'loading/progress_linear_indicator.dart';
 export 'menu/ui_kit_menu_item_tile.dart';
 export 'nav_bar/nav_bar_tile.dart';
 export 'place/base_ui_kit_media_widget.dart';
