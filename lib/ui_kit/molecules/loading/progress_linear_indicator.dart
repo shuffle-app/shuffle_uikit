@@ -55,6 +55,7 @@ class _ProgressLinearIndicatorState extends State<ProgressLinearIndicator> {
     return ClipRRect(
       borderRadius: BorderRadiusFoundation.all40,
       child: Stack(
+        alignment: Alignment.centerLeft,
         children: [
           ColoredBox(
             color: Colors.white,
@@ -90,7 +91,7 @@ class _ProgressLinearIndicatorState extends State<ProgressLinearIndicator> {
           ),
           Positioned(
             right: 1.w,
-            top: 1.w,
+            // top: 1.w,
             child: context.badgeButtonNoValue(
               data: BaseUiKitButtonData(
                 onPressed: () => setState(() => _progressPosition += 25.w),

@@ -75,6 +75,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
 
   @override
   Widget build(BuildContext context) {
+    // final height = 158.h;
     final height = 0.27.sw * 1.68;
 
     return Stack(
