@@ -32,7 +32,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
         side: BorderSide(
-          color: enabled ? borderColor ?? Colors.white : ColorsFoundation.darkNeutral500,
+          color: context.uiKitTheme!.colorScheme.inversePrimary,
           width: 2.w,
         ),
       ),

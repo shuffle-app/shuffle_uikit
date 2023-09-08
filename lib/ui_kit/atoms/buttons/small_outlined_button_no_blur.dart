@@ -25,7 +25,9 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(color: textColor);
+    final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
+      color: textColor,
+    );
 
     return Material(
       borderRadius: textIsEmpty ? null : BorderRadiusFoundation.max,
@@ -44,7 +46,7 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
             borderRadius: textIsEmpty ? null : BorderRadiusFoundation.max,
             shape: textIsEmpty ? BoxShape.circle : BoxShape.rectangle,
             border: Border.all(
-              color: borderColor ?? Colors.white,
+              color: borderColor ?? context.uiKitTheme!.colorScheme.inversePrimary,
               width: 2.w,
             ),
             color: textIsEmpty ? Colors.white.withOpacity(0.1) : null,
