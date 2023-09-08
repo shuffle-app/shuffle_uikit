@@ -41,8 +41,8 @@ class FeedbackIsolate {
       if (event is FeedbackIsolateHaptics) {
         Vibration.vibrate(
           duration: 10,
-          intensities: [64],
-          pattern: [10],
+          intensities: [64, 64],
+          pattern: [5, 5],
         );
       }
     });
