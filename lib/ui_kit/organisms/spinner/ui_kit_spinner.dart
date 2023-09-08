@@ -40,7 +40,15 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
   void _rotationListener() {
     final rotationDelta = (_rotationNotifier.value - _lastRotationPosition.value).abs();
 
-    if (rotationDelta > 0.015) FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics());
+    if (rotationDelta > 0.015) {
+      FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics());
+    } else {
+      final newScrollDelta = widget.scrollController.offset - _scrollStartNotifier.value;
+
+      if (newScrollDelta.abs() % 10 <= 1) {
+        FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics());
+      }
+    }
   }
 
   void setSpinningType(SpinningType type) {
@@ -54,6 +62,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     _rotationNotifier.value -= scrollDelta / 200;
     // if (_spinningType == SpinningType.categories) {
     // }
+
     _lastScrollPositionOffsetNotifier.value = offset;
   }
 

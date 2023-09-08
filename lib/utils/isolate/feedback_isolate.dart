@@ -4,6 +4,7 @@ import 'dart:isolate';
 import 'package:flutter/services.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:vibration/vibration.dart';
 
 class FeedbackIsolate {
   static FeedbackIsolate instance = FeedbackIsolate._();
@@ -38,7 +39,11 @@ class FeedbackIsolate {
         await HapticFeedback.mediumImpact();
       }
       if (event is FeedbackIsolateHaptics) {
-        await HapticFeedback.heavyImpact();
+        Vibration.vibrate(
+          duration: 10,
+          intensities: [64],
+          pattern: [10],
+        );
       }
     });
   }
