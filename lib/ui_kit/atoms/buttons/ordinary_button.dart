@@ -33,7 +33,7 @@ class OrdinaryButton extends StatelessWidget implements ButtonFactory {
         onTap: loading ?? false ? null : onPressed,
         child: Ink(
           padding: EdgeInsets.symmetric(
-            vertical: EdgeInsetsFoundation.vertical14,
+            vertical: EdgeInsetsFoundation.vertical16,
             horizontal: EdgeInsetsFoundation.horizontal44,
           ),
           child: fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget,
