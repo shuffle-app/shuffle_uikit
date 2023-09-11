@@ -59,7 +59,7 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(BuildContext contex
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusFoundation.all40,
         ),
-        backgroundColor: backgroundColor ?? context.uiKitTheme?.colorScheme.surface1,
+        backgroundColor: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
         clipBehavior: Clip.hardEdge,
         child: (child(_, textStyle) as Widget).paddingAll(paddingAll ?? EdgeInsetsFoundation.all24),
       ),
