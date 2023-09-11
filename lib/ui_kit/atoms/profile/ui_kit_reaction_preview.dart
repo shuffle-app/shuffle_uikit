@@ -16,7 +16,7 @@ class UiKitReactionPreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = 0.27.sw;
-    final height = width * 1.68;
+    final height = 147.h;
 
     return SizedBox(
       width: width,
