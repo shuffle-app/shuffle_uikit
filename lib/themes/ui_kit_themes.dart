@@ -182,7 +182,7 @@ class UiKitThemes {
           indicatorSize: TabBarIndicatorSize.tab,
           dividerColor: Colors.transparent,
           labelColor: Colors.black,
-          unselectedLabelColor: Colors.white,
+          unselectedLabelColor: ColorsFoundation.darkNeutral500,
           indicator: BoxDecoration(
             borderRadius: BorderRadiusFoundation.max,
             color: Colors.white,
@@ -246,46 +246,45 @@ class UiKitThemes {
       foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
       overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
     )),
-    dropdownMenuTheme:  DropdownMenuThemeData(
-      textStyle: _pickerTextStyle,
-      menuStyle: MenuStyle(
-        backgroundColor: MaterialStateProperty.resolveWith((states) =>UiKitColors.surface4),
-        // elevation: 0,
-      ),
-      inputDecorationTheme: InputDecorationTheme(
-        filled: true,
-        fillColor: ColorsFoundation.solidSurface,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadiusFoundation.max,
-          borderSide: BorderSide.none,
+    dropdownMenuTheme: DropdownMenuThemeData(
+        textStyle: _pickerTextStyle,
+        menuStyle: MenuStyle(
+          backgroundColor: MaterialStateProperty.resolveWith((states) => UiKitColors.surface4),
+          // elevation: 0,
         ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadiusFoundation.max,
-          borderSide: const BorderSide(
-            color: Colors.white,
-            width: 2,
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: ColorsFoundation.solidSurface,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: BorderSide.none,
           ),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadiusFoundation.max,
-          borderSide: BorderSide.none,
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadiusFoundation.max,
-          borderSide: const BorderSide(
-            color: ColorsFoundation.error,
-            width: 2,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: Colors.white,
+              width: 2,
+            ),
           ),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadiusFoundation.max,
-          borderSide: const BorderSide(
-            color: ColorsFoundation.error,
-            width: 2,
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: BorderSide.none,
           ),
-        ),
-      )
-    ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+        )),
     iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
       textStyle: MaterialStateTextStyle.resolveWith((states) {

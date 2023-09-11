@@ -14,6 +14,7 @@ class UiKitColorScheme extends ColorScheme {
   final Color darkNeutral500 = ColorsFoundation.darkNeutral500;
   final Color darkNeutral600 = ColorsFoundation.darkNeutral600;
   final Color darkNeutral900 = ColorsFoundation.darkNeutral900;
+  final Color grayForegroundColor;
 
   @override
   final Color inversePrimary;
@@ -26,6 +27,7 @@ class UiKitColorScheme extends ColorScheme {
     this.surface5 = ColorsFoundation.lightSurface5,
     this.uiPrimary = ColorsFoundation.solidLightSurface,
     this.inversePrimary = ColorsFoundation.solidSurface,
+    this.grayForegroundColor = ColorsFoundation.darkNeutral300,
   }) : super.light(primary: uiPrimary, inversePrimary: inversePrimary);
 
   const UiKitColorScheme.dark({
@@ -36,5 +38,6 @@ class UiKitColorScheme extends ColorScheme {
     this.surface5 = ColorsFoundation.surface5,
     this.uiPrimary = ColorsFoundation.solidSurface,
     this.inversePrimary = ColorsFoundation.solidLightSurface,
+    this.grayForegroundColor = ColorsFoundation.darkNeutral100,
   }) : super.dark(primary: uiPrimary, inversePrimary: inversePrimary);
 }
