@@ -21,12 +21,7 @@ class OrdinaryTextButton extends StatelessWidget implements ButtonFactory {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (icon != null) ...[icon!, SpacingFoundation.horizontalSpace8],
-          Text(
-            text.toUpperCase(),
-            style: TextStyle(
-              color: context.uiKitTheme?.colorScheme.inversePrimary,
-            ),
-          ),
+          Text(text.toUpperCase()),
         ],
       ),
     );

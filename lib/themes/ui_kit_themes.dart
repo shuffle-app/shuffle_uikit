@@ -17,7 +17,10 @@ class UiKitThemes {
     colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.info, onSurface: Colors.black),
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
-        textStyle: MaterialStateTextStyle.resolveWith((states) {
+        backgroundColor: MaterialStateProperty.resolveWith((_) => ColorsFoundation.solidLightSurface),
+        foregroundColor: MaterialStateProperty.resolveWith((_) => ColorsFoundation.solidSurface),
+        overlayColor: MaterialStateProperty.resolveWith((_) => Colors.transparent),
+        textStyle: MaterialStateTextStyle.resolveWith((_) {
           return const TextStyle(
             fontFamily: 'Unbounded',
             fontSize: 13,

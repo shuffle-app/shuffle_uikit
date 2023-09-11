@@ -46,8 +46,8 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         ? uiKitTheme?.noIconInputTheme.copyWith(
             focusedBorder: OutlineInputBorder(
               borderRadius: widget.borderRadius!,
-              borderSide: const BorderSide(
-                color: Colors.white,
+              borderSide: BorderSide(
+                color: uiKitTheme.colorScheme.inversePrimary,
                 width: 2,
               ),
             ),
