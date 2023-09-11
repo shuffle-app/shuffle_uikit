@@ -35,7 +35,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
   int currentIndex = 0;
 
   double get currentItemProgressPortion =>
-      ((widget.items.elementAt(currentIndex).autoSwitchDuration.inMilliseconds + (widget.transitionDuration * 3).inMilliseconds) /
+      ((widget.items.elementAt(currentIndex).autoSwitchDuration.inMilliseconds +
+              (widget.transitionDuration * 3).inMilliseconds) /
           overallDuration.inMilliseconds) *
       (currentIndex + 1);
 
@@ -67,6 +68,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -109,7 +111,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
                 child: Text(
                   key: UniqueKey(),
                   widget.items.elementAt(currentIndex).title,
-                  style: context.uiKitTheme?.boldTextTheme.titleLarge,
+                  style: context.uiKitTheme?.boldTextTheme.titleLarge.copyWith(color: Colors.white),
                   textAlign: TextAlign.center,
                 ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal32),
               ),
