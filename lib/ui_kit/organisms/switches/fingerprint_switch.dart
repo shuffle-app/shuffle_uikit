@@ -60,8 +60,9 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
   @override
   void didUpdateWidget(covariant FingerprintSwitch oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if(widget.isCompleted !=null)
-    _isCompleted.value = widget.isCompleted! ;
+    if (widget.isCompleted != null) {
+      _isCompleted.value = widget.isCompleted!;
+    }
     if (!widget.isHealthKitEnabled && oldWidget.isHealthKitEnabled) {
       _controller.reverse();
     }
@@ -75,7 +76,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
 
   @override
   Widget build(BuildContext context) {
-    final height = 0.27.sw * 1.68;
+    final height = 158.h;
 
     return Stack(
       children: [
@@ -91,6 +92,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
           ),
         ),
         FingerprintButton(
+          height: height,
           animationPath: widget.animationPath,
           title: widget.title,
           subtitle: widget.subtitle,
