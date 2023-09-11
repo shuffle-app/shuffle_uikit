@@ -14,20 +14,42 @@ class UiKitThemes {
   late final lightThemeData = defaultThemeData.copyWith(
     scaffoldBackgroundColor: ColorsFoundation.solidLightSurface,
     iconTheme: const IconThemeData(color: ColorsFoundation.solidLightSurface),
+    colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.info, onSurface: Colors.black),
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        textStyle: MaterialStateTextStyle.resolveWith((states) {
+          return const TextStyle(
+            fontFamily: 'Unbounded',
+            fontSize: 13,
+            fontWeight: FontWeight.w500,
+            color: Color(0xff000000),
+            package: 'shuffle_uikit',
+          );
+        }),
+      ),
+    ),
+    timePickerTheme: defaultThemeData.timePickerTheme.copyWith(
+      helpTextStyle: _pickerTextStyle.copyWith(fontSize: 16, color: Colors.black),
+      backgroundColor: UiKitColors.lightSurface4,
+      entryModeIconColor: Colors.black,
+      dialTextColor: Colors.black,
+      dayPeriodTextColor: Colors.black,
+    ),
     datePickerTheme: defaultThemeData.datePickerTheme.copyWith(
+      headerForegroundColor: Colors.white,
+      rangeSelectionOverlayColor: MaterialStateProperty.resolveWith((states) => Colors.white),
       rangeSelectionBackgroundColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
-      dayForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-      yearForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+      dayForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+      yearForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
       surfaceTintColor: ColorsFoundation.info,
       rangePickerHeaderHelpStyle: _pickerTextStyle.copyWith(color: Colors.black),
       yearStyle: _pickerTextStyle.copyWith(color: Colors.black),
       headerHelpStyle: _pickerTextStyle.copyWith(color: Colors.black),
-      rangePickerHeaderHeadlineStyle: _pickerTextStyle.copyWith(color: Colors.black),
+      rangePickerHeaderHeadlineStyle: _pickerTextStyle.copyWith(color: Colors.white),
       rangePickerShape: const CircleBorder(side: BorderSide(color: Colors.black, width: 1)),
       weekdayStyle: _pickerTextStyle.copyWith(color: ColorsFoundation.darkNeutral900),
       headerHeadlineStyle: _pickerTextStyle.copyWith(color: Colors.black),
       dayStyle: _pickerTextStyle.copyWith(color: Colors.black, fontSize: 16),
-      backgroundColor: ColorsFoundation.lightSurface4,
     ),
     extensions: [
       UiKitThemeData(
