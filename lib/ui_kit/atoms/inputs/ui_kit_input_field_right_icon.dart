@@ -98,7 +98,13 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           hintStyle: hintStyle,
           suffixIconColor: inputPropertiesColor,
           suffixIcon: IconButton(
-            icon: widget.icon ?? const Icon(Icons.close),
+            icon: widget.icon ??
+                Icon(
+                  Icons.close,
+                  color: _key.currentState?.hasError ?? false
+                      ? ColorsFoundation.error
+                      : context.uiKitTheme?.colorScheme.inversePrimary,
+                ),
             onPressed: widget.onPressed ??
                 () {
                   widget.controller.clear();

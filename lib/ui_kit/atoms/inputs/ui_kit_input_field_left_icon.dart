@@ -71,7 +71,12 @@ class _UiKitInputFieldLeftIconState extends State<UiKitInputFieldLeftIcon> {
           hintStyle: hintStyle,
           prefixIconColor: inputPropertiesColor,
           prefixIcon: IconButton(
-            icon: const Icon(Icons.close),
+            icon: Icon(
+              Icons.close,
+              color: (_key.currentState?.hasError ?? false)
+                  ? ColorsFoundation.error
+                  : context.uiKitTheme?.colorScheme.inversePrimary,
+            ),
             onPressed: () {
               widget.controller.clear();
             },
