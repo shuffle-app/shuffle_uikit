@@ -98,6 +98,7 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                         children: [
                           ImageWidget(
                             svgAsset: GraphicsFoundation.instance.svg.star,
+                            color: context.uiKitTheme?.colorScheme.inversePrimary,
                           ),
                           SpacingFoundation.verticalSpace4,
                           Text(

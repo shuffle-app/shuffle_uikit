@@ -53,7 +53,7 @@ class BlurredProgressButton extends StatelessWidget implements ButtonFactory {
                     child: Center(
                       child: Text(
                         text ?? '',
-                        style: context.uiKitTheme?.boldTextTheme.body,
+                        style: context.uiKitTheme?.boldTextTheme.body.copyWith(color: Colors.white),
                       ),
                     ),
                   ),
