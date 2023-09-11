@@ -182,6 +182,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     final gradientIconButton = hasIcon && data.text.isEmpty;
     if (gradientIconButton) {
       return GradientIconButton(
+        fit:data.fit,
         icon: data.icon!,
         onPressed: data.onPressed,
         borderRadius: BorderRadiusFoundation.max,
@@ -189,12 +190,14 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     } else if (!hasIcon && data.text.isNotEmpty) {
       return GradientButton(
+        fit:data.fit,
         text: data.text,
         onPressed: data.onPressed,
         loading: data.loading,
       );
     } else if (hasIcon && data.text.isNotEmpty) {
       return GradientButtonWithTextAndIcon(
+        fit:data.fit,
         text: data.text,
         icon: data.icon!,
         onPressed: data.onPressed,

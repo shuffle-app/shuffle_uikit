@@ -6,10 +6,12 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final BorderRadius? borderRadius;
   final bool? loading;
+  final ButtonFit? fit;
 
   const GradientIconButton({
     Key? key,
     required this.icon,
+    this.fit,
     this.onPressed,
     this.borderRadius,
     this.loading,

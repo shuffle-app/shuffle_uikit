@@ -22,7 +22,7 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
     final relativeSize = SizesFoundation.screenWidth * 0.375;
 
     return Material(
-      clipBehavior: Clip.hardEdge,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
         side: BorderSide(

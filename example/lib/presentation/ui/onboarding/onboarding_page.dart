@@ -170,7 +170,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
 
     setState(() {
       _textOpacity = 1;
-      currentIndex++;
+      if (currentIndex < widget.items.length - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
     });
     await Future.delayed(widget.transitionDuration * 2);
     setState(() => _imageOpacity = 1);

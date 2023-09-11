@@ -133,6 +133,76 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(
+                    child: UiKitMessageCardWithIcon(
+                      onPressed: () {},
+                      iconLink: GraphicsFoundation.instance.png.angryEmoji.path,
+                      message: 'messagemessagemessage',
+                      layoutDirection: Axis.vertical,
+                    ),
+                  ),
+                  SpacingFoundation.horizontalSpace16,
+                  Center(
+                    child: UiKitMessageCardWithIcon(
+                      type: MessageCardType.wide,
+                      onPressed: () {},
+                      iconLink: GraphicsFoundation.instance.png.angryEmoji.path,
+                      message: 'message message message',
+                      layoutDirection: Axis.vertical,
+                    ),
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    SpacingFoundation.horizontalSpace16,
+                    UiKitImageWithDescriptionCard(
+                      title: 'cakjn',
+                      subtitle: 'ascsacas',
+                      imageUrl: GraphicsFoundation.instance.png.businessMock1.path,
+                      tags: [
+                        UiKitTag(
+                          title: 'title',
+                          iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                          unique: false,
+                        ),
+                        UiKitTag(
+                          title: 'title',
+                          iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                          unique: false,
+                        ),
+                      ],
+                    ),
+                    SpacingFoundation.horizontalSpace12,
+                    UiKitImageWithDescriptionCard(
+                      title: 'cakjn',
+                      subtitle: 'ascsacas',
+                      imageUrl: GraphicsFoundation.instance.png.businessMock2.path,
+                      tags: [
+                        UiKitTag(
+                          title: 'title',
+                          iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                          unique: false,
+                        ),
+                        UiKitTag(
+                          title: 'title',
+                          iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                          unique: false,
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               Center(
                 child: UiKitSwitchWithCustomBackground(
                   firstOption: CustomBackgroundSwitchOption(

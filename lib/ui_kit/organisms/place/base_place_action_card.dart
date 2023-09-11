@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -9,6 +10,7 @@ class BasePlaceActionCard extends StatelessWidget {
   final SvgGenImage? vectorIconAsset;
   final AssetGenImage? rasterIconAsset;
   final VoidCallback? action;
+  final AutoSizeGroup? group;
 
   const BasePlaceActionCard({
     Key? key,
@@ -17,6 +19,7 @@ class BasePlaceActionCard extends StatelessWidget {
     this.vectorIconAsset,
     this.rasterIconAsset,
     required this.action,
+     this.group,
   }) : super(key: key);
 
   @override
@@ -61,11 +64,11 @@ class BasePlaceActionCard extends StatelessWidget {
                 textAlign: TextAlign.left,
               ),
               SpacingFoundation.verticalSpace8,
-              context.smallButton(
-                  data: BaseUiKitButtonData(
+      SmallOrdinaryButton(
                 text: 'See more',
                 onPressed: action,
-              )),
+          group:group
+              ),
             ],
           ).paddingAll(EdgeInsetsFoundation.all12),
         ],

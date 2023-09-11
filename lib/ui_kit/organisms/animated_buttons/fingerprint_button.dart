@@ -66,6 +66,12 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
 
     _controller.addStatusListener((status) => _setAnimationListener(status));
     _controller.addStatusListener((_) => _setVibrationListener());
+
+    if (_isCompleted) {
+      Future.delayed(Duration.zero, () {
+        _flipController.toggleCard();
+      });
+    }
   }
 
   void _setVibrationListener() {
@@ -164,6 +170,10 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
     _finishPosition = Offset(widget.parentWidth - (widget.width ?? 105.w), 0);
     if (widget.isCompleted != oldWidget.isCompleted && widget.isCompleted != null) {
       _isCompleted = widget.isCompleted!;
+      if (_isCompleted) {
+        _flipController.toggleCard();
+        _currentPosition.value = _finishPosition;
+      }
     }
   }
 
@@ -186,7 +196,9 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
       builder: (_, currentPosition, __) => AnimatedPositioned(
         curve: _isCompleted ? Curves.easeIn : Curves.bounceOut,
         duration: _animationDuration,
-        left: _updatePosition(currentPosition.dx),
+        left: (widget.isCompleted ?? false) ? null : _updatePosition(currentPosition.dx),
+        right: (widget.isCompleted ?? false) ? 0 : null,
+        // left: _isCompleted ? _finishPosition.dx : _updatePosition(currentPosition.dx),
         child: ConstrainedBox(
           constraints: BoxConstraints(
             minHeight: widget.height ?? height,

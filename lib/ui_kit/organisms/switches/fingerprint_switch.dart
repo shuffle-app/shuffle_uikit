@@ -60,6 +60,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
   @override
   void didUpdateWidget(covariant FingerprintSwitch oldWidget) {
     super.didUpdateWidget(oldWidget);
+    if (widget.isCompleted != null) _isCompleted.value = widget.isCompleted!;
     if (!widget.isHealthKitEnabled && oldWidget.isHealthKitEnabled) {
       _controller.reverse();
     }
@@ -109,19 +110,21 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
             child: AnimatedOpacity(
               opacity: isCompleted ? 1.0 : 0.0,
               duration: const Duration(milliseconds: 300),
-              child: GradientableWidget(
-                gradient: GradientFoundation.touchIdLinearGradient,
-                child: Text(
-                  'Tap it',
-                  style: context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+              child: isCompleted
+                  ? GradientableWidget(
+                      gradient: GradientFoundation.touchIdLinearGradient,
+                      child: Text(
+                        'Tap it',
+                        style: context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                    )
+                  : const SizedBox.shrink(),
             ),
           ),
         ),
-        if (!widget.isHealthKitEnabled)
+        if (!widget.isHealthKitEnabled && !_isCompleted.value)
           SizeTransition(
             axisAlignment: 1.0,
             sizeFactor: _animation,

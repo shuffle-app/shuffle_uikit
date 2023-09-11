@@ -109,7 +109,7 @@ class GradientBottomNavigationBarItem extends TabType {
   final SvgGenImage selectedIcon;
   final SvgGenImage unselectedIcon;
 
-   GradientBottomNavigationBarItem._({
+  GradientBottomNavigationBarItem._({
     required this.selectedIcon,
     required this.unselectedIcon,
     required int index,
@@ -117,19 +117,33 @@ class GradientBottomNavigationBarItem extends TabType {
 }
 
 class GradientBottomNavigationBarController {
+  /// Состояние таббара
+  final GlobalKey<TabNavigatorState> tabState;
+
   final int tabItemsCount;
   final BehaviorSubject<GradientBottomNavigationBarItem> _changeController = BehaviorSubject<GradientBottomNavigationBarItem>();
+  final BehaviorSubject<GradientBottomNavigationBarVisibility> _visibilityController =
+      BehaviorSubject<GradientBottomNavigationBarVisibility>.seeded(GradientBottomNavigationBarVisibility.visible);
 
   Stream<TabType> get tabStream => _changeController.stream;
 
+  Stream<GradientBottomNavigationBarVisibility> get visibilityStream => _visibilityController.stream;
+
   GradientBottomNavigationBarItem? get selectedTabState => _changeController.valueOrNull;
 
-  GradientBottomNavigationBarController({required this.tabItemsCount});
+  GradientBottomNavigationBarController({required this.tabItemsCount, GlobalKey<TabNavigatorState>? tabState})
+      : tabState = tabState ?? GlobalKey<TabNavigatorState>();
+
+  void hideBottomNavigationBar() => _visibilityController.add(GradientBottomNavigationBarVisibility.hidden);
+
+  void showBottomNavigationBar() => _visibilityController.add(GradientBottomNavigationBarVisibility.visible);
 
   void changeTab(GradientBottomNavigationBarItem item) => _openTab(item);
 
   void dispose() {
     _changeController.close();
+    _visibilityController.close();
+    tabState.currentState?.dispose();
   }
 
   Future<void> _openTab(GradientBottomNavigationBarItem item) async {
@@ -148,3 +162,5 @@ class GradientBottomNavigationBarController {
   Future<bool> _isNotLastPage(GradientBottomNavigationBarItem selectedTab) async =>
       await tabState.currentState?.mappedNavKeys[selectedTab]?.currentState?.maybePop() ?? false;
 }
+
+enum GradientBottomNavigationBarVisibility { visible, hidden }

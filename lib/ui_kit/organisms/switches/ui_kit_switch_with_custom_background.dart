@@ -72,7 +72,7 @@ class UiKitSwitchWithCustomBackground extends StatelessWidget {
                     ),
                     child: firstOptionSelected
                         ? UiKitCustomBackgroundSwitchOptionWidget(option: firstOption)
-                        : const Spacer(),
+                        : const SizedBox.shrink(),
                   ),
                   const Spacer(),
                   AnimatedSwitcher(
@@ -82,7 +82,7 @@ class UiKitSwitchWithCustomBackground extends StatelessWidget {
                       child: child,
                     ),
                     child: firstOptionSelected
-                        ? const Spacer()
+                        ? const SizedBox.shrink()
                         : UiKitCustomBackgroundSwitchOptionWidget(option: secondOption),
                   ),
                   SpacingFoundation.horizontalSpace24,

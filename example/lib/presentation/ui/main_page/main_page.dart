@@ -128,6 +128,13 @@ class _MainPageState extends State<MainPage> {
                 onPressed: () => Navigator.pushNamed(context, AppRoutes.locationPicker),
               ),
             ),
+            SpacingFoundation.verticalSpace16,
+            context.button(
+              data: BaseUiKitButtonData(
+                text: 'Testing animations',
+                onPressed: () => Navigator.pushNamed(context, AppRoutes.animationsPage),
+              ),
+            ),
           ],
         ),
       ),
