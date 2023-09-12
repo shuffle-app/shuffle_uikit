@@ -94,7 +94,7 @@ class _ProgressLinearIndicatorState extends State<ProgressLinearIndicator> {
             child: context.badgeButtonNoValue(
               data: BaseUiKitButtonData(
                 onPressed: () => setState(() => _progressPosition += 25.w),
-                icon: const Icon(CupertinoIcons.chevron_right_circle, size: 40),
+                icon: Icon(CupertinoIcons.chevron_right_circle, size: 30.h),
               ),
             ),
           ),
