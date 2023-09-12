@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class DonationTabMenu extends StatelessWidget {
   const DonationTabMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final AutoSizeGroup g = AutoSizeGroup();
     return Column(
       children: [
         UiKitCustomTabBar(
@@ -13,17 +15,17 @@ class DonationTabMenu extends StatelessWidget {
             UiKitCustomTab(
               title: 'DAY',
               height: 24.h,
-              isAutoSizeEnabled: true,
+              group: g,
             ),
             UiKitCustomTab(
               title: 'MONTH',
               height: 24.h,
-              isAutoSizeEnabled: true,
+              group: g,
             ),
             UiKitCustomTab(
               title: 'YEAR',
               height: 24.h,
-              isAutoSizeEnabled: true,
+              group: g,
             ),
           ],
           onTappedTab: (_) {},
@@ -60,11 +62,13 @@ class DonationTabMenu extends StatelessWidget {
         SpacingFoundation.verticalSpace16,
         ConstrainedBox(
           constraints: BoxConstraints.expand(height: 40.h),
-          child: OrdinaryButtonWithIcon(
-            onPressed: () {},
-            icon: const Icon(CupertinoIcons.chevron_down),
-            text: 'NEXT 7 PEOPLE',
-          ),
+          child: context.button(
+              data: BaseUiKitButtonData(
+                onPressed: () {},
+                fit: ButtonFit.fitWidth,
+                icon: const Icon(CupertinoIcons.chevron_down),
+                text: 'NEXT 7 PEOPLE',
+              )),
         ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
       ],
     );
