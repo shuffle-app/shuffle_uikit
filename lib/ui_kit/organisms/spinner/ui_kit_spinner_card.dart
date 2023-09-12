@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
+
 class UiKitSpinnerCard extends StatefulWidget {
   final String? photoLink;
   final String? title;
   final DateTime? date;
+  final TimeOfDay? time;
   final bool? favourite;
   final VoidCallback? onTap;
   final VoidCallback? onFavoriteTap;
@@ -21,6 +23,7 @@ class UiKitSpinnerCard extends StatefulWidget {
     this.photoLink,
     this.title,
     this.date,
+    this.time,
     this.favourite,
     this.onTap,
     required this.availableHeight,
@@ -155,13 +158,18 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                 ImageWidget(
                   svgAsset: GraphicsFoundation.instance.svg.clock,
                   color: ColorsFoundation.darkNeutral900,
-                  width: 0.05.sw,
-                  height: 0.05.sw,
+                  width: kIsWeb ? 15: 0.05.sw,
+                  height: kIsWeb ? 15: 0.05.sw,
                   fit: BoxFit.cover,
                 ),
                 SpacingFoundation.horizontalSpace4,
+                if(time!= null)
                 Text(
-                  widget.date != null ? DateFormat('HH:MM a, MMM dd').format(widget.date!) : 'Coming soon',
+                  normalizedTi(time) + ', ',
+                  style: dateTextStyle,
+                ),
+                Text(
+                  widget.date != null ? DateFormat('MMM dd').format(widget.date!) : 'Coming soon',
                   style: dateTextStyle,
                 ),
               ],
