@@ -55,7 +55,7 @@ class _CustomCalendarPickerDialogState
           CalendarDatePicker(
             onDateChanged: _onSelectionChanged,
             initialDate: selectedDate,
-            firstDate: DateTime.now(),
+            firstDate: DateTime.now().subtract(Duration(days:365)),
             lastDate: widget.lastDate ??
                 DateTime.now().add(const Duration(days: 365)),
           ),
@@ -63,6 +63,13 @@ class _CustomCalendarPickerDialogState
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              if(kIsWeb)...[
+                context.button(
+                    data: BaseUiKitButtonData(
+                        text: 'remove', onPressed: () => context.pop(result: DateTime.fromMicrosecondsSinceEpoch(0))),
+                    isTextButton: true),
+                SpacingFoundation.horizontalSpace4,
+              ],
               //TODO check if this is link in design - outlined
               context.button(
                   data: BaseUiKitButtonData(

@@ -26,7 +26,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaWidth = kIsWeb ? 200.0 : 1.sw;
+    final mediaWidth = kIsWeb ? 358.0 : 1.sw;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
