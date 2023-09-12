@@ -119,26 +119,31 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
               AnimatedBuilder(
                 animation: _progressAnimationController,
                 builder: (context, value) {
-                  return context
-                      .buttonWithProgress(
-                        data: BaseUiKitButtonData(
-                          text: 'NEXT >>>',
-                          onPressed: () {
-                            if (currentIndex != widget.items.length) {
-                              _switchToNextPage();
-                            } else {
-                              widget.onFinished?.call();
-                            }
-                            // _progressAnimationController.forward(from: 0);
-                            // setState(() {
-                            //   currentIndex = 0;
-                            // });
-                          },
-                        ),
-                        progress: _progressAnimationController.value,
-                        blurred: true,
-                      )
-                      .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16);
+                  return Theme(
+                    data: Theme.of(context).copyWith(extensions: [
+                      context.uiKitTheme!.copyWith(boldTextTheme: UiKitBoldTextTheme()),
+                    ]),
+                    child: context
+                        .buttonWithProgress(
+                          data: BaseUiKitButtonData(
+                            text: 'NEXT >>>',
+                            onPressed: () {
+                              if (currentIndex != widget.items.length) {
+                                _switchToNextPage();
+                              } else {
+                                widget.onFinished?.call();
+                              }
+                              // _progressAnimationController.forward(from: 0);
+                              // setState(() {
+                              //   currentIndex = 0;
+                              // });
+                            },
+                          ),
+                          progress: _progressAnimationController.value,
+                          blurred: true,
+                        )
+                        .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+                  );
                 },
               ),
               SpacingFoundation.verticalSpace24,

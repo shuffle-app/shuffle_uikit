@@ -46,7 +46,7 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
               Text(
                 title,
                 style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(
-                  color: isSelected ? colorScheme?.inversePrimary : colorScheme?.primary,
+                  color: isSelected ? colorScheme?.primary : colorScheme?.inversePrimary,
                 ),
               ),
             ],
