@@ -127,29 +127,18 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
         ),
         if (!widget.isHealthKitEnabled && !_isCompleted.value)
           SizeTransition(
-            axisAlignment: 1.0,
             sizeFactor: _animation,
             child: UiKitCardWrapper(
+              width: double.infinity,
               height: height,
               color: ColorsFoundation.surface3,
               borderRadius: BorderRadiusFoundation.all28,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Theme(
-                    data: Theme.of(context).copyWith(
-                      highlightColor: ColorsFoundation.transparent,
-                      splashColor: ColorsFoundation.transparent,
-                      hoverColor: ColorsFoundation.transparent,
-                    ),
-                    child: IconButton(
-                      onPressed: () => _startAnimation(),
-                      icon: const Icon(
-                        Icons.close,
-                        color: ColorsFoundation.warning,
-                        size: 20,
-                      ),
-                    ),
+                  IconButton(
+                    onPressed: () => _startAnimation(),
+                    icon: Icon(Icons.close, color: ColorsFoundation.warning, size: 18.w),
                   ).paddingOnly(
                     top: EdgeInsetsFoundation.vertical12,
                     right: EdgeInsetsFoundation.horizontal12,
