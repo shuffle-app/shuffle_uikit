@@ -26,7 +26,7 @@ class UiKitAccentCard extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (context, size) {
-        final height = size.maxWidth / 1.7;
+        final height = 167.h;
 
         return Container(
           width: size.maxWidth,

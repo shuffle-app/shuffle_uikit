@@ -12,13 +12,11 @@ class DonationMapPreview extends StatelessWidget {
       onTap: () => onTap?.call(),
       child: Stack(
         children: [
-          ConstrainedBox(
-            constraints: BoxConstraints.expand(height: 170.h),
-            child: ImageWidget(
+           ImageWidget(
               rasterAsset: GraphicsFoundation.instance.png.mapMock,
-              fit: BoxFit.fill,
+              fit: BoxFit.fitWidth,
             ),
-          ),
+
           Positioned.fill(
             child: Center(
               child: UiKitBlurWrapper(
