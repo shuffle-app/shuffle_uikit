@@ -29,7 +29,7 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
         return Material(
           borderRadius: BorderRadiusFoundation.all24,
           clipBehavior: Clip.hardEdge,
-          color: ColorsFoundation.surface1,
+          color: context.uiKitTheme?.colorScheme.surface1,
           child: InkWell(
             onTap: onPressed,
             child: Ink(
@@ -98,6 +98,7 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                         children: [
                           ImageWidget(
                             svgAsset: GraphicsFoundation.instance.svg.star,
+                            color: context.uiKitTheme?.colorScheme.inversePrimary,
                           ),
                           SpacingFoundation.verticalSpace4,
                           Text(

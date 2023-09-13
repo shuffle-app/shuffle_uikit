@@ -223,7 +223,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
                 child: UiKitCardWrapper(
                   width: widget.width ?? 105.w,
                   height: widget.height ?? height,
-                  color: ColorsFoundation.surface3,
+                  color: context.uiKitTheme?.colorScheme.surface3,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

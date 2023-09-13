@@ -59,7 +59,6 @@ abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
                           child: Text(
                             name ?? '',
                             style: textTheme?.caption1Bold.copyWith(
-                              color: Colors.white,
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),

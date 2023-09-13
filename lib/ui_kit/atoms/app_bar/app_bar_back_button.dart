@@ -7,10 +7,11 @@ class AppBarBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final iconColor = context.uiKitTheme?.customAppBapTheme.iconTheme?.color;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
       shape: const CircleBorder(),
-      color: ColorsFoundation.surface3,
+      color: colorScheme?.surface3,
       elevation: 0,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
@@ -18,9 +19,9 @@ class AppBarBackButton extends StatelessWidget {
           Navigator.pop(context);
         },
         child: Ink(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: ColorsFoundation.surface3,
+            color: colorScheme?.surface3,
           ),
           width: 28.w,
           height: 28.h,

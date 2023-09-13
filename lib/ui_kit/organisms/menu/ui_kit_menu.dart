@@ -47,12 +47,12 @@ class UiKitMenu<T> extends StatelessWidget {
 
     return Material(
       clipBehavior: Clip.hardEdge,
-      color: ColorsFoundation.surface3,
+      color: context.uiKitTheme?.colorScheme.surface3,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
-        side: const BorderSide(
+        side: BorderSide(
           width: 2,
-          color: Colors.white,
+          color: context.uiKitTheme!.colorScheme.inversePrimary,
         ),
       ),
       child: InkWell(

@@ -23,6 +23,7 @@ class UiKitCodeInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return LayoutBuilder(builder: (context, size) {
       final availableWidth = size.maxWidth - (SpacingFoundation.horizontalSpacing12 * codeDigitsCount);
@@ -57,7 +58,7 @@ class UiKitCodeInputField extends StatelessWidget {
         ).paddingSymmetric(
           vertical: EdgeInsetsFoundation.vertical24,
         ),
-        forceErrorState:errorText!=null,
+        forceErrorState: errorText != null,
         mainAxisAlignment: MainAxisAlignment.center,
         keyboardType: TextInputType.number,
         errorText: errorText,
@@ -69,7 +70,7 @@ class UiKitCodeInputField extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(color: UiKitColors.error, width: 2),
             borderRadius: borderRadius,
-            color: ColorsFoundation.surface3,
+            color: colorScheme!.surface3,
           ),
         ),
         focusedPinTheme: PinTheme(
@@ -79,7 +80,7 @@ class UiKitCodeInputField extends StatelessWidget {
           decoration: BoxDecoration(
             border: GradientFoundation.gradientBorder,
             borderRadius: borderRadius,
-            color: ColorsFoundation.surface3,
+            color: colorScheme.surface3,
           ),
         ),
         submittedPinTheme: PinTheme(
@@ -89,7 +90,7 @@ class UiKitCodeInputField extends StatelessWidget {
           decoration: BoxDecoration(
             border: GradientFoundation.gradientBorder,
             borderRadius: borderRadius,
-            color: ColorsFoundation.surface3,
+            color: colorScheme.surface3,
           ),
         ),
         defaultPinTheme: PinTheme(
@@ -97,9 +98,9 @@ class UiKitCodeInputField extends StatelessWidget {
           width: pinWidth,
           textStyle: style,
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.white, width: 2),
+            border: Border.all(color: colorScheme.inversePrimary, width: 2),
             borderRadius: borderRadius,
-            color: ColorsFoundation.surface3,
+            color: colorScheme.surface3,
           ),
         ),
       );

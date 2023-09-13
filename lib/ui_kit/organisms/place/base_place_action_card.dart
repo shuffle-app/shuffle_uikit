@@ -24,8 +24,9 @@ class BasePlaceActionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = context.uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900);
-    final valueStyle = context.uiKitTheme?.boldTextTheme.body.copyWith(color: Colors.white);
+    final titleStyle =
+        context.uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900);
+    final valueStyle = context.uiKitTheme?.boldTextTheme.body;
 
     /// [matrixValues] взято из Figma
     // final List<double> matrixValues = [0.91, -0.42, 0.47, 0.88, 0, 0];

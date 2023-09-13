@@ -23,7 +23,9 @@ class UiKitGradientQuestionChip extends StatelessWidget {
             ),
             child: Text(
               message ?? '',
-              style: context.uiKitTheme?.boldTextTheme.caption2Medium,
+              style: context.uiKitTheme?.boldTextTheme.caption2Medium.copyWith(
+                color: Colors.white,
+              ),
             ).paddingSymmetric(
               vertical: EdgeInsetsFoundation.vertical12,
               horizontal: EdgeInsetsFoundation.horizontal32,

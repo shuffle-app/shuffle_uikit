@@ -29,7 +29,7 @@ class UiKitCardWrapper extends StatelessWidget {
       data: Theme.of(context).copyWith(cardTheme: theme?.cardTheme, cardColor: theme?.cardColor),
       child: Card(
         margin: EdgeInsets.zero,
-        color: color ?? theme?.cardColor ?? ColorsFoundation.surface3,
+        color: color ?? theme?.cardColor ?? theme?.colorScheme.surface3,
         clipBehavior: Clip.hardEdge,
         shape: RoundedRectangleBorder(
           borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
@@ -42,7 +42,7 @@ class UiKitCardWrapper extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: borderRadius,
             boxShadow: boxShadow,
-            color: color ?? theme?.cardColor ?? ColorsFoundation.surface3,
+            color: color ?? theme?.cardColor ?? theme?.colorScheme.surface3,
           ),
           child: child,
         ),

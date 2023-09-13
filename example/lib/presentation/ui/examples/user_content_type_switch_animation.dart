@@ -48,6 +48,7 @@ class _ExamplesPageState extends State<ExamplesPage> with SingleTickerProviderSt
                 SpacingFoundation.verticalSpace16,
                 ImageWidget(
                   link: GraphicsFoundation.instance.svg.shuffleWhite.path,
+                  color: context.uiKitTheme?.colorScheme.inversePrimary,
                 )
               ],
             ).paddingAll(EdgeInsetsFoundation.all24),

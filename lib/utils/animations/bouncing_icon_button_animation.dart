@@ -56,7 +56,7 @@ class _BouncingIconButtonAnimationState extends State<BouncingIconButtonAnimatio
           child: Ink(
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white.withOpacity(0.1),
+              color: context.uiKitTheme?.colorScheme.inversePrimary.withOpacity(0.1),
             ),
             child: ClipOval(
               child: BackdropFilter(
