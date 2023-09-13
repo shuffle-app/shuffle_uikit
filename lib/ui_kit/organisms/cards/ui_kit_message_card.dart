@@ -6,20 +6,20 @@ class UiKitMessageCard extends StatelessWidget {
     super.key,
     required this.name,
     required this.surname,
-    required this.nickName,
-    required this.date,
-    this.isStarEnabled,
+    required this.nickname,
     required this.avatarPath,
-    this.onTap,
     required this.lastMessage,
+    required this.lastMessageTime,
+    this.onTap,
+    this.isStarEnabled,
     this.unreadMessageCount,
   });
 
   final String name;
   final String surname;
-  final String nickName;
+  final String nickname;
   final String lastMessage;
-  final String date;
+  final String lastMessageTime;
   final String avatarPath;
 
   final bool? isStarEnabled;
@@ -64,7 +64,7 @@ class UiKitMessageCard extends StatelessWidget {
                       ],
                     ),
                     Text(
-                      nickName,
+                      nickname,
                       style: boldTextTheme?.caption1Bold.copyWith(
                         color: colorScheme?.darkNeutral900,
                       ),
@@ -73,7 +73,7 @@ class UiKitMessageCard extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  date,
+                  lastMessageTime,
                   style: boldTextTheme?.caption1Medium.copyWith(
                     color: colorScheme?.darkNeutral900,
                   ),

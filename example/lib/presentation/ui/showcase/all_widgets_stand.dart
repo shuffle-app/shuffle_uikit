@@ -247,8 +247,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               UiKitMessageCard(
                 name: 'Eugene',
                 surname: 'Carter',
-                nickName: '@racerboi',
-                date: '2h ago',
+                nickname: '@racerboi',
+                lastMessageTime: '2h ago',
                 isStarEnabled: false,
                 avatarPath: GraphicsFoundation.instance.png.mockAvatar.path,
                 lastMessage: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
