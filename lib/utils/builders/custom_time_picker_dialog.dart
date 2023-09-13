@@ -13,7 +13,7 @@ Future<TimeOfDay?> showUiKitTimeDialog(BuildContext context) {
       ),
       child: TimePickerDialog(
         initialTime: TimeOfDay.fromDateTime(DateTime.now()),
-        cancelText: 'Cacel',
+        cancelText: 'Cancel',
         confirmText: 'Ok',
       ),
     ),
