@@ -46,7 +46,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
             borderRadius: text.isEmpty ? null : BorderRadiusFoundation.max,
             shape: text.isEmpty ? BoxShape.circle : BoxShape.rectangle,
             border: Border.all(
-              color: borderColor ?? Colors.white,
+              color: borderColor ?? context.uiKitTheme!.colorScheme.inversePrimary,
               width: 2.w,
             ),
             color: text.isEmpty ? Colors.white.withOpacity(0.1) : null,

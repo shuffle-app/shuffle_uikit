@@ -24,7 +24,6 @@ export 'cards/ui_kit_donation_card.dart';
 export 'horizontal_scroll/ui_kit_horizontal_scroll_3D.dart';
 export 'lists/ui_kit_searchable_list_body.dart';
 export 'menu/ui_kit_menu.dart';
-export 'menu/donation_tab_menu.dart';
 export 'place/donation_map_preview.dart';
 export 'place/base_place_action_card.dart';
 export 'place/point_balance_place_action_card.dart';

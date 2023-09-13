@@ -12,13 +12,14 @@ class DescriptionWidget extends StatelessWidget {
     bool hide = true;
 
     return StatefulBuilder(
-        builder: (c, s) => Column(crossAxisAlignment: CrossAxisAlignment.stretch, mainAxisSize: MainAxisSize.min, children: [
+        builder: (c, s) =>
+            Column(crossAxisAlignment: CrossAxisAlignment.stretch, mainAxisSize: MainAxisSize.min, children: [
               Text(
                 description,
                 maxLines: hide ? 7 : null,
                 softWrap: true,
                 overflow: hide ? TextOverflow.ellipsis : null,
-                style: textTheme?.copyWith(color: Colors.white),
+                style: textTheme,
               ),
               if ((description.replaceAll('\n', '').characters.length * 5.8.w ~/ 0.8.sw +
                       description.characters.where((p0) => p0 == '\n').length) >

@@ -8,6 +8,7 @@ class DonationInfoIndicatorCard extends StatelessWidget {
     required this.title,
     required this.sum,
     required this.actualSum,
+    required this.onButtonTap,
     this.indicatorWidth,
   });
 
@@ -16,6 +17,7 @@ class DonationInfoIndicatorCard extends StatelessWidget {
   final double sum;
   final double actualSum;
   final double? indicatorWidth;
+  final VoidCallback onButtonTap;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,12 @@ class DonationInfoIndicatorCard extends StatelessWidget {
             ],
           ),
           SpacingFoundation.verticalSpace16,
-          ProgressLinearIndicator(actualSum: actualSum, sum: sum, width: indicatorWidth),
+          ProgressLinearIndicator(
+            actualSum: actualSum,
+            sum: sum,
+            width: indicatorWidth,
+            onTap: onButtonTap,
+          ),
         ],
       ).paddingAll(EdgeInsetsFoundation.all16),
     );

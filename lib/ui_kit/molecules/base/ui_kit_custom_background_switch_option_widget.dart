@@ -23,7 +23,7 @@ class UiKitCustomBackgroundSwitchOptionWidget extends StatelessWidget {
           gradient: GradientFoundation.defaultRadialGradient,
           child: Text(
             option.title,
-            style: textTheme?.caption2Bold,
+            style: textTheme?.caption2Bold.copyWith(color: Colors.white),
           ),
         ),
       ],

@@ -6,6 +6,8 @@ class UiKitThemeFoundation {
 
   static ThemeData get defaultTheme => _themes.defaultThemeData;
 
+  static ThemeData get lightTheme => _themes.lightThemeData;
+
   static ThemeData get fallbackTheme => _themes.fallbackThemeData;
 
   UiKitThemeFoundation._();
