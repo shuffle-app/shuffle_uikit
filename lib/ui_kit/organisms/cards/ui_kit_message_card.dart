@@ -29,6 +29,7 @@ class UiKitMessageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return GestureDetector(
       onTap: () => onTap?.call(),
@@ -54,9 +55,7 @@ class UiKitMessageCard extends StatelessWidget {
                           TextSpan(
                             text: name,
                             style: boldTextTheme?.caption1Medium,
-                            children: [
-                              TextSpan(text: ' $surname'),
-                            ],
+                            children: [TextSpan(text: ' $surname')],
                           ),
                         ),
                         SpacingFoundation.horizontalSpace8,
@@ -67,7 +66,7 @@ class UiKitMessageCard extends StatelessWidget {
                     Text(
                       nickName,
                       style: boldTextTheme?.caption1Bold.copyWith(
-                        color: ColorsFoundation.darkNeutral900,
+                        color: colorScheme?.darkNeutral900,
                       ),
                     ),
                   ],
@@ -76,7 +75,7 @@ class UiKitMessageCard extends StatelessWidget {
                 Text(
                   date,
                   style: boldTextTheme?.caption1Medium.copyWith(
-                    color: ColorsFoundation.darkNeutral900,
+                    color: colorScheme?.darkNeutral900,
                   ),
                 ),
               ],
@@ -92,7 +91,7 @@ class UiKitMessageCard extends StatelessWidget {
                         lastMessage,
                         overflow: TextOverflow.ellipsis,
                         style: boldTextTheme?.caption1Medium.copyWith(
-                          color: (unreadMessageCount ?? 0) == 0 ? ColorsFoundation.darkNeutral900 : null,
+                          color: (unreadMessageCount ?? 0) == 0 ? colorScheme?.darkNeutral900 : null,
                         ),
                       ),
                     ),
@@ -102,10 +101,10 @@ class UiKitMessageCard extends StatelessWidget {
                 if ((unreadMessageCount ?? 0) != 0)
                   CircleAvatar(
                     radius: 10.w,
-                    backgroundColor: Colors.white,
+                    backgroundColor: colorScheme?.inversePrimary,
                     child: Text(
                       '$unreadMessageCount',
-                      style: boldTextTheme?.caption1Bold.copyWith(color: Colors.black),
+                      style: boldTextTheme?.caption1Bold.copyWith(color: colorScheme?.primary),
                     ),
                   )
               ],
