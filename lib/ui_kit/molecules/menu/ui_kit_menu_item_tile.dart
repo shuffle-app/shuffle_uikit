@@ -14,18 +14,19 @@ class UiKitMenuItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
-      color: Colors.black,
+      color: colorScheme?.primary,
       child: InkWell(
         onTap: () {
           onTap?.call();
           Navigator.pop(context);
         },
         child: Ink(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             border: Border(
-              top: BorderSide(color: ColorsFoundation.surface2, width: 1),
+              top: BorderSide(color: colorScheme!.surface2, width: 1),
             ),
           ),
           child: Row(
@@ -43,7 +44,7 @@ class UiKitMenuItemTile extends StatelessWidget {
               Expanded(
                 child: Text(
                   item.title.toUpperCase(),
-                  style: boldTextTheme?.caption1UpperCaseMedium.copyWith(color: Colors.white),
+                  style: boldTextTheme?.caption1UpperCaseMedium,
                 ),
               ),
             ],

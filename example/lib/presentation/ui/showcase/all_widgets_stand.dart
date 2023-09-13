@@ -119,7 +119,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         data: BaseUiKitButtonData(
           icon: ImageWidget(
             svgAsset: GraphicsFoundation.instance.svg.message,
-            color: Colors.white,
+            color: context.uiKitTheme?.colorScheme.inversePrimary,
           ),
           onPressed: () {},
         ),
@@ -222,6 +222,28 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  context.outlinedButton(
+                    data: BaseUiKitButtonData(
+                      text: 'Dark Theme',
+                      onPressed: () => UiKitTheme.of(context).updateTheme(
+                        UiKitThemeFoundation.defaultTheme,
+                      ),
+                    ),
+                  ),
+                  context.outlinedButton(
+                    data: BaseUiKitButtonData(
+                      text: 'Light Theme',
+                      onPressed: () => UiKitTheme.of(context).updateTheme(
+                        UiKitThemeFoundation.lightTheme,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitMessageCard(
                 name: 'Eugene',
                 surname: 'Carter',
@@ -237,13 +259,15 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 isHealthKitEnabled: false,
                 title: Text(
                   'Guess',
-                  style: context.uiKitTheme?.boldTextTheme.subHeadline,
+                  style: context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(
+                    color: Colors.white,
+                  ),
                 ),
                 backgroundImage: ImageWidget(
                   width: double.infinity,
                   rasterAsset: GraphicsFoundation.instance.png.dubaiSilhouette,
                   fit: BoxFit.cover,
-                  color: ColorsFoundation.surface2,
+                  color: context.uiKitTheme?.colorScheme.surface2,
                 ),
                 animationPath: GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
                 onCompletedWidget: UiKitMessageCardWithIcon(
@@ -687,7 +711,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   data: BaseUiKitButtonData(
                     icon: ImageWidget(
                       svgAsset: GraphicsFoundation.instance.svg.message,
-                      color: Colors.white,
+                      color: context.uiKitTheme?.colorScheme.inversePrimary,
                     ),
                     onPressed: () {},
                   ),
@@ -1394,9 +1418,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 },
                 child: const Text(
                   'Show Horizontal Video',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
                 ),
               ),
               SpacingFoundation.verticalSpace16,

@@ -33,7 +33,9 @@ class ProfileHighlightCard extends StatelessWidget {
           SpacingFoundation.verticalSpace12,
           Text(
             title,
-            style: titleStyle,
+            style: titleStyle?.copyWith(
+              color: context.uiKitTheme?.colorScheme.grayForegroundColor,
+            ),
             textAlign: TextAlign.center,
           ),
         ],

@@ -18,8 +18,8 @@ class UiKitSwiperCardInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
-    final titleStyle = textTheme?.body;
-    final subtitleStyle = textTheme?.caption1Medium;
+    final titleStyle = textTheme?.body.copyWith(color: Colors.white);
+    final subtitleStyle = textTheme?.caption1Medium.copyWith(color: Colors.white);
 
     return Container(
       clipBehavior: Clip.hardEdge,

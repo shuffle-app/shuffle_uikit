@@ -102,15 +102,15 @@ class _FirstBody extends StatelessWidget {
                     children: [
                       TextSpan(
                         text: 'What is \n',
-                        style: textTheme?.caption1Medium,
+                        style: textTheme?.caption1Medium.copyWith(color: Colors.white),
                       ),
                       TextSpan(
                         text: 'shuffle ',
-                        style: textTheme?.caption1Bold,
+                        style: textTheme?.caption1Bold.copyWith(color: Colors.white),
                       ),
                       TextSpan(
                         text: 'for',
-                        style: textTheme?.caption1Medium,
+                        style: textTheme?.caption1Medium.copyWith(color: Colors.white),
                       ),
                     ],
                   ),
@@ -124,7 +124,7 @@ class _FirstBody extends StatelessWidget {
               child: UiKitIconedBlurMessageCard(
                 message: Text(
                   'Through a non-\naggregator system \nespecially for you',
-                  style: textTheme?.caption1Bold,
+                  style: textTheme?.caption1Bold.copyWith(color: Colors.white),
                 ),
                 iconLink: GraphicsFoundation.instance.svg.whiteStarTransparentCenter.path,
               ),
@@ -135,7 +135,7 @@ class _FirstBody extends StatelessWidget {
               child: UiKitIconedBlurMessageCard(
                 message: Text(
                   'With your\npreferences',
-                  style: textTheme?.caption1Bold,
+                  style: textTheme?.caption1Bold.copyWith(color: Colors.white),
                 ),
                 iconLink: GraphicsFoundation.instance.svg.whiteStarTransparentCenter.path,
               ),
@@ -147,7 +147,7 @@ class _FirstBody extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 message: Text(
                   'Don\'t be alone',
-                  style: textTheme?.caption1Bold,
+                  style: textTheme?.caption1Bold.copyWith(color: Colors.white),
                 ),
                 iconLink: GraphicsFoundation.instance.svg.whiteStarTransparentCenter.path,
               ),
@@ -158,7 +158,7 @@ class _FirstBody extends StatelessWidget {
               child: UiKitIconedBlurMessageCard(
                 message: Text(
                   'Lovely-touch amazing\ninteraction',
-                  style: textTheme?.caption1Bold,
+                  style: textTheme?.caption1Bold.copyWith(color: Colors.white),
                 ),
                 iconLink: GraphicsFoundation.instance.svg.whiteStarTransparentCenter.path,
               ),
@@ -228,13 +228,13 @@ class _LastBody extends StatelessWidget {
               SpacingFoundation.verticalSpace24,
               Text(
                 'This is shuffle',
-                style: textTheme?.title1,
+                style: textTheme?.title1.copyWith(color: Colors.white),
                 textAlign: TextAlign.center,
               ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal32 * 2),
               SpacingFoundation.verticalSpace16,
               Text(
                 'Smart leisure selection for everyone, everywhere.',
-                style: textTheme?.subHeadline,
+                style: textTheme?.subHeadline.copyWith(color: Colors.white),
                 textAlign: TextAlign.center,
               ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal32),
               if (bigScreen) ...[

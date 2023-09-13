@@ -23,11 +23,12 @@ class UiKitFindSomeoneCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double calculatedWidth = SizesFoundation.screenWidth;
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Container(
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
-        color: ColorsFoundation.surface3,
+        color: colorScheme?.surface3,
         borderRadius: BorderRadiusFoundation.all24,
       ),
       child: Row(
@@ -72,8 +73,8 @@ class UiKitFindSomeoneCard extends StatelessWidget {
               children: [
                 Container(
                   height: calculatedWidth * 0.0875,
-                  decoration:
-                      BoxDecoration(gradient: GradientFoundation.findSomeoneGradient, borderRadius: BorderRadiusFoundation.all24),
+                  decoration: BoxDecoration(
+                      gradient: GradientFoundation.findSomeoneGradient, borderRadius: BorderRadiusFoundation.all24),
                   child: Center(
                     child: Text(
                       '$userPoints points',

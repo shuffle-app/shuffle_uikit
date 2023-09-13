@@ -119,7 +119,9 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
                       gradient: GradientFoundation.touchIdLinearGradient,
                       child: Text(
                         'Tap it',
-                        style: context.uiKitTheme?.boldTextTheme.subHeadline,
+                        style: context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(
+                          color: Colors.white,
+                        ),
                       ),
                     )
                   : const SizedBox.shrink(),
@@ -132,7 +134,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
             child: UiKitCardWrapper(
               width: double.infinity,
               height: height,
-              color: ColorsFoundation.surface3,
+              color: context.uiKitTheme?.colorScheme.surface3,
               borderRadius: BorderRadiusFoundation.all28,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,

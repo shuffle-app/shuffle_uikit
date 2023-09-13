@@ -21,12 +21,12 @@ class OrdinaryButton extends StatelessWidget implements ButtonFactory {
     final textStyle = theme?.boldTextTheme.bodyUpperCase;
     final textWidget = Text(
       (loading ?? false) ? '' : text.toUpperCase(),
-      style: textStyle?.copyWith(color: Colors.black),
+      style: textStyle?.copyWith(color: theme?.colorScheme.primary),
       textAlign: TextAlign.center,
     ).loadingWrap(loading ?? false);
 
     return Material(
-      color: Colors.white,
+      color: theme?.colorScheme.inversePrimary,
       borderRadius: BorderRadiusFoundation.max,
       clipBehavior: Clip.hardEdge,
       child: InkWell(

@@ -32,7 +32,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
         side: BorderSide(
-          color: enabled ? borderColor ?? Colors.white : ColorsFoundation.darkNeutral500,
+          color: enabled ? borderColor ?? theme!.colorScheme.inversePrimary : theme!.colorScheme.darkNeutral500,
           width: 2.w,
         ),
       ),

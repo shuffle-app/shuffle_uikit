@@ -10,6 +10,214 @@ class UiKitThemes {
     color: Color(0xffffffff),
     package: 'shuffle_uikit',
   );
+
+  late final lightThemeData = defaultThemeData.copyWith(
+    scaffoldBackgroundColor: ColorsFoundation.solidLightSurface,
+    iconTheme: const IconThemeData(color: ColorsFoundation.solidLightSurface),
+    colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.info, onSurface: Colors.black),
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.resolveWith((_) => ColorsFoundation.solidLightSurface),
+        foregroundColor: MaterialStateProperty.resolveWith((_) => ColorsFoundation.solidSurface),
+        overlayColor: MaterialStateProperty.resolveWith((_) => Colors.transparent),
+        textStyle: MaterialStateTextStyle.resolveWith((_) {
+          return const TextStyle(
+            fontFamily: 'Unbounded',
+            fontSize: 13,
+            fontWeight: FontWeight.w500,
+            color: Color(0xff000000),
+            package: 'shuffle_uikit',
+          );
+        }),
+      ),
+    ),
+    timePickerTheme: defaultThemeData.timePickerTheme.copyWith(
+      helpTextStyle: _pickerTextStyle.copyWith(fontSize: 16, color: Colors.black),
+      backgroundColor: UiKitColors.lightSurface4,
+      entryModeIconColor: Colors.black,
+      dialTextColor: Colors.black,
+      dayPeriodTextColor: Colors.black,
+    ),
+    datePickerTheme: defaultThemeData.datePickerTheme.copyWith(
+      headerForegroundColor: Colors.white,
+      rangeSelectionOverlayColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+      rangeSelectionBackgroundColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
+      dayForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+      yearForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+      surfaceTintColor: ColorsFoundation.info,
+      rangePickerHeaderHelpStyle: _pickerTextStyle.copyWith(color: Colors.black),
+      yearStyle: _pickerTextStyle.copyWith(color: Colors.black),
+      headerHelpStyle: _pickerTextStyle.copyWith(color: Colors.black),
+      rangePickerHeaderHeadlineStyle: _pickerTextStyle.copyWith(color: Colors.white),
+      rangePickerShape: const CircleBorder(side: BorderSide(color: Colors.black, width: 1)),
+      weekdayStyle: _pickerTextStyle.copyWith(color: ColorsFoundation.darkNeutral900),
+      headerHeadlineStyle: _pickerTextStyle.copyWith(color: Colors.black),
+      dayStyle: _pickerTextStyle.copyWith(color: Colors.black, fontSize: 16),
+    ),
+    extensions: [
+      UiKitThemeData(
+        colorScheme: const UiKitColorScheme.light(),
+        cardColor: ColorsFoundation.lightSurface2,
+        customColor: Colors.red,
+        chipTheme: UiKitChipThemeData(
+          border: Border.all(color: ColorsFoundation.solidSurface, width: 2),
+          backgroundColor: ColorsFoundation.solidLightSurface,
+        ),
+        blurredBottomNavigationBarTheme: BlurredBottomNavigationBarTheme(
+          iconColors: ColorsFoundation.solidLightSurface,
+        ),
+        ordinaryButtonStyle: ButtonStyle(
+          fixedSize: MaterialStateProperty.resolveWith(
+            (states) => const Size.fromHeight(48),
+          ),
+          backgroundColor: MaterialStateProperty.resolveWith((states) {
+            return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
+          }),
+          shape: MaterialStateProperty.resolveWith(
+            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+          ),
+          overlayColor: MaterialStateProperty.resolveWith((_) {
+            return ColorsFoundation.darkNeutral900;
+          }),
+          foregroundColor: MaterialStateProperty.resolveWith((_) => Colors.white),
+        ),
+        smallOrdinaryButtonStyle: ButtonStyle(
+          fixedSize: MaterialStateProperty.resolveWith((states) => const Size.fromHeight(28)),
+          backgroundColor: MaterialStateProperty.resolveWith((states) {
+            return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
+          }),
+          overlayColor: MaterialStateProperty.resolveWith((states) {
+            return ColorsFoundation.darkNeutral900;
+          }),
+          shape: MaterialStateProperty.resolveWith(
+            (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
+          ),
+          foregroundColor: MaterialStateProperty.resolveWith((_) => Colors.white),
+        ),
+        iconInputTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: ColorsFoundation.solidLightSurface,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.solidLightSurface,
+              width: 2,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: BorderSide.none,
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+        ),
+        noIconInputTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: ColorsFoundation.solidLightSurface,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: Colors.white,
+              width: 2,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: BorderSide.none,
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+        ),
+        noFillInputTheme: const InputDecorationTheme(
+          border: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black, width: 0.5)),
+          enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black, width: 0.5)),
+          errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black, width: 0.5)),
+          focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
+          disabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5),
+          ),
+        ),
+        customAppBapTheme: AppBarTheme(
+          iconTheme: const IconThemeData(
+            color: ColorsFoundation.solidSurface,
+          ),
+          toolbarHeight: 84,
+          shadowColor: Colors.transparent,
+          backgroundColor: Colors.white.withOpacity(0.07),
+          centerTitle: true,
+          elevation: 0,
+          scrolledUnderElevation: 0,
+        ),
+        uiKitTabBarTheme: TabBarTheme(
+          indicatorSize: TabBarIndicatorSize.tab,
+          dividerColor: Colors.transparent,
+          labelColor: Colors.black,
+          unselectedLabelColor: ColorsFoundation.darkNeutral500,
+          indicator: BoxDecoration(
+            borderRadius: BorderRadiusFoundation.max,
+            color: Colors.white,
+          ),
+        ),
+        buttonTheme: ButtonThemeData(
+          buttonColor: Colors.white,
+          textTheme: ButtonTextTheme.primary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusFoundation.max,
+          ),
+        ),
+        cardTheme: CardTheme(
+          shadowColor: Colors.transparent,
+          surfaceTintColor: ColorsFoundation.solidSurface,
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusFoundation.all24,
+          ),
+        ),
+        boldTextTheme: UiKitBoldTextTheme(foregroundColor: Colors.black),
+        regularTextTheme: UiKitRegularTextTheme(foregroundColor: Colors.black),
+        bottomSheetTheme: UiKitBottomSheetThemeData(
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusFoundation.onlyTop40,
+          ),
+          sheetSliderColor: ColorsFoundation.darkNeutral500,
+        ),
+      ),
+    ],
+  );
   late final defaultThemeData = ThemeData(
     scaffoldBackgroundColor: Colors.black,
     useMaterial3: false,
@@ -41,46 +249,45 @@ class UiKitThemes {
       foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
       overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
     )),
-    dropdownMenuTheme:  DropdownMenuThemeData(
-      textStyle: _pickerTextStyle,
-      menuStyle: MenuStyle(
-        backgroundColor: MaterialStateProperty.resolveWith((states) =>UiKitColors.surface4),
-        // elevation: 0,
-      ),
-      inputDecorationTheme: InputDecorationTheme(
-        filled: true,
-        fillColor: ColorsFoundation.solidSurface,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadiusFoundation.max,
-          borderSide: BorderSide.none,
+    dropdownMenuTheme: DropdownMenuThemeData(
+        textStyle: _pickerTextStyle,
+        menuStyle: MenuStyle(
+          backgroundColor: MaterialStateProperty.resolveWith((states) => UiKitColors.surface4),
+          // elevation: 0,
         ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadiusFoundation.max,
-          borderSide: const BorderSide(
-            color: Colors.white,
-            width: 2,
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: ColorsFoundation.solidSurface,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: BorderSide.none,
           ),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadiusFoundation.max,
-          borderSide: BorderSide.none,
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadiusFoundation.max,
-          borderSide: const BorderSide(
-            color: ColorsFoundation.error,
-            width: 2,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: Colors.white,
+              width: 2,
+            ),
           ),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadiusFoundation.max,
-          borderSide: const BorderSide(
-            color: ColorsFoundation.error,
-            width: 2,
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: BorderSide.none,
           ),
-        ),
-      )
-    ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+        )),
     iconButtonTheme: IconButtonThemeData(
         style: ButtonStyle(
       textStyle: MaterialStateTextStyle.resolveWith((states) {
@@ -287,6 +494,7 @@ class UiKitThemes {
           ),
           sheetSliderColor: ColorsFoundation.darkNeutral500,
         ),
+        colorScheme: const UiKitColorScheme.dark(),
       ),
     ],
   );
