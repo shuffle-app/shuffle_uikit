@@ -222,6 +222,17 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
+              UiKitMessageCard(
+                name: 'Eugene',
+                surname: 'Carter',
+                nickName: '@racerboi',
+                date: '2h ago',
+                isStarEnabled: false,
+                avatarPath: GraphicsFoundation.instance.png.mockAvatar.path,
+                lastMessage: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+                unreadMessageCount: 4,
+              ),
+              SpacingFoundation.verticalSpace16,
               FingerprintSwitch(
                 isHealthKitEnabled: false,
                 title: Text(
@@ -1378,8 +1389,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .push(PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+                  Navigator.of(context).push(PopUpVideoPlayer(
+                      videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
                 },
                 child: const Text(
                   'Show Horizontal Video',
@@ -1391,7 +1402,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context).push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+                  Navigator.of(context)
+                      .push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
                 },
                 child: const Text(
                   'Show Vertical Video',
