@@ -8,11 +8,13 @@ class ProgressLinearIndicator extends StatefulWidget {
     required this.actualSum,
     required this.sum,
     this.width,
+    required this.onTap,
   });
 
   final double actualSum;
   final double sum;
   final double? width;
+  final VoidCallback onTap;
 
   @override
   State<ProgressLinearIndicator> createState() => _ProgressLinearIndicatorState();
@@ -94,7 +96,7 @@ class _ProgressLinearIndicatorState extends State<ProgressLinearIndicator> {
             // top: 1.w,
             child: context.badgeButtonNoValue(
               data: BaseUiKitButtonData(
-                onPressed: () => setState(() => _progressPosition += 25.w),
+                onPressed: () => widget.onTap.call(),
                 icon: Icon(CupertinoIcons.chevron_right_circle, size: 30.h),
               ),
             ),
