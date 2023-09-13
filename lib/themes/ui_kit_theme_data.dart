@@ -4,6 +4,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final Color customColor;
   final Color cardColor;
+  final UiKitColorScheme colorScheme;
   final InputDecorationTheme iconInputTheme;
   final InputDecorationTheme noIconInputTheme;
   final InputDecorationTheme noFillInputTheme;
@@ -27,12 +28,12 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
         overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
       );
   ButtonStyle get textButtonLabelSmallStyle => ButtonStyle(
-    textStyle: MaterialStateTextStyle.resolveWith((states) {
-      return regularTextTheme.labelSmall;
-    }),
-    foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-    overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
-  );
+        textStyle: MaterialStateTextStyle.resolveWith((states) {
+          return regularTextTheme.labelSmall;
+        }),
+        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+        overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
+      );
 
   UiKitThemeData({
     required this.iconInputTheme,
@@ -42,6 +43,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     required this.noFillInputTheme,
     required this.chipTheme,
     required this.customColor,
+    required this.colorScheme,
     required this.customAppBapTheme,
     required this.uiKitTabBarTheme,
     required this.boldTextTheme,
@@ -91,7 +93,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
       ordinaryButtonStyle: ordinaryButtonStyle ?? this.ordinaryButtonStyle,
       bottomSheetTheme: bottomSheetTheme ?? this.bottomSheetTheme,
       smallOrdinaryButtonStyle: smallOrdinaryButtonStyle ?? this.smallOrdinaryButtonStyle,
-
+      colorScheme: colorScheme,
     );
   }
 
@@ -103,6 +105,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
 
     return UiKitThemeData(
       customColor: Color.lerp(customColor, other.customColor, t) ?? Colors.white,
+      colorScheme: colorScheme,
       iconInputTheme: iconInputTheme,
       noIconInputTheme: noIconInputTheme,
       noFillInputTheme: noFillInputTheme,

@@ -137,15 +137,16 @@ class ImageWidget extends StatelessWidget {
         errorBuilder: (context, error, trace) =>
         errorWidget ?? const DefaultImageErrorWidget(),
       )
-      :Image.file(
-        File(link!),
-        fit: fit,
-        width: width,
-        color: color,
-        height: height,
-        errorBuilder: (context, error, trace) =>
-            errorWidget ?? const DefaultImageErrorWidget(),
-      );
-    }
+      : Image.file(
+          File(link!),
+          fit: fit,
+          width: width,
+          color: color,
+          height: height,
+          errorBuilder: (context, error, trace) =>
+          errorWidget ?? const DefaultImageErrorWidget(),
+        );
+      }
+
   }
 }

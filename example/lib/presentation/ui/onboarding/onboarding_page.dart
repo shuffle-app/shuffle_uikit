@@ -35,7 +35,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
   int currentIndex = 0;
 
   double get currentItemProgressPortion =>
-      ((widget.items.elementAt(currentIndex).autoSwitchDuration.inMilliseconds + (widget.transitionDuration * 3).inMilliseconds) /
+      ((widget.items.elementAt(currentIndex).autoSwitchDuration.inMilliseconds +
+              (widget.transitionDuration * 3).inMilliseconds) /
           overallDuration.inMilliseconds) *
       (currentIndex + 1);
 
@@ -67,6 +68,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -109,7 +111,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
                 child: Text(
                   key: UniqueKey(),
                   widget.items.elementAt(currentIndex).title,
-                  style: context.uiKitTheme?.boldTextTheme.titleLarge,
+                  style: context.uiKitTheme?.boldTextTheme.titleLarge.copyWith(color: Colors.white),
                   textAlign: TextAlign.center,
                 ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal32),
               ),
@@ -117,26 +119,31 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
               AnimatedBuilder(
                 animation: _progressAnimationController,
                 builder: (context, value) {
-                  return context
-                      .buttonWithProgress(
-                        data: BaseUiKitButtonData(
-                          text: 'NEXT >>>',
-                          onPressed: () {
-                            if (currentIndex != widget.items.length) {
-                              _switchToNextPage();
-                            } else {
-                              widget.onFinished?.call();
-                            }
-                            // _progressAnimationController.forward(from: 0);
-                            // setState(() {
-                            //   currentIndex = 0;
-                            // });
-                          },
-                        ),
-                        progress: _progressAnimationController.value,
-                        blurred: true,
-                      )
-                      .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16);
+                  return Theme(
+                    data: Theme.of(context).copyWith(extensions: [
+                      context.uiKitTheme!.copyWith(boldTextTheme: UiKitBoldTextTheme()),
+                    ]),
+                    child: context
+                        .buttonWithProgress(
+                          data: BaseUiKitButtonData(
+                            text: 'NEXT >>>',
+                            onPressed: () {
+                              if (currentIndex != widget.items.length) {
+                                _switchToNextPage();
+                              } else {
+                                widget.onFinished?.call();
+                              }
+                              // _progressAnimationController.forward(from: 0);
+                              // setState(() {
+                              //   currentIndex = 0;
+                              // });
+                            },
+                          ),
+                          progress: _progressAnimationController.value,
+                          blurred: true,
+                        )
+                        .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+                  );
                 },
               ),
               SpacingFoundation.verticalSpace24,

@@ -34,7 +34,7 @@ class UiKitFeedbackCard extends StatelessWidget {
         final calculatedHeight = size.maxWidth * 0.55;
 
         return Material(
-          color: ColorsFoundation.surface3,
+          color: context.uiKitTheme?.colorScheme.surface3,
           borderRadius: BorderRadiusFoundation.all24,
           clipBehavior: Clip.hardEdge,
           child: InkWell(

@@ -4,11 +4,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitCustomTabBar extends StatelessWidget {
   final List<UiKitCustomTab> tabs;
   final ValueChanged<int> onTappedTab;
+  final String? selectedTab;
 
   const UiKitCustomTabBar({
     Key? key,
     required this.tabs,
     required this.onTappedTab,
+    this.selectedTab,
   }) : super(key: key);
 
   @override
@@ -19,11 +21,14 @@ class UiKitCustomTabBar extends StatelessWidget {
       labelStyle: tabStyle,
     );
 
+    final initialTab = tabs.indexWhere((element) => element.title == selectedTab);
+
     return Theme(
       data: Theme.of(context).copyWith(tabBarTheme: tabBarTheme),
       child: UiKitCardWrapper(
         child: DefaultTabController(
           length: tabs.length,
+          initialIndex: initialTab.isNegative ? 0 : initialTab,
           child: ClipRRect(
             borderRadius: BorderRadiusFoundation.max,
             child: TabBar(

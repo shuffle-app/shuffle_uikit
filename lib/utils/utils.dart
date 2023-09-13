@@ -1,6 +1,7 @@
 //this file exports extentions for UI-KIT
 
 export 'animations/animations.dart';
+export 'data_formatters/time_format.dart';
 export 'animations/bouncing_icon_button_animation.dart';
 export 'builders/alert_dialog_builder.dart';
 export 'builders/comment_dialog_builder.dart';

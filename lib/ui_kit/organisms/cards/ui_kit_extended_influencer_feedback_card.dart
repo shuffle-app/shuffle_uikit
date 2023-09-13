@@ -73,10 +73,9 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
                           children: [
                             if (rating != null)
                               UiKitTagWidget(
-                                title: rating!.toStringAsFixed(0),
-                                icon: GraphicsFoundation.instance.svg.star.path,
-                                textColor: Colors.white,
-                              ),
+                                  title: rating!.toStringAsFixed(0),
+                                  icon: GraphicsFoundation.instance.svg.star.path,
+                                  textColor: theme?.colorScheme.inversePrimary),
                             ...tags
                                     ?.map<Widget>((e) => UiKitTagWidget(
                                           title: e.title,

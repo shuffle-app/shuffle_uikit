@@ -21,9 +21,9 @@ class UiKitInputFieldWithChips extends StatelessWidget {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final border = OutlineInputBorder(
       borderRadius: BorderRadiusFoundation.all16,
-      borderSide: const BorderSide(
+      borderSide: BorderSide(
         width: 1,
-        color: Colors.white,
+        color: context.uiKitTheme!.colorScheme.inversePrimary,
       ),
     );
 
@@ -43,7 +43,7 @@ class UiKitInputFieldWithChips extends StatelessWidget {
         disabledBorder: border,
         enabled: true,
         filled: true,
-        fillColor: ColorsFoundation.surface3,
+        fillColor: context.uiKitTheme?.colorScheme.surface3,
         prefixIconConstraints: BoxConstraints(
           maxWidth: 0.75.sw,
         ),

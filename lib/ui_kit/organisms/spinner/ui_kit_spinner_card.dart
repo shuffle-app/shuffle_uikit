@@ -7,6 +7,8 @@ class UiKitSpinnerCard extends StatefulWidget {
   final String? photoLink;
   final String? title;
   final DateTime? date;
+  final DateTime? dateTo;
+  final TimeOfDay? time;
   final bool? favourite;
   final VoidCallback? onTap;
   final VoidCallback? onFavoriteTap;
@@ -21,6 +23,8 @@ class UiKitSpinnerCard extends StatefulWidget {
     this.photoLink,
     this.title,
     this.date,
+    this.dateTo,
+    this.time,
     this.favourite,
     this.onTap,
     required this.availableHeight,
@@ -155,15 +159,26 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                 ImageWidget(
                   svgAsset: GraphicsFoundation.instance.svg.clock,
                   color: ColorsFoundation.darkNeutral900,
-                  width: 0.05.sw,
-                  height: 0.05.sw,
+                  width: kIsWeb ? 16 : 0.05.sw,
+                  height: kIsWeb ? 16 : 0.05.sw,
                   fit: BoxFit.cover,
                 ),
                 SpacingFoundation.horizontalSpace4,
+                if (widget.time != null)
+                  Text(
+                    '${normalizedTi(widget.time)}, ',
+                    style: dateTextStyle,
+                  ),
+                if(widget.dateTo == null)
                 Text(
-                  widget.date != null ? DateFormat('HH:MM a, MMM dd').format(widget.date!) : 'Coming soon',
+                  widget.date != null ? DateFormat('MMM dd').format(widget.date!) : 'Coming soon',
                   style: dateTextStyle,
-                ),
+                )
+                else
+                  Text(
+                    '${DateFormat('dd.MM').format(widget.date!)} - ${DateFormat('dd.MM.yyyy').format(widget.dateTo!)}',
+                    style: dateTextStyle,
+                  ),
               ],
             ),
           ],
