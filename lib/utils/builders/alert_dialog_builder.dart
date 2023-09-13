@@ -3,8 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-Future<T?> showUiKitAlertDialog<T extends Object?>(
-    BuildContext context, AlertDialogData data) {
+Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context, AlertDialogData data) {
   return showDialog<T>(
     context: context,
     builder: (BuildContext context) {
@@ -30,13 +29,10 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
         actions: [
           if (data.additionalButton != null) data.additionalButton!,
           context.dialogButton(
-            data: BaseUiKitButtonData(
-                onPressed: data.onPop ?? () => context.pop(),
-                text: data.defaultButtonText),
+            data: BaseUiKitButtonData(onPressed: data.onPop ?? () => context.pop(), text: data.defaultButtonText),
             small: true,
-            dialogButtonType: data.additionalButton != null
-                ? DialogButtonType.buttonWhite
-                : DialogButtonType.buttonBlack,
+            dialogButtonType:
+                data.additionalButton != null ? DialogButtonType.buttonWhite : DialogButtonType.buttonBlack,
           )
         ],
         actionsAlignment: MainAxisAlignment.center,
@@ -46,11 +42,8 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
   );
 }
 
-Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
-    BuildContext context,
-    {Color? backgroundColor = Colors.black,
-    required Function child,
-    double? paddingAll}) {
+Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(BuildContext context,
+    {Color? backgroundColor, required Function child, double? paddingAll}) {
   final textStyle = context.uiKitTheme?.boldTextTheme.title2;
 
   return showDialog(
@@ -66,10 +59,9 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusFoundation.all40,
         ),
-        backgroundColor: backgroundColor,
+        backgroundColor: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
         clipBehavior: Clip.hardEdge,
-        child: (child(_, textStyle) as Widget)
-            .paddingAll(paddingAll ?? EdgeInsetsFoundation.all24),
+        child: (child(_, textStyle) as Widget).paddingAll(paddingAll ?? EdgeInsetsFoundation.all24),
       ),
     ),
   );

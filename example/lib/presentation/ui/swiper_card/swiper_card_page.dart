@@ -96,7 +96,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
                   data: BaseUiKitButtonData(
                     icon: ImageWidget(
                       svgAsset: GraphicsFoundation.instance.svg.heartBrokenFill,
-                      color: Colors.white,
+                      color: context.uiKitTheme?.colorScheme.inversePrimary,
                     ),
                     onPressed: () {
                       dislikeController.forward(from: 0);
@@ -109,7 +109,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
                   data: BaseUiKitButtonData(
                     icon: ImageWidget(
                       svgAsset: GraphicsFoundation.instance.svg.starOutline,
-                      color: Colors.white,
+                      color: context.uiKitTheme?.colorScheme.inversePrimary,
                     ),
                     onPressed: () {},
                   ),
@@ -120,7 +120,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
                   data: BaseUiKitButtonData(
                     icon: ImageWidget(
                       svgAsset: GraphicsFoundation.instance.svg.heartFill,
-                      color: Colors.white,
+                      color: context.uiKitTheme?.colorScheme.inversePrimary,
                     ),
                     onPressed: () {
                       likeController.forward(from: 0);

@@ -16,16 +16,17 @@ class HorizontalMessageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final messageStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
       borderRadius: BorderRadiusFoundation.all24,
-      color: ColorsFoundation.surface2,
+      color: colorScheme?.surface2,
       child: InkWell(
         borderRadius: BorderRadiusFoundation.all24,
         onTap: onPressed,
         child: Ink(
           decoration: BoxDecoration(
-            color: ColorsFoundation.surface2,
+            color: colorScheme?.surface2,
             borderRadius: BorderRadiusFoundation.all24,
           ),
           child: Row(

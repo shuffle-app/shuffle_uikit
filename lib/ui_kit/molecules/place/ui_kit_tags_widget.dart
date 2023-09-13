@@ -29,11 +29,12 @@ class UiKitTagsWidget extends StatelessWidget {
                   svgAsset: GraphicsFoundation.instance.svg.star,
                   height: SpacingFoundation.horizontalSpacing16,
                   fit: BoxFit.fitHeight,
+                  color: context.uiKitTheme?.colorScheme.inversePrimary,
                 ),
                 SpacingFoundation.horizontalSpace8,
                 Text(
                   rating.toString(),
-                  style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
+                  style: theme?.boldTextTheme.caption1Bold,
                 ),
               ],
             ).paddingSymmetric(
@@ -74,9 +75,10 @@ class UiKitTagsWidget extends StatelessWidget {
                       // separatorBuilder: (_, __) =>
                       //     SpacingFoundation.horizontalSpace8,
                       itemCount: uniqueTags!.length,
-                      itemBuilder: (_, index) =>
-                          UiKitTagWidget(title: uniqueTags![index].title, icon: uniqueTags![index].iconPath, uniqueTag: true)
-                              .paddingOnly(right: uniqueTags!.length - 1 == index ? 0 : SpacingFoundation.horizontalSpacing8),
+                      itemBuilder: (_, index) => UiKitTagWidget(
+                              title: uniqueTags![index].title, icon: uniqueTags![index].iconPath, uniqueTag: true)
+                          .paddingOnly(
+                              right: uniqueTags!.length - 1 == index ? 0 : SpacingFoundation.horizontalSpacing8),
                     ))
               ],
             ],

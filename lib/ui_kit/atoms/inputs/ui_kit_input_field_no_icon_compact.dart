@@ -40,7 +40,9 @@ class _UiKitInputFieldNoIconCompactState extends State<UiKitInputFieldNoIconComp
       color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
     );
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
-      color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.darkNeutral900.withOpacity(0.16),
+      color: widget.enabled
+          ? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
+          : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
 
     return Theme(

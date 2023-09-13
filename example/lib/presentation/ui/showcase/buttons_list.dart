@@ -130,7 +130,7 @@ class ButtonsList extends StatelessWidget {
                 data: BaseUiKitButtonData(
               icon: ImageWidget(
                 svgAsset: GraphicsFoundation.instance.svg.route,
-                color: Colors.white,
+                color: context.uiKitTheme?.colorScheme.inversePrimary,
               ),
               onPressed: () {},
             )),
@@ -139,7 +139,7 @@ class ButtonsList extends StatelessWidget {
                 data: BaseUiKitButtonData(
               icon: ImageWidget(
                 svgAsset: GraphicsFoundation.instance.svg.route,
-                color: Colors.white,
+                color: context.uiKitTheme?.colorScheme.inversePrimary,
               ),
               onPressed: () {},
             )),

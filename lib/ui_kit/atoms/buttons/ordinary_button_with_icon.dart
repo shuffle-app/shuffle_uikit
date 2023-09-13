@@ -22,7 +22,7 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
     TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase;
 
     return Material(
-      color: Colors.white,
+      color: context.uiKitTheme?.colorScheme.inversePrimary,
       borderRadius: BorderRadiusFoundation.max,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
@@ -38,7 +38,7 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
             children: [
               Text(
                 (loading ?? false) ? '' : text.toUpperCase(),
-                style: textStyle?.copyWith(color: Colors.black),
+                style: textStyle?.copyWith(color: context.uiKitTheme?.colorScheme.primary),
               ),
               SpacingFoundation.horizontalSpace8,
               if (!(loading ?? false)) icon,

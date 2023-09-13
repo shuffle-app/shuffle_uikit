@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gallery_3d/gallery3d.dart';
 import 'package:shuffle_uikit/foundation/sizes_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitHorizontalScroll3D extends StatelessWidget {
   final Widget Function(BuildContext, int) itemBuilder;
@@ -31,7 +32,7 @@ class UiKitHorizontalScroll3D extends StatelessWidget {
           isShowTransformMask: true,
           shadows: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.5),
+              color: context.uiKitTheme!.colorScheme.primary.withOpacity(0.5),
               spreadRadius: screenWidth,
               blurRadius: screenWidth,
               offset: const Offset(0, 2),
