@@ -245,14 +245,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               UiKitMessageCard(
-                name: 'Eugene',
-                surname: 'Carter',
-                nickname: '@racerboi',
+                name: 'Eugene Carter',
+                username: '@racerboi',
                 lastMessageTime: '2h ago',
-                isStarEnabled: false,
                 avatarPath: GraphicsFoundation.instance.png.mockAvatar.path,
                 lastMessage: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
                 unreadMessageCount: 4,
+                userType: UserTileType.ordinary,
+                onTap: () {},
               ),
               SpacingFoundation.verticalSpace16,
               FingerprintSwitch(

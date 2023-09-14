@@ -5,26 +5,35 @@ class UiKitMessageCard extends StatelessWidget {
   const UiKitMessageCard({
     super.key,
     required this.name,
-    required this.surname,
-    required this.nickname,
+    required this.userType,
+    required this.username,
     required this.avatarPath,
     required this.lastMessage,
     required this.lastMessageTime,
-    this.onTap,
-    this.isStarEnabled,
+    required this.onTap,
     this.unreadMessageCount,
   });
 
   final String name;
-  final String surname;
-  final String nickname;
+  final String username;
   final String lastMessage;
   final String lastMessageTime;
   final String avatarPath;
+  final UserTileType userType;
+  final VoidCallback onTap;
 
-  final bool? isStarEnabled;
   final int? unreadMessageCount;
-  final VoidCallback? onTap;
+
+  BoxBorder? _getBorderByUserType(UserTileType userType, Color currentPremiumColor) {
+    switch (userType) {
+      case UserTileType.influencer:
+        return GradientFoundation.gradientBorder;
+      case UserTileType.premium:
+        return Border.all(width: 2, color: currentPremiumColor);
+      default:
+        return null;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +41,7 @@ class UiKitMessageCard extends StatelessWidget {
     final colorScheme = context.uiKitTheme?.colorScheme;
 
     return GestureDetector(
-      onTap: () => onTap?.call(),
+      onTap: () => onTap.call(),
       child: UiKitCardWrapper(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -42,7 +51,10 @@ class UiKitMessageCard extends StatelessWidget {
               children: [
                 BorderedUserCircleAvatar(
                   imageUrl: avatarPath,
-                  border: GradientFoundation.gradientBorder,
+                  border: _getBorderByUserType(
+                    userType,
+                    context.uiKitTheme!.colorScheme.inversePrimary,
+                  ),
                   size: 40.w,
                 ),
                 SpacingFoundation.horizontalSpace12,
@@ -51,20 +63,33 @@ class UiKitMessageCard extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Text.rich(
-                          TextSpan(
-                            text: name,
-                            style: boldTextTheme?.caption1Medium,
-                            children: [TextSpan(text: ' $surname')],
-                          ),
-                        ),
+                        Text(name, style: boldTextTheme?.caption1Medium),
                         SpacingFoundation.horizontalSpace8,
-                        if (isStarEnabled ?? false)
-                          ImageWidget(svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar),
+                        if (userType == UserTileType.premium)
+                          ImageWidget(
+                            svgAsset: GraphicsFoundation.instance.svg.star2,
+                            color: colorScheme?.inversePrimary,
+                            fit: BoxFit.cover,
+                            height: 16.w,
+                          ),
+                        if (userType == UserTileType.influencer)
+                          ImageWidget(
+                            svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
+                            fit: BoxFit.cover,
+                            height: 16.w,
+                          ),
+                        if (userType == UserTileType.pro)
+                          GradientableWidget(
+                            gradient: GradientFoundation.premiumLinearGradient,
+                            child: Text(
+                              'pro',
+                              style: boldTextTheme?.caption1Bold.copyWith(color: Colors.white),
+                            ),
+                          )
                       ],
                     ),
                     Text(
-                      nickname,
+                      username,
                       style: boldTextTheme?.caption1Bold.copyWith(
                         color: colorScheme?.darkNeutral900,
                       ),
