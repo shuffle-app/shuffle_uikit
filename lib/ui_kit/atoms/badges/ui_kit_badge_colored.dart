@@ -28,6 +28,8 @@ class UiKitBadgeColored extends StatelessWidget {
               children: [
                 if (title != null)
                   Text(title!,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: theme?.boldTextTheme.caption1Medium
                           .copyWith(color: color)),
                 if (icon != null && title != null) 4.w.widthBox,

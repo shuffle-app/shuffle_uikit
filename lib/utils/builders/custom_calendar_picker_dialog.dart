@@ -63,14 +63,6 @@ class _CustomCalendarPickerDialogState
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              if(kIsWeb)...[
-                context.button(
-                    data: BaseUiKitButtonData(
-                        text: 'remove', onPressed: () => context.pop(result: DateTime.fromMicrosecondsSinceEpoch(0))),
-                    isTextButton: true),
-                SpacingFoundation.horizontalSpace4,
-              ],
-              //TODO check if this is link in design - outlined
               context.button(
                   data: BaseUiKitButtonData(
                       text: 'Cancel', onPressed: () => context.pop()),

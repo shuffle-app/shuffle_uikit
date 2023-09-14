@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:flutter/foundation.dart';
 
 class UiKitGradientSwitch extends StatelessWidget {
   static const _duration = Duration(milliseconds: 250);
@@ -15,8 +16,8 @@ class UiKitGradientSwitch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 0.035.sh,
-      width: 0.035.sh / 0.6,
+      height: kIsWeb ? 22: 0.035.sh,
+      width:  (kIsWeb ? 22: 0.035.sh) / 0.6,
       child: GestureDetector(
         onTap: () => onChanged?.call(!switchedOn),
         child: Stack(
