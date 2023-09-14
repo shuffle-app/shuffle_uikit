@@ -33,8 +33,8 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       widget.scrollController.addListener(_scrollListener);
-      _rotationNotifier.addListener(_rotationListener);
     });
+    _rotationNotifier.addListener(_rotationListener);
   }
 
   void _rotationListener() {
@@ -197,6 +197,8 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                 left: (1.sw / 2) - 345,
                 child: GestureDetector(
                   onPanUpdate: (details) {
+                    if (widget.pagingController.itemList?.isEmpty ?? false) return;
+
                     if (_spinningType != SpinningType.wheel) setSpinningType(SpinningType.wheel);
                     final delta = details.delta.dx;
                     final inScrollBeginning = widget.scrollController.offset == 0 && !delta.isNegative;
@@ -210,9 +212,13 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     );
                   },
                   onPanStart: (details) {
+                    if (widget.pagingController.itemList?.isEmpty ?? false) return;
+
                     _scrollStartNotifier.value = widget.scrollController.offset;
                   },
                   onPanEnd: (details) async {
+                    if (widget.pagingController.itemList?.isEmpty ?? false) return;
+
                     final atEnd = widget.scrollController.position.atEdge;
 
                     final inertionScroll = details.velocity.pixelsPerSecond.dx / 4;

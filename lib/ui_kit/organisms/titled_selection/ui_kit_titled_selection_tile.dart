@@ -30,7 +30,7 @@ class UiKitTitledSelectionTile extends StatelessWidget {
             title,
             style: textTheme?.labelSmall,
           ),
-          SpacingFoundation.verticalSpace4,
+          SpacingFoundation.verticalSpace2,
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [

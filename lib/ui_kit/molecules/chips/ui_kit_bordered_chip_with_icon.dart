@@ -27,7 +27,7 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
           color: isSelected ? Colors.transparent : Colors.white,
         ),
       ),
-      color: isSelected ? colorScheme?.primary : colorScheme?.inversePrimary,
+      color: isSelected ? colorScheme?.inversePrimary : colorScheme?.primary,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
         onTap: onPressed,
@@ -35,13 +35,14 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SpacingFoundation.horizontalSpace8,
-              ConstrainedBox(
-                  constraints: BoxConstraints(maxHeight: 16.w),
-                  child: ClipRRect(
-                    borderRadius: BorderRadiusFoundation.all24,
-                    child: icon,
-                  )),
+              Container(
+                clipBehavior: Clip.hardEdge,
+                height: 0.028.sh,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadiusFoundation.all24,
+                ),
+                child: icon,
+              ),
               SpacingFoundation.horizontalSpace8,
               Text(
                 title,
@@ -50,7 +51,10 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
                 ),
               ),
             ],
-          ).paddingOnly(right: SpacingFoundation.horizontalSpacing8),
+          ).paddingSymmetric(
+            horizontal: EdgeInsetsFoundation.horizontal16,
+            vertical: EdgeInsetsFoundation.vertical12,
+          ),
         ),
       ),
     );
