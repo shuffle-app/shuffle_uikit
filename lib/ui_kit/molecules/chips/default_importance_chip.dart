@@ -25,7 +25,7 @@ class DefaultImportanceChip extends StatelessWidget {
           width: 120,
           decoration: const BoxDecoration(
             color: ColorsFoundation.surface2,
-            shape: BoxShape.circle,
+            // shape: BoxShape.circle,
           ),
           child: Center(
             child: AutoSizeText(

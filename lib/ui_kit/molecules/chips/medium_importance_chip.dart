@@ -25,7 +25,7 @@ class MediumImportanceChip extends StatelessWidget {
           width: 120,
           decoration: const BoxDecoration(
             color: Colors.white,
-            shape: BoxShape.circle,
+            // shape: BoxShape.circle,
           ),
           child: Center(
             child: AutoSizeText(
