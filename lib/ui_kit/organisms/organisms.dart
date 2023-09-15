@@ -23,6 +23,7 @@ export 'cards/ui_kit_vertical_chip.dart';
 export 'cards/ui_kit_donation_card.dart';
 export 'cards/ui_kit_chat_in_card.dart';
 export 'cards/ui_kit_chat_out_card.dart';
+export 'cards/ui_kit_invite_message_content.dart';
 export 'horizontal_scroll/ui_kit_horizontal_scroll_3D.dart';
 export 'lists/ui_kit_searchable_list_body.dart';
 export 'menu/ui_kit_menu.dart';

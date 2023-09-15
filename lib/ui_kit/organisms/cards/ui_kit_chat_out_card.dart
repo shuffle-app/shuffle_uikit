@@ -1,16 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitChatOutCard extends StatelessWidget {
   const UiKitChatOutCard({
     super.key,
-    required this.time,
+    required this.dispatchTime,
     this.text,
     this.child,
   });
 
-  final String time;
+  final String dispatchTime;
   final String? text;
   final Widget? child;
 
@@ -24,7 +23,7 @@ class UiKitChatOutCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         Text(
-          time,
+          dispatchTime,
           style: theme?.regularTextTheme.caption2.copyWith(
             color: theme.colorScheme.darkNeutral900,
           ),
@@ -36,15 +35,13 @@ class UiKitChatOutCard extends StatelessWidget {
           children: [
             Flexible(
               child: UiKitCardWrapper(
-                color: theme?.colorScheme.inversePrimary,
+                color: theme?.colorScheme.surface3,
                 child: text != null
                     ? ConstrainedBox(
                         constraints: BoxConstraints.expand(width: width, height: height),
                         child: Text(
                           text!,
-                          style: theme?.boldTextTheme.caption1Medium.copyWith(
-                            color: theme.colorScheme.primary,
-                          ),
+                          style: theme?.boldTextTheme.caption1Medium,
                         ),
                       ).paddingAll(EdgeInsetsFoundation.all12)
                     : child!.paddingAll(EdgeInsetsFoundation.all12),
@@ -52,9 +49,8 @@ class UiKitChatOutCard extends StatelessWidget {
             ),
             Transform(
               transform: Matrix4.identity()..scale(-1.0, 1.0),
-              alignment: Alignment.center,
               child: CustomPaint(
-                painter: _MessageTriangle(color: theme!.colorScheme.inversePrimary),
+                painter: _MessageTriangle(color: theme!.colorScheme.surface3),
               ),
             ),
           ],
@@ -77,7 +73,7 @@ class _MessageTriangle extends CustomPainter {
     path
       ..lineTo(-8.w, 0)
       ..quadraticBezierTo(1.w, 5.h, 0, 20.h)
-      ..lineTo(30.w, 0)
+      ..lineTo(30.w, -0.25.w)
       ..close();
 
     canvas.drawPath(path, paint);
