@@ -256,6 +256,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               FingerprintSwitch(
+                height: MediaQuery.sizeOf(context).width/0.7,
                 isHealthKitEnabled: false,
                 title: Text(
                   'Guess',
