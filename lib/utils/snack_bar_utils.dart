@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -10,23 +8,37 @@ class SnackBarUtils {
       {required String message,
       Duration? duration,
       required BuildContext context,
+      AppSnackBarType type = AppSnackBarType.info,
       VoidCallback? onTap}) {
+    final theme = context.uiKitTheme;
+    final Color color = () {
+      switch (type) {
+        case AppSnackBarType.info:
+          return UiKitColors.info;
+        case AppSnackBarType.success:
+          return UiKitColors.success;
+        case AppSnackBarType.warning:
+          return UiKitColors.warning;
+        case AppSnackBarType.error:
+          return UiKitColors.error;
+        case AppSnackBarType.neutral:
+          return UiKitColors.darkNeutral900;
+      }
+    }();
+
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusFoundation.all12
-        ),
-        backgroundColor: ColorsFoundation.darkNeutral900,
+        padding: EdgeInsets.symmetric(vertical: 22.h, horizontal: 12.h),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all12),
+        backgroundColor: Color.alphaBlend(color.withOpacity(0.16), UiKitColors.surface),
         duration: duration ?? const Duration(seconds: 3),
-        content: Text(message),
-        action: SnackBarAction(
-          textColor: const Color(0xFFFAF2FB),
-          label: 'OK',
-          onPressed: onTap ??
-              () {
-                log('SnackBar action was pressed');
-              },
+        content: Text(
+          message,
+          style: theme?.regularTextTheme.body.copyWith(color: color),
         ),
+        closeIconColor: color,
+        showCloseIcon: onTap == null,
+        action: onTap == null ? null : SnackBarAction(textColor: color, label: 'X', onPressed: onTap),
       ),
     );
   }
@@ -35,8 +47,7 @@ class SnackBarUtils {
     ScaffoldMessenger.of(context).hideCurrentSnackBar();
   }
 
-  static void hideAndShow(
-      {required String message, required BuildContext context}) {
+  static void hideAndShow({required String message, required BuildContext context}) {
     hide(context);
     show(message: message, context: context);
   }
@@ -49,3 +60,11 @@ class SnackBarUtils {
 //   final String text;
 //   final bool withDismiss;
 // }
+
+enum AppSnackBarType {
+  info,
+  success,
+  warning,
+  error,
+  neutral,
+}
