@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_html_iframe/shims/dart_ui_real.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitBottomModalSheet extends StatefulWidget {
@@ -54,13 +53,7 @@ class _UiKitBottomModalSheetState extends State<UiKitBottomModalSheet> with Tick
             sigmaY: controller.value * 50,
             // tileMode: TileMode.decal
           ),
-          child: SlideTransition(
-            position: Tween<Offset>(
-              end: Offset.zero,
-              begin: const Offset(0.0, 1.0),
-            ).animate(widget.startAnimation),
-            child: child,
-          ),
+          child: child,
         );
       },
       child: Dismissible(
