@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
-import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
@@ -440,7 +440,8 @@ class $AssetsImagesPngGen {
   AssetGenImage get searchBusinessClubs => const AssetGenImage('assets/images/png/search_business_clubs.png');
 
   /// File path: assets/images/png/search_business_conferences.png
-  AssetGenImage get searchBusinessConferences => const AssetGenImage('assets/images/png/search_business_conferences.png');
+  AssetGenImage get searchBusinessConferences =>
+      const AssetGenImage('assets/images/png/search_business_conferences.png');
 
   /// File path: assets/images/png/search_business_exhibition.png
   AssetGenImage get searchBusinessExhibition => const AssetGenImage('assets/images/png/search_business_exhibition.png');
@@ -725,7 +726,8 @@ class $AssetsImagesSvgGen {
   SvgGenImage get givingLikeEmoji => const SvgGenImage('assets/images/svg/Giving-like-emoji.svg');
 
   /// File path: assets/images/svg/Grinning-face-with-sweat-emoji.svg
-  SvgGenImage get grinningFaceWithSweatEmoji => const SvgGenImage('assets/images/svg/Grinning-face-with-sweat-emoji.svg');
+  SvgGenImage get grinningFaceWithSweatEmoji =>
+      const SvgGenImage('assets/images/svg/Grinning-face-with-sweat-emoji.svg');
 
   /// File path: assets/images/svg/Hat.svg
   SvgGenImage get hat => const SvgGenImage('assets/images/svg/Hat.svg');
@@ -1325,7 +1327,8 @@ class $AssetsImagesSvgGen {
   SvgGenImage get whiteStar => const SvgGenImage('assets/images/svg/white_star.svg');
 
   /// File path: assets/images/svg/white_star_transparent_center.svg
-  SvgGenImage get whiteStarTransparentCenter => const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
+  SvgGenImage get whiteStarTransparentCenter =>
+      const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
 
   /// File path: assets/images/svg/x.svg
   SvgGenImage get x => const SvgGenImage('assets/images/svg/x.svg');
