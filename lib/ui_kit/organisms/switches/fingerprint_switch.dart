@@ -9,6 +9,7 @@ class FingerprintSwitch extends StatefulWidget {
     required this.backgroundImage,
     required this.onCompletedWidget,
     required this.isHealthKitEnabled,
+    required this.height,
     this.subtitle,
     this.isCompleted,
     this.animationPath,
@@ -16,6 +17,7 @@ class FingerprintSwitch extends StatefulWidget {
     this.onCompleted,
   });
 
+  final double height;
   final Widget title;
   final Widget? subtitle;
   final Widget onCompletedWidget;
@@ -77,12 +79,11 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
   @override
   Widget build(BuildContext context) {
     // final height = 158.h;
-    final height = 158.h;
 
     return Stack(
       children: [
         UiKitBorderWrapper(
-          height: height,
+          height: widget.height,
           child: ClipRRect(
             borderRadius: BorderRadiusFoundation.all28,
             child: Transform(
@@ -93,7 +94,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
           ),
         ),
         FingerprintButton(
-          height: height,
+          height: widget.height,
           animationPath: widget.animationPath,
           title: widget.title,
           subtitle: widget.subtitle,
@@ -133,7 +134,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
             sizeFactor: _animation,
             child: UiKitCardWrapper(
               width: double.infinity,
-              height: height,
+              height: widget.height,
               color: context.uiKitTheme?.colorScheme.surface3,
               borderRadius: BorderRadiusFoundation.all28,
               child: Column(

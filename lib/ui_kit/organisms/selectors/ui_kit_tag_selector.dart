@@ -3,6 +3,8 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitTagSelector extends StatelessWidget {
   final List<String> tags;
+  final double maxHeight;
+  final bool showTextField;
 
   // final ValueChanged<List<String>>? onTagsSelected;
   final ValueChanged<String>? onNotFoundTagCallback;
@@ -32,6 +34,8 @@ class UiKitTagSelector extends StatelessWidget {
   UiKitTagSelector({
     Key? key,
     required this.tags,
+     this.maxHeight = double.infinity,
+     this.showTextField = true,
     this.onRemoveTagCallback,
     this.onNotFoundTagCallback,
   }) : super(key: key);
@@ -52,7 +56,7 @@ class UiKitTagSelector extends StatelessWidget {
             child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: [
               if (selectedTags.isNotEmpty)
                 ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: 100.h),
+                    constraints: BoxConstraints(maxHeight: maxHeight),
                     child: SingleChildScrollView(
                         child: Wrap(
                       spacing: SpacingFoundation.horizontalSpacing8,
@@ -70,6 +74,7 @@ class UiKitTagSelector extends StatelessWidget {
                               .toList() ??
                           [],
                     ))),
+              if (showTextField)
               ConstrainedBox(
                   constraints: BoxConstraints(maxHeight: 40.h),
                   child: TextField(

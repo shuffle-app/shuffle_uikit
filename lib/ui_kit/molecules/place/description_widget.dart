@@ -21,7 +21,7 @@ class DescriptionWidget extends StatelessWidget {
                 overflow: hide ? TextOverflow.ellipsis : null,
                 style: textTheme,
               ),
-              if ((description.replaceAll('\n', '').characters.length * 5.8.w ~/ 0.8.sw +
+              if ((description.replaceAll('\n', '').characters.length * 6.4.w ~/ 0.8.sw +
                       description.characters.where((p0) => p0 == '\n').length) >
                   7)
                 InkWell(
