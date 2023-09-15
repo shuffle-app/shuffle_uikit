@@ -244,6 +244,25 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ],
               ),
               SpacingFoundation.verticalSpace16,
+<<<<<<< Updated upstream
+=======
+              UiKitMessageCard(
+                name: 'Eugene Carter',
+                username: '@racerboi',
+                lastMessageTime: '2h ago',
+                avatarPath: GraphicsFoundation.instance.png.mockAvatar.path,
+                lastMessage: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+                unreadMessageCount: 4,
+                userType: UserTileType.influencer,
+                onTap: () {},
+              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12),
+              SpacingFoundation.verticalSpace16,
+              const UiKitChatCard(
+                time: '2:45 pm',
+                text: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12),
+              SpacingFoundation.verticalSpace16,
+>>>>>>> Stashed changes
               FingerprintSwitch(
                 isHealthKitEnabled: false,
                 title: Text(
@@ -265,6 +284,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   layoutDirection: Axis.vertical,
                   onPressed: () {},
                 ),
+                height: 200,
               ),
               SpacingFoundation.verticalSpace16,
               UiKitLeadingRadioTile(
