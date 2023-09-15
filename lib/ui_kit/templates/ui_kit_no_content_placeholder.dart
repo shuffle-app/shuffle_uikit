@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitBigPhotoErrorWidget extends StatelessWidget {
-  const UiKitBigPhotoErrorWidget({super.key});
+class UiKitNoContentPlaceholder extends StatelessWidget {
+  const UiKitNoContentPlaceholder({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
     return UiKitCardWrapper(
+      width: 1.sw - (EdgeInsetsFoundation.all32 * 2),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -25,7 +26,7 @@ class UiKitBigPhotoErrorWidget extends StatelessWidget {
           ),
           SpacingFoundation.verticalSpace4,
           Text(
-            'No photo here yet!',
+            'No content here yet!',
             style: textTheme?.body.copyWith(
               color: ColorsFoundation.darkNeutral900,
             ),

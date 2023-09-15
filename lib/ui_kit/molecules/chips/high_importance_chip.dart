@@ -23,7 +23,7 @@ class HighImportanceChip extends StatelessWidget {
           height: 120,
           width: 120,
           decoration: BoxDecoration(
-              shape: BoxShape.circle,
+              // shape: BoxShape.circle,
               gradient: GradientFoundation.attentionCard,
               border: Border.fromBorderSide(BorderSide(
                 color: Colors.white.withOpacity(0.2),

@@ -21,6 +21,7 @@ export 'cards/ui_kit_titled_action_card.dart';
 export 'cards/ui_kit_titled_card_with_background.dart';
 export 'cards/ui_kit_vertical_chip.dart';
 export 'cards/ui_kit_donation_card.dart';
+export 'cards/ui_kit_message_card.dart';
 export 'cards/ui_kit_chat_in_card.dart';
 export 'cards/ui_kit_chat_out_card.dart';
 export 'cards/ui_kit_invite_message_content.dart';

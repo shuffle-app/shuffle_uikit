@@ -94,6 +94,17 @@ class GradientFoundation {
     transform: GradientRotation(-pi / 12),
   );
 
+  static const premiumLinearGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.yellow,
+      ColorsFoundation.error,
+      ColorsFoundation.pink,
+    ],
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
+    stops: [0.1, 0.6, 0.95],
+  );
+
   static const defaultRadialGradient = RadialGradient(
     colors: [
       ColorsFoundation.orange,
@@ -189,6 +200,7 @@ class GradientFoundation {
     end: Alignment.bottomCenter,
     begin: Alignment.topCenter,
   );
+
   static const findSomeoneGradient = RadialGradient(
     center: Alignment(1.1, 1.0),
     focal: Alignment(1.1, 1.0),

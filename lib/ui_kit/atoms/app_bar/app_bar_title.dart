@@ -18,12 +18,10 @@ class AppBarTitle extends StatelessWidget {
     TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.title1 ?? Theme.of(context).primaryTextTheme.titleMedium;
     textStyle = textStyle?.copyWith(color: context.uiKitTheme?.colorScheme.inversePrimary);
 
-    return Expanded(
-      child: Text(
-        title,
-        style: textStyle,
-        textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
-      ),
+    return Text(
+      title,
+      style: textStyle,
+      textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
     );
   }
 }

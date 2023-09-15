@@ -71,8 +71,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
     TextStyle? labelStyle = uiKitTheme?.regularTextTheme.labelSmall;
     labelStyle = _key.currentState?.hasError ?? false
         ? labelStyle?.copyWith(color: ColorsFoundation.error)
-        : labelStyle?.copyWith(
-            color: widget.enabled ? ColorsFoundation.darkNeutral100 : ColorsFoundation.darkNeutral900);
+        : labelStyle?.copyWith(color: widget.enabled ? ColorsFoundation.darkNeutral100 : ColorsFoundation.darkNeutral900);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
           ? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
@@ -101,11 +100,14 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         inputFormatters: widget.inputFormatters,
         decoration: InputDecoration(
           suffixIcon: widget.icon,
+          floatingLabelBehavior: FloatingLabelBehavior.always,
+          floatingLabelStyle: MaterialStateTextStyle.resolveWith((states) => labelStyle!),
+          floatingLabelAlignment: FloatingLabelAlignment.start,
+          labelStyle: MaterialStateTextStyle.resolveWith((states) => labelStyle!),
           hintText: widget.hintText,
           prefixStyle: inputTextStyle,
           prefixText: widget.prefixText,
           labelText: widget.label,
-          labelStyle: labelStyle,
           hintStyle: hintStyle,
           errorText: widget.errorText,
           errorMaxLines: 1,
