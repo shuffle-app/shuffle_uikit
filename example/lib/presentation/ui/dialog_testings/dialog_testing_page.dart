@@ -19,7 +19,7 @@ class DialogTestingPage extends StatelessWidget {
                         topPadding: 100,
                         useRootNavigator: false,
                         child: Column(
-                          children: List.generate(10, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
+                          children: List.generate(5, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
                         ),
                         bottomBar: Center(
                           child: Container(
@@ -106,6 +106,23 @@ class DialogTestingPage extends StatelessWidget {
                     ),
                   );
                 },
+              ),
+              SpacingFoundation.verticalSpace16,
+              context.button(
+                data: BaseUiKitButtonData(
+                  text: 'Show modal bottom sheet',
+                  onPressed: () => showModalBottomSheet(
+                    context: context,
+                    builder: (context) => Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                      ),
+                      child: Column(
+                        children: List.generate(5, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
+                      ),
+                    ),
+                  ),
+                ),
               ),
               SpacingFoundation.verticalSpace16,
             ],

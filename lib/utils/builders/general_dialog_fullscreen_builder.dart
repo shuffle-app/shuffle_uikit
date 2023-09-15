@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
-  final Key key=UniqueKey();
+  final Key key = UniqueKey();
   // final Key key=Key(DateTime.now().toString());
-  dismissable(animation) =>
-      UiKitBottomModalSheet(data: data, startAnimation: animation,dissmissKey: key,);
-
 
   return showGeneralDialog(
     barrierDismissible: true,
@@ -15,12 +12,25 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
     barrierColor: Colors.white.withOpacity(0.07),
     context: context,
     transitionDuration: const Duration(milliseconds: 250),
+    transitionBuilder: (context, animation1, animation2, child) {
+      return SlideTransition(
+        position: Tween<Offset>(
+          end: Offset.zero,
+          begin: const Offset(0.0, 1.0),
+        ).animate(animation1),
+        child: child,
+      );
+    },
     pageBuilder: (
       BuildContext context,
       Animation<double> animation1,
       Animation<double> animation2,
     ) {
-      return dismissable(animation1);
+      return UiKitBottomModalSheet(
+        data: data,
+        startAnimation: animation1,
+        dissmissKey: key,
+      );
     },
   );
 }
@@ -39,9 +49,5 @@ class GeneralDialogData {
   final Function onDismissed;
 
   GeneralDialogData(
-      {this.useRootNavigator = true,
-      required this.child,
-      this.bottomBar,
-      this.topPadding,
-      this.onDismissed = _empty});
+      {this.useRootNavigator = true, required this.child, this.bottomBar, this.topPadding, this.onDismissed = _empty});
 }
