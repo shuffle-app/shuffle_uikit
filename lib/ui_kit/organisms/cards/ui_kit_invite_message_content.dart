@@ -1,42 +1,40 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInviteMessageContent extends StatelessWidget {
   const UiKitInviteMessageContent({
-    super.key,
+    Key? key,
     required this.username,
     required this.placeName,
     required this.placeImagePath,
     required this.invitedPeopleAvatarPaths,
-    required this.invitedPeopleAmount,
-    required this.firstTagName,
-    required this.firstTagImage,
-    required this.secondTagName,
-    required this.secondTagImage,
-    required this.onNextTap,
-    required this.onInvitePeopleTap,
     required this.userType,
-  });
+    required this.onPlaceTap,
+    required this.onInvitePeopleTap,
+    required this.tags,
+  }) : super(key: key);
 
   final String username;
   final String placeName;
-
-  final String firstTagName;
-  final SvgGenImage firstTagImage;
-  final String secondTagName;
-  final SvgGenImage secondTagImage;
-
   final String placeImagePath;
-  final int invitedPeopleAmount;
-  final List<String> invitedPeopleAvatarPaths;
+  final List<UiKitTag> tags;
+  final List<String?> invitedPeopleAvatarPaths;
   final UserTileType userType;
 
-  final VoidCallback onNextTap;
+  final VoidCallback onPlaceTap;
   final VoidCallback onInvitePeopleTap;
+
+  List<String?> _sortAvatars() {
+    final sortedAvatars = invitedPeopleAvatarPaths.where((avatar) => avatar != null).toList();
+
+    return sortedAvatars;
+  }
 
   @override
   Widget build(BuildContext context) {
+    final sortedAvatars = _sortAvatars();
     final theme = context.uiKitTheme;
     final avatarWidth = 40.w;
 
@@ -44,46 +42,46 @@ class UiKitInviteMessageContent extends StatelessWidget {
       children: [
         Row(
           children: [
-            Expanded(
-              child: Stack(
-                children: [
-                  BorderedUserCircleAvatar(
-                    imageUrl: invitedPeopleAvatarPaths.first,
-                    size: avatarWidth,
-                  ),
-                  if (invitedPeopleAvatarPaths.length >= 2)
-                    Positioned(
-                      left: EdgeInsetsFoundation.horizontal32 * 0.7.w,
-                      child: BorderedUserCircleAvatar(
-                        size: avatarWidth,
-                        imageUrl: invitedPeopleAvatarPaths[1],
-                      ),
-                    ),
-                  if (invitedPeopleAvatarPaths.length >= 3)
-                    Positioned(
-                      left: EdgeInsetsFoundation.horizontal32 * 1.5.w,
-                      child: BorderedUserCircleAvatar(
-                        size: avatarWidth,
-                        imageUrl: invitedPeopleAvatarPaths[2],
-                      ),
-                    ),
-                  if (invitedPeopleAmount - 3 > 0)
-                    Positioned(
-                      left: EdgeInsetsFoundation.horizontal32 * 2.2.w,
-                      child: CircleAvatar(
-                        radius: avatarWidth / 2,
-                        backgroundColor: theme?.colorScheme.surface4,
-                        child: Text(
-                          '+${invitedPeopleAmount - 3}',
-                          style: theme?.regularTextTheme.caption1.copyWith(
-                            color: theme.colorScheme.darkNeutral900,
+            sortedAvatars.length >= 3
+                ? Expanded(
+                    child: Stack(
+                      children: [
+                        BorderedUserCircleAvatar(
+                          imageUrl: sortedAvatars.first,
+                          size: avatarWidth,
+                        ),
+                        Positioned(
+                          left: EdgeInsetsFoundation.horizontal32 * 0.7.w,
+                          child: BorderedUserCircleAvatar(
+                            size: avatarWidth,
+                            imageUrl: sortedAvatars[1],
                           ),
                         ),
-                      ),
+                        Positioned(
+                          left: EdgeInsetsFoundation.horizontal32 * 1.5.w,
+                          child: BorderedUserCircleAvatar(
+                            size: avatarWidth,
+                            imageUrl: sortedAvatars[2],
+                          ),
+                        ),
+                        if (invitedPeopleAvatarPaths.length - 3 > 0)
+                          Positioned(
+                            left: EdgeInsetsFoundation.horizontal32 * 2.2.w,
+                            child: CircleAvatar(
+                              radius: avatarWidth / 2,
+                              backgroundColor: theme?.colorScheme.surface4,
+                              child: Text(
+                                '+${invitedPeopleAvatarPaths.length - 3}',
+                                style: theme?.regularTextTheme.caption1.copyWith(
+                                  color: theme.colorScheme.darkNeutral900,
+                                ),
+                              ),
+                            ),
+                          ),
+                      ],
                     ),
-                ],
-              ),
-            ),
+                  )
+                : const Spacer(),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -117,7 +115,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  'invites $invitedPeopleAmount people to',
+                  'invites ${invitedPeopleAvatarPaths.length} people to',
                   style: theme?.boldTextTheme.caption1Medium,
                 ),
               ],
@@ -136,46 +134,34 @@ class UiKitInviteMessageContent extends StatelessWidget {
                 size: avatarWidth + 5.w,
                 imageUrl: placeImagePath,
               ),
-              SpacingFoundation.horizontalSpace12,
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SpacingFoundation.verticalSpace4,
-                  Text(placeName, style: theme?.boldTextTheme.caption1Bold),
-                  SpacingFoundation.verticalSpace2,
                   Row(
                     children: [
-                      ImageWidget(
-                        svgAsset: firstTagImage,
-                        color: theme?.colorScheme.darkNeutral900,
-                      ),
-                      SpacingFoundation.horizontalSpace4,
-                      Text(
-                        firstTagName,
-                        style: theme?.boldTextTheme.caption2Bold.copyWith(
-                          color: theme.colorScheme.darkNeutral900,
-                        ),
-                      ),
-                      SpacingFoundation.horizontalSpace8,
-                      ImageWidget(
-                        svgAsset: secondTagImage,
-                        color: theme?.colorScheme.darkNeutral900,
-                      ),
-                      SpacingFoundation.horizontalSpace4,
-                      Text(
-                        secondTagName,
-                        style: theme?.boldTextTheme.caption2Bold.copyWith(
-                          color: theme.colorScheme.darkNeutral900,
-                        ),
-                      ),
+                      SpacingFoundation.horizontalSpace12,
+                      Text(placeName, style: theme?.boldTextTheme.caption1Bold),
                     ],
                   ),
+                  SizedBox(
+                    height: 20.h,
+                    width: 170.w,
+                    child: ListView.separated(
+                      padding: EdgeInsets.only(left: EdgeInsetsFoundation.horizontal12),
+                      itemCount: tags.length,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (_, index) => tags[index].widget,
+                      separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace2,
+                    ),
+                  ),
+                  SpacingFoundation.verticalSpace2,
                 ],
               ),
               Flexible(
                 child: context.badgeButtonNoValue(
                   data: BaseUiKitButtonData(
-                    onPressed: onNextTap,
+                    onPressed: onPlaceTap,
                     icon: Icon(
                       CupertinoIcons.chevron_right_circle,
                       size: avatarWidth + 5.w,
@@ -188,13 +174,11 @@ class UiKitInviteMessageContent extends StatelessWidget {
           ),
         ),
         SpacingFoundation.verticalSpace12,
-        ConstrainedBox(
-          constraints: BoxConstraints.expand(width: double.infinity, height: 40.h),
-          child: context.gradientButton(
-            data: BaseUiKitButtonData(
-              onPressed: onInvitePeopleTap,
-              text: 'INVITE MORE',
-            ),
+        context.gradientButton(
+          data: BaseUiKitButtonData(
+            onPressed: onInvitePeopleTap,
+            text: 'INVITE MORE',
+            fit: ButtonFit.fitWidth,
           ),
         ),
       ],

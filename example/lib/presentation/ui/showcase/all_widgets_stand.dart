@@ -132,27 +132,30 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const UiKitChatInCard(
-                dispatchTime: '2:40 pm',
+              SpacingFoundation.verticalSpace16,
+              UiKitChatInCard(
+                timeOfDay: DateTime.now(),
                 text: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
               ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20),
               SpacingFoundation.verticalSpace16,
               UiKitChatOutCard(
-                dispatchTime: '2:40 pm',
+                timeOfDay: DateTime.now(),
                 child: UiKitInviteMessageContent(
                   username: '@m3dv3d3v',
                   placeName: 'At.mosphere',
-                  firstTagName: 'Club',
-                  firstTagImage: GraphicsFoundation.instance.svg.cocktail,
-                  secondTagName: 'Medium',
+                  tags: [
+                    UiKitTag(title: 'Club', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
+                    UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
+                    UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
+                    UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
+                  ],
                   placeImagePath: GraphicsFoundation.instance.png.businessMock1.path,
-                  secondTagImage: GraphicsFoundation.instance.svg.label,
-                  invitedPeopleAmount: 7,
                   onInvitePeopleTap: () {},
-                  onNextTap: () {},
+                  onPlaceTap: () {},
                   invitedPeopleAvatarPaths: List.generate(
-                    3,
-                    (_) => GraphicsFoundation.instance.png.mockAvatar.path,
+                    7,
+                    (index) => index < 4 ? null : GraphicsFoundation.instance.png.mockAvatar.path,
                   ),
                   userType: UserTileType.influencer,
                 ),
@@ -281,7 +284,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               FingerprintSwitch(
-                height: MediaQuery.sizeOf(context).width/0.7,
+                height: MediaQuery.sizeOf(context).width / 0.7,
                 isHealthKitEnabled: false,
                 title: Text(
                   'Guess',

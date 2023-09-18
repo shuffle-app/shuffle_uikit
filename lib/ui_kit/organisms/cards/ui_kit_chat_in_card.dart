@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitChatInCard extends StatelessWidget {
   const UiKitChatInCard({
     super.key,
-    required this.dispatchTime,
+    required this.timeOfDay,
     this.text,
     this.child,
   });
 
-  final String dispatchTime;
+  final DateTime timeOfDay;
   final String? text;
   final Widget? child;
 
@@ -23,7 +24,7 @@ class UiKitChatInCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          dispatchTime,
+          DateFormat.jm().format(timeOfDay).toLowerCase(),
           style: theme?.regularTextTheme.caption2.copyWith(
             color: theme.colorScheme.darkNeutral900,
           ),
