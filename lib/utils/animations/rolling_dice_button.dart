@@ -15,8 +15,8 @@ class RollingDiceButton extends StatefulWidget {
 }
 
 class _RollingDiceButtonState extends State<RollingDiceButton> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _animation;
+  late final AnimationController _controller;
+  late final Animation<double> _animation;
   late Random _random;
   int _diceNumber = 0;
 
@@ -26,13 +26,15 @@ class _RollingDiceButtonState extends State<RollingDiceButton> with SingleTicker
     _controller = AnimationController(
       duration: widget.animationDuration ?? const Duration(milliseconds: 800),
       vsync: this,
+      value: 1,
     );
     _animation = Tween<double>(begin: 0, end: 1).animate(_controller);
     _random = Random();
   }
 
   void _rollDice() {
-    _controller.forward();
+    // _controller.
+    _controller.forward(from: 0);
     setState(() {
       _diceNumber = _random.nextInt(6) + 1;
     });
@@ -47,6 +49,7 @@ class _RollingDiceButtonState extends State<RollingDiceButton> with SingleTicker
   @override
   Widget build(BuildContext context) {
     return context.gradientButton(
+
       data: BaseUiKitButtonData(
         onPressed: () {
           _rollDice();
@@ -56,11 +59,15 @@ class _RollingDiceButtonState extends State<RollingDiceButton> with SingleTicker
           animation: _animation,
           builder: (context, child) {
             return Transform.rotate(
-              angle: _diceNumber * 360 / 6 * _animation.value,
+              angle: 360 / (_animation.value + 1) * (pi / 180),
               child: Transform.scale(
-                  scale: (cos(_animation.value) + 1) / 2,
+                  scale: sin(_animation.value *3.1)+1.2,
+                  // scale: sin(_animation.value + 1 / 2),
+                  // scale: 1,
                   child: ImageWidget(
                     svgAsset: GraphicsFoundation.instance.svg.dice,
+                    height: 17,
+                    fit: BoxFit.fitHeight,
                   )),
             );
           },

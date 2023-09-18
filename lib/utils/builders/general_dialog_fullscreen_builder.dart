@@ -6,8 +6,7 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
   final Key key = UniqueKey();
   // final Key key=Key(DateTime.now().toString());
 
-  return Navigator.push(
-    context,
+  return Navigator.of(context, rootNavigator: true).push(
     PageRouteBuilder(
       opaque: false,
       barrierDismissible: true,
@@ -16,6 +15,7 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
       fullscreenDialog: true,
       barrierColor: Colors.white.withOpacity(0.07),
       transitionDuration: const Duration(milliseconds: 250),
+      reverseTransitionDuration: const Duration(milliseconds: 10),
       transitionsBuilder: (context, animation1, animation2, child) {
         return SlideTransition(
           position: Tween<Offset>(
@@ -36,11 +36,12 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
         Animation<double> animation1,
         Animation<double> animation2,
       ) {
-        return UiKitBottomModalSheet(
+        return RepaintBoundary(
+            child: UiKitBottomModalSheet(
           data: data,
           startAnimation: animation1,
           dissmissKey: key,
-        );
+        ));
       },
     ),
   );

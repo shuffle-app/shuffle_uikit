@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -28,13 +29,13 @@ class SnackBarUtils {
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        padding: EdgeInsets.symmetric(vertical: 22.h, horizontal: 12.h),
+        padding: EdgeInsets.symmetric(vertical: 11.h, horizontal: 6.h),
         shape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all12),
         backgroundColor: Color.alphaBlend(color.withOpacity(0.16), UiKitColors.surface),
         duration: duration ?? const Duration(seconds: 3),
-        content: Text(
+        content: AutoSizeText(
           message,
-          style: theme?.regularTextTheme.body.copyWith(color: color),
+          style: theme?.regularTextTheme.labelSmall.copyWith(color: color),
         ),
         closeIconColor: color,
         showCloseIcon: onTap == null,
