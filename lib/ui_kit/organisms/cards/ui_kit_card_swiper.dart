@@ -43,7 +43,7 @@ class UiKitCardSwiper extends StatelessWidget {
         Center(
           child: AnimatedBuilder(
             builder: (context, child) => UiKitHideWrapper(
-              shouldHide: dislikeController.value != dislikeController.upperBound,
+              shouldHide: dislikeController.value == dislikeController.lowerBound,
               child: child ?? const SizedBox(),
             ),
             animation: dislikeController,
@@ -56,7 +56,7 @@ class UiKitCardSwiper extends StatelessWidget {
         Center(
           child: AnimatedBuilder(
             builder: (context, child) => UiKitHideWrapper(
-              shouldHide: likeController.value != likeController.upperBound,
+              shouldHide: likeController.value == likeController.lowerBound,
               child: child ?? const SizedBox(),
             ),
             animation: likeController,
