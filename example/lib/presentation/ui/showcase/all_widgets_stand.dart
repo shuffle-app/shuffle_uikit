@@ -256,7 +256,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               FingerprintSwitch(
-                height: (1.sw - EdgeInsetsFoundation.horizontal16 * 2) / 1.7,
                 isHealthKitEnabled: false,
                 title: Text(
                   'Guess',
@@ -1414,8 +1413,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .push(PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+                  Navigator.of(context).push(PopUpVideoPlayer(
+                      videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
                 },
                 child: const Text(
                   'Show Horizontal Video',
@@ -1424,7 +1423,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context).push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+                  Navigator.of(context)
+                      .push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
                 },
                 child: const Text(
                   'Show Vertical Video',
