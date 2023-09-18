@@ -133,6 +133,34 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              UiKitChatInCard(
+                timeOfDay: DateTime.now(),
+                text: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20),
+              SpacingFoundation.verticalSpace16,
+              UiKitChatOutCard(
+                timeOfDay: DateTime.now(),
+                child: UiKitInviteMessageContent(
+                  username: '@m3dv3d3v',
+                  placeName: 'At.mosphere',
+                  tags: [
+                    UiKitTag(title: 'Club', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
+                    UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
+                    UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
+                    UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
+                  ],
+                  placeImagePath: GraphicsFoundation.instance.png.businessMock1.path,
+                  onInvitePeopleTap: () {},
+                  onPlaceTap: () {},
+                  invitedPeopleAvatarPaths: List.generate(
+                    7,
+                    (index) => index < 4 ? null : GraphicsFoundation.instance.png.mockAvatar.path,
+                  ),
+                  userType: UserTileType.influencer,
+                ),
+              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20),
+              SpacingFoundation.verticalSpace16,
               Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -256,7 +284,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               FingerprintSwitch(
+
                 height: (1.sw - EdgeInsetsFoundation.horizontal16 * 2) / 1.7,
+
                 isHealthKitEnabled: false,
                 title: Text(
                   'Guess',
