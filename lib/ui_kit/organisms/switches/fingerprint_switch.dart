@@ -9,7 +9,7 @@ class FingerprintSwitch extends StatefulWidget {
     required this.backgroundImage,
     required this.onCompletedWidget,
     required this.isHealthKitEnabled,
-    required this.height,
+    this.height,
     this.subtitle,
     this.isCompleted,
     this.animationPath,
@@ -17,7 +17,7 @@ class FingerprintSwitch extends StatefulWidget {
     this.onCompleted,
   });
 
-  final double height;
+  final double? height;
   final Widget title;
   final Widget? subtitle;
   final Widget onCompletedWidget;
@@ -78,12 +78,12 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
 
   @override
   Widget build(BuildContext context) {
-    // final height = 158.h;
+    final height = widget.height ?? 0.95.sw * 0.51;
 
     return Stack(
       children: [
         UiKitBorderWrapper(
-          height: widget.height,
+          height: height,
           child: ClipRRect(
             borderRadius: BorderRadiusFoundation.all28,
             child: Transform(
@@ -94,7 +94,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
           ),
         ),
         FingerprintButton(
-          height: widget.height,
+          height: height,
           animationPath: widget.animationPath,
           title: widget.title,
           subtitle: widget.subtitle,
@@ -110,9 +110,8 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
         ValueListenableBuilder(
           valueListenable: _isCompleted,
           builder: (_, isCompleted, __) => Positioned(
-            /// 12 is half of the text line height
-            top: (widget.height / 2) - 10,
-            left: 50.w,
+            top: (height / 2) - 10,
+            left: _currentWidth / 2 - 80.w,
             child: AnimatedOpacity(
               opacity: isCompleted ? 1.0 : 0.0,
               duration: const Duration(milliseconds: 300),
@@ -134,8 +133,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
           SizeTransition(
             sizeFactor: _animation,
             child: UiKitCardWrapper(
-              width: double.infinity,
-              height: widget.height,
+              height: height,
               color: context.uiKitTheme?.colorScheme.surface3,
               borderRadius: BorderRadiusFoundation.all28,
               child: Column(
@@ -148,6 +146,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
                     top: EdgeInsetsFoundation.vertical12,
                     right: EdgeInsetsFoundation.horizontal12,
                   ),
+                  SpacingFoundation.verticalSpace4,
                   Text(
                     'No health kit available on your device, so the result will be random',
                     style: context.uiKitTheme?.regularTextTheme.body.copyWith(
