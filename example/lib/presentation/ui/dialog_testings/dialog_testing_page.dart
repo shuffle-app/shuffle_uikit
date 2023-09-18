@@ -16,7 +16,7 @@ class DialogTestingPage extends StatelessWidget {
                 onPressed: () => showUiKitGeneralFullScreenDialog(
                     context,
                     GeneralDialogData(
-                        topPadding: 100,
+                        topPadding: 300,
                         useRootNavigator: false,
                         child: Column(
                           children: List.generate(5, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
