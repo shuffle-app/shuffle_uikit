@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
+
+import 'package:flutter/material.dart';
 
 class RotatableWidget extends StatefulWidget {
   const RotatableWidget({
@@ -25,18 +26,14 @@ class RotatableWidget extends StatefulWidget {
   State<RotatableWidget> createState() => _RotatableWidgetState();
 }
 
-class _RotatableWidgetState extends State<RotatableWidget>
-    with SingleTickerProviderStateMixin {
+class _RotatableWidgetState extends State<RotatableWidget> with SingleTickerProviderStateMixin {
   late final controller = AnimationController(
     duration: widget.animDuration,
     vsync: this,
   );
-  late final curvedAnimation =
-      CurvedAnimation(parent: controller, curve: Curves.easeIn);
+  late final curvedAnimation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
 
-  late final angle =
-      Tween<double>(begin: widget.startAngle, end: widget.endAngle)
-          .animate(curvedAnimation);
+  late final angle = Tween<double>(begin: widget.startAngle, end: widget.endAngle).animate(curvedAnimation);
 
   @override
   void initState() {
@@ -51,11 +48,10 @@ class _RotatableWidgetState extends State<RotatableWidget>
 
   //ignore: unused parameter
   void listenAnim(AnimationStatus status) {
-    if (status == AnimationStatus.completed&& widget.applyReverseOnEnd) {
+    if (status == AnimationStatus.completed && widget.applyReverseOnEnd) {
       controller.reverse();
     } else if (status == AnimationStatus.dismissed) {
-      Future.delayed(const Duration(seconds: 10))
-          .then((value) => controller.forward());
+      Future.delayed(const Duration(seconds: 10)).then((value) => controller.forward());
     }
   }
 
@@ -73,10 +69,11 @@ class _RotatableWidgetState extends State<RotatableWidget>
         return Transform.rotate(
           angle: angle.value,
           alignment: widget.alignment,
-          child: widget.child,
+          child: child,
         );
       },
       animation: controller,
+      child: widget.child,
     );
   }
 }
