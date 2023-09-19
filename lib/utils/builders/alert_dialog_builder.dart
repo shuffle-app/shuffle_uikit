@@ -26,15 +26,20 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context, AlertDi
         content: data.content,
         contentTextStyle: textTheme?.body,
         contentPadding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
-        actions: [
-          if (data.additionalButton != null) data.additionalButton!,
-          context.dialogButton(
-            data: BaseUiKitButtonData(onPressed: data.onPop ?? () => context.pop(), text: data.defaultButtonText),
-            small: true,
-            dialogButtonType:
-                data.additionalButton != null ? DialogButtonType.buttonWhite : DialogButtonType.buttonBlack,
-          )
-        ],
+        actions: data.actions ??
+            [
+              if (data.additionalButton != null) data.additionalButton!,
+              context.dialogButton(
+                data: BaseUiKitButtonData(
+                  onPressed: data.onPop ?? () => context.pop(),
+                  text: data.defaultButtonText,
+                ),
+                small: data.defaultButtonSmall ?? true,
+                isOutlined: data.defaultButtonOutlined,
+                dialogButtonType:
+                    data.additionalButton != null ? DialogButtonType.buttonWhite : DialogButtonType.buttonBlack,
+              )
+            ],
         actionsAlignment: MainAxisAlignment.center,
         actionsPadding: const EdgeInsets.fromLTRB(24, 8, 24, 24),
       );
@@ -74,13 +79,20 @@ class AlertDialogData {
   final Widget? content;
   final Widget? additionalButton;
   final String defaultButtonText;
+  final bool? defaultButtonSmall;
+  final bool? defaultButtonOutlined;
+  final List<Widget>? actions;
   final Color? customBackgroundColor;
 
-  AlertDialogData(
-      {this.onPop,
-      this.customBackgroundColor,
-      this.title,
-      this.content,
-      this.additionalButton,
-      required this.defaultButtonText});
+  AlertDialogData({
+    required this.defaultButtonText,
+    this.onPop,
+    this.customBackgroundColor,
+    this.title,
+    this.content,
+    this.additionalButton,
+    this.defaultButtonSmall,
+    this.defaultButtonOutlined,
+    this.actions,
+  });
 }
