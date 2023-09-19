@@ -128,12 +128,12 @@ class DialogTestingPage extends StatelessWidget {
                 ),
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
-                  text: 'Geolocation alert',
+                  text: 'show Geolocation alert',
                   onPressed: () => showGeolocationAlert(context, onTap: () {}),
                 ),
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
-                  text: 'Settings alert',
+                  text: 'show Settings alert',
                   onPressed: () => showSettingsAlert(context, onTap: () {}),
                 ),
                 SpacingFoundation.verticalSpace16,

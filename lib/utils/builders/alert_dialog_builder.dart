@@ -85,12 +85,12 @@ class AlertDialogData {
   final Color? customBackgroundColor;
 
   AlertDialogData({
+    required this.defaultButtonText,
     this.onPop,
     this.customBackgroundColor,
     this.title,
     this.content,
     this.additionalButton,
-    required this.defaultButtonText,
     this.defaultButtonSmall,
     this.defaultButtonOutlined,
     this.actions,
