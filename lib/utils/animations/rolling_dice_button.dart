@@ -59,7 +59,7 @@ class _RollingDiceButtonState extends State<RollingDiceButton> with SingleTicker
           animation: _animation,
           builder: (context, child) {
             return Transform.rotate(
-              angle: 360 / (_animation.value + 1) * (pi / 180),
+              angle: - _diceNumber * 360 / (_animation.value + 1) * (pi / 180),
               child: Transform.scale(
                   scale: sin(_animation.value *3.1)+1.2,
                   // scale: sin(_animation.value + 1 / 2),
