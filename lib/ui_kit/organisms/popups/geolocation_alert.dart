@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-Future<Object?> showGeolocationPopUp(BuildContext context, {required VoidCallback onTap, VoidCallback? onCancel}) {
+Future<Object?> showGeolocationAlert(BuildContext context, {required VoidCallback onTap, VoidCallback? onPop}) {
   return showUiKitAlertDialog(
     context,
     AlertDialogData(
@@ -19,7 +19,7 @@ Future<Object?> showGeolocationPopUp(BuildContext context, {required VoidCallbac
             Expanded(
               child: context.dialogButton(
                 data: BaseUiKitButtonData(
-                  onPressed: onCancel ?? () => context.pop(),
+                  onPressed: onPop ?? () => context.pop(),
                   text: 'no, thx',
                 ),
                 dialogButtonType: DialogButtonType.buttonWhite,

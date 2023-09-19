@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-Future<Object?> showSettingsPopUp(BuildContext context, {required VoidCallback onTap, VoidCallback? onCancel}) {
+Future<Object?> showSettingsAlert(BuildContext context, {required VoidCallback onTap, VoidCallback? onPop}) {
   return showUiKitAlertDialog(
     context,
     AlertDialogData(
       defaultButtonText: 'no, thanks',
       defaultButtonSmall: false,
       defaultButtonOutlined: true,
-      onPop: onCancel,
+      onPop: onPop,
       additionalButton: const SizedBox.shrink(),
       content: context.dialogButton(
         data: BaseUiKitButtonData(onPressed: onTap, text: 'go to settings'),
