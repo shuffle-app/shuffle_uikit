@@ -51,7 +51,7 @@ dependencies:
      ref: main
   rxdart: any
   lottie: ^2.3.2
-  flutter_card_swiper: ^5.0.0
+  flutter_card_swiper: ^6.0.0
   intl: ^0.18.1
   just_audio: ^0.9.33
 
