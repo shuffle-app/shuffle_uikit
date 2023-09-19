@@ -38,6 +38,8 @@ export 'popups/additional_action_notification_popup.dart';
 export 'popups/base_notification_popup.dart';
 export 'popups/compact_alert_pop_up.dart';
 export 'popups/ordinary_notification_popup.dart';
+export 'popups/geolocation_pop_up.dart';
+export 'popups/settings_pop_up.dart';
 export 'profile/profile_card.dart';
 export 'profile/profile_highlights.dart';
 export 'profile/profile_posts_places.dart';

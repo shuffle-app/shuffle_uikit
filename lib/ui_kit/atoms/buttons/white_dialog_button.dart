@@ -44,12 +44,10 @@ class WhiteDialogButton extends StatelessWidget implements ButtonFactory {
       ),
       onPressed: onPressed,
       child: isOutlined
-          ? SizedBox.expand(
-              child: Center(
-                child: Text(
-                  text.toUpperCase(),
-                  style: textStyle?.copyWith(color: Colors.black),
-                ),
+          ? Center(
+              child: Text(
+                text.toUpperCase(),
+                style: textStyle?.copyWith(color: Colors.black),
               ),
             )
           : Text(
