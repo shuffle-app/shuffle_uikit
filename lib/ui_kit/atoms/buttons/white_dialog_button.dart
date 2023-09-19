@@ -5,23 +5,28 @@ class WhiteDialogButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
   final bool small;
+  final bool isOutlined;
 
   const WhiteDialogButton({
     super.key,
     required this.text,
     required this.small,
+    this.isOutlined = false,
     this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = context.uiKitTheme?.boldTextTheme;
+    final theme = context.uiKitTheme;
+    final textTheme = theme?.boldTextTheme;
     final textStyle = small ? textTheme?.caption1Bold : textTheme?.bodyUpperCase;
+    final side = isOutlined ? BorderSide(width: 2, color: theme!.colorScheme.primary) : BorderSide.none;
 
     return ElevatedButton(
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.resolveWith((states) {
           if (small) return const Size.fromHeight(28);
+          if (isOutlined) return const Size(double.infinity, 48);
 
           return const Size.fromHeight(48);
         }),
@@ -35,12 +40,22 @@ class WhiteDialogButton extends StatelessWidget implements ButtonFactory {
           return ColorsFoundation.darkNeutral900;
         }),
         foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
+        side: MaterialStateProperty.resolveWith((_) => side),
       ),
       onPressed: onPressed,
-      child: Text(
-        text.toUpperCase(),
-        style: textStyle?.copyWith(color: Colors.black),
-      ),
+      child: isOutlined
+          ? SizedBox.expand(
+              child: Center(
+                child: Text(
+                  text.toUpperCase(),
+                  style: textStyle?.copyWith(color: Colors.black),
+                ),
+              ),
+            )
+          : Text(
+              text.toUpperCase(),
+              style: textStyle?.copyWith(color: Colors.black),
+            ),
     );
   }
 }

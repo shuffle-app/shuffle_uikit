@@ -96,12 +96,14 @@ extension FactoryExtention on BuildContext {
     required BaseUiKitButtonData data,
     DialogButtonType? dialogButtonType,
     bool? small,
+    bool? isOutlined,
   }) {
     return WidgetsFactory.of(this)!
         .createDialogButton(
           data: data,
           dialogButtonType: dialogButtonType,
           small: small,
+          isOutlined: isOutlined,
         )
         .build(this);
   }

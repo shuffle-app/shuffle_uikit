@@ -125,6 +125,29 @@ class DialogTestingPage extends StatelessWidget {
                 ),
               ),
               SpacingFoundation.verticalSpace16,
+              OrdinaryButton(
+                text: 'Notification dialog',
+                onPressed: () => showUiKitAlertDialog(
+                  context,
+                  AlertDialogData(
+                    additionalButton: const SizedBox.shrink(),
+                    content: context.dialogButton(
+                      data: BaseUiKitButtonData(onPressed: () {}, text: 'go to settings'),
+                      dialogButtonType: DialogButtonType.buttonBlack,
+                    ),
+                    defaultButtonText: 'no, thanks',
+                    defaultButtonSmall: false,
+                    defaultButtonOutlined: true,
+                    title: Text(
+                      'To allow access to send push notifications, go to your phone settings',
+                      style: context.uiKitTheme?.boldTextTheme.title2.copyWith(
+                        color: context.uiKitTheme?.colorScheme.primary,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -132,3 +155,11 @@ class DialogTestingPage extends StatelessWidget {
     );
   }
 }
+
+                      // context.button(
+                      //   data: BaseUiKitButtonData(
+                      //     onPressed: () {},
+                      //     text: 'GO TO SETTINGS',
+                      //     fit: ButtonFit.fitWidth,
+                      //   ),
+                      // ),

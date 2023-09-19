@@ -29,8 +29,12 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context, AlertDi
         actions: [
           if (data.additionalButton != null) data.additionalButton!,
           context.dialogButton(
-            data: BaseUiKitButtonData(onPressed: data.onPop ?? () => context.pop(), text: data.defaultButtonText),
-            small: true,
+            data: BaseUiKitButtonData(
+              onPressed: data.onPop ?? () => context.pop(),
+              text: data.defaultButtonText,
+            ),
+            small: data.defaultButtonSmall ?? true,
+            isOutlined: data.defaultButtonOutlined,
             dialogButtonType:
                 data.additionalButton != null ? DialogButtonType.buttonWhite : DialogButtonType.buttonBlack,
           )
@@ -74,13 +78,18 @@ class AlertDialogData {
   final Widget? content;
   final Widget? additionalButton;
   final String defaultButtonText;
+  final bool? defaultButtonSmall;
+  final bool? defaultButtonOutlined;
   final Color? customBackgroundColor;
 
-  AlertDialogData(
-      {this.onPop,
-      this.customBackgroundColor,
-      this.title,
-      this.content,
-      this.additionalButton,
-      required this.defaultButtonText});
+  AlertDialogData({
+    this.onPop,
+    this.customBackgroundColor,
+    this.title,
+    this.content,
+    this.additionalButton,
+    required this.defaultButtonText,
+    this.defaultButtonSmall,
+    this.defaultButtonOutlined,
+  });
 }
