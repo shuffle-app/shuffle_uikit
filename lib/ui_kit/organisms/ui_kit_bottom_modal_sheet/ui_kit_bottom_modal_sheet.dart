@@ -26,52 +26,49 @@ class UiKitBottomModalSheet extends StatelessWidget {
 
         Navigator.of(context).pop();
       },
-      child: Dialog(
-        clipBehavior: Clip.hardEdge,
-        insetPadding: EdgeInsets.zero,
-        backgroundColor: bottomSheetTheme?.backgroundColor,
-        shape: shape,
-        child: Column(
-          children: [
-            const SlidingChip().paddingOnly(
-              top: SpacingFoundation.verticalSpacing12,
-              bottom: SpacingFoundation.verticalSpacing4,
-            ),
-            Expanded(
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  Container(
-                    decoration: ShapeDecoration(
-                      shape: shape ?? const RoundedRectangleBorder(),
-                    ),
-                    clipBehavior: Clip.hardEdge,
-                    child: SingleChildScrollView(
-                      primary: true,
-                      physics: const ClampingScrollPhysics(),
-                      child: data.child.paddingOnly(
-                        bottom: data.bottomBar != null ? kBottomNavigationBarHeight * 1.5 : 0.0,
-                      ),
-                    ),
+      child: Material(
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          // insetPadding: EdgeInsets.zero,
+          // backgroundColor: bottomSheetTheme?.backgroundColor,
+          shape: shape,
+          child: ColoredBox(
+            color: bottomSheetTheme?.backgroundColor ?? Colors.black,
+            child: Column(
+              children: [
+                const SlidingChip().paddingOnly(
+                  top: SpacingFoundation.verticalSpacing12,
+                  bottom: SpacingFoundation.verticalSpacing4,
+                ),
+                Expanded(
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                        SingleChildScrollView(
+                              primary: true,
+                              physics: const ClampingScrollPhysics(),
+                              child: data.child.paddingOnly(
+                                bottom: data.bottomBar != null ? kBottomNavigationBarHeight * 1.5 : 0.0,
+                              ),
+                            ),
+
+                      if (data.bottomBar != null)
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          left: 0,
+                          child: DecoratedBox(
+                            decoration: const BoxDecoration(gradient: GradientFoundation.solidSurfaceLinearGradient),
+                            child: data.bottomBar,
+                          ),
+                        ),
+                    ],
                   ),
-                  if (data.bottomBar != null)
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      left: 0,
-                      child: Container(
-                        decoration: const BoxDecoration(gradient: GradientFoundation.solidSurfaceLinearGradient),
-                        child: data.bottomBar,
-                      ),
-                    ),
-                ],
-              ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ).paddingOnly(
-        top:
-            data.topPadding ?? (MediaQuery.viewPaddingOf(context).top == 0 ? 45.h : MediaQuery.viewPaddingOf(context).top + 30.h),
+          )).paddingOnly(
+        top: data.topPadding ??
+            (MediaQuery.viewPaddingOf(context).top == 0 ? 45.h : MediaQuery.viewPaddingOf(context).top + 30.h),
       ),
     );
   }
