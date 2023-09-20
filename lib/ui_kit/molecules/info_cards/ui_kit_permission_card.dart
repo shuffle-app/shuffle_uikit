@@ -8,25 +8,23 @@ class UiKitPermissionCard extends StatelessWidget {
   final VoidCallback? onPress;
   final bool isEnabled;
 
-  const UiKitPermissionCard(
-      {super.key,
-      required this.title,
-      required this.description,
-      required this.image,
-      this.onPress,
-      required this.isEnabled});
+  const UiKitPermissionCard({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.image,
+    this.onPress,
+    required this.isEnabled,
+  });
 
   @override
   Widget build(BuildContext context) {
-
     final theme = context.uiKitTheme;
 
     final labelStyle = theme?.regularTextTheme.subHeadline;
     final textStyle = theme?.regularTextTheme.caption1;
 
-
-    return InkWell(
-      borderRadius: BorderRadiusFoundation.all8,
+    return GestureDetector(
       onTap: onPress,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -36,7 +34,7 @@ class UiKitPermissionCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-               UiKitCheckbox(
+              UiKitCheckbox(
                 isActive: isEnabled,
               ),
               SpacingFoundation.horizontalSpace12,
@@ -61,7 +59,7 @@ class UiKitPermissionCard extends StatelessWidget {
           ),
           SpacingFoundation.verticalSpace24,
         ],
-      )
+      ),
     );
   }
 }

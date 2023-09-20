@@ -49,37 +49,48 @@ class UiKitTagsWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Wrap(
-                  spacing: SpacingFoundation.horizontalSpacing8,
-                  children: baseTags
-                      .map((e) => UiKitTagWidget(
-                            title: e.title,
-                            icon: e.iconPath,
-                            uniqueTag: e.unique,
-                          ))
-                      .toList(),
+              SizedBox(
+                height: SpacingFoundation.horizontalSpacing16 + 2,
+                child: ListView.separated(
+                  clipBehavior: Clip.hardEdge,
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  primary: false,
+                  itemBuilder: (context, index) {
+                    final tag = baseTags.elementAt(index);
+
+                    return UiKitTagWidget(
+                      title: tag.title,
+                      icon: tag.iconPath,
+                      uniqueTag: false,
+                    );
+                  },
+                  separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace8,
+                  itemCount: baseTags.length,
                 ),
               ),
               if (uniqueTags != null && uniqueTags!.isNotEmpty) ...[
                 SpacingFoundation.verticalSpace4,
                 SizedBox(
-                    height: SpacingFoundation.horizontalSpacing16 + 2,
-                    child: ListView.builder(
-                      clipBehavior: Clip.hardEdge,
-                      padding: EdgeInsets.zero,
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      primary: false,
-                      // separatorBuilder: (_, __) =>
-                      //     SpacingFoundation.horizontalSpace8,
-                      itemCount: uniqueTags!.length,
-                      itemBuilder: (_, index) => UiKitTagWidget(
-                              title: uniqueTags![index].title, icon: uniqueTags![index].iconPath, uniqueTag: true)
-                          .paddingOnly(
-                              right: uniqueTags!.length - 1 == index ? 0 : SpacingFoundation.horizontalSpacing8),
-                    ))
+                  height: SpacingFoundation.horizontalSpacing16 + 2,
+                  child: ListView.separated(
+                    clipBehavior: Clip.hardEdge,
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    primary: false,
+                    separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace8,
+                    itemCount: uniqueTags!.length,
+                    itemBuilder: (_, index) {
+                      return UiKitTagWidget(
+                        title: uniqueTags![index].title,
+                        icon: uniqueTags![index].iconPath,
+                        uniqueTag: true,
+                      );
+                    },
+                  ),
+                )
               ],
             ],
           ),

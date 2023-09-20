@@ -12,25 +12,33 @@ class DescriptionWidget extends StatelessWidget {
     bool hide = true;
 
     return StatefulBuilder(
-        builder: (c, s) =>
-            Column(crossAxisAlignment: CrossAxisAlignment.stretch, mainAxisSize: MainAxisSize.min, children: [
-              Text(
-                description,
-                maxLines: hide ? 7 : null,
-                softWrap: true,
-                overflow: hide ? TextOverflow.ellipsis : null,
-                style: textTheme,
-              ),
-              if ((description.replaceAll('\n', '').characters.length * 6.4.w ~/ 0.8.sw +
-                      description.characters.where((p0) => p0 == '\n').length) >
-                  7)
-                InkWell(
-                  onTap: () => s(() => hide = !hide),
-                  child: Text(
-                    'Read ${hide ? 'more' : 'less'}',
-                    style: textTheme?.copyWith(color: ColorsFoundation.darkNeutral300),
-                  ),
-                ).paddingOnly(top: SpacingFoundation.verticalSpacing12)
-            ]));
+      builder: (c, s) {
+        final displayShowMoreButton = (description.replaceAll('\n', '').characters.length * 6.4.w ~/ 0.8.sw +
+                description.characters.where((p0) => p0 == '\n').length) >
+            7;
+
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              description,
+              maxLines: hide ? 7 : null,
+              softWrap: true,
+              overflow: hide ? TextOverflow.ellipsis : null,
+              style: textTheme,
+            ),
+            if (displayShowMoreButton)
+              GestureDetector(
+                onTap: () => s(() => hide = !hide),
+                child: Text(
+                  'Read ${hide ? 'more' : 'less'}',
+                  style: textTheme?.copyWith(color: ColorsFoundation.darkNeutral300),
+                ),
+              ).paddingOnly(top: SpacingFoundation.verticalSpacing12)
+          ],
+        );
+      },
+    );
   }
 }
