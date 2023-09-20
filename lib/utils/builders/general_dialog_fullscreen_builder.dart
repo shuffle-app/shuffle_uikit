@@ -1,10 +1,7 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
-  final Key key = UniqueKey();
   // final Key key=Key(DateTime.now().toString());
 
   // return Navigator.push(
@@ -52,59 +49,48 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
   //   ),
   // );
 
-  // return showModalBottomSheet(
-  //   barrierLabel: '',
-  //   useRootNavigator: data.useRootNavigator,
-  //   barrierColor: Colors.white.withOpacity(0.07),
-  //   isScrollControlled: true,
-  //   constraints: BoxConstraints(
-  //     minHeight: 1.sh,
-  //     minWidth: 1.sw,
-  //   ),
-  //   shape: RoundedRectangleBorder(
-  //     borderRadius: BorderRadiusFoundation.onlyTop24,
-  //   ),
-  //   clipBehavior: Clip.hardEdge,
-  //   isDismissible: true,
-  //   context: context,
-  //   builder: (context) {
-  //     return BackdropFilter(
-  //       filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
-  //       child: UiKitBottomModalSheet(
-  //         data: data,
-  //         startAnimation: const AlwaysStoppedAnimation(1.0),
-  //         dissmissKey: key,
-  //       ),
-  //     );
-  //   },
-  // );
+  return showModalBottomSheet(
+    barrierLabel: '',
+    useRootNavigator: data.useRootNavigator,
+    barrierColor: const Color(0xff2A2A2A),
+    isScrollControlled: true,
+    constraints: BoxConstraints(
+      minHeight: 1.sh,
+      minWidth: 1.sw,
+    ),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadiusFoundation.onlyTop24,
+    ),
+    clipBehavior: Clip.hardEdge,
+    isDismissible: true,
+    context: context,
+    builder: (context) {
+      return UiKitBottomModalSheet(
+        data: data,
+      );
+    },
+  );
 
   return showGeneralDialog(
     barrierDismissible: true,
     barrierLabel: '',
     useRootNavigator: data.useRootNavigator,
-    barrierColor: Colors.white.withOpacity(0.07),
+    barrierColor: const Color(0xff2A2A2A),
     context: context,
     transitionDuration: const Duration(milliseconds: 250),
     transitionBuilder: (context, animation1, animation2, child) {
-      return BackdropFilter(
-        filter: ImageFilter.blur(
-          sigmaX: animation1.value * 50,
-          sigmaY: animation1.value * 50,
-        ),
-        child: AnimatedBuilder(
-          animation: animation1,
-          builder: (context, child) {
-            return SlideTransition(
-              position: Tween<Offset>(
-                end: Offset.zero,
-                begin: const Offset(0.0, 1.0),
-              ).animate(animation1),
-              child: child,
-            );
-          },
-          child: child,
-        ),
+      return AnimatedBuilder(
+        animation: animation1,
+        builder: (context, child) {
+          return SlideTransition(
+            position: Tween<Offset>(
+              end: Offset.zero,
+              begin: const Offset(0.0, 1.0),
+            ).animate(animation1),
+            child: child,
+          );
+        },
+        child: child,
       );
     },
     pageBuilder: (
@@ -114,7 +100,6 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
     ) {
       return UiKitBottomModalSheet(
         data: data,
-        dissmissKey: key,
       );
     },
   );
