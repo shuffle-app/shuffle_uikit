@@ -4,11 +4,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class TitledAccentInfo extends StatelessWidget {
   final String title;
   final String info;
+  final bool? showFullInfo;
 
   const TitledAccentInfo({
     Key? key,
     required this.title,
     required this.info,
+    this.showFullInfo,
   }) : super(key: key);
 
   @override
@@ -28,7 +30,7 @@ class TitledAccentInfo extends StatelessWidget {
         ),
         Text(
           info,
-          maxLines: 2,
+          maxLines: showFullInfo ?? false ? null : 2,
           style: infoStyle,
         ),
       ],
