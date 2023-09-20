@@ -137,6 +137,11 @@ class DialogTestingPage extends StatelessWidget {
                   onPressed: () => showSettingsAlert(context, onTap: () {}),
                 ),
                 SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
+                  text: 'show complaint pop up',
+                  onPressed: () => showComplaintPopUp(context),
+                ),
+                SpacingFoundation.verticalSpace16,
               ],
             ),
           ),
