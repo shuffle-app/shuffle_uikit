@@ -38,6 +38,15 @@ class UiKitPopUpMenuButton extends StatelessWidget {
             .toList();
   }
 
+  UiKitPopUpMenuButton.customMenu({
+    super.key,
+    required List<PopupMenuItem> children,
+    required this.asset,
+  }) : options = [] {
+    items = (context) =>
+        children;
+  }
+
   late final PopupMenuItemBuilder items;
 
   @override

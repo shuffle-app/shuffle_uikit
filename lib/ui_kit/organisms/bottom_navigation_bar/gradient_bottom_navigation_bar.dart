@@ -118,7 +118,7 @@ class GradientBottomNavigationBarItem extends TabType {
 
 class GradientBottomNavigationBarController {
   /// Состояние таббара
-  final GlobalKey<TabNavigatorState> tabState;
+  GlobalKey<TabNavigatorState> tabState;
 
   final int tabItemsCount;
   final BehaviorSubject<GradientBottomNavigationBarItem> _changeController = BehaviorSubject<GradientBottomNavigationBarItem>();

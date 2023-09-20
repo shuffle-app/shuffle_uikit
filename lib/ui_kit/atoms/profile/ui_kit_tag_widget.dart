@@ -40,7 +40,7 @@ class UiKitTagWidget extends StatelessWidget {
           gradient: GradientFoundation.badgeIcon,
           child: ImageWidget(
             link: icon,
-            errorWidget: ImageWidget(svgAsset: GraphicsFoundation.instance.svg.exclamation, color: iconColor),
+            errorWidget: ImageWidget(svgAsset: GraphicsFoundation.instance.svg.logo, color: iconColor),
             height: tagSize ?? SpacingFoundation.horizontalSpacing16,
             width: tagSize ?? SpacingFoundation.horizontalSpacing16,
             color: iconColor,
