@@ -27,7 +27,7 @@ class SnackBarUtils {
       }
     }();
 
-    ScaffoldMessenger.of(context).showSnackBar(
+    ScaffoldMessenger.maybeOf(context)?.showSnackBar(
       SnackBar(
         padding: EdgeInsets.symmetric(vertical: 11.h, horizontal: 6.h),
         shape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all12),
@@ -45,7 +45,7 @@ class SnackBarUtils {
   }
 
   static void hide(BuildContext context) {
-    ScaffoldMessenger.of(context).hideCurrentSnackBar();
+    ScaffoldMessenger.maybeOf(context)?.hideCurrentSnackBar();
   }
 
   static void hideAndShow({required String message, required BuildContext context}) {

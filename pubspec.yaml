@@ -27,6 +27,7 @@ dependencies:
   url_launcher: ^6.1.11
   flutter_html_iframe: any
   flutter_html_svg: any
+  pointer_interceptor: ^0.9.3+6
   pinput:
     git:
       url: https://github.com/donik1998/Flutter_Pinput.git
@@ -37,7 +38,7 @@ dependencies:
 #    path: ../flutter_gallery_3d_plus
     git:
       url: https://github.com/shuffle-app/flutter_gallery_3d_plus
-      ref: master
+      ref: 46c7407b35a841c81ad5972533f8d3d3b4fddd57
   flip_card: ^0.7.0
 
   #dialogs widgets
