@@ -3,6 +3,7 @@
 export 'animations/animations.dart';
 export 'data_formatters/time_format.dart';
 export 'animations/bouncing_icon_button_animation.dart';
+export 'animations/rolling_dice_button.dart';
 export 'builders/alert_dialog_builder.dart';
 export 'builders/comment_dialog_builder.dart';
 export 'builders/week_days_selector_builder.dart';

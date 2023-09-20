@@ -26,7 +26,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaWidth = kIsWeb ? 358.0 : 1.sw;
+    final mediaWidth = kIsWeb ? 358.0 : (1.sw -horizontalMargin*2);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,6 +54,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                 controller: scrollController,
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
+                addAutomaticKeepAlives: false,
                 itemCount: media.length + 1,
                 itemBuilder: (context, index) {
                   if (index == 0) return horizontalMargin.widthBox;
@@ -86,8 +87,8 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           uniqueTags: uniqueTags,
         ).paddingSymmetric(horizontal: horizontalMargin),
         SpacingFoundation.verticalSpace14,
-        DescriptionWidget(description: description).paddingOnly(
-            left: horizontalMargin, right: horizontalMargin),
+        RepaintBoundary(child: DescriptionWidget(description: description).paddingOnly(
+            left: horizontalMargin, right: horizontalMargin)),
       ],
     );
   }

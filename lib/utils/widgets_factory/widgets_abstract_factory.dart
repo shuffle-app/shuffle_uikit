@@ -47,7 +47,8 @@ abstract class WidgetsAbstractFactory {
     bool? small,
   });
 
-  ButtonFactory createSmallButton({required BaseUiKitButtonData data, bool isTextButton = false, bool? blurred, bool uppercase});
+  ButtonFactory createSmallButton(
+      {required BaseUiKitButtonData data, bool isTextButton = false, bool? blurred, bool uppercase});
 
   ButtonFactory createOutlinedButton({
     required BaseUiKitButtonData data,
@@ -182,7 +183,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     final gradientIconButton = hasIcon && data.text.isEmpty;
     if (gradientIconButton) {
       return GradientIconButton(
-        fit:data.fit,
+        fit: data.fit,
         icon: data.icon!,
         onPressed: data.onPressed,
         borderRadius: BorderRadiusFoundation.max,
@@ -190,14 +191,14 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     } else if (!hasIcon && data.text.isNotEmpty) {
       return GradientButton(
-        fit:data.fit,
+        fit: data.fit,
         text: data.text,
         onPressed: data.onPressed,
         loading: data.loading,
       );
     } else if (hasIcon && data.text.isNotEmpty) {
       return GradientButtonWithTextAndIcon(
-        fit:data.fit,
+        fit: data.fit,
         text: data.text,
         icon: data.icon!,
         onPressed: data.onPressed,
@@ -351,6 +352,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     required BaseUiKitButtonData data,
     DialogButtonType? dialogButtonType,
     bool? small,
+    bool? isOutlined,
   }) {
     switch (dialogButtonType) {
       case DialogButtonType.buttonWhite:
@@ -358,6 +360,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           text: data.text,
           onPressed: data.onPressed,
           small: small ?? false,
+          isOutlined: isOutlined ?? false,
         );
       case DialogButtonType.buttonBlack:
         return BlackDialogButton(
