@@ -12,7 +12,7 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
   //     barrierLabel: '',
   //     maintainState: false,
   //     fullscreenDialog: true,
-  //     barrierColor: Colors.white.withOpacity(0.07),
+  //     barrierColor: const Color(0xff2A2A2A),
   //     transitionDuration: const Duration(milliseconds: 250),
   //     transitionsBuilder: (context, animation1, animation2, child) {
   //       return SlideTransition(
@@ -28,22 +28,8 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
   //       Animation<double> animation1,
   //       Animation<double> animation2,
   //     ) {
-  //       return AnimatedBuilder(
-  //         animation: animation1,
-  //         builder: (context, child) {
-  //           return BackdropFilter(
-  //             filter: ImageFilter.blur(
-  //               sigmaX: animation1.value * 50,
-  //               sigmaY: animation1.value * 50,
-  //             ),
-  //             child: child,
-  //           );
-  //         },
-  //         child: UiKitBottomModalSheet(
-  //           data: data,
-  //           startAnimation: animation1,
-  //           dissmissKey: key,
-  //         ),
+  //       return UiKitBottomModalSheet(
+  //         data: data,
   //       );
   //     },
   //   ),
@@ -54,8 +40,9 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
     useRootNavigator: data.useRootNavigator,
     barrierColor: const Color(0xff2A2A2A),
     isScrollControlled: true,
+    backgroundColor: Colors.transparent,
     constraints: BoxConstraints(
-      minHeight: 1.sh,
+      maxHeight: 0.95.sh - (data.topPadding ?? 0),
       minWidth: 1.sw,
     ),
     shape: RoundedRectangleBorder(
@@ -65,39 +52,6 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
     isDismissible: true,
     context: context,
     builder: (context) {
-      return UiKitBottomModalSheet(
-        data: data,
-      );
-    },
-  );
-
-  return showGeneralDialog(
-    barrierDismissible: true,
-    barrierLabel: '',
-    useRootNavigator: data.useRootNavigator,
-    barrierColor: const Color(0xff2A2A2A),
-    context: context,
-    transitionDuration: const Duration(milliseconds: 250),
-    transitionBuilder: (context, animation1, animation2, child) {
-      return AnimatedBuilder(
-        animation: animation1,
-        builder: (context, child) {
-          return SlideTransition(
-            position: Tween<Offset>(
-              end: Offset.zero,
-              begin: const Offset(0.0, 1.0),
-            ).animate(animation1),
-            child: child,
-          );
-        },
-        child: child,
-      );
-    },
-    pageBuilder: (
-      BuildContext context,
-      Animation<double> animation1,
-      Animation<double> animation2,
-    ) {
       return UiKitBottomModalSheet(
         data: data,
       );

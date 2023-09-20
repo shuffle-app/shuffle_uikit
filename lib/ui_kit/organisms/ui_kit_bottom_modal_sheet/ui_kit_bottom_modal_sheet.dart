@@ -15,12 +15,13 @@ class UiKitBottomModalSheet extends StatelessWidget {
     final shape = bottomSheetTheme?.shape;
 
     return RepaintBoundary(
-      child: Dialog(
-        clipBehavior: Clip.hardEdge,
-        insetPadding: EdgeInsets.zero,
-        backgroundColor: bottomSheetTheme?.backgroundColor,
-        shape: shape,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadiusFoundation.onlyTop24,
+        ),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             const SlidingChip().paddingOnly(
               top: SpacingFoundation.verticalSpacing12,
