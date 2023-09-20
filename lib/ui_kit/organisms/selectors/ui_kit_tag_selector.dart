@@ -73,7 +73,9 @@ class UiKitTagSelector extends StatelessWidget {
                               )
                               .toList() ??
                           [],
-                    ))),
+                    )))
+              else
+                SizedBox(width: double.infinity,),
               if (showTextField)
               ConstrainedBox(
                   constraints: BoxConstraints(maxHeight: 40.h),

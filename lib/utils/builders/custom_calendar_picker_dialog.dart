@@ -51,11 +51,10 @@ class _CustomCalendarPickerDialogState
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          //TODO romancores or Murodkulov: add theming
           CalendarDatePicker(
             onDateChanged: _onSelectionChanged,
             initialDate: selectedDate,
-            firstDate: DateTime.now().subtract(Duration(days:365)),
+            firstDate: DateTime.now().subtract(const Duration(days:365)),
             lastDate: widget.lastDate ??
                 DateTime.now().add(const Duration(days: 365)),
           ),

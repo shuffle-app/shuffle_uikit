@@ -54,6 +54,14 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
         package: 'shuffle_uikit',
       );
 
+  TextStyle get labelLarge => TextStyle(
+    fontFamily: 'Unbounded',
+    fontSize: 16.w,
+    fontWeight: FontWeight.w200,
+    color: foregroundColor,
+    package: 'shuffle_uikit',
+  );
+
   TextStyle get title1 => TextStyle(
         fontFamily: 'Unbounded',
         fontSize: 24.w,
