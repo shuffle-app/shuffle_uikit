@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class LocationPickerSearchOverlay extends StatefulWidget {
@@ -39,7 +40,7 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
         final loading = state == LocationPickerOverlayState.loading;
         final locationSuggestions = widget.controller.searchSuggestions;
 
-        return Container(
+        return ColoredBox(
           color: Colors.white,
           child: Column(
             mainAxisSize: MainAxisSize.max,
@@ -50,20 +51,21 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
               ),
               if (loaded)
                 Expanded(
-                  child: ListView.builder(
-                    padding: EdgeInsets.zero,
-                    itemBuilder: (context, index) {
-                      final suggestion = locationSuggestions.elementAt(index);
+                  child: PointerInterceptor(
+                      child: ListView.builder(
+                        padding: EdgeInsets.zero,
+                        itemBuilder: (context, index) {
+                          final suggestion = locationSuggestions.elementAt(index);
 
-                      return UiKitLocationSearchTile(
-                        isLast: (index + 1) == locationSuggestions.length,
-                        title: suggestion.title,
-                        subtitle: suggestion.subtitle,
-                        onTap: () => widget.onSuggestionChosen?.call(suggestion),
-                      );
-                    },
-                    itemCount: locationSuggestions.length,
-                  ),
+                          return UiKitLocationSearchTile(
+                            isLast: (index + 1) == locationSuggestions.length,
+                            title: suggestion.title,
+                            subtitle: suggestion.subtitle,
+                            onTap: () => widget.onSuggestionChosen?.call(suggestion),
+                          );
+                        },
+                        itemCount: locationSuggestions.length,
+                      )),
                 ),
               if (noSuggestions)
                 Expanded(
@@ -94,14 +96,15 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
                     ),
                   ),
                   SpacingFoundation.horizontalSpace8,
-                  context.smallOutlinedButton(
-                    color: Colors.black,
-                    data: BaseUiKitButtonData(
-                      icon: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.chevronRight,
-                      ),
-                      onPressed: widget.onPickFromMap,
-                    ),
+                  PointerInterceptor(
+                    child: context.smallOutlinedButton(
+                        color: Colors.black,
+                        data: BaseUiKitButtonData(
+                          icon: ImageWidget(
+                            svgAsset: GraphicsFoundation.instance.svg.chevronRight,
+                          ),
+                          onPressed: widget.onPickFromMap,
+                        )),
                   ),
                 ],
               ),
@@ -118,7 +121,7 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
 
 class LocationPickerSearchOverlayController {
   final StreamController<LocationPickerOverlayState> _overlayStateStreamController =
-      StreamController<LocationPickerOverlayState>();
+  StreamController<LocationPickerOverlayState>();
 
   LocationSuggestion? selectedSuggestion;
 
