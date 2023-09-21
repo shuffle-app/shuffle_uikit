@@ -37,6 +37,7 @@ export 'place/description_widget.dart';
 export 'place/slider_photo_card.dart';
 export 'place/title_with_avatar.dart';
 export 'place/titled_accent_info.dart';
+export 'place/ui_kit_titled_description_with_divider.dart';
 export 'place/ui_kit_accent_card.dart';
 export 'place/ui_kit_description_grid.dart';
 export 'place/ui_kit_media_image_widget.dart';

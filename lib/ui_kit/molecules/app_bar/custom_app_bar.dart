@@ -29,6 +29,7 @@ class CustomAppBar extends PreferredSize {
   @override
   Widget build(BuildContext context) {
     final showLeading = autoImplyLeading ?? false || leading != null;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return ClipRRect(
       borderRadius: BorderRadiusFoundation.onlyBottom24,
@@ -37,7 +38,7 @@ class CustomAppBar extends PreferredSize {
         child: Container(
           width: preferredSize.width,
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.07),
+            color: colorScheme?.inversePrimary.withOpacity(0.07),
             borderRadius: BorderRadiusFoundation.onlyBottom24,
           ),
           padding: const EdgeInsets.all(16),
@@ -49,7 +50,7 @@ class CustomAppBar extends PreferredSize {
               mainAxisAlignment: hideBody ? MainAxisAlignment.end : MainAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).viewPadding.top,
+                  height: MediaQuery.viewPaddingOf(context).top,
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,

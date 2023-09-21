@@ -58,7 +58,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
         child: Ink(
           padding: EdgeInsets.symmetric(
             horizontal: EdgeInsetsFoundation.horizontal16,
-            vertical: EdgeInsetsFoundation.vertical4,
+            vertical: EdgeInsetsFoundation.vertical6,
           ),
           child: fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget,
         ),
