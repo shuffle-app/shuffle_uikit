@@ -49,7 +49,6 @@ class _RollingDiceButtonState extends State<RollingDiceButton> with SingleTicker
   @override
   Widget build(BuildContext context) {
     return context.gradientButton(
-
       data: BaseUiKitButtonData(
         onPressed: () {
           _rollDice();
@@ -59,18 +58,20 @@ class _RollingDiceButtonState extends State<RollingDiceButton> with SingleTicker
           animation: _animation,
           builder: (context, child) {
             return Transform.rotate(
-              angle: - _diceNumber * 360 / (_animation.value + 1) * (pi / 180),
+              angle: -_diceNumber * 360 / (_animation.value + 1) * (pi / 180),
               child: Transform.scale(
-                  scale: sin(_animation.value *3.1)+1.2,
-                  // scale: sin(_animation.value + 1 / 2),
-                  // scale: 1,
-                  child: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.dice,
-                    height: 17,
-                    fit: BoxFit.fitHeight,
-                  )),
+                scale: sin(_animation.value * 3) + 1,
+                // scale: sin(_animation.value + 1 / 2),
+                // scale: 1,
+                child: child,
+              ),
             );
           },
+          child: ImageWidget(
+            svgAsset: GraphicsFoundation.instance.svg.dice,
+            height: 17.h,
+            fit: BoxFit.fitHeight,
+          ),
         ),
       ),
     );

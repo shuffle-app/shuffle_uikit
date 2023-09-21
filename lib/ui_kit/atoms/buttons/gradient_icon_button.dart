@@ -20,6 +20,7 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
+    final child = icon.paddingAll(EdgeInsetsFoundation.all12);
 
     return Material(
       borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
@@ -32,7 +33,11 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
             gradient: enabled ? GradientFoundation.attentionCard : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
           ),
-          child: loading ?? false ? const SizedBox() : icon.paddingAll(SpacingFoundation.verticalSpacing12),
+          child: loading ?? false
+              ? const SizedBox()
+              : fit == ButtonFit.hugContent
+                  ? child
+                  : Center(child: child),
         ),
       ),
     ).loadingWrap(loading ?? false);
