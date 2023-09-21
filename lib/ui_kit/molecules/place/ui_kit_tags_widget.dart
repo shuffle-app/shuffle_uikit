@@ -86,8 +86,8 @@ class UiKitTagsWidget extends StatelessWidget {
                         ),
                       ),
                     ] else if (isTimeAvailable) ...[
-                      UiKitTag(title: 'closed', iconPath: GraphicsFoundation.instance.svg.clock.path).widget,
                       SpacingFoundation.horizontalSpace4,
+                      UiKitTag(title: 'closed', iconPath: GraphicsFoundation.instance.svg.clock.path).widget,
                     ],
                   ],
                 ),
@@ -97,7 +97,6 @@ class UiKitTagsWidget extends StatelessWidget {
                 Row(
                   children: [
                     if (isTimeAvailable && isBetween(openFrom, openTo)) ...[
-                      SpacingFoundation.horizontalSpace4,
                       Text(
                         durationFrom(TimeOfDay.now(), openTo),
                         style: theme?.boldTextTheme.caption2Medium.copyWith(
