@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -5,14 +6,14 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
   final String title;
   final String description;
   final double spacing;
-  final bool? showFullInfo;
+  final bool showFullInfo;
 
   const UiKitTitledDescriptionGridWidget({
     Key? key,
     required this.title,
     required this.description,
     required this.spacing,
-    this.showFullInfo,
+    this.showFullInfo = false,
   }) : super(key: key);
 
   @override
@@ -31,14 +32,24 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace4,
-          Text(
-            description,
-            maxLines: showFullInfo ?? false ? null : 3,
-            overflow: showFullInfo ?? false ? null : TextOverflow.ellipsis,
-            style: textTheme?.caption1Bold.copyWith(
-              color: context.uiKitTheme?.colorScheme.grayForegroundColor,
-            ),
-          ),
+          showFullInfo
+              ? AutoSizeText(
+                  description,
+                  maxLines: 3,
+                  minFontSize: 10,
+                  overflow: TextOverflow.ellipsis,
+                  style: textTheme?.caption1Bold.copyWith(
+                    color: context.uiKitTheme?.colorScheme.grayForegroundColor,
+                  ),
+                )
+              : Text(
+                  description,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  style: textTheme?.caption1Bold.copyWith(
+                    color: context.uiKitTheme?.colorScheme.grayForegroundColor,
+                  ),
+                ),
         ],
       ),
     );
