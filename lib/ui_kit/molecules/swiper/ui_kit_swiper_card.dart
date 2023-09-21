@@ -6,6 +6,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
   const UiKitSwiperCard({
     super.key,
     super.imageLink,
+    super.isOpen,
     super.onTap,
     required super.tags,
     required super.title,
@@ -61,6 +62,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                     title: title,
                     subtitle: subtitle,
                     tags: tags,
+                    isOpen: isOpen,
                   ),
                 ],
               ).paddingAll(EdgeInsetsFoundation.all16),

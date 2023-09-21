@@ -7,12 +7,14 @@ class UiKitSwiperCardInfo extends StatelessWidget {
   final String title;
   final String subtitle;
   final List<UiKitTagWidget> tags;
+  final bool? isOpen;
 
   const UiKitSwiperCardInfo({
     super.key,
     required this.title,
     required this.subtitle,
     required this.tags,
+    this.isOpen,
   });
 
   @override
@@ -44,12 +46,22 @@ class UiKitSwiperCardInfo extends StatelessWidget {
               style: subtitleStyle,
             ),
             SpacingFoundation.verticalSpace4,
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Wrap(
-                spacing: SpacingFoundation.horizontalSpacing8,
-                children: tags,
-              ),
+            Row(
+              children: [
+                Expanded(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Wrap(
+                      spacing: SpacingFoundation.horizontalSpacing8,
+                      children: tags,
+                    ),
+                  ),
+                ),
+                if (isOpen != null && isOpen!)
+                  UiKitTagWidget(title: 'open', icon: GraphicsFoundation.instance.svg.clock.path),
+                if (isOpen != null && !isOpen!)
+                  UiKitTagWidget(title: 'closed', icon: GraphicsFoundation.instance.svg.clock.path),
+              ],
             ),
           ],
         ).paddingAll(EdgeInsetsFoundation.all12),
