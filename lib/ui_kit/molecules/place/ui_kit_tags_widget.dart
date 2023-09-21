@@ -5,20 +5,21 @@ class UiKitTagsWidget extends StatelessWidget {
   final double? rating;
   final List<UiKitTag> baseTags;
   final List<UiKitTag>? uniqueTags;
-  final TimeOfDay? timeTo;
+  final TimeOfDay? openTo;
+  final TimeOfDay? openFrom;
 
   const UiKitTagsWidget({
     Key? key,
-    this.rating,
     required this.baseTags,
+    this.rating,
     this.uniqueTags,
-    this.timeTo,
+    this.openTo,
+    this.openFrom,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final isTimeToAvailable = timeTo != null && !(timeTo?.hour == 0 && timeTo?.minute == 0);
 
     return Row(
       mainAxisSize: MainAxisSize.max,
@@ -75,15 +76,18 @@ class UiKitTagsWidget extends StatelessWidget {
                         itemCount: baseTags.length,
                       ),
                     ),
-                    if (isTimeToAvailable) ...[
-                      SpacingFoundation.horizontalSpace16,
+                    if (isBetween(openFrom, openTo)) ...[
+                      SpacingFoundation.horizontalSpace4,
                       Text(
-                        '${timeTo!.hour != 0 ? '${timeTo!.hour} h, ' : ''}${timeTo!.minute != 0 ? '${timeTo!.minute} min' : ''}',
+                        durationFrom(TimeOfDay.now(), openTo),
                         style: theme?.boldTextTheme.caption2Medium.copyWith(
                           color: theme.colorScheme.darkNeutral900,
                         ),
                       ),
-                    ]
+                    ] else ...[
+                      UiKitTag(title: 'closed', iconPath: GraphicsFoundation.instance.svg.clock.path).widget,
+                      SpacingFoundation.horizontalSpace4,
+                    ],
                   ],
                 ),
               ),
@@ -91,15 +95,18 @@ class UiKitTagsWidget extends StatelessWidget {
                 SpacingFoundation.verticalSpace4,
                 Row(
                   children: [
-                    if (isTimeToAvailable) ...[
-                      SpacingFoundation.horizontalSpace16,
+                    if (isBetween(openFrom, openTo)) ...[
+                      SpacingFoundation.horizontalSpace4,
                       Text(
-                        '${timeTo!.hour != 0 ? '${timeTo!.hour} h, ' : ''}${timeTo!.minute != 0 ? '${timeTo!.minute} min' : ''}',
+                        durationFrom(TimeOfDay.now(), openTo),
                         style: theme?.boldTextTheme.caption2Medium.copyWith(
                           color: theme.colorScheme.darkNeutral900,
                         ),
                       ),
-                      SpacingFoundation.horizontalSpace8
+                      SpacingFoundation.horizontalSpace4,
+                    ] else ...[
+                      UiKitTag(title: 'closed', iconPath: GraphicsFoundation.instance.svg.clock.path).widget,
+                      SpacingFoundation.horizontalSpace4,
                     ],
                     Expanded(
                       child: SizedBox(

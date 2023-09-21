@@ -8,6 +8,8 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
   final String description;
   final List<UiKitTag> baseTags;
   final List<UiKitTag> uniqueTags;
+  final TimeOfDay? openTo;
+  final TimeOfDay? openFrom;
   final double horizontalMargin;
   final ScrollController scrollController;
 
@@ -20,13 +22,14 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
     required this.uniqueTags,
     required this.description,
     this.horizontalMargin = 0,
-  })
-      : this.scrollController = scrollController ?? ScrollController(),
+    this.openTo,
+    this.openFrom,
+  })  : scrollController = scrollController ?? ScrollController(),
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final mediaWidth = kIsWeb ? 358.0 : (1.sw -horizontalMargin*2);
+    final mediaWidth = kIsWeb ? 358.0 : (1.sw - horizontalMargin * 2);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,16 +41,12 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
               onTapUp: (TapUpDetails details) {
                 if (details.globalPosition.dx > 1.sw / 2) {
                   scrollController.animateTo(scrollController.offset + 0.83.sw,
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeInOut);
+                      duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
                 } else if (scrollController.offset < 1.sw / 2) {
-                  scrollController.animateTo(
-                      0, duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeInOut);
+                  scrollController.animateTo(0, duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
                 } else {
                   scrollController.animateTo(scrollController.offset - 0.83.sw,
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeInOut);
+                      duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
                 }
               },
               child: ListView.builder(
@@ -59,21 +58,16 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                 itemBuilder: (context, index) {
                   if (index == 0) return horizontalMargin.widthBox;
 
-
                   final mediaItem = media.elementAt(index - 1);
                   if (mediaItem.type == UiKitMediaType.video) {
                     return BaseUiKitMediaWidget.video(
                       media: mediaItem,
                       width: media.length == 1 ? mediaWidth : null,
-                    ).paddingOnly(
-                        right: media.length == index ? 0 : SpacingFoundation
-                            .horizontalSpacing16);
+                    ).paddingOnly(right: media.length == index ? 0 : SpacingFoundation.horizontalSpacing16);
                   }
 
-                  return BaseUiKitMediaWidget.image(media: mediaItem,
-                      width: media.length == 1 ? mediaWidth : null).paddingOnly(
-                      right: media.length == index ? 0 : SpacingFoundation
-                          .horizontalSpacing16);
+                  return BaseUiKitMediaWidget.image(media: mediaItem, width: media.length == 1 ? mediaWidth : null)
+                      .paddingOnly(right: media.length == index ? 0 : SpacingFoundation.horizontalSpacing16);
                 },
                 // separatorBuilder: (context, index) => index == 0
                 //     ? const SizedBox.shrink()
@@ -85,10 +79,13 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           rating: rating,
           baseTags: baseTags,
           uniqueTags: uniqueTags,
+          openTo: openTo,
+          openFrom: openFrom,
         ).paddingSymmetric(horizontal: horizontalMargin),
         SpacingFoundation.verticalSpace14,
-        RepaintBoundary(child: DescriptionWidget(description: description).paddingOnly(
-            left: horizontalMargin, right: horizontalMargin)),
+        RepaintBoundary(
+            child: DescriptionWidget(description: description)
+                .paddingOnly(left: horizontalMargin, right: horizontalMargin)),
       ],
     );
   }
