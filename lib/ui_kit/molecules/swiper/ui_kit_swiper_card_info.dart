@@ -57,6 +57,7 @@ class UiKitSwiperCardInfo extends StatelessWidget {
                     ),
                   ),
                 ),
+                SpacingFoundation.horizontalSpace4,
                 if (isOpen != null && isOpen!)
                   UiKitTagWidget(title: 'open', icon: GraphicsFoundation.instance.svg.clock.path),
                 if (isOpen != null && !isOpen!)
