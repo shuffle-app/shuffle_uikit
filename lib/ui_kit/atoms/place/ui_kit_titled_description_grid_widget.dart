@@ -6,14 +6,14 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
   final String title;
   final String description;
   final double spacing;
-  final bool showFullInfo;
+  final AutoSizeGroup? group;
 
   const UiKitTitledDescriptionGridWidget({
     Key? key,
     required this.title,
     required this.description,
     required this.spacing,
-    this.showFullInfo = false,
+    this.group,
   }) : super(key: key);
 
   @override
@@ -32,11 +32,12 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace4,
-          showFullInfo
+          group != null
               ? AutoSizeText(
                   description,
                   maxLines: 4,
                   minFontSize: 11,
+                  group: group,
                   overflow: TextOverflow.ellipsis,
                   style: textTheme?.caption1Bold.copyWith(
                     color: context.uiKitTheme?.colorScheme.grayForegroundColor,
