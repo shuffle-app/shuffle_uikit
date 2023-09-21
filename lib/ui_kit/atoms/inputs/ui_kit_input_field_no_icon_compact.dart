@@ -63,7 +63,10 @@ class _UiKitInputFieldNoIconCompactState extends State<UiKitInputFieldNoIconComp
               controller: widget.enabled ? widget.controller : null,
               validator: widget.validator,
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 12.w),
+                contentPadding: EdgeInsets.symmetric(
+                  horizontal: EdgeInsetsFoundation.horizontal16,
+                  vertical: EdgeInsetsFoundation.vertical12,
+                ),
                 hintText: '${widget.hintText}',
                 hintStyle: hintStyle,
                 errorStyle: errorStyle?.copyWith(fontSize: 0),

@@ -22,7 +22,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
     final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
-      borderRadius: BorderRadiusFoundation.all24,
+      borderRadius: BorderRadiusFoundation.max,
       color: selected ? colorScheme?.inversePrimary : colorScheme?.surface2,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
@@ -45,10 +45,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
                 ),
               ),
             ],
-          ).paddingSymmetric(
-            horizontal: SpacingFoundation.horizontalSpacing16,
-            vertical: SpacingFoundation.verticalSpacing12,
-          ),
+          ).paddingAll(EdgeInsetsFoundation.all16),
         ),
       ),
     );

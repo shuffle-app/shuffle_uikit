@@ -42,8 +42,10 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
     isScrollControlled: true,
     backgroundColor: Colors.transparent,
     constraints: BoxConstraints(
-      maxHeight: 0.95.sh - (data.topPadding ?? 0),
+      maxHeight: 0.95.sh,
+      minHeight: 0.95.sh - (data.topPadding ?? 0),
       minWidth: 1.sw,
+      maxWidth: 1.sw,
     ),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadiusFoundation.onlyTop24,
@@ -69,9 +71,16 @@ class GeneralDialogData {
 
   final Widget? bottomBar;
   final double? topPadding;
+  final double? customHeight;
 
   final Function onDismissed;
 
-  GeneralDialogData(
-      {this.useRootNavigator = true, required this.child, this.bottomBar, this.topPadding, this.onDismissed = _empty});
+  GeneralDialogData({
+    this.customHeight,
+    this.useRootNavigator = true,
+    required this.child,
+    this.bottomBar,
+    this.topPadding,
+    this.onDismissed = _empty,
+  });
 }
