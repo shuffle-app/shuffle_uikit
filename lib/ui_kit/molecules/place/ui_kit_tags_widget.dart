@@ -20,6 +20,7 @@ class UiKitTagsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final isTimeAvailable = openTo != null && openFrom != null;
 
     return Row(
       mainAxisSize: MainAxisSize.max,
@@ -76,7 +77,7 @@ class UiKitTagsWidget extends StatelessWidget {
                         itemCount: baseTags.length,
                       ),
                     ),
-                    if (isBetween(openFrom, openTo)) ...[
+                    if (isTimeAvailable && isBetween(openFrom, openTo)) ...[
                       SpacingFoundation.horizontalSpace4,
                       Text(
                         durationFrom(TimeOfDay.now(), openTo),
@@ -84,7 +85,7 @@ class UiKitTagsWidget extends StatelessWidget {
                           color: theme.colorScheme.darkNeutral900,
                         ),
                       ),
-                    ] else ...[
+                    ] else if (isTimeAvailable) ...[
                       UiKitTag(title: 'closed', iconPath: GraphicsFoundation.instance.svg.clock.path).widget,
                       SpacingFoundation.horizontalSpace4,
                     ],
@@ -95,7 +96,7 @@ class UiKitTagsWidget extends StatelessWidget {
                 SpacingFoundation.verticalSpace4,
                 Row(
                   children: [
-                    if (isBetween(openFrom, openTo)) ...[
+                    if (isTimeAvailable && isBetween(openFrom, openTo)) ...[
                       SpacingFoundation.horizontalSpace4,
                       Text(
                         durationFrom(TimeOfDay.now(), openTo),
@@ -104,7 +105,7 @@ class UiKitTagsWidget extends StatelessWidget {
                         ),
                       ),
                       SpacingFoundation.horizontalSpace4,
-                    ] else ...[
+                    ] else if (isTimeAvailable) ...[
                       UiKitTag(title: 'closed', iconPath: GraphicsFoundation.instance.svg.clock.path).widget,
                       SpacingFoundation.horizontalSpace4,
                     ],
