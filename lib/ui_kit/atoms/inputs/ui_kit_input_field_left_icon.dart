@@ -70,6 +70,7 @@ class _UiKitInputFieldLeftIconState extends State<UiKitInputFieldLeftIcon> {
           errorStyle: errorStyle,
           hintStyle: hintStyle,
           prefixIconColor: inputPropertiesColor,
+          contentPadding: EdgeInsets.all(EdgeInsetsFoundation.all16),
           prefixIcon: IconButton(
             icon: Icon(
               Icons.close,

@@ -81,6 +81,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         decoration: InputDecoration(
           hintText: widget.hintText,
           errorText: widget.errorText,
+          contentPadding: EdgeInsets.all(EdgeInsetsFoundation.all16),
           errorMaxLines: 1,
           filled: widget.fillColor != null,
           fillColor: widget.fillColor,
