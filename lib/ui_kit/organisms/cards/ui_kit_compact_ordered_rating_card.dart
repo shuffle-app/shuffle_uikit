@@ -64,13 +64,15 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
+                    Expanded(
+                    child:
                         ClipRRect(
                           borderRadius: BorderRadiusFoundation.all24,
                           child: ImageWidget(
                             link: imageLink,
                             fit: BoxFit.cover,
                           ),
-                        ),
+                        )),
                         SpacingFoundation.horizontalSpace8,
                         Expanded(
                           child: Center(
@@ -87,15 +89,16 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                       horizontal: EdgeInsetsFoundation.horizontal8,
                     ),
                   ),
-                  if (rating != null)
+                  // if (rating != null)
                     Ink(
                       width: sideInfoCardsWidth,
-                      color: ColorsFoundation.darkNeutral500.withOpacity(0.08),
+                      color: ColorsFoundation.darkNeutral500.withOpacity(rating==null ? 0 : 0.08),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
+                          if(rating!=null)
                           ImageWidget(
                             svgAsset: GraphicsFoundation.instance.svg.star,
                             color: context.uiKitTheme?.colorScheme.inversePrimary,

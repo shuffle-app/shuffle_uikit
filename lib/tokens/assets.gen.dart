@@ -840,6 +840,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/adventure.svg
   SvgGenImage get adventure => const SvgGenImage('assets/images/svg/adventure.svg');
 
+  /// File path: assets/images/svg/alert-circle.svg
+  SvgGenImage get alertCircle => const SvgGenImage('assets/images/svg/alert-circle.svg');
+
   /// File path: assets/images/svg/analytics-fill.svg
   SvgGenImage get analyticsFill => const SvgGenImage('assets/images/svg/analytics-fill.svg');
 
@@ -1393,6 +1396,7 @@ class $AssetsImagesSvgGen {
         victoryHands,
         yoga,
         adventure,
+        alertCircle,
         analyticsFill,
         analyticsOutline,
         analytics,

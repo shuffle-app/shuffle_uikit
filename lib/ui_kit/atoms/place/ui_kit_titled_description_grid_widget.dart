@@ -51,6 +51,7 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
                     color: context.uiKitTheme?.colorScheme.grayForegroundColor,
                   ),
                 ),
+          SpacingFoundation.verticalSpace4,
         ],
       ),
     );
