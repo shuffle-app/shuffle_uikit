@@ -35,8 +35,8 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
           showFullInfo
               ? AutoSizeText(
                   description,
-                  maxLines: 3,
-                  minFontSize: 10,
+                  maxLines: 4,
+                  minFontSize: 11,
                   overflow: TextOverflow.ellipsis,
                   style: textTheme?.caption1Bold.copyWith(
                     color: context.uiKitTheme?.colorScheme.grayForegroundColor,
