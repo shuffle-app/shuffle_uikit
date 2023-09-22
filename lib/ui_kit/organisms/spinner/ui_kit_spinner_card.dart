@@ -169,12 +169,12 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                   SpacingFoundation.horizontalSpace4,
                   if (widget.time != null)
                     Text(
-                      '${normalizedTi(widget.time)} ${widget.timeTo != null ? '' : ', '}',
+                      '${normalizedTi(widget.time, showDateName: false)} ${widget.timeTo != null ? '' : ', '}',
                       style: dateTextStyle,
                     ),
                   if (widget.timeTo != null)
                     Text(
-                      '- ${normalizedTi(widget.timeTo)}, ',
+                      '- ${normalizedTi(widget.timeTo, showDateName: false)}, ',
                       style: dateTextStyle,
                     ),
                   if (widget.dateTo == null)
