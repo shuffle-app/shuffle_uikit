@@ -184,7 +184,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                     )
                   else
                     Text(
-                      '${DateFormat('dd.MM').format(widget.date!)} - ${DateFormat('dd.MM.yyyy').format(widget.dateTo!)}',
+                      '${DateFormat('MMMd').format(widget.date!)} - ${DateFormat('MMM dd, yyyy').format(widget.dateTo!)}',
                       style: dateTextStyle,
                     ),
                 ],
