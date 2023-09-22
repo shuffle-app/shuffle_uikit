@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-String normalizedTi(TimeOfDay? time) {
-  if(time == null) return 'nn';
+String normalizedTi(TimeOfDay? time, {bool showDateName = true}) {
+  if (time == null) return 'nn';
 
-  return '${leadingZeros(time.hour)}:${leadingZeros(time.minute)} ${time.period.name}';
+  return '${leadingZeros(time.hour)}:${leadingZeros(time.minute)}${showDateName ? ' ${time.period.name}' : ''}';
 }
 
-String leadingZeros(int number){
+String leadingZeros(int number) {
   return number.toString().padLeft(2, '0');
 }

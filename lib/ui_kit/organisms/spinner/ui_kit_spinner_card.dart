@@ -9,6 +9,7 @@ class UiKitSpinnerCard extends StatefulWidget {
   final DateTime? date;
   final DateTime? dateTo;
   final TimeOfDay? time;
+  final TimeOfDay? timeTo;
   final bool? favourite;
   final VoidCallback? onTap;
   final VoidCallback? onFavoriteTap;
@@ -25,6 +26,7 @@ class UiKitSpinnerCard extends StatefulWidget {
     this.date,
     this.dateTo,
     this.time,
+    this.timeTo,
     this.favourite,
     this.onTap,
     required this.availableHeight,
@@ -153,33 +155,40 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
               style: titleStyle,
             ),
             SpacingFoundation.verticalSpace4,
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.clock,
-                  color: ColorsFoundation.darkNeutral900,
-                  width: kIsWeb ? 16 : 0.05.sw,
-                  height: kIsWeb ? 16 : 0.05.sw,
-                  fit: BoxFit.cover,
-                ),
-                SpacingFoundation.horizontalSpace4,
-                if (widget.time != null)
-                  Text(
-                    '${normalizedTi(widget.time)}, ',
-                    style: dateTextStyle,
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.clock,
+                    color: ColorsFoundation.darkNeutral900,
+                    width: kIsWeb ? 16 : 0.05.sw,
+                    height: kIsWeb ? 16 : 0.05.sw,
+                    fit: BoxFit.fitWidth,
                   ),
-                if(widget.dateTo == null)
-                Text(
-                  widget.date != null ? DateFormat('MMM dd').format(widget.date!) : 'Coming soon',
-                  style: dateTextStyle,
-                )
-                else
-                  Text(
-                    '${DateFormat('dd.MM').format(widget.date!)} - ${DateFormat('dd.MM.yyyy').format(widget.dateTo!)}',
-                    style: dateTextStyle,
-                  ),
-              ],
+                  SpacingFoundation.horizontalSpace4,
+                  if (widget.time != null)
+                    Text(
+                      '${normalizedTi(widget.time, showDateName: false)} ${widget.timeTo != null ? '' : ', '}',
+                      style: dateTextStyle,
+                    ),
+                  if (widget.timeTo != null)
+                    Text(
+                      '- ${normalizedTi(widget.timeTo, showDateName: false)}, ',
+                      style: dateTextStyle,
+                    ),
+                  if (widget.dateTo == null)
+                    Text(
+                      widget.date != null ? DateFormat('MMM dd').format(widget.date!) : 'Coming soon',
+                      style: dateTextStyle,
+                    )
+                  else
+                    Text(
+                      '${DateFormat('MMMd').format(widget.date!)} - ${DateFormat('MMM dd, yyyy').format(widget.dateTo!)}',
+                      style: dateTextStyle,
+                    ),
+                ],
+              ),
             ),
           ],
         ),
