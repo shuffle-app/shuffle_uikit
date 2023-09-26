@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
@@ -6,6 +7,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final bool? loading;
   final Color? borderColor;
+  final bool isGradientEnabled;
 
   const OutlinedTextButton({
     Key? key,
@@ -13,6 +15,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
     this.onPressed,
     this.loading,
     this.borderColor,
+    this.isGradientEnabled = false,
   }) : super(key: key);
 
   @override
@@ -31,10 +34,12 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
       color: enabled ? Colors.white.withOpacity(0.01) : ColorsFoundation.darkNeutral300,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
-        side: BorderSide(
-          color: enabled ? borderColor ?? theme!.colorScheme.inversePrimary : theme!.colorScheme.darkNeutral500,
-          width: 2.w,
-        ),
+        side: !isGradientEnabled
+            ? BorderSide(
+                color: enabled ? borderColor ?? theme!.colorScheme.inversePrimary : theme!.colorScheme.darkNeutral500,
+                width: 2.w,
+              )
+            : BorderSide.none,
       ),
       child: InkWell(
         onTap: enabled && !(loading ?? false) ? onPressed : null,
@@ -42,11 +47,26 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
         child: Ink(
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all24,
+            border: isGradientEnabled
+                ? GradientBoxBorder(
+                    gradient: GradientFoundation.attentionCard,
+                    width: 2.w,
+                  )
+                : null,
           ),
           child: loading ?? false
               ? SpacingFoundation.none
               : Center(
-                  child: textWidget.paddingSymmetric(vertical: SpacingFoundation.verticalSpacing8),
+                  child: isGradientEnabled
+                      ? GradientableWidget(
+                          gradient: GradientFoundation.attentionCard,
+                          child: textWidget.paddingSymmetric(
+                            vertical: SpacingFoundation.verticalSpacing8,
+                          ),
+                        )
+                      : textWidget.paddingSymmetric(
+                          vertical: SpacingFoundation.verticalSpacing8,
+                        ),
                 ),
         ),
       ),

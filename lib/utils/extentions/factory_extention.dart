@@ -72,9 +72,15 @@ extension FactoryExtention on BuildContext {
     required BaseUiKitButtonData data,
     bool? hideBorder,
     Color? borderColor,
+    bool? isGradientEnabled,
   }) {
     return WidgetsFactory.of(this)!
-        .createOutlinedButton(data: data, borderColor: borderColor, hideBorder: hideBorder)
+        .createOutlinedButton(
+          data: data,
+          borderColor: borderColor,
+          hideBorder: hideBorder,
+          isGradientEnabled: isGradientEnabled,
+        )
         .build(this);
   }
 
