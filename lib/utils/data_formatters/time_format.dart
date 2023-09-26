@@ -29,12 +29,12 @@ String formatDate(
       }
     }
     if (isConsecutive) {
-      convertedDate += '${weekdays.first.substring(0, 3)} - ${weekdays.last.substring(0, 3)}';
+      convertedDate += '${weekdays.first} - ${weekdays.last}';
 
       return convertedDate;
     }
 
-    convertedDate += weekdays.map((day) => day.substring(0, 3)).toList().join(', ');
+    convertedDate += weekdays.join(', ');
   } else {
     convertedDate += date != null ? DateFormat('MMM dd').format(date) : 'nn';
     convertedDate += dateTo != null ? ' - ${DateFormat('MMM dd, yyyy').format(dateTo)}' : '';
@@ -45,20 +45,20 @@ String formatDate(
 
 String _getFollowingDay(String day) {
   switch (day) {
-    case 'Monday':
-      return 'Tuesday';
-    case 'Tuesday':
-      return 'Wednesday';
-    case 'Wednesday':
-      return 'Thursday';
-    case 'Thursday':
-      return 'Friday';
-    case 'Friday':
-      return 'Saturday';
-    case 'Saturday':
-      return 'Sunday';
-    case 'Sunday':
-      return 'Monday';
+    case 'Mon':
+      return 'Tue';
+    case 'Tue':
+      return 'Wed';
+    case 'Wed':
+      return 'Thu';
+    case 'Thu':
+      return 'Fri';
+    case 'Fri':
+      return 'Sat';
+    case 'Sat':
+      return 'Sun';
+    case 'Sun':
+      return 'Mon';
     default:
       return '';
   }
