@@ -34,7 +34,7 @@ String formatDate(
       return convertedDate;
     }
 
-    convertedDate += weekdays.join(', ');
+    convertedDate += weekdays.map((day) => day.substring(0, 3)).toList().join(', ');
   } else {
     convertedDate += date != null ? DateFormat('MMM dd').format(date) : 'nn';
     convertedDate += dateTo != null ? ' - ${DateFormat('MMM dd, yyyy').format(dateTo)}' : '';
