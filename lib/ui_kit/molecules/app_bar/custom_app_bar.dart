@@ -57,6 +57,7 @@ class CustomAppBar extends PreferredSize {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    if (!showLeading) const SizedBox(),
                     if (showLeading) leading ?? const AppBarBackButton(),
                     if (showLeading && !centerTitle) SpacingFoundation.horizontalSpace8,
                     AppBarTitle(
@@ -65,11 +66,7 @@ class CustomAppBar extends PreferredSize {
                     ),
                     if (appBarTrailing != null && !centerTitle) SpacingFoundation.horizontalSpace8,
                     if (appBarTrailing != null) appBarTrailing!,
-                    if (appBarTrailing == null)
-                      SizedBox(
-                        width: 28.w,
-                        height: 28.h,
-                      ),
+                    if (appBarTrailing == null) const SizedBox(),
                   ],
                 ),
                 if (!hideBody) bodySpacing?.heightBox ?? SpacingFoundation.verticalSpace8,

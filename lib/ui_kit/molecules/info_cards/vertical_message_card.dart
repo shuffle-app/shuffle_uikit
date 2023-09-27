@@ -48,7 +48,7 @@ class VerticalMessageCard extends StatelessWidget {
                 '${message.toUpperCase()}\n\n\n\n',
                 style: messageStyle,
                 textAlign: TextAlign.center,
-                maxLines: 3,
+                maxLines: 4,
               ),
             ],
           ).paddingAll(EdgeInsetsFoundation.all12),
