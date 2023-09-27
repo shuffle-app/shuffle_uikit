@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitSpinnerCard extends StatefulWidget {
@@ -10,6 +9,7 @@ class UiKitSpinnerCard extends StatefulWidget {
   final DateTime? dateTo;
   final TimeOfDay? time;
   final TimeOfDay? timeTo;
+  final List<String>? weekdays;
   final bool? favourite;
   final VoidCallback? onTap;
   final VoidCallback? onFavoriteTap;
@@ -21,6 +21,7 @@ class UiKitSpinnerCard extends StatefulWidget {
 
   const UiKitSpinnerCard({
     Key? key,
+    required this.availableHeight,
     this.photoLink,
     this.title,
     this.date,
@@ -29,12 +30,12 @@ class UiKitSpinnerCard extends StatefulWidget {
     this.timeTo,
     this.favourite,
     this.onTap,
-    required this.availableHeight,
     this.onFavoriteTap,
     this.ownerPhotoLink,
     this.ownerTileTitle,
     this.ownerTileTitleTrailing,
     this.ownerTileSubtitle,
+    this.weekdays,
   }) : super(key: key);
 
   @override
@@ -167,26 +168,10 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                     fit: BoxFit.fitWidth,
                   ),
                   SpacingFoundation.horizontalSpace4,
-                  if (widget.time != null)
-                    Text(
-                      '${normalizedTi(widget.time, showDateName: false)} ${widget.timeTo != null ? '' : ', '}',
-                      style: dateTextStyle,
-                    ),
-                  if (widget.timeTo != null)
-                    Text(
-                      '- ${normalizedTi(widget.timeTo, showDateName: false)}, ',
-                      style: dateTextStyle,
-                    ),
-                  if (widget.dateTo == null)
-                    Text(
-                      widget.date != null ? DateFormat('MMM dd').format(widget.date!) : 'Coming soon',
-                      style: dateTextStyle,
-                    )
-                  else
-                    Text(
-                      '${DateFormat('MMMd').format(widget.date!)} - ${DateFormat('MMM dd, yyyy').format(widget.dateTo!)}',
-                      style: dateTextStyle,
-                    ),
+                  Text(
+                    formatDate(widget.date, widget.dateTo, widget.time, widget.timeTo, widget.weekdays),
+                    style: dateTextStyle,
+                  ),
                 ],
               ),
             ),
