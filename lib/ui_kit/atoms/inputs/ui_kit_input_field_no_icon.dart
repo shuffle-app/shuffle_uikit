@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputField {
-  const UiKitInputFieldNoIcon(
-      {Key? key,
-      required this.controller,
-      this.errorText,
-      this.hintText,
-      this.validator,
-      this.onChanged,
-      this.fillColor,
-      this.minLines,
-      this.enabled = true,
-      this.borderRadius})
-      : super(key: key);
+  const UiKitInputFieldNoIcon({
+    Key? key,
+    required this.controller,
+    this.errorText,
+    this.hintText,
+    this.validator,
+    this.onChanged,
+    this.fillColor,
+    this.minLines,
+    this.enabled = true,
+    this.borderRadius,
+    this.node,
+    this.onSubmitted,
+  }) : super(key: key);
 
   @override
   final TextEditingController controller;
@@ -30,6 +32,8 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
 
   final Color? fillColor;
   final int? minLines;
+  final FocusNode? node;
+  final void Function(String)? onSubmitted;
   final BorderRadius? borderRadius;
 
   @override
@@ -78,6 +82,8 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         maxLines: (widget.minLines ?? 0) + 1,
         controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
+        focusNode: widget.node,
+        onFieldSubmitted: widget.onSubmitted,
         decoration: InputDecoration(
           hintText: widget.hintText,
           errorText: widget.errorText,
