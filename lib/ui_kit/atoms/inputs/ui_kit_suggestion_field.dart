@@ -6,6 +6,7 @@ class UiKitSuggestionField extends StatelessWidget {
     super.key,
     required this.options,
     this.hintText,
+    this.fillColor,
     this.borderRadius,
     this.onItemSelected,
     this.onFieldSubmitted,
@@ -13,6 +14,7 @@ class UiKitSuggestionField extends StatelessWidget {
 
   final List<String> options;
   final String? hintText;
+  final Color? fillColor;
   final BorderRadius? borderRadius;
   final void Function(String)? onItemSelected;
   final VoidCallback? onFieldSubmitted;
@@ -24,6 +26,7 @@ class UiKitSuggestionField extends StatelessWidget {
         controller: controller,
         node: focusNode,
         hintText: hintText,
+        fillColor: fillColor,
         borderRadius: borderRadius ?? BorderRadiusFoundation.max,
         onSubmitted: (_) {
           onSubmitted.call();
@@ -37,6 +40,7 @@ class UiKitSuggestionField extends StatelessWidget {
           child: UiKitTagSelector(
             onTagSelected: onSelected,
             tags: options.toList(),
+            showTextField: false,
           ),
         ),
       ),
