@@ -8,7 +8,6 @@ class UiKitSuggestionField extends StatelessWidget {
     this.hintText,
     this.fillColor,
     this.borderRadius,
-    this.onItemSelected,
     this.onFieldSubmitted,
   });
 
@@ -16,43 +15,47 @@ class UiKitSuggestionField extends StatelessWidget {
   final String? hintText;
   final Color? fillColor;
   final BorderRadius? borderRadius;
-  final void Function(String)? onItemSelected;
   final VoidCallback? onFieldSubmitted;
 
   @override
   Widget build(BuildContext context) {
-    return Autocomplete<String>(
-      fieldViewBuilder: (context, controller, focusNode, onSubmitted) => UiKitInputFieldNoIcon(
-        controller: controller,
-        node: focusNode,
-        hintText: hintText,
-        fillColor: fillColor,
-        borderRadius: borderRadius ?? BorderRadiusFoundation.max,
-        onSubmitted: (_) {
-          onSubmitted.call();
-          onFieldSubmitted?.call();
-        },
-      ),
-      optionsViewBuilder: (_, onSelected, options) => Align(
-        alignment: Alignment.topCenter,
-        child: Material(
+    return LayoutBuilder(builder: (_, constraints) {
+      return Autocomplete<String>(
+        fieldViewBuilder: (_, controller, focusNode, onSubmitted) => UiKitInputFieldNoIcon(
+          controller: controller,
+          node: focusNode,
+          hintText: hintText,
+          fillColor: fillColor,
           borderRadius: borderRadius ?? BorderRadiusFoundation.max,
-          child: UiKitTagSelector(
-            onTagSelected: onSelected,
-            tags: options.toList(),
-            showTextField: false,
+          onSubmitted: (_) {
+            onSubmitted.call();
+            onFieldSubmitted?.call();
+          },
+        ),
+        optionsViewBuilder: (_, onSelected, options) => Align(
+          alignment: Alignment.topLeft,
+          child: SizedBox(
+            width: constraints.maxWidth,
+            child: Material(
+              borderRadius: borderRadius ?? BorderRadiusFoundation.max,
+              child: UiKitTagSelector(
+                onTagSelected: onSelected,
+                tags: options.toList(),
+                showTextField: false,
+              ),
+            ),
           ),
         ),
-      ),
-      optionsBuilder: (editingValue) {
-        if (editingValue.text == '') {
-          return const Iterable<String>.empty();
-        }
+        optionsBuilder: (editingValue) {
+          if (editingValue.text == '') {
+            return const Iterable<String>.empty();
+          }
 
-        return options.where((String option) {
-          return option.contains(editingValue.text.toLowerCase());
-        });
-      },
-    );
+          return options.where((String option) {
+            return option.contains(editingValue.text.toLowerCase());
+          });
+        },
+      );
+    });
   }
 }
