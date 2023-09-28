@@ -11,7 +11,7 @@ class UiKitSuggestionField extends StatelessWidget {
     this.onFieldSubmitted,
   });
 
-  final Future<List<String>> Function(String) options;
+  final Future<List<String>> Function(String)? options;
   final String? hintText;
   final Color? fillColor;
   final BorderRadius? borderRadius;
@@ -51,7 +51,7 @@ class UiKitSuggestionField extends StatelessWidget {
             return const Iterable<String>.empty();
           }
 
-          await options.call(editingValue.text).then((options) {
+          await options?.call(editingValue.text).then((options) {
             return options.where((String option) {
               return option.contains(editingValue.text.toLowerCase());
             });
