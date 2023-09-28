@@ -40,9 +40,24 @@ class DialogTestingPage extends StatelessWidget {
                 ),
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
+                  text: 'Dialog calendarFromTo picker',
+                  onPressed: () => showUiKitCalendarFromToDialog(
+                    context,(from,to){}
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
                   text: 'Dialog time picker',
                   onPressed: () => showUiKitTimeDialog(
                     context,
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+
+                OrdinaryButton(
+                  text: 'Dialog timeFromTo picker',
+                  onPressed: () => showUiKitTimeFromToDialog(
+                    context,(from,to){}
                   ),
                 ),
                 SpacingFoundation.verticalSpace16,
