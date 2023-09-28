@@ -11,7 +11,7 @@ class UiKitSuggestionField extends StatelessWidget {
     this.onFieldSubmitted,
   });
 
-  final List<String> options;
+  final Future<List<String>> Function(String) options;
   final String? hintText;
   final Color? fillColor;
   final BorderRadius? borderRadius;
@@ -46,14 +46,18 @@ class UiKitSuggestionField extends StatelessWidget {
             ),
           ),
         ),
-        optionsBuilder: (editingValue) {
+        optionsBuilder: (editingValue) async {
           if (editingValue.text == '') {
             return const Iterable<String>.empty();
           }
 
-          return options.where((String option) {
-            return option.contains(editingValue.text.toLowerCase());
+          await options.call(editingValue.text).then((options) {
+            return options.where((String option) {
+              return option.contains(editingValue.text.toLowerCase());
+            });
           });
+
+          return const Iterable<String>.empty();
         },
       );
     });
