@@ -467,6 +467,13 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   ButtonFactory createSmallGradientButton({
     required BaseUiKitButtonData data,
   }) {
+    if (data.icon != null && data.text.isEmpty) {
+      return SmallGradientIconButton(
+        icon: data.icon!,
+        onPressed: data.onPressed,
+      );
+    }
+
     return SmallGradientButton(
       text: data.text,
       onPressed: data.onPressed,

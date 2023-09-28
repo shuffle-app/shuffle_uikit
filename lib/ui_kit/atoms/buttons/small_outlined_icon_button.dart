@@ -19,8 +19,6 @@ class SmallOutlinedIconButton extends StatelessWidget implements ButtonFactory {
 
   @override
   Widget build(BuildContext context) {
-    print('sakvnajsnvkasnvkjas');
-
     return Material(
       shape: const CircleBorder(),
       clipBehavior: Clip.hardEdge,

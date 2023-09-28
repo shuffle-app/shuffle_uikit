@@ -6,6 +6,7 @@ import 'package:sliver_tools/sliver_tools.dart';
 
 class BlurredAppBarPage extends StatelessWidget {
   final String title;
+  final Widget? customTitle;
   final bool? autoImplyLeading;
   final bool centerTitle;
   final Widget? appBarBody;
@@ -19,12 +20,14 @@ class BlurredAppBarPage extends StatelessWidget {
   final double? customToolbarHeight;
   final animDuration = const Duration(milliseconds: 250);
   final bool? canFoldAppBar;
+  final double? customToolbarBaseHeight;
 
   // final PreferredSizeWidget? bottom;
 
   const BlurredAppBarPage({
     Key? key,
-    required this.title,
+    this.title = '',
+    this.customTitle,
     required this.body,
     this.autoImplyLeading,
     this.leading,
@@ -37,6 +40,7 @@ class BlurredAppBarPage extends StatelessWidget {
     this.appBarTrailing,
     // this.bottom,
     this.customToolbarHeight,
+    this.customToolbarBaseHeight,
     this.centerTitle = false,
     this.topFixedAddition,
   })  : physics = physics ?? const ClampingScrollPhysics(),
@@ -52,7 +56,7 @@ class BlurredAppBarPage extends StatelessWidget {
           children: [
             SliverLayoutBuilder(
               builder: (context, sliverConstraints) {
-                double toolbarHeight = (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
+                double toolbarHeight = (customToolbarBaseHeight ?? context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
                 double expandedHeight = appBarBody == null ? toolbarHeight : customToolbarHeight ?? 190.0;
 
                 final hideAppBarBody =
@@ -72,6 +76,7 @@ class BlurredAppBarPage extends StatelessWidget {
                     leading: leading,
                     bodySpacing: appBarBody == null ? SpacingFoundation.zero : SpacingFoundation.verticalSpacing16,
                     title: title,
+                    customTitle: customTitle,
                     appBarBody: AnimatedContainer(
                       duration: animDuration,
                       height: hideAppBarBody
