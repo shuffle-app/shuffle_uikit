@@ -6,6 +6,7 @@ class UiKitChatOutCard extends StatelessWidget {
   const UiKitChatOutCard({
     super.key,
     required this.timeOfDay,
+    this.sentByMe = false,
     this.text,
     this.child,
   });
@@ -13,6 +14,7 @@ class UiKitChatOutCard extends StatelessWidget {
   final DateTime timeOfDay;
   final String? text;
   final Widget? child;
+  final bool sentByMe;
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +38,13 @@ class UiKitChatOutCard extends StatelessWidget {
           children: [
             Flexible(
               child: UiKitCardWrapper(
-                color: theme?.colorScheme.surface3,
+                color: sentByMe ? Colors.white : theme?.colorScheme.surface3,
                 child: text != null
                     ? ConstrainedBox(
                         constraints: BoxConstraints.expand(width: width, height: height),
                         child: Text(
                           text!,
-                          style: theme?.boldTextTheme.caption1Medium,
+                          style: theme?.boldTextTheme.caption1Medium.copyWith(color: sentByMe ? Colors.black : null),
                         ),
                       ).paddingAll(EdgeInsetsFoundation.all12)
                     : child!.paddingAll(EdgeInsetsFoundation.all12),
@@ -51,13 +53,13 @@ class UiKitChatOutCard extends StatelessWidget {
             Transform(
               transform: Matrix4.identity()..scale(-1.0, 1.0),
               child: CustomPaint(
-                painter: _MessageTriangle(color: theme!.colorScheme.surface3),
+                painter: _MessageTriangle(color: sentByMe ? Colors.white : theme!.colorScheme.surface3),
               ),
             ),
           ],
         ),
       ],
-    );
+    ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20);
   }
 }
 

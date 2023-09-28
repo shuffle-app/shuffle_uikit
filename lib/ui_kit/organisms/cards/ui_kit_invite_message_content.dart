@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInviteMessageContent extends StatelessWidget {
@@ -12,19 +10,31 @@ class UiKitInviteMessageContent extends StatelessWidget {
     required this.invitedPeopleAvatarPaths,
     required this.userType,
     required this.onPlaceTap,
-    required this.onInvitePeopleTap,
+    this.onInvitePeopleTap,
     required this.tags,
+    this.canDenyInvitation = false,
+    this.showGang = false,
+    this.brightness = Brightness.light,
+    this.onAcceptTap,
+    this.onDenyTap,
   }) : super(key: key);
 
   final String username;
+  final Brightness brightness;
   final String placeName;
   final String placeImagePath;
   final List<UiKitTag> tags;
   final List<String?> invitedPeopleAvatarPaths;
   final UserTileType userType;
+  final bool canDenyInvitation;
+  final bool showGang;
 
   final VoidCallback onPlaceTap;
-  final VoidCallback onInvitePeopleTap;
+  final VoidCallback? onInvitePeopleTap;
+  final VoidCallback? onAcceptTap;
+  final VoidCallback? onDenyTap;
+
+  bool get isDark => brightness == Brightness.dark;
 
   List<String?> _sortAvatars() {
     final sortedAvatars = invitedPeopleAvatarPaths.where((avatar) => avatar != null).toList();
@@ -36,58 +46,60 @@ class UiKitInviteMessageContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final sortedAvatars = _sortAvatars();
     final theme = context.uiKitTheme;
-    final avatarWidth = 40.w;
+    final avatarWidth = 0.1375.sw;
 
     return Column(
       children: [
         Row(
           children: [
-            sortedAvatars.length >= 3
-                ? Expanded(
-                    child: Stack(
-                      children: [
-                        BorderedUserCircleAvatar(
-                          imageUrl: sortedAvatars.first,
-                          size: avatarWidth,
-                        ),
-                        Positioned(
-                          left: EdgeInsetsFoundation.horizontal32 * 0.7.w,
-                          child: BorderedUserCircleAvatar(
-                            size: avatarWidth,
-                            imageUrl: sortedAvatars[1],
-                          ),
-                        ),
-                        Positioned(
-                          left: EdgeInsetsFoundation.horizontal32 * 1.5.w,
-                          child: BorderedUserCircleAvatar(
-                            size: avatarWidth,
-                            imageUrl: sortedAvatars[2],
-                          ),
-                        ),
-                        if (invitedPeopleAvatarPaths.length - 3 > 0)
-                          Positioned(
-                            left: EdgeInsetsFoundation.horizontal32 * 2.2.w,
-                            child: CircleAvatar(
-                              radius: avatarWidth / 2,
-                              backgroundColor: theme?.colorScheme.surface4,
-                              child: Text(
-                                '+${invitedPeopleAvatarPaths.length - 3}',
-                                style: theme?.regularTextTheme.caption1.copyWith(
-                                  color: theme.colorScheme.darkNeutral900,
-                                ),
-                              ),
+            if (sortedAvatars.length >= 3 && showGang)
+              Expanded(
+                child: Stack(
+                  children: [
+                    BorderedUserCircleAvatar(
+                      imageUrl: sortedAvatars.first,
+                      size: avatarWidth,
+                    ),
+                    Positioned(
+                      left: EdgeInsetsFoundation.horizontal32 * 0.7.w,
+                      child: BorderedUserCircleAvatar(
+                        size: avatarWidth,
+                        imageUrl: sortedAvatars[1],
+                      ),
+                    ),
+                    Positioned(
+                      left: EdgeInsetsFoundation.horizontal32 * 1.5.w,
+                      child: BorderedUserCircleAvatar(
+                        size: avatarWidth,
+                        imageUrl: sortedAvatars[2],
+                      ),
+                    ),
+                    if (invitedPeopleAvatarPaths.length - 3 > 0)
+                      Positioned(
+                        left: EdgeInsetsFoundation.horizontal32 * 2.2.w,
+                        child: CircleAvatar(
+                          radius: avatarWidth / 2,
+                          backgroundColor: isDark ? theme?.colorScheme.surface4 : theme?.colorScheme.darkNeutral100,
+                          child: Text(
+                            '+${invitedPeopleAvatarPaths.length - 3}',
+                            style: theme?.regularTextTheme.caption1.copyWith(
+                              color: theme.colorScheme.darkNeutral900,
                             ),
                           ),
-                      ],
-                    ),
-                  )
-                : const Spacer(),
+                        ),
+                      ),
+                  ],
+                ),
+              ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    Text(username, style: theme?.boldTextTheme.caption1Bold),
+                    Text(
+                      username,
+                      style: theme?.boldTextTheme.caption1Bold.copyWith(color: isDark ? Colors.white : Colors.black),
+                    ),
                     SpacingFoundation.horizontalSpace12,
                     if (userType == UserTileType.influencer)
                       GradientableWidget(
@@ -115,8 +127,8 @@ class UiKitInviteMessageContent extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  'invites ${invitedPeopleAvatarPaths.length} people to',
-                  style: theme?.boldTextTheme.caption1Medium,
+                  showGang ? 'invites ${invitedPeopleAvatarPaths.length} people to' : 'invites you to',
+                  style: theme?.boldTextTheme.caption1Medium.copyWith(color: isDark ? Colors.white : Colors.black),
                 ),
               ],
             ),
@@ -124,63 +136,97 @@ class UiKitInviteMessageContent extends StatelessWidget {
         ),
         SpacingFoundation.verticalSpace12,
         UiKitCardWrapper(
-          borderRadius: BorderRadiusFoundation.all40,
-          color: theme?.colorScheme.surface4,
+          borderRadius: BorderRadiusFoundation.max,
+          color: isDark ? theme?.colorScheme.surface4 : theme?.colorScheme.darkNeutral100,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
             children: [
               BorderedUserCircleAvatar(
                 size: avatarWidth + 5.w,
                 imageUrl: placeImagePath,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SpacingFoundation.verticalSpace4,
-                  Row(
-                    children: [
-                      SpacingFoundation.horizontalSpace12,
-                      Text(placeName, style: theme?.boldTextTheme.caption1Bold),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20.h,
-                    width: 170.w,
-                    child: ListView.separated(
-                      padding: EdgeInsets.only(left: EdgeInsetsFoundation.horizontal12),
-                      itemCount: tags.length,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (_, index) => tags[index].widget,
-                      separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace2,
+              SpacingFoundation.horizontalSpace12,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    SpacingFoundation.verticalSpace2,
+                    Text(
+                      placeName,
+                      style: theme?.boldTextTheme.caption1Bold.copyWith(
+                        overflow: TextOverflow.ellipsis,
+                        color: isDark ? Colors.white : Colors.black,
+                      ),
                     ),
-                  ),
-                  SpacingFoundation.verticalSpace2,
-                ],
+                    SizedBox(
+                      height: 20.h,
+                      width: 170.w,
+                      child: ListView.separated(
+                        padding: EdgeInsets.zero,
+                        itemCount: tags.length,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (_, index) => tags[index].widget,
+                        separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace2,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              Flexible(
-                child: context.badgeButtonNoValue(
-                  data: BaseUiKitButtonData(
-                    onPressed: onPlaceTap,
-                    icon: Icon(
-                      CupertinoIcons.chevron_right_circle,
-                      size: avatarWidth + 5.w,
-                      color: theme?.colorScheme.inversePrimary,
+              context
+                  .smallOutlinedButton(
+                    blurred: false,
+                    color: Colors.black,
+                    data: BaseUiKitButtonData(
+                      onPressed: onPlaceTap,
+                      icon: ImageWidget(
+                        svgAsset: GraphicsFoundation.instance.svg.chevronRight,
+                        color: Colors.black,
+                      ),
                     ),
+                  )
+                  .paddingAll(EdgeInsetsFoundation.all2),
+            ],
+          ),
+        ),
+        SpacingFoundation.verticalSpace12,
+        if (canDenyInvitation)
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Expanded(
+                flex: 4,
+                child: context.smallGradientButton(
+                  data: BaseUiKitButtonData(
+                    onPressed: onAcceptTap,
+                    text: 'GO!',
+                    fit: ButtonFit.fitWidth,
+                  ),
+                ),
+              ),
+              SpacingFoundation.horizontalSpace12,
+              Expanded(
+                flex: 6,
+                child: context.smallOutlinedButton(
+                  color: isDark ? Colors.white : Colors.black,
+                  blurred: false,
+                  data: BaseUiKitButtonData(
+                    onPressed: onDenyTap,
+                    text: 'NOT NOW',
+                    fit: ButtonFit.fitWidth,
                   ),
                 ),
               ),
             ],
           ),
-        ),
-        SpacingFoundation.verticalSpace12,
-        context.gradientButton(
-          data: BaseUiKitButtonData(
-            onPressed: onInvitePeopleTap,
-            text: 'INVITE MORE',
-            fit: ButtonFit.fitWidth,
+        if (!canDenyInvitation)
+          context.gradientButton(
+            data: BaseUiKitButtonData(
+              onPressed: onInvitePeopleTap,
+              text: 'INVITE MORE',
+              fit: ButtonFit.fitWidth,
+            ),
           ),
-        ),
       ],
     );
   }

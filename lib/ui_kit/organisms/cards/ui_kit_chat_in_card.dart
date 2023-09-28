@@ -50,7 +50,7 @@ class UiKitChatInCard extends StatelessWidget {
           ],
         ),
       ],
-    );
+    ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20);
   }
 }
 

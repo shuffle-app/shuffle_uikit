@@ -136,13 +136,24 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               UiKitChatInCard(
                 timeOfDay: DateTime.now(),
                 text: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
-              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20),
+              ),
               SpacingFoundation.verticalSpace16,
               UiKitChatOutCard(
+                sentByMe: true,
+                timeOfDay: DateTime.now(),
+                text:
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+              ),
+              SpacingFoundation.verticalSpace16,
+              UiKitChatOutCard(
+                sentByMe: true,
                 timeOfDay: DateTime.now(),
                 child: UiKitInviteMessageContent(
+                  canDenyInvitation: true,
+                  brightness: Brightness.light,
+                  showGang: true,
                   username: '@m3dv3d3v',
-                  placeName: 'At.mosphere',
+                  placeName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
                   tags: [
                     UiKitTag(title: 'Club', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
                     UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
@@ -159,7 +170,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ),
                   userType: UserTileType.influencer,
                 ),
-              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20),
+              ),
               SpacingFoundation.verticalSpace16,
               Row(
                 mainAxisSize: MainAxisSize.max,
@@ -284,7 +295,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               FingerprintSwitch(
-
                 isHealthKitEnabled: false,
                 title: Text(
                   'Guess',
@@ -425,7 +435,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 selectedCountry: _selectedCountry,
               ),
               SpacingFoundation.verticalSpace16,
-              const UiKitCodeInputField(codeDigitsCount: 4),
+              const UiKitCodeInputField(
+                codeDigitsCount: 4,
+                autofocus: false,
+              ),
               SpacingFoundation.verticalSpace16,
               UiKitHorizontalWheelNumberSelector(
                 title: 'Your age',
@@ -1442,8 +1455,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context).push(PopUpVideoPlayer(
-                      videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+                  Navigator.of(context)
+                      .push(PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
                 },
                 child: const Text(
                   'Show Horizontal Video',
@@ -1452,8 +1465,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+                  Navigator.of(context).push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
                 },
                 child: const Text(
                   'Show Vertical Video',
