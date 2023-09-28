@@ -14,6 +14,16 @@ class UiKitBottomModalSheet extends StatelessWidget {
     final bottomSheetTheme = context.uiKitTheme?.bottomSheetTheme;
     final shape = bottomSheetTheme?.shape;
 
+
+    double topPadding = data.topPadding ??
+        (MediaQuery.viewPaddingOf(context).top == 0 ? 45.h : MediaQuery.viewPaddingOf(context).top + 30.h);
+
+    ///проверяем не открыта ли клавиатура, вычитаем ее размер из верхнего отступа
+    if (MediaQuery.viewInsetsOf(context).bottom != 0) {
+      topPadding -= MediaQuery.viewInsetsOf(context).bottom;
+      topPadding = topPadding < 0 ? MediaQuery.viewPaddingOf(context).top + 30.h : topPadding;
+    }
+
     return RepaintBoundary(
       child: Container(
         decoration: BoxDecoration(
@@ -61,8 +71,7 @@ class UiKitBottomModalSheet extends StatelessWidget {
           ],
         ),
       ).paddingOnly(
-        top:
-            data.topPadding ?? (MediaQuery.viewPaddingOf(context).top == 0 ? 45.h : MediaQuery.viewPaddingOf(context).top + 30.h),
+        top: topPadding,
       ),
     );
   }

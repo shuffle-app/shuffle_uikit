@@ -160,6 +160,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? blurred,
     Color? borderColor,
     bool? hideBorder,
+    bool? isGradientEnabled,
   }) {
     if (data.text.isEmpty && data.icon != null) {
       return OutlinedIconButton(
@@ -176,6 +177,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: data.onPressed,
         loading: data.loading,
         borderColor: borderColor,
+        isGradientEnabled: isGradientEnabled ?? false,
       );
     } else {
       throw UnimplementedError('Outlined button with your parameters is not implemented');
