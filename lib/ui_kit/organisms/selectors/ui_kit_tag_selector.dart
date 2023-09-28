@@ -5,6 +5,7 @@ class UiKitTagSelector extends StatelessWidget {
   final List<String> tags;
   final double maxHeight;
   final bool showTextField;
+  final BorderRadius? borderRadius;
 
   // final ValueChanged<List<String>>? onTagsSelected;
   final ValueChanged<String>? onNotFoundTagCallback;
@@ -40,6 +41,7 @@ class UiKitTagSelector extends StatelessWidget {
     this.onRemoveTagCallback,
     this.onNotFoundTagCallback,
     this.onTagSelected,
+    this.borderRadius,
   }) : super(key: key);
 
   @override
@@ -50,7 +52,7 @@ class UiKitTagSelector extends StatelessWidget {
         valueListenable: selectedListNotifier,
         builder: (context, selectedTags, child) => UiKitCardWrapper(
             color: ColorsFoundation.surface3,
-            borderRadius: BorderRadiusFoundation.all16,
+            borderRadius: borderRadius ?? BorderRadiusFoundation.all16,
             border: const BorderSide(
               width: 1,
               color: Colors.white,
