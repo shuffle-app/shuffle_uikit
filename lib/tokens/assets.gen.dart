@@ -1020,6 +1020,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/food.svg
   SvgGenImage get food => const SvgGenImage('assets/images/svg/food.svg');
 
+  /// File path: assets/images/svg/gradient_plus.svg
+  SvgGenImage get gradientPlus => const SvgGenImage('assets/images/svg/gradient_plus.svg');
+
   /// File path: assets/images/svg/gym.svg
   SvgGenImage get gym => const SvgGenImage('assets/images/svg/gym.svg');
 
@@ -1456,6 +1459,7 @@ class $AssetsImagesSvgGen {
         fireWhite,
         flag,
         food,
+        gradientPlus,
         gym,
         handShake,
         heartBrokenFill,

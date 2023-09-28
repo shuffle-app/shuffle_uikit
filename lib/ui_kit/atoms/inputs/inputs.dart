@@ -8,3 +8,4 @@ export 'ui_kit_input_field_no_icon.dart';
 export 'ui_kit_input_field_no_icon_compact.dart';
 export 'ui_kit_input_field_right_icon.dart';
 export 'ui_kit_phone_number_input.dart';
+export 'ui_kit_suggestion_field.dart';
