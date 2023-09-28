@@ -11,6 +11,7 @@ class UiKitCodeInputField extends StatelessWidget {
   final ValueChanged<String>? onDone;
   final TextEditingController? controller;
   final String? errorText;
+  final bool autofocus;
 
   const UiKitCodeInputField({
     super.key,
@@ -18,6 +19,7 @@ class UiKitCodeInputField extends StatelessWidget {
     this.controller,
     this.errorText,
     this.onDone,
+    this.autofocus = true,
   });
 
   @override
@@ -45,7 +47,7 @@ class UiKitCodeInputField extends StatelessWidget {
         controller: controller,
         separator: SpacingFoundation.horizontalSpace12,
         length: codeDigitsCount,
-        autofocus: true,
+        autofocus: autofocus,
         inputFormatters: [
           FilteringTextInputFormatter.digitsOnly,
         ],
