@@ -12,6 +12,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.fillColor,
     this.minLines,
     this.enabled = true,
+    this.expands = false,
     this.borderRadius,
     this.node,
     this.onSubmitted,
@@ -35,6 +36,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
   final FocusNode? node;
   final void Function(String)? onSubmitted;
   final BorderRadius? borderRadius;
+  final bool expands;
 
   @override
   State<UiKitInputFieldNoIcon> createState() => _UiKitInputFieldNoIconState();
@@ -78,8 +80,9 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         enabled: widget.enabled,
         onChanged: widget.onChanged,
         style: inputTextStyle,
-        minLines: widget.minLines,
-        maxLines: (widget.minLines ?? 0) + 1,
+        minLines: widget.expands ? null : widget.minLines,
+        maxLines: widget.expands ? null : (widget.minLines ?? 0) + 1,
+        expands: widget.expands,
         controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
         focusNode: widget.node,
