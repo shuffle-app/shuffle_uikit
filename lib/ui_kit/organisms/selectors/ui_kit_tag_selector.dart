@@ -5,10 +5,12 @@ class UiKitTagSelector extends StatelessWidget {
   final List<String> tags;
   final double maxHeight;
   final bool showTextField;
+  final BorderRadius? borderRadius;
 
   // final ValueChanged<List<String>>? onTagsSelected;
   final ValueChanged<String>? onNotFoundTagCallback;
   final ValueChanged<String>? onRemoveTagCallback;
+  final void Function(String)? onTagSelected;
 
   late final TextEditingController controller = TextEditingController();
 
@@ -34,10 +36,12 @@ class UiKitTagSelector extends StatelessWidget {
   UiKitTagSelector({
     Key? key,
     required this.tags,
-     this.maxHeight = double.infinity,
-     this.showTextField = true,
+    this.maxHeight = double.infinity,
+    this.showTextField = true,
     this.onRemoveTagCallback,
     this.onNotFoundTagCallback,
+    this.onTagSelected,
+    this.borderRadius,
   }) : super(key: key);
 
   @override
@@ -48,7 +52,7 @@ class UiKitTagSelector extends StatelessWidget {
         valueListenable: selectedListNotifier,
         builder: (context, selectedTags, child) => UiKitCardWrapper(
             color: ColorsFoundation.surface3,
-            borderRadius: BorderRadiusFoundation.all16,
+            borderRadius: borderRadius ?? BorderRadiusFoundation.all16,
             border: const BorderSide(
               width: 1,
               color: Colors.white,
@@ -68,6 +72,7 @@ class UiKitTagSelector extends StatelessWidget {
                                   text: e,
                                   onTap: () {
                                     onRemoveTagCallback?.call(e);
+                                    onTagSelected?.call(e);
                                   },
                                 ),
                               )
@@ -75,24 +80,26 @@ class UiKitTagSelector extends StatelessWidget {
                           [],
                     )))
               else
-                SizedBox(width: double.infinity,),
+                SizedBox(
+                  width: double.infinity,
+                ),
               if (showTextField)
-              ConstrainedBox(
-                  constraints: BoxConstraints(maxHeight: 40.h),
-                  child: TextField(
-                    scrollPadding: EdgeInsets.zero,
-                    controller: controller,
-                    style: boldTextTheme?.caption1Bold,
-                    // maxLines: (selectedChips?.length ?? 0) + 1,
-                    maxLines: 1,
-                    onSubmitted: (string) {
-                      if (string.replaceAll(RegExp(r'^[a-z0-9-]+$'), '').isEmpty) {
-                        onNotFoundTagCallback?.call(string);
-                      } else {
-                        SnackBarUtils.show(message: 'allowed caracters are a-z, 0-9 and -', context: context);
-                      }
-                    },
-                  ))
+                ConstrainedBox(
+                    constraints: BoxConstraints(maxHeight: 40.h),
+                    child: TextField(
+                      scrollPadding: EdgeInsets.zero,
+                      controller: controller,
+                      style: boldTextTheme?.caption1Bold,
+                      // maxLines: (selectedChips?.length ?? 0) + 1,
+                      maxLines: 1,
+                      onSubmitted: (string) {
+                        if (string.replaceAll(RegExp(r'^[a-z0-9-]+$'), '').isEmpty) {
+                          onNotFoundTagCallback?.call(string);
+                        } else {
+                          SnackBarUtils.show(message: 'allowed caracters are a-z, 0-9 and -', context: context);
+                        }
+                      },
+                    ))
               // UiKitInputFieldWithChips(
               //     // onRemoveChip: onRemoveTagCallback,
               //     controller: controller,
