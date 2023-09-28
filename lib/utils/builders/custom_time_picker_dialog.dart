@@ -19,3 +19,47 @@ Future<TimeOfDay?> showUiKitTimeDialog(BuildContext context) {
     ),
   );
 }
+
+Future<void> showUiKitTimeFromToDialog(BuildContext context, Function(TimeOfDay? from, TimeOfDay? to) onConfirm) async {
+  final TimeOfDay? from = await showDialog<TimeOfDay?>(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          backgroundColor: context.uiKitTheme?.cardColor,
+          clipBehavior: Clip.hardEdge,
+          insetPadding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusFoundation.all24,
+          ),
+          child: TimePickerDialog(
+            helpText: 'Select a starting time',
+            initialTime: TimeOfDay.fromDateTime(DateTime.now()),
+            cancelText: 'Cancel',
+            confirmText: 'Next',
+          ),
+        );
+      });
+
+  if (from == null) return;
+
+  final TimeOfDay? to = await showDialog<TimeOfDay?>(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          backgroundColor: context.uiKitTheme?.cardColor,
+          clipBehavior: Clip.hardEdge,
+          insetPadding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusFoundation.all24,
+          ),
+          child: TimePickerDialog(
+            helpText: 'Select an ending time',
+            initialTime: TimeOfDay.fromDateTime(DateTime.now()),
+            cancelText: 'No end time',
+            confirmText: 'Confirm',
+          ),
+        );
+      });
+
+  return onConfirm(from, to);
+}
