@@ -62,6 +62,13 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
     final dateTextStyle = textTheme?.caption2Bold.copyWith(
       color: ColorsFoundation.darkNeutral900,
     );
+    final String? convertedDate = formatDate(
+      widget.date,
+      widget.dateTo,
+      widget.time,
+      widget.timeTo,
+      widget.weekdays,
+    );
 
     final bigPhoto = widget.availableHeight > 360;
     final errorWidget = bigPhoto
@@ -149,32 +156,35 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
               ),
             ),
             SpacingFoundation.verticalSpace12,
-            Text(
-              '${widget.title}',
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: titleStyle,
-            ),
-            SpacingFoundation.verticalSpace4,
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.clock,
-                    color: ColorsFoundation.darkNeutral900,
-                    width: kIsWeb ? 16 : 0.05.sw,
-                    height: kIsWeb ? 16 : 0.05.sw,
-                    fit: BoxFit.fitWidth,
-                  ),
-                  SpacingFoundation.horizontalSpace4,
-                  Text(
-                    formatDate(widget.date, widget.dateTo, widget.time, widget.timeTo, widget.weekdays),
-                    style: dateTextStyle,
-                  ),
-                ],
+            if (widget.title != null)
+              Text(
+                '${widget.title}',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: titleStyle,
               ),
-            ),
+            if (convertedDate != null) ...[
+              SpacingFoundation.verticalSpace4,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    ImageWidget(
+                      svgAsset: GraphicsFoundation.instance.svg.clock,
+                      color: ColorsFoundation.darkNeutral900,
+                      width: kIsWeb ? 16 : 0.05.sw,
+                      height: kIsWeb ? 16 : 0.05.sw,
+                      fit: BoxFit.fitWidth,
+                    ),
+                    SpacingFoundation.horizontalSpace4,
+                    Text(
+                      convertedDate,
+                      style: dateTextStyle,
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ],
         ),
       ),
