@@ -133,7 +133,8 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
           SizeTransition(
             sizeFactor: _animation,
             child: UiKitCardWrapper(
-              height: height,
+              height: height + 0.1.h,
+              width: _currentWidth + 0.1.w,
               color: context.uiKitTheme?.colorScheme.surface3,
               borderRadius: BorderRadiusFoundation.all28,
               child: Column(
