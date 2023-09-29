@@ -7,13 +7,19 @@ class UiKitHorizontalWheelNumberSelector extends StatefulWidget {
   final String title;
   final ValueChanged<int>? onValueChanged;
   final int initialValue;
+  final Color? backgroundColor;
+  final Color? numbersColor;
+  final bool hideTitle;
 
   const UiKitHorizontalWheelNumberSelector({
     Key? key,
     required this.values,
-    required this.title,
+    this.title = '',
     this.onValueChanged,
+    this.backgroundColor,
+    this.numbersColor,
     this.initialValue = 8,
+    this.hideTitle = false,
   }) : super(key: key);
 
   @override
@@ -52,18 +58,20 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
     final itemHeight = itemWidth * 0.82;
 
     return UiKitCardWrapper(
+      color: widget.backgroundColor,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            widget.title,
-            style: boldTextTheme?.labelLarge,
-          ).paddingOnly(
-            top: EdgeInsetsFoundation.vertical16,
-            left: EdgeInsetsFoundation.horizontal16,
-            right: EdgeInsetsFoundation.horizontal16,
-          ),
+          if (!widget.hideTitle)
+            Text(
+              widget.title,
+              style: boldTextTheme?.labelLarge,
+            ).paddingOnly(
+              top: EdgeInsetsFoundation.vertical16,
+              left: EdgeInsetsFoundation.horizontal16,
+              right: EdgeInsetsFoundation.horizontal16,
+            ),
           SizedBox(
             width: 1.sw,
             height: itemHeight,
@@ -118,7 +126,7 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
                                             e.toString(),
                                             group: autoSizeGroup,
                                             maxLines: 1,
-                                            style: boldTextTheme?.title1,
+                                            style: boldTextTheme?.title1.copyWith(color: widget.numbersColor),
                                             textAlign: TextAlign.center,
                                           ),
                                           // ),
@@ -139,7 +147,7 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
                             decoration: BoxDecoration(
                               color: Colors.transparent,
                               borderRadius: BorderRadiusFoundation.all10,
-                              border: Border.all(color: Colors.white, width: 2),
+                              border: Border.all(color: widget.numbersColor ?? Colors.white, width: 2),
                             ),
                           )))
                 ]),

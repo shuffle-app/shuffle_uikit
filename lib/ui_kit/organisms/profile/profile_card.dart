@@ -9,6 +9,8 @@ class ProfileCard extends StatelessWidget {
   final String? avatarUrl;
   final int? followers;
   final VoidCallback? onFollow;
+  final ValueChanged<int>? onDonate;
+  final bool showSupportShuffle;
   final List<String>? interests;
   final List<String>? matchingInterests;
   final List<UiKitStats>? profileStats;
@@ -26,6 +28,8 @@ class ProfileCard extends StatelessWidget {
     this.badge,
     this.followers,
     this.onFollow,
+    this.onDonate,
+    this.showSupportShuffle = false,
     this.interests,
     this.matchingInterests,
     this.profileType,
@@ -47,6 +51,8 @@ class ProfileCard extends StatelessWidget {
       profileType: profileType,
       tags: tags,
       profileStats: profileStats,
+      showSupportShuffle: showSupportShuffle,
+      onDonate: onDonate,
     );
     if (badge != null) {
       return Stack(

@@ -53,7 +53,7 @@ class PersonalProfileInfo extends StatelessWidget {
         ),
         if (onFollow != null) ...[
           SpacingFoundation.verticalSpace12,
-          context.button(
+          context.smallButton(
             data: BaseUiKitButtonData(text: 'follow'.toUpperCase(), onPressed: onFollow),
           )
         ],
