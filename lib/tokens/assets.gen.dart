@@ -990,6 +990,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/dollar.svg
   SvgGenImage get dollar => const SvgGenImage('assets/images/svg/dollar.svg');
 
+  /// File path: assets/images/svg/dollar_outlined.svg
+  SvgGenImage get dollarOutlined => const SvgGenImage('assets/images/svg/dollar_outlined.svg');
+
   /// File path: assets/images/svg/empty_radio.svg
   SvgGenImage get emptyRadio => const SvgGenImage('assets/images/svg/empty_radio.svg');
 
@@ -1449,6 +1452,7 @@ class $AssetsImagesSvgGen {
         docsFill,
         docsOutline,
         dollar,
+        dollarOutlined,
         emptyRadio,
         exclamation,
         family,

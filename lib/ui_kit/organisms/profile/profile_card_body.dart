@@ -16,6 +16,8 @@ class ProfileCardBody extends StatelessWidget {
   final ProfileCardType? profileType;
   final List<UiKitTag>? tags;
   final List<UiKitStats>? profileStats;
+  final bool showSupportShuffle;
+  final ValueChanged<int>? onDonate;
 
   const ProfileCardBody({
     super.key,
@@ -31,12 +33,13 @@ class ProfileCardBody extends StatelessWidget {
     this.matchingInterests,
     this.followers,
     this.onFollow,
+    this.onDonate,
+    this.showSupportShuffle = false,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-
 
     return UiKitCardWrapper(
       child: Column(
@@ -128,6 +131,10 @@ class ProfileCardBody extends StatelessWidget {
               ),
             ],
           ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing16),
+          if (showSupportShuffle) ...[
+            SupportShuffleButton(onDonate: onDonate),
+            SpacingFoundation.verticalSpace16,
+          ],
           if (profileStats != null) ...[
             SpacingFoundation.verticalSpace16,
             Row(

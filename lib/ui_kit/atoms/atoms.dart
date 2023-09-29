@@ -40,6 +40,7 @@ export 'buttons/small_outlined_blur_icon_button.dart';
 export 'buttons/small_outlined_button.dart';
 export 'buttons/small_outlined_button_no_blur.dart';
 export 'buttons/small_outlined_icon_button.dart';
+export 'buttons/support_shuffle_button.dart';
 export 'buttons/ui_kit_checkbox.dart';
 export 'buttons/ui_kit_pop_up_menu_button.dart';
 export 'buttons/white_dialog_button.dart';
