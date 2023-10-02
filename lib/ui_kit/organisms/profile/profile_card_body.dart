@@ -131,10 +131,6 @@ class ProfileCardBody extends StatelessWidget {
               ),
             ],
           ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing16),
-          if (showSupportShuffle) ...[
-            SupportShuffleButton(onDonate: onDonate),
-            SpacingFoundation.verticalSpace16,
-          ],
           if (profileStats != null) ...[
             SpacingFoundation.verticalSpace16,
             Row(
@@ -149,6 +145,10 @@ class ProfileCardBody extends StatelessWidget {
                 ),
               ],
             ),
+            if (showSupportShuffle) ...[
+              SpacingFoundation.verticalSpace16,
+              SupportShuffleButton(onDonate: onDonate),
+            ],
             SpacingFoundation.verticalSpace16,
           ],
         ],
