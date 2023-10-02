@@ -5,6 +5,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 Future<DateTime?> showUiKitCalendarDialog(
   BuildContext context, {
   DateTime? lastDate,
+      DateTime? firstDate,
 }) {
   return showDialog<DateTime?>(
     context: context,
@@ -17,6 +18,7 @@ Future<DateTime?> showUiKitCalendarDialog(
       ),
       child: _CustomCalendarPickerDialog(
         lastDate: lastDate,
+          firstDate:firstDate
       ),
     ),
   );
@@ -81,11 +83,12 @@ Future<void> showUiKitCalendarFromToDialog(
 
 class _CustomCalendarPickerDialog extends StatefulWidget {
   final DateTime? lastDate;
+  final DateTime? firstDate;
   final DateTime? fromDate;
   final String? okText;
   final String? cancelText;
 
-  const _CustomCalendarPickerDialog({Key? key, this.lastDate, this.fromDate, this.okText, this.cancelText})
+  const _CustomCalendarPickerDialog({Key? key,this.firstDate, this.lastDate, this.fromDate, this.okText, this.cancelText})
       : super(key: key);
 
   @override
@@ -119,7 +122,7 @@ class _CustomCalendarPickerDialogState extends State<_CustomCalendarPickerDialog
           CalendarDatePicker(
             onDateChanged: _onSelectionChanged,
             initialDate: selectedDate,
-            firstDate: widget.fromDate ?? DateTime.now().subtract(const Duration(days: 365)),
+            firstDate: widget.firstDate ?? widget.fromDate ?? DateTime.now().subtract(const Duration(days: 365)),
             lastDate: widget.lastDate ?? DateTime.now().add(const Duration(days: 365)),
           ),
           SpacingFoundation.horizontalSpace16,
