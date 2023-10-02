@@ -42,7 +42,7 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
                     ),
                     child: CircularAvatar(
                       avatarUrl: data.avatarUrl ?? '',
-                      name: data.username,
+                      name: data.name,
                       height: 0.15.sw,
                     ),
                   ),
