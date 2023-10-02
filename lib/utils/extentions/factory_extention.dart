@@ -143,21 +143,9 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget userTile({
-    String? name,
-    String? username,
-    String? avatarUrl,
-    UserTileType? type,
-    VoidCallback? onTap,
+    required BaseUiKitUserTileData data,
   }) {
-    return WidgetsFactory.of(this)!
-        .createUserTile(
-          name: name,
-          username: username,
-          avatarUrl: avatarUrl,
-          type: type,
-          onTap: onTap,
-        )
-        .build(this);
+    return WidgetsFactory.of(this)!.createUserTile(data: data).build(this);
   }
 
   Widget notificationPopUp({

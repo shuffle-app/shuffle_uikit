@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_tile.dart';
+import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
 
 abstract class WidgetsAbstractFactory {
   ButtonFactory createBouncingIconButton({
@@ -64,10 +66,7 @@ abstract class WidgetsAbstractFactory {
   });
 
   UserTileFactory createUserTile({
-    required String name,
-    required String username,
-    required String avatarUrl,
-    required UserTileType type,
+    required BaseUiKitUserTileData data,
   });
 // InputFieldFactory createInputField({
 //   required TextEditingController controller,
@@ -320,47 +319,61 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 
   @override
   UserTileFactory createUserTile({
-    String? name,
-    String? username,
-    String? avatarUrl,
-    UserTileType? type,
-    VoidCallback? onTap,
+    required BaseUiKitUserTileData data,
   }) {
-    switch (type) {
+    if (data.showBadge ?? false) {
+      switch (data.type) {
+        case UserTileType.pro:
+          return BadgedProUserTile(data: data);
+        case UserTileType.ordinary:
+          throw UnimplementedError('There is no ordinary user tile with badge');
+
+        case UserTileType.premium:
+          return BadgedPremiumUserTile(data: data);
+
+        case UserTileType.influencer:
+          throw UnimplementedError('There is no influencer user tile with badge');
+
+        default:
+          throw UnimplementedError('There is no user tile with badge');
+      }
+    }
+
+    switch (data.type) {
       case UserTileType.pro:
         return ProUserTile(
-          name: name,
-          avatarUrl: avatarUrl,
-          username: username,
-          onTap: onTap,
+          name: data.name,
+          avatarUrl: data.avatarUrl,
+          username: data.username,
+          onTap: data.onTap,
         );
       case UserTileType.ordinary:
         return OrdinaryUserTile(
-          name: name,
-          avatarUrl: avatarUrl,
-          username: username,
-          onTap: onTap,
+          name: data.name,
+          avatarUrl: data.avatarUrl,
+          username: data.username,
+          onTap: data.onTap,
         );
       case UserTileType.premium:
         return PremiumUserTile(
-          name: name,
-          avatarUrl: avatarUrl,
-          username: username,
-          onTap: onTap,
+          name: data.name,
+          avatarUrl: data.avatarUrl,
+          username: data.username,
+          onTap: data.onTap,
         );
       case UserTileType.influencer:
         return InfluencerUserTile(
-          name: name,
-          avatarUrl: avatarUrl,
-          username: username,
-          onTap: onTap,
+          name: data.name,
+          avatarUrl: data.avatarUrl,
+          username: data.username,
+          onTap: data.onTap,
         );
       case null:
         return OrdinaryUserTile(
-          name: name,
-          avatarUrl: avatarUrl,
-          username: username,
-          onTap: onTap,
+          name: data.name,
+          avatarUrl: data.avatarUrl,
+          username: data.username,
+          onTap: data.onTap,
         );
     }
   }
