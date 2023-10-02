@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -28,12 +26,7 @@ class SmallButtonWithIcon extends StatelessWidget implements ButtonFactory {
             shape: BoxShape.circle,
             color: color ?? Colors.white.withOpacity(0.1),
           ),
-          child: ClipOval(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
-              child: icon?.paddingAll(EdgeInsetsFoundation.all8),
-            ),
-          ),
+          child: icon?.paddingAll(EdgeInsetsFoundation.all8),
         ),
       ),
     );
