@@ -14,7 +14,6 @@ class UiKitBottomModalSheet extends StatelessWidget {
     final bottomSheetTheme = context.uiKitTheme?.bottomSheetTheme;
     final shape = bottomSheetTheme?.shape;
 
-
     double topPadding = data.topPadding ??
         (MediaQuery.viewPaddingOf(context).top == 0 ? 45.h : MediaQuery.viewPaddingOf(context).top + 30.h);
 
@@ -24,55 +23,60 @@ class UiKitBottomModalSheet extends StatelessWidget {
       topPadding = topPadding < 0 ? MediaQuery.viewPaddingOf(context).top + 30.h : topPadding;
     }
 
-    return RepaintBoundary(
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadiusFoundation.onlyTop24,
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const SlidingChip().paddingOnly(
-              top: SpacingFoundation.verticalSpacing12,
-              bottom: SpacingFoundation.verticalSpacing4,
-            ),
-            Expanded(
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  Container(
-                    decoration: ShapeDecoration(
-                      shape: shape ?? const RoundedRectangleBorder(),
-                    ),
-                    clipBehavior: Clip.hardEdge,
-                    child: SingleChildScrollView(
-                      primary: true,
-                      // keyboardDismissBehavior: KeyboardDismissBehavior.onDrag,
-                      physics: const ClampingScrollPhysics(),
-                      child: data.child.paddingOnly(
-                        bottom: data.bottomBar != null ? kBottomNavigationBarHeight * 1.5 : 0.0,
-                      ),
-                    ),
-                  ),
-                  if (data.bottomBar != null)
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      left: 0,
-                      child: Container(
-                        decoration: const BoxDecoration(gradient: GradientFoundation.solidSurfaceLinearGradient),
-                        child: data.bottomBar,
-                      ),
-                    ),
-                ],
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        GestureDetector(onTap: Navigator.of(context).pop),
+        RepaintBoundary(
+            child: Container(
+          decoration: BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadiusFoundation.onlyTop24,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const SlidingChip().paddingOnly(
+                top: SpacingFoundation.verticalSpacing12,
+                bottom: SpacingFoundation.verticalSpacing4,
               ),
-            ),
-          ],
-        ),
-      ).paddingOnly(
-        top: topPadding,
-      ),
+              Expanded(
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Container(
+                      decoration: ShapeDecoration(
+                        shape: shape ?? const RoundedRectangleBorder(),
+                      ),
+                      clipBehavior: Clip.hardEdge,
+                      child: SingleChildScrollView(
+                        primary: true,
+                        // keyboardDismissBehavior: KeyboardDismissBehavior.onDrag,
+                        physics: const ClampingScrollPhysics(),
+                        child: data.child.paddingOnly(
+                          bottom: data.bottomBar != null ? kBottomNavigationBarHeight * 1.5 : 0.0,
+                        ),
+                      ),
+                    ),
+                    if (data.bottomBar != null)
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        left: 0,
+                        child: Container(
+                          decoration: const BoxDecoration(gradient: GradientFoundation.solidSurfaceLinearGradient),
+                          child: data.bottomBar,
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ).paddingOnly(
+          top: topPadding,
+        ))
+      ],
     );
   }
 }
