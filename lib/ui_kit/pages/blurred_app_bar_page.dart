@@ -21,6 +21,7 @@ class BlurredAppBarPage extends StatelessWidget {
   final animDuration = const Duration(milliseconds: 250);
   final bool? canFoldAppBar;
   final double? customToolbarBaseHeight;
+  final ScrollViewKeyboardDismissBehavior? keyboardDismissBehavior;
 
   // final PreferredSizeWidget? bottom;
 
@@ -43,6 +44,7 @@ class BlurredAppBarPage extends StatelessWidget {
     this.customToolbarBaseHeight,
     this.centerTitle = false,
     this.topFixedAddition,
+    this.keyboardDismissBehavior,
   })  : physics = physics ?? const ClampingScrollPhysics(),
         super(key: key);
 
@@ -51,12 +53,14 @@ class BlurredAppBarPage extends StatelessWidget {
     return CustomScrollView(
       controller: controller,
       physics: physics,
+      keyboardDismissBehavior: keyboardDismissBehavior ?? ScrollViewKeyboardDismissBehavior.manual,
       slivers: [
         MultiSliver(
           children: [
             SliverLayoutBuilder(
               builder: (context, sliverConstraints) {
-                double toolbarHeight = (customToolbarBaseHeight ?? context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
+                double toolbarHeight =
+                    (customToolbarBaseHeight ?? context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
                 double expandedHeight = appBarBody == null ? toolbarHeight : customToolbarHeight ?? 190.0;
 
                 final hideAppBarBody =
