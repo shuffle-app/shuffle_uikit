@@ -17,6 +17,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
     this.autofocus = false,
     this.expands = false,
     this.onFieldSubmitted,
+    this.borderRadius,
   }) : super(key: key);
 
   @override
@@ -31,6 +32,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
   final String? Function(String? p1)? validator;
 
   final Widget? icon;
+  final BorderRadius? borderRadius;
   final bool autofocus;
   final bool expands;
   final FocusNode? focusNode;
@@ -59,7 +61,15 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
   @override
   Widget build(BuildContext context) {
     final uiKitTheme = context.uiKitTheme;
-    final inputTheme = uiKitTheme?.iconInputTheme;
+    final inputTheme = widget.borderRadius != null
+        ? uiKitTheme?.iconInputTheme.copyWith(
+            focusedBorder: OutlineInputBorder(
+              borderRadius: widget.borderRadius!,
+              borderSide: BorderSide(color: uiKitTheme.colorScheme.inversePrimary, width: 2),
+            ),
+            enabledBorder: OutlineInputBorder(borderRadius: widget.borderRadius!, borderSide: BorderSide.none),
+          )
+        : uiKitTheme?.iconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
     final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
