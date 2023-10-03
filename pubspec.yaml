@@ -54,7 +54,7 @@ dependencies:
   lottie: ^2.3.2
   flutter_card_swiper:
     git:
-      url: https://github.com/donik1998/flutter_card_swiper.git
+      url: https://github.com/shuffle-app/shuffle_swiper.git
       ref: main
   intl: ^0.18.1
   just_audio: ^0.9.33
