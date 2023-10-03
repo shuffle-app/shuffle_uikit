@@ -3,25 +3,33 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 jobs:
   build:
     name: Build Web
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
       - name: Setup project
-        run: |
+        run:
           flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs
-      - name: Build for web 
-        run: |
+      - name: Analyze project
+        run:
+          flutter analyze
+      - name: Build for web
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run:
           cd example
           flutter build web --release --base-href "/${{vars.BASE_URL}}/"
       - name: Push to ${{vars.BRANCH}} branch
-        run: |
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run:
           cd example/build/web
           git init
           git config --global user.email ${{secrets.EMAIL}}
