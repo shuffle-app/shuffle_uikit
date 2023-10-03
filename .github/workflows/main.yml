@@ -20,15 +20,16 @@ jobs:
           flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs
       - name: Analyze project
+        if: github.event_name == 'pull_request'
         run:
           flutter analyze
       - name: Build for web
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push'
         run:
           cd example
           flutter build web --release --base-href "/${{vars.BASE_URL}}/"
       - name: Push to ${{vars.BRANCH}} branch
-        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        if: github.event_name == 'push'
         run:
           cd example/build/web
           git init

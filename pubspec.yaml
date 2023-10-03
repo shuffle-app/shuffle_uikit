@@ -76,7 +76,6 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_gen_runner: ^5.3.1
   build_runner: ^2.3.3
-  dart_code_metrics: ^5.7.3
 
 flutter:
   assets:

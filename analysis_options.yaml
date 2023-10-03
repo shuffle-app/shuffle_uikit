@@ -7,100 +7,8 @@ analyzer:
   errors:
     todo: ignore
     invalid_annotation_target: ignore
-  plugins:
-    - dart_code_metrics
-
-dart_code_metrics:
-  anti-patterns:
-    - long-method
-    - long-parameter-list
-  metrics:
-    cyclomatic-complexity: 20
-    number-of-parameters: 5
-    maximum-nesting-level: 5
-    maintainability-index: 50
-    technical-debt:
-      threshold: 1
-      todo-cost: 4
-      ignore-cost: 8
-      ignore-for-file-cost: 16
-      as-dynamic-cost: 16
-      deprecated-annotations-cost: 2
-      file-nullsafety-migration-cost: 2
-      unit-type: "hours"
-  metrics-exclude:
-    - test/**
-  rules:
-    - always-remove-listener
-    - avoid-missing-enum-constant-in-map
-    - avoid-nested-conditional-expressions:
-        acceptable-level: 2
-    - avoid-returning-widgets
-    - avoid-throw-in-catch-block
-    - avoid-unnecessary-setstate
-    - avoid-unnecessary-type-assertions
-    - avoid-unnecessary-type-casts
-    - avoid-unused-parameters
-    - binary-expression-operand-order
-    - double-literal-format
-    - newline-before-return
-    - no-boolean-literal-compare
-    - no-empty-block
-    - no-equal-then-else
-    - prefer-conditional-expressions
-    - prefer-const-border-radius
-    - prefer-correct-identifier-length:
-        exclude:
-          - test/**
-        exceptions:
-          - id
-          - vm
-    - prefer-correct-type-name
-    - prefer-first
-    - prefer-intl-name
-    - prefer-last
-    - prefer-match-file-name:
-        exclude:
-          - test/**
-    - prefer-single-widget-per-file
-    - provide-correct-intl-args
-    - member-ordering:
-        order:
-          - public-static-const-fields
-          - private-static-const-fields
-          - public-static-final-fields
-          - private-static-final-fields
-          - public-static-fields
-          - private-static-fields
-          - public-final-fields
-          - private-final-fields
-          - public-fields
-          - public-getters-setters
-          - private-fields
-          - private-getters-setters
-          - constructors
-          - named-constructors
-          - factory-constructors
-          - overridden-methods
-          - public-static-methods
-          - public-methods
-          - protected-methods
-          - private-static-methods
-          - private-methods
-
 
 linter:
-  # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
-  # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at
-  # https://dart-lang.github.io/linter/lints/index.html.
-  #
-  # Instead of disabling a lint rule for the entire project in the
-  # section below, it can also be suppressed for a single line of code
-  # or a specific dart file by using the `// ignore: name_of_lint` and
-  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
-  # producing the lint.
   rules:
     unawaited_futures: true
     avoid_relative_lib_imports: true
@@ -109,7 +17,3 @@ linter:
     unnecessary_brace_in_string_interps: false
     prefer_single_quotes: true
     depend_on_referenced_packages: false
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options
