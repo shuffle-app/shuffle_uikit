@@ -224,6 +224,21 @@ class GradientFoundation {
     ],
   );
 
+  static final shunyGreyGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.shunyGreyGradientBegin.withOpacity(0.66),
+      ColorsFoundation.shunyGreyGradientMid.withOpacity(0.32),
+      ColorsFoundation.shunyGreyGradientEnd.withOpacity(0.12),
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    stops: const [
+      0.1753,
+      0.4873,
+      0.8003,
+    ],
+  );
+
   GradientFoundation._();
 }
 
