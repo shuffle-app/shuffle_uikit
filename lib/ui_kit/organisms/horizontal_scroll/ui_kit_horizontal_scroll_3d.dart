@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gallery_3d/gallery3d.dart';
-import 'package:shuffle_uikit/foundation/sizes_foundation.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitHorizontalScroll3D extends StatelessWidget {

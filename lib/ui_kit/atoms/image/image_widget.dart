@@ -62,7 +62,8 @@ class ImageWidget extends StatelessWidget {
     } else if (svgAsset != null) {
       return svgAsset!.svg(
         package: 'shuffle_uikit',
-        color: color,
+        colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
+        // color: color,
         fit: fit ?? BoxFit.none,
         height: height,
         width: width,
@@ -108,7 +109,8 @@ class ImageWidget extends StatelessWidget {
         link!,
         fit: fit ?? BoxFit.none,
         width: width,
-        color: color,
+        colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
+        // color: color,
         height: height,
         package: 'shuffle_uikit',
         placeholderBuilder: (context) =>

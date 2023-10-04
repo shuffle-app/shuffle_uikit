@@ -25,7 +25,7 @@ export 'cards/ui_kit_stats_action_card.dart';
 export 'cards/ui_kit_titled_action_card.dart';
 export 'cards/ui_kit_titled_card_with_background.dart';
 export 'cards/ui_kit_vertical_chip.dart';
-export 'horizontal_scroll/ui_kit_horizontal_scroll_3D.dart';
+export 'horizontal_scroll/ui_kit_horizontal_scroll_3d.dart';
 export 'lists/ui_kit_searchable_list_body.dart';
 export 'menu/ui_kit_menu.dart';
 export 'place/base_place_action_card.dart';
