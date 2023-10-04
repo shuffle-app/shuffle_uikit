@@ -20,7 +20,7 @@ class UiKitPhoneNumberInput extends StatefulWidget implements BaseUiKitInputFiel
 
   final Color? fillColor;
 
-  UiKitPhoneNumberInput({
+  const UiKitPhoneNumberInput({
     super.key,
     required this.controller,
     required this.enabled,

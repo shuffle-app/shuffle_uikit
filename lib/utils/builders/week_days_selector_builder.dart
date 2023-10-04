@@ -37,26 +37,26 @@ Future<List<String>?> showUiKitWeekdaySelector(context) {
                   valueListenable: selected,
                   builder: (context, set, child) {
                     return Row(children: [
-                      for (var i = 0; i < weekdays.length; i++)
+                      for (var day = 0; day < weekdays.length; day++)
                         Expanded(
                             child: InkWell(
                                 onTap: () {
-                                  if (set.contains(i)) {
-                                    set.remove(i);
+                                  if (set.contains(day)) {
+                                    set.remove(day);
                                   } else {
-                                    set.add(i);
+                                    set.add(day);
                                   }
                                   selected.value = Set<int>.from(set);
                                 },
                                 child: Container(
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.horizontal(
-                                          left: set.contains(i - 1) ? Radius.zero : const Radius.circular(8),
-                                          right: set.contains(i + 1) ? Radius.zero : const Radius.circular(8)),
-                                      color: set.contains(i) ? color : null,
+                                          left: set.contains(day - 1) ? Radius.zero : const Radius.circular(8),
+                                          right: set.contains(day + 1) ? Radius.zero : const Radius.circular(8)),
+                                      color: set.contains(day) ? color : null,
                                     ),
                                     child: Text(
-                                      weekdays[i],
+                                      weekdays[day],
                                       textAlign: TextAlign.center,
                                       style: theme?.regularTextTheme.caption1,
                                     ).paddingSymmetric(

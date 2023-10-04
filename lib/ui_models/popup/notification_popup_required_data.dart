@@ -6,11 +6,15 @@ class NotificationPopupRequiredData {
   final Widget icon;
   final bool gradientBorder;
   final TextAlign textAlign;
+  final bool? hasShadow;
+  final    Color? backgroundColor;
 
   NotificationPopupRequiredData({
     this.titleString,
     required this.icon,
     this.customTitle,
+    this.backgroundColor,
+    this.hasShadow,
     this.textAlign = TextAlign.left,
     this.gradientBorder = false,
   }) : assert(
