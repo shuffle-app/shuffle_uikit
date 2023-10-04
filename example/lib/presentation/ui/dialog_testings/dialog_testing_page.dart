@@ -13,6 +13,65 @@ class DialogTestingPage extends StatelessWidget {
             child: Column(
               children: [
                 SpacingFoundation.verticalSpace16,
+                ListTile(
+                  minLeadingWidth: 0,
+                  leading: UiKitCheckbox(isActive: false, onChanged: () {}),
+                  title: Row(
+                    children: [
+                      Column(
+                        children: [
+                          ConstrainedBox(
+                            constraints: BoxConstraints(maxHeight: 40.h, maxWidth: 40.w),
+                            child: BorderedUserCircleAvatar(
+                              imageUrl: GraphicsFoundation.instance.png.profileAvatar.path,
+                            ),
+                          ),
+                          SpacingFoundation.verticalSpace2,
+                          ConstrainedBox(
+                            constraints: BoxConstraints(maxHeight: 4.h, maxWidth: 45.w),
+                            child: ListView.separated(
+                              scrollDirection: Axis.horizontal,
+                              separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace2,
+                              itemCount: 7,
+                              itemBuilder: (BuildContext context, int index) => ClipRRect(
+                                borderRadius: BorderRadiusFoundation.max,
+                                child: SizedBox(
+                                  height: 4.h,
+                                  width: 4.w,
+                                  child: ColoredBox(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SpacingFoundation.horizontalSpace12,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Marry Williams',
+                            style: context.uiKitTheme?.boldTextTheme.caption1Bold,
+                          ),
+                          Text(
+                            'Any cheerful person can invite me',
+                            style: context.uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
+                              color: context.uiKitTheme?.colorScheme.darkNeutral900,
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                SpacingFoundation.verticalSpace16,
+                SpacingFoundation.verticalSpace16,
+                SpacingFoundation.verticalSpace16,
+                SpacingFoundation.verticalSpace16,
+                SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
                   text: 'Dialog bottom sheet fullscreen',
                   onPressed: () => showUiKitGeneralFullScreenDialog(
@@ -41,9 +100,7 @@ class DialogTestingPage extends StatelessWidget {
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
                   text: 'Dialog calendarFromTo picker',
-                  onPressed: () => showUiKitCalendarFromToDialog(
-                    context,(from,to){}
-                  ),
+                  onPressed: () => showUiKitCalendarFromToDialog(context, (from, to) {}),
                 ),
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
@@ -56,9 +113,7 @@ class DialogTestingPage extends StatelessWidget {
 
                 OrdinaryButton(
                   text: 'Dialog timeFromTo picker',
-                  onPressed: () => showUiKitTimeFromToDialog(
-                    context,(from,to){}
-                  ),
+                  onPressed: () => showUiKitTimeFromToDialog(context, (from, to) {}),
                 ),
                 SpacingFoundation.verticalSpace16,
                 //почему то работает только так отображение поповера, надо подумать
