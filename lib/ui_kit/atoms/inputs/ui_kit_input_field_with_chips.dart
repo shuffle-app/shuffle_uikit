@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -45,9 +44,9 @@ class UiKitInputFieldWithChips extends StatelessWidget {
       //   enabled: true,
       //   filled: true,
       //   fillColor: ColorsFoundation.surface3,
-        // prefixIconConstraints: BoxConstraints(
-        //   maxWidth: 0.75.sw,
-        // ),
+      // prefixIconConstraints: BoxConstraints(
+      //   maxWidth: 0.75.sw,
+      // ),
       // ),
     );
   }
