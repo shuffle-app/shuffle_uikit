@@ -15,10 +15,13 @@ class VideoProgressSlider extends StatelessWidget {
 
   final horizontalPadding = 4.h;
   final thickness = 3.0;
-  var wasPlaying = false;
+
 
   @override
   Widget build(BuildContext context) {
+
+    var wasPlaying = false;
+
     return Center(
       child: ValueListenableBuilder(
         valueListenable: controller,
@@ -55,7 +58,7 @@ class VideoProgressSlider extends StatelessWidget {
                   },
                 );
               },
-              onChanged: (double value) {},
+              onChanged: (double value) {  },
             ),
           );
         },

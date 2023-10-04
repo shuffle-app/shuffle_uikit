@@ -2,8 +2,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
+class SmallButtonWithTextAndIcon extends StatelessWidget implements ButtonFactory {
   final String text;
+  final Widget icon;
   final VoidCallback? onPressed;
   final bool uppercase;
   final bool? loading;
@@ -11,9 +12,10 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
   final ButtonFit? fit;
   final AutoSizeGroup? group;
 
-  const SmallOrdinaryButton({
+  const SmallButtonWithTextAndIcon({
     Key? key,
     required this.text,
+    required this.icon,
     this.onPressed,
     this.loading,
     this.fit,
@@ -36,7 +38,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
             maxLines: 1,
             style: textStyle?.copyWith(color: (color ?? Colors.white) == Colors.white ? Colors.black : Colors.white),
             textAlign: TextAlign.center,
-          ).loadingWrap(loading ?? false)
+          )
         : Text(
             loading ?? false
                 ? ''
@@ -45,7 +47,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
                     : text,
             style: textStyle?.copyWith(color: (color ?? Colors.white) == Colors.white ? Colors.black : Colors.white),
             textAlign: TextAlign.center,
-          ).loadingWrap(loading ?? false);
+          );
 
     return Material(
       color: Colors.white,
@@ -58,7 +60,15 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
             horizontal: EdgeInsetsFoundation.horizontal16,
             vertical: EdgeInsetsFoundation.vertical6,
           ),
-          child: fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget,
+          child: Row(
+            mainAxisSize: fit == ButtonFit.fitWidth ? MainAxisSize.max : MainAxisSize.min,
+            mainAxisAlignment: fit == ButtonFit.fitWidth ? MainAxisAlignment.center : MainAxisAlignment.start,
+            children: [
+              textWidget,
+              SpacingFoundation.horizontalSpace4,
+              icon,
+            ],
+          ).loadingWrap(loading ?? false),
         ),
       ),
     );

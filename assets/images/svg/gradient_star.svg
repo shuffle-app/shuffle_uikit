@@ -1,0 +1,12 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="star-2">
+<path id="Star 2" d="M10 2L10.9167 6.48499C11.1841 7.79338 12.2066 8.81588 13.515 9.0833L18 10L13.515 10.9167C12.2066 11.1841 11.1841 12.2066 10.9167 13.515L10 18L9.0833 13.515C8.81588 12.2066 7.79338 11.1841 6.48499 10.9167L2 10L6.485 9.0833C7.79339 8.81588 8.81588 7.79338 9.0833 6.48499L10 2Z" fill="url(#paint0_diamond_5236_37718)"/>
+</g>
+<defs>
+<radialGradient id="paint0_diamond_5236_37718" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(8 25) rotate(-83.8627) scale(26.1901 263.889)">
+<stop offset="0.276042" stop-color="#C6E216"/>
+<stop offset="0.614583" stop-color="#E32900"/>
+<stop offset="1" stop-color="#D808FA"/>
+</radialGradient>
+</defs>
+</svg>

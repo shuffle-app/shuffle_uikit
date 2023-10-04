@@ -9,10 +9,12 @@ class UiKitCardWrapper extends StatelessWidget {
   final double? height;
   final Color? color;
   final List<BoxShadow>? boxShadow;
+  final Gradient? gradient;
 
   const UiKitCardWrapper({
     Key? key,
     required this.child,
+    this.gradient,
     this.borderRadius,
     this.width,
     this.height,
@@ -42,7 +44,8 @@ class UiKitCardWrapper extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: borderRadius,
             boxShadow: boxShadow,
-            color: color ?? theme?.cardColor ?? theme?.colorScheme.surface3,
+            color: gradient != null ? null : color ?? theme?.cardColor ?? theme?.colorScheme.surface3,
+            gradient: gradient,
           ),
           child: child,
         ),
