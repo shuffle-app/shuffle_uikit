@@ -12,6 +12,7 @@ class DialogTestingPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
                   text: 'Dialog bottom sheet fullscreen',
                   onPressed: () => showUiKitGeneralFullScreenDialog(
