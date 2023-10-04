@@ -41,9 +41,7 @@ class DialogTestingPage extends StatelessWidget {
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
                   text: 'Dialog calendarFromTo picker',
-                  onPressed: () => showUiKitCalendarFromToDialog(
-                    context,(from,to){}
-                  ),
+                  onPressed: () => showUiKitCalendarFromToDialog(context, (from, to) {}),
                 ),
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
@@ -56,9 +54,7 @@ class DialogTestingPage extends StatelessWidget {
 
                 OrdinaryButton(
                   text: 'Dialog timeFromTo picker',
-                  onPressed: () => showUiKitTimeFromToDialog(
-                    context,(from,to){}
-                  ),
+                  onPressed: () => showUiKitTimeFromToDialog(context, (from, to) {}),
                 ),
                 SpacingFoundation.verticalSpace16,
                 //почему то работает только так отображение поповера, надо подумать

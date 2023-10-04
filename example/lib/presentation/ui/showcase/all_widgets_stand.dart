@@ -145,6 +145,16 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
               ),
               SpacingFoundation.verticalSpace16,
+              UiKitUserTileWithCheckbox(
+                title: 'Marry Williams',
+                subtitle: 'Any cheerful person can invite me',
+                onTap: () {},
+                rating: 5,
+                date: DateTime.now(),
+                avatarLink: GraphicsFoundation.instance.png.mockAvatar.path,
+                handShake: true,
+              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12),
+              SpacingFoundation.verticalSpace16,
               UiKitChatOutCard(
                 sentByMe: true,
                 timeOfDay: DateTime.now(),
@@ -1460,8 +1470,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .push(PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+                  Navigator.of(context).push(PopUpVideoPlayer(
+                      videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
                 },
                 child: const Text(
                   'Show Horizontal Video',
@@ -1470,7 +1480,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context).push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+                  Navigator.of(context)
+                      .push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
                 },
                 child: const Text(
                   'Show Vertical Video',
