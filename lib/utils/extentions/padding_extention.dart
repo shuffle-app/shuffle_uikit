@@ -1,4 +1,4 @@
-import 'dart:ui' as ui show WindowPadding;
+import 'dart:ui' as ui show ViewPadding;
 
 import 'package:flutter/material.dart';
 
@@ -36,13 +36,13 @@ extension PaddingExtention on Widget {
       );
 
   Padding paddingFromWindowPadding(
-    ui.WindowPadding padding,
+    ui.ViewPadding padding,
     double devicePixelRatio, {
     Key? key,
   }) =>
       Padding(
         key: key,
-        padding: EdgeInsets.fromWindowPadding(padding, devicePixelRatio),
+        padding: EdgeInsets.fromViewPadding(padding, devicePixelRatio),
         child: this,
       );
 

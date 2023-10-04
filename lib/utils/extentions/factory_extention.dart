@@ -154,6 +154,7 @@ extension FactoryExtention on BuildContext {
     Widget? secondaryActionWidget,
     Widget? dismissActionWidget,
     bool? hasShadow,
+    Color? backgroundColor,
   }) {
     Widget popUp = WidgetsFactory.of(this)!
         .createNotificationPopUp(
@@ -166,6 +167,7 @@ extension FactoryExtention on BuildContext {
     if (hasShadow ?? false) {
       return UiKitShadowWrapper(
         borderRadius: BorderRadiusFoundation.all24,
+        backgroundColor:backgroundColor,
         child: popUp,
       );
     }
