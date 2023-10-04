@@ -16,21 +16,21 @@ jobs:
         with:
           channel: 'stable'
       - name: Setup project
-        run:
+        run: |
           flutter pub get
           flutter pub run build_runner build --delete-conflicting-outputs
       - name: Analyze project
         if: github.event_name == 'pull_request'
-        run:
+        run: |
           flutter analyze
       - name: Build for web
         if: github.event_name == 'push'
-        run:
+        run: |
           cd example
           flutter build web --release --base-href "/${{vars.BASE_URL}}/"
       - name: Push to ${{vars.BRANCH}} branch
         if: github.event_name == 'push'
-        run:
+        run: |
           cd example/build/web
           git init
           git config --global user.email ${{secrets.EMAIL}}
