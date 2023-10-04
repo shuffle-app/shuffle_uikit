@@ -4,6 +4,7 @@ analyzer:
   exclude:
     - '**.config.dart'
     - '**.g.dart'
+    - 'example/**'
   errors:
     todo: ignore
     invalid_annotation_target: ignore
