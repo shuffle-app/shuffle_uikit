@@ -4,10 +4,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
   final Widget badge;
   final BaseUiKitUserTileData data;
+  final Border avatarBorder;
 
   const BadgedBaseUserTile({
     Key? key,
     required this.badge,
+    required this.avatarBorder,
     required this.data,
   }) : super(key: key);
 
@@ -31,6 +33,7 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
                   Container(
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
+                      border: avatarBorder,
                       boxShadow: [
                         BoxShadow(
                           color: Colors.white.withOpacity(0.25),

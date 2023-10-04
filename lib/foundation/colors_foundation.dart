@@ -38,6 +38,9 @@ class ColorsFoundation {
   static const surfaceGradientBegin = UiKitColors.surfaceGradientBegin;
   static const surfaceGradientMid = UiKitColors.surfaceGradientMid;
   static const surfaceGradientEnd = UiKitColors.surfaceGradientEnd;
+  static const shunyGreyGradientBegin = UiKitColors.shunyGreyGradientBegin;
+  static const shunyGreyGradientMid = UiKitColors.shunyGreyGradientMid;
+  static const shunyGreyGradientEnd = UiKitColors.shunyGreyGradientEnd;
 
   ColorsFoundation._();
 }
