@@ -17,13 +17,11 @@ class DialogTestingPage extends StatelessWidget {
                   title: 'Marry Williams',
                   subtitle: 'Any cheerful person can invite me',
                   onCheckboxTap: () {},
-                  rating: -10,
+                  rating: 5,
+                  date: DateTime.now(),
+                  avatarLink: GraphicsFoundation.instance.png.mockAvatar.path,
+                  handShake: true,
                 ),
-                SpacingFoundation.verticalSpace16,
-                SpacingFoundation.verticalSpace16,
-                SpacingFoundation.verticalSpace16,
-                SpacingFoundation.verticalSpace16,
-                SpacingFoundation.verticalSpace16,
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
                   text: 'Dialog bottom sheet fullscreen',
@@ -170,89 +168,6 @@ class DialogTestingPage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class UiKitUserTileWithCheckbox extends StatelessWidget {
-  const UiKitUserTileWithCheckbox({
-    super.key,
-    required this.title,
-    required this.subtitle,
-    required this.onCheckboxTap,
-    required this.rating,
-    this.date,
-  }) : assert((rating > 0 || rating < 8), 'Rating must be between 7 and 0 points.');
-
-  final String title;
-  final String subtitle;
-  final int rating;
-  final VoidCallback onCheckboxTap;
-  final DateTime? date;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        UiKitCheckbox(isActive: false, onChanged: () {}),
-        SpacingFoundation.horizontalSpace12,
-        Column(
-          children: [
-            ConstrainedBox(
-              constraints: BoxConstraints(maxHeight: 40.h, maxWidth: 40.w),
-              child: BorderedUserCircleAvatar(
-                imageUrl: GraphicsFoundation.instance.png.profileAvatar.path,
-              ),
-            ),
-            SpacingFoundation.verticalSpace2,
-            ConstrainedBox(
-              constraints: BoxConstraints(maxHeight: 4.h, maxWidth: 45.w),
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace2,
-                itemCount: 7,
-                itemBuilder: (BuildContext context, int index) => ClipRRect(
-                  borderRadius: BorderRadiusFoundation.max,
-                  child: SizedBox(
-                    height: 4.h,
-                    width: 4.w,
-                    child: ColoredBox(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-        SpacingFoundation.horizontalSpace12,
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Text(
-                    'Marry Williams',
-                    style: context.uiKitTheme?.boldTextTheme.caption1Bold,
-                  ),
-                  Spacer(),
-                  Text(
-                    'Mar 17',
-                    style: context.uiKitTheme?.boldTextTheme.caption1Medium,
-                  ),
-                ],
-              ),
-              Text(
-                'Any cheerful person can invite me',
-                style: context.uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
-                  color: context.uiKitTheme?.colorScheme.darkNeutral900,
-                ),
-              )
-            ],
-          ),
-        ),
-      ],
     );
   }
 }

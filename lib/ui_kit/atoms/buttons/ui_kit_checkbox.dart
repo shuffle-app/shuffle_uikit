@@ -4,9 +4,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitCheckbox extends StatelessWidget {
   final VoidCallback? onChanged;
   final bool isActive;
+  final Color? borderColor;
 
-  const UiKitCheckbox(
-      {super.key, this.onChanged, required this.isActive});
+  const UiKitCheckbox({
+    super.key,
+    this.onChanged,
+    this.borderColor,
+    required this.isActive,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +24,12 @@ class UiKitCheckbox extends StatelessWidget {
           padding: EdgeInsets.all(EdgeInsetsFoundation.all2),
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all4,
-            border: isActive? GradientFoundation.gradientBorder : Border.all(
-              color: Colors.white,
-              width: 2,
-            ),
+            border: isActive
+                ? GradientFoundation.gradientBorder
+                : Border.all(
+                    color: borderColor ?? Colors.white,
+                    width: 2,
+                  ),
           ),
           child: AnimatedScale(
             duration: const Duration(milliseconds: 200),
