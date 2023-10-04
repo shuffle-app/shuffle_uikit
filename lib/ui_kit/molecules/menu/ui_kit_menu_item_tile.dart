@@ -4,11 +4,17 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitMenuItemTile extends StatelessWidget {
   final UiKitMenuItem item;
   final VoidCallback? onTap;
+  final Padding? paddingSymmetric;
+  final bool autoPopUp;
+  final bool showSeparator;
 
   const UiKitMenuItemTile({
     Key? key,
     required this.item,
     this.onTap,
+    this.paddingSymmetric,
+    this.autoPopUp = true,
+    this.showSeparator = true,
   }) : super(key: key);
 
   @override
@@ -21,14 +27,18 @@ class UiKitMenuItemTile extends StatelessWidget {
       child: InkWell(
         onTap: () {
           onTap?.call();
-          Navigator.pop(context);
+          if (autoPopUp) {
+            Navigator.pop(context);
+          }
         },
         child: Ink(
-          decoration: BoxDecoration(
-            border: Border(
-              top: BorderSide(color: colorScheme!.surface2, width: 1),
-            ),
-          ),
+          decoration: showSeparator
+              ? BoxDecoration(
+                  border: Border(
+                    top: BorderSide(color: colorScheme!.surface2, width: 1),
+                  ),
+                )
+              : null,
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -49,8 +59,8 @@ class UiKitMenuItemTile extends StatelessWidget {
               ),
             ],
           ).paddingSymmetric(
-            horizontal: EdgeInsetsFoundation.horizontal16,
-            vertical: EdgeInsetsFoundation.vertical16,
+            horizontal: paddingSymmetric?.padding.horizontal ?? EdgeInsetsFoundation.horizontal16,
+            vertical: paddingSymmetric?.padding.vertical ?? EdgeInsetsFoundation.vertical16,
           ),
         ),
       ),
