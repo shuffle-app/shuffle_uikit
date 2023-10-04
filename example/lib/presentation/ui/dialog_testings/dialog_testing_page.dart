@@ -12,17 +12,6 @@ class DialogTestingPage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SpacingFoundation.verticalSpace16,
-                UiKitUserTileWithCheckbox(
-                  title: 'Marry Williams',
-                  subtitle: 'Any cheerful person can invite me',
-                  onCheckboxTap: () {},
-                  rating: 5,
-                  date: DateTime.now(),
-                  avatarLink: GraphicsFoundation.instance.png.mockAvatar.path,
-                  handShake: true,
-                ),
-                SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
                   text: 'Dialog bottom sheet fullscreen',
                   onPressed: () => showUiKitGeneralFullScreenDialog(

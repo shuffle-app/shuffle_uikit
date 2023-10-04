@@ -1029,6 +1029,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/gym.svg
   SvgGenImage get gym => const SvgGenImage('assets/images/svg/gym.svg');
 
+  /// File path: assets/images/svg/hand-shake-2.svg
+  SvgGenImage get handShake2 => const SvgGenImage('assets/images/svg/hand-shake-2.svg');
+
   /// File path: assets/images/svg/hand-shake.svg
   SvgGenImage get handShake => const SvgGenImage('assets/images/svg/hand-shake.svg');
 
@@ -1465,6 +1468,7 @@ class $AssetsImagesSvgGen {
         food,
         gradientPlus,
         gym,
+        handShake2,
         handShake,
         heartBrokenFill,
         heartFill,
