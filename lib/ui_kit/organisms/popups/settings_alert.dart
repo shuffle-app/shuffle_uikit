@@ -13,6 +13,7 @@ Future<Object?> showSettingsAlert(BuildContext context, {required VoidCallback o
       content: context.dialogButton(
         data: BaseUiKitButtonData(onPressed: () {
           context.pop();
+
           return onTap.call();
         }, text: 'go to settings'),
         dialogButtonType: DialogButtonType.buttonBlack,

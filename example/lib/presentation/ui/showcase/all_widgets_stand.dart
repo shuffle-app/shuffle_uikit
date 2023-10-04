@@ -254,9 +254,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ),
                   selectedOption: selectedOption,
                   onChanged: (value) {
-                    print(selectedOption.title);
                     setState(() => selectedOption = value);
-                    print(selectedOption.title);
                   },
                 ),
               ),
