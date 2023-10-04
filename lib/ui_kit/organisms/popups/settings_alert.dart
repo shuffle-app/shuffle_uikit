@@ -11,7 +11,10 @@ Future<Object?> showSettingsAlert(BuildContext context, {required VoidCallback o
       onPop: onPop,
       additionalButton: const SizedBox.shrink(),
       content: context.dialogButton(
-        data: BaseUiKitButtonData(onPressed: onTap, text: 'go to settings'),
+        data: BaseUiKitButtonData(onPressed: () {
+          context.pop();
+          return onTap.call();
+        }, text: 'go to settings'),
         dialogButtonType: DialogButtonType.buttonBlack,
       ),
       title: Text(
