@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:flutter/foundation.dart';
 
 class SmallOutlinedIconButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
@@ -34,7 +35,7 @@ class SmallOutlinedIconButton extends StatelessWidget implements ButtonFactory {
             ),
           ),
           child: icon
-              .paddingAll(EdgeInsetsFoundation.horizontal12)
+              .paddingAll( kIsWeb ? EdgeInsetsFoundation.horizontal6: EdgeInsetsFoundation.horizontal12)
               .loadingWrap(loading ?? false, color: borderColor ?? Colors.white),
         ),
       ),
