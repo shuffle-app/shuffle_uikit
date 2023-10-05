@@ -8,7 +8,7 @@ class UiKitBadgeColored extends StatelessWidget {
   final SvgGenImage? icon;
 
   const UiKitBadgeColored(
-      {super.key, this.title, required this.color, this.onPressed, this.icon});
+      {super.key, this.title, required this.color, this.onPressed, this.icon,});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class UiKitBadgeColored extends StatelessWidget {
         child: Container(
             padding: EdgeInsets.all(7.sp),
             decoration: BoxDecoration(
-              // color: color,
+              border: Border.all(width: 1.sp, color: color),
               color: color.withOpacity(0.16),
               borderRadius: BorderRadius.circular(4.sp),
             ),
