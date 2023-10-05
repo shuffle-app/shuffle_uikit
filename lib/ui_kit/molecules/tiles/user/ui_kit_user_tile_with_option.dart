@@ -6,18 +6,18 @@ class UiKitUserTileWithOption extends StatelessWidget {
   const UiKitUserTileWithOption({
     super.key,
     required this.title,
-    required this.subtitle,
     required this.onOptionTap,
     required this.avatarLink,
     required this.options,
     this.date,
+    this.subtitle,
   });
 
   final String title;
-  final String subtitle;
   final String avatarLink;
   final VoidCallback onOptionTap;
   final List<UiKitPopUpMenuButtonOption> options;
+  final String? subtitle;
   final DateTime? date;
 
   @override
@@ -54,12 +54,13 @@ class UiKitUserTileWithOption extends StatelessWidget {
                   UiKitPopUpMenuButton(options: options),
                 ],
               ),
-              Text(
-                subtitle,
-                style: theme?.boldTextTheme.caption1Medium.copyWith(
-                  color: theme.colorScheme.darkNeutral900,
-                ),
-              )
+              if (subtitle != null)
+                Text(
+                  subtitle!,
+                  style: theme?.boldTextTheme.caption1Medium.copyWith(
+                    color: theme.colorScheme.darkNeutral900,
+                  ),
+                )
             ],
           ),
         ),

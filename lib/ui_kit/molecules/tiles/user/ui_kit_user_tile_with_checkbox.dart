@@ -6,22 +6,22 @@ class UiKitUserTileWithCheckbox extends StatefulWidget {
   const UiKitUserTileWithCheckbox({
     super.key,
     required this.title,
-    required this.subtitle,
     required this.onTap,
     required this.rating,
     required this.avatarLink,
     this.isSelected = false,
     this.date,
+    this.subtitle,
     this.handShake,
   }) : assert((rating >= 0 && rating <= 7), 'Rating must be between 7 and 0 points.');
 
   final int rating;
   final String title;
-  final String subtitle;
   final String avatarLink;
   final bool isSelected;
   final VoidCallback onTap;
   final DateTime? date;
+  final String? subtitle;
   final bool? handShake;
 
   @override
@@ -132,13 +132,15 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                           ],
                         ],
                       ),
-                      SpacingFoundation.verticalSpace2,
-                      Text(
-                        widget.subtitle,
-                        style: theme?.boldTextTheme.caption1Medium.copyWith(
-                          color: theme.colorScheme.darkNeutral900,
-                        ),
-                      )
+                      if (widget.subtitle != null) ...[
+                        SpacingFoundation.verticalSpace2,
+                        Text(
+                          widget.subtitle!,
+                          style: theme?.boldTextTheme.caption1Medium.copyWith(
+                            color: theme.colorScheme.darkNeutral900,
+                          ),
+                        )
+                      ],
                     ],
                   ),
                 ),
