@@ -7,11 +7,14 @@ class UiKitShadowWrapper extends StatelessWidget {
   final Widget child;
   final bool applyShadow;
   final Color? color;
+  final Color? backgroundColor;
+
 
   const UiKitShadowWrapper({
     super.key,
      this.borderRadius,
      this.color,
+     this.backgroundColor,
      this.shape,
     required this.child,
     this.applyShadow = true
@@ -23,6 +26,7 @@ class UiKitShadowWrapper extends StatelessWidget {
       decoration: BoxDecoration(
         shape: shape ?? BoxShape.rectangle,
         borderRadius: borderRadius,
+        color: backgroundColor,
         boxShadow:  [
           if(applyShadow)
            BoxShadow(

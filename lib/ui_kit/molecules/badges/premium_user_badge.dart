@@ -18,7 +18,7 @@ class PremiumUserBadge extends StatelessWidget {
           ),
           SpacingFoundation.horizontalSpace4,
           ImageWidget(
-            svgAsset: GraphicsFoundation.instance.svg.influencerAccountMark,
+            svgAsset: GraphicsFoundation.instance.svg.gradientStar,
             height: 0.05.sw,
             width: 0.05.sw,
             fit: BoxFit.cover,

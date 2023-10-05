@@ -1026,8 +1026,14 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/gradient_plus.svg
   SvgGenImage get gradientPlus => const SvgGenImage('assets/images/svg/gradient_plus.svg');
 
+  /// File path: assets/images/svg/gradient_star.svg
+  SvgGenImage get gradientStar => const SvgGenImage('assets/images/svg/gradient_star.svg');
+
   /// File path: assets/images/svg/gym.svg
   SvgGenImage get gym => const SvgGenImage('assets/images/svg/gym.svg');
+
+  /// File path: assets/images/svg/hand-shake-2.svg
+  SvgGenImage get handShake2 => const SvgGenImage('assets/images/svg/hand-shake-2.svg');
 
   /// File path: assets/images/svg/hand-shake.svg
   SvgGenImage get handShake => const SvgGenImage('assets/images/svg/hand-shake.svg');
@@ -1464,7 +1470,9 @@ class $AssetsImagesSvgGen {
         flag,
         food,
         gradientPlus,
+        gradientStar,
         gym,
+        handShake2,
         handShake,
         heartBrokenFill,
         heartFill,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
+//ignore_for_file: use_build_context_synchronously
+
 Future<TimeOfDay?> showUiKitTimeDialog(BuildContext context) {
   return showDialog<TimeOfDay?>(
     context: context,
@@ -42,7 +44,7 @@ Future<void> showUiKitTimeFromToDialog(BuildContext context, Function(TimeOfDay?
 
   if (from == null) return;
 
-  final TimeOfDay? to = await showDialog<TimeOfDay?>(
+  final TimeOfDay? toTime = await showDialog<TimeOfDay?>(
       context: context,
       builder: (context) {
         return Dialog(
@@ -61,5 +63,5 @@ Future<void> showUiKitTimeFromToDialog(BuildContext context, Function(TimeOfDay?
         );
       });
 
-  return onConfirm(from, to);
+  return onConfirm(from, toTime);
 }

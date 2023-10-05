@@ -21,7 +21,6 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = 0.50625 * 1.sw;
 
-    print(width);
     final imageHeight = width * 1.02469 * 0.48192;
     final textTheme = context.uiKitTheme?.boldTextTheme;
 

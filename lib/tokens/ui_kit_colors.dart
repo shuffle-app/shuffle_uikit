@@ -44,6 +44,9 @@ class UiKitColors {
   static const surfaceGradientBegin = Color(0xff2E2E2E);
   static const surfaceGradientMid = Color(0xff5B5B5B);
   static const surfaceGradientEnd = Color(0xff7F7E7E);
+  static const shunyGreyGradientBegin = Color(0xff222222);
+  static const shunyGreyGradientMid = Color(0xff7F7F7F);
+  static const shunyGreyGradientEnd = Color(0xff565656);
 
   UiKitColors._();
 }
