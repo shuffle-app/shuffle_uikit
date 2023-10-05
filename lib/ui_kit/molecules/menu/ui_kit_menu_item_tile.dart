@@ -2,20 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMenuItemTile extends StatelessWidget {
-  final UiKitMenuItem item;
-  final VoidCallback? onTap;
-  final Padding? paddingSymmetric;
-  final bool autoPopUp;
-  final bool showSeparator;
-
   const UiKitMenuItemTile({
     Key? key,
     required this.item,
     this.onTap,
+  })  : autoPopUp = true,
+        showSeparator = true,
+        paddingSymmetric = null,
+        super(key: key);
+
+  const UiKitMenuItemTile.custom({
+    Key? key,
+    required this.item,
+    this.onTap,
     this.paddingSymmetric,
-    this.autoPopUp = true,
-    this.showSeparator = true,
+    this.autoPopUp = false,
+    this.showSeparator = false,
   }) : super(key: key);
+
+  final UiKitMenuItem item;
+  final VoidCallback? onTap;
+  final EdgeInsets? paddingSymmetric;
+  final bool autoPopUp;
+  final bool showSeparator;
 
   @override
   Widget build(BuildContext context) {
@@ -59,8 +68,8 @@ class UiKitMenuItemTile extends StatelessWidget {
               ),
             ],
           ).paddingSymmetric(
-            horizontal: paddingSymmetric?.padding.horizontal ?? EdgeInsetsFoundation.horizontal16,
-            vertical: paddingSymmetric?.padding.vertical ?? EdgeInsetsFoundation.vertical16,
+            horizontal: paddingSymmetric?.horizontal ?? EdgeInsetsFoundation.horizontal16,
+            vertical: paddingSymmetric?.vertical ?? EdgeInsetsFoundation.vertical16,
           ),
         ),
       ),
