@@ -37,6 +37,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
             ),
             Expanded(
               child: UiKitCardSwiper(
+                size: Size(1.sw - 24, 1.sh / 1.6),
                 onSwipe: (_, __, ___) {
                   return true;
                 },
