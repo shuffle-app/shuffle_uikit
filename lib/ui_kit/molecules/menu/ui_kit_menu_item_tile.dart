@@ -2,14 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMenuItemTile extends StatelessWidget {
-  final UiKitMenuItem item;
-  final VoidCallback? onTap;
-
   const UiKitMenuItemTile({
     Key? key,
     required this.item,
     this.onTap,
+  })  : autoPopUp = true,
+        showSeparator = true,
+        paddingSymmetric = null,
+        super(key: key);
+
+  const UiKitMenuItemTile.custom({
+    Key? key,
+    required this.item,
+    this.onTap,
+    this.paddingSymmetric,
+    this.autoPopUp = false,
+    this.showSeparator = false,
   }) : super(key: key);
+
+  final UiKitMenuItem item;
+  final VoidCallback? onTap;
+  final EdgeInsets? paddingSymmetric;
+  final bool autoPopUp;
+  final bool showSeparator;
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +36,18 @@ class UiKitMenuItemTile extends StatelessWidget {
       child: InkWell(
         onTap: () {
           onTap?.call();
-          Navigator.pop(context);
+          if (autoPopUp) {
+            Navigator.pop(context);
+          }
         },
         child: Ink(
-          decoration: BoxDecoration(
-            border: Border(
-              top: BorderSide(color: colorScheme!.surface2, width: 1),
-            ),
-          ),
+          decoration: showSeparator
+              ? BoxDecoration(
+                  border: Border(
+                    top: BorderSide(color: colorScheme!.surface2, width: 1),
+                  ),
+                )
+              : null,
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -49,8 +68,8 @@ class UiKitMenuItemTile extends StatelessWidget {
               ),
             ],
           ).paddingSymmetric(
-            horizontal: EdgeInsetsFoundation.horizontal16,
-            vertical: EdgeInsetsFoundation.vertical16,
+            horizontal: paddingSymmetric?.horizontal ?? EdgeInsetsFoundation.horizontal16,
+            vertical: paddingSymmetric?.vertical ?? EdgeInsetsFoundation.vertical16,
           ),
         ),
       ),

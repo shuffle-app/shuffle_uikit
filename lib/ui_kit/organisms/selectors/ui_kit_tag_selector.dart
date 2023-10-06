@@ -76,11 +76,10 @@ class UiKitTagSelector extends StatelessWidget {
                                   },
                                 ),
                               )
-                              .toList() ??
-                          [],
+                              .toList(),
                     )))
               else
-                SizedBox(
+                const SizedBox(
                   width: double.infinity,
                 ),
               if (showTextField)

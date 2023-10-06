@@ -4,6 +4,7 @@ analyzer:
   exclude:
     - '**.config.dart'
     - '**.g.dart'
+    - 'example/**'
   errors:
     todo: ignore
     invalid_annotation_target: ignore
@@ -88,19 +89,7 @@ dart_code_metrics:
           - private-static-methods
           - private-methods
 
-
 linter:
-  # The lint rules applied to this project can be customized in the
-  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
-  # included above or to enable additional rules. A list of all available lints
-  # and their documentation is published at
-  # https://dart-lang.github.io/linter/lints/index.html.
-  #
-  # Instead of disabling a lint rule for the entire project in the
-  # section below, it can also be suppressed for a single line of code
-  # or a specific dart file by using the `// ignore: name_of_lint` and
-  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
-  # producing the lint.
   rules:
     unawaited_futures: true
     avoid_relative_lib_imports: true
@@ -109,7 +98,3 @@ linter:
     unnecessary_brace_in_string_interps: false
     prefer_single_quotes: true
     depend_on_referenced_packages: false
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-
-# Additional information about this file can be found at
-# https://dart.dev/guides/language/analysis-options

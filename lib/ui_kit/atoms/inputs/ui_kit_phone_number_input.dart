@@ -20,7 +20,7 @@ class UiKitPhoneNumberInput extends StatefulWidget implements BaseUiKitInputFiel
 
   final Color? fillColor;
 
-  UiKitPhoneNumberInput({
+  const UiKitPhoneNumberInput({
     super.key,
     required this.controller,
     required this.enabled,
@@ -46,7 +46,7 @@ class _UiKitPhoneNumberInputState extends State<UiKitPhoneNumberInput> {
     final color = _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
     final countryCodeStyle = uiKitTheme?.boldTextTheme.caption1Medium;
-    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium?.copyWith(color: color);
+    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: color);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled ? Colors.white.withOpacity(0.48) : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );

@@ -71,3 +71,5 @@ export 'tiles/user/influencer_user_tile.dart';
 export 'tiles/user/ordinary_user_tile.dart';
 export 'tiles/user/premium_user_tile.dart';
 export 'tiles/user/pro_user_tile.dart';
+export 'tiles/user/ui_kit_user_tile_with_checkbox.dart';
+export 'tiles/user/ui_kit_user_tile_with_option.dart';

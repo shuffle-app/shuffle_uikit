@@ -74,7 +74,8 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         if (rightList.isNotEmpty) ...items,
 
       //build left stack
-      if (leftList.isNotEmpty) ...leftList.map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1)).toList().reversed,
+      if (leftList.isNotEmpty)
+        ...leftList.map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1)).toList().reversed,
       if (!reversed)
         //build right stack if user wants to slide right
         if (rightList.isNotEmpty) ...items,
@@ -84,7 +85,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   Widget _buildFirstItem(BaseUiKitMedia item) {
     return Positioned(
       left: _cardAnimation.left,
-      right: widget.media.length == 1? 0: _cardAnimation.right,
+      right: widget.media.length == 1 ? 0 : _cardAnimation.right,
       child: GestureDetector(
         onTap: widget.onTap,
         onHorizontalDragUpdate: (tapInfo) {
@@ -216,8 +217,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 
   @override
   Widget build(BuildContext context) {
-
-    if(widget.media.isEmpty) return SizedBox.shrink();
+    if (widget.media.isEmpty) return const SizedBox.shrink();
 
     final List<Widget> backStack = _getBackStack(_cardAnimation.right < widget.width / 10);
 

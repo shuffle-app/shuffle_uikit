@@ -117,13 +117,15 @@ class GradientBottomNavigationBarItem extends TabType {
 }
 
 class GradientBottomNavigationBarController {
-  /// Состояние таббара
-  GlobalKey<TabNavigatorState> tabState;
-
   final int tabItemsCount;
-  final BehaviorSubject<GradientBottomNavigationBarItem> _changeController = BehaviorSubject<GradientBottomNavigationBarItem>();
+
+  final BehaviorSubject<GradientBottomNavigationBarItem> _changeController =
+      BehaviorSubject<GradientBottomNavigationBarItem>();
   final BehaviorSubject<GradientBottomNavigationBarVisibility> _visibilityController =
       BehaviorSubject<GradientBottomNavigationBarVisibility>.seeded(GradientBottomNavigationBarVisibility.visible);
+
+  /// Состояние таббара
+  GlobalKey<TabNavigatorState> tabState;
 
   Stream<TabType> get tabStream => _changeController.stream;
 
@@ -147,11 +149,11 @@ class GradientBottomNavigationBarController {
   }
 
   Future<void> _openTab(GradientBottomNavigationBarItem item) async {
-    final _isTappedTabSelectedAlready = selectedTabState == item;
+    final isTappedTabSelectedAlready = selectedTabState == item;
 
     // Если нажатый таб уже выбран
     // удаляем другие страницы, оставляем только первую страницу
-    if (_isTappedTabSelectedAlready && await _isNotLastPage(item)) {
+    if (isTappedTabSelectedAlready && await _isNotLastPage(item)) {
       tabState.currentState?.mappedNavKeys[item]?.currentState?.popUntil((route) => route.isFirst);
     } else {
       _changeController.add(item);

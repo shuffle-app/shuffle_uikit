@@ -15,9 +15,6 @@ import 'package:flutter/material.dart';
 const Duration _kUnconfirmedSplashDuration = Duration(milliseconds: 500);
 const Duration _kSplashFadeDuration = Duration(milliseconds: 250);
 
-const double _kSplashInitialSize = 4; // logical pixels
-const double _kSplashConfirmedVelocity = 0.4; // logical pixels per millisecond
-
 RectCallback? _getClipCallback(
   RenderBox referenceBox,
   bool containedInkWell,

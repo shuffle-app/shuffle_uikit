@@ -3,6 +3,8 @@ import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:flutter_card_swiper/src/typedefs.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
+//ignore_for_file: implementation_imports
+
 class UiKitCardSwiper extends StatelessWidget {
   final List<BaseUiKitSwiperCard> cards;
   final CardSwiperOnSwipe onSwipe;

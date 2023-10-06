@@ -3,7 +3,8 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BadgedPremiumUserTile extends BadgedBaseUserTile {
   const BadgedPremiumUserTile({
-    Key? key,
+    super.key,
+    Key? badgeKey,
     required super.data,
   }) : super(
           badge: const PremiumUserBadge(),
