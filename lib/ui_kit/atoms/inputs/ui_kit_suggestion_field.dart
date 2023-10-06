@@ -8,6 +8,7 @@ class UiKitSuggestionField extends StatelessWidget {
     super.key,
     required this.options,
     this.hintText,
+    this.initialValue,
     this.fillColor,
     this.borderRadius,
     this.onFieldSubmitted,
@@ -15,6 +16,7 @@ class UiKitSuggestionField extends StatelessWidget {
 
   final Future<List<String>> Function(String) options;
   final String? hintText;
+  final TextEditingValue? initialValue;
   final Color? fillColor;
   final BorderRadius? borderRadius;
   final ValueChanged<String>? onFieldSubmitted;
@@ -23,6 +25,7 @@ class UiKitSuggestionField extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (_, constraints) {
       return Autocomplete<String>(
+        initialValue: initialValue,
         fieldViewBuilder: (_, controller, focusNode, onSubmitted) => UiKitInputFieldNoIcon(
           controller: controller,
           node: focusNode,
