@@ -27,16 +27,21 @@ class UiKitColors {
 
   static const yellow = Color(0xffC6E216);
   static const brightYellow = Color(0xffFAE634);
+  static const anotherYellow = Color(0xffFCE600);
   static const weatherYellow = Color(0xffE5C130);
   static const orange = Color(0xffE32900);
   static const red = Color(0xffFA4C34);
+  static const brightRed = Color(0xffFF1619);
   static const pink = Color(0xffD808FA);
+  static const purple = Color(0xffFF1EAE);
   static const pinkLight = Color(0xffE379C5);
   static const error = Color(0xffFF453A);
   static const warning = Color(0xffFF9F0A);
   static const shadowPink = Color(0xffEFD6CC);
   static const success = Color(0xff30D158);
+  static const lightGreen = Color(0xffB0F007);
   static const info = Color(0xff0A84FF);
+  static const lightBlue = Color(0xff1DF5FD);
   static const lightGrey = Color(0xffD0D0D0);
   static const gradientGreyLight1 = Color(0xffC9C9C9);
   static const gradientGreyLight2 = Color(0xffBCBCBC);

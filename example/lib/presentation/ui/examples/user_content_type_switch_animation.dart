@@ -23,38 +23,55 @@ class _ExamplesPageState extends State<ExamplesPage> with SingleTickerProviderSt
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
     return Scaffold(
-      body: GestureDetector(
-        onTap: () {
-          animationController.reverse().then((value) {
-            setState(() => text = text == leisure ? business : leisure);
-            return animationController.forward(from: 0);
-          });
-        },
-        child: AnimatedBuilder(
-          animation: animationController,
-          builder: (context, child) => FadeTransition(
-            opacity: animationController,
-            child: child,
-          ),
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  text,
-                  style: textTheme?.title1,
-                  textAlign: TextAlign.center,
-                ),
-                SpacingFoundation.verticalSpace16,
-                ImageWidget(
-                  link: GraphicsFoundation.instance.svg.shuffleWhite.path,
-                  color: context.uiKitTheme?.colorScheme.inversePrimary,
-                )
-              ],
-            ).paddingAll(EdgeInsetsFoundation.all24),
-          ),
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // UiKitContentTypeEmptyTile(
+            //   size: Size(48, 48),
+            // ),
+            SpacingFoundation.verticalSpace16,
+            UiKitContentTypeColoredTile(
+              size: Size(96, 96),
+              color: ColorsFoundation.brightRed,
+              iconPath: GraphicsFoundation.instance.svg.shuffleWhite.path,
+            ),
+          ],
         ),
       ),
+      // body: GestureDetector(
+      //   onTap: () {
+      //     animationController.reverse().then((value) {
+      //       setState(() => text = text == leisure ? business : leisure);
+      //       return animationController.forward(from: 0);
+      //     });
+      //   },
+      //   child: AnimatedBuilder(
+      //     animation: animationController,
+      //     builder: (context, child) => FadeTransition(
+      //       opacity: animationController,
+      //       child: child,
+      //     ),
+      //     child: Center(
+      //       child: Column(
+      //         mainAxisSize: MainAxisSize.min,
+      //         children: [
+      //           Text(
+      //             text,
+      //             style: textTheme?.title1,
+      //             textAlign: TextAlign.center,
+      //           ),
+      //           SpacingFoundation.verticalSpace16,
+      //           ImageWidget(
+      //             link: GraphicsFoundation.instance.svg.shuffleWhite.path,
+      //             color: context.uiKitTheme?.colorScheme.inversePrimary,
+      //           )
+      //         ],
+      //       ).paddingAll(EdgeInsetsFoundation.all24),
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

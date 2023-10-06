@@ -27,6 +27,7 @@ class UiKitCustomTabBar extends StatelessWidget {
       data: Theme.of(context).copyWith(tabBarTheme: tabBarTheme),
       child: UiKitCardWrapper(
         child: DefaultTabController(
+          animationDuration: const Duration(milliseconds: 250),
           length: tabs.length,
           initialIndex: initialTab.isNegative ? 0 : initialTab,
           child: ClipRRect(
