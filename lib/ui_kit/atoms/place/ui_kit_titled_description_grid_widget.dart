@@ -24,6 +24,7 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
       width: (0.5.sw) - (spacing * 2),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Text(
             title,
@@ -32,25 +33,27 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace4,
-          group != null
-              ? AutoSizeText(
-                  description,
-                  maxLines: 4,
-                  minFontSize: 11,
-                  group: group,
-                  overflow: TextOverflow.ellipsis,
-                  style: textTheme?.caption1Bold.copyWith(
-                    color: context.uiKitTheme?.colorScheme.grayForegroundColor,
+          Flexible(
+            child: group != null
+                ? AutoSizeText(
+                    description,
+                    maxLines: 4,
+                    minFontSize: 11,
+                    group: group,
+                    overflow: TextOverflow.ellipsis,
+                    style: textTheme?.caption1Bold.copyWith(
+                      color: context.uiKitTheme?.colorScheme.grayForegroundColor,
+                    ),
+                  )
+                : Text(
+                    description,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                    style: textTheme?.caption1Bold.copyWith(
+                      color: context.uiKitTheme?.colorScheme.grayForegroundColor,
+                    ),
                   ),
-                )
-              : Text(
-                  description,
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  style: textTheme?.caption1Bold.copyWith(
-                    color: context.uiKitTheme?.colorScheme.grayForegroundColor,
-                  ),
-                ),
+          ),
           SpacingFoundation.verticalSpace4,
         ],
       ),
