@@ -17,7 +17,7 @@ class UiKitContentTypeColoredTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final angle = 135 * (pi / 180);
+    const angle = 135 * (pi / 180);
 
     return SizedBox(
       width: size.width,

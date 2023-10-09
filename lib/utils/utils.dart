@@ -3,7 +3,7 @@
 export 'animations/animations.dart';
 export 'animations/bouncing_icon_button_animation.dart';
 export 'animations/rolling_dice_button.dart';
-export 'animations/scale_animation.dart';
+export 'animations/ui_kit_scale_animation.dart';
 export 'builders/alert_dialog_builder.dart';
 export 'builders/comment_dialog_builder.dart';
 export 'builders/custom_calendar_picker_dialog.dart';
