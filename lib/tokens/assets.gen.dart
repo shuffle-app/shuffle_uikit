@@ -837,6 +837,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/Yoga.svg
   SvgGenImage get yoga => const SvgGenImage('assets/images/svg/Yoga.svg');
 
+  /// File path: assets/images/svg/active.svg
+  SvgGenImage get active => const SvgGenImage('assets/images/svg/active.svg');
+
   /// File path: assets/images/svg/adventure.svg
   SvgGenImage get adventure => const SvgGenImage('assets/images/svg/adventure.svg');
 
@@ -884,6 +887,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/athlete.svg
   SvgGenImage get athlete => const SvgGenImage('assets/images/svg/athlete.svg');
+
+  /// File path: assets/images/svg/baby.svg
+  SvgGenImage get baby => const SvgGenImage('assets/images/svg/baby.svg');
 
   /// File path: assets/images/svg/barcode.svg
   SvgGenImage get barcode => const SvgGenImage('assets/images/svg/barcode.svg');
@@ -963,6 +969,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/cross.svg
   SvgGenImage get cross => const SvgGenImage('assets/images/svg/cross.svg');
 
+  /// File path: assets/images/svg/cup.svg
+  SvgGenImage get cup => const SvgGenImage('assets/images/svg/cup.svg');
+
   /// File path: assets/images/svg/current-location.svg
   SvgGenImage get currentLocation => const SvgGenImage('assets/images/svg/current-location.svg');
 
@@ -989,6 +998,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/dollar.svg
   SvgGenImage get dollar => const SvgGenImage('assets/images/svg/dollar.svg');
+
+  /// File path: assets/images/svg/dollar_black_outlined.svg
+  SvgGenImage get dollarBlackOutlined => const SvgGenImage('assets/images/svg/dollar_black_outlined.svg');
 
   /// File path: assets/images/svg/dollar_outlined.svg
   SvgGenImage get dollarOutlined => const SvgGenImage('assets/images/svg/dollar_outlined.svg');
@@ -1083,6 +1095,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/landmark.svg
   SvgGenImage get landmark => const SvgGenImage('assets/images/svg/landmark.svg');
 
+  /// File path: assets/images/svg/laptop.svg
+  SvgGenImage get laptop => const SvgGenImage('assets/images/svg/laptop.svg');
+
   /// File path: assets/images/svg/layout-grid.svg
   SvgGenImage get layoutGrid => const SvgGenImage('assets/images/svg/layout-grid.svg');
 
@@ -1152,6 +1167,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/person_layered.svg
   SvgGenImage get personLayered => const SvgGenImage('assets/images/svg/person_layered.svg');
 
+  /// File path: assets/images/svg/pie_chart_outlined.svg
+  SvgGenImage get pieChartOutlined => const SvgGenImage('assets/images/svg/pie_chart_outlined.svg');
+
   /// File path: assets/images/svg/play-fill.svg
   SvgGenImage get playFill => const SvgGenImage('assets/images/svg/play-fill.svg');
 
@@ -1206,6 +1224,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/rising_trend_icon.svg
   SvgGenImage get risingTrendIcon => const SvgGenImage('assets/images/svg/rising_trend_icon.svg');
 
+  /// File path: assets/images/svg/rocket_outlined.svg
+  SvgGenImage get rocketOutlined => const SvgGenImage('assets/images/svg/rocket_outlined.svg');
+
   /// File path: assets/images/svg/route.svg
   SvgGenImage get route => const SvgGenImage('assets/images/svg/route.svg');
 
@@ -1238,6 +1259,10 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/settings.svg
   SvgGenImage get settings => const SvgGenImage('assets/images/svg/settings.svg');
+
+  /// File path: assets/images/svg/shade_content_type_loader_tile.svg
+  SvgGenImage get shadeContentTypeLoaderTile =>
+      const SvgGenImage('assets/images/svg/shade_content_type_loader_tile.svg');
 
   /// File path: assets/images/svg/shuffle_fill.svg
   SvgGenImage get shuffleFill => const SvgGenImage('assets/images/svg/shuffle_fill.svg');
@@ -1283,6 +1308,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/swim.svg
   SvgGenImage get swim => const SvgGenImage('assets/images/svg/swim.svg');
+
+  /// File path: assets/images/svg/swimming.svg
+  SvgGenImage get swimming => const SvgGenImage('assets/images/svg/swimming.svg');
 
   /// File path: assets/images/svg/table.svg
   SvgGenImage get table => const SvgGenImage('assets/images/svg/table.svg');
@@ -1407,6 +1435,7 @@ class $AssetsImagesSvgGen {
         trainingApparatus,
         victoryHands,
         yoga,
+        active,
         adventure,
         alertCircle,
         analyticsFill,
@@ -1423,6 +1452,7 @@ class $AssetsImagesSvgGen {
         arrowUp,
         arrowsSort,
         athlete,
+        baby,
         barcode,
         bath,
         bell,
@@ -1449,6 +1479,7 @@ class $AssetsImagesSvgGen {
         connectionOutline,
         coworking,
         cross,
+        cup,
         currentLocation,
         cursor,
         cutlery,
@@ -1458,6 +1489,7 @@ class $AssetsImagesSvgGen {
         docsFill,
         docsOutline,
         dollar,
+        dollarBlackOutlined,
         dollarOutlined,
         emptyRadio,
         exclamation,
@@ -1489,6 +1521,7 @@ class $AssetsImagesSvgGen {
         keyboard,
         label,
         landmark,
+        laptop,
         layoutGrid,
         layoutSidebar,
         lifebuoy,
@@ -1512,6 +1545,7 @@ class $AssetsImagesSvgGen {
         pause,
         pencil,
         personLayered,
+        pieChartOutlined,
         playFill,
         playOutline,
         play,
@@ -1530,6 +1564,7 @@ class $AssetsImagesSvgGen {
         refresh,
         restaurant,
         risingTrendIcon,
+        rocketOutlined,
         route,
         satelite,
         scan,
@@ -1541,6 +1576,7 @@ class $AssetsImagesSvgGen {
         settingsFill,
         settingsOutline,
         settings,
+        shadeContentTypeLoaderTile,
         shuffleFill,
         shuffleOutline,
         shuffleWhite,
@@ -1556,6 +1592,7 @@ class $AssetsImagesSvgGen {
         stop,
         sufle,
         swim,
+        swimming,
         table,
         thumbUp,
         tiger,

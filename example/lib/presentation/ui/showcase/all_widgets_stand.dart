@@ -962,8 +962,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   icon: ImageWidget(
                     svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
                   ),
+                  hasShadow: true,
                 ),
-                hasShadow: true,
               ),
               SpacingFoundation.verticalSpace16,
               context.notificationPopUp(
@@ -983,7 +983,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               context.notificationPopUp(
-                hasShadow: true,
                 primaryActionWidget: context.smallButton(
                   data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
                 ),
@@ -999,6 +998,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   icon: ImageWidget(
                     svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
                   ),
+                  hasShadow: true,
                 ),
               ),
               SpacingFoundation.verticalSpace16,
@@ -1470,8 +1470,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context).push(PopUpVideoPlayer(
-                      videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+                  Navigator.of(context)
+                      .push(PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
                 },
                 child: const Text(
                   'Show Horizontal Video',
@@ -1480,8 +1480,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+                  Navigator.of(context).push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
                 },
                 child: const Text(
                   'Show Vertical Video',
