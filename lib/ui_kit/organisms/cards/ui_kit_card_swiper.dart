@@ -12,6 +12,7 @@ class UiKitCardSwiper extends StatelessWidget {
   final CardSwiperController controller;
   final AnimationController dislikeController;
   final AnimationController likeController;
+  final Size size;
 
   UiKitCardSwiper({
     Key? key,
@@ -19,6 +20,7 @@ class UiKitCardSwiper extends StatelessWidget {
     required this.onSwipe,
     required this.dislikeController,
     required this.likeController,
+    required this.size,
     this.onEnd,
     CardSwiperController? controller,
   })  : controller = controller ?? CardSwiperController(),
@@ -30,6 +32,7 @@ class UiKitCardSwiper extends StatelessWidget {
       fit: StackFit.passthrough,
       children: [
         CardSwiper(
+          size: size,
           controller: controller,
           cardsCount: cards.length,
           onSwipe: onSwipe,
