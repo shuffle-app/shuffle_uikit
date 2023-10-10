@@ -133,6 +133,36 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               SpacingFoundation.verticalSpace16,
+              context.advertisementBanner(
+                data: BaseUiKitAdvertisementBannerData(
+                  availableWidth: 1.sw,
+                  onPressed: () {},
+                  imageLink: GraphicsFoundation.instance.png.mockAdBanner1.path,
+                  title: 'Dubai',
+                  size: AdvertisementBannerSize.small,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              context.advertisementBanner(
+                data: BaseUiKitAdvertisementBannerData(
+                  availableWidth: 1.sw,
+                  onPressed: () {},
+                  imageLink: GraphicsFoundation.instance.png.mockAdBanner2.path,
+                  title: 'Dubai',
+                  size: AdvertisementBannerSize.medium,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              context.advertisementBanner(
+                data: BaseUiKitAdvertisementBannerData(
+                  availableWidth: 1.sw,
+                  onPressed: () {},
+                  imageLink: GraphicsFoundation.instance.png.mockAdBanner3.path,
+                  title: 'Dubai',
+                  size: AdvertisementBannerSize.large,
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
               UiKitChatInCard(
                 timeOfDay: DateTime.now(),
                 text: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',

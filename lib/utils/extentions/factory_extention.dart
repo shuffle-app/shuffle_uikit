@@ -148,6 +148,11 @@ extension FactoryExtention on BuildContext {
     return WidgetsFactory.of(this)!.createUserTile(data: data).build(this);
   }
 
+  Widget advertisementBanner({
+    required BaseUiKitAdvertisementBannerData data,
+  }) =>
+      WidgetsFactory.of(this)!.createAdvertisement(data: data).build(this);
+
   Widget notificationPopUp({
     required NotificationPopupRequiredData requiredData,
     Widget? primaryActionWidget,

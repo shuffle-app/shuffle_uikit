@@ -68,6 +68,10 @@ abstract class WidgetsAbstractFactory {
   UserTileFactory createUserTile({
     required BaseUiKitUserTileData data,
   });
+
+  AdvertisementFactory createAdvertisement({
+    required BaseUiKitAdvertisementBannerData data,
+  });
 // InputFieldFactory createInputField({
 //   required TextEditingController controller,
 //   String? hintText,
@@ -78,6 +82,10 @@ abstract class WidgetsAbstractFactory {
 }
 
 abstract class ButtonFactory {
+  Widget build(BuildContext context);
+}
+
+abstract class AdvertisementFactory {
   Widget build(BuildContext context);
 }
 
@@ -503,6 +511,35 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       onPressed: data.onPressed,
       loading: data.loading,
     );
+  }
+
+  @override
+  AdvertisementFactory createAdvertisement({
+    required BaseUiKitAdvertisementBannerData data,
+  }) {
+    switch (data.size) {
+      case AdvertisementBannerSize.small:
+        return UiKitSmallAdBannerCard(
+          imageLink: data.imageLink,
+          title: data.title,
+          availableWidth: data.availableWidth,
+          onTap: data.onPressed,
+        );
+      case AdvertisementBannerSize.medium:
+        return UiKitMediumAdBannerCard(
+          imageLink: data.imageLink,
+          title: data.title,
+          availableWidth: data.availableWidth,
+          onTap: data.onPressed,
+        );
+      case AdvertisementBannerSize.large:
+        return UiKitLargeAdBannerCard(
+          imageLink: data.imageLink,
+          title: data.title,
+          availableWidth: data.availableWidth,
+          onTap: data.onPressed,
+        );
+    }
   }
 
 // @override
