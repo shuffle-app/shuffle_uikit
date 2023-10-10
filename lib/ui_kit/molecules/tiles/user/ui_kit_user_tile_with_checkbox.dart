@@ -66,7 +66,7 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                   children: [
                     Stack(
                       children: [
-                        BorderedUserCircleAvatar(imageUrl: widget.avatarLink, size: 40.w),
+                        BorderedUserCircleAvatar(imageUrl: widget.avatarLink, size: 45.w),
                         if (widget.handShake != null)
                           Positioned(
                             bottom: 0,
@@ -85,10 +85,12 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                       ],
                     ),
                     SpacingFoundation.verticalSpace2,
-                    ConstrainedBox(
-                      constraints: BoxConstraints(maxHeight: 4.h, maxWidth: 45.w),
+                    SizedBox(
+                      height: 4.h,
+                      width: 45.w,
                       child: ListView.separated(
                         padding: EdgeInsets.only(left: EdgeInsetsFoundation.all2),
+                        physics: const NeverScrollableScrollPhysics(),
                         scrollDirection: Axis.horizontal,
                         separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace2,
                         itemCount: 7,
@@ -98,14 +100,14 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                               ? GradientableWidget(
                                   gradient: GradientFoundation.defaultLinearGradient,
                                   child: SizedBox(
-                                    height: 4.h,
-                                    width: 4.h,
+                                    height: 4.w,
+                                    width: 4.w,
                                     child: const ColoredBox(color: Colors.white),
                                   ),
                                 )
                               : SizedBox(
-                                  height: 4.h,
-                                  width: 4.h,
+                                  height: 4.w,
+                                  width: 4.w,
                                   child: ColoredBox(color: theme!.colorScheme.darkNeutral500),
                                 ),
                         ),
