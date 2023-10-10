@@ -87,7 +87,7 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                     SpacingFoundation.verticalSpace2,
                     SizedBox(
                       height: 4.h,
-                      width: 45.w,
+                      width: 47.w,
                       child: ListView.separated(
                         padding: EdgeInsets.only(left: EdgeInsetsFoundation.all2),
                         physics: const NeverScrollableScrollPhysics(),
