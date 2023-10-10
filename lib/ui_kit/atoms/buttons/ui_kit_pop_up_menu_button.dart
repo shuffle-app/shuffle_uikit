@@ -9,20 +9,20 @@ class UiKitPopUpMenuButton extends StatelessWidget {
     super.key,
     required this.options,
   }) : asset = GraphicsFoundation.instance.svg.moreVert {
-    items = (context) =>
-        options
-            .map(
-              (option) =>
-              PopupMenuItem(
-                value: option.value,
-                onTap: option.onTap,
-                child: Text(
-                  option.title,
-                  style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(color: Colors.black),
-                ),
+    items = (context) => options
+        .map(
+          (option) => PopupMenuItem(
+            value: option.value,
+            onTap: option.onTap,
+            child: Text(
+              option.title,
+              style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
+                color: option.textColor ?? Colors.black,
               ),
+            ),
+          ),
         )
-            .toList();
+        .toList();
   }
 
   UiKitPopUpMenuButton.custom({
@@ -30,12 +30,11 @@ class UiKitPopUpMenuButton extends StatelessWidget {
     required List<Widget> children,
     required this.asset,
   }) : options = [] {
-    items = (context) =>
-        children
-            .map(
-              (option) => PopupMenuItem(child: option),
+    items = (context) => children
+        .map(
+          (option) => PopupMenuItem(child: option),
         )
-            .toList();
+        .toList();
   }
 
   UiKitPopUpMenuButton.customMenu({
@@ -43,8 +42,7 @@ class UiKitPopUpMenuButton extends StatelessWidget {
     required List<PopupMenuItem> children,
     required this.asset,
   }) : options = [] {
-    items = (context) =>
-        children;
+    items = (context) => children;
   }
 
   late final PopupMenuItemBuilder items;
@@ -70,11 +68,13 @@ class UiKitPopUpMenuButton extends StatelessWidget {
 class UiKitPopUpMenuButtonOption {
   final String title;
   final dynamic value;
+  final Color? textColor;
   final VoidCallback? onTap;
 
   const UiKitPopUpMenuButtonOption({
     required this.title,
     required this.value,
+    this.textColor,
     this.onTap,
   });
 }
