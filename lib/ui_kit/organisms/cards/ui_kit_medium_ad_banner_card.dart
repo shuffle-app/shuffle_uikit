@@ -5,14 +5,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMediumAdBannerCard extends StatelessWidget implements AdvertisementFactory {
   final double availableWidth;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
   final String imageLink;
   final String title;
 
   const UiKitMediumAdBannerCard({
     Key? key,
     required this.availableWidth,
-    required this.onTap,
+    this.onTap,
     required this.imageLink,
     required this.title,
   }) : super(key: key);
@@ -37,6 +37,7 @@ class UiKitMediumAdBannerCard extends StatelessWidget implements AdvertisementFa
               ImageWidget(
                 link: imageLink,
                 fit: BoxFit.cover,
+                errorWidget: const UiKitBigPhotoErrorWidget(),
               ),
               Positioned(
                 bottom: EdgeInsetsFoundation.vertical12,

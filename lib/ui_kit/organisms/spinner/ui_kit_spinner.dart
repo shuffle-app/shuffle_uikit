@@ -88,6 +88,8 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
   }
 
   void _shouldSwitchCategory([bool onEndNotified = false]) {
+    print('_shouldSwitchCategory');
+    FeedbackIsolate.instance.addEvent(SystemSoundIsolateRachetClick());
     final currentOffset = widget.scrollController.offset;
     final screenWidth = 1.sw;
     final nearestElementIndex = (currentOffset / screenWidth).round();
@@ -116,7 +118,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
         curve: Curves.decelerate,
       );
     }
-    FeedbackIsolate.instance.addEvent(SystemSoundIsolateRachetClick());
     _lastScrollPositionOffsetNotifier.value = nearestElementOffset;
   }
 
@@ -154,7 +155,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
             child: NotificationListener<ScrollEndNotification>(
               onNotification: (notification) {
                 if (_spinningType != SpinningType.wheel) {
-                  if (!widget.scrollController.position.atEdge) _shouldSwitchCategory(true);
+                  _shouldSwitchCategory(true);
                 }
 
                 return true;
@@ -228,7 +229,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       curve: Curves.decelerate,
                     );
 
-                    if (atEnd) _shouldSwitchCategory(false);
+                    if (!atEnd) _shouldSwitchCategory(false);
                   },
                   child: AnimatedBuilder(
                     animation: _rotationNotifier,
