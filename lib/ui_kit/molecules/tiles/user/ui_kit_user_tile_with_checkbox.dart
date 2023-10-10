@@ -84,7 +84,7 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                     ),
                     SpacingFoundation.verticalSpace2,
                     SizedBox(
-                      height: 4.h,
+                      height: 4.r,
                       width: 47.w,
                       child: ListView.separated(
                         padding: EdgeInsets.only(left: EdgeInsetsFoundation.all2),
@@ -98,14 +98,14 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                               ? GradientableWidget(
                                   gradient: GradientFoundation.defaultLinearGradient,
                                   child: SizedBox(
-                                    height: 4.w,
-                                    width: 4.w,
+                                    height: 4.r,
+                                    width: 4.r,
                                     child: const ColoredBox(color: Colors.white),
                                   ),
                                 )
                               : SizedBox(
-                                  height: 4.w,
-                                  width: 4.w,
+                                  height: 4.r,
+                                  width: 4.r,
                                   child: ColoredBox(color: theme!.colorScheme.darkNeutral500),
                                 ),
                         ),

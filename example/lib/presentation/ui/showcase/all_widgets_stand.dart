@@ -148,7 +148,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               UiKitUserTileWithCheckbox(
                 title: 'Marry Williams',
                 subtitle: 'Any cheerful person can invite me',
-                onTap: () {},
+                onTap: (_) {},
                 rating: 5,
                 date: DateTime.now(),
                 avatarLink: GraphicsFoundation.instance.png.mockAvatar.path,
@@ -963,7 +963,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
                   ),
                 ),
-                hasShadow: true,
               ),
               SpacingFoundation.verticalSpace16,
               context.notificationPopUp(
@@ -983,7 +982,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               context.notificationPopUp(
-                hasShadow: true,
                 primaryActionWidget: context.smallButton(
                   data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
                 ),
