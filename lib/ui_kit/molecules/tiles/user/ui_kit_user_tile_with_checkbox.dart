@@ -19,7 +19,7 @@ class UiKitUserTileWithCheckbox extends StatefulWidget {
   final String title;
   final String avatarLink;
   final bool isSelected;
-  final VoidCallback onTap;
+  final ValueChanged<bool> onTap;
   final DateTime? date;
   final String? subtitle;
   final bool? handShake;
@@ -50,9 +50,7 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
     return GestureDetector(
       onTap: () {
         setState(() => _isSelected = !_isSelected);
-        if (_isSelected) {
-          widget.onTap.call();
-        }
+        widget.onTap.call(_isSelected);
       },
       child: Row(
         children: [
