@@ -148,7 +148,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               UiKitUserTileWithCheckbox(
                 title: 'Marry Williams',
                 subtitle: 'Any cheerful person can invite me',
-                onTap: () {},
+                onTap: (_) {},
                 rating: 5,
                 date: DateTime.now(),
                 avatarLink: GraphicsFoundation.instance.png.mockAvatar.path,

@@ -29,7 +29,7 @@ class UiKitUserTileWithOption extends StatelessWidget {
         SpacingFoundation.horizontalSpace12,
         Column(
           children: [
-            BorderedUserCircleAvatar(imageUrl: avatarLink, size: 40.w),
+            BorderedUserCircleAvatar(imageUrl: avatarLink, size: 45.w),
             SpacingFoundation.verticalSpace2,
           ],
         ),
