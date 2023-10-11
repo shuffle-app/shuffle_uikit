@@ -8,11 +8,13 @@ class UiKitMediumAdBannerCard extends StatelessWidget implements AdvertisementFa
   final VoidCallback? onTap;
   final String imageLink;
   final String title;
+  final double? customHeight;
 
   const UiKitMediumAdBannerCard({
     Key? key,
     required this.availableWidth,
     this.onTap,
+    this.customHeight,
     required this.imageLink,
     required this.title,
   }) : super(key: key);
@@ -29,7 +31,7 @@ class UiKitMediumAdBannerCard extends StatelessWidget implements AdvertisementFa
       child: InkWell(
         onTap: onTap,
         child: Ink(
-          height: height,
+          height: customHeight ?? height,
           width: availableWidth,
           child: Stack(
             fit: StackFit.expand,

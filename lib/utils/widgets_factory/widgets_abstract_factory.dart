@@ -524,6 +524,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           title: data.title,
           availableWidth: data.availableWidth,
           onTap: data.onPressed,
+          customHeight: data.customHeight,
         );
       case AdvertisementBannerSize.medium:
         return UiKitMediumAdBannerCard(
@@ -531,6 +532,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           title: data.title,
           availableWidth: data.availableWidth,
           onTap: data.onPressed,
+          customHeight: data.customHeight,
         );
       case AdvertisementBannerSize.large:
         return UiKitLargeAdBannerCard(
@@ -538,6 +540,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           title: data.title,
           availableWidth: data.availableWidth,
           onTap: data.onPressed,
+          customHeight: data.customHeight,
         );
     }
   }

@@ -7,11 +7,13 @@ class UiKitLargeAdBannerCard extends StatelessWidget implements AdvertisementFac
   final VoidCallback? onTap;
   final String imageLink;
   final String title;
+  final double? customHeight;
 
   const UiKitLargeAdBannerCard({
     Key? key,
     required this.availableWidth,
     this.onTap,
+    this.customHeight,
     required this.imageLink,
     required this.title,
   }) : super(key: key);
@@ -28,7 +30,7 @@ class UiKitLargeAdBannerCard extends StatelessWidget implements AdvertisementFac
       child: InkWell(
         onTap: onTap,
         child: Ink(
-          height: height,
+          height: customHeight ?? height,
           width: availableWidth,
           child: Stack(
             fit: StackFit.expand,
@@ -53,7 +55,7 @@ class UiKitLargeAdBannerCard extends StatelessWidget implements AdvertisementFac
                       title,
                       style: textTheme?.title1,
                     ).paddingSymmetric(
-                      vertical: EdgeInsetsFoundation.vertical2,
+                      vertical: EdgeInsetsFoundation.vertical4,
                       horizontal: EdgeInsetsFoundation.horizontal16,
                     ),
                   ),

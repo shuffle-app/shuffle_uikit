@@ -43,7 +43,12 @@ class UiKitCardSwiper extends StatelessWidget {
           backCardOffset: Offset.zero,
           padding: EdgeInsets.zero,
           scale: 0.5,
-          cardBuilder: (context, index, horizontalOffsetPercentage, verticalOffsetPercentage) => cards[index],
+          cardBuilder: (context, index, horizontalOffsetPercentage, verticalOffsetPercentage) {
+            final card = cards.elementAt(index);
+            if (card is UiKitSwiperAdCard) return Center(child: card);
+
+            return card;
+          },
         ),
         Center(
           child: AnimatedBuilder(
