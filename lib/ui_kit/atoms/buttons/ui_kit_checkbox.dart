@@ -15,10 +15,9 @@ class UiKitCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GradientableWidget(
-      active: isActive,
-      gradient: GradientFoundation.attentionCard,
-      child: InkWell(
+    return Material(
+      color: Colors.transparent,
+        child: InkWell(
         onTap: onChanged,
         child: Ink(
           padding: EdgeInsets.all(EdgeInsetsFoundation.all2),
@@ -35,7 +34,10 @@ class UiKitCheckbox extends StatelessWidget {
             duration: const Duration(milliseconds: 200),
             curve: Curves.fastOutSlowIn,
             scale: isActive ? 1.0 : 0,
-            child: ImageWidget(
+            child:GradientableWidget(
+              active: isActive,
+              gradient: GradientFoundation.attentionCard,
+              child:  ImageWidget(
               svgAsset: GraphicsFoundation.instance.svg.check,
               color: Colors.white,
               height: SpacingFoundation.horizontalSpacing12,
@@ -44,6 +46,6 @@ class UiKitCheckbox extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ));
   }
 }
