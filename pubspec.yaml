@@ -56,7 +56,8 @@ dependencies:
   flutter_card_swiper:
     git:
       url: https://github.com/shuffle-app/shuffle_swiper.git
-      ref: main
+      ref: e4391ca40994c91acc563477c7959fbdeff50004
+
   intl: ^0.18.1
   just_audio: ^0.9.33
 
