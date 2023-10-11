@@ -391,6 +391,21 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/mock_ad_banner.png
   AssetGenImage get mockAdBanner => const AssetGenImage('assets/images/png/mock_ad_banner.png');
 
+  /// File path: assets/images/png/mock_ad_banner_1.jpeg
+  AssetGenImage get mockAdBanner1 => const AssetGenImage('assets/images/png/mock_ad_banner_1.jpeg');
+
+  /// File path: assets/images/png/mock_ad_banner_2.jpeg
+  AssetGenImage get mockAdBanner2 => const AssetGenImage('assets/images/png/mock_ad_banner_2.jpeg');
+
+  /// File path: assets/images/png/mock_ad_banner_3.jpeg
+  AssetGenImage get mockAdBanner3 => const AssetGenImage('assets/images/png/mock_ad_banner_3.jpeg');
+
+  /// File path: assets/images/png/mock_ad_banner_4.jpeg
+  AssetGenImage get mockAdBanner4 => const AssetGenImage('assets/images/png/mock_ad_banner_4.jpeg');
+
+  /// File path: assets/images/png/mock_ad_banner_5.jpeg
+  AssetGenImage get mockAdBanner5 => const AssetGenImage('assets/images/png/mock_ad_banner_5.jpeg');
+
   /// File path: assets/images/png/mock_avatar.png
   AssetGenImage get mockAvatar => const AssetGenImage('assets/images/png/mock_avatar.png');
 
@@ -619,6 +634,11 @@ class $AssetsImagesPngGen {
         loveEmoji,
         mapMock,
         mockAdBanner,
+        mockAdBanner1,
+        mockAdBanner2,
+        mockAdBanner3,
+        mockAdBanner4,
+        mockAdBanner5,
         mockAvatar,
         mockSwiperCard,
         mockUserAvatar,

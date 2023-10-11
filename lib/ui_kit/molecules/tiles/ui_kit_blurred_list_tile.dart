@@ -47,9 +47,11 @@ class UiKitBlurredListTile extends StatelessWidget {
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      Text(
-                        '$title',
-                        style: titleTextStyle,
+                      Expanded(
+                        child: Text(
+                          '$title',
+                          style: titleTextStyle?.copyWith(overflow: TextOverflow.ellipsis),
+                        ),
                       ),
                       if (titleTrailing != null) ...[
                         SpacingFoundation.horizontalSpace8,
