@@ -88,7 +88,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
   }
 
   void _shouldSwitchCategory([bool onEndNotified = false]) {
-    print('_shouldSwitchCategory');
     FeedbackIsolate.instance.addEvent(SystemSoundIsolateRachetClick());
     final currentOffset = widget.scrollController.offset;
     final screenWidth = 1.sw;
