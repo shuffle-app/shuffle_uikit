@@ -1136,6 +1136,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/location.svg
   SvgGenImage get location => const SvgGenImage('assets/images/svg/location.svg');
 
+  /// File path: assets/images/svg/location_searching.svg
+  SvgGenImage get locationSearching => const SvgGenImage('assets/images/svg/location_searching.svg');
+
   /// File path: assets/images/svg/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/images/svg/logo.svg');
 
@@ -1548,6 +1551,7 @@ class $AssetsImagesSvgGen {
         like,
         loader,
         location,
+        locationSearching,
         logo,
         logout,
         mapOutlined,

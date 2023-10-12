@@ -96,6 +96,15 @@ class AppRouter {
           builder: (context) => const AnimationsPage(),
           settings: settings,
         );
+      case AppRoutes.mapDirections:
+        return MaterialPageRoute(
+          builder: (context) => MapDirectionsPage(
+            onCurrentLocationRequested: () {},
+            searchController: TextEditingController(),
+            destinationTitle: 'At.mosphere | Burj Khalifa',
+          ),
+          settings: settings,
+        );
       default:
         return MaterialPageRoute(
           settings: settings,
