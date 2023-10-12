@@ -153,6 +153,11 @@ class DialogTestingPage extends StatelessWidget {
                   onPressed: () => showComplaintPopUp(context),
                 ),
                 SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
+                  text: 'show incorrect login pop up',
+                  onPressed: () => showIncorrectLoginPopUp(context, onForgotPasswordTap: () => context.pop()),
+                ),
+                SpacingFoundation.verticalSpace16,
               ],
             ),
           ),

@@ -43,6 +43,7 @@ export 'popups/compact_alert_pop_up.dart';
 export 'popups/complaint_pop_up.dart';
 export 'popups/donate_to_shuffle_alert.dart';
 export 'popups/geolocation_alert.dart';
+export 'popups/incorrect_login_pop_up.dart';
 export 'popups/ordinary_notification_popup.dart';
 export 'popups/settings_alert.dart';
 export 'profile/profile_card.dart';
