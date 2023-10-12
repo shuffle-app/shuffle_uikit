@@ -9,6 +9,7 @@ class MapDirectionsPage extends StatefulWidget {
   final TextEditingController searchController;
   final String destinationTitle;
   final VoidCallback? onDirectionsRequested;
+  final LatLng destination;
 
   const MapDirectionsPage({
     Key? key,
@@ -16,6 +17,7 @@ class MapDirectionsPage extends StatefulWidget {
     this.onCurrentLocationRequested,
     this.onDirectionsRequested,
     required this.searchController,
+    required this.destination,
     required this.destinationTitle,
   }) : super(key: key);
 
@@ -24,7 +26,6 @@ class MapDirectionsPage extends StatefulWidget {
 }
 
 class _MapDirectionsPageState extends State<MapDirectionsPage> {
-  final LatLng destination = const LatLng(41.411081, 69.240562);
   GoogleMapController? controller;
   LocationPickerSearchOverlayController locationPickerSearchOverlayController = LocationPickerSearchOverlayController();
   late final FocusNode _focusNode = FocusNode()
@@ -82,12 +83,9 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
         fit: StackFit.expand,
         children: [
           GoogleMap(
-            onTap: (latLng) {
-              print(latLng);
-            },
             onMapCreated: (mapController) => setState(() => controller = mapController),
             initialCameraPosition: CameraPosition(
-              target: LatLng(41.311081, 69.240562),
+              target: widget.destination,
               zoom: 14,
             ),
             trafficEnabled: true,

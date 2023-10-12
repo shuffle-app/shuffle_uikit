@@ -11,6 +11,7 @@ import 'package:example/presentation/ui/unknown_page/unknown_page.dart';
 import 'package:example/presentation/ui/welcome/welcome_page.dart';
 import 'package:example/test_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class AppRouter {
@@ -99,6 +100,7 @@ class AppRouter {
       case AppRoutes.mapDirections:
         return MaterialPageRoute(
           builder: (context) => MapDirectionsPage(
+            destination: const LatLng(41.411081, 69.240562),
             onCurrentLocationRequested: () {},
             searchController: TextEditingController(),
             destinationTitle: 'At.mosphere | Burj Khalifa',
