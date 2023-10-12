@@ -29,6 +29,7 @@ class UiKitBottomModalSheet extends StatelessWidget {
         GestureDetector(onTap: Navigator.of(context).pop),
         RepaintBoundary(
             child: Container(
+    clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
             color: Colors.black,
             borderRadius: BorderRadiusFoundation.onlyTop24,

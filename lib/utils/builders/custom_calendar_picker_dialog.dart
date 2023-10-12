@@ -100,7 +100,7 @@ Future<void> showUiKitCalendarFromToDialog(
           ),
           _CustomCalendarPickerDialog(
             lastDate: lastDate,
-            fromDate: from,
+            firstDate: from,
             cancelText: 'No end date',
             okText: 'Confirm',
           ),
@@ -113,19 +113,12 @@ Future<void> showUiKitCalendarFromToDialog(
 class _CustomCalendarPickerDialog extends StatefulWidget {
   final DateTime? lastDate;
   final DateTime? firstDate;
-  final DateTime? fromDate;
   final String? okText;
   final String? cancelText;
   final bool Function(DateTime day)? selectableDayPredicate;
 
   const _CustomCalendarPickerDialog(
-      {Key? key,
-      this.firstDate,
-      this.lastDate,
-      this.fromDate,
-      this.okText,
-      this.cancelText,
-      this.selectableDayPredicate})
+      {Key? key, this.firstDate, this.lastDate, this.okText, this.cancelText, this.selectableDayPredicate})
       : super(key: key);
 
   @override
@@ -138,7 +131,7 @@ class _CustomCalendarPickerDialogState extends State<_CustomCalendarPickerDialog
   @override
   void initState() {
     super.initState();
-    selectedDate = widget.fromDate?.add(const Duration(days: 1)) ?? DateTime.now();
+    selectedDate = widget.firstDate ?? DateTime.now();
   }
 
   _onSelectionChanged(DateTime selected) {
@@ -160,7 +153,7 @@ class _CustomCalendarPickerDialogState extends State<_CustomCalendarPickerDialog
             selectableDayPredicate: widget.selectableDayPredicate,
             onDateChanged: _onSelectionChanged,
             initialDate: selectedDate,
-            firstDate: widget.firstDate ?? widget.fromDate ?? DateTime.now().subtract(const Duration(days: 365)),
+            firstDate: widget.firstDate ?? DateTime.now().subtract(const Duration(days: 365)),
             lastDate: widget.lastDate ?? DateTime.now().add(const Duration(days: 365)),
           ),
           SpacingFoundation.horizontalSpace16,
