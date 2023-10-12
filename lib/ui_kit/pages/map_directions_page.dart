@@ -27,7 +27,6 @@ class MapDirectionsPage extends StatefulWidget {
 
 class _MapDirectionsPageState extends State<MapDirectionsPage> {
   GoogleMapController? controller;
-  LocationPickerSearchOverlayController locationPickerSearchOverlayController = LocationPickerSearchOverlayController();
   late final FocusNode _focusNode = FocusNode()
     ..addListener(() {
       if (!_focusNode.hasFocus) {
@@ -67,7 +66,6 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
 
   @override
   void dispose() {
-    locationPickerSearchOverlayController.dispose();
     controller?.dispose();
     widget.currentLocationNotifier?.removeListener(_currentLocationListener);
     super.dispose();
