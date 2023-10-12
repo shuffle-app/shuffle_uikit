@@ -20,8 +20,6 @@ class _ExamplesPageState extends State<ExamplesPage> with SingleTickerProviderSt
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = context.uiKitTheme?.boldTextTheme;
-
     return Scaffold(
       body: Center(
         child: Column(

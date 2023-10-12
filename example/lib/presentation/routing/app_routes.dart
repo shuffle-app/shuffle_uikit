@@ -11,4 +11,5 @@ class AppRoutes {
   static const String welcomePage = '/welcomePage';
   static const String animationsPage = '/animationsPage';
   static const String animexample = '/animexample';
+  static const String mapDirections = '/mapDirections';
 }

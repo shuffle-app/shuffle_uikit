@@ -25,15 +25,22 @@ class UiKitMediumAdBannerCard extends StatelessWidget implements AdvertisementFa
     final height = availableWidth * 0.7583;
 
     return Material(
-      borderRadius: BorderRadiusFoundation.all24,
       elevation: 0,
-      clipBehavior: Clip.hardEdge,
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadiusFoundation.all24,
+        side: BorderSide(
+          color: Colors.white.withOpacity(0.15),
+          width: 1.5,
+        ),
+      ),
       child: InkWell(
         onTap: onTap,
         child: Ink(
           height: customHeight ?? height,
           width: availableWidth,
           child: Stack(
+            clipBehavior: Clip.antiAliasWithSaveLayer,
             fit: StackFit.expand,
             children: [
               ImageWidget(

@@ -10,10 +10,12 @@ class UiKitElevatedInputWithSwitchingPrefix extends StatelessWidget {
   final VoidCallback? onTap;
   final FocusNode? focusNode;
   final VoidCallback? onInputCleaned;
+  final bool readOnly;
 
   const UiKitElevatedInputWithSwitchingPrefix({
     super.key,
     required this.controller,
+    this.readOnly = false,
     this.hintText,
     this.prefix,
     this.suffixIcon,
@@ -40,6 +42,7 @@ class UiKitElevatedInputWithSwitchingPrefix extends StatelessWidget {
               focusNode: focusNode,
               cursorColor: Colors.black,
               controller: controller,
+              readOnly: readOnly,
               style: textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
               decoration: InputDecoration(
                 border: InputBorder.none,
@@ -51,8 +54,7 @@ class UiKitElevatedInputWithSwitchingPrefix extends StatelessWidget {
                 filled: fillColor != null,
                 fillColor: fillColor,
                 hintText: hintText,
-                hintStyle:
-                    textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
+                hintStyle: textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                 suffix: suffixIcon ??
                     GestureDetector(
                       onTap: () {
