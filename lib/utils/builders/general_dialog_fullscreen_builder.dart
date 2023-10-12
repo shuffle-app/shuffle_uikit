@@ -2,38 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
-  // final Key key=Key(DateTime.now().toString());
-
-  // return Navigator.push(
-  //   context,
-  //   PageRouteBuilder(
-  //     opaque: false,
-  //     barrierDismissible: true,
-  //     barrierLabel: '',
-  //     maintainState: false,
-  //     fullscreenDialog: true,
-  //     barrierColor: const Color(0xff2A2A2A),
-  //     transitionDuration: const Duration(milliseconds: 250),
-  //     transitionsBuilder: (context, animation1, animation2, child) {
-  //       return SlideTransition(
-  //         position: Tween<Offset>(
-  //           end: Offset.zero,
-  //           begin: const Offset(0.0, 1.0),
-  //         ).animate(animation1),
-  //         child: child,
-  //       );
-  //     },
-  //     pageBuilder: (
-  //       BuildContext context,
-  //       Animation<double> animation1,
-  //       Animation<double> animation2,
-  //     ) {
-  //       return UiKitBottomModalSheet(
-  //         data: data,
-  //       );
-  //     },
-  //   ),
-  // );
 
   return showModalBottomSheet(
     barrierLabel: '',
@@ -67,6 +35,7 @@ void _empty() {}
 //ignore: prefer-match-file-name
 class GeneralDialogData {
   final bool useRootNavigator;
+  final bool resizeToAvoidBottomInset;
   final Widget child;
 
   final Widget? bottomBar;
@@ -78,6 +47,7 @@ class GeneralDialogData {
   GeneralDialogData({
     this.customHeight,
     this.useRootNavigator = true,
+    this.resizeToAvoidBottomInset = true,
     required this.child,
     this.bottomBar,
     this.topPadding,

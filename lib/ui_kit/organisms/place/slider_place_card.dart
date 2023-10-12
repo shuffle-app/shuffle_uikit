@@ -37,7 +37,7 @@ class SliderPlaceCard extends StatelessWidget {
                 children: [
                   for (final placeTag in slidablePlaceCardData.placeTags ?? [])
                     UiKitTagWidget(
-                      title: placeTag.title,
+                      title: placeTag.name,
                       icon: placeTag.iconPath,
                     ).paddingOnly(right: 8.sp),
                 ],

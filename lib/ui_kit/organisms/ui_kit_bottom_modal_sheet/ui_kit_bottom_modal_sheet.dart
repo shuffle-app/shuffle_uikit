@@ -18,7 +18,7 @@ class UiKitBottomModalSheet extends StatelessWidget {
         (MediaQuery.viewPaddingOf(context).top == 0 ? 45.h : MediaQuery.viewPaddingOf(context).top + 30.h);
 
     ///проверяем не открыта ли клавиатура, вычитаем ее размер из верхнего отступа
-    if (MediaQuery.viewInsetsOf(context).bottom != 0) {
+    if (MediaQuery.viewInsetsOf(context).bottom != 0 && data.resizeToAvoidBottomInset) {
       topPadding -= MediaQuery.viewInsetsOf(context).bottom;
       topPadding = topPadding < 0 ? MediaQuery.viewPaddingOf(context).top + 30.h : topPadding;
     }
@@ -33,7 +33,7 @@ class UiKitBottomModalSheet extends StatelessWidget {
             color: Colors.black,
             borderRadius: BorderRadiusFoundation.onlyTop24,
           ),
-          child: Column(
+          child: Scaffold(body: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               const SlidingChip().paddingOnly(
@@ -72,7 +72,7 @@ class UiKitBottomModalSheet extends StatelessWidget {
                 ),
               ),
             ],
-          ),
+          )),
         ).paddingOnly(
           top: topPadding,
         ))
