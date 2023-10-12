@@ -80,11 +80,11 @@ class ImageWidget extends StatelessWidget {
       );
     } else if (link!.length > 4 && link!.substring(0, 4) == 'http') {
       if (link!.split('.').lastOrNull == 'mp4' || isVideo) {
-        FutureBuilder(
+        return FutureBuilder(
             future: _takeFrameFromVideo(link!),
             builder: (context, snapshot) {
               return snapshot.connectionState == ConnectionState.done
-                  ? VideoPlayer(snapshot.data as VideoPlayerController)
+                  ? SizedBox(width: width, height: height, child: VideoPlayer(snapshot.data as VideoPlayerController))
                   : placeholder;
             });
       }
