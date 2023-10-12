@@ -134,6 +134,13 @@ class _MainPageState extends State<MainPage> {
                 onPressed: () => Navigator.pushNamed(context, AppRoutes.animexample),
               ),
             ),
+            SpacingFoundation.verticalSpace16,
+            context.button(
+              data: BaseUiKitButtonData(
+                text: 'Testing directions on map',
+                onPressed: () => Navigator.pushNamed(context, AppRoutes.mapDirections),
+              ),
+            ),
           ],
         ),
       ),

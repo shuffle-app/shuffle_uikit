@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/utils/animations/wave_splash.dart';
 
 class UiKitThemes {
   static const _pickerTextStyle = TextStyle(
@@ -446,8 +445,7 @@ class UiKitThemes {
           errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
           focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
           focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
-          disabledBorder:
-              UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
+          disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
         ),
         customAppBapTheme: AppBarTheme(
           iconTheme: const IconThemeData(

@@ -9,12 +9,14 @@ class UiKitColorScheme extends ColorScheme {
   final Color surface5;
   final Color uiPrimary;
   final Color darkNeutral100 = ColorsFoundation.darkNeutral100;
+  final Color darkNeutral200 = ColorsFoundation.darkNeutral200;
   final Color darkNeutral300 = ColorsFoundation.darkNeutral300;
   final Color darkNeutral400 = ColorsFoundation.darkNeutral400;
   final Color darkNeutral500 = ColorsFoundation.darkNeutral500;
   final Color darkNeutral600 = ColorsFoundation.darkNeutral600;
   final Color darkNeutral900 = ColorsFoundation.darkNeutral900;
   final Color grayForegroundColor;
+  final Color info = ColorsFoundation.info;
 
   @override
   final Color inversePrimary;

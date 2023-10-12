@@ -10,9 +10,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:video_player/video_player.dart';
 
 class ImageWidget extends StatelessWidget {
-  static const placeholder = Shimmer(
-      gradient: GradientFoundation.greyGradient,
-      child: UiKitBigPhotoErrorWidget());
+  static const placeholder = Shimmer(gradient: GradientFoundation.greyGradient, child: UiKitBigPhotoErrorWidget());
 
   final String? link;
   final AssetGenImage? rasterAsset;
@@ -26,6 +24,7 @@ class ImageWidget extends StatelessWidget {
   final bool lowerQuality;
   final bool isVideo;
   final BlendMode? colorBlendMode;
+  final bool mentionPackage;
 
   const ImageWidget({
     Key? key,
@@ -33,6 +32,7 @@ class ImageWidget extends StatelessWidget {
     this.fit,
     this.width,
     this.height,
+    this.mentionPackage = true,
     this.lowerQuality = false,
     this.isVideo = false,
     this.rasterAsset,
@@ -44,8 +44,7 @@ class ImageWidget extends StatelessWidget {
   }) : super(key: key);
 
   Future _takeFrameFromVideo(String link) async {
-    final VideoPlayerController controller =
-        VideoPlayerController.networkUrl(Uri.parse(link));
+    final VideoPlayerController controller = VideoPlayerController.networkUrl(Uri.parse(link));
     await controller.initialize();
     await controller.seekTo(const Duration(seconds: 1));
 
@@ -57,7 +56,7 @@ class ImageWidget extends StatelessWidget {
     if (rasterAsset != null) {
       return rasterAsset!.image(
         color: color,
-        package: 'shuffle_uikit',
+        package: mentionPackage ? 'shuffle_uikit' : null,
         fit: fit,
         height: height,
         width: width,
@@ -65,7 +64,7 @@ class ImageWidget extends StatelessWidget {
       );
     } else if (svgAsset != null) {
       return svgAsset!.svg(
-        package: 'shuffle_uikit',
+        package: mentionPackage ? 'shuffle_uikit' : null,
         colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
         // color: color,
         fit: fit ?? BoxFit.none,
@@ -117,9 +116,8 @@ class ImageWidget extends StatelessWidget {
         colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
         // color: color,
         height: height,
-        package: 'shuffle_uikit',
-        placeholderBuilder: (context) =>
-            errorWidget ?? const DefaultImageErrorWidget(),
+        package: mentionPackage ? 'shuffle_uikit' : null,
+        placeholderBuilder: (context) => errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else if (link!.contains('asset')) {
       return Image.asset(
@@ -129,31 +127,27 @@ class ImageWidget extends StatelessWidget {
         color: color,
         height: height,
         colorBlendMode: colorBlendMode,
-        package: 'shuffle_uikit',
-        errorBuilder: (context, error, trace) =>
-            errorWidget ?? const DefaultImageErrorWidget(),
+        package: mentionPackage ? 'shuffle_uikit' : null,
+        errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else {
-      return kIsWeb ?
-      Image.network(
-        link!,
-        fit: fit,
-        width: width,
-        color: color,
-        height: height,
-        errorBuilder: (context, error, trace) =>
-        errorWidget ?? const DefaultImageErrorWidget(),
-      )
-      : Image.file(
-          File(link!),
-          fit: fit,
-          width: width,
-          color: color,
-          height: height,
-          errorBuilder: (context, error, trace) =>
-          errorWidget ?? const DefaultImageErrorWidget(),
-        );
-      }
-
+      return kIsWeb
+          ? Image.network(
+              link!,
+              fit: fit,
+              width: width,
+              color: color,
+              height: height,
+              errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
+            )
+          : Image.file(
+              File(link!),
+              fit: fit,
+              width: width,
+              color: color,
+              height: height,
+              errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
+            );
+    }
   }
 }

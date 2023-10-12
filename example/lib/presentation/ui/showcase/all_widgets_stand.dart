@@ -1161,6 +1161,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 title: '',
                 subtitle: '',
                 imageLink: Assets.images.png.mockAdBanner.path,
+                adsData: BaseUiKitAdvertisementBannerData(
+                  availableWidth: 1.sw,
+                  imageLink: GraphicsFoundation.instance.png.mockAdBanner.path,
+                  title: 'title',
+                  size: AdvertisementBannerSize.large,
+                ),
               ),
               UiKitAccentCard(
                 title: 'Ballooning festival',

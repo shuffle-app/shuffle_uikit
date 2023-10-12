@@ -135,6 +135,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                     top: -SpacingFoundation.verticalSpacing8,
                     right: -SpacingFoundation.horizontalSpacing8,
                     child: context.smallButton(
+                      blurred: true,
                       data: BaseUiKitButtonData(
                           icon: AnimatedSwitcher(
                               duration: widgetAnimDurations,

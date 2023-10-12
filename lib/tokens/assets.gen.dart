@@ -1136,6 +1136,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/location.svg
   SvgGenImage get location => const SvgGenImage('assets/images/svg/location.svg');
 
+  /// File path: assets/images/svg/location_searching.svg
+  SvgGenImage get locationSearching => const SvgGenImage('assets/images/svg/location_searching.svg');
+
   /// File path: assets/images/svg/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/images/svg/logo.svg');
 
@@ -1356,6 +1359,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/tripple_arrow_black.svg
   SvgGenImage get trippleArrowBlack => const SvgGenImage('assets/images/svg/tripple_arrow_black.svg');
 
+  /// File path: assets/images/svg/unique-marker.svg
+  SvgGenImage get uniqueMarker => const SvgGenImage('assets/images/svg/unique-marker.svg');
+
   /// File path: assets/images/svg/unlink.svg
   SvgGenImage get unlink => const SvgGenImage('assets/images/svg/unlink.svg');
 
@@ -1548,6 +1554,7 @@ class $AssetsImagesSvgGen {
         like,
         loader,
         location,
+        locationSearching,
         logo,
         logout,
         mapOutlined,
@@ -1621,6 +1628,7 @@ class $AssetsImagesSvgGen {
         trendUp,
         tripleArrow,
         trippleArrowBlack,
+        uniqueMarker,
         unlink,
         user,
         videoPlus,
