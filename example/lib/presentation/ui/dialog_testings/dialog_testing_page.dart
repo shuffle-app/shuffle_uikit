@@ -158,6 +158,21 @@ class DialogTestingPage extends StatelessWidget {
                   onPressed: () => showIncorrectLoginPopUp(context, onForgotPasswordTap: () => context.pop()),
                 ),
                 SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
+                  text: 'show reset password pop up',
+                  onPressed: () => showResetPasswordPopUp(context,
+                      emailController: TextEditingController(),
+                      onSubmitted: (String value) => print(value),
+                      emailKey: GlobalKey<FormState>(),
+                      validator: (value) {
+                        if (value != null && value.length > 5 && value.contains('@')) {
+                          return null;
+                        } else {
+                          return 'Incorrect email';
+                        }
+                      }),
+                ),
+                SpacingFoundation.verticalSpace16,
               ],
             ),
           ),

@@ -16,6 +16,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.borderRadius,
     this.node,
     this.onSubmitted,
+    this.hintTextColor,
   }) : super(key: key);
 
   @override
@@ -35,6 +36,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
   final int? minLines;
   final FocusNode? node;
   final void Function(String)? onSubmitted;
+  final Color? hintTextColor;
   final BorderRadius? borderRadius;
   final bool expands;
 
@@ -66,7 +68,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
     );
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
-          ? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
+          ? widget.hintTextColor ?? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
           : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
 
