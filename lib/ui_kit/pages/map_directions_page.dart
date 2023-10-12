@@ -1,10 +1,12 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class MapDirectionsPage extends StatefulWidget {
-  final ValueNotifier<LatLng>? currentLocationNotifier;
+  final ValueNotifier<LatLng> currentLocationNotifier;
   final VoidCallback? onCurrentLocationRequested;
   final TextEditingController searchController;
   final String destinationTitle;
@@ -13,7 +15,7 @@ class MapDirectionsPage extends StatefulWidget {
 
   const MapDirectionsPage({
     Key? key,
-    this.currentLocationNotifier,
+    required this.currentLocationNotifier,
     this.onCurrentLocationRequested,
     this.onDirectionsRequested,
     required this.searchController,
@@ -27,47 +29,78 @@ class MapDirectionsPage extends StatefulWidget {
 
 class _MapDirectionsPageState extends State<MapDirectionsPage> {
   GoogleMapController? controller;
+  BitmapDescriptor markerIcon = BitmapDescriptor.defaultMarker;
+  Marker? marker;
+  final apiKey = const String.fromEnvironment('googleApiKey');
+  List<Polyline> directionLines = [];
   late final FocusNode _focusNode = FocusNode()
     ..addListener(() {
-      if (!_focusNode.hasFocus) {
-        SystemChrome.setSystemUIOverlayStyle(
-          const SystemUiOverlayStyle(
-            statusBarBrightness: Brightness.dark,
-            statusBarIconBrightness: Brightness.dark,
-            systemNavigationBarIconBrightness: Brightness.dark,
-          ),
-        );
-      }
       if (focusNotifier.value != _focusNode.hasFocus) focusNotifier.value = _focusNode.hasFocus;
     });
 
   late final ValueNotifier<bool> focusNotifier = ValueNotifier<bool>(false);
 
-  void _currentLocationListener() {
-    if (widget.currentLocationNotifier?.value != null) {
-      controller?.animateCamera(
-        CameraUpdate.newCameraPosition(
-          CameraPosition(
-            target: widget.currentLocationNotifier!.value,
-            zoom: 14,
-          ),
-        ),
-      );
-    }
-  }
-
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      widget.currentLocationNotifier?.addListener(_currentLocationListener);
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      Future.delayed(
+        const Duration(milliseconds: 500),
+        () => widget.onCurrentLocationRequested?.call(),
+      );
+      _focusNode.requestFocus();
+      widget.currentLocationNotifier.addListener(_currentLocationListener);
+    });
+  }
+
+  void _currentLocationListener() async {
+    final points = PolylinePoints();
+    final result = await points.getRouteBetweenCoordinates(
+      apiKey,
+      PointLatLng(widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
+      PointLatLng(widget.destination.latitude, widget.destination.longitude),
+    );
+    await controller?.animateCamera(
+      CameraUpdate.newLatLngBounds(
+        LatLngBounds(
+          southwest: LatLng(
+            min(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
+            min(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
+          ),
+          northeast: LatLng(
+            max(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
+            max(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
+          ),
+        ),
+        72.w,
+      ),
+    );
+    setState(() {
+      directionLines = [
+        Polyline(
+          polylineId: const PolylineId('directions'),
+          points: result.points.map((e) => LatLng(e.latitude, e.longitude)).toList(),
+          color: ColorsFoundation.info,
+          width: 4,
+          startCap: Cap.buttCap,
+          jointType: JointType.bevel,
+          endCap: Cap.roundCap,
+          visible: true,
+        ),
+      ];
+      marker = Marker(
+        markerId: const MarkerId('destination'),
+        position: LatLng(result.points.last.latitude, result.points.last.longitude),
+        icon: markerIcon,
+      );
     });
   }
 
   @override
   void dispose() {
     controller?.dispose();
-    widget.currentLocationNotifier?.removeListener(_currentLocationListener);
+    _focusNode.dispose();
+    widget.currentLocationNotifier.removeListener(_currentLocationListener);
     super.dispose();
   }
 
@@ -83,10 +116,11 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
           GoogleMap(
             onMapCreated: (mapController) => setState(() => controller = mapController),
             initialCameraPosition: CameraPosition(
-              target: widget.destination,
+              target: widget.currentLocationNotifier.value,
               zoom: 14,
             ),
-            trafficEnabled: true,
+            markers: {if (marker != null) marker!},
+            polylines: Set.from(directionLines),
             myLocationEnabled: true,
             myLocationButtonEnabled: false,
           ),
@@ -103,7 +137,11 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
               prefix: UiKitSwitchableInputPrefix(
                 secondary: GestureDetector(
                   onTap: () {
-                    _focusNode.unfocus();
+                    if (_focusNode.hasFocus) {
+                      Navigator.pop(context);
+                    } else {
+                      _focusNode.unfocus();
+                    }
                   },
                   child: ImageWidget(
                     svgAsset: GraphicsFoundation.instance.svg.arrowLeft,
@@ -124,7 +162,9 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
-        onPressed: widget.onCurrentLocationRequested ?? () {},
+        onPressed: () async {
+          widget.onCurrentLocationRequested?.call();
+        },
         elevation: 0,
         focusElevation: 0,
         hoverElevation: 0,
