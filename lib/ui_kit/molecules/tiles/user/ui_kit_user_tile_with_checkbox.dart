@@ -5,10 +5,10 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitUserTileWithCheckbox extends StatefulWidget {
   const UiKitUserTileWithCheckbox({
     super.key,
-    required this.title,
+    required this.name,
     required this.onTap,
-    required this.rating,
-    required this.avatarLink,
+     this.rating = 0,
+     this.avatarLink,
     this.isSelected = false,
     this.date,
     this.subtitle,
@@ -16,8 +16,8 @@ class UiKitUserTileWithCheckbox extends StatefulWidget {
   }) : assert((rating >= 0 && rating <= 7), 'Rating must be between 7 and 0 points.');
 
   final int rating;
-  final String title;
-  final String avatarLink;
+  final String name;
+  final String? avatarLink;
   final bool isSelected;
   final ValueChanged<bool> onTap;
   final DateTime? date;
@@ -120,7 +120,7 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                     children: [
                       Row(
                         children: [
-                          Text(widget.title, style: theme?.boldTextTheme.caption1Bold),
+                          Text(widget.name, style: theme?.boldTextTheme.caption1Bold),
                           if (widget.date != null) ...[
                             const Spacer(),
                             Text(

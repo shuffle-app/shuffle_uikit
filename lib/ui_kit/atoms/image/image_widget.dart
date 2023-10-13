@@ -19,8 +19,10 @@ class ImageWidget extends StatelessWidget {
   final double? width;
   final double? height;
   final Color? color;
+  final Color? cardColor;
   final Widget? errorWidget;
   final bool lowerQuality;
+  final bool isVideo;
   final BlendMode? colorBlendMode;
   final bool mentionPackage;
 
@@ -32,9 +34,11 @@ class ImageWidget extends StatelessWidget {
     this.height,
     this.mentionPackage = true,
     this.lowerQuality = false,
+    this.isVideo = false,
     this.rasterAsset,
     this.svgAsset,
     this.color,
+    this.cardColor,
     this.errorWidget,
     this.colorBlendMode,
   }) : super(key: key);
@@ -70,16 +74,17 @@ class ImageWidget extends StatelessWidget {
     } else if (link == null || link!.isEmpty) {
       return UiKitCardWrapper(
         width: width,
+        color: cardColor,
         height: height,
         child: errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else if (link!.length > 4 && link!.substring(0, 4) == 'http') {
-      if (link!.split('.').lastOrNull == 'mp4') {
-        FutureBuilder(
+      if (link!.split('.').lastOrNull == 'mp4' || isVideo) {
+        return FutureBuilder(
             future: _takeFrameFromVideo(link!),
             builder: (context, snapshot) {
               return snapshot.connectionState == ConnectionState.done
-                  ? VideoPlayer(snapshot.data as VideoPlayerController)
+                  ? SizedBox(width: width, height: height, child: VideoPlayer(snapshot.data as VideoPlayerController))
                   : placeholder;
             });
       }

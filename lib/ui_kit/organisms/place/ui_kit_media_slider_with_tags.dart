@@ -65,9 +65,6 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                   return BaseUiKitMediaWidget.image(media: mediaItem, width: media.length == 1 ? mediaWidth : null)
                       .paddingOnly(right: media.length == index ? 0 : SpacingFoundation.horizontalSpacing16);
                 },
-                // separatorBuilder: (context, index) => index == 0
-                //     ? const SizedBox.shrink()
-                //     : SpacingFoundation.horizontalSpace16,
               ),
             )),
         SpacingFoundation.verticalSpace14,

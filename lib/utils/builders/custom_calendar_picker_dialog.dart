@@ -19,11 +19,8 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 ///
 /// The function returns a [Future] that completes with the selected date, or null if the dialog is cancelled.
 
-Future<DateTime?> showUiKitCalendarDialog(
-  BuildContext context, {
-  DateTime? lastDate,
-  DateTime? firstDate,
-}) {
+Future<DateTime?> showUiKitCalendarDialog(BuildContext context,
+    {DateTime? lastDate, DateTime? firstDate, bool Function(DateTime day)? selectableDayPredicate}) {
   return showDialog<DateTime?>(
     context: context,
     builder: (context) => Dialog(
@@ -33,7 +30,11 @@ Future<DateTime?> showUiKitCalendarDialog(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
       ),
-      child: _CustomCalendarPickerDialog(lastDate: lastDate, firstDate: firstDate),
+      child: _CustomCalendarPickerDialog(
+        lastDate: lastDate,
+        firstDate: firstDate,
+        selectableDayPredicate: selectableDayPredicate,
+      ),
     ),
   );
 }
@@ -99,7 +100,7 @@ Future<void> showUiKitCalendarFromToDialog(
           ),
           _CustomCalendarPickerDialog(
             lastDate: lastDate,
-            fromDate: from,
+            firstDate: from,
             cancelText: 'No end date',
             okText: 'Confirm',
           ),
@@ -112,12 +113,12 @@ Future<void> showUiKitCalendarFromToDialog(
 class _CustomCalendarPickerDialog extends StatefulWidget {
   final DateTime? lastDate;
   final DateTime? firstDate;
-  final DateTime? fromDate;
   final String? okText;
   final String? cancelText;
+  final bool Function(DateTime day)? selectableDayPredicate;
 
   const _CustomCalendarPickerDialog(
-      {Key? key, this.firstDate, this.lastDate, this.fromDate, this.okText, this.cancelText})
+      {Key? key, this.firstDate, this.lastDate, this.okText, this.cancelText, this.selectableDayPredicate})
       : super(key: key);
 
   @override
@@ -130,7 +131,7 @@ class _CustomCalendarPickerDialogState extends State<_CustomCalendarPickerDialog
   @override
   void initState() {
     super.initState();
-    selectedDate = widget.fromDate?.add(const Duration(days: 1)) ?? DateTime.now();
+    selectedDate = widget.firstDate ?? DateTime.now();
   }
 
   _onSelectionChanged(DateTime selected) {
@@ -149,9 +150,10 @@ class _CustomCalendarPickerDialogState extends State<_CustomCalendarPickerDialog
         mainAxisSize: MainAxisSize.min,
         children: [
           CalendarDatePicker(
+            selectableDayPredicate: widget.selectableDayPredicate,
             onDateChanged: _onSelectionChanged,
             initialDate: selectedDate,
-            firstDate: widget.firstDate ?? widget.fromDate ?? DateTime.now().subtract(const Duration(days: 365)),
+            firstDate: widget.firstDate ?? DateTime.now().subtract(const Duration(days: 365)),
             lastDate: widget.lastDate ?? DateTime.now().add(const Duration(days: 365)),
           ),
           SpacingFoundation.horizontalSpace16,

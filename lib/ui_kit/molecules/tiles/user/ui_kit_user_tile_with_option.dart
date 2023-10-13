@@ -5,16 +5,16 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitUserTileWithOption extends StatelessWidget {
   const UiKitUserTileWithOption({
     super.key,
-    required this.title,
+    required this.name,
     required this.onOptionTap,
-    required this.avatarLink,
+    this.avatarLink,
     required this.options,
     this.date,
     this.subtitle,
   });
 
-  final String title;
-  final String avatarLink;
+  final String name;
+  final String? avatarLink;
   final VoidCallback onOptionTap;
   final List<UiKitPopUpMenuButtonOption> options;
   final String? subtitle;
@@ -27,12 +27,11 @@ class UiKitUserTileWithOption extends StatelessWidget {
     return Row(
       children: [
         SpacingFoundation.horizontalSpace12,
-        Column(
-          children: [
-            BorderedUserCircleAvatar(imageUrl: avatarLink, size: 45.w),
-            SpacingFoundation.verticalSpace2,
-          ],
-        ),
+        BorderedUserCircleAvatar(
+          imageUrl: avatarLink,
+          size: 45.w,
+          name: name,
+        ).paddingOnly(bottom: SpacingFoundation.verticalSpacing2),
         SpacingFoundation.horizontalSpace12,
         Expanded(
           child: Column(
@@ -40,7 +39,7 @@ class UiKitUserTileWithOption extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text(title, style: theme?.boldTextTheme.caption1Bold),
+                  Text(name, style: theme?.boldTextTheme.caption1Bold),
                   const Spacer(),
                   if (date != null) ...[
                     Text(
