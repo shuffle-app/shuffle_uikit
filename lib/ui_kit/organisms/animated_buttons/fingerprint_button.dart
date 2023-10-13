@@ -60,16 +60,12 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
   void initState() {
     super.initState();
     _controller = AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    _shadowController = AnimationController(vsync: this, duration: const Duration(milliseconds: 200));
     _flipController = FlipCardController();
     _isCompleted = widget.isCompleted ?? false;
     _animationDuration = _initialDuration;
     _finishPosition = Offset(widget.parentWidth, 0);
     _buttonCenter = (widget.width ?? 105.w) / 2;
-
-    _shadowController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 200),
-    );
     _shadowAnimation = Tween(begin: 0.0, end: 1.0).animate(_shadowController);
 
     _controller.addStatusListener((status) => _setAnimationListener(status));
@@ -209,7 +205,6 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
         curve: _isCompleted ? Curves.easeIn : Curves.bounceOut,
         duration: _animationDuration,
         left: (widget.isCompleted ?? false) ? null : _updatePosition(currentPosition.dx),
-        // right: (widget.isCompleted ?? false) ? 0 : null,
         child: ConstrainedBox(
           constraints: BoxConstraints(
             minHeight: widget.height ?? height,
