@@ -176,7 +176,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace16,
               UiKitUserTileWithCheckbox(
-                title: 'Marry Williams',
+                name: 'Marry Williams',
                 subtitle: 'Any cheerful person can invite me',
                 onTap: (_) {},
                 rating: 5,
