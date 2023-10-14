@@ -27,7 +27,7 @@ class UiKitLargeAdBannerCard extends StatelessWidget implements AdvertisementFac
       elevation: 0,
       clipBehavior: Clip.antiAliasWithSaveLayer,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadiusFoundation.all24,
+        borderRadius: BorderRadiusFoundation.all40,
         side: BorderSide(
           color: Colors.white.withOpacity(0.15),
           width: 1.5,
@@ -72,6 +72,6 @@ class UiKitLargeAdBannerCard extends StatelessWidget implements AdvertisementFac
           ),
         ),
       ),
-    );
+    ).paddingAll(EdgeInsetsFoundation.all16);
   }
 }
