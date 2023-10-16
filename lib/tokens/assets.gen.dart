@@ -878,6 +878,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/analytics_business.svg
   SvgGenImage get analyticsBusiness => const SvgGenImage('assets/images/svg/analytics_business.svg');
 
+  /// File path: assets/images/svg/apple_logo.svg
+  SvgGenImage get appleLogo => const SvgGenImage('assets/images/svg/apple_logo.svg');
+
   /// File path: assets/images/svg/aquapark.svg
   SvgGenImage get aquapark => const SvgGenImage('assets/images/svg/aquapark.svg');
 
@@ -1031,6 +1034,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/exclamation.svg
   SvgGenImage get exclamation => const SvgGenImage('assets/images/svg/exclamation.svg');
 
+  /// File path: assets/images/svg/facebook_logo.svg
+  SvgGenImage get facebookLogo => const SvgGenImage('assets/images/svg/facebook_logo.svg');
+
   /// File path: assets/images/svg/family.svg
   SvgGenImage get family => const SvgGenImage('assets/images/svg/family.svg');
 
@@ -1054,6 +1060,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/food.svg
   SvgGenImage get food => const SvgGenImage('assets/images/svg/food.svg');
+
+  /// File path: assets/images/svg/google_logo.svg
+  SvgGenImage get googleLogo => const SvgGenImage('assets/images/svg/google_logo.svg');
 
   /// File path: assets/images/svg/gradient_plus.svg
   SvgGenImage get gradientPlus => const SvgGenImage('assets/images/svg/gradient_plus.svg');
@@ -1468,6 +1477,7 @@ class $AssetsImagesSvgGen {
         analyticsOutline,
         analytics,
         analyticsBusiness,
+        appleLogo,
         aquapark,
         archive,
         armchair,
@@ -1519,6 +1529,7 @@ class $AssetsImagesSvgGen {
         dollarOutlined,
         emptyRadio,
         exclamation,
+        facebookLogo,
         family,
         files,
         filledRadio,
@@ -1527,6 +1538,7 @@ class $AssetsImagesSvgGen {
         fireWhite,
         flag,
         food,
+        googleLogo,
         gradientPlus,
         gradientStar,
         gym,
