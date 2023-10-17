@@ -87,6 +87,7 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
                               widget.values.indexOf(_currentValueNotifier.value) * itemWidth,
                               duration: const Duration(milliseconds: 100),
                               curve: Curves.easeIn));
+                          widget.onValueChanged?.call(widget.values[widget.values.indexOf(_currentValueNotifier.value)]);
                         }
 
                         return true;
@@ -94,7 +95,6 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
                       child: ListWheelScrollView(
                         controller: _scrollController,
                         onSelectedItemChanged: (index) {
-                          widget.onValueChanged?.call(widget.values[index]);
                           _currentValueNotifier.value = widget.values[index];
                         },
                         renderChildrenOutsideViewport: false,
