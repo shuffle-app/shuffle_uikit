@@ -111,7 +111,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
           valueListenable: _isCompleted,
           builder: (_, isCompleted, __) => Positioned(
             top: (height / 2) - 10,
-            left: _currentWidth / 2 - 80.w,
+            left: 70.w,
             child: AnimatedOpacity(
               opacity: isCompleted ? 1.0 : 0.0,
               duration: const Duration(milliseconds: 300),
