@@ -35,7 +35,7 @@ class LocationSelectionWidget extends StatefulWidget {
 }
 
 class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
-  bool _isPlacesEmpty() {
+  bool _isPlaceEmpty() {
     if ((widget.places?.isEmpty ?? true) && (widget.selectablePlaces?.isEmpty ?? true)) {
       return true;
     }
@@ -50,10 +50,10 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
 
     return UiKitCardWrapper(
       color: theme?.colorScheme.inversePrimary,
-      height: _isPlacesEmpty() ? null : widget.height ?? 0.45.sh,
+      height: _isPlaceEmpty() ? null : widget.height ?? 0.45.sh,
       child: Column(
         children: [
-          if (!_isPlacesEmpty())
+          if (!_isPlaceEmpty())
             Expanded(
               child: ListView.separated(
                 padding: EdgeInsets.only(
@@ -81,7 +81,7 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                             backgroundColor: theme?.colorScheme.primary,
                             color: Colors.transparent,
                             data: BaseUiKitButtonData(
-                              onPressed: () => widget.onConfirmPlaceTap!.call(widget.places![index]),
+                              onPressed: () => widget.onConfirmPlaceTap?.call(widget.places![index]),
                               text: 'confirm',
                             ),
                           )
@@ -99,7 +99,7 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
               .gradientButton(
                 data: BaseUiKitButtonData(
                   onPressed: () => widget.places != null
-                      ? widget.onNewPlaceTap!.call()
+                      ? widget.onNewPlaceTap?.call()
                       : widget.onConfirmTap?.call(
                           widget.selectablePlaces![selectedIndex].address,
                           widget.selectablePlaces![selectedIndex].latitude,
