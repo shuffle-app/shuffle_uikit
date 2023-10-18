@@ -32,6 +32,7 @@ export 'horizontal_scroll/ui_kit_horizontal_scroll_3d.dart';
 export 'lists/ui_kit_searchable_list_body.dart';
 export 'menu/ui_kit_menu.dart';
 export 'place/base_place_action_card.dart';
+export 'place/choosing_location_widget.dart';
 export 'place/donation_map_preview.dart';
 export 'place/point_balance_place_action_card.dart';
 export 'place/slider_place_card.dart';

@@ -42,6 +42,7 @@ extension FactoryExtention on BuildContext {
     bool? blurred,
     bool uppercase = true,
     Color? color,
+    Color? backgroundColor,
   }) {
     return WidgetsFactory.of(this)!
         .createSmallButton(
@@ -50,6 +51,7 @@ extension FactoryExtention on BuildContext {
           blurred: blurred,
           uppercase: uppercase,
           color: color,
+          backgroundColor: backgroundColor,
         )
         .build(this);
   }

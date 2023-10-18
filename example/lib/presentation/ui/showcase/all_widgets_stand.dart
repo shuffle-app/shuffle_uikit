@@ -327,6 +327,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ],
               ),
               SpacingFoundation.verticalSpace16,
+              ChoosingLocationWidget(
+                places: List.generate(17, (_) => 'At.Moshpere'),
+                onConfirmTap: (String placeName) => print('$placeName was tapped!'),
+                onNewPlaceTap: () => print('new place was tapped!'),
+              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20),
+              SpacingFoundation.verticalSpace16,
               UiKitMessageCard(
                 name: 'Eugene Carter',
                 username: '@racerboi',
