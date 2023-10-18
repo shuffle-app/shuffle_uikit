@@ -37,7 +37,8 @@ class FingerprintButton extends StatefulWidget {
 }
 
 class _FingerprintButtonState extends State<FingerprintButton> with TickerProviderStateMixin {
-  final ValueNotifier<Offset> _currentPosition = ValueNotifier<Offset>(Offset.zero);
+  late final ValueNotifier<Offset> _currentPosition;
+
   final Offset _startPosition = Offset.zero;
   late Offset _finishPosition;
   late Duration _animationDuration;
@@ -65,6 +66,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
     _isCompleted = widget.isCompleted ?? false;
     _animationDuration = _initialDuration;
     _finishPosition = Offset(widget.parentWidth, 0);
+    _currentPosition = _isCompleted ? ValueNotifier<Offset>(_finishPosition) : ValueNotifier<Offset>(Offset.zero);
     _buttonCenter = (widget.width ?? 105.w) / 2;
     _shadowAnimation = Tween(begin: 0.0, end: 1.0).animate(_shadowController);
 
@@ -174,9 +176,9 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
   @override
   void didUpdateWidget(covariant FingerprintButton oldWidget) {
     super.didUpdateWidget(oldWidget);
-    _finishPosition = Offset(widget.parentWidth - (widget.width ?? 105.w), 0);
-    if (widget.isCompleted != oldWidget.isCompleted && widget.isCompleted != null) {
-      _isCompleted = widget.isCompleted!;
+    setState(() => _finishPosition = Offset(widget.parentWidth - (widget.width ?? 105.w), 0));
+    if (widget.isCompleted != null) {
+      setState(() => _isCompleted = widget.isCompleted!);
       if (_isCompleted) {
         _flipController.toggleCard();
         _currentPosition.value = _finishPosition;
@@ -205,6 +207,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
         curve: _isCompleted ? Curves.easeIn : Curves.bounceOut,
         duration: _animationDuration,
         left: (widget.isCompleted ?? false) ? null : _updatePosition(currentPosition.dx),
+        right: (widget.isCompleted ?? false) ? _finishPosition.dx + (widget.width ?? 105.w) : null,
         child: ConstrainedBox(
           constraints: BoxConstraints(
             minHeight: widget.height ?? height,
