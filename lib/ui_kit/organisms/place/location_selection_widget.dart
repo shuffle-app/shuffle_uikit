@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class ChoosingLocationWidget extends StatelessWidget {
-  const ChoosingLocationWidget({
+class LocationSelectionWidget extends StatelessWidget {
+  const LocationSelectionWidget({
     super.key,
     required this.places,
     required this.onConfirmTap,
@@ -46,7 +46,7 @@ class ChoosingLocationWidget extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
-                        SpacingFoundation.horizontalSpace16,
+                        SpacingFoundation.verticalSpace16,
                         context.smallButton(
                           backgroundColor: theme?.colorScheme.primary,
                           color: Colors.transparent,

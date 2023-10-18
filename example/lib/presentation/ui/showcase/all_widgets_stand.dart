@@ -327,7 +327,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ],
               ),
               SpacingFoundation.verticalSpace16,
-              ChoosingLocationWidget(
+              LocationSelectionWidget(
                 places: List.generate(17, (_) => 'At.Moshpere'),
                 onConfirmTap: (String placeName) => print('$placeName was tapped!'),
                 onNewPlaceTap: () => print('new place was tapped!'),
