@@ -16,6 +16,7 @@ class AllWidgetsStand extends StatefulWidget {
 class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final TextEditingController _controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   // final ScrollController _scrollController = ScrollController();
   final GlobalKey _gradientTextKey = GlobalKey();
   double progress = 0.0;
@@ -148,6 +149,16 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   size: AdvertisementBannerSize.small,
                 ),
               ),
+              SpacingFoundation.verticalSpace16,
+              LocationSelectionWidget(
+                selectablePlaces: List.generate(
+                  7,
+                  (index) => (address: 'At.Moshpere', latitude: index.toDouble(), longitude: index.toDouble()),
+                ),
+                onConfirmTap: (String address, double latitude, double longitude) => print(
+                  '$address, $latitude, $longitude',
+                ),
+              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20),
               SpacingFoundation.verticalSpace16,
               context.advertisementBanner(
                 data: BaseUiKitAdvertisementBannerData(
@@ -326,12 +337,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ),
                 ],
               ),
-              SpacingFoundation.verticalSpace16,
-              LocationSelectionWidget(
-                places: List.generate(17, (_) => 'At.Moshpere'),
-                onConfirmTap: (String placeName) => print('$placeName was tapped!'),
-                onNewPlaceTap: () => print('new place was tapped!'),
-              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20),
               SpacingFoundation.verticalSpace16,
               UiKitMessageCard(
                 name: 'Eugene Carter',
