@@ -9,15 +9,15 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class FingerprintButton extends StatefulWidget {
   const FingerprintButton({
     super.key,
+    required this.title,
+    required this.parentWidth,
+    required this.animationPath,
+    required this.onCompletedWidget,
     this.width,
     this.height,
     this.subtitle,
     this.onPressed,
     this.isCompleted,
-    required this.title,
-    required this.parentWidth,
-    required this.animationPath,
-    required this.onCompletedWidget,
     this.onCompleted,
   });
 
@@ -66,7 +66,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
     _isCompleted = widget.isCompleted ?? false;
     _animationDuration = _initialDuration;
     _finishPosition = Offset(widget.parentWidth, 0);
-    _currentPosition = _isCompleted ? ValueNotifier<Offset>(_finishPosition) : ValueNotifier<Offset>(Offset.zero);
+    _currentPosition = ValueNotifier<Offset>(Offset.zero);
     _buttonCenter = (widget.width ?? 105.w) / 2;
     _shadowAnimation = Tween(begin: 0.0, end: 1.0).animate(_shadowController);
 
@@ -181,7 +181,6 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
       setState(() => _isCompleted = widget.isCompleted!);
       if (_isCompleted) {
         _flipController.toggleCard();
-        _currentPosition.value = _finishPosition;
       }
     }
   }
@@ -207,7 +206,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
         curve: _isCompleted ? Curves.easeIn : Curves.bounceOut,
         duration: _animationDuration,
         left: (widget.isCompleted ?? false) ? null : _updatePosition(currentPosition.dx),
-        right: (widget.isCompleted ?? false) ? _finishPosition.dx + (widget.width ?? 105.w) : null,
+        right: (widget.isCompleted ?? false) ? 0 : null,
         child: ConstrainedBox(
           constraints: BoxConstraints(
             minHeight: widget.height ?? height,
