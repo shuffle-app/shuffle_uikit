@@ -89,6 +89,7 @@ class LocationDetailsSheet extends StatelessWidget {
                 if (expanded && hasLocations) SpacingFoundation.verticalSpace12,
                 context.gradientButton(
                   data: BaseUiKitButtonData(
+                    fit: ButtonFit.fitWidth,
                     text: !controller.hasSelectedPlace ? 'New place' : 'Confirm',
                     onPressed: onLocationConfirmed,
                   ),
