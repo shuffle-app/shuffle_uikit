@@ -60,7 +60,7 @@ class UiKitContentTypeColoredTile extends StatelessWidget {
                   spreadRadius: -8,
                 ),
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.25),
+                  color: Colors.black.withOpacity(0.15),
                   offset: const Offset(16, 0),
                   blurRadius: 10,
                   spreadRadius: 0,
@@ -97,7 +97,7 @@ class UiKitContentTypeColoredTile extends StatelessWidget {
                     ),
                   ],
                 ),
-              ).paddingAll(EdgeInsetsFoundation.all24),
+              ).paddingAll(EdgeInsetsFoundation.all16),
             ),
           ),
           Center(
