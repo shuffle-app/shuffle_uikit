@@ -177,7 +177,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
   void didUpdateWidget(covariant FingerprintButton oldWidget) {
     super.didUpdateWidget(oldWidget);
     setState(() => _finishPosition = Offset(widget.parentWidth - (widget.width ?? 105.w), 0));
-    if (widget.isCompleted != null) {
+    if (widget.isCompleted != null && widget.isCompleted != oldWidget.isCompleted) {
       setState(() => _isCompleted = widget.isCompleted!);
       if (_isCompleted) {
         _flipController.toggleCard();
