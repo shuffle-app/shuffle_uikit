@@ -35,21 +35,25 @@ class UiKitWeatherInfoCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                active ? '$temperature°C' : 'OFF',
-                style: temperatureStyle,
-              ),
-              Text(
-                active ? weatherType : 'Weather',
-                style: weatherTypeStyle,
-              ),
-            ],
-          ),
+          Flexible(
+              flex: 2,
+              child:
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    active ? '$temperature°C' : 'OFF',
+                    style: temperatureStyle,
+                  ),
+                  Text(
+                    active ? weatherType : 'Weather',
+                    style: weatherTypeStyle,
+                  ),
+                ],
+              )),
           SpacingFoundation.horizontalSpace16,
+          Flexible(child:
           Container(
             decoration: BoxDecoration(
               boxShadow: [
@@ -67,9 +71,9 @@ class UiKitWeatherInfoCard extends StatelessWidget {
               width: 40.w,
               fit: BoxFit.fitWidth,
             ),
-          ),
+          )),
         ],
-      ),
+      ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing4),
     );
   }
 }
