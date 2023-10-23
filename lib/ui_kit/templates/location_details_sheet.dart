@@ -30,51 +30,35 @@ class _LocationDetailsSheetState extends State<LocationDetailsSheet> {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<LocationDetailsSheetState>(
-      stream: widget.controller.sheetStateStream,
-      builder: (context, snapshot) {
-        final state = snapshot.data;
-
-        final expanded = state == LocationDetailsSheetState.expanded;
-        final hidden = state == LocationDetailsSheetState.hidden;
-        final hasLocations = widget.controller.knownLocations.isNotEmpty;
-        final canShowList = expanded && hasLocations;
-
-        if (hidden) return SpacingFoundation.none;
-
-        return Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadiusFoundation.all24,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.3),
-                blurRadius: 1,
-                offset: const Offset(0, 1),
-              ),
-              BoxShadow(
-                color: Colors.black.withOpacity(0.15),
-                blurRadius: 4,
-                offset: const Offset(0, 4),
-              ),
-            ],
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadiusFoundation.all24,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.3),
+            blurRadius: 1,
+            offset: const Offset(0, 1),
           ),
-          child: canShowList
-              ? _isNewPlaceTapped
-                  ? LocationSelectionWidget(
-                      knownLocations: widget.controller.knownLocations,
-                      onKnownLocationConfirmed: widget.onKnownLocationConfirmed,
-                    )
-                  : LocationSelectionWidget.suggestions(
-                      places: widget.suggestionPlaces,
-                      onConfirmPlaceTap: widget.onConfirmPlaceTap,
-                      onNewPlaceTap: () {
-                        widget.onNewPlaceTap.call();
-                        setState(() => _isNewPlaceTapped = true);
-                      },
-                    )
-              : SpacingFoundation.none,
-        );
-      },
+          BoxShadow(
+            color: Colors.black.withOpacity(0.15),
+            blurRadius: 4,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: _isNewPlaceTapped
+          ? LocationSelectionWidget(
+              knownLocations: widget.controller.knownLocations,
+              onKnownLocationConfirmed: widget.onKnownLocationConfirmed,
+            )
+          : LocationSelectionWidget.suggestions(
+              places: widget.suggestionPlaces,
+              onConfirmPlaceTap: widget.onConfirmPlaceTap,
+              onNewPlaceTap: () {
+                widget.onNewPlaceTap.call();
+                setState(() => _isNewPlaceTapped = true);
+              },
+            ),
     );
   }
 }
