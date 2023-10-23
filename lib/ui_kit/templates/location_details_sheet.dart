@@ -47,58 +47,19 @@ class LocationDetailsSheet extends StatelessWidget {
               ),
             ],
           ),
-          child: UiKitCardWrapper(
-            borderRadius: BorderRadiusFoundation.all24,
-            color: Colors.white,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                AnimatedContainer(
-                  duration: const Duration(milliseconds: 250),
-                  height: canShowList ? 0.32.sh : 0,
-                  child: canShowList
-                      ? ListView.separated(
-                          padding: EdgeInsets.zero,
-                          itemBuilder: (context, index) {
-                            final location = controller.knownLocations.elementAt(index);
-
-                            return Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    location.title,
-                                    style: regularTextTheme?.caption1.copyWith(color: Colors.black),
-                                  ),
-                                ),
-                                context.smallButton(
-                                  color: Colors.black,
-                                  data: BaseUiKitButtonData(
-                                    text: 'Confirm',
-                                    onPressed: () => onKnownLocationConfirmed?.call(location),
-                                  ),
-                                ),
-                              ],
-                            );
-                          },
-                          separatorBuilder: (context, index) => SpacingFoundation.verticalSpace12,
-                          itemCount: controller.knownLocations.length,
-                        )
-                      : SpacingFoundation.none,
+          child: canShowList
+              ? LocationSelectionWidget.suggestions(
+                  places: List.generate(
+                    controller.knownLocations.length,
+                    (_) => controller.knownLocations[_].title,
+                  ).toList(),
+                  onConfirmPlaceTap: (_) {},
+                  onNewPlaceTap: () {},
+                )
+              : SizedBox.shrink().paddingSymmetric(
+                  horizontal: SpacingFoundation.horizontalSpacing16,
+                  vertical: SpacingFoundation.verticalSpacing12,
                 ),
-                if (expanded && hasLocations) SpacingFoundation.verticalSpace12,
-                context.gradientButton(
-                  data: BaseUiKitButtonData(
-                    text: !controller.hasSelectedPlace ? 'New place' : 'Confirm',
-                    onPressed: onLocationConfirmed,
-                  ),
-                ),
-              ],
-            ).paddingSymmetric(
-              horizontal: SpacingFoundation.horizontalSpacing16,
-              vertical: SpacingFoundation.verticalSpacing12,
-            ),
-          ),
         );
       },
     );
@@ -106,7 +67,8 @@ class LocationDetailsSheet extends StatelessWidget {
 }
 
 class LocationDetailsSheetController {
-  final StreamController<LocationDetailsSheetState> _sheetStateController = StreamController<LocationDetailsSheetState>();
+  final StreamController<LocationDetailsSheetState> _sheetStateController =
+      StreamController<LocationDetailsSheetState>();
 
   late Stream<LocationDetailsSheetState> sheetStateStream = _sheetStateController.stream.asBroadcastStream();
 
