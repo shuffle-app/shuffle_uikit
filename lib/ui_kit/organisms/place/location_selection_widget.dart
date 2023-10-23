@@ -4,13 +4,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class LocationSelectionWidget extends StatefulWidget {
   const LocationSelectionWidget({
     super.key,
-    required this.selectablePlaces,
-    required this.onConfirmTap,
+    required this.knownLocations,
+    required this.onKnownLocationConfirmed,
     this.height,
   })  : places = null,
         onConfirmPlaceTap = null,
         onNewPlaceTap = null,
-        assert(selectablePlaces != null, 'selectablePlaces must be not null.');
+        _selectionType = _SuggestionType.known;
 
   const LocationSelectionWidget.suggestions({
     super.key,
@@ -18,12 +18,14 @@ class LocationSelectionWidget extends StatefulWidget {
     required this.onConfirmPlaceTap,
     required this.onNewPlaceTap,
     this.height,
-  })  : onConfirmTap = null,
-        selectablePlaces = null,
-        assert(places != null, 'places must be not null.');
+  })  : onKnownLocationConfirmed = null,
+        knownLocations = null,
+        _selectionType = _SuggestionType.suggestion;
 
-  final List<({String address, double latitude, double longitude})>? selectablePlaces;
-  final void Function(String address, double latitude, double longitude)? onConfirmTap;
+  final _SuggestionType _selectionType;
+
+  final List<KnownLocation>? knownLocations;
+  final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
   final double? height;
 
   final List<String>? places;
@@ -36,7 +38,7 @@ class LocationSelectionWidget extends StatefulWidget {
 
 class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
   bool _isPlaceEmpty() {
-    if ((widget.places?.isEmpty ?? true) && (widget.selectablePlaces?.isEmpty ?? true)) {
+    if ((widget.places?.isEmpty ?? true) && (widget.knownLocations?.isEmpty ?? true)) {
       return true;
     }
     return false;
@@ -47,6 +49,7 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final suggestionType = widget._selectionType == _SuggestionType.suggestion;
 
     return UiKitCardWrapper(
       color: theme?.colorScheme.inversePrimary,
@@ -61,35 +64,35 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                   right: EdgeInsetsFoundation.horizontal16,
                   top: EdgeInsetsFoundation.vertical16,
                 ),
-                itemCount: widget.places != null ? widget.places!.length : widget.selectablePlaces!.length,
-                itemBuilder: (_, index) => Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: Text(
-                        '${index + 1}. ${widget.places != null ? widget.places![index] : widget.selectablePlaces![index].address}',
-                        style: theme?.regularTextTheme.caption1.copyWith(
-                          color: theme.colorScheme.primary,
-                        ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                    SpacingFoundation.verticalSpace16,
-                    widget.places != null
-                        ? context.smallButton(
-                            backgroundColor: theme?.colorScheme.primary,
-                            color: Colors.transparent,
-                            data: BaseUiKitButtonData(
-                              onPressed: () => widget.onConfirmPlaceTap?.call(widget.places![index]),
-                              text: 'confirm',
-                            ),
-                          )
-                        : GestureDetector(
-                            onTap: () => setState(() => selectedIndex = index),
-                            child: UiKitRadio(selected: selectedIndex == index),
+                itemCount: suggestionType ? widget.places!.length : widget.knownLocations!.length,
+                itemBuilder: (_, index) => GestureDetector(
+                  onTap: suggestionType ? null : () => setState(() => selectedIndex = index),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Flexible(
+                        child: Text(
+                          '${index + 1}. ${suggestionType ? widget.places![index] : widget.knownLocations![index].title}',
+                          style: theme?.regularTextTheme.caption1.copyWith(
+                            color: theme.colorScheme.primary,
                           ),
-                  ],
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                      SpacingFoundation.verticalSpace16,
+                      suggestionType
+                          ? context.smallButton(
+                              backgroundColor: theme?.colorScheme.primary,
+                              color: Colors.transparent,
+                              data: BaseUiKitButtonData(
+                                onPressed: () => widget.onConfirmPlaceTap?.call(widget.places![index]),
+                                text: 'confirm',
+                              ),
+                            )
+                          : UiKitRadio(selected: selectedIndex == index),
+                    ],
+                  ),
                 ),
                 separatorBuilder: (_, __) => SpacingFoundation.verticalSpace14,
               ),
@@ -98,14 +101,10 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
           context
               .gradientButton(
                 data: BaseUiKitButtonData(
-                  onPressed: () => widget.places != null
+                  onPressed: () => suggestionType
                       ? widget.onNewPlaceTap?.call()
-                      : widget.onConfirmTap?.call(
-                          widget.selectablePlaces![selectedIndex].address,
-                          widget.selectablePlaces![selectedIndex].latitude,
-                          widget.selectablePlaces![selectedIndex].longitude,
-                        ),
-                  text: widget.places != null ? 'new place' : 'confirm',
+                      : widget.onKnownLocationConfirmed?.call(widget.knownLocations![selectedIndex]),
+                  text: suggestionType ? 'new place' : 'confirm',
                   fit: ButtonFit.fitWidth,
                 ),
               )
@@ -116,4 +115,9 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
       ),
     );
   }
+}
+
+enum _SuggestionType {
+  suggestion,
+  known,
 }

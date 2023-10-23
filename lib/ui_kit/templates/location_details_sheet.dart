@@ -3,30 +3,41 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class LocationDetailsSheet extends StatelessWidget {
+class LocationDetailsSheet extends StatefulWidget {
   final LocationDetailsSheetController controller;
   final VoidCallback? onLocationConfirmed;
   final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
+  final void Function(String placeName)? onConfirmPlaceTap;
+  final List<String>? suggestionPlaces;
+  final VoidCallback onNewPlaceTap;
 
   const LocationDetailsSheet({
     super.key,
     required this.controller,
+    required this.onNewPlaceTap,
     this.onLocationConfirmed,
     this.onKnownLocationConfirmed,
+    this.onConfirmPlaceTap,
+    this.suggestionPlaces,
   });
 
   @override
-  Widget build(BuildContext context) {
-    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
+  State<LocationDetailsSheet> createState() => _LocationDetailsSheetState();
+}
 
+class _LocationDetailsSheetState extends State<LocationDetailsSheet> {
+  bool _isNewPlaceTapped = false;
+
+  @override
+  Widget build(BuildContext context) {
     return StreamBuilder<LocationDetailsSheetState>(
-      stream: controller.sheetStateStream,
+      stream: widget.controller.sheetStateStream,
       builder: (context, snapshot) {
         final state = snapshot.data;
 
         final expanded = state == LocationDetailsSheetState.expanded;
         final hidden = state == LocationDetailsSheetState.hidden;
-        final hasLocations = controller.knownLocations.isNotEmpty;
+        final hasLocations = widget.controller.knownLocations.isNotEmpty;
         final canShowList = expanded && hasLocations;
 
         if (hidden) return SpacingFoundation.none;
@@ -48,18 +59,20 @@ class LocationDetailsSheet extends StatelessWidget {
             ],
           ),
           child: canShowList
-              ? LocationSelectionWidget.suggestions(
-                  places: List.generate(
-                    controller.knownLocations.length,
-                    (_) => controller.knownLocations[_].title,
-                  ).toList(),
-                  onConfirmPlaceTap: (_) {},
-                  onNewPlaceTap: () {},
-                )
-              : SizedBox.shrink().paddingSymmetric(
-                  horizontal: SpacingFoundation.horizontalSpacing16,
-                  vertical: SpacingFoundation.verticalSpacing12,
-                ),
+              ? _isNewPlaceTapped
+                  ? LocationSelectionWidget(
+                      knownLocations: widget.controller.knownLocations,
+                      onKnownLocationConfirmed: widget.onKnownLocationConfirmed,
+                    )
+                  : LocationSelectionWidget.suggestions(
+                      places: widget.suggestionPlaces,
+                      onConfirmPlaceTap: widget.onConfirmPlaceTap,
+                      onNewPlaceTap: () {
+                        widget.onNewPlaceTap.call();
+                        setState(() => _isNewPlaceTapped = true);
+                      },
+                    )
+              : SpacingFoundation.none,
         );
       },
     );
