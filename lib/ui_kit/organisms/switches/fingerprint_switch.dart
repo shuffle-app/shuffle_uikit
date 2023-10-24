@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/content_wrappers/ui_kit_border_wrapper.dart';
@@ -26,7 +27,7 @@ class FingerprintSwitch extends StatefulWidget {
   final bool isHealthKitEnabled;
   final String? animationPath;
   final VoidCallback? onPressed;
-  final VoidCallback? onCompleted;
+  final AsyncCallback? onCompleted;
 
   @override
   State<FingerprintSwitch> createState() => _FingerprintSwitchState();
@@ -100,10 +101,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
           subtitle: widget.subtitle,
           parentWidth: _currentWidth,
           onPressed: widget.onPressed,
-          onCompleted: () {
-            _isCompleted.value = true;
-            widget.onCompleted?.call();
-          },
+          onCompleted: () async => await widget.onCompleted?.call().then((_) => _isCompleted.value = true),
           isCompleted: _isCompleted.value,
           onCompletedWidget: widget.onCompletedWidget,
         ),
