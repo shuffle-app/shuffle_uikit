@@ -8,6 +8,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
   final bool uppercase;
   final bool? loading;
   final Color? color;
+  final Color? backgroundColor;
   final ButtonFit? fit;
   final AutoSizeGroup? group;
 
@@ -20,6 +21,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
     this.group,
     this.uppercase = true,
     this.color,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -48,7 +50,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
           ).loadingWrap(loading ?? false);
 
     return Material(
-      color: Colors.white,
+      color: backgroundColor ?? Colors.white,
       clipBehavior: Clip.hardEdge,
       borderRadius: BorderRadiusFoundation.max,
       child: InkWell(

@@ -9,6 +9,7 @@ class SmallButtonWithTextAndIcon extends StatelessWidget implements ButtonFactor
   final bool uppercase;
   final bool? loading;
   final Color? color;
+  final Color? backgroundColor;
   final ButtonFit? fit;
   final AutoSizeGroup? group;
 
@@ -22,6 +23,7 @@ class SmallButtonWithTextAndIcon extends StatelessWidget implements ButtonFactor
     this.group,
     this.uppercase = true,
     this.color,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -50,7 +52,7 @@ class SmallButtonWithTextAndIcon extends StatelessWidget implements ButtonFactor
           );
 
     return Material(
-      color: Colors.white,
+      color: backgroundColor ?? Colors.white,
       clipBehavior: Clip.hardEdge,
       borderRadius: BorderRadiusFoundation.max,
       child: InkWell(
