@@ -30,10 +30,23 @@ Future<DateTime?> showUiKitCalendarDialog(BuildContext context,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
       ),
-      child: _CustomCalendarPickerDialog(
-        lastDate: lastDate,
-        firstDate: firstDate,
-        selectableDayPredicate: selectableDayPredicate,
+      child: Theme(
+        data: Theme.of(context).copyWith(
+          datePickerTheme: Theme.of(context).datePickerTheme.copyWith(
+            dayForegroundColor: MaterialStateColor.resolveWith((states) {
+              if (states.contains(MaterialState.disabled)) {
+                return context.uiKitTheme?.colorScheme.darkNeutral500 ?? Colors.white;
+              }
+
+              return Colors.white;
+            }),
+          ),
+        ),
+        child: _CustomCalendarPickerDialog(
+          lastDate: lastDate,
+          firstDate: firstDate,
+          selectableDayPredicate: selectableDayPredicate,
+        ),
       ),
     ),
   );
@@ -174,7 +187,6 @@ class _CustomCalendarPickerDialogState extends State<_CustomCalendarPickerDialog
           ),
         ],
       ),
-    ).paddingSymmetric(
-        vertical: SpacingFoundation.verticalSpacing12, horizontal: SpacingFoundation.horizontalSpacing12);
+    ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing12, horizontal: SpacingFoundation.horizontalSpacing12);
   }
 }

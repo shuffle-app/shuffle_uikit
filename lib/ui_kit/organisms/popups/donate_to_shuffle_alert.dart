@@ -15,6 +15,18 @@ class DonateToShuffleAlert extends StatefulWidget {
 
 class _DonateToShuffleAlertState extends State<DonateToShuffleAlert> {
   int? selectedValue;
+  final values = [
+    ...List<int>.generate(50, (index) => index + 1),
+    60,
+    70,
+    80,
+    90,
+    100,
+    200,
+    300,
+    400,
+    500,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +59,7 @@ class _DonateToShuffleAlertState extends State<DonateToShuffleAlert> {
               UiKitHorizontalWheelNumberSelector(
                 backgroundColor: Colors.transparent,
                 numbersColor: Colors.black,
-                values: List.generate(10, (index) => index + 1),
+                values: values,
                 initialValue: 0,
                 hideTitle: true,
                 onValueChanged: (value) => setState(() => selectedValue = value),
