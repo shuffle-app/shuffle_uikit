@@ -55,7 +55,7 @@ class _LocationPickerPageState extends State<LocationPickerPage> {
         onCurrentLocationTapped: () {},
         onKnownLocationConfirmed: (location) {},
         onLocationConfirmed: () {},
-        onNewPlaceTap: () {},
+        onNewPlaceTap: (_) {},
       ),
     );
   }

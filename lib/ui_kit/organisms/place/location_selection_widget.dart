@@ -44,7 +44,13 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
     return false;
   }
 
-  int selectedIndex = 0;
+  int _selectedIndex = 0;
+
+  @override
+  void didUpdateWidget(LocationSelectionWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    setState(() => _selectedIndex = 0);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +72,7 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                 ),
                 itemCount: suggestionType ? widget.places!.length : widget.knownLocations!.length,
                 itemBuilder: (_, index) => GestureDetector(
-                  onTap: suggestionType ? null : () => setState(() => selectedIndex = index),
+                  onTap: suggestionType ? null : () => setState(() => _selectedIndex = index),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -90,7 +96,7 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                                 text: 'confirm',
                               ),
                             )
-                          : UiKitRadio(selected: selectedIndex == index),
+                          : UiKitRadio(selected: _selectedIndex == index),
                     ],
                   ),
                 ),
@@ -103,7 +109,11 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                 data: BaseUiKitButtonData(
                   onPressed: () => suggestionType
                       ? widget.onNewPlaceTap?.call()
-                      : widget.onKnownLocationConfirmed?.call(widget.knownLocations![selectedIndex]),
+                      : widget.knownLocations?.isEmpty ?? true
+                          ? null
+                          : widget.onKnownLocationConfirmed?.call(
+                              widget.knownLocations![_selectedIndex],
+                            ),
                   text: suggestionType ? 'new place' : 'confirm',
                   fit: ButtonFit.fitWidth,
                 ),

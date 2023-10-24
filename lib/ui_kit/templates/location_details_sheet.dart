@@ -9,12 +9,14 @@ class LocationDetailsSheet extends StatefulWidget {
   final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
   final void Function(String placeName)? onConfirmPlaceTap;
   final List<String>? suggestionPlaces;
-  final VoidCallback onNewPlaceTap;
+  final ValueChanged<bool> onNewPlaceTap;
+  final bool newPlace;
 
   const LocationDetailsSheet({
     super.key,
     required this.controller,
     required this.onNewPlaceTap,
+    required this.newPlace,
     this.onLocationConfirmed,
     this.onKnownLocationConfirmed,
     this.onConfirmPlaceTap,
@@ -26,11 +28,25 @@ class LocationDetailsSheet extends StatefulWidget {
 }
 
 class _LocationDetailsSheetState extends State<LocationDetailsSheet> {
-  bool _isNewPlaceTapped = false;
+  late bool _newPlace;
+
+  @override
+  void initState() {
+    super.initState();
+    _newPlace = widget.newPlace;
+  }
+
+  @override
+  void didUpdateWidget(LocationDetailsSheet oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.newPlace != oldWidget.newPlace) {
+      setState(() => _newPlace = widget.newPlace);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
         boxShadow: [
@@ -46,18 +62,18 @@ class _LocationDetailsSheetState extends State<LocationDetailsSheet> {
           ),
         ],
       ),
-      child: _isNewPlaceTapped
-          ? LocationSelectionWidget(
-              knownLocations: widget.controller.knownLocations,
-              onKnownLocationConfirmed: widget.onKnownLocationConfirmed,
-            )
-          : LocationSelectionWidget.suggestions(
+      child: _newPlace
+          ? LocationSelectionWidget.suggestions(
               places: widget.suggestionPlaces,
               onConfirmPlaceTap: widget.onConfirmPlaceTap,
               onNewPlaceTap: () {
-                widget.onNewPlaceTap.call();
-                setState(() => _isNewPlaceTapped = true);
+                setState(() => _newPlace = true);
+                widget.onNewPlaceTap.call(!_newPlace);
               },
+            )
+          : LocationSelectionWidget(
+              knownLocations: widget.controller.knownLocations,
+              onKnownLocationConfirmed: widget.onKnownLocationConfirmed,
             ),
     );
   }
