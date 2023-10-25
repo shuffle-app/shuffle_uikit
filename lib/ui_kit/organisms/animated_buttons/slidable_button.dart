@@ -69,7 +69,10 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
             borderRadius: BorderRadiusFoundation.max,
             color: theme?.colorScheme.surface2),
         child: SizedBox(
-            height: 41.h,
+            // height: 41.h,
+            height: EdgeInsetsFoundation.vertical14 * 2 +
+                (theme?.boldTextTheme.bodyUpperCase.fontSize ?? 0) * (theme?.boldTextTheme.bodyUpperCase.height ?? 1) +
+                10.h,
             child: Stack(
               fit: StackFit.passthrough,
               alignment: Alignment.centerLeft,
