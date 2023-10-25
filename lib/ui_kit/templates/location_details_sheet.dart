@@ -7,7 +7,7 @@ class LocationDetailsSheet extends StatefulWidget {
   final LocationDetailsSheetController controller;
   final VoidCallback? onLocationConfirmed;
   final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
-  final void Function(String placeName)? onConfirmPlaceTap;
+  final void Function(KnownLocation location)? onConfirmPlaceTap;
   final List<KnownLocation>? suggestionPlaces;
   final ValueChanged<bool> onNewPlaceTap;
   final bool newPlace;

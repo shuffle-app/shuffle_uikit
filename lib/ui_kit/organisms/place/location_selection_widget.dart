@@ -32,7 +32,7 @@ class LocationSelectionWidget extends StatefulWidget {
   final double? height;
 
   final List<KnownLocation>? places;
-  final void Function(String placeName)? onConfirmPlaceTap;
+  final void Function(KnownLocation location)? onConfirmPlaceTap;
   final VoidCallback? onNewPlaceTap;
 
   @override
@@ -112,7 +112,7 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                 data: BaseUiKitButtonData(
                   onPressed: () => suggestionType
                       ? widget.onNewPlaceTap?.call()
-                      : widget.onConfirmPlaceTap?.call(widget.places![_selectedIndex].title),
+                      : widget.onConfirmPlaceTap?.call(widget.places![_selectedIndex]),
                   text: suggestionType ? 'new place' : 'confirm',
                   fit: ButtonFit.fitWidth,
                 ),

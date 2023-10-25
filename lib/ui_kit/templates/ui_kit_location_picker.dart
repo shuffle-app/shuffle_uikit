@@ -22,7 +22,7 @@ class UiKitLocationPicker extends StatelessWidget {
   final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
   final VoidCallback? onCurrentLocationTapped;
   final List<KnownLocation>? suggestionPlaces;
-  final void Function(String placeName)? onConfirmPlaceTap;
+  final void Function(KnownLocation location)? onConfirmPlaceTap;
   final ValueChanged<bool> onNewPlaceTap;
   final bool newPlace;
 
