@@ -2,29 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class LocationSelectionWidget extends StatefulWidget {
-  const LocationSelectionWidget({
+  const LocationSelectionWidget.suggestions({
     super.key,
     required this.places,
     required this.onLocationChanged,
     required this.onLocationConfirmed,
     this.height,
     this.canShowList,
-  })  : onKnownLocationConfirmed = null,
+  })
+      : onKnownLocationConfirmed = null,
         knownLocations = null,
         onNewPlaceTap = null,
-        _selectionType = _SuggestionType.known;
+        _selectionType = _SuggestionType.suggestion;
 
-  const LocationSelectionWidget.suggestions({
+  const LocationSelectionWidget({
     super.key,
     required this.onKnownLocationConfirmed,
     required this.knownLocations,
     required this.onNewPlaceTap,
     this.height,
     this.canShowList,
-  })  : onLocationChanged = null,
+  })
+      : onLocationChanged = null,
         places = null,
         onLocationConfirmed = null,
-        _selectionType = _SuggestionType.suggestion;
+        _selectionType = _SuggestionType.known;
 
   final _SuggestionType _selectionType;
 
@@ -55,13 +57,16 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
   @override
   void didUpdateWidget(LocationSelectionWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    setState(() => _selectedIndex = 0);
+    if (oldWidget.places != widget.places || oldWidget.knownLocations != widget.knownLocations ||
+        widget._selectionType != oldWidget._selectionType) {
+      setState(() => _selectedIndex = 0);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final suggestionType = widget._selectionType == _SuggestionType.suggestion;
+    final isSuggestions = widget._selectionType == _SuggestionType.suggestion;
 
     return UiKitCardWrapper(
       color: theme?.colorScheme.inversePrimary,
@@ -76,53 +81,55 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                   right: EdgeInsetsFoundation.horizontal16,
                   top: EdgeInsetsFoundation.vertical16,
                 ),
-                itemCount: suggestionType ? widget.knownLocations!.length : widget.places!.length,
-                itemBuilder: (_, index) => GestureDetector(
-                  onTap: suggestionType
-                      ? null
-                      : () {
-                          setState(() => _selectedIndex = index);
-                          widget.onLocationChanged?.call(address: widget.places![index].title);
-                        },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Flexible(
-                        child: Text(
-                          '${index + 1}. ${suggestionType ? widget.knownLocations![index].title : widget.places![index].title}',
-                          style: theme?.regularTextTheme.caption1.copyWith(
-                            color: theme.colorScheme.primary,
-                          ),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                      SpacingFoundation.verticalSpace16,
-                      suggestionType
-                          ? context.smallButton(
-                              backgroundColor: theme?.colorScheme.primary,
-                              color: Colors.transparent,
-                              data: BaseUiKitButtonData(
-                                onPressed: () => widget.onKnownLocationConfirmed?.call(widget.knownLocations![index]),
-                                text: 'confirm',
+                itemCount: isSuggestions ? widget.places!.length : widget.knownLocations!.length,
+                itemBuilder: (_, index) =>
+                    GestureDetector(
+                      onTap: isSuggestions
+                          ? () {
+                        setState(() => _selectedIndex = index);
+                        widget.onLocationChanged?.call(address: widget.places![index].title);
+                      }
+                          : null,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Flexible(
+                            child: Text(
+                              '${index + 1}. ${isSuggestions ? widget.places![index].title : widget
+                                  .knownLocations![index].title} ',
+                              style: theme?.regularTextTheme.caption1.copyWith(
+                                color: theme.colorScheme.primary,
                               ),
-                            )
-                          : UiKitRadio(selected: _selectedIndex == index),
-                    ],
-                  ),
-                ),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          SpacingFoundation.verticalSpace16,
+                          isSuggestions
+                              ? UiKitRadio(selected: _selectedIndex == index)
+                              : context.smallButton(
+                            backgroundColor: theme?.colorScheme.primary,
+                            color: Colors.transparent,
+                            data: BaseUiKitButtonData(
+                              onPressed: () => widget.onKnownLocationConfirmed?.call(widget.knownLocations![index]),
+                              text: 'confirm',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                 separatorBuilder: (_, __) => SpacingFoundation.verticalSpace14,
               ),
             ),
           SpacingFoundation.verticalSpace16,
           context
               .gradientButton(
-                data: BaseUiKitButtonData(
-                  onPressed: () => suggestionType ? widget.onNewPlaceTap?.call() : widget.onLocationConfirmed?.call(),
-                  text: suggestionType ? 'new place' : 'confirm',
-                  fit: ButtonFit.fitWidth,
-                ),
-              )
+            data: BaseUiKitButtonData(
+              onPressed: () => isSuggestions ? widget.onLocationConfirmed?.call() : widget.onNewPlaceTap?.call(),
+              text: isSuggestions ? 'confirm' : 'new place',
+              fit: ButtonFit.fitWidth,
+            ),
+          )
               .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
         ],
       ).paddingOnly(
