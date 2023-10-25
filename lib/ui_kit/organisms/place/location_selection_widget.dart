@@ -5,7 +5,8 @@ class LocationSelectionWidget extends StatefulWidget {
   const LocationSelectionWidget({
     super.key,
     required this.places,
-    required this.onConfirmPlaceTap,
+    required this.onLocationChanged,
+    required this.onLocationConfirmed,
     this.height,
     this.canShowList,
   })  : onKnownLocationConfirmed = null,
@@ -20,8 +21,9 @@ class LocationSelectionWidget extends StatefulWidget {
     required this.onNewPlaceTap,
     this.height,
     this.canShowList,
-  })  : onConfirmPlaceTap = null,
+  })  : onLocationChanged = null,
         places = null,
+        onLocationConfirmed = null,
         _selectionType = _SuggestionType.suggestion;
 
   final _SuggestionType _selectionType;
@@ -32,8 +34,9 @@ class LocationSelectionWidget extends StatefulWidget {
   final double? height;
 
   final List<KnownLocation>? places;
-  final void Function(KnownLocation location)? onConfirmPlaceTap;
+  final void Function({String address, double latitude, double longitude})? onLocationChanged;
   final VoidCallback? onNewPlaceTap;
+  final VoidCallback? onLocationConfirmed;
 
   @override
   State<LocationSelectionWidget> createState() => _LocationSelectionWidgetState();
@@ -75,7 +78,12 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                 ),
                 itemCount: suggestionType ? widget.knownLocations!.length : widget.places!.length,
                 itemBuilder: (_, index) => GestureDetector(
-                  onTap: suggestionType ? null : () => setState(() => _selectedIndex = index),
+                  onTap: suggestionType
+                      ? null
+                      : () {
+                          setState(() => _selectedIndex = index);
+                          widget.onLocationChanged?.call(address: widget.places![index].title);
+                        },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -110,9 +118,7 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
           context
               .gradientButton(
                 data: BaseUiKitButtonData(
-                  onPressed: () => suggestionType
-                      ? widget.onNewPlaceTap?.call()
-                      : widget.onConfirmPlaceTap?.call(widget.places![_selectedIndex]),
+                  onPressed: () => suggestionType ? widget.onNewPlaceTap?.call() : widget.onLocationConfirmed?.call(),
                   text: suggestionType ? 'new place' : 'confirm',
                   fit: ButtonFit.fitWidth,
                 ),

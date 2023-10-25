@@ -20,9 +20,9 @@ class UiKitLocationPicker extends StatelessWidget {
   final Set<Marker> markers;
   final VoidCallback? onLocationConfirmed;
   final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
+  final void Function({String address, double latitude, double longitude}) onLocationChanged;
   final VoidCallback? onCurrentLocationTapped;
   final List<KnownLocation>? suggestionPlaces;
-  final void Function(KnownLocation location)? onConfirmPlaceTap;
   final ValueChanged<bool> onNewPlaceTap;
   final bool newPlace;
 
@@ -37,9 +37,9 @@ class UiKitLocationPicker extends StatelessWidget {
     this.onMapTapped,
     this.onCurrentLocationTapped,
     this.suggestionPlaces,
-    this.onConfirmPlaceTap,
-    required this.onNewPlaceTap,
     this.newPlace = true,
+    required this.onLocationChanged,
+    required this.onNewPlaceTap,
     required this.onMapCreated,
     required this.onCameraMoved,
     required this.searchController,
@@ -127,13 +127,13 @@ class UiKitLocationPicker extends StatelessWidget {
                 ),
                 SpacingFoundation.verticalSpace12,
                 LocationDetailsSheet(
+                  onLocationChanged: onLocationChanged,
                   newPlace: newPlace,
                   controller: locationDetailsSheetController,
                   onNewPlaceTap: onNewPlaceTap,
                   onKnownLocationConfirmed: onKnownLocationConfirmed,
                   onLocationConfirmed: onLocationConfirmed,
                   suggestionPlaces: suggestionPlaces,
-                  onConfirmPlaceTap: onConfirmPlaceTap,
                 ),
               ],
             ),
