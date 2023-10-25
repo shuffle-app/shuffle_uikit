@@ -75,19 +75,19 @@ class _LocationDetailsSheetState extends State<LocationDetailsSheet> {
           ),
           child: _newPlace
               ? LocationSelectionWidget.suggestions(
-                  knownLocations: widget.suggestionPlaces,
+                  places: widget.suggestionPlaces,
+                  canShowList: canShowList,
+                  onLocationChanged: widget.onLocationChanged,
+                  onLocationConfirmed: widget.onLocationConfirmed,
+                )
+              : LocationSelectionWidget(
+                  knownLocations: widget.controller.knownLocations,
                   onKnownLocationConfirmed: widget.onKnownLocationConfirmed,
                   onNewPlaceTap: () {
                     setState(() => _newPlace = true);
                     widget.onNewPlaceTap.call(!_newPlace);
                   },
                   canShowList: canShowList,
-                )
-              : LocationSelectionWidget(
-                  places: widget.controller.knownLocations,
-                  canShowList: canShowList,
-                  onLocationChanged: widget.onLocationChanged,
-                  onLocationConfirmed: widget.onLocationConfirmed,
                 ),
         );
       },
