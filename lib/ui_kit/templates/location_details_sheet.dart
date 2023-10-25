@@ -7,9 +7,9 @@ class LocationDetailsSheet extends StatefulWidget {
   final LocationDetailsSheetController controller;
   final VoidCallback? onLocationConfirmed;
   final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
-  final void Function(KnownLocation location)? onConfirmPlaceTap;
   final List<KnownLocation>? suggestionPlaces;
   final ValueChanged<bool> onNewPlaceTap;
+  final void Function({String address, double latitude, double longitude}) onLocationChanged;
   final bool newPlace;
 
   const LocationDetailsSheet({
@@ -17,9 +17,9 @@ class LocationDetailsSheet extends StatefulWidget {
     required this.controller,
     required this.onNewPlaceTap,
     required this.newPlace,
+    required this.onLocationChanged,
     this.onLocationConfirmed,
     this.onKnownLocationConfirmed,
-    this.onConfirmPlaceTap,
     this.suggestionPlaces,
   });
 
@@ -85,8 +85,9 @@ class _LocationDetailsSheetState extends State<LocationDetailsSheet> {
                 )
               : LocationSelectionWidget(
                   places: widget.controller.knownLocations,
-                  onConfirmPlaceTap: widget.onConfirmPlaceTap,
                   canShowList: canShowList,
+                  onLocationChanged: widget.onLocationChanged,
+                  onLocationConfirmed: widget.onLocationConfirmed,
                 ),
         );
       },
