@@ -40,7 +40,8 @@ class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
       shrinkWrap: true,
       primary: false,
       scrollDirection: Axis.horizontal,
-
+      addAutomaticKeepAlives: true,
+      cacheExtent: 5,
       separatorBuilder: (_, index) => spacing?.widthBox ?? SpacingFoundation.zero.widthBox,
       builderDelegate: PagedChildBuilderDelegate<ItemType>(
         animateTransitions: true,

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flip_card/flip_card.dart';
 import 'package:flip_card/flip_card_controller.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -30,7 +31,7 @@ class FingerprintButton extends StatefulWidget {
   final Widget onCompletedWidget;
   final bool? isCompleted;
   final VoidCallback? onPressed;
-  final VoidCallback? onCompleted;
+  final AsyncCallback? onCompleted;
 
   @override
   State<FingerprintButton> createState() => _FingerprintButtonState();
@@ -135,12 +136,12 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
           _isCompleted = true;
           _onPanDisabled = true;
         });
-        _flipController.toggleCard();
+
         _currentPosition.value = Offset(
           _finishPosition.dx + _buttonCenter,
           _finishPosition.dy,
         );
-        widget.onCompleted?.call();
+        widget.onCompleted?.call().then((_) => _flipController.toggleCard());
       } else {
         _reverseAnimation();
       }
