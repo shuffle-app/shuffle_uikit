@@ -33,6 +33,7 @@ export 'lists/ui_kit_searchable_list_body.dart';
 export 'menu/ui_kit_menu.dart';
 export 'place/base_place_action_card.dart';
 export 'place/donation_map_preview.dart';
+export 'place/location_selection_widget.dart';
 export 'place/point_balance_place_action_card.dart';
 export 'place/slider_place_card.dart';
 export 'place/ui_kit_media_slider_with_tags.dart';

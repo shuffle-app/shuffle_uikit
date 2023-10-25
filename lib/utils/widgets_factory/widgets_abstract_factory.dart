@@ -49,7 +49,8 @@ abstract class WidgetsAbstractFactory {
     bool? small,
   });
 
-  ButtonFactory createSmallButton({required BaseUiKitButtonData data, bool isTextButton = false, bool? blurred, bool uppercase});
+  ButtonFactory createSmallButton(
+      {required BaseUiKitButtonData data, bool isTextButton = false, bool? blurred, bool uppercase});
 
   ButtonFactory createOutlinedButton({
     required BaseUiKitButtonData data,
@@ -288,6 +289,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? blurred,
     bool uppercase = true,
     Color? color,
+    Color? backgroundColor,
   }) {
     final hasIcon = data.icon != null;
     final hasBlur = blurred ?? false;
@@ -297,6 +299,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         icon: data.icon!,
         onPressed: data.onPressed,
         color: color,
+        backgroundColor: backgroundColor,
         fit: data.fit,
       );
     }
@@ -321,6 +324,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       uppercase: uppercase,
       loading: data.loading,
       color: color,
+      backgroundColor: backgroundColor,
       fit: data.fit,
     );
   }
