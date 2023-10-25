@@ -27,16 +27,9 @@ class _ArrowsAnimationState extends State<ArrowsAnimation> with SingleTickerProv
   _loopAnimation() {
     switch (controller.status) {
       case AnimationStatus.completed:
-        controller.forward(from: 0.0);
+        Future.delayed(const Duration(milliseconds: 180), () => controller.forward(from: 0.0));
         break;
-      case AnimationStatus.dismissed:
-        // controller.forward();
-        break;
-      case AnimationStatus.forward:
-        // controller.reverse();
-        break;
-      case AnimationStatus.reverse:
-        // controller.forward();
+      default:
         break;
     }
   }
@@ -50,21 +43,20 @@ class _ArrowsAnimationState extends State<ArrowsAnimation> with SingleTickerProv
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: List.generate(widget.itemCount, (index) {
-          return AnimatedBuilder(
-            animation: controller,
-            builder: (context, child) {
+    return AnimatedBuilder(
+        animation: controller,
+        builder: (context, child) => Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: List.generate(widget.itemCount, (index) {
               return Opacity(
                 opacity: 1 - ((1 / widget.itemCount) * index - controller.value).abs(),
-                child: child,
+                child: GradientableWidget(
+                    gradient: GradientFoundation.badgeIcon,
+                    child: SizedBox(
+                        width: 10.w,
+                        child:
+                            ImageWidget(svgAsset: GraphicsFoundation.instance.svg.chevronRight, color: Colors.white))),
               );
-            },
-            child: GradientableWidget(
-                gradient: GradientFoundation.badgeIcon,
-                child: ImageWidget(svgAsset: GraphicsFoundation.instance.svg.chevronRight, color: Colors.white)),
-          );
-        }));
+            })));
   }
 }

@@ -34,15 +34,14 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
   }
 
   double _updatePosition(double distance) {
-    if (distance >= 0.7.sw) {
-      WidgetsBinding.instance.addPostFrameCallback((_) =>
-      setState(() {
-        _isCompleted = true;
-      }));
-      return 0.7.sw;
+    if (distance > 0.8.sw) {
+      WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+            _isCompleted = true;
+          }));
+      return 0.8.sw;
     }
 
-    return distance;
+    return distance - 30.w < 0 ? 0 : distance - 30.w;
   }
 
   _resetPosition() {
@@ -65,7 +64,10 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
     final theme = context.uiKitTheme;
 
     return DecoratedBox(
-        decoration: BoxDecoration(border: GradientFoundation.gradientBorder, borderRadius: BorderRadiusFoundation.max),
+        decoration: BoxDecoration(
+            border: GradientFoundation.gradientBorder,
+            borderRadius: BorderRadiusFoundation.max,
+            color: theme?.colorScheme.surface2),
         child: SizedBox(
             height: 41.h,
             child: Stack(
