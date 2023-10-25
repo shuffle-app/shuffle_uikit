@@ -4,32 +4,35 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class LocationSelectionWidget extends StatefulWidget {
   const LocationSelectionWidget({
     super.key,
-    required this.knownLocations,
-    required this.onKnownLocationConfirmed,
+    required this.places,
+    required this.onConfirmPlaceTap,
     this.height,
-  })  : places = null,
-        onConfirmPlaceTap = null,
+    this.canShowList,
+  })  : onKnownLocationConfirmed = null,
+        knownLocations = null,
         onNewPlaceTap = null,
         _selectionType = _SuggestionType.known;
 
   const LocationSelectionWidget.suggestions({
     super.key,
-    required this.places,
-    required this.onConfirmPlaceTap,
+    required this.onKnownLocationConfirmed,
+    required this.knownLocations,
     required this.onNewPlaceTap,
     this.height,
-  })  : onKnownLocationConfirmed = null,
-        knownLocations = null,
+    this.canShowList,
+  })  : onConfirmPlaceTap = null,
+        places = null,
         _selectionType = _SuggestionType.suggestion;
 
   final _SuggestionType _selectionType;
 
   final List<KnownLocation>? knownLocations;
   final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
+  final bool? canShowList;
   final double? height;
 
-  final List<String>? places;
-  final void Function(String placeName)? onConfirmPlaceTap;
+  final List<KnownLocation>? places;
+  final void Function(KnownLocation location)? onConfirmPlaceTap;
   final VoidCallback? onNewPlaceTap;
 
   @override
@@ -70,7 +73,7 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                   right: EdgeInsetsFoundation.horizontal16,
                   top: EdgeInsetsFoundation.vertical16,
                 ),
-                itemCount: suggestionType ? widget.places!.length : widget.knownLocations!.length,
+                itemCount: suggestionType ? widget.knownLocations!.length : widget.places!.length,
                 itemBuilder: (_, index) => GestureDetector(
                   onTap: suggestionType ? null : () => setState(() => _selectedIndex = index),
                   child: Row(
@@ -78,7 +81,7 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                     children: [
                       Flexible(
                         child: Text(
-                          '${index + 1}. ${suggestionType ? widget.places![index] : widget.knownLocations![index].title}',
+                          '${index + 1}. ${suggestionType ? widget.knownLocations![index].title : widget.places![index].title}',
                           style: theme?.regularTextTheme.caption1.copyWith(
                             color: theme.colorScheme.primary,
                           ),
@@ -92,7 +95,7 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                               backgroundColor: theme?.colorScheme.primary,
                               color: Colors.transparent,
                               data: BaseUiKitButtonData(
-                                onPressed: () => widget.onConfirmPlaceTap?.call(widget.places![index]),
+                                onPressed: () => widget.onKnownLocationConfirmed?.call(widget.knownLocations![index]),
                                 text: 'confirm',
                               ),
                             )
@@ -109,11 +112,7 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                 data: BaseUiKitButtonData(
                   onPressed: () => suggestionType
                       ? widget.onNewPlaceTap?.call()
-                      : widget.knownLocations?.isEmpty ?? true
-                          ? null
-                          : widget.onKnownLocationConfirmed?.call(
-                              widget.knownLocations![_selectedIndex],
-                            ),
+                      : widget.onConfirmPlaceTap?.call(widget.places![_selectedIndex]),
                   text: suggestionType ? 'new place' : 'confirm',
                   fit: ButtonFit.fitWidth,
                 ),

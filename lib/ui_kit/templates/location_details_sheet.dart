@@ -7,8 +7,8 @@ class LocationDetailsSheet extends StatefulWidget {
   final LocationDetailsSheetController controller;
   final VoidCallback? onLocationConfirmed;
   final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
-  final void Function(String placeName)? onConfirmPlaceTap;
-  final List<String>? suggestionPlaces;
+  final void Function(KnownLocation location)? onConfirmPlaceTap;
+  final List<KnownLocation>? suggestionPlaces;
   final ValueChanged<bool> onNewPlaceTap;
   final bool newPlace;
 
@@ -46,35 +46,50 @@ class _LocationDetailsSheetState extends State<LocationDetailsSheet> {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadiusFoundation.all24,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.3),
-            blurRadius: 1,
-            offset: const Offset(0, 1),
+    return StreamBuilder<LocationDetailsSheetState>(
+      stream: widget.controller.sheetStateStream,
+      builder: (context, snapshot) {
+        final state = snapshot.data;
+
+        final expanded = state == LocationDetailsSheetState.expanded;
+        final hidden = state == LocationDetailsSheetState.hidden;
+        final hasLocations = widget.controller.knownLocations.isNotEmpty;
+        final canShowList = expanded && hasLocations;
+
+        if (hidden) return SpacingFoundation.none;
+        return DecoratedBox(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadiusFoundation.all24,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.3),
+                blurRadius: 1,
+                offset: const Offset(0, 1),
+              ),
+              BoxShadow(
+                color: Colors.black.withOpacity(0.15),
+                blurRadius: 4,
+                offset: const Offset(0, 4),
+              ),
+            ],
           ),
-          BoxShadow(
-            color: Colors.black.withOpacity(0.15),
-            blurRadius: 4,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: _newPlace
-          ? LocationSelectionWidget.suggestions(
-              places: widget.suggestionPlaces,
-              onConfirmPlaceTap: widget.onConfirmPlaceTap,
-              onNewPlaceTap: () {
-                setState(() => _newPlace = true);
-                widget.onNewPlaceTap.call(!_newPlace);
-              },
-            )
-          : LocationSelectionWidget(
-              knownLocations: widget.controller.knownLocations,
-              onKnownLocationConfirmed: widget.onKnownLocationConfirmed,
-            ),
+          child: _newPlace
+              ? LocationSelectionWidget.suggestions(
+                  knownLocations: widget.suggestionPlaces,
+                  onKnownLocationConfirmed: widget.onKnownLocationConfirmed,
+                  onNewPlaceTap: () {
+                    setState(() => _newPlace = true);
+                    widget.onNewPlaceTap.call(!_newPlace);
+                  },
+                  canShowList: canShowList,
+                )
+              : LocationSelectionWidget(
+                  places: widget.controller.knownLocations,
+                  onConfirmPlaceTap: widget.onConfirmPlaceTap,
+                  canShowList: canShowList,
+                ),
+        );
+      },
     );
   }
 }
