@@ -6,8 +6,8 @@ extension FactoryExtention on BuildContext {
     return WidgetsFactory.of(this)!.createSmallGradientButton(data: data).build(this);
   }
 
-  Widget createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred}) {
-    return WidgetsFactory.of(this)!.createSmallOutlinedButton(data: data, color: color, blurred: blurred).build(this);
+  Widget createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred,Gradient? gradient}) {
+    return WidgetsFactory.of(this)!.createSmallOutlinedButton(data: data, color: color, blurred: blurred,gradient:gradient).build(this);
   }
 
   Widget buttonWithProgress({
@@ -90,12 +90,14 @@ extension FactoryExtention on BuildContext {
     BaseUiKitButtonData? data,
     Color? color,
     bool? blurred,
+    Gradient? gradient,
   }) {
     return WidgetsFactory.of(this)!
         .createSmallOutlinedButton(
           data: data,
           color: color,
           blurred: blurred,
+      gradient: gradient,
         )
         .build(this);
   }
