@@ -239,6 +239,146 @@ class S {
       args: [],
     );
   }
+
+  /// `Support`
+  String get Support {
+    return Intl.message(
+      'Support',
+      name: 'Support',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Members`
+  String get Members {
+    return Intl.message(
+      'Members',
+      name: 'Members',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get Search {
+    return Intl.message(
+      'Search',
+      name: 'Search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Directions`
+  String get Directions {
+    return Intl.message(
+      'Directions',
+      name: 'Directions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tap it`
+  String get TapIt {
+    return Intl.message(
+      'Tap it',
+      name: 'TapIt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No health kit available on your device, so the result will be random`
+  String get NoHealthKitAvailableOnYourDevice {
+    return Intl.message(
+      'No health kit available on your device, so the result will be random',
+      name: 'NoHealthKitAvailableOnYourDevice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invites you to`
+  String get InvitesYouTo {
+    return Intl.message(
+      'Invites you to',
+      name: 'InvitesYouTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invites {invitedPeopleCount} people to`
+  String InvitesNPeopleTo(Object invitedPeopleCount) {
+    return Intl.message(
+      'Invites $invitedPeopleCount people to',
+      name: 'InvitesNPeopleTo',
+      desc: '',
+      args: [invitedPeopleCount],
+    );
+  }
+
+  /// `Not now`
+  String get NotNow {
+    return Intl.message(
+      'Not now',
+      name: 'NotNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go!`
+  String get Go {
+    return Intl.message(
+      'Go!',
+      name: 'Go',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invite more`
+  String get InviteMore {
+    return Intl.message(
+      'Invite more',
+      name: 'InviteMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Сompany answered`
+  String get CompanyAnswered {
+    return Intl.message(
+      'Сompany answered',
+      name: 'CompanyAnswered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Helpful`
+  String get Helpful {
+    return Intl.message(
+      'Helpful',
+      name: 'Helpful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Helpful {helpfulCount}`
+  String HelpfulNCount(Object helpfulCount) {
+    return Intl.message(
+      'Helpful $helpfulCount',
+      name: 'HelpfulNCount',
+      desc: '',
+      args: [helpfulCount],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -247,6 +387,8 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
+      Locale.fromSubtags(languageCode: 'ru'),
     ];
   }
 

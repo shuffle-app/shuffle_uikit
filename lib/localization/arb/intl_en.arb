@@ -17,5 +17,19 @@
   "ThatsAllForNow": "That's all for now!",
   "Weather": "Weather",
   "Follow": "Follow",
-  "Followers": "Followers"
+  "Followers": "Followers",
+  "Support": "Support",
+  "Members": "Members",
+  "Search": "Search",
+  "Directions": "Directions",
+  "TapIt": "Tap it",
+  "NoHealthKitAvailableOnYourDevice": "No health kit available on your device, so the result will be random",
+  "InvitesYouTo": "Invites you to",
+  "InvitesNPeopleTo": "Invites {invitedPeopleCount} people to",
+  "NotNow": "Not now",
+  "Go": "Go!",
+  "InviteMore": "Invite more",
+  "CompanyAnswered": "Сompany answered",
+  "Helpful": "Helpful",
+  "HelpfulNCount": "Helpful {helpfulCount}"
 }

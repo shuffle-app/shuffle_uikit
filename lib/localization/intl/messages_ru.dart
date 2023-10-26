@@ -1,5 +1,5 @@
 // DO NOT EDIT. This is code generated via package:intl/generate_localized.dart
-// This is a library that provides messages for a en locale. All the
+// This is a library that provides messages for a ru locale. All the
 // messages from the main program should be duplicated here with the same
 // function name.
 
@@ -18,7 +18,7 @@ final messages = new MessageLookup();
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 
 class MessageLookup extends MessageLookupByLibrary {
-  String get localeName => 'en';
+  String get localeName => 'ru';
 
   static String m0(helpfulCount) => "Helpful ${helpfulCount}";
 
@@ -30,7 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ChooseOption": MessageLookupByLibrary.simpleMessage("Choose option"),
         "CompanyAnswered":
             MessageLookupByLibrary.simpleMessage("Сompany answered"),
-        "Confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "Confirm": MessageLookupByLibrary.simpleMessage("Подтвердить"),
         "Directions": MessageLookupByLibrary.simpleMessage("Directions"),
         "Follow": MessageLookupByLibrary.simpleMessage("Follow"),
         "Followers": MessageLookupByLibrary.simpleMessage("Followers"),
@@ -43,7 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "InvitesYouTo": MessageLookupByLibrary.simpleMessage("Invites you to"),
         "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
         "Members": MessageLookupByLibrary.simpleMessage("Members"),
-        "NewPlace": MessageLookupByLibrary.simpleMessage("New place"),
+        "NewPlace": MessageLookupByLibrary.simpleMessage("Новое место"),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "No health kit available on your device, so the result will be random"),
         "NoPhotoHereYet":
