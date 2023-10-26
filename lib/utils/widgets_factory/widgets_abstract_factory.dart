@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
@@ -108,7 +108,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  ButtonFactory createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred}) {
+  ButtonFactory createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred,Gradient? gradient}) {
     if (!(blurred ?? false) && data?.icon == null) {
       return SmallOutlinedButtonNoBlur(
         onPressed: data?.onPressed,
@@ -122,10 +122,11 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     } else if ((data?.text != null && data!.text.isNotEmpty) || data?.icon == null) {
       return SmallOutlinedButton(
         onPressed: data?.onPressed,
+        gradient:gradient,
         blurred: blurred ?? false,
         text: data?.text ?? '',
         borderColor: color,
-        textColor: color,
+        textColor: gradient!=null ? Colors.white : color,
         loading: data!.loading,
       );
     } else if ((blurred ?? false) && data?.icon != null) {
