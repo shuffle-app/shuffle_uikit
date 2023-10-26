@@ -78,7 +78,7 @@ class UiKitExtendedFeedbackCard extends StatelessWidget {
                 ),
                 SpacingFoundation.horizontalSpace8,
                 Text(
-                  'Helpful ${helpfulCount ?? ''}',
+                  S.of(context).HelpfulNCount(helpfulCount ?? ''),
                   style: textTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                 )
               ],

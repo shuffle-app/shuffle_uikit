@@ -127,8 +127,12 @@ class UiKitInviteMessageContent extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  showGang ? 'invites ${invitedPeopleAvatarPaths.length} people to' : 'invites you to',
-                  style: theme?.boldTextTheme.caption1Medium.copyWith(color: isDark ? Colors.white : Colors.black),
+                  showGang
+                      ? S.of(context).InvitesNPeopleTo(invitedPeopleAvatarPaths.length).toLowerCase()
+                      : S.of(context).InvitesYouTo.toLowerCase(),
+                  style: theme?.boldTextTheme.caption1Medium.copyWith(
+                    color: isDark ? Colors.white : Colors.black,
+                  ),
                 ),
               ],
             ),
@@ -199,7 +203,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
                 child: context.smallGradientButton(
                   data: BaseUiKitButtonData(
                     onPressed: onAcceptTap,
-                    text: 'GO!',
+                    text: S.of(context).Go.toUpperCase(),
                     fit: ButtonFit.fitWidth,
                   ),
                 ),
@@ -212,7 +216,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
                   blurred: false,
                   data: BaseUiKitButtonData(
                     onPressed: onDenyTap,
-                    text: 'NOT NOW',
+                    text: S.of(context).NotNow.toUpperCase(),
                     fit: ButtonFit.fitWidth,
                   ),
                 ),
@@ -223,7 +227,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
           context.gradientButton(
             data: BaseUiKitButtonData(
               onPressed: onInvitePeopleTap,
-              text: 'INVITE MORE',
+              text: S.of(context).InviteMore.toUpperCase(),
               fit: ButtonFit.fitWidth,
             ),
           ),

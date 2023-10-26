@@ -111,7 +111,7 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
                 ),
                 SpacingFoundation.horizontalSpace8,
                 Text(
-                  'Helpful',
+                  S.of(context).Helpful,
                   style: titleStyle?.copyWith(
                     color: ColorsFoundation.darkNeutral900,
                   ),

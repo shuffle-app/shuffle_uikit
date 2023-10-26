@@ -117,7 +117,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
                   ? GradientableWidget(
                       gradient: GradientFoundation.touchIdLinearGradient,
                       child: Text(
-                        'Tap it',
+                        S.of(context).TapIt,
                         style: context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(
                           color: Colors.white,
                         ),
@@ -147,7 +147,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
                   ),
                   SpacingFoundation.verticalSpace4,
                   Text(
-                    'No health kit available on your device, so the result will be random',
+                    S.of(context).NoHealthKitAvailableOnYourDevice,
                     style: context.uiKitTheme?.regularTextTheme.body.copyWith(
                       color: ColorsFoundation.warning,
                     ),
