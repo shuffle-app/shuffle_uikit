@@ -11,15 +11,18 @@ Future<Object?> showSettingsAlert(BuildContext context, {required VoidCallback o
       onPop: onPop,
       additionalButton: const SizedBox.shrink(),
       content: context.dialogButton(
-        data: BaseUiKitButtonData(onPressed: () {
-          context.pop();
+        data: BaseUiKitButtonData(
+          onPressed: () {
+            context.pop();
 
-          return onTap.call();
-        }, text: 'go to settings'),
+            return onTap.call();
+          },
+          text: S.of(context).GoToSettings,
+        ),
         dialogButtonType: DialogButtonType.buttonBlack,
       ),
       title: Text(
-        'To allow access to send push notifications, go to your phone settings',
+        S.of(context).ToAllowAccessGoToSettings,
         style: context.uiKitTheme?.boldTextTheme.title2.copyWith(
           color: context.uiKitTheme?.colorScheme.primary,
         ),

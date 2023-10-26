@@ -35,8 +35,11 @@ class PersonalProfileInfo extends StatelessWidget {
               ),
               if (followers != null) ...[
                 TextSpan(
-                  text: '\nFollowers\n',
-                  style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900) ?? fallBackStyle,
+                  text: '\n${S.of(context).Followers}\n',
+                  style: boldTextTheme?.caption1Medium.copyWith(
+                        color: ColorsFoundation.darkNeutral900,
+                      ) ??
+                      fallBackStyle,
                 ),
                 TextSpan(
                   text: followers!.toString(),
@@ -54,7 +57,7 @@ class PersonalProfileInfo extends StatelessWidget {
         if (onFollow != null) ...[
           SpacingFoundation.verticalSpace12,
           context.smallButton(
-            data: BaseUiKitButtonData(text: 'follow'.toUpperCase(), onPressed: onFollow),
+            data: BaseUiKitButtonData(text: S.of(context).Follow.toUpperCase(), onPressed: onFollow),
           )
         ],
       ],

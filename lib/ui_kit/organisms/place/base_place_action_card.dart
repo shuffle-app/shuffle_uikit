@@ -19,7 +19,7 @@ class BasePlaceActionCard extends StatelessWidget {
     this.vectorIconAsset,
     this.rasterIconAsset,
     required this.action,
-     this.group,
+    this.group,
   }) : super(key: key);
 
   @override
@@ -64,10 +64,10 @@ class BasePlaceActionCard extends StatelessWidget {
                 textAlign: TextAlign.left,
               ),
               SpacingFoundation.verticalSpace8,
-      SmallOrdinaryButton(
-                text: 'See more',
+              SmallOrdinaryButton(
+                text: S.of(context).SeeMore,
                 onPressed: action,
-          group:group
+                group: group,
               ),
             ],
           ).paddingAll(EdgeInsetsFoundation.all12),

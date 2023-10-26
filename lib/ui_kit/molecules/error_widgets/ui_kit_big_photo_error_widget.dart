@@ -14,7 +14,7 @@ class UiKitBigPhotoErrorWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Ooops!',
+            S.of(context).Ooops,
             style: textTheme?.body.copyWith(
               color: ColorsFoundation.darkNeutral900,
             ),
@@ -25,7 +25,7 @@ class UiKitBigPhotoErrorWidget extends StatelessWidget {
           ),
           SpacingFoundation.verticalSpace4,
           Text(
-            'No photo here yet!',
+            S.of(context).NoPhotoHereYet,
             style: textTheme?.body.copyWith(
               color: ColorsFoundation.darkNeutral900,
             ),

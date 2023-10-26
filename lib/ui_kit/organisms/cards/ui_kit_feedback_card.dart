@@ -67,7 +67,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                     children: [
                       if (companyAnswered ?? false)
                         Text(
-                          'Сompany answered',
+                          S.of(context).CompanyAnswered,
                           style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                         ),
                       const Spacer(),
@@ -82,7 +82,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                       GestureDetector(
                         onTap: onLike,
                         child: Text(
-                          'Helpful',
+                          S.of(context).Helpful,
                           style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                         ),
                       ),

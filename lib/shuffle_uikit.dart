@@ -13,6 +13,7 @@ export 'package:shuffle_uikit/ui_models/ui_models.dart';
 export 'package:shuffle_uikit/utils/utils.dart';
 
 export 'tokens/tokens.dart';
+export 'localization/localization.dart';
 export 'utils/animations/animations.dart';
 export 'utils/builders/alert_dialog_builder.dart';
 export 'utils/builders/comment_dialog_builder.dart';

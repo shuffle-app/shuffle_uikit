@@ -10,7 +10,7 @@ Future<Object?> showGeolocationAlert(BuildContext context, {required VoidCallbac
           children: [
             Expanded(
               child: context.dialogButton(
-                data: BaseUiKitButtonData(onPressed: onTap, text: 'ok'),
+                data: BaseUiKitButtonData(onPressed: onTap, text: S.of(context).Ok.toLowerCase()),
                 dialogButtonType: DialogButtonType.buttonBlack,
                 small: true,
               ),
@@ -20,7 +20,7 @@ Future<Object?> showGeolocationAlert(BuildContext context, {required VoidCallbac
               child: context.dialogButton(
                 data: BaseUiKitButtonData(
                   onPressed: onPop ?? () => context.pop(),
-                  text: 'no, thx',
+                  text: S.of(context).NoThx.toLowerCase(),
                 ),
                 dialogButtonType: DialogButtonType.buttonWhite,
                 small: true,
@@ -34,7 +34,7 @@ Future<Object?> showGeolocationAlert(BuildContext context, {required VoidCallbac
         alignment: WrapAlignment.center,
         children: [
           Text(
-            'To access all',
+            S.of(context).ToAccessAll,
             style: context.uiKitTheme?.boldTextTheme.title2.copyWith(
               color: context.uiKitTheme?.colorScheme.primary,
             ),
@@ -50,7 +50,7 @@ Future<Object?> showGeolocationAlert(BuildContext context, {required VoidCallbac
             ),
           ),
           Text(
-            'features enable geolocation',
+            S.of(context).FeaturesEnableGeolocation.toLowerCase(),
             style: context.uiKitTheme?.boldTextTheme.title2.copyWith(
               color: context.uiKitTheme?.colorScheme.primary,
             ),

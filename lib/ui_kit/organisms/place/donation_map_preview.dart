@@ -12,17 +12,16 @@ class DonationMapPreview extends StatelessWidget {
       onTap: () => onTap?.call(),
       child: Stack(
         children: [
-           ImageWidget(
-              rasterAsset: GraphicsFoundation.instance.png.mapMock,
-              fit: BoxFit.fitWidth,
-            ),
-
+          ImageWidget(
+            rasterAsset: GraphicsFoundation.instance.png.mapMock,
+            fit: BoxFit.fitWidth,
+          ),
           Positioned.fill(
             child: Center(
               child: UiKitBlurWrapper(
                 border: const Border.fromBorderSide(BorderSide.none),
                 child: Text(
-                  'Tap to see more',
+                  S.of(context).TapToSeeMore,
                   style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(
                     color: ColorsFoundation.darkNeutral100,
                   ),

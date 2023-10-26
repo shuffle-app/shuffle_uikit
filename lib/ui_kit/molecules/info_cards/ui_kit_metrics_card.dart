@@ -21,10 +21,10 @@ class UiKitMetricsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle =
-        context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(color: active ? Colors.black : ColorsFoundation.darkNeutral900);
-    final valueStyle =
-        context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(color: active ? Colors.black : ColorsFoundation.darkNeutral900);
+    final titleStyle = context.uiKitTheme?.boldTextTheme.caption2Bold
+        .copyWith(color: active ? Colors.black : ColorsFoundation.darkNeutral900);
+    final valueStyle = context.uiKitTheme?.boldTextTheme.subHeadline
+        .copyWith(color: active ? Colors.black : ColorsFoundation.darkNeutral900);
 
     return Container(
       height: height,
@@ -52,7 +52,7 @@ class UiKitMetricsCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  active ? title : 'OFF',
+                  active ? title : S.of(context).Off.toUpperCase(),
                   style: active ? titleStyle : valueStyle,
                 ),
                 SpacingFoundation.verticalSpace2,
@@ -60,7 +60,7 @@ class UiKitMetricsCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      active ? value : 'Health kit',
+                      active ? value : S.of(context).HealthKit,
                       style: active ? valueStyle : titleStyle,
                     ),
                     SpacingFoundation.horizontalSpace4,

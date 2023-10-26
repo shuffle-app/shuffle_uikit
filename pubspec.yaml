@@ -5,14 +5,16 @@ homepage: none
 publish_to: none
 
 environment:
-  sdk: '>=3.1.0 <4.0.0'
+  sdk: ">=3.1.0 <4.0.0"
   flutter: ">=3.13.4"
 
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_web_plugins:
-   sdk: flutter
+    sdk: flutter
 
   #ui utils
   flutter_svg: ^2.0.7
@@ -37,7 +39,7 @@ dependencies:
   sliver_tools: ^0.2.12
   infinite_scroll_pagination: ^4.0.0-dev.1
   flutter_gallery_3d:
-#    path: ../flutter_gallery_3d_plus
+    #    path: ../flutter_gallery_3d_plus
     git:
       url: https://github.com/shuffle-app/flutter_gallery_3d_plus
       ref: 46c7407b35a841c81ad5972533f8d3d3b4fddd57
@@ -48,17 +50,17 @@ dependencies:
 
   #tab navigation
   tabnavigator:
-#    path: ../tabnavigator_plus
+    #    path: ../tabnavigator_plus
     git:
-     url: https://github.com/shuffle-app/tabnavigator_plus
-     ref: main
+      url: https://github.com/shuffle-app/tabnavigator_plus
+      ref: main
   rxdart: any
   lottie: ^2.3.2
   flutter_card_swiper:
     git:
-#      url: https://github.com/rel1nce/shuffle_swiper.git
+      #      url: https://github.com/rel1nce/shuffle_swiper.git
       url: https://github.com/shuffle-app/shuffle_swiper.git
-#      ref: main
+      #      ref: main
       ref: e4391ca40994c91acc563477c7959fbdeff50004
 
   intl: ^0.18.1
@@ -85,7 +87,6 @@ dev_dependencies:
   flutter_gen_runner: ^5.3.1
   build_runner: ^2.3.3
 #  dart_code_metrics: ^5.7.3
-
 flutter:
   assets:
     - assets/images/png/
@@ -120,3 +121,9 @@ flutter_gen:
       style: dot-delimiter
       package_parameter_enabled: true
       synthetic-package: false
+
+# extensions
+flutter_intl:
+  enabled: true
+  arb_dir: lib/localization/arb
+  output_dir: lib/localization

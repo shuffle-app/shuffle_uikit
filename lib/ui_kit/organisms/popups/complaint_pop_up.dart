@@ -13,7 +13,7 @@ Future<Object?> showComplaintPopUp(BuildContext context, {VoidCallback? onPop}) 
               child: context.dialogButton(
                 data: BaseUiKitButtonData(
                   onPressed: onPop ?? () => context.pop(),
-                  text: 'okay, cool!',
+                  text: S.of(context).OkayCool.toLowerCase(),
                 ),
                 dialogButtonType: DialogButtonType.buttonBlack,
               ),
@@ -22,14 +22,14 @@ Future<Object?> showComplaintPopUp(BuildContext context, {VoidCallback? onPop}) 
         ),
       ],
       content: Text(
-        'We will let you know the results',
+        S.of(context).WeWillLetKnowResults,
         textAlign: TextAlign.center,
         style: context.uiKitTheme?.boldTextTheme.body.copyWith(
           color: context.uiKitTheme?.colorScheme.primary,
         ),
       ),
       title: Text(
-        'Your claim has been sent',
+        S.of(context).YourClaimHasBeenSent,
         style: context.uiKitTheme?.boldTextTheme.title2.copyWith(
           color: context.uiKitTheme?.colorScheme.primary,
         ),

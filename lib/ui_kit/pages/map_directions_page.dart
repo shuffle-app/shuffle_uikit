@@ -132,7 +132,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
               focusNode: _focusNode,
               readOnly: true,
               controller: widget.searchController,
-              hintText: 'Search',
+              hintText: S.of(context).Search,
               suffixIcon: SpacingFoundation.none,
               prefix: UiKitSwitchableInputPrefix(
                 secondary: GestureDetector(
@@ -246,7 +246,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                     ),
                     SpacingFoundation.horizontalSpace4,
                     Text(
-                      'Directions',
+                      S.of(context).Directions,
                       style: theme?.boldTextTheme.caption1Bold,
                     ),
                   ],

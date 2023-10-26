@@ -41,7 +41,7 @@ class MemberPlate extends StatelessWidget {
               )),
           // SpacingFoundation.horizontalSpace4,
           Text(
-            'members',
+            S.of(context).Members.toLowerCase(),
             style: textTheme?.caption1Medium.copyWith(color: Colors.black),
           ),
         ],

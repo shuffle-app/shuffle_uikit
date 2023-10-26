@@ -47,7 +47,7 @@ class SupportShuffleButton extends StatelessWidget {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: 'Support',
+                            text: S.of(context).Support,
                             style: theme?.regularTextTheme.body,
                           ),
                           TextSpan(
@@ -65,7 +65,7 @@ class SupportShuffleButton extends StatelessWidget {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: 'Support',
+                              text: S.of(context).Support,
                               style: theme?.regularTextTheme.body.copyWith(color: Colors.transparent),
                             ),
                             TextSpan(

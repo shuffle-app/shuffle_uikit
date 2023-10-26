@@ -12,7 +12,7 @@ Future<Object?> showIncorrectLoginPopUp(
       content: GestureDetector(
         onTap: onForgotPasswordTap,
         child: Text(
-          'Forgot password',
+          S.of(context).ForgotPassword,
           textAlign: TextAlign.center,
           style: context.uiKitTheme?.boldTextTheme.body.copyWith(
             color: ColorsFoundation.info,
@@ -22,13 +22,13 @@ Future<Object?> showIncorrectLoginPopUp(
       ),
       onPop: onPop,
       title: Text(
-        'Incorrect login or password',
+        S.of(context).ForgotPassword,
         style: context.uiKitTheme?.boldTextTheme.title2.copyWith(
           color: context.uiKitTheme?.colorScheme.primary,
         ),
         textAlign: TextAlign.center,
       ),
-      defaultButtonText: "Oops, I'll try again",
+      defaultButtonText: S.of(context).OopsIWillTryAgain,
       defaultButtonSmall: false,
     ),
   );
