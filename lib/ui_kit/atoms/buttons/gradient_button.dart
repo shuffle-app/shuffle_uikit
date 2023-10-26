@@ -36,7 +36,7 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
           width: fit == ButtonFit.fitWidth ? double.infinity : null,
           padding: EdgeInsets.symmetric(
             vertical: EdgeInsetsFoundation.vertical14,
-            horizontal: EdgeInsetsFoundation.horizontal44,
+            horizontal: fit == ButtonFit.hugContent ? EdgeInsetsFoundation.horizontal20: EdgeInsetsFoundation.horizontal44,
           ),
           decoration: BoxDecoration(
             borderRadius: kIsWeb ? BorderRadiusFoundation.all10 : BorderRadiusFoundation.max,

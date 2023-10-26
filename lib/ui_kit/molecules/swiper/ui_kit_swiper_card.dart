@@ -7,6 +7,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
     super.key,
     super.imageLink,
     super.onTap,
+    super.pointsToGain,
     required super.tags,
     required super.title,
     required super.subtitle,
@@ -43,19 +44,21 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                 children: [
                   Align(
                     alignment: Alignment.topLeft,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadiusFoundation.all40,
-                        gradient: GradientFoundation.defaultRadialGradient,
-                      ),
-                      child: Text(
-                        '+20',
-                        style: textTheme?.caption1Bold.copyWith(color: Colors.black),
-                      ).paddingSymmetric(
-                        vertical: EdgeInsetsFoundation.vertical8,
-                        horizontal: EdgeInsetsFoundation.horizontal12,
-                      ),
-                    ),
+                    child: pointsToGain == null
+                        ? null
+                        : Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadiusFoundation.all40,
+                              gradient: GradientFoundation.defaultRadialGradient,
+                            ),
+                            child: Text(
+                              '+$pointsToGain',
+                              style: textTheme?.caption1Bold.copyWith(color: Colors.black),
+                            ).paddingSymmetric(
+                              vertical: EdgeInsetsFoundation.vertical8,
+                              horizontal: EdgeInsetsFoundation.horizontal12,
+                            ),
+                          ),
                   ),
                   UiKitSwiperCardInfo(
                     title: title,
