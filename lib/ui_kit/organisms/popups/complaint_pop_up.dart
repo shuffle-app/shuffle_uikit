@@ -13,7 +13,7 @@ Future<Object?> showComplaintPopUp(BuildContext context, {VoidCallback? onPop}) 
               child: context.dialogButton(
                 data: BaseUiKitButtonData(
                   onPressed: onPop ?? () => context.pop(),
-                  text: 'okay, cool!',
+                  text: S.of(context).OkayCool.toLowerCase(),
                 ),
                 dialogButtonType: DialogButtonType.buttonBlack,
               ),

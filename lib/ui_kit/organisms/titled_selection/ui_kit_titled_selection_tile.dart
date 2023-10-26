@@ -36,7 +36,7 @@ class UiKitTitledSelectionTile extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  selectedItems?.join(', ') ?? 'No preferences chosen',
+                  selectedItems?.join(', ') ?? S.of(context).NoPreferencesChosen,
                   style: textTheme?.body,
                   maxLines: 1,
                 ),

@@ -37,24 +37,23 @@ class UiKitWeatherInfoCard extends StatelessWidget {
         children: [
           Flexible(
               flex: 2,
-              child:
-              Column(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    active ? '$temperature°C' : 'OFF',
+                    active ? '$temperature°C' : S.of(context).Off.toUpperCase(),
                     style: temperatureStyle,
                   ),
                   Text(
-                    active ? weatherType : 'Weather',
+                    active ? weatherType : S.of(context).Weather,
                     style: weatherTypeStyle,
                   ),
                 ],
               )),
           SpacingFoundation.horizontalSpace16,
-          Flexible(child:
-          Container(
+          Flexible(
+              child: Container(
             decoration: BoxDecoration(
               boxShadow: [
                 BoxShadow(

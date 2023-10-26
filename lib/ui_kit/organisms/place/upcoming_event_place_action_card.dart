@@ -1,14 +1,14 @@
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UpcomingEventPlaceActionCard extends BasePlaceActionCard {
-  const UpcomingEventPlaceActionCard({
+  UpcomingEventPlaceActionCard({
     super.key,
     required super.value,
     super.rasterIconAsset,
     super.vectorIconAsset,
     required super.action,
-    super.group
+    super.group,
   }) : super(
-          title: 'Upcoming Event',
+          title: S.current.UpcomingEvent,
         );
 }

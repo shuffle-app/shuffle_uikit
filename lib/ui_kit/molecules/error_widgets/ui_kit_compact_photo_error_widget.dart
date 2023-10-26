@@ -19,7 +19,7 @@ class UiKitCompactPhotoErrorWidget extends StatelessWidget {
         children: [
           SizedBox(height: topSpacing ?? SpacingFoundation.verticalSpacing24),
           Text(
-            'No photo here yet!',
+            S.of(context).NoPhotoHereYet,
             style: textTheme?.body.copyWith(
               color: ColorsFoundation.darkNeutral900,
             ),

@@ -32,8 +32,9 @@ class LoadingWidget extends StatelessWidget {
             if (showLoadingText) ...[
               SpacingFoundation.verticalSpace8,
               Shimmer(
-                  gradient: GradientFoundation.buttonGradient,
-                  child: Text('Loading...', style: context.uiKitTheme?.boldTextTheme.caption1Bold))
+                gradient: GradientFoundation.buttonGradient,
+                child: Text(S.of(context).Loading, style: context.uiKitTheme?.boldTextTheme.caption1Bold),
+              )
             ]
           ])),
     ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing32);

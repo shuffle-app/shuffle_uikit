@@ -55,7 +55,7 @@ class UiKitCountrySelector extends StatelessWidget {
               if (selectedCountry == null)
                 Expanded(
                   child: Text(
-                    'Select option',
+                    S.of(context).SelectOption,
                     style: boldTextTheme?.caption1Medium,
                   ),
                 ),

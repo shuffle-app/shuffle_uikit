@@ -9,8 +9,7 @@ class LocationSelectionWidget extends StatefulWidget {
     required this.onLocationConfirmed,
     this.height,
     this.canShowList,
-  })
-      : onKnownLocationConfirmed = null,
+  })  : onKnownLocationConfirmed = null,
         knownLocations = null,
         onNewPlaceTap = null,
         _selectionType = _SuggestionType.suggestion;
@@ -22,8 +21,7 @@ class LocationSelectionWidget extends StatefulWidget {
     required this.onNewPlaceTap,
     this.height,
     this.canShowList,
-  })
-      : onLocationChanged = null,
+  })  : onLocationChanged = null,
         places = null,
         onLocationConfirmed = null,
         _selectionType = _SuggestionType.known;
@@ -57,7 +55,8 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
   @override
   void didUpdateWidget(LocationSelectionWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.places != widget.places || oldWidget.knownLocations != widget.knownLocations ||
+    if (oldWidget.places != widget.places ||
+        oldWidget.knownLocations != widget.knownLocations ||
         widget._selectionType != oldWidget._selectionType) {
       setState(() => _selectedIndex = 0);
     }
@@ -82,54 +81,52 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                   top: EdgeInsetsFoundation.vertical16,
                 ),
                 itemCount: isSuggestions ? widget.places!.length : widget.knownLocations!.length,
-                itemBuilder: (_, index) =>
-                    GestureDetector(
-                      onTap: isSuggestions
-                          ? () {
-                        setState(() => _selectedIndex = index);
-                        widget.onLocationChanged?.call(address: widget.places![index].title);
-                      }
-                          : null,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Flexible(
-                            child: Text(
-                              '${index + 1}. ${isSuggestions ? widget.places![index].title : widget
-                                  .knownLocations![index].title} ',
-                              style: theme?.regularTextTheme.caption1.copyWith(
-                                color: theme.colorScheme.primary,
-                              ),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
+                itemBuilder: (_, index) => GestureDetector(
+                  onTap: isSuggestions
+                      ? () {
+                          setState(() => _selectedIndex = index);
+                          widget.onLocationChanged?.call(address: widget.places![index].title);
+                        }
+                      : null,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Flexible(
+                        child: Text(
+                          '${index + 1}. ${isSuggestions ? widget.places![index].title : widget.knownLocations![index].title} ',
+                          style: theme?.regularTextTheme.caption1.copyWith(
+                            color: theme.colorScheme.primary,
                           ),
-                          SpacingFoundation.verticalSpace16,
-                          isSuggestions
-                              ? UiKitRadio(selected: _selectedIndex == index)
-                              : context.smallButton(
-                            backgroundColor: theme?.colorScheme.primary,
-                            color: Colors.transparent,
-                            data: BaseUiKitButtonData(
-                              onPressed: () => widget.onKnownLocationConfirmed?.call(widget.knownLocations![index]),
-                              text: 'confirm',
-                            ),
-                          ),
-                        ],
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
-                    ),
+                      SpacingFoundation.verticalSpace16,
+                      isSuggestions
+                          ? UiKitRadio(selected: _selectedIndex == index)
+                          : context.smallButton(
+                              backgroundColor: theme?.colorScheme.primary,
+                              color: Colors.transparent,
+                              data: BaseUiKitButtonData(
+                                onPressed: () => widget.onKnownLocationConfirmed?.call(widget.knownLocations![index]),
+                                text: S.of(context).Confirm,
+                              ),
+                            ),
+                    ],
+                  ),
+                ),
                 separatorBuilder: (_, __) => SpacingFoundation.verticalSpace14,
               ),
             ),
           SpacingFoundation.verticalSpace16,
           context
               .gradientButton(
-            data: BaseUiKitButtonData(
-              onPressed: () => isSuggestions ? widget.onLocationConfirmed?.call() : widget.onNewPlaceTap?.call(),
-              text: isSuggestions ? 'confirm' : 'new place',
-              fit: ButtonFit.fitWidth,
-            ),
-          )
+                data: BaseUiKitButtonData(
+                  onPressed: () => isSuggestions ? widget.onLocationConfirmed?.call() : widget.onNewPlaceTap?.call(),
+                  text: isSuggestions ? S.of(context).Confirm : S.of(context).NewPlace,
+                  fit: ButtonFit.fitWidth,
+                ),
+              )
               .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
         ],
       ).paddingOnly(

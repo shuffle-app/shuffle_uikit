@@ -1,14 +1,12 @@
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class PointBalancePlaceActionCard extends BasePlaceActionCard {
-  const PointBalancePlaceActionCard({
+  PointBalancePlaceActionCard({
     super.key,
     required super.value,
     super.rasterIconAsset,
     super.group,
     super.vectorIconAsset,
     required super.action,
-  }) : super(
-          title: 'Point Balance',
-        );
+  }) : super(title: S.current.PointBalance);
 }
