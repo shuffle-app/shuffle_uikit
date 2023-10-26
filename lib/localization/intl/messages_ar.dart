@@ -20,26 +20,42 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
-  static String m0(helpfulCount) => "Helpful ${helpfulCount}";
+  static String m0(allowedCharacters) =>
+      "Allowed caracters are ${allowedCharacters}";
 
-  static String m1(invitedPeopleCount) =>
+  static String m1(helpfulCount) => "Helpful ${helpfulCount}";
+
+  static String m2(invitedPeopleCount) =>
       "Invites ${invitedPeopleCount} people to";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AllowedCaracters": m0,
         "ChooseOption": MessageLookupByLibrary.simpleMessage("Choose option"),
         "CompanyAnswered":
             MessageLookupByLibrary.simpleMessage("Сompany answered"),
         "Confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "Directions": MessageLookupByLibrary.simpleMessage("Directions"),
+        "Email": MessageLookupByLibrary.simpleMessage("Email"),
+        "EnterYourEmailAddress":
+            MessageLookupByLibrary.simpleMessage("Enter your e-mail address"),
+        "FeaturesEnableGeolocation":
+            MessageLookupByLibrary.simpleMessage("Features enable geolocation"),
         "Follow": MessageLookupByLibrary.simpleMessage("Follow"),
         "Followers": MessageLookupByLibrary.simpleMessage("Followers"),
+        "ForgotPassword":
+            MessageLookupByLibrary.simpleMessage("Forgot password"),
         "Go": MessageLookupByLibrary.simpleMessage("Go!"),
+        "GoToSettings": MessageLookupByLibrary.simpleMessage("Go to settings"),
         "HealthKit": MessageLookupByLibrary.simpleMessage("Health Kit"),
         "Helpful": MessageLookupByLibrary.simpleMessage("Helpful"),
-        "HelpfulNCount": m0,
+        "HelpfulNCount": m1,
+        "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
+            "How much \\\$ do you want to donate?"),
+        "IncorrectLoginOrPassword":
+            MessageLookupByLibrary.simpleMessage("Incorrect login or password"),
         "InviteMore": MessageLookupByLibrary.simpleMessage("Invite more"),
-        "InvitesNPeopleTo": m1,
+        "InvitesNPeopleTo": m2,
         "InvitesYouTo": MessageLookupByLibrary.simpleMessage("Invites you to"),
         "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
         "Members": MessageLookupByLibrary.simpleMessage("Members"),
@@ -50,20 +66,33 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No photo here yet!"),
         "NoPreferencesChosen":
             MessageLookupByLibrary.simpleMessage("No preferences chosen"),
+        "NoThx": MessageLookupByLibrary.simpleMessage("No, thx"),
         "NotNow": MessageLookupByLibrary.simpleMessage("Not now"),
         "Off": MessageLookupByLibrary.simpleMessage("Off"),
+        "Ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "OkayCool": MessageLookupByLibrary.simpleMessage("Okay, cool!"),
         "Ooops": MessageLookupByLibrary.simpleMessage("Ooops!"),
+        "OopsIWillTryAgain":
+            MessageLookupByLibrary.simpleMessage("Oops, I\'ll try again"),
         "PointBalance": MessageLookupByLibrary.simpleMessage("Point Balance"),
+        "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("See more"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("Select option"),
+        "SendIt": MessageLookupByLibrary.simpleMessage("Send it"),
         "Support": MessageLookupByLibrary.simpleMessage("Support"),
         "TapIt": MessageLookupByLibrary.simpleMessage("Tap it"),
         "TapToSeeMore": MessageLookupByLibrary.simpleMessage("Tap to see more"),
         "ThatsAllForNow":
             MessageLookupByLibrary.simpleMessage("That\'s all for now!"),
+        "ToAccessAll": MessageLookupByLibrary.simpleMessage("To access all"),
+        "ToAllowAccessGoToSettings": MessageLookupByLibrary.simpleMessage(
+            "To allow access to send push notifications, go to your phone settings"),
         "UpcomingEvent": MessageLookupByLibrary.simpleMessage("Upcoming Event"),
-        "Weather": MessageLookupByLibrary.simpleMessage("Weather")
+        "WeWillLetKnowResults": MessageLookupByLibrary.simpleMessage(
+            "We will let you know the results"),
+        "Weather": MessageLookupByLibrary.simpleMessage("Weather"),
+        "YourClaimHasBeenSent":
+            MessageLookupByLibrary.simpleMessage("Your claim has been sent")
       };
 }

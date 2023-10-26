@@ -66,17 +66,17 @@ class UiKitTagSelector extends StatelessWidget {
                       spacing: SpacingFoundation.horizontalSpacing8,
                       runSpacing: SpacingFoundation.verticalSpacing8,
                       children: selectedTags
-                              .map<Widget>(
-                                (e) => UiKitCompactTextCard(
-                                  showRemoveButton: true,
-                                  text: e,
-                                  onTap: () {
-                                    onRemoveTagCallback?.call(e);
-                                    onTagSelected?.call(e);
-                                  },
-                                ),
-                              )
-                              .toList(),
+                          .map<Widget>(
+                            (e) => UiKitCompactTextCard(
+                              showRemoveButton: true,
+                              text: e,
+                              onTap: () {
+                                onRemoveTagCallback?.call(e);
+                                onTagSelected?.call(e);
+                              },
+                            ),
+                          )
+                          .toList(),
                     )))
               else
                 const SizedBox(
@@ -95,7 +95,10 @@ class UiKitTagSelector extends StatelessWidget {
                         if (string.replaceAll(RegExp(r'^[a-z0-9-]+$'), '').isEmpty) {
                           onNotFoundTagCallback?.call(string);
                         } else {
-                          SnackBarUtils.show(message: 'allowed caracters are a-z, 0-9 and -', context: context);
+                          SnackBarUtils.show(
+                            message: S.of(context).AllowedCaracters('a-z, 0-9 and -'),
+                            context: context,
+                          );
                         }
                       },
                     ))

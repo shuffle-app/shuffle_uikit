@@ -17,7 +17,7 @@ Future<Object?> showResetPasswordPopUp(
         child: UiKitInputFieldNoIcon(
           controller: emailController,
           fillColor: ColorsFoundation.lightSurface3,
-          hintText: 'email'.toUpperCase(),
+          hintText: S.of(context).Email.toUpperCase(),
           validator: validator,
           hintTextColor: ColorsFoundation.darkNeutral900,
         ).paddingSymmetric(vertical: EdgeInsetsFoundation.vertical16),
@@ -29,13 +29,13 @@ Future<Object?> showResetPasswordPopUp(
         }
       },
       title: Text(
-        'Enter your e-mail address',
+        S.of(context).EnterYourEmailAddress,
         style: context.uiKitTheme?.boldTextTheme.title2.copyWith(
           color: context.uiKitTheme?.colorScheme.primary,
         ),
         textAlign: TextAlign.center,
       ),
-      defaultButtonText: 'reset password',
+      defaultButtonText: S.of(context).ResetPassword.toLowerCase(),
       defaultButtonSmall: false,
     ),
   );

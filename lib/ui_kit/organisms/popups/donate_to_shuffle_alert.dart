@@ -52,7 +52,7 @@ class _DonateToShuffleAlertState extends State<DonateToShuffleAlert> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'How much \$ do you want to donate?',
+                S.of(context).HowMuchDoYouWantToDonate,
                 style: theme?.boldTextTheme.title2.copyWith(color: Colors.black),
               ),
               SpacingFoundation.verticalSpace12,
@@ -68,7 +68,7 @@ class _DonateToShuffleAlertState extends State<DonateToShuffleAlert> {
               context.gradientButton(
                 data: BaseUiKitButtonData(
                   fit: ButtonFit.fitWidth,
-                  text: 'SEND IT',
+                  text: S.of(context).SendIt.toUpperCase(),
                   onPressed: () {
                     if (selectedValue != null) {
                       widget.onDonate?.call(selectedValue!);

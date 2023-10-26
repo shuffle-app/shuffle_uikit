@@ -379,6 +379,176 @@ class S {
       args: [helpfulCount],
     );
   }
+
+  /// `Ok`
+  String get Ok {
+    return Intl.message(
+      'Ok',
+      name: 'Ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No, thx`
+  String get NoThx {
+    return Intl.message(
+      'No, thx',
+      name: 'NoThx',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To access all`
+  String get ToAccessAll {
+    return Intl.message(
+      'To access all',
+      name: 'ToAccessAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Features enable geolocation`
+  String get FeaturesEnableGeolocation {
+    return Intl.message(
+      'Features enable geolocation',
+      name: 'FeaturesEnableGeolocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot password`
+  String get ForgotPassword {
+    return Intl.message(
+      'Forgot password',
+      name: 'ForgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Incorrect login or password`
+  String get IncorrectLoginOrPassword {
+    return Intl.message(
+      'Incorrect login or password',
+      name: 'IncorrectLoginOrPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oops, I'll try again`
+  String get OopsIWillTryAgain {
+    return Intl.message(
+      'Oops, I\'ll try again',
+      name: 'OopsIWillTryAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get Email {
+    return Intl.message(
+      'Email',
+      name: 'Email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your e-mail address`
+  String get EnterYourEmailAddress {
+    return Intl.message(
+      'Enter your e-mail address',
+      name: 'EnterYourEmailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password`
+  String get ResetPassword {
+    return Intl.message(
+      'Reset password',
+      name: 'ResetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How much \$ do you want to donate?`
+  String get HowMuchDoYouWantToDonate {
+    return Intl.message(
+      'How much \\\$ do you want to donate?',
+      name: 'HowMuchDoYouWantToDonate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send it`
+  String get SendIt {
+    return Intl.message(
+      'Send it',
+      name: 'SendIt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to settings`
+  String get GoToSettings {
+    return Intl.message(
+      'Go to settings',
+      name: 'GoToSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To allow access to send push notifications, go to your phone settings`
+  String get ToAllowAccessGoToSettings {
+    return Intl.message(
+      'To allow access to send push notifications, go to your phone settings',
+      name: 'ToAllowAccessGoToSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We will let you know the results`
+  String get WeWillLetKnowResults {
+    return Intl.message(
+      'We will let you know the results',
+      name: 'WeWillLetKnowResults',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your claim has been sent`
+  String get YourClaimHasBeenSent {
+    return Intl.message(
+      'Your claim has been sent',
+      name: 'YourClaimHasBeenSent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Allowed caracters are {allowedCharacters}`
+  String AllowedCaracters(Object allowedCharacters) {
+    return Intl.message(
+      'Allowed caracters are $allowedCharacters',
+      name: 'AllowedCaracters',
+      desc: '',
+      args: [allowedCharacters],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
