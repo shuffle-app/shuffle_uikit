@@ -125,5 +125,5 @@ flutter_gen:
 # extensions
 flutter_intl:
   enabled: true
-  arb_dir: lib/localization
+  arb_dir: lib/localization/arb
   output_dir: lib/localization
