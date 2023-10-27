@@ -11,6 +11,7 @@ class UiKitMenu<T> extends StatelessWidget {
   final List<UiKitMenuItem<T>> items;
   final UiKitMenuItem<T>? selectedItem;
   final double? customTopPadding;
+  final BorderRadiusGeometry borderRadius;
 
   const UiKitMenu({
     Key? key,
@@ -19,6 +20,7 @@ class UiKitMenu<T> extends StatelessWidget {
     required this.items,
     this.selectedItem,
     this.customTopPadding,
+    this.borderRadius = BorderRadius.zero,
   }) : super(key: key);
 
   bool get singleType {
@@ -96,12 +98,14 @@ class UiKitMenu<T> extends StatelessWidget {
                   style: boldTextTheme?.caption1Medium,
                 ),
               if (selectedItem != null) ...[
-                ImageWidget(
-                  link: selectedItem!.iconPath!,
-                  height: 0.0625.sw,
-                  width: 0.0625.sw,
-                  fit: BoxFit.cover,
-                ),
+                ClipRRect(
+                    borderRadius: borderRadius,
+                    child: ImageWidget(
+                      link: selectedItem!.iconPath!,
+                      height: 0.0625.sw,
+                      width: 0.0625.sw,
+                      fit: BoxFit.cover,
+                    )),
                 SpacingFoundation.horizontalSpace8,
                 Expanded(
                   child: Text(

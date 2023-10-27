@@ -28,7 +28,7 @@ class UiKitCardSwiper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return RepaintBoundary(child: Stack(
       fit: StackFit.passthrough,
       children: [
         CardSwiper(
@@ -77,6 +77,6 @@ class UiKitCardSwiper extends StatelessWidget {
           ),
         )
       ],
-    );
+    ));
   }
 }

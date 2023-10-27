@@ -17,18 +17,18 @@ dependencies:
     sdk: flutter
 
   #ui utils
-  flutter_svg: ^2.0.7
+  flutter_svg: ^2.0.8
   flutter_cache_manager: ^3.3.1
-  flutter_screenutil: ^5.7.0
-  vibration: ^1.8.1
+  flutter_screenutil: ^5.9.0
+  vibration: ^1.8.2
 
   #ui widgets
-  cached_network_image: ^3.2.3
+  cached_network_image: ^3.3.0
   gradient_borders: ^1.0.0
   shimmer: ^3.0.0
   flutter_html: ^3.0.0-beta.2
   auto_size_text: ^3.0.0
-  url_launcher: ^6.1.11
+  url_launcher: ^6.2.1
   flutter_html_iframe: any
   flutter_html_svg: any
   pointer_interceptor: ^0.9.3+6
@@ -55,7 +55,7 @@ dependencies:
       url: https://github.com/shuffle-app/tabnavigator_plus
       ref: main
   rxdart: any
-  lottie: ^2.3.2
+  lottie: ^2.7.0
   flutter_card_swiper:
     git:
       #      url: https://github.com/rel1nce/shuffle_swiper.git
@@ -64,17 +64,17 @@ dependencies:
       ref: e4391ca40994c91acc563477c7959fbdeff50004
 
   intl: ^0.18.1
-  just_audio: ^0.9.33
+  just_audio: ^0.9.35
 
   #custom splash factory
   flutter_platform_widgets: ^4.0.0-beta.1
   dynamic_color: ^1.6.5
-  video_player: ^2.7.0
+  video_player: ^2.7.2
   smooth_video_progress: ^0.0.4
   countries_flag: ^1.0.0
 
   #maps
-  google_maps_flutter: ^2.4.0
+  google_maps_flutter: ^2.5.0
   flutter_polyline_points: ^2.0.0
 
 dependency_overrides:
