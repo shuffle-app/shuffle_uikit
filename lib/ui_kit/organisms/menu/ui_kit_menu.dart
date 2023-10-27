@@ -10,6 +10,7 @@ class UiKitMenu<T> extends StatelessWidget {
   final ValueChanged<UiKitMenuItem<T>>? onSelected;
   final List<UiKitMenuItem<T>> items;
   final UiKitMenuItem<T>? selectedItem;
+  final double? customTopPadding;
 
   const UiKitMenu({
     Key? key,
@@ -17,6 +18,7 @@ class UiKitMenu<T> extends StatelessWidget {
     this.onSelected,
     required this.items,
     this.selectedItem,
+    this.customTopPadding,
   }) : super(key: key);
 
   bool get singleType {
@@ -63,7 +65,7 @@ class UiKitMenu<T> extends StatelessWidget {
               ? (items.length + 1) * 48.h
               : (items.where((element) => element.type == allTypes?.first).length + 3) * 41.h;
           // final elementsHeight = ((items.length + 1) * 52) + (SpacingFoundation.verticalSpacing16 * 3);
-          final topPadding = max(1.sh - elementsHeight, 0.0);
+          final topPadding = customTopPadding ?? max(1.sh - elementsHeight, 0.0);
           showUiKitGeneralFullScreenDialog(
             context,
             GeneralDialogData(

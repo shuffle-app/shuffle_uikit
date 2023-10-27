@@ -924,6 +924,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/aquapark.svg
   SvgGenImage get aquapark => const SvgGenImage('assets/images/svg/aquapark.svg');
 
+  /// File path: assets/images/svg/arabic.svg
+  SvgGenImage get arabic => const SvgGenImage('assets/images/svg/arabic.svg');
+
   /// File path: assets/images/svg/archive.svg
   SvgGenImage get archive => const SvgGenImage('assets/images/svg/archive.svg');
 
@@ -1302,6 +1305,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/route.svg
   SvgGenImage get route => const SvgGenImage('assets/images/svg/route.svg');
 
+  /// File path: assets/images/svg/russia.svg
+  SvgGenImage get russia => const SvgGenImage('assets/images/svg/russia.svg');
+
   /// File path: assets/images/svg/satelite.svg
   SvgGenImage get satelite => const SvgGenImage('assets/images/svg/satelite.svg');
 
@@ -1411,6 +1417,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/unique-marker.svg
   SvgGenImage get uniqueMarker => const SvgGenImage('assets/images/svg/unique-marker.svg');
 
+  /// File path: assets/images/svg/united_kingdom.svg
+  SvgGenImage get unitedKingdom => const SvgGenImage('assets/images/svg/united_kingdom.svg');
+
   /// File path: assets/images/svg/unlink.svg
   SvgGenImage get unlink => const SvgGenImage('assets/images/svg/unlink.svg');
 
@@ -1519,6 +1528,7 @@ class $AssetsImagesSvgGen {
         analyticsBusiness,
         appleLogo,
         aquapark,
+        arabic,
         archive,
         armchair,
         arrowDown,
@@ -1645,6 +1655,7 @@ class $AssetsImagesSvgGen {
         risingTrendIcon,
         rocketOutlined,
         route,
+        russia,
         satelite,
         scan,
         searchPeople,
@@ -1681,6 +1692,7 @@ class $AssetsImagesSvgGen {
         tripleArrow,
         trippleArrowBlack,
         uniqueMarker,
+        unitedKingdom,
         unlink,
         user,
         videoPlus,

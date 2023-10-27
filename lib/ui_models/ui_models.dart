@@ -6,6 +6,7 @@ export 'cards/base_ui_kit_advertisement_banner_data.dart';
 export 'cards/base_ui_kit_user_tile_data.dart';
 export 'location/known_location.dart';
 export 'location/location_suggestion.dart';
+export 'localization/locale_model.dart';
 export 'places/base_ui_kit_media.dart';
 export 'places/slidable_place_card_data.dart';
 export 'popup/notification_popup_required_data.dart';
