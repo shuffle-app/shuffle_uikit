@@ -16,7 +16,7 @@ class UiKitLocaleSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return UiKitMenu<LocaleModel>(
-      title: 'Select language',
+      title: S.of(context).SelectLanguage,
       selectedItem: UiKitMenuItem<LocaleModel>(
         title: selectedLocale.name,
         value: selectedLocale,
