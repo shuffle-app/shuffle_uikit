@@ -213,6 +213,17 @@ class GradientFoundation {
     stops: [0.2, 0.8, 1.0],
   );
 
+  static final blueLinearGradient =  LinearGradient(
+    colors:  [
+      ColorsFoundation.weatherBlue.withOpacity(0.1),
+      ColorsFoundation.weatherBlue.withOpacity(0.031),
+    ],
+    stops: const [
+      1,
+      0,
+    ],
+  );
+
   static final yellowLinearGradient = LinearGradient(
     colors: [
       ColorsFoundation.weatherYellow.withOpacity(0.1),
