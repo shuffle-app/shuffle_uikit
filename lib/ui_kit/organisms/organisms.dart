@@ -31,6 +31,7 @@ export 'cards/ui_kit_vertical_chip.dart';
 export 'horizontal_scroll/ui_kit_horizontal_scroll_3d.dart';
 export 'lists/ui_kit_searchable_list_body.dart';
 export 'menu/ui_kit_menu.dart';
+export 'menu/ui_kit_locale_selector.dart';
 export 'place/base_place_action_card.dart';
 export 'place/donation_map_preview.dart';
 export 'place/location_selection_widget.dart';
