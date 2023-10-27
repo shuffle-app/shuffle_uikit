@@ -29,6 +29,8 @@ class UiKitColors {
   static const brightYellow = Color(0xffFAE634);
   static const lemon = Color(0xffFCE600);
   static const weatherYellow = Color(0xffE5C130);
+  static const weatherBlue = Color(0xff30A4E5);
+
   static const orange = Color(0xffE32900);
   static const red = Color(0xffFA4C34);
   static const brightRed = Color(0xffFF1619);
