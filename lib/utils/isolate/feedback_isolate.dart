@@ -41,8 +41,8 @@ class FeedbackIsolate {
       if (event is FeedbackIsolateHaptics) {
         await Vibration.vibrate(
           duration: 10,
-          intensities: [100, 100],
-          pattern: [5, 5],
+          intensities: event.intensities ?? [100, 100],
+          pattern: event.pattern ?? [5, 5],
         );
       }
     });
@@ -57,20 +57,6 @@ class FeedbackIsolate {
     _isolate.controlPort.send(event);
   }
 
-  void addVibrationEvent(SystemVibrationIsolateEvent event) {
-    switch (event.runtimeType) {
-      case SystemLightVibrationIsolate:
-        HapticFeedback.lightImpact();
-        break;
-      case SystemMediumVibrationIsolate:
-        HapticFeedback.mediumImpact();
-        break;
-      case SystemHeavyVibrationIsolate:
-        HapticFeedback.heavyImpact();
-        break;
-    }
-  }
-
   Future<void> _setAsset({required String asset}) async {
     if (_currentSource != asset) {
       _currentSource = asset;
@@ -81,16 +67,13 @@ class FeedbackIsolate {
 
 abstract class SystemSoundIsolateEvent {}
 
-class FeedbackIsolateHaptics extends SystemSoundIsolateEvent {}
+class FeedbackIsolateHaptics extends SystemSoundIsolateEvent {
+  FeedbackIsolateHaptics({this.intensities, this.pattern});
+
+  List<int>? intensities;
+  List<int>? pattern;
+}
 
 class SystemSoundIsolateRachetClick extends SystemSoundIsolateEvent {}
 
 class FeedbackIsolateRachetClickAndHaptics extends SystemSoundIsolateEvent {}
-
-abstract class SystemVibrationIsolateEvent {}
-
-class SystemLightVibrationIsolate extends SystemVibrationIsolateEvent {}
-
-class SystemMediumVibrationIsolate extends SystemVibrationIsolateEvent {}
-
-class SystemHeavyVibrationIsolate extends SystemVibrationIsolateEvent {}

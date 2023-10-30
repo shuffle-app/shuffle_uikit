@@ -84,11 +84,20 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
   void _setVibrationListener() {
     Timer.periodic(_vibrationDuration, (timer) {
       if (_currentPosition.value.dx >= _finishPosition.dx / 1.2) {
-        FeedbackIsolate.instance.addVibrationEvent(SystemHeavyVibrationIsolate());
-      } else if (_currentPosition.value.dx >= _finishPosition.dx / 1.8) {
-        FeedbackIsolate.instance.addVibrationEvent(SystemMediumVibrationIsolate());
+        FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
+          intensities: [170, 200],
+          pattern: [10, 5],
+        ));
+      } else if (_currentPosition.value.dx >= _finishPosition.dx / 2.2) {
+        FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
+          intensities: [130, 170],
+          pattern: [10, 5],
+        ));
       } else if (_currentPosition.value.dx >= _startPosition.dx) {
-        FeedbackIsolate.instance.addVibrationEvent(SystemLightVibrationIsolate());
+        FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
+          intensities: [100, 130],
+          pattern: [10, 5],
+        ));
       }
       if ((!_isPressed && _controller.isDismissed) || _isCompleted) {
         timer.cancel();
