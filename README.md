@@ -1,39 +1,44 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Shuffle UiKit
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+## Описание проекта
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+**shuffle_uikit** представляет собой набор базовых элементов пользовательского интерфейса. UiKit содержит готовые к использованию виджеты и компоненты для проекта shuffle_app.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Установка
 
-## Features
+Для установки UiKit добавьте его в зависимости файла `pubspec.yaml`:
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  shuffle_uikit: ^latest_version
 ```
 
-## Additional information
+Затем выполните `flutter pub get` для установки пакета.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+## Работа с `Flutter Intl` для локализации приложения
+**Flutter Intl** - это инструмент для работы с локализацией Flutter, он позволяет выделять строки для перевода и автоматически создавать файлы формата `.arb` для хранения переводов. Далее описан план по работе с `Flutter Intl` в Visual Studio Code и Android Studio.
+
+### Установка расширения `Flutter Intl`
+
+Установите `Flutter Intl` в проект, выполнив следующие шаги:
+
+1. Откройте магазин расширений и скачайте `flutter intl` для [VScode](https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl) или [Android Studio](https://plugins.jetbrains.com/plugin/13666-flutter-intl)
+
+2. Добавьте `flutter_intl` в зависимости:
+
+```yaml
+dev_dependencies:
+  flutter_intl: ^latest_version
+```
+
+3. Запустите команду `flutter pub get`
+
+### Использование Flutter Intl расширения
+
+1. Чтобы использовать расширение потребуется базовая настройка горячих клавиш для Android Studio: откройте _settings -> keymap -> flutter intl_ и настройте конфигурацию. 
+2. Выделите необходимые строки, которые вы хотите вынести для локализации, а затем воспользуйтесь [Code Actions](https://code.visualstudio.com/docs/editor/refactoring#_code-actions-quick-fixes-and-refactorings) -> extract to ARB. Далее введите название будущей переменной и завершите операцию. 
+3. Для ознакомления со всеми возможностями этого пакета перейдите по [ссылке](https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl).
+
+### Внесение изменений
+
+Если вы хотите внести изменения в локализацию, добавьте новые строки в файлы `.arb`, затем расширение автоматически сгенерирует необходимый код для работы с новыми строками.
