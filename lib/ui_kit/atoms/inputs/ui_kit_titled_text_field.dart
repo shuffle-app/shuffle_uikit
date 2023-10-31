@@ -27,7 +27,6 @@ class UiKitTitledTextField extends StatelessWidget {
       children: [
         UiKitCardWrapper(
           color: theme?.colorScheme.surface1,
-          borderRadius: BorderRadiusFoundation.all24,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -40,6 +39,7 @@ class UiKitTitledTextField extends StatelessWidget {
               SpacingFoundation.verticalSpace4,
               UiKitInputFieldNoIcon(
                 controller: controller,
+                validator: validator,
                 errorText: errorText,
                 hintText: hintText,
                 fillColor: theme.colorScheme.surface3,
@@ -48,11 +48,13 @@ class UiKitTitledTextField extends StatelessWidget {
             ],
           ).paddingAll(EdgeInsetsFoundation.all4),
         ),
-        if (validationLetters != null)
+        if (validationLetters != null) ...[
+          SpacingFoundation.verticalSpace2,
           Text(
             validationLetters!,
             style: theme.regularTextTheme.caption4,
           ),
+        ]
       ],
     );
   }
