@@ -6,10 +6,14 @@ class SlidableButton extends StatefulWidget {
   final Widget slidableChild;
   final Widget onCompletedChild;
   final String hintText;
+  final customBorder;
+  final VoidCallback? onCompleted;
 
   const SlidableButton(
       {super.key,
       this.isCompleted = false,
+      this.onCompleted,
+      this.customBorder,
       this.hintText = 'Swipe to start',
       required this.slidableChild,
       required this.onCompletedChild});
@@ -37,6 +41,7 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
     if (distance > 0.8.sw) {
       WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
             _isCompleted = true;
+            widget.onCompleted?.call();
           }));
       return 0.8.sw;
     }
@@ -65,7 +70,7 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
 
     return DecoratedBox(
         decoration: BoxDecoration(
-            border: GradientFoundation.gradientBorder,
+            border: widget.customBorder ?? GradientFoundation.gradientBorder,
             borderRadius: BorderRadiusFoundation.max,
             color: theme?.colorScheme.surface2),
         child: SizedBox(
