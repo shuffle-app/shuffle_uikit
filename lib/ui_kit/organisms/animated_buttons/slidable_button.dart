@@ -6,7 +6,7 @@ class SlidableButton extends StatefulWidget {
   final Widget slidableChild;
   final Widget onCompletedChild;
   final String hintText;
-  final customBorder;
+  final BoxBorder? customBorder;
   final VoidCallback? onCompleted;
 
   const SlidableButton(
