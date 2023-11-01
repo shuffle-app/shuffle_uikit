@@ -16,7 +16,7 @@ class SmallGradientButton extends StatelessWidget implements ButtonFactory {
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
-    TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCase.copyWith(color: Colors.black);
+    TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCase.copyWith(color: enabled ? Colors.black : Colors.grey);
 
     return Material(
       borderRadius: BorderRadiusFoundation.max,

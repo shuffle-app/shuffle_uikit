@@ -46,7 +46,6 @@ class _RotatableWidgetState extends State<RotatableWidget> with SingleTickerProv
     }();
   }
 
-  //ignore: unused parameter
   void listenAnim(AnimationStatus status) {
     if (status == AnimationStatus.completed && widget.applyReverseOnEnd) {
       controller.reverse();

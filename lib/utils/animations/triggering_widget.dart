@@ -46,7 +46,6 @@ class _TriggeringWidgetState extends State<TriggeringWidget>
     }();
   }
 
-  //ignore: unused parameter
   void listenAnim(AnimationStatus status) {
     if (status == AnimationStatus.completed && widget.applyReverseOnEnd) {
       controller.reverse();
