@@ -19,7 +19,7 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
-    TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black);
+    TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: enabled ? Colors.black : Colors.grey);
     final textWidget = Text(
       (loading ?? false) ? '' : text.toUpperCase(),
       style: textStyle,

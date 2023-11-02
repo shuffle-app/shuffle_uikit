@@ -6,14 +6,18 @@ class UiKitTitledTextField extends StatelessWidget {
     super.key,
     required this.title,
     required this.controller,
+    this.enabled = true,
     this.hintText,
     this.errorText,
     this.validator,
+    this.focusNode,
     this.validationLetters,
   });
 
   final String title;
   final TextEditingController controller;
+  final bool enabled;
+  final FocusNode? focusNode;
   final String? hintText;
   final String? errorText;
   final String? validationLetters;
@@ -40,6 +44,8 @@ class UiKitTitledTextField extends StatelessWidget {
               UiKitInputFieldNoIcon(
                 controller: controller,
                 validator: validator,
+                node: focusNode,
+                enabled: enabled,
                 errorText: errorText,
                 hintText: hintText,
                 fillColor: theme.colorScheme.surface3,

@@ -42,7 +42,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
         child: InkWell(
           onTap: loading ?? false ? null : onPressed,
           borderRadius: BorderRadiusFoundation.max,
-          child: Ink(
+          child: Container(
               padding: EdgeInsets.symmetric(
                 vertical: EdgeInsetsFoundation.vertical6,
                 horizontal: EdgeInsetsFoundation.horizontal16,
