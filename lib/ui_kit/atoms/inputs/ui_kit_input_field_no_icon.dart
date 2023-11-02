@@ -18,6 +18,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.node,
     this.onSubmitted,
     this.hintTextColor,
+    this.textColor,
     this.obscureText = false,
   }) : super(key: key);
 
@@ -37,6 +38,8 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
   final ValueChanged<String>? onChanged;
 
   final Color? fillColor;
+  final Color? textColor;
+
   final int? minLines;
   final int? maxLines;
   final FocusNode? node;
@@ -69,7 +72,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         : uiKitTheme?.noIconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
     final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
-      color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
+      color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : widget.textColor ?? Colors.white,
     );
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
