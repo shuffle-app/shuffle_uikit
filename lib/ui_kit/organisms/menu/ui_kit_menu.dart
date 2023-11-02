@@ -11,7 +11,7 @@ class UiKitMenu<T> extends StatelessWidget {
   final List<UiKitMenuItem<T>> items;
   final UiKitMenuItem<T>? selectedItem;
   final double? customTopPadding;
-  final BorderRadiusGeometry borderRadius;
+  final BorderRadiusGeometry? borderRadius;
 
   const UiKitMenu({
     Key? key,
@@ -20,7 +20,7 @@ class UiKitMenu<T> extends StatelessWidget {
     required this.items,
     this.selectedItem,
     this.customTopPadding,
-    this.borderRadius = BorderRadius.zero,
+    this.borderRadius,
   }) : super(key: key);
 
   bool get singleType {
@@ -53,7 +53,7 @@ class UiKitMenu<T> extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       color: context.uiKitTheme?.colorScheme.surface3,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadiusFoundation.all24,
+        borderRadius: borderRadius ?? BorderRadiusFoundation.max,
         side: BorderSide(
           width: 2,
           color: context.uiKitTheme!.colorScheme.inversePrimary,
@@ -89,6 +89,9 @@ class UiKitMenu<T> extends StatelessWidget {
           );
         },
         child: Ink(
+          decoration: BoxDecoration(
+            borderRadius: borderRadius ?? BorderRadiusFoundation.max,
+          ),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -99,7 +102,7 @@ class UiKitMenu<T> extends StatelessWidget {
                 ),
               if (selectedItem != null) ...[
                 ClipRRect(
-                    borderRadius: borderRadius,
+                    borderRadius: BorderRadiusFoundation.all24,
                     child: ImageWidget(
                       link: selectedItem!.iconPath!,
                       height: 0.0625.sw,

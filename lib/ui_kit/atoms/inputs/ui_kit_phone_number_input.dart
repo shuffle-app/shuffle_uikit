@@ -13,6 +13,8 @@ class UiKitPhoneNumberInput extends StatefulWidget implements BaseUiKitInputFiel
   final String? hintText;
   @override
   final String? Function(String? p1)? validator;
+  @override
+  final bool obscureText;
 
   final String? countryCode;
 
@@ -30,6 +32,7 @@ class UiKitPhoneNumberInput extends StatefulWidget implements BaseUiKitInputFiel
     this.errorText,
     this.hintText,
     this.validator,
+    this.obscureText = false,
   });
 
   @override
@@ -67,6 +70,7 @@ class _UiKitPhoneNumberInputState extends State<UiKitPhoneNumberInput> {
           FilteringTextInputFormatter.digitsOnly,
         ],
         keyboardType: TextInputType.phone,
+        obscureText: widget.obscureText,
         decoration: InputDecoration(
           filled: widget.fillColor != null,
           fillColor: widget.fillColor,
