@@ -5,12 +5,14 @@ class UiKitCustomTabBar extends StatelessWidget {
   final List<UiKitCustomTab> tabs;
   final ValueChanged<int> onTappedTab;
   final String? selectedTab;
+  final TabController? tabController;
 
   const UiKitCustomTabBar({
     Key? key,
     required this.tabs,
     required this.onTappedTab,
     this.selectedTab,
+    this.tabController,
   }) : super(key: key);
 
   @override
@@ -33,6 +35,7 @@ class UiKitCustomTabBar extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadiusFoundation.max,
             child: TabBar(
+              controller: tabController,
               enableFeedback: true,
               splashBorderRadius: BorderRadiusFoundation.max,
               splashFactory: NoSplash.splashFactory,

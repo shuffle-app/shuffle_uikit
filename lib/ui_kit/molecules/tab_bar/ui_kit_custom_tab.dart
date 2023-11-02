@@ -13,17 +13,30 @@ class UiKitCustomTab extends StatelessWidget {
     this.group,
   }) : super(key: key);
 
+  factory UiKitCustomTab.small({
+    required String title,
+    double height = 24,
+    AutoSizeGroup? group,
+  }) =>
+      UiKitCustomTab(
+        title: title,
+        height: height,
+        group: group,
+      );
+
   @override
   Widget build(BuildContext context) {
     return Tab(
       height: height,
-      child: group != null
-          ? AutoSizeText(
-        title,
-        maxLines: 1,
-        group: group,
-      )
-          : Text(title),
+      child: Center(
+        child: group != null
+            ? AutoSizeText(
+                title,
+                maxLines: 1,
+                group: group,
+              )
+            : Text(title),
+      ),
     );
   }
 }
