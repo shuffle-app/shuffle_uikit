@@ -23,7 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m0(allowedCharacters) =>
       "Allowed caracters are ${allowedCharacters}";
 
-  static String m1(EditingType) => "${EditingType} place";
+  static String m1(editingType) => "${editingType} place";
 
   static String m2(inputType) => "Enter ${inputType}";
 

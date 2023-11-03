@@ -2141,13 +2141,13 @@ class S {
     );
   }
 
-  /// `{EditingType} place`
-  String EditingTypePlace(Object EditingType) {
+  /// `{editingType} place`
+  String EditingTypePlace(Object editingType) {
     return Intl.message(
-      '$EditingType place',
+      '$editingType place',
       name: 'EditingTypePlace',
       desc: '',
-      args: [EditingType],
+      args: [editingType],
     );
   }
 

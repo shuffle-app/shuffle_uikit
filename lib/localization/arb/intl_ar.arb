@@ -208,7 +208,7 @@
   "PhotoUploadFiles": "Photo (upload Files)",
   "VideoUploadFiles": "Video (upload Files)",
   "Published": "Published",
-  "EditingTypePlace": "{EditingType} place",
+  "EditingTypePlace": "{editingType} place",
   "Update": "Update",
   "Create": "Create",
   "BookIt": "Book it",
