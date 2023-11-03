@@ -9,6 +9,7 @@ class UiKitInputFieldLeftIcon extends StatefulWidget implements BaseUiKitInputFi
     this.hintText,
     this.validator,
     this.enabled = true,
+    this.obscureText = false,
   }) : super(key: key);
 
   @override
@@ -21,6 +22,8 @@ class UiKitInputFieldLeftIcon extends StatefulWidget implements BaseUiKitInputFi
   final String? hintText;
   @override
   final String? Function(String? p1)? validator;
+  @override
+  final bool obscureText;
 
   @override
   State<UiKitInputFieldLeftIcon> createState() => _UiKitInputFieldLeftIconState();
@@ -63,6 +66,7 @@ class _UiKitInputFieldLeftIconState extends State<UiKitInputFieldLeftIcon> {
         enabled: widget.enabled,
         controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
+        obscureText: widget.obscureText,
         decoration: InputDecoration(
           hintText: widget.hintText,
           errorText: widget.errorText,

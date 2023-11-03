@@ -5,12 +5,14 @@ class BlackDialogButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
   final bool small;
+  final ButtonFit? fit;
 
   const BlackDialogButton({
     super.key,
     required this.text,
     required this.small,
     this.onPressed,
+    this.fit,
   });
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,14 @@ class BlackDialogButton extends StatelessWidget implements ButtonFactory {
     return ElevatedButton(
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.resolveWith((states) {
-          if (small) return const Size.fromHeight(28);
+          double? width;
+          if (fit == ButtonFit.fitWidth) width = double.infinity;
+          Size size = const Size.fromHeight(48);
+          if (small) size = const Size.fromHeight(28);
+          if (width != null && small) size = Size(width, 28);
+          if (width != null && !small) size = Size(width, 48);
 
-          return const Size.fromHeight(48);
+          return size;
         }),
         backgroundColor: MaterialStateProperty.resolveWith((states) {
           return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.black;

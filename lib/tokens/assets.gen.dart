@@ -1077,6 +1077,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/exclamation.svg
   SvgGenImage get exclamation => const SvgGenImage('assets/images/svg/exclamation.svg');
 
+  /// File path: assets/images/svg/eye-off.svg
+  SvgGenImage get eyeOff => const SvgGenImage('assets/images/svg/eye-off.svg');
+
   /// File path: assets/images/svg/facebook_logo.svg
   SvgGenImage get facebookLogo => const SvgGenImage('assets/images/svg/facebook_logo.svg');
 
@@ -1432,6 +1435,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/view-action.svg
   SvgGenImage get viewAction => const SvgGenImage('assets/images/svg/view-action.svg');
 
+  /// File path: assets/images/svg/view.svg
+  SvgGenImage get view => const SvgGenImage('assets/images/svg/view.svg');
+
   /// File path: assets/images/svg/volume-off.svg
   SvgGenImage get volumeOff => const SvgGenImage('assets/images/svg/volume-off.svg');
 
@@ -1579,6 +1585,7 @@ class $AssetsImagesSvgGen {
         dollarOutlined,
         emptyRadio,
         exclamation,
+        eyeOff,
         facebookLogo,
         family,
         files,
@@ -1697,6 +1704,7 @@ class $AssetsImagesSvgGen {
         user,
         videoPlus,
         viewAction,
+        view,
         volumeOff,
         volume,
         wallet,

@@ -18,6 +18,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
     this.expands = false,
     this.onFieldSubmitted,
     this.borderRadius,
+    this.obscureText = false,
   }) : super(key: key);
 
   @override
@@ -30,6 +31,8 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
   final String? hintText;
   @override
   final String? Function(String? p1)? validator;
+  @override
+  final bool obscureText;
 
   final Widget? icon;
   final BorderRadius? borderRadius;
@@ -47,15 +50,9 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
 }
 
 class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
-  final inputPropertiesColor = const InputStateColor();
-  final GlobalKey<FormFieldState> _key = GlobalKey<FormFieldState>();
-
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      _key.currentState?.validate();
-    });
   }
 
   @override
@@ -84,7 +81,6 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
         disabledColor: ColorsFoundation.darkNeutral500.withOpacity(0.16),
       ),
       child: TextFormField(
-        key: _key,
         expands: widget.expands,
         maxLines: widget.expands ? null : 1,
         autofocus: widget.autofocus,
@@ -94,9 +90,8 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
         enabled: widget.enabled,
         controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
-        style: inputTextStyle?.copyWith(
-          color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
-        ),
+        obscureText: widget.obscureText,
+        style: inputTextStyle,
         decoration: InputDecoration(
           filled: true,
           fillColor: widget.fillColor,
@@ -106,15 +101,14 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           errorStyle: errorStyle,
           errorMaxLines: 1,
           hintStyle: hintStyle,
-          suffixIconColor: inputPropertiesColor,
+          suffixIconColor: MaterialStateColor.resolveWith((states) {
+            if (states.contains(MaterialState.error)) {
+              return ColorsFoundation.error;
+            }
+            return context.uiKitTheme?.colorScheme.inversePrimary ?? Colors.white;
+          }),
           suffixIcon: IconButton(
-            icon: widget.icon ??
-                Icon(
-                  Icons.close,
-                  color: _key.currentState?.hasError ?? false
-                      ? ColorsFoundation.error
-                      : context.uiKitTheme?.colorScheme.inversePrimary,
-                ),
+            icon: widget.icon ?? const Icon(Icons.close),
             onPressed: widget.onPressed ??
                 () {
                   widget.controller.clear();

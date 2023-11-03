@@ -49,10 +49,13 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                   ),
                 ),
                 SpacingFoundation.verticalSpace4,
-                Text(
-                  '@$userNickName',
-                  style: boldTextTheme?.caption1Bold,
-                  textAlign: TextAlign.center,
+                Expanded(
+                  child: Text(
+                    '@$userNickName',
+                    style: boldTextTheme?.caption1Bold.copyWith(overflow: TextOverflow.ellipsis),
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                  ),
                 ),
                 SpacingFoundation.verticalSpace2,
                 Text(
@@ -73,8 +76,8 @@ class UiKitFindSomeoneCard extends StatelessWidget {
               children: [
                 Container(
                   height: calculatedWidth * 0.0875,
-                  decoration: BoxDecoration(
-                      gradient: GradientFoundation.findSomeoneGradient, borderRadius: BorderRadiusFoundation.all24),
+                  decoration:
+                      BoxDecoration(gradient: GradientFoundation.findSomeoneGradient, borderRadius: BorderRadiusFoundation.all24),
                   child: Center(
                     child: Text(
                       '$userPoints points',

@@ -18,6 +18,8 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.node,
     this.onSubmitted,
     this.hintTextColor,
+    this.textColor,
+    this.obscureText = false,
   }) : super(key: key);
 
   @override
@@ -30,10 +32,14 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
   final String? hintText;
   @override
   final String? Function(String? p1)? validator;
+  @override
+  final bool obscureText;
 
   final ValueChanged<String>? onChanged;
 
   final Color? fillColor;
+  final Color? textColor;
+
   final int? minLines;
   final int? maxLines;
   final FocusNode? node;
@@ -66,7 +72,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         : uiKitTheme?.noIconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
     final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
-      color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
+      color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : widget.textColor ?? Colors.white,
     );
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
@@ -90,6 +96,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
         focusNode: widget.node,
+        obscureText: widget.obscureText,
         onFieldSubmitted: widget.onSubmitted,
         decoration: InputDecoration(
           hintText: widget.hintText,

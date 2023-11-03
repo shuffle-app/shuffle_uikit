@@ -7,31 +7,12 @@ class UiKitTagSelector extends StatelessWidget {
   final bool showTextField;
   final BorderRadius? borderRadius;
 
-  // final ValueChanged<List<String>>? onTagsSelected;
   final ValueChanged<String>? onNotFoundTagCallback;
   final ValueChanged<String>? onRemoveTagCallback;
   final void Function(String)? onTagSelected;
 
   late final TextEditingController controller = TextEditingController();
-
-  // ..addListener(_onTypedTagName);
-  // late final ValueNotifier<Set<String>> searchListNotifier = ValueNotifier(
-  //     <String>{});
   late final ValueNotifier<Set<String>> selectedListNotifier = ValueNotifier(tags.toSet());
-
-  // <String>{});
-
-  // late final List<String> searchedList = List.empty(growable: true);
-
-  // void _onTypedTagName() {
-  //   final text = controller.text.trim();
-  //   if (text.isEmpty) return;
-  // searchListNotifier.value = tags
-  //     .where((element) =>
-  // !selectedListNotifier.value.contains(element) &&
-  //     element.toLowerCase().contains(text.toLowerCase()))
-  //     .toSet();
-  // }
 
   UiKitTagSelector({
     Key? key,
@@ -86,6 +67,7 @@ class UiKitTagSelector extends StatelessWidget {
                 ConstrainedBox(
                     constraints: BoxConstraints(maxHeight: 40.h),
                     child: TextField(
+                      decoration: const InputDecoration.collapsed(hintText: ''),
                       scrollPadding: EdgeInsets.zero,
                       controller: controller,
                       style: boldTextTheme?.caption1Bold,
@@ -102,40 +84,6 @@ class UiKitTagSelector extends StatelessWidget {
                         }
                       },
                     ))
-              // UiKitInputFieldWithChips(
-              //     // onRemoveChip: onRemoveTagCallback,
-              //     controller: controller,
-              //     // selectedChips: selectedTags.toList(),
-              //     onNotFoundTagCallback: onNotFoundTagCallback)
-            ]).paddingAll(EdgeInsetsFoundation.all8))
-        // SpacingFoundation.verticalSpace24,
-        // ValueListenableBuilder(
-        //   valueListenable: searchListNotifier,
-        //   builder: (context, searchedTags, child) {
-        //     return Wrap(
-        //       spacing: SpacingFoundation.horizontalSpacing8,
-        //       runSpacing: SpacingFoundation.verticalSpacing8,
-        //       children: searchedTags
-        //           .map<Widget>((e) =>
-        //           UiKitCompactTextCard(
-        //             text: e,
-        //             onTap: () {
-        //               controller.clear();
-        //               if (selectedListNotifier.value.contains(e)) return;
-        //               selectedListNotifier.value = {...selectedListNotifier.value, e};
-        //               onTagsSelected?.call(selectedListNotifier.value.toList());
-        //               if (searchListNotifier.value.contains(e)) {
-        //                 final list = Set<String>.from(searchListNotifier.value,);
-        //                 list.remove(e);
-        //                 searchListNotifier.value = list;
-        //               }
-        //             },
-        //           ))
-        //           .toList(),
-        //     );
-        //   },
-        // ),
-        // ],
-        );
+            ]).paddingAll(EdgeInsetsFoundation.all8)));
   }
 }

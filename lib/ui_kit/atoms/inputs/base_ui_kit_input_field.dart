@@ -14,11 +14,13 @@ abstract class BaseUiKitInputField {
   final String? hintText;
   final String? errorText;
   final bool enabled;
+  final bool obscureText;
   final String? Function(String?)? validator;
 
   const BaseUiKitInputField({
     required this.controller,
     this.hintText,
+    this.obscureText = false,
     this.enabled = true,
     this.errorText,
     this.validator,

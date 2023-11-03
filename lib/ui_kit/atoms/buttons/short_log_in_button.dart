@@ -4,12 +4,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class ShortLogInButton extends StatelessWidget {
   const ShortLogInButton({
     super.key,
-    required this.svgIcon,
+    required this.iconPath,
     required this.title,
     required this.onTap,
   });
 
-  final SvgGenImage svgIcon;
+  final String iconPath;
   final String title;
   final VoidCallback onTap;
 
@@ -30,7 +30,7 @@ class ShortLogInButton extends StatelessWidget {
           child: Row(
             children: [
               ImageWidget(
-                svgAsset: svgIcon,
+                link: iconPath,
                 height: 20.w,
                 width: 20.w,
                 fit: BoxFit.cover,
