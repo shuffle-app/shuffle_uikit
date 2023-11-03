@@ -560,10 +560,10 @@ class S {
     );
   }
 
-  /// `NEXT {amountOfPeople} PEOPLE`
+  /// `Next {amountOfPeople} people`
   String NextNPeople(Object amountOfPeople) {
     return Intl.message(
-      'NEXT $amountOfPeople PEOPLE',
+      'Next $amountOfPeople people',
       name: 'NextNPeople',
       desc: '',
       args: [amountOfPeople],
@@ -691,31 +691,31 @@ class S {
     );
   }
 
-  /// `NEXT`
+  /// `Next`
   String get Next {
     return Intl.message(
-      'NEXT',
+      'Next',
       name: 'Next',
       desc: '',
       args: [],
     );
   }
 
-  /// `By continuing you accept the`
+  /// `By continuing you accept the `
   String get ByContinuingYouAcceptThe {
     return Intl.message(
-      'By continuing you accept the',
+      'By continuing you accept the ',
       name: 'ByContinuingYouAcceptThe',
       desc: '',
       args: [],
     );
   }
 
-  /// `And`
-  String get And {
+  /// ` And `
+  String get AndWithWhitespaces {
     return Intl.message(
-      'And',
-      name: 'And',
+      ' And ',
+      name: 'AndWithWhitespaces',
       desc: '',
       args: [],
     );
@@ -771,10 +771,10 @@ class S {
     );
   }
 
-  /// `Will be.`
+  /// ` Will be.`
   String get WillBe {
     return Intl.message(
-      'Will be.',
+      ' Will be.',
       name: 'WillBe',
       desc: '',
       args: [],
@@ -1641,6 +1641,16 @@ class S {
     );
   }
 
+  /// `Shuffle `
+  String get ShuffleWithRightWhitespace {
+    return Intl.message(
+      'Shuffle ',
+      name: 'ShuffleWithRightWhitespace',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Places`
   String get Places {
     return Intl.message(
@@ -2118,6 +2128,76 @@ class S {
       name: 'VideoUploadFiles',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `Published`
+  String get Published {
+    return Intl.message(
+      'Published',
+      name: 'Published',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{EditingType} place`
+  String EditingTypePlace(Object EditingType) {
+    return Intl.message(
+      '$EditingType place',
+      name: 'EditingTypePlace',
+      desc: '',
+      args: [EditingType],
+    );
+  }
+
+  /// `Update`
+  String get Update {
+    return Intl.message(
+      'Update',
+      name: 'Update',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create`
+  String get Create {
+    return Intl.message(
+      'Create',
+      name: 'Create',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Book it`
+  String get BookIt {
+    return Intl.message(
+      'Book it',
+      name: 'BookIt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upgrade {forNMoney}`
+  String UpgradeForNmoney(Object forNMoney) {
+    return Intl.message(
+      'Upgrade $forNMoney',
+      name: 'UpgradeForNmoney',
+      desc: '',
+      args: [forNMoney],
+    );
+  }
+
+  /// ` For {formattedPrice}`
+  String ForFormattedPrice(Object formattedPrice) {
+    return Intl.message(
+      ' For $formattedPrice',
+      name: 'ForFormattedPrice',
+      desc: '',
+      args: [formattedPrice],
     );
   }
 }
