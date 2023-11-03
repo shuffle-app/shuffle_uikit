@@ -16,9 +16,11 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.expands = false,
     this.borderRadius,
     this.node,
+    this.textInputAction,
     this.onSubmitted,
     this.hintTextColor,
     this.textColor,
+    this.keyboardType,
     this.obscureText = false,
   }) : super(key: key);
 
@@ -47,6 +49,8 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
   final Color? hintTextColor;
   final BorderRadius? borderRadius;
   final bool expands;
+  final TextInputType? keyboardType;
+  final TextInputAction? textInputAction;
 
   @override
   State<UiKitInputFieldNoIcon> createState() => _UiKitInputFieldNoIconState();
@@ -95,7 +99,9 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         expands: widget.expands,
         controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
+        textInputAction: widget.textInputAction,
         focusNode: widget.node,
+        keyboardType: widget.keyboardType,
         obscureText: widget.obscureText,
         onFieldSubmitted: widget.onSubmitted,
         decoration: InputDecoration(

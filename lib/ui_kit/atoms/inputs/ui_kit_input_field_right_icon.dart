@@ -99,7 +99,7 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           hintText: widget.hintText,
           errorText: widget.errorText,
           errorStyle: errorStyle,
-          errorMaxLines: 1,
+          errorMaxLines: 3,
           hintStyle: hintStyle,
           suffixIconColor: MaterialStateColor.resolveWith((states) {
             if (states.contains(MaterialState.error)) {

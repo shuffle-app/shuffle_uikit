@@ -23,9 +23,10 @@ class ShortLogInButton extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: colorScheme!.surface1,
-          borderRadius: BorderRadiusFoundation.all24,
+          borderRadius: BorderRadiusFoundation.max,
         ),
         child: UiKitCardWrapper(
+          borderRadius: BorderRadiusFoundation.max,
           color: colorScheme.surface3,
           child: Row(
             children: [
