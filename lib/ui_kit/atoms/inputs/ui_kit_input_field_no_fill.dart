@@ -43,6 +43,7 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
   final ValueChanged<String>? onFieldSubmitted;
   final bool expands;
   final bool autofocus;
+  @override
   final bool obscureText;
 
   @override
