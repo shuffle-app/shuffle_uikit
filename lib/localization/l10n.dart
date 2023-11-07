@@ -1441,16 +1441,6 @@ class S {
     );
   }
 
-  /// `Will be implemented soon`
-  String get WillBeImplementedSoon {
-    return Intl.message(
-      'Will be implemented soon',
-      name: 'WillBeImplementedSoon',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Your niche`
   String get YourNiche {
     return Intl.message(
@@ -1496,16 +1486,6 @@ class S {
     return Intl.message(
       'You better check this out',
       name: 'YouBetterCheckThisOut',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Favorites`
-  String get Favorites {
-    return Intl.message(
-      'Favorites',
-      name: 'Favorites',
       desc: '',
       args: [],
     );
@@ -2198,6 +2178,506 @@ class S {
       name: 'ForFormattedPrice',
       desc: '',
       args: [formattedPrice],
+    );
+  }
+
+  /// `Error occured without message`
+  String get ErrorOccuredWithoutMessage {
+    return Intl.message(
+      'Error occured without message',
+      name: 'ErrorOccuredWithoutMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Permissions`
+  String get Permissions {
+    return Intl.message(
+      'Permissions',
+      name: 'Permissions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Allow geolocation`
+  String get AllowGeolocation {
+    return Intl.message(
+      'Allow geolocation',
+      name: 'AllowGeolocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our recommendation system is based on many factors. Geolocation is only part of the system, which will allow us to correctly prioritize, both in terms of distance and the nearest landscape features (mountains, reservoirs, plains, deserts)`
+  String get OurRecommendationsAboutGeolocation {
+    return Intl.message(
+      'Our recommendation system is based on many factors. Geolocation is only part of the system, which will allow us to correctly prioritize, both in terms of distance and the nearest landscape features (mountains, reservoirs, plains, deserts)',
+      name: 'OurRecommendationsAboutGeolocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Allow {allowValue}`
+  String AllowX(Object allowValue) {
+    return Intl.message(
+      'Allow $allowValue',
+      name: 'AllowX',
+      desc: '',
+      args: [allowValue],
+    );
+  }
+
+  /// `We do not spam all kinds of notifications and advertisements. Only those notifications that may be important to you and match your preferences`
+  String get WeDoNotSpamAllKindsOfNotifications {
+    return Intl.message(
+      'We do not spam all kinds of notifications and advertisements. Only those notifications that may be important to you and match your preferences',
+      name: 'WeDoNotSpamAllKindsOfNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Using health kit`
+  String get UsingHealthKit {
+    return Intl.message(
+      'Using health kit',
+      name: 'UsingHealthKit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Based on your activity, heart rate and other factors, we determine your condition and try to recommend exactly what you need right now, specifically for you`
+  String get BasedOnYourActivityWeDetermineYourCondition {
+    return Intl.message(
+      'Based on your activity, heart rate and other factors, we determine your condition and try to recommend exactly what you need right now, specifically for you',
+      name: 'BasedOnYourActivityWeDetermineYourCondition',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skip`
+  String get Skip {
+    return Intl.message(
+      'Skip',
+      name: 'Skip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Allow`
+  String get Allow {
+    return Intl.message(
+      'Allow',
+      name: 'Allow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Allow all`
+  String get AllowAll {
+    return Intl.message(
+      'Allow all',
+      name: 'AllowAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong security code`
+  String get WrongSecurityCode {
+    return Intl.message(
+      'Wrong security code',
+      name: 'WrongSecurityCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error occured`
+  String get ErrorOccured {
+    return Intl.message(
+      'Error occured',
+      name: 'ErrorOccured',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Company name`
+  String get CompanyName {
+    return Intl.message(
+      'Company name',
+      name: 'CompanyName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Company position`
+  String get CompanyPosition {
+    return Intl.message(
+      'Company position',
+      name: 'CompanyPosition',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal credentials`
+  String get PersonalCredentials {
+    return Intl.message(
+      'Personal credentials',
+      name: 'PersonalCredentials',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get Password {
+    return Intl.message(
+      'Password',
+      name: 'Password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 8 characters`
+  String get PasswordMustBeAtLeast8Characters {
+    return Intl.message(
+      'Password must be at least 8 characters',
+      name: 'PasswordMustBeAtLeast8Characters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least one uppercase letter, one lowercase letter, one number and one special character`
+  String get PasswordConditions {
+    return Intl.message(
+      'Password must contain at least one uppercase letter, one lowercase letter, one number and one special character',
+      name: 'PasswordConditions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Company credentials`
+  String get CompanyCredentials {
+    return Intl.message(
+      'Company credentials',
+      name: 'CompanyCredentials',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Allow location services to use this function`
+  String get AllowLocationServicesToUseThisFunction {
+    return Intl.message(
+      'Allow location services to use this function',
+      name: 'AllowLocationServicesToUseThisFunction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Feeling`
+  String get Feeling {
+    return Intl.message(
+      'Feeling',
+      name: 'Feeling',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Will be implemented soon`
+  String get WillBeImplementedSoon {
+    return Intl.message(
+      'Will be implemented soon',
+      name: 'WillBeImplementedSoon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sunny`
+  String get Sunny {
+    return Intl.message(
+      'Sunny',
+      name: 'Sunny',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Burned today`
+  String get BurnedToday {
+    return Intl.message(
+      'Burned today',
+      name: 'BurnedToday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Undefined`
+  String get Undefined {
+    return Intl.message(
+      'Undefined',
+      name: 'Undefined',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Nothing was found :c`
+  String get NothingWasFoundWithEmoji {
+    return Intl.message(
+      'Nothing was found :c',
+      name: 'NothingWasFoundWithEmoji',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click Enter to search`
+  String get ClickEnterToSearch {
+    return Intl.message(
+      'Click Enter to search',
+      name: 'ClickEnterToSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My card`
+  String get MyCard {
+    return Intl.message(
+      'My card',
+      name: 'MyCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A new location has opened today. Come! You\'ll like it!`
+  String get NewLocationHasOpenedToday {
+    return Intl.message(
+      'A new location has opened today. Come! You\\\'ll like it!',
+      name: 'NewLocationHasOpenedToday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{value} successfully updated`
+  String XSuccessfullyUpdated(Object value) {
+    return Intl.message(
+      '$value successfully updated',
+      name: 'XSuccessfullyUpdated',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `User`
+  String get User {
+    return Intl.message(
+      'User',
+      name: 'User',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Value must be at least 3 characters long`
+  String get ValueMustBeAtLeast3Characters {
+    return Intl.message(
+      'Value must be at least 3 characters long',
+      name: 'ValueMustBeAtLeast3Characters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy`
+  String get Privacy {
+    return Intl.message(
+      'Privacy',
+      name: 'Privacy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms`
+  String get Terms {
+    return Intl.message(
+      'Terms',
+      name: 'Terms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get Cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'Cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete your account?`
+  String get AreYouSureYouWantToDeleteYourAccount {
+    return Intl.message(
+      'Are you sure you want to delete your account?',
+      name: 'AreYouSureYouWantToDeleteYourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to log out?`
+  String get AreYouSureYouWantToLogOut {
+    return Intl.message(
+      'Are you sure you want to log out?',
+      name: 'AreYouSureYouWantToLogOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get Yes {
+    return Intl.message(
+      'Yes',
+      name: 'Yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favorites`
+  String get Favorites {
+    return Intl.message(
+      'Favorites',
+      name: 'Favorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Premium account`
+  String get PremiumAccount {
+    return Intl.message(
+      'Premium account',
+      name: 'PremiumAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pro account`
+  String get ProAccount {
+    return Intl.message(
+      'Pro account',
+      name: 'ProAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Athlete`
+  String get Athlete {
+    return Intl.message(
+      'Athlete',
+      name: 'Athlete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hard to answer`
+  String get HardToAnswer {
+    return Intl.message(
+      'Hard to answer',
+      name: 'HardToAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not often`
+  String get NotOften {
+    return Intl.message(
+      'Not often',
+      name: 'NotOften',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{value} could not be empty`
+  String XCouldNotBeEmpty(Object value) {
+    return Intl.message(
+      '$value could not be empty',
+      name: 'XCouldNotBeEmpty',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `Tags`
+  String get Tags {
+    return Intl.message(
+      'Tags',
+      name: 'Tags',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name or nickname`
+  String get NameOrNickname {
+    return Intl.message(
+      'Name or nickname',
+      name: 'NameOrNickname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Nickname is taken, try another one`
+  String get NicknameIsTakenTryAnotherOne {
+    return Intl.message(
+      'Nickname is taken, try another one',
+      name: 'NicknameIsTakenTryAnotherOne',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete your company profile?`
+  String get AreYouSureYouWantToDeleteYourCompanyProfile {
+    return Intl.message(
+      'Are you sure you want to delete your company profile?',
+      name: 'AreYouSureYouWantToDeleteYourCompanyProfile',
+      desc: '',
+      args: [],
     );
   }
 }
