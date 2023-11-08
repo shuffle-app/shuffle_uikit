@@ -63,6 +63,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AcceptDonations": MessageLookupByLibrary.simpleMessage(
+            "Accept donations or help others realize their dreams"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Тип активности"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Добавиться в список"),
