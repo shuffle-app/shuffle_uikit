@@ -2671,6 +2671,26 @@ class S {
     );
   }
 
+  /// `White theme`
+  String get WhiteTheme {
+    return Intl.message(
+      'White theme',
+      name: 'WhiteTheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get Name {
+    return Intl.message(
+      'Name',
+      name: 'Name',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// ``
   String get key {
     return Intl.message(
