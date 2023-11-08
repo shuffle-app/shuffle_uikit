@@ -1231,11 +1231,11 @@ class S {
     );
   }
 
-  /// `Name`
-  String get Name {
+  /// `Phone`
+  String get Phone {
     return Intl.message(
-      'Name',
-      name: 'Name',
+      'Phone',
+      name: 'Phone',
       desc: '',
       args: [],
     );
@@ -1246,16 +1246,6 @@ class S {
     return Intl.message(
       'Date of birth',
       name: 'DateOfBirth',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Phone`
-  String get Phone {
-    return Intl.message(
-      'Phone',
-      name: 'Phone',
       desc: '',
       args: [],
     );
@@ -1441,6 +1431,16 @@ class S {
     );
   }
 
+  /// `Will be implemented soon`
+  String get WillBeImplementedSoon {
+    return Intl.message(
+      'Will be implemented soon',
+      name: 'WillBeImplementedSoon',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Your niche`
   String get YourNiche {
     return Intl.message(
@@ -1486,6 +1486,16 @@ class S {
     return Intl.message(
       'You better check this out',
       name: 'YouBetterCheckThisOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Favorites`
+  String get Favorites {
+    return Intl.message(
+      'Favorites',
+      name: 'Favorites',
       desc: '',
       args: [],
     );
@@ -1921,40 +1931,40 @@ class S {
     );
   }
 
-  /// `Archived`
+  /// ``
   String get Archived {
     return Intl.message(
-      'Archived',
+      '',
       name: 'Archived',
       desc: '',
       args: [],
     );
   }
 
-  /// `Event`
+  /// ``
   String get Event {
     return Intl.message(
-      'Event',
+      '',
       name: 'Event',
       desc: '',
       args: [],
     );
   }
 
-  /// `Time`
+  /// ``
   String get Time {
     return Intl.message(
-      'Time',
+      '',
       name: 'Time',
       desc: '',
       args: [],
     );
   }
 
-  /// `Dates`
+  /// ``
   String get Dates {
     return Intl.message(
-      'Dates',
+      '',
       name: 'Dates',
       desc: '',
       args: [],
@@ -1971,10 +1981,10 @@ class S {
     );
   }
 
-  /// `Day`
+  /// ``
   String get Day {
     return Intl.message(
-      'Day',
+      '',
       name: 'Day',
       desc: '',
       args: [],
@@ -2021,10 +2031,10 @@ class S {
     );
   }
 
-  /// `Today`
+  /// ``
   String get Today {
     return Intl.message(
-      'Today',
+      '',
       name: 'Today',
       desc: '',
       args: [],
@@ -2051,20 +2061,20 @@ class S {
     );
   }
 
-  /// `Photo`
+  /// ``
   String get Photo {
     return Intl.message(
-      'Photo',
+      '',
       name: 'Photo',
       desc: '',
       args: [],
     );
   }
 
-  /// `Video`
+  /// ``
   String get Video {
     return Intl.message(
-      'Video',
+      '',
       name: 'Video',
       desc: '',
       args: [],
@@ -2111,10 +2121,10 @@ class S {
     );
   }
 
-  /// `Published`
+  /// ``
   String get Published {
     return Intl.message(
-      'Published',
+      '',
       name: 'Published',
       desc: '',
       args: [],
@@ -2131,20 +2141,20 @@ class S {
     );
   }
 
-  /// `Update`
+  /// ``
   String get Update {
     return Intl.message(
-      'Update',
+      '',
       name: 'Update',
       desc: '',
       args: [],
     );
   }
 
-  /// `Create`
+  /// ``
   String get Create {
     return Intl.message(
-      'Create',
+      '',
       name: 'Create',
       desc: '',
       args: [],
@@ -2191,10 +2201,10 @@ class S {
     );
   }
 
-  /// `Permissions`
+  /// ``
   String get Permissions {
     return Intl.message(
-      'Permissions',
+      '',
       name: 'Permissions',
       desc: '',
       args: [],
@@ -2261,20 +2271,20 @@ class S {
     );
   }
 
-  /// `Skip`
+  /// ``
   String get Skip {
     return Intl.message(
-      'Skip',
+      '',
       name: 'Skip',
       desc: '',
       args: [],
     );
   }
 
-  /// `Allow`
+  /// ``
   String get Allow {
     return Intl.message(
-      'Allow',
+      '',
       name: 'Allow',
       desc: '',
       args: [],
@@ -2341,10 +2351,10 @@ class S {
     );
   }
 
-  /// `Password`
+  /// ``
   String get Password {
     return Intl.message(
-      'Password',
+      '',
       name: 'Password',
       desc: '',
       args: [],
@@ -2391,30 +2401,20 @@ class S {
     );
   }
 
-  /// `Feeling`
+  /// ``
   String get Feeling {
     return Intl.message(
-      'Feeling',
+      '',
       name: 'Feeling',
       desc: '',
       args: [],
     );
   }
 
-  /// `Will be implemented soon`
-  String get WillBeImplementedSoon {
-    return Intl.message(
-      'Will be implemented soon',
-      name: 'WillBeImplementedSoon',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sunny`
+  /// ``
   String get Sunny {
     return Intl.message(
-      'Sunny',
+      '',
       name: 'Sunny',
       desc: '',
       args: [],
@@ -2431,10 +2431,10 @@ class S {
     );
   }
 
-  /// `Undefined`
+  /// ``
   String get Undefined {
     return Intl.message(
-      'Undefined',
+      '',
       name: 'Undefined',
       desc: '',
       args: [],
@@ -2491,10 +2491,10 @@ class S {
     );
   }
 
-  /// `User`
+  /// ``
   String get User {
     return Intl.message(
-      'User',
+      '',
       name: 'User',
       desc: '',
       args: [],
@@ -2511,30 +2511,30 @@ class S {
     );
   }
 
-  /// `Privacy`
+  /// ``
   String get Privacy {
     return Intl.message(
-      'Privacy',
+      '',
       name: 'Privacy',
       desc: '',
       args: [],
     );
   }
 
-  /// `Terms`
+  /// ``
   String get Terms {
     return Intl.message(
-      'Terms',
+      '',
       name: 'Terms',
       desc: '',
       args: [],
     );
   }
 
-  /// `Cancel`
+  /// ``
   String get Cancel {
     return Intl.message(
-      'Cancel',
+      '',
       name: 'Cancel',
       desc: '',
       args: [],
@@ -2561,21 +2561,11 @@ class S {
     );
   }
 
-  /// `Yes`
+  /// ``
   String get Yes {
     return Intl.message(
-      'Yes',
+      '',
       name: 'Yes',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Favorites`
-  String get Favorites {
-    return Intl.message(
-      'Favorites',
-      name: 'Favorites',
       desc: '',
       args: [],
     );
@@ -2601,10 +2591,10 @@ class S {
     );
   }
 
-  /// `Athlete`
+  /// ``
   String get Athlete {
     return Intl.message(
-      'Athlete',
+      '',
       name: 'Athlete',
       desc: '',
       args: [],
@@ -2641,10 +2631,10 @@ class S {
     );
   }
 
-  /// `Tags`
+  /// ``
   String get Tags {
     return Intl.message(
-      'Tags',
+      '',
       name: 'Tags',
       desc: '',
       args: [],
@@ -2680,6 +2670,16 @@ class S {
       args: [],
     );
   }
+
+  /// ``
+  String get key {
+    return Intl.message(
+      '',
+      name: 'key',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -2689,6 +2689,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
+      Locale.fromSubtags(languageCode: 'hi'),
       Locale.fromSubtags(languageCode: 'ru'),
     ];
   }
