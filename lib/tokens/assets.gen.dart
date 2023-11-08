@@ -1071,6 +1071,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/dollar_outlined.svg
   SvgGenImage get dollarOutlined => const SvgGenImage('assets/images/svg/dollar_outlined.svg');
 
+  /// File path: assets/images/svg/donat.svg
+  SvgGenImage get donat => const SvgGenImage('assets/images/svg/donat.svg');
+
   /// File path: assets/images/svg/empty_radio.svg
   SvgGenImage get emptyRadio => const SvgGenImage('assets/images/svg/empty_radio.svg');
 
@@ -1091,6 +1094,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/filled_radio.svg
   SvgGenImage get filledRadio => const SvgGenImage('assets/images/svg/filled_radio.svg');
+
+  /// File path: assets/images/svg/film.svg
+  SvgGenImage get film => const SvgGenImage('assets/images/svg/film.svg');
 
   /// File path: assets/images/svg/filter.svg
   SvgGenImage get filter => const SvgGenImage('assets/images/svg/filter.svg');
@@ -1124,6 +1130,12 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/hand-shake.svg
   SvgGenImage get handShake => const SvgGenImage('assets/images/svg/hand-shake.svg');
+
+  /// File path: assets/images/svg/hands.svg
+  SvgGenImage get hands => const SvgGenImage('assets/images/svg/hands.svg');
+
+  /// File path: assets/images/svg/handshake_3.svg
+  SvgGenImage get handshake3 => const SvgGenImage('assets/images/svg/handshake_3.svg');
 
   /// File path: assets/images/svg/heart-broken-fill.svg
   SvgGenImage get heartBrokenFill => const SvgGenImage('assets/images/svg/heart-broken-fill.svg');
@@ -1583,6 +1595,7 @@ class $AssetsImagesSvgGen {
         dollar,
         dollarBlackOutlined,
         dollarOutlined,
+        donat,
         emptyRadio,
         exclamation,
         eyeOff,
@@ -1590,6 +1603,7 @@ class $AssetsImagesSvgGen {
         family,
         files,
         filledRadio,
+        film,
         filter,
         finance,
         fireWhite,
@@ -1601,6 +1615,8 @@ class $AssetsImagesSvgGen {
         gym,
         handShake2,
         handShake,
+        hands,
+        handshake3,
         heartBrokenFill,
         heartFill,
         heartOutline,
