@@ -18,17 +18,15 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+        _current != null, 'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -601,8 +599,7 @@ class S {
   }
 
   /// `Top {amountOfTopDonators} donators receive x{multiplier} points`
-  String TopNDonatorsReceiveXPoints(
-      Object amountOfTopDonators, Object multiplier) {
+  String TopNDonatorsReceiveXPoints(Object amountOfTopDonators, Object multiplier) {
     return Intl.message(
       'Top $amountOfTopDonators donators receive x$multiplier points',
       name: 'TopNDonatorsReceiveXPoints',
@@ -2671,11 +2668,21 @@ class S {
     );
   }
 
-  /// `Accept donations or help others realize their dreams`
-  String get AcceptDonations {
+  /// `White theme`
+  String get WhiteTheme {
     return Intl.message(
-      'Accept donations or help others realize their dreams',
-      name: 'AcceptDonations',
+      'White theme',
+      name: 'WhiteTheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get Name {
+    return Intl.message(
+      'Name',
+      name: 'Name',
       desc: '',
       args: [],
     );
@@ -2686,6 +2693,16 @@ class S {
     return Intl.message(
       '',
       name: 'key',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accept donations or help others realize their dreams`
+  String get AcceptDonations {
+    return Intl.message(
+      'Accept donations or help others realize their dreams',
+      name: 'AcceptDonations',
       desc: '',
       args: [],
     );

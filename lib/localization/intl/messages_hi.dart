@@ -32,8 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m5(helpfulCount) => "उपयोगी ${helpfulCount}";
 
-  static String m6(invitedPeopleCount) =>
-      "${invitedPeopleCount} लोगों को आमंत्रित करता है";
+  static String m6(invitedPeopleCount) => "${invitedPeopleCount} लोगों को आमंत्रित करता है";
 
   static String m7(placeIndex) => "";
 
@@ -59,23 +58,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "AcceptDonations": MessageLookupByLibrary.simpleMessage(""),
         "ActivityType": MessageLookupByLibrary.simpleMessage(""),
         "AddYourselfToList": MessageLookupByLibrary.simpleMessage(""),
         "Address": MessageLookupByLibrary.simpleMessage(""),
         "Allow": MessageLookupByLibrary.simpleMessage(""),
         "AllowAll": MessageLookupByLibrary.simpleMessage(""),
         "AllowGeolocation": MessageLookupByLibrary.simpleMessage(""),
-        "AllowLocationServicesToUseThisFunction":
-            MessageLookupByLibrary.simpleMessage(""),
+        "AllowLocationServicesToUseThisFunction": MessageLookupByLibrary.simpleMessage(""),
         "AllowX": m0,
         "AllowedCaracters": m1,
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(""),
         "Archived": MessageLookupByLibrary.simpleMessage(""),
-        "AreYouSureYouWantToDeleteYourAccount":
-            MessageLookupByLibrary.simpleMessage(""),
-        "AreYouSureYouWantToDeleteYourCompanyProfile":
-            MessageLookupByLibrary.simpleMessage(""),
+        "AreYouSureYouWantToDeleteYourAccount": MessageLookupByLibrary.simpleMessage(""),
+        "AreYouSureYouWantToDeleteYourCompanyProfile": MessageLookupByLibrary.simpleMessage(""),
         "AreYouSureYouWantToLogOut": MessageLookupByLibrary.simpleMessage(""),
         "AskForDonations": MessageLookupByLibrary.simpleMessage(""),
         "AskOrSupport": MessageLookupByLibrary.simpleMessage(""),
@@ -83,8 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Athlete": MessageLookupByLibrary.simpleMessage(""),
         "Balance": MessageLookupByLibrary.simpleMessage(""),
         "BaseProperties": MessageLookupByLibrary.simpleMessage(""),
-        "BasedOnYourActivityWeDetermineYourCondition":
-            MessageLookupByLibrary.simpleMessage(""),
+        "BasedOnYourActivityWeDetermineYourCondition": MessageLookupByLibrary.simpleMessage(""),
         "BeInSearch": MessageLookupByLibrary.simpleMessage(""),
         "BookIt": MessageLookupByLibrary.simpleMessage(""),
         "BurnedToday": MessageLookupByLibrary.simpleMessage(""),
@@ -94,8 +88,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "CheckIn": MessageLookupByLibrary.simpleMessage(""),
         "ChooseOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),
         "ClickEnterToSearch": MessageLookupByLibrary.simpleMessage(""),
-        "CompanyAnswered":
-            MessageLookupByLibrary.simpleMessage("कंपनी ने उत्तर दिया"),
+        "CompanyAnswered": MessageLookupByLibrary.simpleMessage("कंपनी ने उत्तर दिया"),
         "CompanyCredentials": MessageLookupByLibrary.simpleMessage(""),
         "CompanyName": MessageLookupByLibrary.simpleMessage(""),
         "CompanyPosition": MessageLookupByLibrary.simpleMessage(""),
@@ -104,8 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Create": MessageLookupByLibrary.simpleMessage(""),
         "CreateEvent": MessageLookupByLibrary.simpleMessage(""),
         "CreatePlace": MessageLookupByLibrary.simpleMessage(""),
-        "CreateYourPlaceAndInvitePeople":
-            MessageLookupByLibrary.simpleMessage(""),
+        "CreateYourPlaceAndInvitePeople": MessageLookupByLibrary.simpleMessage(""),
         "Daily": MessageLookupByLibrary.simpleMessage(""),
         "DateOfBirth": MessageLookupByLibrary.simpleMessage(""),
         "Dates": MessageLookupByLibrary.simpleMessage(""),
@@ -160,28 +152,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "HowItWorks": MessageLookupByLibrary.simpleMessage(""),
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(""),
         "IncorrectLoginOrPassword": MessageLookupByLibrary.simpleMessage(""),
-        "InvitationsCanBeViewedInPrivateMessages":
-            MessageLookupByLibrary.simpleMessage(""),
+        "InvitationsCanBeViewedInPrivateMessages": MessageLookupByLibrary.simpleMessage(""),
         "Invite": MessageLookupByLibrary.simpleMessage(""),
-        "InviteMore":
-            MessageLookupByLibrary.simpleMessage("और अधिक को आमंत्रित करें"),
+        "InviteMore": MessageLookupByLibrary.simpleMessage("और अधिक को आमंत्रित करें"),
         "InvitePeople": MessageLookupByLibrary.simpleMessage(""),
         "InviteToFavouritePlaces": MessageLookupByLibrary.simpleMessage(""),
         "InvitesNPeopleTo": m6,
-        "InvitesYouTo":
-            MessageLookupByLibrary.simpleMessage("आपको आमंत्रित करता है"),
+        "InvitesYouTo": MessageLookupByLibrary.simpleMessage("आपको आमंत्रित करता है"),
         "IsRecurrent": MessageLookupByLibrary.simpleMessage(""),
         "Loading": MessageLookupByLibrary.simpleMessage("लोड हो रहा है..."),
         "Location": MessageLookupByLibrary.simpleMessage(""),
         "Logo": MessageLookupByLibrary.simpleMessage(""),
         "LogoUploadFiles": MessageLookupByLibrary.simpleMessage(""),
-        "LovelyTouchAmazingInteraction":
-            MessageLookupByLibrary.simpleMessage(""),
+        "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage(""),
         "Members": MessageLookupByLibrary.simpleMessage("सदस्यों"),
         "Month": MessageLookupByLibrary.simpleMessage(""),
         "MyCard": MessageLookupByLibrary.simpleMessage(""),
         "MyEvents": MessageLookupByLibrary.simpleMessage(""),
         "NPlace": m7,
+        "Name": MessageLookupByLibrary.simpleMessage(""),
         "NameOrNickname": MessageLookupByLibrary.simpleMessage(""),
         "NewLocationHasOpenedToday": MessageLookupByLibrary.simpleMessage(""),
         "NewPlace": MessageLookupByLibrary.simpleMessage("नयी जगह"),
@@ -189,15 +178,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "NextNPeople": m8,
         "NextWithChevrons": MessageLookupByLibrary.simpleMessage(""),
         "Nickname": MessageLookupByLibrary.simpleMessage(""),
-        "NicknameIsTakenTryAnotherOne":
-            MessageLookupByLibrary.simpleMessage(""),
+        "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(""),
         "NoDateSelected": MessageLookupByLibrary.simpleMessage(""),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "आपके डिवाइस पर कोई स्वास्थ्य किट उपलब्ध नहीं है, इसलिए परिणाम यादृच्छिक होगा"),
-        "NoPhotoHereYet": MessageLookupByLibrary.simpleMessage(
-            "अभी तक यहां कोई फोटो नहीं है!"),
-        "NoPreferencesChosen":
-            MessageLookupByLibrary.simpleMessage("कोई प्राथमिकता नहीं चुनी गई"),
+        "NoPhotoHereYet": MessageLookupByLibrary.simpleMessage("अभी तक यहां कोई फोटो नहीं है!"),
+        "NoPreferencesChosen": MessageLookupByLibrary.simpleMessage("कोई प्राथमिकता नहीं चुनी गई"),
         "NoThx": MessageLookupByLibrary.simpleMessage(""),
         "NotNow": MessageLookupByLibrary.simpleMessage("अभी नहीं"),
         "NotOften": MessageLookupByLibrary.simpleMessage(""),
@@ -214,12 +200,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "OpenTo": MessageLookupByLibrary.simpleMessage(""),
         "OpeningHours": MessageLookupByLibrary.simpleMessage(""),
         "OrDragFilesHere": MessageLookupByLibrary.simpleMessage(""),
-        "OurRecommendationsAboutGeolocation":
-            MessageLookupByLibrary.simpleMessage(""),
+        "OurRecommendationsAboutGeolocation": MessageLookupByLibrary.simpleMessage(""),
         "Password": MessageLookupByLibrary.simpleMessage(""),
         "PasswordConditions": MessageLookupByLibrary.simpleMessage(""),
-        "PasswordMustBeAtLeast8Characters":
-            MessageLookupByLibrary.simpleMessage(""),
+        "PasswordMustBeAtLeast8Characters": MessageLookupByLibrary.simpleMessage(""),
         "Permissions": MessageLookupByLibrary.simpleMessage(""),
         "PersonalCredentials": MessageLookupByLibrary.simpleMessage(""),
         "Phone": MessageLookupByLibrary.simpleMessage(""),
@@ -233,10 +217,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "PleaseFillOutYourWishes": MessageLookupByLibrary.simpleMessage(""),
         "PleaseSelectANiche": MessageLookupByLibrary.simpleMessage(""),
         "PleaseSelectAtLeastNReligion": m9,
-        "PleaseSelectAtLeastOneAgeRange":
-            MessageLookupByLibrary.simpleMessage(""),
-        "PleaseSelectAtLeastOneTargetAudience":
-            MessageLookupByLibrary.simpleMessage(""),
+        "PleaseSelectAtLeastOneAgeRange": MessageLookupByLibrary.simpleMessage(""),
+        "PleaseSelectAtLeastOneTargetAudience": MessageLookupByLibrary.simpleMessage(""),
         "PleaseSelectGender": MessageLookupByLibrary.simpleMessage(""),
         "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(""),
         "PointBalance": MessageLookupByLibrary.simpleMessage("अंक गिनती"),
@@ -277,16 +259,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "Tags": MessageLookupByLibrary.simpleMessage(""),
         "TapIt": MessageLookupByLibrary.simpleMessage("इसे टैप करें"),
         "TapOnceToChoose": MessageLookupByLibrary.simpleMessage(""),
-        "TapToSeeMore":
-            MessageLookupByLibrary.simpleMessage("अधिक देखने के लिए टैप करें"),
+        "TapToSeeMore": MessageLookupByLibrary.simpleMessage("अधिक देखने के लिए टैप करें"),
         "TapToSetAddress": MessageLookupByLibrary.simpleMessage(""),
         "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(""),
         "TellUsMoreAboutYourself": m11,
         "Terms": MessageLookupByLibrary.simpleMessage(""),
-        "ThatsAllForNow":
-            MessageLookupByLibrary.simpleMessage("अभी के लिए इतना ही!"),
-        "TheMoreInfoWeAboutYouGetTheBetter":
-            MessageLookupByLibrary.simpleMessage(""),
+        "ThatsAllForNow": MessageLookupByLibrary.simpleMessage("अभी के लिए इतना ही!"),
+        "TheMoreInfoWeAboutYouGetTheBetter": MessageLookupByLibrary.simpleMessage(""),
         "TheMoreInfoWeGetTheBetter": MessageLookupByLibrary.simpleMessage(""),
         "ThenCheckThisOut": MessageLookupByLibrary.simpleMessage(""),
         "ThisIs": MessageLookupByLibrary.simpleMessage(""),
@@ -302,19 +281,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "TypeHere": MessageLookupByLibrary.simpleMessage(""),
         "Undefined": MessageLookupByLibrary.simpleMessage(""),
         "UniqueProperties": MessageLookupByLibrary.simpleMessage(""),
-        "UpcomingEvent":
-            MessageLookupByLibrary.simpleMessage("आगामी कार्यक्रम"),
+        "UpcomingEvent": MessageLookupByLibrary.simpleMessage("आगामी कार्यक्रम"),
         "Update": MessageLookupByLibrary.simpleMessage(""),
         "UpgradeForNmoney": m13,
         "User": MessageLookupByLibrary.simpleMessage(""),
         "UsingHealthKit": MessageLookupByLibrary.simpleMessage(""),
-        "ValueMustBeAtLeast3Characters":
-            MessageLookupByLibrary.simpleMessage(""),
+        "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(""),
         "Video": MessageLookupByLibrary.simpleMessage(""),
         "VideoUploadFiles": MessageLookupByLibrary.simpleMessage(""),
         "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(""),
-        "WeDoNotSpamAllKindsOfNotifications":
-            MessageLookupByLibrary.simpleMessage(""),
+        "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(""),
         "WeHavePlacesJustForYou": MessageLookupByLibrary.simpleMessage(""),
         "WeWillLetKnowResults": MessageLookupByLibrary.simpleMessage(""),
         "Weather": MessageLookupByLibrary.simpleMessage("मौसम"),
@@ -322,6 +298,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Welcome": MessageLookupByLibrary.simpleMessage(""),
         "WhatIs": MessageLookupByLibrary.simpleMessage(""),
         "WhatYouLike": MessageLookupByLibrary.simpleMessage(""),
+        "WhiteTheme": MessageLookupByLibrary.simpleMessage(""),
         "WillBe": MessageLookupByLibrary.simpleMessage(""),
         "WillBeImplementedSoon": MessageLookupByLibrary.simpleMessage(""),
         "WithYourPreferences": MessageLookupByLibrary.simpleMessage(""),
