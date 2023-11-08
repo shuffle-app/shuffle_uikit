@@ -181,6 +181,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "MyCard": MessageLookupByLibrary.simpleMessage(""),
         "MyEvents": MessageLookupByLibrary.simpleMessage(""),
         "NPlace": m7,
+        "Name": MessageLookupByLibrary.simpleMessage(""),
         "NameOrNickname": MessageLookupByLibrary.simpleMessage(""),
         "NewLocationHasOpenedToday": MessageLookupByLibrary.simpleMessage(""),
         "NewPlace": MessageLookupByLibrary.simpleMessage("नयी जगह"),

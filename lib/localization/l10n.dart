@@ -2681,6 +2681,16 @@ class S {
     );
   }
 
+  /// `Name`
+  String get Name {
+    return Intl.message(
+      'Name',
+      name: 'Name',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// ``
   String get key {
     return Intl.message(
