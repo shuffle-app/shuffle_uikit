@@ -46,7 +46,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                     alignment: Alignment.topLeft,
                     child: pointsToGain == null
                         ? null
-                        : Container(
+                        : DecoratedBox(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadiusFoundation.all40,
                               gradient: GradientFoundation.defaultRadialGradient,

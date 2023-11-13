@@ -27,32 +27,34 @@ class UiKitSwiperCardInfo extends StatelessWidget {
         borderRadius: BorderRadiusFoundation.all20,
         color: ColorsFoundation.darkNeutral500.withOpacity(0.16),
       ),
-      child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              title,
-              maxLines: 1,
-              style: titleStyle,
-            ),
-            Text(
-              subtitle,
-              maxLines: 2,
-              style: subtitleStyle,
-            ),
-            SpacingFoundation.verticalSpace4,
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Wrap(
-                spacing: SpacingFoundation.horizontalSpacing8,
-                children: tags,
+      child: RepaintBoundary(
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                title,
+                maxLines: 1,
+                style: titleStyle,
               ),
-            ),
-          ],
-        ).paddingAll(EdgeInsetsFoundation.all12),
+              Text(
+                subtitle,
+                maxLines: 2,
+                style: subtitleStyle,
+              ),
+              SpacingFoundation.verticalSpace4,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Wrap(
+                  spacing: SpacingFoundation.horizontalSpacing8,
+                  children: tags,
+                ),
+              ),
+            ],
+          ).paddingAll(EdgeInsetsFoundation.all12),
+        ),
       ),
     );
   }
