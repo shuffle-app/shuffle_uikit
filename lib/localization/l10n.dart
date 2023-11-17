@@ -18,15 +18,17 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(
-        _current != null, 'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(_current != null,
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -599,7 +601,8 @@ class S {
   }
 
   /// `Top {amountOfTopDonators} donators receive x{multiplier} points`
-  String TopNDonatorsReceiveXPoints(Object amountOfTopDonators, Object multiplier) {
+  String TopNDonatorsReceiveXPoints(
+      Object amountOfTopDonators, Object multiplier) {
     return Intl.message(
       'Top $amountOfTopDonators donators receive x$multiplier points',
       name: 'TopNDonatorsReceiveXPoints',
@@ -1928,40 +1931,40 @@ class S {
     );
   }
 
-  /// ``
+  /// `Archived`
   String get Archived {
     return Intl.message(
-      '',
+      'Archived',
       name: 'Archived',
       desc: '',
       args: [],
     );
   }
 
-  /// ``
+  /// `Event`
   String get Event {
     return Intl.message(
-      '',
+      'Event',
       name: 'Event',
       desc: '',
       args: [],
     );
   }
 
-  /// ``
+  /// `time`
   String get Time {
     return Intl.message(
-      '',
+      'time',
       name: 'Time',
       desc: '',
       args: [],
     );
   }
 
-  /// ``
+  /// `Dates`
   String get Dates {
     return Intl.message(
-      '',
+      'Dates',
       name: 'Dates',
       desc: '',
       args: [],
@@ -1978,10 +1981,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `day`
   String get Day {
     return Intl.message(
-      '',
+      'day',
       name: 'Day',
       desc: '',
       args: [],
@@ -2028,10 +2031,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `today`
   String get Today {
     return Intl.message(
-      '',
+      'today',
       name: 'Today',
       desc: '',
       args: [],
@@ -2058,20 +2061,20 @@ class S {
     );
   }
 
-  /// ``
+  /// `photo`
   String get Photo {
     return Intl.message(
-      '',
+      'photo',
       name: 'Photo',
       desc: '',
       args: [],
     );
   }
 
-  /// ``
+  /// `video`
   String get Video {
     return Intl.message(
-      '',
+      'video',
       name: 'Video',
       desc: '',
       args: [],
@@ -2118,10 +2121,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `published`
   String get Published {
     return Intl.message(
-      '',
+      'published',
       name: 'Published',
       desc: '',
       args: [],
@@ -2138,20 +2141,20 @@ class S {
     );
   }
 
-  /// ``
+  /// `Update`
   String get Update {
     return Intl.message(
-      '',
+      'Update',
       name: 'Update',
       desc: '',
       args: [],
     );
   }
 
-  /// ``
+  /// `Create`
   String get Create {
     return Intl.message(
-      '',
+      'Create',
       name: 'Create',
       desc: '',
       args: [],
@@ -2198,10 +2201,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `Permissions`
   String get Permissions {
     return Intl.message(
-      '',
+      'Permissions',
       name: 'Permissions',
       desc: '',
       args: [],
@@ -2268,20 +2271,20 @@ class S {
     );
   }
 
-  /// ``
+  /// `Skip`
   String get Skip {
     return Intl.message(
-      '',
+      'Skip',
       name: 'Skip',
       desc: '',
       args: [],
     );
   }
 
-  /// ``
+  /// `Allow`
   String get Allow {
     return Intl.message(
-      '',
+      'Allow',
       name: 'Allow',
       desc: '',
       args: [],
@@ -2348,10 +2351,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `Password`
   String get Password {
     return Intl.message(
-      '',
+      'Password',
       name: 'Password',
       desc: '',
       args: [],
@@ -2398,20 +2401,20 @@ class S {
     );
   }
 
-  /// ``
+  /// `Feelings`
   String get Feeling {
     return Intl.message(
-      '',
+      'Feelings',
       name: 'Feeling',
       desc: '',
       args: [],
     );
   }
 
-  /// ``
+  /// `Sunny`
   String get Sunny {
     return Intl.message(
-      '',
+      'Sunny',
       name: 'Sunny',
       desc: '',
       args: [],
@@ -2428,10 +2431,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `Undefined`
   String get Undefined {
     return Intl.message(
-      '',
+      'Undefined',
       name: 'Undefined',
       desc: '',
       args: [],
@@ -2488,10 +2491,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `User`
   String get User {
     return Intl.message(
-      '',
+      'User',
       name: 'User',
       desc: '',
       args: [],
@@ -2508,30 +2511,30 @@ class S {
     );
   }
 
-  /// ``
+  /// `Privacy`
   String get Privacy {
     return Intl.message(
-      '',
+      'Privacy',
       name: 'Privacy',
       desc: '',
       args: [],
     );
   }
 
-  /// ``
+  /// `Terms`
   String get Terms {
     return Intl.message(
-      '',
+      'Terms',
       name: 'Terms',
       desc: '',
       args: [],
     );
   }
 
-  /// ``
+  /// `Cancel`
   String get Cancel {
     return Intl.message(
-      '',
+      'Cancel',
       name: 'Cancel',
       desc: '',
       args: [],
@@ -2558,10 +2561,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `Yes`
   String get Yes {
     return Intl.message(
-      '',
+      'Yes',
       name: 'Yes',
       desc: '',
       args: [],
@@ -2588,10 +2591,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `Athlete`
   String get Athlete {
     return Intl.message(
-      '',
+      'Athlete',
       name: 'Athlete',
       desc: '',
       args: [],
@@ -2628,10 +2631,10 @@ class S {
     );
   }
 
-  /// ``
+  /// `Properties`
   String get Tags {
     return Intl.message(
-      '',
+      'Properties',
       name: 'Tags',
       desc: '',
       args: [],
@@ -2688,21 +2691,21 @@ class S {
     );
   }
 
-  /// ``
-  String get key {
-    return Intl.message(
-      '',
-      name: 'key',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Accept donations or help others realize their dreams`
   String get AcceptDonations {
     return Intl.message(
       'Accept donations or help others realize their dreams',
       name: 'AcceptDonations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `key`
+  String get key {
+    return Intl.message(
+      'key',
+      name: 'key',
       desc: '',
       args: [],
     );

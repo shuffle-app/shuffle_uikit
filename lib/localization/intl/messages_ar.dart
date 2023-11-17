@@ -69,7 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Add yourself to list"),
         "Address": MessageLookupByLibrary.simpleMessage("Address"),
-        "Allow": MessageLookupByLibrary.simpleMessage(""),
+        "Allow": MessageLookupByLibrary.simpleMessage("Allow"),
         "AllowAll": MessageLookupByLibrary.simpleMessage("Allow all"),
         "AllowGeolocation":
             MessageLookupByLibrary.simpleMessage("Allow geolocation"),
@@ -323,7 +323,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
         "ShuffleWithRightWhitespace":
             MessageLookupByLibrary.simpleMessage("Shuffle "),
-        "Skip": MessageLookupByLibrary.simpleMessage(""),
+        "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "Small": MessageLookupByLibrary.simpleMessage("Small"),
         "SmartLeisureSelection": MessageLookupByLibrary.simpleMessage(
             "Smart leisure selection for everyone, everywhere."),

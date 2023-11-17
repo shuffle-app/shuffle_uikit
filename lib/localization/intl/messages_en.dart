@@ -69,7 +69,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Add yourself to list"),
         "Address": MessageLookupByLibrary.simpleMessage("Address"),
-        "Allow": MessageLookupByLibrary.simpleMessage(""),
+        "Allow": MessageLookupByLibrary.simpleMessage("Allow"),
         "AllowAll": MessageLookupByLibrary.simpleMessage("Allow all"),
         "AllowGeolocation":
             MessageLookupByLibrary.simpleMessage("Allow geolocation"),
@@ -79,7 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AllowX": m0,
         "AllowedCaracters": m1,
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" And "),
-        "Archived": MessageLookupByLibrary.simpleMessage(""),
+        "Archived": MessageLookupByLibrary.simpleMessage("Archived"),
         "AreYouSureYouWantToDeleteYourAccount":
             MessageLookupByLibrary.simpleMessage(
                 "Are you sure you want to delete your account?"),
@@ -92,7 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ask for donations"),
         "AskOrSupport": MessageLookupByLibrary.simpleMessage("Ask or support"),
         "AskPeople": MessageLookupByLibrary.simpleMessage("Ask people"),
-        "Athlete": MessageLookupByLibrary.simpleMessage(""),
+        "Athlete": MessageLookupByLibrary.simpleMessage("Athlete"),
         "Balance": MessageLookupByLibrary.simpleMessage("Balance"),
         "BaseProperties":
             MessageLookupByLibrary.simpleMessage("Base properties"),
@@ -104,7 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BurnedToday": MessageLookupByLibrary.simpleMessage("Burned today"),
         "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
             "By continuing you accept the "),
-        "Cancel": MessageLookupByLibrary.simpleMessage(""),
+        "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Change photo"),
         "CheckIn": MessageLookupByLibrary.simpleMessage("Check in"),
         "ChooseOption": MessageLookupByLibrary.simpleMessage("Choose option"),
@@ -119,15 +119,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Company position"),
         "Confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("Contact person"),
-        "Create": MessageLookupByLibrary.simpleMessage(""),
+        "Create": MessageLookupByLibrary.simpleMessage("Create"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Create Event"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
         "CreateYourPlaceAndInvitePeople": MessageLookupByLibrary.simpleMessage(
             "Create your place and invite people"),
         "Daily": MessageLookupByLibrary.simpleMessage("Daily "),
         "DateOfBirth": MessageLookupByLibrary.simpleMessage("Date of birth"),
-        "Dates": MessageLookupByLibrary.simpleMessage(""),
-        "Day": MessageLookupByLibrary.simpleMessage(""),
+        "Dates": MessageLookupByLibrary.simpleMessage("Dates"),
+        "Day": MessageLookupByLibrary.simpleMessage("day"),
         "DaysOfWeek": MessageLookupByLibrary.simpleMessage("Days of week"),
         "DeleteFromList":
             MessageLookupByLibrary.simpleMessage("Delete from list"),
@@ -156,13 +156,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Error occured"),
         "ErrorOccuredWithoutMessage": MessageLookupByLibrary.simpleMessage(
             "Error occured without message"),
-        "Event": MessageLookupByLibrary.simpleMessage(""),
+        "Event": MessageLookupByLibrary.simpleMessage("Event"),
         "EventType": MessageLookupByLibrary.simpleMessage("Event type"),
         "Faq": MessageLookupByLibrary.simpleMessage("Faq"),
         "Favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "FeaturesEnableGeolocation":
             MessageLookupByLibrary.simpleMessage("Features enable geolocation"),
-        "Feeling": MessageLookupByLibrary.simpleMessage(""),
+        "Feeling": MessageLookupByLibrary.simpleMessage("Feelings"),
         "FindSomeoneToHangOutWith": MessageLookupByLibrary.simpleMessage(
             "Find someone to hang out with"),
         "Follow": MessageLookupByLibrary.simpleMessage("Follow"),
@@ -258,17 +258,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Or drag files here"),
         "OurRecommendationsAboutGeolocation": MessageLookupByLibrary.simpleMessage(
             "Our recommendation system is based on many factors. Geolocation is only part of the system, which will allow us to correctly prioritize, both in terms of distance and the nearest landscape features (mountains, reservoirs, plains, deserts)"),
-        "Password": MessageLookupByLibrary.simpleMessage(""),
+        "Password": MessageLookupByLibrary.simpleMessage("Password"),
         "PasswordConditions": MessageLookupByLibrary.simpleMessage(
             "Password must contain at least one uppercase letter, one lowercase letter, one number and one special character"),
         "PasswordMustBeAtLeast8Characters":
             MessageLookupByLibrary.simpleMessage(
                 "Password must be at least 8 characters"),
-        "Permissions": MessageLookupByLibrary.simpleMessage(""),
+        "Permissions": MessageLookupByLibrary.simpleMessage("Permissions"),
         "PersonalCredentials":
             MessageLookupByLibrary.simpleMessage("Personal credentials"),
         "Phone": MessageLookupByLibrary.simpleMessage("Phone"),
-        "Photo": MessageLookupByLibrary.simpleMessage(""),
+        "Photo": MessageLookupByLibrary.simpleMessage("photo"),
         "PhotoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Photo (upload Files)"),
         "Photos": MessageLookupByLibrary.simpleMessage("Photos"),
@@ -298,10 +298,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Premium": MessageLookupByLibrary.simpleMessage("Premium"),
         "PremiumAccount":
             MessageLookupByLibrary.simpleMessage("Premium account"),
-        "Privacy": MessageLookupByLibrary.simpleMessage(""),
+        "Privacy": MessageLookupByLibrary.simpleMessage("Privacy"),
         "Pro": MessageLookupByLibrary.simpleMessage("Pro"),
         "ProAccount": MessageLookupByLibrary.simpleMessage("Pro account"),
-        "Published": MessageLookupByLibrary.simpleMessage(""),
+        "Published": MessageLookupByLibrary.simpleMessage("published"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
@@ -323,18 +323,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
         "ShuffleWithRightWhitespace":
             MessageLookupByLibrary.simpleMessage("Shuffle "),
-        "Skip": MessageLookupByLibrary.simpleMessage(""),
+        "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "Small": MessageLookupByLibrary.simpleMessage("Small"),
         "SmartLeisureSelection": MessageLookupByLibrary.simpleMessage(
             "Smart leisure selection for everyone, everywhere."),
         "Spent": MessageLookupByLibrary.simpleMessage("Spent"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Start to explore"),
-        "Sunny": MessageLookupByLibrary.simpleMessage(""),
+        "Sunny": MessageLookupByLibrary.simpleMessage("Sunny"),
         "Support": MessageLookupByLibrary.simpleMessage("Support"),
         "SupportPeopleAroundYou":
             MessageLookupByLibrary.simpleMessage("Support people around you"),
-        "Tags": MessageLookupByLibrary.simpleMessage(""),
+        "Tags": MessageLookupByLibrary.simpleMessage("Properties"),
         "TapIt": MessageLookupByLibrary.simpleMessage("Tap it"),
         "TapOnceToChoose":
             MessageLookupByLibrary.simpleMessage("Tap once to choose "),
@@ -344,7 +344,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(
             ". Tap twice to mark your favorites."),
         "TellUsMoreAboutYourself": m11,
-        "Terms": MessageLookupByLibrary.simpleMessage(""),
+        "Terms": MessageLookupByLibrary.simpleMessage("Terms"),
         "ThatsAllForNow":
             MessageLookupByLibrary.simpleMessage("That\'s all for now!"),
         "TheMoreInfoWeAboutYouGetTheBetter":
@@ -357,29 +357,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThisIs": MessageLookupByLibrary.simpleMessage("This is "),
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "Through a non-\naggregator system \nespecially for you"),
-        "Time": MessageLookupByLibrary.simpleMessage(""),
+        "Time": MessageLookupByLibrary.simpleMessage("time"),
         "Title": MessageLookupByLibrary.simpleMessage("Title"),
         "ToAccessAll": MessageLookupByLibrary.simpleMessage("To access all"),
         "ToAllowAccessGoToSettings": MessageLookupByLibrary.simpleMessage(
             "To allow access to send push notifications, go to your phone settings"),
-        "Today": MessageLookupByLibrary.simpleMessage(""),
+        "Today": MessageLookupByLibrary.simpleMessage("today"),
         "TopNDonatorsReceiveXPoints": m12,
         "TopPlacesRatedBy":
             MessageLookupByLibrary.simpleMessage("Top places rated\nby"),
         "TryYourself": MessageLookupByLibrary.simpleMessage("Try\nyourself"),
         "TypeHere": MessageLookupByLibrary.simpleMessage("Type here"),
-        "Undefined": MessageLookupByLibrary.simpleMessage(""),
+        "Undefined": MessageLookupByLibrary.simpleMessage("Undefined"),
         "UniqueProperties":
             MessageLookupByLibrary.simpleMessage("Unique properties"),
         "UpcomingEvent": MessageLookupByLibrary.simpleMessage("Upcoming Event"),
-        "Update": MessageLookupByLibrary.simpleMessage(""),
+        "Update": MessageLookupByLibrary.simpleMessage("Update"),
         "UpgradeForNmoney": m13,
-        "User": MessageLookupByLibrary.simpleMessage(""),
+        "User": MessageLookupByLibrary.simpleMessage("User"),
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Using health kit"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Value must be at least 3 characters long"),
-        "Video": MessageLookupByLibrary.simpleMessage(""),
+        "Video": MessageLookupByLibrary.simpleMessage("video"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Video (upload Files)"),
         "VisitFirstToOpenNext":
@@ -408,7 +408,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "XIsRequired": m15,
         "XSuccessfullyUpdated": m16,
         "Year": MessageLookupByLibrary.simpleMessage("Year"),
-        "Yes": MessageLookupByLibrary.simpleMessage(""),
+        "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("You better check this out"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
@@ -428,6 +428,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourNiche": MessageLookupByLibrary.simpleMessage("Your niche"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("Your position"),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("Your traffic"),
-        "key": MessageLookupByLibrary.simpleMessage("")
+        "key": MessageLookupByLibrary.simpleMessage("key")
       };
 }
