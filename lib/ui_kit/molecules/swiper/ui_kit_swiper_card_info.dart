@@ -7,12 +7,14 @@ class UiKitSwiperCardInfo extends StatelessWidget {
   final String title;
   final String subtitle;
   final List<UiKitTagWidget> tags;
+  final ScrollController? scrollController;
 
   const UiKitSwiperCardInfo({
     super.key,
     required this.title,
     required this.subtitle,
     required this.tags,
+    this.scrollController,
   });
 
   @override
@@ -46,6 +48,7 @@ class UiKitSwiperCardInfo extends StatelessWidget {
             SpacingFoundation.verticalSpace4,
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
+              controller: scrollController,
               child: Wrap(
                 spacing: SpacingFoundation.horizontalSpacing8,
                 children: tags,
