@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitSwiperCard extends BaseUiKitSwiperCard {
+  final ScrollController? tagsScrollController;
+
   const UiKitSwiperCard({
     super.key,
     super.imageLink,
@@ -11,6 +13,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
     required super.tags,
     required super.title,
     required super.subtitle,
+    this.tagsScrollController,
   });
 
   @override
@@ -46,7 +49,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                     alignment: Alignment.topLeft,
                     child: pointsToGain == null
                         ? null
-                        : Container(
+                        : DecoratedBox(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadiusFoundation.all40,
                               gradient: GradientFoundation.defaultRadialGradient,
@@ -61,6 +64,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                           ),
                   ),
                   UiKitSwiperCardInfo(
+                    scrollController: tagsScrollController,
                     title: title,
                     subtitle: subtitle,
                     tags: tags,
