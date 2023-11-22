@@ -25,7 +25,7 @@ dependencies:
 
 ```dart
 ElevatedButton(
-  onPressed: () => UiKitTheme.of(context).updateTheme(UiKitThemeFoundation.lightTheme),
+  onPressed: () => UiKitTheme.of(context).onThemeUpdated(UiKitThemeFoundation.lightTheme),
   child: MyWidget(),
 ),
 ```
