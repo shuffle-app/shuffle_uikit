@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ColorsFoundation {
+  static const Color lightSurface = UiKitColors.lightSurface1;
   static const Color lightSurface1 = UiKitColors.lightSurface1;
   static const Color lightSurface2 = UiKitColors.lightSurface2;
   static const Color lightSurface3 = UiKitColors.lightSurface3;
   static const Color lightSurface4 = UiKitColors.lightSurface4;
   static const Color lightSurface5 = UiKitColors.lightSurface5;
   static const Color solidLightSurface = UiKitColors.lightSurface1;
+  static const Color solidSurface = UiKitColors.surface1;
+  static const Color surface = UiKitColors.surface;
   static const Color surface1 = UiKitColors.surface1;
   static const Color surface3 = UiKitColors.surface3;
+  static const Color surface2 = UiKitColors.surface2;
+  static const Color surface5 = UiKitColors.surface5;
   static const Color brightYellow = UiKitColors.brightYellow;
   static const Color red = UiKitColors.red;
   static const Color gradientGreyLight1 = UiKitColors.gradientGreyLight1;
@@ -19,12 +24,9 @@ class ColorsFoundation {
   static const Color darkNeutral300 = UiKitColors.darkNeutral300;
   static const Color darkNeutral200 = UiKitColors.darkNeutral200;
   static const Color darkNeutral400 = UiKitColors.darkNeutral400;
-  static const Color solidSurface = UiKitColors.surface1;
-  static const Color darkNeutral900 = UiKitColors.darkNeutral900;
-  static const Color surface2 = UiKitColors.surface2;
-  static const Color surface5 = UiKitColors.surface5;
   static const Color darkNeutral100 = UiKitColors.darkNeutral100;
   static const Color darkNeutral600 = UiKitColors.darkNeutral600;
+  static const Color darkNeutral900 = UiKitColors.darkNeutral900;
   static const Color yellow = UiKitColors.yellow;
   static const Color weatherYellow = UiKitColors.weatherYellow;
   static const Color weatherBlue = UiKitColors.weatherBlue;

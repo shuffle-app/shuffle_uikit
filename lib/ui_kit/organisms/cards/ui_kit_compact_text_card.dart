@@ -15,12 +15,13 @@ class UiKitCompactTextCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = context.uiKitTheme?.boldTextTheme;
+    final theme = context.uiKitTheme;
+    final textTheme = theme?.boldTextTheme;
 
     return Material(
       borderRadius: BorderRadiusFoundation.all24,
       clipBehavior: Clip.hardEdge,
-      color: UiKitColors.surface4,
+      color: theme?.colorScheme.surface4,
       child: InkWell(
         onTap: onTap,
         child: Ink(
@@ -29,10 +30,11 @@ class UiKitCompactTextCard extends StatelessWidget {
             if (showRemoveButton) ...[
               SpacingFoundation.horizontalSpace4,
               ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.x,
-                  color: Colors.white,
-                  height: 10.w,
-                  fit: BoxFit.fitWidth)
+                svgAsset: GraphicsFoundation.instance.svg.x,
+                color: theme?.colorScheme.inversePrimary,
+                height: 10.w,
+                fit: BoxFit.fitWidth,
+              )
             ]
           ]).paddingSymmetric(
             vertical: EdgeInsetsFoundation.vertical4,
