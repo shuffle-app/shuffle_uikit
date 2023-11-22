@@ -27,63 +27,71 @@ class UiKitTagSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
 
     return ValueListenableBuilder<Set<String>>(
-        valueListenable: selectedListNotifier,
-        builder: (context, selectedTags, child) => UiKitCardWrapper(
-            color: ColorsFoundation.surface3,
-            borderRadius: borderRadius ?? BorderRadiusFoundation.all16,
-            border: const BorderSide(
-              width: 1,
-              color: Colors.white,
-            ),
-            child: Column(mainAxisSize: MainAxisSize.min, crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-              if (selectedTags.isNotEmpty)
-                ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: maxHeight),
-                    child: SingleChildScrollView(
-                        child: Wrap(
-                      spacing: SpacingFoundation.horizontalSpacing8,
-                      runSpacing: SpacingFoundation.verticalSpacing8,
-                      children: selectedTags
-                          .map<Widget>(
-                            (e) => UiKitCompactTextCard(
-                              showRemoveButton: true,
-                              text: e,
-                              onTap: () {
-                                onRemoveTagCallback?.call(e);
-                                onTagSelected?.call(e);
-                              },
-                            ),
-                          )
-                          .toList(),
-                    )))
-              else
-                const SizedBox(
-                  width: double.infinity,
+      valueListenable: selectedListNotifier,
+      builder: (context, selectedTags, child) => UiKitCardWrapper(
+        color: theme?.colorScheme.surface3,
+        borderRadius: borderRadius ?? BorderRadiusFoundation.all16,
+        border: const BorderSide(
+          width: 1,
+          color: Colors.white,
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            if (selectedTags.isNotEmpty)
+              ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: maxHeight),
+                child: SingleChildScrollView(
+                  child: Wrap(
+                    spacing: SpacingFoundation.horizontalSpacing8,
+                    runSpacing: SpacingFoundation.verticalSpacing8,
+                    children: selectedTags
+                        .map<Widget>(
+                          (e) => UiKitCompactTextCard(
+                            showRemoveButton: true,
+                            text: e,
+                            onTap: () {
+                              onRemoveTagCallback?.call(e);
+                              onTagSelected?.call(e);
+                            },
+                          ),
+                        )
+                        .toList(),
+                  ),
                 ),
-              if (showTextField)
-                ConstrainedBox(
-                    constraints: BoxConstraints(maxHeight: 40.h),
-                    child: TextField(
-                      decoration: const InputDecoration.collapsed(hintText: ''),
-                      scrollPadding: EdgeInsets.zero,
-                      controller: controller,
-                      style: boldTextTheme?.caption1Bold,
-                      // maxLines: (selectedChips?.length ?? 0) + 1,
-                      maxLines: 1,
-                      onSubmitted: (string) {
-                        if (string.replaceAll(RegExp(r'^[a-z0-9-]+$'), '').isEmpty) {
-                          onNotFoundTagCallback?.call(string);
-                        } else {
-                          SnackBarUtils.show(
-                            message: S.of(context).AllowedCaracters('a-z, 0-9 and -'),
-                            context: context,
-                          );
-                        }
-                      },
-                    ))
-            ]).paddingAll(EdgeInsetsFoundation.all8)));
+              )
+            else
+              const SizedBox(width: double.infinity),
+            if (showTextField)
+              ConstrainedBox(
+                constraints: BoxConstraints(maxHeight: 40.h),
+                child: TextField(
+                  decoration: const InputDecoration.collapsed(hintText: ''),
+                  scrollPadding: EdgeInsets.zero,
+                  controller: controller,
+                  style: boldTextTheme?.caption1Bold,
+                  // maxLines: (selectedChips?.length ?? 0) + 1,
+                  maxLines: 1,
+                  onSubmitted: (string) {
+                    if (string.replaceAll(RegExp(r'^[a-z0-9-]+$'), '').isEmpty) {
+                      onNotFoundTagCallback?.call(string);
+                    } else {
+                      SnackBarUtils.show(
+                        message: S.of(context).AllowedCaracters('a-z, 0-9 and -'),
+                        context: context,
+                      );
+                    }
+                  },
+                ),
+              )
+          ],
+        ).paddingAll(EdgeInsetsFoundation.all8),
+      ),
+    );
   }
 }
