@@ -15,6 +15,32 @@ dependencies:
 
 Затем выполните `flutter pub get` для установки пакета.
 
+## Общая структура пакета
+![ui_kit (1)](https://github.com/shuffle-app/shuffle_uikit/assets/101862863/348d43ea-611e-4505-b298-ce422b12a9dd)
+
+## Работа с `UiKitTheme` 
+**UiKitTheme** - это набор инструментов для работы с темами в приложении, он позволяет систематизировать изменения цветов графических элементов при смене темы. Необходимые составляющие для работы с темой:
+
+1. [UiKitTheme](https://github.com/shuffle-app/shuffle_uikit/blob/master/lib/themes/ui_kit_theme.dart). Это виджет, который отвечает за смену темы и локализации приложения, его использование ограничивается только сменой текущей темы/локализации на предоставляемую в методе изменения. Обращение для смены темы происходит следующим образом: 
+
+```dart
+ElevatedButton(
+  onPressed: () => UiKitTheme.of(context).updateTheme(UiKitThemeFoundation.lightTheme),
+  child: MyWidget(),
+),
+```
+2. [UiKitThemeFoundation](https://github.com/shuffle-app/shuffle_uikit/blob/master/lib/foundation/ui_kit_theme_foundation.dart). Основной источник, куда стоит обратиться при нужде получить объект ThemeData из доступных. Тут хранятся ThemeData'ы приложения, получаемые через класс _UiKitThemes_.
+
+3. [UiKitThemes](https://github.com/shuffle-app/shuffle_uikit/blob/master/lib/themes/ui_kit_themes.dart). Класс, содержащий подробное описание цветов и конфигураций под каждую тему. В каждую тему внесены ThemeExtension'ы, в которых описываются конфигурации отдельных UiKit элементов(_uiKitTabBarTheme_, _bottomSheetTheme_ и т.д), а также настройки _UiKitColorScheme_. 
+4. [UiKitColorScheme](https://github.com/shuffle-app/shuffle_uikit/blob/master/lib/themes/ui_kit_color_scheme.dart). Используется для хранения цветов и их предоставления в UiKitThemeData, а также для получения базовых цветов, таких как surface1, primary и т.д. К примеру, если повявилась необходимость использования _UiKitColorScheme_ для получения цвета surface3 для виджета, то возможно обращение к цвету благодаря [UiKitThemeExtention](https://github.com/shuffle-app/shuffle_uikit/blob/master/lib/utils/extentions/ui_kit_theme_extention.dart):
+```dart
+ColoredBox(
+  color: context.uiKitTheme!.colorScheme.surface3,
+  child: MyWidget(),
+),
+```
+
+
 ## Работа с `Flutter Intl` для локализации приложения
 **Flutter Intl** - это инструмент для работы с локализацией Flutter, он позволяет выделять строки для перевода и автоматически создавать файлы формата `.arb` для хранения переводов. Далее описан план по работе с `Flutter Intl` в Visual Studio Code и Android Studio.
 
