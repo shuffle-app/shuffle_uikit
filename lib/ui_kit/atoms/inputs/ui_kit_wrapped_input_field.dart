@@ -82,8 +82,10 @@ class _UiKitWrappedInputFieldState extends State<UiKitWrappedInputField> {
 
   @override
   Widget build(BuildContext context) {
+    final uiKitTheme = context.uiKitTheme;
+
     return UiKitCardWrapper(
-        color: ColorsFoundation.surface1,
+        color: uiKitTheme?.colorScheme.surface1,
         borderRadius: (errorText ?? '').isEmpty ? BorderRadiusFoundation.max : BorderRadiusFoundation.all20,
         child: () {
           switch (widget.type) {

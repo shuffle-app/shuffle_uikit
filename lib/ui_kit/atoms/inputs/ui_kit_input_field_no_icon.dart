@@ -76,7 +76,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         : uiKitTheme?.noIconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
     final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
-      color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : widget.textColor ?? Colors.white,
+      color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : widget.textColor ?? uiKitTheme.colorScheme.inversePrimary,
     );
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled

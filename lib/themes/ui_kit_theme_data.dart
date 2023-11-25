@@ -20,18 +20,18 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final BottomSheetThemeData bottomSheetTheme;
   final BlurredBottomNavigationBarTheme blurredBottomNavigationBarTheme;
 
-  ButtonStyle get textButtonStyle => ButtonStyle(
+  ButtonStyle textButtonStyle([Color textColor=Colors.white]) => ButtonStyle(
         textStyle: MaterialStateTextStyle.resolveWith((states) {
           return boldTextTheme.title2;
         }),
-        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+        foregroundColor: MaterialStateProperty.resolveWith((states) => textColor),
         overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
       );
-  ButtonStyle get textButtonLabelSmallStyle => ButtonStyle(
+  ButtonStyle  textButtonLabelSmallStyle([Color textColor=Colors.white]) => ButtonStyle(
         textStyle: MaterialStateTextStyle.resolveWith((states) {
           return regularTextTheme.labelSmall;
         }),
-        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+        foregroundColor: MaterialStateProperty.resolveWith((states) => textColor),
         overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
       );
 

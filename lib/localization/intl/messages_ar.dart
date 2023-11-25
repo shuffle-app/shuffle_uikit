@@ -216,6 +216,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "MyCard": MessageLookupByLibrary.simpleMessage("My card"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("My events"),
         "NPlace": m7,
+        "Name": MessageLookupByLibrary.simpleMessage("Name"),
         "NameOrNickname":
             MessageLookupByLibrary.simpleMessage("Name or nickname"),
         "NewLocationHasOpenedToday": MessageLookupByLibrary.simpleMessage(
@@ -427,6 +428,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourNiche": MessageLookupByLibrary.simpleMessage("Your niche"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("Your position"),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("Your traffic"),
+        "daynight": MessageLookupByLibrary.simpleMessage("Day and night"),
         "key": MessageLookupByLibrary.simpleMessage("ar")
       };
 }

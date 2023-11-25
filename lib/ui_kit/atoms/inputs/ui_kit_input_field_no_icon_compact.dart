@@ -37,7 +37,7 @@ class _UiKitInputFieldNoIconCompactState extends State<UiKitInputFieldNoIconComp
     final inputTheme = uiKitTheme?.noIconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
     final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
-      color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : Colors.white,
+      color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : uiKitTheme.colorScheme.inversePrimary,
     );
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled

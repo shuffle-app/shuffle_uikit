@@ -2701,6 +2701,16 @@ class S {
     );
   }
 
+  /// `Day and night`
+  String get daynight {
+    return Intl.message(
+      'Day and night',
+      name: 'daynight',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `key`
   String get key {
     return Intl.message(

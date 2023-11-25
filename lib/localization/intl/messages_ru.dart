@@ -436,6 +436,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourNiche": MessageLookupByLibrary.simpleMessage("Ваша ниша"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("Ваша позиция"),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("Ваш трафик"),
+        "daynight": MessageLookupByLibrary.simpleMessage("Day and night"),
         "key": MessageLookupByLibrary.simpleMessage("")
       };
 }

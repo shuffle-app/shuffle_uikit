@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -69,7 +70,7 @@ class UiKitTagSelector extends StatelessWidget {
               const SizedBox(width: double.infinity),
             if (showTextField)
               ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: 40.h),
+                constraints: BoxConstraints(maxHeight: kIsWeb ? 60 : 40.h),
                 child: TextField(
                   decoration: const InputDecoration.collapsed(hintText: ''),
                   scrollPadding: EdgeInsets.zero,

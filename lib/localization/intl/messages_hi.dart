@@ -348,6 +348,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourNiche": MessageLookupByLibrary.simpleMessage(""),
         "YourPosition": MessageLookupByLibrary.simpleMessage(""),
         "YourTraffic": MessageLookupByLibrary.simpleMessage(""),
+        "daynight": MessageLookupByLibrary.simpleMessage("Day and night"),
         "key": MessageLookupByLibrary.simpleMessage("")
       };
 }

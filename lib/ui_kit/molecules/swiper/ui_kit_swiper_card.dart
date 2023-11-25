@@ -23,11 +23,13 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
     return GestureDetector(
         onTap: onTap,
         child: Container(
+          margin: EdgeInsets.all(EdgeInsetsFoundation.all16),
           width: kIsWeb ? 267 : 267.w,
           height: kIsWeb ? 316 : 316.h,
           clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all40,
+            color: Colors.grey
           ),
           child: Stack(
             fit: StackFit.expand,
@@ -72,7 +74,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                 ],
               ).paddingAll(EdgeInsetsFoundation.all16),
             ],
-          ).paddingAll(EdgeInsetsFoundation.all16),
+          )
         ));
   }
 }

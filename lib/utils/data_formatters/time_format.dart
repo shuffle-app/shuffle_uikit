@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../../localization/l10n.dart';
+
 String normalizedTi(TimeOfDay? time, {bool showDateName = true}) {
   if (time == null) return 'nn';
 
@@ -14,11 +16,15 @@ String leadingZeros(int number) {
 String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay? timeTo, List<String>? wDays) {
   if (date == null && dateTo == null && time == null && timeTo == null && wDays == null) return null;
   String convDate = '';
-  if (time != null) {
-    convDate = normalizedTi(time, showDateName: false);
-  }
-  if (timeTo != null) {
-    convDate += '${convDate.isEmpty ? '' : ' - '}${normalizedTi(timeTo, showDateName: false)}';
+  if((time!= null && timeTo!= null) && time == timeTo) {
+    convDate = S.current.daynight;
+  } else {
+    if (time != null) {
+      convDate = normalizedTi(time, showDateName: false);
+    }
+    if (timeTo != null) {
+      convDate += '${convDate.isEmpty ? '' : ' - '}${normalizedTi(timeTo, showDateName: false)}';
+    }
   }
   if (wDays != null && wDays.isNotEmpty) {
     final List<String> days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
