@@ -63,8 +63,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "AcceptDonations": MessageLookupByLibrary.simpleMessage(
-            "Accept donations or help others realize their dreams"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Activity type"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Add yourself to list"),
@@ -127,7 +125,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Daily": MessageLookupByLibrary.simpleMessage("Daily "),
         "DateOfBirth": MessageLookupByLibrary.simpleMessage("Date of birth"),
         "Dates": MessageLookupByLibrary.simpleMessage("Dates"),
-        "Day": MessageLookupByLibrary.simpleMessage("day"),
+        "Day": MessageLookupByLibrary.simpleMessage("Day"),
         "DaysOfWeek": MessageLookupByLibrary.simpleMessage("Days of week"),
         "DeleteFromList":
             MessageLookupByLibrary.simpleMessage("Delete from list"),
@@ -162,7 +160,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "FeaturesEnableGeolocation":
             MessageLookupByLibrary.simpleMessage("Features enable geolocation"),
-        "Feeling": MessageLookupByLibrary.simpleMessage("Feelings"),
+        "Feeling": MessageLookupByLibrary.simpleMessage("Feeling"),
         "FindSomeoneToHangOutWith": MessageLookupByLibrary.simpleMessage(
             "Find someone to hang out with"),
         "Follow": MessageLookupByLibrary.simpleMessage("Follow"),
@@ -216,11 +214,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "MyCard": MessageLookupByLibrary.simpleMessage("My card"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("My events"),
         "NPlace": m7,
-        "Name": MessageLookupByLibrary.simpleMessage("Name"),
         "NameOrNickname":
             MessageLookupByLibrary.simpleMessage("Name or nickname"),
         "NewLocationHasOpenedToday": MessageLookupByLibrary.simpleMessage(
-            "A new location has opened today. Come! You\\\'ll like it!"),
+            "A new location has opened today. Come! You\'ll like it!"),
         "NewPlace": MessageLookupByLibrary.simpleMessage("New place"),
         "Next": MessageLookupByLibrary.simpleMessage("Next"),
         "NextNPeople": m8,
@@ -268,7 +265,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "PersonalCredentials":
             MessageLookupByLibrary.simpleMessage("Personal credentials"),
         "Phone": MessageLookupByLibrary.simpleMessage("Phone"),
-        "Photo": MessageLookupByLibrary.simpleMessage("photo"),
+        "Photo": MessageLookupByLibrary.simpleMessage("Photo"),
         "PhotoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Photo (upload Files)"),
         "Photos": MessageLookupByLibrary.simpleMessage("Photos"),
@@ -301,7 +298,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Privacy": MessageLookupByLibrary.simpleMessage("Privacy"),
         "Pro": MessageLookupByLibrary.simpleMessage("Pro"),
         "ProAccount": MessageLookupByLibrary.simpleMessage("Pro account"),
-        "Published": MessageLookupByLibrary.simpleMessage("published"),
+        "Published": MessageLookupByLibrary.simpleMessage("Published"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
@@ -334,7 +331,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Support": MessageLookupByLibrary.simpleMessage("Support"),
         "SupportPeopleAroundYou":
             MessageLookupByLibrary.simpleMessage("Support people around you"),
-        "Tags": MessageLookupByLibrary.simpleMessage("Properties"),
+        "Tags": MessageLookupByLibrary.simpleMessage("Tags"),
         "TapIt": MessageLookupByLibrary.simpleMessage("Tap it"),
         "TapOnceToChoose":
             MessageLookupByLibrary.simpleMessage("Tap once to choose "),
@@ -357,12 +354,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThisIs": MessageLookupByLibrary.simpleMessage("This is "),
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "Through a non-\naggregator system \nespecially for you"),
-        "Time": MessageLookupByLibrary.simpleMessage("time"),
+        "Time": MessageLookupByLibrary.simpleMessage("Time"),
         "Title": MessageLookupByLibrary.simpleMessage("Title"),
         "ToAccessAll": MessageLookupByLibrary.simpleMessage("To access all"),
         "ToAllowAccessGoToSettings": MessageLookupByLibrary.simpleMessage(
             "To allow access to send push notifications, go to your phone settings"),
-        "Today": MessageLookupByLibrary.simpleMessage("today"),
+        "Today": MessageLookupByLibrary.simpleMessage("Today"),
         "TopNDonatorsReceiveXPoints": m12,
         "TopPlacesRatedBy":
             MessageLookupByLibrary.simpleMessage("Top places rated\nby"),
@@ -379,7 +376,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Using health kit"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Value must be at least 3 characters long"),
-        "Video": MessageLookupByLibrary.simpleMessage("video"),
+        "Video": MessageLookupByLibrary.simpleMessage("Video"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Video (upload Files)"),
         "VisitFirstToOpenNext":
@@ -395,7 +392,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "WhatIs": MessageLookupByLibrary.simpleMessage("What is \n"),
         "WhatYouLike": MessageLookupByLibrary.simpleMessage("What you like"),
-        "WhiteTheme": MessageLookupByLibrary.simpleMessage("White theme"),
         "WillBe": MessageLookupByLibrary.simpleMessage(" Will be."),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("Will be implemented soon"),
@@ -429,6 +425,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourPosition": MessageLookupByLibrary.simpleMessage("Your position"),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("Your traffic"),
         "daynight": MessageLookupByLibrary.simpleMessage("Day and night"),
-        "key": MessageLookupByLibrary.simpleMessage("key")
+        "key": MessageLookupByLibrary.simpleMessage("")
       };
 }
