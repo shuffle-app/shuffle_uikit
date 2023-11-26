@@ -62,6 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AcceptDonations": MessageLookupByLibrary.simpleMessage(
+            "Accept donations or help others realize their dreams"),
         "ActivityType":
             MessageLookupByLibrary.simpleMessage("क्रिया के प्रकार"),
         "AddYourselfToList":
@@ -220,6 +222,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "MyCard": MessageLookupByLibrary.simpleMessage("मेरा कार्ड"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("मेरी घटनाएँ"),
         "NPlace": m7,
+        "Name": MessageLookupByLibrary.simpleMessage("Name"),
         "NameOrNickname": MessageLookupByLibrary.simpleMessage("नाम या उपनाम"),
         "NewLocationHasOpenedToday": MessageLookupByLibrary.simpleMessage(
             "आज एक नया स्थान खुल गया है ।  आओ! आप इसे पसंद करेंगे!"),
@@ -401,6 +404,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "WhatIs": MessageLookupByLibrary.simpleMessage("क्या है"),
         "WhatYouLike":
             MessageLookupByLibrary.simpleMessage("आप को क्या पसंद है"),
+        "WhiteTheme": MessageLookupByLibrary.simpleMessage("White theme"),
         "WillBe": MessageLookupByLibrary.simpleMessage("होगा।"),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("जल्द ही लागू किया जाएगा"),

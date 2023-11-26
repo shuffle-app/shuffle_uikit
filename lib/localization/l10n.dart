@@ -2671,6 +2671,36 @@ class S {
     );
   }
 
+  /// `White theme`
+  String get WhiteTheme {
+    return Intl.message(
+      'White theme',
+      name: 'WhiteTheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get Name {
+    return Intl.message(
+      'Name',
+      name: 'Name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accept donations or help others realize their dreams`
+  String get AcceptDonations {
+    return Intl.message(
+      'Accept donations or help others realize their dreams',
+      name: 'AcceptDonations',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Day and night`
   String get daynight {
     return Intl.message(

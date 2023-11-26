@@ -63,6 +63,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AcceptDonations": MessageLookupByLibrary.simpleMessage(
+            "Accept donations or help others realize their dreams"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Activity type"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Add yourself to list"),
@@ -214,6 +216,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "MyCard": MessageLookupByLibrary.simpleMessage("My card"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("My events"),
         "NPlace": m7,
+        "Name": MessageLookupByLibrary.simpleMessage("Name"),
         "NameOrNickname":
             MessageLookupByLibrary.simpleMessage("Name or nickname"),
         "NewLocationHasOpenedToday": MessageLookupByLibrary.simpleMessage(
@@ -392,6 +395,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "WhatIs": MessageLookupByLibrary.simpleMessage("What is \n"),
         "WhatYouLike": MessageLookupByLibrary.simpleMessage("What you like"),
+        "WhiteTheme": MessageLookupByLibrary.simpleMessage("White theme"),
         "WillBe": MessageLookupByLibrary.simpleMessage(" Will be."),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("Will be implemented soon"),
