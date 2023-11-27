@@ -15,14 +15,18 @@ class LocaleModel {
   });
 
   LocaleModel.fromLocale(this.locale)
-      : name = locale.languageCode == 'ru'
-            ? 'Русский'
-            : locale.languageCode == 'en'
-                ? 'English'
-                : 'عرب',
-        iconPath = locale.languageCode == 'ru'
-            ? GraphicsFoundation.instance.svg.russia.path
-            : locale.languageCode == 'en'
-                ? GraphicsFoundation.instance.svg.unitedKingdom.path
-                : GraphicsFoundation.instance.svg.arabic.path;
+      : name = switch (locale.languageCode) {
+          'ru' => 'Русский',
+          'en' => 'English',
+          'hi' => 'Hindu',
+          'ar' => 'عرب',
+          String() => 'other',
+        },
+        iconPath = switch (locale.languageCode) {
+          'ru' => GraphicsFoundation.instance.svg.russia.path,
+          'en' => GraphicsFoundation.instance.svg.unitedKingdom.path,
+          'hi' => GraphicsFoundation.instance.svg.india.path,
+          'ar' => GraphicsFoundation.instance.svg.arabic.path,
+          String() => GraphicsFoundation.instance.svg.arabic.path,
+        };
 }
