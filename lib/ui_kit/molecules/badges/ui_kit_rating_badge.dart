@@ -3,12 +3,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitRatingBadge extends StatelessWidget {
   final double rating;
-  final String? iconPath;
+  final IconData? icon;
 
   const UiKitRatingBadge({
     super.key,
     required this.rating,
-    this.iconPath,
+    this.icon,
   });
 
   @override
@@ -26,7 +26,7 @@ class UiKitRatingBadge extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           ImageWidget(
-            link: iconPath ?? GraphicsFoundation.instance.svg.star.path,
+            iconData: icon ?? ShuffleUiKitIcons.star,
             color: color,
             height: 16,
             fit: BoxFit.cover,

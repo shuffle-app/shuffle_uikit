@@ -5,7 +5,7 @@ class OnBoardingPage extends StatefulWidget {
   final Duration transitionDuration;
   final VoidCallback? onFinished;
   final List<OnBoardingPageItem> items;
-  final String logoLink;
+  final IconData logoLink;
 
   const OnBoardingPage({
     super.key,
@@ -35,8 +35,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
   int currentIndex = 0;
 
   double get currentItemProgressPortion =>
-      ((widget.items.elementAt(currentIndex).autoSwitchDuration.inMilliseconds +
-              (widget.transitionDuration * 3).inMilliseconds) /
+      ((widget.items.elementAt(currentIndex).autoSwitchDuration.inMilliseconds + (widget.transitionDuration * 3).inMilliseconds) /
           overallDuration.inMilliseconds) *
       (currentIndex + 1);
 
@@ -100,7 +99,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
                 duration: widget.transitionDuration,
                 opacity: _logoOpacity,
                 child: ImageWidget(
-                  link: widget.logoLink,
+                  iconData: widget.logoLink,
                   fit: BoxFit.fitWidth,
                 ).paddingSymmetric(horizontal: MediaQuery.of(context).size.width * 0.215625),
               ),

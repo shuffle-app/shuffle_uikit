@@ -1,6 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -116,8 +116,8 @@ class UiKitLocationPicker extends StatelessWidget {
                       child: context.smallButton(
                         color: Colors.white,
                         data: BaseUiKitButtonData(
-                          icon: ImageWidget(
-                            svgAsset: GraphicsFoundation.instance.svg.location,
+                          icon: const ImageWidget(
+                            iconData: ShuffleUiKitIcons.location,
                           ),
                           onPressed: onCurrentLocationTapped,
                         ),
@@ -160,13 +160,13 @@ class UiKitLocationPicker extends StatelessWidget {
                     _focusNode.unfocus();
                     searchController.clear();
                   },
-                  child: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.arrowLeft,
+                  child: const ImageWidget(
+                    iconData: ShuffleUiKitIcons.arrowleft,
                     color: ColorsFoundation.darkNeutral900,
                   ),
                 ),
-                primary: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.landmark,
+                primary: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.landmark,
                   color: ColorsFoundation.darkNeutral900,
                 ),
                 notifier: focusNotifier,

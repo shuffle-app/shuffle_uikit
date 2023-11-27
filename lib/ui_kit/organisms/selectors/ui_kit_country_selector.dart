@@ -80,8 +80,9 @@ class UiKitCountrySelector extends StatelessWidget {
               ],
               SpacingFoundation.horizontalSpace4,
               ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.chevronRight,
-                  color: context.uiKitTheme?.colorScheme.inversePrimary),
+                iconData: ShuffleUiKitIcons.chevronright,
+                color: context.uiKitTheme?.colorScheme.inversePrimary,
+              ),
             ],
           ).paddingSymmetric(
             horizontal: EdgeInsetsFoundation.horizontal16,

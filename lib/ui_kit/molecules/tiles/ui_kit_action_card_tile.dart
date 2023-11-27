@@ -56,8 +56,8 @@ class UiKitActionCardTile extends StatelessWidget {
           SpacingFoundation.horizontalSpace8,
           context.smallButton(
             data: BaseUiKitButtonData(
-              icon: ImageWidget(
-                svgAsset: GraphicsFoundation.instance.svg.chevronRight,
+              icon: const ImageWidget(
+                iconData: ShuffleUiKitIcons.chevronright,
                 color: Colors.white,
               ),
               onPressed: onTap,

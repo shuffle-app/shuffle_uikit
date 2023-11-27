@@ -30,10 +30,10 @@ class _ExamplesPageState extends State<ExamplesPage> with SingleTickerProviderSt
             //   size: Size(48, 48),
             // ),
             SpacingFoundation.verticalSpace16,
-            UiKitContentTypeColoredTile(
+            const UiKitContentTypeColoredTile(
               size: Size(96, 96),
               color: ColorsFoundation.brightRed,
-              iconPath: GraphicsFoundation.instance.svg.shuffleWhite.path,
+              icon: ShuffleUiKitIcons.shuffleWhite,
             ),
           ],
         ),
@@ -62,7 +62,7 @@ class _ExamplesPageState extends State<ExamplesPage> with SingleTickerProviderSt
       //           ),
       //           SpacingFoundation.verticalSpace16,
       //           ImageWidget(
-      //             link: GraphicsFoundation.instance.svg.shuffleWhite.path,
+      //             iconData: ShuffleUiKitIcons.shuffleWhite,
       //             color: context.uiKitTheme?.colorScheme.inversePrimary,
       //           )
       //         ],

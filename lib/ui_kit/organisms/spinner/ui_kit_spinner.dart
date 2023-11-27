@@ -246,9 +246,9 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                         child: child,
                       );
                     },
-                    child: Center(
+                    child: const Center(
                       child: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.spinnerWheel,
+                        iconData: ShuffleUiKitIcons.spinnerWheel,
                       ),
                     ),
                   ),

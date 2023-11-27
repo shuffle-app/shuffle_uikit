@@ -11,7 +11,7 @@ class UiKitOverflownActionCard extends StatelessWidget {
   final Widget title;
   final Widget action;
   final double? horizontalMargin;
-  final String overflownIconLink;
+  final IconData overflownIcon;
   final List<ActionCardDecorationIconData> decorationIcons;
 
   const UiKitOverflownActionCard({
@@ -19,7 +19,7 @@ class UiKitOverflownActionCard extends StatelessWidget {
     required this.title,
     this.horizontalMargin,
     required this.action,
-    required this.overflownIconLink,
+    required this.overflownIcon,
     required this.decorationIcons,
   });
 
@@ -60,7 +60,7 @@ class UiKitOverflownActionCard extends StatelessWidget {
                       child: Transform.rotate(
                         angle: -pi / 12,
                         child: ImageWidget(
-                          link: overflownIconLink,
+                          iconData: overflownIcon,
                           fit: BoxFit.fitHeight,
                           height: calculatedHeight * 0.92,
                         ),
@@ -83,7 +83,7 @@ class UiKitOverflownActionCard extends StatelessWidget {
                           child: Transform.rotate(
                             angle: e.rotationAngle * (pi / 180),
                             child: ImageWidget(
-                              link: e.iconLink,
+                              iconData: e.icon,
                               width: relativeIconHeight,
                               fit: BoxFit.cover,
                             ),

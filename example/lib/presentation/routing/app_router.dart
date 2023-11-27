@@ -55,7 +55,7 @@ class AppRouter {
               _,
               AppRoutes.animexample,
             ),
-            logoLink: GraphicsFoundation.instance.svg.shuffleWhite.path,
+            logoLink: ShuffleUiKitIcons.shuffleWhite,
             transitionDuration: const Duration(milliseconds: 500),
             items: [
               OnBoardingPageItem(

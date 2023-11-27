@@ -51,9 +51,9 @@ class UiKitMenuItemTile extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              if (item.iconPath != null) ...[
+              if (item.icon != null) ...[
                 ImageWidget(
-                  link: item.iconPath!,
+                  iconData: item.icon!,
                   height: 0.0625.sw,
                   width: 0.0625.sw,
                   fit: BoxFit.cover,

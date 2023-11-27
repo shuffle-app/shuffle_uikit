@@ -39,7 +39,7 @@ class UiKitGradientAttentionCard extends StatelessWidget {
             child: ImageWidget(
               width: width,
               fit: BoxFit.fitWidth,
-              svgAsset: GraphicsFoundation.instance.svg.trippleArrowBlack,
+              iconData: ShuffleUiKitIcons.trippleArrowBlack,
             ),
           ),
         ],

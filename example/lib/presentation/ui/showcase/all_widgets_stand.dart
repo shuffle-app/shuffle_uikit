@@ -21,9 +21,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final GlobalKey _gradientTextKey = GlobalKey();
   double progress = 0.0;
   CountryModel? _selectedCountry;
-  CustomBackgroundSwitchOption selectedOption = CustomBackgroundSwitchOption(
+  CustomBackgroundSwitchOption selectedOption = const CustomBackgroundSwitchOption(
     title: 'Personal',
-    imageLink: GraphicsFoundation.instance.svg.personLayered.path,
+    icon: ShuffleUiKitIcons.personLayered,
   );
 
   bool selection = false;
@@ -32,37 +32,37 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
     UiKitMenuItem<String>(
       title: 'Active Tiger',
       value: 'tiger',
-      iconPath: GraphicsFoundation.instance.svg.tiger.path,
+      icon: ShuffleUiKitIcons.tiger,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'interested Adventurer',
       value: 'adventurer',
-      iconPath: GraphicsFoundation.instance.svg.adventure.path,
+      icon: ShuffleUiKitIcons.adventure,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'forever Resting sloth',
       value: 'resting sloth',
-      iconPath: GraphicsFoundation.instance.svg.sleep.path,
+      icon: ShuffleUiKitIcons.sleep,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
       value: 'tiger',
-      iconPath: GraphicsFoundation.instance.svg.swim.path,
+      icon: ShuffleUiKitIcons.swim,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
       value: 'tiger',
-      iconPath: GraphicsFoundation.instance.svg.athlete.path,
+      icon: ShuffleUiKitIcons.athlete,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
       value: 'tiger',
-      iconPath: GraphicsFoundation.instance.svg.food.path,
+      icon: ShuffleUiKitIcons.food,
       type: 'leisure',
     ),
   ];
@@ -119,7 +119,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         badgeValue: 2,
         data: BaseUiKitButtonData(
           icon: ImageWidget(
-            svgAsset: GraphicsFoundation.instance.svg.message,
+            iconData: ShuffleUiKitIcons.message,
             color: context.uiKitTheme?.colorScheme.inversePrimary,
           ),
           onPressed: () {},
@@ -135,7 +135,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             children: [
               SpacingFoundation.verticalSpace16,
               ShortLogInButton(
-                svgIcon: GraphicsFoundation.instance.svg.googleLogo,
+                icon: ShuffleUiKitIcons.googleLogo,
                 title: 'continue with google',
                 onTap: () {},
               ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20),
@@ -202,11 +202,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   username: '@m3dv3d3v',
                   placeName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
                   tags: [
-                    UiKitTag(title: 'Club', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
-                    UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
-                    UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
-                    UiKitTag(title: 'Medium', iconPath: GraphicsFoundation.instance.svg.label.path),
+                    UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail),
+                    UiKitTag(title: 'Medium', icon: ShuffleUiKitIcons.label),
+                    UiKitTag(title: 'Medium', icon: ShuffleUiKitIcons.label),
+                    UiKitTag(title: 'Medium', icon: ShuffleUiKitIcons.label),
+                    UiKitTag(title: 'Medium', icon: ShuffleUiKitIcons.label),
                   ],
                   placeImagePath: GraphicsFoundation.instance.png.businessMock1.path,
                   onInvitePeopleTap: () {},
@@ -257,12 +257,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       tags: [
                         UiKitTag(
                           title: 'title',
-                          iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                          icon: ShuffleUiKitIcons.cocktail,
                           unique: false,
                         ),
                         UiKitTag(
                           title: 'title',
-                          iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                          icon: ShuffleUiKitIcons.cocktail,
                           unique: false,
                         ),
                       ],
@@ -275,12 +275,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       tags: [
                         UiKitTag(
                           title: 'title',
-                          iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                          icon: ShuffleUiKitIcons.cocktail,
                           unique: false,
                         ),
                         UiKitTag(
                           title: 'title',
-                          iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                          icon: ShuffleUiKitIcons.cocktail,
                           unique: false,
                         ),
                       ],
@@ -291,13 +291,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               Center(
                 child: UiKitSwitchWithCustomBackground(
-                  firstOption: CustomBackgroundSwitchOption(
+                  firstOption: const CustomBackgroundSwitchOption(
                     title: 'Personal',
-                    imageLink: GraphicsFoundation.instance.svg.personLayered.path,
+                    icon: ShuffleUiKitIcons.personLayered,
                   ),
-                  secondOption: CustomBackgroundSwitchOption(
+                  secondOption: const CustomBackgroundSwitchOption(
                     title: 'Company',
-                    imageLink: GraphicsFoundation.instance.svg.companyLayered.path,
+                    icon: ShuffleUiKitIcons.companyLayered,
                   ),
                   selectedOption: selectedOption,
                   onChanged: (value) {
@@ -369,15 +369,15 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 tags: [
                   UiKitTag(
                     title: 'Restaurant',
-                    iconPath: GraphicsFoundation.instance.svg.cutlery.path,
+                    icon: ShuffleUiKitIcons.cutlery,
                   ),
                   UiKitTag(
                     title: 'Club',
-                    iconPath: GraphicsFoundation.instance.svg.cocktail.path,
+                    icon: ShuffleUiKitIcons.cocktail,
                   ),
                   UiKitTag(
                     title: 'Shuffle',
-                    iconPath: GraphicsFoundation.instance.svg.shuffleWhite.path,
+                    icon: ShuffleUiKitIcons.shuffleWhite,
                   ),
                 ],
                 onTap: () => setState(() => selection = !selection),
@@ -416,7 +416,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 tags: [
                   UiKitTag(
                     title: 'Restaurant',
-                    iconPath: GraphicsFoundation.instance.svg.cutlery.path,
+                    icon: ShuffleUiKitIcons.cutlery,
                   ),
                 ],
                 profileStats: [
@@ -441,7 +441,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     ),
                   ),
                 ],
-                interests: [
+                interests: const [
                   'Tourists',
                   'Luxury',
                 ],
@@ -453,8 +453,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                         'shuffle',
                         style: textTheme?.caption1Bold.copyWith(color: Colors.black),
                       ),
-                      ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
+                      const ImageWidget(
+                        iconData: ShuffleUiKitIcons.memeberGradientStar,
                       ),
                     ],
                   ),
@@ -517,8 +517,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   sameInterests: 4,
                   onMessage: () {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: const Text('Send message'),
+                      const SnackBar(
+                        content: Text('Send message'),
                       ),
                     );
                   },
@@ -542,8 +542,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               UiKitPopUpMenuTile(
                 title: 'Eugene Carter',
-                titleIcon: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
+                titleIcon: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.memeberGradientStar,
                 ),
                 subtitle: '@raceboi',
                 leading: BorderedUserCircleAvatar(
@@ -568,8 +568,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               UiKitPopUpMenuTile(
                 title: 'Eugene Carter',
-                titleIcon: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
+                titleIcon: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.memeberGradientStar,
                 ),
                 subtitle: '@raceboi',
                 leading: BorderedUserCircleAvatar(
@@ -630,7 +630,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
                 decorationIcons: [
                   ActionCardDecorationIconData(
-                    iconLink: GraphicsFoundation.instance.svg.networking.path,
+                    icon: ShuffleUiKitIcons.networking,
                     position: DecorationIconPosition(
                       right: 42,
                       top: -5,
@@ -638,7 +638,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     iconSize: 92,
                   ),
                   ActionCardDecorationIconData(
-                    iconLink: GraphicsFoundation.instance.svg.bellNotification.path,
+                    icon: ShuffleUiKitIcons.bellnotification,
                     position: DecorationIconPosition(
                       right: 0,
                       top: 4,
@@ -702,10 +702,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     ],
                   ),
                 ),
-                overflownIconLink: GraphicsFoundation.instance.svg.map.path,
+                overflownIcon: ShuffleUiKitIcons.map,
                 decorationIcons: [
                   ActionCardDecorationIconData(
-                    iconLink: GraphicsFoundation.instance.svg.coin.path,
+                    icon: ShuffleUiKitIcons.coin,
                     position: DecorationIconPosition(
                       top: 4,
                       right: -4,
@@ -714,7 +714,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     rotationAngle: -26,
                   ),
                   ActionCardDecorationIconData(
-                    iconLink: GraphicsFoundation.instance.svg.coin.path,
+                    icon: ShuffleUiKitIcons.coin,
                     iconSize: 27,
                     position: DecorationIconPosition(
                       bottom: 0,
@@ -723,7 +723,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     rotationAngle: 47.5,
                   ),
                   ActionCardDecorationIconData(
-                    iconLink: GraphicsFoundation.instance.svg.icecream.path,
+                    icon: ShuffleUiKitIcons.icecream,
                     position: DecorationIconPosition(
                       right: 86,
                       bottom: 0,
@@ -731,7 +731,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     rotationAngle: -15,
                   ),
                   ActionCardDecorationIconData(
-                    iconLink: GraphicsFoundation.instance.svg.firstAidKit.path,
+                    icon: ShuffleUiKitIcons.firstaidkit,
                     iconSize: 44,
                     position: DecorationIconPosition(
                       top: 32,
@@ -740,7 +740,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     rotationAngle: 30,
                   ),
                   ActionCardDecorationIconData(
-                    iconLink: GraphicsFoundation.instance.svg.coin.path,
+                    icon: ShuffleUiKitIcons.coin,
                     iconSize: 34,
                     position: DecorationIconPosition(
                       top: 8,
@@ -797,7 +797,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: context.badgeButtonNoValue(
                   data: BaseUiKitButtonData(
                     icon: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.message,
+                      iconData: ShuffleUiKitIcons.message,
                       color: context.uiKitTheme?.colorScheme.inversePrimary,
                     ),
                     onPressed: () {},
@@ -861,19 +861,19 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ],
               ),
               SpacingFoundation.verticalSpace16,
-              GradientableWidget(
+              const GradientableWidget(
                 gradient: GradientFoundation.badgeIcon,
                 // child: Text('Describe yourself',style: context.uiKitTheme?.boldTextTheme.subHeadline)),
                 child: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.cocktail,
+                  iconData: ShuffleUiKitIcons.cocktail,
                   height: 80,
                   color: Colors.white,
                 ),
               ),
               UiKitBorderedChipWithIcon(
                 title: 'Active',
-                icon: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.map,
+                icon: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.map,
                 ),
                 onPressed: () => setState(() => selection = !selection),
                 isSelected: selection,
@@ -896,19 +896,19 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   UiKitMenuItem<String>(
                     title: 'Active Tiger Business',
                     value: 'tiger',
-                    iconPath: GraphicsFoundation.instance.svg.swim.path,
+                    icon: ShuffleUiKitIcons.swim,
                     type: 'business',
                   ),
                   UiKitMenuItem<String>(
                     title: 'Active Tiger Business',
                     value: 'tiger',
-                    iconPath: GraphicsFoundation.instance.svg.athlete.path,
+                    icon: ShuffleUiKitIcons.athlete,
                     type: 'business',
                   ),
                   UiKitMenuItem<String>(
                     title: 'Active Tiger Business',
                     value: 'tiger',
-                    iconPath: GraphicsFoundation.instance.svg.food.path,
+                    icon: ShuffleUiKitIcons.food,
                     type: 'business',
                   ),
                 ],
@@ -928,8 +928,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       child: UiKitVerticalChip(
                         selected: selection,
                         caption: 'Male',
-                        sign: ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.male,
+                        sign: const ImageWidget(
+                          iconData: ShuffleUiKitIcons.male,
                         ),
                         onTap: () => setState(() => selection = !selection),
                       ),
@@ -939,8 +939,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       child: UiKitVerticalChip(
                         selected: selection,
                         caption: 'Female',
-                        sign: ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.femle,
+                        sign: const ImageWidget(
+                          iconData: ShuffleUiKitIcons.femle,
                         ),
                         onTap: () => setState(() => selection = !selection),
                       ),
@@ -950,8 +950,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       child: UiKitVerticalChip(
                         selected: selection,
                         caption: 'Other',
-                        sign: ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.otherGender,
+                        sign: const ImageWidget(
+                          iconData: ShuffleUiKitIcons.othergender,
                         ),
                         onTap: () => setState(() => selection = !selection),
                       ),
@@ -974,8 +974,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               Center(
                 child: context.badgeButton(
                   data: BaseUiKitButtonData(
-                    icon: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.message,
+                    icon: const ImageWidget(
+                      iconData: ShuffleUiKitIcons.message,
                       color: Colors.white,
                     ),
                     onPressed: () {},
@@ -996,8 +996,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
                 requiredData: NotificationPopupRequiredData(
                   titleString: 'Yoga today at Palm Jumeirah. You go?',
-                  icon: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
+                  icon: const ImageWidget(
+                    iconData: ShuffleUiKitIcons.heartinhandemoji,
                   ),
                   hasShadow: true,
                 ),
@@ -1013,8 +1013,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
                 requiredData: NotificationPopupRequiredData(
                   titleString: 'Yoga today at Palm Jumeirah. You go?',
-                  icon: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
+                  icon: const ImageWidget(
+                    iconData: ShuffleUiKitIcons.heartinhandemoji,
                   ),
                 ),
               ),
@@ -1032,8 +1032,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
                 requiredData: NotificationPopupRequiredData(
                   titleString: 'Yoga today at Palm Jumeirah. You go?',
-                  icon: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
+                  icon: const ImageWidget(
+                    iconData: ShuffleUiKitIcons.heartinhandemoji,
                   ),
                   hasShadow: true,
                 ),
@@ -1052,8 +1052,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 ),
                 requiredData: NotificationPopupRequiredData(
                   titleString: 'Yoga today at Palm Jumeirah. You go?',
-                  icon: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
+                  icon: const ImageWidget(
+                    iconData: ShuffleUiKitIcons.heartinhandemoji,
                   ),
                 ),
               ),
@@ -1074,8 +1074,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.ski,
+                        const ImageWidget(
+                          iconData: ShuffleUiKitIcons.ski,
                         ),
                         SpacingFoundation.horizontalSpace12,
                         Expanded(
@@ -1122,9 +1122,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                       style: context.uiKitTheme?.boldTextTheme.subHeadline,
                     ),
                     SpacingFoundation.verticalSpace8,
-                    ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
-                    )
+                    const ImageWidget(
+                      iconData: ShuffleUiKitIcons.heartinhandemoji,
+                    ),
                   ],
                 ),
               ),
@@ -1134,31 +1134,31 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 subtitle: 'Unique place for unique people',
                 imageLink: Assets.images.png.mockSwiperCard.path,
                 tags: [
-                  UiKitTagWidget(
+                  const UiKitTagWidget(
                     title: 'Club',
-                    icon: Assets.images.svg.cocktail.path,
+                    icon: ShuffleUiKitIcons.cocktail,
                   ),
                   UiKitTagWidget(
                     title: 'Club',
-                    icon: Assets.images.svg.cocktail.path,
+                    icon: ShuffleUiKitIcons.cocktail,
                     customSpace: SpacingFoundation.horizontalSpace8,
                     showSpacing: true,
                   ),
                   UiKitTagWidget(
                     title: 'Club',
-                    icon: Assets.images.svg.cocktail.path,
+                    icon: ShuffleUiKitIcons.cocktail,
                     customSpace: SpacingFoundation.horizontalSpace8,
                     showSpacing: true,
                   ),
                   UiKitTagWidget(
                     title: 'Club',
-                    icon: Assets.images.svg.cocktail.path,
+                    icon: ShuffleUiKitIcons.cocktail,
                     customSpace: SpacingFoundation.horizontalSpace8,
                     showSpacing: true,
                   ),
                   UiKitTagWidget(
                     title: 'Club',
-                    icon: Assets.images.svg.cocktail.path,
+                    icon: ShuffleUiKitIcons.cocktail,
                     customSpace: SpacingFoundation.horizontalSpace8,
                     showSpacing: true,
                   ),
@@ -1210,21 +1210,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     UiKitMessageCardWithIcon(
                       onPressed: () {},
                       message: 'Want to have some fun',
-                      iconLink: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji.path,
+                      icon: ShuffleUiKitIcons.smileycrazyfaceemoji,
                       layoutDirection: Axis.vertical,
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
                       onPressed: () {},
                       message: 'Want to have',
-                      iconLink: GraphicsFoundation.instance.svg.angryEmoji.path,
+                      icon: ShuffleUiKitIcons.angryemoji,
                       layoutDirection: Axis.vertical,
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitMessageCardWithIcon(
                       onPressed: () {},
                       message: 'Want to have Want to have',
-                      iconLink: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji.path,
+                      icon: ShuffleUiKitIcons.smileycrazyfaceemoji,
                       layoutDirection: Axis.vertical,
                     ),
                   ],
@@ -1234,7 +1234,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               UiKitMessageCardWithIcon(
                 onPressed: () {},
                 message: 'need to cool down a bit?',
-                iconLink: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji.path,
+                icon: ShuffleUiKitIcons.smileycrazyfaceemoji,
                 layoutDirection: Axis.horizontal,
               ),
               SpacingFoundation.verticalSpace16,
@@ -1244,36 +1244,37 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   children: [
                     context.gradientButton(
                       data: BaseUiKitButtonData(
-                          icon: ImageWidget(
-                            svgAsset: GraphicsFoundation.instance.svg.dice,
-                          ),
-                          onPressed: () {}),
+                        icon: const ImageWidget(
+                          iconData: ShuffleUiKitIcons.dice,
+                        ),
+                        onPressed: () {},
+                      ),
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitTitledFilterChip(
                       title: 'Favorites',
-                      icon: GraphicsFoundation.instance.svg.star.path,
+                      icon: ShuffleUiKitIcons.star,
                       selected: false,
                       onPressed: () {},
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitTitledFilterChip(
                       title: 'Clubs',
-                      icon: GraphicsFoundation.instance.svg.cocktail.path,
+                      icon: ShuffleUiKitIcons.cocktail,
                       selected: true,
                       onPressed: () {},
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitTitledFilterChip(
                       title: 'Clubs',
-                      icon: GraphicsFoundation.instance.svg.cocktail.path,
+                      icon: ShuffleUiKitIcons.cocktail,
                       selected: false,
                       onPressed: () {},
                     ),
                     SpacingFoundation.horizontalSpace12,
                     UiKitTitledFilterChip(
                       title: 'Favorites',
-                      icon: GraphicsFoundation.instance.svg.star.path,
+                      icon: ShuffleUiKitIcons.star,
                       selected: false,
                       onPressed: () {},
                     ),
@@ -1305,13 +1306,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                             ),
                           ),
                           SpacingFoundation.verticalSpace8,
-                          Expanded(
+                          const Expanded(
                             child: UiKitMetricsCard(
                               title: 'Burned today',
                               value: '439',
                               unit: 'kCal',
                               icon: ImageWidget(
-                                svgAsset: GraphicsFoundation.instance.svg.fireWhite,
+                                iconData: ShuffleUiKitIcons.fireWhite,
                               ),
                             ),
                           ),
@@ -1340,8 +1341,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   context.outlinedButton(
                     data: BaseUiKitButtonData(
                         onPressed: () {},
-                        icon: ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.route,
+                        icon: const ImageWidget(
+                          iconData: ShuffleUiKitIcons.route,
                           color: Colors.white,
                         )),
                   ),
@@ -1354,11 +1355,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   SpacingFoundation.horizontalSpace12,
                   context.outlinedButton(
                     data: BaseUiKitButtonData(
-                        onPressed: () {},
-                        icon: ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.searchPeople,
-                          color: Colors.white,
-                        )),
+                      onPressed: () {},
+                      icon: const ImageWidget(
+                        iconData: ShuffleUiKitIcons.searchpeople,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -1369,7 +1371,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   Expanded(
                     child: UpcomingEventPlaceActionCard(
                       value: 'in 2 days',
-                      vectorIconAsset: GraphicsFoundation.instance.svg.events,
+                      iconAsset: ShuffleUiKitIcons.events,
                       action: () {},
                     ),
                   ),
@@ -1377,7 +1379,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   Expanded(
                     child: PointBalancePlaceActionCard(
                       value: '2 650',
-                      vectorIconAsset: GraphicsFoundation.instance.svg.money,
+                      iconAsset: ShuffleUiKitIcons.money,
                       action: () {},
                     ),
                   ),
@@ -1404,24 +1406,24 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     'Nulla facilisi',
                 rating: 4.8,
                 baseTags: [
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
                 ],
                 uniqueTags: [
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
-                  UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.dice.path, unique: true),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+                  UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
                 ],
               ),
               SpacingFoundation.verticalSpace16,
@@ -1497,24 +1499,24 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   ],
                   title: 'Virgins on the beach',
                   placeTags: [
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
-                    UiKitTag(title: 'Cheap', iconPath: GraphicsFoundation.instance.svg.cocktail.path),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
                   ],
                 ),
               ),
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context).push(PopUpVideoPlayer(
-                      videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+                  Navigator.of(context)
+                      .push(PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
                 },
                 child: const Text(
                   'Show Horizontal Video',
@@ -1523,8 +1525,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               MaterialButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+                  Navigator.of(context).push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
                 },
                 child: const Text(
                   'Show Vertical Video',

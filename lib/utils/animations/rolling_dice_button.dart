@@ -68,7 +68,7 @@ class _RollingDiceButtonState extends State<RollingDiceButton> with SingleTicker
             );
           },
           child: ImageWidget(
-            svgAsset: GraphicsFoundation.instance.svg.dice,
+            iconData: ShuffleUiKitIcons.dice,
             height: 17.h,
             fit: BoxFit.fitHeight,
           ),

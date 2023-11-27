@@ -104,7 +104,7 @@ class UiKitMenu<T> extends StatelessWidget {
                 ClipRRect(
                     borderRadius: BorderRadiusFoundation.all24,
                     child: ImageWidget(
-                      link: selectedItem!.iconPath!,
+                      iconData: selectedItem!.icon!,
                       height: 0.0625.sw,
                       width: 0.0625.sw,
                       fit: BoxFit.cover,
@@ -116,8 +116,8 @@ class UiKitMenu<T> extends StatelessWidget {
                     style: boldTextTheme?.caption1Medium,
                   ),
                 ),
-                ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.chevronRight,
+                const ImageWidget(
+                  iconData: ShuffleUiKitIcons.chevronright,
                   color: Colors.white,
                 ),
               ],
@@ -135,14 +135,14 @@ class UiKitMenu<T> extends StatelessWidget {
 class UiKitMenuItem<T> {
   final String title;
   final T? value;
-  final String? iconPath;
+  final IconData? icon;
   final String? type;
 
   UiKitMenuItem({
     required this.title,
     required this.value,
     this.type,
-    this.iconPath,
+    this.icon,
   });
 
   factory UiKitMenuItem.empty() => UiKitMenuItem(

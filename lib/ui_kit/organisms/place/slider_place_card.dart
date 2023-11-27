@@ -35,10 +35,10 @@ class SliderPlaceCard extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  for (final placeTag in slidablePlaceCardData.placeTags ?? [])
+                  for (final placeTag in slidablePlaceCardData.placeTags ?? <UiKitTag>[])
                     UiKitTagWidget(
-                      title: placeTag.name,
-                      icon: placeTag.iconPath,
+                      title: placeTag.title,
+                      icon: placeTag.icon,
                     ).paddingOnly(right: 8.sp),
                 ],
               ),

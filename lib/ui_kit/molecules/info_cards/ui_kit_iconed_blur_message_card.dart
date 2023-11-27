@@ -3,7 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitIconedBlurMessageCard extends StatelessWidget {
   final Widget message;
-  final String iconLink;
+  final IconData icon;
   final double? blurValue;
   final Axis orientation;
   final BorderRadius? borderRadius;
@@ -13,7 +13,7 @@ class UiKitIconedBlurMessageCard extends StatelessWidget {
   UiKitIconedBlurMessageCard({
     Key? key,
     required this.message,
-    required this.iconLink,
+    required this.icon,
     this.blurValue,
     this.border,
     this.borderRadius,
@@ -48,7 +48,7 @@ class UiKitIconedBlurMessageCard extends StatelessWidget {
           left: 0.0225.sw,
         ),
         ImageWidget(
-          link: iconLink,
+          iconData: icon,
           width: 0.075.sw,
           height: 0.075.sw,
           fit: BoxFit.cover,

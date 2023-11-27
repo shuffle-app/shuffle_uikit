@@ -73,7 +73,7 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
                   (e) => UiKitTagWidget(
                     tagSize: 0.05.sw,
                     title: e.title,
-                    icon: e.iconPath,
+                    icon: e.icon,
                     textColor: ColorsFoundation.darkNeutral900,
                   ),
                 )

@@ -3,7 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitTagWidget extends StatelessWidget {
   final String title;
-  final String icon;
+  final IconData icon;
   final Color? textColor;
   final bool showSpacing;
   final bool uniqueTag;
@@ -39,10 +39,10 @@ class UiKitTagWidget extends StatelessWidget {
           active: uniqueTag,
           gradient: GradientFoundation.badgeIcon,
           child: ImageWidget(
-            link: icon,
+            iconData: icon,
             cardColor: Colors.transparent,
             errorWidget: ImageWidget(
-                svgAsset: GraphicsFoundation.instance.svg.logo,
+                iconData: ShuffleUiKitIcons.logo,
                 height: tagSize ?? SpacingFoundation.horizontalSpacing16,
                 width: tagSize ?? SpacingFoundation.horizontalSpacing16,
                 color: iconColor,

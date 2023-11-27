@@ -12,17 +12,16 @@ abstract class BaseUiKitMedia {
     this.videoLink,
   });
 
-  ImageWidget widget(Size size) =>
-      ImageWidget(link: link, height: size.height, width: size.width, fit: BoxFit.cover);
+  ImageWidget widget(Size size) => ImageWidget(link: link, height: size.height, width: size.width, fit: BoxFit.cover);
 }
 
 class UiKitMediaPhoto extends BaseUiKitMedia {
   UiKitMediaPhoto({
     required String link,
   }) : super(
-    link: link,
-    type: UiKitMediaType.image,
-  );
+          link: link,
+          type: UiKitMediaType.image,
+        );
 }
 
 class UiKitMediaVideo extends BaseUiKitMedia {
@@ -30,30 +29,29 @@ class UiKitMediaVideo extends BaseUiKitMedia {
     required String link,
     String? videoLink,
   }) : super(
-    link: link,
-    videoLink: videoLink ?? link,
-    type: UiKitMediaType.video,
-  );
+          link: link,
+          videoLink: videoLink ?? link,
+          type: UiKitMediaType.video,
+        );
 }
 
 class UiKitTag {
   final String title;
-  final String iconPath;
+  final IconData icon;
   final bool unique;
 
-  UiKitTagWidget get widget =>
-      UiKitTagWidget(
+  UiKitTagWidget get widget => UiKitTagWidget(
         title: title,
-        icon: iconPath,
+        icon: icon,
         uniqueTag: unique,
         textColor: ColorsFoundation.darkNeutral500,
       );
 
   UiKitTag({
     required String title,
-    required this.iconPath,
+    required this.icon,
     this.unique = false,
-  }) :title = title.replaceAll('-', ' ');
+  }) : title = title.replaceAll('-', ' ');
 }
 
 enum UiKitMediaType { image, video }

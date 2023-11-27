@@ -118,15 +118,15 @@ class UiKitSwitchWithCustomBackground extends StatelessWidget {
 
 class CustomBackgroundSwitchOption {
   final String title;
-  final String imageLink;
+  final IconData icon;
 
   const CustomBackgroundSwitchOption({
     required this.title,
-    required this.imageLink,
+    required this.icon,
   });
 
   factory CustomBackgroundSwitchOption.empty() => const CustomBackgroundSwitchOption(
         title: '',
-        imageLink: '',
+        icon: Icons.circle_outlined,
       );
 }

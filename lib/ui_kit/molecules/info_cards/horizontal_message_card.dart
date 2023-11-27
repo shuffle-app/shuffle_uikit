@@ -3,12 +3,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class HorizontalMessageCard extends StatelessWidget {
   final String message;
+  final IconData? iconData;
   final String? iconLink;
   final VoidCallback? onPressed;
 
   const HorizontalMessageCard({
     Key? key,
     required this.message,
+    this.iconData,
     this.iconLink,
     this.onPressed,
   }) : super(key: key);
@@ -32,14 +34,15 @@ class HorizontalMessageCard extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              if (iconLink != null)
+              if (iconData != null || iconLink != null)
                 ImageWidget(
-                  link: iconLink!,
+                  iconData: iconData,
+                  link: iconLink,
                   height: 0.125.sw,
                   width: 0.125.sw,
                   fit: BoxFit.cover,
                 ),
-              if (iconLink != null) SpacingFoundation.horizontalSpace12,
+              if (iconData != null || iconLink != null) SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: Text(
                   message.toUpperCase(),

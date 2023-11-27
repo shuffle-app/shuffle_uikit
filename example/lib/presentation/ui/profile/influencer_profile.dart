@@ -64,12 +64,12 @@ class InfluencerProfile extends StatelessWidget {
                     'It’s certainly hidden away, found around a corner past a couple of closed-down outlets and facing the back of a health centre in Cluster F, crammed into one of the tiniest spaces in the teeming JLT neighbourhood.',
                 tags: [
                   UiKitTag(
-                    iconPath: 'assets/images/svg/cocktail.svg',
+                    icon: ShuffleUiKitIcons.cocktail,
                     title: 'Club',
                     unique: false,
                   ),
                   UiKitTag(
-                    iconPath: 'assets/images/svg/cocktail.svg',
+                    icon: ShuffleUiKitIcons.cocktail,
                     title: 'Restaurant',
                     unique: false,
                   ),

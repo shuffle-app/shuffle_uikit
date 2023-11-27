@@ -87,7 +87,7 @@ class SupportShuffleButton extends StatelessWidget {
               ),
               SpacingFoundation.horizontalSpace8,
               ImageWidget(
-                svgAsset: GraphicsFoundation.instance.svg.dollarOutlined,
+                iconData: ShuffleUiKitIcons.dollarOutlined,
                 height: 20.h,
                 fit: BoxFit.fitHeight,
               ),

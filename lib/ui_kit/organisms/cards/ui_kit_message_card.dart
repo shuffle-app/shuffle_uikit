@@ -72,14 +72,14 @@ class UiKitMessageCard extends StatelessWidget {
                           SpacingFoundation.horizontalSpace8,
                           if (userType == UserTileType.premium)
                             ImageWidget(
-                              svgAsset: GraphicsFoundation.instance.svg.star2,
+                              iconData: ShuffleUiKitIcons.star2,
                               color: colorScheme?.inversePrimary,
                               fit: BoxFit.cover,
                               height: 16.w,
                             ),
                           if (userType == UserTileType.influencer)
                             ImageWidget(
-                              svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
+                              iconData: ShuffleUiKitIcons.memeberGradientStar,
                               fit: BoxFit.cover,
                               height: 16.w,
                             ),

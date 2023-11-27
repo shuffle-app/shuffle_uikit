@@ -70,7 +70,7 @@ class UiKitTitledDescriptionWithDivider extends StatelessWidget {
                         ),
                       ),
                       child: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.clock,
+                        iconData: ShuffleUiKitIcons.clock,
                         color: context.uiKitTheme?.colorScheme.inversePrimary,
                       ).paddingAll(EdgeInsetsFoundation.all16),
                     ),

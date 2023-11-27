@@ -21,7 +21,7 @@ class UiKitLocaleSelector extends StatelessWidget {
       selectedItem: UiKitMenuItem<LocaleModel>(
         title: selectedLocale.name,
         value: selectedLocale,
-        iconPath: selectedLocale.iconPath,
+        icon: selectedLocale.icon,
       ),
       customTopPadding: 0.3.sh,
       items: List.generate(
@@ -29,7 +29,7 @@ class UiKitLocaleSelector extends StatelessWidget {
         (index) => UiKitMenuItem(
           title: availableLocales[index].name,
           value: availableLocales[index],
-          iconPath: availableLocales[index].iconPath,
+          icon: availableLocales[index].icon,
         ),
       ),
       onSelected: (menuItem) {

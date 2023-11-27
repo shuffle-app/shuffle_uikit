@@ -1,17 +1,15 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:shuffle_uikit/foundation/graphics_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class LocaleModel {
   final Locale locale;
-  final String iconPath;
+  final IconData icon;
   final String name;
 
   const LocaleModel({
     required this.locale,
     required this.name,
-    required this.iconPath,
+    required this.icon,
   });
 
   LocaleModel.fromLocale(this.locale)
@@ -22,11 +20,11 @@ class LocaleModel {
           'ar' => 'عرب',
           String() => 'other',
         },
-        iconPath = switch (locale.languageCode) {
-          'ru' => GraphicsFoundation.instance.svg.russia.path,
-          'en' => GraphicsFoundation.instance.svg.unitedKingdom.path,
-          'hi' => GraphicsFoundation.instance.svg.india.path,
-          'ar' => GraphicsFoundation.instance.svg.arabic.path,
-          String() => GraphicsFoundation.instance.svg.arabic.path,
+        icon = switch (locale.languageCode) {
+          'ru' => ShuffleUiKitIcons.russia,
+          'en' => ShuffleUiKitIcons.unitedKingdom,
+          'hi' => ShuffleUiKitIcons.india,
+          'ar' => ShuffleUiKitIcons.arabic,
+          String() => ShuffleUiKitIcons.arabic,
         };
 }

@@ -105,14 +105,14 @@ class UiKitInviteMessageContent extends StatelessWidget {
                       GradientableWidget(
                         gradient: GradientFoundation.defaultLinearGradient,
                         child: ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.star2,
+                          iconData: ShuffleUiKitIcons.star2,
                           color: context.uiKitTheme?.colorScheme.inversePrimary,
                           height: 16.w,
                         ),
                       ),
                     if (userType == UserTileType.premium)
                       ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.star2,
+                        iconData: ShuffleUiKitIcons.star2,
                         color: context.uiKitTheme?.colorScheme.inversePrimary,
                         height: 16.w,
                       ),
@@ -183,8 +183,8 @@ class UiKitInviteMessageContent extends StatelessWidget {
                     color: Colors.black,
                     data: BaseUiKitButtonData(
                       onPressed: onPlaceTap,
-                      icon: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.chevronRight,
+                      icon: const ImageWidget(
+                        iconData: ShuffleUiKitIcons.chevronright,
                         color: Colors.black,
                       ),
                     ),

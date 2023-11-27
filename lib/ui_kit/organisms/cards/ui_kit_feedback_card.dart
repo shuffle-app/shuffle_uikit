@@ -73,8 +73,8 @@ class UiKitFeedbackCard extends StatelessWidget {
                       const Spacer(),
                       GestureDetector(
                         onTap: onLike,
-                        child: ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.thumbUp,
+                        child: const ImageWidget(
+                          iconData: ShuffleUiKitIcons.thumbup,
                           color: ColorsFoundation.darkNeutral900,
                         ),
                       ),

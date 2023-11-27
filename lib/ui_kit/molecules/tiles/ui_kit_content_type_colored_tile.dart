@@ -6,13 +6,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitContentTypeColoredTile extends StatelessWidget {
   final Size size;
   final Color color;
-  final String iconPath;
+  final IconData icon;
 
   const UiKitContentTypeColoredTile({
     Key? key,
     required this.size,
     required this.color,
-    required this.iconPath,
+    required this.icon,
   }) : super(key: key);
 
   @override
@@ -102,7 +102,7 @@ class UiKitContentTypeColoredTile extends StatelessWidget {
           ),
           Center(
             child: ImageWidget(
-              link: iconPath,
+              iconData: icon,
             ),
           ),
         ],
