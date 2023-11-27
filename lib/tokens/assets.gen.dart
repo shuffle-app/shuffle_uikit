@@ -990,6 +990,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/check_circle.svg
   SvgGenImage get checkCircle => const SvgGenImage('assets/images/svg/check_circle.svg');
 
+  /// File path: assets/images/svg/checklist.svg
+  SvgGenImage get checklist => const SvgGenImage('assets/images/svg/checklist.svg');
+
   /// File path: assets/images/svg/chess.svg
   SvgGenImage get chess => const SvgGenImage('assets/images/svg/chess.svg');
 
@@ -1161,6 +1164,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/hookah.svg
   SvgGenImage get hookah => const SvgGenImage('assets/images/svg/hookah.svg');
 
+  /// File path: assets/images/svg/india.svg
+  SvgGenImage get india => const SvgGenImage('assets/images/svg/india.svg');
+
   /// File path: assets/images/svg/influencer_account_mark.svg
   SvgGenImage get influencerAccountMark => const SvgGenImage('assets/images/svg/influencer_account_mark.svg');
 
@@ -1197,6 +1203,10 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/like.svg
   SvgGenImage get like => const SvgGenImage('assets/images/svg/like.svg');
 
+  /// File path: assets/images/svg/lms-linkedin-page-posting-best-practices-one-pager.pdf
+  String get lmsLinkedinPagePostingBestPracticesOnePager =>
+      'assets/images/svg/lms-linkedin-page-posting-best-practices-one-pager.pdf';
+
   /// File path: assets/images/svg/loader.svg
   SvgGenImage get loader => const SvgGenImage('assets/images/svg/loader.svg');
 
@@ -1232,6 +1242,12 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/minus.svg
   SvgGenImage get minus => const SvgGenImage('assets/images/svg/minus.svg');
+
+  /// File path: assets/images/svg/mood-happy.svg
+  SvgGenImage get moodHappy => const SvgGenImage('assets/images/svg/mood-happy.svg');
+
+  /// File path: assets/images/svg/moon.svg
+  SvgGenImage get moon => const SvgGenImage('assets/images/svg/moon.svg');
 
   /// File path: assets/images/svg/more-vert.svg
   SvgGenImage get moreVert => const SvgGenImage('assets/images/svg/more-vert.svg');
@@ -1399,6 +1415,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/sufle.svg
   SvgGenImage get sufle => const SvgGenImage('assets/images/svg/sufle.svg');
 
+  /// File path: assets/images/svg/sun.svg
+  SvgGenImage get sun => const SvgGenImage('assets/images/svg/sun.svg');
+
   /// File path: assets/images/svg/swim.svg
   SvgGenImage get swim => const SvgGenImage('assets/images/svg/swim.svg');
 
@@ -1479,7 +1498,7 @@ class $AssetsImagesSvgGen {
   SvgGenImage get x => const SvgGenImage('assets/images/svg/x.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [
+  List<dynamic> get values => [
         angryEmoji,
         aubergine,
         baggage,
@@ -1568,6 +1587,7 @@ class $AssetsImagesSvgGen {
         cameraPlus,
         check,
         checkCircle,
+        checklist,
         chess,
         chevronDown,
         chevronLeft,
@@ -1625,6 +1645,7 @@ class $AssetsImagesSvgGen {
         homeFill,
         homeOutline,
         hookah,
+        india,
         influencerAccountMark,
         info,
         investment,
@@ -1637,6 +1658,7 @@ class $AssetsImagesSvgGen {
         layoutSidebar,
         lifebuoy,
         like,
+        lmsLinkedinPagePostingBestPracticesOnePager,
         loader,
         location,
         locationSearching,
@@ -1649,6 +1671,8 @@ class $AssetsImagesSvgGen {
         message,
         minimize,
         minus,
+        moodHappy,
+        moon,
         moreVert,
         music,
         noPhoto,
@@ -1704,6 +1728,7 @@ class $AssetsImagesSvgGen {
         stopOutline,
         stop,
         sufle,
+        sun,
         swim,
         swimming,
         table,

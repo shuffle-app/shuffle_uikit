@@ -26,13 +26,13 @@ class UiKitSuggestionField extends StatelessWidget {
     return LayoutBuilder(builder: (_, constraints) {
       return Autocomplete<String>(
         initialValue: initialValue,
-        fieldViewBuilder: (_, controller, focusNode, onSubmitted) => UiKitInputFieldNoIcon(
+        fieldViewBuilder: (_, controller, focusNode, onSubmitted) => UiKitInputFieldRightIcon(
           controller: controller,
-          node: focusNode,
+          focusNode: focusNode,
           hintText: hintText,
           fillColor: fillColor,
           borderRadius: borderRadius ?? BorderRadiusFoundation.max,
-          onSubmitted: (selection) {
+          onFieldSubmitted: (selection) {
             log('we selected option $selection',name: 'UiKitSuggestionField');
             onSubmitted.call();
             onFieldSubmitted?.call(selection);

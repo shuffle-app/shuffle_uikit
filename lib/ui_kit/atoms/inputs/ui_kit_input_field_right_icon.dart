@@ -68,7 +68,7 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           )
         : uiKitTheme?.iconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
-    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: Colors.white);
+    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: uiKitTheme.colorScheme.inversePrimary);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
           ? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
@@ -108,7 +108,7 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
             return context.uiKitTheme?.colorScheme.inversePrimary ?? Colors.white;
           }),
           suffixIcon: IconButton(
-            icon: widget.icon ?? const Icon(Icons.close),
+            icon: widget.icon ??  Icon(Icons.close,color: uiKitTheme?.colorScheme.inversePrimary,),
             onPressed: widget.onPressed ??
                 () {
                   widget.controller.clear();

@@ -1951,10 +1951,10 @@ class S {
     );
   }
 
-  /// `time`
+  /// `Time`
   String get Time {
     return Intl.message(
-      'time',
+      'Time',
       name: 'Time',
       desc: '',
       args: [],
@@ -1981,10 +1981,10 @@ class S {
     );
   }
 
-  /// `day`
+  /// `Day`
   String get Day {
     return Intl.message(
-      'day',
+      'Day',
       name: 'Day',
       desc: '',
       args: [],
@@ -2031,10 +2031,10 @@ class S {
     );
   }
 
-  /// `today`
+  /// `Today`
   String get Today {
     return Intl.message(
-      'today',
+      'Today',
       name: 'Today',
       desc: '',
       args: [],
@@ -2061,20 +2061,20 @@ class S {
     );
   }
 
-  /// `photo`
+  /// `Photo`
   String get Photo {
     return Intl.message(
-      'photo',
+      'Photo',
       name: 'Photo',
       desc: '',
       args: [],
     );
   }
 
-  /// `video`
+  /// `Video`
   String get Video {
     return Intl.message(
-      'video',
+      'Video',
       name: 'Video',
       desc: '',
       args: [],
@@ -2121,10 +2121,10 @@ class S {
     );
   }
 
-  /// `published`
+  /// `Published`
   String get Published {
     return Intl.message(
-      'published',
+      'Published',
       name: 'Published',
       desc: '',
       args: [],
@@ -2401,10 +2401,10 @@ class S {
     );
   }
 
-  /// `Feelings`
+  /// `Feeling`
   String get Feeling {
     return Intl.message(
-      'Feelings',
+      'Feeling',
       name: 'Feeling',
       desc: '',
       args: [],
@@ -2471,10 +2471,10 @@ class S {
     );
   }
 
-  /// `A new location has opened today. Come! You\'ll like it!`
+  /// `A new location has opened today. Come! You'll like it!`
   String get NewLocationHasOpenedToday {
     return Intl.message(
-      'A new location has opened today. Come! You\\\'ll like it!',
+      'A new location has opened today. Come! You\'ll like it!',
       name: 'NewLocationHasOpenedToday',
       desc: '',
       args: [],
@@ -2631,10 +2631,10 @@ class S {
     );
   }
 
-  /// `Properties`
+  /// `Tags`
   String get Tags {
     return Intl.message(
-      'Properties',
+      'Tags',
       name: 'Tags',
       desc: '',
       args: [],
@@ -2701,10 +2701,20 @@ class S {
     );
   }
 
-  /// `key`
+  /// `Day and night`
+  String get daynight {
+    return Intl.message(
+      'Day and night',
+      name: 'daynight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ``
   String get key {
     return Intl.message(
-      'key',
+      '',
       name: 'key',
       desc: '',
       args: [],
