@@ -70,7 +70,7 @@ class UiKitTagSelector extends StatelessWidget {
               const SizedBox(width: double.infinity),
             if (showTextField)
               ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: kIsWeb ? 60 : 40.h),
+                constraints: BoxConstraints(maxHeight: kIsWeb ? 60 : 40.h, minHeight: kIsWeb ? 20 : 10.h),
                 child: TextField(
                   decoration: const InputDecoration.collapsed(hintText: ''),
                   scrollPadding: EdgeInsets.zero,
@@ -89,7 +89,7 @@ class UiKitTagSelector extends StatelessWidget {
                     }
                   },
                 ),
-              )
+              ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing8),
           ],
         ).paddingAll(EdgeInsetsFoundation.all8),
       ),
