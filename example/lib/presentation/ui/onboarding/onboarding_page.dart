@@ -5,7 +5,7 @@ class OnBoardingPage extends StatefulWidget {
   final Duration transitionDuration;
   final VoidCallback? onFinished;
   final List<OnBoardingPageItem> items;
-  final IconData logoLink;
+  final String logoLink;
 
   const OnBoardingPage({
     super.key,
@@ -99,7 +99,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
                 duration: widget.transitionDuration,
                 opacity: _logoOpacity,
                 child: ImageWidget(
-                  iconData: widget.logoLink,
+                  link: widget.logoLink,
                   fit: BoxFit.fitWidth,
                 ).paddingSymmetric(horizontal: MediaQuery.of(context).size.width * 0.215625),
               ),

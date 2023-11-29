@@ -20,7 +20,7 @@ class InfluencerProfile extends StatelessWidget {
                   nickname: '@marywill',
                   description: 'Just walking here and there trying to find something unique and interesting to show you!',
                   avatarUrl: 'assets/images/png/profile_avatar.png',
-                  interests: ['Restaurants', 'Hookah', 'Roller Coaster', 'Swimmings'],
+                  interests: const ['Restaurants', 'Hookah', 'Roller Coaster', 'Swimmings'],
                   profileType: ProfileCardType.personal,
                   followers: 2650,
                   onFollow: () {},

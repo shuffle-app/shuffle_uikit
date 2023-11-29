@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BaseAccountMark extends StatelessWidget {
-  final IconData iconData;
+  final String iconLink;
+
   const BaseAccountMark({
     super.key,
-    required this.iconData,
+    required this.iconLink,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ImageWidget(iconData: iconData);
+    return ImageWidget(link: iconLink);
   }
 }

@@ -77,114 +77,123 @@ class _FirstBody extends StatelessWidget {
     Widget spacing = SpacingFoundation.verticalSpace16;
     if (bigScreen) spacing = SpacingFoundation.verticalSpace24;
 
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        ImageWidget(
-          rasterAsset: GraphicsFoundation.instance.png.welcomeSlide1,
-          fit: BoxFit.cover,
-        ),
-        Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).viewPadding.top + SpacingFoundation.verticalSpacing24,
-            ),
-            Align(
-              alignment: Alignment.topCenter,
-              child: UiKitIconedBlurMessageCard(
-                borderRadius: BorderRadiusFoundation.all24,
-                orientation: Axis.vertical,
-                message: RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'What is \n',
-                        style: textTheme?.caption1Medium.copyWith(color: Colors.white),
-                      ),
-                      TextSpan(
-                        text: 'shuffle ',
-                        style: textTheme?.caption1Bold.copyWith(color: Colors.white),
-                      ),
-                      TextSpan(
-                        text: 'for',
-                        style: textTheme?.caption1Medium.copyWith(color: Colors.white),
-                      ),
-                    ],
+    return SizedBox(
+      height: 1.sh,
+      width: 1.sw,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          ImageWidget(
+            rasterAsset: GraphicsFoundation.instance.png.welcomeSlide1,
+            fit: BoxFit.cover,
+          ),
+          Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).viewPadding.top + SpacingFoundation.verticalSpacing24,
+              ),
+              Align(
+                alignment: Alignment.topCenter,
+                child: UiKitIconedBlurMessageCard(
+                  borderRadius: BorderRadiusFoundation.all24,
+                  orientation: Axis.vertical,
+                  message: RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'What is \n',
+                          style: textTheme?.caption1Medium.copyWith(color: Colors.white),
+                        ),
+                        TextSpan(
+                          text: 'shuffle ',
+                          style: textTheme?.caption1Bold.copyWith(color: Colors.white),
+                        ),
+                        TextSpan(
+                          text: 'for',
+                          style: textTheme?.caption1Medium.copyWith(color: Colors.white),
+                        ),
+                      ],
+                    ),
                   ),
+                  icon: ShuffleUiKitIcons.whiteStarTransparentCenter,
+                  iconColor: Colors.white,
                 ),
-                icon: ShuffleUiKitIcons.whiteStarTransparentCenter,
               ),
-            ),
-            const Spacer(),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: UiKitIconedBlurMessageCard(
-                message: Text(
-                  'Through a non-\naggregator system \nespecially for you',
-                  style: textTheme?.caption1Bold.copyWith(color: Colors.white),
-                ),
-                icon: ShuffleUiKitIcons.whiteStarTransparentCenter,
-              ),
-            ),
-            spacing,
-            Align(
-              alignment: Alignment.centerRight,
-              child: UiKitIconedBlurMessageCard(
-                message: Text(
-                  'With your\npreferences',
-                  style: textTheme?.caption1Bold.copyWith(color: Colors.white),
-                ),
-                icon: ShuffleUiKitIcons.whiteStarTransparentCenter,
-              ),
-            ),
-            spacing,
-            Align(
-              alignment: Alignment.centerLeft,
-              child: UiKitIconedBlurMessageCard(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                message: Text(
-                  'Don\'t be alone',
-                  style: textTheme?.caption1Bold.copyWith(color: Colors.white),
-                ),
-                icon: ShuffleUiKitIcons.whiteStarTransparentCenter,
-              ),
-            ),
-            spacing,
-            Align(
-              alignment: Alignment.centerRight,
-              child: UiKitIconedBlurMessageCard(
-                message: Text(
-                  'Lovely-touch amazing\ninteraction',
-                  style: textTheme?.caption1Bold.copyWith(color: Colors.white),
-                ),
-                icon: ShuffleUiKitIcons.whiteStarTransparentCenter,
-              ),
-            ),
-            if (!bigScreen) SpacingFoundation.verticalSpace24,
-            if (bigScreen) const Spacer(),
-            AnimatedBuilder(
-              animation: animationController,
-              builder: (context, child) {
-                return context.buttonWithProgress(
-                  data: BaseUiKitButtonData(
-                    text: 'NEXT >>>',
-                    onPressed: () {
-                      animationController.forward(from: 0);
-                      onFinished?.call();
-                    },
+              const Spacer(),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: UiKitIconedBlurMessageCard(
+                  message: Text(
+                    'Through a non-\naggregator system \nespecially for you',
+                    style: textTheme?.caption1Bold.copyWith(color: Colors.white),
                   ),
-                  blurred: false,
-                  progress: animationController.value,
-                );
-              },
-            ),
-            SpacingFoundation.verticalSpace24,
-          ],
-        ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16)
-      ],
+                  icon: ShuffleUiKitIcons.whiteStarTransparentCenter,
+                  iconColor: Colors.white,
+                ),
+              ),
+              spacing,
+              Align(
+                alignment: Alignment.centerRight,
+                child: UiKitIconedBlurMessageCard(
+                  message: Text(
+                    'With your\npreferences',
+                    style: textTheme?.caption1Bold.copyWith(color: Colors.white),
+                  ),
+                  icon: ShuffleUiKitIcons.whiteStarTransparentCenter,
+                  iconColor: Colors.white,
+                ),
+              ),
+              spacing,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: UiKitIconedBlurMessageCard(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  message: Text(
+                    'Don\'t be alone',
+                    style: textTheme?.caption1Bold.copyWith(color: Colors.white),
+                  ),
+                  icon: ShuffleUiKitIcons.whiteStarTransparentCenter,
+                  iconColor: Colors.white,
+                ),
+              ),
+              spacing,
+              Align(
+                alignment: Alignment.centerRight,
+                child: UiKitIconedBlurMessageCard(
+                  message: Text(
+                    'Lovely-touch amazing\ninteraction',
+                    style: textTheme?.caption1Bold.copyWith(color: Colors.white),
+                  ),
+                  icon: ShuffleUiKitIcons.whiteStarTransparentCenter,
+                  iconColor: Colors.white,
+                ),
+              ),
+              if (!bigScreen) SpacingFoundation.verticalSpace24,
+              if (bigScreen) const Spacer(),
+              AnimatedBuilder(
+                animation: animationController,
+                builder: (context, child) {
+                  return context.buttonWithProgress(
+                    data: BaseUiKitButtonData(
+                      text: 'NEXT >>>',
+                      onPressed: () {
+                        animationController.forward(from: 0);
+                        onFinished?.call();
+                      },
+                    ),
+                    blurred: false,
+                    progress: animationController.value,
+                  );
+                },
+              ),
+              SpacingFoundation.verticalSpace24,
+            ],
+          ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16)
+        ],
+      ),
     );
   }
 }
@@ -203,61 +212,65 @@ class _LastBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        ImageWidget(
-          rasterAsset: GraphicsFoundation.instance.png.welcomeSlide2,
-          fit: BoxFit.cover,
-        ),
-        Positioned(
-          bottom: 0.3.sh,
-          child: ImageWidget(
-            iconData: ShuffleUiKitIcons.bigCuttedLogo,
+    return SizedBox(
+      height: 1.sh,
+      width: 1.sw,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          ImageWidget(
+            rasterAsset: GraphicsFoundation.instance.png.welcomeSlide2,
+            fit: BoxFit.cover,
+          ),
+          Positioned(
+            bottom: 0.3.sh,
+            child: ImageWidget(
+              svgAsset: GraphicsFoundation.instance.svg.bigCuttedLogo,
+              width: 1.sw,
+              fit: BoxFit.fitWidth,
+            ),
+          ),
+          Positioned(
             width: 1.sw,
-            fit: BoxFit.fitWidth,
-          ),
-        ),
-        Positioned(
-          width: 1.sw,
-          bottom: 0,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              SpacingFoundation.verticalSpace24,
-              Text(
-                'This is shuffle',
-                style: textTheme?.title1.copyWith(color: Colors.white),
-                textAlign: TextAlign.center,
-              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal32 * 2),
-              SpacingFoundation.verticalSpace16,
-              Text(
-                'Smart leisure selection for everyone, everywhere.',
-                style: textTheme?.subHeadline.copyWith(color: Colors.white),
-                textAlign: TextAlign.center,
-              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal32),
-              if (bigScreen) ...[
+            bottom: 0,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
                 SpacingFoundation.verticalSpace24,
-                SpacingFoundation.verticalSpace24,
-                SpacingFoundation.verticalSpace12,
-              ],
-              if (!bigScreen) SpacingFoundation.verticalSpace16,
-              context
-                  .button(
-                    data: BaseUiKitButtonData(
-                      text: 'Get started',
-                      onPressed: onFinished,
+                Text(
+                  'This is shuffle',
+                  style: textTheme?.title1.copyWith(color: Colors.white),
+                  textAlign: TextAlign.center,
+                ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal32 * 2),
+                SpacingFoundation.verticalSpace16,
+                Text(
+                  'Smart leisure selection for everyone, everywhere.',
+                  style: textTheme?.subHeadline.copyWith(color: Colors.white),
+                  textAlign: TextAlign.center,
+                ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal32),
+                if (bigScreen) ...[
+                  SpacingFoundation.verticalSpace24,
+                  SpacingFoundation.verticalSpace24,
+                  SpacingFoundation.verticalSpace12,
+                ],
+                if (!bigScreen) SpacingFoundation.verticalSpace16,
+                context
+                    .button(
+                      data: BaseUiKitButtonData(
+                        text: 'Get started',
+                        onPressed: onFinished,
+                      ),
+                    )
+                    .paddingSymmetric(
+                      horizontal: EdgeInsetsFoundation.horizontal16,
                     ),
-                  )
-                  .paddingSymmetric(
-                    horizontal: EdgeInsetsFoundation.horizontal16,
-                  ),
-              SpacingFoundation.verticalSpace24,
-            ],
+                SpacingFoundation.verticalSpace24,
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

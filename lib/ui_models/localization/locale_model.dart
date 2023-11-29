@@ -3,13 +3,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class LocaleModel {
   final Locale locale;
-  final IconData icon;
+  final String iconLink;
   final String name;
 
   const LocaleModel({
     required this.locale,
     required this.name,
-    required this.icon,
+    required this.iconLink,
   });
 
   LocaleModel.fromLocale(this.locale)
@@ -20,11 +20,11 @@ class LocaleModel {
           'ar' => 'عرب',
           String() => 'other',
         },
-        icon = switch (locale.languageCode) {
-          'ru' => ShuffleUiKitIcons.russia,
-          'en' => ShuffleUiKitIcons.unitedKingdom,
-          'hi' => ShuffleUiKitIcons.india,
-          'ar' => ShuffleUiKitIcons.arabic,
-          String() => ShuffleUiKitIcons.arabic,
+        iconLink = switch (locale.languageCode) {
+          'ru' => GraphicsFoundation.instance.svg.russia.path,
+          'en' => GraphicsFoundation.instance.svg.unitedKingdom.path,
+          'hi' => GraphicsFoundation.instance.svg.india.path,
+          'ar' => GraphicsFoundation.instance.svg.arabic.path,
+          String() => GraphicsFoundation.instance.svg.arabic.path,
         };
 }

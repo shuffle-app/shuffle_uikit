@@ -42,10 +42,12 @@ class _UiKitRadioState extends State<UiKitRadio> {
           ? ImageWidget(
               key: onKey,
               iconData: ShuffleUiKitIcons.filledRadio,
+              color: Colors.white,
             )
           : ImageWidget(
               key: offKey,
               iconData: ShuffleUiKitIcons.emptyRadio,
+              color: Colors.white,
             ),
     );
 

@@ -520,10 +520,10 @@ class S {
     );
   }
 
-  /// `Select language`
+  /// `Please select language`
   String get SelectLanguage {
     return Intl.message(
-      'Select language',
+      'Please select language',
       name: 'SelectLanguage',
       desc: '',
       args: [],

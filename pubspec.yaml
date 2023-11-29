@@ -134,7 +134,7 @@ flutter_intl:
 
 # icon_font_generator
 
-# flutter pub run icon_font_generator:generate <input-svg-dir> <output-font-file>
+# dart run icon_font_generator:generator assets/images/svg/ assets/fonts/shuffle_ui_kit_icons.otf
 
 icon_font:
   input_svg_dir: "assets/images/svg/"

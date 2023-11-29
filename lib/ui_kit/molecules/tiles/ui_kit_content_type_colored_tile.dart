@@ -103,6 +103,7 @@ class UiKitContentTypeColoredTile extends StatelessWidget {
           Center(
             child: ImageWidget(
               iconData: icon,
+              height: 64,
             ),
           ),
         ],

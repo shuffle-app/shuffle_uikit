@@ -5,7 +5,7 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
   final String title;
   final String imageUrl;
   final String? subtitle;
-  final String? subtitleIcon;
+  final IconData? subtitleIcon;
   final List<UiKitTag> tags;
 
   const UiKitImageWithDescriptionCard({
@@ -51,7 +51,7 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
             children: [
               if (subtitleIcon != null)
                 ImageWidget(
-                  link: subtitleIcon,
+                  iconData: subtitleIcon,
                   color: ColorsFoundation.darkNeutral900,
                   width: 0.05.sw,
                   height: 0.05.sw,

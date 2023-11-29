@@ -5,11 +5,13 @@ class WideVerticalMessageCard extends StatelessWidget {
   final String message;
   final IconData? iconData;
   final VoidCallback? onPressed;
+  final String? iconLink;
 
   const WideVerticalMessageCard({
     Key? key,
     required this.message,
     this.iconData,
+    this.iconLink,
     this.onPressed,
   }) : super(key: key);
 
@@ -32,14 +34,15 @@ class WideVerticalMessageCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SpacingFoundation.verticalSpace12,
-              if (iconData != null)
+              if (iconData != null || iconLink != null)
                 ImageWidget(
-                  iconData: iconData!,
+                  iconData: iconData,
+                  link: iconLink,
                   height: 0.1875.sw,
                   width: 0.1875.sw,
                   fit: BoxFit.cover,
                 ),
-              if (iconData != null) SpacingFoundation.verticalSpace2,
+              if (iconData != null || iconLink != null) SpacingFoundation.verticalSpace2,
               Text(
                 /// end line symbols added to make sure that the text is more than 3 lines
                 /// so that the card height is always fixed

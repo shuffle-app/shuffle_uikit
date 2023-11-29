@@ -191,6 +191,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
           // height: 100.h,
           width: 1.sw,
           child: Stack(
+            fit: StackFit.expand,
             children: [
               Positioned(
                 top: 0,
@@ -246,9 +247,9 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                         child: child,
                       );
                     },
-                    child: const Center(
+                    child: Center(
                       child: ImageWidget(
-                        iconData: ShuffleUiKitIcons.spinnerWheel,
+                        svgAsset: GraphicsFoundation.instance.svg.spinnerWheel,
                       ),
                     ),
                   ),

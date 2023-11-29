@@ -86,10 +86,14 @@ class SupportShuffleButton extends StatelessWidget {
                 color: theme?.colorScheme.surface4,
               ),
               SpacingFoundation.horizontalSpace8,
-              ImageWidget(
-                iconData: ShuffleUiKitIcons.dollarOutlined,
-                height: 20.h,
-                fit: BoxFit.fitHeight,
+              GradientableWidget(
+                gradient: GradientFoundation.attentionCard,
+                child: ImageWidget(
+                  iconData: ShuffleUiKitIcons.dollarOutlined,
+                  height: 20.h,
+                  color: Colors.white,
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ],
           ),

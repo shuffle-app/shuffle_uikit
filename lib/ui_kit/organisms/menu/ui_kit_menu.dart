@@ -12,6 +12,8 @@ class UiKitMenu<T> extends StatelessWidget {
   final UiKitMenuItem<T>? selectedItem;
   final double? customTopPadding;
   final BorderRadiusGeometry? borderRadius;
+  final Color? tilesColor;
+  final bool useCustomTiles;
 
   const UiKitMenu({
     Key? key,
@@ -21,6 +23,8 @@ class UiKitMenu<T> extends StatelessWidget {
     this.selectedItem,
     this.customTopPadding,
     this.borderRadius,
+    this.tilesColor,
+    this.useCustomTiles = false,
   }) : super(key: key);
 
   bool get singleType {
@@ -78,12 +82,16 @@ class UiKitMenu<T> extends StatelessWidget {
                       title: title,
                       items: items,
                       onSelected: onSelected,
+                      tilesColor: tilesColor,
+                      useCustomTiles: useCustomTiles,
                     )
                   : MultipleTypeMenuBody<T>(
                       title: title,
                       allTypes: allTypes,
                       items: items,
                       onSelected: onSelected,
+                      tilesColor: tilesColor,
+                      useCustomTiles: useCustomTiles,
                     ),
             ),
           );
@@ -104,7 +112,8 @@ class UiKitMenu<T> extends StatelessWidget {
                 ClipRRect(
                     borderRadius: BorderRadiusFoundation.all24,
                     child: ImageWidget(
-                      iconData: selectedItem!.icon!,
+                      iconData: selectedItem?.icon,
+                      link: selectedItem?.iconLink,
                       height: 0.0625.sw,
                       width: 0.0625.sw,
                       fit: BoxFit.cover,
@@ -136,6 +145,7 @@ class UiKitMenuItem<T> {
   final String title;
   final T? value;
   final IconData? icon;
+  final String? iconLink;
   final String? type;
 
   UiKitMenuItem({
@@ -143,6 +153,7 @@ class UiKitMenuItem<T> {
     required this.value,
     this.type,
     this.icon,
+    this.iconLink,
   });
 
   factory UiKitMenuItem.empty() => UiKitMenuItem(

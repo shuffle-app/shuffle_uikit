@@ -21,9 +21,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final GlobalKey _gradientTextKey = GlobalKey();
   double progress = 0.0;
   CountryModel? _selectedCountry;
-  CustomBackgroundSwitchOption selectedOption = const CustomBackgroundSwitchOption(
+  CustomBackgroundSwitchOption selectedOption = CustomBackgroundSwitchOption(
     title: 'Personal',
-    icon: ShuffleUiKitIcons.personLayered,
+    iconLink: GraphicsFoundation.instance.svg.personLayered.path,
   );
 
   bool selection = false;
@@ -291,13 +291,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace16,
               Center(
                 child: UiKitSwitchWithCustomBackground(
-                  firstOption: const CustomBackgroundSwitchOption(
+                  firstOption: CustomBackgroundSwitchOption(
                     title: 'Personal',
-                    icon: ShuffleUiKitIcons.personLayered,
+                    iconLink: GraphicsFoundation.instance.svg.personLayered.path,
                   ),
-                  secondOption: const CustomBackgroundSwitchOption(
+                  secondOption: CustomBackgroundSwitchOption(
                     title: 'Company',
-                    icon: ShuffleUiKitIcons.companyLayered,
+                    iconLink: GraphicsFoundation.instance.svg.companyLayered.path,
                   ),
                   selectedOption: selectedOption,
                   onChanged: (value) {
@@ -702,7 +702,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     ],
                   ),
                 ),
-                overflownIcon: ShuffleUiKitIcons.map,
+                overflownIconLink: GraphicsFoundation.instance.svg.map.path,
                 decorationIcons: [
                   ActionCardDecorationIconData(
                     icon: ShuffleUiKitIcons.coin,

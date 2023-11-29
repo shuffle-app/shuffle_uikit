@@ -26,6 +26,7 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
         return HorizontalMessageCard(
           message: message,
           iconData: icon,
+          iconLink: iconLink,
           onPressed: onPressed,
         );
       case Axis.vertical:
@@ -33,6 +34,7 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
           return WideVerticalMessageCard(
             message: message,
             iconData: icon,
+            iconLink: iconLink,
             onPressed: onPressed,
           );
         }
@@ -40,6 +42,7 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
         return VerticalMessageCard(
           message: message,
           iconData: icon,
+          iconLink: iconLink,
           onPressed: onPressed,
         );
     }

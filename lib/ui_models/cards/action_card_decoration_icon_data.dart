@@ -1,15 +1,17 @@
 import 'package:flutter/cupertino.dart';
 
 class ActionCardDecorationIconData {
-  final IconData icon;
+  final IconData? icon;
+  final String? iconLink;
   final double? iconSize;
   final DecorationIconPosition position;
   final double rotationAngle;
 
   ActionCardDecorationIconData({
-    required this.icon,
+    this.icon,
     required this.position,
     this.iconSize,
+    this.iconLink,
     this.rotationAngle = 0,
   });
 }

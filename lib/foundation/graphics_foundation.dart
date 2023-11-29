@@ -12,7 +12,7 @@ class GraphicsFoundation {
 
   const GraphicsFoundation._();
 
-  IconData iconFromString(String iconName) {
+  IconData iconFromString(String iconName, {IconData? orElse}) {
     switch (iconName) {
       case 'handshake_3':
         return ShuffleUiKitIcons.handshake3;
@@ -103,7 +103,7 @@ class GraphicsFoundation {
       case 'facebook_logo':
         return ShuffleUiKitIcons.facebookLogo;
       default:
-        return Icons.error;
+        return orElse ?? Icons.error;
     }
   }
 }

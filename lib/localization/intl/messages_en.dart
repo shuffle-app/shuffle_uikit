@@ -310,7 +310,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDate": MessageLookupByLibrary.simpleMessage("Select date"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Select days "),
         "SelectLanguage":
-            MessageLookupByLibrary.simpleMessage("Select language"),
+            MessageLookupByLibrary.simpleMessage("Please select language"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("Select option"),
         "SelectType": m10,
         "SelectYourReligions":

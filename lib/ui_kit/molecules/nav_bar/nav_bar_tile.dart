@@ -22,6 +22,7 @@ class NavBarTile extends StatelessWidget {
         ImageWidget(
           iconData: icon,
           color: color,
+          width: 24.w,
         ),
         SpacingFoundation.verticalSpace4,
         Icon(

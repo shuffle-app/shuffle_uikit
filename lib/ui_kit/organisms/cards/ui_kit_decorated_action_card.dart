@@ -60,6 +60,7 @@ class UiKitDecoratedActionCard extends StatelessWidget {
                         angle: e.rotationAngle * (pi / 180),
                         child: ImageWidget(
                           iconData: e.icon,
+                          link: e.iconLink,
                           width: relativeIconHeight,
                           fit: BoxFit.cover,
                         ),
