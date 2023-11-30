@@ -30,7 +30,7 @@ class UiKitCompactTextCard extends StatelessWidget {
             if (showRemoveButton) ...[
               SpacingFoundation.horizontalSpace4,
               ImageWidget(
-                svgAsset: GraphicsFoundation.instance.svg.x,
+                iconData: ShuffleUiKitIcons.x,
                 color: theme?.colorScheme.inversePrimary,
                 height: 10.w,
                 fit: BoxFit.fitWidth,

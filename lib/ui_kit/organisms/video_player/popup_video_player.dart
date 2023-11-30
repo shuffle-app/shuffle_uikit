@@ -85,9 +85,7 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
         child: GestureDetector(
           onDoubleTap: () {
             setState(() {
-              _controller.value.isPlaying
-                  ? _controller.pause()
-                  : _controller.play();
+              _controller.value.isPlaying ? _controller.pause() : _controller.play();
             });
           },
           child: Stack(
@@ -132,8 +130,8 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
                 right: 10.h,
                 child: IconButton(
                   splashRadius: double.minPositive,
-                  icon: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.x,
+                  icon: const ImageWidget(
+                    iconData: ShuffleUiKitIcons.x,
                     height: 80,
                     color: Colors.white,
                   ),

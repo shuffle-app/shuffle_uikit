@@ -137,20 +137,22 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                     child: context.smallButton(
                       blurred: true,
                       data: BaseUiKitButtonData(
-                          icon: AnimatedSwitcher(
-                              duration: widgetAnimDurations,
-                              child: widget.favourite == true
-                                  ? ImageWidget(
-                                      svgAsset: GraphicsFoundation.instance.svg.starFill,
-                                      color: Colors.white,
-                                      fit: BoxFit.cover,
-                                    )
-                                  : ImageWidget(
-                                      svgAsset: GraphicsFoundation.instance.svg.starOutline,
-                                      color: Colors.white,
-                                      fit: BoxFit.cover,
-                                    )),
-                          onPressed: widget.onFavoriteTap),
+                        icon: AnimatedSwitcher(
+                          duration: widgetAnimDurations,
+                          child: widget.favourite == true
+                              ? const ImageWidget(
+                                  iconData: ShuffleUiKitIcons.starfill,
+                                  color: Colors.white,
+                                  fit: BoxFit.cover,
+                                )
+                              : const ImageWidget(
+                                  iconData: ShuffleUiKitIcons.staroutline,
+                                  color: Colors.white,
+                                  fit: BoxFit.cover,
+                                ),
+                        ),
+                        onPressed: widget.onFavoriteTap,
+                      ),
                     ),
                   ),
                 ],
@@ -171,7 +173,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                 child: Row(
                   children: [
                     ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.clock,
+                      iconData: ShuffleUiKitIcons.clock,
                       color: ColorsFoundation.darkNeutral900,
                       width: kIsWeb ? 16 : 0.05.sw,
                       height: kIsWeb ? 16 : 0.05.sw,

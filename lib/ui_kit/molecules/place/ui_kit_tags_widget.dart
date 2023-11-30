@@ -26,7 +26,7 @@ class UiKitTagsWidget extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.star,
+                  iconData: ShuffleUiKitIcons.star,
                   height: SpacingFoundation.horizontalSpacing16,
                   fit: BoxFit.fitHeight,
                   color: context.uiKitTheme?.colorScheme.inversePrimary,
@@ -62,7 +62,7 @@ class UiKitTagsWidget extends StatelessWidget {
 
                     return UiKitTagWidget(
                       title: tag.title,
-                      icon: tag.iconPath,
+                      icon: tag.icon,
                       uniqueTag: false,
                     );
                   },
@@ -85,7 +85,7 @@ class UiKitTagsWidget extends StatelessWidget {
                     itemBuilder: (_, index) {
                       return UiKitTagWidget(
                         title: uniqueTags![index].title,
-                        icon: uniqueTags![index].iconPath,
+                        icon: uniqueTags![index].icon,
                         uniqueTag: true,
                       );
                     },

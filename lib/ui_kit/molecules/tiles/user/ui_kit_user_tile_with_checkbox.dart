@@ -7,8 +7,8 @@ class UiKitUserTileWithCheckbox extends StatefulWidget {
     super.key,
     required this.name,
     required this.onTap,
-     this.rating = 0,
-     this.avatarLink,
+    this.rating = 0,
+    this.avatarLink,
     this.isSelected = false,
     this.date,
     this.subtitle,
@@ -71,10 +71,10 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                             right: 0,
                             height: 15.h,
                             width: 15.w,
-                            child: GradientableWidget(
+                            child: const GradientableWidget(
                               gradient: GradientFoundation.defaultLinearGradient,
                               child: ImageWidget(
-                                svgAsset: GraphicsFoundation.instance.svg.handShake2,
+                                iconData: ShuffleUiKitIcons.handshake2,
                                 color: Colors.white,
                                 fit: BoxFit.cover,
                               ),

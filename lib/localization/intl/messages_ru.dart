@@ -315,7 +315,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SeeMore": MessageLookupByLibrary.simpleMessage("Ещё"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("Выберите дату"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Выбрать дни "),
-        "SelectLanguage": MessageLookupByLibrary.simpleMessage("Выбрать язык"),
+        "SelectLanguage":
+            MessageLookupByLibrary.simpleMessage("Пожалуйста выберите язык"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("Выбирай"),
         "SelectType": m10,
         "SelectYourReligions":

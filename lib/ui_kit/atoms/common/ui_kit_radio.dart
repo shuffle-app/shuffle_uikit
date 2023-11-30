@@ -41,22 +41,24 @@ class _UiKitRadioState extends State<UiKitRadio> {
       child: _selected
           ? ImageWidget(
               key: onKey,
-              svgAsset: GraphicsFoundation.instance.svg.filledRadio,
+              iconData: ShuffleUiKitIcons.filledRadio,
+              color: Colors.white,
             )
           : ImageWidget(
               key: offKey,
-              svgAsset: GraphicsFoundation.instance.svg.emptyRadio,
+              iconData: ShuffleUiKitIcons.emptyRadio,
+              color: Colors.white,
             ),
     );
 
     // if (_selected) {
     //   return ImageWidget(
-    //     svgAsset: GraphicsFoundation.instance.svg.filledRadio,
+    //     iconData: ShuffleUiKitIcons.filledRadio,
     //   );
     // }
     //
     // return ImageWidget(
-    //   svgAsset: GraphicsFoundation.instance.svg.emptyRadio,
+    //   iconData: ShuffleUiKitIcons.emptyRadio,
     // );
   }
 }

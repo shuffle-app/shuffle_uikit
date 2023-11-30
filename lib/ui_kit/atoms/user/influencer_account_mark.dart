@@ -5,6 +5,6 @@ class InfluencerAccountMark extends BaseAccountMark {
   InfluencerAccountMark({Key? key})
       : super(
           key: key,
-          svgAsset: Assets.images.svg.influencerAccountMark,
+          iconLink: GraphicsFoundation.instance.svg.influencerAccountMark.path,
         );
 }

@@ -74,12 +74,12 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
                             if (rating != null)
                               UiKitTagWidget(
                                   title: rating!.toStringAsFixed(0),
-                                  icon: GraphicsFoundation.instance.svg.star.path,
+                                  icon: ShuffleUiKitIcons.star,
                                   textColor: theme?.colorScheme.inversePrimary),
                             ...tags
                                     ?.map<Widget>((e) => UiKitTagWidget(
                                           title: e.title,
-                                          icon: e.iconPath,
+                                          icon: e.icon,
                                           showSpacing: rating != null || tags?.indexOf(e) != 0,
                                         ))
                                     .toList() ??
@@ -105,8 +105,8 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.thumbUp,
+                const ImageWidget(
+                  iconData: ShuffleUiKitIcons.thumbup,
                   color: ColorsFoundation.darkNeutral900,
                 ),
                 SpacingFoundation.horizontalSpace8,

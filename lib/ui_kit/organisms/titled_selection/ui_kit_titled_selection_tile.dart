@@ -41,8 +41,8 @@ class UiKitTitledSelectionTile extends StatelessWidget {
                   maxLines: 1,
                 ),
               ),
-              ImageWidget(
-                svgAsset: GraphicsFoundation.instance.svg.chevronRight,
+              const ImageWidget(
+                iconData: ShuffleUiKitIcons.chevronright,
                 color: Colors.white,
               ),
             ],

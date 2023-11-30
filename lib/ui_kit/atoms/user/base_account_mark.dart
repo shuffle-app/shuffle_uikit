@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BaseAccountMark extends StatelessWidget {
-  final SvgGenImage svgAsset;
+  final String iconLink;
+
   const BaseAccountMark({
     super.key,
-    required this.svgAsset,
+    required this.iconLink,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ImageWidget(svgAsset: svgAsset);
+    return ImageWidget(link: iconLink);
   }
 }

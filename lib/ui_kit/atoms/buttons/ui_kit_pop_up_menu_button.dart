@@ -3,12 +3,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitPopUpMenuButton extends StatelessWidget {
   final List<UiKitPopUpMenuButtonOption> options;
-  final SvgGenImage asset;
+  final IconData asset;
 
   UiKitPopUpMenuButton({
     super.key,
     required this.options,
-  }) : asset = GraphicsFoundation.instance.svg.moreVert {
+  }) : asset = ShuffleUiKitIcons.morevert {
     items = (context) => options
         .map(
           (option) => PopupMenuItem(
@@ -57,7 +57,7 @@ class UiKitPopUpMenuButton extends StatelessWidget {
       shadowColor: Colors.black.withOpacity(0.3),
       elevation: 10,
       icon: ImageWidget(
-        svgAsset: asset,
+        iconData: asset,
         color: Colors.white,
       ),
       itemBuilder: items,

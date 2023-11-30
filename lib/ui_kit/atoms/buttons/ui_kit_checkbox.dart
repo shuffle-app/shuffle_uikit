@@ -38,7 +38,7 @@ class UiKitCheckbox extends StatelessWidget {
                 active: isActive,
                 gradient: GradientFoundation.attentionCard,
                 child: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.check,
+                  iconData: ShuffleUiKitIcons.check,
                   color: Colors.white,
                   height: SpacingFoundation.horizontalSpacing12,
                   fit: BoxFit.fitHeight,

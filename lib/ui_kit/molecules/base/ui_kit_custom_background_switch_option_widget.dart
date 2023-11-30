@@ -17,7 +17,7 @@ class UiKitCustomBackgroundSwitchOptionWidget extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         ImageWidget(
-          link: option.imageLink,
+          link: option.iconLink,
         ),
         GradientableWidget(
           gradient: GradientFoundation.defaultRadialGradient,

@@ -21,8 +21,8 @@ class UiKitNoContentPlaceholder extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace4,
-          ImageWidget(
-            svgAsset: GraphicsFoundation.instance.svg.noPhoto,
+          const ImageWidget(
+            iconData: ShuffleUiKitIcons.noPhoto,
           ),
           SpacingFoundation.verticalSpace4,
           Text(

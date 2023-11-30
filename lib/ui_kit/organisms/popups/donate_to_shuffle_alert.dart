@@ -39,7 +39,7 @@ class _DonateToShuffleAlertState extends State<DonateToShuffleAlert> {
         GestureDetector(
           onTap: () => Navigator.of(context).pop(),
           child: ImageWidget(
-            svgAsset: GraphicsFoundation.instance.svg.cross,
+            iconData: ShuffleUiKitIcons.cross,
             color: theme?.colorScheme.darkNeutral900,
             height: 19.h,
             fit: BoxFit.fitHeight,

@@ -31,8 +31,8 @@ class BlurredPlaceVideoPlayButton extends StatelessWidget {
             borderRadius: BorderRadiusFoundation.all40,
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
-              child: Center(
-                child: ImageWidget(svgAsset: GraphicsFoundation.instance.svg.playArrow),
+              child: const Center(
+                child: ImageWidget(iconData: ShuffleUiKitIcons.playArrow),
               ),
             ),
           ),

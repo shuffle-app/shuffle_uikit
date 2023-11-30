@@ -34,16 +34,13 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
   Widget build(BuildContext context) {
     return Container(
       color: const Color.fromARGB(255, 26, 26, 26),
-      height: widget.isFullScreen
-          ? height + MediaQuery.of(context).padding.bottom
-          : height,
+      height: widget.isFullScreen ? height + MediaQuery.of(context).padding.bottom : height,
       width: double.infinity,
       child: Padding(
         padding: EdgeInsets.only(
           left: MediaQuery.of(context).padding.left,
           right: MediaQuery.of(context).padding.right,
-          bottom:
-              widget.isFullScreen ? MediaQuery.of(context).padding.bottom : 0,
+          bottom: widget.isFullScreen ? MediaQuery.of(context).padding.bottom : 0,
         ),
         child: Row(
           children: [
@@ -52,9 +49,7 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
               onPressed: () {
                 setState(
                   () {
-                    widget.controller.value.isPlaying
-                        ? widget.controller.pause()
-                        : widget.controller.play();
+                    widget.controller.value.isPlaying ? widget.controller.pause() : widget.controller.play();
                   },
                 );
               },
@@ -64,9 +59,7 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
                   valueListenable: widget.controller,
                   builder: (context, VideoPlayerValue value, child) {
                     return ImageWidget(
-                      svgAsset: value.isPlaying
-                          ? GraphicsFoundation.instance.svg.pause
-                          : GraphicsFoundation.instance.svg.play,
+                      iconData: value.isPlaying ? ShuffleUiKitIcons.pause : ShuffleUiKitIcons.play,
                       height: height,
                       color: Colors.white,
                     );
@@ -100,9 +93,7 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
                   valueListenable: widget.controller,
                   builder: (context, VideoPlayerValue value, child) {
                     return ImageWidget(
-                      svgAsset: value.volume == 1
-                          ? GraphicsFoundation.instance.svg.volume
-                          : GraphicsFoundation.instance.svg.volumeOff,
+                      iconData: value.volume == 1 ? ShuffleUiKitIcons.volume : ShuffleUiKitIcons.volumeoff,
                       height: height,
                       color: Colors.white,
                     );
@@ -117,17 +108,14 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
                     ? Navigator.of(widget.context).pop()
                     : Navigator.of(widget.context, rootNavigator: true).push(
                         MaterialPageRoute(
-                          builder: (context) => FullScreenVideoPlayerPage(
-                              controller: widget.controller),
+                          builder: (context) => FullScreenVideoPlayerPage(controller: widget.controller),
                         ),
                       );
               },
               icon: GradientableWidget(
                 gradient: GradientFoundation.badgeIcon,
                 child: ImageWidget(
-                  svgAsset: widget.isFullScreen
-                      ? GraphicsFoundation.instance.svg.minimize
-                      : GraphicsFoundation.instance.svg.maximize,
+                  iconData: widget.isFullScreen ? ShuffleUiKitIcons.minimize : ShuffleUiKitIcons.maximize,
                   height: height,
                   color: Colors.white,
                 ),

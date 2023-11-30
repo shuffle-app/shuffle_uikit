@@ -5,6 +5,7 @@ class UiKitMenuItemTile extends StatelessWidget {
   const UiKitMenuItemTile({
     Key? key,
     required this.item,
+    this.color,
     this.onTap,
   })  : autoPopUp = true,
         showSeparator = true,
@@ -15,6 +16,7 @@ class UiKitMenuItemTile extends StatelessWidget {
     Key? key,
     required this.item,
     this.onTap,
+    this.color,
     this.paddingSymmetric,
     this.autoPopUp = false,
     this.showSeparator = false,
@@ -25,6 +27,7 @@ class UiKitMenuItemTile extends StatelessWidget {
   final EdgeInsets? paddingSymmetric;
   final bool autoPopUp;
   final bool showSeparator;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +35,7 @@ class UiKitMenuItemTile extends StatelessWidget {
     final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
-      color: Colors.transparent,
-      // color: colorScheme?.surface1,
+      color: color ?? colorScheme?.primary,
       child: InkWell(
         onTap: () {
           onTap?.call();
@@ -52,9 +54,10 @@ class UiKitMenuItemTile extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              if (item.iconPath != null) ...[
+              if (item.icon != null || item.iconLink != null) ...[
                 ImageWidget(
-                  link: item.iconPath!,
+                  iconData: item.icon,
+                  link: item.iconLink,
                   height: 0.0625.sw,
                   width: 0.0625.sw,
                   fit: BoxFit.cover,

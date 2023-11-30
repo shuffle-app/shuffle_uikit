@@ -5,6 +5,6 @@ class PremiumAccountMark extends BaseAccountMark {
   PremiumAccountMark({Key? key})
       : super(
           key: key,
-          svgAsset: Assets.images.svg.premiumAccountMark,
+          iconLink: GraphicsFoundation.instance.svg.premiumAccountMark.path,
         );
 }

@@ -35,8 +35,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> with SingleTickerProvid
   int currentIndex = 0;
 
   double get currentItemProgressPortion =>
-      ((widget.items.elementAt(currentIndex).autoSwitchDuration.inMilliseconds +
-              (widget.transitionDuration * 3).inMilliseconds) /
+      ((widget.items.elementAt(currentIndex).autoSwitchDuration.inMilliseconds + (widget.transitionDuration * 3).inMilliseconds) /
           overallDuration.inMilliseconds) *
       (currentIndex + 1);
 

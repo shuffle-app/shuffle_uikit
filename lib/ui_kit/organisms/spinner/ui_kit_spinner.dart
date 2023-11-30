@@ -191,6 +191,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
           // height: 100.h,
           width: 1.sw,
           child: Stack(
+            fit: StackFit.expand,
             children: [
               Positioned(
                 top: 0,

@@ -44,19 +44,28 @@ class _ArrowsAnimationState extends State<ArrowsAnimation> with SingleTickerProv
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-        animation: controller,
-        builder: (context, child) => Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(widget.itemCount, (index) {
-              return Opacity(
-                opacity: 1 - ((1 / widget.itemCount) * index - controller.value).abs(),
-                child: GradientableWidget(
-                    gradient: GradientFoundation.badgeIcon,
-                    child: SizedBox(
-                        width: 10.w,
-                        child:
-                            ImageWidget(svgAsset: GraphicsFoundation.instance.svg.chevronRight, color: Colors.white))),
-              );
-            })));
+      animation: controller,
+      builder: (context, child) => Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: List.generate(
+          widget.itemCount,
+          (index) {
+            return Opacity(
+              opacity: 1 - ((1 / widget.itemCount) * index - controller.value).abs(),
+              child: GradientableWidget(
+                gradient: GradientFoundation.badgeIcon,
+                child: SizedBox(
+                  width: 10.w,
+                  child: const ImageWidget(
+                    iconData: ShuffleUiKitIcons.chevronright,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 }

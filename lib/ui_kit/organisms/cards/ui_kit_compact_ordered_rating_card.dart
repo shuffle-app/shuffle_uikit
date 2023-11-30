@@ -64,9 +64,8 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                    Expanded(
-                    child:
-                        ClipRRect(
+                        Expanded(
+                            child: ClipRRect(
                           borderRadius: BorderRadiusFoundation.all24,
                           child: ImageWidget(
                             link: imageLink,
@@ -90,29 +89,29 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                     ),
                   ),
                   // if (rating != null)
-                    Ink(
-                      width: sideInfoCardsWidth,
-                      color: ColorsFoundation.darkNeutral500.withOpacity(rating==null ? 0 : 0.08),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          if(rating!=null)
+                  Ink(
+                    width: sideInfoCardsWidth,
+                    color: ColorsFoundation.darkNeutral500.withOpacity(rating == null ? 0 : 0.08),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        if (rating != null)
                           ImageWidget(
-                            svgAsset: GraphicsFoundation.instance.svg.star,
+                            iconData: ShuffleUiKitIcons.star,
                             color: context.uiKitTheme?.colorScheme.inversePrimary,
                           ),
-                          SpacingFoundation.verticalSpace4,
-                          Text(
-                            rating?.toStringAsFixed(1) ?? '',
-                            style: textTheme?.body,
-                          ),
-                        ],
-                      ).paddingSymmetric(
-                        horizontal: EdgeInsetsFoundation.horizontal8,
-                      ),
+                        SpacingFoundation.verticalSpace4,
+                        Text(
+                          rating?.toStringAsFixed(1) ?? '',
+                          style: textTheme?.body,
+                        ),
+                      ],
+                    ).paddingSymmetric(
+                      horizontal: EdgeInsetsFoundation.horizontal8,
                     ),
+                  ),
                 ],
               ),
             ),

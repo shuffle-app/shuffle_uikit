@@ -61,8 +61,8 @@ class UiKitElevatedInputWithSwitchingPrefix extends StatelessWidget {
                         controller.clear();
                         if (focusNode?.hasFocus ?? true) onInputCleaned?.call();
                       },
-                      child: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.cross,
+                      child: const ImageWidget(
+                        iconData: ShuffleUiKitIcons.cross,
                         color: ColorsFoundation.darkNeutral900,
                       ),
                     ),

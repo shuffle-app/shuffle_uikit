@@ -143,13 +143,13 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                       _focusNode.unfocus();
                     }
                   },
-                  child: ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.arrowLeft,
+                  child: const ImageWidget(
+                    iconData: ShuffleUiKitIcons.arrowleft,
                     color: ColorsFoundation.darkNeutral900,
                   ),
                 ),
-                primary: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.landmark,
+                primary: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.landmark,
                   color: ColorsFoundation.darkNeutral900,
                 ),
                 notifier: focusNotifier,
@@ -171,7 +171,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
         highlightElevation: 0,
         enableFeedback: true,
         child: ImageWidget(
-          svgAsset: GraphicsFoundation.instance.svg.locationSearching,
+          iconData: ShuffleUiKitIcons.locationSearching,
           height: 16.h,
           fit: BoxFit.fitHeight,
         ),
@@ -239,7 +239,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.route,
+                      iconData: ShuffleUiKitIcons.route,
                       height: 15.h,
                       color: Colors.white,
                       fit: BoxFit.fitHeight,

@@ -127,22 +127,24 @@ class ButtonsList extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             context.outlinedButton(
-                data: BaseUiKitButtonData(
-              icon: ImageWidget(
-                svgAsset: GraphicsFoundation.instance.svg.route,
-                color: context.uiKitTheme?.colorScheme.inversePrimary,
+              data: BaseUiKitButtonData(
+                icon: ImageWidget(
+                  iconData: ShuffleUiKitIcons.route,
+                  color: context.uiKitTheme?.colorScheme.inversePrimary,
+                ),
+                onPressed: () {},
               ),
-              onPressed: () {},
-            )),
+            ),
             SpacingFoundation.horizontalSpace8,
             context.button(
-                data: BaseUiKitButtonData(
-              icon: ImageWidget(
-                svgAsset: GraphicsFoundation.instance.svg.route,
-                color: context.uiKitTheme?.colorScheme.inversePrimary,
+              data: BaseUiKitButtonData(
+                icon: ImageWidget(
+                  iconData: ShuffleUiKitIcons.route,
+                  color: context.uiKitTheme?.colorScheme.inversePrimary,
+                ),
+                onPressed: () {},
               ),
-              onPressed: () {},
-            )),
+            ),
           ],
         ),
       ],

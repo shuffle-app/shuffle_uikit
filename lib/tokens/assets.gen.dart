@@ -1203,10 +1203,6 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/like.svg
   SvgGenImage get like => const SvgGenImage('assets/images/svg/like.svg');
 
-  /// File path: assets/images/svg/lms-linkedin-page-posting-best-practices-one-pager.pdf
-  String get lmsLinkedinPagePostingBestPracticesOnePager =>
-      'assets/images/svg/lms-linkedin-page-posting-best-practices-one-pager.pdf';
-
   /// File path: assets/images/svg/loader.svg
   SvgGenImage get loader => const SvgGenImage('assets/images/svg/loader.svg');
 
@@ -1498,7 +1494,7 @@ class $AssetsImagesSvgGen {
   SvgGenImage get x => const SvgGenImage('assets/images/svg/x.svg');
 
   /// List of all assets
-  List<dynamic> get values => [
+  List<SvgGenImage> get values => [
         angryEmoji,
         aubergine,
         baggage,
@@ -1658,7 +1654,6 @@ class $AssetsImagesSvgGen {
         layoutSidebar,
         lifebuoy,
         like,
-        lmsLinkedinPagePostingBestPracticesOnePager,
         loader,
         location,
         locationSearching,

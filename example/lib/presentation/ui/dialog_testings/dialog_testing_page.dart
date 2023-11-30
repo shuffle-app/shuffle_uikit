@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -90,28 +92,28 @@ class DialogTestingPage extends StatelessWidget {
                         subtitle: 'you get exactly what you need',
                         dismissText: 'OKAY, COOL!',
                         onDismiss: () => Navigator.pop(_),
-                        hintTiles: [
+                        hintTiles: const [
                           UiKitIconHintCard(
                             icon: ImageWidget(
-                              svgAsset: GraphicsFoundation.instance.svg.map,
+                              iconData: ShuffleUiKitIcons.map,
                             ),
                             hint: 'your location',
                           ),
                           UiKitIconHintCard(
                             icon: ImageWidget(
-                              svgAsset: GraphicsFoundation.instance.svg.dart,
+                              iconData: ShuffleUiKitIcons.dart,
                             ),
                             hint: 'your interests',
                           ),
                           UiKitIconHintCard(
                             icon: ImageWidget(
-                              svgAsset: GraphicsFoundation.instance.svg.sunClouds,
+                              iconData: ShuffleUiKitIcons.sunclouds,
                             ),
                             hint: 'weather around',
                           ),
                           UiKitIconHintCard(
                             icon: ImageWidget(
-                              svgAsset: GraphicsFoundation.instance.svg.smileMood,
+                              iconData: ShuffleUiKitIcons.smilemood,
                             ),
                             hint: 'and other 14 scales',
                           ),
@@ -127,7 +129,7 @@ class DialogTestingPage extends StatelessWidget {
                     onPressed: () => showModalBottomSheet(
                       context: context,
                       builder: (context) => Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.white,
                         ),
                         child: Column(
@@ -162,7 +164,7 @@ class DialogTestingPage extends StatelessWidget {
                   text: 'show reset password pop up',
                   onPressed: () => showResetPasswordPopUp(context,
                       emailController: TextEditingController(),
-                      onSubmitted: (String value) => print(value),
+                      onSubmitted: (String value) => log('from show reset password pop up $value', name: 'DialogTestingPage'),
                       emailKey: GlobalKey<FormState>(),
                       validator: (value) {
                         if (value != null && value.length > 5 && value.contains('@')) {

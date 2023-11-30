@@ -9,9 +9,8 @@ class UiKitSearchableListBody<T extends UiKitSearchableListBodyItem> extends Sta
   late final TextEditingController searchController = TextEditingController()
     ..addListener(() {
       final text = searchController.text;
-      _itemsNotifier.value = text.length >= 3
-          ? items.where((element) => element.title.toLowerCase().contains(text.toLowerCase())).toList()
-          : items;
+      _itemsNotifier.value =
+          text.length >= 3 ? items.where((element) => element.title.toLowerCase().contains(text.toLowerCase())).toList() : items;
     });
 
   late final ValueNotifier<List<T>> _itemsNotifier = ValueNotifier(items);
@@ -42,7 +41,7 @@ class UiKitSearchableListBody<T extends UiKitSearchableListBodyItem> extends Sta
           controller: searchController,
           hintText: S.of(context).Search.toUpperCase(),
           icon: ImageWidget(
-            svgAsset: GraphicsFoundation.instance.svg.search,
+            iconData: ShuffleUiKitIcons.search,
             color: Colors.white.withOpacity(0.48),
           ),
         ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),

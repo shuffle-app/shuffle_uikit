@@ -7,7 +7,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class BasePlaceActionCard extends StatelessWidget {
   final String title;
   final String value;
-  final SvgGenImage? vectorIconAsset;
+  final IconData? iconAsset;
   final AssetGenImage? rasterIconAsset;
   final VoidCallback? action;
   final AutoSizeGroup? group;
@@ -16,7 +16,7 @@ class BasePlaceActionCard extends StatelessWidget {
     Key? key,
     required this.title,
     required this.value,
-    this.vectorIconAsset,
+    this.iconAsset,
     this.rasterIconAsset,
     required this.action,
     this.group,
@@ -24,8 +24,7 @@ class BasePlaceActionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle =
-        context.uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900);
+    final titleStyle = context.uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900);
     final valueStyle = context.uiKitTheme?.boldTextTheme.body;
 
     /// [matrixValues] взято из Figma
@@ -43,7 +42,7 @@ class BasePlaceActionCard extends StatelessWidget {
               transform: Matrix4.identity()..rotateZ(radians),
               child: ImageWidget(
                 rasterAsset: rasterIconAsset,
-                svgAsset: vectorIconAsset,
+                iconData: iconAsset,
                 height: 36.h,
                 fit: BoxFit.cover,
               ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class NavBarTile extends StatelessWidget {
-  final SvgGenImage icon;
+  final IconData icon;
   final bool selected;
 
   const NavBarTile({
@@ -20,8 +20,9 @@ class NavBarTile extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ImageWidget(
-          svgAsset: icon,
+          iconData: icon,
           color: color,
+          width: 24.w,
         ),
         SpacingFoundation.verticalSpace4,
         Icon(
