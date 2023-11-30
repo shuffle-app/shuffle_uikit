@@ -9,18 +9,21 @@ class UiKitBadgeColored extends StatelessWidget {
   final double borderWidth;
 
   const UiKitBadgeColored(
-      {super.key, this.title, required this.color, this.onPressed, this.icon,  this.borderWidth = 1,});
+      {super.key, this.title, required this.color, this.onPressed, this.icon, this.borderWidth = 1,});
+
+  const UiKitBadgeColored.withoutBorder(
+      {super.key, this.title, required this.color, this.onPressed, this.icon, this.borderWidth = 0,});
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
 
     return InkWell(
-        onTap: onPressed ,
+        onTap: onPressed,
         child: Container(
             padding: EdgeInsets.all(7.sp),
             decoration: BoxDecoration(
-              border: Border.all(width: borderWidth.sp, color: color),
+              border: borderWidth == 0 ? null : Border.all(width: borderWidth.sp, color: color),
               color: color.withOpacity(0.16),
               borderRadius: BorderRadius.circular(4.sp),
             ),
