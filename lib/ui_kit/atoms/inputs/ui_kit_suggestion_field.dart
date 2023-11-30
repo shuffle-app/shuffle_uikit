@@ -33,7 +33,6 @@ class UiKitSuggestionField extends StatelessWidget {
           fillColor: fillColor,
           borderRadius: borderRadius ?? BorderRadiusFoundation.max,
           onFieldSubmitted: (selection) {
-            log('we selected option $selection',name: 'UiKitSuggestionField');
             onSubmitted.call();
             onFieldSubmitted?.call(selection);
           },

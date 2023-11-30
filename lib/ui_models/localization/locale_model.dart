@@ -18,7 +18,7 @@ class LocaleModel {
       : name = switch (locale.languageCode) {
           'ru' => 'Русский',
           'en' => 'English',
-          'hi' => 'Hindu',
+          'hi' => 'Hindi',
           'ar' => 'عرب',
           String() => 'other',
         },
