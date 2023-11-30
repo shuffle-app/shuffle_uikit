@@ -6,7 +6,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
   final bool selected;
 
   final VoidCallback? onPressed;
-  final String icon;
+  final IconData icon;
 
   const UiKitTitledFilterChip({
     Key? key,
@@ -32,9 +32,9 @@ class UiKitTitledFilterChip extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               ImageWidget(
-                height: 16,
+                height: 16.h,
                 fit: BoxFit.fitHeight,
-                link: icon,
+                iconData: icon,
                 color: selected ? colorScheme?.primary : colorScheme?.inversePrimary,
               ),
               SpacingFoundation.horizontalSpace8,

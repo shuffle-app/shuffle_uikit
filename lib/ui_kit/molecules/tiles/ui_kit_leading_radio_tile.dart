@@ -55,10 +55,7 @@ class UiKitLeadingRadioTile extends StatelessWidget {
                     Wrap(
                       spacing: 8,
                       runSpacing: 8,
-                      children: tags
-                              ?.map<Widget>((e) => UiKitTagWidget(title: e.title, icon: e.iconPath))
-                              .toList() ??
-                          [],
+                      children: tags?.map<Widget>((e) => UiKitTagWidget(title: e.title, icon: e.icon)).toList() ?? [],
                     ),
                   ],
                 ),

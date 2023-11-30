@@ -61,53 +61,53 @@ class GradientBottomNavigationBar extends StatelessWidget {
 
 class GradientBottomNavigationBarItem extends TabType {
   static final home = GradientBottomNavigationBarItem._(
-    selectedIcon: GraphicsFoundation.instance.svg.homeFill,
-    unselectedIcon: GraphicsFoundation.instance.svg.homeOutline,
+    selectedIcon: ShuffleUiKitIcons.homeFill,
+    unselectedIcon: ShuffleUiKitIcons.homeOutline,
     index: 0,
   );
   static final spinner = GradientBottomNavigationBarItem._(
-    selectedIcon: GraphicsFoundation.instance.svg.spinnerFill,
-    unselectedIcon: GraphicsFoundation.instance.svg.spinnerOutline,
+    selectedIcon: ShuffleUiKitIcons.spinnerFill,
+    unselectedIcon: ShuffleUiKitIcons.spinnerOutline,
     index: 1,
   );
   static final docs = GradientBottomNavigationBarItem._(
-    selectedIcon: GraphicsFoundation.instance.svg.docsFill,
-    unselectedIcon: GraphicsFoundation.instance.svg.docsOutline,
+    selectedIcon: ShuffleUiKitIcons.docsfill,
+    unselectedIcon: ShuffleUiKitIcons.docsoutline,
     index: 1,
   );
   static final shuffle = GradientBottomNavigationBarItem._(
-    selectedIcon: GraphicsFoundation.instance.svg.shuffleFill,
-    unselectedIcon: GraphicsFoundation.instance.svg.shuffleOutline,
+    selectedIcon: ShuffleUiKitIcons.shuffleFill,
+    unselectedIcon: ShuffleUiKitIcons.shuffleOutline,
     index: 2,
   );
   static final analytics = GradientBottomNavigationBarItem._(
-    selectedIcon: GraphicsFoundation.instance.svg.analyticsFill,
-    unselectedIcon: GraphicsFoundation.instance.svg.analyticsOutline,
+    selectedIcon: ShuffleUiKitIcons.analyticsfill,
+    unselectedIcon: ShuffleUiKitIcons.analyticsoutline,
     index: 2,
   );
   static final search = GradientBottomNavigationBarItem._(
-    selectedIcon: GraphicsFoundation.instance.svg.searchFill,
-    unselectedIcon: GraphicsFoundation.instance.svg.searchOutline,
+    selectedIcon: ShuffleUiKitIcons.searchFill,
+    unselectedIcon: ShuffleUiKitIcons.searchOutline,
     index: 3,
   );
   static final connection = GradientBottomNavigationBarItem._(
-    selectedIcon: GraphicsFoundation.instance.svg.connectionFill,
-    unselectedIcon: GraphicsFoundation.instance.svg.connectionOutline,
+    selectedIcon: ShuffleUiKitIcons.connectionfill,
+    unselectedIcon: ShuffleUiKitIcons.connectionoutline,
     index: 3,
   );
   static final profile = GradientBottomNavigationBarItem._(
-    selectedIcon: GraphicsFoundation.instance.svg.profileFill,
-    unselectedIcon: GraphicsFoundation.instance.svg.profileOutline,
+    selectedIcon: ShuffleUiKitIcons.profileFill,
+    unselectedIcon: ShuffleUiKitIcons.profileOutline,
     index: 4,
   );
   static final settings = GradientBottomNavigationBarItem._(
-    selectedIcon: GraphicsFoundation.instance.svg.settingsFill,
-    unselectedIcon: GraphicsFoundation.instance.svg.settingsOutline,
+    selectedIcon: ShuffleUiKitIcons.settingsfill,
+    unselectedIcon: ShuffleUiKitIcons.settingsoutline,
     index: 4,
   );
 
-  final SvgGenImage selectedIcon;
-  final SvgGenImage unselectedIcon;
+  final IconData selectedIcon;
+  final IconData unselectedIcon;
 
   GradientBottomNavigationBarItem._({
     required this.selectedIcon,
@@ -119,8 +119,7 @@ class GradientBottomNavigationBarItem extends TabType {
 class GradientBottomNavigationBarController {
   final int tabItemsCount;
 
-  final BehaviorSubject<GradientBottomNavigationBarItem> _changeController =
-      BehaviorSubject<GradientBottomNavigationBarItem>();
+  final BehaviorSubject<GradientBottomNavigationBarItem> _changeController = BehaviorSubject<GradientBottomNavigationBarItem>();
   final BehaviorSubject<GradientBottomNavigationBarVisibility> _visibilityController =
       BehaviorSubject<GradientBottomNavigationBarVisibility>.seeded(GradientBottomNavigationBarVisibility.visible);
 

@@ -45,7 +45,8 @@ class UiKitDecoratedActionCard extends StatelessWidget {
               ),
               ...decorationIcons?.map<Widget>((e) {
                     final relativeTop = e.position.top == null ? null : (e.position.top! / designHeight) * calculatedHeight;
-                    final relativeBottom = e.position.bottom == null ? null : (e.position.bottom! / designHeight) * calculatedHeight;
+                    final relativeBottom =
+                        e.position.bottom == null ? null : (e.position.bottom! / designHeight) * calculatedHeight;
                     final relativeLeft = e.position.left == null ? null : (e.position.left! / designWidth) * size.maxWidth;
                     final relativeRight = e.position.right == null ? null : (e.position.right! / designWidth) * size.maxWidth;
                     final relativeIconHeight = e.iconSize == null ? null : (e.iconSize! / designHeight) * calculatedHeight;
@@ -58,6 +59,7 @@ class UiKitDecoratedActionCard extends StatelessWidget {
                       child: Transform.rotate(
                         angle: e.rotationAngle * (pi / 180),
                         child: ImageWidget(
+                          iconData: e.icon,
                           link: e.iconLink,
                           width: relativeIconHeight,
                           fit: BoxFit.cover,

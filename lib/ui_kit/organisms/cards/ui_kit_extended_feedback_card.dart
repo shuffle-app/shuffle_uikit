@@ -46,16 +46,16 @@ class UiKitExtendedFeedbackCard extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: onEdit,
-                    child: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.pencil,
+                    child: const ImageWidget(
+                      iconData: ShuffleUiKitIcons.pencil,
                       color: ColorsFoundation.darkNeutral900,
                     ),
                   ),
                   SpacingFoundation.horizontalSpace12,
                   GestureDetector(
                     onTap: onDelete,
-                    child: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.trash,
+                    child: const ImageWidget(
+                      iconData: ShuffleUiKitIcons.trash,
                       color: ColorsFoundation.darkNeutral900,
                     ),
                   ),
@@ -72,8 +72,8 @@ class UiKitExtendedFeedbackCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 const Spacer(),
-                ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.thumbUp,
+                const ImageWidget(
+                  iconData: ShuffleUiKitIcons.thumbup,
                   color: ColorsFoundation.darkNeutral900,
                 ),
                 SpacingFoundation.horizontalSpace8,

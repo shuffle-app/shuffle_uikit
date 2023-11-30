@@ -20,7 +20,7 @@ class InfluencerProfile extends StatelessWidget {
                   nickname: '@marywill',
                   description: 'Just walking here and there trying to find something unique and interesting to show you!',
                   avatarUrl: 'assets/images/png/profile_avatar.png',
-                  interests: ['Restaurants', 'Hookah', 'Roller Coaster', 'Swimmings'],
+                  interests: const ['Restaurants', 'Hookah', 'Roller Coaster', 'Swimmings'],
                   profileType: ProfileCardType.personal,
                   followers: 2650,
                   onFollow: () {},
@@ -64,12 +64,12 @@ class InfluencerProfile extends StatelessWidget {
                     'It’s certainly hidden away, found around a corner past a couple of closed-down outlets and facing the back of a health centre in Cluster F, crammed into one of the tiniest spaces in the teeming JLT neighbourhood.',
                 tags: [
                   UiKitTag(
-                    iconPath: 'assets/images/svg/cocktail.svg',
+                    icon: ShuffleUiKitIcons.cocktail,
                     title: 'Club',
                     unique: false,
                   ),
                   UiKitTag(
-                    iconPath: 'assets/images/svg/cocktail.svg',
+                    icon: ShuffleUiKitIcons.cocktail,
                     title: 'Restaurant',
                     unique: false,
                   ),

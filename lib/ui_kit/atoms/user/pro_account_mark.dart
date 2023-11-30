@@ -5,6 +5,6 @@ class ProAccountMark extends BaseAccountMark {
   ProAccountMark({Key? key})
       : super(
           key: key,
-          svgAsset: Assets.images.svg.proAccountMark,
+          iconLink: GraphicsFoundation.instance.svg.proAccountMark.path,
         );
 }

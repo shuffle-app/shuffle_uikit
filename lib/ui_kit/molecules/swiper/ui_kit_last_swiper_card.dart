@@ -41,8 +41,8 @@ class UiKitLastSwiperCard extends BaseUiKitSwiperCard {
             textAlign: TextAlign.center,
           ),
           SpacingFoundation.verticalSpace4,
-          ImageWidget(
-            svgAsset: GraphicsFoundation.instance.svg.checkCircle,
+          const ImageWidget(
+            iconData: ShuffleUiKitIcons.checkCircle,
           ),
           SpacingFoundation.verticalSpace4,
           Text(

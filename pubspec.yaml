@@ -86,6 +86,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_gen_runner: ^5.3.1
   build_runner: ^2.3.3
+  icon_font_generator: ^4.0.0
 #  dart_code_metrics: ^5.7.3
 flutter:
   assets:
@@ -106,6 +107,9 @@ flutter:
           weight: 500
         - asset: assets/fonts/Unbounded-SemiBold.ttf
           weight: 600
+    - family: Shuffle Icons
+      fonts:
+        - asset: assets/fonts/shuffle_ui_kit_icons.otf
 
 flutter_gen:
   output: lib/tokens
@@ -127,3 +131,23 @@ flutter_intl:
   enabled: true
   arb_dir: lib/localization/arb
   output_dir: lib/localization
+
+# icon_font_generator
+
+# dart run icon_font_generator:generator assets/images/svg/ assets/fonts/shuffle_ui_kit_icons.otf
+
+icon_font:
+  input_svg_dir: "assets/images/svg/"
+  output_font_file: "assets/fonts/shuffle_ui_kit_icons.otf"
+
+  output_class_file: "lib/tokens/shuffle_ui_kit_icons.dart"
+  class_name: "ShuffleUiKitIcons"
+  package: shuffle_uikit
+  format: true
+
+  font_name: "Shuffle Icons"
+  normalize: true
+  ignore_shapes: true
+
+  recursive: true
+  verbose: false

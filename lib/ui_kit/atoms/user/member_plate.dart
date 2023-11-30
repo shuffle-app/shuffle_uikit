@@ -33,12 +33,13 @@ class MemberPlate extends StatelessWidget {
           ),
           // SpacingFoundation.horizontalSpace4,
           Transform.scale(
-              scale: 1.5,
-              child: ImageWidget(
-                svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
-                // fit: BoxFit.fitHeight,
-                // height: height,
-              )),
+            scale: 1.5,
+            child: const ImageWidget(
+              iconData: ShuffleUiKitIcons.memeberGradientStar,
+              // fit: BoxFit.fitHeight,
+              // height: height,
+            ),
+          ),
           // SpacingFoundation.horizontalSpace4,
           Text(
             S.of(context).Members.toLowerCase(),

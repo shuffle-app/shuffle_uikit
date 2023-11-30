@@ -53,19 +53,19 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
                 Expanded(
                   child: PointerInterceptor(
                       child: ListView.builder(
-                        padding: EdgeInsets.zero,
-                        itemBuilder: (context, index) {
-                          final suggestion = locationSuggestions.elementAt(index);
+                    padding: EdgeInsets.zero,
+                    itemBuilder: (context, index) {
+                      final suggestion = locationSuggestions.elementAt(index);
 
-                          return UiKitLocationSearchTile(
-                            isLast: (index + 1) == locationSuggestions.length,
-                            title: suggestion.title,
-                            subtitle: suggestion.subtitle,
-                            onTap: () => widget.onSuggestionChosen?.call(suggestion),
-                          );
-                        },
-                        itemCount: locationSuggestions.length,
-                      )),
+                      return UiKitLocationSearchTile(
+                        isLast: (index + 1) == locationSuggestions.length,
+                        title: suggestion.title,
+                        subtitle: suggestion.subtitle,
+                        onTap: () => widget.onSuggestionChosen?.call(suggestion),
+                      );
+                    },
+                    itemCount: locationSuggestions.length,
+                  )),
                 ),
               if (noSuggestions)
                 Expanded(
@@ -84,8 +84,8 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  ImageWidget(
-                    svgAsset: GraphicsFoundation.instance.svg.mapOutlined,
+                  const ImageWidget(
+                    iconData: ShuffleUiKitIcons.mapOutlined,
                     color: ColorsFoundation.darkNeutral900,
                   ),
                   SpacingFoundation.horizontalSpace8,
@@ -98,13 +98,14 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
                   SpacingFoundation.horizontalSpace8,
                   PointerInterceptor(
                     child: context.smallOutlinedButton(
-                        color: Colors.black,
-                        data: BaseUiKitButtonData(
-                          icon: ImageWidget(
-                            svgAsset: GraphicsFoundation.instance.svg.chevronRight,
-                          ),
-                          onPressed: widget.onPickFromMap,
-                        )),
+                      color: Colors.black,
+                      data: BaseUiKitButtonData(
+                        icon: const ImageWidget(
+                          iconData: ShuffleUiKitIcons.chevronright,
+                        ),
+                        onPressed: widget.onPickFromMap,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -121,7 +122,7 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
 
 class LocationPickerSearchOverlayController {
   final StreamController<LocationPickerOverlayState> _overlayStateStreamController =
-  StreamController<LocationPickerOverlayState>();
+      StreamController<LocationPickerOverlayState>();
 
   LocationSuggestion? selectedSuggestion;
 

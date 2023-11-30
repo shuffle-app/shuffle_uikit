@@ -3,6 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMessageCardWithIcon extends StatelessWidget {
   final String message;
+  final IconData? icon;
   final String? iconLink;
   final Axis layoutDirection;
   final VoidCallback? onPressed;
@@ -11,6 +12,7 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
   const UiKitMessageCardWithIcon({
     Key? key,
     required this.message,
+    this.icon,
     this.iconLink,
     this.onPressed,
     required this.layoutDirection,
@@ -23,6 +25,7 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
       case Axis.horizontal:
         return HorizontalMessageCard(
           message: message,
+          iconData: icon,
           iconLink: iconLink,
           onPressed: onPressed,
         );
@@ -30,6 +33,7 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
         if (type == MessageCardType.wide) {
           return WideVerticalMessageCard(
             message: message,
+            iconData: icon,
             iconLink: iconLink,
             onPressed: onPressed,
           );
@@ -37,6 +41,7 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
 
         return VerticalMessageCard(
           message: message,
+          iconData: icon,
           iconLink: iconLink,
           onPressed: onPressed,
         );

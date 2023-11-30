@@ -15,6 +15,7 @@ class ImageWidget extends StatelessWidget {
   final String? link;
   final AssetGenImage? rasterAsset;
   final SvgGenImage? svgAsset;
+  final IconData? iconData;
   final BoxFit? fit;
   final double? width;
   final double? height;
@@ -37,6 +38,7 @@ class ImageWidget extends StatelessWidget {
     this.isVideo = false,
     this.rasterAsset,
     this.svgAsset,
+    this.iconData,
     this.color,
     this.cardColor,
     this.errorWidget,
@@ -53,7 +55,13 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (rasterAsset != null) {
+    if (iconData != null) {
+      return Icon(
+        iconData,
+        color: color,
+        size: height ?? width,
+      );
+    } else if (rasterAsset != null) {
       return rasterAsset!.image(
         color: color,
         package: mentionPackage ? 'shuffle_uikit' : null,

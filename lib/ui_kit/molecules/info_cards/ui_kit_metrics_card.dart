@@ -21,10 +21,10 @@ class UiKitMetricsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = context.uiKitTheme?.boldTextTheme.caption2Bold
-        .copyWith(color: active ? Colors.black : ColorsFoundation.darkNeutral900);
-    final valueStyle = context.uiKitTheme?.boldTextTheme.subHeadline
-        .copyWith(color: active ? Colors.black : ColorsFoundation.darkNeutral900);
+    final titleStyle =
+        context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(color: active ? Colors.black : ColorsFoundation.darkNeutral900);
+    final valueStyle =
+        context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(color: active ? Colors.black : ColorsFoundation.darkNeutral900);
 
     return Container(
       height: height,
@@ -70,8 +70,8 @@ class UiKitMetricsCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          ImageWidget(
-                            svgAsset: GraphicsFoundation.instance.svg.risingTrendIcon,
+                          const ImageWidget(
+                            iconData: ShuffleUiKitIcons.risingTrendIcon,
                           ),
                           Text(
                             unit,

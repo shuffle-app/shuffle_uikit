@@ -6,6 +6,8 @@ class MultipleTypeMenuBody<T> extends StatefulWidget {
   final List<UiKitMenuItem<T>> items;
   final ValueChanged<UiKitMenuItem<T>>? onSelected;
   final List<String?>? allTypes;
+  final bool useCustomTiles;
+  final Color? tilesColor;
 
   MultipleTypeMenuBody({
     super.key,
@@ -13,6 +15,8 @@ class MultipleTypeMenuBody<T> extends StatefulWidget {
     required this.items,
     this.onSelected,
     this.allTypes,
+    this.useCustomTiles = false,
+    this.tilesColor,
   }) : assert(allTypes?.isNotEmpty ?? true);
 
   @override
@@ -44,15 +48,23 @@ class _MultipleTypeMenuBodyState<T> extends State<MultipleTypeMenuBody<T>> {
           ),
         ),
         SpacingFoundation.verticalSpace16,
-        ...widget.items
-            .where((element) => element.type?.toLowerCase() == _selectedType?.toLowerCase())
-            .map<Widget>(
-              (e) => UiKitMenuItemTile(
+        ...widget.items.where((element) => element.type?.toLowerCase() == _selectedType?.toLowerCase()).map<Widget>(
+          (e) {
+            if (widget.useCustomTiles) {
+              return UiKitMenuItemTile.custom(
                 item: e,
                 onTap: () => widget.onSelected?.call(e),
-              ),
-            )
-            .toList(),
+                color: widget.tilesColor,
+              );
+            }
+
+            return UiKitMenuItemTile(
+              item: e,
+              onTap: () => widget.onSelected?.call(e),
+              color: widget.tilesColor,
+            );
+          },
+        ).toList(),
       ],
     ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16);
   }

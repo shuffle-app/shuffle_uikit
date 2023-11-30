@@ -36,8 +36,8 @@ class UiKitLocationSearchTile extends StatelessWidget {
                   shape: BoxShape.circle,
                   color: ColorsFoundation.darkNeutral500.withOpacity(0.32),
                 ),
-                child: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.landmark,
+                child: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.landmark,
                   color: ColorsFoundation.darkNeutral600,
                 ).paddingAll(EdgeInsetsFoundation.all4),
               ),

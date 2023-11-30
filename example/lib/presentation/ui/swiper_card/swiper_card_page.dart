@@ -51,31 +51,31 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
                     subtitle: 'Unique place for unique people',
                     imageLink: Assets.images.png.mockSwiperCard.path,
                     tags: [
-                      UiKitTagWidget(
+                      const UiKitTagWidget(
                         title: 'Club',
-                        icon: Assets.images.svg.cocktail.path,
+                        icon: ShuffleUiKitIcons.cocktail,
                       ),
                       UiKitTagWidget(
                         title: 'Club',
-                        icon: Assets.images.svg.cocktail.path,
+                        icon: ShuffleUiKitIcons.cocktail,
                         customSpace: SpacingFoundation.horizontalSpace8,
                         showSpacing: true,
                       ),
                       UiKitTagWidget(
                         title: 'Club',
-                        icon: Assets.images.svg.cocktail.path,
+                        icon: ShuffleUiKitIcons.cocktail,
                         customSpace: SpacingFoundation.horizontalSpace8,
                         showSpacing: true,
                       ),
                       UiKitTagWidget(
                         title: 'Club',
-                        icon: Assets.images.svg.cocktail.path,
+                        icon: ShuffleUiKitIcons.cocktail,
                         customSpace: SpacingFoundation.horizontalSpace8,
                         showSpacing: true,
                       ),
                       UiKitTagWidget(
                         title: 'Club',
-                        icon: Assets.images.svg.cocktail.path,
+                        icon: ShuffleUiKitIcons.cocktail,
                         customSpace: SpacingFoundation.horizontalSpace8,
                         showSpacing: true,
                       ),
@@ -96,7 +96,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
                   blurred: true,
                   data: BaseUiKitButtonData(
                     icon: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.heartBrokenFill,
+                      iconData: ShuffleUiKitIcons.heartbrokenfill,
                       color: context.uiKitTheme?.colorScheme.inversePrimary,
                     ),
                     onPressed: () {
@@ -109,7 +109,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
                   blurred: true,
                   data: BaseUiKitButtonData(
                     icon: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.starOutline,
+                      iconData: ShuffleUiKitIcons.staroutline,
                       color: context.uiKitTheme?.colorScheme.inversePrimary,
                     ),
                     onPressed: () {},
@@ -120,7 +120,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
                   blurred: true,
                   data: BaseUiKitButtonData(
                     icon: ImageWidget(
-                      svgAsset: GraphicsFoundation.instance.svg.heartFill,
+                      iconData: ShuffleUiKitIcons.heartfill,
                       color: context.uiKitTheme?.colorScheme.inversePrimary,
                     ),
                     onPressed: () {
