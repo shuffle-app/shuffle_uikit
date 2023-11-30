@@ -35,7 +35,7 @@ class UiKitMenuItemTile extends StatelessWidget {
     final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
-      color: color ?? colorScheme?.primary,
+      color: color ?? Colors.transparent,
       child: InkWell(
         onTap: () {
           onTap?.call();

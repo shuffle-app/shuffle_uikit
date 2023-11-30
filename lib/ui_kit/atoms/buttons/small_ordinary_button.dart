@@ -37,6 +37,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
                     ? text.toUpperCase()
                     : text,
             maxLines: 1,
+      group: group,
             style: textStyle?.copyWith(
                 color: (color ?? Colors.white) == Colors.white ? (enabled ? Colors.black : Colors.grey) : Colors.white),
             textAlign: TextAlign.center,
