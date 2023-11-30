@@ -25,8 +25,8 @@ class UiKitCompactPhotoErrorWidget extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace4,
-          const ImageWidget(
-            iconData: ShuffleUiKitIcons.noPhoto,
+          ImageWidget(
+            svgAsset: GraphicsFoundation.instance.svg.noPhoto,
           ),
         ],
       ),

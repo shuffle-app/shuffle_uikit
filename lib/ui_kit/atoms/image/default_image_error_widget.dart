@@ -16,8 +16,8 @@ class DefaultImageErrorWidget extends StatelessWidget {
           shape: BoxShape.circle,
           color: ColorsFoundation.darkNeutral400,
         ),
-        child: const ImageWidget(
-          iconData: ShuffleUiKitIcons.exclamation,
+        child: ImageWidget(
+          svgAsset: GraphicsFoundation.instance.svg.exclamation,
           color: ColorsFoundation.darkNeutral900,
         ).paddingAll(EdgeInsetsFoundation.all8),
       ).paddingAll(EdgeInsetsFoundation.all8),

@@ -20,8 +20,8 @@ class UiKitBigPhotoErrorWidget extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace4,
-          const ImageWidget(
-            iconData: ShuffleUiKitIcons.noPhoto,
+          ImageWidget(
+            svgAsset: GraphicsFoundation.instance.svg.noPhoto,
           ),
           SpacingFoundation.verticalSpace4,
           Text(
