@@ -55,12 +55,12 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
       );
 
   TextStyle get labelLarge => TextStyle(
-    fontFamily: 'Unbounded',
-    fontSize: 16.w,
-    fontWeight: FontWeight.w200,
-    color: foregroundColor,
-    package: 'shuffle_uikit',
-  );
+        fontFamily: 'Unbounded',
+        fontSize: 16.w,
+        fontWeight: FontWeight.w200,
+        color: foregroundColor,
+        package: 'shuffle_uikit',
+      );
 
   TextStyle get title1 => TextStyle(
         fontFamily: 'Unbounded',
@@ -97,6 +97,14 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
 
 class UiKitBoldTextTheme extends UiKitTextTheme {
   final Color foregroundColor;
+
+  TextStyle get caption3Medium => TextStyle(
+        fontFamily: 'Unbounded',
+        fontSize: 10.w,
+        fontWeight: FontWeight.w500,
+        color: foregroundColor,
+        package: 'shuffle_uikit',
+      );
 
   TextStyle get labelLarge => TextStyle(
         fontFamily: 'Unbounded',
