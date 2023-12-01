@@ -98,7 +98,7 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                 context.smallButton(
                   data: BaseUiKitButtonData(
                     onPressed: onMessage,
-                    text: 'Message',
+                    text: S.of(context).Message,
                     fit: ButtonFit.fitWidth,
                   ),
                 ),

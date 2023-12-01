@@ -212,6 +212,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage(
             "Lovely-touch amazing\ninteraction"),
         "Members": MessageLookupByLibrary.simpleMessage(""),
+        "Message": MessageLookupByLibrary.simpleMessage("Message"),
         "Month": MessageLookupByLibrary.simpleMessage("Month"),
         "MyCard": MessageLookupByLibrary.simpleMessage("My card"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("My events"),
