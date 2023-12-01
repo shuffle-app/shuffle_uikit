@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMessageCard extends StatelessWidget {
@@ -29,7 +30,7 @@ class UiKitMessageCard extends StatelessWidget {
       case UserTileType.influencer:
         return GradientFoundation.gradientBorder;
       case UserTileType.premium:
-        return Border.all(width: 2, color: currentPremiumColor);
+        return const GradientBoxBorder(gradient: GradientFoundation.greyGradient, width: 2);
       default:
         return null;
     }
@@ -60,7 +61,6 @@ class UiKitMessageCard extends StatelessWidget {
                       userType,
                       context.uiKitTheme!.colorScheme.inversePrimary,
                     ),
-                    size: 40.w,
                   ),
                   SpacingFoundation.horizontalSpace12,
                   Column(
