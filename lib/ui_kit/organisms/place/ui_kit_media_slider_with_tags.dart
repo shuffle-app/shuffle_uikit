@@ -10,6 +10,9 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
   final List<UiKitTag> uniqueTags;
   final double horizontalMargin;
   final ScrollController scrollController;
+  final bool showBranches;
+  final List<HorizontalCaptionedImageData>? branches;
+  final VoidCallback? onBranchTap;
 
   UiKitMediaSliderWithTags({
     Key? key,
@@ -20,6 +23,9 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
     required this.uniqueTags,
     required this.description,
     this.horizontalMargin = 0,
+    this.showBranches = false,
+    this.branches,
+    this.onBranchTap,
   })  : scrollController = scrollController ?? ScrollController(),
         super(key: key);
 
@@ -74,9 +80,50 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           uniqueTags: uniqueTags,
         ).paddingSymmetric(horizontal: horizontalMargin),
         SpacingFoundation.verticalSpace14,
+        if (showBranches && branches != null) ...[
+          UiKitCardWrapper(
+            borderRadius: BorderRadius.zero,
+            color: context.uiKitTheme?.colorScheme.surface1,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  'Branches',
+                  style: context.uiKitTheme?.boldTextTheme.caption2Medium,
+                ),
+                SpacingFoundation.verticalSpace8,
+                ConstrainedBox(
+                  constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
+                  child: ListView.separated(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      final branch = branches!.elementAt(index);
+
+                      return UiKitHorizontalCaptionedImage(
+                        title: branch.caption,
+                        imageLink: branch.imageUrl,
+                        borderRadius: BorderRadiusFoundation.all16,
+                        onTap: onBranchTap,
+                      );
+                    },
+                    separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                    itemCount: branches!.length,
+                  ),
+                ),
+              ],
+            ).paddingOnly(
+              top: EdgeInsetsFoundation.vertical12,
+              bottom: EdgeInsetsFoundation.vertical12,
+              left: EdgeInsetsFoundation.horizontal16,
+            ),
+          ),
+          SpacingFoundation.verticalSpace14,
+        ],
         RepaintBoundary(
-            child: DescriptionWidget(description: description)
-                .paddingOnly(left: horizontalMargin, right: horizontalMargin)),
+            child: DescriptionWidget(description: description).paddingOnly(left: horizontalMargin, right: horizontalMargin)),
       ],
     );
   }
