@@ -32,7 +32,6 @@ class UiKitTitledFilterChip extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               ImageWidget(
-                height: 16.h,
                 fit: BoxFit.fitHeight,
                 iconData: icon,
                 color: selected ? colorScheme?.primary : colorScheme?.inversePrimary,
