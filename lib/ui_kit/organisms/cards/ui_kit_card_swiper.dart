@@ -28,55 +28,71 @@ class UiKitCardSwiper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RepaintBoundary(child: Stack(
-      fit: StackFit.passthrough,
-      children: [
-        CardSwiper(
-          size: size,
-          controller: controller,
-          cardsCount: cards.length,
-          onSwipe: onSwipe,
-          onEnd: onEnd,
-          maxAngle: 180,
-          isLoop: false,
-          numberOfCardsDisplayed: cards.length < 2 ? cards.length : 2,
-          backCardOffset: Offset.zero,
-          padding: EdgeInsets.zero,
-          scale: 0.5,
-          cardBuilder: (context, index, horizontalOffsetPercentage, verticalOffsetPercentage) {
-            final card = cards.elementAt(index);
-            if (card is UiKitSwiperAdCard) return Center(child: card);
+    return RepaintBoundary(
+      child: Stack(
+        fit: StackFit.passthrough,
+        children: [
+          CardSwiper(
+            size: size,
+            controller: controller,
+            cardsCount: cards.length,
+            onSwipe: onSwipe,
+            onEnd: onEnd,
+            maxAngle: 180,
+            isLoop: false,
+            numberOfCardsDisplayed: cards.length < 2 ? cards.length : 2,
+            backCardOffset: Offset.zero,
+            padding: EdgeInsets.zero,
+            scale: 0.5,
+            cardBuilder: (context, index, horizontalOffsetPercentage, verticalOffsetPercentage) {
+              final card = cards.elementAt(index);
+              if (card is UiKitSwiperAdCard) return Center(child: card);
 
-            return card;
-          },
-        ),
-        Center(
-          child: AnimatedBuilder(
-            builder: (context, child) => UiKitHideWrapper(
-              shouldHide: dislikeController.value == dislikeController.lowerBound,
-              child: child ?? const SizedBox(),
-            ),
-            animation: dislikeController,
-            child: LottieAnimation(
-              controller: dislikeController,
-              lottiePath: GraphicsFoundation.instance.animations.lottie.brokenHeart.path,
+              return card;
+            },
+          ),
+          Center(
+            child: AnimatedBuilder(
+              builder: (context, child) {
+                final shouldHide = dislikeController.value == dislikeController.lowerBound ||
+                    dislikeController.value == dislikeController.upperBound;
+
+                if (shouldHide) return SpacingFoundation.none;
+
+                return UiKitHideWrapper(
+                  shouldHide: shouldHide,
+                  child: child ?? const SizedBox(),
+                );
+              },
+              animation: dislikeController,
+              child: LottieAnimation(
+                controller: dislikeController,
+                lottiePath: GraphicsFoundation.instance.animations.lottie.brokenHeart.path,
+              ),
             ),
           ),
-        ),
-        Center(
-          child: AnimatedBuilder(
-            builder: (context, child) => UiKitHideWrapper(
-              shouldHide: likeController.value == likeController.lowerBound,
-              child: child ?? const SizedBox(),
+          Center(
+            child: AnimatedBuilder(
+              builder: (context, child) {
+                final shouldHide =
+                    likeController.value == likeController.lowerBound || likeController.value == likeController.upperBound;
+
+                if (shouldHide) return SpacingFoundation.none;
+
+                return UiKitHideWrapper(
+                  shouldHide: shouldHide,
+                  child: child ?? const SizedBox(),
+                );
+              },
+              animation: likeController,
+              child: LottieAnimation(
+                lottiePath: GraphicsFoundation.instance.animations.lottie.wholeHeart.path,
+                controller: likeController,
+              ),
             ),
-            animation: likeController,
-            child: LottieAnimation(
-              lottiePath: GraphicsFoundation.instance.animations.lottie.wholeHeart.path,
-              controller: likeController,
-            ),
-          ),
-        )
-      ],
-    ));
+          )
+        ],
+      ),
+    );
   }
 }

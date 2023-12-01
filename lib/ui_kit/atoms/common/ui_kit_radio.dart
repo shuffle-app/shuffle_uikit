@@ -41,13 +41,11 @@ class _UiKitRadioState extends State<UiKitRadio> {
       child: _selected
           ? ImageWidget(
               key: onKey,
-              iconData: ShuffleUiKitIcons.filledRadio,
-              color: Colors.white,
+              svgAsset: GraphicsFoundation.instance.svg.filledRadio,
             )
           : ImageWidget(
               key: offKey,
-              iconData: ShuffleUiKitIcons.emptyRadio,
-              color: Colors.white,
+              svgAsset: GraphicsFoundation.instance.svg.emptyRadio,
             ),
     );
 

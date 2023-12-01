@@ -28,14 +28,6 @@ class UiKitHorizontalScroll3D extends StatelessWidget {
           width: screenWidth * 0.85,
           height: screenWidth * 0.5,
           radius: 10,
-          shadows: [
-            BoxShadow(
-              color: context.uiKitTheme!.colorScheme.primary.withOpacity(0.5),
-              spreadRadius: screenWidth,
-              blurRadius: screenWidth,
-              offset: const Offset(0, 2),
-            ),
-          ],
         ),
         width: screenWidth,
         height: screenWidth * 0.5,

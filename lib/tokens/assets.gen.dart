@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
+import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
@@ -485,8 +485,7 @@ class $AssetsImagesPngGen {
   AssetGenImage get searchBusinessClubs => const AssetGenImage('assets/images/png/search_business_clubs.png');
 
   /// File path: assets/images/png/search_business_conferences.png
-  AssetGenImage get searchBusinessConferences =>
-      const AssetGenImage('assets/images/png/search_business_conferences.png');
+  AssetGenImage get searchBusinessConferences => const AssetGenImage('assets/images/png/search_business_conferences.png');
 
   /// File path: assets/images/png/search_business_exhibition.png
   AssetGenImage get searchBusinessExhibition => const AssetGenImage('assets/images/png/search_business_exhibition.png');
@@ -786,8 +785,7 @@ class $AssetsImagesSvgGen {
   SvgGenImage get givingLikeEmoji => const SvgGenImage('assets/images/svg/Giving-like-emoji.svg');
 
   /// File path: assets/images/svg/Grinning-face-with-sweat-emoji.svg
-  SvgGenImage get grinningFaceWithSweatEmoji =>
-      const SvgGenImage('assets/images/svg/Grinning-face-with-sweat-emoji.svg');
+  SvgGenImage get grinningFaceWithSweatEmoji => const SvgGenImage('assets/images/svg/Grinning-face-with-sweat-emoji.svg');
 
   /// File path: assets/images/svg/Hat.svg
   SvgGenImage get hat => const SvgGenImage('assets/images/svg/Hat.svg');
@@ -906,8 +904,8 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/alert-circle.svg
   SvgGenImage get alertCircle => const SvgGenImage('assets/images/svg/alert-circle.svg');
 
-  /// File path: assets/images/svg/analytics-fill.svg
-  SvgGenImage get analyticsFill => const SvgGenImage('assets/images/svg/analytics-fill.svg');
+  /// File path: assets/images/svg/analytics-fill.svg.svg
+  SvgGenImage get analyticsFill => const SvgGenImage('assets/images/svg/analytics-fill.svg.svg');
 
   /// File path: assets/images/svg/analytics-outline.svg
   SvgGenImage get analyticsOutline => const SvgGenImage('assets/images/svg/analytics-outline.svg');
@@ -1366,8 +1364,7 @@ class $AssetsImagesSvgGen {
   SvgGenImage get settings => const SvgGenImage('assets/images/svg/settings.svg');
 
   /// File path: assets/images/svg/shade_content_type_loader_tile.svg
-  SvgGenImage get shadeContentTypeLoaderTile =>
-      const SvgGenImage('assets/images/svg/shade_content_type_loader_tile.svg');
+  SvgGenImage get shadeContentTypeLoaderTile => const SvgGenImage('assets/images/svg/shade_content_type_loader_tile.svg');
 
   /// File path: assets/images/svg/shuffle_fill.svg
   SvgGenImage get shuffleFill => const SvgGenImage('assets/images/svg/shuffle_fill.svg');
@@ -1487,8 +1484,7 @@ class $AssetsImagesSvgGen {
   SvgGenImage get whiteStar => const SvgGenImage('assets/images/svg/white_star.svg');
 
   /// File path: assets/images/svg/white_star_transparent_center.svg
-  SvgGenImage get whiteStarTransparentCenter =>
-      const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
+  SvgGenImage get whiteStarTransparentCenter => const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
 
   /// File path: assets/images/svg/x.svg
   SvgGenImage get x => const SvgGenImage('assets/images/svg/x.svg');

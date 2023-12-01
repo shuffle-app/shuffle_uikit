@@ -60,6 +60,8 @@ class ImageWidget extends StatelessWidget {
         iconData,
         color: color,
         size: height ?? width,
+        opticalSize: height ?? width,
+        grade: 25,
       );
     } else if (rasterAsset != null) {
       return rasterAsset!.image(

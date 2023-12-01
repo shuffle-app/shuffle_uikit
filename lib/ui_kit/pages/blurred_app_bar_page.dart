@@ -59,8 +59,7 @@ class BlurredAppBarPage extends StatelessWidget {
           children: [
             SliverLayoutBuilder(
               builder: (context, sliverConstraints) {
-                double toolbarHeight =
-                    (customToolbarBaseHeight ?? context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
+                double toolbarHeight = (customToolbarBaseHeight ?? context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
                 double expandedHeight = appBarBody == null ? toolbarHeight : customToolbarHeight ?? 190.0;
 
                 final hideAppBarBody =
