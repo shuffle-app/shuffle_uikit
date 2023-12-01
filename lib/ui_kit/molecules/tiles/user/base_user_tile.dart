@@ -4,7 +4,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
   final String? name;
   final String? avatarUrl;
-  final String? username;
+  final Future<String?>? username;
   final Widget? trailing;
   final Border? avatarBorder;
   final VoidCallback? onTap;
@@ -67,10 +67,11 @@ abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
                         if (trailing != null) trailing!,
                       ],
                     ),
+                    FutureBuilder(future: username, builder: (context, snapshot) =>
                     Text(
-                      username ?? '',
+                      snapshot.hasData ? snapshot.data ?? '' : '',
                       style: textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
-                    ),
+                    )),
                   ],
                 ),
               ),

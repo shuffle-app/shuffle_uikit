@@ -6,7 +6,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitBlurredListTile extends StatelessWidget {
   final String? title;
   final Widget? titleTrailing;
-  final String? subtitle;
+  final Future<String>? subtitle;
   final String? photoLink;
 
   const UiKitBlurredListTile({
@@ -44,31 +44,35 @@ class UiKitBlurredListTile extends StatelessWidget {
               ),
             SpacingFoundation.horizontalSpace12,
             Expanded(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          '$title',
-                          style: titleTextStyle?.copyWith(overflow: TextOverflow.ellipsis),
-                        ),
-                      ),
-                      if (titleTrailing != null) ...[
-                        SpacingFoundation.horizontalSpace8,
-                        titleTrailing!,
-                      ],
-                    ],
-                  ),
-                  Text(
-                    '$subtitle',
-                    style: subtitleTextStyle,
-                  ),
-                ],
-              ),
+              child: FutureBuilder(
+                  future: subtitle,
+                  builder: (context, snapshot) => Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  '$title',
+                                  maxLines: (snapshot.data ?? '').isNotEmpty ? 1 : 2,
+                                  style: titleTextStyle?.copyWith(overflow: TextOverflow.ellipsis),
+                                ),
+                              ),
+                              if (titleTrailing != null) ...[
+                                SpacingFoundation.horizontalSpace8,
+                                titleTrailing!,
+                              ],
+                            ],
+                          ),
+                          if ((snapshot.data ?? '').isNotEmpty)
+                            Text(
+                              snapshot.data ?? '',
+                              style: subtitleTextStyle?.copyWith(overflow: TextOverflow.ellipsis),
+                            )
+                        ],
+                      )),
             ),
           ],
         ).paddingAll(EdgeInsetsFoundation.all12),
