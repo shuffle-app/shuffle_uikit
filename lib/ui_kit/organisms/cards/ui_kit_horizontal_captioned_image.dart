@@ -20,7 +20,7 @@ class UiKitHorizontalCaptionedImage extends StatelessWidget {
     final imageWidth = 0.28125.sw;
     final imageHeight = imageWidth * 0.577;
     final maxWidth = 0.678125.sw;
-    final textTheme = context.uiKitTheme?.boldTextTheme;
+    final theme = context.uiKitTheme;
 
     return ConstrainedBox(
       constraints: BoxConstraints(
@@ -36,7 +36,7 @@ class UiKitHorizontalCaptionedImage extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadiusFoundation.all8,
               border: Border.all(
-                color: context.uiKitTheme?.colorScheme.darkNeutral500.withOpacity(0.32) ?? Colors.transparent,
+                color: theme?.colorScheme.darkNeutral500.withOpacity(0.32) ?? Colors.transparent,
               ),
             ),
             child: ClipRRect(
@@ -53,7 +53,7 @@ class UiKitHorizontalCaptionedImage extends StatelessWidget {
           Expanded(
             child: Text(
               title,
-              style: textTheme?.caption3Medium,
+              style: theme?.boldTextTheme.caption3Medium,
             ),
           ),
         ],

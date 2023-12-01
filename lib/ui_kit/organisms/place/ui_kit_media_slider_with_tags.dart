@@ -10,7 +10,6 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
   final List<UiKitTag> uniqueTags;
   final double horizontalMargin;
   final ScrollController scrollController;
-  final bool showBranches;
   final List<HorizontalCaptionedImageData>? branches;
   final VoidCallback? onBranchTap;
 
@@ -23,7 +22,6 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
     required this.uniqueTags,
     required this.description,
     this.horizontalMargin = 0,
-    this.showBranches = false,
     this.branches,
     this.onBranchTap,
   })  : scrollController = scrollController ?? ScrollController(),
@@ -80,7 +78,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           uniqueTags: uniqueTags,
         ).paddingSymmetric(horizontal: horizontalMargin),
         SpacingFoundation.verticalSpace14,
-        if (showBranches && branches != null) ...[
+        if (branches != null) ...[
           UiKitCardWrapper(
             borderRadius: BorderRadius.zero,
             color: context.uiKitTheme?.colorScheme.surface1,
