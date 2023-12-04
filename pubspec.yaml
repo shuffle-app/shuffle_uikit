@@ -146,8 +146,8 @@ icon_font:
   format: true
 
   font_name: "Shuffle Icons"
-  normalize: true
-  ignore_shapes: true
+  normalize: false
+  ignore_shapes: false
 
   recursive: true
   verbose: false
