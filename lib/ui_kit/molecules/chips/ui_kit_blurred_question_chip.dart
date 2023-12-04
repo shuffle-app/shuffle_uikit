@@ -17,14 +17,14 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
     );
 
     return Material(
-      color: Colors.black,
+      color: ColorsFoundation.darkNeutral900,
       borderRadius: BorderRadiusFoundation.all12,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
         onTap: onTap,
         child: Ink(
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40),
+            filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40, tileMode: TileMode.decal),
             child: DecoratedBox(
               decoration: BoxDecoration(
                 border: Border.all(
