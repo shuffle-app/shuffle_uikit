@@ -36,16 +36,13 @@ class UiKitGradientAttentionCard extends StatelessWidget {
             right: EdgeInsetsFoundation.all16,
           ),
           Positioned(
-            bottom: -width / 8,
-            left: -width * 0.28,
-            child: Transform.scale(
-              scale: 1.75,
-              child: ImageWidget(
-                width: width,
-                fit: BoxFit.fitWidth,
-                iconData: ShuffleUiKitIcons.tripleArrowBlack,
-              ),
-            ).paddingOnly(bottom: EdgeInsetsFoundation.vertical16),
+            bottom: 0,
+            left: 0,
+            child: ImageWidget(
+              width: width * 0.75,
+              fit: BoxFit.fitWidth,
+              iconData: ShuffleUiKitIcons.tripleArrowBlack,
+            ),
           ),
         ],
       ),
