@@ -7,13 +7,18 @@ class UiKitTagSelector extends StatelessWidget {
   final double maxHeight;
   final bool showTextField;
   final BorderRadius? borderRadius;
-
+  final bool isDarkBackground;
   final ValueChanged<String>? onNotFoundTagCallback;
   final ValueChanged<String>? onRemoveTagCallback;
   final void Function(String)? onTagSelected;
 
   late final TextEditingController controller = TextEditingController();
-  late final ValueNotifier<Set<String>> selectedListNotifier = ValueNotifier(tags.toSet());
+  late final FocusNode focusNode = FocusNode()..addListener(_focusListener);
+
+  // late final ValueNotifier<Set<String>> selectedListNotifier = ValueNotifier(tags.toSet());
+  // late final ValueNotifier<bool> hasFocusNotifier = ValueNotifier(false);
+  late final ValueNotifier<TagsSelectorUiModel> uiNotifier =
+      ValueNotifier(TagsSelectorUiModel(tags: tags.toSet(), hasFocus: false));
 
   UiKitTagSelector({
     Key? key,
@@ -24,34 +29,53 @@ class UiKitTagSelector extends StatelessWidget {
     this.onNotFoundTagCallback,
     this.onTagSelected,
     this.borderRadius,
-  }) : super(key: key);
+  })  : isDarkBackground = false,
+        super(key: key);
+
+  UiKitTagSelector.darkBackground({
+    Key? key,
+    required this.tags,
+    this.maxHeight = double.infinity,
+    this.showTextField = true,
+    this.onRemoveTagCallback,
+    this.onNotFoundTagCallback,
+    this.onTagSelected,
+    this.borderRadius,
+  })  : isDarkBackground = true,
+        super(key: key);
+
+  _focusListener() {
+    uiNotifier.value = uiNotifier.value.copyWith(hasFocus: focusNode.hasFocus);
+  }
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
 
-    return ValueListenableBuilder<Set<String>>(
-      valueListenable: selectedListNotifier,
-      builder: (context, selectedTags, child) => UiKitCardWrapper(
-        color: theme?.colorScheme.surface3,
+    return ValueListenableBuilder<TagsSelectorUiModel>(
+      valueListenable: uiNotifier,
+      builder: (context, uiModel, child) => UiKitCardWrapper(
+        color: isDarkBackground ? theme?.colorScheme.primary : theme?.colorScheme.surface3,
         borderRadius: borderRadius ?? BorderRadiusFoundation.all16,
-        border: const BorderSide(
-          width: 1,
-          color: Colors.white,
-        ),
+        border: uiModel.hasFocus
+            ? BorderSide(
+                width: 1,
+                color: theme?.colorScheme.inversePrimary ?? Colors.white,
+              )
+            : null,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            if (selectedTags.isNotEmpty)
+            if (uiModel.tags.isNotEmpty)
               ConstrainedBox(
                 constraints: BoxConstraints(maxHeight: maxHeight),
                 child: SingleChildScrollView(
                   child: Wrap(
                     spacing: SpacingFoundation.horizontalSpacing8,
                     runSpacing: SpacingFoundation.verticalSpacing8,
-                    children: selectedTags
+                    children: uiModel.tags
                         .map<Widget>(
                           (e) => UiKitCompactTextCard(
                             showRemoveButton: true,
@@ -72,6 +96,7 @@ class UiKitTagSelector extends StatelessWidget {
               ConstrainedBox(
                 constraints: BoxConstraints(maxHeight: kIsWeb ? 60 : 40.h, minHeight: kIsWeb ? 20 : 10.h),
                 child: TextField(
+                  focusNode: focusNode,
                   decoration: const InputDecoration.collapsed(hintText: ''),
                   scrollPadding: EdgeInsets.zero,
                   controller: controller,
@@ -95,4 +120,23 @@ class UiKitTagSelector extends StatelessWidget {
       ),
     );
   }
+}
+
+class TagsSelectorUiModel {
+  final Set<String> tags;
+  final bool hasFocus;
+
+  TagsSelectorUiModel({
+    required this.tags,
+    required this.hasFocus,
+  });
+
+  TagsSelectorUiModel copyWith({
+    Set<String>? tags,
+    bool? hasFocus,
+  }) =>
+      TagsSelectorUiModel(
+        tags: tags ?? this.tags,
+        hasFocus: hasFocus ?? this.hasFocus,
+      );
 }
