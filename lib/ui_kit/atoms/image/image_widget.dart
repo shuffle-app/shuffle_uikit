@@ -55,9 +55,10 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (iconData != null) {
+
+    if (iconData != null || (link!=null && !link!.contains('/'))) {
       return Icon(
-        iconData,
+        iconData ?? GraphicsFoundation.instance.iconFromString(link ?? ''),
         color: color,
         size: height ?? width,
         opticalSize: height ?? width,
@@ -76,7 +77,6 @@ class ImageWidget extends StatelessWidget {
       return svgAsset!.svg(
         package: mentionPackage ? 'shuffle_uikit' : null,
         colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
-        // color: color,
         fit: fit ?? BoxFit.none,
         height: height,
         width: width,
@@ -124,7 +124,6 @@ class ImageWidget extends StatelessWidget {
         fit: fit ?? BoxFit.none,
         width: width,
         colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
-        // color: color,
         height: height,
         package: mentionPackage ? 'shuffle_uikit' : null,
         placeholderBuilder: (context) => errorWidget ?? const DefaultImageErrorWidget(),

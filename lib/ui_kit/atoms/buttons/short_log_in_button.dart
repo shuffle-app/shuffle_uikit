@@ -4,12 +4,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class ShortLogInButton extends StatelessWidget {
   const ShortLogInButton({
     super.key,
-    required this.icon,
+     this.icon,
+    this.link,
     required this.title,
     required this.onTap,
-  });
+  }):assert(icon!= null||link!= null);
 
-  final IconData icon;
+  final IconData? icon;
+  final String? link;
   final String title;
   final VoidCallback onTap;
 
@@ -32,6 +34,7 @@ class ShortLogInButton extends StatelessWidget {
             children: [
               ImageWidget(
                 iconData: icon,
+                link: link,
                 height: 20.w,
                 width: 20.w,
                 fit: BoxFit.cover,
