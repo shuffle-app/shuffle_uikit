@@ -1453,7 +1453,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 data: BaseUiKitUserTileData(
                   onTap: () {},
                   name: 'Frankie Hansen',
-                  username: '@fr4nk1eh4',
+                  username: Future.value('@fr4nk1eh4'),
                   avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
                   type: UserTileType.ordinary,
                 ),
@@ -1463,7 +1463,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   data: BaseUiKitUserTileData(
                 onTap: () {},
                 name: 'Frankie Hansen',
-                username: '@fr4nk1eh4',
+                username: Future.value('@fr4nk1eh4'),
                 avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
                 type: UserTileType.premium,
               )),
@@ -1472,7 +1472,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 data: BaseUiKitUserTileData(
                   onTap: () {},
                   name: 'Frankie Hansen',
-                  username: '@fr4nk1eh4',
+                  username: Future.value('@fr4nk1eh4'),
                   avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
                   type: UserTileType.pro,
                 ),
@@ -1482,7 +1482,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 data: BaseUiKitUserTileData(
                   onTap: () {},
                   name: 'Frankie Hansen',
-                  username: '@fr4nk1eh4',
+                  username: Future.value('@fr4nk1eh4'),
                   avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
                   type: UserTileType.influencer,
                 ),
