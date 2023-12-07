@@ -52,16 +52,16 @@ class _ArrowsAnimationState extends State<ArrowsAnimation> with SingleTickerProv
           (index) {
             return Opacity(
               opacity: 1 - ((1 / widget.itemCount) * index - controller.value).abs(),
-              child: GradientableWidget(
-                gradient: GradientFoundation.badgeIcon,
-                child: SizedBox(
-                  width: 10.w,
-                  child: const ImageWidget(
-                    iconData: ShuffleUiKitIcons.chevronright,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+              child: Transform.scale(
+                  scale: 2,
+                  child: GradientableWidget(
+                    gradient: GradientFoundation.badgeIcon,
+                    child: ImageWidget(
+                      iconData: ShuffleUiKitIcons.chevronright,
+                      color: Colors.white,
+                      width: 10.w,
+                    ),
+                  )),
             );
           },
         ),

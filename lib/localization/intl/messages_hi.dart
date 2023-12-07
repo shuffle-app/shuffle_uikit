@@ -104,6 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
             "जारी रखकर आप स्वीकार करते हैं"),
         "Cancel": MessageLookupByLibrary.simpleMessage("रद्द करें"),
+        "Category": MessageLookupByLibrary.simpleMessage("Category"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("छवि बदलो"),
         "CheckIn": MessageLookupByLibrary.simpleMessage("चेक इन करें"),
         "ChooseOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),
@@ -304,6 +305,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Preferences": MessageLookupByLibrary.simpleMessage("पसंद"),
         "Premium": MessageLookupByLibrary.simpleMessage("अधिमूल्य"),
         "PremiumAccount": MessageLookupByLibrary.simpleMessage("प्रीमियम खाता"),
+        "Price": MessageLookupByLibrary.simpleMessage("Price"),
         "Privacy": MessageLookupByLibrary.simpleMessage("गोपनीयता"),
         "Pro": MessageLookupByLibrary.simpleMessage("प्रो"),
         "ProAccount": MessageLookupByLibrary.simpleMessage("प्रो खाता"),
