@@ -62,7 +62,7 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
                         SpacingFoundation.verticalSpace2,
                         FutureBuilder(future: data.username, builder: (context, snapshot) =>
                         Text(
-                          snapshot.hasData? ((snapshot.data as String?) ?? '') : '',
+                          snapshot.hasData? (snapshot.data ?? '') : '',
                           style: boldTextTheme?.body,
                         )),
                       ],
