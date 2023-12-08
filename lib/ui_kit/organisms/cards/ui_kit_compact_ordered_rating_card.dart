@@ -79,6 +79,8 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                               title ?? '',
                               style: textTheme?.caption1Bold,
                               textAlign: TextAlign.center,
+                              maxLines: 3,
+                              overflow: TextOverflow.ellipsis,
                             ),
                           ),
                         ),

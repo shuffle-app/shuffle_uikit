@@ -12,40 +12,36 @@ class MemberPlate extends StatelessWidget {
     final height = width * 0.1573;
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
-    return Container(
-      height: height,
-      width: width,
-      padding: EdgeInsets.symmetric(
-        horizontal: EdgeInsetsFoundation.horizontal12,
-        vertical: EdgeInsetsFoundation.vertical6,
-      ),
+    return DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.max,
         gradient: GradientFoundation.greyGradient,
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Text(
             'shuffle',
             style: textTheme?.caption1Bold.copyWith(color: Colors.black),
           ),
-          // SpacingFoundation.horizontalSpace4,
-          Transform.scale(
-            scale: 1.5,
-            child: const ImageWidget(
-              iconData: ShuffleUiKitIcons.memeberGradientStar,
-              // fit: BoxFit.fitHeight,
-              // height: height,
-            ),
-          ),
-          // SpacingFoundation.horizontalSpace4,
+          SpacingFoundation.horizontalSpace4,
+          const GradientableWidget(
+              gradient: GradientFoundation.badgeIcon,
+              child: ImageWidget(
+                iconData: ShuffleUiKitIcons.memeberGradientStar,
+                color: Colors.white,
+              )),
+          SpacingFoundation.horizontalSpace4,
           Text(
             S.of(context).Members.toLowerCase(),
             style: textTheme?.caption1Medium.copyWith(color: Colors.black),
           ),
         ],
+      ).paddingSymmetric(
+        horizontal: EdgeInsetsFoundation.horizontal16,
+        vertical: EdgeInsetsFoundation.vertical4,
       ),
     );
   }
