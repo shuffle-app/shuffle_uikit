@@ -106,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ByContinuingYouAcceptThe":
             MessageLookupByLibrary.simpleMessage("Продолжая, вы принимаете"),
         "Cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
+        "Category": MessageLookupByLibrary.simpleMessage("Category"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Изменить фото"),
         "CheckIn": MessageLookupByLibrary.simpleMessage("Check in"),
         "ChooseOption": MessageLookupByLibrary.simpleMessage("Выбери"),
@@ -305,6 +306,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Premium": MessageLookupByLibrary.simpleMessage("Premium"),
         "PremiumAccount":
             MessageLookupByLibrary.simpleMessage("Premium аккаунт"),
+        "Price": MessageLookupByLibrary.simpleMessage("Price"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Конфиденциальность"),
         "Pro": MessageLookupByLibrary.simpleMessage("Pro"),
         "ProAccount": MessageLookupByLibrary.simpleMessage("Pro аккаунт"),

@@ -55,8 +55,7 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    if (iconData != null || (link!=null && !link!.contains('/'))) {
+    if (iconData != null || (link != null && !link!.contains('/'))) {
       return Icon(
         iconData ?? GraphicsFoundation.instance.iconFromString(link ?? ''),
         color: color,
@@ -101,7 +100,7 @@ class ImageWidget extends StatelessWidget {
 
       // !.startsWith("http://") || link!.startsWith("https://")) {
       return CachedNetworkImage(
-        imageUrl: link!,
+        imageUrl: CustomProxyStatic.proxy + link!,
         fit: fit,
         fadeInDuration: const Duration(milliseconds: 200),
         fadeOutDuration: const Duration(milliseconds: 200),
@@ -142,7 +141,7 @@ class ImageWidget extends StatelessWidget {
     } else {
       return kIsWeb
           ? Image.network(
-              link!,
+              CustomProxyStatic.proxy + link!,
               fit: fit,
               width: width,
               color: color,
@@ -158,5 +157,17 @@ class ImageWidget extends StatelessWidget {
               errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
             );
     }
+  }
+}
+
+class CustomProxyStatic {
+  static String? _proxyBase;
+
+  static String get proxy {
+    return _proxyBase == null || _proxyBase!.isEmpty ? '' : 'https://$_proxyBase/proxy/';
+  }
+
+  static set proxy(String value) {
+    _proxyBase = value;
   }
 }
