@@ -266,5 +266,8 @@
   "AcceptDonations": "Accept donations or help others realize their dreams",
   "daynight": "Day and night",
   "Message": "Message",
-  "key": "ar"
+  "Price": "Price",
+  "Category": "Category",
+  "key": "ar",
+  "Messages": "Messages"
 }

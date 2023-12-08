@@ -60,8 +60,11 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                 SpacingFoundation.verticalSpace2,
                 Text(
                   userName ?? '',
-                  style: boldTextTheme?.caption1Bold
-                      .copyWith(color: ColorsFoundation.darkNeutral900, fontWeight: FontWeight.w400, fontSize: 13.w),
+                  style: boldTextTheme?.caption1Bold.copyWith(
+                    color: ColorsFoundation.darkNeutral900,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 13.w,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ],
@@ -75,26 +78,31 @@ class UiKitFindSomeoneCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Container(
-                  height: calculatedWidth * 0.0875,
-                  decoration:
-                      BoxDecoration(gradient: GradientFoundation.findSomeoneGradient, borderRadius: BorderRadiusFoundation.all24),
+                  decoration: BoxDecoration(
+                    gradient: GradientFoundation.findSomeoneGradient,
+                    borderRadius: BorderRadiusFoundation.all24,
+                  ),
                   child: Center(
                     child: Text(
                       '$userPoints points',
                       style: boldTextTheme?.caption1Bold.copyWith(fontSize: 13.w, color: Colors.black),
+                    ).paddingSymmetric(
+                      vertical: EdgeInsetsFoundation.vertical6,
+                      horizontal: EdgeInsetsFoundation.horizontal12,
                     ),
                   ),
                 ),
-                SpacingFoundation.verticalSpace16,
                 Center(
                   child: Text(
                     '${sameInterests} same interests',
-                    style: boldTextTheme?.caption1Bold
-                        .copyWith(fontSize: 13.w, color: ColorsFoundation.darkNeutral900, fontWeight: FontWeight.w500),
+                    style: boldTextTheme?.caption1Bold.copyWith(
+                      fontSize: 13.w,
+                      color: ColorsFoundation.darkNeutral900,
+                      fontWeight: FontWeight.w500,
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SpacingFoundation.verticalSpace16,
                 context.smallButton(
                   data: BaseUiKitButtonData(
                     onPressed: onMessage,

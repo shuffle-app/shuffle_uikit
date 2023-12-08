@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -10,6 +12,7 @@ class TestPage extends StatefulWidget {
 
 class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin {
   final ScrollController scrollController = ScrollController();
+  final animDuration = const Duration(milliseconds: 250);
 
   @override
   void dispose() {
@@ -20,55 +23,79 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).viewPadding.top,
+      body: CustomScrollView(
+        slivers: [
+          SliverLayoutBuilder(
+            builder: (context, sliverConstraints) {
+              double toolbarHeight = (context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
+              double expandedHeight = 190.0;
+
+              final hideAppBarBody = sliverConstraints.scrollOffset > toolbarHeight;
+
+              return SliverAppBar(
+                automaticallyImplyLeading: false,
+                backgroundColor: Colors.transparent,
+                pinned: true,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadiusFoundation.onlyBottom24,
+                ),
+                collapsedHeight: toolbarHeight,
+                expandedHeight: expandedHeight,
+                flexibleSpace: CustomAppBar(
+                  hideBody: hideAppBarBody,
+                  leading: null,
+                  bodySpacing: SpacingFoundation.verticalSpacing16,
+                  title: 'title',
+                  appBarBody: AnimatedContainer(
+                    duration: animDuration,
+                    height: hideAppBarBody
+                        ? 0
+                        : max(
+                            0,
+                            expandedHeight - toolbarHeight - SpacingFoundation.verticalSpacing16,
+                          ),
+                    child: Container(
+                      color: Colors.red,
+                    ),
+                  ),
+                  appBarTrailing: SizedBox(width: 24),
+                  autoImplyLeading: false,
+                  centerTitle: true,
+                ),
+                // bottom: bottom,
+              );
+            },
           ),
-          SpacingFoundation.verticalSpace24,
-          Text(
-            'Events you don’t wanna miss',
-            style: context.uiKitTheme?.boldTextTheme.title1,
-            textAlign: TextAlign.center,
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => Container(
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadiusFoundation.all16,
+                ),
+                height: 100,
+              ),
+              childCount: 10,
+            ),
           ),
-          SpacingFoundation.verticalSpace24,
-          // Expanded(
-          //   child: LayoutBuilder(
-          //     builder: (context, size) {
-          //       return UiKitHorizontalScrollableList(
-          //         leftPadding: SpacingFoundation.horizontalSpacing16,
-          //         spacing: SpacingFoundation.horizontalSpacing12,
-          //         children: List<UiKitSpinnerCard>.generate(
-          //           5,
-          //           (index) => UiKitSpinnerCard(
-          //             availableHeight: size.maxHeight,
-          //             photoLink: GraphicsFoundation.instance.png.spinnerEvent.path,
-          //             title: 'Yoga today at Palm Jumeirah. You go? Yes, you go!',
-          //             date: DateTime.now(),
-          //             favourite: index % 2 > 0,
-          //             onTap: () {},
-          //             onFavoriteTap: () {},
-          //             ownerPhotoLink: GraphicsFoundation.instance.png.mockUserAvatar.path,
-          //             ownerTileTitle: 'John Doe',
-          //             ownerTileTitleTrailing: ProAccountMark(),
-          //             ownerTileSubtitle: '@johndoe',
-          //           ),
-          //         ),
-          //       );
-          //     },
-          //   ),
-          // ),
-          SpacingFoundation.verticalSpace24,
-          // UiKitSpinner(
-          //   scrollController: scrollController,
-          //   categories: List<String>.generate(
-          //     10,
-          //     (index) => 'Category ${index + 1}',
-          //   ),
-          //   onSpinChangedCategory: (category) {},
-          // ),
+          ListView.separated(
+            physics: const NeverScrollableScrollPhysics(),
+            itemBuilder: (context, index) => Container(
+              height: 100,
+              decoration: BoxDecoration(
+                color: Colors.red,
+                borderRadius: BorderRadiusFoundation.all16,
+              ),
+              child: Center(
+                child: Text(
+                  'title $index',
+                  style: context.uiKitTheme?.boldTextTheme.subHeadline,
+                ),
+              ),
+            ),
+            separatorBuilder: (context, index) => SpacingFoundation.verticalSpace16,
+            itemCount: 10,
+          ).wrapSliverFillRemaining,
         ],
       ),
     );

@@ -105,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
             "By continuing you accept the "),
         "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "Category": MessageLookupByLibrary.simpleMessage("Category"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Change photo"),
         "CheckIn": MessageLookupByLibrary.simpleMessage("Check in"),
         "ChooseOption": MessageLookupByLibrary.simpleMessage("Choose option"),
@@ -213,6 +214,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Lovely-touch amazing\ninteraction"),
         "Members": MessageLookupByLibrary.simpleMessage("Members"),
         "Message": MessageLookupByLibrary.simpleMessage("Message"),
+        "Messages": MessageLookupByLibrary.simpleMessage("Messages"),
         "Month": MessageLookupByLibrary.simpleMessage("Month"),
         "MyCard": MessageLookupByLibrary.simpleMessage("My card"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("My events"),
@@ -299,6 +301,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Premium": MessageLookupByLibrary.simpleMessage("Premium"),
         "PremiumAccount":
             MessageLookupByLibrary.simpleMessage("Premium account"),
+        "Price": MessageLookupByLibrary.simpleMessage("Price"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Privacy"),
         "Pro": MessageLookupByLibrary.simpleMessage("Pro"),
         "ProAccount": MessageLookupByLibrary.simpleMessage("Pro account"),

@@ -5,11 +5,13 @@ class UiKitCustomTab extends StatelessWidget {
   final String title;
   final double height;
   final AutoSizeGroup? group;
+  final bool active;
 
   const UiKitCustomTab({
     Key? key,
     required this.title,
     this.height = 40,
+    this.active = true,
     this.group,
   }) : super(key: key);
 
@@ -28,15 +30,17 @@ class UiKitCustomTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Tab(
       height: height,
-      child: Center(
-        child: group != null
-            ? AutoSizeText(
-                title,
-                maxLines: 1,
-                group: group,
-              )
-            : Text(title),
-      ),
+      child: Opacity(
+          opacity: active ? 1.0 : 0.5,
+          child: Center(
+            child: group != null
+                ? AutoSizeText(
+                    title,
+                    maxLines: 1,
+                    group: group,
+                  )
+                : Text(title),
+          )),
     );
   }
 }
