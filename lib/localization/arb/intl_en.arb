@@ -268,5 +268,6 @@
   "Message": "Message",
   "Price": "Price",
   "Category": "Category",
-  "key": ""
+  "key": "",
+  "Messages": "Messages"
 }

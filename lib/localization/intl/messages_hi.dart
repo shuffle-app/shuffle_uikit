@@ -220,6 +220,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "प्यारा-स्पर्श अद्भुत\nइंटरैक्शन"),
         "Members": MessageLookupByLibrary.simpleMessage("सदस्यों"),
         "Message": MessageLookupByLibrary.simpleMessage("Message"),
+        "Messages": MessageLookupByLibrary.simpleMessage("Messages"),
         "Month": MessageLookupByLibrary.simpleMessage("महीना"),
         "MyCard": MessageLookupByLibrary.simpleMessage("मेरा कार्ड"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("मेरी घटनाएँ"),

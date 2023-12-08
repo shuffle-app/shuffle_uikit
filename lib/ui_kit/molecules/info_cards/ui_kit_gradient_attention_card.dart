@@ -36,7 +36,7 @@ class UiKitGradientAttentionCard extends StatelessWidget {
             right: EdgeInsetsFoundation.all16,
           ),
           Positioned(
-            bottom: 0,
+            bottom: SpacingFoundation.verticalSpacing8,
             left: 0,
             child: ImageWidget(
               width: width * 0.75,
