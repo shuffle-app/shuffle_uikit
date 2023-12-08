@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -12,16 +13,20 @@ class BlurredAppBarPage extends StatelessWidget {
   final Widget? appBarBody;
   final Widget? appBarTrailing;
   final Widget? leading;
-  final Widget body;
+  final List<Widget>? children;
   final ScrollController? controller;
   final bool wrapSliverBox;
   final Widget? topFixedAddition;
-  final ScrollPhysics physics;
+  final ScrollPhysics? physics;
   final double? customToolbarHeight;
   final animDuration = const Duration(milliseconds: 250);
   final bool? canFoldAppBar;
   final double? customToolbarBaseHeight;
   final ScrollViewKeyboardDismissBehavior? keyboardDismissBehavior;
+  final Widget? Function(BuildContext, int)? childrenBuilder;
+  final int? childrenCount;
+  final double? bodyBottomSpace;
+  final EdgeInsets? childrenPadding;
 
   // final PreferredSizeWidget? bottom;
 
@@ -29,30 +34,34 @@ class BlurredAppBarPage extends StatelessWidget {
     Key? key,
     this.title = '',
     this.customTitle,
-    required this.body,
+    this.children,
     this.autoImplyLeading,
     this.leading,
     this.canFoldAppBar,
     this.appBarBody,
     this.wrapSliverBox = true,
     this.controller,
-    // ScrollController? controller,
-    ScrollPhysics? physics,
+    this.physics,
     this.appBarTrailing,
-    // this.bottom,
     this.customToolbarHeight,
     this.customToolbarBaseHeight,
     this.centerTitle = false,
     this.topFixedAddition,
     this.keyboardDismissBehavior,
-  })  : physics = physics ?? const ClampingScrollPhysics(),
+    this.childrenBuilder,
+    this.childrenCount,
+    this.childrenPadding,
+    this.bodyBottomSpace,
+  })  : assert(childrenBuilder == null || childrenCount != null, 'childrenCount must be not null if childrenBuilder is not null'),
+        assert(childrenBuilder != null || children != null, 'childrenBuilder or body must be not null'),
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       controller: controller,
-      physics: physics,
+      physics: physics ?? (Platform.isIOS ? const BouncingScrollPhysics() : const ClampingScrollPhysics()),
+      cacheExtent: 0.5.sh,
       keyboardDismissBehavior: keyboardDismissBehavior ?? ScrollViewKeyboardDismissBehavior.manual,
       slivers: [
         MultiSliver(
@@ -101,7 +110,39 @@ class BlurredAppBarPage extends StatelessWidget {
             if (topFixedAddition != null) SliverPinnedHeader(child: topFixedAddition!),
           ],
         ),
-        body.wrapSliverFillRemaining
+        if (childrenBuilder == null && children != null)
+          SliverList(
+            delegate: SliverChildListDelegate(
+              children!.map((e) {
+                if (childrenPadding == null) return e;
+                return e.paddingOnly(
+                  top: childrenPadding!.top,
+                  bottom: childrenPadding!.bottom,
+                  left: childrenPadding!.left,
+                  right: childrenPadding!.right,
+                );
+              }).toList(),
+            ),
+          ),
+        if (children == null && childrenBuilder != null)
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                if (childrenPadding == null) {
+                  return childrenBuilder!.call(context, index);
+                }
+
+                return childrenBuilder!.call(context, index)?.paddingOnly(
+                      top: childrenPadding!.top,
+                      bottom: childrenPadding!.bottom,
+                      left: childrenPadding!.left,
+                      right: childrenPadding!.right,
+                    );
+              },
+              childCount: childrenCount!,
+            ),
+          ),
+        if (bodyBottomSpace != null) bodyBottomSpace!.heightBox.wrapSliverBox,
       ],
     );
   }

@@ -218,6 +218,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Потрясающее интерактивное\nвзаимодействие"),
         "Members": MessageLookupByLibrary.simpleMessage("Участники"),
         "Message": MessageLookupByLibrary.simpleMessage("Сообщение"),
+        "Messages": MessageLookupByLibrary.simpleMessage("Сообщения"),
         "Month": MessageLookupByLibrary.simpleMessage("Месяц"),
         "MyCard": MessageLookupByLibrary.simpleMessage("Профиль"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("Мои события"),

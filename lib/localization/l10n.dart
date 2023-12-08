@@ -2730,6 +2730,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Messages`
+  String get Messages {
+    return Intl.message(
+      'Messages',
+      name: 'Messages',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

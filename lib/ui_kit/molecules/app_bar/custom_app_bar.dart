@@ -69,7 +69,7 @@ class CustomAppBar extends PreferredSize {
                         ),
                     if (appBarTrailing != null && !centerTitle) SpacingFoundation.horizontalSpace8,
                     if (appBarTrailing != null) appBarTrailing!,
-                    if (appBarTrailing == null) const SizedBox(),
+                    if (appBarTrailing == null && centerTitle) SpacingFoundation.horizontalSpace24,
                   ],
                 ),
                 if (!hideBody) bodySpacing?.heightBox ?? SpacingFoundation.verticalSpace8,
