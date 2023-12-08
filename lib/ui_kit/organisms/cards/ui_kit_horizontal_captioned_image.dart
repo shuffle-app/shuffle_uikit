@@ -53,7 +53,10 @@ class UiKitHorizontalCaptionedImage extends StatelessWidget {
           Expanded(
             child: Text(
               title,
-              style: theme?.boldTextTheme.caption3Medium,
+              style: theme?.boldTextTheme.caption3Medium.copyWith(
+                overflow: TextOverflow.ellipsis,
+              ),
+              maxLines: 3,
             ),
           ),
         ],

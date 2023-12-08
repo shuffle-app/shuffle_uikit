@@ -68,8 +68,6 @@ class GraphicsFoundation {
         return ShuffleUiKitIcons.wallet;
       case 'archive':
         return ShuffleUiKitIcons.archive;
-      case 'lifebuoy':
-        return ShuffleUiKitIcons.lifebuoy;
       case 'building':
         return ShuffleUiKitIcons.building;
       case 'label':
@@ -84,10 +82,18 @@ class GraphicsFoundation {
         return ShuffleUiKitIcons.location;
       case 'star-outline':
         return ShuffleUiKitIcons.staroutline;
+      case 'star':
+        return ShuffleUiKitIcons.star;
+      case 'star-fill':
+        return ShuffleUiKitIcons.starfill;
       case 'heart-fill':
         return ShuffleUiKitIcons.heartfill;
       case 'profile_outline':
         return ShuffleUiKitIcons.profileOutline;
+      case 'user':
+        return ShuffleUiKitIcons.user;
+      case 'landmark':
+        return ShuffleUiKitIcons.landmark;
       case 'bell':
         return ShuffleUiKitIcons.bell;
       case 'company_layered':

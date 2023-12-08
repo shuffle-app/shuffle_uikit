@@ -66,8 +66,8 @@ class GradientBottomNavigationBarItem extends TabType {
     index: 0,
   );
   static final spinner = GradientBottomNavigationBarItem._(
-    selectedIcon: ShuffleUiKitIcons.spinnerFill,
-    unselectedIcon: ShuffleUiKitIcons.spinnerOutline,
+    selectedIcon: ShuffleUiKitIcons.spinnerfill,
+    unselectedIcon: ShuffleUiKitIcons.spinneroutline,
     index: 1,
   );
   static final docs = GradientBottomNavigationBarItem._(
