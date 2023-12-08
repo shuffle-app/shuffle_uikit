@@ -55,7 +55,7 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (iconData != null || (link != null && !link!.contains('/'))) {
+    if (iconData != null || (link != null && !link!.contains('/') && link!.isNotEmpty)) {
       return Icon(
         iconData ?? GraphicsFoundation.instance.iconFromString(link ?? ''),
         color: color,

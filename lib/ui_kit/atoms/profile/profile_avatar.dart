@@ -13,7 +13,7 @@ class ProfileAvatar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final errorAvatarText = name?.split(' ').map((e) => e.characters.first).join('') ?? '';
+    final errorAvatarText = name?.split(' ').map((e) => e.characters.first.toUpperCase()).join('')?? '';
 
     return ClipRRect(
       borderRadius: BorderRadiusFoundation.all24,
