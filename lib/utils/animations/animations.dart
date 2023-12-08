@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+
 export 'arrows_animations.dart';
 export 'back_anim_stack.dart';
 export 'rotatable_widget.dart';
 export 'triggering_widget.dart';
+export 'ui_kit_shimmer_progress_indicator.dart';
 export 'wave_splash.dart';
 
 class Animations {
