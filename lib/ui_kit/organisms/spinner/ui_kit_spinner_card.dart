@@ -44,6 +44,7 @@ class UiKitSpinnerCard extends StatefulWidget {
 
 class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
   double opacity = 0;
+  Duration widgetAnimDurations = const Duration(milliseconds: 150);
 
   @override
   void initState() {
@@ -53,6 +54,12 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
         opacity = 1;
       });
     });
+  }
+
+  @override
+  void didUpdateWidget(covariant UiKitSpinnerCard oldWidget) {
+    widgetAnimDurations =  Duration.zero;
+    super.didUpdateWidget(oldWidget);
   }
 
   @override
@@ -77,7 +84,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
             topSpacing: widget.availableHeight / 8,
           );
 
-    const widgetAnimDurations = Duration(milliseconds: 150);
+
 
     return AnimatedOpacity(
       duration: widgetAnimDurations,
