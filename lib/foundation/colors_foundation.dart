@@ -26,6 +26,7 @@ class ColorsFoundation {
   static const Color darkNeutral400 = UiKitColors.darkNeutral400;
   static const Color darkNeutral100 = UiKitColors.darkNeutral100;
   static const Color darkNeutral600 = UiKitColors.darkNeutral600;
+  static const Color darkNeutral800 = UiKitColors.darkNeutral800;
   static const Color darkNeutral900 = UiKitColors.darkNeutral900;
   static const Color yellow = UiKitColors.yellow;
   static const Color weatherYellow = UiKitColors.weatherYellow;
