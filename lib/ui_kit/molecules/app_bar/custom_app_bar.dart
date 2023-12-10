@@ -36,7 +36,11 @@ class CustomAppBar extends PreferredSize {
     return ClipRRect(
       borderRadius: BorderRadiusFoundation.onlyBottom24,
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+        filter: ImageFilter.blur(
+          sigmaX: 25,
+          sigmaY: 25,
+          tileMode: TileMode.mirror,
+        ),
         child: Container(
           width: preferredSize.width,
           decoration: BoxDecoration(
