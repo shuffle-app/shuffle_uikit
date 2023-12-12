@@ -12,6 +12,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
   final ScrollController scrollController;
   final List<HorizontalCaptionedImageData>? branches;
   final VoidCallback? onBranchTap;
+  final List<Widget>? actions;
 
   UiKitMediaSliderWithTags({
     Key? key,
@@ -23,6 +24,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
     required this.description,
     this.horizontalMargin = 0,
     this.branches,
+    this.actions,
     this.onBranchTap,
   })  : scrollController = scrollController ?? ScrollController(),
         super(key: key);
@@ -35,42 +37,67 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-            height: kIsWeb ? 156 : 0.48.sw,
-            child: GestureDetector(
-              behavior: HitTestBehavior.opaque,
-              onTapUp: (TapUpDetails details) {
-                if (details.globalPosition.dx > 1.sw / 2) {
-                  scrollController.animateTo(scrollController.offset + 0.83.sw,
-                      duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
-                } else if (scrollController.offset < 1.sw / 2) {
-                  scrollController.animateTo(0, duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
-                } else {
-                  scrollController.animateTo(scrollController.offset - 0.83.sw,
-                      duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
-                }
-              },
-              child: ListView.builder(
-                controller: scrollController,
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                addAutomaticKeepAlives: false,
-                itemCount: media.length + 1,
-                itemBuilder: (context, index) {
-                  if (index == 0) return horizontalMargin.widthBox;
-
-                  final mediaItem = media.elementAt(index - 1);
-                  if (mediaItem.type == UiKitMediaType.video) {
-                    return BaseUiKitMediaWidget.video(
-                      media: mediaItem,
-                      width: media.length == 1 ? mediaWidth : null,
-                    ).paddingOnly(right: media.length == index ? 0 : SpacingFoundation.horizontalSpacing16);
+          height: kIsWeb ? 156 : 0.48.sw,
+          width: 1.sw,
+          child: Stack(
+            children: [
+              GestureDetector(
+                behavior: HitTestBehavior.opaque,
+                onTapUp: (TapUpDetails details) {
+                  if (details.globalPosition.dx > 1.sw / 2) {
+                    scrollController.animateTo(scrollController.offset + 0.83.sw,
+                        duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
+                  } else if (scrollController.offset < 1.sw / 2) {
+                    scrollController.animateTo(0, duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
+                  } else {
+                    scrollController.animateTo(scrollController.offset - 0.83.sw,
+                        duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
                   }
-
-                  return BaseUiKitMediaWidget.image(media: mediaItem, width: media.length == 1 ? mediaWidth : null)
-                      .paddingOnly(right: media.length == index ? 0 : SpacingFoundation.horizontalSpacing16);
                 },
+                child: ListView.builder(
+                  controller: scrollController,
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.horizontal,
+                  addAutomaticKeepAlives: false,
+                  itemCount: media.length + 1,
+                  itemBuilder: (context, index) {
+                    if (index == 0) return horizontalMargin.widthBox;
+
+                    final mediaItem = media.elementAt(index - 1);
+                    if (mediaItem.type == UiKitMediaType.video) {
+                      return BaseUiKitMediaWidget.video(
+                        media: mediaItem,
+                        width: media.length == 1 ? mediaWidth : null,
+                      ).paddingOnly(right: media.length == index ? 0 : SpacingFoundation.horizontalSpacing16);
+                    }
+
+                    return BaseUiKitMediaWidget.image(media: mediaItem, width: media.length == 1 ? mediaWidth : null)
+                        .paddingOnly(right: media.length == index ? 0 : SpacingFoundation.horizontalSpacing16);
+                  },
+                ),
               ),
-            )),
+              if (actions != null && actions!.isNotEmpty)
+                Positioned(
+                  right: 16.w,
+                  bottom: 0,
+                  height: 0.1.sw,
+                  width: 1.sw,
+                  child: ListView.separated(
+                    reverse: true,
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return actions!.elementAt(index);
+                    },
+                    separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                    itemCount: actions!.length,
+                  ),
+                ),
+            ],
+          ),
+        ),
         SpacingFoundation.verticalSpace14,
         UiKitTagsWidget(
           rating: rating,

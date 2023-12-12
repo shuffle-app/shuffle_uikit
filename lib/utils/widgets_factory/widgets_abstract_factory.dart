@@ -129,12 +129,10 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data!.loading,
       );
     } else if ((blurred ?? false) && data?.icon != null) {
-      return SmallOutlinedBlurIconButton(
+      return SmallBlurredOutlinedIconButton(
         onPressed: data?.onPressed,
-        blurred: blurred ?? false,
         icon: data!.icon!,
         borderColor: color,
-        textColor: color,
         loading: data.loading,
       );
     } else if (!(blurred ?? false) && data?.icon != null) {
@@ -171,6 +169,16 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? isGradientEnabled,
   }) {
     if (data.text.isEmpty && data.icon != null) {
+      if (blurred ?? false) {
+        return OutlinedBlurIconButton(
+          icon: data.icon!,
+          blurred: true,
+          onPressed: data.onPressed,
+          loading: data.loading,
+          borderColor: borderColor,
+        );
+      }
+
       return OutlinedIconButton(
         icon: data.icon,
         onPressed: data.onPressed,
