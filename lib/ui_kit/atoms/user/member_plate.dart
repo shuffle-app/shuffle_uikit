@@ -8,8 +8,6 @@ class MemberPlate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = 1.sw * 0.55625;
-    final height = width * 0.1573;
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
     return DecoratedBox(
