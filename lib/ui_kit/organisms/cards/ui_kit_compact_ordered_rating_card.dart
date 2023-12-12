@@ -39,7 +39,7 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                 children: [
                   Ink(
                     width: sideInfoCardsWidth,
-                    color: ColorsFoundation.darkNeutral500.withOpacity(0.08),
+                    color: ColorsFoundation.neutral8,
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -90,11 +90,9 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                       horizontal: EdgeInsetsFoundation.horizontal8,
                     ),
                   ),
-                  // if (rating != null)
                   Ink(
                     width: sideInfoCardsWidth,
-                    color: ColorsFoundation.darkNeutral500.withOpacity( 0.08),
-                    // color: ColorsFoundation.darkNeutral500.withOpacity(rating == null ? 0 : 0.08),
+                    color: ColorsFoundation.neutral8,
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
