@@ -7,6 +7,7 @@ class BaseUiKitButtonData {
   final Widget? icon;
   final ButtonFit? fit;
   final bool? loading;
+  final Color? borderColor;
 
   BaseUiKitButtonData({
     this.onPressed,
@@ -14,5 +15,6 @@ class BaseUiKitButtonData {
     this.icon,
     this.fit,
     this.loading,
+    this.borderColor,
   });
 }

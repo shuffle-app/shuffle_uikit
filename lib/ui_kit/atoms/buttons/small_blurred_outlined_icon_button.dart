@@ -17,8 +17,9 @@ class SmallBlurredOutlinedIconButton extends StatelessWidget implements ButtonFa
     this.color,
     required this.icon,
     this.loading,
-    this.blurValue = 18,
-  }) : super(key: key);
+    double? blurValue,
+  })  : blurValue = blurValue ?? 18,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {

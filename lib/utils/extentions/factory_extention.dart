@@ -95,6 +95,7 @@ extension FactoryExtention on BuildContext {
     Color? color,
     bool? blurred,
     Gradient? gradient,
+    double? blurValue,
   }) {
     return WidgetsFactory.of(this)!
         .createSmallOutlinedButton(

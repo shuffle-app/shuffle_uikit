@@ -107,7 +107,13 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  ButtonFactory createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred, Gradient? gradient}) {
+  ButtonFactory createSmallOutlinedButton({
+    BaseUiKitButtonData? data,
+    Color? color,
+    bool? blurred,
+    Gradient? gradient,
+    double? blurValue,
+  }) {
     if (!(blurred ?? false) && data?.icon == null) {
       return SmallOutlinedButtonNoBlur(
         onPressed: data?.onPressed,
@@ -132,8 +138,10 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       return SmallBlurredOutlinedIconButton(
         onPressed: data?.onPressed,
         icon: data!.icon!,
-        borderColor: color,
+        borderColor: data.borderColor,
+        color: color,
         loading: data.loading,
+        blurValue: blurValue,
       );
     } else if (!(blurred ?? false) && data?.icon != null) {
       return SmallOutlinedIconButton(
