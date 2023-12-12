@@ -11,7 +11,7 @@ class UiKitThemes {
   );
 
   late final lightThemeData = defaultThemeData.copyWith(
-    scaffoldBackgroundColor: ColorsFoundation.solidLightSurface,
+    scaffoldBackgroundColor: ColorsFoundation.lightSurface,
     iconTheme: const IconThemeData(color: ColorsFoundation.solidLightSurface),
     colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.info, onSurface: Colors.black),
     textButtonTheme: TextButtonThemeData(

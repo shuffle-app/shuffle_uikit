@@ -9,11 +9,11 @@ class UiKitColors {
   static const surface5 = Color(0xff3A3A3E);
 
   static const lightSurface = Color(0xffFFFFFF);
-  static const lightSurface1 = Color(0xffF7F7F9);
-  static const lightSurface2 = Color(0xffF2F3F5);
-  static const lightSurface3 = Color(0xffEDEEF1);
-  static const lightSurface4 = Color(0xffEBEDF0);
-  static const lightSurface5 = Color(0xffE8EAED);
+  static const lightSurface1 = Color(0xffEDF0F5);
+  static const lightSurface2 = Color(0xffE4E7ED);
+  static const lightSurface3 = Color(0xffDCDFE5);
+  static const lightSurface4 = Color(0xffD7DAE0);
+  static const lightSurface5 = Color(0xffCED2D9);
 
   static const darkNeutral100 = Color(0xffEEEEEF);
   static const darkNeutral200 = Color(0xffDCDDDF);
@@ -24,6 +24,13 @@ class UiKitColors {
   static const darkNeutral700 = Color(0xff8F9194);
   static const darkNeutral800 = Color(0xff86888B);
   static const darkNeutral900 = Color(0xff7E8083);
+
+  static final neutral8 = darkNeutral500.withOpacity(0.08);
+  static final neutral16 = darkNeutral500.withOpacity(0.16);
+  static final neutral24 = darkNeutral500.withOpacity(0.24);
+  static final neutral32 = darkNeutral500.withOpacity(0.32);
+  static final neutral40 = darkNeutral500.withOpacity(0.4);
+  static final neutral48 = darkNeutral500.withOpacity(0.48);
 
   static const yellow = Color(0xffC6E216);
   static const brightYellow = Color(0xffFAE634);
