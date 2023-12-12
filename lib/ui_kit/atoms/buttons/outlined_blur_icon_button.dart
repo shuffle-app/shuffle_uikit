@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class SmallOutlinedBlurIconButton extends StatelessWidget implements ButtonFactory {
+class OutlinedBlurIconButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final Color? borderColor;
   final Color? textColor;
@@ -11,7 +11,7 @@ class SmallOutlinedBlurIconButton extends StatelessWidget implements ButtonFacto
   final bool blurred;
   final bool? loading;
 
-  const SmallOutlinedBlurIconButton({
+  const OutlinedBlurIconButton({
     Key? key,
     this.onPressed,
     this.borderColor,

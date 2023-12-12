@@ -107,7 +107,13 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  ButtonFactory createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred, Gradient? gradient}) {
+  ButtonFactory createSmallOutlinedButton({
+    BaseUiKitButtonData? data,
+    Color? color,
+    bool? blurred,
+    Gradient? gradient,
+    double? blurValue,
+  }) {
     if (!(blurred ?? false) && data?.icon == null) {
       return SmallOutlinedButtonNoBlur(
         onPressed: data?.onPressed,
@@ -129,13 +135,13 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data!.loading,
       );
     } else if ((blurred ?? false) && data?.icon != null) {
-      return SmallOutlinedBlurIconButton(
+      return SmallBlurredOutlinedIconButton(
         onPressed: data?.onPressed,
-        blurred: blurred ?? false,
         icon: data!.icon!,
-        borderColor: color,
-        textColor: color,
+        borderColor: data.borderColor,
+        color: color,
         loading: data.loading,
+        blurValue: blurValue,
       );
     } else if (!(blurred ?? false) && data?.icon != null) {
       return SmallOutlinedIconButton(
@@ -171,6 +177,16 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? isGradientEnabled,
   }) {
     if (data.text.isEmpty && data.icon != null) {
+      if (blurred ?? false) {
+        return OutlinedBlurIconButton(
+          icon: data.icon!,
+          blurred: true,
+          onPressed: data.onPressed,
+          loading: data.loading,
+          borderColor: borderColor,
+        );
+      }
+
       return OutlinedIconButton(
         icon: data.icon,
         onPressed: data.onPressed,
