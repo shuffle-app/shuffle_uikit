@@ -7,11 +7,13 @@ class UiKitTitledSection extends StatelessWidget {
   final bool? hasError;
   final String? errorText;
   final Color? color;
+  final String? infoText;
 
   const UiKitTitledSection({
     Key? key,
     this.hasError,
     this.color,
+    this.infoText,
     this.errorText,
     required this.title,
     required this.child,
@@ -20,6 +22,8 @@ class UiKitTitledSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -36,10 +40,38 @@ class UiKitTitledSection extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
-                title,
-                style: context.uiKitTheme?.boldTextTheme.labelLarge,
-              ).paddingOnly(
+              Row(children: [
+                Flexible(
+                    child: Text(
+                  title,
+                  style: context.uiKitTheme?.boldTextTheme.labelLarge,
+                )),
+                if (infoText != null && infoText!.isNotEmpty) ...[
+                  SpacingFoundation.horizontalSpace4,
+                  Builder(
+                      builder: (context) => InkWell(
+                          child: ImageWidget(
+                            iconData: ShuffleUiKitIcons.info,
+                            color: theme?.colorScheme.darkNeutral800,
+                          ),
+                          onTap: () {
+                            showUiKitPopover(context,
+                                title: Text(
+                                  infoText!,
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontFamily: 'Unbounded',
+                                    fontSize: 16.w,
+                                    fontWeight: FontWeight.w300,
+                                    color: theme?.colorScheme.primary,
+                                    package: 'shuffle_uikit',
+                                  ),
+                                ),
+                                customMinHeight: 40.h,
+                                showButton: false);
+                          })),
+                ]
+              ]).paddingOnly(
                 top: EdgeInsetsFoundation.vertical16,
                 left: EdgeInsetsFoundation.horizontal16,
               ),
