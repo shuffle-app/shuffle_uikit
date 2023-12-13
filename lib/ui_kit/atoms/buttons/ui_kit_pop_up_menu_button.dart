@@ -49,16 +49,18 @@ class UiKitPopUpMenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
+
     return PopupMenuButton(
       position: PopupMenuPosition.under,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all16,
       ),
-      shadowColor: Colors.black.withOpacity(0.3),
+      shadowColor: theme?.colorScheme.primary.withOpacity(0.3),
       elevation: 10,
       icon: ImageWidget(
         iconData: asset,
-        color: Colors.white,
+        color: theme?.colorScheme.inversePrimary,
       ),
       itemBuilder: items,
     );
