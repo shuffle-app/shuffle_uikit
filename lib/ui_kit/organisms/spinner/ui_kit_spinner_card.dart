@@ -49,7 +49,6 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with SingleTickerPr
   double opacity = 0;
   Duration widgetAnimDurations = const Duration(milliseconds: 150);
   double angle = 0;
-  Alignment rotationAlignment = Alignment.centerLeft;
   late final AnimationController animationController;
   late Animation<double> _animation;
 
@@ -120,23 +119,15 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with SingleTickerPr
 
     return Listener(
         onPointerDown: (PointerDownEvent event) {
-          setState(() {
-            if (event.localPosition.dx < normalCardWidth / 2) {
-              rotationAlignment = Alignment.center;
-              _animation = Tween<double>(begin: 0, end: rotationAngle).animate(animationController);
-              // angle = rotationAngle;
-            } else {
-              rotationAlignment = Alignment.center;
-              _animation = Tween<double>(begin: 0, end: -rotationAngle).animate(animationController);
-              // angle = -rotationAngle;
-            }
-          });
+          if (event.localPosition.dx < normalCardWidth / 2) {
+            _animation = Tween<double>(begin: 0, end: rotationAngle).animate(animationController);
+          } else {
+            _animation = Tween<double>(begin: 0, end: -rotationAngle).animate(animationController);
+          }
+
           animationController.forward(from: 0);
         },
         onPointerUp: (PointerUpEvent event) {
-          // setState(() {
-          //   angle = 0;
-          // });
           animationController.reverse();
         },
         child: AnimatedOpacity(
@@ -154,7 +145,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with SingleTickerPr
                     constraints: BoxConstraints(maxHeight: widget.availableHeight * 0.76),
                     child: Transform(
                       transform: transform,
-                      alignment: rotationAlignment,
+                      alignment: Alignment.center,
                       child: Stack(
                         clipBehavior: Clip.none,
                         fit: StackFit.expand,
