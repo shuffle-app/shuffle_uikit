@@ -346,6 +346,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SupportPeopleAroundYou":
             MessageLookupByLibrary.simpleMessage("Помочь людям вокруг"),
         "SwipeToStart": MessageLookupByLibrary.simpleMessage("Swipe to start"),
+        "SwitchAnyTime": MessageLookupByLibrary.simpleMessage(
+            "You can switch it at any time in your profile settings"),
         "Tags": MessageLookupByLibrary.simpleMessage("Ярлыки"),
         "TapIt": MessageLookupByLibrary.simpleMessage("Нажми"),
         "TapOnceToChoose":

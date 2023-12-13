@@ -2751,6 +2751,16 @@ class S {
     );
   }
 
+  /// `You can switch it at any time in your profile settings`
+  String get SwitchAnyTime {
+    return Intl.message(
+      'You can switch it at any time in your profile settings',
+      name: 'SwitchAnyTime',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// ``
   String get key {
     return Intl.message(

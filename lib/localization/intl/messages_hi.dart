@@ -343,6 +343,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SupportPeopleAroundYou": MessageLookupByLibrary.simpleMessage(
             "अपने आसपास के लोगों का समर्थन करें"),
         "SwipeToStart": MessageLookupByLibrary.simpleMessage("Swipe to start"),
+        "SwitchAnyTime": MessageLookupByLibrary.simpleMessage(
+            "You can switch it at any time in your profile settings"),
         "Tags": MessageLookupByLibrary.simpleMessage("टैग"),
         "TapIt": MessageLookupByLibrary.simpleMessage("इसे टैप करें"),
         "TapOnceToChoose": MessageLookupByLibrary.simpleMessage(
