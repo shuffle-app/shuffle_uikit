@@ -2741,6 +2741,16 @@ class S {
     );
   }
 
+  /// `Swipe to start`
+  String get SwipeToStart {
+    return Intl.message(
+      'Swipe to start',
+      name: 'SwipeToStart',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// ``
   String get key {
     return Intl.message(

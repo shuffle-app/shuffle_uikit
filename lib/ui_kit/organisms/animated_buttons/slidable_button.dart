@@ -5,7 +5,7 @@ class SlidableButton extends StatefulWidget {
   final bool isCompleted;
   final Widget slidableChild;
   final Widget onCompletedChild;
-  final String hintText;
+  final String? hintText;
   final BoxBorder? customBorder;
   final VoidCallback? onCompleted;
 
@@ -14,7 +14,7 @@ class SlidableButton extends StatefulWidget {
       this.isCompleted = false,
       this.onCompleted,
       this.customBorder,
-      this.hintText = 'Swipe to start',
+      this.hintText,
       required this.slidableChild,
       required this.onCompletedChild});
 
@@ -89,7 +89,7 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
                     children: [
                       const ArrowsAnimation(),
                       Text(
-                        widget.hintText,
+                        widget.hintText ?? S.of(context).SwipeToStart,
                         style: theme?.regularTextTheme.caption1.copyWith(color: theme.colorScheme.darkNeutral400),
                       ),
                       const ArrowsAnimation()
