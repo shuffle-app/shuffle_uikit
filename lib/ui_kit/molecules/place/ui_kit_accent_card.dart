@@ -21,7 +21,6 @@ class UiKitAccentCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final textTheme = theme?.boldTextTheme;
-    final colorScheme = theme?.colorScheme;
     final titleStyle = textTheme?.subHeadline;
     final additionalInfoStyle = textTheme?.caption2Bold.copyWith(
       color: ColorsFoundation.darkNeutral500,
