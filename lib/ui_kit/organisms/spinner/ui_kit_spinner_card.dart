@@ -190,7 +190,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with SingleTickerPr
                           child: context.smallButton(
                             blurred: true,
                             data: BaseUiKitButtonData(
-                              icon: AnimatedSwitcher(
+                              iconWidget: AnimatedSwitcher(
                                 duration: widgetAnimDurations,
                                 child: widget.favourite == true
                                     ? const ImageWidget(
