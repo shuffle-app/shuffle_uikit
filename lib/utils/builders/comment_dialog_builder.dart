@@ -9,6 +9,7 @@ Future<T?> showUiKitPopover<T extends Object?>(
   String buttonText = 'OK',
   VoidCallback? onPop,
   bool showButton = true,
+      double? customMinHeight
 }) {
   return showPopover<T>(
     context: context,
@@ -17,7 +18,7 @@ Future<T?> showUiKitPopover<T extends Object?>(
     bodyBuilder: (context) => ConstrainedBox(
       constraints: BoxConstraints(
         maxWidth: 1.sw - SpacingFoundation.horizontalSpacing32,
-        minHeight: 0.2.sh,
+        minHeight: customMinHeight?? 0.2.sh,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -28,15 +29,15 @@ Future<T?> showUiKitPopover<T extends Object?>(
           if (showButton)
             context
                 .dialogButton(
-                  data: BaseUiKitButtonData(text: buttonText, onPressed: () => context.pop()),
+                  data: BaseUiKitButtonData(text: buttonText, onPressed: context.pop),
                   small: true,
                   dialogButtonType: DialogButtonType.buttonBlack,
                 )
                 .paddingOnly(top: SpacingFoundation.verticalSpacing8)
         ],
-      ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing24, horizontal: SpacingFoundation.horizontalSpacing24),
+      ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing12, horizontal: SpacingFoundation.horizontalSpacing12),
     ),
-    //ставим зависимость от константы и берем значение любого угла, любого аксиса, так как они все одинаковые
+    //ставим зависимость от константы и берем значение любого угла, любого направления, так как они все одинаковые
     radius: BorderRadiusFoundation.all24.topRight.x,
     constraints: SizesFoundation.minimumSizeForCommentPopup,
     onPop: onPop,

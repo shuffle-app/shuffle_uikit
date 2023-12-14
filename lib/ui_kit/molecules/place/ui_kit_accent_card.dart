@@ -19,7 +19,8 @@ class UiKitAccentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = context.uiKitTheme?.boldTextTheme;
+    final theme = context.uiKitTheme;
+    final textTheme = theme?.boldTextTheme;
     final titleStyle = textTheme?.subHeadline;
     final additionalInfoStyle = textTheme?.caption2Bold.copyWith(color: ColorsFoundation.darkNeutral500);
     final accentMessageStyle = textTheme?.caption1Bold.copyWith(color: ColorsFoundation.darkNeutral100);
@@ -32,7 +33,7 @@ class UiKitAccentCard extends StatelessWidget {
         borderRadius: BorderRadiusFoundation.all24,
         boxShadow: [
           BoxShadow(
-            color: Colors.white,
+            color: theme?.colorScheme.inversePrimary ?? Colors.white,
             blurRadius: 16.sp,
             offset: Offset.zero,
           ),
@@ -47,7 +48,7 @@ class UiKitAccentCard extends StatelessWidget {
             right: SpacingFoundation.horizontalSpacing16,
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.15),
+                color: theme?.colorScheme.primary.withOpacity(0.15),
                 borderRadius: BorderRadiusFoundation.all24,
               ),
               child: Text(
@@ -94,22 +95,27 @@ class UiKitAccentCard extends StatelessWidget {
           Positioned(
             bottom: SpacingFoundation.verticalSpacing16,
             left: SpacingFoundation.horizontalSpacing16,
+            right: SpacingFoundation.horizontalSpacing16,
             child: Column(
-              mainAxisSize: MainAxisSize.max,
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   additionalInfo,
                   style: additionalInfoStyle,
+                  maxLines: 1,
                 ),
-                Text(
+                Flexible(
+                    child:
+                    Text(
                   title,
                   style: titleStyle?.copyWith(
                     overflow: TextOverflow.ellipsis,
                     color: Colors.white,
                   ),
                   maxLines: 2,
-                ),
+                )
+          ),
               ],
             ),
           ),
