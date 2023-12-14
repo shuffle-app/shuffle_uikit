@@ -23,7 +23,10 @@ class UiKitAccentCard extends StatelessWidget {
     final textTheme = theme?.boldTextTheme;
     final colorScheme = theme?.colorScheme;
     final titleStyle = textTheme?.subHeadline;
-    final additionalInfoStyle = textTheme?.caption2Bold.copyWith(color: ColorsFoundation.darkNeutral500, overflow: TextOverflow.ellipsis,);
+    final additionalInfoStyle = textTheme?.caption2Bold.copyWith(
+      color: ColorsFoundation.darkNeutral500,
+      overflow: TextOverflow.ellipsis,
+    );
     final accentMessageStyle = textTheme?.caption1Bold.copyWith(color: ColorsFoundation.darkNeutral100);
     final height = 0.92.sw * 0.57;
 
@@ -108,16 +111,14 @@ class UiKitAccentCard extends StatelessWidget {
                   maxLines: 1,
                 ),
                 Flexible(
-                    child:
-                    Text(
+                    child: Text(
                   title,
                   style: titleStyle?.copyWith(
                     overflow: TextOverflow.ellipsis,
                     color: Colors.white,
                   ),
                   maxLines: 2,
-                )
-          ),
+                )),
               ],
             ),
           ),
