@@ -23,13 +23,14 @@ class GradientBottomNavigationBar extends StatelessWidget {
       stream: controller.tabStream,
       builder: (context, snapshot) {
         final index = snapshot.data?.value ?? 0;
+        final isLigthTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
         return Container(
           height: kBottomNavigationBarHeight.h,
           width: double.infinity,
           clipBehavior: Clip.hardEdge,
-          decoration: const BoxDecoration(
-            gradient: GradientFoundation.blackLinearGradient,
+          decoration: BoxDecoration(
+            gradient: isLigthTheme ? GradientFoundation.whiteLinearGradient : GradientFoundation.blackLinearGradient,
           ),
           child: Row(
             mainAxisSize: MainAxisSize.max,

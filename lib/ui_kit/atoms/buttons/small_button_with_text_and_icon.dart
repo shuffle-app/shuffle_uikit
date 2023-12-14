@@ -3,28 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class SmallButtonWithTextAndIcon extends StatelessWidget implements ButtonFactory {
-  final String text;
-  final Widget icon;
+  final String? text;
+  final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
   final VoidCallback? onPressed;
   final bool uppercase;
   final bool? loading;
-  final Color? color;
-  final Color? backgroundColor;
   final ButtonFit? fit;
   final AutoSizeGroup? group;
 
   const SmallButtonWithTextAndIcon({
     Key? key,
-    required this.text,
-    required this.icon,
+    this.text,
+    this.icon,
+    this.iconInfo,
     this.onPressed,
     this.loading,
     this.fit,
     this.group,
     this.uppercase = true,
-    this.color,
-    this.backgroundColor,
-  }) : super(key: key);
+  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,24 +34,24 @@ class SmallButtonWithTextAndIcon extends StatelessWidget implements ButtonFactor
             loading ?? false
                 ? ''
                 : uppercase
-                    ? text.toUpperCase()
-                    : text,
+                    ? text?.toUpperCase() ?? ''
+                    : text ?? '',
             maxLines: 1,
-            style: textStyle?.copyWith(color: (color ?? Colors.white) == Colors.white ? Colors.black : Colors.white),
+            style: textStyle?.copyWith(color: theme?.colorScheme.surface),
             textAlign: TextAlign.center,
           )
         : Text(
             loading ?? false
                 ? ''
                 : uppercase
-                    ? text.toUpperCase()
-                    : text,
-            style: textStyle?.copyWith(color: (color ?? Colors.white) == Colors.white ? Colors.black : Colors.white),
+                    ? text?.toUpperCase() ?? ''
+                    : text ?? '',
+            style: textStyle?.copyWith(color: theme?.colorScheme.surface),
             textAlign: TextAlign.center,
           );
 
     return Material(
-      color: backgroundColor ?? Colors.white,
+      color: theme?.colorScheme.inverseSurface,
       clipBehavior: Clip.hardEdge,
       borderRadius: BorderRadiusFoundation.max,
       child: InkWell(
@@ -68,7 +67,14 @@ class SmallButtonWithTextAndIcon extends StatelessWidget implements ButtonFactor
             children: [
               textWidget,
               SpacingFoundation.horizontalSpace4,
-              icon,
+              icon ??
+                  ImageWidget(
+                    iconData: iconInfo?.iconData,
+                    link: iconInfo?.iconPath,
+                    height: iconInfo?.size,
+                    fit: BoxFit.fitHeight,
+                    color: iconInfo?.color ?? theme?.colorScheme.surface,
+                  )
             ],
           ).loadingWrap(loading ?? false),
         ),

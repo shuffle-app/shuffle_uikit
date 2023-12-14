@@ -11,13 +11,15 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
+    final theme = context.uiKitTheme;
+    final isLightTheme = theme?.themeMode == ThemeMode.light;
+    final textStyle = theme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: ColorsFoundation.darkNeutral900,
       fontSize: 7.w,
     );
 
     return Material(
-      color: ColorsFoundation.darkNeutral900,
+      color: isLightTheme ? ColorsFoundation.neutral8 : ColorsFoundation.neutral24,
       borderRadius: BorderRadiusFoundation.all12,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
@@ -28,7 +30,9 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
             child: DecoratedBox(
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: ColorsFoundation.darkNeutral500.withOpacity(0.16),
+                  color: isLightTheme
+                      ? theme?.colorScheme.darkNeutral500 ?? ColorsFoundation.darkNeutral500
+                      : ColorsFoundation.neutral16,
                   width: 1.sp,
                 ),
                 borderRadius: BorderRadiusFoundation.all12,
@@ -45,7 +49,7 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
                     child: Text(
                       '?',
                       textAlign: TextAlign.center,
-                      style: context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(color: Colors.black),
+                      style: theme?.boldTextTheme.caption1UpperCaseMedium.copyWith(color: theme.colorScheme.primary),
                     ),
                   ),
                   SpacingFoundation.horizontalSpace4,

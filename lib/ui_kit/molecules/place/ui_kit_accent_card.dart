@@ -19,7 +19,9 @@ class UiKitAccentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = context.uiKitTheme?.boldTextTheme;
+    final theme = context.uiKitTheme;
+    final textTheme = theme?.boldTextTheme;
+    final colorScheme = theme?.colorScheme;
     final titleStyle = textTheme?.subHeadline;
     final additionalInfoStyle = textTheme?.caption2Bold.copyWith(color: ColorsFoundation.darkNeutral500);
     final accentMessageStyle = textTheme?.caption1Bold.copyWith(color: ColorsFoundation.darkNeutral100);
@@ -30,10 +32,11 @@ class UiKitAccentCard extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
-            color: Colors.white,
-            blurRadius: 16.sp,
+            color: ColorsFoundation.shadowPink,
+            blurRadius: 18,
+            spreadRadius: 0,
             offset: Offset.zero,
           ),
         ],

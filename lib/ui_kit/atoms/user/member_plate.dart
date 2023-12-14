@@ -8,12 +8,14 @@ class MemberPlate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = context.uiKitTheme?.boldTextTheme;
+    final theme = context.uiKitTheme;
+    final textTheme = theme?.boldTextTheme;
+    final isLightTheme = theme?.themeMode == ThemeMode.light;
 
     return DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.max,
-        gradient: GradientFoundation.greyGradient,
+        gradient: isLightTheme ? GradientFoundation.darkGreyGradient : GradientFoundation.greyGradient,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -26,11 +28,12 @@ class MemberPlate extends StatelessWidget {
           ),
           SpacingFoundation.horizontalSpace4,
           const GradientableWidget(
-              gradient: GradientFoundation.badgeIcon,
-              child: ImageWidget(
-                iconData: ShuffleUiKitIcons.memeberGradientStar,
-                color: Colors.white,
-              )),
+            gradient: GradientFoundation.badgeIcon,
+            child: ImageWidget(
+              iconData: ShuffleUiKitIcons.memeberGradientStar,
+              color: Colors.white,
+            ),
+          ),
           SpacingFoundation.horizontalSpace4,
           Text(
             S.of(context).Members.toLowerCase(),

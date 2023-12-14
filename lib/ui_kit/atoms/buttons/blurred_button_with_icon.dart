@@ -5,33 +5,45 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BlurredButtonWithIcon extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
-  final Widget icon;
+  final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
 
   const BlurredButtonWithIcon({
     Key? key,
     this.onPressed,
-    required this.icon,
+    this.icon,
+    this.iconInfo,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final inversePrimary = context.uiKitTheme?.colorScheme.inversePrimary;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
       shape: const CircleBorder(),
-      color: inversePrimary?.withOpacity(0.1),
+      color: colorScheme?.inversePrimary,
       child: InkWell(
         onTap: onPressed,
         borderRadius: BorderRadiusFoundation.max,
         child: Ink(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: inversePrimary?.withOpacity(0.1),
+            color: colorScheme?.inversePrimary,
           ),
           child: ClipOval(
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
-              child: icon.paddingAll(EdgeInsetsFoundation.all16),
+              child: Padding(
+                padding: EdgeInsets.all(EdgeInsetsFoundation.all16),
+                child: icon ??
+                    ImageWidget(
+                      iconData: iconInfo?.iconData,
+                      link: iconInfo?.iconPath,
+                      height: iconInfo?.size,
+                      fit: BoxFit.fitHeight,
+                      color: iconInfo?.color ?? colorScheme?.primary,
+                    ),
+              ),
             ),
           ),
         ),

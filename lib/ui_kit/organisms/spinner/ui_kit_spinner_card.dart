@@ -58,7 +58,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
 
   @override
   void didUpdateWidget(covariant UiKitSpinnerCard oldWidget) {
-    widgetAnimDurations =  Duration.zero;
+    widgetAnimDurations = Duration.zero;
     super.didUpdateWidget(oldWidget);
   }
 
@@ -83,8 +83,6 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
         : UiKitCompactPhotoErrorWidget(
             topSpacing: widget.availableHeight / 8,
           );
-
-
 
     return AnimatedOpacity(
       duration: widgetAnimDurations,
@@ -144,7 +142,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> {
                     child: context.smallButton(
                       blurred: true,
                       data: BaseUiKitButtonData(
-                        icon: AnimatedSwitcher(
+                        iconWidget: AnimatedSwitcher(
                           duration: widgetAnimDurations,
                           child: widget.favourite == true
                               ? const ImageWidget(

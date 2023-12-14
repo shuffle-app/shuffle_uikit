@@ -5,6 +5,42 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
+  static const diamondGradient = RadialGradient(
+    stops: [
+      0,
+      0.473,
+      1,
+    ],
+    focal: Alignment(0.0736, 0.1631),
+    colors: [
+      ColorsFoundation.orange,
+      ColorsFoundation.yellow,
+      ColorsFoundation.pink,
+    ],
+  );
+
+  // background: linear-gradient(87deg, #E3E3E3 -0.53%, #999 21.1%, #CDCDCD 42.73%, #999 61.19%, #CDCDCD 80.7%, #999 100.75%);
+
+  static const darkGreyGradient = LinearGradient(
+    transform: GradientRotation(-pi / 12),
+    stops: [
+      0,
+      0.211,
+      0.4271,
+      0.6094,
+      0.821,
+      1,
+    ],
+    colors: [
+      ColorsFoundation.gradientGreyDark1,
+      ColorsFoundation.gradientGreyDark2,
+      ColorsFoundation.gradientGreyDark3,
+      ColorsFoundation.gradientGreyDark2,
+      ColorsFoundation.gradientGreyDark3,
+      ColorsFoundation.gradientGreyDark2,
+    ],
+  );
+
   static const greyGradient = LinearGradient(
     colors: [
       Colors.white,
@@ -201,6 +237,19 @@ class GradientFoundation {
     begin: Alignment.topCenter,
   );
 
+  static const whiteLinearGradient = LinearGradient(
+    colors: [
+      Colors.transparent,
+      Colors.white,
+    ],
+    stops: [
+      0,
+      0.9,
+    ],
+    end: Alignment.bottomCenter,
+    begin: Alignment.topCenter,
+  );
+
   static const findSomeoneGradient = RadialGradient(
     center: Alignment(1.1, 1.0),
     focal: Alignment(1.1, 1.0),
@@ -213,8 +262,8 @@ class GradientFoundation {
     stops: [0.2, 0.8, 1.0],
   );
 
-  static final blueLinearGradient =  LinearGradient(
-    colors:  [
+  static final blueLinearGradient = LinearGradient(
+    colors: [
       ColorsFoundation.weatherBlue.withOpacity(0.1),
       ColorsFoundation.weatherBlue.withOpacity(0.031),
     ],

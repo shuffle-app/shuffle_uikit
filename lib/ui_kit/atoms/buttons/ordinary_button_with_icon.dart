@@ -3,8 +3,9 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
-  final Widget icon;
-  final String text;
+  final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
+  final String? text;
   final bool? loading;
   final ButtonFit? fit;
 
@@ -13,8 +14,9 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
     this.onPressed,
     this.loading,
     this.fit,
-    required this.icon,
-    required this.text,
+    this.icon,
+    this.iconInfo,
+    this.text,
   }) : super(key: key);
 
   @override
@@ -22,7 +24,7 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
     TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase;
 
     return Material(
-      color: context.uiKitTheme?.colorScheme.inversePrimary,
+      color: context.uiKitTheme?.colorScheme.inverseSurface,
       borderRadius: BorderRadiusFoundation.max,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
@@ -37,11 +39,19 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
             mainAxisAlignment: fit == ButtonFit.fitWidth ? MainAxisAlignment.center : MainAxisAlignment.start,
             children: [
               Text(
-                (loading ?? false) ? '' : text.toUpperCase(),
-                style: textStyle?.copyWith(color: context.uiKitTheme?.colorScheme.primary),
+                (loading ?? false) ? '' : text?.toUpperCase() ?? '',
+                style: textStyle?.copyWith(color: context.uiKitTheme?.colorScheme.surface),
               ),
               SpacingFoundation.horizontalSpace8,
-              if (!(loading ?? false)) icon,
+              if (!(loading ?? false))
+                icon ??
+                    ImageWidget(
+                      iconData: iconInfo?.iconData,
+                      link: iconInfo?.iconPath,
+                      height: iconInfo?.size,
+                      fit: BoxFit.fitHeight,
+                      color: iconInfo?.color ?? context.uiKitTheme?.colorScheme.surface,
+                    ),
             ],
           ),
         ),

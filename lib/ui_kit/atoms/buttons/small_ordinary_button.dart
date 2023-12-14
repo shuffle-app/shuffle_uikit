@@ -7,8 +7,6 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final bool uppercase;
   final bool? loading;
-  final Color? color;
-  final Color? backgroundColor;
   final ButtonFit? fit;
   final AutoSizeGroup? group;
 
@@ -20,8 +18,6 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
     this.fit,
     this.group,
     this.uppercase = true,
-    this.color,
-    this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -37,9 +33,8 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
                     ? text.toUpperCase()
                     : text,
             maxLines: 1,
-      group: group,
-            style: textStyle?.copyWith(
-                color: (color ?? Colors.white) == Colors.white ? (enabled ? Colors.black : Colors.grey) : Colors.white),
+            group: group,
+            style: textStyle?.copyWith(color: enabled ? theme?.colorScheme.surface : Colors.grey),
             textAlign: TextAlign.center,
           ).loadingWrap(loading ?? false)
         : Text(
@@ -48,13 +43,12 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
                 : uppercase
                     ? text.toUpperCase()
                     : text,
-            style: textStyle?.copyWith(
-                color: (color ?? Colors.white) == Colors.white ? (enabled ? Colors.black : Colors.grey) : Colors.white),
+            style: textStyle?.copyWith(color: enabled ? theme?.colorScheme.surface : Colors.grey),
             textAlign: TextAlign.center,
           ).loadingWrap(loading ?? false);
 
     return Material(
-      color: backgroundColor ?? Colors.white,
+      color: enabled ? theme?.colorScheme.inverseSurface : ColorsFoundation.darkNeutral300,
       clipBehavior: Clip.hardEdge,
       borderRadius: BorderRadiusFoundation.max,
       child: InkWell(

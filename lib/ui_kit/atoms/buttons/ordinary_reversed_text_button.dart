@@ -5,12 +5,14 @@ class OrdinaryReversedTextButton extends StatelessWidget implements ButtonFactor
   final String text;
   final VoidCallback? onPressed;
   final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
 
   const OrdinaryReversedTextButton({
     Key? key,
     required this.text,
     this.onPressed,
     this.icon,
+    this.iconInfo,
   }) : super(key: key);
 
   @override
@@ -22,7 +24,15 @@ class OrdinaryReversedTextButton extends StatelessWidget implements ButtonFactor
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(text),
-          if (icon != null) icon!,
+          if (icon != null && iconInfo == null) icon!,
+          if (iconInfo != null && icon == null)
+            ImageWidget(
+              iconData: iconInfo?.iconData,
+              link: iconInfo?.iconPath,
+              height: iconInfo?.size,
+              fit: BoxFit.fitHeight,
+              color: iconInfo?.color ?? Colors.black,
+            ),
         ],
       ),
     );

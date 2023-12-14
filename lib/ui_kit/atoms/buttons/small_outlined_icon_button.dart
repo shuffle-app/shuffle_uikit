@@ -1,22 +1,23 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:flutter/foundation.dart';
 
 class SmallOutlinedIconButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final Color? borderColor;
-  final Color? textColor;
-  final Widget icon;
+  final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
   final bool? loading;
 
   const SmallOutlinedIconButton({
     Key? key,
     this.onPressed,
     this.borderColor,
-    this.textColor,
-    required this.icon,
+    this.icon,
+    this.iconInfo,
     this.loading,
-  }) : super(key: key);
+  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +35,17 @@ class SmallOutlinedIconButton extends StatelessWidget implements ButtonFactory {
               width: 2.w,
             ),
           ),
-          child: icon
-              .paddingAll( kIsWeb ? EdgeInsetsFoundation.horizontal6: EdgeInsetsFoundation.horizontal12)
-              .loadingWrap(loading ?? false, color: borderColor ?? Colors.white),
+          child: Padding(
+            padding: EdgeInsets.all(kIsWeb ? EdgeInsetsFoundation.horizontal6 : EdgeInsetsFoundation.horizontal12),
+            child: icon ??
+                ImageWidget(
+                  iconData: iconInfo?.iconData,
+                  link: iconInfo?.iconPath,
+                  height: iconInfo?.size,
+                  fit: BoxFit.fitHeight,
+                  color: iconInfo?.color ?? context.uiKitTheme?.colorScheme.inversePrimary,
+                ),
+          ).loadingWrap(loading ?? false, color: borderColor ?? Colors.white),
         ),
       ),
     );

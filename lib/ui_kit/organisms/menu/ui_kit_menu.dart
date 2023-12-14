@@ -125,9 +125,9 @@ class UiKitMenu<T> extends StatelessWidget {
                     style: boldTextTheme?.caption1Medium,
                   ),
                 ),
-                const ImageWidget(
+                ImageWidget(
                   iconData: ShuffleUiKitIcons.chevronright,
-                  color: Colors.white,
+                  color: context.uiKitTheme?.colorScheme.inversePrimary,
                 ),
               ],
             ],

@@ -46,6 +46,9 @@ class ColorsFoundation {
   static const shunyGreyGradientBegin = UiKitColors.shunyGreyGradientBegin;
   static const shunyGreyGradientMid = UiKitColors.shunyGreyGradientMid;
   static const shunyGreyGradientEnd = UiKitColors.shunyGreyGradientEnd;
+  static const gradientGreyDark1 = UiKitColors.gradientGreyDark1;
+  static const gradientGreyDark2 = UiKitColors.gradientGreyDark2;
+  static const gradientGreyDark3 = UiKitColors.gradientGreyDark3;
   static const lemon = UiKitColors.lemon;
   static const brightRed = UiKitColors.brightRed;
   static const purple = UiKitColors.purple;

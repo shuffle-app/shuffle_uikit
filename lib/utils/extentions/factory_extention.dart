@@ -6,7 +6,7 @@ extension FactoryExtention on BuildContext {
     return WidgetsFactory.of(this)!.createSmallGradientButton(data: data).build(this);
   }
 
-  Widget createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred, Gradient? gradient}) {
+  Widget createSmallOutlinedButton({required BaseUiKitButtonData data, Color? color, bool? blurred, Gradient? gradient}) {
     return WidgetsFactory.of(this)!
         .createSmallOutlinedButton(data: data, color: color, blurred: blurred, gradient: gradient)
         .build(this);
@@ -27,7 +27,7 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget badgeButtonNoValue({
-    BaseUiKitButtonData? data,
+    required BaseUiKitButtonData data,
     Alignment? badgeAlignment,
   }) {
     return WidgetsFactory.of(this)!
@@ -43,8 +43,6 @@ extension FactoryExtention on BuildContext {
     bool? isTextButton,
     bool? blurred,
     bool uppercase = true,
-    Color? color,
-    Color? backgroundColor,
   }) {
     return WidgetsFactory.of(this)!
         .createSmallButton(
@@ -52,8 +50,6 @@ extension FactoryExtention on BuildContext {
           isTextButton: isTextButton ?? false,
           blurred: blurred,
           uppercase: uppercase,
-          color: color,
-          backgroundColor: backgroundColor,
         )
         .build(this);
   }
@@ -91,7 +87,7 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget smallOutlinedButton({
-    BaseUiKitButtonData? data,
+    required BaseUiKitButtonData data,
     Color? color,
     bool? blurred,
     Gradient? gradient,

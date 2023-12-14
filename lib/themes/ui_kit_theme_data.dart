@@ -19,15 +19,16 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final ButtonStyle smallOrdinaryButtonStyle;
   final BottomSheetThemeData bottomSheetTheme;
   final BlurredBottomNavigationBarTheme blurredBottomNavigationBarTheme;
+  final ThemeMode themeMode;
 
-  ButtonStyle textButtonStyle([Color textColor=Colors.white]) => ButtonStyle(
+  ButtonStyle textButtonStyle([Color textColor = Colors.white]) => ButtonStyle(
         textStyle: MaterialStateTextStyle.resolveWith((states) {
           return boldTextTheme.title2;
         }),
         foregroundColor: MaterialStateProperty.resolveWith((states) => textColor),
         overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
       );
-  ButtonStyle  textButtonLabelSmallStyle([Color textColor=Colors.white]) => ButtonStyle(
+  ButtonStyle textButtonLabelSmallStyle([Color textColor = Colors.white]) => ButtonStyle(
         textStyle: MaterialStateTextStyle.resolveWith((states) {
           return regularTextTheme.labelSmall;
         }),
@@ -53,6 +54,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     required this.cardTheme,
     required this.bottomSheetTheme,
     required this.smallOrdinaryButtonStyle,
+    required this.themeMode,
   });
 
   @override
@@ -75,8 +77,10 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     ButtonStyle? textButtonStyle,
     ButtonStyle? smallOrdinaryButtonStyle,
     BlurredBottomNavigationBarTheme? blurredBottomNavigationBarTheme,
+    ThemeMode? themeMode,
   }) {
     return UiKitThemeData(
+      themeMode: themeMode ?? this.themeMode,
       customColor: customColor ?? this.customColor,
       blurredBottomNavigationBarTheme: blurredBottomNavigationBarTheme ?? this.blurredBottomNavigationBarTheme,
       cardColor: cardColor ?? this.cardColor,
@@ -104,6 +108,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     }
 
     return UiKitThemeData(
+      themeMode: themeMode,
       customColor: Color.lerp(customColor, other.customColor, t) ?? Colors.white,
       colorScheme: colorScheme,
       iconInputTheme: iconInputTheme,

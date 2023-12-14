@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientIconButton extends StatelessWidget implements ButtonFactory {
-  final Widget icon;
+  final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
   final VoidCallback? onPressed;
   final BorderRadius? borderRadius;
   final bool? loading;
@@ -15,12 +16,23 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
     this.onPressed,
     this.borderRadius,
     this.loading,
+    this.iconInfo,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
-    final child = icon.paddingAll(EdgeInsetsFoundation.all12);
+    final child = Padding(
+      padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
+      child: icon ??
+          ImageWidget(
+            iconData: iconInfo?.iconData,
+            link: iconInfo?.iconPath,
+            height: iconInfo?.size,
+            fit: BoxFit.fitHeight,
+            color: iconInfo?.color ?? Colors.black,
+          ),
+    );
 
     return Material(
       borderRadius: borderRadius ?? BorderRadiusFoundation.all24,

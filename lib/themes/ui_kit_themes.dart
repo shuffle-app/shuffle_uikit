@@ -55,6 +55,7 @@ class UiKitThemes {
     ),
     extensions: [
       UiKitThemeData(
+        themeMode: ThemeMode.light,
         colorScheme: const UiKitColorScheme.light(),
         cardColor: ColorsFoundation.lightSurface2,
         customColor: Colors.red,
@@ -63,7 +64,7 @@ class UiKitThemes {
           backgroundColor: ColorsFoundation.solidLightSurface,
         ),
         blurredBottomNavigationBarTheme: BlurredBottomNavigationBarTheme(
-          iconColors: ColorsFoundation.solidLightSurface,
+          iconColors: Colors.black,
         ),
         ordinaryButtonStyle: ButtonStyle(
           fixedSize: MaterialStateProperty.resolveWith(
@@ -225,6 +226,7 @@ class UiKitThemes {
     bottomSheetTheme: const BottomSheetThemeData(
       backgroundColor: Colors.transparent,
       modalBackgroundColor: Colors.transparent,
+      elevation: 0,
     ),
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: Colors.white,
@@ -336,6 +338,7 @@ class UiKitThemes {
     // colorScheme:  const ColorScheme.light().copyWith(onSurface: Colors.white),
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
+        themeMode: ThemeMode.dark,
         cardColor: ColorsFoundation.surface1,
         customColor: Colors.red,
         chipTheme: UiKitChipThemeData(

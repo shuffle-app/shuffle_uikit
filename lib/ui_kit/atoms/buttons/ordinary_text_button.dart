@@ -5,12 +5,14 @@ class OrdinaryTextButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
   final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
 
   const OrdinaryTextButton({
     Key? key,
     required this.text,
     this.onPressed,
     this.icon,
+    this.iconInfo,
   }) : super(key: key);
 
   @override

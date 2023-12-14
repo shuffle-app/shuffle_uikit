@@ -17,7 +17,8 @@ class UiKitTitledSelectionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = context.uiKitTheme?.regularTextTheme;
+    final theme = context.uiKitTheme;
+    final textTheme = theme?.regularTextTheme;
 
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
@@ -41,9 +42,9 @@ class UiKitTitledSelectionTile extends StatelessWidget {
                   maxLines: 1,
                 ),
               ),
-              const ImageWidget(
+              ImageWidget(
                 iconData: ShuffleUiKitIcons.chevronright,
-                color: Colors.white,
+                color: theme?.colorScheme.inversePrimary,
               ),
             ],
           ),
