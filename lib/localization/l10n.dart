@@ -2741,6 +2741,26 @@ class S {
     );
   }
 
+  /// `Swipe to start`
+  String get SwipeToStart {
+    return Intl.message(
+      'Swipe to start',
+      name: 'SwipeToStart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can switch it at any time in your profile settings`
+  String get SwitchAnyTime {
+    return Intl.message(
+      'You can switch it at any time in your profile settings',
+      name: 'SwitchAnyTime',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// ``
   String get key {
     return Intl.message(

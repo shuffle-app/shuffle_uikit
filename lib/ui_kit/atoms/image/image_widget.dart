@@ -164,7 +164,7 @@ class CustomProxyStatic {
   static String? _proxyBase;
 
   static String get proxy {
-    return _proxyBase == null || _proxyBase!.isEmpty ? '' : 'https://$_proxyBase/proxy/';
+    return _proxyBase == null || _proxyBase!.isEmpty ? '' : 'https://$_proxyBase/image-proxy/';
   }
 
   static set proxy(String value) {

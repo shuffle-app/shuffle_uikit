@@ -269,5 +269,7 @@
   "Price": "Price",
   "Category": "Category",
   "Messages": "Сообщения",
+  "SwipeToStart": "Swipe to start",
+  "SwitchAnyTime": "You can switch it at any time in your profile settings",
   "key": ""
 }
