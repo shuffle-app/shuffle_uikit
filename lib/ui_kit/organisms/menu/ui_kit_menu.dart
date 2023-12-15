@@ -14,6 +14,7 @@ class UiKitMenu<T> extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
   final Color? tilesColor;
   final bool useCustomTiles;
+  final Widget? separator;
 
   const UiKitMenu({
     Key? key,
@@ -24,6 +25,7 @@ class UiKitMenu<T> extends StatelessWidget {
     this.customTopPadding,
     this.borderRadius,
     this.tilesColor,
+    this.separator,
     this.useCustomTiles = false,
   }) : super(key: key);
 
@@ -84,6 +86,7 @@ class UiKitMenu<T> extends StatelessWidget {
                       onSelected: onSelected,
                       tilesColor: tilesColor,
                       useCustomTiles: useCustomTiles,
+                      separator: separator,
                     )
                   : MultipleTypeMenuBody<T>(
                       title: title,
@@ -92,6 +95,7 @@ class UiKitMenu<T> extends StatelessWidget {
                       onSelected: onSelected,
                       tilesColor: tilesColor,
                       useCustomTiles: useCustomTiles,
+                      separator: separator,
                     ),
             ),
           );

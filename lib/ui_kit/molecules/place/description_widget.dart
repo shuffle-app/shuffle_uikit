@@ -16,6 +16,7 @@ class DescriptionWidget extends StatelessWidget {
         final displayShowMoreButton = (description.replaceAll('\n', '').characters.length * 6.4.w ~/ 0.8.sw +
                 description.characters.where((p0) => p0 == '\n').length) >
             7;
+        final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light ?? true;
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -26,14 +27,17 @@ class DescriptionWidget extends StatelessWidget {
               maxLines: hide ? 7 : null,
               softWrap: true,
               overflow: hide ? TextOverflow.ellipsis : null,
-              style: textTheme,
+              style: textTheme?.copyWith(
+                color: context.uiKitTheme?.colorScheme.bodyTypography,
+              ),
             ),
             if (displayShowMoreButton)
               GestureDetector(
                 onTap: () => s(() => hide = !hide),
                 child: Text(
                   'Read ${hide ? 'more' : 'less'}',
-                  style: textTheme?.copyWith(color: ColorsFoundation.darkNeutral300),
+                  style: textTheme?.copyWith(
+                      color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300),
                 ),
               ).paddingOnly(top: SpacingFoundation.verticalSpacing12)
           ],

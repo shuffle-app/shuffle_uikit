@@ -9,6 +9,8 @@ class BaseUiKitButtonData {
   final ButtonFit? fit;
   final bool? loading;
   final Color? borderColor;
+  final Color? backgroundColor;
+  final Color? textColor;
 
   BaseUiKitButtonData({
     this.onPressed,
@@ -18,6 +20,8 @@ class BaseUiKitButtonData {
     this.fit,
     this.loading,
     this.borderColor,
+    this.backgroundColor,
+    this.textColor,
   });
 }
 

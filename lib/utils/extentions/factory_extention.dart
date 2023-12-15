@@ -1,7 +1,20 @@
 import 'package:flutter/cupertino.dart';
+import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 extension FactoryExtention on BuildContext {
+  Widget outlinedGradientButton({
+    required BaseUiKitButtonData data,
+    required GradientBoxBorder gradient,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createOutlinedGradientButton(
+          data: data,
+          gradient: gradient,
+        )
+        .build(this);
+  }
+
   Widget smallGradientButton({required BaseUiKitButtonData data}) {
     return WidgetsFactory.of(this)!.createSmallGradientButton(data: data).build(this);
   }

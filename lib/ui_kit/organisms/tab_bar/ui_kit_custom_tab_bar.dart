@@ -19,10 +19,11 @@ class UiKitCustomTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tabStyle = context.uiKitTheme?.boldTextTheme.body;
-    final tabBarTheme = context.uiKitTheme?.uiKitTabBarTheme.copyWith(
-      unselectedLabelStyle: tabStyle?.copyWith(color: Colors.white),
-      labelStyle: tabStyle,
+    final theme = context.uiKitTheme;
+    final tabStyle = theme?.boldTextTheme.body;
+    final tabBarTheme = theme?.uiKitTabBarTheme.copyWith(
+      unselectedLabelStyle: tabStyle?.copyWith(color: theme.uiKitTabBarTheme.unselectedLabelColor),
+      labelStyle: tabStyle?.copyWith(color: theme.uiKitTabBarTheme.labelColor),
     );
 
     final initialTab = tabs.indexWhere((element) => element is UiKitCustomTab && element.title == selectedTab);
@@ -30,6 +31,7 @@ class UiKitCustomTabBar extends StatelessWidget {
     return Theme(
       data: Theme.of(context).copyWith(tabBarTheme: tabBarTheme),
       child: UiKitCardWrapper(
+        color: theme?.colorScheme.surface2,
         child: DefaultTabController(
           animationDuration: const Duration(milliseconds: 250),
           length: tabs.length,

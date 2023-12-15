@@ -24,7 +24,7 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
         borderRadius: BorderRadiusFoundation.all24,
         side: BorderSide(
           width: 2,
-          color: isSelected ? Colors.transparent : Colors.white,
+          color: isSelected ? Colors.transparent : colorScheme?.inverseSurface ?? Colors.transparent,
         ),
       ),
       color: isSelected ? colorScheme?.inversePrimary : colorScheme?.primary,

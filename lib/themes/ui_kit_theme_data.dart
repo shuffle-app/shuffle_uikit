@@ -78,6 +78,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     ButtonStyle? smallOrdinaryButtonStyle,
     BlurredBottomNavigationBarTheme? blurredBottomNavigationBarTheme,
     ThemeMode? themeMode,
+    UiKitColorScheme? colorScheme,
   }) {
     return UiKitThemeData(
       themeMode: themeMode ?? this.themeMode,
@@ -97,7 +98,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
       ordinaryButtonStyle: ordinaryButtonStyle ?? this.ordinaryButtonStyle,
       bottomSheetTheme: bottomSheetTheme ?? this.bottomSheetTheme,
       smallOrdinaryButtonStyle: smallOrdinaryButtonStyle ?? this.smallOrdinaryButtonStyle,
-      colorScheme: colorScheme,
+      colorScheme: colorScheme ?? this.colorScheme,
     );
   }
 

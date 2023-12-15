@@ -29,7 +29,7 @@ class UiKitTitledSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         UiKitCardWrapper(
-          color: color,
+          color: color ?? theme?.colorScheme.surface1,
           border: hasError == true
               ? const BorderSide(
                   color: ColorsFoundation.error,

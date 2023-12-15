@@ -117,7 +117,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                   'Branches',
                   style: context.uiKitTheme?.boldTextTheme.caption2Medium,
                 ),
-                SpacingFoundation.verticalSpace8,
+                SpacingFoundation.verticalSpace4,
                 ConstrainedBox(
                   constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
                   child: ListView.separated(

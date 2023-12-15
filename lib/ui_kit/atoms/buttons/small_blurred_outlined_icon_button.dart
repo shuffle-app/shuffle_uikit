@@ -57,7 +57,7 @@ class SmallBlurredOutlinedIconButton extends StatelessWidget implements ButtonFa
                       link: iconInfo?.iconPath,
                       height: iconInfo?.size,
                       fit: BoxFit.fitHeight,
-                      color: theme?.colorScheme.inversePrimary,
+                      color: iconInfo?.color ?? theme?.colorScheme.inversePrimary,
                     ),
               ).loadingWrap(loading ?? false, color: Colors.white),
             ),

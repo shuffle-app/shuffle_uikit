@@ -93,6 +93,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with SingleTickerPr
     final dateTextStyle = textTheme?.caption2Bold.copyWith(
       color: ColorsFoundation.darkNeutral900,
     );
+    final colorScheme = context.uiKitTheme?.colorScheme;
     final String? convertedDate = formatDate(
       widget.date,
       widget.dateTo,
@@ -193,14 +194,14 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with SingleTickerPr
                               iconWidget: AnimatedSwitcher(
                                 duration: widgetAnimDurations,
                                 child: widget.favourite == true
-                                    ? const ImageWidget(
+                                    ? ImageWidget(
                                         iconData: ShuffleUiKitIcons.starfill,
-                                        color: Colors.white,
+                                        color: colorScheme?.inverseSurface,
                                         fit: BoxFit.cover,
                                       )
-                                    : const ImageWidget(
+                                    : ImageWidget(
                                         iconData: ShuffleUiKitIcons.staroutline,
-                                        color: Colors.white,
+                                        color: colorScheme?.inverseSurface,
                                         fit: BoxFit.cover,
                                       ),
                               ),

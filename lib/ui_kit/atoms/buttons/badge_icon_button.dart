@@ -20,6 +20,7 @@ class BadgeIconButton extends StatelessWidget implements ButtonFactory {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
     final topLeftBadge = alignment == Alignment.topLeft;
     final topRightBadge = alignment == Alignment.topRight;
     final child = Container(
@@ -30,8 +31,8 @@ class BadgeIconButton extends StatelessWidget implements ButtonFactory {
       ),
       child: Text(
         '$badgeValue',
-        style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(
-          color: Colors.black,
+        style: theme?.boldTextTheme.caption1Bold.copyWith(
+          color: theme.colorScheme.surface,
         ),
       ).paddingAll(EdgeInsetsFoundation.all4),
     );
@@ -55,7 +56,7 @@ class BadgeIconButton extends StatelessWidget implements ButtonFactory {
                   link: iconInfo?.iconPath,
                   height: iconInfo?.size,
                   fit: BoxFit.fitHeight,
-                  color: iconInfo?.color ?? context.uiKitTheme?.colorScheme.inverseSurface,
+                  color: iconInfo?.color ?? theme?.colorScheme.inverseSurface,
                 ),
               if (topLeftBadge || alignment == null)
                 Positioned(

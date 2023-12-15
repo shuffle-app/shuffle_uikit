@@ -184,11 +184,11 @@ class UiKitThemes {
         uiKitTabBarTheme: TabBarTheme(
           indicatorSize: TabBarIndicatorSize.tab,
           dividerColor: Colors.transparent,
-          labelColor: Colors.black,
-          unselectedLabelColor: ColorsFoundation.darkNeutral500,
+          labelColor: ColorsFoundation.lightSurface,
+          unselectedLabelColor: ColorsFoundation.lightHeadingTypographyColor,
           indicator: BoxDecoration(
             borderRadius: BorderRadiusFoundation.max,
-            color: Colors.white,
+            color: ColorsFoundation.surface,
           ),
         ),
         buttonTheme: ButtonThemeData(
@@ -464,11 +464,11 @@ class UiKitThemes {
         uiKitTabBarTheme: TabBarTheme(
           indicatorSize: TabBarIndicatorSize.tab,
           dividerColor: Colors.transparent,
-          labelColor: Colors.black,
-          unselectedLabelColor: Colors.white,
+          labelColor: ColorsFoundation.lightBodyTypographyColor,
+          unselectedLabelColor: ColorsFoundation.darkHeadingTypographyColor,
           indicator: BoxDecoration(
             borderRadius: BorderRadiusFoundation.max,
-            color: Colors.white,
+            color: ColorsFoundation.lightSurface,
           ),
         ),
         buttonTheme: ButtonThemeData(

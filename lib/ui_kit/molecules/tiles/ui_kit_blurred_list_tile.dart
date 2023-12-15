@@ -45,34 +45,42 @@ class UiKitBlurredListTile extends StatelessWidget {
             SpacingFoundation.horizontalSpace12,
             Expanded(
               child: FutureBuilder(
-                  future: subtitle,
-                  builder: (context, snapshot) => Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Text(
-                                  '$title',
-                                  maxLines: (snapshot.data ?? '').isNotEmpty ? 1 : 2,
-                                  style: titleTextStyle?.copyWith(overflow: TextOverflow.ellipsis),
-                                ),
-                              ),
-                              if (titleTrailing != null) ...[
-                                SpacingFoundation.horizontalSpace8,
-                                titleTrailing!,
-                              ],
-                            ],
+                future: subtitle,
+                builder: (context, snapshot) => Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            '$title',
+                            maxLines: (snapshot.data ?? '').isNotEmpty ? 1 : 2,
+                            style: titleTextStyle?.copyWith(
+                              overflow: TextOverflow.ellipsis,
+                              color: Colors.white,
+                            ),
                           ),
-                          if ((snapshot.data ?? '').isNotEmpty)
-                            Text(
-                              snapshot.data ?? '',
-                              style: subtitleTextStyle?.copyWith(overflow: TextOverflow.ellipsis),
-                            )
+                        ),
+                        if (titleTrailing != null) ...[
+                          SpacingFoundation.horizontalSpace8,
+                          titleTrailing!,
                         ],
-                      )),
+                      ],
+                    ),
+                    if ((snapshot.data ?? '').isNotEmpty)
+                      Text(
+                        snapshot.data ?? '',
+                        maxLines: 1,
+                        style: subtitleTextStyle?.copyWith(
+                          overflow: TextOverflow.ellipsis,
+                          color: Colors.white,
+                        ),
+                      )
+                  ],
+                ),
+              ),
             ),
           ],
         ).paddingAll(EdgeInsetsFoundation.all12),

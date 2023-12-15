@@ -20,7 +20,8 @@ class UiKitHorizontalWheelNumberSelector extends StatefulWidget {
     this.numbersColor,
     int? initialValue,
     this.hideTitle = false,
-  }) : initialValue = initialValue ?? 8, super(key: key);
+  })  : initialValue = initialValue ?? 8,
+        super(key: key);
 
   @override
   State<UiKitHorizontalWheelNumberSelector> createState() => _UiKitHorizontalWheelNumberSelectorState();
@@ -138,19 +139,28 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
                         ).toList(),
                       ),
                     )),
-                Row(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
-                  IgnorePointer(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    IgnorePointer(
                       child: SizedBox(
-                          width: itemWidth,
-                          height: itemHeight,
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              borderRadius: BorderRadiusFoundation.all10,
-                              border: Border.all(color: widget.numbersColor ?? Colors.white, width: 2),
+                        width: itemWidth,
+                        height: itemHeight,
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            borderRadius: BorderRadiusFoundation.all10,
+                            border: Border.all(
+                              color: widget.numbersColor ?? context.uiKitTheme?.colorScheme.inverseSurface ?? Colors.white,
+                              width: 2,
                             ),
-                          )))
-                ]),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ],
             ),
           ),

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
 
 abstract class WidgetsAbstractFactory {
+  ButtonFactory createOutlinedGradientButton({
+    required BaseUiKitButtonData data,
+    required GradientBoxBorder gradient,
+  });
+
   ButtonFactory createBouncingIconButton({
     required BaseUiKitButtonData data,
     bool? blurred,
@@ -112,6 +118,20 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
+  ButtonFactory createOutlinedGradientButton({
+    required BaseUiKitButtonData data,
+    required GradientBoxBorder gradient,
+  }) {
+    return OutlinedGradientButton(
+      text: data.text ?? '',
+      onPressed: data.onPressed,
+      gradientBorder: gradient,
+      loading: data.loading,
+      fit: data.fit,
+    );
+  }
+
+  @override
   ButtonFactory createSmallOutlinedButton({
     required BaseUiKitButtonData data,
     Color? color,
@@ -139,7 +159,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         blurred: blurred ?? false,
         text: data.text ?? '',
         borderColor: color,
-        textColor: gradient != null ? Colors.white : color,
+        textColor: gradient != null ? Colors.black : color,
         loading: data.loading,
       );
     } else if ((blurred ?? false) && hasIcon) {
@@ -188,14 +208,13 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }) {
     final hasIcon = data.iconWidget != null || data.iconInfo != null;
 
-    if ((data.text?.isEmpty ?? false) && hasIcon) {
+    if ((data.text?.isEmpty ?? true) && hasIcon) {
       if (blurred ?? false) {
         return OutlinedBlurIconButton(
           icon: data.iconWidget,
           iconInfo: data.iconInfo,
           onPressed: data.onPressed,
           loading: data.loading,
-          borderColor: borderColor,
         );
       }
 
@@ -308,6 +327,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         text: data.text ?? '',
         onPressed: data.onPressed,
         loading: data.loading,
+        backgroundColor: data.backgroundColor,
+        textColor: data.textColor,
       );
     }
   }

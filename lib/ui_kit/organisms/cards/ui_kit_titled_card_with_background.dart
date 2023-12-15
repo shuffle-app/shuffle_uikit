@@ -32,31 +32,20 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
         onTap: onPressed,
         child: Ink(
           decoration: BoxDecoration(
-            // borderRadius: BorderRadiusFoundation.all24,
             color: backgroundColor,
-            // border: Border.all(
-            //   color: ColorsFoundation.lightGrey,
-            //   width: 1,
-            // ),
           ),
           width: relativeSize,
           height: relativeSize,
           child: Stack(
             fit: StackFit.expand,
             children: [
-              // ClipRRect(
-              //   borderRadius: BorderRadiusFoundation.all24,
-              //   child:
               ImageWidget(
                 link: backgroundImageLink,
                 fit: BoxFit.cover,
-                // ),
               ),
               Text(
                 title,
-                style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
-                  color: context.uiKitTheme?.colorScheme.primary,
-                ),
+                style: context.uiKitTheme?.regularTextTheme.caption4Regular,
                 textAlign: TextAlign.center,
               ).paddingOnly(
                 top: EdgeInsetsFoundation.vertical8,

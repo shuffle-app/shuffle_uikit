@@ -21,6 +21,7 @@ class UiKitSwitchWithCustomBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = 0.765625.sw;
     final height = width * 0.4897;
+    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return GestureDetector(
       onTap: () {
@@ -98,12 +99,13 @@ class UiKitSwitchWithCustomBackground extends StatelessWidget {
                   width: (height - 16) * 0.85,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadiusFoundation.all24,
-                    gradient: GradientFoundation.darkSurfaceGradient,
+                    gradient: isLightTheme ? GradientFoundation.lightSurfaceGradient : GradientFoundation.darkSurfaceGradient,
                   ),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadiusFoundation.all20,
-                      gradient: GradientFoundation.surfaceLinearGradient,
+                      gradient:
+                          isLightTheme ? GradientFoundation.lightSurfaceLinearGradient : GradientFoundation.surfaceLinearGradient,
                     ),
                   ).paddingAll(EdgeInsetsFoundation.all6),
                 ),

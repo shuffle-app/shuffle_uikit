@@ -33,15 +33,16 @@ class UiKitChatInCard extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomPaint(painter: _MessageTriangle(color: theme!.cardColor)),
+            CustomPaint(painter: _MessageTriangle(color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white)),
             Flexible(
               child: UiKitCardWrapper(
+                color: theme?.colorScheme.surface2,
                 child: text != null
                     ? ConstrainedBox(
                         constraints: BoxConstraints.expand(width: width, height: height),
                         child: Text(
                           text!,
-                          style: theme.boldTextTheme.caption1Medium,
+                          style: theme?.boldTextTheme.caption1Medium,
                         ),
                       ).paddingAll(EdgeInsetsFoundation.all12)
                     : child!.paddingAll(EdgeInsetsFoundation.all12),

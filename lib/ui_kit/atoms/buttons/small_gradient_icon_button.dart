@@ -34,7 +34,7 @@ class SmallGradientIconButton extends StatelessWidget implements ButtonFactory {
                   link: iconInfo?.iconPath,
                   height: iconInfo?.size,
                   fit: BoxFit.fitHeight,
-                  color: iconInfo?.color ?? context.uiKitTheme?.colorScheme.surface,
+                  color: Colors.black,
                 ),
           ),
         ),

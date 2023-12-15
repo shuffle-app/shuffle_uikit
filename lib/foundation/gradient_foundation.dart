@@ -206,10 +206,29 @@ class GradientFoundation {
     end: Alignment.centerRight,
   );
 
+  static const lightSurfaceLinearGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.lightSurfaceGradientBegin,
+      ColorsFoundation.lightSurfaceGradientMid,
+      ColorsFoundation.lightSurfaceGradientEnd,
+    ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
+
   static const darkSurfaceGradient = LinearGradient(
     colors: [
       ColorsFoundation.surface5,
       ColorsFoundation.surface3,
+    ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
+
+  static const lightSurfaceGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.lightSurfaceGradientEnd,
+      ColorsFoundation.lightSurfaceGradientBegin,
     ],
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
@@ -282,6 +301,21 @@ class GradientFoundation {
       1,
       0,
     ],
+  );
+
+  static final lightShunyGreyGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.lightSurface1,
+      Colors.white,
+      ColorsFoundation.lightSurface1,
+    ],
+    stops: const [
+      0.1753,
+      0.4873,
+      0.8003,
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
   );
 
   static final shunyGreyGradient = LinearGradient(

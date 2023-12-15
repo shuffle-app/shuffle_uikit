@@ -32,6 +32,14 @@ class UiKitColors {
   static final neutral40 = darkNeutral500.withOpacity(0.4);
   static final neutral48 = darkNeutral500.withOpacity(0.48);
 
+  static const lightBodyTypographyColor = Color(0xff363956);
+  static const darkBodyTypographyColor = darkNeutral100;
+
+  static const lightHeadingTypographyColor = Color(0xff08133B);
+  static const darkHeadingTypographyColor = Color(0xffFFFFFF);
+
+  static const mutedText = Color(0xff8E9094);
+
   static const yellow = Color(0xffC6E216);
   static const brightYellow = Color(0xffFAE634);
   static const lemon = Color(0xffFCE600);
@@ -61,6 +69,9 @@ class UiKitColors {
   static const surfaceGradientBegin = Color(0xff2E2E2E);
   static const surfaceGradientMid = Color(0xff5B5B5B);
   static const surfaceGradientEnd = Color(0xff7F7E7E);
+  static const lightSurfaceGradientBegin = Color(0xffafafaf);
+  static const lightSurfaceGradientMid = Color(0xffbdbdbd);
+  static const lightSurfaceGradientEnd = Color(0xffcccccc);
   static const shunyGreyGradientBegin = Color(0xff222222);
   static const shunyGreyGradientMid = Color(0xff7F7F7F);
   static const shunyGreyGradientEnd = Color(0xff565656);

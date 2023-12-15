@@ -5,7 +5,6 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class OutlinedBlurIconButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
-  final Color? borderColor;
   final Widget? icon;
   final BaseUiKitButtonIconData? iconInfo;
   final bool? loading;
@@ -14,7 +13,6 @@ class OutlinedBlurIconButton extends StatelessWidget implements ButtonFactory {
   const OutlinedBlurIconButton({
     Key? key,
     this.onPressed,
-    this.borderColor,
     required this.icon,
     this.loading,
     this.iconInfo,
@@ -34,9 +32,8 @@ class OutlinedBlurIconButton extends StatelessWidget implements ButtonFactory {
         child: Ink(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            // color: Colors.white.withOpacity(0.1),
             border: Border.all(
-              color: borderColor ?? Colors.white,
+              color: context.uiKitTheme?.colorScheme.inversePrimary ?? Colors.white,
               width: 2.w,
             ),
           ),

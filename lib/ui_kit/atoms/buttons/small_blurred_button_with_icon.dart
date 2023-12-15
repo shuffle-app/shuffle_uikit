@@ -40,7 +40,7 @@ class SmallBlurredButtonWithIcon extends StatelessWidget implements ButtonFactor
                       link: iconInfo?.iconPath,
                       height: iconInfo?.size,
                       fit: BoxFit.fitHeight,
-                      color: iconInfo?.color ?? context.uiKitTheme?.colorScheme.surface,
+                      color: iconInfo?.color ?? context.uiKitTheme?.colorScheme.inverseSurface,
                     ),
               ),
             ),
