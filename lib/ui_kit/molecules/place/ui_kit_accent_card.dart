@@ -22,7 +22,10 @@ class UiKitAccentCard extends StatelessWidget {
     final theme = context.uiKitTheme;
     final textTheme = theme?.boldTextTheme;
     final titleStyle = textTheme?.subHeadline;
-    final additionalInfoStyle = textTheme?.caption2Bold.copyWith(color: ColorsFoundation.darkNeutral500);
+    final additionalInfoStyle = textTheme?.caption2Bold.copyWith(
+      color: ColorsFoundation.darkNeutral500,
+      overflow: TextOverflow.ellipsis,
+    );
     final accentMessageStyle = textTheme?.caption1Bold.copyWith(color: ColorsFoundation.darkNeutral100);
     final height = 0.92.sw * 0.57;
 
@@ -31,10 +34,11 @@ class UiKitAccentCard extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
-            color: theme?.colorScheme.inversePrimary ?? Colors.white,
-            blurRadius: 16.sp,
+            color: ColorsFoundation.shadowPink,
+            blurRadius: 18,
+            spreadRadius: 0,
             offset: Offset.zero,
           ),
         ],
@@ -48,7 +52,7 @@ class UiKitAccentCard extends StatelessWidget {
             right: SpacingFoundation.horizontalSpacing16,
             child: Container(
               decoration: BoxDecoration(
-                color: theme?.colorScheme.primary.withOpacity(0.15),
+                color: Colors.black.withOpacity(0.15),
                 borderRadius: BorderRadiusFoundation.all24,
               ),
               child: Text(
@@ -106,16 +110,14 @@ class UiKitAccentCard extends StatelessWidget {
                   maxLines: 1,
                 ),
                 Flexible(
-                    child:
-                    Text(
+                    child: Text(
                   title,
                   style: titleStyle?.copyWith(
                     overflow: TextOverflow.ellipsis,
                     color: Colors.white,
                   ),
                   maxLines: 2,
-                )
-          ),
+                )),
               ],
             ),
           ),

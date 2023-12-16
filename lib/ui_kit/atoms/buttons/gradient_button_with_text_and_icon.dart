@@ -3,8 +3,9 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
-  final String text;
-  final Widget icon;
+  final String? text;
+  final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
   final bool? loading;
   final ButtonFit? fit;
 
@@ -13,9 +14,11 @@ class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFac
     this.onPressed,
     this.loading,
     this.fit,
-    required this.text,
-    required this.icon,
-  }) : super(key: key);
+    this.text,
+    this.icon,
+    this.iconInfo,
+  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +43,18 @@ class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFac
             children: [
               if (!(loading ?? false)) ...[
                 Text(
-                  text,
+                  text ?? '',
                   style: context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: Colors.black),
                 ),
                 SpacingFoundation.horizontalSpace8,
-                icon,
+                icon ??
+                    ImageWidget(
+                      iconData: iconInfo?.iconData,
+                      link: iconInfo?.iconPath,
+                      height: iconInfo?.size,
+                      fit: BoxFit.fitHeight,
+                      color: iconInfo?.color ?? Colors.black,
+                    ),
               ],
             ],
           ),

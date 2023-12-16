@@ -36,15 +36,15 @@ class UiKitHorizontalCaptionedImage extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadiusFoundation.all8,
               border: Border.all(
-                color: theme?.colorScheme.darkNeutral500.withOpacity(0.32) ?? Colors.transparent,
+                color: ColorsFoundation.neutral32,
               ),
             ),
             child: ClipRRect(
               borderRadius: BorderRadiusFoundation.all8,
               child: ImageWidget(
                 link: imageLink,
-                height: imageHeight,
-                width: imageWidth,
+                height: 52, // imageHeight,
+                width: 90, //imageWidth,
                 fit: BoxFit.cover,
               ),
             ),

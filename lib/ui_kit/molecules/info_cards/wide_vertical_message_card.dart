@@ -20,10 +20,11 @@ class WideVerticalMessageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final messageStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
       borderRadius: BorderRadiusFoundation.all24,
-      color: ColorsFoundation.surface2,
+      color: colorScheme?.surface2,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
         onTap: onPressed,

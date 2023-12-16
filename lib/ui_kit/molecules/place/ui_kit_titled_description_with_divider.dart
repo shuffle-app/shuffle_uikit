@@ -62,7 +62,7 @@ class UiKitTitledDescriptionWithDivider extends StatelessWidget {
                 context.badgeButtonNoValue(
                   data: BaseUiKitButtonData(
                     onPressed: onTrailingTap,
-                    icon: DecoratedBox(
+                    iconWidget: DecoratedBox(
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         border: Border.fromBorderSide(

@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
 
 abstract class WidgetsAbstractFactory {
+  ButtonFactory createOutlinedGradientButton({
+    required BaseUiKitButtonData data,
+    required GradientBoxBorder gradient,
+  });
+
   ButtonFactory createBouncingIconButton({
     required BaseUiKitButtonData data,
     bool? blurred,
@@ -27,12 +33,12 @@ abstract class WidgetsAbstractFactory {
   });
 
   ButtonFactory createBadgeButtonNoValue({
-    BaseUiKitButtonData? data,
+    required BaseUiKitButtonData data,
     Alignment? badgeAlignment,
   });
 
   ButtonFactory createBadgeButtonWithValue({
-    BaseUiKitButtonData? data,
+    required BaseUiKitButtonData data,
     int? badgeValue,
     Alignment? alignment,
   });
@@ -49,7 +55,12 @@ abstract class WidgetsAbstractFactory {
     bool? small,
   });
 
-  ButtonFactory createSmallButton({required BaseUiKitButtonData data, bool isTextButton = false, bool? blurred, bool uppercase});
+  ButtonFactory createSmallButton({
+    required BaseUiKitButtonData data,
+    bool isTextButton = false,
+    bool? blurred,
+    bool uppercase,
+  });
 
   ButtonFactory createOutlinedButton({
     required BaseUiKitButtonData data,
@@ -57,7 +68,7 @@ abstract class WidgetsAbstractFactory {
   });
 
   ButtonFactory createSmallOutlinedButton({
-    BaseUiKitButtonData? data,
+    required BaseUiKitButtonData data,
     Color? color,
   });
 
@@ -107,48 +118,66 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
+  ButtonFactory createOutlinedGradientButton({
+    required BaseUiKitButtonData data,
+    required GradientBoxBorder gradient,
+  }) {
+    return OutlinedGradientButton(
+      text: data.text ?? '',
+      onPressed: data.onPressed,
+      gradientBorder: gradient,
+      loading: data.loading,
+      fit: data.fit,
+    );
+  }
+
+  @override
   ButtonFactory createSmallOutlinedButton({
-    BaseUiKitButtonData? data,
+    required BaseUiKitButtonData data,
     Color? color,
     bool? blurred,
     Gradient? gradient,
     double? blurValue,
   }) {
-    if (!(blurred ?? false) && data?.icon == null) {
+    final hasIcon = data.iconWidget != null || data.iconInfo != null;
+
+    if (!(blurred ?? false) && hasIcon) {
       return SmallOutlinedButtonNoBlur(
-        onPressed: data?.onPressed,
-        text: data?.text ?? '',
+        onPressed: data.onPressed,
+        text: data.text ?? '',
         borderColor: color,
         textColor: color,
-        icon: data?.icon,
-        loading: data?.loading,
-        fit: data?.fit,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
+        loading: data.loading,
+        fit: data.fit,
       );
-    } else if ((data?.text != null && data!.text.isNotEmpty) || data?.icon == null) {
+    } else if ((data.text != null && (data.text?.isNotEmpty ?? false)) || !hasIcon) {
       return SmallOutlinedButton(
-        onPressed: data?.onPressed,
+        onPressed: data.onPressed,
         gradient: gradient,
         blurred: blurred ?? false,
-        text: data?.text ?? '',
+        text: data.text ?? '',
         borderColor: color,
-        textColor: gradient != null ? Colors.white : color,
-        loading: data!.loading,
+        textColor: gradient != null ? Colors.black : color,
+        loading: data.loading,
       );
-    } else if ((blurred ?? false) && data?.icon != null) {
+    } else if ((blurred ?? false) && hasIcon) {
       return SmallBlurredOutlinedIconButton(
-        onPressed: data?.onPressed,
-        icon: data!.icon!,
+        onPressed: data.onPressed,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         borderColor: data.borderColor,
         color: color,
         loading: data.loading,
         blurValue: blurValue,
       );
-    } else if (!(blurred ?? false) && data?.icon != null) {
+    } else if (!(blurred ?? false) && hasIcon) {
       return SmallOutlinedIconButton(
-        onPressed: data?.onPressed,
-        icon: data!.icon!,
+        onPressed: data.onPressed,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         borderColor: color,
-        textColor: color,
         loading: data.loading,
       );
     } else {
@@ -158,12 +187,13 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 
   @override
   ButtonFactory createBadgeButtonNoValue({
-    BaseUiKitButtonData? data,
+    required BaseUiKitButtonData data,
     Alignment? badgeAlignment,
   }) {
     return BadgeIconButtonNoValue(
-      onPressed: data?.onPressed,
-      icon: data?.icon,
+      onPressed: data.onPressed,
+      icon: data.iconWidget,
+      iconInfo: data.iconInfo,
       badgeAlignment: badgeAlignment,
     );
   }
@@ -176,28 +206,30 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? hideBorder,
     bool? isGradientEnabled,
   }) {
-    if (data.text.isEmpty && data.icon != null) {
+    final hasIcon = data.iconWidget != null || data.iconInfo != null;
+
+    if ((data.text?.isEmpty ?? true) && hasIcon) {
       if (blurred ?? false) {
         return OutlinedBlurIconButton(
-          icon: data.icon!,
-          blurred: true,
+          icon: data.iconWidget,
+          iconInfo: data.iconInfo,
           onPressed: data.onPressed,
           loading: data.loading,
-          borderColor: borderColor,
         );
       }
 
       return OutlinedIconButton(
-        icon: data.icon,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         onPressed: data.onPressed,
         hideBorder: hideBorder ?? false,
         loading: data.loading,
         borderColor: borderColor,
       );
     }
-    if (data.text.isNotEmpty) {
+    if (data.text?.isNotEmpty ?? false) {
       return OutlinedTextButton(
-        text: data.text,
+        text: data.text ?? '',
         onPressed: data.onPressed,
         loading: data.loading,
         borderColor: borderColor,
@@ -212,28 +244,29 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   ButtonFactory createGradientButton({
     required BaseUiKitButtonData data,
   }) {
-    final hasIcon = data.icon != null;
-    final gradientIconButton = hasIcon && data.text.isEmpty;
+    final hasIcon = data.iconWidget != null || data.iconInfo != null;
+    final gradientIconButton = hasIcon && (data.text?.isEmpty ?? true);
     if (gradientIconButton) {
       return GradientIconButton(
         fit: data.fit,
-        icon: data.icon!,
+        icon: data.iconWidget,
         onPressed: data.onPressed,
         borderRadius: BorderRadiusFoundation.max,
         loading: data.loading,
       );
-    } else if (!hasIcon && data.text.isNotEmpty) {
+    } else if (!hasIcon && (data.text?.isNotEmpty ?? false)) {
       return GradientButton(
         fit: data.fit,
-        text: data.text,
+        text: data.text ?? '',
         onPressed: data.onPressed,
         loading: data.loading,
       );
-    } else if (hasIcon && data.text.isNotEmpty) {
+    } else if (hasIcon && (data.text?.isNotEmpty ?? false)) {
       return GradientButtonWithTextAndIcon(
         fit: data.fit,
-        text: data.text,
-        icon: data.icon!,
+        text: data.text ?? '',
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         onPressed: data.onPressed,
         loading: data.loading,
       );
@@ -249,46 +282,53 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? blurred,
     bool reversed = false,
   }) {
-    final hasIcon = data.icon != null;
-    final onlyIconButton = hasIcon && data.text.isEmpty && !isTextButton && !(blurred ?? false);
+    final hasIcon = data.iconWidget != null || data.iconInfo != null;
+    final onlyIconButton = hasIcon && (data.text?.isEmpty ?? true) && !isTextButton && !(blurred ?? false);
     if (isTextButton) {
       if (reversed) {
         return OrdinaryReversedTextButton(
-          text: data.text,
+          text: data.text ?? '',
           onPressed: data.onPressed,
-          icon: data.icon,
+          icon: data.iconWidget,
+          iconInfo: data.iconInfo,
         );
       }
 
       return OrdinaryTextButton(
-        text: data.text,
+        text: data.text ?? '',
         onPressed: data.onPressed,
-        icon: data.icon,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
       );
-    } else if (hasIcon && !onlyIconButton && !(blurred ?? false)) {
+    } else if (hasIcon && !onlyIconButton) {
       return OrdinaryButtonWithIcon(
         fit: data.fit,
         text: data.text,
         onPressed: data.onPressed,
-        icon: data.icon!,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         loading: data.loading,
       );
     } else if (onlyIconButton) {
       return FilledIconButton(
-        icon: data.icon!,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         onPressed: data.onPressed,
       );
     } else if (hasIcon && (blurred ?? false)) {
       return BlurredButtonWithIcon(
-        icon: data.icon!,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         onPressed: data.onPressed,
       );
     } else {
       return OrdinaryButton(
         fit: data.fit,
-        text: data.text,
+        text: data.text ?? '',
         onPressed: data.onPressed,
         loading: data.loading,
+        backgroundColor: data.backgroundColor,
+        textColor: data.textColor,
       );
     }
   }
@@ -304,43 +344,38 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool isTextButton = false,
     bool? blurred,
     bool uppercase = true,
-    Color? color,
-    Color? backgroundColor,
   }) {
-    final hasIcon = data.icon != null;
+    final hasIcon = data.iconWidget != null || data.iconInfo != null;
     final hasBlur = blurred ?? false;
-    if (!hasBlur && hasIcon && data.text.isNotEmpty) {
+    if (!hasBlur && hasIcon && (data.text?.isNotEmpty ?? false)) {
       return SmallButtonWithTextAndIcon(
         text: data.text,
-        icon: data.icon!,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         onPressed: data.onPressed,
-        color: color,
-        backgroundColor: backgroundColor,
         fit: data.fit,
       );
     }
     if (hasIcon && hasBlur) {
       return SmallBlurredButtonWithIcon(
-        icon: data.icon!,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         onPressed: data.onPressed,
-        color: color,
       );
     }
     if (hasIcon && !hasBlur) {
       return SmallButtonWithIcon(
-        icon: data.icon,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         onPressed: data.onPressed,
-        color: color,
       );
     }
 
     return SmallOrdinaryButton(
-      text: data.text,
+      text: data.text ?? '',
       onPressed: data.onPressed,
       uppercase: uppercase,
       loading: data.loading,
-      color: color,
-      backgroundColor: backgroundColor,
       fit: data.fit,
     );
   }
@@ -416,14 +451,14 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     switch (dialogButtonType) {
       case DialogButtonType.buttonWhite:
         return WhiteDialogButton(
-          text: data.text,
+          text: data.text ?? '',
           onPressed: data.onPressed,
           small: small ?? false,
           isOutlined: isOutlined ?? false,
         );
       case DialogButtonType.buttonBlack:
         return BlackDialogButton(
-          text: data.text,
+          text: data.text ?? '',
           fit: data.fit,
           onPressed: data.onPressed,
           small: small ?? false,
@@ -432,7 +467,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         throw UnimplementedError();
       case DialogButtonType.buttonRed:
         return RedDialogButton(
-          text: data.text,
+          text: data.text ?? '',
           onPressed: data.onPressed,
           small: small ?? false,
         );
@@ -470,7 +505,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Alignment? alignment,
   }) {
     return BadgeIconButton(
-      icon: data?.icon,
+      icon: data?.iconWidget,
+      iconInfo: data?.iconInfo,
       onPressed: data?.onPressed,
       badgeValue: badgeValue,
     );
@@ -506,12 +542,14 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     if (small ?? false) {
       return SmallBouncingBlurIconButton(
         onPressed: data.onPressed,
-        icon: data.icon!,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
       );
     }
 
     return BouncingBlurButton(
-      icon: data.icon!,
+      icon: data.iconWidget,
+      iconInfo: data.iconInfo,
       onPressed: data.onPressed,
     );
   }
@@ -520,15 +558,17 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   ButtonFactory createSmallGradientButton({
     required BaseUiKitButtonData data,
   }) {
-    if (data.icon != null && data.text.isEmpty) {
+    final hasIcon = data.iconWidget != null || data.iconInfo != null;
+    if (hasIcon && (data.text?.isEmpty ?? true)) {
       return SmallGradientIconButton(
-        icon: data.icon!,
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         onPressed: data.onPressed,
       );
     }
 
     return SmallGradientButton(
-      text: data.text,
+      text: data.text ?? '',
       onPressed: data.onPressed,
       loading: data.loading,
     );

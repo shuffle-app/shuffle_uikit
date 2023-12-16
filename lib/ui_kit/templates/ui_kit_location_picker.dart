@@ -114,9 +114,8 @@ class UiKitLocationPicker extends StatelessWidget {
                     return Align(
                       alignment: Alignment.centerRight,
                       child: context.smallButton(
-                        color: Colors.white,
                         data: BaseUiKitButtonData(
-                          icon: const ImageWidget(
+                          iconInfo: BaseUiKitButtonIconData(
                             iconData: ShuffleUiKitIcons.location,
                           ),
                           onPressed: onCurrentLocationTapped,

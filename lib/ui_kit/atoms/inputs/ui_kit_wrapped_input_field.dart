@@ -116,7 +116,7 @@ class _UiKitWrappedInputFieldState extends State<UiKitWrappedInputField> {
                 enabled: widget.enabled,
                 hintText: widget.hintText,
                 controller: widget.controller,
-                fillColor: ColorsFoundation.surface3,
+                fillColor: widget.fillColor,
                 validator: (value) {
                   setState(() {
                     errorText = widget.validator?.call(value);

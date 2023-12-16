@@ -7,6 +7,7 @@ class SingleTypeMenuBody<T> extends StatelessWidget {
   final bool useCustomTiles;
   final Color? tilesColor;
   final ValueChanged<UiKitMenuItem<T>>? onSelected;
+  final Widget? separator;
 
   const SingleTypeMenuBody({
     super.key,
@@ -15,6 +16,7 @@ class SingleTypeMenuBody<T> extends StatelessWidget {
     this.useCustomTiles = false,
     this.onSelected,
     this.tilesColor,
+    this.separator,
   });
 
   @override
@@ -35,17 +37,29 @@ class SingleTypeMenuBody<T> extends StatelessWidget {
         ...items.map<Widget>(
           (e) {
             if (useCustomTiles) {
-              return UiKitMenuItemTile.custom(
-                item: e,
-                onTap: () => onSelected?.call(e),
-                color: tilesColor,
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  UiKitMenuItemTile.custom(
+                    item: e,
+                    onTap: () => onSelected?.call(e),
+                    color: tilesColor,
+                  ),
+                  if (separator != null) separator!,
+                ],
               );
             }
 
-            return UiKitMenuItemTile(
-              item: e,
-              onTap: () => onSelected?.call(e),
-              color: tilesColor,
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                UiKitMenuItemTile(
+                  item: e,
+                  onTap: () => onSelected?.call(e),
+                  color: tilesColor,
+                ),
+                if (separator != null) separator!,
+              ],
             );
           },
         ).toList(),

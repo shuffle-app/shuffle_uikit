@@ -23,11 +23,12 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
 
     final imageHeight = width * 1.02469 * 0.48192;
     final textTheme = context.uiKitTheme?.boldTextTheme;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return UiKitCardWrapper(
       width: width,
       borderRadius: BorderRadiusFoundation.all16,
-      color: ColorsFoundation.surface2,
+      color: colorScheme?.surface2,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,

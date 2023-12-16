@@ -16,8 +16,11 @@ class UiKitLocaleSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return UiKitMenu<LocaleModel>(
+      useCustomTiles: true,
+      separator: SpacingFoundation.verticalSpace16,
       title: S.of(context).SelectLanguage,
       borderRadius: BorderRadiusFoundation.max,
+      tilesColor: context.uiKitTheme?.colorScheme.surface1,
       selectedItem: UiKitMenuItem<LocaleModel>(
         title: selectedLocale.name,
         value: selectedLocale,

@@ -7,6 +7,7 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
   final Color? borderColor;
   final Color? textColor;
   final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
   final bool? loading;
   final ButtonFit? fit;
 
@@ -21,11 +22,13 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
     this.icon,
     this.loading,
     this.fit,
+    this.iconInfo,
   });
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
+    final theme = context.uiKitTheme;
+    final textStyle = theme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: textColor,
     );
 
@@ -51,9 +54,19 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
             ),
             color: textIsEmpty ? Colors.white.withOpacity(0.1) : null,
           ),
-          child: textIsEmpty && icon != null
+          child: textIsEmpty && (icon != null || iconInfo != null)
               ? ClipOval(
-                  child: icon!.paddingAll(EdgeInsetsFoundation.all6),
+                  child: Padding(
+                    padding: EdgeInsets.all(EdgeInsetsFoundation.all6),
+                    child: icon ??
+                        ImageWidget(
+                          iconData: iconInfo?.iconData,
+                          link: iconInfo?.iconPath,
+                          height: iconInfo?.size,
+                          fit: BoxFit.fitHeight,
+                          color: theme?.colorScheme.inversePrimary,
+                        ),
+                  ),
                 )
               : Text(
                   text ?? '',

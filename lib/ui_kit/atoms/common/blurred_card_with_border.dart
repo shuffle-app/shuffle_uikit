@@ -15,12 +15,14 @@ class BlurredCardWithBorder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
+
     return Container(
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
-        border: border ?? Border.all(color: Colors.white, width: 2),
-        color: Colors.black.withOpacity(0.5),
+        border: border ?? Border.all(color: theme?.colorScheme.inverseSurface ?? Colors.transparent, width: 2),
+        color: ColorsFoundation.lightSurface1,
       ),
       child: ClipRRect(
         borderRadius: BorderRadiusFoundation.all24,

@@ -5,12 +5,14 @@ class OrdinaryTextButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
   final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
 
   const OrdinaryTextButton({
     Key? key,
     required this.text,
     this.onPressed,
     this.icon,
+    this.iconInfo,
   }) : super(key: key);
 
   @override
@@ -20,7 +22,17 @@ class OrdinaryTextButton extends StatelessWidget implements ButtonFactory {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          if (icon != null) ...[icon!, SpacingFoundation.horizontalSpace8],
+          if (icon != null && iconInfo == null) ...[icon!, SpacingFoundation.horizontalSpace8],
+          if (iconInfo != null && icon == null) ...[
+            ImageWidget(
+              iconData: iconInfo?.iconData,
+              link: iconInfo?.iconPath,
+              height: iconInfo?.size,
+              fit: BoxFit.fitHeight,
+              color: iconInfo?.color ?? context.uiKitTheme?.colorScheme.inversePrimary,
+            ),
+            SpacingFoundation.horizontalSpace8,
+          ],
           Text(text.toUpperCase()),
         ],
       ),

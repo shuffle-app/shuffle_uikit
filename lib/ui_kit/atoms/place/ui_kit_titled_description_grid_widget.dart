@@ -42,7 +42,7 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
                     group: group,
                     overflow: TextOverflow.ellipsis,
                     style: textTheme?.caption1Bold.copyWith(
-                      color: context.uiKitTheme?.colorScheme.grayForegroundColor,
+                      color: context.uiKitTheme?.colorScheme.bodyTypography,
                     ),
                   )
                 : Text(
@@ -50,7 +50,7 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                     style: textTheme?.caption1Bold.copyWith(
-                      color: context.uiKitTheme?.colorScheme.grayForegroundColor,
+                      color: context.uiKitTheme?.colorScheme.bodyTypography,
                     ),
                   ),
           ),

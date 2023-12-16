@@ -3,18 +3,38 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BaseUiKitButtonData {
   final VoidCallback? onPressed;
-  final String text;
-  final Widget? icon;
+  final String? text;
+  final Widget? iconWidget;
+  final BaseUiKitButtonIconData? iconInfo;
   final ButtonFit? fit;
   final bool? loading;
   final Color? borderColor;
+  final Color? backgroundColor;
+  final Color? textColor;
 
   BaseUiKitButtonData({
     this.onPressed,
-    this.text = '',
-    this.icon,
+    this.text,
+    this.iconInfo,
+    this.iconWidget,
     this.fit,
     this.loading,
     this.borderColor,
+    this.backgroundColor,
+    this.textColor,
+  });
+}
+
+class BaseUiKitButtonIconData {
+  final IconData? iconData;
+  final String? iconPath;
+  final Color? color;
+  final double? size;
+
+  BaseUiKitButtonIconData({
+    this.iconData,
+    this.iconPath,
+    this.color,
+    this.size,
   });
 }

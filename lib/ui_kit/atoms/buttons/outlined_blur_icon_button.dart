@@ -5,27 +5,23 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class OutlinedBlurIconButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
-  final Color? borderColor;
-  final Color? textColor;
-  final Widget icon;
-  final bool blurred;
+  final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
   final bool? loading;
+  final double blurValue;
 
   const OutlinedBlurIconButton({
     Key? key,
     this.onPressed,
-    this.borderColor,
-    this.textColor,
-    required this.blurred,
     required this.icon,
     this.loading,
-  }) : super(key: key);
+    this.iconInfo,
+    this.blurValue = 18,
+  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double blurValue = 0;
-    if (blurred) blurValue = 18;
-
     return Material(
       shape: const CircleBorder(),
       clipBehavior: Clip.hardEdge,
@@ -36,16 +32,25 @@ class OutlinedBlurIconButton extends StatelessWidget implements ButtonFactory {
         child: Ink(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            // color: Colors.white.withOpacity(0.1),
             border: Border.all(
-              color: borderColor ?? Colors.white,
+              color: context.uiKitTheme?.colorScheme.inversePrimary ?? Colors.white,
               width: 2.w,
             ),
           ),
           child: ClipOval(
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: blurValue, sigmaY: blurValue),
-              child: icon.paddingAll(EdgeInsetsFoundation.all14).loadingWrap(loading ?? false, color: Colors.white),
+              child: Padding(
+                padding: EdgeInsets.all(EdgeInsetsFoundation.all14),
+                child: icon ??
+                    ImageWidget(
+                      iconData: iconInfo?.iconData,
+                      link: iconInfo?.iconPath,
+                      height: iconInfo?.size,
+                      fit: BoxFit.fitHeight,
+                      color: iconInfo?.color ?? context.uiKitTheme?.colorScheme.inversePrimary,
+                    ),
+              ).loadingWrap(loading ?? false, color: Colors.white),
             ),
           ),
         ),

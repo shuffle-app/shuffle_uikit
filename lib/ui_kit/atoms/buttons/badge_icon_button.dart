@@ -3,6 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BadgeIconButton extends StatelessWidget implements ButtonFactory {
   final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
   final VoidCallback? onPressed;
   final int? badgeValue;
   final Alignment? alignment;
@@ -10,13 +11,16 @@ class BadgeIconButton extends StatelessWidget implements ButtonFactory {
   const BadgeIconButton({
     Key? key,
     this.icon,
+    this.iconInfo,
     this.onPressed,
     this.badgeValue,
     this.alignment,
-  }) : super(key: key);
+  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
     final topLeftBadge = alignment == Alignment.topLeft;
     final topRightBadge = alignment == Alignment.topRight;
     final child = Container(
@@ -27,8 +31,8 @@ class BadgeIconButton extends StatelessWidget implements ButtonFactory {
       ),
       child: Text(
         '$badgeValue',
-        style: context.uiKitTheme?.boldTextTheme.caption1Bold.copyWith(
-          color: Colors.black,
+        style: theme?.boldTextTheme.caption1Bold.copyWith(
+          color: theme.colorScheme.surface,
         ),
       ).paddingAll(EdgeInsetsFoundation.all4),
     );
@@ -45,7 +49,15 @@ class BadgeIconButton extends StatelessWidget implements ButtonFactory {
             clipBehavior: Clip.none,
             fit: StackFit.passthrough,
             children: [
-              if (icon != null) icon!,
+              if (icon != null && iconInfo == null) icon!,
+              if (iconInfo != null)
+                ImageWidget(
+                  iconData: iconInfo?.iconData,
+                  link: iconInfo?.iconPath,
+                  height: iconInfo?.size,
+                  fit: BoxFit.fitHeight,
+                  color: iconInfo?.color ?? theme?.colorScheme.inverseSurface,
+                ),
               if (topLeftBadge || alignment == null)
                 Positioned(
                   top: -SpacingFoundation.verticalSpacing4,

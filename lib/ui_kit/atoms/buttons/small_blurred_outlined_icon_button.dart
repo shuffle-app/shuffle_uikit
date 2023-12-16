@@ -6,7 +6,8 @@ class SmallBlurredOutlinedIconButton extends StatelessWidget implements ButtonFa
   final VoidCallback? onPressed;
   final Color? borderColor;
   final Color? color;
-  final Widget icon;
+  final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
   final bool? loading;
   final double blurValue;
 
@@ -15,18 +16,23 @@ class SmallBlurredOutlinedIconButton extends StatelessWidget implements ButtonFa
     this.onPressed,
     this.borderColor,
     this.color,
+    this.iconInfo,
     required this.icon,
     this.loading,
     double? blurValue,
   })  : blurValue = blurValue ?? 18,
+        assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
+    final isLightTheme = theme?.themeMode == ThemeMode.light;
+
     return Material(
       shape: CircleBorder(
         side: BorderSide(
-          color: borderColor ?? Colors.white,
+          color: borderColor ?? (isLightTheme ? ColorsFoundation.neutral24 : ColorsFoundation.neutral8),
           width: 1,
         ),
       ),
@@ -43,7 +49,17 @@ class SmallBlurredOutlinedIconButton extends StatelessWidget implements ButtonFa
                 sigmaY: blurValue,
                 tileMode: TileMode.repeated,
               ),
-              child: icon.paddingAll(EdgeInsetsFoundation.all6).loadingWrap(loading ?? false, color: Colors.white),
+              child: Padding(
+                padding: EdgeInsets.all(EdgeInsetsFoundation.all6),
+                child: icon ??
+                    ImageWidget(
+                      iconData: iconInfo?.iconData,
+                      link: iconInfo?.iconPath,
+                      height: iconInfo?.size,
+                      fit: BoxFit.fitHeight,
+                      color: iconInfo?.color ?? theme?.colorScheme.inversePrimary,
+                    ),
+              ).loadingWrap(loading ?? false, color: Colors.white),
             ),
           ),
         ),

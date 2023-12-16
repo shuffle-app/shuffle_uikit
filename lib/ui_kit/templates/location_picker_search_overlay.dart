@@ -100,7 +100,7 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
                     child: context.smallOutlinedButton(
                       color: Colors.black,
                       data: BaseUiKitButtonData(
-                        icon: const ImageWidget(
+                        iconInfo: BaseUiKitButtonIconData(
                           iconData: ShuffleUiKitIcons.chevronright,
                         ),
                         onPressed: widget.onPickFromMap,

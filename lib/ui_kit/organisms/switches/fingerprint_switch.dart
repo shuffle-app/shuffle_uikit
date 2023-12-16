@@ -94,6 +94,17 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
             ),
           ),
         ),
+        Opacity(
+          opacity: 0.06,
+          child: Container(
+            height: height,
+            width: 1.sw,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadiusFoundation.all28,
+              gradient: GradientFoundation.diamondGradient,
+            ),
+          ),
+        ),
         FingerprintButton(
           height: height,
           animationPath: widget.animationPath,

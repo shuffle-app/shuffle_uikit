@@ -5,6 +5,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
   final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
   final VoidCallback? onPressed;
   final bool? loading;
   final bool hideBorder;
@@ -16,12 +17,14 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
     this.onPressed,
     this.loading,
     this.borderColor,
+    this.iconInfo,
     this.hideBorder = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
+    final theme = context.uiKitTheme;
 
     return Material(
       clipBehavior: Clip.hardEdge,
@@ -30,7 +33,9 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
         side: hideBorder
             ? BorderSide.none
             : BorderSide(
-                color: enabled ? borderColor ?? Colors.white : ColorsFoundation.darkNeutral500,
+                color: enabled
+                    ? borderColor ?? theme?.colorScheme.inversePrimary ?? Colors.transparent
+                    : ColorsFoundation.darkNeutral500,
                 width: 2.w,
               ),
       ),
@@ -43,7 +48,17 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
           ),
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
-            child: icon?.paddingAll(hideBorder ? EdgeInsetsFoundation.all4 : EdgeInsetsFoundation.all16),
+            child: Padding(
+              padding: EdgeInsets.all(hideBorder ? EdgeInsetsFoundation.all4 : EdgeInsetsFoundation.all16),
+              child: icon ??
+                  ImageWidget(
+                    iconData: iconInfo?.iconData,
+                    link: iconInfo?.iconPath,
+                    height: iconInfo?.size,
+                    fit: BoxFit.fitHeight,
+                    color: iconInfo?.color ?? theme?.colorScheme.inversePrimary,
+                  ),
+            ),
           ),
         ),
       ),
