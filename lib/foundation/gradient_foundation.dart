@@ -303,13 +303,13 @@ class GradientFoundation {
     ],
   );
 
-  static final lightShunyGreyGradient = LinearGradient(
+  static const lightShunyGreyGradient = LinearGradient(
     colors: [
       ColorsFoundation.lightSurface1,
       Colors.white,
       ColorsFoundation.lightSurface1,
     ],
-    stops: const [
+    stops: [
       0.1753,
       0.4873,
       0.8003,
