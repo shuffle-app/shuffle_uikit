@@ -185,6 +185,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
                       onPressed: onPlaceTap,
                       iconInfo: BaseUiKitButtonIconData(
                         iconData: ShuffleUiKitIcons.chevronright,
+                        color: Colors.black,
                       ),
                     ),
                   )
