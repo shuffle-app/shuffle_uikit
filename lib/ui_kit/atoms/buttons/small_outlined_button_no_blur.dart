@@ -64,7 +64,7 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
                           link: iconInfo?.iconPath,
                           height: iconInfo?.size,
                           fit: BoxFit.fitHeight,
-                          color: theme?.colorScheme.inversePrimary,
+                          color: iconInfo?.color ?? theme?.colorScheme.inversePrimary,
                         ),
                   ),
                 )
