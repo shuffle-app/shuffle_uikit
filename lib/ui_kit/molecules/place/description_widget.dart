@@ -16,7 +16,7 @@ class DescriptionWidget extends StatelessWidget {
         final displayShowMoreButton = (description.replaceAll('\n', '').characters.length * 6.4.w ~/ 0.8.sw +
                 description.characters.where((p0) => p0 == '\n').length) >
             7;
-        final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light ?? true;
+        final isLightTheme = (context.uiKitTheme?.themeMode ?? ThemeMode.light) == ThemeMode.light;
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
