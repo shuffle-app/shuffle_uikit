@@ -24,15 +24,15 @@ class UiKitMessageCloud extends StatelessWidget {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
 
     return SizedBox(
-      width: 0.325.sw,
-      height: 0.064.sh,
+      width: 0.375.sw,
+      height: 0.075.sh,
       child: Stack(
         fit: StackFit.expand,
         clipBehavior: Clip.none,
         children: [
           UiKitCardWrapper(
             borderRadius: BorderRadiusFoundation.all12,
-            color: colorScheme?.inverseSurface,
+            color: colorScheme?.surface,
             child: UiKitCardWrapper(
               borderRadius: BorderRadiusFoundation.all12,
               color: colorScheme?.surface5,

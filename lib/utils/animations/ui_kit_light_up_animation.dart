@@ -21,8 +21,8 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
   final animDuration = const Duration(milliseconds: 50);
   late AnimationController animationController = AnimationController(
     vsync: this,
-    duration: const Duration(milliseconds: 1000),
-    reverseDuration: const Duration(milliseconds: 1000),
+    duration: const Duration(milliseconds: 1500),
+    reverseDuration: const Duration(milliseconds: 1500),
     upperBound: 1,
     lowerBound: 0,
   );
@@ -37,19 +37,20 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       animationController.addListener(_animationListener);
       _playBlinkAnimation();
+      widget.onStarted?.call();
     });
   }
 
   double get reversedAnimationValue => 1 - animationController.value;
 
   void _animationListener() {
-    if (animationController.isCompleted && !finishedFirstStage) {
-      setState(() => finishedFirstStage = true);
-      // animationController.forward(from: 0);
-    }
-    if (animationController.isCompleted && finishedFirstStage && !finishedSecondStage) {
+    if (animationController.isCompleted && !finishedSecondStage && finishedFirstStage) {
       setState(() => finishedSecondStage = true);
       widget.onFinished?.call();
+      // animationController.forward(from: 0);
+    }
+    if (animationController.isCompleted && !finishedFirstStage) {
+      setState(() => finishedFirstStage = true);
       // animationController.forward(from: 0);
     }
   }
@@ -63,13 +64,13 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
       },
     );
     await Future.delayed(
-      const Duration(milliseconds: 500),
+      const Duration(milliseconds: 1000),
       () {
         animationController.animateBack(0);
       },
     );
     await Future.delayed(
-      const Duration(milliseconds: 500),
+      const Duration(milliseconds: 1000),
       () => animationController.forward(from: 0),
     );
   }

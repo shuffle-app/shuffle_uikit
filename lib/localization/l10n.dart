@@ -2771,6 +2771,32 @@ class S {
     );
   }
 
+  /// `Invite list`
+  String get InviteList {
+    return Intl.message(
+      'Invite list',
+      name: 'InviteList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count,plural, =0{{count} users} =1{{count} user} =2{{count} users} few{{count} users} many{{count} users} other{{count} users}}`
+  String Users(num count) {
+    return Intl.plural(
+      count,
+      zero: '$count users',
+      one: '$count user',
+      two: '$count users',
+      few: '$count users',
+      many: '$count users',
+      other: '$count users',
+      name: 'Users',
+      desc: '',
+      args: [count],
+    );
+  }
+
   /// `Messages`
   String get Messages {
     return Intl.message(

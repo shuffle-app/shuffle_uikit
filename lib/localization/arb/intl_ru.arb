@@ -271,5 +271,7 @@
   "Messages": "Сообщения",
   "SwipeToStart": "Swipe to start",
   "SwitchAnyTime": "You can switch it at any time in your profile settings",
+  "InviteList": "Invite list",
+  "Users": "{count,plural, =0{{count} человек} =1{{count} человек} =2{{count} человека} few{{count} людей} many{{count} человек} other{{count} человек}}",
   "key": ""
 }
