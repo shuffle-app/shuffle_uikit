@@ -95,7 +95,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
                   small: true,
                   blurred: true,
                   data: BaseUiKitButtonData(
-                    icon: ImageWidget(
+                    iconInfo: BaseUiKitButtonIconData(
                       iconData: ShuffleUiKitIcons.heartbrokenfill,
                       color: context.uiKitTheme?.colorScheme.inversePrimary,
                     ),
@@ -108,7 +108,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
                   small: false,
                   blurred: true,
                   data: BaseUiKitButtonData(
-                    icon: ImageWidget(
+                    iconInfo: BaseUiKitButtonIconData(
                       iconData: ShuffleUiKitIcons.staroutline,
                       color: context.uiKitTheme?.colorScheme.inversePrimary,
                     ),
@@ -119,7 +119,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
                   small: true,
                   blurred: true,
                   data: BaseUiKitButtonData(
-                    icon: ImageWidget(
+                    iconInfo: BaseUiKitButtonIconData(
                       iconData: ShuffleUiKitIcons.heartfill,
                       color: context.uiKitTheme?.colorScheme.inversePrimary,
                     ),
