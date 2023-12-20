@@ -25,6 +25,7 @@ export 'info_cards/horizontal_message_card.dart';
 export 'info_cards/ui_kit_gradient_attention_card.dart';
 export 'info_cards/ui_kit_iconed_blur_message_card.dart';
 export 'info_cards/ui_kit_message_card_with_icon.dart';
+export 'info_cards/ui_kit_message_cloud.dart';
 export 'info_cards/ui_kit_metrics_card.dart';
 export 'info_cards/ui_kit_permission_card.dart';
 export 'info_cards/ui_kit_weather_info_card.dart';
