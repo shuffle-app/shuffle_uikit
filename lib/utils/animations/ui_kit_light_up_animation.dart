@@ -18,17 +18,17 @@ class UiKitLightUpAnimation extends StatefulWidget {
 }
 
 class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with SingleTickerProviderStateMixin {
-  final animDuration = const Duration(milliseconds: 50);
+  final animDuration = const Duration(milliseconds: 250);
+  final animControllerDuration = const Duration(milliseconds: 1000);
   late AnimationController animationController = AnimationController(
     vsync: this,
-    duration: const Duration(milliseconds: 1500),
-    reverseDuration: const Duration(milliseconds: 1500),
+    duration: animControllerDuration,
+    reverseDuration: animControllerDuration,
     upperBound: 1,
     lowerBound: 0,
   );
 
-  bool finishedFirstStage = false;
-  bool finishedSecondStage = false;
+  int phasesPassed = 0;
 
   @override
   void initState() {
@@ -36,41 +36,42 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
     animationController.value = 1;
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       animationController.addListener(_animationListener);
-      _playBlinkAnimation();
       widget.onStarted?.call();
+      _playBlinkAnimation();
     });
   }
 
   double get reversedAnimationValue => 1 - animationController.value;
 
   void _animationListener() {
-    if (animationController.isCompleted && !finishedSecondStage && finishedFirstStage) {
-      setState(() => finishedSecondStage = true);
-      widget.onFinished?.call();
-      // animationController.forward(from: 0);
-    }
-    if (animationController.isCompleted && !finishedFirstStage) {
-      setState(() => finishedFirstStage = true);
-      // animationController.forward(from: 0);
+    if (animationController.isCompleted) {
+      phasesPassed++;
+      if (phasesPassed % 3 == 0) {
+        widget.onFinished?.call();
+      }
     }
   }
 
   _playBlinkAnimation() async {
     await animationController.animateBack(0);
     await Future.delayed(
-      const Duration(seconds: 1),
-      () {
-        animationController.animateTo(0.25);
-      },
+      animControllerDuration,
+      () => animationController.animateTo(0.25),
     );
     await Future.delayed(
-      const Duration(milliseconds: 1000),
-      () {
-        animationController.animateBack(0);
-      },
+      animControllerDuration,
+      () => animationController.animateBack(0),
     );
     await Future.delayed(
-      const Duration(milliseconds: 1000),
+      animControllerDuration,
+      () => animationController.animateTo(0.25),
+    );
+    await Future.delayed(
+      animControllerDuration,
+      () => animationController.animateBack(0),
+    );
+    await Future.delayed(
+      animControllerDuration,
       () => animationController.forward(from: 0),
     );
   }
@@ -101,7 +102,10 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
           child: child!,
         );
       },
-      child: widget.child,
+      child: GestureDetector(
+        onLongPress: _playBlinkAnimation,
+        child: widget.child,
+      ),
     );
   }
 }
