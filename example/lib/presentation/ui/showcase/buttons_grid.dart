@@ -14,18 +14,19 @@ class ButtonsGrid extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               context.gradientButton(
-    data: BaseUiKitButtonData(
-                text: 'Book it (+20)',
-                onPressed: () {},
-              )),
-              context.gradientButton(
-    data: BaseUiKitButtonData(
-                text: 'Book it (+20)'),
+                data: BaseUiKitButtonData(
+                  text: 'Book it (+20)',
+                  onPressed: () {},
+                ),
               ),
               context.gradientButton(
-    data: BaseUiKitButtonData(
-                icon: const CupertinoActivityIndicator(),
-                text: 'Book it (+20)'),
+                data: BaseUiKitButtonData(text: 'Book it (+20)'),
+              ),
+              context.gradientButton(
+                data: BaseUiKitButtonData(
+                  iconWidget: const CupertinoActivityIndicator(),
+                  text: 'Book it (+20)',
+                ),
               ),
               SpacingFoundation.verticalSpace16,
               SpacingFoundation.verticalSpace16,
@@ -38,20 +39,21 @@ class ButtonsGrid extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               context.button(
-    data: BaseUiKitButtonData(
-                text: 'GET CODE',
-                onPressed: () {}),
+                data: BaseUiKitButtonData(
+                  text: 'GET CODE',
+                  onPressed: () {},
+                ),
               ),
               SpacingFoundation.verticalSpace16,
               context.button(
-    data: BaseUiKitButtonData(
-                text: 'GET CODE'),
+                data: BaseUiKitButtonData(text: 'GET CODE'),
               ),
               SpacingFoundation.verticalSpace16,
               context.button(
-    data: BaseUiKitButtonData(
-                icon: const CupertinoActivityIndicator(),
-                text: 'GET CODE'),
+                data: BaseUiKitButtonData(
+                  iconWidget: const CupertinoActivityIndicator(),
+                  text: 'GET CODE',
+                ),
               ),
             ],
           ),
@@ -62,42 +64,21 @@ class ButtonsGrid extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               context.gradientButton(
-    data: BaseUiKitButtonData(
-                text: 'Book it (+20)',
-                onPressed: () {},)
+                data: BaseUiKitButtonData(
+                  text: 'Book it (+20)',
+                  onPressed: () {},
+                ),
               ),
               context.gradientButton(
-    data: BaseUiKitButtonData(
-                text: 'Book it (+20)',)
+                data: BaseUiKitButtonData(
+                  text: 'Book it (+20)',
+                ),
               ),
               context.gradientButton(
-    data: BaseUiKitButtonData(
-                icon: const CupertinoActivityIndicator(),
-                text: 'Book it (+20)',)
-              ),
-              SpacingFoundation.verticalSpace16,
-              SpacingFoundation.verticalSpace16,
-            ],
-          ),
-        ),
-        SpacingFoundation.horizontalSpace16,
-        Expanded(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              context.gradientButton(data: BaseUiKitButtonData(
-
-                text: 'Book it (+20)',
-                onPressed: () {},)
-              ),
-              context.gradientButton(
-    data: BaseUiKitButtonData(
-                text: 'Book it (+20)',)
-              ),
-              context.gradientButton(
-    data: BaseUiKitButtonData(
-                icon: const CupertinoActivityIndicator(),
-                text: 'Book it (+20)',)
+                data: BaseUiKitButtonData(
+                  iconWidget: const CupertinoActivityIndicator(),
+                  text: 'Book it (+20)',
+                ),
               ),
               SpacingFoundation.verticalSpace16,
               SpacingFoundation.verticalSpace16,
@@ -110,18 +91,48 @@ class ButtonsGrid extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               context.gradientButton(
-    data: BaseUiKitButtonData(
-                text: 'Book it (+20)',
-                onPressed: () {},)
+                data: BaseUiKitButtonData(
+                  text: 'Book it (+20)',
+                  onPressed: () {},
+                ),
               ),
               context.gradientButton(
-    data: BaseUiKitButtonData(
-                text: 'Book it (+20)',)
+                data: BaseUiKitButtonData(
+                  text: 'Book it (+20)',
+                ),
               ),
               context.gradientButton(
-    data: BaseUiKitButtonData(
-                icon: const CupertinoActivityIndicator(),
-                text: 'Book it (+20)',)
+                data: BaseUiKitButtonData(
+                  iconWidget: const CupertinoActivityIndicator(),
+                  text: 'Book it (+20)',
+                ),
+              ),
+              SpacingFoundation.verticalSpace16,
+              SpacingFoundation.verticalSpace16,
+            ],
+          ),
+        ),
+        SpacingFoundation.horizontalSpace16,
+        Expanded(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              context.gradientButton(
+                data: BaseUiKitButtonData(
+                  text: 'Book it (+20)',
+                  onPressed: () {},
+                ),
+              ),
+              context.gradientButton(
+                data: BaseUiKitButtonData(
+                  text: 'Book it (+20)',
+                ),
+              ),
+              context.gradientButton(
+                data: BaseUiKitButtonData(
+                  iconWidget: const CupertinoActivityIndicator(),
+                  text: 'Book it (+20)',
+                ),
               ),
               SpacingFoundation.verticalSpace16,
               SpacingFoundation.verticalSpace16,

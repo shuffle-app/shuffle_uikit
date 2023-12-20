@@ -118,7 +118,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       appBarTrailing: context.badgeButton(
         badgeValue: 2,
         data: BaseUiKitButtonData(
-          icon: ImageWidget(
+          iconInfo: BaseUiKitButtonIconData(
             iconData: ShuffleUiKitIcons.message,
             color: context.uiKitTheme?.colorScheme.inversePrimary,
           ),
@@ -789,7 +789,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         Center(
           child: context.badgeButtonNoValue(
             data: BaseUiKitButtonData(
-              icon: ImageWidget(
+              iconInfo: BaseUiKitButtonIconData(
                 iconData: ShuffleUiKitIcons.message,
                 color: context.uiKitTheme?.colorScheme.inversePrimary,
               ),
@@ -967,7 +967,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         Center(
           child: context.badgeButton(
             data: BaseUiKitButtonData(
-              icon: const ImageWidget(
+              iconInfo: BaseUiKitButtonIconData(
                 iconData: ShuffleUiKitIcons.message,
                 color: Colors.white,
               ),
@@ -1237,7 +1237,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             children: [
               context.gradientButton(
                 data: BaseUiKitButtonData(
-                  icon: const ImageWidget(
+                  iconInfo: BaseUiKitButtonIconData(
                     iconData: ShuffleUiKitIcons.dice,
                   ),
                   onPressed: () {},
@@ -1333,11 +1333,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           children: [
             context.outlinedButton(
               data: BaseUiKitButtonData(
-                  onPressed: () {},
-                  icon: const ImageWidget(
-                    iconData: ShuffleUiKitIcons.route,
-                    color: Colors.white,
-                  )),
+                onPressed: () {},
+                iconInfo: BaseUiKitButtonIconData(
+                  iconData: ShuffleUiKitIcons.route,
+                  color: Colors.white,
+                ),
+              ),
             ),
             SpacingFoundation.horizontalSpace12,
             Expanded(
@@ -1349,7 +1350,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             context.outlinedButton(
               data: BaseUiKitButtonData(
                 onPressed: () {},
-                icon: const ImageWidget(
+                iconInfo: BaseUiKitButtonIconData(
                   iconData: ShuffleUiKitIcons.searchpeople,
                   color: Colors.white,
                 ),

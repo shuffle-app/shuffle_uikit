@@ -83,12 +83,13 @@ class InfluencerProfile extends StatelessWidget {
                 context
                     .button(
                       data: BaseUiKitButtonData(
-                          onPressed: () {},
-                          text: 'Next 5 reviews',
-                          icon: const Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: Colors.black,
-                          )),
+                        onPressed: () {},
+                        text: 'Next 5 reviews',
+                        iconInfo: BaseUiKitButtonIconData(
+                          iconData: Icons.keyboard_arrow_down_rounded,
+                          color: Colors.black,
+                        ),
+                      ),
                     )
                     .paddingAll(EdgeInsetsFoundation.all16),
                 SpacingFoundation.verticalSpace24

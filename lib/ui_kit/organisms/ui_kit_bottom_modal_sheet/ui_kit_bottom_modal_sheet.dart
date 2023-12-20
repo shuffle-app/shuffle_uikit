@@ -14,8 +14,8 @@ class UiKitBottomModalSheet extends StatelessWidget {
     final bottomSheetTheme = context.uiKitTheme?.bottomSheetTheme;
     final shape = bottomSheetTheme?.shape;
 
-    double topPadding = data.topPadding ??
-        (MediaQuery.viewPaddingOf(context).top == 0 ? 45.h : MediaQuery.viewPaddingOf(context).top + 30.h);
+    double topPadding =
+        data.topPadding ?? (MediaQuery.viewPaddingOf(context).top == 0 ? 45.h : MediaQuery.viewPaddingOf(context).top + 30.h);
 
     ///проверяем не открыта ли клавиатура, вычитаем ее размер из верхнего отступа
     if (MediaQuery.viewInsetsOf(context).bottom != 0 && data.resizeToAvoidBottomInset) {
@@ -29,12 +29,13 @@ class UiKitBottomModalSheet extends StatelessWidget {
         GestureDetector(onTap: Navigator.of(context).pop),
         RepaintBoundary(
             child: Container(
-    clipBehavior: Clip.antiAlias,
+          clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
             color: Colors.black,
             borderRadius: BorderRadiusFoundation.onlyTop24,
           ),
-          child: Scaffold(body: Column(
+          child: Scaffold(
+              body: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               const SlidingChip().paddingOnly(
@@ -65,7 +66,6 @@ class UiKitBottomModalSheet extends StatelessWidget {
                         right: 0,
                         left: 0,
                         child: Container(
-                          decoration: const BoxDecoration(gradient: GradientFoundation.solidSurfaceLinearGradient),
                           child: data.bottomBar,
                         ),
                       ),

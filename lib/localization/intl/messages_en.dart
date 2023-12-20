@@ -52,13 +52,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m13(forNMoney) => "Upgrade ${forNMoney}";
 
-  static String m14(value) => "${value} could not be empty";
+  static String m14(count) =>
+      "${Intl.plural(count, zero: '${count} users', one: '${count} user', two: '${count} users', few: '${count} users', many: '${count} users', other: '${count} users')}";
 
-  static String m15(title) => "${title} is required";
+  static String m15(value) => "${value} could not be empty";
 
-  static String m16(value) => "${value} successfully updated";
+  static String m16(title) => "${title} is required";
 
-  static String m17(amountOfInvitedPersons) =>
+  static String m17(value) => "${value} successfully updated";
+
+  static String m18(amountOfInvitedPersons) =>
       "You sent an invitation to ${amountOfInvitedPersons} people";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -198,6 +201,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Invitations can be viewed in private messages"),
         "Invite": MessageLookupByLibrary.simpleMessage("Invite"),
+        "InviteList": MessageLookupByLibrary.simpleMessage("Invite list"),
         "InviteMore": MessageLookupByLibrary.simpleMessage("Invite more"),
         "InvitePeople": MessageLookupByLibrary.simpleMessage("Invite people"),
         "InviteToFavouritePlaces":
@@ -382,6 +386,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Update": MessageLookupByLibrary.simpleMessage("Update"),
         "UpgradeForNmoney": m13,
         "User": MessageLookupByLibrary.simpleMessage("User"),
+        "Users": m14,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Using health kit"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
@@ -411,16 +416,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "WorkHours": MessageLookupByLibrary.simpleMessage("Work hours"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("Wrong security code"),
-        "XCouldNotBeEmpty": m14,
-        "XIsRequired": m15,
-        "XSuccessfullyUpdated": m16,
+        "XCouldNotBeEmpty": m15,
+        "XIsRequired": m16,
+        "XSuccessfullyUpdated": m17,
         "Year": MessageLookupByLibrary.simpleMessage("Year"),
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("You better check this out"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "You get exactly what you need"),
-        "YouSentInvitationToNPeople": m17,
+        "YouSentInvitationToNPeople": m18,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("You’ll find it"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Your age"),
         "YourAudience": MessageLookupByLibrary.simpleMessage("Your audience"),
