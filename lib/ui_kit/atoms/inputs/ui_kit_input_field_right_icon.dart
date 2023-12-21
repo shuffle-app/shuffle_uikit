@@ -11,7 +11,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
     this.validator,
     this.enabled = true,
     this.icon,
-    this.onPressed,
+    this.onIconPressed,
     this.onTap,
     this.focusNode,
     this.autofocus = false,
@@ -40,7 +40,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
   final bool expands;
   final FocusNode? focusNode;
 
-  final VoidCallback? onPressed;
+  final VoidCallback? onIconPressed;
   final VoidCallback? onTap;
   final ValueChanged<String>? onFieldSubmitted;
   final Color? fillColor;
@@ -68,8 +68,7 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           )
         : uiKitTheme?.iconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
-    final inputTextStyle =
-        uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: uiKitTheme.colorScheme.inversePrimary);
+    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: uiKitTheme.colorScheme.inversePrimary);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
           ? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
@@ -108,20 +107,20 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
             }
             return context.uiKitTheme?.colorScheme.inversePrimary ?? Colors.white;
           }),
-          suffixIcon: IconButton(
-                  icon: widget.icon ??
-                      Icon(
-                        Icons.close,
-                        color: uiKitTheme?.colorScheme.inversePrimary,
-                      ),
-                  onPressed: widget.onPressed ??
-                      () {
-                        widget.controller.clear();
-                        widget.onFieldSubmitted?.call(widget.controller.text);
-                      },
-                  visualDensity: VisualDensity.compact,
-                  splashRadius: 5,
+          suffixIcon: widget.icon ??
+              IconButton(
+                icon: Icon(
+                  Icons.close,
+                  color: uiKitTheme?.colorScheme.inversePrimary,
                 ),
+                onPressed: widget.onIconPressed ??
+                    () {
+                      widget.controller.clear();
+                      widget.onFieldSubmitted?.call(widget.controller.text);
+                    },
+                visualDensity: VisualDensity.compact,
+                splashRadius: 5,
+              ),
         ),
       ),
     );
