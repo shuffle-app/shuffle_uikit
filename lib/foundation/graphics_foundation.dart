@@ -89,7 +89,7 @@ class GraphicsFoundation {
       case 'heart-fill':
         return ShuffleUiKitIcons.heartfill;
       case 'profile_outline':
-        return ShuffleUiKitIcons.profileOutline;
+        return ShuffleUiKitIcons.profileoutline;
       case 'user':
         return ShuffleUiKitIcons.user;
       case 'landmark':
