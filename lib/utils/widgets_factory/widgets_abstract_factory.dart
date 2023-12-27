@@ -159,7 +159,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         blurred: blurred ?? false,
         text: data.text ?? '',
         borderColor: color,
-        textColor: gradient != null ? Colors.black : color,
+        textColor: gradient != null ? Colors.white : color,
         loading: data.loading,
       );
     } else if ((blurred ?? false) && hasIcon) {
