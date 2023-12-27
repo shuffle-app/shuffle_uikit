@@ -28,7 +28,7 @@ class UiKitCheckbox extends StatelessWidget {
             border: isActive
                 ? GradientFoundation.gradientBorder
                 : Border.all(
-                    color: borderColor ?? colorScheme?.surface1 ?? Colors.black38,
+                    color: borderColor ?? colorScheme?.inversePrimary.withOpacity(0.3) ?? Colors.black38,
                     width: 2,
                   ),
           ),
