@@ -28,7 +28,6 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
 
   @override
   Widget build(BuildContext context) {
-    print('SmallOutlinedButton.build');
     final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: onPressed == null
           ? context.uiKitTheme!.colorScheme.inversePrimary.withOpacity(0.5)
@@ -78,7 +77,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
                       gradient: gradient,
                       child: Text(
                         text,
-                        style: textStyle?.copyWith(color: Colors.white),
+                        style: textStyle,
                         textAlign: TextAlign.center,
                       ))),
         ),
