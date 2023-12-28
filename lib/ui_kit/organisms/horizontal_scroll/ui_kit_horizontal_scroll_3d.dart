@@ -23,9 +23,11 @@ class UiKitHorizontalScroll3D extends StatelessWidget {
       calculatedWidth = screenWidth * 0.85;
       calculatedHeight = screenHeight * 0.2175704;
     }
+    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return Center(
       child: Gallery3D(
+        key: ValueKey(isLightTheme),
         controller: Gallery3DController(
           itemCount: itemCount,
           autoLoop: false,
