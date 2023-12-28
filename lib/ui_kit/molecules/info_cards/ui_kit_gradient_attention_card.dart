@@ -20,6 +20,7 @@ class UiKitGradientAttentionCard extends StatelessWidget {
     return Container(
       height: width,
       width: width,
+      clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         gradient: GradientFoundation.attentionCard,
         borderRadius: BorderRadiusFoundation.all24,
@@ -41,6 +42,7 @@ class UiKitGradientAttentionCard extends StatelessWidget {
             child: ImageWidget(
               width: width * 0.75,
               fit: BoxFit.fitWidth,
+              color: Colors.black,
               iconData: ShuffleUiKitIcons.tripleArrowBlack,
             ),
           ),
