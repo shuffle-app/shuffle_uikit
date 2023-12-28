@@ -5,14 +5,12 @@ class TitleWithAvatar extends StatelessWidget {
   final String? title;
   final String? avatarUrl;
   final double? horizontalMargin;
-  final Widget? trailing;
 
   const TitleWithAvatar({
     Key? key,
     this.title,
     this.avatarUrl,
     this.horizontalMargin,
-    this.trailing,
   }) : super(key: key);
 
   //TODO: сделать единый билдер названия с аватаром в зависимости от типа что нам нужно так что надо переделать с добавлением фабричных методов создания разных карточек
@@ -21,28 +19,21 @@ class TitleWithAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     final textStyle = context.uiKitTheme?.boldTextTheme.title2;
 
-    return Row(
+    return  Row(
       mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        if (avatarUrl != null) ...[
+        if (avatarUrl != null)
           CircularAvatar(
             height: 48.sp,
             avatarUrl: avatarUrl ?? '',
           ),
-          SpacingFoundation.horizontalSpace12,
-        ],
+        if (avatarUrl != null) SpacingFoundation.horizontalSpace12,
         if (title != null)
-          Expanded(
-            child: Text(
-              title ?? '',
-              style: textStyle,
-            ),
-          ),
-        if (trailing != null) ...[
-          SpacingFoundation.horizontalSpace12,
-          trailing!,
-        ],
+        Flexible(child:Text(
+            title ?? '',
+            style: textStyle,
+          )),
       ],
     ).paddingSymmetric(horizontal: horizontalMargin ?? 0);
   }

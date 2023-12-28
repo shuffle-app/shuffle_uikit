@@ -18,17 +18,13 @@ class LoadingWidget extends StatelessWidget {
     if (onLoad != null) {
       WidgetsBinding.instance.addPostFrameCallback((timeStamp) => onLoad!(context));
     }
-    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
-    String lottiePath = isLightTheme
-        ? GraphicsFoundation.instance.animations.lottie.shuffleLoaderWhiteTheme.path
-        : GraphicsFoundation.instance.animations.lottie.shuffleLoaderBlackTheme.path;
 
     return Center(
       child: Hero(
           tag: 'hero-loading',
           child: Column(mainAxisSize: MainAxisSize.min, children: [
             LottieBuilder.asset(
-              lottiePath,
+              GraphicsFoundation.instance.animations.lottie.shuffleLoader1.path,
               repeat: true,
               animate: true,
               package: 'shuffle_uikit',

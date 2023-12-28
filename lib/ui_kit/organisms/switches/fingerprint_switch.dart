@@ -80,7 +80,6 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
   @override
   Widget build(BuildContext context) {
     final height = widget.height ?? 0.95.sw * 0.51;
-    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return Stack(
       children: [
@@ -102,7 +101,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
             width: 1.sw,
             decoration: BoxDecoration(
               borderRadius: BorderRadiusFoundation.all28,
-              gradient: isLightTheme ? GradientFoundation.diamondGradient : null,
+              gradient: GradientFoundation.diamondGradient,
             ),
           ),
         ),

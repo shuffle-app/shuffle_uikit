@@ -69,17 +69,11 @@ class $AssetsAnimationsLottieGen {
   /// File path: assets/animations/lottie/animation_touch_id.json
   LottieGenImage get animationTouchId => const LottieGenImage('assets/animations/lottie/animation_touch_id.json');
 
-  /// File path: assets/animations/lottie/shuffle-loader-black-theme.json
-  LottieGenImage get shuffleLoaderBlackTheme =>
-      const LottieGenImage('assets/animations/lottie/shuffle-loader-black-theme.json');
-
-  /// File path: assets/animations/lottie/shuffle-loader-white-theme.json
-  LottieGenImage get shuffleLoaderWhiteTheme =>
-      const LottieGenImage('assets/animations/lottie/shuffle-loader-white-theme.json');
+  /// File path: assets/animations/lottie/shuffle-loader-1.json
+  LottieGenImage get shuffleLoader1 => const LottieGenImage('assets/animations/lottie/shuffle-loader-1.json');
 
   /// List of all assets
-  List<LottieGenImage> get values =>
-      [brokenHeart, wholeHeart, animationTouchId, shuffleLoaderBlackTheme, shuffleLoaderWhiteTheme];
+  List<LottieGenImage> get values => [brokenHeart, wholeHeart, animationTouchId, shuffleLoader1];
 }
 
 class $AssetsImagesPngGen {
@@ -1382,9 +1376,6 @@ class $AssetsImagesSvgGen {
   SvgGenImage get shadeContentTypeLoaderTile =>
       const SvgGenImage('assets/images/svg/shade_content_type_loader_tile.svg');
 
-  /// File path: assets/images/svg/share.svg
-  SvgGenImage get share => const SvgGenImage('assets/images/svg/share.svg');
-
   /// File path: assets/images/svg/shuffle-fill.svg
   SvgGenImage get shuffleFill => const SvgGenImage('assets/images/svg/shuffle-fill.svg');
 
@@ -1725,7 +1716,6 @@ class $AssetsImagesSvgGen {
         settingsOutline,
         settings,
         shadeContentTypeLoaderTile,
-        share,
         shuffleFill,
         shuffleOutline,
         shuffleWhite,

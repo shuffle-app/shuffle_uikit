@@ -19,7 +19,6 @@ class UiKitWeatherInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     const offColor = ColorsFoundation.darkNeutral900;
     final textTheme = context.uiKitTheme?.boldTextTheme;
-    final colorScheme = context.uiKitTheme?.colorScheme;
     final temperatureStyle = textTheme?.subHeadline.copyWith(color: active ? null : offColor);
     final weatherTypeStyle = textTheme?.caption1Bold.copyWith(color: active ? null : offColor);
     final isNight = TimeOfDay.fromDateTime(DateTime.now()).isNight;
@@ -27,7 +26,7 @@ class UiKitWeatherInfoCard extends StatelessWidget {
     return Container(
       height: height,
       decoration: BoxDecoration(
-        color: active ? null : colorScheme?.surface2,
+        color: active ? null : ColorsFoundation.surface2,
         borderRadius: BorderRadiusFoundation.all20,
         border: Border.fromBorderSide(BorderSide(width: 1, color: offColor.withOpacity(0.1))),
         gradient: active
