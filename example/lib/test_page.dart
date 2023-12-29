@@ -21,28 +21,103 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
-            const UiKitMessageCloud(
-              message: 'Invite list',
-              subtitle: '150 users',
-            ),
-            SpacingFoundation.verticalSpace24,
-            UiKitLightUpAnimation(
-              child: context.outlinedButton(
+            context.notificationPopUp(
+              primaryActionWidget: context.smallButton(
                 data: BaseUiKitButtonData(
+                  text: 'Ok',
                   onPressed: () {},
-                  iconInfo: BaseUiKitButtonIconData(
-                    iconData: ShuffleUiKitIcons.searchpeople,
-                    color: Colors.white,
-                  ),
+                ),
+              ),
+              dismissActionWidget: context.smallOutlinedButton(
+                data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
+                color: Colors.white.withOpacity(0.5),
+              ),
+              requiredData: NotificationPopupRequiredData(
+                titleString: 'Yoga today at Palm Jumeirah. You go?',
+                icon: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.heartinhandemoji,
+                ),
+                hasShadow: true,
+              ),
+            ),
+            SpacingFoundation.verticalSpace16,
+            context.notificationPopUp(
+              primaryActionWidget: context.smallButton(
+                data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
+              ),
+              dismissActionWidget: context.smallOutlinedButton(
+                data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
+                color: Colors.white.withOpacity(0.5),
+              ),
+              requiredData: NotificationPopupRequiredData(
+                titleString: 'Yoga today at Palm Jumeirah. You go?',
+                icon: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.heartinhandemoji,
                 ),
               ),
             ),
+            SpacingFoundation.verticalSpace16,
+            context.notificationPopUp(
+              primaryActionWidget: context.smallButton(
+                data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
+              ),
+              secondaryActionWidget: context.smallOutlinedButton(
+                data: BaseUiKitButtonData(text: 'text', onPressed: () {}),
+              ),
+              dismissActionWidget: context.smallOutlinedButton(
+                data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
+                color: Colors.white.withOpacity(0.5),
+              ),
+              requiredData: NotificationPopupRequiredData(
+                titleString: 'Yoga today at Palm Jumeirah. You go?',
+                icon: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.heartinhandemoji,
+                ),
+                hasShadow: true,
+              ),
+            ),
+            SpacingFoundation.verticalSpace16,
+            context.notificationPopUp(
+              primaryActionWidget: context.smallButton(
+                data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
+              ),
+              dismissActionWidget: context.smallOutlinedButton(
+                data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
+                color: Colors.white.withOpacity(0.5),
+              ),
+              secondaryActionWidget: context.smallOutlinedButton(
+                data: BaseUiKitButtonData(text: 'text', onPressed: () {}),
+              ),
+              requiredData: NotificationPopupRequiredData(
+                titleString: 'Yoga today at Palm Jumeirah. You go?',
+                icon: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.heartinhandemoji,
+                ),
+              ),
+            ),
+            // const UiKitMessageCloud(
+            //   message: 'Invite list',
+            //   subtitle: '150 users',
+            // ),
+            // SpacingFoundation.verticalSpace24,
+            // UiKitLightUpAnimation(
+            //   child: context.outlinedButton(
+            //     data: BaseUiKitButtonData(
+            //       onPressed: () {},
+            //       iconInfo: BaseUiKitButtonIconData(
+            //         iconData: ShuffleUiKitIcons.searchpeople,
+            //         color: Colors.white,
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

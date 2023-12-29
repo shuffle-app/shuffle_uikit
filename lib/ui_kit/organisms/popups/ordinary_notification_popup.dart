@@ -17,7 +17,7 @@ class OrdinaryNotificationPopUp extends BaseNotificationPopup {
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = context.uiKitTheme?.boldTextTheme.body.copyWith(color: Colors.white);
+    final titleStyle = context.uiKitTheme?.boldTextTheme.body.copyWith(color: context.uiKitTheme?.colorScheme.inverseSurface);
 
     return BlurredCardWithBorder(
       border: requiredData.gradientBorder ? GradientFoundation.gradientBorder : null,
