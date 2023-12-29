@@ -38,6 +38,7 @@ class UiKitLocaleSelector extends StatelessWidget {
       onSelected: (menuItem) {
         if (menuItem.value != null) {
           onLocaleChanged(menuItem.value!);
+          Navigator.pop(context);
         }
       },
     );
