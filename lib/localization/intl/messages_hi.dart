@@ -167,6 +167,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "FeaturesEnableGeolocation": MessageLookupByLibrary.simpleMessage(
             "सुविधाएँ जियोलोकेशन सक्षम करती हैं"),
         "Feeling": MessageLookupByLibrary.simpleMessage("लग रहा है"),
+        "Filters": MessageLookupByLibrary.simpleMessage("फ़िल्टर"),
         "FindSomeoneToHangOutWith": MessageLookupByLibrary.simpleMessage(
             "किसी के साथ घूमने के लिए खोजें"),
         "Follow": MessageLookupByLibrary.simpleMessage("फ़ॉलो करें"),
@@ -315,6 +316,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Pro": MessageLookupByLibrary.simpleMessage("प्रो"),
         "ProAccount": MessageLookupByLibrary.simpleMessage("प्रो खाता"),
         "Published": MessageLookupByLibrary.simpleMessage("प्रकाशित"),
+        "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
+        "ResetFilters": MessageLookupByLibrary.simpleMessage("रीसेट फ़िल्टर"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("पासवर्ड रीसेट"),
         "Save": MessageLookupByLibrary.simpleMessage("सहेजें"),
         "Search": MessageLookupByLibrary.simpleMessage("खोजें"),
@@ -331,6 +334,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("सर्वश्रेष्ठ का चयन"),
         "Send": MessageLookupByLibrary.simpleMessage("भेजना"),
         "SendIt": MessageLookupByLibrary.simpleMessage("इसे भेजो"),
+        "Services": MessageLookupByLibrary.simpleMessage("सेवाएं"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("परिणाम दिखाओ"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("मिश्रण"),
         "ShuffleWithRightWhitespace":

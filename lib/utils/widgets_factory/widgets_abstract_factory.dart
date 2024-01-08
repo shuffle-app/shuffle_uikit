@@ -5,6 +5,12 @@ import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_ti
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
 
 abstract class WidgetsAbstractFactory {
+  ButtonFactory createOutlinedBadgeButton({
+    required BaseUiKitButtonData data,
+    Alignment? badgeAlignment,
+    int? value,
+  });
+
   ButtonFactory createOutlinedGradientButton({
     required BaseUiKitButtonData data,
     required GradientBoxBorder gradient,
@@ -115,6 +121,27 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     final instance = context.findAncestorWidgetOfExactType<WidgetsFactory>();
 
     return instance;
+  }
+
+  @override
+  ButtonFactory createOutlinedBadgeButton({
+    required BaseUiKitButtonData data,
+    Alignment? badgeAlignment,
+    int? value,
+  }) {
+    final hasIcon = data.iconWidget != null || data.iconInfo != null;
+    final hasValue = value != null && value != 0;
+
+    if (hasIcon && !hasValue) {
+      return OutlinedBadgeIconButton(
+        iconInfo: data.iconInfo,
+        onPressed: data.onPressed,
+        icon: data.iconWidget,
+        badgeAlignment: badgeAlignment,
+      );
+    }
+
+    throw UnimplementedError('Outlined badge button with your parameters is not implemented');
   }
 
   @override

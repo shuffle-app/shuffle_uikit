@@ -64,6 +64,7 @@ class UiKitMenuItemTile extends StatelessWidget {
                   height: 0.0625.sw,
                   width: 0.0625.sw,
                   fit: BoxFit.cover,
+                  color: item.iconColor,
                 ),
                 SpacingFoundation.horizontalSpace8,
               ],

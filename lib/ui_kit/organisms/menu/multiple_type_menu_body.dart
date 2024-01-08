@@ -9,6 +9,7 @@ class MultipleTypeMenuBody<T> extends StatefulWidget {
   final bool useCustomTiles;
   final Color? tilesColor;
   final Widget? separator;
+  final double? customHorizontalPadding;
 
   MultipleTypeMenuBody({
     super.key,
@@ -19,6 +20,7 @@ class MultipleTypeMenuBody<T> extends StatefulWidget {
     this.useCustomTiles = false,
     this.tilesColor,
     this.separator,
+    this.customHorizontalPadding,
   }) : assert(allTypes?.isNotEmpty ?? true);
 
   @override
@@ -80,6 +82,6 @@ class _MultipleTypeMenuBodyState<T> extends State<MultipleTypeMenuBody<T>> {
           },
         ).toList(),
       ],
-    ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16);
+    ).paddingSymmetric(horizontal: widget.customHorizontalPadding ?? EdgeInsetsFoundation.horizontal16);
   }
 }

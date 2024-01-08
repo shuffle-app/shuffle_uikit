@@ -127,6 +127,183 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
+        UiKitSocialSearchCard(
+          title: 'lorem ipsum dolor',
+          subtitle: 'Mudon - Dubai - UAE 2567-6672-1829',
+          distance: '2.5 km',
+          progress: 0.7,
+          imageData: BaseUiKitButtonIconData(
+            iconPath: GraphicsFoundation.instance.png.mockAvatar.path,
+          ),
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitSocialSearchCard(
+          title: 'Snake catcher',
+          subtitle: 'Benedict Jones',
+          distance: '2.5 km',
+          progress: 0.7,
+          leadingImageBorderRadius: BorderRadiusFoundation.max,
+          imageData: BaseUiKitButtonIconData(
+            iconPath: GraphicsFoundation.instance.png.mockAvatar.path,
+          ),
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitTitledSection(
+          borderRadius: BorderRadius.zero,
+          title: 'Places',
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.places(
+                  title: 'Restaurant',
+                  iconRingColor: ColorsFoundation.red,
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
+                    color: ColorsFoundation.red,
+                  ),
+                  onTap: () {},
+                ),
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.places(
+                  title: 'Restaurant',
+                  iconRingColor: ColorsFoundation.red,
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
+                    color: ColorsFoundation.red,
+                  ),
+                  onTap: () {},
+                ),
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.places(
+                  title: 'Restaurant',
+                  iconRingColor: ColorsFoundation.red,
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
+                    color: ColorsFoundation.red,
+                  ),
+                  onTap: () {},
+                ),
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.places(
+                  title: 'Restaurant',
+                  iconRingColor: ColorsFoundation.red,
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
+                    color: ColorsFoundation.red,
+                  ),
+                  onTap: () {},
+                ),
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.places(
+                  title: 'Restaurant',
+                  iconRingColor: ColorsFoundation.red,
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
+                    color: ColorsFoundation.red,
+                  ),
+                  onTap: () {},
+                ),
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.places(
+                  title: 'Restaurant',
+                  iconRingColor: ColorsFoundation.red,
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
+                    color: ColorsFoundation.red,
+                  ),
+                  onTap: () {},
+                ),
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.places(
+                  title: 'Restaurant',
+                  iconRingColor: ColorsFoundation.red,
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
+                    color: ColorsFoundation.red,
+                  ),
+                  onTap: () {},
+                ),
+              ],
+            ),
+          ),
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitTitledSection(
+          borderRadius: BorderRadius.zero,
+          title: 'Services',
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.services(
+                  title: 'Service',
+                  customCardWidth: 0.4473.sw,
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.png.place.path,
+                  ),
+                  onTap: () {},
+                ),
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.services(
+                  title: 'Service',
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.png.anxietyEmogi.path,
+                  ),
+                  onTap: () {},
+                ),
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.services(
+                  title: 'Service',
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.png.calmnessEmoji.path,
+                  ),
+                  onTap: () {},
+                ),
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.services(
+                  title: 'Service',
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
+                  ),
+                  onTap: () {},
+                ),
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.services(
+                  title: 'Service',
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
+                    color: ColorsFoundation.red,
+                  ),
+                  onTap: () {},
+                ),
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.services(
+                  title: 'Service',
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
+                    color: ColorsFoundation.red,
+                  ),
+                  onTap: () {},
+                ),
+                SpacingFoundation.horizontalSpace12,
+                UiKitSocialSearchContentTypeCard.services(
+                  title: 'Service',
+                  iconData: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
+                    color: ColorsFoundation.red,
+                  ),
+                  onTap: () {},
+                ),
+              ],
+            ),
+          ),
+        ),
+        SpacingFoundation.verticalSpace16,
         ShortLogInButton(
           icon: ShuffleUiKitIcons.googleLogo,
           title: 'continue with google',
