@@ -273,5 +273,10 @@
   "key": "",
   "InviteList": "Invite list",
   "Users": "{count,plural, =0{{count} users} =1{{count} user} =2{{count} users} few{{count} users} many{{count} users} other{{count} users}}",
-  "Messages": "Messages"
+  "Messages": "Messages",
+  "Services": "Services",
+  "Filters": "Filters",
+  "ResetFilters": "Reset filters",
+  "Recommended": "Recommended"
+
 }

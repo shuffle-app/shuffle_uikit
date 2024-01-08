@@ -35,73 +35,64 @@ class UiKitOverflownActionCard extends StatelessWidget {
         const designHeight = 112;
         final designWidth = screenUtil.screenWidth / screenUtil.scaleWidth;
 
-        return SizedBox(
+        return UiKitCardWrapper(
           height: calculatedHeight,
-          width: size.maxWidth,
+          width: size.maxWidth - (horizontalMargin ?? 32),
           child: Stack(
             fit: StackFit.expand,
             children: [
-              UiKitCardWrapper(
-                height: calculatedHeight,
-                width: size.maxWidth - (horizontalMargin ?? 32),
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        title,
-                        action,
-                      ],
-                    ).paddingAll(EdgeInsetsFoundation.all16),
-                    Positioned(
-                      right: -overflownIconWidth * 0.25,
-                      bottom: -8,
-                      child: Transform.rotate(
-                        angle: -pi / 12,
-                        child: ImageWidget(
-                          link: overflownIconLink,
-                          iconData: overflownIcon,
-                          fit: BoxFit.fitHeight,
-                          height: calculatedHeight * 0.92,
-                        ),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  title,
+                  action,
+                ],
+              ).paddingAll(EdgeInsetsFoundation.all16),
+              Positioned(
+                right: -overflownIconWidth * 0.25,
+                bottom: -8,
+                child: Transform.rotate(
+                  angle: -pi / 12,
+                  child: ImageWidget(
+                    link: overflownIconLink,
+                    iconData: overflownIcon,
+                    fit: BoxFit.fitHeight,
+                    height: calculatedHeight * 0.92,
+                  ),
+                ),
+              ),
+              ...decorationIcons.map<Widget>(
+                (e) {
+                  final relativeTop = e.position.top == null ? null : (e.position.top! / designHeight) * calculatedHeight;
+                  final relativeBottom =
+                      e.position.bottom == null ? null : (e.position.bottom! / designHeight) * calculatedHeight;
+                  final relativeLeft = e.position.left == null ? null : (e.position.left! / designWidth) * size.maxWidth;
+                  final relativeRight = e.position.right == null ? null : (e.position.right! / designWidth) * size.maxWidth;
+                  final relativeIconHeight = e.iconSize == null ? null : (e.iconSize! / designHeight) * calculatedHeight;
+
+                  return Positioned(
+                    top: relativeTop,
+                    bottom: relativeBottom,
+                    left: relativeLeft,
+                    right: relativeRight,
+                    child: Transform.rotate(
+                      angle: e.rotationAngle * (pi / 180),
+                      child: ImageWidget(
+                        iconData: e.icon,
+                        link: e.iconLink,
+                        width: relativeIconHeight,
+                        fit: BoxFit.cover,
                       ),
                     ),
-                    ...decorationIcons.map<Widget>(
-                      (e) {
-                        final relativeTop = e.position.top == null ? null : (e.position.top! / designHeight) * calculatedHeight;
-                        final relativeBottom =
-                            e.position.bottom == null ? null : (e.position.bottom! / designHeight) * calculatedHeight;
-                        final relativeLeft = e.position.left == null ? null : (e.position.left! / designWidth) * size.maxWidth;
-                        final relativeRight = e.position.right == null ? null : (e.position.right! / designWidth) * size.maxWidth;
-                        final relativeIconHeight = e.iconSize == null ? null : (e.iconSize! / designHeight) * calculatedHeight;
-
-                        return Positioned(
-                          top: relativeTop,
-                          bottom: relativeBottom,
-                          left: relativeLeft,
-                          right: relativeRight,
-                          child: Transform.rotate(
-                            angle: e.rotationAngle * (pi / 180),
-                            child: ImageWidget(
-                              iconData: e.icon,
-                              link: e.iconLink,
-                              width: relativeIconHeight,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
-                ),
+                  );
+                },
               ),
             ],
           ),
         );
       },
-    ).paddingOnly(left: horizontalMargin ?? 0);
+    ).paddingSymmetric(horizontal: horizontalMargin ?? EdgeInsetsFoundation.horizontal16);
   }
 }

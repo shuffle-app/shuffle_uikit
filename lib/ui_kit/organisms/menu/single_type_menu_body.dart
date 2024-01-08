@@ -8,6 +8,7 @@ class SingleTypeMenuBody<T> extends StatelessWidget {
   final Color? tilesColor;
   final ValueChanged<UiKitMenuItem<T>>? onSelected;
   final Widget? separator;
+  final double? customHorizontalPadding;
 
   const SingleTypeMenuBody({
     super.key,
@@ -17,6 +18,7 @@ class SingleTypeMenuBody<T> extends StatelessWidget {
     this.onSelected,
     this.tilesColor,
     this.separator,
+    this.customHorizontalPadding,
   });
 
   @override
@@ -64,6 +66,6 @@ class SingleTypeMenuBody<T> extends StatelessWidget {
           },
         ).toList(),
       ],
-    ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16);
+    ).paddingSymmetric(horizontal: customHorizontalPadding ?? EdgeInsetsFoundation.horizontal16);
   }
 }
