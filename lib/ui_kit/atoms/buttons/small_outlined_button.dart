@@ -28,7 +28,11 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(color: textColor);
+    final textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
+      color: onPressed == null
+          ? context.uiKitTheme!.colorScheme.inversePrimary.withOpacity(0.5)
+          : textColor ?? context.uiKitTheme!.colorScheme.inversePrimary,
+    );
     double blurValue = 0;
     if (blurred) blurValue = 18;
 
@@ -57,7 +61,9 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
                         width: 2.w,
                       )
                     : Border.all(
-                        color: borderColor ?? context.uiKitTheme!.colorScheme.inversePrimary,
+                        color: onPressed == null
+                            ? context.uiKitTheme!.colorScheme.inversePrimary.withOpacity(0.5)
+                            : borderColor ?? context.uiKitTheme!.colorScheme.inversePrimary,
                         width: 2.w,
                       ),
                 color: text.isEmpty ? Colors.white.withOpacity(0.1) : null,

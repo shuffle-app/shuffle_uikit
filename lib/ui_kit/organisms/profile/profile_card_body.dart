@@ -42,6 +42,7 @@ class ProfileCardBody extends StatelessWidget {
     final theme = context.uiKitTheme;
 
     return UiKitCardWrapper(
+      color: theme?.colorScheme.surface1,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -98,8 +99,8 @@ class ProfileCardBody extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      theme?.cardColor ?? theme?.colorScheme.surface3 ?? ColorsFoundation.surface3,
-                      (theme?.cardColor ?? theme?.colorScheme.surface3 ?? ColorsFoundation.surface3).withOpacity(0)
+                      theme?.colorScheme.surface1 ?? Colors.transparent,
+                      (theme?.colorScheme.surface1 ?? Colors.transparent).withOpacity(0)
                     ],
                     tileMode: TileMode.decal,
                     end: Alignment.bottomCenter,
@@ -118,8 +119,8 @@ class ProfileCardBody extends StatelessWidget {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        theme?.cardColor ?? theme?.colorScheme.surface3 ?? ColorsFoundation.surface3,
-                        (theme?.cardColor ?? theme?.colorScheme.surface3 ?? ColorsFoundation.surface3).withOpacity(0)
+                        theme?.colorScheme.surface1 ?? Colors.transparent,
+                        (theme?.colorScheme.surface1 ?? Colors.transparent).withOpacity(0)
                       ],
                       tileMode: TileMode.decal,
                       begin: Alignment.bottomCenter,

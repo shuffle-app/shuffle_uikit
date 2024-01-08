@@ -6,6 +6,8 @@ class OrdinaryButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final ButtonFit? fit;
   final bool? loading;
+  final Color? backgroundColor;
+  final Color? textColor;
 
   const OrdinaryButton({
     Key? key,
@@ -13,20 +15,23 @@ class OrdinaryButton extends StatelessWidget implements ButtonFactory {
     this.onPressed,
     this.loading,
     this.fit,
+    this.backgroundColor,
+    this.textColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final enabled = onPressed != null;
     final textStyle = theme?.boldTextTheme.bodyUpperCase;
     final textWidget = Text(
       (loading ?? false) ? '' : text.toUpperCase(),
-      style: textStyle?.copyWith(color: theme?.colorScheme.primary),
+      style: textStyle?.copyWith(color: enabled ? textColor ?? theme?.colorScheme.primary : ColorsFoundation.mutedText),
       textAlign: TextAlign.center,
     ).loadingWrap(loading ?? false);
 
     return Material(
-      color: theme?.colorScheme.inversePrimary,
+      color: enabled ? backgroundColor ?? theme?.colorScheme.inversePrimary : ColorsFoundation.darkNeutral300,
       borderRadius: BorderRadiusFoundation.max,
       clipBehavior: Clip.hardEdge,
       child: InkWell(

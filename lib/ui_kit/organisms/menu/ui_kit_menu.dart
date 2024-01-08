@@ -14,6 +14,9 @@ class UiKitMenu<T> extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
   final Color? tilesColor;
   final bool useCustomTiles;
+  final Widget? separator;
+  final bool showBorder;
+  final double? menuSheetHorizontalPadding;
 
   const UiKitMenu({
     Key? key,
@@ -24,7 +27,10 @@ class UiKitMenu<T> extends StatelessWidget {
     this.customTopPadding,
     this.borderRadius,
     this.tilesColor,
+    this.separator,
+    this.showBorder = true,
     this.useCustomTiles = false,
+    this.menuSheetHorizontalPadding,
   }) : super(key: key);
 
   bool get singleType {
@@ -58,10 +64,12 @@ class UiKitMenu<T> extends StatelessWidget {
       color: context.uiKitTheme?.colorScheme.surface3,
       shape: RoundedRectangleBorder(
         borderRadius: borderRadius ?? BorderRadiusFoundation.max,
-        side: BorderSide(
-          width: 2,
-          color: context.uiKitTheme!.colorScheme.inversePrimary,
-        ),
+        side: showBorder
+            ? BorderSide(
+                width: 2,
+                color: context.uiKitTheme!.colorScheme.inversePrimary,
+              )
+            : BorderSide.none,
       ),
       child: InkWell(
         onTap: () {
@@ -84,6 +92,8 @@ class UiKitMenu<T> extends StatelessWidget {
                       onSelected: onSelected,
                       tilesColor: tilesColor,
                       useCustomTiles: useCustomTiles,
+                      separator: separator,
+                      customHorizontalPadding: menuSheetHorizontalPadding,
                     )
                   : MultipleTypeMenuBody<T>(
                       title: title,
@@ -92,6 +102,8 @@ class UiKitMenu<T> extends StatelessWidget {
                       onSelected: onSelected,
                       tilesColor: tilesColor,
                       useCustomTiles: useCustomTiles,
+                      separator: separator,
+                      customHorizontalPadding: menuSheetHorizontalPadding,
                     ),
             ),
           );
@@ -109,7 +121,8 @@ class UiKitMenu<T> extends StatelessWidget {
                   style: boldTextTheme?.caption1Medium,
                 ),
               if (selectedItem != null) ...[
-                ClipRRect(
+                if (selectedItem?.icon != null || selectedItem?.iconLink != null) ...[
+                  ClipRRect(
                     borderRadius: BorderRadiusFoundation.all24,
                     child: ImageWidget(
                       iconData: selectedItem?.icon,
@@ -117,17 +130,19 @@ class UiKitMenu<T> extends StatelessWidget {
                       height: 0.0625.sw,
                       width: 0.0625.sw,
                       fit: BoxFit.cover,
-                    )),
-                SpacingFoundation.horizontalSpace8,
+                    ),
+                  ),
+                  SpacingFoundation.horizontalSpace8,
+                ],
                 Expanded(
                   child: Text(
                     selectedItem!.title.toUpperCase(),
                     style: boldTextTheme?.caption1Medium,
                   ),
                 ),
-                const ImageWidget(
+                ImageWidget(
                   iconData: ShuffleUiKitIcons.chevronright,
-                  color: Colors.white,
+                  color: context.uiKitTheme?.colorScheme.inversePrimary,
                 ),
               ],
             ],
@@ -147,6 +162,7 @@ class UiKitMenuItem<T> {
   final IconData? icon;
   final String? iconLink;
   final String? type;
+  final Color? iconColor;
 
   UiKitMenuItem({
     required this.title,
@@ -154,6 +170,7 @@ class UiKitMenuItem<T> {
     this.type,
     this.icon,
     this.iconLink,
+    this.iconColor,
   });
 
   factory UiKitMenuItem.empty() => UiKitMenuItem(

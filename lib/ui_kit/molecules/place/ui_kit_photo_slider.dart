@@ -11,6 +11,7 @@ class UiKitPhotoSlider extends StatefulWidget {
   final int initialIndex;
   final int maxShowImage;
   final VoidCallback? onTap;
+  final List<Widget>? actions;
 
   const UiKitPhotoSlider({
     Key? key,
@@ -20,6 +21,7 @@ class UiKitPhotoSlider extends StatefulWidget {
     this.maxShowImage = 3,
     required this.height,
     this.onTap,
+    this.actions,
   }) : super(key: key);
 
   @override
@@ -74,8 +76,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         if (rightList.isNotEmpty) ...items,
 
       //build left stack
-      if (leftList.isNotEmpty)
-        ...leftList.map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1)).toList().reversed,
+      if (leftList.isNotEmpty) ...leftList.map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1)).toList().reversed,
       if (!reversed)
         //build right stack if user wants to slide right
         if (rightList.isNotEmpty) ...items,
@@ -222,13 +223,38 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
     final List<Widget> backStack = _getBackStack(_cardAnimation.right < widget.width / 10);
 
     return SizedBox(
-        height: widget.height,
-        width: widget.width,
-        child: Stack(clipBehavior: Clip.none, fit: StackFit.expand, alignment: Alignment.center, children: [
+      height: widget.height,
+      width: widget.width,
+      child: Stack(
+        clipBehavior: Clip.none,
+        fit: StackFit.expand,
+        alignment: Alignment.center,
+        children: [
           ...backStack,
           //ignore: avoid-returning-widgets
           _buildFirstItem(widget.media[_currentIndex ?? 0]),
-        ]));
+          if (widget.actions != null && widget.actions!.isNotEmpty)
+            Positioned(
+              bottom: 0,
+              right: 0,
+              height: 0.1.sw,
+              width: 1.sw,
+              child: ListView.separated(
+                reverse: true,
+                padding: EdgeInsets.zero,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return widget.actions!.elementAt(index);
+                },
+                separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                itemCount: widget.actions!.length,
+              ),
+            ),
+        ],
+      ),
+    );
   }
 }
 

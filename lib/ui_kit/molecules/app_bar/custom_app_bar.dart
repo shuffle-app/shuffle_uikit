@@ -36,7 +36,11 @@ class CustomAppBar extends PreferredSize {
     return ClipRRect(
       borderRadius: BorderRadiusFoundation.onlyBottom24,
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+        filter: ImageFilter.blur(
+          sigmaX: 25,
+          sigmaY: 25,
+          tileMode: TileMode.mirror,
+        ),
         child: Container(
           width: preferredSize.width,
           decoration: BoxDecoration(
@@ -69,7 +73,7 @@ class CustomAppBar extends PreferredSize {
                         ),
                     if (appBarTrailing != null && !centerTitle) SpacingFoundation.horizontalSpace8,
                     if (appBarTrailing != null) appBarTrailing!,
-                    if (appBarTrailing == null) const SizedBox(),
+                    if (appBarTrailing == null && centerTitle) SpacingFoundation.horizontalSpace24,
                   ],
                 ),
                 if (!hideBody) bodySpacing?.heightBox ?? SpacingFoundation.verticalSpace8,

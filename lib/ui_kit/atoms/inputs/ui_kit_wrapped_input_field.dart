@@ -23,6 +23,7 @@ class UiKitWrappedInputField extends StatefulWidget {
     this.keyboardType,
     this.obscureText = false,
   })  : icon = null,
+        onIconPressed = null,
         type = 'uiKitInputFieldNoIcon';
 
   const UiKitWrappedInputField.uiKitInputFieldRightIcon({
@@ -45,6 +46,7 @@ class UiKitWrappedInputField extends StatefulWidget {
     this.hintTextColor,
     this.textColor,
     this.keyboardType,
+    this.onIconPressed,
     this.obscureText = false,
   }) : type = 'uiKitInputFieldRightIcon';
 
@@ -54,6 +56,7 @@ class UiKitWrappedInputField extends StatefulWidget {
   final String? hintText;
   final String? Function(String? p1)? validator;
   final bool obscureText;
+  final VoidCallback? onIconPressed;
 
   final ValueChanged<String>? onChanged;
 
@@ -116,7 +119,7 @@ class _UiKitWrappedInputFieldState extends State<UiKitWrappedInputField> {
                 enabled: widget.enabled,
                 hintText: widget.hintText,
                 controller: widget.controller,
-                fillColor: ColorsFoundation.surface3,
+                fillColor: widget.fillColor,
                 validator: (value) {
                   setState(() {
                     errorText = widget.validator?.call(value);
@@ -124,6 +127,7 @@ class _UiKitWrappedInputFieldState extends State<UiKitWrappedInputField> {
                   return errorText;
                 },
                 icon: widget.icon,
+                onIconPressed: widget.onIconPressed,
               );
             default:
               return UiKitInputFieldNoFill(

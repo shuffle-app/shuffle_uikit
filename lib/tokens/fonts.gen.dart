@@ -10,6 +10,9 @@
 class FontFamily {
   FontFamily._();
 
+  /// Font family: Shuffle Icons
+  static const String shuffleIcons = 'Shuffle Icons';
+
   /// Font family: Unbounded
   static const String unbounded = 'Unbounded';
 }

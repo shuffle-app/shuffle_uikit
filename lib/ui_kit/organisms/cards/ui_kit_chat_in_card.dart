@@ -18,7 +18,6 @@ class UiKitChatInCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final width = 0.7.sw;
-    final height = width * 0.3;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,17 +32,18 @@ class UiKitChatInCard extends StatelessWidget {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomPaint(painter: _MessageTriangle(color: theme!.cardColor)),
+            CustomPaint(painter: _MessageTriangle(color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white)),
             Flexible(
               child: UiKitCardWrapper(
+                color: theme?.colorScheme.surface2,
                 child: text != null
-                    ? ConstrainedBox(
-                        constraints: BoxConstraints.expand(width: width, height: height),
+                    ? SizedBox(
+                        width: width,
                         child: Text(
                           text!,
-                          style: theme.boldTextTheme.caption1Medium,
-                        ),
-                      ).paddingAll(EdgeInsetsFoundation.all12)
+                          style: theme?.boldTextTheme.caption1Medium,
+                        ).paddingAll(EdgeInsetsFoundation.all12),
+                      )
                     : child!.paddingAll(EdgeInsetsFoundation.all12),
               ),
             ),
@@ -66,8 +66,8 @@ class _MessageTriangle extends CustomPainter {
 
     path
       ..lineTo(-8.w, 0)
-      ..quadraticBezierTo(1.w, 5.h, 0, 20.h)
-      ..lineTo(30.w, -0.25.w)
+      ..quadraticBezierTo(1.w, 6.h, 0, 20.h)
+      ..lineTo(30.w, 0)
       ..close();
 
     canvas.drawPath(path, paint);

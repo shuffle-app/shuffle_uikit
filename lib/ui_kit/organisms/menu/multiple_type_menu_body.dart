@@ -8,6 +8,8 @@ class MultipleTypeMenuBody<T> extends StatefulWidget {
   final List<String?>? allTypes;
   final bool useCustomTiles;
   final Color? tilesColor;
+  final Widget? separator;
+  final double? customHorizontalPadding;
 
   MultipleTypeMenuBody({
     super.key,
@@ -17,6 +19,8 @@ class MultipleTypeMenuBody<T> extends StatefulWidget {
     this.allTypes,
     this.useCustomTiles = false,
     this.tilesColor,
+    this.separator,
+    this.customHorizontalPadding,
   }) : assert(allTypes?.isNotEmpty ?? true);
 
   @override
@@ -51,21 +55,33 @@ class _MultipleTypeMenuBodyState<T> extends State<MultipleTypeMenuBody<T>> {
         ...widget.items.where((element) => element.type?.toLowerCase() == _selectedType?.toLowerCase()).map<Widget>(
           (e) {
             if (widget.useCustomTiles) {
-              return UiKitMenuItemTile.custom(
-                item: e,
-                onTap: () => widget.onSelected?.call(e),
-                color: widget.tilesColor,
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  UiKitMenuItemTile.custom(
+                    item: e,
+                    onTap: () => widget.onSelected?.call(e),
+                    color: widget.tilesColor,
+                  ),
+                  if (widget.separator != null) widget.separator!,
+                ],
               );
             }
 
-            return UiKitMenuItemTile(
-              item: e,
-              onTap: () => widget.onSelected?.call(e),
-              color: widget.tilesColor,
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                UiKitMenuItemTile(
+                  item: e,
+                  onTap: () => widget.onSelected?.call(e),
+                  color: widget.tilesColor,
+                ),
+                if (widget.separator != null) widget.separator!,
+              ],
             );
           },
         ).toList(),
       ],
-    ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16);
+    ).paddingSymmetric(horizontal: widget.customHorizontalPadding ?? EdgeInsetsFoundation.horizontal16);
   }
 }

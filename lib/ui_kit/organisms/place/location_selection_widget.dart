@@ -105,8 +105,6 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                       isSuggestions
                           ? UiKitRadio(selected: _selectedIndex == index)
                           : context.smallButton(
-                              backgroundColor: theme?.colorScheme.primary,
-                              color: Colors.transparent,
                               data: BaseUiKitButtonData(
                                 onPressed: () => widget.onKnownLocationConfirmed?.call(widget.knownLocations![index]),
                                 text: S.of(context).Confirm,

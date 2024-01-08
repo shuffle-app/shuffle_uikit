@@ -33,7 +33,6 @@ class _RollingDiceButtonState extends State<RollingDiceButton> with SingleTicker
   }
 
   void _rollDice() {
-    // _controller.
     _controller.forward(from: 0);
     setState(() {
       _diceNumber = _random.nextInt(6) + 1;
@@ -54,15 +53,13 @@ class _RollingDiceButtonState extends State<RollingDiceButton> with SingleTicker
           _rollDice();
           widget.onPressed(List.generate(_diceNumber, (index) => _random.nextInt(widget.length)).toSet());
         },
-        icon: AnimatedBuilder(
+        iconWidget: AnimatedBuilder(
           animation: _animation,
           builder: (context, child) {
             return Transform.rotate(
               angle: -_diceNumber * 360 / (_animation.value + 1) * (pi / 180),
               child: Transform.scale(
                 scale: sin(_animation.value * 3) + 1,
-                // scale: sin(_animation.value + 1 / 2),
-                // scale: 1,
                 child: child,
               ),
             );
@@ -70,6 +67,7 @@ class _RollingDiceButtonState extends State<RollingDiceButton> with SingleTicker
           child: ImageWidget(
             iconData: ShuffleUiKitIcons.dice,
             height: 17.h,
+            color: Colors.black,
             fit: BoxFit.fitHeight,
           ),
         ),

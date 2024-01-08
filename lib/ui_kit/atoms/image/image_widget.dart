@@ -55,7 +55,7 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (iconData != null || (link != null && !link!.contains('/'))) {
+    if (iconData != null || (link != null && !link!.contains('/') && link!.isNotEmpty)) {
       return Icon(
         iconData ?? GraphicsFoundation.instance.iconFromString(link ?? ''),
         color: color,
@@ -164,7 +164,7 @@ class CustomProxyStatic {
   static String? _proxyBase;
 
   static String get proxy {
-    return _proxyBase == null || _proxyBase!.isEmpty ? '' : 'https://$_proxyBase/proxy/';
+    return _proxyBase == null || _proxyBase!.isEmpty ? '' : 'https://$_proxyBase/image-proxy/';
   }
 
   static set proxy(String value) {

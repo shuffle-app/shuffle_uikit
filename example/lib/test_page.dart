@@ -10,6 +10,7 @@ class TestPage extends StatefulWidget {
 
 class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin {
   final ScrollController scrollController = ScrollController();
+  final animDuration = const Duration(milliseconds: 250);
 
   @override
   void dispose() {
@@ -20,56 +21,105 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).viewPadding.top,
-          ),
-          SpacingFoundation.verticalSpace24,
-          Text(
-            'Events you don’t wanna miss',
-            style: context.uiKitTheme?.boldTextTheme.title1,
-            textAlign: TextAlign.center,
-          ),
-          SpacingFoundation.verticalSpace24,
-          // Expanded(
-          //   child: LayoutBuilder(
-          //     builder: (context, size) {
-          //       return UiKitHorizontalScrollableList(
-          //         leftPadding: SpacingFoundation.horizontalSpacing16,
-          //         spacing: SpacingFoundation.horizontalSpacing12,
-          //         children: List<UiKitSpinnerCard>.generate(
-          //           5,
-          //           (index) => UiKitSpinnerCard(
-          //             availableHeight: size.maxHeight,
-          //             photoLink: GraphicsFoundation.instance.png.spinnerEvent.path,
-          //             title: 'Yoga today at Palm Jumeirah. You go? Yes, you go!',
-          //             date: DateTime.now(),
-          //             favourite: index % 2 > 0,
-          //             onTap: () {},
-          //             onFavoriteTap: () {},
-          //             ownerPhotoLink: GraphicsFoundation.instance.png.mockUserAvatar.path,
-          //             ownerTileTitle: 'John Doe',
-          //             ownerTileTitleTrailing: ProAccountMark(),
-          //             ownerTileSubtitle: '@johndoe',
-          //           ),
-          //         ),
-          //       );
-          //     },
-          //   ),
-          // ),
-          SpacingFoundation.verticalSpace24,
-          // UiKitSpinner(
-          //   scrollController: scrollController,
-          //   categories: List<String>.generate(
-          //     10,
-          //     (index) => 'Category ${index + 1}',
-          //   ),
-          //   onSpinChangedCategory: (category) {},
-          // ),
-        ],
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            context.notificationPopUp(
+              primaryActionWidget: context.smallButton(
+                data: BaseUiKitButtonData(
+                  text: 'Ok',
+                  onPressed: () {},
+                ),
+              ),
+              dismissActionWidget: context.smallOutlinedButton(
+                data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
+                color: Colors.white.withOpacity(0.5),
+              ),
+              requiredData: NotificationPopupRequiredData(
+                titleString: 'Yoga today at Palm Jumeirah. You go?',
+                icon: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.heartinhandemoji,
+                ),
+                hasShadow: true,
+              ),
+            ),
+            SpacingFoundation.verticalSpace16,
+            context.notificationPopUp(
+              primaryActionWidget: context.smallButton(
+                data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
+              ),
+              dismissActionWidget: context.smallOutlinedButton(
+                data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
+                color: Colors.white.withOpacity(0.5),
+              ),
+              requiredData: NotificationPopupRequiredData(
+                titleString: 'Yoga today at Palm Jumeirah. You go?',
+                icon: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.heartinhandemoji,
+                ),
+              ),
+            ),
+            SpacingFoundation.verticalSpace16,
+            context.notificationPopUp(
+              primaryActionWidget: context.smallButton(
+                data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
+              ),
+              secondaryActionWidget: context.smallOutlinedButton(
+                data: BaseUiKitButtonData(text: 'text', onPressed: () {}),
+              ),
+              dismissActionWidget: context.smallOutlinedButton(
+                data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
+                color: Colors.white.withOpacity(0.5),
+              ),
+              requiredData: NotificationPopupRequiredData(
+                titleString: 'Yoga today at Palm Jumeirah. You go?',
+                icon: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.heartinhandemoji,
+                ),
+                hasShadow: true,
+              ),
+            ),
+            SpacingFoundation.verticalSpace16,
+            context.notificationPopUp(
+              primaryActionWidget: context.smallButton(
+                data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
+              ),
+              dismissActionWidget: context.smallOutlinedButton(
+                data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
+                color: Colors.white.withOpacity(0.5),
+              ),
+              secondaryActionWidget: context.smallOutlinedButton(
+                data: BaseUiKitButtonData(text: 'text', onPressed: () {}),
+              ),
+              requiredData: NotificationPopupRequiredData(
+                titleString: 'Yoga today at Palm Jumeirah. You go?',
+                icon: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.heartinhandemoji,
+                ),
+              ),
+            ),
+            // const UiKitMessageCloud(
+            //   message: 'Invite list',
+            //   subtitle: '150 users',
+            // ),
+            // SpacingFoundation.verticalSpace24,
+            // UiKitLightUpAnimation(
+            //   child: context.outlinedButton(
+            //     data: BaseUiKitButtonData(
+            //       onPressed: () {},
+            //       iconInfo: BaseUiKitButtonIconData(
+            //         iconData: ShuffleUiKitIcons.searchpeople,
+            //         color: Colors.white,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+          ],
+        ),
       ),
     );
   }

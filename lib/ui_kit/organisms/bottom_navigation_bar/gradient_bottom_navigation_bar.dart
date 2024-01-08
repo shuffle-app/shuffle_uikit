@@ -23,13 +23,14 @@ class GradientBottomNavigationBar extends StatelessWidget {
       stream: controller.tabStream,
       builder: (context, snapshot) {
         final index = snapshot.data?.value ?? 0;
+        final isLigthTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
         return Container(
           height: kBottomNavigationBarHeight.h,
           width: double.infinity,
           clipBehavior: Clip.hardEdge,
-          decoration: const BoxDecoration(
-            gradient: GradientFoundation.blackLinearGradient,
+          decoration: BoxDecoration(
+            gradient: isLigthTheme ? GradientFoundation.whiteLinearGradient : GradientFoundation.blackLinearGradient,
           ),
           child: Row(
             mainAxisSize: MainAxisSize.max,
@@ -61,13 +62,13 @@ class GradientBottomNavigationBar extends StatelessWidget {
 
 class GradientBottomNavigationBarItem extends TabType {
   static final home = GradientBottomNavigationBarItem._(
-    selectedIcon: ShuffleUiKitIcons.homeFill,
-    unselectedIcon: ShuffleUiKitIcons.homeOutline,
+    selectedIcon: ShuffleUiKitIcons.homefill,
+    unselectedIcon: ShuffleUiKitIcons.homeoutline,
     index: 0,
   );
   static final spinner = GradientBottomNavigationBarItem._(
-    selectedIcon: ShuffleUiKitIcons.spinnerFill,
-    unselectedIcon: ShuffleUiKitIcons.spinnerOutline,
+    selectedIcon: ShuffleUiKitIcons.spinnerfill,
+    unselectedIcon: ShuffleUiKitIcons.spinneroutline,
     index: 1,
   );
   static final docs = GradientBottomNavigationBarItem._(
@@ -76,8 +77,8 @@ class GradientBottomNavigationBarItem extends TabType {
     index: 1,
   );
   static final shuffle = GradientBottomNavigationBarItem._(
-    selectedIcon: ShuffleUiKitIcons.shuffleFill,
-    unselectedIcon: ShuffleUiKitIcons.shuffleOutline,
+    selectedIcon: ShuffleUiKitIcons.shufflefill,
+    unselectedIcon: ShuffleUiKitIcons.shuffleoutline,
     index: 2,
   );
   static final analytics = GradientBottomNavigationBarItem._(
@@ -86,8 +87,8 @@ class GradientBottomNavigationBarItem extends TabType {
     index: 2,
   );
   static final search = GradientBottomNavigationBarItem._(
-    selectedIcon: ShuffleUiKitIcons.searchFill,
-    unselectedIcon: ShuffleUiKitIcons.searchOutline,
+    selectedIcon: ShuffleUiKitIcons.searchfill,
+    unselectedIcon: ShuffleUiKitIcons.searchoutline,
     index: 3,
   );
   static final connection = GradientBottomNavigationBarItem._(
@@ -96,8 +97,8 @@ class GradientBottomNavigationBarItem extends TabType {
     index: 3,
   );
   static final profile = GradientBottomNavigationBarItem._(
-    selectedIcon: ShuffleUiKitIcons.profileFill,
-    unselectedIcon: ShuffleUiKitIcons.profileOutline,
+    selectedIcon: ShuffleUiKitIcons.profilefill,
+    unselectedIcon: ShuffleUiKitIcons.profileoutline,
     index: 4,
   );
   static final settings = GradientBottomNavigationBarItem._(

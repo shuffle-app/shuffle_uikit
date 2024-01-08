@@ -23,9 +23,11 @@ class UiKitHorizontalScroll3D extends StatelessWidget {
       calculatedWidth = screenWidth * 0.85;
       calculatedHeight = screenHeight * 0.2175704;
     }
+    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return Center(
       child: Gallery3D(
+        key: ValueKey(isLightTheme),
         controller: Gallery3DController(
           itemCount: itemCount,
           autoLoop: false,
@@ -38,7 +40,7 @@ class UiKitHorizontalScroll3D extends StatelessWidget {
           radius: 10,
           shadows: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.5),
+              color: context.uiKitTheme?.colorScheme.surface.withOpacity(0.5) ?? Colors.transparent,
               offset: const Offset(0, 0),
               blurRadius: 10,
               spreadRadius: 100,

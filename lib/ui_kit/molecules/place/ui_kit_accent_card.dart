@@ -19,9 +19,13 @@ class UiKitAccentCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = context.uiKitTheme?.boldTextTheme;
+    final theme = context.uiKitTheme;
+    final textTheme = theme?.boldTextTheme;
     final titleStyle = textTheme?.subHeadline;
-    final additionalInfoStyle = textTheme?.caption2Bold.copyWith(color: ColorsFoundation.darkNeutral500);
+    final additionalInfoStyle = textTheme?.caption2Bold.copyWith(
+      color: ColorsFoundation.darkNeutral500,
+      overflow: TextOverflow.ellipsis,
+    );
     final accentMessageStyle = textTheme?.caption1Bold.copyWith(color: ColorsFoundation.darkNeutral100);
     final height = 0.92.sw * 0.57;
 
@@ -30,10 +34,11 @@ class UiKitAccentCard extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
-            color: Colors.white,
-            blurRadius: 16.sp,
+            color: ColorsFoundation.shadowPink,
+            blurRadius: 18,
+            spreadRadius: 0,
             offset: Offset.zero,
           ),
         ],
@@ -94,22 +99,25 @@ class UiKitAccentCard extends StatelessWidget {
           Positioned(
             bottom: SpacingFoundation.verticalSpacing16,
             left: SpacingFoundation.horizontalSpacing16,
+            right: SpacingFoundation.horizontalSpacing16,
             child: Column(
-              mainAxisSize: MainAxisSize.max,
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   additionalInfo,
                   style: additionalInfoStyle,
+                  maxLines: 1,
                 ),
-                Text(
+                Flexible(
+                    child: Text(
                   title,
                   style: titleStyle?.copyWith(
                     overflow: TextOverflow.ellipsis,
                     color: Colors.white,
                   ),
                   maxLines: 2,
-                ),
+                )),
               ],
             ),
           ),

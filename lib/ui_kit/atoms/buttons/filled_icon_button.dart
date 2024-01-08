@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class FilledIconButton extends StatelessWidget implements ButtonFactory {
-  final Widget icon;
+  final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
   final VoidCallback? onPressed;
 
   const FilledIconButton({
     Key? key,
-    required this.icon,
+    this.icon,
+    this.iconInfo,
     this.onPressed,
-  }) : super(key: key);
+  })  : assert(icon != null || iconInfo != null, 'Either icon or iconInfo must be provided'),
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,19 +20,27 @@ class FilledIconButton extends StatelessWidget implements ButtonFactory {
     final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
-      color: enabled ? colorScheme?.inversePrimary.withOpacity(0.1) : ColorsFoundation.darkNeutral300,
+      color: enabled ? colorScheme?.inversePrimary : ColorsFoundation.darkNeutral300,
       shape: const CircleBorder(),
       clipBehavior: Clip.hardEdge,
       child: InkWell(
         onTap: onPressed,
         borderRadius: BorderRadiusFoundation.max,
         child: Ink(
-          height: 48.h,
-          width: 48.w,
           decoration: const BoxDecoration(
             shape: BoxShape.circle,
           ),
-          child: Center(child: icon),
+          child: Padding(
+            padding: EdgeInsets.all(EdgeInsetsFoundation.all14),
+            child: icon ??
+                ImageWidget(
+                  iconData: iconInfo?.iconData,
+                  link: iconInfo?.iconPath,
+                  height: iconInfo?.size,
+                  fit: BoxFit.fitHeight,
+                  color: iconInfo?.color ?? colorScheme?.primary,
+                ),
+          ),
         ),
       ),
     );

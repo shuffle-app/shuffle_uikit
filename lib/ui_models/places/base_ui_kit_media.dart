@@ -51,7 +51,8 @@ class UiKitTag {
     required String title,
     required this.icon,
     this.unique = false,
-  }) : title = title.replaceAll('-', ' ');
+    bool updateTitle = true,
+  }) : title = updateTitle ? title.replaceAll('-', ' ') : title;
 }
 
 enum UiKitMediaType { image, video }

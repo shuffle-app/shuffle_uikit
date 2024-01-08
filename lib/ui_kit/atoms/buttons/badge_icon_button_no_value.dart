@@ -3,17 +3,17 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BadgeIconButtonNoValue extends StatelessWidget implements ButtonFactory {
   final Widget? icon;
+  final BaseUiKitButtonIconData? iconInfo;
   final VoidCallback? onPressed;
-  final int? badgeValue;
   final Alignment? badgeAlignment;
 
   const BadgeIconButtonNoValue({
     super.key,
     this.icon,
     this.onPressed,
-    this.badgeValue,
+    this.iconInfo,
     this.badgeAlignment,
-  });
+  }) : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided');
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,15 @@ class BadgeIconButtonNoValue extends StatelessWidget implements ButtonFactory {
             clipBehavior: Clip.none,
             fit: StackFit.passthrough,
             children: [
-              if (icon != null) icon!,
+              if (icon != null && iconInfo == null) icon!,
+              if (iconInfo != null && icon == null)
+                ImageWidget(
+                  iconData: iconInfo?.iconData,
+                  link: iconInfo?.iconPath,
+                  height: iconInfo?.size,
+                  fit: BoxFit.fitHeight,
+                  color: iconInfo?.color ?? context.uiKitTheme?.colorScheme.inversePrimary,
+                ),
               if (topLeftBadge)
                 Positioned(
                   top: -SpacingFoundation.verticalSpacing2,

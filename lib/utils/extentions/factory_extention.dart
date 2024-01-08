@@ -1,13 +1,42 @@
 import 'package:flutter/cupertino.dart';
+import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 extension FactoryExtention on BuildContext {
+  Widget outlinedBadgeButton({
+    required BaseUiKitButtonData data,
+    Alignment? badgeAlignment,
+    int? badgeValue,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createOutlinedBadgeButton(
+          data: data,
+          badgeAlignment: badgeAlignment,
+          value: badgeValue,
+        )
+        .build(this);
+  }
+
+  Widget outlinedGradientButton({
+    required BaseUiKitButtonData data,
+    required GradientBoxBorder gradient,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createOutlinedGradientButton(
+          data: data,
+          gradient: gradient,
+        )
+        .build(this);
+  }
+
   Widget smallGradientButton({required BaseUiKitButtonData data}) {
     return WidgetsFactory.of(this)!.createSmallGradientButton(data: data).build(this);
   }
 
-  Widget createSmallOutlinedButton({BaseUiKitButtonData? data, Color? color, bool? blurred,Gradient? gradient}) {
-    return WidgetsFactory.of(this)!.createSmallOutlinedButton(data: data, color: color, blurred: blurred,gradient:gradient).build(this);
+  Widget createSmallOutlinedButton({required BaseUiKitButtonData data, Color? color, bool? blurred, Gradient? gradient}) {
+    return WidgetsFactory.of(this)!
+        .createSmallOutlinedButton(data: data, color: color, blurred: blurred, gradient: gradient)
+        .build(this);
   }
 
   Widget buttonWithProgress({
@@ -25,7 +54,7 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget badgeButtonNoValue({
-    BaseUiKitButtonData? data,
+    required BaseUiKitButtonData data,
     Alignment? badgeAlignment,
   }) {
     return WidgetsFactory.of(this)!
@@ -41,8 +70,6 @@ extension FactoryExtention on BuildContext {
     bool? isTextButton,
     bool? blurred,
     bool uppercase = true,
-    Color? color,
-    Color? backgroundColor,
   }) {
     return WidgetsFactory.of(this)!
         .createSmallButton(
@@ -50,8 +77,6 @@ extension FactoryExtention on BuildContext {
           isTextButton: isTextButton ?? false,
           blurred: blurred,
           uppercase: uppercase,
-          color: color,
-          backgroundColor: backgroundColor,
         )
         .build(this);
   }
@@ -75,6 +100,7 @@ extension FactoryExtention on BuildContext {
     bool? hideBorder,
     Color? borderColor,
     bool? isGradientEnabled,
+    bool? blurred,
   }) {
     return WidgetsFactory.of(this)!
         .createOutlinedButton(
@@ -82,22 +108,24 @@ extension FactoryExtention on BuildContext {
           borderColor: borderColor,
           hideBorder: hideBorder,
           isGradientEnabled: isGradientEnabled,
+          blurred: blurred,
         )
         .build(this);
   }
 
   Widget smallOutlinedButton({
-    BaseUiKitButtonData? data,
+    required BaseUiKitButtonData data,
     Color? color,
     bool? blurred,
     Gradient? gradient,
+    double? blurValue,
   }) {
     return WidgetsFactory.of(this)!
         .createSmallOutlinedButton(
           data: data,
           color: color,
           blurred: blurred,
-      gradient: gradient,
+          gradient: gradient,
         )
         .build(this);
   }

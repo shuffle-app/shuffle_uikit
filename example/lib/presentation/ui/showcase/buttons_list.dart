@@ -84,7 +84,7 @@ class ButtonsList extends StatelessWidget {
         context.button(
           data: BaseUiKitButtonData(
             fit: ButtonFit.fitWidth,
-            icon: const CupertinoActivityIndicator(),
+            iconWidget: const CupertinoActivityIndicator(),
             text: 'GET CODE',
           ),
         ),
@@ -128,7 +128,7 @@ class ButtonsList extends StatelessWidget {
           children: [
             context.outlinedButton(
               data: BaseUiKitButtonData(
-                icon: ImageWidget(
+                iconInfo: BaseUiKitButtonIconData(
                   iconData: ShuffleUiKitIcons.route,
                   color: context.uiKitTheme?.colorScheme.inversePrimary,
                 ),
@@ -138,7 +138,7 @@ class ButtonsList extends StatelessWidget {
             SpacingFoundation.horizontalSpace8,
             context.button(
               data: BaseUiKitButtonData(
-                icon: ImageWidget(
+                iconInfo: BaseUiKitButtonIconData(
                   iconData: ShuffleUiKitIcons.route,
                   color: context.uiKitTheme?.colorScheme.inversePrimary,
                 ),

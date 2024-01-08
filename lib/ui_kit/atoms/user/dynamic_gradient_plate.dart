@@ -11,6 +11,8 @@ class DynamicGradientPlate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
+
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: EdgeInsetsFoundation.horizontal12,
@@ -18,7 +20,7 @@ class DynamicGradientPlate extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.max,
-        gradient: GradientFoundation.greyGradient,
+        gradient: isLightTheme ? GradientFoundation.darkGreyGradient : GradientFoundation.greyGradient,
       ),
       child: content,
     );

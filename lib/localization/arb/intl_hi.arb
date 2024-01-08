@@ -258,6 +258,10 @@
   "NotOften": "अक्सर नहीं",
   "XCouldNotBeEmpty": "{value}  खाली नहीं हो सका",
   "Tags": "टैग",
+  "Services": "सेवाएं",
+  "Filters": "फ़िल्टर",
+  "ResetFilters": "रीसेट फ़िल्टर",
+  "Recommended": "अनुशंसित",
   "NameOrNickname": "नाम या उपनाम",
   "NicknameIsTakenTryAnotherOne": "उपनाम लिया जाता है, एक और प्रयास करें",
   "AreYouSureYouWantToDeleteYourCompanyProfile": "क्या आप वाकई अपनी कंपनी प्रोफ़ाइल हटाना चाहते हैं?",
@@ -268,5 +272,10 @@
   "Message": "Message",
   "Category": "Category",
   "Price": "Price",
-  "key": ""
+  "SwipeToStart": "Swipe to start",
+  "SwitchAnyTime": "You can switch it at any time in your profile settings",
+  "key": "",
+  "InviteList": "Invite list",
+  "Users": "{count,plural, =0{{count} users} =1{{count} user} =2{{count} users} few{{count} users} many{{count} users} other{{count} users}}",
+  "Messages": "Messages"
 }

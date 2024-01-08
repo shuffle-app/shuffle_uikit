@@ -11,7 +11,7 @@ class UiKitThemes {
   );
 
   late final lightThemeData = defaultThemeData.copyWith(
-    scaffoldBackgroundColor: ColorsFoundation.solidLightSurface,
+    scaffoldBackgroundColor: ColorsFoundation.lightSurface,
     iconTheme: const IconThemeData(color: ColorsFoundation.solidLightSurface),
     colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.info, onSurface: Colors.black),
     textButtonTheme: TextButtonThemeData(
@@ -55,6 +55,7 @@ class UiKitThemes {
     ),
     extensions: [
       UiKitThemeData(
+        themeMode: ThemeMode.light,
         colorScheme: const UiKitColorScheme.light(),
         cardColor: ColorsFoundation.lightSurface2,
         customColor: Colors.red,
@@ -63,7 +64,7 @@ class UiKitThemes {
           backgroundColor: ColorsFoundation.solidLightSurface,
         ),
         blurredBottomNavigationBarTheme: BlurredBottomNavigationBarTheme(
-          iconColors: ColorsFoundation.solidLightSurface,
+          iconColors: Colors.black,
         ),
         ordinaryButtonStyle: ButtonStyle(
           fixedSize: MaterialStateProperty.resolveWith(
@@ -183,11 +184,11 @@ class UiKitThemes {
         uiKitTabBarTheme: TabBarTheme(
           indicatorSize: TabBarIndicatorSize.tab,
           dividerColor: Colors.transparent,
-          labelColor: Colors.black,
-          unselectedLabelColor: ColorsFoundation.darkNeutral500,
+          labelColor: ColorsFoundation.lightSurface,
+          unselectedLabelColor: ColorsFoundation.lightHeadingTypographyColor,
           indicator: BoxDecoration(
             borderRadius: BorderRadiusFoundation.max,
-            color: Colors.white,
+            color: ColorsFoundation.surface,
           ),
         ),
         buttonTheme: ButtonThemeData(
@@ -225,6 +226,7 @@ class UiKitThemes {
     bottomSheetTheme: const BottomSheetThemeData(
       backgroundColor: Colors.transparent,
       modalBackgroundColor: Colors.transparent,
+      elevation: 0,
     ),
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: Colors.white,
@@ -336,6 +338,7 @@ class UiKitThemes {
     // colorScheme:  const ColorScheme.light().copyWith(onSurface: Colors.white),
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
+        themeMode: ThemeMode.dark,
         cardColor: ColorsFoundation.surface1,
         customColor: Colors.red,
         chipTheme: UiKitChipThemeData(
@@ -461,11 +464,11 @@ class UiKitThemes {
         uiKitTabBarTheme: TabBarTheme(
           indicatorSize: TabBarIndicatorSize.tab,
           dividerColor: Colors.transparent,
-          labelColor: Colors.black,
-          unselectedLabelColor: Colors.white,
+          labelColor: ColorsFoundation.lightBodyTypographyColor,
+          unselectedLabelColor: ColorsFoundation.darkHeadingTypographyColor,
           indicator: BoxDecoration(
             borderRadius: BorderRadiusFoundation.max,
-            color: Colors.white,
+            color: ColorsFoundation.lightSurface,
           ),
         ),
         buttonTheme: ButtonThemeData(

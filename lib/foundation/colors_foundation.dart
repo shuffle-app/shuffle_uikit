@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ColorsFoundation {
-  static const Color lightSurface = UiKitColors.lightSurface1;
+  static const Color lightSurface = UiKitColors.lightSurface;
   static const Color lightSurface1 = UiKitColors.lightSurface1;
   static const Color lightSurface2 = UiKitColors.lightSurface2;
   static const Color lightSurface3 = UiKitColors.lightSurface3;
@@ -26,6 +26,8 @@ class ColorsFoundation {
   static const Color darkNeutral400 = UiKitColors.darkNeutral400;
   static const Color darkNeutral100 = UiKitColors.darkNeutral100;
   static const Color darkNeutral600 = UiKitColors.darkNeutral600;
+  static const Color darkNeutral700 = UiKitColors.darkNeutral700;
+  static const Color darkNeutral800 = UiKitColors.darkNeutral800;
   static const Color darkNeutral900 = UiKitColors.darkNeutral900;
   static const Color yellow = UiKitColors.yellow;
   static const Color weatherYellow = UiKitColors.weatherYellow;
@@ -39,17 +41,34 @@ class ColorsFoundation {
   static const Color shadowPink = UiKitColors.shadowPink;
   static const Color transparent = Colors.transparent;
   static const Color lightGrey = UiKitColors.lightGrey;
+  static const lightSurfaceGradientBegin = UiKitColors.lightSurfaceGradientBegin;
+  static const lightSurfaceGradientMid = UiKitColors.lightSurfaceGradientMid;
+  static const lightSurfaceGradientEnd = UiKitColors.lightSurfaceGradientEnd;
   static const surfaceGradientBegin = UiKitColors.surfaceGradientBegin;
   static const surfaceGradientMid = UiKitColors.surfaceGradientMid;
   static const surfaceGradientEnd = UiKitColors.surfaceGradientEnd;
   static const shunyGreyGradientBegin = UiKitColors.shunyGreyGradientBegin;
   static const shunyGreyGradientMid = UiKitColors.shunyGreyGradientMid;
   static const shunyGreyGradientEnd = UiKitColors.shunyGreyGradientEnd;
+  static const mutedText = UiKitColors.mutedText;
+  static const gradientGreyDark1 = UiKitColors.gradientGreyDark1;
+  static const gradientGreyDark2 = UiKitColors.gradientGreyDark2;
+  static const gradientGreyDark3 = UiKitColors.gradientGreyDark3;
   static const lemon = UiKitColors.lemon;
   static const brightRed = UiKitColors.brightRed;
   static const purple = UiKitColors.purple;
   static const lightBlue = UiKitColors.lightBlue;
   static const lightGreen = UiKitColors.lightGreen;
+  static final Color neutral8 = UiKitColors.neutral8;
+  static final Color neutral16 = UiKitColors.neutral16;
+  static final Color neutral24 = UiKitColors.neutral24;
+  static final Color neutral32 = UiKitColors.neutral32;
+  static final Color neutral40 = UiKitColors.neutral40;
+  static final Color neutral48 = UiKitColors.neutral48;
+  static const Color lightBodyTypographyColor = UiKitColors.lightBodyTypographyColor;
+  static const Color darkBodyTypographyColor = UiKitColors.darkBodyTypographyColor;
+  static const Color lightHeadingTypographyColor = UiKitColors.lightHeadingTypographyColor;
+  static const Color darkHeadingTypographyColor = UiKitColors.darkHeadingTypographyColor;
 
   ColorsFoundation._();
 }

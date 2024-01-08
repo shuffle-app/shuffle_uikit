@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
@@ -10,16 +11,14 @@ class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
   final PagingController<int, ItemType> pagingController;
   final ScrollPhysics? physics;
   final ItemWidgetBuilder<ItemType> itemBuilder;
+  final Widget? shimmerLoadingChild;
 
-  final progressIndicator = const SizedBox(
-      width: 20,
-      height: 20,
-      child: GradientableWidget(
-          gradient: GradientFoundation.attentionCard,
-          active: true,
-          child: CircularProgressIndicator.adaptive(backgroundColor: Colors.white)));
+  late final progressIndicator = Shimmer(
+    gradient: GradientFoundation.greyGradient,
+    child: shimmerLoadingChild ?? Container(),
+  );
 
-  const UiKitHorizontalScrollableList({
+  UiKitHorizontalScrollableList({
     Key? key,
     required this.itemBuilder,
     required this.pagingController,
@@ -27,6 +26,7 @@ class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
     this.leftPadding,
     this.physics,
     this.scrollController,
+    this.shimmerLoadingChild,
   }) : super(key: key);
 
   @override
@@ -37,6 +37,7 @@ class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
           : physics ?? const BouncingScrollPhysics(),
       scrollController: scrollController,
       pagingController: pagingController,
+      clipBehavior: Clip.none,
       shrinkWrap: true,
       primary: false,
       scrollDirection: Axis.horizontal,
@@ -47,31 +48,9 @@ class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
         animateTransitions: true,
         firstPageProgressIndicatorBuilder: (c) => progressIndicator,
         newPageProgressIndicatorBuilder: (c) => progressIndicator,
-        // itemCount: children.length + (leftPadding == null ? 1 : 2),
         itemBuilder: itemBuilder,
         noItemsFoundIndicatorBuilder: (c) => const UiKitNoContentPlaceholder().paddingAll(EdgeInsetsFoundation.all32),
-
-        // if (index == 0 && leftPadding != null) {
-        //   return (leftPadding! - (spacing ?? 0)).widthBox;
-        // }
-        // final newIndex = index - (leftPadding == null ? 0 : 1);
-        //
-        // return newIndex == children.length
-        //     ? 20.w.widthBox
-        //     : children[newIndex];
-        // }
       ),
-      // children: [(leftPadding ?? 0).widthBox, ...children, 20.w.widthBox],
-      // ),
     );
-    // SingleChildScrollView(
-    //   physics: physics ?? const BouncingScrollPhysics(),
-    //   controller: scrollController,
-    //   scrollDirection: Axis.horizontal,
-    //   child: Wrap(
-    //     spacing: spacing ?? SpacingFoundation.zero,
-    //     children: [(leftPadding ?? 0).widthBox, ...children, 20.w.widthBox],
-    //   ),
-    // );
   }
 }

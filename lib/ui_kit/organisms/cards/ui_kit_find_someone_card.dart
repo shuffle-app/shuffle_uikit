@@ -48,7 +48,7 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                     height: calculatedWidth * 0.1875,
                   ),
                 ),
-                SpacingFoundation.verticalSpace4,
+                SpacingFoundation.verticalSpace2,
                 Expanded(
                   child: Text(
                     '@$userNickName',

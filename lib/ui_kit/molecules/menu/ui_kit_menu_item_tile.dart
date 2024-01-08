@@ -36,6 +36,9 @@ class UiKitMenuItemTile extends StatelessWidget {
 
     return Material(
       color: color ?? Colors.transparent,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadiusFoundation.max,
+      ),
       child: InkWell(
         onTap: () {
           onTap?.call();
@@ -61,6 +64,7 @@ class UiKitMenuItemTile extends StatelessWidget {
                   height: 0.0625.sw,
                   width: 0.0625.sw,
                   fit: BoxFit.cover,
+                  color: item.iconColor,
                 ),
                 SpacingFoundation.horizontalSpace8,
               ],

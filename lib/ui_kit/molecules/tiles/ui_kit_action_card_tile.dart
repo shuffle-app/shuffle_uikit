@@ -17,7 +17,8 @@ class UiKitActionCardTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = context.uiKitTheme?.boldTextTheme;
+    final theme = context.uiKitTheme;
+    final textTheme = theme?.boldTextTheme;
     final leadingSize = 1.sw * 0.125;
 
     return Row(
@@ -56,9 +57,8 @@ class UiKitActionCardTile extends StatelessWidget {
           SpacingFoundation.horizontalSpace8,
           context.smallButton(
             data: BaseUiKitButtonData(
-              icon: const ImageWidget(
+              iconInfo: BaseUiKitButtonIconData(
                 iconData: ShuffleUiKitIcons.chevronright,
-                color: Colors.white,
               ),
               onPressed: onTap,
             ),

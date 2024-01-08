@@ -2741,11 +2741,107 @@ class S {
     );
   }
 
+  /// `Swipe to start`
+  String get SwipeToStart {
+    return Intl.message(
+      'Swipe to start',
+      name: 'SwipeToStart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can switch it at any time in your profile settings`
+  String get SwitchAnyTime {
+    return Intl.message(
+      'You can switch it at any time in your profile settings',
+      name: 'SwitchAnyTime',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// ``
   String get key {
     return Intl.message(
       '',
       name: 'key',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invite list`
+  String get InviteList {
+    return Intl.message(
+      'Invite list',
+      name: 'InviteList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count,plural, =0{{count} users} =1{{count} user} =2{{count} users} few{{count} users} many{{count} users} other{{count} users}}`
+  String Users(num count) {
+    return Intl.plural(
+      count,
+      zero: '$count users',
+      one: '$count user',
+      two: '$count users',
+      few: '$count users',
+      many: '$count users',
+      other: '$count users',
+      name: 'Users',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Messages`
+  String get Messages {
+    return Intl.message(
+      'Messages',
+      name: 'Messages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Services`
+  String get Services {
+    return Intl.message(
+      'Services',
+      name: 'Services',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filters`
+  String get Filters {
+    return Intl.message(
+      'Filters',
+      name: 'Filters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset filters`
+  String get ResetFilters {
+    return Intl.message(
+      'Reset filters',
+      name: 'ResetFilters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recommended`
+  String get Recommended {
+    return Intl.message(
+      'Recommended',
+      name: 'Recommended',
       desc: '',
       args: [],
     );
