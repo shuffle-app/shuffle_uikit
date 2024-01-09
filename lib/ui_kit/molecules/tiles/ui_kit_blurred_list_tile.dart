@@ -30,8 +30,8 @@ class UiKitBlurredListTile extends StatelessWidget {
       ),
       child: BackdropFilter(
         filter: ImageFilter.blur(
-          sigmaX: 50,
-          sigmaY: 50,
+          sigmaX: 35,
+          sigmaY: 35,
           tileMode: TileMode.repeated,
         ),
         child: Row(
