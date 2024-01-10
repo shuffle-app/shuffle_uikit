@@ -56,7 +56,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                 },
                 child: ListView.builder(
                   controller: scrollController,
-                  physics: const BouncingScrollPhysics(),
+                  physics: const ClampingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   addAutomaticKeepAlives: false,
                   itemCount: media.length + 1,

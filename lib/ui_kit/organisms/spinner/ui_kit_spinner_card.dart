@@ -136,43 +136,45 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
       //крутим по x оси для шарнирного эффекта. ставим -4 как коэффициент для наклона назад меньшего в 4 раза чем в бок
       ..rotateX(horizontalAngle / 180 * math.pi);
 
-    return Listener(
-        onPointerDown: (PointerDownEvent event) {
-          if (event.localPosition.dx < normalCardWidth / 2) {
-            _animationVertical = Tween<double>(begin: 0, end: rotationAngle).animate(animationVerticalController);
-          } else {
-            _animationVertical = Tween<double>(begin: 0, end: -rotationAngle).animate(animationVerticalController);
-          }
+    return AnimatedOpacity(
+      duration: widgetAnimDurations,
+      opacity: opacity,
+      child: SizedBox(
+        width: kIsWeb ? 200 : normalCardWidth,
+        height: widget.availableHeight + SpacingFoundation.verticalSpacing8,
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SpacingFoundation.verticalSpace8,
+            Listener(
+                onPointerDown: (PointerDownEvent event) {
+                  if (event.localPosition.dx < normalCardWidth / 2) {
+                    _animationVertical =
+                        Tween<double>(begin: 0, end: rotationAngle).animate(animationVerticalController);
+                  } else {
+                    _animationVertical =
+                        Tween<double>(begin: 0, end: -rotationAngle).animate(animationVerticalController);
+                  }
 
-          if (event.localPosition.dy < heightStep) {
-            _animationHorizontal =
-                Tween<double>(begin: 0, end: -horizontalRotationAngle).animate(animationHorizontalController);
-          } else if (event.localPosition.dy > normalCardHeight - heightStep) {
-            _animationHorizontal =
-                Tween<double>(begin: 0, end: horizontalRotationAngle).animate(animationHorizontalController);
-          } else {
-            _animationHorizontal = Tween<double>(begin: 0, end: 0).animate(animationHorizontalController);
-          }
+                  if (event.localPosition.dy < heightStep) {
+                    _animationHorizontal =
+                        Tween<double>(begin: 0, end: -horizontalRotationAngle).animate(animationHorizontalController);
+                  } else if (event.localPosition.dy > normalCardHeight - heightStep) {
+                    _animationHorizontal =
+                        Tween<double>(begin: 0, end: horizontalRotationAngle).animate(animationHorizontalController);
+                  } else {
+                    _animationHorizontal = Tween<double>(begin: 0, end: 0).animate(animationHorizontalController);
+                  }
 
-          animationVerticalController.forward(from: 0);
-          animationHorizontalController.forward(from: 0);
-        },
-        onPointerUp: (PointerUpEvent event) {
-          animationVerticalController.reverse();
-          animationHorizontalController.reverse();
-        },
-        child: AnimatedOpacity(
-          duration: widgetAnimDurations,
-          opacity: opacity,
-          child: SizedBox(
-            width: kIsWeb ? 200 : normalCardWidth,
-            height: widget.availableHeight + SpacingFoundation.verticalSpacing8,
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                SpacingFoundation.verticalSpace8,
-                ConstrainedBox(
+                  animationVerticalController.forward(from: 0);
+                  animationHorizontalController.forward(from: 0);
+                },
+                onPointerUp: (PointerUpEvent event) {
+                  animationVerticalController.reverse();
+                  animationHorizontalController.reverse();
+                },
+                child: ConstrainedBox(
                     constraints: BoxConstraints(maxHeight: normalCardHeight),
                     child: Transform(
                       transform: transform,
@@ -242,40 +244,40 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
                           ),
                         ],
                       ),
-                    )),
-                SpacingFoundation.verticalSpace12,
-                if (widget.title != null)
-                  Text(
-                    '${widget.title}',
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: titleStyle,
-                  ),
-                if (convertedDate != null) ...[
-                  SpacingFoundation.verticalSpace4,
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        ImageWidget(
-                          iconData: ShuffleUiKitIcons.clock,
-                          color: ColorsFoundation.darkNeutral900,
-                          width: kIsWeb ? 16 : 0.05.sw,
-                          height: kIsWeb ? 16 : 0.05.sw,
-                          fit: BoxFit.fitWidth,
-                        ),
-                        SpacingFoundation.horizontalSpace4,
-                        Text(
-                          convertedDate,
-                          style: dateTextStyle,
-                        ),
-                      ],
+                    ))),
+            SpacingFoundation.verticalSpace12,
+            if (widget.title != null)
+              Text(
+                '${widget.title}',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: titleStyle,
+              ),
+            if (convertedDate != null) ...[
+              SpacingFoundation.verticalSpace4,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    ImageWidget(
+                      iconData: ShuffleUiKitIcons.clock,
+                      color: ColorsFoundation.darkNeutral900,
+                      width: kIsWeb ? 16 : 0.05.sw,
+                      height: kIsWeb ? 16 : 0.05.sw,
+                      fit: BoxFit.fitWidth,
                     ),
-                  ),
-                ],
-              ],
-            ),
-          ),
-        ));
+                    SpacingFoundation.horizontalSpace4,
+                    Text(
+                      convertedDate,
+                      style: dateTextStyle,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
   }
 }
