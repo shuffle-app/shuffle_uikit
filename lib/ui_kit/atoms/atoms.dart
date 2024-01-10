@@ -28,6 +28,7 @@ export 'buttons/ordinary_button_with_icon.dart';
 export 'buttons/ordinary_progress_button.dart';
 export 'buttons/ordinary_reversed_text_button.dart';
 export 'buttons/ordinary_text_button.dart';
+export 'buttons/outlined_badge_icon_button.dart';
 export 'buttons/outlined_blur_icon_button.dart';
 export 'buttons/outlined_gradient_button.dart';
 export 'buttons/outlined_icon_button.dart';

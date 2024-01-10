@@ -171,6 +171,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "FeaturesEnableGeolocation":
             MessageLookupByLibrary.simpleMessage("Функции включают геолокацию"),
         "Feeling": MessageLookupByLibrary.simpleMessage("Чувство"),
+        "Filters": MessageLookupByLibrary.simpleMessage("Фильтры"),
         "FindSomeoneToHangOutWith":
             MessageLookupByLibrary.simpleMessage("Найти с кем затусить"),
         "Follow": MessageLookupByLibrary.simpleMessage("Следовать"),
@@ -315,6 +316,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Pro": MessageLookupByLibrary.simpleMessage("Pro"),
         "ProAccount": MessageLookupByLibrary.simpleMessage("Pro аккаунт"),
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
+        "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
+        "ResetFilters":
+            MessageLookupByLibrary.simpleMessage("Сбросить фильтры"),
         "ResetPassword":
             MessageLookupByLibrary.simpleMessage("Сбросить пароль"),
         "Save": MessageLookupByLibrary.simpleMessage("Сохранить"),
@@ -333,6 +337,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Выбор лучших"),
         "Send": MessageLookupByLibrary.simpleMessage("Отправить"),
         "SendIt": MessageLookupByLibrary.simpleMessage("Отправить"),
+        "Services": MessageLookupByLibrary.simpleMessage("Услуги"),
         "ShowResult":
             MessageLookupByLibrary.simpleMessage("Показать результат"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),

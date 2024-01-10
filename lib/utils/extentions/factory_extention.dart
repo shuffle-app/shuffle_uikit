@@ -3,6 +3,20 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 extension FactoryExtention on BuildContext {
+  Widget outlinedBadgeButton({
+    required BaseUiKitButtonData data,
+    Alignment? badgeAlignment,
+    int? badgeValue,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createOutlinedBadgeButton(
+          data: data,
+          badgeAlignment: badgeAlignment,
+          value: badgeValue,
+        )
+        .build(this);
+  }
+
   Widget outlinedGradientButton({
     required BaseUiKitButtonData data,
     required GradientBoxBorder gradient,

@@ -8,6 +8,7 @@ class UiKitTitledSection extends StatelessWidget {
   final String? errorText;
   final Color? color;
   final String? infoText;
+  final BorderRadius? borderRadius;
 
   const UiKitTitledSection({
     Key? key,
@@ -15,6 +16,7 @@ class UiKitTitledSection extends StatelessWidget {
     this.color,
     this.infoText,
     this.errorText,
+    this.borderRadius,
     required this.title,
     required this.child,
   })  : assert(!((hasError ?? false) && errorText == null), 'When has error is $hasError, error text must be provided'),
@@ -29,6 +31,7 @@ class UiKitTitledSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         UiKitCardWrapper(
+          borderRadius: borderRadius,
           color: color ?? theme?.colorScheme.surface1,
           border: hasError == true
               ? const BorderSide(

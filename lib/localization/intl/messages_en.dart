@@ -167,6 +167,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "FeaturesEnableGeolocation":
             MessageLookupByLibrary.simpleMessage("Features enable geolocation"),
         "Feeling": MessageLookupByLibrary.simpleMessage("Feeling"),
+        "Filters": MessageLookupByLibrary.simpleMessage("Filters"),
         "FindSomeoneToHangOutWith": MessageLookupByLibrary.simpleMessage(
             "Find someone to hang out with"),
         "Follow": MessageLookupByLibrary.simpleMessage("Follow"),
@@ -310,6 +311,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Pro": MessageLookupByLibrary.simpleMessage("Pro"),
         "ProAccount": MessageLookupByLibrary.simpleMessage("Pro account"),
         "Published": MessageLookupByLibrary.simpleMessage("Published"),
+        "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
+        "ResetFilters": MessageLookupByLibrary.simpleMessage("Reset filters"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
@@ -327,6 +330,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Selection of the best"),
         "Send": MessageLookupByLibrary.simpleMessage("Send"),
         "SendIt": MessageLookupByLibrary.simpleMessage("Send it"),
+        "Services": MessageLookupByLibrary.simpleMessage("Services"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("Show result"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
         "ShuffleWithRightWhitespace":

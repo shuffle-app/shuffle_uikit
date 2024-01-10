@@ -22,7 +22,7 @@ class BaseUiKitButtonData {
     this.borderColor,
     this.backgroundColor,
     this.textColor,
-  });
+  }) : assert(iconInfo == null || iconWidget == null, 'You can only use one of iconInfo or iconWidget');
 }
 
 class BaseUiKitButtonIconData {

@@ -41,10 +41,7 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
         onTap: loading ?? false ? null : onPressed,
         borderRadius: BorderRadiusFoundation.max,
         child: Ink(
-          padding: EdgeInsets.symmetric(
-            vertical: EdgeInsetsFoundation.vertical4,
-            horizontal: EdgeInsetsFoundation.horizontal16,
-          ),
+          padding: EdgeInsets.all(EdgeInsetsFoundation.all6),
           decoration: BoxDecoration(
             borderRadius: textIsEmpty ? null : BorderRadiusFoundation.max,
             shape: textIsEmpty ? BoxShape.circle : BoxShape.rectangle,
@@ -56,17 +53,14 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
           ),
           child: textIsEmpty && (icon != null || iconInfo != null)
               ? ClipOval(
-                  child: Padding(
-                    padding: EdgeInsets.all(EdgeInsetsFoundation.all6),
-                    child: icon ??
-                        ImageWidget(
-                          iconData: iconInfo?.iconData,
-                          link: iconInfo?.iconPath,
-                          height: iconInfo?.size,
-                          fit: BoxFit.fitHeight,
-                          color: iconInfo?.color ?? theme?.colorScheme.inversePrimary,
-                        ),
-                  ),
+                  child: icon ??
+                      ImageWidget(
+                        iconData: iconInfo?.iconData,
+                        link: iconInfo?.iconPath,
+                        height: iconInfo?.size,
+                        fit: BoxFit.fitHeight,
+                        color: iconInfo?.color ?? theme?.colorScheme.inversePrimary,
+                      ),
                 )
               : Text(
                   text ?? '',

@@ -2806,6 +2806,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Services`
+  String get Services {
+    return Intl.message(
+      'Services',
+      name: 'Services',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filters`
+  String get Filters {
+    return Intl.message(
+      'Filters',
+      name: 'Filters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset filters`
+  String get ResetFilters {
+    return Intl.message(
+      'Reset filters',
+      name: 'ResetFilters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recommended`
+  String get Recommended {
+    return Intl.message(
+      'Recommended',
+      name: 'Recommended',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

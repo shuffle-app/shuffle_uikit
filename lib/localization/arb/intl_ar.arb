@@ -274,5 +274,9 @@
   "Messages": "Messages",
   "Users": "{count,plural, =0{{count} users} =1{{count} user} =2{{count} users} few{{count} users} many{{count} users} other{{count} users}}",
 
-  "InviteList": "Invite list"
+  "InviteList": "Invite list",
+  "Services": "Services",
+  "Filters": "Filters",
+  "ResetFilters": "Reset filters",
+  "Recommended": "Recommended"
 }

@@ -33,6 +33,7 @@ export 'info_cards/vertical_message_card.dart';
 export 'info_cards/wide_vertical_message_card.dart';
 export 'loading/loading_widget.dart';
 export 'loading/progress_linear_indicator.dart';
+export 'loading/ui_kit_progress_indicator.dart';
 export 'menu/ui_kit_menu_item_tile.dart';
 export 'nav_bar/nav_bar_tile.dart';
 export 'place/base_ui_kit_media_widget.dart';
