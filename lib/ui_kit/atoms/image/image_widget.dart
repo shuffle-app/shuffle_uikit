@@ -48,7 +48,11 @@ class ImageWidget extends StatelessWidget {
   Future _takeFrameFromVideo(String link) async {
     final VideoPlayerController controller = VideoPlayerController.networkUrl(Uri.parse(link));
     await controller.initialize();
-    await controller.seekTo(const Duration(seconds: 1));
+    if (controller.value.duration.inSeconds > 1) {
+      await controller.seekTo(const Duration(seconds: 1));
+    } else {
+      await controller.seekTo(Duration(milliseconds: controller.value.duration.inMilliseconds - 50));
+    }
 
     return controller;
   }
@@ -93,7 +97,10 @@ class ImageWidget extends StatelessWidget {
             future: _takeFrameFromVideo(link!),
             builder: (context, snapshot) {
               return snapshot.connectionState == ConnectionState.done
-                  ? SizedBox(width: width, height: height, child: VideoPlayer(snapshot.data as VideoPlayerController))
+                  ? SizedBox(
+                      width: width,
+                      height: height,
+                      child: RepaintBoundary(child: VideoPlayer(snapshot.data as VideoPlayerController)))
                   : placeholder;
             });
       }

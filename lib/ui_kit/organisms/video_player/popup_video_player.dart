@@ -64,9 +64,9 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
     super.initState();
     _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUri))
       ..initialize().then((_) {
-        setState(() {
-          _controller.play();
-        });
+        // setState(() {
+        _controller.play();
+        // });
       });
   }
 
@@ -84,9 +84,9 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
         padding: EdgeInsets.only(left: 8.w, right: 8.w, top: 100.h),
         child: GestureDetector(
           onDoubleTap: () {
-            setState(() {
-              _controller.value.isPlaying ? _controller.pause() : _controller.play();
-            });
+            // setState(() {
+            _controller.value.isPlaying ? _controller.pause() : _controller.play();
+            // });
           },
           child: Stack(
             children: [
@@ -105,7 +105,7 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
                                   child: VideoPlayer(_controller),
                                 ),
                               )
-                            : Container(),
+                            : const SizedBox.shrink(),
                       ),
                       Positioned(
                         bottom: 0,
@@ -128,16 +128,14 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
               Positioned(
                 top: 10.h,
                 right: 10.h,
-                child: IconButton(
-                  splashRadius: double.minPositive,
-                  icon: const ImageWidget(
+                child: InkWell(
+                  radius: double.minPositive,
+                  onTap: Navigator.of(context).pop,
+                  child: ImageWidget(
                     iconData: ShuffleUiKitIcons.x,
-                    height: 80,
+                    height: 15.h,
                     color: Colors.white,
                   ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
                 ),
               ),
             ],
