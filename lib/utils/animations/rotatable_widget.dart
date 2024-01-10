@@ -47,6 +47,7 @@ class _RotatableWidgetState extends State<RotatableWidget> with SingleTickerProv
   }
 
   void listenAnim(AnimationStatus status) {
+    if(!mounted) return;
     if (status == AnimationStatus.completed && widget.applyReverseOnEnd) {
       controller.reverse();
     } else if (status == AnimationStatus.dismissed) {
@@ -58,6 +59,7 @@ class _RotatableWidgetState extends State<RotatableWidget> with SingleTickerProv
   void dispose() {
     controller.removeStatusListener(listenAnim);
     controller.dispose();
+    curvedAnimation.dispose();
     super.dispose();
   }
 
