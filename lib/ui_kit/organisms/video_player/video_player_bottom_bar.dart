@@ -34,11 +34,13 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
+
     return SizedBox(
         height: (widget.isFullScreen ? height + MediaQuery.paddingOf(context).bottom : height) * 1.2,
         width: double.infinity,
         child: ColoredBox(
-          color: const Color.fromARGB(255, 26, 26, 26),
+          color: theme?.colorScheme.primary ?? Colors.black87,
           child: ValueListenableBuilder(
               valueListenable: widget.controller,
               builder: (context, VideoPlayerValue value, child) {
@@ -75,9 +77,10 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
                       ),
                     ),
                     Text(
-                        '${_formattedTime(timeInSecond: value.position.inSeconds)}/${_formattedTime(timeInSecond: widget.controller.value.duration.inSeconds)}',
-                        style: context.uiKitTheme?.regularTextTheme.body.copyWith(
+                        '${_formattedTime(timeInSecond: value.position.inSeconds)}/${_formattedTime(timeInSecond: value.duration.inSeconds)}',
+                        style: theme?.regularTextTheme.body.copyWith(
                           fontSize: 14,
+                          color: theme.colorScheme.inversePrimary
                         )),
                     const Spacer(),
                     IconButton(

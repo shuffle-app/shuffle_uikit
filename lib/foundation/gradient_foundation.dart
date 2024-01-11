@@ -258,7 +258,8 @@ class GradientFoundation {
 
   static const whiteLinearGradient = LinearGradient(
     colors: [
-      Colors.white12,
+      // Colors.transparent,
+      Colors.white10,
       Colors.white24,
       Colors.white54,
       Colors.white70,
@@ -266,9 +267,10 @@ class GradientFoundation {
     ],
     stops: [
       0,
-      0.1,
+      // 0.1,
       0.3,
       0.5,
+      0.6,
       0.9,
     ],
     end: Alignment.bottomCenter,
