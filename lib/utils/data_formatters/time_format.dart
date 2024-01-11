@@ -16,7 +16,7 @@ String leadingZeros(int number) {
 String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay? timeTo, List<String>? wDays) {
   if (date == null && dateTo == null && time == null && timeTo == null && wDays == null) return null;
   String convDate = '';
-  if((time!= null && timeTo!= null) && time == timeTo) {
+  if ((time != null && timeTo != null) && time == timeTo) {
     convDate = S.current.daynight;
   } else {
     if (time != null) {
@@ -30,9 +30,13 @@ String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay?
     final List<String> days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
     final int start = days.indexOf(wDays.first);
     final int end = days.indexOf(wDays.last);
-    convDate += end - start == wDays.length - 1
-        ? '${convDate.isEmpty ? '' : ', '}${wDays.first} - ${wDays.last}'
-        : ', ${wDays.join(', ')}';
+    if (start == end) {
+      convDate += ', ${wDays.first}';
+    } else {
+      convDate += end - start == wDays.length - 1
+          ? '${convDate.isEmpty ? '' : ', '}${wDays.first} - ${wDays.last}'
+          : ', ${wDays.join(', ')}';
+    }
 
     return convDate;
   } else {

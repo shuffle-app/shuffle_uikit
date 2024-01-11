@@ -21,20 +21,17 @@ class BlurredPlaceVideoPlayButton extends StatelessWidget {
       child: InkWell(
         borderRadius: BorderRadiusFoundation.all40,
         onTap: onPressed,
-        child: Ink(
+        child: Container(
           width: 32.w,
           height: 24.h,
+          clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all40,
           ),
-          child: ClipRRect(
-            borderRadius: BorderRadiusFoundation.all40,
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
-              child: const Center(
-                child: ImageWidget(iconData: ShuffleUiKitIcons.playArrow),
-              ),
-            ),
+          alignment: Alignment.center,
+          child: BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
+            child: const ImageWidget(iconData: ShuffleUiKitIcons.playArrow, fit: BoxFit.contain,).paddingOnly(left: 4.w),
           ),
         ),
       ),
