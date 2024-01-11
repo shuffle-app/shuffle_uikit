@@ -385,11 +385,17 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/christianity.png
   AssetGenImage get christianity => const AssetGenImage('assets/images/png/christianity.png');
 
+  /// File path: assets/images/png/clothing.png
+  AssetGenImage get clothing => const AssetGenImage('assets/images/png/clothing.png');
+
   /// File path: assets/images/png/coach.png
   AssetGenImage get coach => const AssetGenImage('assets/images/png/coach.png');
 
   /// File path: assets/images/png/compact_rating_card_mock.png
   AssetGenImage get compactRatingCardMock => const AssetGenImage('assets/images/png/compact_rating_card_mock.png');
+
+  /// File path: assets/images/png/delivery-truck.png
+  AssetGenImage get deliveryTruck => const AssetGenImage('assets/images/png/delivery-truck.png');
 
   /// File path: assets/images/png/dubai_silhouette.png
   AssetGenImage get dubaiSilhouette => const AssetGenImage('assets/images/png/dubai_silhouette.png');
@@ -402,6 +408,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/geo-permit.png
   AssetGenImage get geoPermit => const AssetGenImage('assets/images/png/geo-permit.png');
+
+  /// File path: assets/images/png/grocery.png
+  AssetGenImage get grocery => const AssetGenImage('assets/images/png/grocery.png');
 
   /// File path: assets/images/png/health-permit.png
   AssetGenImage get healthPermit => const AssetGenImage('assets/images/png/health-permit.png');
@@ -487,8 +496,14 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/onboarding_mock_3.png
   AssetGenImage get onboardingMock3 => const AssetGenImage('assets/images/png/onboarding_mock_3.png');
 
+  /// File path: assets/images/png/parcel.png
+  AssetGenImage get parcel => const AssetGenImage('assets/images/png/parcel.png');
+
   /// File path: assets/images/png/pharmacy.png
   AssetGenImage get pharmacy => const AssetGenImage('assets/images/png/pharmacy.png');
+
+  /// File path: assets/images/png/pharmacy_plus.png
+  AssetGenImage get pharmacyPlus => const AssetGenImage('assets/images/png/pharmacy_plus.png');
 
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
@@ -689,12 +704,15 @@ class $AssetsImagesPngGen {
         catering,
         choosePlan,
         christianity,
+        clothing,
         coach,
         compactRatingCardMock,
+        deliveryTruck,
         dubaiSilhouette,
         eventAvatar,
         fatigueEmoji,
         geoPermit,
+        grocery,
         healthPermit,
         hindu,
         inviteMock1,
@@ -723,7 +741,9 @@ class $AssetsImagesPngGen {
         onboardingMock1,
         onboardingMock2,
         onboardingMock3,
+        parcel,
         pharmacy,
+        pharmacyPlus,
         place,
         production,
         profileAvatar,

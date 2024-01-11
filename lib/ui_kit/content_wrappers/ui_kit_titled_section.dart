@@ -9,6 +9,7 @@ class UiKitTitledSection extends StatelessWidget {
   final Color? color;
   final String? infoText;
   final BorderRadius? borderRadius;
+  final TextStyle? titleStyle;
 
   const UiKitTitledSection({
     Key? key,
@@ -16,6 +17,7 @@ class UiKitTitledSection extends StatelessWidget {
     this.color,
     this.infoText,
     this.errorText,
+    this.titleStyle,
     this.borderRadius,
     required this.title,
     required this.child,
@@ -45,10 +47,11 @@ class UiKitTitledSection extends StatelessWidget {
             children: [
               Row(children: [
                 Flexible(
-                    child: Text(
-                  title,
-                  style: context.uiKitTheme?.boldTextTheme.labelLarge,
-                )),
+                  child: Text(
+                    title,
+                    style: titleStyle ?? context.uiKitTheme?.boldTextTheme.labelLarge,
+                  ),
+                ),
                 if (infoText != null && infoText!.isNotEmpty) ...[
                   SpacingFoundation.horizontalSpace4,
                   Builder(

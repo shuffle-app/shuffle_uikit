@@ -88,10 +88,14 @@ class UiKitSocialSearchContentTypeCard extends StatelessWidget {
             children: [
               Positioned(
                 top: type == UiKitSocialSearchContentType.services
-                    ? -SpacingFoundation.verticalSpacing4
+                    ? customCardWidth != null
+                        ? -SpacingFoundation.horizontalSpacing8
+                        : -SpacingFoundation.verticalSpacing4
                     : -SpacingFoundation.verticalSpacing6,
                 right: type == UiKitSocialSearchContentType.services
-                    ? -SpacingFoundation.horizontalSpacing4
+                    ? customCardWidth != null
+                        ? -SpacingFoundation.horizontalSpacing8
+                        : -SpacingFoundation.horizontalSpacing4
                     : -SpacingFoundation.horizontalSpacing6,
                 child: ImageWidget(
                   link: iconData.iconPath,
@@ -117,16 +121,24 @@ class UiKitSocialSearchContentTypeCard extends StatelessWidget {
                     ),
                   ),
                 ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Text(
-                  title,
-                  style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
-                    color: Colors.black,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  textAlign: TextAlign.center,
-                ).paddingAll(EdgeInsetsFoundation.all4),
+              Positioned(
+                bottom: 0,
+                width: cardWidth,
+                left: customCardWidth == null ? 0 : EdgeInsetsFoundation.horizontal8,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      title,
+                      style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
+                        color: Colors.black,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      maxLines: 2,
+                      textAlign: customCardWidth == null ? TextAlign.center : TextAlign.start,
+                    ).paddingAll(EdgeInsetsFoundation.all4),
+                  ],
+                ),
               ),
             ],
           ),
