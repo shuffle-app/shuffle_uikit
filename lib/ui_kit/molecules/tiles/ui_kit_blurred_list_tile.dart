@@ -23,15 +23,12 @@ class UiKitBlurredListTile extends StatelessWidget {
     final titleTextStyle = textTheme?.caption1Bold;
     final subtitleTextStyle = textTheme?.caption1Medium;
 
-    return Container(
-      clipBehavior: Clip.hardEdge,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadiusFoundation.all24,
-      ),
+    return ClipRRect(
+      borderRadius: BorderRadiusFoundation.all24,
       child: BackdropFilter(
         filter: ImageFilter.blur(
-          sigmaX: 50,
-          sigmaY: 50,
+          sigmaX: 35,
+          sigmaY: 35,
           tileMode: TileMode.repeated,
         ),
         child: Row(
