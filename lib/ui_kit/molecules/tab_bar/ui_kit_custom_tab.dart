@@ -6,6 +6,7 @@ class UiKitCustomTab extends StatelessWidget {
   final double height;
   final AutoSizeGroup? group;
   final bool active;
+  final String? customValue;
 
   const UiKitCustomTab({
     Key? key,
@@ -13,6 +14,7 @@ class UiKitCustomTab extends StatelessWidget {
     this.height = 40,
     this.active = true,
     this.group,
+    this.customValue,
   }) : super(key: key);
 
   factory UiKitCustomTab.small({
