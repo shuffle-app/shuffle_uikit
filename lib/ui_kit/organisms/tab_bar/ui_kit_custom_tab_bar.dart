@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitCustomTabBar extends StatelessWidget {
-  final List<Widget> tabs;
+  final List<UiKitCustomTab> tabs;
   final ValueChanged<int> onTappedTab;
   final String? selectedTab;
   final TabController? tabController;
@@ -26,7 +26,12 @@ class UiKitCustomTabBar extends StatelessWidget {
       labelStyle: tabStyle?.copyWith(color: theme.uiKitTabBarTheme.labelColor),
     );
 
-    final initialTab = tabs.indexWhere((element) => element is UiKitCustomTab && element.title == selectedTab);
+    final initialTab = tabs.indexWhere((element) {
+      final hasValue = element.customValue != null;
+      if (hasValue) return element.customValue == selectedTab;
+
+      return element.title == selectedTab;
+    });
 
     return Theme(
       data: Theme.of(context).copyWith(tabBarTheme: tabBarTheme),
