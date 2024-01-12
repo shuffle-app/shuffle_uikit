@@ -304,7 +304,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Пожалуйста, укажите пол"),
         "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, выберите один тип"),
-        "PointBalance": MessageLookupByLibrary.simpleMessage("Баланс очков"),
+        "PointBalance": MessageLookupByLibrary.simpleMessage("Баланс\nочков"),
         "Points": MessageLookupByLibrary.simpleMessage("Очки"),
         "Position": MessageLookupByLibrary.simpleMessage("Позиция"),
         "Preferences": MessageLookupByLibrary.simpleMessage("Предпочтения"),
