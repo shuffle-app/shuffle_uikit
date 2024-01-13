@@ -82,17 +82,14 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                   bottom: 0,
                   height: 0.1.sw,
                   width: 1.sw,
-                  child: ListView.separated(
-                    reverse: true,
-                    padding: EdgeInsets.zero,
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return actions!.elementAt(index);
-                    },
-                    separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
-                    itemCount: actions!.length,
+                  child: Wrap(
+                    runSpacing:  SpacingFoundation.horizontalSpacing16,
+                    spacing:  SpacingFoundation.horizontalSpacing16,
+                    crossAxisAlignment: WrapCrossAlignment.end,
+                    runAlignment: WrapAlignment.end,
+                    alignment: WrapAlignment.end,
+                    children: actions!
+                    ,
                   ),
                 ),
             ],
