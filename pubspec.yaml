@@ -91,6 +91,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/png/
+    - assets/images/png/preference_questions/
     - assets/images/svg/
     - assets/fonts/
     - assets/audio/

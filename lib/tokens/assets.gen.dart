@@ -508,6 +508,8 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
 
+  $AssetsImagesPngPreferenceQuestionsGen get preferenceQuestions => const $AssetsImagesPngPreferenceQuestionsGen();
+
   /// File path: assets/images/png/production.png
   AssetGenImage get production => const AssetGenImage('assets/images/png/production.png');
 
@@ -1855,6 +1857,252 @@ class $AssetsImagesSvgGen {
         whiteStar,
         whiteStarTransparentCenter,
         x
+      ];
+}
+
+class $AssetsImagesPngPreferenceQuestionsGen {
+  const $AssetsImagesPngPreferenceQuestionsGen();
+
+  /// File path: assets/images/png/preference_questions/aesthete.png
+  AssetGenImage get aesthete => const AssetGenImage('assets/images/png/preference_questions/aesthete.png');
+
+  /// File path: assets/images/png/preference_questions/aquapark.png
+  AssetGenImage get aquapark => const AssetGenImage('assets/images/png/preference_questions/aquapark.png');
+
+  /// File path: assets/images/png/preference_questions/artwork.png
+  AssetGenImage get artwork => const AssetGenImage('assets/images/png/preference_questions/artwork.png');
+
+  /// File path: assets/images/png/preference_questions/bathhouse.png
+  AssetGenImage get bathhouse => const AssetGenImage('assets/images/png/preference_questions/bathhouse.png');
+
+  /// File path: assets/images/png/preference_questions/bigmac.png
+  AssetGenImage get bigmac => const AssetGenImage('assets/images/png/preference_questions/bigmac.png');
+
+  /// File path: assets/images/png/preference_questions/book.png
+  AssetGenImage get book => const AssetGenImage('assets/images/png/preference_questions/book.png');
+
+  /// File path: assets/images/png/preference_questions/cabbage.png
+  AssetGenImage get cabbage => const AssetGenImage('assets/images/png/preference_questions/cabbage.png');
+
+  /// File path: assets/images/png/preference_questions/caffeine_sensitivity.png
+  AssetGenImage get caffeineSensitivity =>
+      const AssetGenImage('assets/images/png/preference_questions/caffeine_sensitivity.png');
+
+  /// File path: assets/images/png/preference_questions/calm.png
+  AssetGenImage get calm => const AssetGenImage('assets/images/png/preference_questions/calm.png');
+
+  /// File path: assets/images/png/preference_questions/calmness.png
+  AssetGenImage get calmness => const AssetGenImage('assets/images/png/preference_questions/calmness.png');
+
+  /// File path: assets/images/png/preference_questions/charity.png
+  AssetGenImage get charity => const AssetGenImage('assets/images/png/preference_questions/charity.png');
+
+  /// File path: assets/images/png/preference_questions/cigar.png
+  AssetGenImage get cigar => const AssetGenImage('assets/images/png/preference_questions/cigar.png');
+
+  /// File path: assets/images/png/preference_questions/cinema.png
+  AssetGenImage get cinema => const AssetGenImage('assets/images/png/preference_questions/cinema.png');
+
+  /// File path: assets/images/png/preference_questions/coffee.png
+  AssetGenImage get coffee => const AssetGenImage('assets/images/png/preference_questions/coffee.png');
+
+  /// File path: assets/images/png/preference_questions/delicate.png
+  AssetGenImage get delicate => const AssetGenImage('assets/images/png/preference_questions/delicate.png');
+
+  /// File path: assets/images/png/preference_questions/disko-ball.png
+  AssetGenImage get diskoBall => const AssetGenImage('assets/images/png/preference_questions/disko-ball.png');
+
+  /// File path: assets/images/png/preference_questions/dog.png
+  AssetGenImage get dog => const AssetGenImage('assets/images/png/preference_questions/dog.png');
+
+  /// File path: assets/images/png/preference_questions/drink.png
+  AssetGenImage get drink => const AssetGenImage('assets/images/png/preference_questions/drink.png');
+
+  /// File path: assets/images/png/preference_questions/extreme_sport.png
+  AssetGenImage get extremeSport => const AssetGenImage('assets/images/png/preference_questions/extreme_sport.png');
+
+  /// File path: assets/images/png/preference_questions/fitness.png
+  AssetGenImage get fitness => const AssetGenImage('assets/images/png/preference_questions/fitness.png');
+
+  /// File path: assets/images/png/preference_questions/guitar.png
+  AssetGenImage get guitar => const AssetGenImage('assets/images/png/preference_questions/guitar.png');
+
+  /// File path: assets/images/png/preference_questions/hookah.png
+  AssetGenImage get hookah => const AssetGenImage('assets/images/png/preference_questions/hookah.png');
+
+  /// File path: assets/images/png/preference_questions/horizont.png
+  AssetGenImage get horizont => const AssetGenImage('assets/images/png/preference_questions/horizont.png');
+
+  /// File path: assets/images/png/preference_questions/laptop_and_desk_lamp.png
+  AssetGenImage get laptopAndDeskLamp =>
+      const AssetGenImage('assets/images/png/preference_questions/laptop_and_desk_lamp.png');
+
+  /// File path: assets/images/png/preference_questions/laughing.png
+  AssetGenImage get laughing => const AssetGenImage('assets/images/png/preference_questions/laughing.png');
+
+  /// File path: assets/images/png/preference_questions/lollipop.png
+  AssetGenImage get lollipop => const AssetGenImage('assets/images/png/preference_questions/lollipop.png');
+
+  /// File path: assets/images/png/preference_questions/lounger.png
+  AssetGenImage get lounger => const AssetGenImage('assets/images/png/preference_questions/lounger.png');
+
+  /// File path: assets/images/png/preference_questions/love.png
+  AssetGenImage get love => const AssetGenImage('assets/images/png/preference_questions/love.png');
+
+  /// File path: assets/images/png/preference_questions/luxury.png
+  AssetGenImage get luxury => const AssetGenImage('assets/images/png/preference_questions/luxury.png');
+
+  /// File path: assets/images/png/preference_questions/mask.png
+  AssetGenImage get mask => const AssetGenImage('assets/images/png/preference_questions/mask.png');
+
+  /// File path: assets/images/png/preference_questions/meeting_room.png
+  AssetGenImage get meetingRoom => const AssetGenImage('assets/images/png/preference_questions/meeting_room.png');
+
+  /// File path: assets/images/png/preference_questions/microphone.png
+  AssetGenImage get microphone => const AssetGenImage('assets/images/png/preference_questions/microphone.png');
+
+  /// File path: assets/images/png/preference_questions/milk.png
+  AssetGenImage get milk => const AssetGenImage('assets/images/png/preference_questions/milk.png');
+
+  /// File path: assets/images/png/preference_questions/milkshake.png
+  AssetGenImage get milkshake => const AssetGenImage('assets/images/png/preference_questions/milkshake.png');
+
+  /// File path: assets/images/png/preference_questions/nature.png
+  AssetGenImage get nature => const AssetGenImage('assets/images/png/preference_questions/nature.png');
+
+  /// File path: assets/images/png/preference_questions/no_smoking.png
+  AssetGenImage get noSmoking => const AssetGenImage('assets/images/png/preference_questions/no_smoking.png');
+
+  /// File path: assets/images/png/preference_questions/non-stop.png
+  AssetGenImage get nonStop => const AssetGenImage('assets/images/png/preference_questions/non-stop.png');
+
+  /// File path: assets/images/png/preference_questions/party.png
+  AssetGenImage get party => const AssetGenImage('assets/images/png/preference_questions/party.png');
+
+  /// File path: assets/images/png/preference_questions/party_hat.png
+  AssetGenImage get partyHat => const AssetGenImage('assets/images/png/preference_questions/party_hat.png');
+
+  /// File path: assets/images/png/preference_questions/pet.png
+  AssetGenImage get pet => const AssetGenImage('assets/images/png/preference_questions/pet.png');
+
+  /// File path: assets/images/png/preference_questions/photo-camera.png
+  AssetGenImage get photoCamera => const AssetGenImage('assets/images/png/preference_questions/photo-camera.png');
+
+  /// File path: assets/images/png/preference_questions/piece_of_art.png
+  AssetGenImage get pieceOfArt => const AssetGenImage('assets/images/png/preference_questions/piece_of_art.png');
+
+  /// File path: assets/images/png/preference_questions/poker.png
+  AssetGenImage get poker => const AssetGenImage('assets/images/png/preference_questions/poker.png');
+
+  /// File path: assets/images/png/preference_questions/promenade.png
+  AssetGenImage get promenade => const AssetGenImage('assets/images/png/preference_questions/promenade.png');
+
+  /// File path: assets/images/png/preference_questions/record.png
+  AssetGenImage get record => const AssetGenImage('assets/images/png/preference_questions/record.png');
+
+  /// File path: assets/images/png/preference_questions/researcher.png
+  AssetGenImage get researcher => const AssetGenImage('assets/images/png/preference_questions/researcher.png');
+
+  /// File path: assets/images/png/preference_questions/self-care.png
+  AssetGenImage get selfCare => const AssetGenImage('assets/images/png/preference_questions/self-care.png');
+
+  /// File path: assets/images/png/preference_questions/soccer_ball.png
+  AssetGenImage get soccerBall => const AssetGenImage('assets/images/png/preference_questions/soccer_ball.png');
+
+  /// File path: assets/images/png/preference_questions/socializing.png
+  AssetGenImage get socializing => const AssetGenImage('assets/images/png/preference_questions/socializing.png');
+
+  /// File path: assets/images/png/preference_questions/spa.png
+  AssetGenImage get spa => const AssetGenImage('assets/images/png/preference_questions/spa.png');
+
+  /// File path: assets/images/png/preference_questions/sport.png
+  AssetGenImage get sport => const AssetGenImage('assets/images/png/preference_questions/sport.png');
+
+  /// File path: assets/images/png/preference_questions/star.png
+  AssetGenImage get star => const AssetGenImage('assets/images/png/preference_questions/star.png');
+
+  /// File path: assets/images/png/preference_questions/sunset.png
+  AssetGenImage get sunset => const AssetGenImage('assets/images/png/preference_questions/sunset.png');
+
+  /// File path: assets/images/png/preference_questions/swans.png
+  AssetGenImage get swans => const AssetGenImage('assets/images/png/preference_questions/swans.png');
+
+  /// File path: assets/images/png/preference_questions/teddy_bear.png
+  AssetGenImage get teddyBear => const AssetGenImage('assets/images/png/preference_questions/teddy_bear.png');
+
+  /// File path: assets/images/png/preference_questions/traveler.png
+  AssetGenImage get traveler => const AssetGenImage('assets/images/png/preference_questions/traveler.png');
+
+  /// File path: assets/images/png/preference_questions/water_sport.png
+  AssetGenImage get waterSport => const AssetGenImage('assets/images/png/preference_questions/water_sport.png');
+
+  /// File path: assets/images/png/preference_questions/wheat.png
+  AssetGenImage get wheat => const AssetGenImage('assets/images/png/preference_questions/wheat.png');
+
+  /// File path: assets/images/png/preference_questions/wristwatch.png
+  AssetGenImage get wristwatch => const AssetGenImage('assets/images/png/preference_questions/wristwatch.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        aesthete,
+        aquapark,
+        artwork,
+        bathhouse,
+        bigmac,
+        book,
+        cabbage,
+        caffeineSensitivity,
+        calm,
+        calmness,
+        charity,
+        cigar,
+        cinema,
+        coffee,
+        delicate,
+        diskoBall,
+        dog,
+        drink,
+        extremeSport,
+        fitness,
+        guitar,
+        hookah,
+        horizont,
+        laptopAndDeskLamp,
+        laughing,
+        lollipop,
+        lounger,
+        love,
+        luxury,
+        mask,
+        meetingRoom,
+        microphone,
+        milk,
+        milkshake,
+        nature,
+        noSmoking,
+        nonStop,
+        party,
+        partyHat,
+        pet,
+        photoCamera,
+        pieceOfArt,
+        poker,
+        promenade,
+        record,
+        researcher,
+        selfCare,
+        soccerBall,
+        socializing,
+        spa,
+        sport,
+        star,
+        sunset,
+        swans,
+        teddyBear,
+        traveler,
+        waterSport,
+        wheat,
+        wristwatch
       ];
 }
 
