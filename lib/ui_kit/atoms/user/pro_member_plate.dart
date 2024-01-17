@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class MemberPlate extends StatelessWidget {
-  const MemberPlate({super.key});
-
-  double? get width => 1.sw * 0.55625;
+class ProMemberPlate extends StatelessWidget {
+  const ProMemberPlate({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +12,7 @@ class MemberPlate extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.max,
-        gradient: GradientFoundation.memberPlate,
+        gradient: GradientFoundation.shuffleMemberPlate,
         border: GradientFoundation.shuffleMemberBorder,
         boxShadow: [
           BoxShadow(
@@ -33,16 +31,11 @@ class MemberPlate extends StatelessWidget {
             style: textTheme?.caption1Bold.copyWith(color: Colors.black),
           ),
           SpacingFoundation.horizontalSpace4,
-          const ImageWidget(
-            iconData: ShuffleUiKitIcons.memeberGradientStar,
-            color: Colors.black,
-          ),
-          SpacingFoundation.horizontalSpace4,
           GradientableWidget(
-            gradient: GradientFoundation.defaultLinearGradient,
+            gradient: GradientFoundation.badgeIcon,
             child: Text(
-              S.of(context).Members.toLowerCase(),
-              style: textTheme?.caption1Medium.copyWith(color: Colors.white),
+              'pro',
+              style: textTheme?.caption1Bold.copyWith(color: Colors.white),
             ),
           ),
         ],

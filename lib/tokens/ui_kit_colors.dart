@@ -72,6 +72,13 @@ class UiKitColors {
   static const lightSurfaceGradientBegin = Color(0xffafafaf);
   static const lightSurfaceGradientMid = Color(0xffbdbdbd);
   static const lightSurfaceGradientEnd = Color(0xffcccccc);
+  static const memberPlateGradientBegin = Color(0xff5D5D63);
+  static const memberPlateGradientMid = Color(0xff767573);
+  static const memberPlateGradientEnd = Color(0xff4C4C4C);
+  static const shufflePlateGradientEnd = Color(0xff050200);
+  static const shufflePlateBorderGradientMid = Color(0xff1A0A00);
+  static const shufflePlateBorderGradientEnd = Color(0xff999896);
+  static const memberPlateBorder = Color(0xff2B2B2C);
   static const shunyGreyGradientBegin = Color(0xff222222);
   static const shunyGreyGradientMid = Color(0xff7F7F7F);
   static const shunyGreyGradientEnd = Color(0xff565656);

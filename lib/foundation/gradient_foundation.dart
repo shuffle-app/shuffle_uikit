@@ -5,6 +5,61 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
+  static const shuffleMemberBorder = GradientBoxBorder(
+    gradient: LinearGradient(
+      colors: [
+        ColorsFoundation.memberPlateGradientBegin,
+        ColorsFoundation.shufflePlateBorderGradientMid,
+        ColorsFoundation.shufflePlateBorderGradientEnd,
+      ],
+      stops: [
+        0.0298,
+        0.4472,
+        0.9895,
+      ],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+    ),
+  );
+
+  static const shuffleMemberPlate = LinearGradient(
+    colors: [
+      ColorsFoundation.memberPlateGradientBegin,
+      Colors.white,
+      Colors.white,
+      ColorsFoundation.memberPlateGradientMid,
+      ColorsFoundation.shufflePlateGradientEnd,
+    ],
+    stops: [
+      0.0408,
+      0.2369,
+      0.4833,
+      0.7775,
+      0.9592,
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const memberPlate = LinearGradient(
+    colors: [
+      ColorsFoundation.memberPlateGradientBegin,
+      Colors.white,
+      Colors.white,
+      ColorsFoundation.memberPlateGradientMid,
+      ColorsFoundation.memberPlateGradientEnd,
+    ],
+    stops: [
+      0.0408,
+      0.2369,
+      0.4833,
+      0.5978,
+      0.9592,
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
   static const diamondGradient = RadialGradient(
     stops: [
       0,
