@@ -241,6 +241,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Nickname": MessageLookupByLibrary.simpleMessage("उपनाम"),
         "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(
             "उपनाम लिया जाता है, एक और प्रयास करें"),
+        "NoConnection": MessageLookupByLibrary.simpleMessage(
+            "Sorry, no internet connection"),
         "NoDateSelected":
             MessageLookupByLibrary.simpleMessage("कोई दिनांक चयनित नहीं"),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(

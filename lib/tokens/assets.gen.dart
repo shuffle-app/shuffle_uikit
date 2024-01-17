@@ -1076,6 +1076,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/clothing.svg
   SvgGenImage get clothing => const SvgGenImage('assets/images/svg/clothing.svg');
 
+  /// File path: assets/images/svg/cloud_off.svg
+  SvgGenImage get cloudOff => const SvgGenImage('assets/images/svg/cloud_off.svg');
+
   /// File path: assets/images/svg/club.svg
   SvgGenImage get club => const SvgGenImage('assets/images/svg/club.svg');
 
@@ -1687,6 +1690,7 @@ class $AssetsImagesSvgGen {
         cleaning,
         clock,
         clothing,
+        cloudOff,
         club,
         cocktail,
         companyLayered,

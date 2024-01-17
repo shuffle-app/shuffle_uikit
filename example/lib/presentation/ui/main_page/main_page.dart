@@ -25,6 +25,10 @@ class _MainPageState extends State<MainPage> {
           isShuffleTheme = true;
         }
       });
+      final bar = showNoNetworkFlushbar(context);
+      Future.delayed(const Duration(seconds: 2), () {
+        bar.dismiss();
+      });
     });
   }
 

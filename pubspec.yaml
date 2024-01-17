@@ -47,6 +47,7 @@ dependencies:
 
   #dialogs widgets
   popover: ^0.2.8+2
+  another_flushbar: ^1.12.30
 
   #tab navigation
   tabnavigator:
@@ -69,13 +70,16 @@ dependencies:
   #custom splash factory
   flutter_platform_widgets: ^4.0.0-beta.1
   dynamic_color: ^1.6.5
+
+  #video player
   video_player: ^2.8.2
   smooth_video_progress: ^0.0.4
-  countries_flag: ^1.0.0
+
 
   #maps
   google_maps_flutter: ^2.5.0
   flutter_polyline_points: ^2.0.0
+  countries_flag: ^1.0.0
 
 dependency_overrides:
   watcher: ^1.1.0
