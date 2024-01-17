@@ -277,5 +277,6 @@
   "Services": "Услуги",
   "Filters": "Фильтры",
   "ResetFilters": "Сбросить фильтры",
-  "Recommended": "Рекомендуем"
+  "Recommended": "Рекомендуем",
+  "NoConnection": "Sorry, no internet connection"
 }
