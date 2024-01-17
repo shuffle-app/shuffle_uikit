@@ -6,7 +6,7 @@ class BadgedProUserTile extends BadgedBaseUserTile {
     super.key,
     required super.data,
   }) : super(
-          badge: const ProUserBadge(),
+          badge: const ProMemberPlate(),
           avatarBorder: const Border(),
         );
 }

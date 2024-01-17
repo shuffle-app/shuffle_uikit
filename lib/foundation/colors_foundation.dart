@@ -69,6 +69,13 @@ class ColorsFoundation {
   static const Color darkBodyTypographyColor = UiKitColors.darkBodyTypographyColor;
   static const Color lightHeadingTypographyColor = UiKitColors.lightHeadingTypographyColor;
   static const Color darkHeadingTypographyColor = UiKitColors.darkHeadingTypographyColor;
+  static const Color memberPlateGradientBegin = UiKitColors.memberPlateGradientBegin;
+  static const Color shufflePlateGradientEnd = UiKitColors.shufflePlateGradientEnd;
+  static const Color memberPlateGradientMid = UiKitColors.memberPlateGradientMid;
+  static const Color memberPlateGradientEnd = UiKitColors.memberPlateGradientEnd;
+  static const Color memberPlateBorder = UiKitColors.memberPlateBorder;
+  static const Color shufflePlateBorderGradientMid = UiKitColors.shufflePlateBorderGradientMid;
+  static const Color shufflePlateBorderGradientEnd = UiKitColors.shufflePlateBorderGradientEnd;
 
   ColorsFoundation._();
 }

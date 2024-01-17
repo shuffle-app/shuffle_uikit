@@ -127,6 +127,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
+        const Center(child: MemberPlate()),
+        SpacingFoundation.verticalSpace16,
+        const Center(child: PremiumMemberPlate()),
+        SpacingFoundation.verticalSpace16,
+        const Center(child: ProMemberPlate()),
+        SpacingFoundation.verticalSpace16,
+        const Center(child: InfluencerMemberPlate()),
+        SpacingFoundation.verticalSpace16,
         UiKitSocialSearchCard(
           title: 'lorem ipsum dolor',
           subtitle: 'Mudon - Dubai - UAE 2567-6672-1829',
@@ -823,8 +831,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           switchedOn: switchValue,
           onChanged: (value) => setState(() => switchValue = value),
         ),
-        SpacingFoundation.verticalSpace16,
-        const Center(child: MemberPlate()),
         SpacingFoundation.verticalSpace16,
         context.buttonWithProgress(
           data: BaseUiKitButtonData(

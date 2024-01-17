@@ -7,7 +7,7 @@ class BadgedPremiumUserTile extends BadgedBaseUserTile {
     Key? badgeKey,
     required super.data,
   }) : super(
-          badge: const PremiumUserBadge(),
+          badge: const PremiumMemberPlate(),
           avatarBorder: const Border(
             top: BorderSide(color: Colors.white, width: 2),
             right: BorderSide(color: Colors.white, width: 2),

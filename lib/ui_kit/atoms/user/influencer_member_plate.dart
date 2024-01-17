@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class MemberPlate extends StatelessWidget {
-  const MemberPlate({super.key});
-
-  double? get width => 1.sw * 0.55625;
+class InfluencerMemberPlate extends StatelessWidget {
+  const InfluencerMemberPlate({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,18 +31,7 @@ class MemberPlate extends StatelessWidget {
             style: textTheme?.caption1Bold.copyWith(color: Colors.black),
           ),
           SpacingFoundation.horizontalSpace4,
-          const ImageWidget(
-            iconData: ShuffleUiKitIcons.memeberGradientStar,
-            color: Colors.black,
-          ),
-          SpacingFoundation.horizontalSpace4,
-          GradientableWidget(
-            gradient: GradientFoundation.defaultLinearGradient,
-            child: Text(
-              S.of(context).Members.toLowerCase(),
-              style: textTheme?.caption1Medium.copyWith(color: Colors.white),
-            ),
-          ),
+          InfluencerAccountMark(),
         ],
       ).paddingSymmetric(
         horizontal: EdgeInsetsFoundation.horizontal16,
