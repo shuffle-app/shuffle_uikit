@@ -5,7 +5,7 @@ class UiKitLeadingRadioTile extends StatelessWidget {
   final bool selected;
   final String title;
   final String? avatarLink;
-  final List<UiKitTag>? tags;
+  final List<UiKitTag> tags;
   final VoidCallback? onTap;
 
   const UiKitLeadingRadioTile({
@@ -13,13 +13,14 @@ class UiKitLeadingRadioTile extends StatelessWidget {
     this.selected = false,
     required this.title,
     required this.avatarLink,
-    required this.tags,
+    this.tags = const [],
     this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
+
 
     return Material(
       color: Colors.transparent,
@@ -39,6 +40,8 @@ class UiKitLeadingRadioTile extends StatelessWidget {
                 borderRadius: BorderRadiusFoundation.all16,
                 child: ImageWidget(
                   link: avatarLink,
+                  width: 0.33.sw,
+                  height: 0.33.sw/1.7,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -49,14 +52,23 @@ class UiKitLeadingRadioTile extends StatelessWidget {
                   children: [
                     Text(
                       title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       style: textTheme?.caption1Bold,
                     ),
                     SpacingFoundation.verticalSpace4,
-                    Wrap(
-                      spacing: 8,
-                      runSpacing: 8,
-                      children: tags?.map<Widget>((e) => UiKitTagWidget(title: e.title, icon: e.icon)).toList() ?? [],
-                    ),
+                    SizedBox(
+                        height: 10.h,
+                        child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            shrinkWrap: true,
+                            primary: false,
+                            itemBuilder: (BuildContext context, int index) {
+                              final tag = tags[index];
+                              return UiKitTagWidget(title: tag.title, icon: tag.icon);
+                            },
+                            separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace8,
+                            itemCount: tags.length))
                   ],
                 ),
               ),
