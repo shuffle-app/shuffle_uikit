@@ -278,5 +278,6 @@
   "Services": "Services",
   "Filters": "Filters",
   "ResetFilters": "Reset filters",
-  "Recommended": "Recommended"
+  "Recommended": "Recommended",
+  "NoConnection": "Sorry, no internet connection"
 }

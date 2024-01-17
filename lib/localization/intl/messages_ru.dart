@@ -240,6 +240,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Nickname": MessageLookupByLibrary.simpleMessage("Ник"),
         "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(
             "Ник занят, попробуйте другой"),
+        "NoConnection": MessageLookupByLibrary.simpleMessage(
+            "Sorry, no internet connection"),
         "NoDateSelected":
             MessageLookupByLibrary.simpleMessage("Дата не выбрана"),
         "NoHealthKitAvailableOnYourDevice":
