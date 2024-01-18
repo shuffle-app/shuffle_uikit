@@ -9,6 +9,7 @@ export 'badges/pro_user_badge.dart';
 export 'badges/ui_kit_rating_badge.dart';
 export 'base/ui_kit_custom_background_switch_option_widget.dart';
 export 'base/ui_kit_header_with_leading.dart';
+export 'base/preview_horizontal_scroll.dart';
 export 'chips/default_importance_chip.dart';
 export 'chips/high_importance_chip.dart';
 export 'chips/medium_importance_chip.dart';
