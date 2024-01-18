@@ -26,6 +26,7 @@ class ImageWidget extends StatelessWidget {
   final bool isVideo;
   final BlendMode? colorBlendMode;
   final bool mentionPackage;
+  final ImageFrameBuilder? imageBuilder;
 
   const ImageWidget({
     Key? key,
@@ -43,6 +44,7 @@ class ImageWidget extends StatelessWidget {
     this.cardColor,
     this.errorWidget,
     this.colorBlendMode,
+    this.imageBuilder,
   }) : super(key: key);
 
   Future _takeFrameFromVideo(String link) async {
@@ -69,12 +71,14 @@ class ImageWidget extends StatelessWidget {
       );
     } else if (rasterAsset != null) {
       return rasterAsset!.image(
+        frameBuilder: imageBuilder,
         color: color,
         package: mentionPackage ? 'shuffle_uikit' : null,
         fit: fit,
         height: height,
         width: width,
         colorBlendMode: colorBlendMode,
+        errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else if (svgAsset != null) {
       return svgAsset!.svg(
@@ -117,6 +121,11 @@ class ImageWidget extends StatelessWidget {
         height: height,
         colorBlendMode: colorBlendMode,
         cacheManager: CustomCacheManager.imageInstance,
+        imageBuilder: (context, image) {
+          final imageWidget = Image(image: image, fit: fit, width: width, height: height);
+
+          return imageBuilder?.call(context, imageWidget, 1, false) ?? imageWidget;
+        },
         errorWidget: (context, url, trace) {
           log('Got error while downloading $url', name: 'ImageWidget');
 
@@ -143,6 +152,7 @@ class ImageWidget extends StatelessWidget {
         height: height,
         colorBlendMode: colorBlendMode,
         package: mentionPackage ? 'shuffle_uikit' : null,
+        frameBuilder: imageBuilder,
         errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else {
@@ -154,6 +164,7 @@ class ImageWidget extends StatelessWidget {
               color: color,
               height: height,
               errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
+              frameBuilder: imageBuilder,
             )
           : Image.file(
               File(link!),
@@ -161,6 +172,7 @@ class ImageWidget extends StatelessWidget {
               width: width,
               color: color,
               height: height,
+              frameBuilder: imageBuilder,
               errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
             );
     }
