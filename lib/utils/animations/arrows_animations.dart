@@ -19,24 +19,12 @@ class _ArrowsAnimationState extends State<ArrowsAnimation> with SingleTickerProv
 
   @override
   void initState() {
-    controller.forward();
-    controller.addListener(_loopAnimation);
+    controller.repeat(period: const Duration(milliseconds: 180));
     super.initState();
-  }
-
-  _loopAnimation() {
-    switch (controller.status) {
-      case AnimationStatus.completed:
-        Future.delayed(const Duration(milliseconds: 180), () => controller.forward(from: 0.0));
-        break;
-      default:
-        break;
-    }
   }
 
   @override
   void dispose() {
-    controller.removeListener(_loopAnimation);
     controller.dispose();
     super.dispose();
   }

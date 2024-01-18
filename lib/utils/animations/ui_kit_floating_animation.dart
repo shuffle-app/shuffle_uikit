@@ -23,27 +23,18 @@ class _UiKitFloatingAnimationState extends State<UiKitFloatingAnimation> with Si
   void initState() {
     super.initState();
     final rand = Random();
+    final duration = Duration(milliseconds: rand.nextInt(500) + 600);
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: rand.nextInt(500) + 600),
+      duration: duration,
     );
     coefficientX = rand.nextInt(_kMaxOffset) * (rand.nextBool() ? -1 : 1) / 5;
     coefficientY = rand.nextInt(_kMaxOffset) * (rand.nextBool() ? -1 : 1) / 5;
-    _controller.forward();
-    _controller.addStatusListener(_animationListener);
-  }
-
-  _animationListener(AnimationStatus status) {
-    if (status == AnimationStatus.completed) {
-      _controller.reverse();
-    } else if (status == AnimationStatus.dismissed) {
-      _controller.forward();
-    }
+    _controller.repeat(reverse: true,period: duration);
   }
 
   @override
   void dispose() {
-    _controller.removeStatusListener(_animationListener);
     _controller.dispose();
     super.dispose();
   }
@@ -54,6 +45,7 @@ class _UiKitFloatingAnimationState extends State<UiKitFloatingAnimation> with Si
       animation: _controller,
       builder: (context, child) => Transform.translate(
         offset: Offset(coefficientX * _controller.value, coefficientY * _controller.value),
+        filterQuality: FilterQuality.low,
         child: child,
       ),
       child: widget.child,

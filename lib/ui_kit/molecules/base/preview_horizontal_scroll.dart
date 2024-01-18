@@ -46,19 +46,11 @@ class PreviewHorizontalScroll extends StatelessWidget {
             child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
-                clipBehavior: Clip.hardEdge,
                 primary: false,
-                padding: EdgeInsets.zero,
-                itemBuilder: (context, index) {
-                  if (index == 0) {
-                    return previewItems[index].paddingOnly(left: horizontalPadding);
-                  } else if (index == previewItems.length - 1) {
-                    return previewItems[index].paddingOnly(right: horizontalPadding);
-                  }
-
-                  return previewItems[index];
-                },
-                separatorBuilder: (context, index) => (horizontalPadding*1.5).w.widthBox,
+                padding: EdgeInsets.symmetric(horizontal: horizontalPadding*1.5),
+                itemBuilder: (context, index) => previewItems[index]
+                ,
+                separatorBuilder: (context, index) => (horizontalPadding*1.5).widthBox,
                 itemCount: previewItems.length))
       ],
     );

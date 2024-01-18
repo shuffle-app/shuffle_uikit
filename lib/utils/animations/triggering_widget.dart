@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class TriggeringWidget extends StatefulWidget {
@@ -40,24 +42,12 @@ class _TriggeringWidgetState extends State<TriggeringWidget>
     super.initState();
     () async {
       await Future.delayed(widget.startDelay ?? Duration.zero);
-      controller
-        ..forward()
-        ..addStatusListener(listenAnim);
+      unawaited(controller.repeat(reverse: true,period: const Duration(seconds: 10)));
     }();
-  }
-
-  void listenAnim(AnimationStatus status) {
-    if (status == AnimationStatus.completed && widget.applyReverseOnEnd) {
-      controller.reverse();
-    } else if (status == AnimationStatus.dismissed) {
-      Future.delayed(const Duration(seconds: 10))
-          .then((value) => controller.forward());
-    }
   }
 
   @override
   void dispose() {
-    controller.removeStatusListener(listenAnim);
     controller.dispose();
     super.dispose();
   }
