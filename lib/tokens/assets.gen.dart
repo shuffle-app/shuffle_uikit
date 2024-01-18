@@ -409,6 +409,12 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/geo-permit.png
   AssetGenImage get geoPermit => const AssetGenImage('assets/images/png/geo-permit.png');
 
+  /// File path: assets/images/png/golden_cup.png
+  AssetGenImage get goldenCup => const AssetGenImage('assets/images/png/golden_cup.png');
+
+  /// File path: assets/images/png/golden_medal.png
+  AssetGenImage get goldenMedal => const AssetGenImage('assets/images/png/golden_medal.png');
+
   /// File path: assets/images/png/grocery.png
   AssetGenImage get grocery => const AssetGenImage('assets/images/png/grocery.png');
 
@@ -714,6 +720,8 @@ class $AssetsImagesPngGen {
         eventAvatar,
         fatigueEmoji,
         geoPermit,
+        goldenCup,
+        goldenMedal,
         grocery,
         healthPermit,
         hindu,

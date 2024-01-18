@@ -62,6 +62,8 @@ export 'inputs/ui_kit_elevated_input_with_switching_prefix.dart';
 export 'inputs/ui_kit_input_field_with_chips.dart';
 export 'profile/ui_kit_reaction_preview.dart';
 export 'profile/ui_kit_tag_widget.dart';
+export 'profile/grid_titled_item_widget.dart';
+export 'profile/ui_kit_fame_item.dart';
 export 'user/base_account_mark.dart';
 export 'user/bordered_user_circle_avatar.dart';
 export 'user/dynamic_gradient_plate.dart';

@@ -278,5 +278,7 @@
   "InviteList": "Invite list",
   "Users": "{count,plural, =0{{count} users} =1{{count} user} =2{{count} users} few{{count} users} many{{count} users} other{{count} users}}",
   "Messages": "Messages",
-  "NoConnection": "Sorry, no internet connection"
+  "NoConnection": "Sorry, no internet connection",
+  "HallOfFame": "Hall of Fame",
+  "ViewAll": "View all"
 }

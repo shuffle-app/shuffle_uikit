@@ -120,10 +120,10 @@ class S {
     );
   }
 
-  /// `Point Balance`
+  /// `Point\nBalance`
   String get PointBalance {
     return Intl.message(
-      'Point Balance',
+      'Point\nBalance',
       name: 'PointBalance',
       desc: '',
       args: [],
@@ -2852,6 +2852,26 @@ class S {
     return Intl.message(
       'Sorry, no internet connection',
       name: 'NoConnection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hall of Fame`
+  String get HallOfFame {
+    return Intl.message(
+      'Hall of Fame',
+      name: 'HallOfFame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View all`
+  String get ViewAll {
+    return Intl.message(
+      'View all',
+      name: 'ViewAll',
       desc: '',
       args: [],
     );

@@ -188,6 +188,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("सेटिंग्स में जाओ"),
         "Guess": MessageLookupByLibrary.simpleMessage("अनुमान"),
+        "HallOfFame": MessageLookupByLibrary.simpleMessage("Hall of Fame"),
         "HardToAnswer":
             MessageLookupByLibrary.simpleMessage("जवाब देना मुश्किल"),
         "HealthKit": MessageLookupByLibrary.simpleMessage("स्वास्थ्य किट"),
@@ -408,6 +409,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Video": MessageLookupByLibrary.simpleMessage("वीडियो"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("वीडियो (फ़ाइलें अपलोड करें)"),
+        "ViewAll": MessageLookupByLibrary.simpleMessage("View all"),
         "VisitFirstToOpenNext":
             MessageLookupByLibrary.simpleMessage("अगला खोलने के लिए पहले जाएँ"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(

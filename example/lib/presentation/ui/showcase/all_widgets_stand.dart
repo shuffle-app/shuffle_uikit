@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
+import '../../routing/app_routes.dart';
+
 class AllWidgetsStand extends StatefulWidget {
   const AllWidgetsStand({super.key});
 
@@ -126,6 +128,18 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
       ),
       children: [
+        SpacingFoundation.verticalSpace16,
+        PreviewHorizontalScroll(
+          title: 'Hall of Fame',
+          onViewAllTap: () => Navigator.pushNamed(context, AppRoutes.hallOfFame),
+          previewItems: List.generate(
+              10,
+              (i) => UiKitFameItem(
+                    asset: i % 2 == 0
+                        ? GraphicsFoundation.instance.png.goldenCup
+                        : GraphicsFoundation.instance.png.goldenMedal,
+                  )),
+        ),
         SpacingFoundation.verticalSpace16,
         const Center(child: MemberPlate()),
         SpacingFoundation.verticalSpace16,
@@ -1692,8 +1706,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context)
-                .push(PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+            Navigator.of(context).push(
+                PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
           },
           child: const Text(
             'Show Horizontal Video',
@@ -1702,7 +1716,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context).push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+            Navigator.of(context)
+                .push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
           },
           child: const Text(
             'Show Vertical Video',
@@ -1714,8 +1729,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context).push(
-                PopUpVideoPlayer(videoUri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
+            Navigator.of(context).push(PopUpVideoPlayer(
+                videoUri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
           },
           child: const Text(
             'Show Another Horizontal Video',

@@ -18,6 +18,8 @@ class ProfileCardBody extends StatelessWidget {
   final List<UiKitStats>? profileStats;
   final bool showSupportShuffle;
   final ValueChanged<int>? onDonate;
+  final VoidCallback? onViewAllAchievements;
+  final List<UiKitAchievementsModel> achievements;
 
   const ProfileCardBody({
     super.key,
@@ -35,6 +37,8 @@ class ProfileCardBody extends StatelessWidget {
     this.onFollow,
     this.onDonate,
     this.showSupportShuffle = false,
+    this.onViewAllAchievements,
+    this.achievements = const [],
   });
 
   @override
@@ -77,13 +81,14 @@ class ProfileCardBody extends StatelessWidget {
                       ),
               ),
             ],
-          ),
+          ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
           if (description != null) ...[
-            SpacingFoundation.verticalSpace16,
+            SpacingFoundation.verticalSpace24,
             ProfileDescription(
               text: description ?? '',
-            )
+            ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16)
           ],
+          SpacingFoundation.verticalSpace24,
           Stack(
             children: [
               ConstrainedBox(
@@ -131,9 +136,22 @@ class ProfileCardBody extends StatelessWidget {
                 ),
               ),
             ],
-          ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing16),
+          ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
+          if (achievements.isNotEmpty) ...[
+            SpacingFoundation.verticalSpace24,
+            PreviewHorizontalScroll(
+              title: S.of(context).HallOfFame,
+              horizontalPadding: EdgeInsetsFoundation.all16,
+              onViewAllTap: onViewAllAchievements,
+              previewItems: achievements
+                  .map((e) => UiKitFameItem(
+                        asset: e.asset,
+                      ))
+                  .toList(),
+            ),
+          ],
           if (profileStats != null) ...[
-            SpacingFoundation.verticalSpace16,
+            SpacingFoundation.verticalSpace24,
             Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -145,15 +163,16 @@ class ProfileCardBody extends StatelessWidget {
                   child: UiKitStatsActionCard(stats: profileStats!.last),
                 ),
               ],
-            ),
+            ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
             if (showSupportShuffle) ...[
-              SpacingFoundation.verticalSpace16,
-              SupportShuffleButton(onDonate: onDonate),
+              SpacingFoundation.verticalSpace24,
+              SupportShuffleButton(onDonate: onDonate).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
             ],
             SpacingFoundation.verticalSpace16,
           ],
         ],
-      ).paddingLTRB(EdgeInsetsFoundation.all16, EdgeInsetsFoundation.all16, EdgeInsetsFoundation.all16, 0),
+      ).paddingOnly(top: EdgeInsetsFoundation.all16),
+      // ).paddingLTRB(EdgeInsetsFoundation.all16, EdgeInsetsFoundation.all16, EdgeInsetsFoundation.all16, 0),
     );
   }
 }

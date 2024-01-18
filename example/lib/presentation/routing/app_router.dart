@@ -14,6 +14,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
+import '../ui/examples/hall_of_fame_page_example.dart';
+
 class AppRouter {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -22,6 +24,12 @@ class AppRouter {
           settings: settings,
           builder: (_) => const MainPage(),
         );
+        case AppRoutes.hallOfFame:
+          return MaterialPageRoute(
+            settings: settings,
+            builder: (_) => const HallOfFamePageExample(),
+          );
+
       case AppRoutes.influencerProfile:
         return MaterialPageRoute(
           settings: settings,
