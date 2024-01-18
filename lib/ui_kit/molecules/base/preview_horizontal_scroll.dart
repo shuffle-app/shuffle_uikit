@@ -13,7 +13,7 @@ class PreviewHorizontalScroll extends StatelessWidget {
       required this.title,
       required this.previewItems,
       this.horizontalPadding = 16,
-      this.previewItemHeight = 40,
+      this.previewItemHeight = 50,
       this.onViewAllTap});
 
   @override
@@ -46,16 +46,19 @@ class PreviewHorizontalScroll extends StatelessWidget {
             child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
+                clipBehavior: Clip.hardEdge,
                 primary: false,
                 padding: EdgeInsets.zero,
                 itemBuilder: (context, index) {
                   if (index == 0) {
                     return previewItems[index].paddingOnly(left: horizontalPadding);
+                  } else if (index == previewItems.length - 1) {
+                    return previewItems[index].paddingOnly(right: horizontalPadding);
                   }
 
                   return previewItems[index];
                 },
-                separatorBuilder: (context, index) => horizontalPadding.widthBox,
+                separatorBuilder: (context, index) => (horizontalPadding*1.5).w.widthBox,
                 itemCount: previewItems.length))
       ],
     );

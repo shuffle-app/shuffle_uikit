@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class FameItemWidget extends StatelessWidget {
+class GridTitledItemWidget extends StatelessWidget {
   final String title;
-  final Widget fameItem;
+  final Widget child;
 
-  const FameItemWidget({super.key, required this.title, required this.fameItem});
+  const GridTitledItemWidget({super.key, required this.title, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class FameItemWidget extends StatelessWidget {
               height: 82.sp,
               width: 82.sp,
               borderRadius: BorderRadiusFoundation.all24,
-              child: fameItem.paddingAll(SpacingFoundation.verticalSpacing16),
+              child: child.paddingAll(SpacingFoundation.verticalSpacing16),
             ),
             SpacingFoundation.verticalSpace8,
             Text(

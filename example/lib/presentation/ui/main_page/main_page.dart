@@ -100,6 +100,11 @@ class _MainPageState extends State<MainPage> {
               data: BaseUiKitButtonData(
                   text: 'UI Kit Showcase Stand', onPressed: () => Navigator.pushNamed(context, AppRoutes.stand)),
             ),
+            SpacingFoundation.verticalSpace24,
+            context.button(
+              data: BaseUiKitButtonData(
+                  text: 'UI Kit Hall of Fame', onPressed: () => Navigator.pushNamed(context, AppRoutes.hallOfFame)),
+            ),
             SpacingFoundation.verticalSpace16,
             context.button(
               data: BaseUiKitButtonData(

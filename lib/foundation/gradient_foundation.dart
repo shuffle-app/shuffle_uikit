@@ -160,6 +160,17 @@ class GradientFoundation {
     transform: GradientRotation(pi / 6),
   );
 
+  static const fameLinearGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.pink,
+      ColorsFoundation.yellow,
+      ColorsFoundation.error,
+    ],
+    begin: Alignment.topRight,
+    end: Alignment.bottomLeft,
+    // transform: GradientRotation(pi / 12),
+  );
+
   static const donationLinearGradient = LinearGradient(
     colors: [
       ColorsFoundation.yellow,

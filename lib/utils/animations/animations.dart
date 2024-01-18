@@ -6,6 +6,7 @@ export 'rotatable_widget.dart';
 export 'triggering_widget.dart';
 export 'ui_kit_shimmer_progress_indicator.dart';
 export 'wave_splash.dart';
+export 'ui_kit_floating_animation.dart';
 
 class Animations {
   static slideAnimation(

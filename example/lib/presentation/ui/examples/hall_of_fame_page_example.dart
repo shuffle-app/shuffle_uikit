@@ -8,10 +8,14 @@ class HallOfFamePageExample extends StatelessWidget {
   Widget build(BuildContext context) {
     final listOfItems = List.generate(
         20,
-        (index) => FameItemWidget(
+        (index) => GridTitledItemWidget(
               title: 'Title $index',
-              fameItem: ImageWidget(
-                rasterAsset: GraphicsFoundation.instance.png.networking,
+              child: UiKitFameItem(
+                asset: index % 5 == 0
+                    ? null
+                    : index % 2 == 0
+                        ? GraphicsFoundation.instance.png.goldenCup
+                        : GraphicsFoundation.instance.png.goldenMedal,
               ),
             ));
 

@@ -82,7 +82,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       Future.delayed(
         const Duration(milliseconds: 1),
-            () {
+        () {
           _formKey.currentState?.validate();
           setState(() {});
         },
@@ -132,7 +132,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         PreviewHorizontalScroll(
           title: 'Hall of Fame',
           onViewAllTap: () => Navigator.pushNamed(context, AppRoutes.hallOfFame),
-          previewItems: List.generate(10, (i) => ImageWidget(rasterAsset: GraphicsFoundation.instance.png.key,)),
+          previewItems: List.generate(
+              10,
+              (i) => UiKitFameItem(
+                    asset: i % 2 == 0
+                        ? GraphicsFoundation.instance.png.goldenCup
+                        : GraphicsFoundation.instance.png.goldenMedal,
+                  )),
         ),
         SpacingFoundation.verticalSpace16,
         const Center(child: MemberPlate()),
@@ -365,7 +371,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           sentByMe: true,
           timeOfDay: DateTime.now(),
           text:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         ),
         SpacingFoundation.verticalSpace16,
         UiKitUserTileWithCheckbox(
@@ -399,7 +405,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             onPlaceTap: () {},
             invitedPeopleAvatarPaths: List.generate(
               7,
-                  (index) => index < 4 ? null : GraphicsFoundation.instance.png.mockAvatar.path,
+              (index) => index < 4 ? null : GraphicsFoundation.instance.png.mockAvatar.path,
             ),
             userType: UserTileType.influencer,
           ),
@@ -498,19 +504,17 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             context.outlinedButton(
               data: BaseUiKitButtonData(
                 text: 'Dark Theme',
-                onPressed: () =>
-                    UiKitTheme.of(context).updateTheme(
-                      UiKitThemeFoundation.defaultTheme,
-                    ),
+                onPressed: () => UiKitTheme.of(context).updateTheme(
+                  UiKitThemeFoundation.defaultTheme,
+                ),
               ),
             ),
             context.outlinedButton(
               data: BaseUiKitButtonData(
                 text: 'Light Theme',
-                onPressed: () =>
-                    UiKitTheme.of(context).updateTheme(
-                      UiKitThemeFoundation.lightTheme,
-                    ),
+                onPressed: () => UiKitTheme.of(context).updateTheme(
+                  UiKitThemeFoundation.lightTheme,
+                ),
               ),
             ),
           ],
@@ -662,10 +666,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         UiKitCountrySelector(
           title: 'Where are you located',
-          onSelected: (country) =>
-              setState(() {
-                _selectedCountry = country;
-              }),
+          onSelected: (country) => setState(() {
+            _selectedCountry = country;
+          }),
           selectedCountry: _selectedCountry,
         ),
         SpacingFoundation.verticalSpace16,
@@ -698,21 +701,20 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
         SpacingFoundation.verticalSpace16,
         UiKitHorizontalScroll3D(
-          itemBuilder: (BuildContext context, int index) =>
-              UiKitFindSomeoneCard(
-                avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
-                userNickName: 'naveen',
-                userName: 'Naveen Sheoran',
-                userPoints: 555,
-                sameInterests: 4,
-                onMessage: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Send message'),
-                    ),
-                  );
-                },
-              ),
+          itemBuilder: (BuildContext context, int index) => UiKitFindSomeoneCard(
+            avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+            userNickName: 'naveen',
+            userName: 'Naveen Sheoran',
+            userPoints: 555,
+            sameInterests: 4,
+            onMessage: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('Send message'),
+                ),
+              );
+            },
+          ),
           itemCount: 5,
         ),
         SpacingFoundation.verticalSpace16,
@@ -776,18 +778,17 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 showDialog(
                   context: context,
                   useSafeArea: false,
-                  builder: (context) =>
-                      CompactAlertPopUp(
-                        title: 'You unsubscribed from',
-                        body: 'Eugene Carter',
-                        action: context.dialogButton(
-                          dialogButtonType: DialogButtonType.buttonBlack,
-                          data: BaseUiKitButtonData(
-                            text: 'okay, cool!',
-                            onPressed: () => Navigator.pop(context),
-                          ),
-                        ),
+                  builder: (context) => CompactAlertPopUp(
+                    title: 'You unsubscribed from',
+                    body: 'Eugene Carter',
+                    action: context.dialogButton(
+                      dialogButtonType: DialogButtonType.buttonBlack,
+                      data: BaseUiKitButtonData(
+                        text: 'okay, cool!',
+                        onPressed: () => Navigator.pop(context),
                       ),
+                    ),
+                  ),
                 );
               },
             ),
@@ -848,11 +849,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         context.buttonWithProgress(
           data: BaseUiKitButtonData(
             text: 'NEXT >>>',
-            onPressed: () =>
-                setState(() {
-                  progress += 0.33;
-                  if (progress > 1) progress = 0;
-                }),
+            onPressed: () => setState(() {
+              progress += 0.33;
+              if (progress > 1) progress = 0;
+            }),
           ),
           progress: progress,
         ),
@@ -883,11 +883,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 TextSpan(
                   text: '\nfree places',
                   style: context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(
-                    // foreground: Paint()
-                    //   ..style = PaintingStyle.fill
-                    //   ..shader = GradientFoundation.buttonGradient
-                    //       .createShader(_gradientTextKey.currentContext?.findRenderObject()?.paintBounds ?? Rect.zero),
-                  ),
+                      // foreground: Paint()
+                      //   ..style = PaintingStyle.fill
+                      //   ..shader = GradientFoundation.buttonGradient
+                      //       .createShader(_gradientTextKey.currentContext?.findRenderObject()?.paintBounds ?? Rect.zero),
+                      ),
                 ),
               ],
             ),
@@ -1177,9 +1177,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         context.notificationPopUp(
           primaryActionWidget: context.smallButton(
               data: BaseUiKitButtonData(
-                text: 'Ok',
-                onPressed: () {},
-              )),
+            text: 'Ok',
+            onPressed: () {},
+          )),
           dismissActionWidget: context.smallOutlinedButton(
             data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
             color: Colors.white.withOpacity(0.5),
@@ -1513,29 +1513,17 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ),
         ),
         SpacingFoundation.verticalSpace16,
-        if (MediaQuery
-            .of(context)
-            .size
-            .width >= 720)
+        if (MediaQuery.of(context).size.width >= 720)
           InputFieldsGrid(
             controller: _controller,
           ),
-        if (MediaQuery
-            .of(context)
-            .size
-            .width < 720)
+        if (MediaQuery.of(context).size.width < 720)
           InputFieldsList(
             controller: _controller,
           ),
         SpacingFoundation.verticalSpace16,
-        if (MediaQuery
-            .of(context)
-            .size
-            .width >= 720) const ButtonsGrid(),
-        if (MediaQuery
-            .of(context)
-            .size
-            .width < 720) const ButtonsList(),
+        if (MediaQuery.of(context).size.width >= 720) const ButtonsGrid(),
+        if (MediaQuery.of(context).size.width < 720) const ButtonsList(),
         SpacingFoundation.verticalSpace16,
         Row(
           mainAxisSize: MainAxisSize.max,
@@ -1664,12 +1652,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         context.userTile(
             data: BaseUiKitUserTileData(
-              onTap: () {},
-              name: 'Frankie Hansen',
-              username: Future.value('@fr4nk1eh4'),
-              avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
-              type: UserTileType.premium,
-            )),
+          onTap: () {},
+          name: 'Frankie Hansen',
+          username: Future.value('@fr4nk1eh4'),
+          avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+          type: UserTileType.premium,
+        )),
         SpacingFoundation.verticalSpace16,
         context.userTile(
           data: BaseUiKitUserTileData(
@@ -1718,8 +1706,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context)
-                .push(
+            Navigator.of(context).push(
                 PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
           },
           child: const Text(
@@ -1729,8 +1716,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context).push(
-                PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+            Navigator.of(context)
+                .push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
           },
           child: const Text(
             'Show Vertical Video',
@@ -1742,9 +1729,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context).push(
-                PopUpVideoPlayer(
-                    videoUri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
+            Navigator.of(context).push(PopUpVideoPlayer(
+                videoUri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
           },
           child: const Text(
             'Show Another Horizontal Video',
