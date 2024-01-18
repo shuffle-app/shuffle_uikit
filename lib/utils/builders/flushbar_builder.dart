@@ -12,9 +12,9 @@ Flushbar showNoNetworkFlushbar(BuildContext context) {
     forwardAnimationCurve: Curves.elasticOut,
     backgroundColor: (theme?.colorScheme.darkNeutral900 ?? Colors.grey).withOpacity(0.24),
     barBlur: 10,
-    padding: EdgeInsets.symmetric(vertical: 1.5.h),
-    margin: EdgeInsets.symmetric(horizontal: 16.w),
-    borderRadius: BorderRadiusFoundation.all8,
+    padding: EdgeInsets.symmetric(vertical: 1.h),
+    margin: const EdgeInsets.symmetric(horizontal: 16),
+    borderRadius: BorderRadiusFoundation.all4,
     isDismissible: false,
     messageText: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -24,12 +24,14 @@ Flushbar showNoNetworkFlushbar(BuildContext context) {
         child: ImageWidget(
           svgAsset: Assets.images.svg.cloudOff,
           color: Colors.white,
+          height: 11.w,
+          fit: BoxFit.fitHeight,
         ),
       ),
       SpacingFoundation.horizontalSpace8,
       Text(
         S.current.NoConnection,
-        style: theme?.regularTextTheme.caption4Regular,
+        style: theme?.regularTextTheme.caption4Regular ?? const TextStyle(color: Colors.white, fontSize: 9)
       )
     ]),
   );
