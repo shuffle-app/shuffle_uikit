@@ -14,5 +14,6 @@ export 'popup/notification_popup_required_data.dart';
 export 'profile/profile_place.dart';
 export 'profile/profile_story.dart';
 export 'profile/ui_kit_stats.dart';
+export 'profile/ui_kit_achievements_model.dart';
 export 'selectors/ui_kit_searchable_list_body_item.dart';
 export 'tiles/content_type_tile_data.dart';

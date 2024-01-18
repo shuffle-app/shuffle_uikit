@@ -35,7 +35,7 @@ class PreviewHorizontalScroll extends StatelessWidget {
                 onTap: onViewAllTap,
                 child: Ink(
                     child: Text(
-                  'View all',
+                  S.of(context).ViewAll,
                   style: theme?.boldTextTheme.caption1Bold.copyWith(color: theme.colorScheme.darkNeutral300),
                 ))),
           ],

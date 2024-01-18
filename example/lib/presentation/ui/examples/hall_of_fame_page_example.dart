@@ -19,18 +19,19 @@ class HallOfFamePageExample extends StatelessWidget {
               ),
             ));
 
-    return BlurredAppBarPage(title: 'Hall of Fame', autoImplyLeading: true, centerTitle: true, children: [
+    return Scaffold(
+        body: BlurredAppBarPage(title: 'Hall of Fame', autoImplyLeading: true, centerTitle: true, children: [
       SpacingFoundation.verticalSpace16,
       GridView.count(
         crossAxisCount: 3,
         clipBehavior: Clip.hardEdge,
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
         childAspectRatio: 0.56.sp,
         crossAxisSpacing: SpacingFoundation.verticalSpacing8,
         children: listOfItems,
       ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16)
-    ]);
+    ]));
   }
 }

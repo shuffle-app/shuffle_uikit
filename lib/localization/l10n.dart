@@ -2856,6 +2856,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Hall of Fame`
+  String get HallOfFame {
+    return Intl.message(
+      'Hall of Fame',
+      name: 'HallOfFame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View all`
+  String get ViewAll {
+    return Intl.message(
+      'View all',
+      name: 'ViewAll',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -18,6 +18,8 @@ class ProfileCardBody extends StatelessWidget {
   final List<UiKitStats>? profileStats;
   final bool showSupportShuffle;
   final ValueChanged<int>? onDonate;
+  final VoidCallback? onViewAllAchievements;
+  final List<UiKitAchievementsModel> achievements;
 
   const ProfileCardBody({
     super.key,
@@ -35,6 +37,8 @@ class ProfileCardBody extends StatelessWidget {
     this.onFollow,
     this.onDonate,
     this.showSupportShuffle = false,
+    this.onViewAllAchievements,
+    this.achievements = const [],
   });
 
   @override
@@ -47,6 +51,7 @@ class ProfileCardBody extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+
           /// Frame 359 in Figma
           Row(
             mainAxisSize: MainAxisSize.max,
@@ -62,28 +67,30 @@ class ProfileCardBody extends StatelessWidget {
                   avatarUrl: avatarUrl ?? '',
                   name: name,
                 ),
-              if (canFollow ?? false) SpacingFoundation.horizontalSpace16 else SpacingFoundation.horizontalSpace12,
+              if (canFollow ?? false) SpacingFoundation.horizontalSpace16 else
+                SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: profileType == ProfileCardType.personal
                     ? PersonalProfileInfo(
-                        name: name,
-                        nickname: nickname ?? '',
-                        followers: followers,
-                        onFollow: onFollow,
-                      )
+                  name: name,
+                  nickname: nickname ?? '',
+                  followers: followers,
+                  onFollow: onFollow,
+                )
                     : CompanyProfileInfo(
-                        companyName: name,
-                        tags: tags ?? [],
-                      ),
+                  companyName: name,
+                  tags: tags ?? [],
+                ),
               ),
             ],
           ),
           if (description != null) ...[
-            SpacingFoundation.verticalSpace16,
+            SpacingFoundation.verticalSpace24,
             ProfileDescription(
               text: description ?? '',
             )
           ],
+          SpacingFoundation.verticalSpace24,
           Stack(
             children: [
               ConstrainedBox(
@@ -131,9 +138,20 @@ class ProfileCardBody extends StatelessWidget {
                 ),
               ),
             ],
-          ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing16),
+          ),
+          if(achievements.isNotEmpty)...[
+            SpacingFoundation.verticalSpace24,
+            PreviewHorizontalScroll(
+              title: S.of(context).HallOfFame,
+              onViewAllTap: onViewAllAchievements,
+              previewItems: achievements.map((e) =>
+                  UiKitFameItem(
+                    asset: e.asset,
+                  )).toList(),
+            ),
+          ],
           if (profileStats != null) ...[
-            SpacingFoundation.verticalSpace16,
+            SpacingFoundation.verticalSpace24,
             Row(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -147,7 +165,7 @@ class ProfileCardBody extends StatelessWidget {
               ],
             ),
             if (showSupportShuffle) ...[
-              SpacingFoundation.verticalSpace16,
+              SpacingFoundation.verticalSpace24,
               SupportShuffleButton(onDonate: onDonate),
             ],
             SpacingFoundation.verticalSpace16,

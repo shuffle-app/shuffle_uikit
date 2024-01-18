@@ -187,6 +187,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Go": MessageLookupByLibrary.simpleMessage("Go!"),
         "GoToSettings": MessageLookupByLibrary.simpleMessage("Go to settings"),
         "Guess": MessageLookupByLibrary.simpleMessage("Guess"),
+        "HallOfFame": MessageLookupByLibrary.simpleMessage("Hall of Fame"),
         "HardToAnswer": MessageLookupByLibrary.simpleMessage("Hard to answer"),
         "HealthKit": MessageLookupByLibrary.simpleMessage("Health Kit"),
         "Helpful": MessageLookupByLibrary.simpleMessage("Helpful"),
@@ -400,6 +401,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Video": MessageLookupByLibrary.simpleMessage("Video"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Video (upload Files)"),
+        "ViewAll": MessageLookupByLibrary.simpleMessage("View all"),
         "VisitFirstToOpenNext":
             MessageLookupByLibrary.simpleMessage("Visit first to open next"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(

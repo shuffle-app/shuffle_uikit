@@ -278,6 +278,8 @@
   "Filters": "Filters",
   "ResetFilters": "Reset filters",
   "Recommended": "Recommended",
-  "NoConnection": "Sorry, no internet connection"
+  "NoConnection": "Sorry, no internet connection",
+  "HallOfFame": "Hall of Fame",
+  "ViewAll": "View all"
 
 }

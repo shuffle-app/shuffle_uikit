@@ -191,6 +191,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("Перейти в настройки"),
         "Guess": MessageLookupByLibrary.simpleMessage("Угадать"),
+        "HallOfFame": MessageLookupByLibrary.simpleMessage("Hall of Fame"),
         "HardToAnswer": MessageLookupByLibrary.simpleMessage("Сложно ответить"),
         "HealthKit": MessageLookupByLibrary.simpleMessage("Данные здоровья"),
         "Helpful": MessageLookupByLibrary.simpleMessage("Полезно"),
@@ -409,6 +410,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Video": MessageLookupByLibrary.simpleMessage("Видео"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Видео (загрузить)"),
+        "ViewAll": MessageLookupByLibrary.simpleMessage("View all"),
         "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(
             "Посети первое, открой следующее"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(
