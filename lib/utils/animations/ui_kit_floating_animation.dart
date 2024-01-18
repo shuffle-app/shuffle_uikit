@@ -13,24 +13,42 @@ class UiKitFloatingAnimation extends StatefulWidget {
 
 const _kMaxOffset = 18;
 
-class _UiKitFloatingAnimationState extends State<UiKitFloatingAnimation> with SingleTickerProviderStateMixin {
+class _UiKitFloatingAnimationState extends State<UiKitFloatingAnimation>
+    with SingleTickerProviderStateMixin, WidgetsBindingObserver {
   late final AnimationController _controller;
 
   late final double coefficientX;
   late final double coefficientY;
 
+  late final Duration duration;
+
   @override
   void initState() {
     super.initState();
     final rand = Random();
-    final duration = Duration(milliseconds: rand.nextInt(500) + 600);
+    duration = Duration(milliseconds: rand.nextInt(500) + 600);
     _controller = AnimationController(
       vsync: this,
       duration: duration,
     );
     coefficientX = rand.nextInt(_kMaxOffset) * (rand.nextBool() ? -1 : 1) / 5;
     coefficientY = rand.nextInt(_kMaxOffset) * (rand.nextBool() ? -1 : 1) / 5;
-    _controller.repeat(reverse: true,period: duration);
+    _controller.repeat(reverse: true, period: duration);
+  }
+
+  @override
+  Future<bool> didPopRoute() {
+    if (mounted) {
+      _controller.resync(this);
+      _controller.repeat(reverse: true, period: duration);
+    }
+    return super.didPopRoute();
+  }
+
+  @override
+  Future<bool> didPushRouteInformation(RouteInformation routeInformation) {
+    _controller.stop();
+    return super.didPushRouteInformation(routeInformation);
   }
 
   @override

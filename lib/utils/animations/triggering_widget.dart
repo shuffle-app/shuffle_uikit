@@ -25,7 +25,7 @@ class TriggeringWidget extends StatefulWidget {
 }
 
 class _TriggeringWidgetState extends State<TriggeringWidget>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin,WidgetsBindingObserver {
   late final controller = AnimationController(
     duration: widget.animDuration,
     vsync: this,
@@ -44,6 +44,21 @@ class _TriggeringWidgetState extends State<TriggeringWidget>
       await Future.delayed(widget.startDelay ?? Duration.zero);
       unawaited(controller.repeat(reverse: true,period: const Duration(seconds: 10)));
     }();
+  }
+
+  @override
+  Future<bool> didPopRoute() {
+    if (mounted) {
+      controller.resync(this);
+      controller.repeat(reverse: true, period: const Duration(seconds: 10));
+    }
+    return super.didPopRoute();
+  }
+
+  @override
+  Future<bool> didPushRouteInformation(RouteInformation routeInformation) {
+    controller.stop();
+    return super.didPushRouteInformation(routeInformation);
   }
 
   @override
