@@ -49,6 +49,8 @@ class UiKitProUserAccountAvatarWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      clipBehavior: Clip.hardEdge,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         color: ColorsFoundation.darkNeutral400,
         borderRadius: borderRadius ?? BorderRadiusFoundation.max,
@@ -62,6 +64,7 @@ class UiKitProUserAccountAvatarWrapper extends StatelessWidget {
                 width: borderWidth,
               ),
       ),
+      // child: child,
       child: ClipRRect(
         borderRadius: borderRadius ?? BorderRadiusFoundation.max,
         child: child,

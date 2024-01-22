@@ -6,7 +6,7 @@ extension FactoryExtention on BuildContext {
   Widget userAvatar({
     required UserAvatarSize size,
     required UserTileType type,
-    required String imageUrl,
+    String? imageUrl,
     required String userName,
   }) =>
       WidgetsFactory.of(this)!

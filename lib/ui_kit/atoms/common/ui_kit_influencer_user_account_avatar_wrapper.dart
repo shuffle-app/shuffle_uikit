@@ -48,6 +48,7 @@ class UiKitInfluencerUserAccountAvatarWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.hardEdge,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         color: ColorsFoundation.darkNeutral400,
         borderRadius: borderRadius ?? BorderRadiusFoundation.max,

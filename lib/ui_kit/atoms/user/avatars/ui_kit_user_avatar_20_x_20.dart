@@ -43,14 +43,37 @@ class UiKitUserAvatar20x20 extends StatelessWidget implements UserAvatarFactory 
             );
         }
       },
-      errorWidget: UiKitProUserAccountAvatarWrapper.disabled(
-        borderWidth: borderWidth,
-        child: _PlaceHolder(
-          text: userName.split(' ').length > 1
-              ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
-              : userName,
-        ),
-      ),
+      errorWidget: switch (type) {
+        UserTileType.ordinary => UiKitProUserAccountAvatarWrapper.disabled(
+            borderWidth: borderWidth,
+            child: _PlaceHolder(
+              text: userName.split(' ').length > 1
+                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
+                  : userName.characters.first,
+            )),
+        UserTileType.premium => UiKitPremiumUserAccountAvatarWrapper.enabled(
+            borderWidth: borderWidth,
+            child: _PlaceHolder(
+              text: userName.split(' ').length > 1
+                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
+                  : userName.characters.first,
+            )),
+        UserTileType.influencer => UiKitInfluencerUserAccountAvatarWrapper.enabled(
+            borderWidth: borderWidth,
+            child: _PlaceHolder(
+              text: userName.split(' ').length > 1
+                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
+                  : userName.characters.first,
+            )),
+        UserTileType.pro => UiKitProUserAccountAvatarWrapper.enabled(
+          borderWidth: borderWidth,
+          child: _PlaceHolder(
+            text: userName.split(' ').length > 1
+                ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
+                : userName.characters.first,
+          ),
+        )
+      },
     );
   }
 }
@@ -69,12 +92,14 @@ class _PlaceHolder extends StatelessWidget {
 
     return Text(
       text.toUpperCase(),
+      maxLines: 1,
       style: textTheme?.caption3Medium.copyWith(
         color: ColorsFoundation.mutedText,
+        fontSize: 8.w
       ),
-    ).paddingSymmetric(
-      vertical: EdgeInsetsFoundation.vertical4,
-      horizontal: EdgeInsetsFoundation.horizontal2,
+    // ).paddingSymmetric(
+    //   vertical: EdgeInsetsFoundation.vertical4,
+    //   horizontal: EdgeInsetsFoundation.horizontal2,
     );
   }
 }
