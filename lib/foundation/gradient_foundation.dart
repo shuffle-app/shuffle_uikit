@@ -171,6 +171,19 @@ class GradientFoundation {
     // transform: GradientRotation(pi / 12),
   );
 
+  static const starLinearGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.pink,
+      ColorsFoundation.error,
+      ColorsFoundation.yellow,
+    ],
+    stops: [0.3,0.55,0.7],
+
+    begin: Alignment.topRight,
+    end: Alignment.bottomLeft,
+    // transform: GradientRotation(pi / 12),
+  );
+
   static const donationLinearGradient = LinearGradient(
     colors: [
       ColorsFoundation.yellow,
