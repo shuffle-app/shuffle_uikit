@@ -129,16 +129,238 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
-        PreviewHorizontalScroll(
-          title: 'Hall of Fame',
-          onViewAllTap: () => Navigator.pushNamed(context, AppRoutes.hallOfFame),
-          previewItems: List.generate(
-              10,
-              (i) => UiKitFameItem(
-                    asset: i % 2 == 0
-                        ? GraphicsFoundation.instance.png.goldenCup
-                        : GraphicsFoundation.instance.png.goldenMedal,
-                  )),
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            context.userAvatar(
+              size: UserAvatarSize.x20x20,
+              type: UserTileType.ordinary,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x20x20,
+              type: UserTileType.pro,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x20x20,
+              type: UserTileType.influencer,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x20x20,
+              type: UserTileType.premium,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+          ],
+        ).paddingAll(EdgeInsetsFoundation.all8),
+        SpacingFoundation.verticalSpace16,
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            context.userAvatar(
+              size: UserAvatarSize.x24x24,
+              type: UserTileType.ordinary,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x24x24,
+              type: UserTileType.pro,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x24x24,
+              type: UserTileType.influencer,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x24x24,
+              type: UserTileType.premium,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+          ],
+        ).paddingAll(EdgeInsetsFoundation.all8),
+        SpacingFoundation.verticalSpace16,
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            context.userAvatar(
+              size: UserAvatarSize.x32x32,
+              type: UserTileType.ordinary,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x32x32,
+              type: UserTileType.pro,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x32x32,
+              type: UserTileType.influencer,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x32x32,
+              type: UserTileType.premium,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+          ],
+        ).paddingAll(EdgeInsetsFoundation.all8),
+        SpacingFoundation.verticalSpace16,
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            context.userAvatar(
+              size: UserAvatarSize.x40x40,
+              type: UserTileType.ordinary,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x40x40,
+              type: UserTileType.pro,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x40x40,
+              type: UserTileType.influencer,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x40x40,
+              type: UserTileType.premium,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+          ],
+        ).paddingAll(EdgeInsetsFoundation.all8),
+        SpacingFoundation.verticalSpace16,
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            context.userAvatar(
+              size: UserAvatarSize.x48x48,
+              type: UserTileType.ordinary,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x48x48,
+              type: UserTileType.pro,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x48x48,
+              type: UserTileType.influencer,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x48x48,
+              type: UserTileType.premium,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+          ],
+        ).paddingAll(EdgeInsetsFoundation.all8),
+        SpacingFoundation.verticalSpace16,
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            context.userAvatar(
+              size: UserAvatarSize.x60x60,
+              type: UserTileType.ordinary,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x60x60,
+              type: UserTileType.pro,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x60x60,
+              type: UserTileType.influencer,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+            SpacingFoundation.horizontalSpace8,
+            context.userAvatar(
+              size: UserAvatarSize.x60x60,
+              type: UserTileType.premium,
+              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              userName: 'Doniyor Murodkulov',
+            ),
+          ],
+        ).paddingAll(EdgeInsetsFoundation.all8),
+        SpacingFoundation.verticalSpace16,
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              context.userAvatar(
+                size: UserAvatarSize.x120x120,
+                type: UserTileType.ordinary,
+                imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+                userName: 'Doniyor Murodkulov',
+              ),
+              SpacingFoundation.horizontalSpace8,
+              context.userAvatar(
+                size: UserAvatarSize.x120x120,
+                type: UserTileType.pro,
+                imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+                userName: 'Doniyor Murodkulov',
+              ),
+              SpacingFoundation.horizontalSpace8,
+              context.userAvatar(
+                size: UserAvatarSize.x120x120,
+                type: UserTileType.influencer,
+                imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+                userName: 'Doniyor Murodkulov',
+              ),
+              SpacingFoundation.horizontalSpace8,
+              context.userAvatar(
+                size: UserAvatarSize.x120x120,
+                type: UserTileType.premium,
+                imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+                userName: 'Doniyor Murodkulov',
+              ),
+            ],
+          ).paddingAll(EdgeInsetsFoundation.all8),
         ),
         SpacingFoundation.verticalSpace16,
         const Center(child: MemberPlate()),

@@ -5,6 +5,16 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
+  static const proUserAvatarBorder = LinearGradient(
+    colors: [
+      ColorsFoundation.proUserAvatarBorder,
+      ColorsFoundation.darkNeutral900,
+      ColorsFoundation.proUserAvatarBorder,
+    ],
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
+  );
+
   static const shuffleMemberBorder = GradientBoxBorder(
     gradient: LinearGradient(
       colors: [
