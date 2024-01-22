@@ -60,7 +60,7 @@
   "WhatYouLike": "आप को क्या पसंद है",
   "TapTwiceToMarkYourFavorites": "अपने पसंदीदा को चिह्नित करने के लिए दो बार टैप करें।",
   "TryYourself": "स्वयं प्रयास करें",
-  "InviteToFavouritePlaces": "पसंदीदा स्थानों पर आमंत्रित करें",
+  "InviteToFavoritePlaces": "पसंदीदा स्थानों पर आमंत्रित करें",
   "Invite": "आमंत्रित करना",
   "SelectDate": "तारीख़ चुनें",
   "Next": "अगला",
@@ -278,5 +278,9 @@
   "InviteList": "Invite list",
   "Users": "{count,plural, =0{{count} users} =1{{count} user} =2{{count} users} few{{count} users} many{{count} users} other{{count} users}}",
   "Messages": "Messages",
-  "NoConnection": "Sorry, no internet connection"
+  "NoConnection": "Sorry, no internet connection",
+  "HallOfFame": "Hall of Fame",
+  "ViewAll": "View all",
+  "NoFavoritesFound": "No favorites found",
+  "Events": "Events"
 }

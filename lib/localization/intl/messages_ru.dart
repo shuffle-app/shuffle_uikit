@@ -166,6 +166,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ошибка без сообщения"),
         "Event": MessageLookupByLibrary.simpleMessage("Событие"),
         "EventType": MessageLookupByLibrary.simpleMessage("Тип события"),
+        "Events": MessageLookupByLibrary.simpleMessage("Events"),
         "Faq": MessageLookupByLibrary.simpleMessage("ФАК"),
         "Favorites": MessageLookupByLibrary.simpleMessage("Избранное"),
         "FeaturesEnableGeolocation":
@@ -191,6 +192,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("Перейти в настройки"),
         "Guess": MessageLookupByLibrary.simpleMessage("Угадать"),
+        "HallOfFame": MessageLookupByLibrary.simpleMessage("Hall of Fame"),
         "HardToAnswer": MessageLookupByLibrary.simpleMessage("Сложно ответить"),
         "HealthKit": MessageLookupByLibrary.simpleMessage("Данные здоровья"),
         "Helpful": MessageLookupByLibrary.simpleMessage("Полезно"),
@@ -209,7 +211,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "InviteList": MessageLookupByLibrary.simpleMessage("Invite list"),
         "InviteMore": MessageLookupByLibrary.simpleMessage("Пригласить ещё"),
         "InvitePeople": MessageLookupByLibrary.simpleMessage("Пригласить"),
-        "InviteToFavouritePlaces": MessageLookupByLibrary.simpleMessage(
+        "InviteToFavoritePlaces": MessageLookupByLibrary.simpleMessage(
             "Пригласить в избранные места"),
         "InvitesNPeopleTo": m6,
         "InvitesYouTo":
@@ -244,6 +246,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Sorry, no internet connection"),
         "NoDateSelected":
             MessageLookupByLibrary.simpleMessage("Дата не выбрана"),
+        "NoFavoritesFound":
+            MessageLookupByLibrary.simpleMessage("No favorites found"),
         "NoHealthKitAvailableOnYourDevice":
             MessageLookupByLibrary.simpleMessage(
                 "Не доступны данные здоровья, результат будет случайным"),
@@ -409,6 +413,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Video": MessageLookupByLibrary.simpleMessage("Видео"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Видео (загрузить)"),
+        "ViewAll": MessageLookupByLibrary.simpleMessage("View all"),
         "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(
             "Посети первое, открой следующее"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(

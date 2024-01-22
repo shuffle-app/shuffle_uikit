@@ -5,7 +5,7 @@ class UiKitLeadingRadioTile extends StatelessWidget {
   final bool selected;
   final String title;
   final String? avatarLink;
-  final List<UiKitTag>? tags;
+  final List<UiKitTag> tags;
   final VoidCallback? onTap;
 
   const UiKitLeadingRadioTile({
@@ -52,11 +52,18 @@ class UiKitLeadingRadioTile extends StatelessWidget {
                       style: textTheme?.caption1Bold,
                     ),
                     SpacingFoundation.verticalSpace4,
-                    Wrap(
-                      spacing: 8,
-                      runSpacing: 8,
-                      children: tags?.map<Widget>((e) => UiKitTagWidget(title: e.title, icon: e.icon)).toList() ?? [],
-                    ),
+                    SizedBox(
+                        height: 11.2.h,
+                        child: ListView.separated(
+                            scrollDirection: Axis.horizontal,
+                            shrinkWrap: true,
+                            primary: false,
+                            itemBuilder: (BuildContext context, int index) {
+                              final tag = tags[index];
+                              return UiKitTagWidget(title: tag.title, icon: tag.icon);
+                            },
+                            separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace8,
+                            itemCount: tags.length))
                   ],
                 ),
               ),
