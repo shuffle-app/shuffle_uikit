@@ -13,13 +13,14 @@ class UiKitLeadingRadioTile extends StatelessWidget {
     this.selected = false,
     required this.title,
     required this.avatarLink,
-    required this.tags,
+    this.tags = const [],
     this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
+
 
     return Material(
       color: Colors.transparent,
@@ -39,6 +40,8 @@ class UiKitLeadingRadioTile extends StatelessWidget {
                 borderRadius: BorderRadiusFoundation.all16,
                 child: ImageWidget(
                   link: avatarLink,
+                  width: 0.33.sw,
+                  height: 0.33.sw/1.7,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -49,6 +52,8 @@ class UiKitLeadingRadioTile extends StatelessWidget {
                   children: [
                     Text(
                       title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                       style: textTheme?.caption1Bold,
                     ),
                     SpacingFoundation.verticalSpace4,

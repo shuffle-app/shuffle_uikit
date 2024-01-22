@@ -120,10 +120,10 @@ class S {
     );
   }
 
-  /// `Point Balance`
+  /// `Point\nBalance`
   String get PointBalance {
     return Intl.message(
-      'Point Balance',
+      'Point\nBalance',
       name: 'PointBalance',
       desc: '',
       args: [],

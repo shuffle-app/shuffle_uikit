@@ -4,10 +4,11 @@ analyzer:
   exclude:
     - '**.config.dart'
     - '**.g.dart'
-#    - 'example/**'
+    - 'example/**'
   errors:
     todo: ignore
     invalid_annotation_target: ignore
+    depend_on_referenced_packages: ignore
   plugins:
     - dart_code_metrics
 

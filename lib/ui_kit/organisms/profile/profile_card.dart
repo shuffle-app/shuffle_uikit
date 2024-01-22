@@ -17,6 +17,8 @@ class ProfileCard extends StatelessWidget {
   final Widget? badge;
   final ProfileCardType? profileType;
   final List<UiKitTag>? tags;
+  final VoidCallback? onViewAllAchievements;
+  final List<UiKitAchievementsModel> achievements;
 
   const ProfileCard({
     Key? key,
@@ -34,6 +36,8 @@ class ProfileCard extends StatelessWidget {
     this.matchingInterests,
     this.profileType,
     this.tags,
+    this.onViewAllAchievements,
+    this.achievements = const [],
   }) : super(key: key);
 
   @override
@@ -53,6 +57,8 @@ class ProfileCard extends StatelessWidget {
       profileStats: profileStats,
       showSupportShuffle: showSupportShuffle,
       onDonate: onDonate,
+      onViewAllAchievements: onViewAllAchievements,
+      achievements: achievements,
     );
     if (badge != null) {
       return Stack(
