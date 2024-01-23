@@ -166,6 +166,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ошибка без сообщения"),
         "Event": MessageLookupByLibrary.simpleMessage("Событие"),
         "EventType": MessageLookupByLibrary.simpleMessage("Тип события"),
+        "Events": MessageLookupByLibrary.simpleMessage("Events"),
         "Faq": MessageLookupByLibrary.simpleMessage("ФАК"),
         "Favorites": MessageLookupByLibrary.simpleMessage("Избранное"),
         "FeaturesEnableGeolocation":
@@ -210,7 +211,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "InviteList": MessageLookupByLibrary.simpleMessage("Invite list"),
         "InviteMore": MessageLookupByLibrary.simpleMessage("Пригласить ещё"),
         "InvitePeople": MessageLookupByLibrary.simpleMessage("Пригласить"),
-        "InviteToFavouritePlaces": MessageLookupByLibrary.simpleMessage(
+        "InviteToFavoritePlaces": MessageLookupByLibrary.simpleMessage(
             "Пригласить в избранные места"),
         "InvitesNPeopleTo": m6,
         "InvitesYouTo":
@@ -245,6 +246,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Sorry, no internet connection"),
         "NoDateSelected":
             MessageLookupByLibrary.simpleMessage("Дата не выбрана"),
+        "NoFavoritesFound":
+            MessageLookupByLibrary.simpleMessage("No favorites found"),
         "NoHealthKitAvailableOnYourDevice":
             MessageLookupByLibrary.simpleMessage(
                 "Не доступны данные здоровья, результат будет случайным"),

@@ -162,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Error occured without message"),
         "Event": MessageLookupByLibrary.simpleMessage("Event"),
         "EventType": MessageLookupByLibrary.simpleMessage("Event type"),
+        "Events": MessageLookupByLibrary.simpleMessage("Events"),
         "Faq": MessageLookupByLibrary.simpleMessage("Faq"),
         "Favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "FeaturesEnableGeolocation":
@@ -206,7 +207,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "InviteList": MessageLookupByLibrary.simpleMessage("Invite list"),
         "InviteMore": MessageLookupByLibrary.simpleMessage("Invite more"),
         "InvitePeople": MessageLookupByLibrary.simpleMessage("Invite people"),
-        "InviteToFavouritePlaces":
+        "InviteToFavoritePlaces":
             MessageLookupByLibrary.simpleMessage("Invite to favourite places"),
         "InvitesNPeopleTo": m6,
         "InvitesYouTo": MessageLookupByLibrary.simpleMessage("Invites you to"),
@@ -241,6 +242,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Sorry, no internet connection"),
         "NoDateSelected":
             MessageLookupByLibrary.simpleMessage("No date selected"),
+        "NoFavoritesFound":
+            MessageLookupByLibrary.simpleMessage("No favorites found"),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "No health kit available on your device, so the result will be random"),
         "NoPhotoHereYet":

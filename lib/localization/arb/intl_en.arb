@@ -60,7 +60,7 @@
   "WhatYouLike": "What you like",
   "TapTwiceToMarkYourFavorites": ". Tap twice to mark your favorites.",
   "TryYourself": "Try\nyourself",
-  "InviteToFavouritePlaces": "Invite to favourite places",
+  "InviteToFavoritePlaces": "Invite to your \"Favorites\"",
   "Invite": "Invite",
   "SelectDate": "Select date",
   "Next": "Next",
@@ -280,6 +280,7 @@
   "Recommended": "Recommended",
   "NoConnection": "Sorry, no internet connection",
   "HallOfFame": "Hall of Fame",
-  "ViewAll": "View all"
-
+  "ViewAll": "View all",
+  "NoFavoritesFound": "No favorites found",
+  "Events": "Events"
 }

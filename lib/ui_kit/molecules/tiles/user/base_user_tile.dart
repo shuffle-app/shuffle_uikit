@@ -22,6 +22,14 @@ abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
+    late final UserTileType  userType;
+    if(trailing.runtimeType == ProAccountMark) {
+      userType = UserTileType.pro;
+    } else if (trailing.runtimeType == PremiumAccountMark) {
+      userType = UserTileType.premium;
+    } else {
+      userType = UserTileType.ordinary;
+    }
 
     return Material(
       color: Colors.transparent,
@@ -41,11 +49,17 @@ abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              BorderedUserCircleAvatar(
+              context.userAvatar(
+                size: UserAvatarSize.x40x40,
+                type: userType,
                 imageUrl: avatarUrl,
-                size: 37.r,
-                border: avatarBorder,
+                userName: name ?? '',
               ),
+              // BorderedUserCircleAvatar(
+              //   imageUrl: avatarUrl,
+              //   size: 37.r,
+              //   border: avatarBorder,
+              // ),
               SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: Column(

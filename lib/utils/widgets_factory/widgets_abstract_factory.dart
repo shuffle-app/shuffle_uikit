@@ -89,6 +89,13 @@ abstract class WidgetsAbstractFactory {
   AdvertisementFactory createAdvertisement({
     required BaseUiKitAdvertisementBannerData data,
   });
+
+  UserAvatarFactory createUserAvatar({
+    required UserAvatarSize size,
+    required UserTileType type,
+    required String imageUrl,
+    required String userName,
+  });
 // InputFieldFactory createInputField({
 //   required TextEditingController controller,
 //   String? hintText,
@@ -114,6 +121,10 @@ abstract class NotificationPopUpFactory {
   Widget build(BuildContext context);
 }
 
+abstract class UserAvatarFactory {
+  Widget build(BuildContext context);
+}
+
 class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   const WidgetsFactory({required super.child, super.key});
 
@@ -121,6 +132,59 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     final instance = context.findAncestorWidgetOfExactType<WidgetsFactory>();
 
     return instance;
+  }
+
+  @override
+  UserAvatarFactory createUserAvatar({
+    required UserAvatarSize size,
+    required UserTileType type,
+    String? imageUrl,
+    required String userName,
+  }) {
+    switch (size) {
+      case UserAvatarSize.x20x20:
+        return UiKitUserAvatar20x20(
+          type: type,
+          imageUrl: imageUrl ?? '',
+          userName: userName,
+        );
+      case UserAvatarSize.x24x24:
+        return UiKitUserAvatar24x24(
+          type: type,
+          imageUrl: imageUrl ?? '',
+          userName: userName,
+        );
+      case UserAvatarSize.x32x32:
+        return UiKitUserAvatar32x32(
+          type: type,
+          imageUrl: imageUrl ?? '',
+          userName: userName,
+        );
+      case UserAvatarSize.x40x40:
+        return UiKitUserAvatar40x40(
+          type: type,
+          imageUrl: imageUrl ?? '',
+          userName: userName,
+        );
+      case UserAvatarSize.x48x48:
+        return UiKitUserAvatar48x48(
+          type: type,
+          imageUrl: imageUrl ?? '',
+          userName: userName,
+        );
+      case UserAvatarSize.x60x60:
+        return UiKitUserAvatar60x60(
+          type: type,
+          imageUrl: imageUrl ?? '',
+          userName: userName,
+        );
+      case UserAvatarSize.x120x120:
+        return UiKitUserAvatar120x120(
+          type: type,
+          imageUrl: imageUrl ?? '',
+          userName: userName,
+        );
+    }
   }
 
   @override

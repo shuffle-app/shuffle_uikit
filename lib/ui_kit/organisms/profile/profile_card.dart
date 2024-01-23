@@ -19,6 +19,7 @@ class ProfileCard extends StatelessWidget {
   final List<UiKitTag>? tags;
   final VoidCallback? onViewAllAchievements;
   final List<UiKitAchievementsModel> achievements;
+  final UserTileType userTileType;
 
   const ProfileCard({
     Key? key,
@@ -36,6 +37,7 @@ class ProfileCard extends StatelessWidget {
     this.matchingInterests,
     this.profileType,
     this.tags,
+    this.userTileType = UserTileType.ordinary,
     this.onViewAllAchievements,
     this.achievements = const [],
   }) : super(key: key);
@@ -49,6 +51,7 @@ class ProfileCard extends StatelessWidget {
       matchingInterests: matchingInterests,
       canFollow: followers != null && onFollow != null,
       name: name,
+      userTileType: userTileType,
       nickname: nickname ?? '',
       followers: followers,
       onFollow: onFollow,

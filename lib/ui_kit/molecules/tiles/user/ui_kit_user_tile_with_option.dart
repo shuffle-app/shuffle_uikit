@@ -11,6 +11,7 @@ class UiKitUserTileWithOption extends StatelessWidget {
     required this.options,
     this.date,
     this.subtitle,
+    this.type = UserTileType.ordinary,
   });
 
   final String name;
@@ -19,6 +20,7 @@ class UiKitUserTileWithOption extends StatelessWidget {
   final List<UiKitPopUpMenuButtonOption> options;
   final String? subtitle;
   final DateTime? date;
+  final UserTileType type;
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +29,7 @@ class UiKitUserTileWithOption extends StatelessWidget {
     return Row(
       children: [
         SpacingFoundation.horizontalSpace12,
-        BorderedUserCircleAvatar(
-          imageUrl: avatarLink,
-          size: 45.w,
-          name: name,
-        ).paddingOnly(bottom: SpacingFoundation.verticalSpacing2),
+        context.userAvatar(size: UserAvatarSize.x40x40, type: type, userName: name, imageUrl: avatarLink).paddingOnly(bottom: SpacingFoundation.verticalSpacing2),
         SpacingFoundation.horizontalSpace12,
         Expanded(
           child: Column(

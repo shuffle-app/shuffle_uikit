@@ -58,7 +58,7 @@ class UiKitLeadingRadioTile extends StatelessWidget {
                     ),
                     SpacingFoundation.verticalSpace4,
                     SizedBox(
-                        height: 10.h,
+                        height: 11.2.h,
                         child: ListView.separated(
                             scrollDirection: Axis.horizontal,
                             shrinkWrap: true,

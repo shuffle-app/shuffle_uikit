@@ -661,11 +661,11 @@ class S {
     );
   }
 
-  /// `Invite to favourite places`
-  String get InviteToFavouritePlaces {
+  /// `Invite to your "Favorites"`
+  String get InviteToFavoritePlaces {
     return Intl.message(
-      'Invite to favourite places',
-      name: 'InviteToFavouritePlaces',
+      'Invite to your "Favorites"',
+      name: 'InviteToFavoritePlaces',
       desc: '',
       args: [],
     );
@@ -2872,6 +2872,26 @@ class S {
     return Intl.message(
       'View all',
       name: 'ViewAll',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No favorites found`
+  String get NoFavoritesFound {
+    return Intl.message(
+      'No favorites found',
+      name: 'NoFavoritesFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Events`
+  String get Events {
+    return Intl.message(
+      'Events',
+      name: 'Events',
       desc: '',
       args: [],
     );

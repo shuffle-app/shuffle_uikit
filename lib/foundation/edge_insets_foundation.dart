@@ -23,13 +23,19 @@ class EdgeInsetsFoundation {
 
   static double get all32 => 32;
 
+  static double get horizontal2 => SpacingFoundation.horizontalSpacing2;
+
   static double get horizontal4 => SpacingFoundation.horizontalSpacing4;
 
   static double get horizontal6 => SpacingFoundation.horizontalSpacing6;
 
   static double get horizontal8 => SpacingFoundation.horizontalSpacing8;
 
+  static double get horizontal10 => SpacingFoundation.horizontalSpacing10;
+
   static double get horizontal12 => SpacingFoundation.horizontalSpacing12;
+
+  static double get horizontal14 => SpacingFoundation.horizontalSpacing14;
 
   static double get horizontal16 => SpacingFoundation.horizontalSpacing16;
 

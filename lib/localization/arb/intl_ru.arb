@@ -60,7 +60,7 @@
   "WhatYouLike": "Что вам нравится",
   "TapTwiceToMarkYourFavorites": ". Нажмите дважды, чтобы отметить избранное.",
   "TryYourself": "Попробуйте\nсами",
-  "InviteToFavouritePlaces": "Пригласить в избранные места",
+  "InviteToFavoritePlaces": "Пригласить в избранные места",
   "Invite": "Пригласить",
   "SelectDate": "Выберите дату",
   "Next": "Далее",
@@ -159,6 +159,7 @@
   "Shuffle": "Shuffle",
   "ShuffleWithRightWhitespace": "Shuffle ",
   "Places": "Места",
+  "Events": "Events",
   "CreateYourPlaceAndInvitePeople": "Создайте своё место и пригласи людей",
   "CreatePlace": "Создать место",
   "Website": "Сайт",
@@ -280,5 +281,6 @@
   "Recommended": "Рекомендуем",
   "NoConnection": "Sorry, no internet connection",
   "HallOfFame": "Hall of Fame",
-  "ViewAll": "View all"
+  "ViewAll": "View all",
+  "NoFavoritesFound": "No favorites found"
 }

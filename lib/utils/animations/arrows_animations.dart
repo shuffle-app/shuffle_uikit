@@ -19,7 +19,7 @@ class _ArrowsAnimationState extends State<ArrowsAnimation> with SingleTickerProv
 
   @override
   void initState() {
-    controller.repeat(period: const Duration(milliseconds: 180));
+    controller.repeat(period: const Duration(seconds: 1));
     super.initState();
   }
 

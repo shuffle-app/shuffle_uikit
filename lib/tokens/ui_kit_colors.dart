@@ -82,6 +82,7 @@ class UiKitColors {
   static const shunyGreyGradientBegin = Color(0xff222222);
   static const shunyGreyGradientMid = Color(0xff7F7F7F);
   static const shunyGreyGradientEnd = Color(0xff565656);
+  static const proUserAvatarBorderGradientBegin = Color(0xffC6E216);
 
   UiKitColors._();
 }

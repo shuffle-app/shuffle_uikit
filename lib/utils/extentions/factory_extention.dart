@@ -3,6 +3,21 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 extension FactoryExtention on BuildContext {
+  Widget userAvatar({
+    required UserAvatarSize size,
+    required UserTileType type,
+    String? imageUrl,
+    required String userName,
+  }) =>
+      WidgetsFactory.of(this)!
+          .createUserAvatar(
+            size: size,
+            type: type,
+            imageUrl: imageUrl,
+            userName: userName,
+          )
+          .build(this);
+
   Widget outlinedBadgeButton({
     required BaseUiKitButtonData data,
     Alignment? badgeAlignment,

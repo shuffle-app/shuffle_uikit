@@ -162,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("संदेश के बिना त्रुटि हुई"),
         "Event": MessageLookupByLibrary.simpleMessage("घटना"),
         "EventType": MessageLookupByLibrary.simpleMessage("घटना प्रकार"),
+        "Events": MessageLookupByLibrary.simpleMessage("Events"),
         "Faq": MessageLookupByLibrary.simpleMessage("सामान्य प्रश्न"),
         "Favorites": MessageLookupByLibrary.simpleMessage("पसंदीदा"),
         "FeaturesEnableGeolocation": MessageLookupByLibrary.simpleMessage(
@@ -211,7 +212,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("और अधिक को आमंत्रित करें"),
         "InvitePeople":
             MessageLookupByLibrary.simpleMessage("लोगो को निमंत्रण भेजो"),
-        "InviteToFavouritePlaces": MessageLookupByLibrary.simpleMessage(
+        "InviteToFavoritePlaces": MessageLookupByLibrary.simpleMessage(
             "पसंदीदा स्थानों पर आमंत्रित करें"),
         "InvitesNPeopleTo": m6,
         "InvitesYouTo":
@@ -246,6 +247,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Sorry, no internet connection"),
         "NoDateSelected":
             MessageLookupByLibrary.simpleMessage("कोई दिनांक चयनित नहीं"),
+        "NoFavoritesFound":
+            MessageLookupByLibrary.simpleMessage("No favorites found"),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "आपके डिवाइस पर कोई स्वास्थ्य किट उपलब्ध नहीं है, इसलिए परिणाम यादृच्छिक होगा"),
         "NoPhotoHereYet": MessageLookupByLibrary.simpleMessage(
