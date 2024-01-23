@@ -8,6 +8,7 @@ class UiKitFindSomeoneCard extends StatelessWidget {
   final int? userPoints;
   final int? sameInterests;
   final VoidCallback? onMessage;
+  final UserTileType userTileType;
 
   const UiKitFindSomeoneCard({
     super.key,
@@ -17,11 +18,11 @@ class UiKitFindSomeoneCard extends StatelessWidget {
     this.userPoints,
     this.sameInterests,
     this.onMessage,
+    this.userTileType = UserTileType.ordinary,
   });
 
   @override
   Widget build(BuildContext context) {
-    double calculatedWidth = SizesFoundation.screenWidth;
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final colorScheme = context.uiKitTheme?.colorScheme;
 
@@ -36,26 +37,25 @@ class UiKitFindSomeoneCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: [
-          Expanded(
+          Flexible(
             flex: 3,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Center(
-                  child: CircularAvatar(
-                    avatarUrl: avatarUrl ?? '',
-                    height: calculatedWidth * 0.1875,
-                  ),
-                ),
+                ConstrainedBox(
+                    constraints: BoxConstraints.loose(Size(60.sp, 60.sp)),
+                    child: context.userAvatar(
+                        size: UserAvatarSize.x60x60,
+                        type: userTileType,
+                        userName: userName ?? '',
+                        imageUrl: avatarUrl)),
                 SpacingFoundation.verticalSpace2,
-                Expanded(
-                  child: Text(
-                    '@$userNickName',
-                    style: boldTextTheme?.caption1Bold.copyWith(overflow: TextOverflow.ellipsis),
-                    textAlign: TextAlign.center,
-                    maxLines: 1,
-                  ),
+                Text(
+                  '@$userNickName',
+                  style: boldTextTheme?.caption1Bold.copyWith(overflow: TextOverflow.ellipsis),
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
                 ),
                 SpacingFoundation.verticalSpace2,
                 Text(
@@ -71,7 +71,7 @@ class UiKitFindSomeoneCard extends StatelessWidget {
             ),
           ),
           SpacingFoundation.horizontalSpace8,
-          Expanded(
+          Flexible(
             flex: 5,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

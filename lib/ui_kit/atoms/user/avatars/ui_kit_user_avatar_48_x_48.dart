@@ -15,17 +15,30 @@ class UiKitUserAvatar48x48 extends StatelessWidget implements UserAvatarFactory 
 
   @override
   Widget build(BuildContext context) {
-    const borderWidth = 2.5;
+    final borderWidth = 2.5.w;
 
     return ImageWidget(
       link: imageUrl,
       width: 0.15.sw,
       height: 0.15.sw,
       fit: BoxFit.cover,
+      cardColor: Colors.transparent,
       imageBuilder: (context, child, frame, syncLoaded) {
         switch (type) {
           case UserTileType.ordinary:
-            return ClipOval(child: child);
+            return DecoratedBox(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadiusFoundation.max,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.white.withOpacity(0.25),
+                      blurRadius: 10,
+                      spreadRadius: 3,
+                      offset: Offset.zero,
+                    )
+                  ],
+                ),
+                child: ClipOval(child: child));
           case UserTileType.pro:
             return UiKitProUserAccountAvatarWrapper.enabled(
               borderWidth: borderWidth,
@@ -95,9 +108,6 @@ class _Placeholder extends StatelessWidget {
       style: textTheme?.body.copyWith(
         color: ColorsFoundation.mutedText,
       ),
-      // ).paddingSymmetric(
-      //   vertical: EdgeInsetsFoundation.vertical14,
-      //   horizontal: EdgeInsetsFoundation.horizontal12,
     );
   }
 }

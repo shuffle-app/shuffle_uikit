@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_avatar.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_description.dart';
 
 class ProfileCardBody extends StatelessWidget {
@@ -20,9 +19,11 @@ class ProfileCardBody extends StatelessWidget {
   final ValueChanged<int>? onDonate;
   final VoidCallback? onViewAllAchievements;
   final List<UiKitAchievementsModel> achievements;
+  final UserTileType userTileType;
 
   const ProfileCardBody({
     super.key,
+    required this.userTileType,
     this.profileType,
     this.canFollow,
     this.nickname,
@@ -56,16 +57,11 @@ class ProfileCardBody extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: [
               if (canFollow ?? false)
-                ProfileAvatar(
-                  avatarLink: avatarUrl ?? '',
-                  name: name,
-                )
+                context.userAvatar(
+                    size: UserAvatarSize.x120x120, type: userTileType, userName: name ?? '', imageUrl: avatarUrl)
               else
-                CircularAvatar(
-                  height: 48.sp,
-                  avatarUrl: avatarUrl ?? '',
-                  name: name,
-                ),
+                context.userAvatar(
+                    size: UserAvatarSize.x48x48, type: userTileType, userName: name ?? '', imageUrl: avatarUrl),
               if (canFollow ?? false) SpacingFoundation.horizontalSpace16 else SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: profileType == ProfileCardType.personal

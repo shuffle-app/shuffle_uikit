@@ -2042,6 +2042,9 @@ class $AssetsImagesPngPreferenceQuestionsGen {
   /// File path: assets/images/png/preference_questions/teddy_bear.png
   AssetGenImage get teddyBear => const AssetGenImage('assets/images/png/preference_questions/teddy_bear.png');
 
+  /// File path: assets/images/png/preference_questions/thank_you.png
+  AssetGenImage get thankYou => const AssetGenImage('assets/images/png/preference_questions/thank_you.png');
+
   /// File path: assets/images/png/preference_questions/traveler.png
   AssetGenImage get traveler => const AssetGenImage('assets/images/png/preference_questions/traveler.png');
 
@@ -2111,6 +2114,7 @@ class $AssetsImagesPngPreferenceQuestionsGen {
         sunset,
         swans,
         teddyBear,
+        thankYou,
         traveler,
         waterSport,
         wheat,

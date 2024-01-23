@@ -5,19 +5,23 @@ class UiKitDonationCard extends StatelessWidget {
   const UiKitDonationCard({
     super.key,
     required this.number,
-    required this.title,
-    required this.subtitle,
+    required this.username,
+    required this.userTileType,
+    required this.name,
     required this.sum,
     this.points,
+    this.avatarUrl,
     this.isStarEnabled,
   });
 
   final int number;
-  final String title;
-  final String subtitle;
+  final String username;
+  final String name;
   final String sum;
   final String? points;
   final bool? isStarEnabled;
+  final UserTileType userTileType;
+  final String? avatarUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -27,15 +31,9 @@ class UiKitDonationCard extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text('#$number', style: boldTextTheme?.subHeadline),
+            SizedBox(width: 30.w, child: Text('#$number', style: boldTextTheme?.subHeadline)),
             SpacingFoundation.horizontalSpace12,
-            ClipRRect(
-              borderRadius: BorderRadiusFoundation.max,
-              child: ImageWidget(
-                rasterAsset: GraphicsFoundation.instance.png.profileAvatar,
-                height: 40.h,
-              ),
-            ),
+            context.userAvatar(size: UserAvatarSize.x40x40, type: userTileType, userName: name, imageUrl: avatarUrl),
             SpacingFoundation.horizontalSpace8,
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,14 +41,17 @@ class UiKitDonationCard extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(title, style: boldTextTheme?.caption1Bold),
+                    Text('@$username', style: boldTextTheme?.caption1Bold),
                     SpacingFoundation.horizontalSpace4,
                     if (isStarEnabled != null && isStarEnabled!)
-                      ImageWidget(
-                        rasterAsset: GraphicsFoundation.instance.png.star2,
-                        height: 16.h,
-                        fit: BoxFit.cover,
-                      ),
+                      GradientableWidget(
+                          gradient: GradientFoundation.starLinearGradient,
+                          child: ImageWidget(
+                            rasterAsset: GraphicsFoundation.instance.png.star2,
+                            height: 16.h,
+                            fit: BoxFit.cover,
+                            color: Colors.white,
+                          )),
                   ],
                 ),
                 Row(
@@ -59,7 +60,7 @@ class UiKitDonationCard extends StatelessWidget {
                     SizedBox(
                       width: 90.w,
                       child: Text(
-                        subtitle,
+                        name,
                         style: boldTextTheme?.caption1Medium.copyWith(
                           color: ColorsFoundation.darkNeutral900,
                         ),

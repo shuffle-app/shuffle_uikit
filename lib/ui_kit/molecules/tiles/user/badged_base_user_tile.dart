@@ -16,6 +16,14 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    late final UserTileType userType;
+    if (badge.runtimeType == PremiumMemberPlate) {
+      userType = UserTileType.premium;
+    } else if (badge.runtimeType == ProMemberPlate) {
+      userType = UserTileType.pro;
+    } else {
+      userType = UserTileType.ordinary;
+    }
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -30,25 +38,8 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: avatarBorder,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.white.withOpacity(0.25),
-                          blurRadius: 10,
-                          spreadRadius: 0,
-                          offset: Offset.zero,
-                        ),
-                      ],
-                    ),
-                    child: CircularAvatar(
-                      avatarUrl: data.avatarUrl ?? '',
-                      name: data.name,
-                      height: 0.15.sw,
-                    ),
-                  ),
+                  context.userAvatar(
+                      size: UserAvatarSize.x48x48, type: userType, userName: data.name ?? '', imageUrl: data.avatarUrl),
                   SpacingFoundation.horizontalSpace8,
                   Expanded(
                     child: Column(
@@ -60,11 +51,12 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
                           style: boldTextTheme?.subHeadline,
                         ),
                         SpacingFoundation.verticalSpace2,
-                        FutureBuilder(future: data.username, builder: (context, snapshot) =>
-                        Text(
-                          snapshot.hasData? (snapshot.data ?? '') : '',
-                          style: boldTextTheme?.body,
-                        )),
+                        FutureBuilder(
+                            future: data.username,
+                            builder: (context, snapshot) => Text(
+                                  snapshot.hasData ? (snapshot.data ?? '') : '',
+                                  style: boldTextTheme?.body,
+                                )),
                       ],
                     ),
                   ),

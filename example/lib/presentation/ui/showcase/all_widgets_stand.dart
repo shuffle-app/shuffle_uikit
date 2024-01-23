@@ -135,7 +135,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             context.userAvatar(
               size: UserAvatarSize.x20x20,
               type: UserTileType.ordinary,
-              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
               userName: 'Doniyor Murodkulov',
             ),
             SpacingFoundation.horizontalSpace8,
@@ -168,7 +168,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             context.userAvatar(
               size: UserAvatarSize.x24x24,
               type: UserTileType.ordinary,
-              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
               userName: 'Doniyor Murodkulov',
             ),
             SpacingFoundation.horizontalSpace8,
@@ -201,21 +201,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             context.userAvatar(
               size: UserAvatarSize.x32x32,
               type: UserTileType.ordinary,
-              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
               userName: 'Doniyor Murodkulov',
             ),
             SpacingFoundation.horizontalSpace8,
             context.userAvatar(
               size: UserAvatarSize.x32x32,
               type: UserTileType.pro,
-              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
               userName: 'Doniyor Murodkulov',
             ),
             SpacingFoundation.horizontalSpace8,
             context.userAvatar(
               size: UserAvatarSize.x32x32,
               type: UserTileType.influencer,
-              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
               userName: 'Doniyor Murodkulov',
             ),
             SpacingFoundation.horizontalSpace8,
@@ -234,7 +234,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             context.userAvatar(
               size: UserAvatarSize.x40x40,
               type: UserTileType.ordinary,
-              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
               userName: 'Doniyor Murodkulov',
             ),
             SpacingFoundation.horizontalSpace8,
@@ -255,7 +255,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             context.userAvatar(
               size: UserAvatarSize.x40x40,
               type: UserTileType.premium,
-              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
               userName: 'Doniyor Murodkulov',
             ),
           ],
@@ -267,7 +267,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             context.userAvatar(
               size: UserAvatarSize.x48x48,
               type: UserTileType.ordinary,
-              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
               userName: 'Doniyor Murodkulov',
             ),
             SpacingFoundation.horizontalSpace8,
@@ -281,7 +281,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             context.userAvatar(
               size: UserAvatarSize.x48x48,
               type: UserTileType.influencer,
-              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
               userName: 'Doniyor Murodkulov',
             ),
             SpacingFoundation.horizontalSpace8,
@@ -300,7 +300,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             context.userAvatar(
               size: UserAvatarSize.x60x60,
               type: UserTileType.ordinary,
-              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
               userName: 'Doniyor Murodkulov',
             ),
             SpacingFoundation.horizontalSpace8,
@@ -314,14 +314,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             context.userAvatar(
               size: UserAvatarSize.x60x60,
               type: UserTileType.influencer,
-              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
               userName: 'Doniyor Murodkulov',
             ),
             SpacingFoundation.horizontalSpace8,
             context.userAvatar(
               size: UserAvatarSize.x60x60,
               type: UserTileType.premium,
-              imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+              // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
               userName: 'Doniyor Murodkulov',
             ),
           ],
@@ -335,14 +335,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               context.userAvatar(
                 size: UserAvatarSize.x120x120,
                 type: UserTileType.ordinary,
-                imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+                // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
                 userName: 'Doniyor Murodkulov',
               ),
               SpacingFoundation.horizontalSpace8,
               context.userAvatar(
                 size: UserAvatarSize.x120x120,
                 type: UserTileType.pro,
-                imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
+                // imageUrl: GraphicsFoundation.instance.png.mockAvatar.path,
                 userName: 'Doniyor Murodkulov',
               ),
               SpacingFoundation.horizontalSpace8,

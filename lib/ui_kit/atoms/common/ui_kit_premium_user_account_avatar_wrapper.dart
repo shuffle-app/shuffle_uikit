@@ -52,6 +52,14 @@ class UiKitPremiumUserAccountAvatarWrapper extends StatelessWidget {
       decoration: BoxDecoration(
         color: ColorsFoundation.darkNeutral400,
         borderRadius: borderRadius ?? BorderRadiusFoundation.max,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.white.withOpacity(0.25),
+            blurRadius: 10,
+            spreadRadius: 3,
+            offset: Offset.zero,
+          ),
+        ],
         border: disabled
             ? Border.all(
                 color: ColorsFoundation.darkNeutral400.withOpacity(0.4),

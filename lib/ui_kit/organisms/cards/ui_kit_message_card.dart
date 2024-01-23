@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMessageCard extends StatelessWidget {
@@ -25,17 +24,6 @@ class UiKitMessageCard extends StatelessWidget {
 
   final int? unreadMessageCount;
 
-  BoxBorder? _getBorderByUserType(UserTileType userType, Color currentPremiumColor) {
-    switch (userType) {
-      case UserTileType.influencer:
-        return GradientFoundation.gradientBorder;
-      case UserTileType.premium:
-        return const GradientBoxBorder(gradient: GradientFoundation.greyGradient, width: 2);
-      default:
-        return null;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
@@ -55,13 +43,7 @@ class UiKitMessageCard extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  BorderedUserCircleAvatar(
-                    imageUrl: avatarPath,
-                    border: _getBorderByUserType(
-                      userType,
-                      context.uiKitTheme!.colorScheme.inversePrimary,
-                    ),
-                  ),
+                  context.userAvatar(size: UserAvatarSize.x40x40, type: userType, userName: name,imageUrl: avatarPath),
                   SpacingFoundation.horizontalSpace12,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

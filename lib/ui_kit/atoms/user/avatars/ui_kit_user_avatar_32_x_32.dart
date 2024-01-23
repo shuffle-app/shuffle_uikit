@@ -15,17 +15,30 @@ class UiKitUserAvatar32x32 extends StatelessWidget implements UserAvatarFactory 
 
   @override
   Widget build(BuildContext context) {
-    const borderWidth = 2.0;
+    final borderWidth = 2.0.w;
 
     return ImageWidget(
       link: imageUrl,
       width: 0.1.sw,
       height: 0.1.sw,
       fit: BoxFit.cover,
+      cardColor: Colors.transparent,
       imageBuilder: (context, child, frame, syncLoaded) {
         switch (type) {
           case UserTileType.ordinary:
-            return ClipOval(child: child);
+            return DecoratedBox(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadiusFoundation.max,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.white.withOpacity(0.25),
+                      blurRadius: 10,
+                      spreadRadius: 3,
+                      offset: Offset.zero,
+                    )
+                  ],
+                ),
+                child: ClipOval(child: child));
           case UserTileType.pro:
             return UiKitProUserAccountAvatarWrapper.enabled(
               borderWidth: borderWidth,
@@ -66,13 +79,13 @@ class UiKitUserAvatar32x32 extends StatelessWidget implements UserAvatarFactory 
                   : userName.characters.first,
             )),
         UserTileType.pro => UiKitProUserAccountAvatarWrapper.enabled(
-          borderWidth: borderWidth,
-          child: _Placeholder(
-            text: userName.split(' ').length > 1
-                ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
-                : userName.characters.first,
-          ),
-        )
+            borderWidth: borderWidth,
+            child: _Placeholder(
+              text: userName.split(' ').length > 1
+                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
+                  : userName.characters.first,
+            ),
+          )
       },
     );
   }
@@ -94,9 +107,6 @@ class _Placeholder extends StatelessWidget {
       style: textTheme?.caption2Bold.copyWith(
         color: ColorsFoundation.mutedText,
       ),
-    // ).paddingSymmetric(
-    //   vertical: EdgeInsetsFoundation.vertical8,
-    //   horizontal: EdgeInsetsFoundation.horizontal6,
     );
   }
 }

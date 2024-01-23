@@ -89,12 +89,14 @@ class ImageWidget extends StatelessWidget {
         width: width,
       );
     } else if (link == null || link!.isEmpty) {
-      return UiKitCardWrapper(
-        width: width,
-        color: cardColor,
-        height: height,
-        child: errorWidget ?? const DefaultImageErrorWidget(),
-      );
+      return cardColor == Colors.transparent
+          ? SizedBox(width: width, height: height, child: errorWidget ?? const DefaultImageErrorWidget())
+          : UiKitCardWrapper(
+              width: width,
+              color: cardColor,
+              height: height,
+              child: errorWidget ?? const DefaultImageErrorWidget(),
+            );
     } else if (link!.length > 4 && link!.substring(0, 4) == 'http') {
       if (link!.split('.').lastOrNull == 'mp4' || isVideo) {
         return FutureBuilder(

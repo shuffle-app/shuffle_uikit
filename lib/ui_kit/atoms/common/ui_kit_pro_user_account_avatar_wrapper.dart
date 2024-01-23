@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
-import 'package:shuffle_uikit/foundation/border_radius_foundation.dart';
-import 'package:shuffle_uikit/foundation/colors_foundation.dart';
-import 'package:shuffle_uikit/foundation/gradient_foundation.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitProUserAccountAvatarWrapper extends StatelessWidget {
   final bool disabled;
@@ -54,17 +52,24 @@ class UiKitProUserAccountAvatarWrapper extends StatelessWidget {
       decoration: BoxDecoration(
         color: ColorsFoundation.darkNeutral400,
         borderRadius: borderRadius ?? BorderRadiusFoundation.max,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.white.withOpacity(0.25),
+            blurRadius: 10,
+            spreadRadius: disabled ? 5 : 3,
+            offset: Offset.zero,
+          ),
+        ],
         border: disabled
             ? Border.all(
-                color: ColorsFoundation.darkNeutral400.withOpacity(0.4),
                 width: borderWidth,
-              )
+                color: ColorsFoundation.darkNeutral400.withOpacity(0.4),
+                strokeAlign: BorderSide.strokeAlignOutside)
             : GradientBoxBorder(
                 gradient: GradientFoundation.proUserAvatarBorder,
                 width: borderWidth,
               ),
       ),
-      // child: child,
       child: ClipRRect(
         borderRadius: borderRadius ?? BorderRadiusFoundation.max,
         child: child,

@@ -48,15 +48,18 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
             mainAxisSize: MainAxisSize.max,
             children: [
               Expanded(
-                child: primaryActionWidget ?? const SizedBox(),
+                child: secondaryActionWidget ?? const SizedBox(),
               ),
               SpacingFoundation.horizontalSpace8,
               Expanded(
-                child: secondaryActionWidget ?? const SizedBox(),
+                child: primaryActionWidget ?? const SizedBox(),
               ),
             ],
           ),
-          if (dismissActionWidget != null) ...[SpacingFoundation.verticalSpace4, dismissActionWidget!]
+          if (dismissActionWidget != null) ...[
+            SpacingFoundation.verticalSpace4,
+            Opacity(opacity: 0.7, child: dismissActionWidget!)
+          ]
         ],
       ),
     );
