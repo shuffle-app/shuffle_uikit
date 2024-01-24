@@ -23,6 +23,7 @@ class UiKitPopUpMenuTile extends StatelessWidget {
 
     return UiKitHeaderWithLeading(
       title: title,
+      titleIcon:titleIcon,
       titleStyle: textTheme?.caption1Medium,
       subtitle: subtitle,
       subtitleStyle: textTheme?.caption1Bold.copyWith(

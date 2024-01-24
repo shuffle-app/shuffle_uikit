@@ -6,12 +6,14 @@ class UiKitHeaderWithLeading extends StatelessWidget {
   final String? subtitle;
   final Widget? leading;
   final Widget? trailing;
+  final Widget? titleIcon;
   final TextStyle? titleStyle;
   final TextStyle? subtitleStyle;
 
   const UiKitHeaderWithLeading({
     super.key,
     required this.title,
+    this.titleIcon,
     this.subtitle,
     this.leading,
     this.trailing,
@@ -34,10 +36,13 @@ class UiKitHeaderWithLeading extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                title,
-                style: titleStyle ?? textTheme?.caption1Bold,
-              ),
+              Row(children: [
+                Text(
+                  title,
+                  style: titleStyle ?? textTheme?.caption1Bold,
+                ),
+                if (titleIcon != null) ...[SpacingFoundation.horizontalSpace12, titleIcon!]
+              ]),
               SpacingFoundation.verticalSpace2,
               Text(
                 subtitle ?? '',
