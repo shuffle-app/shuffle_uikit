@@ -2896,6 +2896,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Find someone to network with`
+  String get FindSomeoneToNetworkWith {
+    return Intl.message(
+      'Find someone to network with',
+      name: 'FindSomeoneToNetworkWith',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
