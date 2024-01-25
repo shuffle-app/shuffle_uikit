@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/organisms/video_player/video_player_bottom_bar.dart';
@@ -61,12 +63,14 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
 
   @override
   void initState() {
+    log('initializing video player with url ${widget.videoUri}',name: 'PopUpVideoPlayer');
+
     super.initState();
     _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUri))
       ..initialize().then((_) {
-        // setState(() {
-        _controller.play();
-        // });
+        setState(() {
+          _controller.play();
+        });
       });
   }
 
@@ -84,9 +88,7 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
         padding: EdgeInsets.only(left: 8.w, right: 8.w, top: 100.h),
         child: GestureDetector(
           onDoubleTap: () {
-            // setState(() {
             _controller.value.isPlaying ? _controller.pause() : _controller.play();
-            // });
           },
           child: Stack(
             children: [
@@ -98,12 +100,12 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
                         height: _partScreenHeight - _barHeight,
                         color: Colors.black,
                         width: double.infinity,
+                        alignment: Alignment.center,
                         child: _controller.value.isInitialized
-                            ? Center(
-                                child: AspectRatio(
+                            ?  AspectRatio(
                                   aspectRatio: _controller.value.aspectRatio,
                                   child: VideoPlayer(_controller),
-                                ),
+
                               )
                             : const SizedBox.shrink(),
                       ),

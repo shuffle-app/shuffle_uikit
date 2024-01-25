@@ -43,7 +43,7 @@ class UiKitMessageCard extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  context.userAvatar(size: UserAvatarSize.x40x40, type: userType, userName: name,imageUrl: avatarPath),
+                  context.userAvatar(size: UserAvatarSize.x40x40, type: userType, userName: name, imageUrl: avatarPath),
                   SpacingFoundation.horizontalSpace12,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,27 +52,7 @@ class UiKitMessageCard extends StatelessWidget {
                         children: [
                           Text(name, style: boldTextTheme?.caption1Medium),
                           SpacingFoundation.horizontalSpace8,
-                          if (userType == UserTileType.premium)
-                            ImageWidget(
-                              iconData: ShuffleUiKitIcons.star2,
-                              color: colorScheme?.inversePrimary,
-                              fit: BoxFit.cover,
-                              height: 16.w,
-                            ),
-                          if (userType == UserTileType.influencer)
-                            ImageWidget(
-                              iconData: ShuffleUiKitIcons.memeberGradientStar,
-                              fit: BoxFit.cover,
-                              height: 16.w,
-                            ),
-                          if (userType == UserTileType.pro)
-                            GradientableWidget(
-                              gradient: GradientFoundation.premiumLinearGradient,
-                              child: Text(
-                                'pro',
-                                style: boldTextTheme?.caption1Bold.copyWith(color: Colors.white),
-                              ),
-                            )
+                          UiKitUserBadge(userType: userType)
                         ],
                       ),
                       Text(

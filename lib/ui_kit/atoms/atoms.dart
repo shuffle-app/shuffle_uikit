@@ -84,3 +84,4 @@ export 'user/pro_account_mark.dart';
 export 'user/pro_member_plate.dart';
 export 'profile/grid_titled_item_widget.dart';
 export 'profile/ui_kit_fame_item.dart';
+export 'profile/ui_kit_user_badge.dart';
