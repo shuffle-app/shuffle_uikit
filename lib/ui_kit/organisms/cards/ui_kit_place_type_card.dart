@@ -32,6 +32,7 @@ class UiKitSocialSearchContentTypeCard extends StatelessWidget {
     VoidCallback? onTap,
     double? customCardWidth,
     Color? iconRingColor,
+    Color? backgroundColor,
   }) =>
       UiKitSocialSearchContentTypeCard._(
         title: title,
@@ -40,7 +41,7 @@ class UiKitSocialSearchContentTypeCard extends StatelessWidget {
         customCardWidth: customCardWidth,
         iconRingColor: iconRingColor,
         type: UiKitSocialSearchContentType.places,
-        color: ColorsFoundation.darkNeutral100,
+        color: backgroundColor ?? ColorsFoundation.darkNeutral100,
       );
 
   factory UiKitSocialSearchContentTypeCard.services({
@@ -49,6 +50,7 @@ class UiKitSocialSearchContentTypeCard extends StatelessWidget {
     VoidCallback? onTap,
     double? customCardWidth,
     Color? iconRingColor,
+    Color? backgroundColor,
   }) =>
       UiKitSocialSearchContentTypeCard._(
         title: title,
@@ -57,7 +59,7 @@ class UiKitSocialSearchContentTypeCard extends StatelessWidget {
         customCardWidth: customCardWidth,
         iconRingColor: iconRingColor,
         type: UiKitSocialSearchContentType.services,
-        color: Colors.white,
+        color: backgroundColor ?? Colors.white,
       );
 
   @override
