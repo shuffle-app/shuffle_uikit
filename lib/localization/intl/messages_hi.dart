@@ -171,6 +171,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Filters": MessageLookupByLibrary.simpleMessage("फ़िल्टर"),
         "FindSomeoneToHangOutWith": MessageLookupByLibrary.simpleMessage(
             "किसी के साथ घूमने के लिए खोजें"),
+        "FindSomeoneToNetworkWith": MessageLookupByLibrary.simpleMessage(
+            "नेटवर्किंग करने के लिए किसी को खोजें"),
         "Follow": MessageLookupByLibrary.simpleMessage("फ़ॉलो करें"),
         "Followers": MessageLookupByLibrary.simpleMessage("समर्थक"),
         "Followings": MessageLookupByLibrary.simpleMessage("निम्नलिखित"),
