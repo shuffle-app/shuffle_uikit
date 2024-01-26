@@ -61,7 +61,7 @@ class UiKitSmallAdBannerCard extends StatelessWidget implements AdvertisementFac
                     filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
                     child: Text(
                       title,
-                      style: textTheme?.body,
+                      style: textTheme?.body.copyWith(color: ColorsFoundation.lightSurface),
                     ).paddingSymmetric(
                       vertical: EdgeInsetsFoundation.vertical2,
                       horizontal: EdgeInsetsFoundation.horizontal16,

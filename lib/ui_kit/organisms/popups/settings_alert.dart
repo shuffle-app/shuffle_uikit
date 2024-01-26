@@ -24,7 +24,7 @@ Future<Object?> showSettingsAlert(BuildContext context, {required VoidCallback o
       title: Text(
         S.of(context).ToAllowAccessGoToSettings,
         style: context.uiKitTheme?.boldTextTheme.title2.copyWith(
-          color: context.uiKitTheme?.colorScheme.primary,
+          color: context.uiKitTheme?.colorScheme.inversePrimary,
         ),
         textAlign: TextAlign.center,
       ),

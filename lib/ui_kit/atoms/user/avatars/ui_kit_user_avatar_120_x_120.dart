@@ -16,6 +16,8 @@ class UiKitUserAvatar120x120 extends StatelessWidget implements UserAvatarFactor
   @override
   Widget build(BuildContext context) {
     final borderWidth = 3.0.w;
+    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
+
     return ImageWidget(
       link: imageUrl,
       width: 0.375.sw,
@@ -30,7 +32,7 @@ class UiKitUserAvatar120x120 extends StatelessWidget implements UserAvatarFactor
                   borderRadius: BorderRadiusFoundation.all20,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.white.withOpacity(0.25),
+                      color: isLightTheme ? ColorsFoundation.darkNeutral900.withOpacity(0.4) : Colors.white.withOpacity(0.4),
                       blurRadius: 10,
                       spreadRadius: 3,
                       offset: Offset.zero,
