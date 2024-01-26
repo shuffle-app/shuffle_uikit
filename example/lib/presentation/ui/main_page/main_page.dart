@@ -139,8 +139,8 @@ class _MainPageState extends State<MainPage> {
             SpacingFoundation.verticalSpace16,
             context.button(
               data: BaseUiKitButtonData(
-                text: 'Testing page',
-                onPressed: () => Navigator.pushNamed(context, AppRoutes.testPage),
+                text: 'Animations page',
+                onPressed: () => Navigator.pushNamed(context, AppRoutes.animationsPage),
               ),
             ),
             SpacingFoundation.verticalSpace16,
