@@ -1,6 +1,6 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
 class MediumImportanceChip extends StatelessWidget {
   final String text;
@@ -14,31 +14,29 @@ class MediumImportanceChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.uiKitTheme?.colorScheme;
+
     return Material(
       shape: const CircleBorder(),
       clipBehavior: Clip.antiAliasWithSaveLayer,
-      color: Colors.white,
+      color: colorScheme?.inverseSurface,
       child: InkWell(
         onTap: onTap,
         child: Ink(
           height: 120,
           width: 120,
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            // shape: BoxShape.circle,
-          ),
           child: Center(
             child: AutoSizeText(
               text,
               style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
-                color: Colors.black,
+                color: colorScheme?.surface,
               ),
               textAlign: TextAlign.center,
               minFontSize: 9,
               wrapWords: false,
               softWrap: true,
               maxLines: 3,
-            ).paddingAll(EdgeInsetsFoundation.all2)
+            ).paddingAll(EdgeInsetsFoundation.all2),
           ),
         ),
       ),

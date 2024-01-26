@@ -102,7 +102,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
             width: 1.sw,
             decoration: BoxDecoration(
               borderRadius: BorderRadiusFoundation.all28,
-              gradient: isLightTheme ? GradientFoundation.diamondGradient : null,
+              gradient: isLightTheme ? GradientFoundation.defaultRadialGradient : null,
             ),
           ),
         ),

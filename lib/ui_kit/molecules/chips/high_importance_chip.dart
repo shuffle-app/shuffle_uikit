@@ -1,6 +1,6 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
 class HighImportanceChip extends StatelessWidget {
   final String text;
@@ -23,12 +23,14 @@ class HighImportanceChip extends StatelessWidget {
           height: 120,
           width: 120,
           decoration: BoxDecoration(
-              // shape: BoxShape.circle,
-              gradient: GradientFoundation.attentionCard,
-              border: Border.fromBorderSide(BorderSide(
+            gradient: GradientFoundation.attentionCard,
+            border: Border.fromBorderSide(
+              BorderSide(
                 color: Colors.white.withOpacity(0.2),
                 width: 2,
-              ))),
+              ),
+            ),
+          ),
           child: Center(
             child: AutoSizeText(
               text,

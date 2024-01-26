@@ -21,17 +21,18 @@ class UiKitMetricsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.uiKitTheme?.colorScheme;
     final titleStyle = context.uiKitTheme?.boldTextTheme.caption2Bold
-        .copyWith(color: active ? Colors.black : ColorsFoundation.darkNeutral900);
+        .copyWith(color: active ? colorScheme?.surface : ColorsFoundation.darkNeutral900);
     final valueStyle = context.uiKitTheme?.boldTextTheme.subHeadline
-        .copyWith(color: active ? Colors.black : ColorsFoundation.darkNeutral900);
+        .copyWith(color: active ? colorScheme?.surface : ColorsFoundation.darkNeutral900);
 
     return Container(
       height: height,
       padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
-        color: active ? Colors.white : UiKitColors.darkNeutral200,
+        color: active ? colorScheme?.inverseSurface : UiKitColors.darkNeutral200,
         borderRadius: BorderRadiusFoundation.all20,
       ),
       child: Row(
@@ -39,7 +40,7 @@ class UiKitMetricsCard extends StatelessWidget {
           Container(
             width: height / 2.1,
             decoration: BoxDecoration(
-              color: active ? Colors.black : ColorsFoundation.darkNeutral900,
+              color: active ? colorScheme?.surface : ColorsFoundation.darkNeutral900,
               borderRadius: BorderRadiusFoundation.all20,
             ),
             child: Center(child: icon),
