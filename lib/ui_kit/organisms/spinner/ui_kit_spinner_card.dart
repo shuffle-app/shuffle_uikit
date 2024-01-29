@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -149,12 +150,16 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
             SpacingFoundation.verticalSpace8,
             Listener(
                 onPointerDown: (PointerDownEvent event) {
+                  final pointerPosition = event.localPosition;
+                  if (pointerPosition.dx >= normalCardWidth - SpacingFoundation.horizontalSpacing44 &&
+                      pointerPosition.dy <= SpacingFoundation.verticalSpacing40) {
+                    // убрал анимацию при нажатии на звездочку
+                    return;
+                  }
                   if (event.localPosition.dx < normalCardWidth / 2) {
-                    _animationVertical =
-                        Tween<double>(begin: 0, end: rotationAngle).animate(animationVerticalController);
+                    _animationVertical = Tween<double>(begin: 0, end: rotationAngle).animate(animationVerticalController);
                   } else {
-                    _animationVertical =
-                        Tween<double>(begin: 0, end: -rotationAngle).animate(animationVerticalController);
+                    _animationVertical = Tween<double>(begin: 0, end: -rotationAngle).animate(animationVerticalController);
                   }
 
                   if (event.localPosition.dy < heightStep) {
