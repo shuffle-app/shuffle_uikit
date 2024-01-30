@@ -7,6 +7,7 @@ class UiKitCustomTab extends StatelessWidget {
   final AutoSizeGroup? group;
   final bool active;
   final String? customValue;
+  final Widget? child;
 
   const UiKitCustomTab({
     Key? key,
@@ -15,7 +16,18 @@ class UiKitCustomTab extends StatelessWidget {
     this.active = true,
     this.group,
     this.customValue,
-  }) : super(key: key);
+  })  : child = null,
+        super(key: key);
+
+  const UiKitCustomTab.icon({
+    Key? key,
+    this.height = 40,
+    this.active = true,
+    this.child,
+  })  : title = '',
+        customValue = '',
+        group = null,
+        super(key: key);
 
   factory UiKitCustomTab.small({
     required String title,
@@ -35,13 +47,14 @@ class UiKitCustomTab extends StatelessWidget {
       child: Opacity(
           opacity: active ? 1.0 : 0.5,
           child: Center(
-            child: group != null
-                ? AutoSizeText(
-                    title,
-                    maxLines: 1,
-                    group: group,
-                  )
-                : Text(title),
+            child: child ??
+                (group != null
+                    ? AutoSizeText(
+                        title,
+                        maxLines: 1,
+                        group: group,
+                      )
+                    : Text(title)),
           )),
     );
   }
