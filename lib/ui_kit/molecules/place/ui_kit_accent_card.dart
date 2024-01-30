@@ -67,7 +67,9 @@ class UiKitAccentCard extends StatelessWidget {
           Positioned(
             bottom: 0,
             child: Container(
-              width: MediaQuery.sizeOf(context).width,
+              width: MediaQuery
+                  .sizeOf(context)
+                  .width,
               height: height / 2,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -97,30 +99,30 @@ class UiKitAccentCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: SpacingFoundation.verticalSpacing16,
-            left: SpacingFoundation.horizontalSpacing16,
-            right: SpacingFoundation.horizontalSpacing16,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  additionalInfo,
-                  style: additionalInfoStyle,
-                  maxLines: 1,
-                ),
-                Flexible(
-                    child: Text(
-                  title,
-                  style: titleStyle?.copyWith(
-                    overflow: TextOverflow.ellipsis,
-                    color: Colors.white,
+              bottom: SpacingFoundation.verticalSpacing16,
+              left: SpacingFoundation.horizontalSpacing16,
+              right: SpacingFoundation.horizontalSpacing16,
+              child: IgnorePointer(child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    additionalInfo,
+                    style: additionalInfoStyle,
+                    maxLines: 1,
                   ),
-                  maxLines: 2,
-                )),
-              ],
-            ),
-          ),
+                  Flexible(
+                      child: Text(
+                        title,
+                        style: titleStyle?.copyWith(
+                          overflow: TextOverflow.ellipsis,
+                          color: Colors.white,
+                        ),
+                        maxLines: 2,
+                      )),
+                ],
+              ),
+              )),
         ],
       ),
     );

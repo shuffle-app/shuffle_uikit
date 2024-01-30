@@ -7,6 +7,7 @@ export 'triggering_widget.dart';
 export 'ui_kit_shimmer_progress_indicator.dart';
 export 'wave_splash.dart';
 export 'ui_kit_floating_animation.dart';
+export 'ui_kit_long_tap_hint_animation.dart';
 
 class Animations {
   static slideAnimation(
@@ -47,3 +48,46 @@ class ImpScaleAnim extends StatelessWidget {
     );
   }
 }
+
+class DelayAndDisposeAnimationWrapper extends StatefulWidget {
+  final Widget child;
+  final Duration delay;
+  final Duration durationToDelay;
+  const DelayAndDisposeAnimationWrapper({
+    Key? key,
+    required this.child,
+    required this.delay,
+    required this.durationToDelay,
+  }) : super(key: key);
+
+  @override
+  State<DelayAndDisposeAnimationWrapper> createState() => _DelayAndDisposeAnimationWrapperState();
+}
+
+class _DelayAndDisposeAnimationWrapperState extends State<DelayAndDisposeAnimationWrapper> {
+
+  Widget? _delayedChild;
+
+  @override
+  void initState() {
+
+    Future.delayed(widget.delay, () {
+      setState(() {
+        _delayedChild = widget.child;
+      });
+      Future.delayed(widget.durationToDelay, () {
+        setState(() {
+          _delayedChild = null;
+        });
+      });
+    });
+
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return IgnorePointer(child: _delayedChild ?? const SizedBox.shrink());
+  }
+}
+

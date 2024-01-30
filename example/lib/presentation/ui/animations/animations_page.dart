@@ -9,12 +9,24 @@ class AnimationsPage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          LottieAnimation(
-            lottiePath: GraphicsFoundation.instance.animations.lottie.wholeHeart.path,
+          Container(
+            height: 180,
+            width: 0.8.sw,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadiusFoundation.all24,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image:
+                      Image.asset(GraphicsFoundation.instance.png.mockSwiperCard.path, package: 'shuffle_uikit').image,
+                )),
+            child: const UiKitLongTapHintAnimation(),
           ),
-          LottieAnimation(
-            lottiePath: GraphicsFoundation.instance.animations.lottie.brokenHeart.path,
-          ),
+          // LottieAnimation(
+          //   lottiePath: GraphicsFoundation.instance.animations.lottie.wholeHeart.path,
+          // ),
+          // LottieAnimation(
+          //   lottiePath: GraphicsFoundation.instance.animations.lottie.brokenHeart.path,
+          // ),
         ],
       ),
     );

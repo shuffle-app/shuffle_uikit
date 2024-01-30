@@ -77,9 +77,22 @@ class $AssetsAnimationsLottieGen {
   LottieGenImage get shuffleLoaderWhiteTheme =>
       const LottieGenImage('assets/animations/lottie/shuffle-loader-white-theme.json');
 
+  /// File path: assets/animations/lottie/star_fill.json
+  LottieGenImage get starFill => const LottieGenImage('assets/animations/lottie/star_fill.json');
+
+  /// File path: assets/animations/lottie/star_outline.json
+  LottieGenImage get starOutline => const LottieGenImage('assets/animations/lottie/star_outline.json');
+
   /// List of all assets
-  List<LottieGenImage> get values =>
-      [brokenHeart, wholeHeart, animationTouchId, shuffleLoaderBlackTheme, shuffleLoaderWhiteTheme];
+  List<LottieGenImage> get values => [
+        brokenHeart,
+        wholeHeart,
+        animationTouchId,
+        shuffleLoaderBlackTheme,
+        shuffleLoaderWhiteTheme,
+        starFill,
+        starOutline
+      ];
 }
 
 class $AssetsImagesPngGen {
@@ -105,6 +118,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Chips-select.png
   AssetGenImage get chipsSelect => const AssetGenImage('assets/images/png/Chips-select.png');
+
+  /// File path: assets/images/png/Choose-plan_old.png
+  AssetGenImage get choosePlanOld => const AssetGenImage('assets/images/png/Choose-plan_old.png');
 
   /// File path: assets/images/png/Clapperboard.png
   AssetGenImage get clapperboard => const AssetGenImage('assets/images/png/Clapperboard.png');
@@ -168,6 +184,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Food-industry.png
   AssetGenImage get foodIndustry => const AssetGenImage('assets/images/png/Food-industry.png');
+
+  /// File path: assets/images/png/Get-selection.png
+  AssetGenImage get getSelection => const AssetGenImage('assets/images/png/Get-selection.png');
 
   /// File path: assets/images/png/Giving-like-emoji.png
   AssetGenImage get givingLikeEmoji => const AssetGenImage('assets/images/png/Giving-like-emoji.png');
@@ -268,6 +287,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Preferences.png
   AssetGenImage get preferences => const AssetGenImage('assets/images/png/Preferences.png');
 
+  /// File path: assets/images/png/Press-niche.png
+  AssetGenImage get pressNiche => const AssetGenImage('assets/images/png/Press-niche.png');
+
   /// File path: assets/images/png/Press-scroll.png
   AssetGenImage get pressScroll => const AssetGenImage('assets/images/png/Press-scroll.png');
 
@@ -291,6 +313,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Rocket.png
   AssetGenImage get rocket => const AssetGenImage('assets/images/png/Rocket.png');
+
+  /// File path: assets/images/png/Select-niche.png
+  AssetGenImage get selectNiche => const AssetGenImage('assets/images/png/Select-niche.png');
 
   /// File path: assets/images/png/Shuffle-any.png
   AssetGenImage get shuffleAny => const AssetGenImage('assets/images/png/Shuffle-any.png');
@@ -619,6 +644,7 @@ class $AssetsImagesPngGen {
         binoculars,
         booking,
         chipsSelect,
+        choosePlanOld,
         clapperboard,
         cloudy,
         cocktail2,
@@ -640,6 +666,7 @@ class $AssetsImagesPngGen {
         foe,
         followers,
         foodIndustry,
+        getSelection,
         givingLikeEmoji,
         hat,
         healtcare,
@@ -673,6 +700,7 @@ class $AssetsImagesPngGen {
         pointsReputation,
         porthole,
         preferences,
+        pressNiche,
         pressScroll,
         puzzle,
         rain,
@@ -681,6 +709,7 @@ class $AssetsImagesPngGen {
         result,
         rockNRollHands,
         rocket,
+        selectNiche,
         shuffleAny,
         ski,
         smileMood,
@@ -1080,6 +1109,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/clock.svg
   SvgGenImage get clock => const SvgGenImage('assets/images/svg/clock.svg');
+
+  /// File path: assets/images/svg/clock_cursor.svg
+  SvgGenImage get clockCursor => const SvgGenImage('assets/images/svg/clock_cursor.svg');
 
   /// File path: assets/images/svg/clothing.svg
   SvgGenImage get clothing => const SvgGenImage('assets/images/svg/clothing.svg');
@@ -1697,6 +1729,7 @@ class $AssetsImagesSvgGen {
         chevronUp,
         cleaning,
         clock,
+        clockCursor,
         clothing,
         cloudOff,
         club,
