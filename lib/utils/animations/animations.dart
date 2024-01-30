@@ -72,17 +72,20 @@ class _DelayAndDisposeAnimationWrapperState extends State<DelayAndDisposeAnimati
   void initState() {
 
     Future.delayed(widget.delay, () {
-      if(mounted)
-      setState(() {
+      if(mounted) {
+        setState(() {
         _delayedChild = widget.child;
       });
-      if(mounted)
-      Future.delayed(widget.durationToDelay, () {
-        if(mounted)
-        setState(() {
+      }
+      if(mounted) {
+        Future.delayed(widget.durationToDelay, () {
+        if(mounted) {
+          setState(() {
           _delayedChild = null;
         });
+        }
       });
+      }
     });
 
     super.initState();
