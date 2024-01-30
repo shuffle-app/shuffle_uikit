@@ -136,9 +136,13 @@ class GradientBottomNavigationBarController {
   GradientBottomNavigationBarController({required this.tabItemsCount, GlobalKey<TabNavigatorState>? tabState})
       : tabState = tabState ?? GlobalKey<TabNavigatorState>();
 
-  void hideBottomNavigationBar() => _visibilityController.add(GradientBottomNavigationBarVisibility.hidden);
+  void hideBottomNavigationBar() {
+    if (!_visibilityController.isClosed) _visibilityController.add(GradientBottomNavigationBarVisibility.hidden);
+  }
 
-  void showBottomNavigationBar() => _visibilityController.add(GradientBottomNavigationBarVisibility.visible);
+  void showBottomNavigationBar() {
+    if (!_visibilityController.isClosed) _visibilityController.add(GradientBottomNavigationBarVisibility.visible);
+  }
 
   void changeTab(GradientBottomNavigationBarItem item) => _openTab(item);
 
@@ -156,7 +160,7 @@ class GradientBottomNavigationBarController {
     if (isTappedTabSelectedAlready && await _isNotLastPage(item)) {
       tabState.currentState?.mappedNavKeys[item]?.currentState?.popUntil((route) => route.isFirst);
     } else {
-      _changeController.add(item);
+      if (!_changeController.isClosed) _changeController.add(item);
     }
   }
 
