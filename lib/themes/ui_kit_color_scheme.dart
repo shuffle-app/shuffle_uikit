@@ -19,7 +19,9 @@ class UiKitColorScheme extends ColorScheme {
   final Color grayForegroundColor;
   final Color info = ColorsFoundation.info;
   final Color bodyTypography;
+  final Color inverseBodyTypography;
   final Color headingTypography;
+  final Color inverseHeadingTypography;
 
   @override
   final Color inversePrimary;
@@ -34,7 +36,9 @@ class UiKitColorScheme extends ColorScheme {
     this.inversePrimary = ColorsFoundation.solidSurface,
     this.grayForegroundColor = ColorsFoundation.darkNeutral300,
     this.bodyTypography = ColorsFoundation.lightBodyTypographyColor,
+    this.inverseBodyTypography = ColorsFoundation.darkBodyTypographyColor,
     this.headingTypography = ColorsFoundation.lightHeadingTypographyColor,
+    this.inverseHeadingTypography = ColorsFoundation.darkHeadingTypographyColor,
     super.surface = ColorsFoundation.lightSurface,
   }) : super.light(primary: uiPrimary, inversePrimary: inversePrimary);
 
@@ -48,7 +52,9 @@ class UiKitColorScheme extends ColorScheme {
     this.inversePrimary = ColorsFoundation.solidLightSurface,
     this.grayForegroundColor = ColorsFoundation.darkNeutral100,
     this.bodyTypography = ColorsFoundation.darkBodyTypographyColor,
+    this.inverseBodyTypography = ColorsFoundation.lightBodyTypographyColor,
     this.headingTypography = ColorsFoundation.darkHeadingTypographyColor,
+    this.inverseHeadingTypography = ColorsFoundation.lightHeadingTypographyColor,
     super.surface = ColorsFoundation.surface,
   }) : super.dark(primary: uiPrimary, inversePrimary: inversePrimary);
 }

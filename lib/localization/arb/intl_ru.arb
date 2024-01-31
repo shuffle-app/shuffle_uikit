@@ -280,6 +280,8 @@
   "ResetFilters": "Сбросить фильтры",
   "Recommended": "Рекомендуем",
   "FindSomeoneToNetworkWith": "Найти кого-то для нетворкинга",
+  "Continue": "Продолжить",
+  "EnterPlaceAddressPrompt": "Пожалуйста, введите адрес места",
   "NoConnection": "Sorry, no internet connection",
   "HallOfFame": "Hall of Fame",
   "ViewAll": "View all",
