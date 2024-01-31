@@ -9,12 +9,18 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
     this.errorText,
     this.inputFormatters,
     this.prefixText,
+    this.onTap,
     this.onChanged,
     this.onFieldSubmitted,
     this.hintText,
     this.validator,
     this.keyboardType,
-    this.icon,
+    this.suffixIcon,
+    this.customLabelColor,
+    this.customHintColor,
+    this.customFocusedBorder,
+    this.customEnabledBorder,
+    this.customInputTextColor,
     this.enabled = true,
     this.expands = false,
     this.autofocus = false,
@@ -36,11 +42,17 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
   final String? Function(String? p1)? validator;
 
   final String? prefixText;
-  final Widget? icon;
+  final Widget? suffixIcon;
   final List<TextInputFormatter>? inputFormatters;
 
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onFieldSubmitted;
+  final VoidCallback? onTap;
+  final Color? customLabelColor;
+  final Color? customHintColor;
+  final Color? customInputTextColor;
+  final InputBorder? customFocusedBorder;
+  final InputBorder? customEnabledBorder;
   final bool expands;
   final bool autofocus;
   @override
@@ -67,15 +79,19 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
     final inputTheme = uiKitTheme?.noFillInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
     final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
-        color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : uiKitTheme.colorScheme.inversePrimary);
+        color: _key.currentState?.hasError ?? false
+            ? ColorsFoundation.error
+            : widget.customInputTextColor ?? uiKitTheme.colorScheme.inversePrimary);
     TextStyle? labelStyle = uiKitTheme?.regularTextTheme.labelSmall;
     labelStyle = _key.currentState?.hasError ?? false
         ? labelStyle?.copyWith(color: ColorsFoundation.error)
         : labelStyle?.copyWith(
-            color: widget.enabled ? uiKitTheme?.colorScheme.grayForegroundColor : uiKitTheme?.colorScheme.darkNeutral900);
+            color: widget.enabled
+                ? widget.customLabelColor ?? uiKitTheme?.colorScheme.bodyTypography
+                : uiKitTheme?.colorScheme.darkNeutral900);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
-          ? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
+          ? widget.customHintColor ?? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
           : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
 
@@ -86,6 +102,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
       ),
       child: TextFormField(
         key: _key,
+        onTap: widget.onTap,
         obscureText: widget.obscureText,
         textInputAction: TextInputAction.next,
         expands: widget.expands,
@@ -100,7 +117,9 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         validator: widget.validator,
         inputFormatters: widget.inputFormatters,
         decoration: InputDecoration(
-          suffixIcon: widget.icon,
+          focusedBorder: widget.customFocusedBorder ?? context.uiKitTheme?.noFillInputTheme.focusedBorder,
+          enabledBorder: widget.customEnabledBorder ?? context.uiKitTheme?.noFillInputTheme.enabledBorder,
+          suffixIcon: widget.suffixIcon,
           floatingLabelBehavior: FloatingLabelBehavior.always,
           floatingLabelStyle: MaterialStateTextStyle.resolveWith((states) => labelStyle!),
           floatingLabelAlignment: FloatingLabelAlignment.start,

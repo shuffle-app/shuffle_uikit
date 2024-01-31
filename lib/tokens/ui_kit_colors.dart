@@ -35,6 +35,8 @@ class UiKitColors {
   static const lightBodyTypographyColor = Color(0xff363956);
   static const darkBodyTypographyColor = darkNeutral100;
 
+  static final placeHolderTextColor = const Color(0xff000000).withOpacity(0.24);
+
   static const lightHeadingTypographyColor = Color(0xff08133B);
   static const darkHeadingTypographyColor = Color(0xffFFFFFF);
 

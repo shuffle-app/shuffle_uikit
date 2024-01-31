@@ -2906,6 +2906,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Continue`
+  String get Continue {
+    return Intl.message(
+      'Continue',
+      name: 'Continue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter place’s address`
+  String get EnterPlaceAddressPrompt {
+    return Intl.message(
+      'Please enter place’s address',
+      name: 'EnterPlaceAddressPrompt',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -283,5 +283,7 @@
   "ViewAll": "View all",
   "NoFavoritesFound": "No favorites found",
   "Events": "Events",
-  "FindSomeoneToNetworkWith": "Find someone to network with"
+  "FindSomeoneToNetworkWith": "Find someone to network with",
+  "Continue": "Continue",
+  "EnterPlaceAddressPrompt": "Please enter place’s address"
 }

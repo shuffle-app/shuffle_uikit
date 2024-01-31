@@ -126,6 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Confirm": MessageLookupByLibrary.simpleMessage("Подтвердить"),
         "ContactPerson":
             MessageLookupByLibrary.simpleMessage("Контактное лицо"),
+        "Continue": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "Create": MessageLookupByLibrary.simpleMessage("Создать"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Создать место"),
@@ -159,6 +160,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnableHintSystem":
             MessageLookupByLibrary.simpleMessage("Включить подсказки"),
         "EnterInputType": m3,
+        "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, введите адрес места"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Введите адрес почты"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Возникла ошибка"),
