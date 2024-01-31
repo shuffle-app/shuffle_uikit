@@ -62,7 +62,7 @@ class UiKitLocationSuggestionDialog extends StatelessWidget {
             customHintColor: ColorsFoundation.placeHolderTextColor,
             hintText: 'Burj Khalifa 127th floor, Dubai, UAE',
             customLabelColor: colorScheme?.inverseBodyTypography,
-            suffixIcon: ImageWidget(
+            icon: ImageWidget(
               iconData: ShuffleUiKitIcons.landmark,
               color: colorScheme?.inverseHeadingTypography,
             ),
