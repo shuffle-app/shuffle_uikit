@@ -4,8 +4,8 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitLocationSuggestionDialog extends StatelessWidget {
   final String title;
   final Widget? bodyText;
-  final ValueChanged<String>? onLocationNameLoaded;
-  final Future<String> Function()? onLocationFieldTapped;
+  final ValueChanged<String?>? onLocationNameLoaded;
+  final Future<String?> Function()? onLocationFieldTapped;
   final VoidCallback? onContinue;
 
   final TextEditingController controller = TextEditingController();
@@ -68,7 +68,7 @@ class UiKitLocationSuggestionDialog extends StatelessWidget {
             ),
             onTap: () {
               onLocationFieldTapped?.call().then((value) {
-                controller.text = value;
+                controller.text = value ?? '';
                 onLocationNameLoaded?.call(value);
               });
             },
