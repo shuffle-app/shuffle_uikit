@@ -33,28 +33,6 @@ class UiKitMenu<T> extends StatelessWidget {
     this.menuSheetHorizontalPadding,
   }) : super(key: key);
 
-  bool get singleType {
-    for (int itemIndex = 0; itemIndex < items.length; itemIndex++) {
-      final currentElement = items.elementAt(itemIndex);
-      if (currentElement == items.last) return true;
-      final nextElement = items.elementAt(itemIndex + 1);
-      if (currentElement.type != nextElement.type) return false;
-    }
-
-    return true;
-  }
-
-  List<String?>? get allTypes {
-    final list = List<String?>.empty(growable: true);
-    for (final item in items) {
-      if (!list.contains(item.type)) {
-        list.add(item.type);
-      }
-    }
-
-    return list;
-  }
-
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
@@ -73,39 +51,16 @@ class UiKitMenu<T> extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          //if keyboard is opened, unfocus it
-          FocusManager.instance.primaryFocus?.unfocus();
-          final elementsHeight = singleType
-              ? (items.length + 1) * 48.h
-              : (items.where((element) => element.type == allTypes?.first).length + 3) * 41.h;
-          // final elementsHeight = ((items.length + 1) * 52) + (SpacingFoundation.verticalSpacing16 * 3);
-          final topPadding = customTopPadding ?? max(1.sh - elementsHeight, 0.0);
-          showUiKitGeneralFullScreenDialog(
+          showMenuInDialog(
             context,
-            GeneralDialogData(
-              useRootNavigator: true,
-              topPadding: topPadding,
-              child: singleType
-                  ? SingleTypeMenuBody<T>(
-                      title: title,
-                      items: items,
-                      onSelected: onSelected,
-                      tilesColor: tilesColor,
-                      useCustomTiles: useCustomTiles,
-                      separator: separator,
-                      customHorizontalPadding: menuSheetHorizontalPadding,
-                    )
-                  : MultipleTypeMenuBody<T>(
-                      title: title,
-                      allTypes: allTypes,
-                      items: items,
-                      onSelected: onSelected,
-                      tilesColor: tilesColor,
-                      useCustomTiles: useCustomTiles,
-                      separator: separator,
-                      customHorizontalPadding: menuSheetHorizontalPadding,
-                    ),
-            ),
+            title: title,
+            items: items,
+            onSelected: onSelected,
+            separator: separator,
+            useCustomTiles: useCustomTiles,
+            tilesColor: tilesColor,
+            menuSheetHorizontalPadding: menuSheetHorizontalPadding,
+            customTopPadding: customTopPadding,
           );
         },
         child: Ink(
@@ -177,4 +132,71 @@ class UiKitMenuItem<T> {
         title: '',
         value: null,
       );
+}
+
+showMenuInDialog<T>(BuildContext context,
+    {required List<UiKitMenuItem<T>> items,
+    double? customTopPadding,
+    String? title,
+    ValueChanged<UiKitMenuItem<T>>? onSelected,
+    Color? tilesColor,
+    double? menuSheetHorizontalPadding,
+    Widget? separator,
+    bool useCustomTiles = false}) {
+  bool singleType = () {
+    for (int itemIndex = 0; itemIndex < items.length; itemIndex++) {
+      final currentElement = items.elementAt(itemIndex);
+      if (currentElement == items.last) return true;
+      final nextElement = items.elementAt(itemIndex + 1);
+      if (currentElement.type != nextElement.type) return false;
+    }
+
+    return true;
+  }();
+
+  List<String?> allTypes = () {
+    final list = List<String?>.empty(growable: true);
+    for (final item in items) {
+      if (!list.contains(item.type)) {
+        list.add(item.type);
+      }
+    }
+
+    return list;
+  }();
+
+//if keyboard is opened, unfocus it
+  FocusManager.instance.primaryFocus?.unfocus();
+  final elementsHeight = singleType
+      ? (items.length + 1) * 48.h
+      : (items.where((element) => element.type == allTypes.first).length + 3) * 41.h;
+  // final elementsHeight = ((items.length + 1) * 52) + (SpacingFoundation.verticalSpacing16 * 3);
+  final topPadding = customTopPadding ?? max(1.sh - elementsHeight, 0.0);
+  showUiKitGeneralFullScreenDialog(
+    context,
+    GeneralDialogData(
+      useRootNavigator: true,
+      topPadding: topPadding,
+      child: singleType
+          ? SingleTypeMenuBody<T>(
+              title: title ?? S.of(context).DescribeYourself,
+              items: items,
+              onSelected: onSelected,
+              tilesColor: tilesColor,
+              useCustomTiles: useCustomTiles,
+              separator: separator,
+              customHorizontalPadding: menuSheetHorizontalPadding,
+            )
+          : MultipleTypeMenuBody<T>(
+              title: title ?? S.of(context).DescribeYourself,
+              allTypes: allTypes,
+              items: items,
+              onSelected: onSelected,
+              tilesColor: tilesColor,
+              useCustomTiles: useCustomTiles,
+              separator: separator,
+              customHorizontalPadding: menuSheetHorizontalPadding,
+            ),
+    ),
+  );
 }
