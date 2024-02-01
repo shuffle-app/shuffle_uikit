@@ -56,6 +56,7 @@ export 'popups/incorrect_login_pop_up.dart';
 export 'popups/ordinary_notification_popup.dart';
 export 'popups/reset_password_pop_up.dart';
 export 'popups/settings_alert.dart';
+export 'popups/ui_kit_location_suggestion_dialog.dart';
 export 'profile/profile_card.dart';
 export 'profile/profile_highlights.dart';
 export 'profile/profile_posts_places.dart';

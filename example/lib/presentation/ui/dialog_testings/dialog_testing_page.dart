@@ -8,12 +8,54 @@ class DialogTestingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = context.uiKitTheme?.boldTextTheme;
+    final colorScheme = context.uiKitTheme?.colorScheme;
+
     return Scaffold(
       body: Center(
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               children: [
+                SpacingFoundation.verticalSpace16,
+                context.button(
+                  data: BaseUiKitButtonData(
+                    text: 'Show location suggestion dialog',
+                    onPressed: () => showDialog(
+                      context: context,
+                      builder: (context) => UiKitLocationSuggestionDialog(
+                        title: S.current.EnterPlaceAddressPrompt,
+                        bodyText: RichText(
+                          textAlign: TextAlign.center,
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'If a place already exists in ',
+                                style: textTheme?.body.copyWith(color: colorScheme?.surface),
+                              ),
+                              TextSpan(
+                                text: 'shuffle, ',
+                                style: textTheme?.subHeadline.copyWith(color: colorScheme?.surface),
+                              ),
+                              TextSpan(
+                                text: 'just confirm it',
+                                style: textTheme?.body.copyWith(color: colorScheme?.surface),
+                              ),
+                            ],
+                          ),
+                        ),
+                        onContinue: () {},
+                        onLocationFieldTapped: () async {
+                          await Future.delayed(const Duration(seconds: 1));
+                          return 'Tashkent';
+                        },
+                        onLocationNameLoaded: (value) {
+                          log('from location name loaded $value', name: 'DialogTestingPage');
+                        },
+                      ),
+                    ),
+                  ),
+                ),
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
                   text: 'Dialog bottom sheet fullscreen',

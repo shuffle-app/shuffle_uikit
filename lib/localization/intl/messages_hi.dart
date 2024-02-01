@@ -124,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("कंपनी की स्थिति"),
         "Confirm": MessageLookupByLibrary.simpleMessage("पुष्टि करना"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("संपर्क व्यक्ति"),
+        "Continue": MessageLookupByLibrary.simpleMessage("जारी रखें"),
         "Create": MessageLookupByLibrary.simpleMessage("बनाएँ"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("कार्यक्रम बनाएँ"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("जगह बनाएं"),
@@ -157,6 +158,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnableHintSystem":
             MessageLookupByLibrary.simpleMessage("संकेत प्रणाली सक्षम करें"),
         "EnterInputType": m3,
+        "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
+            "कृपया स्थान का पता दर्ज करें"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("अपना ईमेल पता दर्ज करें"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("त्रुटि हुई"),

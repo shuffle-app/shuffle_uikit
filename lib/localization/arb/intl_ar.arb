@@ -286,5 +286,7 @@
   "Events": "Events",
   "FindSomeoneToNetworkWith": "Find someone to network with",
   "HintSystemEnabled": "Hint system enabled for {days,plural, =0{{days} days} =1{{days} day} =2{{days} days} few{{days} days} many{{days} days} other{{days} days}}",
-  "HintSystemDisabled": "Hint system disabled"
+  "HintSystemDisabled": "Hint system disabled",
+  "Continue": "Continue",
+  "EnterPlaceAddressPrompt": "Please enter place’s address"
 }

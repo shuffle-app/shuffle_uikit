@@ -126,6 +126,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Company position"),
         "Confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("Contact person"),
+        "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
         "Create": MessageLookupByLibrary.simpleMessage("Create"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Create Event"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
@@ -158,6 +159,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnableHintSystem":
             MessageLookupByLibrary.simpleMessage("Enable hint system"),
         "EnterInputType": m3,
+        "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
+            "Please enter place’s address"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Enter your e-mail address"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Error occured"),
