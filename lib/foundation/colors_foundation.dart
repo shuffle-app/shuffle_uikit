@@ -77,6 +77,7 @@ class ColorsFoundation {
   static const Color shufflePlateBorderGradientMid = UiKitColors.shufflePlateBorderGradientMid;
   static const Color shufflePlateBorderGradientEnd = UiKitColors.shufflePlateBorderGradientEnd;
   static const Color proUserAvatarBorder = UiKitColors.proUserAvatarBorderGradientBegin;
+  static const Color extraTransparentBorderColor = UiKitColors.extraTransparentBorderColor;
 
   ColorsFoundation._();
 }

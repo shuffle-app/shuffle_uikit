@@ -17,6 +17,8 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.expands = false,
     this.borderRadius,
     this.node,
+    this.customPadding,
+    this.textAlign,
     this.textInputAction,
     this.onSubmitted,
     this.hintTextColor,
@@ -40,6 +42,8 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
 
   final ValueChanged<String>? onChanged;
 
+  final EdgeInsets? customPadding;
+  final TextAlign? textAlign;
   final Color? fillColor;
   final Color? textColor;
   final TapRegionCallback? onTapOutside;
@@ -77,7 +81,9 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         : uiKitTheme?.noIconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
     final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
-      color: _key.currentState?.hasError ?? false ? ColorsFoundation.error : widget.textColor ?? uiKitTheme.colorScheme.inversePrimary,
+      color: _key.currentState?.hasError ?? false
+          ? ColorsFoundation.error
+          : widget.textColor ?? uiKitTheme.colorScheme.inversePrimary,
     );
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
@@ -106,10 +112,11 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         onTapOutside: widget.onTapOutside,
         obscureText: widget.obscureText,
         onFieldSubmitted: widget.onSubmitted,
+        textAlign: widget.textAlign ?? TextAlign.left,
         decoration: InputDecoration(
           hintText: widget.hintText,
           errorText: widget.errorText,
-          contentPadding: EdgeInsets.all(EdgeInsetsFoundation.all16),
+          contentPadding: widget.customPadding ?? EdgeInsets.all(EdgeInsetsFoundation.all16),
           errorMaxLines: 1,
           filled: widget.fillColor != null,
           fillColor: widget.fillColor,

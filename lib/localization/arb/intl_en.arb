@@ -283,5 +283,7 @@
   "ViewAll": "View all",
   "NoFavoritesFound": "No favorites found",
   "Events": "Events",
-  "FindSomeoneToNetworkWith": "Find someone to network with"
+  "FindSomeoneToNetworkWith": "Find someone to network with",
+  "HintSystemEnabled": "Hint system enabled for {days,plural, =0{{days} days} =1{{days} day} =2{{days} days} few{{days} days} many{{days} days} other{{days} days}}",
+  "HintSystemDisabled": "Hint system disabled"
 }
