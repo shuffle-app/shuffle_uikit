@@ -30,6 +30,8 @@ class SpacingFoundation {
 
   static double get horizontalSpacing44 => 44;
 
+  static double get horizontalSpacing56 => 56;
+
   static double get verticalSpacing2 => 2.h;
 
   static double get verticalSpacing4 => 4.h;
@@ -51,6 +53,8 @@ class SpacingFoundation {
   static double get verticalSpacing24 => 24;
 
   static double get verticalSpacing32 => 32;
+
+  static double get verticalSpacing40 => 40;
 
   static Widget get none => zero.heightBox;
 
