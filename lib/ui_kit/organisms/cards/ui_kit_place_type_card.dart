@@ -68,6 +68,7 @@ class UiKitSocialSearchContentTypeCard extends StatelessWidget {
     final cardHeight = customCardWidth != null ? cardWidth * 0.56 : cardWidth;
     final iconHeight = type == UiKitSocialSearchContentType.services ? 0.85 * cardHeight : 0.75 * cardHeight;
     final iconWidth = type == UiKitSocialSearchContentType.services ? 0.75 * cardWidth : iconHeight;
+    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return Material(
       color: color,
@@ -75,7 +76,9 @@ class UiKitSocialSearchContentTypeCard extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all16,
         side: BorderSide(
-          color: ColorsFoundation.lightGrey.withOpacity(0.3),
+          color: isLightTheme
+              ? ColorsFoundation.extraTransparentBorderColor.withOpacity(0.3)
+              : ColorsFoundation.lightGrey.withOpacity(0.3),
           width: 2,
         ),
       ),

@@ -2926,6 +2926,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Hint system enabled for {days,plural, =0{{days} days} =1{{days} day} =2{{days} days} few{{days} days} many{{days} days} other{{days} days}}`
+  String HintSystemEnabled(num days) {
+    return Intl.message(
+      'Hint system enabled for ${Intl.plural(days, zero: '$days days', one: '$days day', two: '$days days', few: '$days days', many: '$days days', other: '$days days')}',
+      name: 'HintSystemEnabled',
+      desc: '',
+      args: [days],
+    );
+  }
+
+  /// `Hint system disabled`
+  String get HintSystemDisabled {
+    return Intl.message(
+      'Hint system disabled',
+      name: 'HintSystemDisabled',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -5,30 +5,42 @@ class UiKitGradientSwitchTile extends StatelessWidget {
   final String title;
   final ValueChanged<bool>? onChanged;
   final bool switchedOn;
+  final Widget? subtitle;
 
   const UiKitGradientSwitchTile({
     super.key,
     required this.title,
-    this.onChanged,
     required this.switchedOn,
+    this.subtitle,
+    this.onChanged,
   });
 
   @override
   Widget build(BuildContext context) {
     return UiKitCardWrapper(
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Expanded(
-            child: Text(
-              title,
-              style: context.uiKitTheme?.boldTextTheme.labelLarge,
-            ),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Expanded(
+                child: Text(
+                  title,
+                  style: context.uiKitTheme?.boldTextTheme.labelLarge,
+                ),
+              ),
+              UiKitGradientSwitch(
+                onChanged: onChanged,
+                switchedOn: switchedOn,
+              ),
+            ],
           ),
-          UiKitGradientSwitch(
-            onChanged: onChanged,
-            switchedOn: switchedOn,
-          ),
+          if (subtitle != null) ...[
+            SpacingFoundation.verticalSpace16,
+            subtitle!,
+          ],
         ],
       ).paddingAll(EdgeInsetsFoundation.all16),
     );
