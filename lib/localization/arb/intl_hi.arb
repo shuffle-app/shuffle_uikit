@@ -287,5 +287,10 @@
   "HallOfFame": "Hall of Fame",
   "ViewAll": "View all",
   "NoFavoritesFound": "No favorites found",
-  "Events": "Events"
+  "Events": "Events",
+  "AllAppNotification": "All app notifications",
+  "EventsReminders": "Events reminders",
+  "NewFeatures": "New features",
+  "NewDonates": "New donates",
+  "NewFollowers": "New followers"
 }

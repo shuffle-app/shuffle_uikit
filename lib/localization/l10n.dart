@@ -2946,6 +2946,56 @@ class S {
       args: [],
     );
   }
+
+  /// `All app notifications`
+  String get AllAppNotification {
+    return Intl.message(
+      'All app notifications',
+      name: 'AllAppNotification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Events reminders`
+  String get EventsReminders {
+    return Intl.message(
+      'Events reminders',
+      name: 'EventsReminders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New features`
+  String get NewFeatures {
+    return Intl.message(
+      'New features',
+      name: 'NewFeatures',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New donates`
+  String get NewDonates {
+    return Intl.message(
+      'New donates',
+      name: 'NewDonates',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New followers`
+  String get NewFollowers {
+    return Intl.message(
+      'New followers',
+      name: 'NewFollowers',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

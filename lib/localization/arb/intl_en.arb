@@ -287,5 +287,10 @@
   "Continue": "Continue",
   "EnterPlaceAddressPrompt": "Please enter place’s address",
   "HintSystemEnabled": "Hint system enabled for {days,plural, =0{{days} days} =1{{days} day} =2{{days} days} few{{days} days} many{{days} days} other{{days} days}}",
-  "HintSystemDisabled": "Hint system disabled"
+  "HintSystemDisabled": "Hint system disabled",
+  "AllAppNotification": "All app notifications",
+  "EventsReminders": "Events reminders",
+  "NewFeatures": "New features",
+  "NewDonates": "New donates",
+  "NewFollowers": "New followers"
 }

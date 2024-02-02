@@ -287,5 +287,10 @@
   "ViewAll": "View all",
   "NoFavoritesFound": "Нет избранных",
   "HintSystemEnabled": "Система подсказок активирована на {days,plural, =0{{days} дней} =1{{days} день} =2{{days} дня} =3{{days} дня} =4{{days} дня} few{{days} дней} many{{days} дней} other{{days} дней}}",
-  "HintSystemDisabled": "Система подсказок деактивирована"
+  "HintSystemDisabled": "Система подсказок деактивирована",
+  "AllAppNotification": "Все уведомления",
+  "EventsReminders": "Напоминания о событиях",
+  "NewFeatures": "Новые функции",
+  "NewDonates": "Новые донаты",
+  "NewFollowers": "Новые подписчики"
 }
