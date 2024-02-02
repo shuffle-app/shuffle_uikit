@@ -75,6 +75,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Add yourself to list"),
         "Address": MessageLookupByLibrary.simpleMessage("Address"),
+        "AllAppNotification":
+            MessageLookupByLibrary.simpleMessage("All app notifications"),
         "Allow": MessageLookupByLibrary.simpleMessage("Allow"),
         "AllowAll": MessageLookupByLibrary.simpleMessage("Allow all"),
         "AllowGeolocation":
@@ -169,6 +171,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Event": MessageLookupByLibrary.simpleMessage("Event"),
         "EventType": MessageLookupByLibrary.simpleMessage("Event type"),
         "Events": MessageLookupByLibrary.simpleMessage("Events"),
+        "EventsReminders":
+            MessageLookupByLibrary.simpleMessage("Events reminders"),
         "Faq": MessageLookupByLibrary.simpleMessage("Faq"),
         "Favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "FeaturesEnableGeolocation":
@@ -240,6 +244,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Name": MessageLookupByLibrary.simpleMessage("Name"),
         "NameOrNickname":
             MessageLookupByLibrary.simpleMessage("Name or nickname"),
+        "NewDonates": MessageLookupByLibrary.simpleMessage("New donates"),
+        "NewFeatures": MessageLookupByLibrary.simpleMessage("New features"),
+        "NewFollowers": MessageLookupByLibrary.simpleMessage("New followers"),
         "NewLocationHasOpenedToday": MessageLookupByLibrary.simpleMessage(
             "A new location has opened today. Come! You\'ll like it!"),
         "NewPlace": MessageLookupByLibrary.simpleMessage("New place"),

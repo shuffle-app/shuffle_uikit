@@ -74,6 +74,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("स्वयं को सूची में जोड़ें"),
         "Address": MessageLookupByLibrary.simpleMessage("पता"),
+        "AllAppNotification":
+            MessageLookupByLibrary.simpleMessage("All app notifications"),
         "Allow": MessageLookupByLibrary.simpleMessage("अनुमति दें"),
         "AllowAll": MessageLookupByLibrary.simpleMessage("सभी को अनुमति दें"),
         "AllowGeolocation":
@@ -168,6 +170,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Event": MessageLookupByLibrary.simpleMessage("घटना"),
         "EventType": MessageLookupByLibrary.simpleMessage("घटना प्रकार"),
         "Events": MessageLookupByLibrary.simpleMessage("Events"),
+        "EventsReminders":
+            MessageLookupByLibrary.simpleMessage("Events reminders"),
         "Faq": MessageLookupByLibrary.simpleMessage("सामान्य प्रश्न"),
         "Favorites": MessageLookupByLibrary.simpleMessage("पसंदीदा"),
         "FeaturesEnableGeolocation": MessageLookupByLibrary.simpleMessage(
@@ -244,6 +248,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "NPlace": m8,
         "Name": MessageLookupByLibrary.simpleMessage("Name"),
         "NameOrNickname": MessageLookupByLibrary.simpleMessage("नाम या उपनाम"),
+        "NewDonates": MessageLookupByLibrary.simpleMessage("New donates"),
+        "NewFeatures": MessageLookupByLibrary.simpleMessage("New features"),
+        "NewFollowers": MessageLookupByLibrary.simpleMessage("New followers"),
         "NewLocationHasOpenedToday": MessageLookupByLibrary.simpleMessage(
             "आज एक नया स्थान खुल गया है ।  आओ! आप इसे पसंद करेंगे!"),
         "NewPlace": MessageLookupByLibrary.simpleMessage("नयी जगह"),

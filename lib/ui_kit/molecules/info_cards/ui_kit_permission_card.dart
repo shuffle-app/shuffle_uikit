@@ -38,9 +38,11 @@ class UiKitPermissionCard extends StatelessWidget {
                 isActive: isEnabled,
               ),
               SpacingFoundation.horizontalSpace12,
-              Text(
-                title,
-                style: labelStyle,
+              Expanded(
+                child: Text(
+                  title,
+                  style: labelStyle,
+                ),
               )
             ],
           ),
