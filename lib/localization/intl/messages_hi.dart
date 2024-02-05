@@ -149,8 +149,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "Description": MessageLookupByLibrary.simpleMessage("विवरण"),
         "Details": MessageLookupByLibrary.simpleMessage("विवरण"),
         "Directions": MessageLookupByLibrary.simpleMessage("दिशा-निर्देश"),
+        "DonationHint": MessageLookupByLibrary.simpleMessage(
+            "आप केवल अपने सपने पर खर्च कर सकते हैं, अन्यथा पैसा दाताओं को वापस जाएगा। एक महीने में एक अनुरोध।"),
         "DontBeAlone": MessageLookupByLibrary.simpleMessage("अकेले मत रहो"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("इसे मत चूकिए"),
+        "Edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "EditProfile":
             MessageLookupByLibrary.simpleMessage("प्रोफ़ाइल संपादित करें"),
         "EditingTypePlace": m2,

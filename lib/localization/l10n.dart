@@ -2946,6 +2946,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit`
+  String get Edit {
+    return Intl.message(
+      'Edit',
+      name: 'Edit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can only spend on your dream, otherwise the money will go back to the donators. One request per month.`
+  String get DonationHint {
+    return Intl.message(
+      'You can only spend on your dream, otherwise the money will go back to the donators. One request per month.',
+      name: 'DonationHint',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

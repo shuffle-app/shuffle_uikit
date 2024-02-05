@@ -151,8 +151,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "Description": MessageLookupByLibrary.simpleMessage("Description"),
         "Details": MessageLookupByLibrary.simpleMessage("Details"),
         "Directions": MessageLookupByLibrary.simpleMessage(""),
+        "DonationHint": MessageLookupByLibrary.simpleMessage(
+            "You can only spend on your dream, otherwise the money will go back to the donators. One request per month."),
         "DontBeAlone": MessageLookupByLibrary.simpleMessage("Don\'t be alone"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("Don\'t miss it"),
+        "Edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "EditingTypePlace": m2,
         "Email": MessageLookupByLibrary.simpleMessage("Email"),

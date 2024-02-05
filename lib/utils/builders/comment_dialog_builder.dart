@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:popover/popover.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-Future<T?> showUiKitPopover<T extends Object?>(
-  BuildContext context, {
-  required Widget title,
-  Widget? description,
-  String buttonText = 'OK',
-  VoidCallback? onPop,
-  bool showButton = true,
-      double? customMinHeight
-}) {
+Future<T?> showUiKitPopover<T extends Object?>(BuildContext context,
+    {required Widget title,
+    Widget? description,
+    String buttonText = 'OK',
+    VoidCallback? onPop,
+    bool showButton = true,
+    double? customMinHeight}) {
   return showPopover<T>(
     context: context,
     backgroundColor: context.uiKitTheme?.cardTheme.color ?? Colors.white,
@@ -18,7 +16,7 @@ Future<T?> showUiKitPopover<T extends Object?>(
     bodyBuilder: (context) => ConstrainedBox(
       constraints: BoxConstraints(
         maxWidth: 1.sw - SpacingFoundation.horizontalSpacing32,
-        minHeight: customMinHeight?? 0.2.sh,
+        minHeight: customMinHeight ?? 0.2.sh,
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,

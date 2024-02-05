@@ -34,7 +34,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m5(helpfulCount) => "Полезно ${helpfulCount}";
 
   static String m6(days) =>
-      "Система подсказок активирована на {days,plural, =0{${days} дней} =1{${days} день} =2{${days} дня} =3{${days} дня} =4{${days} дня} few{${days} дней} many{${days} дней} other{${days} дней}}";
+      "Система подсказок активирована на ${Intl.plural(days, zero: '${days} дней', one: '${days} день', two: '${days} дня', few: '${days} дня', many: '${days} дней', other: '${days} дней')}";
 
   static String m7(invitedPeopleCount) =>
       "Приглашает ${invitedPeopleCount} людей на";
@@ -154,9 +154,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "Description": MessageLookupByLibrary.simpleMessage("Описание"),
         "Details": MessageLookupByLibrary.simpleMessage("Детали"),
         "Directions": MessageLookupByLibrary.simpleMessage("Направления"),
+        "DonationHint": MessageLookupByLibrary.simpleMessage(
+            "Вы можете тратить только на свою мечту, иначе деньги вернутся донатерам. Разрешен только один запрос в месяц."),
         "DontBeAlone":
             MessageLookupByLibrary.simpleMessage("Не будете одиноки"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("Не пропустите"),
+        "Edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
         "EditProfile": MessageLookupByLibrary.simpleMessage("Редактировать"),
         "EditingTypePlace": m2,
         "Email": MessageLookupByLibrary.simpleMessage("Почта"),

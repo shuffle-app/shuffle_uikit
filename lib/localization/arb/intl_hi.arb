@@ -270,6 +270,7 @@
   "AreYouSureYouWantToDeleteYourCompanyProfile": "क्या आप वाकई अपनी कंपनी प्रोफ़ाइल हटाना चाहते हैं?",
   "HintSystemEnabled": "{days} दिनों के लिए संकेत प्रणाली सक्षम है",
   "HintSystemDisabled": "संकेत प्रणाली अक्षम है",
+  "DonationHint":"आप केवल अपने सपने पर खर्च कर सकते हैं, अन्यथा पैसा दाताओं को वापस जाएगा। एक महीने में एक अनुरोध।",
   "WhiteTheme": "White theme",
   "Name": "Name",
   "AcceptDonations": "Accept donations or help others realize their dreams",
@@ -287,5 +288,6 @@
   "HallOfFame": "Hall of Fame",
   "ViewAll": "View all",
   "NoFavoritesFound": "No favorites found",
-  "Events": "Events"
+  "Events": "Events",
+  "Edit": "Edit"
 }
