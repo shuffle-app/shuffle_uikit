@@ -75,6 +75,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Добавиться в список"),
         "Address": MessageLookupByLibrary.simpleMessage("Адрес"),
+        "AllAppNotification":
+            MessageLookupByLibrary.simpleMessage("Все уведомления"),
         "Allow": MessageLookupByLibrary.simpleMessage("Разрешить"),
         "AllowAll": MessageLookupByLibrary.simpleMessage("Разрешить всё"),
         "AllowGeolocation":
@@ -176,6 +178,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Event": MessageLookupByLibrary.simpleMessage("Событие"),
         "EventType": MessageLookupByLibrary.simpleMessage("Тип события"),
         "Events": MessageLookupByLibrary.simpleMessage("Events"),
+        "EventsReminders":
+            MessageLookupByLibrary.simpleMessage("Напоминания о событиях"),
         "Faq": MessageLookupByLibrary.simpleMessage("ФАК"),
         "Favorites": MessageLookupByLibrary.simpleMessage("Избранное"),
         "FeaturesEnableGeolocation":
@@ -247,6 +251,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "NPlace": m8,
         "Name": MessageLookupByLibrary.simpleMessage("Name"),
         "NameOrNickname": MessageLookupByLibrary.simpleMessage("Имя или ник"),
+        "NewDonates": MessageLookupByLibrary.simpleMessage("Новые донаты"),
+        "NewFeatures": MessageLookupByLibrary.simpleMessage("Новые функции"),
+        "NewFollowers":
+            MessageLookupByLibrary.simpleMessage("Новые подписчики"),
         "NewLocationHasOpenedToday": MessageLookupByLibrary.simpleMessage(
             "Сегодня открылось новое место. Приходи! Понравится!"),
         "NewPlace": MessageLookupByLibrary.simpleMessage("Новое место"),

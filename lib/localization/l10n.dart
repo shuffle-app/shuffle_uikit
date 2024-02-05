@@ -2947,21 +2947,51 @@ class S {
     );
   }
 
-  /// `Edit`
-  String get Edit {
+  /// `All app notifications`
+  String get AllAppNotification {
     return Intl.message(
-      'Edit',
-      name: 'Edit',
+      'All app notifications',
+      name: 'AllAppNotification',
       desc: '',
       args: [],
     );
   }
 
-  /// `You can only spend on your dream, otherwise the money will go back to the donators. One request per month.`
-  String get DonationHint {
+  /// `Events reminders`
+  String get EventsReminders {
     return Intl.message(
-      'You can only spend on your dream, otherwise the money will go back to the donators. One request per month.',
-      name: 'DonationHint',
+      'Events reminders',
+      name: 'EventsReminders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New features`
+  String get NewFeatures {
+    return Intl.message(
+      'New features',
+      name: 'NewFeatures',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New donates`
+  String get NewDonates {
+    return Intl.message(
+      'New donates',
+      name: 'NewDonates',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New followers`
+  String get NewFollowers {
+    return Intl.message(
+      'New followers',
+      name: 'NewFollowers',
       desc: '',
       args: [],
     );
