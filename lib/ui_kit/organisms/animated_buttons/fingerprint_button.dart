@@ -236,56 +236,58 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
               onPanStart: (details) => _onPanDisabled ? null : _setPosition(details),
               onPanEnd: (_) => _onPanDisabled ? null : _resetPosition(),
               child: AnimatedBuilder(
-                  animation: _shadowAnimation,
-                  builder: (context, _) {
-                    return DecoratedBox(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: ColorsFoundation.shadowPink.withOpacity(_shadowAnimation.value),
-                            blurRadius: 20,
-                            spreadRadius: -3,
-                            offset: Offset.zero,
-                          ),
-                        ],
+                animation: _shadowAnimation,
+                builder: (context, child) {
+                  return DecoratedBox(
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: ColorsFoundation.shadowPink.withOpacity(_shadowAnimation.value),
+                          blurRadius: 20,
+                          spreadRadius: -3,
+                          offset: Offset.zero,
+                        ),
+                      ],
+                    ),
+                    child: child,
+                  );
+                },
+                child: UiKitCardWrapper(
+                  width: widget.width ?? 105.w,
+                  height: widget.height ?? height,
+                  color: context.uiKitTheme?.colorScheme.surface3,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GradientableWidget(
+                        gradient: GradientFoundation.touchIdLinearGradient,
+                        child: widget.title,
                       ),
-                      child: UiKitCardWrapper(
-                        width: widget.width ?? 105.w,
-                        height: widget.height ?? height,
-                        color: context.uiKitTheme?.colorScheme.surface3,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            GradientableWidget(
-                              gradient: GradientFoundation.touchIdLinearGradient,
-                              child: widget.title,
+                      SpacingFoundation.verticalSpace12,
+                      ClipRRect(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(50),
+                        ),
+                        child: SizedBox(
+                          height: 48.w,
+                          width: 48.w,
+                          child: FittedBox(
+                            fit: BoxFit.cover,
+                            child: LottieBuilder.asset(
+                              package: 'shuffle_uikit',
+                              controller: _controller,
+                              fit: BoxFit.cover,
+                              widget.animationPath != null
+                                  ? widget.animationPath!
+                                  : GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
                             ),
-                            SpacingFoundation.verticalSpace12,
-                            ClipRRect(
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(50),
-                              ),
-                              child: SizedBox(
-                                height: 48.w,
-                                width: 48.w,
-                                child: FittedBox(
-                                  fit: BoxFit.cover,
-                                  child: LottieBuilder.asset(
-                                    package: 'shuffle_uikit',
-                                    controller: _controller,
-                                    fit: BoxFit.cover,
-                                    widget.animationPath != null
-                                        ? widget.animationPath!
-                                        : GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                          ),
                         ),
                       ),
-                    );
-                  }),
+                    ],
+                  ),
+                ),
+              ),
             ).paddingAll(EdgeInsetsFoundation.all4),
             back: widget.onCompletedWidget.paddingAll(EdgeInsetsFoundation.all4),
           ),
