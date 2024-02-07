@@ -9,6 +9,8 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
   final bool? loading;
   final ButtonFit? fit;
   final AutoSizeGroup? group;
+  final Color? backgroundColor;
+  final Color? textColor;
 
   const SmallOrdinaryButton({
     Key? key,
@@ -18,6 +20,8 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
     this.fit,
     this.group,
     this.uppercase = true,
+    this.backgroundColor,
+    this.textColor,
   }) : super(key: key);
 
   @override
@@ -34,7 +38,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
                     : text,
             maxLines: 1,
             group: group,
-            style: textStyle?.copyWith(color: enabled ? theme?.colorScheme.surface : Colors.grey),
+            style: textStyle?.copyWith(color: enabled ? textColor ?? theme?.colorScheme.surface : Colors.grey),
             textAlign: TextAlign.center,
           ).loadingWrap(loading ?? false)
         : Text(
@@ -43,12 +47,12 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
                 : uppercase
                     ? text.toUpperCase()
                     : text,
-            style: textStyle?.copyWith(color: enabled ? theme?.colorScheme.surface : Colors.grey),
+            style: textStyle?.copyWith(color: enabled ? textColor ?? theme?.colorScheme.surface : Colors.grey),
             textAlign: TextAlign.center,
           ).loadingWrap(loading ?? false);
 
     return Material(
-      color: enabled ? theme?.colorScheme.inverseSurface : ColorsFoundation.darkNeutral300,
+      color: enabled ? backgroundColor ?? theme?.colorScheme.inverseSurface : ColorsFoundation.darkNeutral300,
       clipBehavior: Clip.hardEdge,
       borderRadius: BorderRadiusFoundation.max,
       child: InkWell(

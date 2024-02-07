@@ -103,7 +103,6 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
         );
       },
       child: GestureDetector(
-        onLongPress: _playBlinkAnimation,
         child: widget.child,
       ),
     );

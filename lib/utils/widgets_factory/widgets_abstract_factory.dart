@@ -466,6 +466,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       text: data.text ?? '',
       onPressed: data.onPressed,
       uppercase: uppercase,
+      backgroundColor: data.backgroundColor,
+      textColor: data.textColor,
       loading: data.loading,
       fit: data.fit,
     );
