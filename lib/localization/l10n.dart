@@ -3007,6 +3007,42 @@ class S {
     );
   }
 
+  /// `For`
+  String get ForPeriod {
+    return Intl.message(
+      'For',
+      name: 'ForPeriod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gathering requests for FAQ. \nUnder development`
+  String get FaqUnderDev {
+    return Intl.message(
+      'Gathering requests for FAQ. \nUnder development',
+      name: 'FaqUnderDev',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{days,plural, =0{{days} days} =1{{days} day} =2{{days} days} few{{days} days} many{{days} days} other{{days} days}}`
+  String Days(num days) {
+    return Intl.plural(
+      days,
+      zero: '$days days',
+      one: '$days day',
+      two: '$days days',
+      few: '$days days',
+      many: '$days days',
+      other: '$days days',
+      name: 'Days',
+      desc: '',
+      args: [days],
+    );
+  }
+
   /// `You can only spend on your dream, otherwise the money will go back to the donators. One request per month.`
   String get DonationHint {
     return Intl.message(

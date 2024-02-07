@@ -28,6 +28,7 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final colorScheme = theme?.colorScheme;
     final textStyle = theme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: textColor,
     );
@@ -66,7 +67,7 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
                   text ?? '',
                   style: textStyle,
                   textAlign: TextAlign.center,
-                ).loadingWrap(loading ?? false, color: Colors.white),
+                ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface),
         ),
       ),
     );

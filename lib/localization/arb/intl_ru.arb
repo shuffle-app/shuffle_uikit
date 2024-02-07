@@ -294,5 +294,8 @@
   "EventsReminders": "Напоминания о событиях",
   "NewFeatures": "Новые функции",
   "NewDonates": "Новые донаты",
-  "NewFollowers": "Новые подписчики"
+  "NewFollowers": "Новые подписчики",
+  "ForPeriod": "на",
+  "FaqUnderDev": "Сбор запросов для FAQ. \nРаздел находится в разработке",
+  "Days": "{days,plural, =0{{days} дней} =1{{days} день} =2{{days} дня} few{{days} дня} many{{days} дней} other{{days} дней}}"
 }

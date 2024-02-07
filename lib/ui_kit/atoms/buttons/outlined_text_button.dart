@@ -23,6 +23,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
     final enabled = onPressed != null;
 
     final theme = context.uiKitTheme;
+    final colorScheme = theme?.colorScheme;
     final textStyle = theme?.boldTextTheme.bodyUpperCase;
     final textWidget = Text(
       text.toUpperCase(),
@@ -70,6 +71,6 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
                 ),
         ),
       ),
-    ).loadingWrap(loading ?? false);
+    ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
   }
 }

@@ -22,6 +22,7 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
   @override
   Widget build(BuildContext context) {
     TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
       color: context.uiKitTheme?.colorScheme.inverseSurface,
@@ -56,6 +57,6 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
           ),
         ),
       ),
-    ).loadingWrap(loading ?? false);
+    ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
   }
 }

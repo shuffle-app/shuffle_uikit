@@ -21,6 +21,7 @@ class OutlinedGradientButton extends StatelessWidget implements ButtonFactory {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final colorScheme = theme?.colorScheme;
     final textWidget = GradientableWidget(
       gradient: gradientBorder.gradient,
       child: Text(
@@ -48,7 +49,10 @@ class OutlinedGradientButton extends StatelessWidget implements ButtonFactory {
             border: gradientBorder,
             borderRadius: BorderRadiusFoundation.max,
           ),
-          child: (fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget).loadingWrap(loading ?? false),
+          child: (fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget).loadingWrap(
+            loading ?? false,
+            color: colorScheme?.inverseSurface,
+          ),
         ),
       ),
     );

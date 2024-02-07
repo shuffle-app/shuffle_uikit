@@ -23,6 +23,7 @@ class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFac
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
       borderRadius: BorderRadiusFoundation.all24,
@@ -60,6 +61,6 @@ class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFac
           ),
         ),
       ),
-    ).loadingWrap(loading ?? false);
+    ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
   }
 }

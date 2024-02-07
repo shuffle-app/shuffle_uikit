@@ -24,11 +24,12 @@ class OrdinaryButton extends StatelessWidget implements ButtonFactory {
     final theme = context.uiKitTheme;
     final enabled = onPressed != null;
     final textStyle = theme?.boldTextTheme.bodyUpperCase;
+    final colorScheme = theme?.colorScheme;
     final textWidget = Text(
       (loading ?? false) ? '' : text.toUpperCase(),
       style: textStyle?.copyWith(color: enabled ? textColor ?? theme?.colorScheme.primary : ColorsFoundation.mutedText),
       textAlign: TextAlign.center,
-    ).loadingWrap(loading ?? false);
+    ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
 
     return Material(
       color: enabled ? backgroundColor ?? theme?.colorScheme.inversePrimary : ColorsFoundation.darkNeutral300,
