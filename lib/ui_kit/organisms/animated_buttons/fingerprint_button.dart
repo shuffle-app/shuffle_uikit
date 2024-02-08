@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:flip_card/flip_card.dart';
 import 'package:flip_card/flip_card_controller.dart';
@@ -207,8 +206,6 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
   @override
   Widget build(BuildContext context) {
     final height = 0.27.sw * 1.68;
-    final color = context.uiKitTheme?.colorScheme.surface3;
-    log('panDisabled: $_onPanDisabled', name: 'FingerprintButton');
 
     return ValueListenableBuilder(
       valueListenable: _currentPosition,
