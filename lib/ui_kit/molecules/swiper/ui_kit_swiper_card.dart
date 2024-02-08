@@ -20,17 +20,15 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
-    return GestureDetector(
+    return RepaintBoundary(
+      child: GestureDetector(
         onTap: onTap,
         child: Container(
           margin: EdgeInsets.all(EdgeInsetsFoundation.all16),
           width: kIsWeb ? 267 : 267.w,
           height: kIsWeb ? 316 : 316.h,
           clipBehavior: Clip.hardEdge,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadiusFoundation.all40,
-            color: Colors.grey
-          ),
+          decoration: BoxDecoration(borderRadius: BorderRadiusFoundation.all40, color: Colors.grey),
           child: Stack(
             fit: StackFit.expand,
             children: [
@@ -74,7 +72,9 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                 ],
               ).paddingAll(EdgeInsetsFoundation.all16),
             ],
-          )
-        ));
+          ),
+        ),
+      ),
+    );
   }
 }

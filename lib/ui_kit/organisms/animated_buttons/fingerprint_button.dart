@@ -26,7 +26,7 @@ class FingerprintButton extends StatefulWidget {
   final double parentWidth;
   final double? width;
   final double? height;
-  final String? animationPath;
+  final String animationPath;
   final Widget? subtitle;
   final Widget onCompletedWidget;
   final bool? isCompleted;
@@ -270,38 +270,11 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
                           width: 48.w,
                           child: FittedBox(
                             fit: BoxFit.cover,
-                            child: ValueListenableBuilder(
-                              valueListenable: _controller,
-                              builder: (context, value, child) {
-                                Widget child = LottieBuilder.asset(
-                                  package: 'shuffle_uikit',
-                                  controller: _controller,
-                                  fit: BoxFit.cover,
-                                  widget.animationPath != null
-                                      ? widget.animationPath!
-                                      : GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
-                                );
-                                if (value == 0) {
-                                  child = ImageWidget(
-                                    svgAsset: GraphicsFoundation.instance.svg.fingerPrint,
-                                    fit: BoxFit.cover,
-                                    // color does not depend on theme
-                                    color: ColorsFoundation.neutral48,
-                                  );
-                                }
-
-                                return AnimatedSwitcher(
-                                  duration: const Duration(milliseconds: 0),
-                                  reverseDuration: const Duration(milliseconds: 0),
-                                  transitionBuilder: (child, animation) {
-                                    return FadeTransition(
-                                      opacity: animation,
-                                      child: child,
-                                    );
-                                  },
-                                  child: child,
-                                );
-                              },
+                            child: LottieBuilder.asset(
+                              package: 'shuffle_uikit',
+                              controller: _controller,
+                              fit: BoxFit.cover,
+                              widget.animationPath,
                             ),
                           ),
                         ),

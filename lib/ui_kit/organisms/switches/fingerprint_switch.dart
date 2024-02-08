@@ -10,10 +10,10 @@ class FingerprintSwitch extends StatefulWidget {
     required this.backgroundImage,
     required this.onCompletedWidget,
     required this.isHealthKitEnabled,
+    required this.animationPath,
     this.height,
     this.subtitle,
     this.isCompleted,
-    this.animationPath,
     this.onPressed,
     this.onCompleted,
   });
@@ -25,7 +25,7 @@ class FingerprintSwitch extends StatefulWidget {
   final bool? isCompleted;
   final ImageWidget backgroundImage;
   final bool isHealthKitEnabled;
-  final String? animationPath;
+  final String animationPath;
   final VoidCallback? onPressed;
   final AsyncCallback? onCompleted;
 
