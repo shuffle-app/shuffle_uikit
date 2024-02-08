@@ -32,7 +32,7 @@ class ProMemberPlate extends StatelessWidget {
           ),
           SpacingFoundation.horizontalSpace4,
           GradientableWidget(
-            gradient: GradientFoundation.badgeIcon,
+            gradient: GradientFoundation.premiumLinearGradient,
             child: Text(
               'pro',
               style: textTheme?.caption1Bold.copyWith(color: Colors.white),
