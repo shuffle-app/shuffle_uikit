@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:flip_card/flip_card.dart';
 import 'package:flip_card/flip_card_controller.dart';
@@ -176,9 +177,6 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
     if (touchPosition >= _finishPosition.dx) {
       return _finishPosition.dx;
     }
-    if (touchPosition >= _finishPosition.dx / 1.3) {
-      _onPanDisabled = true;
-    }
 
     return touchPosition;
   }
@@ -209,6 +207,8 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
   @override
   Widget build(BuildContext context) {
     final height = 0.27.sw * 1.68;
+    final color = context.uiKitTheme?.colorScheme.surface3;
+    log('panDisabled: $_onPanDisabled', name: 'FingerprintButton');
 
     return ValueListenableBuilder(
       valueListenable: _currentPosition,
@@ -273,13 +273,38 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
                           width: 48.w,
                           child: FittedBox(
                             fit: BoxFit.cover,
-                            child: LottieBuilder.asset(
-                              package: 'shuffle_uikit',
-                              controller: _controller,
-                              fit: BoxFit.cover,
-                              widget.animationPath != null
-                                  ? widget.animationPath!
-                                  : GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
+                            child: ValueListenableBuilder(
+                              valueListenable: _controller,
+                              builder: (context, value, child) {
+                                Widget child = LottieBuilder.asset(
+                                  package: 'shuffle_uikit',
+                                  controller: _controller,
+                                  fit: BoxFit.cover,
+                                  widget.animationPath != null
+                                      ? widget.animationPath!
+                                      : GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
+                                );
+                                if (value == 0) {
+                                  child = ImageWidget(
+                                    svgAsset: GraphicsFoundation.instance.svg.fingerPrint,
+                                    fit: BoxFit.cover,
+                                    // color does not depend on theme
+                                    color: ColorsFoundation.neutral48,
+                                  );
+                                }
+
+                                return AnimatedSwitcher(
+                                  duration: const Duration(milliseconds: 0),
+                                  reverseDuration: const Duration(milliseconds: 0),
+                                  transitionBuilder: (child, animation) {
+                                    return FadeTransition(
+                                      opacity: animation,
+                                      child: child,
+                                    );
+                                  },
+                                  child: child,
+                                );
+                              },
                             ),
                           ),
                         ),

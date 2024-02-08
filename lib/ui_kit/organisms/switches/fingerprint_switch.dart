@@ -84,16 +84,21 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
 
     return Stack(
       children: [
-        UiKitBorderWrapper(
-          height: height,
-          child: ClipRRect(
-            borderRadius: BorderRadiusFoundation.all28,
-            child: Transform(
-              alignment: Alignment.bottomCenter,
-              transform: Matrix4.identity()..scale(1.0, 0.8),
+        SizedBox(
+          height: height * 0.75,
+          width: 0.95.sw,
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: ClipRRect(
+              borderRadius: BorderRadiusFoundation.all28,
               child: widget.backgroundImage,
             ),
           ),
+        ).paddingOnly(top: height * 0.25),
+        UiKitBorderWrapper(
+          height: height,
+          width: 0.95.sw,
+          child: const SizedBox(),
         ),
         Opacity(
           opacity: 0.06,

@@ -422,9 +422,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/delivery-truck.png
   AssetGenImage get deliveryTruck => const AssetGenImage('assets/images/png/delivery-truck.png');
 
-  /// File path: assets/images/png/dubai_silhouette.png
-  AssetGenImage get dubaiSilhouette => const AssetGenImage('assets/images/png/dubai_silhouette.png');
-
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
@@ -745,7 +742,6 @@ class $AssetsImagesPngGen {
         coach,
         compactRatingCardMock,
         deliveryTruck,
-        dubaiSilhouette,
         eventAvatar,
         fatigueEmoji,
         geoPermit,
@@ -1185,6 +1181,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/donat.svg
   SvgGenImage get donat => const SvgGenImage('assets/images/svg/donat.svg');
 
+  /// File path: assets/images/svg/dubai-silhouette.svg
+  SvgGenImage get dubaiSilhouette => const SvgGenImage('assets/images/svg/dubai-silhouette.svg');
+
   /// File path: assets/images/svg/empty_radio.svg
   SvgGenImage get emptyRadio => const SvgGenImage('assets/images/svg/empty_radio.svg');
 
@@ -1214,6 +1213,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/finance.svg
   SvgGenImage get finance => const SvgGenImage('assets/images/svg/finance.svg');
+
+  /// File path: assets/images/svg/finger-print.svg
+  SvgGenImage get fingerPrint => const SvgGenImage('assets/images/svg/finger-print.svg');
 
   /// File path: assets/images/svg/fire_white.svg
   SvgGenImage get fireWhite => const SvgGenImage('assets/images/svg/fire_white.svg');
@@ -1754,6 +1756,7 @@ class $AssetsImagesSvgGen {
         dollarBlackOutlined,
         dollarOutlined,
         donat,
+        dubaiSilhouette,
         emptyRadio,
         exclamation,
         eyeOff,
@@ -1764,6 +1767,7 @@ class $AssetsImagesSvgGen {
         film,
         filter,
         finance,
+        fingerPrint,
         fireWhite,
         flag,
         food,
