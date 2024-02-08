@@ -25,6 +25,7 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
     final theme = context.uiKitTheme;
+    final colorScheme = theme?.colorScheme;
 
     return Material(
       clipBehavior: Clip.hardEdge,
@@ -62,6 +63,6 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
           ),
         ),
       ),
-    ).loadingWrap(loading ?? false);
+    ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
   }
 }

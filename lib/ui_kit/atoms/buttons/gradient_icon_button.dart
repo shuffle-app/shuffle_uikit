@@ -22,6 +22,7 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
+    final colorScheme = context.uiKitTheme?.colorScheme;
     final child = Padding(
       padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
       child: icon ??
@@ -52,6 +53,6 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
                   : Center(child: child),
         ),
       ),
-    ).loadingWrap(loading ?? false);
+    ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
   }
 }

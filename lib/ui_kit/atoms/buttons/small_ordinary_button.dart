@@ -28,6 +28,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final enabled = onPressed != null;
+    final colorScheme = theme?.colorScheme;
     final textStyle = theme?.boldTextTheme.caption1UpperCaseMedium;
     final textWidget = group != null
         ? AutoSizeText(
@@ -40,7 +41,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
             group: group,
             style: textStyle?.copyWith(color: enabled ? textColor ?? theme?.colorScheme.surface : Colors.grey),
             textAlign: TextAlign.center,
-          ).loadingWrap(loading ?? false)
+          ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface)
         : Text(
             loading ?? false
                 ? ''
@@ -49,7 +50,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
                     : text,
             style: textStyle?.copyWith(color: enabled ? textColor ?? theme?.colorScheme.surface : Colors.grey),
             textAlign: TextAlign.center,
-          ).loadingWrap(loading ?? false);
+          ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
 
     return Material(
       color: enabled ? backgroundColor ?? theme?.colorScheme.inverseSurface : ColorsFoundation.darkNeutral300,

@@ -28,6 +28,7 @@ class SmallButtonWithTextAndIcon extends StatelessWidget implements ButtonFactor
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final colorScheme = theme?.colorScheme;
     final textStyle = theme?.boldTextTheme.caption1UpperCaseMedium;
     final textWidget = group != null
         ? AutoSizeText(
@@ -76,7 +77,7 @@ class SmallButtonWithTextAndIcon extends StatelessWidget implements ButtonFactor
                     color: iconInfo?.color ?? theme?.colorScheme.surface,
                   )
             ],
-          ).loadingWrap(loading ?? false),
+          ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface),
         ),
       ),
     );

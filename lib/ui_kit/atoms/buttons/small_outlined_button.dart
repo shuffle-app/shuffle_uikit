@@ -33,6 +33,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
           ? context.uiKitTheme!.colorScheme.inversePrimary.withOpacity(0.5)
           : textColor ?? context.uiKitTheme!.colorScheme.inversePrimary,
     );
+    final colorScheme = context.uiKitTheme?.colorScheme;
     double blurValue = 0;
     if (blurred) blurValue = 18;
 
@@ -82,6 +83,6 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
                       ))),
         ),
       ),
-    ).loadingWrap(loading ?? false);
+    ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
   }
 }

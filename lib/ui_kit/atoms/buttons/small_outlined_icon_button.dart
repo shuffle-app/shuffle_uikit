@@ -21,6 +21,8 @@ class SmallOutlinedIconButton extends StatelessWidget implements ButtonFactory {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.uiKitTheme?.colorScheme;
+
     return Material(
       shape: const CircleBorder(),
       clipBehavior: Clip.hardEdge,
@@ -45,7 +47,7 @@ class SmallOutlinedIconButton extends StatelessWidget implements ButtonFactory {
                   fit: BoxFit.fitHeight,
                   color: iconInfo?.color ?? context.uiKitTheme?.colorScheme.inversePrimary,
                 ),
-          ).loadingWrap(loading ?? false, color: borderColor ?? Colors.white),
+          ).loadingWrap(loading ?? false, color: borderColor ?? colorScheme?.inverseSurface),
         ),
       ),
     );

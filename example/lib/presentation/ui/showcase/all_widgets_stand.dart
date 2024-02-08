@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-import '../../routing/app_routes.dart';
-
 class AllWidgetsStand extends StatefulWidget {
   const AllWidgetsStand({super.key});
 
@@ -763,7 +761,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ),
           backgroundImage: ImageWidget(
             width: double.infinity,
-            rasterAsset: GraphicsFoundation.instance.png.dubaiSilhouette,
+            svgAsset: GraphicsFoundation.instance.svg.dubaiSilhouette,
             fit: BoxFit.cover,
             color: context.uiKitTheme?.colorScheme.surface2,
           ),
@@ -1928,8 +1926,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context).push(
-                PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+            Navigator.of(context)
+                .push(PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
           },
           child: const Text(
             'Show Horizontal Video',
@@ -1938,8 +1936,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context)
-                .push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+            Navigator.of(context).push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
           },
           child: const Text(
             'Show Vertical Video',
@@ -1951,8 +1948,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context).push(PopUpVideoPlayer(
-                videoUri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
+            Navigator.of(context).push(
+                PopUpVideoPlayer(videoUri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
           },
           child: const Text(
             'Show Another Horizontal Video',

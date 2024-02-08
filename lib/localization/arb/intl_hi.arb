@@ -270,6 +270,10 @@
   "AreYouSureYouWantToDeleteYourCompanyProfile": "क्या आप वाकई अपनी कंपनी प्रोफ़ाइल हटाना चाहते हैं?",
   "HintSystemEnabled": "{days} दिनों के लिए संकेत प्रणाली सक्षम है",
   "HintSystemDisabled": "संकेत प्रणाली अक्षम है",
+  "DonationHint":"आप केवल अपने सपने पर खर्च कर सकते हैं, अन्यथा पैसा दाताओं को वापस जाएगा। एक महीने में एक अनुरोध।",
+  "FaqUnderDev": "Gathering requests for FAQ. \nUnder development",
+  "Days": "{days,plural, =0{{days} दिन} =1{{days} दिन} =2{{days} दिन} few{{days} दिन} many{{days} दिन} other{{days} दिन}}",
+  "ForPeriod": "For",
   "WhiteTheme": "White theme",
   "Name": "Name",
   "AcceptDonations": "Accept donations or help others realize their dreams",
@@ -287,10 +291,11 @@
   "HallOfFame": "Hall of Fame",
   "ViewAll": "View all",
   "NoFavoritesFound": "No favorites found",
-  "Events": "Events",
   "AllAppNotification": "All app notifications",
   "EventsReminders": "Events reminders",
   "NewFeatures": "New features",
   "NewDonates": "New donates",
-  "NewFollowers": "New followers"
+  "NewFollowers": "New followers",
+  "Events": "Events",
+  "Edit": "Edit"
 }

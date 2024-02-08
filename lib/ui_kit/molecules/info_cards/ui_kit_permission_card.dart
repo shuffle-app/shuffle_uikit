@@ -43,7 +43,7 @@ class UiKitPermissionCard extends StatelessWidget {
                   title,
                   style: labelStyle,
                 ),
-              )
+              ),
             ],
           ),
           SpacingFoundation.verticalSpace16,

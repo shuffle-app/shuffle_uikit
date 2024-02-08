@@ -19,12 +19,13 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
+    final colorScheme = context.uiKitTheme?.colorScheme;
     TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.bodyUpperCase.copyWith(color: enabled ? Colors.black : Colors.grey);
     final textWidget = Text(
       (loading ?? false) ? '' : text.toUpperCase(),
       style: textStyle,
       textAlign: TextAlign.center,
-    ).loadingWrap(loading ?? false);
+    ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
 
     return Material(
       borderRadius: kIsWeb ? BorderRadiusFoundation.all10 : BorderRadiusFoundation.max,
@@ -36,7 +37,7 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
           width: fit == ButtonFit.fitWidth ? double.infinity : null,
           padding: EdgeInsets.symmetric(
             vertical: EdgeInsetsFoundation.vertical14,
-            horizontal: fit == ButtonFit.hugContent ? EdgeInsetsFoundation.horizontal20: EdgeInsetsFoundation.horizontal44,
+            horizontal: fit == ButtonFit.hugContent ? EdgeInsetsFoundation.horizontal20 : EdgeInsetsFoundation.horizontal44,
           ),
           decoration: BoxDecoration(
             borderRadius: kIsWeb ? BorderRadiusFoundation.all10 : BorderRadiusFoundation.max,
