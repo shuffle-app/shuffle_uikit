@@ -91,6 +91,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
+    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return BlurredAppBarPage(
       title: 'Edit Profile',
@@ -765,7 +766,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             fit: BoxFit.cover,
             color: context.uiKitTheme?.colorScheme.surface2,
           ),
-          animationPath: GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
+          animationPath: isLightTheme
+              ? GraphicsFoundation.instance.animations.lottie.fingerprintWhite.path
+              : GraphicsFoundation.instance.animations.lottie.fingerprintBlack.path,
           onCompletedWidget: UiKitMessageCardWithIcon(
             message: 'La Vue Citytel',
             iconLink: GraphicsFoundation.instance.png.angryEmoji.path,

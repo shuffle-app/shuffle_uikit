@@ -54,25 +54,24 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                         duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
                   }
                 },
-                child: ListView.builder(
+                child: ListView.separated(
                   controller: scrollController,
                   physics: const ClampingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  addAutomaticKeepAlives: false,
-                  itemCount: media.length + 1,
+                  addAutomaticKeepAlives: true,
+                  itemCount: media.length,
+                  padding: EdgeInsets.zero,
+                  separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
                   itemBuilder: (context, index) {
-                    if (index == 0) return horizontalMargin.widthBox;
-
-                    final mediaItem = media.elementAt(index - 1);
+                    final mediaItem = media.elementAt(index);
                     if (mediaItem.type == UiKitMediaType.video) {
                       return BaseUiKitMediaWidget.video(
                         media: mediaItem,
                         width: media.length == 1 ? mediaWidth : null,
-                      ).paddingOnly(right: media.length == index ? 0 : SpacingFoundation.horizontalSpacing16);
+                      ).paddingOnly(left: index == 0 ? horizontalMargin : 0);
                     }
 
-                    return BaseUiKitMediaWidget.image(media: mediaItem, width: media.length == 1 ? mediaWidth : null)
-                        .paddingOnly(right: media.length == index ? 0 : SpacingFoundation.horizontalSpacing16);
+                    return BaseUiKitMediaWidget.image(media: mediaItem).paddingOnly(left: index == 0 ? horizontalMargin : 0);
                   },
                 ),
               ),
@@ -82,14 +81,10 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                   bottom: 0,
                   height: 0.1.sw,
                   width: 1.sw,
-                  child: Wrap(
-                    runSpacing:  SpacingFoundation.horizontalSpacing16,
-                    spacing:  SpacingFoundation.horizontalSpacing16,
-                    crossAxisAlignment: WrapCrossAlignment.end,
-                    runAlignment: WrapAlignment.end,
-                    alignment: WrapAlignment.end,
-                    children: actions!
-                    ,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: actions!.reversed.toList(),
                   ),
                 ),
             ],
@@ -145,7 +140,13 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           SpacingFoundation.verticalSpace14,
         ],
         RepaintBoundary(
-            child: DescriptionWidget(description: description).paddingOnly(left: horizontalMargin, right: horizontalMargin)),
+          child: DescriptionWidget(
+            description: description,
+          ).paddingOnly(
+            left: horizontalMargin,
+            right: horizontalMargin,
+          ),
+        ),
       ],
     );
   }

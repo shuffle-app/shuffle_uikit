@@ -54,7 +54,6 @@ class UiKitTagsWidget extends StatelessWidget {
                 child: ListView.separated(
                   clipBehavior: Clip.hardEdge,
                   padding: EdgeInsets.zero,
-                  shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   primary: false,
                   itemBuilder: (context, index) {
@@ -77,7 +76,6 @@ class UiKitTagsWidget extends StatelessWidget {
                   child: ListView.separated(
                     clipBehavior: Clip.hardEdge,
                     padding: EdgeInsets.zero,
-                    shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
                     primary: false,
                     separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace8,

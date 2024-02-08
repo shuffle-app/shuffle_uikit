@@ -66,8 +66,11 @@ class $AssetsAnimationsLottieGen {
   /// File path: assets/animations/lottie/Whole heart.json
   LottieGenImage get wholeHeart => const LottieGenImage('assets/animations/lottie/Whole heart.json');
 
-  /// File path: assets/animations/lottie/animation_touch_id.json
-  LottieGenImage get animationTouchId => const LottieGenImage('assets/animations/lottie/animation_touch_id.json');
+  /// File path: assets/animations/lottie/fingerprint-black.json
+  LottieGenImage get fingerprintBlack => const LottieGenImage('assets/animations/lottie/fingerprint-black.json');
+
+  /// File path: assets/animations/lottie/fingerprint-white.json
+  LottieGenImage get fingerprintWhite => const LottieGenImage('assets/animations/lottie/fingerprint-white.json');
 
   /// File path: assets/animations/lottie/shuffle-loader-black-theme.json
   LottieGenImage get shuffleLoaderBlackTheme =>
@@ -87,7 +90,8 @@ class $AssetsAnimationsLottieGen {
   List<LottieGenImage> get values => [
         brokenHeart,
         wholeHeart,
-        animationTouchId,
+        fingerprintBlack,
+        fingerprintWhite,
         shuffleLoaderBlackTheme,
         shuffleLoaderWhiteTheme,
         starFill,

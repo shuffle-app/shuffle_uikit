@@ -23,7 +23,8 @@ class UiKitSwiperCardInfo extends StatelessWidget {
     final titleStyle = textTheme?.body.copyWith(color: Colors.white);
     final subtitleStyle = textTheme?.caption1Medium.copyWith(color: Colors.white);
 
-    return ClipRRect(
+    return RepaintBoundary(
+      child: ClipRRect(
         borderRadius: BorderRadiusFoundation.all20,
         child: ColoredBox(
           color: ColorsFoundation.darkNeutral500.withOpacity(0.16),
@@ -45,25 +46,25 @@ class UiKitSwiperCardInfo extends StatelessWidget {
                 ),
                 SpacingFoundation.verticalSpace4,
                 SizedBox(
-                  height: SpacingFoundation.horizontalSpacing16 + 2,
-                  child:
-                ListView.separated(
-                  shrinkWrap: true,
-                  primary: false,
-                  scrollDirection: Axis.horizontal,
-                  padding: EdgeInsets.zero,
-                  clipBehavior: Clip.hardEdge,
-                  controller: scrollController,
-                  // child: Wrap(
-                  //   spacing: ,
-                  itemBuilder: (context, index) => tags[index],
-                  separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace8,
-                  itemCount: tags.length,
-                )),
+                    height: SpacingFoundation.horizontalSpacing16 + 2,
+                    child: ListView.separated(
+                      primary: false,
+                      scrollDirection: Axis.horizontal,
+                      padding: EdgeInsets.zero,
+                      clipBehavior: Clip.hardEdge,
+                      controller: scrollController,
+                      // child: Wrap(
+                      //   spacing: ,
+                      itemBuilder: (context, index) => tags[index],
+                      separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace8,
+                      itemCount: tags.length,
+                    )),
                 // ),
               ],
             ).paddingAll(EdgeInsetsFoundation.all12),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
