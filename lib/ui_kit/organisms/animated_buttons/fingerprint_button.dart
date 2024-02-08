@@ -176,9 +176,6 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
     if (touchPosition >= _finishPosition.dx) {
       return _finishPosition.dx;
     }
-    if (touchPosition >= _finishPosition.dx / 1.3) {
-      _onPanDisabled = true;
-    }
 
     return touchPosition;
   }
@@ -236,56 +233,83 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
               onPanStart: (details) => _onPanDisabled ? null : _setPosition(details),
               onPanEnd: (_) => _onPanDisabled ? null : _resetPosition(),
               child: AnimatedBuilder(
-                  animation: _shadowAnimation,
-                  builder: (context, _) {
-                    return DecoratedBox(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: ColorsFoundation.shadowPink.withOpacity(_shadowAnimation.value),
-                            blurRadius: 20,
-                            spreadRadius: -3,
-                            offset: Offset.zero,
-                          ),
-                        ],
+                animation: _shadowAnimation,
+                builder: (context, child) {
+                  return DecoratedBox(
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: ColorsFoundation.shadowPink.withOpacity(_shadowAnimation.value),
+                          blurRadius: 20,
+                          spreadRadius: -3,
+                          offset: Offset.zero,
+                        ),
+                      ],
+                    ),
+                    child: child,
+                  );
+                },
+                child: UiKitCardWrapper(
+                  width: widget.width ?? 105.w,
+                  height: widget.height ?? height,
+                  color: context.uiKitTheme?.colorScheme.surface3,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      GradientableWidget(
+                        gradient: GradientFoundation.touchIdLinearGradient,
+                        child: widget.title,
                       ),
-                      child: UiKitCardWrapper(
-                        width: widget.width ?? 105.w,
-                        height: widget.height ?? height,
-                        color: context.uiKitTheme?.colorScheme.surface3,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            GradientableWidget(
-                              gradient: GradientFoundation.touchIdLinearGradient,
-                              child: widget.title,
-                            ),
-                            SpacingFoundation.verticalSpace12,
-                            ClipRRect(
-                              borderRadius: const BorderRadius.all(
-                                Radius.circular(50),
-                              ),
-                              child: SizedBox(
-                                height: 48.w,
-                                width: 48.w,
-                                child: FittedBox(
+                      SpacingFoundation.verticalSpace12,
+                      ClipRRect(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(50),
+                        ),
+                        child: SizedBox(
+                          height: 48.w,
+                          width: 48.w,
+                          child: FittedBox(
+                            fit: BoxFit.cover,
+                            child: ValueListenableBuilder(
+                              valueListenable: _controller,
+                              builder: (context, value, child) {
+                                Widget child = LottieBuilder.asset(
+                                  package: 'shuffle_uikit',
+                                  controller: _controller,
                                   fit: BoxFit.cover,
-                                  child: LottieBuilder.asset(
-                                    package: 'shuffle_uikit',
-                                    controller: _controller,
+                                  widget.animationPath != null
+                                      ? widget.animationPath!
+                                      : GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
+                                );
+                                if (value == 0) {
+                                  child = ImageWidget(
+                                    svgAsset: GraphicsFoundation.instance.svg.fingerPrint,
                                     fit: BoxFit.cover,
-                                    widget.animationPath != null
-                                        ? widget.animationPath!
-                                        : GraphicsFoundation.instance.animations.lottie.animationTouchId.path,
-                                  ),
-                                ),
-                              ),
+                                    // color does not depend on theme
+                                    color: ColorsFoundation.neutral48,
+                                  );
+                                }
+
+                                return AnimatedSwitcher(
+                                  duration: const Duration(milliseconds: 0),
+                                  reverseDuration: const Duration(milliseconds: 0),
+                                  transitionBuilder: (child, animation) {
+                                    return FadeTransition(
+                                      opacity: animation,
+                                      child: child,
+                                    );
+                                  },
+                                  child: child,
+                                );
+                              },
                             ),
-                          ],
+                          ),
                         ),
                       ),
-                    );
-                  }),
+                    ],
+                  ),
+                ),
+              ),
             ).paddingAll(EdgeInsetsFoundation.all4),
             back: widget.onCompletedWidget.paddingAll(EdgeInsetsFoundation.all4),
           ),

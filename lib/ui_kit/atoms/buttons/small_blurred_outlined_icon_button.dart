@@ -27,6 +27,7 @@ class SmallBlurredOutlinedIconButton extends StatelessWidget implements ButtonFa
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final colorScheme = theme?.colorScheme;
     final isLightTheme = theme?.themeMode == ThemeMode.light;
 
     return Material(
@@ -59,7 +60,7 @@ class SmallBlurredOutlinedIconButton extends StatelessWidget implements ButtonFa
                       fit: BoxFit.fitHeight,
                       color: iconInfo?.color ?? theme?.colorScheme.inversePrimary,
                     ),
-              ).loadingWrap(loading ?? false, color: Colors.white),
+              ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface),
             ),
           ),
         ),

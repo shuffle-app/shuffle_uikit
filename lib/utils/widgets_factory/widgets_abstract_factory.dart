@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit/atoms/buttons/ui_kit_icon_button_no_padding.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
 
 abstract class WidgetsAbstractFactory {
+  ButtonFactory createIconButtonNoPadding({
+    required BaseUiKitButtonData data,
+  });
+
   ButtonFactory createOutlinedBadgeButton({
     required BaseUiKitButtonData data,
     Alignment? badgeAlignment,
@@ -132,6 +137,17 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     final instance = context.findAncestorWidgetOfExactType<WidgetsFactory>();
 
     return instance;
+  }
+
+  @override
+  ButtonFactory createIconButtonNoPadding({
+    required BaseUiKitButtonData data,
+  }) {
+    if (data.iconInfo == null) throw UnimplementedError('IconInfo is required');
+    return UiKitIconButtonNoPadding(
+      iconData: data.iconInfo!,
+      onPressed: data.onPressed,
+    );
   }
 
   @override

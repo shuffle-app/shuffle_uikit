@@ -292,5 +292,10 @@
   "EventsReminders": "Events reminders",
   "NewFeatures": "New features",
   "NewDonates": "New donates",
-  "NewFollowers": "New followers"
+  "NewFollowers": "New followers",
+  "Edit": "Edit",
+  "ForPeriod": "For",
+  "FaqUnderDev": "Gathering requests for FAQ. \nUnder development",
+  "Days": "{days,plural, =0{{days} days} =1{{days} day} =2{{days} days} few{{days} days} many{{days} days} other{{days} days}}",
+  "DonationHint":"You can only spend on your dream, otherwise the money will go back to the donators. One request per month."
 }

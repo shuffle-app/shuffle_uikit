@@ -16,7 +16,9 @@ class SmallGradientButton extends StatelessWidget implements ButtonFactory {
   @override
   Widget build(BuildContext context) {
     final enabled = onPressed != null;
-    TextStyle? textStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCase.copyWith(color: enabled ? Colors.black : Colors.grey);
+    TextStyle? textStyle =
+        context.uiKitTheme?.boldTextTheme.caption1UpperCase.copyWith(color: enabled ? Colors.black : Colors.grey);
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
       borderRadius: BorderRadiusFoundation.max,
@@ -38,7 +40,7 @@ class SmallGradientButton extends StatelessWidget implements ButtonFactory {
             text.toUpperCase(),
             style: textStyle,
             textAlign: TextAlign.center,
-          ).loadingWrap(loading ?? false),
+          ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface),
         ),
       ),
     );

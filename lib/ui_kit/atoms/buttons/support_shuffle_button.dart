@@ -52,7 +52,7 @@ class SupportShuffleButton extends StatelessWidget {
                           ),
                           TextSpan(
                             text: ' shuffle',
-                            style: theme?.boldTextTheme.body.copyWith(color: Colors.transparent),
+                            style: theme?.boldTextTheme.body.copyWith(color: Colors.white),
                           ),
                         ],
                       ),
@@ -70,7 +70,7 @@ class SupportShuffleButton extends StatelessWidget {
                             ),
                             TextSpan(
                               text: ' shuffle',
-                              style: theme?.boldTextTheme.body,
+                              style: theme?.boldTextTheme.body.copyWith(color: Colors.white),
                             ),
                           ],
                         ),
