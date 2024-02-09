@@ -297,5 +297,8 @@
   "NewDonates": "New donates",
   "NewFollowers": "New followers",
   "Events": "Events",
-  "Edit": "Edit"
+  "Edit": "Edit",
+  "UpgradeAccount": "To use this function plz upgrade to {type}",
+  "UpgradeAccountConfirmation": "Upgrade"
+
 }

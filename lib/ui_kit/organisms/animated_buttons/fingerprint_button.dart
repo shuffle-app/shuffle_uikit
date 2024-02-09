@@ -123,7 +123,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
   }
 
   _startAnimation() {
-    _controller.forward();
+    _controller.forward(from: 0);
   }
 
   void _reverseAnimation() {

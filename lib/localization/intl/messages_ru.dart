@@ -56,18 +56,20 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m14(amountOfTopDonators, multiplier) =>
       "Топовые ${amountOfTopDonators} донаторы получают x${multiplier} очков";
 
-  static String m15(forNMoney) => "Upgrade ${forNMoney}";
+  static String m15(type) => "Чтобы пользоваться этим нужен ${type} аккаунт";
 
-  static String m16(count) =>
+  static String m16(forNMoney) => "Upgrade ${forNMoney}";
+
+  static String m17(count) =>
       "${Intl.plural(count, zero: '${count} человек', one: '${count} человек', two: '${count} человека', few: '${count} людей', many: '${count} человек', other: '${count} человек')}";
 
-  static String m17(value) => "${value} не может быть пустым";
+  static String m18(value) => "${value} не может быть пустым";
 
-  static String m18(title) => "${title} требуется";
+  static String m19(title) => "${title} требуется";
 
-  static String m19(value) => "${value} успешно обновлено";
+  static String m20(value) => "${value} успешно обновлено";
 
-  static String m20(amountOfInvitedPersons) =>
+  static String m21(amountOfInvitedPersons) =>
       "Вы отправили приглашение ${amountOfInvitedPersons} людям";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -432,9 +434,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpcomingEvent":
             MessageLookupByLibrary.simpleMessage("Предостоящее событие"),
         "Update": MessageLookupByLibrary.simpleMessage("Обновить"),
-        "UpgradeForNmoney": m15,
+        "UpgradeAccount": m15,
+        "UpgradeAccountConfirmation":
+            MessageLookupByLibrary.simpleMessage("Оформить"),
+        "UpgradeForNmoney": m16,
         "User": MessageLookupByLibrary.simpleMessage("Юзер"),
-        "Users": m16,
+        "Users": m17,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Данные здоровья"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
@@ -465,16 +470,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "WorkHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("Неверный код"),
-        "XCouldNotBeEmpty": m17,
-        "XIsRequired": m18,
-        "XSuccessfullyUpdated": m19,
+        "XCouldNotBeEmpty": m18,
+        "XIsRequired": m19,
+        "XSuccessfullyUpdated": m20,
         "Year": MessageLookupByLibrary.simpleMessage("Год"),
         "Yes": MessageLookupByLibrary.simpleMessage("Да"),
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Вам лучше взглянуть"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "Вы получаете точно то, что нужно"),
-        "YouSentInvitationToNPeople": m20,
+        "YouSentInvitationToNPeople": m21,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("Вы найдёте"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Твой возраст"),
         "YourAudience": MessageLookupByLibrary.simpleMessage("Ваша аудитория"),

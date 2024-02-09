@@ -3052,6 +3052,26 @@ class S {
       args: [],
     );
   }
+
+  /// `To use this function plz upgrade to {type}`
+  String UpgradeAccount(Object type) {
+    return Intl.message(
+      'To use this function plz upgrade to $type',
+      name: 'UpgradeAccount',
+      desc: '',
+      args: [type],
+    );
+  }
+
+  /// `Upgrade`
+  String get UpgradeAccountConfirmation {
+    return Intl.message(
+      'Upgrade',
+      name: 'UpgradeAccountConfirmation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

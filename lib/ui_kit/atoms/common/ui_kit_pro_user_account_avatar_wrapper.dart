@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
+
+import '../../../shuffle_uikit.dart';
 
 class UiKitProUserAccountAvatarWrapper extends StatelessWidget {
   final bool disabled;
