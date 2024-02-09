@@ -41,7 +41,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
             group: group,
             style: textStyle?.copyWith(color: enabled ? textColor ?? theme?.colorScheme.surface : Colors.grey),
             textAlign: TextAlign.center,
-          ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface)
+          ).loadingWrap(loading ?? false, color: colorScheme?.surface)
         : Text(
             loading ?? false
                 ? ''
@@ -50,7 +50,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
                     : text,
             style: textStyle?.copyWith(color: enabled ? textColor ?? theme?.colorScheme.surface : Colors.grey),
             textAlign: TextAlign.center,
-          ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
+          ).loadingWrap(loading ?? false, color: colorScheme?.surface);
 
     return Material(
       color: enabled ? backgroundColor ?? theme?.colorScheme.inverseSurface : ColorsFoundation.darkNeutral300,

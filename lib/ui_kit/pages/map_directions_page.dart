@@ -39,6 +39,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
     });
 
   late final ValueNotifier<bool> focusNotifier = ValueNotifier<bool>(false);
+  bool loading = true;
 
   @override
   void initState() {
@@ -49,7 +50,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
         () => widget.onCurrentLocationRequested?.call(),
       );
       _focusNode.requestFocus();
-      widget.currentLocationNotifier.addListener(_currentLocationListener);
+      // widget.currentLocationNotifier.addListener(_currentLocationListener);
     });
   }
 
@@ -75,6 +76,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
         72.w,
       ),
     );
+    loading = false;
     setState(() {
       directionLines = [
         Polyline(
@@ -107,6 +109,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final colorScheme = theme?.colorScheme;
 
     return Scaffold(
       extendBody: true,
@@ -114,7 +117,10 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
         fit: StackFit.expand,
         children: [
           GoogleMap(
-            onMapCreated: (mapController) => setState(() => controller = mapController),
+            onMapCreated: (mapController) {
+              widget.currentLocationNotifier.addListener(_currentLocationListener);
+              setState(() => controller = mapController);
+            },
             initialCameraPosition: CameraPosition(
               target: widget.currentLocationNotifier.value,
               zoom: 14,
@@ -156,6 +162,15 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
               ),
             ),
           ),
+          if (loading)
+            Positioned(
+              width: 1.sw,
+              height: 1.sh,
+              child: ColoredBox(
+                color: colorScheme?.surface3.withOpacity(0.75) ?? Colors.black54,
+                child: const Center(child: CircularProgressIndicator()),
+              ),
+            ),
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
@@ -247,7 +262,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                     SpacingFoundation.horizontalSpace4,
                     Text(
                       S.of(context).Directions,
-                      style: theme?.boldTextTheme.caption1Bold,
+                      style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
                     ),
                   ],
                 ),

@@ -47,7 +47,7 @@ class SmallOutlinedIconButton extends StatelessWidget implements ButtonFactory {
                   fit: BoxFit.fitHeight,
                   color: iconInfo?.color ?? context.uiKitTheme?.colorScheme.inversePrimary,
                 ),
-          ).loadingWrap(loading ?? false, color: borderColor ?? colorScheme?.inverseSurface),
+          ).loadingWrap(loading ?? false, color: borderColor ?? colorScheme?.surface),
         ),
       ),
     );

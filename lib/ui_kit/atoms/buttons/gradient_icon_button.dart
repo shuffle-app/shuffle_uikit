@@ -53,6 +53,6 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
                   : Center(child: child),
         ),
       ),
-    ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
+    ).loadingWrap(loading ?? false, color: colorScheme?.surface);
   }
 }

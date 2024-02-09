@@ -50,7 +50,7 @@ class OutlinedBlurIconButton extends StatelessWidget implements ButtonFactory {
                       fit: BoxFit.fitHeight,
                       color: iconInfo?.color ?? context.uiKitTheme?.colorScheme.inverseSurface,
                     ),
-              ).loadingWrap(loading ?? false, color: context.uiKitTheme?.colorScheme.inverseSurface),
+              ).loadingWrap(loading ?? false, color: context.uiKitTheme?.colorScheme.surface),
             ),
           ),
         ),

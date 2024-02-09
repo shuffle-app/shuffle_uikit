@@ -51,7 +51,7 @@ class OutlinedGradientButton extends StatelessWidget implements ButtonFactory {
           ),
           child: (fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget).loadingWrap(
             loading ?? false,
-            color: colorScheme?.inverseSurface,
+            color: colorScheme?.surface,
           ),
         ),
       ),

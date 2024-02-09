@@ -63,6 +63,6 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
           ),
         ),
       ),
-    ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
+    ).loadingWrap(loading ?? false, color: colorScheme?.surface);
   }
 }
