@@ -56,18 +56,20 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m14(amountOfTopDonators, multiplier) =>
       "Top ${amountOfTopDonators} donators receive x${multiplier} points";
 
-  static String m15(forNMoney) => "Upgrade ${forNMoney}";
+  static String m15(type) => "To use this function plz upgrade to ${type}";
 
-  static String m16(count) =>
+  static String m16(forNMoney) => "Upgrade ${forNMoney}";
+
+  static String m17(count) =>
       "${Intl.plural(count, zero: '${count} users', one: '${count} user', two: '${count} users', few: '${count} users', many: '${count} users', other: '${count} users')}";
 
-  static String m17(value) => "${value} could not be empty";
+  static String m18(value) => "${value} could not be empty";
 
-  static String m18(title) => "${title} is required";
+  static String m19(title) => "${title} is required";
 
-  static String m19(value) => "${value} successfully updated";
+  static String m20(value) => "${value} successfully updated";
 
-  static String m20(amountOfInvitedPersons) =>
+  static String m21(amountOfInvitedPersons) =>
       "You sent an invitation to ${amountOfInvitedPersons} people";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -422,9 +424,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Unique properties"),
         "UpcomingEvent": MessageLookupByLibrary.simpleMessage("Upcoming Event"),
         "Update": MessageLookupByLibrary.simpleMessage("Update"),
-        "UpgradeForNmoney": m15,
+        "UpgradeAccount": m15,
+        "UpgradeAccountConfirmation":
+            MessageLookupByLibrary.simpleMessage("Upgrade"),
+        "UpgradeForNmoney": m16,
         "User": MessageLookupByLibrary.simpleMessage("User"),
-        "Users": m16,
+        "Users": m17,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Using health kit"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
@@ -455,16 +460,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "WorkHours": MessageLookupByLibrary.simpleMessage("Work hours"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("Wrong security code"),
-        "XCouldNotBeEmpty": m17,
-        "XIsRequired": m18,
-        "XSuccessfullyUpdated": m19,
+        "XCouldNotBeEmpty": m18,
+        "XIsRequired": m19,
+        "XSuccessfullyUpdated": m20,
         "Year": MessageLookupByLibrary.simpleMessage("Year"),
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("You better check this out"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "You get exactly what you need"),
-        "YouSentInvitationToNPeople": m20,
+        "YouSentInvitationToNPeople": m21,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("You’ll find it"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Your age"),
         "YourAudience": MessageLookupByLibrary.simpleMessage("Your audience"),

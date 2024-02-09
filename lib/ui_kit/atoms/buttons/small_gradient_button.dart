@@ -40,7 +40,7 @@ class SmallGradientButton extends StatelessWidget implements ButtonFactory {
             text.toUpperCase(),
             style: textStyle,
             textAlign: TextAlign.center,
-          ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface),
+          ).loadingWrap(loading ?? false, color: colorScheme?.surface),
         ),
       ),
     );

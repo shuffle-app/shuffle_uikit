@@ -54,18 +54,20 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m14(amountOfTopDonators, multiplier) =>
       "शीर्ष ${amountOfTopDonators} दानदाताओं को x{गुणक} अंक प्राप्त होते हैं";
 
-  static String m15(forNMoney) => "अपग्रेड  ${forNMoney}";
+  static String m15(type) => "To use this function plz upgrade to ${type}";
 
-  static String m16(count) =>
+  static String m16(forNMoney) => "अपग्रेड  ${forNMoney}";
+
+  static String m17(count) =>
       "${Intl.plural(count, zero: '${count} users', one: '${count} user', two: '${count} users', few: '${count} users', many: '${count} users', other: '${count} users')}";
 
-  static String m17(value) => "${value}  खाली नहीं हो सका";
+  static String m18(value) => "${value}  खाली नहीं हो सका";
 
-  static String m18(title) => "{शीर्षक} आवश्यक है";
+  static String m19(title) => "{शीर्षक} आवश्यक है";
 
-  static String m19(value) => "${value}  सफलतापूर्वक अद्यतन";
+  static String m20(value) => "${value}  सफलतापूर्वक अद्यतन";
 
-  static String m20(amountOfInvitedPersons) =>
+  static String m21(amountOfInvitedPersons) =>
       "आपने ${amountOfInvitedPersons} लोगों को निमंत्रण भेजा है";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -429,9 +431,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpcomingEvent":
             MessageLookupByLibrary.simpleMessage("आगामी कार्यक्रम"),
         "Update": MessageLookupByLibrary.simpleMessage("अद्यतन करें"),
-        "UpgradeForNmoney": m15,
+        "UpgradeAccount": m15,
+        "UpgradeAccountConfirmation":
+            MessageLookupByLibrary.simpleMessage("Upgrade"),
+        "UpgradeForNmoney": m16,
         "User": MessageLookupByLibrary.simpleMessage("उपयोगकर्ता"),
-        "Users": m16,
+        "Users": m17,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("हेल्थकिट का उपयोग करना"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
@@ -463,16 +468,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "WorkHours": MessageLookupByLibrary.simpleMessage("काम के घंटे"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("गलत सुरक्षा कोड"),
-        "XCouldNotBeEmpty": m17,
-        "XIsRequired": m18,
-        "XSuccessfullyUpdated": m19,
+        "XCouldNotBeEmpty": m18,
+        "XIsRequired": m19,
+        "XSuccessfullyUpdated": m20,
         "Year": MessageLookupByLibrary.simpleMessage("वर्ष"),
         "Yes": MessageLookupByLibrary.simpleMessage("हाँ"),
         "YouBetterCheckThisOut": MessageLookupByLibrary.simpleMessage(
             "बेहतर होगा कि आप इसकी जांच कर लें"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "आपको वही मिलता है जो आपको चाहि"),
-        "YouSentInvitationToNPeople": m20,
+        "YouSentInvitationToNPeople": m21,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("आप उसे खोज लोगे"),
         "YourAge": MessageLookupByLibrary.simpleMessage("आपकी उम्र"),
         "YourAudience": MessageLookupByLibrary.simpleMessage("आपके दर्शक"),

@@ -297,5 +297,7 @@
   "NewFollowers": "Новые подписчики",
   "ForPeriod": "на",
   "FaqUnderDev": "Сбор запросов для FAQ. \nРаздел находится в разработке",
-  "Days": "{days,plural, =0{{days} дней} =1{{days} день} =2{{days} дня} few{{days} дня} many{{days} дней} other{{days} дней}}"
+  "Days": "{days,plural, =0{{days} дней} =1{{days} день} =2{{days} дня} few{{days} дня} many{{days} дней} other{{days} дней}}",
+  "UpgradeAccount": "Чтобы пользоваться этим нужен {type} аккаунт",
+  "UpgradeAccountConfirmation": "Оформить"
 }

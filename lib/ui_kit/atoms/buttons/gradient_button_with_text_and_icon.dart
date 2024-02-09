@@ -61,6 +61,6 @@ class GradientButtonWithTextAndIcon extends StatelessWidget implements ButtonFac
           ),
         ),
       ),
-    ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
+    ).loadingWrap(loading ?? false, color: colorScheme?.surface);
   }
 }

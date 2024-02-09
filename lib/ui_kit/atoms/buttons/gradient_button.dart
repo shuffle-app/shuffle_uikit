@@ -25,7 +25,7 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
       (loading ?? false) ? '' : text.toUpperCase(),
       style: textStyle,
       textAlign: TextAlign.center,
-    ).loadingWrap(loading ?? false, color: colorScheme?.inverseSurface);
+    ).loadingWrap(loading ?? false, color: colorScheme?.surface);
 
     return Material(
       borderRadius: kIsWeb ? BorderRadiusFoundation.all10 : BorderRadiusFoundation.max,
