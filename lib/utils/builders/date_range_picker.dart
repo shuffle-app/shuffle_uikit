@@ -45,8 +45,11 @@ Future<DateTimeRange?> showDateRangePickerDialog(
                       ),
                       SpacingFoundation.horizontalSpace16,
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
+                          context.button(
+                              data: BaseUiKitButtonData(text: 'Reset', onPressed: () => context.pop<DateTimeRange?>(result: null)),
+                              isTextButton: true),
+                          const Spacer(),
                           context.button(
                               data: BaseUiKitButtonData(text: 'Cancel', onPressed: () => context.pop()),
                               isTextButton: true),

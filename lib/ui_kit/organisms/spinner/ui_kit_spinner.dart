@@ -1,19 +1,27 @@
+import 'dart:async';
+import 'dart:developer';
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:html/parser.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitSpinner extends StatefulWidget {
   final ScrollController scrollController;
   final PagingController<int, String> pagingController;
   final ValueChanged<String>? onSpinChangedCategory;
+  final DateTimeRange? filterDate;
+  final ValueChanged<DateTimeRange?>? onDateRangeChanged;
 
   const UiKitSpinner({
     Key? key,
     required this.scrollController,
     required this.pagingController,
     this.onSpinChangedCategory,
+    this.filterDate,
+    this.onDateRangeChanged,
   }) : super(key: key);
 
   @override
@@ -23,10 +31,13 @@ class UiKitSpinner extends StatefulWidget {
 class _UiKitSpinnerState extends State<UiKitSpinner> {
   final _animDuration = const Duration(milliseconds: 150);
   final _rotationNotifier = ValueNotifier<double>(0);
+  final _transitionNotifier = ValueNotifier<double>(0);
   final _lastRotationPosition = ValueNotifier<double>(0);
   final _scrollStartNotifier = ValueNotifier<double>(0);
   final _lastScrollPositionOffsetNotifier = ValueNotifier<double>(0);
   SpinningType _spinningType = SpinningType.wheel;
+  SpinningGesture _spinningGesture = SpinningGesture.spin;
+  bool _isInteracting = false;
 
   @override
   void initState() {
@@ -35,7 +46,10 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
       widget.scrollController.addListener(_scrollListener);
     });
     _rotationNotifier.addListener(_rotationListener);
+    _transitionNotifier.addListener(_transitionListener);
   }
+
+  void _transitionListener() {}
 
   void _rotationListener() {
     final rotationDelta = (_rotationNotifier.value - _lastRotationPosition.value).abs();
@@ -53,6 +67,14 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
 
   void setSpinningType(SpinningType type) {
     setState(() => _spinningType = type);
+  }
+
+  void setSpinningGesture(SpinningGesture gesture) {
+    setState(() => _spinningGesture = gesture);
+  }
+
+  void changeInteractingState(bool isInteracting) {
+    setState(() => _isInteracting = isInteracting);
   }
 
   void _scrollListener() {
@@ -128,11 +150,14 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     _rotationNotifier.dispose();
     _lastScrollPositionOffsetNotifier.dispose();
     _scrollStartNotifier.dispose();
+    _transitionNotifier.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    const maxSpinnerUpValue = -100.0;
+    final colorScheme = context.uiKitTheme?.colorScheme;
     // return LayoutBuilder(
     //   builder: (context, size) {
     //     final availableWidth = size.maxWidth;
@@ -162,8 +187,9 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
               child: UiKitHorizontalScrollableList<String>(
                 pagingController: widget.pagingController,
                 scrollController: widget.scrollController,
-                physics:
-                    _spinningType == SpinningType.categories ? const PageScrollPhysics() : const NeverScrollableScrollPhysics(),
+                physics: _spinningType == SpinningType.categories
+                    ? const PageScrollPhysics()
+                    : const NeverScrollableScrollPhysics(),
                 itemBuilder: (_, item, index) => SizedBox(
                   width: 1.sw,
                   child: Center(
@@ -198,13 +224,28 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                 left: (1.sw / 2) - 345,
                 child: GestureDetector(
                   onPanUpdate: (details) {
+                    if (!_isInteracting) {
+                      changeInteractingState(true);
+                      setSpinningGesture(
+                          details.delta.dy != 0 && details.delta.dy < 0 ? SpinningGesture.up : SpinningGesture.spin);
+                      log('interacting is starting with gesture: ${_spinningGesture.toString()}', name: 'UiKitSpinner');
+                    }
                     if (widget.pagingController.itemList?.isEmpty ?? false) return;
+
+                    if (_spinningGesture == SpinningGesture.up) {
+                      log('onPanUpdate got details.delta.dy ${details.delta.dy}', name: 'UiKitSpinner');
+                      if (_transitionNotifier.value > maxSpinnerUpValue) {
+                        _transitionNotifier.value += details.delta.dy / 10;
+                      }
+                      return;
+                    }
 
                     if (_spinningType != SpinningType.wheel) setSpinningType(SpinningType.wheel);
                     final delta = details.delta.dx;
                     final inScrollBeginning = widget.scrollController.offset == 0 && !delta.isNegative;
                     final inScrollEnd =
-                        widget.scrollController.offset == widget.scrollController.position.maxScrollExtent && delta.isNegative;
+                        widget.scrollController.offset == widget.scrollController.position.maxScrollExtent &&
+                            delta.isNegative;
                     if (inScrollBeginning || inScrollEnd) return;
                     // if (details.localPosition.dx.toInt() % 20 == 0) _enableFeedback();
                     _rotationNotifier.value += delta / 200;
@@ -213,12 +254,30 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     );
                   },
                   onPanStart: (details) {
+                    if (details.localPosition.dy != 0) {
+                      log('onPanStart got details.localPosition.dy ${details.localPosition.dy}', name: 'UiKitSpinner');
+                    }
+
                     if (widget.pagingController.itemList?.isEmpty ?? false) return;
 
                     _scrollStartNotifier.value = widget.scrollController.offset;
                   },
                   onPanEnd: (details) async {
+                    changeInteractingState(false);
                     if (widget.pagingController.itemList?.isEmpty ?? false) return;
+
+                    if (_transitionNotifier.value != 0) {
+                      if (_transitionNotifier.value < maxSpinnerUpValue) {
+                        _transitionNotifier.value = maxSpinnerUpValue;
+                      }
+                      FeedbackIsolate.instance.addEvent(SystemSoundIsolateRachetClick());
+                      unawaited(showDateRangePickerDialog(context, initialDateRange: widget.filterDate).then((value) {
+                        widget.onDateRangeChanged?.call(value);
+                        _transitionNotifier.value = 0;
+                        // Future.delayed(const Duration(milliseconds: 200), () => _transitionNotifier.value = 0);
+                      }));
+                      return;
+                    }
 
                     final atEnd = widget.scrollController.position.atEdge;
 
@@ -232,7 +291,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     if (!atEnd) _shouldSwitchCategory(false);
                   },
                   child: AnimatedBuilder(
-                    animation: _rotationNotifier,
+                    animation: Listenable.merge([_rotationNotifier, _transitionNotifier]),
                     builder: (context, child) {
                       if ((_rotationNotifier.value - _lastRotationValue).abs() >= 0.8) {
                         // _enableFeedback();
@@ -241,17 +300,56 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                             }));
                       }
 
-                      return Transform.rotate(
-                        angle: _rotationNotifier.value,
+                      final Matrix4 transform = Matrix4.identity();
+                      if (_transitionNotifier.value != 0) {
+                        transform.translate(0.0, _transitionNotifier.value, 0.0);
+                      }
+                      if (_rotationNotifier.value != 0) {
+                        transform.rotateZ(_rotationNotifier.value);
+                      }
+
+                      return Transform(
+                        transform: transform,
+                        alignment: Alignment.center,
                         // duration: _animDuration,
                         child: child,
                       );
+                      // return Transform.rotate(
+                      //   angle: _rotationNotifier.value,
+                      //   // duration: _animDuration,
+                      //   child: child,
+                      // );
                     },
-                    child: Center(
-                      child: ImageWidget(
-                        svgAsset: GraphicsFoundation.instance.svg.spinnerWheel,
+                    child: Stack(alignment: Alignment.topCenter, children: [
+                      Center(
+                        child: ImageWidget(
+                          svgAsset: GraphicsFoundation.instance.svg.spinnerWheel,
+                        ),
                       ),
-                    ),
+                      if (widget.filterDate != null)
+                        Positioned(
+                            top: 45.h,
+                            child: Text(
+                              widget.filterDate?.toRangeString() ?? '',
+                              style:
+                                  context.uiKitTheme?.regularTextTheme.caption4.copyWith(color: colorScheme?.primary),
+                              textAlign: TextAlign.center,
+                            ))
+                      else
+                        Positioned(
+                            top: 45.h,
+                            child: UiKitFloatingAnimation(
+                              applyX: false,
+                              child: RotatedBox(
+                                  quarterTurns: 1,
+                                  child: Transform.scale(
+                                      scaleY: 1.2,
+                                      child: const Icon(
+                                        Icons.arrow_back_ios,
+                                        color: Colors.white,
+                                      ))),
+                            ))
+                    ]),
                   ),
                 ),
               ),
@@ -267,6 +365,8 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
 
 enum SpinningType { categories, wheel }
 
+enum SpinningGesture { spin, up }
+
 class UiKitSpinnerChangeData {
   final String category;
   final SpinningType spinType;
@@ -275,4 +375,10 @@ class UiKitSpinnerChangeData {
     required this.category,
     required this.spinType,
   });
+}
+
+extension ToString on DateTimeRange {
+  String toRangeString() {
+    return '${DateFormat('dd.MM.yyyy').format(start)} - ${DateFormat('dd.MM.yyyy').format(end)}';
+  }
 }
