@@ -12,14 +12,14 @@ class ArrowsAnimation extends StatefulWidget {
 }
 
 class _ArrowsAnimationState extends State<ArrowsAnimation> with SingleTickerProviderStateMixin {
-  late final controller = AnimationController(
+  late final controller = AnimationController.unbounded(
     duration: widget.duration,
     vsync: this,
   );
 
   @override
   void initState() {
-    controller.repeat(period: const Duration(seconds: 1));
+    controller.repeat(min: -2.5, max: 2, period: const Duration(seconds: 1));
     super.initState();
   }
 
@@ -31,29 +31,68 @@ class _ArrowsAnimationState extends State<ArrowsAnimation> with SingleTickerProv
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: controller,
-      builder: (context, child) => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: List.generate(
-          widget.itemCount,
-          (index) {
-            return Opacity(
-              opacity: 1 - ((1 / widget.itemCount) * index - controller.value).abs(),
-              child: Transform.scale(
-                  scale: 2,
-                  child: GradientableWidget(
-                    gradient: GradientFoundation.badgeIcon,
-                    child: ImageWidget(
-                      iconData: ShuffleUiKitIcons.chevronright,
-                      color: Colors.white,
-                      width: 10.w,
-                    ),
-                  )),
-            );
-          },
+    return ShimmerArrows(
+      controller: controller,
+      children: List.generate(
+        widget.itemCount,
+        (index) => GradientableWidget(
+          gradient: GradientFoundation.badgeIcon,
+          child: ImageWidget(
+            svgAsset: GraphicsFoundation.instance.svg.chevronNoPadding,
+            color: Colors.white,
+            fit: BoxFit.fitWidth,
+            width: 10.w,
+          ),
         ),
       ),
     );
   }
+}
+
+class ShimmerArrows extends StatelessWidget {
+  final AnimationController controller;
+  final List<Widget> children;
+
+  const ShimmerArrows({
+    super.key,
+    required this.controller,
+    this.children = const [],
+  });
+
+  Gradient get gradient => LinearGradient(
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+        colors: const [Colors.white10, Colors.white, Colors.white10],
+        stops: const [0.0, 0.3, 1],
+        transform: _SlideGradientTransform(controller.value),
+      );
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedBuilder(
+      animation: controller,
+      builder: (_, child) {
+        return ShaderMask(
+          shaderCallback: (bounds) {
+            return gradient.createShader(bounds);
+          },
+          child: child,
+        );
+      },
+      child: Row(children: children),
+    );
+  }
+}
+
+class _SlideGradientTransform extends GradientTransform {
+  const _SlideGradientTransform(this.percent);
+
+  final double percent;
+
+  @override
+  Matrix4? transform(Rect bounds, {TextDirection? textDirection}) => Matrix4.translationValues(
+        (bounds.height * percent),
+        0,
+        0,
+      );
 }
