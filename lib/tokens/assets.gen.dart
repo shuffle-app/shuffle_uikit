@@ -1095,6 +1095,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/chevron-left.svg
   SvgGenImage get chevronLeft => const SvgGenImage('assets/images/svg/chevron-left.svg');
 
+  /// File path: assets/images/svg/chevron-no-padding.svg
+  SvgGenImage get chevronNoPadding => const SvgGenImage('assets/images/svg/chevron-no-padding.svg');
+
   /// File path: assets/images/svg/chevron-right.svg
   SvgGenImage get chevronRight => const SvgGenImage('assets/images/svg/chevron-right.svg');
 
@@ -1730,6 +1733,7 @@ class $AssetsImagesSvgGen {
         chess,
         chevronDown,
         chevronLeft,
+        chevronNoPadding,
         chevronRight,
         chevronUpLong,
         chevronUp,
