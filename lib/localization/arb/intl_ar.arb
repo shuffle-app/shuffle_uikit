@@ -235,6 +235,9 @@
   "CompanyCredentials": "Company credentials",
   "AllowLocationServicesToUseThisFunction": "Allow location services to use this function",
   "Feeling": "Feeling",
+  "Easy": "Easy",
+  "Fair": "Fair",
+  "Hardcore": "Hardcore",
   "Sunny": "Sunny",
   "BurnedToday": "Burned today",
   "Undefined": "Undefined",
@@ -300,5 +303,11 @@
   "FaqUnderDev": "Gathering requests for FAQ. \nUnder development",
   "DonationHint":"You can only spend on your dream, otherwise the money will go back to the donators. One request per month.",
   "UpgradeAccount": "To use this function plz upgrade to {type}",
-  "UpgradeAccountConfirmation": "Upgrade"
+  "UpgradeAccountConfirmation": "Upgrade",
+  "FeedFeelingsHiwTitle": "Depending on...",
+  "FeedFeelingsHiwSubtitle": "you get exactly what you need",
+  "FeedFeelingsHiwItems": "{item, plural, =0{your location} =1{your interests} =2{weather around} few{and other 14 scales} other{other}}",
+  "FeedRandomizerHiwTitle": "Randomizing...",
+  "FeedRandomizerHiwSubtitle": "you press and get random",
+  "FeedRandomizerHiwItems": "{item, plural, =0{events & places} =1{filtering by chips} =2{choose chip & press} few{press & scroll\n} other{other}}"
 }

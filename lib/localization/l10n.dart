@@ -3017,6 +3017,36 @@ class S {
     );
   }
 
+  /// `Easy`
+  String get Easy {
+    return Intl.message(
+      'Easy',
+      name: 'Easy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fair`
+  String get Fair {
+    return Intl.message(
+      'Fair',
+      name: 'Fair',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hardcore`
+  String get Hardcore {
+    return Intl.message(
+      'Hardcore',
+      name: 'Hardcore',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Gathering requests for FAQ. \nUnder development`
   String get FaqUnderDev {
     return Intl.message(
@@ -3070,6 +3100,76 @@ class S {
       name: 'UpgradeAccountConfirmation',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `Depending on...`
+  String get FeedFeelingsHiwTitle {
+    return Intl.message(
+      'Depending on...',
+      name: 'FeedFeelingsHiwTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `you get exactly what you need`
+  String get FeedFeelingsHiwSubtitle {
+    return Intl.message(
+      'you get exactly what you need',
+      name: 'FeedFeelingsHiwSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{your location} =1{your interests} =2{weather around} few{and other 14 scales} other{other}}`
+  String FeedFeelingsHiwItems(num item) {
+    return Intl.plural(
+      item,
+      zero: 'your location',
+      one: 'your interests',
+      two: 'weather around',
+      few: 'and other 14 scales',
+      other: 'other',
+      name: 'FeedFeelingsHiwItems',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `Randomizing...`
+  String get FeedRandomizerHiwTitle {
+    return Intl.message(
+      'Randomizing...',
+      name: 'FeedRandomizerHiwTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `you press and get random`
+  String get FeedRandomizerHiwSubtitle {
+    return Intl.message(
+      'you press and get random',
+      name: 'FeedRandomizerHiwSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{events & places} =1{filtering by chips} =2{choose chip & press} few{press & scroll\n} other{other}}`
+  String FeedRandomizerHiwItems(num item) {
+    return Intl.plural(
+      item,
+      zero: 'events & places',
+      one: 'filtering by chips',
+      two: 'choose chip & press',
+      few: 'press & scroll\n',
+      other: 'other',
+      name: 'FeedRandomizerHiwItems',
+      desc: '',
+      args: [item],
     );
   }
 }
