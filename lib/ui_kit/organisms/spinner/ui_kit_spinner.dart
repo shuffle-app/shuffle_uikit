@@ -156,7 +156,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
 
   @override
   Widget build(BuildContext context) {
-    const maxSpinnerUpValue = -100.0;
+    const maxSpinnerUpValue = -220.0;
     final colorScheme = context.uiKitTheme?.colorScheme;
     // return LayoutBuilder(
     //   builder: (context, size) {
@@ -217,6 +217,8 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
           // height: 100.h,
           width: 1.sw,
           child: Stack(
+            clipBehavior: Clip.none,
+            alignment: Alignment.topCenter,
             fit: StackFit.expand,
             children: [
               Positioned(
@@ -235,7 +237,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     if (_spinningGesture == SpinningGesture.up) {
                       log('onPanUpdate got details.delta.dy ${details.delta.dy}', name: 'UiKitSpinner');
                       if (_transitionNotifier.value > maxSpinnerUpValue) {
-                        _transitionNotifier.value += details.delta.dy / 10;
+                        _transitionNotifier.value += details.delta.dy / 5;
                       }
                       return;
                     }
@@ -320,39 +322,36 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       //   child: child,
                       // );
                     },
-                    child: Stack(alignment: Alignment.topCenter, children: [
-                      Center(
-                        child: ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.spinnerWheel,
-                        ),
+                    child: Center(
+                      child: ImageWidget(
+                        svgAsset: GraphicsFoundation.instance.svg.spinnerWheel,
                       ),
-                      if (widget.filterDate != null)
-                        Positioned(
-                            top: 45.h,
-                            child: Text(
-                              widget.filterDate?.toRangeString() ?? '',
-                              style:
-                                  context.uiKitTheme?.regularTextTheme.caption4.copyWith(color: colorScheme?.primary),
-                              textAlign: TextAlign.center,
-                            ))
-                      else
-                        Positioned(
-                            top: 45.h,
-                            child: UiKitFloatingAnimation(
-                              applyX: false,
-                              child: RotatedBox(
-                                  quarterTurns: 1,
-                                  child: Transform.scale(
-                                      scaleY: 1.2,
-                                      child: const Icon(
-                                        Icons.arrow_back_ios,
-                                        color: Colors.white,
-                                      ))),
-                            ))
-                    ]),
+                    ),
                   ),
                 ),
               ),
+              if (widget.filterDate != null)
+                Positioned(
+                    top: 45.h,
+                    child: Text(
+                      widget.filterDate?.toRangeString() ?? '',
+                      style: context.uiKitTheme?.regularTextTheme.caption4.copyWith(color: colorScheme?.primary),
+                      textAlign: TextAlign.center,
+                    ))
+              else
+                Positioned(
+                    top: 45.h,
+                    child: UiKitFloatingAnimation(
+                      applyX: false,
+                      child: RotatedBox(
+                          quarterTurns: 1,
+                          child: Transform.scale(
+                              scaleY: 1.2,
+                              child: const Icon(
+                                Icons.arrow_back_ios,
+                                color: Colors.white,
+                              ))),
+                    ))
             ],
           ),
         ),
