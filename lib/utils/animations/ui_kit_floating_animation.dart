@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 
 class UiKitFloatingAnimation extends StatefulWidget {
   final Widget child;
+  final bool applyY;
+  final bool applyX;
 
-  const UiKitFloatingAnimation({super.key, required this.child});
+  const UiKitFloatingAnimation({super.key, required this.child, this.applyX = true, this.applyY = true});
 
   @override
   State<UiKitFloatingAnimation> createState() => _UiKitFloatingAnimationState();
@@ -62,7 +64,8 @@ class _UiKitFloatingAnimationState extends State<UiKitFloatingAnimation>
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) => Transform.translate(
-        offset: Offset(coefficientX * _controller.value, coefficientY * _controller.value),
+        offset: Offset(
+            widget.applyX ? coefficientX * _controller.value : 0, widget.applyY ? coefficientY * _controller.value : 0),
         filterQuality: FilterQuality.low,
         child: child,
       ),

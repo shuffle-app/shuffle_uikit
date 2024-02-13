@@ -317,7 +317,16 @@ class UiKitThemes {
         shape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all28),
         dialBackgroundColor: ColorsFoundation.darkNeutral500.withOpacity(0.24)),
     datePickerTheme: DatePickerThemeData(
-      rangeSelectionBackgroundColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
+      rangePickerBackgroundColor: UiKitColors.surface4,
+      // dayBackgroundColor: MaterialStateProperty.resolveWith((states) {
+      //   if (states.contains(MaterialState.selected) ||
+      //       states.contains(MaterialState.focused) ||
+      //       states.contains(MaterialState.pressed)) {
+      //     return UiKitColors.surface4;
+      //   }
+      //   return Colors.transparent;
+      // }),
+      rangeSelectionBackgroundColor: ColorsFoundation.info.withOpacity(0.24),
       dayForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
       yearForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
       surfaceTintColor: ColorsFoundation.info,
@@ -325,7 +334,7 @@ class UiKitThemes {
       yearStyle: _pickerTextStyle,
       headerHelpStyle: _pickerTextStyle,
       rangePickerHeaderHeadlineStyle: _pickerTextStyle,
-      rangePickerShape: const CircleBorder(side: BorderSide(color: Colors.white, width: 1)),
+      // rangePickerShape: const CircleBorder(side: BorderSide(color: Colors.white, width: 1)),
       weekdayStyle: _pickerTextStyle.copyWith(color: ColorsFoundation.darkNeutral900),
       headerHeadlineStyle: _pickerTextStyle,
       dayStyle: _pickerTextStyle.copyWith(fontSize: 16),
@@ -448,7 +457,8 @@ class UiKitThemes {
           errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
           focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
           focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
-          disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
+          disabledBorder:
+              UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
         ),
         customAppBapTheme: AppBarTheme(
           iconTheme: const IconThemeData(
