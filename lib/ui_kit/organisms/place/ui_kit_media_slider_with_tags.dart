@@ -10,8 +10,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
   final List<UiKitTag> uniqueTags;
   final double horizontalMargin;
   final ScrollController scrollController;
-  final List<HorizontalCaptionedImageData>? branches;
-  final VoidCallback? onBranchTap;
+  final Future<List<HorizontalCaptionedImageData>?>? branches;
   final List<Widget>? actions;
 
   UiKitMediaSliderWithTags({
@@ -25,7 +24,6 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
     this.horizontalMargin = 0,
     this.branches,
     this.actions,
-    this.onBranchTap,
   })  : scrollController = scrollController ?? ScrollController(),
         super(key: key);
 
@@ -71,7 +69,8 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                       ).paddingOnly(left: index == 0 ? horizontalMargin : 0);
                     }
 
-                    return BaseUiKitMediaWidget.image(media: mediaItem).paddingOnly(left: index == 0 ? horizontalMargin : 0);
+                    return BaseUiKitMediaWidget.image(media: mediaItem)
+                        .paddingOnly(left: index == 0 ? horizontalMargin : 0);
                   },
                 ),
               ),
@@ -97,48 +96,50 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
           uniqueTags: uniqueTags,
         ).paddingSymmetric(horizontal: horizontalMargin),
         SpacingFoundation.verticalSpace14,
-        if (branches != null) ...[
-          UiKitCardWrapper(
-            borderRadius: BorderRadius.zero,
-            color: context.uiKitTheme?.colorScheme.surface1,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  'Branches',
-                  style: context.uiKitTheme?.boldTextTheme.caption2Medium,
-                ),
-                SpacingFoundation.verticalSpace4,
-                ConstrainedBox(
-                  constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
-                  child: ListView.separated(
-                    padding: EdgeInsets.zero,
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      final branch = branches!.elementAt(index);
+        if (branches != null)
+          FutureBuilder(
+              future: branches,
+              builder: (context, snapshot) => !snapshot.hasData || (snapshot.data ?? []).isEmpty
+                  ? const SizedBox.shrink()
+                  : UiKitCardWrapper(
+                      borderRadius: BorderRadius.zero,
+                      color: context.uiKitTheme?.colorScheme.surface1,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            'Branches',
+                            style: context.uiKitTheme?.boldTextTheme.caption2Medium,
+                          ),
+                          SpacingFoundation.verticalSpace4,
+                          ConstrainedBox(
+                            constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
+                            child: ListView.separated(
+                              padding: EdgeInsets.zero,
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (context, index) {
+                                final branch = snapshot.data!.elementAt(index);
 
-                      return UiKitHorizontalCaptionedImage(
-                        title: branch.caption,
-                        imageLink: branch.imageUrl,
-                        borderRadius: BorderRadiusFoundation.all16,
-                        onTap: onBranchTap,
-                      );
-                    },
-                    separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
-                    itemCount: branches!.length,
-                  ),
-                ),
-              ],
-            ).paddingOnly(
-              top: EdgeInsetsFoundation.vertical12,
-              bottom: EdgeInsetsFoundation.vertical12,
-              left: EdgeInsetsFoundation.horizontal16,
-            ),
-          ),
-          SpacingFoundation.verticalSpace14,
-        ],
+                                return UiKitHorizontalCaptionedImage(
+                                  title: branch.caption,
+                                  imageLink: branch.imageUrl,
+                                  borderRadius: BorderRadiusFoundation.all16,
+                                  onTap: branch.onTap,
+                                );
+                              },
+                              separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                              itemCount: snapshot.data!.length,
+                            ),
+                          ),
+                        ],
+                      ).paddingOnly(
+                        top: EdgeInsetsFoundation.vertical12,
+                        bottom: EdgeInsetsFoundation.vertical12,
+                        left: EdgeInsetsFoundation.horizontal16,
+                      ),
+                    )).paddingOnly(bottom: SpacingFoundation.verticalSpacing14),
         RepaintBoundary(
           child: DescriptionWidget(
             description: description,
