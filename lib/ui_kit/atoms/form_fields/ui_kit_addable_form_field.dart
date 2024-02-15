@@ -45,7 +45,7 @@ class UiKitAddableFormField extends StatelessWidget {
               context
                   .smallOutlinedButton(
                       data: BaseUiKitButtonData(
-                          onPressed: onRemove, iconInfo: BaseUiKitButtonIconData(iconData: ShuffleUiKitIcons.minus)))
+                          onPressed: onRemove, iconInfo: BaseUiKitButtonIconData(iconData: ShuffleUiKitIcons.minus,size: 18)))
                   .paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing4),
           ],
         )
