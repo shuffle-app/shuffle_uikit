@@ -27,6 +27,7 @@ class BlurredAppBarPage extends StatelessWidget {
   final int? childrenCount;
   final double? bodyBottomSpace;
   final EdgeInsets? childrenPadding;
+  final Key? animatedListKey;
 
   // final PreferredSizeWidget? bottom;
 
@@ -51,8 +52,10 @@ class BlurredAppBarPage extends StatelessWidget {
     this.childrenBuilder,
     this.childrenCount,
     this.childrenPadding,
+    this.animatedListKey,
     this.bodyBottomSpace,
-  })  : assert(childrenBuilder == null || childrenCount != null, 'childrenCount must be not null if childrenBuilder is not null'),
+  })  : assert(childrenBuilder == null || childrenCount != null,
+            'childrenCount must be not null if childrenBuilder is not null'),
         assert(childrenBuilder != null || children != null, 'childrenBuilder or body must be not null'),
         super(key: key);
 
@@ -68,7 +71,8 @@ class BlurredAppBarPage extends StatelessWidget {
           children: [
             SliverLayoutBuilder(
               builder: (context, sliverConstraints) {
-                double toolbarHeight = (customToolbarBaseHeight ?? context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
+                double toolbarHeight =
+                    (customToolbarBaseHeight ?? context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
                 double expandedHeight = appBarBody == null ? toolbarHeight : customToolbarHeight ?? 190.0;
 
                 final hideAppBarBody =
@@ -125,23 +129,44 @@ class BlurredAppBarPage extends StatelessWidget {
             ),
           ),
         if (children == null && childrenBuilder != null)
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
+          if (animatedListKey != null)
+            SliverAnimatedList(
+              key: animatedListKey,
+              itemBuilder: (context, index, animation) {
                 if (childrenPadding == null) {
-                  return childrenBuilder!.call(context, index);
+                  return ScaleTransition(
+                      alignment: Alignment.topRight, scale: animation, child: childrenBuilder!.call(context, index));
                 }
 
-                return childrenBuilder!.call(context, index)?.paddingOnly(
-                      top: childrenPadding!.top,
-                      bottom: childrenPadding!.bottom,
-                      left: childrenPadding!.left,
-                      right: childrenPadding!.right,
-                    );
+                return ScaleTransition(
+                    alignment: Alignment.topRight,
+                    scale: animation,
+                    child: childrenBuilder!.call(context, index)?.paddingOnly(
+                          top: childrenPadding!.top,
+                          bottom: childrenPadding!.bottom,
+                          left: childrenPadding!.left,
+                          right: childrenPadding!.right,
+                        ));
               },
-              childCount: childrenCount!,
+            )
+          else
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
+                  if (childrenPadding == null) {
+                    return childrenBuilder!.call(context, index);
+                  }
+
+                  return childrenBuilder!.call(context, index)?.paddingOnly(
+                        top: childrenPadding!.top,
+                        bottom: childrenPadding!.bottom,
+                        left: childrenPadding!.left,
+                        right: childrenPadding!.right,
+                      );
+                },
+                childCount: childrenCount!,
+              ),
             ),
-          ),
         if (bodyBottomSpace != null) bodyBottomSpace!.heightBox.wrapSliverBox,
       ],
     );
