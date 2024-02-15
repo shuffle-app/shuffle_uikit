@@ -28,6 +28,7 @@ class UiKitDonationCard extends StatelessWidget {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
           children: [
@@ -45,13 +46,14 @@ class UiKitDonationCard extends StatelessWidget {
                     SpacingFoundation.horizontalSpace4,
                     if (isStarEnabled != null && isStarEnabled!)
                       GradientableWidget(
-                          gradient: GradientFoundation.starLinearGradient,
-                          child: ImageWidget(
-                            rasterAsset: GraphicsFoundation.instance.png.star2,
-                            height: 16.h,
-                            fit: BoxFit.cover,
-                            color: Colors.white,
-                          )),
+                        gradient: GradientFoundation.starLinearGradient,
+                        child: ImageWidget(
+                          rasterAsset: GraphicsFoundation.instance.png.star2,
+                          height: 16.h,
+                          fit: BoxFit.cover,
+                          color: Colors.white,
+                        ),
+                      ),
                   ],
                 ),
                 Row(
@@ -76,13 +78,16 @@ class UiKitDonationCard extends StatelessWidget {
         ),
         SpacingFoundation.verticalSpace12,
         if (points != null)
-          ConstrainedBox(
-            constraints: BoxConstraints.expand(height: 28.h),
-            child: GradientableWidget(
+          Container(
+            decoration: BoxDecoration(
               gradient: GradientFoundation.donationLinearGradient,
-              child: SmallGradientButton(
-                text: '+ $points points',
-              ),
+              borderRadius: BorderRadiusFoundation.all24,
+            ),
+            child: Center(
+              child: Text(
+                '+ ${S.current.FindSomeoneCardPoints(int.tryParse(points?.replaceAll(' ', '') ?? '0') ?? 0)}',
+                style: boldTextTheme?.caption1Bold.copyWith(color: Colors.black),
+              ).paddingSymmetric(vertical: EdgeInsetsFoundation.vertical6),
             ),
           ),
       ],

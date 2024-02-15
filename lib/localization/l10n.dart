@@ -220,13 +220,18 @@ class S {
     );
   }
 
-  /// `Members`
-  String get Members {
-    return Intl.message(
-      'Members',
+  /// `{item, plural, =0{Участников} =1{Участник} =2{Участников} few{Участников} other{Участники}}`
+  String Members(num item) {
+    return Intl.plural(
+      item,
+      zero: 'Участников',
+      one: 'Участник',
+      two: 'Участников',
+      few: 'Участников',
+      other: 'Участники',
       name: 'Members',
       desc: '',
-      args: [],
+      args: [item],
     );
   }
 
@@ -621,10 +626,10 @@ class S {
     );
   }
 
-  /// `Tap once to choose `
+  /// `Tap once to choose`
   String get TapOnceToChoose {
     return Intl.message(
-      'Tap once to choose ',
+      'Tap once to choose',
       name: 'TapOnceToChoose',
       desc: '',
       args: [],
@@ -771,10 +776,10 @@ class S {
     );
   }
 
-  /// ` Will be.`
+  /// ` will be.`
   String get WillBe {
     return Intl.message(
-      ' Will be.',
+      ' will be.',
       name: 'WillBe',
       desc: '',
       args: [],
@@ -871,10 +876,10 @@ class S {
     );
   }
 
-  /// `This is `
+  /// `This is`
   String get ThisIs {
     return Intl.message(
-      'This is ',
+      'This is',
       name: 'ThisIs',
       desc: '',
       args: [],
@@ -991,13 +996,23 @@ class S {
     );
   }
 
-  /// `Top places rated\nby`
-  String get TopPlacesRatedBy {
+  /// `Top places rated{separator}by`
+  String TopPlacesRatedBy(Object separator) {
     return Intl.message(
-      'Top places rated\nby',
+      'Top places rated${separator}by',
       name: 'TopPlacesRatedBy',
       desc: '',
-      args: [],
+      args: [separator],
+    );
+  }
+
+  /// `Next {elements}`
+  String NextElements(Object elements) {
+    return Intl.message(
+      'Next $elements',
+      name: 'NextElements',
+      desc: '',
+      args: [elements],
     );
   }
 
@@ -3057,26 +3072,26 @@ class S {
     );
   }
 
-  /// `{days,plural, =0{{days} days} =1{{days} day} =2{{days} days} few{{days} days} many{{days} days} other{{days} days}}`
+  /// `{days,plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}}`
   String Days(num days) {
     return Intl.plural(
       days,
-      zero: '$days days',
-      one: '$days day',
-      two: '$days days',
-      few: '$days days',
-      many: '$days days',
-      other: '$days days',
+      zero: 'days',
+      one: 'day',
+      two: 'days',
+      few: 'days',
+      many: 'days',
+      other: 'days',
       name: 'Days',
       desc: '',
       args: [days],
     );
   }
 
-  /// `You can only spend on your dream, otherwise the money will go back to the donators. One request per month.`
+  /// `You can create one request per month and spend money only on your dream`
   String get DonationHint {
     return Intl.message(
-      'You can only spend on your dream, otherwise the money will go back to the donators. One request per month.',
+      'You can create one request per month and spend money only on your dream',
       name: 'DonationHint',
       desc: '',
       args: [],
@@ -3170,6 +3185,871 @@ class S {
       name: 'FeedRandomizerHiwItems',
       desc: '',
       args: [item],
+    );
+  }
+
+  /// `to have some fun`
+  String get OnboardingSlide1 {
+    return Intl.message(
+      'to have some fun',
+      name: 'OnboardingSlide1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `to explore\nleisure and\nbusiness`
+  String get OnboardingSlide2 {
+    return Intl.message(
+      'to explore\nleisure and\nbusiness',
+      name: 'OnboardingSlide2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `to just chill out`
+  String get OnboardingSlide3 {
+    return Intl.message(
+      'to just chill out',
+      name: 'OnboardingSlide3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select the type of account you would like to create`
+  String get UserTypeSelectionPrompt {
+    return Intl.message(
+      'Select the type of account you would like to create',
+      name: 'UserTypeSelectionPrompt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal`
+  String get Personal {
+    return Intl.message(
+      'Personal',
+      name: 'Personal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Company`
+  String get Company {
+    return Intl.message(
+      'Company',
+      name: 'Company',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Letters, numbers, ! “ @ # $ % & symbols, 8 characters`
+  String get PasswordHint {
+    return Intl.message(
+      'Letters, numbers, ! “ @ # \$ % & symbols, 8 characters',
+      name: 'PasswordHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms of Service`
+  String get TermsOfService {
+    return Intl.message(
+      'Terms of Service',
+      name: 'TermsOfService',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Policy`
+  String get PrivacyPolicy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'PrivacyPolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Happy to see you`
+  String get CredentialsVerificationTitle {
+    return Intl.message(
+      'Happy to see you',
+      name: 'CredentialsVerificationTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To gain access you must log in first`
+  String get CredentialsVerificationPrompt {
+    return Intl.message(
+      'To gain access you must log in first',
+      name: 'CredentialsVerificationPrompt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account`
+  String get Account {
+    return Intl.message(
+      'Account',
+      name: 'Account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type of content`
+  String get TypeOfContent {
+    return Intl.message(
+      'Type of content',
+      name: 'TypeOfContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Leisure`
+  String get Leisure {
+    return Intl.message(
+      'Leisure',
+      name: 'Leisure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Business`
+  String get Business {
+    return Intl.message(
+      'Business',
+      name: 'Business',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please type verification code sent to`
+  String get CredentialsCodeVerificationSubtitle {
+    return Intl.message(
+      'Please type verification code sent to',
+      name: 'CredentialsCodeVerificationSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email verification`
+  String get EmailVerification {
+    return Intl.message(
+      'Email verification',
+      name: 'EmailVerification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone verification`
+  String get PhoneVerification {
+    return Intl.message(
+      'Phone verification',
+      name: 'PhoneVerification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend code`
+  String get ResendCode {
+    return Intl.message(
+      'Resend code',
+      name: 'ResendCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter new password`
+  String get EnterNewPassword {
+    return Intl.message(
+      'Enter new password',
+      name: 'EnterNewPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Male`
+  String get Male {
+    return Intl.message(
+      'Male',
+      name: 'Male',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Female`
+  String get Female {
+    return Intl.message(
+      'Female',
+      name: 'Female',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other`
+  String get Other {
+    return Intl.message(
+      'Other',
+      name: 'Other',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hindu`
+  String get Hindu {
+    return Intl.message(
+      'Hindu',
+      name: 'Hindu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Islam`
+  String get Islam {
+    return Intl.message(
+      'Islam',
+      name: 'Islam',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Judaism`
+  String get Judaism {
+    return Intl.message(
+      'Judaism',
+      name: 'Judaism',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Atheism`
+  String get Atheism {
+    return Intl.message(
+      'Atheism',
+      name: 'Atheism',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Buddhism`
+  String get Buddhism {
+    return Intl.message(
+      'Buddhism',
+      name: 'Buddhism',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Christianity`
+  String get Christianity {
+    return Intl.message(
+      'Christianity',
+      name: 'Christianity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Describe your business`
+  String get DescribeYourBusiness {
+    return Intl.message(
+      'Describe your business',
+      name: 'DescribeYourBusiness',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Read {amount}`
+  String Read(Object amount) {
+    return Intl.message(
+      'Read $amount',
+      name: 'Read',
+      desc: '',
+      args: [amount],
+    );
+  }
+
+  /// `more`
+  String get More {
+    return Intl.message(
+      'more',
+      name: 'More',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `less`
+  String get Less {
+    return Intl.message(
+      'less',
+      name: 'Less',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upcoming globals`
+  String get UpcomingGlobalEvents {
+    return Intl.message(
+      'Upcoming globals',
+      name: 'UpcomingGlobalEvents',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Events you don't wanna miss`
+  String get SpinnerTitle {
+    return Intl.message(
+      'Events you don\'t wanna miss',
+      name: 'SpinnerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Great match...`
+  String get FeedNichesHiwTitle {
+    return Intl.message(
+      'Great match...',
+      name: 'FeedNichesHiwTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `get exactly what you need`
+  String get FeedNichesHiwSubtitle {
+    return Intl.message(
+      'get exactly what you need',
+      name: 'FeedNichesHiwSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{select the niche} =1{press} =2{get selection} few{choose & plan} other{other}}`
+  String FeedNichesHiwItems(num item) {
+    return Intl.plural(
+      item,
+      zero: 'select the niche',
+      one: 'press',
+      two: 'get selection',
+      few: 'choose & plan',
+      other: 'other',
+      name: 'FeedNichesHiwItems',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `You spin it...`
+  String get SpinnerHiwTitle {
+    return Intl.message(
+      'You spin it...',
+      name: 'SpinnerHiwTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `you find personalized events`
+  String get SpinnerHiwSubtitle {
+    return Intl.message(
+      'you find personalized events',
+      name: 'SpinnerHiwSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{for fun} =1{swipe category} =2{choose & plan} few{search & book} other{other}}`
+  String SpinnerHiwHint(num item) {
+    return Intl.plural(
+      item,
+      zero: 'for fun',
+      one: 'swipe category',
+      two: 'choose & plan',
+      few: 'search & book',
+      other: 'other',
+      name: 'SpinnerHiwHint',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `Do not be alone...`
+  String get ProfileFindSomeoneHiwTitle {
+    return Intl.message(
+      'Do not be alone...',
+      name: 'ProfileFindSomeoneHiwTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `go somewhere together`
+  String get ProfileFindSomeoneHiwSubtitle {
+    return Intl.message(
+      'go somewhere together',
+      name: 'ProfileFindSomeoneHiwSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{find companions} =1{similar preferences} =2{check point reputation} few{no foes} other{other}}`
+  String ProfileFindSomeoneHiwHint(num item) {
+    return Intl.plural(
+      item,
+      zero: 'find companions',
+      one: 'similar preferences',
+      two: 'check point reputation',
+      few: 'no foes',
+      other: 'other',
+      name: 'ProfileFindSomeoneHiwHint',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `Fulfill the dream...`
+  String get ProfileAskOrSupportHiwTitle {
+    return Intl.message(
+      'Fulfill the dream...',
+      name: 'ProfileAskOrSupportHiwTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `yours or someone else's`
+  String get ProfileAskOrSupportHiwSubtitle {
+    return Intl.message(
+      'yours or someone else\'s',
+      name: 'ProfileAskOrSupportHiwSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{post a dream request} =1{write & make video} =2{be convincing and honest} few{donate others} other{other}}`
+  String ProfileAskOrSupportHiwHint(num item) {
+    return Intl.plural(
+      item,
+      zero: 'post a dream request',
+      one: 'write & make video',
+      two: 'be convincing and honest',
+      few: 'donate others',
+      other: 'other',
+      name: 'ProfileAskOrSupportHiwHint',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `Usual search...`
+  String get SearchHiwTitle {
+    return Intl.message(
+      'Usual search...',
+      name: 'SearchHiwTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `search or choose others choice`
+  String get SearchHiwSubtitle {
+    return Intl.message(
+      'search or choose others choice',
+      name: 'SearchHiwSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{preferences don’t work} =1{events/places} =2{type & get result} few{use ratings & models} other{other}}`
+  String SearchHiwHint(num item) {
+    return Intl.plural(
+      item,
+      zero: 'preferences don’t work',
+      one: 'events/places',
+      two: 'type & get result',
+      few: 'use ratings & models',
+      other: 'other',
+      name: 'SearchHiwHint',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `Shuffling places...`
+  String get ShuffleHiwTitle {
+    return Intl.message(
+      'Shuffling places...',
+      name: 'ShuffleHiwTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `finding personalized places`
+  String get ShuffleHiwSubtitle {
+    return Intl.message(
+      'finding personalized places',
+      name: 'ShuffleHiwSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{swipe any direction} =1{swipe place qualities} =2{like dislike favorite} few{teach our system} other{other}}`
+  String ShuffleHiwHint(num item) {
+    return Intl.plural(
+      item,
+      zero: 'swipe any direction',
+      one: 'swipe place qualities',
+      two: 'like dislike favorite',
+      few: 'teach our system',
+      other: 'other',
+      name: 'ShuffleHiwHint',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `Suitable city content will...`
+  String get CheckInHiwTitle {
+    return Intl.message(
+      'Suitable city content will...',
+      name: 'CheckInHiwTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `cure your feeling or enchance it!`
+  String get CheckInHiwSubtitle {
+    return Intl.message(
+      'cure your feeling or enchance it!',
+      name: 'CheckInHiwSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{3 difficulty levels} =1{visit first to open next} =2{visit & check in} few{pass & be rewarded} other{pass & be rewarded}}`
+  String CheckInHiwHint(num item) {
+    return Intl.plural(
+      item,
+      zero: '3 difficulty levels',
+      one: 'visit first to open next',
+      two: 'visit & check in',
+      few: 'pass & be rewarded',
+      other: 'pass & be rewarded',
+      name: 'CheckInHiwHint',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `Choose yourself`
+  String get ChooseYourself {
+    return Intl.message(
+      'Choose yourself',
+      name: 'ChooseYourself',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check it out`
+  String get CheckItOut {
+    return Intl.message(
+      'Check it out',
+      name: 'CheckItOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Useful services and places`
+  String get SocialSubtitle {
+    return Intl.message(
+      'Useful services and places',
+      name: 'SocialSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Under service`
+  String get UnderService {
+    return Intl.message(
+      'Under service',
+      name: 'UnderService',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{point, plural, =0{{point} interests} =1{{point} interest} =2{{point} interests} few{{point} interests} many{{point} interests} other{{point} interests}`
+  String FindSomeoneCardPoints(Object point) {
+    return Intl.message(
+      '{point, plural, =0{$point interests} =1{$point interest} =2{$point interests} few{$point interests} many{$point interests} other{$point interests}',
+      name: 'FindSomeoneCardPoints',
+      desc: '',
+      args: [point],
+    );
+  }
+
+  /// `{interest, plural, =0{{interest} interests} =1{{interest} interest} =2{{interest} interests} few{{interest} interests} many{{interest} interests} other{{interest} interests}`
+  String FindSomeoneCardSameInterests(Object interest) {
+    return Intl.message(
+      '{interest, plural, =0{$interest interests} =1{$interest interest} =2{$interest interests} few{$interest interests} many{$interest interests} other{$interest interests}',
+      name: 'FindSomeoneCardSameInterests',
+      desc: '',
+      args: [interest],
+    );
+  }
+
+  /// `Under development`
+  String get UnderDevelopmentMessage {
+    return Intl.message(
+      'Under development',
+      name: 'UnderDevelopmentMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `raised {actuallyRaised}/${goal}$`
+  String DonationRaised(Object actuallyRaised, Object goal) {
+    return Intl.message(
+      'raised $actuallyRaised/\$$goal\$',
+      name: 'DonationRaised',
+      desc: '',
+      args: [actuallyRaised, goal],
+    );
+  }
+
+  /// `Exit`
+  String get Exit {
+    return Intl.message(
+      'Exit',
+      name: 'Exit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete account`
+  String get DeleteAccount {
+    return Intl.message(
+      'Delete account',
+      name: 'DeleteAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get Settings {
+    return Intl.message(
+      'Settings',
+      name: 'Settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yearly`
+  String get Yearly {
+    return Intl.message(
+      'Yearly',
+      name: 'Yearly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monthly`
+  String get Monthly {
+    return Intl.message(
+      'Monthly',
+      name: 'Monthly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unique feature "Connects".  Search, communicate, meet someone, networking`
+  String get PremiumSubscriptionFeature1 {
+    return Intl.message(
+      'Unique feature "Connects".  Search, communicate, meet someone, networking',
+      name: 'PremiumSubscriptionFeature1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Special profile label`
+  String get PremiumSubscriptionFeature2 {
+    return Intl.message(
+      'Special profile label',
+      name: 'PremiumSubscriptionFeature2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ability to leave reviews, shoot video-reactions about places and events, participate in ratings`
+  String get PremiumSubscriptionFeature3 {
+    return Intl.message(
+      'Ability to leave reviews, shoot video-reactions about places and events, participate in ratings',
+      name: 'PremiumSubscriptionFeature3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ability to add/suggest favorite places`
+  String get PremiumSubscriptionFeature4 {
+    return Intl.message(
+      'Ability to add/suggest favorite places',
+      name: 'PremiumSubscriptionFeature4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ability to switch dark/light design theme`
+  String get PremiumSubscriptionFeature5 {
+    return Intl.message(
+      'Ability to switch dark/light design theme',
+      name: 'PremiumSubscriptionFeature5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ability to become an Influencer`
+  String get PremiumSubscriptionFeature6 {
+    return Intl.message(
+      'Ability to become an Influencer',
+      name: 'PremiumSubscriptionFeature6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Special profile label`
+  String get ProSubscriptionFeature1 {
+    return Intl.message(
+      'Special profile label',
+      name: 'ProSubscriptionFeature1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ability to create your own events`
+  String get ProSubscriptionFeature2 {
+    return Intl.message(
+      'Ability to create your own events',
+      name: 'ProSubscriptionFeature2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Additional motivation of potential audience (clients/visitors) with the help of points system`
+  String get ProSubscriptionFeature3 {
+    return Intl.message(
+      'Additional motivation of potential audience (clients/visitors) with the help of points system',
+      name: 'ProSubscriptionFeature3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ability to sell related services through ticket booking`
+  String get ProSubscriptionFeature4 {
+    return Intl.message(
+      'Ability to sell related services through ticket booking',
+      name: 'ProSubscriptionFeature4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upsales`
+  String get ProSubscriptionFeature5 {
+    return Intl.message(
+      'Upsales',
+      name: 'ProSubscriptionFeature5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Internal targeted promotion of your events, statistics and analytics`
+  String get ProSubscriptionFeature6 {
+    return Intl.message(
+      'Internal targeted promotion of your events, statistics and analytics',
+      name: 'ProSubscriptionFeature6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ability to use specialised notifications`
+  String get ProSubscriptionFeature7 {
+    return Intl.message(
+      'Ability to use specialised notifications',
+      name: 'ProSubscriptionFeature7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pick from map`
+  String get PickFromMap {
+    return Intl.message(
+      'Pick from map',
+      name: 'PickFromMap',
+      desc: '',
+      args: [],
     );
   }
 }

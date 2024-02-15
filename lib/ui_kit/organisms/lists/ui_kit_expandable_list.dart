@@ -31,7 +31,7 @@ class _UiKitExpandableListState extends State<UiKitExpandableList> {
           context.smallButton(
             data: BaseUiKitButtonData(
               fit: ButtonFit.fitWidth,
-              text: 'Next ${widget.items.length - 4} ${widget.itemsTitle ?? 'items'}'.toUpperCase(),
+              text: '${S.current.NextElements(widget.items.length - 4)} ${widget.itemsTitle ?? 'items'}'.toUpperCase(),
               iconInfo: BaseUiKitButtonIconData(
                 iconData: ShuffleUiKitIcons.chevrondown,
               ),

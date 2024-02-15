@@ -65,7 +65,7 @@ class CustomAppBar extends PreferredSize {
                   children: [
                     if (!showLeading) const SizedBox(),
                     if (showLeading) leading ?? const AppBarBackButton(),
-                    if (showLeading && !centerTitle) SpacingFoundation.horizontalSpace8,
+                    if (showLeading) SpacingFoundation.horizontalSpace8,
                     customTitle ??
                         AppBarTitle(
                           title: title,

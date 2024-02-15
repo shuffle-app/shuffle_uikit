@@ -46,10 +46,7 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                 ConstrainedBox(
                     constraints: BoxConstraints.loose(Size(60.sp, 60.sp)),
                     child: context.userAvatar(
-                        size: UserAvatarSize.x60x60,
-                        type: userTileType,
-                        userName: userName ?? '',
-                        imageUrl: avatarUrl)),
+                        size: UserAvatarSize.x60x60, type: userTileType, userName: userName ?? '', imageUrl: avatarUrl)),
                 SpacingFoundation.verticalSpace2,
                 Text(
                   '@$userNickName',
@@ -84,7 +81,7 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                   ),
                   child: Center(
                     child: Text(
-                      '$userPoints points',
+                      S.current.FindSomeoneCardPoints(userPoints ?? 0),
                       style: boldTextTheme?.caption1Bold.copyWith(fontSize: 13.w, color: Colors.black),
                     ).paddingSymmetric(
                       vertical: EdgeInsetsFoundation.vertical6,
@@ -94,7 +91,7 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                 ),
                 Center(
                   child: Text(
-                    '${sameInterests} same interests',
+                    S.current.FindSomeoneCardSameInterests(sameInterests ?? 0),
                     style: boldTextTheme?.caption1Bold.copyWith(
                       fontSize: 13.w,
                       color: ColorsFoundation.darkNeutral900,

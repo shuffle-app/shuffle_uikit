@@ -149,7 +149,7 @@ class UiKitLocationPicker extends StatelessWidget {
                 onSearchTapped?.call();
               },
               controller: searchController,
-              hintText: 'Search',
+              hintText: S.current.Search,
               onInputCleaned: onSearchInputCleaned,
               prefix: UiKitSwitchableInputPrefix(
                 secondary: GestureDetector(
