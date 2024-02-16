@@ -508,6 +508,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Read": m23,
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
+        "Reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "ResetFilters": MessageLookupByLibrary.simpleMessage("Reset filters"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
@@ -520,6 +521,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SeeAll": MessageLookupByLibrary.simpleMessage("See all"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("See more"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("Select date"),
+        "SelectDateRange":
+            MessageLookupByLibrary.simpleMessage("Select Date Range"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Select days "),
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Please select language"),

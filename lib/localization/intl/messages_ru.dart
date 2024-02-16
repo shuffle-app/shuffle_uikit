@@ -517,6 +517,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
         "ResendCode":
             MessageLookupByLibrary.simpleMessage("Отправить код еще раз"),
+        "Reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "ResetFilters":
             MessageLookupByLibrary.simpleMessage("Сбросить фильтры"),
         "ResetPassword":
@@ -531,6 +532,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SeeAll": MessageLookupByLibrary.simpleMessage("Посмотреть всё"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("Ещё"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("Выберите дату"),
+        "SelectDateRange":
+            MessageLookupByLibrary.simpleMessage("Select Date Range"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Выбрать дни "),
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Пожалуйста выберите язык"),

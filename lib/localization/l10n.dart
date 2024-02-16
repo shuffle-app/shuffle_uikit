@@ -4082,6 +4082,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Select Date Range`
+  String get SelectDateRange {
+    return Intl.message(
+      'Select Date Range',
+      name: 'SelectDateRange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset`
+  String get Reset {
+    return Intl.message(
+      'Reset',
+      name: 'Reset',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

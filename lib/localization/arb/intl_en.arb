@@ -395,6 +395,8 @@
   "PickFromMap": "Pick from map",
   "AddPromotion": "Add promotion",
   "Archive": "Archive",
-  "DeleteCompany": "Delete company"
+  "DeleteCompany": "Delete company",
+  "SelectDateRange": "Select Date Range",
+  "Reset": "Reset"
 
 }

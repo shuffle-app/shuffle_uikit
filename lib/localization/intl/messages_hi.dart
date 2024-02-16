@@ -513,6 +513,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Read": m23,
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),
+        "Reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "ResetFilters": MessageLookupByLibrary.simpleMessage("रीसेट फ़िल्टर"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("पासवर्ड रीसेट"),
         "Save": MessageLookupByLibrary.simpleMessage("सहेजें"),
@@ -525,6 +526,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SeeAll": MessageLookupByLibrary.simpleMessage("सभी देखें"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("और देखें"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("तारीख़ चुनें"),
+        "SelectDateRange":
+            MessageLookupByLibrary.simpleMessage("Select Date Range"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("दिन चुनें"),
         "SelectLanguage": MessageLookupByLibrary.simpleMessage("भाषा चुने"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),

@@ -156,7 +156,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
 
   @override
   Widget build(BuildContext context) {
-    const maxSpinnerUpValue = -220.0;
+    const maxSpinnerUpValue = -60.0;
     final colorScheme = context.uiKitTheme?.colorScheme;
     // return LayoutBuilder(
     //   builder: (context, size) {
@@ -230,12 +230,10 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       changeInteractingState(true);
                       setSpinningGesture(
                           details.delta.dy != 0 && details.delta.dy < 0 ? SpinningGesture.up : SpinningGesture.spin);
-                      log('interacting is starting with gesture: ${_spinningGesture.toString()}', name: 'UiKitSpinner');
                     }
                     if (widget.pagingController.itemList?.isEmpty ?? false) return;
 
                     if (_spinningGesture == SpinningGesture.up) {
-                      log('onPanUpdate got details.delta.dy ${details.delta.dy}', name: 'UiKitSpinner');
                       if (_transitionNotifier.value > maxSpinnerUpValue) {
                         _transitionNotifier.value += details.delta.dy / 5;
                       }
@@ -256,10 +254,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     );
                   },
                   onPanStart: (details) {
-                    if (details.localPosition.dy != 0) {
-                      log('onPanStart got details.localPosition.dy ${details.localPosition.dy}', name: 'UiKitSpinner');
-                    }
-
                     if (widget.pagingController.itemList?.isEmpty ?? false) return;
 
                     _scrollStartNotifier.value = widget.scrollController.offset;
@@ -269,8 +263,11 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     if (widget.pagingController.itemList?.isEmpty ?? false) return;
 
                     if (_transitionNotifier.value != 0) {
-                      if (_transitionNotifier.value < maxSpinnerUpValue) {
+                      if (_transitionNotifier.value <= maxSpinnerUpValue + 10) {
                         _transitionNotifier.value = maxSpinnerUpValue;
+                      } else {
+                        _transitionNotifier.value = 0;
+                        return;
                       }
                       FeedbackIsolate.instance.addEvent(SystemSoundIsolateRachetClick());
                       unawaited(showDateRangePickerDialog(context, initialDateRange: widget.filterDate).then((value) {

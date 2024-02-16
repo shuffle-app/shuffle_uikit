@@ -24,7 +24,7 @@ Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context,
                 builder: (context, setState) =>
                     Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisSize: MainAxisSize.min, children: [
                       SpacingFoundation.verticalSpace8,
-                      Text(title ?? 'Select Date Range', style: textTheme?.title2),
+                      Text(title ?? S.of(context).SelectDateRange, style: textTheme?.title2),
                       SpacingFoundation.verticalSpace8,
                       _CalendarDateRangePicker(
                         initialStartDate: initialDateRange?.start,
@@ -34,7 +34,7 @@ Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context,
                         onStartDateChanged: (DateTime? value) {
                           if (value != null) {
                             setState(() {
-                              range = DateTimeRange(start: value, end: range.end);
+                              range = DateTimeRange(start: value, end: value.isAfter(range.end) ? value : range.end);
                             });
                           }
                         },
@@ -51,17 +51,18 @@ Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context,
                         children: [
                           context.button(
                               data: BaseUiKitButtonData(
-                                  text: 'Reset', onPressed: () => context.pop<DateTimeRange?>(result: null)),
+                                  text: S.of(context).Reset,
+                                  onPressed: () => context.pop<DateTimeRange?>(result: null)),
                               isTextButton: true),
                           const Spacer(),
                           context.button(
-                              data: BaseUiKitButtonData(text: 'Cancel', onPressed: () => context.pop()),
+                              data: BaseUiKitButtonData(text: S.of(context).Cancel, onPressed: () => context.pop()),
                               isTextButton: true),
                           SpacingFoundation.horizontalSpace4,
                           context.dialogButton(
                             dialogButtonType: DialogButtonType.buttonWhite,
                             data: BaseUiKitButtonData(
-                                text: 'Ok', onPressed: () => context.pop<DateTimeRange>(result: range)),
+                                text: S.of(context).Ok, onPressed: () => context.pop<DateTimeRange>(result: range)),
                             small: true,
                           )
                         ],
@@ -229,7 +230,7 @@ class _CalendarDateRangePickerState extends State<_CalendarDateRangePicker> {
     const Key sliverAfterKey = Key('sliverAfterKey');
 
     return SizedBox(
-        height: SizesFoundation.standartCalendarPopupSize.height /1.3,
+        height: SizesFoundation.standartCalendarPopupSize.height / 1.3,
         width: SizesFoundation.standartCalendarPopupSize.width,
         child: Column(
           children: <Widget>[

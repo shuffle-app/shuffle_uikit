@@ -395,5 +395,7 @@
   "PickFromMap": "नक्शे से चुनें",
   "AddPromotion": "प्रचार जोड़ें",
   "Archive": "संग्रहीत",
-  "DeleteCompany": "कंपनी हटाएं"
+  "DeleteCompany": "कंपनी हटाएं",
+  "SelectDateRange": "Select Date Range",
+  "Reset": "Reset"
 }
