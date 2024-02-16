@@ -33,121 +33,120 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaWidth = kIsWeb ? 358.0 : (1.sw - horizontalMargin * 2);
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(
-          height: kIsWeb ? 156 : 0.48.sw,
-          width: 1.sw,
-          child: Stack(
-            children: [
-              GestureDetector(
-                behavior: HitTestBehavior.opaque,
-                onTapUp: (TapUpDetails details) {
-                  if (details.globalPosition.dx > 1.sw / 2) {
-                    scrollController.animateTo(scrollController.offset + 0.83.sw,
-                        duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
-                  } else if (scrollController.offset < 1.sw / 2) {
-                    scrollController.animateTo(0, duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
-                  } else {
-                    scrollController.animateTo(scrollController.offset - 0.83.sw,
-                        duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
-                  }
-                },
-                child: ListView.separated(
-                  controller: scrollController,
-                  physics: const ClampingScrollPhysics(),
-                  scrollDirection: Axis.horizontal,
-                  addAutomaticKeepAlives: true,
-                  itemCount: media.length,
-                  padding: EdgeInsets.zero,
-                  separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
-                  itemBuilder: (context, index) {
-                    final mediaItem = media.elementAt(index);
-                    if (mediaItem.type == UiKitMediaType.video) {
-                      return BaseUiKitMediaWidget.video(
-                        media: mediaItem,
-                        width: media.length == 1 ? mediaWidth : null,
-                      ).paddingOnly(left: index == 0 ? horizontalMargin : 0);
-                    }
-
-                    return BaseUiKitMediaWidget.image(media: mediaItem).paddingOnly(left: index == 0 ? horizontalMargin : 0);
-                  },
-                ),
-              ),
-              if (actions != null && actions!.isNotEmpty)
-                Positioned(
-                  right: 16.w,
-                  bottom: 0,
-                  height: 0.1.sw,
-                  width: 1.sw,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: actions!.reversed.toList(),
-                  ),
-                ),
-            ],
-          ),
-        ),
-        SpacingFoundation.verticalSpace14,
-        UiKitTagsWidget(
-          rating: rating,
-          baseTags: baseTags,
-          uniqueTags: uniqueTags,
-        ).paddingSymmetric(horizontal: horizontalMargin),
-        SpacingFoundation.verticalSpace14,
-        if (branches != null) ...[
-          UiKitCardWrapper(
-            borderRadius: BorderRadius.zero,
-            color: context.uiKitTheme?.colorScheme.surface1,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+    return RepaintBoundary(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: kIsWeb ? 156 : 0.48.sw,
+            width: 1.sw,
+            child: Stack(
               children: [
-                Text(
-                  'Branches',
-                  style: context.uiKitTheme?.boldTextTheme.caption2Medium,
-                ),
-                SpacingFoundation.verticalSpace4,
-                ConstrainedBox(
-                  constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
+                GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTapUp: (TapUpDetails details) {
+                    if (details.globalPosition.dx > 1.sw / 2) {
+                      scrollController.animateTo(scrollController.offset + 0.83.sw,
+                          duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
+                    } else if (scrollController.offset < 1.sw / 2) {
+                      scrollController.animateTo(0, duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
+                    } else {
+                      scrollController.animateTo(scrollController.offset - 0.83.sw,
+                          duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
+                    }
+                  },
                   child: ListView.separated(
-                    padding: EdgeInsets.zero,
-                    shrinkWrap: true,
+                    controller: scrollController,
+                    physics: const BouncingScrollPhysics(),
                     scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      final branch = branches!.elementAt(index);
-
-                      return UiKitHorizontalCaptionedImage(
-                        title: branch.caption,
-                        imageLink: branch.imageUrl,
-                        borderRadius: BorderRadiusFoundation.all16,
-                        onTap: onBranchTap,
-                      );
-                    },
+                    itemCount: media.length,
+                    padding: EdgeInsets.zero,
                     separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
-                    itemCount: branches!.length,
+                    itemBuilder: (context, index) {
+                      final mediaItem = media.elementAt(index);
+                      if (mediaItem.type == UiKitMediaType.video) {
+                        return BaseUiKitMediaWidget.video(
+                          media: mediaItem,
+                          width: media.length == 1 ? mediaWidth : null,
+                        ).paddingOnly(left: index == 0 ? horizontalMargin : 0);
+                      }
+
+                      return BaseUiKitMediaWidget.image(media: mediaItem).paddingOnly(left: index == 0 ? horizontalMargin : 0);
+                    },
                   ),
                 ),
+                if (actions != null && actions!.isNotEmpty)
+                  Positioned(
+                    right: 16.w,
+                    bottom: 0,
+                    height: 0.1.sw,
+                    width: 1.sw,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: actions!.reversed.toList(),
+                    ),
+                  ),
               ],
-            ).paddingOnly(
-              top: EdgeInsetsFoundation.vertical12,
-              bottom: EdgeInsetsFoundation.vertical12,
-              left: EdgeInsetsFoundation.horizontal16,
             ),
           ),
           SpacingFoundation.verticalSpace14,
-        ],
-        RepaintBoundary(
-          child: DescriptionWidget(
+          UiKitTagsWidget(
+            rating: rating,
+            baseTags: baseTags,
+            uniqueTags: uniqueTags,
+          ).paddingSymmetric(horizontal: horizontalMargin),
+          SpacingFoundation.verticalSpace14,
+          if (branches != null) ...[
+            UiKitCardWrapper(
+              borderRadius: BorderRadius.zero,
+              color: context.uiKitTheme?.colorScheme.surface1,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(
+                    'Branches',
+                    style: context.uiKitTheme?.boldTextTheme.caption2Medium,
+                  ),
+                  SpacingFoundation.verticalSpace4,
+                  ConstrainedBox(
+                    constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
+                    child: ListView.separated(
+                      padding: EdgeInsets.zero,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        final branch = branches!.elementAt(index);
+
+                        return UiKitHorizontalCaptionedImage(
+                          title: branch.caption,
+                          imageLink: branch.imageUrl,
+                          borderRadius: BorderRadiusFoundation.all16,
+                          onTap: onBranchTap,
+                        );
+                      },
+                      separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                      itemCount: branches!.length,
+                    ),
+                  ),
+                ],
+              ).paddingOnly(
+                top: EdgeInsetsFoundation.vertical12,
+                bottom: EdgeInsetsFoundation.vertical12,
+                left: EdgeInsetsFoundation.horizontal16,
+              ),
+            ),
+            SpacingFoundation.verticalSpace14,
+          ],
+          DescriptionWidget(
             description: description,
           ).paddingOnly(
             left: horizontalMargin,
             right: horizontalMargin,
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

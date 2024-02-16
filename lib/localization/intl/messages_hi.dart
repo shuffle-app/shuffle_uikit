@@ -46,11 +46,11 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m9(item) =>
       "${Intl.plural(item, zero: 'घटनाएँ और स्थान', one: 'चिप्स द्वारा फ़िल्टर करना', two: 'चिप चुनें और दबाएं', few: 'दबाएं और स्क्रॉल करें', other: 'दबाएं और स्क्रॉल करें')}";
 
-  static String m10(point) =>
-      "${Intl.plural(point, zero: '${point} अंक', one: '${point} अंक', two: '${point} अंक', few: '${point} अंक', many: '${point} अंक', other: '${point} अंक')}";
+  static String m10(count) =>
+      "${Intl.plural(count, zero: '${count} अंक', one: '${count} अंक', two: '${count} अंक', few: '${count} अंक', many: '${count} अंक', other: '${count} अंक')}";
 
-  static String m11(interest) =>
-      "${Intl.plural(interest, zero: '${interest} इंटरेस्ट', one: '${interest} इंटरेस्ट', two: '${interest} इंटरेस्ट', few: '${interest} इंटरेस्ट', many: '${interest} इंटरेस्ट', other: '${interest} इंटरेस्ट')}";
+  static String m11(count) =>
+      "${Intl.plural(count, zero: '${count} इंटरेस्ट', one: '${count} इंटरेस्ट', two: '${count} इंटरेस्ट', few: '${count} इंटरेस्ट', many: '${count} इंटरेस्ट', other: '${count} इंटरेस्ट')}";
 
   static String m12(formattedPrice) => "${formattedPrice} लिए";
 

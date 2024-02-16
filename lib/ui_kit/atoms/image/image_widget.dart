@@ -130,6 +130,7 @@ class ImageWidget extends StatelessWidget {
         },
         errorWidget: (context, url, trace) {
           log('Got error while downloading $url', name: 'ImageWidget');
+          log(trace.toString(), name: 'ImageWidget');
 
           return errorWidget ?? const DefaultImageErrorWidget();
         },
