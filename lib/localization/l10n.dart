@@ -3823,35 +3823,35 @@ class S {
     );
   }
 
-  /// `{point, plural, =0{{point} interests} =1{{point} interest} =2{{point} interests} few{{point} interests} many{{point} interests} other{{point} interests}}`
-  String FindSomeoneCardPoints(num point) {
+  /// `{count, plural, =0{{count} points} =1{{count} point} =2{{count} points} few{{count} points} many{{count} points} other{{count} points}}`
+  String FindSomeoneCardPoints(num count) {
     return Intl.plural(
-      point,
-      zero: '$point interests',
-      one: '$point interest',
-      two: '$point interests',
-      few: '$point interests',
-      many: '$point interests',
-      other: '$point interests',
+      count,
+      zero: '$count points',
+      one: '$count point',
+      two: '$count points',
+      few: '$count points',
+      many: '$count points',
+      other: '$count points',
       name: 'FindSomeoneCardPoints',
       desc: '',
-      args: [point],
+      args: [count],
     );
   }
 
-  /// `{interest, plural, =0{{interest} interests} =1{{interest} interest} =2{{interest} interests} few{{interest} interests} many{{interest} interests} other{{interest} interests}}`
-  String FindSomeoneCardSameInterests(num interest) {
+  /// `{count, plural, =0{{count} common interests} =1{{count} common interest} =2{{count} common interests} few{{count} common interests} many{{count} common interests} other{{count} common interests}}`
+  String FindSomeoneCardSameInterests(num count) {
     return Intl.plural(
-      interest,
-      zero: '$interest interests',
-      one: '$interest interest',
-      two: '$interest interests',
-      few: '$interest interests',
-      many: '$interest interests',
-      other: '$interest interests',
+      count,
+      zero: '$count common interests',
+      one: '$count common interest',
+      two: '$count common interests',
+      few: '$count common interests',
+      many: '$count common interests',
+      other: '$count common interests',
       name: 'FindSomeoneCardSameInterests',
       desc: '',
-      args: [interest],
+      args: [count],
     );
   }
 
