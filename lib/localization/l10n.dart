@@ -3823,20 +3823,32 @@ class S {
     );
   }
 
-  /// `{point, plural, =0{{point} interests} =1{{point} interest} =2{{point} interests} few{{point} interests} many{{point} interests} other{{point} interests}`
-  String FindSomeoneCardPoints(Object point) {
-    return Intl.message(
-      '{point, plural, =0{$point interests} =1{$point interest} =2{$point interests} few{$point interests} many{$point interests} other{$point interests}',
+  /// `{point, plural, =0{{point} interests} =1{{point} interest} =2{{point} interests} few{{point} interests} many{{point} interests} other{{point} interests}}`
+  String FindSomeoneCardPoints(num point) {
+    return Intl.plural(
+      point,
+      zero: '$point interests',
+      one: '$point interest',
+      two: '$point interests',
+      few: '$point interests',
+      many: '$point interests',
+      other: '$point interests',
       name: 'FindSomeoneCardPoints',
       desc: '',
       args: [point],
     );
   }
 
-  /// `{interest, plural, =0{{interest} interests} =1{{interest} interest} =2{{interest} interests} few{{interest} interests} many{{interest} interests} other{{interest} interests}`
-  String FindSomeoneCardSameInterests(Object interest) {
-    return Intl.message(
-      '{interest, plural, =0{$interest interests} =1{$interest interest} =2{$interest interests} few{$interest interests} many{$interest interests} other{$interest interests}',
+  /// `{interest, plural, =0{{interest} interests} =1{{interest} interest} =2{{interest} interests} few{{interest} interests} many{{interest} interests} other{{interest} interests}}`
+  String FindSomeoneCardSameInterests(num interest) {
+    return Intl.plural(
+      interest,
+      zero: '$interest interests',
+      one: '$interest interest',
+      two: '$interest interests',
+      few: '$interest interests',
+      many: '$interest interests',
+      other: '$interest interests',
       name: 'FindSomeoneCardSameInterests',
       desc: '',
       args: [interest],
