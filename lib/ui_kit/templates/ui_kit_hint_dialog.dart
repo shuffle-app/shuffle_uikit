@@ -23,15 +23,22 @@ class UiKitHintDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
           title,
           style: textStyle,
+          textAlign: TextAlign.center,
         ),
         SpacingFoundation.verticalSpace8,
-        Wrap(
-          spacing: 16.w,
-          runSpacing: 8.h,
+        GridView.count(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          padding: EdgeInsets.zero,
+          crossAxisSpacing: 16,
+          mainAxisSpacing: 16,
+          childAspectRatio: 112 / 146,
+          crossAxisCount: 2,
           children: hintTiles,
         ),
         SpacingFoundation.verticalSpace8,

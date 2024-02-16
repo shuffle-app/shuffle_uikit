@@ -104,7 +104,7 @@ class UiKitNoActionOverflownCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      'Under service',
+                      S.current.UnderService,
                       style: regularTextTheme?.caption4Regular,
                     ),
                     SpacingFoundation.horizontalSpace4,

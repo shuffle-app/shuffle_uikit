@@ -120,6 +120,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Booking.png
   AssetGenImage get booking => const AssetGenImage('assets/images/png/Booking.png');
 
+  /// File path: assets/images/png/Check-in.png
+  AssetGenImage get checkIn => const AssetGenImage('assets/images/png/Check-in.png');
+
   /// File path: assets/images/png/Chips-select.png
   AssetGenImage get chipsSelect => const AssetGenImage('assets/images/png/Chips-select.png');
 
@@ -312,6 +315,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Result.png
   AssetGenImage get result => const AssetGenImage('assets/images/png/Result.png');
 
+  /// File path: assets/images/png/Reward.png
+  AssetGenImage get reward => const AssetGenImage('assets/images/png/Reward.png');
+
   /// File path: assets/images/png/Rock-n-roll-hands.png
   AssetGenImage get rockNRollHands => const AssetGenImage('assets/images/png/Rock-n-roll-hands.png');
 
@@ -371,6 +377,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Victory-hands.png
   AssetGenImage get victoryHands => const AssetGenImage('assets/images/png/Victory-hands.png');
+
+  /// File path: assets/images/png/Visit-first.png
+  AssetGenImage get visitFirst => const AssetGenImage('assets/images/png/Visit-first.png');
 
   /// File path: assets/images/png/Windy.png
   AssetGenImage get windy => const AssetGenImage('assets/images/png/Windy.png');
@@ -537,6 +546,18 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/pharmacy_plus.png
   AssetGenImage get pharmacyPlus => const AssetGenImage('assets/images/png/pharmacy_plus.png');
 
+  /// File path: assets/images/png/place-social-1.png
+  AssetGenImage get placeSocial1 => const AssetGenImage('assets/images/png/place-social-1.png');
+
+  /// File path: assets/images/png/place-social-2.png
+  AssetGenImage get placeSocial2 => const AssetGenImage('assets/images/png/place-social-2.png');
+
+  /// File path: assets/images/png/place-social-3.png
+  AssetGenImage get placeSocial3 => const AssetGenImage('assets/images/png/place-social-3.png');
+
+  /// File path: assets/images/png/place-social-4.png
+  AssetGenImage get placeSocial4 => const AssetGenImage('assets/images/png/place-social-4.png');
+
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
 
@@ -609,6 +630,18 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/search_category_zadrot.png
   AssetGenImage get searchCategoryZadrot => const AssetGenImage('assets/images/png/search_category_zadrot.png');
 
+  /// File path: assets/images/png/service-social-1.png
+  AssetGenImage get serviceSocial1 => const AssetGenImage('assets/images/png/service-social-1.png');
+
+  /// File path: assets/images/png/service-social-2.png
+  AssetGenImage get serviceSocial2 => const AssetGenImage('assets/images/png/service-social-2.png');
+
+  /// File path: assets/images/png/service-social-3.png
+  AssetGenImage get serviceSocial3 => const AssetGenImage('assets/images/png/service-social-3.png');
+
+  /// File path: assets/images/png/service-social-4.png
+  AssetGenImage get serviceSocial4 => const AssetGenImage('assets/images/png/service-social-4.png');
+
   /// File path: assets/images/png/spinner_event.png
   AssetGenImage get spinnerEvent => const AssetGenImage('assets/images/png/spinner_event.png');
 
@@ -617,6 +650,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/surprise-emoji.png
   AssetGenImage get surpriseEmoji => const AssetGenImage('assets/images/png/surprise-emoji.png');
+
+  /// File path: assets/images/png/three-levels.png
+  AssetGenImage get threeLevels => const AssetGenImage('assets/images/png/three-levels.png');
 
   /// File path: assets/images/png/titled_card_background_1.png
   AssetGenImage get titledCardBackground1 => const AssetGenImage('assets/images/png/titled_card_background_1.png');
@@ -644,6 +680,7 @@ class $AssetsImagesPngGen {
         bell,
         binoculars,
         booking,
+        checkIn,
         chipsSelect,
         choosePlanOld,
         clapperboard,
@@ -708,6 +745,7 @@ class $AssetsImagesPngGen {
         rating,
         realEstate,
         result,
+        reward,
         rockNRollHands,
         rocket,
         selectNiche,
@@ -728,6 +766,7 @@ class $AssetsImagesPngGen {
         trainingApparatus,
         training,
         victoryHands,
+        visitFirst,
         windy,
         yoga,
         angryEmoji,
@@ -783,6 +822,10 @@ class $AssetsImagesPngGen {
         parcel,
         pharmacy,
         pharmacyPlus,
+        placeSocial1,
+        placeSocial2,
+        placeSocial3,
+        placeSocial4,
         place,
         production,
         profileAvatar,
@@ -806,9 +849,14 @@ class $AssetsImagesPngGen {
         searchCategorySelfCare,
         searchCategorySport,
         searchCategoryZadrot,
+        serviceSocial1,
+        serviceSocial2,
+        serviceSocial3,
+        serviceSocial4,
         spinnerEvent,
         star2,
         surpriseEmoji,
+        threeLevels,
         titledCardBackground1,
         titledCardBackground2,
         titledCardBackground3,

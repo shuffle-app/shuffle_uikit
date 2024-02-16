@@ -60,7 +60,8 @@ class UiKitIconedBlurMessageCard extends StatelessWidget {
     ),
     if (orientation == Axis.horizontal) SpacingFoundation.horizontalSpace4,
     if (orientation == Axis.vertical) SpacingFoundation.verticalSpace4,
-    message,
+    if (orientation == Axis.horizontal) Expanded(child: message),
+    if (orientation == Axis.vertical) message,
   ];
 
   @override
@@ -70,10 +71,16 @@ class UiKitIconedBlurMessageCard extends StatelessWidget {
         borderRadius: borderRadius,
         border: border,
         blurValue: blurValue ?? 50,
-        child: Row(
-          crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: children,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: 0.7.sw,
+            minWidth: 0.4.sw,
+          ),
+          child: Row(
+            crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: children,
+          ),
         ),
       );
     }
@@ -82,10 +89,16 @@ class UiKitIconedBlurMessageCard extends StatelessWidget {
       borderRadius: borderRadius,
       border: border,
       blurValue: blurValue ?? 50,
-      child: Column(
-        crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: children,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: 0.4.sw,
+          minWidth: 0.25.sw,
+        ),
+        child: Column(
+          crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: children,
+        ),
       ),
     );
   }

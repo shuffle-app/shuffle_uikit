@@ -85,3 +85,7 @@ export 'user/pro_member_plate.dart';
 export 'profile/grid_titled_item_widget.dart';
 export 'profile/ui_kit_fame_item.dart';
 export 'profile/ui_kit_user_badge.dart';
+export 'dropdowns/ui_kit_base_dropdown.dart';
+export 'form_fields/ui_kit_addable_form_field.dart';
+export 'form_fields/addable_form_child_time.dart';
+export 'form_fields/addable_form_child_date_week.dart';

@@ -7,6 +7,7 @@ class UiKitMessageCloud extends StatelessWidget {
   final String? subtitle;
   final TextStyle? messageTextStyle;
   final TextStyle? subtitleTextStyle;
+  final double? messagePadding;
 
   const UiKitMessageCloud({
     Key? key,
@@ -15,6 +16,7 @@ class UiKitMessageCloud extends StatelessWidget {
     this.subtitle,
     this.messageTextStyle,
     this.subtitleTextStyle,
+    this.messagePadding,
   })  : assert(messageWidget != null || message != null, 'messageWidget or message must be provided'),
         super(key: key);
 
@@ -23,11 +25,8 @@ class UiKitMessageCloud extends StatelessWidget {
     final colorScheme = context.uiKitTheme?.colorScheme;
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
 
-    return SizedBox(
-      width: 0.375.sw,
-      height: 0.075.sh,
+    return IntrinsicHeight(
       child: Stack(
-        fit: StackFit.expand,
         clipBehavior: Clip.none,
         children: [
           UiKitCardWrapper(

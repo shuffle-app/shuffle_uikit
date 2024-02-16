@@ -24,7 +24,7 @@ class UiKitBlurWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: borderRadius ?? BorderRadiusFoundation.max,
+      borderRadius: borderRadius ?? BorderRadiusFoundation.all60,
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: blurValue ?? 16, sigmaY: blurValue ?? 16),
         child: Container(

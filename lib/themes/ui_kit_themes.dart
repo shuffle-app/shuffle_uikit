@@ -14,6 +14,53 @@ class UiKitThemes {
     scaffoldBackgroundColor: ColorsFoundation.lightSurface,
     iconTheme: const IconThemeData(color: ColorsFoundation.solidLightSurface),
     colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.info, onSurface: Colors.black),
+    dropdownMenuTheme: DropdownMenuThemeData(
+        textStyle: const TextStyle(
+          fontFamily: 'Unbounded',
+          fontSize: 16,
+          fontWeight: FontWeight.w300,
+          // color: Color(0xffffffff),
+          // color: Color(0xFF000000),
+          package: 'shuffle_uikit',
+        ),
+        menuStyle: MenuStyle(
+          backgroundColor: MaterialStateProperty.resolveWith((states) => UiKitColors.lightSurface),
+// elevation: 0,
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: UiKitColors.lightSurface,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all16,
+            borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all16,
+            borderSide: const BorderSide(
+              color: Colors.white,
+              width: 2,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all16,
+            borderSide: BorderSide.none,
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all16,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all16,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+        ),
+      ),
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith((_) => ColorsFoundation.solidLightSurface),
@@ -26,6 +73,7 @@ class UiKitThemes {
             fontWeight: FontWeight.w500,
             color: Color(0xff000000),
             package: 'shuffle_uikit',
+            overflow: TextOverflow.ellipsis,
           );
         }),
       ),
@@ -245,6 +293,7 @@ class UiKitThemes {
           fontWeight: FontWeight.w500,
           color: Color(0xffffffff),
           package: 'shuffle_uikit',
+          overflow: TextOverflow.ellipsis,
         );
       }),
       foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
@@ -298,6 +347,7 @@ class UiKitThemes {
           fontWeight: FontWeight.w500,
           color: Color(0xffffffff),
           package: 'shuffle_uikit',
+          overflow: TextOverflow.ellipsis,
         );
       }),
       foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
