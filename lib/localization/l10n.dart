@@ -4052,6 +4052,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Add promotion`
+  String get AddPromotion {
+    return Intl.message(
+      'Add promotion',
+      name: 'AddPromotion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Archive`
+  String get Archive {
+    return Intl.message(
+      'Archive',
+      name: 'Archive',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete company`
+  String get DeleteCompany {
+    return Intl.message(
+      'Delete company',
+      name: 'DeleteCompany',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

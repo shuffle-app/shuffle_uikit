@@ -123,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Accept donations or help others realize their dreams"),
         "Account": MessageLookupByLibrary.simpleMessage("Account"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Activity type"),
+        "AddPromotion": MessageLookupByLibrary.simpleMessage("Add promotion"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Add yourself to list"),
         "Address": MessageLookupByLibrary.simpleMessage("Address"),
@@ -138,6 +139,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AllowX": m0,
         "AllowedCaracters": m1,
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" And "),
+        "Archive": MessageLookupByLibrary.simpleMessage("Archive"),
         "Archived": MessageLookupByLibrary.simpleMessage("Archived"),
         "AreYouSureYouWantToDeleteYourAccount":
             MessageLookupByLibrary.simpleMessage(
@@ -212,6 +214,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Days": m3,
         "DaysOfWeek": MessageLookupByLibrary.simpleMessage("Days of week"),
         "DeleteAccount": MessageLookupByLibrary.simpleMessage("Delete account"),
+        "DeleteCompany": MessageLookupByLibrary.simpleMessage("Delete company"),
         "DeleteFromList":
             MessageLookupByLibrary.simpleMessage("Delete from list"),
         "DependingOn": MessageLookupByLibrary.simpleMessage("Depending on..."),

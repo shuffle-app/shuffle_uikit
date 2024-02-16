@@ -161,7 +161,7 @@
   "ShuffleWithRightWhitespace": "Shuffle ",
   "Places": "Места",
   "Events": "События",
-  "CreateYourPlaceAndInvitePeople": "Создайте своё место и пригласи людей",
+  "CreateYourPlaceAndInvitePeople": "Создайте своё место и пригласите людей",
   "CreatePlace": "Создать место",
   "Website": "Сайт",
   "Location": "Локация",
@@ -392,5 +392,8 @@
   "ProSubscriptionFeature5": "Допродажи",
   "ProSubscriptionFeature6": "Внутренняя таргетированная реклама ваших событий, статистика и аналитика",
   "ProSubscriptionFeature7": "Возможность использовать специальные уведомления",
-  "PickFromMap": "Выбрать на карте"
+  "PickFromMap": "Выбрать на карте",
+  "AddPromotion": "Добавить промо",
+  "Archive": "Архив",
+  "DeleteCompany": "Удалить компанию"
 }

@@ -38,13 +38,13 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m6(inputType) => "${inputType} दर्ज करें";
 
   static String m7(item) =>
-      "${Intl.plural(item, zero: 'आपकी जगह', one: 'आपकी रुचियां', two: 'आसपास का मौसम', few: 'और अन्य 14 स्केल्स', other: 'other')}";
+      "${Intl.plural(item, zero: 'आपकी जगह', one: 'आपकी रुचियां', two: 'आसपास का मौसम', few: 'और अन्य 14 स्केल्स', other: 'और अन्य 14 स्केल्स')}";
 
   static String m8(item) =>
-      "${Intl.plural(item, zero: 'आप निशा चुनते हैं', one: 'दबाते हैं', two: 'चुनते हैं और योजना बनाते हैं', few: 'चुनते हैं और योजना बनाते हैं', other: 'other')}";
+      "${Intl.plural(item, zero: 'आप निशा चुनते हैं', one: 'दबाते हैं', two: 'चुनते हैं और योजना बनाते हैं', few: 'चुनते हैं और योजना बनाते हैं', other: 'चुनते हैं और योजना बनाते हैं')}";
 
   static String m9(item) =>
-      "${Intl.plural(item, zero: 'घटनाएँ और स्थान', one: 'चिप्स द्वारा फ़िल्टर करना', two: 'चिप चुनें और दबाएं', few: 'दबाएं और स्क्रॉल करें', other: 'other')}";
+      "${Intl.plural(item, zero: 'घटनाएँ और स्थान', one: 'चिप्स द्वारा फ़िल्टर करना', two: 'चिप चुनें और दबाएं', few: 'दबाएं और स्क्रॉल करें', other: 'दबाएं और स्क्रॉल करें')}";
 
   static String m10(point) =>
       "${Intl.plural(point, zero: '${point} अंक', one: '${point} अंक', two: '${point} अंक', few: '${point} अंक', many: '${point} अंक', other: '${point} अंक')}";
@@ -74,23 +74,23 @@ class MessageLookup extends MessageLookupByLibrary {
       "कृपया कम से कम ${religionCount} धर्म का चयन करें";
 
   static String m21(item) =>
-      "${Intl.plural(item, zero: 'सपना अनुरोध पोस्ट करें', one: 'लिखें और वीडियो बनाएं', two: 'बहुत सारे लोगों को दान करें', few: 'दूसरों की मदद करें', other: 'other')}";
+      "${Intl.plural(item, zero: 'सपना अनुरोध पोस्ट करें', one: 'लिखें और वीडियो बनाएं', two: 'बहुत सारे लोगों को दान करें', few: 'दूसरों की मदद करें', other: 'दूसरों की मदद करें')}";
 
   static String m22(item) =>
-      "${Intl.plural(item, zero: 'साथी खोजें', one: 'समान पसंद', two: 'चेक पॉइंट रिप्यूटेशन', few: 'कोई दुश्मन नहीं', other: 'other')}";
+      "${Intl.plural(item, zero: 'साथी खोजें', one: 'समान पसंद', two: 'चेक पॉइंट रिप्यूटेशन', few: 'कोई दुश्मन नहीं', other: 'कोई दुश्मन नहीं')}";
 
   static String m23(amount) => "पढ़े ${amount}";
 
   static String m24(item) =>
-      "${Intl.plural(item, zero: 'पसंद नहीं करते', one: 'घटनाएँ/स्थान', two: 'प्रकार और परिणाम प्राप्त करें', few: 'रेटिंग और मॉडल का उपयोग करें', other: 'other')}";
+      "${Intl.plural(item, zero: 'पसंद नहीं करते', one: 'घटनाएँ/स्थान', two: 'प्रकार और परिणाम प्राप्त करें', few: 'रेटिंग और मॉडल का उपयोग करें', other: 'रेटिंग और मॉडल का उपयोग करें')}";
 
   static String m25(type) => "चुनना ${type}";
 
   static String m26(item) =>
-      "${Intl.plural(item, zero: 'किसी भी दिशा में घुमाएं', one: 'स्थान गुणवत्ता घुमाएं', two: 'पसंद नहीं करें पसंद करें पसंदीदा', few: 'हमारी प्रणाली को सिखाएं', other: 'other')}";
+      "${Intl.plural(item, zero: 'किसी भी दिशा में घुमाएं', one: 'स्थान गुणवत्ता घुमाएं', two: 'पसंद नहीं करें पसंद करें पसंदीदा', few: 'हमारी प्रणाली को सिखाएं', other: 'हमारी प्रणाली को सिखाएं')}";
 
   static String m27(item) =>
-      "${Intl.plural(item, zero: 'मज़े के लिए', one: 'श्रेणी घुमाएं', two: 'चुनें और योजना बनाएं', few: 'खोजें और बुक करें', other: 'other')}";
+      "${Intl.plural(item, zero: 'मज़े के लिए', one: 'श्रेणी घुमाएं', two: 'चुनें और योजना बनाएं', few: 'खोजें और बुक करें', other: 'खोजें और बुक करें')}";
 
   static String m28(separator) => "हमें अपने बारे में${separator}और अधिक बताएं";
 
@@ -124,6 +124,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Account": MessageLookupByLibrary.simpleMessage("खाता"),
         "ActivityType":
             MessageLookupByLibrary.simpleMessage("क्रिया के प्रकार"),
+        "AddPromotion": MessageLookupByLibrary.simpleMessage("प्रचार जोड़ें"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("स्वयं को सूची में जोड़ें"),
         "Address": MessageLookupByLibrary.simpleMessage("पता"),
@@ -139,6 +140,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AllowX": m0,
         "AllowedCaracters": m1,
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage("और"),
+        "Archive": MessageLookupByLibrary.simpleMessage("संग्रहीत"),
         "Archived": MessageLookupByLibrary.simpleMessage("संग्रहीत"),
         "AreYouSureYouWantToDeleteYourAccount":
             MessageLookupByLibrary.simpleMessage(
@@ -211,6 +213,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Days": m3,
         "DaysOfWeek": MessageLookupByLibrary.simpleMessage("सप्ताह के दिन"),
         "DeleteAccount": MessageLookupByLibrary.simpleMessage("खाता हटाएं"),
+        "DeleteCompany": MessageLookupByLibrary.simpleMessage("कंपनी हटाएं"),
         "DeleteFromList": MessageLookupByLibrary.simpleMessage("सूची से हटाएँ"),
         "DependingOn":
             MessageLookupByLibrary.simpleMessage("पर निर्भर करता है"),

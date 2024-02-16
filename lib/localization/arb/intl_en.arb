@@ -392,6 +392,9 @@
   "ProSubscriptionFeature5": "Upsales",
   "ProSubscriptionFeature6": "Internal targeted promotion of your events, statistics and analytics",
   "ProSubscriptionFeature7": "Ability to use specialised notifications",
-  "PickFromMap": "Pick from map"
+  "PickFromMap": "Pick from map",
+  "AddPromotion": "Add promotion",
+  "Archive": "Archive",
+  "DeleteCompany": "Delete company"
 
 }

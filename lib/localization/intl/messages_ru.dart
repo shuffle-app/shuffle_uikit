@@ -123,6 +123,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Принимать донаты или помогать другим воплотить мечты"),
         "Account": MessageLookupByLibrary.simpleMessage("Аккаунт"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Тип активности"),
+        "AddPromotion": MessageLookupByLibrary.simpleMessage("Добавить промо"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Добавиться в список"),
         "Address": MessageLookupByLibrary.simpleMessage("Адрес"),
@@ -138,6 +139,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AllowX": m0,
         "AllowedCaracters": m1,
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" И "),
+        "Archive": MessageLookupByLibrary.simpleMessage("Архив"),
         "Archived": MessageLookupByLibrary.simpleMessage("Архив"),
         "AreYouSureYouWantToDeleteYourAccount":
             MessageLookupByLibrary.simpleMessage(
@@ -199,7 +201,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Создать место"),
         "CreateYourPlaceAndInvitePeople": MessageLookupByLibrary.simpleMessage(
-            "Создайте своё место и пригласи людей"),
+            "Создайте своё место и пригласите людей"),
         "CredentialsCodeVerificationSubtitle":
             MessageLookupByLibrary.simpleMessage(
                 "Пожалуйста, введите код, отправленный на"),
@@ -215,6 +217,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "DaysOfWeek": MessageLookupByLibrary.simpleMessage("Дни недели"),
         "DeleteAccount":
             MessageLookupByLibrary.simpleMessage("Удалить аккаунт"),
+        "DeleteCompany":
+            MessageLookupByLibrary.simpleMessage("Удалить компанию"),
         "DeleteFromList":
             MessageLookupByLibrary.simpleMessage("Удалить из списка"),
         "DependingOn": MessageLookupByLibrary.simpleMessage("Зависит от..."),
