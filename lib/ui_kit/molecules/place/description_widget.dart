@@ -35,7 +35,7 @@ class DescriptionWidget extends StatelessWidget {
               GestureDetector(
                 onTap: () => s(() => hide = !hide),
                 child: Text(
-                  'Read ${hide ? 'more' : 'less'}',
+                  S.current.Read(' ${hide ? S.current.More : S.current.Less}'),
                   style: textTheme?.copyWith(
                       color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300),
                 ),

@@ -13,6 +13,7 @@ class BorderRadiusFoundation {
   static BorderRadius get all28 => const BorderRadius.all(Radius.circular(28));
   static BorderRadius get all32 => const BorderRadius.all(Radius.circular(32));
   static BorderRadius get all40 => const BorderRadius.all(Radius.circular(40));
+  static BorderRadius get all60 => const BorderRadius.all(Radius.circular(60));
   static BorderRadius get onlyTop40 => const BorderRadius.only(
         topLeft: Radius.circular(40),
         topRight: Radius.circular(40),
@@ -24,9 +25,9 @@ class BorderRadiusFoundation {
       );
 
   static BorderRadius get onlyTop6 => const BorderRadius.only(
-    topLeft: Radius.circular(6),
-    topRight: Radius.circular(6),
-  );
+        topLeft: Radius.circular(6),
+        topRight: Radius.circular(6),
+      );
 
   static BorderRadius get onlyBottom24 => const BorderRadius.only(
         bottomLeft: Radius.circular(24),

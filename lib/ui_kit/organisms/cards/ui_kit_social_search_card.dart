@@ -9,12 +9,14 @@ class UiKitSocialSearchCard extends StatelessWidget {
   final String subtitle;
   final String distance;
   final double progress;
+  final bool useAvatars;
 
   const UiKitSocialSearchCard({
     Key? key,
     this.imageData,
     this.leadingImageBorderRadius,
     this.onTap,
+    this.useAvatars = false,
     required this.title,
     required this.subtitle,
     required this.distance,
@@ -26,6 +28,7 @@ class UiKitSocialSearchCard extends StatelessWidget {
     final imageSize = 0.125.sw;
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final regularTextTheme = context.uiKitTheme?.regularTextTheme;
+    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return GestureDetector(
       onTap: onTap,
@@ -34,15 +37,36 @@ class UiKitSocialSearchCard extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
-            ClipRRect(
-              borderRadius: leadingImageBorderRadius ?? BorderRadiusFoundation.all12,
-              child: ImageWidget(
-                link: imageData?.iconPath,
-                width: imageSize,
-                height: imageSize,
-                fit: BoxFit.cover,
+            if (!useAvatars)
+              DecoratedBox(
+                decoration: BoxDecoration(
+                  borderRadius: leadingImageBorderRadius ?? BorderRadiusFoundation.all12,
+                  boxShadow: [
+                    BoxShadow(
+                      color: isLightTheme ? ColorsFoundation.darkNeutral900.withOpacity(0.4) : Colors.white.withOpacity(0.4),
+                      blurRadius: 10,
+                      spreadRadius: 3,
+                      offset: Offset.zero,
+                    )
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: leadingImageBorderRadius ?? BorderRadiusFoundation.all12,
+                  child: ImageWidget(
+                    link: imageData?.iconPath,
+                    width: imageSize,
+                    height: imageSize,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ).paddingOnly(bottom: EdgeInsetsFoundation.all6),
+            if (useAvatars)
+              context.userAvatar(
+                size: UserAvatarSize.x40x40,
+                type: UserTileType.ordinary,
+                userName: subtitle,
+                imageUrl: imageData?.iconPath,
               ),
-            ).paddingOnly(bottom: EdgeInsetsFoundation.all6),
             SpacingFoundation.horizontalSpace12,
             Expanded(
               child: Column(

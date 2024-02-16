@@ -30,6 +30,7 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
     return StreamBuilder<LocationPickerOverlayState>(
       stream: widget.controller.overlayStateStream,
       builder: (context, snapshot) {
+        final colorScheme = context.uiKitTheme?.colorScheme;
         final state = snapshot.data;
 
         if (state == LocationPickerOverlayState.hidden) {
@@ -71,7 +72,7 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
                 Expanded(
                   child: Center(
                     child: Text(
-                      'No suggestions',
+                      S.current.NothingFound,
                       style: textTheme?.subHeadline.copyWith(color: Colors.black),
                     ),
                   ),
@@ -91,7 +92,7 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
                   SpacingFoundation.horizontalSpace8,
                   Expanded(
                     child: Text(
-                      'Pick on the map',
+                      S.current.PickFromMap,
                       style: textTheme?.caption1Medium.copyWith(color: Colors.black),
                     ),
                   ),
@@ -102,6 +103,7 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
                       data: BaseUiKitButtonData(
                         iconInfo: BaseUiKitButtonIconData(
                           iconData: ShuffleUiKitIcons.chevronright,
+                          color: colorScheme?.surface,
                         ),
                         onPressed: widget.onPickFromMap,
                       ),

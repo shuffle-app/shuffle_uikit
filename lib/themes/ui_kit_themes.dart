@@ -73,6 +73,7 @@ class UiKitThemes {
             fontWeight: FontWeight.w500,
             color: Color(0xff000000),
             package: 'shuffle_uikit',
+            overflow: TextOverflow.ellipsis,
           );
         }),
       ),
@@ -292,6 +293,7 @@ class UiKitThemes {
           fontWeight: FontWeight.w500,
           color: Color(0xffffffff),
           package: 'shuffle_uikit',
+          overflow: TextOverflow.ellipsis,
         );
       }),
       foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
@@ -345,6 +347,7 @@ class UiKitThemes {
           fontWeight: FontWeight.w500,
           color: Color(0xffffffff),
           package: 'shuffle_uikit',
+          overflow: TextOverflow.ellipsis,
         );
       }),
       foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),

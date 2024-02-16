@@ -53,6 +53,7 @@ class _ProgressLinearIndicatorState extends State<ProgressLinearIndicator> {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return ClipRRect(
       borderRadius: BorderRadiusFoundation.all40,
@@ -86,7 +87,10 @@ class _ProgressLinearIndicatorState extends State<ProgressLinearIndicator> {
           Positioned.fill(
             child: Center(
               child: Text(
-                'raised ${widget.actualSum.toStringAsFixed(0)}/${widget.sum.toStringAsFixed(0)} \$',
+                S.current.DonationRaised(
+                  widget.actualSum.toStringAsFixed(0),
+                  widget.sum.toStringAsFixed(0),
+                ),
                 style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.black),
               ),
             ),
@@ -99,6 +103,7 @@ class _ProgressLinearIndicatorState extends State<ProgressLinearIndicator> {
                 onPressed: () => widget.onTap.call(),
                 iconInfo: BaseUiKitButtonIconData(
                   iconData: CupertinoIcons.chevron_right_circle,
+                  color: colorScheme?.surface,
                   size: 30.h,
                 ),
               ),

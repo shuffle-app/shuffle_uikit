@@ -31,11 +31,13 @@ class UiKitCustomTab extends StatelessWidget {
 
   factory UiKitCustomTab.small({
     required String title,
+    String? customValue,
     double height = 24,
     AutoSizeGroup? group,
   }) =>
       UiKitCustomTab(
         title: title,
+        customValue: customValue,
         height: height,
         group: group,
       );

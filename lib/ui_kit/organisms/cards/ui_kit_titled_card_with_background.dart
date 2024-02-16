@@ -45,7 +45,7 @@ class UiKitTitledCardWithBackground extends StatelessWidget {
               ),
               Text(
                 title,
-                style: context.uiKitTheme?.regularTextTheme.caption4Regular,
+                style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(color: Colors.black),
                 textAlign: TextAlign.center,
               ).paddingOnly(
                 top: EdgeInsetsFoundation.vertical8,

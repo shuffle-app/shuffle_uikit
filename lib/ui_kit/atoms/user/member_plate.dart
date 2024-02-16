@@ -4,8 +4,6 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class MemberPlate extends StatelessWidget {
   const MemberPlate({super.key});
 
-  double? get width => 1.sw * 0.55625;
-
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
@@ -41,7 +39,7 @@ class MemberPlate extends StatelessWidget {
           GradientableWidget(
             gradient: GradientFoundation.defaultLinearGradient,
             child: Text(
-              S.of(context).Members.toLowerCase(),
+              S.current.Members(2).toLowerCase(),
               style: textTheme?.caption1Medium.copyWith(color: Colors.white),
             ),
           ),
