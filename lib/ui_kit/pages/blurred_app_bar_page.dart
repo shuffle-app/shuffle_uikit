@@ -132,6 +132,7 @@ class BlurredAppBarPage extends StatelessWidget {
           if (animatedListKey != null)
             SliverAnimatedList(
               key: animatedListKey,
+              initialItemCount: childrenCount!,
               itemBuilder: (context, index, animation) {
                 if (childrenPadding == null) {
                   return ScaleTransition(
