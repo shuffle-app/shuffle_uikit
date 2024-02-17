@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_html_iframe/flutter_html_iframe.dart';
@@ -17,7 +19,7 @@ class UiKitHtmlPresenter extends StatelessWidget {
     return SafeArea(
       top: false,
       child: Html(
-        data: htmlString,
+        data: utf8.decoder.convert(htmlString.codeUnits),
         onLinkTap: (link, atr, element) => launchUrlString(link ?? ''),
         extensions: const [
           SvgHtmlExtension(),

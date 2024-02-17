@@ -396,6 +396,9 @@
   "AddPromotion": "Добавить промо",
   "Archive": "Архив",
   "DeleteCompany": "Удалить компанию",
-  "SelectDateRange": "Select Date Range",
-  "Reset": "Reset"
+  "SelectDateRange": "Выберите диапазон дат",
+  "Reset": "Сбросить",
+  "NowWeKnowYouBetter": "Спасибо!\nТеперь мы знаем тебя лучше",
+  "TellUsMore": "Расскажи еще",
+  "VeryOften": "Часто"
 }

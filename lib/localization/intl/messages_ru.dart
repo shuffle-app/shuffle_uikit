@@ -406,6 +406,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Notifications": MessageLookupByLibrary.simpleMessage("Уведомления"),
         "NowLetsGetToKnowEachOther": MessageLookupByLibrary.simpleMessage(
             "Теперь давай узнаем друг друга поближе"),
+        "NowWeKnowYouBetter": MessageLookupByLibrary.simpleMessage(
+            "Спасибо!\nТеперь мы знаем тебя лучше"),
         "Off": MessageLookupByLibrary.simpleMessage("Выкл"),
         "Ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "OkayCool": MessageLookupByLibrary.simpleMessage("Ок, круто!"),
@@ -517,7 +519,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
         "ResendCode":
             MessageLookupByLibrary.simpleMessage("Отправить код еще раз"),
-        "Reset": MessageLookupByLibrary.simpleMessage("Reset"),
+        "Reset": MessageLookupByLibrary.simpleMessage("Сбросить"),
         "ResetFilters":
             MessageLookupByLibrary.simpleMessage("Сбросить фильтры"),
         "ResetPassword":
@@ -533,7 +535,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SeeMore": MessageLookupByLibrary.simpleMessage("Ещё"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("Выберите дату"),
         "SelectDateRange":
-            MessageLookupByLibrary.simpleMessage("Select Date Range"),
+            MessageLookupByLibrary.simpleMessage("Выберите диапазон дат"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Выбрать дни "),
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Пожалуйста выберите язык"),
@@ -591,6 +593,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Нажмите, чтобы ввести адрес"),
         "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(
             ". Нажми дважды, чтобы отметить избранное."),
+        "TellUsMore": MessageLookupByLibrary.simpleMessage("Расскажи еще"),
         "TellUsMoreAboutYourself": m28,
         "Terms": MessageLookupByLibrary.simpleMessage("Условия"),
         "TermsOfService": MessageLookupByLibrary.simpleMessage(
@@ -640,6 +643,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Данные здоровья"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Значение не менее 3 символов"),
+        "VeryOften": MessageLookupByLibrary.simpleMessage("Часто"),
         "Video": MessageLookupByLibrary.simpleMessage("Видео"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Видео (загрузить)"),
