@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputField {
@@ -24,6 +25,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.hintTextColor,
     this.textColor,
     this.keyboardType,
+    this.inputFormatters,
     this.obscureText = false,
   }) : super(key: key);
 
@@ -53,6 +55,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
   final void Function(String)? onSubmitted;
   final Color? hintTextColor;
   final BorderRadius? borderRadius;
+  final List<TextInputFormatter>? inputFormatters;
   final bool expands;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
@@ -112,6 +115,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         onTapOutside: widget.onTapOutside,
         obscureText: widget.obscureText,
         onFieldSubmitted: widget.onSubmitted,
+        inputFormatters: widget.inputFormatters,
         textAlign: widget.textAlign ?? TextAlign.left,
         decoration: InputDecoration(
           hintText: widget.hintText,
