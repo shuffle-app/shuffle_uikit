@@ -397,5 +397,8 @@
   "Archive": "Archive",
   "DeleteCompany": "Delete company",
   "SelectDateRange": "Select Date Range",
-  "Reset": "Reset"
+  "Reset": "Reset",
+  "NowWeKnowYouBetter": "Thanks!\nNow we know you better",
+  "TellUsMore": "Tell us more",
+  "VeryOften": "Very often"
 }

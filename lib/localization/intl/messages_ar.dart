@@ -397,6 +397,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "NowLetsGetToKnowEachOther": MessageLookupByLibrary.simpleMessage(
             "Now let\'s get to know each other"),
+        "NowWeKnowYouBetter": MessageLookupByLibrary.simpleMessage(
+            "Thanks!\nNow we know you better"),
         "Off": MessageLookupByLibrary.simpleMessage("Off"),
         "Ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "OkayCool": MessageLookupByLibrary.simpleMessage("Okay, cool!"),
@@ -577,6 +579,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tap to set address"),
         "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(
             ". Tap twice to mark your favorites."),
+        "TellUsMore": MessageLookupByLibrary.simpleMessage("Tell us more"),
         "TellUsMoreAboutYourself": m28,
         "Terms": MessageLookupByLibrary.simpleMessage("Terms"),
         "TermsOfService":
@@ -627,6 +630,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Using health kit"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Value must be at least 3 characters long"),
+        "VeryOften": MessageLookupByLibrary.simpleMessage("Very often"),
         "Video": MessageLookupByLibrary.simpleMessage("Video"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Video (upload Files)"),

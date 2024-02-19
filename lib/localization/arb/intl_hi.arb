@@ -396,6 +396,9 @@
   "AddPromotion": "प्रचार जोड़ें",
   "Archive": "संग्रहीत",
   "DeleteCompany": "कंपनी हटाएं",
-  "SelectDateRange": "Select Date Range",
-  "Reset": "Reset"
+  "SelectDateRange": "तिथि सीमा चुनें",
+  "Reset": "रीसेट",
+  "NowWeKnowYouBetter": "धन्यवाद!\nअब हम आपको बेहतर जानते हैं",
+  "TellUsMore": "और बताओ",
+  "VeryOften": "बहुत अक्सर"
 }
