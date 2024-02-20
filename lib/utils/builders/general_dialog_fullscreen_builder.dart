@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
-
   return showModalBottomSheet(
-    barrierLabel: '',
     useRootNavigator: data.useRootNavigator,
     barrierColor: const Color(0xff2A2A2A),
     isScrollControlled: true,
