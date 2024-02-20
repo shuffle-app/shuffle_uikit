@@ -52,7 +52,6 @@ class UiKitTagsWidget extends StatelessWidget {
               SizedBox(
                 height: SpacingFoundation.horizontalSpacing16 + 2,
                 child: ListView.separated(
-                  clipBehavior: Clip.hardEdge,
                   padding: EdgeInsets.zero,
                   scrollDirection: Axis.horizontal,
                   primary: false,
@@ -74,7 +73,6 @@ class UiKitTagsWidget extends StatelessWidget {
                 SizedBox(
                   height: SpacingFoundation.horizontalSpacing16 + 2,
                   child: ListView.separated(
-                    clipBehavior: Clip.hardEdge,
                     padding: EdgeInsets.zero,
                     scrollDirection: Axis.horizontal,
                     primary: false,
