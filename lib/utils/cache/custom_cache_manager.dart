@@ -3,6 +3,7 @@ import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 class CustomCacheManager {
   static const _imageCacheKey = 'imageCacheKey';
   static const _contentCacheKey = 'contentCacheKey';
+  static const _personsCacheKey = 'personsCacheKey';
   static CacheManager imageInstance = CacheManager(
     Config(
       _imageCacheKey,
@@ -22,4 +23,12 @@ class CustomCacheManager {
       fileService: HttpFileService(),
     ),
   );
+
+  static CacheManager personsInstance = CacheManager(Config(
+    _personsCacheKey,
+    stalePeriod: const Duration(days: 20),
+    maxNrOfCacheObjects: 100,
+    repo: CacheObjectProvider(databaseName: _personsCacheKey),
+    fileService: HttpFileService(),
+  ));
 }
