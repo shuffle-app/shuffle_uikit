@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
-import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitBase3DViewer extends StatelessWidget {
   final String localPath;
@@ -9,7 +8,6 @@ class UiKitBase3DViewer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = context.uiKitTheme;
 
     return ModelViewer(
       // backgroundColor: theme?.colorScheme.background ?? UiKitColors.surface1,
@@ -19,7 +17,7 @@ class UiKitBase3DViewer extends StatelessWidget {
       xrEnvironment: true,
       arPlacement: ArPlacement.floor,
       // touchAction: TouchAction.panY,
-      arModes: ['scene-viewer', 'webxr', 'quick-look'],
+      arModes: const ['scene-viewer', 'webxr', 'quick-look'],
       autoRotate: true,
       // iosSrc: 'https://modelviewer.dev/shared-assets/models/Astronaut.usdz',
       disableZoom: true,
