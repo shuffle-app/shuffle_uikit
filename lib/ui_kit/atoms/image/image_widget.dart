@@ -27,6 +27,7 @@ class ImageWidget extends StatelessWidget {
   final BlendMode? colorBlendMode;
   final bool mentionPackage;
   final ImageFrameBuilder? imageBuilder;
+  final VoidCallback? onImageLoadingFailed;
 
   const ImageWidget({
     Key? key,
@@ -45,6 +46,7 @@ class ImageWidget extends StatelessWidget {
     this.errorWidget,
     this.colorBlendMode,
     this.imageBuilder,
+    this.onImageLoadingFailed,
   }) : super(key: key);
 
   Future _takeFrameFromVideo(String link) async {
@@ -100,15 +102,19 @@ class ImageWidget extends StatelessWidget {
     } else if (link!.length > 4 && link!.substring(0, 4) == 'http') {
       if (link!.split('.').lastOrNull == 'mp4' || isVideo) {
         return FutureBuilder(
-            future: _takeFrameFromVideo(link!),
-            builder: (context, snapshot) {
-              return snapshot.connectionState == ConnectionState.done
-                  ? SizedBox(
-                      width: width,
-                      height: height,
-                      child: RepaintBoundary(child: VideoPlayer(snapshot.data as VideoPlayerController)))
-                  : placeholder;
-            });
+          future: _takeFrameFromVideo(link!),
+          builder: (context, snapshot) {
+            return snapshot.connectionState == ConnectionState.done
+                ? SizedBox(
+                    width: width,
+                    height: height,
+                    child: RepaintBoundary(
+                      child: VideoPlayer(snapshot.data as VideoPlayerController),
+                    ),
+                  )
+                : placeholder;
+          },
+        );
       }
 
       // !.startsWith("http://") || link!.startsWith("https://")) {
@@ -131,6 +137,7 @@ class ImageWidget extends StatelessWidget {
         errorWidget: (context, url, trace) {
           log('Got error while downloading $url', name: 'ImageWidget');
           log(trace.toString(), name: 'ImageWidget');
+          onImageLoadingFailed?.call();
 
           return errorWidget ?? const DefaultImageErrorWidget();
         },
@@ -156,7 +163,10 @@ class ImageWidget extends StatelessWidget {
         colorBlendMode: colorBlendMode,
         package: mentionPackage ? 'shuffle_uikit' : null,
         frameBuilder: imageBuilder,
-        errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
+        errorBuilder: (context, error, trace) {
+          onImageLoadingFailed?.call();
+          return errorWidget ?? const DefaultImageErrorWidget();
+        },
       );
     } else {
       return kIsWeb
@@ -166,7 +176,10 @@ class ImageWidget extends StatelessWidget {
               width: width,
               color: color,
               height: height,
-              errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
+              errorBuilder: (context, error, trace) {
+                onImageLoadingFailed?.call();
+                return errorWidget ?? const DefaultImageErrorWidget();
+              },
               frameBuilder: imageBuilder,
             )
           : Image.file(
@@ -176,7 +189,10 @@ class ImageWidget extends StatelessWidget {
               color: color,
               height: height,
               frameBuilder: imageBuilder,
-              errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
+              errorBuilder: (context, error, trace) {
+                onImageLoadingFailed?.call();
+                return errorWidget ?? const DefaultImageErrorWidget();
+              },
             );
     }
   }

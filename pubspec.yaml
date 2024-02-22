@@ -48,6 +48,7 @@ dependencies:
       url: https://github.com/shuffle-app/flutter_gallery_3d_plus
       ref: master
   flip_card: ^0.7.0
+  model_viewer_plus: ^1.7.0
 
   #dialogs widgets
   popover: ^0.2.8+2

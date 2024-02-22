@@ -23,61 +23,59 @@ class UiKitBottomModalSheet extends StatelessWidget {
       topPadding = topPadding < 0 ? MediaQuery.viewPaddingOf(context).top + 30.h : topPadding;
     }
 
-    return Stack(
-      fit: StackFit.expand,
-      children: [
-        GestureDetector(onTap: Navigator.of(context).pop),
-        RepaintBoundary(
-            child: Container(
-          clipBehavior: Clip.antiAlias,
-          decoration: BoxDecoration(
-            color: Colors.black,
-            borderRadius: BorderRadiusFoundation.onlyTop24,
-          ),
-          child: Scaffold(
-              body: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SlidingChip().paddingOnly(
-                top: SpacingFoundation.verticalSpacing12,
-                bottom: SpacingFoundation.verticalSpacing4,
-              ),
-              Expanded(
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    Container(
-                      decoration: ShapeDecoration(
-                        shape: shape ?? const RoundedRectangleBorder(),
-                      ),
-                      clipBehavior: Clip.hardEdge,
-                      child: SingleChildScrollView(
-                        primary: true,
-                        // keyboardDismissBehavior: KeyboardDismissBehavior.onDrag,
-                        physics: const ClampingScrollPhysics(),
-                        child: data.child.paddingOnly(
-                          bottom: data.bottomBar != null ? kBottomNavigationBarHeight * 1.5 : 0.0,
-                        ),
-                      ),
-                    ),
-                    if (data.bottomBar != null)
-                      Positioned(
-                        bottom: 0,
-                        right: 0,
-                        left: 0,
-                        child: Container(
-                          child: data.bottomBar,
-                        ),
-                      ),
-                  ],
+    return RepaintBoundary(
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          GestureDetector(onTap: Navigator.of(context).pop),
+          Container(
+            height: 1.sh - (data.topPadding ?? 0) - MediaQuery.viewPaddingOf(context).top,
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              color: Colors.black,
+              borderRadius: BorderRadiusFoundation.onlyTop24,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SlidingChip().paddingOnly(
+                  top: SpacingFoundation.verticalSpacing12,
+                  bottom: SpacingFoundation.verticalSpacing4,
                 ),
-              ),
-            ],
-          )),
-        ).paddingOnly(
-          top: topPadding,
-        ))
-      ],
+                Expanded(
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      Container(
+                        decoration: ShapeDecoration(
+                          shape: shape ?? const RoundedRectangleBorder(),
+                        ),
+                        clipBehavior: Clip.hardEdge,
+                        child: SingleChildScrollView(
+                          primary: true,
+                          physics: const ClampingScrollPhysics(),
+                          child: data.child.paddingOnly(
+                            bottom: data.bottomBar != null ? kBottomNavigationBarHeight * 1.5 : 0.0,
+                          ),
+                        ),
+                      ),
+                      if (data.bottomBar != null)
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          left: 0,
+                          child: Container(
+                            child: data.bottomBar,
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ).paddingOnly(top: topPadding),
+        ],
+      ),
     );
   }
 }
