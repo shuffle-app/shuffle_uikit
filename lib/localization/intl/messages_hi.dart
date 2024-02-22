@@ -108,13 +108,16 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m33(count) =>
       "${Intl.plural(count, zero: '${count} उपयोगकर्ता', one: '${count} उपयोगकर्ता', two: '${count} उपयोगकर्ता', few: '${count} उपयोगकर्ता', many: '${count} उपयोगकर्ता', other: '${count} उपयोगकर्ता')}";
 
-  static String m34(value) => "${value}  खाली नहीं हो सका";
+  static String m34(days) =>
+      "के भीतर ${days} ${Intl.plural(days, zero: 'दिन', one: 'दिन', two: 'दिन', few: 'दिन', many: 'दिन', other: 'दिन')}";
 
-  static String m35(title) => "{शीर्षक} आवश्यक है";
+  static String m35(value) => "${value}  खाली नहीं हो सका";
 
-  static String m36(value) => "${value}  सफलतापूर्वक अद्यतन";
+  static String m36(title) => "{शीर्षक} आवश्यक है";
 
-  static String m37(amountOfInvitedPersons) =>
+  static String m37(value) => "${value}  सफलतापूर्वक अद्यतन";
+
+  static String m38(amountOfInvitedPersons) =>
       "आपने ${amountOfInvitedPersons} लोगों को निमंत्रण भेजा है";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -520,6 +523,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetPassword": MessageLookupByLibrary.simpleMessage("पासवर्ड रीसेट"),
         "Save": MessageLookupByLibrary.simpleMessage("सहेजें"),
         "Search": MessageLookupByLibrary.simpleMessage("खोजें"),
+        "SearchChooseYourself1": MessageLookupByLibrary.simpleMessage(
+            "बच्चों और परिवार के लिए खुशी"),
+        "SearchChooseYourself2":
+            MessageLookupByLibrary.simpleMessage("साहस की प्यास"),
+        "SearchChooseYourself3":
+            MessageLookupByLibrary.simpleMessage("पार्टियाँ और नृत्य"),
+        "SearchChooseYourself4":
+            MessageLookupByLibrary.simpleMessage("अत्यंतता और रोमांच"),
+        "SearchChooseYourself5":
+            MessageLookupByLibrary.simpleMessage("ज्ञान और शिक्षा"),
+        "SearchChooseYourself6":
+            MessageLookupByLibrary.simpleMessage("बाजार और खरीदारी"),
+        "SearchChooseYourself7":
+            MessageLookupByLibrary.simpleMessage("आनंद और शांति"),
+        "SearchChooseYourself8":
+            MessageLookupByLibrary.simpleMessage("खेल और खेलने की चीजें"),
+        "SearchChooseYourself9": MessageLookupByLibrary.simpleMessage(
+            "सेल्फ-केयर (स्वास्थ्य और सौंदर्य/स्वास्थ्य और सौंदर्य/स्वास्थ्य और सौंदर्य)"),
         "SearchHiwHint": m24,
         "SearchHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("खोजें या दूसरे विकल्प चुनें"),
@@ -661,14 +682,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "WillBe": MessageLookupByLibrary.simpleMessage(" होगा।"),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("जल्द ही लागू किया जाएगा"),
+        "WithInDays": m34,
         "WithYourPreferences":
             MessageLookupByLibrary.simpleMessage("आपका\nप्राथमिकताएं के साथ"),
         "WorkHours": MessageLookupByLibrary.simpleMessage("काम के घंटे"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("गलत सुरक्षा कोड"),
-        "XCouldNotBeEmpty": m34,
-        "XIsRequired": m35,
-        "XSuccessfullyUpdated": m36,
+        "XCouldNotBeEmpty": m35,
+        "XIsRequired": m36,
+        "XSuccessfullyUpdated": m37,
         "Year": MessageLookupByLibrary.simpleMessage("वर्ष"),
         "Yearly": MessageLookupByLibrary.simpleMessage("सालाना"),
         "Yes": MessageLookupByLibrary.simpleMessage("हाँ"),
@@ -676,7 +698,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "बेहतर होगा कि आप इसकी जांच कर लें"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "आपको वही मिलता है जो आपको चाहि"),
-        "YouSentInvitationToNPeople": m37,
+        "YouSentInvitationToNPeople": m38,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("आप उसे खोज लोगे"),
         "YourAge": MessageLookupByLibrary.simpleMessage("आपकी उम्र"),
         "YourAudience": MessageLookupByLibrary.simpleMessage("आपके दर्शक"),

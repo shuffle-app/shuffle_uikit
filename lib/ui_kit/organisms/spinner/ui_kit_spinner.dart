@@ -186,9 +186,8 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
               child: UiKitHorizontalScrollableList<String>(
                 pagingController: widget.pagingController,
                 scrollController: widget.scrollController,
-                physics: _spinningType == SpinningType.categories
-                    ? const PageScrollPhysics()
-                    : const NeverScrollableScrollPhysics(),
+                physics:
+                    _spinningType == SpinningType.categories ? const PageScrollPhysics() : const NeverScrollableScrollPhysics(),
                 itemBuilder: (_, item, index) => SizedBox(
                   width: 1.sw,
                   child: Center(
@@ -243,8 +242,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     final delta = details.delta.dx;
                     final inScrollBeginning = widget.scrollController.offset == 0 && !delta.isNegative;
                     final inScrollEnd =
-                        widget.scrollController.offset == widget.scrollController.position.maxScrollExtent &&
-                            delta.isNegative;
+                        widget.scrollController.offset == widget.scrollController.position.maxScrollExtent && delta.isNegative;
                     if (inScrollBeginning || inScrollEnd) return;
                     // if (details.localPosition.dx.toInt() % 20 == 0) _enableFeedback();
                     _rotationNotifier.value += delta / 200;
@@ -336,7 +334,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     ))
               else
                 Positioned(
-                    top: 45.h,
+                    top: 40.h,
                     child: UiKitFloatingAnimation(
                       applyX: false,
                       child: RotatedBox(

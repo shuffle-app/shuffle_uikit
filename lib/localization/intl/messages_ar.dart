@@ -108,13 +108,16 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m33(count) =>
       "${Intl.plural(count, zero: '${count} users', one: '${count} user', two: '${count} users', few: '${count} users', many: '${count} users', other: '${count} users')}";
 
-  static String m34(value) => "${value} could not be empty";
+  static String m34(days) =>
+      "in ${days} ${Intl.plural(days, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')}";
 
-  static String m35(title) => "${title} is required";
+  static String m35(value) => "${value} could not be empty";
 
-  static String m36(value) => "${value} successfully updated";
+  static String m36(title) => "${title} is required";
 
-  static String m37(amountOfInvitedPersons) =>
+  static String m37(value) => "${value} successfully updated";
+
+  static String m38(amountOfInvitedPersons) =>
       "You sent an invitation to ${amountOfInvitedPersons} people";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -515,6 +518,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
+        "SearchChooseYourself1": MessageLookupByLibrary.simpleMessage(
+            "Happiness for children and family"),
+        "SearchChooseYourself2":
+            MessageLookupByLibrary.simpleMessage("Thirst for adventure"),
+        "SearchChooseYourself3":
+            MessageLookupByLibrary.simpleMessage("Parties and dancing"),
+        "SearchChooseYourself4":
+            MessageLookupByLibrary.simpleMessage("Extremes and thrills"),
+        "SearchChooseYourself5":
+            MessageLookupByLibrary.simpleMessage("Age of enlightenment"),
+        "SearchChooseYourself6":
+            MessageLookupByLibrary.simpleMessage("Fine dining"),
+        "SearchChooseYourself7":
+            MessageLookupByLibrary.simpleMessage("Bliss and chill"),
+        "SearchChooseYourself8":
+            MessageLookupByLibrary.simpleMessage("Sporty movements"),
+        "SearchChooseYourself9": MessageLookupByLibrary.simpleMessage(
+            "Self-care (Health and beauty/self-love)"),
         "SearchHiwHint": m24,
         "SearchHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "search or choose others choice"),
@@ -652,14 +673,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "WillBe": MessageLookupByLibrary.simpleMessage(" will be."),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("Will be implemented soon"),
+        "WithInDays": m34,
         "WithYourPreferences":
             MessageLookupByLibrary.simpleMessage("With your\npreferences"),
         "WorkHours": MessageLookupByLibrary.simpleMessage("Work hours"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("Wrong security code"),
-        "XCouldNotBeEmpty": m34,
-        "XIsRequired": m35,
-        "XSuccessfullyUpdated": m36,
+        "XCouldNotBeEmpty": m35,
+        "XIsRequired": m36,
+        "XSuccessfullyUpdated": m37,
         "Year": MessageLookupByLibrary.simpleMessage("Year"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Yearly"),
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
@@ -667,7 +689,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("You better check this out"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "You get exactly what you need"),
-        "YouSentInvitationToNPeople": m37,
+        "YouSentInvitationToNPeople": m38,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("You’ll find it"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Your age"),
         "YourAudience": MessageLookupByLibrary.simpleMessage("Your audience"),

@@ -108,13 +108,16 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m33(count) =>
       "${Intl.plural(count, zero: '${count} человек', one: '${count} человек', two: '${count} человека', few: '${count} людей', many: '${count} человек', other: '${count} человек')}";
 
-  static String m34(value) => "${value} не может быть пустым";
+  static String m34(days) =>
+      "через ${days} ${Intl.plural(days, zero: 'дней', one: 'день', two: 'дня', few: 'дня', many: 'дней', other: 'дней')}";
 
-  static String m35(title) => "${title} требуется";
+  static String m35(value) => "${value} не может быть пустым";
 
-  static String m36(value) => "${value} успешно обновлено";
+  static String m36(title) => "${title} требуется";
 
-  static String m37(amountOfInvitedPersons) =>
+  static String m37(value) => "${value} успешно обновлено";
+
+  static String m38(amountOfInvitedPersons) =>
       "Вы отправили приглашение ${amountOfInvitedPersons} людям";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -526,6 +529,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Сбросить пароль"),
         "Save": MessageLookupByLibrary.simpleMessage("Сохранить"),
         "Search": MessageLookupByLibrary.simpleMessage("Поиск"),
+        "SearchChooseYourself1":
+            MessageLookupByLibrary.simpleMessage("Счастье детям и семье"),
+        "SearchChooseYourself2":
+            MessageLookupByLibrary.simpleMessage("Жажда приключений"),
+        "SearchChooseYourself3":
+            MessageLookupByLibrary.simpleMessage("Вечеринки и танцы"),
+        "SearchChooseYourself4":
+            MessageLookupByLibrary.simpleMessage("Экстрим и острые ощущения"),
+        "SearchChooseYourself5":
+            MessageLookupByLibrary.simpleMessage("Эпоха просвещения"),
+        "SearchChooseYourself6":
+            MessageLookupByLibrary.simpleMessage("Изысканная кухня"),
+        "SearchChooseYourself7":
+            MessageLookupByLibrary.simpleMessage("Блаженство и чилл"),
+        "SearchChooseYourself8":
+            MessageLookupByLibrary.simpleMessage("Спортивные движения"),
+        "SearchChooseYourself9":
+            MessageLookupByLibrary.simpleMessage("Забота о себе любимом"),
         "SearchHiwHint": m24,
         "SearchHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "поиск или выбрать другие варианты"),
@@ -666,14 +687,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "WillBe": MessageLookupByLibrary.simpleMessage(" будет."),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("Скоро будет реализовано"),
+        "WithInDays": m34,
         "WithYourPreferences":
             MessageLookupByLibrary.simpleMessage("С учетом ваших предпочтений"),
         "WorkHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("Неверный код"),
-        "XCouldNotBeEmpty": m34,
-        "XIsRequired": m35,
-        "XSuccessfullyUpdated": m36,
+        "XCouldNotBeEmpty": m35,
+        "XIsRequired": m36,
+        "XSuccessfullyUpdated": m37,
         "Year": MessageLookupByLibrary.simpleMessage("Год"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Годовой"),
         "Yes": MessageLookupByLibrary.simpleMessage("Да"),
@@ -681,7 +703,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Вам лучше взглянуть"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "Вы получаете точно то, что нужно"),
-        "YouSentInvitationToNPeople": m37,
+        "YouSentInvitationToNPeople": m38,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("Вы найдёте"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Твой возраст"),
         "YourAudience": MessageLookupByLibrary.simpleMessage("Ваша аудитория"),

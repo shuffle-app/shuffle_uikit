@@ -121,7 +121,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
     final normalCardHeight = widget.availableHeight * 0.76;
     final heightStep = normalCardHeight / 3;
     //вынесена в константу значение поворота в обе стороны
-    const double rotationAngle = 25;
+    const double rotationAngle = 16;
     const double horizontalRotationAngle = 6;
 
     final bigPhoto = widget.availableHeight > 360;
