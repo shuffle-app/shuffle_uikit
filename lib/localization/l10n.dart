@@ -4144,6 +4144,106 @@ class S {
       args: [],
     );
   }
+
+  /// `in {days} {days, plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}}`
+  String WithInDays(num days) {
+    return Intl.message(
+      'in $days ${Intl.plural(days, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')}',
+      name: 'WithInDays',
+      desc: '',
+      args: [days],
+    );
+  }
+
+  /// `Happiness for children and family`
+  String get SearchChooseYourself1 {
+    return Intl.message(
+      'Happiness for children and family',
+      name: 'SearchChooseYourself1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thirst for adventure`
+  String get SearchChooseYourself2 {
+    return Intl.message(
+      'Thirst for adventure',
+      name: 'SearchChooseYourself2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parties and dancing`
+  String get SearchChooseYourself3 {
+    return Intl.message(
+      'Parties and dancing',
+      name: 'SearchChooseYourself3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Extremes and thrills`
+  String get SearchChooseYourself4 {
+    return Intl.message(
+      'Extremes and thrills',
+      name: 'SearchChooseYourself4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Age of enlightenment`
+  String get SearchChooseYourself5 {
+    return Intl.message(
+      'Age of enlightenment',
+      name: 'SearchChooseYourself5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fine dining`
+  String get SearchChooseYourself6 {
+    return Intl.message(
+      'Fine dining',
+      name: 'SearchChooseYourself6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bliss and chill`
+  String get SearchChooseYourself7 {
+    return Intl.message(
+      'Bliss and chill',
+      name: 'SearchChooseYourself7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sporty movements`
+  String get SearchChooseYourself8 {
+    return Intl.message(
+      'Sporty movements',
+      name: 'SearchChooseYourself8',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Self-care (Health and beauty/self-love)`
+  String get SearchChooseYourself9 {
+    return Intl.message(
+      'Self-care (Health and beauty/self-love)',
+      name: 'SearchChooseYourself9',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

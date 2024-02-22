@@ -400,5 +400,15 @@
   "Reset": "रीसेट",
   "NowWeKnowYouBetter": "धन्यवाद!\nअब हम आपको बेहतर जानते हैं",
   "TellUsMore": "और बताओ",
-  "VeryOften": "बहुत अक्सर"
+  "VeryOften": "बहुत अक्सर",
+  "WithInDays": "के भीतर {days} {days, plural, =0{दिन} =1{दिन} =2{दिन} few{दिन} many{दिन} other{दिन}}",
+  "SearchChooseYourself1": "बच्चों और परिवार के लिए खुशी",
+  "SearchChooseYourself2":"साहस की प्यास",
+  "SearchChooseYourself3":"पार्टियाँ और नृत्य",
+  "SearchChooseYourself4":"अत्यंतता और रोमांच",
+  "SearchChooseYourself5":"ज्ञान और शिक्षा",
+  "SearchChooseYourself6":"बाजार और खरीदारी",
+  "SearchChooseYourself7":"आनंद और शांति",
+  "SearchChooseYourself8":"खेल और खेलने की चीजें",
+  "SearchChooseYourself9":"सेल्फ-केयर (स्वास्थ्य और सौंदर्य/स्वास्थ्य और सौंदर्य/स्वास्थ्य और सौंदर्य)"
 }

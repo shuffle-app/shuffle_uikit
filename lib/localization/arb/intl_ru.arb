@@ -400,5 +400,15 @@
   "Reset": "Сбросить",
   "NowWeKnowYouBetter": "Спасибо!\nТеперь мы знаем тебя лучше",
   "TellUsMore": "Расскажи еще",
-  "VeryOften": "Часто"
+  "VeryOften": "Часто",
+  "WithInDays": "через {days} {days, plural, =0{дней} =1{день} =2{дня} few{дня} many{дней} other{дней}}",
+  "SearchChooseYourself1": "Счастье детям и семье",
+  "SearchChooseYourself2":"Жажда приключений",
+  "SearchChooseYourself3":"Вечеринки и танцы",
+  "SearchChooseYourself4":"Экстрим и острые ощущения",
+  "SearchChooseYourself5":"Эпоха просвещения",
+  "SearchChooseYourself6":"Изысканная кухня",
+  "SearchChooseYourself7":"Блаженство и чилл",
+  "SearchChooseYourself8":"Спортивные движения",
+  "SearchChooseYourself9":"Забота о себе любимом"
 }

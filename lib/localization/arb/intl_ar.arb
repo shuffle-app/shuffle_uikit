@@ -400,5 +400,15 @@
   "Reset": "Reset",
   "NowWeKnowYouBetter": "Thanks!\nNow we know you better",
   "TellUsMore": "Tell us more",
-  "VeryOften": "Very often"
+  "VeryOften": "Very often",
+  "WithInDays": "in {days} {days, plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}}",
+  "SearchChooseYourself1": "Happiness for children and family",
+  "SearchChooseYourself2":"Thirst for adventure",
+  "SearchChooseYourself3":"Parties and dancing",
+  "SearchChooseYourself4":"Extremes and thrills",
+  "SearchChooseYourself5":"Age of enlightenment",
+  "SearchChooseYourself6":"Fine dining",
+  "SearchChooseYourself7":"Bliss and chill",
+  "SearchChooseYourself8":"Sporty movements",
+  "SearchChooseYourself9":"Self-care (Health and beauty/self-love)"
 }
