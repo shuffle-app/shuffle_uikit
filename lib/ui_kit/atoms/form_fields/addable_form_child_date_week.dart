@@ -42,13 +42,13 @@ class AddableFormChildDateWeek<T> extends StatelessWidget {
             else if (T == DateTime)
               Flexible(
                   child: Text(
-                DateFormat('dd.MM.yyyy').format(initialValue as DateTime),
+                DateFormat('dd.MM.yy').format(initialValue as DateTime),
                 style: textStyle,
               ))
             else if (T == DateTimeRange)
               Flexible(
                   child: Text(
-                '${DateFormat('dd.MM.yyyy').format((initialValue as DateTimeRange).start)} - ${DateFormat('dd.MM.yyyy').format((initialValue as DateTimeRange).end)}',
+                '${DateFormat('dd.MM.yy').format((initialValue as DateTimeRange).start)} - ${DateFormat('dd.MM.yyyy').format((initialValue as DateTimeRange).end)}',
                 style: textStyle,
               ))
             else

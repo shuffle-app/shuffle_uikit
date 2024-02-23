@@ -30,7 +30,7 @@ class UiKitAddableFormField extends StatelessWidget {
           title,
           style: theme?.regularTextTheme.labelLarge.copyWith(color: UiKitColors.mutedText),
         ),
-        SpacingFoundation.verticalSpace8,
+        SpacingFoundation.verticalSpace2,
         Row(
           children: [
             child,
