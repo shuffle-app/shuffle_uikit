@@ -5,11 +5,13 @@ class LocaleModel {
   final Locale locale;
   final String iconLink;
   final String name;
+  final bool enabled;
 
   const LocaleModel({
     required this.locale,
     required this.name,
     required this.iconLink,
+    this.enabled = true,
   });
 
   LocaleModel.fromLocale(this.locale)
@@ -26,5 +28,12 @@ class LocaleModel {
           'hi' => GraphicsFoundation.instance.svg.india.path,
           'ar' => GraphicsFoundation.instance.svg.arabic.path,
           String() => GraphicsFoundation.instance.svg.arabic.path,
+        },
+        enabled = switch (locale.languageCode) {
+          'ru' => true,
+          'en' => true,
+          'hi' => true,
+          'ar' => false,
+          String() => false,
         };
 }

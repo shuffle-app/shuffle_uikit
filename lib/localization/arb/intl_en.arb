@@ -410,6 +410,7 @@
   "SearchChooseYourself6":"Fine dining",
   "SearchChooseYourself7":"Bliss and chill",
   "SearchChooseYourself8":"Sporty movements",
-  "SearchChooseYourself9":"Self-care (Health and beauty/self-love)"
+  "SearchChooseYourself9":"Self-care (Health and beauty/self-love)",
+  "LoginWith": "Continue with {provider}"
 
 }

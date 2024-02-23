@@ -38,13 +38,15 @@ class SingleTypeMenuBody<T> extends StatelessWidget {
         SpacingFoundation.verticalSpace16,
         ...items.map<Widget>(
           (e) {
+            print('${e.title}: ${e.enabled}');
+
             if (useCustomTiles) {
               return Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   UiKitMenuItemTile.custom(
                     item: e,
-                    onTap: () => onSelected?.call(e),
+                    onTap: e.enabled ? () => onSelected?.call(e) : null,
                     color: tilesColor,
                   ),
                   if (separator != null) separator!,
@@ -57,7 +59,7 @@ class SingleTypeMenuBody<T> extends StatelessWidget {
               children: [
                 UiKitMenuItemTile(
                   item: e,
-                  onTap: () => onSelected?.call(e),
+                  onTap: e.enabled ? () => onSelected?.call(e) : null,
                   color: tilesColor,
                 ),
                 if (separator != null) separator!,
