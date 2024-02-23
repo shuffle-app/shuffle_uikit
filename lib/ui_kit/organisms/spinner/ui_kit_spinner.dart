@@ -326,7 +326,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
               ),
               if (widget.filterDate != null)
                 Positioned(
-                    top: 45.h,
+                    top: 68,
                     child: Text(
                       widget.filterDate?.toRangeString() ?? '',
                       style: context.uiKitTheme?.regularTextTheme.caption4.copyWith(color: colorScheme?.primary),
@@ -334,7 +334,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     ))
               else
                 Positioned(
-                    top: 40.h,
+                    top: 55,
                     child: UiKitFloatingAnimation(
                       applyX: false,
                       child: RotatedBox(
