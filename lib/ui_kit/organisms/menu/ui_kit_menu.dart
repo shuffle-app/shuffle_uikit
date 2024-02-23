@@ -118,10 +118,12 @@ class UiKitMenuItem<T> {
   final String? iconLink;
   final String? type;
   final Color? iconColor;
+  final bool enabled;
 
   UiKitMenuItem({
     required this.title,
     required this.value,
+    this.enabled = true,
     this.type,
     this.icon,
     this.iconLink,
@@ -167,9 +169,8 @@ showMenuInDialog<T>(BuildContext context,
 
 //if keyboard is opened, unfocus it
   FocusManager.instance.primaryFocus?.unfocus();
-  final elementsHeight = singleType
-      ? (items.length + 1) * 48.h
-      : (items.where((element) => element.type == allTypes.first).length + 3) * 41.h;
+  final elementsHeight =
+      singleType ? (items.length + 1) * 48.h : (items.where((element) => element.type == allTypes.first).length + 3) * 41.h;
   // final elementsHeight = ((items.length + 1) * 52) + (SpacingFoundation.verticalSpacing16 * 3);
   final topPadding = customTopPadding ?? max(1.sh - elementsHeight, 0.0);
   showUiKitGeneralFullScreenDialog(

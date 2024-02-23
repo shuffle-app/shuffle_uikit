@@ -33,6 +33,7 @@ class UiKitLocaleSelector extends StatelessWidget {
           title: availableLocales[index].name,
           value: availableLocales[index],
           iconLink: availableLocales[index].iconLink,
+          enabled: availableLocales[index].enabled,
         ),
       ),
       onSelected: (menuItem) {

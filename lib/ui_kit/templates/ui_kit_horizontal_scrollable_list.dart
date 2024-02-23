@@ -13,8 +13,11 @@ class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
   final ItemWidgetBuilder<ItemType> itemBuilder;
   final Widget? shimmerLoadingChild;
 
-  late final progressIndicator = Shimmer(
-    gradient: GradientFoundation.greyGradient,
+  late final progressIndicator = Shimmer.fromColors(
+    direction: ShimmerDirection.ltr,
+    baseColor: Colors.white,
+    period: const Duration(milliseconds: 1000),
+    highlightColor: ColorsFoundation.gradientGreyLight3,
     child: shimmerLoadingChild ?? Container(),
   );
 

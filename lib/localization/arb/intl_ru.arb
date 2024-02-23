@@ -410,5 +410,6 @@
   "SearchChooseYourself6":"Изысканная кухня",
   "SearchChooseYourself7":"Блаженство и чилл",
   "SearchChooseYourself8":"Спортивные движения",
-  "SearchChooseYourself9":"Забота о себе любимом"
+  "SearchChooseYourself9":"Забота о себе любимом",
+  "LoginWith": "Продолжить с {provider}"
 }

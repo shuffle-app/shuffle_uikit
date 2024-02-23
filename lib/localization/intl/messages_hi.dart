@@ -61,63 +61,65 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m15(invitedPeopleCount) =>
       "${invitedPeopleCount} लोगों को आमंत्रित करता है";
 
-  static String m16(item) =>
+  static String m16(provider) => "${provider} के साथ जारी रखें";
+
+  static String m17(item) =>
       "${Intl.plural(item, zero: 'सदस्य', one: 'सदस्य', two: 'सदस्य', few: 'सदस्य', other: 'सदस्य')}";
 
-  static String m17(placeIndex) => "${placeIndex} स्थान";
+  static String m18(placeIndex) => "${placeIndex} स्थान";
 
-  static String m18(elements) => "अगला ${elements}";
+  static String m19(elements) => "अगला ${elements}";
 
-  static String m19(amountOfPeople) => "अगले ${amountOfPeople} लोग";
+  static String m20(amountOfPeople) => "अगले ${amountOfPeople} लोग";
 
-  static String m20(religionCount) =>
+  static String m21(religionCount) =>
       "कृपया कम से कम ${religionCount} धर्म का चयन करें";
 
-  static String m21(item) =>
+  static String m22(item) =>
       "${Intl.plural(item, zero: 'सपना अनुरोध पोस्ट करें', one: 'लिखें और वीडियो बनाएं', two: 'बहुत सारे लोगों को दान करें', few: 'दूसरों की मदद करें', other: 'दूसरों की मदद करें')}";
 
-  static String m22(item) =>
+  static String m23(item) =>
       "${Intl.plural(item, zero: 'साथी खोजें', one: 'समान पसंद', two: 'चेक पॉइंट रिप्यूटेशन', few: 'कोई दुश्मन नहीं', other: 'कोई दुश्मन नहीं')}";
 
-  static String m23(amount) => "पढ़े ${amount}";
+  static String m24(amount) => "पढ़े ${amount}";
 
-  static String m24(item) =>
+  static String m25(item) =>
       "${Intl.plural(item, zero: 'पसंद नहीं करते', one: 'घटनाएँ/स्थान', two: 'प्रकार और परिणाम प्राप्त करें', few: 'रेटिंग और मॉडल का उपयोग करें', other: 'रेटिंग और मॉडल का उपयोग करें')}";
 
-  static String m25(type) => "चुनना ${type}";
-
-  static String m26(item) =>
-      "${Intl.plural(item, zero: 'किसी भी दिशा में घुमाएं', one: 'स्थान गुणवत्ता घुमाएं', two: 'पसंद नहीं करें पसंद करें पसंदीदा', few: 'हमारी प्रणाली को सिखाएं', other: 'हमारी प्रणाली को सिखाएं')}";
+  static String m26(type) => "चुनना ${type}";
 
   static String m27(item) =>
+      "${Intl.plural(item, zero: 'किसी भी दिशा में घुमाएं', one: 'स्थान गुणवत्ता घुमाएं', two: 'पसंद नहीं करें पसंद करें पसंदीदा', few: 'हमारी प्रणाली को सिखाएं', other: 'हमारी प्रणाली को सिखाएं')}";
+
+  static String m28(item) =>
       "${Intl.plural(item, zero: 'मज़े के लिए', one: 'श्रेणी घुमाएं', two: 'चुनें और योजना बनाएं', few: 'खोजें और बुक करें', other: 'खोजें और बुक करें')}";
 
-  static String m28(separator) => "हमें अपने बारे में${separator}और अधिक बताएं";
+  static String m29(separator) => "हमें अपने बारे में${separator}और अधिक बताएं";
 
-  static String m29(amountOfTopDonators, multiplier) =>
+  static String m30(amountOfTopDonators, multiplier) =>
       "शीर्ष ${amountOfTopDonators} दानदाताओं को x{गुणक} अंक प्राप्त होते हैं";
 
-  static String m30(separator) =>
+  static String m31(separator) =>
       "सर्वोच्च स्थानों का मूल्यांकन किया गया${separator}द्वारा";
 
-  static String m31(type) =>
+  static String m32(type) =>
       "इस फ़ंक्शन का उपयोग करने के लिए कृपया ${type} में अपग्रेड करें";
 
-  static String m32(forNMoney) => "अपग्रेड ${forNMoney}";
+  static String m33(forNMoney) => "अपग्रेड ${forNMoney}";
 
-  static String m33(count) =>
+  static String m34(count) =>
       "${Intl.plural(count, zero: '${count} उपयोगकर्ता', one: '${count} उपयोगकर्ता', two: '${count} उपयोगकर्ता', few: '${count} उपयोगकर्ता', many: '${count} उपयोगकर्ता', other: '${count} उपयोगकर्ता')}";
 
-  static String m34(days) =>
+  static String m35(days) =>
       "के भीतर ${days} ${Intl.plural(days, zero: 'दिन', one: 'दिन', two: 'दिन', few: 'दिन', many: 'दिन', other: 'दिन')}";
 
-  static String m35(value) => "${value}  खाली नहीं हो सका";
+  static String m36(value) => "${value}  खाली नहीं हो सका";
 
-  static String m36(title) => "{शीर्षक} आवश्यक है";
+  static String m37(title) => "{शीर्षक} आवश्यक है";
 
-  static String m37(value) => "${value}  सफलतापूर्वक अद्यतन";
+  static String m38(value) => "${value}  सफलतापूर्वक अद्यतन";
 
-  static String m38(amountOfInvitedPersons) =>
+  static String m39(amountOfInvitedPersons) =>
       "आपने ${amountOfInvitedPersons} लोगों को निमंत्रण भेजा है";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -354,13 +356,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "Less": MessageLookupByLibrary.simpleMessage("कम"),
         "Loading": MessageLookupByLibrary.simpleMessage("लोड हो रहा है..."),
         "Location": MessageLookupByLibrary.simpleMessage("जगह"),
+        "LoginWith": m16,
         "Logo": MessageLookupByLibrary.simpleMessage("प्रतीक चिन्ह"),
         "LogoUploadFiles":
             MessageLookupByLibrary.simpleMessage("लोगो (फ़ाइलें अपलोड करें)"),
         "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage(
             "प्यारा-स्पर्श अद्भुत\nइंटरैक्शन"),
         "Male": MessageLookupByLibrary.simpleMessage("पुरुष"),
-        "Members": m16,
+        "Members": m17,
         "Message": MessageLookupByLibrary.simpleMessage("संदेश"),
         "Messages": MessageLookupByLibrary.simpleMessage("संदेश"),
         "Month": MessageLookupByLibrary.simpleMessage("महीना"),
@@ -368,7 +371,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "More": MessageLookupByLibrary.simpleMessage("और"),
         "MyCard": MessageLookupByLibrary.simpleMessage("मेरा कार्ड"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("मेरी घटनाएँ"),
-        "NPlace": m17,
+        "NPlace": m18,
         "Name": MessageLookupByLibrary.simpleMessage("नाम"),
         "NameOrNickname": MessageLookupByLibrary.simpleMessage("नाम या उपनाम"),
         "NewDonates": MessageLookupByLibrary.simpleMessage("नई दान"),
@@ -378,8 +381,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "आज एक नया स्थान खुल गया है ।  आओ! आप इसे पसंद करेंगे!"),
         "NewPlace": MessageLookupByLibrary.simpleMessage("नयी जगह"),
         "Next": MessageLookupByLibrary.simpleMessage("अगला"),
-        "NextElements": m18,
-        "NextNPeople": m19,
+        "NextElements": m19,
+        "NextNPeople": m20,
         "NextWithChevrons": MessageLookupByLibrary.simpleMessage("अगला >>>"),
         "Nickname": MessageLookupByLibrary.simpleMessage("उपनाम"),
         "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(
@@ -457,7 +460,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "कृपया अपनी इच्छाएं पूरी करें"),
         "PleaseSelectANiche":
             MessageLookupByLibrary.simpleMessage("कृपया एक आला चुनें"),
-        "PleaseSelectAtLeastNReligion": m20,
+        "PleaseSelectAtLeastNReligion": m21,
         "PleaseSelectAtLeastOneAgeRange": MessageLookupByLibrary.simpleMessage(
             "कृपया कम से कम एक आयु सीमा चुनें"),
         "PleaseSelectAtLeastOneTargetAudience":
@@ -504,18 +507,18 @@ class MessageLookup extends MessageLookupByLibrary {
             "आपकी घटनाओं, सांख्यिकी और विश्लेषण की आंतरिक लक्षित प्रचार"),
         "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
             "विशेष सूचनाओं का उपयोग करने की क्षमता"),
-        "ProfileAskOrSupportHiwHint": m21,
+        "ProfileAskOrSupportHiwHint": m22,
         "ProfileAskOrSupportHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("अपने या किसी और के"),
         "ProfileAskOrSupportHiwTitle":
             MessageLookupByLibrary.simpleMessage("अपने सपने को पूरा करें..."),
-        "ProfileFindSomeoneHiwHint": m22,
+        "ProfileFindSomeoneHiwHint": m23,
         "ProfileFindSomeoneHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "किसी को खोजें और उसके साथ जाएं"),
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("अकेले मत रहो..."),
         "Published": MessageLookupByLibrary.simpleMessage("प्रकाशित"),
-        "Read": m23,
+        "Read": m24,
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),
         "Reset": MessageLookupByLibrary.simpleMessage("रीसेट"),
@@ -541,7 +544,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("खेल और खेलने की चीजें"),
         "SearchChooseYourself9": MessageLookupByLibrary.simpleMessage(
             "सेल्फ-केयर (स्वास्थ्य और सौंदर्य/स्वास्थ्य और सौंदर्य/स्वास्थ्य और सौंदर्य)"),
-        "SearchHiwHint": m24,
+        "SearchHiwHint": m25,
         "SearchHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("खोजें या दूसरे विकल्प चुनें"),
         "SearchHiwTitle":
@@ -554,7 +557,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDays": MessageLookupByLibrary.simpleMessage("दिन चुनें"),
         "SelectLanguage": MessageLookupByLibrary.simpleMessage("भाषा चुने"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),
-        "SelectType": m25,
+        "SelectType": m26,
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("अपने धर्म चुनें"),
         "SelectionOfTheBest":
@@ -565,7 +568,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Settings": MessageLookupByLibrary.simpleMessage("सेटिंग्स"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("परिणाम दिखाओ"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("मिश्रण"),
-        "ShuffleHiwHint": m26,
+        "ShuffleHiwHint": m27,
         "ShuffleHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("व्यक्तिगत स्थान खोजें"),
         "ShuffleHiwTitle": MessageLookupByLibrary.simpleMessage("शफल..."),
@@ -578,7 +581,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SocialSubtitle":
             MessageLookupByLibrary.simpleMessage("उपयोगी सेवाएँ और स्थान"),
         "Spent": MessageLookupByLibrary.simpleMessage("खर्च किया"),
-        "SpinnerHiwHint": m27,
+        "SpinnerHiwHint": m28,
         "SpinnerHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "आपको व्यक्तिगत घटनाएँ मिलती हैं"),
         "SpinnerHiwTitle":
@@ -606,7 +609,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(
             "अपने पसंदीदा को चिह्नित करने के लिए दो बार टैप करें।"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("और बताओ"),
-        "TellUsMoreAboutYourself": m28,
+        "TellUsMoreAboutYourself": m29,
         "Terms": MessageLookupByLibrary.simpleMessage("शर्तें"),
         "TermsOfService":
             MessageLookupByLibrary.simpleMessage("सेवा की शर्तें"),
@@ -629,8 +632,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ToAllowAccessGoToSettings": MessageLookupByLibrary.simpleMessage(
             "पुश सूचनाएँ भेजने की अनुमति देने के लिए, अपने फ़ोन की सेटिंग पर जाएँ"),
         "Today": MessageLookupByLibrary.simpleMessage("आज"),
-        "TopNDonatorsReceiveXPoints": m29,
-        "TopPlacesRatedBy": m30,
+        "TopNDonatorsReceiveXPoints": m30,
+        "TopPlacesRatedBy": m31,
         "TryYourself":
             MessageLookupByLibrary.simpleMessage("स्वयं प्रयास करें"),
         "TypeHere": MessageLookupByLibrary.simpleMessage("यहाँ टाइप करें"),
@@ -647,14 +650,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpcomingGlobalEvents":
             MessageLookupByLibrary.simpleMessage("आगामी वैश्विक घटनाएँ"),
         "Update": MessageLookupByLibrary.simpleMessage("अद्यतन करें"),
-        "UpgradeAccount": m31,
+        "UpgradeAccount": m32,
         "UpgradeAccountConfirmation":
             MessageLookupByLibrary.simpleMessage("अपग्रेड"),
-        "UpgradeForNmoney": m32,
+        "UpgradeForNmoney": m33,
         "User": MessageLookupByLibrary.simpleMessage("उपयोगकर्ता"),
         "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
             "आपके द्वारा बनाने जा रहे खाते का प्रकार चुनें"),
-        "Users": m33,
+        "Users": m34,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("हेल्थकिट का उपयोग करना"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
@@ -682,15 +685,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "WillBe": MessageLookupByLibrary.simpleMessage(" होगा।"),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("जल्द ही लागू किया जाएगा"),
-        "WithInDays": m34,
+        "WithInDays": m35,
         "WithYourPreferences":
             MessageLookupByLibrary.simpleMessage("आपका\nप्राथमिकताएं के साथ"),
         "WorkHours": MessageLookupByLibrary.simpleMessage("काम के घंटे"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("गलत सुरक्षा कोड"),
-        "XCouldNotBeEmpty": m35,
-        "XIsRequired": m36,
-        "XSuccessfullyUpdated": m37,
+        "XCouldNotBeEmpty": m36,
+        "XIsRequired": m37,
+        "XSuccessfullyUpdated": m38,
         "Year": MessageLookupByLibrary.simpleMessage("वर्ष"),
         "Yearly": MessageLookupByLibrary.simpleMessage("सालाना"),
         "Yes": MessageLookupByLibrary.simpleMessage("हाँ"),
@@ -698,7 +701,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "बेहतर होगा कि आप इसकी जांच कर लें"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "आपको वही मिलता है जो आपको चाहि"),
-        "YouSentInvitationToNPeople": m38,
+        "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("आप उसे खोज लोगे"),
         "YourAge": MessageLookupByLibrary.simpleMessage("आपकी उम्र"),
         "YourAudience": MessageLookupByLibrary.simpleMessage("आपके दर्शक"),

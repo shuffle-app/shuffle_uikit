@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -18,17 +19,14 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(_current != null, 'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -41,8 +39,7 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(instance != null, 'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -220,15 +217,15 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{Участников} =1{Участник} =2{Участников} few{Участников} other{Участники}}`
+  /// `{item, plural, =0{Members} =1{Member} =2{Members} few{Members} other{Members}}`
   String Members(num item) {
     return Intl.plural(
       item,
-      zero: 'Участников',
-      one: 'Участник',
-      two: 'Участников',
-      few: 'Участников',
-      other: 'Участники',
+      zero: 'Members',
+      one: 'Member',
+      two: 'Members',
+      few: 'Members',
+      other: 'Members',
       name: 'Members',
       desc: '',
       args: [item],
@@ -606,8 +603,7 @@ class S {
   }
 
   /// `Top {amountOfTopDonators} donators receive x{multiplier} points`
-  String TopNDonatorsReceiveXPoints(
-      Object amountOfTopDonators, Object multiplier) {
+  String TopNDonatorsReceiveXPoints(Object amountOfTopDonators, Object multiplier) {
     return Intl.message(
       'Top $amountOfTopDonators donators receive x$multiplier points',
       name: 'TopNDonatorsReceiveXPoints',
@@ -4244,6 +4240,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Continue with {provider}`
+  String LoginWith(Object provider) {
+    return Intl.message(
+      'Continue with $provider',
+      name: 'LoginWith',
+      desc: '',
+      args: [provider],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -4252,9 +4258,9 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ar'),
-      Locale.fromSubtags(languageCode: 'hi'),
       Locale.fromSubtags(languageCode: 'ru'),
+      Locale.fromSubtags(languageCode: 'hi'),
+      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 

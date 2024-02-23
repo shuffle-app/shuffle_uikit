@@ -16,7 +16,7 @@
   "ThatsAllForNow": "That's all for now!",
   "Weather": "Weather",
   "Follow": "Follow",
-  "Members":  "{item, plural, =0{Участников} =1{Участник} =2{Участников} few{Участников} other{Участники}}",
+  "Members":  "{item, plural, =0{Members} =1{Member} =2{Members} few{Members} other{Members}}",
   "Search": "Search",
   "Directions": "Directions",
   "TapIt": "Tap it",
@@ -410,6 +410,7 @@
   "SearchChooseYourself6":"Fine dining",
   "SearchChooseYourself7":"Bliss and chill",
   "SearchChooseYourself8":"Sporty movements",
-  "SearchChooseYourself9":"Self-care (Health and beauty/self-love)"
+  "SearchChooseYourself9":"Self-care (Health and beauty/self-love)",
+  "LoginWith": "Continue with {provider}"
 
 }
