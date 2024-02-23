@@ -10,7 +10,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:video_player/video_player.dart';
 
 class ImageWidget extends StatelessWidget {
-  static const placeholder = Shimmer(gradient: GradientFoundation.greyGradient, child: UiKitBigPhotoErrorWidget());
+  static final placeholder = Shimmer.fromColors(
+    direction: ShimmerDirection.ltr,
+    baseColor: Colors.white,
+    period: const Duration(milliseconds: 1000),
+    highlightColor: ColorsFoundation.gradientGreyLight3,
+    child: const UiKitBigPhotoErrorWidget(),
+  );
 
   final String? link;
   final AssetGenImage? rasterAsset;

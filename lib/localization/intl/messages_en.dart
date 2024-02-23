@@ -64,7 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Invites ${invitedPeopleCount} people to";
 
   static String m16(item) =>
-      "${Intl.plural(item, zero: 'Участников', one: 'Участник', two: 'Участников', few: 'Участников', other: 'Участники')}";
+      "${Intl.plural(item, zero: 'Members', one: 'Member', two: 'Members', few: 'Members', other: 'Members')}";
 
   static String m17(placeIndex) => "${placeIndex} place";
 

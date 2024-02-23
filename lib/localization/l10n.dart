@@ -220,15 +220,15 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{Участников} =1{Участник} =2{Участников} few{Участников} other{Участники}}`
+  /// `{item, plural, =0{Members} =1{Member} =2{Members} few{Members} other{Members}}`
   String Members(num item) {
     return Intl.plural(
       item,
-      zero: 'Участников',
-      one: 'Участник',
-      two: 'Участников',
-      few: 'Участников',
-      other: 'Участники',
+      zero: 'Members',
+      one: 'Member',
+      two: 'Members',
+      few: 'Members',
+      other: 'Members',
       name: 'Members',
       desc: '',
       args: [item],
