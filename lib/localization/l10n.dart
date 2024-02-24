@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -19,14 +18,17 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null, 'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(_current != null,
+        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -39,7 +41,8 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null, 'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(instance != null,
+        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -603,7 +606,8 @@ class S {
   }
 
   /// `Top {amountOfTopDonators} donators receive x{multiplier} points`
-  String TopNDonatorsReceiveXPoints(Object amountOfTopDonators, Object multiplier) {
+  String TopNDonatorsReceiveXPoints(
+      Object amountOfTopDonators, Object multiplier) {
     return Intl.message(
       'Top $amountOfTopDonators donators receive x$multiplier points',
       name: 'TopNDonatorsReceiveXPoints',
@@ -4241,6 +4245,76 @@ class S {
     );
   }
 
+  /// `Business clubs`
+  String get SearchBusinessChooseYourself1 {
+    return Intl.message(
+      'Business clubs',
+      name: 'SearchBusinessChooseYourself1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Digital & IT conferences`
+  String get SearchBusinessChooseYourself2 {
+    return Intl.message(
+      'Digital & IT conferences',
+      name: 'SearchBusinessChooseYourself2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pitch sessions`
+  String get SearchBusinessChooseYourself3 {
+    return Intl.message(
+      'Pitch sessions',
+      name: 'SearchBusinessChooseYourself3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Business games`
+  String get SearchBusinessChooseYourself4 {
+    return Intl.message(
+      'Business games',
+      name: 'SearchBusinessChooseYourself4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forums (industry exhibitions)`
+  String get SearchBusinessChooseYourself5 {
+    return Intl.message(
+      'Forums (industry exhibitions)',
+      name: 'SearchBusinessChooseYourself5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Networking`
+  String get SearchBusinessChooseYourself6 {
+    return Intl.message(
+      'Networking',
+      name: 'SearchBusinessChooseYourself6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Seminars and trainings`
+  String get SearchBusinessChooseYourself7 {
+    return Intl.message(
+      'Seminars and trainings',
+      name: 'SearchBusinessChooseYourself7',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Continue with {provider}`
   String LoginWith(Object provider) {
     return Intl.message(
@@ -4258,9 +4332,9 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ru'),
-      Locale.fromSubtags(languageCode: 'hi'),
       Locale.fromSubtags(languageCode: 'ar'),
+      Locale.fromSubtags(languageCode: 'hi'),
+      Locale.fromSubtags(languageCode: 'ru'),
     ];
   }
 

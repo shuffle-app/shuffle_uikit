@@ -521,6 +521,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
+        "SearchBusinessChooseYourself1":
+            MessageLookupByLibrary.simpleMessage("Business clubs"),
+        "SearchBusinessChooseYourself2":
+            MessageLookupByLibrary.simpleMessage("Digital & IT conferences"),
+        "SearchBusinessChooseYourself3":
+            MessageLookupByLibrary.simpleMessage("Pitch sessions"),
+        "SearchBusinessChooseYourself4":
+            MessageLookupByLibrary.simpleMessage("Business games"),
+        "SearchBusinessChooseYourself5": MessageLookupByLibrary.simpleMessage(
+            "Forums (industry exhibitions)"),
+        "SearchBusinessChooseYourself6":
+            MessageLookupByLibrary.simpleMessage("Networking"),
+        "SearchBusinessChooseYourself7":
+            MessageLookupByLibrary.simpleMessage("Seminars and trainings"),
         "SearchChooseYourself1": MessageLookupByLibrary.simpleMessage(
             "Happiness for children and family"),
         "SearchChooseYourself2":

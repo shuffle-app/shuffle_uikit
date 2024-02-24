@@ -532,6 +532,20 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Сбросить пароль"),
         "Save": MessageLookupByLibrary.simpleMessage("Сохранить"),
         "Search": MessageLookupByLibrary.simpleMessage("Поиск"),
+        "SearchBusinessChooseYourself1":
+            MessageLookupByLibrary.simpleMessage("Бизнес-клубы"),
+        "SearchBusinessChooseYourself2":
+            MessageLookupByLibrary.simpleMessage("Digital & IT конференции"),
+        "SearchBusinessChooseYourself3":
+            MessageLookupByLibrary.simpleMessage("Питч сессии"),
+        "SearchBusinessChooseYourself4":
+            MessageLookupByLibrary.simpleMessage("Бизнес игры"),
+        "SearchBusinessChooseYourself5": MessageLookupByLibrary.simpleMessage(
+            "Форумы (отраслевые выставки)"),
+        "SearchBusinessChooseYourself6":
+            MessageLookupByLibrary.simpleMessage("Нетворкинг"),
+        "SearchBusinessChooseYourself7":
+            MessageLookupByLibrary.simpleMessage("Семинары и тренинги"),
         "SearchChooseYourself1":
             MessageLookupByLibrary.simpleMessage("Счастье детям и семье"),
         "SearchChooseYourself2":
@@ -600,7 +614,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Начать изучать"),
         "Sunny": MessageLookupByLibrary.simpleMessage("Солнечно"),
-        "Support": MessageLookupByLibrary.simpleMessage("Помочь"),
+        "Support": MessageLookupByLibrary.simpleMessage("Помощь"),
         "SupportPeopleAroundYou":
             MessageLookupByLibrary.simpleMessage("Помочь людям вокруг"),
         "SwipeToStart":
