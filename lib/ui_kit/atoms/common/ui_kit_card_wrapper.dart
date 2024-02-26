@@ -10,6 +10,7 @@ class UiKitCardWrapper extends StatelessWidget {
   final Color? color;
   final List<BoxShadow>? boxShadow;
   final Gradient? gradient;
+  final EdgeInsets? padding;
 
   const UiKitCardWrapper({
     Key? key,
@@ -19,6 +20,7 @@ class UiKitCardWrapper extends StatelessWidget {
     this.width,
     this.height,
     this.color,
+    this.padding,
     this.boxShadow,
     this.border,
   }) : super(key: key);
@@ -40,6 +42,7 @@ class UiKitCardWrapper extends StatelessWidget {
         child: Container(
           width: width,
           height: height,
+          padding: padding,
           clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
             borderRadius: borderRadius,
