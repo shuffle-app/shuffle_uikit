@@ -37,24 +37,25 @@ class UiKitMessageCloud extends StatelessWidget {
               color: colorScheme?.surface5,
               child: Center(
                 child: (messageWidget ??
-                    RichText(
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: message ?? '',
-                            style:
-                                messageTextStyle ?? boldTextTheme?.caption1Bold.copyWith(color: colorScheme?.headingTypography),
+                        RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: message ?? '',
+                                style: messageTextStyle ??
+                                    boldTextTheme?.caption1Bold.copyWith(color: colorScheme?.headingTypography),
+                              ),
+                              if (subtitle != null)
+                                TextSpan(
+                                  text: '\n$subtitle',
+                                  style: subtitleTextStyle ??
+                                      boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.mutedText),
+                                ),
+                            ],
                           ),
-                          if (subtitle != null)
-                            TextSpan(
-                              text: '\n$subtitle',
-                              style:
-                                  subtitleTextStyle ?? boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.mutedText),
-                            ),
-                        ],
-                      ),
-                      textAlign: TextAlign.center,
-                    )),
+                          textAlign: TextAlign.center,
+                        ))
+                    .paddingAll(EdgeInsetsFoundation.all8),
               ),
             ).paddingAll(EdgeInsetsFoundation.all2),
           ),

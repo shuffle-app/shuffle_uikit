@@ -54,11 +54,11 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                 },
                 child: ListView.separated(
                   controller: scrollController,
-                  physics: const ClampingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
-                  addAutomaticKeepAlives: true,
                   itemCount: media.length,
                   padding: EdgeInsets.zero,
+                  cacheExtent: 0.75.sw,
                   separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
                   itemBuilder: (context, index) {
                     final mediaItem = media.elementAt(index);
@@ -140,13 +140,11 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                         left: EdgeInsetsFoundation.horizontal16,
                       ),
                     )).paddingOnly(bottom: SpacingFoundation.verticalSpacing14),
-        RepaintBoundary(
-          child: DescriptionWidget(
-            description: description,
-          ).paddingOnly(
-            left: horizontalMargin,
-            right: horizontalMargin,
-          ),
+        DescriptionWidget(
+          description: description,
+        ).paddingOnly(
+          left: horizontalMargin,
+          right: horizontalMargin,
         ),
       ],
     );

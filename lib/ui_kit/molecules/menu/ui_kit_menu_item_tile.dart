@@ -8,7 +8,6 @@ class UiKitMenuItemTile extends StatelessWidget {
     this.color,
     this.onTap,
   })  : autoPopUp = true,
-        showSeparator = true,
         paddingSymmetric = null,
         super(key: key);
 
@@ -19,14 +18,12 @@ class UiKitMenuItemTile extends StatelessWidget {
     this.color,
     this.paddingSymmetric,
     this.autoPopUp = false,
-    this.showSeparator = false,
   }) : super(key: key);
 
   final UiKitMenuItem item;
   final VoidCallback? onTap;
   final EdgeInsets? paddingSymmetric;
   final bool autoPopUp;
-  final bool showSeparator;
   final Color? color;
 
   @override
@@ -34,50 +31,55 @@ class UiKitMenuItemTile extends StatelessWidget {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final colorScheme = context.uiKitTheme?.colorScheme;
 
-    return Material(
-      color: color ?? Colors.transparent,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadiusFoundation.max,
-      ),
-      child: InkWell(
-        onTap: () {
-          onTap?.call();
-          if (autoPopUp) {
-            Navigator.pop(context);
-          }
-        },
-        child: Ink(
-          decoration: showSeparator
-              ? BoxDecoration(
-                  border: Border(
-                    top: BorderSide(color: colorScheme!.surface2, width: 1),
-                  ),
-                )
+    return Opacity(
+      opacity: onTap != null ? 1 : 0.75,
+      child: Material(
+        color: color ?? colorScheme?.surface1,
+        clipBehavior: Clip.hardEdge,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusFoundation.max,
+        ),
+        child: InkWell(
+          onTap: onTap != null
+              ? () {
+                  onTap?.call();
+                  if (autoPopUp) {
+                    Navigator.pop(context);
+                  }
+                }
               : null,
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              if (item.icon != null || item.iconLink != null) ...[
-                ImageWidget(
-                  iconData: item.icon,
-                  link: item.iconLink,
-                  height: 0.0625.sw,
-                  width: 0.0625.sw,
-                  fit: BoxFit.cover,
-                  color: item.iconColor,
-                ),
-                SpacingFoundation.horizontalSpace8,
-              ],
-              Expanded(
-                child: Text(
-                  item.title.toUpperCase(),
-                  style: boldTextTheme?.caption1UpperCaseMedium,
-                ),
+          child: Ink(
+            decoration: BoxDecoration(
+              border: Border(
+                top: BorderSide(color: colorScheme!.surface2, width: 1),
               ),
-            ],
-          ).paddingSymmetric(
-            horizontal: paddingSymmetric?.horizontal ?? EdgeInsetsFoundation.horizontal16,
-            vertical: paddingSymmetric?.vertical ?? EdgeInsetsFoundation.vertical16,
+              borderRadius: BorderRadiusFoundation.max,
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                if (item.icon != null || item.iconLink != null) ...[
+                  ImageWidget(
+                    iconData: item.icon,
+                    link: item.iconLink,
+                    height: 0.0625.sw,
+                    width: 0.0625.sw,
+                    fit: BoxFit.cover,
+                    color: item.iconColor,
+                  ),
+                  SpacingFoundation.horizontalSpace8,
+                ],
+                Expanded(
+                  child: Text(
+                    item.title.toUpperCase(),
+                    style: boldTextTheme?.caption1UpperCaseMedium,
+                  ),
+                ),
+              ],
+            ).paddingSymmetric(
+              horizontal: paddingSymmetric?.horizontal ?? EdgeInsetsFoundation.horizontal16,
+              vertical: paddingSymmetric?.vertical ?? EdgeInsetsFoundation.vertical16,
+            ),
           ),
         ),
       ),

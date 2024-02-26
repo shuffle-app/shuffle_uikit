@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -18,17 +19,14 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(_current != null, 'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -41,8 +39,7 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(instance != null, 'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
     return instance!;
   }
 
@@ -220,15 +217,15 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{Участников} =1{Участник} =2{Участников} few{Участников} other{Участники}}`
+  /// `{item, plural, =0{Members} =1{Member} =2{Members} few{Members} other{Members}}`
   String Members(num item) {
     return Intl.plural(
       item,
-      zero: 'Участников',
-      one: 'Участник',
-      two: 'Участников',
-      few: 'Участников',
-      other: 'Участники',
+      zero: 'Members',
+      one: 'Member',
+      two: 'Members',
+      few: 'Members',
+      other: 'Members',
       name: 'Members',
       desc: '',
       args: [item],
@@ -606,8 +603,7 @@ class S {
   }
 
   /// `Top {amountOfTopDonators} donators receive x{multiplier} points`
-  String TopNDonatorsReceiveXPoints(
-      Object amountOfTopDonators, Object multiplier) {
+  String TopNDonatorsReceiveXPoints(Object amountOfTopDonators, Object multiplier) {
     return Intl.message(
       'Top $amountOfTopDonators donators receive x$multiplier points',
       name: 'TopNDonatorsReceiveXPoints',
@@ -3823,23 +3819,35 @@ class S {
     );
   }
 
-  /// `{point, plural, =0{{point} interests} =1{{point} interest} =2{{point} interests} few{{point} interests} many{{point} interests} other{{point} interests}`
-  String FindSomeoneCardPoints(Object point) {
-    return Intl.message(
-      '{point, plural, =0{$point interests} =1{$point interest} =2{$point interests} few{$point interests} many{$point interests} other{$point interests}',
+  /// `{count, plural, =0{{count} points} =1{{count} point} =2{{count} points} few{{count} points} many{{count} points} other{{count} points}}`
+  String FindSomeoneCardPoints(num count) {
+    return Intl.plural(
+      count,
+      zero: '$count points',
+      one: '$count point',
+      two: '$count points',
+      few: '$count points',
+      many: '$count points',
+      other: '$count points',
       name: 'FindSomeoneCardPoints',
       desc: '',
-      args: [point],
+      args: [count],
     );
   }
 
-  /// `{interest, plural, =0{{interest} interests} =1{{interest} interest} =2{{interest} interests} few{{interest} interests} many{{interest} interests} other{{interest} interests}`
-  String FindSomeoneCardSameInterests(Object interest) {
-    return Intl.message(
-      '{interest, plural, =0{$interest interests} =1{$interest interest} =2{$interest interests} few{$interest interests} many{$interest interests} other{$interest interests}',
+  /// `{count, plural, =0{{count} common interests} =1{{count} common interest} =2{{count} common interests} few{{count} common interests} many{{count} common interests} other{{count} common interests}}`
+  String FindSomeoneCardSameInterests(num count) {
+    return Intl.plural(
+      count,
+      zero: '$count common interests',
+      one: '$count common interest',
+      two: '$count common interests',
+      few: '$count common interests',
+      many: '$count common interests',
+      other: '$count common interests',
       name: 'FindSomeoneCardSameInterests',
       desc: '',
-      args: [interest],
+      args: [count],
     );
   }
 
@@ -4082,6 +4090,166 @@ class S {
       args: [],
     );
   }
+
+  /// `Select Date Range`
+  String get SelectDateRange {
+    return Intl.message(
+      'Select Date Range',
+      name: 'SelectDateRange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset`
+  String get Reset {
+    return Intl.message(
+      'Reset',
+      name: 'Reset',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thanks!\nNow we know you better`
+  String get NowWeKnowYouBetter {
+    return Intl.message(
+      'Thanks!\nNow we know you better',
+      name: 'NowWeKnowYouBetter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tell us more`
+  String get TellUsMore {
+    return Intl.message(
+      'Tell us more',
+      name: 'TellUsMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Very often`
+  String get VeryOften {
+    return Intl.message(
+      'Very often',
+      name: 'VeryOften',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `in {days} {days, plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}}`
+  String WithInDays(num days) {
+    return Intl.message(
+      'in $days ${Intl.plural(days, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')}',
+      name: 'WithInDays',
+      desc: '',
+      args: [days],
+    );
+  }
+
+  /// `Happiness for children and family`
+  String get SearchChooseYourself1 {
+    return Intl.message(
+      'Happiness for children and family',
+      name: 'SearchChooseYourself1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thirst for adventure`
+  String get SearchChooseYourself2 {
+    return Intl.message(
+      'Thirst for adventure',
+      name: 'SearchChooseYourself2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parties and dancing`
+  String get SearchChooseYourself3 {
+    return Intl.message(
+      'Parties and dancing',
+      name: 'SearchChooseYourself3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Extremes and thrills`
+  String get SearchChooseYourself4 {
+    return Intl.message(
+      'Extremes and thrills',
+      name: 'SearchChooseYourself4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Age of enlightenment`
+  String get SearchChooseYourself5 {
+    return Intl.message(
+      'Age of enlightenment',
+      name: 'SearchChooseYourself5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fine dining`
+  String get SearchChooseYourself6 {
+    return Intl.message(
+      'Fine dining',
+      name: 'SearchChooseYourself6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bliss and chill`
+  String get SearchChooseYourself7 {
+    return Intl.message(
+      'Bliss and chill',
+      name: 'SearchChooseYourself7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sporty movements`
+  String get SearchChooseYourself8 {
+    return Intl.message(
+      'Sporty movements',
+      name: 'SearchChooseYourself8',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Self-care (Health and beauty/self-love)`
+  String get SearchChooseYourself9 {
+    return Intl.message(
+      'Self-care (Health and beauty/self-love)',
+      name: 'SearchChooseYourself9',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue with {provider}`
+  String LoginWith(Object provider) {
+    return Intl.message(
+      'Continue with $provider',
+      name: 'LoginWith',
+      desc: '',
+      args: [provider],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -4090,9 +4258,9 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ar'),
-      Locale.fromSubtags(languageCode: 'hi'),
       Locale.fromSubtags(languageCode: 'ru'),
+      Locale.fromSubtags(languageCode: 'hi'),
+      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 

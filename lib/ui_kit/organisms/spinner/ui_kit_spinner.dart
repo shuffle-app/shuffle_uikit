@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -156,7 +155,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
 
   @override
   Widget build(BuildContext context) {
-    const maxSpinnerUpValue = -220.0;
+    const maxSpinnerUpValue = -60.0;
     final colorScheme = context.uiKitTheme?.colorScheme;
     // return LayoutBuilder(
     //   builder: (context, size) {
@@ -187,9 +186,8 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
               child: UiKitHorizontalScrollableList<String>(
                 pagingController: widget.pagingController,
                 scrollController: widget.scrollController,
-                physics: _spinningType == SpinningType.categories
-                    ? const PageScrollPhysics()
-                    : const NeverScrollableScrollPhysics(),
+                physics:
+                    _spinningType == SpinningType.categories ? const PageScrollPhysics() : const NeverScrollableScrollPhysics(),
                 itemBuilder: (_, item, index) => SizedBox(
                   width: 1.sw,
                   child: Center(
@@ -230,12 +228,10 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       changeInteractingState(true);
                       setSpinningGesture(
                           details.delta.dy != 0 && details.delta.dy < 0 ? SpinningGesture.up : SpinningGesture.spin);
-                      log('interacting is starting with gesture: ${_spinningGesture.toString()}', name: 'UiKitSpinner');
                     }
                     if (widget.pagingController.itemList?.isEmpty ?? false) return;
 
                     if (_spinningGesture == SpinningGesture.up) {
-                      log('onPanUpdate got details.delta.dy ${details.delta.dy}', name: 'UiKitSpinner');
                       if (_transitionNotifier.value > maxSpinnerUpValue) {
                         _transitionNotifier.value += details.delta.dy / 5;
                       }
@@ -246,8 +242,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     final delta = details.delta.dx;
                     final inScrollBeginning = widget.scrollController.offset == 0 && !delta.isNegative;
                     final inScrollEnd =
-                        widget.scrollController.offset == widget.scrollController.position.maxScrollExtent &&
-                            delta.isNegative;
+                        widget.scrollController.offset == widget.scrollController.position.maxScrollExtent && delta.isNegative;
                     if (inScrollBeginning || inScrollEnd) return;
                     // if (details.localPosition.dx.toInt() % 20 == 0) _enableFeedback();
                     _rotationNotifier.value += delta / 200;
@@ -256,10 +251,6 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     );
                   },
                   onPanStart: (details) {
-                    if (details.localPosition.dy != 0) {
-                      log('onPanStart got details.localPosition.dy ${details.localPosition.dy}', name: 'UiKitSpinner');
-                    }
-
                     if (widget.pagingController.itemList?.isEmpty ?? false) return;
 
                     _scrollStartNotifier.value = widget.scrollController.offset;
@@ -269,8 +260,11 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     if (widget.pagingController.itemList?.isEmpty ?? false) return;
 
                     if (_transitionNotifier.value != 0) {
-                      if (_transitionNotifier.value < maxSpinnerUpValue) {
+                      if (_transitionNotifier.value <= maxSpinnerUpValue + 10) {
                         _transitionNotifier.value = maxSpinnerUpValue;
+                      } else {
+                        _transitionNotifier.value = 0;
+                        return;
                       }
                       FeedbackIsolate.instance.addEvent(SystemSoundIsolateRachetClick());
                       unawaited(showDateRangePickerDialog(context, initialDateRange: widget.filterDate).then((value) {
@@ -332,7 +326,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
               ),
               if (widget.filterDate != null)
                 Positioned(
-                    top: 45.h,
+                    top: 68,
                     child: Text(
                       widget.filterDate?.toRangeString() ?? '',
                       style: context.uiKitTheme?.regularTextTheme.caption4.copyWith(color: colorScheme?.primary),
@@ -340,7 +334,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     ))
               else
                 Positioned(
-                    top: 45.h,
+                    top: 55,
                     child: UiKitFloatingAnimation(
                       applyX: false,
                       child: RotatedBox(

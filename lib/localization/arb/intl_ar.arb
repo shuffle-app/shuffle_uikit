@@ -370,8 +370,8 @@
   "CheckItOut": "Check it out",
   "SocialSubtitle": "Useful services and places",
   "UnderService": "Under service",
-  "FindSomeoneCardPoints": "{point, plural, =0{{point} interests} =1{{point} interest} =2{{point} interests} few{{point} interests} many{{point} interests} other{{point} interests}",
-  "FindSomeoneCardSameInterests": "{interest, plural, =0{{interest} interests} =1{{interest} interest} =2{{interest} interests} few{{interest} interests} many{{interest} interests} other{{interest} interests}",
+  "FindSomeoneCardPoints": "{count, plural, =0{{count} points} =1{{count} point} =2{{count} points} few{{count} points} many{{count} points} other{{count} points}}",
+  "FindSomeoneCardSameInterests": "{count, plural, =0{{count} common interests} =1{{count} common interest} =2{{count} common interests} few{{count} common interests} many{{count} common interests} other{{count} common interests}}",
   "UnderDevelopmentMessage": "Under development",
   "DonationRaised": "raised {actuallyRaised}/${goal}$",
   "Exit": "Exit",
@@ -395,8 +395,21 @@
   "PickFromMap": "Pick from map",
   "AddPromotion": "Add promotion",
   "Archive": "Archive",
-  "DeleteCompany": "Delete company"
-
-
-
+  "DeleteCompany": "Delete company",
+  "SelectDateRange": "Select Date Range",
+  "Reset": "Reset",
+  "NowWeKnowYouBetter": "Thanks!\nNow we know you better",
+  "TellUsMore": "Tell us more",
+  "VeryOften": "Very often",
+  "WithInDays": "in {days} {days, plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}}",
+  "SearchChooseYourself1": "Happiness for children and family",
+  "SearchChooseYourself2":"Thirst for adventure",
+  "SearchChooseYourself3":"Parties and dancing",
+  "SearchChooseYourself4":"Extremes and thrills",
+  "SearchChooseYourself5":"Age of enlightenment",
+  "SearchChooseYourself6":"Fine dining",
+  "SearchChooseYourself7":"Bliss and chill",
+  "SearchChooseYourself8":"Sporty movements",
+  "SearchChooseYourself9":"Self-care (Health and beauty/self-love)",
+  "LoginWith": "Continue with {provider}"
 }
