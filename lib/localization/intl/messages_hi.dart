@@ -526,6 +526,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetPassword": MessageLookupByLibrary.simpleMessage("पासवर्ड रीसेट"),
         "Save": MessageLookupByLibrary.simpleMessage("सहेजें"),
         "Search": MessageLookupByLibrary.simpleMessage("खोजें"),
+        "SearchBusinessChooseYourself1":
+            MessageLookupByLibrary.simpleMessage("व्यापारिक क्लब"),
+        "SearchBusinessChooseYourself2":
+            MessageLookupByLibrary.simpleMessage("डिजिटल और आईटी सम्मेलन"),
+        "SearchBusinessChooseYourself3":
+            MessageLookupByLibrary.simpleMessage("पिच सत्र"),
+        "SearchBusinessChooseYourself4":
+            MessageLookupByLibrary.simpleMessage("व्यापारिक खेल"),
+        "SearchBusinessChooseYourself5":
+            MessageLookupByLibrary.simpleMessage("फोरम (उद्योग प्रदर्शनी)"),
+        "SearchBusinessChooseYourself6":
+            MessageLookupByLibrary.simpleMessage("नेटवर्किंग"),
+        "SearchBusinessChooseYourself7":
+            MessageLookupByLibrary.simpleMessage("सेमिनार और प्रशिक्षण"),
         "SearchChooseYourself1": MessageLookupByLibrary.simpleMessage(
             "बच्चों और परिवार के लिए खुशी"),
         "SearchChooseYourself2":
@@ -650,6 +664,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpcomingGlobalEvents":
             MessageLookupByLibrary.simpleMessage("आगामी वैश्विक घटनाएँ"),
         "Update": MessageLookupByLibrary.simpleMessage("अद्यतन करें"),
+        "UpdateAppMessage": MessageLookupByLibrary.simpleMessage(
+            "आपके द्वारा अद्यतन किए जाने के बाद से हमारे ऐप में काफी उपयोगी चीजें जोड़ दी गई हैं"),
+        "UpdateAppMessageTitle":
+            MessageLookupByLibrary.simpleMessage("अद्यतन का समय"),
         "UpgradeAccount": m32,
         "UpgradeAccountConfirmation":
             MessageLookupByLibrary.simpleMessage("अपग्रेड"),

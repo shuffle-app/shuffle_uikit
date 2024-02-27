@@ -411,5 +411,14 @@
   "SearchChooseYourself7":"Bliss and chill",
   "SearchChooseYourself8":"Sporty movements",
   "SearchChooseYourself9":"Self-care (Health and beauty/self-love)",
-  "LoginWith": "Continue with {provider}"
+  "SearchBusinessChooseYourself1": "Business clubs",
+  "SearchBusinessChooseYourself2": "Digital & IT conferences",
+  "SearchBusinessChooseYourself3": "Pitch sessions",
+  "SearchBusinessChooseYourself4": "Business games",
+  "SearchBusinessChooseYourself5": "Forums (industry exhibitions)",
+  "SearchBusinessChooseYourself6": "Networking",
+  "SearchBusinessChooseYourself7": "Seminars and trainings",
+  "LoginWith": "Continue with {provider}",
+  "UpdateAppMessageTitle": "Time for update",
+  "UpdateAppMessage": "It's been a while since you've updated our app, and we've added a lot of handy stuff in the meantime"
 }

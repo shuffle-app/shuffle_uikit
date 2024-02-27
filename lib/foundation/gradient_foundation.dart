@@ -5,6 +5,32 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
+  static final updatePageDarkBackgroundGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.pink.withOpacity(0.25),
+      ColorsFoundation.pink.withOpacity(0),
+    ],
+    stops: const [
+      -0.1659,
+      0.9961,
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static final updatePageLightBackgroundGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.pink.withOpacity(0.05),
+      ColorsFoundation.pink.withOpacity(0),
+    ],
+    stops: const [
+      -0.1659,
+      0.9961,
+    ],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
   static const proUserAvatarBorder = LinearGradient(
     colors: [
       ColorsFoundation.proUserAvatarBorder,
@@ -187,7 +213,7 @@ class GradientFoundation {
       ColorsFoundation.error,
       ColorsFoundation.yellow,
     ],
-    stops: [0.3,0.55,0.7],
+    stops: [0.3, 0.55, 0.7],
 
     begin: Alignment.topRight,
     end: Alignment.bottomLeft,
@@ -248,6 +274,11 @@ class GradientFoundation {
   static const gradientBorder = GradientBoxBorder(
     gradient: defaultRadialGradient,
     width: 2,
+  );
+
+  static const updatePageGradientRings = GradientBoxBorder(
+    gradient: touchIdLinearGradient,
+    width: 3,
   );
 
   static const touchIdgradientBorder = GradientBoxBorder(
