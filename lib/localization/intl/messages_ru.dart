@@ -464,9 +464,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "PleaseSelectAtLeastNReligion": m21,
         "PleaseSelectAtLeastOneAgeRange": MessageLookupByLibrary.simpleMessage(
             "Выберите хотя бы одну возрастную группу"),
-        "PleaseSelectAtLeastOneTargetAudience":
+        "PleaseSelectAtLeastOnePriceSegment":
             MessageLookupByLibrary.simpleMessage(
-                "Выберите хотя бы одну ЦА, пожалуйста"),
+                "Please select at least one price segment"),
         "PleaseSelectGender":
             MessageLookupByLibrary.simpleMessage("Пожалуйста, укажите пол"),
         "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
@@ -709,7 +709,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("Вы найдёте"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Твой возраст"),
-        "YourAudience": MessageLookupByLibrary.simpleMessage("Ваша аудитория"),
         "YourAudienceAge":
             MessageLookupByLibrary.simpleMessage("Возраст аудитории"),
         "YourClaimHasBeenSent":
@@ -720,6 +719,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourName": MessageLookupByLibrary.simpleMessage("Ваше имя"),
         "YourNiche": MessageLookupByLibrary.simpleMessage("Ваша ниша"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("Ваша позиция"),
+        "YourPriceSegment":
+            MessageLookupByLibrary.simpleMessage("Your price segment"),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("Ваш трафик"),
         "daynight": MessageLookupByLibrary.simpleMessage("Днем и ночью"),
         "key": MessageLookupByLibrary.simpleMessage("")

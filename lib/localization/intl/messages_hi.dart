@@ -463,9 +463,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "PleaseSelectAtLeastNReligion": m21,
         "PleaseSelectAtLeastOneAgeRange": MessageLookupByLibrary.simpleMessage(
             "कृपया कम से कम एक आयु सीमा चुनें"),
-        "PleaseSelectAtLeastOneTargetAudience":
+        "PleaseSelectAtLeastOnePriceSegment":
             MessageLookupByLibrary.simpleMessage(
-                "कृपया कम से कम एक लक्षित दर्शक चुनें"),
+                "Please select at least one price segment"),
         "PleaseSelectGender":
             MessageLookupByLibrary.simpleMessage("कृपया एक लिंग चुनें"),
         "PleaseSelectOneType":
@@ -704,7 +704,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("आप उसे खोज लोगे"),
         "YourAge": MessageLookupByLibrary.simpleMessage("आपकी उम्र"),
-        "YourAudience": MessageLookupByLibrary.simpleMessage("आपके दर्शक"),
         "YourAudienceAge":
             MessageLookupByLibrary.simpleMessage("आपके दर्शकों की उम्र"),
         "YourClaimHasBeenSent":
@@ -715,6 +714,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourName": MessageLookupByLibrary.simpleMessage("आपका नाम"),
         "YourNiche": MessageLookupByLibrary.simpleMessage("आपका आला"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("आपका मत"),
+        "YourPriceSegment":
+            MessageLookupByLibrary.simpleMessage("Your price segment"),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("आपका ट्रैफ़िक"),
         "daynight": MessageLookupByLibrary.simpleMessage("दिन और रात"),
         "key": MessageLookupByLibrary.simpleMessage("")
