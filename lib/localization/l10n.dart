@@ -4245,6 +4245,76 @@ class S {
     );
   }
 
+  /// `Business clubs`
+  String get SearchBusinessChooseYourself1 {
+    return Intl.message(
+      'Business clubs',
+      name: 'SearchBusinessChooseYourself1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Digital & IT conferences`
+  String get SearchBusinessChooseYourself2 {
+    return Intl.message(
+      'Digital & IT conferences',
+      name: 'SearchBusinessChooseYourself2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pitch sessions`
+  String get SearchBusinessChooseYourself3 {
+    return Intl.message(
+      'Pitch sessions',
+      name: 'SearchBusinessChooseYourself3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Business games`
+  String get SearchBusinessChooseYourself4 {
+    return Intl.message(
+      'Business games',
+      name: 'SearchBusinessChooseYourself4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forums (industry exhibitions)`
+  String get SearchBusinessChooseYourself5 {
+    return Intl.message(
+      'Forums (industry exhibitions)',
+      name: 'SearchBusinessChooseYourself5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Networking`
+  String get SearchBusinessChooseYourself6 {
+    return Intl.message(
+      'Networking',
+      name: 'SearchBusinessChooseYourself6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Seminars and trainings`
+  String get SearchBusinessChooseYourself7 {
+    return Intl.message(
+      'Seminars and trainings',
+      name: 'SearchBusinessChooseYourself7',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Continue with {provider}`
   String LoginWith(Object provider) {
     return Intl.message(
@@ -4252,6 +4322,26 @@ class S {
       name: 'LoginWith',
       desc: '',
       args: [provider],
+    );
+  }
+
+  /// `Time for update`
+  String get UpdateAppMessageTitle {
+    return Intl.message(
+      'Time for update',
+      name: 'UpdateAppMessageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It's been a while since you've updated our app, and we've added a lot of handy stuff in the meantime`
+  String get UpdateAppMessage {
+    return Intl.message(
+      'It\'s been a while since you\'ve updated our app, and we\'ve added a lot of handy stuff in the meantime',
+      name: 'UpdateAppMessage',
+      desc: '',
+      args: [],
     );
   }
 }

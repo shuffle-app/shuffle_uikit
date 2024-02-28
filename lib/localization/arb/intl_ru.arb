@@ -135,7 +135,7 @@
   "MyEvents": "Мои события",
   "AskOrSupport": "Попросить или помочь",
   "FulfillTheDream": "Исполнить мечту",
-  "Support": "Помочь",
+  "Support": "Помощь",
   "EnableHintSystem": "Включить подсказки",
   "Faq": "ЧаВО",
   "WillBeImplementedSoon": "Скоро будет реализовано",
@@ -411,5 +411,14 @@
   "SearchChooseYourself7":"Блаженство и чилл",
   "SearchChooseYourself8":"Спортивные движения",
   "SearchChooseYourself9":"Забота о себе любимом",
-  "LoginWith": "Продолжить с {provider}"
+  "SearchBusinessChooseYourself1": "Бизнес-клубы",
+  "SearchBusinessChooseYourself2": "Digital & IT конференции",
+  "SearchBusinessChooseYourself3": "Питч сессии",
+  "SearchBusinessChooseYourself4": "Бизнес игры",
+  "SearchBusinessChooseYourself5": "Форумы (отраслевые выставки)",
+  "SearchBusinessChooseYourself6": "Нетворкинг",
+  "SearchBusinessChooseYourself7": "Семинары и тренинги",
+  "LoginWith": "Продолжить с {provider}",
+  "UpdateAppMessageTitle": "Пора обновиться",
+  "UpdateAppMessage": "Вы давно не обновляли наше приложение, а мы за это время добавили много удобных штук"
 }

@@ -411,5 +411,14 @@
   "SearchChooseYourself7":"आनंद और शांति",
   "SearchChooseYourself8":"खेल और खेलने की चीजें",
   "SearchChooseYourself9":"सेल्फ-केयर (स्वास्थ्य और सौंदर्य/स्वास्थ्य और सौंदर्य/स्वास्थ्य और सौंदर्य)",
-  "LoginWith": "{provider} के साथ जारी रखें"
+  "SearchBusinessChooseYourself1": "व्यापारिक क्लब",
+  "SearchBusinessChooseYourself2": "डिजिटल और आईटी सम्मेलन",
+  "SearchBusinessChooseYourself3": "पिच सत्र",
+  "SearchBusinessChooseYourself4": "व्यापारिक खेल",
+  "SearchBusinessChooseYourself5": "फोरम (उद्योग प्रदर्शनी)",
+  "SearchBusinessChooseYourself6": "नेटवर्किंग",
+  "SearchBusinessChooseYourself7": "सेमिनार और प्रशिक्षण",
+  "LoginWith": "{provider} के साथ जारी रखें",
+  "UpdateAppMessageTitle": "अद्यतन का समय",
+  "UpdateAppMessage": "आपके द्वारा अद्यतन किए जाने के बाद से हमारे ऐप में काफी उपयोगी चीजें जोड़ दी गई हैं"
 }
