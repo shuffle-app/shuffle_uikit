@@ -20,104 +20,74 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
+    final logoWidth = 0.50625.sw;
+    final logoHeight = logoWidth * 1.284;
+    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
+
     return Scaffold(
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
+      body: Container(
+        height: 1.sh,
+        width: 1.sw,
+        decoration: BoxDecoration(
+          gradient: isLightTheme
+              ? GradientFoundation.updatePageLightBackgroundGradient
+              : GradientFoundation.updatePageDarkBackgroundGradient,
+        ),
+        child: Stack(
+          fit: StackFit.expand,
           children: [
-            context.notificationPopUp(
-              primaryActionWidget: context.smallButton(
-                data: BaseUiKitButtonData(
-                  text: 'Ok',
-                  onPressed: () {},
-                ),
-              ),
-              dismissActionWidget: context.smallOutlinedButton(
-                data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
-                color: Colors.white.withOpacity(0.5),
-              ),
-              requiredData: NotificationPopupRequiredData(
-                titleString: 'Yoga today at Palm Jumeirah. You go?',
-                icon: const ImageWidget(
-                  iconData: ShuffleUiKitIcons.heartinhandemoji,
-                ),
-                hasShadow: true,
+            Positioned(
+              top: 0.19375.sw * -6,
+              right: 0.19375.sw * -6,
+              child: UiKitRingsDecoration(
+                ringsCount: 6,
               ),
             ),
-            SpacingFoundation.verticalSpace16,
-            context.notificationPopUp(
-              primaryActionWidget: context.smallButton(
-                data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
-              ),
-              dismissActionWidget: context.smallOutlinedButton(
-                data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
-                color: Colors.white.withOpacity(0.5),
-              ),
-              requiredData: NotificationPopupRequiredData(
-                titleString: 'Yoga today at Palm Jumeirah. You go?',
-                icon: const ImageWidget(
-                  iconData: ShuffleUiKitIcons.heartinhandemoji,
-                ),
+            Positioned(
+              top: MediaQuery.viewPaddingOf(context).top + ((1.sh - logoHeight) / 4),
+              left: (1.sw - logoWidth) / 2,
+              child: ImageWidget(
+                svgAsset: GraphicsFoundation.instance.svg.logo,
+                width: logoWidth,
+                height: logoHeight,
+                fit: BoxFit.cover,
               ),
             ),
-            SpacingFoundation.verticalSpace16,
-            context.notificationPopUp(
-              primaryActionWidget: context.smallButton(
-                data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
-              ),
-              secondaryActionWidget: context.smallOutlinedButton(
-                data: BaseUiKitButtonData(text: 'text', onPressed: () {}),
-              ),
-              dismissActionWidget: context.smallOutlinedButton(
-                data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
-                color: Colors.white.withOpacity(0.5),
-              ),
-              requiredData: NotificationPopupRequiredData(
-                titleString: 'Yoga today at Palm Jumeirah. You go?',
-                icon: const ImageWidget(
-                  iconData: ShuffleUiKitIcons.heartinhandemoji,
+            Positioned(
+              width: 1.sw - (SpacingFoundation.horizontalSpacing16 * 2),
+              bottom: SpacingFoundation.verticalSpacing24,
+              left: SpacingFoundation.horizontalSpacing16,
+              child: UiKitMessageWithActionsSheet(
+                title: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GradientableWidget(
+                      gradient: GradientFoundation.defaultLinearGradient,
+                      child: Text(
+                        S.current.UpdateAppMessageTitle,
+                        style: boldTextTheme?.subHeadline.copyWith(color: Colors.white),
+                      ),
+                    ),
+                    SpacingFoundation.horizontalSpace4,
+                    GradientableWidget(
+                      gradient: GradientFoundation.defaultRadialGradient,
+                      child: ImageWidget(
+                        svgAsset: GraphicsFoundation.instance.svg.star2,
+                        color: Colors.white,
+                        width: 24.w,
+                        height: 24.w,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
                 ),
-                hasShadow: true,
+                onAgree: () {},
+                onDismiss: () => Navigator.pop(context),
+                message: S.current.UpdateAppMessage,
               ),
             ),
-            SpacingFoundation.verticalSpace16,
-            context.notificationPopUp(
-              primaryActionWidget: context.smallButton(
-                data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
-              ),
-              dismissActionWidget: context.smallOutlinedButton(
-                data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
-                color: Colors.white.withOpacity(0.5),
-              ),
-              secondaryActionWidget: context.smallOutlinedButton(
-                data: BaseUiKitButtonData(text: 'text', onPressed: () {}),
-              ),
-              requiredData: NotificationPopupRequiredData(
-                titleString: 'Yoga today at Palm Jumeirah. You go?',
-                icon: const ImageWidget(
-                  iconData: ShuffleUiKitIcons.heartinhandemoji,
-                ),
-              ),
-            ),
-            // const UiKitMessageCloud(
-            //   message: 'Invite list',
-            //   subtitle: '150 users',
-            // ),
-            // SpacingFoundation.verticalSpace24,
-            // UiKitLightUpAnimation(
-            //   child: context.outlinedButton(
-            //     data: BaseUiKitButtonData(
-            //       onPressed: () {},
-            //       iconInfo: BaseUiKitButtonIconData(
-            //         iconData: ShuffleUiKitIcons.searchpeople,
-            //         color: Colors.white,
-            //       ),
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),
