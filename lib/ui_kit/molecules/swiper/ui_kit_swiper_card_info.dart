@@ -29,7 +29,7 @@ class UiKitSwiperCardInfo extends StatelessWidget {
         child: ColoredBox(
           color: ColorsFoundation.darkNeutral500.withOpacity(0.16),
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+            filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
