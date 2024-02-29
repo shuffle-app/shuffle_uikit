@@ -58,6 +58,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                   controller: scrollController,
                   physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
+                  addAutomaticKeepAlives: false,
                   itemCount: media.length,
                   padding: EdgeInsets.zero,
                   cacheExtent: 0.75.sw,
@@ -115,6 +116,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                   child: ListView.separated(
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
+                    addAutomaticKeepAlives: false,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       final branch = branches!.elementAt(index);

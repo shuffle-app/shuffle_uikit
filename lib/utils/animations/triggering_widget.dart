@@ -73,10 +73,11 @@ class _TriggeringWidgetState extends State<TriggeringWidget>
       builder: (context, child) {
         return Transform.translate(
           offset: offset.value,
-          child: widget.child,
+          child: child,
         );
       },
       animation: controller,
+      child: widget.child,
     );
   }
 }

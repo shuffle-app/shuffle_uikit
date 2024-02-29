@@ -12,7 +12,7 @@ class UiKitHideWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (shouldHide) return const SizedBox();
+    if (shouldHide) return const SizedBox.shrink();
 
     return child;
   }

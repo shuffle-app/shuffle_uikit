@@ -31,7 +31,7 @@ class SmallBlurredButtonWithIcon extends StatelessWidget implements ButtonFactor
           ),
           child: ClipOval(
             child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+              filter: ImageFilter.blur(sigmaX: 19, sigmaY: 19),
               child: Padding(
                 padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
                 child: icon ??

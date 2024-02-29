@@ -48,6 +48,7 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
       phasesPassed++;
       if (phasesPassed % 3 == 0) {
         widget.onFinished?.call();
+        animationController.removeListener(_animationListener);
       }
     }
   }
@@ -87,9 +88,9 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
     return AnimatedBuilder(
       animation: animationController,
       builder: (context, child) {
-        return AnimatedContainer(
-          curve: Curves.decelerate,
-          duration: animDuration,
+        return DecoratedBox(
+          // curve: Curves.decelerate,
+          // duration: animDuration,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             boxShadow: [

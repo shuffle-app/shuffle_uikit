@@ -32,7 +32,7 @@ class BlurredProgressButton extends StatelessWidget implements ButtonFactory {
               fit: StackFit.expand,
               children: [
                 BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+                  filter: ImageFilter.blur(sigmaX: 19, sigmaY: 19),
                   child: Container(),
                 ),
                 Align(
