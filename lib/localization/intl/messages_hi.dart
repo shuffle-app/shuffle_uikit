@@ -199,6 +199,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Confirm": MessageLookupByLibrary.simpleMessage("पुष्टि करना"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("संपर्क व्यक्ति"),
         "Continue": MessageLookupByLibrary.simpleMessage("जारी रखें"),
+        "Control": MessageLookupByLibrary.simpleMessage("नियंत्रण"),
         "Create": MessageLookupByLibrary.simpleMessage("बनाएँ"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("कार्यक्रम बनाएँ"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("जगह बनाएं"),

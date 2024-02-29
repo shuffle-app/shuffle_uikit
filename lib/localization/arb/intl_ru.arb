@@ -32,11 +32,11 @@
   "NoThx": "Нет, спс",
   "ToAccessAll": "Полный доступ",
   "FeaturesEnableGeolocation": "Функции включают геолокацию",
-  "ForgotPassword": "Забыт пароль",
+  "ForgotPassword": "Забыл пароль",
   "IncorrectLoginOrPassword": "Не тот логин или пароль",
   "OopsIWillTryAgain": "Уупс, попробую ещё",
   "Email": "Email",
-  "EnterYourEmailAddress": "Введите адрес почты",
+  "EnterYourEmailAddress": "Введите адрес эл. почты",
   "ResetPassword": "Сбросить пароль",
   "HowMuchDoYouWantToDonate": "Сколько $ хочешь задонатить?",
   "SendIt": "Отправить",
@@ -420,5 +420,6 @@
   "SearchBusinessChooseYourself7": "Семинары и тренинги",
   "LoginWith": "Продолжить с {provider}",
   "UpdateAppMessageTitle": "Пора обновиться",
-  "UpdateAppMessage": "Вы давно не обновляли наше приложение, а мы за это время добавили много удобных штук"
+  "UpdateAppMessage": "Вы давно не обновляли наше приложение, а мы за это время добавили много удобных штук",
+  "Control": "Контроль"
 }

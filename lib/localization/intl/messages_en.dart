@@ -200,6 +200,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("Contact person"),
         "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
+        "Control": MessageLookupByLibrary.simpleMessage("Control"),
         "Create": MessageLookupByLibrary.simpleMessage("Create"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Create Event"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),

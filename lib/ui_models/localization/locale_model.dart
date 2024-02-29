@@ -6,12 +6,14 @@ class LocaleModel {
   final String iconLink;
   final String name;
   final bool enabled;
+  final int sortNumber;
 
   const LocaleModel({
     required this.locale,
     required this.name,
     required this.iconLink,
     this.enabled = true,
+    required this.sortNumber,
   });
 
   LocaleModel.fromLocale(this.locale)
@@ -35,5 +37,12 @@ class LocaleModel {
           'hi' => true,
           'ar' => false,
           String() => false,
+        },
+        sortNumber = switch (locale.languageCode) {
+          'ru' => 2,
+          'en' => 1,
+          'hi' => 3,
+          'ar' => 4,
+          String() => 0,
         };
 }
