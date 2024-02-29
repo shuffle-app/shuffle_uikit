@@ -23,7 +23,7 @@ class SupportShuffleButton extends StatelessWidget {
         onTap: () => showGeneralDialog(
           context: context,
           transitionBuilder: (context, animation1, animation2, child) => BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: animation1.value * 50, sigmaY: animation1.value * 50),
+            filter: ImageFilter.blur(sigmaX: animation1.value * 30, sigmaY: animation1.value * 30),
             child: child,
           ),
           pageBuilder: (context, animation1, animation2) => FadeTransition(

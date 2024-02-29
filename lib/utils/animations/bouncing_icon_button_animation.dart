@@ -60,7 +60,7 @@ class _BouncingIconButtonAnimationState extends State<BouncingIconButtonAnimatio
             ),
             child: ClipOval(
               child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+                filter: ImageFilter.blur(sigmaX: 19, sigmaY: 19),
                 child: widget.icon.paddingAll(widget.iconPadding),
               ),
             ),

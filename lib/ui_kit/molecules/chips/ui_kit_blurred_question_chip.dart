@@ -26,7 +26,7 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
         onTap: onTap,
         child: Ink(
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 40, sigmaY: 40, tileMode: TileMode.decal),
+            filter: ImageFilter.blur(sigmaX: 19, sigmaY: 19, tileMode: TileMode.decal),
             child: DecoratedBox(
               decoration: BoxDecoration(
                 border: Border.all(
