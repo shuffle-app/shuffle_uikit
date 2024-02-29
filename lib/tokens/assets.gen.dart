@@ -435,6 +435,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/delivery-truck.png
   AssetGenImage get deliveryTruck => const AssetGenImage('assets/images/png/delivery-truck.png');
 
+  /// File path: assets/images/png/donat.png
+  AssetGenImage get donat => const AssetGenImage('assets/images/png/donat.png');
+
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
@@ -456,8 +459,14 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/health-permit.png
   AssetGenImage get healthPermit => const AssetGenImage('assets/images/png/health-permit.png');
 
+  /// File path: assets/images/png/help.png
+  AssetGenImage get help => const AssetGenImage('assets/images/png/help.png');
+
   /// File path: assets/images/png/hindu.png
   AssetGenImage get hindu => const AssetGenImage('assets/images/png/hindu.png');
+
+  /// File path: assets/images/png/honest.png
+  AssetGenImage get honest => const AssetGenImage('assets/images/png/honest.png');
 
   /// File path: assets/images/png/invite_mock_1.png
   AssetGenImage get inviteMock1 => const AssetGenImage('assets/images/png/invite_mock_1.png');
@@ -642,6 +651,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/service-social-4.png
   AssetGenImage get serviceSocial4 => const AssetGenImage('assets/images/png/service-social-4.png');
 
+  /// File path: assets/images/png/shoot.png
+  AssetGenImage get shoot => const AssetGenImage('assets/images/png/shoot.png');
+
   /// File path: assets/images/png/spinner_event.png
   AssetGenImage get spinnerEvent => const AssetGenImage('assets/images/png/spinner_event.png');
 
@@ -785,6 +797,7 @@ class $AssetsImagesPngGen {
         coach,
         compactRatingCardMock,
         deliveryTruck,
+        donat,
         eventAvatar,
         fatigueEmoji,
         geoPermit,
@@ -792,7 +805,9 @@ class $AssetsImagesPngGen {
         goldenMedal,
         grocery,
         healthPermit,
+        help,
         hindu,
+        honest,
         inviteMock1,
         inviteMock2,
         inviteMock3,
@@ -853,6 +868,7 @@ class $AssetsImagesPngGen {
         serviceSocial2,
         serviceSocial3,
         serviceSocial4,
+        shoot,
         spinnerEvent,
         star2,
         surpriseEmoji,
@@ -1233,9 +1249,6 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/dollar_outlined.svg
   SvgGenImage get dollarOutlined => const SvgGenImage('assets/images/svg/dollar_outlined.svg');
 
-  /// File path: assets/images/svg/donat.svg
-  SvgGenImage get donat => const SvgGenImage('assets/images/svg/donat.svg');
-
   /// File path: assets/images/svg/dubai-silhouette.svg
   SvgGenImage get dubaiSilhouette => const SvgGenImage('assets/images/svg/dubai-silhouette.svg');
 
@@ -1259,9 +1272,6 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/filled_radio.svg
   SvgGenImage get filledRadio => const SvgGenImage('assets/images/svg/filled_radio.svg');
-
-  /// File path: assets/images/svg/film.svg
-  SvgGenImage get film => const SvgGenImage('assets/images/svg/film.svg');
 
   /// File path: assets/images/svg/filter.svg
   SvgGenImage get filter => const SvgGenImage('assets/images/svg/filter.svg');
@@ -1301,12 +1311,6 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/hand-shake.svg
   SvgGenImage get handShake => const SvgGenImage('assets/images/svg/hand-shake.svg');
-
-  /// File path: assets/images/svg/hands.svg
-  SvgGenImage get hands => const SvgGenImage('assets/images/svg/hands.svg');
-
-  /// File path: assets/images/svg/handshake_3.svg
-  SvgGenImage get handshake3 => const SvgGenImage('assets/images/svg/handshake_3.svg');
 
   /// File path: assets/images/svg/heart-broken-fill.svg
   SvgGenImage get heartBrokenFill => const SvgGenImage('assets/images/svg/heart-broken-fill.svg');
@@ -1624,6 +1628,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/tiger.svg
   SvgGenImage get tiger => const SvgGenImage('assets/images/svg/tiger.svg');
 
+  /// File path: assets/images/svg/tool.svg
+  SvgGenImage get tool => const SvgGenImage('assets/images/svg/tool.svg');
+
   /// File path: assets/images/svg/trash.svg
   SvgGenImage get trash => const SvgGenImage('assets/images/svg/trash.svg');
 
@@ -1811,7 +1818,6 @@ class $AssetsImagesSvgGen {
         dollar,
         dollarBlackOutlined,
         dollarOutlined,
-        donat,
         dubaiSilhouette,
         emptyRadio,
         exclamation,
@@ -1820,7 +1826,6 @@ class $AssetsImagesSvgGen {
         family,
         files,
         filledRadio,
-        film,
         filter,
         finance,
         fingerPrint,
@@ -1834,8 +1839,6 @@ class $AssetsImagesSvgGen {
         gym,
         handShake2,
         handShake,
-        hands,
-        handshake3,
         heartBrokenFill,
         heartFill,
         heartOutline,
@@ -1941,6 +1944,7 @@ class $AssetsImagesSvgGen {
         table,
         thumbUp,
         tiger,
+        tool,
         trash,
         trendDown,
         trendUp,
