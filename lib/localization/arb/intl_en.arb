@@ -420,6 +420,7 @@
   "SearchBusinessChooseYourself5": "Forums (industry exhibitions)",
   "SearchBusinessChooseYourself6": "Networking",
   "SearchBusinessChooseYourself7": "Seminars and trainings",
-  "LoginWith": "Continue with {provider}"
+  "LoginWith": "Continue with {provider}",
+  "Control": "Control"
 
 }

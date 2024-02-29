@@ -420,5 +420,6 @@
   "SearchBusinessChooseYourself7": "Seminars and trainings",
   "LoginWith": "Continue with {provider}",
   "UpdateAppMessageTitle": "Time for update",
-  "UpdateAppMessage": "It's been a while since you've updated our app, and we've added a lot of handy stuff in the meantime"
+  "UpdateAppMessage": "It's been a while since you've updated our app, and we've added a lot of handy stuff in the meantime",
+  "Control": "Control"
 }

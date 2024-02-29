@@ -202,6 +202,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ContactPerson":
             MessageLookupByLibrary.simpleMessage("Контактное лицо"),
         "Continue": MessageLookupByLibrary.simpleMessage("Продолжить"),
+        "Control": MessageLookupByLibrary.simpleMessage("Контроль"),
         "Create": MessageLookupByLibrary.simpleMessage("Создать"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Создать место"),
@@ -261,7 +262,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, введите адрес места"),
         "EnterYourEmailAddress":
-            MessageLookupByLibrary.simpleMessage("Введите адрес почты"),
+            MessageLookupByLibrary.simpleMessage("Введите адрес эл. почты"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Возникла ошибка"),
         "ErrorOccuredWithoutMessage":
             MessageLookupByLibrary.simpleMessage("Ошибка без сообщения"),
@@ -308,7 +309,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "For": MessageLookupByLibrary.simpleMessage("Для"),
         "ForFormattedPrice": m12,
         "ForPeriod": MessageLookupByLibrary.simpleMessage("на"),
-        "ForgotPassword": MessageLookupByLibrary.simpleMessage("Забыт пароль"),
+        "ForgotPassword": MessageLookupByLibrary.simpleMessage("Забыл пароль"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("\nбесплатных мест"),
         "FulfillTheDream":
             MessageLookupByLibrary.simpleMessage("Исполнить мечту"),

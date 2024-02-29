@@ -13,6 +13,8 @@ class UiKitLocaleSelector extends StatelessWidget {
   final List<LocaleModel> availableLocales;
   final ValueChanged<LocaleModel> onLocaleChanged;
 
+  List<LocaleModel> get _sortedLocales => List.from(availableLocales..sort((a, b) => a.sortNumber.compareTo(b.sortNumber)));
+
   @override
   Widget build(BuildContext context) {
     return UiKitMenu<LocaleModel>(
@@ -28,12 +30,12 @@ class UiKitLocaleSelector extends StatelessWidget {
       ),
       customTopPadding: 0.3.sh,
       items: List.generate(
-        availableLocales.length,
+        _sortedLocales.length,
         (index) => UiKitMenuItem(
-          title: availableLocales[index].name,
-          value: availableLocales[index],
-          iconLink: availableLocales[index].iconLink,
-          enabled: availableLocales[index].enabled,
+          title: _sortedLocales[index].name,
+          value: _sortedLocales[index],
+          iconLink: _sortedLocales[index].iconLink,
+          enabled: _sortedLocales[index].enabled,
         ),
       ),
       onSelected: (menuItem) {
