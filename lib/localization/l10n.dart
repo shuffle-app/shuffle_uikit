@@ -4324,6 +4324,26 @@ class S {
       args: [provider],
     );
   }
+
+  /// `Time for update`
+  String get UpdateAppMessageTitle {
+    return Intl.message(
+      'Time for update',
+      name: 'UpdateAppMessageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It's been a while since you've updated our app, and we've added a lot of handy stuff in the meantime`
+  String get UpdateAppMessage {
+    return Intl.message(
+      'It\'s been a while since you\'ve updated our app, and we\'ve added a lot of handy stuff in the meantime',
+      name: 'UpdateAppMessage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

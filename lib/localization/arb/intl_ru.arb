@@ -418,5 +418,7 @@
   "SearchBusinessChooseYourself5": "Форумы (отраслевые выставки)",
   "SearchBusinessChooseYourself6": "Нетворкинг",
   "SearchBusinessChooseYourself7": "Семинары и тренинги",
-  "LoginWith": "Продолжить с {provider}"
+  "LoginWith": "Продолжить с {provider}",
+  "UpdateAppMessageTitle": "Пора обновиться",
+  "UpdateAppMessage": "Вы давно не обновляли наше приложение, а мы за это время добавили много удобных штук"
 }

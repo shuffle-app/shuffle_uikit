@@ -664,6 +664,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpcomingGlobalEvents":
             MessageLookupByLibrary.simpleMessage("आगामी वैश्विक घटनाएँ"),
         "Update": MessageLookupByLibrary.simpleMessage("अद्यतन करें"),
+        "UpdateAppMessage": MessageLookupByLibrary.simpleMessage(
+            "आपके द्वारा अद्यतन किए जाने के बाद से हमारे ऐप में काफी उपयोगी चीजें जोड़ दी गई हैं"),
+        "UpdateAppMessageTitle":
+            MessageLookupByLibrary.simpleMessage("अद्यतन का समय"),
         "UpgradeAccount": m32,
         "UpgradeAccountConfirmation":
             MessageLookupByLibrary.simpleMessage("अपग्रेड"),

@@ -14,4 +14,8 @@ extension TimeIsNightExtention on TimeOfDay {
   bool get isNight {
     return hour >= 18;
   }
+
+  bool isBefore(TimeOfDay other) {
+    return hour < other.hour || (hour == other.hour && minute < other.minute);
+  }
 }

@@ -418,5 +418,7 @@
   "SearchBusinessChooseYourself5": "Forums (industry exhibitions)",
   "SearchBusinessChooseYourself6": "Networking",
   "SearchBusinessChooseYourself7": "Seminars and trainings",
-  "LoginWith": "Continue with {provider}"
+  "LoginWith": "Continue with {provider}",
+  "UpdateAppMessageTitle": "Time for update",
+  "UpdateAppMessage": "It's been a while since you've updated our app, and we've added a lot of handy stuff in the meantime"
 }

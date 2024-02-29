@@ -656,6 +656,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpcomingGlobalEvents":
             MessageLookupByLibrary.simpleMessage("Upcoming globals"),
         "Update": MessageLookupByLibrary.simpleMessage("Update"),
+        "UpdateAppMessage": MessageLookupByLibrary.simpleMessage(
+            "It\'s been a while since you\'ve updated our app, and we\'ve added a lot of handy stuff in the meantime"),
+        "UpdateAppMessageTitle":
+            MessageLookupByLibrary.simpleMessage("Time for update"),
         "UpgradeAccount": m32,
         "UpgradeAccountConfirmation":
             MessageLookupByLibrary.simpleMessage("Upgrade"),
