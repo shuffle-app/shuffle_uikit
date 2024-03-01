@@ -142,6 +142,8 @@
   "YourNiche": "Ваша ниша",
   "DontMissIt": "Не пропустите",
   "HowAreYouFeelingTonight": "Как вы себя чувствуете?",
+  "HowAreYouFeelingToday": "How’re you feeling today?",
+  "HowAreYouFeelingThisMorning": "How’re you feeling this morning?",
   "Guess": "Угадать",
   "YouBetterCheckThisOut": "Вам лучше взглянуть",
   "Favorites": "Избранное",
@@ -422,4 +424,5 @@
   "UpdateAppMessageTitle": "Пора обновиться",
   "UpdateAppMessage": "Вы давно не обновляли наше приложение, а мы за это время добавили много удобных штук",
   "Control": "Контроль"
+
 }

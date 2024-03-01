@@ -145,6 +145,8 @@
   "YourNiche": "Your niche",
   "DontMissIt": "Don't miss it",
   "HowAreYouFeelingTonight": "How’re you feeling tonight?",
+  "HowAreYouFeelingToday": "How’re you feeling today?",
+  "HowAreYouFeelingThisMorning": "How’re you feeling this morning?",
   "Guess": "Guess",
   "YouBetterCheckThisOut": "You better check this out",
   "Favorites": "Favorites",
@@ -422,4 +424,5 @@
   "UpdateAppMessageTitle": "Time for update",
   "UpdateAppMessage": "It's been a while since you've updated our app, and we've added a lot of handy stuff in the meantime",
   "Control": "Control"
+
 }

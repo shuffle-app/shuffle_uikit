@@ -50,7 +50,7 @@ class UiKitBottomModalSheet extends StatelessWidget {
                                   shape: shape ?? const RoundedRectangleBorder(),
                                 ),
                                 clipBehavior: Clip.hardEdge,
-                                child: SingleChildScrollView(
+                                child: data.isWidgetScrollable ? data.child : SingleChildScrollView(
                                   primary: true,
                                   physics: const ClampingScrollPhysics(),
                                   child: data.child.paddingOnly(

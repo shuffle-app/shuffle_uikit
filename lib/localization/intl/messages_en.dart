@@ -326,6 +326,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "HintSystemDisabled":
             MessageLookupByLibrary.simpleMessage("Hint system disabled"),
         "HintSystemEnabled": m14,
+        "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
+            "How’re you feeling this morning?"),
+        "HowAreYouFeelingToday":
+            MessageLookupByLibrary.simpleMessage("How’re you feeling today?"),
         "HowAreYouFeelingTonight":
             MessageLookupByLibrary.simpleMessage("How’re you feeling tonight?"),
         "HowItWorks": MessageLookupByLibrary.simpleMessage("How it\nworks"),

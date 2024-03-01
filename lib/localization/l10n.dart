@@ -1486,6 +1486,26 @@ class S {
     );
   }
 
+  /// `How’re you feeling today?`
+  String get HowAreYouFeelingToday {
+    return Intl.message(
+      'How’re you feeling today?',
+      name: 'HowAreYouFeelingToday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How’re you feeling this morning?`
+  String get HowAreYouFeelingThisMorning {
+    return Intl.message(
+      'How’re you feeling this morning?',
+      name: 'HowAreYouFeelingThisMorning',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Guess`
   String get Guess {
     return Intl.message(

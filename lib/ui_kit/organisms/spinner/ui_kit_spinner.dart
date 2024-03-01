@@ -227,7 +227,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     if (!_isInteracting) {
                       changeInteractingState(true);
                       setSpinningGesture(
-                          details.delta.dy != 0 && details.delta.dy < 0 ? SpinningGesture.up : SpinningGesture.spin);
+                          details.delta.dx.abs() >= 5  ? SpinningGesture.spin : SpinningGesture.up);
                     }
                     if (widget.pagingController.itemList?.isEmpty ?? false) return;
 
@@ -266,7 +266,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                         _transitionNotifier.value = 0;
                         return;
                       }
-                      FeedbackIsolate.instance.addEvent(SystemSoundIsolateRachetClick());
+                      FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics());
                       unawaited(showDateRangePickerDialog(context, initialDateRange: widget.filterDate).then((value) {
                         widget.onDateRangeChanged?.call(value);
                         _transitionNotifier.value = 0;
