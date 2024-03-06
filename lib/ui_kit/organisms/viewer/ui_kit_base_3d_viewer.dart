@@ -10,12 +10,14 @@ class UiKitBase3DViewer extends StatelessWidget {
   final String? environmentImage;
   final bool? autoRotate;
   final ValueChanged<WebViewController>? onWebViewCreated;
+  final Set<JavascriptChannel>? javascriptChannels;
 
   const UiKitBase3DViewer(
       {super.key,
       required this.localPath,
       this.backgroundColor,
       this.animationName,
+      this.javascriptChannels,
       this.autoPlay,
       this.onWebViewCreated,
       this.environmentImage,
@@ -32,13 +34,16 @@ class UiKitBase3DViewer extends StatelessWidget {
       src: 'file://$localPath',
       ar: true,
       disableTap: true,
+      animationCrossfadeDuration: 500,
       xrEnvironment: true,
       arPlacement: ArPlacement.floor,
+      arScale: ArScale.auto,
       arModes: const ['scene-viewer', 'webxr', 'quick-look'],
       autoRotate: autoRotate,
       disableZoom: true,
       exposure: 1,
       environmentImage: environmentImage,
+      javascriptChannels: javascriptChannels,
     );
   }
 }
