@@ -423,6 +423,18 @@
   "LoginWith": "Продолжить с {provider}",
   "UpdateAppMessageTitle": "Пора обновиться",
   "UpdateAppMessage": "Вы давно не обновляли наше приложение, а мы за это время добавили много удобных штук",
-  "Control": "Контроль"
-
+  "Control": "Контроль",
+  "Rating": "Рейтинг",
+  "AddFeedback": "Поставить оценку",
+  "AddFeedbackFieldTitle": "Опишите ваш опыт",
+  "AddFeedbackFieldHint": "Расскажите что вам понравилось или запомнилось",
+  "AddReview": "Оставить отзыв",
+  "AddReviewFieldHint": "Напишите полезное дополнение",
+  "AddReviewFieldTitle": "Опишите ваш опыт",
+  "PersonalRespect": "Личное уважение",
+  "AddToPersonalTop": "Добавить в личный ТОП",
+  "AddInfluencerFeedbackPopOverText": "Напишите подробный отзыв, используйте все доступные символы, чтобы как можно больше людей могли его оценить",
+  "TitleYourTop": "Назовите ваш ТОП",
+  "AddReviewPopOverText": "Напишите дополнение к отзыву, которое будет полезно для других посетителей",
+  "FeedbackAddedSuccessfullyMessage": "Ваш отзыв успешно добавлен"
 }

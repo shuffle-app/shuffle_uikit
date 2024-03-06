@@ -1646,6 +1646,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/triple_arrow_black.svg
   SvgGenImage get tripleArrowBlack => const SvgGenImage('assets/images/svg/triple_arrow_black.svg');
 
+  /// File path: assets/images/svg/tripple_arrow_cliped.svg
+  SvgGenImage get trippleArrowCliped => const SvgGenImage('assets/images/svg/tripple_arrow_cliped.svg');
+
   /// File path: assets/images/svg/unique-marker.svg
   SvgGenImage get uniqueMarker => const SvgGenImage('assets/images/svg/unique-marker.svg');
 
@@ -1950,6 +1953,7 @@ class $AssetsImagesSvgGen {
         trendUp,
         tripleArrow,
         tripleArrowBlack,
+        trippleArrowCliped,
         uniqueMarker,
         unitedKingdom,
         unlink,

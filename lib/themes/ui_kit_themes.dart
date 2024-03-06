@@ -15,52 +15,52 @@ class UiKitThemes {
     iconTheme: const IconThemeData(color: ColorsFoundation.solidLightSurface),
     colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.info, onSurface: Colors.black),
     dropdownMenuTheme: DropdownMenuThemeData(
-        textStyle: const TextStyle(
-          fontFamily: 'Unbounded',
-          fontSize: 16,
-          fontWeight: FontWeight.w300,
-          // color: Color(0xffffffff),
-          // color: Color(0xFF000000),
-          package: 'shuffle_uikit',
-        ),
-        menuStyle: MenuStyle(
-          backgroundColor: MaterialStateProperty.resolveWith((states) => UiKitColors.lightSurface),
+      textStyle: const TextStyle(
+        fontFamily: 'Unbounded',
+        fontSize: 16,
+        fontWeight: FontWeight.w300,
+        // color: Color(0xffffffff),
+        // color: Color(0xFF000000),
+        package: 'shuffle_uikit',
+      ),
+      menuStyle: MenuStyle(
+        backgroundColor: MaterialStateProperty.resolveWith((states) => UiKitColors.lightSurface),
 // elevation: 0,
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: UiKitColors.lightSurface,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadiusFoundation.all16,
+          borderSide: BorderSide.none,
         ),
-        inputDecorationTheme: InputDecorationTheme(
-          filled: true,
-          fillColor: UiKitColors.lightSurface,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all16,
-            borderSide: BorderSide.none,
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadiusFoundation.all16,
+          borderSide: const BorderSide(
+            color: Colors.white,
+            width: 2,
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all16,
-            borderSide: const BorderSide(
-              color: Colors.white,
-              width: 2,
-            ),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadiusFoundation.all16,
+          borderSide: BorderSide.none,
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadiusFoundation.all16,
+          borderSide: const BorderSide(
+            color: ColorsFoundation.error,
+            width: 2,
           ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all16,
-            borderSide: BorderSide.none,
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all16,
-            borderSide: const BorderSide(
-              color: ColorsFoundation.error,
-              width: 2,
-            ),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadiusFoundation.all16,
-            borderSide: const BorderSide(
-              color: ColorsFoundation.error,
-              width: 2,
-            ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadiusFoundation.all16,
+          borderSide: const BorderSide(
+            color: ColorsFoundation.error,
+            width: 2,
           ),
         ),
       ),
+    ),
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith((_) => ColorsFoundation.solidLightSurface),
@@ -202,6 +202,39 @@ class UiKitThemes {
           ),
           focusedErrorBorder: OutlineInputBorder(
             borderRadius: BorderRadiusFoundation.max,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+        ),
+        noIconInputBorderRadius20: InputDecorationTheme(
+          filled: true,
+          fillColor: ColorsFoundation.solidSurface,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all20,
+            borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all20,
+            borderSide: const BorderSide(
+              color: Colors.white,
+              width: 2,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all20,
+            borderSide: BorderSide.none,
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all20,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all20,
             borderSide: const BorderSide(
               color: ColorsFoundation.error,
               width: 2,
@@ -468,6 +501,39 @@ class UiKitThemes {
             ),
           ),
         ),
+        noIconInputBorderRadius20: InputDecorationTheme(
+          filled: true,
+          fillColor: ColorsFoundation.solidSurface,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all20,
+            borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all20,
+            borderSide: const BorderSide(
+              color: Colors.white,
+              width: 2,
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all20,
+            borderSide: BorderSide.none,
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all20,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadiusFoundation.all20,
+            borderSide: const BorderSide(
+              color: ColorsFoundation.error,
+              width: 2,
+            ),
+          ),
+        ),
         noIconInputTheme: InputDecorationTheme(
           filled: true,
           fillColor: ColorsFoundation.solidSurface,
@@ -507,8 +573,7 @@ class UiKitThemes {
           errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
           focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
           focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
-          disabledBorder:
-              UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
+          disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
         ),
         customAppBapTheme: AppBarTheme(
           iconTheme: const IconThemeData(
