@@ -43,7 +43,6 @@ class UiKitHeaderWithLeading extends StatelessWidget {
                 ),
                 if (titleIcon != null) ...[SpacingFoundation.horizontalSpace12, titleIcon!]
               ]),
-              SpacingFoundation.verticalSpace2,
               Text(
                 subtitle ?? '',
                 style: subtitleStyle ?? textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),

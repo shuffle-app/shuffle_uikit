@@ -68,6 +68,8 @@ export 'inputs/inputs.dart';
 export 'inputs/ui_kit_code_input_field.dart';
 export 'inputs/ui_kit_elevated_input_with_switching_prefix.dart';
 export 'inputs/ui_kit_input_field_with_chips.dart';
+export 'inputs/ui_kit_symbols_counter_input_field.dart';
+export 'inputs/ui_kit_titled_wrapped_input.dart';
 export 'profile/grid_titled_item_widget.dart';
 export 'profile/ui_kit_fame_item.dart';
 export 'profile/ui_kit_reaction_preview.dart';

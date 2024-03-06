@@ -42,3 +42,43 @@ Future<T?> showUiKitPopover<T extends Object?>(BuildContext context,
     direction: PopoverDirection.bottom,
   );
 }
+
+Future<T?> showEdgePopOver<T extends Object?>(
+  BuildContext context, {
+  required Widget title,
+  // required Offset popOverTailStart,
+  Widget? description,
+  String buttonText = 'OK',
+  VoidCallback? onPop,
+  bool showButton = true,
+  double? customMinHeight,
+}) {
+  final renderObject = context.findRenderObject() as RenderBox;
+  final popOverTailStart = Offset(387.1, 387.0);//renderObject.localToGlobal(const Offset(6, -16));
+  print('popOverTailStart: $popOverTailStart');
+
+  return showDialog(
+    context: context,
+    builder: (context) {
+      return SizedBox.fromSize(
+        size: Size(1.sw, 1.sh),
+        child: Stack(
+          fit: StackFit.passthrough,
+          children: [
+            Positioned(
+              top: popOverTailStart.dy,
+              left: popOverTailStart.dx,
+              width: 10,
+              height: 10,
+              child: Container(
+                width: 10,
+                height: 10,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}

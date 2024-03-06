@@ -27,6 +27,7 @@ export 'cards/ui_kit_message_card.dart';
 export 'cards/ui_kit_no_action_overflown_card.dart';
 export 'cards/ui_kit_overflown_action_card.dart';
 export 'cards/ui_kit_place_type_card.dart';
+export 'cards/ui_kit_rating_bar_with_stars.dart';
 export 'cards/ui_kit_shaded_content_card.dart';
 export 'cards/ui_kit_small_ad_banner_card.dart';
 export 'cards/ui_kit_social_search_card.dart';

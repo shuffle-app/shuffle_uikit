@@ -87,6 +87,17 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
               ),
             ],
           ),
+          SpacingFoundation.verticalSpace24,
+          UiKitTitledWrappedInput(
+            input: UiKitInputFieldNoIcon(
+              controller: TextEditingController(),
+              fillColor: context.uiKitTheme?.colorScheme.surface3,
+            ),
+            title: 'title',
+            popOverMessage: S.current.AddInfluencerFeedbackPopOverText,
+          ).paddingSymmetric(
+            horizontal: EdgeInsetsFoundation.horizontal16,
+          ),
         ],
       ),
     );

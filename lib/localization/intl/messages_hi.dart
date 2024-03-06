@@ -129,7 +129,24 @@ class MessageLookup extends MessageLookupByLibrary {
         "Account": MessageLookupByLibrary.simpleMessage("खाता"),
         "ActivityType":
             MessageLookupByLibrary.simpleMessage("क्रिया के प्रकार"),
+        "AddFeedback":
+            MessageLookupByLibrary.simpleMessage("प्रतिक्रिया जोड़ें"),
+        "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
+            "बताएं कि आपको क्या पसंद आया या याद रहा"),
+        "AddFeedbackFieldTitle":
+            MessageLookupByLibrary.simpleMessage("अपने अनुभव का वर्णन करें"),
+        "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
+            "एक विस्तृत समीक्षा लिखें, सभी उपलब्ध वर्णों का उपयोग करें ताकि जितने अधिक लोग संवाद कर सकें"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("प्रचार जोड़ें"),
+        "AddReview": MessageLookupByLibrary.simpleMessage("समीक्षा जोड़ें"),
+        "AddReviewFieldHint":
+            MessageLookupByLibrary.simpleMessage("एक उपयोगी जोड़ना लिखें"),
+        "AddReviewFieldTitle":
+            MessageLookupByLibrary.simpleMessage("अपने अनुभव का वर्णन करें"),
+        "AddReviewPopOverText": MessageLookupByLibrary.simpleMessage(
+            "एक समीक्षा जोड़ें जो अन्य आगंतुकों के लिए उपयोगी होगी"),
+        "AddToPersonalTop":
+            MessageLookupByLibrary.simpleMessage("व्यक्तिगत शीर्ष पर जोड़ें"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("स्वयं को सूची में जोड़ें"),
         "Address": MessageLookupByLibrary.simpleMessage("पता"),
@@ -448,6 +465,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Personal": MessageLookupByLibrary.simpleMessage("व्यक्तिगत"),
         "PersonalCredentials":
             MessageLookupByLibrary.simpleMessage("व्यक्तिगत क्रेडेंशियल्स"),
+        "PersonalRespect":
+            MessageLookupByLibrary.simpleMessage("व्यक्तिगत सम्मान"),
         "Phone": MessageLookupByLibrary.simpleMessage("फ़ोन"),
         "PhoneVerification":
             MessageLookupByLibrary.simpleMessage("फ़ोन सत्यापन"),
@@ -523,6 +542,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("अकेले मत रहो..."),
         "Published": MessageLookupByLibrary.simpleMessage("प्रकाशित"),
+        "Rating": MessageLookupByLibrary.simpleMessage("रेटिंग"),
         "Read": m24,
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),
@@ -646,6 +666,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "एक गैर के माध्यम से-\nएग्रीगेटर प्रणाली\nविशेष रूप से आप के लिए"),
         "Time": MessageLookupByLibrary.simpleMessage("समय"),
         "Title": MessageLookupByLibrary.simpleMessage("शीर्षक"),
+        "TitleYourTop":
+            MessageLookupByLibrary.simpleMessage("अपने शीर्ष का शीर्षक दें"),
         "ToAccessAll":
             MessageLookupByLibrary.simpleMessage("सभी तक पहुँचने के लिए"),
         "ToAllowAccessGoToSettings": MessageLookupByLibrary.simpleMessage(

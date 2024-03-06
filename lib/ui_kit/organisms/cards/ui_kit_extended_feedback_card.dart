@@ -25,67 +25,62 @@ class UiKitExtendedFeedbackCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
-    return LayoutBuilder(
-      builder: (context, size) {
-        final width = size.maxWidth;
-
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            UiKitHeaderWithLeading(
-              leading: CircularAvatar(
-                avatarUrl: avatarUrl ?? '',
-                name: title,
-                height: width * 0.11,
-              ),
-              title: title ?? '',
-              subtitle: datePosted?.timeAgo,
-              trailing: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  GestureDetector(
-                    onTap: onEdit,
-                    child: const ImageWidget(
-                      iconData: ShuffleUiKitIcons.pencil,
-                      color: ColorsFoundation.darkNeutral900,
-                    ),
-                  ),
-                  SpacingFoundation.horizontalSpace12,
-                  GestureDetector(
-                    onTap: onDelete,
-                    child: const ImageWidget(
-                      iconData: ShuffleUiKitIcons.trash,
-                      color: ColorsFoundation.darkNeutral900,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SpacingFoundation.verticalSpace12,
-            Text(
-              text ?? '',
-              style: textTheme?.caption1Medium,
-            ),
-            SpacingFoundation.verticalSpace12,
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                const Spacer(),
-                const ImageWidget(
-                  iconData: ShuffleUiKitIcons.thumbup,
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        UiKitHeaderWithLeading(
+          leading: context.userAvatar(
+            size: UserAvatarSize.x24x24,
+            type: UserTileType.ordinary,
+            userName: title ?? '',
+            imageUrl: avatarUrl,
+          ),
+          title: title ?? '',
+          subtitle: datePosted?.timeAgo,
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              GestureDetector(
+                onTap: onEdit,
+                child: ImageWidget(
+                  svgAsset: GraphicsFoundation.instance.svg.pencil,
                   color: ColorsFoundation.darkNeutral900,
                 ),
-                SpacingFoundation.horizontalSpace8,
-                Text(
-                  S.of(context).HelpfulNCount(helpfulCount ?? ''),
-                  style: textTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
-                )
-              ],
+              ),
+              SpacingFoundation.horizontalSpace12,
+              GestureDetector(
+                onTap: onDelete,
+                child: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.trash,
+                  color: ColorsFoundation.darkNeutral900,
+                ),
+              ),
+            ],
+          ),
+        ),
+        SpacingFoundation.verticalSpace12,
+        Text(
+          text ?? '',
+          style: textTheme?.caption1Medium,
+        ),
+        SpacingFoundation.verticalSpace12,
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            const Spacer(),
+            const ImageWidget(
+              iconData: ShuffleUiKitIcons.like,
+              color: ColorsFoundation.darkNeutral900,
             ),
+            SpacingFoundation.horizontalSpace8,
+            Text(
+              S.of(context).HelpfulNCount(helpfulCount ?? ''),
+              style: textTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
+            )
           ],
-        );
-      },
+        ),
+      ],
     );
   }
 }

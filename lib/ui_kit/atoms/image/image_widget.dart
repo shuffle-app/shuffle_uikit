@@ -69,6 +69,12 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    if (iconData == ShuffleUiKitIcons.info) {
+      final renderObject = context.findRenderObject() as RenderBox?;
+      final tailStart = renderObject?.localToGlobal(Offset.zero);
+      print('ShuffleUiKitIcons.info position: $tailStart');
+    }
+
     if (iconData != null || (link != null && !link!.contains('/') && link!.isNotEmpty)) {
       return Icon(
         iconData ?? GraphicsFoundation.instance.iconFromString(link ?? ''),

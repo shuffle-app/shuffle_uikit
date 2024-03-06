@@ -25,6 +25,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.hintTextColor,
     this.textColor,
     this.keyboardType,
+    this.maxSymbols,
     this.inputFormatters,
     this.obscureText = false,
   }) : super(key: key);
@@ -41,6 +42,8 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
   final String? Function(String? p1)? validator;
   @override
   final bool obscureText;
+
+  final int? maxSymbols;
 
   final ValueChanged<String>? onChanged;
 
@@ -117,6 +120,8 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         onFieldSubmitted: widget.onSubmitted,
         inputFormatters: widget.inputFormatters,
         textAlign: widget.textAlign ?? TextAlign.left,
+        maxLength: widget.maxSymbols,
+        buildCounter: widget.maxSymbols == null ? null : _buildCounter,
         decoration: InputDecoration(
           hintText: widget.hintText,
           errorText: widget.errorText,
@@ -128,6 +133,19 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
           hintStyle: hintStyle,
         ),
       ),
+    );
+  }
+
+  Widget _buildCounter(
+    BuildContext context, {
+    required int currentLength,
+    required int? maxLength,
+    required bool isFocused,
+  }) {
+    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    return Text(
+      '$currentLength / $maxLength',
+      style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
     );
   }
 }

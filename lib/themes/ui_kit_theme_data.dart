@@ -7,6 +7,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final UiKitColorScheme colorScheme;
   final InputDecorationTheme iconInputTheme;
   final InputDecorationTheme noIconInputTheme;
+  final InputDecorationTheme noIconInputBorderRadius20;
   final InputDecorationTheme noFillInputTheme;
   final AppBarTheme customAppBapTheme;
   final TabBarTheme uiKitTabBarTheme;
@@ -55,6 +56,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     required this.bottomSheetTheme,
     required this.smallOrdinaryButtonStyle,
     required this.themeMode,
+    required this.noIconInputBorderRadius20,
   });
 
   @override
@@ -65,6 +67,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     InputDecorationTheme? iconInputTheme,
     InputDecorationTheme? noIconInputTheme,
     InputDecorationTheme? noFillInputTheme,
+    InputDecorationTheme? noIconInputBorderRadius24,
     AppBarTheme? customAppBapTheme,
     TabBarTheme? uiKitTabBarTheme,
     UiKitBoldTextTheme? boldTextTheme,
@@ -81,6 +84,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     UiKitColorScheme? colorScheme,
   }) {
     return UiKitThemeData(
+      noIconInputBorderRadius20: noIconInputBorderRadius24 ?? this.noIconInputBorderRadius20,
       themeMode: themeMode ?? this.themeMode,
       customColor: customColor ?? this.customColor,
       blurredBottomNavigationBarTheme: blurredBottomNavigationBarTheme ?? this.blurredBottomNavigationBarTheme,
@@ -109,6 +113,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     }
 
     return UiKitThemeData(
+      noIconInputBorderRadius20: noIconInputBorderRadius20,
       themeMode: themeMode,
       customColor: Color.lerp(customColor, other.customColor, t) ?? Colors.white,
       colorScheme: colorScheme,
