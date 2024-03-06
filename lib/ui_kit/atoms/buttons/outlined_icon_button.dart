@@ -48,7 +48,7 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
             borderRadius: BorderRadiusFoundation.max,
           ),
           child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+            filter: ImageFilter.blur(sigmaX: 19, sigmaY: 19),
             child: Padding(
               padding: EdgeInsets.all(hideBorder ? EdgeInsetsFoundation.all4 : EdgeInsetsFoundation.all16),
               child: icon ??

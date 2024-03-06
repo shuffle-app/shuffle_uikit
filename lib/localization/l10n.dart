@@ -1486,6 +1486,26 @@ class S {
     );
   }
 
+  /// `How’re you feeling today?`
+  String get HowAreYouFeelingToday {
+    return Intl.message(
+      'How’re you feeling today?',
+      name: 'HowAreYouFeelingToday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How’re you feeling this morning?`
+  String get HowAreYouFeelingThisMorning {
+    return Intl.message(
+      'How’re you feeling this morning?',
+      name: 'HowAreYouFeelingThisMorning',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Guess`
   String get Guess {
     return Intl.message(
@@ -4245,6 +4265,26 @@ class S {
     );
   }
 
+  /// `Time for update`
+  String get UpdateAppMessageTitle {
+    return Intl.message(
+      'Time for update',
+      name: 'UpdateAppMessageTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It's been a while since you've updated our app, and we've added a lot of handy stuff in the meantime`
+  String get UpdateAppMessage {
+    return Intl.message(
+      'It\'s been a while since you\'ve updated our app, and we\'ve added a lot of handy stuff in the meantime',
+      name: 'UpdateAppMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Business clubs`
   String get SearchBusinessChooseYourself1 {
     return Intl.message(
@@ -4325,21 +4365,141 @@ class S {
     );
   }
 
-  /// `Time for update`
-  String get UpdateAppMessageTitle {
+  /// `Control`
+  String get Control {
     return Intl.message(
-      'Time for update',
-      name: 'UpdateAppMessageTitle',
+      'Control',
+      name: 'Control',
       desc: '',
       args: [],
     );
   }
 
-  /// `It's been a while since you've updated our app, and we've added a lot of handy stuff in the meantime`
-  String get UpdateAppMessage {
+  /// `Rating`
+  String get Rating {
     return Intl.message(
-      'It\'s been a while since you\'ve updated our app, and we\'ve added a lot of handy stuff in the meantime',
-      name: 'UpdateAppMessage',
+      'Rating',
+      name: 'Rating',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add feedback`
+  String get AddFeedback {
+    return Intl.message(
+      'Add feedback',
+      name: 'AddFeedback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Describe your experience`
+  String get AddFeedbackFieldTitle {
+    return Intl.message(
+      'Describe your experience',
+      name: 'AddFeedbackFieldTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tell us what you liked or remember`
+  String get AddFeedbackFieldHint {
+    return Intl.message(
+      'Tell us what you liked or remember',
+      name: 'AddFeedbackFieldHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add review`
+  String get AddReview {
+    return Intl.message(
+      'Add review',
+      name: 'AddReview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write a useful addition`
+  String get AddReviewFieldHint {
+    return Intl.message(
+      'Write a useful addition',
+      name: 'AddReviewFieldHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Describe your experience`
+  String get AddReviewFieldTitle {
+    return Intl.message(
+      'Describe your experience',
+      name: 'AddReviewFieldTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal respect`
+  String get PersonalRespect {
+    return Intl.message(
+      'Personal respect',
+      name: 'PersonalRespect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to personal TOP`
+  String get AddToPersonalTop {
+    return Intl.message(
+      'Add to personal TOP',
+      name: 'AddToPersonalTop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write a detailed review, use all the available characters so that as many people as possible can appreciate it`
+  String get AddInfluencerFeedbackPopOverText {
+    return Intl.message(
+      'Write a detailed review, use all the available characters so that as many people as possible can appreciate it',
+      name: 'AddInfluencerFeedbackPopOverText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title your TOP`
+  String get TitleYourTop {
+    return Intl.message(
+      'Title your TOP',
+      name: 'TitleYourTop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write an addition to the review that will be useful for other visitors.`
+  String get AddReviewPopOverText {
+    return Intl.message(
+      'Write an addition to the review that will be useful for other visitors.',
+      name: 'AddReviewPopOverText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your feedback has been successfully added`
+  String get FeedbackAddedSuccessfullyMessage {
+    return Intl.message(
+      'Your feedback has been successfully added',
+      name: 'FeedbackAddedSuccessfullyMessage',
       desc: '',
       args: [],
     );

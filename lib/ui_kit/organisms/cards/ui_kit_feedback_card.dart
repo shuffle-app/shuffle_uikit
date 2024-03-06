@@ -29,71 +29,71 @@ class UiKitFeedbackCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
 
-    return LayoutBuilder(
-      builder: (context, size) {
-        final calculatedHeight = size.maxWidth * 0.55;
-
-        return Material(
-          color: context.uiKitTheme?.colorScheme.surface3,
-          borderRadius: BorderRadiusFoundation.all24,
-          clipBehavior: Clip.hardEdge,
-          child: InkWell(
-            onTap: onPressed,
-            child: Ink(
-              height: calculatedHeight,
-              width: size.maxWidth,
-              child: Column(
+    return Material(
+      color: context.uiKitTheme?.colorScheme.surface3,
+      borderRadius: BorderRadiusFoundation.all24,
+      clipBehavior: Clip.hardEdge,
+      child: InkWell(
+        onTap: onPressed,
+        child: Ink(
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              UiKitHeaderWithLeading(
+                title: title ?? '',
+                leading: context.userAvatar(
+                  size: UserAvatarSize.x40x40,
+                  type: UserTileType.ordinary,
+                  userName: title ?? '',
+                  imageUrl: avatarUrl,
+                ),
+                subtitle: datePosted?.timeAgo ?? '',
+                trailing: rating != null ? UiKitRatingBadge(rating: rating!) : null,
+              ),
+              SpacingFoundation.verticalSpace12,
+              Text(
+                text ?? '',
+                style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
+                maxLines: 3,
+              ),
+              SpacingFoundation.verticalSpace12,
+              Row(
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  UiKitHeaderWithLeading(
-                    title: title ?? '',
-                    leading: CircularAvatar(
-                      avatarUrl: avatarUrl ?? '',
-                      name: title,
-                      height: calculatedHeight * 0.25,
+                  if (companyAnswered ?? false)
+                    Text(
+                      S.of(context).CompanyAnswered,
+                      style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                     ),
-                    subtitle: datePosted?.timeAgo ?? '',
-                    trailing: rating != null ? UiKitRatingBadge(rating: rating!) : null,
+                  const Spacer(),
+                  GestureDetector(
+                    onTap: onLike,
+                    child: const ImageWidget(
+                      iconData: ShuffleUiKitIcons.like,
+                      color: ColorsFoundation.darkNeutral900,
+                    ),
                   ),
-                  Text(
-                    text ?? '',
-                    style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
-                    maxLines: 3,
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      if (companyAnswered ?? false)
-                        Text(
-                          S.of(context).CompanyAnswered,
-                          style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
-                        ),
-                      const Spacer(),
-                      GestureDetector(
-                        onTap: onLike,
-                        child: const ImageWidget(
-                          iconData: ShuffleUiKitIcons.thumbup,
-                          color: ColorsFoundation.darkNeutral900,
-                        ),
-                      ),
-                      SpacingFoundation.horizontalSpace8,
-                      GestureDetector(
-                        onTap: onLike,
-                        child: Text(
-                          S.of(context).Helpful,
-                          style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
-                        ),
-                      ),
-                    ],
+                  SpacingFoundation.horizontalSpace8,
+                  GestureDetector(
+                    onTap: onLike,
+                    child: Text(
+                      S.of(context).Helpful,
+                      style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
+                    ),
                   ),
                 ],
-              ).paddingAll(EdgeInsetsFoundation.all16),
-            ),
+              ),
+            ],
+          ).paddingOnly(
+            top: EdgeInsetsFoundation.vertical16,
+            bottom: EdgeInsetsFoundation.vertical16,
+            left: EdgeInsetsFoundation.horizontal32,
+            right: EdgeInsetsFoundation.horizontal16,
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

@@ -91,6 +91,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
+    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
     final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return BlurredAppBarPage(
@@ -127,6 +128,48 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
       ),
       children: [
+        SpacingFoundation.verticalSpace16,
+        UiKitRatingBarWithStars(
+          onRatingChanged: (rating) {},
+        ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+        SpacingFoundation.verticalSpace16,
+        UiKitTitledWrappedInput(
+          title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+          input: UiKitSymbolsCounterInputField(
+            controller: _controller,
+            enabled: true,
+            hintText: 'Tell us what you liked or remember'.toUpperCase(),
+            maxSymbols: 500,
+            obscureText: false,
+          ),
+          popOverMessage: 'Write an addition to the review that will be useful for other visitors.',
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitFeedbackCard(
+          avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
+          title: 'At.mosphere',
+          datePosted: DateTime.now().subtract(const Duration(days: 2)),
+          rating: 5,
+          companyAnswered: false,
+          helpfulCount: 1,
+          text: 'Came for lunch with my sister. '
+              'We loved our Thai-style mains which were amazing with lots of flavour, very impressive for a vegetarian restaurant. '
+              'But the service was below average and the chips were too terrible to finish.',
+          onPressed: () {},
+          onLike: () {},
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitExtendedFeedbackCard(
+          title: 'Marry Williams',
+          avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
+          datePosted: DateTime.now().subtract(const Duration(days: 2)),
+          text: 'Came for lunch with my sister. '
+              'We loved our Thai-style mains which were amazing with lots of flavour, very impressive for a vegetarian restaurant. '
+              'But the service was below average and the chips were too terrible to finish.',
+          helpfulCount: 1,
+          onEdit: () {},
+          onDelete: () {},
+        ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal32),
         SpacingFoundation.verticalSpace16,
         Row(
           mainAxisSize: MainAxisSize.max,
@@ -941,20 +984,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           itemCount: 5,
         ),
         SpacingFoundation.verticalSpace16,
-        UiKitFeedbackCard(
-          avatarUrl: GraphicsFoundation.instance.png.atmosphere.path,
-          title: 'At.mosphere',
-          datePosted: DateTime.now().subtract(const Duration(days: 2)),
-          rating: 5,
-          companyAnswered: false,
-          helpfulCount: 1,
-          text: 'Came for lunch with my sister. '
-              'We loved our Thai-style mains which were amazing with lots of flavour, very impressive for a vegetarian restaurant. '
-              'But the service was below average and the chips were too terrible to finish.',
-          onPressed: () {},
-          onLike: () {},
-        ),
-        SpacingFoundation.verticalSpace16,
         UiKitPopUpMenuTile(
           title: 'Eugene Carter',
           titleIcon: const ImageWidget(
@@ -1022,18 +1051,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             ),
           ],
         ),
-        SpacingFoundation.verticalSpace16,
-        UiKitExtendedFeedbackCard(
-          title: 'Marry Williams',
-          avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
-          datePosted: DateTime.now().subtract(const Duration(days: 2)),
-          text: 'Came for lunch with my sister. '
-              'We loved our Thai-style mains which were amazing with lots of flavour, very impressive for a vegetarian restaurant. '
-              'But the service was below average and the chips were too terrible to finish.',
-          helpfulCount: 1,
-          onEdit: () {},
-          onDelete: () {},
-        ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal32),
         SpacingFoundation.verticalSpace16,
         UiKitDecoratedActionCard(
           title: 'Notifications',

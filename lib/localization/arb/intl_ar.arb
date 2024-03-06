@@ -145,6 +145,8 @@
   "YourNiche": "Your niche",
   "DontMissIt": "Don't miss it",
   "HowAreYouFeelingTonight": "How’re you feeling tonight?",
+  "HowAreYouFeelingToday": "How’re you feeling today?",
+  "HowAreYouFeelingThisMorning": "How’re you feeling this morning?",
   "Guess": "Guess",
   "YouBetterCheckThisOut": "You better check this out",
   "Favorites": "Favorites",
@@ -420,5 +422,23 @@
   "SearchBusinessChooseYourself7": "Seminars and trainings",
   "LoginWith": "Continue with {provider}",
   "UpdateAppMessageTitle": "Time for update",
-  "UpdateAppMessage": "It's been a while since you've updated our app, and we've added a lot of handy stuff in the meantime"
+  "UpdateAppMessage": "It's been a while since you've updated our app, and we've added a lot of handy stuff in the meantime",
+  "Control": "Control",
+  "Rating": "Rating",
+  "AddFeedback": "Add feedback",
+  "AddFeedbackFieldTitle": "Describe your experience",
+  "AddFeedbackFieldHint": "Tell us what you liked or remember",
+  "AddReview": "Add review",
+  "AddReviewFieldHint": "Write a useful addition",
+  "AddReviewFieldTitle": "Describe your experience",
+  "PersonalRespect": "Personal respect",
+  "AddToPersonalTop": "Add to personal TOP",
+  "AddInfluencerFeedbackPopOverText": "Write a detailed review, use all the available characters so that as many people as possible can appreciate it",
+  "TitleYourTop": "Title your TOP",
+  "AddReviewPopOverText": "Write an addition to the review that will be useful for other visitors.",
+  "FeedbackAddedSuccessfullyMessage": "Your feedback has been successfully added",
+
+
+
+
 }

@@ -51,7 +51,12 @@ dependencies:
   model_viewer_plus: ^1.7.0
 
   #dialogs widgets
-  popover: ^0.2.8+2
+  popover:
+    path: ../popover
+#    git:
+#      url: https://github.com/shuffle-app/popover.git
+#      ref: main
+
   another_flushbar: ^1.12.30
 
   #tab navigation

@@ -35,7 +35,7 @@ class GeneralDialogData {
   final bool useRootNavigator;
   final bool resizeToAvoidBottomInset;
   final Widget child;
-
+  final bool isWidgetScrollable;
   final Widget? bottomBar;
   final double? topPadding;
   final double? customHeight;
@@ -46,6 +46,7 @@ class GeneralDialogData {
     this.customHeight,
     this.useRootNavigator = true,
     this.resizeToAvoidBottomInset = true,
+    this.isWidgetScrollable = false,
     required this.child,
     this.bottomBar,
     this.topPadding,

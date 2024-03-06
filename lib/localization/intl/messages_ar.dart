@@ -128,7 +128,23 @@ class MessageLookup extends MessageLookupByLibrary {
             "Accept donations or help others realize their dreams"),
         "Account": MessageLookupByLibrary.simpleMessage("Account"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Activity type"),
+        "AddFeedback": MessageLookupByLibrary.simpleMessage("Add feedback"),
+        "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
+            "Tell us what you liked or remember"),
+        "AddFeedbackFieldTitle":
+            MessageLookupByLibrary.simpleMessage("Describe your experience"),
+        "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
+            "Write a detailed review, use all the available characters so that as many people as possible can appreciate it"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Add promotion"),
+        "AddReview": MessageLookupByLibrary.simpleMessage("Add review"),
+        "AddReviewFieldHint":
+            MessageLookupByLibrary.simpleMessage("Write a useful addition"),
+        "AddReviewFieldTitle":
+            MessageLookupByLibrary.simpleMessage("Describe your experience"),
+        "AddReviewPopOverText": MessageLookupByLibrary.simpleMessage(
+            "Write an addition to the review that will be useful for other visitors."),
+        "AddToPersonalTop":
+            MessageLookupByLibrary.simpleMessage("Add to personal TOP"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Add yourself to list"),
         "Address": MessageLookupByLibrary.simpleMessage("Address"),
@@ -200,6 +216,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("Contact person"),
         "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
+        "Control": MessageLookupByLibrary.simpleMessage("Control"),
         "Create": MessageLookupByLibrary.simpleMessage("Create"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Create Event"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
@@ -325,6 +342,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "HintSystemDisabled":
             MessageLookupByLibrary.simpleMessage("Hint system disabled"),
         "HintSystemEnabled": m14,
+        "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
+            "How’re you feeling this morning?"),
+        "HowAreYouFeelingToday":
+            MessageLookupByLibrary.simpleMessage("How’re you feeling today?"),
         "HowAreYouFeelingTonight":
             MessageLookupByLibrary.simpleMessage("How’re you feeling tonight?"),
         "HowItWorks": MessageLookupByLibrary.simpleMessage("How it\nworks"),
@@ -437,6 +458,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Personal": MessageLookupByLibrary.simpleMessage("Personal"),
         "PersonalCredentials":
             MessageLookupByLibrary.simpleMessage("Personal credentials"),
+        "PersonalRespect":
+            MessageLookupByLibrary.simpleMessage("Personal respect"),
         "Phone": MessageLookupByLibrary.simpleMessage("Phone"),
         "PhoneVerification":
             MessageLookupByLibrary.simpleMessage("Phone verification"),
@@ -513,6 +536,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("Do not be alone..."),
         "Published": MessageLookupByLibrary.simpleMessage("Published"),
+        "Rating": MessageLookupByLibrary.simpleMessage("Rating"),
         "Read": m24,
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
@@ -636,6 +660,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Through a non-\naggregator system \nespecially for you"),
         "Time": MessageLookupByLibrary.simpleMessage("Time"),
         "Title": MessageLookupByLibrary.simpleMessage("Title"),
+        "TitleYourTop": MessageLookupByLibrary.simpleMessage("Title your TOP"),
         "ToAccessAll": MessageLookupByLibrary.simpleMessage("To access all"),
         "ToAllowAccessGoToSettings": MessageLookupByLibrary.simpleMessage(
             "To allow access to send push notifications, go to your phone settings"),

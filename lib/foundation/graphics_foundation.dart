@@ -14,14 +14,6 @@ class GraphicsFoundation {
 
   IconData iconFromString(String iconName, {IconData? orElse}) {
     switch (iconName) {
-      case 'handshake_3':
-        return ShuffleUiKitIcons.handshake3;
-      case 'film':
-        return ShuffleUiKitIcons.film;
-      case 'donat':
-        return ShuffleUiKitIcons.donat;
-      case 'hands':
-        return ShuffleUiKitIcons.hands;
       case 'food':
         return ShuffleUiKitIcons.food;
       case 'family':

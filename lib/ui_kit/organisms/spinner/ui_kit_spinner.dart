@@ -227,7 +227,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     if (!_isInteracting) {
                       changeInteractingState(true);
                       setSpinningGesture(
-                          details.delta.dy != 0 && details.delta.dy < 0 ? SpinningGesture.up : SpinningGesture.spin);
+                          details.delta.dx.abs() >= 5  ? SpinningGesture.spin : SpinningGesture.up);
                     }
                     if (widget.pagingController.itemList?.isEmpty ?? false) return;
 
@@ -266,7 +266,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                         _transitionNotifier.value = 0;
                         return;
                       }
-                      FeedbackIsolate.instance.addEvent(SystemSoundIsolateRachetClick());
+                      FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics());
                       unawaited(showDateRangePickerDialog(context, initialDateRange: widget.filterDate).then((value) {
                         widget.onDateRangeChanged?.call(value);
                         _transitionNotifier.value = 0;
@@ -326,26 +326,30 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
               ),
               if (widget.filterDate != null)
                 Positioned(
-                    top: 68,
-                    child: Text(
-                      widget.filterDate?.toRangeString() ?? '',
-                      style: context.uiKitTheme?.regularTextTheme.caption4.copyWith(color: colorScheme?.primary),
-                      textAlign: TextAlign.center,
-                    ))
+                  top: 40.h,
+                  child: Text(
+                    widget.filterDate?.toRangeString() ?? '',
+                    style: context.uiKitTheme?.regularTextTheme.caption4.copyWith(color: colorScheme?.primary),
+                    textAlign: TextAlign.center,
+                  ),
+                )
               else
                 Positioned(
-                    top: 55,
-                    child: UiKitFloatingAnimation(
-                      applyX: false,
-                      child: RotatedBox(
-                          quarterTurns: 1,
-                          child: Transform.scale(
-                              scaleY: 1.2,
-                              child: const Icon(
-                                Icons.arrow_back_ios,
-                                color: Colors.white,
-                              ))),
-                    ))
+                  top: 40.h,
+                  child: UiKitFloatingAnimation(
+                    applyX: false,
+                    child: RotatedBox(
+                      quarterTurns: 1,
+                      child: Transform.scale(
+                        scaleY: 1.2,
+                        child: const Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
             ],
           ),
         ),

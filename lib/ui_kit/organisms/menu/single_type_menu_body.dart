@@ -38,7 +38,6 @@ class SingleTypeMenuBody<T> extends StatelessWidget {
         SpacingFoundation.verticalSpace16,
         ...items.map<Widget>(
           (e) {
-            print('${e.title}: ${e.enabled}');
 
             if (useCustomTiles) {
               return Column(

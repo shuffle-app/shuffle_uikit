@@ -128,7 +128,23 @@ class MessageLookup extends MessageLookupByLibrary {
             "Принимать донаты или помогать другим воплотить мечты"),
         "Account": MessageLookupByLibrary.simpleMessage("Аккаунт"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Тип активности"),
+        "AddFeedback": MessageLookupByLibrary.simpleMessage("Поставить оценку"),
+        "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
+            "Расскажите что вам понравилось или запомнилось"),
+        "AddFeedbackFieldTitle":
+            MessageLookupByLibrary.simpleMessage("Опишите ваш опыт"),
+        "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
+            "Напишите подробный отзыв, используйте все доступные символы, чтобы как можно больше людей могли его оценить"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Добавить промо"),
+        "AddReview": MessageLookupByLibrary.simpleMessage("Оставить отзыв"),
+        "AddReviewFieldHint": MessageLookupByLibrary.simpleMessage(
+            "Напишите полезное дополнение"),
+        "AddReviewFieldTitle":
+            MessageLookupByLibrary.simpleMessage("Опишите ваш опыт"),
+        "AddReviewPopOverText": MessageLookupByLibrary.simpleMessage(
+            "Напишите дополнение к отзыву, которое будет полезно для других посетителей"),
+        "AddToPersonalTop":
+            MessageLookupByLibrary.simpleMessage("Добавить в личный ТОП"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Добавиться в список"),
         "Address": MessageLookupByLibrary.simpleMessage("Адрес"),
@@ -202,6 +218,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ContactPerson":
             MessageLookupByLibrary.simpleMessage("Контактное лицо"),
         "Continue": MessageLookupByLibrary.simpleMessage("Продолжить"),
+        "Control": MessageLookupByLibrary.simpleMessage("Контроль"),
         "Create": MessageLookupByLibrary.simpleMessage("Создать"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Создать место"),
@@ -261,7 +278,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, введите адрес места"),
         "EnterYourEmailAddress":
-            MessageLookupByLibrary.simpleMessage("Введите адрес почты"),
+            MessageLookupByLibrary.simpleMessage("Введите адрес эл. почты"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Возникла ошибка"),
         "ErrorOccuredWithoutMessage":
             MessageLookupByLibrary.simpleMessage("Ошибка без сообщения"),
@@ -308,7 +325,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "For": MessageLookupByLibrary.simpleMessage("Для"),
         "ForFormattedPrice": m12,
         "ForPeriod": MessageLookupByLibrary.simpleMessage("на"),
-        "ForgotPassword": MessageLookupByLibrary.simpleMessage("Забыт пароль"),
+        "ForgotPassword": MessageLookupByLibrary.simpleMessage("Забыл пароль"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("\nбесплатных мест"),
         "FulfillTheDream":
             MessageLookupByLibrary.simpleMessage("Исполнить мечту"),
@@ -330,6 +347,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
             "Система подсказок деактивирована"),
         "HintSystemEnabled": m14,
+        "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
+            "How’re you feeling this morning?"),
+        "HowAreYouFeelingToday":
+            MessageLookupByLibrary.simpleMessage("How’re you feeling today?"),
         "HowAreYouFeelingTonight":
             MessageLookupByLibrary.simpleMessage("Как вы себя чувствуете?"),
         "HowItWorks": MessageLookupByLibrary.simpleMessage("Как\nэто?"),
@@ -444,6 +465,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Personal": MessageLookupByLibrary.simpleMessage("Личный"),
         "PersonalCredentials":
             MessageLookupByLibrary.simpleMessage("Личные данные"),
+        "PersonalRespect":
+            MessageLookupByLibrary.simpleMessage("Личное уважение"),
         "Phone": MessageLookupByLibrary.simpleMessage("Телефон"),
         "PhoneVerification": MessageLookupByLibrary.simpleMessage(
             "Подтверждение номера телефона"),
@@ -521,6 +544,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("Не будь один..."),
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
+        "Rating": MessageLookupByLibrary.simpleMessage("Рейтинг"),
         "Read": m24,
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
         "ResendCode":
@@ -649,6 +673,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Неагрегаторная система специально для вас"),
         "Time": MessageLookupByLibrary.simpleMessage("Время"),
         "Title": MessageLookupByLibrary.simpleMessage("Название"),
+        "TitleYourTop":
+            MessageLookupByLibrary.simpleMessage("Назовите ваш ТОП"),
         "ToAccessAll": MessageLookupByLibrary.simpleMessage("Полный доступ"),
         "ToAllowAccessGoToSettings": MessageLookupByLibrary.simpleMessage(
             "Чтобы разрешить доступ push-уведомлений, зайдите в настройки телефона"),
