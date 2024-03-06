@@ -20,6 +20,7 @@ class ProfileCardBody extends StatelessWidget {
   final VoidCallback? onViewAllAchievements;
   final List<UiKitAchievementsModel> achievements;
   final UserTileType userTileType;
+  final VoidCallback? onShare;
 
   const ProfileCardBody({
     super.key,
@@ -29,6 +30,7 @@ class ProfileCardBody extends StatelessWidget {
     this.nickname,
     this.profileStats,
     this.name,
+    this.onShare,
     this.tags,
     this.description,
     this.avatarUrl,
@@ -74,6 +76,14 @@ class ProfileCardBody extends StatelessWidget {
                         tags: tags ?? [],
                       ),
               ),
+              if(onShare!= null)
+                GestureDetector(
+                  onTap: onShare,
+                  child: Icon(
+                    ShuffleUiKitIcons.share,
+                    color: theme?.colorScheme.darkNeutral800,
+                  ),
+                )
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
           SpacingFoundation.verticalSpace16,

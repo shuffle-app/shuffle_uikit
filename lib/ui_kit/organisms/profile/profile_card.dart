@@ -20,6 +20,7 @@ class ProfileCard extends StatelessWidget {
   final VoidCallback? onViewAllAchievements;
   final List<UiKitAchievementsModel> achievements;
   final UserTileType userTileType;
+  final VoidCallback? onShare;
 
   const ProfileCard({
     Key? key,
@@ -29,6 +30,7 @@ class ProfileCard extends StatelessWidget {
     this.avatarUrl,
     this.name,
     this.badge,
+    this.onShare,
     this.followers,
     this.onFollow,
     this.onDonate,
@@ -45,24 +47,24 @@ class ProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final child = ProfileCardBody(
-      description: description,
-      avatarUrl: avatarUrl,
-      interests: interests,
-      matchingInterests: matchingInterests,
-      canFollow: followers != null && onFollow != null,
-      name: name,
-      userTileType: userTileType,
-      nickname: nickname ?? '',
-      followers: followers,
-      onFollow: onFollow,
-      profileType: profileType,
-      tags: tags,
-      profileStats: profileStats,
-      showSupportShuffle: showSupportShuffle,
-      onDonate: onDonate,
-      onViewAllAchievements: onViewAllAchievements,
-      achievements: achievements,
-    );
+        description: description,
+        avatarUrl: avatarUrl,
+        interests: interests,
+        matchingInterests: matchingInterests,
+        canFollow: followers != null && onFollow != null,
+        name: name,
+        userTileType: userTileType,
+        nickname: nickname ?? '',
+        followers: followers,
+        onFollow: onFollow,
+        profileType: profileType,
+        tags: tags,
+        profileStats: profileStats,
+        showSupportShuffle: showSupportShuffle,
+        onDonate: onDonate,
+        onViewAllAchievements: onViewAllAchievements,
+        achievements: achievements,
+        onShare: onShare);
     if (badge != null) {
       return Stack(
         fit: StackFit.passthrough,
