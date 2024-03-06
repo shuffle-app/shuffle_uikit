@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 class UiKitScaleAnimation extends StatelessWidget {
   final AnimationController controller;
   final Widget child;
+  final double scale;
+  final Alignment alignment;
 
   const UiKitScaleAnimation({
     Key? key,
     required this.controller,
     required this.child,
+    this.scale = 1.0,
+    this.alignment = Alignment.center,
   }) : super(key: key);
 
   @override
@@ -16,7 +20,8 @@ class UiKitScaleAnimation extends StatelessWidget {
       animation: controller,
       builder: (context, child) {
         return Transform.scale(
-          scale: controller.value + 1,
+          alignment: alignment,
+          scale: controller.value + scale,
           child: child,
         );
       },

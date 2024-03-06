@@ -58,7 +58,7 @@ class ProfileCardBody extends StatelessWidget {
             children: [
               if (canFollow ?? false)
                 context.userAvatar(
-                    size: UserAvatarSize.x120x120, type: userTileType, userName: name ?? '', imageUrl: avatarUrl)
+                    size: UserAvatarSize.x60x60, type: userTileType, userName: name ?? '', imageUrl: avatarUrl)
               else
                 context.userAvatar(
                     size: UserAvatarSize.x48x48, type: userTileType, userName: name ?? '', imageUrl: avatarUrl),
@@ -68,8 +68,6 @@ class ProfileCardBody extends StatelessWidget {
                     ? PersonalProfileInfo(
                         name: name,
                         nickname: nickname ?? '',
-                        followers: followers,
-                        onFollow: onFollow,
                       )
                     : CompanyProfileInfo(
                         companyName: name,
@@ -78,13 +76,23 @@ class ProfileCardBody extends StatelessWidget {
               ),
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
-          if (description != null) ...[
-            SpacingFoundation.verticalSpace24,
-            ProfileDescription(
-              text: description ?? '',
-            ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16)
-          ],
-          SpacingFoundation.verticalSpace24,
+          SpacingFoundation.verticalSpace16,
+          if (onFollow != null)
+            context
+                .button(data: BaseUiKitButtonData(text: S.of(context).Follow.toUpperCase(), onPressed: onFollow))
+                .paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
+
+          SpacingFoundation.verticalSpace16,
+          if (followers != null && followers! > 0)
+            RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(children: [
+                  TextSpan(text: '${followers} ', style: theme?.boldTextTheme.caption1Bold),
+                  TextSpan(
+                      text: S.of(context).Followers.toLowerCase(),
+                      style: theme?.regularTextTheme.caption1.copyWith(color: ColorsFoundation.mutedText)),
+                ])).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
+          SpacingFoundation.verticalSpace16,
           Stack(
             children: [
               ConstrainedBox(
@@ -133,8 +141,15 @@ class ProfileCardBody extends StatelessWidget {
               ),
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
+
+          if (description != null) ...[
+            SpacingFoundation.verticalSpace16,
+            ProfileDescription(
+              text: description ?? '',
+            ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16)
+          ],
           if (achievements.isNotEmpty) ...[
-            SpacingFoundation.verticalSpace24,
+            SpacingFoundation.verticalSpace16,
             PreviewHorizontalScroll(
               title: S.of(context).HallOfFame,
               horizontalPadding: EdgeInsetsFoundation.all16,
@@ -147,7 +162,7 @@ class ProfileCardBody extends StatelessWidget {
             ),
           ],
           if (profileStats != null) ...[
-            SpacingFoundation.verticalSpace24,
+            SpacingFoundation.verticalSpace16,
             Row(
               mainAxisSize: MainAxisSize.max,
               children: [
