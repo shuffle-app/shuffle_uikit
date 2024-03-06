@@ -1580,6 +1580,18 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/sleep.svg
   SvgGenImage get sleep => const SvgGenImage('assets/images/svg/sleep.svg');
 
+  /// File path: assets/images/svg/social-instagram.svg
+  SvgGenImage get socialInstagram => const SvgGenImage('assets/images/svg/social-instagram.svg');
+
+  /// File path: assets/images/svg/social-telegram.svg
+  SvgGenImage get socialTelegram => const SvgGenImage('assets/images/svg/social-telegram.svg');
+
+  /// File path: assets/images/svg/social-twitter.svg
+  SvgGenImage get socialTwitter => const SvgGenImage('assets/images/svg/social-twitter.svg');
+
+  /// File path: assets/images/svg/social-whatsapp.svg
+  SvgGenImage get socialWhatsapp => const SvgGenImage('assets/images/svg/social-whatsapp.svg');
+
   /// File path: assets/images/svg/spinner-fill.svg
   SvgGenImage get spinnerFill => const SvgGenImage('assets/images/svg/spinner-fill.svg');
 
@@ -1931,6 +1943,10 @@ class $AssetsImagesSvgGen {
         shuffleOutline,
         shuffleWhite,
         sleep,
+        socialInstagram,
+        socialTelegram,
+        socialTwitter,
+        socialWhatsapp,
         spinnerFill,
         spinnerOutline,
         spinnerWheel,

@@ -18,6 +18,11 @@ class InfluencerProfile extends StatelessWidget {
               [
                 const ProfileCardAnimated().paddingAll(EdgeInsetsFoundation.all16),
                 ProfileCard(
+                  speciality: 'Entertainer',
+                  socialLinks: const [
+                    'https://www.instagram.com/marrywilliams/',
+                    'https://www.tg.me/marrywilliams/',
+                  ],
                   nickname: 'marywill',
                   name: 'Some name',
                   description: 'Just walking here and there trying to find something unique and interesting to show you!',

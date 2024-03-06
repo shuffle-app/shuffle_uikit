@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_description.dart';
+import 'package:shuffle_uikit/utils/extentions/social_media_string_validator.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ProfileCardBody extends StatelessWidget {
   final String? nickname;
@@ -21,6 +23,8 @@ class ProfileCardBody extends StatelessWidget {
   final List<UiKitAchievementsModel> achievements;
   final UserTileType userTileType;
   final VoidCallback? onShare;
+  final List<String>? socialLinks;
+  final String? speciality;
 
   const ProfileCardBody({
     super.key,
@@ -42,6 +46,8 @@ class ProfileCardBody extends StatelessWidget {
     this.showSupportShuffle = false,
     this.onViewAllAchievements,
     this.achievements = const [],
+    this.socialLinks,
+    this.speciality,
   });
 
   @override
@@ -76,7 +82,7 @@ class ProfileCardBody extends StatelessWidget {
                         tags: tags ?? [],
                       ),
               ),
-              if(onShare!= null)
+              if (onShare != null)
                 GestureDetector(
                   onTap: onShare,
                   child: Icon(
@@ -87,6 +93,35 @@ class ProfileCardBody extends StatelessWidget {
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
           SpacingFoundation.verticalSpace16,
+          if (speciality != null || (socialLinks != null && socialLinks!.isNotEmpty)) ...[
+            Row(
+              children: [
+                Expanded(
+                  child: GradientableWidget(
+                    gradient: GradientFoundation.defaultLinearGradient,
+                    child: Text(
+                      speciality ?? '',
+                      style: theme?.boldTextTheme.caption2Medium.copyWith(color: Colors.white),
+                    ),
+                  ),
+                ),
+                if (socialLinks != null)
+                  for (var (index, icon) in socialLinks!.map((e) => e.icon).toList().indexed)
+                    context
+                        .smallOutlinedButton(
+                            data: BaseUiKitButtonData(
+                                iconWidget: ImageWidget(
+                                  svgAsset: icon,
+                                  color: theme?.colorScheme.inversePrimary,
+                                ),
+                                onPressed: () {
+                                  launchUrlString(socialLinks![index], mode: LaunchMode.externalApplication);
+                                }))
+                        .paddingOnly(left: SpacingFoundation.horizontalSpacing6)
+              ],
+            ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
+            SpacingFoundation.verticalSpace16,
+          ],
           if (onFollow != null)
             context
                 .button(data: BaseUiKitButtonData(text: S.of(context).Follow.toUpperCase(), onPressed: onFollow))
