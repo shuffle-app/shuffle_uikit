@@ -13,6 +13,7 @@ extension FactoryExtention on BuildContext {
     required UserTileType type,
     String? imageUrl,
     required String userName,
+    bool showAchievements = false,
   }) =>
       WidgetsFactory.of(this)!
           .createUserAvatar(
@@ -20,6 +21,7 @@ extension FactoryExtention on BuildContext {
             type: type,
             imageUrl: imageUrl,
             userName: userName,
+            showAchievements: showAchievements,
           )
           .build(this);
 
@@ -53,7 +55,8 @@ extension FactoryExtention on BuildContext {
     return WidgetsFactory.of(this)!.createSmallGradientButton(data: data).build(this);
   }
 
-  Widget createSmallOutlinedButton({required BaseUiKitButtonData data, Color? color, bool? blurred, Gradient? gradient}) {
+  Widget createSmallOutlinedButton(
+      {required BaseUiKitButtonData data, Color? color, bool? blurred, Gradient? gradient}) {
     return WidgetsFactory.of(this)!
         .createSmallOutlinedButton(data: data, color: color, blurred: blurred, gradient: gradient)
         .build(this);

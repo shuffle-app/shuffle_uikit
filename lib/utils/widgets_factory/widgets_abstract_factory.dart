@@ -100,6 +100,7 @@ abstract class WidgetsAbstractFactory {
     required UserTileType type,
     required String imageUrl,
     required String userName,
+    required bool showAchievements,
   });
 // InputFieldFactory createInputField({
 //   required TextEditingController controller,
@@ -151,56 +152,51 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  UserAvatarFactory createUserAvatar({
-    required UserAvatarSize size,
-    required UserTileType type,
-    String? imageUrl,
-    required String userName,
-  }) {
-    switch (size) {
-      case UserAvatarSize.x20x20:
-        return UiKitUserAvatar20x20(
-          type: type,
-          imageUrl: imageUrl ?? '',
-          userName: userName,
-        );
-      case UserAvatarSize.x24x24:
-        return UiKitUserAvatar24x24(
-          type: type,
-          imageUrl: imageUrl ?? '',
-          userName: userName,
-        );
-      case UserAvatarSize.x32x32:
-        return UiKitUserAvatar32x32(
-          type: type,
-          imageUrl: imageUrl ?? '',
-          userName: userName,
-        );
-      case UserAvatarSize.x40x40:
-        return UiKitUserAvatar40x40(
-          type: type,
-          imageUrl: imageUrl ?? '',
-          userName: userName,
-        );
-      case UserAvatarSize.x48x48:
-        return UiKitUserAvatar48x48(
-          type: type,
-          imageUrl: imageUrl ?? '',
-          userName: userName,
-        );
-      case UserAvatarSize.x60x60:
-        return UiKitUserAvatar60x60(
-          type: type,
-          imageUrl: imageUrl ?? '',
-          userName: userName,
-        );
-      case UserAvatarSize.x120x120:
-        return UiKitUserAvatar120x120(
-          type: type,
-          imageUrl: imageUrl ?? '',
-          userName: userName,
-        );
-    }
+  UserAvatarFactory createUserAvatar(
+      {required UserAvatarSize size,
+      required UserTileType type,
+      String? imageUrl,
+      required String userName,
+      required bool showAchievements}) {
+    return AvatarStackWrapper(
+        showAchievements: showAchievements,
+        child: switch (size) {
+          (UserAvatarSize.x20x20) => UiKitUserAvatar20x20(
+              type: type,
+              imageUrl: imageUrl ?? '',
+              userName: userName,
+            ),
+          (UserAvatarSize.x24x24) => UiKitUserAvatar24x24(
+              type: type,
+              imageUrl: imageUrl ?? '',
+              userName: userName,
+            ),
+          (UserAvatarSize.x32x32) => UiKitUserAvatar32x32(
+              type: type,
+              imageUrl: imageUrl ?? '',
+              userName: userName,
+            ),
+          (UserAvatarSize.x40x40) => UiKitUserAvatar40x40(
+              type: type,
+              imageUrl: imageUrl ?? '',
+              userName: userName,
+            ),
+          (UserAvatarSize.x48x48) => UiKitUserAvatar48x48(
+              type: type,
+              imageUrl: imageUrl ?? '',
+              userName: userName,
+            ),
+          (UserAvatarSize.x60x60) => UiKitUserAvatar60x60(
+              type: type,
+              imageUrl: imageUrl ?? '',
+              userName: userName,
+            ),
+          (UserAvatarSize.x120x120) => UiKitUserAvatar120x120(
+              type: type,
+              imageUrl: imageUrl ?? '',
+              userName: userName,
+            )
+        });
   }
 
   @override
@@ -725,4 +721,36 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 // }) {
 //   return InputField();
 // }
+}
+
+class AvatarStackWrapper extends StatelessWidget implements UserAvatarFactory {
+  final bool showAchievements;
+  final Widget child;
+
+  const AvatarStackWrapper({super.key, required this.showAchievements, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      clipBehavior: Clip.none,
+      children: [
+        child,
+        if (showAchievements)
+          Positioned(
+              right: -3.sp,
+              bottom: -3.sp,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: UiKitColors.pinkDark.withOpacity(0.6),
+                    border: GradientFoundation.gradientBorder),
+                child: ImageWidget(
+                  rasterAsset: GraphicsFoundation.instance.png.goldenCup,
+                  height: 13.sp,
+                  width: 13.sp,
+                ).paddingAll(3.sp),
+              ))
+      ],
+    );
+  }
 }
