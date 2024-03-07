@@ -16,6 +16,8 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
     this.validator,
     this.keyboardType,
     this.icon,
+    this.contentPadding,
+    this.prefixIcon,
     this.customLabelColor,
     this.customHintColor,
     this.customFocusedBorder,
@@ -43,8 +45,9 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
 
   final String? prefixText;
   final Widget? icon;
+  final Widget? prefixIcon;
   final List<TextInputFormatter>? inputFormatters;
-
+  final EdgeInsets? contentPadding;
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onFieldSubmitted;
   final VoidCallback? onTap;
@@ -120,6 +123,8 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
           focusedBorder: widget.customFocusedBorder ?? context.uiKitTheme?.noFillInputTheme.focusedBorder,
           enabledBorder: widget.customEnabledBorder ?? context.uiKitTheme?.noFillInputTheme.enabledBorder,
           suffixIcon: widget.icon,
+          prefixIcon: widget.prefixIcon,
+          contentPadding: widget.contentPadding,
           floatingLabelBehavior: FloatingLabelBehavior.always,
           floatingLabelStyle: MaterialStateTextStyle.resolveWith((states) => labelStyle!),
           floatingLabelAlignment: FloatingLabelAlignment.start,
