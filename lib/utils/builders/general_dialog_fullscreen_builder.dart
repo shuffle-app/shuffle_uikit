@@ -28,7 +28,7 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
 }
 
 //ignore: no-empty-block
-void _empty() {}
+// void _empty() {}
 
 //ignore: prefer-match-file-name
 class GeneralDialogData {

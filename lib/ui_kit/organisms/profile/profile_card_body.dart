@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/profile_description.dart';
-import 'package:shuffle_uikit/utils/extentions/social_media_string_validator.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class ProfileCardBody extends StatelessWidget {

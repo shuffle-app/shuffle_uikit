@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/utils/extentions/social_media_string_validator.dart';
 
 Future<List<String>> socialLinksEditBuilder(BuildContext context, {List<String> socialLinks = const []}) async {
   final theme = context.uiKitTheme;
