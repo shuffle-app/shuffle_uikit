@@ -84,7 +84,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
     UiKitColorScheme? colorScheme,
   }) {
     return UiKitThemeData(
-      noIconInputBorderRadius20: noIconInputBorderRadius24 ?? this.noIconInputBorderRadius20,
+      noIconInputBorderRadius20: noIconInputBorderRadius24 ?? noIconInputBorderRadius20,
       themeMode: themeMode ?? this.themeMode,
       customColor: customColor ?? this.customColor,
       blurredBottomNavigationBarTheme: blurredBottomNavigationBarTheme ?? this.blurredBottomNavigationBarTheme,

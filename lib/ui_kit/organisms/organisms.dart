@@ -60,6 +60,7 @@ export 'popups/settings_alert.dart';
 export 'popups/ui_kit_custom_content_popup.dart';
 export 'popups/ui_kit_location_suggestion_dialog.dart';
 export 'profile/profile_card.dart';
+export 'profile/profile_card_animated.dart';
 export 'profile/profile_highlights.dart';
 export 'profile/profile_posts_places.dart';
 export 'profile/profile_stories_list.dart';
