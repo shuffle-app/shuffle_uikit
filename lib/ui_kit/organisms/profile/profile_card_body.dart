@@ -101,7 +101,7 @@ class ProfileCardBody extends StatelessWidget {
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
           SpacingFoundation.verticalSpace16,
-          if ((speciality != null || (socialLinks != null && socialLinks!.isNotEmpty)) && onFollow == null) ...[
+          if (speciality != null || (socialLinks != null && socialLinks!.isNotEmpty)) ...[
             Row(
               children: [
                 Expanded(
