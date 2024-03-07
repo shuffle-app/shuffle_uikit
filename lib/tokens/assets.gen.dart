@@ -492,6 +492,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/judaism.png
   AssetGenImage get judaism => const AssetGenImage('assets/images/png/judaism.png');
 
+  /// File path: assets/images/png/just_coin.png
+  AssetGenImage get justCoin => const AssetGenImage('assets/images/png/just_coin.png');
+
   /// File path: assets/images/png/love-emoji.png
   AssetGenImage get loveEmoji => const AssetGenImage('assets/images/png/love-emoji.png');
 
@@ -816,6 +819,7 @@ class $AssetsImagesPngGen {
         jordanFlag,
         joyEmoji,
         judaism,
+        justCoin,
         loveEmoji,
         manicure,
         mapMock,
