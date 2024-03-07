@@ -310,6 +310,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "нажимаешь и случайная выдача"),
         "FeedRandomizerHiwTitle":
             MessageLookupByLibrary.simpleMessage("Его величество случай..."),
+        "FeedbackAddedSuccessfullyMessage":
+            MessageLookupByLibrary.simpleMessage("Ваш отзыв успешно добавлен"),
         "Feeling": MessageLookupByLibrary.simpleMessage("Чувство"),
         "Female": MessageLookupByLibrary.simpleMessage("Женщина"),
         "Filters": MessageLookupByLibrary.simpleMessage("Фильтры"),
@@ -343,16 +345,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "HealthKit": MessageLookupByLibrary.simpleMessage("Данные здоровья"),
         "Helpful": MessageLookupByLibrary.simpleMessage("Полезно"),
         "HelpfulNCount": m13,
-        "Hindu": MessageLookupByLibrary.simpleMessage("Хинду"),
+        "Hindu": MessageLookupByLibrary.simpleMessage("Индуизм"),
         "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
             "Система подсказок деактивирована"),
         "HintSystemEnabled": m14,
         "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
-            "How’re you feeling this morning?"),
-        "HowAreYouFeelingToday":
-            MessageLookupByLibrary.simpleMessage("How’re you feeling today?"),
-        "HowAreYouFeelingTonight":
-            MessageLookupByLibrary.simpleMessage("Как вы себя чувствуете?"),
+            "Как вы себя чувствуете этим утром?"),
+        "HowAreYouFeelingToday": MessageLookupByLibrary.simpleMessage(
+            "Как вы себя чувствуете в течение дня?"),
+        "HowAreYouFeelingTonight": MessageLookupByLibrary.simpleMessage(
+            "Как вы себя чувствуете этим вечером?"),
         "HowItWorks": MessageLookupByLibrary.simpleMessage("Как\nэто?"),
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
             "Сколько \$ хочешь задонатить?"),

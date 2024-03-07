@@ -1,74 +1,86 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'dart:math' as math;
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context,
-    {DateTimeRange? initialDateRange, String? title}) async {
+Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context, {DateTimeRange? initialDateRange, String? title}) async {
   final DateTimeRange? result = await showDialog(
-      context: context,
-      builder: (context) {
-        final textTheme = context.uiKitTheme?.boldTextTheme;
-        final lastDate = DateTime.now().add(const Duration(days: 365 * 3));
-        DateTimeRange range = initialDateRange ?? DateTimeRange(start: DateTime.now(), end: DateTime.now());
+    context: context,
+    builder: (context) {
+      final textTheme = context.uiKitTheme?.boldTextTheme;
+      final lastDate = DateTime.now().add(const Duration(days: 365 * 3));
+      DateTimeRange range = initialDateRange ?? DateTimeRange(start: DateTime.now(), end: DateTime.now());
 
-        return Dialog(
-            backgroundColor: context.uiKitTheme?.cardColor,
-            clipBehavior: Clip.hardEdge,
-            insetPadding: EdgeInsets.zero,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadiusFoundation.all24,
-            ),
-            child: StatefulBuilder(
-                builder: (context, setState) =>
-                    Column(crossAxisAlignment: CrossAxisAlignment.center, mainAxisSize: MainAxisSize.min, children: [
-                      SpacingFoundation.verticalSpace8,
-                      Text(title ?? S.of(context).SelectDateRange, style: textTheme?.title2),
-                      SpacingFoundation.verticalSpace8,
-                      _CalendarDateRangePicker(
-                        initialStartDate: initialDateRange?.start,
-                        initialEndDate: initialDateRange?.end,
-                        firstDate: DateTime(2020),
-                        lastDate: lastDate,
-                        onStartDateChanged: (DateTime? value) {
-                          if (value != null) {
-                            setState(() {
-                              range = DateTimeRange(start: value, end: value.isAfter(range.end) ? value : range.end);
-                            });
-                          }
-                        },
-                        onEndDateChanged: (DateTime? value) {
-                          if (value != null) {
-                            setState(() {
-                              range = DateTimeRange(end: value, start: range.start);
-                            });
-                          }
-                        },
-                      ),
-                      SpacingFoundation.horizontalSpace16,
-                      Row(
-                        children: [
-                          context.button(
-                              data: BaseUiKitButtonData(
-                                  text: S.of(context).Reset,
-                                  onPressed: () => context.pop<DateTimeRange?>(result: null)),
-                              isTextButton: true),
-                          const Spacer(),
-                          context.button(
-                              data: BaseUiKitButtonData(text: S.of(context).Cancel, onPressed: () => context.pop()),
-                              isTextButton: true),
-                          SpacingFoundation.horizontalSpace4,
-                          context.dialogButton(
-                            dialogButtonType: DialogButtonType.buttonWhite,
-                            data: BaseUiKitButtonData(
-                                text: S.of(context).Ok, onPressed: () => context.pop<DateTimeRange>(result: range)),
-                            small: true,
-                          )
-                        ],
-                      ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16),
-                    ]))).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16);
-      });
+      return Dialog(
+        backgroundColor: context.uiKitTheme?.cardColor,
+        clipBehavior: Clip.hardEdge,
+        insetPadding: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusFoundation.all24,
+        ),
+        child: StatefulBuilder(
+          builder: (context, setState) => Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SpacingFoundation.verticalSpace8,
+              Text(
+                title ?? S.of(context).SelectDateRange,
+                style: textTheme?.title2,
+              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+              SpacingFoundation.verticalSpace8,
+              _CalendarDateRangePicker(
+                initialStartDate: initialDateRange?.start,
+                initialEndDate: initialDateRange?.end,
+                firstDate: DateTime(2020),
+                lastDate: lastDate,
+                onStartDateChanged: (DateTime? value) {
+                  if (value != null) {
+                    setState(() {
+                      range = DateTimeRange(start: value, end: value.isAfter(range.end) ? value : range.end);
+                    });
+                  }
+                },
+                onEndDateChanged: (DateTime? value) {
+                  if (value != null) {
+                    setState(() {
+                      range = DateTimeRange(end: value, start: range.start);
+                    });
+                  }
+                },
+              ),
+              SpacingFoundation.horizontalSpace16,
+              Row(
+                children: [
+                  context.button(
+                    data: BaseUiKitButtonData(
+                      text: S.of(context).Reset,
+                      onPressed: () => context.pop<DateTimeRange?>(result: null),
+                    ),
+                    isTextButton: true,
+                  ),
+                  const Spacer(),
+                  context.button(
+                    data: BaseUiKitButtonData(text: S.of(context).Cancel, onPressed: () => context.pop()),
+                    isTextButton: true,
+                  ),
+                  SpacingFoundation.horizontalSpace4,
+                  context.dialogButton(
+                    dialogButtonType: DialogButtonType.buttonWhite,
+                    data: BaseUiKitButtonData(text: S.of(context).Ok, onPressed: () => context.pop<DateTimeRange>(result: range)),
+                    small: true,
+                  )
+                ],
+              ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16),
+              SpacingFoundation.verticalSpace16,
+            ],
+          ),
+        ),
+      ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16);
+    },
+  );
 
   return result;
 }
@@ -485,9 +497,8 @@ class _DayHeaders extends StatelessWidget {
 
     return Container(
       constraints: BoxConstraints(
-        maxWidth: MediaQuery.orientationOf(context) == Orientation.landscape
-            ? _maxCalendarWidthLandscape
-            : _maxCalendarWidthPortrait,
+        maxWidth:
+            MediaQuery.orientationOf(context) == Orientation.landscape ? _maxCalendarWidthLandscape : _maxCalendarWidthPortrait,
         maxHeight: _monthItemRowHeight,
       ),
       child: GridView.custom(
@@ -738,20 +749,16 @@ class _MonthItemState extends State<_MonthItem> {
     TextStyle? itemStyle = textTheme?.caption1;
 
     final bool isRangeSelected = widget.selectedDateStart != null && widget.selectedDateEnd != null;
-    final bool isSelectedDayStart =
-        widget.selectedDateStart != null && dayToBuild.isAtSameMomentAs(widget.selectedDateStart!);
-    final bool isSelectedDayEnd =
-        widget.selectedDateEnd != null && dayToBuild.isAtSameMomentAs(widget.selectedDateEnd!);
-    final bool isInRange = isRangeSelected &&
-        dayToBuild.isAfter(widget.selectedDateStart!) &&
-        dayToBuild.isBefore(widget.selectedDateEnd!);
+    final bool isSelectedDayStart = widget.selectedDateStart != null && dayToBuild.isAtSameMomentAs(widget.selectedDateStart!);
+    final bool isSelectedDayEnd = widget.selectedDateEnd != null && dayToBuild.isAtSameMomentAs(widget.selectedDateEnd!);
+    final bool isInRange =
+        isRangeSelected && dayToBuild.isAfter(widget.selectedDateStart!) && dayToBuild.isBefore(widget.selectedDateEnd!);
 
     T? effectiveValue<T>(T? Function(DatePickerThemeData? theme) getProperty) {
       return getProperty(datePickerTheme) ?? getProperty(defaults);
     }
 
-    T? resolve<T>(
-        MaterialStateProperty<T>? Function(DatePickerThemeData? theme) getProperty, Set<MaterialState> states) {
+    T? resolve<T>(MaterialStateProperty<T>? Function(DatePickerThemeData? theme) getProperty, Set<MaterialState> states) {
       return effectiveValue(
         (DatePickerThemeData? theme) {
           return getProperty(theme)?.resolve(states);
@@ -766,13 +773,11 @@ class _MonthItemState extends State<_MonthItem> {
 
     // final Color? dayForegroundColor =
     //     resolve<Color?>((DatePickerThemeData? theme) => theme?.dayForegroundColor, states);
-    final Color? dayBackgroundColor =
-        resolve<Color?>((DatePickerThemeData? theme) => theme?.dayBackgroundColor, states);
+    final Color? dayBackgroundColor = resolve<Color?>((DatePickerThemeData? theme) => theme?.dayBackgroundColor, states);
     final MaterialStateProperty<Color?> dayOverlayColor =
         MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) => effectiveValue(
-              (DatePickerThemeData? theme) => isInRange
-                  ? theme?.rangeSelectionOverlayColor?.resolve(states)
-                  : theme?.dayOverlayColor?.resolve(states),
+              (DatePickerThemeData? theme) =>
+                  isInRange ? theme?.rangeSelectionOverlayColor?.resolve(states) : theme?.dayOverlayColor?.resolve(states),
             ));
 
     _HighlightPainter? highlightPainter;
@@ -825,8 +830,7 @@ class _MonthItemState extends State<_MonthItem> {
     // formatted full date.
     final String semanticLabelSuffix =
         DateUtils.isSameDay(widget.currentDate, dayToBuild) ? ', ${localizations.currentDateLabel}' : '';
-    String semanticLabel =
-        '${localizations.formatDecimal(day)}, ${localizations.formatFullDate(dayToBuild)}$semanticLabelSuffix';
+    String semanticLabel = '${localizations.formatDecimal(day)}, ${localizations.formatFullDate(dayToBuild)}$semanticLabelSuffix';
     if (isSelectedDayStart) {
       semanticLabel = localizations.dateRangeStartDateSemanticLabel(semanticLabel);
     } else if (isSelectedDayEnd) {
@@ -943,9 +947,8 @@ class _MonthItemState extends State<_MonthItem> {
       paddedDayItems.addAll(weekList);
     }
 
-    final double maxWidth = MediaQuery.orientationOf(context) == Orientation.landscape
-        ? _maxCalendarWidthLandscape
-        : _maxCalendarWidthPortrait;
+    final double maxWidth =
+        MediaQuery.orientationOf(context) == Orientation.landscape ? _maxCalendarWidthLandscape : _maxCalendarWidthPortrait;
     return Column(
       children: <Widget>[
         Container(
