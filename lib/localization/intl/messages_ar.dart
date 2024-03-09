@@ -305,6 +305,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("you press and get random"),
         "FeedRandomizerHiwTitle":
             MessageLookupByLibrary.simpleMessage("Randomizing..."),
+        "FeedbackAddedSuccessfullyMessage":
+            MessageLookupByLibrary.simpleMessage(
+                "Your feedback has been successfully added"),
         "Feeling": MessageLookupByLibrary.simpleMessage("Feeling"),
         "Female": MessageLookupByLibrary.simpleMessage("Female"),
         "Filters": MessageLookupByLibrary.simpleMessage("Filters"),

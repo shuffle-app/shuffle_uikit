@@ -17,7 +17,7 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
       borderRadius: BorderRadiusFoundation.onlyTop24,
     ),
     clipBehavior: Clip.hardEdge,
-    isDismissible: true,
+    isDismissible: data.isDismissible,
     context: context,
     builder: (context) {
       return UiKitBottomModalSheet(
@@ -28,7 +28,7 @@ showUiKitGeneralFullScreenDialog(BuildContext context, GeneralDialogData data) {
 }
 
 //ignore: no-empty-block
-void _empty() {}
+// void _empty() {}
 
 //ignore: prefer-match-file-name
 class GeneralDialogData {
@@ -40,7 +40,7 @@ class GeneralDialogData {
   final double? topPadding;
   final double? customHeight;
 
-  final Function onDismissed;
+  final bool isDismissible;
 
   GeneralDialogData({
     this.customHeight,
@@ -50,6 +50,6 @@ class GeneralDialogData {
     required this.child,
     this.bottomBar,
     this.topPadding,
-    this.onDismissed = _empty,
+    this.isDismissible = true,
   });
 }

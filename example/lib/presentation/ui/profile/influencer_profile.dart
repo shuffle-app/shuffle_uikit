@@ -17,11 +17,29 @@ class InfluencerProfile extends StatelessWidget {
             delegate: SliverChildListDelegate(
               [
                 ProfileCard(
-                  nickname: '@marywill',
+                  speciality: 'Entertainer',
+                  socialLinks: const [
+                    'https://www.instagram.com/marrywilliams/',
+                    'https://www.tg.me/marrywilliams/',
+                  ],
+                  onShare: (){},
+
+                  nickname: 'marywill',
+                  name: 'Some name',
                   description: 'Just walking here and there trying to find something unique and interesting to show you!',
                   avatarUrl: 'assets/images/png/profile_avatar.png',
                   interests: const ['Restaurants', 'Hookah', 'Roller Coaster', 'Swimmings'],
                   profileType: ProfileCardType.personal,
+                  userTileType: UserTileType.influencer,
+                  achievements: List.generate(
+                      9,
+                          (index) => UiKitAchievementsModel(
+                          title: 'Achievement ${index + 1}',
+                          asset: index != 0 && index % 3 == 0
+                              ? null
+                              : index % 2 == 0
+                              ? GraphicsFoundation.instance.png.goldenCup
+                              : GraphicsFoundation.instance.png.goldenMedal)),
                   followers: 2650,
                   onFollow: () {},
                 ).paddingAll(EdgeInsetsFoundation.all16),

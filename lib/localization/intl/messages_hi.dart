@@ -306,6 +306,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "आप दबाते हैं और यादृच्छिक प्राप्त करते हैं"),
         "FeedRandomizerHiwTitle":
             MessageLookupByLibrary.simpleMessage("यादृच्छिकता..."),
+        "FeedbackAddedSuccessfullyMessage":
+            MessageLookupByLibrary.simpleMessage(
+                "आपकी प्रतिक्रिया सफलतापूर्वक जोड़ी गई है"),
         "Feeling": MessageLookupByLibrary.simpleMessage("लग रहा है"),
         "Female": MessageLookupByLibrary.simpleMessage("महिला"),
         "Filters": MessageLookupByLibrary.simpleMessage("फ़िल्टर"),
@@ -346,9 +349,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("संकेत प्रणाली अक्षम है"),
         "HintSystemEnabled": m14,
         "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
-            "How’re you feeling this morning?"),
-        "HowAreYouFeelingToday":
-            MessageLookupByLibrary.simpleMessage("How’re you feeling today?"),
+            "आप आज सुबह कैसा महसूस कर रहे हैं?"),
+        "HowAreYouFeelingToday": MessageLookupByLibrary.simpleMessage(
+            "आज आप कैसा महसूस कर रहे हैं?"),
         "HowAreYouFeelingTonight": MessageLookupByLibrary.simpleMessage(
             "आज रात आप कैसा महसूस कर रहे हैं?"),
         "HowItWorks":

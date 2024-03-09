@@ -5,25 +5,27 @@ class PersonalProfileInfo extends StatelessWidget {
   final String nickname;
   final String? name;
   final int? followers;
-  final VoidCallback? onFollow;
+  final AnimationController? controller;
 
   const PersonalProfileInfo({
-    Key? key,
+    super.key,
     required this.nickname,
     this.name,
     this.followers,
-    this.onFollow,
-  }) : super(key: key);
+    this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final theme = context.uiKitTheme;
+    final boldTextTheme = theme?.boldTextTheme;
+    final regularTextTheme = theme?.regularTextTheme;
     final fallBackStyle = Theme.of(context).textTheme.bodyMedium;
     TextStyle? nickNameStyle = boldTextTheme?.subHeadline ?? fallBackStyle;
-    TextStyle? followersCountStyle = boldTextTheme?.title2 ?? fallBackStyle;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: name == null ? CrossAxisAlignment.stretch : CrossAxisAlignment.start,
       children: [
         RichText(
@@ -33,33 +35,40 @@ class PersonalProfileInfo extends StatelessWidget {
                 text: name ?? nickname,
                 style: nickNameStyle,
               ),
-              if (followers != null) ...[
-                TextSpan(
-                  text: '\n${S.of(context).Followers}\n',
-                  style: boldTextTheme?.caption1Medium.copyWith(
-                        color: ColorsFoundation.darkNeutral900,
-                      ) ??
-                      fallBackStyle,
-                ),
-                TextSpan(
-                  text: followers!.toString(),
-                  style: followersCountStyle,
-                )
-              ] else
-                TextSpan(
-                  text: '\n@$nickname',
-                  style: boldTextTheme?.body ?? fallBackStyle,
-                )
+              TextSpan(
+                text: '\n@$nickname',
+                style:
+                    boldTextTheme?.caption1Medium.copyWith(color: theme?.colorScheme.darkNeutral500) ?? fallBackStyle,
+              ),
             ],
           ),
           textAlign: name == null ? TextAlign.center : TextAlign.start,
         ),
-        if (onFollow != null) ...[
-          SpacingFoundation.verticalSpace12,
-          context.smallButton(
-            data: BaseUiKitButtonData(text: S.of(context).Follow.toUpperCase(), onPressed: onFollow),
+        //TODO add Music Specialist
+
+        if (controller != null && followers != null) ...[
+          SpacingFoundation.verticalSpace8,
+          GradientableWidget(
+              gradient: GradientFoundation.defaultLinearGradient,
+              child: Text('Music Specialist', style: boldTextTheme?.caption2Medium.copyWith(color: Colors.white))),
+          SpacingFoundation.verticalSpace8,
+          UiKitScaleAnimation(
+            scale: 0.3,
+            controller: controller!,
+            alignment: Alignment.centerLeft,
+            child: RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(text: '${followers} ', style: boldTextTheme?.caption1Bold),
+                  TextSpan(
+                      text: S.of(context).Followers.toLowerCase(),
+                      style: regularTextTheme?.caption1.copyWith(color: ColorsFoundation.mutedText)),
+                ],
+              ),
+              textAlign: name == null ? TextAlign.center : TextAlign.start,
+            ),
           )
-        ],
+        ]
       ],
     );
   }

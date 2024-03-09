@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class UiKitImageAutoReloadWrapper extends InheritedWidget {
   @override
-  Widget get child => SizedBox(key: _imageKey, child: super.child);
+  Widget get child => SizedBox(key: _imageKey.value, child: super.child);
 
-  ValueKey<bool> _imageKey = const ValueKey<bool>(true);
+  final ValueNotifier<ValueKey<bool>> _imageKey = ValueNotifier(const ValueKey<bool>(true));
 
   UiKitImageAutoReloadWrapper({
     Key? key,
@@ -16,7 +16,7 @@ class UiKitImageAutoReloadWrapper extends InheritedWidget {
   }
 
   void reloadImage() {
-    _imageKey = ValueKey<bool>(!_imageKey.value);
+    _imageKey.value = ValueKey<bool>(!_imageKey.value.value);
   }
 
   @override
