@@ -127,6 +127,15 @@ class ImageWidget extends StatelessWidget {
                 : placeholder;
           },
         );
+      } else if (link!.split('.').lastOrNull == 'svg') {
+        return SvgPicture.network(
+          link!,
+          colorFilter: color == null? null : ColorFilter.mode(color!, BlendMode.srcIn),
+          fit: fit?? BoxFit.none,
+          height: height,
+          width: width,
+          placeholderBuilder: (_) => placeholder,
+        );
       }
 
       // !.startsWith("http://") || link!.startsWith("https://")) {
