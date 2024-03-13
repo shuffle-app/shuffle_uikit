@@ -20,6 +20,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   // final ScrollController _scrollController = ScrollController();
   final GlobalKey _gradientTextKey = GlobalKey();
   double progress = 0.0;
+  String _selectedDropDownValue = '_selectedMenuItem';
   CountryModel? _selectedCountry;
   CustomBackgroundSwitchOption selectedOption = CustomBackgroundSwitchOption(
     title: 'Personal',
@@ -128,6 +129,73 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
       ),
       children: [
+        SpacingFoundation.verticalSpace16,
+        Center(
+          child: UiKitDropDownList<String>(
+            selectedItem: _selectedDropDownValue,
+            onChanged: (value) {
+              if (value != null) setState(() => _selectedDropDownValue = value);
+            },
+            items: [
+              DropdownMenuItem(
+                value: 'Active Tiger',
+                child: Text(
+                  'Active Tiger',
+                  style: textTheme?.caption1Medium,
+                ),
+              ),
+              DropdownMenuItem(
+                value: 'Active Tige',
+                child: Text(
+                  'Active Tige',
+                  style: textTheme?.caption1Medium,
+                ),
+              ),
+              DropdownMenuItem(
+                value: 'Active Tig',
+                child: Text(
+                  'Active Tig',
+                  style: textTheme?.caption1Medium,
+                ),
+              ),
+              DropdownMenuItem(
+                value: 'Active Ti',
+                child: Text(
+                  'Active Ti',
+                  style: textTheme?.caption1Medium,
+                ),
+              ),
+              DropdownMenuItem(
+                value: 'Active T',
+                child: Text(
+                  'Active T',
+                  style: textTheme?.caption1Medium,
+                ),
+              ),
+              DropdownMenuItem(
+                value: '_selectedMenuItem',
+                child: Text(
+                  '_selectedMenuItem',
+                  style: textTheme?.caption1Medium,
+                ),
+              ),
+            ],
+          ),
+        ),
+        SpacingFoundation.verticalSpace16,
+        Row(
+          children: [
+            UiKitReactionPreview(
+              imagePath: 'assets/images/png/profile_story_1.png',
+              viewed: false,
+              onTap: () {},
+            ),
+            SpacingFoundation.horizontalSpace8,
+            UiKitReactionPreview.empty(
+              onTap: () {},
+            ),
+          ],
+        ),
         SpacingFoundation.verticalSpace16,
         UiKitRatingBarWithStars(
           onRatingChanged: (rating) {},

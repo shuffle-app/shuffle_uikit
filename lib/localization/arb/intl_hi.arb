@@ -436,5 +436,13 @@
   "AddInfluencerFeedbackPopOverText": "एक विस्तृत समीक्षा लिखें, सभी उपलब्ध वर्णों का उपयोग करें ताकि जितने अधिक लोग संवाद कर सकें",
   "TitleYourTop": "अपने शीर्ष का शीर्षक दें",
   "AddReviewPopOverText": "एक समीक्षा जोड़ें जो अन्य आगंतुकों के लिए उपयोगी होगी",
-  "FeedbackAddedSuccessfullyMessage": "आपकी प्रतिक्रिया सफलतापूर्वक जोड़ी गई है"
+  "FeedbackAddedSuccessfullyMessage": "आपकी प्रतिक्रिया सफलतापूर्वक जोड़ी गई है",
+  "AddReactions": "प्रतिक्रिया जोड़ें",
+  "ReactionsBy": "प्रतिक्रिया\nके द्वारा",
+  "Albums": "एल्बम",
+  "AllAlbums": "सभी एल्बम",
+  "GoNoExclamation": "जाओ",
+  "VideoReactionAdded": "आपकी प्रतिक्रिया सफलतापूर्वक जोड़ी गई है",
+  "YouMissedALot": "आपने बहुत कुछ छोड़ दिया"
+
 }
