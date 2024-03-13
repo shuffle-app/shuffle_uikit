@@ -37,7 +37,7 @@ class UiKitMediaVideo extends BaseUiKitMedia {
 
 class UiKitTag {
   final String title;
-  final IconData icon;
+  final dynamic icon;
   final bool unique;
 
   UiKitTagWidget get widget => UiKitTagWidget(
