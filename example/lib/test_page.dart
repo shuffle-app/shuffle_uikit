@@ -25,6 +25,20 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
         children: [
           SizedBox(height: MediaQuery.of(context).viewPadding.top),
           SizedBox(height: MediaQuery.of(context).viewPadding.top),
+          UiKitHorizontalPicturesCarousel(
+            autoPlay: true,
+            autoPlayDuration: const Duration(seconds: 1),
+            pictureLinks: [
+              GraphicsFoundation.instance.png.mockAdBanner1.path,
+              GraphicsFoundation.instance.png.mockAdBanner2.path,
+              GraphicsFoundation.instance.png.mockAdBanner3.path,
+              GraphicsFoundation.instance.png.mockAdBanner4.path,
+              GraphicsFoundation.instance.png.mockAdBanner5.path,
+              GraphicsFoundation.instance.png.place.path,
+            ],
+            carouselSize: Size(1.sw - SpacingFoundation.verticalSpacing32, 0.3.sh),
+          ),
+          SpacingFoundation.verticalSpace24,
           UiKitExpansionTile(
             leadingIconData: BaseUiKitButtonIconData(
               iconData: ShuffleUiKitIcons.tool,
