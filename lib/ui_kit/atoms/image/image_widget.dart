@@ -71,8 +71,8 @@ class ImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // if (iconData == ShuffleUiKitIcons.info) {
     //   final renderObject = context.findRenderObject() as RenderBox?;
-      // final tailStart = renderObject?.localToGlobal(Offset.zero);
-      // print('ShuffleUiKitIcons.info position: $tailStart');
+    // final tailStart = renderObject?.localToGlobal(Offset.zero);
+    // print('ShuffleUiKitIcons.info position: $tailStart');
     // }
 
     if (iconData != null || (link != null && !link!.contains('/') && link!.isNotEmpty)) {
@@ -130,11 +130,14 @@ class ImageWidget extends StatelessWidget {
       } else if (link!.split('.').lastOrNull == 'svg') {
         return SvgPicture.network(
           link!,
-          colorFilter: color == null? null : ColorFilter.mode(color!, BlendMode.srcIn),
-          fit: fit?? BoxFit.none,
+          colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
+          fit: fit ?? BoxFit.none,
           height: height,
           width: width,
-          placeholderBuilder: (_) => placeholder,
+          placeholderBuilder: (_) => ConstrainedBox(
+            constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
+            child: placeholder,
+          ),
         );
       }
 

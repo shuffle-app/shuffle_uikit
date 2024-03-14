@@ -354,7 +354,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         fit: data.fit,
         icon: data.iconWidget,
         onPressed: data.onPressed,
-        borderRadius: BorderRadiusFoundation.max,
+        // borderRadius: BorderRadiusFoundation.max,
         loading: data.loading,
       );
     } else if (!hasIcon && (data.text?.isNotEmpty ?? false)) {

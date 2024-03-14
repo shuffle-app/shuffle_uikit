@@ -15,7 +15,7 @@ class UiKitSpinnerCard extends StatefulWidget {
   final String? ownerPhotoLink;
   final String? ownerTileTitle;
   final Widget? ownerTileTitleTrailing;
-  final Future<String>? ownerTileSubtitle;
+  final String? ownerTileSubtitle;
   final double availableHeight;
 
   const UiKitSpinnerCard({
