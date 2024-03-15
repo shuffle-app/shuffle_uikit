@@ -1507,6 +1507,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/question.svg
   SvgGenImage get question => const SvgGenImage('assets/images/svg/question.svg');
 
+  /// File path: assets/images/svg/record.svg
+  SvgGenImage get record => const SvgGenImage('assets/images/svg/record.svg');
+
   /// File path: assets/images/svg/refresh.svg
   SvgGenImage get refresh => const SvgGenImage('assets/images/svg/refresh.svg');
 
@@ -1919,6 +1922,7 @@ class $AssetsImagesSvgGen {
         profileOutline,
         profilePlus,
         question,
+        record,
         refresh,
         restaurant,
         risingTrendIcon,
