@@ -1,5 +1,6 @@
 /// This file exports all molecules in the molecules folder
 
+export '../content_wrappers/ui_kit_colored_accent_block.dart';
 export '../content_wrappers/ui_kit_hide_wrapper.dart';
 export '../content_wrappers/ui_kit_shadow_wrapper.dart';
 export '../content_wrappers/ui_kit_titled_section.dart';

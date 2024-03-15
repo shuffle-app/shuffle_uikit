@@ -138,6 +138,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "एक विस्तृत समीक्षा लिखें, सभी उपलब्ध वर्णों का उपयोग करें ताकि जितने अधिक लोग संवाद कर सकें"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("प्रचार जोड़ें"),
+        "AddReactions":
+            MessageLookupByLibrary.simpleMessage("प्रतिक्रिया जोड़ें"),
         "AddReview": MessageLookupByLibrary.simpleMessage("समीक्षा जोड़ें"),
         "AddReviewFieldHint":
             MessageLookupByLibrary.simpleMessage("एक उपयोगी जोड़ना लिखें"),
@@ -150,6 +152,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("स्वयं को सूची में जोड़ें"),
         "Address": MessageLookupByLibrary.simpleMessage("पता"),
+        "Albums": MessageLookupByLibrary.simpleMessage("एल्बम"),
+        "AllAlbums": MessageLookupByLibrary.simpleMessage("सभी एल्बम"),
         "AllAppNotification":
             MessageLookupByLibrary.simpleMessage("सभी ऐप सूचनाएँ"),
         "Allow": MessageLookupByLibrary.simpleMessage("अनुमति दें"),
@@ -334,6 +338,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "GetReward": MessageLookupByLibrary.simpleMessage("इनाम मिलना"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("शुरू हो जाओ"),
         "Go": MessageLookupByLibrary.simpleMessage("आगे बढ़ो"),
+        "GoNoExclamation": MessageLookupByLibrary.simpleMessage("जाओ"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("सेटिंग्स में जाओ"),
         "Guess": MessageLookupByLibrary.simpleMessage("अनुमान"),
@@ -546,6 +551,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("अकेले मत रहो..."),
         "Published": MessageLookupByLibrary.simpleMessage("प्रकाशित"),
         "Rating": MessageLookupByLibrary.simpleMessage("रेटिंग"),
+        "ReactionsBy":
+            MessageLookupByLibrary.simpleMessage("प्रतिक्रिया\nके द्वारा"),
         "Read": m24,
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),
@@ -712,6 +719,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "मान कम से कम 3 वर्ण लंबा होना चाहिए"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("बहुत अक्सर"),
         "Video": MessageLookupByLibrary.simpleMessage("वीडियो"),
+        "VideoReactionAdded": MessageLookupByLibrary.simpleMessage(
+            "आपकी प्रतिक्रिया सफलतापूर्वक जोड़ी गई है"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("वीडियो (फ़ाइलें अपलोड करें)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("सभी देखें"),
@@ -749,6 +758,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "बेहतर होगा कि आप इसकी जांच कर लें"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "आपको वही मिलता है जो आपको चाहि"),
+        "YouMissedALot":
+            MessageLookupByLibrary.simpleMessage("आपने बहुत कुछ छोड़ दिया"),
         "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("आप उसे खोज लोगे"),
         "YourAge": MessageLookupByLibrary.simpleMessage("आपकी उम्र"),

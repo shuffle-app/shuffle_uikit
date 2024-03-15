@@ -90,6 +90,7 @@ dependencies:
   google_maps_flutter: ^2.5.3
   flutter_polyline_points: ^2.0.0
   countries_flag: ^1.0.0
+  dropdown_button2: ^2.3.9
 
 dependency_overrides:
   watcher: ^1.1.0

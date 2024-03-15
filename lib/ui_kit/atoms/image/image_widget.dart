@@ -34,6 +34,7 @@ class ImageWidget extends StatelessWidget {
   final bool mentionPackage;
   final ImageFrameBuilder? imageBuilder;
   final VoidCallback? onImageLoadingFailed;
+  final Uint8List? imageBytes;
 
   const ImageWidget({
     Key? key,
@@ -52,6 +53,7 @@ class ImageWidget extends StatelessWidget {
     this.errorWidget,
     this.colorBlendMode,
     this.imageBuilder,
+    this.imageBytes,
     this.onImageLoadingFailed,
   }) : super(key: key);
 
@@ -71,9 +73,20 @@ class ImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // if (iconData == ShuffleUiKitIcons.info) {
     //   final renderObject = context.findRenderObject() as RenderBox?;
-      // final tailStart = renderObject?.localToGlobal(Offset.zero);
-      // print('ShuffleUiKitIcons.info position: $tailStart');
+    // final tailStart = renderObject?.localToGlobal(Offset.zero);
+    // print('ShuffleUiKitIcons.info position: $tailStart');
     // }
+    if (imageBytes != null) {
+      return Image.memory(
+        imageBytes!,
+        fit: fit,
+        width: width,
+        color: color,
+        height: height,
+        frameBuilder: imageBuilder,
+        errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
+      );
+    }
 
     if (iconData != null || (link != null && !link!.contains('/') && link!.isNotEmpty)) {
       return Icon(

@@ -436,5 +436,12 @@
   "AddInfluencerFeedbackPopOverText": "Write a detailed review, use all the available characters so that as many people as possible can appreciate it",
   "TitleYourTop": "Title your TOP",
   "AddReviewPopOverText": "Write an addition to the review that will be useful for other visitors.",
-  "FeedbackAddedSuccessfullyMessage": "Your feedback has been successfully added"
+  "FeedbackAddedSuccessfullyMessage": "Your feedback has been successfully added",
+  "AddReactions": "Add reaction",
+  "ReactionsBy": "Reactions\nby",
+  "Albums": "Albums",
+  "AllAlbums": "All albums",
+  "GoNoExclamation": "Go",
+  "VideoReactionAdded": "Your reaction has been successfully added",
+  "YouMissedALot": "You missed a lot"
 }
