@@ -9,6 +9,7 @@ class AnimationsPage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
+
           Container(
             height: 180,
             width: 0.8.sw,
