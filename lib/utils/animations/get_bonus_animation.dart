@@ -14,18 +14,19 @@ class _GetBonusAnimationState extends State<GetBonusAnimation> with SingleTicker
 
   @override
   void initState() {
-    super.initState();
-    _controller = AnimationController(vsync: this);
+    _controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 3000));
+    _controller.addStatusListener(animationStatusListener);
     _controller.forward();
+    super.initState();
   }
 
   void animationStatusListener(AnimationStatus status) {
     if (status == AnimationStatus.completed && isRolling) {
       setState(() {
         isRolling = false;
-        _controller = AnimationController(vsync: this);
-        _controller.forward();
+        _controller.duration = const Duration(milliseconds: 1000);
       });
+      _controller.forward(from: 0);
     } else if (status == AnimationStatus.completed && !isRolling) {
       _controller.reverse();
     }
@@ -33,6 +34,7 @@ class _GetBonusAnimationState extends State<GetBonusAnimation> with SingleTicker
 
   @override
   void dispose() {
+    _controller.removeStatusListener(animationStatusListener);
     _controller.dispose();
     super.dispose();
   }
@@ -41,19 +43,32 @@ class _GetBonusAnimationState extends State<GetBonusAnimation> with SingleTicker
   Widget build(BuildContext context) {
     final image = ImageWidget(
       rasterAsset: GraphicsFoundation.instance.png.justCoin,
+      height: 40.h,
+      width: 40.w,
+      fit: BoxFit.contain,
     );
 
-    final Matrix4 transform = Matrix4.identity();
-    if (isRolling) {
-      transform.rotateZ(1);
-      transform.translate(0, 0, 1);
-    }
-
-    return isRolling
-        ? Transform(
-            transform: transform,
-            child: image,
-          )
-        : UiKitScaleAnimation(controller: _controller, child: image);
+    return Align(
+        alignment: isRolling ? Alignment.centerLeft : Alignment.center,
+        child: AnimatedBuilder(
+          animation: _controller,
+          builder: (context, child) {
+            if (isRolling) {
+              return Transform.translate(
+                  offset: Offset(_controller.value * 0.42.sw, 0.0),
+                  child: Transform.rotate(
+                    angle: _controller.value * 15,
+                    child: child,
+                  ));
+            } else {
+              return Transform.scale(
+                alignment: Alignment.center,
+                scale: _controller.value + 1,
+                child: child,
+              );
+            }
+          },
+          child: image,
+        ));
   }
 }
