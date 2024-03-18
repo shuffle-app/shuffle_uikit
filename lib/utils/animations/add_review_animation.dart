@@ -15,7 +15,7 @@ class _AddReviewAnimationState extends State<AddReviewAnimation> with SingleTick
   late AnimationController _controller;
   int reviewsCount = 1;
 
-  final List rasterAvatars = [GraphicsFoundation.instance.png.mockAvatar];
+  final List rasterAvatars = GraphicsFoundation.instance.png.avatars.values;
 
   @override
   void initState() {
