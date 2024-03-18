@@ -397,6 +397,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Month": MessageLookupByLibrary.simpleMessage("Месяц"),
         "Monthly": MessageLookupByLibrary.simpleMessage("Месячный"),
         "More": MessageLookupByLibrary.simpleMessage("больше"),
+        "MoreAboutThisEvent":
+            MessageLookupByLibrary.simpleMessage("Больше об этом событии"),
+        "MoreAboutThisPlace":
+            MessageLookupByLibrary.simpleMessage("Больше об этом месте"),
         "MyCard": MessageLookupByLibrary.simpleMessage("Профиль"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("Мои события"),
         "NPlace": m18,

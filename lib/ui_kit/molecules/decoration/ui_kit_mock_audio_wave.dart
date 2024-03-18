@@ -10,7 +10,7 @@ class UiKitMockAudioWave extends StatefulWidget {
   final double? availableWidth;
   final bool? scrollable;
 
-  UiKitMockAudioWave({
+  const UiKitMockAudioWave({
     Key? key,
     required this.itemCount,
     this.color,
@@ -35,11 +35,13 @@ class _UiKitMockAudioWaveState extends State<UiKitMockAudioWave> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       Future.delayed(const Duration(seconds: 1), () {
-        scrollController.animateTo(
-          scrollController.position.maxScrollExtent,
-          duration: const Duration(seconds: 1),
-          curve: Curves.linear,
-        );
+        if (scrollController.hasClients) {
+          scrollController.animateTo(
+            scrollController.position.maxScrollExtent,
+            duration: const Duration(seconds: 1),
+            curve: Curves.linear,
+          );
+        }
       });
     });
   }

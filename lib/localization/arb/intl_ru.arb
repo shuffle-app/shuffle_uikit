@@ -443,6 +443,8 @@
   "AllAlbums": "Все альбомы",
   "GoNoExclamation": "Go",
   "VideoReactionAdded": "Ваша реакция успешно добавлена",
-  "YouMissedALot": "Вы многое пропустили"
+  "YouMissedALot": "Вы многое пропустили",
+  "MoreAboutThisPlace": "Больше об этом месте",
+  "MoreAboutThisEvent": "Больше об этом событии"
 
 }

@@ -399,6 +399,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Month": MessageLookupByLibrary.simpleMessage("महीना"),
         "Monthly": MessageLookupByLibrary.simpleMessage("मासिक"),
         "More": MessageLookupByLibrary.simpleMessage("और"),
+        "MoreAboutThisEvent": MessageLookupByLibrary.simpleMessage(
+            "इस घटना के बारे में और जानें"),
+        "MoreAboutThisPlace": MessageLookupByLibrary.simpleMessage(
+            "इस स्थान के बारे में और जानें"),
         "MyCard": MessageLookupByLibrary.simpleMessage("मेरा कार्ड"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("मेरी घटनाएँ"),
         "NPlace": m18,

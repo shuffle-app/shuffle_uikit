@@ -4574,6 +4574,26 @@ class S {
       args: [],
     );
   }
+
+  /// `More about this place`
+  String get MoreAboutThisPlace {
+    return Intl.message(
+      'More about this place',
+      name: 'MoreAboutThisPlace',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More about this event`
+  String get MoreAboutThisEvent {
+    return Intl.message(
+      'More about this event',
+      name: 'MoreAboutThisEvent',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
