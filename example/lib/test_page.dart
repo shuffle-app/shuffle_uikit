@@ -21,98 +21,102 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(height: MediaQuery.of(context).viewPadding.top),
-          SizedBox(height: MediaQuery.of(context).viewPadding.top),
-          UiKitHorizontalPicturesCarousel(
-            autoPlay: true,
-            autoPlayDuration: const Duration(seconds: 1),
-            pictureLinks: [
-              GraphicsFoundation.instance.png.mockAdBanner1.path,
-              GraphicsFoundation.instance.png.mockAdBanner2.path,
-              GraphicsFoundation.instance.png.mockAdBanner3.path,
-              GraphicsFoundation.instance.png.mockAdBanner4.path,
-              GraphicsFoundation.instance.png.mockAdBanner5.path,
-              GraphicsFoundation.instance.png.place.path,
-            ],
-            carouselSize: Size(1.sw - SpacingFoundation.verticalSpacing32, 0.3.sh),
-          ),
-          SpacingFoundation.verticalSpace24,
-          UiKitExpansionTile(
-            leadingIconData: BaseUiKitButtonIconData(
-              iconData: ShuffleUiKitIcons.tool,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: MediaQuery.of(context).viewPadding.top),
+            SizedBox(height: MediaQuery.of(context).viewPadding.top),
+            UiKitHorizontalPicturesCarousel(
+              autoPlay: true,
+              autoPlayDuration: const Duration(seconds: 1),
+              pictureLinks: [
+                GraphicsFoundation.instance.png.mockAdBanner1.path,
+                GraphicsFoundation.instance.png.mockAdBanner2.path,
+                GraphicsFoundation.instance.png.mockAdBanner3.path,
+                GraphicsFoundation.instance.png.mockAdBanner4.path,
+                GraphicsFoundation.instance.png.mockAdBanner5.path,
+                GraphicsFoundation.instance.png.place.path,
+              ],
+              carouselSize: Size(1.sw - SpacingFoundation.verticalSpacing32, 0.3.sh),
             ),
-            title: 'Control',
-            children: [
-              UiKitInlineButton(
-                data: BaseUiKitButtonData(
-                  text: 'Button',
-                  iconInfo: BaseUiKitButtonIconData(
-                    iconData: ShuffleUiKitIcons.lifebuoy,
-                  ),
-                  onPressed: () {},
-                ),
+            SpacingFoundation.verticalSpace24,
+            UiKitInfluencerAudioMessagesDemo(),
+            SpacingFoundation.verticalSpace24,
+            UiKitExpansionTile(
+              leadingIconData: BaseUiKitButtonIconData(
+                iconData: ShuffleUiKitIcons.tool,
               ),
-              UiKitInlineButton(
-                data: BaseUiKitButtonData(
-                  text: 'Button',
-                  iconInfo: BaseUiKitButtonIconData(
-                    iconData: ShuffleUiKitIcons.lifebuoy,
+              title: 'Control',
+              children: [
+                UiKitInlineButton(
+                  data: BaseUiKitButtonData(
+                    text: 'Button',
+                    iconInfo: BaseUiKitButtonIconData(
+                      iconData: ShuffleUiKitIcons.lifebuoy,
+                    ),
+                    onPressed: () {},
                   ),
-                  onPressed: () {},
                 ),
-              ),
-              UiKitInlineButton(
-                data: BaseUiKitButtonData(
-                  text: 'Button',
-                  iconInfo: BaseUiKitButtonIconData(
-                    iconData: ShuffleUiKitIcons.lifebuoy,
+                UiKitInlineButton(
+                  data: BaseUiKitButtonData(
+                    text: 'Button',
+                    iconInfo: BaseUiKitButtonIconData(
+                      iconData: ShuffleUiKitIcons.lifebuoy,
+                    ),
+                    onPressed: () {},
                   ),
-                  onPressed: () {},
                 ),
-              ),
-              UiKitInlineButton(
-                data: BaseUiKitButtonData(
-                  text: 'Button',
-                  iconInfo: BaseUiKitButtonIconData(
-                    iconData: ShuffleUiKitIcons.lifebuoy,
+                UiKitInlineButton(
+                  data: BaseUiKitButtonData(
+                    text: 'Button',
+                    iconInfo: BaseUiKitButtonIconData(
+                      iconData: ShuffleUiKitIcons.lifebuoy,
+                    ),
+                    onPressed: () {},
                   ),
-                  onPressed: () {},
                 ),
-              ),
-              UiKitInlineButton(
-                data: BaseUiKitButtonData(
-                  text: 'Button',
-                  iconInfo: BaseUiKitButtonIconData(
-                    iconData: ShuffleUiKitIcons.lifebuoy,
+                UiKitInlineButton(
+                  data: BaseUiKitButtonData(
+                    text: 'Button',
+                    iconInfo: BaseUiKitButtonIconData(
+                      iconData: ShuffleUiKitIcons.lifebuoy,
+                    ),
+                    onPressed: () {},
                   ),
-                  onPressed: () {},
                 ),
-              ),
-              UiKitInlineButton(
-                data: BaseUiKitButtonData(
-                  text: 'Button',
-                  iconInfo: BaseUiKitButtonIconData(
-                    iconData: ShuffleUiKitIcons.lifebuoy,
+                UiKitInlineButton(
+                  data: BaseUiKitButtonData(
+                    text: 'Button',
+                    iconInfo: BaseUiKitButtonIconData(
+                      iconData: ShuffleUiKitIcons.lifebuoy,
+                    ),
+                    onPressed: () {},
                   ),
-                  onPressed: () {},
                 ),
-              ),
-            ],
-          ),
-          SpacingFoundation.verticalSpace24,
-          UiKitTitledWrappedInput(
-            input: UiKitInputFieldNoIcon(
-              controller: TextEditingController(),
-              fillColor: context.uiKitTheme?.colorScheme.surface3,
+                UiKitInlineButton(
+                  data: BaseUiKitButtonData(
+                    text: 'Button',
+                    iconInfo: BaseUiKitButtonIconData(
+                      iconData: ShuffleUiKitIcons.lifebuoy,
+                    ),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
             ),
-            title: 'title',
-            popOverMessage: S.current.AddInfluencerFeedbackPopOverText,
-          ).paddingSymmetric(
-            horizontal: EdgeInsetsFoundation.horizontal16,
-          ),
-        ],
+            SpacingFoundation.verticalSpace24,
+            UiKitTitledWrappedInput(
+              input: UiKitInputFieldNoIcon(
+                controller: TextEditingController(),
+                fillColor: context.uiKitTheme?.colorScheme.surface3,
+              ),
+              title: 'title',
+              popOverMessage: S.current.AddInfluencerFeedbackPopOverText,
+            ).paddingSymmetric(
+              horizontal: EdgeInsetsFoundation.horizontal16,
+            ),
+          ],
+        ),
       ),
     );
   }
