@@ -72,6 +72,7 @@ export 'tiles/ui_kit_leading_radio_tile.dart';
 export 'tiles/ui_kit_location_search_tile.dart';
 export 'tiles/ui_kit_pop_up_menu_tile.dart';
 export 'tiles/ui_kit_searchable_list_body_item_tile.dart';
+export 'tiles/ui_kit_video_reaction_tile.dart';
 export 'tiles/user/badged_base_user_tile.dart';
 export 'tiles/user/base_user_tile.dart';
 export 'tiles/user/influencer_user_tile.dart';
