@@ -391,6 +391,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Month": MessageLookupByLibrary.simpleMessage("Month"),
         "Monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
         "More": MessageLookupByLibrary.simpleMessage("more"),
+        "MoreAboutThisEvent":
+            MessageLookupByLibrary.simpleMessage("More about this event"),
+        "MoreAboutThisPlace":
+            MessageLookupByLibrary.simpleMessage("More about this place"),
         "MyCard": MessageLookupByLibrary.simpleMessage("My card"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("My events"),
         "NPlace": m18,
@@ -545,6 +549,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Published": MessageLookupByLibrary.simpleMessage("Published"),
         "Rating": MessageLookupByLibrary.simpleMessage("Rating"),
         "ReactionsBy": MessageLookupByLibrary.simpleMessage("Reactions\nby"),
+        "ReactionsByCritics":
+            MessageLookupByLibrary.simpleMessage("Reactions by critics"),
         "Read": m24,
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),

@@ -399,6 +399,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Month": MessageLookupByLibrary.simpleMessage("महीना"),
         "Monthly": MessageLookupByLibrary.simpleMessage("मासिक"),
         "More": MessageLookupByLibrary.simpleMessage("और"),
+        "MoreAboutThisEvent": MessageLookupByLibrary.simpleMessage(
+            "इस घटना के बारे में और जानें"),
+        "MoreAboutThisPlace": MessageLookupByLibrary.simpleMessage(
+            "इस स्थान के बारे में और जानें"),
         "MyCard": MessageLookupByLibrary.simpleMessage("मेरा कार्ड"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("मेरी घटनाएँ"),
         "NPlace": m18,
@@ -553,6 +557,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Rating": MessageLookupByLibrary.simpleMessage("रेटिंग"),
         "ReactionsBy":
             MessageLookupByLibrary.simpleMessage("प्रतिक्रिया\nके द्वारा"),
+        "ReactionsByCritics": MessageLookupByLibrary.simpleMessage(
+            "निरंकुशों द्वारा प्रतिक्रिया"),
         "Read": m24,
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),

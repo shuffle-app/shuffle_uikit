@@ -376,6 +376,19 @@ class GradientFoundation {
     begin: Alignment.topCenter,
   );
 
+  static const blackLinearGradientInverted = LinearGradient(
+    colors: [
+      Colors.black,
+      Colors.transparent,
+    ],
+    stops: [
+      0,
+      0.8563,
+    ],
+    end: Alignment.bottomCenter,
+    begin: Alignment.topCenter,
+  );
+
   static const whiteLinearGradient = LinearGradient(
     colors: [
       // Colors.transparent,

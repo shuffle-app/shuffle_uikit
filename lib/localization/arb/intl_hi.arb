@@ -443,6 +443,9 @@
   "AllAlbums": "सभी एल्बम",
   "GoNoExclamation": "जाओ",
   "VideoReactionAdded": "आपकी प्रतिक्रिया सफलतापूर्वक जोड़ी गई है",
-  "YouMissedALot": "आपने बहुत कुछ छोड़ दिया"
+  "YouMissedALot": "आपने बहुत कुछ छोड़ दिया",
+  "MoreAboutThisPlace": "इस स्थान के बारे में और जानें",
+  "MoreAboutThisEvent": "इस घटना के बारे में और जानें",
+  "ReactionsByCritics": "निरंकुशों द्वारा प्रतिक्रिया"
 
 }
