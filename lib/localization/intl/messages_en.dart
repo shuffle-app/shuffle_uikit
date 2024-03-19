@@ -549,6 +549,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Published": MessageLookupByLibrary.simpleMessage("Published"),
         "Rating": MessageLookupByLibrary.simpleMessage("Rating"),
         "ReactionsBy": MessageLookupByLibrary.simpleMessage("Reactions\nby"),
+        "ReactionsByCritics":
+            MessageLookupByLibrary.simpleMessage("Reactions by critics"),
         "Read": m24,
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),

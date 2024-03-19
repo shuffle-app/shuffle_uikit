@@ -556,6 +556,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
         "Rating": MessageLookupByLibrary.simpleMessage("Рейтинг"),
         "ReactionsBy": MessageLookupByLibrary.simpleMessage("Реакции\nот"),
+        "ReactionsByCritics":
+            MessageLookupByLibrary.simpleMessage("Отзывы от критиков"),
         "Read": m24,
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
         "ResendCode":

@@ -445,6 +445,7 @@
   "VideoReactionAdded": "Ваша реакция успешно добавлена",
   "YouMissedALot": "Вы многое пропустили",
   "MoreAboutThisPlace": "Больше об этом месте",
-  "MoreAboutThisEvent": "Больше об этом событии"
+  "MoreAboutThisEvent": "Больше об этом событии",
+  "ReactionsByCritics": "Отзывы от критиков"
 
 }

@@ -557,6 +557,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Rating": MessageLookupByLibrary.simpleMessage("रेटिंग"),
         "ReactionsBy":
             MessageLookupByLibrary.simpleMessage("प्रतिक्रिया\nके द्वारा"),
+        "ReactionsByCritics": MessageLookupByLibrary.simpleMessage(
+            "निरंकुशों द्वारा प्रतिक्रिया"),
         "Read": m24,
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),

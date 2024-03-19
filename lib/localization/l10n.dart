@@ -4594,6 +4594,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Reactions by critics`
+  String get ReactionsByCritics {
+    return Intl.message(
+      'Reactions by critics',
+      name: 'ReactionsByCritics',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
