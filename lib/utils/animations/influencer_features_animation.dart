@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -15,42 +17,63 @@ class _InfluencerFeaturesAnimationState extends State<InfluencerFeaturesAnimatio
 
   final List<Widget> _features = [
     const ProfileCardAnimated(),
-    const UiKitMockedAudioMessagesAnimation(),
+    const UiKitInfluencerAudioMessagesDemo(),
+    UiKitHorizontalPicturesCarousel(
+      autoPlay: true,
+      autoPlayDuration: const Duration(seconds: 1),
+      pictureLinks: [
+        GraphicsFoundation.instance.png.mockAdBanner1.path,
+        GraphicsFoundation.instance.png.mockAdBanner2.path,
+        GraphicsFoundation.instance.png.mockAdBanner3.path,
+        GraphicsFoundation.instance.png.mockAdBanner4.path,
+        GraphicsFoundation.instance.png.mockAdBanner5.path,
+        GraphicsFoundation.instance.png.place.path,
+      ],
+      carouselSize: Size(1.sw - SpacingFoundation.verticalSpacing32, 0.3.sh),
+    ),
     const GetBonusAnimation(),
     const AddReviewAnimation()
   ];
 
   int featureIndex = 0;
 
+  int get totalFeatureCount => _features.length;
+
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 3000));
+    _controller.addStatusListener(animationStateListener);
+    _controller.forward();
   }
 
   void animationStateListener(AnimationStatus status) {
     if (status == AnimationStatus.completed) {
-      if (featureIndex < _features.length - 1) {
-        setState(() {
-          crossFadeState = CrossFadeState.showSecond;
-        });
-        _controller.forward(from: 0);
-        Future.delayed(const Duration(milliseconds: 1000), () {
-          setState(() {
-            featureIndex++;
-            crossFadeState = CrossFadeState.showFirst;
-          });
-        });
-      } else {
-        setState(() {
-          crossFadeState = CrossFadeState.showSecond;
-        });
-      }
+      log('animation completed');
+      // if (featureIndex < _features.length - 1) {
+      setState(() {
+        featureIndex++;
+        // crossFadeState = CrossFadeState.showSecond;
+      });
+      _controller.forward(from: 0);
+      // Future.delayed(const Duration(milliseconds: 1000), () {
+      //   log('switching to next feature');
+      //   setState(() {
+      //     featureIndex++;
+      //     crossFadeState = CrossFadeState.showFirst;
+      //   });
+      // });
+      // } else {
+      //   setState(() {
+      //     crossFadeState = CrossFadeState.showSecond;
+      //   });
+      // }
     }
   }
 
   @override
   void dispose() {
+    _controller.removeStatusListener(animationStateListener);
     _controller.dispose();
     super.dispose();
   }
@@ -93,12 +116,10 @@ class _InfluencerFeaturesAnimationState extends State<InfluencerFeaturesAnimatio
               ],
             ),
             SpacingFoundation.verticalSpace16,
-            AnimatedCrossFade(
-                firstChild: _features[featureIndex],
-                secondChild: _features[featureIndex + 1],
-                crossFadeState: crossFadeState,
+            AnimatedSwitcher(
                 reverseDuration: Duration.zero,
-                duration: const Duration(milliseconds: 500)),
+                duration: const Duration(milliseconds: 500),
+                child: _features[featureIndex % totalFeatureCount]),
             SpacingFoundation.verticalSpace16,
             Row(
               mainAxisSize: MainAxisSize.max,
