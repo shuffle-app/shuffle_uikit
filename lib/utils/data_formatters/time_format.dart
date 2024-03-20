@@ -13,6 +13,31 @@ String leadingZeros(int number) {
   return number.toString().padLeft(2, '0');
 }
 
+String formatDateTimeDifferenceWithMonthName(DateTime date) {
+  final difference = DateTime.now().difference(date).inDays;
+  if (difference == 0) {
+    final differenceInHours = DateTime.now().difference(date).inHours;
+    return '${differenceInHours}h';
+  } else {
+    return DateFormat('MMMM dd').format(date);
+  }
+}
+
+String formatDifference(DateTime date) {
+  final difference = DateTime.now().difference(date).inDays;
+  if (difference == 0) {
+    final differenceInHours = DateTime.now().difference(date).inHours;
+
+    return '${differenceInHours}h ago';
+  } else if (difference == 1) {
+    return 'yesterday';
+  } else if (difference > 1 && difference < 7) {
+    return 'a week ago';
+  } else {
+    return DateFormat('dd.MM.yyyy').format(date);
+  }
+}
+
 String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay? timeTo, List<String>? wDays) {
   if (date == null && dateTo == null && time == null && timeTo == null && wDays == null) return null;
   String convDate = '';

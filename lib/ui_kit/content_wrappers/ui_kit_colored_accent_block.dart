@@ -35,6 +35,7 @@ class UiKitColoredAccentBlock extends StatelessWidget {
             height: contentHeight,
             child: content,
           ),
+          SpacingFoundation.verticalSpace16,
         ],
       ),
     );

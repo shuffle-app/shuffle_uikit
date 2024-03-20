@@ -70,6 +70,8 @@ class SpacingFoundation {
 
   static Widget get horizontalSpace16 => horizontalSpacing16.widthBox;
 
+  static Widget get horizontalSpace20 => horizontalSpacing20.widthBox;
+
   static Widget get horizontalSpace24 => horizontalSpacing24.widthBox;
 
   static Widget get verticalSpace2 => verticalSpacing2.verticalSpace;

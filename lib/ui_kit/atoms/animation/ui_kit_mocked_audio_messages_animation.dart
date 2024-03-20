@@ -33,13 +33,13 @@ class _UiKitMockedAudioMessagesAnimationState extends State<UiKitMockedAudioMess
           duration: animDuration,
           top: SpacingFoundation.verticalSpacing32,
           left: topTileOffset,
-          child: _UiKitMockedAudioMessageTile(),
+          child: const _UiKitMockedAudioMessageTile(),
         ),
         AnimatedPositioned(
           duration: animDuration,
           left: SpacingFoundation.horizontalSpacing32,
           top: bottomTileOffset,
-          child: _UiKitMockedAudioMessageTile(),
+          child: const _UiKitMockedAudioMessageTile(),
         ),
       ],
     );

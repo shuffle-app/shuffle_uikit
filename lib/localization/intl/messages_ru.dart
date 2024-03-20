@@ -397,6 +397,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Month": MessageLookupByLibrary.simpleMessage("Месяц"),
         "Monthly": MessageLookupByLibrary.simpleMessage("Месячный"),
         "More": MessageLookupByLibrary.simpleMessage("больше"),
+        "MoreAboutThisEvent":
+            MessageLookupByLibrary.simpleMessage("Больше об этом событии"),
+        "MoreAboutThisPlace":
+            MessageLookupByLibrary.simpleMessage("Больше об этом месте"),
         "MyCard": MessageLookupByLibrary.simpleMessage("Профиль"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("Мои события"),
         "NPlace": m18,
@@ -552,6 +556,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
         "Rating": MessageLookupByLibrary.simpleMessage("Рейтинг"),
         "ReactionsBy": MessageLookupByLibrary.simpleMessage("Реакции\nот"),
+        "ReactionsByCritics":
+            MessageLookupByLibrary.simpleMessage("Отзывы от критиков"),
         "Read": m24,
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
         "ResendCode":

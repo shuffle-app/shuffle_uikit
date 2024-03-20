@@ -16,6 +16,7 @@ export 'app_bar/app_bar_back_button.dart';
 export 'app_bar/app_bar_title.dart';
 export 'badges/ui_kit_badge_colored.dart';
 export 'badges/ui_kit_badge_outlined.dart';
+export 'badges/ui_kit_place_tag.dart';
 export 'buttons/badge_icon_button.dart';
 export 'buttons/badge_icon_button_no_value.dart';
 export 'buttons/black_dialog_button.dart';
