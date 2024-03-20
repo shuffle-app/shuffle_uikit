@@ -16,6 +16,7 @@ class UiKitColors {
   static const lightSurface5 = Color(0xffCED2D9);
 
   static const darkNeutral100 = Color(0xffEEEEEF);
+  static const backNeutral16 =  Color(0xA8AAAE29);
   static const darkNeutral200 = Color(0xffDCDDDF);
   static const darkNeutral300 = Color(0xffCBCCCE);
   static const darkNeutral400 = Color(0xffB9BBBE);
@@ -69,6 +70,7 @@ class UiKitColors {
   static const gradientGreyDark1 = Color(0xffE3E3E3);
   static const gradientGreyDark2 = Color(0xff999999);
   static const gradientGreyDark3 = Color(0xffCDCDCD);
+  static const beigeBackground = Color(0xff7c7257);
   static const surfaceGradientBegin = Color(0xff2E2E2E);
   static const surfaceGradientMid = Color(0xff5B5B5B);
   static const surfaceGradientEnd = Color(0xff7F7E7E);

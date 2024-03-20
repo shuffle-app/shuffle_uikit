@@ -8,6 +8,8 @@ export 'ui_kit_shimmer_progress_indicator.dart';
 export 'wave_splash.dart';
 export 'ui_kit_floating_animation.dart';
 export 'ui_kit_long_tap_hint_animation.dart';
+export 'add_review_animation.dart';
+export 'user_tile_speciality_animation.dart';
 
 class Animations {
   static slideAnimation(

@@ -63,9 +63,22 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
             ),
             Positioned(
               top: -24,
-              right: 0,
+              right: 5,
               child: badge,
             ),
+            if (data.speciality != null && data.speciality!.isNotEmpty)
+              Positioned(
+                bottom: -20,
+                right: 5,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadiusFoundation.all24, color: UiKitColors.lightSurfaceGradientBegin),
+                  child: Text(
+                    data.speciality!,
+                    style: boldTextTheme?.caption3Medium.copyWith(color: ColorsFoundation.darkNeutral100),
+                  ).paddingAll(SpacingFoundation.verticalSpacing4),
+                ),
+              ),
           ],
         ),
       ],

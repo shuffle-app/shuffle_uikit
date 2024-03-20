@@ -136,6 +136,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "Напишите подробный отзыв, используйте все доступные символы, чтобы как можно больше людей могли его оценить"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Добавить промо"),
+        "AddReactions": MessageLookupByLibrary.simpleMessage("Добавить рекцию"),
         "AddReview": MessageLookupByLibrary.simpleMessage("Оставить отзыв"),
         "AddReviewFieldHint": MessageLookupByLibrary.simpleMessage(
             "Напишите полезное дополнение"),
@@ -148,6 +149,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Добавиться в список"),
         "Address": MessageLookupByLibrary.simpleMessage("Адрес"),
+        "Albums": MessageLookupByLibrary.simpleMessage("Альбомы"),
+        "AllAlbums": MessageLookupByLibrary.simpleMessage("Все альбомы"),
         "AllAppNotification":
             MessageLookupByLibrary.simpleMessage("Все уведомления"),
         "Allow": MessageLookupByLibrary.simpleMessage("Разрешить"),
@@ -336,6 +339,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "GetReward": MessageLookupByLibrary.simpleMessage("Забрать награду"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("Начать"),
         "Go": MessageLookupByLibrary.simpleMessage("Go!"),
+        "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("Перейти в настройки"),
         "Guess": MessageLookupByLibrary.simpleMessage("Угадать"),
@@ -393,6 +397,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Month": MessageLookupByLibrary.simpleMessage("Месяц"),
         "Monthly": MessageLookupByLibrary.simpleMessage("Месячный"),
         "More": MessageLookupByLibrary.simpleMessage("больше"),
+        "MoreAboutThisEvent":
+            MessageLookupByLibrary.simpleMessage("Больше об этом событии"),
+        "MoreAboutThisPlace":
+            MessageLookupByLibrary.simpleMessage("Больше об этом месте"),
         "MyCard": MessageLookupByLibrary.simpleMessage("Профиль"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("Мои события"),
         "NPlace": m18,
@@ -547,6 +555,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Не будь один..."),
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
         "Rating": MessageLookupByLibrary.simpleMessage("Рейтинг"),
+        "ReactionsBy": MessageLookupByLibrary.simpleMessage("Реакции\nот"),
+        "ReactionsByCritics":
+            MessageLookupByLibrary.simpleMessage("Отзывы от критиков"),
         "Read": m24,
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
         "ResendCode":
@@ -715,6 +726,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Значение не менее 3 символов"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("Часто"),
         "Video": MessageLookupByLibrary.simpleMessage("Видео"),
+        "VideoReactionAdded": MessageLookupByLibrary.simpleMessage(
+            "Ваша реакция успешно добавлена"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Видео (загрузить)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("Все"),
@@ -752,6 +765,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Вам лучше взглянуть"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "Вы получаете точно то, что нужно"),
+        "YouMissedALot":
+            MessageLookupByLibrary.simpleMessage("Вы многое пропустили"),
         "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("Вы найдёте"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Твой возраст"),

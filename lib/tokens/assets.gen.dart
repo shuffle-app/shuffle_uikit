@@ -399,6 +399,8 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
+  $AssetsImagesPngAvatarsGen get avatars => const $AssetsImagesPngAvatarsGen();
+
   /// File path: assets/images/png/balloons.png
   AssetGenImage get balloons => const AssetGenImage('assets/images/png/balloons.png');
 
@@ -491,6 +493,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/judaism.png
   AssetGenImage get judaism => const AssetGenImage('assets/images/png/judaism.png');
+
+  /// File path: assets/images/png/just_coin.png
+  AssetGenImage get justCoin => const AssetGenImage('assets/images/png/just_coin.png');
 
   /// File path: assets/images/png/love-emoji.png
   AssetGenImage get loveEmoji => const AssetGenImage('assets/images/png/love-emoji.png');
@@ -816,6 +821,7 @@ class $AssetsImagesPngGen {
         jordanFlag,
         joyEmoji,
         judaism,
+        justCoin,
         loveEmoji,
         manicure,
         mapMock,
@@ -1507,6 +1513,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/question.svg
   SvgGenImage get question => const SvgGenImage('assets/images/svg/question.svg');
 
+  /// File path: assets/images/svg/record.svg
+  SvgGenImage get record => const SvgGenImage('assets/images/svg/record.svg');
+
   /// File path: assets/images/svg/refresh.svg
   SvgGenImage get refresh => const SvgGenImage('assets/images/svg/refresh.svg');
 
@@ -1919,6 +1928,7 @@ class $AssetsImagesSvgGen {
         profileOutline,
         profilePlus,
         question,
+        record,
         refresh,
         restaurant,
         risingTrendIcon,
@@ -1987,6 +1997,44 @@ class $AssetsImagesSvgGen {
         whiteStarTransparentCenter,
         x
       ];
+}
+
+class $AssetsImagesPngAvatarsGen {
+  const $AssetsImagesPngAvatarsGen();
+
+  /// File path: assets/images/png/avatars/Avatar-1.png
+  AssetGenImage get avatar1 => const AssetGenImage('assets/images/png/avatars/Avatar-1.png');
+
+  /// File path: assets/images/png/avatars/Avatar-10.png
+  AssetGenImage get avatar10 => const AssetGenImage('assets/images/png/avatars/Avatar-10.png');
+
+  /// File path: assets/images/png/avatars/Avatar-2.png
+  AssetGenImage get avatar2 => const AssetGenImage('assets/images/png/avatars/Avatar-2.png');
+
+  /// File path: assets/images/png/avatars/Avatar-3.png
+  AssetGenImage get avatar3 => const AssetGenImage('assets/images/png/avatars/Avatar-3.png');
+
+  /// File path: assets/images/png/avatars/Avatar-4.png
+  AssetGenImage get avatar4 => const AssetGenImage('assets/images/png/avatars/Avatar-4.png');
+
+  /// File path: assets/images/png/avatars/Avatar-6.png
+  AssetGenImage get avatar6 => const AssetGenImage('assets/images/png/avatars/Avatar-6.png');
+
+  /// File path: assets/images/png/avatars/Avatar-7.png
+  AssetGenImage get avatar7 => const AssetGenImage('assets/images/png/avatars/Avatar-7.png');
+
+  /// File path: assets/images/png/avatars/Avatar-8.png
+  AssetGenImage get avatar8 => const AssetGenImage('assets/images/png/avatars/Avatar-8.png');
+
+  /// File path: assets/images/png/avatars/Avatar-9.png
+  AssetGenImage get avatar9 => const AssetGenImage('assets/images/png/avatars/Avatar-9.png');
+
+  /// File path: assets/images/png/avatars/Avatar.png
+  AssetGenImage get avatar => const AssetGenImage('assets/images/png/avatars/Avatar.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [avatar1, avatar10, avatar2, avatar3, avatar4, avatar6, avatar7, avatar8, avatar9, avatar];
 }
 
 class $AssetsImagesPngPreferenceQuestionsGen {

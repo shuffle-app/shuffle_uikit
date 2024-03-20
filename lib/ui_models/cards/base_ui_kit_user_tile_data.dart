@@ -7,6 +7,7 @@ class BaseUiKitUserTileData {
   final UserTileType? type;
   final void Function()? onTap;
   final bool? showBadge;
+  final String? speciality;
 
   BaseUiKitUserTileData({
     this.name,
@@ -15,5 +16,6 @@ class BaseUiKitUserTileData {
     this.type,
     this.onTap,
     this.showBadge,
+    this.speciality,
   });
 }

@@ -4504,6 +4504,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Add reaction`
+  String get AddReactions {
+    return Intl.message(
+      'Add reaction',
+      name: 'AddReactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reactions\nby`
+  String get ReactionsBy {
+    return Intl.message(
+      'Reactions\nby',
+      name: 'ReactionsBy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Albums`
+  String get Albums {
+    return Intl.message(
+      'Albums',
+      name: 'Albums',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All albums`
+  String get AllAlbums {
+    return Intl.message(
+      'All albums',
+      name: 'AllAlbums',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go`
+  String get GoNoExclamation {
+    return Intl.message(
+      'Go',
+      name: 'GoNoExclamation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your reaction has been successfully added`
+  String get VideoReactionAdded {
+    return Intl.message(
+      'Your reaction has been successfully added',
+      name: 'VideoReactionAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You missed a lot`
+  String get YouMissedALot {
+    return Intl.message(
+      'You missed a lot',
+      name: 'YouMissedALot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More about this place`
+  String get MoreAboutThisPlace {
+    return Intl.message(
+      'More about this place',
+      name: 'MoreAboutThisPlace',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More about this event`
+  String get MoreAboutThisEvent {
+    return Intl.message(
+      'More about this event',
+      name: 'MoreAboutThisEvent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reactions by critics`
+  String get ReactionsByCritics {
+    return Intl.message(
+      'Reactions by critics',
+      name: 'ReactionsByCritics',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

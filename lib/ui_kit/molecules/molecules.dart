@@ -1,5 +1,6 @@
 /// This file exports all molecules in the molecules folder
 
+export '../content_wrappers/ui_kit_colored_accent_block.dart';
 export '../content_wrappers/ui_kit_hide_wrapper.dart';
 export '../content_wrappers/ui_kit_shadow_wrapper.dart';
 export '../content_wrappers/ui_kit_titled_section.dart';
@@ -18,6 +19,8 @@ export 'chips/ui_kit_bordered_chip_with_icon.dart';
 export 'chips/ui_kit_gradient_question_chip.dart';
 export 'chips/ui_kit_importance_chip.dart';
 export 'chips/ui_kit_ordinary_chip.dart';
+export 'decoration/ui_kit_gradiented_decorated_button.dart';
+export 'decoration/ui_kit_mock_audio_wave.dart';
 export 'decoration/ui_kit_ring_decoration.dart';
 export 'error_widgets/ui_kit_big_photo_error_widget.dart';
 export 'error_widgets/ui_kit_compact_photo_error_widget.dart';
@@ -71,6 +74,7 @@ export 'tiles/ui_kit_leading_radio_tile.dart';
 export 'tiles/ui_kit_location_search_tile.dart';
 export 'tiles/ui_kit_pop_up_menu_tile.dart';
 export 'tiles/ui_kit_searchable_list_body_item_tile.dart';
+export 'tiles/ui_kit_video_reaction_tile.dart';
 export 'tiles/user/badged_base_user_tile.dart';
 export 'tiles/user/base_user_tile.dart';
 export 'tiles/user/influencer_user_tile.dart';
