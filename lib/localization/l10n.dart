@@ -170,6 +170,16 @@ class S {
     );
   }
 
+  /// `Niche`
+  String get Niche {
+    return Intl.message(
+      'Niche',
+      name: 'Niche',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Health Kit`
   String get HealthKit {
     return Intl.message(

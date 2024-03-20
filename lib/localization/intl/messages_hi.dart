@@ -418,6 +418,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "NextElements": m19,
         "NextNPeople": m20,
         "NextWithChevrons": MessageLookupByLibrary.simpleMessage("अगला >>>"),
+        "Niche": MessageLookupByLibrary.simpleMessage("Niche"),
         "Nickname": MessageLookupByLibrary.simpleMessage("उपनाम"),
         "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(
             "उपनाम लिया जाता है, एक और प्रयास करें"),
