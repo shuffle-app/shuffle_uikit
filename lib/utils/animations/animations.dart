@@ -9,7 +9,6 @@ export 'wave_splash.dart';
 export 'ui_kit_floating_animation.dart';
 export 'ui_kit_long_tap_hint_animation.dart';
 export 'add_review_animation.dart';
-export 'influencer_features_animation.dart';
 
 class Animations {
   static slideAnimation(

@@ -7,11 +7,8 @@ class AnimationsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Column(
+      body: ListView(
         children: [
-
-          InfluencerFeaturesAnimation(),
-          // UiKitMockedAudioMessagesAnimation(),
 
           Container(
             height: 180,
@@ -32,7 +29,7 @@ class AnimationsPage extends StatelessWidget {
           //   lottiePath: GraphicsFoundation.instance.animations.lottie.brokenHeart.path,
           // ),
         ],
-      )),
+      ),
     );
   }
 }
