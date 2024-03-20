@@ -42,7 +42,7 @@ class _UiKitVoiceMockAnimationState extends State<UiKitVoiceMockAnimation> {
         ),
         Positioned(
           bottom: 0.05.sh,
-          child: Center(
+          child: const Center(
             child: UiKitMockAudioWave(
               itemCount: 32,
               scrollable: true,

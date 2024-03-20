@@ -52,6 +52,7 @@ class _UiKitHorizontalPicturesCarouselState extends State<UiKitHorizontalPicture
 
   @override
   void dispose() {
+    autoPlayTimer?.cancel();
     pageController.dispose();
     super.dispose();
   }
