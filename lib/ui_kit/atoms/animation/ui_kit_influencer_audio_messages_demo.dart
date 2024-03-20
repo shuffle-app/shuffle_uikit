@@ -17,7 +17,7 @@ class _UiKitInfluencerAudioMessagesDemoState extends State<UiKitInfluencerAudioM
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((time) {
       Future.delayed(const Duration(seconds: 1, milliseconds: 500), () {
-        // setState(() => showAudioTiles = true);
+        setState(() => showAudioTiles = true);
       });
     });
   }
@@ -30,7 +30,7 @@ class _UiKitInfluencerAudioMessagesDemoState extends State<UiKitInfluencerAudioM
       child: Center(
         child: AnimatedSwitcher(
           duration: animDuration,
-          child: showAudioTiles ? UiKitMockedAudioMessagesAnimation() : UiKitVoiceMockAnimation(),
+          child: showAudioTiles ? const UiKitMockedAudioMessagesAnimation() : const UiKitVoiceMockAnimation(),
         ),
       ),
     );

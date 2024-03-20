@@ -76,7 +76,8 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         if (rightList.isNotEmpty) ...items,
 
       //build left stack
-      if (leftList.isNotEmpty) ...leftList.map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1)).toList().reversed,
+      if (leftList.isNotEmpty)
+        ...leftList.map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1)).toList().reversed,
       if (!reversed)
         //build right stack if user wants to slide right
         if (rightList.isNotEmpty) ...items,
@@ -121,9 +122,11 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         duration: _animDuration,
         left: 4 * ((_currentIndex ?? 0) + 1) - differenceFromFirstCard * 10,
         // left: 10 / differenceFromFirstCard - 20 + _cardAnimation.difference,
-        child: Container(
-          foregroundDecoration: BoxDecoration(
+        child: DecoratedBox(
+          position: DecorationPosition.foreground,
+          decoration: BoxDecoration(
             color: theme?.bottomSheetTheme.backgroundColor?.withOpacity(0.7),
+            borderRadius: BorderRadiusFoundation.all24,
           ),
           child: SliderPhotoCard(
             media: item,
@@ -139,9 +142,11 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
       duration: _animDuration,
       right: 4 * (5 - (_currentIndex ?? 0) + 1) - differenceFromFirstCard * 10,
       // right:  differenceFromFirstCard/ _cardAnimation.difference.abs(),
-      child: Container(
-          foregroundDecoration: BoxDecoration(
+      child: DecoratedBox(
+          position: DecorationPosition.foreground,
+          decoration: BoxDecoration(
             color: theme?.bottomSheetTheme.backgroundColor?.withOpacity(0.7),
+            borderRadius: BorderRadiusFoundation.all24,
           ),
           child: SliderPhotoCard(
             media: item,

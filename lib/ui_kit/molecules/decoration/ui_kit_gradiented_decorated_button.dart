@@ -39,7 +39,7 @@ class UiKitGradientedDecoratedButton extends StatelessWidget {
           ),
           Center(
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 border: GradientFoundation.gradientBorder,
                 shape: BoxShape.circle,
                 color: ColorsFoundation.surface5,
@@ -47,7 +47,7 @@ class UiKitGradientedDecoratedButton extends StatelessWidget {
               child: Opacity(
                 opacity: 0.25,
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     gradient: GradientFoundation.defaultRadialGradient,
                     shape: BoxShape.circle,
                   ),

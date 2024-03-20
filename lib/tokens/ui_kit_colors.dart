@@ -16,6 +16,7 @@ class UiKitColors {
   static const lightSurface5 = Color(0xffCED2D9);
 
   static const darkNeutral100 = Color(0xffEEEEEF);
+  static const backNeutral16 =  Color(0xA8AAAE29);
   static const darkNeutral200 = Color(0xffDCDDDF);
   static const darkNeutral300 = Color(0xffCBCCCE);
   static const darkNeutral400 = Color(0xffB9BBBE);

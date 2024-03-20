@@ -31,10 +31,12 @@ class PremiumMemberPlate extends StatelessWidget {
             style: textTheme?.caption1Bold.copyWith(color: Colors.black),
           ),
           SpacingFoundation.horizontalSpace4,
-          const ImageWidget(
-            iconData: ShuffleUiKitIcons.memeberGradientStar,
-            color: Colors.white,
-          ),
+          const GradientableWidget(
+              gradient: GradientFoundation.defaultRadialGradient,
+              child: ImageWidget(
+                iconData: ShuffleUiKitIcons.memeberGradientStar,
+                color: Colors.white,
+              )),
         ],
       ).paddingSymmetric(
         horizontal: EdgeInsetsFoundation.horizontal16,

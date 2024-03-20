@@ -8,15 +8,17 @@ class GetBonusAnimation extends StatefulWidget {
   State<GetBonusAnimation> createState() => _GetBonusAnimationState();
 }
 
-class _GetBonusAnimationState extends State<GetBonusAnimation> with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
+class _GetBonusAnimationState extends State<GetBonusAnimation> with TickerProviderStateMixin {
+  late AnimationController _controllerRolling;
+  late AnimationController _controllerScaling;
   bool isRolling = true;
 
   @override
   void initState() {
-    _controller = AnimationController(vsync: this, duration: const Duration(milliseconds: 3000));
-    _controller.addStatusListener(animationStatusListener);
-    _controller.forward();
+    _controllerRolling = AnimationController(vsync: this, duration: const Duration(milliseconds: 3000));
+    _controllerScaling = AnimationController(vsync: this, duration: const Duration(milliseconds: 1000));
+    _controllerRolling.addStatusListener(animationStatusListener);
+    _controllerRolling.forward();
     super.initState();
   }
 
@@ -24,18 +26,16 @@ class _GetBonusAnimationState extends State<GetBonusAnimation> with SingleTicker
     if (status == AnimationStatus.completed && isRolling) {
       setState(() {
         isRolling = false;
-        _controller.duration = const Duration(milliseconds: 1000);
+        _controllerScaling.forward();
       });
-      _controller.forward(from: 0);
-    } else if (status == AnimationStatus.completed && !isRolling) {
-      _controller.reverse();
     }
   }
 
   @override
   void dispose() {
-    _controller.removeStatusListener(animationStatusListener);
-    _controller.dispose();
+    _controllerRolling.removeStatusListener(animationStatusListener);
+    _controllerScaling.dispose();
+    _controllerRolling.dispose();
     super.dispose();
   }
 
@@ -49,24 +49,17 @@ class _GetBonusAnimationState extends State<GetBonusAnimation> with SingleTicker
     );
 
     return Align(
-        alignment: isRolling ? Alignment.centerLeft : Alignment.center,
+        alignment: Alignment.centerLeft,
         child: AnimatedBuilder(
-          animation: _controller,
+          animation: isRolling ? _controllerRolling : _controllerScaling,
           builder: (context, child) {
-            if (isRolling) {
-              return Transform.translate(
-                  offset: Offset(_controller.value * 0.42.sw, 0.0),
-                  child: Transform.rotate(
-                    angle: _controller.value * 15,
-                    child: child,
-                  ));
-            } else {
-              return Transform.scale(
-                alignment: Alignment.center,
-                scale: _controller.value + 1,
-                child: child,
-              );
-            }
+            return Transform.translate(
+                offset: Offset(_controllerRolling.value * 0.40.sw, 0.0),
+                child: Transform.rotate(
+                  angle: _controllerRolling.value * 15.7,
+                  child:
+                      Transform.scale(alignment: Alignment.center, scale: _controllerScaling.value + 1, child: child),
+                ));
           },
           child: image,
         ));
