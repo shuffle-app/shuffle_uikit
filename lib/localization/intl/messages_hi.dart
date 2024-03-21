@@ -386,12 +386,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "Less": MessageLookupByLibrary.simpleMessage("कम"),
         "Loading": MessageLookupByLibrary.simpleMessage("लोड हो रहा है..."),
         "Location": MessageLookupByLibrary.simpleMessage("जगह"),
+        "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
+            "Location is required to procceed check in"),
         "LoginWith": m16,
         "Logo": MessageLookupByLibrary.simpleMessage("प्रतीक चिन्ह"),
         "LogoUploadFiles":
             MessageLookupByLibrary.simpleMessage("लोगो (फ़ाइलें अपलोड करें)"),
         "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage(
             "प्यारा-स्पर्श अद्भुत\nइंटरैक्शन"),
+        "MakeSureYouAreCloseToMakeCheckIn":
+            MessageLookupByLibrary.simpleMessage(
+                "Make sure you are close and try check in again"),
         "Male": MessageLookupByLibrary.simpleMessage("पुरुष"),
         "Members": m17,
         "Message": MessageLookupByLibrary.simpleMessage("संदेश"),

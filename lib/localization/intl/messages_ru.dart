@@ -384,12 +384,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "Less": MessageLookupByLibrary.simpleMessage("меньше"),
         "Loading": MessageLookupByLibrary.simpleMessage("Загрузка..."),
         "Location": MessageLookupByLibrary.simpleMessage("Локация"),
+        "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
+            "Location is required to procceed check in"),
         "LoginWith": m16,
         "Logo": MessageLookupByLibrary.simpleMessage("Лого"),
         "LogoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Лого (загрузить)"),
         "LovelyTouchAmazingInteraction":
             MessageLookupByLibrary.simpleMessage("Приятный на ощупь интерфейс"),
+        "MakeSureYouAreCloseToMakeCheckIn":
+            MessageLookupByLibrary.simpleMessage(
+                "Make sure you are close and try check in again"),
         "Male": MessageLookupByLibrary.simpleMessage("Мужчина"),
         "Members": m17,
         "Message": MessageLookupByLibrary.simpleMessage("Сообщение"),

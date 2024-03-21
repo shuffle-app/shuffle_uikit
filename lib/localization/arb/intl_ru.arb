@@ -447,6 +447,8 @@
   "YouMissedALot": "Вы многое пропустили",
   "MoreAboutThisPlace": "Больше об этом месте",
   "MoreAboutThisEvent": "Больше об этом событии",
-  "ReactionsByCritics": "Отзывы от критиков"
+  "ReactionsByCritics": "Отзывы от критиков",
+  "MakeSureYouAreCloseToMakeCheckIn": "Make sure you are close and try check in again",
+  "LocationIsRequired": "Location is required to procceed check in"
 
 }

@@ -4614,6 +4614,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Make sure you are close and try check in again`
+  String get MakeSureYouAreCloseToMakeCheckIn {
+    return Intl.message(
+      'Make sure you are close and try check in again',
+      name: 'MakeSureYouAreCloseToMakeCheckIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location is required to procceed check in`
+  String get LocationIsRequired {
+    return Intl.message(
+      'Location is required to procceed check in',
+      name: 'LocationIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -378,12 +378,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "Less": MessageLookupByLibrary.simpleMessage("less"),
         "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
         "Location": MessageLookupByLibrary.simpleMessage("Location"),
+        "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
+            "Location is required to procceed check in"),
         "LoginWith": m16,
         "Logo": MessageLookupByLibrary.simpleMessage("Logo"),
         "LogoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Logo (upload Files)"),
         "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage(
             "Lovely-touch amazing\ninteraction"),
+        "MakeSureYouAreCloseToMakeCheckIn":
+            MessageLookupByLibrary.simpleMessage(
+                "Make sure you are close and try check in again"),
         "Male": MessageLookupByLibrary.simpleMessage("Male"),
         "Members": m17,
         "Message": MessageLookupByLibrary.simpleMessage("Message"),

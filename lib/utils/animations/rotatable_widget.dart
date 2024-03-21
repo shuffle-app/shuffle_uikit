@@ -51,7 +51,10 @@ class _RotatableWidgetState extends State<RotatableWidget> with SingleTickerProv
     if (status == AnimationStatus.completed && widget.applyReverseOnEnd) {
       controller.reverse();
     } else if (status == AnimationStatus.dismissed) {
-      Future.delayed(const Duration(seconds: 10)).then((value) => controller.forward());
+      Future.delayed(const Duration(seconds: 10)).then((value) {
+        if(!mounted) return
+        controller.forward();
+      });
     }
   }
 
