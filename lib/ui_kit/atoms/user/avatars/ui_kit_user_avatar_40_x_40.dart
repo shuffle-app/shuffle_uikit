@@ -62,28 +62,28 @@ class UiKitUserAvatar40x40 extends StatelessWidget implements UserAvatarFactory 
             borderWidth: borderWidth,
             child: _Placeholder(
               text: userName.split(' ').length > 1
-                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
+                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + (element.characters.firstOrNull ?? ''))
                   : userName.characters.firstOrNull ?? 'N',
             )),
         UserTileType.premium => UiKitPremiumUserAccountAvatarWrapper.enabled(
             borderWidth: borderWidth,
             child: _Placeholder(
               text: userName.split(' ').length > 1
-                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
+                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + (element.characters.firstOrNull ?? ''))
                   : userName.characters.firstOrNull ?? 'N',
             )),
         UserTileType.influencer => UiKitInfluencerUserAccountAvatarWrapper.enabled(
             borderWidth: borderWidth,
             child: _Placeholder(
               text: userName.split(' ').length > 1
-                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
+                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + (element.characters.firstOrNull ?? ''))
                   : userName.characters.firstOrNull ?? 'N',
             )),
         UserTileType.pro => UiKitProUserAccountAvatarWrapper.enabled(
             borderWidth: borderWidth,
             child: _Placeholder(
               text: userName.split(' ').length > 1
-                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
+                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + (element.characters.firstOrNull ?? ''))
                   : userName.characters.firstOrNull ?? 'N',
             ),
           )
