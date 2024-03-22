@@ -63,28 +63,28 @@ class UiKitUserAvatar24x24 extends StatelessWidget implements UserAvatarFactory 
             child: _PlaceHolder(
               text: userName.split(' ').length > 1
                   ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
-                  : userName.characters.first,
+                  : userName.characters.firstOrNull ?? 'N',
             )),
         UserTileType.premium => UiKitPremiumUserAccountAvatarWrapper.enabled(
             borderWidth: borderWidth,
             child: _PlaceHolder(
               text: userName.split(' ').length > 1
                   ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
-                  : userName.characters.first,
+                  : userName.characters.firstOrNull ?? 'N',
             )),
         UserTileType.influencer => UiKitInfluencerUserAccountAvatarWrapper.enabled(
             borderWidth: borderWidth,
             child: _PlaceHolder(
               text: userName.split(' ').length > 1
                   ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
-                  : userName.characters.first,
+                  : userName.characters.firstOrNull ?? 'N',
             )),
         UserTileType.pro => UiKitProUserAccountAvatarWrapper.enabled(
             borderWidth: borderWidth,
             child: _PlaceHolder(
               text: userName.split(' ').length > 1
                   ? userName.split(' ').fold('', (previousValue, element) => previousValue + element.characters.first)
-                  : userName.characters.first,
+                  : userName.characters.firstOrNull ?? 'N',
             ),
           )
       },
