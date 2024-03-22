@@ -6,7 +6,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitBlurredListTile extends StatelessWidget {
   final String? title;
   final Widget? titleTrailing;
-  final Future<String>? subtitle;
+  final String? subtitle;
   final String? photoLink;
 
   const UiKitBlurredListTile({
@@ -41,44 +41,41 @@ class UiKitBlurredListTile extends StatelessWidget {
               ),
             SpacingFoundation.horizontalSpace12,
             Expanded(
-              child: FutureBuilder(
-                future: subtitle,
-                builder: (context, snapshot) => Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            '$title',
-                            maxLines: (snapshot.data ?? '').isNotEmpty ? 1 : 2,
-                            style: titleTextStyle?.copyWith(
-                              overflow: TextOverflow.ellipsis,
-                              color: Colors.white,
-                            ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          '$title',
+                          maxLines: (subtitle ?? '').isNotEmpty ? 1 : 2,
+                          style: titleTextStyle?.copyWith(
+                            overflow: TextOverflow.ellipsis,
+                            color: Colors.white,
                           ),
                         ),
-                        if (titleTrailing != null) ...[
-                          SpacingFoundation.horizontalSpace8,
-                          titleTrailing!,
-                        ],
+                      ),
+                      if (titleTrailing != null) ...[
+                        SpacingFoundation.horizontalSpace8,
+                        titleTrailing!,
                       ],
-                    ),
-                    if ((snapshot.data ?? '').isNotEmpty)
-                      Text(
-                        snapshot.data ?? '',
-                        maxLines: 1,
-                        style: subtitleTextStyle?.copyWith(
-                          overflow: TextOverflow.ellipsis,
-                          color: Colors.white,
-                        ),
-                      )
-                  ],
-                ),
+                    ],
+                  ),
+                  if ((subtitle ?? '').isNotEmpty)
+                    Text(
+                      subtitle ?? '',
+                      maxLines: 1,
+                      style: subtitleTextStyle?.copyWith(
+                        overflow: TextOverflow.ellipsis,
+                        color: Colors.white,
+                      ),
+                    )
+                ],
               ),
-            ),
+            )
           ],
         ).paddingAll(EdgeInsetsFoundation.all12),
       ),

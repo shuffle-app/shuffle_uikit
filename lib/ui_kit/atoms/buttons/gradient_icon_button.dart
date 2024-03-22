@@ -5,7 +5,8 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
   final Widget? icon;
   final BaseUiKitButtonIconData? iconInfo;
   final VoidCallback? onPressed;
-  final BorderRadius? borderRadius;
+
+  // final BorderRadius? borderRadius;
   final bool? loading;
   final ButtonFit? fit;
 
@@ -14,7 +15,7 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
     required this.icon,
     this.fit,
     this.onPressed,
-    this.borderRadius,
+    // this.borderRadius,
     this.loading,
     this.iconInfo,
   }) : super(key: key);
@@ -35,23 +36,21 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
           ),
     );
 
-    return Material(
-      borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
-      child: InkWell(
-        borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
-        onTap: enabled && !(loading ?? false) ? onPressed : null,
-        child: Ink(
-          decoration: BoxDecoration(
-            borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
+    return InkWell(
+      // borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
+      borderRadius: BorderRadiusFoundation.max,
+      onTap: enabled && !(loading ?? false) ? onPressed : null,
+      child: Ink(
+        decoration: BoxDecoration(
+            // borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
             gradient: enabled ? GradientFoundation.attentionCard : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
-          ),
-          child: loading ?? false
-              ? const SizedBox()
-              : fit == ButtonFit.hugContent
-                  ? child
-                  : Center(child: child),
-        ),
+            shape: BoxShape.circle),
+        child: loading ?? false
+            ? const SizedBox()
+            : fit == ButtonFit.hugContent
+                ? child
+                : Center(child: child),
       ),
     ).loadingWrap(loading ?? false, color: colorScheme?.surface);
   }

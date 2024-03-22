@@ -149,7 +149,7 @@
   "Favorites": "Избранное",
   "Small": "Небольшой",
   "PleaseSelectANiche": "Выберите нишу, пожалуйста",
-  "PleaseSelectAtLeastOneTargetAudience": "Выберите хотя бы одну ЦА, пожалуйста",
+  "PleaseSelectAtLeastOnePriceSegment": "Please select at least one price segment",
   "PleaseSelectAtLeastOneAgeRange": "Выберите хотя бы одну возрастную группу",
   "TheMoreInfoWeGetTheBetter": "Чем больше инфы мы получим, тем лучше",
   "YourTraffic": "Ваш трафик",
@@ -157,7 +157,7 @@
   "Title": "Название",
   "ContactPerson": "Контактное лицо",
   "Position": "Позиция",
-  "YourAudience": "Ваша аудитория",
+  "YourPriceSegment": "Your price segment",
   "YourAudienceAge": "Возраст аудитории",
   "Shuffle": "Shuffle",
   "ShuffleWithRightWhitespace": "Shuffle ",
@@ -239,6 +239,7 @@
   "CompanyCredentials": "Данные компании",
   "AllowLocationServicesToUseThisFunction": "Разрешить гео для этой функции",
   "Feeling": "Чувство",
+  "Niche": "Ниша",
   "Sunny": "Солнечно",
   "BurnedToday": "Сожжено сегодя",
   "Undefined": "Неопределено",
@@ -446,6 +447,8 @@
   "YouMissedALot": "Вы многое пропустили",
   "MoreAboutThisPlace": "Больше об этом месте",
   "MoreAboutThisEvent": "Больше об этом событии",
-  "ReactionsByCritics": "Отзывы от критиков"
+  "ReactionsByCritics": "Отзывы от критиков",
+  "MakeSureYouAreCloseToMakeCheckIn": "Make sure you are close and try check in again",
+  "LocationIsRequired": "Location is required to procceed check in"
 
 }

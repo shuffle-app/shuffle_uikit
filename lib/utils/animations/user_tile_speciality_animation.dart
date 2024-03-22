@@ -30,7 +30,7 @@ class _UserTileSpecialityAnimationState extends State<UserTileSpecialityAnimatio
       context.userTile(
           data: BaseUiKitUserTileData(
               avatarUrl: GraphicsFoundation.instance.png.avatars.avatar1.path,
-              username: Future.value('stald'),
+              username: 'stald',
               name: 'Sladge Hammer',
               type: UserTileType.premium,
               speciality: 'Sport expert',
@@ -38,7 +38,7 @@ class _UserTileSpecialityAnimationState extends State<UserTileSpecialityAnimatio
       context.userTile(
           data: BaseUiKitUserTileData(
               avatarUrl: GraphicsFoundation.instance.png.avatars.avatar4.path,
-              username: Future.value('toffy'),
+              username: 'toffy',
               name: 'Lidsley Toffy',
               speciality: 'Entertainment specialist',
               type: UserTileType.premium,
@@ -46,7 +46,7 @@ class _UserTileSpecialityAnimationState extends State<UserTileSpecialityAnimatio
       context.userTile(
           data: BaseUiKitUserTileData(
               avatarUrl: GraphicsFoundation.instance.png.avatars.avatar3.path,
-              username: Future.value('saisr'),
+              username: 'saisr',
               speciality: 'Coffee expert',
               name: 'Carter Sairis',
               type: UserTileType.premium,

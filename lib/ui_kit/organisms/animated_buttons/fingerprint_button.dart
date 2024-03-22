@@ -197,7 +197,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
     _controller.removeStatusListener((status) => _setAnimationListener(status));
     _controller.removeStatusListener((_) => _setVibrationListener());
     _controller.dispose();
-    _flipController.controller?.dispose();
+    // _flipController.controller?.dispose();
     _currentPosition.dispose();
     _shadowController.dispose();
     super.dispose();

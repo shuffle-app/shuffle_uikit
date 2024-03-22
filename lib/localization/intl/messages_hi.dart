@@ -386,12 +386,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "Less": MessageLookupByLibrary.simpleMessage("कम"),
         "Loading": MessageLookupByLibrary.simpleMessage("लोड हो रहा है..."),
         "Location": MessageLookupByLibrary.simpleMessage("जगह"),
+        "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
+            "Location is required to procceed check in"),
         "LoginWith": m16,
         "Logo": MessageLookupByLibrary.simpleMessage("प्रतीक चिन्ह"),
         "LogoUploadFiles":
             MessageLookupByLibrary.simpleMessage("लोगो (फ़ाइलें अपलोड करें)"),
         "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage(
             "प्यारा-स्पर्श अद्भुत\nइंटरैक्शन"),
+        "MakeSureYouAreCloseToMakeCheckIn":
+            MessageLookupByLibrary.simpleMessage(
+                "Make sure you are close and try check in again"),
         "Male": MessageLookupByLibrary.simpleMessage("पुरुष"),
         "Members": m17,
         "Message": MessageLookupByLibrary.simpleMessage("संदेश"),
@@ -418,6 +423,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "NextElements": m19,
         "NextNPeople": m20,
         "NextWithChevrons": MessageLookupByLibrary.simpleMessage("अगला >>>"),
+        "Niche": MessageLookupByLibrary.simpleMessage("Niche"),
         "Nickname": MessageLookupByLibrary.simpleMessage("उपनाम"),
         "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(
             "उपनाम लिया जाता है, एक और प्रयास करें"),
@@ -499,9 +505,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "PleaseSelectAtLeastNReligion": m21,
         "PleaseSelectAtLeastOneAgeRange": MessageLookupByLibrary.simpleMessage(
             "कृपया कम से कम एक आयु सीमा चुनें"),
-        "PleaseSelectAtLeastOneTargetAudience":
+        "PleaseSelectAtLeastOnePriceSegment":
             MessageLookupByLibrary.simpleMessage(
-                "कृपया कम से कम एक लक्षित दर्शक चुनें"),
+                "Please select at least one price segment"),
         "PleaseSelectGender":
             MessageLookupByLibrary.simpleMessage("कृपया एक लिंग चुनें"),
         "PleaseSelectOneType":
@@ -769,7 +775,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("आप उसे खोज लोगे"),
         "YourAge": MessageLookupByLibrary.simpleMessage("आपकी उम्र"),
-        "YourAudience": MessageLookupByLibrary.simpleMessage("आपके दर्शक"),
         "YourAudienceAge":
             MessageLookupByLibrary.simpleMessage("आपके दर्शकों की उम्र"),
         "YourClaimHasBeenSent":
@@ -780,6 +785,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourName": MessageLookupByLibrary.simpleMessage("आपका नाम"),
         "YourNiche": MessageLookupByLibrary.simpleMessage("आपका आला"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("आपका मत"),
+        "YourPriceSegment":
+            MessageLookupByLibrary.simpleMessage("Your price segment"),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("आपका ट्रैफ़िक"),
         "daynight": MessageLookupByLibrary.simpleMessage("दिन और रात"),
         "key": MessageLookupByLibrary.simpleMessage("")

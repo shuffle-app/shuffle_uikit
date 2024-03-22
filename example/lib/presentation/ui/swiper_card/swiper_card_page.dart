@@ -79,7 +79,7 @@ class _SwiperCardPageState extends State<SwiperCardPage> with TickerProviderStat
                         customSpace: SpacingFoundation.horizontalSpace8,
                         showSpacing: true,
                       ),
-                    ],
+                    ], id: 1,
                   ),
                 ),
                 likeController: likeController,

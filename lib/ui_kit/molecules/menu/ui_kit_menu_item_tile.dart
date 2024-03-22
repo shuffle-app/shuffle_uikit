@@ -53,7 +53,7 @@ class UiKitMenuItemTile extends StatelessWidget {
               border: Border(
                 top: BorderSide(color: colorScheme!.surface2, width: 1),
               ),
-              borderRadius: BorderRadiusFoundation.max,
+              // borderRadius: BorderRadiusFoundation.max,
             ),
             child: Row(
               mainAxisSize: MainAxisSize.max,

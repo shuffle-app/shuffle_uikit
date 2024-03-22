@@ -11,6 +11,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
     super.onTap,
     super.pointsToGain,
     required super.tags,
+    required super.id,
     required super.title,
     required super.subtitle,
     this.tagsScrollController,
