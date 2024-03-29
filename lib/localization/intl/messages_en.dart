@@ -632,7 +632,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "Small": MessageLookupByLibrary.simpleMessage("Small"),
         "SmartLeisureSelection": MessageLookupByLibrary.simpleMessage(
-            "Smart leisure selection for everyone, everywhere."),
+            "Smart leisure selection for everyone, everywhere"),
         "SocialSubtitle":
             MessageLookupByLibrary.simpleMessage("Useful services and places"),
         "Spent": MessageLookupByLibrary.simpleMessage("Spent"),

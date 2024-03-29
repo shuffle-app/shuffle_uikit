@@ -1466,6 +1466,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           child: UiKitImportanceChip(
             title: 'Importance',
             importance: ImportanceChip.none,
+            id: 0,
           ),
         ),
         SpacingFoundation.verticalSpace16,
@@ -1660,7 +1661,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               customSpace: SpacingFoundation.horizontalSpace8,
               showSpacing: true,
             ),
-          ], id: 1,
+          ],
+          id: 1,
         ),
         UiKitSwiperAdCard(
           title: '',

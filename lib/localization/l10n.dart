@@ -896,10 +896,10 @@ class S {
     );
   }
 
-  /// `Smart leisure selection for everyone, everywhere.`
+  /// `Smart leisure selection for everyone, everywhere`
   String get SmartLeisureSelection {
     return Intl.message(
-      'Smart leisure selection for everyone, everywhere.',
+      'Smart leisure selection for everyone, everywhere',
       name: 'SmartLeisureSelection',
       desc: '',
       args: [],
