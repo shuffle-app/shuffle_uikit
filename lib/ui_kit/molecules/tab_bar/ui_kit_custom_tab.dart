@@ -24,8 +24,8 @@ class UiKitCustomTab extends StatelessWidget {
     this.height = 40,
     this.active = true,
     this.child,
+    this.customValue,
   })  : title = '',
-        customValue = '',
         group = null,
         super(key: key);
 
