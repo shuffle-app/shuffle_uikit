@@ -2326,20 +2326,20 @@ class S {
     );
   }
 
-  /// `Allow`
+  /// `Continue`
   String get Allow {
     return Intl.message(
-      'Allow',
+      'Continue',
       name: 'Allow',
       desc: '',
       args: [],
     );
   }
 
-  /// `Allow all`
+  /// `Continue`
   String get AllowAll {
     return Intl.message(
-      'Allow all',
+      'Continue',
       name: 'AllowAll',
       desc: '',
       args: [],
