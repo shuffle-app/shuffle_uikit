@@ -34,7 +34,7 @@ class LocationSelectionWidget extends StatefulWidget {
   final double? height;
 
   final List<KnownLocation>? places;
-  final void Function({String address, double latitude, double longitude})? onLocationChanged;
+  final void Function(KnownLocation location)? onLocationChanged;
   final VoidCallback? onNewPlaceTap;
   final VoidCallback? onLocationConfirmed;
 
@@ -85,7 +85,7 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                   onTap: isSuggestions
                       ? () {
                           setState(() => _selectedIndex = index);
-                          widget.onLocationChanged?.call(address: widget.places![index].title);
+                          widget.onLocationChanged?.call(widget.places![index]);
                         }
                       : null,
                   child: Row(

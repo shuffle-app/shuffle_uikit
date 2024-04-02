@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMiniMapWidget extends StatefulWidget {
   final void Function(double lat, double lng)? onMapTap;
+  final KnownLocation? initialLocation;
 
   const UiKitMiniMapWidget({
     Key? key,
     this.onMapTap,
+    this.initialLocation,
   }) : super(key: key);
 
   @override
@@ -14,18 +17,18 @@ class UiKitMiniMapWidget extends StatefulWidget {
 }
 
 class _UiKitMiniMapWidgetState extends State<UiKitMiniMapWidget> {
-  Set<Marker> selectedPoint = {
+  late Set<Marker> selectedPoint = {
     Marker(
       markerId: MarkerId('1'),
-      position: const LatLng(25.276987, 55.296249),
+      position: LatLng(widget.initialLocation?.latitude ?? 25.276987, widget.initialLocation?.longitude ?? 55.296249),
     ),
   };
 
   @override
   Widget build(BuildContext context) {
     return GoogleMap(
-      initialCameraPosition: const CameraPosition(
-        target: LatLng(25.276987, 55.296249),
+      initialCameraPosition: CameraPosition(
+        target: LatLng(widget.initialLocation?.latitude ?? 25.276987, widget.initialLocation?.longitude ?? 55.296249),
         zoom: 14.4746,
       ),
       markers: selectedPoint,
