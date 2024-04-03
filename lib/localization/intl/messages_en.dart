@@ -153,8 +153,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AllAlbums": MessageLookupByLibrary.simpleMessage("All albums"),
         "AllAppNotification":
             MessageLookupByLibrary.simpleMessage("All app notifications"),
-        "Allow": MessageLookupByLibrary.simpleMessage("Allow"),
-        "AllowAll": MessageLookupByLibrary.simpleMessage("Allow all"),
+        "Allow": MessageLookupByLibrary.simpleMessage("Continue"),
+        "AllowAll": MessageLookupByLibrary.simpleMessage("Continue"),
         "AllowGeolocation":
             MessageLookupByLibrary.simpleMessage("Allow geolocation"),
         "AllowLocationServicesToUseThisFunction":

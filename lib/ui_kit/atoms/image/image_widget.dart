@@ -142,7 +142,7 @@ class ImageWidget extends StatelessWidget {
         );
       } else if (link!.split('.').lastOrNull == 'svg') {
         return SvgPicture.network(
-          link!,
+          CustomProxyStatic.proxy + link!,
           colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
           fit: fit ?? BoxFit.none,
           height: height,
