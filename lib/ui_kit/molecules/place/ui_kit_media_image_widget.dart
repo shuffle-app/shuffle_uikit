@@ -11,7 +11,7 @@ class UiKitMediaImageWidget extends BaseUiKitMediaWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadiusFoundation.all24,
+      borderRadius: kIsWeb ? BorderRadiusFoundation.all16 : BorderRadiusFoundation.all24,
       child: ImageWidget(
         lowerQuality: true,
         link: media.link,
