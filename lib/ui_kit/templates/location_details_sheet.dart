@@ -9,7 +9,7 @@ class LocationDetailsSheet extends StatefulWidget {
   final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
   final List<KnownLocation>? suggestionPlaces;
   final ValueChanged<bool> onNewPlaceTap;
-  final void Function({String address, double latitude, double longitude}) onLocationChanged;
+  final void Function(KnownLocation location) onLocationChanged;
   final bool newPlace;
 
   const LocationDetailsSheet({
@@ -96,8 +96,7 @@ class _LocationDetailsSheetState extends State<LocationDetailsSheet> {
 }
 
 class LocationDetailsSheetController {
-  final StreamController<LocationDetailsSheetState> _sheetStateController =
-      StreamController<LocationDetailsSheetState>();
+  final StreamController<LocationDetailsSheetState> _sheetStateController = StreamController<LocationDetailsSheetState>();
 
   late Stream<LocationDetailsSheetState> sheetStateStream = _sheetStateController.stream.asBroadcastStream();
 

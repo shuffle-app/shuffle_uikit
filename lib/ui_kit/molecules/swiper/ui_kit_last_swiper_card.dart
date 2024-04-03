@@ -13,6 +13,7 @@ class UiKitLastSwiperCard extends BaseUiKitSwiperCard {
           tags: [],
           title: '',
           subtitle: '',
+    id:0
         );
 
   UiKitLastSwiperCard.fixed({super.key})
@@ -22,6 +23,7 @@ class UiKitLastSwiperCard extends BaseUiKitSwiperCard {
           tags: [],
           title: '',
           subtitle: '',
+        id:0
         );
 
   @override

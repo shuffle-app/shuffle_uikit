@@ -140,6 +140,18 @@ class ImageWidget extends StatelessWidget {
                 : placeholder;
           },
         );
+      } else if (link!.split('.').lastOrNull == 'svg') {
+        return SvgPicture.network(
+          CustomProxyStatic.proxy + link!,
+          colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
+          fit: fit ?? BoxFit.none,
+          height: height,
+          width: width,
+          placeholderBuilder: (_) => ConstrainedBox(
+            constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
+            child: placeholder,
+          ),
+        );
       }
 
       // !.startsWith("http://") || link!.startsWith("https://")) {

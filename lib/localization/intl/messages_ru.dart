@@ -153,8 +153,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AllAlbums": MessageLookupByLibrary.simpleMessage("Все альбомы"),
         "AllAppNotification":
             MessageLookupByLibrary.simpleMessage("Все уведомления"),
-        "Allow": MessageLookupByLibrary.simpleMessage("Разрешить"),
-        "AllowAll": MessageLookupByLibrary.simpleMessage("Разрешить всё"),
+        "Allow": MessageLookupByLibrary.simpleMessage("Продолжить"),
+        "AllowAll": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "AllowGeolocation":
             MessageLookupByLibrary.simpleMessage("Разрешить гео"),
         "AllowLocationServicesToUseThisFunction":
@@ -384,12 +384,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "Less": MessageLookupByLibrary.simpleMessage("меньше"),
         "Loading": MessageLookupByLibrary.simpleMessage("Загрузка..."),
         "Location": MessageLookupByLibrary.simpleMessage("Локация"),
+        "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
+            "Location is required to procceed check in"),
         "LoginWith": m16,
         "Logo": MessageLookupByLibrary.simpleMessage("Лого"),
         "LogoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Лого (загрузить)"),
         "LovelyTouchAmazingInteraction":
             MessageLookupByLibrary.simpleMessage("Приятный на ощупь интерфейс"),
+        "MakeSureYouAreCloseToMakeCheckIn":
+            MessageLookupByLibrary.simpleMessage(
+                "Make sure you are close and try check in again"),
         "Male": MessageLookupByLibrary.simpleMessage("Мужчина"),
         "Members": m17,
         "Message": MessageLookupByLibrary.simpleMessage("Сообщение"),
@@ -417,6 +422,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "NextElements": m19,
         "NextNPeople": m20,
         "NextWithChevrons": MessageLookupByLibrary.simpleMessage("Далее >>>"),
+        "Niche": MessageLookupByLibrary.simpleMessage("Ниша"),
         "Nickname": MessageLookupByLibrary.simpleMessage("Ник"),
         "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(
             "Ник занят, попробуйте другой"),
@@ -497,9 +503,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "PleaseSelectAtLeastNReligion": m21,
         "PleaseSelectAtLeastOneAgeRange": MessageLookupByLibrary.simpleMessage(
             "Выберите хотя бы одну возрастную группу"),
-        "PleaseSelectAtLeastOneTargetAudience":
+        "PleaseSelectAtLeastOnePriceSegment":
             MessageLookupByLibrary.simpleMessage(
-                "Выберите хотя бы одну ЦА, пожалуйста"),
+                "Please select at least one price segment"),
         "PleaseSelectGender":
             MessageLookupByLibrary.simpleMessage("Пожалуйста, укажите пол"),
         "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
@@ -637,7 +643,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Skip": MessageLookupByLibrary.simpleMessage("Пропустить"),
         "Small": MessageLookupByLibrary.simpleMessage("Небольшой"),
         "SmartLeisureSelection": MessageLookupByLibrary.simpleMessage(
-            "Умный подбор досуга каждому, везде."),
+            "Умный подбор досуга каждому, везде"),
         "SocialSubtitle":
             MessageLookupByLibrary.simpleMessage("Полезные сервисы и места"),
         "Spent": MessageLookupByLibrary.simpleMessage("Потрачено"),
@@ -770,7 +776,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("Вы найдёте"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Твой возраст"),
-        "YourAudience": MessageLookupByLibrary.simpleMessage("Ваша аудитория"),
         "YourAudienceAge":
             MessageLookupByLibrary.simpleMessage("Возраст аудитории"),
         "YourClaimHasBeenSent":
@@ -781,6 +786,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourName": MessageLookupByLibrary.simpleMessage("Ваше имя"),
         "YourNiche": MessageLookupByLibrary.simpleMessage("Ваша ниша"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("Ваша позиция"),
+        "YourPriceSegment":
+            MessageLookupByLibrary.simpleMessage("Your price segment"),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("Ваш трафик"),
         "daynight": MessageLookupByLibrary.simpleMessage("Днем и ночью"),
         "key": MessageLookupByLibrary.simpleMessage("")

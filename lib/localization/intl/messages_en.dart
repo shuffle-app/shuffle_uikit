@@ -153,8 +153,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AllAlbums": MessageLookupByLibrary.simpleMessage("All albums"),
         "AllAppNotification":
             MessageLookupByLibrary.simpleMessage("All app notifications"),
-        "Allow": MessageLookupByLibrary.simpleMessage("Allow"),
-        "AllowAll": MessageLookupByLibrary.simpleMessage("Allow all"),
+        "Allow": MessageLookupByLibrary.simpleMessage("Continue"),
+        "AllowAll": MessageLookupByLibrary.simpleMessage("Continue"),
         "AllowGeolocation":
             MessageLookupByLibrary.simpleMessage("Allow geolocation"),
         "AllowLocationServicesToUseThisFunction":
@@ -378,12 +378,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "Less": MessageLookupByLibrary.simpleMessage("less"),
         "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
         "Location": MessageLookupByLibrary.simpleMessage("Location"),
+        "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
+            "Location is required to procceed check in"),
         "LoginWith": m16,
         "Logo": MessageLookupByLibrary.simpleMessage("Logo"),
         "LogoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Logo (upload Files)"),
         "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage(
             "Lovely-touch amazing\ninteraction"),
+        "MakeSureYouAreCloseToMakeCheckIn":
+            MessageLookupByLibrary.simpleMessage(
+                "Make sure you are close and try check in again"),
         "Male": MessageLookupByLibrary.simpleMessage("Male"),
         "Members": m17,
         "Message": MessageLookupByLibrary.simpleMessage("Message"),
@@ -411,6 +416,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "NextElements": m19,
         "NextNPeople": m20,
         "NextWithChevrons": MessageLookupByLibrary.simpleMessage("Next >>>"),
+        "Niche": MessageLookupByLibrary.simpleMessage("Niche"),
         "Nickname": MessageLookupByLibrary.simpleMessage("Nickname"),
         "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(
             "Nickname is taken, try another one"),
@@ -491,9 +497,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "PleaseSelectAtLeastNReligion": m21,
         "PleaseSelectAtLeastOneAgeRange": MessageLookupByLibrary.simpleMessage(
             "Please select at least one age range"),
-        "PleaseSelectAtLeastOneTargetAudience":
+        "PleaseSelectAtLeastOnePriceSegment":
             MessageLookupByLibrary.simpleMessage(
-                "Please select at least one target audience"),
+                "Please select at least one price segment"),
         "PleaseSelectGender":
             MessageLookupByLibrary.simpleMessage("Please select a gender"),
         "PleaseSelectOneType":
@@ -626,7 +632,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "Small": MessageLookupByLibrary.simpleMessage("Small"),
         "SmartLeisureSelection": MessageLookupByLibrary.simpleMessage(
-            "Smart leisure selection for everyone, everywhere."),
+            "Smart leisure selection for everyone, everywhere"),
         "SocialSubtitle":
             MessageLookupByLibrary.simpleMessage("Useful services and places"),
         "Spent": MessageLookupByLibrary.simpleMessage("Spent"),
@@ -756,7 +762,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("You’ll find it"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Your age"),
-        "YourAudience": MessageLookupByLibrary.simpleMessage("Your audience"),
         "YourAudienceAge":
             MessageLookupByLibrary.simpleMessage("Your audience age"),
         "YourClaimHasBeenSent":
@@ -767,6 +772,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourName": MessageLookupByLibrary.simpleMessage("Your name"),
         "YourNiche": MessageLookupByLibrary.simpleMessage("Your niche"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("Your position"),
+        "YourPriceSegment":
+            MessageLookupByLibrary.simpleMessage("Your price segment"),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("Your traffic"),
         "daynight": MessageLookupByLibrary.simpleMessage("Day and night"),
         "key": MessageLookupByLibrary.simpleMessage("")

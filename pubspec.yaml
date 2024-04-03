@@ -61,7 +61,7 @@ dependencies:
 
   #tab navigation
   tabnavigator:
-    #    path: ../tabnavigator_plus
+#        path: ../tabnavigator_plus
     git:
       url: https://github.com/shuffle-app/tabnavigator_plus
       ref: main

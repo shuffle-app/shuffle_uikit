@@ -3,6 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitImportanceChip extends StatelessWidget {
   final String title;
+  final int id;
   final bool joke;
   final ImportanceChip importance;
   final ValueChanged<ImportanceChip>? onImportanceChanged;
@@ -12,6 +13,7 @@ class UiKitImportanceChip extends StatelessWidget {
   UiKitImportanceChip({
     Key? key,
     required this.title,
+    required this.id,
     this.joke = false,
     required this.importance,
     this.onImportanceChanged,

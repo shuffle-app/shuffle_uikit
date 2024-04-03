@@ -11,6 +11,7 @@
   "Ooops": "उफ़!",
   "NoPhotoHereYet": "अभी तक यहां कोई फोटो नहीं है!",
   "Off": "बंद",
+  "Niche": "Niche",
   "HealthKit": "स्वास्थ्य किट",
   "Loading": "लोड हो रहा है...",
   "ThatsAllForNow": "अभी के लिए इतना ही!",
@@ -158,7 +159,7 @@
   "Favorites": "पसंदीदा",
   "Small": "छोटा",
   "PleaseSelectANiche": "कृपया एक आला चुनें",
-  "PleaseSelectAtLeastOneTargetAudience": "कृपया कम से कम एक लक्षित दर्शक चुनें",
+  "PleaseSelectAtLeastOnePriceSegment": "Please select at least one price segment",
   "PleaseSelectAtLeastOneAgeRange": "कृपया कम से कम एक आयु सीमा चुनें",
   "TheMoreInfoWeGetTheBetter": "हमें जितनी अधिक जानकारी मिलेगी, उतना बेहतर होगा",
   "YourTraffic": "आपका ट्रैफ़िक",
@@ -166,7 +167,7 @@
   "Title": "शीर्षक",
   "ContactPerson": "संपर्क व्यक्ति",
   "Position": "पद",
-  "YourAudience": "आपके दर्शक",
+  "YourPriceSegment": "Your price segment",
   "YourAudienceAge": "आपके दर्शकों की उम्र",
   "Shuffle": "मिश्रण",
   "ShuffleWithRightWhitespace": "मिश्रण",
@@ -446,6 +447,8 @@
   "YouMissedALot": "आपने बहुत कुछ छोड़ दिया",
   "MoreAboutThisPlace": "इस स्थान के बारे में और जानें",
   "MoreAboutThisEvent": "इस घटना के बारे में और जानें",
-  "ReactionsByCritics": "निरंकुशों द्वारा प्रतिक्रिया"
+  "ReactionsByCritics": "निरंकुशों द्वारा प्रतिक्रिया",
+  "MakeSureYouAreCloseToMakeCheckIn": "Make sure you are close and try check in again",
+  "LocationIsRequired": "Location is required to procceed check in"
 
 }

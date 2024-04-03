@@ -11,6 +11,7 @@
   "Ooops": "Ooops!",
   "NoPhotoHereYet": "No photo here yet!",
   "Off": "Off",
+  "Niche": "Niche",
   "HealthKit": "Health Kit",
   "Loading": "Loading...",
   "ThatsAllForNow": "That's all for now!",
@@ -86,7 +87,7 @@
   "OnboardingSlide1":"to have some fun",
   "OnboardingSlide2":"to explore\nleisure and\nbusiness",
   "OnboardingSlide3":"to just chill out",
-  "SmartLeisureSelection": "Smart leisure selection for everyone, everywhere.",
+  "SmartLeisureSelection": "Smart leisure selection for everyone, everywhere",
   "Welcome": "Welcome",
   "GetStarted": "Get started",
   "WhatIs": "What is \n",
@@ -152,7 +153,7 @@
   "Favorites": "Favorites",
   "Small": "Small",
   "PleaseSelectANiche": "Please select a niche",
-  "PleaseSelectAtLeastOneTargetAudience": "Please select at least one target audience",
+  "PleaseSelectAtLeastOnePriceSegment": "Please select at least one price segment",
   "PleaseSelectAtLeastOneAgeRange": "Please select at least one age range",
   "TheMoreInfoWeGetTheBetter": "The more info we get, the better ",
   "YourTraffic": "Your traffic",
@@ -160,7 +161,7 @@
   "Title": "Title",
   "ContactPerson": "Contact person",
   "Position": "Position",
-  "YourAudience": "Your audience",
+  "YourPriceSegment": "Your price segment",
   "YourAudienceAge": "Your audience age",
   "Shuffle": "Shuffle",
   "ShuffleWithRightWhitespace": "Shuffle ",
@@ -446,6 +447,8 @@
   "YouMissedALot": "You missed a lot",
   "MoreAboutThisPlace": "More about this place",
   "MoreAboutThisEvent": "More about this event",
-  "ReactionsByCritics": "Reactions by critics"
+  "ReactionsByCritics": "Reactions by critics",
+  "MakeSureYouAreCloseToMakeCheckIn": "Make sure you are close and try check in again",
+  "LocationIsRequired": "Location is required to procceed check in"
 
 }

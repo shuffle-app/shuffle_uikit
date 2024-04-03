@@ -36,8 +36,9 @@ class UiKitMediaVideo extends BaseUiKitMedia {
 }
 
 class UiKitTag {
+  final int? id;
   final String title;
-  final IconData icon;
+  final dynamic icon;
   final bool unique;
 
   UiKitTagWidget get widget => UiKitTagWidget(
@@ -51,6 +52,7 @@ class UiKitTag {
     required String title,
     required this.icon,
     this.unique = false,
+    this.id,
     bool updateTitle = true,
   }) : title = updateTitle ? title.replaceAll('-', ' ') : title;
 }

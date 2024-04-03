@@ -37,6 +37,10 @@ class UiKitSuggestionField extends StatelessWidget {
             onFieldSubmitted?.call(selection);
           },
         ),
+        onSelected: (String selection) {
+          log('we selected $selection', name: 'UiKitSuggestionField');
+          onFieldSubmitted?.call(selection);
+        },
         optionsViewBuilder: (_, onSelected, options) => Align(
           alignment: Alignment.topLeft,
           child: SizedBox(
@@ -44,8 +48,8 @@ class UiKitSuggestionField extends StatelessWidget {
             child: Material(
               borderRadius: borderRadius ?? BorderRadiusFoundation.max,
               child: UiKitTagSelector(
-                onTagSelected: (option){
-                  log('we selected option $option',name: 'UiKitSuggestionField');
+                onTagSelected: (option) {
+                  log('we selected option $option', name: 'UiKitSuggestionField');
                   onSelected.call(option);
                   onFieldSubmitted?.call(option);
                 },
@@ -60,7 +64,7 @@ class UiKitSuggestionField extends StatelessWidget {
             return const Iterable<String>.empty();
           }
 
-          final result =  options.call(editingValue.text).then((options) {
+          final result = options.call(editingValue.text).then((options) {
             return options.where((String option) {
               return option.toLowerCase().contains(editingValue.text.toLowerCase());
             });

@@ -2,7 +2,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BaseUiKitUserTileData {
   final String? name;
-  final Future<String?>? username;
+  final String? username;
   final String? avatarUrl;
   final UserTileType? type;
   final void Function()? onTap;

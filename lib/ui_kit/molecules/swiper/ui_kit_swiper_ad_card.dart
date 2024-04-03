@@ -11,7 +11,8 @@ class UiKitSwiperAdCard extends BaseUiKitSwiperCard {
     super.title = '',
     super.subtitle = '',
     required this.adsData,
-  });
+    super.id = 0
+  }) ;
 
   @override
   Widget build(BuildContext context) {

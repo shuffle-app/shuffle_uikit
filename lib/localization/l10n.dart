@@ -170,6 +170,16 @@ class S {
     );
   }
 
+  /// `Niche`
+  String get Niche {
+    return Intl.message(
+      'Niche',
+      name: 'Niche',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Health Kit`
   String get HealthKit {
     return Intl.message(
@@ -886,10 +896,10 @@ class S {
     );
   }
 
-  /// `Smart leisure selection for everyone, everywhere.`
+  /// `Smart leisure selection for everyone, everywhere`
   String get SmartLeisureSelection {
     return Intl.message(
-      'Smart leisure selection for everyone, everywhere.',
+      'Smart leisure selection for everyone, everywhere',
       name: 'SmartLeisureSelection',
       desc: '',
       args: [],
@@ -1556,11 +1566,11 @@ class S {
     );
   }
 
-  /// `Please select at least one target audience`
-  String get PleaseSelectAtLeastOneTargetAudience {
+  /// `Please select at least one price segment`
+  String get PleaseSelectAtLeastOnePriceSegment {
     return Intl.message(
-      'Please select at least one target audience',
-      name: 'PleaseSelectAtLeastOneTargetAudience',
+      'Please select at least one price segment',
+      name: 'PleaseSelectAtLeastOnePriceSegment',
       desc: '',
       args: [],
     );
@@ -1636,11 +1646,11 @@ class S {
     );
   }
 
-  /// `Your audience`
-  String get YourAudience {
+  /// `Your price segment`
+  String get YourPriceSegment {
     return Intl.message(
-      'Your audience',
-      name: 'YourAudience',
+      'Your price segment',
+      name: 'YourPriceSegment',
       desc: '',
       args: [],
     );
@@ -2316,20 +2326,20 @@ class S {
     );
   }
 
-  /// `Allow`
+  /// `Continue`
   String get Allow {
     return Intl.message(
-      'Allow',
+      'Continue',
       name: 'Allow',
       desc: '',
       args: [],
     );
   }
 
-  /// `Allow all`
+  /// `Continue`
   String get AllowAll {
     return Intl.message(
-      'Allow all',
+      'Continue',
       name: 'AllowAll',
       desc: '',
       args: [],
@@ -4600,6 +4610,26 @@ class S {
     return Intl.message(
       'Reactions by critics',
       name: 'ReactionsByCritics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Make sure you are close and try check in again`
+  String get MakeSureYouAreCloseToMakeCheckIn {
+    return Intl.message(
+      'Make sure you are close and try check in again',
+      name: 'MakeSureYouAreCloseToMakeCheckIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location is required to procceed check in`
+  String get LocationIsRequired {
+    return Intl.message(
+      'Location is required to procceed check in',
+      name: 'LocationIsRequired',
       desc: '',
       args: [],
     );

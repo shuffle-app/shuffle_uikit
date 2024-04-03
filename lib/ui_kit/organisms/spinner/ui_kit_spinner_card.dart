@@ -7,10 +7,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitSpinnerCard extends StatefulWidget {
   final String? photoLink;
   final String? title;
-  final DateTime? date;
-  final DateTime? dateTo;
-  final TimeOfDay? time;
-  final TimeOfDay? timeTo;
+  final String? scheduleString;
   final List<String>? weekdays;
   final bool? favourite;
   final VoidCallback? onTap;
@@ -18,7 +15,7 @@ class UiKitSpinnerCard extends StatefulWidget {
   final String? ownerPhotoLink;
   final String? ownerTileTitle;
   final Widget? ownerTileTitleTrailing;
-  final Future<String>? ownerTileSubtitle;
+  final String? ownerTileSubtitle;
   final double availableHeight;
 
   const UiKitSpinnerCard({
@@ -26,10 +23,7 @@ class UiKitSpinnerCard extends StatefulWidget {
     required this.availableHeight,
     this.photoLink,
     this.title,
-    this.date,
-    this.dateTo,
-    this.time,
-    this.timeTo,
+    this.scheduleString,
     this.favourite,
     this.onTap,
     this.onFavoriteTap,
@@ -109,13 +103,10 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
       color: ColorsFoundation.darkNeutral900,
     );
     final colorScheme = context.uiKitTheme?.colorScheme;
-    final String? convertedDate = formatDate(
-      widget.date,
-      widget.dateTo,
-      widget.time,
-      widget.timeTo,
-      widget.weekdays,
-    );
+    // final String? convertedDate = formatDate(
+    //   widget.scheduleString,
+    //   widget.weekdays,
+    // );
 
     final normalCardWidth = 0.75.sw;
     final normalCardHeight = widget.availableHeight * 0.76;
@@ -259,7 +250,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
                 overflow: TextOverflow.ellipsis,
                 style: titleStyle,
               ),
-            if (convertedDate != null) ...[
+            if (widget.scheduleString != null) ...[
               SpacingFoundation.verticalSpace4,
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -274,7 +265,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
                     ),
                     SpacingFoundation.horizontalSpace4,
                     Text(
-                      convertedDate,
+                      widget.scheduleString!,
                       style: dateTextStyle,
                     ),
                   ],

@@ -12,8 +12,7 @@ class LocationPickerPage extends StatefulWidget {
 
 class _LocationPickerPageState extends State<LocationPickerPage> {
   final searchController = TextEditingController();
-  final LocationPickerSearchOverlayController locationPickerSearchOverlayController =
-      LocationPickerSearchOverlayController();
+  final LocationPickerSearchOverlayController locationPickerSearchOverlayController = LocationPickerSearchOverlayController();
   final LocationDetailsSheetController locationDetailsSheetController = LocationDetailsSheetController();
 
   @override
@@ -56,7 +55,7 @@ class _LocationPickerPageState extends State<LocationPickerPage> {
         onKnownLocationConfirmed: (location) {},
         onLocationConfirmed: () {},
         onNewPlaceTap: (_) {},
-        onLocationChanged: ({String? address, double? latitude, double? longitude}) {},
+        onLocationChanged: (location) {},
       ),
     );
   }
