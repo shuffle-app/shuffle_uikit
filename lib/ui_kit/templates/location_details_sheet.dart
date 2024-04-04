@@ -9,7 +9,7 @@ class LocationDetailsSheet extends StatefulWidget {
   final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
   final List<KnownLocation>? suggestionPlaces;
   final ValueChanged<bool> onNewPlaceTap;
-  final void Function(KnownLocation location) onLocationChanged;
+  final void Function({String address, double latitude, double longitude}) onLocationChanged;
   final bool newPlace;
 
   const LocationDetailsSheet({

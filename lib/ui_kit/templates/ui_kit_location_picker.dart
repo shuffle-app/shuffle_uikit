@@ -20,7 +20,7 @@ class UiKitLocationPicker extends StatelessWidget {
   final Set<Marker> markers;
   final VoidCallback? onLocationConfirmed;
   final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
-  final void Function(KnownLocation location) onLocationChanged;
+  final void Function({String address, double latitude, double longitude}) onLocationChanged;
   final VoidCallback? onCurrentLocationTapped;
   final List<KnownLocation>? suggestionPlaces;
   final ValueChanged<bool> onNewPlaceTap;
