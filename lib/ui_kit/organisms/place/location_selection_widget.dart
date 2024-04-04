@@ -34,7 +34,7 @@ class LocationSelectionWidget extends StatefulWidget {
   final double? height;
 
   final List<KnownLocation>? places;
-  final void Function(KnownLocation location)? onLocationChanged;
+  final void Function({String address, double latitude, double longitude})? onLocationChanged;
   final VoidCallback? onNewPlaceTap;
   final VoidCallback? onLocationConfirmed;
 
@@ -85,31 +85,27 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                   onTap: isSuggestions
                       ? () {
                           setState(() => _selectedIndex = index);
-                          widget.onLocationChanged?.call(widget.places![index]);
+                          final lat = widget.places![index].latitude;
+                          final lon = widget.places![index].longitude;
+                          if (lat != null && lon != null) {
+                            widget.onLocationChanged?.call(
+                              address: widget.places![index].title,
+                              latitude: lat,
+                              longitude: lon,
+                            );
+                          } else {
+                            widget.onLocationChanged?.call(address: widget.places![index].title);
+                          }
                         }
                       : null,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Flexible(
-                        child: RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text:
-                                    '${index + 1}. ${isSuggestions ? widget.places![index].title : widget.knownLocations![index].title} \n',
-                                style: theme?.boldTextTheme.caption1Bold.copyWith(
-                                  color: theme.colorScheme.primary,
-                                ),
-                              ),
-                              TextSpan(
-                                text:
-                                    '${index + 1}. ${isSuggestions ? widget.places![index].addressLine : widget.knownLocations![index].addressLine} \n',
-                                style: theme?.regularTextTheme.caption1.copyWith(
-                                  color: theme.colorScheme.primary,
-                                ),
-                              ),
-                            ],
+                        child: Text(
+                          '${index + 1}. ${isSuggestions ? widget.places![index].title : widget.knownLocations![index].title} ',
+                          style: theme?.regularTextTheme.caption1.copyWith(
+                            color: theme.colorScheme.primary,
                           ),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
@@ -120,7 +116,21 @@ class _LocationSelectionWidgetState extends State<LocationSelectionWidget> {
                           ? UiKitRadio(selected: _selectedIndex == index)
                           : context.smallButton(
                               data: BaseUiKitButtonData(
-                                onPressed: () => widget.onKnownLocationConfirmed?.call(widget.knownLocations![index]),
+                                onPressed: () {
+                                  final lat = widget.places![index].latitude;
+                                  final lon = widget.places![index].longitude;
+                                  if (lat != null && lon != null) {
+                                    widget.onKnownLocationConfirmed?.call(
+                                      KnownLocation(
+                                        title: widget.knownLocations![index].title,
+                                        latitude: lat,
+                                        longitude: lon,
+                                      ),
+                                    );
+                                  } else {
+                                    widget.onKnownLocationConfirmed?.call(widget.knownLocations![index]);
+                                  }
+                                },
                                 text: S.of(context).Confirm,
                               ),
                             ),
