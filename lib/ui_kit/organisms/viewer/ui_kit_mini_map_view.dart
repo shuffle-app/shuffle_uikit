@@ -19,7 +19,7 @@ class UiKitMiniMapWidget extends StatefulWidget {
 class _UiKitMiniMapWidgetState extends State<UiKitMiniMapWidget> {
   late Set<Marker> selectedPoint = {
     Marker(
-      markerId: MarkerId('1'),
+      markerId: const MarkerId('1'),
       position: LatLng(widget.initialLocation?.latitude ?? 25.276987, widget.initialLocation?.longitude ?? 55.296249),
     ),
   };
@@ -36,7 +36,7 @@ class _UiKitMiniMapWidgetState extends State<UiKitMiniMapWidget> {
         setState(() {
           selectedPoint = {
             Marker(
-              markerId: MarkerId('1'),
+              markerId: const MarkerId('1'),
               position: latLng,
             ),
           };

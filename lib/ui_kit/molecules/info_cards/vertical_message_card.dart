@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -17,7 +18,7 @@ class VerticalMessageCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = 0.33.sw;
+    final width = kIsWeb ? 100.0: 0.33.sw;
     final messageStyle = context.uiKitTheme?.boldTextTheme.caption1UpperCaseMedium;
     final colorScheme = context.uiKitTheme?.colorScheme;
 
@@ -40,8 +41,8 @@ class VerticalMessageCard extends StatelessWidget {
                 ImageWidget(
                   iconData: iconData,
                   link: iconLink,
-                  height: 0.1875.sw,
-                  width: 0.1875.sw,
+                  height:  kIsWeb ? 80: 0.1875.sw,
+                  width:  kIsWeb ? 80: 0.1875.sw,
                   fit: BoxFit.cover,
                 ),
               if (iconData != null || iconLink != null) SpacingFoundation.verticalSpace2,

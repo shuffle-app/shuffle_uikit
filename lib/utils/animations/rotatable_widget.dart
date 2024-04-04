@@ -52,7 +52,7 @@ class _RotatableWidgetState extends State<RotatableWidget> with SingleTickerProv
       controller.reverse();
     } else if (status == AnimationStatus.dismissed) {
       Future.delayed(const Duration(seconds: 10)).then((value) {
-        if(!mounted) return
+        if(!mounted) return;
         controller.forward();
       });
     }
