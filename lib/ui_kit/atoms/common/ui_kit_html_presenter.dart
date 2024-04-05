@@ -38,6 +38,12 @@ class UiKitHtmlPresenter extends StatelessWidget {
           'tbody': Style(
             backgroundColor: tableBackgroundColor,
           ),
+          'li': Style(
+              display: Display.listItem,
+              listStyleType: ListStyleType.disc,
+              listStylePosition: ListStylePosition.inside,
+              margin: Margins(left: Margin(0.5, Unit.em))
+          ),
           'table': Style(
             backgroundColor: tableBackgroundColor,
           ),
@@ -57,9 +63,15 @@ class UiKitHtmlPresenter extends StatelessWidget {
             // padding: const EdgeInsets.all(8),
             alignment: Alignment.topLeft,
           ),
-          if (regularTextTheme != null) 'h1': regularTextTheme.caption1.copyWith(fontWeight: FontWeight.bold).htmlStyle,
-          if (regularTextTheme != null) 'h2': regularTextTheme.caption2.copyWith(fontWeight: FontWeight.bold).htmlStyle,
-          if (regularTextTheme != null) 'h3': regularTextTheme.caption3.copyWith(fontWeight: FontWeight.bold).htmlStyle,
+          if (regularTextTheme != null) 'h1': regularTextTheme.caption1
+              .copyWith(fontWeight: FontWeight.bold)
+              .htmlStyle,
+          if (regularTextTheme != null) 'h2': regularTextTheme.caption2
+              .copyWith(fontWeight: FontWeight.bold)
+              .htmlStyle,
+          if (regularTextTheme != null) 'h3': regularTextTheme.caption3
+              .copyWith(fontWeight: FontWeight.bold)
+              .htmlStyle,
           if (regularTextTheme != null) 'body': regularTextTheme.caption4Regular.htmlStyle
         },
         doNotRenderTheseTags: const {'head', 'noscript', 'header'},
