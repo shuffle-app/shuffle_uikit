@@ -208,7 +208,7 @@ class ImageWidget extends StatelessWidget {
     } else {
       return kIsWeb
           ? Image.network(
-              CustomProxyStatic.proxy + link!,
+              link!.startsWith('blob') ? link! : CustomProxyStatic.proxy + link!,
               fit: fit,
               width: width,
               color: color,
