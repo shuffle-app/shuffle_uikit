@@ -8,13 +8,17 @@ class UiKitSuggestionField extends StatelessWidget {
     super.key,
     required this.options,
     this.hintText,
+    this.allOptions,
     this.initialValue,
     this.fillColor,
     this.borderRadius,
     this.onFieldSubmitted,
+    this.showAllOptions = false,
   });
 
   final Future<List<String>> Function(String) options;
+  final Iterable<String>? allOptions;
+  final bool showAllOptions;
   final String? hintText;
   final TextEditingValue? initialValue;
   final Color? fillColor;
@@ -61,6 +65,8 @@ class UiKitSuggestionField extends StatelessWidget {
         ),
         optionsBuilder: (editingValue) async {
           if (editingValue.text == '') {
+            if (showAllOptions) return options.call('');
+
             return const Iterable<String>.empty();
           }
 
