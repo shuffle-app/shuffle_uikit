@@ -1196,6 +1196,16 @@ class S {
     );
   }
 
+  /// `Use notifications`
+  String get UsingNotifications {
+    return Intl.message(
+      'Use notifications',
+      name: 'UsingNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `See all`
   String get SeeAll {
     return Intl.message(
@@ -2256,10 +2266,10 @@ class S {
     );
   }
 
-  /// `Allow geolocation`
+  /// `Continue to use geolocation`
   String get AllowGeolocation {
     return Intl.message(
-      'Allow geolocation',
+      'Continue to use geolocation',
       name: 'AllowGeolocation',
       desc: '',
       args: [],
@@ -2276,10 +2286,10 @@ class S {
     );
   }
 
-  /// `Allow {allowValue}`
+  /// `Continue to {allowValue}`
   String AllowX(Object allowValue) {
     return Intl.message(
-      'Allow $allowValue',
+      'Continue to $allowValue',
       name: 'AllowX',
       desc: '',
       args: [allowValue],
@@ -2296,10 +2306,10 @@ class S {
     );
   }
 
-  /// `Using health kit`
+  /// `Use health data`
   String get UsingHealthKit {
     return Intl.message(
-      'Using health kit',
+      'Use health data',
       name: 'UsingHealthKit',
       desc: '',
       args: [],
@@ -3363,6 +3373,16 @@ class S {
     return Intl.message(
       'Business',
       name: 'Business',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Both`
+  String get Both {
+    return Intl.message(
+      'Both',
+      name: 'Both',
       desc: '',
       args: [],
     );

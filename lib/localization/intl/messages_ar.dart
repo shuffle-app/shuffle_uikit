@@ -156,7 +156,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Allow": MessageLookupByLibrary.simpleMessage("Allow"),
         "AllowAll": MessageLookupByLibrary.simpleMessage("Allow all"),
         "AllowGeolocation":
-            MessageLookupByLibrary.simpleMessage("Allow geolocation"),
+            MessageLookupByLibrary.simpleMessage("Click to use geolocation"),
         "AllowLocationServicesToUseThisFunction":
             MessageLookupByLibrary.simpleMessage(
                 "Allow location services to use this function"),
@@ -187,6 +187,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Based on your activity, heart rate and other factors, we determine your condition and try to recommend exactly what you need right now, specifically for you"),
         "BeInSearch": MessageLookupByLibrary.simpleMessage("Be in search"),
         "BookIt": MessageLookupByLibrary.simpleMessage("Book it"),
+        "Both": MessageLookupByLibrary.simpleMessage("Both"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Buddhism"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("Burned today"),
         "Business": MessageLookupByLibrary.simpleMessage("Business"),
@@ -715,6 +716,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Users": m34,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Using health kit"),
+        "UsingNotifications":
+            MessageLookupByLibrary.simpleMessage("Use notifications"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Value must be at least 3 characters long"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("Very often"),

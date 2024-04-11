@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -27,40 +28,43 @@ class UiKitHorizontalCaptionedImage extends StatelessWidget {
         maxWidth: maxWidth,
         maxHeight: imageHeight,
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            height: imageHeight,
-            width: imageWidth,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadiusFoundation.all8,
-              border: Border.all(
-                color: ColorsFoundation.neutral32,
+      child: GestureDetector(
+          onTap: onTap,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                  height: imageHeight,
+                  width: imageWidth,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadiusFoundation.all8,
+                      border: Border.all(
+                        color: ColorsFoundation.neutral32,
+                      ),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadiusFoundation.all8,
+                      child: ImageWidget(
+                        link: imageLink,
+                        height: 52, // imageHeight,
+                        width: 90, //imageWidth,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  )),
+              SpacingFoundation.horizontalSpace8,
+              Expanded(
+                child: Text(
+                  title,
+                  style: theme?.boldTextTheme.caption3Medium.copyWith(
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  maxLines: 3,
+                ),
               ),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadiusFoundation.all8,
-              child: ImageWidget(
-                link: imageLink,
-                height: 52, // imageHeight,
-                width: 90, //imageWidth,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          SpacingFoundation.horizontalSpace8,
-          Expanded(
-            child: Text(
-              title,
-              style: theme?.boldTextTheme.caption3Medium.copyWith(
-                overflow: TextOverflow.ellipsis,
-              ),
-              maxLines: 3,
-            ),
-          ),
-        ],
-      ),
+            ],
+          )),
     );
   }
 }

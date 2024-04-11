@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -34,9 +35,12 @@ class TitleWithAvatar extends StatelessWidget {
         ],
         if (title != null)
           Expanded(
-            child: Text(
+            child: AutoSizeText(
               title ?? '',
               style: textStyle,
+              maxLines: 4,
+              minFontSize: 18.w,
+              stepGranularity: (20.w - 18.w) / 2,
             ),
           ),
         if (trailing != null) ...[

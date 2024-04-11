@@ -20,7 +20,7 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(allowValue) => "Allow ${allowValue}";
+  static String m0(allowValue) => "Continue to ${allowValue}";
 
   static String m1(allowedCharacters) =>
       "Allowed caracters are ${allowedCharacters}";
@@ -156,7 +156,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Allow": MessageLookupByLibrary.simpleMessage("Continue"),
         "AllowAll": MessageLookupByLibrary.simpleMessage("Continue"),
         "AllowGeolocation":
-            MessageLookupByLibrary.simpleMessage("Allow geolocation"),
+            MessageLookupByLibrary.simpleMessage("Continue to use geolocation"),
         "AllowLocationServicesToUseThisFunction":
             MessageLookupByLibrary.simpleMessage(
                 "Allow location services to use this function"),
@@ -187,6 +187,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Based on your activity, heart rate and other factors, we determine your condition and try to recommend exactly what you need right now, specifically for you"),
         "BeInSearch": MessageLookupByLibrary.simpleMessage("Be in search"),
         "BookIt": MessageLookupByLibrary.simpleMessage("Book it"),
+        "Both": MessageLookupByLibrary.simpleMessage("Both"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Buddhism"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("Burned today"),
         "Business": MessageLookupByLibrary.simpleMessage("Business"),
@@ -714,7 +715,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Select the type of account you would like to create"),
         "Users": m34,
         "UsingHealthKit":
-            MessageLookupByLibrary.simpleMessage("Using health kit"),
+            MessageLookupByLibrary.simpleMessage("Use health data"),
+        "UsingNotifications":
+            MessageLookupByLibrary.simpleMessage("Use notifications"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Value must be at least 3 characters long"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("Very often"),

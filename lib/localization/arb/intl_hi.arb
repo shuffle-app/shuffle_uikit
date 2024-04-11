@@ -310,6 +310,7 @@
   "TypeOfContent": "सामग्री का प्रकार",
   "Leisure": "फुर्सत",
   "Business":"व्यापार",
+  "Both":"Both",
   "CredentialsCodeVerificationSubtitle": "कृपया उस ईमेल पते पर भेजे गए कोड को दर्ज करें",
   "EmailVerification": "ईमेल सत्यापन",
   "PhoneVerification": "फ़ोन सत्यापन",
@@ -449,6 +450,6 @@
   "MoreAboutThisEvent": "इस घटना के बारे में और जानें",
   "ReactionsByCritics": "निरंकुशों द्वारा प्रतिक्रिया",
   "MakeSureYouAreCloseToMakeCheckIn": "Make sure you are close and try check in again",
-  "LocationIsRequired": "Location is required to procceed check in"
-
+  "LocationIsRequired": "Location is required to procceed check in",
+  "UsingNotifications": "Use notifications"
 }

@@ -189,6 +189,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "आपकी गतिविधि, हृदय गति और अन्य कारकों के आधार पर, हम आपकी स्थिति निर्धारित करते हैं और यह अनुशंसा करने का प्रयास करते हैं कि आपको अभी क्या चाहिए, विशेष रूप से आपके लिए"),
         "BeInSearch": MessageLookupByLibrary.simpleMessage("खोज में रहो"),
         "BookIt": MessageLookupByLibrary.simpleMessage("बुक करें"),
+        "Both": MessageLookupByLibrary.simpleMessage("Both"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("बौद्ध धर्म"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("आज जला दिया"),
         "Business": MessageLookupByLibrary.simpleMessage("व्यापार"),
@@ -727,6 +728,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Users": m34,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("हेल्थकिट का उपयोग करना"),
+        "UsingNotifications":
+            MessageLookupByLibrary.simpleMessage("Use notifications"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "मान कम से कम 3 वर्ण लंबा होना चाहिए"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("बहुत अक्सर"),

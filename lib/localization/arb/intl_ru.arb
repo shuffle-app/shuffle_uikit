@@ -219,9 +219,9 @@
   "ForFormattedPrice": " За {formattedPrice}",
   "ErrorOccuredWithoutMessage": "Ошибка без сообщения",
   "Permissions": "Разрешения",
-  "AllowGeolocation": "Разрешить гео",
+  "AllowGeolocation": "Использовать геолокацию",
   "OurRecommendationsAboutGeolocation": "Система рекомендаций основана на многих факторах. Геолокация – лишь часть системы, которая позволит правильно расставить приоритеты, по расстоянию, по ближайшим особенностям ландшафта (горы, водоемы, равнины, пустыни)",
-  "AllowX": "Разрешить {allowValue}",
+  "AllowX": "Использовать {allowValue}",
   "WeDoNotSpamAllKindsOfNotifications": "Мы не спамим уведомлениями и рекламой. Только то, что важно для вас и соответствуют вашим предпочтениям.",
   "UsingHealthKit": "Данные здоровья",
   "BasedOnYourActivityWeDetermineYourCondition": "На основании вашей активности, пульса и других факторов мы определяем ваше состояние и стараемся рекомендовать то, что вам нужно прямо сейчас, конкретно для вас.",
@@ -327,6 +327,7 @@
   "TypeOfContent": "Тип контента",
   "Leisure": "Досуг",
   "Business":"Бизнес",
+  "Both":"Оба",
   "CredentialsCodeVerificationSubtitle": "Пожалуйста, введите код, отправленный на",
   "EmailVerification": "Подтверждение email",
   "PhoneVerification": "Подтверждение номера телефона",
@@ -448,7 +449,7 @@
   "MoreAboutThisPlace": "Больше об этом месте",
   "MoreAboutThisEvent": "Больше об этом событии",
   "ReactionsByCritics": "Отзывы от критиков",
-  "MakeSureYouAreCloseToMakeCheckIn": "Make sure you are close and try check in again",
-  "LocationIsRequired": "Location is required to procceed check in"
-
+  "MakeSureYouAreCloseToMakeCheckIn": "Убедитесь что вы близко и повторите",
+  "LocationIsRequired": "Локация необходима для использования функции",
+  "UsingNotifications": "Использовать уведомления"
 }
