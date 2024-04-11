@@ -219,6 +219,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CompanyPosition":
             MessageLookupByLibrary.simpleMessage("कंपनी की स्थिति"),
         "Confirm": MessageLookupByLibrary.simpleMessage("पुष्टि करना"),
+        "Congratulations":
+            MessageLookupByLibrary.simpleMessage("Congratulations"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("संपर्क व्यक्ति"),
         "Continue": MessageLookupByLibrary.simpleMessage("जारी रखें"),
         "Control": MessageLookupByLibrary.simpleMessage("नियंत्रण"),
@@ -257,12 +259,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("स्वयं का विवरण दें"),
         "Description": MessageLookupByLibrary.simpleMessage("विवरण"),
         "Details": MessageLookupByLibrary.simpleMessage("विवरण"),
+        "DifferentNumberOfPoints":
+            MessageLookupByLibrary.simpleMessage("Different number of points"),
         "Directions": MessageLookupByLibrary.simpleMessage("दिशा-निर्देश"),
         "DonationHint": MessageLookupByLibrary.simpleMessage(
             "आप प्रति महीने एक अनुरोध बना सकते हैं और अपने सपने पर ही पैसा खर्च कर सकते हैं"),
         "DonationRaised": m4,
         "DontBeAlone": MessageLookupByLibrary.simpleMessage("अकेले मत रहो"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("इसे मत चूकिए"),
+        "DubaiEventTicket":
+            MessageLookupByLibrary.simpleMessage("Dubai Event Ticket"),
         "Easy": MessageLookupByLibrary.simpleMessage("आसान"),
         "Edit": MessageLookupByLibrary.simpleMessage("संपादित करें"),
         "EditProfile":
@@ -366,6 +372,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "आप कितना \$ दान करना चाहते हैं?"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("गलत लॉगिन या पासवर्ड"),
+        "InventoryItems":
+            MessageLookupByLibrary.simpleMessage("Inventory items"),
         "InvitationsCanBeViewedInPrivateMessages":
             MessageLookupByLibrary.simpleMessage(
                 "निमंत्रण निजी संदेशों में देखे जा सकते हैं"),
@@ -567,6 +575,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReactionsByCritics": MessageLookupByLibrary.simpleMessage(
             "निरंकुशों द्वारा प्रतिक्रिया"),
         "Read": m24,
+        "RealMoney": MessageLookupByLibrary.simpleMessage("Real money"),
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),
         "Reset": MessageLookupByLibrary.simpleMessage("रीसेट"),
@@ -771,10 +780,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "Yes": MessageLookupByLibrary.simpleMessage("हाँ"),
         "YouBetterCheckThisOut": MessageLookupByLibrary.simpleMessage(
             "बेहतर होगा कि आप इसकी जांच कर लें"),
+        "YouCanGet": MessageLookupByLibrary.simpleMessage("You can get"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "आपको वही मिलता है जो आपको चाहि"),
         "YouMissedALot":
             MessageLookupByLibrary.simpleMessage("आपने बहुत कुछ छोड़ दिया"),
+        "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
         "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("आप उसे खोज लोगे"),
         "YourAge": MessageLookupByLibrary.simpleMessage("आपकी उम्र"),

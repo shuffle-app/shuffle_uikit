@@ -451,5 +451,12 @@
   "ReactionsByCritics": "Отзывы от критиков",
   "MakeSureYouAreCloseToMakeCheckIn": "Убедитесь что вы близко и повторите",
   "LocationIsRequired": "Локация необходима для использования функции",
-  "UsingNotifications": "Использовать уведомления"
+  "UsingNotifications": "Использовать уведомления",
+  "YouCanGet": "Вы можете получить",
+  "DifferentNumberOfPoints": "Разное количество поинтов",
+  "RealMoney": "Реальные деньги",
+  "InventoryItems": "Вещи инвентаря",
+  "DubaiEventTicket": "Билет на событие в Дубае",
+  "Congratulations": "Поздравляем",
+  "YouReceived" : "Вы получили"
 }

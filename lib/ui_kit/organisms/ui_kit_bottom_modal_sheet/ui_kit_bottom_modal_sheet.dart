@@ -33,7 +33,7 @@ class UiKitBottomModalSheet extends StatelessWidget {
               child: ClipRRect(
                   borderRadius: BorderRadiusFoundation.onlyTop24,
                   child: ColoredBox(
-                    color: Colors.black,
+                    color: context.uiKitTheme?.colorScheme.surface1 ?? Colors.black,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [

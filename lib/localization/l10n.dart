@@ -4654,6 +4654,76 @@ class S {
       args: [],
     );
   }
+
+  /// `You can get`
+  String get YouCanGet {
+    return Intl.message(
+      'You can get',
+      name: 'YouCanGet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Different number of points`
+  String get DifferentNumberOfPoints {
+    return Intl.message(
+      'Different number of points',
+      name: 'DifferentNumberOfPoints',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Real money`
+  String get RealMoney {
+    return Intl.message(
+      'Real money',
+      name: 'RealMoney',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Inventory items`
+  String get InventoryItems {
+    return Intl.message(
+      'Inventory items',
+      name: 'InventoryItems',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dubai Event Ticket`
+  String get DubaiEventTicket {
+    return Intl.message(
+      'Dubai Event Ticket',
+      name: 'DubaiEventTicket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Congratulations`
+  String get Congratulations {
+    return Intl.message(
+      'Congratulations',
+      name: 'Congratulations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You received`
+  String get YouReceived {
+    return Intl.message(
+      'You received',
+      name: 'YouReceived',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

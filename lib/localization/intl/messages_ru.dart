@@ -219,6 +219,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "CompanyPosition":
             MessageLookupByLibrary.simpleMessage("Позиция компания"),
         "Confirm": MessageLookupByLibrary.simpleMessage("Подтвердить"),
+        "Congratulations": MessageLookupByLibrary.simpleMessage("Поздравляем"),
         "ContactPerson":
             MessageLookupByLibrary.simpleMessage("Контактное лицо"),
         "Continue": MessageLookupByLibrary.simpleMessage("Продолжить"),
@@ -260,6 +261,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Опишите себя"),
         "Description": MessageLookupByLibrary.simpleMessage("Описание"),
         "Details": MessageLookupByLibrary.simpleMessage("Детали"),
+        "DifferentNumberOfPoints":
+            MessageLookupByLibrary.simpleMessage("Разное количество поинтов"),
         "Directions": MessageLookupByLibrary.simpleMessage("Направления"),
         "DonationHint": MessageLookupByLibrary.simpleMessage(
             "Вы можете создавать один запрос в месяц и потратить деньги только на свою мечту "),
@@ -267,6 +270,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "DontBeAlone":
             MessageLookupByLibrary.simpleMessage("Не будьте одиноки"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("Не пропустите"),
+        "DubaiEventTicket":
+            MessageLookupByLibrary.simpleMessage("Билет на событие в Дубае"),
         "Easy": MessageLookupByLibrary.simpleMessage("Изи"),
         "Edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
         "EditProfile": MessageLookupByLibrary.simpleMessage("Редактировать"),
@@ -365,6 +370,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Сколько \$ хочешь задонатить?"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Не тот логин или пароль"),
+        "InventoryItems":
+            MessageLookupByLibrary.simpleMessage("Вещи инвентаря"),
         "InvitationsCanBeViewedInPrivateMessages":
             MessageLookupByLibrary.simpleMessage(
                 "Приглашения можно посмотреть в сообщениях"),
@@ -566,6 +573,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReactionsByCritics":
             MessageLookupByLibrary.simpleMessage("Отзывы от критиков"),
         "Read": m24,
+        "RealMoney": MessageLookupByLibrary.simpleMessage("Реальные деньги"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
         "ResendCode":
             MessageLookupByLibrary.simpleMessage("Отправить код еще раз"),
@@ -772,10 +780,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "Yes": MessageLookupByLibrary.simpleMessage("Да"),
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Вам лучше взглянуть"),
+        "YouCanGet": MessageLookupByLibrary.simpleMessage("Вы можете получить"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "Вы получаете точно то, что нужно"),
         "YouMissedALot":
             MessageLookupByLibrary.simpleMessage("Вы многое пропустили"),
+        "YouReceived": MessageLookupByLibrary.simpleMessage("Вы получили"),
         "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("Вы найдёте"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Твой возраст"),

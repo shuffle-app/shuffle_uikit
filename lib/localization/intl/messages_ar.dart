@@ -218,6 +218,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CompanyPosition":
             MessageLookupByLibrary.simpleMessage("Company position"),
         "Confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "Congratulations":
+            MessageLookupByLibrary.simpleMessage("Congratulations"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("Contact person"),
         "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
         "Control": MessageLookupByLibrary.simpleMessage("Control"),
@@ -256,12 +258,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Describe yourself"),
         "Description": MessageLookupByLibrary.simpleMessage("Description"),
         "Details": MessageLookupByLibrary.simpleMessage("Details"),
+        "DifferentNumberOfPoints":
+            MessageLookupByLibrary.simpleMessage("Different number of points"),
         "Directions": MessageLookupByLibrary.simpleMessage("Directions"),
         "DonationHint": MessageLookupByLibrary.simpleMessage(
             "You can create one request per month and spend money only on your dream"),
         "DonationRaised": m4,
         "DontBeAlone": MessageLookupByLibrary.simpleMessage("Don\'t be alone"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("Don\'t miss it"),
+        "DubaiEventTicket":
+            MessageLookupByLibrary.simpleMessage("Dubai Event Ticket"),
         "Easy": MessageLookupByLibrary.simpleMessage("Easy"),
         "Edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
@@ -361,6 +367,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "How much \$ do you want to donate?"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Incorrect login or password"),
+        "InventoryItems":
+            MessageLookupByLibrary.simpleMessage("Inventory items"),
         "InvitationsCanBeViewedInPrivateMessages":
             MessageLookupByLibrary.simpleMessage(
                 "Invitations can be viewed in private messages"),
@@ -559,6 +567,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReactionsByCritics":
             MessageLookupByLibrary.simpleMessage("Reactions by critics"),
         "Read": m24,
+        "RealMoney": MessageLookupByLibrary.simpleMessage("Real money"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
         "Reset": MessageLookupByLibrary.simpleMessage("Reset"),
@@ -758,10 +767,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("You better check this out"),
+        "YouCanGet": MessageLookupByLibrary.simpleMessage("You can get"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "You get exactly what you need"),
         "YouMissedALot":
             MessageLookupByLibrary.simpleMessage("You missed a lot"),
+        "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
         "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("You’ll find it"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Your age"),

@@ -451,5 +451,12 @@
   "ReactionsByCritics": "निरंकुशों द्वारा प्रतिक्रिया",
   "MakeSureYouAreCloseToMakeCheckIn": "Make sure you are close and try check in again",
   "LocationIsRequired": "Location is required to procceed check in",
-  "UsingNotifications": "Use notifications"
+  "UsingNotifications": "Use notifications",
+  "YouCanGet": "You can get",
+  "DifferentNumberOfPoints": "Different number of points",
+  "RealMoney": "Real money",
+  "InventoryItems": "Inventory items",
+  "DubaiEventTicket": "Dubai Event Ticket",
+  "Congratulations": "Congratulations",
+  "YouReceived" : "You received"
 }
