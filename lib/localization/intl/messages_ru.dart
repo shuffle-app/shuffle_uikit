@@ -385,7 +385,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Loading": MessageLookupByLibrary.simpleMessage("Загрузка..."),
         "Location": MessageLookupByLibrary.simpleMessage("Локация"),
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
-            "Location is required to procceed check in"),
+            "Для продолжения чекина требуется локация"),
         "LoginWith": m16,
         "Logo": MessageLookupByLibrary.simpleMessage("Лого"),
         "LogoUploadFiles":
@@ -394,7 +394,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Приятный на ощупь интерфейс"),
         "MakeSureYouAreCloseToMakeCheckIn":
             MessageLookupByLibrary.simpleMessage(
-                "Make sure you are close and try check in again"),
+                "Убедитесь, что вы близко и попробуйте снова"),
         "Male": MessageLookupByLibrary.simpleMessage("Мужчина"),
         "Members": m17,
         "Message": MessageLookupByLibrary.simpleMessage("Сообщение"),
@@ -728,6 +728,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Users": m34,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Данные здоровья"),
+        "UsingNotifications":
+            MessageLookupByLibrary.simpleMessage("Использование уведомлений"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Значение не менее 3 символов"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("Часто"),

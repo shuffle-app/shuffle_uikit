@@ -715,6 +715,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Users": m34,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Using health kit"),
+        "UsingNotifications":
+            MessageLookupByLibrary.simpleMessage("Using notifications"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Value must be at least 3 characters long"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("Very often"),

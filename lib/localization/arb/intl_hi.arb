@@ -448,7 +448,9 @@
   "MoreAboutThisPlace": "इस स्थान के बारे में और जानें",
   "MoreAboutThisEvent": "इस घटना के बारे में और जानें",
   "ReactionsByCritics": "निरंकुशों द्वारा प्रतिक्रिया",
-  "MakeSureYouAreCloseToMakeCheckIn": "Make sure you are close and try check in again",
-  "LocationIsRequired": "Location is required to procceed check in"
+  "MakeSureYouAreCloseToMakeCheckIn": "सुनिश्चित करें कि आप निकट हैं और फिर से चेक इन करें",
+  "LocationIsRequired": "चेक इन करने के लिए स्थान आवश्यक है",
+  "UsingNotifications": "सूचनाएँ उपयोग कर रहे हैं"
+
 
 }

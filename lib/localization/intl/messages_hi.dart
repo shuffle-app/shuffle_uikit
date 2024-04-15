@@ -387,7 +387,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Loading": MessageLookupByLibrary.simpleMessage("लोड हो रहा है..."),
         "Location": MessageLookupByLibrary.simpleMessage("जगह"),
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
-            "Location is required to procceed check in"),
+            "चेक इन करने के लिए स्थान आवश्यक है"),
         "LoginWith": m16,
         "Logo": MessageLookupByLibrary.simpleMessage("प्रतीक चिन्ह"),
         "LogoUploadFiles":
@@ -396,7 +396,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "प्यारा-स्पर्श अद्भुत\nइंटरैक्शन"),
         "MakeSureYouAreCloseToMakeCheckIn":
             MessageLookupByLibrary.simpleMessage(
-                "Make sure you are close and try check in again"),
+                "सुनिश्चित करें कि आप निकट हैं और फिर से चेक इन करें"),
         "Male": MessageLookupByLibrary.simpleMessage("पुरुष"),
         "Members": m17,
         "Message": MessageLookupByLibrary.simpleMessage("संदेश"),
@@ -727,6 +727,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Users": m34,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("हेल्थकिट का उपयोग करना"),
+        "UsingNotifications":
+            MessageLookupByLibrary.simpleMessage("सूचनाएँ उपयोग कर रहे हैं"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "मान कम से कम 3 वर्ण लंबा होना चाहिए"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("बहुत अक्सर"),

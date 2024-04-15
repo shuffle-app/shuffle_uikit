@@ -449,5 +449,6 @@
   "MoreAboutThisEvent": "More about this event",
   "ReactionsByCritics": "Reactions by critics",
   "MakeSureYouAreCloseToMakeCheckIn": "Make sure you are close and try check in again",
-  "LocationIsRequired": "Location is required to procceed check in"
+  "LocationIsRequired": "Location is required to procceed check in",
+  "UsingNotifications": "Using notifications"
 }

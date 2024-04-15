@@ -4634,6 +4634,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Using notifications`
+  String get UsingNotifications {
+    return Intl.message(
+      'Using notifications',
+      name: 'UsingNotifications',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
