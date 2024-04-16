@@ -31,12 +31,14 @@ class UiKitTitledFilterChip extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              ImageWidget(
-                fit: BoxFit.fitHeight,
-                iconData: icon is IconData ? icon as IconData : null,
-                link: icon is String ? icon as String : null,
-                color: selected ? colorScheme?.primary : colorScheme?.inversePrimary,
-              ),
+              Transform.translate(
+                  offset: Offset(0, icon is IconData ? -2.h : 0),
+                  child: ImageWidget(
+                    fit: BoxFit.fitHeight,
+                    iconData: icon is IconData ? icon as IconData : null,
+                    link: icon is String ? icon as String : null,
+                    color: selected ? colorScheme?.primary : colorScheme?.inversePrimary,
+                  )),
               SpacingFoundation.horizontalSpace8,
               Text(
                 title,

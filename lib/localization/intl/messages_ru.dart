@@ -738,7 +738,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Данные здоровья"),
         "UsingNotifications":
-            MessageLookupByLibrary.simpleMessage("Использовать уведомления"),
+            MessageLookupByLibrary.simpleMessage("Уведомления"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Значение не менее 3 символов"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("Часто"),
@@ -752,8 +752,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Посети первое, открой следующее"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(
             "Мы не спамим уведомлениями и рекламой. Только то, что важно для вас и соответствуют вашим предпочтениям."),
-        "WeHavePlacesJustForYou":
-            MessageLookupByLibrary.simpleMessage("Есть места именно для тебя"),
+        "WeHavePlacesJustForYou": MessageLookupByLibrary.simpleMessage(
+            "Есть решения именно для тебя"),
         "WeWillLetKnowResults": MessageLookupByLibrary.simpleMessage(
             "Мы оповестим вас о результатах"),
         "Weather": MessageLookupByLibrary.simpleMessage("Погода"),

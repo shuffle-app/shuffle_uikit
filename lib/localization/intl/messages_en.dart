@@ -268,7 +268,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "DontMissIt": MessageLookupByLibrary.simpleMessage("Don\'t miss it"),
         "DubaiEventTicket":
             MessageLookupByLibrary.simpleMessage("Dubai Event Ticket"),
-        "Easy": MessageLookupByLibrary.simpleMessage("Easy"),
+        "Easy": MessageLookupByLibrary.simpleMessage("Eazy"),
         "Edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "EditingTypePlace": m5,
@@ -740,8 +740,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Visit first to open next"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(
             "We do not spam all kinds of notifications and advertisements. Only those notifications that may be important to you and match your preferences"),
-        "WeHavePlacesJustForYou":
-            MessageLookupByLibrary.simpleMessage("We have places just for you"),
+        "WeHavePlacesJustForYou": MessageLookupByLibrary.simpleMessage(
+            "We have solution just for you"),
         "WeWillLetKnowResults": MessageLookupByLibrary.simpleMessage(
             "We will let you know the results"),
         "Weather": MessageLookupByLibrary.simpleMessage("Weather"),

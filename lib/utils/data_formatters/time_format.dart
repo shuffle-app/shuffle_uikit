@@ -72,7 +72,7 @@ String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay?
     return convDate;
   } else {
     convDate += date != null ? '${convDate.isEmpty ? '' : ', '}${DateFormat('MMM dd').format(date)}' : '';
-    if (dateTo != null) {
+    if (dateTo != null && dateTo!=date) {
       convDate += '${date != null ? ' - ' : convDate.isEmpty ? '' : ', '}${DateFormat('MMM dd, yyyy').format(dateTo)}';
     }
   }

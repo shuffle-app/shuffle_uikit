@@ -1966,10 +1966,10 @@ class S {
     );
   }
 
-  /// `We have places just for you`
+  /// `We have solution just for you`
   String get WeHavePlacesJustForYou {
     return Intl.message(
-      'We have places just for you',
+      'We have solution just for you',
       name: 'WeHavePlacesJustForYou',
       desc: '',
       args: [],
@@ -3072,10 +3072,10 @@ class S {
     );
   }
 
-  /// `Easy`
+  /// `Eazy`
   String get Easy {
     return Intl.message(
-      'Easy',
+      'Eazy',
       name: 'Easy',
       desc: '',
       args: [],

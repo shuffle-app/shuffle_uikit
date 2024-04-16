@@ -100,47 +100,52 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
         if (branches != null)
           FutureBuilder(
               future: branches,
-              builder: (context, snapshot) => !snapshot.hasData || (snapshot.data ?? []).isEmpty
-                  ? const SizedBox.shrink()
-                  : UiKitCardWrapper(
-                      borderRadius: BorderRadius.zero,
-                      color: context.uiKitTheme?.colorScheme.surface1,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Text(
-                            'Branches',
-                            style: context.uiKitTheme?.boldTextTheme.caption2Medium,
-                          ),
-                          SpacingFoundation.verticalSpace4,
-                          ConstrainedBox(
-                            constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
-                            child: ListView.separated(
-                              padding: EdgeInsets.zero,
-                              shrinkWrap: true,
-                              addAutomaticKeepAlives: false,scrollDirection: Axis.horizontal,
-                              itemBuilder: (context, index) {
-                                final branch = snapshot.data!.elementAt(index);
+              builder: (context, snapshot) => AnimatedSize(
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.easeInOut,
+                      child: !snapshot.hasData || (snapshot.data ?? []).isEmpty
+                          ? const SizedBox.shrink()
+                          : UiKitCardWrapper(
+                              borderRadius: BorderRadius.zero,
+                              color: context.uiKitTheme?.colorScheme.surface1,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                children: [
+                                  Text(
+                                    'Branches',
+                                    style: context.uiKitTheme?.boldTextTheme.caption2Medium,
+                                  ),
+                                  SpacingFoundation.verticalSpace4,
+                                  ConstrainedBox(
+                                    constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
+                                    child: ListView.separated(
+                                      padding: EdgeInsets.zero,
+                                      shrinkWrap: true,
+                                      addAutomaticKeepAlives: false,
+                                      scrollDirection: Axis.horizontal,
+                                      itemBuilder: (context, index) {
+                                        final branch = snapshot.data!.elementAt(index);
 
-                                return UiKitHorizontalCaptionedImage(
-                                  title: branch.caption,
-                                  imageLink: branch.imageUrl,
-                                  borderRadius: BorderRadiusFoundation.all16,
-                                  onTap: branch.onTap,
-                                );
-                              },
-                              separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
-                              itemCount: snapshot.data!.length,
-                            ),
-                          ),
-                        ],
-                      ).paddingOnly(
-                        top: EdgeInsetsFoundation.vertical12,
-                        bottom: EdgeInsetsFoundation.vertical12,
-                        left: EdgeInsetsFoundation.horizontal16,
-                      ),
-                    )).paddingOnly(bottom: SpacingFoundation.verticalSpacing14),
+                                        return UiKitHorizontalCaptionedImage(
+                                          title: branch.caption,
+                                          imageLink: branch.imageUrl,
+                                          borderRadius: BorderRadiusFoundation.all16,
+                                          onTap: branch.onTap,
+                                        );
+                                      },
+                                      separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                                      itemCount: snapshot.data!.length,
+                                    ),
+                                  ),
+                                ],
+                              ).paddingOnly(
+                                top: EdgeInsetsFoundation.vertical12,
+                                bottom: EdgeInsetsFoundation.vertical12,
+                                left: EdgeInsetsFoundation.horizontal16,
+                              ),
+                            ))
+                  .paddingOnly(bottom: SpacingFoundation.verticalSpacing14)),
         DescriptionWidget(
           description: description,
         ).paddingOnly(

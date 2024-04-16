@@ -268,7 +268,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "DontMissIt": MessageLookupByLibrary.simpleMessage("Don\'t miss it"),
         "DubaiEventTicket":
             MessageLookupByLibrary.simpleMessage("Dubai Event Ticket"),
-        "Easy": MessageLookupByLibrary.simpleMessage("Easy"),
+        "Easy": MessageLookupByLibrary.simpleMessage("Eazy"),
         "Edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "EditingTypePlace": m5,

@@ -8,15 +8,16 @@ class SlidableButton extends StatefulWidget {
   final String? hintText;
   final BoxBorder? customBorder;
   final VoidCallback? onCompleted;
+  final VoidCallback? onTap;
 
-  const SlidableButton(
-      {super.key,
-      this.isCompleted = false,
-      this.onCompleted,
-      this.customBorder,
-      this.hintText,
-      required this.slidableChild,
-      required this.onCompletedChild});
+  const SlidableButton({super.key,
+    this.isCompleted = false,
+    this.onCompleted,
+    this.onTap,
+    this.customBorder,
+    this.hintText,
+    required this.slidableChild,
+    required this.onCompletedChild});
 
   @override
   State<SlidableButton> createState() => _SlidableButtonState();
@@ -39,7 +40,8 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
 
   double _updatePosition(double distance) {
     if (distance > 0.8.sw) {
-      WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+      WidgetsBinding.instance.addPostFrameCallback((_) =>
+          setState(() {
             _isCompleted = true;
             widget.onCompleted?.call();
           }));
@@ -68,13 +70,14 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
 
-    return DecoratedBox(
+    return GestureDetector(
+        onTap: widget.onTap, child:
+    DecoratedBox(
         decoration: BoxDecoration(
             border: widget.customBorder ?? GradientFoundation.gradientBorder,
             borderRadius: BorderRadiusFoundation.max,
             color: theme?.colorScheme.surface2),
         child: SizedBox(
-            // height: 41.h,
             height: EdgeInsetsFoundation.vertical14 * 2 +
                 (theme?.boldTextTheme.bodyUpperCase.fontSize ?? 0) * (theme?.boldTextTheme.bodyUpperCase.height ?? 1) +
                 10.h,
@@ -89,7 +92,9 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
                     children: [
                       const ArrowsAnimation(),
                       Text(
-                        widget.hintText ?? S.of(context).SwipeToStart,
+                        widget.hintText ?? S
+                            .of(context)
+                            .SwipeToStart,
                         style: theme?.regularTextTheme.caption1.copyWith(color: theme.colorScheme.darkNeutral400),
                       ),
                       const ArrowsAnimation()
@@ -104,7 +109,8 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
                 else
                   ValueListenableBuilder(
                       valueListenable: _currentPosition,
-                      builder: (_, currentPosition, __) => AnimatedPositioned(
+                      builder: (_, currentPosition, __) =>
+                          AnimatedPositioned(
                             curve: _isCompleted ? Curves.easeIn : Curves.bounceOut,
                             duration: _animationDuration,
                             left: (_isCompleted) ? null : _updatePosition(currentPosition.dx),
@@ -116,6 +122,6 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
                                 child: AbsorbPointer(child: widget.slidableChild)),
                           )),
               ],
-            ).paddingSymmetric(horizontal: 4.w)));
+            ).paddingSymmetric(horizontal: 4.w))));
   }
 }
