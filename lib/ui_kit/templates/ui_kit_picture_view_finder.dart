@@ -1,3 +1,4 @@
+import 'dart:developer' as dev;
 import 'dart:math';
 import 'dart:typed_data';
 
@@ -40,12 +41,14 @@ class UiKitPictureViewFinder extends StatefulWidget {
   final Size viewPortAvailableSize;
   final Uint8List imageBytes;
   final UiKitPictureViewFinderController controller;
+  final Axis? viewFinderOrientation;
 
   const UiKitPictureViewFinder({
     Key? key,
     required this.imageBytes,
     required this.viewPortAvailableSize,
     required this.controller,
+    this.viewFinderOrientation,
     this.onCropCompleted,
   }) : super(key: key);
 
@@ -60,6 +63,10 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
 
   // width is 1.7495454545 times bigger than height
   double get cropAspectRatio {
+    if (widget.viewFinderOrientation != null) {
+      if (widget.viewFinderOrientation == Axis.horizontal) return 1.7495454545;
+      if (widget.viewFinderOrientation == Axis.vertical) return 0.78125;
+    }
     if (isHorizontalPicture) return 1.7495454545;
 
     return 0.78125;
@@ -140,11 +147,14 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
       });
       final bytes = widget.imageBytes;
       final imageFromBytes = imageLib.decodeImage(bytes);
+      dev.log('Trying to decode image from bytes: $imageFromBytes');
       if (imageFromBytes == null) return;
+      dev.log('Trying to decode image from bytes success');
       image = imageFromBytes;
       if (isVerticalPicture) {
         /// fit height of the image to the [widget.viewPortAvailableSize] saving aspect ratio
-        final fittedHeight = widget.viewPortAvailableSize.height;
+        double fittedHeight = widget.viewPortAvailableSize.height;
+        if (fittedHeight >= imageOriginalSize.height) fittedHeight = imageOriginalSize.height;
         final fittedWidth = _setupViewFinderWidth(fittedHeight, customAspectRatio: imageOriginalAspectRatio);
         if (fittedWidth > widget.viewPortAvailableSize.width) {
           fittedImageSize = Size(
@@ -157,8 +167,9 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
       }
       if (isHorizontalPicture) {
         /// fit width of the image to the [widget.viewPortAvailableSize] saving aspect ratio
-        final fittedWidth = widget.viewPortAvailableSize.width;
-        final fittedHeight = _setupViewFinderHeight(fittedWidth, customAspectRatio: imageOriginalAspectRatio);
+        double fittedWidth = widget.viewPortAvailableSize.width;
+        if (fittedWidth >= imageOriginalSize.width) fittedWidth = imageOriginalSize.width;
+        double fittedHeight = _setupViewFinderHeight(fittedWidth, customAspectRatio: imageOriginalAspectRatio);
         if (fittedHeight > widget.viewPortAvailableSize.height) {
           fittedImageSize = Size(
             _setupViewFinderWidth(widget.viewPortAvailableSize.height, customAspectRatio: imageOriginalAspectRatio),
@@ -175,6 +186,12 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
         size: Size(viewFinderWidth, viewFinderHeight),
         position: Offset.zero,
       );
+      dev.log('Initialization finished');
+      dev.log('fittedImageSize: $fittedImageSize');
+      dev.log('imageOriginalSize: $imageOriginalSize');
+      dev.log('crop size: ${_positionAndSize.value.size}');
+      dev.log('crop offset: ${_positionAndSize.value.position}');
+      dev.log('available size: ${widget.viewPortAvailableSize}');
       setState(() {});
     });
   }
