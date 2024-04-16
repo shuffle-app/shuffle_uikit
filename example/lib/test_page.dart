@@ -1,4 +1,8 @@
+import 'dart:developer';
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class TestPage extends StatefulWidget {
@@ -11,110 +15,57 @@ class TestPage extends StatefulWidget {
 class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin {
   final ScrollController scrollController = ScrollController();
   final animDuration = const Duration(milliseconds: 250);
+  Uint8List? selectedImageBytes;
+  Uint8List? cropedImageBytes;
+  XFile? xFile;
+  UiKitPictureViewFinderController controller = UiKitPictureViewFinderController();
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      final file = await ImagePicker().pickImage(source: ImageSource.gallery);
+      final bytes = await file?.readAsBytes();
+
+      log('bytes: ${bytes?.isNotEmpty}');
+      setState(() {
+        xFile = file;
+        if (bytes != null) selectedImageBytes = Uint8List.fromList(bytes);
+      });
+    });
+  }
 
   @override
   void dispose() {
     scrollController.dispose();
+    controller.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.red,
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: MediaQuery.of(context).viewPadding.top),
-            SizedBox(height: MediaQuery.of(context).viewPadding.top),
-            UiKitHorizontalPicturesCarousel(
-              autoPlay: true,
-              autoPlayDuration: const Duration(seconds: 1),
-              pictureLinks: [
-                GraphicsFoundation.instance.png.mockAdBanner1.path,
-                GraphicsFoundation.instance.png.mockAdBanner2.path,
-                GraphicsFoundation.instance.png.mockAdBanner3.path,
-                GraphicsFoundation.instance.png.mockAdBanner4.path,
-                GraphicsFoundation.instance.png.mockAdBanner5.path,
-                GraphicsFoundation.instance.png.place.path,
-              ],
-              carouselSize: Size(1.sw - SpacingFoundation.verticalSpacing32, 0.3.sh),
-            ),
-            SpacingFoundation.verticalSpace24,
-            UiKitInfluencerAudioMessagesDemo(),
-            SpacingFoundation.verticalSpace24,
-            UiKitExpansionTile(
-              leadingIconData: BaseUiKitButtonIconData(
-                iconData: ShuffleUiKitIcons.tool,
+            SizedBox(height: MediaQuery.of(context).viewPadding.top, width: 1.sw),
+            if (xFile != null && selectedImageBytes != null)
+              UiKitPictureViewFinder(
+                controller: controller,
+                viewPortAvailableSize: Size(1.sw, 0.75.sh),
+                imageBytes: selectedImageBytes!,
+                onCropCompleted: (imageValue) => setState(() => cropedImageBytes = imageValue),
               ),
-              title: 'Control',
-              children: [
-                UiKitInlineButton(
-                  data: BaseUiKitButtonData(
-                    text: 'Button',
-                    iconInfo: BaseUiKitButtonIconData(
-                      iconData: ShuffleUiKitIcons.lifebuoy,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                UiKitInlineButton(
-                  data: BaseUiKitButtonData(
-                    text: 'Button',
-                    iconInfo: BaseUiKitButtonIconData(
-                      iconData: ShuffleUiKitIcons.lifebuoy,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                UiKitInlineButton(
-                  data: BaseUiKitButtonData(
-                    text: 'Button',
-                    iconInfo: BaseUiKitButtonIconData(
-                      iconData: ShuffleUiKitIcons.lifebuoy,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                UiKitInlineButton(
-                  data: BaseUiKitButtonData(
-                    text: 'Button',
-                    iconInfo: BaseUiKitButtonIconData(
-                      iconData: ShuffleUiKitIcons.lifebuoy,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                UiKitInlineButton(
-                  data: BaseUiKitButtonData(
-                    text: 'Button',
-                    iconInfo: BaseUiKitButtonIconData(
-                      iconData: ShuffleUiKitIcons.lifebuoy,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-                UiKitInlineButton(
-                  data: BaseUiKitButtonData(
-                    text: 'Button',
-                    iconInfo: BaseUiKitButtonIconData(
-                      iconData: ShuffleUiKitIcons.lifebuoy,
-                    ),
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
             SpacingFoundation.verticalSpace24,
-            UiKitTitledWrappedInput(
-              input: UiKitInputFieldNoIcon(
-                controller: TextEditingController(),
-                fillColor: context.uiKitTheme?.colorScheme.surface3,
-              ),
-              title: 'title',
-              popOverMessage: S.current.AddInfluencerFeedbackPopOverText,
-            ).paddingSymmetric(
-              horizontal: EdgeInsetsFoundation.horizontal16,
-            ),
+            context.smallButton(data: BaseUiKitButtonData(text: 'crop', onPressed: () => controller.cropImage())),
+            SpacingFoundation.verticalSpace24,
+            if (cropedImageBytes != null) Image.memory(cropedImageBytes!),
+            // UiKitPictureViewFinder(
+            //   imageSize: Size(0.85.sw, 0.75.sh),
+            //   imagePath: GraphicsFoundation.instance.png.mockAdBanner5.path,
+            // ),
+            // SpacingFoundation.verticalSpace24,
           ],
         ),
       ),
