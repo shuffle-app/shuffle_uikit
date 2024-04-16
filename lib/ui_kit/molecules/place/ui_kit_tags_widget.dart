@@ -58,11 +58,7 @@ class UiKitTagsWidget extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final tag = baseTags.elementAt(index);
 
-                    return UiKitTagWidget(
-                      title: tag.title,
-                      icon: tag.icon,
-                      uniqueTag: false,
-                    );
+                    return tag.widget;
                   },
                   separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace8,
                   itemCount: baseTags.length,
@@ -79,11 +75,7 @@ class UiKitTagsWidget extends StatelessWidget {
                     separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace8,
                     itemCount: uniqueTags!.length,
                     itemBuilder: (_, index) {
-                      return UiKitTagWidget(
-                        title: uniqueTags![index].title,
-                        icon: uniqueTags![index].icon,
-                        uniqueTag: true,
-                      );
+                      return uniqueTags![index].widget;
                     },
                   ),
                 )

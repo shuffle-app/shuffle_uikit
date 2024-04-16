@@ -20,7 +20,7 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(allowValue) => "Allow ${allowValue}";
+  static String m0(allowValue) => "Continue to ${allowValue}";
 
   static String m1(allowedCharacters) =>
       "Allowed caracters are ${allowedCharacters}";
@@ -156,7 +156,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Allow": MessageLookupByLibrary.simpleMessage("Continue"),
         "AllowAll": MessageLookupByLibrary.simpleMessage("Continue"),
         "AllowGeolocation":
-            MessageLookupByLibrary.simpleMessage("Allow geolocation"),
+            MessageLookupByLibrary.simpleMessage("Continue to use geolocation"),
         "AllowLocationServicesToUseThisFunction":
             MessageLookupByLibrary.simpleMessage(
                 "Allow location services to use this function"),
@@ -187,6 +187,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Based on your activity, heart rate and other factors, we determine your condition and try to recommend exactly what you need right now, specifically for you"),
         "BeInSearch": MessageLookupByLibrary.simpleMessage("Be in search"),
         "BookIt": MessageLookupByLibrary.simpleMessage("Book it"),
+        "Both": MessageLookupByLibrary.simpleMessage("Both"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Buddhism"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("Burned today"),
         "Business": MessageLookupByLibrary.simpleMessage("Business"),
@@ -217,6 +218,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CompanyPosition":
             MessageLookupByLibrary.simpleMessage("Company position"),
         "Confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
+        "Congratulations":
+            MessageLookupByLibrary.simpleMessage("Congratulations"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("Contact person"),
         "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
         "Control": MessageLookupByLibrary.simpleMessage("Control"),
@@ -255,12 +258,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Describe yourself"),
         "Description": MessageLookupByLibrary.simpleMessage("Description"),
         "Details": MessageLookupByLibrary.simpleMessage("Details"),
+        "DifferentNumberOfPoints":
+            MessageLookupByLibrary.simpleMessage("Different number of points"),
         "Directions": MessageLookupByLibrary.simpleMessage("Directions"),
         "DonationHint": MessageLookupByLibrary.simpleMessage(
             "You can create one request per month and spend money only on your dream"),
         "DonationRaised": m4,
         "DontBeAlone": MessageLookupByLibrary.simpleMessage("Don\'t be alone"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("Don\'t miss it"),
+        "DubaiEventTicket":
+            MessageLookupByLibrary.simpleMessage("Dubai Event Ticket"),
         "Easy": MessageLookupByLibrary.simpleMessage("Easy"),
         "Edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
@@ -360,6 +367,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "How much \$ do you want to donate?"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Incorrect login or password"),
+        "InventoryItems":
+            MessageLookupByLibrary.simpleMessage("Inventory items"),
         "InvitationsCanBeViewedInPrivateMessages":
             MessageLookupByLibrary.simpleMessage(
                 "Invitations can be viewed in private messages"),
@@ -558,6 +567,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReactionsByCritics":
             MessageLookupByLibrary.simpleMessage("Reactions by critics"),
         "Read": m24,
+        "RealMoney": MessageLookupByLibrary.simpleMessage("Real money"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
         "Reset": MessageLookupByLibrary.simpleMessage("Reset"),
@@ -714,9 +724,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Select the type of account you would like to create"),
         "Users": m34,
         "UsingHealthKit":
-            MessageLookupByLibrary.simpleMessage("Using health kit"),
+            MessageLookupByLibrary.simpleMessage("Use health data"),
         "UsingNotifications":
-            MessageLookupByLibrary.simpleMessage("Using notifications"),
+            MessageLookupByLibrary.simpleMessage("Use notifications"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Value must be at least 3 characters long"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("Very often"),
@@ -757,10 +767,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("You better check this out"),
+        "YouCanGet": MessageLookupByLibrary.simpleMessage("You can get"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "You get exactly what you need"),
         "YouMissedALot":
             MessageLookupByLibrary.simpleMessage("You missed a lot"),
+        "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
         "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("You’ll find it"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Your age"),

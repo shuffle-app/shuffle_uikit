@@ -20,7 +20,7 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ru';
 
-  static String m0(allowValue) => "Разрешить ${allowValue}";
+  static String m0(allowValue) => "Использовать ${allowValue}";
 
   static String m1(allowedCharacters) =>
       "Допустимые символы ${allowedCharacters}";
@@ -156,7 +156,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Allow": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "AllowAll": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "AllowGeolocation":
-            MessageLookupByLibrary.simpleMessage("Разрешить гео"),
+            MessageLookupByLibrary.simpleMessage("Использовать геолокацию"),
         "AllowLocationServicesToUseThisFunction":
             MessageLookupByLibrary.simpleMessage(
                 "Разрешить гео для этой функции"),
@@ -188,6 +188,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "На основании вашей активности, пульса и других факторов мы определяем ваше состояние и стараемся рекомендовать то, что вам нужно прямо сейчас, конкретно для вас."),
         "BeInSearch": MessageLookupByLibrary.simpleMessage("Быть в поиске"),
         "BookIt": MessageLookupByLibrary.simpleMessage("Букинг"),
+        "Both": MessageLookupByLibrary.simpleMessage("Оба"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Буддизм"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("Сожжено сегодя"),
         "Business": MessageLookupByLibrary.simpleMessage("Бизнес"),
@@ -218,6 +219,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "CompanyPosition":
             MessageLookupByLibrary.simpleMessage("Позиция компания"),
         "Confirm": MessageLookupByLibrary.simpleMessage("Подтвердить"),
+        "Congratulations": MessageLookupByLibrary.simpleMessage("Поздравляем"),
         "ContactPerson":
             MessageLookupByLibrary.simpleMessage("Контактное лицо"),
         "Continue": MessageLookupByLibrary.simpleMessage("Продолжить"),
@@ -259,6 +261,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Опишите себя"),
         "Description": MessageLookupByLibrary.simpleMessage("Описание"),
         "Details": MessageLookupByLibrary.simpleMessage("Детали"),
+        "DifferentNumberOfPoints":
+            MessageLookupByLibrary.simpleMessage("Разное количество поинтов"),
         "Directions": MessageLookupByLibrary.simpleMessage("Направления"),
         "DonationHint": MessageLookupByLibrary.simpleMessage(
             "Вы можете создавать один запрос в месяц и потратить деньги только на свою мечту "),
@@ -266,6 +270,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "DontBeAlone":
             MessageLookupByLibrary.simpleMessage("Не будьте одиноки"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("Не пропустите"),
+        "DubaiEventTicket":
+            MessageLookupByLibrary.simpleMessage("Билет на событие в Дубае"),
         "Easy": MessageLookupByLibrary.simpleMessage("Изи"),
         "Edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
         "EditProfile": MessageLookupByLibrary.simpleMessage("Редактировать"),
@@ -364,6 +370,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Сколько \$ хочешь задонатить?"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Не тот логин или пароль"),
+        "InventoryItems":
+            MessageLookupByLibrary.simpleMessage("Вещи инвентаря"),
         "InvitationsCanBeViewedInPrivateMessages":
             MessageLookupByLibrary.simpleMessage(
                 "Приглашения можно посмотреть в сообщениях"),
@@ -385,7 +393,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Loading": MessageLookupByLibrary.simpleMessage("Загрузка..."),
         "Location": MessageLookupByLibrary.simpleMessage("Локация"),
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
-            "Для продолжения чекина требуется локация"),
+            "Локация необходима для использования функции"),
         "LoginWith": m16,
         "Logo": MessageLookupByLibrary.simpleMessage("Лого"),
         "LogoUploadFiles":
@@ -394,7 +402,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Приятный на ощупь интерфейс"),
         "MakeSureYouAreCloseToMakeCheckIn":
             MessageLookupByLibrary.simpleMessage(
-                "Убедитесь, что вы близко и попробуйте снова"),
+                "Убедитесь что вы близко и повторите"),
         "Male": MessageLookupByLibrary.simpleMessage("Мужчина"),
         "Members": m17,
         "Message": MessageLookupByLibrary.simpleMessage("Сообщение"),
@@ -565,6 +573,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReactionsByCritics":
             MessageLookupByLibrary.simpleMessage("Отзывы от критиков"),
         "Read": m24,
+        "RealMoney": MessageLookupByLibrary.simpleMessage("Реальные деньги"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
         "ResendCode":
             MessageLookupByLibrary.simpleMessage("Отправить код еще раз"),
@@ -729,7 +738,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Данные здоровья"),
         "UsingNotifications":
-            MessageLookupByLibrary.simpleMessage("Использование уведомлений"),
+            MessageLookupByLibrary.simpleMessage("Использовать уведомления"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Значение не менее 3 символов"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("Часто"),
@@ -771,10 +780,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "Yes": MessageLookupByLibrary.simpleMessage("Да"),
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Вам лучше взглянуть"),
+        "YouCanGet": MessageLookupByLibrary.simpleMessage("Вы можете получить"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "Вы получаете точно то, что нужно"),
         "YouMissedALot":
             MessageLookupByLibrary.simpleMessage("Вы многое пропустили"),
+        "YouReceived": MessageLookupByLibrary.simpleMessage("Вы получили"),
         "YouSentInvitationToNPeople": m39,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("Вы найдёте"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Твой возраст"),

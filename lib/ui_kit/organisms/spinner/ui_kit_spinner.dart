@@ -194,7 +194,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                   child: Center(
                     child: AutoSizeText(
                       () {
-                        final category = parseFragment(item).text ?? item;
+                        final category = (parseFragment(item).text ?? item).replaceAll('-', ' ');
 
                         return category.substring(0, 1).toUpperCase() + category.substring(1);
                       }(),

@@ -1196,6 +1196,16 @@ class S {
     );
   }
 
+  /// `Use notifications`
+  String get UsingNotifications {
+    return Intl.message(
+      'Use notifications',
+      name: 'UsingNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `See all`
   String get SeeAll {
     return Intl.message(
@@ -2256,10 +2266,10 @@ class S {
     );
   }
 
-  /// `Allow geolocation`
+  /// `Continue to use geolocation`
   String get AllowGeolocation {
     return Intl.message(
-      'Allow geolocation',
+      'Continue to use geolocation',
       name: 'AllowGeolocation',
       desc: '',
       args: [],
@@ -2276,10 +2286,10 @@ class S {
     );
   }
 
-  /// `Allow {allowValue}`
+  /// `Continue to {allowValue}`
   String AllowX(Object allowValue) {
     return Intl.message(
-      'Allow $allowValue',
+      'Continue to $allowValue',
       name: 'AllowX',
       desc: '',
       args: [allowValue],
@@ -2296,10 +2306,10 @@ class S {
     );
   }
 
-  /// `Using health kit`
+  /// `Use health data`
   String get UsingHealthKit {
     return Intl.message(
-      'Using health kit',
+      'Use health data',
       name: 'UsingHealthKit',
       desc: '',
       args: [],
@@ -3363,6 +3373,16 @@ class S {
     return Intl.message(
       'Business',
       name: 'Business',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Both`
+  String get Both {
+    return Intl.message(
+      'Both',
+      name: 'Both',
       desc: '',
       args: [],
     );
@@ -4635,11 +4655,71 @@ class S {
     );
   }
 
-  /// `Using notifications`
-  String get UsingNotifications {
+  /// `You can get`
+  String get YouCanGet {
     return Intl.message(
-      'Using notifications',
-      name: 'UsingNotifications',
+      'You can get',
+      name: 'YouCanGet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Different number of points`
+  String get DifferentNumberOfPoints {
+    return Intl.message(
+      'Different number of points',
+      name: 'DifferentNumberOfPoints',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Real money`
+  String get RealMoney {
+    return Intl.message(
+      'Real money',
+      name: 'RealMoney',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Inventory items`
+  String get InventoryItems {
+    return Intl.message(
+      'Inventory items',
+      name: 'InventoryItems',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dubai Event Ticket`
+  String get DubaiEventTicket {
+    return Intl.message(
+      'Dubai Event Ticket',
+      name: 'DubaiEventTicket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Congratulations`
+  String get Congratulations {
+    return Intl.message(
+      'Congratulations',
+      name: 'Congratulations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You received`
+  String get YouReceived {
+    return Intl.message(
+      'You received',
+      name: 'YouReceived',
       desc: '',
       args: [],
     );

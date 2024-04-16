@@ -12,7 +12,7 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context, AlertDi
       return AlertDialog(
         backgroundColor: data.customBackgroundColor ?? context.uiKitTheme?.cardTheme.color,
         clipBehavior: Clip.hardEdge,
-        insetPadding: EdgeInsets.zero,
+        insetPadding: data.insetPadding ?? EdgeInsets.zero,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusFoundation.all24,
         ),
@@ -29,6 +29,7 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context, AlertDi
         actions: data.actions ??
             [
               if (data.additionalButton != null) data.additionalButton!,
+              if(data.defaultButtonText.isNotEmpty)
               context.dialogButton(
                 data: BaseUiKitButtonData(
                   onPressed: data.onPop ?? () => context.pop(),
@@ -74,6 +75,7 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(BuildContext contex
 
 //ignore: prefer-match-file-name
 class AlertDialogData {
+  final EdgeInsets? insetPadding;
   final VoidCallback? onPop;
   final Widget? title;
   final Widget? content;
@@ -81,6 +83,7 @@ class AlertDialogData {
   final String defaultButtonText;
   final bool? defaultButtonSmall;
   final bool? defaultButtonOutlined;
+
   final List<Widget>? actions;
   final Color? customBackgroundColor;
 
@@ -94,5 +97,6 @@ class AlertDialogData {
     this.defaultButtonSmall,
     this.defaultButtonOutlined,
     this.actions,
+    this.insetPadding,
   });
 }

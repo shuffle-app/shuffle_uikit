@@ -32,6 +32,7 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
   final AutoSizeGroup autoSizeGroup = AutoSizeGroup();
   final _animDuration = const Duration(milliseconds: 250);
   late final FixedExtentScrollController _scrollController;
+  bool hasUserInteracted = false;
 
   @override
   void initState() {
@@ -83,12 +84,18 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
                     quarterTurns: 3,
                     child: NotificationListener<ScrollNotification>(
                       onNotification: (scrollNotification) {
+                        if (!hasUserInteracted) {
+                          setState(() {
+                            hasUserInteracted = true;
+                          });
+                        }
                         if (scrollNotification is ScrollEndNotification) {
                           WidgetsBinding.instance.addPostFrameCallback((timeStamp) => _scrollController.animateTo(
                               widget.values.indexOf(_currentValueNotifier.value) * itemWidth,
                               duration: const Duration(milliseconds: 100),
                               curve: Curves.easeIn));
-                          widget.onValueChanged?.call(widget.values[widget.values.indexOf(_currentValueNotifier.value)]);
+                          widget.onValueChanged
+                              ?.call(widget.values[widget.values.indexOf(_currentValueNotifier.value)]);
                         }
 
                         return true;
@@ -112,7 +119,7 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
                                 final index = widget.values.indexOf(e);
                                 final currentValueIndex = widget.values.indexOf(_currentValueNotifier.value);
                                 final deltaIndex = (index - currentValueIndex).abs();
-                                double opacity = 1;
+                                double opacity = hasUserInteracted ? 1 : 0.5;
                                 if (deltaIndex > 2) opacity = 0.05;
                                 if (deltaIndex == 2) opacity = 0.2;
                                 if (deltaIndex == 1) opacity = 0.5;
@@ -127,7 +134,8 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
                                             e.toString(),
                                             group: autoSizeGroup,
                                             maxLines: 1,
-                                            style: boldTextTheme?.title1.copyWith(color: widget.numbersColor),
+                                            style: boldTextTheme?.title1.copyWith(
+                                                color: widget.numbersColor),
                                             textAlign: TextAlign.center,
                                           ),
                                           // ),
@@ -143,22 +151,25 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    IgnorePointer(
-                      child: SizedBox(
-                        width: itemWidth,
-                        height: itemHeight,
-                        child: DecoratedBox(
-                          decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius: BorderRadiusFoundation.all10,
-                            border: Border.all(
-                              color: widget.numbersColor ?? context.uiKitTheme?.colorScheme.inverseSurface ?? Colors.white,
-                              width: 2,
+                    if (hasUserInteracted)
+                      IgnorePointer(
+                        child: SizedBox(
+                          width: itemWidth,
+                          height: itemHeight,
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              borderRadius: BorderRadiusFoundation.all10,
+                              border: Border.all(
+                                color: widget.numbersColor ??
+                                    context.uiKitTheme?.colorScheme.inverseSurface ??
+                                    Colors.white,
+                                width: 2,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    )
+                      )
                   ],
                 ),
               ],
