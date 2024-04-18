@@ -15,6 +15,7 @@ export 'builders/flushbar_builder.dart';
 export 'builders/general_dialog_fullscreen_builder.dart';
 export 'builders/week_days_selector_builder.dart';
 export 'builders/date_range_picker.dart';
+export 'builders/ui_kit_bottomsheet_selector_builder.dart';
 export 'cache/custom_cache_manager.dart';
 export 'data_formatters/time_format.dart';
 export 'enums/advertisement_banner_size.dart';
