@@ -82,9 +82,17 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
 
   imageLib.Image? image;
 
-  double get viewFinderAndImageWidthDiff => fittedImageSize.width - _positionAndSize.value.size.width;
+  double get viewFinderAndImageWidthDiff {
+    final difference = fittedImageSize.width - _positionAndSize.value.size.width;
+    if (difference.isNegative) return 0;
+    return difference;
+  }
 
-  double get viewFinderAndImageHeightDiff => fittedImageSize.height - _positionAndSize.value.size.height;
+  double get viewFinderAndImageHeightDiff {
+    final difference = fittedImageSize.height - _positionAndSize.value.size.height;
+    if (difference.isNegative) return 0;
+    return difference;
+  }
 
   double _setupViewFinderWidth(double height, {double? customAspectRatio}) {
     double width = height * (customAspectRatio ?? cropAspectRatio);
@@ -149,6 +157,7 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
       dev.log('Trying to decode image from bytes success');
       image = imageFromBytes;
       if (isVerticalPicture) {
+        /// fit height of the image to the [widget.viewPortAvailableSize] saving aspect ratio
         double fittedHeight = widget.viewPortAvailableSize.height;
         if (fittedHeight >= imageOriginalSize.height) fittedHeight = imageOriginalSize.height;
         final fittedWidth = _setupViewFinderWidth(fittedHeight, customAspectRatio: imageOriginalAspectRatio);
@@ -235,6 +244,8 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
       }
 
       dev.log('Initialization finished');
+      dev.log('image original orientation: ${isHorizontalPicture ? 'horizontal' : 'vertical'}');
+      dev.log('externally set orientation: ${widget.viewFinderOrientation == Axis.horizontal ? 'horizontal' : 'vertical'}');
       dev.log('square image: $isSquareImage');
       dev.log('fittedImageSize: $fittedImageSize');
       dev.log('imageOriginalSize: $imageOriginalSize');
@@ -254,29 +265,6 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
   @override
   Widget build(BuildContext context) {
     if (image == null) return const SizedBox();
-
-    // return Column(
-    //   children: [
-    //     SizedBox.fromSize(
-    //       size: widget.viewPortSize,
-    //       child: Crop(
-    //         controller: _cropController,
-    //         image: widget.imageBytes,
-    //         onCropped: (data) {
-    //           print('cropped data: ${data.length}');
-    //           widget.onCropCompleted?.call(data);
-    //         },
-    //       ),
-    //     ),
-    //     SpacingFoundation.verticalSpace24,
-    //     context.button(
-    //       data: BaseUiKitButtonData(
-    //         text: 'show result',
-    //         onPressed: () => cropImage(widget.imageBytes),
-    //       ),
-    //     ),
-    //   ],
-    // );
 
     if (imageLoadingError) {
       return SizedBox.fromSize(
@@ -383,7 +371,6 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
                         final dy = max(0, _positionAndSize.value.position.dy + details.delta.dy).toDouble();
                         final atRightEdge = dx >= viewFinderAndImageWidthDiff;
                         final atBottomEdge = dy >= viewFinderAndImageHeightDiff;
-                        if (viewFinderAndImageWidthDiff.isNegative || viewFinderAndImageHeightDiff.isNegative) return;
 
                         if (atBottomEdge && atRightEdge) {
                           /// view finder at bottom and right edge
@@ -415,21 +402,16 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
             },
             child: AnimatedBuilder(
               animation: _positionAndSize,
-              builder: (context, child) {
-                final width = _positionAndSize.value.size.width;
-                final height = _positionAndSize.value.size.height;
-
-                return Container(
-                  clipBehavior: Clip.hardEdge,
-                  width: width,
-                  height: height,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadiusFoundation.all16,
-                    border: Border.all(color: Colors.white, width: 2),
-                  ),
-                  child: child,
-                );
-              },
+              builder: (context, child) => Container(
+                clipBehavior: Clip.hardEdge,
+                width: _positionAndSize.value.size.width,
+                height: _positionAndSize.value.size.height,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadiusFoundation.all16,
+                  border: Border.all(color: Colors.white, width: 2),
+                ),
+                child: child,
+              ),
               child: Stack(
                 children: [
                   Align(
