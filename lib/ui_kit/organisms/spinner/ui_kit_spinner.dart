@@ -234,6 +234,9 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     if (_spinningGesture == SpinningGesture.up) {
                       if (_transitionNotifier.value > maxSpinnerUpValue) {
                         _transitionNotifier.value += details.delta.dy / 5;
+                        if (_transitionNotifier.value > 0) {
+                          _transitionNotifier.value = 0;
+                        }
                       }
                       return;
                     }
@@ -298,8 +301,10 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       }
 
                       final Matrix4 transform = Matrix4.identity();
-                      if (_transitionNotifier.value != 0) {
-                        transform.translate(0.0, _transitionNotifier.value, 0.0);
+                      if (widget.onDateRangeChanged != null) {
+                        if (_transitionNotifier.value != 0) {
+                          transform.translate(0.0, _transitionNotifier.value, 0.0);
+                        }
                       }
                       if (_rotationNotifier.value != 0) {
                         transform.rotateZ(_rotationNotifier.value);

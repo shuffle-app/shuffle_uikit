@@ -7,6 +7,7 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
   final String? subtitle;
   final IconData? subtitleIcon;
   final List<UiKitTag> tags;
+  final VoidCallback? onTap;
 
   const UiKitImageWithDescriptionCard({
     Key? key,
@@ -15,6 +16,7 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
     this.tags = const [],
     this.subtitle,
     this.subtitleIcon,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -25,63 +27,68 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
     final textTheme = context.uiKitTheme?.boldTextTheme;
     final colorScheme = context.uiKitTheme?.colorScheme;
 
-    return UiKitCardWrapper(
-      width: width,
-      borderRadius: BorderRadiusFoundation.all16,
-      color: colorScheme?.surface2,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadiusFoundation.all8,
-            child: ImageWidget(
-              height: imageHeight,
-              fit: BoxFit.cover,
-              link: imageUrl,
-            ),
-          ),
-          SpacingFoundation.verticalSpace8,
-          Text(
-            title,
-            style: textTheme?.caption1Bold,
-          ),
-          SpacingFoundation.verticalSpace4,
-          Row(
+    return InkWell(
+        borderRadius: BorderRadiusFoundation.all16,
+        onTap: onTap,
+        child: UiKitCardWrapper(
+          width: width,
+          borderRadius: BorderRadiusFoundation.all16,
+          color: colorScheme?.surface2,
+          child: Column(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              if (subtitleIcon != null)
-                ImageWidget(
-                  iconData: subtitleIcon,
-                  color: ColorsFoundation.darkNeutral900,
-                  width: 0.05.sw,
-                  height: 0.05.sw,
+              ClipRRect(
+                borderRadius: BorderRadiusFoundation.all8,
+                child: ImageWidget(
+                  height: imageHeight,
                   fit: BoxFit.cover,
+                  link: imageUrl,
                 ),
-              if (subtitleIcon != null) SpacingFoundation.horizontalSpace2,
-              Text(
-                subtitle ?? '',
-                style: textTheme?.caption2Bold.copyWith(color: ColorsFoundation.darkNeutral900),
               ),
-            ],
-          ),
-          SpacingFoundation.verticalSpace2,
-          Wrap(
-            spacing: SpacingFoundation.horizontalSpacing4,
-            runSpacing: SpacingFoundation.verticalSpacing4,
-            children: tags
-                .map<Widget>(
-                  (e) => UiKitTagWidget(
-                    tagSize: 0.05.sw,
-                    title: e.title,
-                    icon: e.icon,
-                    textColor: ColorsFoundation.darkNeutral900,
+              SpacingFoundation.verticalSpace8,
+              Text(
+                title,
+                style: textTheme?.caption1Bold,
+              ),
+              SpacingFoundation.verticalSpace4,
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (subtitleIcon != null)
+                    ImageWidget(
+                      iconData: subtitleIcon,
+                      color: ColorsFoundation.darkNeutral900,
+                      width: 0.05.sw,
+                      height: 0.05.sw,
+                      fit: BoxFit.cover,
+                    ),
+                  if (subtitleIcon != null) SpacingFoundation.horizontalSpace2,
+                  Text(
+                    subtitle ?? '',
+                    style: textTheme?.caption2Bold.copyWith(color: ColorsFoundation.darkNeutral900),
                   ),
-                )
-                .toList(),
-          )
-        ],
-      ).paddingAll(EdgeInsetsFoundation.all12),
-    );
+                ],
+              ),
+              SpacingFoundation.verticalSpace2,
+              SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Wrap(
+                    spacing: SpacingFoundation.horizontalSpacing4,
+                    runSpacing: SpacingFoundation.verticalSpacing4,
+                    children: tags
+                        .map<Widget>(
+                          (e) => UiKitTagWidget(
+                            tagSize: 0.05.sw,
+                            title: e.title,
+                            icon: e.icon,
+                            textColor: ColorsFoundation.darkNeutral900,
+                          ),
+                        )
+                        .toList(),
+                  ))
+            ],
+          ).paddingAll(EdgeInsetsFoundation.all12),
+        ));
   }
 }
