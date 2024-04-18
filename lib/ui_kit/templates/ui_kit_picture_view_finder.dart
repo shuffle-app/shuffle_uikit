@@ -157,6 +157,7 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
       dev.log('Trying to decode image from bytes success');
       image = imageFromBytes;
       if (isVerticalPicture) {
+        /// fit height of the image to the [widget.viewPortAvailableSize] saving aspect ratio
         double fittedHeight = widget.viewPortAvailableSize.height;
         if (fittedHeight >= imageOriginalSize.height) fittedHeight = imageOriginalSize.height;
         final fittedWidth = _setupViewFinderWidth(fittedHeight, customAspectRatio: imageOriginalAspectRatio);
