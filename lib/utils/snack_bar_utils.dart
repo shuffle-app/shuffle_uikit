@@ -27,7 +27,7 @@ class SnackBarUtils {
       }
     }();
 
-    ScaffoldMessenger.maybeOf(context)?.showSnackBar(
+    rootScaffoldMessengerKey.currentState?.showSnackBar(
       SnackBar(
         padding: EdgeInsets.symmetric(vertical: 11.h, horizontal: 6.h),
         shape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all12),
@@ -53,14 +53,7 @@ class SnackBarUtils {
     show(message: message, context: context);
   }
 }
-//
-// class AppSnackBarAction {
-//   AppSnackBarAction(this.text, {this.withDismiss = true, this.onTap});
-//
-//   final VoidCallback? onTap;
-//   final String text;
-//   final bool withDismiss;
-// }
+final GlobalKey<ScaffoldMessengerState> rootScaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
 enum AppSnackBarType {
   info,

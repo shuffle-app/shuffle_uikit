@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -141,17 +142,36 @@ class ImageWidget extends StatelessWidget {
           },
         );
       } else if (link!.split('.').lastOrNull == 'svg' || link!.contains('svg-icons')) {
-        return SvgPicture.network(
-          CustomProxyStatic.proxy + link!,
-          colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
-          fit: fit ?? BoxFit.none,
-          height: height,
-          width: width,
-          placeholderBuilder: (_) => ConstrainedBox(
-            constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
-            child: placeholder,
-          ),
-        );
+        return kIsWeb
+            ? SvgPicture.network(
+                CustomProxyStatic.proxy + link!,
+                colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
+                fit: fit ?? BoxFit.none,
+                height: height,
+                width: width,
+                placeholderBuilder: (_) => ConstrainedBox(
+                  constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
+                  child: placeholder,
+                ),
+              )
+            : RepaintBoundary(
+                key: ValueKey(link),
+                child: StreamBuilder<FileResponse>(
+                    stream: CustomCacheManager.svgInstance.getFileStream(link!),
+                    builder: (context, snapshot) => AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 200),
+                        child: snapshot.connectionState == ConnectionState.done && snapshot.data != null
+                            ? SvgPicture.file(
+                                (snapshot.data as FileInfo).file,
+                                colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
+                                fit: fit ?? BoxFit.none,
+                                height: height,
+                                width: width,
+                              )
+                            : ConstrainedBox(
+                                constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
+                                child: placeholder,
+                              ))));
       }
 
       // !.startsWith("http://") || link!.startsWith("https://")) {
