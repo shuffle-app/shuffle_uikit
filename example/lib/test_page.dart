@@ -53,7 +53,8 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
             if (xFile != null && selectedImageBytes != null)
               UiKitPictureViewFinder(
                 controller: controller,
-                viewPortAvailableSize: Size(1.sw, 0.75.sh),
+                viewFinderOrientation: Axis.vertical,
+                viewPortAvailableSize: Size(1.sw, 0.85.sh),
                 imageBytes: selectedImageBytes!,
                 onCropCompleted: (imageValue) => setState(() => cropedImageBytes = imageValue),
               ),
