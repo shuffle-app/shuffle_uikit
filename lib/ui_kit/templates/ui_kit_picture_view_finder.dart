@@ -61,6 +61,8 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
 
   bool get isVerticalPicture => imageOriginalSize.width < imageOriginalSize.height;
 
+  bool get isSquareImage => imageOriginalAspectRatio >= 0.99 && imageOriginalAspectRatio <= 1.01;
+
   // width is 1.7495454545 times bigger than height
   double get cropAspectRatio {
     if (widget.viewFinderOrientation != null) {
@@ -126,15 +128,10 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
     widget.onCropCompleted?.call(imageBytes);
   }
 
-  late final ValueNotifier<SizeAndPosition> _positionAndSize = ValueNotifier<SizeAndPosition>(
-    SizeAndPosition(
-      position: Offset(
-        (imageOriginalSize.width - imageOriginalSize.width) / 4,
-        (imageOriginalSize.height - imageOriginalSize.height) / 4,
-      ),
-      size: imageOriginalSize,
-    ),
-  );
+  final ValueNotifier<SizeAndPosition> _positionAndSize = ValueNotifier<SizeAndPosition>(SizeAndPosition(
+    position: Offset.zero,
+    size: Size.zero,
+  ));
 
   bool imageLoadingError = false;
 
@@ -152,7 +149,6 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
       dev.log('Trying to decode image from bytes success');
       image = imageFromBytes;
       if (isVerticalPicture) {
-        /// fit height of the image to the [widget.viewPortAvailableSize] saving aspect ratio
         double fittedHeight = widget.viewPortAvailableSize.height;
         if (fittedHeight >= imageOriginalSize.height) fittedHeight = imageOriginalSize.height;
         final fittedWidth = _setupViewFinderWidth(fittedHeight, customAspectRatio: imageOriginalAspectRatio);
@@ -164,9 +160,19 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
         } else {
           fittedImageSize = Size(fittedWidth, fittedHeight);
         }
-      }
-      if (isHorizontalPicture) {
-        /// fit width of the image to the [widget.viewPortAvailableSize] saving aspect ratio
+      } else if (isHorizontalPicture) {
+        double fittedWidth = widget.viewPortAvailableSize.width;
+        if (fittedWidth >= imageOriginalSize.width) fittedWidth = imageOriginalSize.width;
+        double fittedHeight = _setupViewFinderHeight(fittedWidth, customAspectRatio: imageOriginalAspectRatio);
+        if (fittedHeight > widget.viewPortAvailableSize.height) {
+          fittedImageSize = Size(
+            _setupViewFinderWidth(widget.viewPortAvailableSize.height, customAspectRatio: imageOriginalAspectRatio),
+            widget.viewPortAvailableSize.height,
+          );
+        } else {
+          fittedImageSize = Size(fittedWidth, fittedHeight);
+        }
+      } else if (isSquareImage) {
         double fittedWidth = widget.viewPortAvailableSize.width;
         if (fittedWidth >= imageOriginalSize.width) fittedWidth = imageOriginalSize.width;
         double fittedHeight = _setupViewFinderHeight(fittedWidth, customAspectRatio: imageOriginalAspectRatio);
@@ -180,13 +186,56 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
         }
       }
 
-      final viewFinderHeight = _setupViewFinderHeight(fittedImageSize.width / 2);
-      final viewFinderWidth = _setupViewFinderWidth(viewFinderHeight);
-      _positionAndSize.value = SizeAndPosition(
-        size: Size(viewFinderWidth, viewFinderHeight),
-        position: Offset.zero,
-      );
+      if (widget.viewFinderOrientation == Axis.horizontal) {
+        if (!isHorizontalPicture) {
+          final viewFinderHeight = _setupViewFinderHeight(fittedImageSize.width);
+          final viewFinderWidth = _setupViewFinderWidth(viewFinderHeight);
+          _positionAndSize.value = SizeAndPosition(
+            size: Size(viewFinderWidth, viewFinderHeight),
+            position: Offset.zero,
+          );
+        } else if (isSquareImage) {
+          final viewFinderWidth = _setupViewFinderWidth(fittedImageSize.height / 2);
+          final viewFinderHeight = _setupViewFinderHeight(viewFinderWidth);
+          _positionAndSize.value = SizeAndPosition(
+            size: Size(viewFinderWidth, viewFinderHeight),
+            position: Offset.zero,
+          );
+        } else {
+          final viewFinderHeight = _setupViewFinderHeight(fittedImageSize.height);
+          final viewFinderWidth = _setupViewFinderWidth(viewFinderHeight);
+          _positionAndSize.value = SizeAndPosition(
+            size: Size(viewFinderWidth, viewFinderHeight),
+            position: Offset.zero,
+          );
+        }
+      } else if (widget.viewFinderOrientation == Axis.vertical) {
+        if (!isVerticalPicture) {
+          final viewFinderWidth = _setupViewFinderWidth(fittedImageSize.height);
+          final viewFinderHeight = _setupViewFinderHeight(viewFinderWidth);
+          _positionAndSize.value = SizeAndPosition(
+            size: Size(viewFinderWidth, viewFinderHeight),
+            position: Offset.zero,
+          );
+        } else if (isSquareImage) {
+          final viewFinderHeight = _setupViewFinderHeight(fittedImageSize.width / 2);
+          final viewFinderWidth = _setupViewFinderWidth(viewFinderHeight);
+          _positionAndSize.value = SizeAndPosition(
+            size: Size(viewFinderWidth, viewFinderHeight),
+            position: Offset.zero,
+          );
+        } else {
+          final viewFinderHeight = _setupViewFinderHeight(fittedImageSize.width);
+          final viewFinderWidth = _setupViewFinderWidth(viewFinderHeight);
+          _positionAndSize.value = SizeAndPosition(
+            size: Size(viewFinderWidth, viewFinderHeight),
+            position: Offset.zero,
+          );
+        }
+      }
+
       dev.log('Initialization finished');
+      dev.log('square image: $isSquareImage');
       dev.log('fittedImageSize: $fittedImageSize');
       dev.log('imageOriginalSize: $imageOriginalSize');
       dev.log('crop size: ${_positionAndSize.value.size}');
