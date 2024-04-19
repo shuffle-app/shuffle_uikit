@@ -515,6 +515,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/mock_ad_banner_10.jpg
   AssetGenImage get mockAdBanner10 => const AssetGenImage('assets/images/png/mock_ad_banner_10.jpg');
 
+  /// File path: assets/images/png/mock_ad_banner_11.png
+  AssetGenImage get mockAdBanner11 => const AssetGenImage('assets/images/png/mock_ad_banner_11.png');
+
   /// File path: assets/images/png/mock_ad_banner_2.jpeg
   AssetGenImage get mockAdBanner2 => const AssetGenImage('assets/images/png/mock_ad_banner_2.jpeg');
 
@@ -533,8 +536,8 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/mock_ad_banner_7.jpg
   AssetGenImage get mockAdBanner7 => const AssetGenImage('assets/images/png/mock_ad_banner_7.jpg');
 
-  /// File path: assets/images/png/mock_ad_banner_8.png
-  AssetGenImage get mockAdBanner8 => const AssetGenImage('assets/images/png/mock_ad_banner_8.png');
+  /// File path: assets/images/png/mock_ad_banner_8.jpg
+  AssetGenImage get mockAdBanner8 => const AssetGenImage('assets/images/png/mock_ad_banner_8.jpg');
 
   /// File path: assets/images/png/mock_ad_banner_9.png
   AssetGenImage get mockAdBanner9 => const AssetGenImage('assets/images/png/mock_ad_banner_9.png');
@@ -843,6 +846,7 @@ class $AssetsImagesPngGen {
         mockAdBanner,
         mockAdBanner1,
         mockAdBanner10,
+        mockAdBanner11,
         mockAdBanner2,
         mockAdBanner3,
         mockAdBanner4,

@@ -7,7 +7,6 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitPhotoSlider extends StatefulWidget {
   final List<BaseUiKitMedia> media;
   final double width;
-  final double height;
   final int initialIndex;
   final int maxShowImage;
   final VoidCallback? onTap;
@@ -19,7 +18,6 @@ class UiKitPhotoSlider extends StatefulWidget {
     required this.width,
     this.initialIndex = 0,
     this.maxShowImage = 3,
-    required this.height,
     this.onTap,
     this.actions,
   }) : super(key: key);
@@ -32,6 +30,8 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   final _animDuration = const Duration(milliseconds: 150);
   late CardAnimation _cardAnimation;
   late AnimationController _animationController;
+
+  double get height => widget.width / 1.7495454545;
 
   final _undoableIndex = Undoable<int?>(null);
   final Queue<CardSwiperDirection> _directionHistory = Queue();
@@ -76,8 +76,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         if (rightList.isNotEmpty) ...items,
 
       //build left stack
-      if (leftList.isNotEmpty)
-        ...leftList.map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1)).toList().reversed,
+      if (leftList.isNotEmpty) ...leftList.map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1)).toList().reversed,
       if (!reversed)
         //build right stack if user wants to slide right
         if (rightList.isNotEmpty) ...items,
@@ -109,7 +108,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         },
         child: SliderPhotoCard(
           media: item,
-          givenSize: Size(double.infinity, widget.height),
+          givenSize: Size(widget.width, height),
         ),
       ),
     );
@@ -130,7 +129,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
           ),
           child: SliderPhotoCard(
             media: item,
-            givenSize: Size(widget.width - 55, widget.height * (1 - differenceFromFirstCard * 0.1)),
+            givenSize: Size(widget.width - 55, height * (1 - differenceFromFirstCard * 0.1)),
           ),
         ));
   }
@@ -150,7 +149,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
           ),
           child: SliderPhotoCard(
             media: item,
-            givenSize: Size(widget.width - 55, widget.height * (1 - differenceFromFirstCard * 0.1)),
+            givenSize: Size(widget.width - 55, height * (1 - differenceFromFirstCard * 0.1)),
           )),
     );
   }
@@ -228,7 +227,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
     final List<Widget> backStack = _getBackStack(_cardAnimation.right < widget.width / 10);
 
     return SizedBox(
-      height: widget.height,
+      height: height,
       width: widget.width,
       child: Stack(
         clipBehavior: Clip.none,
