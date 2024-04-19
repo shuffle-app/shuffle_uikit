@@ -108,8 +108,8 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
     //   widget.weekdays,
     // );
 
-    final normalCardWidth = 0.75.sw;
     final normalCardHeight = widget.availableHeight * 0.76;
+    final normalCardWidth = normalCardHeight * 0.78125;
     final heightStep = normalCardHeight / 3;
     //вынесена в константу значение поворота в обе стороны
     const double rotationAngle = 16;
@@ -133,7 +133,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
       duration: widgetAnimDurations,
       opacity: opacity,
       child: SizedBox(
-        width: kIsWeb ? 200 : normalCardWidth,
+        width: normalCardWidth,
         height: widget.availableHeight + SpacingFoundation.verticalSpacing8,
         child: Column(
           mainAxisSize: MainAxisSize.max,

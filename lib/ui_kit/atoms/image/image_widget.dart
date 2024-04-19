@@ -157,21 +157,26 @@ class ImageWidget extends StatelessWidget {
             : RepaintBoundary(
                 key: ValueKey(link),
                 child: StreamBuilder<FileResponse>(
-                    stream: CustomCacheManager.svgInstance.getFileStream(link!),
-                    builder: (context, snapshot) => AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 200),
-                        child: snapshot.connectionState == ConnectionState.done && snapshot.data != null
-                            ? SvgPicture.file(
-                                (snapshot.data as FileInfo).file,
-                                colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
-                                fit: fit ?? BoxFit.none,
-                                height: height,
-                                width: width,
-                              )
-                            : ConstrainedBox(
-                                constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
-                                child: placeholder,
-                              ))));
+                  stream: CustomCacheManager.svgInstance.getFileStream(link!),
+                  builder: (context, snapshot) => AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 200),
+                    child:
+                        // snapshot.connectionState == ConnectionState.done && snapshot.data != null
+                        //     ? SvgPicture.file(
+                        //         (snapshot.data as FileInfo).file,
+                        //         colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
+                        //         fit: fit ?? BoxFit.none,
+                        //         height: height,
+                        //         width: width,
+                        //       )
+                        //     :
+                        ConstrainedBox(
+                      constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
+                      child: placeholder,
+                    ),
+                  ),
+                ),
+              );
       }
 
       // !.startsWith("http://") || link!.startsWith("https://")) {

@@ -10,6 +10,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
     super.imageLink,
     super.onTap,
     super.pointsToGain,
+    super.width,
     required super.tags,
     required super.id,
     required super.title,
@@ -20,13 +21,15 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
+    final cardWidth = kIsWeb ? width ?? 267.0 : width ?? 267.w;
+    final height = cardWidth / 1.7495454545;
 
     return RepaintBoundary(
       child: GestureDetector(
         onTap: onTap,
         child: SizedBox(
-            width: kIsWeb ? 267 : 267.w,
-            height: kIsWeb ? 316 : 316.h,
+            width: cardWidth,
+            height: height,
             child: ClipRRect(
                 borderRadius: BorderRadiusFoundation.all40,
                 child: ColoredBox(

@@ -1,4 +1,5 @@
 import 'package:example/presentation/routing/app_routes.dart';
+import 'package:example/presentation/ui/ads_page.dart';
 import 'package:example/presentation/ui/animations/animations_page.dart';
 import 'package:example/presentation/ui/examples/user_content_type_switch_animation.dart';
 import 'package:example/presentation/ui/location_picker/location_picker_page.dart';
@@ -24,12 +25,16 @@ class AppRouter {
           settings: settings,
           builder: (_) => const MainPage(),
         );
-        case AppRoutes.hallOfFame:
-          return MaterialPageRoute(
-            settings: settings,
-            builder: (_) => const HallOfFamePageExample(),
-          );
-
+      case AppRoutes.hallOfFame:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => const HallOfFamePageExample(),
+        );
+      case AppRoutes.adsPage:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => const AdsPage(),
+        );
       case AppRoutes.influencerProfile:
         return MaterialPageRoute(
           settings: settings,
