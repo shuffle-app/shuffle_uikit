@@ -35,10 +35,12 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            MediaQuery.viewPaddingOf(context).top.heightBox,
             //TODO Murodkulov: предложение использовать купертино свитч с анимашкой
             //https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html
             ToggleButtons(
@@ -148,6 +150,13 @@ class _MainPageState extends State<MainPage> {
               data: BaseUiKitButtonData(
                 text: 'Testing directions on map',
                 onPressed: () => Navigator.pushNamed(context, AppRoutes.mapDirections),
+              ),
+            ),
+            SpacingFoundation.verticalSpace16,
+            context.button(
+              data: BaseUiKitButtonData(
+                text: 'Ads page',
+                onPressed: () => Navigator.pushNamed(context, AppRoutes.adsPage),
               ),
             ),
           ],

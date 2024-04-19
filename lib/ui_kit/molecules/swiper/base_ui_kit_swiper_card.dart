@@ -9,6 +9,7 @@ abstract class BaseUiKitSwiperCard extends StatelessWidget {
   final List<UiKitTagWidget> tags;
   final VoidCallback? onTap;
   final int? pointsToGain;
+  final double? width;
 
   const BaseUiKitSwiperCard({
     Key? key,
@@ -16,6 +17,7 @@ abstract class BaseUiKitSwiperCard extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.tags,
+    this.width,
     this.imageLink,
     this.pointsToGain,
     this.onTap,
