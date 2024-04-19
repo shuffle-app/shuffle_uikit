@@ -22,7 +22,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
     final cardWidth = kIsWeb ? width ?? 267.0 : width ?? 267.w;
-    final height = cardWidth / 1.7495454545;
+    final height = cardWidth / 0.78125;
 
     return RepaintBoundary(
       child: GestureDetector(
