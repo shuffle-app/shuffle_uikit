@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'dart:io';
 
 class UiKitWeatherInfoCard extends StatelessWidget {
   final String temperature;
@@ -25,7 +26,7 @@ class UiKitWeatherInfoCard extends StatelessWidget {
     final isNight = TimeOfDay.fromDateTime(DateTime.now()).isNight;
 
     return Container(
-      height: height,
+      height: active && Platform.isIOS ? height - 8.w : height,
       decoration: BoxDecoration(
         color: active ? null : colorScheme?.surface2,
         borderRadius: BorderRadiusFoundation.all20,
@@ -83,6 +84,7 @@ class UiKitWeatherInfoCard extends StatelessWidget {
   }
 
   AssetGenImage _matcherWeatherType(String weatherType) {
+    weatherType = weatherType.toLowerCase();
     final isNight = TimeOfDay.fromDateTime(DateTime.now()).isNight;
     if (weatherType.contains('cloud')) {
       //TODO think about heavy clouds

@@ -6,6 +6,14 @@ abstract class UiKitTextTheme {}
 class UiKitRegularTextTheme extends UiKitTextTheme {
   final Color foregroundColor;
 
+  TextStyle get caption4Small => TextStyle(
+    fontFamily: 'Unbounded',
+    fontSize: 5.w,
+    fontWeight: FontWeight.w300,
+    color: foregroundColor,
+    package: 'shuffle_uikit',
+  );
+
   TextStyle get caption4 => TextStyle(
         fontFamily: 'Unbounded',
         fontSize: 8.w,

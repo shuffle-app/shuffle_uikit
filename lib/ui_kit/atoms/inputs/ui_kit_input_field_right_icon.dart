@@ -19,6 +19,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
     this.onFieldSubmitted,
     this.borderRadius,
     this.obscureText = false,
+    this.onChanged
   }) : super(key: key);
 
   @override
@@ -34,6 +35,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
   @override
   final bool obscureText;
 
+  final ValueChanged<String>? onChanged;
   final Widget? icon;
   final BorderRadius? borderRadius;
   final bool autofocus;
@@ -92,6 +94,7 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
         validator: widget.validator,
         obscureText: widget.obscureText,
         style: inputTextStyle,
+        onChanged: widget.onChanged,
         decoration: InputDecoration(
           filled: true,
           fillColor: widget.fillColor,

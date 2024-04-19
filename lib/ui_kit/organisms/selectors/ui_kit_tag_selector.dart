@@ -12,7 +12,7 @@ class UiKitTagSelector extends StatelessWidget {
   final ValueChanged<String>? onRemoveTagCallback;
   final void Function(String)? onTagSelected;
 
-  late final TextEditingController controller = TextEditingController();
+  TextEditingController? controller;
   late final FocusNode focusNode = FocusNode()..addListener(_focusListener);
 
   // late final ValueNotifier<Set<String>> selectedListNotifier = ValueNotifier(tags.toSet());
@@ -29,8 +29,11 @@ class UiKitTagSelector extends StatelessWidget {
     this.onNotFoundTagCallback,
     this.onTagSelected,
     this.borderRadius,
+    this.controller,
   })  : isDarkBackground = false,
-        super(key: key);
+        super(key: key) {
+    controller ??= TextEditingController();
+  }
 
   UiKitTagSelector.darkBackground({
     Key? key,
@@ -41,8 +44,11 @@ class UiKitTagSelector extends StatelessWidget {
     this.onNotFoundTagCallback,
     this.onTagSelected,
     this.borderRadius,
+    this.controller,
   })  : isDarkBackground = true,
-        super(key: key);
+        super(key: key) {
+    controller ??= TextEditingController();
+  }
 
   _focusListener() {
     uiNotifier.value = uiNotifier.value.copyWith(hasFocus: focusNode.hasFocus);
@@ -78,7 +84,7 @@ class UiKitTagSelector extends StatelessWidget {
                     children: uiModel.tags
                         .map<Widget>(
                           (e) => UiKitCompactTextCard(
-                            showRemoveButton: true,
+                            showRemoveButton: onRemoveTagCallback != null ? true : false,
                             text: e,
                             onTap: () {
                               onRemoveTagCallback?.call(e);

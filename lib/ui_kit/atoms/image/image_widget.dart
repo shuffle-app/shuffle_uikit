@@ -154,28 +154,16 @@ class ImageWidget extends StatelessWidget {
                   child: placeholder,
                 ),
               )
-            : RepaintBoundary(
-                key: ValueKey(link),
-                child: StreamBuilder<FileResponse>(
-                  stream: CustomCacheManager.svgInstance.getFileStream(link!),
-                  builder: (context, snapshot) => AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 200),
-                    child:
-                        // snapshot.connectionState == ConnectionState.done && snapshot.data != null
-                        //     ? SvgPicture.file(
-                        //         (snapshot.data as FileInfo).file,
-                        //         colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
-                        //         fit: fit ?? BoxFit.none,
-                        //         height: height,
-                        //         width: width,
-                        //       )
-                        //     :
-                        ConstrainedBox(
-                      constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
-                      child: placeholder,
-                    ),
-                  ),
+            : _CustomCachedSvgPicture(
+                color: color,
+                width: width,
+                height: height,
+                placeholder: ConstrainedBox(
+                  constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
+                  child: placeholder,
                 ),
+                link: link!,
+                fit: fit,
               );
       }
 
@@ -269,5 +257,67 @@ class CustomProxyStatic {
 
   static set proxy(String value) {
     _proxyBase = value;
+  }
+}
+
+class _CustomCachedSvgPicture extends StatefulWidget {
+  final BoxFit? fit;
+  final double? width;
+  final double? height;
+  final Color? color;
+  final String link;
+  final Widget placeholder;
+
+  const _CustomCachedSvgPicture(
+      {super.key, this.fit, this.width, this.height, this.color, required this.link, required this.placeholder});
+
+  @override
+  State<_CustomCachedSvgPicture> createState() => _CustomCachedSvgPictureState();
+}
+
+class _CustomCachedSvgPictureState extends State<_CustomCachedSvgPicture> {
+  File? cachedFile;
+  String _cachedLink = '';
+
+  @override
+  void initState() {
+    _cachedLink = widget.link;
+    CustomCacheManager.svgInstance.getSingleFile(widget.link).then((value) {
+      setState(() {
+        cachedFile = value;
+      });
+    });
+    super.initState();
+  }
+
+  @override
+  void didUpdateWidget(covariant _CustomCachedSvgPicture oldWidget) {
+    if (_cachedLink != widget.link) {
+      _cachedLink = widget.link;
+      CustomCacheManager.svgInstance.getSingleFile(widget.link).then((value) {
+        setState(() {
+          cachedFile = value;
+        });
+      });
+    }
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSwitcher(
+        duration: const Duration(milliseconds: 200),
+        child: cachedFile != null
+            ? SvgPicture.file(
+                cachedFile!,
+                colorFilter: widget.color == null ? null : ColorFilter.mode(widget.color!, BlendMode.srcIn),
+                fit: widget.fit ?? BoxFit.none,
+                height: widget.height,
+                width: widget.width,
+              )
+            : ConstrainedBox(
+                constraints: BoxConstraints.loose(Size(widget.height ?? 20.w, widget.width ?? 20.w)),
+                child: widget.placeholder,
+              ));
   }
 }
