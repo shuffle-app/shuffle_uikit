@@ -5,21 +5,21 @@ abstract class BaseUiKitMedia {
   final String link;
   final String? videoLink;
   final UiKitMediaType type;
+  UiKitPreviewType? previewType;
 
   BaseUiKitMedia({
     required this.link,
     required this.type,
     this.videoLink,
+    this.previewType,
   });
 
   ImageWidget widget(Size size) => ImageWidget(link: link, height: size.height, width: size.width, fit: BoxFit.cover);
 }
 
 class UiKitMediaPhoto extends BaseUiKitMedia {
-  UiKitMediaPhoto({
-    required String link,
-  }) : super(
-          link: link,
+  UiKitMediaPhoto({required super.link, super.previewType})
+      : super(
           type: UiKitMediaType.image,
         );
 }
@@ -59,3 +59,5 @@ class UiKitTag {
 }
 
 enum UiKitMediaType { image, video }
+
+enum UiKitPreviewType { horizontal, vertical }

@@ -521,3 +521,17 @@ class CropOuterAreaClipper extends CustomClipper<Path> {
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) => true;
 }
+
+class CroppedImageData {
+  final Uint8List croppedFileBytes;
+  final Uint8List originalFileBytes;
+  final String? mimeType;
+  final String? filename;
+
+  CroppedImageData({
+    required this.croppedFileBytes,
+    required this.originalFileBytes,
+    this.mimeType,
+    this.filename,
+  });
+}
