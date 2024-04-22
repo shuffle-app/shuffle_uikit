@@ -458,5 +458,6 @@
   "InventoryItems": "Вещи инвентаря",
   "DubaiEventTicket": "Билет на событие в Дубае",
   "Congratulations": "Поздравляем",
-  "YouReceived" : "Вы получили"
+  "YouReceived" : "Вы получили",
+  "HealthRandomAlert": "Предоставьте доступ к хэлс киту иначе результат будет рандомным"
 }

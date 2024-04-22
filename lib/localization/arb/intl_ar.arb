@@ -458,5 +458,6 @@
   "InventoryItems": "Inventory items",
   "DubaiEventTicket": "Dubai Event Ticket",
   "Congratulations": "Congratulations",
-  "YouReceived" : "You received"
+  "YouReceived" : "You received",
+  "HealthRandomAlert": "Give access to health kit usage otherwise the result will be random"
 }

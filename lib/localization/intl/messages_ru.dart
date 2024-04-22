@@ -353,6 +353,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "HardToAnswer": MessageLookupByLibrary.simpleMessage("Сложно ответить"),
         "Hardcore": MessageLookupByLibrary.simpleMessage("Хардкор"),
         "HealthKit": MessageLookupByLibrary.simpleMessage("Данные здоровья"),
+        "HealthRandomAlert": MessageLookupByLibrary.simpleMessage(
+            "Предоставьте доступ к хэлс киту иначе результат будет рандомным"),
         "Helpful": MessageLookupByLibrary.simpleMessage("Полезно"),
         "HelpfulNCount": m13,
         "Hindu": MessageLookupByLibrary.simpleMessage("Индуизм"),

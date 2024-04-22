@@ -25,6 +25,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   CustomBackgroundSwitchOption selectedOption = CustomBackgroundSwitchOption(
     title: 'Personal',
     iconLink: GraphicsFoundation.instance.svg.personLayered.path,
+    value: 'user'
   );
 
   bool selection = false;
@@ -817,10 +818,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           child: UiKitSwitchWithCustomBackground(
             firstOption: CustomBackgroundSwitchOption(
               title: 'Personal',
+              value: 'user',
               iconLink: GraphicsFoundation.instance.svg.personLayered.path,
             ),
             secondOption: CustomBackgroundSwitchOption(
               title: 'Company',
+              value: 'company',
               iconLink: GraphicsFoundation.instance.svg.companyLayered.path,
             ),
             selectedOption: selectedOption,

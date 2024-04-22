@@ -4724,6 +4724,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Give access to health kit usage otherwise the result will be random`
+  String get HealthRandomAlert {
+    return Intl.message(
+      'Give access to health kit usage otherwise the result will be random',
+      name: 'HealthRandomAlert',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

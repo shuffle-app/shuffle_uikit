@@ -354,6 +354,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("जवाब देना मुश्किल"),
         "Hardcore": MessageLookupByLibrary.simpleMessage("हार्डकोर"),
         "HealthKit": MessageLookupByLibrary.simpleMessage("स्वास्थ्य किट"),
+        "HealthRandomAlert": MessageLookupByLibrary.simpleMessage(
+            "Give access to health kit usage otherwise the result will be random"),
         "Helpful": MessageLookupByLibrary.simpleMessage("उपयोगी"),
         "HelpfulNCount": m13,
         "Hindu": MessageLookupByLibrary.simpleMessage("हिंदू"),
