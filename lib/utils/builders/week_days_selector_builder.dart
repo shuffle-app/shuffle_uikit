@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
+const List<String> uiKitConstWeekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
 Future<List<String>?> showUiKitWeekdaySelector(context) {
   return showModalBottomSheet<List<String>?>(
       backgroundColor: UiKitColors.surface4,
@@ -14,7 +16,7 @@ Future<List<String>?> showUiKitWeekdaySelector(context) {
 
         final ValueNotifier<Set<int>> selected = ValueNotifier(<int>{});
 
-        final List<String> weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
 
         return SafeArea(
             child: Column(
@@ -37,7 +39,7 @@ Future<List<String>?> showUiKitWeekdaySelector(context) {
                   valueListenable: selected,
                   builder: (context, set, child) {
                     return Row(children: [
-                      for (var day = 0; day < weekdays.length; day++)
+                      for (var day = 0; day < uiKitConstWeekdays.length; day++)
                         Expanded(
                             child: InkWell(
                                 onTap: () {
@@ -56,7 +58,7 @@ Future<List<String>?> showUiKitWeekdaySelector(context) {
                                       color: set.contains(day) ? color : null,
                                     ),
                                     child: Text(
-                                      weekdays[day],
+                                      uiKitConstWeekdays[day],
                                       textAlign: TextAlign.center,
                                       style: theme?.regularTextTheme.caption1,
                                     ).paddingSymmetric(
@@ -74,7 +76,7 @@ Future<List<String>?> showUiKitWeekdaySelector(context) {
                     dialogButtonType: DialogButtonType.buttonWhite,
                     data: BaseUiKitButtonData(
                         text: 'ok'.toUpperCase(),
-                        onPressed: () => Navigator.pop(context, [for (var i in selected.value) weekdays[i]])))
+                        onPressed: () => Navigator.pop(context, [for (var i in selected.value) uiKitConstWeekdays[i]])))
               ]).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16),
               SpacingFoundation.verticalSpace12,
             ]));

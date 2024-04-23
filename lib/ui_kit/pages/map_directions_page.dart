@@ -7,7 +7,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class MapDirectionsPage extends StatefulWidget {
   final ValueNotifier<LatLng> currentLocationNotifier;
-  final VoidCallback? onCurrentLocationRequested;
+  final Future Function()? onCurrentLocationRequested;
   final TextEditingController searchController;
   final String destinationTitle;
   final VoidCallback? onDirectionsRequested;
@@ -47,7 +47,16 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       Future.delayed(
         const Duration(milliseconds: 500),
-        () => widget.onCurrentLocationRequested?.call(),
+        () async {
+          try {
+            await widget.onCurrentLocationRequested?.call();
+          } catch (e) {
+            await controller?.animateCamera(CameraUpdate.newLatLng(widget.destination));
+            setState(() {
+              loading = false;
+            });
+          }
+        },
       );
       _focusNode.requestFocus();
       // widget.currentLocationNotifier.addListener(_currentLocationListener);
