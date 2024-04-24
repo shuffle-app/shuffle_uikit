@@ -34,7 +34,13 @@ class LocationSelectionWidget extends StatefulWidget {
   final double? height;
 
   final List<KnownLocation>? places;
-  final void Function({String address, double latitude, double longitude})? onLocationChanged;
+  final void Function(
+      {String address,
+      double latitude,
+      double longitude,
+      String? cityName,
+      String? countryName,
+      String? countryCode})? onLocationChanged;
   final VoidCallback? onNewPlaceTap;
   final VoidCallback? onLocationConfirmed;
 

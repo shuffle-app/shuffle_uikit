@@ -115,7 +115,7 @@ class AppRouter {
           builder: (context) => MapDirectionsPage(
             currentLocationNotifier: ValueNotifier<LatLng>(const LatLng(41.411081, 69.240562)),
             destination: const LatLng(41.411081, 69.240562),
-            onCurrentLocationRequested: () {},
+            onCurrentLocationRequested: () async {},
             searchController: TextEditingController(),
             destinationTitle: 'At.mosphere | Burj Khalifa',
           ),

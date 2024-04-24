@@ -76,7 +76,7 @@ class UiKitTagSelector extends StatelessWidget {
           children: [
             if (uiModel.tags.isNotEmpty)
               ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: maxHeight),
+                constraints: BoxConstraints(maxHeight: maxHeight, minHeight: 24.h),
                 child: SingleChildScrollView(
                   child: Wrap(
                     spacing: SpacingFoundation.horizontalSpacing8,

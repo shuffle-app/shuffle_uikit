@@ -4,6 +4,9 @@ class KnownLocation {
   final int id;
   final double? latitude;
   final double? longitude;
+  final String? cityName;
+  final String? countryName;
+  final String? countryCode;
 
   KnownLocation({
     required this.title,
@@ -11,5 +14,8 @@ class KnownLocation {
     this.id = -1,
     this.latitude,
     this.longitude,
+    this.cityName,
+    this.countryName,
+    this.countryCode,
   });
 }
