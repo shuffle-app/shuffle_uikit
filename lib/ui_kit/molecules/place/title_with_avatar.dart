@@ -40,7 +40,7 @@ class TitleWithAvatar extends StatelessWidget {
               style: textStyle,
               maxLines: 4,
               minFontSize: 18.w,
-              stepGranularity: (20.w - 18.w) / 2,
+              stepGranularity: 18.w / 2,
             ),
           ),
         if (trailing != null) ...[
