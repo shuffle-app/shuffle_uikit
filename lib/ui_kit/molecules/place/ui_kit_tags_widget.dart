@@ -67,7 +67,7 @@ class UiKitTagsWidget extends StatelessWidget {
               if (uniqueTags != null && uniqueTags!.isNotEmpty) ...[
                 SpacingFoundation.verticalSpace4,
                 SizedBox(
-                  height: SpacingFoundation.horizontalSpacing16 + 2,
+                  height: SpacingFoundation.horizontalSpacing24,
                   child: ListView.separated(
                     padding: EdgeInsets.zero,
                     scrollDirection: Axis.horizontal,

@@ -33,6 +33,7 @@ class UiKitTagWidget extends StatelessWidget {
 
     return Row(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         if (showSpacing) customSpace ?? SpacingFoundation.horizontalSpace12,
         GradientableWidget(
@@ -55,9 +56,14 @@ class UiKitTagWidget extends StatelessWidget {
           ),
         ),
         SpacingFoundation.horizontalSpace2,
-        Text(
-          title,
-          style: textStyle,
+        SizedBox(
+          height: tagSize ?? SpacingFoundation.horizontalSpacing20,
+          child: Center(
+            child: Text(
+              title,
+              style: textStyle,
+            ),
+          ),
         ),
       ],
     );
