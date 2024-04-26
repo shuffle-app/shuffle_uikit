@@ -46,7 +46,7 @@ class UiKitTag {
         icon: icon,
         uniqueTag: unique,
         textColor: ColorsFoundation.darkNeutral500,
-        tagSize: icon is String ? SpacingFoundation.horizontalSpacing24 : SpacingFoundation.horizontalSpacing16,
+        tagSize: icon is String ? SpacingFoundation.horizontalSpacing20 : SpacingFoundation.horizontalSpacing16,
       );
 
   UiKitTag({
