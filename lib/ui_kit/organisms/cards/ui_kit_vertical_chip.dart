@@ -44,6 +44,8 @@ class UiKitVerticalChip extends StatelessWidget {
               AutoSizeText(
                 caption,
                 group: autoSizeGroup,
+                minFontSize: 8.w,
+                stepGranularity: 8.w / 8,
                 maxLines: 1,
                 style: context.uiKitTheme?.boldTextTheme.caption1Bold,
               ),
