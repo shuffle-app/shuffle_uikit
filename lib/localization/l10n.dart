@@ -3975,6 +3975,76 @@ class S {
     );
   }
 
+  /// `You can declare yourself and show your expertise in one of the areas of social life of the city or the world`
+  String get InfluencerSubscriptionFeature1 {
+    return Intl.message(
+      'You can declare yourself and show your expertise in one of the areas of social life of the city or the world',
+      name: 'InfluencerSubscriptionFeature1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can gather your own new or supplement an existing audience`
+  String get InfluencerSubscriptionFeature2 {
+    return Intl.message(
+      'You can gather your own new or supplement an existing audience',
+      name: 'InfluencerSubscriptionFeature2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get a set of tools for working with `
+  String get InfluencerSubscriptionFeature3 {
+    return Intl.message(
+      'Get a set of tools for working with ',
+      name: 'InfluencerSubscriptionFeature3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` content and interacting with your audience`
+  String get InfluencerSubscriptionFeature3v1 {
+    return Intl.message(
+      ' content and interacting with your audience',
+      name: 'InfluencerSubscriptionFeature3v1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Become a thought leader in your field and earn a reputation`
+  String get InfluencerSubscriptionFeature4 {
+    return Intl.message(
+      'Become a thought leader in your field and earn a reputation',
+      name: 'InfluencerSubscriptionFeature4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Influence people\'s choices and enhance the significance of places and events`
+  String get InfluencerSubscriptionFeature5 {
+    return Intl.message(
+      'Influence people\\\'s choices and enhance the significance of places and events',
+      name: 'InfluencerSubscriptionFeature5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monetization`
+  String get InfluencerSubscriptionFeature6 {
+    return Intl.message(
+      'Monetization',
+      name: 'InfluencerSubscriptionFeature6',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Unique feature "Connects".  Search, communicate, meet someone, networking`
   String get PremiumSubscriptionFeature1 {
     return Intl.message(

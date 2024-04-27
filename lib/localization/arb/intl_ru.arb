@@ -459,5 +459,12 @@
   "DubaiEventTicket": "Билет на событие в Дубае",
   "Congratulations": "Поздравляем",
   "YouReceived" : "Вы получили",
-  "HealthRandomAlert": "Предоставьте доступ к хэлс киту иначе результат будет рандомным"
+  "HealthRandomAlert": "Предоставьте доступ к хэлс киту иначе результат будет рандомным",
+  "InfluencerSubscriptionFeature1": "You can declare yourself and show your expertise in one of the areas of social life of the city or the world",
+  "InfluencerSubscriptionFeature2": "You can gather your own new or supplement an existing audience",
+  "InfluencerSubscriptionFeature3": "Get a set of tools for working with ",
+  "InfluencerSubscriptionFeature3v1": " content and interacting with your audience",
+  "InfluencerSubscriptionFeature4": "Become a thought leader in your field and earn a reputation",
+  "InfluencerSubscriptionFeature5": "Influence people\\'s choices and enhance the significance of places and events",
+  "InfluencerSubscriptionFeature6": "Monetization"
 }

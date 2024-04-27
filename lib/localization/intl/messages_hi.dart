@@ -374,6 +374,21 @@ class MessageLookup extends MessageLookupByLibrary {
             "आप कितना \$ दान करना चाहते हैं?"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("गलत लॉगिन या पासवर्ड"),
+        "InfluencerSubscriptionFeature1": MessageLookupByLibrary.simpleMessage(
+            "You can declare yourself and show your expertise in one of the areas of social life of the city or the world"),
+        "InfluencerSubscriptionFeature2": MessageLookupByLibrary.simpleMessage(
+            "You can gather your own new or supplement an existing audience"),
+        "InfluencerSubscriptionFeature3": MessageLookupByLibrary.simpleMessage(
+            "Get a set of tools for working with "),
+        "InfluencerSubscriptionFeature3v1":
+            MessageLookupByLibrary.simpleMessage(
+                " content and interacting with your audience"),
+        "InfluencerSubscriptionFeature4": MessageLookupByLibrary.simpleMessage(
+            "Become a thought leader in your field and earn a reputation"),
+        "InfluencerSubscriptionFeature5": MessageLookupByLibrary.simpleMessage(
+            "Influence people\\\'s choices and enhance the significance of places and events"),
+        "InfluencerSubscriptionFeature6":
+            MessageLookupByLibrary.simpleMessage("Monetization"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("Inventory items"),
         "InvitationsCanBeViewedInPrivateMessages":
