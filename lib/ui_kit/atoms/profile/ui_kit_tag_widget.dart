@@ -57,7 +57,7 @@ class UiKitTagWidget extends StatelessWidget {
         ),
         SpacingFoundation.horizontalSpace2,
         SizedBox(
-          height: tagSize ?? SpacingFoundation.horizontalSpacing20,
+          height:SpacingFoundation.horizontalSpacing20,
           child: Center(
             child: Text(
               title,
