@@ -338,6 +338,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ForPeriod": MessageLookupByLibrary.simpleMessage("на"),
         "ForgotPassword": MessageLookupByLibrary.simpleMessage("Забыл пароль"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("\nбесплатных мест"),
+        "FridayShort": MessageLookupByLibrary.simpleMessage("Пт"),
         "FulfillTheDream":
             MessageLookupByLibrary.simpleMessage("Исполнить мечту"),
         "Gender": MessageLookupByLibrary.simpleMessage("Пол"),
@@ -373,20 +374,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Не тот логин или пароль"),
         "InfluencerSubscriptionFeature1": MessageLookupByLibrary.simpleMessage(
-            "You can declare yourself and show your expertise in one of the areas of social life of the city or the world"),
+            "Заяви о себе показав свою экспертизу в одной из сфер общественной жизни города или мира"),
         "InfluencerSubscriptionFeature2": MessageLookupByLibrary.simpleMessage(
-            "You can gather your own new or supplement an existing audience"),
+            "Собери свою аудиторию или дополни существующую"),
         "InfluencerSubscriptionFeature3": MessageLookupByLibrary.simpleMessage(
-            "Get a set of tools for working with "),
+            "Используй набор инструментов для работы с "),
         "InfluencerSubscriptionFeature3v1":
             MessageLookupByLibrary.simpleMessage(
-                " content and interacting with your audience"),
+                " контентом и своей аудиторией"),
         "InfluencerSubscriptionFeature4": MessageLookupByLibrary.simpleMessage(
-            "Become a thought leader in your field and earn a reputation"),
+            "Стань лидером и зарабатывай репутацию в совей сфере"),
         "InfluencerSubscriptionFeature5": MessageLookupByLibrary.simpleMessage(
-            "Influence people\\\'s choices and enhance the significance of places and events"),
+            "Влияй на выбор людей и усиливай значимость мест и событий"),
         "InfluencerSubscriptionFeature6":
-            MessageLookupByLibrary.simpleMessage("Monetization"),
+            MessageLookupByLibrary.simpleMessage("Монетизация"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("Вещи инвентаря"),
         "InvitationsCanBeViewedInPrivateMessages":
@@ -424,6 +425,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Members": m17,
         "Message": MessageLookupByLibrary.simpleMessage("Сообщение"),
         "Messages": MessageLookupByLibrary.simpleMessage("Сообщения"),
+        "MondayShort": MessageLookupByLibrary.simpleMessage("Пн"),
         "Month": MessageLookupByLibrary.simpleMessage("Месяц"),
         "Monthly": MessageLookupByLibrary.simpleMessage("Месячный"),
         "More": MessageLookupByLibrary.simpleMessage("больше"),
@@ -467,6 +469,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "NoThx": MessageLookupByLibrary.simpleMessage("Нет, спс"),
         "NotNow": MessageLookupByLibrary.simpleMessage("Не сейчас"),
         "NotOften": MessageLookupByLibrary.simpleMessage("Не часто"),
+        "NotSet": MessageLookupByLibrary.simpleMessage("Не указано"),
         "NothingFound":
             MessageLookupByLibrary.simpleMessage("Ничего не найдено"),
         "NothingWasFoundWithEmoji":
@@ -599,6 +602,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Сбросить фильтры"),
         "ResetPassword":
             MessageLookupByLibrary.simpleMessage("Сбросить пароль"),
+        "SaturdayShort": MessageLookupByLibrary.simpleMessage("Сб"),
         "Save": MessageLookupByLibrary.simpleMessage("Сохранить"),
         "Search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "SearchBusinessChooseYourself1":
@@ -682,6 +686,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "События, которые нельзя пропускать"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Начать изучать"),
+        "SundayShort": MessageLookupByLibrary.simpleMessage("Вс"),
         "Sunny": MessageLookupByLibrary.simpleMessage("Солнечно"),
         "Support": MessageLookupByLibrary.simpleMessage("Помощь"),
         "SupportPeopleAroundYou":
@@ -716,6 +721,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThisIs": MessageLookupByLibrary.simpleMessage("Это"),
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "Неагрегаторная система специально для вас"),
+        "ThursdayShort": MessageLookupByLibrary.simpleMessage("Чт"),
         "Time": MessageLookupByLibrary.simpleMessage("Время"),
         "Title": MessageLookupByLibrary.simpleMessage("Название"),
         "TitleYourTop":
@@ -727,6 +733,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TopNDonatorsReceiveXPoints": m30,
         "TopPlacesRatedBy": m31,
         "TryYourself": MessageLookupByLibrary.simpleMessage("Попробуйте\nсами"),
+        "TuesdayShort": MessageLookupByLibrary.simpleMessage("Вт"),
         "TypeHere": MessageLookupByLibrary.simpleMessage("Напишите тут"),
         "TypeOfContent": MessageLookupByLibrary.simpleMessage("Тип контента"),
         "Undefined": MessageLookupByLibrary.simpleMessage("Неопределено"),
@@ -775,6 +782,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Мы оповестим вас о результатах"),
         "Weather": MessageLookupByLibrary.simpleMessage("Погода"),
         "Website": MessageLookupByLibrary.simpleMessage("Сайт"),
+        "WednesdayShort": MessageLookupByLibrary.simpleMessage("Ср"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Велкам"),
         "WhatIs": MessageLookupByLibrary.simpleMessage("Зачем нужен"),
         "WhatYouLike":

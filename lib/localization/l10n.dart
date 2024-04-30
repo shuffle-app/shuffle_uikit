@@ -4804,6 +4804,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Mon`
+  String get MondayShort {
+    return Intl.message(
+      'Mon',
+      name: 'MondayShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tue`
+  String get TuesdayShort {
+    return Intl.message(
+      'Tue',
+      name: 'TuesdayShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wed`
+  String get WednesdayShort {
+    return Intl.message(
+      'Wed',
+      name: 'WednesdayShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thu`
+  String get ThursdayShort {
+    return Intl.message(
+      'Thu',
+      name: 'ThursdayShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fri`
+  String get FridayShort {
+    return Intl.message(
+      'Fri',
+      name: 'FridayShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sat`
+  String get SaturdayShort {
+    return Intl.message(
+      'Sat',
+      name: 'SaturdayShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sun`
+  String get SundayShort {
+    return Intl.message(
+      'Sun',
+      name: 'SundayShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not set`
+  String get NotSet {
+    return Intl.message(
+      'Not set',
+      name: 'NotSet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

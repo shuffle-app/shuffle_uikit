@@ -336,6 +336,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ForgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("\nfree places"),
+        "FridayShort": MessageLookupByLibrary.simpleMessage("Fri"),
         "FulfillTheDream":
             MessageLookupByLibrary.simpleMessage("Fulfill the dream"),
         "Gender": MessageLookupByLibrary.simpleMessage("Gender"),
@@ -419,6 +420,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Members": m17,
         "Message": MessageLookupByLibrary.simpleMessage("Message"),
         "Messages": MessageLookupByLibrary.simpleMessage("Messages"),
+        "MondayShort": MessageLookupByLibrary.simpleMessage("Mon"),
         "Month": MessageLookupByLibrary.simpleMessage("Month"),
         "Monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
         "More": MessageLookupByLibrary.simpleMessage("more"),
@@ -461,6 +463,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "NoThx": MessageLookupByLibrary.simpleMessage("No, thx"),
         "NotNow": MessageLookupByLibrary.simpleMessage("Not now"),
         "NotOften": MessageLookupByLibrary.simpleMessage("Not often"),
+        "NotSet": MessageLookupByLibrary.simpleMessage("Not set"),
         "NothingFound": MessageLookupByLibrary.simpleMessage("Nothing found"),
         "NothingWasFoundWithEmoji":
             MessageLookupByLibrary.simpleMessage("Nothing was found :c"),
@@ -590,6 +593,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "ResetFilters": MessageLookupByLibrary.simpleMessage("Reset filters"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
+        "SaturdayShort": MessageLookupByLibrary.simpleMessage("Sat"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
         "SearchBusinessChooseYourself1":
@@ -672,6 +676,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Events you don\'t wanna miss"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Start to explore"),
+        "SundayShort": MessageLookupByLibrary.simpleMessage("Sun"),
         "Sunny": MessageLookupByLibrary.simpleMessage("Sunny"),
         "Support": MessageLookupByLibrary.simpleMessage("Support"),
         "SupportPeopleAroundYou":
@@ -705,6 +710,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThisIs": MessageLookupByLibrary.simpleMessage("This is"),
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "Through a non-\naggregator system \nespecially for you"),
+        "ThursdayShort": MessageLookupByLibrary.simpleMessage("Thu"),
         "Time": MessageLookupByLibrary.simpleMessage("Time"),
         "Title": MessageLookupByLibrary.simpleMessage("Title"),
         "TitleYourTop": MessageLookupByLibrary.simpleMessage("Title your TOP"),
@@ -715,6 +721,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TopNDonatorsReceiveXPoints": m30,
         "TopPlacesRatedBy": m31,
         "TryYourself": MessageLookupByLibrary.simpleMessage("Try\nyourself"),
+        "TuesdayShort": MessageLookupByLibrary.simpleMessage("Tue"),
         "TypeHere": MessageLookupByLibrary.simpleMessage("Type here"),
         "TypeOfContent":
             MessageLookupByLibrary.simpleMessage("Type of content"),
@@ -763,6 +770,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "We will let you know the results"),
         "Weather": MessageLookupByLibrary.simpleMessage("Weather"),
         "Website": MessageLookupByLibrary.simpleMessage("Website"),
+        "WednesdayShort": MessageLookupByLibrary.simpleMessage("Wed"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "WhatIs": MessageLookupByLibrary.simpleMessage("What is \n"),
         "WhatYouLike": MessageLookupByLibrary.simpleMessage("What you like"),
