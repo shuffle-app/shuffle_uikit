@@ -466,5 +466,14 @@
   "InfluencerSubscriptionFeature3v1": " content and interacting with your audience",
   "InfluencerSubscriptionFeature4": "Become a thought leader in your field and earn a reputation",
   "InfluencerSubscriptionFeature5": "Influence people\\'s choices and enhance the significance of places and events",
-  "InfluencerSubscriptionFeature6": "Monetization"
+  "InfluencerSubscriptionFeature6": "Monetization",
+  "MondayShort": "Mon",
+  "TuesdayShort": "Tue",
+  "WednesdayShort": "Wed",
+  "ThursdayShort": "Thu",
+  "FridayShort": "Fri",
+  "SaturdayShort": "Sat",
+  "SundayShort": "Sun",
+  "NotSet": "Not set"
+
 }

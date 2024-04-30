@@ -28,7 +28,7 @@ class BlurredCardWithBorder extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadiusFoundation.all24,
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
+          filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
           child: child,
         ).paddingAll(EdgeInsetsFoundation.all16),
       ),
