@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'dart:io';
@@ -25,6 +26,8 @@ class UiKitWeatherInfoCard extends StatelessWidget {
     final weatherTypeStyle = textTheme?.caption1Bold.copyWith(color: active ? null : offColor);
     final isNight = TimeOfDay.fromDateTime(DateTime.now()).isNight;
 
+    final AutoSizeGroup temperatureGroup = AutoSizeGroup();
+
     return Container(
       height: active && Platform.isIOS ? height - 8.w : height,
       decoration: BoxDecoration(
@@ -48,12 +51,15 @@ class UiKitWeatherInfoCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
+                  AutoSizeText(
                     active ? '$temperature°C' : S.of(context).Off.toUpperCase(),
                     style: temperatureStyle,
+                    group: temperatureGroup,
                   ),
-                  Text(
+                  AutoSizeText(
                     active ? weatherType : S.of(context).Weather,
+                    maxLines: 2,
+                    group: temperatureGroup,
                     style: weatherTypeStyle,
                   ),
                 ],
