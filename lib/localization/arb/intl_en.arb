@@ -466,5 +466,13 @@
   "DubaiEventTicket": "Dubai Event Ticket",
   "Congratulations": "Congratulations",
   "YouReceived" : "You received",
-  "HealthRandomAlert": "Give access to health kit usage otherwise the result will be random"
+  "HealthRandomAlert": "Give access to health kit usage otherwise the result will be random",
+  "MondayShort": "Mon",
+  "TuesdayShort": "Tue",
+  "WednesdayShort": "Wed",
+  "ThursdayShort": "Thu",
+  "FridayShort": "Fri",
+  "SaturdayShort": "Sat",
+  "SundayShort": "Sun",
+  "NotSet": "Not set"
 }
