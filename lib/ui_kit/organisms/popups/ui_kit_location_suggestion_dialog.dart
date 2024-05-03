@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitLocationSuggestionDialog extends StatelessWidget {
+class UiKitLocationSuggestionDialog extends StatefulWidget {
   final String title;
   final Widget? bodyText;
   final ValueChanged<String?>? onLocationNameLoaded;
   final Future<String?> Function()? onLocationFieldTapped;
   final VoidCallback? onContinue;
-
-  final TextEditingController controller = TextEditingController();
-
-  UiKitLocationSuggestionDialog({
+  const UiKitLocationSuggestionDialog({
     Key? key,
     required this.title,
     this.onLocationFieldTapped,
@@ -18,6 +15,19 @@ class UiKitLocationSuggestionDialog extends StatelessWidget {
     this.onLocationNameLoaded,
     this.onContinue,
   }) : super(key: key);
+
+  @override
+  State<UiKitLocationSuggestionDialog> createState() => _UiKitLocationSuggestionDialogState();
+}
+
+class _UiKitLocationSuggestionDialogState extends State<UiKitLocationSuggestionDialog> {
+
+
+
+
+  final TextEditingController controller = TextEditingController();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +46,13 @@ class UiKitLocationSuggestionDialog extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            title,
+            widget.title,
             style: textTheme?.title2.copyWith(color: colorScheme?.surface),
             textAlign: TextAlign.center,
           ),
-          if (bodyText != null) ...[
+          if (widget.bodyText != null) ...[
             SpacingFoundation.verticalSpace16,
-            bodyText!,
+            widget.bodyText!,
           ],
           SpacingFoundation.verticalSpace16,
           UiKitInputFieldNoFill(
@@ -67,9 +77,12 @@ class UiKitLocationSuggestionDialog extends StatelessWidget {
               color: colorScheme?.inverseHeadingTypography,
             ),
             onTap: () {
-              onLocationFieldTapped?.call().then((value) {
+              widget.onLocationFieldTapped?.call().then((value) {
+                print('fsd with $value');
                 controller.text = value ?? '';
-                onLocationNameLoaded?.call(value);
+                setState(() {
+                });
+                widget.onLocationNameLoaded?.call(value);
               });
             },
           ),
@@ -80,7 +93,7 @@ class UiKitLocationSuggestionDialog extends StatelessWidget {
               return context.gradientButton(
                 data: BaseUiKitButtonData(
                   text: S.current.Continue,
-                  onPressed: controller.text.isEmpty ? null : onContinue,
+                  onPressed: controller.text.isEmpty ? null : widget.onContinue,
                 ),
               );
             },
