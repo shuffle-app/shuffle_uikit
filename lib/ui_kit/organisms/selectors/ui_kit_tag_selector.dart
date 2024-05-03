@@ -76,7 +76,7 @@ class UiKitTagSelector extends StatelessWidget {
           children: [
             if (uiModel.tags.isNotEmpty)
               ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: maxHeight, minHeight: 24.h),
+                constraints: BoxConstraints(maxHeight: maxHeight),
                 child: SingleChildScrollView(
                   child: Wrap(
                     spacing: SpacingFoundation.horizontalSpacing8,
@@ -97,7 +97,7 @@ class UiKitTagSelector extends StatelessWidget {
                 ),
               )
             else
-              const SizedBox(width: double.infinity),
+               SizedBox(width: double.infinity,height: 24.h,),
             if (showTextField)
               ConstrainedBox(
                 constraints: BoxConstraints(maxHeight: kIsWeb ? 60 : 40.h, minHeight: kIsWeb ? 20 : 10.h),

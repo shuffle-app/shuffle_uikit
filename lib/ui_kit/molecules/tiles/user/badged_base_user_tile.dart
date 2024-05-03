@@ -72,7 +72,7 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
                 right: 5,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadiusFoundation.all24, color: UiKitColors.lightSurfaceGradientBegin),
+                      borderRadius: BorderRadiusFoundation.all24, color: UiKitColors.surfaceGradientMid),
                   child: Text(
                     data.speciality!,
                     style: boldTextTheme?.caption3Medium.copyWith(color: ColorsFoundation.darkNeutral100),
