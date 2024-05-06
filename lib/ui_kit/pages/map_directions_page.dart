@@ -64,47 +64,55 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
   }
 
   void _currentLocationListener() async {
-    final points = PolylinePoints();
-    final result = await points.getRouteBetweenCoordinates(
-      apiKey,
-      PointLatLng(widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
-      PointLatLng(widget.destination.latitude, widget.destination.longitude),
-    );
-    await controller?.animateCamera(
-      CameraUpdate.newLatLngBounds(
-        LatLngBounds(
-          southwest: LatLng(
-            min(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
-            min(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
-          ),
-          northeast: LatLng(
-            max(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
-            max(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
-          ),
-        ),
-        72.w,
-      ),
-    );
-    loading = false;
-    setState(() {
-      directionLines = [
-        Polyline(
-          polylineId: const PolylineId('directions'),
-          points: result.points.map((e) => LatLng(e.latitude, e.longitude)).toList(),
-          color: ColorsFoundation.info,
-          width: 4,
-          startCap: Cap.buttCap,
-          jointType: JointType.bevel,
-          endCap: Cap.roundCap,
-          visible: true,
-        ),
-      ];
-      marker = Marker(
-        markerId: const MarkerId('destination'),
-        position: LatLng(result.points.last.latitude, result.points.last.longitude),
-        icon: markerIcon,
+    try {
+      final points = PolylinePoints();
+      final result = await points.getRouteBetweenCoordinates(
+        apiKey,
+        PointLatLng(widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
+        PointLatLng(widget.destination.latitude, widget.destination.longitude),
       );
-    });
+      await controller?.animateCamera(
+        CameraUpdate.newLatLngBounds(
+          LatLngBounds(
+            southwest: LatLng(
+              min(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
+              min(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
+            ),
+            northeast: LatLng(
+              max(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
+              max(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
+            ),
+          ),
+          72.w,
+        ),
+      );
+
+      setState(() {
+        directionLines = [
+          Polyline(
+            polylineId: const PolylineId('directions'),
+            points: result.points.map((e) => LatLng(e.latitude, e.longitude)).toList(),
+            color: ColorsFoundation.info,
+            width: 4,
+            startCap: Cap.buttCap,
+            jointType: JointType.bevel,
+            endCap: Cap.roundCap,
+            visible: true,
+          ),
+        ];
+        marker = Marker(
+          markerId: const MarkerId('destination'),
+          position: LatLng(result.points.last.latitude, result.points.last.longitude),
+          icon: markerIcon,
+        );
+      });
+    } catch (e) {
+      SnackBarUtils.show(message: 'Directions unavailable', context: context, type: AppSnackBarType.error);
+    } finally {
+      setState(() {
+        loading = false;
+      });
+    }
   }
 
   @override

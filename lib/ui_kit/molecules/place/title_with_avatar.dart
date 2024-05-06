@@ -21,16 +21,30 @@ class TitleWithAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyle = context.uiKitTheme?.boldTextTheme.title2;
+    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return Row(
       mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         if (avatarUrl != null) ...[
-          CircularAvatar(
-            height: 48.sp,
-            avatarUrl: avatarUrl ?? '',
-          ),
+          DecoratedBox(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadiusFoundation.max,
+                boxShadow: [
+                  BoxShadow(
+                    color:
+                        isLightTheme ? ColorsFoundation.darkNeutral900.withOpacity(0.4) : Colors.white.withOpacity(0.4),
+                    blurRadius: 10,
+                    spreadRadius: 3,
+                    offset: Offset.zero,
+                  )
+                ],
+              ),
+              child: CircularAvatar(
+                height: 48.sp,
+                avatarUrl: avatarUrl ?? '',
+              )),
           SpacingFoundation.horizontalSpace12,
         ],
         if (title != null)
