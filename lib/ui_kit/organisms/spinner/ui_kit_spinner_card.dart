@@ -16,6 +16,7 @@ class UiKitSpinnerCard extends StatefulWidget {
   final String? ownerTileTitle;
   final Widget? ownerTileTitleTrailing;
   final String? ownerTileSubtitle;
+  final UserTileType? ownerTileType;
   final double availableHeight;
 
   const UiKitSpinnerCard({
@@ -31,6 +32,7 @@ class UiKitSpinnerCard extends StatefulWidget {
     this.ownerTileTitle,
     this.ownerTileTitleTrailing,
     this.ownerTileSubtitle,
+    this.ownerTileType,
     this.weekdays,
   }) : super(key: key);
 
@@ -149,9 +151,11 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
                     return;
                   }
                   if (event.localPosition.dx < normalCardWidth / 2) {
-                    _animationVertical = Tween<double>(begin: 0, end: rotationAngle).animate(animationVerticalController);
+                    _animationVertical =
+                        Tween<double>(begin: 0, end: rotationAngle).animate(animationVerticalController);
                   } else {
-                    _animationVertical = Tween<double>(begin: 0, end: -rotationAngle).animate(animationVerticalController);
+                    _animationVertical =
+                        Tween<double>(begin: 0, end: -rotationAngle).animate(animationVerticalController);
                   }
 
                   if (event.localPosition.dy < heightStep) {
@@ -197,6 +201,7 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
                               titleTrailing: widget.ownerTileTitleTrailing,
                               subtitle: widget.ownerTileSubtitle,
                               photoLink: widget.ownerPhotoLink,
+                              type: widget.ownerTileType,
                             ),
                           ),
                           Positioned.fill(
