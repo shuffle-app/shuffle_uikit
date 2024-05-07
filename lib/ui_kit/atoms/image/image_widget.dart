@@ -282,9 +282,11 @@ class _CustomCachedSvgPictureState extends State<_CustomCachedSvgPicture> {
   void initState() {
     _cachedLink = widget.link;
     CustomCacheManager.svgInstance.getSingleFile(widget.link).then((value) {
-      setState(() {
+      if(mounted) {
+        setState(() {
         cachedFile = value;
       });
+      }
     });
     super.initState();
   }
@@ -294,9 +296,11 @@ class _CustomCachedSvgPictureState extends State<_CustomCachedSvgPicture> {
     if (_cachedLink != widget.link) {
       _cachedLink = widget.link;
       CustomCacheManager.svgInstance.getSingleFile(widget.link).then((value) {
-        setState(() {
-          cachedFile = value;
-        });
+        if(mounted) {
+          setState(() {
+            cachedFile = value;
+          });
+        }
       });
     }
     super.didUpdateWidget(oldWidget);
