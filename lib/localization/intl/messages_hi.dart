@@ -577,6 +577,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "आपकी घटनाओं, सांख्यिकी और विश्लेषण की आंतरिक लक्षित प्रचार"),
         "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
             "विशेष सूचनाओं का उपयोग करने की क्षमता"),
+        "ProTools": MessageLookupByLibrary.simpleMessage("Pro tools"),
         "ProfileAskOrSupportHiwHint": m22,
         "ProfileAskOrSupportHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("अपने या किसी और के"),

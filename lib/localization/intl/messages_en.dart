@@ -571,6 +571,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Internal targeted promotion of your events, statistics and analytics"),
         "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
             "Ability to use specialised notifications"),
+        "ProTools": MessageLookupByLibrary.simpleMessage("Pro tools"),
         "ProfileAskOrSupportHiwHint": m22,
         "ProfileAskOrSupportHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("yours or someone else\'s"),

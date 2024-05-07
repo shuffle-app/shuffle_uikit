@@ -577,6 +577,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Внутренняя таргетированная реклама ваших событий, статистика и аналитика"),
         "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
             "Возможность использовать специальные уведомления"),
+        "ProTools": MessageLookupByLibrary.simpleMessage("Pro tools"),
         "ProfileAskOrSupportHiwHint": m22,
         "ProfileAskOrSupportHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("свою или чью-то"),
