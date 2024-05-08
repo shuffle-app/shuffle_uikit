@@ -701,6 +701,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/titled_card_background_4.png
   AssetGenImage get titledCardBackground4 => const AssetGenImage('assets/images/png/titled_card_background_4.png');
 
+  /// File path: assets/images/png/uber.png
+  AssetGenImage get uber => const AssetGenImage('assets/images/png/uber.png');
+
   /// File path: assets/images/png/welcome_slide_1.png
   AssetGenImage get welcomeSlide1 => const AssetGenImage('assets/images/png/welcome_slide_1.png');
 
@@ -907,6 +910,7 @@ class $AssetsImagesPngGen {
         titledCardBackground2,
         titledCardBackground3,
         titledCardBackground4,
+        uber,
         welcomeSlide1,
         welcomeSlide2
       ];
@@ -1667,6 +1671,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/table.svg
   SvgGenImage get table => const SvgGenImage('assets/images/svg/table.svg');
 
+  /// File path: assets/images/svg/taxi.svg
+  SvgGenImage get taxi => const SvgGenImage('assets/images/svg/taxi.svg');
+
   /// File path: assets/images/svg/thumb-up.svg
   SvgGenImage get thumbUp => const SvgGenImage('assets/images/svg/thumb-up.svg');
 
@@ -1995,6 +2002,7 @@ class $AssetsImagesSvgGen {
         swim,
         swimming,
         table,
+        taxi,
         thumbUp,
         tiger,
         tool,
