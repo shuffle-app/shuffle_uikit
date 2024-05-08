@@ -381,6 +381,7 @@
   "DonationRaised": "raised {actuallyRaised}/${goal}$",
   "Exit": "Exit",
   "ProTools": "Pro tools",
+  "Taxi": "Taxi",
   "DeleteAccount": "Delete account",
   "Settings": "Settings",
   "Yearly": "Yearly",

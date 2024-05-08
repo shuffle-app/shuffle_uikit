@@ -706,6 +706,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Нажмите, чтобы ввести адрес"),
         "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(
             ". Нажми дважды, чтобы отметить избранное."),
+        "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("Расскажи еще"),
         "TellUsMoreAboutYourself": m29,
         "Terms": MessageLookupByLibrary.simpleMessage("Условия"),

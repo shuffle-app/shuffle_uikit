@@ -3945,6 +3945,16 @@ class S {
     );
   }
 
+  /// `Taxi`
+  String get Taxi {
+    return Intl.message(
+      'Taxi',
+      name: 'Taxi',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Delete account`
   String get DeleteAccount {
     return Intl.message(
