@@ -617,6 +617,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "आपकी घटनाओं, सांख्यिकी और विश्लेषण की आंतरिक लक्षित प्रचार"),
         "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
             "विशेष सूचनाओं का उपयोग करने की क्षमता"),
+        "ProTools": MessageLookupByLibrary.simpleMessage("Pro tools"),
         "ProfileAskOrSupportHiwHint": m28,
         "ProfileAskOrSupportHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("अपने या किसी और के"),
@@ -743,6 +744,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "पता सेट करने के लिए टैप करें"),
         "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(
             "अपने पसंदीदा को चिह्नित करने के लिए दो बार टैप करें।"),
+        "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("और बताओ"),
         "TellUsMoreAboutYourself": m37,
         "Terms": MessageLookupByLibrary.simpleMessage("शर्तें"),

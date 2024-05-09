@@ -617,6 +617,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Внутренняя таргетированная реклама ваших событий, статистика и аналитика"),
         "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
             "Возможность использовать специальные уведомления"),
+        "ProTools": MessageLookupByLibrary.simpleMessage("Pro tools"),
         "ProfileAskOrSupportHiwHint": m28,
         "ProfileAskOrSupportHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("свою или чью-то"),
@@ -748,6 +749,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Нажмите, чтобы ввести адрес"),
         "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(
             ". Нажми дважды, чтобы отметить избранное."),
+        "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("Расскажи еще"),
         "TellUsMoreAboutYourself": m37,
         "Terms": MessageLookupByLibrary.simpleMessage("Условия"),

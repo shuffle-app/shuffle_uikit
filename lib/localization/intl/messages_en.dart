@@ -611,6 +611,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Internal targeted promotion of your events, statistics and analytics"),
         "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
             "Ability to use specialised notifications"),
+        "ProTools": MessageLookupByLibrary.simpleMessage("Pro tools"),
         "ProfileAskOrSupportHiwHint": m28,
         "ProfileAskOrSupportHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("yours or someone else\'s"),
@@ -736,6 +737,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tap to set address"),
         "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(
             ". Tap twice to mark your favorites."),
+        "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("Tell us more"),
         "TellUsMoreAboutYourself": m37,
         "Terms": MessageLookupByLibrary.simpleMessage("Terms"),
