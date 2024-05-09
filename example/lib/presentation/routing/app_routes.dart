@@ -14,4 +14,5 @@ class AppRoutes {
   static const String mapDirections = '/mapDirections';
   static const String hallOfFame = '/hallOfFame';
   static const String adsPage = '/adsPage';
+  static const String proProfile = '/proProfile';
 }

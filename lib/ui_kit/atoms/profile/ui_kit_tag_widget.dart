@@ -5,6 +5,7 @@ class UiKitTagWidget extends StatelessWidget {
   final String title;
   final dynamic icon;
   final Color? textColor;
+  final Color? iconCustomColor;
   final bool showSpacing;
   final bool uniqueTag;
   final double? tagSize;
@@ -17,6 +18,7 @@ class UiKitTagWidget extends StatelessWidget {
     required this.title,
     required this.icon,
     this.textColor,
+    this.iconCustomColor,
     this.tagSize,
     this.customSpace,
     this.uniqueTag = false,
@@ -29,7 +31,7 @@ class UiKitTagWidget extends StatelessWidget {
       color: textColor ?? ColorsFoundation.darkNeutral500,
     );
 
-    final iconColor = uniqueTag ? Colors.white : textColor ?? ColorsFoundation.darkNeutral500;
+    final iconColor = iconCustomColor ?? (uniqueTag ? Colors.white : textColor ?? ColorsFoundation.darkNeutral500);
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -57,7 +59,7 @@ class UiKitTagWidget extends StatelessWidget {
         ),
         SpacingFoundation.horizontalSpace2,
         SizedBox(
-          height:SpacingFoundation.horizontalSpacing20,
+          height: SpacingFoundation.horizontalSpacing20,
           child: Center(
             child: Text(
               title,

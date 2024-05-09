@@ -29,6 +29,11 @@ class BorderRadiusFoundation {
         topRight: Radius.circular(6),
       );
 
+  static BorderRadius get onlyTop16 => const BorderRadius.only(
+        topLeft: Radius.circular(16),
+        topRight: Radius.circular(16),
+      );
+
   static BorderRadius get onlyBottom24 => const BorderRadius.only(
         bottomLeft: Radius.circular(24),
         bottomRight: Radius.circular(24),

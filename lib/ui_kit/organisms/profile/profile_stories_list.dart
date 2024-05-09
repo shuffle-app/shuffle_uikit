@@ -16,7 +16,7 @@ class ProfileStoriesList extends StatelessWidget {
     return UiKitCardWrapper(
       borderRadius: BorderRadius.zero,
       child: SizedBox(
-        height: 180,
+        height: 0.28125.sw * 1.75,
         child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemCount: stories.length,

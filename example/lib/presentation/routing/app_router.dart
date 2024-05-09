@@ -6,6 +6,7 @@ import 'package:example/presentation/ui/location_picker/location_picker_page.dar
 import 'package:example/presentation/ui/main_page/main_page.dart';
 import 'package:example/presentation/ui/onboarding/onboarding_page.dart';
 import 'package:example/presentation/ui/profile/influencer_profile.dart';
+import 'package:example/presentation/ui/profile/pro_profile_page.dart';
 import 'package:example/presentation/ui/showcase/show_case_page.dart';
 import 'package:example/presentation/ui/spinner/spinner_page.dart';
 import 'package:example/presentation/ui/unknown_page/unknown_page.dart';
@@ -38,7 +39,11 @@ class AppRouter {
       case AppRoutes.influencerProfile:
         return MaterialPageRoute(
           settings: settings,
-          builder: (_) => const InfluencerProfile(),
+          builder: (_) => const InfluencerProfile(
+            visitedPlaces: 934,
+            reviewsPosted: 630,
+            pointsEarned: 3256,
+          ),
         );
       case AppRoutes.stand:
         return MaterialPageRoute(
@@ -59,6 +64,15 @@ class AppRouter {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => const ExamplesPage(),
+        );
+      case AppRoutes.proProfile:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) => const ProProfilePage(
+            bookings: 1302,
+            events: 12,
+            reviews: 4556,
+          ),
         );
       case AppRoutes.onBoardingPage:
         return MaterialPageRoute(

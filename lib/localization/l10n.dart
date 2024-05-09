@@ -4884,6 +4884,264 @@ class S {
       args: [],
     );
   }
+
+  /// `Unfollow`
+  String get Unfollow {
+    return Intl.message(
+      'Unfollow',
+      name: 'Unfollow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =0{followers} =1{follower} =2{followers} few{followers} many{followers} other{followers}}`
+  String FollowersCount(num count) {
+    return Intl.plural(
+      count,
+      zero: 'followers',
+      one: 'follower',
+      two: 'followers',
+      few: 'followers',
+      many: 'followers',
+      other: 'followers',
+      name: 'FollowersCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Contacts`
+  String get Contacts {
+    return Intl.message(
+      'Contacts',
+      name: 'Contacts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =0{reviews} =1{review} =2{reviews} few{reviews} many{reviews} other{reviews}}`
+  String ReviewsReceived(num count) {
+    return Intl.plural(
+      count,
+      zero: 'reviews',
+      one: 'review',
+      two: 'reviews',
+      few: 'reviews',
+      many: 'reviews',
+      other: 'reviews',
+      name: 'ReviewsReceived',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count, plural, =0{bookings} =1{booking} =2{bookings} few{bookings} many{bookings} other{bookings}}`
+  String Bookings(num count) {
+    return Intl.plural(
+      count,
+      zero: 'bookings',
+      one: 'booking',
+      two: 'bookings',
+      few: 'bookings',
+      many: 'bookings',
+      other: 'bookings',
+      name: 'Bookings',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count, plural, =0{events} =1{event} =2{events} few{events} many{events} other{events}}`
+  String EventsCount(num count) {
+    return Intl.plural(
+      count,
+      zero: 'events',
+      one: 'event',
+      two: 'events',
+      few: 'events',
+      many: 'events',
+      other: 'events',
+      name: 'EventsCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count, plural, =0{places visited} =1{place visited} =2{places visited} few{places visited} many{places visited} other{places visited}}`
+  String PlacesVisited(num count) {
+    return Intl.plural(
+      count,
+      zero: 'places visited',
+      one: 'place visited',
+      two: 'places visited',
+      few: 'places visited',
+      many: 'places visited',
+      other: 'places visited',
+      name: 'PlacesVisited',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count, plural, =0{reviews posted} =1{review posted} =2{reviews posted} few{reviews posted} many{reviews posted} other{reviews posted}}`
+  String ReviewsPosted(num count) {
+    return Intl.plural(
+      count,
+      zero: 'reviews posted',
+      one: 'review posted',
+      two: 'reviews posted',
+      few: 'reviews posted',
+      many: 'reviews posted',
+      other: 'reviews posted',
+      name: 'ReviewsPosted',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count, plural, =0{points earned} =1{point earned} =2{points earned} few{points earned} many{points earned} other{points earned}}`
+  String PointsEarned(num count) {
+    return Intl.plural(
+      count,
+      zero: 'points earned',
+      one: 'point earned',
+      two: 'points earned',
+      few: 'points earned',
+      many: 'points earned',
+      other: 'points earned',
+      name: 'PointsEarned',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `New`
+  String get New {
+    return Intl.message(
+      'New',
+      name: 'New',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Voice`
+  String get Voice {
+    return Intl.message(
+      'Voice',
+      name: 'Voice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ideal route`
+  String get IdealRoute {
+    return Intl.message(
+      'Ideal route',
+      name: 'IdealRoute',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interview`
+  String get Interview {
+    return Intl.message(
+      'Interview',
+      name: 'Interview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chat`
+  String get Chat {
+    return Intl.message(
+      'Chat',
+      name: 'Chat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `NFT`
+  String get NFT {
+    return Intl.message(
+      'NFT',
+      name: 'NFT',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contest`
+  String get Contest {
+    return Intl.message(
+      'Contest',
+      name: 'Contest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =0{comments} =1{comment} =2{comments} few{comments} many{comments} other{comments}}`
+  String Comments(num count) {
+    return Intl.plural(
+      count,
+      zero: 'comments',
+      one: 'comment',
+      two: 'comments',
+      few: 'comments',
+      many: 'comments',
+      other: 'comments',
+      name: 'Comments',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Respect`
+  String get Respect {
+    return Intl.message(
+      'Respect',
+      name: 'Respect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top`
+  String get Top {
+    return Intl.message(
+      'Top',
+      name: 'Top',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal TOP`
+  String get PersonalTop {
+    return Intl.message(
+      'Personal TOP',
+      name: 'PersonalTop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bookings and Invites`
+  String get BookingsAndInvites {
+    return Intl.message(
+      'Bookings and Invites',
+      name: 'BookingsAndInvites',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

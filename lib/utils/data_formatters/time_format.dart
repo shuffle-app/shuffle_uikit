@@ -6,11 +6,21 @@ import '../../localization/l10n.dart';
 String normalizedTi(TimeOfDay? time, {bool showDateName = true}) {
   if (time == null) return 'nn';
 
-  return '${leadingZeros(showDateName? time.hourOfPeriod : time.hour)}:${leadingZeros(time.minute)}${showDateName ? ' ${time.period.name}' : ''}';
+  return '${leadingZeros(showDateName ? time.hourOfPeriod : time.hour)}:${leadingZeros(time.minute)}${showDateName ? ' ${time.period.name}' : ''}';
+}
+
+String profileStatsFormatter(int value) {
+  if (value < 1000) {
+    return value.toString();
+  } else if (value < 1000000) {
+    return '${(value / 1000).toStringAsFixed(1)}k+';
+  } else {
+    return '${(value / 1000000).toStringAsFixed(1)}m+';
+  }
 }
 
 extension TimeOfDayExtension on TimeOfDay {
-  String get normalizedString{
+  String get normalizedString {
     return normalizedTi(this, showDateName: false);
   }
 }
@@ -33,6 +43,10 @@ String formatDifference(DateTime date) {
   final difference = DateTime.now().difference(date).inDays;
   if (difference == 0) {
     final differenceInHours = DateTime.now().difference(date).inHours;
+    if (differenceInHours == 0) {
+      final differenceInMinutes = DateTime.now().difference(date).inMinutes;
+      return '${differenceInMinutes}m ago';
+    }
 
     return '${differenceInHours}h ago';
   } else if (difference == 1) {
@@ -72,7 +86,7 @@ String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay?
     return convDate;
   } else {
     convDate += date != null ? '${convDate.isEmpty ? '' : ', '}${DateFormat('MMM dd').format(date)}' : '';
-    if (dateTo != null && dateTo!=date) {
+    if (dateTo != null && dateTo != date) {
       convDate += '${date != null ? ' - ' : convDate.isEmpty ? '' : ', '}${DateFormat('MMM dd, yyyy').format(dateTo)}';
     }
   }

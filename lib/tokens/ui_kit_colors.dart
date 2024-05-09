@@ -16,7 +16,7 @@ class UiKitColors {
   static const lightSurface5 = Color(0xffCED2D9);
 
   static const darkNeutral100 = Color(0xffEEEEEF);
-  static const backNeutral16 =  Color(0xA8AAAE29);
+  static const backNeutral16 = Color(0xA8AAAE29);
   static const darkNeutral200 = Color(0xffDCDDDF);
   static const darkNeutral300 = Color(0xffCBCCCE);
   static const darkNeutral400 = Color(0xffB9BBBE);
@@ -35,6 +35,21 @@ class UiKitColors {
 
   static const lightBodyTypographyColor = Color(0xff363956);
   static const darkBodyTypographyColor = darkNeutral100;
+
+  static const silverGradientBegin = Color(0xff707477);
+  static const silverGradientPreMid = Color(0xffBEC0C3);
+  static const silverGradientMid = Color(0xffF9F9FB);
+  static const silverGradientEnd = Color(0xff838588);
+
+  static const bronzeGradientBegin = Color(0xff673016);
+  static const bronzeGradientPreMid = Color(0xffD36D44);
+  static const bronzeGradientMid = Color(0xffFBB891);
+  static const bronzeGradientEnd = Color(0xffBC603D);
+
+  static const goldGradientBegin = Color(0xffEECE6E);
+  static const goldGradientPreMid = Color(0xffBB8930);
+  static const goldGradientMid = Color(0xffF6DA76);
+  static const goldGradientEnd = Color(0xffDBB44D);
 
   static final placeHolderTextColor = const Color(0xff000000).withOpacity(0.24);
 

@@ -474,5 +474,27 @@
   "FridayShort": "Пт",
   "SaturdayShort": "Сб",
   "SundayShort": "Вс",
-  "NotSet": "Не указано"
+  "NotSet": "Не указано",
+  "Unfollow": "Отписаться",
+  "FollowersCount": "{count, plural, =0{подписчиков} =1{подписчик} =2{подписчика} few{подписчиков} many{подписчиков} other{подписчиков}}",
+  "Contacts": "Контакты",
+  "ReviewsReceived": "{count, plural, =0{отзывов} =1{отзыв} =2{отзыва} few{отзывов} many{отзывов} other{отзывов}}",
+  "Bookings": "{count, plural, =0{броней} =1{бронь} =2{брони} few{броней} many{броней} other{броней}}",
+  "EventsCount": "{count, plural, =0{событий} =1{событие} =2{события} few{событий} many{событий} other{событий}}",
+  "PlacesVisited": "{count, plural, =0{мест посещено} =1{место посещено} =2{мест посещено} few{мест посещено} many{мест посещено} other{мест посещено}}",
+  "ReviewsPosted": "{count, plural, =0{отзывов} =1{отзыва} =2{отзывов} few{отзывов} many{отзывов} other{отзывов}}",
+  "PointsEarned": "{count, plural, =0{поинтов получено} =1{поинта получено} =2{поинтов получено} few{поинтов получено} many{поинтов получено} other{поинтов получено}}",
+  "New": "Новое",
+  "Voice": "Аудиосообщения",
+  "IdealRoute": "Идеальный маршрут",
+  "Interview": "Интервью",
+  "Chat": "Чат",
+  "NFT": "NFT",
+  "Contest": "Конкурс",
+  "Comments": "{count, plural, =0{комментариев} =1{комментарий} =2{комментария} few{комментариев} many{комментариев} other{комментариев}}",
+  "Respect": "Уважение",
+  "Top": "ТОП",
+  "PersonalTop": "Личный ТОП",
+  "BookingsAndInvites": "Брони и Приглашения"
+
 }

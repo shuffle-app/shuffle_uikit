@@ -1,6 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:flutter/foundation.dart';
 
 class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
   final BaseUiKitMedia media;
@@ -31,8 +31,7 @@ class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
           top: 12.h,
           left: 12.w,
           child: BlurredPlaceVideoPlayButton(
-            onPressed: () => Navigator.of(context, rootNavigator: true)
-                .push(PopUpVideoPlayer(videoUri: media.videoLink!)),
+            onPressed: () => Navigator.of(context, rootNavigator: true).push(PopUpVideoPlayer(videoUri: media.videoLink!)),
           ),
         ),
       ],

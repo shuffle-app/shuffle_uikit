@@ -474,5 +474,28 @@
   "FridayShort": "Fri",
   "SaturdayShort": "Sat",
   "SundayShort": "Sun",
-  "NotSet": "Not set"
+  "NotSet": "Not set",
+  "Unfollow": "Unfollow",
+  "FollowersCount": "{count, plural, =0{followers} =1{follower} =2{followers} few{followers} many{followers} other{followers}}",
+  "Contacts": "Contacts",
+  "ReviewsReceived": "{count, plural, =0{reviews} =1{review} =2{reviews} few{reviews} many{reviews} other{reviews}}",
+  "Bookings": "{count, plural, =0{bookings} =1{booking} =2{bookings} few{bookings} many{bookings} other{bookings}}",
+  "EventsCount": "{count, plural, =0{events} =1{event} =2{events} few{events} many{events} other{events}}",
+  "PlacesVisited": "{count, plural, =0{places visited} =1{place visited} =2{places visited} few{places visited} many{places visited} other{places visited}}",
+  "ReviewsPosted": "{count, plural, =0{reviews posted} =1{review posted} =2{reviews posted} few{reviews posted} many{reviews posted} other{reviews posted}}",
+  "PointsEarned": "{count, plural, =0{points earned} =1{point earned} =2{points earned} few{points earned} many{points earned} other{points earned}}",
+  "New": "New",
+  "Voice": "Voice",
+  "IdealRoute": "Ideal route",
+  "Interview": "Interview",
+  "Chat": "Chat",
+  "NFT": "NFT",
+  "Contest": "Contest",
+  "Comments": "{count, plural, =0{comments} =1{comment} =2{comments} few{comments} many{comments} other{comments}}",
+  "Respect": "Respect",
+  "Top": "Top",
+  "PersonalTop": "Personal TOP",
+  "BookingsAndInvites": "Bookings and Invites"
+
+
 }

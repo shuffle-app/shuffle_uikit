@@ -113,6 +113,10 @@ class _MainPageState extends State<MainPage> {
                   text: 'Influencer Profile', onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile)),
             ),
             SpacingFoundation.verticalSpace16,
+            context.button(
+              data: BaseUiKitButtonData(text: 'Pro Profile', onPressed: () => Navigator.pushNamed(context, AppRoutes.proProfile)),
+            ),
+            SpacingFoundation.verticalSpace16,
             OrdinaryButton(
               text: 'Dialog testing page',
               onPressed: () => context.push(const DialogTestingPage()),

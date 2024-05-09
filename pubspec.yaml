@@ -93,6 +93,7 @@ dependencies:
   dropdown_button2: ^2.3.9
   image_picker: ^1.0.7
   image: ^4.1.7
+  infinite_carousel: ^1.1.1
 
 dependency_overrides:
   watcher: ^1.1.0

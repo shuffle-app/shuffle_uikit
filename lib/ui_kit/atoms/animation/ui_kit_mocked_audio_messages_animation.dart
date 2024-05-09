@@ -33,21 +33,28 @@ class _UiKitMockedAudioMessagesAnimationState extends State<UiKitMockedAudioMess
           duration: animDuration,
           top: SpacingFoundation.verticalSpacing32,
           left: topTileOffset,
-          child: const _UiKitMockedAudioMessageTile(),
+          child: const UiKitAudioMessageTile(),
         ),
         AnimatedPositioned(
           duration: animDuration,
           left: SpacingFoundation.horizontalSpacing32,
           top: bottomTileOffset,
-          child: const _UiKitMockedAudioMessageTile(),
+          child: const UiKitAudioMessageTile(),
         ),
       ],
     );
   }
 }
 
-class _UiKitMockedAudioMessageTile extends StatelessWidget {
-  const _UiKitMockedAudioMessageTile({Key? key}) : super(key: key);
+class UiKitAudioMessageTile extends StatelessWidget {
+  final double? width;
+  final int? audioWaveCount;
+
+  const UiKitAudioMessageTile({
+    Key? key,
+    this.width,
+    this.audioWaveCount,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -79,10 +86,10 @@ class _UiKitMockedAudioMessageTile extends StatelessWidget {
           ),
           SpacingFoundation.horizontalSpace12,
           UiKitMockAudioWave(
-            itemCount: 20,
+            itemCount: audioWaveCount ?? 20,
             spacing: 2,
             color: ColorsFoundation.darkNeutral700,
-            availableWidth: 0.4.sw,
+            availableWidth: width ?? 0.4.sw,
             scrollable: false,
           ),
           SpacingFoundation.horizontalSpace12,

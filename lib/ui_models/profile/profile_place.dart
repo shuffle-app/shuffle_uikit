@@ -6,7 +6,11 @@ class ProfilePlace {
   final DateTime createdAt;
   final String postBody;
   final double? stars;
-  final int helpfulCount;
+  final int? heartEyeCount;
+  final int? thumbsUpCount;
+  final int? fireCount;
+  final int? sunglassesCount;
+  final int? smileyCount;
   final List<UiKitTag> tags;
 
   ProfilePlace({
@@ -15,7 +19,11 @@ class ProfilePlace {
     required this.postBody,
     required this.createdAt,
     this.stars,
-    required this.helpfulCount,
+    this.heartEyeCount,
+    this.thumbsUpCount,
+    this.fireCount,
+    this.sunglassesCount,
+    this.smileyCount,
     required this.tags,
   });
 }

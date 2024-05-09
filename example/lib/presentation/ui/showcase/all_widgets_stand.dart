@@ -23,10 +23,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   String _selectedDropDownValue = '_selectedMenuItem';
   CountryModel? _selectedCountry;
   CustomBackgroundSwitchOption selectedOption = CustomBackgroundSwitchOption(
-    title: 'Personal',
-    iconLink: GraphicsFoundation.instance.svg.personLayered.path,
-    value: 'user'
-  );
+      title: 'Personal', iconLink: GraphicsFoundation.instance.svg.personLayered.path, value: 'user');
 
   bool selection = false;
   bool switchValue = false;

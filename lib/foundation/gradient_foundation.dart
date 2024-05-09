@@ -5,6 +5,59 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
+  // background: linear-gradient(90deg, #EECE6E 0%, #BB8930 26.05%, #F6DA76 62.77%, #DBB44D 105.09%);
+
+  static const goldGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.goldGradientBegin,
+      ColorsFoundation.goldGradientPreMid,
+      ColorsFoundation.goldGradientMid,
+      ColorsFoundation.goldGradientEnd,
+    ],
+    stops: [
+      0,
+      0.2605,
+      0.6277,
+      1.0509,
+    ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
+
+  static const bronzeGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.bronzeGradientBegin,
+      ColorsFoundation.bronzeGradientPreMid,
+      ColorsFoundation.bronzeGradientMid,
+      ColorsFoundation.bronzeGradientEnd,
+    ],
+    stops: [
+      0,
+      0.3101,
+      0.6756,
+      1.0509,
+    ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
+
+  static const silverGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.silverGradientBegin,
+      ColorsFoundation.silverGradientPreMid,
+      ColorsFoundation.silverGradientMid,
+      ColorsFoundation.silverGradientEnd,
+    ],
+    stops: [
+      0,
+      0.3101,
+      0.6277,
+      1.0509,
+    ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  );
+
   static final updatePageDarkBackgroundGradient = LinearGradient(
     colors: [
       ColorsFoundation.pink.withOpacity(0.25),
