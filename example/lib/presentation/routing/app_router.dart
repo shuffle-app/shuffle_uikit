@@ -5,8 +5,6 @@ import 'package:example/presentation/ui/examples/user_content_type_switch_animat
 import 'package:example/presentation/ui/location_picker/location_picker_page.dart';
 import 'package:example/presentation/ui/main_page/main_page.dart';
 import 'package:example/presentation/ui/onboarding/onboarding_page.dart';
-import 'package:example/presentation/ui/profile/influencer_profile.dart';
-import 'package:example/presentation/ui/profile/pro_profile_page.dart';
 import 'package:example/presentation/ui/showcase/show_case_page.dart';
 import 'package:example/presentation/ui/spinner/spinner_page.dart';
 import 'package:example/presentation/ui/unknown_page/unknown_page.dart';
