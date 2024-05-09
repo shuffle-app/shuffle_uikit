@@ -50,16 +50,18 @@ class UiKitInfluencerUserAccountAvatarWrapper extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: ColorsFoundation.darkNeutral400,
+          color: ColorsFoundation.darkNeutral400,
+          borderRadius: borderRadius ?? BorderRadiusFoundation.max,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.white.withOpacity(0.25),
+              blurRadius: 10,
+              spreadRadius: 3,
+              offset: Offset.zero,
+            )
+          ]),
+      foregroundDecoration: BoxDecoration(
         borderRadius: borderRadius ?? BorderRadiusFoundation.max,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.white.withOpacity(0.25),
-            blurRadius: 10,
-            spreadRadius: 3,
-            offset: Offset.zero,
-          )
-        ],
         border: disabled
             ? Border.all(
                 color: ColorsFoundation.darkNeutral400.withOpacity(0.4),
@@ -70,10 +72,7 @@ class UiKitInfluencerUserAccountAvatarWrapper extends StatelessWidget {
                 width: borderWidth,
               ),
       ),
-      child: ClipRRect(
-        borderRadius: borderRadius ?? BorderRadiusFoundation.max,
-        child: child,
-      ),
+      child: child,
     );
   }
 }

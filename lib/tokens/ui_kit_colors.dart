@@ -69,6 +69,7 @@ class UiKitColors {
   static const brightRed = Color(0xffFF1619);
   static const pink = Color(0xffD808FA);
   static const purple = Color(0xffFF1EAE);
+  static const deepPurple = Color(0xff9B23AF);
   static const pinkLight = Color(0xffE379C5);
   static const pinkDark = Color(0xff7F6683);
   static const error = Color(0xffFF453A);

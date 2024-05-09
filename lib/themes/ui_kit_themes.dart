@@ -13,7 +13,7 @@ class UiKitThemes {
   late final lightThemeData = defaultThemeData.copyWith(
     scaffoldBackgroundColor: ColorsFoundation.lightSurface,
     iconTheme: const IconThemeData(color: ColorsFoundation.solidLightSurface),
-    colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.info, onSurface: Colors.black),
+    colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.deepPurple, onSurface: Colors.black),
     dropdownMenuTheme: DropdownMenuThemeData(
       textStyle: const TextStyle(
         fontFamily: 'Unbounded',
@@ -91,7 +91,7 @@ class UiKitThemes {
       rangeSelectionBackgroundColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
       dayForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
       yearForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
-      surfaceTintColor: ColorsFoundation.info,
+      surfaceTintColor: ColorsFoundation.deepPurple,
       rangePickerHeaderHelpStyle: _pickerTextStyle.copyWith(color: Colors.black),
       yearStyle: _pickerTextStyle.copyWith(color: Colors.black),
       headerHelpStyle: _pickerTextStyle.copyWith(color: Colors.black),
@@ -391,8 +391,8 @@ class UiKitThemes {
         helpTextStyle: _pickerTextStyle.copyWith(fontSize: 16),
         backgroundColor: UiKitColors.surface4,
         hourMinuteShape: RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all8),
-        hourMinuteColor: ColorsFoundation.info,
-        dialHandColor: ColorsFoundation.info,
+        hourMinuteColor: ColorsFoundation.deepPurple,
+        dialHandColor: ColorsFoundation.deepPurple,
         hourMinuteTextColor: Colors.white,
         entryModeIconColor: Colors.white,
         dialTextColor: Colors.white,
@@ -409,10 +409,10 @@ class UiKitThemes {
       //   }
       //   return Colors.transparent;
       // }),
-      rangeSelectionBackgroundColor: ColorsFoundation.info.withOpacity(0.24),
+      rangeSelectionBackgroundColor: ColorsFoundation.deepPurple.withOpacity(0.24),
       dayForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
       yearForegroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-      surfaceTintColor: ColorsFoundation.info,
+      surfaceTintColor: ColorsFoundation.deepPurple,
       rangePickerHeaderHelpStyle: _pickerTextStyle,
       yearStyle: _pickerTextStyle,
       headerHelpStyle: _pickerTextStyle,
@@ -426,7 +426,7 @@ class UiKitThemes {
       // dialBackgroundColor: ColorsFoundation.darkNeutral500
     ),
 
-    colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.info, onSurface: Colors.white),
+    colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.deepPurple, onSurface: Colors.white),
     // colorScheme:  const ColorScheme.light().copyWith(onSurface: Colors.white),
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(

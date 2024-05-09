@@ -3935,6 +3935,26 @@ class S {
     );
   }
 
+  /// `Pro tools`
+  String get ProTools {
+    return Intl.message(
+      'Pro tools',
+      name: 'ProTools',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Taxi`
+  String get Taxi {
+    return Intl.message(
+      'Taxi',
+      name: 'Taxi',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Delete account`
   String get DeleteAccount {
     return Intl.message(

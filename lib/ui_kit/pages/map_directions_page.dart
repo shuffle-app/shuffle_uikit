@@ -11,6 +11,7 @@ class MapDirectionsPage extends StatefulWidget {
   final TextEditingController searchController;
   final String destinationTitle;
   final VoidCallback? onDirectionsRequested;
+  final VoidCallback? onTaxisRequested;
   final LatLng destination;
 
   const MapDirectionsPage({
@@ -18,6 +19,7 @@ class MapDirectionsPage extends StatefulWidget {
     required this.currentLocationNotifier,
     this.onCurrentLocationRequested,
     this.onDirectionsRequested,
+    this.onTaxisRequested,
     required this.searchController,
     required this.destination,
     required this.destinationTitle,
@@ -64,47 +66,55 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
   }
 
   void _currentLocationListener() async {
-    final points = PolylinePoints();
-    final result = await points.getRouteBetweenCoordinates(
-      apiKey,
-      PointLatLng(widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
-      PointLatLng(widget.destination.latitude, widget.destination.longitude),
-    );
-    await controller?.animateCamera(
-      CameraUpdate.newLatLngBounds(
-        LatLngBounds(
-          southwest: LatLng(
-            min(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
-            min(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
-          ),
-          northeast: LatLng(
-            max(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
-            max(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
-          ),
-        ),
-        72.w,
-      ),
-    );
-    loading = false;
-    setState(() {
-      directionLines = [
-        Polyline(
-          polylineId: const PolylineId('directions'),
-          points: result.points.map((e) => LatLng(e.latitude, e.longitude)).toList(),
-          color: ColorsFoundation.info,
-          width: 4,
-          startCap: Cap.buttCap,
-          jointType: JointType.bevel,
-          endCap: Cap.roundCap,
-          visible: true,
-        ),
-      ];
-      marker = Marker(
-        markerId: const MarkerId('destination'),
-        position: LatLng(result.points.last.latitude, result.points.last.longitude),
-        icon: markerIcon,
+    try {
+      final points = PolylinePoints();
+      final result = await points.getRouteBetweenCoordinates(
+        apiKey,
+        PointLatLng(widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
+        PointLatLng(widget.destination.latitude, widget.destination.longitude),
       );
-    });
+      await controller?.animateCamera(
+        CameraUpdate.newLatLngBounds(
+          LatLngBounds(
+            southwest: LatLng(
+              min(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
+              min(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
+            ),
+            northeast: LatLng(
+              max(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
+              max(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
+            ),
+          ),
+          72.w,
+        ),
+      );
+
+      setState(() {
+        directionLines = [
+          Polyline(
+            polylineId: const PolylineId('directions'),
+            points: result.points.map((e) => LatLng(e.latitude, e.longitude)).toList(),
+            color: ColorsFoundation.info,
+            width: 4,
+            startCap: Cap.buttCap,
+            jointType: JointType.bevel,
+            endCap: Cap.roundCap,
+            visible: true,
+          ),
+        ];
+        marker = Marker(
+          markerId: const MarkerId('destination'),
+          position: LatLng(result.points.last.latitude, result.points.last.longitude),
+          icon: markerIcon,
+        );
+      });
+    } catch (e) {
+      SnackBarUtils.show(message: 'Directions unavailable', context: context, type: AppSnackBarType.error);
+    } finally {
+      setState(() {
+        loading = false;
+      });
+    }
   }
 
   @override
@@ -238,44 +248,89 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                 style: theme?.boldTextTheme.caption1Medium.copyWith(color: Colors.black),
               ),
               SpacingFoundation.verticalSpace4,
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.resolveWith((states) {
-                    if (states.contains(MaterialState.disabled)) return theme?.colorScheme.darkNeutral300;
+              Row(children: [
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.disabled)) return theme?.colorScheme.darkNeutral300;
 
-                    return theme?.colorScheme.info;
-                  }),
-                  foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-                  elevation: MaterialStateProperty.resolveWith((states) => 0),
-                  splashFactory: WaveSplash.splashFactory,
-                  shape: MaterialStateProperty.resolveWith(
-                    (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.max),
-                  ),
-                  padding: MaterialStateProperty.resolveWith(
-                    (states) => EdgeInsets.symmetric(
-                      vertical: EdgeInsetsFoundation.vertical8,
-                      horizontal: EdgeInsetsFoundation.horizontal16,
+                      return theme?.colorScheme.surface1;
+                      // return theme?.colorScheme.info;
+                    }),
+                    foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+                    elevation: MaterialStateProperty.resolveWith((states) => 0),
+                    splashFactory: WaveSplash.splashFactory,
+                    shape: MaterialStateProperty.resolveWith(
+                      (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.max),
+                    ),
+                    padding: MaterialStateProperty.resolveWith(
+                      (states) => EdgeInsets.symmetric(
+                        vertical: EdgeInsetsFoundation.vertical8,
+                        horizontal: EdgeInsetsFoundation.horizontal16,
+                      ),
                     ),
                   ),
+                  onPressed: widget.onDirectionsRequested,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ImageWidget(
+                        iconData: ShuffleUiKitIcons.route,
+                        height: 15.h,
+                        color: Colors.white,
+                        fit: BoxFit.fitHeight,
+                      ),
+                      SpacingFoundation.horizontalSpace4,
+                      Text(
+                        S.of(context).Directions.toUpperCase(),
+                        style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
+                      ),
+                    ],
+                  ),
                 ),
-                onPressed: widget.onDirectionsRequested,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    ImageWidget(
-                      iconData: ShuffleUiKitIcons.route,
-                      height: 15.h,
-                      color: Colors.white,
-                      fit: BoxFit.fitHeight,
+                if (widget.onTaxisRequested != null) ...[
+                  SpacingFoundation.horizontalSpace4,
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.resolveWith((states) {
+                        if (states.contains(MaterialState.disabled)) return theme?.colorScheme.darkNeutral300;
+
+                        return theme?.colorScheme.surface1;
+                        // return theme?.colorScheme.info;
+                      }),
+                      foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+                      elevation: MaterialStateProperty.resolveWith((states) => 0),
+                      splashFactory: WaveSplash.splashFactory,
+                      shape: MaterialStateProperty.resolveWith(
+                        (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.max),
+                      ),
+                      padding: MaterialStateProperty.resolveWith(
+                        (states) => EdgeInsets.symmetric(
+                          vertical: EdgeInsetsFoundation.vertical8,
+                          horizontal: EdgeInsetsFoundation.horizontal16,
+                        ),
+                      ),
                     ),
-                    SpacingFoundation.horizontalSpace4,
-                    Text(
-                      S.of(context).Directions,
-                      style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
+                    onPressed: widget.onTaxisRequested,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        ImageWidget(
+                          svgAsset: GraphicsFoundation.instance.svg.taxi,
+                          height: 15.h,
+                          color: Colors.white,
+                          fit: BoxFit.fitHeight,
+                        ),
+                        SpacingFoundation.horizontalSpace4,
+                        Text(
+                          S.of(context).Taxi.toUpperCase(),
+                          style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
+                  )
+                ],
+              ]),
               SpacingFoundation.verticalSpace24,
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),

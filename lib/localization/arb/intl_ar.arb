@@ -426,6 +426,8 @@
   "UpdateAppMessageTitle": "Time for update",
   "UpdateAppMessage": "It's been a while since you've updated our app, and we've added a lot of handy stuff in the meantime",
   "Control": "Control",
+  "ProTools": "Pro tools",
+  "Taxi": "Taxi",
   "Rating": "Rating",
   "AddFeedback": "Add feedback",
   "AddFeedbackFieldTitle": "Describe your experience",

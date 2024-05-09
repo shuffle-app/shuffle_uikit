@@ -51,7 +51,7 @@ class UiKitReactionPreview extends StatelessWidget {
             ),
           if (!isEmpty)
             ClipRRect(
-              borderRadius: BorderRadiusFoundation.all24,
+              borderRadius: BorderRadiusFoundation.all16,
               child: ImageWidget(
                 color: viewed ? ColorsFoundation.darkNeutral900.withOpacity(0.5) : null,
                 colorBlendMode: viewed ? BlendMode.lighten : null,
@@ -61,7 +61,7 @@ class UiKitReactionPreview extends StatelessWidget {
             ),
           Material(
             color: Colors.transparent,
-            borderRadius: BorderRadiusFoundation.all24,
+            borderRadius: BorderRadiusFoundation.all16,
             clipBehavior: Clip.hardEdge,
             child: InkWell(
               onTap: onTap,
@@ -69,7 +69,7 @@ class UiKitReactionPreview extends StatelessWidget {
                 width: width,
                 height: height,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadiusFoundation.all24,
+                  borderRadius: BorderRadiusFoundation.all16,
                   border: isEmpty
                       ? Border.all(width: 2, color: ColorsFoundation.neutral40)
                       : viewed
