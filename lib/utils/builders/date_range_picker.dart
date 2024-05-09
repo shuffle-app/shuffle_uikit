@@ -5,7 +5,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context, {DateTimeRange? initialDateRange, String? title}) async {
+Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context,
+    {DateTimeRange? initialDateRange, String? title}) async {
   final DateTimeRange? result = await showDialog(
     context: context,
     builder: (context) {
@@ -39,14 +40,20 @@ Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context, {DateTime
                 onStartDateChanged: (DateTime? value) {
                   if (value != null) {
                     setState(() {
-                      range = DateTimeRange(start: value, end: value.isAfter(range.end) ? value : range.end);
+                      range = DateTimeRange(start: value, end: value);
+                      // range = DateTimeRange(start: value, end: value.isAfter(range.end) ? value : range.end);
                     });
                   }
                 },
                 onEndDateChanged: (DateTime? value) {
                   if (value != null) {
                     setState(() {
-                      range = DateTimeRange(end: value, start: range.start);
+                      // range = DateTimeRange(end: value, start: range.start);
+                      if (range.start.isBefore(value)) {
+                        range = DateTimeRange(end: value, start: range.start);
+                      } else {
+                        range = DateTimeRange(end: value, start: value);
+                      }
                     });
                   }
                 },
@@ -69,7 +76,8 @@ Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context, {DateTime
                   SpacingFoundation.horizontalSpace4,
                   context.dialogButton(
                     dialogButtonType: DialogButtonType.buttonWhite,
-                    data: BaseUiKitButtonData(text: S.of(context).Ok, onPressed: () => context.pop<DateTimeRange>(result: range)),
+                    data: BaseUiKitButtonData(
+                        text: S.of(context).Ok, onPressed: () => context.pop<DateTimeRange>(result: range)),
                     small: true,
                   )
                 ],
@@ -497,8 +505,9 @@ class _DayHeaders extends StatelessWidget {
 
     return Container(
       constraints: BoxConstraints(
-        maxWidth:
-            MediaQuery.orientationOf(context) == Orientation.landscape ? _maxCalendarWidthLandscape : _maxCalendarWidthPortrait,
+        maxWidth: MediaQuery.orientationOf(context) == Orientation.landscape
+            ? _maxCalendarWidthLandscape
+            : _maxCalendarWidthPortrait,
         maxHeight: _monthItemRowHeight,
       ),
       child: GridView.custom(
@@ -749,16 +758,20 @@ class _MonthItemState extends State<_MonthItem> {
     TextStyle? itemStyle = textTheme?.caption1;
 
     final bool isRangeSelected = widget.selectedDateStart != null && widget.selectedDateEnd != null;
-    final bool isSelectedDayStart = widget.selectedDateStart != null && dayToBuild.isAtSameMomentAs(widget.selectedDateStart!);
-    final bool isSelectedDayEnd = widget.selectedDateEnd != null && dayToBuild.isAtSameMomentAs(widget.selectedDateEnd!);
-    final bool isInRange =
-        isRangeSelected && dayToBuild.isAfter(widget.selectedDateStart!) && dayToBuild.isBefore(widget.selectedDateEnd!);
+    final bool isSelectedDayStart =
+        widget.selectedDateStart != null && dayToBuild.isAtSameMomentAs(widget.selectedDateStart!);
+    final bool isSelectedDayEnd =
+        widget.selectedDateEnd != null && dayToBuild.isAtSameMomentAs(widget.selectedDateEnd!);
+    final bool isInRange = isRangeSelected &&
+        dayToBuild.isAfter(widget.selectedDateStart!) &&
+        dayToBuild.isBefore(widget.selectedDateEnd!);
 
     T? effectiveValue<T>(T? Function(DatePickerThemeData? theme) getProperty) {
       return getProperty(datePickerTheme) ?? getProperty(defaults);
     }
 
-    T? resolve<T>(MaterialStateProperty<T>? Function(DatePickerThemeData? theme) getProperty, Set<MaterialState> states) {
+    T? resolve<T>(
+        MaterialStateProperty<T>? Function(DatePickerThemeData? theme) getProperty, Set<MaterialState> states) {
       return effectiveValue(
         (DatePickerThemeData? theme) {
           return getProperty(theme)?.resolve(states);
@@ -773,11 +786,13 @@ class _MonthItemState extends State<_MonthItem> {
 
     // final Color? dayForegroundColor =
     //     resolve<Color?>((DatePickerThemeData? theme) => theme?.dayForegroundColor, states);
-    final Color? dayBackgroundColor = resolve<Color?>((DatePickerThemeData? theme) => theme?.dayBackgroundColor, states);
+    final Color? dayBackgroundColor =
+        resolve<Color?>((DatePickerThemeData? theme) => theme?.dayBackgroundColor, states);
     final MaterialStateProperty<Color?> dayOverlayColor =
         MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) => effectiveValue(
-              (DatePickerThemeData? theme) =>
-                  isInRange ? theme?.rangeSelectionOverlayColor?.resolve(states) : theme?.dayOverlayColor?.resolve(states),
+              (DatePickerThemeData? theme) => isInRange
+                  ? theme?.rangeSelectionOverlayColor?.resolve(states)
+                  : theme?.dayOverlayColor?.resolve(states),
             ));
 
     _HighlightPainter? highlightPainter;
@@ -816,7 +831,7 @@ class _MonthItemState extends State<_MonthItem> {
       itemStyle = textTheme?.caption1;
       // itemStyle = textTheme?.caption1.apply(color: colorScheme.primary);
       decoration = BoxDecoration(
-        border: Border.all(color: colorScheme?.info ?? Colors.transparent),
+        border: Border.all(color: ColorsFoundation.deepPurple ?? Colors.transparent),
         // border: Border.all(color: colorScheme.primary),
         shape: BoxShape.circle,
       );
@@ -830,7 +845,8 @@ class _MonthItemState extends State<_MonthItem> {
     // formatted full date.
     final String semanticLabelSuffix =
         DateUtils.isSameDay(widget.currentDate, dayToBuild) ? ', ${localizations.currentDateLabel}' : '';
-    String semanticLabel = '${localizations.formatDecimal(day)}, ${localizations.formatFullDate(dayToBuild)}$semanticLabelSuffix';
+    String semanticLabel =
+        '${localizations.formatDecimal(day)}, ${localizations.formatFullDate(dayToBuild)}$semanticLabelSuffix';
     if (isSelectedDayStart) {
       semanticLabel = localizations.dateRangeStartDateSemanticLabel(semanticLabel);
     } else if (isSelectedDayEnd) {
@@ -947,8 +963,9 @@ class _MonthItemState extends State<_MonthItem> {
       paddedDayItems.addAll(weekList);
     }
 
-    final double maxWidth =
-        MediaQuery.orientationOf(context) == Orientation.landscape ? _maxCalendarWidthLandscape : _maxCalendarWidthPortrait;
+    final double maxWidth = MediaQuery.orientationOf(context) == Orientation.landscape
+        ? _maxCalendarWidthLandscape
+        : _maxCalendarWidthPortrait;
     return Column(
       children: <Widget>[
         Container(

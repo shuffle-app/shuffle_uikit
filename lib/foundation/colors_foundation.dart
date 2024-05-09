@@ -55,6 +55,7 @@ class ColorsFoundation {
   static const gradientGreyDark2 = UiKitColors.gradientGreyDark2;
   static const gradientGreyDark3 = UiKitColors.gradientGreyDark3;
   static const lemon = UiKitColors.lemon;
+  static const deepPurple = UiKitColors.deepPurple;
   static const brightRed = UiKitColors.brightRed;
   static const purple = UiKitColors.purple;
   static const lightBlue = UiKitColors.lightBlue;
