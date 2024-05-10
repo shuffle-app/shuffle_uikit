@@ -9,8 +9,8 @@ class AdsPage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          context.advertisementBanner(
-            data: BaseUiKitAdvertisementBannerData(
+          context.advertisementImageBanner(
+            data: BaseUiKitAdvertisementImageBannerData(
               availableWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
               imageLink: GraphicsFoundation.instance.png.mockAdBanner.path,
               title: 'Dubai',
@@ -18,8 +18,8 @@ class AdsPage extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace24,
-          context.advertisementBanner(
-            data: BaseUiKitAdvertisementBannerData(
+          context.advertisementImageBanner(
+            data: BaseUiKitAdvertisementImageBannerData(
               availableWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
               imageLink: GraphicsFoundation.instance.png.mockAdBanner1.path,
               title: 'Dubai',
@@ -27,8 +27,8 @@ class AdsPage extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace24,
-          context.advertisementBanner(
-            data: BaseUiKitAdvertisementBannerData(
+          context.advertisementImageBanner(
+            data: BaseUiKitAdvertisementImageBannerData(
               availableWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
               imageLink: GraphicsFoundation.instance.png.mockAdBanner2.path,
               title: 'Dubai',
@@ -36,8 +36,8 @@ class AdsPage extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace24,
-          context.advertisementBanner(
-            data: BaseUiKitAdvertisementBannerData(
+          context.advertisementImageBanner(
+            data: BaseUiKitAdvertisementImageBannerData(
               availableWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
               imageLink: GraphicsFoundation.instance.png.mockAdBanner3.path,
               title: 'Dubai',
@@ -45,8 +45,8 @@ class AdsPage extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace24,
-          context.advertisementBanner(
-            data: BaseUiKitAdvertisementBannerData(
+          context.advertisementImageBanner(
+            data: BaseUiKitAdvertisementImageBannerData(
               availableWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
               imageLink: GraphicsFoundation.instance.png.mockAdBanner4.path,
               title: 'Dubai',
@@ -54,8 +54,8 @@ class AdsPage extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace24,
-          context.advertisementBanner(
-            data: BaseUiKitAdvertisementBannerData(
+          context.advertisementImageBanner(
+            data: BaseUiKitAdvertisementImageBannerData(
               availableWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
               imageLink: GraphicsFoundation.instance.png.mockAdBanner5.path,
               title: 'Dubai',
@@ -63,8 +63,8 @@ class AdsPage extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace24,
-          context.advertisementBanner(
-            data: BaseUiKitAdvertisementBannerData(
+          context.advertisementImageBanner(
+            data: BaseUiKitAdvertisementImageBannerData(
               availableWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
               imageLink: GraphicsFoundation.instance.png.mockAdBanner6.path,
               title: 'Dubai',
@@ -72,8 +72,8 @@ class AdsPage extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace24,
-          context.advertisementBanner(
-            data: BaseUiKitAdvertisementBannerData(
+          context.advertisementImageBanner(
+            data: BaseUiKitAdvertisementImageBannerData(
               availableWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
               imageLink: GraphicsFoundation.instance.png.mockAdBanner7.path,
               title: 'Dubai',
@@ -81,8 +81,8 @@ class AdsPage extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace24,
-          context.advertisementBanner(
-            data: BaseUiKitAdvertisementBannerData(
+          context.advertisementImageBanner(
+            data: BaseUiKitAdvertisementImageBannerData(
               availableWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
               imageLink: GraphicsFoundation.instance.png.mockAdBanner8.path,
               title: 'Dubai',
@@ -90,8 +90,8 @@ class AdsPage extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace24,
-          context.advertisementBanner(
-            data: BaseUiKitAdvertisementBannerData(
+          context.advertisementImageBanner(
+            data: BaseUiKitAdvertisementImageBannerData(
               availableWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
               imageLink: GraphicsFoundation.instance.png.mockAdBanner9.path,
               title: 'Dubai',
@@ -99,8 +99,8 @@ class AdsPage extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace24,
-          context.advertisementBanner(
-            data: BaseUiKitAdvertisementBannerData(
+          context.advertisementImageBanner(
+            data: BaseUiKitAdvertisementImageBannerData(
               availableWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
               imageLink: GraphicsFoundation.instance.png.mockAdBanner10.path,
               title: 'Dubai',
@@ -108,8 +108,8 @@ class AdsPage extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace24,
-          context.advertisementBanner(
-            data: BaseUiKitAdvertisementBannerData(
+          context.advertisementImageBanner(
+            data: BaseUiKitAdvertisementImageBannerData(
               availableWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
               imageLink: GraphicsFoundation.instance.png.mockAdBanner11.path,
               title: 'Dubai',

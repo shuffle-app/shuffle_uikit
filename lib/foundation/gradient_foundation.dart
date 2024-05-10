@@ -185,6 +185,24 @@ class GradientFoundation {
     transform: GradientRotation(pi / 6),
   );
 
+  // background: linear-gradient(121.73deg, #E23301 -34.73%, #000000 48.62%, #D52DD3 153.72%);
+
+  static const adBannerGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.pink,
+      ColorsFoundation.error,
+      ColorsFoundation.yellow,
+    ],
+    begin: Alignment.topRight,
+    end: Alignment.bottomLeft,
+    transform: GradientRotation(-pi / 12),
+    stops: [
+      0.3473,
+      0.4862,
+      1.5372,
+    ],
+  );
+
   static const defaultLinearGradient = LinearGradient(
     colors: [
       ColorsFoundation.pink,
@@ -404,6 +422,24 @@ class GradientFoundation {
       0.3,
       0.5,
       0.6,
+      0.9,
+    ],
+    end: Alignment.bottomCenter,
+    begin: Alignment.topCenter,
+  );
+  static const whiteLinearInvertedGradient = LinearGradient(
+    colors: [
+      // Colors.transparent,
+      Colors.white,
+      Colors.white70,
+      Colors.white54,
+      Colors.white30,
+    ],
+    stops: [
+      0,
+      // 0.1,
+      0.3,
+      0.5,
       0.9,
     ],
     end: Alignment.bottomCenter,

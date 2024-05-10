@@ -91,8 +91,12 @@ abstract class WidgetsAbstractFactory {
     required BaseUiKitUserTileData data,
   });
 
-  AdvertisementFactory createAdvertisement({
-    required BaseUiKitAdvertisementBannerData data,
+  AdvertisementFactory createAdvertisementTextBanner({
+    required BaseUiKitAdvertisementTextBannerData data,
+  });
+
+  AdvertisementFactory createAdvertisementImageBanner({
+    required BaseUiKitAdvertisementImageBannerData data,
   });
 
   UserAvatarFactory createUserAvatar({
@@ -680,8 +684,52 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  AdvertisementFactory createAdvertisement({
-    required BaseUiKitAdvertisementBannerData data,
+  AdvertisementFactory createAdvertisementTextBanner({
+    required BaseUiKitAdvertisementTextBannerData data,
+  }) {
+    switch (data.size) {
+      case AdvertisementBannerSize.small:
+        return UiKitSmallTextAdBannerCard(
+          decoration: data.decoration,
+          imageLink: data.imageLink,
+          textWidget: data.textWidget,
+          textAlignment: data.textAlignment,
+          textOffset: data.textExactOffset,
+          availableWidth: data.availableWidth,
+          onTap: data.onPressed,
+          customHeight: data.customHeight,
+          customPadding: data.customPadding,
+        );
+      case AdvertisementBannerSize.medium:
+        return UiKitMediumTextAdBannerCard(
+          decoration: data.decoration,
+          customPadding: data.customPadding,
+          textAlignment: data.textAlignment,
+          imageLink: data.imageLink,
+          textOffset: data.textExactOffset,
+          textWidget: data.textWidget,
+          availableWidth: data.availableWidth,
+          onTap: data.onPressed,
+          customHeight: data.customHeight,
+        );
+      case AdvertisementBannerSize.large:
+        return UiKitLargeTextAdBannerCard(
+          decoration: data.decoration,
+          customPadding: data.customPadding,
+          textOffset: data.textExactOffset,
+          imageLink: data.imageLink,
+          textWidget: data.textWidget,
+          textAlignment: data.textAlignment,
+          availableWidth: data.availableWidth,
+          onTap: data.onPressed,
+          customHeight: data.customHeight,
+        );
+    }
+  }
+
+  @override
+  AdvertisementFactory createAdvertisementImageBanner({
+    required BaseUiKitAdvertisementImageBannerData data,
   }) {
     switch (data.size) {
       case AdvertisementBannerSize.small:
