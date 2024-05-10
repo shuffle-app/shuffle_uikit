@@ -4,11 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class MediumTextAdBanner3 extends StatelessWidget {
-  const MediumTextAdBanner3({Key? key}) : super(key: key);
+  final double? customHeight;
+  const MediumTextAdBanner3({Key? key, this.customHeight}) : super(key: key);
 
   double get width => 0.75.sw;
 
-  double get height => width * 0.7583;
+  double get height => customHeight ?? (width * 0.7583);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +20,9 @@ class MediumTextAdBanner3 extends StatelessWidget {
       data: BaseUiKitAdvertisementTextBannerData(
         textAlignment: Alignment.bottomCenter,
         customPadding: 10.0,
+        customHeight: height,
         decoration: Positioned(
-          top: -height * 0.475,
+          top: -height * 0.15,
           left: -SpacingFoundation.horizontalSpacing12,
           child: Opacity(
             opacity: 0.5,
@@ -28,7 +30,7 @@ class MediumTextAdBanner3 extends StatelessWidget {
               gradient: GradientFoundation.whiteLinearGradient,
               child: ImageWidget(
                 link: GraphicsFoundation.instance.svg.logo.path,
-                width: width * 0.65,
+                width: width * 0.675,
                 color: Colors.white,
                 fit: BoxFit.cover,
               ),

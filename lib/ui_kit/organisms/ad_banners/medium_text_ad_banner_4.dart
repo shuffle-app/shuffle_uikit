@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class MediumTextAdBanner4 extends StatelessWidget {
-  const MediumTextAdBanner4({Key? key}) : super(key: key);
+  final double? customHeight;
+
+  const MediumTextAdBanner4({Key? key, this.customHeight}) : super(key: key);
 
   double get width => 0.75.sw;
 
-  double get height => width * 0.7583;
+  double get height => customHeight ?? (width * 0.7583);
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +18,7 @@ class MediumTextAdBanner4 extends StatelessWidget {
     return context.advertisementTextBanner(
       data: BaseUiKitAdvertisementTextBannerData(
         textAlignment: Alignment.bottomCenter,
+        customHeight: height,
         textWidget: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class LargeTextAdBanner1 extends UiKitSwiperAdCard {
-  LargeTextAdBanner1({Key? key})
+  final double? customHeight;
+  LargeTextAdBanner1({Key? key, this.customHeight})
       : super(
             key: key,
             adsData: BaseUiKitAdvertisementTextBannerData(
@@ -15,6 +16,8 @@ class LargeTextAdBanner1 extends UiKitSwiperAdCard {
   @override
   double get width => 1.sw - 48;
 
+  double get height => customHeight ?? ((1.sw - 48) * 1.17);
+
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
@@ -22,6 +25,7 @@ class LargeTextAdBanner1 extends UiKitSwiperAdCard {
 
     return context.advertisementTextBanner(
       data: BaseUiKitAdvertisementTextBannerData(
+        customHeight: customHeight,
         textWidget: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -45,7 +49,7 @@ class LargeTextAdBanner1 extends UiKitSwiperAdCard {
                 textAlign: TextAlign.center,
               ),
             ),
-            SizedBox(height: ((width) * 1.17) * 0.22),
+            SizedBox(height: height * 0.22),
             GradientableWidget(
               gradient: GradientFoundation.whiteLinearInvertedGradient,
               child: Text(

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class LargeTextAdBanner4 extends UiKitSwiperAdCard {
-  LargeTextAdBanner4({Key? key})
+  final double? customHeight;
+  LargeTextAdBanner4({Key? key, this.customHeight})
       : super(
           key: key,
           adsData: BaseUiKitAdvertisementTextBannerData(
@@ -52,6 +53,7 @@ class LargeTextAdBanner4 extends UiKitSwiperAdCard {
           ],
         ),
         availableWidth: width,
+        customHeight: customHeight,
         imageLink: GraphicsFoundation.instance.png.spinnerTextBanner3.path,
         size: AdvertisementBannerSize.large,
       ),
