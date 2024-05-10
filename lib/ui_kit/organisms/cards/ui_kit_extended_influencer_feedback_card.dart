@@ -9,7 +9,11 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
   final List<UiKitTag>? tags;
   final String? text;
   final double? rating;
-  final int? helpfulCount;
+  final int? heartEyeCount;
+  final int? thumbsUpCount;
+  final int? fireCount;
+  final int? sunglassesCount;
+  final int? smileyCount;
 
   const UiKitExtendedInfluencerFeedbackCard({
     Key? key,
@@ -18,8 +22,12 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
     this.datePosted,
     this.tags,
     this.text,
-    this.helpfulCount,
     this.rating,
+    this.heartEyeCount,
+    this.thumbsUpCount,
+    this.fireCount,
+    this.sunglassesCount,
+    this.smileyCount,
   }) : super(key: key);
 
   @override
@@ -105,17 +113,36 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                if (heartEyeCount != null)
+                  UiKitEmojiReaction(
+                    iconPath: GraphicsFoundation.instance.svg.heartEyes.path,
+                    reactionsCount: heartEyeCount!,
+                  ).paddingOnly(right: EdgeInsetsFoundation.horizontal2),
+                if (thumbsUpCount != null)
+                  UiKitEmojiReaction(
+                    iconPath: GraphicsFoundation.instance.svg.thumbsUpReversed.path,
+                    reactionsCount: thumbsUpCount!,
+                  ).paddingOnly(right: EdgeInsetsFoundation.horizontal2),
+                if (fireCount != null)
+                  UiKitEmojiReaction(
+                    iconPath: GraphicsFoundation.instance.svg.fireEmoji.path,
+                    reactionsCount: fireCount!,
+                  ).paddingOnly(right: EdgeInsetsFoundation.horizontal2),
+                if (sunglassesCount != null)
+                  UiKitEmojiReaction(
+                    iconPath: GraphicsFoundation.instance.svg.sunglasses.path,
+                    reactionsCount: sunglassesCount!,
+                  ).paddingOnly(right: EdgeInsetsFoundation.horizontal2),
+                if (smileyCount != null)
+                  UiKitEmojiReaction(
+                    iconPath: GraphicsFoundation.instance.svg.smiley.path,
+                    reactionsCount: smileyCount!,
+                  ),
+                const Spacer(),
                 const ImageWidget(
-                  iconData: ShuffleUiKitIcons.thumbup,
+                  iconData: ShuffleUiKitIcons.like,
                   color: ColorsFoundation.darkNeutral900,
                 ),
-                SpacingFoundation.horizontalSpace8,
-                Text(
-                  S.of(context).Helpful,
-                  style: titleStyle?.copyWith(
-                    color: ColorsFoundation.darkNeutral900,
-                  ),
-                )
               ],
             ),
           ],

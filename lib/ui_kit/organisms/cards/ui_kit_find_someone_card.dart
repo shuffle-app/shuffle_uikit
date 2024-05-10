@@ -9,6 +9,7 @@ class UiKitFindSomeoneCard extends StatelessWidget {
   final int? sameInterests;
   final VoidCallback? onMessage;
   final UserTileType userTileType;
+  final VoidCallback? onAvatarTapped;
 
   const UiKitFindSomeoneCard({
     super.key,
@@ -19,6 +20,7 @@ class UiKitFindSomeoneCard extends StatelessWidget {
     this.sameInterests,
     this.onMessage,
     this.userTileType = UserTileType.ordinary,
+    this.onAvatarTapped,
   });
 
   @override
@@ -43,10 +45,18 @@ class UiKitFindSomeoneCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ConstrainedBox(
+                GestureDetector(
+                  onTap: onAvatarTapped,
+                  child: ConstrainedBox(
                     constraints: BoxConstraints.loose(Size(60.sp, 60.sp)),
                     child: context.userAvatar(
-                        size: UserAvatarSize.x60x60, type: userTileType, userName: userName ?? '', imageUrl: avatarUrl)),
+                      size: UserAvatarSize.x60x60,
+                      type: userTileType,
+                      userName: userName ?? '',
+                      imageUrl: avatarUrl,
+                    ),
+                  ),
+                ),
                 SpacingFoundation.verticalSpace2,
                 Text(
                   '@$userNickName',

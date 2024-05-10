@@ -12,7 +12,7 @@ class InfluencerMemberPlate extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.max,
-        gradient: GradientFoundation.memberPlate,
+        gradient: GradientFoundation.shuffleMemberPlate,
         border: GradientFoundation.shuffleMemberBorder,
         boxShadow: [
           BoxShadow(

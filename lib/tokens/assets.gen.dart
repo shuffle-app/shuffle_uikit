@@ -572,6 +572,15 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/muslim_flag.png
   AssetGenImage get muslimFlag => const AssetGenImage('assets/images/png/muslim_flag.png');
 
+  /// File path: assets/images/png/nft_1.png
+  AssetGenImage get nft1 => const AssetGenImage('assets/images/png/nft_1.png');
+
+  /// File path: assets/images/png/nft_2.png
+  AssetGenImage get nft2 => const AssetGenImage('assets/images/png/nft_2.png');
+
+  /// File path: assets/images/png/nft_3.png
+  AssetGenImage get nft3 => const AssetGenImage('assets/images/png/nft_3.png');
+
   /// File path: assets/images/png/no_internet.png
   AssetGenImage get noInternet => const AssetGenImage('assets/images/png/no_internet.png');
 
@@ -916,6 +925,9 @@ class $AssetsImagesPngGen {
         mockSwiperCard,
         mockUserAvatar,
         muslimFlag,
+        nft1,
+        nft2,
+        nft3,
         noInternet,
         notifPermit,
         onboardingMock1,
@@ -1380,6 +1392,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/finger-print.svg
   SvgGenImage get fingerPrint => const SvgGenImage('assets/images/svg/finger-print.svg');
 
+  /// File path: assets/images/svg/fire_emoji.svg
+  SvgGenImage get fireEmoji => const SvgGenImage('assets/images/svg/fire_emoji.svg');
+
   /// File path: assets/images/svg/fire_white.svg
   SvgGenImage get fireWhite => const SvgGenImage('assets/images/svg/fire_white.svg');
 
@@ -1418,6 +1433,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/heart-outline.svg
   SvgGenImage get heartOutline => const SvgGenImage('assets/images/svg/heart-outline.svg');
+
+  /// File path: assets/images/svg/heart_eyes.svg
+  SvgGenImage get heartEyes => const SvgGenImage('assets/images/svg/heart_eyes.svg');
 
   /// File path: assets/images/svg/history.svg
   SvgGenImage get history => const SvgGenImage('assets/images/svg/history.svg');
@@ -1557,6 +1575,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/pharmacy.svg
   SvgGenImage get pharmacy => const SvgGenImage('assets/images/svg/pharmacy.svg');
 
+  /// File path: assets/images/svg/photo.svg
+  SvgGenImage get photo => const SvgGenImage('assets/images/svg/photo.svg');
+
   /// File path: assets/images/svg/pie_chart_outlined.svg
   SvgGenImage get pieChartOutlined => const SvgGenImage('assets/images/svg/pie_chart_outlined.svg');
 
@@ -1687,6 +1708,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/sleep.svg
   SvgGenImage get sleep => const SvgGenImage('assets/images/svg/sleep.svg');
 
+  /// File path: assets/images/svg/smiley.svg
+  SvgGenImage get smiley => const SvgGenImage('assets/images/svg/smiley.svg');
+
   /// File path: assets/images/svg/social-instagram.svg
   SvgGenImage get socialInstagram => const SvgGenImage('assets/images/svg/social-instagram.svg');
 
@@ -1732,6 +1756,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/sun.svg
   SvgGenImage get sun => const SvgGenImage('assets/images/svg/sun.svg');
 
+  /// File path: assets/images/svg/sunglasses.svg
+  SvgGenImage get sunglasses => const SvgGenImage('assets/images/svg/sunglasses.svg');
+
   /// File path: assets/images/svg/swim.svg
   SvgGenImage get swim => const SvgGenImage('assets/images/svg/swim.svg');
 
@@ -1746,6 +1773,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/thumb-up.svg
   SvgGenImage get thumbUp => const SvgGenImage('assets/images/svg/thumb-up.svg');
+
+  /// File path: assets/images/svg/thumbs_up_reversed.svg
+  SvgGenImage get thumbsUpReversed => const SvgGenImage('assets/images/svg/thumbs_up_reversed.svg');
 
   /// File path: assets/images/svg/tiger.svg
   SvgGenImage get tiger => const SvgGenImage('assets/images/svg/tiger.svg');
@@ -1791,6 +1821,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/view.svg
   SvgGenImage get view => const SvgGenImage('assets/images/svg/view.svg');
+
+  /// File path: assets/images/svg/voice.svg
+  SvgGenImage get voice => const SvgGenImage('assets/images/svg/voice.svg');
 
   /// File path: assets/images/svg/volume-off.svg
   SvgGenImage get volumeOff => const SvgGenImage('assets/images/svg/volume-off.svg');
@@ -1954,6 +1987,7 @@ class $AssetsImagesSvgGen {
         filter,
         finance,
         fingerPrint,
+        fireEmoji,
         fireWhite,
         flag,
         food,
@@ -1967,6 +2001,7 @@ class $AssetsImagesSvgGen {
         heartBrokenFill,
         heartFill,
         heartOutline,
+        heartEyes,
         history,
         homeFill,
         homeOutline,
@@ -2013,6 +2048,7 @@ class $AssetsImagesSvgGen {
         pencil,
         personLayered,
         pharmacy,
+        photo,
         pieChartOutlined,
         playFill,
         playOutline,
@@ -2056,6 +2092,7 @@ class $AssetsImagesSvgGen {
         shuffleOutline,
         shuffleWhite,
         sleep,
+        smiley,
         socialInstagram,
         socialTelegram,
         socialTwitter,
@@ -2071,11 +2108,13 @@ class $AssetsImagesSvgGen {
         stop,
         sufle,
         sun,
+        sunglasses,
         swim,
         swimming,
         table,
         taxi,
         thumbUp,
+        thumbsUpReversed,
         tiger,
         tool,
         trash,
@@ -2091,6 +2130,7 @@ class $AssetsImagesSvgGen {
         videoPlus,
         viewAction,
         view,
+        voice,
         volumeOff,
         volume,
         wallet,

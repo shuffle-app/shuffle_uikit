@@ -476,5 +476,28 @@
   "FridayShort": "शुक्रवार",
   "SaturdayShort": "शनिवार",
   "SundayShort": "रविवार",
-  "NotSet": "सेट नहीं किया गया"
+  "NotSet": "सेट नहीं किया गया",
+  "Unfollow": "अनफॉलो",
+  "FollowersCount": "{count, plural, =0{अनुयायी} =1{अनुयायी} =2{अनुयायी} few{अनुयायी} many{अनुयायी} other{अनुयायी}}",
+  "Contacts": "संपर्क",
+  "ReviewsReceived": "{count, plural, =0{समीक्षा} =1{समीक्षा} =2{समीक्षा} few{समीक्षा} many{समीक्षा} other{समीक्षा}}",
+  "Bookings": "{count, plural, =0{बुकिंग} =1{बुकिंग} =2{बुकिंग} few{बुकिंग} many{बुकिंग} other{बुकिंग}}",
+  "EventsCount": "{count, plural, =0{घटना} =1{घटना} =2{घटना} few{घटना} many{घटना} other{घटना}}",
+  "PlacesVisited": "{count, plural, =0{स्थानों का दौरा किया} =1{जगह का दौरा किया} =2{स्थानों का दौरा किया} few{स्थानों का दौरा किया} many{स्थानों का दौरा किया} other{स्थानों का दौरा किया}}",
+  "ReviewsPosted": "{count, plural,=0 {समीक्षाएं पोस्ट की गईं} =1{समीक्षाएं पोस्ट की गईं} =2{समीक्षाएं पोस्ट की गईं} few{समीक्षाएं पोस्ट की गईं} many{समीक्षाएं पोस्ट की गईं} other{समीक्षाएं पोस्ट की गईं}}",
+  "PointsEarned": "{count, plural, =0{अंक जीते} =1{अंक जीते} =2{अंक जीते} few{अंक जीते} many{अंक जीते} other{अंक जीते}}",
+  "New": "नया",
+  "Voice": "आवाज़",
+  "IdealRoute": "आदर्श मार्ग",
+  "Interview": "साक्षात्कार",
+  "Chat": "चैट",
+  "NFT": "NFT",
+  "Contest": "प्रतियोगिता",
+  "Comments": "{count, plural, =0{टिप्पणियाँ} =1{टिप्पणी} =2{टिप्पणियाँ} few{टिप्पणियाँ} many{टिप्पणियाँ} other{टिप्पणियाँ}}",
+  "Respect": "सम्मान",
+  "Top": "शीर्ष",
+  "PersonalTop": "व्यक्तिगत शीर्ष",
+  "BookingsAndInvites": "बुकिंग और आमंत्रण"
+
+
 }
