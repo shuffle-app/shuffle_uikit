@@ -13,8 +13,9 @@ class ColorsFoundation {
   static const Color solidSurface = UiKitColors.surface1;
   static const Color surface = UiKitColors.surface;
   static const Color surface1 = UiKitColors.surface1;
-  static const Color surface3 = UiKitColors.surface3;
   static const Color surface2 = UiKitColors.surface2;
+  static const Color surface3 = UiKitColors.surface3;
+  static const Color surface4 = UiKitColors.surface4;
   static const Color surface5 = UiKitColors.surface5;
   static const Color brightYellow = UiKitColors.brightYellow;
   static const Color red = UiKitColors.red;

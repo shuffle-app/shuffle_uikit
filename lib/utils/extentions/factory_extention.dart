@@ -203,10 +203,15 @@ extension FactoryExtention on BuildContext {
     return WidgetsFactory.of(this)!.createUserTile(data: data).build(this);
   }
 
-  Widget advertisementBanner({
-    required BaseUiKitAdvertisementBannerData data,
+  Widget advertisementImageBanner({
+    required BaseUiKitAdvertisementImageBannerData data,
   }) =>
-      WidgetsFactory.of(this)!.createAdvertisement(data: data).build(this);
+      WidgetsFactory.of(this)!.createAdvertisementImageBanner(data: data).build(this);
+
+  Widget advertisementTextBanner({
+    required BaseUiKitAdvertisementTextBannerData data,
+  }) =>
+      WidgetsFactory.of(this)!.createAdvertisementTextBanner(data: data).build(this);
 
   Widget notificationPopUp({
     required NotificationPopupRequiredData requiredData,

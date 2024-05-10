@@ -518,6 +518,24 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/mock_ad_banner_11.png
   AssetGenImage get mockAdBanner11 => const AssetGenImage('assets/images/png/mock_ad_banner_11.png');
 
+  /// File path: assets/images/png/mock_ad_banner_12.png
+  AssetGenImage get mockAdBanner12 => const AssetGenImage('assets/images/png/mock_ad_banner_12.png');
+
+  /// File path: assets/images/png/mock_ad_banner_13.png
+  AssetGenImage get mockAdBanner13 => const AssetGenImage('assets/images/png/mock_ad_banner_13.png');
+
+  /// File path: assets/images/png/mock_ad_banner_14.png
+  AssetGenImage get mockAdBanner14 => const AssetGenImage('assets/images/png/mock_ad_banner_14.png');
+
+  /// File path: assets/images/png/mock_ad_banner_15.png
+  AssetGenImage get mockAdBanner15 => const AssetGenImage('assets/images/png/mock_ad_banner_15.png');
+
+  /// File path: assets/images/png/mock_ad_banner_16.png
+  AssetGenImage get mockAdBanner16 => const AssetGenImage('assets/images/png/mock_ad_banner_16.png');
+
+  /// File path: assets/images/png/mock_ad_banner_17.png
+  AssetGenImage get mockAdBanner17 => const AssetGenImage('assets/images/png/mock_ad_banner_17.png');
+
   /// File path: assets/images/png/mock_ad_banner_2.jpeg
   AssetGenImage get mockAdBanner2 => const AssetGenImage('assets/images/png/mock_ad_banner_2.jpeg');
 
@@ -671,6 +689,18 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/search_category_zadrot.png
   AssetGenImage get searchCategoryZadrot => const AssetGenImage('assets/images/png/search_category_zadrot.png');
 
+  /// File path: assets/images/png/search_feed_text_banner_1.png
+  AssetGenImage get searchFeedTextBanner1 => const AssetGenImage('assets/images/png/search_feed_text_banner_1.png');
+
+  /// File path: assets/images/png/search_feed_text_banner_2.png
+  AssetGenImage get searchFeedTextBanner2 => const AssetGenImage('assets/images/png/search_feed_text_banner_2.png');
+
+  /// File path: assets/images/png/search_feed_text_banner_3.png
+  AssetGenImage get searchFeedTextBanner3 => const AssetGenImage('assets/images/png/search_feed_text_banner_3.png');
+
+  /// File path: assets/images/png/search_feed_text_banner_4.png
+  AssetGenImage get searchFeedTextBanner4 => const AssetGenImage('assets/images/png/search_feed_text_banner_4.png');
+
   /// File path: assets/images/png/service-social-1.png
   AssetGenImage get serviceSocial1 => const AssetGenImage('assets/images/png/service-social-1.png');
 
@@ -686,8 +716,26 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/shoot.png
   AssetGenImage get shoot => const AssetGenImage('assets/images/png/shoot.png');
 
+  /// File path: assets/images/png/shuffle_text_banner_1.png
+  AssetGenImage get shuffleTextBanner1 => const AssetGenImage('assets/images/png/shuffle_text_banner_1.png');
+
+  /// File path: assets/images/png/shuffle_text_banner_2.png
+  AssetGenImage get shuffleTextBanner2 => const AssetGenImage('assets/images/png/shuffle_text_banner_2.png');
+
+  /// File path: assets/images/png/shuffle_text_banner_3.png
+  AssetGenImage get shuffleTextBanner3 => const AssetGenImage('assets/images/png/shuffle_text_banner_3.png');
+
   /// File path: assets/images/png/spinner_event.png
   AssetGenImage get spinnerEvent => const AssetGenImage('assets/images/png/spinner_event.png');
+
+  /// File path: assets/images/png/spinner_text_banner_1.png
+  AssetGenImage get spinnerTextBanner1 => const AssetGenImage('assets/images/png/spinner_text_banner_1.png');
+
+  /// File path: assets/images/png/spinner_text_banner_2.png
+  AssetGenImage get spinnerTextBanner2 => const AssetGenImage('assets/images/png/spinner_text_banner_2.png');
+
+  /// File path: assets/images/png/spinner_text_banner_3.png
+  AssetGenImage get spinnerTextBanner3 => const AssetGenImage('assets/images/png/spinner_text_banner_3.png');
 
   /// File path: assets/images/png/star_2.png
   AssetGenImage get star2 => const AssetGenImage('assets/images/png/star_2.png');
@@ -859,6 +907,12 @@ class $AssetsImagesPngGen {
         mockAdBanner1,
         mockAdBanner10,
         mockAdBanner11,
+        mockAdBanner12,
+        mockAdBanner13,
+        mockAdBanner14,
+        mockAdBanner15,
+        mockAdBanner16,
+        mockAdBanner17,
         mockAdBanner2,
         mockAdBanner3,
         mockAdBanner4,
@@ -909,12 +963,22 @@ class $AssetsImagesPngGen {
         searchCategorySelfCare,
         searchCategorySport,
         searchCategoryZadrot,
+        searchFeedTextBanner1,
+        searchFeedTextBanner2,
+        searchFeedTextBanner3,
+        searchFeedTextBanner4,
         serviceSocial1,
         serviceSocial2,
         serviceSocial3,
         serviceSocial4,
         shoot,
+        shuffleTextBanner1,
+        shuffleTextBanner2,
+        shuffleTextBanner3,
         spinnerEvent,
+        spinnerTextBanner1,
+        spinnerTextBanner2,
+        spinnerTextBanner3,
         star2,
         surpriseEmoji,
         threeLevels,
@@ -1626,6 +1690,12 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/share.svg
   SvgGenImage get share => const SvgGenImage('assets/images/svg/share.svg');
 
+  /// File path: assets/images/svg/shiffle-banner-gradient.svg
+  SvgGenImage get shiffleBannerGradient => const SvgGenImage('assets/images/svg/shiffle-banner-gradient.svg');
+
+  /// File path: assets/images/svg/shuffle-banner-semi.svg
+  SvgGenImage get shuffleBannerSemi => const SvgGenImage('assets/images/svg/shuffle-banner-semi.svg');
+
   /// File path: assets/images/svg/shuffle-fill.svg
   SvgGenImage get shuffleFill => const SvgGenImage('assets/images/svg/shuffle-fill.svg');
 
@@ -2016,6 +2086,8 @@ class $AssetsImagesSvgGen {
         settings,
         shadeContentTypeLoaderTile,
         share,
+        shiffleBannerGradient,
+        shuffleBannerSemi,
         shuffleFill,
         shuffleOutline,
         shuffleWhite,

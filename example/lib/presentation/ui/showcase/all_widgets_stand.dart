@@ -662,8 +662,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           onTap: () {},
         ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20),
         SpacingFoundation.verticalSpace16,
-        context.advertisementBanner(
-          data: BaseUiKitAdvertisementBannerData(
+        context.advertisementImageBanner(
+          data: BaseUiKitAdvertisementImageBannerData(
             availableWidth: 1.sw,
             onPressed: () {},
             imageLink: GraphicsFoundation.instance.png.mockAdBanner1.path,
@@ -672,8 +672,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ),
         ),
         SpacingFoundation.verticalSpace16,
-        context.advertisementBanner(
-          data: BaseUiKitAdvertisementBannerData(
+        context.advertisementImageBanner(
+          data: BaseUiKitAdvertisementImageBannerData(
             availableWidth: 1.sw,
             onPressed: () {},
             imageLink: GraphicsFoundation.instance.png.mockAdBanner2.path,
@@ -682,8 +682,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ),
         ),
         SpacingFoundation.verticalSpace16,
-        context.advertisementBanner(
-          data: BaseUiKitAdvertisementBannerData(
+        context.advertisementImageBanner(
+          data: BaseUiKitAdvertisementImageBannerData(
             availableWidth: 1.sw,
             onPressed: () {},
             imageLink: GraphicsFoundation.instance.png.mockAdBanner3.path,
@@ -1668,7 +1668,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           title: '',
           subtitle: '',
           imageLink: Assets.images.png.mockAdBanner.path,
-          adsData: BaseUiKitAdvertisementBannerData(
+          adsData: BaseUiKitAdvertisementImageBannerData(
             availableWidth: 1.sw,
             imageLink: GraphicsFoundation.instance.png.mockAdBanner.path,
             title: 'title',
@@ -2016,8 +2016,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context)
-                .push(PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+            Navigator.of(context).push(
+                PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
           },
           child: const Text(
             'Show Horizontal Video',
@@ -2026,7 +2026,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context).push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+            Navigator.of(context)
+                .push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
           },
           child: const Text(
             'Show Vertical Video',
@@ -2038,8 +2039,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context).push(
-                PopUpVideoPlayer(videoUri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
+            Navigator.of(context).push(PopUpVideoPlayer(
+                videoUri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
           },
           child: const Text(
             'Show Another Horizontal Video',
