@@ -19,7 +19,6 @@ export 'chips/ui_kit_bordered_chip_with_icon.dart';
 export 'chips/ui_kit_gradient_question_chip.dart';
 export 'chips/ui_kit_importance_chip.dart';
 export 'chips/ui_kit_ordinary_chip.dart';
-export 'decoration/dashed_divider.dart';
 export 'decoration/staggered_photo_leading_widget.dart';
 export 'decoration/ui_kit_emoji_reaction.dart';
 export 'decoration/ui_kit_gradiented_decorated_button.dart';
