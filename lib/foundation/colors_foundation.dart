@@ -8,6 +8,7 @@ class ColorsFoundation {
   static const Color lightSurface3 = UiKitColors.lightSurface3;
   static const Color lightSurface4 = UiKitColors.lightSurface4;
   static const Color lightSurface5 = UiKitColors.lightSurface5;
+  static const Color backNeutral16 = UiKitColors.backNeutral16;
   static const Color solidLightSurface = UiKitColors.lightSurface1;
   static const Color solidSurface = UiKitColors.surface1;
   static const Color surface = UiKitColors.surface;
@@ -80,6 +81,18 @@ class ColorsFoundation {
   static const Color proUserAvatarBorder = UiKitColors.proUserAvatarBorderGradientBegin;
   static const Color extraTransparentBorderColor = UiKitColors.extraTransparentBorderColor;
   static final Color placeHolderTextColor = UiKitColors.placeHolderTextColor;
+  static const Color silverGradientBegin = UiKitColors.silverGradientBegin;
+  static const Color silverGradientPreMid = UiKitColors.silverGradientPreMid;
+  static const Color silverGradientMid = UiKitColors.silverGradientMid;
+  static const Color silverGradientEnd = UiKitColors.silverGradientEnd;
+  static const Color bronzeGradientBegin = UiKitColors.bronzeGradientBegin;
+  static const Color bronzeGradientPreMid = UiKitColors.bronzeGradientPreMid;
+  static const Color bronzeGradientMid = UiKitColors.bronzeGradientMid;
+  static const Color bronzeGradientEnd = UiKitColors.bronzeGradientEnd;
+  static const Color goldGradientBegin = UiKitColors.goldGradientBegin;
+  static const Color goldGradientPreMid = UiKitColors.goldGradientPreMid;
+  static const Color goldGradientMid = UiKitColors.goldGradientMid;
+  static const Color goldGradientEnd = UiKitColors.goldGradientEnd;
 
   ColorsFoundation._();
 }

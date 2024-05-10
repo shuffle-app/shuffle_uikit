@@ -6,6 +6,8 @@ class UiKitReactionPreview extends StatelessWidget {
   final bool viewed;
   final bool isEmpty;
   final VoidCallback? onTap;
+  final double? customWidth;
+  final double? customHeight;
 
   const UiKitReactionPreview({
     Key? key,
@@ -13,6 +15,8 @@ class UiKitReactionPreview extends StatelessWidget {
     this.viewed = false,
     this.onTap,
     this.isEmpty = false,
+    this.customWidth,
+    this.customHeight,
   }) : super(key: key);
 
   factory UiKitReactionPreview.empty({VoidCallback? onTap}) => UiKitReactionPreview(
@@ -21,12 +25,11 @@ class UiKitReactionPreview extends StatelessWidget {
         isEmpty: true,
         onTap: onTap,
       );
+  double get width => customWidth ?? 0.27.sw;
+  double get height => customHeight ?? 0.27.sw * 1.66;
 
   @override
   Widget build(BuildContext context) {
-    final width = 0.34.sw;
-    final height = 147.h;
-
     return SizedBox(
       width: width,
       height: height,

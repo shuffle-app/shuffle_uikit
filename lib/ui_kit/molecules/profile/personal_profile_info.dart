@@ -4,6 +4,8 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class PersonalProfileInfo extends StatelessWidget {
   final String nickname;
   final String? name;
+  final TextStyle? nicknameStyle;
+  final TextStyle? nameStyle;
   final int? followers;
   final AnimationController? controller;
 
@@ -13,6 +15,8 @@ class PersonalProfileInfo extends StatelessWidget {
     this.name,
     this.followers,
     this.controller,
+    this.nicknameStyle,
+    this.nameStyle,
   });
 
   @override
@@ -21,7 +25,9 @@ class PersonalProfileInfo extends StatelessWidget {
     final boldTextTheme = theme?.boldTextTheme;
     final regularTextTheme = theme?.regularTextTheme;
     final fallBackStyle = Theme.of(context).textTheme.bodyMedium;
-    TextStyle? nickNameStyle = boldTextTheme?.subHeadline ?? fallBackStyle;
+    TextStyle? nameTextStyle = nameStyle ?? boldTextTheme?.subHeadline ?? fallBackStyle;
+    TextStyle? nickNameStyle =
+        nicknameStyle ?? boldTextTheme?.caption1Medium.copyWith(color: theme?.colorScheme.darkNeutral500) ?? fallBackStyle;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -33,12 +39,11 @@ class PersonalProfileInfo extends StatelessWidget {
             children: [
               TextSpan(
                 text: name ?? nickname,
-                style: nickNameStyle,
+                style: nameTextStyle,
               ),
               TextSpan(
                 text: '\n@$nickname',
-                style:
-                    boldTextTheme?.caption1Medium.copyWith(color: theme?.colorScheme.darkNeutral500) ?? fallBackStyle,
+                style: nickNameStyle,
               ),
             ],
           ),

@@ -40,12 +40,15 @@ class UiKitTag {
   final String title;
   final dynamic icon;
   final bool unique;
+  final Color? iconColor;
+  final Color? textColor;
 
   UiKitTagWidget get widget => UiKitTagWidget(
+        iconCustomColor: iconColor,
         title: title,
         icon: icon,
         uniqueTag: unique,
-        textColor: ColorsFoundation.darkNeutral500,
+        textColor: textColor ?? ColorsFoundation.darkNeutral500,
         tagSize: icon is String ? SpacingFoundation.horizontalSpacing20 : SpacingFoundation.horizontalSpacing16,
       );
 
@@ -54,6 +57,8 @@ class UiKitTag {
     required this.icon,
     this.unique = false,
     this.id,
+    this.iconColor,
+    this.textColor,
     bool updateTitle = true,
   }) : title = updateTitle ? title.replaceAll('-', ' ') : title;
 }

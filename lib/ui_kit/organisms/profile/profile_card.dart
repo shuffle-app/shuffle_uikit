@@ -23,6 +23,7 @@ class ProfileCard extends StatelessWidget {
   final VoidCallback? onShare;
   final List<String>? socialLinks;
   final String? speciality;
+  final Widget? profileCardBody;
 
   const ProfileCard({
     Key? key,
@@ -46,31 +47,33 @@ class ProfileCard extends StatelessWidget {
     this.achievements = const [],
     this.socialLinks,
     this.speciality,
+    this.profileCardBody,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final child = ProfileCardBody(
-        description: description,
-        avatarUrl: avatarUrl,
-        interests: interests,
-        matchingInterests: matchingInterests,
-        canFollow: followers != null && onFollow != null,
-        name: name,
-        userTileType: userTileType,
-        nickname: nickname ?? '',
-        followers: followers,
-        onFollow: onFollow,
-        profileType: profileType,
-        tags: tags,
-        profileStats: profileStats,
-        showSupportShuffle: showSupportShuffle,
-        onDonate: onDonate,
-        onViewAllAchievements: onViewAllAchievements,
-        achievements: achievements,
-        socialLinks: socialLinks,
-        speciality: speciality,
-        onShare: onShare);
+    final child = profileCardBody ??
+        ProfileCardBody(
+            description: description,
+            avatarUrl: avatarUrl,
+            interests: interests,
+            matchingInterests: matchingInterests,
+            canFollow: followers != null && onFollow != null,
+            name: name,
+            userTileType: userTileType,
+            nickname: nickname ?? '',
+            followers: followers,
+            onFollow: onFollow,
+            profileType: profileType,
+            tags: tags,
+            profileStats: profileStats,
+            showSupportShuffle: showSupportShuffle,
+            onDonate: onDonate,
+            onViewAllAchievements: onViewAllAchievements,
+            achievements: achievements,
+            socialLinks: socialLinks,
+            speciality: speciality,
+            onShare: onShare);
     if (badge != null) {
       return Stack(
         fit: StackFit.passthrough,
