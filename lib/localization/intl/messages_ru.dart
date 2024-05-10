@@ -204,6 +204,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AskPeople": MessageLookupByLibrary.simpleMessage("Спросить"),
         "Atheism": MessageLookupByLibrary.simpleMessage("Атеизм"),
         "Athlete": MessageLookupByLibrary.simpleMessage("Спортсмен"),
+        "AverageBill": MessageLookupByLibrary.simpleMessage("Средний чек"),
         "Balance": MessageLookupByLibrary.simpleMessage("Баланс "),
         "BaseProperties":
             MessageLookupByLibrary.simpleMessage("Базовые свойства"),
@@ -217,6 +218,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Брони и Приглашения"),
         "Both": MessageLookupByLibrary.simpleMessage("Оба"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Буддизм"),
+        "BuildingNumber": MessageLookupByLibrary.simpleMessage("Номер дома"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("Сожжено сегодя"),
         "Business": MessageLookupByLibrary.simpleMessage("Бизнес"),
         "ByContinuingYouAcceptThe":
@@ -392,6 +394,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Helpful": MessageLookupByLibrary.simpleMessage("Полезно"),
         "HelpfulNCount": m17,
         "Hindu": MessageLookupByLibrary.simpleMessage("Индуизм"),
+        "HintAverageBill": MessageLookupByLibrary.simpleMessage(
+            "Выбери цену или диапазон цен"),
         "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
             "Система подсказок деактивирована"),
         "HintSystemEnabled": m18,
@@ -517,6 +521,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NowWeKnowYouBetter": MessageLookupByLibrary.simpleMessage(
             "Спасибо!\nТеперь мы знаем тебя лучше"),
         "Off": MessageLookupByLibrary.simpleMessage("Выкл"),
+        "OfficeAppartmentNumber":
+            MessageLookupByLibrary.simpleMessage("Номер офиса или апарта"),
         "Ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "OkayCool": MessageLookupByLibrary.simpleMessage("Ок, круто!"),
         "OnboardingSlide1": MessageLookupByLibrary.simpleMessage("веселиться"),

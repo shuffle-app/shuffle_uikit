@@ -5162,6 +5162,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Building number`
+  String get BuildingNumber {
+    return Intl.message(
+      'Building number',
+      name: 'BuildingNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Office or appt number`
+  String get OfficeAppartmentNumber {
+    return Intl.message(
+      'Office or appt number',
+      name: 'OfficeAppartmentNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average bill`
+  String get AverageBill {
+    return Intl.message(
+      'Average bill',
+      name: 'AverageBill',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select price or price range`
+  String get HintAverageBill {
+    return Intl.message(
+      'Select price or price range',
+      name: 'HintAverageBill',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

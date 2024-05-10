@@ -206,6 +206,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AskPeople": MessageLookupByLibrary.simpleMessage("लोगों से पूछें"),
         "Atheism": MessageLookupByLibrary.simpleMessage("नास्तिकता"),
         "Athlete": MessageLookupByLibrary.simpleMessage("एथलीट"),
+        "AverageBill": MessageLookupByLibrary.simpleMessage("Average bill"),
         "Balance": MessageLookupByLibrary.simpleMessage("शेष राशि"),
         "BaseProperties": MessageLookupByLibrary.simpleMessage("आधार गुण"),
         "BasedOnYourActivityWeDetermineYourCondition":
@@ -218,6 +219,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("बुकिंग और आमंत्रण"),
         "Both": MessageLookupByLibrary.simpleMessage("Both"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("बौद्ध धर्म"),
+        "BuildingNumber":
+            MessageLookupByLibrary.simpleMessage("Building number"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("आज जला दिया"),
         "Business": MessageLookupByLibrary.simpleMessage("व्यापार"),
         "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
@@ -392,6 +395,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Helpful": MessageLookupByLibrary.simpleMessage("उपयोगी"),
         "HelpfulNCount": m17,
         "Hindu": MessageLookupByLibrary.simpleMessage("हिंदू"),
+        "HintAverageBill":
+            MessageLookupByLibrary.simpleMessage("Select price or price range"),
         "HintSystemDisabled":
             MessageLookupByLibrary.simpleMessage("संकेत प्रणाली अक्षम है"),
         "HintSystemEnabled": m18,
@@ -517,6 +522,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NowWeKnowYouBetter": MessageLookupByLibrary.simpleMessage(
             "धन्यवाद!\nअब हम आपको बेहतर जानते हैं"),
         "Off": MessageLookupByLibrary.simpleMessage("बंद"),
+        "OfficeAppartmentNumber":
+            MessageLookupByLibrary.simpleMessage("Office or appt number"),
         "Ok": MessageLookupByLibrary.simpleMessage("ठीक है"),
         "OkayCool": MessageLookupByLibrary.simpleMessage("ठीक है अद्भुत"),
         "OnboardingSlide1":

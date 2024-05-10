@@ -497,6 +497,10 @@
   "Respect": "Уважение",
   "Top": "ТОП",
   "PersonalTop": "Личный ТОП",
-  "BookingsAndInvites": "Брони и Приглашения"
+  "BookingsAndInvites": "Брони и Приглашения",
+  "BuildingNumber": "Номер дома",
+  "OfficeAppartmentNumber": "Номер офиса или апарта",
+  "AverageBill": "Средний чек",
+  "HintAverageBill": "Выбери цену или диапазон цен"
 
 }

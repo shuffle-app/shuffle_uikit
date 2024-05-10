@@ -497,7 +497,11 @@
   "Respect": "सम्मान",
   "Top": "शीर्ष",
   "PersonalTop": "व्यक्तिगत शीर्ष",
-  "BookingsAndInvites": "बुकिंग और आमंत्रण"
+  "BookingsAndInvites": "बुकिंग और आमंत्रण",
+  "BuildingNumber": "Building number",
+  "OfficeAppartmentNumber": "Office or appt number",
+  "AverageBill": "Average bill",
+  "HintAverageBill": "Select price or price range"
 
 
 }

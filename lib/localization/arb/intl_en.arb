@@ -497,7 +497,11 @@
   "Respect": "Respect",
   "Top": "Top",
   "PersonalTop": "Personal TOP",
-  "BookingsAndInvites": "Bookings and Invites"
+  "BookingsAndInvites": "Bookings and Invites",
+  "BuildingNumber": "Building number",
+  "OfficeAppartmentNumber": "Office or appt number",
+  "AverageBill": "Average bill",
+  "HintAverageBill": "Select price or price range"
 
 
 }
