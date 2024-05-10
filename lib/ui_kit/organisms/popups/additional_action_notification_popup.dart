@@ -20,7 +20,8 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final titleStyle = theme?.boldTextTheme.body.copyWith(color: theme.colorScheme.inverseSurface);
+    final titleStyle = theme?.boldTextTheme.body.copyWith(color: theme.colorScheme.inversePrimary);
+    // final titleStyle = theme?.boldTextTheme.body.copyWith(color: theme.colorScheme.inverseSurface);
 
     return BlurredCardWithBorder(
       border: requiredData.gradientBorder ? GradientFoundation.gradientBorder : null,
