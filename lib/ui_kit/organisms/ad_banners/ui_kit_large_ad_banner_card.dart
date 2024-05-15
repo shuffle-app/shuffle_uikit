@@ -72,6 +72,6 @@ class UiKitLargeAdBannerCard extends StatelessWidget implements AdvertisementFac
           ),
         ),
       ),
-    ).paddingAll(EdgeInsetsFoundation.all16);
+    );
   }
 }

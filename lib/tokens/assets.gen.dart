@@ -536,20 +536,59 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/mock_ad_banner_17.png
   AssetGenImage get mockAdBanner17 => const AssetGenImage('assets/images/png/mock_ad_banner_17.png');
 
+  /// File path: assets/images/png/mock_ad_banner_18.png
+  AssetGenImage get mockAdBanner18 => const AssetGenImage('assets/images/png/mock_ad_banner_18.png');
+
+  /// File path: assets/images/png/mock_ad_banner_19.png
+  AssetGenImage get mockAdBanner19 => const AssetGenImage('assets/images/png/mock_ad_banner_19.png');
+
   /// File path: assets/images/png/mock_ad_banner_2.jpeg
   AssetGenImage get mockAdBanner2 => const AssetGenImage('assets/images/png/mock_ad_banner_2.jpeg');
+
+  /// File path: assets/images/png/mock_ad_banner_20.png
+  AssetGenImage get mockAdBanner20 => const AssetGenImage('assets/images/png/mock_ad_banner_20.png');
+
+  /// File path: assets/images/png/mock_ad_banner_21.png
+  AssetGenImage get mockAdBanner21 => const AssetGenImage('assets/images/png/mock_ad_banner_21.png');
+
+  /// File path: assets/images/png/mock_ad_banner_23.jpg
+  AssetGenImage get mockAdBanner23 => const AssetGenImage('assets/images/png/mock_ad_banner_23.jpg');
+
+  /// File path: assets/images/png/mock_ad_banner_24.jpg
+  AssetGenImage get mockAdBanner24 => const AssetGenImage('assets/images/png/mock_ad_banner_24.jpg');
+
+  /// File path: assets/images/png/mock_ad_banner_25.jpg
+  AssetGenImage get mockAdBanner25 => const AssetGenImage('assets/images/png/mock_ad_banner_25.jpg');
+
+  /// File path: assets/images/png/mock_ad_banner_26.png
+  AssetGenImage get mockAdBanner26 => const AssetGenImage('assets/images/png/mock_ad_banner_26.png');
+
+  /// File path: assets/images/png/mock_ad_banner_27.png
+  AssetGenImage get mockAdBanner27 => const AssetGenImage('assets/images/png/mock_ad_banner_27.png');
+
+  /// File path: assets/images/png/mock_ad_banner_28.png
+  AssetGenImage get mockAdBanner28 => const AssetGenImage('assets/images/png/mock_ad_banner_28.png');
+
+  /// File path: assets/images/png/mock_ad_banner_29.png
+  AssetGenImage get mockAdBanner29 => const AssetGenImage('assets/images/png/mock_ad_banner_29.png');
 
   /// File path: assets/images/png/mock_ad_banner_3.jpeg
   AssetGenImage get mockAdBanner3 => const AssetGenImage('assets/images/png/mock_ad_banner_3.jpeg');
 
-  /// File path: assets/images/png/mock_ad_banner_4.jpeg
-  AssetGenImage get mockAdBanner4 => const AssetGenImage('assets/images/png/mock_ad_banner_4.jpeg');
+  /// File path: assets/images/png/mock_ad_banner_30.jpg
+  AssetGenImage get mockAdBanner30 => const AssetGenImage('assets/images/png/mock_ad_banner_30.jpg');
+
+  /// File path: assets/images/png/mock_ad_banner_31.png
+  AssetGenImage get mockAdBanner31 => const AssetGenImage('assets/images/png/mock_ad_banner_31.png');
+
+  /// File path: assets/images/png/mock_ad_banner_4.jpg
+  AssetGenImage get mockAdBanner4 => const AssetGenImage('assets/images/png/mock_ad_banner_4.jpg');
 
   /// File path: assets/images/png/mock_ad_banner_5.jpeg
   AssetGenImage get mockAdBanner5 => const AssetGenImage('assets/images/png/mock_ad_banner_5.jpeg');
 
-  /// File path: assets/images/png/mock_ad_banner_6.jpg
-  AssetGenImage get mockAdBanner6 => const AssetGenImage('assets/images/png/mock_ad_banner_6.jpg');
+  /// File path: assets/images/png/mock_ad_banner_6.png
+  AssetGenImage get mockAdBanner6 => const AssetGenImage('assets/images/png/mock_ad_banner_6.png');
 
   /// File path: assets/images/png/mock_ad_banner_7.jpg
   AssetGenImage get mockAdBanner7 => const AssetGenImage('assets/images/png/mock_ad_banner_7.jpg');
@@ -913,8 +952,21 @@ class $AssetsImagesPngGen {
         mockAdBanner15,
         mockAdBanner16,
         mockAdBanner17,
+        mockAdBanner18,
+        mockAdBanner19,
         mockAdBanner2,
+        mockAdBanner20,
+        mockAdBanner21,
+        mockAdBanner23,
+        mockAdBanner24,
+        mockAdBanner25,
+        mockAdBanner26,
+        mockAdBanner27,
+        mockAdBanner28,
+        mockAdBanner29,
         mockAdBanner3,
+        mockAdBanner30,
+        mockAdBanner31,
         mockAdBanner4,
         mockAdBanner5,
         mockAdBanner6,

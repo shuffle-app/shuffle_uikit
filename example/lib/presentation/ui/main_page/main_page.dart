@@ -1,6 +1,5 @@
 import 'package:example/presentation/routing/app_routes.dart';
 import 'package:example/presentation/ui/dialog_testings/dialog_testing_page.dart';
-import 'package:example/presentation/ui/showcase/ad_banners_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -116,7 +115,8 @@ class _MainPageState extends State<MainPage> {
             ),
             SpacingFoundation.verticalSpace16,
             context.button(
-              data: BaseUiKitButtonData(text: 'Pro Profile', onPressed: () => Navigator.pushNamed(context, AppRoutes.proProfile)),
+              data: BaseUiKitButtonData(
+                  text: 'Pro Profile', onPressed: () => Navigator.pushNamed(context, AppRoutes.proProfile)),
             ),
             SpacingFoundation.verticalSpace16,
             OrdinaryButton(
@@ -134,12 +134,7 @@ class _MainPageState extends State<MainPage> {
             context.button(
               data: BaseUiKitButtonData(
                 text: 'Ad banners page',
-                onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AdBannersPage(),
-                  ),
-                ),
+                onPressed: () => Navigator.pushNamed(context, AppRoutes.adsPage),
               ),
             ),
             SpacingFoundation.verticalSpace16,

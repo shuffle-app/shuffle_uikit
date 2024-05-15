@@ -48,7 +48,9 @@ class UiKitLargeTextAdBannerCard extends StatelessWidget implements Advertisemen
             children: [
               ImageWidget(
                 link: imageLink,
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
+                width: availableWidth,
+                height: customHeight ?? availableWidth * 1.17,
                 errorWidget: const UiKitBigPhotoErrorWidget(),
               ),
               if (textAlignment != null && textOffset == null)
