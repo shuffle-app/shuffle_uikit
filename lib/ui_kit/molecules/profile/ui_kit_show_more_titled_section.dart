@@ -28,10 +28,13 @@ class UiKitShowMoreTitledSection extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              title,
-              style: boldTextTheme?.title2,
+            Expanded(
+              child: Text(
+                title,
+                style: boldTextTheme?.title2,
+              ),
             ),
+            if (onShowMore != null) SpacingFoundation.horizontalSpace16,
             if (onShowMore != null)
               context.smallOutlinedButton(
                 data: BaseUiKitButtonData(

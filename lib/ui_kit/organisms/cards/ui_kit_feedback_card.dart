@@ -5,7 +5,7 @@ class UiKitFeedbackCard extends StatelessWidget {
   final String? title;
   final String? avatarUrl;
   final DateTime? datePosted;
-  final double? rating;
+  final int? rating;
   final bool? companyAnswered;
   final int? helpfulCount;
   final String? text;
@@ -70,11 +70,18 @@ class UiKitFeedbackCard extends StatelessWidget {
                   const Spacer(),
                   GestureDetector(
                     onTap: onLike,
-                    child: const ImageWidget(
+                    child: ImageWidget(
                       iconData: ShuffleUiKitIcons.like,
+                      width: 12.w,
                       color: ColorsFoundation.darkNeutral900,
                     ),
                   ),
+                  if (helpfulCount != null) SpacingFoundation.horizontalSpace2,
+                  if (helpfulCount != null)
+                    Text(
+                      helpfulCount?.toString() ?? '',
+                      style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
+                    ),
                   SpacingFoundation.horizontalSpace8,
                   GestureDetector(
                     onTap: onLike,

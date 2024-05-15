@@ -1,5 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit/organisms/video_player/full_screen_video_player_page.dart';
 import 'package:video_player/video_player.dart';
 
 class UiKitVideoPlayerWithContentDetails extends StatefulWidget {
@@ -61,7 +65,19 @@ class _UiKitVideoPlayerWithContentDetailsState extends State<UiKitVideoPlayerWit
     await _controller?.seekTo(Duration.zero);
   }
 
-  Future<void> goFullScreen() async {}
+  Future<void> goFullScreen() async {
+    if (_controller == null) return;
+    await SystemChrome.setPreferredOrientations([DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight]);
+    unawaited(Navigator.of(context, rootNavigator: true)
+        .push(
+      MaterialPageRoute(
+        builder: (context) => FullScreenVideoPlayerPage(controller: _controller!),
+      ),
+    )
+        .then((value) {
+      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+    }));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -162,11 +178,14 @@ class _UiKitVideoPlayerWithContentDetailsState extends State<UiKitVideoPlayerWit
                   ),
                 ),
                 SpacingFoundation.horizontalSpace8,
-                GradientableWidget(
-                  gradient: GradientFoundation.defaultRadialGradient,
-                  child: ImageWidget(
-                    color: Colors.white,
-                    link: GraphicsFoundation.instance.svg.maximize.path,
+                GestureDetector(
+                  onTap: goFullScreen,
+                  child: GradientableWidget(
+                    gradient: GradientFoundation.defaultRadialGradient,
+                    child: ImageWidget(
+                      color: Colors.white,
+                      link: GraphicsFoundation.instance.svg.maximize.path,
+                    ),
                   ),
                 ),
               ],

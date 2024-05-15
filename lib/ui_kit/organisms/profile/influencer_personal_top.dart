@@ -54,7 +54,7 @@ class InfluencerPersonalTop extends StatelessWidget {
                         child: Text(
                           category.title,
                           style: boldTextTheme?.subHeadline.copyWith(color: Colors.white),
-                          maxLines: 1,
+                          maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),

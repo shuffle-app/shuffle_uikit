@@ -4941,16 +4941,16 @@ class S {
     );
   }
 
-  /// `{count, plural, =0{reviews} =1{review} =2{reviews} few{reviews} many{reviews} other{reviews}}`
+  /// `{count, plural, =0{reviews received} =1{review received} =2{reviews received} few{reviews received} many{reviews received} other{reviews received}}`
   String ReviewsReceived(num count) {
     return Intl.plural(
       count,
-      zero: 'reviews',
-      one: 'review',
-      two: 'reviews',
-      few: 'reviews',
-      many: 'reviews',
-      other: 'reviews',
+      zero: 'reviews received',
+      one: 'review received',
+      two: 'reviews received',
+      few: 'reviews received',
+      many: 'reviews received',
+      other: 'reviews received',
       name: 'ReviewsReceived',
       desc: '',
       args: [count],
@@ -5198,6 +5198,36 @@ class S {
     return Intl.message(
       'Select price or price range',
       name: 'HintAverageBill',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Follow`
+  String get SubscribeToProfile {
+    return Intl.message(
+      'Follow',
+      name: 'SubscribeToProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unfollow`
+  String get UnsubscribeFromProfile {
+    return Intl.message(
+      'Unfollow',
+      name: 'UnsubscribeFromProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reviews`
+  String get Reviews {
+    return Intl.message(
+      'Reviews',
+      name: 'Reviews',
       desc: '',
       args: [],
     );

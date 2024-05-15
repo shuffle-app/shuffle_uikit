@@ -480,7 +480,7 @@
   "Unfollow": "Unfollow",
   "FollowersCount": "{count, plural, =0{followers} =1{follower} =2{followers} few{followers} many{followers} other{followers}}",
   "Contacts": "Contacts",
-  "ReviewsReceived": "{count, plural, =0{reviews} =1{review} =2{reviews} few{reviews} many{reviews} other{reviews}}",
+  "ReviewsReceived": "{count, plural, =0{reviews received} =1{review received} =2{reviews received} few{reviews received} many{reviews received} other{reviews received}}",
   "Bookings": "{count, plural, =0{bookings} =1{booking} =2{bookings} few{bookings} many{bookings} other{bookings}}",
   "EventsCount": "{count, plural, =0{events} =1{event} =2{events} few{events} many{events} other{events}}",
   "PlacesVisited": "{count, plural, =0{places visited} =1{place visited} =2{places visited} few{places visited} many{places visited} other{places visited}}",
@@ -501,6 +501,9 @@
   "BuildingNumber": "Building number",
   "OfficeAppartmentNumber": "Office or appt number",
   "AverageBill": "Average bill",
-  "HintAverageBill": "Select price or price range"
+  "HintAverageBill": "Select price or price range",
+  "SubscribeToProfile": "Follow",
+  "UnsubscribeFromProfile": "Unfollow",
+  "Reviews": "Reviews"
 
 }

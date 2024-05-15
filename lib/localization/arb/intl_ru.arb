@@ -433,7 +433,7 @@
   "AddReview": "Оставить отзыв",
   "AddReviewFieldHint": "Напишите полезное дополнение",
   "AddReviewFieldTitle": "Опишите ваш опыт",
-  "PersonalRespect": "Личное уважение",
+  "PersonalRespect": "Персональный респект",
   "AddToPersonalTop": "Добавить в личный ТОП",
   "AddInfluencerFeedbackPopOverText": "Напишите подробный отзыв, используйте все доступные символы, чтобы как можно больше людей могли его оценить",
   "TitleYourTop": "Назовите ваш ТОП",
@@ -494,13 +494,16 @@
   "NFT": "NFT",
   "Contest": "Конкурс",
   "Comments": "{count, plural, =0{комментариев} =1{комментарий} =2{комментария} few{комментариев} many{комментариев} other{комментариев}}",
-  "Respect": "Уважение",
+  "Respect": "Респект",
   "Top": "ТОП",
   "PersonalTop": "Личный ТОП",
   "BookingsAndInvites": "Брони и Приглашения",
   "BuildingNumber": "Номер дома",
   "OfficeAppartmentNumber": "Номер офиса или апарта",
   "AverageBill": "Средний чек",
-  "HintAverageBill": "Выбери цену или диапазон цен"
+  "HintAverageBill": "Выбери цену или диапазон цен",
+  "SubscribeToProfile": "Подписаться",
+  "UnsubscribeFromProfile": "Отписаться",
+  "Reviews": "Отзывы"
 
 }

@@ -206,7 +206,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AskPeople": MessageLookupByLibrary.simpleMessage("लोगों से पूछें"),
         "Atheism": MessageLookupByLibrary.simpleMessage("नास्तिकता"),
         "Athlete": MessageLookupByLibrary.simpleMessage("एथलीट"),
-        "AverageBill": MessageLookupByLibrary.simpleMessage("Average bill"),
+        "AverageBill": MessageLookupByLibrary.simpleMessage("औसत बिल"),
         "Balance": MessageLookupByLibrary.simpleMessage("शेष राशि"),
         "BaseProperties": MessageLookupByLibrary.simpleMessage("आधार गुण"),
         "BasedOnYourActivityWeDetermineYourCondition":
@@ -219,8 +219,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("बुकिंग और आमंत्रण"),
         "Both": MessageLookupByLibrary.simpleMessage("Both"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("बौद्ध धर्म"),
-        "BuildingNumber":
-            MessageLookupByLibrary.simpleMessage("Building number"),
+        "BuildingNumber": MessageLookupByLibrary.simpleMessage("इमारत का नंबर"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("आज जला दिया"),
         "Business": MessageLookupByLibrary.simpleMessage("व्यापार"),
         "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
@@ -395,8 +394,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Helpful": MessageLookupByLibrary.simpleMessage("उपयोगी"),
         "HelpfulNCount": m17,
         "Hindu": MessageLookupByLibrary.simpleMessage("हिंदू"),
-        "HintAverageBill":
-            MessageLookupByLibrary.simpleMessage("Select price or price range"),
+        "HintAverageBill": MessageLookupByLibrary.simpleMessage(
+            "मूल्य या मूल्य सीमा का चयन करें"),
         "HintSystemDisabled":
             MessageLookupByLibrary.simpleMessage("संकेत प्रणाली अक्षम है"),
         "HintSystemEnabled": m18,
@@ -523,7 +522,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "धन्यवाद!\nअब हम आपको बेहतर जानते हैं"),
         "Off": MessageLookupByLibrary.simpleMessage("बंद"),
         "OfficeAppartmentNumber":
-            MessageLookupByLibrary.simpleMessage("Office or appt number"),
+            MessageLookupByLibrary.simpleMessage("कार्यालय या अपार्टमेंट नंबर"),
         "Ok": MessageLookupByLibrary.simpleMessage("ठीक है"),
         "OkayCool": MessageLookupByLibrary.simpleMessage("ठीक है अद्भुत"),
         "OnboardingSlide1":
@@ -649,6 +648,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetFilters": MessageLookupByLibrary.simpleMessage("रीसेट फ़िल्टर"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("पासवर्ड रीसेट"),
         "Respect": MessageLookupByLibrary.simpleMessage("सम्मान"),
+        "Reviews": MessageLookupByLibrary.simpleMessage("समीक्षाएं"),
         "ReviewsPosted": m31,
         "ReviewsReceived": m32,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("शनिवार"),
@@ -732,6 +732,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "घटनाएँ जिन्हें आप नहीं चाहते हैं छोड़ना"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("अन्वेषण करना प्रारंभ करें"),
+        "SubscribeToProfile": MessageLookupByLibrary.simpleMessage("फॉलो करें"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("रविवार"),
         "Sunny": MessageLookupByLibrary.simpleMessage("सनी"),
         "Support": MessageLookupByLibrary.simpleMessage("सहायता"),
@@ -795,6 +796,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Unfollow": MessageLookupByLibrary.simpleMessage("अनफॉलो"),
         "UniqueProperties":
             MessageLookupByLibrary.simpleMessage("अद्वितीय गुण"),
+        "UnsubscribeFromProfile":
+            MessageLookupByLibrary.simpleMessage("अनफॉलो"),
         "UpcomingEvent":
             MessageLookupByLibrary.simpleMessage("आगामी कार्यक्रम"),
         "UpcomingGlobalEvents":
