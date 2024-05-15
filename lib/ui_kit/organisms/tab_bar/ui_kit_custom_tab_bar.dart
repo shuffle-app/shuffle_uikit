@@ -22,6 +22,7 @@ class UiKitCustomTabBar extends StatelessWidget {
   }) : super(key: key);
 
   factory UiKitCustomTabBar.badged({
+    Key? key,
     required List<UiKitCustomTab> tabs,
     required ValueChanged<int> onTappedTab,
     bool scrollable = false,
@@ -30,6 +31,7 @@ class UiKitCustomTabBar extends StatelessWidget {
     BorderRadius clipBorderRadius = const BorderRadius.all(Radius.circular(9999)),
   }) =>
       UiKitCustomTabBar(
+        key: key,
         tabs: tabs,
         onTappedTab: onTappedTab,
         selectedTab: selectedTab,
@@ -75,7 +77,8 @@ class UiKitCustomTabBar extends StatelessWidget {
               splashFactory: NoSplash.splashFactory,
               onTap: onTappedTab,
               tabs: tabs,
-              indicatorPadding: badged ? EdgeInsets.symmetric(vertical: EdgeInsetsFoundation.vertical4) : EdgeInsets.zero,
+              indicatorPadding:
+                  badged ? EdgeInsets.symmetric(vertical: EdgeInsetsFoundation.vertical4) : EdgeInsets.zero,
             ).paddingSymmetric(
               horizontal: EdgeInsetsFoundation.horizontal4,
               vertical: badged ? EdgeInsetsFoundation.zero : EdgeInsetsFoundation.all4,

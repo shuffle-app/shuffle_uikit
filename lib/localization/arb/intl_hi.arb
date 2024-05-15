@@ -498,10 +498,14 @@
   "Top": "शीर्ष",
   "PersonalTop": "व्यक्तिगत शीर्ष",
   "BookingsAndInvites": "बुकिंग और आमंत्रण",
-  "BuildingNumber": "Building number",
-  "OfficeAppartmentNumber": "Office or appt number",
-  "AverageBill": "Average bill",
-  "HintAverageBill": "Select price or price range"
+  "BuildingNumber": "इमारत का नंबर",
+  "OfficeAppartmentNumber": "कार्यालय या अपार्टमेंट नंबर",
+  "AverageBill": "औसत बिल",
+  "HintAverageBill": "मूल्य या मूल्य सीमा का चयन करें",
+  "SubscribeToProfile": "फॉलो करें",
+  "UnsubscribeFromProfile": "अनफॉलो",
+  "Reviews": "समीक्षाएं"
+
 
 
 }

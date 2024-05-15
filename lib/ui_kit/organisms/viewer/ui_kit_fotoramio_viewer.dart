@@ -73,10 +73,10 @@ class _UiKitFotoramioViewerState extends State<UiKitFotoramioViewer> {
               );
             },
           ),
-          IgnorePointer(
-            child: Positioned.fill(
-              top: 0,
-              left: 0,
+          Positioned.fill(
+            top: 0,
+            left: 0,
+            child: IgnorePointer(
               child: Container(
                 height: 0.25.sh,
                 width: 1.sw,

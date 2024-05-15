@@ -32,6 +32,8 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
   int contestBadgeCount = 999;
   int videoBadgeCount = 0;
   final autoSizeGroup = AutoSizeGroup();
+  final specialTabsKey = GlobalKey();
+  final ScrollController scrollController = ScrollController();
 
   @override
   void initState() {
@@ -49,19 +51,29 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
           (bigScreen
               ? 0.26.sh
               : midScreen
-                  ? 0.27.sh
+                  ? 0.3.sh
                   : 0.325.sh);
     } else if (index == 1) {
-      _activityTabsContentHeight = 4 * (bigScreen || midScreen ? 0.3.sh : 0.3575.sh);
+      _activityTabsContentHeight = 4 * (bigScreen || midScreen ? 0.3125.sh : 0.3575.sh);
     } else if (index == 2) {
       _activityTabsContentHeight = 2 *
           (bigScreen
               ? 0.41.sh
               : midScreen
-                  ? 0.42.sh
+                  ? 0.45.sh
                   : 0.5.sh);
     }
     setState(() {});
+  }
+
+  Future<void> _animateToSpecialTabPosition() async {
+    if (mounted) {
+      await Scrollable.ensureVisible(
+        specialTabsKey.currentContext!,
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.decelerate,
+      );
+    }
   }
 
   void _specialTabsListener() {
@@ -140,6 +152,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
     return Scaffold(
       body: BlurredAppBarPage(
         title: 'Marry Williams',
+        controller: scrollController,
         centerTitle: true,
         autoImplyLeading: true,
         children: [
@@ -214,8 +227,9 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                 SpacingFoundation.horizontalSpace8,
                 Expanded(
                   child: UiKitGradientableStatsCard(
-                    maxLines: 2,
+                    maxLines: 1,
                     gradient: GradientFoundation.bronzeGradient,
+                    autoSizeGroup: autoSizeGroup,
                     stats: UiKitStats(
                       title: S.current.ReviewsPosted(widget.reviewsPosted!).toLowerCase(),
                       value: profileStatsFormatter(widget.reviewsPosted!),
@@ -250,6 +264,11 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                 ),
                 SpacingFoundation.verticalSpace12,
                 UiKitInfluencerProfileNewsTile(
+                  onTap: () {
+                    _animateToSpecialTabPosition().whenComplete(() {
+                      specialTabsController.animateTo(1);
+                    });
+                  },
                   leading: StaggeredPhotosLeadingWidget(
                     photoLinks: [
                       GraphicsFoundation.instance.png.placeSocial1.path,
@@ -262,6 +281,11 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                 ),
                 SpacingFoundation.verticalSpace12,
                 UiKitInfluencerProfileNewsTile(
+                  onTap: () {
+                    _animateToSpecialTabPosition().whenComplete(() {
+                      specialTabsController.animateTo(0);
+                    });
+                  },
                   leadingImageLink: GraphicsFoundation.instance.png.mockAdBanner2.path,
                   title: '+2 voices',
                   subtitle: 'La vue citytel group',
@@ -269,6 +293,11 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                 ),
                 SpacingFoundation.verticalSpace12,
                 UiKitInfluencerProfileNewsTile(
+                  onTap: () {
+                    _animateToSpecialTabPosition().whenComplete(() {
+                      specialTabsController.animateTo(3);
+                    });
+                  },
                   leadingImageLink: GraphicsFoundation.instance.png.placeSocial4.path,
                   title: 'News interview',
                   subtitle:
@@ -280,6 +309,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
           ),
           SpacingFoundation.verticalSpace24,
           UiKitCustomTabBar.badged(
+            key: specialTabsKey,
             tabController: specialTabsController,
             scrollable: true,
             tabs: [
@@ -474,7 +504,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
           UiKitCustomTabBar(
             tabController: activityTabsController,
             tabs: [
-              UiKitCustomTab(title: S.current.ReviewsReceived(100).toUpperCase(), group: autoSizeGroup),
+              UiKitCustomTab(title: S.current.Reviews.toUpperCase(), group: autoSizeGroup),
               UiKitCustomTab(title: S.current.Top.toUpperCase(), group: autoSizeGroup),
               UiKitCustomTab(title: S.current.Respect.toUpperCase(), group: autoSizeGroup),
             ],
@@ -697,7 +727,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
               ],
             ),
           ),
-          SpacingFoundation.verticalSpace24,
+          SpacingFoundation.bottomNavigationBarSpacing,
         ],
       ),
     );

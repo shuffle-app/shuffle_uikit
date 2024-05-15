@@ -20,7 +20,7 @@ class VideoPlayerBottomBar extends StatefulWidget {
 }
 
 class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
-  final height = 20.h;
+  final height = kBottomNavigationBarHeight / 2;
   static const iconSwitchDuration = Duration(milliseconds: 200);
 
   String _formattedTime({required int timeInSecond}) {
@@ -37,7 +37,7 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
     final theme = context.uiKitTheme;
 
     return SizedBox(
-        height: (widget.isFullScreen ? height + MediaQuery.paddingOf(context).bottom : height) * 1.2,
+        height: kBottomNavigationBarHeight,
         width: double.infinity,
         child: ColoredBox(
           color: theme?.colorScheme.primary ?? Colors.black87,
@@ -78,10 +78,8 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
                     ),
                     Text(
                         '${_formattedTime(timeInSecond: value.position.inSeconds)}/${_formattedTime(timeInSecond: value.duration.inSeconds)}',
-                        style: theme?.regularTextTheme.body.copyWith(
-                          fontSize: 14,
-                          color: theme.colorScheme.inversePrimary
-                        )),
+                        style: theme?.regularTextTheme.body
+                            .copyWith(fontSize: 14, color: theme.colorScheme.inversePrimary)),
                     const Spacer(),
                     IconButton(
                       splashRadius: double.minPositive,

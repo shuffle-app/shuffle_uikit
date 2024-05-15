@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -17,6 +18,7 @@ class ProProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = context.uiKitTheme?.colorScheme;
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final autoSizeGroup = AutoSizeGroup();
 
     return Scaffold(
       body: BlurredAppBarPage(
@@ -60,6 +62,8 @@ class ProProfilePage extends StatelessWidget {
                 Expanded(
                   child: UiKitGradientableStatsCard(
                     gradient: GradientFoundation.silverGradient,
+                    autoSizeGroup: autoSizeGroup,
+                    maxLines: 1,
                     stats: UiKitStats(
                       title: S.current.EventsCount(900).toLowerCase(),
                       value: profileStatsFormatter(events!),
@@ -71,6 +75,8 @@ class ProProfilePage extends StatelessWidget {
                 Expanded(
                   child: UiKitGradientableStatsCard(
                     gradient: GradientFoundation.bronzeGradient,
+                    autoSizeGroup: autoSizeGroup,
+                    maxLines: Localizations.localeOf(context).languageCode == 'en' ? 2 : 1,
                     stats: UiKitStats(
                       title: S.current.ReviewsReceived(300).toLowerCase(),
                       value: profileStatsFormatter(reviews!),
@@ -82,6 +88,8 @@ class ProProfilePage extends StatelessWidget {
                 Expanded(
                   child: UiKitGradientableStatsCard(
                     gradient: GradientFoundation.goldGradient,
+                    autoSizeGroup: autoSizeGroup,
+                    maxLines: 1,
                     stats: UiKitStats(
                       title: S.current.Bookings(16000).toLowerCase(),
                       value: profileStatsFormatter(bookings!),
@@ -92,25 +100,6 @@ class ProProfilePage extends StatelessWidget {
               ],
             ),
           if (events != null && reviews != null && bookings != null) SpacingFoundation.verticalSpace24,
-          Container(
-            height: 0.4.sh,
-            width: 1.sh,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: colorScheme?.inversePrimary ?? Colors.white,
-                width: 1,
-              ),
-              borderRadius: BorderRadiusFoundation.all16,
-            ),
-            child: Center(
-              child: Text(
-                'Statistics is coming soon',
-                style: boldTextTheme?.title2,
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-          SpacingFoundation.verticalSpace24,
           UiKitExpandableList(
             items: List.generate(
               10,
@@ -153,9 +142,10 @@ class ProProfilePage extends StatelessWidget {
                 reviews: List.generate(
                   10,
                   (index) => UiKitFeedbackCard(
+                    helpfulCount: index + 1,
                     title: 'Gale Benson',
                     avatarUrl: GraphicsFoundation.instance.png.serviceSocial2.path,
-                    rating: 4.5,
+                    rating: 5,
                     datePosted: DateTime.now().subtract(const Duration(days: 1)),
                     text:
                         'It’s certainly hidden away, found around a corner past a couple of closed-down outlets and facing the back of a health centre in Cluster F, crammed into one of the tiniest spaces in the teeming JLT neighbourhood.',
@@ -166,7 +156,7 @@ class ProProfilePage extends StatelessWidget {
               ),
             ),
           ),
-          SpacingFoundation.verticalSpace24,
+          SpacingFoundation.bottomNavigationBarSpacing,
         ],
       ),
     );

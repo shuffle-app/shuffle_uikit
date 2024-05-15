@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitRatingBadge extends StatelessWidget {
-  final double rating;
+  final int rating;
   final IconData? icon;
 
   const UiKitRatingBadge({
@@ -33,7 +33,7 @@ class UiKitRatingBadge extends StatelessWidget {
           ),
           SpacingFoundation.horizontalSpace4,
           Text(
-            rating.toStringAsFixed(0),
+            rating.toString(),
             style: textTheme?.caption1Bold.copyWith(color: color),
           ),
         ],

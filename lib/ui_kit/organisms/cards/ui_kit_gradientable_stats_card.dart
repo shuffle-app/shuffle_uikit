@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -5,12 +6,14 @@ class UiKitGradientableStatsCard extends StatelessWidget {
   final UiKitStats stats;
   final Gradient gradient;
   final int? maxLines;
+  final AutoSizeGroup? autoSizeGroup;
 
   const UiKitGradientableStatsCard({
     Key? key,
     required this.stats,
     required this.gradient,
     this.maxLines,
+    this.autoSizeGroup,
   }) : super(key: key);
 
   double get height {
@@ -38,16 +41,15 @@ class UiKitGradientableStatsCard extends StatelessWidget {
                 style: boldTextTheme?.title2,
                 textAlign: TextAlign.center,
                 maxLines: maxLines ?? 1,
-                overflow: TextOverflow.ellipsis,
               ),
             ),
             SpacingFoundation.verticalSpace12,
-            Text(
+            AutoSizeText(
               stats.title,
+              group: autoSizeGroup,
               style: boldTextTheme?.caption1Bold,
               textAlign: TextAlign.center,
-              maxLines: maxLines ?? 1,
-              overflow: TextOverflow.ellipsis,
+              maxLines: maxLines ?? 2,
             ),
           ],
         ).paddingAll(EdgeInsetsFoundation.all12),

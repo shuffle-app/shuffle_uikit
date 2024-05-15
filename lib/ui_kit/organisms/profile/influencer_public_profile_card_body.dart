@@ -91,12 +91,14 @@ class InfluencerPublicProfileCardBody extends StatelessWidget {
                   ),
                 ),
               ),
+              SpacingFoundation.horizontalSpace16,
               if (socialLinks != null)
                 ...socialLinks!.map((e) {
                   final index = socialLinks!.indexOf(e);
 
                   return e.paddingOnly(
-                    right: index != socialLinks!.length - 1 ? EdgeInsetsFoundation.horizontal8 : EdgeInsetsFoundation.zero,
+                    right:
+                        index != socialLinks!.length - 1 ? EdgeInsetsFoundation.horizontal8 : EdgeInsetsFoundation.zero,
                   );
                 }).toList(),
             ],
@@ -104,7 +106,7 @@ class InfluencerPublicProfileCardBody extends StatelessWidget {
           SpacingFoundation.verticalSpace16,
           context.button(
             data: BaseUiKitButtonData(
-              text: following == true ? S.current.Unfollow : S.current.Follow,
+              text: following == true ? S.current.UnsubscribeFromProfile : S.current.SubscribeToProfile,
               onPressed: onFollow,
             ),
           ),

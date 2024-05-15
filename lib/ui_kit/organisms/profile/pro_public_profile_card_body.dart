@@ -57,13 +57,16 @@ class ProPublicProfileCardBody extends StatelessWidget {
               child: Container(
                 clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
-                  color: colorScheme?.darkNeutral500.withOpacity(0.16) ?? ColorsFoundation.darkNeutral500.withOpacity(0.16),
+                  color: colorScheme?.darkNeutral500.withOpacity(0.16) ??
+                      ColorsFoundation.darkNeutral500.withOpacity(0.16),
                   borderRadius: BorderRadiusFoundation.all4,
                 ),
                 child: Text(
-                  DateFormat('MMM dd, yyyy').format(registrationDate!),
+                  '${DateFormat('MMMd', Localizations.localeOf(context).languageCode).format(registrationDate!)}, '
+                  '${DateFormat('yyyy', Localizations.localeOf(context).languageCode).format(registrationDate!)}',
                   style: regularTextTheme?.caption4Regular.copyWith(color: ColorsFoundation.darkNeutral800),
-                ).paddingSymmetric(vertical: EdgeInsetsFoundation.vertical2, horizontal: EdgeInsetsFoundation.horizontal4),
+                ).paddingSymmetric(
+                    vertical: EdgeInsetsFoundation.vertical2, horizontal: EdgeInsetsFoundation.horizontal4),
               ),
             ),
           SpacingFoundation.verticalSpace8,
@@ -99,7 +102,7 @@ class ProPublicProfileCardBody extends StatelessWidget {
           SpacingFoundation.verticalSpace16,
           context.button(
             data: BaseUiKitButtonData(
-              text: following == true ? S.current.Unfollow : S.current.Follow,
+              text: following == true ? S.current.UnsubscribeFromProfile : S.current.SubscribeToProfile,
               onPressed: onFollow,
             ),
           ),
@@ -121,10 +124,10 @@ class ProPublicProfileCardBody extends StatelessWidget {
             ),
           ),
           SpacingFoundation.verticalSpace16,
-          if (interests != null && matchingInterests != null)
+          if (interests != null)
             ProfileInterests(
               profileInterests: interests!,
-              matchingInterests: matchingInterests!,
+              matchingInterests: matchingInterests,
             ),
           SpacingFoundation.verticalSpace16,
           Text(

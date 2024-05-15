@@ -107,7 +107,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${Intl.plural(count, zero: 'reviews posted', one: 'review posted', two: 'reviews posted', few: 'reviews posted', many: 'reviews posted', other: 'reviews posted')}";
 
   static String m32(count) =>
-      "${Intl.plural(count, zero: 'reviews', one: 'review', two: 'reviews', few: 'reviews', many: 'reviews', other: 'reviews')}";
+      "${Intl.plural(count, zero: 'reviews received', one: 'review received', two: 'reviews received', few: 'reviews received', many: 'reviews received', other: 'reviews received')}";
 
   static String m33(item) =>
       "${Intl.plural(item, zero: 'preferences don’t work', one: 'events/places', two: 'type & get result', few: 'use ratings & models', other: 'other')}";
@@ -642,6 +642,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetFilters": MessageLookupByLibrary.simpleMessage("Reset filters"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Respect": MessageLookupByLibrary.simpleMessage("Respect"),
+        "Reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
         "ReviewsPosted": m31,
         "ReviewsReceived": m32,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Sat"),
@@ -727,6 +728,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Events you don\'t wanna miss"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Start to explore"),
+        "SubscribeToProfile": MessageLookupByLibrary.simpleMessage("Follow"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("Sun"),
         "Sunny": MessageLookupByLibrary.simpleMessage("Sunny"),
         "Support": MessageLookupByLibrary.simpleMessage("Support"),
@@ -785,6 +787,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Unfollow": MessageLookupByLibrary.simpleMessage("Unfollow"),
         "UniqueProperties":
             MessageLookupByLibrary.simpleMessage("Unique properties"),
+        "UnsubscribeFromProfile":
+            MessageLookupByLibrary.simpleMessage("Unfollow"),
         "UpcomingEvent": MessageLookupByLibrary.simpleMessage("Upcoming Event"),
         "UpcomingGlobalEvents":
             MessageLookupByLibrary.simpleMessage("Upcoming globals"),

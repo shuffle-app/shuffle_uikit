@@ -553,7 +553,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "PersonalCredentials":
             MessageLookupByLibrary.simpleMessage("Личные данные"),
         "PersonalRespect":
-            MessageLookupByLibrary.simpleMessage("Личное уважение"),
+            MessageLookupByLibrary.simpleMessage("Персональный респект"),
         "PersonalTop": MessageLookupByLibrary.simpleMessage("Личный ТОП"),
         "Phone": MessageLookupByLibrary.simpleMessage("Телефон"),
         "PhoneVerification": MessageLookupByLibrary.simpleMessage(
@@ -649,7 +649,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Сбросить фильтры"),
         "ResetPassword":
             MessageLookupByLibrary.simpleMessage("Сбросить пароль"),
-        "Respect": MessageLookupByLibrary.simpleMessage("Уважение"),
+        "Respect": MessageLookupByLibrary.simpleMessage("Респект"),
+        "Reviews": MessageLookupByLibrary.simpleMessage("Отзывы"),
         "ReviewsPosted": m31,
         "ReviewsReceived": m32,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Сб"),
@@ -736,6 +737,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "События, которые нельзя пропускать"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Начать изучать"),
+        "SubscribeToProfile":
+            MessageLookupByLibrary.simpleMessage("Подписаться"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("Вс"),
         "Sunny": MessageLookupByLibrary.simpleMessage("Солнечно"),
         "Support": MessageLookupByLibrary.simpleMessage("Помощь"),
@@ -795,6 +798,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Unfollow": MessageLookupByLibrary.simpleMessage("Отписаться"),
         "UniqueProperties":
             MessageLookupByLibrary.simpleMessage("Уникальные свойства"),
+        "UnsubscribeFromProfile":
+            MessageLookupByLibrary.simpleMessage("Отписаться"),
         "UpcomingEvent":
             MessageLookupByLibrary.simpleMessage("Предостоящее событие"),
         "UpcomingGlobalEvents":
