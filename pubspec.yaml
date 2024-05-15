@@ -78,7 +78,7 @@ dependencies:
       #      ref: main
       ref: e4391ca40994c91acc563477c7959fbdeff50004
 
-  intl: ^0.18.1
+  intl: ^0.19.0
   just_audio: ^0.9.35
 
   #custom splash factory
