@@ -28,6 +28,12 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.maxSymbols,
     this.inputFormatters,
     this.obscureText = false,
+    this.label,
+    this.onTap,
+    this.customLabelColor,
+    this.customFocusedBorder,
+    this.customEnabledBorder,
+    this.autofocus = false,
   }) : super(key: key);
 
   @override
@@ -47,6 +53,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
 
   final ValueChanged<String>? onChanged;
 
+  final bool autofocus;
   final EdgeInsets? customPadding;
   final TextAlign? textAlign;
   final Color? fillColor;
@@ -62,6 +69,11 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
   final bool expands;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
+  final String? label;
+  final VoidCallback? onTap;
+  final Color? customLabelColor;
+  final InputBorder? customFocusedBorder;
+  final InputBorder? customEnabledBorder;
 
   @override
   State<UiKitInputFieldNoIcon> createState() => _UiKitInputFieldNoIconState();
@@ -91,6 +103,13 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
           ? ColorsFoundation.error
           : widget.textColor ?? uiKitTheme.colorScheme.inversePrimary,
     );
+    TextStyle? labelStyle = uiKitTheme?.regularTextTheme.labelSmall;
+    labelStyle = _key.currentState?.hasError ?? false
+        ? labelStyle?.copyWith(color: ColorsFoundation.error)
+        : labelStyle?.copyWith(
+            color: widget.enabled
+                ? widget.customLabelColor ?? uiKitTheme?.colorScheme.bodyTypography
+                : uiKitTheme?.colorScheme.darkNeutral900);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
           ? widget.hintTextColor ?? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
@@ -106,6 +125,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         key: _key,
         enabled: widget.enabled,
         onChanged: widget.onChanged,
+        autofocus: widget.autofocus,
         style: inputTextStyle,
         minLines: widget.expands ? null : widget.minLines,
         maxLines: widget.maxLines ?? (widget.expands ? null : (widget.minLines ?? 0) + 1),
@@ -123,6 +143,8 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         maxLength: widget.maxSymbols,
         buildCounter: widget.maxSymbols == null ? null : _buildCounter,
         decoration: InputDecoration(
+          labelText: widget.label,
+          labelStyle: labelStyle,
           hintText: widget.hintText,
           errorText: widget.errorText,
           contentPadding: widget.customPadding ?? EdgeInsets.all(EdgeInsetsFoundation.all16),
@@ -131,6 +153,8 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
           fillColor: widget.fillColor,
           errorStyle: errorStyle,
           hintStyle: hintStyle,
+          enabledBorder: widget.customEnabledBorder,
+          focusedBorder: widget.customFocusedBorder,
         ),
       ),
     );
