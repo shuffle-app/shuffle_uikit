@@ -24,6 +24,9 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      controller.addListener(() {
+        setState(() {});
+      });
       final file = await ImagePicker().pickImage(source: ImageSource.gallery);
       final bytes = await file?.readAsBytes();
 
@@ -59,7 +62,14 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
                 onCropCompleted: (imageValue) => setState(() => cropedImageBytes = imageValue),
               ),
             SpacingFoundation.verticalSpace24,
-            context.smallButton(data: BaseUiKitButtonData(text: 'crop', onPressed: () => controller.cropImage())),
+            context
+                .smallButton(
+                  data: BaseUiKitButtonData(
+                    text: 'crop',
+                    onPressed: () => controller.cropImage(),
+                  ),
+                )
+                .loadingWrap(controller.state == UiKitViewFinderState.cropping),
             SpacingFoundation.verticalSpace24,
             if (cropedImageBytes != null) Image.memory(cropedImageBytes!),
             // UiKitPictureViewFinder(

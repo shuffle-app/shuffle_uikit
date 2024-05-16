@@ -1,7 +1,7 @@
 import 'dart:developer' as dev;
 import 'dart:math';
-import 'dart:typed_data';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:image/image.dart' as imageLib;
@@ -31,9 +31,47 @@ class SizeAndPosition {
 class UiKitPictureViewFinderController extends ChangeNotifier {
   UiKitPictureViewFinderController() : super();
 
-  void cropImage() {
+  UiKitViewFinderState state = UiKitViewFinderState.initial;
+
+  void completeCrop() {
+    state = UiKitViewFinderState.croppingDone;
     notifyListeners();
   }
+
+  void cropImage() {
+    state = UiKitViewFinderState.cropping;
+    notifyListeners();
+  }
+}
+
+class CropImageInBackgroundData {
+  final imageLib.Image initialImage;
+  final int cropStartX;
+  final int cropStartY;
+  final int cropWidth;
+  final int cropHeight;
+
+  CropImageInBackgroundData({
+    required this.initialImage,
+    required this.cropStartX,
+    required this.cropStartY,
+    required this.cropWidth,
+    required this.cropHeight,
+  });
+}
+
+Future<Uint8List> _cropImageInBackground(CropImageInBackgroundData data) async {
+  return Uint8List.fromList(
+    imageLib.encodePng(
+      imageLib.copyCrop(
+        data.initialImage,
+        x: data.cropStartX,
+        y: data.cropStartY,
+        width: data.cropWidth,
+        height: data.cropHeight,
+      ),
+    ),
+  );
 }
 
 class UiKitPictureViewFinder extends StatefulWidget {
@@ -116,23 +154,23 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
     return height;
   }
 
-  void cropImage(Uint8List data) {
+  void cropImage(Uint8List data) async {
     if (image == null) return;
     final cropStartX = (_positionAndSize.value.position.dx / (fittedImageSize.width / imageOriginalSize.width)).ceil().toInt();
     final cropStartY = (_positionAndSize.value.position.dy / (fittedImageSize.height / imageOriginalSize.height)).ceil().toInt();
     final cropWidth = (_positionAndSize.value.size.width / (fittedImageSize.width / imageOriginalSize.width)).ceil().toInt();
     final cropHeight = (_positionAndSize.value.size.height / (fittedImageSize.height / imageOriginalSize.height)).ceil().toInt();
-    final imageBytes = Uint8List.fromList(
-      imageLib.encodePng(
-        imageLib.copyCrop(
-          image!,
-          x: cropStartX,
-          y: cropStartY,
-          width: cropWidth,
-          height: cropHeight,
-        ),
+    final imageBytes = await compute(
+      _cropImageInBackground,
+      CropImageInBackgroundData(
+        initialImage: image!,
+        cropStartX: cropStartX,
+        cropStartY: cropStartY,
+        cropWidth: cropWidth,
+        cropHeight: cropHeight,
       ),
     );
+    widget.controller.completeCrop();
     widget.onCropCompleted?.call(imageBytes);
   }
 
@@ -148,7 +186,7 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       widget.controller.addListener(() {
-        cropImage(widget.imageBytes);
+        if (widget.controller.state == UiKitViewFinderState.cropping) cropImage(widget.imageBytes);
       });
       final bytes = widget.imageBytes;
       final imageFromBytes = imageLib.decodeImage(bytes);
@@ -535,3 +573,5 @@ class CroppedImageData {
     this.filename,
   });
 }
+
+enum UiKitViewFinderState { initial, cropping, croppingDone }
