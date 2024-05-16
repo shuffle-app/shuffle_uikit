@@ -645,6 +645,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetFilters": MessageLookupByLibrary.simpleMessage("Reset filters"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Respect": MessageLookupByLibrary.simpleMessage("Respect"),
+        "RestorePurchase":
+            MessageLookupByLibrary.simpleMessage("Restore purchase"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
         "ReviewsPosted": m31,
         "ReviewsReceived": m32,
