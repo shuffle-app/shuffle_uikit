@@ -217,6 +217,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Bookings and Invites"),
         "Both": MessageLookupByLibrary.simpleMessage("Both"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Buddhism"),
+        "BuildYOurBusiness":
+            MessageLookupByLibrary.simpleMessage("Build your business with"),
         "BuildingNumber":
             MessageLookupByLibrary.simpleMessage("Building number"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("Burned today"),

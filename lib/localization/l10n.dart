@@ -5252,6 +5252,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Build your business with`
+  String get BuildYOurBusiness {
+    return Intl.message(
+      'Build your business with',
+      name: 'BuildYOurBusiness',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
