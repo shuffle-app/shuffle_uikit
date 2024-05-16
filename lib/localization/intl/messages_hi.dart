@@ -643,6 +643,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Read": m30,
         "RealMoney": MessageLookupByLibrary.simpleMessage("असली पैसे"),
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
+        "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),
         "Reset": MessageLookupByLibrary.simpleMessage("रीसेट"),
         "ResetFilters": MessageLookupByLibrary.simpleMessage("रीसेट फ़िल्टर"),
@@ -697,6 +698,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDateRange":
             MessageLookupByLibrary.simpleMessage("तिथि सीमा चुनें"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("दिन चुनें"),
+        "SelectGender": MessageLookupByLibrary.simpleMessage("लिंग चुनें"),
         "SelectLanguage": MessageLookupByLibrary.simpleMessage("भाषा चुने"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),
         "SelectType": m34,
