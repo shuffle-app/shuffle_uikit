@@ -5232,6 +5232,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Religion`
+  String get Religion {
+    return Intl.message(
+      'Religion',
+      name: 'Religion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select gender`
+  String get SelectGender {
+    return Intl.message(
+      'Select gender',
+      name: 'SelectGender',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

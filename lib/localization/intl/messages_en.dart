@@ -637,6 +637,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Read": m30,
         "RealMoney": MessageLookupByLibrary.simpleMessage("Real money"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
+        "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
         "Reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "ResetFilters": MessageLookupByLibrary.simpleMessage("Reset filters"),
@@ -691,6 +692,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDateRange":
             MessageLookupByLibrary.simpleMessage("Select Date Range"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Select days "),
+        "SelectGender": MessageLookupByLibrary.simpleMessage("Select gender"),
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Please select language"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("Select option"),

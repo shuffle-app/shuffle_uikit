@@ -504,6 +504,8 @@
   "HintAverageBill": "Select price or price range",
   "SubscribeToProfile": "Follow",
   "UnsubscribeFromProfile": "Unfollow",
-  "Reviews": "Reviews"
+  "Reviews": "Reviews",
+  "Religion": "Religion",
+  "SelectGender": "Select gender"
 
 }

@@ -642,6 +642,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Read": m30,
         "RealMoney": MessageLookupByLibrary.simpleMessage("Реальные деньги"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
+        "Religion": MessageLookupByLibrary.simpleMessage("Религия"),
         "ResendCode":
             MessageLookupByLibrary.simpleMessage("Отправить код еще раз"),
         "Reset": MessageLookupByLibrary.simpleMessage("Сбросить"),
@@ -699,6 +700,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDateRange":
             MessageLookupByLibrary.simpleMessage("Выберите диапазон дат"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Выбрать дни "),
+        "SelectGender": MessageLookupByLibrary.simpleMessage("Выберите пол"),
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Пожалуйста выберите язык"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("Выбирай"),

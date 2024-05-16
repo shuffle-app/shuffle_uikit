@@ -504,6 +504,8 @@
   "HintAverageBill": "Выбери цену или диапазон цен",
   "SubscribeToProfile": "Подписаться",
   "UnsubscribeFromProfile": "Отписаться",
-  "Reviews": "Отзывы"
+  "Reviews": "Отзывы",
+  "Religion": "Религия",
+  "SelectGender": "Выберите пол"
 
 }

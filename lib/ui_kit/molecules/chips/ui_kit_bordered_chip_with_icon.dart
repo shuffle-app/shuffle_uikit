@@ -38,6 +38,7 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
               Container(
                 clipBehavior: Clip.hardEdge,
                 height: 0.028.sh,
+                width: 0.08125.sw,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadiusFoundation.all24,
                 ),
