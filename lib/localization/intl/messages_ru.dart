@@ -218,6 +218,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Брони и Приглашения"),
         "Both": MessageLookupByLibrary.simpleMessage("Оба"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Буддизм"),
+        "BuildYOurBusiness":
+            MessageLookupByLibrary.simpleMessage("Построй свой бизнес c"),
         "BuildingNumber": MessageLookupByLibrary.simpleMessage("Номер дома"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("Сожжено сегодя"),
         "Business": MessageLookupByLibrary.simpleMessage("Бизнес"),
@@ -651,6 +653,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetPassword":
             MessageLookupByLibrary.simpleMessage("Сбросить пароль"),
         "Respect": MessageLookupByLibrary.simpleMessage("Респект"),
+        "RestorePurchase":
+            MessageLookupByLibrary.simpleMessage("Восстановить покупку"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Отзывы"),
         "ReviewsPosted": m31,
         "ReviewsReceived": m32,

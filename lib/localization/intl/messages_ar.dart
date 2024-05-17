@@ -217,6 +217,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Bookings and Invites"),
         "Both": MessageLookupByLibrary.simpleMessage("Both"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Buddhism"),
+        "BuildYOurBusiness":
+            MessageLookupByLibrary.simpleMessage("Build your business with"),
         "BuildingNumber":
             MessageLookupByLibrary.simpleMessage("Building number"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("Burned today"),
@@ -643,6 +645,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetFilters": MessageLookupByLibrary.simpleMessage("Reset filters"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Respect": MessageLookupByLibrary.simpleMessage("Respect"),
+        "RestorePurchase":
+            MessageLookupByLibrary.simpleMessage("Restore purchase"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
         "ReviewsPosted": m31,
         "ReviewsReceived": m32,

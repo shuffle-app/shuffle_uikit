@@ -219,6 +219,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("बुकिंग और आमंत्रण"),
         "Both": MessageLookupByLibrary.simpleMessage("Both"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("बौद्ध धर्म"),
+        "BuildYOurBusiness":
+            MessageLookupByLibrary.simpleMessage("अपने व्यापार को बढ़ाएं"),
         "BuildingNumber": MessageLookupByLibrary.simpleMessage("इमारत का नंबर"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("आज जला दिया"),
         "Business": MessageLookupByLibrary.simpleMessage("व्यापार"),
@@ -649,6 +651,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetFilters": MessageLookupByLibrary.simpleMessage("रीसेट फ़िल्टर"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("पासवर्ड रीसेट"),
         "Respect": MessageLookupByLibrary.simpleMessage("सम्मान"),
+        "RestorePurchase": MessageLookupByLibrary.simpleMessage(
+            "खरीदारी को पुनः स्थापित करें"),
         "Reviews": MessageLookupByLibrary.simpleMessage("समीक्षाएं"),
         "ReviewsPosted": m31,
         "ReviewsReceived": m32,
