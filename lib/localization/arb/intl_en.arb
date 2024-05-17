@@ -508,6 +508,11 @@
   "Religion": "Religion",
   "SelectGender": "Select gender",
   "BuildYOurBusiness": "Build your business with",
-  "RestorePurchase": "Restore purchase"
-
+  "RestorePurchase": "Restore purchases",
+  "Success": "Success",
+  "Oops": "Oops",
+  "SomethingWentWrong": "Something went wrong. Please try again.",
+  "AllXFeaturesAvailable": "All {value} features are now available!",
+  "HintNumberEventsForPro": "3 events available & add more for extra price",
+  "CreateYourEventAndInvitePeople" : "Create your event and invite people"
 }

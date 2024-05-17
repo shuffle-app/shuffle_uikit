@@ -20,130 +20,132 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(allowValue) => "Continue to ${allowValue}";
+  static String m0(value) => "All ${value} features are now available!";
 
-  static String m1(allowedCharacters) =>
+  static String m1(allowValue) => "Continue to ${allowValue}";
+
+  static String m2(allowedCharacters) =>
       "Allowed caracters are ${allowedCharacters}";
 
-  static String m2(count) =>
+  static String m3(count) =>
       "${Intl.plural(count, zero: 'bookings', one: 'booking', two: 'bookings', few: 'bookings', many: 'bookings', other: 'bookings')}";
 
-  static String m3(item) =>
+  static String m4(item) =>
       "${Intl.plural(item, zero: '3 difficulty levels', one: 'visit first to open next', two: 'visit & check in', few: 'pass & be rewarded', other: 'pass & be rewarded')}";
 
-  static String m4(count) =>
+  static String m5(count) =>
       "${Intl.plural(count, zero: 'comments', one: 'comment', two: 'comments', few: 'comments', many: 'comments', other: 'comments')}";
 
-  static String m5(days) =>
+  static String m6(days) =>
       "${Intl.plural(days, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')}";
 
-  static String m6(actuallyRaised, goal) =>
+  static String m7(actuallyRaised, goal) =>
       "raised ${actuallyRaised}/\$${goal}\$";
 
-  static String m7(editingType) => "${editingType} place";
+  static String m8(editingType) => "${editingType} place";
 
-  static String m8(inputType) => "Enter ${inputType}";
+  static String m9(inputType) => "Enter ${inputType}";
 
-  static String m9(count) =>
+  static String m10(count) =>
       "${Intl.plural(count, zero: 'events', one: 'event', two: 'events', few: 'events', many: 'events', other: 'events')}";
 
-  static String m10(item) =>
+  static String m11(item) =>
       "${Intl.plural(item, zero: 'your location', one: 'your interests', two: 'weather around', few: 'and other 14 scales', other: 'other')}";
 
-  static String m11(item) =>
+  static String m12(item) =>
       "${Intl.plural(item, zero: 'select the niche', one: 'press', two: 'get selection', few: 'choose & plan', other: 'other')}";
 
-  static String m12(item) =>
+  static String m13(item) =>
       "${Intl.plural(item, zero: 'events & places', one: 'filtering by chips', two: 'choose chip & press', few: 'press & scroll\n', other: 'other')}";
 
-  static String m13(count) =>
+  static String m14(count) =>
       "${Intl.plural(count, zero: '${count} points', one: '${count} point', two: '${count} points', few: '${count} points', many: '${count} points', other: '${count} points')}";
 
-  static String m14(count) =>
+  static String m15(count) =>
       "${Intl.plural(count, zero: '${count} common interests', one: '${count} common interest', two: '${count} common interests', few: '${count} common interests', many: '${count} common interests', other: '${count} common interests')}";
 
-  static String m15(count) =>
+  static String m16(count) =>
       "${Intl.plural(count, zero: 'followers', one: 'follower', two: 'followers', few: 'followers', many: 'followers', other: 'followers')}";
 
-  static String m16(formattedPrice) => " For ${formattedPrice}";
+  static String m17(formattedPrice) => " For ${formattedPrice}";
 
-  static String m17(helpfulCount) => "Helpful ${helpfulCount}";
+  static String m18(helpfulCount) => "Helpful ${helpfulCount}";
 
-  static String m18(days) =>
+  static String m19(days) =>
       "Hint system enabled for ${Intl.plural(days, zero: '${days} days', one: '${days} day', two: '${days} days', few: '${days} days', many: '${days} days', other: '${days} days')}";
 
-  static String m19(invitedPeopleCount) =>
+  static String m20(invitedPeopleCount) =>
       "Invites ${invitedPeopleCount} people to";
 
-  static String m20(provider) => "Continue with ${provider}";
+  static String m21(provider) => "Continue with ${provider}";
 
-  static String m21(item) =>
+  static String m22(item) =>
       "${Intl.plural(item, zero: 'Members', one: 'Member', two: 'Members', few: 'Members', other: 'Members')}";
 
-  static String m22(placeIndex) => "${placeIndex} place";
+  static String m23(placeIndex) => "${placeIndex} place";
 
-  static String m23(elements) => "Next ${elements}";
+  static String m24(elements) => "Next ${elements}";
 
-  static String m24(amountOfPeople) => "Next ${amountOfPeople} people";
+  static String m25(amountOfPeople) => "Next ${amountOfPeople} people";
 
-  static String m25(count) =>
+  static String m26(count) =>
       "${Intl.plural(count, zero: 'places visited', one: 'place visited', two: 'places visited', few: 'places visited', many: 'places visited', other: 'places visited')}";
 
-  static String m26(religionCount) =>
+  static String m27(religionCount) =>
       "Please select at least ${religionCount} religion";
 
-  static String m27(count) =>
+  static String m28(count) =>
       "${Intl.plural(count, zero: 'points earned', one: 'point earned', two: 'points earned', few: 'points earned', many: 'points earned', other: 'points earned')}";
 
-  static String m28(item) =>
+  static String m29(item) =>
       "${Intl.plural(item, zero: 'post a dream request', one: 'write & make video', two: 'be convincing and honest', few: 'donate others', other: 'other')}";
 
-  static String m29(item) =>
+  static String m30(item) =>
       "${Intl.plural(item, zero: 'find companions', one: 'similar preferences', two: 'check point reputation', few: 'no foes', other: 'other')}";
 
-  static String m30(amount) => "Read ${amount}";
-
-  static String m31(count) =>
-      "${Intl.plural(count, zero: 'reviews posted', one: 'review posted', two: 'reviews posted', few: 'reviews posted', many: 'reviews posted', other: 'reviews posted')}";
+  static String m31(amount) => "Read ${amount}";
 
   static String m32(count) =>
+      "${Intl.plural(count, zero: 'reviews posted', one: 'review posted', two: 'reviews posted', few: 'reviews posted', many: 'reviews posted', other: 'reviews posted')}";
+
+  static String m33(count) =>
       "${Intl.plural(count, zero: 'reviews received', one: 'review received', two: 'reviews received', few: 'reviews received', many: 'reviews received', other: 'reviews received')}";
 
-  static String m33(item) =>
+  static String m34(item) =>
       "${Intl.plural(item, zero: 'preferences don’t work', one: 'events/places', two: 'type & get result', few: 'use ratings & models', other: 'other')}";
 
-  static String m34(type) => "select ${type}";
-
-  static String m35(item) =>
-      "${Intl.plural(item, zero: 'swipe any direction', one: 'swipe place qualities', two: 'like dislike favorite', few: 'teach our system', other: 'other')}";
+  static String m35(type) => "select ${type}";
 
   static String m36(item) =>
+      "${Intl.plural(item, zero: 'swipe any direction', one: 'swipe place qualities', two: 'like dislike favorite', few: 'teach our system', other: 'other')}";
+
+  static String m37(item) =>
       "${Intl.plural(item, zero: 'for fun', one: 'swipe category', two: 'choose & plan', few: 'search & book', other: 'other')}";
 
-  static String m37(separator) => "Tell us more${separator}about yourself";
+  static String m38(separator) => "Tell us more${separator}about yourself";
 
-  static String m38(amountOfTopDonators, multiplier) =>
+  static String m39(amountOfTopDonators, multiplier) =>
       "Top ${amountOfTopDonators} donators receive x${multiplier} points";
 
-  static String m39(separator) => "Top places rated${separator}by";
+  static String m40(separator) => "Top places rated${separator}by";
 
-  static String m40(type) => "To use this function plz upgrade to ${type}";
+  static String m41(type) => "To use this function plz upgrade to ${type}";
 
-  static String m41(forNMoney) => "Upgrade ${forNMoney}";
+  static String m42(forNMoney) => "Upgrade ${forNMoney}";
 
-  static String m42(count) =>
+  static String m43(count) =>
       "${Intl.plural(count, zero: '${count} users', one: '${count} user', two: '${count} users', few: '${count} users', many: '${count} users', other: '${count} users')}";
 
-  static String m43(days) =>
+  static String m44(days) =>
       "in ${days} ${Intl.plural(days, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')}";
 
-  static String m44(value) => "${value} could not be empty";
+  static String m45(value) => "${value} could not be empty";
 
-  static String m45(title) => "${title} is required";
+  static String m46(title) => "${title} is required";
 
-  static String m46(value) => "${value} successfully updated";
+  static String m47(value) => "${value} successfully updated";
 
-  static String m47(amountOfInvitedPersons) =>
+  static String m48(amountOfInvitedPersons) =>
       "You sent an invitation to ${amountOfInvitedPersons} people";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -177,6 +179,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AllAlbums": MessageLookupByLibrary.simpleMessage("All albums"),
         "AllAppNotification":
             MessageLookupByLibrary.simpleMessage("All app notifications"),
+        "AllXFeaturesAvailable": m0,
         "Allow": MessageLookupByLibrary.simpleMessage("Continue"),
         "AllowAll": MessageLookupByLibrary.simpleMessage("Continue"),
         "AllowGeolocation":
@@ -184,8 +187,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AllowLocationServicesToUseThisFunction":
             MessageLookupByLibrary.simpleMessage(
                 "Allow location services to use this function"),
-        "AllowX": m0,
-        "AllowedCaracters": m1,
+        "AllowX": m1,
+        "AllowedCaracters": m2,
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" And "),
         "Archive": MessageLookupByLibrary.simpleMessage("Archive"),
         "Archived": MessageLookupByLibrary.simpleMessage("Archived"),
@@ -212,7 +215,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Based on your activity, heart rate and other factors, we determine your condition and try to recommend exactly what you need right now, specifically for you"),
         "BeInSearch": MessageLookupByLibrary.simpleMessage("Be in search"),
         "BookIt": MessageLookupByLibrary.simpleMessage("Book it"),
-        "Bookings": m2,
+        "Bookings": m3,
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Bookings and Invites"),
         "Both": MessageLookupByLibrary.simpleMessage("Both"),
@@ -230,7 +233,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Change photo"),
         "Chat": MessageLookupByLibrary.simpleMessage("Chat"),
         "CheckIn": MessageLookupByLibrary.simpleMessage("Check in"),
-        "CheckInHiwHint": m3,
+        "CheckInHiwHint": m4,
         "CheckInHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "cure your feeling or enchance it!"),
         "CheckInHiwTitle": MessageLookupByLibrary.simpleMessage(
@@ -242,7 +245,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Christianity": MessageLookupByLibrary.simpleMessage("Christianity"),
         "ClickEnterToSearch":
             MessageLookupByLibrary.simpleMessage("Click Enter to search"),
-        "Comments": m4,
+        "Comments": m5,
         "Company": MessageLookupByLibrary.simpleMessage("Company"),
         "CompanyAnswered":
             MessageLookupByLibrary.simpleMessage("Сompany answered"),
@@ -262,6 +265,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Create": MessageLookupByLibrary.simpleMessage("Create"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Create Event"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
+        "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage(
+            "Create your event and invite people"),
         "CreateYourPlaceAndInvitePeople": MessageLookupByLibrary.simpleMessage(
             "Create your place and invite people"),
         "CredentialsCodeVerificationSubtitle":
@@ -275,7 +280,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "DateOfBirth": MessageLookupByLibrary.simpleMessage("Date of birth"),
         "Dates": MessageLookupByLibrary.simpleMessage("Dates"),
         "Day": MessageLookupByLibrary.simpleMessage("Day"),
-        "Days": m5,
+        "Days": m6,
         "DaysOfWeek": MessageLookupByLibrary.simpleMessage("Days of week"),
         "DeleteAccount": MessageLookupByLibrary.simpleMessage("Delete account"),
         "DeleteCompany": MessageLookupByLibrary.simpleMessage("Delete company"),
@@ -299,7 +304,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Directions": MessageLookupByLibrary.simpleMessage("Directions"),
         "DonationHint": MessageLookupByLibrary.simpleMessage(
             "You can create one request per month and spend money only on your dream"),
-        "DonationRaised": m6,
+        "DonationRaised": m7,
         "DontBeAlone": MessageLookupByLibrary.simpleMessage("Don\'t be alone"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("Don\'t miss it"),
         "DubaiEventTicket":
@@ -307,13 +312,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "Easy": MessageLookupByLibrary.simpleMessage("Eazy"),
         "Edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
-        "EditingTypePlace": m7,
+        "EditingTypePlace": m8,
         "Email": MessageLookupByLibrary.simpleMessage("Email"),
         "EmailVerification":
             MessageLookupByLibrary.simpleMessage("Email verification"),
         "EnableHintSystem":
             MessageLookupByLibrary.simpleMessage("Enable hint system"),
-        "EnterInputType": m8,
+        "EnterInputType": m9,
         "EnterNewPassword":
             MessageLookupByLibrary.simpleMessage("Enter new password"),
         "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
@@ -326,7 +331,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Event": MessageLookupByLibrary.simpleMessage("Event"),
         "EventType": MessageLookupByLibrary.simpleMessage("Event type"),
         "Events": MessageLookupByLibrary.simpleMessage("Events"),
-        "EventsCount": m9,
+        "EventsCount": m10,
         "EventsReminders":
             MessageLookupByLibrary.simpleMessage("Events reminders"),
         "Exit": MessageLookupByLibrary.simpleMessage("Exit"),
@@ -337,17 +342,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "Favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "FeaturesEnableGeolocation":
             MessageLookupByLibrary.simpleMessage("Features enable geolocation"),
-        "FeedFeelingsHiwItems": m10,
+        "FeedFeelingsHiwItems": m11,
         "FeedFeelingsHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "you get exactly what you need"),
         "FeedFeelingsHiwTitle":
             MessageLookupByLibrary.simpleMessage("Depending on..."),
-        "FeedNichesHiwItems": m11,
+        "FeedNichesHiwItems": m12,
         "FeedNichesHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("get exactly what you need"),
         "FeedNichesHiwTitle":
             MessageLookupByLibrary.simpleMessage("Great match..."),
-        "FeedRandomizerHiwItems": m12,
+        "FeedRandomizerHiwItems": m13,
         "FeedRandomizerHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("you press and get random"),
         "FeedRandomizerHiwTitle":
@@ -358,18 +363,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "Feeling": MessageLookupByLibrary.simpleMessage("Feeling"),
         "Female": MessageLookupByLibrary.simpleMessage("Female"),
         "Filters": MessageLookupByLibrary.simpleMessage("Filters"),
-        "FindSomeoneCardPoints": m13,
-        "FindSomeoneCardSameInterests": m14,
+        "FindSomeoneCardPoints": m14,
+        "FindSomeoneCardSameInterests": m15,
         "FindSomeoneToHangOutWith": MessageLookupByLibrary.simpleMessage(
             "Find someone to hang out with"),
         "FindSomeoneToNetworkWith": MessageLookupByLibrary.simpleMessage(
             "Find someone to network with"),
         "Follow": MessageLookupByLibrary.simpleMessage("Follow"),
         "Followers": MessageLookupByLibrary.simpleMessage("Followers"),
-        "FollowersCount": m15,
+        "FollowersCount": m16,
         "Followings": MessageLookupByLibrary.simpleMessage("Followings"),
         "For": MessageLookupByLibrary.simpleMessage("For"),
-        "ForFormattedPrice": m16,
+        "ForFormattedPrice": m17,
         "ForPeriod": MessageLookupByLibrary.simpleMessage("For"),
         "ForgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password"),
@@ -392,13 +397,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "HealthRandomAlert": MessageLookupByLibrary.simpleMessage(
             "Give access to health kit usage otherwise the result will be random"),
         "Helpful": MessageLookupByLibrary.simpleMessage("Helpful"),
-        "HelpfulNCount": m17,
+        "HelpfulNCount": m18,
         "Hindu": MessageLookupByLibrary.simpleMessage("Hindu"),
         "HintAverageBill":
             MessageLookupByLibrary.simpleMessage("Select price or price range"),
+        "HintNumberEventsForPro": MessageLookupByLibrary.simpleMessage(
+            "3 events available & add more for extra price"),
         "HintSystemDisabled":
             MessageLookupByLibrary.simpleMessage("Hint system disabled"),
-        "HintSystemEnabled": m18,
+        "HintSystemEnabled": m19,
         "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
             "How’re you feeling this morning?"),
         "HowAreYouFeelingToday":
@@ -438,7 +445,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "InvitePeople": MessageLookupByLibrary.simpleMessage("Invite people"),
         "InviteToFavoritePlaces": MessageLookupByLibrary.simpleMessage(
             "Invite to your \"Favorites\""),
-        "InvitesNPeopleTo": m19,
+        "InvitesNPeopleTo": m20,
         "InvitesYouTo": MessageLookupByLibrary.simpleMessage("Invites you to"),
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("Is recurrent"),
         "Islam": MessageLookupByLibrary.simpleMessage("Islam"),
@@ -449,7 +456,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Location": MessageLookupByLibrary.simpleMessage("Location"),
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
             "Location is required to procceed check in"),
-        "LoginWith": m20,
+        "LoginWith": m21,
         "Logo": MessageLookupByLibrary.simpleMessage("Logo"),
         "LogoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Logo (upload Files)"),
@@ -459,7 +466,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Make sure you are close and try check in again"),
         "Male": MessageLookupByLibrary.simpleMessage("Male"),
-        "Members": m21,
+        "Members": m22,
         "Message": MessageLookupByLibrary.simpleMessage("Message"),
         "Messages": MessageLookupByLibrary.simpleMessage("Messages"),
         "MondayShort": MessageLookupByLibrary.simpleMessage("Mon"),
@@ -473,7 +480,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "MyCard": MessageLookupByLibrary.simpleMessage("My card"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("My events"),
         "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
-        "NPlace": m22,
+        "NPlace": m23,
         "Name": MessageLookupByLibrary.simpleMessage("Name"),
         "NameOrNickname":
             MessageLookupByLibrary.simpleMessage("Name or nickname"),
@@ -485,8 +492,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "A new location has opened today. Come! You\'ll like it!"),
         "NewPlace": MessageLookupByLibrary.simpleMessage("New place"),
         "Next": MessageLookupByLibrary.simpleMessage("Next"),
-        "NextElements": m23,
-        "NextNPeople": m24,
+        "NextElements": m24,
+        "NextNPeople": m25,
         "NextWithChevrons": MessageLookupByLibrary.simpleMessage("Next >>>"),
         "Niche": MessageLookupByLibrary.simpleMessage("Niche"),
         "Nickname": MessageLookupByLibrary.simpleMessage("Nickname"),
@@ -528,6 +535,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "OnboardingSlide3":
             MessageLookupByLibrary.simpleMessage("to just chill out"),
         "Ooops": MessageLookupByLibrary.simpleMessage("Ooops!"),
+        "Oops": MessageLookupByLibrary.simpleMessage("Oops"),
         "OopsIWillTryAgain":
             MessageLookupByLibrary.simpleMessage("Oops, I\'ll try again"),
         "OpenFrom": MessageLookupByLibrary.simpleMessage("Open from"),
@@ -564,14 +572,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "Place": MessageLookupByLibrary.simpleMessage("Place"),
         "PlaceType": MessageLookupByLibrary.simpleMessage("Place type"),
         "Places": MessageLookupByLibrary.simpleMessage("Places"),
-        "PlacesVisited": m25,
+        "PlacesVisited": m26,
         "PleaseFillOutDate":
             MessageLookupByLibrary.simpleMessage("Please fill out date"),
         "PleaseFillOutYourWishes":
             MessageLookupByLibrary.simpleMessage("Please fill out your wishes"),
         "PleaseSelectANiche":
             MessageLookupByLibrary.simpleMessage("Please select a niche"),
-        "PleaseSelectAtLeastNReligion": m26,
+        "PleaseSelectAtLeastNReligion": m27,
         "PleaseSelectAtLeastOneAgeRange": MessageLookupByLibrary.simpleMessage(
             "Please select at least one age range"),
         "PleaseSelectAtLeastOnePriceSegment":
@@ -583,7 +591,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please select one type"),
         "PointBalance": MessageLookupByLibrary.simpleMessage("Point\nBalance"),
         "Points": MessageLookupByLibrary.simpleMessage("Points"),
-        "PointsEarned": m27,
+        "PointsEarned": m28,
         "Position": MessageLookupByLibrary.simpleMessage("Position"),
         "Preferences": MessageLookupByLibrary.simpleMessage("Preferences"),
         "Premium": MessageLookupByLibrary.simpleMessage("Premium"),
@@ -621,12 +629,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
             "Ability to use specialised notifications"),
         "ProTools": MessageLookupByLibrary.simpleMessage("Pro tools"),
-        "ProfileAskOrSupportHiwHint": m28,
+        "ProfileAskOrSupportHiwHint": m29,
         "ProfileAskOrSupportHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("yours or someone else\'s"),
         "ProfileAskOrSupportHiwTitle":
             MessageLookupByLibrary.simpleMessage("Fulfill the dream..."),
-        "ProfileFindSomeoneHiwHint": m29,
+        "ProfileFindSomeoneHiwHint": m30,
         "ProfileFindSomeoneHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("go somewhere together"),
         "ProfileFindSomeoneHiwTitle":
@@ -636,7 +644,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReactionsBy": MessageLookupByLibrary.simpleMessage("Reactions\nby"),
         "ReactionsByCritics":
             MessageLookupByLibrary.simpleMessage("Reactions by critics"),
-        "Read": m30,
+        "Read": m31,
         "RealMoney": MessageLookupByLibrary.simpleMessage("Real money"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
@@ -646,10 +654,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Respect": MessageLookupByLibrary.simpleMessage("Respect"),
         "RestorePurchase":
-            MessageLookupByLibrary.simpleMessage("Restore purchase"),
+            MessageLookupByLibrary.simpleMessage("Restore purchases"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
-        "ReviewsPosted": m31,
-        "ReviewsReceived": m32,
+        "ReviewsPosted": m32,
+        "ReviewsReceived": m33,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Sat"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
@@ -685,7 +693,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sporty movements"),
         "SearchChooseYourself9": MessageLookupByLibrary.simpleMessage(
             "Self-care (Health and beauty/self-love)"),
-        "SearchHiwHint": m33,
+        "SearchHiwHint": m34,
         "SearchHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "search or choose others choice"),
         "SearchHiwTitle":
@@ -700,7 +708,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Please select language"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("Select option"),
-        "SelectType": m34,
+        "SelectType": m35,
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("Select your religions"),
         "SelectionOfTheBest":
@@ -711,7 +719,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("Show result"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
-        "ShuffleHiwHint": m35,
+        "ShuffleHiwHint": m36,
         "ShuffleHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("finding personalized places"),
         "ShuffleHiwTitle":
@@ -724,8 +732,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Smart leisure selection for everyone, everywhere"),
         "SocialSubtitle":
             MessageLookupByLibrary.simpleMessage("Useful services and places"),
+        "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
+            "Something went wrong. Please try again."),
         "Spent": MessageLookupByLibrary.simpleMessage("Spent"),
-        "SpinnerHiwHint": m36,
+        "SpinnerHiwHint": m37,
         "SpinnerHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "you find personalized events"),
         "SpinnerHiwTitle":
@@ -735,6 +745,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Start to explore"),
         "SubscribeToProfile": MessageLookupByLibrary.simpleMessage("Follow"),
+        "Success": MessageLookupByLibrary.simpleMessage("Success"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("Sun"),
         "Sunny": MessageLookupByLibrary.simpleMessage("Sunny"),
         "Support": MessageLookupByLibrary.simpleMessage("Support"),
@@ -754,7 +765,7 @@ class MessageLookup extends MessageLookupByLibrary {
             ". Tap twice to mark your favorites."),
         "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("Tell us more"),
-        "TellUsMoreAboutYourself": m37,
+        "TellUsMoreAboutYourself": m38,
         "Terms": MessageLookupByLibrary.simpleMessage("Terms"),
         "TermsOfService":
             MessageLookupByLibrary.simpleMessage("Terms of Service"),
@@ -779,8 +790,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "To allow access to send push notifications, go to your phone settings"),
         "Today": MessageLookupByLibrary.simpleMessage("Today"),
         "Top": MessageLookupByLibrary.simpleMessage("Top"),
-        "TopNDonatorsReceiveXPoints": m38,
-        "TopPlacesRatedBy": m39,
+        "TopNDonatorsReceiveXPoints": m39,
+        "TopPlacesRatedBy": m40,
         "TryYourself": MessageLookupByLibrary.simpleMessage("Try\nyourself"),
         "TuesdayShort": MessageLookupByLibrary.simpleMessage("Tue"),
         "TypeHere": MessageLookupByLibrary.simpleMessage("Type here"),
@@ -803,14 +814,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "It\'s been a while since you\'ve updated our app, and we\'ve added a lot of handy stuff in the meantime"),
         "UpdateAppMessageTitle":
             MessageLookupByLibrary.simpleMessage("Time for update"),
-        "UpgradeAccount": m40,
+        "UpgradeAccount": m41,
         "UpgradeAccountConfirmation":
             MessageLookupByLibrary.simpleMessage("Upgrade"),
-        "UpgradeForNmoney": m41,
+        "UpgradeForNmoney": m42,
         "User": MessageLookupByLibrary.simpleMessage("User"),
         "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
             "Select the type of account you would like to create"),
-        "Users": m42,
+        "Users": m43,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Use health data"),
         "UsingNotifications":
@@ -843,15 +854,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "WillBe": MessageLookupByLibrary.simpleMessage(" will be."),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("Will be implemented soon"),
-        "WithInDays": m43,
+        "WithInDays": m44,
         "WithYourPreferences":
             MessageLookupByLibrary.simpleMessage("With your\npreferences"),
         "WorkHours": MessageLookupByLibrary.simpleMessage("Work hours"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("Wrong security code"),
-        "XCouldNotBeEmpty": m44,
-        "XIsRequired": m45,
-        "XSuccessfullyUpdated": m46,
+        "XCouldNotBeEmpty": m45,
+        "XIsRequired": m46,
+        "XSuccessfullyUpdated": m47,
         "Year": MessageLookupByLibrary.simpleMessage("Year"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Yearly"),
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
@@ -863,7 +874,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouMissedALot":
             MessageLookupByLibrary.simpleMessage("You missed a lot"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
-        "YouSentInvitationToNPeople": m47,
+        "YouSentInvitationToNPeople": m48,
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("You’ll find it"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Your age"),
         "YourAudienceAge":

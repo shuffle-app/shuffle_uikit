@@ -5263,11 +5263,71 @@ class S {
     );
   }
 
-  /// `Restore purchase`
+  /// `Restore purchases`
   String get RestorePurchase {
     return Intl.message(
-      'Restore purchase',
+      'Restore purchases',
       name: 'RestorePurchase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Success`
+  String get Success {
+    return Intl.message(
+      'Success',
+      name: 'Success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oops`
+  String get Oops {
+    return Intl.message(
+      'Oops',
+      name: 'Oops',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Something went wrong. Please try again.`
+  String get SomethingWentWrong {
+    return Intl.message(
+      'Something went wrong. Please try again.',
+      name: 'SomethingWentWrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All {value} features are now available!`
+  String AllXFeaturesAvailable(Object value) {
+    return Intl.message(
+      'All $value features are now available!',
+      name: 'AllXFeaturesAvailable',
+      desc: '',
+      args: [value],
+    );
+  }
+
+  /// `3 events available & add more for extra price`
+  String get HintNumberEventsForPro {
+    return Intl.message(
+      '3 events available & add more for extra price',
+      name: 'HintNumberEventsForPro',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create your event and invite people`
+  String get CreateYourEventAndInvitePeople {
+    return Intl.message(
+      'Create your event and invite people',
+      name: 'CreateYourEventAndInvitePeople',
       desc: '',
       args: [],
     );
