@@ -35,7 +35,7 @@ class LargeTextAdBanner4 extends UiKitSwiperAdCard {
                 children: [
                   TextSpan(
                     text: 'Immerse\n',
-                    style: boldTextTheme?.subHeadline.copyWith(color: ColorsFoundation.surface4),
+                    style: boldTextTheme?.subHeadline.copyWith(color: ColorsFoundation.surface4.withOpacity(0.8)),
                   ),
                   TextSpan(
                     text: 'yourself in the',
@@ -54,7 +54,8 @@ class LargeTextAdBanner4 extends UiKitSwiperAdCard {
         ),
         availableWidth: width,
         customHeight: customHeight,
-        imageLink: GraphicsFoundation.instance.png.spinnerTextBanner3.path,
+        imageFit: BoxFit.cover,
+        imageLink: GraphicsFoundation.instance.png.shuffleTextBanner4.path,
         size: AdvertisementBannerSize.large,
       ),
     );

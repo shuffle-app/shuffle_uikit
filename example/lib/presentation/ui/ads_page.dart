@@ -193,13 +193,13 @@ class AdsPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: EdgeInsetsFoundation.horizontal16),
                 scrollDirection: Axis.horizontal,
                 children: [
-                  const Center(child: MediumTextAdBanner1()),
+                  const MediumTextAdBanner1(),
                   SpacingFoundation.horizontalSpace16,
-                  const Center(child: MediumTextAdBanner2()),
+                  const MediumTextAdBanner2(),
                   SpacingFoundation.horizontalSpace16,
-                  const Center(child: MediumTextAdBanner3()),
+                  const MediumTextAdBanner3(),
                   SpacingFoundation.horizontalSpace16,
-                  const Center(child: MediumTextAdBanner4()),
+                  const MediumTextAdBanner4(),
                   SpacingFoundation.horizontalSpace16,
                   context.advertisementImageBanner(
                     data: BaseUiKitAdvertisementImageBannerData(
@@ -341,13 +341,13 @@ class AdsPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: EdgeInsetsFoundation.horizontal16),
                 scrollDirection: Axis.horizontal,
                 children: [
-                  const Center(child: SmallTextAdBanner1()),
+                  const SmallTextAdBanner1(),
                   SpacingFoundation.horizontalSpace16,
-                  const Center(child: SmallTextAdBanner2()),
+                  const SmallTextAdBanner2(),
                   SpacingFoundation.horizontalSpace16,
-                  const Center(child: SmallTextAdBanner3()),
+                  const SmallTextAdBanner3(),
                   SpacingFoundation.horizontalSpace16,
-                  const Center(child: SmallTextAdBanner4()),
+                  const SmallTextAdBanner4(),
                   SpacingFoundation.horizontalSpace16,
                   context.advertisementImageBanner(
                     data: BaseUiKitAdvertisementImageBannerData(

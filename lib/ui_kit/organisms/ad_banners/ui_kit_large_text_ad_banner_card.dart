@@ -11,6 +11,7 @@ class UiKitLargeTextAdBannerCard extends StatelessWidget implements Advertisemen
   final Offset? textOffset;
   final double? customPadding;
   final Widget? decoration;
+  final BoxFit? imageFit;
 
   const UiKitLargeTextAdBannerCard({
     Key? key,
@@ -23,6 +24,7 @@ class UiKitLargeTextAdBannerCard extends StatelessWidget implements Advertisemen
     this.textOffset,
     this.onTap,
     this.customHeight,
+    this.imageFit,
   }) : super(key: key);
 
   @override
@@ -48,7 +50,7 @@ class UiKitLargeTextAdBannerCard extends StatelessWidget implements Advertisemen
             children: [
               ImageWidget(
                 link: imageLink,
-                fit: BoxFit.fill,
+                fit: imageFit ?? BoxFit.fill,
                 width: availableWidth,
                 height: customHeight ?? availableWidth * 1.17,
                 errorWidget: const UiKitBigPhotoErrorWidget(),

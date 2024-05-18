@@ -22,7 +22,7 @@ class MediumTextAdBanner3 extends StatelessWidget {
         customPadding: 10.0,
         customHeight: height,
         decoration: Positioned(
-          top: -height * 0.15,
+          top: -height * 0.5,
           left: -SpacingFoundation.horizontalSpacing12,
           child: Opacity(
             opacity: 0.5,

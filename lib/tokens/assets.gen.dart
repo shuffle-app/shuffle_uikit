@@ -764,6 +764,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/shuffle_text_banner_3.png
   AssetGenImage get shuffleTextBanner3 => const AssetGenImage('assets/images/png/shuffle_text_banner_3.png');
 
+  /// File path: assets/images/png/shuffle_text_banner_4.png
+  AssetGenImage get shuffleTextBanner4 => const AssetGenImage('assets/images/png/shuffle_text_banner_4.png');
+
   /// File path: assets/images/png/spinner_event.png
   AssetGenImage get spinnerEvent => const AssetGenImage('assets/images/png/spinner_event.png');
 
@@ -1027,6 +1030,7 @@ class $AssetsImagesPngGen {
         shuffleTextBanner1,
         shuffleTextBanner2,
         shuffleTextBanner3,
+        shuffleTextBanner4,
         spinnerEvent,
         spinnerTextBanner1,
         spinnerTextBanner2,
