@@ -504,6 +504,15 @@
   "HintAverageBill": "Select price or price range",
   "SubscribeToProfile": "Follow",
   "UnsubscribeFromProfile": "Unfollow",
-  "Reviews": "Reviews"
-
+  "Reviews": "Reviews",
+  "Religion": "Religion",
+  "SelectGender": "Select gender",
+  "BuildYOurBusiness": "Build your business with",
+  "RestorePurchase": "Restore purchases",
+  "Success": "Success",
+  "Oops": "Oops",
+  "SomethingWentWrong": "Something went wrong. Please try again.",
+  "AllXFeaturesAvailable": "All {value} features are now available!",
+  "HintNumberEventsForPro": "3 events available & add more for extra price",
+  "CreateYourEventAndInvitePeople" : "Create your event and invite people"
 }

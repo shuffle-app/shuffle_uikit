@@ -504,6 +504,15 @@
   "HintAverageBill": "Выбери цену или диапазон цен",
   "SubscribeToProfile": "Подписаться",
   "UnsubscribeFromProfile": "Отписаться",
-  "Reviews": "Отзывы"
-
+  "Reviews": "Отзывы",
+  "Religion": "Религия",
+  "SelectGender": "Выберите пол",
+  "BuildYOurBusiness": "Построй свой бизнес c",
+  "RestorePurchase": "Восстановить покупки",
+  "Success": "Success",
+  "Oops": "Уупс",
+  "SomethingWentWrong": "Что-то пошло не так. Попробуйте еще раз.",
+  "AllXFeaturesAvailable": "Все {value} фичи доступны!",
+  "HintNumberEventsForPro": "3 события доступны & добавь больше за отдельную цену",
+  "CreateYourEventAndInvitePeople" : "Создай свое событие и пригласи людей"
 }

@@ -27,6 +27,7 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
     this.expands = false,
     this.autofocus = false,
     this.obscureText = false,
+    this.readOnly = false,
     required this.label,
   }) : super(key: key);
 
@@ -58,6 +59,7 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
   final InputBorder? customEnabledBorder;
   final bool expands;
   final bool autofocus;
+  final bool readOnly;
   @override
   final bool obscureText;
 
@@ -106,6 +108,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
       child: TextFormField(
         key: _key,
         onTap: widget.onTap,
+        readOnly: widget.readOnly,
         obscureText: widget.obscureText,
         textInputAction: TextInputAction.next,
         expands: widget.expands,

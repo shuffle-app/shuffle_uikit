@@ -504,8 +504,16 @@
   "HintAverageBill": "मूल्य या मूल्य सीमा का चयन करें",
   "SubscribeToProfile": "फॉलो करें",
   "UnsubscribeFromProfile": "अनफॉलो",
-  "Reviews": "समीक्षाएं"
-
-
+  "Reviews": "समीक्षाएं",
+  "Religion": "धर्म",
+  "SelectGender": "लिंग चुनें",
+  "BuildYOurBusiness": "अपने व्यापार को बढ़ाएं",
+  "RestorePurchase": "खरीदारी को पुनः स्थापित करें",
+  "Success": "Success",
+  "Oops": "Oops",
+  "SomethingWentWrong": "Something went wrong. Please try again.",
+  "AllXFeaturesAvailable": "All {value} features are now available!",
+  "HintNumberEventsForPro": "3 events available & add more for extra price",
+  "CreateYourEventAndInvitePeople" : "Create your event and invite people"
 
 }

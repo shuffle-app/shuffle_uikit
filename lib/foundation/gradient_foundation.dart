@@ -563,6 +563,22 @@ class GradientFoundation {
     ],
   );
 
+  // background: linear-gradient(140.85deg, rgba(34, 34, 34, 0.66) 17.53%, rgba(127, 127, 127, 0.32) 48.73%, rgba(86, 86, 86, 0.22) 80.09%);
+
+  static final companySubscriptionGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.shunyGreyGradientBegin.withOpacity(0.66),
+      ColorsFoundation.shunyGreyGradientMid.withOpacity(0.32),
+      ColorsFoundation.shunyGreyGradientEnd.withOpacity(0.22),
+    ],
+    stops: const [
+      0.1753,
+      0.4873,
+      0.8003,
+    ],
+    transform: GradientRotation((-3 * pi) / 4),
+  );
+
   GradientFoundation._();
 }
 
