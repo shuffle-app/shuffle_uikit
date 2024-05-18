@@ -87,13 +87,13 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m25(amountOfPeople) => "अगले ${amountOfPeople} लोग";
 
   static String m26(count) =>
-      "${Intl.plural(count, zero: 'स्थानों का दौरा किया', one: 'जगह का दौरा किया', two: 'स्थानों का दौरा किया', few: 'स्थानों का दौरा किया', many: 'स्थानों का दौरा किया', other: 'स्थानों का दौरा किया')}";
+      "${Intl.plural(count, zero: 'स्थान', one: 'स्थान', two: 'स्थान', few: 'स्थान', many: 'स्थान', other: 'स्थान')}";
 
   static String m27(religionCount) =>
       "कृपया कम से कम ${religionCount} धर्म का चयन करें";
 
   static String m28(count) =>
-      "${Intl.plural(count, zero: 'अंक जीते', one: 'अंक जीते', two: 'अंक जीते', few: 'अंक जीते', many: 'अंक जीते', other: 'अंक जीते')}";
+      "${Intl.plural(count, zero: 'अंक', one: 'अंक', two: 'अंक', few: 'अंक', many: 'अंक', other: 'अंक')}";
 
   static String m29(item) =>
       "${Intl.plural(item, zero: 'सपना अनुरोध पोस्ट करें', one: 'लिखें और वीडियो बनाएं', two: 'बहुत सारे लोगों को दान करें', few: 'दूसरों की मदद करें', other: 'दूसरों की मदद करें')}";
@@ -104,7 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m31(amount) => "पढ़े ${amount}";
 
   static String m32(count) =>
-      "${Intl.plural(count, zero: 'समीक्षाएं पोस्ट की गईं', one: 'समीक्षाएं पोस्ट की गईं', two: 'समीक्षाएं पोस्ट की गईं', few: 'समीक्षाएं पोस्ट की गईं', many: 'समीक्षाएं पोस्ट की गईं', other: 'समीक्षाएं पोस्ट की गईं')}";
+      "${Intl.plural(count, zero: 'समीक्षा', one: 'समीक्षा', two: 'समीक्षा', few: 'समीक्षा', many: 'समीक्षा', other: 'समीक्षा')}";
 
   static String m33(count) =>
       "${Intl.plural(count, zero: 'समीक्षा', one: 'समीक्षा', two: 'समीक्षा', few: 'समीक्षा', many: 'समीक्षा', other: 'समीक्षा')}";
