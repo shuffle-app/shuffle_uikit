@@ -27,7 +27,7 @@ class MediumTextAdBanner4 extends StatelessWidget {
                 children: [
                   TextSpan(
                     text: 'Immerse\n',
-                    style: boldTextTheme?.subHeadline.copyWith(color: ColorsFoundation.surface4),
+                    style: boldTextTheme?.subHeadline.copyWith(color: ColorsFoundation.surface4.withOpacity(0.8)),
                   ),
                   TextSpan(
                     text: 'yourself in the',

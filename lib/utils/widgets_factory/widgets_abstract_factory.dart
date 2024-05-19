@@ -714,6 +714,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         );
       case AdvertisementBannerSize.large:
         return UiKitLargeTextAdBannerCard(
+          imageFit: data.imageFit,
           decoration: data.decoration,
           customPadding: data.customPadding,
           textOffset: data.textExactOffset,

@@ -36,6 +36,7 @@ class BaseUiKitAdvertisementTextBannerData extends BaseUiKitAdvertisementImageBa
   final Offset? textExactOffset;
   final double? customPadding;
   final Widget? decoration;
+  final BoxFit? imageFit;
 
   BaseUiKitAdvertisementTextBannerData({
     required this.textWidget,
@@ -43,6 +44,7 @@ class BaseUiKitAdvertisementTextBannerData extends BaseUiKitAdvertisementImageBa
     this.textExactOffset,
     this.customPadding,
     this.decoration,
+    this.imageFit,
     super.title = '',
     required super.availableWidth,
     required super.imageLink,
