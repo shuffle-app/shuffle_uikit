@@ -84,18 +84,18 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m23(placeIndex) => "${placeIndex} место";
 
-  static String m24(elements) => "Следующие ${elements}";
+  static String m24(elements) => "Еще ${elements}";
 
   static String m25(amountOfPeople) => "Следующие ${amountOfPeople}";
 
   static String m26(count) =>
-      "${Intl.plural(count, zero: 'мест посещено', one: 'место посещено', two: 'мест посещено', few: 'мест посещено', many: 'мест посещено', other: 'мест посещено')}";
+      "${Intl.plural(count, zero: 'визитов', one: 'визит', two: 'визитов', few: 'визитов', many: 'визитов', other: 'визитов')}";
 
   static String m27(religionCount) =>
       "Пожалуйста, выберите из списка ${religionCount} религию";
 
   static String m28(count) =>
-      "${Intl.plural(count, zero: 'поинтов получено', one: 'поинта получено', two: 'поинтов получено', few: 'поинтов получено', many: 'поинтов получено', other: 'поинтов получено')}";
+      "${Intl.plural(count, zero: 'поинтов', one: 'поинт', two: 'поинтов', few: 'поинтов', many: 'поинтов', other: 'поинтов')}";
 
   static String m29(item) =>
       "${Intl.plural(item, zero: 'размести запрос', one: 'напиши и сделай видео', two: 'будь убедителен и честен', few: 'помогай другим', other: 'другое')}";

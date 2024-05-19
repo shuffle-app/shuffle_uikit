@@ -4941,16 +4941,16 @@ class S {
     );
   }
 
-  /// `{count, plural, =0{reviews received} =1{review received} =2{reviews received} few{reviews received} many{reviews received} other{reviews received}}`
+  /// `{count, plural, =0{reviews} =1{review} =2{reviews} few{reviews} many{reviews} other{reviews}}`
   String ReviewsReceived(num count) {
     return Intl.plural(
       count,
-      zero: 'reviews received',
-      one: 'review received',
-      two: 'reviews received',
-      few: 'reviews received',
-      many: 'reviews received',
-      other: 'reviews received',
+      zero: 'reviews',
+      one: 'review',
+      two: 'reviews',
+      few: 'reviews',
+      many: 'reviews',
+      other: 'reviews',
       name: 'ReviewsReceived',
       desc: '',
       args: [count],
@@ -4989,48 +4989,48 @@ class S {
     );
   }
 
-  /// `{count, plural, =0{places visited} =1{place visited} =2{places visited} few{places visited} many{places visited} other{places visited}}`
+  /// `{count, plural, =0{visits} =1{visit} =2{visits} few{visits} many{visits} other{visits}}`
   String PlacesVisited(num count) {
     return Intl.plural(
       count,
-      zero: 'places visited',
-      one: 'place visited',
-      two: 'places visited',
-      few: 'places visited',
-      many: 'places visited',
-      other: 'places visited',
+      zero: 'visits',
+      one: 'visit',
+      two: 'visits',
+      few: 'visits',
+      many: 'visits',
+      other: 'visits',
       name: 'PlacesVisited',
       desc: '',
       args: [count],
     );
   }
 
-  /// `{count, plural, =0{reviews posted} =1{review posted} =2{reviews posted} few{reviews posted} many{reviews posted} other{reviews posted}}`
+  /// `{count, plural, =0{reviews} =1{review} =2{reviews} few{reviews} many{reviews} other{reviews}}`
   String ReviewsPosted(num count) {
     return Intl.plural(
       count,
-      zero: 'reviews posted',
-      one: 'review posted',
-      two: 'reviews posted',
-      few: 'reviews posted',
-      many: 'reviews posted',
-      other: 'reviews posted',
+      zero: 'reviews',
+      one: 'review',
+      two: 'reviews',
+      few: 'reviews',
+      many: 'reviews',
+      other: 'reviews',
       name: 'ReviewsPosted',
       desc: '',
       args: [count],
     );
   }
 
-  /// `{count, plural, =0{points earned} =1{point earned} =2{points earned} few{points earned} many{points earned} other{points earned}}`
+  /// `{count, plural, =0{points} =1{point} =2{points} few{points} many{points} other{points}}`
   String PointsEarned(num count) {
     return Intl.plural(
       count,
-      zero: 'points earned',
-      one: 'point earned',
-      two: 'points earned',
-      few: 'points earned',
-      many: 'points earned',
-      other: 'points earned',
+      zero: 'points',
+      one: 'point',
+      two: 'points',
+      few: 'points',
+      many: 'points',
+      other: 'points',
       name: 'PointsEarned',
       desc: '',
       args: [count],

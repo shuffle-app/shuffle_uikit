@@ -89,13 +89,13 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m25(amountOfPeople) => "Next ${amountOfPeople} people";
 
   static String m26(count) =>
-      "${Intl.plural(count, zero: 'places visited', one: 'place visited', two: 'places visited', few: 'places visited', many: 'places visited', other: 'places visited')}";
+      "${Intl.plural(count, zero: 'visits', one: 'visit', two: 'visits', few: 'visits', many: 'visits', other: 'visits')}";
 
   static String m27(religionCount) =>
       "Please select at least ${religionCount} religion";
 
   static String m28(count) =>
-      "${Intl.plural(count, zero: 'points earned', one: 'point earned', two: 'points earned', few: 'points earned', many: 'points earned', other: 'points earned')}";
+      "${Intl.plural(count, zero: 'points', one: 'point', two: 'points', few: 'points', many: 'points', other: 'points')}";
 
   static String m29(item) =>
       "${Intl.plural(item, zero: 'post a dream request', one: 'write & make video', two: 'be convincing and honest', few: 'donate others', other: 'other')}";
@@ -106,10 +106,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m31(amount) => "Read ${amount}";
 
   static String m32(count) =>
-      "${Intl.plural(count, zero: 'reviews posted', one: 'review posted', two: 'reviews posted', few: 'reviews posted', many: 'reviews posted', other: 'reviews posted')}";
+      "${Intl.plural(count, zero: 'reviews', one: 'review', two: 'reviews', few: 'reviews', many: 'reviews', other: 'reviews')}";
 
   static String m33(count) =>
-      "${Intl.plural(count, zero: 'reviews received', one: 'review received', two: 'reviews received', few: 'reviews received', many: 'reviews received', other: 'reviews received')}";
+      "${Intl.plural(count, zero: 'reviews', one: 'review', two: 'reviews', few: 'reviews', many: 'reviews', other: 'reviews')}";
 
   static String m34(item) =>
       "${Intl.plural(item, zero: 'preferences don’t work', one: 'events/places', two: 'type & get result', few: 'use ratings & models', other: 'other')}";

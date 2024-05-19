@@ -51,10 +51,10 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
           (bigScreen
               ? 0.26.sh
               : midScreen
-                  ? 0.3.sh
+                  ? 0.27.sh
                   : 0.325.sh);
     } else if (index == 1) {
-      _activityTabsContentHeight = 4 * (bigScreen || midScreen ? 0.3125.sh : 0.3575.sh);
+      _activityTabsContentHeight = 4 * (bigScreen || midScreen ? 0.325.sh : 0.3575.sh);
     } else if (index == 2) {
       _activityTabsContentHeight = 2 *
           (bigScreen
@@ -229,7 +229,6 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                   child: UiKitGradientableStatsCard(
                     maxLines: 1,
                     gradient: GradientFoundation.bronzeGradient,
-                    autoSizeGroup: autoSizeGroup,
                     stats: UiKitStats(
                       title: S.current.ReviewsPosted(widget.reviewsPosted!).toLowerCase(),
                       value: profileStatsFormatter(widget.reviewsPosted!),
@@ -682,14 +681,10 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                       ],
                       title: 'Virgins on the beach',
                       respectFromUsers: [
-                        RespectFromUser(
-                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path),
-                        RespectFromUser(
-                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial1.path),
-                        RespectFromUser(
-                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial2.path),
-                        RespectFromUser(
-                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial4.path),
+                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path),
+                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial1.path),
+                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial2.path),
+                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial4.path),
                       ],
                       properties: [
                         UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: false),
@@ -711,8 +706,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                       ],
                       title: 'Virgins on the beach',
                       respectFromUsers: [
-                        RespectFromUser(
-                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path),
+                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path),
                       ],
                       properties: [
                         UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: false),
