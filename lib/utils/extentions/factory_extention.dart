@@ -56,9 +56,9 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget createSmallOutlinedButton(
-      {required BaseUiKitButtonData data, Color? color, bool? blurred, Gradient? gradient}) {
+      {required BaseUiKitButtonData data, BorderRadius? borderRadius, bool? blurred, Gradient? gradient}) {
     return WidgetsFactory.of(this)!
-        .createSmallOutlinedButton(data: data, color: color, blurred: blurred, gradient: gradient)
+        .createSmallOutlinedButton(data: data, borderRadius: borderRadius, blurred: blurred, gradient: gradient)
         .build(this);
   }
 
@@ -138,7 +138,7 @@ extension FactoryExtention on BuildContext {
 
   Widget smallOutlinedButton({
     required BaseUiKitButtonData data,
-    Color? color,
+    BorderRadius? borderRadius,
     bool? blurred,
     Gradient? gradient,
     double? blurValue,
@@ -146,7 +146,7 @@ extension FactoryExtention on BuildContext {
     return WidgetsFactory.of(this)!
         .createSmallOutlinedButton(
           data: data,
-          color: color,
+          borderRadius: borderRadius,
           blurred: blurred,
           gradient: gradient,
         )

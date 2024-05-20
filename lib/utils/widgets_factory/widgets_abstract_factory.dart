@@ -80,7 +80,7 @@ abstract class WidgetsAbstractFactory {
 
   ButtonFactory createSmallOutlinedButton({
     required BaseUiKitButtonData data,
-    Color? color,
+    BorderRadius? borderRadius,
   });
 
   ButtonFactory createGradientButton({
@@ -241,7 +241,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   @override
   ButtonFactory createSmallOutlinedButton({
     required BaseUiKitButtonData data,
-    Color? color,
+    BorderRadius? borderRadius,
     bool? blurred,
     Gradient? gradient,
     double? blurValue,
@@ -252,8 +252,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       return SmallOutlinedButtonNoBlur(
         onPressed: data.onPressed,
         text: data.text ?? '',
-        borderColor: color,
-        textColor: color,
+        borderColor: data.borderColor,
+        textColor: data.textColor,
         icon: data.iconWidget,
         iconInfo: data.iconInfo,
         loading: data.loading,
@@ -265,8 +265,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         gradient: gradient,
         blurred: blurred ?? false,
         text: data.text ?? '',
-        borderColor: color,
-        textColor: gradient != null ? Colors.white : color,
+        borderColor: data.borderColor,
+        textColor: gradient != null ? Colors.white : data.textColor,
         loading: data.loading,
       );
     } else if ((blurred ?? false) && hasIcon) {
@@ -275,16 +275,18 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         icon: data.iconWidget,
         iconInfo: data.iconInfo,
         borderColor: data.borderColor,
-        color: color,
+        backgroundColor: data.backgroundColor,
         loading: data.loading,
         blurValue: blurValue,
+        gradient: gradient,
+          borderRadius:borderRadius
       );
     } else if (!(blurred ?? false) && hasIcon) {
       return SmallOutlinedIconButton(
         onPressed: data.onPressed,
         icon: data.iconWidget,
         iconInfo: data.iconInfo,
-        borderColor: color,
+        borderColor: data.borderColor,
         loading: data.loading,
       );
     } else {

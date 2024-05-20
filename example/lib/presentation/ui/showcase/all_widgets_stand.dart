@@ -1490,8 +1490,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             onPressed: () {},
           )),
           dismissActionWidget: context.smallOutlinedButton(
-            data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
-            color: Colors.white.withOpacity(0.5),
+            data: BaseUiKitButtonData(
+              text: 'Cancel',
+              onPressed: () {},
+              backgroundColor: Colors.white.withOpacity(0.5),
+            ),
           ),
           requiredData: NotificationPopupRequiredData(
             titleString: 'Yoga today at Palm Jumeirah. You go?',
@@ -1507,8 +1510,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
           ),
           dismissActionWidget: context.smallOutlinedButton(
-            data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
-            color: Colors.white.withOpacity(0.5),
+            data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}, backgroundColor: Colors.white.withOpacity(0.5)),
           ),
           requiredData: NotificationPopupRequiredData(
             titleString: 'Yoga today at Palm Jumeirah. You go?',
@@ -1526,8 +1528,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             data: BaseUiKitButtonData(text: 'text', onPressed: () {}),
           ),
           dismissActionWidget: context.smallOutlinedButton(
-            data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
-            color: Colors.white.withOpacity(0.5),
+            data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}, backgroundColor: Colors.white.withOpacity(0.5)),
           ),
           requiredData: NotificationPopupRequiredData(
             titleString: 'Yoga today at Palm Jumeirah. You go?',
@@ -1543,8 +1544,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
           ),
           dismissActionWidget: context.smallOutlinedButton(
-            data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}),
-            color: Colors.white.withOpacity(0.5),
+            data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}, backgroundColor: Colors.white.withOpacity(0.5)),
           ),
           secondaryActionWidget: context.smallOutlinedButton(
             data: BaseUiKitButtonData(text: 'text', onPressed: () {}),
@@ -1604,8 +1604,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
               SpacingFoundation.verticalSpace8,
               context.smallOutlinedButton(
-                color: Colors.white.withOpacity(0.5),
-                data: BaseUiKitButtonData(text: 'Hard to answer', onPressed: () {}),
+                data: BaseUiKitButtonData(
+                    text: 'Hard to answer', onPressed: () {}, backgroundColor: Colors.white.withOpacity(0.5)),
               ),
             ],
           ),

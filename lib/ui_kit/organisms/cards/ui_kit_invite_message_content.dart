@@ -3,7 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInviteMessageContent extends StatelessWidget {
   const UiKitInviteMessageContent({
-    Key? key,
+    super.key,
     required this.username,
     required this.placeName,
     required this.placeImagePath,
@@ -17,7 +17,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
     this.brightness = Brightness.light,
     this.onAcceptTap,
     this.onDenyTap,
-  }) : super(key: key);
+  });
 
   final String username;
   final Brightness brightness;
@@ -180,8 +180,9 @@ class UiKitInviteMessageContent extends StatelessWidget {
               context
                   .smallOutlinedButton(
                     blurred: false,
-                    color: Colors.black,
+
                     data: BaseUiKitButtonData(
+                      backgroundColor: Colors.black,
                       onPressed: onPlaceTap,
                       iconInfo: BaseUiKitButtonIconData(
                         iconData: ShuffleUiKitIcons.chevronright,
@@ -212,9 +213,10 @@ class UiKitInviteMessageContent extends StatelessWidget {
               Expanded(
                 flex: 6,
                 child: context.smallOutlinedButton(
-                  color: isDark ? Colors.white : Colors.black,
+
                   blurred: false,
                   data: BaseUiKitButtonData(
+                    backgroundColor: isDark ? Colors.white : Colors.black,
                     onPressed: onDenyTap,
                     text: S.of(context).NotNow.toUpperCase(),
                     fit: ButtonFit.fitWidth,

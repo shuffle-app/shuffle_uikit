@@ -99,8 +99,8 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
                   SpacingFoundation.horizontalSpace8,
                   PointerInterceptor(
                     child: context.smallOutlinedButton(
-                      color: Colors.black,
                       data: BaseUiKitButtonData(
+                        backgroundColor: Colors.black,
                         iconInfo: BaseUiKitButtonIconData(
                           iconData: ShuffleUiKitIcons.chevronright,
                           color: colorScheme?.surface,
