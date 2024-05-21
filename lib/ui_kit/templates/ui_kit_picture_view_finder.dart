@@ -563,12 +563,14 @@ class CropOuterAreaClipper extends CustomClipper<Path> {
 class CroppedImageData {
   final Uint8List croppedFileBytes;
   final Uint8List originalFileBytes;
+  final bool originalImageWasPreview;
   final String? mimeType;
   final String? filename;
 
   CroppedImageData({
     required this.croppedFileBytes,
     required this.originalFileBytes,
+    this.originalImageWasPreview = false,
     this.mimeType,
     this.filename,
   });
