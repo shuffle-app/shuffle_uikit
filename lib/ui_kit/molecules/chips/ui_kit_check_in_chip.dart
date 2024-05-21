@@ -79,16 +79,16 @@ class _UiKitCheckInChipState extends State<UiKitCheckInChip> with SingleTickerPr
             data: BaseUiKitButtonData(
                 backgroundColor: Colors.white.withOpacity(0.3),
                 onPressed: onCheckIn,
-                iconWidget: Center(
-                    child: PageView(
+                iconWidget: PageView(
                   controller: _pageController,
                   children: [
-                    GradientableWidget(
-                        gradient: GradientFoundation.attentionCard,
-                        child: Text(
-                          S.of(context).CheckIn.toUpperCase(),
-                          style: textStyle,
-                        )),
+                    Center(
+                        child: GradientableWidget(
+                            gradient: GradientFoundation.attentionCard,
+                            child: Text(
+                              S.of(context).CheckIn.toUpperCase(),
+                              style: textStyle,
+                            ))),
                     const GradientableWidget(
                         gradient: GradientFoundation.attentionCard,
                         child: CupertinoActivityIndicator(
@@ -103,6 +103,6 @@ class _UiKitCheckInChipState extends State<UiKitCheckInChip> with SingleTickerPr
                               color: Colors.white,
                             ))),
                   ],
-                )))));
+                ))));
   }
 }
