@@ -514,5 +514,8 @@
   "SomethingWentWrong": "Что-то пошло не так. Попробуйте еще раз.",
   "AllXFeaturesAvailable": "Все {value} фичи доступны!",
   "HintNumberEventsForPro": "3 события доступны & добавь больше за отдельную цену",
-  "CreateYourEventAndInvitePeople" : "Создай свое событие и пригласи людей"
+  "CreateYourEventAndInvitePeople" : "Создай свое событие и пригласи людей",
+  "TrialPeriod": "Триал период",
+  "YouGetAccessToTrial": "Ты получишь доступ ко всем функциям на",
+  "Free": "Бесплатно"
 }

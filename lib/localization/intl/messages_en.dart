@@ -131,7 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m41(type) => "To use this function plz upgrade to ${type}";
 
-  static String m42(forNMoney) => "Upgrade ${forNMoney}";
+  static String m42(forNMoney) => "Upgrade for ${forNMoney}";
 
   static String m43(count) =>
       "${Intl.plural(count, zero: '${count} users', one: '${count} user', two: '${count} users', few: '${count} users', many: '${count} users', other: '${count} users')}";
@@ -378,6 +378,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ForPeriod": MessageLookupByLibrary.simpleMessage("For"),
         "ForgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password"),
+        "Free": MessageLookupByLibrary.simpleMessage("Free"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("\nfree places"),
         "FridayShort": MessageLookupByLibrary.simpleMessage("Fri"),
         "FulfillTheDream":
@@ -792,6 +793,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Top": MessageLookupByLibrary.simpleMessage("Top"),
         "TopNDonatorsReceiveXPoints": m39,
         "TopPlacesRatedBy": m40,
+        "TrialPeriod": MessageLookupByLibrary.simpleMessage("Trial period"),
         "TryYourself": MessageLookupByLibrary.simpleMessage("Try\nyourself"),
         "TuesdayShort": MessageLookupByLibrary.simpleMessage("Tue"),
         "TypeHere": MessageLookupByLibrary.simpleMessage("Type here"),
@@ -869,6 +871,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("You better check this out"),
         "YouCanGet": MessageLookupByLibrary.simpleMessage("You can get"),
+        "YouGetAccessToTrial": MessageLookupByLibrary.simpleMessage(
+            "You get access to all benefits free of charge for"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "You get exactly what you need"),
         "YouMissedALot":

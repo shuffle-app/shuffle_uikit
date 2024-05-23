@@ -2226,10 +2226,10 @@ class S {
     );
   }
 
-  /// `Upgrade {forNMoney}`
+  /// `Upgrade for {forNMoney}`
   String UpgradeForNmoney(Object forNMoney) {
     return Intl.message(
-      'Upgrade $forNMoney',
+      'Upgrade for $forNMoney',
       name: 'UpgradeForNmoney',
       desc: '',
       args: [forNMoney],
@@ -5328,6 +5328,36 @@ class S {
     return Intl.message(
       'Create your event and invite people',
       name: 'CreateYourEventAndInvitePeople',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Trial period`
+  String get TrialPeriod {
+    return Intl.message(
+      'Trial period',
+      name: 'TrialPeriod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You get access to all benefits free of charge for`
+  String get YouGetAccessToTrial {
+    return Intl.message(
+      'You get access to all benefits free of charge for',
+      name: 'YouGetAccessToTrial',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Free`
+  String get Free {
+    return Intl.message(
+      'Free',
+      name: 'Free',
       desc: '',
       args: [],
     );

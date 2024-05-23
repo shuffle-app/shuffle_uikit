@@ -378,6 +378,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ForPeriod": MessageLookupByLibrary.simpleMessage("के लिए"),
         "ForgotPassword":
             MessageLookupByLibrary.simpleMessage("पासवर्ड भूल गए"),
+        "Free": MessageLookupByLibrary.simpleMessage("Free"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("निःशुल्क स्थान"),
         "FridayShort": MessageLookupByLibrary.simpleMessage("शुक्रवार"),
         "FulfillTheDream":
@@ -800,6 +801,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Top": MessageLookupByLibrary.simpleMessage("शीर्ष"),
         "TopNDonatorsReceiveXPoints": m39,
         "TopPlacesRatedBy": m40,
+        "TrialPeriod": MessageLookupByLibrary.simpleMessage("Trial period"),
         "TryYourself":
             MessageLookupByLibrary.simpleMessage("स्वयं प्रयास करें"),
         "TuesdayShort": MessageLookupByLibrary.simpleMessage("मंगलवार"),
@@ -881,6 +883,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "बेहतर होगा कि आप इसकी जांच कर लें"),
         "YouCanGet":
             MessageLookupByLibrary.simpleMessage("आप प्राप्त कर सकते हैं"),
+        "YouGetAccessToTrial": MessageLookupByLibrary.simpleMessage(
+            "You get access to all benefits free of charge for"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "आपको वही मिलता है जो आपको चाहि"),
         "YouMissedALot":

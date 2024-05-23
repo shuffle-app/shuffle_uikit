@@ -38,7 +38,7 @@ class _UiKitCheckInChipState extends State<UiKitCheckInChip> with SingleTickerPr
     super.didUpdateWidget(oldWidget);
     if (widget.isChecked != oldWidget.isChecked) {
       if (widget.isChecked) {
-        _pageController.jumpToPage(2);
+        _pageController.animateToPage(2, duration: const Duration(milliseconds: 100), curve: Curves.easeInOut);
         _controller.stop();
         // } else {
         //   _pageController.animateToPage(0, duration: const Duration(milliseconds: 100), curve: Curves.easeInOut);
