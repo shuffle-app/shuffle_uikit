@@ -6,11 +6,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class BlurredCardWithBorder extends StatelessWidget {
   final Widget child;
   final BoxBorder? border;
+  final double? height;
 
   const BlurredCardWithBorder({
     Key? key,
     required this.child,
     this.border,
+    this.height,
   }) : super(key: key);
 
   @override
@@ -20,6 +22,7 @@ class BlurredCardWithBorder extends StatelessWidget {
 
     return Container(
       clipBehavior: Clip.hardEdge,
+      height: height,
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
         border: border ?? Border.all(color: theme?.colorScheme.inverseSurface ?? Colors.transparent, width: 2),

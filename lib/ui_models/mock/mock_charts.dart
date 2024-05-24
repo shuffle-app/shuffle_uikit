@@ -2,10 +2,10 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
 
 final UiKitLineChartData<double> mockLineChart = UiKitLineChartData<double>(
-  title: 'S.current.BookingsAndInvites',
+  title: S.current.BookingsAndInvites,
   items: [
     UiKitLineChartItemData<double>(
-      color: ColorsFoundation.yellow,
+      gradient: GradientFoundation.defaultLinearGradient,
       datasets: [
         UiKitLineChartDataSet<double>(
           date: DateTime.now().subtract(const Duration(days: 12)),

@@ -5,11 +5,15 @@ import 'package:shuffle_uikit/utils/extentions/chart_extensions.dart';
 
 class LineChartPainter extends CustomPainter {
   final List<UiKitLineChartItemData<num>> lines;
+  final double step;
 
   LineChartPainter({
     super.repaint,
     required this.lines,
-  });
+    double? step,
+  }) : step = step ?? SpacingFoundation.horizontalSpacing32 * 2.5;
+
+  double get curvatureRadius => step / 2;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -20,50 +24,41 @@ class LineChartPainter extends CustomPainter {
     for (final lineData in lines) {
       final path = Path();
       final paint = Paint()
-        ..color = lineData.color
+        ..strokeCap = StrokeCap.round
         ..strokeWidth = 2
         ..style = PaintingStyle.stroke;
-      final step = SpacingFoundation.horizontalSpacing32 * 2;
+      if (lineData.gradient != null) {
+        paint.shader = lineData.gradient!.createShader(Rect.fromLTWH(0, 0, width, height));
+      } else if (lineData.color != null) {
+        paint.color = lineData.color!;
+      }
       for (int i = 0; i < lineData.datasets.length - 1; i++) {
-        print('i: $i, value: ${lineData.datasets.elementAt(i).value}');
-        final currentDataset = lineData.datasets.elementAt(i);
-        final nextDataset = lineData.datasets.elementAt(i + 1);
-        final currentValue = currentDataset.value;
-        final nextValue = nextDataset.value;
-        double currentHeight = (currentValue / maxValue) * height;
-
-        /// adding some space to see the line to the point
-        if (currentHeight == height) currentHeight = height - SpacingFoundation.verticalSpacing2;
-        double nextHeight = (nextValue / maxValue) * height;
-
-        /// adding some space to see the line to the point
-        if (nextHeight == height) nextHeight = height - SpacingFoundation.verticalSpacing2;
-
+        final isLastDataSet = i + 1 == lineData.datasets.length - 1;
+        final currentValue = lineData.datasets.elementAt(i).value;
+        final nextValue = lineData.datasets.elementAt(i + 1).value;
         double currentX = (i * step);
         double nextX = (i + 1) * step;
-        double currentY = currentHeight;
-        double nextY = nextHeight;
-
-        if (i == 0) path.moveTo(0, height);
-
-        double midY = 0;
-        double midX = 0;
-        print('currentY: ${currentY.toStringAsFixed(1)}, nextY: ${nextY.toStringAsFixed(1)}');
-
-        if (nextY > currentY) {
-          midX = nextX - SpacingFoundation.verticalSpacing16;
-          midY = nextY + SpacingFoundation.verticalSpacing16;
-        } else if (currentY > nextY) {
-          midY = nextY - SpacingFoundation.verticalSpacing16;
-          midX = currentX + (step / 2);
+        double currentY = height - ((currentValue / maxValue) * height);
+        double nextY = height - ((nextValue / maxValue) * height);
+        if (i == 0) {
+          path.moveTo(currentX, currentY);
         }
-        currentY = height - currentY;
-        nextY = height - nextY;
-        midY = height - midY;
+
+        /// adding some space to see the line to the point
+        if (currentY == height) currentY = height - SpacingFoundation.verticalSpacing2;
+        if (nextY == height) nextY = height - SpacingFoundation.verticalSpacing2;
+
+        if (isLastDataSet) {
+          nextY += 4;
+        }
+
+        double midY = nextY;
+        double midX = nextX - curvatureRadius;
+        currentX += curvatureRadius;
 
         path.cubicTo(currentX, currentY, midX, midY, nextX, nextY);
-        canvas.drawPath(path, paint);
       }
+      canvas.drawPath(path, paint);
     }
   }
 
