@@ -7,7 +7,8 @@ class NotificationPopupRequiredData {
   final bool gradientBorder;
   final TextAlign textAlign;
   final bool? hasShadow;
-  final    Color? backgroundColor;
+  final Color? backgroundColor;
+  final double? customHeight;
 
   NotificationPopupRequiredData({
     this.titleString,
@@ -15,6 +16,7 @@ class NotificationPopupRequiredData {
     this.customTitle,
     this.backgroundColor,
     this.hasShadow,
+    this.customHeight,
     this.textAlign = TextAlign.left,
     this.gradientBorder = false,
   }) : assert(
