@@ -5,13 +5,15 @@ class UiKitCompactTextCard extends StatelessWidget {
   final String text;
   final bool showRemoveButton;
   final VoidCallback? onTap;
+  final bool showCheckedBackground;
 
   const UiKitCompactTextCard({
-    Key? key,
+    super.key,
     required this.text,
     this.onTap,
     this.showRemoveButton = false,
-  }) : super(key: key);
+    this.showCheckedBackground = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +23,15 @@ class UiKitCompactTextCard extends StatelessWidget {
     return Material(
       borderRadius: BorderRadiusFoundation.all24,
       clipBehavior: Clip.hardEdge,
-      color: theme?.colorScheme.surface4,
+      color: showCheckedBackground ? theme?.colorScheme.surface2 : theme?.colorScheme.surface4,
       child: InkWell(
         onTap: onTap,
         child: Ink(
+          decoration: showCheckedBackground
+              ? BoxDecoration(
+              borderRadius: BorderRadiusFoundation.all24,
+              border: Border.all(color: theme!.colorScheme.inversePrimary))
+              : null,
           child: Row(mainAxisSize: MainAxisSize.min, children: [
             Text(text, style: textTheme?.caption1Medium),
             if (showRemoveButton) ...[
