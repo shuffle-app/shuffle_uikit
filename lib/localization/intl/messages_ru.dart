@@ -379,6 +379,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ForFormattedPrice": m17,
         "ForPeriod": MessageLookupByLibrary.simpleMessage("на"),
         "ForgotPassword": MessageLookupByLibrary.simpleMessage("Забыл пароль"),
+        "Free": MessageLookupByLibrary.simpleMessage("Бесплатно"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("\nбесплатных мест"),
         "FridayShort": MessageLookupByLibrary.simpleMessage("Пт"),
         "FulfillTheDream":
@@ -804,6 +805,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Top": MessageLookupByLibrary.simpleMessage("ТОП"),
         "TopNDonatorsReceiveXPoints": m39,
         "TopPlacesRatedBy": m40,
+        "TrialPeriod": MessageLookupByLibrary.simpleMessage("Триал период"),
         "TryYourself": MessageLookupByLibrary.simpleMessage("Попробуйте\nсами"),
         "TuesdayShort": MessageLookupByLibrary.simpleMessage("Вт"),
         "TypeHere": MessageLookupByLibrary.simpleMessage("Напишите тут"),
@@ -882,6 +884,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Вам лучше взглянуть"),
         "YouCanGet": MessageLookupByLibrary.simpleMessage("Вы можете получить"),
+        "YouGetAccessToTrial": MessageLookupByLibrary.simpleMessage(
+            "Ты получишь доступ ко всем функциям на"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
             "Вы получаете точно то, что нужно"),
         "YouMissedALot":

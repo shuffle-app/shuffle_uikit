@@ -514,6 +514,9 @@
   "SomethingWentWrong": "Something went wrong. Please try again.",
   "AllXFeaturesAvailable": "All {value} features are now available!",
   "HintNumberEventsForPro": "3 events available & add more for extra price",
-  "CreateYourEventAndInvitePeople" : "Create your event and invite people"
+  "CreateYourEventAndInvitePeople" : "Create your event and invite people",
+  "TrialPeriod": "Trial period",
+  "YouGetAccessToTrial": "You get access to all benefits free of charge for",
+  "Free": "Free"
 
 }

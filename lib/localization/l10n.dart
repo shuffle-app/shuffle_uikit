@@ -5332,6 +5332,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Trial period`
+  String get TrialPeriod {
+    return Intl.message(
+      'Trial period',
+      name: 'TrialPeriod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You get access to all benefits free of charge for`
+  String get YouGetAccessToTrial {
+    return Intl.message(
+      'You get access to all benefits free of charge for',
+      name: 'YouGetAccessToTrial',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Free`
+  String get Free {
+    return Intl.message(
+      'Free',
+      name: 'Free',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
