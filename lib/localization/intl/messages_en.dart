@@ -131,7 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m41(type) => "To use this function plz upgrade to ${type}";
 
-  static String m42(forNMoney) => "Upgrade for ${forNMoney}";
+  static String m42(forNMoney) => "Upgrade ${forNMoney}";
 
   static String m43(count) =>
       "${Intl.plural(count, zero: '${count} users', one: '${count} user', two: '${count} users', few: '${count} users', many: '${count} users', other: '${count} users')}";

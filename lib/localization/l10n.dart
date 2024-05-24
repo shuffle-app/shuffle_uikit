@@ -2226,10 +2226,10 @@ class S {
     );
   }
 
-  /// `Upgrade for {forNMoney}`
+  /// `Upgrade {forNMoney}`
   String UpgradeForNmoney(Object forNMoney) {
     return Intl.message(
-      'Upgrade for $forNMoney',
+      'Upgrade $forNMoney',
       name: 'UpgradeForNmoney',
       desc: '',
       args: [forNMoney],

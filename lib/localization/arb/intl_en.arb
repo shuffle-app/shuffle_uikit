@@ -216,7 +216,7 @@
   "Update": "Update",
   "Create": "Create",
   "BookIt": "Book it",
-  "UpgradeForNmoney": "Upgrade for {forNMoney}",
+  "UpgradeForNmoney": "Upgrade {forNMoney}",
   "ForFormattedPrice": " For {formattedPrice}",
   "ErrorOccuredWithoutMessage": "Error occured without message",
   "Permissions": "Permissions",
