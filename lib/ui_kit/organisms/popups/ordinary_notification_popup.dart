@@ -20,6 +20,7 @@ class OrdinaryNotificationPopUp extends BaseNotificationPopup {
     final titleStyle = context.uiKitTheme?.boldTextTheme.body.copyWith(color: context.uiKitTheme?.colorScheme.inverseSurface);
 
     return BlurredCardWithBorder(
+      height: requiredData.customHeight,
       border: requiredData.gradientBorder ? GradientFoundation.gradientBorder : null,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -36,6 +37,7 @@ class OrdinaryNotificationPopUp extends BaseNotificationPopup {
                       requiredData.titleString ?? '',
                       style: titleStyle,
                       textAlign: requiredData.textAlign,
+                      maxLines: 4,
                     ),
               ),
             ],

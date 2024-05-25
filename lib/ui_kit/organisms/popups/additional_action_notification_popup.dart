@@ -24,6 +24,7 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
     // final titleStyle = theme?.boldTextTheme.body.copyWith(color: theme.colorScheme.inverseSurface);
 
     return BlurredCardWithBorder(
+      height: requiredData.customHeight,
       border: requiredData.gradientBorder ? GradientFoundation.gradientBorder : null,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -40,6 +41,7 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
                       requiredData.titleString ?? '',
                       style: titleStyle,
                       textAlign: TextAlign.left,
+                      maxLines: 4,
                     ),
               ),
             ],
