@@ -44,11 +44,12 @@ class UiKitGradientableStatsCard extends StatelessWidget {
               ),
             ),
             SpacingFoundation.verticalSpace12,
-            Text(
+            AutoSizeText(
               stats.title,
               style: boldTextTheme?.caption1Bold,
               textAlign: TextAlign.center,
               maxLines: maxLines ?? 2,
+              group: autoSizeGroup,
             ),
           ],
         ).paddingAll(EdgeInsetsFoundation.all12),
