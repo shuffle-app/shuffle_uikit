@@ -13,6 +13,7 @@ export 'ad_banners/small_text_ad_banner_1.dart';
 export 'ad_banners/small_text_ad_banner_2.dart';
 export 'ad_banners/small_text_ad_banner_3.dart';
 export 'ad_banners/small_text_ad_banner_4.dart';
+export 'ad_banners/small_text_ad_banner_5.dart';
 export 'ad_banners/ui_kit_large_ad_banner_card.dart';
 export 'ad_banners/ui_kit_large_text_ad_banner_card.dart';
 export 'ad_banners/ui_kit_medium_ad_banner_card.dart';

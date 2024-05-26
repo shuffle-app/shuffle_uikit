@@ -581,6 +581,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/mock_ad_banner_31.png
   AssetGenImage get mockAdBanner31 => const AssetGenImage('assets/images/png/mock_ad_banner_31.png');
 
+  /// File path: assets/images/png/mock_ad_banner_32.png
+  AssetGenImage get mockAdBanner32 => const AssetGenImage('assets/images/png/mock_ad_banner_32.png');
+
   /// File path: assets/images/png/mock_ad_banner_4.jpg
   AssetGenImage get mockAdBanner4 => const AssetGenImage('assets/images/png/mock_ad_banner_4.jpg');
 
@@ -970,6 +973,7 @@ class $AssetsImagesPngGen {
         mockAdBanner3,
         mockAdBanner30,
         mockAdBanner31,
+        mockAdBanner32,
         mockAdBanner4,
         mockAdBanner5,
         mockAdBanner6,
