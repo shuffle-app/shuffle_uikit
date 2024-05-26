@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/organisms/charts/ui_kit_line_chart.dart';
+import 'package:shuffle_uikit/ui_kit/organisms/charts/line_chart/ui_kit_line_chart.dart';
 import 'package:shuffle_uikit/ui_models/mock/mock_charts.dart';
 
 class ProProfilePage extends StatelessWidget {
