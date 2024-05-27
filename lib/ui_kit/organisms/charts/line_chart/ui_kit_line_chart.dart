@@ -44,7 +44,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   bool scrollingDates = false;
   bool scrollingChart = false;
   bool scrollingSmallPreview = false;
-  final _smallPreviewLeftOffsetNotifier = ValueNotifier<double>(8);
+  final _smallPreviewLeftOffsetNotifier = ValueNotifier<double>(0);
 
   @override
   void initState() {
@@ -162,6 +162,8 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                 if (!scrollingChart) {
                   if (offset > _chartScrollController.position.maxScrollExtent) {
                     offset = _chartScrollController.position.maxScrollExtent;
+                  } else if (offset >= _datesScrollController.position.maxScrollExtent) {
+                    offset += 16;
                   }
                   _chartScrollController.jumpTo(offset);
                   if (!scrollingSmallPreview) _smallPreviewLeftOffsetNotifier.value = max(8, offset / chartToSmallPreviewRatio);

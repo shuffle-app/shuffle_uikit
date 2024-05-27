@@ -11,7 +11,7 @@ class LineChartPainter extends CustomPainter {
     super.repaint,
     required this.lines,
     double? step,
-  }) : step = step ?? SpacingFoundation.horizontalSpacing32 * 2.5;
+  }) : step = step ?? SpacingFoundation.horizontalSpacing32 * 2.6;
 
   double get curvatureRadius => step / 2;
 

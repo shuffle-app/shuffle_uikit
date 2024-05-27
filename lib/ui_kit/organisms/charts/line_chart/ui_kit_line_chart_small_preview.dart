@@ -78,11 +78,7 @@ class _UiKitLineChartSmallPreviewOverlayState extends State<UiKitLineChartSmallP
     });
   }
 
-  void _listener() {
-    if (widget.leftOffsetNotifier.value >= widget.size.width * 0.65 - 8) {
-      widget.leftOffsetNotifier.value = widget.size.width * 0.65 - 8;
-    }
-  }
+  void _listener() {}
 
   @override
   Widget build(BuildContext context) {
@@ -91,31 +87,77 @@ class _UiKitLineChartSmallPreviewOverlayState extends State<UiKitLineChartSmallP
       child: Stack(
         fit: StackFit.expand,
         children: [
-          GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onPanUpdate: (details) {
-              double newOffset = widget.leftOffsetNotifier.value + details.delta.dx;
-              if (newOffset <= 8 && newOffset >= 0) {
-                newOffset = 8;
-                widget.onScroll?.call(0);
-              } else if (newOffset >= (widget.size.width * 0.65) - 8) {
-                newOffset = (widget.size.width * 0.65) - 8;
-              } else {
+          AnimatedBuilder(
+            animation: widget.leftOffsetNotifier,
+            builder: (context, child) => ClipPath(
+              clipper: CropInnerAreaClipper(
+                Rect.fromLTWH(widget.leftOffsetNotifier.value - 8, 2, widget.size.width * 0.35 - 8, widget.size.height - 4),
+                4,
+              ),
+              child: child,
+            ),
+            child: ColoredBox(
+              color: ColorsFoundation.neutral16,
+            ),
+          ),
+          AnimatedPositioned(
+            left: widget.leftOffsetNotifier.value - 8,
+            duration: const Duration(milliseconds: 10),
+            child: GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onPanUpdate: (details) {
+                double newOffset = widget.leftOffsetNotifier.value + details.delta.dx;
+                if (newOffset <= 8) newOffset = 8;
+                if (newOffset >= (widget.size.width * 0.65) + 8) newOffset = (widget.size.width * 0.65) + 8;
+
                 widget.leftOffsetNotifier.value = newOffset;
                 widget.onScroll?.call(newOffset - 8);
-              }
-            },
-            child: AnimatedBuilder(
-              animation: widget.leftOffsetNotifier,
-              builder: (context, child) => ClipPath(
-                clipper: CropInnerAreaClipper(
-                  Rect.fromLTWH(widget.leftOffsetNotifier.value, 2, widget.size.width * 0.35, widget.size.height - 4),
-                  4,
-                ),
-                child: child,
-              ),
-              child: ColoredBox(
-                color: ColorsFoundation.neutral16,
+              },
+              child: AnimatedBuilder(
+                animation: widget.leftOffsetNotifier,
+                builder: (context, child) {
+                  return ClipPath(
+                    clipper: CropInnerAreaClipper(
+                      Rect.fromLTWH(8, 2, widget.size.width * 0.35 - 16, widget.size.height - 4),
+                      4,
+                    ),
+                    child: Container(
+                      width: widget.size.width * 0.35,
+                      height: widget.size.height,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 2,
+                          color: ColorsFoundation.darkNeutral900,
+                        ),
+                        color: ColorsFoundation.darkNeutral900,
+                        borderRadius: BorderRadiusFoundation.all4,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: SpacingFoundation.horizontalSpacing2,
+                            height: SpacingFoundation.verticalSpacing8,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadiusFoundation.max,
+                            ),
+                          ).paddingOnly(left: 1),
+                          Container(
+                            width: SpacingFoundation.horizontalSpacing2,
+                            height: SpacingFoundation.verticalSpacing8,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadiusFoundation.max,
+                            ),
+                          ).paddingOnly(right: 1),
+                        ],
+                      ),
+                    ),
+                  );
+                },
               ),
             ),
           ),
