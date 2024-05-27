@@ -701,6 +701,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Usual search..."),
         "SeeAll": MessageLookupByLibrary.simpleMessage("See all"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("See more"),
+        "SelectCurrency":
+            MessageLookupByLibrary.simpleMessage("Select currency"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("Select date"),
         "SelectDateRange":
             MessageLookupByLibrary.simpleMessage("Select Date Range"),
@@ -717,6 +719,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Send": MessageLookupByLibrary.simpleMessage("Send"),
         "SendIt": MessageLookupByLibrary.simpleMessage("Send it"),
         "Services": MessageLookupByLibrary.simpleMessage("Services"),
+        "SetWorkHours":
+            MessageLookupByLibrary.simpleMessage("Set work schedule"),
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("Show result"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),

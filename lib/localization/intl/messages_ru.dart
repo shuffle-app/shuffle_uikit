@@ -532,7 +532,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Спасибо!\nТеперь мы знаем тебя лучше"),
         "Off": MessageLookupByLibrary.simpleMessage("Выкл"),
         "OfficeAppartmentNumber":
-            MessageLookupByLibrary.simpleMessage("Номер офиса или апарта"),
+            MessageLookupByLibrary.simpleMessage("Номер офиса"),
         "Ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "OkayCool": MessageLookupByLibrary.simpleMessage("Ок, круто!"),
         "OnboardingSlide1": MessageLookupByLibrary.simpleMessage("веселиться"),
@@ -614,7 +614,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Переключать темную и светлую темы"),
         "PremiumSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
             "Возможность стать Инфлюенсером"),
-        "Price": MessageLookupByLibrary.simpleMessage("цена"),
+        "Price": MessageLookupByLibrary.simpleMessage("Цена"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Конфиденциальность"),
         "PrivacyPolicy":
             MessageLookupByLibrary.simpleMessage("Политика конфиденциальности"),
@@ -709,6 +709,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Обычный поиск..."),
         "SeeAll": MessageLookupByLibrary.simpleMessage("Посмотреть всё"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("Ещё"),
+        "SelectCurrency":
+            MessageLookupByLibrary.simpleMessage("Выберте валюту"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("Выберите дату"),
         "SelectDateRange":
             MessageLookupByLibrary.simpleMessage("Выберите диапазон дат"),
@@ -725,6 +727,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Send": MessageLookupByLibrary.simpleMessage("Отправить"),
         "SendIt": MessageLookupByLibrary.simpleMessage("Отправить"),
         "Services": MessageLookupByLibrary.simpleMessage("Услуги"),
+        "SetWorkHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "Settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "ShowResult":
             MessageLookupByLibrary.simpleMessage("Показать результат"),

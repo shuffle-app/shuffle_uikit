@@ -517,6 +517,8 @@
   "CreateYourEventAndInvitePeople" : "Create your event and invite people",
   "TrialPeriod": "Trial period",
   "YouGetAccessToTrial": "You get access to all benefits free of charge for",
-  "Free": "Free"
+  "Free": "Free",
+  "SetWorkHours": "Set work schedule",
+  "SelectCurrency": "Select currency"
 
 }
