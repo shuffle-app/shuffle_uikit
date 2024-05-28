@@ -44,7 +44,7 @@ class UiKitCustomTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final tabStyle = theme?.boldTextTheme.body;
+    final tabStyle = theme?.boldTextTheme.body.copyWith(fontSize: 15.w);
     final tabBarTheme = theme?.uiKitTabBarTheme.copyWith(
       unselectedLabelStyle: tabStyle?.copyWith(color: theme.uiKitTabBarTheme.unselectedLabelColor),
       labelStyle: tabStyle?.copyWith(color: theme.uiKitTabBarTheme.labelColor),
