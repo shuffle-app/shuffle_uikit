@@ -170,10 +170,12 @@ class UiKitLocationPicker extends StatelessWidget {
                     color: ColorsFoundation.darkNeutral900,
                   ),
                 ),
-                primary: const ImageWidget(
-                  iconData: ShuffleUiKitIcons.landmark,
-                  color: ColorsFoundation.darkNeutral900,
-                ),
+                primary: GestureDetector(
+                    onTap: context.pop,
+                    child: const ImageWidget(
+                      iconData: ShuffleUiKitIcons.arrowleft,
+                      color: ColorsFoundation.darkNeutral900,
+                    )),
                 notifier: focusNotifier,
               ),
             ),

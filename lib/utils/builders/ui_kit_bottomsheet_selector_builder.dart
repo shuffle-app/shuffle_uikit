@@ -14,6 +14,7 @@ uiKitBottomsheetSelectorBuilder(BuildContext context, {required List<ListTile> w
           isWidgetScrollable: true,
           child: StatefulBuilder(
               builder: (context, setState) => ListView(
+                    padding: EdgeInsets.symmetric(horizontal: SpacingFoundation.horizontalSpacing8),
                     children: [
                       SpacingFoundation.verticalSpace16,
                       UiKitInputFieldRightIcon(
@@ -28,7 +29,10 @@ uiKitBottomsheetSelectorBuilder(BuildContext context, {required List<ListTile> w
                               )
                             : null,
                         onIconPressed: () {
-                          if (searchController.text.isNotEmpty) searchController.clear();
+                          if (searchController.text.isNotEmpty) {
+                            searchController.clear();
+                            searchWidgets.addAll(widgets);
+                          }
                           // context.pop();
                         },
                         onChanged: (value) {
@@ -37,8 +41,9 @@ uiKitBottomsheetSelectorBuilder(BuildContext context, {required List<ListTile> w
                               searchWidgets.clear();
                               searchWidgets.addAll(widgets);
                             } else {
-                              searchWidgets
-                                  .removeWhere((element) => !((element.title as Text).data?.contains(value) ?? false));
+                              searchWidgets.removeWhere((element) =>
+                                  !((element.title as Text).data?.toLowerCase().contains(value.toLowerCase()) ??
+                                      false));
                             }
                           });
                         },
