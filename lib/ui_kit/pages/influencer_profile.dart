@@ -31,7 +31,8 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
   int nftBadgeCount = 2;
   int contestBadgeCount = 999;
   int videoBadgeCount = 0;
-  final autoSizeGroup = AutoSizeGroup();
+  final activityTabsSizeGroup = AutoSizeGroup();
+  final statsSizeGroup = AutoSizeGroup();
   final specialTabsKey = GlobalKey();
   final ScrollController scrollController = ScrollController();
 
@@ -216,6 +217,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                 Expanded(
                   child: UiKitGradientableStatsCard(
                     maxLines: 2,
+                    autoSizeGroup: statsSizeGroup,
                     gradient: GradientFoundation.silverGradient,
                     stats: UiKitStats(
                       title: S.current.PlacesVisited(widget.visitedPlaces!).toLowerCase(),
@@ -228,6 +230,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                 Expanded(
                   child: UiKitGradientableStatsCard(
                     maxLines: 1,
+                    autoSizeGroup: statsSizeGroup,
                     gradient: GradientFoundation.bronzeGradient,
                     stats: UiKitStats(
                       title: S.current.ReviewsPosted(widget.reviewsPosted!).toLowerCase(),
@@ -240,6 +243,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                 Expanded(
                   child: UiKitGradientableStatsCard(
                     maxLines: 2,
+                    autoSizeGroup: statsSizeGroup,
                     gradient: GradientFoundation.goldGradient,
                     stats: UiKitStats(
                       title: S.current.PointsEarned(widget.pointsEarned!).toLowerCase(),
@@ -503,9 +507,9 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
           UiKitCustomTabBar(
             tabController: activityTabsController,
             tabs: [
-              UiKitCustomTab(title: S.current.Reviews.toUpperCase(), group: autoSizeGroup),
-              UiKitCustomTab(title: S.current.Top.toUpperCase(), group: autoSizeGroup),
-              UiKitCustomTab(title: S.current.Respect.toUpperCase(), group: autoSizeGroup),
+              UiKitCustomTab(title: S.current.Reviews.toUpperCase(), group: activityTabsSizeGroup),
+              UiKitCustomTab(title: S.current.Top.toUpperCase(), group: activityTabsSizeGroup),
+              UiKitCustomTab(title: S.current.Respect.toUpperCase(), group: activityTabsSizeGroup),
             ],
             onTappedTab: (index) {
               _setActivityTabsContentHeight(index);

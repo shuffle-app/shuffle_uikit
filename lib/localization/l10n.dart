@@ -5362,6 +5362,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Set work schedule`
+  String get SetWorkHours {
+    return Intl.message(
+      'Set work schedule',
+      name: 'SetWorkHours',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select currency`
+  String get SelectCurrency {
+    return Intl.message(
+      'Select currency',
+      name: 'SelectCurrency',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

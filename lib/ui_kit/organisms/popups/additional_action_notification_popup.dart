@@ -41,7 +41,7 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
                       requiredData.titleString ?? '',
                       style: titleStyle,
                       textAlign: TextAlign.left,
-                      maxLines: 4,
+                      maxLines: 3,
                     ),
               ),
             ],

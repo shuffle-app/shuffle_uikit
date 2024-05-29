@@ -707,6 +707,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("सामान्य खोज..."),
         "SeeAll": MessageLookupByLibrary.simpleMessage("सभी देखें"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("और देखें"),
+        "SelectCurrency":
+            MessageLookupByLibrary.simpleMessage("Select currency"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("तारीख़ चुनें"),
         "SelectDateRange":
             MessageLookupByLibrary.simpleMessage("तिथि सीमा चुनें"),
@@ -722,6 +724,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Send": MessageLookupByLibrary.simpleMessage("भेजना"),
         "SendIt": MessageLookupByLibrary.simpleMessage("इसे भेजो"),
         "Services": MessageLookupByLibrary.simpleMessage("सेवाएं"),
+        "SetWorkHours":
+            MessageLookupByLibrary.simpleMessage("Set work schedule"),
         "Settings": MessageLookupByLibrary.simpleMessage("सेटिंग्स"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("परिणाम दिखाओ"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("मिश्रण"),

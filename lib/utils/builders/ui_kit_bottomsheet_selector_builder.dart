@@ -10,14 +10,14 @@ uiKitBottomsheetSelectorBuilder(BuildContext context, {required List<ListTile> w
   return showUiKitGeneralFullScreenDialog(
       context,
       GeneralDialogData(
-          topPadding: 0.4.sh,
+          // topPadding: 0.4.sh,
           isWidgetScrollable: true,
           child: StatefulBuilder(
               builder: (context, setState) => ListView(
                     children: [
                       SpacingFoundation.verticalSpace16,
                       UiKitInputFieldRightIcon(
-                        autofocus: true,
+                        // autofocus: true,
                         fillColor: colorScheme?.surface3,
                         hintText: S.of(context).Search.toUpperCase(),
                         controller: searchController,

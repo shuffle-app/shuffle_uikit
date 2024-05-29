@@ -77,24 +77,23 @@ class _UiKitExpansionTileState extends State<UiKitExpansionTile> {
               horizontal: EdgeInsetsFoundation.horizontal32,
               vertical: EdgeInsetsFoundation.vertical16,
             ),
-            height: expanded ? widget.children.length * 72 : 0,
+            height: expanded ? widget.children.length * 42.h : 0,
             child: Column(
-              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                ...widget.children
+                ...widget.children.indexed
                     .map((e) => [
-                          SpacingFoundation.verticalSpace16,
-                          e,
-                          SpacingFoundation.verticalSpace16,
+                          if (e.$1 != 0) SpacingFoundation.verticalSpace16,
+                          e.$2,
+                          if (e.$1 != widget.children.length - 1) SpacingFoundation.verticalSpace16,
                         ])
-                    .expand((element) => element)
-                    .toList(),
-                const Divider(
-                  height: 2,
-                  thickness: 2,
-                  color: ColorsFoundation.surface2,
-                ),
+                    .expand((element) => element),
+                // const Divider(
+                //   height: 2,
+                //   thickness: 2,
+                //   color: ColorsFoundation.surface2,
+                // ),
               ],
             ),
           ),

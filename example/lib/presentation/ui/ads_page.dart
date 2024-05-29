@@ -349,9 +349,12 @@ class AdsPage extends StatelessWidget {
                   SpacingFoundation.horizontalSpace16,
                   const SmallTextAdBanner4(),
                   SpacingFoundation.horizontalSpace16,
+                  const SmallTextAdBanner5(),
+                  SpacingFoundation.horizontalSpace16,
                   context.advertisementImageBanner(
                     data: BaseUiKitAdvertisementImageBannerData(
                       availableWidth: 1.sw - SpacingFoundation.verticalSpacing32,
+                      customHeight: smallBannerHeight,
                       imageLink: GraphicsFoundation.instance.png.mockAdBanner21.path,
                       title: 'Dubai',
                       size: AdvertisementBannerSize.small,
@@ -361,6 +364,7 @@ class AdsPage extends StatelessWidget {
                   context.advertisementImageBanner(
                     data: BaseUiKitAdvertisementImageBannerData(
                       availableWidth: 1.sw - SpacingFoundation.verticalSpacing32,
+                      customHeight: smallBannerHeight,
                       imageLink: GraphicsFoundation.instance.png.mockAdBanner20.path,
                       title: 'Dubai',
                       size: AdvertisementBannerSize.small,
@@ -370,6 +374,7 @@ class AdsPage extends StatelessWidget {
                   context.advertisementImageBanner(
                     data: BaseUiKitAdvertisementImageBannerData(
                       availableWidth: 1.sw - SpacingFoundation.verticalSpacing32,
+                      customHeight: smallBannerHeight,
                       imageLink: GraphicsFoundation.instance.png.mockAdBanner19.path,
                       title: 'Dubai',
                       size: AdvertisementBannerSize.small,
@@ -379,6 +384,7 @@ class AdsPage extends StatelessWidget {
                   context.advertisementImageBanner(
                     data: BaseUiKitAdvertisementImageBannerData(
                       availableWidth: 1.sw - SpacingFoundation.verticalSpacing32,
+                      customHeight: smallBannerHeight,
                       imageLink: GraphicsFoundation.instance.png.mockAdBanner30.path,
                       title: 'Dubai',
                       size: AdvertisementBannerSize.small,
@@ -388,6 +394,7 @@ class AdsPage extends StatelessWidget {
                   context.advertisementImageBanner(
                     data: BaseUiKitAdvertisementImageBannerData(
                       availableWidth: 1.sw - SpacingFoundation.verticalSpacing32,
+                      customHeight: smallBannerHeight,
                       imageLink: GraphicsFoundation.instance.png.mockAdBanner31.path,
                       title: 'Dubai',
                       size: AdvertisementBannerSize.small,
@@ -397,6 +404,7 @@ class AdsPage extends StatelessWidget {
                   context.advertisementImageBanner(
                     data: BaseUiKitAdvertisementImageBannerData(
                       availableWidth: 1.sw - SpacingFoundation.verticalSpacing32,
+                      customHeight: smallBannerHeight,
                       imageLink: GraphicsFoundation.instance.png.mockAdBanner18.path,
                       title: 'Dubai',
                       size: AdvertisementBannerSize.small,
@@ -406,6 +414,7 @@ class AdsPage extends StatelessWidget {
                   context.advertisementImageBanner(
                     data: BaseUiKitAdvertisementImageBannerData(
                       availableWidth: 1.sw - SpacingFoundation.verticalSpacing32,
+                      customHeight: smallBannerHeight,
                       imageLink: GraphicsFoundation.instance.png.mockAdBanner29.path,
                       title: 'Dubai',
                       size: AdvertisementBannerSize.small,
@@ -415,6 +424,7 @@ class AdsPage extends StatelessWidget {
                   context.advertisementImageBanner(
                     data: BaseUiKitAdvertisementImageBannerData(
                       availableWidth: 1.sw - SpacingFoundation.verticalSpacing32,
+                      customHeight: smallBannerHeight,
                       imageLink: GraphicsFoundation.instance.png.mockAdBanner12.path,
                       title: 'Dubai',
                       size: AdvertisementBannerSize.small,
@@ -424,7 +434,18 @@ class AdsPage extends StatelessWidget {
                   context.advertisementImageBanner(
                     data: BaseUiKitAdvertisementImageBannerData(
                       availableWidth: 1.sw - SpacingFoundation.verticalSpacing32,
+                      customHeight: smallBannerHeight,
                       imageLink: GraphicsFoundation.instance.png.mockAdBanner17.path,
+                      title: 'Dubai',
+                      size: AdvertisementBannerSize.small,
+                    ),
+                  ),
+                  SpacingFoundation.horizontalSpace16,
+                  context.advertisementImageBanner(
+                    data: BaseUiKitAdvertisementImageBannerData(
+                      availableWidth: 1.sw - SpacingFoundation.verticalSpacing32,
+                      customHeight: smallBannerHeight,
+                      imageLink: GraphicsFoundation.instance.png.mockAdBanner27.path,
                       title: 'Dubai',
                       size: AdvertisementBannerSize.small,
                     ),
