@@ -9,11 +9,13 @@ class UiKitLineChartBody extends StatelessWidget {
   final Size availableSize;
   final List<UiKitLineChartItemData<num>> chartItems;
   final ScrollController? scrollController;
+  final double? datesMaxScrollPosition;
 
   const UiKitLineChartBody({
     Key? key,
     required this.availableSize,
     required this.chartItems,
+    this.datesMaxScrollPosition,
     this.scrollController,
   }) : super(key: key);
 
@@ -75,7 +77,7 @@ class UiKitLineChartBody extends StatelessWidget {
                 isComplex: true,
                 willChange: false,
                 size: Size(
-                  chartItems.dates.length * (SpacingFoundation.horizontalSpacing32 * 2.5),
+                  datesMaxScrollPosition ?? availableSize.width,
                   availableSize.height + SpacingFoundation.verticalSpacing16,
                 ),
                 painter: LineChartPainter(lines: chartItems),

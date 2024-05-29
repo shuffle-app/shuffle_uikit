@@ -53,7 +53,7 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
   }
 }
 
-class UiKitLineChartSmallPreviewOverlay extends StatefulWidget {
+class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
   final Size size;
   final ValueChanged<double>? onScroll;
   final ValueNotifier<double> leftOffsetNotifier;
@@ -66,32 +66,17 @@ class UiKitLineChartSmallPreviewOverlay extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<UiKitLineChartSmallPreviewOverlay> createState() => _UiKitLineChartSmallPreviewOverlayState();
-}
-
-class _UiKitLineChartSmallPreviewOverlayState extends State<UiKitLineChartSmallPreviewOverlay> {
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((time) {
-      widget.leftOffsetNotifier.addListener(_listener);
-    });
-  }
-
-  void _listener() {}
-
-  @override
   Widget build(BuildContext context) {
     return SizedBox.fromSize(
-      size: widget.size,
+      size: size,
       child: Stack(
         fit: StackFit.expand,
         children: [
           AnimatedBuilder(
-            animation: widget.leftOffsetNotifier,
+            animation: leftOffsetNotifier,
             builder: (context, child) => ClipPath(
               clipper: CropInnerAreaClipper(
-                Rect.fromLTWH(widget.leftOffsetNotifier.value - 8, 2, widget.size.width * 0.35 - 8, widget.size.height - 4),
+                Rect.fromLTWH(leftOffsetNotifier.value + 6, 2, size.width * 0.35 - 12, size.height - 4),
                 4,
               ),
               child: child,
@@ -100,66 +85,73 @@ class _UiKitLineChartSmallPreviewOverlayState extends State<UiKitLineChartSmallP
               color: ColorsFoundation.neutral16,
             ),
           ),
-          AnimatedPositioned(
-            left: widget.leftOffsetNotifier.value - 8,
-            duration: const Duration(milliseconds: 10),
-            child: GestureDetector(
-              behavior: HitTestBehavior.opaque,
-              onPanUpdate: (details) {
-                double newOffset = widget.leftOffsetNotifier.value + details.delta.dx;
-                if (newOffset <= 8) newOffset = 8;
-                if (newOffset >= (widget.size.width * 0.65) + 8) newOffset = (widget.size.width * 0.65) + 8;
+          AnimatedBuilder(
+            animation: leftOffsetNotifier,
+            builder: (context, child) {
+              return Positioned(
+                left: leftOffsetNotifier.value,
+                child: GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onPanUpdate: (details) {
+                    double newOffset = leftOffsetNotifier.value + details.delta.dx;
+                    if (newOffset <= 0) newOffset = 0;
+                    if (newOffset >= (size.width * 0.65)) newOffset = (size.width * 0.65);
 
-                widget.leftOffsetNotifier.value = newOffset;
-                widget.onScroll?.call(newOffset - 8);
-              },
-              child: AnimatedBuilder(
-                animation: widget.leftOffsetNotifier,
-                builder: (context, child) {
-                  return ClipPath(
-                    clipper: CropInnerAreaClipper(
-                      Rect.fromLTWH(8, 2, widget.size.width * 0.35 - 16, widget.size.height - 4),
-                      4,
-                    ),
-                    child: Container(
-                      width: widget.size.width * 0.35,
-                      height: widget.size.height,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 2,
-                          color: ColorsFoundation.darkNeutral900,
+                    leftOffsetNotifier.value = newOffset;
+                    final atEnd = newOffset == (size.width * 0.65) && leftOffsetNotifier.value == (size.width * 0.65);
+                    double scrollOffset = newOffset + 12;
+                    if (newOffset == 0) scrollOffset = 0;
+                    if (!atEnd) onScroll?.call(scrollOffset);
+                  },
+                  child: AnimatedBuilder(
+                    animation: leftOffsetNotifier,
+                    builder: (context, child) {
+                      return ClipPath(
+                        clipper: CropInnerAreaClipper(
+                          Rect.fromLTWH(12, 2, size.width * 0.35 - 24, size.height - 4),
+                          4,
                         ),
-                        color: ColorsFoundation.darkNeutral900,
-                        borderRadius: BorderRadiusFoundation.all4,
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: SpacingFoundation.horizontalSpacing2,
-                            height: SpacingFoundation.verticalSpacing8,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadiusFoundation.max,
+                        child: Container(
+                          width: size.width * 0.35,
+                          height: size.height,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              width: 2,
+                              color: ColorsFoundation.darkNeutral900,
                             ),
-                          ).paddingOnly(left: 1),
-                          Container(
-                            width: SpacingFoundation.horizontalSpacing2,
-                            height: SpacingFoundation.verticalSpacing8,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadiusFoundation.max,
-                            ),
-                          ).paddingOnly(right: 1),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
+                            color: ColorsFoundation.darkNeutral900,
+                            borderRadius: BorderRadiusFoundation.all4,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: SpacingFoundation.horizontalSpacing2,
+                                height: SpacingFoundation.verticalSpacing8,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadiusFoundation.max,
+                                ),
+                              ).paddingOnly(left: SpacingFoundation.horizontalSpacing2),
+                              Container(
+                                width: SpacingFoundation.horizontalSpacing2,
+                                height: SpacingFoundation.verticalSpacing8,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadiusFoundation.max,
+                                ),
+                              ).paddingOnly(right: SpacingFoundation.horizontalSpacing2),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              );
+            },
           ),
         ],
       ),

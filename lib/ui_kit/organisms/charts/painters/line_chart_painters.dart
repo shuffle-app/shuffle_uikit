@@ -11,7 +11,7 @@ class LineChartPainter extends CustomPainter {
     super.repaint,
     required this.lines,
     double? step,
-  }) : step = step ?? SpacingFoundation.horizontalSpacing32 * 2.6;
+  }) : step = step ?? SpacingFoundation.horizontalSpacing32 * 2.75;
 
   double get curvatureRadius => step / 2;
 
@@ -40,17 +40,13 @@ class LineChartPainter extends CustomPainter {
         double nextX = (i + 1) * step;
         double currentY = height - ((currentValue / maxValue) * height);
         double nextY = height - ((nextValue / maxValue) * height);
-        if (i == 0) {
-          path.moveTo(currentX, currentY);
-        }
+        if (i == 0) path.moveTo(currentX, currentY);
 
         /// adding some space to see the line to the point
         if (currentY == height) currentY = height - SpacingFoundation.verticalSpacing2;
         if (nextY == height) nextY = height - SpacingFoundation.verticalSpacing2;
 
-        if (isLastDataSet) {
-          nextY += 4;
-        }
+        if (isLastDataSet) nextY += 4;
 
         double midY = nextY;
         double midX = nextX - curvatureRadius;
