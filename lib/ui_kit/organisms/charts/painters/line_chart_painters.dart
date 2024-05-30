@@ -6,12 +6,14 @@ import 'package:shuffle_uikit/utils/extentions/chart_extensions.dart';
 class LineChartPainter extends CustomPainter {
   final List<UiKitLineChartItemData<num>> lines;
   final double step;
+  final Size size;
 
   LineChartPainter({
     super.repaint,
     required this.lines,
+    required this.size,
     double? step,
-  }) : step = step ?? SpacingFoundation.horizontalSpacing32 * 2.75;
+  }) : step = step ?? ((size.width + ((lines.dates.length - 1) * SpacingFoundation.horizontalSpacing4)) / lines.dates.length);
 
   double get curvatureRadius => step / 2;
 
@@ -40,7 +42,7 @@ class LineChartPainter extends CustomPainter {
         double nextX = (i + 1) * step;
         double currentY = height - ((currentValue / maxValue) * height);
         double nextY = height - ((nextValue / maxValue) * height);
-        if (i == 0) path.moveTo(currentX, currentY);
+        if (i == 0) path.moveTo(currentX - (curvatureRadius / 2), currentY);
 
         /// adding some space to see the line to the point
         if (currentY == height) currentY = height - SpacingFoundation.verticalSpacing2;

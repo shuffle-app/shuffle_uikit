@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -22,7 +24,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   final ScrollController _datesScrollController = ScrollController();
   final ScrollController _chartScrollController = ScrollController();
 
-  bool get smallScreen => 1.sw <= 380;
+  final bool smallScreen = 1.sw <= 380;
 
   Size get viewPortComputedSize => Size(
         1.sw - EdgeInsetsFoundation.horizontal32,
@@ -31,7 +33,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
 
   Size get chartViewPortSize => Size(
         viewPortComputedSize.width - SpacingFoundation.verticalSpacing32,
-        smallScreen ? viewPortComputedSize.height * 0.425 : viewPortComputedSize.height * 0.5,
+        viewPortComputedSize.height * 0.425,
       );
 
   Size get smallPreviewSize => Size(
@@ -55,9 +57,22 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       _datesScrollController.addListener(_datesScrollListener);
       _chartScrollController.addListener(_chartScrollListener);
       setState(() {
-        chartToSmallPreviewRatio = _chartScrollController.position.maxScrollExtent / smallPreviewSize.width;
-        smallPreviewToChartRatio = smallPreviewSize.width / _chartScrollController.position.maxScrollExtent;
-        datesMaxScrollPosition = _datesScrollController.position.maxScrollExtent;
+        datesMaxScrollPosition =
+            _datesScrollController.position.maxScrollExtent + (chartViewPortSize.width - SpacingFoundation.horizontalSpacing32);
+        // ((smallScreen ? 62 : 66) * widget.chartData.items.dates.length) +
+        // ((widget.chartData.items.dates.length - 1) * SpacingFoundation.horizontalSpacing4);
+      });
+      Future.delayed(const Duration(milliseconds: 500), () {
+        setState(() {
+          chartToSmallPreviewRatio = _chartScrollController.position.maxScrollExtent / smallPreviewSize.width;
+          smallPreviewToChartRatio = smallPreviewSize.width / _chartScrollController.position.maxScrollExtent;
+        });
+        log('datesMaxScrollPosition: $datesMaxScrollPosition');
+        log('chartToSmallPreviewRatio: $chartToSmallPreviewRatio');
+        log('smallPreviewToChartRatio: $smallPreviewToChartRatio');
+        log('_chartScrollController.position.maxScrollExtent: ${_chartScrollController.position.maxScrollExtent}');
+        log('_datesScrollController.position.maxScrollExtent: ${_datesScrollController.position.maxScrollExtent + chartViewPortSize.width}');
+        log('pixels per date: ${_datesScrollController.position.maxScrollExtent / widget.chartData.items.dates.length}');
       });
     });
   }
@@ -75,9 +90,6 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
 
   @override
   Widget build(BuildContext context) {
-    print(_datesScrollController.position.maxScrollExtent);
-    print(_chartScrollController.position.maxScrollExtent);
-    print(datesMaxScrollPosition);
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final regularTextTheme = context.uiKitTheme?.regularTextTheme;
 
@@ -114,20 +126,17 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                 scrollingChart = false;
               } else if (notification is ScrollStartNotification) {
                 scrollingChart = true;
+                scrollingSmallPreview = false;
               }
               double offset = _chartScrollController.offset;
               if (!scrollingDates) {
-                if (offset > _datesScrollController.position.maxScrollExtent) {
-                  offset = _datesScrollController.position.maxScrollExtent;
-                }
-
                 _datesScrollController.jumpTo(offset);
-                if (scrollingSmallPreview) {
-                  final smallPreviewOffset = offset - (offset * smallPreviewToChartRatio);
-                  if (smallPreviewOffset <= (smallPreviewSize.width * 0.65)) {
-                    _smallPreviewLeftOffsetNotifier.value = smallPreviewOffset;
-                  }
-                }
+                // if (!scrollingSmallPreview) {
+                //   final smallPreviewOffset = offset - (offset * smallPreviewToChartRatio);
+                //   if (smallPreviewOffset <= (smallPreviewSize.width * 0.65)) {
+                //     _smallPreviewLeftOffsetNotifier.value = smallPreviewOffset;
+                //   }
+                // }
               }
               return false;
             },
@@ -153,18 +162,19 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   scrollingDates = false;
                 } else if (notification is ScrollStartNotification) {
                   scrollingDates = true;
+                  scrollingSmallPreview = false;
                 }
                 double offset = _datesScrollController.offset;
                 if (!scrollingChart) {
                   _chartScrollController.jumpTo(offset);
-                  if (scrollingSmallPreview) {
-                    final smallPreviewOffset = (offset * smallPreviewToChartRatio);
-                    if (smallPreviewOffset <= (smallPreviewSize.width * 0.65)) {
-                      _smallPreviewLeftOffsetNotifier.value = smallPreviewOffset;
-                    } else {
-                      _smallPreviewLeftOffsetNotifier.value = (smallPreviewSize.width * 0.65);
-                    }
-                  }
+                  // if (scrollingSmallPreview) {
+                  //   final smallPreviewOffset = (offset * smallPreviewToChartRatio);
+                  //   if (smallPreviewOffset <= (smallPreviewSize.width * 0.65)) {
+                  //     _smallPreviewLeftOffsetNotifier.value = smallPreviewOffset;
+                  //   } else {
+                  //     _smallPreviewLeftOffsetNotifier.value = (smallPreviewSize.width * 0.65);
+                  //   }
+                  // }
                 }
                 return false;
               },
@@ -178,7 +188,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   final date = widget.chartData.items.dates.elementAt(index);
 
                   return Text(
-                    DateFormat('MMM d').format(date),
+                    DateFormat('MMMd', Localizations.localeOf(context).languageCode).format(date),
                     style: regularTextTheme?.caption2.copyWith(color: ColorsFoundation.neutral40),
                   );
                 },
@@ -194,7 +204,10 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
               chartItems: widget.chartData.items,
               size: smallPreviewSize,
               onScroll: (offset) {
-                setState(() => scrollingSmallPreview = false);
+                print(offset);
+                final chartOffset = offset + (offset * chartToSmallPreviewRatio);
+                print(chartOffset);
+                setState(() => scrollingSmallPreview = true);
                 if (offset == 0) {
                   _chartScrollController.animateTo(
                     0,
@@ -202,7 +215,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                     curve: Curves.decelerate,
                   );
                 } else {
-                  _chartScrollController.jumpTo(offset + (offset * chartToSmallPreviewRatio));
+                  _chartScrollController.jumpTo(chartOffset);
                 }
               },
             ),

@@ -36,6 +36,7 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
                 willChange: false,
                 size: size,
                 painter: LineChartPainter(
+                  size: size,
                   lines: chartItems,
                   step: (size.width) / chartItems.maxDatasetsCount,
                 ),
@@ -98,7 +99,7 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                     if (newOffset >= (size.width * 0.65)) newOffset = (size.width * 0.65);
 
                     leftOffsetNotifier.value = newOffset;
-                    final atEnd = newOffset == (size.width * 0.65) && leftOffsetNotifier.value == (size.width * 0.65);
+                    final atEnd = newOffset >= (size.width * 0.65) - 12 && leftOffsetNotifier.value >= (size.width * 0.65) - 12;
                     double scrollOffset = newOffset + 12;
                     if (newOffset == 0) scrollOffset = 0;
                     if (!atEnd) onScroll?.call(scrollOffset);
