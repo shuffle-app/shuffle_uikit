@@ -217,7 +217,7 @@
   "Create": "Create",
   "BookIt": "Book it",
   "UpgradeForNmoney": "Upgrade {forNMoney}",
-  "ForFormattedPrice": " For {formattedPrice}",
+  "ForFormattedPrice": "For {formattedPrice}",
   "ErrorOccuredWithoutMessage": "Error occured without message",
   "Permissions": "Permissions",
   "AllowGeolocation": "Continue to use geolocation",

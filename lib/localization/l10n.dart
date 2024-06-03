@@ -2236,10 +2236,10 @@ class S {
     );
   }
 
-  /// ` For {formattedPrice}`
+  /// `For {formattedPrice}`
   String ForFormattedPrice(Object formattedPrice) {
     return Intl.message(
-      ' For $formattedPrice',
+      'For $formattedPrice',
       name: 'ForFormattedPrice',
       desc: '',
       args: [formattedPrice],

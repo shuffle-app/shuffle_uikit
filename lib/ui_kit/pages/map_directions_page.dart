@@ -15,7 +15,7 @@ class MapDirectionsPage extends StatefulWidget {
   final LatLng destination;
 
   const MapDirectionsPage({
-    Key? key,
+    super.key,
     required this.currentLocationNotifier,
     this.onCurrentLocationRequested,
     this.onDirectionsRequested,
@@ -23,7 +23,7 @@ class MapDirectionsPage extends StatefulWidget {
     required this.searchController,
     required this.destination,
     required this.destinationTitle,
-  }) : super(key: key);
+  });
 
   @override
   State<MapDirectionsPage> createState() => _MapDirectionsPageState();
@@ -68,6 +68,8 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
   void _currentLocationListener() async {
     try {
       final points = PolylinePoints();
+      debugPrint(
+          'getRouteBetweenCoordinates from ${widget.currentLocationNotifier.value.latitude} ${widget.currentLocationNotifier.value.longitude} toooo ${widget.destination.latitude} ${widget.destination.longitude}');
       final result = await points.getRouteBetweenCoordinates(
         apiKey,
         PointLatLng(widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
@@ -139,6 +141,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
             onMapCreated: (mapController) {
               widget.currentLocationNotifier.addListener(_currentLocationListener);
               setState(() => controller = mapController);
+              debugPrint('onMapCreated');
             },
             initialCameraPosition: CameraPosition(
               target: widget.currentLocationNotifier.value,
