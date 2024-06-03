@@ -86,6 +86,7 @@ class UiKitLineChartBody extends StatelessWidget {
                     datesMaxScrollPosition ?? availableSize.width,
                     availableSize.height + SpacingFoundation.verticalSpacing16,
                   ),
+                  step: (datesMaxScrollPosition ?? availableSize.width) / (chartItems.maxDatasetsCount - 1),
                 ),
               ).paddingOnly(left: EdgeInsetsFoundation.horizontal32),
             ),

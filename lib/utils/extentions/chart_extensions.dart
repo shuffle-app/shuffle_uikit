@@ -95,6 +95,12 @@ extension ChartItemsExtension on List<UiKitChartItem> {
     }
     return uniqueDates;
   }
+
+  DateTime get earliestDate => fold(DateTime.now(),
+      (previousValue, element) => element.datasets.minDate.isBefore(previousValue) ? element.datasets.minDate : previousValue);
+
+  DateTime get latestDate => fold(DateTime.now(),
+      (previousValue, element) => element.datasets.maxDate.isAfter(previousValue) ? element.datasets.maxDate : previousValue);
 }
 
 extension ChartItemDataExtension on List<UiKitLineChartItemData> {

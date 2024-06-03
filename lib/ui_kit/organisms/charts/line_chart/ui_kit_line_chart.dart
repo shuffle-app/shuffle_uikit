@@ -1,11 +1,13 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/organisms/charts/line_chart/ui_kit_line_chart_body.dart';
 import 'package:shuffle_uikit/ui_kit/organisms/charts/line_chart/ui_kit_line_chart_small_preview.dart';
 import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
+import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dart';
 import 'package:shuffle_uikit/utils/extentions/chart_extensions.dart';
 
 class UiKitLineChart extends StatefulWidget {
@@ -33,7 +35,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
 
   Size get chartViewPortSize => Size(
         viewPortComputedSize.width - SpacingFoundation.verticalSpacing32,
-        viewPortComputedSize.height * 0.425,
+        viewPortComputedSize.height * 0.5,
       );
 
   Size get smallPreviewSize => Size(
@@ -44,11 +46,15 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   double chartToSmallPreviewRatio = 1;
   double smallPreviewToChartRatio = 1;
 
-  bool scrollingDates = false;
   bool scrollingChart = false;
   bool scrollingSmallPreview = false;
   double? datesMaxScrollPosition;
-  final _smallPreviewLeftOffsetNotifier = ValueNotifier<double>(0);
+  final _smallPreviewUpdateNotifier = ValueNotifier<LineChartSmallPreviewData>(
+    LineChartSmallPreviewData(
+      leftOffset: 0,
+      previewWidthFraction: 0.35,
+    ),
+  );
 
   @override
   void initState() {
@@ -59,13 +65,15 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       setState(() {
         datesMaxScrollPosition =
             _datesScrollController.position.maxScrollExtent + (chartViewPortSize.width - SpacingFoundation.horizontalSpacing32);
-        // ((smallScreen ? 62 : 66) * widget.chartData.items.dates.length) +
-        // ((widget.chartData.items.dates.length - 1) * SpacingFoundation.horizontalSpacing4);
       });
+
+      /// wait until chart is drawn to avoid exception _positions.isNotEmpty
       Future.delayed(const Duration(milliseconds: 500), () {
         setState(() {
-          chartToSmallPreviewRatio = _chartScrollController.position.maxScrollExtent / smallPreviewSize.width;
-          smallPreviewToChartRatio = smallPreviewSize.width / _chartScrollController.position.maxScrollExtent;
+          if (datesMaxScrollPosition != null) {
+            chartToSmallPreviewRatio = datesMaxScrollPosition! / (smallPreviewSize.width - 12);
+            smallPreviewToChartRatio = (smallPreviewSize.width - 12) / datesMaxScrollPosition!;
+          }
         });
         log('datesMaxScrollPosition: $datesMaxScrollPosition');
         log('chartToSmallPreviewRatio: $chartToSmallPreviewRatio');
@@ -81,10 +89,26 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
 
   Future<void> _datesScrollListener() async {}
 
+  Future<void> _animateChartToPosition(double position) async {
+    setState(() => scrollingSmallPreview = true);
+    await _chartScrollController.animateTo(
+      position,
+      duration: const Duration(milliseconds: 250),
+      curve: Curves.decelerate,
+    );
+    setState(() => scrollingSmallPreview = false);
+  }
+
+  void _scrollSmallPreviewToEnd() {
+    final smallPreviewOffset =
+        smallPreviewSize.width - (_smallPreviewUpdateNotifier.value.previewWidthFraction * smallPreviewSize.width);
+    _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(leftOffset: smallPreviewOffset);
+  }
+
   @override
   dispose() {
     _datesScrollController.dispose();
-    _smallPreviewLeftOffsetNotifier.dispose();
+    _smallPreviewUpdateNotifier.dispose();
     super.dispose();
   }
 
@@ -126,17 +150,26 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                 scrollingChart = false;
               } else if (notification is ScrollStartNotification) {
                 scrollingChart = true;
-                scrollingSmallPreview = false;
               }
               double offset = _chartScrollController.offset;
-              if (!scrollingDates) {
+              if (offset <= _datesScrollController.position.maxScrollExtent) {
                 _datesScrollController.jumpTo(offset);
-                // if (!scrollingSmallPreview) {
-                //   final smallPreviewOffset = offset - (offset * smallPreviewToChartRatio);
-                //   if (smallPreviewOffset <= (smallPreviewSize.width * 0.65)) {
-                //     _smallPreviewLeftOffsetNotifier.value = smallPreviewOffset;
-                //   }
-                // }
+              } else if (offset > _datesScrollController.position.maxScrollExtent &&
+                  _datesScrollController.offset < _datesScrollController.position.maxScrollExtent) {
+                _datesScrollController.jumpTo(_datesScrollController.position.maxScrollExtent);
+              }
+              if (_chartScrollController.offset == _chartScrollController.position.maxScrollExtent) {
+                _scrollSmallPreviewToEnd();
+              } else if (!scrollingSmallPreview) {
+                final smallPreviewOffset = offset * smallPreviewToChartRatio;
+                final scrollingRightToLeft = _chartScrollController.position.userScrollDirection == ScrollDirection.reverse;
+                final shouldScrollFromStart = scrollingRightToLeft && _smallPreviewUpdateNotifier.value.leftOffset == 0;
+                if (smallPreviewOffset <= (smallPreviewSize.width * 0.65) &&
+                    (_smallPreviewUpdateNotifier.value.leftOffset > 0 || shouldScrollFromStart)) {
+                  _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
+                    leftOffset: smallPreviewOffset,
+                  );
+                }
               }
               return false;
             },
@@ -156,67 +189,43 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
           SizedBox(
             width: viewPortComputedSize.width,
             height: viewPortComputedSize.height * 0.06,
-            child: NotificationListener(
-              onNotification: (notification) {
-                if (notification is ScrollEndNotification) {
-                  scrollingDates = false;
-                } else if (notification is ScrollStartNotification) {
-                  scrollingDates = true;
-                  scrollingSmallPreview = false;
-                }
-                double offset = _datesScrollController.offset;
-                if (!scrollingChart) {
-                  _chartScrollController.jumpTo(offset);
-                  // if (scrollingSmallPreview) {
-                  //   final smallPreviewOffset = (offset * smallPreviewToChartRatio);
-                  //   if (smallPreviewOffset <= (smallPreviewSize.width * 0.65)) {
-                  //     _smallPreviewLeftOffsetNotifier.value = smallPreviewOffset;
-                  //   } else {
-                  //     _smallPreviewLeftOffsetNotifier.value = (smallPreviewSize.width * 0.65);
-                  //   }
-                  // }
-                }
-                return false;
-              },
-              child: ListView.separated(
-                padding: EdgeInsets.zero,
-                controller: _datesScrollController,
-                scrollDirection: Axis.horizontal,
-                physics: const ClampingScrollPhysics(),
-                separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace8,
-                itemBuilder: (context, index) {
-                  final date = widget.chartData.items.dates.elementAt(index);
+            child: ListView.separated(
+              padding: EdgeInsets.zero,
+              controller: _datesScrollController,
+              scrollDirection: Axis.horizontal,
+              physics: const NeverScrollableScrollPhysics(),
+              separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace8,
+              itemBuilder: (context, index) {
+                final date = widget.chartData.items.dates.elementAt(index);
 
-                  return Text(
-                    DateFormat('MMMd', Localizations.localeOf(context).languageCode).format(date),
-                    style: regularTextTheme?.caption2.copyWith(color: ColorsFoundation.neutral40),
-                  );
-                },
-                itemCount: widget.chartData.items.dates.length,
-              ),
+                return Text(
+                  DateFormat('MMMd', Localizations.localeOf(context).languageCode).format(date),
+                  style: regularTextTheme?.caption2.copyWith(color: ColorsFoundation.neutral40),
+                );
+              },
+              itemCount: widget.chartData.items.dates.length,
             ),
           ),
           SpacingFoundation.verticalSpace4,
           Align(
             alignment: Alignment.bottomCenter,
             child: UiKitLineChartSmallPreview(
-              smallPreviewLeftOffsetNotifier: _smallPreviewLeftOffsetNotifier,
+              smallPreviewUpdateNotifier: _smallPreviewUpdateNotifier,
               chartItems: widget.chartData.items,
               size: smallPreviewSize,
               onScroll: (offset) {
-                print(offset);
-                final chartOffset = offset + (offset * chartToSmallPreviewRatio);
-                print(chartOffset);
+                if (offset.isInfinite) {
+                  _animateChartToPosition(_chartScrollController.position.maxScrollExtent);
+                  return;
+                }
                 setState(() => scrollingSmallPreview = true);
+                final chartOffset = offset * chartToSmallPreviewRatio;
                 if (offset == 0) {
-                  _chartScrollController.animateTo(
-                    0,
-                    duration: const Duration(milliseconds: 250),
-                    curve: Curves.decelerate,
-                  );
+                  _animateChartToPosition(0);
                 } else {
                   _chartScrollController.jumpTo(chartOffset);
                 }
+                setState(() => scrollingSmallPreview = false);
               },
             ),
           ),

@@ -5,7 +5,7 @@ import 'package:shuffle_uikit/utils/extentions/chart_extensions.dart';
 
 class LineChartPainter extends CustomPainter {
   final List<UiKitLineChartItemData<num>> lines;
-  final double step;
+  late final double step;
   final Size size;
 
   LineChartPainter({
@@ -13,7 +13,9 @@ class LineChartPainter extends CustomPainter {
     required this.lines,
     required this.size,
     double? step,
-  }) : step = step ?? ((size.width + ((lines.dates.length - 1) * SpacingFoundation.horizontalSpacing4)) / lines.dates.length);
+  }) {
+    this.step = step ?? ((size.width + ((lines.dates.length - 1) * SpacingFoundation.horizontalSpacing4)) / lines.dates.length);
+  }
 
   double get curvatureRadius => step / 2;
 
