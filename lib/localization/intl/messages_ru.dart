@@ -326,6 +326,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Новый пароль"),
         "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, введите адрес места"),
+        "EnterPrice": MessageLookupByLibrary.simpleMessage("Введите цену"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Введите адрес эл. почты"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Возникла ошибка"),
@@ -615,6 +616,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "PremiumSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
             "Возможность стать Инфлюенсером"),
         "Price": MessageLookupByLibrary.simpleMessage("Цена"),
+        "PriceRange": MessageLookupByLibrary.simpleMessage("Диапазон цен"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Конфиденциальность"),
         "PrivacyPolicy":
             MessageLookupByLibrary.simpleMessage("Политика конфиденциальности"),

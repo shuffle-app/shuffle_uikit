@@ -519,6 +519,8 @@
   "YouGetAccessToTrial": "You get access to all benefits free of charge for",
   "Free": "Free",
   "SetWorkHours": "Set work schedule",
-  "SelectCurrency": "Select currency"
+  "SelectCurrency": "Select currency",
+  "EnterPrice": "Enter price",
+  "PriceRange": "Price range"
 
 }

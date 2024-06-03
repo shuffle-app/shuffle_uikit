@@ -323,6 +323,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter new password"),
         "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
             "Please enter place’s address"),
+        "EnterPrice": MessageLookupByLibrary.simpleMessage("Enter price"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Enter your e-mail address"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Error occured"),
@@ -611,6 +612,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "PremiumSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
             "Ability to become an Influencer"),
         "Price": MessageLookupByLibrary.simpleMessage("Price"),
+        "PriceRange": MessageLookupByLibrary.simpleMessage("Price range"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Privacy"),
         "PrivacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
         "Pro": MessageLookupByLibrary.simpleMessage("Pro"),

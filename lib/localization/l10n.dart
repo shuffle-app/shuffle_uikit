@@ -5382,6 +5382,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Enter price`
+  String get EnterPrice {
+    return Intl.message(
+      'Enter price',
+      name: 'EnterPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price range`
+  String get PriceRange {
+    return Intl.message(
+      'Price range',
+      name: 'PriceRange',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
