@@ -43,80 +43,98 @@ class _MainPageState extends State<MainPage> {
             MediaQuery.viewPaddingOf(context).top.heightBox,
             //TODO Murodkulov: предложение использовать купертино свитч с анимашкой
             //https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html
-            ToggleButtons(
-              borderWidth: 2,
-              borderColor: Colors.black,
-              borderRadius: BorderRadiusFoundation.all24,
-              selectedColor: Colors.white,
-              selectedBorderColor: Colors.black,
-              disabledBorderColor: Colors.black,
-              isSelected: [isShuffleTheme, isFallbackTheme, isDefaultTheme],
-              onPressed: (index) {
-                if (index == 0) {
-                  UiKitTheme.of(context).updateTheme(UiKitThemeFoundation.defaultTheme);
-                  setState(() {
-                    isShuffleTheme = true;
-                    isFallbackTheme = false;
-                    isDefaultTheme = false;
-                  });
-                } else if (index == 1) {
-                  UiKitTheme.of(context).updateTheme(UiKitThemeFoundation.fallbackTheme);
-                  setState(() {
-                    isShuffleTheme = false;
-                    isFallbackTheme = true;
-                    isDefaultTheme = false;
-                  });
-                } else if (index == 2) {
-                  UiKitTheme.of(context).updateTheme(ThemeData());
-                  setState(() {
-                    isShuffleTheme = false;
-                    isFallbackTheme = false;
-                    isDefaultTheme = true;
-                  });
-                }
-              },
-              children: [
-                Text(
-                  'Shuffle Theme',
-                  style: context.uiKitTheme?.boldTextTheme.body.copyWith(
-                        color: isDefaultTheme ? Colors.black : Colors.white,
-                      ) ??
-                      TextStyle(color: isDefaultTheme ? Colors.black : Colors.white),
-                ).paddingAll(EdgeInsetsFoundation.all16),
-                Text(
-                  'Fallback Theme',
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: isDefaultTheme ? Colors.black : Colors.white,
-                      ),
-                ).paddingAll(EdgeInsetsFoundation.all16),
-                Text(
-                  'Default Theme',
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: isDefaultTheme ? Colors.black : Colors.white,
-                      ),
-                ).paddingAll(EdgeInsetsFoundation.all16),
-              ],
+            SizedBox(
+              height: .12.sh,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: ToggleButtons(
+                  borderWidth: 2,
+                  borderColor: Colors.black,
+                  borderRadius: BorderRadiusFoundation.all24,
+                  selectedColor: Colors.white,
+                  selectedBorderColor: Colors.black,
+                  disabledBorderColor: Colors.black,
+                  isSelected: [isShuffleTheme, isFallbackTheme, isDefaultTheme],
+                  onPressed: (index) {
+                    if (index == 0) {
+                      UiKitTheme.of(context)
+                          .updateTheme(UiKitThemeFoundation.defaultTheme);
+                      setState(() {
+                        isShuffleTheme = true;
+                        isFallbackTheme = false;
+                        isDefaultTheme = false;
+                      });
+                    } else if (index == 1) {
+                      UiKitTheme.of(context)
+                          .updateTheme(UiKitThemeFoundation.fallbackTheme);
+                      setState(() {
+                        isShuffleTheme = false;
+                        isFallbackTheme = true;
+                        isDefaultTheme = false;
+                      });
+                    } else if (index == 2) {
+                      UiKitTheme.of(context).updateTheme(ThemeData());
+                      setState(() {
+                        isShuffleTheme = false;
+                        isFallbackTheme = false;
+                        isDefaultTheme = true;
+                      });
+                    }
+                  },
+                  children: [
+                    Text(
+                      'Shuffle Theme',
+                      style: context.uiKitTheme?.boldTextTheme.body.copyWith(
+                            color: isDefaultTheme ? Colors.black : Colors.white,
+                          ) ??
+                          TextStyle(
+                              color:
+                                  isDefaultTheme ? Colors.black : Colors.white),
+                    ).paddingAll(EdgeInsetsFoundation.all16),
+                    Text(
+                      'Fallback Theme',
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            color: isDefaultTheme ? Colors.black : Colors.white,
+                          ),
+                    ).paddingAll(EdgeInsetsFoundation.all16),
+                    Text(
+                      'Default Theme',
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                            color: isDefaultTheme ? Colors.black : Colors.white,
+                          ),
+                    ).paddingAll(EdgeInsetsFoundation.all16),
+                  ],
+                ),
+              ),
+            ),
+
+            SpacingFoundation.verticalSpace24,
+            context.button(
+              data: BaseUiKitButtonData(
+                  text: 'UI Kit Showcase Stand',
+                  onPressed: () =>
+                      Navigator.pushNamed(context, AppRoutes.stand)),
             ),
             SpacingFoundation.verticalSpace24,
             context.button(
               data: BaseUiKitButtonData(
-                  text: 'UI Kit Showcase Stand', onPressed: () => Navigator.pushNamed(context, AppRoutes.stand)),
-            ),
-            SpacingFoundation.verticalSpace24,
-            context.button(
-              data: BaseUiKitButtonData(
-                  text: 'UI Kit Hall of Fame', onPressed: () => Navigator.pushNamed(context, AppRoutes.hallOfFame)),
+                  text: 'UI Kit Hall of Fame',
+                  onPressed: () =>
+                      Navigator.pushNamed(context, AppRoutes.hallOfFame)),
             ),
             SpacingFoundation.verticalSpace16,
             context.button(
               data: BaseUiKitButtonData(
                   text: 'Influencer Profile',
-                  onPressed: () => Navigator.pushNamed(context, AppRoutes.influencerProfile)),
+                  onPressed: () => Navigator.pushNamed(
+                      context, AppRoutes.influencerProfile)),
             ),
             SpacingFoundation.verticalSpace16,
             context.button(
               data: BaseUiKitButtonData(
-                  text: 'Pro Profile', onPressed: () => Navigator.pushNamed(context, AppRoutes.proProfile)),
+                  text: 'Pro Profile',
+                  onPressed: () =>
+                      Navigator.pushNamed(context, AppRoutes.proProfile)),
             ),
             SpacingFoundation.verticalSpace16,
             OrdinaryButton(
@@ -127,49 +145,56 @@ class _MainPageState extends State<MainPage> {
             context.button(
               data: BaseUiKitButtonData(
                 text: 'Testing stuff page',
-                onPressed: () => Navigator.pushNamed(context, AppRoutes.testPage),
+                onPressed: () =>
+                    Navigator.pushNamed(context, AppRoutes.testPage),
               ),
             ),
             SpacingFoundation.verticalSpace16,
             context.button(
               data: BaseUiKitButtonData(
                 text: 'Ad banners page',
-                onPressed: () => Navigator.pushNamed(context, AppRoutes.adsPage),
+                onPressed: () =>
+                    Navigator.pushNamed(context, AppRoutes.adsPage),
               ),
             ),
             SpacingFoundation.verticalSpace16,
             context.button(
               data: BaseUiKitButtonData(
                 text: 'Welcome page',
-                onPressed: () => Navigator.pushNamed(context, AppRoutes.welcomePage),
+                onPressed: () =>
+                    Navigator.pushNamed(context, AppRoutes.welcomePage),
               ),
             ),
             SpacingFoundation.verticalSpace16,
             context.button(
               data: BaseUiKitButtonData(
                 text: 'Location Picker Page',
-                onPressed: () => Navigator.pushNamed(context, AppRoutes.locationPicker),
+                onPressed: () =>
+                    Navigator.pushNamed(context, AppRoutes.locationPicker),
               ),
             ),
             SpacingFoundation.verticalSpace16,
             context.button(
               data: BaseUiKitButtonData(
                 text: 'Animations page',
-                onPressed: () => Navigator.pushNamed(context, AppRoutes.animationsPage),
+                onPressed: () =>
+                    Navigator.pushNamed(context, AppRoutes.animationsPage),
               ),
             ),
             SpacingFoundation.verticalSpace16,
             context.button(
               data: BaseUiKitButtonData(
                 text: 'Testing directions on map',
-                onPressed: () => Navigator.pushNamed(context, AppRoutes.mapDirections),
+                onPressed: () =>
+                    Navigator.pushNamed(context, AppRoutes.mapDirections),
               ),
             ),
             SpacingFoundation.verticalSpace16,
             context.button(
               data: BaseUiKitButtonData(
                 text: 'Ads page',
-                onPressed: () => Navigator.pushNamed(context, AppRoutes.adsPage),
+                onPressed: () =>
+                    Navigator.pushNamed(context, AppRoutes.adsPage),
               ),
             ),
           ],
