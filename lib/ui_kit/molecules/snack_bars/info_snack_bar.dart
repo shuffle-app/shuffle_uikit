@@ -13,7 +13,7 @@ class InfoSnackBar extends StatelessWidget implements SnackBarFactory{
     return DecoratedBox(
       decoration: BoxDecoration(
         color: colorScheme?.surface2,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadiusFoundation.all12,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
