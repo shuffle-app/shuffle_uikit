@@ -26,7 +26,7 @@ class SuccessSnackBar extends StatelessWidget implements SnackBarFactory{
             child: const Icon(
               ShuffleUiKitIcons.checkCircle,
               color: ColorsFoundation.success,
-            ).paddingAll(6),
+            ).paddingAll(EdgeInsetsFoundation.all6),
           ),
           SpacingFoundation.horizontalSpace8,
           Expanded(
@@ -47,7 +47,7 @@ class SuccessSnackBar extends StatelessWidget implements SnackBarFactory{
             ),
           )
         ],
-      ).paddingAll(16),
+      ).paddingAll(EdgeInsetsFoundation.all16),
     );
   }
 }

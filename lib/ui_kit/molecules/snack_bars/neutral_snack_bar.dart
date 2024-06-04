@@ -36,7 +36,7 @@ class NeutralSnackBar extends StatelessWidget implements SnackBarFactory{
             ),
           )
         ],
-      ).paddingAll(16),
+      ).paddingAll(EdgeInsetsFoundation.all16),
     );
   }
 }

@@ -27,7 +27,7 @@ class ErrorSnackBar extends StatelessWidget implements SnackBarFactory{
             child: const Icon(
               ShuffleUiKitIcons.alertcircle,
               color: ColorsFoundation.error,
-            ).paddingAll(6),
+            ).paddingAll(EdgeInsetsFoundation.all6),
           ),
           SpacingFoundation.horizontalSpace8,
           Expanded(
@@ -48,7 +48,7 @@ class ErrorSnackBar extends StatelessWidget implements SnackBarFactory{
             ),
           )
         ],
-      ).paddingAll(16),
+      ).paddingAll(EdgeInsetsFoundation.all16),
     );
   }
 }
