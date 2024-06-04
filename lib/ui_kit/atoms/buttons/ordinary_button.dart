@@ -42,7 +42,8 @@ class OrdinaryButton extends StatelessWidget implements ButtonFactory {
             vertical: EdgeInsetsFoundation.vertical16,
             horizontal: EdgeInsetsFoundation.horizontal44,
           ),
-          child: fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget,
+          // child: fit == ButtonFit.fitWidth ? Center(child: textWidget) : textWidget,
+          child: Text(S.of(context).PriceRange),
         ),
       ),
     );

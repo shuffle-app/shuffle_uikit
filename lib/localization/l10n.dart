@@ -5402,6 +5402,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Range end value is less than begining one`
+  String get RangeEndValueIsLessThanBeginingOne {
+    return Intl.message(
+      'Range end value is less than begining one',
+      name: 'RangeEndValueIsLessThanBeginingOne',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

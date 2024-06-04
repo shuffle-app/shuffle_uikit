@@ -521,6 +521,8 @@
   "SetWorkHours": "Часы работы",
   "SelectCurrency": "Выберте валюту",
   "EnterPrice": "Введите цену",
-  "PriceRange": "Диапазон цен"
+  "PriceRange": "Диапазон цен",
+  "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального"
+
 
 }

@@ -521,6 +521,7 @@
   "SetWorkHours": "Set work schedule",
   "SelectCurrency": "Select currency",
   "EnterPrice": "Enter price",
-  "PriceRange": "Price range"
+  "PriceRange": "Price range",
+  "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one"
 
 }
