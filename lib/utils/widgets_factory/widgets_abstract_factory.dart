@@ -505,6 +505,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       textColor: data.textColor,
       loading: data.loading,
       fit: data.fit,
+      group: data.autoSizeGroup,
     );
   }
 
