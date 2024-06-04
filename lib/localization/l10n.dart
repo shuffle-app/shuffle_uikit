@@ -5382,6 +5382,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Enter price`
+  String get EnterPrice {
+    return Intl.message(
+      'Enter price',
+      name: 'EnterPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price range`
+  String get PriceRange {
+    return Intl.message(
+      'Price range',
+      name: 'PriceRange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Range end value is less than begining one`
+  String get RangeEndValueIsLessThanBeginingOne {
+    return Intl.message(
+      'Range end value is less than begining one',
+      name: 'RangeEndValueIsLessThanBeginingOne',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

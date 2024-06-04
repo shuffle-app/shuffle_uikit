@@ -519,5 +519,10 @@
   "YouGetAccessToTrial": "Ты получишь доступ ко всем функциям на",
   "Free": "Бесплатно",
   "SetWorkHours": "Часы работы",
-  "SelectCurrency": "Выберте валюту"
+  "SelectCurrency": "Выберте валюту",
+  "EnterPrice": "Введите цену",
+  "PriceRange": "Диапазон цен",
+  "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального"
+
+
 }
