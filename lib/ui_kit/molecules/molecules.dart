@@ -90,3 +90,9 @@ export 'tiles/user/pro_user_tile.dart';
 export 'tiles/user/ui_kit_influencer_profile_news_tile.dart';
 export 'tiles/user/ui_kit_user_tile_with_checkbox.dart';
 export 'tiles/user/ui_kit_user_tile_with_option.dart';
+export 'snack_bars/error_snack_bar.dart';
+export 'snack_bars/info_snack_bar.dart';
+export 'snack_bars/neutral_snack_bar.dart';
+export 'snack_bars/success_snack_bar.dart';
+export 'snack_bars/warning_snack_bar.dart';
+

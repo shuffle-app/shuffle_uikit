@@ -323,6 +323,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("नया पासवर्ड दर्ज करें"),
         "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
             "कृपया स्थान का पता दर्ज करें"),
+        "EnterPrice": MessageLookupByLibrary.simpleMessage("Enter price"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("अपना ईमेल पता दर्ज करें"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("त्रुटि हुई"),
@@ -616,6 +617,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "PremiumSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("विशेष अधिकारी लेबल"),
         "Price": MessageLookupByLibrary.simpleMessage("मूल्य"),
+        "PriceRange": MessageLookupByLibrary.simpleMessage("Price range"),
         "Privacy": MessageLookupByLibrary.simpleMessage("गोपनीयता"),
         "PrivacyPolicy": MessageLookupByLibrary.simpleMessage("गोपनीयता नीति"),
         "Pro": MessageLookupByLibrary.simpleMessage("प्रो"),
@@ -646,6 +648,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("अकेले मत रहो..."),
         "Published": MessageLookupByLibrary.simpleMessage("प्रकाशित"),
+        "RangeEndValueIsLessThanBeginingOne":
+            MessageLookupByLibrary.simpleMessage(
+                "Range end value is less than begining one"),
         "Rating": MessageLookupByLibrary.simpleMessage("रेटिंग"),
         "ReactionsBy":
             MessageLookupByLibrary.simpleMessage("प्रतिक्रिया\nके द्वारा"),

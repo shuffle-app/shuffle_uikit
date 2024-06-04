@@ -67,7 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m16(count) =>
       "${Intl.plural(count, zero: 'подписчиков', one: 'подписчик', two: 'подписчика', few: 'подписчиков', many: 'подписчиков', other: 'подписчиков')}";
 
-  static String m17(formattedPrice) => " За ${formattedPrice}";
+  static String m17(formattedPrice) => "За ${formattedPrice}";
 
   static String m18(helpfulCount) => "Полезно ${helpfulCount}";
 
@@ -326,6 +326,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Новый пароль"),
         "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, введите адрес места"),
+        "EnterPrice": MessageLookupByLibrary.simpleMessage("Введите цену"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Введите адрес эл. почты"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Возникла ошибка"),
@@ -615,6 +616,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "PremiumSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
             "Возможность стать Инфлюенсером"),
         "Price": MessageLookupByLibrary.simpleMessage("Цена"),
+        "PriceRange": MessageLookupByLibrary.simpleMessage("Диапазон цен"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Конфиденциальность"),
         "PrivacyPolicy":
             MessageLookupByLibrary.simpleMessage("Политика конфиденциальности"),
@@ -646,6 +648,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("Не будь один..."),
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
+        "RangeEndValueIsLessThanBeginingOne":
+            MessageLookupByLibrary.simpleMessage(
+                "Конечное значение диапазона меньше начального"),
         "Rating": MessageLookupByLibrary.simpleMessage("Рейтинг"),
         "ReactionsBy": MessageLookupByLibrary.simpleMessage("Реакции\nот"),
         "ReactionsByCritics":

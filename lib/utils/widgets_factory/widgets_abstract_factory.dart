@@ -106,6 +106,11 @@ abstract class WidgetsAbstractFactory {
     required String userName,
     required bool showAchievements,
   });
+
+  SnackBarFactory createSnackBar({
+    required AppSnackBarType appSnackBarType,
+    required String message,
+  });
 // InputFieldFactory createInputField({
 //   required TextEditingController controller,
 //   String? hintText,
@@ -113,6 +118,10 @@ abstract class WidgetsAbstractFactory {
 //   bool enabled = true,
 //   String? Function(String?)? validator,
 // });
+}
+
+abstract class SnackBarFactory {
+  Widget build(BuildContext context);
 }
 
 abstract class ButtonFactory {
@@ -221,7 +230,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     }
 
-    throw UnimplementedError('Outlined badge button with your parameters is not implemented');
+    throw UnimplementedError(
+        'Outlined badge button with your parameters is not implemented');
   }
 
   @override
@@ -259,7 +269,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
         fit: data.fit,
       );
-    } else if ((data.text != null && (data.text?.isNotEmpty ?? false)) || !hasIcon) {
+    } else if ((data.text != null && (data.text?.isNotEmpty ?? false)) ||
+        !hasIcon) {
       return SmallOutlinedButton(
         onPressed: data.onPressed,
         gradient: gradient,
@@ -271,16 +282,15 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     } else if ((blurred ?? false) && hasIcon) {
       return SmallBlurredOutlinedIconButton(
-        onPressed: data.onPressed,
-        icon: data.iconWidget,
-        iconInfo: data.iconInfo,
-        borderColor: data.borderColor,
-        backgroundColor: data.backgroundColor,
-        loading: data.loading,
-        blurValue: blurValue,
-        gradient: gradient,
-          borderRadius:borderRadius
-      );
+          onPressed: data.onPressed,
+          icon: data.iconWidget,
+          iconInfo: data.iconInfo,
+          borderColor: data.borderColor,
+          backgroundColor: data.backgroundColor,
+          loading: data.loading,
+          blurValue: blurValue,
+          gradient: gradient,
+          borderRadius: borderRadius);
     } else if (!(blurred ?? false) && hasIcon) {
       return SmallOutlinedIconButton(
         onPressed: data.onPressed,
@@ -290,7 +300,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
       );
     } else {
-      throw UnimplementedError('Outlined button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Outlined button with your parameters is not implemented');
     }
   }
 
@@ -345,7 +356,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         isGradientEnabled: isGradientEnabled ?? false,
       );
     } else {
-      throw UnimplementedError('Outlined button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Outlined button with your parameters is not implemented');
     }
   }
 
@@ -369,6 +381,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         text: data.text ?? '',
         onPressed: data.onPressed,
         loading: data.loading,
+        autoSizeGroup: data.autoSizeGroup,
       );
     } else if (hasIcon && (data.text?.isNotEmpty ?? false)) {
       return GradientButtonWithTextAndIcon(
@@ -380,7 +393,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
       );
     } else {
-      throw UnimplementedError('Gradient button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Gradient button with your parameters is not implemented');
     }
   }
 
@@ -392,7 +406,10 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool reversed = false,
   }) {
     final hasIcon = data.iconWidget != null || data.iconInfo != null;
-    final onlyIconButton = hasIcon && (data.text?.isEmpty ?? true) && !isTextButton && !(blurred ?? false);
+    final onlyIconButton = hasIcon &&
+        (data.text?.isEmpty ?? true) &&
+        !isTextButton &&
+        !(blurred ?? false);
     if (isTextButton) {
       if (reversed) {
         return OrdinaryReversedTextButton(
@@ -506,7 +523,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           return BadgedPremiumUserTile(data: data);
 
         case UserTileType.influencer:
-          throw UnimplementedError('There is no influencer user tile with badge');
+          throw UnimplementedError(
+              'There is no influencer user tile with badge');
 
         default:
           throw UnimplementedError('There is no user tile with badge');
@@ -592,7 +610,9 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? secondaryActionWidget,
     Widget? dismissActionWidget,
   }) {
-    final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
+    final hasAllActions = primaryActionWidget != null &&
+        secondaryActionWidget != null &&
+        dismissActionWidget != null;
     if (hasAllActions) {
       return AdditionalActionNotificationPopUp(
         requiredData: requiredData,
@@ -762,6 +782,25 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     }
   }
 
+  @override
+  SnackBarFactory createSnackBar(
+      {required AppSnackBarType appSnackBarType, required String message}) {
+    switch (appSnackBarType) {
+      case AppSnackBarType.success:
+        return SuccessSnackBar(message: message);
+      case AppSnackBarType.error:
+        return ErrorSnackBar(message: message);
+      case AppSnackBarType.warning:
+        return WarningSnackBar(message: message);
+      case AppSnackBarType.info:
+        return InfoSnackBar(message: message);
+      case AppSnackBarType.neutral:
+        return NeutralSnackBar(message: message);
+      default:
+        return NeutralSnackBar(message: message);
+    }
+  }
+
 // @override
 // InputFieldFactory createInputField({
 //   required TextEditingController controller,
@@ -778,7 +817,8 @@ class AvatarStackWrapper extends StatelessWidget implements UserAvatarFactory {
   final bool showAchievements;
   final Widget child;
 
-  const AvatarStackWrapper({super.key, required this.showAchievements, required this.child});
+  const AvatarStackWrapper(
+      {super.key, required this.showAchievements, required this.child});
 
   @override
   Widget build(BuildContext context) {

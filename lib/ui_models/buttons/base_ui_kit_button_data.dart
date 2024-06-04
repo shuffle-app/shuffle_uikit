@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class BaseUiKitButtonData {
   final VoidCallback? onPressed;
@@ -11,6 +12,7 @@ class BaseUiKitButtonData {
   final Color? borderColor;
   final Color? backgroundColor;
   final Color? textColor;
+  final AutoSizeGroup? autoSizeGroup;
 
   BaseUiKitButtonData({
     this.onPressed,
@@ -21,6 +23,7 @@ class BaseUiKitButtonData {
     this.loading,
     this.borderColor,
     this.backgroundColor,
+    this.autoSizeGroup,
     this.textColor,
   }) : assert(iconInfo == null || iconWidget == null, 'You can only use one of iconInfo or iconWidget');
 }

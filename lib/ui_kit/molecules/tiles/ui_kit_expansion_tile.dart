@@ -79,7 +79,7 @@ class _UiKitExpansionTileState extends State<UiKitExpansionTile> {
             ),
             height: expanded ? widget.children.length * 42.h : 0,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              // mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 ...widget.children.indexed

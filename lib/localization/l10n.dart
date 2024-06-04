@@ -2236,10 +2236,10 @@ class S {
     );
   }
 
-  /// ` For {formattedPrice}`
+  /// `For {formattedPrice}`
   String ForFormattedPrice(Object formattedPrice) {
     return Intl.message(
-      ' For $formattedPrice',
+      'For $formattedPrice',
       name: 'ForFormattedPrice',
       desc: '',
       args: [formattedPrice],
@@ -5378,6 +5378,36 @@ class S {
     return Intl.message(
       'Select currency',
       name: 'SelectCurrency',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter price`
+  String get EnterPrice {
+    return Intl.message(
+      'Enter price',
+      name: 'EnterPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Price range`
+  String get PriceRange {
+    return Intl.message(
+      'Price range',
+      name: 'PriceRange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Range end value is less than begining one`
+  String get RangeEndValueIsLessThanBeginingOne {
+    return Intl.message(
+      'Range end value is less than begining one',
+      name: 'RangeEndValueIsLessThanBeginingOne',
       desc: '',
       args: [],
     );
