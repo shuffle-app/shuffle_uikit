@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitFieldWithTagList extends StatelessWidget {
-  final List<UiKitTag> listUiKitTags;
+  final List<UiKitTag>? listUiKitTags;
   final String title;
   final Function() onTap;
   const UiKitFieldWithTagList({
@@ -35,7 +35,7 @@ class UiKitFieldWithTagList extends StatelessWidget {
           ],
         ),
         SpacingFoundation.verticalSpace8,
-        UiKitTagsWidget(baseTags: listUiKitTags)
+        listUiKitTags != null ? UiKitTagsWidget(baseTags: listUiKitTags!) : SpacingFoundation.none,
       ],
     );
   }
