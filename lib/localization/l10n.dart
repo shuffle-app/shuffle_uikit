@@ -5403,16 +5403,6 @@ class S {
     );
   }
 
-  /// `Range end value is less than begining one`
-  String get RangeEndValueIsLessThanBeginingOne {
-    return Intl.message(
-      'Range end value is less than begining one',
-      name: 'RangeEndValueIsLessThanBeginingOne',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Select price and currency`
   String get SelectPriceAndCurrency {
     return Intl.message(
@@ -5423,6 +5413,75 @@ class S {
     );
   }
 
+  /// `Submit`
+  String get Submit {
+    return Intl.message(
+      'Submit',
+      name: 'Submit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter location`
+  String get EnterLocation {
+    return Intl.message(
+      'Enter location',
+      name: 'EnterLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter title`
+  String get EnterTitle {
+    return Intl.message(
+      'Enter title',
+      name: 'EnterTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Why do you love it?`
+  String get WhyDoYouLoveIt {
+    return Intl.message(
+      'Why do you love it?',
+      name: 'WhyDoYouLoveIt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit content`
+  String get SubmitContent {
+    return Intl.message(
+      'Submit content',
+      name: 'SubmitContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place submitted successfully`
+  String get PlaceSubmittedSuccessfully {
+    return Intl.message(
+      'Place submitted successfully',
+      name: 'PlaceSubmittedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Range end value is less than begining one`
+  String get RangeEndValueIsLessThanBeginingOne {
+    return Intl.message(
+      'Range end value is less than begining one',
+      name: 'RangeEndValueIsLessThanBeginingOne',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -319,11 +319,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnableHintSystem":
             MessageLookupByLibrary.simpleMessage("Enable hint system"),
         "EnterInputType": m9,
+        "EnterLocation": MessageLookupByLibrary.simpleMessage("Enter location"),
         "EnterNewPassword":
             MessageLookupByLibrary.simpleMessage("Enter new password"),
         "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
             "Please enter place’s address"),
         "EnterPrice": MessageLookupByLibrary.simpleMessage("Enter price"),
+        "EnterTitle": MessageLookupByLibrary.simpleMessage("Enter title"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Enter your e-mail address"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Error occured"),
@@ -572,6 +574,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Photos": MessageLookupByLibrary.simpleMessage("Photos"),
         "PickFromMap": MessageLookupByLibrary.simpleMessage("Pick from map"),
         "Place": MessageLookupByLibrary.simpleMessage("Place"),
+        "PlaceSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Place submitted successfully"),
         "PlaceType": MessageLookupByLibrary.simpleMessage("Place type"),
         "Places": MessageLookupByLibrary.simpleMessage("Places"),
         "PlacesVisited": m26,
@@ -756,6 +760,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Events you don\'t wanna miss"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Start to explore"),
+        "Submit": MessageLookupByLibrary.simpleMessage("Submit"),
+        "SubmitContent": MessageLookupByLibrary.simpleMessage("Submit content"),
         "SubscribeToProfile": MessageLookupByLibrary.simpleMessage("Follow"),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("Sun"),
@@ -864,6 +870,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "WhatIs": MessageLookupByLibrary.simpleMessage("What is \n"),
         "WhatYouLike": MessageLookupByLibrary.simpleMessage("What you like"),
         "WhiteTheme": MessageLookupByLibrary.simpleMessage("White theme"),
+        "WhyDoYouLoveIt":
+            MessageLookupByLibrary.simpleMessage("Why do you love it?"),
         "WillBe": MessageLookupByLibrary.simpleMessage(" will be."),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("Will be implemented soon"),

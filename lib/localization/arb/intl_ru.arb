@@ -522,7 +522,13 @@
   "SelectCurrency": "Выберте валюту",
   "EnterPrice": "Введите цену",
   "PriceRange": "Диапазон цен",
-  "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального",
-  "SelectPriceAndCurrency": "Выберите цену и валюту"
+  "SelectPriceAndCurrency": "Выберите цену и валюту",
+  "Submit":"Представить",
+  "EnterLocation":"Введите местоположение",
+  "EnterTitle":"Введите название",
+  "WhyDoYouLoveIt":"Почему тебе это так нравится?",
+  "SubmitContent":"Отправлять контент",
+  "PlaceSubmittedSuccessfully":"Место успешно отправлено",
+  "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального"
 
 }

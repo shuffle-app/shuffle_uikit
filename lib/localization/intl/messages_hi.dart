@@ -319,11 +319,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnableHintSystem":
             MessageLookupByLibrary.simpleMessage("संकेत प्रणाली सक्षम करें"),
         "EnterInputType": m9,
+        "EnterLocation":
+            MessageLookupByLibrary.simpleMessage("स्थान दर्ज करें"),
         "EnterNewPassword":
             MessageLookupByLibrary.simpleMessage("नया पासवर्ड दर्ज करें"),
         "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
             "कृपया स्थान का पता दर्ज करें"),
         "EnterPrice": MessageLookupByLibrary.simpleMessage("Enter price"),
+        "EnterTitle": MessageLookupByLibrary.simpleMessage("शीर्षक दर्ज करें"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("अपना ईमेल पता दर्ज करें"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("त्रुटि हुई"),
@@ -578,6 +581,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Photos": MessageLookupByLibrary.simpleMessage("तस्वीरें"),
         "PickFromMap": MessageLookupByLibrary.simpleMessage("नक्शे से चुनें"),
         "Place": MessageLookupByLibrary.simpleMessage("जगह"),
+        "PlaceSubmittedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("सफलतापूर्वक प्रस्तुत स्थान"),
         "PlaceType": MessageLookupByLibrary.simpleMessage("जगह प्रकार"),
         "Places": MessageLookupByLibrary.simpleMessage("स्थानों"),
         "PlacesVisited": m26,
@@ -760,6 +765,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "घटनाएँ जिन्हें आप नहीं चाहते हैं छोड़ना"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("अन्वेषण करना प्रारंभ करें"),
+        "Submit": MessageLookupByLibrary.simpleMessage("सबमिट करें"),
+        "SubmitContent":
+            MessageLookupByLibrary.simpleMessage("सामग्री सबमिट करें"),
         "SubscribeToProfile": MessageLookupByLibrary.simpleMessage("फॉलो करें"),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("रविवार"),
@@ -875,6 +883,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "WhatYouLike":
             MessageLookupByLibrary.simpleMessage("आप को क्या पसंद है"),
         "WhiteTheme": MessageLookupByLibrary.simpleMessage("सफेद थीम"),
+        "WhyDoYouLoveIt": MessageLookupByLibrary.simpleMessage(
+            "आप इसे क्यों प्यार करते हैं ?"),
         "WillBe": MessageLookupByLibrary.simpleMessage(" होगा।"),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("जल्द ही लागू किया जाएगा"),
