@@ -101,7 +101,7 @@ class ProProfilePage extends StatelessWidget {
               ],
             ),
           SpacingFoundation.verticalSpace24,
-          CreateEventField(
+          UiKitFieldWithTagList(
             fieldData: ListValueFieldData(
               value: [
                 FiledValue(
