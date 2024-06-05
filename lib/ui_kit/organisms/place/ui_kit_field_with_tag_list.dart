@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class CreateEventField extends StatelessWidget {
+class UiKitFieldWithTagList extends StatelessWidget {
   final FieldData fieldData;
-  const CreateEventField({
+  const UiKitFieldWithTagList({
     super.key,
     required this.fieldData,
   });
