@@ -127,6 +127,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
       ),
       children: [
+        context.createSnackBar(message: 'This is a success alert — check it out!', appSnackBarType: AppSnackBarType.success).paddingSymmetric(vertical: 8,horizontal: 16),
+        context.createSnackBar(message: 'This is a error alert — check it out!', appSnackBarType: AppSnackBarType.error).paddingSymmetric(vertical: 8,horizontal: 16),
+        context.createSnackBar(message: 'This is a warning alert — check it out!', appSnackBarType: AppSnackBarType.warning).paddingSymmetric(vertical: 8,horizontal: 16),
+        context.createSnackBar(message: 'This is an info alert — check it out!', appSnackBarType: AppSnackBarType.info).paddingSymmetric(vertical: 8,horizontal: 16),
+        context.createSnackBar(message: 'This is a dark alert — check it out!', appSnackBarType: AppSnackBarType.neutral).paddingSymmetric(vertical: 8,horizontal: 16),
         SpacingFoundation.verticalSpace16,
         Center(
           child: UiKitDropDownList<String>(

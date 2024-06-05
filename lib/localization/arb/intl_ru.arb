@@ -216,7 +216,7 @@
   "Create": "Создать",
   "BookIt": "Букинг",
   "UpgradeForNmoney": "Купить {forNMoney}",
-  "ForFormattedPrice": " За {formattedPrice}",
+  "ForFormattedPrice": "За {formattedPrice}",
   "ErrorOccuredWithoutMessage": "Ошибка без сообщения",
   "Permissions": "Разрешения",
   "AllowGeolocation": "Использовать геолокацию",

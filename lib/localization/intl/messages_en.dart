@@ -67,7 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m16(count) =>
       "${Intl.plural(count, zero: 'followers', one: 'follower', two: 'followers', few: 'followers', many: 'followers', other: 'followers')}";
 
-  static String m17(formattedPrice) => " For ${formattedPrice}";
+  static String m17(formattedPrice) => "For ${formattedPrice}";
 
   static String m18(helpfulCount) => "Helpful ${helpfulCount}";
 
