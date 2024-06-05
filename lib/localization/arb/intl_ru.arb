@@ -522,7 +522,7 @@
   "SelectCurrency": "Выберте валюту",
   "EnterPrice": "Введите цену",
   "PriceRange": "Диапазон цен",
-  "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального"
-
+  "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального",
+  "SelectPriceAndCurrency": "Выберите цену и валюту"
 
 }

@@ -522,6 +522,7 @@
   "SelectCurrency": "Select currency",
   "EnterPrice": "Enter price",
   "PriceRange": "Price range",
-  "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one"
+  "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one",
+  "SelectPriceAndCurrency": "Select price and currency"
 
 }

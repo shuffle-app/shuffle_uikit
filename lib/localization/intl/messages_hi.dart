@@ -721,6 +721,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectGender": MessageLookupByLibrary.simpleMessage("लिंग चुनें"),
         "SelectLanguage": MessageLookupByLibrary.simpleMessage("भाषा चुने"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),
+        "SelectPriceAndCurrency":
+            MessageLookupByLibrary.simpleMessage("Select price and currency"),
         "SelectType": m35,
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("अपने धर्म चुनें"),
