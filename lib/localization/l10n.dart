@@ -5403,6 +5403,16 @@ class S {
     );
   }
 
+  /// `Select price and currency`
+  String get SelectPriceAndCurrency {
+    return Intl.message(
+      'Select price and currency',
+      name: 'SelectPriceAndCurrency',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Submit`
   String get Submit {
     return Intl.message(
@@ -5472,17 +5482,6 @@ class S {
       args: [],
     );
   }
-
-  /// `Select price and currency`
-  String get SelectPriceAndCurrency {
-    return Intl.message(
-      'Select price and currency',
-      name: 'SelectPriceAndCurrency',
-      desc: '',
-      args: [],
-    );
-  }
-
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
