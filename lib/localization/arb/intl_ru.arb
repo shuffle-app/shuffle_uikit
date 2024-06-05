@@ -522,6 +522,12 @@
   "SelectCurrency": "Выберте валюту",
   "EnterPrice": "Введите цену",
   "PriceRange": "Диапазон цен",
+  "Submit":"Представить",
+  "EnterLocation":"Введите местоположение",
+  "EnterTitle":"Введите название",
+  "WhyDoYouLoveIt":"Почему тебе это так нравится?",
+  "SubmitContent":"Отправлять контент",
+  "PlaceSubmittedSuccessfully":"Место успешно отправлено",
   "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального"
 
 

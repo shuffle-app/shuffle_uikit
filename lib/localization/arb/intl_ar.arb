@@ -522,6 +522,12 @@
   "SelectCurrency": "Select currency",
   "EnterPrice": "Enter price",
   "PriceRange": "Price range",
+  "Submit":"Submit",
+  "EnterLocation":"Enter location",
+  "EnterTitle":"Enter title",
+  "WhyDoYouLoveIt":"Why do you love it?",
+  "SubmitContent":"Submit content",
+  "PlaceSubmittedSuccessfully":"Place submitted successfully",
   "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one"
 
 }

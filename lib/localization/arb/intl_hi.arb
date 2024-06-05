@@ -522,6 +522,12 @@
   "SelectCurrency": "Select currency",
   "EnterPrice": "Enter price",
   "PriceRange": "Price range",
+  "Submit":"सबमिट करें",
+  "EnterLocation":"स्थान दर्ज करें",
+  "EnterTitle":"शीर्षक दर्ज करें",
+  "WhyDoYouLoveIt":"आप इसे क्यों प्यार करते हैं ?",
+  "SubmitContent":"सामग्री सबमिट करें",
+  "PlaceSubmittedSuccessfully":"सफलतापूर्वक प्रस्तुत स्थान",
   "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one"
 
 
