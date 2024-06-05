@@ -322,11 +322,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnableHintSystem":
             MessageLookupByLibrary.simpleMessage("Включить подсказки"),
         "EnterInputType": m9,
+        "EnterLocation":
+            MessageLookupByLibrary.simpleMessage("Введите местоположение"),
         "EnterNewPassword":
             MessageLookupByLibrary.simpleMessage("Новый пароль"),
         "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, введите адрес места"),
         "EnterPrice": MessageLookupByLibrary.simpleMessage("Введите цену"),
+        "EnterTitle": MessageLookupByLibrary.simpleMessage("Введите название"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Введите адрес эл. почты"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Возникла ошибка"),
@@ -576,6 +579,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Photos": MessageLookupByLibrary.simpleMessage("Фото"),
         "PickFromMap": MessageLookupByLibrary.simpleMessage("Выбрать на карте"),
         "Place": MessageLookupByLibrary.simpleMessage("Место"),
+        "PlaceSubmittedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("Место успешно отправлено"),
         "PlaceType": MessageLookupByLibrary.simpleMessage("Тип места"),
         "Places": MessageLookupByLibrary.simpleMessage("Места"),
         "PlacesVisited": m26,
@@ -762,6 +767,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "События, которые нельзя пропускать"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Начать изучать"),
+        "Submit": MessageLookupByLibrary.simpleMessage("Представить"),
+        "SubmitContent":
+            MessageLookupByLibrary.simpleMessage("Отправлять контент"),
         "SubscribeToProfile":
             MessageLookupByLibrary.simpleMessage("Подписаться"),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
@@ -874,6 +882,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "WhatYouLike":
             MessageLookupByLibrary.simpleMessage("Что тебе нравится"),
         "WhiteTheme": MessageLookupByLibrary.simpleMessage("Светлая тема"),
+        "WhyDoYouLoveIt": MessageLookupByLibrary.simpleMessage(
+            "Почему тебе это так нравится?"),
         "WillBe": MessageLookupByLibrary.simpleMessage(" будет."),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("Скоро будет реализовано"),
