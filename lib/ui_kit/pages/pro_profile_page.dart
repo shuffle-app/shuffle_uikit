@@ -1,6 +1,9 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit/organisms/place/create_event_filed.dart';
 
 class ProProfilePage extends StatelessWidget {
   final int? events;
@@ -99,6 +102,44 @@ class ProProfilePage extends StatelessWidget {
                 ),
               ],
             ),
+          SpacingFoundation.verticalSpace24,
+          CreateEventField(
+            fieldData: ListValueFieldData(
+              value: [
+                FiledValue(
+                  value: [
+                    UiKitTag(title: 'catering', icon: null, unique: false),
+                  ],
+                  valueMask: 'Nich',
+                ),
+                FiledValue(
+                  value: [
+                    UiKitTag(title: 'Restaurant', icon: ShuffleUiKitIcons.cutlery, unique: false),
+                  ],
+                  valueMask: 'Place type',
+                ),
+                FiledValue(
+                  value: [
+                    UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cutlery, unique: false),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cutlery, unique: false),
+                    UiKitTag(title: '7 min', icon: ShuffleUiKitIcons.cutlery, unique: false),
+                  ],
+                  valueMask: 'Base properties',
+                ),
+                FiledValue(
+                  value: [
+                    UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cutlery, unique: true),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cutlery, unique: true),
+                    UiKitTag(title: '7 min', icon: ShuffleUiKitIcons.cutlery, unique: true),
+                    UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cutlery, unique: true),
+                    UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cutlery, unique: true),
+                    UiKitTag(title: '7 min', icon: ShuffleUiKitIcons.cutlery, unique: true),
+                  ],
+                  valueMask: 'Unique properties',
+                ),
+              ],
+            ),
+          ),
           if (events != null && reviews != null && bookings != null) SpacingFoundation.verticalSpace24,
           UiKitExpandableList(
             items: List.generate(
