@@ -522,6 +522,7 @@
   "SelectCurrency": "Select currency",
   "EnterPrice": "Enter price",
   "PriceRange": "Price range",
+  "SelectPriceAndCurrency": "Select price and currency",
   "Submit":"Submit",
   "EnterLocation":"Enter location",
   "EnterTitle":"Enter title",

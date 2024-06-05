@@ -522,6 +522,7 @@
   "SelectCurrency": "Выберте валюту",
   "EnterPrice": "Введите цену",
   "PriceRange": "Диапазон цен",
+  "SelectPriceAndCurrency": "Выберите цену и валюту",
   "Submit":"Представить",
   "EnterLocation":"Введите местоположение",
   "EnterTitle":"Введите название",
