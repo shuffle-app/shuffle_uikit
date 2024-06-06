@@ -7,6 +7,7 @@ class UiKitPermissionCard extends StatelessWidget {
   final AssetGenImage image;
   final VoidCallback? onPress;
   final bool isEnabled;
+  final String? onImageText;
 
   const UiKitPermissionCard({
     super.key,
@@ -14,6 +15,7 @@ class UiKitPermissionCard extends StatelessWidget {
     required this.description,
     required this.image,
     this.onPress,
+    this.onImageText,
     required this.isEnabled,
   });
 
@@ -26,42 +28,47 @@ class UiKitPermissionCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: onPress,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              UiKitCheckbox(
-                isActive: isEnabled,
-              ),
-              SpacingFoundation.horizontalSpace12,
-              Expanded(
-                child: Text(
-                  title,
-                  style: labelStyle,
+      child: Stack(alignment: Alignment.bottomCenter, children: [
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                UiKitCheckbox(
+                  isActive: isEnabled,
                 ),
-              ),
-            ],
-          ),
-          SpacingFoundation.verticalSpace16,
-          Text(
-            description,
-            style: textStyle,
-          ),
-          SpacingFoundation.verticalSpace24,
-          //         Transform.scale(
-          //             scaleX: 1.2,
-          // child:
-          ImageWidget(
-            rasterAsset: image,
-            // )
-          ),
-          SpacingFoundation.verticalSpace24,
-        ],
-      ),
+                SpacingFoundation.horizontalSpace12,
+                Expanded(
+                  child: Text(
+                    title,
+                    style: labelStyle,
+                  ),
+                ),
+              ],
+            ),
+            SpacingFoundation.verticalSpace16,
+            Text(
+              description,
+              style: textStyle,
+            ),
+            SpacingFoundation.verticalSpace24,
+            ImageWidget(
+              rasterAsset: image,
+            ),
+            SpacingFoundation.verticalSpace24,
+          ],
+        ),
+        if (onImageText != null)
+          Transform.translate(
+              offset: const Offset(4, -95),
+              child: Text(
+                onImageText!,
+                style: theme?.boldTextTheme.title2.copyWith(color: Colors.white),
+              ))
+      ]),
     );
   }
 }

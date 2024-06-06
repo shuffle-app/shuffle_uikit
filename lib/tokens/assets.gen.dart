@@ -1870,6 +1870,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/unlink.svg
   SvgGenImage get unlink => const SvgGenImage('assets/images/svg/unlink.svg');
 
+  /// File path: assets/images/svg/us_flag.svg
+  SvgGenImage get usFlag => const SvgGenImage('assets/images/svg/us_flag.svg');
+
   /// File path: assets/images/svg/user.svg
   SvgGenImage get user => const SvgGenImage('assets/images/svg/user.svg');
 
@@ -2186,6 +2189,7 @@ class $AssetsImagesSvgGen {
         uniqueMarker,
         unitedKingdom,
         unlink,
+        usFlag,
         user,
         videoPlus,
         viewAction,
