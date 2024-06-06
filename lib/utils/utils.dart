@@ -32,3 +32,4 @@ export 'extentions/social_media_string_validator.dart';
 export 'extentions/ui_kit_theme_extention.dart';
 export 'snack_bar_utils.dart';
 export 'widgets_factory/widgets_abstract_factory.dart';
+export 'price_with_spaces_formatter.dart';
