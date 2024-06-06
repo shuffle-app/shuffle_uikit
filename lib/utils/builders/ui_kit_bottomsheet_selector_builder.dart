@@ -50,6 +50,7 @@ uiKitBottomsheetSelectorBuilder(BuildContext context, {required List<ListTile> w
                       ),
                       SpacingFoundation.verticalSpace16,
                       ...searchWidgets,
+                      MediaQuery.of(context).viewInsets.bottom.heightBox
                     ],
                   ))));
 }
