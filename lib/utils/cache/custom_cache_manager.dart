@@ -34,7 +34,7 @@ class CustomCacheManager {
   ));
 
   static CacheManager svgInstance = CacheManager(Config(_svgCacheKey,
-      stalePeriod: const Duration(days: 20),
+      stalePeriod: const Duration(days: 60),
       maxNrOfCacheObjects: 500,
       repo: CacheObjectProvider(databaseName: _svgCacheKey),
       fileService: HttpFileService()));
