@@ -364,6 +364,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "нажимаешь и случайная выдача"),
         "FeedRandomizerHiwTitle":
             MessageLookupByLibrary.simpleMessage("Его величество случай..."),
+        "Feedback": MessageLookupByLibrary.simpleMessage("Обратная связь"),
         "FeedbackAddedSuccessfullyMessage":
             MessageLookupByLibrary.simpleMessage("Ваш отзыв успешно добавлен"),
         "Feeling": MessageLookupByLibrary.simpleMessage("Чувство"),
@@ -664,6 +665,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "RealMoney": MessageLookupByLibrary.simpleMessage("Реальные деньги"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
         "Religion": MessageLookupByLibrary.simpleMessage("Религия"),
+        "Reply": MessageLookupByLibrary.simpleMessage("Ответить"),
         "ResendCode":
             MessageLookupByLibrary.simpleMessage("Отправить код еще раз"),
         "Reset": MessageLookupByLibrary.simpleMessage("Сбросить"),
@@ -775,6 +777,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SubscribeToProfile":
             MessageLookupByLibrary.simpleMessage("Подписаться"),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
+        "SuccessfullyAnswered":
+            MessageLookupByLibrary.simpleMessage("Успешно получен ответ"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("Вс"),
         "Sunny": MessageLookupByLibrary.simpleMessage("Солнечно"),
         "Support": MessageLookupByLibrary.simpleMessage("Помощь"),
@@ -893,6 +897,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "WithYourPreferences":
             MessageLookupByLibrary.simpleMessage("С учетом ваших предпочтений"),
         "WorkHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
+        "WriteTheAnswer":
+            MessageLookupByLibrary.simpleMessage("Напишите ответ"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("Неверный код"),
         "XCouldNotBeEmpty": m45,

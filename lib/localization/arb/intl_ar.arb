@@ -529,6 +529,10 @@
   "EnterTitle":"Enter title",
   "WhyDoYouLoveIt":"Why do you love it?",
   "SubmitContent":"Submit content",
+  "Feedback": "Feedback",
+  "Reply": "Reply",
+  "WriteTheAnswer": "Write the answer",
+  "SuccessfullyAnswered": "Successfully answered",
   "PlaceSubmittedSuccessfully":"Place submitted successfully"
 
 }

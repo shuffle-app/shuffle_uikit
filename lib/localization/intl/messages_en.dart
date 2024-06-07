@@ -360,6 +360,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("you press and get random"),
         "FeedRandomizerHiwTitle":
             MessageLookupByLibrary.simpleMessage("Randomizing..."),
+        "Feedback": MessageLookupByLibrary.simpleMessage("Feedback"),
         "FeedbackAddedSuccessfullyMessage":
             MessageLookupByLibrary.simpleMessage(
                 "Your feedback has been successfully added"),
@@ -658,6 +659,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "RealMoney": MessageLookupByLibrary.simpleMessage("Real money"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
+        "Reply": MessageLookupByLibrary.simpleMessage("Reply"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
         "Reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "ResetFilters": MessageLookupByLibrary.simpleMessage("Reset filters"),
@@ -764,6 +766,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SubmitContent": MessageLookupByLibrary.simpleMessage("Submit content"),
         "SubscribeToProfile": MessageLookupByLibrary.simpleMessage("Follow"),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
+        "SuccessfullyAnswered":
+            MessageLookupByLibrary.simpleMessage("Successfully answered"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("Sun"),
         "Sunny": MessageLookupByLibrary.simpleMessage("Sunny"),
         "Support": MessageLookupByLibrary.simpleMessage("Support"),
@@ -879,6 +883,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "WithYourPreferences":
             MessageLookupByLibrary.simpleMessage("With your\npreferences"),
         "WorkHours": MessageLookupByLibrary.simpleMessage("Work hours"),
+        "WriteTheAnswer":
+            MessageLookupByLibrary.simpleMessage("Write the answer"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("Wrong security code"),
         "XCouldNotBeEmpty": m45,

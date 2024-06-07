@@ -361,6 +361,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "आप दबाते हैं और यादृच्छिक प्राप्त करते हैं"),
         "FeedRandomizerHiwTitle":
             MessageLookupByLibrary.simpleMessage("यादृच्छिकता..."),
+        "Feedback": MessageLookupByLibrary.simpleMessage("प्रतिक्रिया"),
         "FeedbackAddedSuccessfullyMessage":
             MessageLookupByLibrary.simpleMessage(
                 "आपकी प्रतिक्रिया सफलतापूर्वक जोड़ी गई है"),
@@ -665,6 +666,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "RealMoney": MessageLookupByLibrary.simpleMessage("असली पैसे"),
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
         "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
+        "Reply": MessageLookupByLibrary.simpleMessage("जवाब दे दो"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),
         "Reset": MessageLookupByLibrary.simpleMessage("रीसेट"),
         "ResetFilters": MessageLookupByLibrary.simpleMessage("रीसेट फ़िल्टर"),
@@ -770,6 +772,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("सामग्री सबमिट करें"),
         "SubscribeToProfile": MessageLookupByLibrary.simpleMessage("फॉलो करें"),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
+        "SuccessfullyAnswered":
+            MessageLookupByLibrary.simpleMessage("सफलतापूर्वक उत्तर दिया"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("रविवार"),
         "Sunny": MessageLookupByLibrary.simpleMessage("सनी"),
         "Support": MessageLookupByLibrary.simpleMessage("सहायता"),
@@ -892,6 +896,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "WithYourPreferences":
             MessageLookupByLibrary.simpleMessage("आपका\nप्राथमिकताएं के साथ"),
         "WorkHours": MessageLookupByLibrary.simpleMessage("काम के घंटे"),
+        "WriteTheAnswer": MessageLookupByLibrary.simpleMessage("उत्तर लिखें"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("गलत सुरक्षा कोड"),
         "XCouldNotBeEmpty": m45,
