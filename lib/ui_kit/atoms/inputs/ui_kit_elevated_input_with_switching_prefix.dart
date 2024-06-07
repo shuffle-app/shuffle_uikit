@@ -57,20 +57,20 @@ class UiKitElevatedInputWithSwitchingPrefix extends StatelessWidget {
                 fillColor: fillColor,
                 hintText: hintText,
                 hintStyle: textTheme?.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900),
-                suffix: suffixIcon ??
-                    GestureDetector(
-                      onTap: () {
-                        controller.clear();
-                        if (focusNode?.hasFocus ?? true) onInputCleaned?.call();
-                      },
-                      child: const ImageWidget(
-                        iconData: ShuffleUiKitIcons.cross,
-                        color: ColorsFoundation.darkNeutral900,
-                      ),
-                    ),
               ),
             ),
           ),
+          suffixIcon ??
+              GestureDetector(
+                onTap: () {
+                  controller.clear();
+                  if (focusNode?.hasFocus ?? true) onInputCleaned?.call();
+                },
+                child: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.x,
+                  color: ColorsFoundation.darkNeutral900,
+                ),
+              ),
         ],
       ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
     );
