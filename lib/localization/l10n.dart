@@ -5473,6 +5473,46 @@ class S {
     );
   }
 
+  /// `Feedback`
+  String get Feedback {
+    return Intl.message(
+      'Feedback',
+      name: 'Feedback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reply`
+  String get Reply {
+    return Intl.message(
+      'Reply',
+      name: 'Reply',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write the answer`
+  String get WriteTheAnswer {
+    return Intl.message(
+      'Write the answer',
+      name: 'WriteTheAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Successfully answered`
+  String get SuccessfullyAnswered {
+    return Intl.message(
+      'Successfully answered',
+      name: 'SuccessfullyAnswered',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Range end value is less than begining one`
   String get RangeEndValueIsLessThanBeginingOne {
     return Intl.message(

@@ -529,6 +529,10 @@
   "WhyDoYouLoveIt":"Why do you love it?",
   "SubmitContent":"Submit content",
   "PlaceSubmittedSuccessfully":"Place submitted successfully",
+  "Feedback": "Feedback",
+  "Reply": "Reply",
+  "WriteTheAnswer": "Write the answer",
+  "SuccessfullyAnswered": "Successfully answered",
   "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one"
 
 }
