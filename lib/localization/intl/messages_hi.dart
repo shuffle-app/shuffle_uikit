@@ -231,7 +231,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "जारी रखकर आप स्वीकार करते हैं"),
         "Cancel": MessageLookupByLibrary.simpleMessage("रद्द करें"),
         "Category": MessageLookupByLibrary.simpleMessage("श्रेणी"),
-        "Catering": MessageLookupByLibrary.simpleMessage("Catering"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("छवि बदलो"),
         "Chat": MessageLookupByLibrary.simpleMessage("चैट"),
         "CheckIn": MessageLookupByLibrary.simpleMessage("चेक इन करें"),
@@ -506,7 +505,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "NextElements": m24,
         "NextNPeople": m25,
         "NextWithChevrons": MessageLookupByLibrary.simpleMessage("अगला >>>"),
-        "Nich": MessageLookupByLibrary.simpleMessage("Nich"),
         "Niche": MessageLookupByLibrary.simpleMessage("Niche"),
         "Nickname": MessageLookupByLibrary.simpleMessage("उपनाम"),
         "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(

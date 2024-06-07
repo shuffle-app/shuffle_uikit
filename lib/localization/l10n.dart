@@ -5482,26 +5482,6 @@ class S {
       args: [],
     );
   }
-
-  /// `Nich`
-  String get Nich {
-    return Intl.message(
-      'Nich',
-      name: 'Nich',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Catering`
-  String get Catering {
-    return Intl.message(
-      'Catering',
-      name: 'Catering',
-      desc: '',
-      args: [],
-    );
-  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

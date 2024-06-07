@@ -230,7 +230,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Продолжая, вы принимаете"),
         "Cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
         "Category": MessageLookupByLibrary.simpleMessage("категория"),
-        "Catering": MessageLookupByLibrary.simpleMessage("Организация питания"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Изменить фото"),
         "Chat": MessageLookupByLibrary.simpleMessage("Чат"),
         "CheckIn": MessageLookupByLibrary.simpleMessage("Check in"),
@@ -505,7 +504,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "NextElements": m24,
         "NextNPeople": m25,
         "NextWithChevrons": MessageLookupByLibrary.simpleMessage("Далее >>>"),
-        "Nich": MessageLookupByLibrary.simpleMessage("Нич"),
         "Niche": MessageLookupByLibrary.simpleMessage("Ниша"),
         "Nickname": MessageLookupByLibrary.simpleMessage("Ник"),
         "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(

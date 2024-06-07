@@ -230,7 +230,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "By continuing you accept the "),
         "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "Category": MessageLookupByLibrary.simpleMessage("Category"),
-        "Catering": MessageLookupByLibrary.simpleMessage("Catering"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Change photo"),
         "Chat": MessageLookupByLibrary.simpleMessage("Chat"),
         "CheckIn": MessageLookupByLibrary.simpleMessage("Check in"),
@@ -500,7 +499,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "NextElements": m24,
         "NextNPeople": m25,
         "NextWithChevrons": MessageLookupByLibrary.simpleMessage("Next >>>"),
-        "Nich": MessageLookupByLibrary.simpleMessage("Nich"),
         "Niche": MessageLookupByLibrary.simpleMessage("Niche"),
         "Nickname": MessageLookupByLibrary.simpleMessage("Nickname"),
         "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(

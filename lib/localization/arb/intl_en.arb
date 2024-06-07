@@ -529,8 +529,5 @@
   "WhyDoYouLoveIt":"Why do you love it?",
   "SubmitContent":"Submit content",
   "PlaceSubmittedSuccessfully":"Place submitted successfully",
-  "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one",
-  "Nich": "Nich",
-  "Catering": "Catering"
-
+  "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one"
 }

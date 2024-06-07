@@ -529,8 +529,6 @@
   "WhyDoYouLoveIt":"Почему тебе это так нравится?",
   "SubmitContent":"Отправлять контент",
   "PlaceSubmittedSuccessfully":"Место успешно отправлено",
-  "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального",
-  "Nich": "Нич",
-  "Catering": "Организация питания"
+  "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального"
 
 }
