@@ -7,14 +7,17 @@ class LineChartPainter extends CustomPainter {
   final List<UiKitLineChartItemData<num>> lines;
   late final double step;
   final Size size;
+  final int? selectedIndex;
 
   LineChartPainter({
     super.repaint,
     required this.lines,
     required this.size,
     double? step,
+    this.selectedIndex,
   }) {
-    this.step = step ?? ((size.width + ((lines.dates.length - 1) * SpacingFoundation.horizontalSpacing4)) / lines.dates.length);
+    this.step =
+        step ?? ((size.width + ((lines.dates.length - 1) * SpacingFoundation.horizontalSpacing4)) / lines.dates.length);
   }
 
   double get curvatureRadius => step / 2;
@@ -24,6 +27,10 @@ class LineChartPainter extends CustomPainter {
     final width = size.width;
     final height = size.height;
 
+    final innerPaint = Paint()
+      ..strokeWidth = 2
+      ..style = PaintingStyle.fill
+      ..color = Colors.white;
     final maxValue = lines.maxValue;
     for (final lineData in lines) {
       final path = Path();
@@ -31,6 +38,7 @@ class LineChartPainter extends CustomPainter {
         ..strokeCap = StrokeCap.round
         ..strokeWidth = 2
         ..style = PaintingStyle.stroke;
+
       if (lineData.gradient != null) {
         paint.shader = lineData.gradient!.createShader(Rect.fromLTWH(0, 0, width, height));
       } else if (lineData.color != null) {
@@ -59,6 +67,27 @@ class LineChartPainter extends CustomPainter {
         path.cubicTo(currentX, currentY, midX, midY, nextX, nextY);
       }
       canvas.drawPath(path, paint);
+    }
+    if (selectedIndex != null && selectedIndex! >= 0) {
+      final chartLines = lines.chartItemsWithDatasetAt(selectedIndex!);
+      for (final line in chartLines) {
+        final paint = Paint()
+          ..color = Colors.white
+          ..strokeWidth = 2
+          ..style = PaintingStyle.fill;
+        final borderPaint = Paint()
+          ..color = line.color ?? Colors.white
+          ..strokeWidth = 2
+          ..style = PaintingStyle.stroke;
+        if (line.gradient != null) {
+          borderPaint.shader = line.gradient!.createShader(Rect.fromLTWH(0, 0, width, height));
+        }
+        final currentX = selectedIndex! * step;
+        final currentValue = line.datasets.first.value;
+        final currentY = height - ((currentValue / maxValue) * height);
+        canvas.drawCircle(Offset(currentX, currentY), 4, paint);
+        canvas.drawCircle(Offset(currentX, currentY), 4, borderPaint);
+      }
     }
   }
 

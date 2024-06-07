@@ -1,9 +1,11 @@
 import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
 
 extension ChartNumberDataSetExtension on List<UiKitChartDataSet> {
-  num get maxValue => fold(0, (previousValue, element) => element.value > previousValue ? element.value : previousValue);
+  num get maxValue =>
+      fold(0, (previousValue, element) => element.value > previousValue ? element.value : previousValue);
 
-  num get minValue => fold(maxValue, (previousValue, element) => element.value < previousValue ? element.value : previousValue);
+  num get minValue =>
+      fold(maxValue, (previousValue, element) => element.value < previousValue ? element.value : previousValue);
 
   num get averageValue => (maxValue + minValue) ~/ 2;
 
@@ -34,19 +36,23 @@ extension ChartNumberDataSetExtension on List<UiKitChartDataSet> {
     return subList.reduce((value, element) => value + element) ~/ subList.length;
   }
 
-  DateTime get minDate =>
-      fold(DateTime.now(), (previousValue, element) => element.date.isBefore(previousValue) ? element.date : previousValue);
+  DateTime get minDate => fold(
+      DateTime.now(), (previousValue, element) => element.date.isBefore(previousValue) ? element.date : previousValue);
 
-  DateTime get maxDate =>
-      fold(DateTime.now(), (previousValue, element) => element.date.isAfter(previousValue) ? element.date : previousValue);
+  DateTime get maxDate => fold(
+      DateTime.now(), (previousValue, element) => element.date.isAfter(previousValue) ? element.date : previousValue);
 }
 
 extension ChartItemsExtension on List<UiKitChartItem> {
-  num get maxValue =>
-      fold(0, (previousValue, element) => element.datasets.maxValue > previousValue ? element.datasets.maxValue : previousValue);
+  num get maxValue => fold(
+      0,
+      (previousValue, element) =>
+          element.datasets.maxValue > previousValue ? element.datasets.maxValue : previousValue);
 
-  num get minValue => fold(maxValue,
-      (previousValue, element) => element.datasets.minValue < previousValue ? element.datasets.minValue : previousValue);
+  num get minValue => fold(
+      maxValue,
+      (previousValue, element) =>
+          element.datasets.minValue < previousValue ? element.datasets.minValue : previousValue);
 
   num get averageValue => (maxValue + minValue) ~/ 2;
 
@@ -78,10 +84,14 @@ extension ChartItemsExtension on List<UiKitChartItem> {
   }
 
   DateRange get period {
-    final minDate = fold(DateTime.now(),
-        (previousValue, element) => element.datasets.minDate.isBefore(previousValue) ? element.datasets.minDate : previousValue);
-    final maxDate = fold(DateTime.now(),
-        (previousValue, element) => element.datasets.maxDate.isAfter(previousValue) ? element.datasets.maxDate : previousValue);
+    final minDate = fold(
+        DateTime.now(),
+        (previousValue, element) =>
+            element.datasets.minDate.isBefore(previousValue) ? element.datasets.minDate : previousValue);
+    final maxDate = fold(
+        DateTime.now(),
+        (previousValue, element) =>
+            element.datasets.maxDate.isAfter(previousValue) ? element.datasets.maxDate : previousValue);
     return DateRange(start: minDate, end: maxDate);
   }
 
@@ -96,14 +106,33 @@ extension ChartItemsExtension on List<UiKitChartItem> {
     return uniqueDates;
   }
 
-  DateTime get earliestDate => fold(DateTime.now(),
-      (previousValue, element) => element.datasets.minDate.isBefore(previousValue) ? element.datasets.minDate : previousValue);
+  DateTime get earliestDate => fold(
+      DateTime.now(),
+      (previousValue, element) =>
+          element.datasets.minDate.isBefore(previousValue) ? element.datasets.minDate : previousValue);
 
-  DateTime get latestDate => fold(DateTime.now(),
-      (previousValue, element) => element.datasets.maxDate.isAfter(previousValue) ? element.datasets.maxDate : previousValue);
+  DateTime get latestDate => fold(
+      DateTime.now(),
+      (previousValue, element) =>
+          element.datasets.maxDate.isAfter(previousValue) ? element.datasets.maxDate : previousValue);
 }
 
 extension ChartItemDataExtension on List<UiKitLineChartItemData> {
+  List<UiKitLineChartItemData> chartItemsWithDatasetAt(int index) {
+    final items = where((chartItem) => chartItem.datasets.length - 1 >= index).toList();
+    final finalList = items
+        .map(
+          (chartItem) => UiKitLineChartItemData(
+            chartItemName: chartItem.chartItemName,
+            color: chartItem.color,
+            gradient: chartItem.gradient,
+            datasets: [chartItem.datasets[index]],
+          ),
+        )
+        .toList();
+    return finalList;
+  }
+
   int get maxDatasetsCount => fold(
         0,
         (previousValue, element) => element.datasets.length > previousValue ? element.datasets.length : previousValue,

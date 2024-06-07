@@ -104,7 +104,7 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                   onPanUpdate: (details) {
                     double newOffset = previewUpdateNotifier.value.leftOffset + details.delta.dx;
                     if (newOffset <= 0) newOffset = 0;
-                    if (newOffset >= (size.width * maxRemainingFactor)) newOffset = (size.width * maxRemainingFactor);
+                    if (newOffset > (size.width * maxRemainingFactor)) newOffset = (size.width * maxRemainingFactor);
 
                     previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(leftOffset: newOffset);
                     final atEnd = newOffset >= (size.width * maxRemainingFactor) - 12 &&
@@ -151,15 +151,31 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                             children: [
                               GestureDetector(
                                 onPanUpdate: (details) {
-                                  print(details.delta.dx);
-                                  final currentWidth = size.width * previewUpdateNotifier.value.previewWidthFraction;
-                                  final newWidthFraction = (currentWidth + details.delta.dx) / size.width;
+                                  final currentPreviewViewportWidth =
+                                      size.width * previewUpdateNotifier.value.previewWidthFraction;
+                                  final currentLeftOffset = previewUpdateNotifier.value.leftOffset;
+
+                                  /// need to calculate the new width fraction based
+                                  /// on the current preview viewport width and the delta
+                                  /// of the pan
+                                  final newWidthFraction =
+                                      (currentPreviewViewportWidth - details.delta.dx) / size.width;
+                                  final panLeft = details.delta.dx.isNegative;
                                   double newLeftOffset = 0;
-                                  if (details.delta.dx.isNegative) {
-                                    newLeftOffset = previewUpdateNotifier.value.leftOffset + details.delta.dx;
+
+                                  /// need to change offset based on pan direction
+                                  /// if pan left then we need to increase the offset
+                                  /// if pan right then we need to decrease the offset
+                                  if (panLeft) {
+                                    /// because delta is always negative when panning left
+                                    /// we need to use abs to get the positive value
+                                    newLeftOffset = currentLeftOffset - details.delta.dx.abs();
                                   } else {
-                                    newLeftOffset = previewUpdateNotifier.value.leftOffset;
+                                    /// there is no need to get the abs value because delta is always positive
+                                    /// when panning right
+                                    newLeftOffset = currentLeftOffset + details.delta.dx;
                                   }
+
                                   if (newWidthFraction >= 0.2 &&
                                       newWidthFraction <= 1 &&
                                       newLeftOffset >= 0 &&
@@ -181,7 +197,6 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                               ),
                               GestureDetector(
                                 onPanUpdate: (details) {
-                                  print(details.delta.dx);
                                   final currentWidth = size.width * previewUpdateNotifier.value.previewWidthFraction;
                                   final newWidthFraction = (currentWidth + details.delta.dx) / size.width;
                                   if (newWidthFraction >= 0.2 && newWidthFraction <= 1) {

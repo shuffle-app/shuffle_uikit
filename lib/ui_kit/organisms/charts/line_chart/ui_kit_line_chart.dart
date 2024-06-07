@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/organisms/charts/line_chart/ui_kit_line_chart_body.dart';
@@ -29,13 +28,13 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   final bool smallScreen = 1.sw <= 380;
 
   Size get viewPortComputedSize => Size(
-        1.sw - EdgeInsetsFoundation.horizontal32,
-        (1.sw - EdgeInsetsFoundation.horizontal32) * 0.9,
+        1.sw - SpacingFoundation.horizontalSpacing32,
+        1.sw - (smallScreen ? SpacingFoundation.zero : SpacingFoundation.horizontalSpacing4),
       );
 
   Size get chartViewPortSize => Size(
         viewPortComputedSize.width - SpacingFoundation.verticalSpacing32,
-        viewPortComputedSize.height * 0.5,
+        viewPortComputedSize.height * 0.45,
       );
 
   Size get smallPreviewSize => Size(
@@ -44,10 +43,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       );
 
   double chartToSmallPreviewRatio = 1;
-  double smallPreviewToChartRatio = 1;
 
-  bool scrollingChart = false;
-  bool scrollingSmallPreview = false;
   double? datesMaxScrollPosition;
   final _smallPreviewUpdateNotifier = ValueNotifier<LineChartSmallPreviewData>(
     LineChartSmallPreviewData(
@@ -55,6 +51,8 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       previewWidthFraction: 0.35,
     ),
   );
+  final _tapNotifier = ValueNotifier<Offset>(Offset.zero);
+  final _selectedDataSetNotifier = ValueNotifier<LineChartSelectedPointData>(LineChartSelectedPointData.empty());
 
   @override
   void initState() {
@@ -63,8 +61,11 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       _datesScrollController.addListener(_datesScrollListener);
       _chartScrollController.addListener(_chartScrollListener);
       setState(() {
-        datesMaxScrollPosition =
-            _datesScrollController.position.maxScrollExtent + (chartViewPortSize.width - SpacingFoundation.horizontalSpacing32);
+        datesMaxScrollPosition = _datesScrollController.position.maxScrollExtent +
+            (chartViewPortSize.width - SpacingFoundation.horizontalSpacing32);
+        _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
+          previewWidthFraction: chartViewPortSize.width / datesMaxScrollPosition!,
+        );
       });
 
       /// wait until chart is drawn to avoid exception _positions.isNotEmpty
@@ -72,12 +73,10 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
         setState(() {
           if (datesMaxScrollPosition != null) {
             chartToSmallPreviewRatio = datesMaxScrollPosition! / (smallPreviewSize.width - 12);
-            smallPreviewToChartRatio = (smallPreviewSize.width - 12) / datesMaxScrollPosition!;
           }
         });
         log('datesMaxScrollPosition: $datesMaxScrollPosition');
         log('chartToSmallPreviewRatio: $chartToSmallPreviewRatio');
-        log('smallPreviewToChartRatio: $smallPreviewToChartRatio');
         log('_chartScrollController.position.maxScrollExtent: ${_chartScrollController.position.maxScrollExtent}');
         log('_datesScrollController.position.maxScrollExtent: ${_datesScrollController.position.maxScrollExtent + chartViewPortSize.width}');
         log('pixels per date: ${_datesScrollController.position.maxScrollExtent / widget.chartData.items.dates.length}');
@@ -90,19 +89,11 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   Future<void> _datesScrollListener() async {}
 
   Future<void> _animateChartToPosition(double position) async {
-    setState(() => scrollingSmallPreview = true);
     await _chartScrollController.animateTo(
       position,
       duration: const Duration(milliseconds: 250),
       curve: Curves.decelerate,
     );
-    setState(() => scrollingSmallPreview = false);
-  }
-
-  void _scrollSmallPreviewToEnd() {
-    final smallPreviewOffset =
-        smallPreviewSize.width - (_smallPreviewUpdateNotifier.value.previewWidthFraction * smallPreviewSize.width);
-    _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(leftOffset: smallPreviewOffset);
   }
 
   @override
@@ -132,7 +123,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
             children: [
               Expanded(
                 child: Text(
-                  widget.chartData.title,
+                  widget.chartData.chartTitle,
                   style: boldTextTheme?.caption2Medium,
                 ),
               ),
@@ -144,47 +135,18 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
           SpacingFoundation.verticalSpace16,
-          NotificationListener(
-            onNotification: (notification) {
-              if (notification is ScrollEndNotification) {
-                scrollingChart = false;
-              } else if (notification is ScrollStartNotification) {
-                scrollingChart = true;
-              }
-              double offset = _chartScrollController.offset;
-              if (offset <= _datesScrollController.position.maxScrollExtent) {
-                _datesScrollController.jumpTo(offset);
-              } else if (offset > _datesScrollController.position.maxScrollExtent &&
-                  _datesScrollController.offset < _datesScrollController.position.maxScrollExtent) {
-                _datesScrollController.jumpTo(_datesScrollController.position.maxScrollExtent);
-              }
-              if (_chartScrollController.offset == _chartScrollController.position.maxScrollExtent) {
-                _scrollSmallPreviewToEnd();
-              } else if (!scrollingSmallPreview) {
-                final smallPreviewOffset = offset * smallPreviewToChartRatio;
-                final scrollingRightToLeft = _chartScrollController.position.userScrollDirection == ScrollDirection.reverse;
-                final shouldScrollFromStart = scrollingRightToLeft && _smallPreviewUpdateNotifier.value.leftOffset == 0;
-                if (smallPreviewOffset <= (smallPreviewSize.width * 0.65) &&
-                    (_smallPreviewUpdateNotifier.value.leftOffset > 0 || shouldScrollFromStart)) {
-                  _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
-                    leftOffset: smallPreviewOffset,
-                  );
-                }
-              }
-              return false;
-            },
-            child: datesMaxScrollPosition == null
-                ? SizedBox.fromSize(
-                    size: chartViewPortSize,
-                    child: const LoadingWidget(),
-                  )
-                : UiKitLineChartBody(
-                    scrollController: _chartScrollController,
-                    availableSize: chartViewPortSize,
-                    chartItems: widget.chartData.items,
-                    datesMaxScrollPosition: datesMaxScrollPosition,
-                  ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
-          ),
+          datesMaxScrollPosition == null
+              ? SizedBox.fromSize(size: chartViewPortSize, child: const LoadingWidget())
+              : UiKitLineChartBody(
+                  initialRatioWidth: chartToSmallPreviewRatio,
+                  tapNotifier: _tapNotifier,
+                  scrollController: _chartScrollController,
+                  selectedDataSetNotifier: _selectedDataSetNotifier,
+                  availableSize: chartViewPortSize,
+                  chartItems: widget.chartData.items,
+                  datesMaxScrollPosition: datesMaxScrollPosition,
+                  smallPreviewUpdateNotifier: _smallPreviewUpdateNotifier,
+                ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
           SpacingFoundation.verticalSpace2,
           SizedBox(
             width: viewPortComputedSize.width,
@@ -218,17 +180,29 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   _animateChartToPosition(_chartScrollController.position.maxScrollExtent);
                   return;
                 }
-                setState(() => scrollingSmallPreview = true);
                 final chartOffset = offset * chartToSmallPreviewRatio;
                 if (offset == 0) {
                   _animateChartToPosition(0);
                 } else {
                   _chartScrollController.jumpTo(chartOffset);
                 }
-                setState(() => scrollingSmallPreview = false);
               },
             ),
           ),
+          SpacingFoundation.verticalSpace12,
+          Wrap(
+            runSpacing: SpacingFoundation.verticalSpacing8,
+            spacing: SpacingFoundation.horizontalSpacing8,
+            children: widget.chartData.items
+                .map(
+                  (e) => UiKitColoredLegendChip(
+                    text: e.chartItemName,
+                    color: e.color,
+                    gradient: e.gradient,
+                  ),
+                )
+                .toList(),
+          ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
         ],
       ),
     );

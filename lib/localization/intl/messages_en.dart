@@ -218,6 +218,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Bookings": m3,
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Bookings and Invites"),
+        "BookingsHeading": MessageLookupByLibrary.simpleMessage("Bookings"),
         "Both": MessageLookupByLibrary.simpleMessage("Both"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Buddhism"),
         "BuildYOurBusiness":
@@ -447,6 +448,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "InvitePeople": MessageLookupByLibrary.simpleMessage("Invite people"),
         "InviteToFavoritePlaces": MessageLookupByLibrary.simpleMessage(
             "Invite to your \"Favorites\""),
+        "Invites": MessageLookupByLibrary.simpleMessage("Invites"),
         "InvitesNPeopleTo": m20,
         "InvitesYouTo": MessageLookupByLibrary.simpleMessage("Invites you to"),
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("Is recurrent"),

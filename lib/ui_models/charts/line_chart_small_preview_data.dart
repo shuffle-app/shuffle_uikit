@@ -1,3 +1,5 @@
+import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
+
 class LineChartSmallPreviewData {
   final double leftOffset;
   final double previewWidthFraction;
@@ -16,4 +18,22 @@ class LineChartSmallPreviewData {
       previewWidthFraction: previewWidthFraction ?? this.previewWidthFraction,
     );
   }
+}
+
+class LineChartSelectedPointData {
+  final DateTime date;
+  final List<UiKitLineChartItemData> chartItems;
+  final int selectedDataSetIndex;
+
+  LineChartSelectedPointData({
+    required this.date,
+    required this.chartItems,
+    required this.selectedDataSetIndex,
+  });
+
+  factory LineChartSelectedPointData.empty() => LineChartSelectedPointData(
+        date: DateTime.now(),
+        chartItems: [],
+        selectedDataSetIndex: -1,
+      );
 }

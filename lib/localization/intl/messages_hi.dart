@@ -220,6 +220,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Bookings": m3,
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("बुकिंग और आमंत्रण"),
+        "BookingsHeading": MessageLookupByLibrary.simpleMessage("Bookings"),
         "Both": MessageLookupByLibrary.simpleMessage("Both"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("बौद्ध धर्म"),
         "BuildYOurBusiness":
@@ -452,6 +453,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("लोगो को निमंत्रण भेजो"),
         "InviteToFavoritePlaces": MessageLookupByLibrary.simpleMessage(
             "पसंदीदा स्थानों पर आमंत्रित करें"),
+        "Invites": MessageLookupByLibrary.simpleMessage("Invites"),
         "InvitesNPeopleTo": m20,
         "InvitesYouTo":
             MessageLookupByLibrary.simpleMessage("आपको आमंत्रित करता है"),

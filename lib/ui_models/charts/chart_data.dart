@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 abstract class UiKitChartData<T> {
-  final String title;
+  final String chartTitle;
   final List<UiKitChartItem> items;
 
   UiKitChartData({
-    required this.title,
+    required this.chartTitle,
     required this.items,
   });
 }
@@ -13,11 +13,13 @@ abstract class UiKitChartData<T> {
 abstract class UiKitChartItem<T> {
   final Color? color;
   final Gradient? gradient;
+  final String chartItemName;
   final List<UiKitChartDataSet<T>> datasets;
 
   UiKitChartItem({
-    this.color,
     required this.datasets,
+    required this.chartItemName,
+    this.color,
     this.gradient,
   });
 }
@@ -50,15 +52,21 @@ class UiKitLineChartData<T> extends UiKitChartData<T> {
   UiKitLineChartData({
     required String title,
     required this.items,
-  }) : super(title: title, items: items);
+  }) : super(chartTitle: title, items: items);
 }
 
 class UiKitLineChartItemData<T> extends UiKitChartItem<T> {
   UiKitLineChartItemData({
     Color? color,
     required List<UiKitChartDataSet<T>> datasets,
+    required String chartItemName,
     Gradient? gradient,
-  }) : super(color: color, datasets: datasets, gradient: gradient);
+  }) : super(
+          color: color,
+          datasets: datasets,
+          gradient: gradient,
+          chartItemName: chartItemName,
+        );
 }
 
 class UiKitLineChartDataSet<T> extends UiKitChartDataSet<T> {

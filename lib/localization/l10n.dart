@@ -5412,6 +5412,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Invites`
+  String get Invites {
+    return Intl.message(
+      'Invites',
+      name: 'Invites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bookings`
+  String get BookingsHeading {
+    return Intl.message(
+      'Bookings',
+      name: 'BookingsHeading',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
