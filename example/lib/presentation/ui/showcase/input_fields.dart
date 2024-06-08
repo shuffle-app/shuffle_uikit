@@ -148,6 +148,41 @@ class InputFieldsGrid extends StatelessWidget {
             ],
           ),
         ),
+        SpacingFoundation.horizontalSpace16,
+        Expanded(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              UiKitSymbolsCounterInputFieldNoFill(
+                enabled: true,
+                obscureText: false,
+                maxSymbols: 25,
+                minLines: 1,
+                controller: controller,
+                hintText: 'PLACEHOLDER',
+              ),
+              SpacingFoundation.verticalSpace16,
+              UiKitSymbolsCounterInputFieldNoFill(
+                maxSymbols: 25,
+                obscureText: false,
+                enabled: false,
+                controller: controller,
+                hintText: 'PLACEHOLDER',
+              ),
+              SpacingFoundation.verticalSpace16,
+              UiKitSymbolsCounterInputFieldNoFill(
+                maxSymbols: 25,
+                obscureText: false,
+                enabled: false,
+                controller: controller,
+                hintText: 'PLACEHOLDER',
+                validator: (value) {
+                  return 'Wrong symbols';
+                },
+              )
+            ],
+          ),
+        ),
       ],
     );
   }
