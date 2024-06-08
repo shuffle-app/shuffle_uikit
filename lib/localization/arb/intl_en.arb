@@ -533,6 +533,10 @@
   "Reply": "Reply",
   "WriteTheAnswer": "Write the answer",
   "SuccessfullyAnswered": "Successfully answered",
-  "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one"
+  "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one",
+  "MinutesAgo": "{minutes}m ago",
+  "HoursAgo": "{hours}h ago",
+  "Yesterday": "Yesterday",
+  "WeekAgo": "a week ago"
 
 }

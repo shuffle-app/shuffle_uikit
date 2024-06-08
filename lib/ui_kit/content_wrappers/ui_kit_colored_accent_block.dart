@@ -7,6 +7,7 @@ class UiKitColoredAccentBlock extends StatelessWidget {
   final Widget content;
   final double? titlePadding;
   final double contentHeight;
+  final Widget? action;
 
   const UiKitColoredAccentBlock({
     Key? key,
@@ -14,6 +15,7 @@ class UiKitColoredAccentBlock extends StatelessWidget {
     required this.title,
     required this.content,
     this.color,
+    this.action,
     this.titlePadding,
   }) : super(key: key);
 
@@ -30,7 +32,13 @@ class UiKitColoredAccentBlock extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          title.paddingAll(titlePadding ?? EdgeInsetsFoundation.all16),
+          Row(
+            children: [
+              Expanded(child: title.paddingAll(titlePadding ?? EdgeInsetsFoundation.all16)),
+              SpacingFoundation.horizontalSpace16,
+              if (action != null) action!,
+            ],
+          ),
           SizedBox(
             height: contentHeight,
             child: content,
