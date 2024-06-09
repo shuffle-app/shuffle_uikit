@@ -5562,6 +5562,16 @@ class S {
       args: [],
     );
   }
+
+  /// `In any case, content will be moderated, please take care of the quality`
+  String get ContentQualityNotice {
+    return Intl.message(
+      'In any case, content will be moderated, please take care of the quality',
+      name: 'ContentQualityNotice',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

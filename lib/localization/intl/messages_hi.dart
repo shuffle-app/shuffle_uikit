@@ -262,6 +262,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Congratulations": MessageLookupByLibrary.simpleMessage("बधाई हो"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("संपर्क व्यक्ति"),
         "Contacts": MessageLookupByLibrary.simpleMessage("संपर्क"),
+        "ContentQualityNotice": MessageLookupByLibrary.simpleMessage(
+            "In any case, content will be moderated, please take care of the quality"),
         "Contest": MessageLookupByLibrary.simpleMessage("प्रतियोगिता"),
         "Continue": MessageLookupByLibrary.simpleMessage("जारी रखें"),
         "Control": MessageLookupByLibrary.simpleMessage("नियंत्रण"),

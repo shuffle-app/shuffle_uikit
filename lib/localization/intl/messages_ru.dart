@@ -263,6 +263,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ContactPerson":
             MessageLookupByLibrary.simpleMessage("Контактное лицо"),
         "Contacts": MessageLookupByLibrary.simpleMessage("Контакты"),
+        "ContentQualityNotice": MessageLookupByLibrary.simpleMessage(
+            "Контент будет проходить модерацию, ожидаем высокое качество контента"),
         "Contest": MessageLookupByLibrary.simpleMessage("Конкурс"),
         "Continue": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "Control": MessageLookupByLibrary.simpleMessage("Контроль"),

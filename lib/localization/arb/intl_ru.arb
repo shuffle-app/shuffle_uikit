@@ -537,6 +537,7 @@
   "MinutesAgo": "{minutes}м назад",
   "HoursAgo": "{hours}ч назад",
   "Yesterday": "Вчера",
-  "WeekAgo": "неделю назад"
+  "WeekAgo": "неделю назад",
+  "ContentQualityNotice": "Контент будет проходить модерацию, ожидаем высокое качество контента"
 
 }

@@ -537,6 +537,6 @@
   "MinutesAgo": "{minutes} मिनट पहले",
   "HoursAgo": "{hours} घंटे पहले",
   "Yesterday": "कल",
-  "WeekAgo": "एक सप्ताह पहले"
-
+  "WeekAgo": "एक सप्ताह पहले",
+  "ContentQualityNotice": "In any case, content will be moderated, please take care of the quality"
 }
