@@ -533,6 +533,9 @@
   "Reply": "Reply",
   "WriteTheAnswer": "Write the answer",
   "SuccessfullyAnswered": "Successfully answered",
-  "PlaceSubmittedSuccessfully":"Place submitted successfully"
-
+  "PlaceSubmittedSuccessfully":"Place submitted successfully",
+  "MinutesAgo": "{minutes}m ago",
+  "HoursAgo": "{hours}h ago",
+  "Yesterday": "Yesterday",
+  "WeekAgo": "a week ago"
 }
