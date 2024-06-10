@@ -735,11 +735,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectOption": MessageLookupByLibrary.simpleMessage("Select option"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("Select price and currency"),
-        "SelectSourSpecialty":
-            MessageLookupByLibrary.simpleMessage("Select your specialty"),
         "SelectType": m37,
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("Select your religions"),
+        "SelectYourSpecialty":
+            MessageLookupByLibrary.simpleMessage("Select your specialty"),
         "SelectionOfTheBest":
             MessageLookupByLibrary.simpleMessage("Selection of the best"),
         "Send": MessageLookupByLibrary.simpleMessage("Send"),

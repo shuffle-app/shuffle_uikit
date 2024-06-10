@@ -158,7 +158,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
             width: 1.sw - SpacingFoundation.horizontalSpacing32,
             child: UiKitElevatedInputWithSwitchingPrefix(
               focusNode: _focusNode,
-              readOnly: true,
+              readOnly: false,
               controller: widget.searchController,
               hintText: S.of(context).Search,
               suffixIcon: SpacingFoundation.none,

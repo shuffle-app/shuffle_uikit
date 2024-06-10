@@ -5574,10 +5574,10 @@ class S {
   }
 
   /// `Select your specialty`
-  String get SelectSourSpecialty {
+  String get SelectYourSpecialty {
     return Intl.message(
       'Select your specialty',
-      name: 'SelectSourSpecialty',
+      name: 'SelectYourSpecialty',
       desc: '',
       args: [],
     );
