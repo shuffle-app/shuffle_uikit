@@ -538,5 +538,7 @@
   "HoursAgo": "{hours}h ago",
   "Yesterday": "Yesterday",
   "WeekAgo": "a week ago",
-"ContentQualityNotice": "In any case, content will be moderated, please take care of the quality"
+  "ContentQualityNotice": "In any case, content will be moderated, please take care of the quality",
+  "SelectSourSpecialty": "Select your specialty",
+  "ContentThatIsAvailableForYouToViewWillAppearHere": "Content that is available for you to view will appear here"
 }

@@ -538,6 +538,8 @@
   "HoursAgo": "{hours}ч назад",
   "Yesterday": "Вчера",
   "WeekAgo": "неделю назад",
-  "ContentQualityNotice": "Контент будет проходить модерацию, ожидаем высокое качество контента"
+  "ContentQualityNotice": "Контент будет проходить модерацию, ожидаем высокое качество контента",
+  "SelectSourSpecialty": "Выберите свою специальность",
+  "ContentThatIsAvailableForYouToViewWillAppearHere": "Контент, доступный вам для просмотра, появится здесь"
 
 }

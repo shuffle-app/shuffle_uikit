@@ -5572,6 +5572,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Select your specialty`
+  String get SelectSourSpecialty {
+    return Intl.message(
+      'Select your specialty',
+      name: 'SelectSourSpecialty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content that is available for you to view will appear here`
+  String get ContentThatIsAvailableForYouToViewWillAppearHere {
+    return Intl.message(
+      'Content that is available for you to view will appear here',
+      name: 'ContentThatIsAvailableForYouToViewWillAppearHere',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
