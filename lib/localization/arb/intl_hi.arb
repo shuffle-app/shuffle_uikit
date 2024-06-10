@@ -540,5 +540,18 @@
   "WeekAgo": "एक सप्ताह पहले",
   "ContentQualityNotice": "In any case, content will be moderated, please take care of the quality",
   "SelectYourSpecialty": "Select your specialty",
-  "ContentThatIsAvailableForYouToViewWillAppearHere": "Content that is available for you to view will appear here"
+  "ContentThatIsAvailableForYouToViewWillAppearHere": "Content that is available for you to view will appear here",
+  "ToBecomeAnInfluencerYouNeedToDo": "To become an influencer you need to do",
+  "CountVideoReaction": "{count} Video-Reaction",
+  "CountReviews": "{count} Reviews",
+  "YourProgress": "Your progress",
+  "TheseContentIsOnYourOtherLists": "ये सामग्री आपकी अन्य सूचियों पर है ।  जोड़े जाने पर, इसे वर्तमान से हटा दिया जाएगा । ",
+  "TheBestParties": "सबसे अच्छी पार्टियां",
+  "MustVisitTechnologyConf": "प्रौद्योगिकी सम्मेलन का दौरा करना चाहिए",
+  "SharedWithYou": "आपके साथ साझा किया गया",
+  "TheBestTechnologiesConf": "सर्वश्रेष्ठ प्रौद्योगिकी सम्मेलन",
+  "TheBestTechConf": "सर्वश्रेष्ठ तकनीकी सम्मेलन",
+  "AddToMyFavorites": "मेरे पसंदीदा में जोड़ें",
+  "TheBestTechListSuccessfullyAdded": "सूची\" सर्वश्रेष्ठ टेक्नोलॉजीज कॉन्फ \" सफलतापूर्वक जोड़ा गया"
+
 }
