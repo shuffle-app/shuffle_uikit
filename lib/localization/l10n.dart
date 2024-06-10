@@ -1,6 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -18,17 +19,15 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+        _current != null, 'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -616,8 +615,7 @@ class S {
   }
 
   /// `Top {amountOfTopDonators} donators receive x{multiplier} points`
-  String TopNDonatorsReceiveXPoints(
-      Object amountOfTopDonators, Object multiplier) {
+  String TopNDonatorsReceiveXPoints(Object amountOfTopDonators, Object multiplier) {
     return Intl.message(
       'Top $amountOfTopDonators donators receive x$multiplier points',
       name: 'TopNDonatorsReceiveXPoints',
@@ -5523,31 +5521,171 @@ class S {
     );
   }
 
-  /// `Album`
-  String get Album {
+  /// `{minutes}m ago`
+  String MinutesAgo(Object minutes) {
     return Intl.message(
-      'Album',
-      name: 'Album',
+      '${minutes}m ago',
+      name: 'MinutesAgo',
+      desc: '',
+      args: [minutes],
+    );
+  }
+
+  /// `{hours}h ago`
+  String HoursAgo(Object hours) {
+    return Intl.message(
+      '${hours}h ago',
+      name: 'HoursAgo',
+      desc: '',
+      args: [hours],
+    );
+  }
+
+  /// `Yesterday`
+  String get Yesterday {
+    return Intl.message(
+      'Yesterday',
+      name: 'Yesterday',
       desc: '',
       args: [],
     );
   }
 
-  /// `You must select at least one video`
-  String get MustSelectVideo {
+  /// `a week ago`
+  String get WeekAgo {
     return Intl.message(
-      'You must select at least one video',
-      name: 'MustSelectVideo',
+      'a week ago',
+      name: 'WeekAgo',
       desc: '',
       args: [],
     );
   }
 
-  /// `Back`
-  String get Back {
+  /// `To become an influencer you need to do`
+  String get ToBecomeAnInfluencerYouNeedToDo {
     return Intl.message(
-      'Back',
-      name: 'Back',
+      'To become an influencer you need to do',
+      name: 'ToBecomeAnInfluencerYouNeedToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} Video-Reaction`
+  String CountVideoReaction(Object count) {
+    return Intl.message(
+      '$count Video-Reaction',
+      name: 'CountVideoReaction',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} Reviews`
+  String CountReviews(Object count) {
+    return Intl.message(
+      '$count Reviews',
+      name: 'CountReviews',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Your progress`
+  String get YourProgress {
+    return Intl.message(
+      'Your progress',
+      name: 'YourProgress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `In any case, content will be moderated, please take care of the quality`
+  String get ContentQualityNotice {
+    return Intl.message(
+      'In any case, content will be moderated, please take care of the quality',
+      name: 'ContentQualityNotice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `These content is on your other lists. When added, it will be removed from the current.`
+  String get TheseContentIsOnYourOtherLists {
+    return Intl.message(
+      'These content is on your other lists. When added, it will be removed from the current.',
+      name: 'TheseContentIsOnYourOtherLists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best parties`
+  String get TheBestParties {
+    return Intl.message(
+      'The best parties',
+      name: 'TheBestParties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Must visit technology conf`
+  String get MustVisitTechnologyConf {
+    return Intl.message(
+      'Must visit technology conf',
+      name: 'MustVisitTechnologyConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `shared with you`
+  String get SharedWithYou {
+    return Intl.message(
+      'shared with you',
+      name: 'SharedWithYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best technologies conf`
+  String get TheBestTechnologiesConf {
+    return Intl.message(
+      'The best technologies conf',
+      name: 'TheBestTechnologiesConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best tech conf`
+  String get TheBestTechConf {
+    return Intl.message(
+      'The best tech conf',
+      name: 'TheBestTechConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to my favorites`
+  String get AddToMyFavorites {
+    return Intl.message(
+      'Add to my favorites',
+      name: 'AddToMyFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `List “The best technologies conf” successfully added`
+  String get TheBestTechListSuccessfullyAdded {
+    return Intl.message(
+      'List “The best technologies conf” successfully added',
+      name: 'TheBestTechListSuccessfullyAdded',
       desc: '',
       args: [],
     );
