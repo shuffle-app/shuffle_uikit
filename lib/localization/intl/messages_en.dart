@@ -178,6 +178,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Describe your experience"),
         "AddReviewPopOverText": MessageLookupByLibrary.simpleMessage(
             "Write an addition to the review that will be useful for other visitors."),
+        "AddToMyFavorites":
+            MessageLookupByLibrary.simpleMessage("Add to my favorites"),
         "AddToPersonalTop":
             MessageLookupByLibrary.simpleMessage("Add to personal TOP"),
         "AddYourselfToList":
@@ -496,6 +498,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("More about this event"),
         "MoreAboutThisPlace":
             MessageLookupByLibrary.simpleMessage("More about this place"),
+        "MustVisitTechnologyConf":
+            MessageLookupByLibrary.simpleMessage("Must visit technology conf"),
         "MyCard": MessageLookupByLibrary.simpleMessage("My card"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("My events"),
         "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
@@ -749,6 +753,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SetWorkHours":
             MessageLookupByLibrary.simpleMessage("Set work schedule"),
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "SharedWithYou":
+            MessageLookupByLibrary.simpleMessage("shared with you"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("Show result"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
         "ShuffleHiwHint": m40,
@@ -807,6 +813,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Terms of Service"),
         "ThatsAllForNow":
             MessageLookupByLibrary.simpleMessage("That\'s all for now!"),
+        "TheBestParties":
+            MessageLookupByLibrary.simpleMessage("The best parties"),
+        "TheBestTechConf":
+            MessageLookupByLibrary.simpleMessage("The best tech conf"),
+        "TheBestTechListSuccessfullyAdded":
+            MessageLookupByLibrary.simpleMessage(
+                "List “The best technologies conf” successfully added"),
+        "TheBestTechnologiesConf":
+            MessageLookupByLibrary.simpleMessage("The best technologies conf"),
         "TheMoreInfoWeAboutYouGetTheBetter":
             MessageLookupByLibrary.simpleMessage(
                 "The more info we get about you, the better"),
@@ -814,6 +829,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "The more info we get, the better "),
         "ThenCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Then check this out"),
+        "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
+            "These content is on your other lists. When added, it will be removed from the current."),
         "ThisIs": MessageLookupByLibrary.simpleMessage("This is"),
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "Through a non-\naggregator system \nespecially for you"),

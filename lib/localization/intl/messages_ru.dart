@@ -178,6 +178,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Опишите ваш опыт"),
         "AddReviewPopOverText": MessageLookupByLibrary.simpleMessage(
             "Напишите дополнение к отзыву, которое будет полезно для других посетителей"),
+        "AddToMyFavorites":
+            MessageLookupByLibrary.simpleMessage("Добавить в избранное"),
         "AddToPersonalTop":
             MessageLookupByLibrary.simpleMessage("Добавить в личный ТОП"),
         "AddYourselfToList":
@@ -501,6 +503,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Больше об этом событии"),
         "MoreAboutThisPlace":
             MessageLookupByLibrary.simpleMessage("Больше об этом месте"),
+        "MustVisitTechnologyConf": MessageLookupByLibrary.simpleMessage(
+            "Обязательно посетите технологическую конференцию"),
         "MyCard": MessageLookupByLibrary.simpleMessage("Профиль"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("Мои события"),
         "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
@@ -757,6 +761,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Services": MessageLookupByLibrary.simpleMessage("Услуги"),
         "SetWorkHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "Settings": MessageLookupByLibrary.simpleMessage("Настройки"),
+        "SharedWithYou":
+            MessageLookupByLibrary.simpleMessage("поделилась с вами"),
         "ShowResult":
             MessageLookupByLibrary.simpleMessage("Показать результат"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
@@ -819,6 +825,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "TermsOfService": MessageLookupByLibrary.simpleMessage(
             "Условия использования и оказания услуг"),
         "ThatsAllForNow": MessageLookupByLibrary.simpleMessage("Пока это всё!"),
+        "TheBestParties":
+            MessageLookupByLibrary.simpleMessage("Лучшие вечеринки"),
+        "TheBestTechConf":
+            MessageLookupByLibrary.simpleMessage("Лучшая тех конференция"),
+        "TheBestTechListSuccessfullyAdded":
+            MessageLookupByLibrary.simpleMessage(
+                "Список “Лучшая тех конференция” успешно добавлен"),
+        "TheBestTechnologiesConf": MessageLookupByLibrary.simpleMessage(
+            "Лучшая техническая конференция"),
         "TheMoreInfoWeAboutYouGetTheBetter":
             MessageLookupByLibrary.simpleMessage(
                 "Чем больше мы узнаем о тебе, тем лучше"),
@@ -826,6 +841,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Чем больше инфы мы получим, тем лучше"),
         "ThenCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Тогда зацените это"),
+        "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
+            "Этот контент есть в других ваших списках. После добавления он будет удален из текущего."),
         "ThisIs": MessageLookupByLibrary.simpleMessage("Это"),
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "Неагрегаторная система специально для вас"),

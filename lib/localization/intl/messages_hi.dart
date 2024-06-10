@@ -181,6 +181,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("अपने अनुभव का वर्णन करें"),
         "AddReviewPopOverText": MessageLookupByLibrary.simpleMessage(
             "एक समीक्षा जोड़ें जो अन्य आगंतुकों के लिए उपयोगी होगी"),
+        "AddToMyFavorites":
+            MessageLookupByLibrary.simpleMessage("मेरे पसंदीदा में जोड़ें"),
         "AddToPersonalTop":
             MessageLookupByLibrary.simpleMessage("व्यक्तिगत शीर्ष पर जोड़ें"),
         "AddYourselfToList":
@@ -503,6 +505,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "इस घटना के बारे में और जानें"),
         "MoreAboutThisPlace": MessageLookupByLibrary.simpleMessage(
             "इस स्थान के बारे में और जानें"),
+        "MustVisitTechnologyConf": MessageLookupByLibrary.simpleMessage(
+            "प्रौद्योगिकी सम्मेलन का दौरा करना चाहिए"),
         "MyCard": MessageLookupByLibrary.simpleMessage("मेरा कार्ड"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("मेरी घटनाएँ"),
         "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
@@ -754,6 +758,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SetWorkHours":
             MessageLookupByLibrary.simpleMessage("कार्य का समय निर्धारित करें"),
         "Settings": MessageLookupByLibrary.simpleMessage("सेटिंग्स"),
+        "SharedWithYou":
+            MessageLookupByLibrary.simpleMessage("आपके साथ साझा किया गया"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("परिणाम दिखाओ"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("मिश्रण"),
         "ShuffleHiwHint": m40,
@@ -814,6 +820,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("सेवा की शर्तें"),
         "ThatsAllForNow":
             MessageLookupByLibrary.simpleMessage("अभी के लिए इतना ही!"),
+        "TheBestParties":
+            MessageLookupByLibrary.simpleMessage("सबसे अच्छी पार्टियां"),
+        "TheBestTechConf":
+            MessageLookupByLibrary.simpleMessage("सर्वश्रेष्ठ तकनीकी सम्मेलन"),
+        "TheBestTechListSuccessfullyAdded": MessageLookupByLibrary.simpleMessage(
+            "सूची\" सर्वश्रेष्ठ टेक्नोलॉजीज कॉन्फ \" सफलतापूर्वक जोड़ा गया"),
+        "TheBestTechnologiesConf": MessageLookupByLibrary.simpleMessage(
+            "सर्वश्रेष्ठ प्रौद्योगिकी सम्मेलन"),
         "TheMoreInfoWeAboutYouGetTheBetter":
             MessageLookupByLibrary.simpleMessage(
                 "हमें आपके बारे में जितनी अधिक जानकारी मिलेगी, उतना बेहतर होगा"),
@@ -821,6 +835,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "हमें जितनी अधिक जानकारी मिलेगी, उतना बेहतर होगा"),
         "ThenCheckThisOut":
             MessageLookupByLibrary.simpleMessage("फिर इसे जांचें"),
+        "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
+            "ये सामग्री आपकी अन्य सूचियों पर है ।  जोड़े जाने पर, इसे वर्तमान से हटा दिया जाएगा । "),
         "ThisIs": MessageLookupByLibrary.simpleMessage("यह है"),
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "एक गैर के माध्यम से-\nएग्रीगेटर प्रणाली\nविशेष रूप से आप के लिए"),
