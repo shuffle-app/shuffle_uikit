@@ -5522,6 +5522,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Album`
+  String get Album {
+    return Intl.message(
+      'Album',
+      name: 'Album',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You must select at least one video`
+  String get MustSelectVideo {
+    return Intl.message(
+      'You must select at least one video',
+      name: 'MustSelectVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back`
+  String get Back {
+    return Intl.message(
+      'Back',
+      name: 'Back',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

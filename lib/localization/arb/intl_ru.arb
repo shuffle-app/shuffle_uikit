@@ -533,6 +533,8 @@
   "Reply": "Ответить",
   "WriteTheAnswer": "Напишите ответ",
   "SuccessfullyAnswered": "Успешно получен ответ",
-  "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального"
-
+  "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального",
+  "Album": "Альбом",
+  "MustSelectVideo": "Вы должны выбрать хотя бы одно видео",
+  "Back": "Назад"
 }

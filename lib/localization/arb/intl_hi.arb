@@ -532,7 +532,11 @@
   "Feedback": "प्रतिक्रिया",
   "Reply": "जवाब दे दो",
   "WriteTheAnswer": "उत्तर लिखें",
+  "MustSelectVideo": "आपको कम से कम एक वीडियो चुनना होगा",
   "SuccessfullyAnswered": "सफलतापूर्वक उत्तर दिया",
-  "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one"
+  "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one",
+  "Album": "एल्बम",
+  "Back": "वापस"
+
 
 }

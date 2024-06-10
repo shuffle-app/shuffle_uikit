@@ -175,6 +175,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Добавиться в список"),
         "Address": MessageLookupByLibrary.simpleMessage("Адрес"),
+        "Album": MessageLookupByLibrary.simpleMessage("Альбом"),
         "Albums": MessageLookupByLibrary.simpleMessage("Альбомы"),
         "AllAlbums": MessageLookupByLibrary.simpleMessage("Все альбомы"),
         "AllAppNotification":
@@ -208,6 +209,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Atheism": MessageLookupByLibrary.simpleMessage("Атеизм"),
         "Athlete": MessageLookupByLibrary.simpleMessage("Спортсмен"),
         "AverageBill": MessageLookupByLibrary.simpleMessage("Средний чек"),
+        "Back": MessageLookupByLibrary.simpleMessage("Назад"),
         "Balance": MessageLookupByLibrary.simpleMessage("Баланс "),
         "BaseProperties":
             MessageLookupByLibrary.simpleMessage("Базовые свойства"),
@@ -487,6 +489,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Больше об этом событии"),
         "MoreAboutThisPlace":
             MessageLookupByLibrary.simpleMessage("Больше об этом месте"),
+        "MustSelectVideo": MessageLookupByLibrary.simpleMessage(
+            "Вы должны выбрать хотя бы одно видео"),
         "MyCard": MessageLookupByLibrary.simpleMessage("Профиль"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("Мои события"),
         "NFT": MessageLookupByLibrary.simpleMessage("NFT"),

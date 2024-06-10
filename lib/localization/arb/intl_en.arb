@@ -533,6 +533,9 @@
   "Reply": "Reply",
   "WriteTheAnswer": "Write the answer",
   "SuccessfullyAnswered": "Successfully answered",
-  "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one"
+  "RangeEndValueIsLessThanBeginingOne": "Range end value is less than begining one",
+  "Album": "Album",
+  "MustSelectVideo": "You must select at least one video",
+  "Back": "Back"
 
 }

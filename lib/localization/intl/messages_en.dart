@@ -175,6 +175,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Add yourself to list"),
         "Address": MessageLookupByLibrary.simpleMessage("Address"),
+        "Album": MessageLookupByLibrary.simpleMessage("Album"),
         "Albums": MessageLookupByLibrary.simpleMessage("Albums"),
         "AllAlbums": MessageLookupByLibrary.simpleMessage("All albums"),
         "AllAppNotification":
@@ -207,6 +208,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Atheism": MessageLookupByLibrary.simpleMessage("Atheism"),
         "Athlete": MessageLookupByLibrary.simpleMessage("Athlete"),
         "AverageBill": MessageLookupByLibrary.simpleMessage("Average bill"),
+        "Back": MessageLookupByLibrary.simpleMessage("Back"),
         "Balance": MessageLookupByLibrary.simpleMessage("Balance"),
         "BaseProperties":
             MessageLookupByLibrary.simpleMessage("Base properties"),
@@ -482,6 +484,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("More about this event"),
         "MoreAboutThisPlace":
             MessageLookupByLibrary.simpleMessage("More about this place"),
+        "MustSelectVideo": MessageLookupByLibrary.simpleMessage(
+            "You must select at least one video"),
         "MyCard": MessageLookupByLibrary.simpleMessage("My card"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("My events"),
         "NFT": MessageLookupByLibrary.simpleMessage("NFT"),

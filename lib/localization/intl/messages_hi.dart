@@ -178,6 +178,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("स्वयं को सूची में जोड़ें"),
         "Address": MessageLookupByLibrary.simpleMessage("पता"),
+        "Album": MessageLookupByLibrary.simpleMessage("एल्बम"),
         "Albums": MessageLookupByLibrary.simpleMessage("एल्बम"),
         "AllAlbums": MessageLookupByLibrary.simpleMessage("सभी एल्बम"),
         "AllAppNotification":
@@ -210,6 +211,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Atheism": MessageLookupByLibrary.simpleMessage("नास्तिकता"),
         "Athlete": MessageLookupByLibrary.simpleMessage("एथलीट"),
         "AverageBill": MessageLookupByLibrary.simpleMessage("औसत बिल"),
+        "Back": MessageLookupByLibrary.simpleMessage("वापस"),
         "Balance": MessageLookupByLibrary.simpleMessage("शेष राशि"),
         "BaseProperties": MessageLookupByLibrary.simpleMessage("आधार गुण"),
         "BasedOnYourActivityWeDetermineYourCondition":
@@ -489,6 +491,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "इस घटना के बारे में और जानें"),
         "MoreAboutThisPlace": MessageLookupByLibrary.simpleMessage(
             "इस स्थान के बारे में और जानें"),
+        "MustSelectVideo": MessageLookupByLibrary.simpleMessage(
+            "आपको कम से कम एक वीडियो चुनना होगा"),
         "MyCard": MessageLookupByLibrary.simpleMessage("मेरा कार्ड"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("मेरी घटनाएँ"),
         "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
