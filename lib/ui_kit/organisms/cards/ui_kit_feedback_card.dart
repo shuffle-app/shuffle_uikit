@@ -93,12 +93,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                 ],
               ),
             ],
-          ).paddingOnly(
-            top: EdgeInsetsFoundation.vertical16,
-            bottom: EdgeInsetsFoundation.vertical16,
-            left: EdgeInsetsFoundation.horizontal32,
-            right: EdgeInsetsFoundation.horizontal16,
-          ),
+          ).paddingAll(EdgeInsetsFoundation.all16),
         ),
       ),
     );

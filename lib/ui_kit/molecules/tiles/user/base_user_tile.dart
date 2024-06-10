@@ -10,14 +10,14 @@ abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
   final VoidCallback? onTap;
 
   const BaseUserTile({
-    Key? key,
+    super.key,
     this.name,
     this.avatarUrl,
     this.username,
     this.avatarBorder,
     this.trailing,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -55,11 +55,6 @@ abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
                 imageUrl: avatarUrl,
                 userName: name ?? '',
               ),
-              // BorderedUserCircleAvatar(
-              //   imageUrl: avatarUrl,
-              //   size: 37.r,
-              //   border: avatarBorder,
-              // ),
               SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: Column(

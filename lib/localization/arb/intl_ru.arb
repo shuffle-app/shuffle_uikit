@@ -533,6 +533,11 @@
   "Reply": "Ответить",
   "WriteTheAnswer": "Напишите ответ",
   "SuccessfullyAnswered": "Успешно получен ответ",
-  "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального"
+  "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального",
+  "MinutesAgo": "{minutes}м назад",
+  "HoursAgo": "{hours}ч назад",
+  "Yesterday": "Вчера",
+  "WeekAgo": "неделю назад",
+  "ContentQualityNotice": "Контент будет проходить модерацию, ожидаем высокое качество контента"
 
 }

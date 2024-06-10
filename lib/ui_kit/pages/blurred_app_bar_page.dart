@@ -28,11 +28,10 @@ class BlurredAppBarPage extends StatelessWidget {
   final double? bodyBottomSpace;
   final EdgeInsets? childrenPadding;
   final Key? animatedListKey;
-
-  // final PreferredSizeWidget? bottom;
+  final String? onIWidgetInfoString;
 
   const BlurredAppBarPage({
-    Key? key,
+    super.key,
     this.title = '',
     this.customTitle,
     this.children,
@@ -54,10 +53,10 @@ class BlurredAppBarPage extends StatelessWidget {
     this.childrenPadding,
     this.animatedListKey,
     this.bodyBottomSpace,
+    this.onIWidgetInfoString,
   })  : assert(childrenBuilder == null || childrenCount != null,
             'childrenCount must be not null if childrenBuilder is not null'),
-        assert(childrenBuilder != null || children != null, 'childrenBuilder or body must be not null'),
-        super(key: key);
+        assert(childrenBuilder != null || children != null, 'childrenBuilder or body must be not null');
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +87,7 @@ class BlurredAppBarPage extends StatelessWidget {
                   collapsedHeight: canFoldAppBar ?? true ? toolbarHeight : expandedHeight,
                   expandedHeight: expandedHeight,
                   flexibleSpace: CustomAppBar(
+                    onIWidgetInfoString: onIWidgetInfoString,
                     hideBody: hideAppBarBody,
                     leading: leading,
                     bodySpacing: appBarBody == null ? SpacingFoundation.zero : SpacingFoundation.verticalSpacing16,

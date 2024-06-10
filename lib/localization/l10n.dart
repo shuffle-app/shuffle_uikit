@@ -5522,6 +5522,56 @@ class S {
       args: [],
     );
   }
+
+  /// `{minutes}m ago`
+  String MinutesAgo(Object minutes) {
+    return Intl.message(
+      '${minutes}m ago',
+      name: 'MinutesAgo',
+      desc: '',
+      args: [minutes],
+    );
+  }
+
+  /// `{hours}h ago`
+  String HoursAgo(Object hours) {
+    return Intl.message(
+      '${hours}h ago',
+      name: 'HoursAgo',
+      desc: '',
+      args: [hours],
+    );
+  }
+
+  /// `Yesterday`
+  String get Yesterday {
+    return Intl.message(
+      'Yesterday',
+      name: 'Yesterday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `a week ago`
+  String get WeekAgo {
+    return Intl.message(
+      'a week ago',
+      name: 'WeekAgo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `In any case, content will be moderated, please take care of the quality`
+  String get ContentQualityNotice {
+    return Intl.message(
+      'In any case, content will be moderated, please take care of the quality',
+      name: 'ContentQualityNotice',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
