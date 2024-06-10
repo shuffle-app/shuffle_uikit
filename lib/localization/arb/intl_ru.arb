@@ -538,6 +538,10 @@
   "HoursAgo": "{hours}ч назад",
   "Yesterday": "Вчера",
   "WeekAgo": "неделю назад",
-  "ContentQualityNotice": "Контент будет проходить модерацию, ожидаем высокое качество контента"
+  "ContentQualityNotice": "Контент будет проходить модерацию, ожидаем высокое качество контента",
+  "ToBecomeAnInfluencerYouNeedToDo": "Чтобы стать инфлюенсером вам необходимо выполнить",
+  "CountVideoReaction": "{count} Видео-Реакций",
+  "CountReviews": "{count} Отзывов",
+  "YourProgress": "Ваш прогресс"
 
 }

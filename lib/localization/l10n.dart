@@ -5572,6 +5572,46 @@ class S {
       args: [],
     );
   }
+
+  /// `To become an influencer you need to do`
+  String get ToBecomeAnInfluencerYouNeedToDo {
+    return Intl.message(
+      'To become an influencer you need to do',
+      name: 'ToBecomeAnInfluencerYouNeedToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} Video-Reaction`
+  String CountVideoReaction(Object count) {
+    return Intl.message(
+      '$count Video-Reaction',
+      name: 'CountVideoReaction',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} Reviews`
+  String CountReviews(Object count) {
+    return Intl.message(
+      '$count Reviews',
+      name: 'CountReviews',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Your progress`
+  String get YourProgress {
+    return Intl.message(
+      'Your progress',
+      name: 'YourProgress',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
