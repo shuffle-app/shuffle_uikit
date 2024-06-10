@@ -5572,6 +5572,86 @@ class S {
       args: [],
     );
   }
+
+  /// `These content is on your other lists. When added, it will be removed from the current.`
+  String get TheseContentIsOnYourOtherLists {
+    return Intl.message(
+      'These content is on your other lists. When added, it will be removed from the current.',
+      name: 'TheseContentIsOnYourOtherLists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best parties`
+  String get TheBestParties {
+    return Intl.message(
+      'The best parties',
+      name: 'TheBestParties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Must visit technology conf`
+  String get MustVisitTechnologyConf {
+    return Intl.message(
+      'Must visit technology conf',
+      name: 'MustVisitTechnologyConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `shared with you`
+  String get SharedWithYou {
+    return Intl.message(
+      'shared with you',
+      name: 'SharedWithYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best technologies conf`
+  String get TheBestTechnologiesConf {
+    return Intl.message(
+      'The best technologies conf',
+      name: 'TheBestTechnologiesConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best tech conf`
+  String get TheBestTechConf {
+    return Intl.message(
+      'The best tech conf',
+      name: 'TheBestTechConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to my favorites`
+  String get AddToMyFavorites {
+    return Intl.message(
+      'Add to my favorites',
+      name: 'AddToMyFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `List “The best technologies conf” successfully added`
+  String get TheBestTechListSuccessfullyAdded {
+    return Intl.message(
+      'List “The best technologies conf” successfully added',
+      name: 'TheBestTechListSuccessfullyAdded',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
