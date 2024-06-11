@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 extension DateTimeTimeAgoExtention on DateTime {
   String get timeAgo {
-    return '${DateTime.now().difference(this).inDays} days ago';
+    return formatDifference(this);
   }
 
   bool get isAtSameDay {

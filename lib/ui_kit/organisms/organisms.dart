@@ -36,6 +36,7 @@ export 'cards/ui_kit_decorated_action_card.dart';
 export 'cards/ui_kit_donation_card.dart';
 export 'cards/ui_kit_extended_feedback_card.dart';
 export 'cards/ui_kit_extended_influencer_feedback_card.dart';
+export 'cards/ui_kit_extended_influencer_feedback_card_without_bottom.dart';
 export 'cards/ui_kit_feedback_card.dart';
 export 'cards/ui_kit_find_someone_card.dart';
 export 'cards/ui_kit_gradientable_stats_card.dart';

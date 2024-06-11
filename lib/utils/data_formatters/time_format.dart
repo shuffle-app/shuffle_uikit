@@ -56,14 +56,14 @@ String formatDifference(DateTime date) {
     final differenceInHours = DateTime.now().difference(date).inHours;
     if (differenceInHours == 0) {
       final differenceInMinutes = DateTime.now().difference(date).inMinutes;
-      return '${differenceInMinutes}m ago';
+      return S.current.MinutesAgo(differenceInMinutes);
     }
 
-    return '${differenceInHours}h ago';
+    return S.current.HoursAgo(differenceInHours);
   } else if (difference == 1) {
-    return 'yesterday';
+    return S.current.Yesterday;
   } else if (difference > 1 && difference < 7) {
-    return 'a week ago';
+    return S.current.WeekAgo;
   } else {
     return DateFormat('dd.MM.yyyy').format(date);
   }
