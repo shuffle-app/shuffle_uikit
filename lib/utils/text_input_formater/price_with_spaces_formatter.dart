@@ -12,12 +12,6 @@ class PriceWithSpacesFormatter extends TextInputFormatter {
       newText = beforeDecimal + afterDecimal;
     }
 
-    if (newText.endsWith('.') || newText.endsWith(',')) {
-      if (newText.length == firstDecimalPointIndex + 1) {
-        newText = newText.substring(0, newText.length - 1);
-      }
-    }
-
     int decimalPointIndex = newText.indexOf(RegExp(r'[.,]'));
     String integerPart;
     String decimalPart = '';
@@ -40,18 +34,27 @@ class PriceWithSpacesFormatter extends TextInputFormatter {
     String formattedText = formattedIntegerPart + decimalPart;
 
     return newValue.copyWith(
-      text: formattedText,
+      text: formattedText.replaceMultipleDotsAndCommas(),
       selection: TextSelection.collapsed(offset: formattedText.length),
     );
   }
 
   String formatStringUpdate(String text) {
-    return formatEditUpdate(TextEditingValue.empty, TextEditingValue(text: text)).text;
+    return formatEditUpdate(TextEditingValue.empty, TextEditingValue(text: text)).text.replaceMultipleDotsAndCommas();
   }
 }
 
 extension StringExtension on String {
   String replaceMultipleDotsAndCommas() {
     return replaceAll(RegExp(r'[.,]'), '.');
+  }
+}
+
+extension StringFormater on String {
+  String removeTrailingDecimal() {
+    if (endsWith('.') || endsWith(',')) {
+      return substring(0, length - 1);
+    }
+    return this;
   }
 }
