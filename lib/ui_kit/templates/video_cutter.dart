@@ -41,8 +41,7 @@ class _VideoCutterState extends State<VideoCutter> {
             widget.videoFile,
             maxDuration: const Duration(seconds: 60),
             trimStyle: TrimSliderStyle(
-              leftIcon: ShuffleUiKitIcons.chevronleft,
-              rightIcon: ShuffleUiKitIcons.chevronright,
+              onTrimmingColor: ColorsFoundation.proUserAvatarBorder,
             ),
           );
           await _videoEditorController!.initialize();
@@ -134,14 +133,14 @@ class _VideoCutterState extends State<VideoCutter> {
                 bottom: 0,
                 child: Container(
                   width: size.maxWidth,
-                  height: size.maxHeight * 0.135,
+                  height: size.maxHeight * 0.14,
                   color: colorScheme?.surface.withOpacity(0.5),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       SpacingFoundation.horizontalSpace8,
                       AnimatedBuilder(
-                        animation: _videoEditorController!,
+                        animation: _videoEditorController!.video,
                         builder: (context, child) {
                           final playing = _videoEditorController?.video.value.isPlaying ?? false;
 

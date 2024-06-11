@@ -98,6 +98,8 @@ dependencies:
   image_picker: ^1.1.1
   image: ^4.1.7
   infinite_carousel: ^1.1.1
+  video_editor:
+    path: ../video_editor
 
 dependency_overrides:
   watcher: ^1.1.0
