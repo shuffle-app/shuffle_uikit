@@ -550,5 +550,10 @@
   "TheBestTechnologiesConf": "सर्वश्रेष्ठ प्रौद्योगिकी सम्मेलन",
   "TheBestTechConf": "सर्वश्रेष्ठ तकनीकी सम्मेलन",
   "AddToMyFavorites": "मेरे पसंदीदा में जोड़ें",
-  "TheBestTechListSuccessfullyAdded": "सूची\" सर्वश्रेष्ठ टेक्नोलॉजीज कॉन्फ \" सफलतापूर्वक जोड़ा गया"
+  "TheBestTechListSuccessfullyAdded": "सूची\" सर्वश्रेष्ठ टेक्नोलॉजीज कॉन्फ \" सफलतापूर्वक जोड़ा गया",
+  "RecentlyAdded": "हाल ही में जोड़ा गया",
+  "Date": "तारीख",
+  "Properties": "गुण",
+  "SearchOrAddTag": "टैग खोजें या जोड़ें",
+  "ActivityTypes": "गतिविधि प्रकार"
 }

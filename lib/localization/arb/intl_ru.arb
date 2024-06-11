@@ -550,5 +550,10 @@
   "TheBestTechnologiesConf": "Лучшая техническая конференция",
   "TheBestTechConf": "Лучшая тех конференция",
   "AddToMyFavorites": "Добавить в избранное",
-  "TheBestTechListSuccessfullyAdded": "Список “Лучшая тех конференция” успешно добавлен"
+  "TheBestTechListSuccessfullyAdded": "Список “Лучшая тех конференция” успешно добавлен",
+  "RecentlyAdded": "Недавно добавлено",
+  "SearchOrAddTag": "Поиск или добавить тег",
+  "Date": "Дата",
+  "Properties": "Свойства",
+  "ActivityTypes": "Типы активности"
 }

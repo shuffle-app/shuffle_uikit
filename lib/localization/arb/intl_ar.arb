@@ -550,5 +550,10 @@
   "TheBestTechnologiesConf": "The best technologies conf",
   "TheBestTechConf": "The best tech conf",
   "TheBestTechListSuccessfullyAdded": "List “The best technologies conf” successfully added",
-  "AddToMyFavorites": "Add to my favorites"
+  "AddToMyFavorites": "Add to my favorites",
+  "RecentlyAdded": "Recently added",
+  "Date": "Date",
+  "Properties": "Properties",
+  "SearchOrAddTag": "Search or add tag",
+  "ActivityTypes": "Activity types"
 }

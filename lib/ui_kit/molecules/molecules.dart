@@ -95,4 +95,6 @@ export 'snack_bars/info_snack_bar.dart';
 export 'snack_bars/neutral_snack_bar.dart';
 export 'snack_bars/success_snack_bar.dart';
 export 'snack_bars/warning_snack_bar.dart';
-
+export 'chips/ui_kit_cloud_chip.dart';
+export 'tiles/ui_kit_properties_type_tile.dart';
+export 'tiles/ui_kit_hover_animation_tile.dart';

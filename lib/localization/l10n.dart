@@ -5563,6 +5563,46 @@ class S {
     );
   }
 
+  /// `To become an influencer you need to do`
+  String get ToBecomeAnInfluencerYouNeedToDo {
+    return Intl.message(
+      'To become an influencer you need to do',
+      name: 'ToBecomeAnInfluencerYouNeedToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} Video-Reaction`
+  String CountVideoReaction(Object count) {
+    return Intl.message(
+      '$count Video-Reaction',
+      name: 'CountVideoReaction',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} Reviews`
+  String CountReviews(Object count) {
+    return Intl.message(
+      '$count Reviews',
+      name: 'CountReviews',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Your progress`
+  String get YourProgress {
+    return Intl.message(
+      'Your progress',
+      name: 'YourProgress',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `In any case, content will be moderated, please take care of the quality`
   String get ContentQualityNotice {
     return Intl.message(
@@ -5653,41 +5693,51 @@ class S {
     );
   }
 
-  /// `To become an influencer you need to do`
-  String get ToBecomeAnInfluencerYouNeedToDo {
+  /// `Recently added`
+  String get RecentlyAdded {
     return Intl.message(
-      'To become an influencer you need to do',
-      name: 'ToBecomeAnInfluencerYouNeedToDo',
+      'Recently added',
+      name: 'RecentlyAdded',
       desc: '',
       args: [],
     );
   }
 
-  /// `{count} Video-Reaction`
-  String CountVideoReaction(Object count) {
+  /// `Date`
+  String get Date {
     return Intl.message(
-      '$count Video-Reaction',
-      name: 'CountVideoReaction',
+      'Date',
+      name: 'Date',
       desc: '',
-      args: [count],
+      args: [],
     );
   }
 
-  /// `{count} Reviews`
-  String CountReviews(Object count) {
+  /// `Properties`
+  String get Properties {
     return Intl.message(
-      '$count Reviews',
-      name: 'CountReviews',
+      'Properties',
+      name: 'Properties',
       desc: '',
-      args: [count],
+      args: [],
     );
   }
 
-  /// `Your progress`
-  String get YourProgress {
+  /// `Search or add tag`
+  String get SearchOrAddTag {
     return Intl.message(
-      'Your progress',
-      name: 'YourProgress',
+      'Search or add tag',
+      name: 'SearchOrAddTag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activity types`
+  String get ActivityTypes {
+    return Intl.message(
+      'Activity types',
+      name: 'ActivityTypes',
       desc: '',
       args: [],
     );

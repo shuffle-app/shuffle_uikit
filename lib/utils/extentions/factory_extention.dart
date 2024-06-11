@@ -122,6 +122,16 @@ extension FactoryExtention on BuildContext {
         .build(this);
   }
 
+  Widget boxIconButton({
+    required BaseUiKitButtonData data,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createBoxIconButton(
+          data: data,
+        )
+        .build(this);
+  }
+
   Widget bouncingButton({
     required BaseUiKitButtonData data,
     bool? blurred,
