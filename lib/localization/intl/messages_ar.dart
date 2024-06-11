@@ -517,6 +517,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "NewLocationHasOpenedToday": MessageLookupByLibrary.simpleMessage(
             "A new location has opened today. Come! You\'ll like it!"),
         "NewPlace": MessageLookupByLibrary.simpleMessage("New place"),
+        "News": MessageLookupByLibrary.simpleMessage("News"),
         "Next": MessageLookupByLibrary.simpleMessage("Next"),
         "NextElements": m28,
         "NextNPeople": m29,
@@ -848,6 +849,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "To allow access to send push notifications, go to your phone settings"),
         "ToBecomeAnInfluencerYouNeedToDo": MessageLookupByLibrary.simpleMessage(
             "To become an influencer you need to do"),
+        "ToOpenTheNextSetOfToolsYouNeedToDo":
+            MessageLookupByLibrary.simpleMessage(
+                "To open the next set of tools you need to do"),
         "Today": MessageLookupByLibrary.simpleMessage("Today"),
         "Top": MessageLookupByLibrary.simpleMessage("Top"),
         "TopNDonatorsReceiveXPoints": m43,
@@ -899,6 +903,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "VisitFirstToOpenNext":
             MessageLookupByLibrary.simpleMessage("Visit first to open next"),
         "Voice": MessageLookupByLibrary.simpleMessage("Voice"),
+        "Voices": MessageLookupByLibrary.simpleMessage("Voices"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(
             "We do not spam all kinds of notifications and advertisements. Only those notifications that may be important to you and match your preferences"),
         "WeHavePlacesJustForYou":
@@ -944,6 +949,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("You missed a lot"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
         "YouSentInvitationToNPeople": m52,
+        "YouWillReceiveNewTools":
+            MessageLookupByLibrary.simpleMessage("You will receive new tools"),
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("You’ll find it"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Your age"),
         "YourAudienceAge":
@@ -954,6 +961,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourLeisureSelection":
             MessageLookupByLibrary.simpleMessage("Your leisure selection"),
         "YourName": MessageLookupByLibrary.simpleMessage("Your name"),
+        "YourNewTools": MessageLookupByLibrary.simpleMessage("Your new tools"),
         "YourNiche": MessageLookupByLibrary.simpleMessage("Your niche"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("Your position"),
         "YourPriceSegment":

@@ -5563,6 +5563,46 @@ class S {
     );
   }
 
+  /// `To become an influencer you need to do`
+  String get ToBecomeAnInfluencerYouNeedToDo {
+    return Intl.message(
+      'To become an influencer you need to do',
+      name: 'ToBecomeAnInfluencerYouNeedToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} Video-Reaction`
+  String CountVideoReaction(Object count) {
+    return Intl.message(
+      '$count Video-Reaction',
+      name: 'CountVideoReaction',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} Reviews`
+  String CountReviews(Object count) {
+    return Intl.message(
+      '$count Reviews',
+      name: 'CountReviews',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Your progress`
+  String get YourProgress {
+    return Intl.message(
+      'Your progress',
+      name: 'YourProgress',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `In any case, content will be moderated, please take care of the quality`
   String get ContentQualityNotice {
     return Intl.message(
@@ -5673,41 +5713,51 @@ class S {
     );
   }
 
-  /// `To become an influencer you need to do`
-  String get ToBecomeAnInfluencerYouNeedToDo {
+  /// `Voices`
+  String get Voices {
     return Intl.message(
-      'To become an influencer you need to do',
-      name: 'ToBecomeAnInfluencerYouNeedToDo',
+      'Voices',
+      name: 'Voices',
       desc: '',
       args: [],
     );
   }
 
-  /// `{count} Video-Reaction`
-  String CountVideoReaction(Object count) {
+  /// `News`
+  String get News {
     return Intl.message(
-      '$count Video-Reaction',
-      name: 'CountVideoReaction',
+      'News',
+      name: 'News',
       desc: '',
-      args: [count],
+      args: [],
     );
   }
 
-  /// `{count} Reviews`
-  String CountReviews(Object count) {
+  /// `You will receive new tools`
+  String get YouWillReceiveNewTools {
     return Intl.message(
-      '$count Reviews',
-      name: 'CountReviews',
+      'You will receive new tools',
+      name: 'YouWillReceiveNewTools',
       desc: '',
-      args: [count],
+      args: [],
     );
   }
 
-  /// `Your progress`
-  String get YourProgress {
+  /// `Your new tools`
+  String get YourNewTools {
     return Intl.message(
-      'Your progress',
-      name: 'YourProgress',
+      'Your new tools',
+      name: 'YourNewTools',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To open the next set of tools you need to do`
+  String get ToOpenTheNextSetOfToolsYouNeedToDo {
+    return Intl.message(
+      'To open the next set of tools you need to do',
+      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
       desc: '',
       args: [],
     );

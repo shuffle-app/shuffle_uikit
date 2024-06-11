@@ -552,6 +552,11 @@
   "TheBestTechnologiesConf": "The best technologies conf",
   "TheBestTechConf": "The best tech conf",
   "AddToMyFavorites": "Add to my favorites",
-  "TheBestTechListSuccessfullyAdded": "List “The best technologies conf” successfully added"
+  "TheBestTechListSuccessfullyAdded": "List “The best technologies conf” successfully added",
+  "Voices": "Voices",
+  "News": "News",
+  "YouWillReceiveNewTools": "You will receive new tools",
+  "YourNewTools": "Your new tools",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do"
 
 }
