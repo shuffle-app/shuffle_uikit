@@ -550,5 +550,10 @@
   "TheBestTechnologiesConf": "सर्वश्रेष्ठ प्रौद्योगिकी सम्मेलन",
   "TheBestTechConf": "सर्वश्रेष्ठ तकनीकी सम्मेलन",
   "AddToMyFavorites": "मेरे पसंदीदा में जोड़ें",
-  "TheBestTechListSuccessfullyAdded": "सूची\" सर्वश्रेष्ठ टेक्नोलॉजीज कॉन्फ \" सफलतापूर्वक जोड़ा गया"
+  "TheBestTechListSuccessfullyAdded": "सूची\" सर्वश्रेष्ठ टेक्नोलॉजीज कॉन्फ \" सफलतापूर्वक जोड़ा गया",
+  "Voices": "Voices",
+  "News": "News",
+  "YouWillReceiveNewTools": "You will receive new tools",
+  "YourNewTools": "Your new tools",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do"
 }
