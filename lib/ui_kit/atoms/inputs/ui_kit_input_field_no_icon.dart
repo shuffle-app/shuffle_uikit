@@ -98,7 +98,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
             ),
             enabledBorder: OutlineInputBorder(borderRadius: widget.borderRadius!, borderSide: BorderSide.none),
             disabledBorder: OutlineInputBorder(borderRadius: widget.borderRadius!, borderSide: BorderSide.none),
-            errorBorder: OutlineInputBorder(borderRadius: widget.borderRadius!, borderSide: BorderSide.none),
+            focusedErrorBorder: OutlineInputBorder(borderRadius: widget.borderRadius!, borderSide: BorderSide.none),
           )
         : uiKitTheme?.noIconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
