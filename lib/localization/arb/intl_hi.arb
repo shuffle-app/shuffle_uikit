@@ -538,6 +538,8 @@
   "HoursAgo": "{hours} घंटे पहले",
   "Yesterday": "कल",
   "WeekAgo": "एक सप्ताह पहले",
+  "SelectYourSpecialty": "Select your specialty",
+  "ContentThatIsAvailableForYouToViewWillAppearHere": "Content that is available for you to view will appear here",
   "ToBecomeAnInfluencerYouNeedToDo": "To become an influencer you need to do",
   "CountVideoReaction": "{count} Video-Reaction",
   "CountReviews": "{count} Reviews",
@@ -555,5 +557,11 @@
   "Date": "तारीख",
   "Properties": "गुण",
   "SearchOrAddTag": "टैग खोजें या जोड़ें",
-  "ActivityTypes": "गतिविधि प्रकार"
+  "ActivityTypes": "गतिविधि प्रकार",
+  "Voices": "Voices",
+  "News": "News",
+  "YouWillReceiveNewTools": "You will receive new tools",
+  "YourNewTools": "Your new tools",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do"
+
 }

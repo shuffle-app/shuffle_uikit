@@ -5563,6 +5563,26 @@ class S {
     );
   }
 
+  /// `Select your specialty`
+  String get SelectYourSpecialty {
+    return Intl.message(
+      'Select your specialty',
+      name: 'SelectYourSpecialty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content that is available for you to view will appear here`
+  String get ContentThatIsAvailableForYouToViewWillAppearHere {
+    return Intl.message(
+      'Content that is available for you to view will appear here',
+      name: 'ContentThatIsAvailableForYouToViewWillAppearHere',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `To become an influencer you need to do`
   String get ToBecomeAnInfluencerYouNeedToDo {
     return Intl.message(
@@ -5598,6 +5618,346 @@ class S {
     return Intl.message(
       'Your progress',
       name: 'YourProgress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `These content is on your other lists. When added, it will be removed from the current.`
+  String get TheseContentIsOnYourOtherLists {
+    return Intl.message(
+      'These content is on your other lists. When added, it will be removed from the current.',
+      name: 'TheseContentIsOnYourOtherLists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best parties`
+  String get TheBestParties {
+    return Intl.message(
+      'The best parties',
+      name: 'TheBestParties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Must visit technology conf`
+  String get MustVisitTechnologyConf {
+    return Intl.message(
+      'Must visit technology conf',
+      name: 'MustVisitTechnologyConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `shared with you`
+  String get SharedWithYou {
+    return Intl.message(
+      'shared with you',
+      name: 'SharedWithYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best technologies conf`
+  String get TheBestTechnologiesConf {
+    return Intl.message(
+      'The best technologies conf',
+      name: 'TheBestTechnologiesConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best tech conf`
+  String get TheBestTechConf {
+    return Intl.message(
+      'The best tech conf',
+      name: 'TheBestTechConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to my favorites`
+  String get AddToMyFavorites {
+    return Intl.message(
+      'Add to my favorites',
+      name: 'AddToMyFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `List “The best technologies conf” successfully added`
+  String get TheBestTechListSuccessfullyAdded {
+    return Intl.message(
+      'List “The best technologies conf” successfully added',
+      name: 'TheBestTechListSuccessfullyAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recently added`
+  String get RecentlyAdded {
+    return Intl.message(
+      'Recently added',
+      name: 'RecentlyAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get Date {
+    return Intl.message(
+      'Date',
+      name: 'Date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Properties`
+  String get Properties {
+    return Intl.message(
+      'Properties',
+      name: 'Properties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search or add tag`
+  String get SearchOrAddTag {
+    return Intl.message(
+      'Search or add tag',
+      name: 'SearchOrAddTag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activity types`
+  String get ActivityTypes {
+    return Intl.message(
+      'Activity types',
+      name: 'ActivityTypes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Voices`
+  String get Voices {
+    return Intl.message(
+      'Voices',
+      name: 'Voices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `News`
+  String get News {
+    return Intl.message(
+      'News',
+      name: 'News',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You will receive new tools`
+  String get YouWillReceiveNewTools {
+    return Intl.message(
+      'You will receive new tools',
+      name: 'YouWillReceiveNewTools',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your new tools`
+  String get YourNewTools {
+    return Intl.message(
+      'Your new tools',
+      name: 'YourNewTools',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To open the next set of tools you need to do`
+  String get ToOpenTheNextSetOfToolsYouNeedToDo {
+    return Intl.message(
+      'To open the next set of tools you need to do',
+      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `In any case, content will be moderated, please take care of the quality`
+  String get ContentQualityNotice {
+    return Intl.message(
+      'In any case, content will be moderated, please take care of the quality',
+      name: 'ContentQualityNotice',
+      desc: '',
+      args: [],
+    );
+  }
+
+ /// `Select your specialty`
+  String get SelectYourSpecialty {
+    return Intl.message(
+      'Select your specialty',
+      name: 'SelectYourSpecialty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `These content is on your other lists. When added, it will be removed from the current.`
+  String get TheseContentIsOnYourOtherLists {
+    return Intl.message(
+      'These content is on your other lists. When added, it will be removed from the current.',
+      name: 'TheseContentIsOnYourOtherLists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content that is available for you to view will appear here`
+  String get ContentThatIsAvailableForYouToViewWillAppearHere {
+    return Intl.message(
+      'Content that is available for you to view will appear here',
+      name: 'ContentThatIsAvailableForYouToViewWillAppearHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best parties`
+  String get TheBestParties {
+    return Intl.message(
+      'The best parties',
+      name: 'TheBestParties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Must visit technology conf`
+  String get MustVisitTechnologyConf {
+    return Intl.message(
+      'Must visit technology conf',
+      name: 'MustVisitTechnologyConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `shared with you`
+  String get SharedWithYou {
+    return Intl.message(
+      'shared with you',
+      name: 'SharedWithYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best technologies conf`
+  String get TheBestTechnologiesConf {
+    return Intl.message(
+      'The best technologies conf',
+      name: 'TheBestTechnologiesConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best tech conf`
+  String get TheBestTechConf {
+    return Intl.message(
+      'The best tech conf',
+      name: 'TheBestTechConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to my favorites`
+  String get AddToMyFavorites {
+    return Intl.message(
+      'Add to my favorites',
+      name: 'AddToMyFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `List “The best technologies conf” successfully added`
+  String get TheBestTechListSuccessfullyAdded {
+    return Intl.message(
+      'List “The best technologies conf” successfully added',
+      name: 'TheBestTechListSuccessfullyAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Voices`
+  String get Voices {
+    return Intl.message(
+      'Voices',
+      name: 'Voices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `News`
+  String get News {
+    return Intl.message(
+      'News',
+      name: 'News',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You will receive new tools`
+  String get YouWillReceiveNewTools {
+    return Intl.message(
+      'You will receive new tools',
+      name: 'YouWillReceiveNewTools',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your new tools`
+  String get YourNewTools {
+    return Intl.message(
+      'Your new tools',
+      name: 'YourNewTools',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To open the next set of tools you need to do`
+  String get ToOpenTheNextSetOfToolsYouNeedToDo {
+    return Intl.message(
+      'To open the next set of tools you need to do',
+      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
       desc: '',
       args: [],
     );

@@ -538,6 +538,8 @@
   "HoursAgo": "{hours}ч назад",
   "Yesterday": "Вчера",
   "WeekAgo": "неделю назад",
+  "SelectYourSpecialty": "Выберите свою специальность",
+  "ContentThatIsAvailableForYouToViewWillAppearHere": "Контент, доступный вам для просмотра, появится здесь",
   "ToBecomeAnInfluencerYouNeedToDo": "Чтобы стать инфлюенсером вам необходимо выполнить",
   "CountVideoReaction": "{count} Видео-Реакций",
   "CountReviews": "{count} Отзывов",
@@ -555,5 +557,10 @@
   "SearchOrAddTag": "Поиск или добавить тег",
   "Date": "Дата",
   "Properties": "Свойства",
-  "ActivityTypes": "Типы активности"
+  "ActivityTypes": "Типы активности",
+  "Voices": "Голосовые записи",
+  "News": "Новости",
+  "YouWillReceiveNewTools": "Вы получите новые инструменты",
+  "YourNewTools": "Теперь вам доступны инструменты",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "Чтобы открыть следующий набор инструментов, вам нужно сделать"
 }

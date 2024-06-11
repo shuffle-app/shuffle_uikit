@@ -538,11 +538,13 @@
   "HoursAgo": "{hours}h ago",
   "Yesterday": "Yesterday",
   "WeekAgo": "a week ago",
+  "ContentQualityNotice": "In any case, content will be moderated, please take care of the quality",
+  "SelectYourSpecialty": "Select your specialty",
+  "ContentThatIsAvailableForYouToViewWillAppearHere": "Content that is available for you to view will appear here",
   "ToBecomeAnInfluencerYouNeedToDo": "To become an influencer you need to do",
   "CountVideoReaction": "{count} Video-Reaction",
   "CountReviews": "{count} Reviews",
   "YourProgress": "Your progress",
-  "ContentQualityNotice": "In any case, content will be moderated, please take care of the quality",
   "TheseContentIsOnYourOtherLists": "These content is on your other lists. When added, it will be removed from the current.",
   "TheBestParties": "The best parties",
   "MustVisitTechnologyConf": "Must visit technology conf",
@@ -555,5 +557,11 @@
   "Date": "Date",
   "Properties": "Properties",
   "SearchOrAddTag": "Search or add tag",
-  "ActivityTypes": "Activity types"
+  "ActivityTypes": "Activity types",
+  "Voices": "Voices",
+  "News": "News",
+  "YouWillReceiveNewTools": "You will receive new tools",
+  "YourNewTools": "Your new tools",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do"
+
 }
