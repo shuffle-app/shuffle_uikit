@@ -539,6 +539,8 @@
   "Yesterday": "Yesterday",
   "WeekAgo": "a week ago",
   "ContentQualityNotice": "In any case, content will be moderated, please take care of the quality",
+  "SelectYourSpecialty": "Select your specialty",
+  "ContentThatIsAvailableForYouToViewWillAppearHere": "Content that is available for you to view will appear here",
   "ToBecomeAnInfluencerYouNeedToDo": "To become an influencer you need to do",
   "CountVideoReaction": "{count} Video-Reaction",
   "CountReviews": "{count} Reviews",
@@ -551,4 +553,5 @@
   "TheBestTechConf": "The best tech conf",
   "TheBestTechListSuccessfullyAdded": "List “The best technologies conf” successfully added",
   "AddToMyFavorites": "Add to my favorites"
+
 }
