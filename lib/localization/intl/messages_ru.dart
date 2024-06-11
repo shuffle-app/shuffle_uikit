@@ -271,6 +271,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Contacts": MessageLookupByLibrary.simpleMessage("Контакты"),
         "ContentQualityNotice": MessageLookupByLibrary.simpleMessage(
             "Контент будет проходить модерацию, ожидаем высокое качество контента"),
+        "ContentThatIsAvailableForYouToViewWillAppearHere":
+            MessageLookupByLibrary.simpleMessage(
+                "Контент, доступный вам для просмотра, появится здесь"),
         "Contest": MessageLookupByLibrary.simpleMessage("Конкурс"),
         "Continue": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "Control": MessageLookupByLibrary.simpleMessage("Контроль"),
@@ -755,6 +758,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectType": m39,
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("Укажите свою религию"),
+        "SelectYourSpecialty":
+            MessageLookupByLibrary.simpleMessage("Выберите свою специальность"),
         "SelectionOfTheBest":
             MessageLookupByLibrary.simpleMessage("Выбор лучших"),
         "Send": MessageLookupByLibrary.simpleMessage("Отправить"),

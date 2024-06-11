@@ -5613,11 +5613,31 @@ class S {
     );
   }
 
+ /// `Select your specialty`
+  String get SelectYourSpecialty {
+    return Intl.message(
+      'Select your specialty',
+      name: 'SelectYourSpecialty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `These content is on your other lists. When added, it will be removed from the current.`
   String get TheseContentIsOnYourOtherLists {
     return Intl.message(
       'These content is on your other lists. When added, it will be removed from the current.',
       name: 'TheseContentIsOnYourOtherLists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content that is available for you to view will appear here`
+  String get ContentThatIsAvailableForYouToViewWillAppearHere {
+    return Intl.message(
+      'Content that is available for you to view will appear here',
+      name: 'ContentThatIsAvailableForYouToViewWillAppearHere',
       desc: '',
       args: [],
     );

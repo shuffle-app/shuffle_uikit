@@ -538,11 +538,13 @@
   "HoursAgo": "{hours} घंटे पहले",
   "Yesterday": "कल",
   "WeekAgo": "एक सप्ताह पहले",
+  "ContentQualityNotice": "In any case, content will be moderated, please take care of the quality",
+  "SelectYourSpecialty": "Select your specialty",
+  "ContentThatIsAvailableForYouToViewWillAppearHere": "Content that is available for you to view will appear here",
   "ToBecomeAnInfluencerYouNeedToDo": "To become an influencer you need to do",
   "CountVideoReaction": "{count} Video-Reaction",
   "CountReviews": "{count} Reviews",
   "YourProgress": "Your progress",
-  "ContentQualityNotice": "In any case, content will be moderated, please take care of the quality",
   "TheseContentIsOnYourOtherLists": "ये सामग्री आपकी अन्य सूचियों पर है ।  जोड़े जाने पर, इसे वर्तमान से हटा दिया जाएगा । ",
   "TheBestParties": "सबसे अच्छी पार्टियां",
   "MustVisitTechnologyConf": "प्रौद्योगिकी सम्मेलन का दौरा करना चाहिए",
@@ -556,4 +558,5 @@
   "YouWillReceiveNewTools": "You will receive new tools",
   "YourNewTools": "Your new tools",
   "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do"
+
 }

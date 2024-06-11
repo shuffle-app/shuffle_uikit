@@ -270,6 +270,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Contacts": MessageLookupByLibrary.simpleMessage("संपर्क"),
         "ContentQualityNotice": MessageLookupByLibrary.simpleMessage(
             "In any case, content will be moderated, please take care of the quality"),
+        "ContentThatIsAvailableForYouToViewWillAppearHere":
+            MessageLookupByLibrary.simpleMessage(
+                "Content that is available for you to view will appear here"),
         "Contest": MessageLookupByLibrary.simpleMessage("प्रतियोगिता"),
         "Continue": MessageLookupByLibrary.simpleMessage("जारी रखें"),
         "Control": MessageLookupByLibrary.simpleMessage("नियंत्रण"),
@@ -751,6 +754,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectType": m39,
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("अपने धर्म चुनें"),
+        "SelectYourSpecialty":
+            MessageLookupByLibrary.simpleMessage("Select your specialty"),
         "SelectionOfTheBest":
             MessageLookupByLibrary.simpleMessage("सर्वश्रेष्ठ का चयन"),
         "Send": MessageLookupByLibrary.simpleMessage("भेजना"),
