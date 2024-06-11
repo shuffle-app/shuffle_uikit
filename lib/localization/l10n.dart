@@ -5613,11 +5613,31 @@ class S {
     );
   }
 
+ /// `Select your specialty`
+  String get SelectYourSpecialty {
+    return Intl.message(
+      'Select your specialty',
+      name: 'SelectYourSpecialty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `These content is on your other lists. When added, it will be removed from the current.`
   String get TheseContentIsOnYourOtherLists {
     return Intl.message(
       'These content is on your other lists. When added, it will be removed from the current.',
       name: 'TheseContentIsOnYourOtherLists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content that is available for you to view will appear here`
+  String get ContentThatIsAvailableForYouToViewWillAppearHere {
+    return Intl.message(
+      'Content that is available for you to view will appear here',
+      name: 'ContentThatIsAvailableForYouToViewWillAppearHere',
       desc: '',
       args: [],
     );
@@ -5693,31 +5713,51 @@ class S {
     );
   }
 
-  /// `Album`
-  String get Album {
+  /// `Voices`
+  String get Voices {
     return Intl.message(
-      'Album',
-      name: 'Album',
+      'Voices',
+      name: 'Voices',
       desc: '',
       args: [],
     );
   }
 
-  /// `You must select at least one video`
-  String get MustSelectVideo {
+  /// `News`
+  String get News {
     return Intl.message(
-      'You must select at least one video',
-      name: 'MustSelectVideo',
+      'News',
+      name: 'News',
       desc: '',
       args: [],
     );
   }
 
-  /// `Back`
-  String get Back {
+  /// `You will receive new tools`
+  String get YouWillReceiveNewTools {
     return Intl.message(
-      'Back',
-      name: 'Back',
+      'You will receive new tools',
+      name: 'YouWillReceiveNewTools',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your new tools`
+  String get YourNewTools {
+    return Intl.message(
+      'Your new tools',
+      name: 'YourNewTools',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To open the next set of tools you need to do`
+  String get ToOpenTheNextSetOfToolsYouNeedToDo {
+    return Intl.message(
+      'To open the next set of tools you need to do',
+      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
       desc: '',
       args: [],
     );
