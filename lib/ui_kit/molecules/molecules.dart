@@ -98,3 +98,6 @@ export 'snack_bars/warning_snack_bar.dart';
 export 'chips/ui_kit_cloud_chip.dart';
 export 'tiles/ui_kit_properties_type_tile.dart';
 export 'tiles/ui_kit_hover_animation_tile.dart';
+export 'tiles/ui_kit_expansion_tile_with_icon_button.dart';
+export 'chips/ui_kit_cloud_chip_with_desc.dart';
+

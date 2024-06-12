@@ -4,10 +4,10 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitPropertiesCloud extends StatelessWidget {
   const UiKitPropertiesCloud({
     super.key,
-    required this.properties,
+    required this.child,
   });
 
-  final List<UiKitCloudChip> properties;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +19,7 @@ class UiKitPropertiesCloud extends StatelessWidget {
       ),
       child: SizedBox(
         width: 1.sw,
-        child: Wrap(
-          spacing: SpacingFoundation.horizontalSpacing12,
-          runSpacing: SpacingFoundation.verticalSpacing12,
-          children: properties,
-        ).paddingAll(EdgeInsetsFoundation.all24),
+        child: child,
       ),
     );
   }
