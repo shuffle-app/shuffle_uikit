@@ -33,6 +33,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.customLabelColor,
     this.customFocusedBorder,
     this.customEnabledBorder,
+    this.customErrorBorder,
     this.autofocus = false,
   }) : super(key: key);
 
@@ -74,6 +75,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
   final Color? customLabelColor;
   final InputBorder? customFocusedBorder;
   final InputBorder? customEnabledBorder;
+  final InputBorder? customErrorBorder;
 
   @override
   State<UiKitInputFieldNoIcon> createState() => _UiKitInputFieldNoIconState();
@@ -96,6 +98,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
             ),
             enabledBorder: OutlineInputBorder(borderRadius: widget.borderRadius!, borderSide: BorderSide.none),
             disabledBorder: OutlineInputBorder(borderRadius: widget.borderRadius!, borderSide: BorderSide.none),
+            focusedErrorBorder: OutlineInputBorder(borderRadius: widget.borderRadius!, borderSide: BorderSide.none),
           )
         : uiKitTheme?.noIconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
@@ -156,6 +159,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
           hintStyle: hintStyle,
           enabledBorder: widget.customEnabledBorder,
           focusedBorder: widget.customFocusedBorder,
+          errorBorder: widget.customErrorBorder,
         ),
       ),
     );
