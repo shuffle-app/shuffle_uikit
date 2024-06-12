@@ -5812,6 +5812,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Icons`
+  String get Icons {
+    return Intl.message(
+      'Icons',
+      name: 'Icons',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Related properties`
+  String get RelatedProperties {
+    return Intl.message(
+      'Related properties',
+      name: 'RelatedProperties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search property`
+  String get SearchProperty {
+    return Intl.message(
+      'Search property',
+      name: 'SearchProperty',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

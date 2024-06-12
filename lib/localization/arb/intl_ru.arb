@@ -562,5 +562,12 @@
   "News": "Новости",
   "YouWillReceiveNewTools": "Вы получите новые инструменты",
   "YourNewTools": "Теперь вам доступны инструменты",
-  "ToOpenTheNextSetOfToolsYouNeedToDo": "Чтобы открыть следующий набор инструментов, вам нужно сделать"
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "Чтобы открыть следующий набор инструментов, вам нужно сделать",
+  "Icons": "Иконки",
+  "RelatedProperties": "Связанные свойства",
+  "SearchProperty": "Поиск свойств"
+
+
+
+
 }
