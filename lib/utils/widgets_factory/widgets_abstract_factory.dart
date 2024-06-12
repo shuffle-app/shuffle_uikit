@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit/atoms/buttons/box_icon_button.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/ui_kit_icon_button_no_padding.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
@@ -14,6 +15,10 @@ abstract class WidgetsAbstractFactory {
     required BaseUiKitButtonData data,
     Alignment? badgeAlignment,
     int? value,
+  });
+
+  ButtonFactory createBoxIconButton({
+    required BaseUiKitButtonData data,
   });
 
   ButtonFactory createOutlinedGradientButton({
@@ -244,6 +249,18 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       gradientBorder: gradient,
       loading: data.loading,
       fit: data.fit,
+    );
+  }
+
+  @override
+  ButtonFactory createBoxIconButton({
+    required BaseUiKitButtonData data,
+  }) {
+    return BoxIconButton(
+      iconInfo: data.iconInfo,
+      onPressed: data.onPressed,
+      icon: data.iconWidget,
+      backgroundColor: data.backgroundColor,
     );
   }
 

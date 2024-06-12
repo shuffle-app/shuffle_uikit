@@ -164,6 +164,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Принимать донаты или помогать другим воплотить мечты"),
         "Account": MessageLookupByLibrary.simpleMessage("Аккаунт"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Тип активности"),
+        "ActivityTypes":
+            MessageLookupByLibrary.simpleMessage("Типы активности"),
         "AddFeedback": MessageLookupByLibrary.simpleMessage("Поставить оценку"),
         "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
             "Расскажите что вам понравилось или запомнилось"),
@@ -304,6 +306,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Мы рады вас видеть"),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("Обрезка видео"),
         "Daily": MessageLookupByLibrary.simpleMessage("Ежедневно "),
+        "Date": MessageLookupByLibrary.simpleMessage("Дата"),
         "DateOfBirth": MessageLookupByLibrary.simpleMessage("Дата рождения"),
         "Dates": MessageLookupByLibrary.simpleMessage("Даты"),
         "Day": MessageLookupByLibrary.simpleMessage("День"),
@@ -689,6 +692,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("пойти куда-нибудь вместе"),
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("Не будь один..."),
+        "Properties": MessageLookupByLibrary.simpleMessage("Свойства"),
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
         "RangeEndValueIsLessThanBeginingOne":
             MessageLookupByLibrary.simpleMessage(
@@ -699,6 +703,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Отзывы от критиков"),
         "Read": m36,
         "RealMoney": MessageLookupByLibrary.simpleMessage("Реальные деньги"),
+        "RecentlyAdded":
+            MessageLookupByLibrary.simpleMessage("Недавно добавлено"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
         "Religion": MessageLookupByLibrary.simpleMessage("Религия"),
         "Reply": MessageLookupByLibrary.simpleMessage("Ответить"),
@@ -755,6 +761,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "поиск или выбрать другие варианты"),
         "SearchHiwTitle":
             MessageLookupByLibrary.simpleMessage("Обычный поиск..."),
+        "SearchOrAddTag":
+            MessageLookupByLibrary.simpleMessage("Поиск или добавить тег"),
         "SeeAll": MessageLookupByLibrary.simpleMessage("Посмотреть всё"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("Ещё"),
         "SelectCurrency":

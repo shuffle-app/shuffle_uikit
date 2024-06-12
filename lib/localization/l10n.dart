@@ -5713,6 +5713,56 @@ class S {
     );
   }
 
+  /// `Recently added`
+  String get RecentlyAdded {
+    return Intl.message(
+      'Recently added',
+      name: 'RecentlyAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get Date {
+    return Intl.message(
+      'Date',
+      name: 'Date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Properties`
+  String get Properties {
+    return Intl.message(
+      'Properties',
+      name: 'Properties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search or add tag`
+  String get SearchOrAddTag {
+    return Intl.message(
+      'Search or add tag',
+      name: 'SearchOrAddTag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activity types`
+  String get ActivityTypes {
+    return Intl.message(
+      'Activity types',
+      name: 'ActivityTypes',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Voices`
   String get Voices {
     return Intl.message(

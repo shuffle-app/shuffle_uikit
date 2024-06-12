@@ -103,7 +103,6 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
             ),
-
             SpacingFoundation.verticalSpace24,
             context.button(
               data: BaseUiKitButtonData(

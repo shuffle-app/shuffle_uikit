@@ -165,6 +165,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Account": MessageLookupByLibrary.simpleMessage("खाता"),
         "ActivityType":
             MessageLookupByLibrary.simpleMessage("क्रिया के प्रकार"),
+        "ActivityTypes": MessageLookupByLibrary.simpleMessage("गतिविधि प्रकार"),
         "AddFeedback":
             MessageLookupByLibrary.simpleMessage("प्रतिक्रिया जोड़ें"),
         "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
@@ -303,6 +304,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("आपको खुश देखकर अच्छा लगा"),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("वीडियो को काटना"),
         "Daily": MessageLookupByLibrary.simpleMessage("दैनिक"),
+        "Date": MessageLookupByLibrary.simpleMessage("तारीख"),
         "DateOfBirth": MessageLookupByLibrary.simpleMessage("जन्म की तारीख"),
         "Dates": MessageLookupByLibrary.simpleMessage("तिथियां"),
         "Day": MessageLookupByLibrary.simpleMessage("दिन"),
@@ -689,6 +691,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "किसी को खोजें और उसके साथ जाएं"),
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("अकेले मत रहो..."),
+        "Properties": MessageLookupByLibrary.simpleMessage("गुण"),
         "Published": MessageLookupByLibrary.simpleMessage("प्रकाशित"),
         "RangeEndValueIsLessThanBeginingOne":
             MessageLookupByLibrary.simpleMessage(
@@ -700,6 +703,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "निरंकुशों द्वारा प्रतिक्रिया"),
         "Read": m36,
         "RealMoney": MessageLookupByLibrary.simpleMessage("असली पैसे"),
+        "RecentlyAdded":
+            MessageLookupByLibrary.simpleMessage("हाल ही में जोड़ा गया"),
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
         "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
         "Reply": MessageLookupByLibrary.simpleMessage("जवाब दे दो"),
@@ -753,6 +758,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("खोजें या दूसरे विकल्प चुनें"),
         "SearchHiwTitle":
             MessageLookupByLibrary.simpleMessage("सामान्य खोज..."),
+        "SearchOrAddTag":
+            MessageLookupByLibrary.simpleMessage("टैग खोजें या जोड़ें"),
         "SeeAll": MessageLookupByLibrary.simpleMessage("सभी देखें"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("और देखें"),
         "SelectCurrency": MessageLookupByLibrary.simpleMessage("मुद्रा चुनें"),

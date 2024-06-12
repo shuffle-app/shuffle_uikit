@@ -23,7 +23,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   String _selectedDropDownValue = '_selectedMenuItem';
   CountryModel? _selectedCountry;
   CustomBackgroundSwitchOption selectedOption = CustomBackgroundSwitchOption(
-      title: 'Personal', iconLink: GraphicsFoundation.instance.svg.personLayered.path, value: 'user');
+      title: 'Personal',
+      iconLink: GraphicsFoundation.instance.svg.personLayered.path,
+      value: 'user');
 
   bool selection = false;
   bool switchValue = false;
@@ -127,11 +129,85 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
       ),
       children: [
-        context.createSnackBar(message: 'This is a success alert — check it out!', appSnackBarType: AppSnackBarType.success).paddingSymmetric(vertical: 8,horizontal: 16),
-        context.createSnackBar(message: 'This is a error alert — check it out!', appSnackBarType: AppSnackBarType.error).paddingSymmetric(vertical: 8,horizontal: 16),
-        context.createSnackBar(message: 'This is a warning alert — check it out!', appSnackBarType: AppSnackBarType.warning).paddingSymmetric(vertical: 8,horizontal: 16),
-        context.createSnackBar(message: 'This is an info alert — check it out!', appSnackBarType: AppSnackBarType.info).paddingSymmetric(vertical: 8,horizontal: 16),
-        context.createSnackBar(message: 'This is a dark alert — check it out!', appSnackBarType: AppSnackBarType.neutral).paddingSymmetric(vertical: 8,horizontal: 16),
+        PropertiesSearchInput(
+          options: (text) async => ['prop1', 'prop2', 'prop3'],
+          showAllOptions: false,
+        ),
+        SpacingFoundation.verticalSpace16,
+        context.boxIconButton(
+          data: BaseUiKitButtonData(
+            iconInfo: BaseUiKitButtonIconData(
+              iconData: ShuffleUiKitIcons.plus,
+              color: context.uiKitTheme?.colorScheme.inversePrimary,
+            ),
+            onPressed: () {},
+          ),
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitHoverAnimationTile(
+          title: "Party",
+          onTap: (title) {},
+          isFirst: true,
+        ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+        UiKitHoverAnimationTile(title: "Party Dance", onTap: (title) {})
+            .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+        UiKitHoverAnimationTile(
+                title: "Party Swim", onTap: (title) {}, isLast: true)
+            .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+        PropertiesTypeAnimatedButton(title: 'Active tiger', onTap: () {})
+            .paddingAll(EdgeInsetsFoundation.all16),
+        PropertiesBorderedBox(
+          title: Row(
+            children: [
+              Text(S.current.RecentlyAdded, style: textTheme?.title2),
+            ],
+          ).paddingOnly(bottom: EdgeInsetsFoundation.vertical16),
+          child: UiKitPropertiesCloud(properties: [
+            UiKitCloudChip(title: 'Joke', onTap: () {}),
+            UiKitCloudChip(title: 'Smoke', onTap: () {}),
+            UiKitCloudChip(title: 'Drink', onTap: () {}),
+            UiKitCloudChip(title: 'Swim', onTap: () {}),
+            UiKitCloudChip(title: 'Relax', onTap: () {}),
+            UiKitCloudChip(title: 'Relax', onTap: () {}),
+            UiKitCloudChip(title: 'Relax', onTap: () {}),
+          ]),
+        ).paddingAll(EdgeInsetsFoundation.all16),
+        UiKitPropertiesCloud(properties: [
+          UiKitCloudChip(title: 'Joke', onTap: () {}),
+          UiKitCloudChip(title: 'Smoke', onTap: () {}),
+          UiKitCloudChip(title: 'Drink', onTap: () {}),
+          UiKitCloudChip(title: 'Swim', onTap: () {}),
+          UiKitCloudChip(title: 'Relax', onTap: () {}),
+        ]).paddingAll(EdgeInsetsFoundation.all16),
+        UiKitCloudChip(
+          title: 'Joke',
+          onTap: () {},
+        ).paddingAll(EdgeInsetsFoundation.all16),
+        context
+            .createSnackBar(
+                message: 'This is a success alert — check it out!',
+                appSnackBarType: AppSnackBarType.success)
+            .paddingSymmetric(vertical: 8, horizontal: 16),
+        context
+            .createSnackBar(
+                message: 'This is a error alert — check it out!',
+                appSnackBarType: AppSnackBarType.error)
+            .paddingSymmetric(vertical: 8, horizontal: 16),
+        context
+            .createSnackBar(
+                message: 'This is a warning alert — check it out!',
+                appSnackBarType: AppSnackBarType.warning)
+            .paddingSymmetric(vertical: 8, horizontal: 16),
+        context
+            .createSnackBar(
+                message: 'This is an info alert — check it out!',
+                appSnackBarType: AppSnackBarType.info)
+            .paddingSymmetric(vertical: 8, horizontal: 16),
+        context
+            .createSnackBar(
+                message: 'This is a dark alert — check it out!',
+                appSnackBarType: AppSnackBarType.neutral)
+            .paddingSymmetric(vertical: 8, horizontal: 16),
         SpacingFoundation.verticalSpace16,
         Center(
           child: UiKitDropDownList<String>(
@@ -213,7 +289,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             maxSymbols: 500,
             obscureText: false,
           ),
-          popOverMessage: 'Write an addition to the review that will be useful for other visitors.',
+          popOverMessage:
+              'Write an addition to the review that will be useful for other visitors.',
         ),
         SpacingFoundation.verticalSpace16,
         UiKitFeedbackCard(
@@ -617,7 +694,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 UiKitSocialSearchContentTypeCard.services(
                   title: 'Service',
                   iconData: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.png.calmnessEmoji.path,
+                    iconPath:
+                        GraphicsFoundation.instance.png.calmnessEmoji.path,
                   ),
                   onTap: () {},
                 ),
@@ -699,7 +777,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         UiKitChatInCard(
           timeOfDay: DateTime.now(),
-          text: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+          text:
+              'Any plans for the weekend? What about to get a company and go to atmosphere again?',
         ),
         SpacingFoundation.verticalSpace16,
         UiKitChatOutCard(
@@ -727,7 +806,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             brightness: Brightness.light,
             showGang: true,
             username: '@m3dv3d3v',
-            placeName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+            placeName:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
             tags: [
               UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail),
               UiKitTag(title: 'Medium', icon: ShuffleUiKitIcons.label),
@@ -740,7 +820,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             onPlaceTap: () {},
             invitedPeopleAvatarPaths: List.generate(
               7,
-              (index) => index < 4 ? null : GraphicsFoundation.instance.png.mockAvatar.path,
+              (index) => index < 4
+                  ? null
+                  : GraphicsFoundation.instance.png.mockAvatar.path,
             ),
             userType: UserTileType.influencer,
           ),
@@ -862,7 +944,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           username: '@racerboi',
           lastMessageTime: '2h ago',
           avatarPath: GraphicsFoundation.instance.png.mockAvatar.path,
-          lastMessage: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+          lastMessage:
+              'Any plans for the weekend? What about to get a company and go to atmosphere again?',
           unreadMessageCount: 4,
           userType: UserTileType.ordinary,
           onTap: () {},
@@ -883,8 +966,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             color: context.uiKitTheme?.colorScheme.surface2,
           ),
           animationPath: isLightTheme
-              ? GraphicsFoundation.instance.animations.lottie.fingerprintWhite.path
-              : GraphicsFoundation.instance.animations.lottie.fingerprintBlack.path,
+              ? GraphicsFoundation
+                  .instance.animations.lottie.fingerprintWhite.path
+              : GraphicsFoundation
+                  .instance.animations.lottie.fingerprintBlack.path,
           onCompletedWidget: UiKitMessageCardWithIcon(
             message: 'La Vue Citytel',
             iconLink: GraphicsFoundation.instance.png.angryEmoji.path,
@@ -923,14 +1008,16 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 title: '80’s theme invites only party ',
                 subtitle: 'in 1 day',
                 onTap: () {},
-                leadingImagePath: GraphicsFoundation.instance.png.eventAvatar.path,
+                leadingImagePath:
+                    GraphicsFoundation.instance.png.eventAvatar.path,
               ),
               SpacingFoundation.verticalSpace16,
               UiKitActionCardTile(
                 title: '80’s theme invites only party ',
                 subtitle: 'in 1 day',
                 onTap: () {},
-                leadingImagePath: GraphicsFoundation.instance.png.mockAvatar.path,
+                leadingImagePath:
+                    GraphicsFoundation.instance.png.mockAvatar.path,
               ),
             ],
           ),
@@ -1040,7 +1127,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
         SpacingFoundation.verticalSpace16,
         UiKitHorizontalScroll3D(
-          itemBuilder: (BuildContext context, int index) => UiKitFindSomeoneCard(
+          itemBuilder: (BuildContext context, int index) =>
+              UiKitFindSomeoneCard(
             avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
             userNickName: 'naveen',
             userName: 'Naveen Sheoran',
@@ -1269,7 +1357,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           child: UiKitTitledCardWithBackground(
             onPressed: () {},
             title: 'Active Holidays',
-            backgroundImageLink: GraphicsFoundation.instance.png.titledCardBackground1.path,
+            backgroundImageLink:
+                GraphicsFoundation.instance.png.titledCardBackground1.path,
             backgroundColor: ColorsFoundation.brightYellow,
           ),
         ),
@@ -1278,7 +1367,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           child: UiKitTitledCardWithBackground(
             onPressed: () {},
             title: 'Big Company',
-            backgroundImageLink: GraphicsFoundation.instance.png.titledCardBackground2.path,
+            backgroundImageLink:
+                GraphicsFoundation.instance.png.titledCardBackground2.path,
             backgroundColor: ColorsFoundation.red,
           ),
         ),
@@ -1287,7 +1377,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           child: UiKitTitledCardWithBackground(
             onPressed: () {},
             title: 'Electronic Music',
-            backgroundImageLink: GraphicsFoundation.instance.png.titledCardBackground3.path,
+            backgroundImageLink:
+                GraphicsFoundation.instance.png.titledCardBackground3.path,
             backgroundColor: ColorsFoundation.pink,
           ),
         ),
@@ -1515,7 +1606,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
           ),
           dismissActionWidget: context.smallOutlinedButton(
-            data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}, backgroundColor: Colors.white.withOpacity(0.5)),
+            data: BaseUiKitButtonData(
+                text: 'Cancel',
+                onPressed: () {},
+                backgroundColor: Colors.white.withOpacity(0.5)),
           ),
           requiredData: NotificationPopupRequiredData(
             titleString: 'Yoga today at Palm Jumeirah. You go?',
@@ -1533,7 +1627,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             data: BaseUiKitButtonData(text: 'text', onPressed: () {}),
           ),
           dismissActionWidget: context.smallOutlinedButton(
-            data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}, backgroundColor: Colors.white.withOpacity(0.5)),
+            data: BaseUiKitButtonData(
+                text: 'Cancel',
+                onPressed: () {},
+                backgroundColor: Colors.white.withOpacity(0.5)),
           ),
           requiredData: NotificationPopupRequiredData(
             titleString: 'Yoga today at Palm Jumeirah. You go?',
@@ -1549,7 +1646,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             data: BaseUiKitButtonData(text: 'Ok', onPressed: () {}),
           ),
           dismissActionWidget: context.smallOutlinedButton(
-            data: BaseUiKitButtonData(text: 'Cancel', onPressed: () {}, backgroundColor: Colors.white.withOpacity(0.5)),
+            data: BaseUiKitButtonData(
+                text: 'Cancel',
+                onPressed: () {},
+                backgroundColor: Colors.white.withOpacity(0.5)),
           ),
           secondaryActionWidget: context.smallOutlinedButton(
             data: BaseUiKitButtonData(text: 'text', onPressed: () {}),
@@ -1596,13 +1696,15 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 children: [
                   Expanded(
                     child: context.smallOutlinedButton(
-                      data: BaseUiKitButtonData(text: 'Not often', onPressed: () {}),
+                      data: BaseUiKitButtonData(
+                          text: 'Not often', onPressed: () {}),
                     ),
                   ),
                   SpacingFoundation.horizontalSpace12,
                   Expanded(
                     child: context.smallButton(
-                      data: BaseUiKitButtonData(text: 'Very often', onPressed: () {}),
+                      data: BaseUiKitButtonData(
+                          text: 'Very often', onPressed: () {}),
                     ),
                   ),
                 ],
@@ -1610,7 +1712,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.verticalSpace8,
               context.smallOutlinedButton(
                 data: BaseUiKitButtonData(
-                    text: 'Hard to answer', onPressed: () {}, backgroundColor: Colors.white.withOpacity(0.5)),
+                    text: 'Hard to answer',
+                    onPressed: () {},
+                    backgroundColor: Colors.white.withOpacity(0.5)),
               ),
             ],
           ),
@@ -1905,7 +2009,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
             UiKitMediaVideo(link: GraphicsFoundation.instance.png.place.path),
           ],
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+          description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
               'Sed euismod, nunc ut tincidunt lacinia, nisl nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
               'Nulla facilisi. '
               'Donec auctor, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
@@ -1922,14 +2027,22 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
           ],
           uniqueTags: [
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
           ],
         ),
         SpacingFoundation.verticalSpace16,
@@ -2021,8 +2134,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context).push(
-                PopUpVideoPlayer(videoUri: 'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
+            Navigator.of(context).push(PopUpVideoPlayer(
+                videoUri:
+                    'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'));
           },
           child: const Text(
             'Show Horizontal Video',
@@ -2031,8 +2145,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         MaterialButton(
           onPressed: () {
-            Navigator.of(context)
-                .push(PopUpVideoPlayer(videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+            Navigator.of(context).push(PopUpVideoPlayer(
+                videoUri:
+                    'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
           },
           child: const Text(
             'Show Vertical Video',
@@ -2045,7 +2160,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         MaterialButton(
           onPressed: () {
             Navigator.of(context).push(PopUpVideoPlayer(
-                videoUri: 'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
+                videoUri:
+                    'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4'));
           },
           child: const Text(
             'Show Another Horizontal Video',
