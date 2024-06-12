@@ -162,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Accept donations or help others realize their dreams"),
         "Account": MessageLookupByLibrary.simpleMessage("Account"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Activity type"),
+        "ActivityTypes": MessageLookupByLibrary.simpleMessage("Activity types"),
         "AddFeedback": MessageLookupByLibrary.simpleMessage("Add feedback"),
         "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
             "Tell us what you liked or remember"),
@@ -294,6 +295,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "CredentialsVerificationTitle":
             MessageLookupByLibrary.simpleMessage("Happy to see you"),
         "Daily": MessageLookupByLibrary.simpleMessage("Daily "),
+        "Date": MessageLookupByLibrary.simpleMessage("Date"),
         "DateOfBirth": MessageLookupByLibrary.simpleMessage("Date of birth"),
         "Dates": MessageLookupByLibrary.simpleMessage("Dates"),
         "Day": MessageLookupByLibrary.simpleMessage("Day"),
@@ -669,6 +671,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("go somewhere together"),
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("Do not be alone..."),
+        "Properties": MessageLookupByLibrary.simpleMessage("Properties"),
         "Published": MessageLookupByLibrary.simpleMessage("Published"),
         "RangeEndValueIsLessThanBeginingOne":
             MessageLookupByLibrary.simpleMessage(
@@ -679,6 +682,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Reactions by critics"),
         "Read": m35,
         "RealMoney": MessageLookupByLibrary.simpleMessage("Real money"),
+        "RecentlyAdded": MessageLookupByLibrary.simpleMessage("Recently added"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
         "Reply": MessageLookupByLibrary.simpleMessage("Reply"),
@@ -732,6 +736,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "search or choose others choice"),
         "SearchHiwTitle":
             MessageLookupByLibrary.simpleMessage("Usual search..."),
+        "SearchOrAddTag":
+            MessageLookupByLibrary.simpleMessage("Search or add tag"),
         "SeeAll": MessageLookupByLibrary.simpleMessage("See all"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("See more"),
         "SelectCurrency":

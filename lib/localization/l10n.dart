@@ -5563,6 +5563,36 @@ class S {
     );
   }
 
+  /// `In any case, content will be moderated, please take care of the quality`
+  String get ContentQualityNotice {
+    return Intl.message(
+      'In any case, content will be moderated, please take care of the quality',
+      name: 'ContentQualityNotice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select your specialty`
+  String get SelectYourSpecialty {
+    return Intl.message(
+      'Select your specialty',
+      name: 'SelectYourSpecialty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content that is available for you to view will appear here`
+  String get ContentThatIsAvailableForYouToViewWillAppearHere {
+    return Intl.message(
+      'Content that is available for you to view will appear here',
+      name: 'ContentThatIsAvailableForYouToViewWillAppearHere',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `To become an influencer you need to do`
   String get ToBecomeAnInfluencerYouNeedToDo {
     return Intl.message(
@@ -5603,41 +5633,11 @@ class S {
     );
   }
 
-  /// `In any case, content will be moderated, please take care of the quality`
-  String get ContentQualityNotice {
-    return Intl.message(
-      'In any case, content will be moderated, please take care of the quality',
-      name: 'ContentQualityNotice',
-      desc: '',
-      args: [],
-    );
-  }
-
- /// `Select your specialty`
-  String get SelectYourSpecialty {
-    return Intl.message(
-      'Select your specialty',
-      name: 'SelectYourSpecialty',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `These content is on your other lists. When added, it will be removed from the current.`
   String get TheseContentIsOnYourOtherLists {
     return Intl.message(
       'These content is on your other lists. When added, it will be removed from the current.',
       name: 'TheseContentIsOnYourOtherLists',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Content that is available for you to view will appear here`
-  String get ContentThatIsAvailableForYouToViewWillAppearHere {
-    return Intl.message(
-      'Content that is available for you to view will appear here',
-      name: 'ContentThatIsAvailableForYouToViewWillAppearHere',
       desc: '',
       args: [],
     );
@@ -5708,6 +5708,56 @@ class S {
     return Intl.message(
       'List “The best technologies conf” successfully added',
       name: 'TheBestTechListSuccessfullyAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recently added`
+  String get RecentlyAdded {
+    return Intl.message(
+      'Recently added',
+      name: 'RecentlyAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get Date {
+    return Intl.message(
+      'Date',
+      name: 'Date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Properties`
+  String get Properties {
+    return Intl.message(
+      'Properties',
+      name: 'Properties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search or add tag`
+  String get SearchOrAddTag {
+    return Intl.message(
+      'Search or add tag',
+      name: 'SearchOrAddTag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activity types`
+  String get ActivityTypes {
+    return Intl.message(
+      'Activity types',
+      name: 'ActivityTypes',
       desc: '',
       args: [],
     );
