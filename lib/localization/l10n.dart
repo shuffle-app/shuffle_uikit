@@ -5563,6 +5563,36 @@ class S {
     );
   }
 
+  /// `In any case, content will be moderated, please take care of the quality`
+  String get ContentQualityNotice {
+    return Intl.message(
+      'In any case, content will be moderated, please take care of the quality',
+      name: 'ContentQualityNotice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select your specialty`
+  String get SelectYourSpecialty {
+    return Intl.message(
+      'Select your specialty',
+      name: 'SelectYourSpecialty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content that is available for you to view will appear here`
+  String get ContentThatIsAvailableForYouToViewWillAppearHere {
+    return Intl.message(
+      'Content that is available for you to view will appear here',
+      name: 'ContentThatIsAvailableForYouToViewWillAppearHere',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `To become an influencer you need to do`
   String get ToBecomeAnInfluencerYouNeedToDo {
     return Intl.message(
@@ -5603,41 +5633,11 @@ class S {
     );
   }
 
-  /// `In any case, content will be moderated, please take care of the quality`
-  String get ContentQualityNotice {
-    return Intl.message(
-      'In any case, content will be moderated, please take care of the quality',
-      name: 'ContentQualityNotice',
-      desc: '',
-      args: [],
-    );
-  }
-
- /// `Select your specialty`
-  String get SelectYourSpecialty {
-    return Intl.message(
-      'Select your specialty',
-      name: 'SelectYourSpecialty',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `These content is on your other lists. When added, it will be removed from the current.`
   String get TheseContentIsOnYourOtherLists {
     return Intl.message(
       'These content is on your other lists. When added, it will be removed from the current.',
       name: 'TheseContentIsOnYourOtherLists',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Content that is available for you to view will appear here`
-  String get ContentThatIsAvailableForYouToViewWillAppearHere {
-    return Intl.message(
-      'Content that is available for you to view will appear here',
-      name: 'ContentThatIsAvailableForYouToViewWillAppearHere',
       desc: '',
       args: [],
     );
@@ -5760,6 +5760,116 @@ class S {
       name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `Album`
+  String get Album {
+    return Intl.message(
+      'Album',
+      name: 'Album',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You must select at least one video`
+  String get MustSelectVideo {
+    return Intl.message(
+      'You must select at least one video',
+      name: 'MustSelectVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back`
+  String get Back {
+    return Intl.message(
+      'Back',
+      name: 'Back',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `File does not exist`
+  String get FileNotExistsMessage {
+    return Intl.message(
+      'File does not exist',
+      name: 'FileNotExistsMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content id not provided`
+  String get ContentIdNotProvidedError {
+    return Intl.message(
+      'Content id not provided',
+      name: 'ContentIdNotProvidedError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reaction successfully added`
+  String get VideoReactionUploadedMessage {
+    return Intl.message(
+      'Reaction successfully added',
+      name: 'VideoReactionUploadedMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cutting video`
+  String get CuttingVideo {
+    return Intl.message(
+      'Cutting video',
+      name: 'CuttingVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Compressing video`
+  String get CompressingVideo {
+    return Intl.message(
+      'Compressing video',
+      name: 'CompressingVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Uploading video`
+  String get UploadingVideo {
+    return Intl.message(
+      'Uploading video',
+      name: 'UploadingVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Video file not cut`
+  String get VideoFileNotCut {
+    return Intl.message(
+      'Video file not cut',
+      name: 'VideoFileNotCut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Compressing video {progress}%`
+  String CompressingVideoProgress(Object progress) {
+    return Intl.message(
+      'Compressing video $progress%',
+      name: 'CompressingVideoProgress',
+      desc: '',
+      args: [progress],
     );
   }
 }

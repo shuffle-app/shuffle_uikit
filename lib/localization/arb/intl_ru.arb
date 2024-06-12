@@ -527,7 +527,7 @@
   "EnterLocation": "Введите местоположение",
   "EnterTitle": "Введите название",
   "WhyDoYouLoveIt": "Почему тебе это так нравится?",
-  "SubmitContent": "Отправлять контент",
+  "SubmitContent": "Предложить контент",
   "PlaceSubmittedSuccessfully": "Место успешно отправлено",
   "Feedback": "Обратная связь",
   "Reply": "Ответить",
@@ -560,5 +560,13 @@
   "ToOpenTheNextSetOfToolsYouNeedToDo": "Чтобы открыть следующий набор инструментов, вам нужно сделать",
   "Album": "Альбом",
   "MustSelectVideo": "Вы должны выбрать хотя бы одно видео",
-  "Back": "Назад"
+  "Back": "Назад",
+  "FileNotExistsMessage": "Файл не существует",
+  "ContentIdNotProvidedError": "Не предоставлен ID контента",
+  "VideoReactionUploadedMessage": "Видео-реакция успешно загружена",
+  "CuttingVideo": "Обрезка видео",
+  "CompressingVideo": "Сжатие видео",
+  "UploadingVideo": "Загрузка видео",
+  "VideoFileNotCut": "Видео не обрезано",
+  "CompressingVideoProgress": "Сжатие видео {progress}%"
 }

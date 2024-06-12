@@ -14,10 +14,15 @@ class VideoCutter extends StatefulWidget {
   /// [onExportFinished] returns exported video-file path
   final ValueChanged<String> onExportFinished;
 
+  /// [onBackPressed] is called when back button is pressed
+  /// it takes user back to previous screen and does not return anything
+  final VoidCallback? onBackPressed;
+
   const VideoCutter({
     Key? key,
     required this.videoFile,
     required this.onExportFinished,
+    this.onBackPressed,
   }) : super(key: key);
 
   @override
@@ -28,6 +33,14 @@ class _VideoCutterState extends State<VideoCutter> {
   VideoEditorController? _videoEditorController;
 
   final frameThumbnailWidth = 0.0625.sw;
+
+  bool cuttingVideo = false;
+
+  @override
+  void dispose() {
+    _videoEditorController?.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -40,8 +53,19 @@ class _VideoCutterState extends State<VideoCutter> {
           _videoEditorController = VideoEditorController.file(
             widget.videoFile,
             maxDuration: const Duration(seconds: 60),
+            cropStyle: const CropGridStyle(
+              boundariesColor: ColorsFoundation.proUserAvatarBorder,
+            ),
             trimStyle: TrimSliderStyle(
+              edgesSize: 12.w,
+              iconSize: 18.h,
+              iconColor: Colors.white,
+              positionLineWidth: 4.w,
+              lineColor: Colors.red,
+              positionLineColor: Colors.white,
               onTrimmingColor: ColorsFoundation.proUserAvatarBorder,
+              onTrimmedColor: ColorsFoundation.darkNeutral400,
+              onTrimmingStoppedColor: ColorsFoundation.darkNeutral400,
             ),
           );
           await _videoEditorController!.initialize();
@@ -71,8 +95,10 @@ class _VideoCutterState extends State<VideoCutter> {
 
   Future<void> exportVideo() async {
     if (_videoEditorController == null) return;
+    setState(() => cuttingVideo = true);
     final config = VideoFFmpegVideoEditorConfig(_videoEditorController!);
     final exportResult = await config.getExecuteConfig();
+    setState(() => cuttingVideo = false);
     widget.onExportFinished(exportResult.outputPath);
   }
 
@@ -83,107 +109,167 @@ class _VideoCutterState extends State<VideoCutter> {
     final colorScheme = theme?.colorScheme;
     if (_videoEditorController == null) return const LoadingWidget();
 
-    return LayoutBuilder(
-      builder: (context, size) {
-        final timeLineWidth = size.maxWidth * 0.8;
+    if (cuttingVideo) {
+      return Column(
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            cuttingVideo ? S.current.CuttingVideo : S.current.CompressingVideo,
+            style: boldTextTheme?.subHeadline,
+          ),
+          SpacingFoundation.verticalSpace24,
+          const LoadingWidget(),
+        ],
+      );
+    }
 
-        return SizedBox.fromSize(
-          size: size.biggest,
-          child: Stack(
-            fit: StackFit.expand,
+    return SafeArea(
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              AspectRatio(
-                aspectRatio: 9 / 16,
-                child: VideoPlayer(_videoEditorController!.video),
-              ),
-              Positioned(
-                top: 0,
-                child: Container(
-                  width: size.maxWidth,
-                  height: size.maxHeight * 0.086,
-                  color: colorScheme?.surface.withOpacity(0.3),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      const Spacer(),
-                      ImageWidget(
-                        iconData: ShuffleUiKitIcons.volume,
-                        color: colorScheme?.inverseSurface,
-                        width: 24,
-                        height: 24,
-                      ),
-                      SpacingFoundation.horizontalSpace24,
-                      AnimatedBuilder(
-                        animation: _videoEditorController!,
-                        builder: (context, child) {
-                          return Text(
-                            formatDuration(_videoEditorController?.trimmedDuration),
-                            style: boldTextTheme?.caption2Bold,
-                          );
-                        },
-                      ),
-                    ],
-                  ).paddingSymmetric(
-                    vertical: EdgeInsetsFoundation.vertical8,
-                    horizontal: EdgeInsetsFoundation.horizontal16,
+              context.smallOutlinedButton(
+                data: BaseUiKitButtonData(
+                  text: S.current.Back,
+                  onPressed: () {
+                    widget.onBackPressed?.call();
+                    context.pop();
+                  },
+                  iconInfo: BaseUiKitButtonIconData(
+                    iconData: ShuffleUiKitIcons.chevronleft,
+                    iconAlignment: Alignment.centerLeft,
                   ),
                 ),
               ),
-              Positioned(
-                bottom: 0,
-                child: Container(
-                  width: size.maxWidth,
-                  height: size.maxHeight * 0.14,
-                  color: colorScheme?.surface.withOpacity(0.5),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      SpacingFoundation.horizontalSpace8,
-                      AnimatedBuilder(
-                        animation: _videoEditorController!.video,
-                        builder: (context, child) {
-                          final playing = _videoEditorController?.video.value.isPlaying ?? false;
-
-                          return GestureDetector(
-                            onTap: () {
-                              if (playing) {
-                                _videoEditorController?.video.pause();
-                              } else {
-                                _videoEditorController?.video.play();
-                              }
-                            },
-                            child: ImageWidget(
-                              iconData: playing ? ShuffleUiKitIcons.pausefill : ShuffleUiKitIcons.playfill,
-                              color: colorScheme?.inverseSurface,
-                              width: 24,
-                              height: 24,
-                            ),
-                          );
-                        },
-                      ),
-                      SpacingFoundation.horizontalSpace8,
-                      Container(
-                        height: size.minHeight,
-                        width: 1,
-                        color: ColorsFoundation.neutral48,
-                      ),
-                      SpacingFoundation.horizontalSpace8,
-                      Expanded(
-                        child: TrimSlider(
-                          controller: _videoEditorController!,
-                          hasHaptic: false,
-                        ).paddingSymmetric(
-                          vertical: EdgeInsetsFoundation.vertical16,
-                        ),
-                      ),
-                    ],
+              context.smallButton(
+                data: BaseUiKitButtonData(
+                  text: S.current.Next,
+                  onPressed: exportVideo,
+                  iconInfo: BaseUiKitButtonIconData(
+                    iconData: ShuffleUiKitIcons.chevronright,
                   ),
                 ),
               ),
             ],
           ),
-        );
-      },
+          SpacingFoundation.verticalSpace16,
+          Expanded(
+            child: LayoutBuilder(
+              builder: (context, size) {
+                final timeLineWidth = size.maxWidth * 0.8;
+
+                return SizedBox.fromSize(
+                  size: size.biggest,
+                  child: Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      AspectRatio(
+                        aspectRatio: 9 / 16,
+                        child: VideoPlayer(_videoEditorController!.video),
+                      ),
+                      Positioned(
+                        top: 0,
+                        child: Container(
+                          width: size.maxWidth,
+                          height: size.maxHeight * 0.086,
+                          color: colorScheme?.surface.withOpacity(0.3),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              const Spacer(),
+                              ImageWidget(
+                                iconData: ShuffleUiKitIcons.volume,
+                                color: colorScheme?.inverseSurface,
+                                width: 24,
+                                height: 24,
+                              ),
+                              AnimatedBuilder(
+                                animation: _videoEditorController!.video,
+                                builder: (context, child) {
+                                  return SizedBox(
+                                    width: 0.15.sw,
+                                    child: Text(
+                                      formatDuration(_videoEditorController?.videoPosition),
+                                      style: boldTextTheme?.caption2Bold,
+                                      textAlign: TextAlign.right,
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ).paddingSymmetric(
+                            vertical: EdgeInsetsFoundation.vertical8,
+                            horizontal: EdgeInsetsFoundation.horizontal16,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        child: Container(
+                          width: size.maxWidth,
+                          height: size.maxHeight * 0.14,
+                          color: colorScheme?.surface.withOpacity(0.5),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              SpacingFoundation.horizontalSpace8,
+                              AnimatedBuilder(
+                                animation: _videoEditorController!.video,
+                                builder: (context, child) {
+                                  final playing = _videoEditorController?.video.value.isPlaying ?? false;
+
+                                  return GestureDetector(
+                                    onTap: () {
+                                      if (playing) {
+                                        _videoEditorController?.video.pause();
+                                      } else {
+                                        _videoEditorController?.video.play();
+                                      }
+                                    },
+                                    child: ImageWidget(
+                                      iconData: playing ? ShuffleUiKitIcons.pausefill : ShuffleUiKitIcons.playfill,
+                                      color: colorScheme?.inverseSurface,
+                                      width: 24,
+                                      height: 24,
+                                    ),
+                                  );
+                                },
+                              ),
+                              SpacingFoundation.horizontalSpace8,
+                              Container(
+                                height: size.minHeight,
+                                width: 1,
+                                color: ColorsFoundation.neutral48,
+                              ),
+                              SpacingFoundation.horizontalSpace8,
+                              SizedBox(
+                                width: timeLineWidth,
+                                height: size.minHeight - 16,
+                                child: TrimSlider(
+                                  controller: _videoEditorController!,
+                                  hasHaptic: false,
+                                ).paddingSymmetric(
+                                  vertical: EdgeInsetsFoundation.vertical16,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

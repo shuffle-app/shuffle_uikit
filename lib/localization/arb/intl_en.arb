@@ -560,6 +560,14 @@
   "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
   "Album": "Album",
   "MustSelectVideo": "You must select at least one video",
-  "Back": "Back"
+  "Back": "Back",
+  "FileNotExistsMessage": "File does not exist",
+  "ContentIdNotProvidedError": "Content id not provided",
+  "VideoReactionUploadedMessage": "Reaction successfully added",
+  "CuttingVideo": "Cutting video",
+  "CompressingVideo": "Compressing video",
+  "UploadingVideo": "Uploading video",
+  "VideoFileNotCut": "Video file not cut",
+  "CompressingVideoProgress": "Compressing video {progress}%"
 
 }

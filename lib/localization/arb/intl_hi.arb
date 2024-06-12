@@ -556,10 +556,17 @@
   "TheBestTechConf": "सर्वश्रेष्ठ तकनीकी सम्मेलन",
   "AddToMyFavorites": "मेरे पसंदीदा में जोड़ें",
   "TheBestTechListSuccessfullyAdded": "सूची\" सर्वश्रेष्ठ टेक्नोलॉजीज कॉन्फ \" सफलतापूर्वक जोड़ा गया",
-  "Voices": "Voices",
-  "News": "News",
-  "YouWillReceiveNewTools": "You will receive new tools",
-  "YourNewTools": "Your new tools",
-  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do"
-
+  "FileNotExistsMessage": "फ़ाइल मौजूद नहीं है",
+  "Voices": "आवाज़ें",
+  "News": "समाचार",
+  "YouWillReceiveNewTools": "आपको नए उपकरण मिलेंगे",
+  "YourNewTools": "आपके नए उपकरण",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "अगले टूल सेट को खोलने के लिए आपको यह करना होगा",
+  "ContentIdNotProvidedError": "सामग्री आईडी प्रदान नहीं की गई",
+  "VideoReactionUploadedMessage": "प्रतिक्रिया सफलतापूर्वक जोड़ी गई",
+  "CuttingVideo": "वीडियो को काटना",
+  "CompressingVideo": "वीडियो को संक्षेपित करना",
+  "UploadingVideo": "वीडियो अपलोड कर रहा है",
+  "VideoFileNotCut": "वीडियो फ़ाइल को काटा नहीं जा सका",
+  "CompressingVideoProgress": "वीडियो {progress}% संक्षेपित कर रहा है"
 }
