@@ -444,6 +444,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("यह कैसे\nकाम करता है"),
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
             "आप कितना \$ दान करना चाहते हैं?"),
+        "Icons": MessageLookupByLibrary.simpleMessage("Icons"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("आदर्श मार्ग"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("गलत लॉगिन या पासवर्ड"),
@@ -692,6 +693,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RecentlyAdded":
             MessageLookupByLibrary.simpleMessage("हाल ही में जोड़ा गया"),
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
+        "RelatedProperties":
+            MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
         "Reply": MessageLookupByLibrary.simpleMessage("जवाब दे दो"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),
@@ -746,6 +749,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("सामान्य खोज..."),
         "SearchOrAddTag":
             MessageLookupByLibrary.simpleMessage("टैग खोजें या जोड़ें"),
+        "SearchProperty":
+            MessageLookupByLibrary.simpleMessage("Search property"),
         "SeeAll": MessageLookupByLibrary.simpleMessage("सभी देखें"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("और देखें"),
         "SelectCurrency": MessageLookupByLibrary.simpleMessage("मुद्रा चुनें"),

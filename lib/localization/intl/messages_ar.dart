@@ -440,6 +440,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "HowItWorks": MessageLookupByLibrary.simpleMessage("How it\nworks"),
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
             "How much \$ do you want to donate?"),
+        "Icons": MessageLookupByLibrary.simpleMessage("Icons"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("Ideal route"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Incorrect login or password"),
@@ -684,6 +685,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RealMoney": MessageLookupByLibrary.simpleMessage("Real money"),
         "RecentlyAdded": MessageLookupByLibrary.simpleMessage("Recently added"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
+        "RelatedProperties":
+            MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
         "Reply": MessageLookupByLibrary.simpleMessage("Reply"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
@@ -738,6 +741,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Usual search..."),
         "SearchOrAddTag":
             MessageLookupByLibrary.simpleMessage("Search or add tag"),
+        "SearchProperty":
+            MessageLookupByLibrary.simpleMessage("Search property"),
         "SeeAll": MessageLookupByLibrary.simpleMessage("See all"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("See more"),
         "SelectCurrency":
