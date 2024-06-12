@@ -21,25 +21,23 @@ class BoxIconButton extends StatelessWidget implements ButtonFactory {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
 
-    return DecoratedBox(
-      decoration: BoxDecoration(
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onPressed,
         borderRadius: BorderRadiusFoundation.all8,
-        color: backgroundColor ?? theme?.colorScheme.surface1,
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: onPressed,
-          borderRadius: BorderRadiusFoundation.all8,
-          child: Ink(
-            child: ImageWidget(
-              iconData: iconInfo?.iconData,
-              link: iconInfo?.iconPath,
-              height: iconInfo?.size,
-              fit: BoxFit.fitHeight,
-              color: iconInfo?.color ?? theme?.colorScheme.inverseSurface,
-            ).paddingAll(EdgeInsetsFoundation.all6),
+        child: Ink(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadiusFoundation.all8,
+            color: backgroundColor ?? theme?.colorScheme.surface1,
           ),
+          child: ImageWidget(
+            iconData: iconInfo?.iconData,
+            link: iconInfo?.iconPath,
+            height: iconInfo?.size,
+            fit: BoxFit.fitHeight,
+            color: iconInfo?.color ?? theme?.colorScheme.inverseSurface,
+          ).paddingAll(EdgeInsetsFoundation.all6),
         ),
       ),
     );

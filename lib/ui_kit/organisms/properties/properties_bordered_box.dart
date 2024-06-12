@@ -6,10 +6,12 @@ class PropertiesBorderedBox extends StatelessWidget {
     super.key,
     this.title,
     this.child,
+    this.spacing,
   });
 
   final Widget? title;
   final Widget? child;
+  final Widget? spacing;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +27,7 @@ class PropertiesBorderedBox extends StatelessWidget {
       child: Column(
         children: [
           title ?? const SizedBox(),
+          spacing ?? SpacingFoundation.verticalSpace16,
           child ?? const SizedBox(),
         ],
       ).paddingAll(EdgeInsetsFoundation.all16),

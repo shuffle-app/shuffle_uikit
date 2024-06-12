@@ -32,28 +32,29 @@ class _UiKitHoverAnimationTileState extends State<UiKitHoverAnimationTile> {
   Widget build(BuildContext context) {
     final uiKitTheme = context.uiKitTheme;
 
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: isHover
-            ? ColorsFoundation.onHover.withOpacity(0.08)
-            : uiKitTheme?.colorScheme.surface1,
-        border: Border.symmetric(
-          horizontal: BorderSide(
-              color: ((widget.isFirst ?? false) || (widget.isLast ?? false))
-                  ? Colors.transparent
-                  : uiKitTheme?.colorScheme.darkNeutral500.withOpacity(0.24) ??
-                      Colors.transparent),
-        ),
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: () => widget.onTap.call(widget.title),
-          onHover: (value) {
-            setState(() {
-              isHover = value;
-            });
-          },
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () => widget.onTap.call(widget.title),
+        onHover: (value) {
+          setState(() {
+            isHover = value;
+          });
+        },
+        child: Ink(
+          decoration: BoxDecoration(
+            color: isHover
+                ? ColorsFoundation.onHover.withOpacity(0.08)
+                : uiKitTheme?.colorScheme.surface1,
+            border: Border.symmetric(
+              horizontal: BorderSide(
+                  color: ((widget.isFirst ?? false) || (widget.isLast ?? false))
+                      ? Colors.transparent
+                      : uiKitTheme?.colorScheme.darkNeutral500
+                              .withOpacity(0.24) ??
+                          Colors.transparent),
+            ),
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

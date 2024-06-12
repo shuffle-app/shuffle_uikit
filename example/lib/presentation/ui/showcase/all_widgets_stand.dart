@@ -134,6 +134,16 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           showAllOptions: false,
         ),
         SpacingFoundation.verticalSpace16,
+        context.boxIconButton(
+          data: BaseUiKitButtonData(
+            iconInfo: BaseUiKitButtonIconData(
+              iconData: ShuffleUiKitIcons.plus,
+              color: context.uiKitTheme?.colorScheme.inversePrimary,
+            ),
+            onPressed: () {},
+          ),
+        ),
+        SpacingFoundation.verticalSpace16,
         UiKitHoverAnimationTile(
           title: "Party",
           onTap: (title) {},

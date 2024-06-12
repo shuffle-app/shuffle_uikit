@@ -58,52 +58,59 @@ class _PropertiesTypeAnimatedButtonState
   @override
   Widget build(BuildContext context) {
     final uiKitTheme = context.uiKitTheme;
-    return InkWell(
-      onTap: _onTapButton,
-      splashColor: ColorsFoundation.primary200.withOpacity(0.08),
-      highlightColor: ColorsFoundation.primary200.withOpacity(0.08),
-      borderRadius: BorderRadiusFoundation.all4,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadiusFoundation.all4,
-          color: _colorAnimation.value,
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Expanded(
-              child: AnimatedDefaultTextStyle(
-                overflow: TextOverflow.ellipsis,
-                duration: const Duration(microseconds: 200),
-                style: uiKitTheme!.regularTextTheme.body.copyWith(
-                  color: isTapped
-                      ? ColorsFoundation.primary200
-                      : uiKitTheme.colorScheme.bodyTypography,
-                ),
-                child: Text(
-                  widget.title,
-                ),
+    return AnimatedBuilder(
+      builder: (context, child) {
+        return  Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: _onTapButton,
+            splashColor: ColorsFoundation.primary200.withOpacity(0.08),
+            highlightColor: ColorsFoundation.primary200.withOpacity(0.08),
+            borderRadius: BorderRadiusFoundation.all4,
+            child: Ink(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadiusFoundation.all4,
+                color: _colorAnimation.value,
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Expanded(
+                    child: AnimatedDefaultTextStyle(
+                      overflow: TextOverflow.ellipsis,
+                      duration: const Duration(microseconds: 200),
+                      style: uiKitTheme!.regularTextTheme.body.copyWith(
+                        color: isTapped
+                            ? ColorsFoundation.primary200
+                            : uiKitTheme.colorScheme.bodyTypography,
+                      ),
+                      child: Text(
+                        widget.title,
+                      ),
+                    ),
+                  ),
+                  SpacingFoundation.horizontalSpace16,
+                  Transform.rotate(
+                    angle: _angelAnimation.value,
+                    child: Icon(
+                      ShuffleUiKitIcons.chevronright,
+                      color: isTapped
+                          ? ColorsFoundation.primary200
+                          : uiKitTheme.colorScheme.darkNeutral900,
+                      size: 16.sp,
+                    ),
+                  ),
+                ],
+              ).paddingOnly(
+                left: EdgeInsetsFoundation.horizontal16,
+                bottom: EdgeInsetsFoundation.vertical8,
+                right: EdgeInsetsFoundation.horizontal4,
+                top: EdgeInsetsFoundation.vertical8,
               ),
             ),
-            SpacingFoundation.horizontalSpace16,
-            Transform.rotate(
-              angle: _angelAnimation.value,
-              child: Icon(
-                ShuffleUiKitIcons.chevronright,
-                color: isTapped
-                    ? ColorsFoundation.primary200
-                    : uiKitTheme.colorScheme.darkNeutral900,
-                size: 16.sp,
-              ),
-            ),
-          ],
-        ).paddingOnly(
-          left: EdgeInsetsFoundation.horizontal16,
-          bottom: EdgeInsetsFoundation.vertical8,
-          right: EdgeInsetsFoundation.horizontal4,
-          top: EdgeInsetsFoundation.vertical8,
-        ),
-      ),
+          ),
+        );
+      }, animation: _controller,
     );
   }
 }
