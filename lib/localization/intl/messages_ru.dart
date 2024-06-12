@@ -174,7 +174,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "Напишите подробный отзыв, используйте все доступные символы, чтобы как можно больше людей могли его оценить"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Добавить промо"),
-        "AddReactions": MessageLookupByLibrary.simpleMessage("Добавить рекцию"),
+        "AddReactions":
+            MessageLookupByLibrary.simpleMessage("Добавить реакцию"),
         "AddReview": MessageLookupByLibrary.simpleMessage("Оставить отзыв"),
         "AddReviewFieldHint": MessageLookupByLibrary.simpleMessage(
             "Напишите полезное дополнение"),
@@ -578,6 +579,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "OfficeAppartmentNumber":
             MessageLookupByLibrary.simpleMessage("Номер офиса"),
         "Ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "Okay": MessageLookupByLibrary.simpleMessage("Окей"),
         "OkayCool": MessageLookupByLibrary.simpleMessage("Ок, круто!"),
         "OnboardingSlide1": MessageLookupByLibrary.simpleMessage("веселиться"),
         "OnboardingSlide2":

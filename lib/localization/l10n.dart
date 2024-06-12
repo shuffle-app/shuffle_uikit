@@ -5922,6 +5922,16 @@ class S {
       args: [progress],
     );
   }
+
+  /// `Okay`
+  String get Okay {
+    return Intl.message(
+      'Okay',
+      name: 'Okay',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

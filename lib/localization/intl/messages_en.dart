@@ -570,6 +570,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "OfficeAppartmentNumber":
             MessageLookupByLibrary.simpleMessage("Office or appt number"),
         "Ok": MessageLookupByLibrary.simpleMessage("Ok"),
+        "Okay": MessageLookupByLibrary.simpleMessage("Okay"),
         "OkayCool": MessageLookupByLibrary.simpleMessage("Okay, cool!"),
         "OnboardingSlide1":
             MessageLookupByLibrary.simpleMessage("to have some fun"),

@@ -573,6 +573,6 @@
   "CompressingVideo": "Compressing video",
   "UploadingVideo": "Uploading video",
   "VideoFileNotCut": "Video file not cut",
-  "CompressingVideoProgress": "Compressing video {progress}%"
-
+  "CompressingVideoProgress": "Compressing video {progress}%",
+  "Okay": "Okay"
 }

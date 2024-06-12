@@ -439,7 +439,7 @@
   "TitleYourTop": "Назовите ваш ТОП",
   "AddReviewPopOverText": "Напишите дополнение к отзыву, которое будет полезно для других посетителей",
   "FeedbackAddedSuccessfullyMessage": "Ваш отзыв успешно добавлен",
-  "AddReactions": "Добавить рекцию",
+  "AddReactions": "Добавить реакцию",
   "ReactionsBy": "Реакции\nот",
   "Albums": "Альбомы",
   "AllAlbums": "Все альбомы",
@@ -573,5 +573,6 @@
   "CompressingVideo": "Сжатие видео",
   "UploadingVideo": "Загрузка видео",
   "VideoFileNotCut": "Видео не обрезано",
-  "CompressingVideoProgress": "Сжатие видео {progress}%"
+  "CompressingVideoProgress": "Сжатие видео {progress}%",
+  "Okay": "Окей"
 }

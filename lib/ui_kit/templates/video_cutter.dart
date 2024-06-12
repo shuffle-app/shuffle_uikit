@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:video_editor/video_editor.dart';
@@ -18,10 +19,15 @@ class VideoCutter extends StatefulWidget {
   /// it takes user back to previous screen and does not return anything
   final VoidCallback? onBackPressed;
 
+  /// [outputDirectory] is the directory where the exported video will be saved
+  /// it is required to be passed to make sure app has permission to write in the directory
+  final String outputDirectory;
+
   const VideoCutter({
     Key? key,
     required this.videoFile,
     required this.onExportFinished,
+    required this.outputDirectory,
     this.onBackPressed,
   }) : super(key: key);
 
@@ -35,6 +41,8 @@ class _VideoCutterState extends State<VideoCutter> {
   final frameThumbnailWidth = 0.0625.sw;
 
   bool cuttingVideo = false;
+
+  bool get muted => _videoEditorController?.video.value.volume == 0;
 
   @override
   void dispose() {
@@ -68,7 +76,7 @@ class _VideoCutterState extends State<VideoCutter> {
               onTrimmingStoppedColor: ColorsFoundation.darkNeutral400,
             ),
           );
-          await _videoEditorController!.initialize();
+          await _videoEditorController!.initialize(aspectRatio: 9 / 16);
         } catch (e) {
           log('Error initializing VideoEditorController: $e');
         }
@@ -93,13 +101,27 @@ class _VideoCutterState extends State<VideoCutter> {
   //   return thumbnails;
   // }
 
-  Future<void> exportVideo() async {
+  Future<void> exportCroppedVideo() async {
     if (_videoEditorController == null) return;
     setState(() => cuttingVideo = true);
-    final config = VideoFFmpegVideoEditorConfig(_videoEditorController!);
+    final config = VideoFFmpegVideoEditorConfig(
+      _videoEditorController!,
+      outputDirectory: widget.outputDirectory,
+      commandBuilder: (controller, videoPath, outputPath) {
+        /// return the ffmpeg command to export the video without audio
+        if (muted) {
+          return '-ss ${_videoEditorController!.startTrim} -i $videoPath -t ${_videoEditorController!.endTrim} -c copy -an -y $outputPath';
+        } else {
+          return '-ss ${_videoEditorController!.startTrim} -i $videoPath -t ${_videoEditorController!.endTrim} -c copy -y $outputPath';
+        }
+      },
+    );
+
     final exportResult = await config.getExecuteConfig();
-    setState(() => cuttingVideo = false);
-    widget.onExportFinished(exportResult.outputPath);
+    log('Exporting video: ${exportResult.command}');
+    await FFmpegKit.executeAsync(exportResult.command, (success) {
+      widget.onExportFinished(exportResult.outputPath);
+    });
   }
 
   @override
@@ -115,12 +137,13 @@ class _VideoCutterState extends State<VideoCutter> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const LoadingWidget(),
+          SpacingFoundation.verticalSpace24,
           Text(
             cuttingVideo ? S.current.CuttingVideo : S.current.CompressingVideo,
             style: boldTextTheme?.subHeadline,
+            textAlign: TextAlign.center,
           ),
-          SpacingFoundation.verticalSpace24,
-          const LoadingWidget(),
         ],
       );
     }
@@ -150,7 +173,7 @@ class _VideoCutterState extends State<VideoCutter> {
               context.smallButton(
                 data: BaseUiKitButtonData(
                   text: S.current.Next,
-                  onPressed: exportVideo,
+                  onPressed: exportCroppedVideo,
                   iconInfo: BaseUiKitButtonIconData(
                     iconData: ShuffleUiKitIcons.chevronright,
                   ),
@@ -183,11 +206,19 @@ class _VideoCutterState extends State<VideoCutter> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               const Spacer(),
-                              ImageWidget(
-                                iconData: ShuffleUiKitIcons.volume,
-                                color: colorScheme?.inverseSurface,
-                                width: 24,
-                                height: 24,
+                              AnimatedBuilder(
+                                animation: _videoEditorController!.video,
+                                builder: (context, child) {
+                                  return GestureDetector(
+                                    onTap: () => _videoEditorController?.video.setVolume(muted ? 1 : 0),
+                                    child: ImageWidget(
+                                      iconData: muted ? ShuffleUiKitIcons.volumeoff : ShuffleUiKitIcons.volume,
+                                      color: colorScheme?.inverseSurface,
+                                      width: 24,
+                                      height: 24,
+                                    ),
+                                  );
+                                },
                               ),
                               AnimatedBuilder(
                                 animation: _videoEditorController!.video,
@@ -269,7 +300,7 @@ class _VideoCutterState extends State<VideoCutter> {
             ),
           ),
         ],
-      ),
+      ).paddingAll(EdgeInsetsFoundation.all16),
     );
   }
 }
