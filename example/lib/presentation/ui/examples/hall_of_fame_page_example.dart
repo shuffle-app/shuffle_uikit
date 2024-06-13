@@ -15,8 +15,8 @@ class HallOfFamePageExample extends StatelessWidget {
                 asset: index % 5 == 0
                     ? null
                     : index % 2 == 0
-                        ? GraphicsFoundation.instance.png.goldenCup
-                        : GraphicsFoundation.instance.png.goldenMedal,
+                        ? GraphicsFoundation.instance.png.goldenCup.path
+                        : GraphicsFoundation.instance.png.goldenMedal.path,
                 title: 'Title $index',
               )),
             ));
