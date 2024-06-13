@@ -5812,6 +5812,46 @@ class S {
       args: [],
     );
   }
+
+  /// `My reactions`
+  String get MyReactions {
+    return Intl.message(
+      'My reactions',
+      name: 'MyReactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My feedback`
+  String get MyFeedback {
+    return Intl.message(
+      'My feedback',
+      name: 'MyFeedback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Visit places and events in Shuffle and share your impressions`
+  String get NoFeedbacksYet {
+    return Intl.message(
+      'Visit places and events in Shuffle and share your impressions',
+      name: 'NoFeedbacksYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Visit places and events in Shuffle and make amazing video-reactions`
+  String get NoVideoReactionsYet {
+    return Intl.message(
+      'Visit places and events in Shuffle and make amazing video-reactions',
+      name: 'NoVideoReactionsYet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
