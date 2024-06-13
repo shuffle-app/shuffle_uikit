@@ -191,9 +191,7 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
           onReadMore: () {
             setState(() {
               isHide = false;
-              debugPrint('ON READ MORE TAP');
               scrollPosition = widget.listViewController?.position.pixels ?? 0;
-              debugPrint('Scroll position =====> $scrollPosition');
             });
           },
           description: widget.description,
