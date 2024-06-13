@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
-
+import 'package:collection/collection.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -71,11 +71,6 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // if (iconData == ShuffleUiKitIcons.info) {
-    //   final renderObject = context.findRenderObject() as RenderBox?;
-    // final tailStart = renderObject?.localToGlobal(Offset.zero);
-    // print('ShuffleUiKitIcons.info position: $tailStart');
-    // }
     if (imageBytes != null) {
       return Image.memory(
         imageBytes!,
@@ -168,7 +163,7 @@ class ImageWidget extends StatelessWidget {
 
       // !.startsWith("http://") || link!.startsWith("https://")) {
       return CachedNetworkImage(
-        imageUrl: CustomProxyStatic.proxy + link! + (width != null ? '?width=$width' : '?width=${0.7.sw}'),
+        imageUrl: CustomProxyStatic.proxy + link! + (width != null ? '?width=${width! * 2.5}' : '?width=${0.7.sw * 2.5}'),
         fit: fit,
         fadeInDuration: const Duration(milliseconds: 200),
         fadeOutDuration: const Duration(milliseconds: 200),
