@@ -188,6 +188,7 @@ class _MainPageState extends State<MainPage> {
                     builder: (context) => VideoCutter(
                       videoFile: null,
                       onExportFinished: (exportPath) {},
+                      outputDirectory: 'output',
                     ),
                   ),
                 ),
