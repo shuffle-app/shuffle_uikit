@@ -514,6 +514,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "प्रौद्योगिकी सम्मेलन का दौरा करना चाहिए"),
         "MyCard": MessageLookupByLibrary.simpleMessage("मेरा कार्ड"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("मेरी घटनाएँ"),
+        "MyFeedback": MessageLookupByLibrary.simpleMessage("मेरी प्रतिक्रिया"),
+        "MyReactions":
+            MessageLookupByLibrary.simpleMessage("मेरी प्रतिक्रियाएँ"),
         "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
         "NPlace": m27,
         "Name": MessageLookupByLibrary.simpleMessage("नाम"),
@@ -525,7 +528,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "NewLocationHasOpenedToday": MessageLookupByLibrary.simpleMessage(
             "आज एक नया स्थान खुल गया है ।  आओ! आप इसे पसंद करेंगे!"),
         "NewPlace": MessageLookupByLibrary.simpleMessage("नयी जगह"),
-        "News": MessageLookupByLibrary.simpleMessage("News"),
+        "News": MessageLookupByLibrary.simpleMessage("समाचार"),
         "Next": MessageLookupByLibrary.simpleMessage("अगला"),
         "NextElements": m28,
         "NextNPeople": m29,
@@ -540,6 +543,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("कोई दिनांक चयनित नहीं"),
         "NoFavoritesFound":
             MessageLookupByLibrary.simpleMessage("कोई पसंदीदा नहीं मिला"),
+        "NoFeedbacksYet": MessageLookupByLibrary.simpleMessage(
+            "शफल में स्थानों और घटनाओं का दौरा करें और अपने अनुभव साझा करें"),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "आपके डिवाइस पर कोई स्वास्थ्य किट उपलब्ध नहीं है, इसलिए परिणाम यादृच्छिक होगा"),
         "NoPhotoHereYet": MessageLookupByLibrary.simpleMessage(
@@ -547,6 +552,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NoPreferencesChosen":
             MessageLookupByLibrary.simpleMessage("कोई प्राथमिकता नहीं चुनी गई"),
         "NoThx": MessageLookupByLibrary.simpleMessage("धन्यवाद"),
+        "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
+            "शफल में स्थानों और घटनाओं का दौरा करें और अद्भुत वीडियो-प्रतिक्रियाएँ बनाएं"),
         "NotNow": MessageLookupByLibrary.simpleMessage("अभी नहीं"),
         "NotOften": MessageLookupByLibrary.simpleMessage("अक्सर नहीं"),
         "NotSet": MessageLookupByLibrary.simpleMessage("सेट नहीं किया गया"),
@@ -866,7 +873,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "To become an influencer you need to do"),
         "ToOpenTheNextSetOfToolsYouNeedToDo":
             MessageLookupByLibrary.simpleMessage(
-                "To open the next set of tools you need to do"),
+                "अगले टूल सेट को खोलने के लिए आपको यह करना होगा"),
         "Today": MessageLookupByLibrary.simpleMessage("आज"),
         "Top": MessageLookupByLibrary.simpleMessage("शीर्ष"),
         "TopNDonatorsReceiveXPoints": m43,
@@ -920,7 +927,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "VisitFirstToOpenNext":
             MessageLookupByLibrary.simpleMessage("अगला खोलने के लिए पहले जाएँ"),
         "Voice": MessageLookupByLibrary.simpleMessage("आवाज़"),
-        "Voices": MessageLookupByLibrary.simpleMessage("Voices"),
+        "Voices": MessageLookupByLibrary.simpleMessage("आवाज़ें"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(
             "हम सभी प्रकार की सूचनाओं और विज्ञापनों को स्पैम नहीं करते हैं ।  केवल वे सूचनाएं जो आपके लिए महत्वपूर्ण हो सकती हैं और आपकी प्राथमिकताओं से मेल खाती हैं"),
         "WeHavePlacesJustForYou": MessageLookupByLibrary.simpleMessage(
@@ -968,7 +975,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouReceived": MessageLookupByLibrary.simpleMessage("आपको मिला"),
         "YouSentInvitationToNPeople": m52,
         "YouWillReceiveNewTools":
-            MessageLookupByLibrary.simpleMessage("You will receive new tools"),
+            MessageLookupByLibrary.simpleMessage("आपको नए उपकरण मिलेंगे"),
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("आप उसे खोज लोगे"),
         "YourAge": MessageLookupByLibrary.simpleMessage("आपकी उम्र"),
         "YourAudienceAge":
@@ -979,7 +986,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourLeisureSelection":
             MessageLookupByLibrary.simpleMessage("आपका अवकाश चयन"),
         "YourName": MessageLookupByLibrary.simpleMessage("आपका नाम"),
-        "YourNewTools": MessageLookupByLibrary.simpleMessage("Your new tools"),
+        "YourNewTools": MessageLookupByLibrary.simpleMessage("आपके नए उपकरण"),
         "YourNiche": MessageLookupByLibrary.simpleMessage("आपका आला"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("आपका मत"),
         "YourPriceSegment":
