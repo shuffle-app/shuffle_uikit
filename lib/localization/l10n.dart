@@ -5812,6 +5812,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Icon`
+  String get Icon {
+    return Intl.message(
+      'Icon',
+      name: 'Icon',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

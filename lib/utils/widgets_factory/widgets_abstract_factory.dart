@@ -88,6 +88,11 @@ abstract class WidgetsAbstractFactory {
     BorderRadius? borderRadius,
   });
 
+  ButtonFactory createColoredButtonWithBorderRadius({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+  });
+
   ButtonFactory createGradientButton({
     required BaseUiKitButtonData data,
   });
@@ -250,6 +255,23 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       gradientBorder: gradient,
       loading: data.loading,
       fit: data.fit,
+    );
+  }
+
+  @override
+  ButtonFactory createColoredButtonWithBorderRadius({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+  }) {
+    return ColoredButtonWithBorderRadius(
+      borderRadius: borderRadius,
+      text: data.text,
+      backgroundColor: data.backgroundColor,
+      textColor: data.textColor,
+      onPressed: data.onPressed,
+      loading: data.loading,
+      fit: data.fit,
+      autoSizeGroup: data.autoSizeGroup,
     );
   }
 

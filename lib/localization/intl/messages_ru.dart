@@ -444,6 +444,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "HowItWorks": MessageLookupByLibrary.simpleMessage("Как\nэто?"),
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
             "Сколько \$ хочешь задонатить?"),
+        "Icon": MessageLookupByLibrary.simpleMessage("Иконка"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("Идеальный маршрут"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Не тот логин или пароль"),

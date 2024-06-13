@@ -114,3 +114,4 @@ export 'place/ui_kit_field_with_tag_list.dart';
 export 'lists/ui_kit_properties_cloud.dart';
 export 'properties/properties_bordered_box.dart';
 export 'properties_editing_element//properties_search_input.dart';
+export 'place/place_icon_selector.dart';

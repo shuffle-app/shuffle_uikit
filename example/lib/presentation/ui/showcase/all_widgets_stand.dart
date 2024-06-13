@@ -130,6 +130,41 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
+        PlaceIconSelector(
+          onPressed: () {},
+          listIconData: List.generate(
+            20,
+            (index) => ShuffleUiKitIcons.diamond,
+          ),
+        ).paddingAll(EdgeInsetsFoundation.all16),
+        SpacingFoundation.verticalSpace16,
+        DecoratedBox(
+          decoration: BoxDecoration(
+            color: context.uiKitTheme?.colorScheme.surface2,
+          ),
+          child: const UiKitIconedTitle(
+                  icon: ShuffleUiKitIcons.diamond, title: 'Diamond')
+              .paddingAll(EdgeInsetsFoundation.all16),
+        ),
+        SpacingFoundation.verticalSpace16,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            context.coloredButtonWithBorderRadius(
+              data: BaseUiKitButtonData(
+                text: 'Start',
+                onPressed: () {},
+              ),
+            ),
+            context.coloredButtonWithBorderRadius(
+              data: BaseUiKitButtonData(
+                text: 'Cancel',
+                onPressed: () {},
+                backgroundColor: ColorsFoundation.danger,
+              ),
+            ),
+          ],
+        ),
         SpacingFoundation.verticalSpace16,
         UiKitInputFilledWithTitle(
           title: 'Title',
