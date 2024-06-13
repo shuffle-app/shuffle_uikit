@@ -842,7 +842,7 @@ class AvatarStackWrapper extends StatelessWidget implements UserAvatarFactory {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        child,
+        RepaintBoundary(child: child),
         if (showAchievements)
           Positioned(
               right: -3.sp,

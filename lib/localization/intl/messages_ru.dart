@@ -395,7 +395,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "нажимаешь и случайная выдача"),
         "FeedRandomizerHiwTitle":
             MessageLookupByLibrary.simpleMessage("Его величество случай..."),
-        "Feedback": MessageLookupByLibrary.simpleMessage("Обратная связь"),
+        "Feedback": MessageLookupByLibrary.simpleMessage("Отзыв"),
         "FeedbackAddedSuccessfullyMessage":
             MessageLookupByLibrary.simpleMessage("Ваш отзыв успешно добавлен"),
         "Feeling": MessageLookupByLibrary.simpleMessage("Чувство"),
@@ -528,6 +528,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Обязательно посетите технологическую конференцию"),
         "MyCard": MessageLookupByLibrary.simpleMessage("Профиль"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("Мои события"),
+        "MyFeedback": MessageLookupByLibrary.simpleMessage("Мои отзывы"),
+        "MyReactions": MessageLookupByLibrary.simpleMessage("Мои реакции"),
         "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
         "NPlace": m28,
         "Name": MessageLookupByLibrary.simpleMessage("Имя"),
@@ -555,6 +557,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Дата не выбрана"),
         "NoFavoritesFound":
             MessageLookupByLibrary.simpleMessage("Нет избранных"),
+        "NoFeedbacksYet": MessageLookupByLibrary.simpleMessage(
+            "Посещайте места и события в Shuffle и делитесь впечатлениями"),
         "NoHealthKitAvailableOnYourDevice":
             MessageLookupByLibrary.simpleMessage(
                 "Не доступны данные здоровья, результат будет случайным"),
@@ -563,6 +567,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NoPreferencesChosen":
             MessageLookupByLibrary.simpleMessage("Предпочтения не выбраны"),
         "NoThx": MessageLookupByLibrary.simpleMessage("Нет, спс"),
+        "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
+            "Посещайте места и события в Shuffle и делитесь видеореакциями"),
         "NotNow": MessageLookupByLibrary.simpleMessage("Не сейчас"),
         "NotOften": MessageLookupByLibrary.simpleMessage("Не часто"),
         "NotSet": MessageLookupByLibrary.simpleMessage("Не указано"),
@@ -621,8 +627,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Photos": MessageLookupByLibrary.simpleMessage("Фото"),
         "PickFromMap": MessageLookupByLibrary.simpleMessage("Выбрать на карте"),
         "Place": MessageLookupByLibrary.simpleMessage("Место"),
-        "PlaceSubmittedSuccessfully":
-            MessageLookupByLibrary.simpleMessage("Место успешно отправлено"),
+        "PlaceSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Предложение успешно отправлено"),
         "PlaceType": MessageLookupByLibrary.simpleMessage("Тип места"),
         "Places": MessageLookupByLibrary.simpleMessage("Места"),
         "PlacesVisited": m31,
@@ -821,14 +827,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "События, которые нельзя пропускать"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Начать изучать"),
-        "Submit": MessageLookupByLibrary.simpleMessage("Представить"),
+        "Submit": MessageLookupByLibrary.simpleMessage("Отправить"),
         "SubmitContent":
             MessageLookupByLibrary.simpleMessage("Предложить контент"),
         "SubscribeToProfile":
             MessageLookupByLibrary.simpleMessage("Подписаться"),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
         "SuccessfullyAnswered":
-            MessageLookupByLibrary.simpleMessage("Успешно получен ответ"),
+            MessageLookupByLibrary.simpleMessage("Успешно отправлен ответ"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("Вс"),
         "Sunny": MessageLookupByLibrary.simpleMessage("Солнечно"),
         "Support": MessageLookupByLibrary.simpleMessage("Помощь"),

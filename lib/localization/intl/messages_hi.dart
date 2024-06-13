@@ -528,6 +528,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "प्रौद्योगिकी सम्मेलन का दौरा करना चाहिए"),
         "MyCard": MessageLookupByLibrary.simpleMessage("मेरा कार्ड"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("मेरी घटनाएँ"),
+        "MyFeedback": MessageLookupByLibrary.simpleMessage("मेरी प्रतिक्रिया"),
+        "MyReactions":
+            MessageLookupByLibrary.simpleMessage("मेरी प्रतिक्रियाएँ"),
         "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
         "NPlace": m28,
         "Name": MessageLookupByLibrary.simpleMessage("नाम"),
@@ -554,6 +557,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("कोई दिनांक चयनित नहीं"),
         "NoFavoritesFound":
             MessageLookupByLibrary.simpleMessage("कोई पसंदीदा नहीं मिला"),
+        "NoFeedbacksYet": MessageLookupByLibrary.simpleMessage(
+            "शफल में स्थानों और घटनाओं का दौरा करें और अपने अनुभव साझा करें"),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "आपके डिवाइस पर कोई स्वास्थ्य किट उपलब्ध नहीं है, इसलिए परिणाम यादृच्छिक होगा"),
         "NoPhotoHereYet": MessageLookupByLibrary.simpleMessage(
@@ -561,6 +566,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NoPreferencesChosen":
             MessageLookupByLibrary.simpleMessage("कोई प्राथमिकता नहीं चुनी गई"),
         "NoThx": MessageLookupByLibrary.simpleMessage("धन्यवाद"),
+        "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
+            "शफल में स्थानों और घटनाओं का दौरा करें और अद्भुत वीडियो-प्रतिक्रियाएँ बनाएं"),
         "NotNow": MessageLookupByLibrary.simpleMessage("अभी नहीं"),
         "NotOften": MessageLookupByLibrary.simpleMessage("अक्सर नहीं"),
         "NotSet": MessageLookupByLibrary.simpleMessage("सेट नहीं किया गया"),

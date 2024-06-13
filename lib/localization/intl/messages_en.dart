@@ -521,6 +521,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Must visit technology conf"),
         "MyCard": MessageLookupByLibrary.simpleMessage("My card"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("My events"),
+        "MyFeedback": MessageLookupByLibrary.simpleMessage("My feedback"),
+        "MyReactions": MessageLookupByLibrary.simpleMessage("My reactions"),
         "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
         "NPlace": m28,
         "Name": MessageLookupByLibrary.simpleMessage("Name"),
@@ -548,6 +550,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No date selected"),
         "NoFavoritesFound":
             MessageLookupByLibrary.simpleMessage("No favorites found"),
+        "NoFeedbacksYet": MessageLookupByLibrary.simpleMessage(
+            "Visit places and events in Shuffle and share your impressions"),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "No health kit available on your device, so the result will be random"),
         "NoPhotoHereYet":
@@ -555,6 +559,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NoPreferencesChosen":
             MessageLookupByLibrary.simpleMessage("No preferences chosen"),
         "NoThx": MessageLookupByLibrary.simpleMessage("No, thx"),
+        "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
+            "Visit places and events in Shuffle and make amazing video-reactions"),
         "NotNow": MessageLookupByLibrary.simpleMessage("Not now"),
         "NotOften": MessageLookupByLibrary.simpleMessage("Not often"),
         "NotSet": MessageLookupByLibrary.simpleMessage("Not set"),

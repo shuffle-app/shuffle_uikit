@@ -202,8 +202,8 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                 asset: index != 0 && index % 3 == 0
                     ? null
                     : index % 2 == 0
-                        ? GraphicsFoundation.instance.png.goldenCup
-                        : GraphicsFoundation.instance.png.goldenMedal,
+                        ? GraphicsFoundation.instance.png.goldenCup.path
+                        : GraphicsFoundation.instance.png.goldenMedal.path,
               ),
             ),
             badge: const InfluencerMemberPlate(),

@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitMediaSliderWithTags extends StatelessWidget {
+class UiKitMediaSliderWithTags extends StatefulWidget {
   final List<BaseUiKitMedia> media;
   final double? rating;
   final String description;
@@ -12,6 +12,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
   final ScrollController scrollController;
   final Future<List<HorizontalCaptionedImageData>?>? branches;
   final List<Widget>? actions;
+  final ScrollController? listViewController;
 
   UiKitMediaSliderWithTags({
     Key? key,
@@ -24,12 +25,22 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
     this.horizontalMargin = 0,
     this.branches,
     this.actions,
+    this.listViewController,
   })  : scrollController = scrollController ?? ScrollController(),
         super(key: key);
 
   @override
+  State<UiKitMediaSliderWithTags> createState() =>
+      _UiKitMediaSliderWithTagsState();
+}
+
+class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
+  late double scrollPosition;
+  bool isHide = true;
+
+  @override
   Widget build(BuildContext context) {
-    final mediaWidth = kIsWeb ? 358.0 : (1.sw - horizontalMargin * 2);
+    final mediaWidth = kIsWeb ? 358.0 : (1.sw - widget.horizontalMargin * 2);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,39 +54,48 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                 behavior: HitTestBehavior.opaque,
                 onTapUp: (TapUpDetails details) {
                   if (details.globalPosition.dx > 1.sw / 2) {
-                    scrollController.animateTo(scrollController.offset + 0.83.sw,
-                        duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
-                  } else if (scrollController.offset < 1.sw / 2) {
-                    scrollController.animateTo(0, duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
+                    widget.scrollController.animateTo(
+                        widget.scrollController.offset + 0.83.sw,
+                        duration: const Duration(milliseconds: 200),
+                        curve: Curves.easeInOut);
+                  } else if (widget.scrollController.offset < 1.sw / 2) {
+                    widget.scrollController.animateTo(0,
+                        duration: const Duration(milliseconds: 200),
+                        curve: Curves.easeInOut);
                   } else {
-                    scrollController.animateTo(scrollController.offset - 0.83.sw,
-                        duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
+                    widget.scrollController.animateTo(
+                        widget.scrollController.offset - 0.83.sw,
+                        duration: const Duration(milliseconds: 200),
+                        curve: Curves.easeInOut);
                   }
                 },
                 child: ListView.separated(
-                  controller: scrollController,
+                  controller: widget.scrollController,
                   physics: const BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
                   addAutomaticKeepAlives: false,
-                  itemCount: media.length,
+                  itemCount: widget.media.length,
                   padding: EdgeInsets.zero,
                   cacheExtent: 0.75.sw,
-                  separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                  separatorBuilder: (context, index) =>
+                      SpacingFoundation.horizontalSpace16,
                   itemBuilder: (context, index) {
-                    final mediaItem = media.elementAt(index);
+                    final mediaItem = widget.media.elementAt(index);
                     if (mediaItem.type == UiKitMediaType.video) {
                       return BaseUiKitMediaWidget.video(
                         media: mediaItem,
-                        width: media.length == 1 ? mediaWidth : null,
-                      ).paddingOnly(left: index == 0 ? horizontalMargin : 0);
+                        width: widget.media.length == 1 ? mediaWidth : null,
+                      ).paddingOnly(
+                          left: index == 0 ? widget.horizontalMargin : 0);
                     }
 
                     return BaseUiKitMediaWidget.image(media: mediaItem)
-                        .paddingOnly(left: index == 0 ? horizontalMargin : 0);
+                        .paddingOnly(
+                            left: index == 0 ? widget.horizontalMargin : 0);
                   },
                 ),
               ),
-              if (actions != null && actions!.isNotEmpty)
+              if (widget.actions != null && widget.actions!.isNotEmpty)
                 Positioned(
                   right: 16.w,
                   bottom: 0,
@@ -84,7 +104,7 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: actions!.reversed.toList(),
+                    children: widget.actions!.reversed.toList(),
                   ),
                 ),
             ],
@@ -92,14 +112,14 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
         ),
         SpacingFoundation.verticalSpace14,
         UiKitTagsWidget(
-          rating: rating,
-          baseTags: baseTags,
-          uniqueTags: uniqueTags,
-        ).paddingSymmetric(horizontal: horizontalMargin),
+          rating: widget.rating,
+          baseTags: widget.baseTags,
+          uniqueTags: widget.uniqueTags,
+        ).paddingSymmetric(horizontal: widget.horizontalMargin),
         SpacingFoundation.verticalSpace14,
-        if (branches != null)
+        if (widget.branches != null)
           FutureBuilder(
-              future: branches,
+              future: widget.branches,
               builder: (context, snapshot) => AnimatedSize(
                       duration: const Duration(milliseconds: 200),
                       curve: Curves.easeInOut,
@@ -114,27 +134,32 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                                 children: [
                                   Text(
                                     'Branches',
-                                    style: context.uiKitTheme?.boldTextTheme.caption2Medium,
+                                    style: context.uiKitTheme?.boldTextTheme
+                                        .caption2Medium,
                                   ),
                                   SpacingFoundation.verticalSpace4,
                                   ConstrainedBox(
-                                    constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
+                                    constraints: BoxConstraints(
+                                        maxHeight: 0.28125.sw * 0.577),
                                     child: ListView.separated(
                                       padding: EdgeInsets.zero,
                                       shrinkWrap: true,
                                       addAutomaticKeepAlives: false,
                                       scrollDirection: Axis.horizontal,
                                       itemBuilder: (context, index) {
-                                        final branch = snapshot.data!.elementAt(index);
+                                        final branch =
+                                            snapshot.data!.elementAt(index);
 
                                         return UiKitHorizontalCaptionedImage(
                                           title: branch.caption,
                                           imageLink: branch.imageUrl,
-                                          borderRadius: BorderRadiusFoundation.all16,
+                                          borderRadius:
+                                              BorderRadiusFoundation.all16,
                                           onTap: branch.onTap,
                                         );
                                       },
-                                      separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                                      separatorBuilder: (context, index) =>
+                                          SpacingFoundation.horizontalSpace16,
                                       itemCount: snapshot.data!.length,
                                     ),
                                   ),
@@ -147,10 +172,32 @@ class UiKitMediaSliderWithTags extends StatelessWidget {
                             ))
                   .paddingOnly(bottom: SpacingFoundation.verticalSpacing14)),
         DescriptionWidget(
-          description: description,
+          isHide: isHide,
+          onReadLess: () {
+            setState(() {
+              widget.listViewController
+                  ?.animateTo(scrollPosition,
+                      duration: const Duration(milliseconds: 100),
+                      curve: Curves.easeIn)
+                  .then(
+                (value) {
+                  setState(() {
+                    isHide = true;
+                  });
+                },
+              );
+            });
+          },
+          onReadMore: () {
+            setState(() {
+              isHide = false;
+              scrollPosition = widget.listViewController?.position.pixels ?? 0;
+            });
+          },
+          description: widget.description,
         ).paddingOnly(
-          left: horizontalMargin,
-          right: horizontalMargin,
+          left: widget.horizontalMargin,
+          right: widget.horizontalMargin,
         ),
       ],
     );

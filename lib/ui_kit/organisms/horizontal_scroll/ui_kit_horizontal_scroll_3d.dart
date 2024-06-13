@@ -20,7 +20,7 @@ class UiKitHorizontalScroll3D extends StatelessWidget {
     double calculatedWidth = screenWidth * 0.85;
     double calculatedHeight = screenHeight * 0.25704;
     if (isBigScreen) {
-      calculatedWidth = screenWidth * 0.85;
+      calculatedWidth = screenWidth * 0.81;
       calculatedHeight = screenHeight * 0.2175704;
     }
     final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
@@ -43,7 +43,7 @@ class UiKitHorizontalScroll3D extends StatelessWidget {
               color: context.uiKitTheme?.colorScheme.surface.withOpacity(0.5) ?? Colors.transparent,
               offset: const Offset(0, 0),
               blurRadius: 10,
-              spreadRadius: 100,
+              spreadRadius: 150,
             ),
           ],
         ),
