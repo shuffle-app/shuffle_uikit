@@ -5403,16 +5403,6 @@ class S {
     );
   }
 
-  /// `Range end value is less than begining one`
-  String get RangeEndValueIsLessThanBeginingOne {
-    return Intl.message(
-      'Range end value is less than begining one',
-      name: 'RangeEndValueIsLessThanBeginingOne',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Invites`
   String get Invites {
     return Intl.message(
@@ -5428,6 +5418,456 @@ class S {
     return Intl.message(
       'Bookings',
       name: 'BookingsHeading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select price and currency`
+  String get SelectPriceAndCurrency {
+    return Intl.message(
+      'Select price and currency',
+      name: 'SelectPriceAndCurrency',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get Submit {
+    return Intl.message(
+      'Submit',
+      name: 'Submit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter location`
+  String get EnterLocation {
+    return Intl.message(
+      'Enter location',
+      name: 'EnterLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter title`
+  String get EnterTitle {
+    return Intl.message(
+      'Enter title',
+      name: 'EnterTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Why do you love it?`
+  String get WhyDoYouLoveIt {
+    return Intl.message(
+      'Why do you love it?',
+      name: 'WhyDoYouLoveIt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit content`
+  String get SubmitContent {
+    return Intl.message(
+      'Submit content',
+      name: 'SubmitContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place submitted successfully`
+  String get PlaceSubmittedSuccessfully {
+    return Intl.message(
+      'Place submitted successfully',
+      name: 'PlaceSubmittedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Feedback`
+  String get Feedback {
+    return Intl.message(
+      'Feedback',
+      name: 'Feedback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reply`
+  String get Reply {
+    return Intl.message(
+      'Reply',
+      name: 'Reply',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write the answer`
+  String get WriteTheAnswer {
+    return Intl.message(
+      'Write the answer',
+      name: 'WriteTheAnswer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Successfully answered`
+  String get SuccessfullyAnswered {
+    return Intl.message(
+      'Successfully answered',
+      name: 'SuccessfullyAnswered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Range end value is less than begining one`
+  String get RangeEndValueIsLessThanBeginingOne {
+    return Intl.message(
+      'Range end value is less than begining one',
+      name: 'RangeEndValueIsLessThanBeginingOne',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{minutes}m ago`
+  String MinutesAgo(Object minutes) {
+    return Intl.message(
+      '${minutes}m ago',
+      name: 'MinutesAgo',
+      desc: '',
+      args: [minutes],
+    );
+  }
+
+  /// `{hours}h ago`
+  String HoursAgo(Object hours) {
+    return Intl.message(
+      '${hours}h ago',
+      name: 'HoursAgo',
+      desc: '',
+      args: [hours],
+    );
+  }
+
+  /// `Yesterday`
+  String get Yesterday {
+    return Intl.message(
+      'Yesterday',
+      name: 'Yesterday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `a week ago`
+  String get WeekAgo {
+    return Intl.message(
+      'a week ago',
+      name: 'WeekAgo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `In any case, content will be moderated, please take care of the quality`
+  String get ContentQualityNotice {
+    return Intl.message(
+      'In any case, content will be moderated, please take care of the quality',
+      name: 'ContentQualityNotice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select your specialty`
+  String get SelectYourSpecialty {
+    return Intl.message(
+      'Select your specialty',
+      name: 'SelectYourSpecialty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content that is available for you to view will appear here`
+  String get ContentThatIsAvailableForYouToViewWillAppearHere {
+    return Intl.message(
+      'Content that is available for you to view will appear here',
+      name: 'ContentThatIsAvailableForYouToViewWillAppearHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To become an influencer you need to do`
+  String get ToBecomeAnInfluencerYouNeedToDo {
+    return Intl.message(
+      'To become an influencer you need to do',
+      name: 'ToBecomeAnInfluencerYouNeedToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} Video-Reaction`
+  String CountVideoReaction(Object count) {
+    return Intl.message(
+      '$count Video-Reaction',
+      name: 'CountVideoReaction',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} Reviews`
+  String CountReviews(Object count) {
+    return Intl.message(
+      '$count Reviews',
+      name: 'CountReviews',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Your progress`
+  String get YourProgress {
+    return Intl.message(
+      'Your progress',
+      name: 'YourProgress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `These content is on your other lists. When added, it will be removed from the current.`
+  String get TheseContentIsOnYourOtherLists {
+    return Intl.message(
+      'These content is on your other lists. When added, it will be removed from the current.',
+      name: 'TheseContentIsOnYourOtherLists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best parties`
+  String get TheBestParties {
+    return Intl.message(
+      'The best parties',
+      name: 'TheBestParties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Must visit technology conf`
+  String get MustVisitTechnologyConf {
+    return Intl.message(
+      'Must visit technology conf',
+      name: 'MustVisitTechnologyConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `shared with you`
+  String get SharedWithYou {
+    return Intl.message(
+      'shared with you',
+      name: 'SharedWithYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best technologies conf`
+  String get TheBestTechnologiesConf {
+    return Intl.message(
+      'The best technologies conf',
+      name: 'TheBestTechnologiesConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The best tech conf`
+  String get TheBestTechConf {
+    return Intl.message(
+      'The best tech conf',
+      name: 'TheBestTechConf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to my favorites`
+  String get AddToMyFavorites {
+    return Intl.message(
+      'Add to my favorites',
+      name: 'AddToMyFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `List “The best technologies conf” successfully added`
+  String get TheBestTechListSuccessfullyAdded {
+    return Intl.message(
+      'List “The best technologies conf” successfully added',
+      name: 'TheBestTechListSuccessfullyAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recently added`
+  String get RecentlyAdded {
+    return Intl.message(
+      'Recently added',
+      name: 'RecentlyAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get Date {
+    return Intl.message(
+      'Date',
+      name: 'Date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Properties`
+  String get Properties {
+    return Intl.message(
+      'Properties',
+      name: 'Properties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search or add tag`
+  String get SearchOrAddTag {
+    return Intl.message(
+      'Search or add tag',
+      name: 'SearchOrAddTag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activity types`
+  String get ActivityTypes {
+    return Intl.message(
+      'Activity types',
+      name: 'ActivityTypes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Voices`
+  String get Voices {
+    return Intl.message(
+      'Voices',
+      name: 'Voices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `News`
+  String get News {
+    return Intl.message(
+      'News',
+      name: 'News',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You will receive new tools`
+  String get YouWillReceiveNewTools {
+    return Intl.message(
+      'You will receive new tools',
+      name: 'YouWillReceiveNewTools',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your new tools`
+  String get YourNewTools {
+    return Intl.message(
+      'Your new tools',
+      name: 'YourNewTools',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To open the next set of tools you need to do`
+  String get ToOpenTheNextSetOfToolsYouNeedToDo {
+    return Intl.message(
+      'To open the next set of tools you need to do',
+      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My reactions`
+  String get MyReactions {
+    return Intl.message(
+      'My reactions',
+      name: 'MyReactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My feedback`
+  String get MyFeedback {
+    return Intl.message(
+      'My feedback',
+      name: 'MyFeedback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Visit places and events in Shuffle and share your impressions`
+  String get NoFeedbacksYet {
+    return Intl.message(
+      'Visit places and events in Shuffle and share your impressions',
+      name: 'NoFeedbacksYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Visit places and events in Shuffle and make amazing video-reactions`
+  String get NoVideoReactionsYet {
+    return Intl.message(
+      'Visit places and events in Shuffle and make amazing video-reactions',
+      name: 'NoVideoReactionsYet',
       desc: '',
       args: [],
     );
