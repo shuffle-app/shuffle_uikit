@@ -5833,6 +5833,126 @@ class S {
     );
   }
 
+  /// `Album`
+  String get Album {
+    return Intl.message(
+      'Album',
+      name: 'Album',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You must select at least one video`
+  String get MustSelectVideo {
+    return Intl.message(
+      'You must select at least one video',
+      name: 'MustSelectVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back`
+  String get Back {
+    return Intl.message(
+      'Back',
+      name: 'Back',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `File does not exist`
+  String get FileNotExistsMessage {
+    return Intl.message(
+      'File does not exist',
+      name: 'FileNotExistsMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content id not provided`
+  String get ContentIdNotProvidedError {
+    return Intl.message(
+      'Content id not provided',
+      name: 'ContentIdNotProvidedError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reaction successfully added`
+  String get VideoReactionUploadedMessage {
+    return Intl.message(
+      'Reaction successfully added',
+      name: 'VideoReactionUploadedMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cutting video`
+  String get CuttingVideo {
+    return Intl.message(
+      'Cutting video',
+      name: 'CuttingVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Compressing video`
+  String get CompressingVideo {
+    return Intl.message(
+      'Compressing video',
+      name: 'CompressingVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Uploading video`
+  String get UploadingVideo {
+    return Intl.message(
+      'Uploading video',
+      name: 'UploadingVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Video file not cut`
+  String get VideoFileNotCut {
+    return Intl.message(
+      'Video file not cut',
+      name: 'VideoFileNotCut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Compressing video {progress}%`
+  String CompressingVideoProgress(Object progress) {
+    return Intl.message(
+      'Compressing video $progress%',
+      name: 'CompressingVideoProgress',
+      desc: '',
+      args: [progress],
+    );
+  }
+
+  /// `Okay`
+  String get Okay {
+    return Intl.message(
+      'Okay',
+      name: 'Okay',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `My reactions`
   String get MyReactions {
     return Intl.message(
