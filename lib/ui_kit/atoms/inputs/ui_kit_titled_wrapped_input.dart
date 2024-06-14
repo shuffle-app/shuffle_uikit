@@ -5,11 +5,13 @@ class UiKitTitledWrappedInput extends StatelessWidget {
   final Widget input;
   final String title;
   final String? popOverMessage;
+  final double? padding;
 
   const UiKitTitledWrappedInput({
     Key? key,
     required this.input,
     required this.title,
+    this.padding,
     this.popOverMessage,
   }) : super(key: key);
 
@@ -25,7 +27,6 @@ class UiKitTitledWrappedInput extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SpacingFoundation.verticalSpace16,
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -43,7 +44,7 @@ class UiKitTitledWrappedInput extends StatelessWidget {
                       onTap: () => showUiKitPopover(
                         context,
                         showButton: false,
-                        // popOverTailStart: tailStart,
+                        customMinHeight: 40.h,
                         title: Text(
                           popOverMessage!,
                           style: regularTextTheme?.body.copyWith(color: colorScheme?.surface),
@@ -61,9 +62,8 @@ class UiKitTitledWrappedInput extends StatelessWidget {
           ),
           SpacingFoundation.verticalSpace4,
           input,
-          SpacingFoundation.verticalSpace4,
         ],
-      ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal4),
+      ).paddingAll(EdgeInsetsFoundation.all16),
     );
   }
 }

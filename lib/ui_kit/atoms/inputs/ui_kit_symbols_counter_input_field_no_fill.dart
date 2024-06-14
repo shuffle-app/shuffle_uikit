@@ -1,41 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitInputFieldNoFill extends StatefulWidget
+class UiKitSymbolsCounterInputFieldNoFill extends StatefulWidget
     implements BaseUiKitInputField {
-  const UiKitInputFieldNoFill({
-    Key? key,
-    required this.controller,
-    this.errorText,
-    this.inputFormatters,
-    this.prefixText,
-    this.onTap,
-    this.onChanged,
-    this.onFieldSubmitted,
-    this.hintText,
-    this.validator,
-    this.keyboardType,
-    this.icon,
-    this.contentPadding,
-    this.prefixIcon,
-    this.customLabelColor,
-    this.customHintColor,
-    this.customFocusedBorder,
-    this.customEnabledBorder,
-    this.customInputTextColor,
-    this.enabled = true,
-    this.expands = false,
-    this.autofocus = false,
-    this.obscureText = false,
-    this.maxLines = 1,
-    this.minLines,
-    this.readOnly = false,
-    required this.label,
-  }) : super(key: key);
-
-  final String label;
-  final TextInputType? keyboardType;
   @override
   final TextEditingController controller;
   @override
@@ -46,11 +13,15 @@ class UiKitInputFieldNoFill extends StatefulWidget
   final String? hintText;
   @override
   final String? Function(String? p1)? validator;
-
+  @override
+  final bool obscureText;
+  final int maxSymbols;
+  final int minLines;
+  final int? maxLines;
+  final TextInputType? keyboardType;
   final String? prefixText;
   final Widget? icon;
   final Widget? prefixIcon;
-  final List<TextInputFormatter>? inputFormatters;
   final EdgeInsets? contentPadding;
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onFieldSubmitted;
@@ -63,16 +34,47 @@ class UiKitInputFieldNoFill extends StatefulWidget
   final bool expands;
   final bool autofocus;
   final bool readOnly;
-  final int maxLines;
-  final int? minLines;
-  @override
-  final bool obscureText;
+  final TextStyle? inputTextStyle;
+
+  const UiKitSymbolsCounterInputFieldNoFill({
+    Key? key,
+    required this.controller,
+    required this.enabled,
+    required this.obscureText,
+    required this.maxSymbols,
+    this.minLines = 5,
+    this.errorText,
+    this.hintText,
+    this.validator,
+    this.maxLines,
+    this.prefixText,
+    this.onTap,
+    this.onChanged,
+    this.onFieldSubmitted,
+    this.keyboardType,
+    this.icon,
+    this.contentPadding,
+    this.prefixIcon,
+    this.customLabelColor,
+    this.customHintColor,
+    this.customFocusedBorder,
+    this.customEnabledBorder,
+    this.customInputTextColor,
+    this.inputTextStyle,
+    this.expands = false,
+    this.autofocus = false,
+    this.readOnly = false,
+  }) : super(key: key);
 
   @override
-  State<UiKitInputFieldNoFill> createState() => _UiKitInputFieldNoFillState();
+  State<UiKitSymbolsCounterInputFieldNoFill> createState() =>
+      _UiKitSymbolsCounterInputFieldNoFillState();
 }
 
-class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
+class _UiKitSymbolsCounterInputFieldNoFillState
+    extends State<UiKitSymbolsCounterInputFieldNoFill> {
+  final inputPropertiesColor = const InputStateColor();
+
   final GlobalKey<FormFieldState> _key = GlobalKey<FormFieldState>();
 
   @override
@@ -89,19 +91,12 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
     final inputTheme = uiKitTheme?.noFillInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2
         .copyWith(color: ColorsFoundation.error);
-    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
-        color: _key.currentState?.hasError ?? false
-            ? ColorsFoundation.error
-            : widget.customInputTextColor ??
-                uiKitTheme.colorScheme.inversePrimary);
-    TextStyle? labelStyle = uiKitTheme?.regularTextTheme.labelSmall;
-    labelStyle = _key.currentState?.hasError ?? false
-        ? labelStyle?.copyWith(color: ColorsFoundation.error)
-        : labelStyle?.copyWith(
-            color: widget.enabled
-                ? widget.customLabelColor ??
-                    uiKitTheme?.colorScheme.bodyTypography
-                : uiKitTheme?.colorScheme.darkNeutral900);
+    final inputTextStyle = widget.inputTextStyle ??
+        uiKitTheme?.boldTextTheme.labelLarge.copyWith(
+            color: _key.currentState?.hasError ?? false
+                ? ColorsFoundation.error
+                : widget.customInputTextColor ??
+                    uiKitTheme.colorScheme.inversePrimary);
     final hintStyle =
         uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
@@ -109,7 +104,6 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
               uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
           : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
-
     return Theme(
       data: Theme.of(context).copyWith(
         inputDecorationTheme: inputTheme,
@@ -117,22 +111,14 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
       ),
       child: TextFormField(
         key: _key,
-        onTap: widget.onTap,
-        readOnly: widget.readOnly,
-        obscureText: widget.obscureText,
-        textInputAction: TextInputAction.next,
-        expands: widget.expands,
-        maxLines: widget.expands ? null : widget.maxLines,
-        minLines: widget.minLines,
-        enabled: widget.enabled,
-        autofocus: widget.autofocus,
-        keyboardType: widget.keyboardType,
-        controller: widget.enabled ? widget.controller : null,
         style: inputTextStyle,
-        onChanged: widget.onChanged,
-        onFieldSubmitted: widget.onFieldSubmitted,
+        enabled: widget.enabled,
+        controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
-        inputFormatters: widget.inputFormatters,
+        maxLength: widget.maxSymbols,
+        minLines: widget.minLines,
+        maxLines: widget.maxLines,
+        buildCounter: _buildCounter,
         decoration: InputDecoration(
           focusedBorder: widget.customFocusedBorder ??
               context.uiKitTheme?.noFillInputTheme.focusedBorder,
@@ -142,21 +128,30 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
           prefixIcon: widget.prefixIcon,
           contentPadding: widget.contentPadding,
           floatingLabelBehavior: FloatingLabelBehavior.always,
-          floatingLabelStyle:
-              MaterialStateTextStyle.resolveWith((states) => labelStyle!),
           floatingLabelAlignment: FloatingLabelAlignment.start,
-          labelStyle:
-              MaterialStateTextStyle.resolveWith((states) => labelStyle!),
           hintText: widget.hintText,
           prefixStyle: inputTextStyle,
           prefixText: widget.prefixText,
-          labelText: widget.label,
           hintStyle: hintStyle,
           errorText: widget.errorText,
           errorMaxLines: 1,
           errorStyle: errorStyle,
         ),
       ),
+    );
+  }
+
+  Widget _buildCounter(
+    BuildContext context, {
+    required int currentLength,
+    required int? maxLength,
+    required bool isFocused,
+  }) {
+    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    return Text(
+      '$currentLength / $maxLength',
+      style: boldTextTheme?.caption2Medium
+          .copyWith(color: ColorsFoundation.mutedText),
     );
   }
 }

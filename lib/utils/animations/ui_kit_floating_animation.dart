@@ -33,6 +33,7 @@ class _UiKitFloatingAnimationState extends State<UiKitFloatingAnimation>
       vsync: this,
       duration: duration,
     );
+    WidgetsBinding.instance.addObserver(this);
     coefficientX = rand.nextInt(_kMaxOffset) * (rand.nextBool() ? -1 : 1) / 5;
     coefficientY = rand.nextInt(_kMaxOffset) * (rand.nextBool() ? -1 : 1) / 5;
     _controller.repeat(reverse: true, period: duration);
@@ -56,6 +57,7 @@ class _UiKitFloatingAnimationState extends State<UiKitFloatingAnimation>
   @override
   void dispose() {
     _controller.dispose();
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
 

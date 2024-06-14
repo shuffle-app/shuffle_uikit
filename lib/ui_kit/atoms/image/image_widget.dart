@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
-
+import 'package:collection/collection.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +37,7 @@ class ImageWidget extends StatelessWidget {
   final Uint8List? imageBytes;
 
   const ImageWidget({
-    Key? key,
+    super.key,
     this.link,
     this.fit,
     this.width,
@@ -55,7 +55,7 @@ class ImageWidget extends StatelessWidget {
     this.imageBuilder,
     this.imageBytes,
     this.onImageLoadingFailed,
-  }) : super(key: key);
+  });
 
   Future _takeFrameFromVideo(String link) async {
     final VideoPlayerController controller = VideoPlayerController.networkUrl(Uri.parse(link));
@@ -71,11 +71,6 @@ class ImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // if (iconData == ShuffleUiKitIcons.info) {
-    //   final renderObject = context.findRenderObject() as RenderBox?;
-    // final tailStart = renderObject?.localToGlobal(Offset.zero);
-    // print('ShuffleUiKitIcons.info position: $tailStart');
-    // }
     if (imageBytes != null) {
       return Image.memory(
         imageBytes!,
@@ -168,7 +163,7 @@ class ImageWidget extends StatelessWidget {
 
       // !.startsWith("http://") || link!.startsWith("https://")) {
       return CachedNetworkImage(
-        imageUrl: CustomProxyStatic.proxy + link!,
+        imageUrl: CustomProxyStatic.proxy + link! + (width != null ? '?width=${width! * 2.5}' : '?width=${0.7.sw * 2.5}'),
         fit: fit,
         fadeInDuration: const Duration(milliseconds: 200),
         fadeOutDuration: const Duration(milliseconds: 200),
@@ -282,10 +277,10 @@ class _CustomCachedSvgPictureState extends State<_CustomCachedSvgPicture> {
   void initState() {
     _cachedLink = widget.link;
     CustomCacheManager.svgInstance.getSingleFile(widget.link).then((value) {
-      if(mounted) {
+      if (mounted) {
         setState(() {
-        cachedFile = value;
-      });
+          cachedFile = value;
+        });
       }
     });
     super.initState();
@@ -296,7 +291,7 @@ class _CustomCachedSvgPictureState extends State<_CustomCachedSvgPicture> {
     if (_cachedLink != widget.link) {
       _cachedLink = widget.link;
       CustomCacheManager.svgInstance.getSingleFile(widget.link).then((value) {
-        if(mounted) {
+        if (mounted) {
           setState(() {
             cachedFile = value;
           });
@@ -309,7 +304,7 @@ class _CustomCachedSvgPictureState extends State<_CustomCachedSvgPicture> {
   @override
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
-        duration: const Duration(milliseconds: 200),
+        duration: const Duration(milliseconds: 150),
         child: cachedFile != null
             ? SvgPicture.file(
                 cachedFile!,

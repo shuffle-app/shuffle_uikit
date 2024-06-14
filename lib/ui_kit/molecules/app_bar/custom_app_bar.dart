@@ -13,6 +13,7 @@ class CustomAppBar extends PreferredSize {
   final Widget? appBarBody;
   final Widget? appBarTrailing;
   final Widget? leading;
+  final String? onIWidgetInfoString;
 
   const CustomAppBar({
     super.key,
@@ -25,6 +26,7 @@ class CustomAppBar extends PreferredSize {
     this.autoImplyLeading,
     this.appBarBody,
     this.appBarTrailing,
+    this.onIWidgetInfoString,
     super.preferredSize = const Size(double.infinity, 84),
   }) : super(child: const SizedBox());
 
@@ -70,6 +72,7 @@ class CustomAppBar extends PreferredSize {
                         AppBarTitle(
                           title: title,
                           centerTitle: centerTitle,
+                          onIWidgetInfoString: onIWidgetInfoString,
                         ),
                     if (appBarTrailing != null && !centerTitle) SpacingFoundation.horizontalSpace8,
                     if (appBarTrailing != null) appBarTrailing!,

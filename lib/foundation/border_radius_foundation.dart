@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BorderRadiusFoundation {
   static BorderRadius get all4 => const BorderRadius.all(Radius.circular(4));
+  static BorderRadius get all6 => const BorderRadius.all(Radius.circular(6));
   static BorderRadius get all8 => const BorderRadius.all(Radius.circular(8));
   static BorderRadius get all10 => const BorderRadius.all(Radius.circular(10));
   static BorderRadius get all12 => const BorderRadius.all(Radius.circular(12));
@@ -29,9 +30,19 @@ class BorderRadiusFoundation {
         topRight: Radius.circular(6),
       );
 
+  static BorderRadius get onlyTopt12 => const BorderRadius.only(
+        topLeft: Radius.circular(12),
+        topRight: Radius.circular(12),
+      );
+
   static BorderRadius get onlyTop16 => const BorderRadius.only(
         topLeft: Radius.circular(16),
         topRight: Radius.circular(16),
+      );
+
+  static BorderRadius get onlyBottom12 => const BorderRadius.only(
+        bottomLeft: Radius.circular(12.0),
+        bottomRight: Radius.circular(12.0),
       );
 
   static BorderRadius get onlyBottom24 => const BorderRadius.only(

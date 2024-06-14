@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_kit/atoms/buttons/box_icon_button.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/ui_kit_icon_button_no_padding.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
@@ -14,6 +15,10 @@ abstract class WidgetsAbstractFactory {
     required BaseUiKitButtonData data,
     Alignment? badgeAlignment,
     int? value,
+  });
+
+  ButtonFactory createBoxIconButton({
+    required BaseUiKitButtonData data,
   });
 
   ButtonFactory createOutlinedGradientButton({
@@ -230,8 +235,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     }
 
-    throw UnimplementedError(
-        'Outlined badge button with your parameters is not implemented');
+    throw UnimplementedError('Outlined badge button with your parameters is not implemented');
   }
 
   @override
@@ -245,6 +249,18 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       gradientBorder: gradient,
       loading: data.loading,
       fit: data.fit,
+    );
+  }
+
+  @override
+  ButtonFactory createBoxIconButton({
+    required BaseUiKitButtonData data,
+  }) {
+    return BoxIconButton(
+      iconInfo: data.iconInfo,
+      onPressed: data.onPressed,
+      icon: data.iconWidget,
+      backgroundColor: data.backgroundColor,
     );
   }
 
@@ -269,8 +285,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
         fit: data.fit,
       );
-    } else if ((data.text != null && (data.text?.isNotEmpty ?? false)) ||
-        !hasIcon) {
+    } else if ((data.text != null && (data.text?.isNotEmpty ?? false)) || !hasIcon) {
       return SmallOutlinedButton(
         onPressed: data.onPressed,
         gradient: gradient,
@@ -300,8 +315,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
       );
     } else {
-      throw UnimplementedError(
-          'Outlined button with your parameters is not implemented');
+      throw UnimplementedError('Outlined button with your parameters is not implemented');
     }
   }
 
@@ -356,8 +370,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         isGradientEnabled: isGradientEnabled ?? false,
       );
     } else {
-      throw UnimplementedError(
-          'Outlined button with your parameters is not implemented');
+      throw UnimplementedError('Outlined button with your parameters is not implemented');
     }
   }
 
@@ -393,8 +406,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
       );
     } else {
-      throw UnimplementedError(
-          'Gradient button with your parameters is not implemented');
+      throw UnimplementedError('Gradient button with your parameters is not implemented');
     }
   }
 
@@ -406,10 +418,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool reversed = false,
   }) {
     final hasIcon = data.iconWidget != null || data.iconInfo != null;
-    final onlyIconButton = hasIcon &&
-        (data.text?.isEmpty ?? true) &&
-        !isTextButton &&
-        !(blurred ?? false);
+    final onlyIconButton = hasIcon && (data.text?.isEmpty ?? true) && !isTextButton && !(blurred ?? false);
     if (isTextButton) {
       if (reversed) {
         return OrdinaryReversedTextButton(
@@ -505,6 +514,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       textColor: data.textColor,
       loading: data.loading,
       fit: data.fit,
+      group: data.autoSizeGroup,
     );
   }
 
@@ -523,8 +533,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           return BadgedPremiumUserTile(data: data);
 
         case UserTileType.influencer:
-          throw UnimplementedError(
-              'There is no influencer user tile with badge');
+          throw UnimplementedError('There is no influencer user tile with badge');
 
         default:
           throw UnimplementedError('There is no user tile with badge');
@@ -610,9 +619,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? secondaryActionWidget,
     Widget? dismissActionWidget,
   }) {
-    final hasAllActions = primaryActionWidget != null &&
-        secondaryActionWidget != null &&
-        dismissActionWidget != null;
+    final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
     if (hasAllActions) {
       return AdditionalActionNotificationPopUp(
         requiredData: requiredData,
@@ -783,8 +790,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  SnackBarFactory createSnackBar(
-      {required AppSnackBarType appSnackBarType, required String message}) {
+  SnackBarFactory createSnackBar({required AppSnackBarType appSnackBarType, required String message}) {
     switch (appSnackBarType) {
       case AppSnackBarType.success:
         return SuccessSnackBar(message: message);
@@ -817,15 +823,14 @@ class AvatarStackWrapper extends StatelessWidget implements UserAvatarFactory {
   final bool showAchievements;
   final Widget child;
 
-  const AvatarStackWrapper(
-      {super.key, required this.showAchievements, required this.child});
+  const AvatarStackWrapper({super.key, required this.showAchievements, required this.child});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        child,
+        RepaintBoundary(child: child),
         if (showAchievements)
           Positioned(
               right: -3.sp,
