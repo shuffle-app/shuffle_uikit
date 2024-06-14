@@ -44,6 +44,8 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
 
   double chartToSmallPreviewRatio = 1;
 
+  late final double initialPreviewWidthFraction;
+
   double? datesMaxScrollPosition;
   final _smallPreviewUpdateNotifier = ValueNotifier<LineChartSmallPreviewData>(
     LineChartSmallPreviewData(
@@ -63,8 +65,9 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       setState(() {
         datesMaxScrollPosition = _datesScrollController.position.maxScrollExtent +
             (chartViewPortSize.width - SpacingFoundation.horizontalSpacing32);
+        initialPreviewWidthFraction = chartViewPortSize.width / datesMaxScrollPosition!;
         _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
-          previewWidthFraction: chartViewPortSize.width / datesMaxScrollPosition!,
+          previewWidthFraction: initialPreviewWidthFraction,
         );
       });
 
@@ -138,6 +141,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
           datesMaxScrollPosition == null
               ? SizedBox.fromSize(size: chartViewPortSize, child: const LoadingWidget())
               : UiKitLineChartBody(
+                  initialPreviewWidthFraction: initialPreviewWidthFraction,
                   initialRatioWidth: chartToSmallPreviewRatio,
                   tapNotifier: _tapNotifier,
                   scrollController: _chartScrollController,

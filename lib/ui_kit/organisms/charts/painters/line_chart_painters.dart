@@ -5,9 +5,10 @@ import 'package:shuffle_uikit/utils/extentions/chart_extensions.dart';
 
 class LineChartPainter extends CustomPainter {
   final List<UiKitLineChartItemData<num>> lines;
-  late final double step;
+  late final double _step;
   final Size size;
   final int? selectedIndex;
+  final double stepScaleFactor;
 
   LineChartPainter({
     super.repaint,
@@ -15,12 +16,17 @@ class LineChartPainter extends CustomPainter {
     required this.size,
     double? step,
     this.selectedIndex,
+    this.stepScaleFactor = 1,
   }) {
-    this.step =
+    _step =
         step ?? ((size.width + ((lines.dates.length - 1) * SpacingFoundation.horizontalSpacing4)) / lines.dates.length);
   }
 
+  double get step => _step * stepScaleFactor;
+
   double get curvatureRadius => step / 2;
+
+  double get pointCircleRadius => 4;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -71,22 +77,25 @@ class LineChartPainter extends CustomPainter {
     if (selectedIndex != null && selectedIndex! >= 0) {
       final chartLines = lines.chartItemsWithDatasetAt(selectedIndex!);
       for (final line in chartLines) {
-        final paint = Paint()
-          ..color = Colors.white
-          ..strokeWidth = 2
-          ..style = PaintingStyle.fill;
         final borderPaint = Paint()
-          ..color = line.color ?? Colors.white
           ..strokeWidth = 2
           ..style = PaintingStyle.stroke;
         if (line.gradient != null) {
           borderPaint.shader = line.gradient!.createShader(Rect.fromLTWH(0, 0, width, height));
+        } else if (line.color != null) {
+          borderPaint.color = line.color!;
         }
         final currentX = selectedIndex! * step;
         final currentValue = line.datasets.first.value;
         final currentY = height - ((currentValue / maxValue) * height);
-        canvas.drawCircle(Offset(currentX, currentY), 4, paint);
-        canvas.drawCircle(Offset(currentX, currentY), 4, borderPaint);
+
+        final lastDataSet = selectedIndex! == lines.maxDatasetsCount - 1;
+        final pointOffset = Offset(
+          lastDataSet ? currentX - (pointCircleRadius * 1.5) : currentX,
+          lastDataSet ? currentY + (pointCircleRadius * 1.5) : currentY,
+        );
+        canvas.drawCircle(pointOffset, pointCircleRadius, innerPaint);
+        canvas.drawCircle(pointOffset, pointCircleRadius, borderPaint);
       }
     }
   }

@@ -18,6 +18,7 @@ class UiKitLineChartBody extends StatelessWidget {
   final ValueNotifier<LineChartSelectedPointData> selectedDataSetNotifier;
   final ValueNotifier<LineChartSmallPreviewData> smallPreviewUpdateNotifier;
   final double initialRatioWidth;
+  final double initialPreviewWidthFraction;
 
   const UiKitLineChartBody({
     Key? key,
@@ -28,12 +29,16 @@ class UiKitLineChartBody extends StatelessWidget {
     required this.selectedDataSetNotifier,
     required this.smallPreviewUpdateNotifier,
     required this.initialRatioWidth,
+    required this.initialPreviewWidthFraction,
     this.datesMaxScrollPosition,
   }) : super(key: key);
 
   double get pointsStep => (datesMaxScrollPosition ?? availableSize.width) / (chartItems.maxDatasetsCount - 1);
 
   double get infoCardMaxWidth => 0.4 * availableSize.width;
+
+  double get chartStepScaleFactor =>
+      1 - (initialPreviewWidthFraction - smallPreviewUpdateNotifier.value.previewWidthFraction);
 
   void _setFloatingHintData(Offset position) {
     tapNotifier.value = position;
@@ -111,7 +116,10 @@ class UiKitLineChartBody extends StatelessWidget {
               ),
             ),
             AnimatedBuilder(
-                animation: selectedDataSetNotifier,
+                animation: Listenable.merge([
+                  selectedDataSetNotifier,
+                  smallPreviewUpdateNotifier,
+                ]),
                 builder: (context, child) {
                   return SizedBox(
                     width: availableSize.width,
@@ -128,6 +136,7 @@ class UiKitLineChartBody extends StatelessWidget {
                           availableSize.height + SpacingFoundation.verticalSpacing16,
                         ),
                         painter: LineChartPainter(
+                          stepScaleFactor: chartStepScaleFactor,
                           selectedIndex: selectedDataSetNotifier.value.selectedDataSetIndex,
                           lines: chartItems,
                           size: Size(

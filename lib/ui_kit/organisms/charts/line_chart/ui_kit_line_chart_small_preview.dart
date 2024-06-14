@@ -67,7 +67,11 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
     this.onScroll,
   }) : super(key: key);
 
+  final fractionBounds = const [0.2, 1];
+
   double get maxRemainingFactor => 1 - previewUpdateNotifier.value.previewWidthFraction;
+
+  List<double> get offsetBounds => [0, size.width * maxRemainingFactor];
 
   @override
   Widget build(BuildContext context) {
@@ -175,11 +179,11 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                                     /// when panning right
                                     newLeftOffset = currentLeftOffset + details.delta.dx;
                                   }
-
-                                  if (newWidthFraction >= 0.2 &&
-                                      newWidthFraction <= 1 &&
-                                      newLeftOffset >= 0 &&
-                                      newLeftOffset <= (size.width * maxRemainingFactor)) {
+                                  final withinFractionBounds = newWidthFraction >= fractionBounds.first &&
+                                      newWidthFraction <= fractionBounds.last;
+                                  final withinOffsetBounds =
+                                      newLeftOffset >= offsetBounds.first && newLeftOffset <= offsetBounds.last;
+                                  if (withinFractionBounds && withinOffsetBounds) {
                                     previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(
                                       previewWidthFraction: newWidthFraction,
                                       leftOffset: newLeftOffset,
