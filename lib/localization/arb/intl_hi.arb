@@ -578,5 +578,6 @@
   "CompressingVideo": "वीडियो को संक्षेपित करना",
   "UploadingVideo": "वीडियो अपलोड कर रहा है",
   "VideoFileNotCut": "वीडियो फ़ाइल को काटा नहीं जा सका",
-  "CompressingVideoProgress": "वीडियो {progress}% संक्षेपित कर रहा है"
+  "CompressingVideoProgress": "वीडियो {progress}% संक्षेपित कर रहा है",
+  "NoPeopleAvailableToInvite": "No people available to invite"
 }

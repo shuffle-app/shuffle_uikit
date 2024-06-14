@@ -578,5 +578,6 @@
   "UploadingVideo": "Загрузка видео",
   "VideoFileNotCut": "Видео не обрезано",
   "CompressingVideoProgress": "Сжатие видео {progress}%",
-  "Okay": "Окей"
+  "Okay": "Окей",
+  "NoPeopleAvailableToInvite": "Нет пользователей для инвайта"
 }

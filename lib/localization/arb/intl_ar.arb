@@ -578,6 +578,7 @@
   "UploadingVideo": "Uploading video",
   "VideoFileNotCut": "Video file not cut",
   "CompressingVideoProgress": "Compressing video {progress}%",
-  "Okay": "Okay"
+  "Okay": "Okay",
+  "NoPeopleAvailableToInvite": "No people available to invite"
 
 }

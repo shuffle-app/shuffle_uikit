@@ -5972,6 +5972,16 @@ class S {
       args: [],
     );
   }
+
+  /// `No people available to invite`
+  String get NoPeopleAvailableToInvite {
+    return Intl.message(
+      'No people available to invite',
+      name: 'NoPeopleAvailableToInvite',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

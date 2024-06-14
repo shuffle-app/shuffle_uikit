@@ -67,9 +67,11 @@ class UiKitFindSomeoneCard extends StatelessWidget {
                 SpacingFoundation.verticalSpace2,
                 Text(
                   userName ?? '',
+                  maxLines: 2,
                   style: boldTextTheme?.caption1Bold.copyWith(
                     color: ColorsFoundation.darkNeutral900,
                     fontWeight: FontWeight.w400,
+                    overflow: TextOverflow.ellipsis,
                     fontSize: 13.w,
                   ),
                   textAlign: TextAlign.center,

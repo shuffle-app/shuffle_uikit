@@ -562,6 +562,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NoHealthKitAvailableOnYourDevice":
             MessageLookupByLibrary.simpleMessage(
                 "Не доступны данные здоровья, результат будет случайным"),
+        "NoPeopleAvailableToInvite": MessageLookupByLibrary.simpleMessage(
+            "Нет пользователей для инвайта"),
         "NoPhotoHereYet":
             MessageLookupByLibrary.simpleMessage("Тут пока нет фото!"),
         "NoPreferencesChosen":
