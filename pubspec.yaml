@@ -63,6 +63,9 @@ dependencies:
 
   another_flushbar: ^1.12.30
 
+  #emoji
+  emoji_picker_flutter: ^2.2.0
+
   #tab navigation
   tabnavigator:
 #        path: ../tabnavigator_plus
