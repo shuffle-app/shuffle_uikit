@@ -1,6 +1,6 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 
 class BaseUiKitButtonData {
   final VoidCallback? onPressed;
@@ -33,11 +33,23 @@ class BaseUiKitButtonIconData {
   final String? iconPath;
   final Color? color;
   final double? size;
+  final Alignment? _iconAlignment;
+
+  bool get isLeftIcon =>
+      _iconAlignment == Alignment.bottomLeft ||
+      _iconAlignment == Alignment.centerLeft ||
+      _iconAlignment == Alignment.topLeft;
+
+  bool get isRightIcon =>
+      _iconAlignment == Alignment.bottomRight ||
+      _iconAlignment == Alignment.centerRight ||
+      _iconAlignment == Alignment.topRight;
 
   BaseUiKitButtonIconData({
     this.iconData,
     this.iconPath,
     this.color,
     this.size,
-  });
+    Alignment? iconAlignment,
+  }) : _iconAlignment = iconAlignment ?? Alignment.centerRight;
 }

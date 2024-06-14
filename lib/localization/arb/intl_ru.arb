@@ -439,7 +439,7 @@
   "TitleYourTop": "Назовите ваш ТОП",
   "AddReviewPopOverText": "Напишите дополнение к отзыву, которое будет полезно для других посетителей",
   "FeedbackAddedSuccessfullyMessage": "Ваш отзыв успешно добавлен",
-  "AddReactions": "Добавить рекцию",
+  "AddReactions": "Добавить реакцию",
   "ReactionsBy": "Реакции\nот",
   "Albums": "Альбомы",
   "AllAlbums": "Все альбомы",
@@ -569,5 +569,17 @@
   "NoVideoReactionsYet": "Посещайте места и события в Shuffle и делитесь видеореакциями",
   "Accrual": "Начисление",
   "Activation": "Активация",
-  "ViewHistory": "Просмотр истории"
+  "ViewHistory": "Просмотр истории",
+  "Album": "Альбом",
+  "MustSelectVideo": "Вы должны выбрать хотя бы одно видео",
+  "Back": "Назад",
+  "FileNotExistsMessage": "Файл не существует",
+  "ContentIdNotProvidedError": "Не предоставлен ID контента",
+  "VideoReactionUploadedMessage": "Видео-реакция успешно загружена",
+  "CuttingVideo": "Обрезка видео",
+  "CompressingVideo": "Сжатие видео",
+  "UploadingVideo": "Загрузка видео",
+  "VideoFileNotCut": "Видео не обрезано",
+  "CompressingVideoProgress": "Сжатие видео {progress}%",
+  "Okay": "Окей"
 }

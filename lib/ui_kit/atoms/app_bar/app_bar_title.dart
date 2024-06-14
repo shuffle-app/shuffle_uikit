@@ -22,20 +22,21 @@ class AppBarTitle extends StatelessWidget {
     textStyle = textStyle?.copyWith(color: theme?.colorScheme.inversePrimary);
 
     return Expanded(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-      Text(
-        title,
-        style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
-        textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
+        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Expanded(
+        child: Text(
+          title,
+          style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
+          textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
+          maxLines: 2,
+        ),
       ),
       if (onIWidgetInfoString != null) ...[
         SpacingFoundation.horizontalSpace4,
         Builder(
           builder: (context) {
             return GestureDetector(
-              onTap: ()=>showUiKitPopover(
+              onTap: () => showUiKitPopover(
                 context,
                 customMinHeight: 30.h,
                 showButton: false,
