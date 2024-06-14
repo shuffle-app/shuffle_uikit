@@ -532,7 +532,10 @@
   "Feedback": "प्रतिक्रिया",
   "Reply": "जवाब दे दो",
   "WriteTheAnswer": "उत्तर लिखें",
+  "MustSelectVideo": "आपको कम से कम एक वीडियो चुनना होगा",
   "SuccessfullyAnswered": "सफलतापूर्वक उत्तर दिया",
+  "Album": "एल्बम",
+  "Back": "वापस",
   "RangeEndValueIsLessThanBeginingOne": "सीमा समाप्ति मान प्रारंभिक मान से कम है",
   "MinutesAgo": "{minutes} मिनट पहले",
   "HoursAgo": "{hours} घंटे पहले",
@@ -566,6 +569,14 @@
   "MyReactions": "मेरी प्रतिक्रियाएँ",
   "MyFeedback": "मेरी प्रतिक्रिया",
   "NoFeedbacksYet": "शफल में स्थानों और घटनाओं का दौरा करें और अपने अनुभव साझा करें",
-  "NoVideoReactionsYet": "शफल में स्थानों और घटनाओं का दौरा करें और अद्भुत वीडियो-प्रतिक्रियाएँ बनाएं"
-
+  "NoVideoReactionsYet": "शफल में स्थानों और घटनाओं का दौरा करें और अद्भुत वीडियो-प्रतिक्रियाएँ बनाएं",
+  "Okay": "ठीक है",
+  "FileNotExistsMessage": "फ़ाइल मौजूद नहीं है",
+  "ContentIdNotProvidedError": "सामग्री आईडी प्रदान नहीं की गई",
+  "VideoReactionUploadedMessage": "प्रतिक्रिया सफलतापूर्वक जोड़ी गई",
+  "CuttingVideo": "वीडियो को काटना",
+  "CompressingVideo": "वीडियो को संक्षेपित करना",
+  "UploadingVideo": "वीडियो अपलोड कर रहा है",
+  "VideoFileNotCut": "वीडियो फ़ाइल को काटा नहीं जा सका",
+  "CompressingVideoProgress": "वीडियो {progress}% संक्षेपित कर रहा है"
 }
