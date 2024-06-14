@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitReactionPreview extends StatelessWidget {
-  final String imagePath;
+  final String? imagePath;
   final bool viewed;
   final bool isEmpty;
   final VoidCallback? onTap;
@@ -11,7 +11,7 @@ class UiKitReactionPreview extends StatelessWidget {
 
   const UiKitReactionPreview({
     Key? key,
-    required this.imagePath,
+    this.imagePath,
     this.viewed = false,
     this.onTap,
     this.isEmpty = false,
