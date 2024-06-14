@@ -566,5 +566,8 @@
   "MyReactions": "Мои реакции",
   "MyFeedback": "Мои отзывы",
   "NoFeedbacksYet": "Посещайте места и события в Shuffle и делитесь впечатлениями",
-  "NoVideoReactionsYet": "Посещайте места и события в Shuffle и делитесь видеореакциями"
+  "NoVideoReactionsYet": "Посещайте места и события в Shuffle и делитесь видеореакциями",
+  "Accrual": "Начисление",
+  "Activation": "Активация",
+  "ViewHistory": "Просмотр истории"
 }

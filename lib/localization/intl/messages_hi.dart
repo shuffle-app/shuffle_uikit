@@ -161,6 +161,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AcceptDonations": MessageLookupByLibrary.simpleMessage(
             "दान स्वीकार करें या दूसरों की सपने पूरे करने में मदद करें"),
         "Account": MessageLookupByLibrary.simpleMessage("खाता"),
+        "Accrual": MessageLookupByLibrary.simpleMessage("प्रोद्भवन"),
+        "Activation": MessageLookupByLibrary.simpleMessage("सक्रियण"),
         "ActivityType":
             MessageLookupByLibrary.simpleMessage("क्रिया के प्रकार"),
         "ActivityTypes": MessageLookupByLibrary.simpleMessage("गतिविधि प्रकार"),
@@ -924,6 +926,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("वीडियो (फ़ाइलें अपलोड करें)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("सभी देखें"),
+        "ViewHistory": MessageLookupByLibrary.simpleMessage("इतिहास देखें"),
         "VisitFirstToOpenNext":
             MessageLookupByLibrary.simpleMessage("अगला खोलने के लिए पहले जाएँ"),
         "Voice": MessageLookupByLibrary.simpleMessage("आवाज़"),

@@ -161,6 +161,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "AcceptDonations": MessageLookupByLibrary.simpleMessage(
             "Принимать донаты или помогать другим воплотить мечты"),
         "Account": MessageLookupByLibrary.simpleMessage("Аккаунт"),
+        "Accrual": MessageLookupByLibrary.simpleMessage("Начисление"),
+        "Activation": MessageLookupByLibrary.simpleMessage("Активация"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Тип активности"),
         "ActivityTypes":
             MessageLookupByLibrary.simpleMessage("Типы активности"),
@@ -927,6 +929,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Видео (загрузить)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("Все"),
+        "ViewHistory": MessageLookupByLibrary.simpleMessage("Просмотр истории"),
         "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(
             "Посети первое, открой следующее"),
         "Voice": MessageLookupByLibrary.simpleMessage("Аудиосообщения"),

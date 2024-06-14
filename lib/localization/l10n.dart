@@ -5852,6 +5852,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Accrual`
+  String get Accrual {
+    return Intl.message(
+      'Accrual',
+      name: 'Accrual',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activation`
+  String get Activation {
+    return Intl.message(
+      'Activation',
+      name: 'Activation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View history`
+  String get ViewHistory {
+    return Intl.message(
+      'View history',
+      name: 'ViewHistory',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
