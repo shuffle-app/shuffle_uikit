@@ -560,6 +560,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("No photo here yet!"),
         "NoPreferencesChosen":
             MessageLookupByLibrary.simpleMessage("No preferences chosen"),
+        "NoReactionsMessage": MessageLookupByLibrary.simpleMessage(
+            "There are no reactions yet, be the first"),
+        "NoReviewsMessage":
+            MessageLookupByLibrary.simpleMessage("Be the first to review"),
         "NoThx": MessageLookupByLibrary.simpleMessage("No, thx"),
         "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
             "Visit places and events in Shuffle and make amazing video-reactions"),
@@ -717,6 +721,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RestorePurchase":
             MessageLookupByLibrary.simpleMessage("Restore purchases"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
+        "ReviewsByCritics":
+            MessageLookupByLibrary.simpleMessage("Reviews by critics"),
         "ReviewsPosted": m37,
         "ReviewsReceived": m38,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Sat"),

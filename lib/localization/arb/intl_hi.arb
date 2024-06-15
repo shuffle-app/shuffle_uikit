@@ -579,5 +579,8 @@
   "UploadingVideo": "वीडियो अपलोड कर रहा है",
   "VideoFileNotCut": "वीडियो फ़ाइल को काटा नहीं जा सका",
   "CompressingVideoProgress": "वीडियो {progress}% संक्षेपित कर रहा है",
-  "NoPeopleAvailableToInvite": "No people available to invite"
+  "NoPeopleAvailableToInvite": "आमंत्रित करने के लिए कोई लोग उपलब्ध नहीं हैं",
+  "NoReviewsMessage": "कोई समीक्षा नहीं",
+  "ReviewsByCritics": "निरंकुशों द्वारा समीक्षा",
+  "NoReactionsMessage": "अब तक कोई प्रतिक्रिया नहीं है, पहले वाले बनें"
 }

@@ -39,7 +39,7 @@ class MemberPlate extends StatelessWidget {
           GradientableWidget(
             gradient: GradientFoundation.defaultLinearGradient,
             child: Text(
-              S.current.Members(2).toLowerCase(),
+              'members',
               style: textTheme?.caption1Medium.copyWith(color: Colors.white),
             ),
           ),

@@ -562,11 +562,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "आपके डिवाइस पर कोई स्वास्थ्य किट उपलब्ध नहीं है, इसलिए परिणाम यादृच्छिक होगा"),
         "NoPeopleAvailableToInvite": MessageLookupByLibrary.simpleMessage(
-            "No people available to invite"),
+            "आमंत्रित करने के लिए कोई लोग उपलब्ध नहीं हैं"),
         "NoPhotoHereYet": MessageLookupByLibrary.simpleMessage(
             "अभी तक यहां कोई फोटो नहीं है!"),
         "NoPreferencesChosen":
             MessageLookupByLibrary.simpleMessage("कोई प्राथमिकता नहीं चुनी गई"),
+        "NoReactionsMessage": MessageLookupByLibrary.simpleMessage(
+            "अब तक कोई प्रतिक्रिया नहीं है, पहले वाले बनें"),
+        "NoReviewsMessage":
+            MessageLookupByLibrary.simpleMessage("कोई समीक्षा नहीं"),
         "NoThx": MessageLookupByLibrary.simpleMessage("धन्यवाद"),
         "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
             "शफल में स्थानों और घटनाओं का दौरा करें और अद्भुत वीडियो-प्रतिक्रियाएँ बनाएं"),
@@ -726,6 +730,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RestorePurchase": MessageLookupByLibrary.simpleMessage(
             "खरीदारी को पुनः स्थापित करें"),
         "Reviews": MessageLookupByLibrary.simpleMessage("समीक्षाएं"),
+        "ReviewsByCritics":
+            MessageLookupByLibrary.simpleMessage("निरंकुशों द्वारा समीक्षा"),
         "ReviewsPosted": m37,
         "ReviewsReceived": m38,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("शनिवार"),

@@ -5982,6 +5982,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Be the first to review`
+  String get NoReviewsMessage {
+    return Intl.message(
+      'Be the first to review',
+      name: 'NoReviewsMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reviews by critics`
+  String get ReviewsByCritics {
+    return Intl.message(
+      'Reviews by critics',
+      name: 'ReviewsByCritics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no reactions yet, be the first`
+  String get NoReactionsMessage {
+    return Intl.message(
+      'There are no reactions yet, be the first',
+      name: 'NoReactionsMessage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
