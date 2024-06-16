@@ -14,6 +14,7 @@ class AllWidgetsStand extends StatefulWidget {
 }
 
 class _AllWidgetsStandState extends State<AllWidgetsStand> {
+  final TextEditingController _emojitextEditingController = TextEditingController();
   final TextEditingController _controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -130,7 +131,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
-        UiKitEmojiInputs(),
+        UiKitEmojiInputs(
+          textEditingController: _emojitextEditingController,
+          onSend: () {},
+        ),
         SpacingFoundation.verticalSpace16,
         PropertiesSearchInput(
           options: (text) async => ['prop1', 'prop2', 'prop3'],
