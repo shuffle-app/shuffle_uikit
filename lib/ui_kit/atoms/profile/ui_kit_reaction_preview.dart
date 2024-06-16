@@ -19,14 +19,21 @@ class UiKitReactionPreview extends StatelessWidget {
     this.customHeight,
   }) : super(key: key);
 
-  factory UiKitReactionPreview.empty({VoidCallback? onTap}) => UiKitReactionPreview(
+  factory UiKitReactionPreview.empty({
+    VoidCallback? onTap,
+    double? customWidth,
+    double? customHeight,
+  }) =>
+      UiKitReactionPreview(
         imagePath: '',
         viewed: false,
         isEmpty: true,
+        customWidth: customWidth,
+        customHeight: customHeight,
         onTap: onTap,
       );
-  double get width => customWidth ?? 0.27.sw;
-  double get height => customHeight ?? 0.27.sw * 1.66;
+  double get width => customWidth ?? (height * 0.6);
+  double get height => customHeight ?? 0.2605.sh;
 
   @override
   Widget build(BuildContext context) {

@@ -579,5 +579,8 @@
   "VideoFileNotCut": "Видео не обрезано",
   "CompressingVideoProgress": "Сжатие видео {progress}%",
   "Okay": "Окей",
-  "NoPeopleAvailableToInvite": "Нет пользователей для инвайта"
+  "NoPeopleAvailableToInvite": "Нет пользователей для инвайта",
+  "NoReviewsMessage": "Оставь отзыв первым",
+  "ReviewsByCritics": "Отзывы критиков",
+  "NoReactionsMessage": "Здесь пока нет реакций, будь первым"
 }
