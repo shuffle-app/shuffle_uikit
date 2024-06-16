@@ -5993,6 +5993,16 @@ class S {
     );
   }
 
+  /// `Be the first`
+  String get BeFirstToInvite {
+    return Intl.message(
+      'Be the first',
+      name: 'BeFirstToInvite',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Reviews by critics`
   String get ReviewsByCritics {
     return Intl.message(

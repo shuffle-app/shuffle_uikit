@@ -582,5 +582,6 @@
   "NoPeopleAvailableToInvite": "आमंत्रित करने के लिए कोई लोग उपलब्ध नहीं हैं",
   "NoReviewsMessage": "कोई समीक्षा नहीं",
   "ReviewsByCritics": "निरंकुशों द्वारा समीक्षा",
-  "NoReactionsMessage": "अब तक कोई प्रतिक्रिया नहीं है, पहले वाले बनें"
+  "NoReactionsMessage": "अब तक कोई प्रतिक्रिया नहीं है, पहले वाले बनें",
+  "BeFirstToInvite": "Be the first"
 }

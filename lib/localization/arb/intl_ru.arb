@@ -584,5 +584,6 @@
   "NoPeopleAvailableToInvite": "Нет пользователей для инвайта",
   "NoReviewsMessage": "Оставь отзыв первым",
   "ReviewsByCritics": "Отзывы критиков",
-  "NoReactionsMessage": "Здесь пока нет реакций, будь первым"
+  "NoReactionsMessage": "Здесь пока нет реакций, будь первым",
+  "BeFirstToInvite": "Будь первым"
 }

@@ -230,6 +230,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BasedOnYourActivityWeDetermineYourCondition":
             MessageLookupByLibrary.simpleMessage(
                 "На основании вашей активности, пульса и других факторов мы определяем ваше состояние и стараемся рекомендовать то, что вам нужно прямо сейчас, конкретно для вас."),
+        "BeFirstToInvite": MessageLookupByLibrary.simpleMessage("Будь первым"),
         "BeInSearch": MessageLookupByLibrary.simpleMessage("Быть в поиске"),
         "BookIt": MessageLookupByLibrary.simpleMessage("Букинг"),
         "Bookings": m3,
