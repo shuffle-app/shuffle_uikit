@@ -517,6 +517,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Тут пока нет фото!"),
         "NoPreferencesChosen":
             MessageLookupByLibrary.simpleMessage("Предпочтения не выбраны"),
+        "NoReactionsMessage": MessageLookupByLibrary.simpleMessage(
+            "Здесь пока нет реакций, будь первым"),
+        "NoReviewsMessage":
+            MessageLookupByLibrary.simpleMessage("Оставь отзыв первым"),
         "NoThx": MessageLookupByLibrary.simpleMessage("Нет, спс"),
         "NotNow": MessageLookupByLibrary.simpleMessage("Не сейчас"),
         "NotOften": MessageLookupByLibrary.simpleMessage("Не часто"),
@@ -670,6 +674,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RestorePurchase":
             MessageLookupByLibrary.simpleMessage("Восстановить покупки"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Отзывы"),
+        "ReviewsByCritics":
+            MessageLookupByLibrary.simpleMessage("Отзывы критиков"),
         "ReviewsPosted": m37,
         "ReviewsReceived": m38,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Сб"),
