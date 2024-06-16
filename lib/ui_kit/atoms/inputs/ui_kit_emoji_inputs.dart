@@ -4,56 +4,79 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitEmojiInputs extends StatefulWidget {
-  const UiKitEmojiInputs({super.key});
+  final TextEditingController textEditingController;
+  final Function() onSend;
+
+  const UiKitEmojiInputs({
+    super.key,
+    required this.textEditingController,
+    required this.onSend,
+  });
 
   @override
   State<UiKitEmojiInputs> createState() => _UiKitEmojiInputsState();
 }
 
 class _UiKitEmojiInputsState extends State<UiKitEmojiInputs> {
-  bool showEmojiPicker = false;
-  final TextEditingController textEditingController = TextEditingController();
+  bool _showEmojiPicker = false;
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
+
     return Column(
       children: [
         SpacingFoundation.verticalSpace12,
-        UiKitInputFieldNoFill(
-          controller: textEditingController,
-          label: '',
+        UiKitInputFieldRightIcon(
+          controller: widget.textEditingController,
+          icon: context.iconButtonNoPadding(
+            data: BaseUiKitButtonData(
+              iconInfo: BaseUiKitButtonIconData(
+                iconData: ShuffleUiKitIcons.moodhappy,
+              ),
+              onPressed: () {
+                setState(() {
+                  _showEmojiPicker = !_showEmojiPicker;
+                  FocusScope.of(context).requestFocus(FocusNode());
+                });
+              },
+            ),
+          ),
         ),
         SpacingFoundation.verticalSpace12,
-        TextButton(
-          child: Text(
-            'Show emoji picker',
-            style: context.uiKitTheme?.regularTextTheme.title2,
+        if (_showEmojiPicker) ...[
+          EmojiPicker(
+            onEmojiSelected: (Category? category, Emoji emoji) {},
+            onBackspacePressed: () {},
+            textEditingController: widget.textEditingController,
+            config: Config(
+              height: 0.3.sh,
+              checkPlatformCompatibility: true,
+              emojiViewConfig: EmojiViewConfig(
+                backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
+                emojiSizeMax: 28 *
+                    (foundation.defaultTargetPlatform == TargetPlatform.iOS ? 1.20 : 1.0),
+              ),
+              swapCategoryAndBottomBar: false,
+              skinToneConfig: const SkinToneConfig(
+                dialogBackgroundColor: Colors.red,
+              ),
+              categoryViewConfig: CategoryViewConfig(
+                backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
+              ),
+              bottomActionBarConfig: BottomActionBarConfig(
+                backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
+                buttonColor: Colors.transparent,
+                buttonIconColor: theme?.colorScheme.inversePrimary ?? Colors.white,
+              ),
+              searchViewConfig: SearchViewConfig(
+                backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
+                buttonIconColor: theme?.colorScheme.inversePrimary ?? Colors.white,
+                hintText: '',
+              ),
+            ),
           ),
-          onPressed: () {
-            setState(() {
-              showEmojiPicker = !showEmojiPicker;
-            });
-          },
-        ),
-        showEmojiPicker
-            ? EmojiPicker(
-                onEmojiSelected: (Category? category, Emoji emoji) {},
-                onBackspacePressed: () {},
-                textEditingController: textEditingController,
-                config: Config(
-                  height: 256,
-                  checkPlatformCompatibility: true,
-                  emojiViewConfig: EmojiViewConfig(
-                    emojiSizeMax: 28 * (foundation.defaultTargetPlatform == TargetPlatform.iOS ? 1.20 : 1.0),
-                  ),
-                  swapCategoryAndBottomBar: false,
-                  skinToneConfig: const SkinToneConfig(),
-                  categoryViewConfig: const CategoryViewConfig(),
-                  bottomActionBarConfig: const BottomActionBarConfig(),
-                  searchViewConfig: const SearchViewConfig(),
-                ),
-              )
-            : SpacingFoundation.none,
+        ],
       ],
     );
   }
