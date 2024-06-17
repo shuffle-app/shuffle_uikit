@@ -162,8 +162,10 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
               controller: widget.searchController,
               hintText: S.of(context).Search,
               suffixIcon: SpacingFoundation.none,
-              prefix: UiKitSwitchableInputPrefix(
-                secondary: GestureDetector(
+              prefix:
+              // UiKitSwitchableInputPrefix(
+              //   secondary:
+                GestureDetector(
                   onTap: () {
                     if (_focusNode.hasFocus) {
                       Navigator.pop(context);
@@ -176,12 +178,12 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                     color: ColorsFoundation.darkNeutral900,
                   ),
                 ),
-                primary: const ImageWidget(
-                  iconData: ShuffleUiKitIcons.landmark,
-                  color: ColorsFoundation.darkNeutral900,
-                ),
-                notifier: focusNotifier,
-              ),
+                // primary: const ImageWidget(
+                //   iconData: ShuffleUiKitIcons.landmark,
+                //   color: ColorsFoundation.darkNeutral900,
+                // ),
+                // notifier: focusNotifier,
+              // ),
             ),
           ),
           if (loading)

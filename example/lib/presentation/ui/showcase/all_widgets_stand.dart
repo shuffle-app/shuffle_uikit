@@ -129,6 +129,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
       ),
       children: [
+        UiKitPointsHistoryTile(
+          title: 'Challenge Feelings (hardcore)',
+          dateTime: DateTime.now(),
+          points: 30,
+        ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         PlaceIconSelector(
           onPressed: () {},

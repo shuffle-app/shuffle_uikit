@@ -49,6 +49,7 @@ export 'buttons/small_gradient_icon_button.dart';
 export 'buttons/small_ordinary_button.dart';
 export 'buttons/small_outlined_button.dart';
 export 'buttons/small_outlined_button_no_blur.dart';
+export 'buttons/small_outlined_button_with_icon_and_text.dart';
 export 'buttons/small_outlined_icon_button.dart';
 export 'buttons/support_shuffle_button.dart';
 export 'buttons/ui_kit_checkbox.dart';
