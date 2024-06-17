@@ -129,7 +129,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
       ),
       children: [
-        UiKitViewHistoryTile(
+        UiKitPointsHistoryTile(
           title: 'Challenge Feelings (hardcore)',
           dateTime: DateTime.now(),
           points: 30,

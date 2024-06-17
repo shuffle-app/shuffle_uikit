@@ -3,8 +3,8 @@ import 'package:intl/intl.dart';
 
 import '../../../shuffle_uikit.dart';
 
-class UiKitViewHistoryTile extends StatelessWidget {
-  const UiKitViewHistoryTile({
+class UiKitPointsHistoryTile extends StatelessWidget {
+  const UiKitPointsHistoryTile({
     super.key,
     required this.title,
     required this.points,
