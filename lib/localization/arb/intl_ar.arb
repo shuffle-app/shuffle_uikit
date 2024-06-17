@@ -586,5 +586,8 @@
   "NoReviewsMessage": "Be the first to review",
   "ReviewsByCritics": "Reviews by critics",
   "NoReactionsMessage": "There are no reactions yet, be the first",
-  "BeFirstToInvite": "Be the first"
+  "BeFirstToInvite": "Be the first",
+  "ShowTheBarcode": "Show the barcode at the checkout when paying",
+  "OfferSuccessfullyActivated": "Offer successfully activated",
+  "SpentMyPoints": "Spent my points"
 }

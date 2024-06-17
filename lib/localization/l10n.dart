@@ -6013,6 +6013,36 @@ class S {
     );
   }
 
+  /// `Show the barcode at the checkout when paying`
+  String get ShowTheBarcode {
+    return Intl.message(
+      'Show the barcode at the checkout when paying',
+      name: 'ShowTheBarcode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer successfully activated`
+  String get OfferSuccessfullyActivated {
+    return Intl.message(
+      'Offer successfully activated',
+      name: 'OfferSuccessfullyActivated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spent my points`
+  String get SpentMyPoints {
+    return Intl.message(
+      'Spent my points',
+      name: 'SpentMyPoints',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Visit places and events in Shuffle and make amazing video-reactions`
   String get NoVideoReactionsYet {
     return Intl.message(
@@ -6048,6 +6078,36 @@ class S {
     return Intl.message(
       'View history',
       name: 'ViewHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show the barcode at the checkout when paying`
+  String get ShowTheBarcode {
+    return Intl.message(
+      'Show the barcode at the checkout when paying',
+      name: 'ShowTheBarcode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer successfully activated`
+  String get OfferSuccessfullyActivated {
+    return Intl.message(
+      'Offer successfully activated',
+      name: 'OfferSuccessfullyActivated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spent my points`
+  String get SpentMyPoints {
+    return Intl.message(
+      'Spent my points',
+      name: 'SpentMyPoints',
       desc: '',
       args: [],
     );

@@ -582,6 +582,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NowWeKnowYouBetter": MessageLookupByLibrary.simpleMessage(
             "Thanks!\nNow we know you better"),
         "Off": MessageLookupByLibrary.simpleMessage("Off"),
+        "OfferSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
+            "Offer successfully activated"),
         "OfficeAppartmentNumber":
             MessageLookupByLibrary.simpleMessage("Office or appt number"),
         "Ok": MessageLookupByLibrary.simpleMessage("Ok"),
@@ -800,6 +802,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("shared with you"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("Show result"),
+        "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
+            "Show the barcode at the checkout when paying"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
         "ShuffleHiwHint": m41,
         "ShuffleHiwSubtitle":
@@ -817,6 +821,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Something went wrong. Please try again."),
         "Spent": MessageLookupByLibrary.simpleMessage("Spent"),
+        "SpentMyPoints":
+            MessageLookupByLibrary.simpleMessage("Spent my points"),
         "SpinnerHiwHint": m42,
         "SpinnerHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "you find personalized events"),

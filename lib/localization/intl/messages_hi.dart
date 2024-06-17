@@ -590,6 +590,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NowWeKnowYouBetter": MessageLookupByLibrary.simpleMessage(
             "धन्यवाद!\nअब हम आपको बेहतर जानते हैं"),
         "Off": MessageLookupByLibrary.simpleMessage("बंद"),
+        "OfferSuccessfullyActivated":
+            MessageLookupByLibrary.simpleMessage("प्रस्ताव सफलतापूर्वक सक्रिय"),
         "OfficeAppartmentNumber":
             MessageLookupByLibrary.simpleMessage("कार्यालय या अपार्टमेंट नंबर"),
         "Ok": MessageLookupByLibrary.simpleMessage("ठीक है"),
@@ -807,6 +809,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("आपके साथ साझा किया गया"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("परिणाम दिखाओ"),
+        "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
+            "भुगतान करते समय चेकआउट पर बारकोड दिखाएं"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("मिश्रण"),
         "ShuffleHiwHint": m41,
         "ShuffleHiwSubtitle":
@@ -823,6 +827,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SomethingWentWrong":
             MessageLookupByLibrary.simpleMessage("कुछ गलत हो गया"),
         "Spent": MessageLookupByLibrary.simpleMessage("खर्च किया"),
+        "SpentMyPoints": MessageLookupByLibrary.simpleMessage("मेरे अंक बिताए"),
         "SpinnerHiwHint": m42,
         "SpinnerHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "आपको व्यक्तिगत घटनाएँ मिलती हैं"),
