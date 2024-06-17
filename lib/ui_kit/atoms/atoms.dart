@@ -40,6 +40,7 @@ export 'buttons/outlined_text_button.dart';
 export 'buttons/red_dialog_button.dart';
 export 'buttons/short_log_in_button.dart';
 export 'buttons/small_blurred_button_with_icon.dart';
+export 'buttons/colored_button_with_border_radius.dart';
 export 'buttons/small_blurred_outlined_icon_button.dart';
 export 'buttons/small_button_with_icon.dart';
 export 'buttons/small_button_with_text_and_icon.dart';

@@ -107,6 +107,7 @@ class UiKitColors {
   static const extraTransparentBorderColor = Color(0xff5C5C5C);
   static const primary200 = Color(0xff7367F0);
   static const onHover = Color(0xff28C76F);
+  static const danger = Color(0xffEA5455);
 
   UiKitColors._();
 }

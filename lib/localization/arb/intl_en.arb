@@ -562,7 +562,6 @@
   "News": "News",
   "YouWillReceiveNewTools": "You will receive new tools",
   "YourNewTools": "Your new tools",
-  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
   "Album": "Album",
   "MustSelectVideo": "You must select at least one video",
   "Back": "Back",
@@ -589,5 +588,7 @@
   "NoVideoReactionsYet": "Visit places and events in Shuffle and make amazing video-reactions",
   "Accrual": "Accrual",
   "Activation": "Activation",
-  "ViewHistory": "View history"
+  "ViewHistory": "View history",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
+  "Icon": "Icon"
 }

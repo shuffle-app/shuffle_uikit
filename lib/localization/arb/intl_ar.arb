@@ -562,7 +562,6 @@
   "News": "News",
   "YouWillReceiveNewTools": "You will receive new tools",
   "YourNewTools": "Your new tools",
-  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
   "MyReactions": "My reactions",
   "MyFeedback": "My feedback",
   "NoFeedbacksYet": "Visit places and events in Shuffle and share your impressions",
@@ -589,5 +588,7 @@
   "BeFirstToInvite": "Be the first",
   "ShowTheBarcode": "Show the barcode at the checkout when paying",
   "OfferSuccessfullyActivated": "Offer successfully activated",
-  "SpentMyPoints": "Spent my points"
+  "SpentMyPoints": "Spent my points",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
+  "Icon": "Icon"
 }

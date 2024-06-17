@@ -96,6 +96,7 @@ class ColorsFoundation {
   static const Color goldGradientEnd = UiKitColors.goldGradientEnd;
   static const Color primary200 = UiKitColors.primary200;
   static const Color onHover = UiKitColors.onHover;
+  static const Color danger = UiKitColors.danger;
 
   ColorsFoundation._();
 }

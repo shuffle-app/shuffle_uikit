@@ -1426,6 +1426,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/dollar_outlined.svg
   SvgGenImage get dollarOutlined => const SvgGenImage('assets/images/svg/dollar_outlined.svg');
 
+  /// File path: assets/images/svg/download.svg
+  SvgGenImage get download => const SvgGenImage('assets/images/svg/download.svg');
+
   /// File path: assets/images/svg/dubai-silhouette.svg
   SvgGenImage get dubaiSilhouette => const SvgGenImage('assets/images/svg/dubai-silhouette.svg');
 
@@ -2046,6 +2049,7 @@ class $AssetsImagesSvgGen {
         dollar,
         dollarBlackOutlined,
         dollarOutlined,
+        download,
         dubaiSilhouette,
         emptyRadio,
         exclamation,

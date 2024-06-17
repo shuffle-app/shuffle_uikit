@@ -564,7 +564,6 @@
   "News": "Новости",
   "YouWillReceiveNewTools": "Вы получите новые инструменты",
   "YourNewTools": "Теперь вам доступны инструменты",
-  "ToOpenTheNextSetOfToolsYouNeedToDo": "Чтобы открыть следующий набор инструментов, вам нужно сделать",
   "MyReactions": "Мои реакции",
   "MyFeedback": "Мои отзывы",
   "NoFeedbacksYet": "Посещайте места и события в Shuffle и делитесь впечатлениями",
@@ -591,5 +590,7 @@
   "BeFirstToInvite": "Будь первым",
   "ShowTheBarcode": "Показывайте штрих-код при оплате",
   "OfferSuccessfullyActivated": "Предложение успешно активировано",
-  "SpentMyPoints": "Потратил мои баллы"
+  "SpentMyPoints": "Потратил мои баллы",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "Чтобы открыть следующий набор инструментов, вам нужно сделать",
+  "Icon": "Иконка"
 }

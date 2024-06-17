@@ -455,6 +455,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "HowItWorks": MessageLookupByLibrary.simpleMessage("How it\nworks"),
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
             "How much \$ do you want to donate?"),
+        "Icon": MessageLookupByLibrary.simpleMessage("Icon"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("Ideal route"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Incorrect login or password"),
