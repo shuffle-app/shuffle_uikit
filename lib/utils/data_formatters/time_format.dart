@@ -39,6 +39,17 @@ String formatDateTimeDifferenceWithMonthName(DateTime date) {
   }
 }
 
+String formatDuration(Duration? duration) {
+  if (duration == null) return '0:0';
+  final hours = duration.inHours;
+  final minutes = duration.inMinutes;
+  final seconds = duration.inSeconds.remainder(60);
+
+  if (hours > 0) return '$hours:$minutes:$seconds';
+
+  return '${minutes}:$seconds';
+}
+
 String formatDifference(DateTime date) {
   final difference = DateTime.now().difference(date).inDays;
   if (difference == 0) {

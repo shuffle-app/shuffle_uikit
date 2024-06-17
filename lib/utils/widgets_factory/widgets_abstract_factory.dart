@@ -88,6 +88,11 @@ abstract class WidgetsAbstractFactory {
     BorderRadius? borderRadius,
   });
 
+  ButtonFactory createColoredButtonWithBorderRadius({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+  });
+
   ButtonFactory createGradientButton({
     required BaseUiKitButtonData data,
   });
@@ -253,6 +258,23 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
+  ButtonFactory createColoredButtonWithBorderRadius({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+  }) {
+    return ColoredButtonWithBorderRadius(
+      borderRadius: borderRadius,
+      text: data.text,
+      backgroundColor: data.backgroundColor,
+      textColor: data.textColor,
+      onPressed: data.onPressed,
+      loading: data.loading,
+      fit: data.fit,
+      autoSizeGroup: data.autoSizeGroup,
+    );
+  }
+
+  @override
   ButtonFactory createBoxIconButton({
     required BaseUiKitButtonData data,
   }) {
@@ -273,7 +295,19 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     double? blurValue,
   }) {
     final hasIcon = data.iconWidget != null || data.iconInfo != null;
-
+    final hasText = data.text?.isNotEmpty ?? false;
+    if (hasIcon && hasText && !(blurred ?? false)) {
+      return SmallOutlinedButtonWithIconAndText(
+        text: data.text ?? '',
+        icon: data.iconWidget,
+        textColor: data.textColor,
+        borderColor: data.borderColor,
+        iconInfo: data.iconInfo,
+        onPressed: data.onPressed,
+        loading: data.loading,
+        fit: data.fit,
+      );
+    }
     if (!(blurred ?? false) && hasIcon) {
       return SmallOutlinedButtonNoBlur(
         onPressed: data.onPressed,
@@ -295,7 +329,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         textColor: gradient != null ? Colors.white : data.textColor,
         loading: data.loading,
       );
-    } else if ((blurred ?? false) && hasIcon) {
+    } else if ((blurred ?? false) && hasIcon && !hasText) {
       return SmallBlurredOutlinedIconButton(
           onPressed: data.onPressed,
           icon: data.iconWidget,
@@ -306,7 +340,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           blurValue: blurValue,
           gradient: gradient,
           borderRadius: borderRadius);
-    } else if (!(blurred ?? false) && hasIcon) {
+    } else if (!(blurred ?? false) && hasIcon && !hasText) {
       return SmallOutlinedIconButton(
         onPressed: data.onPressed,
         icon: data.iconWidget,
@@ -384,6 +418,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       return GradientIconButton(
         fit: data.fit,
         icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         onPressed: data.onPressed,
         // borderRadius: BorderRadiusFoundation.max,
         loading: data.loading,

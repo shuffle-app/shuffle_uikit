@@ -5803,11 +5803,121 @@ class S {
     );
   }
 
-  /// `To open the next set of tools you need to do`
-  String get ToOpenTheNextSetOfToolsYouNeedToDo {
+  /// `Album`
+  String get Album {
     return Intl.message(
-      'To open the next set of tools you need to do',
-      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
+      'Album',
+      name: 'Album',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You must select at least one video`
+  String get MustSelectVideo {
+    return Intl.message(
+      'You must select at least one video',
+      name: 'MustSelectVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back`
+  String get Back {
+    return Intl.message(
+      'Back',
+      name: 'Back',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `File does not exist`
+  String get FileNotExistsMessage {
+    return Intl.message(
+      'File does not exist',
+      name: 'FileNotExistsMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content id not provided`
+  String get ContentIdNotProvidedError {
+    return Intl.message(
+      'Content id not provided',
+      name: 'ContentIdNotProvidedError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reaction successfully added`
+  String get VideoReactionUploadedMessage {
+    return Intl.message(
+      'Reaction successfully added',
+      name: 'VideoReactionUploadedMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cutting video`
+  String get CuttingVideo {
+    return Intl.message(
+      'Cutting video',
+      name: 'CuttingVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Compressing video`
+  String get CompressingVideo {
+    return Intl.message(
+      'Compressing video',
+      name: 'CompressingVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Uploading video`
+  String get UploadingVideo {
+    return Intl.message(
+      'Uploading video',
+      name: 'UploadingVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Video file not cut`
+  String get VideoFileNotCut {
+    return Intl.message(
+      'Video file not cut',
+      name: 'VideoFileNotCut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Compressing video {progress}%`
+  String CompressingVideoProgress(Object progress) {
+    return Intl.message(
+      'Compressing video $progress%',
+      name: 'CompressingVideoProgress',
+      desc: '',
+      args: [progress],
+    );
+  }
+
+  /// `Okay`
+  String get Okay {
+    return Intl.message(
+      'Okay',
+      name: 'Okay',
       desc: '',
       args: [],
     );
@@ -5843,11 +5953,141 @@ class S {
     );
   }
 
+  /// `No people available to invite`
+  String get NoPeopleAvailableToInvite {
+    return Intl.message(
+      'No people available to invite',
+      name: 'NoPeopleAvailableToInvite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Be the first to review`
+  String get NoReviewsMessage {
+    return Intl.message(
+      'Be the first to review',
+      name: 'NoReviewsMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Be the first`
+  String get BeFirstToInvite {
+    return Intl.message(
+      'Be the first',
+      name: 'BeFirstToInvite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reviews by critics`
+  String get ReviewsByCritics {
+    return Intl.message(
+      'Reviews by critics',
+      name: 'ReviewsByCritics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no reactions yet, be the first`
+  String get NoReactionsMessage {
+    return Intl.message(
+      'There are no reactions yet, be the first',
+      name: 'NoReactionsMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show the barcode at the checkout when paying`
+  String get ShowTheBarcode {
+    return Intl.message(
+      'Show the barcode at the checkout when paying',
+      name: 'ShowTheBarcode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer successfully activated`
+  String get OfferSuccessfullyActivated {
+    return Intl.message(
+      'Offer successfully activated',
+      name: 'OfferSuccessfullyActivated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spent my points`
+  String get SpentMyPoints {
+    return Intl.message(
+      'Spent my points',
+      name: 'SpentMyPoints',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Visit places and events in Shuffle and make amazing video-reactions`
   String get NoVideoReactionsYet {
     return Intl.message(
       'Visit places and events in Shuffle and make amazing video-reactions',
       name: 'NoVideoReactionsYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accrual`
+  String get Accrual {
+    return Intl.message(
+      'Accrual',
+      name: 'Accrual',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activation`
+  String get Activation {
+    return Intl.message(
+      'Activation',
+      name: 'Activation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View history`
+  String get ViewHistory {
+    return Intl.message(
+      'View history',
+      name: 'ViewHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To open the next set of tools you need to do`
+  String get ToOpenTheNextSetOfToolsYouNeedToDo {
+    return Intl.message(
+      'To open the next set of tools you need to do',
+      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Icon`
+  String get Icon {
+    return Intl.message(
+      'Icon',
+      name: 'Icon',
       desc: '',
       args: [],
     );

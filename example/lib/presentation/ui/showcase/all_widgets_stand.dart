@@ -136,6 +136,127 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           onSend: () {},
         ),
         SpacingFoundation.verticalSpace16,
+        UiKitPointsHistoryTile(
+          title: 'Challenge Feelings (hardcore)',
+          dateTime: DateTime.now(),
+          points: 30,
+        ).paddingAll(EdgeInsetsFoundation.all16),
+        SpacingFoundation.verticalSpace16,
+        PlaceIconSelector(
+          onPressed: () {},
+          listIconData: List.generate(
+            20,
+            (index) => ShuffleUiKitIcons.diamond,
+          ),
+        ).paddingAll(EdgeInsetsFoundation.all16),
+        SpacingFoundation.verticalSpace16,
+        DecoratedBox(
+          decoration: BoxDecoration(
+            color: context.uiKitTheme?.colorScheme.surface2,
+          ),
+          child: const UiKitIconedTitle(
+                  icon: ShuffleUiKitIcons.diamond, title: 'Diamond')
+              .paddingAll(EdgeInsetsFoundation.all16),
+        ),
+        SpacingFoundation.verticalSpace16,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            context.coloredButtonWithBorderRadius(
+              data: BaseUiKitButtonData(
+                text: 'Start',
+                onPressed: () {},
+              ),
+            ),
+            context.coloredButtonWithBorderRadius(
+              data: BaseUiKitButtonData(
+                text: 'Cancel',
+                onPressed: () {},
+                backgroundColor: ColorsFoundation.danger,
+              ),
+            ),
+          ],
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitInputFilledWithTitle(
+          title: 'Title',
+          controller: TextEditingController(),
+          maxLines: 10,
+          minLines: 1,
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitPropertiesCloud(
+          child: const Column(
+            children: [
+              UiKitCloudChipWithDesc(
+                  title: 'Coffee connoisseur',
+                  description: 'foodie, forever sloth')
+            ],
+          ).paddingAll(EdgeInsetsFoundation.all24),
+        ).paddingAll(EdgeInsetsFoundation.all16),
+        UiKitPropertiesCloud(
+          child: Wrap(
+            spacing: SpacingFoundation.horizontalSpacing12,
+            runSpacing: SpacingFoundation.verticalSpacing12,
+            children: [
+              UiKitCloudChip(
+                title: 'Joke',
+                onTap: () {},
+                isSelectable: true,
+                icon: ShuffleUiKitIcons.heartoutline,
+              ),
+              UiKitCloudChip(
+                  title: 'Smoke',
+                  onTap: () {},
+                  isSelectable: true,
+                  icon: ShuffleUiKitIcons.discount),
+              UiKitCloudChip(
+                  title: 'Drink',
+                  onTap: () {},
+                  isSelectable: true,
+                  icon: ShuffleUiKitIcons.diamond),
+              UiKitCloudChip(
+                  title: 'Swim',
+                  onTap: () {},
+                  isSelectable: true,
+                  icon: ShuffleUiKitIcons.club),
+              UiKitCloudChip(
+                  title: 'Relax',
+                  onTap: () {},
+                  isSelectable: true,
+                  icon: ShuffleUiKitIcons.active),
+              UiKitCloudChip(
+                  title: 'Relax',
+                  onTap: () {},
+                  isSelectable: true,
+                  icon: ShuffleUiKitIcons.aquapark),
+              UiKitCloudChip(
+                  title: 'Relax',
+                  onTap: () {},
+                  isSelectable: true,
+                  icon: ShuffleUiKitIcons.conferences),
+            ],
+          ).paddingAll(EdgeInsetsFoundation.all24),
+        ).paddingAll(EdgeInsetsFoundation.all16),
+        SpacingFoundation.verticalSpace16,
+        UiKitExpansionTileWithIconButton(
+          title: "Food and Drink",
+          onTap: () {},
+          children: [
+            PropertiesTypeAnimatedButton(title: 'Active tiger', onTap: () {}),
+            PropertiesTypeAnimatedButton(title: 'Active tiger', onTap: () {}),
+            PropertiesTypeAnimatedButton(title: 'Active tiger', onTap: () {}),
+            PropertiesTypeAnimatedButton(title: 'Active tiger', onTap: () {}),
+          ],
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitCloudChip(
+                title: 'Diamond',
+                onTap: () {},
+                icon: ShuffleUiKitIcons.diamond,
+                isSelectable: true)
+            .paddingAll(EdgeInsetsFoundation.all16),
+        SpacingFoundation.verticalSpace16,
         PropertiesSearchInput(
           options: (text) async => ['prop1', 'prop2', 'prop3'],
           showAllOptions: false,
@@ -168,23 +289,37 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               Text(S.current.RecentlyAdded, style: textTheme?.title2),
             ],
           ).paddingOnly(bottom: EdgeInsetsFoundation.vertical16),
-          child: UiKitPropertiesCloud(properties: [
-            UiKitCloudChip(title: 'Joke', onTap: () {}),
-            UiKitCloudChip(title: 'Smoke', onTap: () {}),
-            UiKitCloudChip(title: 'Drink', onTap: () {}),
-            UiKitCloudChip(title: 'Swim', onTap: () {}),
-            UiKitCloudChip(title: 'Relax', onTap: () {}),
-            UiKitCloudChip(title: 'Relax', onTap: () {}),
-            UiKitCloudChip(title: 'Relax', onTap: () {}),
-          ]),
+          child: UiKitPropertiesCloud(
+            child: Wrap(
+              spacing: SpacingFoundation.horizontalSpacing12,
+              runSpacing: SpacingFoundation.verticalSpacing12,
+              children: [
+                UiKitCloudChip(title: 'Joke', onTap: () {}),
+                UiKitCloudChip(title: 'Smoke', onTap: () {}),
+                UiKitCloudChip(title: 'Drink', onTap: () {}),
+                UiKitCloudChip(title: 'Swim', onTap: () {}),
+                UiKitCloudChip(title: 'Relax', onTap: () {}),
+                UiKitCloudChip(title: 'Relax', onTap: () {}),
+                UiKitCloudChip(title: 'Relax', onTap: () {}),
+              ],
+            ).paddingAll(EdgeInsetsFoundation.all24),
+          ),
         ).paddingAll(EdgeInsetsFoundation.all16),
-        UiKitPropertiesCloud(properties: [
-          UiKitCloudChip(title: 'Joke', onTap: () {}),
-          UiKitCloudChip(title: 'Smoke', onTap: () {}),
-          UiKitCloudChip(title: 'Drink', onTap: () {}),
-          UiKitCloudChip(title: 'Swim', onTap: () {}),
-          UiKitCloudChip(title: 'Relax', onTap: () {}),
-        ]).paddingAll(EdgeInsetsFoundation.all16),
+        UiKitPropertiesCloud(
+          child: Wrap(
+            spacing: SpacingFoundation.horizontalSpacing12,
+            runSpacing: SpacingFoundation.verticalSpacing12,
+            children: [
+              UiKitCloudChip(title: 'Joke', onTap: () {}),
+              UiKitCloudChip(title: 'Smoke', onTap: () {}),
+              UiKitCloudChip(title: 'Drink', onTap: () {}),
+              UiKitCloudChip(title: 'Swim', onTap: () {}),
+              UiKitCloudChip(title: 'Relax', onTap: () {}),
+              UiKitCloudChip(title: 'Relax', onTap: () {}),
+              UiKitCloudChip(title: 'Relax', onTap: () {}),
+            ],
+          ).paddingAll(EdgeInsetsFoundation.all24),
+        ).paddingAll(EdgeInsetsFoundation.all16),
         UiKitCloudChip(
           title: 'Joke',
           onTap: () {},

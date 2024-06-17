@@ -1,7 +1,7 @@
-import 'dart:math';
+import 'dart:developer';
+import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
-import 'package:model_viewer_plus/model_viewer_plus.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitFameItem extends StatefulWidget {
@@ -105,13 +105,12 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
 
     return GestureDetector(
         onTap: widget.isAvailableForPreview
-            ? () {
+            ? ()  {
                 if (modelFile != null) {
                   _showModelViewerDialog(
                       context,
                       modelFile!.file.path,
-                      uiModel?.asset ??
-                          'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/3dmodels/posters/cup_poster.webp');
+                      uiModel?.asset ?? '');
                 } else {
                   SnackBarUtils.show(message: 'Waiting for model to download', context: context);
                 }
@@ -122,7 +121,7 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
           children: [
             Transform.rotate(
               // quarterTurns: 2,
-              angle: 45 * pi / 180,
+              angle: 45 * math.pi / 180,
               child: SizedBox(
                   height: 50,
                   width: 50,

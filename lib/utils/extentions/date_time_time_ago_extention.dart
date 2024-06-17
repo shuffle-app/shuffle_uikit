@@ -13,7 +13,7 @@ extension DateTimeTimeAgoExtention on DateTime {
 
 extension TimeIsNightExtention on TimeOfDay {
   bool get isNight {
-    return hour >= 18;
+    return hour >= 18 || hour < 6;
   }
 
   bool isBefore(TimeOfDay other) {
