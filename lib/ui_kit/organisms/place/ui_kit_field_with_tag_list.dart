@@ -18,11 +18,12 @@ class UiKitFieldWithTagList extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(
-              title,
-              style: context.uiKitTheme?.regularTextTheme.body,
+            Expanded(
+              child: Text(
+                title,
+                style: context.uiKitTheme?.regularTextTheme.body,
+              ),
             ),
-            const Spacer(),
             context.outlinedButton(
               data: BaseUiKitButtonData(
                 onPressed: onTap,
@@ -35,7 +36,9 @@ class UiKitFieldWithTagList extends StatelessWidget {
           ],
         ),
         SpacingFoundation.verticalSpace8,
-        listUiKitTags != null ? UiKitTagsWidget(baseTags: listUiKitTags!) : SpacingFoundation.none,
+        listUiKitTags != null
+            ? UiKitTagsWidget(baseTags: listUiKitTags!)
+            : SpacingFoundation.none,
       ],
     );
   }
