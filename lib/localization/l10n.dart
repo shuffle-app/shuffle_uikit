@@ -5963,46 +5963,6 @@ class S {
     );
   }
 
-  /// `Visit places and events in Shuffle and make amazing video-reactions`
-  String get NoVideoReactionsYet {
-    return Intl.message(
-      'Visit places and events in Shuffle and make amazing video-reactions',
-      name: 'NoVideoReactionsYet',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Accrual`
-  String get Accrual {
-    return Intl.message(
-      'Accrual',
-      name: 'Accrual',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Activation`
-  String get Activation {
-    return Intl.message(
-      'Activation',
-      name: 'Activation',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `View history`
-  String get ViewHistory {
-    return Intl.message(
-      'View history',
-      name: 'ViewHistory',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `No people available to invite`
   String get NoPeopleAvailableToInvite {
     return Intl.message(
@@ -6048,6 +6008,46 @@ class S {
     return Intl.message(
       'There are no reactions yet, be the first',
       name: 'NoReactionsMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Visit places and events in Shuffle and make amazing video-reactions`
+  String get NoVideoReactionsYet {
+    return Intl.message(
+      'Visit places and events in Shuffle and make amazing video-reactions',
+      name: 'NoVideoReactionsYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accrual`
+  String get Accrual {
+    return Intl.message(
+      'Accrual',
+      name: 'Accrual',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activation`
+  String get Activation {
+    return Intl.message(
+      'Activation',
+      name: 'Activation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View history`
+  String get ViewHistory {
+    return Intl.message(
+      'View history',
+      name: 'ViewHistory',
       desc: '',
       args: [],
     );
