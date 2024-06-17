@@ -23,13 +23,11 @@ class AppBarTitle extends StatelessWidget {
 
     return Expanded(
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      Expanded(
-        child: Text(
-          title,
-          style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
-          textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
-          maxLines: 2,
-        ),
+      Text(
+        title,
+        style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
+        textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
+        maxLines: 2,
       ),
       if (onIWidgetInfoString != null) ...[
         SpacingFoundation.horizontalSpace4,

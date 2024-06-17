@@ -232,6 +232,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BasedOnYourActivityWeDetermineYourCondition":
             MessageLookupByLibrary.simpleMessage(
                 "आपकी गतिविधि, हृदय गति और अन्य कारकों के आधार पर, हम आपकी स्थिति निर्धारित करते हैं और यह अनुशंसा करने का प्रयास करते हैं कि आपको अभी क्या चाहिए, विशेष रूप से आपके लिए"),
+        "BeFirstToInvite": MessageLookupByLibrary.simpleMessage("Be the first"),
         "BeInSearch": MessageLookupByLibrary.simpleMessage("खोज में रहो"),
         "BookIt": MessageLookupByLibrary.simpleMessage("बुक करें"),
         "Bookings": m3,
@@ -563,10 +564,16 @@ class MessageLookup extends MessageLookupByLibrary {
             "शफल में स्थानों और घटनाओं का दौरा करें और अपने अनुभव साझा करें"),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "आपके डिवाइस पर कोई स्वास्थ्य किट उपलब्ध नहीं है, इसलिए परिणाम यादृच्छिक होगा"),
+        "NoPeopleAvailableToInvite": MessageLookupByLibrary.simpleMessage(
+            "आमंत्रित करने के लिए कोई लोग उपलब्ध नहीं हैं"),
         "NoPhotoHereYet": MessageLookupByLibrary.simpleMessage(
             "अभी तक यहां कोई फोटो नहीं है!"),
         "NoPreferencesChosen":
             MessageLookupByLibrary.simpleMessage("कोई प्राथमिकता नहीं चुनी गई"),
+        "NoReactionsMessage": MessageLookupByLibrary.simpleMessage(
+            "अब तक कोई प्रतिक्रिया नहीं है, पहले वाले बनें"),
+        "NoReviewsMessage":
+            MessageLookupByLibrary.simpleMessage("कोई समीक्षा नहीं"),
         "NoThx": MessageLookupByLibrary.simpleMessage("धन्यवाद"),
         "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
             "शफल में स्थानों और घटनाओं का दौरा करें और अद्भुत वीडियो-प्रतिक्रियाएँ बनाएं"),
@@ -726,6 +733,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RestorePurchase": MessageLookupByLibrary.simpleMessage(
             "खरीदारी को पुनः स्थापित करें"),
         "Reviews": MessageLookupByLibrary.simpleMessage("समीक्षाएं"),
+        "ReviewsByCritics":
+            MessageLookupByLibrary.simpleMessage("निरंकुशों द्वारा समीक्षा"),
         "ReviewsPosted": m37,
         "ReviewsReceived": m38,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("शनिवार"),

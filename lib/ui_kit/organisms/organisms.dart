@@ -109,6 +109,7 @@ export 'viewer/ui_kit_base_3d_viewer.dart';
 export 'viewer/ui_kit_fotoramio_viewer.dart';
 export 'viewer/ui_kit_mini_map_view.dart';
 export 'viewer/ui_kit_video_player.dart';
+export 'video_player/portrait_video_player.dart';
 export 'wheel_value_selector/ui_kit_horizontal_wheel_number_selector.dart';
 export 'place/ui_kit_field_with_tag_list.dart';
 export 'lists/ui_kit_properties_cloud.dart';

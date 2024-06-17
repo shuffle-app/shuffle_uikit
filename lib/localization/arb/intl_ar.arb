@@ -581,5 +581,10 @@
   "Okay": "Okay",
   "Accrual": "Accrual",
   "Activation": "Activation",
-  "ViewHistory": "View history"
+  "ViewHistory": "View history",
+  "NoPeopleAvailableToInvite": "No people available to invite",
+  "NoReviewsMessage": "Be the first to review",
+  "ReviewsByCritics": "Reviews by critics",
+  "NoReactionsMessage": "There are no reactions yet, be the first",
+  "BeFirstToInvite": "Be the first"
 }

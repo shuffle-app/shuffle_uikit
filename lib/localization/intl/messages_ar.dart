@@ -230,6 +230,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BasedOnYourActivityWeDetermineYourCondition":
             MessageLookupByLibrary.simpleMessage(
                 "Based on your activity, heart rate and other factors, we determine your condition and try to recommend exactly what you need right now, specifically for you"),
+        "BeFirstToInvite": MessageLookupByLibrary.simpleMessage("Be the first"),
         "BeInSearch": MessageLookupByLibrary.simpleMessage("Be in search"),
         "BookIt": MessageLookupByLibrary.simpleMessage("Book it"),
         "Bookings": m3,
@@ -556,10 +557,16 @@ class MessageLookup extends MessageLookupByLibrary {
             "Visit places and events in Shuffle and share your impressions"),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "No health kit available on your device, so the result will be random"),
+        "NoPeopleAvailableToInvite": MessageLookupByLibrary.simpleMessage(
+            "No people available to invite"),
         "NoPhotoHereYet":
             MessageLookupByLibrary.simpleMessage("No photo here yet!"),
         "NoPreferencesChosen":
             MessageLookupByLibrary.simpleMessage("No preferences chosen"),
+        "NoReactionsMessage": MessageLookupByLibrary.simpleMessage(
+            "There are no reactions yet, be the first"),
+        "NoReviewsMessage":
+            MessageLookupByLibrary.simpleMessage("Be the first to review"),
         "NoThx": MessageLookupByLibrary.simpleMessage("No, thx"),
         "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
             "Visit places and events in Shuffle and make amazing video-reactions"),
@@ -717,6 +724,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RestorePurchase":
             MessageLookupByLibrary.simpleMessage("Restore purchases"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
+        "ReviewsByCritics":
+            MessageLookupByLibrary.simpleMessage("Reviews by critics"),
         "ReviewsPosted": m37,
         "ReviewsReceived": m38,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Sat"),

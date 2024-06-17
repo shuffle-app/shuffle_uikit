@@ -396,6 +396,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       return GradientIconButton(
         fit: data.fit,
         icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         onPressed: data.onPressed,
         // borderRadius: BorderRadiusFoundation.max,
         loading: data.loading,
