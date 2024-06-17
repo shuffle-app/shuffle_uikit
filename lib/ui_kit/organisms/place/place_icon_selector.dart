@@ -71,7 +71,7 @@ class PlaceIconSelector extends StatelessWidget {
               ),
               itemCount: listIconData.length,
               itemBuilder: (context, index) {
-                return HoverableImageWidget(
+                return HoverableIconButton(
                   iconData: listIconData[index],
                   onTap: () {},
                 );
@@ -84,21 +84,21 @@ class PlaceIconSelector extends StatelessWidget {
   }
 }
 
-class HoverableImageWidget extends StatefulWidget {
+class HoverableIconButton extends StatefulWidget {
   final Function() onTap;
   final IconData iconData;
 
-  const HoverableImageWidget({
+  const HoverableIconButton({
     super.key,
     required this.iconData,
     required this.onTap,
   });
 
   @override
-  _HoverableImageWidgetState createState() => _HoverableImageWidgetState();
+  _HoverableIconButtonState createState() => _HoverableIconButtonState();
 }
 
-class _HoverableImageWidgetState extends State<HoverableImageWidget> {
+class _HoverableIconButtonState extends State<HoverableIconButton> {
   Color _backgroundColor = Colors.transparent;
   Color _iconColor = const Color(0xff2D3645);
 

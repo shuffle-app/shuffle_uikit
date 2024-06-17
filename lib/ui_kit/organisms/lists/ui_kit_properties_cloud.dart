@@ -12,11 +12,9 @@ class UiKitPropertiesCloud extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final uiKitTheme = context.uiKitTheme;
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: uiKitTheme?.colorScheme.surface1,
-        borderRadius: BorderRadiusFoundation.all12,
-      ),
+    return UiKitCardWrapper(
+      color: uiKitTheme?.colorScheme.surface1,
+      borderRadius: BorderRadiusFoundation.all12,
       child: SizedBox(
         width: 1.sw,
         child: child,
