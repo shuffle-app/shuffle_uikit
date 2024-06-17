@@ -36,6 +36,12 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   }
 
   @override
+  void dispose() {
+    _controller?.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 1.sh,
