@@ -5803,26 +5803,6 @@ class S {
     );
   }
 
-  /// `To open the next set of tools you need to do`
-  String get ToOpenTheNextSetOfToolsYouNeedToDo {
-    return Intl.message(
-      'To open the next set of tools you need to do',
-      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Icon`
-  String get Icon {
-    return Intl.message(
-      'Icon',
-      name: 'Icon',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Album`
   String get Album {
     return Intl.message(
@@ -6088,6 +6068,26 @@ class S {
     return Intl.message(
       'View history',
       name: 'ViewHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To open the next set of tools you need to do`
+  String get ToOpenTheNextSetOfToolsYouNeedToDo {
+    return Intl.message(
+      'To open the next set of tools you need to do',
+      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Icon`
+  String get Icon {
+    return Intl.message(
+      'Icon',
+      name: 'Icon',
       desc: '',
       args: [],
     );
