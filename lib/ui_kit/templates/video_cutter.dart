@@ -76,7 +76,7 @@ class _VideoCutterState extends State<VideoCutter> {
               onTrimmingStoppedColor: ColorsFoundation.darkNeutral400,
             ),
           );
-          await _videoEditorController!.initialize(aspectRatio: 9 / 16);
+          await _videoEditorController!.initialize();
         } catch (e) {
           log('Error initializing VideoEditorController: $e');
         }
@@ -192,9 +192,11 @@ class _VideoCutterState extends State<VideoCutter> {
                   child: Stack(
                     fit: StackFit.expand,
                     children: [
-                      AspectRatio(
-                        aspectRatio: 9 / 16,
-                        child: VideoPlayer(_videoEditorController!.video),
+                      Center(
+                        child: AspectRatio(
+                          aspectRatio: _videoEditorController!.video.value.aspectRatio,
+                          child: VideoPlayer(_videoEditorController!.video),
+                        ),
                       ),
                       Positioned(
                         top: 0,
