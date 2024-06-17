@@ -587,6 +587,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NowWeKnowYouBetter": MessageLookupByLibrary.simpleMessage(
             "Спасибо!\nТеперь мы знаем тебя лучше"),
         "Off": MessageLookupByLibrary.simpleMessage("Выкл"),
+        "OfferSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
+            "Предложение успешно активировано"),
         "OfficeAppartmentNumber":
             MessageLookupByLibrary.simpleMessage("Номер офиса"),
         "Ok": MessageLookupByLibrary.simpleMessage("Ok"),
@@ -807,6 +809,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("поделилась с вами"),
         "ShowResult":
             MessageLookupByLibrary.simpleMessage("Показать результат"),
+        "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
+            "Показывайте штрих-код при оплате"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
         "ShuffleHiwHint": m41,
         "ShuffleHiwSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -824,6 +828,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Что-то пошло не так. Попробуй еще раз."),
         "Spent": MessageLookupByLibrary.simpleMessage("Потрачено"),
+        "SpentMyPoints":
+            MessageLookupByLibrary.simpleMessage("Потратил мои баллы"),
         "SpinnerHiwHint": m42,
         "SpinnerHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "ты найдешь персонализированные мероприятия"),

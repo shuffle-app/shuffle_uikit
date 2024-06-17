@@ -583,5 +583,8 @@
   "NoReviewsMessage": "कोई समीक्षा नहीं",
   "ReviewsByCritics": "निरंकुशों द्वारा समीक्षा",
   "NoReactionsMessage": "अब तक कोई प्रतिक्रिया नहीं है, पहले वाले बनें",
-  "BeFirstToInvite": "Be the first"
+  "BeFirstToInvite": "Be the first",
+  "ShowTheBarcode": "भुगतान करते समय चेकआउट पर बारकोड दिखाएं",
+  "OfferSuccessfullyActivated": "प्रस्ताव सफलतापूर्वक सक्रिय",
+  "SpentMyPoints": "मेरे अंक बिताए"
 }
