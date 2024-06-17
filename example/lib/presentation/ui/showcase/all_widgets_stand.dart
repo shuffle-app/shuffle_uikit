@@ -129,6 +129,23 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
       ),
       children: [
+        SpacingFoundation.verticalSpace16,
+        UiKitChatCardIn(
+          timeOfDay: DateTime.now(),
+          text:
+              'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+          onReplyMassageTap: () {},
+          replyUser: 'Райн гослинг',
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitChatCardReplyOut(
+          timeOfDay: DateTime.now(),
+          text:
+              'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+          onReplyMassageTap: () {},
+          replyUser: 'Райн гослинг',
+        ),
+        SpacingFoundation.verticalSpace16,
         UiKitPointsHistoryTile(
           title: 'Challenge Feelings (hardcore)',
           dateTime: DateTime.now(),
