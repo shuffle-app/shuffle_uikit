@@ -474,6 +474,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Influence people\\\'s choices and enhance the significance of places and events"),
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("Monetization"),
+        "Info": MessageLookupByLibrary.simpleMessage("Info"),
         "Interview": MessageLookupByLibrary.simpleMessage("Interview"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("Inventory items"),
@@ -948,6 +949,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Your reaction has been successfully added"),
         "VideoReactionUploadedMessage":
             MessageLookupByLibrary.simpleMessage("Reaction successfully added"),
+        "VideoReactions":
+            MessageLookupByLibrary.simpleMessage("Video-reactions"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Video (upload Files)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("View all"),

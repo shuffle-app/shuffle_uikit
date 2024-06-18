@@ -478,6 +478,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "लोगों के चयन पर प्रभाव डालें और स्थानों और घटनाओं का महत्व बढ़ाएं"),
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("मुद्रीकरण"),
+        "Info": MessageLookupByLibrary.simpleMessage("Info"),
         "Interview": MessageLookupByLibrary.simpleMessage("साक्षात्कार"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("इन्वेंटरी आइटम"),
@@ -959,6 +960,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "आपकी प्रतिक्रिया सफलतापूर्वक जोड़ी गई है"),
         "VideoReactionUploadedMessage": MessageLookupByLibrary.simpleMessage(
             "प्रतिक्रिया सफलतापूर्वक जोड़ी गई"),
+        "VideoReactions":
+            MessageLookupByLibrary.simpleMessage("Video-reactions"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("वीडियो (फ़ाइलें अपलोड करें)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("सभी देखें"),

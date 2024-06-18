@@ -477,6 +477,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Влияй на выбор людей и усиливай значимость мест и событий"),
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("Монетизация"),
+        "Info": MessageLookupByLibrary.simpleMessage("Информация"),
         "Interview": MessageLookupByLibrary.simpleMessage("Интервью"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("Предметы инвентаря"),
@@ -959,6 +960,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Твоя реакция успешно добавлена"),
         "VideoReactionUploadedMessage": MessageLookupByLibrary.simpleMessage(
             "Видео-реакция успешно загружена"),
+        "VideoReactions": MessageLookupByLibrary.simpleMessage("Видео-реакции"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Видео (загрузить)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("Все"),

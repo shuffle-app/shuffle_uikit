@@ -6092,6 +6092,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Info`
+  String get Info {
+    return Intl.message(
+      'Info',
+      name: 'Info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Video-reactions`
+  String get VideoReactions {
+    return Intl.message(
+      'Video-reactions',
+      name: 'VideoReactions',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
