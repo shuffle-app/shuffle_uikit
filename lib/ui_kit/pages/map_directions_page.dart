@@ -170,19 +170,21 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
             top: MediaQuery.viewPaddingOf(context).top +
                 SpacingFoundation.verticalSpacing16,
             left: SpacingFoundation.horizontalSpacing16,
-            child: GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: theme?.colorScheme.headingTypography,
+            child: Material(
+              clipBehavior: Clip.none,
+              shape: const CircleBorder(),
+              color: theme?.colorScheme.headingTypography,
+              child: InkWell(
+                borderRadius: BorderRadiusFoundation.all40,
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Ink(
+                  child: ImageWidget(
+                    color: theme?.colorScheme.darkNeutral900,
+                    iconData: ShuffleUiKitIcons.arrowleft,
+                  ).paddingAll(EdgeInsetsFoundation.all12),
                 ),
-                child: ImageWidget(
-                  color: theme?.colorScheme.darkNeutral900,
-                  iconData: ShuffleUiKitIcons.arrowleft,
-                ).paddingAll(EdgeInsetsFoundation.all12),
               ),
             ),
           ),
