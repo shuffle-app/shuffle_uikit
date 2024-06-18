@@ -247,6 +247,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
             "By continuing you accept the "),
         "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
+            "You can view this profile once it becomes an influencer"),
         "Category": MessageLookupByLibrary.simpleMessage("Category"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Change photo"),
         "Chat": MessageLookupByLibrary.simpleMessage("Chat"),

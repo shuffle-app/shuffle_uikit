@@ -592,5 +592,6 @@
   "OfferSuccessfullyActivated": "Предложение успешно активировано",
   "SpentMyPoints": "Потратил мои баллы",
   "ToOpenTheNextSetOfToolsYouNeedToDo": "Чтобы открыть следующий набор инструментов, вам нужно сделать",
-  "Icon": "Иконка"
+  "Icon": "Иконка",
+  "CantSeePublicProfileMessage": "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером"
 }
