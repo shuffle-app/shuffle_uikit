@@ -590,5 +590,6 @@
   "Activation": "Activation",
   "ViewHistory": "View history",
   "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
-  "Icon": "Icon"
+  "Icon": "Icon",
+  "CantSeePublicProfileMessage": "You can view this profile once it becomes an influencer"
 }

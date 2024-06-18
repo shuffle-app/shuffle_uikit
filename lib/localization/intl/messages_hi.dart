@@ -248,6 +248,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
             "जारी रखकर आप स्वीकार करते हैं"),
         "Cancel": MessageLookupByLibrary.simpleMessage("रद्द करें"),
+        "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
+            "आप इस प्रोफ़ाइल को एक इन्फ्लुएंसर बनने पर देख सकते हैं"),
         "Category": MessageLookupByLibrary.simpleMessage("श्रेणी"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("छवि बदलो"),
         "Chat": MessageLookupByLibrary.simpleMessage("चैट"),

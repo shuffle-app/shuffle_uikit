@@ -6092,6 +6092,16 @@ class S {
       args: [],
     );
   }
+
+  /// `You can view this profile once it becomes an influencer`
+  String get CantSeePublicProfileMessage {
+    return Intl.message(
+      'You can view this profile once it becomes an influencer',
+      name: 'CantSeePublicProfileMessage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

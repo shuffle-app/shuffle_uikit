@@ -248,6 +248,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ByContinuingYouAcceptThe":
             MessageLookupByLibrary.simpleMessage("Продолжая, ты принимаешь"),
         "Cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
+        "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
+            "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером"),
         "Category": MessageLookupByLibrary.simpleMessage("категория"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Изменить фото"),
         "Chat": MessageLookupByLibrary.simpleMessage("Чат"),
