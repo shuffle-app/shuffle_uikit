@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class FeedbackInfo extends StatelessWidget {
+class UiKitFeedbackInfo extends StatelessWidget {
   final DateTime dateTime;
   final String userName;
   final Function() removeFunction;
   final bool showExpand;
 
-  const FeedbackInfo({
+  const UiKitFeedbackInfo({
     super.key,
     required this.dateTime,
     required this.userName,

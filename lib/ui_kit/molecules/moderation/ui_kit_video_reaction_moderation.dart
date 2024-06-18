@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class VideoReactionsModeration extends StatelessWidget {
+class UiKitVideoReactionsModeration extends StatelessWidget {
   final Function() playFunction;
   final List<String> listVideoImage;
-  final FeedbackInfo feedbackInfo;
+  final UiKitFeedbackInfo feedbackInfo;
 
-  const VideoReactionsModeration({
+  const UiKitVideoReactionsModeration({
     super.key,
     required this.playFunction,
     required this.listVideoImage,
