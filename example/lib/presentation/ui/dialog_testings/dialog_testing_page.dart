@@ -90,13 +90,13 @@ class DialogTestingPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      content: VideoReactionsModeration(
+                      content: UiKitVideoReactionsModeration(
                         playFunction: () {},
                         listVideoImage: List.generate(
                           10,
                           (index) => 'assets/images/png/profile_story_1.png',
                         ),
-                        feedbackInfo: FeedbackInfo(
+                        feedbackInfo: UiKitFeedbackInfo(
                           dateTime: DateTime.now(),
                           removeFunction: () {},
                           userName: 'Ryan Gosling',
