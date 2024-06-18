@@ -594,7 +594,8 @@
   "ToOpenTheNextSetOfToolsYouNeedToDo": "Чтобы открыть следующий набор инструментов, вам нужно сделать",
   "Icon": "Иконка",
   "Info": "Информация",
-  "VideoReactions": "Видео-реакции"
+  "VideoReactions": "Видео-реакции",
+  "ShowDeleted": "Показать удаленные"
 
 
 }

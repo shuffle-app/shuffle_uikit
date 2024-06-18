@@ -803,6 +803,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("shared with you"),
+        "ShowDeleted": MessageLookupByLibrary.simpleMessage("Show deleted"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("Show result"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
             "Show the barcode at the checkout when paying"),

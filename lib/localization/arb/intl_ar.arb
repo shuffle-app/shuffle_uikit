@@ -592,5 +592,6 @@
   "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
   "Icon": "Icon",
   "Info": "Info",
-  "VideoReactions": "Video-reactions"
+  "VideoReactions": "Video-reactions",
+  "ShowDeleted": "Show deleted"
 }

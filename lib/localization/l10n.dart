@@ -6112,6 +6112,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Show deleted`
+  String get ShowDeleted {
+    return Intl.message(
+      'Show deleted',
+      name: 'ShowDeleted',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
