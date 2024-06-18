@@ -135,6 +135,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           points: 30,
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
+        FeedbackInfo(
+          userName: 'Ryan Gosling',
+          dateTime: DateTime.now(),
+          removeFunction: () {},
+        ).paddingAll(EdgeInsetsFoundation.all16),
+        SpacingFoundation.verticalSpace16,
         PlaceIconSelector(
           onPressed: () {},
           listIconData: List.generate(
