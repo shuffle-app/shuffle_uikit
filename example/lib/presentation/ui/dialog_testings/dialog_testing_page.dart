@@ -62,6 +62,51 @@ class DialogTestingPage extends StatelessWidget {
                 ),
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
+                  text: 'Video-reactions dialog',
+                  onPressed: () => showUiKitAlertDialog(
+                    context,
+                    AlertDialogData(
+                      customBackgroundColor: colorScheme?.surface3,
+                      defaultButtonText: '',
+                      title: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              ImageWidget(
+                                iconData: ShuffleUiKitIcons.x,
+                                color: colorScheme?.inversePrimary,
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                S.of(context).VideoReactions,
+                                style: context
+                                    .uiKitTheme?.regularTextTheme.titleLarge,
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      content: VideoReactionsModeration(
+                        playFunction: () {},
+                        listVideoImage: List.generate(
+                          10,
+                          (index) => 'assets/images/png/profile_story_1.png',
+                        ),
+                        feedbackInfo: FeedbackInfo(
+                          dateTime: DateTime.now(),
+                          removeFunction: () {},
+                          userName: 'Ryan Gosling',
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
                   text: 'Dialog bottom sheet fullscreen',
                   onPressed: () => showUiKitGeneralFullScreenDialog(
                       context,
