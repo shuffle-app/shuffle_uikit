@@ -37,7 +37,8 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
   List<Polyline> directionLines = [];
   late final FocusNode _focusNode = FocusNode()
     ..addListener(() {
-      if (focusNotifier.value != _focusNode.hasFocus) focusNotifier.value = _focusNode.hasFocus;
+      if (focusNotifier.value != _focusNode.hasFocus)
+        focusNotifier.value = _focusNode.hasFocus;
     });
 
   late final ValueNotifier<bool> focusNotifier = ValueNotifier<bool>(false);
@@ -53,7 +54,8 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
           try {
             await widget.onCurrentLocationRequested?.call();
           } catch (e) {
-            await controller?.animateCamera(CameraUpdate.newLatLng(widget.destination));
+            await controller
+                ?.animateCamera(CameraUpdate.newLatLng(widget.destination));
             setState(() {
               loading = false;
             });
@@ -72,19 +74,24 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
           'getRouteBetweenCoordinates from ${widget.currentLocationNotifier.value.latitude} ${widget.currentLocationNotifier.value.longitude} toooo ${widget.destination.latitude} ${widget.destination.longitude}');
       final result = await points.getRouteBetweenCoordinates(
         apiKey,
-        PointLatLng(widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
+        PointLatLng(widget.currentLocationNotifier.value.latitude,
+            widget.currentLocationNotifier.value.longitude),
         PointLatLng(widget.destination.latitude, widget.destination.longitude),
       );
       await controller?.animateCamera(
         CameraUpdate.newLatLngBounds(
           LatLngBounds(
             southwest: LatLng(
-              min(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
-              min(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
+              min(widget.currentLocationNotifier.value.latitude,
+                  widget.destination.latitude),
+              min(widget.currentLocationNotifier.value.longitude,
+                  widget.destination.longitude),
             ),
             northeast: LatLng(
-              max(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
-              max(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
+              max(widget.currentLocationNotifier.value.latitude,
+                  widget.destination.latitude),
+              max(widget.currentLocationNotifier.value.longitude,
+                  widget.destination.longitude),
             ),
           ),
           72.w,
@@ -95,7 +102,9 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
         directionLines = [
           Polyline(
             polylineId: const PolylineId('directions'),
-            points: result.points.map((e) => LatLng(e.latitude, e.longitude)).toList(),
+            points: result.points
+                .map((e) => LatLng(e.latitude, e.longitude))
+                .toList(),
             color: ColorsFoundation.info,
             width: 4,
             startCap: Cap.buttCap,
@@ -106,12 +115,16 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
         ];
         marker = Marker(
           markerId: const MarkerId('destination'),
-          position: LatLng(result.points.last.latitude, result.points.last.longitude),
+          position:
+              LatLng(result.points.last.latitude, result.points.last.longitude),
           icon: markerIcon,
         );
       });
     } catch (e) {
-      SnackBarUtils.show(message: 'Directions unavailable', context: context, type: AppSnackBarType.error);
+      SnackBarUtils.show(
+          message: 'Directions unavailable',
+          context: context,
+          type: AppSnackBarType.error);
     } finally {
       setState(() {
         loading = false;
@@ -139,7 +152,8 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
         children: [
           GoogleMap(
             onMapCreated: (mapController) {
-              widget.currentLocationNotifier.addListener(_currentLocationListener);
+              widget.currentLocationNotifier
+                  .addListener(_currentLocationListener);
               setState(() => controller = mapController);
               debugPrint('onMapCreated');
             },
@@ -153,37 +167,23 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
             myLocationButtonEnabled: false,
           ),
           Positioned(
-            top: MediaQuery.viewPaddingOf(context).top + SpacingFoundation.verticalSpacing16,
+            top: MediaQuery.viewPaddingOf(context).top +
+                SpacingFoundation.verticalSpacing16,
             left: SpacingFoundation.horizontalSpacing16,
-            width: 1.sw - SpacingFoundation.horizontalSpacing32,
-            child: UiKitElevatedInputWithSwitchingPrefix(
-              focusNode: _focusNode,
-              readOnly: true,
-              controller: widget.searchController,
-              hintText: S.of(context).Search,
-              suffixIcon: SpacingFoundation.none,
-              prefix:
-              // UiKitSwitchableInputPrefix(
-              //   secondary:
-                GestureDetector(
-                  onTap: () {
-                    if (_focusNode.hasFocus) {
-                      Navigator.pop(context);
-                    } else {
-                      _focusNode.unfocus();
-                    }
-                  },
-                  child: const ImageWidget(
-                    iconData: ShuffleUiKitIcons.arrowleft,
-                    color: ColorsFoundation.darkNeutral900,
-                  ),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: theme?.colorScheme.headingTypography,
                 ),
-                // primary: const ImageWidget(
-                //   iconData: ShuffleUiKitIcons.landmark,
-                //   color: ColorsFoundation.darkNeutral900,
-                // ),
-                // notifier: focusNotifier,
-              // ),
+                child: ImageWidget(
+                  color: theme?.colorScheme.darkNeutral900,
+                  iconData: ShuffleUiKitIcons.arrowleft,
+                ).paddingAll(EdgeInsetsFoundation.all12),
+              ),
             ),
           ),
           if (loading)
@@ -191,7 +191,8 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
               width: 1.sw,
               height: 1.sh,
               child: ColoredBox(
-                color: colorScheme?.surface3.withOpacity(0.75) ?? Colors.black54,
+                color:
+                    colorScheme?.surface3.withOpacity(0.75) ?? Colors.black54,
                 child: const Center(child: CircularProgressIndicator()),
               ),
             ),
@@ -250,23 +251,28 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
               SpacingFoundation.verticalSpace16,
               Text(
                 widget.destinationTitle,
-                style: theme?.boldTextTheme.caption1Medium.copyWith(color: Colors.black),
+                style: theme?.boldTextTheme.caption1Medium
+                    .copyWith(color: Colors.black),
               ),
               SpacingFoundation.verticalSpace4,
               Row(children: [
                 ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.resolveWith((states) {
-                      if (states.contains(MaterialState.disabled)) return theme?.colorScheme.darkNeutral300;
+                    backgroundColor:
+                        MaterialStateProperty.resolveWith((states) {
+                      if (states.contains(MaterialState.disabled))
+                        return theme?.colorScheme.darkNeutral300;
 
                       return theme?.colorScheme.surface1;
                       // return theme?.colorScheme.info;
                     }),
-                    foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+                    foregroundColor: MaterialStateProperty.resolveWith(
+                        (states) => Colors.white),
                     elevation: MaterialStateProperty.resolveWith((states) => 0),
                     splashFactory: WaveSplash.splashFactory,
                     shape: MaterialStateProperty.resolveWith(
-                      (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.max),
+                      (states) => RoundedRectangleBorder(
+                          borderRadius: BorderRadiusFoundation.max),
                     ),
                     padding: MaterialStateProperty.resolveWith(
                       (states) => EdgeInsets.symmetric(
@@ -288,7 +294,8 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                       SpacingFoundation.horizontalSpace4,
                       Text(
                         S.of(context).Directions.toUpperCase(),
-                        style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
+                        style: theme?.boldTextTheme.caption1Bold
+                            .copyWith(color: Colors.white),
                       ),
                     ],
                   ),
@@ -297,17 +304,22 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                   SpacingFoundation.horizontalSpace4,
                   ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith((states) {
-                        if (states.contains(MaterialState.disabled)) return theme?.colorScheme.darkNeutral300;
+                      backgroundColor:
+                          MaterialStateProperty.resolveWith((states) {
+                        if (states.contains(MaterialState.disabled))
+                          return theme?.colorScheme.darkNeutral300;
 
                         return theme?.colorScheme.surface1;
                         // return theme?.colorScheme.info;
                       }),
-                      foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-                      elevation: MaterialStateProperty.resolveWith((states) => 0),
+                      foregroundColor: MaterialStateProperty.resolveWith(
+                          (states) => Colors.white),
+                      elevation:
+                          MaterialStateProperty.resolveWith((states) => 0),
                       splashFactory: WaveSplash.splashFactory,
                       shape: MaterialStateProperty.resolveWith(
-                        (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.max),
+                        (states) => RoundedRectangleBorder(
+                            borderRadius: BorderRadiusFoundation.max),
                       ),
                       padding: MaterialStateProperty.resolveWith(
                         (states) => EdgeInsets.symmetric(
@@ -329,7 +341,8 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                         SpacingFoundation.horizontalSpace4,
                         Text(
                           S.of(context).Taxi.toUpperCase(),
-                          style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
+                          style: theme?.boldTextTheme.caption1Bold
+                              .copyWith(color: Colors.white),
                         ),
                       ],
                     ),
