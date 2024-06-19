@@ -6,21 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitEmojiInputs extends StatefulWidget {
+class UiKitEmojiInputField extends StatefulWidget {
   final TextEditingController textEditingController;
   final Function() onSend;
 
-  const UiKitEmojiInputs({
+  const UiKitEmojiInputField({
     super.key,
     required this.textEditingController,
     required this.onSend,
   });
 
   @override
-  State<UiKitEmojiInputs> createState() => _UiKitEmojiInputsState();
+  State<UiKitEmojiInputField> createState() => _UiKitEmojiInputFieldState();
 }
 
-class _UiKitEmojiInputsState extends State<UiKitEmojiInputs> {
+class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
   bool _showEmojiPicker = false;
   bool _showKeyboard = false;
   late final StreamSubscription<bool> keyboardSubscription;
@@ -31,7 +31,8 @@ class _UiKitEmojiInputsState extends State<UiKitEmojiInputs> {
   void initState() {
     super.initState();
 
-    keyboardSubscription = keyboardVisibilityController.onChange.listen((bool visible) {
+    keyboardSubscription =
+        keyboardVisibilityController.onChange.listen((bool visible) {
       if (visible && _showKeyboard) _showEmojiPicker = false;
     });
   }
@@ -97,8 +98,6 @@ class _UiKitEmojiInputsState extends State<UiKitEmojiInputs> {
         SpacingFoundation.verticalSpace12,
         if (_showEmojiPicker) ...[
           EmojiPicker(
-            onEmojiSelected: (Category? category, Emoji emoji) {},
-            onBackspacePressed: () {},
             textEditingController: widget.textEditingController,
             config: Config(
               height: 0.3.sh,
@@ -106,21 +105,24 @@ class _UiKitEmojiInputsState extends State<UiKitEmojiInputs> {
               emojiViewConfig: EmojiViewConfig(
                 backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
                 emojiSizeMax: 28 *
-                    (foundation.defaultTargetPlatform == TargetPlatform.iOS ? 1.20 : 1.0),
+                    (foundation.defaultTargetPlatform == TargetPlatform.iOS
+                        ? 1.20
+                        : 1.0),
               ),
               swapCategoryAndBottomBar: false,
-              skinToneConfig: const SkinToneConfig(),
               categoryViewConfig: CategoryViewConfig(
                 backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
               ),
               bottomActionBarConfig: BottomActionBarConfig(
                 backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
                 buttonColor: Colors.transparent,
-                buttonIconColor: theme?.colorScheme.inversePrimary ?? Colors.white,
+                buttonIconColor:
+                    theme?.colorScheme.inversePrimary ?? Colors.white,
               ),
               searchViewConfig: SearchViewConfig(
                 backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
-                buttonIconColor: theme?.colorScheme.inversePrimary ?? Colors.white,
+                buttonIconColor:
+                    theme?.colorScheme.inversePrimary ?? Colors.white,
                 hintText: '',
                 textStyle: theme?.regularTextTheme.caption1 ??
                     TextStyle(color: theme?.colorScheme.inversePrimary),
