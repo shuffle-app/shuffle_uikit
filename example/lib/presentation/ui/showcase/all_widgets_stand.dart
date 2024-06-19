@@ -139,6 +139,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           userName: 'Ryan Gosling',
           dateTime: DateTime.now(),
           removeFunction: () {},
+          responsesFromCompanytoReview: true,
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         PlaceIconSelector(
