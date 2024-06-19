@@ -73,29 +73,31 @@ class DialogTestingPage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              ImageWidget(
-                                iconData: ShuffleUiKitIcons.x,
-                                color: colorScheme?.inversePrimary,
-                              )
+                              GestureDetector(
+                                onTap: () {
+                                  context.pop();
+                                },
+                                child: ImageWidget(
+                                  iconData: ShuffleUiKitIcons.x,
+                                  color: colorScheme?.inversePrimary,
+                                ),
+                              ),
                             ],
                           ),
                           Row(
                             children: [
-                              Text(
-                                S.of(context).VideoReactions,
-                                style: context
-                                    .uiKitTheme?.regularTextTheme.titleLarge,
+                              Expanded(
+                                child: Text(
+                                  S.of(context).VideoReactions,
+                                  style: context
+                                      .uiKitTheme?.regularTextTheme.titleLarge,
+                                ),
                               )
                             ],
                           ),
                         ],
                       ),
                       content: UiKitVideoReactionsModeration(
-                        playFunction: () {},
-                        listVideoImage: List.generate(
-                          10,
-                          (index) => 'assets/images/png/profile_story_1.png',
-                        ),
                         feedbackInfo: UiKitFeedbackInfo(
                           dateTime: DateTime.now(),
                           removeFunction: () {},
