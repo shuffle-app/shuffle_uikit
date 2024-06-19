@@ -32,15 +32,19 @@ class UiKitFeedbackInfo extends StatelessWidget {
         SpacingFoundation.verticalSpace4,
         Row(
           children: [
-            Text(
-              S.of(context).User,
-              style: regularTextTheme?.labelSmall
-                  .copyWith(color: theme?.colorScheme.darkNeutral900),
+            Flexible(
+              child: Text(
+                S.of(context).User,
+                style: regularTextTheme?.labelSmall
+                    .copyWith(color: theme?.colorScheme.darkNeutral900),
+              ),
             ),
             SpacingFoundation.horizontalSpace16,
-            Text(
-              userName,
-              style: regularTextTheme?.caption1,
+            Flexible(
+              child: Text(
+                userName,
+                style: regularTextTheme?.caption1,
+              ),
             ),
           ],
         ),
@@ -101,6 +105,6 @@ class UiKitFeedbackInfo extends StatelessWidget {
           ],
         )
       ],
-    ).paddingAll(EdgeInsetsFoundation.all16);
+    );
   }
 }
