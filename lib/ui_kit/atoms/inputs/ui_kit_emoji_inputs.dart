@@ -23,6 +23,10 @@ class UiKitEmojiInputField extends StatefulWidget {
 class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
   bool _showEmojiPicker = false;
   bool _showKeyboard = false;
+
+  final _emojiTapRegion = '_emojiTapRegion';
+  final FocusNode _inputFieldfocusNode = FocusNode();
+
   late final StreamSubscription<bool> keyboardSubscription;
   final KeyboardVisibilityController keyboardVisibilityController =
       KeyboardVisibilityController();
@@ -60,6 +64,7 @@ class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
                   });
                 },
                 child: UiKitInputFieldRightIcon(
+                  focusNode: _inputFieldfocusNode,
                   onTap: () {
                     setState(() {
                       _showKeyboard = true;
@@ -67,17 +72,20 @@ class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
                     });
                   },
                   controller: widget.textEditingController,
-                  icon: context.iconButtonNoPadding(
-                    data: BaseUiKitButtonData(
-                      iconInfo: BaseUiKitButtonIconData(
-                        iconData: ShuffleUiKitIcons.moodhappy,
+                  icon: TapRegion(
+                    groupId: _emojiTapRegion,
+                    child: context.iconButtonNoPadding(
+                      data: BaseUiKitButtonData(
+                        iconInfo: BaseUiKitButtonIconData(
+                          iconData: ShuffleUiKitIcons.moodhappy,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _showEmojiPicker = !_showEmojiPicker;
+                            FocusScope.of(context).requestFocus(FocusNode());
+                          });
+                        },
                       ),
-                      onPressed: () {
-                        setState(() {
-                          _showEmojiPicker = !_showEmojiPicker;
-                          FocusScope.of(context).requestFocus(FocusNode());
-                        });
-                      },
                     ),
                   ),
                 ),
@@ -90,42 +98,53 @@ class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
                   iconData: ShuffleUiKitIcons.send,
                   size: 0.07.sw,
                 ),
-                onPressed: widget.onSend,
+                onPressed: () {
+                  _inputFieldfocusNode.requestFocus();
+                  widget.onSend();
+                },
               ),
             ),
           ],
         ),
         SpacingFoundation.verticalSpace12,
         if (_showEmojiPicker) ...[
-          EmojiPicker(
-            textEditingController: widget.textEditingController,
-            config: Config(
-              height: 0.3.sh,
-              checkPlatformCompatibility: true,
-              emojiViewConfig: EmojiViewConfig(
-                backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
-                emojiSizeMax: 28 *
-                    (foundation.defaultTargetPlatform == TargetPlatform.iOS
-                        ? 1.20
-                        : 1.0),
-              ),
-              swapCategoryAndBottomBar: false,
-              categoryViewConfig: CategoryViewConfig(
-                backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
-              ),
-              bottomActionBarConfig: BottomActionBarConfig(
-                backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
-                buttonColor: Colors.transparent,
-                buttonIconColor:
-                    theme?.colorScheme.inversePrimary ?? Colors.white,
-              ),
-              searchViewConfig: SearchViewConfig(
-                backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
-                buttonIconColor:
-                    theme?.colorScheme.inversePrimary ?? Colors.white,
-                hintText: '',
-                textStyle: theme?.regularTextTheme.caption1 ??
-                    TextStyle(color: theme?.colorScheme.inversePrimary),
+          TapRegion(
+            groupId: _emojiTapRegion,
+            onTapOutside: (event) {
+              setState(() {
+                _showEmojiPicker = false;
+              });
+            },
+            child: EmojiPicker(
+              textEditingController: widget.textEditingController,
+              config: Config(
+                height: 0.3.sh,
+                checkPlatformCompatibility: true,
+                emojiViewConfig: EmojiViewConfig(
+                  backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
+                  emojiSizeMax: 28 *
+                      (foundation.defaultTargetPlatform == TargetPlatform.iOS
+                          ? 1.20
+                          : 1.0),
+                ),
+                swapCategoryAndBottomBar: false,
+                categoryViewConfig: CategoryViewConfig(
+                  backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
+                ),
+                bottomActionBarConfig: BottomActionBarConfig(
+                  backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
+                  buttonColor: Colors.transparent,
+                  buttonIconColor:
+                      theme?.colorScheme.inversePrimary ?? Colors.white,
+                ),
+                searchViewConfig: SearchViewConfig(
+                  backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
+                  buttonIconColor:
+                      theme?.colorScheme.inversePrimary ?? Colors.white,
+                  hintText: '',
+                  textStyle: theme?.regularTextTheme.caption1 ??
+                      TextStyle(color: theme?.colorScheme.inversePrimary),
+                ),
               ),
             ),
           ),
