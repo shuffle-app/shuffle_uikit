@@ -596,5 +596,6 @@
   "ShowDeleted": "Show deleted",
   "ExpandThread":  "Expand thread",
   "CollapseThread": "Collapse thread"
-
+  "CantSeePublicProfileMessage": "You can view this profile once it becomes an influencer",
+  "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there"
 }

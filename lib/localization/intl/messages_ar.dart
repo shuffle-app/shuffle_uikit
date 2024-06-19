@@ -247,6 +247,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
             "By continuing you accept the "),
         "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
+            "You can view this profile once it becomes an influencer"),
         "Category": MessageLookupByLibrary.simpleMessage("Category"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Change photo"),
         "Chat": MessageLookupByLibrary.simpleMessage("Chat"),
@@ -478,6 +480,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("Monetization"),
         "Info": MessageLookupByLibrary.simpleMessage("Info"),
+        "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
+            "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there"),
         "Interview": MessageLookupByLibrary.simpleMessage("Interview"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("Inventory items"),

@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:popover/popover.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-Future<T?> showUiKitPopover<T extends Object?>(BuildContext context,
-    {required Widget title,
-    Widget? description,
-    String buttonText = 'OK',
-    VoidCallback? onPop,
-    bool showButton = true,
-    double? customMinHeight}) {
+Future<T?> showUiKitPopover<T extends Object?>(
+  BuildContext context, {
+  required Widget title,
+  Widget? description,
+  String buttonText = 'OK',
+  VoidCallback? onPop,
+  bool showButton = true,
+  ButtonFit? buttonFit,
+  double? customMinHeight,
+}) {
   return showPopover<T>(
     context: context,
     backgroundColor: context.uiKitTheme?.cardTheme.color ?? Colors.white,
@@ -21,24 +24,34 @@ Future<T?> showUiKitPopover<T extends Object?>(BuildContext context,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           title,
           if (description != null) description.paddingSymmetric(vertical: SpacingFoundation.verticalSpacing8),
           if (showButton)
             context
                 .dialogButton(
-                  data: BaseUiKitButtonData(text: buttonText, onPressed: context.pop),
+                  data: BaseUiKitButtonData(
+                      text: buttonText,
+                      onPressed: () {
+                        onPop?.call();
+                        context.pop();
+                      },
+                      fit: buttonFit ?? ButtonFit.hugContent),
                   small: true,
                   dialogButtonType: DialogButtonType.buttonBlack,
                 )
                 .paddingOnly(top: SpacingFoundation.verticalSpacing8)
         ],
-      ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing12, horizontal: SpacingFoundation.horizontalSpacing12),
+      ).paddingSymmetric(
+        vertical: SpacingFoundation.verticalSpacing12,
+        horizontal: SpacingFoundation.horizontalSpacing12,
+      ),
     ),
     //ставим зависимость от константы и берем значение любого угла, любого направления, так как они все одинаковые
     radius: BorderRadiusFoundation.all24.topRight.x,
     constraints: SizesFoundation.minimumSizeForCommentPopup,
-    onPop: onPop,
+    // onPop: onPop,
     direction: PopoverDirection.bottom,
   );
 }
@@ -54,7 +67,7 @@ Future<T?> showEdgePopOver<T extends Object?>(
   double? customMinHeight,
 }) {
   // final renderObject = context.findRenderObject() as RenderBox;
-  const popOverTailStart = Offset(387.1, 387.0);//renderObject.localToGlobal(const Offset(6, -16));
+  const popOverTailStart = Offset(387.1, 387.0); //renderObject.localToGlobal(const Offset(6, -16));
   // print('popOverTailStart: $popOverTailStart');
 
   return showDialog(
