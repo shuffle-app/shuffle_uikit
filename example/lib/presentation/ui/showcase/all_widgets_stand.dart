@@ -130,20 +130,22 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
-        UiKitChatCardIn(
+        UiKitChatCardWithReplyIn(
           timeOfDay: DateTime.now(),
           text:
               'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+          replayText: 'Ryan Gosling in the movie Drive',
           onReplyMassageTap: () {},
-          replyUser: 'Райн гослинг',
+          replyUserName: 'Райн гослинг',
         ),
         SpacingFoundation.verticalSpace16,
-        UiKitChatCardReplyOut(
+        UiKitChatCardWithReplyOut(
           timeOfDay: DateTime.now(),
           text:
               'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+          replayText: 'Ryan Gosling in the movie Drive',
           onReplyMassageTap: () {},
-          replyUser: 'Райн гослинг',
+          replyUserName: 'Райн гослинг',
         ),
         SpacingFoundation.verticalSpace16,
         UiKitPointsHistoryTile(
