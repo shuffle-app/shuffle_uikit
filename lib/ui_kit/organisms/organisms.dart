@@ -57,6 +57,8 @@ export 'cards/ui_kit_stats_action_card.dart';
 export 'cards/ui_kit_titled_action_card.dart';
 export 'cards/ui_kit_titled_card_with_background.dart';
 export 'cards/ui_kit_vertical_chip.dart';
+export 'cards/ui_kit_chat_card_with_replay_out.dart';
+export 'cards/ui_kit_chat_card_with_replay_in.dart';
 export 'horizontal_scroll/ui_kit_horizontal_carousel.dart';
 export 'horizontal_scroll/ui_kit_horizontal_scroll_3d.dart';
 export 'lists/ui_kit_drop_down_list.dart';
