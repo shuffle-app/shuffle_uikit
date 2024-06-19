@@ -135,7 +135,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           points: 30,
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
-        FeedbackInfo(
+        UiKitFeedbackInfo(
           userName: 'Ryan Gosling',
           dateTime: DateTime.now(),
           removeFunction: () {},
