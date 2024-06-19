@@ -6122,6 +6122,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Expand thread`
+  String get ExpandThread {
+    return Intl.message(
+      'Expand thread',
+      name: 'ExpandThread',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Collapse thread`
+  String get CollapseThread {
+    return Intl.message(
+      'Collapse thread',
+      name: 'CollapseThread',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

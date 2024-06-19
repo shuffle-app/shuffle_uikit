@@ -593,6 +593,8 @@
   "Icon": "Icon",
   "Info": "Info",
   "VideoReactions": "Video-reactions",
-  "ShowDeleted": "Show deleted"
+  "ShowDeleted": "Show deleted",
+  "ExpandThread":  "Expand thread",
+  "CollapseThread": "Collapse thread"
 
 }

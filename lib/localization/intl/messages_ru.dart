@@ -263,6 +263,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Christianity": MessageLookupByLibrary.simpleMessage("Христианство"),
         "ClickEnterToSearch":
             MessageLookupByLibrary.simpleMessage("Нажми Ввод для поиска"),
+        "CollapseThread":
+            MessageLookupByLibrary.simpleMessage("Свернуть ветку"),
         "Comments": m5,
         "Company": MessageLookupByLibrary.simpleMessage("Компания"),
         "CompanyAnswered":
@@ -374,6 +376,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "EventsReminders":
             MessageLookupByLibrary.simpleMessage("Напоминания о событиях"),
         "Exit": MessageLookupByLibrary.simpleMessage("Выход"),
+        "ExpandThread":
+            MessageLookupByLibrary.simpleMessage("Развернуть ветку"),
         "Fair": MessageLookupByLibrary.simpleMessage("Средне"),
         "Faq": MessageLookupByLibrary.simpleMessage("ЧаВО"),
         "FaqUnderDev": MessageLookupByLibrary.simpleMessage(

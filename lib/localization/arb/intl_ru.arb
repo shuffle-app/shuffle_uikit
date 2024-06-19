@@ -595,7 +595,10 @@
   "Icon": "Иконка",
   "Info": "Информация",
   "VideoReactions": "Видео-реакции",
-  "ShowDeleted": "Показать удаленные"
+  "ShowDeleted": "Показать удаленные",
+  "ExpandThread":  "Развернуть ветку",
+  "CollapseThread": "Свернуть ветку"
+
 
 
 }

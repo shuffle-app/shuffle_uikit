@@ -263,6 +263,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Christianity": MessageLookupByLibrary.simpleMessage("Christianity"),
         "ClickEnterToSearch":
             MessageLookupByLibrary.simpleMessage("Click Enter to search"),
+        "CollapseThread":
+            MessageLookupByLibrary.simpleMessage("Collapse thread"),
         "Comments": m5,
         "Company": MessageLookupByLibrary.simpleMessage("Company"),
         "CompanyAnswered":
@@ -370,6 +372,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EventsReminders":
             MessageLookupByLibrary.simpleMessage("Events reminders"),
         "Exit": MessageLookupByLibrary.simpleMessage("Exit"),
+        "ExpandThread": MessageLookupByLibrary.simpleMessage("Expand thread"),
         "Fair": MessageLookupByLibrary.simpleMessage("Fair"),
         "Faq": MessageLookupByLibrary.simpleMessage("Faq"),
         "FaqUnderDev": MessageLookupByLibrary.simpleMessage(
