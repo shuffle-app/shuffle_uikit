@@ -2,19 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitFeedbackInfo extends StatelessWidget {
+class UiKitFeedbackInfo extends StatefulWidget {
   final DateTime dateTime;
   final String userName;
   final Function() removeFunction;
-  final bool showExpand;
+
+  ///displays the Expandthread button if
+  ///there were responses from the company
+  final bool responsesFromCompanytoReview;
 
   const UiKitFeedbackInfo({
     super.key,
     required this.dateTime,
     required this.userName,
     required this.removeFunction,
-    this.showExpand = false,
+    this.responsesFromCompanytoReview = false,
   });
+
+  @override
+  State<UiKitFeedbackInfo> createState() => _UiKitFeedbackInfoState();
+}
+
+class _UiKitFeedbackInfoState extends State<UiKitFeedbackInfo> {
+  bool _expandThreadIsOpen = false;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +52,7 @@ class UiKitFeedbackInfo extends StatelessWidget {
             SpacingFoundation.horizontalSpace16,
             Flexible(
               child: Text(
-                userName,
+                widget.userName,
                 style: regularTextTheme?.caption1,
               ),
             ),
@@ -58,12 +68,12 @@ class UiKitFeedbackInfo extends StatelessWidget {
             ),
             SpacingFoundation.horizontalSpace16,
             Text(
-              DateFormat('dd.MM.yyyy').format(dateTime),
+              DateFormat('dd.MM.yyyy').format(widget.dateTime),
               style: regularTextTheme?.caption1,
             ),
             const Spacer(),
             Text(
-              DateFormat('HH:mm').format(dateTime),
+              DateFormat('HH:mm').format(widget.dateTime),
               style: regularTextTheme?.caption1,
             ),
           ],
@@ -72,16 +82,21 @@ class UiKitFeedbackInfo extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            if (showExpand) ...[
+            if (widget.responsesFromCompanytoReview) ...[
               context.coloredButtonWithBorderRadius(
                 data: BaseUiKitButtonData(
                   fit: ButtonFit.hugContent,
                   textColor: theme?.colorScheme.inversePrimary,
                   backgroundColor:
                       theme?.colorScheme.darkNeutral900.withOpacity(0.68),
-                  //TODO
-                  text: 'Expand thread',
-                  onPressed: () {},
+                  text: _expandThreadIsOpen
+                      ? S.of(context).ExpandThread
+                      : S.of(context).CollapseThread,
+                  onPressed: () {
+                    setState(() {
+                      _expandThreadIsOpen = !_expandThreadIsOpen;
+                    });
+                  },
                 ),
               ),
             ],
@@ -91,7 +106,7 @@ class UiKitFeedbackInfo extends StatelessWidget {
               color: ColorsFoundation.red.withOpacity(0.32),
               child: InkWell(
                 borderRadius: BorderRadiusFoundation.all12,
-                onTap: removeFunction,
+                onTap: widget.removeFunction,
                 child: Ink(
                   child: Container(
                     child: const ImageWidget(
