@@ -14,7 +14,8 @@ class AllWidgetsStand extends StatefulWidget {
 }
 
 class _AllWidgetsStandState extends State<AllWidgetsStand> {
-  final TextEditingController _emojitextEditingController = TextEditingController();
+  final TextEditingController _emojitextEditingController =
+      TextEditingController();
   final TextEditingController _controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -131,7 +132,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
-        UiKitEmojiInputs(
+        UiKitEmojiInputField(
           textEditingController: _emojitextEditingController,
           onSend: () {},
         ),
@@ -279,7 +280,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
         UiKitHoverAnimationTile(title: "Party Dance", onTap: (title) {})
             .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
-        UiKitHoverAnimationTile(title: "Party Swim", onTap: (title) {}, isLast: true)
+        UiKitHoverAnimationTile(
+                title: "Party Swim", onTap: (title) {}, isLast: true)
             .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
         PropertiesTypeAnimatedButton(title: 'Active tiger', onTap: () {})
             .paddingAll(EdgeInsetsFoundation.all16),
@@ -835,7 +837,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 UiKitSocialSearchContentTypeCard.services(
                   title: 'Service',
                   iconData: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.png.calmnessEmoji.path,
+                    iconPath:
+                        GraphicsFoundation.instance.png.calmnessEmoji.path,
                   ),
                   onTap: () {},
                 ),
@@ -960,8 +963,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             onPlaceTap: () {},
             invitedPeopleAvatarPaths: List.generate(
               7,
-              (index) =>
-                  index < 4 ? null : GraphicsFoundation.instance.png.mockAvatar.path,
+              (index) => index < 4
+                  ? null
+                  : GraphicsFoundation.instance.png.mockAvatar.path,
             ),
             userType: UserTileType.influencer,
           ),
@@ -1105,8 +1109,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             color: context.uiKitTheme?.colorScheme.surface2,
           ),
           animationPath: isLightTheme
-              ? GraphicsFoundation.instance.animations.lottie.fingerprintWhite.path
-              : GraphicsFoundation.instance.animations.lottie.fingerprintBlack.path,
+              ? GraphicsFoundation
+                  .instance.animations.lottie.fingerprintWhite.path
+              : GraphicsFoundation
+                  .instance.animations.lottie.fingerprintBlack.path,
           onCompletedWidget: UiKitMessageCardWithIcon(
             message: 'La Vue Citytel',
             iconLink: GraphicsFoundation.instance.png.angryEmoji.path,
@@ -1145,14 +1151,16 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 title: '80’s theme invites only party ',
                 subtitle: 'in 1 day',
                 onTap: () {},
-                leadingImagePath: GraphicsFoundation.instance.png.eventAvatar.path,
+                leadingImagePath:
+                    GraphicsFoundation.instance.png.eventAvatar.path,
               ),
               SpacingFoundation.verticalSpace16,
               UiKitActionCardTile(
                 title: '80’s theme invites only party ',
                 subtitle: 'in 1 day',
                 onTap: () {},
-                leadingImagePath: GraphicsFoundation.instance.png.mockAvatar.path,
+                leadingImagePath:
+                    GraphicsFoundation.instance.png.mockAvatar.path,
               ),
             ],
           ),
@@ -1262,7 +1270,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
         SpacingFoundation.verticalSpace16,
         UiKitHorizontalScroll3D(
-          itemBuilder: (BuildContext context, int index) => UiKitFindSomeoneCard(
+          itemBuilder: (BuildContext context, int index) =>
+              UiKitFindSomeoneCard(
             avatarUrl: GraphicsFoundation.instance.png.mockUserAvatar.path,
             userNickName: 'naveen',
             userName: 'Naveen Sheoran',
@@ -1830,13 +1839,15 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 children: [
                   Expanded(
                     child: context.smallOutlinedButton(
-                      data: BaseUiKitButtonData(text: 'Not often', onPressed: () {}),
+                      data: BaseUiKitButtonData(
+                          text: 'Not often', onPressed: () {}),
                     ),
                   ),
                   SpacingFoundation.horizontalSpace12,
                   Expanded(
                     child: context.smallButton(
-                      data: BaseUiKitButtonData(text: 'Very often', onPressed: () {}),
+                      data: BaseUiKitButtonData(
+                          text: 'Very often', onPressed: () {}),
                     ),
                   ),
                 ],
@@ -2141,7 +2152,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             UiKitMediaPhoto(link: GraphicsFoundation.instance.png.place.path),
             UiKitMediaVideo(link: GraphicsFoundation.instance.png.place.path),
           ],
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+          description:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
               'Sed euismod, nunc ut tincidunt lacinia, nisl nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
               'Nulla facilisi. '
               'Donec auctor, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, vitae aliquam nisl nisl sit amet nunc. '
@@ -2158,14 +2170,22 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
           ],
           uniqueTags: [
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
-            UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
+            UiKitTag(
+                title: 'Cheap', icon: ShuffleUiKitIcons.dice, unique: true),
           ],
         ),
         SpacingFoundation.verticalSpace16,
@@ -2269,7 +2289,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         MaterialButton(
           onPressed: () {
             Navigator.of(context).push(PopUpVideoPlayer(
-                videoUri: 'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
+                videoUri:
+                    'https://www.exit109.com/~dnn/clips/RW20seconds_1.mp4'));
           },
           child: const Text(
             'Show Vertical Video',
