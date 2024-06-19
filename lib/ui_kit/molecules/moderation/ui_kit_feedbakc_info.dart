@@ -6,6 +6,7 @@ class UiKitFeedbackInfo extends StatefulWidget {
   final DateTime dateTime;
   final String userName;
   final Function() removeFunction;
+  final Function(bool expandThreadIsOpen) onSubmit;
 
   ///displays the Expandthread button if
   ///there were responses from the company
@@ -16,6 +17,7 @@ class UiKitFeedbackInfo extends StatefulWidget {
     required this.dateTime,
     required this.userName,
     required this.removeFunction,
+    required this.onSubmit,
     this.responsesFromCompanytoReview = false,
   });
 
@@ -96,6 +98,7 @@ class _UiKitFeedbackInfoState extends State<UiKitFeedbackInfo> {
                     setState(() {
                       _expandThreadIsOpen = !_expandThreadIsOpen;
                     });
+                    widget.onSubmit(_expandThreadIsOpen);
                   },
                 ),
               ),
