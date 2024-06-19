@@ -4,8 +4,9 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class GridTitledItemWidget extends StatelessWidget {
   final String title;
   final Widget child;
+  final bool preserveDarkTheme;
 
-  const GridTitledItemWidget({super.key, required this.title, required this.child});
+  const GridTitledItemWidget({super.key, required this.title, required this.child, this.preserveDarkTheme = false});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,7 @@ class GridTitledItemWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             UiKitCardWrapper(
+              color: preserveDarkTheme ? ColorsFoundation.surface3 : null,
               height: 82.sp,
               width: 82.sp,
               borderRadius: BorderRadiusFoundation.all24,

@@ -248,6 +248,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ByContinuingYouAcceptThe":
             MessageLookupByLibrary.simpleMessage("Продолжая, ты принимаешь"),
         "Cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
+        "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
+            "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером"),
         "Category": MessageLookupByLibrary.simpleMessage("категория"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Изменить фото"),
         "Chat": MessageLookupByLibrary.simpleMessage("Чат"),
@@ -477,6 +479,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Влияй на выбор людей и усиливай значимость мест и событий"),
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("Монетизация"),
+        "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
+            "Чтобы включить кит здоровья, перейдите в раздел «Конфиденциальность и безопасность» в настройках, затем перейдите в раздел «Здоровье» и выберите там «Shuffle app»."),
         "Interview": MessageLookupByLibrary.simpleMessage("Интервью"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("Предметы инвентаря"),
