@@ -591,5 +591,6 @@
   "ViewHistory": "View history",
   "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
   "Icon": "Icon",
-  "CantSeePublicProfileMessage": "You can view this profile once it becomes an influencer"
+  "CantSeePublicProfileMessage": "You can view this profile once it becomes an influencer",
+  "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there"
 }

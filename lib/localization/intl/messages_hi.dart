@@ -480,6 +480,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "लोगों के चयन पर प्रभाव डालें और स्थानों और घटनाओं का महत्व बढ़ाएं"),
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("मुद्रीकरण"),
+        "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
+            "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there"),
         "Interview": MessageLookupByLibrary.simpleMessage("साक्षात्कार"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("इन्वेंटरी आइटम"),

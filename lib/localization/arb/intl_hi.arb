@@ -591,5 +591,6 @@
   "OfferSuccessfullyActivated": "प्रस्ताव सफलतापूर्वक सक्रिय",
   "SpentMyPoints": "मेरे अंक बिताए",
   "Icon": "आइकन",
+  "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there",
   "CantSeePublicProfileMessage": "आप इस प्रोफ़ाइल को एक इन्फ्लुएंसर बनने पर देख सकते हैं"
 }

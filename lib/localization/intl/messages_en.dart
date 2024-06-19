@@ -476,6 +476,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Influence people\\\'s choices and enhance the significance of places and events"),
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("Monetization"),
+        "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
+            "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there"),
         "Interview": MessageLookupByLibrary.simpleMessage("Interview"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("Inventory items"),

@@ -6102,6 +6102,16 @@ class S {
       args: [],
     );
   }
+
+  /// `To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there`
+  String get InstructionsToEnableHealthKit {
+    return Intl.message(
+      'To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there',
+      name: 'InstructionsToEnableHealthKit',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

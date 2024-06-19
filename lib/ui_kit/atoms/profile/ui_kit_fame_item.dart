@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
@@ -7,8 +6,9 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitFameItem extends StatefulWidget {
   final UiKitAchievementsModel? uiModel;
   final bool isAvailableForPreview;
+  final bool preserveDarkTheme;
 
-  const UiKitFameItem({super.key, this.uiModel, this.isAvailableForPreview = true});
+  const UiKitFameItem({super.key, this.uiModel, this.isAvailableForPreview = true, this.preserveDarkTheme = false});
 
   @override
   State<UiKitFameItem> createState() => _UiKitFameItemState();
@@ -101,16 +101,15 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final backgroundColor = theme?.colorScheme.grayForegroundColor.withOpacity(0.16);
+    final backgroundColor =
+        (widget.preserveDarkTheme ? ColorsFoundation.darkNeutral100 : theme?.colorScheme.grayForegroundColor)
+            ?.withOpacity(0.16);
 
     return GestureDetector(
         onTap: widget.isAvailableForPreview
-            ? ()  {
+            ? () {
                 if (modelFile != null) {
-                  _showModelViewerDialog(
-                      context,
-                      modelFile!.file.path,
-                      uiModel?.asset ?? '');
+                  _showModelViewerDialog(context, modelFile!.file.path, uiModel?.asset ?? '');
                 } else {
                   SnackBarUtils.show(message: 'Waiting for model to download', context: context);
                 }
