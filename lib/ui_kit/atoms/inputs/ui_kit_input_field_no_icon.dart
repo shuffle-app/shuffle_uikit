@@ -34,7 +34,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.customFocusedBorder,
     this.customEnabledBorder,
     this.customErrorBorder,
-    this.autofocus = false,
+    this.autofocus = false, this.cursorColor,
   }) : super(key: key);
 
   @override
@@ -73,6 +73,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
   final String? label;
   final VoidCallback? onTap;
   final Color? customLabelColor;
+  final Color? cursorColor;
   final InputBorder? customFocusedBorder;
   final InputBorder? customEnabledBorder;
   final InputBorder? customErrorBorder;
@@ -136,6 +137,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
         expands: widget.expands,
         controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
+        cursorColor: widget.cursorColor,
         textInputAction: widget.textInputAction,
         focusNode: widget.node,
         keyboardType: widget.keyboardType,

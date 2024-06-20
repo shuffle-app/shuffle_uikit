@@ -3,8 +3,13 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context, AlertDialogData data) {
+Future<T?> showUiKitAlertDialog<T extends Object?>(
+  BuildContext context,
+  AlertDialogData data, {
+  bool barrierDismissible = true,
+}) {
   return showDialog<T>(
+    barrierDismissible: barrierDismissible,
     context: context,
     builder: (BuildContext context) {
       final textTheme = context.uiKitTheme?.boldTextTheme;
@@ -29,17 +34,17 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(BuildContext context, AlertDi
         actions: data.actions ??
             [
               if (data.additionalButton != null) data.additionalButton!,
-              if(data.defaultButtonText.isNotEmpty)
-              context.dialogButton(
-                data: BaseUiKitButtonData(
-                  onPressed: data.onPop ?? () => context.pop(),
-                  text: data.defaultButtonText,
-                ),
-                small: data.defaultButtonSmall ?? true,
-                isOutlined: data.defaultButtonOutlined,
-                dialogButtonType:
-                    data.additionalButton != null ? DialogButtonType.buttonWhite : DialogButtonType.buttonBlack,
-              )
+              if (data.defaultButtonText.isNotEmpty)
+                context.dialogButton(
+                  data: BaseUiKitButtonData(
+                    onPressed: data.onPop ?? () => context.pop(),
+                    text: data.defaultButtonText,
+                  ),
+                  small: data.defaultButtonSmall ?? true,
+                  isOutlined: data.defaultButtonOutlined,
+                  dialogButtonType:
+                      data.additionalButton != null ? DialogButtonType.buttonWhite : DialogButtonType.buttonBlack,
+                )
             ],
         actionsAlignment: MainAxisAlignment.center,
         actionsPadding: const EdgeInsets.fromLTRB(24, 8, 24, 24),

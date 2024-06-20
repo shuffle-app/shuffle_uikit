@@ -129,13 +129,13 @@ class ProfileCardBody extends StatelessWidget {
             ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
             SpacingFoundation.verticalSpace16,
           ],
-          if (onFollow != null)...[
+          if (onFollow != null) ...[
             context
                 .button(data: BaseUiKitButtonData(text: S.of(context).Follow.toUpperCase(), onPressed: onFollow))
                 .paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
-
-          SpacingFoundation.verticalSpace16],
-          if (followers != null && followers! > 0)...[
+            SpacingFoundation.verticalSpace16
+          ],
+          if (followers != null && followers! > 0) ...[
             RichText(
                 textAlign: onFollow != null ? TextAlign.center : TextAlign.start,
                 text: TextSpan(children: [
@@ -144,7 +144,8 @@ class ProfileCardBody extends StatelessWidget {
                       text: S.of(context).Followers.toLowerCase(),
                       style: theme?.regularTextTheme.caption1.copyWith(color: ColorsFoundation.mutedText)),
                 ])).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
-          SpacingFoundation.verticalSpace16],
+            SpacingFoundation.verticalSpace16
+          ],
           Stack(
             children: [
               ConstrainedBox(
@@ -207,9 +208,11 @@ class ProfileCardBody extends StatelessWidget {
               horizontalPadding: EdgeInsetsFoundation.all16,
               onViewAllTap: onViewAllAchievements,
               previewItems: achievements
-                  .map((e) => UiKitFameItem(
-                        asset: e.asset,
-                      ))
+                  .map((e) => Builder(
+                      builder: (context) => UiKitFameItem(
+                            uiModel: e,
+                            isAvailableForPreview: false,
+                          )))
                   .toList(),
             ),
           ],

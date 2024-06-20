@@ -132,6 +132,18 @@ extension FactoryExtention on BuildContext {
         .build(this);
   }
 
+  Widget coloredButtonWithBorderRadius({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+  }) {
+    return WidgetsFactory.of(this)!
+        .createColoredButtonWithBorderRadius(
+          data: data,
+          borderRadius: borderRadius,
+        )
+        .build(this);
+  }
+
   Widget bouncingButton({
     required BaseUiKitButtonData data,
     bool? blurred,
