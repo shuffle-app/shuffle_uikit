@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitPropertyRecentlyAdded extends StatelessWidget {
-  final List<IconData> listIconData;
-  const UiKitPropertyRecentlyAdded({super.key, required this.listIconData});
+  final List<String> listIconPath;
+  const UiKitPropertyRecentlyAdded({super.key, required this.listIconPath});
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +23,10 @@ class UiKitPropertyRecentlyAdded extends StatelessWidget {
             crossAxisCount: 6,
             crossAxisSpacing: EdgeInsetsFoundation.all16,
           ),
-          itemCount: listIconData.length,
+          itemCount: listIconPath.length,
           itemBuilder: (context, index) {
             return ImageWidget(
-              iconData: listIconData[index],
+              link: listIconPath[index],
             );
           },
         ).paddingAll(EdgeInsetsFoundation.all8),
