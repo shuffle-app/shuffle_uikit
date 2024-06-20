@@ -144,6 +144,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         UiKitFeedbackInfo(
+          onSubmit: (expandThreadIsOpen) {},
           userName: 'Ryan Gosling',
           dateTime: DateTime.now(),
           removeFunction: () {},
