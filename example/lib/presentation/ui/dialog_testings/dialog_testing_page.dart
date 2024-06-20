@@ -98,7 +98,9 @@ class DialogTestingPage extends StatelessWidget {
                         ],
                       ),
                       content: UiKitVideoReactionsModeration(
+                        videoFile: null,
                         feedbackInfo: UiKitFeedbackInfo(
+                          onSubmit: (expandThreadIsOpen) {},
                           dateTime: DateTime.now(),
                           removeFunction: () {},
                           userName: 'Ryan Gosling',
