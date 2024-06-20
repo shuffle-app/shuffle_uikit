@@ -73,7 +73,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                     ),
                   const Spacer(),
                   GestureDetector(
-                    onTap: (isHelpful ?? false) ? null : onLike,
+                    onTap: onLike,
                     child: ImageWidget(
                       iconData: ShuffleUiKitIcons.like,
                       width: 12.w,
@@ -88,7 +88,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                     ),
                   SpacingFoundation.horizontalSpace8,
                   GestureDetector(
-                    onTap: (isHelpful ?? false) ? null : onLike,
+                    onTap: onLike,
                     child: Text(
                       S.of(context).Helpful,
                       style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
