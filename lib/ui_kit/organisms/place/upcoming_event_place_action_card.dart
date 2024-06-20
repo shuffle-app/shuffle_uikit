@@ -5,6 +5,7 @@ class UpcomingEventPlaceActionCard extends BasePlaceActionCard {
     super.key,
     required super.value,
     super.rasterIconAsset,
+    super.buttonTitle,
     super.iconAsset,
     required super.action,
     super.group,
