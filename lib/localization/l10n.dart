@@ -6092,6 +6092,26 @@ class S {
       args: [],
     );
   }
+
+  /// `You can view this profile once it becomes an influencer`
+  String get CantSeePublicProfileMessage {
+    return Intl.message(
+      'You can view this profile once it becomes an influencer',
+      name: 'CantSeePublicProfileMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there`
+  String get InstructionsToEnableHealthKit {
+    return Intl.message(
+      'To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there',
+      name: 'InstructionsToEnableHealthKit',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

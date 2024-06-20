@@ -14,6 +14,8 @@ class AllWidgetsStand extends StatefulWidget {
 }
 
 class _AllWidgetsStandState extends State<AllWidgetsStand> {
+  final TextEditingController _emojitextEditingController =
+      TextEditingController();
   final TextEditingController _controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -146,6 +148,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           replayText: 'Ryan Gosling in the movie Drive',
           onReplyMassageTap: () {},
           replyUserName: 'Райн гослинг',
+        UiKitEmojiInputField(
+          textEditingController: _emojitextEditingController,
+          onSend: () {},
         ),
         SpacingFoundation.verticalSpace16,
         UiKitPointsHistoryTile(
