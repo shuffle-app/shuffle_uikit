@@ -71,40 +71,49 @@ class _UiKitParalaxPhotoCardState extends State<UiKitParalaxPhotoCard> {
     return SizedBox(
       height: 0.8.sh,
       width: 1.sw,
-      child: Tilt(
-        tiltStreamController: _tiltStreamController,
-        childLayout: ChildLayout(
-          inner: [
-            if (widget.upperMiddleImage != null)
-              TiltParallax(
-                child: ImageWidget(
-                  link: widget.upperMiddleImage,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            if (widget.frontImage != null)
-              TiltParallax(
-                child: ImageWidget(
-                  link: widget.frontImage,
-                  fit: BoxFit.cover,
-                ),
-              ),
-          ],
-        ),
-        lightConfig: LightConfig(disable: true),
-        shadowConfig: ShadowConfig(disable: true),
-        tiltConfig: TiltConfig(
-          sensorFactor: 25,
-          enableRevert: false,
-          enableSensorRevert: false,
-          enableReverse: false,
-          angle: 15,
-        ),
-        child: Container(
-          child: ImageWidget(
-            link: widget.backImage,
-          ),
-        ),
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          if (widget.backImage != null)
+            ImageWidget(
+              link: widget.backImage,
+              fit: BoxFit.cover,
+            ),
+          Tilt(
+            tiltStreamController: _tiltStreamController,
+            childLayout: ChildLayout(
+              inner: [
+                if (widget.upperMiddleImage != null)
+                  TiltParallax(
+                    child: ImageWidget(
+                      link: widget.upperMiddleImage,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                if (widget.frontImage != null)
+                  TiltParallax(
+                    child: ImageWidget(
+                      link: widget.frontImage,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+              ],
+            ),
+            lightConfig: LightConfig(disable: true),
+            shadowConfig: ShadowConfig(disable: true),
+            tiltConfig: TiltConfig(
+              sensorFactor: 25,
+              enableRevert: false,
+              enableSensorRevert: false,
+              enableReverse: false,
+              angle: 10,
+            ),
+            child: Container(
+              height: 0.8.sh,
+              width: 1.sw,
+            ),
+          )
+        ],
       ),
     );
   }
