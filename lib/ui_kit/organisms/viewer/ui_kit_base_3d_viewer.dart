@@ -13,18 +13,26 @@ class UiKitBase3DViewer extends StatelessWidget {
   final bool? autoRotate;
   final ValueChanged<WebViewController>? onWebViewCreated;
   final Set<JavascriptChannel>? javascriptChannels;
+  final VoidCallback? onTap;
+  late final JavascriptChannel onTapChannel;
 
-  const UiKitBase3DViewer({super.key,
-    required this.localPath,
-    this.backgroundColor,
-    this.animationName,
-    this.javascriptChannels,
-    this.poster,
-    this.scale,
-    this.autoPlay,
-    this.onWebViewCreated,
-    this.environmentImage,
-    this.autoRotate});
+  UiKitBase3DViewer(
+      {super.key,
+      required this.localPath,
+      this.backgroundColor,
+      this.animationName,
+      this.javascriptChannels,
+      this.poster,
+      this.scale,
+      this.autoPlay,
+      this.onWebViewCreated,
+      this.environmentImage,
+      this.onTap,
+      this.autoRotate}) {
+    onTapChannel = JavascriptChannel('onTapChannel', onMessageReceived: (message) {
+      onTap?.call();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +60,19 @@ class UiKitBase3DViewer extends StatelessWidget {
       disableZoom: true,
       exposure: 1,
       environmentImage: environmentImage,
-      javascriptChannels: javascriptChannels,
+      javascriptChannels: {...?javascriptChannels, onTapChannel},
+      relatedJs: '''
+function handleTap(event) {
+  // Send the tap data to the JavascriptChannel
+  onTapChannel.postMessage("tap");
+}
+
+// Attach the event listener to the relevant element(s)
+const tappableElements = document.querySelectorAll('model-viewer'); 
+tappableElements.forEach(element => {
+  element.addEventListener('click', handleTap);
+});
+      ''',
     );
   }
 }
