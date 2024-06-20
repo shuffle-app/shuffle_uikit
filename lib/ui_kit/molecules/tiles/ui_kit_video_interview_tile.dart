@@ -10,13 +10,14 @@ class UiKitVideoInterviewTile extends StatelessWidget {
       this.onPlayTap,
       this.userImage,
       this.userName,
-      this.userNickname});
+      this.userNickname, this.title});
 
   final String? imagePath;
   final VoidCallback? onPlayTap;
   final String? userImage;
   final String? userName;
   final String? userNickname;
+  final String? title;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +74,7 @@ class UiKitVideoInterviewTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'Great interview with the owner',
+                title??  'Great interview with the owner',
                   style: context.uiKitTheme?.boldTextTheme.caption2Bold,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
