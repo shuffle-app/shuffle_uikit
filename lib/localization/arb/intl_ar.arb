@@ -592,5 +592,11 @@
   "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
   "Icon": "Icon",
   "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there",
-  "CantSeePublicProfileMessage": "You can view this profile once it becomes an influencer"
+  "CantSeePublicProfileMessage": "You can view this profile once it becomes an influencer",
+  "PushUpYourBusiness": "Push up your business",
+  "ShowMore": "Show\nmore",
+  "GoAheadAndGrowYourBusiness": "Go ahead and grow your business",
+  "AboutUs": "about us",
+  "OpenNow": "Open now",
+  "SpendIt": "Spend it"
 }

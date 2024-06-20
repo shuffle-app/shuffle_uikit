@@ -132,6 +132,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
+        UiKitVoiceListenCard(
+duration: Duration(seconds: 70),
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitVideoInterviewTile(
+          onPlayTap: (){},
+        ).paddingAll(EdgeInsetsFoundation.all16),
+        SpacingFoundation.verticalSpace16,
         UiKitEmojiInputField(
           textEditingController: _emojitextEditingController,
           onSend: () {},
