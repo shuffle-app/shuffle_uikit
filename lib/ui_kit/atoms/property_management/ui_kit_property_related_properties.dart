@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitPropertyRelatedProperties extends StatelessWidget {
+  final TextEditingController textEditingController;
   final List<RelatedPropertiesItemUiModel> listRelatedPropertiesItem;
 
-  UiKitPropertyRelatedProperties({
+  const UiKitPropertyRelatedProperties({
     super.key,
     required this.listRelatedPropertiesItem,
+    required this.textEditingController,
   });
-
-  final TextEditingController _textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class UiKitPropertyRelatedProperties extends StatelessWidget {
         UiKitInputFieldRightIcon(
           hintColor: context.uiKitTheme?.colorScheme.darkNeutral600,
           borderRadius: BorderRadiusFoundation.all12,
-          controller: _textEditingController,
+          controller: textEditingController,
           fillColor: ColorsFoundation.lightSurface4,
           icon: GestureDetector(
             onTap: () {},
@@ -39,7 +39,9 @@ class UiKitPropertyRelatedProperties extends StatelessWidget {
               listRelatedPropertiesItem.length,
               (index) {
                 double padding = 0.0;
-                if (index != listRelatedPropertiesItem.length - 1) padding = SpacingFoundation.verticalSpacing12;
+                if (index != listRelatedPropertiesItem.length - 1) {
+                  padding = SpacingFoundation.verticalSpacing12;
+                }
                 final relatedPropertiesItem = listRelatedPropertiesItem[index];
 
                 return RelatedPropertiesItem(
@@ -68,7 +70,8 @@ class RelatedPropertiesItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final String properties = uiModel.propertiesList.toString().replaceAll(RegExp(r'\[|\]'), '');
+    final String properties =
+        uiModel.propertiesList.toString().replaceAll(RegExp(r'\[|\]'), '');
 
     return Row(
       children: [
@@ -89,9 +92,9 @@ class RelatedPropertiesItem extends StatelessWidget {
                 ),
                 SpacingFoundation.horizontalSpace4,
                 Text(
-                  //TODO
                   uiModel.title,
-                  style: theme?.boldTextTheme.caption2Bold.copyWith(color: theme.colorScheme.primary),
+                  style: theme?.boldTextTheme.caption2Bold
+                      .copyWith(color: theme.colorScheme.primary),
                 ),
               ],
             ).paddingAll(EdgeInsetsFoundation.all4),
