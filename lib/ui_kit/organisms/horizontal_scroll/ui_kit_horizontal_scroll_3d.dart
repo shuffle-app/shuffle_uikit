@@ -5,11 +5,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitHorizontalScroll3D extends StatelessWidget {
   final Widget Function(BuildContext, int) itemBuilder;
   final int itemCount;
+  final ValueChanged<int>? onItemChanged;
 
   const UiKitHorizontalScroll3D({
     super.key,
     required this.itemBuilder,
     required this.itemCount,
+    this.onItemChanged,
   });
 
   @override
@@ -51,6 +53,7 @@ class UiKitHorizontalScroll3D extends StatelessWidget {
         height: calculatedHeight,
         isClip: true,
         itemBuilder: itemBuilder,
+        onItemChanged: onItemChanged,
       ),
     );
   }

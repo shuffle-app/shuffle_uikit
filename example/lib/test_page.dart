@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -27,14 +26,14 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
       controller.addListener(() {
         setState(() {});
       });
-      final file = await ImagePicker().pickImage(source: ImageSource.gallery);
-      final bytes = await file?.readAsBytes();
-
-      log('bytes: ${bytes?.isNotEmpty}');
-      setState(() {
-        xFile = file;
-        if (bytes != null) selectedImageBytes = Uint8List.fromList(bytes);
-      });
+      // final file = await ImagePicker().pickImage(source: ImageSource.gallery);
+      // final bytes = await file?.readAsBytes();
+      //
+      // log('bytes: ${bytes?.isNotEmpty}');
+      // setState(() {
+      //   xFile = file;
+      //   if (bytes != null) selectedImageBytes = Uint8List.fromList(bytes);
+      // });
     });
   }
 
@@ -53,25 +52,29 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
         child: Column(
           children: [
             SizedBox(height: MediaQuery.of(context).viewPadding.top, width: 1.sw),
-            if (xFile != null && selectedImageBytes != null)
-              UiKitPictureViewFinder(
-                controller: controller,
-                viewFinderOrientation: Axis.vertical,
-                viewPortAvailableSize: Size(1.sw, 0.85.sh),
-                imageBytes: selectedImageBytes!,
-                onCropCompleted: (imageValue) => setState(() => cropedImageBytes = imageValue),
-              ),
-            SpacingFoundation.verticalSpace24,
-            context
-                .smallButton(
-                  data: BaseUiKitButtonData(
-                    text: 'crop',
-                    onPressed: () => controller.cropImage(),
-                  ),
-                )
-                .loadingWrap(controller.state == UiKitViewFinderState.cropping),
-            SpacingFoundation.verticalSpace24,
-            if (cropedImageBytes != null) Image.memory(cropedImageBytes!),
+            UiKitParalaxPhotoCard(
+              frontImage: GraphicsFoundation.instance.png.mockParalaxFrontImage.path,
+              backImage: GraphicsFoundation.instance.png.mockParalaxBackImage.path,
+            ),
+            // if (xFile != null && selectedImageBytes != null)
+            //   UiKitPictureViewFinder(
+            //     controller: controller,
+            //     viewFinderOrientation: Axis.vertical,
+            //     viewPortAvailableSize: Size(1.sw, 0.85.sh),
+            //     imageBytes: selectedImageBytes!,
+            //     onCropCompleted: (imageValue) => setState(() => cropedImageBytes = imageValue),
+            //   ),
+            // SpacingFoundation.verticalSpace24,
+            // context
+            //     .smallButton(
+            //       data: BaseUiKitButtonData(
+            //         text: 'crop',
+            //         onPressed: () => controller.cropImage(),
+            //       ),
+            //     )
+            //     .loadingWrap(controller.state == UiKitViewFinderState.cropping),
+            // SpacingFoundation.verticalSpace24,
+            // if (cropedImageBytes != null) Image.memory(cropedImageBytes!),
             // UiKitPictureViewFinder(
             //   imageSize: Size(0.85.sw, 0.75.sh),
             //   imagePath: GraphicsFoundation.instance.png.mockAdBanner5.path,

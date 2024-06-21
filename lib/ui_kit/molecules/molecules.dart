@@ -104,3 +104,5 @@ export 'info_cards/ui_kit_iconed_title.dart';
 export 'tiles/ui_kit_view_history_tile.dart';
 export 'moderation/ui_kit_feedback_info.dart';
 export 'moderation/ui_kit_video_reaction_moderation.dart';
+export 'tiles/ui_kit_video_interview_tile.dart';
+export 'info_cards/ui_kit_voice_listen_card.dart';

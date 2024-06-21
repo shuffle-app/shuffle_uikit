@@ -112,6 +112,8 @@ dependencies:
       url: https://github.com/shuffle-app/video_editor.git
       ref: master
   ffmpeg_kit_flutter_min: ^6.0.3
+  flutter_tilt: ^3.0.2
+  sensors_plus: ^5.0.1
 
 dependency_overrides:
   watcher: ^1.1.0

@@ -581,10 +581,6 @@
   "NoReviewsMessage": "Be the first to review",
   "BeFirstToInvite": "Be the first",
   "ReviewsByCritics": "Reviews by critics",
-  "NoReactionsMessage": "There are no reactions yet, be the first",
-  "ShowTheBarcode": "Show the barcode at the checkout when paying",
-  "OfferSuccessfullyActivated": "Offer successfully activated",
-  "SpentMyPoints": "Spent my points",
   "NoVideoReactionsYet": "Visit places and events in Shuffle and make amazing video-reactions",
   "Accrual": "Accrual",
   "Activation": "Activation",
@@ -597,5 +593,18 @@
   "ExpandThread":  "Expand thread",
   "CollapseThread": "Collapse thread"
   "CantSeePublicProfileMessage": "You can view this profile once it becomes an influencer",
-  "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there"
+  "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there",
+  "PushUpYourBusiness": "Push up your business",
+  "ShowMore": "Show\nmore",
+  "GoAheadAndGrowYourBusiness": "Go ahead and grow your business",
+  "AboutUs": "about us",
+  "OpenNow": "Open now",
+  "SpendIt": "Spend it",
+  "NoReactionsMessage": "There are no reactions yet, be the first",
+  "ShowTheBarcode": "Show the barcode at the checkout when paying",
+  "OfferSuccessfullyActivated": "Offer successfully activated",
+  "SpentMyPoints": "Spent my points",
+  "Categories": "Categories",
+  "Entertainment": "Entertainment",
+  "RelatedPersonalProperties": "Related personal properties"
 }
