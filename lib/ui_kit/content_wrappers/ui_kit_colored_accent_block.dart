@@ -42,7 +42,6 @@ class UiKitColoredAccentBlock extends StatelessWidget {
           if (content != null)
             SizedBox(
               height: contentHeight,
-              width: 1.sw,
               child: content,
             ),
           if (content != null) SpacingFoundation.verticalSpace16,
