@@ -605,6 +605,12 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/mock_avatar.png
   AssetGenImage get mockAvatar => const AssetGenImage('assets/images/png/mock_avatar.png');
 
+  /// File path: assets/images/png/mock_paralax_back_image.png
+  AssetGenImage get mockParalaxBackImage => const AssetGenImage('assets/images/png/mock_paralax_back_image.png');
+
+  /// File path: assets/images/png/mock_paralax_front_image.png
+  AssetGenImage get mockParalaxFrontImage => const AssetGenImage('assets/images/png/mock_paralax_front_image.png');
+
   /// File path: assets/images/png/mock_swiper_card.png
   AssetGenImage get mockSwiperCard => const AssetGenImage('assets/images/png/mock_swiper_card.png');
 
@@ -981,6 +987,8 @@ class $AssetsImagesPngGen {
         mockAdBanner8,
         mockAdBanner9,
         mockAvatar,
+        mockParalaxBackImage,
+        mockParalaxFrontImage,
         mockSwiperCard,
         mockUserAvatar,
         muslimFlag,
@@ -1418,6 +1426,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/dollar_outlined.svg
   SvgGenImage get dollarOutlined => const SvgGenImage('assets/images/svg/dollar_outlined.svg');
+
+  /// File path: assets/images/svg/download.svg
+  SvgGenImage get download => const SvgGenImage('assets/images/svg/download.svg');
 
   /// File path: assets/images/svg/dubai-silhouette.svg
   SvgGenImage get dubaiSilhouette => const SvgGenImage('assets/images/svg/dubai-silhouette.svg');
@@ -2039,6 +2050,7 @@ class $AssetsImagesSvgGen {
         dollar,
         dollarBlackOutlined,
         dollarOutlined,
+        download,
         dubaiSilhouette,
         emptyRadio,
         exclamation,

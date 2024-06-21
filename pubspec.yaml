@@ -63,6 +63,14 @@ dependencies:
 
   another_flushbar: ^1.12.30
 
+  #emoji
+  emoji_picker_flutter: 
+    git:
+      url: https://github.com/shuffle-app/emoji_picker_flutter
+      ref: master
+      
+  flutter_keyboard_visibility: ^6.0.0
+
   #tab navigation
   tabnavigator:
 #        path: ../tabnavigator_plus
@@ -104,6 +112,8 @@ dependencies:
       url: https://github.com/shuffle-app/video_editor.git
       ref: master
   ffmpeg_kit_flutter_min: ^6.0.3
+  flutter_tilt: ^3.0.2
+  sensors_plus: ^5.0.1
 
 dependency_overrides:
   watcher: ^1.1.0

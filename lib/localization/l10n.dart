@@ -5803,16 +5803,6 @@ class S {
     );
   }
 
-  /// `To open the next set of tools you need to do`
-  String get ToOpenTheNextSetOfToolsYouNeedToDo {
-    return Intl.message(
-      'To open the next set of tools you need to do',
-      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Album`
   String get Album {
     return Intl.message(
@@ -5963,16 +5953,6 @@ class S {
     );
   }
 
-  /// `Visit places and events in Shuffle and make amazing video-reactions`
-  String get NoVideoReactionsYet {
-    return Intl.message(
-      'Visit places and events in Shuffle and make amazing video-reactions',
-      name: 'NoVideoReactionsYet',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `No people available to invite`
   String get NoPeopleAvailableToInvite {
     return Intl.message(
@@ -6053,31 +6033,141 @@ class S {
     );
   }
 
-  /// `Categories`
-  String get Categories {
+  /// `Visit places and events in Shuffle and make amazing video-reactions`
+  String get NoVideoReactionsYet {
     return Intl.message(
-      'Categories',
-      name: 'Categories',
+      'Visit places and events in Shuffle and make amazing video-reactions',
+      name: 'NoVideoReactionsYet',
       desc: '',
       args: [],
     );
   }
 
-  /// `Entertainment`
-  String get Entertainment {
+  /// `Accrual`
+  String get Accrual {
     return Intl.message(
-      'Entertainment',
-      name: 'Entertainment',
+      'Accrual',
+      name: 'Accrual',
       desc: '',
       args: [],
     );
   }
 
-  /// `Related personal properties`
-  String get RelatedPersonalProperties {
+  /// `Activation`
+  String get Activation {
     return Intl.message(
-      'Related personal properties',
-      name: 'RelatedPersonalProperties',
+      'Activation',
+      name: 'Activation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View history`
+  String get ViewHistory {
+    return Intl.message(
+      'View history',
+      name: 'ViewHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To open the next set of tools you need to do`
+  String get ToOpenTheNextSetOfToolsYouNeedToDo {
+    return Intl.message(
+      'To open the next set of tools you need to do',
+      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Icon`
+  String get Icon {
+    return Intl.message(
+      'Icon',
+      name: 'Icon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can view this profile once it becomes an influencer`
+  String get CantSeePublicProfileMessage {
+    return Intl.message(
+      'You can view this profile once it becomes an influencer',
+      name: 'CantSeePublicProfileMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there`
+  String get InstructionsToEnableHealthKit {
+    return Intl.message(
+      'To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there',
+      name: 'InstructionsToEnableHealthKit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Push up your business`
+  String get PushUpYourBusiness {
+    return Intl.message(
+      'Push up your business',
+      name: 'PushUpYourBusiness',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show\nmore`
+  String get ShowMore {
+    return Intl.message(
+      'Show\nmore',
+      name: 'ShowMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go ahead and grow your business`
+  String get GoAheadAndGrowYourBusiness {
+    return Intl.message(
+      'Go ahead and grow your business',
+      name: 'GoAheadAndGrowYourBusiness',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `about us`
+  String get AboutUs {
+    return Intl.message(
+      'about us',
+      name: 'AboutUs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open now`
+  String get OpenNow {
+    return Intl.message(
+      'Open now',
+      name: 'OpenNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spend it`
+  String get SpendIt {
+    return Intl.message(
+      'Spend it',
+      name: 'SpendIt',
       desc: '',
       args: [],
     );

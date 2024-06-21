@@ -160,9 +160,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AboutUs": MessageLookupByLibrary.simpleMessage("о нас"),
         "AcceptDonations": MessageLookupByLibrary.simpleMessage(
             "Принимать донаты или помогать другим воплотить мечты"),
         "Account": MessageLookupByLibrary.simpleMessage("Аккаунт"),
+        "Accrual": MessageLookupByLibrary.simpleMessage("Начисление"),
+        "Activation": MessageLookupByLibrary.simpleMessage("Активация"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Тип активности"),
         "ActivityTypes":
             MessageLookupByLibrary.simpleMessage("Типы активности"),
@@ -246,7 +249,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ByContinuingYouAcceptThe":
             MessageLookupByLibrary.simpleMessage("Продолжая, ты принимаешь"),
         "Cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
-        "Categories": MessageLookupByLibrary.simpleMessage("Категории"),
+        "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
+            "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером"),
         "Category": MessageLookupByLibrary.simpleMessage("категория"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Изменить фото"),
         "Chat": MessageLookupByLibrary.simpleMessage("Чат"),
@@ -363,7 +367,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterTitle": MessageLookupByLibrary.simpleMessage("Введите название"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Введи адрес эл. почты"),
-        "Entertainment": MessageLookupByLibrary.simpleMessage("Развлечения"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Возникла ошибка"),
         "ErrorOccuredWithoutMessage":
             MessageLookupByLibrary.simpleMessage("Ошибка без сообщения"),
@@ -428,6 +431,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "GetReward": MessageLookupByLibrary.simpleMessage("Забрать награду"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("Начать"),
         "Go": MessageLookupByLibrary.simpleMessage("Go!"),
+        "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
+            "Продолжайте и расти ваш бизнес"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("Перейти в настройки"),
@@ -458,6 +463,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "HowItWorks": MessageLookupByLibrary.simpleMessage("Как\nэто?"),
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
             "Сколько \$ хочешь задонатить?"),
+        "Icon": MessageLookupByLibrary.simpleMessage("Иконка"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("Идеальный маршрут"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Не тот логин или пароль"),
@@ -476,6 +482,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Влияй на выбор людей и усиливай значимость мест и событий"),
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("Монетизация"),
+        "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
+            "Чтобы включить кит здоровья, перейдите в раздел «Конфиденциальность и безопасность» в настройках, затем перейдите в раздел «Здоровье» и выберите там «Shuffle app»."),
         "Interview": MessageLookupByLibrary.simpleMessage("Интервью"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("Предметы инвентаря"),
@@ -606,6 +614,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "OopsIWillTryAgain":
             MessageLookupByLibrary.simpleMessage("Уупс, попробую ещё"),
         "OpenFrom": MessageLookupByLibrary.simpleMessage("С"),
+        "OpenNow": MessageLookupByLibrary.simpleMessage("Открыть сейчас"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("До"),
         "OpeningHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "OrDragFilesHere":
@@ -711,6 +720,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Не будь один..."),
         "Properties": MessageLookupByLibrary.simpleMessage("Свойства"),
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
+        "PushUpYourBusiness":
+            MessageLookupByLibrary.simpleMessage("Поднимайте ваш бизнес"),
         "RangeEndValueIsLessThanBeginingOne":
             MessageLookupByLibrary.simpleMessage(
                 "Конечное значение диапазона меньше начального"),
@@ -723,8 +734,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "RecentlyAdded":
             MessageLookupByLibrary.simpleMessage("Недавно добавлено"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
-        "RelatedPersonalProperties": MessageLookupByLibrary.simpleMessage(
-            "Относительные личные свойства"),
         "Religion": MessageLookupByLibrary.simpleMessage("Религия"),
         "Reply": MessageLookupByLibrary.simpleMessage("Ответить"),
         "ResendCode":
@@ -811,6 +820,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("поделилась с вами"),
+        "ShowMore": MessageLookupByLibrary.simpleMessage("Показать\nбольше"),
         "ShowResult":
             MessageLookupByLibrary.simpleMessage("Показать результат"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
@@ -831,6 +841,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Полезные сервисы и места"),
         "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Что-то пошло не так. Попробуй еще раз."),
+        "SpendIt": MessageLookupByLibrary.simpleMessage("Потратить"),
         "Spent": MessageLookupByLibrary.simpleMessage("Потрачено"),
         "SpentMyPoints":
             MessageLookupByLibrary.simpleMessage("Потратил мои баллы"),
@@ -963,6 +974,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Видео (загрузить)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("Все"),
+        "ViewHistory": MessageLookupByLibrary.simpleMessage("Просмотр истории"),
         "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(
             "Посети первое, открой следующее"),
         "Voice": MessageLookupByLibrary.simpleMessage("Аудиосообщения"),

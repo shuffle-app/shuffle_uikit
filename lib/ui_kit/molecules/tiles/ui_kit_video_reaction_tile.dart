@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -9,6 +10,9 @@ class UiKitVideoReactionTile extends StatelessWidget {
   final DateTime? eventDate;
   final String? eventName;
   final String? placeName;
+  final VoidCallback? onPlaceNameTapped;
+  final VoidCallback? onSeeMorePopOverCallback;
+  final bool Function()? canNavigateToPublicProfile;
 
   const UiKitVideoReactionTile({
     Key? key,
@@ -19,7 +23,48 @@ class UiKitVideoReactionTile extends StatelessWidget {
     this.eventDate,
     this.eventName,
     this.placeName,
+    this.onPlaceNameTapped,
+    this.canNavigateToPublicProfile,
+    this.onSeeMorePopOverCallback,
   }) : super(key: key);
+
+  void _showPopOver(BuildContext context) {
+    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final colorScheme = context.uiKitTheme?.colorScheme;
+
+    showUiKitPopover(
+      context,
+      buttonText: S.current.SeeMore,
+      showButton: true,
+      customMinHeight: 0.175.sh,
+      buttonFit: ButtonFit.fitWidth,
+      title: RichText(
+        text: TextSpan(
+          children: [
+            TextSpan(
+              text: S.current.PremiumAccount,
+              style: boldTextTheme?.title2.copyWith(
+                color: colorScheme?.surface,
+              ),
+            ),
+            TextSpan(
+              text: '\n ${S.current.CantSeePublicProfileMessage}',
+              style: boldTextTheme?.body.copyWith(
+                color: colorScheme?.surface,
+              ),
+            ),
+          ],
+        ),
+        textAlign: TextAlign.center,
+      ),
+      onPop: onSeeMorePopOverCallback,
+    );
+  }
+
+  void _authorTapHandler(BuildContext context) {
+    final skipPopOver = canNavigateToPublicProfile?.call() ?? false;
+    if (!skipPopOver) _showPopOver(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +73,14 @@ class UiKitVideoReactionTile extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.max,
       children: [
-        context.userAvatar(
-          size: UserAvatarSize.x48x48,
-          type: authorType ?? UserTileType.ordinary,
-          userName: authorName ?? '',
-          imageUrl: authorAvatarUrl,
+        GestureDetector(
+          onTap: () => _authorTapHandler(context),
+          child: context.userAvatar(
+            size: UserAvatarSize.x48x48,
+            type: authorType ?? UserTileType.ordinary,
+            userName: authorName ?? '',
+            imageUrl: authorAvatarUrl,
+          ),
         ),
         SpacingFoundation.horizontalSpace12,
         Expanded(
@@ -46,6 +94,7 @@ class UiKitVideoReactionTile extends StatelessWidget {
                     TextSpan(
                       text: authorName,
                       style: boldTextTheme?.caption1Bold,
+                      recognizer: TapGestureRecognizer()..onTap = () => _authorTapHandler(context),
                     ),
                     if (reactionDate != null)
                       TextSpan(
@@ -72,13 +121,18 @@ class UiKitVideoReactionTile extends StatelessWidget {
                     ],
                   ),
                 ),
-              SpacingFoundation.verticalSpace2,
-              Align(
-                alignment: Alignment.centerLeft,
-                child: UiKitPlaceTag(
-                  placeName: placeName ?? '',
+              if (placeName != null) ...[
+                SpacingFoundation.verticalSpace2,
+                GestureDetector(
+                  onTap: onPlaceNameTapped,
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: UiKitPlaceTag(
+                      placeName: placeName ?? '',
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ],
           ),
         ),

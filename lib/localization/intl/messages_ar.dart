@@ -160,9 +160,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AboutUs": MessageLookupByLibrary.simpleMessage("about us"),
         "AcceptDonations": MessageLookupByLibrary.simpleMessage(
             "Accept donations or help others realize their dreams"),
         "Account": MessageLookupByLibrary.simpleMessage("Account"),
+        "Accrual": MessageLookupByLibrary.simpleMessage("Accrual"),
+        "Activation": MessageLookupByLibrary.simpleMessage("Activation"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Activity type"),
         "ActivityTypes": MessageLookupByLibrary.simpleMessage("Activity types"),
         "AddFeedback": MessageLookupByLibrary.simpleMessage("Add feedback"),
@@ -245,7 +248,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
             "By continuing you accept the "),
         "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
-        "Categories": MessageLookupByLibrary.simpleMessage("Categories"),
+        "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
+            "You can view this profile once it becomes an influencer"),
         "Category": MessageLookupByLibrary.simpleMessage("Category"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Change photo"),
         "Chat": MessageLookupByLibrary.simpleMessage("Chat"),
@@ -359,7 +363,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterTitle": MessageLookupByLibrary.simpleMessage("Enter title"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Enter your e-mail address"),
-        "Entertainment": MessageLookupByLibrary.simpleMessage("Entertainment"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Error occured"),
         "ErrorOccuredWithoutMessage": MessageLookupByLibrary.simpleMessage(
             "Error occured without message"),
@@ -426,6 +429,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "GetReward": MessageLookupByLibrary.simpleMessage("Get reward"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("Get started"),
         "Go": MessageLookupByLibrary.simpleMessage("Go!"),
+        "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
+            "Go ahead and grow your business"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
         "GoToSettings": MessageLookupByLibrary.simpleMessage("Go to settings"),
         "Guess": MessageLookupByLibrary.simpleMessage("Guess"),
@@ -455,6 +460,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "HowItWorks": MessageLookupByLibrary.simpleMessage("How it\nworks"),
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
             "How much \$ do you want to donate?"),
+        "Icon": MessageLookupByLibrary.simpleMessage("Icon"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("Ideal route"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Incorrect login or password"),
@@ -473,6 +479,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Influence people\\\'s choices and enhance the significance of places and events"),
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("Monetization"),
+        "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
+            "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there"),
         "Interview": MessageLookupByLibrary.simpleMessage("Interview"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("Inventory items"),
@@ -600,6 +608,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "OopsIWillTryAgain":
             MessageLookupByLibrary.simpleMessage("Oops, I\'ll try again"),
         "OpenFrom": MessageLookupByLibrary.simpleMessage("Open from"),
+        "OpenNow": MessageLookupByLibrary.simpleMessage("Open now"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("Open to"),
         "OpeningHours": MessageLookupByLibrary.simpleMessage("Opening hours"),
         "OrDragFilesHere":
@@ -705,6 +714,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Do not be alone..."),
         "Properties": MessageLookupByLibrary.simpleMessage("Properties"),
         "Published": MessageLookupByLibrary.simpleMessage("Published"),
+        "PushUpYourBusiness":
+            MessageLookupByLibrary.simpleMessage("Push up your business"),
         "RangeEndValueIsLessThanBeginingOne":
             MessageLookupByLibrary.simpleMessage(
                 "Range end value is less than begining one"),
@@ -716,8 +727,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "RealMoney": MessageLookupByLibrary.simpleMessage("Real money"),
         "RecentlyAdded": MessageLookupByLibrary.simpleMessage("Recently added"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
-        "RelatedPersonalProperties":
-            MessageLookupByLibrary.simpleMessage("Related personal properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
         "Reply": MessageLookupByLibrary.simpleMessage("Reply"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
@@ -803,6 +812,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("shared with you"),
+        "ShowMore": MessageLookupByLibrary.simpleMessage("Show\nmore"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("Show result"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
             "Show the barcode at the checkout when paying"),
@@ -822,6 +832,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Useful services and places"),
         "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Something went wrong. Please try again."),
+        "SpendIt": MessageLookupByLibrary.simpleMessage("Spend it"),
         "Spent": MessageLookupByLibrary.simpleMessage("Spent"),
         "SpentMyPoints":
             MessageLookupByLibrary.simpleMessage("Spent my points"),
@@ -952,6 +963,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Video (upload Files)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("View all"),
+        "ViewHistory": MessageLookupByLibrary.simpleMessage("View history"),
         "VisitFirstToOpenNext":
             MessageLookupByLibrary.simpleMessage("Visit first to open next"),
         "Voice": MessageLookupByLibrary.simpleMessage("Voice"),
