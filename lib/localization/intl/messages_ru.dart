@@ -251,6 +251,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
         "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
             "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером"),
+        "Categories": MessageLookupByLibrary.simpleMessage("Категории"),
         "Category": MessageLookupByLibrary.simpleMessage("категория"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Изменить фото"),
         "Chat": MessageLookupByLibrary.simpleMessage("Чат"),
@@ -367,6 +368,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterTitle": MessageLookupByLibrary.simpleMessage("Введите название"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Введи адрес эл. почты"),
+        "Entertainment": MessageLookupByLibrary.simpleMessage("Развлечения"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Возникла ошибка"),
         "ErrorOccuredWithoutMessage":
             MessageLookupByLibrary.simpleMessage("Ошибка без сообщения"),
@@ -734,6 +736,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RecentlyAdded":
             MessageLookupByLibrary.simpleMessage("Недавно добавлено"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
+        "RelatedPersonalProperties": MessageLookupByLibrary.simpleMessage(
+            "Относительные личные свойства"),
         "Religion": MessageLookupByLibrary.simpleMessage("Религия"),
         "Reply": MessageLookupByLibrary.simpleMessage("Ответить"),
         "ResendCode":

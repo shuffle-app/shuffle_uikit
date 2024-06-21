@@ -585,10 +585,6 @@
   "NoReviewsMessage": "Be the first to review",
   "ReviewsByCritics": "Reviews by critics",
   "NoReactionsMessage": "There are no reactions yet, be the first",
-  "BeFirstToInvite": "Be the first",
-  "ShowTheBarcode": "Show the barcode at the checkout when paying",
-  "OfferSuccessfullyActivated": "Offer successfully activated",
-  "SpentMyPoints": "Spent my points",
   "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
   "Icon": "Icon",
   "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there",
@@ -598,5 +594,12 @@
   "GoAheadAndGrowYourBusiness": "Go ahead and grow your business",
   "AboutUs": "about us",
   "OpenNow": "Open now",
-  "SpendIt": "Spend it"
+  "SpendIt": "Spend it",
+  "BeFirstToInvite": "Be the first",
+  "ShowTheBarcode": "Show the barcode at the checkout when paying",
+  "OfferSuccessfullyActivated": "Offer successfully activated",
+  "SpentMyPoints": "Spent my points",
+  "Categories": "Categories",
+  "Entertainment": "Entertainment",
+  "RelatedPersonalProperties": "Related personal properties"
 }

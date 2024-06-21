@@ -581,10 +581,6 @@
   "NoReviewsMessage": "Be the first to review",
   "BeFirstToInvite": "Be the first",
   "ReviewsByCritics": "Reviews by critics",
-  "NoReactionsMessage": "There are no reactions yet, be the first",
-  "ShowTheBarcode": "Show the barcode at the checkout when paying",
-  "OfferSuccessfullyActivated": "Offer successfully activated",
-  "SpentMyPoints": "Spent my points",
   "NoVideoReactionsYet": "Visit places and events in Shuffle and make amazing video-reactions",
   "Accrual": "Accrual",
   "Activation": "Activation",
@@ -598,5 +594,12 @@
   "GoAheadAndGrowYourBusiness": "Go ahead and grow your business",
   "AboutUs": "about us",
   "OpenNow": "Open now",
-  "SpendIt": "Spend it"
+  "SpendIt": "Spend it",
+  "NoReactionsMessage": "There are no reactions yet, be the first",
+  "ShowTheBarcode": "Show the barcode at the checkout when paying",
+  "OfferSuccessfullyActivated": "Offer successfully activated",
+  "SpentMyPoints": "Spent my points",
+  "Categories": "Categories",
+  "Entertainment": "Entertainment",
+  "RelatedPersonalProperties": "Related personal properties"
 }
