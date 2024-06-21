@@ -586,11 +586,20 @@
   "NoReviewsMessage": "कोई समीक्षा नहीं",
   "ReviewsByCritics": "निरंकुशों द्वारा समीक्षा",
   "NoReactionsMessage": "अब तक कोई प्रतिक्रिया नहीं है, पहले वाले बनें",
+  "Icon": "आइकन",
+  "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there",
+  "CantSeePublicProfileMessage": "आप इस प्रोफ़ाइल को एक इन्फ्लुएंसर बनने पर देख सकते हैं",
+  "PushUpYourBusiness": "अपने व्यवसाय को पुश करें",
+  "ShowMore": "अधिक\nदिखाएं",
+  "GoAheadAndGrowYourBusiness": "आगे बढ़ें और अपना व्यवसाय बढ़ाएं",
+  "AboutUs": "हमारे बारे में",
+  "OpenNow": "अभी खोलें",
+  "SpendIt": "इसे खर्च करें",
   "BeFirstToInvite": "Be the first",
   "ShowTheBarcode": "भुगतान करते समय चेकआउट पर बारकोड दिखाएं",
   "OfferSuccessfullyActivated": "प्रस्ताव सफलतापूर्वक सक्रिय",
   "SpentMyPoints": "मेरे अंक बिताए",
-  "Icon": "आइकन",
-  "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there",
-  "CantSeePublicProfileMessage": "आप इस प्रोफ़ाइल को एक इन्फ्लुएंसर बनने पर देख सकते हैं"
+  "Categories": "श्रेणियाँ",
+  "Entertainment": "मनोरंजन",
+  "RelatedPersonalProperties": "संबंधित व्यक्तिगत गुण"
 }

@@ -5993,46 +5993,6 @@ class S {
     );
   }
 
-  /// `There are no reactions yet, be the first`
-  String get NoReactionsMessage {
-    return Intl.message(
-      'There are no reactions yet, be the first',
-      name: 'NoReactionsMessage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Show the barcode at the checkout when paying`
-  String get ShowTheBarcode {
-    return Intl.message(
-      'Show the barcode at the checkout when paying',
-      name: 'ShowTheBarcode',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Offer successfully activated`
-  String get OfferSuccessfullyActivated {
-    return Intl.message(
-      'Offer successfully activated',
-      name: 'OfferSuccessfullyActivated',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Spent my points`
-  String get SpentMyPoints {
-    return Intl.message(
-      'Spent my points',
-      name: 'SpentMyPoints',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Visit places and events in Shuffle and make amazing video-reactions`
   String get NoVideoReactionsYet {
     return Intl.message(
@@ -6108,6 +6068,136 @@ class S {
     return Intl.message(
       'To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there',
       name: 'InstructionsToEnableHealthKit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Push up your business`
+  String get PushUpYourBusiness {
+    return Intl.message(
+      'Push up your business',
+      name: 'PushUpYourBusiness',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show\nmore`
+  String get ShowMore {
+    return Intl.message(
+      'Show\nmore',
+      name: 'ShowMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go ahead and grow your business`
+  String get GoAheadAndGrowYourBusiness {
+    return Intl.message(
+      'Go ahead and grow your business',
+      name: 'GoAheadAndGrowYourBusiness',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `about us`
+  String get AboutUs {
+    return Intl.message(
+      'about us',
+      name: 'AboutUs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open now`
+  String get OpenNow {
+    return Intl.message(
+      'Open now',
+      name: 'OpenNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spend it`
+  String get SpendIt {
+    return Intl.message(
+      'Spend it',
+      name: 'SpendIt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no reactions yet, be the first`
+  String get NoReactionsMessage {
+    return Intl.message(
+      'There are no reactions yet, be the first',
+      name: 'NoReactionsMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show the barcode at the checkout when paying`
+  String get ShowTheBarcode {
+    return Intl.message(
+      'Show the barcode at the checkout when paying',
+      name: 'ShowTheBarcode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer successfully activated`
+  String get OfferSuccessfullyActivated {
+    return Intl.message(
+      'Offer successfully activated',
+      name: 'OfferSuccessfullyActivated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spent my points`
+  String get SpentMyPoints {
+    return Intl.message(
+      'Spent my points',
+      name: 'SpentMyPoints',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Categories`
+  String get Categories {
+    return Intl.message(
+      'Categories',
+      name: 'Categories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Entertainment`
+  String get Entertainment {
+    return Intl.message(
+      'Entertainment',
+      name: 'Entertainment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Related personal properties`
+  String get RelatedPersonalProperties {
+    return Intl.message(
+      'Related personal properties',
+      name: 'RelatedPersonalProperties',
       desc: '',
       args: [],
     );

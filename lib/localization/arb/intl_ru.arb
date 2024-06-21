@@ -587,6 +587,9 @@
   "NoReviewsMessage": "Оставь отзыв первым",
   "ReviewsByCritics": "Отзывы критиков",
   "NoReactionsMessage": "Здесь пока нет реакций, будь первым",
+  "Categories": "Категории",
+  "Entertainment": "Развлечения",
+  "RelatedPersonalProperties": "Относительные личные свойства",
   "BeFirstToInvite": "Будь первым",
   "ShowTheBarcode": "Показывайте штрих-код при оплате",
   "OfferSuccessfullyActivated": "Предложение успешно активировано",
@@ -594,5 +597,11 @@
   "ToOpenTheNextSetOfToolsYouNeedToDo": "Чтобы открыть следующий набор инструментов, вам нужно сделать",
   "Icon": "Иконка",
   "CantSeePublicProfileMessage": "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером",
-  "InstructionsToEnableHealthKit": "Чтобы включить кит здоровья, перейдите в раздел «Конфиденциальность и безопасность» в настройках, затем перейдите в раздел «Здоровье» и выберите там «Shuffle app»."
+  "InstructionsToEnableHealthKit": "Чтобы включить кит здоровья, перейдите в раздел «Конфиденциальность и безопасность» в настройках, затем перейдите в раздел «Здоровье» и выберите там «Shuffle app».",
+  "PushUpYourBusiness": "Поднимайте ваш бизнес",
+  "ShowMore": "Показать\nбольше",
+  "GoAheadAndGrowYourBusiness": "Продолжайте и расти ваш бизнес",
+  "AboutUs": "о нас",
+  "OpenNow": "Открыть сейчас",
+  "SpendIt": "Потратить"
 }
