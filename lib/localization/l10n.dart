@@ -6052,6 +6052,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Categories`
+  String get Categories {
+    return Intl.message(
+      'Categories',
+      name: 'Categories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Entertainment`
+  String get Entertainment {
+    return Intl.message(
+      'Entertainment',
+      name: 'Entertainment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Related personal properties`
+  String get RelatedPersonalProperties {
+    return Intl.message(
+      'Related personal properties',
+      name: 'RelatedPersonalProperties',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

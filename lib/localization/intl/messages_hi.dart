@@ -246,6 +246,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
             "जारी रखकर आप स्वीकार करते हैं"),
         "Cancel": MessageLookupByLibrary.simpleMessage("रद्द करें"),
+        "Categories": MessageLookupByLibrary.simpleMessage("श्रेणियाँ"),
         "Category": MessageLookupByLibrary.simpleMessage("श्रेणी"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("छवि बदलो"),
         "Chat": MessageLookupByLibrary.simpleMessage("चैट"),
@@ -359,6 +360,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterTitle": MessageLookupByLibrary.simpleMessage("शीर्षक दर्ज करें"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("अपना ईमेल पता दर्ज करें"),
+        "Entertainment": MessageLookupByLibrary.simpleMessage("मनोरंजन"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("त्रुटि हुई"),
         "ErrorOccuredWithoutMessage":
             MessageLookupByLibrary.simpleMessage("संदेश के बिना त्रुटि हुई"),
@@ -723,6 +725,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RecentlyAdded":
             MessageLookupByLibrary.simpleMessage("हाल ही में जोड़ा गया"),
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
+        "RelatedPersonalProperties":
+            MessageLookupByLibrary.simpleMessage("संबंधित व्यक्तिगत गुण"),
         "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
         "Reply": MessageLookupByLibrary.simpleMessage("जवाब दे दो"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),

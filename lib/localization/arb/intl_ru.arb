@@ -588,5 +588,8 @@
   "BeFirstToInvite": "Будь первым",
   "ShowTheBarcode": "Показывайте штрих-код при оплате",
   "OfferSuccessfullyActivated": "Предложение успешно активировано",
-  "SpentMyPoints": "Потратил мои баллы"
+  "SpentMyPoints": "Потратил мои баллы",
+  "Categories": "Категории",
+  "Entertainment": "Развлечения",
+  "RelatedPersonalProperties": "Относительные личные свойства"
 }

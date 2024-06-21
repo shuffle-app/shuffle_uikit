@@ -586,5 +586,8 @@
   "BeFirstToInvite": "Be the first",
   "ShowTheBarcode": "भुगतान करते समय चेकआउट पर बारकोड दिखाएं",
   "OfferSuccessfullyActivated": "प्रस्ताव सफलतापूर्वक सक्रिय",
-  "SpentMyPoints": "मेरे अंक बिताए"
+  "SpentMyPoints": "मेरे अंक बिताए",
+  "Categories": "श्रेणियाँ",
+  "Entertainment": "मनोरंजन",
+  "RelatedPersonalProperties": "संबंधित व्यक्तिगत गुण"
 }

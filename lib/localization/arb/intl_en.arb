@@ -586,5 +586,8 @@
   "NoReactionsMessage": "There are no reactions yet, be the first",
   "ShowTheBarcode": "Show the barcode at the checkout when paying",
   "OfferSuccessfullyActivated": "Offer successfully activated",
-  "SpentMyPoints": "Spent my points"
+  "SpentMyPoints": "Spent my points",
+  "Categories": "Categories",
+  "Entertainment": "Entertainment",
+  "RelatedPersonalProperties": "Related personal properties"
 }
