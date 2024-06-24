@@ -6262,6 +6262,51 @@ class S {
       args: [],
     );
   }
+
+  /// `{item, plural, =0{drag & and drop cards} =1{create and name stack} =2{line up stacks order} few{share your stacks} other{other}}`
+  String FeedFavoritesHiwItems(num item) {
+    return Intl.plural(
+      item,
+      zero: 'drag & and drop cards',
+      one: 'create and name stack',
+      two: 'line up stacks order',
+      few: 'share your stacks',
+      other: 'other',
+      name: 'FeedFavoritesHiwItems',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `сonvenient, clear and useful`
+  String get ConvenientClearAndUseful {
+    return Intl.message(
+      'сonvenient, clear and useful',
+      name: 'ConvenientClearAndUseful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stacks are on`
+  String get StacksAreOn {
+    return Intl.message(
+      'Stacks are on',
+      name: 'StacksAreOn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stacks and something else are available for you...`
+  String get StacksAndSomethingElseAreAvailableForYou {
+    return Intl.message(
+      'Stacks and something else are available for you...',
+      name: 'StacksAndSomethingElseAreAvailableForYou',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
