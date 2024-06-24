@@ -160,6 +160,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AboutUs": MessageLookupByLibrary.simpleMessage("о нас"),
         "AcceptDonations": MessageLookupByLibrary.simpleMessage(
             "Принимать донаты или помогать другим воплотить мечты"),
         "Account": MessageLookupByLibrary.simpleMessage("Аккаунт"),
@@ -168,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ActivityType": MessageLookupByLibrary.simpleMessage("Тип активности"),
         "ActivityTypes":
             MessageLookupByLibrary.simpleMessage("Типы активности"),
+        "AddCategory":
+            MessageLookupByLibrary.simpleMessage("Добавить категорию"),
         "AddFeedback": MessageLookupByLibrary.simpleMessage("Поставить оценку"),
         "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
             "Расскажи что тебе понравилось или запомнилось"),
@@ -175,7 +178,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Опиши свой опыт"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "Напиши подробный отзыв, используй все доступные символы, чтобы как можно больше людей могли его оценить"),
+        "AddPlaceType":
+            MessageLookupByLibrary.simpleMessage("Добавить тип места"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Добавить промо"),
+        "AddProperty":
+            MessageLookupByLibrary.simpleMessage("Добавить свойство"),
         "AddReactions": MessageLookupByLibrary.simpleMessage("Добавить рекцию"),
         "AddReview": MessageLookupByLibrary.simpleMessage("Оставить отзыв"),
         "AddReviewFieldHint":
@@ -250,6 +257,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
         "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
             "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером"),
+        "Categories": MessageLookupByLibrary.simpleMessage("Категории"),
         "Category": MessageLookupByLibrary.simpleMessage("категория"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Изменить фото"),
         "Chat": MessageLookupByLibrary.simpleMessage("Чат"),
@@ -366,6 +374,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterTitle": MessageLookupByLibrary.simpleMessage("Введите название"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Введи адрес эл. почты"),
+        "Entertainment": MessageLookupByLibrary.simpleMessage("Развлечения"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Возникла ошибка"),
         "ErrorOccuredWithoutMessage":
             MessageLookupByLibrary.simpleMessage("Ошибка без сообщения"),
@@ -430,6 +439,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "GetReward": MessageLookupByLibrary.simpleMessage("Забрать награду"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("Начать"),
         "Go": MessageLookupByLibrary.simpleMessage("Go!"),
+        "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
+            "Продолжайте и расти ваш бизнес"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("Перейти в настройки"),
@@ -461,6 +472,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
             "Сколько \$ хочешь задонатить?"),
         "Icon": MessageLookupByLibrary.simpleMessage("Иконка"),
+        "Icons": MessageLookupByLibrary.simpleMessage("Иконки"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("Идеальный маршрут"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Не тот логин или пароль"),
@@ -611,6 +623,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "OopsIWillTryAgain":
             MessageLookupByLibrary.simpleMessage("Уупс, попробую ещё"),
         "OpenFrom": MessageLookupByLibrary.simpleMessage("С"),
+        "OpenNow": MessageLookupByLibrary.simpleMessage("Открыть сейчас"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("До"),
         "OpeningHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "OrDragFilesHere":
@@ -716,6 +729,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Не будь один..."),
         "Properties": MessageLookupByLibrary.simpleMessage("Свойства"),
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
+        "PushUpYourBusiness":
+            MessageLookupByLibrary.simpleMessage("Поднимайте ваш бизнес"),
         "RangeEndValueIsLessThanBeginingOne":
             MessageLookupByLibrary.simpleMessage(
                 "Конечное значение диапазона меньше начального"),
@@ -728,6 +743,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "RecentlyAdded":
             MessageLookupByLibrary.simpleMessage("Недавно добавлено"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
+        "RelatedPersonalProperties": MessageLookupByLibrary.simpleMessage(
+            "Относительные личные свойства"),
+        "RelatedProperties":
+            MessageLookupByLibrary.simpleMessage("Связанные свойства"),
         "Religion": MessageLookupByLibrary.simpleMessage("Религия"),
         "Reply": MessageLookupByLibrary.simpleMessage("Ответить"),
         "ResendCode":
@@ -787,6 +806,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Обычный поиск..."),
         "SearchOrAddTag":
             MessageLookupByLibrary.simpleMessage("Поиск или добавить тег"),
+        "SearchProperty": MessageLookupByLibrary.simpleMessage("Поиск свойств"),
         "SeeAll": MessageLookupByLibrary.simpleMessage("Посмотреть всё"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("Ещё"),
         "SelectCurrency": MessageLookupByLibrary.simpleMessage("Выбери валюту"),
@@ -814,6 +834,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("поделилась с вами"),
+        "ShowMore": MessageLookupByLibrary.simpleMessage("Показать\nбольше"),
         "ShowResult":
             MessageLookupByLibrary.simpleMessage("Показать результат"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
@@ -834,6 +855,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Полезные сервисы и места"),
         "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Что-то пошло не так. Попробуй еще раз."),
+        "SpendIt": MessageLookupByLibrary.simpleMessage("Потратить"),
         "Spent": MessageLookupByLibrary.simpleMessage("Потрачено"),
         "SpentMyPoints":
             MessageLookupByLibrary.simpleMessage("Потратил мои баллы"),

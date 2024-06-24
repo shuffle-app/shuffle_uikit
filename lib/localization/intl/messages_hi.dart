@@ -160,6 +160,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AboutUs": MessageLookupByLibrary.simpleMessage("हमारे बारे में"),
         "AcceptDonations": MessageLookupByLibrary.simpleMessage(
             "दान स्वीकार करें या दूसरों की सपने पूरे करने में मदद करें"),
         "Account": MessageLookupByLibrary.simpleMessage("खाता"),
@@ -168,6 +169,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ActivityType":
             MessageLookupByLibrary.simpleMessage("क्रिया के प्रकार"),
         "ActivityTypes": MessageLookupByLibrary.simpleMessage("गतिविधि प्रकार"),
+        "AddCategory": MessageLookupByLibrary.simpleMessage("श्रेणी जोड़ें"),
         "AddFeedback":
             MessageLookupByLibrary.simpleMessage("प्रतिक्रिया जोड़ें"),
         "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
@@ -176,7 +178,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("अपने अनुभव का वर्णन करें"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "एक विस्तृत समीक्षा लिखें, सभी उपलब्ध वर्णों का उपयोग करें ताकि जितने अधिक लोग संवाद कर सकें"),
+        "AddPlaceType":
+            MessageLookupByLibrary.simpleMessage("जगह प्रकार जोड़ें"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("प्रचार जोड़ें"),
+        "AddProperty": MessageLookupByLibrary.simpleMessage("संपत्ति जोड़ें"),
         "AddReactions":
             MessageLookupByLibrary.simpleMessage("प्रतिक्रिया जोड़ें"),
         "AddReview": MessageLookupByLibrary.simpleMessage("समीक्षा जोड़ें"),
@@ -250,6 +255,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Cancel": MessageLookupByLibrary.simpleMessage("रद्द करें"),
         "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
             "आप इस प्रोफ़ाइल को एक इन्फ्लुएंसर बनने पर देख सकते हैं"),
+        "Categories": MessageLookupByLibrary.simpleMessage("श्रेणियाँ"),
         "Category": MessageLookupByLibrary.simpleMessage("श्रेणी"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("छवि बदलो"),
         "Chat": MessageLookupByLibrary.simpleMessage("चैट"),
@@ -363,6 +369,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterTitle": MessageLookupByLibrary.simpleMessage("शीर्षक दर्ज करें"),
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("अपना ईमेल पता दर्ज करें"),
+        "Entertainment": MessageLookupByLibrary.simpleMessage("मनोरंजन"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("त्रुटि हुई"),
         "ErrorOccuredWithoutMessage":
             MessageLookupByLibrary.simpleMessage("संदेश के बिना त्रुटि हुई"),
@@ -429,6 +436,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "GetReward": MessageLookupByLibrary.simpleMessage("इनाम मिलना"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("शुरू हो जाओ"),
         "Go": MessageLookupByLibrary.simpleMessage("आगे बढ़ो"),
+        "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
+            "आगे बढ़ें और अपना व्यवसाय बढ़ाएं"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("जाओ"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("सेटिंग्स में जाओ"),
@@ -462,6 +471,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
             "आप कितना \$ दान करना चाहते हैं?"),
         "Icon": MessageLookupByLibrary.simpleMessage("आइकन"),
+        "Icons": MessageLookupByLibrary.simpleMessage("Icons"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("आदर्श मार्ग"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("गलत लॉगिन या पासवर्ड"),
@@ -613,6 +623,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "OopsIWillTryAgain":
             MessageLookupByLibrary.simpleMessage("उफ़, मैं फिर कोशिश करूँगा"),
         "OpenFrom": MessageLookupByLibrary.simpleMessage("से खोलें"),
+        "OpenNow": MessageLookupByLibrary.simpleMessage("अभी खोलें"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("के लिए खुला"),
         "OpeningHours": MessageLookupByLibrary.simpleMessage("खुलने का समय"),
         "OrDragFilesHere":
@@ -717,6 +728,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("अकेले मत रहो..."),
         "Properties": MessageLookupByLibrary.simpleMessage("गुण"),
         "Published": MessageLookupByLibrary.simpleMessage("प्रकाशित"),
+        "PushUpYourBusiness":
+            MessageLookupByLibrary.simpleMessage("अपने व्यवसाय को पुश करें"),
         "RangeEndValueIsLessThanBeginingOne":
             MessageLookupByLibrary.simpleMessage(
                 "सीमा समाप्ति मान प्रारंभिक मान से कम है"),
@@ -730,6 +743,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "RecentlyAdded":
             MessageLookupByLibrary.simpleMessage("हाल ही में जोड़ा गया"),
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
+        "RelatedPersonalProperties":
+            MessageLookupByLibrary.simpleMessage("संबंधित व्यक्तिगत गुण"),
+        "RelatedProperties":
+            MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
         "Reply": MessageLookupByLibrary.simpleMessage("जवाब दे दो"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),
@@ -786,6 +803,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("सामान्य खोज..."),
         "SearchOrAddTag":
             MessageLookupByLibrary.simpleMessage("टैग खोजें या जोड़ें"),
+        "SearchProperty":
+            MessageLookupByLibrary.simpleMessage("Search property"),
         "SeeAll": MessageLookupByLibrary.simpleMessage("सभी देखें"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("और देखें"),
         "SelectCurrency": MessageLookupByLibrary.simpleMessage("मुद्रा चुनें"),
@@ -813,6 +832,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Settings": MessageLookupByLibrary.simpleMessage("सेटिंग्स"),
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("आपके साथ साझा किया गया"),
+        "ShowMore": MessageLookupByLibrary.simpleMessage("अधिक\nदिखाएं"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("परिणाम दिखाओ"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
             "भुगतान करते समय चेकआउट पर बारकोड दिखाएं"),
@@ -831,6 +851,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("उपयोगी सेवाएँ और स्थान"),
         "SomethingWentWrong":
             MessageLookupByLibrary.simpleMessage("कुछ गलत हो गया"),
+        "SpendIt": MessageLookupByLibrary.simpleMessage("इसे खर्च करें"),
         "Spent": MessageLookupByLibrary.simpleMessage("खर्च किया"),
         "SpentMyPoints": MessageLookupByLibrary.simpleMessage("मेरे अंक बिताए"),
         "SpinnerHiwHint": m42,

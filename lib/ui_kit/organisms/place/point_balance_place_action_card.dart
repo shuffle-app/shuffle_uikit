@@ -7,6 +7,7 @@ class PointBalancePlaceActionCard extends BasePlaceActionCard {
     super.rasterIconAsset,
     super.group,
     super.iconAsset,
+    super.buttonTitle,
     required super.action,
   }) : super(title: S.current.PointBalance);
 }

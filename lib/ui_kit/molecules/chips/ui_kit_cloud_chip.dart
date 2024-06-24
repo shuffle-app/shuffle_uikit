@@ -6,13 +6,13 @@ class UiKitCloudChip extends StatefulWidget {
     super.key,
     this.onTap,
     required this.title,
-    this.icon,
+    this.iconPath,
     this.isSelectable,
   });
 
   final VoidCallback? onTap;
   final String title;
-  final IconData? icon;
+  final String? iconPath;
   final bool? isSelectable;
 
   @override
@@ -64,13 +64,13 @@ class _UiKitCloudChipState extends State<UiKitCloudChip> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (widget.icon != null)
-                Icon(
-                  widget.icon,
+              if (widget.iconPath != null)
+                ImageWidget(
+                 link: widget.iconPath,
                   color: selectable
                       ? ColorsFoundation.info
                       : uiKitTheme?.colorScheme.bodyTypography,
-                  size: 18.sp,
+                  width: 18.sp,
                 ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
               Text(widget.title,
                   style: uiKitTheme?.boldTextTheme.caption2Bold.copyWith(

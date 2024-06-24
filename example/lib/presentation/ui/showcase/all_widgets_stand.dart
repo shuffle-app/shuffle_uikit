@@ -132,6 +132,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
+       const UiKitVoiceListenCard(
+          duration: Duration(seconds: 70),
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitVideoInterviewTile(
+          onPlayTap: () {},
+        ).paddingAll(EdgeInsetsFoundation.all16),
+        SpacingFoundation.verticalSpace16,
         UiKitEmojiInputField(
           textEditingController: _emojitextEditingController,
           onSend: () {},
@@ -145,9 +153,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         PlaceIconSelector(
           onPressed: () {},
+          onIconTap: (value){},
           listIconData: List.generate(
             20,
-            (index) => ShuffleUiKitIcons.diamond,
+            (index) => GraphicsFoundation.instance.png.company.path,
           ),
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
@@ -155,8 +164,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           decoration: BoxDecoration(
             color: context.uiKitTheme?.colorScheme.surface2,
           ),
-          child: const UiKitIconedTitle(
-                  icon: ShuffleUiKitIcons.diamond, title: 'Diamond')
+          child:  UiKitIconedTitle(
+                  icon: GraphicsFoundation.instance.png.company.path, title: 'Diamond')
               .paddingAll(EdgeInsetsFoundation.all16),
         ),
         SpacingFoundation.verticalSpace16,
@@ -204,38 +213,44 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 title: 'Joke',
                 onTap: () {},
                 isSelectable: true,
-                icon: ShuffleUiKitIcons.heartoutline,
+                iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
-                  title: 'Smoke',
-                  onTap: () {},
-                  isSelectable: true,
-                  icon: ShuffleUiKitIcons.discount),
+                title: 'Smoke',
+                onTap: () {},
+                isSelectable: true,
+                iconPath:  GraphicsFoundation.instance.png.company.path,
+              ),
               UiKitCloudChip(
-                  title: 'Drink',
-                  onTap: () {},
-                  isSelectable: true,
-                  icon: ShuffleUiKitIcons.diamond),
+                title: 'Drink',
+                onTap: () {},
+                isSelectable: true,
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
               UiKitCloudChip(
-                  title: 'Swim',
-                  onTap: () {},
-                  isSelectable: true,
-                  icon: ShuffleUiKitIcons.club),
+                title: 'Swim',
+                onTap: () {},
+                isSelectable: true,
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
               UiKitCloudChip(
-                  title: 'Relax',
-                  onTap: () {},
-                  isSelectable: true,
-                  icon: ShuffleUiKitIcons.active),
+                title: 'Relax',
+                onTap: () {},
+                isSelectable: true,
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
               UiKitCloudChip(
-                  title: 'Relax',
-                  onTap: () {},
-                  isSelectable: true,
-                  icon: ShuffleUiKitIcons.aquapark),
+                title: 'Relax',
+                onTap: () {},
+                isSelectable: true,
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
               UiKitCloudChip(
-                  title: 'Relax',
-                  onTap: () {},
-                  isSelectable: true,
-                  icon: ShuffleUiKitIcons.conferences),
+                title: 'Relax',
+                onTap: () {},
+                isSelectable: true,
+                iconPath:  GraphicsFoundation.instance.png.company.path,
+              ),
             ],
           ).paddingAll(EdgeInsetsFoundation.all24),
         ).paddingAll(EdgeInsetsFoundation.all16),
@@ -254,7 +269,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         UiKitCloudChip(
                 title: 'Diamond',
                 onTap: () {},
-                icon: ShuffleUiKitIcons.diamond,
+                iconPath: "ShuffleUiKitIcons.heartoutline",
                 isSelectable: true)
             .paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
