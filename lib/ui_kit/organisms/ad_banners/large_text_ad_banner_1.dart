@@ -3,9 +3,8 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class LargeTextAdBanner1 extends UiKitSwiperAdCard {
   final double? customHeight;
-  LargeTextAdBanner1({Key? key, this.customHeight})
+  LargeTextAdBanner1({super.key, this.customHeight})
       : super(
-            key: key,
             adsData: BaseUiKitAdvertisementTextBannerData(
               textWidget: const SizedBox(),
               availableWidth: 0,

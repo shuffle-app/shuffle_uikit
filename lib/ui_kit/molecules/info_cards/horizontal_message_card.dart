@@ -8,12 +8,12 @@ class HorizontalMessageCard extends StatelessWidget {
   final VoidCallback? onPressed;
 
   const HorizontalMessageCard({
-    Key? key,
+    super.key,
     required this.message,
     this.iconData,
     this.iconLink,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

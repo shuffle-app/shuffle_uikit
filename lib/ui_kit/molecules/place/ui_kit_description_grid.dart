@@ -6,10 +6,10 @@ class UiKitDescriptionGrid extends StatelessWidget {
   final double spacing;
 
   const UiKitDescriptionGrid({
-    Key? key,
+    super.key,
     required this.spacing,
     required this.children,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

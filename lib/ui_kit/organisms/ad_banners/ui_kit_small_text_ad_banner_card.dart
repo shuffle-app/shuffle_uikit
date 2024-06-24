@@ -13,7 +13,7 @@ class UiKitSmallTextAdBannerCard extends StatelessWidget implements Advertisemen
   final Widget? decoration;
 
   const UiKitSmallTextAdBannerCard({
-    Key? key,
+    super.key,
     required this.availableWidth,
     required this.imageLink,
     required this.textWidget,
@@ -23,7 +23,7 @@ class UiKitSmallTextAdBannerCard extends StatelessWidget implements Advertisemen
     this.onTap,
     this.textOffset,
     this.customHeight,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

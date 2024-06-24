@@ -65,7 +65,7 @@ class SingleTypeMenuBody<T> extends StatelessWidget {
               ],
             );
           },
-        ).toList(),
+        ),
       ],
     ).paddingSymmetric(horizontal: customHorizontalPadding ?? EdgeInsetsFoundation.horizontal16);
   }

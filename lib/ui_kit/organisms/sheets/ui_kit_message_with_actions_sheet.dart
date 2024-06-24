@@ -8,12 +8,12 @@ class UiKitMessageWithActionsSheet extends StatelessWidget {
   final VoidCallback? onDismiss;
 
   const UiKitMessageWithActionsSheet({
-    Key? key,
+    super.key,
     required this.title,
     required this.message,
     this.onAgree,
     this.onDismiss,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

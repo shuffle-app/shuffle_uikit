@@ -316,7 +316,7 @@ class DialogTestingPage extends StatelessWidget {
                           Text(
                             S.of(context).Date,
                             style: textTheme?.labelLarge.copyWith(
-                              color: Color(0xFF97999D),
+                              color: const Color(0xFF97999D),
                             ),
                           ),
                           context.boxIconButton(

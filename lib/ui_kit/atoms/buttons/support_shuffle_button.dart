@@ -7,9 +7,9 @@ class SupportShuffleButton extends StatelessWidget {
   final ValueChanged<int>? onDonate;
 
   const SupportShuffleButton({
-    Key? key,
+    super.key,
     this.onDonate,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

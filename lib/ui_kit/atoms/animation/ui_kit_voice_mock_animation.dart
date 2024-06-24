@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitVoiceMockAnimation extends StatefulWidget {
-  const UiKitVoiceMockAnimation({Key? key}) : super(key: key);
+  const UiKitVoiceMockAnimation({super.key});
 
   @override
   State<UiKitVoiceMockAnimation> createState() => _UiKitVoiceMockAnimationState();

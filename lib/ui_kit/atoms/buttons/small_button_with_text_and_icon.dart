@@ -13,7 +13,7 @@ class SmallButtonWithTextAndIcon extends StatelessWidget implements ButtonFactor
   final AutoSizeGroup? group;
 
   const SmallButtonWithTextAndIcon({
-    Key? key,
+    super.key,
     this.text,
     this.icon,
     this.iconInfo,
@@ -22,8 +22,7 @@ class SmallButtonWithTextAndIcon extends StatelessWidget implements ButtonFactor
     this.fit,
     this.group,
     this.uppercase = true,
-  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
-        super(key: key);
+  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided');
 
   @override
   Widget build(BuildContext context) {

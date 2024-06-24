@@ -1,8 +1,11 @@
+// ignore_for_file: overridden_fields
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitLastSwiperCard extends BaseUiKitSwiperCard {
   final double? height;
+  @override
   final double? width;
 
   UiKitLastSwiperCard({

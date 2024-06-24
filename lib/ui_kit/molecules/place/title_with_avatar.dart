@@ -11,13 +11,13 @@ class TitleWithAvatar extends StatelessWidget {
   final UserTileType? type;
 
   const TitleWithAvatar({
-    Key? key,
+    super.key,
     this.title,
     this.avatarUrl,
     this.horizontalMargin,
     this.trailing,
     this.type,
-  }) : super(key: key);
+  });
 
   //TODO: сделать единый билдер названия с аватаром в зависимости от типа что нам нужно так что надо переделать с добавлением фабричных методов создания разных карточек
 

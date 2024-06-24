@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInfluencerAudioMessagesDemo extends StatefulWidget {
-  const UiKitInfluencerAudioMessagesDemo({Key? key}) : super(key: key);
+  const UiKitInfluencerAudioMessagesDemo({super.key});
 
   @override
   State<UiKitInfluencerAudioMessagesDemo> createState() => _UiKitInfluencerAudioMessagesDemoState();

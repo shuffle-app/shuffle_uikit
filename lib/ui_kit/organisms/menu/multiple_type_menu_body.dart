@@ -80,7 +80,7 @@ class _MultipleTypeMenuBodyState<T> extends State<MultipleTypeMenuBody<T>> {
               ],
             );
           },
-        ).toList(),
+        ),
       ],
     ).paddingSymmetric(horizontal: widget.customHorizontalPadding ?? EdgeInsetsFoundation.horizontal16);
   }

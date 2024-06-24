@@ -7,11 +7,11 @@ class UiKitUserAvatar120x120 extends StatelessWidget implements UserAvatarFactor
   final UserTileType type;
 
   const UiKitUserAvatar120x120({
-    Key? key,
+    super.key,
     required this.imageUrl,
     required this.userName,
     required this.type,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -99,9 +99,8 @@ class _Placeholder extends StatelessWidget {
   final String text;
 
   const _Placeholder({
-    Key? key,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

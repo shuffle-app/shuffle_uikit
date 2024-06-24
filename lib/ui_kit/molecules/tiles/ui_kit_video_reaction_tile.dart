@@ -15,7 +15,7 @@ class UiKitVideoReactionTile extends StatelessWidget {
   final bool Function()? canNavigateToPublicProfile;
 
   const UiKitVideoReactionTile({
-    Key? key,
+    super.key,
     this.authorAvatarUrl,
     this.authorType,
     this.authorName,
@@ -26,7 +26,7 @@ class UiKitVideoReactionTile extends StatelessWidget {
     this.onPlaceNameTapped,
     this.canNavigateToPublicProfile,
     this.onSeeMorePopOverCallback,
-  }) : super(key: key);
+  });
 
   void _showPopOver(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;

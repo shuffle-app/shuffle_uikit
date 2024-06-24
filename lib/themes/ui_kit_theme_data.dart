@@ -23,18 +23,18 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
   final ThemeMode themeMode;
 
   ButtonStyle textButtonStyle([Color textColor = Colors.white]) => ButtonStyle(
-        textStyle: MaterialStateTextStyle.resolveWith((states) {
+        textStyle: WidgetStateTextStyle.resolveWith((states) {
           return boldTextTheme.title2;
         }),
-        foregroundColor: MaterialStateProperty.resolveWith((states) => textColor),
-        overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
+        foregroundColor: WidgetStateProperty.resolveWith((states) => textColor),
+        overlayColor: WidgetStateProperty.resolveWith((states) => Colors.transparent),
       );
   ButtonStyle textButtonLabelSmallStyle([Color textColor = Colors.white]) => ButtonStyle(
-        textStyle: MaterialStateTextStyle.resolveWith((states) {
+        textStyle: WidgetStateTextStyle.resolveWith((states) {
           return regularTextTheme.labelSmall;
         }),
-        foregroundColor: MaterialStateProperty.resolveWith((states) => textColor),
-        overlayColor: MaterialStateProperty.resolveWith((states) => Colors.transparent),
+        foregroundColor: WidgetStateProperty.resolveWith((states) => textColor),
+        overlayColor: WidgetStateProperty.resolveWith((states) => Colors.transparent),
       );
 
   UiKitThemeData({

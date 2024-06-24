@@ -10,13 +10,13 @@ class UiKitDropDownList<T extends Object> extends StatelessWidget {
   final double? height;
 
   const UiKitDropDownList({
-    Key? key,
+    super.key,
     required this.items,
     this.selectedItem,
     this.onChanged,
     this.width,
     this.height,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

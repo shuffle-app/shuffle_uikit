@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class InfluencerAccountMark extends BaseAccountMark {
-  InfluencerAccountMark({Key? key})
+  InfluencerAccountMark({super.key})
       : super(
-          key: key,
           iconLink: GraphicsFoundation.instance.svg.influencerAccountMark.path,
         );
 }

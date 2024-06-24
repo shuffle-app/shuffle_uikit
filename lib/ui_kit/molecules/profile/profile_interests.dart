@@ -6,10 +6,10 @@ class ProfileInterests extends StatelessWidget {
   final List<String>? matchingInterests;
 
   const ProfileInterests({
-    Key? key,
+    super.key,
     required this.profileInterests,
     this.matchingInterests,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -263,7 +263,7 @@ class _CustomCachedSvgPicture extends StatefulWidget {
   final Widget placeholder;
 
   const _CustomCachedSvgPicture(
-      {super.key, this.fit, this.width, this.height, this.color, required this.link, required this.placeholder});
+      {this.fit, this.width, this.height, this.color, required this.link, required this.placeholder});
 
   @override
   State<_CustomCachedSvgPicture> createState() => _CustomCachedSvgPictureState();

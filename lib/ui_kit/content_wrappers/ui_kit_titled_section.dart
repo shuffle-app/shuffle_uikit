@@ -12,7 +12,7 @@ class UiKitTitledSection extends StatelessWidget {
   final TextStyle? titleStyle;
 
   const UiKitTitledSection({
-    Key? key,
+    super.key,
     this.hasError,
     this.color,
     this.infoText,
@@ -21,8 +21,7 @@ class UiKitTitledSection extends StatelessWidget {
     this.borderRadius,
     required this.title,
     required this.child,
-  })  : assert(!((hasError ?? false) && errorText == null), 'When has error is $hasError, error text must be provided'),
-        super(key: key);
+  })  : assert(!((hasError ?? false) && errorText == null), 'When has error is $hasError, error text must be provided');
 
   @override
   Widget build(BuildContext context) {

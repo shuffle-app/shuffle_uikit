@@ -11,14 +11,14 @@ class UiKitVerticalChip extends StatelessWidget {
   final Size? size;
 
   const UiKitVerticalChip({
-    Key? key,
+    super.key,
     required this.caption,
     required this.sign,
     this.onTap,
     this.size,
     this.autoSizeGroup,
     this.selected = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

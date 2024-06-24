@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMockedAudioMessagesAnimation extends StatefulWidget {
-  const UiKitMockedAudioMessagesAnimation({Key? key}) : super(key: key);
+  const UiKitMockedAudioMessagesAnimation({super.key});
 
   @override
   State<UiKitMockedAudioMessagesAnimation> createState() => _UiKitMockedAudioMessagesAnimationState();
@@ -51,10 +51,10 @@ class UiKitAudioMessageTile extends StatelessWidget {
   final int? audioWaveCount;
 
   const UiKitAudioMessageTile({
-    Key? key,
+    super.key,
     this.width,
     this.audioWaveCount,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

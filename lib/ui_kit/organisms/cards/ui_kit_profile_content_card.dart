@@ -12,7 +12,7 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
   final List<UiKitFeedbackCard>? reviews;
 
   const UiKitProUserProfileEventCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.contentDate,
     this.previewImage,
@@ -20,7 +20,7 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
     this.properties,
     this.stories,
     this.reviews,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -9,12 +9,12 @@ class VerticalMessageCard extends StatelessWidget {
   final String? iconLink;
 
   const VerticalMessageCard({
-    Key? key,
+    super.key,
     required this.message,
     this.iconData,
     this.iconLink,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

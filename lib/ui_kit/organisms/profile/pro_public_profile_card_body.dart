@@ -20,7 +20,7 @@ class ProPublicProfileCardBody extends StatelessWidget {
   final VoidCallback? onWhatsappPressed;
 
   const ProPublicProfileCardBody({
-    Key? key,
+    super.key,
     this.registrationDate,
     this.name,
     this.nickname,
@@ -36,7 +36,7 @@ class ProPublicProfileCardBody extends StatelessWidget {
     this.email,
     this.onTelegramPressed,
     this.onWhatsappPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

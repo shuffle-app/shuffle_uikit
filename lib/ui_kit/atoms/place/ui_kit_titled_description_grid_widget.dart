@@ -9,12 +9,12 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
   final AutoSizeGroup? group;
 
   const UiKitTitledDescriptionGridWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.spacing,
     this.group,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

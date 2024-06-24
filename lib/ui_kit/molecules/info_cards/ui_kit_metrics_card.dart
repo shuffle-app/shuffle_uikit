@@ -10,14 +10,14 @@ class UiKitMetricsCard extends StatelessWidget {
   final double height;
 
   const UiKitMetricsCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
     required this.unit,
     required this.icon,
     this.active = true,
     this.height = 60,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 /// This file exports all the atoms in the atoms folder
+library;
 
 export './common/circular_avatar.dart';
 export './common/sliding_chip.dart';

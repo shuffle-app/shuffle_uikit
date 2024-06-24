@@ -26,7 +26,7 @@ class ProfileCard extends StatelessWidget {
   final Widget? profileCardBody;
 
   const ProfileCard({
-    Key? key,
+    super.key,
     this.nickname,
     this.profileStats,
     this.description,
@@ -48,7 +48,7 @@ class ProfileCard extends StatelessWidget {
     this.socialLinks,
     this.speciality,
     this.profileCardBody,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

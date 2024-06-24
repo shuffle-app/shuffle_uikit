@@ -24,23 +24,23 @@ class WhiteDialogButton extends StatelessWidget implements ButtonFactory {
 
     return ElevatedButton(
       style: ButtonStyle(
-        fixedSize: MaterialStateProperty.resolveWith((states) {
+        fixedSize: WidgetStateProperty.resolveWith((states) {
           if (small) return const Size.fromHeight(28);
           if (isOutlined) return const Size(double.infinity, 48);
 
           return const Size.fromHeight(48);
         }),
-        backgroundColor: MaterialStateProperty.resolveWith((states) {
-          return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
+        backgroundColor: WidgetStateProperty.resolveWith((states) {
+          return states.contains(WidgetState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.white;
         }),
-        shape: MaterialStateProperty.resolveWith(
+        shape: WidgetStateProperty.resolveWith(
           (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
         ),
-        overlayColor: MaterialStateProperty.resolveWith((states) {
+        overlayColor: WidgetStateProperty.resolveWith((states) {
           return ColorsFoundation.darkNeutral900;
         }),
-        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.black),
-        side: MaterialStateProperty.resolveWith((_) => side),
+        foregroundColor: WidgetStateProperty.resolveWith((states) => Colors.black),
+        side: WidgetStateProperty.resolveWith((_) => side),
       ),
       onPressed: onPressed,
       child: isOutlined

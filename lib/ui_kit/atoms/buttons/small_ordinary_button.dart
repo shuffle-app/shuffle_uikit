@@ -13,7 +13,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
   final Color? textColor;
 
   const SmallOrdinaryButton({
-    Key? key,
+    super.key,
     required this.text,
     this.onPressed,
     this.loading,
@@ -22,7 +22,7 @@ class SmallOrdinaryButton extends StatelessWidget implements ButtonFactory {
     this.uppercase = true,
     this.backgroundColor,
     this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

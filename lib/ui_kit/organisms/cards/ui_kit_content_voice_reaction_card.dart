@@ -9,13 +9,13 @@ class UiKitContentVoiceReactionCard extends StatelessWidget {
   final UiKitAudioMessageTile audioMessage;
 
   const UiKitContentVoiceReactionCard({
-    Key? key,
+    super.key,
     this.imageLink,
     required this.contentTitle,
     required this.properties,
     this.datePosted,
     required this.audioMessage,
-  }) : super(key: key);
+  });
 
   double get imageWidth => 0.25.sw;
 

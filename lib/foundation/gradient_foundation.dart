@@ -576,7 +576,7 @@ class GradientFoundation {
       0.4873,
       0.8003,
     ],
-    transform: GradientRotation((-3 * pi) / 4),
+    transform: const GradientRotation((-3 * pi) / 4),
   );
 
   GradientFoundation._();

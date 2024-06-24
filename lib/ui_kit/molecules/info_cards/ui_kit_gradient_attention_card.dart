@@ -7,11 +7,11 @@ class UiKitGradientAttentionCard extends StatelessWidget {
   final double width;
 
   const UiKitGradientAttentionCard({
-    Key? key,
+    super.key,
     required this.message,
     this.textColor,
     required this.width,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

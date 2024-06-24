@@ -5,9 +5,9 @@ class SlidingChip extends StatelessWidget {
   final Color? color;
 
   const SlidingChip({
-    Key? key,
+    super.key,
     this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

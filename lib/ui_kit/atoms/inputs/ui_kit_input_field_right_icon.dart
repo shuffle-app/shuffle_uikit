@@ -3,7 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputField {
   const UiKitInputFieldRightIcon(
-      {Key? key,
+      {super.key,
       required this.controller,
       this.errorText,
       this.fillColor,
@@ -20,8 +20,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
       this.borderRadius,
       this.obscureText = false,
       this.hintColor,
-      this.onChanged})
-      : super(key: key);
+      this.onChanged});
 
   @override
   final TextEditingController controller;
@@ -107,8 +106,8 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           errorStyle: errorStyle,
           errorMaxLines: 3,
           hintStyle: hintStyle,
-          suffixIconColor: MaterialStateColor.resolveWith((states) {
-            if (states.contains(MaterialState.error)) {
+          suffixIconColor: WidgetStateColor.resolveWith((states) {
+            if (states.contains(WidgetState.error)) {
               return ColorsFoundation.error;
             }
             return context.uiKitTheme?.colorScheme.inversePrimary ?? Colors.white;
