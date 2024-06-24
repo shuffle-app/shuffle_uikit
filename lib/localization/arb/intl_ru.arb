@@ -609,6 +609,10 @@
   "SpendIt": "Потратить",
   "AddCategory": "Добавить категорию",
   "AddPlaceType": "Добавить тип места",
-  "AddProperty": "Добавить свойство"
+  "AddProperty": "Добавить свойство",
+  "FeedFavoritesHiwItems": "{item, plural, =0{Зажми и перетяни карточку} =1{Создай стопку и назови} =2{Выстраивай порядок стопок} few{Поделись стопкой} other{другое}}",
+  "ConvenientClearAndUseful": "Удобно, чётко и полезно"
+
+
 }
 
