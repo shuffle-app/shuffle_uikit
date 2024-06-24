@@ -605,12 +605,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/mock_avatar.png
   AssetGenImage get mockAvatar => const AssetGenImage('assets/images/png/mock_avatar.png');
 
-  /// File path: assets/images/png/mock_paralax_back_image.png
-  AssetGenImage get mockParalaxBackImage => const AssetGenImage('assets/images/png/mock_paralax_back_image.png');
-
-  /// File path: assets/images/png/mock_paralax_front_image.png
-  AssetGenImage get mockParalaxFrontImage => const AssetGenImage('assets/images/png/mock_paralax_front_image.png');
-
   /// File path: assets/images/png/mock_swiper_card.png
   AssetGenImage get mockSwiperCard => const AssetGenImage('assets/images/png/mock_swiper_card.png');
 
@@ -643,6 +637,8 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/onboarding_mock_3.png
   AssetGenImage get onboardingMock3 => const AssetGenImage('assets/images/png/onboarding_mock_3.png');
+
+  $AssetsImagesPngParalaxBannersGen get paralaxBanners => const $AssetsImagesPngParalaxBannersGen();
 
   /// File path: assets/images/png/parcel.png
   AssetGenImage get parcel => const AssetGenImage('assets/images/png/parcel.png');
@@ -987,8 +983,6 @@ class $AssetsImagesPngGen {
         mockAdBanner8,
         mockAdBanner9,
         mockAvatar,
-        mockParalaxBackImage,
-        mockParalaxFrontImage,
         mockSwiperCard,
         mockUserAvatar,
         muslimFlag,
@@ -2255,6 +2249,34 @@ class $AssetsImagesPngAvatarsGen {
   /// List of all assets
   List<AssetGenImage> get values =>
       [avatar1, avatar10, avatar2, avatar3, avatar4, avatar6, avatar7, avatar8, avatar9, avatar];
+}
+
+class $AssetsImagesPngParalaxBannersGen {
+  const $AssetsImagesPngParalaxBannersGen();
+
+  /// File path: assets/images/png/paralax_banners/shuffle_paralax_banner_1_back.png
+  AssetGenImage get shuffleParalaxBanner1Back =>
+      const AssetGenImage('assets/images/png/paralax_banners/shuffle_paralax_banner_1_back.png');
+
+  /// File path: assets/images/png/paralax_banners/shuffle_paralax_banner_1_front.png
+  AssetGenImage get shuffleParalaxBanner1Front =>
+      const AssetGenImage('assets/images/png/paralax_banners/shuffle_paralax_banner_1_front.png');
+
+  /// File path: assets/images/png/paralax_banners/shuffle_paralax_banner_1_lower_mid.png
+  AssetGenImage get shuffleParalaxBanner1LowerMid =>
+      const AssetGenImage('assets/images/png/paralax_banners/shuffle_paralax_banner_1_lower_mid.png');
+
+  /// File path: assets/images/png/paralax_banners/shuffle_paralax_banner_1_upper_mid.png
+  AssetGenImage get shuffleParalaxBanner1UpperMid =>
+      const AssetGenImage('assets/images/png/paralax_banners/shuffle_paralax_banner_1_upper_mid.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        shuffleParalaxBanner1Back,
+        shuffleParalaxBanner1Front,
+        shuffleParalaxBanner1LowerMid,
+        shuffleParalaxBanner1UpperMid
+      ];
 }
 
 class $AssetsImagesPngPreferenceQuestionsGen {

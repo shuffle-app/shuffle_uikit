@@ -112,11 +112,17 @@ dependencies:
       url: https://github.com/shuffle-app/video_editor.git
       ref: master
   ffmpeg_kit_flutter_min: ^6.0.3
+#  sensors_plus: ^5.0.1
+  parallax_sensors_bg:
+    path: ../parallax_sensors_bg
   flutter_tilt: ^3.0.2
-  sensors_plus: ^5.0.1
+#    git:
+#      url: https://github.com/shuffle-app/parallax_sensors_bg.git
+#      ref: main
 
 dependency_overrides:
   watcher: ^1.1.0
+  sensors_plus: ^5.0.1
 
 dev_dependencies:
   flutter_test:
@@ -131,6 +137,7 @@ flutter:
     - assets/images/png/
     - assets/images/png/preference_questions/
     - assets/images/png/avatars/
+    - assets/images/png/paralax_banners/
     - assets/images/svg/
     - assets/fonts/
     - assets/audio/

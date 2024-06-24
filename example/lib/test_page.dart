@@ -47,14 +47,19 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: MediaQuery.of(context).viewPadding.top, width: 1.sw),
-            UiKitParalaxPhotoCard(
-              frontImage: GraphicsFoundation.instance.png.mockParalaxFrontImage.path,
-              backImage: GraphicsFoundation.instance.png.mockParalaxBackImage.path,
+            SpacingFoundation.verticalSpace24,
+            UiKitParallaxPhotoCard(
+              frontImage: GraphicsFoundation.instance.png.paralaxBanners.shuffleParalaxBanner1Front.path,
+              lowerMiddleImage: GraphicsFoundation.instance.png.paralaxBanners.shuffleParalaxBanner1LowerMid.path,
+              upperMiddleImage: GraphicsFoundation.instance.png.paralaxBanners.shuffleParalaxBanner1UpperMid.path,
+              backImage: GraphicsFoundation.instance.png.paralaxBanners.shuffleParalaxBanner1Back.path,
+              width: 1.sw - 48,
+              height: (1.sw - 48) * 1.33,
             ),
             // if (xFile != null && selectedImageBytes != null)
             //   UiKitPictureViewFinder(

@@ -2,117 +2,165 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_tilt/flutter_tilt.dart';
+import 'package:parallax_sensors_bg/parallax_sensors_bg.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitParalaxPhotoCard extends StatefulWidget {
-  final String? frontImage;
-  final String? upperMiddleImage;
-  final String? lowerMiddleImage;
-  final String? backImage;
+class UiKitParallaxPhotoCard extends StatefulWidget {
+  final String frontImage;
+  final String upperMiddleImage;
+  final String lowerMiddleImage;
+  final String backImage;
+  final double height;
+  final double width;
 
-  const UiKitParalaxPhotoCard({
+  const UiKitParallaxPhotoCard({
     Key? key,
-    this.frontImage,
-    this.upperMiddleImage,
-    this.backImage,
-    this.lowerMiddleImage,
+    required this.frontImage,
+    required this.upperMiddleImage,
+    required this.backImage,
+    required this.lowerMiddleImage,
+    required this.height,
+    required this.width,
   }) : super(key: key);
 
   @override
-  State<UiKitParalaxPhotoCard> createState() => _UiKitParalaxPhotoCardState();
+  State<UiKitParallaxPhotoCard> createState() => _UiKitParallaxPhotoCardState();
 }
 
-class _UiKitParalaxPhotoCardState extends State<UiKitParalaxPhotoCard> {
-  UserAccelerometerEvent? initialEvent;
+class _UiKitParallaxPhotoCardState extends State<UiKitParallaxPhotoCard> {
+  AccelerometerEvent? initialEvent;
+
+  StreamSubscription<AccelerometerEvent>? accelerometerEventSubscription;
+
+  StreamController<TiltStreamModel> accelerometerUiStreamController = StreamController<TiltStreamModel>();
+
+  bool get initialEventIsSet =>
+      initialEvent != null && initialEvent!.x != 0 && initialEvent!.y != 0 && initialEvent!.z != 0;
 
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((time) {
-      _subscription = userAccelerometerEventStream().listen(_accelerometerListener);
+      // userAccelerometerEventStream(samplingPeriod: SensorInterval.normalInterval).listen(_accelerometerListener);
       setState(() {});
     });
   }
 
-  final StreamController<TiltStreamModel> _tiltStreamController = StreamController<TiltStreamModel>.broadcast();
-
-  StreamSubscription<UserAccelerometerEvent>? _subscription;
-
-  void _accelerometerListener(UserAccelerometerEvent event) {
+  void _accelerometerListener(AccelerometerEvent event) {
     if (initialEvent == null) {
       print('updating initial event');
       setState(() => initialEvent = event);
       print('updated initial event: $initialEvent');
     }
-    double x = event.x;
-    double y = event.y;
-    if (initialEvent != null) {
-      x += initialEvent!.x;
-      y += initialEvent!.y;
+
+    double dx = event.x;
+    double dy = event.y;
+    double dz = event.z;
+
+    if (initialEvent != null && initialEventIsSet) {
+      dx += initialEvent!.x;
+      dy += initialEvent!.y;
+      dz += initialEvent!.z;
     }
-    _tiltStreamController.add(
+
+    print('dx: $dx, dy: $dy, dz: $dz');
+
+    accelerometerUiStreamController.add(
       TiltStreamModel(
+        gestureUse: true,
+        position: Offset(dx, dy),
         gesturesType: GesturesType.sensors,
-        position: Offset(x, y),
       ),
     );
-    print(event);
   }
 
   @override
   void dispose() {
-    _subscription?.cancel();
+    accelerometerEventSubscription?.cancel();
+    accelerometerUiStreamController.close();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 0.8.sh,
-      width: 1.sw,
+    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
+
+    return Container(
+      clipBehavior: Clip.hardEdge,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadiusFoundation.all24,
+      ),
+      height: widget.height,
+      width: widget.width,
       child: Stack(
         fit: StackFit.expand,
         children: [
-          if (widget.backImage != null)
-            ImageWidget(
-              link: widget.backImage,
-              fit: BoxFit.cover,
-            ),
-          Tilt(
-            tiltStreamController: _tiltStreamController,
-            childLayout: ChildLayout(
-              inner: [
-                if (widget.upperMiddleImage != null)
+          ImageWidget(
+            link: widget.backImage,
+            fit: BoxFit.cover,
+            height: widget.height,
+            width: widget.width,
+          ),
+          Parallax(
+            onAccelerometerEvent: _accelerometerListener,
+            animationDuration: 200,
+            layers: [
+              Layer(
+                preventCrop: true,
+                sensitivity: 6,
+                child: ImageWidget(
+                  link: widget.lowerMiddleImage,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Layer(
+                preventCrop: true,
+                sensitivity: 3,
+                child: ImageWidget(
+                  link: widget.upperMiddleImage,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
+          ),
+          Positioned(
+            width: widget.width,
+            bottom: 0,
+            child: Tilt(
+              childLayout: ChildLayout(
+                outer: [
                   TiltParallax(
-                    child: ImageWidget(
-                      link: widget.upperMiddleImage,
-                      fit: BoxFit.cover,
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        'palette\nyourself',
+                        style: regularTextTheme?.title2,
+                      ).paddingOnly(right: EdgeInsetsFoundation.horizontal16),
                     ),
-                  ),
-                if (widget.frontImage != null)
-                  TiltParallax(
-                    child: ImageWidget(
-                      link: widget.frontImage,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-              ],
+                  )
+                ],
+              ),
+              tiltConfig: TiltConfig(
+                enableRevert: false,
+                enableReverse: false,
+                enableGestureTouch: false,
+                enableSensorRevert: false,
+                enableGestureSensors: true,
+                angle: 10,
+              ),
+              shadowConfig: ShadowConfig(
+                disable: true,
+              ),
+              lightConfig: LightConfig(
+                disable: true,
+              ),
+              tiltStreamController: accelerometerUiStreamController,
+              child: ImageWidget(
+                link: widget.frontImage,
+              ),
             ),
-            lightConfig: LightConfig(disable: true),
-            shadowConfig: ShadowConfig(disable: true),
-            tiltConfig: TiltConfig(
-              sensorFactor: 25,
-              enableRevert: false,
-              enableSensorRevert: false,
-              enableReverse: false,
-              angle: 10,
-            ),
-            child: Container(
-              height: 0.8.sh,
-              width: 1.sw,
-            ),
-          )
+          ),
         ],
       ),
     );
