@@ -561,6 +561,9 @@
   "Properties": "गुण",
   "SearchOrAddTag": "टैग खोजें या जोड़ें",
   "ActivityTypes": "गतिविधि प्रकार",
+  "Icons": "Icons",
+  "RelatedProperties": "Related properties",
+  "SearchProperty": "Search property"
   "Voices": "आवाज़ें",
   "News": "समाचार",
   "YouWillReceiveNewTools": "आपको नए उपकरण मिलेंगे",

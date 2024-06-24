@@ -471,6 +471,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "HowItWorks": MessageLookupByLibrary.simpleMessage("Как\nэто?"),
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
             "Сколько \$ хочешь задонатить?"),
+        "Icons": MessageLookupByLibrary.simpleMessage("Иконки"),
         "Icon": MessageLookupByLibrary.simpleMessage("Иконка"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("Идеальный маршрут"),
         "IncorrectLoginOrPassword":
@@ -742,6 +743,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RecentlyAdded":
             MessageLookupByLibrary.simpleMessage("Недавно добавлено"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
+        "RelatedProperties":
+            MessageLookupByLibrary.simpleMessage("Связанные свойства"),
         "RelatedPersonalProperties": MessageLookupByLibrary.simpleMessage(
             "Относительные личные свойства"),
         "Religion": MessageLookupByLibrary.simpleMessage("Религия"),
@@ -803,6 +806,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Обычный поиск..."),
         "SearchOrAddTag":
             MessageLookupByLibrary.simpleMessage("Поиск или добавить тег"),
+        "SearchProperty": MessageLookupByLibrary.simpleMessage("Поиск свойств"),
         "SeeAll": MessageLookupByLibrary.simpleMessage("Посмотреть всё"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("Ещё"),
         "SelectCurrency": MessageLookupByLibrary.simpleMessage("Выбери валюту"),

@@ -2,25 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputField {
-  const UiKitInputFieldRightIcon({
-    Key? key,
-    required this.controller,
-    this.errorText,
-    this.fillColor,
-    this.hintText,
-    this.validator,
-    this.enabled = true,
-    this.icon,
-    this.onIconPressed,
-    this.onTap,
-    this.focusNode,
-    this.autofocus = false,
-    this.expands = false,
-    this.onFieldSubmitted,
-    this.borderRadius,
-    this.obscureText = false,
-    this.onChanged
-  }) : super(key: key);
+  const UiKitInputFieldRightIcon(
+      {Key? key,
+      required this.controller,
+      this.errorText,
+      this.fillColor,
+      this.hintText,
+      this.validator,
+      this.enabled = true,
+      this.icon,
+      this.onIconPressed,
+      this.onTap,
+      this.focusNode,
+      this.autofocus = false,
+      this.expands = false,
+      this.onFieldSubmitted,
+      this.borderRadius,
+      this.obscureText = false,
+      this.hintColor,
+      this.onChanged})
+      : super(key: key);
 
   @override
   final TextEditingController controller;
@@ -46,6 +47,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
   final VoidCallback? onTap;
   final ValueChanged<String>? onFieldSubmitted;
   final Color? fillColor;
+  final Color? hintColor;
 
   @override
   State<UiKitInputFieldRightIcon> createState() => _UiKitInputFieldRightIconState();
@@ -70,10 +72,11 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           )
         : uiKitTheme?.iconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
-    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: uiKitTheme.colorScheme.inversePrimary);
+    final inputTextStyle =
+        uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: uiKitTheme.colorScheme.inversePrimary);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
-          ? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
+          ? widget.hintColor ?? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
           : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
 
