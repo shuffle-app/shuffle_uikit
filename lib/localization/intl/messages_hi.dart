@@ -867,6 +867,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("आप इसे घुमाते हैं..."),
         "SpinnerTitle": MessageLookupByLibrary.simpleMessage(
             "घटनाएँ जिन्हें आप नहीं चाहते हैं छोड़ना"),
+        "StacksAndSomethingElseAreAvailableForYou":
+            MessageLookupByLibrary.simpleMessage(
+                "Stacks and something else are available for you..."),
+        "StacksAreOn": MessageLookupByLibrary.simpleMessage("Stacks are on"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("अन्वेषण करना प्रारंभ करें"),
         "Submit": MessageLookupByLibrary.simpleMessage("सबमिट करें"),

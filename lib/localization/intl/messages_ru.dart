@@ -872,6 +872,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ты крутишь его..."),
         "SpinnerTitle":
             MessageLookupByLibrary.simpleMessage("События. Не пропусти!"),
+        "StacksAndSomethingElseAreAvailableForYou":
+            MessageLookupByLibrary.simpleMessage(
+                "Для вас доступны стопки и кое-что еще..."),
+        "StacksAreOn":
+            MessageLookupByLibrary.simpleMessage("Для пользователей"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Начать изучать"),
         "Submit": MessageLookupByLibrary.simpleMessage("Отправить"),

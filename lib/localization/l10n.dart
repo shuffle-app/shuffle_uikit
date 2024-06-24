@@ -6287,6 +6287,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Stacks are on`
+  String get StacksAreOn {
+    return Intl.message(
+      'Stacks are on',
+      name: 'StacksAreOn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stacks and something else are available for you...`
+  String get StacksAndSomethingElseAreAvailableForYou {
+    return Intl.message(
+      'Stacks and something else are available for you...',
+      name: 'StacksAndSomethingElseAreAvailableForYou',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -611,7 +611,9 @@
   "AddPlaceType": "Добавить тип места",
   "AddProperty": "Добавить свойство",
   "FeedFavoritesHiwItems": "{item, plural, =0{Зажми и перетяни карточку} =1{Создай стопку и назови} =2{Выстраивай порядок стопок} few{Поделись стопкой} other{другое}}",
-  "ConvenientClearAndUseful": "Удобно, чётко и полезно"
+  "ConvenientClearAndUseful": "Удобно, чётко и полезно",
+  "StacksAreOn": "Для пользователей",
+  "StacksAndSomethingElseAreAvailableForYou": "Для вас доступны стопки и кое-что еще..."
 
 
 }

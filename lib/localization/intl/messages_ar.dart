@@ -861,6 +861,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("You spin it..."),
         "SpinnerTitle": MessageLookupByLibrary.simpleMessage(
             "Events you don\'t wanna miss"),
+        "StacksAndSomethingElseAreAvailableForYou":
+            MessageLookupByLibrary.simpleMessage(
+                "Stacks and something else are available for you..."),
+        "StacksAreOn": MessageLookupByLibrary.simpleMessage("Stacks are on"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Start to explore"),
         "Submit": MessageLookupByLibrary.simpleMessage("Submit"),
