@@ -562,6 +562,10 @@
   "News": "News",
   "YouWillReceiveNewTools": "You will receive new tools",
   "YourNewTools": "Your new tools",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
+  "Icons": "Icons",
+  "RelatedProperties": "Related properties",
+  "SearchProperty": "Search property"
   "MyReactions": "My reactions",
   "MyFeedback": "My feedback",
   "NoFeedbacksYet": "Visit places and events in Shuffle and share your impressions",
@@ -599,7 +603,12 @@
   "ShowTheBarcode": "Show the barcode at the checkout when paying",
   "OfferSuccessfullyActivated": "Offer successfully activated",
   "SpentMyPoints": "Spent my points",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
+  "Icon": "Icon",
+  "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there",
+  "CantSeePublicProfileMessage": "You can view this profile once it becomes an influencer",
   "Categories": "Categories",
   "Entertainment": "Entertainment",
   "RelatedPersonalProperties": "Related personal properties"
+
 }

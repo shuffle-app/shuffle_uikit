@@ -564,6 +564,10 @@
   "News": "Новости",
   "YouWillReceiveNewTools": "Вы получите новые инструменты",
   "YourNewTools": "Теперь вам доступны инструменты",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "Чтобы открыть следующий набор инструментов, вам нужно сделать",
+  "Icons": "Иконки",
+  "RelatedProperties": "Связанные свойства",
+  "SearchProperty": "Поиск свойств"
   "MyReactions": "Мои реакции",
   "MyFeedback": "Мои отзывы",
   "NoFeedbacksYet": "Посещайте места и события в Shuffle и делитесь впечатлениями",
@@ -605,3 +609,4 @@
   "OpenNow": "Открыть сейчас",
   "SpendIt": "Потратить"
 }
+

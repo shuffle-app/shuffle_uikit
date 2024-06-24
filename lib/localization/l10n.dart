@@ -6043,6 +6043,13 @@ class S {
     );
   }
 
+
+  /// `Icons`
+  String get Icons {
+    return Intl.message(
+      'Icons',
+      name: 'Icons',
+      
   /// `Icon`
   String get Icon {
     return Intl.message(
@@ -6053,6 +6060,12 @@ class S {
     );
   }
 
+  /// `Related properties`
+  String get RelatedProperties {
+    return Intl.message(
+      'Related properties',
+      name: 'RelatedProperties',
+
   /// `You can view this profile once it becomes an influencer`
   String get CantSeePublicProfileMessage {
     return Intl.message(
@@ -6062,6 +6075,12 @@ class S {
       args: [],
     );
   }
+
+  /// `Search property`
+  String get SearchProperty {
+    return Intl.message(
+      'Search property',
+      name: 'SearchProperty',
 
   /// `To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there`
   String get InstructionsToEnableHealthKit {

@@ -562,6 +562,10 @@
   "News": "News",
   "YouWillReceiveNewTools": "You will receive new tools",
   "YourNewTools": "Your new tools",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
+  "Icons": "Icons",
+  "RelatedProperties": "Related properties",
+  "SearchProperty": "Search property"
   "Album": "Album",
   "MustSelectVideo": "You must select at least one video",
   "Back": "Back",
@@ -602,4 +606,5 @@
   "Categories": "Categories",
   "Entertainment": "Entertainment",
   "RelatedPersonalProperties": "Related personal properties"
+
 }
