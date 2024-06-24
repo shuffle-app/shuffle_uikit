@@ -15,7 +15,7 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   final ScrollController? listViewController;
 
   UiKitMediaSliderWithTags({
-    Key? key,
+    super.key,
     required this.media,
     this.rating,
     ScrollController? scrollController,
@@ -26,8 +26,7 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
     this.branches,
     this.actions,
     this.listViewController,
-  })  : scrollController = scrollController ?? ScrollController(),
-        super(key: key);
+  })  : scrollController = scrollController ?? ScrollController();
 
   @override
   State<UiKitMediaSliderWithTags> createState() =>

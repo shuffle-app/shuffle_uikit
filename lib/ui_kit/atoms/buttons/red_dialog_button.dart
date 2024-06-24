@@ -19,21 +19,21 @@ class RedDialogButton extends StatelessWidget implements ButtonFactory {
 
     return ElevatedButton(
       style: ButtonStyle(
-        fixedSize: MaterialStateProperty.resolveWith((states) {
+        fixedSize: WidgetStateProperty.resolveWith((states) {
           if (small) return const Size.fromHeight(28);
 
           return const Size.fromHeight(48);
         }),
-        backgroundColor: MaterialStateProperty.resolveWith((states) {
-          return states.contains(MaterialState.disabled) ? ColorsFoundation.error : Colors.red;
+        backgroundColor: WidgetStateProperty.resolveWith((states) {
+          return states.contains(WidgetState.disabled) ? ColorsFoundation.error : Colors.red;
         }),
-        shape: MaterialStateProperty.resolveWith(
+        shape: WidgetStateProperty.resolveWith(
               (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
         ),
-        overlayColor: MaterialStateProperty.resolveWith((states) {
+        overlayColor: WidgetStateProperty.resolveWith((states) {
           return ColorsFoundation.darkNeutral900;
         }),
-        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+        foregroundColor: WidgetStateProperty.resolveWith((states) => Colors.white),
         splashFactory: InkSplash.splashFactory,
       ),
       onPressed: onPressed,

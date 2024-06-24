@@ -9,11 +9,11 @@ class BlurredButtonWithIcon extends StatelessWidget implements ButtonFactory {
   final BaseUiKitButtonIconData? iconInfo;
 
   const BlurredButtonWithIcon({
-    Key? key,
+    super.key,
     this.onPressed,
     this.icon,
     this.iconInfo,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

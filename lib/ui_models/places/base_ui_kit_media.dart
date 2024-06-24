@@ -26,10 +26,9 @@ class UiKitMediaPhoto extends BaseUiKitMedia {
 
 class UiKitMediaVideo extends BaseUiKitMedia {
   UiKitMediaVideo({
-    required String link,
+    required super.link,
     String? videoLink,
   }) : super(
-          link: link,
           videoLink: videoLink ?? link,
           type: UiKitMediaType.video,
         );

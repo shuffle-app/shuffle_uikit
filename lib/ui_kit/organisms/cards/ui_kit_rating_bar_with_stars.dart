@@ -6,10 +6,10 @@ class UiKitRatingBarWithStars extends StatefulWidget {
   final ValueChanged<int>? onRatingChanged;
 
   const UiKitRatingBarWithStars({
-    Key? key,
+    super.key,
     this.maxRating,
     this.onRatingChanged,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitRatingBarWithStars> createState() => _UiKitRatingBarWithStarsState();

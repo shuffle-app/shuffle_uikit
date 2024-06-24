@@ -10,13 +10,13 @@ class OutlinedGradientButton extends StatelessWidget implements ButtonFactory {
   final ButtonFit? fit;
 
   const OutlinedGradientButton({
-    Key? key,
+    super.key,
     required this.text,
     required this.gradientBorder,
     this.onPressed,
     this.loading,
     this.fit,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

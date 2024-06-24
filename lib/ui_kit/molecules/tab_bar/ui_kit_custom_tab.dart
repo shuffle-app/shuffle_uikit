@@ -10,24 +10,22 @@ class UiKitCustomTab extends StatelessWidget {
   final Widget? child;
 
   const UiKitCustomTab({
-    Key? key,
+    super.key,
     required this.title,
     this.height = 40,
     this.active = true,
     this.group,
     this.customValue,
-  })  : child = null,
-        super(key: key);
+  })  : child = null;
 
   const UiKitCustomTab.icon({
-    Key? key,
+    super.key,
     this.height = 40,
     this.active = true,
     this.child,
     this.customValue,
   })  : title = '',
-        group = null,
-        super(key: key);
+        group = null;
 
   factory UiKitCustomTab.small({
     required String title,

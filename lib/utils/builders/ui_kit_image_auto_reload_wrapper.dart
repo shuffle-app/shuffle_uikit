@@ -7,9 +7,9 @@ class UiKitImageAutoReloadWrapper extends InheritedWidget {
   final ValueNotifier<ValueKey<bool>> _imageKey = ValueNotifier(const ValueKey<bool>(true));
 
   UiKitImageAutoReloadWrapper({
-    Key? key,
+    super.key,
     required super.child,
-  }) : super(key: key);
+  });
 
   static UiKitImageAutoReloadWrapper? of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<UiKitImageAutoReloadWrapper>();

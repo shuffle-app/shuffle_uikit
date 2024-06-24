@@ -33,8 +33,8 @@ Future<DateTime?> showUiKitCalendarDialog(BuildContext context,
       child: Theme(
         data: Theme.of(context).copyWith(
           datePickerTheme: Theme.of(context).datePickerTheme.copyWith(
-            dayForegroundColor: MaterialStateColor.resolveWith((states) {
-              if (states.contains(MaterialState.disabled)) {
+            dayForegroundColor: WidgetStateColor.resolveWith((states) {
+              if (states.contains(WidgetState.disabled)) {
                 return context.uiKitTheme?.colorScheme.darkNeutral500 ?? Colors.white;
               }
 
@@ -131,8 +131,7 @@ class _CustomCalendarPickerDialog extends StatefulWidget {
   final bool Function(DateTime day)? selectableDayPredicate;
 
   const _CustomCalendarPickerDialog(
-      {Key? key, this.firstDate, this.lastDate, this.okText, this.cancelText, this.selectableDayPredicate})
-      : super(key: key);
+      {this.firstDate, this.lastDate, this.okText, this.cancelText, this.selectableDayPredicate});
 
   @override
   State<_CustomCalendarPickerDialog> createState() => _CustomCalendarPickerDialogState();

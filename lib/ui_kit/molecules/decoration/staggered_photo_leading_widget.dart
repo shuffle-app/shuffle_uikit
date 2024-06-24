@@ -5,9 +5,9 @@ class StaggeredPhotosLeadingWidget extends StatelessWidget {
   final List<String> photoLinks;
 
   const StaggeredPhotosLeadingWidget({
-    Key? key,
+    super.key,
     required this.photoLinks,
-  }) : super(key: key);
+  });
 
   double get firstPhotoWidth => 0.125.sw;
 

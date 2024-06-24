@@ -4,7 +4,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class MediumTextAdBanner4 extends StatelessWidget {
   final double? customHeight;
 
-  const MediumTextAdBanner4({Key? key, this.customHeight}) : super(key: key);
+  const MediumTextAdBanner4({super.key, this.customHeight});
 
   double get width => 0.75.sw;
 

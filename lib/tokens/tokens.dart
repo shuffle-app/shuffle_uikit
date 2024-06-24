@@ -1,5 +1,6 @@
 /// This file exports all the founding elements of UI
 /// such as spacings, colors, typography, paddings and etc.
+library;
 
 export 'package:shuffle_uikit/foundation/border_radius_foundation.dart';
 export 'package:shuffle_uikit/foundation/countries_foundation.dart';

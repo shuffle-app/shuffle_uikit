@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -37,8 +39,9 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
   List<Polyline> directionLines = [];
   late final FocusNode _focusNode = FocusNode()
     ..addListener(() {
-      if (focusNotifier.value != _focusNode.hasFocus)
+      if (focusNotifier.value != _focusNode.hasFocus) {
         focusNotifier.value = _focusNode.hasFocus;
+      }
     });
 
   late final ValueNotifier<bool> focusNotifier = ValueNotifier<bool>(false);
@@ -204,7 +207,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
-        onPressed: () async {
+        onPressed: () {
           widget.onCurrentLocationRequested?.call();
         },
         elevation: 0,
@@ -261,22 +264,23 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                 ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.resolveWith((states) {
-                      if (states.contains(MaterialState.disabled))
+                        WidgetStateProperty.resolveWith((states) {
+                      if (states.contains(WidgetState.disabled)) {
                         return theme?.colorScheme.darkNeutral300;
+                      }
 
                       return theme?.colorScheme.surface1;
                       // return theme?.colorScheme.info;
                     }),
-                    foregroundColor: MaterialStateProperty.resolveWith(
+                    foregroundColor: WidgetStateProperty.resolveWith(
                         (states) => Colors.white),
-                    elevation: MaterialStateProperty.resolveWith((states) => 0),
+                    elevation: WidgetStateProperty.resolveWith((states) => 0),
                     splashFactory: WaveSplash.splashFactory,
-                    shape: MaterialStateProperty.resolveWith(
+                    shape: WidgetStateProperty.resolveWith(
                       (states) => RoundedRectangleBorder(
                           borderRadius: BorderRadiusFoundation.max),
                     ),
-                    padding: MaterialStateProperty.resolveWith(
+                    padding: WidgetStateProperty.resolveWith(
                       (states) => EdgeInsets.symmetric(
                         vertical: EdgeInsetsFoundation.vertical8,
                         horizontal: EdgeInsetsFoundation.horizontal16,
@@ -307,23 +311,24 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                   ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.resolveWith((states) {
-                        if (states.contains(MaterialState.disabled))
+                          WidgetStateProperty.resolveWith((states) {
+                        if (states.contains(WidgetState.disabled)) {
                           return theme?.colorScheme.darkNeutral300;
+                        }
 
                         return theme?.colorScheme.surface1;
                         // return theme?.colorScheme.info;
                       }),
-                      foregroundColor: MaterialStateProperty.resolveWith(
+                      foregroundColor: WidgetStateProperty.resolveWith(
                           (states) => Colors.white),
                       elevation:
-                          MaterialStateProperty.resolveWith((states) => 0),
+                          WidgetStateProperty.resolveWith((states) => 0),
                       splashFactory: WaveSplash.splashFactory,
-                      shape: MaterialStateProperty.resolveWith(
+                      shape: WidgetStateProperty.resolveWith(
                         (states) => RoundedRectangleBorder(
                             borderRadius: BorderRadiusFoundation.max),
                       ),
-                      padding: MaterialStateProperty.resolveWith(
+                      padding: WidgetStateProperty.resolveWith(
                         (states) => EdgeInsets.symmetric(
                           vertical: EdgeInsetsFoundation.vertical8,
                           horizontal: EdgeInsetsFoundation.horizontal16,

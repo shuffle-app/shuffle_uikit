@@ -10,12 +10,12 @@ class UiKitExpansionTile extends StatefulWidget {
   final bool? initiallyExpanded;
 
   const UiKitExpansionTile({
-    Key? key,
+    super.key,
     required this.leadingIconData,
     required this.title,
     required this.children,
     this.initiallyExpanded,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitExpansionTile> createState() => _UiKitExpansionTileState();

@@ -11,7 +11,7 @@ class UiKitHintDialog extends StatelessWidget {
   final Widget? customTitle;
 
   const UiKitHintDialog({
-    Key? key,
+    super.key,
     required this.title,
     required this.textStyle,
     required this.hintTiles,
@@ -19,7 +19,7 @@ class UiKitHintDialog extends StatelessWidget {
     required this.dismissText,
     required this.onDismiss,
     this.customTitle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -7,11 +7,11 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
   final Border avatarBorder;
 
   const BadgedBaseUserTile({
-    Key? key,
+    super.key,
     required this.badge,
     required this.avatarBorder,
     required this.data,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

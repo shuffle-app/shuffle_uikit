@@ -94,7 +94,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
-    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
     final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return BlurredAppBarPage(

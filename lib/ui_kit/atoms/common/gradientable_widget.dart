@@ -6,11 +6,10 @@ class GradientableWidget extends StatelessWidget {
   final bool active;
 
   const GradientableWidget(
-      {Key? key,
+      {super.key,
       required this.child,
        this.gradient,
-      this.active = true})
-      : super(key: key);
+      this.active = true});
 
   @override
   Widget build(BuildContext context) {

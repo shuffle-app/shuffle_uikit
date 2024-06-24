@@ -5,9 +5,9 @@ class SliderPlaceCard extends StatelessWidget {
   final SlidablePlaceCardData slidablePlaceCardData;
 
   const SliderPlaceCard({
-    Key? key,
+    super.key,
     required this.slidablePlaceCardData,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

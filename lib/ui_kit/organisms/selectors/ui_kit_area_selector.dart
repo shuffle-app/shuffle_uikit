@@ -7,11 +7,11 @@ class UiKitAreaSelector extends StatelessWidget {
   final ValueNotifier<AreaSelectorData> previewUpdateNotifier;
 
   const UiKitAreaSelector({
-    Key? key,
+    super.key,
     required this.previewUpdateNotifier,
     required this.size,
     this.onScroll,
-  }) : super(key: key);
+  });
 
   double get maxRemainingFactor => 1 - previewUpdateNotifier.value.previewWidthFraction;
 

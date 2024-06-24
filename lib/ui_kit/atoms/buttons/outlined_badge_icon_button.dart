@@ -8,12 +8,12 @@ class OutlinedBadgeIconButton extends StatelessWidget implements ButtonFactory {
   final Widget? icon;
 
   const OutlinedBadgeIconButton({
-    Key? key,
+    super.key,
     this.iconInfo,
     this.onPressed,
     this.badgeAlignment,
     this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
