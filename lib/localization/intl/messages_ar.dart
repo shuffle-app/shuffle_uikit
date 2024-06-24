@@ -168,6 +168,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Activation": MessageLookupByLibrary.simpleMessage("Activation"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Activity type"),
         "ActivityTypes": MessageLookupByLibrary.simpleMessage("Activity types"),
+        "AddCategory": MessageLookupByLibrary.simpleMessage("Add category"),
         "AddFeedback": MessageLookupByLibrary.simpleMessage("Add feedback"),
         "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
             "Tell us what you liked or remember"),
@@ -175,7 +176,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Describe your experience"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "Write a detailed review, use all the available characters so that as many people as possible can appreciate it"),
+        "AddPlaceType": MessageLookupByLibrary.simpleMessage("Add place type"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Add promotion"),
+        "AddProperty": MessageLookupByLibrary.simpleMessage("Add property"),
         "AddReactions": MessageLookupByLibrary.simpleMessage("Add reaction"),
         "AddReview": MessageLookupByLibrary.simpleMessage("Add review"),
         "AddReviewFieldHint":

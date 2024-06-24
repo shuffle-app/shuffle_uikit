@@ -601,5 +601,8 @@
   "SpentMyPoints": "मेरे अंक बिताए",
   "Categories": "श्रेणियाँ",
   "Entertainment": "मनोरंजन",
-  "RelatedPersonalProperties": "संबंधित व्यक्तिगत गुण"
+  "RelatedPersonalProperties": "संबंधित व्यक्तिगत गुण",
+  "AddCategory": "श्रेणी जोड़ें",
+  "AddProperty": "संपत्ति जोड़ें",
+  "AddPlaceType": "जगह प्रकार जोड़ें"
 }

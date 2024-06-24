@@ -6202,6 +6202,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Add category`
+  String get AddCategory {
+    return Intl.message(
+      'Add category',
+      name: 'AddCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add property`
+  String get AddProperty {
+    return Intl.message(
+      'Add property',
+      name: 'AddProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add place type`
+  String get AddPlaceType {
+    return Intl.message(
+      'Add place type',
+      name: 'AddPlaceType',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

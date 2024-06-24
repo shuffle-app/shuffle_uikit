@@ -603,5 +603,8 @@
   "GoAheadAndGrowYourBusiness": "Продолжайте и расти ваш бизнес",
   "AboutUs": "о нас",
   "OpenNow": "Открыть сейчас",
-  "SpendIt": "Потратить"
+  "SpendIt": "Потратить",
+  "AddCategory": "Добавить категорию",
+  "AddPlaceType": "Добавить тип места",
+  "AddProperty": "Добавить свойство"
 }

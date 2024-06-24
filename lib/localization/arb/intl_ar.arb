@@ -601,5 +601,8 @@
   "SpentMyPoints": "Spent my points",
   "Categories": "Categories",
   "Entertainment": "Entertainment",
-  "RelatedPersonalProperties": "Related personal properties"
+  "RelatedPersonalProperties": "Related personal properties",
+  "AddCategory": "Add category",
+  "AddProperty": "Add property",
+  "AddPlaceType": "Add place type"
 }

@@ -169,6 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ActivityType": MessageLookupByLibrary.simpleMessage("Тип активности"),
         "ActivityTypes":
             MessageLookupByLibrary.simpleMessage("Типы активности"),
+        "AddCategory":
+            MessageLookupByLibrary.simpleMessage("Добавить категорию"),
         "AddFeedback": MessageLookupByLibrary.simpleMessage("Поставить оценку"),
         "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
             "Расскажи что тебе понравилось или запомнилось"),
@@ -176,7 +178,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Опиши свой опыт"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "Напиши подробный отзыв, используй все доступные символы, чтобы как можно больше людей могли его оценить"),
+        "AddPlaceType":
+            MessageLookupByLibrary.simpleMessage("Добавить тип места"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Добавить промо"),
+        "AddProperty":
+            MessageLookupByLibrary.simpleMessage("Добавить свойство"),
         "AddReactions": MessageLookupByLibrary.simpleMessage("Добавить рекцию"),
         "AddReview": MessageLookupByLibrary.simpleMessage("Оставить отзыв"),
         "AddReviewFieldHint":

@@ -169,6 +169,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ActivityType":
             MessageLookupByLibrary.simpleMessage("क्रिया के प्रकार"),
         "ActivityTypes": MessageLookupByLibrary.simpleMessage("गतिविधि प्रकार"),
+        "AddCategory": MessageLookupByLibrary.simpleMessage("श्रेणी जोड़ें"),
         "AddFeedback":
             MessageLookupByLibrary.simpleMessage("प्रतिक्रिया जोड़ें"),
         "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
@@ -177,7 +178,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("अपने अनुभव का वर्णन करें"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "एक विस्तृत समीक्षा लिखें, सभी उपलब्ध वर्णों का उपयोग करें ताकि जितने अधिक लोग संवाद कर सकें"),
+        "AddPlaceType":
+            MessageLookupByLibrary.simpleMessage("जगह प्रकार जोड़ें"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("प्रचार जोड़ें"),
+        "AddProperty": MessageLookupByLibrary.simpleMessage("संपत्ति जोड़ें"),
         "AddReactions":
             MessageLookupByLibrary.simpleMessage("प्रतिक्रिया जोड़ें"),
         "AddReview": MessageLookupByLibrary.simpleMessage("समीक्षा जोड़ें"),
