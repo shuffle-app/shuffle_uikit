@@ -168,6 +168,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Activation": MessageLookupByLibrary.simpleMessage("Activation"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Activity type"),
         "ActivityTypes": MessageLookupByLibrary.simpleMessage("Activity types"),
+        "AddCategory": MessageLookupByLibrary.simpleMessage("Add category"),
         "AddFeedback": MessageLookupByLibrary.simpleMessage("Add feedback"),
         "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
             "Tell us what you liked or remember"),
@@ -175,7 +176,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Describe your experience"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "Write a detailed review, use all the available characters so that as many people as possible can appreciate it"),
+        "AddPlaceType": MessageLookupByLibrary.simpleMessage("Add place type"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Add promotion"),
+        "AddProperty": MessageLookupByLibrary.simpleMessage("Add property"),
         "AddReactions": MessageLookupByLibrary.simpleMessage("Add reaction"),
         "AddReview": MessageLookupByLibrary.simpleMessage("Add review"),
         "AddReviewFieldHint":
@@ -462,8 +465,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "HowItWorks": MessageLookupByLibrary.simpleMessage("How it\nworks"),
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
             "How much \$ do you want to donate?"),
-        "Icons": MessageLookupByLibrary.simpleMessage("Icons"),
         "Icon": MessageLookupByLibrary.simpleMessage("Icon"),
+        "Icons": MessageLookupByLibrary.simpleMessage("Icons"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("Ideal route"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Incorrect login or password"),
@@ -730,10 +733,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "RealMoney": MessageLookupByLibrary.simpleMessage("Real money"),
         "RecentlyAdded": MessageLookupByLibrary.simpleMessage("Recently added"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
-        "RelatedProperties":
-            MessageLookupByLibrary.simpleMessage("Related properties"),
         "RelatedPersonalProperties":
             MessageLookupByLibrary.simpleMessage("Related personal properties"),
+        "RelatedProperties":
+            MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
         "Reply": MessageLookupByLibrary.simpleMessage("Reply"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),

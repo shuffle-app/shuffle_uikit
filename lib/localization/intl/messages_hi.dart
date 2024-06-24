@@ -169,6 +169,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ActivityType":
             MessageLookupByLibrary.simpleMessage("क्रिया के प्रकार"),
         "ActivityTypes": MessageLookupByLibrary.simpleMessage("गतिविधि प्रकार"),
+        "AddCategory": MessageLookupByLibrary.simpleMessage("श्रेणी जोड़ें"),
         "AddFeedback":
             MessageLookupByLibrary.simpleMessage("प्रतिक्रिया जोड़ें"),
         "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
@@ -177,7 +178,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("अपने अनुभव का वर्णन करें"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "एक विस्तृत समीक्षा लिखें, सभी उपलब्ध वर्णों का उपयोग करें ताकि जितने अधिक लोग संवाद कर सकें"),
+        "AddPlaceType":
+            MessageLookupByLibrary.simpleMessage("जगह प्रकार जोड़ें"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("प्रचार जोड़ें"),
+        "AddProperty": MessageLookupByLibrary.simpleMessage("संपत्ति जोड़ें"),
         "AddReactions":
             MessageLookupByLibrary.simpleMessage("प्रतिक्रिया जोड़ें"),
         "AddReview": MessageLookupByLibrary.simpleMessage("समीक्षा जोड़ें"),
@@ -466,8 +470,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("यह कैसे\nकाम करता है"),
         "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
             "आप कितना \$ दान करना चाहते हैं?"),
-        "Icons": MessageLookupByLibrary.simpleMessage("Icons"),
         "Icon": MessageLookupByLibrary.simpleMessage("आइकन"),
+        "Icons": MessageLookupByLibrary.simpleMessage("Icons"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("आदर्श मार्ग"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("गलत लॉगिन या पासवर्ड"),
@@ -739,10 +743,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "RecentlyAdded":
             MessageLookupByLibrary.simpleMessage("हाल ही में जोड़ा गया"),
         "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
-        "RelatedProperties":
-            MessageLookupByLibrary.simpleMessage("Related properties"),
         "RelatedPersonalProperties":
             MessageLookupByLibrary.simpleMessage("संबंधित व्यक्तिगत गुण"),
+        "RelatedProperties":
+            MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
         "Reply": MessageLookupByLibrary.simpleMessage("जवाब दे दो"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),

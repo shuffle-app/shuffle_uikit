@@ -565,7 +565,7 @@
   "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
   "Icons": "Icons",
   "RelatedProperties": "Related properties",
-  "SearchProperty": "Search property"
+  "SearchProperty": "Search property",
   "Album": "Album",
   "MustSelectVideo": "You must select at least one video",
   "Back": "Back",
@@ -589,7 +589,6 @@
   "Accrual": "Accrual",
   "Activation": "Activation",
   "ViewHistory": "View history",
-  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
   "Icon": "Icon",
   "CantSeePublicProfileMessage": "You can view this profile once it becomes an influencer",
   "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there",
@@ -605,6 +604,8 @@
   "SpentMyPoints": "Spent my points",
   "Categories": "Categories",
   "Entertainment": "Entertainment",
-  "RelatedPersonalProperties": "Related personal properties"
-
+  "RelatedPersonalProperties": "Related personal properties",
+  "AddCategory": "Add category",
+  "AddProperty": "Add property",
+  "AddPlaceType": "Add place type"
 }

@@ -5803,6 +5803,46 @@ class S {
     );
   }
 
+  /// `To open the next set of tools you need to do`
+  String get ToOpenTheNextSetOfToolsYouNeedToDo {
+    return Intl.message(
+      'To open the next set of tools you need to do',
+      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Icons`
+  String get Icons {
+    return Intl.message(
+      'Icons',
+      name: 'Icons',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Related properties`
+  String get RelatedProperties {
+    return Intl.message(
+      'Related properties',
+      name: 'RelatedProperties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search property`
+  String get SearchProperty {
+    return Intl.message(
+      'Search property',
+      name: 'SearchProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Album`
   String get Album {
     return Intl.message(
@@ -6033,23 +6073,6 @@ class S {
     );
   }
 
-  /// `To open the next set of tools you need to do`
-  String get ToOpenTheNextSetOfToolsYouNeedToDo {
-    return Intl.message(
-      'To open the next set of tools you need to do',
-      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
-      desc: '',
-      args: [],
-    );
-  }
-
-
-  /// `Icons`
-  String get Icons {
-    return Intl.message(
-      'Icons',
-      name: 'Icons',
-      
   /// `Icon`
   String get Icon {
     return Intl.message(
@@ -6060,12 +6083,6 @@ class S {
     );
   }
 
-  /// `Related properties`
-  String get RelatedProperties {
-    return Intl.message(
-      'Related properties',
-      name: 'RelatedProperties',
-
   /// `You can view this profile once it becomes an influencer`
   String get CantSeePublicProfileMessage {
     return Intl.message(
@@ -6075,12 +6092,6 @@ class S {
       args: [],
     );
   }
-
-  /// `Search property`
-  String get SearchProperty {
-    return Intl.message(
-      'Search property',
-      name: 'SearchProperty',
 
   /// `To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there`
   String get InstructionsToEnableHealthKit {
@@ -6217,6 +6228,36 @@ class S {
     return Intl.message(
       'Related personal properties',
       name: 'RelatedPersonalProperties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add category`
+  String get AddCategory {
+    return Intl.message(
+      'Add category',
+      name: 'AddCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add property`
+  String get AddProperty {
+    return Intl.message(
+      'Add property',
+      name: 'AddProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add place type`
+  String get AddPlaceType {
+    return Intl.message(
+      'Add place type',
+      name: 'AddPlaceType',
       desc: '',
       args: [],
     );
