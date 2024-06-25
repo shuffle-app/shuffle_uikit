@@ -33,7 +33,7 @@ class _UiKitParallaxPhotoCardState extends State<UiKitParallaxPhotoCard> {
 
   StreamSubscription<AccelerometerEvent>? accelerometerEventSubscription;
 
-  StreamController<TiltStreamModel> accelerometerUiStreamController = StreamController<TiltStreamModel>();
+  StreamController<TiltStreamModel> accelerometerUiStreamController = StreamController<TiltStreamModel>.broadcast();
 
   bool get initialEventIsSet =>
       initialEvent != null && initialEvent!.x != 0 && initialEvent!.y != 0 && initialEvent!.z != 0;
@@ -108,7 +108,7 @@ class _UiKitParallaxPhotoCardState extends State<UiKitParallaxPhotoCard> {
             layers: [
               Layer(
                 preventCrop: true,
-                sensitivity: 6,
+                sensitivity: 8,
                 child: ImageWidget(
                   link: widget.lowerMiddleImage,
                   fit: BoxFit.cover,
@@ -116,7 +116,7 @@ class _UiKitParallaxPhotoCardState extends State<UiKitParallaxPhotoCard> {
               ),
               Layer(
                 preventCrop: true,
-                sensitivity: 3,
+                sensitivity: 4,
                 child: ImageWidget(
                   link: widget.upperMiddleImage,
                   fit: BoxFit.cover,

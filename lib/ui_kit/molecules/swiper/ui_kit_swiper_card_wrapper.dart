@@ -4,16 +4,22 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitSwiperCardWrapper extends StatelessWidget implements BaseUiKitSwiperCard {
   final Widget child;
   final double? width;
+  final VoidCallback? onTap;
 
   const UiKitSwiperCardWrapper({
     Key? key,
     required this.child,
     this.width,
+    this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return child;
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: onTap,
+      child: child,
+    );
   }
 
   @override
@@ -21,9 +27,6 @@ class UiKitSwiperCardWrapper extends StatelessWidget implements BaseUiKitSwiperC
 
   @override
   String? get imageLink => null;
-
-  @override
-  VoidCallback? get onTap => null;
 
   @override
   int? get pointsToGain => null;
