@@ -167,6 +167,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           points: 30,
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
+        UiKitFeedbackInfo(
+          onSubmit: (expandThreadIsOpen) {},
+          userName: 'Ryan Gosling',
+          dateTime: DateTime.now(),
+          removeFunction: () {},
+          responsesFromCompanytoReview: true,
+        ).paddingAll(EdgeInsetsFoundation.all16),
+        SpacingFoundation.verticalSpace16,
         PlaceIconSelector(
           onPressed: () {},
           onIconTap: (value) {},

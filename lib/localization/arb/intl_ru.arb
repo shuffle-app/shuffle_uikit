@@ -599,6 +599,11 @@
   "OfferSuccessfullyActivated": "Предложение успешно активировано",
   "SpentMyPoints": "Потратил мои баллы",
   "Icon": "Иконка",
+  "Info": "Информация",
+  "VideoReactions": "Видео-реакции",
+  "ShowDeleted": "Показать удаленные",
+  "ExpandThread":  "Развернуть ветку",
+  "CollapseThread": "Свернуть ветку"
   "CantSeePublicProfileMessage": "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером",
   "InstructionsToEnableHealthKit": "Чтобы включить кит здоровья, перейдите в раздел «Конфиденциальность и безопасность» в настройках, затем перейдите в раздел «Здоровье» и выберите там «Shuffle app».",
   "PushUpYourBusiness": "Поднимайте ваш бизнес",

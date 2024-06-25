@@ -274,6 +274,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Christianity": MessageLookupByLibrary.simpleMessage("ईसाई धर्म"),
         "ClickEnterToSearch": MessageLookupByLibrary.simpleMessage(
             "क्लिक करें दर्ज खोज करने के लिए"),
+        "CollapseThread":
+            MessageLookupByLibrary.simpleMessage("Collapse thread"),
         "Comments": m5,
         "Company": MessageLookupByLibrary.simpleMessage("कंपनी"),
         "CompanyAnswered":
@@ -385,6 +387,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EventsReminders":
             MessageLookupByLibrary.simpleMessage("घटनाएँ और याद दिलाने वाले"),
         "Exit": MessageLookupByLibrary.simpleMessage("बाहर निकलें"),
+        "ExpandThread": MessageLookupByLibrary.simpleMessage("Expand thread"),
         "Fair": MessageLookupByLibrary.simpleMessage("उचित"),
         "Faq": MessageLookupByLibrary.simpleMessage("सामान्य प्रश्न"),
         "FaqUnderDev": MessageLookupByLibrary.simpleMessage(
@@ -496,6 +499,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "लोगों के चयन पर प्रभाव डालें और स्थानों और घटनाओं का महत्व बढ़ाएं"),
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("मुद्रीकरण"),
+        "Info": MessageLookupByLibrary.simpleMessage("Info"),
         "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
             "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there"),
         "Interview": MessageLookupByLibrary.simpleMessage("साक्षात्कार"),
@@ -838,6 +842,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Settings": MessageLookupByLibrary.simpleMessage("सेटिंग्स"),
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("आपके साथ साझा किया गया"),
+        "ShowDeleted": MessageLookupByLibrary.simpleMessage("Show deleted"),
         "ShowMore": MessageLookupByLibrary.simpleMessage("अधिक\nदिखाएं"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("परिणाम दिखाओ"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
@@ -994,6 +999,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "आपकी प्रतिक्रिया सफलतापूर्वक जोड़ी गई है"),
         "VideoReactionUploadedMessage": MessageLookupByLibrary.simpleMessage(
             "प्रतिक्रिया सफलतापूर्वक जोड़ी गई"),
+        "VideoReactions":
+            MessageLookupByLibrary.simpleMessage("Video-reactions"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("वीडियो (फ़ाइलें अपलोड करें)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("सभी देखें"),

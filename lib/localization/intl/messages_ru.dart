@@ -276,6 +276,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Christianity": MessageLookupByLibrary.simpleMessage("Христианство"),
         "ClickEnterToSearch":
             MessageLookupByLibrary.simpleMessage("Нажми Ввод для поиска"),
+        "CollapseThread":
+            MessageLookupByLibrary.simpleMessage("Свернуть ветку"),
         "Comments": m5,
         "Company": MessageLookupByLibrary.simpleMessage("Компания"),
         "CompanyAnswered":
@@ -390,6 +392,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "EventsReminders":
             MessageLookupByLibrary.simpleMessage("Напоминания о событиях"),
         "Exit": MessageLookupByLibrary.simpleMessage("Выход"),
+        "ExpandThread":
+            MessageLookupByLibrary.simpleMessage("Развернуть ветку"),
         "Fair": MessageLookupByLibrary.simpleMessage("Средне"),
         "Faq": MessageLookupByLibrary.simpleMessage("ЧаВО"),
         "FaqUnderDev": MessageLookupByLibrary.simpleMessage(
@@ -497,6 +501,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Влияй на выбор людей и усиливай значимость мест и событий"),
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("Монетизация"),
+        "Info": MessageLookupByLibrary.simpleMessage("Информация"),
         "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
             "Чтобы включить кит здоровья, перейдите в раздел «Конфиденциальность и безопасность» в настройках, затем перейдите в раздел «Здоровье» и выберите там «Shuffle app»."),
         "Interview": MessageLookupByLibrary.simpleMessage("Интервью"),
@@ -840,6 +845,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("поделилась с вами"),
+        "ShowDeleted":
+            MessageLookupByLibrary.simpleMessage("Показать удаленные"),
         "ShowMore": MessageLookupByLibrary.simpleMessage("Показать\nбольше"),
         "ShowResult":
             MessageLookupByLibrary.simpleMessage("Показать результат"),
@@ -996,6 +1003,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Твоя реакция успешно добавлена"),
         "VideoReactionUploadedMessage": MessageLookupByLibrary.simpleMessage(
             "Видео-реакция успешно загружена"),
+        "VideoReactions": MessageLookupByLibrary.simpleMessage("Видео-реакции"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Видео (загрузить)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("Все"),

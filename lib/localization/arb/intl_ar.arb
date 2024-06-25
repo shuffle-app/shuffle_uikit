@@ -602,6 +602,15 @@
   "ShowTheBarcode": "Show the barcode at the checkout when paying",
   "OfferSuccessfullyActivated": "Offer successfully activated",
   "SpentMyPoints": "Spent my points",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
+  "Icon": "Icon",
+  "Info": "Info",
+  "VideoReactions": "Video-reactions",
+  "ShowDeleted": "Show deleted",
+  "ExpandThread":  "Expand thread",
+  "CollapseThread": "Collapse thread"
+  "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there",
+  "CantSeePublicProfileMessage": "You can view this profile once it becomes an influencer",
   "Categories": "Categories",
   "Entertainment": "Entertainment",
   "RelatedPersonalProperties": "Related personal properties",
@@ -612,5 +621,6 @@
   "ConvenientClearAndUseful": "сonvenient, clear and useful",
   "StacksAreOn": "Stacks are on",
   "StacksAndSomethingElseAreAvailableForYou": "Stacks and something else are available for you..."
+
 
 }

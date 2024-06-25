@@ -602,6 +602,14 @@
   "ShowTheBarcode": "भुगतान करते समय चेकआउट पर बारकोड दिखाएं",
   "OfferSuccessfullyActivated": "प्रस्ताव सफलतापूर्वक सक्रिय",
   "SpentMyPoints": "मेरे अंक बिताए",
+  "Icon": "आइकन",
+  "Info": "Info",
+  "VideoReactions": "Video-reactions",
+  "ShowDeleted": "Show deleted",
+  "ExpandThread":  "Expand thread",
+  "CollapseThread": "Collapse thread"
+  "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there",
+  "CantSeePublicProfileMessage": "आप इस प्रोफ़ाइल को एक इन्फ्लुएंसर बनने पर देख सकते हैं",
   "Categories": "श्रेणियाँ",
   "Entertainment": "मनोरंजन",
   "RelatedPersonalProperties": "संबंधित व्यक्तिगत गुण",
@@ -612,7 +620,6 @@
   "ConvenientClearAndUseful": "сonvenient, clear and useful",
   "StacksAreOn": "Stacks are on",
   "StacksAndSomethingElseAreAvailableForYou": "Stacks and something else are available for you..."
-
 
 
 }

@@ -6083,6 +6083,12 @@ class S {
     );
   }
 
+  /// `Info`
+  String get Info {
+    return Intl.message(
+      'Info',
+      name: 'Info',
+      
   /// `You can view this profile once it becomes an influencer`
   String get CantSeePublicProfileMessage {
     return Intl.message(
@@ -6093,7 +6099,43 @@ class S {
     );
   }
 
-  /// `To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there`
+  /// `Video-reactions`
+  String get VideoReactions {
+    return Intl.message(
+      'Video-reactions',
+      name: 'VideoReactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show deleted`
+  String get ShowDeleted {
+    return Intl.message(
+      'Show deleted',
+      name: 'ShowDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expand thread`
+  String get ExpandThread {
+    return Intl.message(
+      'Expand thread',
+      name: 'ExpandThread',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Collapse thread`
+  String get CollapseThread {
+    return Intl.message(
+      'Collapse thread',
+      name: 'CollapseThread',
+
+      /// `To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there`
   String get InstructionsToEnableHealthKit {
     return Intl.message(
       'To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there',
