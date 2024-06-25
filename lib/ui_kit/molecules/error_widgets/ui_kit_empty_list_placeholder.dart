@@ -5,9 +5,9 @@ class UiKitEmptyListPlaceHolder extends StatelessWidget {
   final String? message;
 
   const UiKitEmptyListPlaceHolder({
-    Key? key,
+    super.key,
     this.message,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

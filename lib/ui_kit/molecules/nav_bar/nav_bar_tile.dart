@@ -6,10 +6,10 @@ class NavBarTile extends StatelessWidget {
   final bool selected;
 
   const NavBarTile({
-    Key? key,
+    super.key,
     required this.icon,
     required this.selected,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

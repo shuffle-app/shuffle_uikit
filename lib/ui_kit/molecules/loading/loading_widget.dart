@@ -8,10 +8,10 @@ class LoadingWidget extends StatelessWidget {
   final bool showLoadingText;
 
   const LoadingWidget({
-    Key? key,
+    super.key,
     this.onLoad,
     this.showLoadingText = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

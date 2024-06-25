@@ -10,14 +10,14 @@ class OrdinaryButton extends StatelessWidget implements ButtonFactory {
   final Color? textColor;
 
   const OrdinaryButton({
-    Key? key,
+    super.key,
     required this.text,
     this.onPressed,
     this.loading,
     this.fit,
     this.backgroundColor,
     this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

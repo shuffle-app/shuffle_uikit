@@ -15,13 +15,13 @@ class UiKitSpinner extends StatefulWidget {
   final ValueChanged<DateTimeRange?>? onDateRangeChanged;
 
   const UiKitSpinner({
-    Key? key,
+    super.key,
     required this.scrollController,
     required this.pagingController,
     this.onSpinChangedCategory,
     this.filterDate,
     this.onDateRangeChanged,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitSpinner> createState() => _UiKitSpinnerState();
@@ -187,7 +187,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                 pagingController: widget.pagingController,
                 scrollController: widget.scrollController,
                 physics: _spinningType == SpinningType.categories
-                    ? const PageScrollPhysics()
+                    ? const PageScrollPhysics(parent: BouncingScrollPhysics())
                     : const NeverScrollableScrollPhysics(),
                 itemBuilder: (_, item, index) => SizedBox(
                   width: 1.sw,

@@ -12,7 +12,7 @@ class SmallOutlinedButtonWithIconAndText extends StatelessWidget implements Butt
   final ButtonFit? fit;
 
   const SmallOutlinedButtonWithIconAndText({
-    Key? key,
+    super.key,
     this.text,
     this.onPressed,
     this.borderColor,
@@ -21,7 +21,7 @@ class SmallOutlinedButtonWithIconAndText extends StatelessWidget implements Butt
     this.iconInfo,
     this.loading,
     this.fit,
-  }) : super(key: key);
+  });
 
   bool get textIsEmpty => text?.isEmpty ?? true;
 

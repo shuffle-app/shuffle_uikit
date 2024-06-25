@@ -7,10 +7,10 @@ class UiKitShimmerProgressIndicator extends StatelessWidget {
   final Gradient gradient;
 
   const UiKitShimmerProgressIndicator({
-    Key? key,
+    super.key,
     required this.child,
     required this.gradient,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

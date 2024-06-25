@@ -18,7 +18,7 @@ class InfluencerPublicProfileCardBody extends StatelessWidget {
   final bool? following;
 
   const InfluencerPublicProfileCardBody({
-    Key? key,
+    super.key,
     this.name,
     this.nickname,
     this.description,
@@ -32,13 +32,12 @@ class InfluencerPublicProfileCardBody extends StatelessWidget {
     this.followers = 0,
     this.onFollow,
     this.following,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final boldTextTheme = theme?.boldTextTheme;
-    final regularTextTheme = theme?.regularTextTheme;
     final colorScheme = theme?.colorScheme;
 
     return UiKitCardWrapper(
@@ -100,7 +99,7 @@ class InfluencerPublicProfileCardBody extends StatelessWidget {
                     right:
                         index != socialLinks!.length - 1 ? EdgeInsetsFoundation.horizontal8 : EdgeInsetsFoundation.zero,
                   );
-                }).toList(),
+                }),
             ],
           ),
           SpacingFoundation.verticalSpace16,

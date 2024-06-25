@@ -1,5 +1,6 @@
 /// This file exports all the founding elements of UI
 /// such as spacings, colors, typography, paddings and etc.
+library;
 
 export '../themes/themes.dart';
 export '../themes/ui_kit_theme.dart';

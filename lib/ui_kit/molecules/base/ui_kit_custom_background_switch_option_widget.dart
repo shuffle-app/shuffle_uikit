@@ -5,9 +5,9 @@ class UiKitCustomBackgroundSwitchOptionWidget extends StatelessWidget {
   final CustomBackgroundSwitchOption option;
 
   const UiKitCustomBackgroundSwitchOptionWidget({
-    Key? key,
+    super.key,
     required this.option,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

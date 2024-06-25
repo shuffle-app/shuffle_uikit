@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class RotatableWidget extends StatefulWidget {
   const RotatableWidget({
-    Key? key,
+    super.key,
     required this.child,
     this.startDelay,
     this.animDuration = const Duration(milliseconds: 1600),
@@ -12,7 +12,7 @@ class RotatableWidget extends StatefulWidget {
     this.endAngle = math.pi * 360 / 180,
     this.applyReverseOnEnd = true,
     this.alignment = Alignment.centerLeft,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final Alignment alignment;

@@ -12,7 +12,7 @@ class UiKitIconedBlurMessageCard extends StatelessWidget {
   final CrossAxisAlignment? crossAxisAlignment;
 
   UiKitIconedBlurMessageCard({
-    Key? key,
+    super.key,
     required this.message,
     required this.icon,
     this.blurValue,
@@ -21,7 +21,7 @@ class UiKitIconedBlurMessageCard extends StatelessWidget {
     this.crossAxisAlignment,
     this.orientation = Axis.horizontal,
     this.iconColor,
-  }) : super(key: key);
+  });
 
   late final children = [
     Stack(

@@ -7,11 +7,11 @@ class CircularAvatar extends StatelessWidget {
   final String? name;
 
   const CircularAvatar({
-    Key? key,
+    super.key,
     required this.avatarUrl,
     this.height,
     this.name,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

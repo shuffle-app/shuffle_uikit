@@ -10,14 +10,14 @@ class UiKitMessageCardWithIcon extends StatelessWidget {
   final MessageCardType type;
 
   const UiKitMessageCardWithIcon({
-    Key? key,
+    super.key,
     required this.message,
     this.icon,
     this.iconLink,
     this.onPressed,
     required this.layoutDirection,
     this.type = MessageCardType.narrow,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

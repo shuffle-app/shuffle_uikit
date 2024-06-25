@@ -7,11 +7,11 @@ class UiKitLightUpAnimation extends StatefulWidget {
   final VoidCallback? onStarted;
 
   const UiKitLightUpAnimation({
-    Key? key,
+    super.key,
     required this.child,
     this.onFinished,
     this.onStarted,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitLightUpAnimation> createState() => _UiKitLightUpAnimationState();

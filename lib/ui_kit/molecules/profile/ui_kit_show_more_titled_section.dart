@@ -8,12 +8,12 @@ class UiKitShowMoreTitledSection extends StatelessWidget {
   final bool? underService;
 
   const UiKitShowMoreTitledSection({
-    Key? key,
+    super.key,
     required this.title,
     required this.content,
     this.onShowMore,
     this.underService = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

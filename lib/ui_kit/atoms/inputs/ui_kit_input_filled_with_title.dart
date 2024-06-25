@@ -19,7 +19,6 @@ class UiKitInputFilledWithTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final boldTextTheme = theme?.boldTextTheme;
     final regularTextTheme = theme?.regularTextTheme;
     final colorScheme = theme?.colorScheme;
 

@@ -8,12 +8,12 @@ class UiKitBorderedChipWithIcon extends StatelessWidget {
   final bool isSelected;
 
   const UiKitBorderedChipWithIcon({
-    Key? key,
+    super.key,
     required this.title,
     required this.icon,
     this.onPressed,
     this.isSelected = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

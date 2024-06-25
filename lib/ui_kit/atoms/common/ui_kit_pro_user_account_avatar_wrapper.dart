@@ -10,12 +10,12 @@ class UiKitProUserAccountAvatarWrapper extends StatelessWidget {
   final BorderRadius? borderRadius;
 
   const UiKitProUserAccountAvatarWrapper._({
-    Key? key,
+    super.key,
     required this.disabled,
     required this.child,
     required this.borderWidth,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   factory UiKitProUserAccountAvatarWrapper.enabled({
     Key? key,

@@ -13,14 +13,14 @@ class UiKitPhotoSlider extends StatefulWidget {
   final List<Widget>? actions;
 
   const UiKitPhotoSlider({
-    Key? key,
+    super.key,
     required this.media,
     required this.width,
     this.initialIndex = 0,
     this.maxShowImage = 3,
     this.onTap,
     this.actions,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitPhotoSlider> createState() => _UiKitPhotoSliderState();

@@ -9,12 +9,12 @@ class UiKitGradientableStatsCard extends StatelessWidget {
   final AutoSizeGroup? autoSizeGroup;
 
   const UiKitGradientableStatsCard({
-    Key? key,
+    super.key,
     required this.stats,
     required this.gradient,
     this.maxLines,
     this.autoSizeGroup,
-  }) : super(key: key);
+  });
 
   double get height {
     if (1.sw <= 375) return 0.175.sh;

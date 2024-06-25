@@ -11,14 +11,13 @@ class OutlinedBlurIconButton extends StatelessWidget implements ButtonFactory {
   final double blurValue;
 
   const OutlinedBlurIconButton({
-    Key? key,
+    super.key,
     this.onPressed,
     required this.icon,
     this.loading,
     this.iconInfo,
     this.blurValue = 18,
-  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
-        super(key: key);
+  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided');
 
   @override
   Widget build(BuildContext context) {

@@ -21,7 +21,7 @@ class BlackDialogButton extends StatelessWidget implements ButtonFactory {
 
     return ElevatedButton(
       style: ButtonStyle(
-        fixedSize: MaterialStateProperty.resolveWith((states) {
+        fixedSize: WidgetStateProperty.resolveWith((states) {
           double? width;
           if (fit == ButtonFit.fitWidth) width = double.infinity;
           Size size = const Size.fromHeight(48);
@@ -31,16 +31,16 @@ class BlackDialogButton extends StatelessWidget implements ButtonFactory {
 
           return size;
         }),
-        backgroundColor: MaterialStateProperty.resolveWith((states) {
-          return states.contains(MaterialState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.black;
+        backgroundColor: WidgetStateProperty.resolveWith((states) {
+          return states.contains(WidgetState.disabled) ? ColorsFoundation.darkNeutral300 : Colors.black;
         }),
-        shape: MaterialStateProperty.resolveWith(
+        shape: WidgetStateProperty.resolveWith(
           (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.all24),
         ),
-        overlayColor: MaterialStateProperty.resolveWith((states) {
+        overlayColor: WidgetStateProperty.resolveWith((states) {
           return ColorsFoundation.darkNeutral900;
         }),
-        foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
+        foregroundColor: WidgetStateProperty.resolveWith((states) => Colors.white),
         splashFactory: InkSplash.splashFactory,
       ),
       onPressed: onPressed,

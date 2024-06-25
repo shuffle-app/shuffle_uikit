@@ -10,14 +10,14 @@ class UiKitColoredAccentBlock extends StatelessWidget {
   final Widget? action;
 
   const UiKitColoredAccentBlock({
-    Key? key,
+    super.key,
     required this.contentHeight,
     required this.title,
     this.content,
     this.color,
     this.action,
     this.titlePadding,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

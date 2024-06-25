@@ -8,11 +8,11 @@ class UiKitExtendedInfluencerFeedbackCardWithoutBottom extends StatelessWidget {
   final List<UiKitTag>? tags;
 
   const UiKitExtendedInfluencerFeedbackCardWithoutBottom({
-    Key? key,
+    super.key,
     this.title,
     this.imageUrl,
     this.tags,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

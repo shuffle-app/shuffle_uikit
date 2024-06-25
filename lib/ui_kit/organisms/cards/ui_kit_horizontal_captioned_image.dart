@@ -9,12 +9,12 @@ class UiKitHorizontalCaptionedImage extends StatelessWidget {
   final VoidCallback? onTap;
 
   const UiKitHorizontalCaptionedImage({
-    Key? key,
+    super.key,
     required this.title,
     required this.imageLink,
     required this.borderRadius,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

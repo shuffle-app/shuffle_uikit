@@ -10,12 +10,12 @@ class UiKitRespectEventCard extends StatelessWidget {
   final List<UiKitTag> properties;
 
   const UiKitRespectEventCard({
-    Key? key,
+    super.key,
     required this.images,
     required this.title,
     required this.respectFromUsers,
     required this.properties,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -60,9 +60,9 @@ class UiKitUsersRespectCard extends StatelessWidget {
   final List<RespectFromUser> users;
 
   const UiKitUsersRespectCard({
-    Key? key,
+    super.key,
     required this.users,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +124,7 @@ class UiKitUsersRespectCard extends StatelessWidget {
                     imageUrl: e.avatarUrl,
                   ),
                 );
-              }).toList(),
+              }),
             if (users.length >= 4)
               ...users.sublist(0, 3).map((e) {
                 final leftOffset = users.indexOf(e) * (0.0625.sw * 0.6);
@@ -137,7 +137,7 @@ class UiKitUsersRespectCard extends StatelessWidget {
                     imageUrl: e.avatarUrl,
                   ),
                 );
-              }).toList(),
+              }),
             if (users.length >= 4)
               Positioned(
                 left: 0.0625.sw * 0.6 * 3,

@@ -37,10 +37,12 @@ class UiKitHeaderWithLeading extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(children: [
-                Text(
+                Flexible(
+                    child: Text(
                   title,
-                  style: titleStyle ?? textTheme?.caption1Bold,
-                ),
+                  style: (titleStyle ?? textTheme?.caption1Bold)?.copyWith(overflow: TextOverflow.ellipsis),
+                  maxLines: 1,
+                )),
                 if (titleIcon != null) ...[SpacingFoundation.horizontalSpace12, titleIcon!]
               ]),
               Text(

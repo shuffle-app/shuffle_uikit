@@ -564,6 +564,10 @@
   "News": "Новости",
   "YouWillReceiveNewTools": "Вы получите новые инструменты",
   "YourNewTools": "Теперь вам доступны инструменты",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "Чтобы открыть следующий набор инструментов, вам нужно сделать",
+  "Icons": "Иконки",
+  "RelatedProperties": "Связанные свойства",
+  "SearchProperty": "Поиск свойств",
   "MyReactions": "Мои реакции",
   "MyFeedback": "Мои отзывы",
   "NoFeedbacksYet": "Посещайте места и события в Shuffle и делитесь впечатлениями",
@@ -594,7 +598,6 @@
   "ShowTheBarcode": "Показывайте штрих-код при оплате",
   "OfferSuccessfullyActivated": "Предложение успешно активировано",
   "SpentMyPoints": "Потратил мои баллы",
-  "ToOpenTheNextSetOfToolsYouNeedToDo": "Чтобы открыть следующий набор инструментов, вам нужно сделать",
   "Icon": "Иконка",
   "Info": "Информация",
   "VideoReactions": "Видео-реакции",
@@ -608,5 +611,15 @@
   "GoAheadAndGrowYourBusiness": "Продолжайте и расти ваш бизнес",
   "AboutUs": "о нас",
   "OpenNow": "Открыть сейчас",
-  "SpendIt": "Потратить"
+  "SpendIt": "Потратить",
+  "AddCategory": "Добавить категорию",
+  "AddPlaceType": "Добавить тип места",
+  "AddProperty": "Добавить свойство",
+  "FeedFavoritesHiwItems": "{item, plural, =0{Зажми и перетяни карточку} =1{Создай стопку и назови} =2{Выстраивай порядок стопок} few{Поделись стопкой} other{другое}}",
+  "ConvenientClearAndUseful": "Удобно, чётко и полезно",
+  "StacksAreOn": "Для пользователей",
+  "StacksAndSomethingElseAreAvailableForYou": "Для вас доступны стопки и кое-что еще..."
+
+
 }
+

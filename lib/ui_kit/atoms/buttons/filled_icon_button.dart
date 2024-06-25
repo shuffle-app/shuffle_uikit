@@ -7,12 +7,11 @@ class FilledIconButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
 
   const FilledIconButton({
-    Key? key,
+    super.key,
     this.icon,
     this.iconInfo,
     this.onPressed,
-  })  : assert(icon != null || iconInfo != null, 'Either icon or iconInfo must be provided'),
-        super(key: key);
+  })  : assert(icon != null || iconInfo != null, 'Either icon or iconInfo must be provided');
 
   @override
   Widget build(BuildContext context) {

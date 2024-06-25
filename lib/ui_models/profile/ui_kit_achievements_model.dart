@@ -1,4 +1,3 @@
-import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitAchievementsModel {
   final String title;

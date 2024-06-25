@@ -9,11 +9,11 @@ class BlurredCardWithBorder extends StatelessWidget {
   final double? height;
 
   const BlurredCardWithBorder({
-    Key? key,
+    super.key,
     required this.child,
     this.border,
     this.height,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

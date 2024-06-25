@@ -562,6 +562,10 @@
   "News": "News",
   "YouWillReceiveNewTools": "You will receive new tools",
   "YourNewTools": "Your new tools",
+  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
+  "Icons": "Icons",
+  "RelatedProperties": "Related properties",
+  "SearchProperty": "Search property",
   "MyReactions": "My reactions",
   "MyFeedback": "My feedback",
   "NoFeedbacksYet": "Visit places and events in Shuffle and share your impressions",
@@ -585,7 +589,6 @@
   "NoReviewsMessage": "Be the first to review",
   "ReviewsByCritics": "Reviews by critics",
   "NoReactionsMessage": "There are no reactions yet, be the first",
-  "ToOpenTheNextSetOfToolsYouNeedToDo": "To open the next set of tools you need to do",
   "Icon": "Icon",
   "InstructionsToEnableHealthKit": "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there",
   "CantSeePublicProfileMessage": "You can view this profile once it becomes an influencer",
@@ -610,6 +613,14 @@
   "CantSeePublicProfileMessage": "You can view this profile once it becomes an influencer",
   "Categories": "Categories",
   "Entertainment": "Entertainment",
-  "RelatedPersonalProperties": "Related personal properties"
+  "RelatedPersonalProperties": "Related personal properties",
+  "AddCategory": "Add category",
+  "AddProperty": "Add property",
+  "AddPlaceType": "Add place type",
+  "FeedFavoritesHiwItems": "{item, plural, =0{drag & and drop cards} =1{create and name stack} =2{line up stacks order} few{share your stacks} other{other}}",
+  "ConvenientClearAndUseful": "сonvenient, clear and useful",
+  "StacksAreOn": "Stacks are on",
+  "StacksAndSomethingElseAreAvailableForYou": "Stacks and something else are available for you..."
+
 
 }

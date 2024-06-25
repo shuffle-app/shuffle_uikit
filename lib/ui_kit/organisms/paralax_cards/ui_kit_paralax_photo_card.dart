@@ -12,12 +12,12 @@ class UiKitParalaxPhotoCard extends StatefulWidget {
   final String? backImage;
 
   const UiKitParalaxPhotoCard({
-    Key? key,
+    super.key,
     this.frontImage,
     this.upperMiddleImage,
     this.backImage,
     this.lowerMiddleImage,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitParalaxPhotoCard> createState() => _UiKitParalaxPhotoCardState();
@@ -41,9 +41,9 @@ class _UiKitParalaxPhotoCardState extends State<UiKitParalaxPhotoCard> {
 
   void _accelerometerListener(UserAccelerometerEvent event) {
     if (initialEvent == null) {
-      print('updating initial event');
+      debugPrint('updating initial event');
       setState(() => initialEvent = event);
-      print('updated initial event: $initialEvent');
+      debugPrint('updated initial event: $initialEvent');
     }
     double x = event.x;
     double y = event.y;
@@ -57,7 +57,6 @@ class _UiKitParalaxPhotoCardState extends State<UiKitParalaxPhotoCard> {
         position: Offset(x, y),
       ),
     );
-    print(event);
   }
 
   @override
@@ -99,16 +98,16 @@ class _UiKitParalaxPhotoCardState extends State<UiKitParalaxPhotoCard> {
                   ),
               ],
             ),
-            lightConfig: LightConfig(disable: true),
-            shadowConfig: ShadowConfig(disable: true),
-            tiltConfig: TiltConfig(
+            lightConfig: const LightConfig(disable: true),
+            shadowConfig: const ShadowConfig(disable: true),
+            tiltConfig: const TiltConfig(
               sensorFactor: 25,
               enableRevert: false,
               enableSensorRevert: false,
               enableReverse: false,
               angle: 10,
             ),
-            child: Container(
+            child: SizedBox(
               height: 0.8.sh,
               width: 1.sw,
             ),

@@ -13,7 +13,6 @@ class AdsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
-    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
 
     return Scaffold(
       body: SingleChildScrollView(

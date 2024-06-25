@@ -7,15 +7,12 @@ class AdditionalActionNotificationPopUp extends BaseNotificationPopup {
   final Widget? dismissActionWidget;
 
   const AdditionalActionNotificationPopUp({
-    Key? key,
-    required NotificationPopupRequiredData requiredData,
+    super.key,
+    required super.requiredData,
     this.primaryActionWidget,
     this.secondaryActionWidget,
     this.dismissActionWidget,
-  }) : super(
-          key: key,
-          requiredData: requiredData,
-        );
+  });
 
   @override
   Widget build(BuildContext context) {

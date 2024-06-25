@@ -8,12 +8,12 @@ class WideVerticalMessageCard extends StatelessWidget {
   final String? iconLink;
 
   const WideVerticalMessageCard({
-    Key? key,
+    super.key,
     required this.message,
     this.iconData,
     this.iconLink,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   double get width => 0.375.sw;
 
