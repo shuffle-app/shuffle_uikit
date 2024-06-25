@@ -6088,12 +6088,6 @@ class S {
     return Intl.message(
       'Info',
       name: 'Info',
-      
-  /// `You can view this profile once it becomes an influencer`
-  String get CantSeePublicProfileMessage {
-    return Intl.message(
-      'You can view this profile once it becomes an influencer',
-      name: 'CantSeePublicProfileMessage',
       desc: '',
       args: [],
     );
@@ -6134,8 +6128,22 @@ class S {
     return Intl.message(
       'Collapse thread',
       name: 'CollapseThread',
+      desc: '',
+      args: [],
+    );
+  }
 
-      /// `To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there`
+  /// `You can view this profile once it becomes an influencer`
+  String get CantSeePublicProfileMessage {
+    return Intl.message(
+      'You can view this profile once it becomes an influencer',
+      name: 'CantSeePublicProfileMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there`
   String get InstructionsToEnableHealthKit {
     return Intl.message(
       'To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there',
