@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class SmallTextAdBanner3 extends StatelessWidget {
-  const SmallTextAdBanner3({Key? key}) : super(key: key);
+  const SmallTextAdBanner3({super.key});
 
   @override
   Widget build(BuildContext context) {

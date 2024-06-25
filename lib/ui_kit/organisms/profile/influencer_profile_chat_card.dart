@@ -14,7 +14,7 @@ class UiKitInfluencerProfileChatCard extends StatelessWidget {
   final String? chatContentStartMessage;
 
   const UiKitInfluencerProfileChatCard({
-    Key? key,
+    super.key,
     this.chatCover,
     this.chatLastMessage,
     this.newCommentsCount,
@@ -25,7 +25,7 @@ class UiKitInfluencerProfileChatCard extends StatelessWidget {
     this.chatContentSubtitle,
     this.chatContentImage,
     this.chatContentStartMessage,
-  }) : super(key: key);
+  });
 
   double get chatCoverWidth => 0.8.sw;
 

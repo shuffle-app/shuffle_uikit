@@ -8,13 +8,15 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
   const $AssetsAnimationsGen();
 
+  /// Directory path: assets/animations/lottie
   $AssetsAnimationsLottieGen get lottie => const $AssetsAnimationsLottieGen();
 }
 
@@ -53,7 +55,10 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// Directory path: assets/images/png
   $AssetsImagesPngGen get png => const $AssetsImagesPngGen();
+
+  /// Directory path: assets/images/svg
   $AssetsImagesSvgGen get svg => const $AssetsImagesSvgGen();
 }
 
@@ -150,6 +155,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Company.png
   AssetGenImage get company => const AssetGenImage('assets/images/png/Company.png');
 
+  /// File path: assets/images/png/Create-name.png
+  AssetGenImage get createName => const AssetGenImage('assets/images/png/Create-name.png');
+
   /// File path: assets/images/png/Dart.png
   AssetGenImage get dart => const AssetGenImage('assets/images/png/Dart.png');
 
@@ -161,6 +169,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Donations.png
   AssetGenImage get donations => const AssetGenImage('assets/images/png/Donations.png');
+
+  /// File path: assets/images/png/Drag-card.png
+  AssetGenImage get dragCard => const AssetGenImage('assets/images/png/Drag-card.png');
 
   /// File path: assets/images/png/Events.png
   AssetGenImage get events => const AssetGenImage('assets/images/png/Events.png');
@@ -270,6 +281,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Ok-hands.png
   AssetGenImage get okHands => const AssetGenImage('assets/images/png/Ok-hands.png');
 
+  /// File path: assets/images/png/Order-stack.png
+  AssetGenImage get orderStack => const AssetGenImage('assets/images/png/Order-stack.png');
+
   /// File path: assets/images/png/Other-gender.png
   AssetGenImage get otherGender => const AssetGenImage('assets/images/png/Other-gender.png');
 
@@ -326,6 +340,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Select-niche.png
   AssetGenImage get selectNiche => const AssetGenImage('assets/images/png/Select-niche.png');
+
+  /// File path: assets/images/png/Share-stack.png
+  AssetGenImage get shareStack => const AssetGenImage('assets/images/png/Share-stack.png');
 
   /// File path: assets/images/png/Shuffle-any.png
   AssetGenImage get shuffleAny => const AssetGenImage('assets/images/png/Shuffle-any.png');
@@ -399,6 +416,7 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
+  /// Directory path: assets/images/png/avatars
   $AssetsImagesPngAvatarsGen get avatars => const $AssetsImagesPngAvatarsGen();
 
   /// File path: assets/images/png/balloons.png
@@ -664,6 +682,7 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
 
+  /// Directory path: assets/images/png/preference_questions
   $AssetsImagesPngPreferenceQuestionsGen get preferenceQuestions => const $AssetsImagesPngPreferenceQuestionsGen();
 
   /// File path: assets/images/png/production.png
@@ -832,10 +851,12 @@ class $AssetsImagesPngGen {
         coin,
         companions,
         company,
+        createName,
         dart,
         discount,
         doctor,
         donations,
+        dragCard,
         events,
         feedback,
         female,
@@ -872,6 +893,7 @@ class $AssetsImagesPngGen {
         networking,
         noPhoto,
         okHands,
+        orderStack,
         otherGender,
         outstanding,
         pieChart,
@@ -891,6 +913,7 @@ class $AssetsImagesPngGen {
         rockNRollHands,
         rocket,
         selectNiche,
+        shareStack,
         shuffleAny,
         ski,
         smileMood,
@@ -2539,9 +2562,11 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(this._assetName, {this.size = null});
 
   final String _assetName;
+
+  final Size? size;
 
   Image image({
     Key? key,
@@ -2613,9 +2638,20 @@ class AssetGenImage {
 }
 
 class SvgGenImage {
-  const SvgGenImage(this._assetName);
+  const SvgGenImage(
+    this._assetName, {
+    this.size = null,
+  }) : _isVecFormat = false;
+
+  const SvgGenImage.vec(
+    this._assetName, {
+    this.size = null,
+  }) : _isVecFormat = true;
 
   final String _assetName;
+
+  final Size? size;
+  final bool _isVecFormat;
 
   SvgPicture svg({
     Key? key,
@@ -2630,19 +2666,19 @@ class SvgGenImage {
     WidgetBuilder? placeholderBuilder,
     String? semanticsLabel,
     bool excludeFromSemantics = false,
-    SvgTheme theme = const SvgTheme(),
+    SvgTheme? theme,
     ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
     @deprecated bool cacheColorFilter = false,
   }) {
-    return SvgPicture.asset(
-      _assetName,
+    return SvgPicture(
+      _isVecFormat
+          ? AssetBytesLoader(_assetName, assetBundle: bundle, packageName: package)
+          : SvgAssetLoader(_assetName, assetBundle: bundle, packageName: package),
       key: key,
       matchTextDirection: matchTextDirection,
-      bundle: bundle,
-      package: package,
       width: width,
       height: height,
       fit: fit,
@@ -2652,9 +2688,7 @@ class SvgGenImage {
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
       theme: theme,
-      colorFilter: colorFilter,
-      color: color,
-      colorBlendMode: colorBlendMode,
+      colorFilter: colorFilter ?? (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );

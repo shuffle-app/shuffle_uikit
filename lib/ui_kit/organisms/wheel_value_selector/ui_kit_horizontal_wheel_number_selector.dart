@@ -12,7 +12,7 @@ class UiKitHorizontalWheelNumberSelector extends StatefulWidget {
   final bool hideTitle;
 
   const UiKitHorizontalWheelNumberSelector({
-    Key? key,
+    super.key,
     required this.values,
     this.title = '',
     this.onValueChanged,
@@ -20,8 +20,7 @@ class UiKitHorizontalWheelNumberSelector extends StatefulWidget {
     this.numbersColor,
     int? initialValue,
     this.hideTitle = false,
-  })  : initialValue = initialValue ?? 8,
-        super(key: key);
+  })  : initialValue = initialValue ?? 8;
 
   @override
   State<UiKitHorizontalWheelNumberSelector> createState() => _UiKitHorizontalWheelNumberSelectorState();

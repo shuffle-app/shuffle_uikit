@@ -16,7 +16,6 @@ class UiKitSocialSearchContentTypeCard extends StatelessWidget {
   final Color color;
 
   const UiKitSocialSearchContentTypeCard._({
-    Key? key,
     required this.title,
     required this.color,
     this.iconRingColor,
@@ -24,7 +23,7 @@ class UiKitSocialSearchContentTypeCard extends StatelessWidget {
     this.onTap,
     this.customCardWidth,
     required this.type,
-  }) : super(key: key);
+  });
 
   factory UiKitSocialSearchContentTypeCard.places({
     required BaseUiKitButtonIconData iconData,

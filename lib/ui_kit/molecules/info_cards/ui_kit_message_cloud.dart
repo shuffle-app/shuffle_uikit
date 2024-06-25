@@ -10,15 +10,14 @@ class UiKitMessageCloud extends StatelessWidget {
   final double? messagePadding;
 
   const UiKitMessageCloud({
-    Key? key,
+    super.key,
     this.messageWidget,
     this.message,
     this.subtitle,
     this.messageTextStyle,
     this.subtitleTextStyle,
     this.messagePadding,
-  })  : assert(messageWidget != null || message != null, 'messageWidget or message must be provided'),
-        super(key: key);
+  })  : assert(messageWidget != null || message != null, 'messageWidget or message must be provided');
 
   @override
   Widget build(BuildContext context) {

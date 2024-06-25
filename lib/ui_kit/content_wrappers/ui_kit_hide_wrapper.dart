@@ -5,10 +5,10 @@ class UiKitHideWrapper extends StatelessWidget {
   final Widget child;
 
   const UiKitHideWrapper({
-    Key? key,
+    super.key,
     required this.shouldHide,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

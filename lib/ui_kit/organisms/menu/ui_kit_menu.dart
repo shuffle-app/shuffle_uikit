@@ -19,7 +19,7 @@ class UiKitMenu<T> extends StatelessWidget {
   final double? menuSheetHorizontalPadding;
 
   const UiKitMenu({
-    Key? key,
+    super.key,
     required this.title,
     this.onSelected,
     required this.items,
@@ -31,7 +31,7 @@ class UiKitMenu<T> extends StatelessWidget {
     this.showBorder = true,
     this.useCustomTiles = false,
     this.menuSheetHorizontalPadding,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

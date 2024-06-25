@@ -8,14 +8,13 @@ class BoxIconButton extends StatelessWidget implements ButtonFactory {
   final Color? backgroundColor;
 
   const BoxIconButton({
-    Key? key,
+    super.key,
     this.icon,
     this.iconInfo,
     this.onPressed,
     this.backgroundColor,
   })  : assert(iconInfo != null || icon != null,
-            'Either iconInfo or icon must be provided'),
-        super(key: key);
+            'Either iconInfo or icon must be provided');
 
   @override
   Widget build(BuildContext context) {

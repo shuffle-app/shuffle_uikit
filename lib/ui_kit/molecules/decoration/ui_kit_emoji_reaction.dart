@@ -6,10 +6,10 @@ class UiKitEmojiReaction extends StatelessWidget {
   final int reactionsCount;
 
   const UiKitEmojiReaction({
-    Key? key,
+    super.key,
     required this.iconPath,
     required this.reactionsCount,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -9,14 +9,13 @@ class BadgeIconButton extends StatelessWidget implements ButtonFactory {
   final Alignment? alignment;
 
   const BadgeIconButton({
-    Key? key,
+    super.key,
     this.icon,
     this.iconInfo,
     this.onPressed,
     this.badgeValue,
     this.alignment,
-  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
-        super(key: key);
+  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided');
 
   @override
   Widget build(BuildContext context) {

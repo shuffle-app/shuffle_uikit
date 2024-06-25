@@ -13,7 +13,7 @@ class UiKitMediumTextAdBannerCard extends StatelessWidget implements Advertiseme
   final Widget? decoration;
 
   const UiKitMediumTextAdBannerCard({
-    Key? key,
+    super.key,
     required this.availableWidth,
     required this.imageLink,
     required this.textWidget,
@@ -23,7 +23,7 @@ class UiKitMediumTextAdBannerCard extends StatelessWidget implements Advertiseme
     this.onTap,
     this.textOffset,
     this.customHeight,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

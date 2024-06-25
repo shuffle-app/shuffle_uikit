@@ -6,14 +6,11 @@ class OrdinaryNotificationPopUp extends BaseNotificationPopup {
   final Widget? dismissActionWidget;
 
   const OrdinaryNotificationPopUp({
-    Key? key,
-    required NotificationPopupRequiredData requiredData,
+    super.key,
+    required super.requiredData,
     this.dismissActionWidget,
     this.primaryActionWidget,
-  }) : super(
-          key: key,
-          requiredData: requiredData,
-        );
+  });
 
   @override
   Widget build(BuildContext context) {

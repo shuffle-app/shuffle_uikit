@@ -11,7 +11,7 @@ class UiKitPhotoSliderWithReactions extends StatelessWidget {
   final int? smileyReactions;
 
   const UiKitPhotoSliderWithReactions({
-    Key? key,
+    super.key,
     required this.title,
     required this.photos,
     this.hearEyesReactions,
@@ -19,7 +19,7 @@ class UiKitPhotoSliderWithReactions extends StatelessWidget {
     this.sunglassesReactions,
     this.fireReactions,
     this.smileyReactions,
-  }) : super(key: key);
+  });
 
   double get imageWidth => 0.75.sw;
 
@@ -35,7 +35,6 @@ class UiKitPhotoSliderWithReactions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
-    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
 
     return Column(
       mainAxisSize: MainAxisSize.min,

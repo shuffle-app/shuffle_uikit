@@ -11,13 +11,13 @@ class UiKitMockAudioWave extends StatefulWidget {
   final bool? scrollable;
 
   const UiKitMockAudioWave({
-    Key? key,
+    super.key,
     required this.itemCount,
     this.color,
     this.spacing,
     this.availableWidth,
     this.scrollable,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitMockAudioWave> createState() => _UiKitMockAudioWaveState();

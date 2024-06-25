@@ -94,7 +94,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
-    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
     final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return BlurredAppBarPage(
@@ -132,7 +131,24 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
-       const UiKitVoiceListenCard(
+        UiKitChatInCard(
+          id: 1,
+          timeOfDay: DateTime.now(),
+          onReplyMessage: (value) {},
+          text:
+          'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitChatOutCard(
+          sentByMe: true,
+          timeOfDay: DateTime.now(),
+          id: 2,
+          onReplyMessage: (value) {},
+          text:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        ),
+        SpacingFoundation.verticalSpace16,
+        const UiKitVoiceListenCard(
           duration: Duration(seconds: 70),
         ),
         SpacingFoundation.verticalSpace16,
@@ -153,7 +169,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         PlaceIconSelector(
           onPressed: () {},
-          onIconTap: (value){},
+          onIconTap: (value) {},
           listIconData: List.generate(
             20,
             (index) => GraphicsFoundation.instance.png.company.path,
@@ -164,8 +180,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           decoration: BoxDecoration(
             color: context.uiKitTheme?.colorScheme.surface2,
           ),
-          child:  UiKitIconedTitle(
-                  icon: GraphicsFoundation.instance.png.company.path, title: 'Diamond')
+          child: UiKitIconedTitle(
+                  icon: GraphicsFoundation.instance.png.company.path,
+                  title: 'Diamond')
               .paddingAll(EdgeInsetsFoundation.all16),
         ),
         SpacingFoundation.verticalSpace16,
@@ -219,7 +236,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 title: 'Smoke',
                 onTap: () {},
                 isSelectable: true,
-                iconPath:  GraphicsFoundation.instance.png.company.path,
+                iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Drink',
@@ -249,7 +266,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 title: 'Relax',
                 onTap: () {},
                 isSelectable: true,
-                iconPath:  GraphicsFoundation.instance.png.company.path,
+                iconPath: GraphicsFoundation.instance.png.company.path,
               ),
             ],
           ).paddingAll(EdgeInsetsFoundation.all24),
@@ -932,19 +949,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             size: AdvertisementBannerSize.large,
           ),
         ),
-        SpacingFoundation.verticalSpace16,
-        UiKitChatInCard(
-          timeOfDay: DateTime.now(),
-          text:
-              'Any plans for the weekend? What about to get a company and go to atmosphere again?',
-        ),
-        SpacingFoundation.verticalSpace16,
-        UiKitChatOutCard(
-          sentByMe: true,
-          timeOfDay: DateTime.now(),
-          text:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        ),
+
         SpacingFoundation.verticalSpace16,
         UiKitUserTileWithCheckbox(
           name: 'Marry Williams',
@@ -957,6 +962,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12),
         SpacingFoundation.verticalSpace16,
         UiKitChatOutCard(
+          id: 3,
           sentByMe: true,
           timeOfDay: DateTime.now(),
           child: UiKitInviteMessageContent(

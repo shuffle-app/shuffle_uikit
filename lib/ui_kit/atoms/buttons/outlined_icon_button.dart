@@ -12,14 +12,14 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
   final Color? borderColor;
 
   const OutlinedIconButton({
-    Key? key,
+    super.key,
     this.icon,
     this.onPressed,
     this.loading,
     this.borderColor,
     this.iconInfo,
     this.hideBorder = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

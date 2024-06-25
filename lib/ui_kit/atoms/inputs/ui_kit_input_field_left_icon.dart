@@ -3,14 +3,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInputFieldLeftIcon extends StatefulWidget implements BaseUiKitInputField {
   const UiKitInputFieldLeftIcon({
-    Key? key,
+    super.key,
     required this.controller,
     this.errorText,
     this.hintText,
     this.validator,
     this.enabled = true,
     this.obscureText = false,
-  }) : super(key: key);
+  });
 
   @override
   final TextEditingController controller;

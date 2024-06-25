@@ -5,7 +5,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitInputFieldNoFill extends StatefulWidget
     implements BaseUiKitInputField {
   const UiKitInputFieldNoFill({
-    Key? key,
+    super.key,
     required this.controller,
     this.errorText,
     this.inputFormatters,
@@ -32,7 +32,7 @@ class UiKitInputFieldNoFill extends StatefulWidget
     this.minLines,
     this.readOnly = false,
     required this.label,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextInputType? keyboardType;
@@ -143,10 +143,10 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
           contentPadding: widget.contentPadding,
           floatingLabelBehavior: FloatingLabelBehavior.always,
           floatingLabelStyle:
-              MaterialStateTextStyle.resolveWith((states) => labelStyle!),
+              WidgetStateTextStyle.resolveWith((states) => labelStyle!),
           floatingLabelAlignment: FloatingLabelAlignment.start,
           labelStyle:
-              MaterialStateTextStyle.resolveWith((states) => labelStyle!),
+              WidgetStateTextStyle.resolveWith((states) => labelStyle!),
           hintText: widget.hintText,
           prefixStyle: inputTextStyle,
           prefixText: widget.prefixText,

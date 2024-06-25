@@ -5,9 +5,9 @@ class UiKitGradientedDecoratedButton extends StatelessWidget {
   final String? iconPath;
 
   const UiKitGradientedDecoratedButton({
-    Key? key,
+    super.key,
     this.iconPath,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

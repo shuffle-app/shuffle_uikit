@@ -11,11 +11,11 @@ class GradientBottomNavigationBarPage extends StatelessWidget {
   final GradientBottomNavigationBarController controller;
 
   const GradientBottomNavigationBarPage({
-    Key? key,
+    super.key,
     required this.tabs,
     required this.controller,
     this.onGenerateRoute,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

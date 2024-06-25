@@ -14,7 +14,7 @@ class UiKitContestCard extends StatelessWidget {
   final VoidCallback? onSeeMore;
 
   const UiKitContestCard({
-    Key? key,
+    super.key,
     required this.icon,
     required this.contestTitle,
     required this.contestDescription,
@@ -24,7 +24,7 @@ class UiKitContestCard extends StatelessWidget {
     required this.contentProperties,
     this.contentDescription,
     this.onSeeMore,
-  }) : super(key: key);
+  });
 
   double get contestIconSize => 0.1.sw;
 

@@ -9,11 +9,11 @@ class UiKitContentTypeColoredTile extends StatelessWidget {
   final IconData icon;
 
   const UiKitContentTypeColoredTile({
-    Key? key,
+    super.key,
     required this.size,
     required this.color,
     required this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

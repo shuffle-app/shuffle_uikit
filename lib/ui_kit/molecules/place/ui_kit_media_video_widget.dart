@@ -7,10 +7,10 @@ class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
   final double? width;
 
   const UiKitMediaVideoWidget({
-    Key? key,
+    super.key,
     required this.media,
     this.width,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

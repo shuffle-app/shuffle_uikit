@@ -6,9 +6,9 @@ class UiKitFotoramioViewer extends StatefulWidget {
   final List<String> photos;
 
   const UiKitFotoramioViewer({
-    Key? key,
+    super.key,
     required this.photos,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitFotoramioViewer> createState() => _UiKitFotoramioViewerState();

@@ -10,12 +10,12 @@ class UiKitHorizontalPicturesCarousel extends StatefulWidget {
   final Duration? autoPlayDuration;
 
   const UiKitHorizontalPicturesCarousel({
-    Key? key,
+    super.key,
     required this.pictureLinks,
     required this.carouselSize,
     this.autoPlay = false,
     this.autoPlayDuration,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitHorizontalPicturesCarousel> createState() => _UiKitHorizontalPicturesCarouselState();

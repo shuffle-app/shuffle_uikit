@@ -10,14 +10,14 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
   final VoidCallback? onTap;
 
   const UiKitImageWithDescriptionCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.imageUrl,
     this.tags = const [],
     this.subtitle,
     this.subtitleIcon,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

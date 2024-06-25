@@ -9,12 +9,12 @@ class UiKitTitledFilterChip extends StatelessWidget {
   final dynamic icon;
 
   const UiKitTitledFilterChip({
-    Key? key,
+    super.key,
     required this.title,
     this.selected = false,
     this.onPressed,
     required this.icon,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

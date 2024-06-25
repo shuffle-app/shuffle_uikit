@@ -5,9 +5,9 @@ class ProfileDescription extends StatelessWidget {
   final String text;
 
   const ProfileDescription({
-    Key? key,
+    super.key,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

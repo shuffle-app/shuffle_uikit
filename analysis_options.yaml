@@ -10,9 +10,9 @@ analyzer:
     invalid_annotation_target: ignore
     depend_on_referenced_packages: ignore
   plugins:
-    - dart_code_metrics
+    - dart_code_linter
 
-dart_code_metrics:
+dart_code_linter:
   anti-patterns:
     - long-method
     - long-parameter-list

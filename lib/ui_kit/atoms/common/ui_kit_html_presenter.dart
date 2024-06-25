@@ -17,7 +17,7 @@ class UiKitHtmlPresenter extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final textColor = theme?.colorScheme.inversePrimary;
-    final tableBackgroundColor = theme?.colorScheme.background;
+    final tableBackgroundColor = theme?.colorScheme.surface;
     final cellBackgroundColor = theme?.colorScheme.surface1;
     final regularTextTheme = theme?.regularTextTheme;
 

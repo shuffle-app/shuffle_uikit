@@ -6,10 +6,10 @@ class UiKitPlaceTag extends StatelessWidget {
   final Color? color;
 
   const UiKitPlaceTag({
-    Key? key,
+    super.key,
     required this.placeName,
     this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

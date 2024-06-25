@@ -90,6 +90,7 @@ class PlaceIconSelector extends StatelessWidget {
   }
 }
 
+
 class HoverableIconButton extends StatefulWidget {
   final Function() onTap;
   final String iconLink;
@@ -101,7 +102,7 @@ class HoverableIconButton extends StatefulWidget {
   });
 
   @override
-  _HoverableIconButtonState createState() => _HoverableIconButtonState();
+  State<HoverableIconButton> createState() => _HoverableIconButtonState();
 }
 
 class _HoverableIconButtonState extends State<HoverableIconButton> {

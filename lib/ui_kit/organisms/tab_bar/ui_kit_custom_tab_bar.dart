@@ -11,7 +11,7 @@ class UiKitCustomTabBar extends StatelessWidget {
   final bool scrollable;
 
   const UiKitCustomTabBar({
-    Key? key,
+    super.key,
     required this.tabs,
     required this.onTappedTab,
     this.scrollable = false,
@@ -19,7 +19,7 @@ class UiKitCustomTabBar extends StatelessWidget {
     this.selectedTab,
     this.tabController,
     this.clipBorderRadius = const BorderRadius.all(Radius.circular(9999)),
-  }) : super(key: key);
+  });
 
   factory UiKitCustomTabBar.badged({
     Key? key,

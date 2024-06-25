@@ -10,13 +10,13 @@ class UiKitLargeAdBannerCard extends StatelessWidget implements AdvertisementFac
   final double? customHeight;
 
   const UiKitLargeAdBannerCard({
-    Key? key,
+    super.key,
     required this.availableWidth,
     this.onTap,
     this.customHeight,
     required this.imageLink,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

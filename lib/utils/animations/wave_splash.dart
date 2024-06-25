@@ -149,7 +149,7 @@ class WaveSplash extends InteractiveInkFeature {
 
   WaveSplash({
     required MaterialInkController controller,
-    required RenderBox referenceBox,
+    required super.referenceBox,
     required TextDirection textDirection,
     required Offset position,
     required Color color,
@@ -158,7 +158,7 @@ class WaveSplash extends InteractiveInkFeature {
     BorderRadius? borderRadius,
     ShapeBorder? customBorder,
     double? radius,
-    VoidCallback? onRemoved,
+    super.onRemoved,
   })  : _position = position,
         _borderRadius = borderRadius ?? BorderRadius.zero,
         _customBorder = customBorder,
@@ -178,9 +178,7 @@ class WaveSplash extends InteractiveInkFeature {
         _textDirection = textDirection,
         super(
           controller: controller,
-          referenceBox: referenceBox,
           color: color,
-          onRemoved: onRemoved,
         ) {
     _radiusController = AnimationController(
       duration: _kUnconfirmedSplashDuration,

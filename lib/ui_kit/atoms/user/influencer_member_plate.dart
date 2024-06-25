@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class InfluencerMemberPlate extends StatelessWidget {
-  const InfluencerMemberPlate({Key? key}) : super(key: key);
+  const InfluencerMemberPlate({super.key});
 
   @override
   Widget build(BuildContext context) {

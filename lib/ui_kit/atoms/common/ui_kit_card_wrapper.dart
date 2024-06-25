@@ -14,7 +14,7 @@ class UiKitCardWrapper extends StatelessWidget {
   final Clip? clipBehavior;
 
   const UiKitCardWrapper({
-    Key? key,
+    super.key,
     required this.child,
     this.gradient,
     this.borderRadius,
@@ -25,7 +25,7 @@ class UiKitCardWrapper extends StatelessWidget {
     this.boxShadow,
     this.border,
     this.clipBehavior,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

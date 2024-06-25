@@ -5,9 +5,9 @@ class UiKitInlineButton extends StatelessWidget {
   final BaseUiKitButtonData data;
 
   const UiKitInlineButton({
-    Key? key,
+    super.key,
     required this.data,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
