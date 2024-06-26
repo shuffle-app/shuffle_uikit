@@ -10,6 +10,7 @@ class UiKitFullScreenPortraitVideoPlayer extends StatefulWidget {
   final String? coverImageUrl;
   final ValueChanged<double>? onProgressChanged;
   final ValueChanged<DragEndDetails>? onVerticalSwipe;
+  final ValueChanged<TapUpDetails>? onTapUp;
 
   const UiKitFullScreenPortraitVideoPlayer({
     super.key,
@@ -18,6 +19,7 @@ class UiKitFullScreenPortraitVideoPlayer extends StatefulWidget {
     this.onProgressChanged,
     this.coverImageUrl,
     this.onVerticalSwipe,
+    this.onTapUp,
   });
 
   @override
@@ -94,6 +96,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
         onTapUp: (details) {
           if (_controller == null) return;
           _controller!.play();
+          widget.onTapUp?.call(details);
         },
         onVerticalDragEnd: widget.onVerticalSwipe,
         child: AnimatedSwitcher(
