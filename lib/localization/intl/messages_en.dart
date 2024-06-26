@@ -273,6 +273,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Christianity": MessageLookupByLibrary.simpleMessage("Christianity"),
         "ClickEnterToSearch":
             MessageLookupByLibrary.simpleMessage("Click Enter to search"),
+        "CollapseThread":
+            MessageLookupByLibrary.simpleMessage("Collapse thread"),
         "Comments": m5,
         "Company": MessageLookupByLibrary.simpleMessage("Company"),
         "CompanyAnswered":
@@ -383,6 +385,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EventsReminders":
             MessageLookupByLibrary.simpleMessage("Events reminders"),
         "Exit": MessageLookupByLibrary.simpleMessage("Exit"),
+        "ExpandThread": MessageLookupByLibrary.simpleMessage("Expand thread"),
         "Fair": MessageLookupByLibrary.simpleMessage("Fair"),
         "Faq": MessageLookupByLibrary.simpleMessage("Faq"),
         "FaqUnderDev": MessageLookupByLibrary.simpleMessage(
@@ -491,6 +494,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Influence people\\\'s choices and enhance the significance of places and events"),
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("Monetization"),
+        "Info": MessageLookupByLibrary.simpleMessage("Info"),
         "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
             "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there"),
         "Interview": MessageLookupByLibrary.simpleMessage("Interview"),
@@ -830,6 +834,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("shared with you"),
+        "ShowDeleted": MessageLookupByLibrary.simpleMessage("Show deleted"),
         "ShowMore": MessageLookupByLibrary.simpleMessage("Show\nmore"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("Show result"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
@@ -982,6 +987,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Your reaction has been successfully added"),
         "VideoReactionUploadedMessage":
             MessageLookupByLibrary.simpleMessage("Reaction successfully added"),
+        "VideoReactions":
+            MessageLookupByLibrary.simpleMessage("Video-reactions"),
         "VideoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Video (upload Files)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("View all"),
