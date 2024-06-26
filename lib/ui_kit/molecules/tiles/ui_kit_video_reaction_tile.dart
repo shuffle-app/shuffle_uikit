@@ -92,13 +92,13 @@ class UiKitVideoReactionTile extends StatelessWidget {
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: authorName,
+                      text: authorName == null ? '' : '$authorName  ',
                       style: boldTextTheme?.caption1Bold,
                       recognizer: TapGestureRecognizer()..onTap = () => _authorTapHandler(context),
                     ),
                     if (reactionDate != null)
                       TextSpan(
-                        text: '  ${formatDateTimeDifferenceWithMonthName(reactionDate!)}',
+                        text: formatDateTimeDifferenceWithMonthName(reactionDate!),
                         style: boldTextTheme?.caption1Bold.copyWith(color: Colors.white38),
                       ),
                   ],
