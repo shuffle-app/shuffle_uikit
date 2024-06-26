@@ -100,7 +100,7 @@ dependencies:
 
   #maps
   google_maps_flutter: ^2.7.0
-  flutter_polyline_points: ^2.0.0
+  flutter_polyline_points: ^2.0.1
   countries_flag: ^1.0.0
   dropdown_button2: ^2.3.9
   image_picker: ^1.1.1
