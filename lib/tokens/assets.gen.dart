@@ -2539,12 +2539,16 @@ class $AssetsImagesPngParalaxBannersMockAdBanner16Gen {
   AssetGenImage get lowerMid =>
       const AssetGenImage('assets/images/png/paralax_banners/mock_ad_banner_16/lower_mid.png');
 
+  /// File path: assets/images/png/paralax_banners/mock_ad_banner_16/mock_ad_banner_16_depth.png
+  AssetGenImage get mockAdBanner16Depth =>
+      const AssetGenImage('assets/images/png/paralax_banners/mock_ad_banner_16/mock_ad_banner_16_depth.png');
+
   /// File path: assets/images/png/paralax_banners/mock_ad_banner_16/upper_mid.png
   AssetGenImage get upperMid =>
       const AssetGenImage('assets/images/png/paralax_banners/mock_ad_banner_16/upper_mid.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [back, front, lowerMid, upperMid];
+  List<AssetGenImage> get values => [back, front, lowerMid, mockAdBanner16Depth, upperMid];
 }
 
 class $AssetsImagesPngParalaxBannersShuffleTextBanner2Gen {

@@ -28,7 +28,7 @@ class UiKitPlaceTag extends StatelessWidget {
             color: color ?? Colors.white,
           ),
           SpacingFoundation.horizontalSpace4,
-          Expanded(
+          Flexible(
             child: Text(
               placeName,
               style: boldTextTheme?.caption2.copyWith(color: color ?? Colors.white),

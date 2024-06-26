@@ -56,7 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${Intl.plural(count, zero: 'событий', one: 'событие', two: 'события', few: 'событий', many: 'событий', other: 'событий')}";
 
   static String m14(item) =>
-      "${Intl.plural(item, zero: 'Зажми и перетяни карточку', one: 'Создай стопку и назови', two: 'Выстраивай порядок стопок', few: 'Поделись стопкой', other: 'другое')}";
+      "${Intl.plural(item, zero: 'зажми и перетяни карточку', one: 'создай стопку и назови', two: 'выстрой порядок стопок', few: 'поделись стопкой', other: 'другое')}";
 
   static String m15(item) =>
       "${Intl.plural(item, zero: 'гео', one: 'интересы', two: 'погода вокруг', few: 'и еще 14 свойств', other: 'другое')}";
@@ -65,7 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${Intl.plural(item, zero: 'выбераешь нишу', one: 'жмешь', two: 'получаешь подборку', few: 'выбираешь и планируешь', other: 'другое')}";
 
   static String m17(item) =>
-      "${Intl.plural(item, zero: 'события и места', one: 'фильтруется тэгами', two: 'выбирай и жми', few: 'прокручивай\n', other: 'другое')}";
+      "${Intl.plural(item, zero: 'события и места', one: 'фильтруй по тэгам', two: 'выбирай и жми', few: 'прокрути\n', other: 'другое')}";
 
   static String m18(count) =>
       "${Intl.plural(count, zero: '${count} поинтов', one: '${count} поинт', two: '${count} поинта', few: '${count} поинтов', many: '${count} поинтов', other: '${count} поинтов')}";
@@ -307,7 +307,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Continue": MessageLookupByLibrary.simpleMessage("Продолжить"),
         "Control": MessageLookupByLibrary.simpleMessage("Контроль"),
         "ConvenientClearAndUseful":
-            MessageLookupByLibrary.simpleMessage("Удобно, чётко и полезно"),
+            MessageLookupByLibrary.simpleMessage("удобно, чётко и полезно"),
         "CountReviews": m7,
         "CountVideoReaction": m8,
         "Create": MessageLookupByLibrary.simpleMessage("Создать"),
