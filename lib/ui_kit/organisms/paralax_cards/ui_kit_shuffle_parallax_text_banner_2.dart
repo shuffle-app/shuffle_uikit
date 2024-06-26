@@ -6,29 +6,24 @@ import 'package:parallax_sensors_bg/parallax_sensors_bg.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitParallaxPhotoCard extends StatefulWidget {
-  final String frontImage;
-  final String upperMiddleImage;
-  final String lowerMiddleImage;
-  final String backImage;
-  final double height;
-  final double width;
-
-  const UiKitParallaxPhotoCard({
+class UiKitShuffleParallaxTextBanner2 extends StatefulWidget {
+  const UiKitShuffleParallaxTextBanner2({
     Key? key,
-    required this.frontImage,
-    required this.upperMiddleImage,
-    required this.backImage,
-    required this.lowerMiddleImage,
-    required this.height,
-    required this.width,
   }) : super(key: key);
 
   @override
-  State<UiKitParallaxPhotoCard> createState() => _UiKitParallaxPhotoCardState();
+  State<UiKitShuffleParallaxTextBanner2> createState() => _UiKitShuffleParallaxTextBanner2State();
 }
 
-class _UiKitParallaxPhotoCardState extends State<UiKitParallaxPhotoCard> {
+class _UiKitShuffleParallaxTextBanner2State extends State<UiKitShuffleParallaxTextBanner2> {
+  final String frontImage = GraphicsFoundation.instance.png.paralaxBanners.shuffleTextBanner2.front.path,
+      upperMiddleImage = GraphicsFoundation.instance.png.paralaxBanners.shuffleTextBanner2.upperMid.path,
+      backImage = GraphicsFoundation.instance.png.paralaxBanners.shuffleTextBanner2.back.path,
+      lowerMiddleImage = GraphicsFoundation.instance.png.paralaxBanners.shuffleTextBanner2.lowerMid.path;
+
+  final width = 1.sw - 48;
+  final height = (1.sw - 48) * 1.33;
+
   AccelerometerEvent? initialEvent;
 
   StreamSubscription<AccelerometerEvent>? accelerometerEventSubscription;
@@ -91,16 +86,16 @@ class _UiKitParallaxPhotoCardState extends State<UiKitParallaxPhotoCard> {
       decoration: BoxDecoration(
         borderRadius: BorderRadiusFoundation.all24,
       ),
-      height: widget.height,
-      width: widget.width,
+      height: height,
+      width: width,
       child: Stack(
         fit: StackFit.expand,
         children: [
           ImageWidget(
-            link: widget.backImage,
+            link: backImage,
             fit: BoxFit.cover,
-            height: widget.height,
-            width: widget.width,
+            height: height,
+            width: width,
           ),
           Parallax(
             onAccelerometerEvent: _accelerometerListener,
@@ -110,7 +105,7 @@ class _UiKitParallaxPhotoCardState extends State<UiKitParallaxPhotoCard> {
                 preventCrop: true,
                 sensitivity: 8,
                 child: ImageWidget(
-                  link: widget.lowerMiddleImage,
+                  link: lowerMiddleImage,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -118,14 +113,14 @@ class _UiKitParallaxPhotoCardState extends State<UiKitParallaxPhotoCard> {
                 preventCrop: true,
                 sensitivity: 4,
                 child: ImageWidget(
-                  link: widget.upperMiddleImage,
+                  link: upperMiddleImage,
                   fit: BoxFit.cover,
                 ),
               ),
             ],
           ),
           Positioned(
-            width: widget.width,
+            width: width,
             bottom: 0,
             child: Tilt(
               childLayout: ChildLayout(
@@ -157,7 +152,7 @@ class _UiKitParallaxPhotoCardState extends State<UiKitParallaxPhotoCard> {
               ),
               tiltStreamController: accelerometerUiStreamController,
               child: ImageWidget(
-                link: widget.frontImage,
+                link: frontImage,
               ),
             ),
           ),

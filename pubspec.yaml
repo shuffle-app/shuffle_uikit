@@ -147,7 +147,8 @@ flutter:
     - assets/images/png/
     - assets/images/png/preference_questions/
     - assets/images/png/avatars/
-    - assets/images/png/paralax_banners/
+    - assets/images/png/paralax_banners/mock_ad_banner_16/
+    - assets/images/png/paralax_banners/shuffle_text_banner_2/
     - assets/images/svg/
     - assets/fonts/
     - assets/audio/

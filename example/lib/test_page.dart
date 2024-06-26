@@ -53,13 +53,15 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
           children: [
             SizedBox(height: MediaQuery.of(context).viewPadding.top, width: 1.sw),
             SpacingFoundation.verticalSpace24,
-            UiKitParallaxPhotoCard(
-              frontImage: GraphicsFoundation.instance.png.paralaxBanners.shuffleParalaxBanner1Front.path,
-              lowerMiddleImage: GraphicsFoundation.instance.png.paralaxBanners.shuffleParalaxBanner1LowerMid.path,
-              upperMiddleImage: GraphicsFoundation.instance.png.paralaxBanners.shuffleParalaxBanner1UpperMid.path,
-              backImage: GraphicsFoundation.instance.png.paralaxBanners.shuffleParalaxBanner1Back.path,
+            // const UiKitShuffleParallaxTextBanner2(),
+            UiKitGeneralPhotoBanner(
+              title: 'Dubai',
               width: 1.sw - 48,
-              height: (1.sw - 48) * 1.33,
+              height: (1.sw - 48) * 1.17,
+              frontImage: GraphicsFoundation.instance.png.paralaxBanners.mockAdBanner16.front.path,
+              backImage: GraphicsFoundation.instance.png.paralaxBanners.mockAdBanner16.back.path,
+              upperMiddleImage: GraphicsFoundation.instance.png.paralaxBanners.mockAdBanner16.upperMid.path,
+              lowerMiddleImage: GraphicsFoundation.instance.png.paralaxBanners.mockAdBanner16.lowerMid.path,
             ),
             // if (xFile != null && selectedImageBytes != null)
             //   UiKitPictureViewFinder(

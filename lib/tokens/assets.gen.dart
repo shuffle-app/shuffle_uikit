@@ -8,15 +8,13 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:vector_graphics/vector_graphics.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
   const $AssetsAnimationsGen();
 
-  /// Directory path: assets/animations/lottie
   $AssetsAnimationsLottieGen get lottie => const $AssetsAnimationsLottieGen();
 }
 
@@ -55,10 +53,7 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// Directory path: assets/images/png
   $AssetsImagesPngGen get png => const $AssetsImagesPngGen();
-
-  /// Directory path: assets/images/svg
   $AssetsImagesSvgGen get svg => const $AssetsImagesSvgGen();
 }
 
@@ -416,7 +411,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
-  /// Directory path: assets/images/png/avatars
   $AssetsImagesPngAvatarsGen get avatars => const $AssetsImagesPngAvatarsGen();
 
   /// File path: assets/images/png/balloons.png
@@ -682,7 +676,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
 
-  /// Directory path: assets/images/png/preference_questions
   $AssetsImagesPngPreferenceQuestionsGen get preferenceQuestions => const $AssetsImagesPngPreferenceQuestionsGen();
 
   /// File path: assets/images/png/production.png
@@ -2277,29 +2270,10 @@ class $AssetsImagesPngAvatarsGen {
 class $AssetsImagesPngParalaxBannersGen {
   const $AssetsImagesPngParalaxBannersGen();
 
-  /// File path: assets/images/png/paralax_banners/shuffle_paralax_banner_1_back.png
-  AssetGenImage get shuffleParalaxBanner1Back =>
-      const AssetGenImage('assets/images/png/paralax_banners/shuffle_paralax_banner_1_back.png');
-
-  /// File path: assets/images/png/paralax_banners/shuffle_paralax_banner_1_front.png
-  AssetGenImage get shuffleParalaxBanner1Front =>
-      const AssetGenImage('assets/images/png/paralax_banners/shuffle_paralax_banner_1_front.png');
-
-  /// File path: assets/images/png/paralax_banners/shuffle_paralax_banner_1_lower_mid.png
-  AssetGenImage get shuffleParalaxBanner1LowerMid =>
-      const AssetGenImage('assets/images/png/paralax_banners/shuffle_paralax_banner_1_lower_mid.png');
-
-  /// File path: assets/images/png/paralax_banners/shuffle_paralax_banner_1_upper_mid.png
-  AssetGenImage get shuffleParalaxBanner1UpperMid =>
-      const AssetGenImage('assets/images/png/paralax_banners/shuffle_paralax_banner_1_upper_mid.png');
-
-  /// List of all assets
-  List<AssetGenImage> get values => [
-        shuffleParalaxBanner1Back,
-        shuffleParalaxBanner1Front,
-        shuffleParalaxBanner1LowerMid,
-        shuffleParalaxBanner1UpperMid
-      ];
+  $AssetsImagesPngParalaxBannersMockAdBanner16Gen get mockAdBanner16 =>
+      const $AssetsImagesPngParalaxBannersMockAdBanner16Gen();
+  $AssetsImagesPngParalaxBannersShuffleTextBanner2Gen get shuffleTextBanner2 =>
+      const $AssetsImagesPngParalaxBannersShuffleTextBanner2Gen();
 }
 
 class $AssetsImagesPngPreferenceQuestionsGen {
@@ -2552,6 +2526,48 @@ class $AssetsImagesPngPreferenceQuestionsGen {
       ];
 }
 
+class $AssetsImagesPngParalaxBannersMockAdBanner16Gen {
+  const $AssetsImagesPngParalaxBannersMockAdBanner16Gen();
+
+  /// File path: assets/images/png/paralax_banners/mock_ad_banner_16/back.png
+  AssetGenImage get back => const AssetGenImage('assets/images/png/paralax_banners/mock_ad_banner_16/back.png');
+
+  /// File path: assets/images/png/paralax_banners/mock_ad_banner_16/front.png
+  AssetGenImage get front => const AssetGenImage('assets/images/png/paralax_banners/mock_ad_banner_16/front.png');
+
+  /// File path: assets/images/png/paralax_banners/mock_ad_banner_16/lower_mid.png
+  AssetGenImage get lowerMid =>
+      const AssetGenImage('assets/images/png/paralax_banners/mock_ad_banner_16/lower_mid.png');
+
+  /// File path: assets/images/png/paralax_banners/mock_ad_banner_16/upper_mid.png
+  AssetGenImage get upperMid =>
+      const AssetGenImage('assets/images/png/paralax_banners/mock_ad_banner_16/upper_mid.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [back, front, lowerMid, upperMid];
+}
+
+class $AssetsImagesPngParalaxBannersShuffleTextBanner2Gen {
+  const $AssetsImagesPngParalaxBannersShuffleTextBanner2Gen();
+
+  /// File path: assets/images/png/paralax_banners/shuffle_text_banner_2/back.png
+  AssetGenImage get back => const AssetGenImage('assets/images/png/paralax_banners/shuffle_text_banner_2/back.png');
+
+  /// File path: assets/images/png/paralax_banners/shuffle_text_banner_2/front.png
+  AssetGenImage get front => const AssetGenImage('assets/images/png/paralax_banners/shuffle_text_banner_2/front.png');
+
+  /// File path: assets/images/png/paralax_banners/shuffle_text_banner_2/lower_mid.png
+  AssetGenImage get lowerMid =>
+      const AssetGenImage('assets/images/png/paralax_banners/shuffle_text_banner_2/lower_mid.png');
+
+  /// File path: assets/images/png/paralax_banners/shuffle_text_banner_2/upper_mid.png
+  AssetGenImage get upperMid =>
+      const AssetGenImage('assets/images/png/paralax_banners/shuffle_text_banner_2/upper_mid.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [back, front, lowerMid, upperMid];
+}
+
 class Assets {
   Assets._();
 
@@ -2562,11 +2578,9 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName, {this.size = null});
+  const AssetGenImage(this._assetName);
 
   final String _assetName;
-
-  final Size? size;
 
   Image image({
     Key? key,
@@ -2638,20 +2652,9 @@ class AssetGenImage {
 }
 
 class SvgGenImage {
-  const SvgGenImage(
-    this._assetName, {
-    this.size = null,
-  }) : _isVecFormat = false;
-
-  const SvgGenImage.vec(
-    this._assetName, {
-    this.size = null,
-  }) : _isVecFormat = true;
+  const SvgGenImage(this._assetName);
 
   final String _assetName;
-
-  final Size? size;
-  final bool _isVecFormat;
 
   SvgPicture svg({
     Key? key,
@@ -2666,19 +2669,19 @@ class SvgGenImage {
     WidgetBuilder? placeholderBuilder,
     String? semanticsLabel,
     bool excludeFromSemantics = false,
-    SvgTheme? theme,
+    SvgTheme theme = const SvgTheme(),
     ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
     @deprecated bool cacheColorFilter = false,
   }) {
-    return SvgPicture(
-      _isVecFormat
-          ? AssetBytesLoader(_assetName, assetBundle: bundle, packageName: package)
-          : SvgAssetLoader(_assetName, assetBundle: bundle, packageName: package),
+    return SvgPicture.asset(
+      _assetName,
       key: key,
       matchTextDirection: matchTextDirection,
+      bundle: bundle,
+      package: package,
       width: width,
       height: height,
       fit: fit,
@@ -2688,7 +2691,9 @@ class SvgGenImage {
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
       theme: theme,
-      colorFilter: colorFilter ?? (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      colorFilter: colorFilter,
+      color: color,
+      colorBlendMode: colorBlendMode,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );

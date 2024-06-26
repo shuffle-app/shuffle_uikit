@@ -18,7 +18,7 @@ class UiKitSwiperCardWrapper extends StatelessWidget implements BaseUiKitSwiperC
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: onTap,
-      child: child,
+      child: IgnorePointer(child: child),
     );
   }
 
