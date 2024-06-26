@@ -5,9 +5,9 @@ class InfluencerRespectTab extends StatelessWidget {
   final List<ContentPreviewWithRespect> items;
 
   const InfluencerRespectTab({
-    Key? key,
+    super.key,
     required this.items,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

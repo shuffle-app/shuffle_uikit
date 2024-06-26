@@ -10,14 +10,13 @@ class SmallOutlinedIconButton extends StatelessWidget implements ButtonFactory {
   final bool? loading;
 
   const SmallOutlinedIconButton({
-    Key? key,
+    super.key,
     this.onPressed,
     this.borderColor,
     this.icon,
     this.iconInfo,
     this.loading,
-  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
-        super(key: key);
+  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided');
 
   @override
   Widget build(BuildContext context) {

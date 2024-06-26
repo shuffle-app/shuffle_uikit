@@ -9,13 +9,13 @@ class UiKitAccentCard extends StatelessWidget {
   final VoidCallback? onPressed;
 
   const UiKitAccentCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.additionalInfo,
     required this.accentMessage,
     required this.image,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

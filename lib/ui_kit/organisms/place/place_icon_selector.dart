@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class PlaceIconSelector extends StatelessWidget {
-  final Function() onPressed;
-  final List<IconData> listIconData;
+  final VoidCallback? onPressed;
+  final List<String> listIconData;
+  final ValueChanged<String> onIconTap;
 
   const PlaceIconSelector({
     super.key,
     required this.onPressed,
     required this.listIconData,
+    required this.onIconTap,
   });
 
   @override
@@ -34,10 +36,10 @@ class PlaceIconSelector extends StatelessWidget {
                       fit: ButtonFit.hugContent,
                       backgroundColor: Colors.transparent,
                       iconInfo: BaseUiKitButtonIconData(
-                        iconPath: GraphicsFoundation.instance.svg.download.path,
-                        color: ColorsFoundation.primary200,
-                        size: 16.sp
-                      ),
+                          iconPath:
+                              GraphicsFoundation.instance.svg.download.path,
+                          color: ColorsFoundation.primary200,
+                          size: 16.sp),
                       onPressed: onPressed,
                     ),
                   ),
@@ -72,8 +74,12 @@ class PlaceIconSelector extends StatelessWidget {
               itemCount: listIconData.length,
               itemBuilder: (context, index) {
                 return HoverableIconButton(
-                  iconData: listIconData[index],
-                  onTap: () {},
+                  iconLink: listIconData[index],
+                  onTap: () {
+                    onIconTap.call(
+                      listIconData[index],
+                    );
+                  },
                 );
               },
             ).paddingAll(EdgeInsetsFoundation.all8),
@@ -84,18 +90,19 @@ class PlaceIconSelector extends StatelessWidget {
   }
 }
 
+
 class HoverableIconButton extends StatefulWidget {
   final Function() onTap;
-  final IconData iconData;
+  final String iconLink;
 
   const HoverableIconButton({
     super.key,
-    required this.iconData,
+    required this.iconLink,
     required this.onTap,
   });
 
   @override
-  _HoverableIconButtonState createState() => _HoverableIconButtonState();
+  State<HoverableIconButton> createState() => _HoverableIconButtonState();
 }
 
 class _HoverableIconButtonState extends State<HoverableIconButton> {
@@ -123,7 +130,7 @@ class _HoverableIconButtonState extends State<HoverableIconButton> {
           data: BaseUiKitButtonData(
             backgroundColor: _backgroundColor,
             iconInfo: BaseUiKitButtonIconData(
-              iconData: widget.iconData,
+              iconPath: widget.iconLink,
               color: _iconColor,
             ),
           ),

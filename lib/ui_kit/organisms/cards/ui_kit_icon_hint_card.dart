@@ -6,10 +6,10 @@ class UiKitIconHintCard extends StatelessWidget {
   final String hint;
 
   const UiKitIconHintCard({
-    Key? key,
+    super.key,
     required this.icon,
     required this.hint,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

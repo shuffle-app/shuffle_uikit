@@ -7,12 +7,11 @@ class SmallGradientIconButton extends StatelessWidget implements ButtonFactory {
   final BaseUiKitButtonIconData? iconInfo;
 
   const SmallGradientIconButton({
-    Key? key,
+    super.key,
     this.onPressed,
     this.icon,
     this.iconInfo,
-  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
-        super(key: key);
+  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided');
 
   @override
   Widget build(BuildContext context) {

@@ -10,12 +10,12 @@ class UiKitWeatherInfoCard extends StatelessWidget {
   final double height;
 
   const UiKitWeatherInfoCard({
-    Key? key,
+    super.key,
     required this.temperature,
     required this.weatherType,
     this.active = true,
     this.height = 60,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -21,7 +23,7 @@ class UiKitTagSelector extends StatelessWidget {
       ValueNotifier(TagsSelectorUiModel(tags: tags.toSet(), hasFocus: false));
 
   UiKitTagSelector({
-    Key? key,
+    super.key,
     required this.tags,
     this.maxHeight = double.infinity,
     this.showTextField = true,
@@ -30,13 +32,12 @@ class UiKitTagSelector extends StatelessWidget {
     this.onTagSelected,
     this.borderRadius,
     this.controller,
-  })  : isDarkBackground = false,
-        super(key: key) {
+  })  : isDarkBackground = false {
     controller ??= TextEditingController();
   }
 
   UiKitTagSelector.darkBackground({
-    Key? key,
+    super.key,
     required this.tags,
     this.maxHeight = double.infinity,
     this.showTextField = true,
@@ -45,8 +46,7 @@ class UiKitTagSelector extends StatelessWidget {
     this.onTagSelected,
     this.borderRadius,
     this.controller,
-  })  : isDarkBackground = true,
-        super(key: key) {
+  })  : isDarkBackground = true {
     controller ??= TextEditingController();
   }
 

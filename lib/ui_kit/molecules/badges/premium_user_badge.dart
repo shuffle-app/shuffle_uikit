@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class PremiumUserBadge extends StatelessWidget {
-  const PremiumUserBadge({Key? key}) : super(key: key);
+  const PremiumUserBadge({super.key});
 
   @override
   Widget build(BuildContext context) {

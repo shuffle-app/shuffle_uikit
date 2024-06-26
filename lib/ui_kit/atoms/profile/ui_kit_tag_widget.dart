@@ -14,7 +14,7 @@ class UiKitTagWidget extends StatelessWidget {
   final Widget? customSpace;
 
   const UiKitTagWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.icon,
     this.textColor,
@@ -23,7 +23,7 @@ class UiKitTagWidget extends StatelessWidget {
     this.customSpace,
     this.uniqueTag = false,
     this.showSpacing = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

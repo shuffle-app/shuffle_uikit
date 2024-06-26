@@ -5803,6 +5803,46 @@ class S {
     );
   }
 
+  /// `To open the next set of tools you need to do`
+  String get ToOpenTheNextSetOfToolsYouNeedToDo {
+    return Intl.message(
+      'To open the next set of tools you need to do',
+      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Icons`
+  String get Icons {
+    return Intl.message(
+      'Icons',
+      name: 'Icons',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Related properties`
+  String get RelatedProperties {
+    return Intl.message(
+      'Related properties',
+      name: 'RelatedProperties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search property`
+  String get SearchProperty {
+    return Intl.message(
+      'Search property',
+      name: 'SearchProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Album`
   String get Album {
     return Intl.message(
@@ -6033,21 +6073,61 @@ class S {
     );
   }
 
-  /// `To open the next set of tools you need to do`
-  String get ToOpenTheNextSetOfToolsYouNeedToDo {
-    return Intl.message(
-      'To open the next set of tools you need to do',
-      name: 'ToOpenTheNextSetOfToolsYouNeedToDo',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Icon`
   String get Icon {
     return Intl.message(
       'Icon',
       name: 'Icon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Info`
+  String get Info {
+    return Intl.message(
+      'Info',
+      name: 'Info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Video-reactions`
+  String get VideoReactions {
+    return Intl.message(
+      'Video-reactions',
+      name: 'VideoReactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show deleted`
+  String get ShowDeleted {
+    return Intl.message(
+      'Show deleted',
+      name: 'ShowDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expand thread`
+  String get ExpandThread {
+    return Intl.message(
+      'Expand thread',
+      name: 'ExpandThread',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Collapse thread`
+  String get CollapseThread {
+    return Intl.message(
+      'Collapse thread',
+      name: 'CollapseThread',
       desc: '',
       args: [],
     );
@@ -6198,6 +6278,81 @@ class S {
     return Intl.message(
       'Related personal properties',
       name: 'RelatedPersonalProperties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add category`
+  String get AddCategory {
+    return Intl.message(
+      'Add category',
+      name: 'AddCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add property`
+  String get AddProperty {
+    return Intl.message(
+      'Add property',
+      name: 'AddProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add place type`
+  String get AddPlaceType {
+    return Intl.message(
+      'Add place type',
+      name: 'AddPlaceType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{drag & and drop cards} =1{create and name stack} =2{line up stacks order} few{share your stacks} other{other}}`
+  String FeedFavoritesHiwItems(num item) {
+    return Intl.plural(
+      item,
+      zero: 'drag & and drop cards',
+      one: 'create and name stack',
+      two: 'line up stacks order',
+      few: 'share your stacks',
+      other: 'other',
+      name: 'FeedFavoritesHiwItems',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `сonvenient, clear and useful`
+  String get ConvenientClearAndUseful {
+    return Intl.message(
+      'сonvenient, clear and useful',
+      name: 'ConvenientClearAndUseful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stacks are on`
+  String get StacksAreOn {
+    return Intl.message(
+      'Stacks are on',
+      name: 'StacksAreOn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stacks and something else are available for you...`
+  String get StacksAndSomethingElseAreAvailableForYou {
+    return Intl.message(
+      'Stacks and something else are available for you...',
+      name: 'StacksAndSomethingElseAreAvailableForYou',
       desc: '',
       args: [],
     );

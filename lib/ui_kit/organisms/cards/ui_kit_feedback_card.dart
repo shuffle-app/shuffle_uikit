@@ -31,7 +31,7 @@ class UiKitFeedbackCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final colorScheme = context.uiKitTheme?.colorScheme;
-    print('$text is helpful: $isHelpful');
+    debugPrint('$text is helpful: $isHelpful');
 
     return Material(
       color: context.uiKitTheme?.colorScheme.surface3,

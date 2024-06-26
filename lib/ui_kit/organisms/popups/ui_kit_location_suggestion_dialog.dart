@@ -8,13 +8,13 @@ class UiKitLocationSuggestionDialog extends StatefulWidget {
   final Future<String?> Function()? onLocationFieldTapped;
   final VoidCallback? onContinue;
   const UiKitLocationSuggestionDialog({
-    Key? key,
+    super.key,
     required this.title,
     this.onLocationFieldTapped,
     this.bodyText,
     this.onLocationNameLoaded,
     this.onContinue,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitLocationSuggestionDialog> createState() => _UiKitLocationSuggestionDialogState();
@@ -78,7 +78,7 @@ class _UiKitLocationSuggestionDialogState extends State<UiKitLocationSuggestionD
             ),
             onTap: () {
               widget.onLocationFieldTapped?.call().then((value) {
-                print('fsd with $value');
+                debugPrint('fsd with $value');
                 controller.text = value ?? '';
                 setState(() {
                 });

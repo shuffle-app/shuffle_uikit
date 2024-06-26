@@ -8,12 +8,12 @@ class BorderedUserCircleAvatar extends StatelessWidget {
   final String? name;
 
   const BorderedUserCircleAvatar({
-    Key? key,
+    super.key,
     this.imageUrl,
     this.size,
     this.border,
     this.name,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

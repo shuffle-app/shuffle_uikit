@@ -12,13 +12,13 @@ class UiKitBlurredListTile extends StatelessWidget {
   final UserTileType? type;
 
   const UiKitBlurredListTile({
-    Key? key,
+    super.key,
     this.title,
     this.titleTrailing,
     this.subtitle,
     this.photoLink,
     this.type,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

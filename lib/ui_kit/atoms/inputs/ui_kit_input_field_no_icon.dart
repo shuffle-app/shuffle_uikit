@@ -4,7 +4,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputField {
   const UiKitInputFieldNoIcon({
-    Key? key,
+    super.key,
     required this.controller,
     this.errorText,
     this.hintText,
@@ -35,7 +35,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
     this.customEnabledBorder,
     this.customErrorBorder,
     this.autofocus = false, this.cursorColor,
-  }) : super(key: key);
+  });
 
   @override
   final TextEditingController controller;

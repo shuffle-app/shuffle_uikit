@@ -14,14 +14,14 @@ class BasePlaceActionCard extends StatelessWidget {
   final String? buttonTitle;
 
   const BasePlaceActionCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
     this.iconAsset,
     this.rasterIconAsset,
     required this.action,
     this.group, this.buttonTitle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

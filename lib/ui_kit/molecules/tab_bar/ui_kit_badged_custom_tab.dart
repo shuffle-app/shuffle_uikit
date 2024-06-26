@@ -38,7 +38,7 @@ class UiKitBadgedCustomTab extends UiKitCustomTab {
                 child: Container(
                   width: 0.075.sw,
                   height: 0.075.sw,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     gradient: GradientFoundation.defaultRadialGradient,
                   ),

@@ -3,8 +3,8 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class BaseUiKitMediaWidget extends StatelessWidget {
   const BaseUiKitMediaWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   factory BaseUiKitMediaWidget.image({
     required BaseUiKitMedia media,

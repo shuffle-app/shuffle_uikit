@@ -7,7 +7,7 @@ class UiKitBlurredQuestionChip extends StatelessWidget {
   final String label;
   final VoidCallback? onTap;
 
-  const UiKitBlurredQuestionChip({Key? key, required this.label, this.onTap}) : super(key: key);
+  const UiKitBlurredQuestionChip({super.key, required this.label, this.onTap});
 
   @override
   Widget build(BuildContext context) {

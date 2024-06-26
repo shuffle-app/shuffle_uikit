@@ -7,12 +7,12 @@ class UiKitScaleAnimation extends StatelessWidget {
   final Alignment alignment;
 
   const UiKitScaleAnimation({
-    Key? key,
+    super.key,
     required this.controller,
     required this.child,
     this.scale = 1.0,
     this.alignment = Alignment.center,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

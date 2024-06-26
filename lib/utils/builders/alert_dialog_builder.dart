@@ -61,7 +61,7 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(BuildContext contex
     context: context,
     barrierColor: Colors.white.withOpacity(0.1),
     useSafeArea: false,
-    builder: (_) => BackdropFilter(
+    builder: (ctx) => BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
       child: Dialog(
         insetPadding: EdgeInsets.symmetric(
@@ -72,7 +72,7 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(BuildContext contex
         ),
         backgroundColor: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
         clipBehavior: Clip.hardEdge,
-        child: (child(_, textStyle) as Widget).paddingAll(paddingAll ?? EdgeInsetsFoundation.all24),
+        child: (child(ctx, textStyle) as Widget).paddingAll(paddingAll ?? EdgeInsetsFoundation.all24),
       ),
     ),
   );

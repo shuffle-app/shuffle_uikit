@@ -37,7 +37,7 @@ class UiKitSymbolsCounterInputFieldNoFill extends StatefulWidget
   final TextStyle? inputTextStyle;
 
   const UiKitSymbolsCounterInputFieldNoFill({
-    Key? key,
+    super.key,
     required this.controller,
     required this.enabled,
     required this.obscureText,
@@ -64,7 +64,7 @@ class UiKitSymbolsCounterInputFieldNoFill extends StatefulWidget
     this.expands = false,
     this.autofocus = false,
     this.readOnly = false,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitSymbolsCounterInputFieldNoFill> createState() =>

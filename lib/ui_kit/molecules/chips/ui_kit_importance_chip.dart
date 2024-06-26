@@ -11,13 +11,13 @@ class UiKitImportanceChip extends StatelessWidget {
   late final ValueNotifier<ImportanceChip> _valueNotifier = ValueNotifier<ImportanceChip>(importance);
 
   UiKitImportanceChip({
-    Key? key,
+    super.key,
     required this.title,
     required this.id,
     this.joke = false,
     required this.importance,
     this.onImportanceChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

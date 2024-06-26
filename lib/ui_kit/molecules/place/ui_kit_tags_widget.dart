@@ -7,11 +7,11 @@ class UiKitTagsWidget extends StatelessWidget {
   final List<UiKitTag>? uniqueTags;
 
   const UiKitTagsWidget({
-    Key? key,
+    super.key,
     this.rating,
     required this.baseTags,
     this.uniqueTags,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

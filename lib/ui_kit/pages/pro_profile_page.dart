@@ -8,16 +8,15 @@ class ProProfilePage extends StatelessWidget {
   final int? bookings;
 
   const ProProfilePage({
-    Key? key,
+    super.key,
     this.events,
     this.reviews,
     this.bookings,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = context.uiKitTheme?.colorScheme;
-    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final autoSizeGroup = AutoSizeGroup();
 
     return Scaffold(
@@ -42,8 +41,8 @@ class ProProfilePage extends StatelessWidget {
                 UiKitTag(title: 'Photographer', icon: null),
                 UiKitTag(title: 'Photographer', icon: null),
               ],
-              interests: ['Photography', 'Travel', 'Nature', 'Art'],
-              matchingInterests: ['Photography', 'Travel'],
+              interests: const ['Photography', 'Travel', 'Nature', 'Art'],
+              matchingInterests: const ['Photography', 'Travel'],
               onShare: () {},
               onFollow: () {},
               following: false,

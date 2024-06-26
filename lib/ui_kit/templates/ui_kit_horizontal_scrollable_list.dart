@@ -23,7 +23,7 @@ class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
   );
 
   UiKitHorizontalScrollableList({
-    Key? key,
+    super.key,
     required this.itemBuilder,
     required this.pagingController,
     this.noItemsFoundIndicator,
@@ -32,7 +32,7 @@ class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
     this.physics,
     this.scrollController,
     this.shimmerLoadingChild,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

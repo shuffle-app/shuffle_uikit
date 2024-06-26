@@ -8,11 +8,11 @@ class ProfileHighlights extends StatelessWidget {
   final int points;
 
   const ProfileHighlights({
-    Key? key,
+    super.key,
     required this.placesVisited,
     required this.reviewsPosted,
     required this.points,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

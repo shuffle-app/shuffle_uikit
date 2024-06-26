@@ -6,10 +6,10 @@ class SliderPhotoCard extends StatelessWidget {
   final Size givenSize;
 
   const SliderPhotoCard({
-    Key? key,
+    super.key,
     required this.media,
     required this.givenSize,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

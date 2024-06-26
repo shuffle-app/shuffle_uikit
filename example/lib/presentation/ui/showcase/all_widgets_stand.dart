@@ -94,7 +94,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
-    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
     final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return BlurredAppBarPage(
@@ -167,11 +166,20 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           points: 30,
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
+        UiKitFeedbackInfo(
+          onSubmit: (expandThreadIsOpen) {},
+          userName: 'Ryan Gosling',
+          dateTime: DateTime.now(),
+          removeFunction: () {},
+          responsesFromCompanytoReview: true,
+        ).paddingAll(EdgeInsetsFoundation.all16),
+        SpacingFoundation.verticalSpace16,
         PlaceIconSelector(
           onPressed: () {},
+          onIconTap: (value) {},
           listIconData: List.generate(
             20,
-            (index) => ShuffleUiKitIcons.diamond,
+            (index) => GraphicsFoundation.instance.png.company.path,
           ),
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
@@ -179,8 +187,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           decoration: BoxDecoration(
             color: context.uiKitTheme?.colorScheme.surface2,
           ),
-          child: const UiKitIconedTitle(
-                  icon: ShuffleUiKitIcons.diamond, title: 'Diamond')
+          child: UiKitIconedTitle(
+                  icon: GraphicsFoundation.instance.png.company.path,
+                  title: 'Diamond')
               .paddingAll(EdgeInsetsFoundation.all16),
         ),
         SpacingFoundation.verticalSpace16,
@@ -228,43 +237,43 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 title: 'Joke',
                 onTap: () {},
                 isSelectable: true,
-                iconPath: "ShuffleUiKitIcons.heartoutline",
+                iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Smoke',
                 onTap: () {},
                 isSelectable: true,
-                iconPath: "ShuffleUiKitIcons.heartoutline",
+                iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Drink',
                 onTap: () {},
                 isSelectable: true,
-                iconPath: "ShuffleUiKitIcons.heartoutline",
+                iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Swim',
                 onTap: () {},
                 isSelectable: true,
-                iconPath: "ShuffleUiKitIcons.heartoutline",
+                iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Relax',
                 onTap: () {},
                 isSelectable: true,
-                iconPath: "ShuffleUiKitIcons.heartoutline",
+                iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Relax',
                 onTap: () {},
                 isSelectable: true,
-                iconPath: "ShuffleUiKitIcons.heartoutline",
+                iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Relax',
                 onTap: () {},
                 isSelectable: true,
-                iconPath: "ShuffleUiKitIcons.heartoutline",
+                iconPath: GraphicsFoundation.instance.png.company.path,
               ),
             ],
           ).paddingAll(EdgeInsetsFoundation.all24),
@@ -947,19 +956,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             size: AdvertisementBannerSize.large,
           ),
         ),
-        SpacingFoundation.verticalSpace16,
-        UiKitChatInCard(
-          timeOfDay: DateTime.now(),
-          text:
-              'Any plans for the weekend? What about to get a company and go to atmosphere again?',
-        ),
-        SpacingFoundation.verticalSpace16,
-        UiKitChatOutCard(
-          sentByMe: true,
-          timeOfDay: DateTime.now(),
-          text:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        ),
+
         SpacingFoundation.verticalSpace16,
         UiKitUserTileWithCheckbox(
           name: 'Marry Williams',
@@ -972,6 +969,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12),
         SpacingFoundation.verticalSpace16,
         UiKitChatOutCard(
+          id: 3,
           sentByMe: true,
           timeOfDay: DateTime.now(),
           child: UiKitInviteMessageContent(

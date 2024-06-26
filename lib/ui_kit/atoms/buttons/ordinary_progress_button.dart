@@ -7,11 +7,11 @@ class OrdinaryProgressButton extends StatelessWidget implements ButtonFactory {
   final String? text;
 
   const OrdinaryProgressButton({
-    Key? key,
+    super.key,
     this.progress,
     this.onPressed,
     this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

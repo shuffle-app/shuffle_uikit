@@ -6,7 +6,7 @@ class UiKitMediaImageWidget extends BaseUiKitMediaWidget {
   final BaseUiKitMedia media;
   final double? width;
 
-  const UiKitMediaImageWidget({Key? key, required this.media, this.width}) : super(key: key);
+  const UiKitMediaImageWidget({super.key, required this.media, this.width});
 
   @override
   Widget build(BuildContext context) {

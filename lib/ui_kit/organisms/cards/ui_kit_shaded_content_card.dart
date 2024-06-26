@@ -14,14 +14,14 @@ class UiKitShadedContentCard extends StatelessWidget {
   final double availableWidth;
 
   const UiKitShadedContentCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
     required this.recommended,
     required this.availableWidth,
     this.onPressed,
     this.imageUrl,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

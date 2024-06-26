@@ -8,12 +8,12 @@ class UiKitCustomContentPopup extends StatelessWidget {
   final List<Widget> actions;
 
   const UiKitCustomContentPopup({
-    Key? key,
+    super.key,
     required this.title,
     required this.content,
     required this.actions,
     this.contentSubtitle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

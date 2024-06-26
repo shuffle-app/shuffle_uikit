@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:image/image.dart' as imageLib;
+import 'package:image/image.dart' as image_lib;
 
 import '../../shuffle_uikit.dart';
 
@@ -45,7 +45,7 @@ class UiKitPictureViewFinderController extends ChangeNotifier {
 }
 
 class CropImageInBackgroundData {
-  final imageLib.Image initialImage;
+  final image_lib.Image initialImage;
   final int cropStartX;
   final int cropStartY;
   final int cropWidth;
@@ -62,8 +62,8 @@ class CropImageInBackgroundData {
 
 Future<Uint8List> _cropImageInBackground(CropImageInBackgroundData data) async {
   return Uint8List.fromList(
-    imageLib.encodePng(
-      imageLib.copyCrop(
+    image_lib.encodePng(
+      image_lib.copyCrop(
         data.initialImage,
         x: data.cropStartX,
         y: data.cropStartY,
@@ -82,13 +82,13 @@ class UiKitPictureViewFinder extends StatefulWidget {
   final Axis? viewFinderOrientation;
 
   const UiKitPictureViewFinder({
-    Key? key,
+    super.key,
     required this.imageBytes,
     required this.viewPortAvailableSize,
     required this.controller,
     this.viewFinderOrientation,
     this.onCropCompleted,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitPictureViewFinder> createState() => _UiKitPictureViewFinderState();
@@ -118,7 +118,7 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
 
   Size fittedImageSize = Size.zero;
 
-  imageLib.Image? image;
+  image_lib.Image? image;
 
   double get viewFinderAndImageWidthDiff {
     final difference = fittedImageSize.width - _positionAndSize.value.size.width;
@@ -189,7 +189,7 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
         if (widget.controller.state == UiKitViewFinderState.cropping) cropImage(widget.imageBytes);
       });
       final bytes = widget.imageBytes;
-      final imageFromBytes = imageLib.decodeImage(bytes);
+      final imageFromBytes = image_lib.decodeImage(bytes);
       dev.log('Trying to decode image from bytes: $imageFromBytes');
       if (imageFromBytes == null) return;
       dev.log('Trying to decode image from bytes success');

@@ -6,10 +6,10 @@ class UiKitIconButtonNoPadding extends StatelessWidget implements ButtonFactory 
   final BaseUiKitButtonIconData iconData;
 
   const UiKitIconButtonNoPadding({
-    Key? key,
+    super.key,
     required this.iconData,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

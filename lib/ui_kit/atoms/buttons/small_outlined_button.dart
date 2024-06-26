@@ -15,7 +15,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
   final Gradient? gradient;
 
   const SmallOutlinedButton({
-    Key? key,
+    super.key,
     required this.text,
     this.onPressed,
     this.borderColor,
@@ -24,7 +24,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
     required this.blurred,
     this.icon,
     this.loading,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

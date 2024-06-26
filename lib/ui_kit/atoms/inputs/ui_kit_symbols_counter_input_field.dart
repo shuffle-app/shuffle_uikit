@@ -19,7 +19,7 @@ class UiKitSymbolsCounterInputField extends StatefulWidget implements BaseUiKitI
   final int? maxLines;
 
   const UiKitSymbolsCounterInputField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.enabled,
     required this.obscureText,
@@ -29,7 +29,7 @@ class UiKitSymbolsCounterInputField extends StatefulWidget implements BaseUiKitI
     this.hintText,
     this.validator,
     this.maxLines,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitSymbolsCounterInputField> createState() => _UiKitSymbolsCounterInputFieldState();

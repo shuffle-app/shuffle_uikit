@@ -1,4 +1,5 @@
 /// This file exports all the organisms in the UI Kit.
+library;
 
 export '../molecules/place/base_ui_kit_media_widget.dart';
 export 'ad_banners/large_text_ad_banner_1.dart';

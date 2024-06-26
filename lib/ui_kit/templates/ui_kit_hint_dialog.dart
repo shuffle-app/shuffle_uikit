@@ -8,16 +8,18 @@ class UiKitHintDialog extends StatelessWidget {
   final String subtitle;
   final String dismissText;
   final VoidCallback onDismiss;
+  final Widget? customTitle;
 
   const UiKitHintDialog({
-    Key? key,
+    super.key,
     required this.title,
     required this.textStyle,
     required this.hintTiles,
     required this.subtitle,
     required this.dismissText,
     required this.onDismiss,
-  }) : super(key: key);
+    this.customTitle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +27,13 @@ class UiKitHintDialog extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Text(
-          title,
-          style: textStyle,
-          textAlign: TextAlign.center,
-        ),
+        customTitle != null
+            ? customTitle!
+            : Text(
+                title,
+                style: textStyle,
+                textAlign: TextAlign.center,
+              ),
         SpacingFoundation.verticalSpace8,
         GridView.count(
           physics: const NeverScrollableScrollPhysics(),

@@ -62,6 +62,55 @@ class DialogTestingPage extends StatelessWidget {
                 ),
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
+                  text: 'Video-reactions dialog',
+                  onPressed: () => showUiKitAlertDialog(
+                    context,
+                    AlertDialogData(
+                      customBackgroundColor: colorScheme?.surface3,
+                      defaultButtonText: '',
+                      title: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  context.pop();
+                                },
+                                child: ImageWidget(
+                                  iconData: ShuffleUiKitIcons.x,
+                                  color: colorScheme?.inversePrimary,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  S.of(context).VideoReactions,
+                                  style: context
+                                      .uiKitTheme?.regularTextTheme.titleLarge,
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      content: UiKitVideoReactionsModeration(
+                        videoFile: null,
+                        feedbackInfo: UiKitFeedbackInfo(
+                          onSubmit: (expandThreadIsOpen) {},
+                          dateTime: DateTime.now(),
+                          removeFunction: () {},
+                          userName: 'Ryan Gosling',
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
                   text: 'Dialog bottom sheet fullscreen',
                   onPressed: () => showUiKitGeneralFullScreenDialog(
                       context,
@@ -237,6 +286,109 @@ class DialogTestingPage extends StatelessWidget {
                       }),
                 ),
                 SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
+                  text: 'UiKit Property Management Icons',
+                  onPressed: () => showUiKitAlertDialog(
+                    context,
+                    AlertDialogData(
+                      defaultButtonText: '',
+                      title: Text(
+                        S.of(context).Icons,
+                        style: textTheme?.title1.copyWith(color: Colors.black),
+                      ),
+                      content: UiKitPropertyIcons(
+                        textFieldHintText: S.of(context).Weather,
+                        onPressed: () {},
+                        listIconPath: List.generate(
+                          35,
+                          (index) => index.isEven
+                              ? GraphicsFoundation
+                                  .instance.svg.analyticsFill.path
+                              : GraphicsFoundation.instance.svg.water.path,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
+                  text: 'UiKit Property Management Related Properties',
+                  onPressed: () => showUiKitAlertDialog(
+                    context,
+                    AlertDialogData(
+                      defaultButtonText: '',
+                      title: Text(
+                        S.of(context).RelatedProperties,
+                        style: textTheme?.title1.copyWith(color: Colors.black),
+                      ),
+                      content: UiKitPropertyRelatedProperties(
+                        textEditingController: TextEditingController(),
+                        listRelatedPropertiesItem: [
+                          RelatedPropertiesItemUiModel(
+                            iconData: ShuffleUiKitIcons.active,
+                            propertiesList: [
+                              'Restaurants',
+                              'Cafe',
+                              'Coffee',
+                              'shops',
+                            ],
+                            title: 'Air conditioners on the terrace',
+                          ),
+                          RelatedPropertiesItemUiModel(
+                            iconData: ShuffleUiKitIcons.active,
+                            propertiesList: [
+                              'Swimming pools',
+                            ],
+                            title: 'Cooled',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
+                  text: 'UiKit Recently Added icons',
+                  onPressed: () => showUiKitAlertDialog(
+                    context,
+                    AlertDialogData(
+                      defaultButtonText: '',
+                      title: Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                              S.of(context).RecentlyAdded,
+                              style: textTheme?.title1
+                                  .copyWith(color: Colors.black),
+                            ),
+                          ),
+                          Text(
+                            S.of(context).Date,
+                            style: textTheme?.labelLarge.copyWith(
+                              color: const Color(0xFF97999D),
+                            ),
+                          ),
+                          context.boxIconButton(
+                            data: BaseUiKitButtonData(
+                              onPressed: () {},
+                              backgroundColor: Colors.transparent,
+                              iconInfo: BaseUiKitButtonIconData(
+                                iconData: ShuffleUiKitIcons.arrowdown,
+                                color: colorScheme?.darkNeutral900,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      content: UiKitPropertyRecentlyAdded(
+                        listIconPath: List.generate(
+                          35,
+                          (index) => GraphicsFoundation.instance.svg.water.path,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),

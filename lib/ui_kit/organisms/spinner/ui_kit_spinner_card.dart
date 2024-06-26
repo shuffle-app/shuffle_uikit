@@ -20,7 +20,7 @@ class UiKitSpinnerCard extends StatefulWidget {
   final double availableHeight;
 
   const UiKitSpinnerCard({
-    Key? key,
+    super.key,
     required this.availableHeight,
     this.photoLink,
     this.title,
@@ -34,7 +34,7 @@ class UiKitSpinnerCard extends StatefulWidget {
     this.ownerTileSubtitle,
     this.ownerTileType,
     this.weekdays,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitSpinnerCard> createState() => _UiKitSpinnerCardState();
