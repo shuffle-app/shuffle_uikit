@@ -6203,161 +6203,6 @@ class S {
     );
   }
 
-  /// `Spend it`
-  String get SpendIt {
-    return Intl.message(
-      'Spend it',
-      name: 'SpendIt',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `There are no reactions yet, be the first`
-  String get NoReactionsMessage {
-    return Intl.message(
-      'There are no reactions yet, be the first',
-      name: 'NoReactionsMessage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Show the barcode at the checkout when paying`
-  String get ShowTheBarcode {
-    return Intl.message(
-      'Show the barcode at the checkout when paying',
-      name: 'ShowTheBarcode',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Offer successfully activated`
-  String get OfferSuccessfullyActivated {
-    return Intl.message(
-      'Offer successfully activated',
-      name: 'OfferSuccessfullyActivated',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Spent my points`
-  String get SpentMyPoints {
-    return Intl.message(
-      'Spent my points',
-      name: 'SpentMyPoints',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Categories`
-  String get Categories {
-    return Intl.message(
-      'Categories',
-      name: 'Categories',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Entertainment`
-  String get Entertainment {
-    return Intl.message(
-      'Entertainment',
-      name: 'Entertainment',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Related personal properties`
-  String get RelatedPersonalProperties {
-    return Intl.message(
-      'Related personal properties',
-      name: 'RelatedPersonalProperties',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add category`
-  String get AddCategory {
-    return Intl.message(
-      'Add category',
-      name: 'AddCategory',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add property`
-  String get AddProperty {
-    return Intl.message(
-      'Add property',
-      name: 'AddProperty',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Add place type`
-  String get AddPlaceType {
-    return Intl.message(
-      'Add place type',
-      name: 'AddPlaceType',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `{item, plural, =0{drag & and drop cards} =1{create and name stack} =2{line up stacks order} few{share your stacks} other{other}}`
-  String FeedFavoritesHiwItems(num item) {
-    return Intl.plural(
-      item,
-      zero: 'drag & and drop cards',
-      one: 'create and name stack',
-      two: 'line up stacks order',
-      few: 'share your stacks',
-      other: 'other',
-      name: 'FeedFavoritesHiwItems',
-      desc: '',
-      args: [item],
-    );
-  }
-
-  /// `сonvenient, clear and useful`
-  String get ConvenientClearAndUseful {
-    return Intl.message(
-      'сonvenient, clear and useful',
-      name: 'ConvenientClearAndUseful',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Stacks are on`
-  String get StacksAreOn {
-    return Intl.message(
-      'Stacks are on',
-      name: 'StacksAreOn',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Stacks and something else are available for you...`
-  String get StacksAndSomethingElseAreAvailableForYou {
-    return Intl.message(
-      'Stacks and something else are available for you...',
-      name: 'StacksAndSomethingElseAreAvailableForYou',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `It is a non-public profile that allows you to post your places, branches, and place's events`
   String get CompanyPresentationSlider1 {
     return Intl.message(
@@ -6513,6 +6358,161 @@ class S {
     return Intl.message(
       'Great interview with the owner',
       name: 'GreatInterviewWithOwner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spend it`
+  String get SpendIt {
+    return Intl.message(
+      'Spend it',
+      name: 'SpendIt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no reactions yet, be the first`
+  String get NoReactionsMessage {
+    return Intl.message(
+      'There are no reactions yet, be the first',
+      name: 'NoReactionsMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show the barcode at the checkout when paying`
+  String get ShowTheBarcode {
+    return Intl.message(
+      'Show the barcode at the checkout when paying',
+      name: 'ShowTheBarcode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer successfully activated`
+  String get OfferSuccessfullyActivated {
+    return Intl.message(
+      'Offer successfully activated',
+      name: 'OfferSuccessfullyActivated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spent my points`
+  String get SpentMyPoints {
+    return Intl.message(
+      'Spent my points',
+      name: 'SpentMyPoints',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Categories`
+  String get Categories {
+    return Intl.message(
+      'Categories',
+      name: 'Categories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Entertainment`
+  String get Entertainment {
+    return Intl.message(
+      'Entertainment',
+      name: 'Entertainment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Related personal properties`
+  String get RelatedPersonalProperties {
+    return Intl.message(
+      'Related personal properties',
+      name: 'RelatedPersonalProperties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add category`
+  String get AddCategory {
+    return Intl.message(
+      'Add category',
+      name: 'AddCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add property`
+  String get AddProperty {
+    return Intl.message(
+      'Add property',
+      name: 'AddProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add place type`
+  String get AddPlaceType {
+    return Intl.message(
+      'Add place type',
+      name: 'AddPlaceType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{drag & and drop cards} =1{create and name stack} =2{line up stacks order} few{share your stacks} other{other}}`
+  String FeedFavoritesHiwItems(num item) {
+    return Intl.plural(
+      item,
+      zero: 'drag & and drop cards',
+      one: 'create and name stack',
+      two: 'line up stacks order',
+      few: 'share your stacks',
+      other: 'other',
+      name: 'FeedFavoritesHiwItems',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `сonvenient, clear and useful`
+  String get ConvenientClearAndUseful {
+    return Intl.message(
+      'сonvenient, clear and useful',
+      name: 'ConvenientClearAndUseful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stacks are on`
+  String get StacksAreOn {
+    return Intl.message(
+      'Stacks are on',
+      name: 'StacksAreOn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stacks and something else are available for you...`
+  String get StacksAndSomethingElseAreAvailableForYou {
+    return Intl.message(
+      'Stacks and something else are available for you...',
+      name: 'StacksAndSomethingElseAreAvailableForYou',
       desc: '',
       args: [],
     );
