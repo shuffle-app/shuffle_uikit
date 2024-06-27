@@ -3178,7 +3178,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{your location} =1{your interests} =2{weather around} few{and other 14 scales} other{other}}`
+  /// `{item, plural, =0{your location} =1{your interests} =2{weather around} few{and other 14 scales} other{and other 14 scales}}`
   String FeedFeelingsHiwItems(num item) {
     return Intl.plural(
       item,
@@ -3186,7 +3186,7 @@ class S {
       one: 'your interests',
       two: 'weather around',
       few: 'and other 14 scales',
-      other: 'other',
+      other: 'and other 14 scales',
       name: 'FeedFeelingsHiwItems',
       desc: '',
       args: [item],
@@ -3213,7 +3213,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{events & places} =1{filtering by chips} =2{choose chip & press} few{press & scroll\n} other{other}}`
+  /// `{item, plural, =0{events & places} =1{filtering by chips} =2{choose chip & press} few{press & scroll\n} other{press & scroll\n}}`
   String FeedRandomizerHiwItems(num item) {
     return Intl.plural(
       item,
@@ -3221,7 +3221,7 @@ class S {
       one: 'filtering by chips',
       two: 'choose chip & press',
       few: 'press & scroll\n',
-      other: 'other',
+      other: 'press & scroll\n',
       name: 'FeedRandomizerHiwItems',
       desc: '',
       args: [item],
@@ -3608,7 +3608,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{select the niche} =1{press} =2{get selection} few{choose & plan} other{other}}`
+  /// `{item, plural, =0{select the niche} =1{press} =2{get selection} few{choose & plan} other{choose & plan}}`
   String FeedNichesHiwItems(num item) {
     return Intl.plural(
       item,
@@ -3616,7 +3616,7 @@ class S {
       one: 'press',
       two: 'get selection',
       few: 'choose & plan',
-      other: 'other',
+      other: 'choose & plan',
       name: 'FeedNichesHiwItems',
       desc: '',
       args: [item],
@@ -3643,7 +3643,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{for fun} =1{swipe category} =2{choose & plan} few{search & book} other{other}}`
+  /// `{item, plural, =0{for fun} =1{swipe category} =2{choose & plan} few{search & book} other{search & book}}`
   String SpinnerHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3651,7 +3651,7 @@ class S {
       one: 'swipe category',
       two: 'choose & plan',
       few: 'search & book',
-      other: 'other',
+      other: 'search & book',
       name: 'SpinnerHiwHint',
       desc: '',
       args: [item],
@@ -3678,7 +3678,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{find companions} =1{similar preferences} =2{check point reputation} few{no foes} other{other}}`
+  /// `{item, plural, =0{find companions} =1{similar preferences} =2{check point reputation} few{no foes} other{no foes}}`
   String ProfileFindSomeoneHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3686,7 +3686,7 @@ class S {
       one: 'similar preferences',
       two: 'check point reputation',
       few: 'no foes',
-      other: 'other',
+      other: 'no foes',
       name: 'ProfileFindSomeoneHiwHint',
       desc: '',
       args: [item],
@@ -3713,7 +3713,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{post a dream request} =1{write & make video} =2{be convincing and honest} few{donate others} other{other}}`
+  /// `{item, plural, =0{post a dream request} =1{write & make video} =2{be convincing and honest} few{donate others} other{donate others}}`
   String ProfileAskOrSupportHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3721,7 +3721,7 @@ class S {
       one: 'write & make video',
       two: 'be convincing and honest',
       few: 'donate others',
-      other: 'other',
+      other: 'donate others',
       name: 'ProfileAskOrSupportHiwHint',
       desc: '',
       args: [item],
@@ -3748,7 +3748,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{preferences don’t work} =1{events/places} =2{type & get result} few{use ratings & models} other{other}}`
+  /// `{item, plural, =0{preferences don’t work} =1{events/places} =2{type & get result} few{use ratings & models} other{use ratings & models}}`
   String SearchHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3756,7 +3756,7 @@ class S {
       one: 'events/places',
       two: 'type & get result',
       few: 'use ratings & models',
-      other: 'other',
+      other: 'use ratings & models',
       name: 'SearchHiwHint',
       desc: '',
       args: [item],
@@ -3783,7 +3783,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{swipe any direction} =1{swipe place qualities} =2{like dislike favorite} few{teach our system} other{other}}`
+  /// `{item, plural, =0{swipe any direction} =1{swipe place qualities} =2{like dislike favorite} few{teach our system} other{teach our system}}`
   String ShuffleHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3791,7 +3791,7 @@ class S {
       one: 'swipe place qualities',
       two: 'like dislike favorite',
       few: 'teach our system',
-      other: 'other',
+      other: 'teach our system',
       name: 'ShuffleHiwHint',
       desc: '',
       args: [item],
@@ -6473,7 +6473,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{drag & and drop cards} =1{create and name stack} =2{line up stacks order} few{share your stacks} other{other}}`
+  /// `{item, plural, =0{drag & and drop cards} =1{create and name stack} =2{line up stacks order} few{share your stacks} other{share your stacks}}`
   String FeedFavoritesHiwItems(num item) {
     return Intl.plural(
       item,
@@ -6481,7 +6481,7 @@ class S {
       one: 'create and name stack',
       two: 'line up stacks order',
       few: 'share your stacks',
-      other: 'other',
+      other: 'share your stacks',
       name: 'FeedFavoritesHiwItems',
       desc: '',
       args: [item],
