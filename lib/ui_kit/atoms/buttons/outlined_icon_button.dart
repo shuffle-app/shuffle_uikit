@@ -10,6 +10,7 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
   final bool? loading;
   final bool hideBorder;
   final Color? borderColor;
+  final EdgeInsetsGeometry? padding;
 
   const OutlinedIconButton({
     super.key,
@@ -19,6 +20,7 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
     this.borderColor,
     this.iconInfo,
     this.hideBorder = false,
+    this.padding,
   });
 
   @override
@@ -50,7 +52,7 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 19, sigmaY: 19),
             child: Padding(
-              padding: EdgeInsets.all(hideBorder ? EdgeInsetsFoundation.all4 : EdgeInsetsFoundation.all16),
+              padding:padding?? EdgeInsets.all(hideBorder ? EdgeInsetsFoundation.all4 : EdgeInsetsFoundation.all16),
               child: icon ??
                   ImageWidget(
                     iconData: iconInfo?.iconData,

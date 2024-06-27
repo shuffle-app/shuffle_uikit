@@ -249,6 +249,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Брони и Приглашения"),
         "Both": MessageLookupByLibrary.simpleMessage("Оба"),
+        "Branches": MessageLookupByLibrary.simpleMessage("Сеть"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Буддизм"),
         "BuildYOurBusiness":
             MessageLookupByLibrary.simpleMessage("Построй свой бизнес c"),
@@ -257,6 +258,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Business": MessageLookupByLibrary.simpleMessage("Бизнес"),
         "ByContinuingYouAcceptThe":
             MessageLookupByLibrary.simpleMessage("Продолжая, ты принимаешь"),
+        "CalmAtmosphere":
+            MessageLookupByLibrary.simpleMessage("Спокойная атмосфера"),
         "Cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
         "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
             "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером"),
@@ -288,6 +291,22 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Название компании"),
         "CompanyPosition":
             MessageLookupByLibrary.simpleMessage("Позиция компания"),
+        "CompanyPresentationSlider1": MessageLookupByLibrary.simpleMessage(
+            "Это закрытый профиль, который позволяет вам публиковать свои места, филиалы и события"),
+        "CompanyPresentationSlider2": MessageLookupByLibrary.simpleMessage(
+            "Вы можете создавать филиалы; в карточке места пользователи увидят всю сеть"),
+        "CompanyPresentationSlider3": MessageLookupByLibrary.simpleMessage(
+            "Ваш контент появляется в ротации приложения и рекомендуется пользователям через уникальную систему Shuffle."),
+        "CompanyPresentationSlider4": MessageLookupByLibrary.simpleMessage(
+            "Повысьте узнаваемость и посещаемость ваших мест и событий. Все функции приложения и пользователей находятся в вашем контенте"),
+        "CompanyPresentationSlider5": MessageLookupByLibrary.simpleMessage(
+            "Вы привлекаете специализированных инфлюенсеров Shuffle, которые повысят статус ваших мест"),
+        "CompanyPresentationSlider6": MessageLookupByLibrary.simpleMessage(
+            "Вы можете взаимодействовать со своей аудиторией через уникальный функционал специальных уведомлений, напоминаний, предложений и пресейлов"),
+        "CompanyPresentationSlider7": MessageLookupByLibrary.simpleMessage(
+            "Вы можете использовать внутреннюю систему таргетированной рекламы"),
+        "CompanyPresentationSlider8": MessageLookupByLibrary.simpleMessage(
+            "Вы можете интегрировать свою систему бронирования в контент или использовать систему бронирования Shuffle в будущем"),
         "CompressingVideo":
             MessageLookupByLibrary.simpleMessage("Сжатие видео"),
         "CompressingVideoProgress": m6,
@@ -450,10 +469,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "GetStarted": MessageLookupByLibrary.simpleMessage("Начать"),
         "Go": MessageLookupByLibrary.simpleMessage("Go!"),
         "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
-            "Продолжайте и расти ваш бизнес"),
+            "Продолжай и позволь бизнесу расти"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("Перейти в настройки"),
+        "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
+            "Отличное интервью с владельцем"),
         "Guess": MessageLookupByLibrary.simpleMessage("Угадать"),
         "HallOfFame": MessageLookupByLibrary.simpleMessage("Зал славы"),
         "HardToAnswer": MessageLookupByLibrary.simpleMessage("Сложно ответить"),
@@ -542,6 +563,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Members": m27,
         "Message": MessageLookupByLibrary.simpleMessage("Сообщение"),
         "Messages": MessageLookupByLibrary.simpleMessage("Сообщения"),
+        "Min": MessageLookupByLibrary.simpleMessage("мин"),
         "MinutesAgo": m28,
         "MondayShort": MessageLookupByLibrary.simpleMessage("Пн"),
         "Month": MessageLookupByLibrary.simpleMessage("Месяц"),
@@ -633,8 +655,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Oops": MessageLookupByLibrary.simpleMessage("Уупс"),
         "OopsIWillTryAgain":
             MessageLookupByLibrary.simpleMessage("Уупс, попробую ещё"),
+        "Open": MessageLookupByLibrary.simpleMessage("Открыто"),
         "OpenFrom": MessageLookupByLibrary.simpleMessage("С"),
-        "OpenNow": MessageLookupByLibrary.simpleMessage("Открыть сейчас"),
+        "OpenNow": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("До"),
         "OpeningHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "OrDragFilesHere":
@@ -741,7 +764,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Properties": MessageLookupByLibrary.simpleMessage("Свойства"),
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
         "PushUpYourBusiness":
-            MessageLookupByLibrary.simpleMessage("Поднимайте ваш бизнес"),
+            MessageLookupByLibrary.simpleMessage("Прокачай свой бизнес"),
         "RangeEndValueIsLessThanBeginingOne":
             MessageLookupByLibrary.simpleMessage(
                 "Конечное значение диапазона меньше начального"),
@@ -768,6 +791,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetPassword":
             MessageLookupByLibrary.simpleMessage("Сбросить пароль"),
         "Respect": MessageLookupByLibrary.simpleMessage("Респект"),
+        "Restaurant": MessageLookupByLibrary.simpleMessage("Рестораны"),
         "RestorePurchase":
             MessageLookupByLibrary.simpleMessage("Восстановить покупки"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Отзывы"),
@@ -912,7 +936,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Нажми, чтобы ввести адрес"),
         "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(
             ". Нажми дважды, чтобы отметить избранное."),
+        "TastyCoffee": MessageLookupByLibrary.simpleMessage("Вкусный кофе"),
         "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
+        "TeaList": MessageLookupByLibrary.simpleMessage("Чайная карта"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("Расскажи ещё"),
         "TellUsMoreAboutYourself": m44,
         "Terms": MessageLookupByLibrary.simpleMessage("Условия"),

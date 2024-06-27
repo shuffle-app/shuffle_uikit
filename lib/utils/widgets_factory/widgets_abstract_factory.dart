@@ -373,6 +373,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Color? borderColor,
     bool? hideBorder,
     bool? isGradientEnabled,
+    EdgeInsetsGeometry? padding,
   }) {
     final hasIcon = data.iconWidget != null || data.iconInfo != null;
 
@@ -393,6 +394,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         hideBorder: hideBorder ?? false,
         loading: data.loading,
         borderColor: borderColor,
+        padding: padding,
       );
     }
     if (data.text?.isNotEmpty ?? false) {

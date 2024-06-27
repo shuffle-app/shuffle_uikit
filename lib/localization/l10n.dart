@@ -6203,6 +6203,166 @@ class S {
     );
   }
 
+  /// `It is a non-public profile that allows you to post your places, branches, and place's events`
+  String get CompanyPresentationSlider1 {
+    return Intl.message(
+      'It is a non-public profile that allows you to post your places, branches, and place\'s events',
+      name: 'CompanyPresentationSlider1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can create branches; in a  place card users will see the entire brench network`
+  String get CompanyPresentationSlider2 {
+    return Intl.message(
+      'You can create branches; in a  place card users will see the entire brench network',
+      name: 'CompanyPresentationSlider2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your content appears in the app's rotation and is recommended to users through the unique Shuffle system, - with user and content properties, behavioral factors, geo, weather, etc`
+  String get CompanyPresentationSlider3 {
+    return Intl.message(
+      'Your content appears in the app\'s rotation and is recommended to users through the unique Shuffle system, - with user and content properties, behavioral factors, geo, weather, etc',
+      name: 'CompanyPresentationSlider3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Increase awareness & traffic to your places and events. All app's & users features are around your content cards`
+  String get CompanyPresentationSlider4 {
+    return Intl.message(
+      'Increase awareness & traffic to your places and events. All app\'s & users features are around your content cards',
+      name: 'CompanyPresentationSlider4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You attract specialized Shuffle influencers who will elevate the status of your places`
+  String get CompanyPresentationSlider5 {
+    return Intl.message(
+      'You attract specialized Shuffle influencers who will elevate the status of your places',
+      name: 'CompanyPresentationSlider5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can interact with your audience through the unique functionality of special notifications, reminders, offers and presales`
+  String get CompanyPresentationSlider6 {
+    return Intl.message(
+      'You can interact with your audience through the unique functionality of special notifications, reminders, offers and presales',
+      name: 'CompanyPresentationSlider6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can use the internal targeted advertising system`
+  String get CompanyPresentationSlider7 {
+    return Intl.message(
+      'You can use the internal targeted advertising system',
+      name: 'CompanyPresentationSlider7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can integrate your booking system into content cards or use the Shuffle booking system in the future`
+  String get CompanyPresentationSlider8 {
+    return Intl.message(
+      'You can integrate your booking system into content cards or use the Shuffle booking system in the future',
+      name: 'CompanyPresentationSlider8',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Branches`
+  String get Branches {
+    return Intl.message(
+      'Branches',
+      name: 'Branches',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Restaurant`
+  String get Restaurant {
+    return Intl.message(
+      'Restaurant',
+      name: 'Restaurant',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open`
+  String get Open {
+    return Intl.message(
+      'Open',
+      name: 'Open',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `min`
+  String get Min {
+    return Intl.message(
+      'min',
+      name: 'Min',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tasty coffee`
+  String get TastyCoffee {
+    return Intl.message(
+      'Tasty coffee',
+      name: 'TastyCoffee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Calm atmosphere`
+  String get CalmAtmosphere {
+    return Intl.message(
+      'Calm atmosphere',
+      name: 'CalmAtmosphere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tea list`
+  String get TeaList {
+    return Intl.message(
+      'Tea list',
+      name: 'TeaList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Great interview with the owner`
+  String get GreatInterviewWithOwner {
+    return Intl.message(
+      'Great interview with the owner',
+      name: 'GreatInterviewWithOwner',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Spend it`
   String get SpendIt {
     return Intl.message(

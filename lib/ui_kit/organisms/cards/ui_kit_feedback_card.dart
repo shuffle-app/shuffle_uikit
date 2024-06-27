@@ -12,6 +12,7 @@ class UiKitFeedbackCard extends StatelessWidget {
   final VoidCallback? onLike;
   final VoidCallback? onPressed;
   final bool? isHelpful;
+  final int? maxLines;
 
   const UiKitFeedbackCard({
     super.key,
@@ -24,7 +25,7 @@ class UiKitFeedbackCard extends StatelessWidget {
     this.helpfulCount,
     this.text,
     this.onLike,
-    this.onPressed,
+    this.onPressed, this.maxLines,
   });
 
   @override
@@ -60,7 +61,7 @@ class UiKitFeedbackCard extends StatelessWidget {
               Text(
                 text ?? '',
                 style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
-                maxLines: 5,
+                maxLines:maxLines ?? 5,
               ),
               SpacingFoundation.verticalSpace12,
               Row(
