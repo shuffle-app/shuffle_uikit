@@ -32,10 +32,10 @@ class Animations {
 
 class ImpScaleAnim extends StatelessWidget {
   const ImpScaleAnim({
-    Key? key,
+    super.key,
     required this.child,
     required this.scale,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final double scale;
@@ -56,11 +56,11 @@ class DelayAndDisposeAnimationWrapper extends StatefulWidget {
   final Duration delay;
   final Duration durationToDelay;
   const DelayAndDisposeAnimationWrapper({
-    Key? key,
+    super.key,
     required this.child,
     required this.delay,
     required this.durationToDelay,
-  }) : super(key: key);
+  });
 
   @override
   State<DelayAndDisposeAnimationWrapper> createState() => _DelayAndDisposeAnimationWrapperState();

@@ -12,7 +12,7 @@ abstract class BaseUiKitSwiperCard extends StatelessWidget {
   final double? width;
 
   const BaseUiKitSwiperCard({
-    Key? key,
+    super.key,
     required this.id,
     required this.title,
     required this.subtitle,
@@ -21,5 +21,5 @@ abstract class BaseUiKitSwiperCard extends StatelessWidget {
     this.imageLink,
     this.pointsToGain,
     this.onTap,
-  }) : super(key: key);
+  });
 }

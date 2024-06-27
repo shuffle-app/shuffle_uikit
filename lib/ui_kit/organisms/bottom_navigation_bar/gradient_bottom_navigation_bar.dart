@@ -11,11 +11,10 @@ class GradientBottomNavigationBar extends StatelessWidget {
   final GradientBottomNavigationBarController controller;
 
   GradientBottomNavigationBar({
-    Key? key,
+    super.key,
     required this.items,
     required this.controller,
-  })  : assert(controller.tabItemsCount == items.length),
-        super(key: key);
+  })  : assert(controller.tabItemsCount == items.length);
 
   @override
   Widget build(BuildContext context) {

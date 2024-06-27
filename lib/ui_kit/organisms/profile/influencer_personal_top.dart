@@ -5,9 +5,9 @@ class InfluencerPersonalTop extends StatelessWidget {
   final List<InfluencerTopCategory> categories;
 
   const InfluencerPersonalTop({
-    Key? key,
+    super.key,
     required this.categories,
-  }) : super(key: key);
+  });
 
   double get contentImageWidth => 0.25.sw;
 

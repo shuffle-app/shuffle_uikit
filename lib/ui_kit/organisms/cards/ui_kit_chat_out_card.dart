@@ -9,56 +9,77 @@ class UiKitChatOutCard extends StatelessWidget {
     this.sentByMe = false,
     this.text,
     this.child,
+    required this.id,
+    this.onReplyMessage,
   });
 
   final DateTime timeOfDay;
   final String? text;
   final Widget? child;
   final bool sentByMe;
+  final int id;
+  final ValueChanged<int>? onReplyMessage;
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final width = 0.7.sw;
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Text(
-          DateFormat.jm().format(timeOfDay).toLowerCase(),
-          style: theme?.regularTextTheme.caption2.copyWith(
-            color: theme.colorScheme.darkNeutral900,
+    return Dismissible(
+      key: Key(id.toString()),
+      direction: DismissDirection.horizontal,
+
+      confirmDismiss: (direction) async {
+        onReplyMessage?.call(id);
+        FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
+          intensities: [170, 200],
+          pattern: [10, 5],
+        ));
+        return false;
+      },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text(
+            DateFormat.jm().format(timeOfDay).toLowerCase(),
+            style: theme?.regularTextTheme.caption2.copyWith(
+              color: theme.colorScheme.darkNeutral900,
+            ),
           ),
-        ),
-        SpacingFoundation.verticalSpace2,
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Flexible(
-              child: UiKitCardWrapper(
-                color: sentByMe ? Colors.white : theme?.colorScheme.surface3,
-                child: text != null
-                    ? SizedBox(
-                        width: width,
-                        child: Text(
-                          text!,
-                          style: theme?.boldTextTheme.caption1Medium.copyWith(color: sentByMe ? Colors.black : null),
-                        ).paddingAll(EdgeInsetsFoundation.all12),
-                      )
-                    : child!.paddingAll(EdgeInsetsFoundation.all12),
+          SpacingFoundation.verticalSpace2,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Flexible(
+                child: UiKitCardWrapper(
+                  color: sentByMe ? Colors.white : theme?.colorScheme.surface3,
+                  child: text != null
+                      ? SizedBox(
+                          width: width,
+                          child: Text(
+                            text!,
+                            style: theme?.boldTextTheme.caption1Medium.copyWith(
+                                color: sentByMe ? Colors.black : null),
+                          ).paddingAll(EdgeInsetsFoundation.all12),
+                        )
+                      : child!.paddingAll(EdgeInsetsFoundation.all12),
+                ),
               ),
-            ),
-            Transform(
-              transform: Matrix4.identity()..scale(-1.0, 1.0),
-              child: CustomPaint(
-                painter: _MessageTriangle(color: sentByMe ? Colors.white : theme!.colorScheme.surface3),
+              Transform(
+                transform: Matrix4.identity()..scale(-1.0, 1.0),
+                child: CustomPaint(
+                  painter: _MessageTriangle(
+                      color: sentByMe
+                          ? Colors.white
+                          : theme!.colorScheme.surface3),
+                ),
               ),
-            ),
-          ],
-        ),
-      ],
-    ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20);
+            ],
+          ),
+        ],
+      ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20),
+    );
   }
 }
 

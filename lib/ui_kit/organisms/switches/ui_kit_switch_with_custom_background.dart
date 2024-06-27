@@ -10,12 +10,12 @@ class UiKitSwitchWithCustomBackground extends StatelessWidget {
   bool get firstOptionSelected => selectedOption?.title == firstOption.title;
 
   const UiKitSwitchWithCustomBackground({
-    Key? key,
+    super.key,
     required this.firstOption,
     required this.secondOption,
     this.selectedOption,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

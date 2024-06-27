@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class BackAnimStack extends StatelessWidget {
   const BackAnimStack({
-    Key? key,
+    super.key,
     required this.child,
     this.backChild,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final Widget? backChild;
@@ -30,10 +30,9 @@ class BackAnimStack extends StatelessWidget {
 //ignore: prefer-single-widget-per-file
 class _FadeScaleAnim extends StatefulWidget {
   const _FadeScaleAnim({
-    Key? key,
     required this.child,
     this.startDelay,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final Duration? startDelay;

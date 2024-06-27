@@ -11,10 +11,12 @@ class UiKitFeedbackCard extends StatelessWidget {
   final String? text;
   final VoidCallback? onLike;
   final VoidCallback? onPressed;
+  final bool? isHelpful;
 
   const UiKitFeedbackCard({
     super.key,
     this.title,
+    this.isHelpful,
     this.avatarUrl,
     this.datePosted,
     this.rating,
@@ -28,6 +30,8 @@ class UiKitFeedbackCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final colorScheme = context.uiKitTheme?.colorScheme;
+    debugPrint('$text is helpful: $isHelpful');
 
     return Material(
       color: context.uiKitTheme?.colorScheme.surface3,
@@ -55,9 +59,8 @@ class UiKitFeedbackCard extends StatelessWidget {
               SpacingFoundation.verticalSpace12,
               Text(
                 text ?? '',
-                style: boldTextTheme?.caption1Medium,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
+                style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
+                maxLines: 5,
               ),
               SpacingFoundation.verticalSpace12,
               Row(
@@ -74,7 +77,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                     child: ImageWidget(
                       iconData: ShuffleUiKitIcons.like,
                       width: 12.w,
-                      color: ColorsFoundation.darkNeutral900,
+                      color: (isHelpful ?? false) ? colorScheme?.inverseSurface : ColorsFoundation.mutedText,
                     ),
                   ),
                   if (helpfulCount != null) SpacingFoundation.horizontalSpace2,

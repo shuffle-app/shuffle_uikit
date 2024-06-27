@@ -6,10 +6,10 @@ class ProfileHighlightCard extends StatelessWidget {
   final int value;
 
   const ProfileHighlightCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

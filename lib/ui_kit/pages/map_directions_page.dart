@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -37,8 +39,9 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
   List<Polyline> directionLines = [];
   late final FocusNode _focusNode = FocusNode()
     ..addListener(() {
-      if (focusNotifier.value != _focusNode.hasFocus)
+      if (focusNotifier.value != _focusNode.hasFocus) {
         focusNotifier.value = _focusNode.hasFocus;
+      }
     });
 
   late final ValueNotifier<bool> focusNotifier = ValueNotifier<bool>(false);
@@ -50,7 +53,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       Future.delayed(
         const Duration(milliseconds: 500),
-        () async {
+            () async {
           try {
             await widget.onCurrentLocationRequested?.call();
           } catch (e) {
@@ -71,64 +74,69 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
     try {
       final points = PolylinePoints();
       debugPrint(
-          'getRouteBetweenCoordinates from ${widget.currentLocationNotifier.value.latitude} ${widget.currentLocationNotifier.value.longitude} toooo ${widget.destination.latitude} ${widget.destination.longitude}');
+          'getRouteBetweenCoordinates from ${widget.currentLocationNotifier.value.latitude} ${widget
+              .currentLocationNotifier.value.longitude} toooo ${widget.destination.latitude} ${widget.destination
+              .longitude}');
       final result = await points.getRouteBetweenCoordinates(
-        apiKey,
-        PointLatLng(widget.currentLocationNotifier.value.latitude,
-            widget.currentLocationNotifier.value.longitude),
-        PointLatLng(widget.destination.latitude, widget.destination.longitude),
-      );
-      await controller?.animateCamera(
-        CameraUpdate.newLatLngBounds(
+          googleApiKey: apiKey,
+          request: PolylineRequest(origin: PointLatLng(widget.currentLocationNotifier.value.latitude,
+              widget.currentLocationNotifier.value.longitude),
+            destination: PointLatLng(widget.destination.latitude, widget.destination.longitude),
+            mode: TravelMode.driving,
+          ));
+          await controller?.animateCamera(
+          CameraUpdate.newLatLngBounds(
           LatLngBounds(
-            southwest: LatLng(
-              min(widget.currentLocationNotifier.value.latitude,
-                  widget.destination.latitude),
-              min(widget.currentLocationNotifier.value.longitude,
-                  widget.destination.longitude),
-            ),
-            northeast: LatLng(
-              max(widget.currentLocationNotifier.value.latitude,
-                  widget.destination.latitude),
-              max(widget.currentLocationNotifier.value.longitude,
-                  widget.destination.longitude),
-            ),
-          ),
-          72.w,
-        ),
-      );
+      southwest: LatLng(
+      min(widget.currentLocationNotifier.value.latitude,
+          widget.destination.latitude),
+          min
+      (widget.currentLocationNotifier.value.longitude,
+      widget.destination.longitude)
+    ,
+    ),
+    northeast: LatLng(
+    max(widget.currentLocationNotifier.value.latitude,
+    widget.destination.latitude),
+    max(widget.currentLocationNotifier.value.longitude,
+    widget.destination.longitude),
+    ),
+    ),
+    72.w,
+    ),
+    );
 
-      setState(() {
-        directionLines = [
-          Polyline(
-            polylineId: const PolylineId('directions'),
-            points: result.points
-                .map((e) => LatLng(e.latitude, e.longitude))
-                .toList(),
-            color: ColorsFoundation.info,
-            width: 4,
-            startCap: Cap.buttCap,
-            jointType: JointType.bevel,
-            endCap: Cap.roundCap,
-            visible: true,
-          ),
-        ];
-        marker = Marker(
-          markerId: const MarkerId('destination'),
-          position:
-              LatLng(result.points.last.latitude, result.points.last.longitude),
-          icon: markerIcon,
-        );
-      });
+    setState(() {
+    directionLines = [
+    Polyline(
+    polylineId: const PolylineId('directions'),
+    points: result.points
+        .map((e) => LatLng(e.latitude, e.longitude))
+        .toList(),
+    color: ColorsFoundation.info,
+    width: 4,
+    startCap: Cap.buttCap,
+    jointType: JointType.bevel,
+    endCap: Cap.roundCap,
+    visible: true,
+    ),
+    ];
+    marker = Marker(
+    markerId: const MarkerId('destination'),
+    position:
+    LatLng(result.points.last.latitude, result.points.last.longitude),
+    icon: markerIcon,
+    );
+    });
     } catch (e) {
-      SnackBarUtils.show(
-          message: 'Directions unavailable',
-          context: context,
-          type: AppSnackBarType.error);
+    SnackBarUtils.show(
+    message: 'Directions unavailable',
+    context: context,
+    type: AppSnackBarType.error);
     } finally {
-      setState(() {
-        loading = false;
-      });
+    setState(() {
+    loading = false;
+    });
     }
   }
 
@@ -167,7 +175,9 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
             myLocationButtonEnabled: false,
           ),
           Positioned(
-            top: MediaQuery.viewPaddingOf(context).top +
+            top: MediaQuery
+                .viewPaddingOf(context)
+                .top +
                 SpacingFoundation.verticalSpacing16,
             left: SpacingFoundation.horizontalSpacing16,
             child: Material(
@@ -194,7 +204,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
               height: 1.sh,
               child: ColoredBox(
                 color:
-                    colorScheme?.surface3.withOpacity(0.75) ?? Colors.black54,
+                colorScheme?.surface3.withOpacity(0.75) ?? Colors.black54,
                 child: const Center(child: CircularProgressIndicator()),
               ),
             ),
@@ -204,7 +214,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
-        onPressed: () async {
+        onPressed: () {
           widget.onCurrentLocationRequested?.call();
         },
         elevation: 0,
@@ -261,26 +271,29 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                 ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.resolveWith((states) {
-                      if (states.contains(MaterialState.disabled))
+                    WidgetStateProperty.resolveWith((states) {
+                      if (states.contains(WidgetState.disabled)) {
                         return theme?.colorScheme.darkNeutral300;
+                      }
 
                       return theme?.colorScheme.surface1;
                       // return theme?.colorScheme.info;
                     }),
-                    foregroundColor: MaterialStateProperty.resolveWith(
-                        (states) => Colors.white),
-                    elevation: MaterialStateProperty.resolveWith((states) => 0),
+                    foregroundColor: WidgetStateProperty.resolveWith(
+                            (states) => Colors.white),
+                    elevation: WidgetStateProperty.resolveWith((states) => 0),
                     splashFactory: WaveSplash.splashFactory,
-                    shape: MaterialStateProperty.resolveWith(
-                      (states) => RoundedRectangleBorder(
-                          borderRadius: BorderRadiusFoundation.max),
+                    shape: WidgetStateProperty.resolveWith(
+                          (states) =>
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadiusFoundation.max),
                     ),
-                    padding: MaterialStateProperty.resolveWith(
-                      (states) => EdgeInsets.symmetric(
-                        vertical: EdgeInsetsFoundation.vertical8,
-                        horizontal: EdgeInsetsFoundation.horizontal16,
-                      ),
+                    padding: WidgetStateProperty.resolveWith(
+                          (states) =>
+                          EdgeInsets.symmetric(
+                            vertical: EdgeInsetsFoundation.vertical8,
+                            horizontal: EdgeInsetsFoundation.horizontal16,
+                          ),
                     ),
                   ),
                   onPressed: widget.onDirectionsRequested,
@@ -295,7 +308,10 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                       ),
                       SpacingFoundation.horizontalSpace4,
                       Text(
-                        S.of(context).Directions.toUpperCase(),
+                        S
+                            .of(context)
+                            .Directions
+                            .toUpperCase(),
                         style: theme?.boldTextTheme.caption1Bold
                             .copyWith(color: Colors.white),
                       ),
@@ -307,27 +323,30 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                   ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.resolveWith((states) {
-                        if (states.contains(MaterialState.disabled))
+                      WidgetStateProperty.resolveWith((states) {
+                        if (states.contains(WidgetState.disabled)) {
                           return theme?.colorScheme.darkNeutral300;
+                        }
 
                         return theme?.colorScheme.surface1;
                         // return theme?.colorScheme.info;
                       }),
-                      foregroundColor: MaterialStateProperty.resolveWith(
-                          (states) => Colors.white),
+                      foregroundColor: WidgetStateProperty.resolveWith(
+                              (states) => Colors.white),
                       elevation:
-                          MaterialStateProperty.resolveWith((states) => 0),
+                      WidgetStateProperty.resolveWith((states) => 0),
                       splashFactory: WaveSplash.splashFactory,
-                      shape: MaterialStateProperty.resolveWith(
-                        (states) => RoundedRectangleBorder(
-                            borderRadius: BorderRadiusFoundation.max),
+                      shape: WidgetStateProperty.resolveWith(
+                            (states) =>
+                            RoundedRectangleBorder(
+                                borderRadius: BorderRadiusFoundation.max),
                       ),
-                      padding: MaterialStateProperty.resolveWith(
-                        (states) => EdgeInsets.symmetric(
-                          vertical: EdgeInsetsFoundation.vertical8,
-                          horizontal: EdgeInsetsFoundation.horizontal16,
-                        ),
+                      padding: WidgetStateProperty.resolveWith(
+                            (states) =>
+                            EdgeInsets.symmetric(
+                              vertical: EdgeInsetsFoundation.vertical8,
+                              horizontal: EdgeInsetsFoundation.horizontal16,
+                            ),
                       ),
                     ),
                     onPressed: widget.onTaxisRequested,
@@ -342,7 +361,10 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                         ),
                         SpacingFoundation.horizontalSpace4,
                         Text(
-                          S.of(context).Taxi.toUpperCase(),
+                          S
+                              .of(context)
+                              .Taxi
+                              .toUpperCase(),
                           style: theme?.boldTextTheme.caption1Bold
                               .copyWith(color: Colors.white),
                         ),

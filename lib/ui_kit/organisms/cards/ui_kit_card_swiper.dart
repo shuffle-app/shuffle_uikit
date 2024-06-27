@@ -15,7 +15,7 @@ class UiKitCardSwiper extends StatelessWidget {
   final Size size;
 
   UiKitCardSwiper({
-    Key? key,
+    super.key,
     required this.cards,
     required this.onSwipe,
     required this.dislikeController,
@@ -23,8 +23,7 @@ class UiKitCardSwiper extends StatelessWidget {
     required this.size,
     this.onEnd,
     CardSwiperController? controller,
-  })  : controller = controller ?? CardSwiperController(),
-        super(key: key);
+  })  : controller = controller ?? CardSwiperController();
 
   @override
   Widget build(BuildContext context) {

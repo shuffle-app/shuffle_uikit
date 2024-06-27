@@ -8,12 +8,12 @@ class UiKitTitledSelectionTile extends StatelessWidget {
   // final ValueChanged<List<String>>? onChanged;
 
   const UiKitTitledSelectionTile({
-    Key? key,
+    super.key,
     required this.title,
     this.selectedItems,
     this.onSelectionChanged,
     // this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

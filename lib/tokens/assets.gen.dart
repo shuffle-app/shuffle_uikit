@@ -155,6 +155,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Company.png
   AssetGenImage get company => const AssetGenImage('assets/images/png/Company.png');
 
+  /// File path: assets/images/png/Create-name.png
+  AssetGenImage get createName => const AssetGenImage('assets/images/png/Create-name.png');
+
   /// File path: assets/images/png/Dart.png
   AssetGenImage get dart => const AssetGenImage('assets/images/png/Dart.png');
 
@@ -166,6 +169,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Donations.png
   AssetGenImage get donations => const AssetGenImage('assets/images/png/Donations.png');
+
+  /// File path: assets/images/png/Drag-card.png
+  AssetGenImage get dragCard => const AssetGenImage('assets/images/png/Drag-card.png');
 
   /// File path: assets/images/png/Events.png
   AssetGenImage get events => const AssetGenImage('assets/images/png/Events.png');
@@ -299,6 +305,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Ok-hands.png
   AssetGenImage get okHands => const AssetGenImage('assets/images/png/Ok-hands.png');
 
+  /// File path: assets/images/png/Order-stack.png
+  AssetGenImage get orderStack => const AssetGenImage('assets/images/png/Order-stack.png');
+
   /// File path: assets/images/png/Other-gender.png
   AssetGenImage get otherGender => const AssetGenImage('assets/images/png/Other-gender.png');
 
@@ -355,6 +364,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Select-niche.png
   AssetGenImage get selectNiche => const AssetGenImage('assets/images/png/Select-niche.png');
+
+  /// File path: assets/images/png/Share-stack.png
+  AssetGenImage get shareStack => const AssetGenImage('assets/images/png/Share-stack.png');
 
   /// File path: assets/images/png/Shuffle-any.png
   AssetGenImage get shuffleAny => const AssetGenImage('assets/images/png/Shuffle-any.png');
@@ -638,6 +650,12 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/mock_avatar.png
   AssetGenImage get mockAvatar => const AssetGenImage('assets/images/png/mock_avatar.png');
 
+  /// File path: assets/images/png/mock_paralax_back_image.png
+  AssetGenImage get mockParalaxBackImage => const AssetGenImage('assets/images/png/mock_paralax_back_image.png');
+
+  /// File path: assets/images/png/mock_paralax_front_image.png
+  AssetGenImage get mockParalaxFrontImage => const AssetGenImage('assets/images/png/mock_paralax_front_image.png');
+
   /// File path: assets/images/png/mock_swiper_card.png
   AssetGenImage get mockSwiperCard => const AssetGenImage('assets/images/png/mock_swiper_card.png');
 
@@ -867,10 +885,12 @@ class $AssetsImagesPngGen {
         coin,
         companions,
         company,
+        createName,
         dart,
         discount,
         doctor,
         donations,
+        dragCard,
         events,
         feedback,
         female,
@@ -915,6 +935,7 @@ class $AssetsImagesPngGen {
         networking,
         noPhoto,
         okHands,
+        orderStack,
         otherGender,
         outstanding,
         pieChart,
@@ -934,6 +955,7 @@ class $AssetsImagesPngGen {
         rockNRollHands,
         rocket,
         selectNiche,
+        shareStack,
         shuffleAny,
         ski,
         smileMood,
@@ -1027,6 +1049,8 @@ class $AssetsImagesPngGen {
         mockAdBanner8,
         mockAdBanner9,
         mockAvatar,
+        mockParalaxBackImage,
+        mockParalaxFrontImage,
         mockSwiperCard,
         mockUserAvatar,
         muslimFlag,

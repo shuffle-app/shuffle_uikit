@@ -7,9 +7,9 @@ class ProfileStoriesList extends StatelessWidget {
   final List<ProfileStory> stories;
 
   const ProfileStoriesList({
-    Key? key,
+    super.key,
     required this.stories,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

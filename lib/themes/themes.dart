@@ -1,4 +1,5 @@
 /// This file exports all the custom themes of UI Kit
+library;
 
 export 'input_state_color.dart';
 export 'ui_kit_bottom_sheet_theme_data.dart';

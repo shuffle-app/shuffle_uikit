@@ -17,7 +17,7 @@ class UiKitInputFieldNoIconCompact extends StatefulWidget {
   final InputBorder? customEnabledBorder;
 
   const UiKitInputFieldNoIconCompact({
-    Key? key,
+    super.key,
     required this.controller,
     this.errorText,
     this.hintText,
@@ -31,7 +31,7 @@ class UiKitInputFieldNoIconCompact extends StatefulWidget {
     this.customFocusedBorder,
     this.customEnabledBorder,
     this.label,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitInputFieldNoIconCompact> createState() => _UiKitInputFieldNoIconCompactState();

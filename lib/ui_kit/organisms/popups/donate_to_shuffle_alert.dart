@@ -5,9 +5,9 @@ class DonateToShuffleAlert extends StatefulWidget {
   final ValueChanged<int>? onDonate;
 
   const DonateToShuffleAlert({
-    Key? key,
+    super.key,
     this.onDonate,
-  }) : super(key: key);
+  });
 
   @override
   State<DonateToShuffleAlert> createState() => _DonateToShuffleAlertState();

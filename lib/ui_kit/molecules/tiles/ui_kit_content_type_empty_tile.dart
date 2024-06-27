@@ -8,10 +8,10 @@ class UiKitContentTypeEmptyTile extends StatelessWidget {
   final double? customRotationAngle;
 
   const UiKitContentTypeEmptyTile({
-    Key? key,
+    super.key,
     required this.size,
     this.customRotationAngle,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -8,11 +8,11 @@ class InfluencerProfile extends StatefulWidget {
   final int? pointsEarned;
 
   const InfluencerProfile({
-    Key? key,
+    super.key,
     this.visitedPlaces,
     this.reviewsPosted,
     this.pointsEarned,
-  }) : super(key: key);
+  });
 
   @override
   State<InfluencerProfile> createState() => _InfluencerProfileState();
@@ -346,7 +346,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                     children: [
                       UiKitContentVoiceReactionCard(
                         contentTitle: 'The best place',
-                        datePosted: DateTime.now().subtract(Duration(hours: 16)),
+                        datePosted: DateTime.now().subtract(const Duration(hours: 16)),
                         audioMessage: UiKitAudioMessageTile(width: 0.5125.sw, audioWaveCount: 50),
                         imageLink: GraphicsFoundation.instance.png.placeSocial1.path,
                         properties: [
@@ -373,7 +373,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                       SpacingFoundation.verticalSpace16,
                       UiKitContentVoiceReactionCard(
                         contentTitle: 'The best place for a date',
-                        datePosted: DateTime.now().subtract(Duration(hours: 16)),
+                        datePosted: DateTime.now().subtract(const Duration(hours: 16)),
                         audioMessage: UiKitAudioMessageTile(width: 0.5125.sw, audioWaveCount: 50),
                         imageLink: GraphicsFoundation.instance.png.placeSocial1.path,
                         properties: [
@@ -496,7 +496,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                 UiKitShowMoreTitledSection(
                   onShowMore: () {},
                   title: S.current.Video,
-                  content: UiKitVideoPlayerWithContentDetails(
+                  content: const UiKitVideoPlayerWithContentDetails(
                     videoUrl: 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
                   ),
                 ),

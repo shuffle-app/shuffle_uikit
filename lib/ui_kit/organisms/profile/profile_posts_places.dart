@@ -7,11 +7,11 @@ class ProfilePostsPlaces extends StatelessWidget {
   final VoidCallback? onExpand;
 
   const ProfilePostsPlaces({
-    Key? key,
+    super.key,
     required this.places,
     this.horizontalMargin,
     this.onExpand,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

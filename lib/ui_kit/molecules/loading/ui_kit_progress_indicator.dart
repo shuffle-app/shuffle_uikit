@@ -10,12 +10,12 @@ class UiKitProgressIndicator extends StatelessWidget {
   final Color? backgroundColor;
 
   const UiKitProgressIndicator({
-    Key? key,
+    super.key,
     required this.progress,
     required this.width,
     this.color,
     this.backgroundColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

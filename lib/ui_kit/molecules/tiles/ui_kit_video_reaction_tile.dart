@@ -15,7 +15,7 @@ class UiKitVideoReactionTile extends StatelessWidget {
   final bool Function()? canNavigateToPublicProfile;
 
   const UiKitVideoReactionTile({
-    Key? key,
+    super.key,
     this.authorAvatarUrl,
     this.authorType,
     this.authorName,
@@ -26,7 +26,7 @@ class UiKitVideoReactionTile extends StatelessWidget {
     this.onPlaceNameTapped,
     this.canNavigateToPublicProfile,
     this.onSeeMorePopOverCallback,
-  }) : super(key: key);
+  });
 
   void _showPopOver(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
@@ -92,13 +92,13 @@ class UiKitVideoReactionTile extends StatelessWidget {
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: authorName,
+                      text: authorName == null ? '' : '$authorName  ',
                       style: boldTextTheme?.caption1Bold,
                       recognizer: TapGestureRecognizer()..onTap = () => _authorTapHandler(context),
                     ),
                     if (reactionDate != null)
                       TextSpan(
-                        text: '  ${formatDateTimeDifferenceWithMonthName(reactionDate!)}',
+                        text: formatDateTimeDifferenceWithMonthName(reactionDate!),
                         style: boldTextTheme?.caption1Bold.copyWith(color: Colors.white38),
                       ),
                   ],

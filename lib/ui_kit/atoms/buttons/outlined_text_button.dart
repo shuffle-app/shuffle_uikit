@@ -10,13 +10,13 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
   final bool isGradientEnabled;
 
   const OutlinedTextButton({
-    Key? key,
+    super.key,
     required this.text,
     this.onPressed,
     this.loading,
     this.borderColor,
     this.isGradientEnabled = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

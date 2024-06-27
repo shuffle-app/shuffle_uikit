@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -13,12 +15,12 @@ class UiKitVideoPlayerWithContentDetails extends StatefulWidget {
   final DateTime? datePosted;
 
   const UiKitVideoPlayerWithContentDetails({
-    Key? key,
+    super.key,
     required this.videoUrl,
     this.contentImageLink,
     this.contentName,
     this.datePosted,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitVideoPlayerWithContentDetails> createState() => _UiKitVideoPlayerWithContentDetailsState();

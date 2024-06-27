@@ -6,10 +6,10 @@ class UiKitPlaceTag extends StatelessWidget {
   final Color? color;
 
   const UiKitPlaceTag({
-    Key? key,
+    super.key,
     required this.placeName,
     this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +28,12 @@ class UiKitPlaceTag extends StatelessWidget {
             color: color ?? Colors.white,
           ),
           SpacingFoundation.horizontalSpace4,
-          Text(
-            placeName,
-            style: boldTextTheme?.caption2.copyWith(color: color ?? Colors.white),
+          Flexible(
+            child: Text(
+              placeName,
+              style: boldTextTheme?.caption2.copyWith(color: color ?? Colors.white),
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
         ],
       ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12, vertical: EdgeInsetsFoundation.vertical2),

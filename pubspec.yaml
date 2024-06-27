@@ -99,8 +99,8 @@ dependencies:
 
 
   #maps
-  google_maps_flutter: ^2.6.1
-  flutter_polyline_points: ^2.0.0
+  google_maps_flutter: ^2.7.0
+  flutter_polyline_points: ^2.0.1
   countries_flag: ^1.0.0
   dropdown_button2: ^2.3.9
   image_picker: ^1.1.1
@@ -112,9 +112,16 @@ dependencies:
       url: https://github.com/shuffle-app/video_editor.git
       ref: master
   ffmpeg_kit_flutter_min: ^6.0.3
+  flutter_tilt: ^3.0.2
+  sensors_plus: ^5.0.1
 
+  collection: any
+  html: any
+  webview_flutter: any
+  vector_graphics: any
 dependency_overrides:
   watcher: ^1.1.0
+  file: ^7.0.0
 
 dev_dependencies:
   flutter_test:
@@ -124,6 +131,12 @@ dev_dependencies:
   build_runner: ^2.4.10
   icon_font_generator: ^4.0.0
 #  dart_code_metrics: ^5.7.3
+
+  dart_code_linter:
+    git:
+      url: https://github.com/shuffle-app/dart-code-linter.git
+      ref: trunk
+
 flutter:
   assets:
     - assets/images/png/

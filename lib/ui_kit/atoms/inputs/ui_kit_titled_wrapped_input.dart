@@ -8,12 +8,12 @@ class UiKitTitledWrappedInput extends StatelessWidget {
   final double? padding;
 
   const UiKitTitledWrappedInput({
-    Key? key,
+    super.key,
     required this.input,
     required this.title,
     this.padding,
     this.popOverMessage,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

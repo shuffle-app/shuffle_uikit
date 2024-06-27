@@ -8,13 +8,12 @@ class UiKitChip extends StatelessWidget {
   final BoxBorder? border;
 
   const UiKitChip({
-    Key? key,
+    super.key,
     required this.title,
     required this.isSelected,
     this.bordered = false,
     BoxBorder? border,
-  })  : border = border ?? (isSelected ? GradientFoundation.gradientBorder : null),
-        super(key: key);
+  })  : border = border ?? (isSelected ? GradientFoundation.gradientBorder : null);
 
   @override
   Widget build(BuildContext context) {

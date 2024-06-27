@@ -3,7 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class MediumTextAdBanner2 extends StatelessWidget {
   final double? customHeight;
-  const MediumTextAdBanner2({Key? key, this.customHeight}) : super(key: key);
+  const MediumTextAdBanner2({super.key, this.customHeight});
 
   @override
   Widget build(BuildContext context) {

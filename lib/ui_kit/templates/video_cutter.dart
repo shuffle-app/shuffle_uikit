@@ -24,12 +24,12 @@ class VideoCutter extends StatefulWidget {
   final String outputDirectory;
 
   const VideoCutter({
-    Key? key,
+    super.key,
     required this.videoFile,
     required this.onExportFinished,
     required this.outputDirectory,
     this.onBackPressed,
-  }) : super(key: key);
+  });
 
   @override
   State<VideoCutter> createState() => _VideoCutterState();

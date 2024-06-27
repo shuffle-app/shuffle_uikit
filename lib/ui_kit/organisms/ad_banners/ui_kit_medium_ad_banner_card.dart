@@ -11,13 +11,13 @@ class UiKitMediumAdBannerCard extends StatelessWidget implements AdvertisementFa
   final double? customHeight;
 
   const UiKitMediumAdBannerCard({
-    Key? key,
+    super.key,
     required this.availableWidth,
     this.onTap,
     this.customHeight,
     required this.imageLink,
     required this.title,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

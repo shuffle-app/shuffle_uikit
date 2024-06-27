@@ -38,8 +38,10 @@ class SnackBarUtils {
           style: theme?.regularTextTheme.labelSmall.copyWith(color: color),
         ),
         closeIconColor: color,
+        // closeIconColor: color,
         showCloseIcon: onTap == null,
         action: onTap == null ? null : SnackBarAction(textColor: color, label: 'X', onPressed: onTap),
+        // margin: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
       ),
     );
   }

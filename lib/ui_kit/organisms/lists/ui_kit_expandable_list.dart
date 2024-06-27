@@ -8,12 +8,12 @@ class UiKitExpandableList extends StatefulWidget {
   final double? horizontalMargin;
 
   const UiKitExpandableList({
-    Key? key,
+    super.key,
     required this.items,
     this.itemsTitle,
     this.onExpand,
     this.horizontalMargin,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitExpandableList> createState() => _UiKitExpandableListState();

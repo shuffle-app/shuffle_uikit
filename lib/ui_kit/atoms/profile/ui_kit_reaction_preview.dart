@@ -10,14 +10,14 @@ class UiKitReactionPreview extends StatelessWidget {
   final double? customHeight;
 
   const UiKitReactionPreview({
-    Key? key,
+    super.key,
     this.imagePath,
     this.viewed = false,
     this.onTap,
     this.isEmpty = false,
     this.customWidth,
     this.customHeight,
-  }) : super(key: key);
+  });
 
   factory UiKitReactionPreview.empty({
     VoidCallback? onTap,

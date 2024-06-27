@@ -7,11 +7,11 @@ class TitledAccentInfo extends StatelessWidget {
   final bool? showFullInfo;
 
   const TitledAccentInfo({
-    Key? key,
+    super.key,
     required this.title,
     required this.info,
     this.showFullInfo,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

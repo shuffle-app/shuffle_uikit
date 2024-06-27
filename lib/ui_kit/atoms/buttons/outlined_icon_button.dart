@@ -13,16 +13,15 @@ class OutlinedIconButton extends StatelessWidget implements ButtonFactory {
   final EdgeInsetsGeometry? padding;
 
   const OutlinedIconButton({
-    Key? key,
+    super.key,
     this.icon,
     this.onPressed,
     this.loading,
     this.borderColor,
     this.iconInfo,
     this.hideBorder = false,
-    this.padding
-
-  }) : super(key: key);
+    this.padding,
+  });
 
   @override
   Widget build(BuildContext context) {
