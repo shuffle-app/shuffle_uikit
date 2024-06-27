@@ -11,6 +11,8 @@ class EdgeInsetsFoundation {
 
   static double get all8 => 8.sp;
 
+  static double get all10 => 10.sp;
+
   static double get all12 => 12.sp;
 
   static double get all14 => 14.sp;

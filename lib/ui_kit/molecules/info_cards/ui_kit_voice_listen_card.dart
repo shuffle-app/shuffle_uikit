@@ -21,10 +21,11 @@ class UiKitVoiceListenCard extends StatelessWidget {
       child: Row(
         children: [
           context.outlinedButton(
+            padding: EdgeInsets.all(EdgeInsetsFoundation.all10),
             data: BaseUiKitButtonData(
               onPressed: () {},
               iconInfo: BaseUiKitButtonIconData(
-                  iconData: ShuffleUiKitIcons.playfill, size: 18.sp),
+                  iconData: ShuffleUiKitIcons.playfill, size: 24.sp),
             ),
           ),
           SpacingFoundation.horizontalSpace16,

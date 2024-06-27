@@ -55,8 +55,9 @@ class UiKitFeedbackCard extends StatelessWidget {
               SpacingFoundation.verticalSpace12,
               Text(
                 text ?? '',
-                style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
+                style: boldTextTheme?.caption1Medium,
                 maxLines: 3,
+                overflow: TextOverflow.ellipsis,
               ),
               SpacingFoundation.verticalSpace12,
               Row(

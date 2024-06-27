@@ -227,6 +227,30 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Key.png
   AssetGenImage get key => const AssetGenImage('assets/images/png/Key.png');
 
+  /// File path: assets/images/png/LETO-1.jpg
+  AssetGenImage get leto1 => const AssetGenImage('assets/images/png/LETO-1.jpg');
+
+  /// File path: assets/images/png/LETO-2.jpg
+  AssetGenImage get leto2 => const AssetGenImage('assets/images/png/LETO-2.jpg');
+
+  /// File path: assets/images/png/LETO-3.jpg
+  AssetGenImage get leto3 => const AssetGenImage('assets/images/png/LETO-3.jpg');
+
+  /// File path: assets/images/png/LETO-4.png
+  AssetGenImage get leto4 => const AssetGenImage('assets/images/png/LETO-4.png');
+
+  /// File path: assets/images/png/LETO-5.jpeg
+  AssetGenImage get leto5 => const AssetGenImage('assets/images/png/LETO-5.jpeg');
+
+  /// File path: assets/images/png/LETO-7.jpg
+  AssetGenImage get leto7 => const AssetGenImage('assets/images/png/LETO-7.jpg');
+
+  /// File path: assets/images/png/LETO-8 2.png
+  AssetGenImage get leto82 => const AssetGenImage('assets/images/png/LETO-8 2.png');
+
+  /// File path: assets/images/png/LETO-logo.png
+  AssetGenImage get lETOLogo => const AssetGenImage('assets/images/png/LETO-logo.png');
+
   /// File path: assets/images/png/Laptop-with-chart.png
   AssetGenImage get laptopWithChart => const AssetGenImage('assets/images/png/Laptop-with-chart.png');
 
@@ -445,6 +469,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/donat.png
   AssetGenImage get donat => const AssetGenImage('assets/images/png/donat.png');
+
+  /// File path: assets/images/png/entertainment.png
+  AssetGenImage get entertainment => const AssetGenImage('assets/images/png/entertainment.png');
 
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
@@ -792,6 +819,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/star_2.png
   AssetGenImage get star2 => const AssetGenImage('assets/images/png/star_2.png');
 
+  /// File path: assets/images/png/story.png
+  AssetGenImage get story => const AssetGenImage('assets/images/png/story.png');
+
   /// File path: assets/images/png/surprise-emoji.png
   AssetGenImage get surpriseEmoji => const AssetGenImage('assets/images/png/surprise-emoji.png');
 
@@ -861,6 +891,14 @@ class $AssetsImagesPngGen {
         indexFingerHands,
         internetBusiness,
         key,
+        leto1,
+        leto2,
+        leto3,
+        leto4,
+        leto5,
+        leto7,
+        leto82,
+        lETOLogo,
         laptopWithChart,
         lifebuoy,
         lightSnowfall,
@@ -933,6 +971,7 @@ class $AssetsImagesPngGen {
         compactRatingCardMock,
         deliveryTruck,
         donat,
+        entertainment,
         eventAvatar,
         fatigueEmoji,
         geoPermit,
@@ -1047,6 +1086,7 @@ class $AssetsImagesPngGen {
         spinnerTextBanner2,
         spinnerTextBanner3,
         star2,
+        story,
         surpriseEmoji,
         threeLevels,
         titledCardBackground1,
@@ -1315,6 +1355,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/calendar.svg
   SvgGenImage get calendar => const SvgGenImage('assets/images/svg/calendar.svg');
 
+  /// File path: assets/images/svg/calm.svg
+  SvgGenImage get calm => const SvgGenImage('assets/images/svg/calm.svg');
+
   /// File path: assets/images/svg/camera-plus.svg
   SvgGenImage get cameraPlus => const SvgGenImage('assets/images/svg/camera-plus.svg');
 
@@ -1368,6 +1411,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/cocktail.svg
   SvgGenImage get cocktail => const SvgGenImage('assets/images/svg/cocktail.svg');
+
+  /// File path: assets/images/svg/coffee.svg
+  SvgGenImage get coffee => const SvgGenImage('assets/images/svg/coffee.svg');
 
   /// File path: assets/images/svg/company_layered.svg
   SvgGenImage get companyLayered => const SvgGenImage('assets/images/svg/company_layered.svg');
@@ -1841,6 +1887,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/taxi.svg
   SvgGenImage get taxi => const SvgGenImage('assets/images/svg/taxi.svg');
 
+  /// File path: assets/images/svg/teapot.svg
+  SvgGenImage get teapot => const SvgGenImage('assets/images/svg/teapot.svg');
+
   /// File path: assets/images/svg/thumb-up.svg
   SvgGenImage get thumbUp => const SvgGenImage('assets/images/svg/thumb-up.svg');
 
@@ -2012,6 +2061,7 @@ class $AssetsImagesSvgGen {
         building,
         businessman,
         calendar,
+        calm,
         cameraPlus,
         check,
         checkCircle,
@@ -2030,6 +2080,7 @@ class $AssetsImagesSvgGen {
         cloudOff,
         club,
         cocktail,
+        coffee,
         companyLayered,
         conferences,
         connectionFill,
@@ -2187,6 +2238,7 @@ class $AssetsImagesSvgGen {
         swimming,
         table,
         taxi,
+        teapot,
         thumbUp,
         thumbsUpReversed,
         tiger,
@@ -2227,6 +2279,9 @@ class $AssetsImagesPngAvatarsGen {
   /// File path: assets/images/png/avatars/Avatar-10.png
   AssetGenImage get avatar10 => const AssetGenImage('assets/images/png/avatars/Avatar-10.png');
 
+  /// File path: assets/images/png/avatars/Avatar-13.png
+  AssetGenImage get avatar13 => const AssetGenImage('assets/images/png/avatars/Avatar-13.png');
+
   /// File path: assets/images/png/avatars/Avatar-2.png
   AssetGenImage get avatar2 => const AssetGenImage('assets/images/png/avatars/Avatar-2.png');
 
@@ -2251,9 +2306,28 @@ class $AssetsImagesPngAvatarsGen {
   /// File path: assets/images/png/avatars/Avatar.png
   AssetGenImage get avatar => const AssetGenImage('assets/images/png/avatars/Avatar.png');
 
+  /// File path: assets/images/png/avatars/Rectangle 24-1.jpg
+  AssetGenImage get rectangle241 => const AssetGenImage('assets/images/png/avatars/Rectangle 24-1.jpg');
+
+  /// File path: assets/images/png/avatars/Rectangle 24.jpg
+  AssetGenImage get rectangle24 => const AssetGenImage('assets/images/png/avatars/Rectangle 24.jpg');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [avatar1, avatar10, avatar2, avatar3, avatar4, avatar6, avatar7, avatar8, avatar9, avatar];
+  List<AssetGenImage> get values => [
+        avatar1,
+        avatar10,
+        avatar13,
+        avatar2,
+        avatar3,
+        avatar4,
+        avatar6,
+        avatar7,
+        avatar8,
+        avatar9,
+        avatar,
+        rectangle241,
+        rectangle24
+      ];
 }
 
 class $AssetsImagesPngPreferenceQuestionsGen {
