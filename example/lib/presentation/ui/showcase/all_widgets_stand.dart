@@ -146,7 +146,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               'Any plans for the weekend? What about to get a company and go to atmosphere again?',
           replayText: 'Ryan Gosling in the movie Drive',
           onReplyMassageTap: () {},
-          replyUserName: 'Райн гослинг',
+          replyUserName: 'Райн гослинг'),
         UiKitVoiceListenCard(
           duration: Duration(seconds: 70),
         ),
