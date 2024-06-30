@@ -61,6 +61,11 @@ class UiKitBase3DViewer extends StatelessWidget {
       exposure: 1,
       environmentImage: environmentImage,
       javascriptChannels: {...?javascriptChannels, onTapChannel},
+      innerModelViewerHtml: '''
+      <div class="progress-bar hide" slot="progress-bar">
+        <div class="update-bar"></div>
+    </div>
+      ''',
       relatedJs: '''
 function handleTap(event) {
   // Send the tap data to the JavascriptChannel
