@@ -603,6 +603,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Visit places and events in Shuffle and share your impressions"),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "No health kit available on your device, so the result will be random"),
+        "NoMessagesYet":
+            MessageLookupByLibrary.simpleMessage("No messages yet"),
         "NoPeopleAvailableToInvite": MessageLookupByLibrary.simpleMessage(
             "No people available to invite"),
         "NoPhotoHereYet":

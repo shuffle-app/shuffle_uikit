@@ -610,6 +610,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "शफल में स्थानों और घटनाओं का दौरा करें और अपने अनुभव साझा करें"),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "आपके डिवाइस पर कोई स्वास्थ्य किट उपलब्ध नहीं है, इसलिए परिणाम यादृच्छिक होगा"),
+        "NoMessagesYet":
+            MessageLookupByLibrary.simpleMessage("No messages yet"),
         "NoPeopleAvailableToInvite": MessageLookupByLibrary.simpleMessage(
             "आमंत्रित करने के लिए कोई लोग उपलब्ध नहीं हैं"),
         "NoPhotoHereYet": MessageLookupByLibrary.simpleMessage(

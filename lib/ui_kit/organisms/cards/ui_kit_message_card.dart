@@ -6,16 +6,18 @@ class UiKitMessageCard extends StatelessWidget {
     super.key,
     required this.name,
     required this.userType,
-    required this.username,
+    required this.subtitle,
     required this.avatarPath,
     required this.lastMessage,
     required this.lastMessageTime,
     required this.onTap,
+    this.subtitleIconPath,
     this.unreadMessageCount,
   });
 
   final String name;
-  final String username;
+  final String subtitle;
+  final String? subtitleIconPath;
   final String lastMessage;
   final String lastMessageTime;
   final String avatarPath;
@@ -24,9 +26,22 @@ class UiKitMessageCard extends StatelessWidget {
 
   final int? unreadMessageCount;
 
+  factory UiKitMessageCard.empty() {
+    return UiKitMessageCard(
+      name: '',
+      userType: UserTileType.ordinary,
+      subtitle: '',
+      avatarPath: '',
+      lastMessage: '',
+      lastMessageTime: '',
+      onTap: () {},
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
     final colorScheme = context.uiKitTheme?.colorScheme;
     final cardColor = context.uiKitTheme?.cardColor;
 
@@ -39,6 +54,7 @@ class UiKitMessageCard extends StatelessWidget {
         child: Ink(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -55,22 +71,34 @@ class UiKitMessageCard extends StatelessWidget {
                           UiKitUserBadge(userType: userType)
                         ],
                       ),
-                      Text(
-                        username,
-                        style: boldTextTheme?.caption1Bold.copyWith(
-                          color: colorScheme?.darkNeutral900,
-                        ),
+                      SpacingFoundation.verticalSpace2,
+                      Row(
+                        children: [
+                          if (subtitleIconPath != null)
+                            ImageWidget(
+                              link: subtitleIconPath,
+                              height: 14.h,
+                              fit: BoxFit.fitHeight,
+                              color: colorScheme?.darkNeutral900,
+                            ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
+                          Text(
+                            subtitle,
+                            style: boldTextTheme?.caption1Bold.copyWith(
+                              color: colorScheme?.darkNeutral900,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                  const Spacer(),
-                  Text(
-                    lastMessageTime,
-                    style: boldTextTheme?.caption1Medium.copyWith(
-                      color: colorScheme?.darkNeutral900,
-                    ),
-                  ),
                 ],
+              ),
+              Text(
+                lastMessageTime,
+                style: regularTextTheme?.caption4.copyWith(
+                  color: colorScheme?.darkNeutral900,
+                ),
+                textAlign: TextAlign.end,
               ),
               SpacingFoundation.verticalSpace8,
               Row(

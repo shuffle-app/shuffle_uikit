@@ -632,5 +632,6 @@
   "FeedFavoritesHiwItems": "{item, plural, =0{drag & and drop cards} =1{create and name stack} =2{line up stacks order} few{share your stacks} other{other}}",
   "ConvenientClearAndUseful": "сonvenient, clear and useful",
   "StacksAreOn": "Stacks are on",
-  "StacksAndSomethingElseAreAvailableForYou": "Stacks and something else are available for you..."
+  "StacksAndSomethingElseAreAvailableForYou": "Stacks and something else are available for you...",
+  "NoMessagesYet": "No messages yet"
 }

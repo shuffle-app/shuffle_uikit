@@ -6517,6 +6517,16 @@ class S {
       args: [],
     );
   }
+
+  /// `No messages yet`
+  String get NoMessagesYet {
+    return Intl.message(
+      'No messages yet',
+      name: 'NoMessagesYet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
