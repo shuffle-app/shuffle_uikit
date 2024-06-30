@@ -94,7 +94,7 @@ dependencies:
   dynamic_color: ^1.6.9
 
   #video player
-  video_player: ^2.8.6
+  video_player: ^2.9.0
   smooth_video_progress: ^0.0.4
 
 
