@@ -5,6 +5,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:huawei_map/huawei_map.dart' as hms;
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class MapDirectionsPage extends StatefulWidget {
@@ -15,6 +16,7 @@ class MapDirectionsPage extends StatefulWidget {
   final VoidCallback? onDirectionsRequested;
   final VoidCallback? onTaxisRequested;
   final LatLng destination;
+  final bool isHuawei;
 
   const MapDirectionsPage({
     super.key,
@@ -25,6 +27,7 @@ class MapDirectionsPage extends StatefulWidget {
     required this.searchController,
     required this.destination,
     required this.destinationTitle,
+    this.isHuawei = false,
   });
 
   @override
@@ -33,6 +36,7 @@ class MapDirectionsPage extends StatefulWidget {
 
 class _MapDirectionsPageState extends State<MapDirectionsPage> {
   GoogleMapController? controller;
+  hms.HuaweiMapController? huaweiController;
   BitmapDescriptor markerIcon = BitmapDescriptor.defaultMarker;
   Marker? marker;
   final apiKey = const String.fromEnvironment('googleApiKey');
@@ -50,6 +54,9 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
   @override
   void initState() {
     super.initState();
+    if(widget.isHuawei) {
+      hms.HuaweiMapInitializer.initializeMap();
+    }
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       Future.delayed(
         const Duration(milliseconds: 500),
@@ -57,8 +64,12 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
           try {
             await widget.onCurrentLocationRequested?.call();
           } catch (e) {
-            await controller
-                ?.animateCamera(CameraUpdate.newLatLng(widget.destination));
+            if (widget.isHuawei) {
+              await huaweiController?.animateCamera(
+                  hms.CameraUpdate.newLatLng(hms.LatLng(widget.destination.latitude, widget.destination.longitude)));
+            } else {
+              await controller?.animateCamera(CameraUpdate.newLatLng(widget.destination));
+            }
             setState(() {
               loading = false;
             });
@@ -76,38 +87,50 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
       debugPrint(
           'getRouteBetweenCoordinates from ${widget.currentLocationNotifier.value.latitude} ${widget.currentLocationNotifier.value.longitude} toooo ${widget.destination.latitude} ${widget.destination.longitude}');
       final result = await points.getRouteBetweenCoordinates(
-        apiKey,
-        PointLatLng(widget.currentLocationNotifier.value.latitude,
-            widget.currentLocationNotifier.value.longitude),
-        PointLatLng(widget.destination.latitude, widget.destination.longitude),
-      );
-      await controller?.animateCamera(
-        CameraUpdate.newLatLngBounds(
-          LatLngBounds(
-            southwest: LatLng(
-              min(widget.currentLocationNotifier.value.latitude,
-                  widget.destination.latitude),
-              min(widget.currentLocationNotifier.value.longitude,
-                  widget.destination.longitude),
+          googleApiKey: apiKey,
+          request: PolylineRequest(
+            origin: PointLatLng(
+                widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
+            destination: PointLatLng(widget.destination.latitude, widget.destination.longitude),
+            mode: TravelMode.driving,
+          ));
+      if (widget.isHuawei) {
+        await huaweiController?.animateCamera(hms.CameraUpdate.newLatLngBounds(
+          hms.LatLngBounds(
+            southwest: hms.LatLng(
+              min(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
+              min(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
             ),
-            northeast: LatLng(
-              max(widget.currentLocationNotifier.value.latitude,
-                  widget.destination.latitude),
-              max(widget.currentLocationNotifier.value.longitude,
-                  widget.destination.longitude),
+            northeast: hms.LatLng(
+              max(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
+              max(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
             ),
           ),
           72.w,
-        ),
-      );
+        ));
+      } else {
+        await controller?.animateCamera(
+          CameraUpdate.newLatLngBounds(
+            LatLngBounds(
+              southwest: LatLng(
+                min(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
+                min(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
+              ),
+              northeast: LatLng(
+                max(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
+                max(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
+              ),
+            ),
+            72.w,
+          ),
+        );
+      }
 
       setState(() {
         directionLines = [
           Polyline(
             polylineId: const PolylineId('directions'),
-            points: result.points
-                .map((e) => LatLng(e.latitude, e.longitude))
-                .toList(),
+            points: result.points.map((e) => LatLng(e.latitude, e.longitude)).toList(),
             color: ColorsFoundation.info,
             width: 4,
             startCap: Cap.buttCap,
@@ -118,16 +141,12 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
         ];
         marker = Marker(
           markerId: const MarkerId('destination'),
-          position:
-              LatLng(result.points.last.latitude, result.points.last.longitude),
+          position: LatLng(result.points.last.latitude, result.points.last.longitude),
           icon: markerIcon,
         );
       });
     } catch (e) {
-      SnackBarUtils.show(
-          message: 'Directions unavailable',
-          context: context,
-          type: AppSnackBarType.error);
+      SnackBarUtils.show(message: 'Directions unavailable', context: context, type: AppSnackBarType.error);
     } finally {
       setState(() {
         loading = false;
@@ -153,25 +172,54 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          GoogleMap(
-            onMapCreated: (mapController) {
-              widget.currentLocationNotifier
-                  .addListener(_currentLocationListener);
-              setState(() => controller = mapController);
-              debugPrint('onMapCreated');
-            },
-            initialCameraPosition: CameraPosition(
-              target: widget.currentLocationNotifier.value,
-              zoom: 14,
+          if (widget.isHuawei)
+            hms.HuaweiMap(
+              onMapCreated: (mapController) {
+                widget.currentLocationNotifier.addListener(_currentLocationListener);
+                setState(() => huaweiController = mapController);
+                debugPrint('onMapCreated');
+              },
+              initialCameraPosition: hms.CameraPosition(
+                target: hms.LatLng(
+                    widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
+                zoom: 14,
+              ),
+              markers: {
+                if (marker != null)
+                  hms.Marker(
+                      markerId: hms.MarkerId(marker!.markerId.value),
+                      position: hms.LatLng(marker!.position.latitude, marker!.position.longitude))
+              },
+              polylines: Set.from(directionLines.map((element) => hms.Polyline(
+                  polylineId: hms.PolylineId(element.polylineId.value),
+                  color: ColorsFoundation.info,
+                  width: 4,
+                  startCap: hms.Cap.buttCap,
+                  jointType: hms.JointType.bevel,
+                  endCap: hms.Cap.roundCap,
+                  visible: true,
+                  points: element.points.map((e) => hms.LatLng(e.latitude, e.longitude)).toList()))),
+              myLocationEnabled: true,
+              myLocationButtonEnabled: false,
+            )
+          else
+            GoogleMap(
+              onMapCreated: (mapController) {
+                widget.currentLocationNotifier.addListener(_currentLocationListener);
+                setState(() => controller = mapController);
+                debugPrint('onMapCreated');
+              },
+              initialCameraPosition: CameraPosition(
+                target: widget.currentLocationNotifier.value,
+                zoom: 14,
+              ),
+              markers: {if (marker != null) marker!},
+              polylines: Set.from(directionLines),
+              myLocationEnabled: true,
+              myLocationButtonEnabled: false,
             ),
-            markers: {if (marker != null) marker!},
-            polylines: Set.from(directionLines),
-            myLocationEnabled: true,
-            myLocationButtonEnabled: false,
-          ),
           Positioned(
-            top: MediaQuery.viewPaddingOf(context).top +
-                SpacingFoundation.verticalSpacing16,
+            top: MediaQuery.viewPaddingOf(context).top + SpacingFoundation.verticalSpacing16,
             left: SpacingFoundation.horizontalSpacing16,
             child: Material(
               clipBehavior: Clip.none,
@@ -196,8 +244,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
               width: 1.sw,
               height: 1.sh,
               child: ColoredBox(
-                color:
-                    colorScheme?.surface3.withOpacity(0.75) ?? Colors.black54,
+                color: colorScheme?.surface3.withOpacity(0.75) ?? Colors.black54,
                 child: const Center(child: CircularProgressIndicator()),
               ),
             ),
@@ -256,15 +303,13 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
               SpacingFoundation.verticalSpace16,
               Text(
                 widget.destinationTitle,
-                style: theme?.boldTextTheme.caption1Medium
-                    .copyWith(color: Colors.black),
+                style: theme?.boldTextTheme.caption1Medium.copyWith(color: Colors.black),
               ),
               SpacingFoundation.verticalSpace4,
               Row(children: [
                 ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor:
-                        WidgetStateProperty.resolveWith((states) {
+                    backgroundColor: WidgetStateProperty.resolveWith((states) {
                       if (states.contains(WidgetState.disabled)) {
                         return theme?.colorScheme.darkNeutral300;
                       }
@@ -272,13 +317,11 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                       return theme?.colorScheme.surface1;
                       // return theme?.colorScheme.info;
                     }),
-                    foregroundColor: WidgetStateProperty.resolveWith(
-                        (states) => Colors.white),
+                    foregroundColor: WidgetStateProperty.resolveWith((states) => Colors.white),
                     elevation: WidgetStateProperty.resolveWith((states) => 0),
                     splashFactory: WaveSplash.splashFactory,
                     shape: WidgetStateProperty.resolveWith(
-                      (states) => RoundedRectangleBorder(
-                          borderRadius: BorderRadiusFoundation.max),
+                      (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.max),
                     ),
                     padding: WidgetStateProperty.resolveWith(
                       (states) => EdgeInsets.symmetric(
@@ -300,8 +343,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                       SpacingFoundation.horizontalSpace4,
                       Text(
                         S.of(context).Directions.toUpperCase(),
-                        style: theme?.boldTextTheme.caption1Bold
-                            .copyWith(color: Colors.white),
+                        style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
                       ),
                     ],
                   ),
@@ -310,8 +352,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                   SpacingFoundation.horizontalSpace4,
                   ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor:
-                          WidgetStateProperty.resolveWith((states) {
+                      backgroundColor: WidgetStateProperty.resolveWith((states) {
                         if (states.contains(WidgetState.disabled)) {
                           return theme?.colorScheme.darkNeutral300;
                         }
@@ -319,14 +360,11 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                         return theme?.colorScheme.surface1;
                         // return theme?.colorScheme.info;
                       }),
-                      foregroundColor: WidgetStateProperty.resolveWith(
-                          (states) => Colors.white),
-                      elevation:
-                          WidgetStateProperty.resolveWith((states) => 0),
+                      foregroundColor: WidgetStateProperty.resolveWith((states) => Colors.white),
+                      elevation: WidgetStateProperty.resolveWith((states) => 0),
                       splashFactory: WaveSplash.splashFactory,
                       shape: WidgetStateProperty.resolveWith(
-                        (states) => RoundedRectangleBorder(
-                            borderRadius: BorderRadiusFoundation.max),
+                        (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.max),
                       ),
                       padding: WidgetStateProperty.resolveWith(
                         (states) => EdgeInsets.symmetric(
@@ -348,8 +386,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                         SpacingFoundation.horizontalSpace4,
                         Text(
                           S.of(context).Taxi.toUpperCase(),
-                          style: theme?.boldTextTheme.caption1Bold
-                              .copyWith(color: Colors.white),
+                          style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
                         ),
                       ],
                     ),

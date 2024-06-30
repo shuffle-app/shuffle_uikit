@@ -94,13 +94,14 @@ dependencies:
   dynamic_color: ^1.6.9
 
   #video player
-  video_player: ^2.8.6
+  video_player: ^2.9.0
   smooth_video_progress: ^0.0.4
 
 
   #maps
   google_maps_flutter: ^2.7.0
-  flutter_polyline_points: ^2.0.0
+  flutter_polyline_points: ^2.0.1
+  huawei_map: ^6.11.2+302
   countries_flag: ^1.0.0
   dropdown_button2: ^2.3.9
   image_picker: ^1.1.1

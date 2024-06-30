@@ -247,6 +247,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("बुकिंग और आमंत्रण"),
         "Both": MessageLookupByLibrary.simpleMessage("Both"),
+        "Branches": MessageLookupByLibrary.simpleMessage("शाखाएँ"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("बौद्ध धर्म"),
         "BuildYOurBusiness":
             MessageLookupByLibrary.simpleMessage("अपने व्यापार को बढ़ाएं"),
@@ -255,6 +256,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Business": MessageLookupByLibrary.simpleMessage("व्यापार"),
         "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
             "जारी रखकर आप स्वीकार करते हैं"),
+        "CalmAtmosphere": MessageLookupByLibrary.simpleMessage("शांत वातावरण"),
         "Cancel": MessageLookupByLibrary.simpleMessage("रद्द करें"),
         "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
             "आप इस प्रोफ़ाइल को एक इन्फ्लुएंसर बनने पर देख सकते हैं"),
@@ -285,6 +287,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "CompanyName": MessageLookupByLibrary.simpleMessage("कंपनी का नाम"),
         "CompanyPosition":
             MessageLookupByLibrary.simpleMessage("कंपनी की स्थिति"),
+        "CompanyPresentationSlider1": MessageLookupByLibrary.simpleMessage(
+            "यह एक गैर-सार्वजनिक प्रोफ़ाइल है जो आपको अपने स्थानों, शाखाओं और स्थान की घटनाओं को पोस्ट करने की अनुमति देती है"),
+        "CompanyPresentationSlider2": MessageLookupByLibrary.simpleMessage(
+            "आप शाखाओं बना सकते हैं, एक जगह कार्ड उपयोगकर्ताओं में पूरे शाखा नेटवर्क देखेंगे"),
+        "CompanyPresentationSlider3": MessageLookupByLibrary.simpleMessage(
+            "आपकी सामग्री ऐप के रोटेशन में दिखाई देती है और उपयोगकर्ताओं को अद्वितीय फेरबदल प्रणाली के माध्यम से अनुशंसित की जाती है, - उपयोगकर्ता और सामग्री गुणों, व्यवहार कारकों, भू, मौसम, आदि के साथ"),
+        "CompanyPresentationSlider4": MessageLookupByLibrary.simpleMessage(
+            "अपने स्थानों और घटनाओं के लिए जागरूकता और यातायात बढ़ाएँ ।  सभी ऐप और उपयोगकर्ता सुविधाएँ आपके सामग्री कार्ड के आसपास हैं"),
+        "CompanyPresentationSlider5": MessageLookupByLibrary.simpleMessage(
+            "आप विशेष शफल प्रभावितों को आकर्षित करते हैं जो आपके स्थानों की स्थिति को बढ़ाएंगे"),
+        "CompanyPresentationSlider6": MessageLookupByLibrary.simpleMessage(
+            "आप विशेष सूचनाओं, रिमाइंडर, ऑफ़र और प्रीसेल की अनूठी कार्यक्षमता के माध्यम से अपने दर्शकों के साथ बातचीत कर सकते हैं"),
+        "CompanyPresentationSlider7": MessageLookupByLibrary.simpleMessage(
+            "आप आंतरिक लक्षित विज्ञापन प्रणाली का उपयोग कर सकते हैं"),
+        "CompanyPresentationSlider8": MessageLookupByLibrary.simpleMessage(
+            "आप अपने बुकिंग सिस्टम को सामग्री कार्ड में एकीकृत कर सकते हैं या भविष्य में शफल बुकिंग सिस्टम का उपयोग कर सकते हैं"),
         "CompressingVideo":
             MessageLookupByLibrary.simpleMessage("वीडियो को संक्षेपित करना"),
         "CompressingVideoProgress": m6,
@@ -450,6 +468,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("जाओ"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("सेटिंग्स में जाओ"),
+        "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
+            "मालिक के साथ महान साक्षात्कार"),
         "Guess": MessageLookupByLibrary.simpleMessage("अनुमान"),
         "HallOfFame": MessageLookupByLibrary.simpleMessage("प्रशंसा की दीवार"),
         "HardToAnswer":
@@ -541,6 +561,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Members": m27,
         "Message": MessageLookupByLibrary.simpleMessage("संदेश"),
         "Messages": MessageLookupByLibrary.simpleMessage("संदेश"),
+        "Min": MessageLookupByLibrary.simpleMessage("मिन"),
         "MinutesAgo": m28,
         "MondayShort": MessageLookupByLibrary.simpleMessage("सोमवार"),
         "Month": MessageLookupByLibrary.simpleMessage("महीना"),
@@ -632,6 +653,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Oops": MessageLookupByLibrary.simpleMessage("Oops"),
         "OopsIWillTryAgain":
             MessageLookupByLibrary.simpleMessage("उफ़, मैं फिर कोशिश करूँगा"),
+        "Open": MessageLookupByLibrary.simpleMessage("ओपन"),
         "OpenFrom": MessageLookupByLibrary.simpleMessage("से खोलें"),
         "OpenNow": MessageLookupByLibrary.simpleMessage("अभी खोलें"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("के लिए खुला"),
@@ -764,6 +786,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetFilters": MessageLookupByLibrary.simpleMessage("रीसेट फ़िल्टर"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("पासवर्ड रीसेट"),
         "Respect": MessageLookupByLibrary.simpleMessage("सम्मान"),
+        "Restaurant": MessageLookupByLibrary.simpleMessage("रेस्तरां"),
         "RestorePurchase": MessageLookupByLibrary.simpleMessage(
             "खरीदारी को पुनः स्थापित करें"),
         "Reviews": MessageLookupByLibrary.simpleMessage("समीक्षाएं"),
@@ -904,7 +927,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "पता सेट करने के लिए टैप करें"),
         "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(
             "अपने पसंदीदा को चिह्नित करने के लिए दो बार टैप करें।"),
+        "TastyCoffee": MessageLookupByLibrary.simpleMessage("स्वादिष्ट कॉफी"),
         "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
+        "TeaList": MessageLookupByLibrary.simpleMessage("चाय की सूची"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("और बताओ"),
         "TellUsMoreAboutYourself": m44,
         "Terms": MessageLookupByLibrary.simpleMessage("शर्तें"),

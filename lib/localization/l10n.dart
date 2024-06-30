@@ -3178,7 +3178,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{your location} =1{your interests} =2{weather around} few{and other 14 scales} other{other}}`
+  /// `{item, plural, =0{your location} =1{your interests} =2{weather around} few{and other 14 scales} other{and other 14 scales}}`
   String FeedFeelingsHiwItems(num item) {
     return Intl.plural(
       item,
@@ -3186,7 +3186,7 @@ class S {
       one: 'your interests',
       two: 'weather around',
       few: 'and other 14 scales',
-      other: 'other',
+      other: 'and other 14 scales',
       name: 'FeedFeelingsHiwItems',
       desc: '',
       args: [item],
@@ -3213,7 +3213,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{events & places} =1{filtering by chips} =2{choose chip & press} few{press & scroll\n} other{other}}`
+  /// `{item, plural, =0{events & places} =1{filtering by chips} =2{choose chip & press} few{press & scroll\n} other{press & scroll\n}}`
   String FeedRandomizerHiwItems(num item) {
     return Intl.plural(
       item,
@@ -3221,7 +3221,7 @@ class S {
       one: 'filtering by chips',
       two: 'choose chip & press',
       few: 'press & scroll\n',
-      other: 'other',
+      other: 'press & scroll\n',
       name: 'FeedRandomizerHiwItems',
       desc: '',
       args: [item],
@@ -3608,7 +3608,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{select the niche} =1{press} =2{get selection} few{choose & plan} other{other}}`
+  /// `{item, plural, =0{select the niche} =1{press} =2{get selection} few{choose & plan} other{choose & plan}}`
   String FeedNichesHiwItems(num item) {
     return Intl.plural(
       item,
@@ -3616,7 +3616,7 @@ class S {
       one: 'press',
       two: 'get selection',
       few: 'choose & plan',
-      other: 'other',
+      other: 'choose & plan',
       name: 'FeedNichesHiwItems',
       desc: '',
       args: [item],
@@ -3643,7 +3643,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{for fun} =1{swipe category} =2{choose & plan} few{search & book} other{other}}`
+  /// `{item, plural, =0{for fun} =1{swipe category} =2{choose & plan} few{search & book} other{search & book}}`
   String SpinnerHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3651,7 +3651,7 @@ class S {
       one: 'swipe category',
       two: 'choose & plan',
       few: 'search & book',
-      other: 'other',
+      other: 'search & book',
       name: 'SpinnerHiwHint',
       desc: '',
       args: [item],
@@ -3678,7 +3678,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{find companions} =1{similar preferences} =2{check point reputation} few{no foes} other{other}}`
+  /// `{item, plural, =0{find companions} =1{similar preferences} =2{check point reputation} few{no foes} other{no foes}}`
   String ProfileFindSomeoneHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3686,7 +3686,7 @@ class S {
       one: 'similar preferences',
       two: 'check point reputation',
       few: 'no foes',
-      other: 'other',
+      other: 'no foes',
       name: 'ProfileFindSomeoneHiwHint',
       desc: '',
       args: [item],
@@ -3713,7 +3713,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{post a dream request} =1{write & make video} =2{be convincing and honest} few{donate others} other{other}}`
+  /// `{item, plural, =0{post a dream request} =1{write & make video} =2{be convincing and honest} few{donate others} other{donate others}}`
   String ProfileAskOrSupportHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3721,7 +3721,7 @@ class S {
       one: 'write & make video',
       two: 'be convincing and honest',
       few: 'donate others',
-      other: 'other',
+      other: 'donate others',
       name: 'ProfileAskOrSupportHiwHint',
       desc: '',
       args: [item],
@@ -3748,7 +3748,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{preferences don’t work} =1{events/places} =2{type & get result} few{use ratings & models} other{other}}`
+  /// `{item, plural, =0{preferences don’t work} =1{events/places} =2{type & get result} few{use ratings & models} other{use ratings & models}}`
   String SearchHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3756,7 +3756,7 @@ class S {
       one: 'events/places',
       two: 'type & get result',
       few: 'use ratings & models',
-      other: 'other',
+      other: 'use ratings & models',
       name: 'SearchHiwHint',
       desc: '',
       args: [item],
@@ -3783,7 +3783,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{swipe any direction} =1{swipe place qualities} =2{like dislike favorite} few{teach our system} other{other}}`
+  /// `{item, plural, =0{swipe any direction} =1{swipe place qualities} =2{like dislike favorite} few{teach our system} other{teach our system}}`
   String ShuffleHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3791,7 +3791,7 @@ class S {
       one: 'swipe place qualities',
       two: 'like dislike favorite',
       few: 'teach our system',
-      other: 'other',
+      other: 'teach our system',
       name: 'ShuffleHiwHint',
       desc: '',
       args: [item],
@@ -6203,6 +6203,166 @@ class S {
     );
   }
 
+  /// `It is a non-public profile that allows you to post your places, branches, and place's events`
+  String get CompanyPresentationSlider1 {
+    return Intl.message(
+      'It is a non-public profile that allows you to post your places, branches, and place\'s events',
+      name: 'CompanyPresentationSlider1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can create branches; in a  place card users will see the entire brench network`
+  String get CompanyPresentationSlider2 {
+    return Intl.message(
+      'You can create branches; in a  place card users will see the entire brench network',
+      name: 'CompanyPresentationSlider2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your content appears in the app's rotation and is recommended to users through the unique Shuffle system, - with user and content properties, behavioral factors, geo, weather, etc`
+  String get CompanyPresentationSlider3 {
+    return Intl.message(
+      'Your content appears in the app\'s rotation and is recommended to users through the unique Shuffle system, - with user and content properties, behavioral factors, geo, weather, etc',
+      name: 'CompanyPresentationSlider3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Increase awareness & traffic to your places and events. All app's & users features are around your content cards`
+  String get CompanyPresentationSlider4 {
+    return Intl.message(
+      'Increase awareness & traffic to your places and events. All app\'s & users features are around your content cards',
+      name: 'CompanyPresentationSlider4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You attract specialized Shuffle influencers who will elevate the status of your places`
+  String get CompanyPresentationSlider5 {
+    return Intl.message(
+      'You attract specialized Shuffle influencers who will elevate the status of your places',
+      name: 'CompanyPresentationSlider5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can interact with your audience through the unique functionality of special notifications, reminders, offers and presales`
+  String get CompanyPresentationSlider6 {
+    return Intl.message(
+      'You can interact with your audience through the unique functionality of special notifications, reminders, offers and presales',
+      name: 'CompanyPresentationSlider6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can use the internal targeted advertising system`
+  String get CompanyPresentationSlider7 {
+    return Intl.message(
+      'You can use the internal targeted advertising system',
+      name: 'CompanyPresentationSlider7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can integrate your booking system into content cards or use the Shuffle booking system in the future`
+  String get CompanyPresentationSlider8 {
+    return Intl.message(
+      'You can integrate your booking system into content cards or use the Shuffle booking system in the future',
+      name: 'CompanyPresentationSlider8',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Branches`
+  String get Branches {
+    return Intl.message(
+      'Branches',
+      name: 'Branches',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Restaurant`
+  String get Restaurant {
+    return Intl.message(
+      'Restaurant',
+      name: 'Restaurant',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open`
+  String get Open {
+    return Intl.message(
+      'Open',
+      name: 'Open',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `min`
+  String get Min {
+    return Intl.message(
+      'min',
+      name: 'Min',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tasty coffee`
+  String get TastyCoffee {
+    return Intl.message(
+      'Tasty coffee',
+      name: 'TastyCoffee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Calm atmosphere`
+  String get CalmAtmosphere {
+    return Intl.message(
+      'Calm atmosphere',
+      name: 'CalmAtmosphere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tea list`
+  String get TeaList {
+    return Intl.message(
+      'Tea list',
+      name: 'TeaList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Great interview with the owner`
+  String get GreatInterviewWithOwner {
+    return Intl.message(
+      'Great interview with the owner',
+      name: 'GreatInterviewWithOwner',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Spend it`
   String get SpendIt {
     return Intl.message(
@@ -6313,7 +6473,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{drag & and drop cards} =1{create and name stack} =2{line up stacks order} few{share your stacks} other{other}}`
+  /// `{item, plural, =0{drag & and drop cards} =1{create and name stack} =2{line up stacks order} few{share your stacks} other{share your stacks}}`
   String FeedFavoritesHiwItems(num item) {
     return Intl.plural(
       item,
@@ -6321,7 +6481,7 @@ class S {
       one: 'create and name stack',
       two: 'line up stacks order',
       few: 'share your stacks',
-      other: 'other',
+      other: 'share your stacks',
       name: 'FeedFavoritesHiwItems',
       desc: '',
       args: [item],

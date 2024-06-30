@@ -70,7 +70,7 @@ class UiKitUsersRespectCard extends StatelessWidget {
 
     return Container(
       height: 1.sw < 380 ? 0.0525.sh : 0.0425.sh,
-      width: users.length == 1 ? 0.0625.sw + 0.18.sw : (0.0625.sw * users.length) + 0.1.sw,
+      width: users.length == 1 ? 0.0625.sw + 0.18.sw : (0.0625.sw * (users.length-1)),
       padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(

@@ -131,24 +131,23 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
-        UiKitChatInCard(
-          id: 1,
+        UiKitChatCardWithReplyIn(
           timeOfDay: DateTime.now(),
-          onReplyMessage: (value) {},
           text:
-          'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+              'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+          replayText: 'Ryan Gosling in the movie Drive',
+          onReplyMassageTap: () {},
+          replyUserName: 'Райн гослинг',
         ),
         SpacingFoundation.verticalSpace16,
-        UiKitChatOutCard(
-          sentByMe: true,
+        UiKitChatCardWithReplyOut(
           timeOfDay: DateTime.now(),
-          id: 2,
-          onReplyMessage: (value) {},
           text:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        ),
-        SpacingFoundation.verticalSpace16,
-        const UiKitVoiceListenCard(
+              'Any plans for the weekend? What about to get a company and go to atmosphere again?',
+          replayText: 'Ryan Gosling in the movie Drive',
+          onReplyMassageTap: () {},
+          replyUserName: 'Райн гослинг'),
+        UiKitVoiceListenCard(
           duration: Duration(seconds: 70),
         ),
         SpacingFoundation.verticalSpace16,

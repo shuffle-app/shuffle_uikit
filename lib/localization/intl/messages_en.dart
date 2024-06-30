@@ -56,16 +56,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "${Intl.plural(count, zero: 'events', one: 'event', two: 'events', few: 'events', many: 'events', other: 'events')}";
 
   static String m14(item) =>
-      "${Intl.plural(item, zero: 'drag & and drop cards', one: 'create and name stack', two: 'line up stacks order', few: 'share your stacks', other: 'other')}";
+      "${Intl.plural(item, zero: 'drag & and drop cards', one: 'create and name stack', two: 'line up stacks order', few: 'share your stacks', other: 'share your stacks')}";
 
   static String m15(item) =>
-      "${Intl.plural(item, zero: 'your location', one: 'your interests', two: 'weather around', few: 'and other 14 scales', other: 'other')}";
+      "${Intl.plural(item, zero: 'your location', one: 'your interests', two: 'weather around', few: 'and other 14 scales', other: 'and other 14 scales')}";
 
   static String m16(item) =>
-      "${Intl.plural(item, zero: 'select the niche', one: 'press', two: 'get selection', few: 'choose & plan', other: 'other')}";
+      "${Intl.plural(item, zero: 'select the niche', one: 'press', two: 'get selection', few: 'choose & plan', other: 'choose & plan')}";
 
   static String m17(item) =>
-      "${Intl.plural(item, zero: 'events & places', one: 'filtering by chips', two: 'choose chip & press', few: 'press & scroll\n', other: 'other')}";
+      "${Intl.plural(item, zero: 'events & places', one: 'filtering by chips', two: 'choose chip & press', few: 'press & scroll\n', other: 'press & scroll\n')}";
 
   static String m18(count) =>
       "${Intl.plural(count, zero: '${count} points', one: '${count} point', two: '${count} points', few: '${count} points', many: '${count} points', other: '${count} points')}";
@@ -111,10 +111,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "${Intl.plural(count, zero: 'points', one: 'point', two: 'points', few: 'points', many: 'points', other: 'points')}";
 
   static String m35(item) =>
-      "${Intl.plural(item, zero: 'post a dream request', one: 'write & make video', two: 'be convincing and honest', few: 'donate others', other: 'other')}";
+      "${Intl.plural(item, zero: 'post a dream request', one: 'write & make video', two: 'be convincing and honest', few: 'donate others', other: 'donate others')}";
 
   static String m36(item) =>
-      "${Intl.plural(item, zero: 'find companions', one: 'similar preferences', two: 'check point reputation', few: 'no foes', other: 'other')}";
+      "${Intl.plural(item, zero: 'find companions', one: 'similar preferences', two: 'check point reputation', few: 'no foes', other: 'no foes')}";
 
   static String m37(amount) => "Read ${amount}";
 
@@ -125,15 +125,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "${Intl.plural(count, zero: 'reviews', one: 'review', two: 'reviews', few: 'reviews', many: 'reviews', other: 'reviews')}";
 
   static String m40(item) =>
-      "${Intl.plural(item, zero: 'preferences don’t work', one: 'events/places', two: 'type & get result', few: 'use ratings & models', other: 'other')}";
+      "${Intl.plural(item, zero: 'preferences don’t work', one: 'events/places', two: 'type & get result', few: 'use ratings & models', other: 'use ratings & models')}";
 
   static String m41(type) => "select ${type}";
 
   static String m42(item) =>
-      "${Intl.plural(item, zero: 'swipe any direction', one: 'swipe place qualities', two: 'like dislike favorite', few: 'teach our system', other: 'other')}";
+      "${Intl.plural(item, zero: 'swipe any direction', one: 'swipe place qualities', two: 'like dislike favorite', few: 'teach our system', other: 'teach our system')}";
 
   static String m43(item) =>
-      "${Intl.plural(item, zero: 'for fun', one: 'swipe category', two: 'choose & plan', few: 'search & book', other: 'other')}";
+      "${Intl.plural(item, zero: 'for fun', one: 'swipe category', two: 'choose & plan', few: 'search & book', other: 'search & book')}";
 
   static String m44(separator) => "Tell us more${separator}about yourself";
 
@@ -244,6 +244,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Bookings and Invites"),
         "Both": MessageLookupByLibrary.simpleMessage("Both"),
+        "Branches": MessageLookupByLibrary.simpleMessage("Branches"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Buddhism"),
         "BuildYOurBusiness":
             MessageLookupByLibrary.simpleMessage("Build your business with"),
@@ -253,6 +254,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Business": MessageLookupByLibrary.simpleMessage("Business"),
         "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
             "By continuing you accept the "),
+        "CalmAtmosphere":
+            MessageLookupByLibrary.simpleMessage("Calm atmosphere"),
         "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
             "You can view this profile once it becomes an influencer"),
@@ -284,6 +287,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "CompanyName": MessageLookupByLibrary.simpleMessage("Company name"),
         "CompanyPosition":
             MessageLookupByLibrary.simpleMessage("Company position"),
+        "CompanyPresentationSlider1": MessageLookupByLibrary.simpleMessage(
+            "It is a non-public profile that allows you to post your places, branches, and place\'s events"),
+        "CompanyPresentationSlider2": MessageLookupByLibrary.simpleMessage(
+            "You can create branches; in a  place card users will see the entire brench network"),
+        "CompanyPresentationSlider3": MessageLookupByLibrary.simpleMessage(
+            "Your content appears in the app\'s rotation and is recommended to users through the unique Shuffle system, - with user and content properties, behavioral factors, geo, weather, etc"),
+        "CompanyPresentationSlider4": MessageLookupByLibrary.simpleMessage(
+            "Increase awareness & traffic to your places and events. All app\'s & users features are around your content cards"),
+        "CompanyPresentationSlider5": MessageLookupByLibrary.simpleMessage(
+            "You attract specialized Shuffle influencers who will elevate the status of your places"),
+        "CompanyPresentationSlider6": MessageLookupByLibrary.simpleMessage(
+            "You can interact with your audience through the unique functionality of special notifications, reminders, offers and presales"),
+        "CompanyPresentationSlider7": MessageLookupByLibrary.simpleMessage(
+            "You can use the internal targeted advertising system"),
+        "CompanyPresentationSlider8": MessageLookupByLibrary.simpleMessage(
+            "You can integrate your booking system into content cards or use the Shuffle booking system in the future"),
         "CompressingVideo":
             MessageLookupByLibrary.simpleMessage("Compressing video"),
         "CompressingVideoProgress": m6,
@@ -447,6 +466,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Go ahead and grow your business"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
         "GoToSettings": MessageLookupByLibrary.simpleMessage("Go to settings"),
+        "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
+            "Great interview with the owner"),
         "Guess": MessageLookupByLibrary.simpleMessage("Guess"),
         "HallOfFame": MessageLookupByLibrary.simpleMessage("Hall of Fame"),
         "HardToAnswer": MessageLookupByLibrary.simpleMessage("Hard to answer"),
@@ -533,6 +554,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Members": m27,
         "Message": MessageLookupByLibrary.simpleMessage("Message"),
         "Messages": MessageLookupByLibrary.simpleMessage("Messages"),
+        "Min": MessageLookupByLibrary.simpleMessage("min"),
         "MinutesAgo": m28,
         "MondayShort": MessageLookupByLibrary.simpleMessage("Mon"),
         "Month": MessageLookupByLibrary.simpleMessage("Month"),
@@ -623,6 +645,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Oops": MessageLookupByLibrary.simpleMessage("Oops"),
         "OopsIWillTryAgain":
             MessageLookupByLibrary.simpleMessage("Oops, I\'ll try again"),
+        "Open": MessageLookupByLibrary.simpleMessage("Open"),
         "OpenFrom": MessageLookupByLibrary.simpleMessage("Open from"),
         "OpenNow": MessageLookupByLibrary.simpleMessage("Open now"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("Open to"),
@@ -754,6 +777,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetFilters": MessageLookupByLibrary.simpleMessage("Reset filters"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Respect": MessageLookupByLibrary.simpleMessage("Respect"),
+        "Restaurant": MessageLookupByLibrary.simpleMessage("Restaurant"),
         "RestorePurchase":
             MessageLookupByLibrary.simpleMessage("Restore purchases"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
@@ -895,7 +919,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Tap to set address"),
         "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(
             ". Tap twice to mark your favorites."),
+        "TastyCoffee": MessageLookupByLibrary.simpleMessage("Tasty coffee"),
         "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
+        "TeaList": MessageLookupByLibrary.simpleMessage("Tea list"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("Tell us more"),
         "TellUsMoreAboutYourself": m44,
         "Terms": MessageLookupByLibrary.simpleMessage("Terms"),
