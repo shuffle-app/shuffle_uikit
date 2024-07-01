@@ -13,6 +13,7 @@ class UiKitFeedbackCard extends StatelessWidget {
   final VoidCallback? onPressed;
   final bool? isHelpful;
   final int? maxLines;
+  final UserTileType? userTileType;
 
   const UiKitFeedbackCard({
     super.key,
@@ -25,7 +26,7 @@ class UiKitFeedbackCard extends StatelessWidget {
     this.helpfulCount,
     this.text,
     this.onLike,
-    this.onPressed, this.maxLines,
+    this.onPressed, this.maxLines, this.userTileType
   });
 
   @override
@@ -42,7 +43,7 @@ class UiKitFeedbackCard extends StatelessWidget {
         onTap: onPressed,
         child: Ink(
           child: Column(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -50,7 +51,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                 title: title ?? '',
                 leading: context.userAvatar(
                   size: UserAvatarSize.x40x40,
-                  type: UserTileType.ordinary,
+                  type: userTileType ?? UserTileType.ordinary,
                   userName: title ?? '',
                   imageUrl: avatarUrl,
                 ),
@@ -61,7 +62,7 @@ class UiKitFeedbackCard extends StatelessWidget {
               Text(
                 text ?? '',
                 style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
-                maxLines:maxLines ?? 5,
+                maxLines: maxLines ?? 5,
               ),
               SpacingFoundation.verticalSpace12,
               Row(
@@ -69,7 +70,9 @@ class UiKitFeedbackCard extends StatelessWidget {
                 children: [
                   if (companyAnswered ?? false)
                     Text(
-                      S.of(context).CompanyAnswered,
+                      S
+                          .of(context)
+                          .CompanyAnswered,
                       style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                     ),
                   const Spacer(),
@@ -91,7 +94,9 @@ class UiKitFeedbackCard extends StatelessWidget {
                   GestureDetector(
                     onTap: onLike,
                     child: Text(
-                      S.of(context).Helpful,
+                      S
+                          .of(context)
+                          .Helpful,
                       style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                     ),
                   ),

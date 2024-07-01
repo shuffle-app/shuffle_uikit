@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -11,6 +12,8 @@ class UiKitFullScreenPortraitVideoPlayer extends StatefulWidget {
   final ValueChanged<double>? onProgressChanged;
   final ValueChanged<DragEndDetails>? onVerticalSwipe;
   final ValueChanged<TapUpDetails>? onTapUp;
+  final VoidCallback? onVideoComplete;
+  final VoidCallback? onVideoInited;
 
   const UiKitFullScreenPortraitVideoPlayer({
     super.key,
@@ -20,6 +23,8 @@ class UiKitFullScreenPortraitVideoPlayer extends StatefulWidget {
     this.coverImageUrl,
     this.onVerticalSwipe,
     this.onTapUp,
+    this.onVideoComplete,
+    this.onVideoInited,
   });
 
   @override
@@ -29,18 +34,36 @@ class UiKitFullScreenPortraitVideoPlayer extends StatefulWidget {
 class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPortraitVideoPlayer> {
   VideoPlayerController? _controller;
   bool seeking = false;
+  double height = 0;
+  double width = 0;
 
   @override
   void initState() {
+    width = 1.sw;
+    height = 1.sw;
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl))
         ..initialize().then((_) {
+          _calculateDimensions(_controller!.value.aspectRatio);
           setState(() {});
           _controller!.play();
           _controller!.addListener(_playBackListener);
+          if (widget.onVideoInited != null) {
+            Future.delayed(Duration.zero, widget.onVideoInited!);
+          }
         });
     });
+  }
+
+  _calculateDimensions(double aspectRatio) {
+    if (aspectRatio < 1) {
+      setState(() {
+        height = height - MediaQuery.of(context).padding.top;
+        width = height / aspectRatio;
+      });
+      log('video aspect ratio: $aspectRatio and device aspect ${MediaQuery.sizeOf(context).aspectRatio} so we calculate width: $width and height: $height when screenwidth is ${1.sw} and screenheight is ${1.sh}');
+    }
   }
 
   void _playBackListener() {
@@ -49,7 +72,13 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
           ?.call(_controller!.value.position.inMilliseconds / _controller!.value.duration.inMilliseconds);
     }
     if (_controller?.value.position.inMilliseconds == _controller?.value.duration.inMilliseconds) {
-      if (!seeking) context.pop();
+      if (!seeking) {
+        if (widget.onVideoComplete == null) {
+          context.pop();
+        } else {
+          widget.onVideoComplete!.call();
+        }
+      }
     }
   }
 
@@ -62,8 +91,8 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 1.sh,
-      width: 1.sw,
+      height: width,
+      width: height,
       child: GestureDetector(
         behavior: HitTestBehavior.translucent,
         onHorizontalDragStart: (details) {
@@ -100,26 +129,32 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
         },
         onVerticalDragEnd: widget.onVerticalSwipe,
         child: AnimatedSwitcher(
-          duration: const Duration(milliseconds: 500),
-          switchInCurve: Curves.decelerate,
-          child: _controller == null
-              ? Stack(
-                  fit: StackFit.expand,
-                  children: [
-                    ImageWidget(
-                      link: widget.coverImageUrl,
-                      imageBytes: widget.coverImageBytes,
-                      fit: BoxFit.cover,
-                      width: 1.sw,
-                      height: 1.sh,
-                    ),
-                    Container(color: Colors.black.withOpacity(0.5)),
-                    const Center(child: LoadingWidget()),
-                  ],
-                )
-              : VideoPlayer(_controller!),
-        ),
+            duration: const Duration(milliseconds: 500),
+            switchInCurve: Curves.decelerate,
+            child: _controller == null || !(_controller?.value.isInitialized ?? false)
+                ? Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      ImageWidget(
+                        link: widget.coverImageUrl,
+                        imageBytes: widget.coverImageBytes,
+                        fit: BoxFit.cover,
+                        width: 1.sw,
+                        height: 1.sh,
+                      ),
+                      Container(color: Colors.black.withOpacity(0.5)),
+                      const Center(child: LoadingWidget()),
+                    ],
+                  )
+                : Transform.scale(
+                    scale: _controller!.value.aspectRatio > (MediaQuery.sizeOf(context).aspectRatio + 0.18)
+                        ? 1
+                        : (width / 1.sw - height / 1.sh),
+                    child: AspectRatio(
+                      aspectRatio: _controller!.value.aspectRatio,
+                      child: VideoPlayer(_controller!),
+                    ))),
       ),
-    );
+    ).paddingOnly(top: MediaQuery.paddingOf(context).top);
   }
 }

@@ -7,20 +7,21 @@ class UiKitCloudChip extends StatefulWidget {
     this.onTap,
     required this.title,
     this.iconPath,
-    this.isSelectable,
+    this.isSelectable, this.initialSelect,
   });
 
   final VoidCallback? onTap;
   final String title;
   final String? iconPath;
   final bool? isSelectable;
+  final bool? initialSelect;
 
   @override
   State<UiKitCloudChip> createState() => _UiKitCloudChipState();
 }
 
 class _UiKitCloudChipState extends State<UiKitCloudChip> {
-  bool selectable = false;
+ late bool selectable = widget.initialSelect ?? false;
 
   @override
   Widget build(BuildContext context) {
