@@ -21,26 +21,39 @@ class DepthPainter extends CustomPainter {
     final imageHeight = mainImage.height;
     final paint = Paint();
 
-    double depthScale = 0.1; // Adjust this scale factor based on desired sensitivity
+    double depthScale = 2; // Adjust this scale factor based on desired sensitivity
 
-    for (int x = 0; x < imageWidth; x += 10) {
-      // Adjust segment size as needed
-      for (int y = 0; y < imageHeight; y += 10) {
-        double depth = getDepthFromMap(x, y, imageWidth, depthData);
+    const int segmentSize = 10;
+    const double overlap = 5.0; // Additional pixels to overlap segments
+
+    for (int y = 0; y < imageHeight; y += segmentSize) {
+      for (int x = 0; x < imageWidth; x += segmentSize) {
+        int index = x + y * imageWidth; // Calculate index in the depthData
+        double depth = depthData[index]; // Get the depth value
 
         double offsetX = tiltX * depth * depthScale;
         double offsetY = tiltY * depth * depthScale;
 
-        final src = Rect.fromLTWH(x.toDouble(), y.toDouble(), 10, 10); // Segment size
-        final dst = src.shift(Offset(offsetX, offsetY));
+        // Adjusted source rectangle to slightly larger to cover gaps
+        final src = Rect.fromLTWH(
+            x.toDouble(), y.toDouble(), segmentSize.toDouble() + overlap, segmentSize.toDouble() + overlap);
 
-        canvas.drawImageRect(mainImage, src, dst, paint);
+        // Calculate the shifted destination rectangle
+        final dstX = x + offsetX;
+        final dstY = y + offsetY;
+        final dst = Rect.fromLTWH(dstX, dstY, segmentSize.toDouble() + overlap, segmentSize.toDouble() + overlap);
+
+        // Make sure we do not draw outside the bounds of the original image
+        if (dst.right <= imageWidth && dst.bottom <= imageHeight) {
+          canvas.drawImageRect(mainImage, src, dst, paint);
+        }
       }
     }
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+  bool shouldRepaint(DepthPainter oldDelegate) =>
+      tiltX != oldDelegate.tiltX || tiltY != oldDelegate.tiltY || mainImage != oldDelegate.mainImage;
 }
 
 double getDepthFromMap(int x, int y, int width, List<double> depthData) {
