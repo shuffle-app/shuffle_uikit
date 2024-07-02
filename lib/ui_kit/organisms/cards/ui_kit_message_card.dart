@@ -118,13 +118,13 @@ class UiKitMessageCard extends StatelessWidget {
                     ),
                   ),
                   SpacingFoundation.horizontalSpace8,
-                  if ((unreadMessageCount ?? 0) != 0)
-                    CircleAvatar(
-                      radius: 10.w,
-                      backgroundColor: colorScheme?.inversePrimary,
-                      child: Text(
-                        '$unreadMessageCount',
-                        style: boldTextTheme?.caption1Bold.copyWith(color: colorScheme?.primary),
+                  if (unreadMessageCount != null && unreadMessageCount! > 0)
+                    Container(
+                      width: 15.w,
+                      height: 15.w,
+                      decoration: BoxDecoration(
+                        color: colorScheme?.inversePrimary,
+                        shape: BoxShape.circle,
                       ),
                     )
                 ],

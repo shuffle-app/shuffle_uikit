@@ -633,5 +633,6 @@
   "ConvenientClearAndUseful": "сonvenient, clear and useful",
   "StacksAreOn": "Stacks are on",
   "StacksAndSomethingElseAreAvailableForYou": "Stacks and something else are available for you...",
-  "NoMessagesYet": "No messages yet"
+  "NoMessagesYet": "No messages yet",
+  "ChatDeletionAndCreationMessage": "Crated on {creationDate}.\nWill be deleted {deletionDate}"
 }

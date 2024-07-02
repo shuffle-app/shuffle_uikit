@@ -29,11 +29,13 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
   final Key? animatedListKey;
   final String? onIWidgetInfoString;
   final EdgeInsets? padding;
+  final bool reverse;
 
   const BlurredAppPageWithPagination({
     super.key,
     required this.paginationController,
     required this.builderDelegate,
+    this.reverse = false,
     this.padding,
     this.scrollController,
     this.title = '',
@@ -57,6 +59,9 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double toolbarHeight = (customToolbarBaseHeight ?? context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
+    double expandedHeight = appBarBody == null ? toolbarHeight : customToolbarHeight ?? 190.0;
+
     return CustomScrollView(
       controller: scrollController,
       physics: physics ?? (Platform.isIOS ? const BouncingScrollPhysics() : const ClampingScrollPhysics()),
@@ -67,10 +72,6 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
           children: [
             SliverLayoutBuilder(
               builder: (context, sliverConstraints) {
-                double toolbarHeight =
-                    (customToolbarBaseHeight ?? context.uiKitTheme?.customAppBapTheme.toolbarHeight ?? 90.0);
-                double expandedHeight = appBarBody == null ? toolbarHeight : customToolbarHeight ?? 190.0;
-
                 final hideAppBarBody =
                     appBarBody == null ? true : canFoldAppBar ?? sliverConstraints.scrollOffset > toolbarHeight;
 
@@ -111,11 +112,24 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
             if (topFixedAddition != null) SliverPinnedHeader(child: topFixedAddition!),
           ],
         ),
-        PagedSliverList.separated(
-          pagingController: paginationController,
-          builderDelegate: builderDelegate,
-          separatorBuilder: (context, index) => childrenSpacing?.heightBox ?? SpacingFoundation.verticalSpace16,
-        ),
+        SizedBox(
+          height: 1.sh - expandedHeight - (bodyBottomSpace ?? 0),
+          width: 1.sw,
+          child: PagedListView.separated(
+            padding: reverse
+                ? EdgeInsets.only(
+                    top: padding?.top ?? 0,
+                    left: padding?.right ?? 0,
+                    right: padding?.left ?? 0,
+                    bottom: (padding?.bottom ?? 0) + (bodyBottomSpace ?? 0),
+                  )
+                : padding ?? EdgeInsets.zero,
+            reverse: reverse,
+            pagingController: paginationController,
+            builderDelegate: builderDelegate,
+            separatorBuilder: (context, index) => childrenSpacing?.heightBox ?? SpacingFoundation.verticalSpace16,
+          ),
+        ).wrapSliverBox,
         if (bodyBottomSpace != null) bodyBottomSpace!.heightBox.wrapSliverBox,
       ],
     );

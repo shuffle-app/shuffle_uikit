@@ -6527,6 +6527,33 @@ class S {
       args: [],
     );
   }
+
+  /// `Crated on {creationDate}.\nWill be deleted {deletionDate}`
+  String ChatDeletionAndCreationMessage(
+      Object creationDate, Object deletionDate) {
+    return Intl.message(
+      'Crated on $creationDate.\nWill be deleted $deletionDate',
+      name: 'ChatDeletionAndCreationMessage',
+      desc: '',
+      args: [creationDate, deletionDate],
+    );
+  }
+
+  /// `{count, plural, =0{members} =1{member} =2{members} few{members} many{members} other{members}}`
+  String MembersCount(num count) {
+    return Intl.plural(
+      count,
+      zero: 'members',
+      one: 'member',
+      two: 'members',
+      few: 'members',
+      many: 'members',
+      other: 'members',
+      name: 'MembersCount',
+      desc: '',
+      args: [count],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

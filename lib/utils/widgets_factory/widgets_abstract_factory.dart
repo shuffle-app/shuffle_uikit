@@ -309,6 +309,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     }
     if (!(blurred ?? false) && hasIcon) {
+      print('build small outlined icon button');
       return SmallOutlinedButtonNoBlur(
         onPressed: data.onPressed,
         text: data.text ?? '',
