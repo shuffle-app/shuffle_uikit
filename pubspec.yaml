@@ -154,7 +154,9 @@ flutter:
     - assets/fonts/
     - assets/audio/
     - assets/animations/lottie/
-
+  shaders:
+    - assets/shaders/depth_map_shader.glsl
+    - assets/shaders/depth_shader.frag
   fonts:
     - family: Unbounded
       fonts:

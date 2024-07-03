@@ -6,6 +6,9 @@
         android:icon="@mipmap/ic_launcher">
        <meta-data android:name="com.google.android.geo.API_KEY"
            android:value="AIzaSyAKReN6GLduN1wifwG7oUWZKuaO0HVvLC4"/>
+       <meta-data
+           android:name="io.flutter.embedding.android.EnableImpeller"
+           android:value="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

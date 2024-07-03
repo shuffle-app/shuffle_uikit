@@ -1,62 +1,39 @@
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Image;
 
-class DepthPainter extends CustomPainter {
-  final ui.Image mainImage;
-  final List<double> depthData;
+class DepthMapPainter extends CustomPainter {
+  final ui.FragmentProgram program;
+  final ui.Image image;
+  final ui.Image depthMap;
   final double tiltX;
   final double tiltY;
 
-  DepthPainter({
-    required this.mainImage,
-    required this.depthData,
+  DepthMapPainter({
+    required this.program,
+    required this.image,
+    required this.depthMap,
     required this.tiltX,
     required this.tiltY,
   });
 
   @override
-  void paint(Canvas canvas, Size size) {
-    final imageWidth = mainImage.width;
-    final imageHeight = mainImage.height;
+  void paint(Canvas canvas, Size size) async {
     final paint = Paint();
 
-    double depthScale = 2; // Adjust this scale factor based on desired sensitivity
+    final fragmentShader = program.fragmentShader()
+      ..setFloat(0, tiltX)
+      ..setFloat(1, tiltY)
+      ..setImageSampler(0, image)
+      ..setImageSampler(1, depthMap);
 
-    const int segmentSize = 10;
-    const double overlap = 5.0; // Additional pixels to overlap segments
+    paint.shader = fragmentShader;
 
-    for (int y = 0; y < imageHeight; y += segmentSize) {
-      for (int x = 0; x < imageWidth; x += segmentSize) {
-        int index = x + y * imageWidth; // Calculate index in the depthData
-        double depth = depthData[index]; // Get the depth value
-
-        double offsetX = tiltX * depth * depthScale;
-        double offsetY = tiltY * depth * depthScale;
-
-        // Adjusted source rectangle to slightly larger to cover gaps
-        final src = Rect.fromLTWH(
-            x.toDouble(), y.toDouble(), segmentSize.toDouble() + overlap, segmentSize.toDouble() + overlap);
-
-        // Calculate the shifted destination rectangle
-        final dstX = x + offsetX;
-        final dstY = y + offsetY;
-        final dst = Rect.fromLTWH(dstX, dstY, segmentSize.toDouble() + overlap, segmentSize.toDouble() + overlap);
-
-        // Make sure we do not draw outside the bounds of the original image
-        if (dst.right <= imageWidth && dst.bottom <= imageHeight) {
-          canvas.drawImageRect(mainImage, src, dst, paint);
-        }
-      }
-    }
+    canvas.drawRect(Offset.zero & size, paint);
   }
 
   @override
-  bool shouldRepaint(DepthPainter oldDelegate) =>
-      tiltX != oldDelegate.tiltX || tiltY != oldDelegate.tiltY || mainImage != oldDelegate.mainImage;
-}
-
-double getDepthFromMap(int x, int y, int width, List<double> depthData) {
-  int index = x + y * width; // Calculate index assuming row-major order
-  return depthData[index]; // Return depth value from the list
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
+  }
 }
