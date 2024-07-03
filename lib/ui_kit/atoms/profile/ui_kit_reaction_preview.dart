@@ -32,7 +32,9 @@ class UiKitReactionPreview extends StatelessWidget {
         customHeight: customHeight,
         onTap: onTap,
       );
+
   double get width => customWidth ?? (height * 0.6);
+
   double get height => customHeight ?? 0.2605.sh;
 
   @override
@@ -59,12 +61,15 @@ class UiKitReactionPreview extends StatelessWidget {
           if (!isEmpty)
             ClipRRect(
               borderRadius: BorderRadiusFoundation.all16,
-              child: ImageWidget(
-                color: viewed ? ColorsFoundation.darkNeutral900.withOpacity(0.5) : null,
-                colorBlendMode: viewed ? BlendMode.lighten : null,
-                link: imagePath,
-                fit: BoxFit.cover,
-              ),
+              child: DecoratedBox(
+                  position: DecorationPosition.foreground,
+                  decoration: BoxDecoration(
+                    color: viewed ? ColorsFoundation.darkNeutral900.withOpacity(0.5) : null,
+                  ),
+                  child: ImageWidget(
+                    link: imagePath,
+                    fit: BoxFit.cover,
+                  )),
             ),
           Material(
             color: Colors.transparent,
@@ -80,8 +85,8 @@ class UiKitReactionPreview extends StatelessWidget {
                   border: isEmpty
                       ? Border.all(width: 2, color: ColorsFoundation.neutral40)
                       : viewed
-                          ? null
-                          : GradientFoundation.gradientBorder,
+                      ? null
+                      : GradientFoundation.gradientBorder,
                 ),
                 child: SizedBox(
                   width: width,

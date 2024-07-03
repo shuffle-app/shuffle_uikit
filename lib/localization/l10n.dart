@@ -6517,6 +6517,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Influencer`
+  String get Influencer {
+    return Intl.message(
+      'Influencer',
+      name: 'Influencer',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
