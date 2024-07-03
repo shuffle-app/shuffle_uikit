@@ -721,6 +721,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ability to switch dark/light design theme"),
         "PremiumSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
             "Ability to become an Influencer"),
+        "PremiumSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
+            "Ability to create and share convenient stacks of favorites"),
+        "PremiumSubscriptionFeature8": MessageLookupByLibrary.simpleMessage(
+            "Have your own event scheduler"),
         "Price": MessageLookupByLibrary.simpleMessage("Price"),
         "PriceRange": MessageLookupByLibrary.simpleMessage("Price range"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Privacy"),

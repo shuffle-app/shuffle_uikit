@@ -728,6 +728,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "डार्क/लाइट डिजाइन थीम स्विच करने की क्षमता"),
         "PremiumSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("विशेष अधिकारी लेबल"),
+        "PremiumSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
+            "Ability to create and share convenient stacks of favorites"),
+        "PremiumSubscriptionFeature8": MessageLookupByLibrary.simpleMessage(
+            "Have your own event scheduler"),
         "Price": MessageLookupByLibrary.simpleMessage("मूल्य"),
         "PriceRange": MessageLookupByLibrary.simpleMessage("मूल्य सीमा"),
         "Privacy": MessageLookupByLibrary.simpleMessage("गोपनीयता"),
