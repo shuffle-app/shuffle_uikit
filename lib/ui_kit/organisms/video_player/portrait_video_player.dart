@@ -39,6 +39,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   bool seeking = false;
   double height = 0;
   double width = 0;
+  bool isReady = false;
 
   // Create a [Player] to control playback.
   late final player = Player();
@@ -65,6 +66,11 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
     // });
     // Play a [Media] or [Playlist].
     player.open(Media(widget.videoUrl));
+    controller.waitUntilFirstFrameRendered.then((_){
+      setState(() {
+        isReady = true;
+      });
+    });
     controller.platform.future.then((value) {
       if (widget.onVideoInited != null) {
         Future.delayed(Duration.zero, widget.onVideoInited!);
@@ -161,20 +167,21 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
         child: AnimatedSwitcher(
             duration: const Duration(milliseconds: 500),
             switchInCurve: Curves.decelerate,
-            child: !(controller.player.platform != null)
-                ? Stack(
-                    fit: StackFit.expand,
-                    children: [
+            child: !isReady
+                ?
+            // Stack(
+            //         fit: StackFit.expand,
+            //         children: [
                       ImageWidget(
                         link: widget.coverImageUrl,
                         imageBytes: widget.coverImageBytes,
                         fit: BoxFit.cover,
                         width: 1.sw,
                         height: 1.sh,
-                      ),
-                      Container(color: Colors.black.withOpacity(0.5)),
-                      const Center(child: LoadingWidget()),
-                    ],
+                      // ),
+                      // Container(color: Colors.black.withOpacity(0.5)),
+                      // const Center(child: LoadingWidget()),
+                    // ],
                   )
                 : Video(
                     controller: controller,
