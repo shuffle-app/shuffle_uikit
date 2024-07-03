@@ -634,6 +634,7 @@
   "FeedFavoritesHiwItems": "{item, plural, =0{зажми и перетяни карточку} =1{создай стопку и назови} =2{выстрой порядок стопок} few{поделись стопкой} other{поделись стопкой}}",
   "ConvenientClearAndUseful": "удобно, чётко и полезно",
   "StacksAreOn": "Для пользователей",
+  "Influencer": "Инфлюенсер",
   "StacksAndSomethingElseAreAvailableForYou": "Для вас доступны стопки и кое-что еще...",
   "NoMessagesYet": "Пока нет сообщений",
   "ChatDeletionAndCreationMessage": "Создан {creationDate}.\nУдалится {deletionDate}",

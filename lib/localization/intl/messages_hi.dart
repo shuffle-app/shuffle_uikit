@@ -511,6 +511,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "IdealRoute": MessageLookupByLibrary.simpleMessage("आदर्श मार्ग"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("गलत लॉगिन या पासवर्ड"),
+        "Influencer": MessageLookupByLibrary.simpleMessage("Influencer"),
         "InfluencerSubscriptionFeature1": MessageLookupByLibrary.simpleMessage(
             "आप अपने शहर या दुनिया के सामाजिक जीवन के क्षेत्रों में अपने आप को घोषित कर सकते हैं और अपनी विशेषज्ञता दिखा सकते हैं"),
         "InfluencerSubscriptionFeature2": MessageLookupByLibrary.simpleMessage(

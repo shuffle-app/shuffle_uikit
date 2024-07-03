@@ -14,6 +14,7 @@ class UiKitFeedbackCard extends StatelessWidget {
   final bool? isHelpful;
   final int? maxLines;
   final UserTileType? userTileType;
+  final Color? customBackgroundColor;
 
   const UiKitFeedbackCard({
     super.key,
@@ -26,7 +27,10 @@ class UiKitFeedbackCard extends StatelessWidget {
     this.helpfulCount,
     this.text,
     this.onLike,
-    this.onPressed, this.maxLines, this.userTileType
+    this.onPressed,
+    this.maxLines,
+    this.userTileType,
+    this.customBackgroundColor,
   });
 
   @override
@@ -36,7 +40,7 @@ class UiKitFeedbackCard extends StatelessWidget {
     debugPrint('$text is helpful: $isHelpful');
 
     return Material(
-      color: context.uiKitTheme?.colorScheme.surface3,
+      color: customBackgroundColor ?? context.uiKitTheme?.colorScheme.surface3,
       borderRadius: BorderRadiusFoundation.all24,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
@@ -70,9 +74,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                 children: [
                   if (companyAnswered ?? false)
                     Text(
-                      S
-                          .of(context)
-                          .CompanyAnswered,
+                      S.of(context).CompanyAnswered,
                       style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                     ),
                   const Spacer(),
@@ -94,9 +96,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                   GestureDetector(
                     onTap: onLike,
                     child: Text(
-                      S
-                          .of(context)
-                          .Helpful,
+                      S.of(context).Helpful,
                       style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                     ),
                   ),
