@@ -8,15 +8,13 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:vector_graphics/vector_graphics.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
   const $AssetsAnimationsGen();
 
-  /// Directory path: assets/animations/lottie
   $AssetsAnimationsLottieGen get lottie => const $AssetsAnimationsLottieGen();
 }
 
@@ -55,10 +53,7 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// Directory path: assets/images/png
   $AssetsImagesPngGen get png => const $AssetsImagesPngGen();
-
-  /// Directory path: assets/images/svg
   $AssetsImagesSvgGen get svg => const $AssetsImagesSvgGen();
 }
 
@@ -185,9 +180,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Feedback.png
   AssetGenImage get feedback => const AssetGenImage('assets/images/png/Feedback.png');
 
-  /// File path: assets/images/png/Female.png
-  AssetGenImage get female => const AssetGenImage('assets/images/png/Female.png');
-
   /// File path: assets/images/png/Filtering.png
   AssetGenImage get filtering => const AssetGenImage('assets/images/png/Filtering.png');
 
@@ -281,9 +273,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Like-hands.png
   AssetGenImage get likeHands => const AssetGenImage('assets/images/png/Like-hands.png');
 
-  /// File path: assets/images/png/Male.png
-  AssetGenImage get male => const AssetGenImage('assets/images/png/Male.png');
-
   /// File path: assets/images/png/Mango.png
   AssetGenImage get mango => const AssetGenImage('assets/images/png/Mango.png');
 
@@ -319,9 +308,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Order-stack.png
   AssetGenImage get orderStack => const AssetGenImage('assets/images/png/Order-stack.png');
-
-  /// File path: assets/images/png/Other-gender.png
-  AssetGenImage get otherGender => const AssetGenImage('assets/images/png/Other-gender.png');
 
   /// File path: assets/images/png/Outstanding.png
   AssetGenImage get outstanding => const AssetGenImage('assets/images/png/Outstanding.png');
@@ -464,44 +450,22 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Yoga.png
   AssetGenImage get yoga => const AssetGenImage('assets/images/png/Yoga.png');
 
-  /// File path: assets/images/png/angry-emoji.png
-  AssetGenImage get angryEmoji => const AssetGenImage('assets/images/png/angry-emoji.png');
-
-  /// File path: assets/images/png/anxiety-emogi.png
-  AssetGenImage get anxietyEmogi => const AssetGenImage('assets/images/png/anxiety-emogi.png');
-
   /// File path: assets/images/png/atheist.png
   AssetGenImage get atheist => const AssetGenImage('assets/images/png/atheist.png');
 
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
-  /// Directory path: assets/images/png/avatars
   $AssetsImagesPngAvatarsGen get avatars => const $AssetsImagesPngAvatarsGen();
 
   /// File path: assets/images/png/balloons.png
   AssetGenImage get balloons => const AssetGenImage('assets/images/png/balloons.png');
-
-  /// File path: assets/images/png/buddism_flag.png
-  AssetGenImage get buddismFlag => const AssetGenImage('assets/images/png/buddism_flag.png');
-
-  /// File path: assets/images/png/business_mock_1.png
-  AssetGenImage get businessMock1 => const AssetGenImage('assets/images/png/business_mock_1.png');
-
-  /// File path: assets/images/png/business_mock_2.png
-  AssetGenImage get businessMock2 => const AssetGenImage('assets/images/png/business_mock_2.png');
-
-  /// File path: assets/images/png/calmness-emoji.png
-  AssetGenImage get calmnessEmoji => const AssetGenImage('assets/images/png/calmness-emoji.png');
 
   /// File path: assets/images/png/catering.png
   AssetGenImage get catering => const AssetGenImage('assets/images/png/catering.png');
 
   /// File path: assets/images/png/choosePlan.png
   AssetGenImage get choosePlan => const AssetGenImage('assets/images/png/choosePlan.png');
-
-  /// File path: assets/images/png/christianity.png
-  AssetGenImage get christianity => const AssetGenImage('assets/images/png/christianity.png');
 
   /// File path: assets/images/png/clothing.png
   AssetGenImage get clothing => const AssetGenImage('assets/images/png/clothing.png');
@@ -533,9 +497,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/golden_cup.png
   AssetGenImage get goldenCup => const AssetGenImage('assets/images/png/golden_cup.png');
 
-  /// File path: assets/images/png/golden_medal.png
-  AssetGenImage get goldenMedal => const AssetGenImage('assets/images/png/golden_medal.png');
-
   /// File path: assets/images/png/grocery.png
   AssetGenImage get grocery => const AssetGenImage('assets/images/png/grocery.png');
 
@@ -545,41 +506,11 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/help.png
   AssetGenImage get help => const AssetGenImage('assets/images/png/help.png');
 
-  /// File path: assets/images/png/hindu.png
-  AssetGenImage get hindu => const AssetGenImage('assets/images/png/hindu.png');
-
   /// File path: assets/images/png/honest.png
   AssetGenImage get honest => const AssetGenImage('assets/images/png/honest.png');
 
-  /// File path: assets/images/png/invite_mock_1.png
-  AssetGenImage get inviteMock1 => const AssetGenImage('assets/images/png/invite_mock_1.png');
-
-  /// File path: assets/images/png/invite_mock_2.png
-  AssetGenImage get inviteMock2 => const AssetGenImage('assets/images/png/invite_mock_2.png');
-
-  /// File path: assets/images/png/invite_mock_3.png
-  AssetGenImage get inviteMock3 => const AssetGenImage('assets/images/png/invite_mock_3.png');
-
-  /// File path: assets/images/png/invite_mock_4.png
-  AssetGenImage get inviteMock4 => const AssetGenImage('assets/images/png/invite_mock_4.png');
-
-  /// File path: assets/images/png/invite_mock_5.png
-  AssetGenImage get inviteMock5 => const AssetGenImage('assets/images/png/invite_mock_5.png');
-
-  /// File path: assets/images/png/jordan_flag.png
-  AssetGenImage get jordanFlag => const AssetGenImage('assets/images/png/jordan_flag.png');
-
-  /// File path: assets/images/png/joy-emoji.png
-  AssetGenImage get joyEmoji => const AssetGenImage('assets/images/png/joy-emoji.png');
-
-  /// File path: assets/images/png/judaism.png
-  AssetGenImage get judaism => const AssetGenImage('assets/images/png/judaism.png');
-
   /// File path: assets/images/png/just_coin.png
   AssetGenImage get justCoin => const AssetGenImage('assets/images/png/just_coin.png');
-
-  /// File path: assets/images/png/love-emoji.png
-  AssetGenImage get loveEmoji => const AssetGenImage('assets/images/png/love-emoji.png');
 
   /// File path: assets/images/png/manicure.png
   AssetGenImage get manicure => const AssetGenImage('assets/images/png/manicure.png');
@@ -749,7 +680,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
 
-  /// Directory path: assets/images/png/preference_questions
   $AssetsImagesPngPreferenceQuestionsGen get preferenceQuestions => const $AssetsImagesPngPreferenceQuestionsGen();
 
   /// File path: assets/images/png/production.png
@@ -766,58 +696,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/real.png
   AssetGenImage get real => const AssetGenImage('assets/images/png/real.png');
-
-  /// File path: assets/images/png/sadness-emoji.png
-  AssetGenImage get sadnessEmoji => const AssetGenImage('assets/images/png/sadness-emoji.png');
-
-  /// File path: assets/images/png/search_business_clubs.png
-  AssetGenImage get searchBusinessClubs => const AssetGenImage('assets/images/png/search_business_clubs.png');
-
-  /// File path: assets/images/png/search_business_conferences.png
-  AssetGenImage get searchBusinessConferences =>
-      const AssetGenImage('assets/images/png/search_business_conferences.png');
-
-  /// File path: assets/images/png/search_business_exhibition.png
-  AssetGenImage get searchBusinessExhibition => const AssetGenImage('assets/images/png/search_business_exhibition.png');
-
-  /// File path: assets/images/png/search_business_games.png
-  AssetGenImage get searchBusinessGames => const AssetGenImage('assets/images/png/search_business_games.png');
-
-  /// File path: assets/images/png/search_business_networking.png
-  AssetGenImage get searchBusinessNetworking => const AssetGenImage('assets/images/png/search_business_networking.png');
-
-  /// File path: assets/images/png/search_business_speech.png
-  AssetGenImage get searchBusinessSpeech => const AssetGenImage('assets/images/png/search_business_speech.png');
-
-  /// File path: assets/images/png/search_business_training.png
-  AssetGenImage get searchBusinessTraining => const AssetGenImage('assets/images/png/search_business_training.png');
-
-  /// File path: assets/images/png/search_category_adventure.png
-  AssetGenImage get searchCategoryAdventure => const AssetGenImage('assets/images/png/search_category_adventure.png');
-
-  /// File path: assets/images/png/search_category_chill.png
-  AssetGenImage get searchCategoryChill => const AssetGenImage('assets/images/png/search_category_chill.png');
-
-  /// File path: assets/images/png/search_category_extreme.png
-  AssetGenImage get searchCategoryExtreme => const AssetGenImage('assets/images/png/search_category_extreme.png');
-
-  /// File path: assets/images/png/search_category_family.png
-  AssetGenImage get searchCategoryFamily => const AssetGenImage('assets/images/png/search_category_family.png');
-
-  /// File path: assets/images/png/search_category_food.png
-  AssetGenImage get searchCategoryFood => const AssetGenImage('assets/images/png/search_category_food.png');
-
-  /// File path: assets/images/png/search_category_party.png
-  AssetGenImage get searchCategoryParty => const AssetGenImage('assets/images/png/search_category_party.png');
-
-  /// File path: assets/images/png/search_category_self_care.png
-  AssetGenImage get searchCategorySelfCare => const AssetGenImage('assets/images/png/search_category_self_care.png');
-
-  /// File path: assets/images/png/search_category_sport.png
-  AssetGenImage get searchCategorySport => const AssetGenImage('assets/images/png/search_category_sport.png');
-
-  /// File path: assets/images/png/search_category_zadrot.png
-  AssetGenImage get searchCategoryZadrot => const AssetGenImage('assets/images/png/search_category_zadrot.png');
 
   /// File path: assets/images/png/search_feed_text_banner_1.png
   AssetGenImage get searchFeedTextBanner1 => const AssetGenImage('assets/images/png/search_feed_text_banner_1.png');
@@ -876,9 +754,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/story.png
   AssetGenImage get story => const AssetGenImage('assets/images/png/story.png');
 
-  /// File path: assets/images/png/surprise-emoji.png
-  AssetGenImage get surpriseEmoji => const AssetGenImage('assets/images/png/surprise-emoji.png');
-
   /// File path: assets/images/png/three-levels.png
   AssetGenImage get threeLevels => const AssetGenImage('assets/images/png/three-levels.png');
 
@@ -931,7 +806,6 @@ class $AssetsImagesPngGen {
         events,
         favoritePlace,
         feedback,
-        female,
         filtering,
         fintech,
         fire,
@@ -963,7 +837,6 @@ class $AssetsImagesPngGen {
         lightSnowfall,
         likeDislike,
         likeHands,
-        male,
         mango,
         map,
         money,
@@ -976,7 +849,6 @@ class $AssetsImagesPngGen {
         notif,
         okHands,
         orderStack,
-        otherGender,
         outstanding,
         pROLabel,
         pieChart,
@@ -1024,18 +896,11 @@ class $AssetsImagesPngGen {
         visitFirst,
         windy,
         yoga,
-        angryEmoji,
-        anxietyEmogi,
         atheist,
         atmosphere,
         balloons,
-        buddismFlag,
-        businessMock1,
-        businessMock2,
-        calmnessEmoji,
         catering,
         choosePlan,
-        christianity,
         clothing,
         coach,
         compactRatingCardMock,
@@ -1046,22 +911,11 @@ class $AssetsImagesPngGen {
         fatigueEmoji,
         geoPermit,
         goldenCup,
-        goldenMedal,
         grocery,
         healthPermit,
         help,
-        hindu,
         honest,
-        inviteMock1,
-        inviteMock2,
-        inviteMock3,
-        inviteMock4,
-        inviteMock5,
-        jordanFlag,
-        joyEmoji,
-        judaism,
         justCoin,
-        loveEmoji,
         manicure,
         mapMock,
         mockAdBanner,
@@ -1123,23 +977,6 @@ class $AssetsImagesPngGen {
         profilePost1,
         profileStory1,
         real,
-        sadnessEmoji,
-        searchBusinessClubs,
-        searchBusinessConferences,
-        searchBusinessExhibition,
-        searchBusinessGames,
-        searchBusinessNetworking,
-        searchBusinessSpeech,
-        searchBusinessTraining,
-        searchCategoryAdventure,
-        searchCategoryChill,
-        searchCategoryExtreme,
-        searchCategoryFamily,
-        searchCategoryFood,
-        searchCategoryParty,
-        searchCategorySelfCare,
-        searchCategorySport,
-        searchCategoryZadrot,
         searchFeedTextBanner1,
         searchFeedTextBanner2,
         searchFeedTextBanner3,
@@ -1159,7 +996,6 @@ class $AssetsImagesPngGen {
         spinnerTextBanner3,
         star2,
         story,
-        surpriseEmoji,
         threeLevels,
         titledCardBackground1,
         titledCardBackground2,
@@ -2666,11 +2502,9 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName, {this.size = null});
+  const AssetGenImage(this._assetName);
 
   final String _assetName;
-
-  final Size? size;
 
   Image image({
     Key? key,
@@ -2742,20 +2576,9 @@ class AssetGenImage {
 }
 
 class SvgGenImage {
-  const SvgGenImage(
-    this._assetName, {
-    this.size = null,
-  }) : _isVecFormat = false;
-
-  const SvgGenImage.vec(
-    this._assetName, {
-    this.size = null,
-  }) : _isVecFormat = true;
+  const SvgGenImage(this._assetName);
 
   final String _assetName;
-
-  final Size? size;
-  final bool _isVecFormat;
 
   SvgPicture svg({
     Key? key,
@@ -2770,19 +2593,19 @@ class SvgGenImage {
     WidgetBuilder? placeholderBuilder,
     String? semanticsLabel,
     bool excludeFromSemantics = false,
-    SvgTheme? theme,
+    SvgTheme theme = const SvgTheme(),
     ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
     @deprecated bool cacheColorFilter = false,
   }) {
-    return SvgPicture(
-      _isVecFormat
-          ? AssetBytesLoader(_assetName, assetBundle: bundle, packageName: package)
-          : SvgAssetLoader(_assetName, assetBundle: bundle, packageName: package),
+    return SvgPicture.asset(
+      _assetName,
       key: key,
       matchTextDirection: matchTextDirection,
+      bundle: bundle,
+      package: package,
       width: width,
       height: height,
       fit: fit,
@@ -2792,7 +2615,9 @@ class SvgGenImage {
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
       theme: theme,
-      colorFilter: colorFilter ?? (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
+      colorFilter: colorFilter,
+      color: color,
+      colorBlendMode: colorBlendMode,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );

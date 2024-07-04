@@ -5,5 +5,6 @@ enum UserAvatarSize {
   x40x40,
   x48x48,
   x60x60,
+  x90x90,
   x120x120,
 }

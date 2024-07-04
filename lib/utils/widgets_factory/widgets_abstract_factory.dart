@@ -7,6 +7,8 @@ import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_influncer_user_
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
 
+import '../../ui_kit/atoms/user/avatars/ui_kit_user_avatar_90_x_90.dart';
+
 abstract class WidgetsAbstractFactory {
   ButtonFactory createIconButtonNoPadding({
     required BaseUiKitButtonData data,
@@ -219,7 +221,12 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
               type: type,
               imageUrl: imageUrl ?? '',
               userName: userName,
-            )
+            ),
+          (UserAvatarSize.x90x90) => UiKitUserAvatar90x90(
+              type: type,
+              imageUrl: imageUrl ?? '',
+              userName: userName,
+            ),
         });
   }
 
