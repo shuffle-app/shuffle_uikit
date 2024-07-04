@@ -1884,6 +1884,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/shuffle-banner-semi.svg
   SvgGenImage get shuffleBannerSemi => const SvgGenImage('assets/images/svg/shuffle-banner-semi.svg');
 
+  /// File path: assets/images/svg/shuffle-cut.svg
+  SvgGenImage get shuffleCut => const SvgGenImage('assets/images/svg/shuffle-cut.svg');
+
   /// File path: assets/images/svg/shuffle-fill.svg
   SvgGenImage get shuffleFill => const SvgGenImage('assets/images/svg/shuffle-fill.svg');
 
@@ -2285,6 +2288,7 @@ class $AssetsImagesSvgGen {
         share,
         shiffleBannerGradient,
         shuffleBannerSemi,
+        shuffleCut,
         shuffleFill,
         shuffleOutline,
         shuffleWhite,
