@@ -70,7 +70,8 @@ Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context,
                   ),
                   const Spacer(),
                   context.button(
-                    data: BaseUiKitButtonData(text: S.of(context).Cancel, onPressed: () => context.pop()),
+                    data: BaseUiKitButtonData(
+                        text: S.of(context).Cancel, onPressed: () => context.pop<DateTimeRange?>(result: initialDateRange)),
                     isTextButton: true,
                   ),
                   SpacingFoundation.horizontalSpace4,
@@ -769,8 +770,7 @@ class _MonthItemState extends State<_MonthItem> {
       return getProperty(datePickerTheme) ?? getProperty(defaults);
     }
 
-    T? resolve<T>(
-        WidgetStateProperty<T>? Function(DatePickerThemeData? theme) getProperty, Set<WidgetState> states) {
+    T? resolve<T>(WidgetStateProperty<T>? Function(DatePickerThemeData? theme) getProperty, Set<WidgetState> states) {
       return effectiveValue(
         (DatePickerThemeData? theme) {
           return getProperty(theme)?.resolve(states);
