@@ -395,6 +395,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("अपना ईमेल पता दर्ज करें"),
         "Entertainment": MessageLookupByLibrary.simpleMessage("मनोरंजन"),
+        "EntertainmentSpecialist":
+            MessageLookupByLibrary.simpleMessage("Entertainment specialist"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("त्रुटि हुई"),
         "ErrorOccuredWithoutMessage":
             MessageLookupByLibrary.simpleMessage("संदेश के बिना त्रुटि हुई"),

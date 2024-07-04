@@ -394,6 +394,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Enter your e-mail address"),
         "Entertainment": MessageLookupByLibrary.simpleMessage("Entertainment"),
+        "EntertainmentSpecialist":
+            MessageLookupByLibrary.simpleMessage("Entertainment specialist"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Error occured"),
         "ErrorOccuredWithoutMessage": MessageLookupByLibrary.simpleMessage(
             "Error occured without message"),
