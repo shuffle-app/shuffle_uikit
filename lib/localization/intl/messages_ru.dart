@@ -473,6 +473,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
             "Продолжай и позволь бизнесу расти"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
+        "GoPremium": MessageLookupByLibrary.simpleMessage("Перейти на премиум"),
+        "GoProFree":
+            MessageLookupByLibrary.simpleMessage("Перейти на про бесплатно"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("Перейти в настройки"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(

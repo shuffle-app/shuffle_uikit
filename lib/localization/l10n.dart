@@ -6557,6 +6557,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Go premiun`
+  String get GoPremium {
+    return Intl.message(
+      'Go premiun',
+      name: 'GoPremium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `GO pro free`
+  String get GoProFree {
+    return Intl.message(
+      'GO pro free',
+      name: 'GoProFree',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
