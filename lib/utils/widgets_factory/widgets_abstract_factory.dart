@@ -3,6 +3,7 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/box_icon_button.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/ui_kit_icon_button_no_padding.dart';
+import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_influncer_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
 
@@ -569,7 +570,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           return BadgedPremiumUserTile(data: data);
 
         case UserTileType.influencer:
-          throw UnimplementedError('There is no influencer user tile with badge');
+          return BadgedInfluncerUserTile(data: data);
 
         default:
           throw UnimplementedError('There is no user tile with badge');
