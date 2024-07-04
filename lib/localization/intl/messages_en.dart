@@ -394,6 +394,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Enter your e-mail address"),
         "Entertainment": MessageLookupByLibrary.simpleMessage("Entertainment"),
+        "EntertainmentSpecialist":
+            MessageLookupByLibrary.simpleMessage("Entertainment specialist"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Error occured"),
         "ErrorOccuredWithoutMessage": MessageLookupByLibrary.simpleMessage(
             "Error occured without message"),
@@ -465,6 +467,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
             "Go ahead and grow your business"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
+        "GoPremium": MessageLookupByLibrary.simpleMessage("Go premiun"),
+        "GoProFree": MessageLookupByLibrary.simpleMessage("GO pro free"),
         "GoToSettings": MessageLookupByLibrary.simpleMessage("Go to settings"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
             "Great interview with the owner"),
@@ -721,6 +725,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ability to switch dark/light design theme"),
         "PremiumSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
             "Ability to become an Influencer"),
+        "PremiumSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
+            "Ability to create and share convenient stacks of favorites"),
+        "PremiumSubscriptionFeature8": MessageLookupByLibrary.simpleMessage(
+            "Have your own event scheduler"),
         "Price": MessageLookupByLibrary.simpleMessage("Price"),
         "PriceRange": MessageLookupByLibrary.simpleMessage("Price range"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Privacy"),

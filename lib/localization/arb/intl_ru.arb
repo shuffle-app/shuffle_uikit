@@ -389,6 +389,8 @@
   "PremiumSubscriptionFeature4": "Предлагать приложению любимые места",
   "PremiumSubscriptionFeature5": "Переключать темную и светлую темы",
   "PremiumSubscriptionFeature6": "Возможность стать Инфлюенсером",
+  "PremiumSubscriptionFeature7": "Возможность создавать удобные стпоки избранного и делиться ими",
+  "PremiumSubscriptionFeature8": "Свой собственный планировщик событий",
   "ProSubscriptionFeature1": "Специальный бейдж в профиле",
   "ProSubscriptionFeature2": "Возможность создавать свои собственные события",
   "ProSubscriptionFeature3": "Дополнительная мотивация потенциальной аудитории (клиентов/посетителей) с помощью системы баллов",
@@ -635,6 +637,10 @@
   "ConvenientClearAndUseful": "удобно, чётко и полезно",
   "StacksAreOn": "Для пользователей",
   "StacksAndSomethingElseAreAvailableForYou": "Для вас доступны стопки и кое-что еще...",
-  "Influencer": "Инфлюенсер"
+  "Influencer": "Инфлюенсер",
+  "EntertainmentSpecialist": "Специалист развлечений",
+  "GoPremium": "Перейти на премиум",
+  "GoProFree": "Перейти на про бесплатно"
+
 }
 

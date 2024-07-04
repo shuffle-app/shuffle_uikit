@@ -389,6 +389,8 @@
   "PremiumSubscriptionFeature4": "Ability to add/suggest favorite places",
   "PremiumSubscriptionFeature5": "Ability to switch dark/light design theme",
   "PremiumSubscriptionFeature6": "Ability to become an Influencer",
+  "PremiumSubscriptionFeature7": "Ability to create and share convenient stacks of favorites",
+  "PremiumSubscriptionFeature8": "Have your own event scheduler",
   "ProSubscriptionFeature1": "Special profile label",
   "ProSubscriptionFeature2": "Ability to create your own events",
   "ProSubscriptionFeature3": "Additional motivation of potential audience (clients/visitors) with the help of points system",
@@ -633,5 +635,8 @@
   "ConvenientClearAndUseful": "сonvenient, clear and useful",
   "StacksAreOn": "Stacks are on",
   "StacksAndSomethingElseAreAvailableForYou": "Stacks and something else are available for you...",
-  "Influencer": "Influencer"
+  "Influencer": "Influencer",
+  "EntertainmentSpecialist": "Entertainment specialist",
+  "GoPremium": "Go premiun",
+  "GoProFree": "GO pro free"
 }

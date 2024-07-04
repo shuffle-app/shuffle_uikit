@@ -66,7 +66,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
     // });
     // Play a [Media] or [Playlist].
     player.open(Media(widget.videoUrl));
-    controller.waitUntilFirstFrameRendered.then((_){
+    controller.waitUntilFirstFrameRendered.then((_) {
       setState(() {
         isReady = true;
       });
@@ -169,18 +169,18 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
             switchInCurve: Curves.decelerate,
             child: !isReady
                 ?
-            // Stack(
-            //         fit: StackFit.expand,
-            //         children: [
-                      ImageWidget(
-                        link: widget.coverImageUrl,
-                        imageBytes: widget.coverImageBytes,
-                        fit: BoxFit.cover,
-                        width: 1.sw,
-                        height: 1.sh,
-                      // ),
-                      // Container(color: Colors.black.withOpacity(0.5)),
-                      // const Center(child: LoadingWidget()),
+                // Stack(
+                //         fit: StackFit.expand,
+                //         children: [
+                ImageWidget(
+                    link: widget.coverImageUrl,
+                    imageBytes: widget.coverImageBytes,
+                    fit: BoxFit.cover,
+                    width: 1.sw,
+                    height: 1.sh,
+                    // ),
+                    // Container(color: Colors.black.withOpacity(0.5)),
+                    // const Center(child: LoadingWidget()),
                     // ],
                   )
                 : Video(

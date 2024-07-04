@@ -389,6 +389,8 @@
   "PremiumSubscriptionFeature4": "पसंदीदा स्थानों को जोड़ने/सुझाव देने की क्षमता",
   "PremiumSubscriptionFeature5": "डार्क/लाइट डिजाइन थीम स्विच करने की क्षमता",
   "PremiumSubscriptionFeature6": "विशेष अधिकारी लेबल",
+  "PremiumSubscriptionFeature7": "Ability to create and share convenient stacks of favorites",
+  "PremiumSubscriptionFeature8": "Have your own event scheduler",
   "ProSubscriptionFeature1": "विशेष प्रोफ़ाइल लेबल",
   "ProSubscriptionFeature2": "विशेष अधिकारी लेबल",
   "ProSubscriptionFeature3": "स्थानों और घटनाओं के बारे में समीक्षा छोड़ने, वीडियो-प्रतिक्रिया देने, रेटिंग में भाग लेने की क्षमता",
@@ -633,5 +635,9 @@
   "ConvenientClearAndUseful": "сonvenient, clear and useful",
   "StacksAreOn": "Stacks are on",
   "StacksAndSomethingElseAreAvailableForYou": "Stacks and something else are available for you...",
-  "Influencer": "Influencer"
+  "Influencer": "Influencer",
+  "EntertainmentSpecialist": "Entertainment specialist",
+  "GoPremium": "Go premiun",
+  "GoProFree": "GO pro free"
+
 }
