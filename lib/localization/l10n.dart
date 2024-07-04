@@ -6547,6 +6547,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Entertainment specialist`
+  String get EntertainmentSpecialist {
+    return Intl.message(
+      'Entertainment specialist',
+      name: 'EntertainmentSpecialist',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
