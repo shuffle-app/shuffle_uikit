@@ -30,6 +30,7 @@ class UiKitInputFieldNoFill extends StatefulWidget
     this.obscureText = false,
     this.maxLines = 1,
     this.minLines,
+    this.autovalidateMode,
     this.readOnly = false,
     required this.label,
   });
@@ -65,6 +66,7 @@ class UiKitInputFieldNoFill extends StatefulWidget
   final bool readOnly;
   final int maxLines;
   final int? minLines;
+  final AutovalidateMode? autovalidateMode;
   @override
   final bool obscureText;
 
@@ -126,6 +128,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         minLines: widget.minLines,
         enabled: widget.enabled,
         autofocus: widget.autofocus,
+        autovalidateMode: widget.autovalidateMode,
         keyboardType: widget.keyboardType,
         controller: widget.enabled ? widget.controller : null,
         style: inputTextStyle,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class SuccessSnackBar extends StatelessWidget implements SnackBarFactory{
+class SuccessSnackBar extends StatelessWidget implements SnackBarFactory {
   const SuccessSnackBar({super.key, required this.message});
 
   final String message;
@@ -16,7 +16,7 @@ class SuccessSnackBar extends StatelessWidget implements SnackBarFactory{
         borderRadius: BorderRadiusFoundation.all12,
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           DecoratedBox(
             decoration: BoxDecoration(
@@ -37,7 +37,7 @@ class SuccessSnackBar extends StatelessWidget implements SnackBarFactory{
           ),
           SpacingFoundation.horizontalSpace8,
           InkWell(
-            onTap: () => context.pop(),
+            onTap: context.pop,
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             child: Icon(
