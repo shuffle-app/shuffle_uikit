@@ -4125,6 +4125,26 @@ class S {
     );
   }
 
+  /// `Ability to create and share convenient stacks of favorites`
+  String get PremiumSubscriptionFeature7 {
+    return Intl.message(
+      'Ability to create and share convenient stacks of favorites',
+      name: 'PremiumSubscriptionFeature7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have your own event scheduler`
+  String get PremiumSubscriptionFeature8 {
+    return Intl.message(
+      'Have your own event scheduler',
+      name: 'PremiumSubscriptionFeature8',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Special profile label`
   String get ProSubscriptionFeature1 {
     return Intl.message(
@@ -6508,6 +6528,16 @@ class S {
     );
   }
 
+  /// `Stacks and something else are available for you...`
+  String get StacksAndSomethingElseAreAvailableForYou {
+    return Intl.message(
+      'Stacks and something else are available for you...',
+      name: 'StacksAndSomethingElseAreAvailableForYou',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Influencer`
   String get Influencer {
     return Intl.message(
@@ -6518,11 +6548,31 @@ class S {
     );
   }
 
-  /// `Stacks and something else are available for you...`
-  String get StacksAndSomethingElseAreAvailableForYou {
+  /// `Entertainment specialist`
+  String get EntertainmentSpecialist {
     return Intl.message(
-      'Stacks and something else are available for you...',
-      name: 'StacksAndSomethingElseAreAvailableForYou',
+      'Entertainment specialist',
+      name: 'EntertainmentSpecialist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go premiun`
+  String get GoPremium {
+    return Intl.message(
+      'Go premiun',
+      name: 'GoPremium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `GO pro free`
+  String get GoProFree {
+    return Intl.message(
+      'GO pro free',
+      name: 'GoProFree',
       desc: '',
       args: [],
     );
