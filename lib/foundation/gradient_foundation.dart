@@ -267,6 +267,17 @@ class GradientFoundation {
     transform: GradientRotation(pi / 6),
   );
 
+  static final defaultLinearGradientWithOpacity02 = LinearGradient(
+    colors: [
+      ColorsFoundation.pink.withOpacity(0.2),
+      ColorsFoundation.yellow.withOpacity(0.2),
+      ColorsFoundation.error.withOpacity(0.2),
+    ],
+    begin: Alignment.bottomRight,
+    end: Alignment.topLeft,
+    transform: const GradientRotation(pi / 7),
+  );
+
   static const fameLinearGradient = LinearGradient(
     colors: [
       ColorsFoundation.pink,

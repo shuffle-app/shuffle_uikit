@@ -55,8 +55,11 @@ class _ProfileCardAnimatedState extends State<ProfileCardAnimated> with SingleTi
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          context.userAvatar(
-              size: UserAvatarSize.x120x120, type: UserTileType.influencer, userName: name, imageUrl: avatarUrl),
+           context.userAvatar(
+                      size: UserAvatarSize.x90x90,
+                      type: UserTileType.influencer,
+                      userName: name,
+                      imageUrl: avatarUrl),
           SpacingFoundation.horizontalSpace12,
           Expanded(
               child: PersonalProfileInfo(

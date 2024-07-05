@@ -54,7 +54,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
   @override
   void initState() {
     super.initState();
-    if(widget.isHuawei) {
+    if (widget.isHuawei) {
       hms.HuaweiMapInitializer.initializeMap();
     }
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {

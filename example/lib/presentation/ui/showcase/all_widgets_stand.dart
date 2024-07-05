@@ -839,56 +839,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   onTap: () {},
                 ),
                 SpacingFoundation.horizontalSpace12,
-                UiKitSocialSearchContentTypeCard.services(
-                  title: 'Service',
-                  iconData: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.png.anxietyEmogi.path,
-                  ),
-                  onTap: () {},
-                ),
-                SpacingFoundation.horizontalSpace12,
-                UiKitSocialSearchContentTypeCard.services(
-                  title: 'Service',
-                  iconData: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.png.calmnessEmoji.path,
-                  ),
-                  onTap: () {},
-                ),
-                SpacingFoundation.horizontalSpace12,
-                UiKitSocialSearchContentTypeCard.services(
-                  title: 'Service',
-                  iconData: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
-                  ),
-                  onTap: () {},
-                ),
-                SpacingFoundation.horizontalSpace12,
-                UiKitSocialSearchContentTypeCard.services(
-                  title: 'Service',
-                  iconData: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
-                    color: ColorsFoundation.red,
-                  ),
-                  onTap: () {},
-                ),
-                SpacingFoundation.horizontalSpace12,
-                UiKitSocialSearchContentTypeCard.services(
-                  title: 'Service',
-                  iconData: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
-                    color: ColorsFoundation.red,
-                  ),
-                  onTap: () {},
-                ),
-                SpacingFoundation.horizontalSpace12,
-                UiKitSocialSearchContentTypeCard.services(
-                  title: 'Service',
-                  iconData: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.svg.angryEmoji.path,
-                    color: ColorsFoundation.red,
-                  ),
-                  onTap: () {},
-                ),
               ],
             ),
           ),
@@ -940,104 +890,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           handShake: true,
         ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12),
         SpacingFoundation.verticalSpace16,
-        UiKitChatOutCard(
-          id: 3,
-          sentByMe: true,
-          timeOfDay: DateTime.now(),
-          child: UiKitInviteMessageContent(
-            canDenyInvitation: true,
-            brightness: Brightness.light,
-            showGang: true,
-            username: '@m3dv3d3v',
-            placeName: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-            tags: [
-              UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail),
-              UiKitTag(title: 'Medium', icon: ShuffleUiKitIcons.label),
-              UiKitTag(title: 'Medium', icon: ShuffleUiKitIcons.label),
-              UiKitTag(title: 'Medium', icon: ShuffleUiKitIcons.label),
-              UiKitTag(title: 'Medium', icon: ShuffleUiKitIcons.label),
-            ],
-            placeImagePath: GraphicsFoundation.instance.png.businessMock1.path,
-            onInvitePeopleTap: () {},
-            onPlaceTap: () {},
-            invitedPeopleAvatarPaths: List.generate(
-              7,
-              (index) => index < 4 ? null : GraphicsFoundation.instance.png.mockAvatar.path,
-            ),
-            userType: UserTileType.influencer,
-          ),
-        ),
-        SpacingFoundation.verticalSpace16,
-        Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-              child: UiKitMessageCardWithIcon(
-                onPressed: () {},
-                iconLink: GraphicsFoundation.instance.png.angryEmoji.path,
-                message: 'messagemessagemessage',
-                layoutDirection: Axis.vertical,
-              ),
-            ),
-            SpacingFoundation.horizontalSpace16,
-            Center(
-              child: UiKitMessageCardWithIcon(
-                type: MessageCardType.wide,
-                onPressed: () {},
-                iconLink: GraphicsFoundation.instance.png.angryEmoji.path,
-                message: 'message message message',
-                layoutDirection: Axis.vertical,
-              ),
-            ),
-          ],
-        ),
-        SpacingFoundation.verticalSpace16,
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              SpacingFoundation.horizontalSpace16,
-              UiKitImageWithDescriptionCard(
-                title: 'cakjn',
-                subtitle: 'ascsacas',
-                imageUrl: GraphicsFoundation.instance.png.businessMock1.path,
-                tags: [
-                  UiKitTag(
-                    title: 'title',
-                    icon: ShuffleUiKitIcons.cocktail,
-                    unique: false,
-                  ),
-                  UiKitTag(
-                    title: 'title',
-                    icon: ShuffleUiKitIcons.cocktail,
-                    unique: false,
-                  ),
-                ],
-              ),
-              SpacingFoundation.horizontalSpace12,
-              UiKitImageWithDescriptionCard(
-                title: 'cakjn',
-                subtitle: 'ascsacas',
-                imageUrl: GraphicsFoundation.instance.png.businessMock2.path,
-                tags: [
-                  UiKitTag(
-                    title: 'title',
-                    icon: ShuffleUiKitIcons.cocktail,
-                    unique: false,
-                  ),
-                  UiKitTag(
-                    title: 'title',
-                    icon: ShuffleUiKitIcons.cocktail,
-                    unique: false,
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-        SpacingFoundation.verticalSpace16,
         Center(
           child: UiKitSwitchWithCustomBackground(
             firstOption: CustomBackgroundSwitchOption(
@@ -1081,59 +933,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         UiKitMessageCard(
           name: 'Eugene Carter',
-          subtitle: '@racerboi',
+          username: '@racerboi',
           lastMessageTime: '2h ago',
           avatarPath: GraphicsFoundation.instance.png.mockAvatar.path,
           lastMessage: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
           unreadMessageCount: 4,
           userType: UserTileType.ordinary,
           onTap: () {},
-        ),
-        SpacingFoundation.verticalSpace16,
-        FingerprintSwitch(
-          isHealthKitEnabled: false,
-          title: Text(
-            'Guess',
-            style: context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(
-              color: Colors.white,
-            ),
-          ),
-          backgroundImage: ImageWidget(
-            width: double.infinity,
-            svgAsset: GraphicsFoundation.instance.svg.dubaiSilhouette,
-            fit: BoxFit.cover,
-            color: context.uiKitTheme?.colorScheme.surface2,
-          ),
-          animationPath: isLightTheme
-              ? GraphicsFoundation.instance.animations.lottie.fingerprintWhite.path
-              : GraphicsFoundation.instance.animations.lottie.fingerprintBlack.path,
-          onCompletedWidget: UiKitMessageCardWithIcon(
-            message: 'La Vue Citytel',
-            iconLink: GraphicsFoundation.instance.png.angryEmoji.path,
-            layoutDirection: Axis.vertical,
-            onPressed: () {},
-          ),
-        ),
-        SpacingFoundation.verticalSpace16,
-        UiKitLeadingRadioTile(
-          selected: selection,
-          avatarLink: GraphicsFoundation.instance.png.inviteMock1.path,
-          title: 'La Vue Citytel Group',
-          tags: [
-            UiKitTag(
-              title: 'Restaurant',
-              icon: ShuffleUiKitIcons.cutlery,
-            ),
-            UiKitTag(
-              title: 'Club',
-              icon: ShuffleUiKitIcons.cocktail,
-            ),
-            UiKitTag(
-              title: 'Shuffle',
-              icon: ShuffleUiKitIcons.shuffleWhite,
-            ),
-          ],
-          onTap: () => setState(() => selection = !selection),
         ),
         SpacingFoundation.verticalSpace16,
         UiKitTitledActionCard(

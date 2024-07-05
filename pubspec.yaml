@@ -123,13 +123,14 @@ dependencies:
 dependency_overrides:
   watcher: ^1.1.0
   file: ^7.0.0
+  build_runner_core: ^7.2.9
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
   flutter_gen_runner: ^5.4.0
-  build_runner: ^2.4.10
+  build_runner: ^2.4.11
   icon_font_generator: ^4.0.0
 #  dart_code_metrics: ^5.7.3
 

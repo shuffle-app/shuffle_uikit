@@ -3,8 +3,11 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/box_icon_button.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/ui_kit_icon_button_no_padding.dart';
+import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_influncer_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
+
+import '../../ui_kit/atoms/user/avatars/ui_kit_user_avatar_90_x_90.dart';
 
 abstract class WidgetsAbstractFactory {
   ButtonFactory createIconButtonNoPadding({
@@ -218,7 +221,12 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
               type: type,
               imageUrl: imageUrl ?? '',
               userName: userName,
-            )
+            ),
+          (UserAvatarSize.x90x90) => UiKitUserAvatar90x90(
+              type: type,
+              imageUrl: imageUrl ?? '',
+              userName: userName,
+            ),
         });
   }
 
@@ -570,7 +578,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           return BadgedPremiumUserTile(data: data);
 
         case UserTileType.influencer:
-          throw UnimplementedError('There is no influencer user tile with badge');
+          return BadgedInfluncerUserTile(data: data);
 
         default:
           throw UnimplementedError('There is no user tile with badge');

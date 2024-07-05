@@ -408,6 +408,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("Введи адрес эл. почты"),
         "Entertainment": MessageLookupByLibrary.simpleMessage("Развлечения"),
+        "EntertainmentSpecialist":
+            MessageLookupByLibrary.simpleMessage("Специалист развлечений"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Возникла ошибка"),
         "ErrorOccuredWithoutMessage":
             MessageLookupByLibrary.simpleMessage("Ошибка без сообщения"),
@@ -478,6 +480,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
             "Продолжай и позволь бизнесу расти"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
+        "GoPremium": MessageLookupByLibrary.simpleMessage("Перейти на премиум"),
+        "GoProFree":
+            MessageLookupByLibrary.simpleMessage("Перейти на про бесплатно"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("Перейти в настройки"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
@@ -740,6 +745,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Переключать темную и светлую темы"),
         "PremiumSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
             "Возможность стать Инфлюенсером"),
+        "PremiumSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
+            "Возможность создавать удобные стпоки избранного и делиться ими"),
+        "PremiumSubscriptionFeature8": MessageLookupByLibrary.simpleMessage(
+            "Свой собственный планировщик событий"),
         "Price": MessageLookupByLibrary.simpleMessage("Цена"),
         "PriceRange": MessageLookupByLibrary.simpleMessage("Диапазон цен"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Конфиденциальность"),

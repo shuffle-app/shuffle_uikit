@@ -402,6 +402,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnterYourEmailAddress":
             MessageLookupByLibrary.simpleMessage("अपना ईमेल पता दर्ज करें"),
         "Entertainment": MessageLookupByLibrary.simpleMessage("मनोरंजन"),
+        "EntertainmentSpecialist":
+            MessageLookupByLibrary.simpleMessage("Entertainment specialist"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("त्रुटि हुई"),
         "ErrorOccuredWithoutMessage":
             MessageLookupByLibrary.simpleMessage("संदेश के बिना त्रुटि हुई"),
@@ -473,6 +475,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
             "आगे बढ़ें और अपना व्यवसाय बढ़ाएं"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("जाओ"),
+        "GoPremium": MessageLookupByLibrary.simpleMessage("Go premiun"),
+        "GoProFree": MessageLookupByLibrary.simpleMessage("GO pro free"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("सेटिंग्स में जाओ"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
@@ -738,6 +742,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "डार्क/लाइट डिजाइन थीम स्विच करने की क्षमता"),
         "PremiumSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("विशेष अधिकारी लेबल"),
+        "PremiumSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
+            "Ability to create and share convenient stacks of favorites"),
+        "PremiumSubscriptionFeature8": MessageLookupByLibrary.simpleMessage(
+            "Have your own event scheduler"),
         "Price": MessageLookupByLibrary.simpleMessage("मूल्य"),
         "PriceRange": MessageLookupByLibrary.simpleMessage("मूल्य सीमा"),
         "Privacy": MessageLookupByLibrary.simpleMessage("गोपनीयता"),

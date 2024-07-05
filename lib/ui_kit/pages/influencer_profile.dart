@@ -199,11 +199,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
               9,
               (index) => UiKitAchievementsModel(
                 title: 'Achievement ${index + 1}',
-                asset: index != 0 && index % 3 == 0
-                    ? null
-                    : index % 2 == 0
-                        ? GraphicsFoundation.instance.png.goldenCup.path
-                        : GraphicsFoundation.instance.png.goldenMedal.path,
+                asset: index != 0 && index % 3 == 0 ? null : GraphicsFoundation.instance.png.goldenCup.path,
               ),
             ),
             badge: const InfluencerMemberPlate(),
@@ -685,10 +681,14 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                       ],
                       title: 'Virgins on the beach',
                       respectFromUsers: [
-                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path),
-                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial1.path),
-                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial2.path),
-                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial4.path),
+                        RespectFromUser(
+                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path),
+                        RespectFromUser(
+                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial1.path),
+                        RespectFromUser(
+                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial2.path),
+                        RespectFromUser(
+                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial4.path),
                       ],
                       properties: [
                         UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: false),
@@ -710,7 +710,8 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                       ],
                       title: 'Virgins on the beach',
                       respectFromUsers: [
-                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path),
+                        RespectFromUser(
+                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path),
                       ],
                       properties: [
                         UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: false),
