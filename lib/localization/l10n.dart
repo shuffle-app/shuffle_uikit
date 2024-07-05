@@ -6549,16 +6549,16 @@ class S {
     );
   }
 
-  /// `{count, plural, =0{members} =1{member} =2{members} few{members} many{members} other{members}}`
+  /// `{count, plural, =0{{count} members} =1{{count} member} =2{{count} members} few{{count} members} many{{count} members} other{{count} members}}`
   String MembersCount(num count) {
     return Intl.plural(
       count,
-      zero: 'members',
-      one: 'member',
-      two: 'members',
-      few: 'members',
-      many: 'members',
-      other: 'members',
+      zero: '$count members',
+      one: '$count member',
+      two: '$count members',
+      few: '$count members',
+      many: '$count members',
+      other: '$count members',
       name: 'MembersCount',
       desc: '',
       args: [count],

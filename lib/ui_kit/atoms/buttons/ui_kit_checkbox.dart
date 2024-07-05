@@ -5,12 +5,14 @@ class UiKitCheckbox extends StatelessWidget {
   final VoidCallback? onChanged;
   final bool isActive;
   final Color? borderColor;
+  final bool disabled;
 
   const UiKitCheckbox({
     super.key,
     this.onChanged,
     this.borderColor,
     required this.isActive,
+    this.disabled = false,
   });
 
   @override
@@ -18,7 +20,7 @@ class UiKitCheckbox extends StatelessWidget {
     final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
-      color: Colors.transparent,
+      color: disabled ? ColorsFoundation.neutral48 : Colors.transparent,
       child: InkWell(
         onTap: onChanged,
         child: Ink(
@@ -39,11 +41,14 @@ class UiKitCheckbox extends StatelessWidget {
             child: GradientableWidget(
               active: isActive,
               gradient: GradientFoundation.attentionCard,
-              child: ImageWidget(
-                iconData: ShuffleUiKitIcons.check,
-                color: Colors.white,
-                height: SpacingFoundation.horizontalSpacing12,
-                fit: BoxFit.fitHeight,
+              child: Opacity(
+                opacity: disabled ? 0.5 : 1.0,
+                child: ImageWidget(
+                  iconData: ShuffleUiKitIcons.check,
+                  color: Colors.white,
+                  height: SpacingFoundation.horizontalSpacing12,
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ),
           ),

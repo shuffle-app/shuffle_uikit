@@ -106,26 +106,28 @@ class UiKitMessageCard extends StatelessWidget {
                   Flexible(
                     child: ConstrainedBox(
                       constraints: BoxConstraints(minHeight: 20.w),
-                      child: Center(
-                        child: Text(
-                          lastMessage,
-                          overflow: TextOverflow.ellipsis,
-                          style: boldTextTheme?.caption1Medium.copyWith(
-                            color: (unreadMessageCount ?? 0) == 0 ? colorScheme?.darkNeutral900 : null,
-                          ),
+                      child: Text(
+                        lastMessage,
+                        overflow: TextOverflow.ellipsis,
+                        style: boldTextTheme?.caption1Medium.copyWith(
+                          color: (unreadMessageCount ?? 0) == 0 ? colorScheme?.darkNeutral900 : null,
                         ),
+                        textAlign: TextAlign.start,
                       ),
                     ),
                   ),
                   SpacingFoundation.horizontalSpace8,
                   if (unreadMessageCount != null && unreadMessageCount! > 0)
                     Container(
-                      width: 15.w,
-                      height: 15.w,
                       decoration: BoxDecoration(
                         color: colorScheme?.inversePrimary,
                         shape: BoxShape.circle,
                       ),
+                      child: Text(
+                        unreadMessageCount!.toStringAsFixed(0),
+                        style: boldTextTheme?.caption1Bold.copyWith(color: colorScheme?.primary),
+                        textAlign: TextAlign.center,
+                      ).paddingAll(EdgeInsetsFoundation.all4),
                     )
                 ],
               ),
