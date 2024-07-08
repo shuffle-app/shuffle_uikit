@@ -32,7 +32,9 @@ class UiKitUserAvatar24x24 extends StatelessWidget implements UserAvatarFactory 
                   borderRadius: BorderRadiusFoundation.max,
                   boxShadow: [
                     BoxShadow(
-                      color: isLightTheme ? ColorsFoundation.darkNeutral900.withOpacity(0.4) : Colors.white.withOpacity(0.4),
+                      color: isLightTheme
+                          ? ColorsFoundation.darkNeutral900.withOpacity(0.4)
+                          : Colors.white.withOpacity(0.4),
                       blurRadius: 10,
                       spreadRadius: 3,
                       offset: Offset.zero,
@@ -62,28 +64,36 @@ class UiKitUserAvatar24x24 extends StatelessWidget implements UserAvatarFactory 
             borderWidth: borderWidth,
             child: _PlaceHolder(
               text: userName.split(' ').length > 1
-                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + (element.characters.firstOrNull ?? ''))
+                  ? userName
+                      .split(' ')
+                      .fold('', (previousValue, element) => previousValue + (element.characters.firstOrNull ?? ''))
                   : userName.characters.firstOrNull ?? 'N',
             )),
         UserTileType.premium => UiKitPremiumUserAccountAvatarWrapper.enabled(
             borderWidth: borderWidth,
             child: _PlaceHolder(
               text: userName.split(' ').length > 1
-                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + (element.characters.firstOrNull ?? ''))
+                  ? userName
+                      .split(' ')
+                      .fold('', (previousValue, element) => previousValue + (element.characters.firstOrNull ?? ''))
                   : userName.characters.firstOrNull ?? 'N',
             )),
         UserTileType.influencer => UiKitInfluencerUserAccountAvatarWrapper.enabled(
             borderWidth: borderWidth,
             child: _PlaceHolder(
               text: userName.split(' ').length > 1
-                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + (element.characters.firstOrNull ?? ''))
+                  ? userName
+                      .split(' ')
+                      .fold('', (previousValue, element) => previousValue + (element.characters.firstOrNull ?? ''))
                   : userName.characters.firstOrNull ?? 'N',
             )),
         UserTileType.pro => UiKitProUserAccountAvatarWrapper.enabled(
             borderWidth: borderWidth,
             child: _PlaceHolder(
               text: userName.split(' ').length > 1
-                  ? userName.split(' ').fold('', (previousValue, element) => previousValue + (element.characters.firstOrNull ?? ''))
+                  ? userName
+                      .split(' ')
+                      .fold('', (previousValue, element) => previousValue + (element.characters.firstOrNull ?? ''))
                   : userName.characters.firstOrNull ?? 'N',
             ),
           )
@@ -104,7 +114,7 @@ class _PlaceHolder extends StatelessWidget {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
     return Text(
-      text,
+      text.length > 2 ? text.substring(0, 2).toUpperCase() : text.toUpperCase(),
       style: textTheme?.caption3Medium.copyWith(
         color: ColorsFoundation.mutedText,
       ),

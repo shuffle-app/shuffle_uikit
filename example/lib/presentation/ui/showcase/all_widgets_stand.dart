@@ -933,13 +933,12 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         UiKitMessageCard(
           name: 'Eugene Carter',
-          username: '@racerboi',
           lastMessageTime: '2h ago',
           avatarPath: GraphicsFoundation.instance.png.mockAvatar.path,
           lastMessage: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
           unreadMessageCount: 4,
           userType: UserTileType.ordinary,
-          onTap: () {},
+          onTap: () {}, subtitle: '',
         ),
         SpacingFoundation.verticalSpace16,
         UiKitTitledActionCard(

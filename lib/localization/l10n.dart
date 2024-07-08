@@ -6614,6 +6614,36 @@ class S {
       args: [count],
     );
   }
+
+  /// `Replying to {message}`
+  String ReplyingTo(Object message) {
+    return Intl.message(
+      'Replying to $message',
+      name: 'ReplyingTo',
+      desc: '',
+      args: [message],
+    );
+  }
+
+  /// `Invited people`
+  String get InvitedPeople {
+    return Intl.message(
+      'Invited people',
+      name: 'InvitedPeople',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Plz respect your choice and others' feelings`
+  String get AlreadyInvited {
+    return Intl.message(
+      'Plz respect your choice and others\' feelings',
+      name: 'AlreadyInvited',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

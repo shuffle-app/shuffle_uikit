@@ -124,47 +124,49 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m39(amount) => "Read ${amount}";
 
-  static String m40(count) =>
-      "${Intl.plural(count, zero: 'reviews', one: 'review', two: 'reviews', few: 'reviews', many: 'reviews', other: 'reviews')}";
+  static String m40(message) => "Replying to ${message}";
 
   static String m41(count) =>
       "${Intl.plural(count, zero: 'reviews', one: 'review', two: 'reviews', few: 'reviews', many: 'reviews', other: 'reviews')}";
 
-  static String m42(item) =>
+  static String m42(count) =>
+      "${Intl.plural(count, zero: 'reviews', one: 'review', two: 'reviews', few: 'reviews', many: 'reviews', other: 'reviews')}";
+
+  static String m43(item) =>
       "${Intl.plural(item, zero: 'preferences don’t work', one: 'events/places', two: 'type & get result', few: 'use ratings & models', other: 'use ratings & models')}";
 
-  static String m43(type) => "select ${type}";
-
-  static String m44(item) =>
-      "${Intl.plural(item, zero: 'swipe any direction', one: 'swipe place qualities', two: 'like dislike favorite', few: 'teach our system', other: 'teach our system')}";
+  static String m44(type) => "select ${type}";
 
   static String m45(item) =>
+      "${Intl.plural(item, zero: 'swipe any direction', one: 'swipe place qualities', two: 'like dislike favorite', few: 'teach our system', other: 'teach our system')}";
+
+  static String m46(item) =>
       "${Intl.plural(item, zero: 'for fun', one: 'swipe category', two: 'choose & plan', few: 'search & book', other: 'search & book')}";
 
-  static String m46(separator) => "Tell us more${separator}about yourself";
+  static String m47(separator) => "Tell us more${separator}about yourself";
 
-  static String m47(amountOfTopDonators, multiplier) =>
+  static String m48(amountOfTopDonators, multiplier) =>
       "Top ${amountOfTopDonators} donators receive x${multiplier} points";
 
-  static String m48(separator) => "Top places rated${separator}by";
+  static String m49(separator) => "Top places rated${separator}by";
 
-  static String m49(type) => "To use this function plz upgrade to ${type}";
+  static String m50(type) => "To use this function plz upgrade to ${type}";
 
-  static String m50(forNMoney) => "Upgrade ${forNMoney}";
+  static String m51(forNMoney) => "Upgrade ${forNMoney}";
 
-  static String m51(count) =>
+  static String m52(count) =>
       "${Intl.plural(count, zero: '${count} users', one: '${count} user', two: '${count} users', few: '${count} users', many: '${count} users', other: '${count} users')}";
 
-  static String m52(days) =>
+  static String m53(days) =>
       "in ${days} ${Intl.plural(days, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')}";
 
-  static String m53(value) => "${value} could not be empty";
+  static String m54(value) => "${value} could not be empty";
 
-  static String m54(title) => "${title} is required";
+  static String m55(title) => "${title} is required";
 
-  static String m55(value) => "${value} successfully updated";
+  static String m56(value) => "${value} successfully updated";
 
-  static String m56(amountOfInvitedPersons) =>
+  static String m57(amountOfInvitedPersons) =>
       "You sent an invitation to ${amountOfInvitedPersons} people";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -218,6 +220,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Allow location services to use this function"),
         "AllowX": m1,
         "AllowedCaracters": m2,
+        "AlreadyInvited": MessageLookupByLibrary.simpleMessage(
+            "Plz respect your choice and others\' feelings"),
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" And "),
         "Archive": MessageLookupByLibrary.simpleMessage("Archive"),
         "Archived": MessageLookupByLibrary.simpleMessage("Archived"),
@@ -542,6 +546,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "InvitePeople": MessageLookupByLibrary.simpleMessage("Invite people"),
         "InviteToFavoritePlaces": MessageLookupByLibrary.simpleMessage(
             "Invite to your \"Favorites\""),
+        "InvitedPeople": MessageLookupByLibrary.simpleMessage("Invited people"),
         "InvitesNPeopleTo": m26,
         "InvitesYouTo": MessageLookupByLibrary.simpleMessage("Invites you to"),
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("Is recurrent"),
@@ -791,6 +796,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
         "Reply": MessageLookupByLibrary.simpleMessage("Reply"),
+        "ReplyingTo": m40,
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
         "Reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "ResetFilters": MessageLookupByLibrary.simpleMessage("Reset filters"),
@@ -802,8 +808,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
         "ReviewsByCritics":
             MessageLookupByLibrary.simpleMessage("Reviews by critics"),
-        "ReviewsPosted": m40,
-        "ReviewsReceived": m41,
+        "ReviewsPosted": m41,
+        "ReviewsReceived": m42,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Sat"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
@@ -839,7 +845,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sporty movements"),
         "SearchChooseYourself9": MessageLookupByLibrary.simpleMessage(
             "Self-care (Health and beauty/self-love)"),
-        "SearchHiwHint": m42,
+        "SearchHiwHint": m43,
         "SearchHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "search or choose others choice"),
         "SearchHiwTitle":
@@ -862,7 +868,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectOption": MessageLookupByLibrary.simpleMessage("Select option"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("Select price and currency"),
-        "SelectType": m43,
+        "SelectType": m44,
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("Select your religions"),
         "SelectYourSpecialty":
@@ -883,7 +889,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
             "Show the barcode at the checkout when paying"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
-        "ShuffleHiwHint": m44,
+        "ShuffleHiwHint": m45,
         "ShuffleHiwSubtitle":
             MessageLookupByLibrary.simpleMessage("finding personalized places"),
         "ShuffleHiwTitle":
@@ -902,7 +908,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Spent": MessageLookupByLibrary.simpleMessage("Spent"),
         "SpentMyPoints":
             MessageLookupByLibrary.simpleMessage("Spent my points"),
-        "SpinnerHiwHint": m45,
+        "SpinnerHiwHint": m46,
         "SpinnerHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "you find personalized events"),
         "SpinnerHiwTitle":
@@ -942,7 +948,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
         "TeaList": MessageLookupByLibrary.simpleMessage("Tea list"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("Tell us more"),
-        "TellUsMoreAboutYourself": m46,
+        "TellUsMoreAboutYourself": m47,
         "Terms": MessageLookupByLibrary.simpleMessage("Terms"),
         "TermsOfService":
             MessageLookupByLibrary.simpleMessage("Terms of Service"),
@@ -983,8 +989,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "To open the next set of tools you need to do"),
         "Today": MessageLookupByLibrary.simpleMessage("Today"),
         "Top": MessageLookupByLibrary.simpleMessage("Top"),
-        "TopNDonatorsReceiveXPoints": m47,
-        "TopPlacesRatedBy": m48,
+        "TopNDonatorsReceiveXPoints": m48,
+        "TopPlacesRatedBy": m49,
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("Trial period"),
         "TryYourself": MessageLookupByLibrary.simpleMessage("Try\nyourself"),
         "TuesdayShort": MessageLookupByLibrary.simpleMessage("Tue"),
@@ -1008,16 +1014,16 @@ class MessageLookup extends MessageLookupByLibrary {
             "It\'s been a while since you\'ve updated our app, and we\'ve added a lot of handy stuff in the meantime"),
         "UpdateAppMessageTitle":
             MessageLookupByLibrary.simpleMessage("Time for update"),
-        "UpgradeAccount": m49,
+        "UpgradeAccount": m50,
         "UpgradeAccountConfirmation":
             MessageLookupByLibrary.simpleMessage("Upgrade"),
-        "UpgradeForNmoney": m50,
+        "UpgradeForNmoney": m51,
         "UploadingVideo":
             MessageLookupByLibrary.simpleMessage("Uploading video"),
         "User": MessageLookupByLibrary.simpleMessage("User"),
         "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
             "Select the type of account you would like to create"),
-        "Users": m51,
+        "Users": m52,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Use health data"),
         "UsingNotifications":
@@ -1061,7 +1067,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "WillBe": MessageLookupByLibrary.simpleMessage(" will be."),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("Will be implemented soon"),
-        "WithInDays": m52,
+        "WithInDays": m53,
         "WithYourPreferences":
             MessageLookupByLibrary.simpleMessage("With your\npreferences"),
         "WorkHours": MessageLookupByLibrary.simpleMessage("Work hours"),
@@ -1069,9 +1075,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Write the answer"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("Wrong security code"),
-        "XCouldNotBeEmpty": m53,
-        "XIsRequired": m54,
-        "XSuccessfullyUpdated": m55,
+        "XCouldNotBeEmpty": m54,
+        "XIsRequired": m55,
+        "XSuccessfullyUpdated": m56,
         "Year": MessageLookupByLibrary.simpleMessage("Year"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Yearly"),
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
@@ -1086,7 +1092,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouMissedALot":
             MessageLookupByLibrary.simpleMessage("You missed a lot"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
-        "YouSentInvitationToNPeople": m56,
+        "YouSentInvitationToNPeople": m57,
         "YouWillReceiveNewTools":
             MessageLookupByLibrary.simpleMessage("You will receive new tools"),
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("You’ll find it"),

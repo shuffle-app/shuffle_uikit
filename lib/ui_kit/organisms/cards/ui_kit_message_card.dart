@@ -57,39 +57,46 @@ class UiKitMessageCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   context.userAvatar(size: UserAvatarSize.x40x40, type: userType, userName: name, imageUrl: avatarPath),
                   SpacingFoundation.horizontalSpace12,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(name, style: boldTextTheme?.caption1Medium),
-                          SpacingFoundation.horizontalSpace8,
-                          UiKitUserBadge(userType: userType)
-                        ],
-                      ),
-                      SpacingFoundation.verticalSpace2,
-                      Row(
-                        children: [
-                          if (subtitleIconPath != null)
-                            ImageWidget(
-                              link: subtitleIconPath,
-                              height: 14.h,
-                              fit: BoxFit.fitHeight,
-                              color: colorScheme?.darkNeutral900,
-                            ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
-                          Text(
-                            subtitle,
-                            style: boldTextTheme?.caption1Bold.copyWith(
-                              color: colorScheme?.darkNeutral900,
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Row(
+                          children: [
+                            Flexible(
+                              child: Text(
+                                name,
+                                style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
+                                maxLines: 1,
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                            SpacingFoundation.horizontalSpace8,
+                            UiKitUserBadge(userType: userType)
+                          ],
+                        ),
+                        SpacingFoundation.verticalSpace2,
+                        Row(
+                          children: [
+                            if (subtitleIconPath != null)
+                              ImageWidget(
+                                link: subtitleIconPath,
+                                height: 14.h,
+                                fit: BoxFit.fitHeight,
+                                color: colorScheme?.darkNeutral900,
+                              ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
+                            Text(
+                              subtitle,
+                              style: boldTextTheme?.caption1Bold.copyWith(
+                                color: colorScheme?.darkNeutral900,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

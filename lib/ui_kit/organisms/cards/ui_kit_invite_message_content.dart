@@ -7,12 +7,13 @@ class UiKitInviteMessageContent extends StatelessWidget {
     required this.username,
     required this.placeName,
     required this.placeImagePath,
-    required this.invitedPeopleAvatarPaths,
+    required this.invitedUsersData,
     required this.userType,
     required this.onPlaceTap,
     this.onInvitePeopleTap,
     required this.tags,
     this.canDenyInvitation = false,
+    this.canAddMorePeople = false,
     this.showGang = false,
     this.brightness = Brightness.light,
     this.onAcceptTap,
@@ -24,9 +25,10 @@ class UiKitInviteMessageContent extends StatelessWidget {
   final String placeName;
   final String placeImagePath;
   final List<UiKitTag> tags;
-  final List<String?> invitedPeopleAvatarPaths;
+  final List<InviteMessageUsersData> invitedUsersData;
   final UserTileType userType;
   final bool canDenyInvitation;
+  final bool canAddMorePeople;
   final bool showGang;
 
   final VoidCallback onPlaceTap;
@@ -36,54 +38,66 @@ class UiKitInviteMessageContent extends StatelessWidget {
 
   bool get isDark => brightness == Brightness.dark;
 
-  List<String?> _sortAvatars() {
-    final sortedAvatars = invitedPeopleAvatarPaths.where((avatar) => avatar != null).toList();
-
-    return sortedAvatars;
-  }
-
   @override
   Widget build(BuildContext context) {
-    final sortedAvatars = _sortAvatars();
     final theme = context.uiKitTheme;
+    UiKitColorScheme colorScheme = UiKitColorScheme.dark();
+    if (!isDark) colorScheme = UiKitColorScheme.light();
+
     final avatarWidth = 0.1375.sw;
+    print('placeImagePath: $placeImagePath');
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
           children: [
-            if (sortedAvatars.length >= 3 && showGang)
+            if (invitedUsersData.length >= 3 && showGang)
               Expanded(
                 child: Stack(
+                  clipBehavior: Clip.none,
                   children: [
-                    BorderedUserCircleAvatar(
-                      imageUrl: sortedAvatars.first,
-                      size: avatarWidth,
+                    SizedBox(
+                      width: 0.15.sw,
+                      height: 0.15.sw,
+                    ),
+                    Positioned(
+                      left: -EdgeInsetsFoundation.horizontal32 * 0.1.w,
+                      child: context.userAvatar(
+                        size: UserAvatarSize.x40x40,
+                        type: invitedUsersData.first.userType,
+                        imageUrl: invitedUsersData.first.avatarPath,
+                        userName: invitedUsersData.first.name,
+                      ),
                     ),
                     Positioned(
                       left: EdgeInsetsFoundation.horizontal32 * 0.7.w,
-                      child: BorderedUserCircleAvatar(
-                        size: avatarWidth,
-                        imageUrl: sortedAvatars[1],
+                      child: context.userAvatar(
+                        size: UserAvatarSize.x40x40,
+                        type: invitedUsersData[1].userType,
+                        imageUrl: invitedUsersData[1].avatarPath,
+                        userName: invitedUsersData[1].name,
                       ),
                     ),
                     Positioned(
                       left: EdgeInsetsFoundation.horizontal32 * 1.5.w,
-                      child: BorderedUserCircleAvatar(
-                        size: avatarWidth,
-                        imageUrl: sortedAvatars[2],
+                      child: context.userAvatar(
+                        size: UserAvatarSize.x40x40,
+                        type: invitedUsersData[2].userType,
+                        imageUrl: invitedUsersData[2].avatarPath,
+                        userName: invitedUsersData[2].name,
                       ),
                     ),
-                    if (invitedPeopleAvatarPaths.length - 3 > 0)
+                    if (invitedUsersData.length - 3 > 0)
                       Positioned(
                         left: EdgeInsetsFoundation.horizontal32 * 2.2.w,
                         child: CircleAvatar(
                           radius: avatarWidth / 2,
-                          backgroundColor: isDark ? theme?.colorScheme.surface4 : theme?.colorScheme.darkNeutral100,
+                          backgroundColor: colorScheme.darkNeutral100,
                           child: Text(
-                            '+${invitedPeopleAvatarPaths.length - 3}',
+                            '+${invitedUsersData.length - 3}',
                             style: theme?.regularTextTheme.caption1.copyWith(
-                              color: theme.colorScheme.darkNeutral900,
+                              color: ColorsFoundation.mutedText,
                             ),
                           ),
                         ),
@@ -98,41 +112,19 @@ class UiKitInviteMessageContent extends StatelessWidget {
                   children: [
                     Text(
                       username,
-                      style: theme?.boldTextTheme.caption1Bold.copyWith(color: isDark ? Colors.white : Colors.black),
+                      style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
                     ),
                     SpacingFoundation.horizontalSpace12,
-                    if (userType == UserTileType.influencer)
-                      GradientableWidget(
-                        gradient: GradientFoundation.defaultLinearGradient,
-                        child: ImageWidget(
-                          iconData: ShuffleUiKitIcons.star2,
-                          color: context.uiKitTheme?.colorScheme.inversePrimary,
-                          height: 16.w,
-                        ),
-                      ),
-                    if (userType == UserTileType.premium)
-                      ImageWidget(
-                        iconData: ShuffleUiKitIcons.star2,
-                        color: context.uiKitTheme?.colorScheme.inversePrimary,
-                        height: 16.w,
-                      ),
-                    if (userType == UserTileType.pro)
-                      GradientableWidget(
-                        gradient: GradientFoundation.defaultLinearGradient,
-                        child: Text(
-                          'pro',
-                          style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
-                        ),
-                      ),
+                    if (userType == UserTileType.influencer) InfluencerAccountMark(),
+                    if (userType == UserTileType.premium) PremiumAccountMark(color: colorScheme.inverseSurface),
+                    if (userType == UserTileType.pro) ProAccountMark(),
                   ],
                 ),
                 Text(
                   showGang
-                      ? S.of(context).InvitesNPeopleTo(invitedPeopleAvatarPaths.length).toLowerCase()
+                      ? S.of(context).InvitesNPeopleTo(invitedUsersData.length).toLowerCase()
                       : S.of(context).InvitesYouTo.toLowerCase(),
-                  style: theme?.boldTextTheme.caption1Medium.copyWith(
-                    color: isDark ? Colors.white : Colors.black,
-                  ),
+                  style: theme?.boldTextTheme.caption1Medium.copyWith(color: colorScheme.inverseSurface),
                 ),
               ],
             ),
@@ -141,14 +133,18 @@ class UiKitInviteMessageContent extends StatelessWidget {
         SpacingFoundation.verticalSpace12,
         UiKitCardWrapper(
           borderRadius: BorderRadiusFoundation.max,
-          color: isDark ? theme?.colorScheme.surface4 : theme?.colorScheme.darkNeutral100,
+          color: colorScheme.surface1,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.max,
             children: [
-              BorderedUserCircleAvatar(
-                size: avatarWidth + 5.w,
-                imageUrl: placeImagePath,
+              ClipOval(
+                child: ImageWidget(
+                  link: placeImagePath,
+                  width: 0.125.sw,
+                  height: 0.125.sw,
+                  fit: BoxFit.cover,
+                ),
               ),
               SpacingFoundation.horizontalSpace12,
               Expanded(
@@ -160,7 +156,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
                       placeName,
                       style: theme?.boldTextTheme.caption1Bold.copyWith(
                         overflow: TextOverflow.ellipsis,
-                        color: isDark ? Colors.white : Colors.black,
+                        color: colorScheme.inverseSurface,
                       ),
                     ),
                     SizedBox(
@@ -180,13 +176,13 @@ class UiKitInviteMessageContent extends StatelessWidget {
               context
                   .smallOutlinedButton(
                     blurred: false,
-
                     data: BaseUiKitButtonData(
-                      backgroundColor: Colors.black,
+                      borderColor: colorScheme.inverseSurface,
+                      backgroundColor: colorScheme.surface1,
                       onPressed: onPlaceTap,
                       iconInfo: BaseUiKitButtonIconData(
                         iconData: ShuffleUiKitIcons.chevronright,
-                        color: Colors.black,
+                        color: colorScheme.inverseSurface,
                       ),
                     ),
                   )
@@ -213,10 +209,9 @@ class UiKitInviteMessageContent extends StatelessWidget {
               Expanded(
                 flex: 6,
                 child: context.smallOutlinedButton(
-
                   blurred: false,
                   data: BaseUiKitButtonData(
-                    backgroundColor: isDark ? Colors.white : Colors.black,
+                    backgroundColor: colorScheme?.inverseSurface,
                     onPressed: onDenyTap,
                     text: S.of(context).NotNow.toUpperCase(),
                     fit: ButtonFit.fitWidth,
@@ -225,7 +220,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
               ),
             ],
           ),
-        if (!canDenyInvitation)
+        if (canAddMorePeople)
           context.gradientButton(
             data: BaseUiKitButtonData(
               onPressed: onInvitePeopleTap,
@@ -236,4 +231,16 @@ class UiKitInviteMessageContent extends StatelessWidget {
       ],
     );
   }
+}
+
+class InviteMessageUsersData {
+  final String avatarPath;
+  final String name;
+  final UserTileType userType;
+
+  const InviteMessageUsersData({
+    required this.avatarPath,
+    required this.userType,
+    required this.name,
+  });
 }

@@ -7,6 +7,7 @@ class UiKitUserTileWithCheckbox extends StatefulWidget {
     super.key,
     required this.name,
     required this.onTap,
+    this.onDisabledTap,
     this.disableSelection = false,
     this.rating = 0,
     this.avatarLink,
@@ -21,6 +22,7 @@ class UiKitUserTileWithCheckbox extends StatefulWidget {
   final String? avatarLink;
   final bool isSelected;
   final ValueChanged<bool> onTap;
+  final VoidCallback? onDisabledTap;
   final DateTime? date;
   final String? subtitle;
   final bool? handShake;
@@ -60,6 +62,7 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
             isActive: _isSelected,
             borderColor: theme?.colorScheme.surface5,
             disabled: widget.disableSelection,
+            disabledTapReaction: widget.onDisabledTap,
           ),
           Expanded(
             child: Row(

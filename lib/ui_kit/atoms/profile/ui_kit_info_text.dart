@@ -5,19 +5,20 @@ class UiKitInfoText extends StatelessWidget {
   final String text;
   final String? title;
   final Gradient? textGradient;
+  final bool? centerText;
 
   const UiKitInfoText({
     Key? key,
     required this.text,
     this.title,
     this.textGradient,
+    this.centerText,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
-
-    return Stack(
+    final child = Stack(
       children: [
         RichText(
           text: TextSpan(
@@ -54,5 +55,9 @@ class UiKitInfoText extends StatelessWidget {
         ),
       ],
     );
+
+    if (centerText ?? false) return Center(child: child);
+
+    return child;
   }
 }

@@ -641,5 +641,8 @@
   "MembersCount": "{count, plural, =0{{count} members} =1{{count} member} =2{{count} members} few{{count} members} many{{count} members} other{{count} members}}",
   "EntertainmentSpecialist": "Entertainment specialist",
   "GoPremium": "Go premiun",
-  "GoProFree": "GO pro free"
+  "GoProFree": "GO pro free",
+  "InvitedPeople": "Invited people",
+  "ReplyingTo": "Replying to {message}",
+  "AlreadyInvited": "Plz respect your choice and others' feelings"
 }

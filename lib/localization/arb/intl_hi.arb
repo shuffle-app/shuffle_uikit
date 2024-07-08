@@ -641,5 +641,8 @@
   "GoProFree": "GO pro free",
   "NoMessagesYet": "No messages yet",
   "ChatDeletionAndCreationMessage": "Crated on {creationDate}.\nWill be deleted {deletionDate}",
-  "MembersCount": "{count, plural, =0{{count} members} =1{{count} member} =2{{count} members} few{{count} members} many{{count} members} other{{count} members}}"
+  "MembersCount": "{count, plural, =0{{count} members} =1{{count} member} =2{{count} members} few{{count} members} many{{count} members} other{{count} members}}",
+  "InvitedPeople": "Invited people",
+  "ReplyingTo": "Replying to {message}",
+  "AlreadyInvited": "Plz respect your choice and others' feelings"
 }
