@@ -6658,7 +6658,15 @@ class S {
     );
   }
 
-  // skipped getter for the 'Offer content' key
+  /// `Offer content`
+  String get OfferContent {
+    return Intl.message(
+      'Offer content',
+      name: 'OfferContent',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

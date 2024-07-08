@@ -666,6 +666,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NowWeKnowYouBetter": MessageLookupByLibrary.simpleMessage(
             "Спасибо!\nТеперь мы знаем тебя лучше"),
         "Off": MessageLookupByLibrary.simpleMessage("Выкл"),
+        "OfferContent":
+            MessageLookupByLibrary.simpleMessage("Предлагайте контент"),
         "OfferSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
             "Предложение успешно активировано"),
         "OfficeAppartmentNumber":

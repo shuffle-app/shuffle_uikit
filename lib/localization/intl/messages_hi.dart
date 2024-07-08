@@ -662,6 +662,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "NowWeKnowYouBetter": MessageLookupByLibrary.simpleMessage(
             "धन्यवाद!\nअब हम आपको बेहतर जानते हैं"),
         "Off": MessageLookupByLibrary.simpleMessage("बंद"),
+        "OfferContent": MessageLookupByLibrary.simpleMessage("Offer content"),
         "OfferSuccessfullyActivated":
             MessageLookupByLibrary.simpleMessage("प्रस्ताव सफलतापूर्वक सक्रिय"),
         "OfficeAppartmentNumber":

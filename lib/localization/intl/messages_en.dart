@@ -654,6 +654,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "NowWeKnowYouBetter": MessageLookupByLibrary.simpleMessage(
             "Thanks!\nNow we know you better"),
         "Off": MessageLookupByLibrary.simpleMessage("Off"),
+        "OfferContent": MessageLookupByLibrary.simpleMessage("Offer content"),
         "OfferSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
             "Offer successfully activated"),
         "OfficeAppartmentNumber":
