@@ -260,6 +260,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BeFirstToInvite": MessageLookupByLibrary.simpleMessage("Будь первым"),
         "BeInSearch": MessageLookupByLibrary.simpleMessage("Быть в поиске"),
         "BookIt": MessageLookupByLibrary.simpleMessage("Букинг"),
+        "Bookigns": MessageLookupByLibrary.simpleMessage("Забронировать"),
         "Bookings": m3,
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Брони и Приглашения"),
@@ -667,7 +668,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Спасибо!\nТеперь мы знаем тебя лучше"),
         "Off": MessageLookupByLibrary.simpleMessage("Выкл"),
         "OfferContent":
-            MessageLookupByLibrary.simpleMessage("Предлагайте контент"),
+            MessageLookupByLibrary.simpleMessage("Предложить контент"),
         "OfferSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
             "Предложение успешно активировано"),
         "OfficeAppartmentNumber":

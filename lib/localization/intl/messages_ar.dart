@@ -255,6 +255,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BeFirstToInvite": MessageLookupByLibrary.simpleMessage("Be the first"),
         "BeInSearch": MessageLookupByLibrary.simpleMessage("Be in search"),
         "BookIt": MessageLookupByLibrary.simpleMessage("Book it"),
+        "Bookigns": MessageLookupByLibrary.simpleMessage("Bookigns"),
         "Bookings": m3,
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Bookings and Invites"),

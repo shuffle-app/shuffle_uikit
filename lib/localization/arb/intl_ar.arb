@@ -647,5 +647,7 @@
   "SpendHoursPerWeek": "Spend {count} {count, plural, =0{hours} =1{hour} =2{hours} few{hours} many{hours} other{hours}} per week",
   "Connects": "Connects",
   "CardOpening": "{count} {count, plural, =0{cards} =1{card} =2{cards} few{cards} many{cards} other{cards}} opening",
-  "OfferContent": "Offer content"
+  "OfferContent": "Offer content",
+  "Bookigns": "Bookigns"
+
 }
