@@ -6678,10 +6678,16 @@ class S {
     );
   }
 
-  /// `{count} {count, plural, =0{points} =1{point} =2{points} few{points} many{points} other{points}}`
+  /// `{count, plural, =0{points} =1{point} =2{points} few{points} many{points} other{points}}`
   String PointsCount(num count) {
-    return Intl.message(
-      '$count ${Intl.plural(count, zero: 'points', one: 'point', two: 'points', few: 'points', many: 'points', other: 'points')}',
+    return Intl.plural(
+      count,
+      zero: 'points',
+      one: 'point',
+      two: 'points',
+      few: 'points',
+      many: 'points',
+      other: 'points',
       name: 'PointsCount',
       desc: '',
       args: [count],

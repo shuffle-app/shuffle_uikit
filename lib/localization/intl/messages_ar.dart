@@ -117,7 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please select at least ${religionCount} religion";
 
   static String m37(count) =>
-      "${count} ${Intl.plural(count, zero: 'points', one: 'point', two: 'points', few: 'points', many: 'points', other: 'points')}";
+      "${Intl.plural(count, zero: 'points', one: 'point', two: 'points', few: 'points', many: 'points', other: 'points')}";
 
   static String m38(count) =>
       "${Intl.plural(count, zero: 'points', one: 'point', two: 'points', few: 'points', many: 'points', other: 'points')}";
