@@ -638,5 +638,17 @@
   "Influencer": "Influencer",
   "EntertainmentSpecialist": "Entertainment specialist",
   "GoPremium": "Go premiun",
-  "GoProFree": "GO pro free"
+  "GoProFree": "GO pro free",
+  "Spend": "Spend",
+  "ChallengeFeelings": "Challenge Feelings",
+  "Feedbacks": "{count} {count, plural, =0{Feedback} =1{Feedback} =2{Feedbacks} few{Feedbacks} many{Feedbacks} other{Feedbacks}}",
+  "ShareCard": "Share {count} {count, plural, =0{card} =1{card} =2{cards} few{cards} many{cards} other{cards}}",
+  "LoginToAppDaysInARow": "Login to app {count} {count, plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}} in a row",
+  "SpendHoursPerWeek": "Spend {count} {count, plural, =0{hours} =1{hour} =2{hours} few{hours} many{hours} other{hours}} per week",
+  "Connects": "Connects",
+  "CardOpening": "{count} {count, plural, =0{cards} =1{card} =2{cards} few{cards} many{cards} other{cards}} opening",
+  "OfferContent": "Offer content",
+  "Bookigns": "Bookigns",
+  "PointsCount": "{count, plural, =0{points} =1{point} =2{points} few{points} many{points} other{points}}"
+
 }

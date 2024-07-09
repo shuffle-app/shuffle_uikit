@@ -6577,6 +6577,122 @@ class S {
       args: [],
     );
   }
+
+  /// `Spend`
+  String get Spend {
+    return Intl.message(
+      'Spend',
+      name: 'Spend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Challenge Feelings`
+  String get ChallengeFeelings {
+    return Intl.message(
+      'Challenge Feelings',
+      name: 'ChallengeFeelings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{Feedback} =1{Feedback} =2{Feedbacks} few{Feedbacks} many{Feedbacks} other{Feedbacks}}`
+  String Feedbacks(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'Feedback', one: 'Feedback', two: 'Feedbacks', few: 'Feedbacks', many: 'Feedbacks', other: 'Feedbacks')}',
+      name: 'Feedbacks',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Share {count} {count, plural, =0{card} =1{card} =2{cards} few{cards} many{cards} other{cards}}`
+  String ShareCard(num count) {
+    return Intl.message(
+      'Share $count ${Intl.plural(count, zero: 'card', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')}',
+      name: 'ShareCard',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Login to app {count} {count, plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}} in a row`
+  String LoginToAppDaysInARow(num count) {
+    return Intl.message(
+      'Login to app $count ${Intl.plural(count, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')} in a row',
+      name: 'LoginToAppDaysInARow',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Spend {count} {count, plural, =0{hours} =1{hour} =2{hours} few{hours} many{hours} other{hours}} per week`
+  String SpendHoursPerWeek(num count) {
+    return Intl.message(
+      'Spend $count ${Intl.plural(count, zero: 'hours', one: 'hour', two: 'hours', few: 'hours', many: 'hours', other: 'hours')} per week',
+      name: 'SpendHoursPerWeek',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Connects`
+  String get Connects {
+    return Intl.message(
+      'Connects',
+      name: 'Connects',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{cards} =1{card} =2{cards} few{cards} many{cards} other{cards}} opening`
+  String CardOpening(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'cards', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} opening',
+      name: 'CardOpening',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Offer content`
+  String get OfferContent {
+    return Intl.message(
+      'Offer content',
+      name: 'OfferContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bookigns`
+  String get Bookigns {
+    return Intl.message(
+      'Bookigns',
+      name: 'Bookigns',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =0{points} =1{point} =2{points} few{points} many{points} other{points}}`
+  String PointsCount(num count) {
+    return Intl.plural(
+      count,
+      zero: 'points',
+      one: 'point',
+      two: 'points',
+      few: 'points',
+      many: 'points',
+      other: 'points',
+      name: 'PointsCount',
+      desc: '',
+      args: [count],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
