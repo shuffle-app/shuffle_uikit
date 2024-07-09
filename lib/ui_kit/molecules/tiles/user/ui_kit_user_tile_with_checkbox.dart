@@ -53,6 +53,10 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
 
     return GestureDetector(
       onTap: () {
+        if (widget.disableSelection) {
+          widget.onDisabledTap?.call();
+          return;
+        }
         setState(() => _isSelected = !_isSelected);
         widget.onTap.call(_isSelected);
       },
