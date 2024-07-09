@@ -15,6 +15,7 @@ class UiKitFeedbackCard extends StatelessWidget {
   final int? maxLines;
   final UserTileType? userTileType;
   final Color? customBackgroundColor;
+  final Size? avatarSize;
 
   const UiKitFeedbackCard({
     super.key,
@@ -30,7 +31,7 @@ class UiKitFeedbackCard extends StatelessWidget {
     this.onPressed,
     this.maxLines,
     this.userTileType,
-    this.customBackgroundColor,
+    this.customBackgroundColor, this.avatarSize,
   });
 
   @override
@@ -53,11 +54,15 @@ class UiKitFeedbackCard extends StatelessWidget {
             children: [
               UiKitHeaderWithLeading(
                 title: title ?? '',
-                leading: context.userAvatar(
-                  size: UserAvatarSize.x40x40,
-                  type: userTileType ?? UserTileType.ordinary,
-                  userName: title ?? '',
-                  imageUrl: avatarUrl,
+                leading: SizedBox(
+                  width: avatarSize?.width,
+                  height: avatarSize?.height,
+                  child: context.userAvatar(
+                    size:  UserAvatarSize.x40x40,
+                    type: userTileType ?? UserTileType.ordinary,
+                    userName: title ?? '',
+                    imageUrl: avatarUrl,
+                  ),
                 ),
                 subtitle: datePosted?.timeAgo ?? '',
                 trailing: rating != null ? UiKitRatingBadge(rating: rating!) : null,
