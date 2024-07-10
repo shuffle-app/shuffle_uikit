@@ -322,7 +322,7 @@ class PrizeDialog extends StatelessWidget {
                 ],
               ),
               SpacingFoundation.verticalSpace2,
-              LinearInfluencerIndicator(
+              LinearInfluencerIndicatorTest(
                 width: 0.81.sw,
                 actualSum: uiRewardProgressModel?.current ?? 0.0,
                 sum: uiRewardProgressModel?.total ?? 1.0,
@@ -347,12 +347,12 @@ class UiRewardProgressModel {
   });
 }
 
-class LinearInfluencerIndicator extends StatelessWidget {
+class LinearInfluencerIndicatorTest extends StatelessWidget {
   final double actualSum;
   final double sum;
   final double? width;
 
-  LinearInfluencerIndicator({
+  LinearInfluencerIndicatorTest({
     super.key,
     required this.actualSum,
     required this.sum,
