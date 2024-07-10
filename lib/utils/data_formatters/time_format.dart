@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
-import '../../localization/l10n.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 String normalizedTi(TimeOfDay? time, {bool showDateName = true}) {
   if (time == null) return 'nn';
@@ -67,6 +66,14 @@ String formatDifference(DateTime date) {
   } else {
     return DateFormat('dd.MM.yyyy').format(date);
   }
+}
+
+String formatChatMessageDate(DateTime date) {
+  if (date.isAtSameDay) {
+    return DateFormat('HH:mm a').format(date);
+  }
+
+  return DateFormat('MMM d H:MM a').format(date);
 }
 
 String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay? timeTo, List<String>? wDays) {

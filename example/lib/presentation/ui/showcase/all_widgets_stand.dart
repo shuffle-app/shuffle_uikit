@@ -151,6 +151,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         UiKitEmojiInputField(
+          inputFieldFocusNode: FocusNode(),
           textEditingController: _emojitextEditingController,
           onSend: () {},
         ),
@@ -938,7 +939,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           lastMessage: 'Any plans for the weekend? What about to get a company and go to atmosphere again?',
           unreadMessageCount: 4,
           userType: UserTileType.ordinary,
-          onTap: () {}, subtitle: '',
+          onTap: () {},
+          subtitle: '',
         ),
         SpacingFoundation.verticalSpace16,
         UiKitTitledActionCard(

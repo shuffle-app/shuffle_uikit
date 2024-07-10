@@ -113,27 +113,29 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
             if (topFixedAddition != null) SliverPinnedHeader(child: topFixedAddition!),
           ],
         ),
-        KeyboardVisibilityBuilder(builder: (context, visible) {
-          return AnimatedContainer(
-            duration: const Duration(milliseconds: 150),
-            height: 1.sh - expandedHeight - (bodyBottomSpace ?? 0) - (visible ? 0.4.sh : 0),
-            width: 1.sw,
-            child: PagedListView.separated(
-              padding: reverse
-                  ? EdgeInsets.only(
-                      top: padding?.top ?? 0,
-                      left: padding?.right ?? 0,
-                      right: padding?.left ?? 0,
-                      bottom: (padding?.bottom ?? 0) + (bodyBottomSpace ?? 0),
-                    )
-                  : padding ?? EdgeInsets.zero,
-              reverse: reverse,
-              pagingController: paginationController,
-              builderDelegate: builderDelegate,
-              separatorBuilder: (context, index) => childrenSpacing?.heightBox ?? SpacingFoundation.verticalSpace16,
-            ),
-          ).wrapSliverBox;
-        }),
+        KeyboardVisibilityBuilder(
+          builder: (context, visible) {
+            return AnimatedContainer(
+              duration: const Duration(milliseconds: 150),
+              height: 1.sh - expandedHeight - (bodyBottomSpace ?? 0) - (visible ? 0.4.sh : 0),
+              width: 1.sw,
+              child: PagedListView.separated(
+                padding: reverse
+                    ? EdgeInsets.only(
+                        top: padding?.top ?? 0,
+                        left: padding?.right ?? 0,
+                        right: padding?.left ?? 0,
+                        bottom: (padding?.bottom ?? 0) + (bodyBottomSpace ?? 0),
+                      )
+                    : padding ?? EdgeInsets.zero,
+                reverse: reverse,
+                pagingController: paginationController,
+                builderDelegate: builderDelegate,
+                separatorBuilder: (context, index) => childrenSpacing?.heightBox ?? SpacingFoundation.verticalSpace16,
+              ),
+            ).wrapSliverBox;
+          },
+        ),
         if (bodyBottomSpace != null) bodyBottomSpace!.heightBox.wrapSliverBox,
       ],
     );

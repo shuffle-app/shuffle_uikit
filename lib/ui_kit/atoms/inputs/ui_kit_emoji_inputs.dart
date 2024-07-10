@@ -9,11 +9,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitEmojiInputField extends StatefulWidget {
   final TextEditingController textEditingController;
   final Function() onSend;
+  final FocusNode inputFieldFocusNode;
 
   const UiKitEmojiInputField({
     super.key,
     required this.textEditingController,
     required this.onSend,
+    required this.inputFieldFocusNode,
   });
 
   @override
@@ -25,18 +27,15 @@ class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
   bool _showKeyboard = false;
 
   final _emojiTapRegion = '_emojiTapRegion';
-  final FocusNode _inputFieldfocusNode = FocusNode();
 
   late final StreamSubscription<bool> keyboardSubscription;
-  final KeyboardVisibilityController keyboardVisibilityController =
-      KeyboardVisibilityController();
+  final KeyboardVisibilityController keyboardVisibilityController = KeyboardVisibilityController();
 
   @override
   void initState() {
     super.initState();
 
-    keyboardSubscription =
-        keyboardVisibilityController.onChange.listen((bool visible) {
+    keyboardSubscription = keyboardVisibilityController.onChange.listen((bool visible) {
       if (visible && _showKeyboard) _showEmojiPicker = false;
     });
   }
@@ -64,7 +63,7 @@ class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
                   });
                 },
                 child: UiKitInputFieldRightIcon(
-                  focusNode: _inputFieldfocusNode,
+                  focusNode: widget.inputFieldFocusNode,
                   onTap: () {
                     setState(() {
                       _showKeyboard = true;
@@ -92,16 +91,19 @@ class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
               ),
             ),
             SpacingFoundation.horizontalSpace8,
-            context.iconButtonNoPadding(
-              data: BaseUiKitButtonData(
-                iconInfo: BaseUiKitButtonIconData(
-                  iconData: ShuffleUiKitIcons.send,
-                  size: 0.07.sw,
+            GradientableWidget(
+              gradient: GradientFoundation.defaultRadialGradient,
+              child: context.iconButtonNoPadding(
+                data: BaseUiKitButtonData(
+                  iconInfo: BaseUiKitButtonIconData(
+                    iconData: ShuffleUiKitIcons.send,
+                    size: 0.07.sw,
+                  ),
+                  onPressed: () {
+                    widget.inputFieldFocusNode.requestFocus();
+                    widget.onSend();
+                  },
                 ),
-                onPressed: () {
-                  _inputFieldfocusNode.requestFocus();
-                  widget.onSend();
-                },
               ),
             ),
           ],
@@ -122,10 +124,7 @@ class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
                 checkPlatformCompatibility: true,
                 emojiViewConfig: EmojiViewConfig(
                   backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
-                  emojiSizeMax: 28 *
-                      (foundation.defaultTargetPlatform == TargetPlatform.iOS
-                          ? 1.20
-                          : 1.0),
+                  emojiSizeMax: 28 * (foundation.defaultTargetPlatform == TargetPlatform.iOS ? 1.20 : 1.0),
                 ),
                 swapCategoryAndBottomBar: false,
                 categoryViewConfig: CategoryViewConfig(
@@ -134,16 +133,13 @@ class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
                 bottomActionBarConfig: BottomActionBarConfig(
                   backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
                   buttonColor: Colors.transparent,
-                  buttonIconColor:
-                      theme?.colorScheme.inversePrimary ?? Colors.white,
+                  buttonIconColor: theme?.colorScheme.inversePrimary ?? Colors.white,
                 ),
                 searchViewConfig: SearchViewConfig(
                   backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
-                  buttonIconColor:
-                      theme?.colorScheme.inversePrimary ?? Colors.white,
+                  buttonIconColor: theme?.colorScheme.inversePrimary ?? Colors.white,
                   hintText: '',
-                  textStyle: theme?.regularTextTheme.caption1 ??
-                      TextStyle(color: theme?.colorScheme.inversePrimary),
+                  textStyle: theme?.regularTextTheme.caption1 ?? TextStyle(color: theme?.colorScheme.inversePrimary),
                 ),
               ),
             ),

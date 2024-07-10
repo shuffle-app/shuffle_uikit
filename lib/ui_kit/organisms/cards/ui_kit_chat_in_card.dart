@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitChatInCard extends StatelessWidget {
@@ -7,15 +6,24 @@ class UiKitChatInCard extends StatelessWidget {
     super.key,
     required this.timeOfDay,
     this.text,
-    this.child, this.onReplyMessage,
-    required this.id
+    this.child,
+    this.onReplyMessage,
+    required this.id,
+    this.avatarUrl,
+    this.senderName,
+    this.senderType,
   });
 
   final DateTime timeOfDay;
   final String? text;
+  final String? avatarUrl;
+  final String? senderName;
+  final UserTileType? senderType;
   final Widget? child;
   final ValueChanged<int>? onReplyMessage;
   final int id;
+
+  bool get showAvatar => avatarUrl != null && senderName != null && senderType != null;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +33,7 @@ class UiKitChatInCard extends StatelessWidget {
     return Dismissible(
       key: Key(id.toString()),
       direction: DismissDirection.horizontal,
-      confirmDismiss: (direction) async{
+      confirmDismiss: (direction) async {
         onReplyMessage?.call(id);
         FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
           intensities: [170, 200],
@@ -37,7 +45,7 @@ class UiKitChatInCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            DateFormat.jm().format(timeOfDay).toLowerCase(),
+            formatChatMessageDate(timeOfDay),
             style: theme?.regularTextTheme.caption2.copyWith(
               color: theme.colorScheme.darkNeutral900,
             ),
@@ -46,7 +54,16 @@ class UiKitChatInCard extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomPaint(painter: _MessageTriangle(color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white)),
+              if (showAvatar)
+                context.userAvatar(
+                  size: UserAvatarSize.x20x20,
+                  type: senderType!,
+                  userName: senderName!,
+                  imageUrl: avatarUrl!,
+                ),
+              SpacingFoundation.horizontalSpace8,
+              CustomPaint(
+                  painter: _MessageTriangle(color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white)),
               Flexible(
                 child: UiKitCardWrapper(
                   color: theme?.colorScheme.surface2,
