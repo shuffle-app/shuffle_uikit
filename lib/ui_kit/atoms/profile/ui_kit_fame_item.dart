@@ -331,7 +331,7 @@ class PrizeDialog extends StatelessWidget {
           ).paddingAll(EdgeInsetsFoundation.all24),
         )
       ],
-    ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16);
+    );
   }
 }
 
