@@ -44,56 +44,72 @@ class UiKitInviteMessageContent extends StatelessWidget {
     UiKitColorScheme colorScheme = UiKitColorScheme.dark();
     if (!isDark) colorScheme = UiKitColorScheme.light();
 
-    final avatarWidth = 0.1375.sw;
+    final avatarWidth = 0.125.sw;
     print('placeImagePath: $placeImagePath');
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Row(
-          children: [
-            if (invitedUsersData.length >= 3 && showGang)
-              Expanded(
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  children: [
+        SizedBox(
+          height: 0.125.sw,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  if (invitedUsersData.length <= 3)
                     SizedBox(
-                      width: 0.15.sw,
+                      width: ((invitedUsersData.length + 1) * EdgeInsetsFoundation.horizontal24) +
+                          EdgeInsetsFoundation.horizontal16,
                       height: 0.15.sw,
                     ),
-                    Positioned(
-                      left: -EdgeInsetsFoundation.horizontal32 * 0.1.w,
-                      child: context.userAvatar(
-                        size: UserAvatarSize.x40x40,
-                        type: invitedUsersData.first.userType,
-                        imageUrl: invitedUsersData.first.avatarPath,
-                        userName: invitedUsersData.first.name,
-                      ),
+                  if (invitedUsersData.length <= 3)
+                    ...invitedUsersData.map(
+                      (e) {
+                        final index = invitedUsersData.indexOf(e);
+                        return Positioned(
+                          left: EdgeInsetsFoundation.horizontal24 * index, //EdgeInsetsFoundation.horizontal32,
+                          child: context.userAvatar(
+                            size: UserAvatarSize.x40x40,
+                            type: invitedUsersData.elementAt(index).userType,
+                            imageUrl: invitedUsersData.elementAt(index).avatarPath,
+                            userName: invitedUsersData.elementAt(index).name,
+                          ),
+                        );
+                      },
+                    ),
+                  if (invitedUsersData.length > 3) ...[
+                    SizedBox(
+                      width: (3 * EdgeInsetsFoundation.horizontal24) + avatarWidth + EdgeInsetsFoundation.horizontal4,
+                      height: 0.15.sw,
+                    ),
+                    ...invitedUsersData.sublist(0, 3).map(
+                      (e) {
+                        final index = invitedUsersData.indexOf(e);
+                        return Positioned(
+                          left: EdgeInsetsFoundation.horizontal24 * index, //EdgeInsetsFoundation.horizontal32,
+                          child: context.userAvatar(
+                            size: UserAvatarSize.x40x40,
+                            type: invitedUsersData.elementAt(index).userType,
+                            imageUrl: invitedUsersData.elementAt(index).avatarPath,
+                            userName: invitedUsersData.elementAt(index).name,
+                          ),
+                        );
+                      },
                     ),
                     Positioned(
-                      left: EdgeInsetsFoundation.horizontal32 * 0.7.w,
-                      child: context.userAvatar(
-                        size: UserAvatarSize.x40x40,
-                        type: invitedUsersData[1].userType,
-                        imageUrl: invitedUsersData[1].avatarPath,
-                        userName: invitedUsersData[1].name,
-                      ),
-                    ),
-                    Positioned(
-                      left: EdgeInsetsFoundation.horizontal32 * 1.5.w,
-                      child: context.userAvatar(
-                        size: UserAvatarSize.x40x40,
-                        type: invitedUsersData[2].userType,
-                        imageUrl: invitedUsersData[2].avatarPath,
-                        userName: invitedUsersData[2].name,
-                      ),
-                    ),
-                    if (invitedUsersData.length - 3 > 0)
-                      Positioned(
-                        left: EdgeInsetsFoundation.horizontal32 * 2.2.w,
-                        child: CircleAvatar(
-                          radius: avatarWidth / 2,
-                          backgroundColor: colorScheme.darkNeutral100,
+                      left: 3 * EdgeInsetsFoundation.horizontal24,
+                      child: Container(
+                        width: 0.125.sw,
+                        height: 0.125.sw,
+                        clipBehavior: Clip.hardEdge,
+                        decoration: BoxDecoration(
+                          color: colorScheme.darkNeutral100,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
                           child: Text(
                             '+${invitedUsersData.length - 3}',
                             style: theme?.regularTextTheme.caption1.copyWith(
@@ -102,33 +118,43 @@ class UiKitInviteMessageContent extends StatelessWidget {
                           ),
                         ),
                       ),
-                  ],
-                ),
-              ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      username,
-                      style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
                     ),
-                    SpacingFoundation.horizontalSpace12,
-                    if (userType == UserTileType.influencer) InfluencerAccountMark(),
-                    if (userType == UserTileType.premium) PremiumAccountMark(color: colorScheme.inverseSurface),
-                    if (userType == UserTileType.pro) ProAccountMark(),
                   ],
-                ),
-                Text(
-                  showGang
-                      ? S.of(context).InvitesNPeopleTo(invitedUsersData.length).toLowerCase()
-                      : S.of(context).InvitesYouTo.toLowerCase(),
-                  style: theme?.boldTextTheme.caption1Medium.copyWith(color: colorScheme.inverseSurface),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        username,
+                        style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
+                      ),
+                      SpacingFoundation.horizontalSpace12,
+                      if (userType == UserTileType.influencer) InfluencerAccountMark(),
+                      if (userType == UserTileType.premium) PremiumAccountMark(color: colorScheme.inverseSurface),
+                      if (userType == UserTileType.pro) ProAccountMark(),
+                    ],
+                  ),
+                  Flexible(
+                    child: Text(
+                      showGang
+                          ? S.of(context).InvitesNPeopleTo(invitedUsersData.length).toLowerCase()
+                          : S.of(context).InvitesYouTo.toLowerCase(),
+                      style: theme?.boldTextTheme.caption1Medium.copyWith(
+                        color: colorScheme.inverseSurface,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
         SpacingFoundation.verticalSpace12,
         UiKitCardWrapper(
@@ -190,7 +216,6 @@ class UiKitInviteMessageContent extends StatelessWidget {
             ],
           ),
         ),
-        SpacingFoundation.verticalSpace12,
         if (canDenyInvitation)
           Row(
             mainAxisSize: MainAxisSize.max,
@@ -211,7 +236,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
                 child: context.smallOutlinedButton(
                   blurred: false,
                   data: BaseUiKitButtonData(
-                    backgroundColor: colorScheme?.inverseSurface,
+                    backgroundColor: colorScheme.inverseSurface,
                     onPressed: onDenyTap,
                     text: S.of(context).NotNow.toUpperCase(),
                     fit: ButtonFit.fitWidth,
@@ -219,15 +244,17 @@ class UiKitInviteMessageContent extends StatelessWidget {
                 ),
               ),
             ],
-          ),
+          ).paddingOnly(top: EdgeInsetsFoundation.vertical2),
         if (canAddMorePeople)
-          context.gradientButton(
-            data: BaseUiKitButtonData(
-              onPressed: onInvitePeopleTap,
-              text: S.of(context).InviteMore.toUpperCase(),
-              fit: ButtonFit.fitWidth,
-            ),
-          ),
+          context
+              .gradientButton(
+                data: BaseUiKitButtonData(
+                  onPressed: onInvitePeopleTap,
+                  text: S.of(context).InviteMore.toUpperCase(),
+                  fit: ButtonFit.fitWidth,
+                ),
+              )
+              .paddingOnly(top: EdgeInsetsFoundation.vertical2),
       ],
     );
   }

@@ -39,7 +39,7 @@ class UiKitChatOutCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(
-            formatChatMessageDate(timeOfDay),
+            formatChatMessageDate(timeOfDay.toLocal()),
             style: theme?.regularTextTheme.caption2.copyWith(
               color: theme.colorScheme.darkNeutral900,
             ),
