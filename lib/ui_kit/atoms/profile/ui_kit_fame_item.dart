@@ -4,7 +4,6 @@ import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitFameItem extends StatefulWidget {
-  final UiRewardProgressModel? uiRewardProgressModel;
   final UiKitAchievementsModel? uiModel;
   final bool isAvailableForPreview;
   final bool preserveDarkTheme;
@@ -16,7 +15,6 @@ class UiKitFameItem extends StatefulWidget {
     this.onTap,
     this.isAvailableForPreview = true,
     this.preserveDarkTheme = false,
-    this.uiRewardProgressModel,
   });
 
   @override
