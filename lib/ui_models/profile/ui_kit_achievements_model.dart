@@ -2,6 +2,7 @@ import 'package:shuffle_uikit/ui_kit/atoms/profile/ui_reward_progress_model.dart
 
 class UiKitAchievementsModel {
   final String title;
+  final String? description;
   final String? posterUrl;
   final String? objectUrl;
   final String? animationName;
@@ -9,6 +10,7 @@ class UiKitAchievementsModel {
 
   const UiKitAchievementsModel({
     required this.title,
+    this.description,
     this.posterUrl,
     this.objectUrl,
     this.animationName,
@@ -17,6 +19,7 @@ class UiKitAchievementsModel {
 
   UiKitAchievementsModel copyWith({
     String? title,
+    String? description,
     String? posterUrl,
     String? objectUrl,
     String? animationName,
@@ -25,6 +28,7 @@ class UiKitAchievementsModel {
   }) =>
       UiKitAchievementsModel(
         title: title ?? this.title,
+        description: description ?? this.description,
         posterUrl: posterUrl ?? this.posterUrl,
         objectUrl: objectUrl ?? this.objectUrl,
         animationName: animationName ?? this.animationName,
