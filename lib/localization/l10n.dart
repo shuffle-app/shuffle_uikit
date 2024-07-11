@@ -6693,6 +6693,56 @@ class S {
       args: [count],
     );
   }
+
+  /// `Points and Levels: `
+  String get PointsAndLevels {
+    return Intl.message(
+      'Points and Levels: ',
+      name: 'PointsAndLevels',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Users can earn points or level up based on their achievements.`
+  String get UsersCanEarnPointsOrLevelUpBasedOnTheirAchievements {
+    return Intl.message(
+      'Users can earn points or level up based on their achievements.',
+      name: 'UsersCanEarnPointsOrLevelUpBasedOnTheirAchievements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unlockable Rewards: `
+  String get UnlockableRewards {
+    return Intl.message(
+      'Unlockable Rewards: ',
+      name: 'UnlockableRewards',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Special features, charms, or badges.`
+  String get SpecialFeaturesCharmsOrBadges {
+    return Intl.message(
+      'Special features, charms, or badges.',
+      name: 'SpecialFeaturesCharmsOrBadges',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{Reviews} =1{Review} =2{Reviews} few{Reviews} many{Reviews} other{Reviews}}`
+  String ReviewsCount(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'Reviews', one: 'Review', two: 'Reviews', few: 'Reviews', many: 'Reviews', other: 'Reviews')}',
+      name: 'ReviewsCount',
+      desc: '',
+      args: [count],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

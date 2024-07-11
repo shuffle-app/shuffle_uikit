@@ -651,7 +651,12 @@
   "CardOpening": "{count} {count, plural, =0{открытий карточек} =1{открытие карточки} =2{открытия карточек} few{открытия карточек} many{открытий карточек} other{открытий карточек}}",
   "OfferContent": "Предложить контент",
   "Bookigns": "Забронировать",
-  "PointsCount": "{count, plural, =0{поинтов} =1{поинт} =2{поинта} few{поинта} many{поинтов} other{поинтов}}"
+  "PointsCount": "{count, plural, =0{поинтов} =1{поинт} =2{поинта} few{поинта} many{поинтов} other{поинтов}}",
+  "PointsAndLevels": "Очки и уровни: ",
+  "UsersCanEarnPointsOrLevelUpBasedOnTheirAchievements": "Пользователи могут зарабатывать очки или повышать свой уровень в зависимости от своих достижений.",
+  "UnlockableRewards": "Открываемые награды: ",
+  "SpecialFeaturesCharmsOrBadges": "Специальные элементы, брелки или значки.",
+  "ReviewsCount": "{count} {count, plural, =0{Обзоров} =1{Обзор} =2{Обзора} few{Обзора} many{Обзоров} other{Обзоров}}"
 
 }
 
