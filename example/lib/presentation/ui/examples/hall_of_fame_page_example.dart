@@ -13,7 +13,7 @@ class HallOfFamePageExample extends StatelessWidget {
         title: 'Title $index',
         child: UiKitFameItem(
           uiModel: UiKitAchievementsModel(
-            asset: index % 5 == 0 ? null : GraphicsFoundation.instance.png.goldenCup.path,
+            posterUrl: index % 5 == 0 ? null : GraphicsFoundation.instance.png.goldenCup.path,
             title: 'Title $index',
           ),
         ),
