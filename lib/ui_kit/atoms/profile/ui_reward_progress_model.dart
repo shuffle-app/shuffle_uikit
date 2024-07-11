@@ -5,7 +5,7 @@ class UiRewardProgressModel {
 
   UiRewardProgressModel({
     this.title,
-    this.current = 1,
-    this.total = 1,
+    this.current,
+    this.total,
   });
 }
