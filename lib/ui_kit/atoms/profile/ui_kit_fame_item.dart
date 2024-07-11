@@ -2,7 +2,6 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/ui_kit_fame_item_dialog.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/ui_reward_progress_model.dart';
 
 class UiKitFameItem extends StatefulWidget {
@@ -10,10 +9,17 @@ class UiKitFameItem extends StatefulWidget {
   final UiKitAchievementsModel? uiModel;
   final bool isAvailableForPreview;
   final bool preserveDarkTheme;
+  final Function(
+    BuildContext context,
+    String filePath,
+    String filePoster,
+    UiRewardProgressModel? uiRewardProgressModel,
+  )? showModelViewerDialog;
 
   const UiKitFameItem({
     super.key,
     this.uiModel,
+    this.showModelViewerDialog,
     this.isAvailableForPreview = true,
     this.preserveDarkTheme = false,
     this.uiRewardProgressModel,
@@ -117,9 +123,13 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
     return GestureDetector(
         onTap: widget.isAvailableForPreview
             ? () {
-                if (modelFile != null) {
-                  _showModelViewerDialog(
-                      context, modelFile!.file.path, uiModel?.asset ?? '', widget.uiRewardProgressModel);
+                if (modelFile != null && widget.showModelViewerDialog != null) {
+                  widget.showModelViewerDialog!(
+                    context,
+                    modelFile!.file.path,
+                    uiModel?.asset ?? '',
+                    widget.uiRewardProgressModel,
+                  );
                 } else {
                   SnackBarUtils.show(message: 'Waiting for model to download', context: context);
                 }
@@ -177,47 +187,3 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
         ));
   }
 }
-
-_showModelViewerDialog(
-  BuildContext context,
-  String filePath,
-  String filePoster,
-  UiRewardProgressModel? uiRewardProgressModel,
-) =>
-    showGeneralDialog(
-        barrierColor: Colors.black.withOpacity(0.5),
-        transitionBuilder: (context, a1, a2, widget) {
-          return Transform.scale(
-            scale: a1.value,
-            child: Opacity(
-              opacity: a1.value,
-              child: widget,
-            ),
-          );
-        },
-        transitionDuration: const Duration(milliseconds: 200),
-        barrierDismissible: true,
-        barrierLabel: '',
-        context: context,
-        pageBuilder: (context, animation1, animation2) {
-          return Dialog(
-            backgroundColor: Colors.transparent,
-            clipBehavior: Clip.antiAlias,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadiusFoundation.all24,
-            ),
-            // child: SizedBox(
-            //     height: 0.4.sh,
-            //     child: UiKitBase3DViewer(
-            //       localPath: filePath,
-            //       poster: filePoster,
-            //       autoRotate: true,
-            //       // environmentImage: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/3dmodels/environments/environment1.jpeg',
-            //     )),
-            child: UiKitFameItemDialog(
-              filePath: filePath,
-              filePoster: filePoster,
-              uiRewardProgressModel: uiRewardProgressModel,
-            ),
-          );
-        });

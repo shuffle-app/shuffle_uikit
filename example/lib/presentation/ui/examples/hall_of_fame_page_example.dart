@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/profile/ui_reward_progress_model.dart';
+import 'package:shuffle_uikit/ui_kit/atoms/profile/ui_kit_fame_item_dialog.dart';
 
 class HallOfFamePageExample extends StatelessWidget {
   const HallOfFamePageExample({super.key});
@@ -12,11 +13,17 @@ class HallOfFamePageExample extends StatelessWidget {
       (index) => GridTitledItemWidget(
         title: 'Title $index',
         child: UiKitFameItem(
-          uiRewardProgressModel: UiRewardProgressModel(
-            current: 90,
-            total: 100,
-            title: 'TEst',
-          ),
+          // showModelViewerDialog: (context, filePath, filePoster, uiRewardProgressModel) => showModelViewerDialog(
+          //   context,
+          //   filePath,
+          //   filePoster,
+          //   uiRewardProgressModel,
+          // ),
+          // uiRewardProgressModel: UiRewardProgressModel(
+          //   current: 90,
+          //   total: 100,
+          //   title: 'TEst',
+          // ),
           // uiModel: UiKitAchievementsModel(
           //   asset: index % 5 == 0 ? null : GraphicsFoundation.instance.png.goldenCup.path,
           //   title: 'Title $index',
