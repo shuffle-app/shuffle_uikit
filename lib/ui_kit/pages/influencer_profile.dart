@@ -199,7 +199,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
               9,
               (index) => UiKitAchievementsModel(
                 title: 'Achievement ${index + 1}',
-                asset: index != 0 && index % 3 == 0 ? null : GraphicsFoundation.instance.png.goldenCup.path,
+                posterUrl: index != 0 && index % 3 == 0 ? null : GraphicsFoundation.instance.png.goldenCup.path,
               ),
             ),
             badge: const InfluencerMemberPlate(),

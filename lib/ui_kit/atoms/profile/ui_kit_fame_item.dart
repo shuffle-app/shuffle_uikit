@@ -7,8 +7,15 @@ class UiKitFameItem extends StatefulWidget {
   final UiKitAchievementsModel? uiModel;
   final bool isAvailableForPreview;
   final bool preserveDarkTheme;
+  final VoidCallback? onTap;
 
-  const UiKitFameItem({super.key, this.uiModel, this.isAvailableForPreview = true, this.preserveDarkTheme = false});
+  const UiKitFameItem({
+    super.key,
+    this.uiModel,
+    this.onTap,
+    this.isAvailableForPreview = true,
+    this.preserveDarkTheme = false,
+  });
 
   @override
   State<UiKitFameItem> createState() => _UiKitFameItemState();
@@ -108,8 +115,8 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
     return GestureDetector(
         onTap: widget.isAvailableForPreview
             ? () {
-                if (modelFile != null) {
-                  _showModelViewerDialog(context, modelFile!.file.path, uiModel?.asset ?? '');
+                if (modelFile != null && widget.onTap != null) {
+                  widget.onTap!.call();
                 } else {
                   SnackBarUtils.show(message: 'Waiting for model to download', context: context);
                 }
@@ -132,9 +139,9 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
                         gradient: uiModel != null ? GradientFoundation.fameLinearGradient : null),
                   )),
             ),
-            if (uiModel?.asset != null)
+            if (uiModel?.posterUrl != null)
               ImageWidget(
-                link: uiModel!.asset,
+                link: uiModel!.posterUrl,
                 height: 45,
                 width: 45,
                 fit: BoxFit.contain,
@@ -167,36 +174,3 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
         ));
   }
 }
-
-_showModelViewerDialog(BuildContext context, String filePath, String filePoster) => showGeneralDialog(
-    barrierColor: Colors.black.withOpacity(0.5),
-    transitionBuilder: (context, a1, a2, widget) {
-      return Transform.scale(
-        scale: a1.value,
-        child: Opacity(
-          opacity: a1.value,
-          child: widget,
-        ),
-      );
-    },
-    transitionDuration: const Duration(milliseconds: 200),
-    barrierDismissible: true,
-    barrierLabel: '',
-    context: context,
-    pageBuilder: (context, animation1, animation2) {
-      return Dialog(
-        backgroundColor: Colors.transparent,
-        clipBehavior: Clip.antiAlias,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusFoundation.all24,
-        ),
-        child: SizedBox(
-            height: 0.4.sh,
-            child: UiKitBase3DViewer(
-              localPath: filePath,
-              poster: filePoster,
-              autoRotate: true,
-              // environmentImage: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/3dmodels/environments/environment1.jpeg',
-            )),
-      );
-    });
