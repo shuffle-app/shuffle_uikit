@@ -2,24 +2,18 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/ui_reward_progress_model.dart';
 
 class UiKitFameItem extends StatefulWidget {
   final UiRewardProgressModel? uiRewardProgressModel;
   final UiKitAchievementsModel? uiModel;
   final bool isAvailableForPreview;
   final bool preserveDarkTheme;
-  final Function(
-    BuildContext context,
-    String filePath,
-    String filePoster,
-    UiRewardProgressModel? uiRewardProgressModel,
-  )? showModelViewerDialog;
+  final VoidCallback? onTap;
 
   const UiKitFameItem({
     super.key,
     this.uiModel,
-    this.showModelViewerDialog,
+    this.onTap,
     this.isAvailableForPreview = true,
     this.preserveDarkTheme = false,
     this.uiRewardProgressModel,
@@ -123,13 +117,8 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
     return GestureDetector(
         onTap: widget.isAvailableForPreview
             ? () {
-                if (modelFile != null && widget.showModelViewerDialog != null) {
-                  widget.showModelViewerDialog!(
-                    context,
-                    modelFile!.file.path,
-                    uiModel?.posterUrl ?? '',
-                    widget.uiRewardProgressModel,
-                  );
+                if (modelFile != null && widget.onTap != null) {
+                  widget.onTap!.call();
                 } else {
                   SnackBarUtils.show(message: 'Waiting for model to download', context: context);
                 }
