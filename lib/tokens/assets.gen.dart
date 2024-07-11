@@ -1748,6 +1748,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/question.svg
   SvgGenImage get question => const SvgGenImage('assets/images/svg/question.svg');
 
+  /// File path: assets/images/svg/rain.svg
+  SvgGenImage get rain => const SvgGenImage('assets/images/svg/rain.svg');
+
   /// File path: assets/images/svg/record.svg
   SvgGenImage get record => const SvgGenImage('assets/images/svg/record.svg');
 
@@ -1884,6 +1887,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/sunglasses.svg
   SvgGenImage get sunglasses => const SvgGenImage('assets/images/svg/sunglasses.svg');
 
+  /// File path: assets/images/svg/sunny.svg
+  SvgGenImage get sunny => const SvgGenImage('assets/images/svg/sunny.svg');
+
   /// File path: assets/images/svg/swim.svg
   SvgGenImage get swim => const SvgGenImage('assets/images/svg/swim.svg');
 
@@ -1980,6 +1986,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/white_star_transparent_center.svg
   SvgGenImage get whiteStarTransparentCenter =>
       const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
+
+  /// File path: assets/images/svg/windy.svg
+  SvgGenImage get windy => const SvgGenImage('assets/images/svg/windy.svg');
 
   /// File path: assets/images/svg/x.svg
   SvgGenImage get x => const SvgGenImage('assets/images/svg/x.svg');
@@ -2200,6 +2209,7 @@ class $AssetsImagesSvgGen {
         profileOutline,
         profilePlus,
         question,
+        rain,
         record,
         refresh,
         restaurant,
@@ -2245,6 +2255,7 @@ class $AssetsImagesSvgGen {
         sufle,
         sun,
         sunglasses,
+        sunny,
         swim,
         swimming,
         table,
@@ -2277,6 +2288,7 @@ class $AssetsImagesSvgGen {
         waterpool,
         whiteStar,
         whiteStarTransparentCenter,
+        windy,
         x
       ];
 }

@@ -285,12 +285,16 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   @override
   ButtonFactory createBoxIconButton({
     required BaseUiKitButtonData data,
+    bool? isSelectable,
+    bool? initialValue,
   }) {
     return BoxIconButton(
       iconInfo: data.iconInfo,
       onPressed: data.onPressed,
       icon: data.iconWidget,
       backgroundColor: data.backgroundColor,
+      isSelectable: isSelectable,
+      initialValue: initialValue,
     );
   }
 
