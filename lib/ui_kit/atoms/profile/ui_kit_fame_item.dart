@@ -127,7 +127,7 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
                   widget.showModelViewerDialog!(
                     context,
                     modelFile!.file.path,
-                    uiModel?.asset ?? '',
+                    uiModel?.posterUrl ?? '',
                     widget.uiRewardProgressModel,
                   );
                 } else {
@@ -152,9 +152,9 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
                         gradient: uiModel != null ? GradientFoundation.fameLinearGradient : null),
                   )),
             ),
-            if (uiModel?.asset != null)
+            if (uiModel?.posterUrl != null)
               ImageWidget(
-                link: uiModel!.asset,
+                link: uiModel!.posterUrl,
                 height: 45,
                 width: 45,
                 fit: BoxFit.contain,
