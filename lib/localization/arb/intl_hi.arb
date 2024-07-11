@@ -650,11 +650,15 @@
   "OfferContent": "Offer content",
   "Bookigns": "Bookigns",
   "PointsCount": "{count, plural, =0{points} =1{point} =2{points} few{points} many{points} other{points}}",
-  "PointsAndLevels": "Points and Levels: ",
-  "UsersCanEarnPointsOrLevelUpBasedOnTheirAchievements": "Users can earn points or level up based on their achievements.",
-  "UnlockableRewards": "Unlockable Rewards: ",
-  "SpecialFeaturesCharmsOrBadges": "Special features, charms, or badges.",
-  "ReviewsCount": "{count} {count, plural, =0{Reviews} =1{Review} =2{Reviews} few{Reviews} many{Reviews} other{Reviews}}"
+  "ReviewsCount": "{count} {count, plural, =0{Reviews} =1{Review} =2{Reviews} few{Reviews} many{Reviews} other{Reviews}}",
+  "ShraziidGoblet": "Shraziid goblet",
+  "ShraziidGobletDescription": "An ancient goblet found in the desert sands. They say that Shraziid himself, the ruler of the great Sand Kingdom, drank from it.",
+  "LuckyCoin": "Lucky Coin",
+  "LuckyCoinDescription": "As long as you have it in your inventory, good luck is with you. Twist it, turn it, touch it to be filled with the energy of good luck.",
+  "FocusOfLight": "Focus of Light",
+  "FocusOfLightDescription": "The Light of the universe is contained here. If it gets darker in your soul, the light is with you. Look and be filled with peace.",
+  "UnknownRing": "Unknown Ring",
+  "UnknownRingDescription": "Strange ring. We don't know why it is here..."
 
 
 }

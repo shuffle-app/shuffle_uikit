@@ -472,6 +472,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Find someone to hang out with"),
         "FindSomeoneToNetworkWith": MessageLookupByLibrary.simpleMessage(
             "Find someone to network with"),
+        "FocusOfLight": MessageLookupByLibrary.simpleMessage("Focus of Light"),
+        "FocusOfLightDescription": MessageLookupByLibrary.simpleMessage(
+            "The Light of the universe is contained here. If it gets darker in your soul, the light is with you. Look and be filled with peace."),
         "Follow": MessageLookupByLibrary.simpleMessage("Follow"),
         "Followers": MessageLookupByLibrary.simpleMessage("Followers"),
         "FollowersCount": m22,
@@ -580,6 +583,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Logo (upload Files)"),
         "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage(
             "Lovely-touch amazing\ninteraction"),
+        "LuckyCoin": MessageLookupByLibrary.simpleMessage("Lucky Coin"),
+        "LuckyCoinDescription": MessageLookupByLibrary.simpleMessage(
+            "As long as you have it in your inventory, good luck is with you. Twist it, turn it, touch it to be filled with the energy of good luck."),
         "MakeSureYouAreCloseToMakeCheckIn":
             MessageLookupByLibrary.simpleMessage(
                 "Make sure you are close and try check in again"),
@@ -736,8 +742,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please select one type"),
         "PointBalance": MessageLookupByLibrary.simpleMessage("Point\nBalance"),
         "Points": MessageLookupByLibrary.simpleMessage("Points"),
-        "PointsAndLevels":
-            MessageLookupByLibrary.simpleMessage("Points and Levels: "),
         "PointsCount": m37,
         "PointsEarned": m38,
         "Position": MessageLookupByLibrary.simpleMessage("Position"),
@@ -906,6 +910,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "ShowResult": MessageLookupByLibrary.simpleMessage("Show result"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
             "Show the barcode at the checkout when paying"),
+        "ShraziidGoblet":
+            MessageLookupByLibrary.simpleMessage("Shraziid goblet"),
+        "ShraziidGobletDescription": MessageLookupByLibrary.simpleMessage(
+            "An ancient goblet found in the desert sands. They say that Shraziid himself, the ruler of the great Sand Kingdom, drank from it."),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
         "ShuffleHiwHint": m48,
         "ShuffleHiwSubtitle":
@@ -922,8 +930,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Useful services and places"),
         "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Something went wrong. Please try again."),
-        "SpecialFeaturesCharmsOrBadges": MessageLookupByLibrary.simpleMessage(
-            "Special features, charms, or badges."),
         "Spend": MessageLookupByLibrary.simpleMessage("Spend"),
         "SpendHoursPerWeek": m49,
         "SpendIt": MessageLookupByLibrary.simpleMessage("Spend it"),
@@ -1026,8 +1032,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Unfollow": MessageLookupByLibrary.simpleMessage("Unfollow"),
         "UniqueProperties":
             MessageLookupByLibrary.simpleMessage("Unique properties"),
-        "UnlockableRewards":
-            MessageLookupByLibrary.simpleMessage("Unlockable Rewards: "),
+        "UnknownRing": MessageLookupByLibrary.simpleMessage("Unknown Ring"),
+        "UnknownRingDescription": MessageLookupByLibrary.simpleMessage(
+            "Strange ring. We don\'t know why it is here..."),
         "UnsubscribeFromProfile":
             MessageLookupByLibrary.simpleMessage("Unfollow"),
         "UpcomingEvent": MessageLookupByLibrary.simpleMessage("Upcoming Event"),
@@ -1048,9 +1055,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
             "Select the type of account you would like to create"),
         "Users": m56,
-        "UsersCanEarnPointsOrLevelUpBasedOnTheirAchievements":
-            MessageLookupByLibrary.simpleMessage(
-                "Users can earn points or level up based on their achievements."),
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Use health data"),
         "UsingNotifications":

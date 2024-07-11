@@ -473,6 +473,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "किसी के साथ घूमने के लिए खोजें"),
         "FindSomeoneToNetworkWith": MessageLookupByLibrary.simpleMessage(
             "नेटवर्किंग करने के लिए किसी को खोजें"),
+        "FocusOfLight": MessageLookupByLibrary.simpleMessage("Focus of Light"),
+        "FocusOfLightDescription": MessageLookupByLibrary.simpleMessage(
+            "The Light of the universe is contained here. If it gets darker in your soul, the light is with you. Look and be filled with peace."),
         "Follow": MessageLookupByLibrary.simpleMessage("फ़ॉलो करें"),
         "Followers": MessageLookupByLibrary.simpleMessage("समर्थक"),
         "FollowersCount": m22,
@@ -587,6 +590,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("लोगो (फ़ाइलें अपलोड करें)"),
         "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage(
             "प्यारा-स्पर्श अद्भुत\nइंटरैक्शन"),
+        "LuckyCoin": MessageLookupByLibrary.simpleMessage("Lucky Coin"),
+        "LuckyCoinDescription": MessageLookupByLibrary.simpleMessage(
+            "As long as you have it in your inventory, good luck is with you. Twist it, turn it, touch it to be filled with the energy of good luck."),
         "MakeSureYouAreCloseToMakeCheckIn":
             MessageLookupByLibrary.simpleMessage(
                 "सुनिश्चित करें कि आप निकट हैं और फिर से चेक इन करें"),
@@ -744,8 +750,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("कृपया एक प्रकार चुनें"),
         "PointBalance": MessageLookupByLibrary.simpleMessage("अंक गिनती"),
         "Points": MessageLookupByLibrary.simpleMessage("अंक"),
-        "PointsAndLevels":
-            MessageLookupByLibrary.simpleMessage("Points and Levels: "),
         "PointsCount": m37,
         "PointsEarned": m38,
         "Position": MessageLookupByLibrary.simpleMessage("पद"),
@@ -913,6 +917,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "ShowResult": MessageLookupByLibrary.simpleMessage("परिणाम दिखाओ"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
             "भुगतान करते समय चेकआउट पर बारकोड दिखाएं"),
+        "ShraziidGoblet":
+            MessageLookupByLibrary.simpleMessage("Shraziid goblet"),
+        "ShraziidGobletDescription": MessageLookupByLibrary.simpleMessage(
+            "An ancient goblet found in the desert sands. They say that Shraziid himself, the ruler of the great Sand Kingdom, drank from it."),
         "Shuffle": MessageLookupByLibrary.simpleMessage("मिश्रण"),
         "ShuffleHiwHint": m48,
         "ShuffleHiwSubtitle":
@@ -928,8 +936,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("उपयोगी सेवाएँ और स्थान"),
         "SomethingWentWrong":
             MessageLookupByLibrary.simpleMessage("कुछ गलत हो गया"),
-        "SpecialFeaturesCharmsOrBadges": MessageLookupByLibrary.simpleMessage(
-            "Special features, charms, or badges."),
         "Spend": MessageLookupByLibrary.simpleMessage("Spend"),
         "SpendHoursPerWeek": m49,
         "SpendIt": MessageLookupByLibrary.simpleMessage("इसे खर्च करें"),
@@ -1036,8 +1042,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Unfollow": MessageLookupByLibrary.simpleMessage("अनफॉलो"),
         "UniqueProperties":
             MessageLookupByLibrary.simpleMessage("अद्वितीय गुण"),
-        "UnlockableRewards":
-            MessageLookupByLibrary.simpleMessage("Unlockable Rewards: "),
+        "UnknownRing": MessageLookupByLibrary.simpleMessage("Unknown Ring"),
+        "UnknownRingDescription": MessageLookupByLibrary.simpleMessage(
+            "Strange ring. We don\'t know why it is here..."),
         "UnsubscribeFromProfile":
             MessageLookupByLibrary.simpleMessage("अनफॉलो"),
         "UpcomingEvent":
@@ -1059,9 +1066,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
             "आपके द्वारा बनाने जा रहे खाते का प्रकार चुनें"),
         "Users": m56,
-        "UsersCanEarnPointsOrLevelUpBasedOnTheirAchievements":
-            MessageLookupByLibrary.simpleMessage(
-                "Users can earn points or level up based on their achievements."),
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("हेल्थकिट का उपयोग करना"),
         "UsingNotifications":

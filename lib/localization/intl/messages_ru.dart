@@ -479,6 +479,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Найти с кем затусить"),
         "FindSomeoneToNetworkWith": MessageLookupByLibrary.simpleMessage(
             "Найти кого-то для нетворкинга"),
+        "FocusOfLight":
+            MessageLookupByLibrary.simpleMessage("Средоточие Света"),
+        "FocusOfLightDescription": MessageLookupByLibrary.simpleMessage(
+            "Свет вселенной заключён здесь. Если потемнеет в душе - свет с тобой. Посмотри и преисполнись покоем."),
         "Follow": MessageLookupByLibrary.simpleMessage("Следовать"),
         "Followers": MessageLookupByLibrary.simpleMessage("Подписчики"),
         "FollowersCount": m22,
@@ -590,6 +594,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Лого (загрузить)"),
         "LovelyTouchAmazingInteraction":
             MessageLookupByLibrary.simpleMessage("Приятный на ощупь интерфейс"),
+        "LuckyCoin": MessageLookupByLibrary.simpleMessage("Монета удачи"),
+        "LuckyCoinDescription": MessageLookupByLibrary.simpleMessage(
+            "Пока она у тебя в инвентаре - удача с тобой. Покрути, поверти её, прикоснись к ней, чтобы наполниться энергией удачи."),
         "MakeSureYouAreCloseToMakeCheckIn":
             MessageLookupByLibrary.simpleMessage(
                 "Убедись что ты близко и повтори"),
@@ -747,8 +754,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Пожалуйста, выбери один тип"),
         "PointBalance": MessageLookupByLibrary.simpleMessage("Баланс\nпоинтов"),
         "Points": MessageLookupByLibrary.simpleMessage("Поинты"),
-        "PointsAndLevels":
-            MessageLookupByLibrary.simpleMessage("Очки и уровни: "),
         "PointsCount": m37,
         "PointsEarned": m38,
         "Position": MessageLookupByLibrary.simpleMessage("Позиция"),
@@ -921,6 +926,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Показать результат"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
             "Показывайте штрих-код при оплате"),
+        "ShraziidGoblet":
+            MessageLookupByLibrary.simpleMessage("Кубок Шразиида"),
+        "ShraziidGobletDescription": MessageLookupByLibrary.simpleMessage(
+            "Древний кубок, найденный в песках пустыни. Говорят, что из него пил сам Шразиид, правитель великого Песчаного царства."),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
         "ShuffleHiwHint": m48,
         "ShuffleHiwSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -937,8 +946,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Полезные сервисы и места"),
         "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Что-то пошло не так. Попробуй еще раз."),
-        "SpecialFeaturesCharmsOrBadges": MessageLookupByLibrary.simpleMessage(
-            "Специальные элементы, брелки или значки."),
         "Spend": MessageLookupByLibrary.simpleMessage("Потратить"),
         "SpendHoursPerWeek": m49,
         "SpendIt": MessageLookupByLibrary.simpleMessage("Потратить"),
@@ -1043,8 +1050,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Unfollow": MessageLookupByLibrary.simpleMessage("Отписаться"),
         "UniqueProperties":
             MessageLookupByLibrary.simpleMessage("Уникальные свойства"),
-        "UnlockableRewards":
-            MessageLookupByLibrary.simpleMessage("Открываемые награды: "),
+        "UnknownRing":
+            MessageLookupByLibrary.simpleMessage("Неизвестное кольцо"),
+        "UnknownRingDescription": MessageLookupByLibrary.simpleMessage(
+            "Странное кольцо. Не знаем откуда оно здесь…"),
         "UnsubscribeFromProfile":
             MessageLookupByLibrary.simpleMessage("Отписаться"),
         "UpcomingEvent":
@@ -1066,9 +1075,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
             "Выбери тип аккаунта, который хочешь создать или войти"),
         "Users": m56,
-        "UsersCanEarnPointsOrLevelUpBasedOnTheirAchievements":
-            MessageLookupByLibrary.simpleMessage(
-                "Пользователи могут зарабатывать очки или повышать свой уровень в зависимости от своих достижений."),
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Данные здоровья"),
         "UsingNotifications":

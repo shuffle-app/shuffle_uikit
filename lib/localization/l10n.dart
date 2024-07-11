@@ -6694,46 +6694,6 @@ class S {
     );
   }
 
-  /// `Points and Levels: `
-  String get PointsAndLevels {
-    return Intl.message(
-      'Points and Levels: ',
-      name: 'PointsAndLevels',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Users can earn points or level up based on their achievements.`
-  String get UsersCanEarnPointsOrLevelUpBasedOnTheirAchievements {
-    return Intl.message(
-      'Users can earn points or level up based on their achievements.',
-      name: 'UsersCanEarnPointsOrLevelUpBasedOnTheirAchievements',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Unlockable Rewards: `
-  String get UnlockableRewards {
-    return Intl.message(
-      'Unlockable Rewards: ',
-      name: 'UnlockableRewards',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Special features, charms, or badges.`
-  String get SpecialFeaturesCharmsOrBadges {
-    return Intl.message(
-      'Special features, charms, or badges.',
-      name: 'SpecialFeaturesCharmsOrBadges',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `{count} {count, plural, =0{Reviews} =1{Review} =2{Reviews} few{Reviews} many{Reviews} other{Reviews}}`
   String ReviewsCount(num count) {
     return Intl.message(
@@ -6741,6 +6701,86 @@ class S {
       name: 'ReviewsCount',
       desc: '',
       args: [count],
+    );
+  }
+
+  /// `Shraziid goblet`
+  String get ShraziidGoblet {
+    return Intl.message(
+      'Shraziid goblet',
+      name: 'ShraziidGoblet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An ancient goblet found in the desert sands. They say that Shraziid himself, the ruler of the great Sand Kingdom, drank from it.`
+  String get ShraziidGobletDescription {
+    return Intl.message(
+      'An ancient goblet found in the desert sands. They say that Shraziid himself, the ruler of the great Sand Kingdom, drank from it.',
+      name: 'ShraziidGobletDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lucky Coin`
+  String get LuckyCoin {
+    return Intl.message(
+      'Lucky Coin',
+      name: 'LuckyCoin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `As long as you have it in your inventory, good luck is with you. Twist it, turn it, touch it to be filled with the energy of good luck.`
+  String get LuckyCoinDescription {
+    return Intl.message(
+      'As long as you have it in your inventory, good luck is with you. Twist it, turn it, touch it to be filled with the energy of good luck.',
+      name: 'LuckyCoinDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Focus of Light`
+  String get FocusOfLight {
+    return Intl.message(
+      'Focus of Light',
+      name: 'FocusOfLight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Light of the universe is contained here. If it gets darker in your soul, the light is with you. Look and be filled with peace.`
+  String get FocusOfLightDescription {
+    return Intl.message(
+      'The Light of the universe is contained here. If it gets darker in your soul, the light is with you. Look and be filled with peace.',
+      name: 'FocusOfLightDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown Ring`
+  String get UnknownRing {
+    return Intl.message(
+      'Unknown Ring',
+      name: 'UnknownRing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Strange ring. We don't know why it is here...`
+  String get UnknownRingDescription {
+    return Intl.message(
+      'Strange ring. We don\'t know why it is here...',
+      name: 'UnknownRingDescription',
+      desc: '',
+      args: [],
     );
   }
 }
