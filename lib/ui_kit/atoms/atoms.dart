@@ -88,6 +88,7 @@ export 'profile/ui_kit_user_badge.dart';
 export 'property_management/ui_kit_property_icons.dart';
 export 'property_management/ui_kit_property_recently_added.dart';
 export 'property_management/ui_kit_property_related_properties.dart';
+export 'profile/ui_reward_progress_model.dart';
 export 'user/avatars/ui_kit_user_avatar_120_x_120.dart';
 export 'user/avatars/ui_kit_user_avatar_20_x_20.dart';
 export 'user/avatars/ui_kit_user_avatar_24_x_24.dart';

@@ -650,13 +650,23 @@
   "CardOpening": "{count} {count, plural, =0{открытий карточек} =1{открытие карточки} =2{открытия карточек} few{открытия карточек} many{открытий карточек} other{открытий карточек}}",
   "OfferContent": "Предложить контент",
   "Bookigns": "Забронировать",
-  "PointsCount": "{count, plural, =0{поинтов} =1{поинт} =2{поинта} few{поинта} many{поинтов} other{поинтов}}",
   "GoProFree": "Перейти на про бесплатно",
   "NoMessagesYet": "Пока нет сообщений",
   "ChatDeletionAndCreationMessage": "Создан {creationDate}.\nУдалится {deletionDate}",
   "MembersCount": "{count, plural, =0{{count} участников} =1{{count} участник} =2{{count} участника} few{{count} участников} many{{count} участников} other{{count} участников}}",
   "InvitedPeople": "Участники",
   "ReplyingTo": "Ответ на {message}",
-  "AlreadyInvited": "Плз уважай свой выбор и чувства других"
+  "AlreadyInvited": "Плз уважай свой выбор и чувства других",
+  "PointsCount": "{count, plural, =0{поинтов} =1{поинт} =2{поинта} few{поинта} many{поинтов} other{поинтов}}",
+  "ReviewsCount": "{count} {count, plural, =0{Обзоров} =1{Обзор} =2{Обзора} few{Обзора} many{Обзоров} other{Обзоров}}",
+  "ShraziidGoblet": "Кубок Шразиида",
+  "ShraziidGobletDescription": "Древний кубок, найденный в песках пустыни. Говорят, что из него пил сам Шразиид, правитель великого Песчаного царства.",
+  "LuckyCoin": "Монета удачи",
+  "LuckyCoinDescription": "Пока она у тебя в инвентаре - удача с тобой. Покрути, поверти её, прикоснись к ней, чтобы наполниться энергией удачи.",
+  "FocusOfLight": "Средоточие Света",
+  "FocusOfLightDescription": "Свет вселенной заключён здесь. Если потемнеет в душе - свет с тобой. Посмотри и преисполнись покоем.",
+  "UnknownRing": "Неизвестное кольцо",
+  "UnknownRingDescription": "Странное кольцо. Не знаем откуда оно здесь…"
+
 }
 
