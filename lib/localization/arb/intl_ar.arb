@@ -23,7 +23,7 @@
   "TapIt": "Tap it",
   "NoHealthKitAvailableOnYourDevice": "No health kit available on your device, so the result will be random",
   "InvitesYouTo": "Invites you to",
-  "InvitesNPeopleTo": "Invites {invitedPeopleCount} people to",
+  "InvitesNPeopleTo": "Invites {invitedPeopleCount, plural, =0{{invitedPeopleCount} people} =1{{invitedPeopleCount} person} =2{{invitedPeopleCount} people} few{{invitedPeopleCount} people} many{{invitedPeopleCount} people} other{{invitedPeopleCount} people}} to",
   "NotNow": "Not now",
   "Go": "Go!",
   "InviteMore": "Invite more",

@@ -120,6 +120,7 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
               height: 1.sh - expandedHeight - (bodyBottomSpace ?? 0) - (visible ? 0.4.sh : 0),
               width: 1.sw,
               child: PagedListView.separated(
+                key: ValueKey(paginationController.itemList?.length),
                 padding: reverse
                     ? EdgeInsets.only(
                         top: padding?.top ?? 0,

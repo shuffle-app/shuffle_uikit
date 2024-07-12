@@ -6,9 +6,7 @@ extension FactoryExtention on BuildContext {
   Widget iconButtonNoPadding({
     required BaseUiKitButtonData data,
   }) =>
-      WidgetsFactory.of(this)!
-          .createIconButtonNoPadding(data: data)
-          .build(this);
+      WidgetsFactory.of(this)!.createIconButtonNoPadding(data: data).build(this);
 
   Widget userAvatar({
     required UserAvatarSize size,
@@ -27,11 +25,11 @@ extension FactoryExtention on BuildContext {
           )
           .build(this);
 
-  Widget createSnackBar(
-      {required String message, required AppSnackBarType appSnackBarType}) {
-    return WidgetsFactory.of(this)!
-        .createSnackBar(message: message, appSnackBarType: appSnackBarType)
-        .build(this);
+  Widget createSnackBar({
+    required String message,
+    required AppSnackBarType appSnackBarType,
+  }) {
+    return WidgetsFactory.of(this)!.createSnackBar(message: message, appSnackBarType: appSnackBarType).build(this);
   }
 
   Widget outlinedBadgeButton({
@@ -61,22 +59,33 @@ extension FactoryExtention on BuildContext {
   }
 
   Widget smallGradientButton({required BaseUiKitButtonData data}) {
+    return WidgetsFactory.of(this)!.createSmallGradientButton(data: data).build(this);
+  }
+
+  Widget midSizeOutlinedButton({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+    bool? blurred,
+    Gradient? gradient,
+  }) {
     return WidgetsFactory.of(this)!
-        .createSmallGradientButton(data: data)
+        .createMidSizeOutlinedButton(
+          data: data,
+          borderRadius: borderRadius,
+          blurred: blurred,
+          gradient: gradient,
+        )
         .build(this);
   }
 
-  Widget createSmallOutlinedButton(
-      {required BaseUiKitButtonData data,
-      BorderRadius? borderRadius,
-      bool? blurred,
-      Gradient? gradient}) {
+  Widget createSmallOutlinedButton({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+    bool? blurred,
+    Gradient? gradient,
+  }) {
     return WidgetsFactory.of(this)!
-        .createSmallOutlinedButton(
-            data: data,
-            borderRadius: borderRadius,
-            blurred: blurred,
-            gradient: gradient)
+        .createSmallOutlinedButton(data: data, borderRadius: borderRadius, blurred: blurred, gradient: gradient)
         .build(this);
   }
 
@@ -225,17 +234,9 @@ extension FactoryExtention on BuildContext {
         .build(this);
   }
 
-  Widget button(
-      {required BaseUiKitButtonData data,
-      bool? isTextButton,
-      bool? blurred,
-      bool reversed = false}) {
+  Widget button({required BaseUiKitButtonData data, bool? isTextButton, bool? blurred, bool reversed = false}) {
     return WidgetsFactory.of(this)!
-        .createOrdinaryButton(
-            data: data,
-            isTextButton: isTextButton ?? false,
-            blurred: blurred,
-            reversed: reversed)
+        .createOrdinaryButton(data: data, isTextButton: isTextButton ?? false, blurred: blurred, reversed: reversed)
         .build(this);
   }
 
@@ -256,16 +257,12 @@ extension FactoryExtention on BuildContext {
   Widget advertisementImageBanner({
     required BaseUiKitAdvertisementImageBannerData data,
   }) =>
-      WidgetsFactory.of(this)!
-          .createAdvertisementImageBanner(data: data)
-          .build(this);
+      WidgetsFactory.of(this)!.createAdvertisementImageBanner(data: data).build(this);
 
   Widget advertisementTextBanner({
     required BaseUiKitAdvertisementTextBannerData data,
   }) =>
-      WidgetsFactory.of(this)!
-          .createAdvertisementTextBanner(data: data)
-          .build(this);
+      WidgetsFactory.of(this)!.createAdvertisementTextBanner(data: data).build(this);
 
   Widget notificationPopUp({
     required NotificationPopupRequiredData requiredData,

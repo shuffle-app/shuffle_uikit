@@ -56,72 +56,73 @@ class UiKitInviteMessageContent extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  if (invitedUsersData.length <= 3)
-                    SizedBox(
-                      width: ((invitedUsersData.length + 1) * EdgeInsetsFoundation.horizontal24) +
-                          EdgeInsetsFoundation.horizontal16,
-                      height: 0.15.sw,
-                    ),
-                  if (invitedUsersData.length <= 3)
-                    ...invitedUsersData.map(
-                      (e) {
-                        final index = invitedUsersData.indexOf(e);
-                        return Positioned(
-                          left: EdgeInsetsFoundation.horizontal24 * index, //EdgeInsetsFoundation.horizontal32,
-                          child: context.userAvatar(
-                            size: UserAvatarSize.x40x40,
-                            type: invitedUsersData.elementAt(index).userType,
-                            imageUrl: invitedUsersData.elementAt(index).avatarPath,
-                            userName: invitedUsersData.elementAt(index).name,
+              if (showGang)
+                Stack(
+                  clipBehavior: Clip.none,
+                  children: [
+                    if (invitedUsersData.length <= 3)
+                      SizedBox(
+                        width: ((invitedUsersData.length + 1) * EdgeInsetsFoundation.horizontal24) +
+                            EdgeInsetsFoundation.horizontal16,
+                        height: 0.15.sw,
+                      ),
+                    if (invitedUsersData.length <= 3)
+                      ...invitedUsersData.map(
+                        (e) {
+                          final index = invitedUsersData.indexOf(e);
+                          return Positioned(
+                            left: EdgeInsetsFoundation.horizontal24 * index, //EdgeInsetsFoundation.horizontal32,
+                            child: context.userAvatar(
+                              size: UserAvatarSize.x40x40,
+                              type: invitedUsersData.elementAt(index).userType,
+                              imageUrl: invitedUsersData.elementAt(index).avatarPath,
+                              userName: invitedUsersData.elementAt(index).name,
+                            ),
+                          );
+                        },
+                      ),
+                    if (invitedUsersData.length > 3) ...[
+                      SizedBox(
+                        width: (3 * EdgeInsetsFoundation.horizontal24) + avatarWidth + EdgeInsetsFoundation.horizontal4,
+                        height: 0.15.sw,
+                      ),
+                      ...invitedUsersData.sublist(0, 3).map(
+                        (e) {
+                          final index = invitedUsersData.indexOf(e);
+                          return Positioned(
+                            left: EdgeInsetsFoundation.horizontal24 * index, //EdgeInsetsFoundation.horizontal32,
+                            child: context.userAvatar(
+                              size: UserAvatarSize.x40x40,
+                              type: invitedUsersData.elementAt(index).userType,
+                              imageUrl: invitedUsersData.elementAt(index).avatarPath,
+                              userName: invitedUsersData.elementAt(index).name,
+                            ),
+                          );
+                        },
+                      ),
+                      Positioned(
+                        left: 3 * EdgeInsetsFoundation.horizontal24,
+                        child: Container(
+                          width: 0.125.sw,
+                          height: 0.125.sw,
+                          clipBehavior: Clip.hardEdge,
+                          decoration: BoxDecoration(
+                            color: colorScheme.darkNeutral100,
+                            shape: BoxShape.circle,
                           ),
-                        );
-                      },
-                    ),
-                  if (invitedUsersData.length > 3) ...[
-                    SizedBox(
-                      width: (3 * EdgeInsetsFoundation.horizontal24) + avatarWidth + EdgeInsetsFoundation.horizontal4,
-                      height: 0.15.sw,
-                    ),
-                    ...invitedUsersData.sublist(0, 3).map(
-                      (e) {
-                        final index = invitedUsersData.indexOf(e);
-                        return Positioned(
-                          left: EdgeInsetsFoundation.horizontal24 * index, //EdgeInsetsFoundation.horizontal32,
-                          child: context.userAvatar(
-                            size: UserAvatarSize.x40x40,
-                            type: invitedUsersData.elementAt(index).userType,
-                            imageUrl: invitedUsersData.elementAt(index).avatarPath,
-                            userName: invitedUsersData.elementAt(index).name,
-                          ),
-                        );
-                      },
-                    ),
-                    Positioned(
-                      left: 3 * EdgeInsetsFoundation.horizontal24,
-                      child: Container(
-                        width: 0.125.sw,
-                        height: 0.125.sw,
-                        clipBehavior: Clip.hardEdge,
-                        decoration: BoxDecoration(
-                          color: colorScheme.darkNeutral100,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Center(
-                          child: Text(
-                            '+${invitedUsersData.length - 3}',
-                            style: theme?.regularTextTheme.caption1.copyWith(
-                              color: ColorsFoundation.mutedText,
+                          child: Center(
+                            child: Text(
+                              '+${invitedUsersData.length - 3}',
+                              style: theme?.regularTextTheme.caption1.copyWith(
+                                color: ColorsFoundation.mutedText,
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ],
-                ],
-              ),
+                ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -160,15 +161,16 @@ class UiKitInviteMessageContent extends StatelessWidget {
         UiKitCardWrapper(
           borderRadius: BorderRadiusFoundation.max,
           color: colorScheme.surface1,
+          height: 0.14.sw,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ClipOval(
                 child: ImageWidget(
                   link: placeImagePath,
-                  width: 0.125.sw,
-                  height: 0.125.sw,
+                  width: 0.14.sw,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -186,7 +188,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 20.h,
+                      height: 14.h,
                       width: 170.w,
                       child: ListView.separated(
                         padding: EdgeInsets.zero,
@@ -200,7 +202,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
                 ),
               ),
               context
-                  .smallOutlinedButton(
+                  .midSizeOutlinedButton(
                     blurred: false,
                     data: BaseUiKitButtonData(
                       borderColor: colorScheme.inverseSurface,
@@ -244,7 +246,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
                 ),
               ),
             ],
-          ).paddingOnly(top: EdgeInsetsFoundation.vertical2),
+          ).paddingOnly(top: EdgeInsetsFoundation.vertical12),
         if (canAddMorePeople)
           context
               .gradientButton(
@@ -254,7 +256,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
                   fit: ButtonFit.fitWidth,
                 ),
               )
-              .paddingOnly(top: EdgeInsetsFoundation.vertical2),
+              .paddingOnly(top: EdgeInsetsFoundation.vertical12),
       ],
     );
   }

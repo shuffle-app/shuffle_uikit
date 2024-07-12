@@ -27,7 +27,7 @@
   "ChooseYourself": "खुद को चुनें",
   "NoHealthKitAvailableOnYourDevice": "आपके डिवाइस पर कोई स्वास्थ्य किट उपलब्ध नहीं है, इसलिए परिणाम यादृच्छिक होगा",
   "InvitesYouTo": "आपको आमंत्रित करता है",
-  "InvitesNPeopleTo": "{invitedPeopleCount} लोगों को आमंत्रित करता है",
+  "InvitesNPeopleTo": "{invitedPeopleCount, बहुवचन, =0{{invitedPeopleCount} लोग} =1{{invitedPeopleCount} व्यक्ति} =2{{invitedPeopleCount} लोग} कुछ{{invitedPeopleCount} लोग} अनेक{{invitedPeopleCount} लोग} अन्य{{invitedPeopleCount} लोग}} को आमंत्रित करता है",
   "NotNow": "अभी नहीं",
   "Go": "आगे बढ़ो",
   "InviteMore": "और अधिक को आमंत्रित करें",

@@ -93,7 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m27(hours) => "${hours} घंटे पहले";
 
   static String m28(invitedPeopleCount) =>
-      "${invitedPeopleCount} लोगों को आमंत्रित करता है";
+      "{invitedPeopleCount, बहुवचन, =0{${invitedPeopleCount} लोग} =1{${invitedPeopleCount} व्यक्ति} =2{${invitedPeopleCount} लोग} कुछ{${invitedPeopleCount} लोग} अनेक{${invitedPeopleCount} लोग} अन्य{${invitedPeopleCount} लोग}} को आमंत्रित करता है";
 
   static String m29(count) =>
       "Login to app ${count} ${Intl.plural(count, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')} in a row";

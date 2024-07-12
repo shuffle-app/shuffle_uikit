@@ -42,7 +42,7 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
         onTap: loading ?? false ? null : onPressed,
         borderRadius: BorderRadiusFoundation.max,
         child: Ink(
-          padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
+          padding: EdgeInsets.all(EdgeInsetsFoundation.all6),
           decoration: BoxDecoration(
             borderRadius: textIsEmpty ? null : BorderRadiusFoundation.max,
             shape: textIsEmpty ? BoxShape.circle : BoxShape.rectangle,

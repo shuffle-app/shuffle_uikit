@@ -295,10 +295,10 @@ class S {
     );
   }
 
-  /// `Invites {invitedPeopleCount} people to`
-  String InvitesNPeopleTo(Object invitedPeopleCount) {
+  /// `Invites {invitedPeopleCount, plural, =0{{invitedPeopleCount} people} =1{{invitedPeopleCount} person} =2{{invitedPeopleCount} people} few{{invitedPeopleCount} people} many{{invitedPeopleCount} people} other{{invitedPeopleCount} people}} to`
+  String InvitesNPeopleTo(num invitedPeopleCount) {
     return Intl.message(
-      'Invites $invitedPeopleCount people to',
+      'Invites ${Intl.plural(invitedPeopleCount, zero: '$invitedPeopleCount people', one: '$invitedPeopleCount person', two: '$invitedPeopleCount people', few: '$invitedPeopleCount people', many: '$invitedPeopleCount people', other: '$invitedPeopleCount people')} to',
       name: 'InvitesNPeopleTo',
       desc: '',
       args: [invitedPeopleCount],
