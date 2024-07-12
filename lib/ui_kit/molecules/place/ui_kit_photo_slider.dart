@@ -21,7 +21,7 @@ class UiKitPhotoSlider extends StatefulWidget {
     this.maxShowImage = 3,
     this.onTap,
     this.actions,
-  required  this.weatherType,
+    this.weatherType,
   });
 
   @override
