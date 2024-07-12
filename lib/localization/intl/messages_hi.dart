@@ -190,6 +190,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m64(amountOfInvitedPersons) =>
       "आपने ${amountOfInvitedPersons} लोगों को निमंत्रण भेजा है";
 
+  static String m65(name) => "Sure you want to delete ${name}?";
+
+  static String m66(name) => "You can no longer send messages to ${name}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "AboutUs": MessageLookupByLibrary.simpleMessage("हमारे बारे में"),
@@ -583,7 +587,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "InviteToFavoritePlaces": MessageLookupByLibrary.simpleMessage(
             "पसंदीदा स्थानों पर आमंत्रित करें"),
         "InvitedPeople": MessageLookupByLibrary.simpleMessage("Invited people"),
+        "Invites": MessageLookupByLibrary.simpleMessage("Invites"),
         "InvitesNPeopleTo": m28,
+        "InvitesTo": MessageLookupByLibrary.simpleMessage("To"),
+        "InvitesVerb": MessageLookupByLibrary.simpleMessage("Invites"),
         "InvitesYouTo":
             MessageLookupByLibrary.simpleMessage("आपको आमंत्रित करता है"),
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("आवर्तक है"),
@@ -982,6 +989,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Support": MessageLookupByLibrary.simpleMessage("सहायता"),
         "SupportPeopleAroundYou": MessageLookupByLibrary.simpleMessage(
             "अपने आसपास के लोगों का समर्थन करें"),
+        "SureYouWantToExit":
+            MessageLookupByLibrary.simpleMessage("Sure you want to exit?"),
         "SwipeToStart": MessageLookupByLibrary.simpleMessage(
             "शुरू करने के लिए स्वाइप करें"),
         "SwitchAnyTime": MessageLookupByLibrary.simpleMessage(
@@ -1152,6 +1161,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("आपने बहुत कुछ छोड़ दिया"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("आपको मिला"),
         "YouSentInvitationToNPeople": m64,
+        "YouSureToDeleteX": m65,
+        "YouWillNoLongerSendMessagesTo": m66,
         "YouWillReceiveNewTools":
             MessageLookupByLibrary.simpleMessage("आपको नए उपकरण मिलेंगे"),
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("आप उसे खोज लोगे"),

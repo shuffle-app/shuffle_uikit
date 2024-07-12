@@ -664,6 +664,11 @@
   "FocusOfLight": "Focus of Light",
   "FocusOfLightDescription": "The Light of the universe is contained here. If it gets darker in your soul, the light is with you. Look and be filled with peace.",
   "UnknownRing": "Unknown Ring",
-  "UnknownRingDescription": "Strange ring. We don't know why it is here..."
-
+  "UnknownRingDescription": "Strange ring. We don't know why it is here...",
+  "Invites": "Invites",
+  "InvitesVerb": "Invites",
+  "InvitesTo": "To",
+  "SureYouWantToExit":  "Sure you want to exit?",
+  "YouWillNoLongerSendMessagesTo": "You can no longer send messages to {name}",
+  "YouSureToDeleteX": "Sure you want to delete {name}?"
 }

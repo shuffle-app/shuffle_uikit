@@ -190,6 +190,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m64(amountOfInvitedPersons) =>
       "You sent an invitation to ${amountOfInvitedPersons} people";
 
+  static String m65(name) => "Sure you want to delete ${name}?";
+
+  static String m66(name) => "You can no longer send messages to ${name}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "AboutUs": MessageLookupByLibrary.simpleMessage("about us"),
@@ -577,7 +581,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "InviteToFavoritePlaces": MessageLookupByLibrary.simpleMessage(
             "Invite to your \"Favorites\""),
         "InvitedPeople": MessageLookupByLibrary.simpleMessage("Invited people"),
+        "Invites": MessageLookupByLibrary.simpleMessage("Invites"),
         "InvitesNPeopleTo": m28,
+        "InvitesTo": MessageLookupByLibrary.simpleMessage("To"),
+        "InvitesVerb": MessageLookupByLibrary.simpleMessage("Invites"),
         "InvitesYouTo": MessageLookupByLibrary.simpleMessage("Invites you to"),
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("Is recurrent"),
         "Islam": MessageLookupByLibrary.simpleMessage("Islam"),
@@ -976,6 +983,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Support": MessageLookupByLibrary.simpleMessage("Support"),
         "SupportPeopleAroundYou":
             MessageLookupByLibrary.simpleMessage("Support people around you"),
+        "SureYouWantToExit":
+            MessageLookupByLibrary.simpleMessage("Sure you want to exit?"),
         "SwipeToStart": MessageLookupByLibrary.simpleMessage("Swipe to start"),
         "SwitchAnyTime": MessageLookupByLibrary.simpleMessage(
             "You can switch it at any time in your profile settings"),
@@ -1140,6 +1149,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("You missed a lot"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
         "YouSentInvitationToNPeople": m64,
+        "YouSureToDeleteX": m65,
+        "YouWillNoLongerSendMessagesTo": m66,
         "YouWillReceiveNewTools":
             MessageLookupByLibrary.simpleMessage("You will receive new tools"),
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("You’ll find it"),

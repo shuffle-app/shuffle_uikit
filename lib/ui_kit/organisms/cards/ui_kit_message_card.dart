@@ -13,6 +13,7 @@ class UiKitMessageCard extends StatelessWidget {
     required this.onTap,
     this.subtitleIconPath,
     this.unreadMessageCount,
+    this.disabled = false,
   });
 
   final String name;
@@ -23,6 +24,7 @@ class UiKitMessageCard extends StatelessWidget {
   final String avatarPath;
   final UserTileType userType;
   final VoidCallback onTap;
+  final bool disabled;
 
   final int? unreadMessageCount;
 
@@ -44,61 +46,66 @@ class UiKitMessageCard extends StatelessWidget {
     final regularTextTheme = context.uiKitTheme?.regularTextTheme;
     final colorScheme = context.uiKitTheme?.colorScheme;
     final cardColor = context.uiKitTheme?.cardColor;
+    print('chat $name is disabled: $disabled');
 
     return Material(
       borderRadius: BorderRadiusFoundation.all24,
       clipBehavior: Clip.hardEdge,
       color: cardColor,
       child: InkWell(
-        onTap: () => onTap.call(),
+        onTap: disabled ? null : () => onTap.call(),
         child: Ink(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Row(
-                children: [
-                  context.userAvatar(size: UserAvatarSize.x40x40, type: userType, userName: name, imageUrl: avatarPath),
-                  SpacingFoundation.horizontalSpace12,
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Row(
-                          children: [
-                            Flexible(
-                              child: Text(
-                                name,
-                                style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
-                                maxLines: 1,
+              Opacity(
+                opacity: disabled ? 0.5 : 1.0,
+                child: Row(
+                  children: [
+                    context.userAvatar(
+                        size: UserAvatarSize.x40x40, type: userType, userName: name, imageUrl: avatarPath),
+                    SpacingFoundation.horizontalSpace12,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Row(
+                            children: [
+                              Flexible(
+                                child: Text(
+                                  name,
+                                  style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
+                                  maxLines: 1,
+                                ),
                               ),
-                            ),
-                            SpacingFoundation.horizontalSpace8,
-                            UiKitUserBadge(userType: userType)
-                          ],
-                        ),
-                        SpacingFoundation.verticalSpace2,
-                        Row(
-                          children: [
-                            if (subtitleIconPath != null)
-                              ImageWidget(
-                                link: subtitleIconPath,
-                                height: 14.h,
-                                fit: BoxFit.fitHeight,
-                                color: colorScheme?.darkNeutral900,
-                              ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
-                            Text(
-                              subtitle,
-                              style: boldTextTheme?.caption1Bold.copyWith(
-                                color: colorScheme?.darkNeutral900,
+                              SpacingFoundation.horizontalSpace8,
+                              UiKitUserBadge(userType: userType)
+                            ],
+                          ),
+                          SpacingFoundation.verticalSpace2,
+                          Row(
+                            children: [
+                              if (subtitleIconPath != null)
+                                ImageWidget(
+                                  link: subtitleIconPath,
+                                  height: 14.h,
+                                  fit: BoxFit.fitHeight,
+                                  color: colorScheme?.darkNeutral900,
+                                ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
+                              Text(
+                                subtitle,
+                                style: boldTextTheme?.caption1Bold.copyWith(
+                                  color: colorScheme?.darkNeutral900,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Text(
                 lastMessageTime,
@@ -117,9 +124,13 @@ class UiKitMessageCard extends StatelessWidget {
                         lastMessage,
                         overflow: TextOverflow.ellipsis,
                         style: boldTextTheme?.caption1Medium.copyWith(
-                          color: (unreadMessageCount ?? 0) == 0 ? colorScheme?.darkNeutral900 : null,
+                          color: disabled
+                              ? colorScheme?.inverseSurface
+                              : (unreadMessageCount ?? 0) == 0
+                                  ? colorScheme?.darkNeutral900
+                                  : null,
                         ),
-                        textAlign: TextAlign.start,
+                        textAlign: disabled ? TextAlign.end : TextAlign.start,
                       ),
                     ),
                   ),

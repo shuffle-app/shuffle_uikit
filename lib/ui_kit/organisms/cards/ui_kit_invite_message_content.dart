@@ -18,6 +18,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
     this.brightness = Brightness.light,
     this.onAcceptTap,
     this.onDenyTap,
+    this.customMessageData,
   });
 
   final String username;
@@ -30,11 +31,11 @@ class UiKitInviteMessageContent extends StatelessWidget {
   final bool canDenyInvitation;
   final bool canAddMorePeople;
   final bool showGang;
-
   final VoidCallback onPlaceTap;
   final VoidCallback? onInvitePeopleTap;
   final VoidCallback? onAcceptTap;
   final VoidCallback? onDenyTap;
+  final InviteCustomMessageData? customMessageData;
 
   bool get isDark => brightness == Brightness.dark;
 
@@ -123,37 +124,95 @@ class UiKitInviteMessageContent extends StatelessWidget {
                     ],
                   ],
                 ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        username,
-                        style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
-                      ),
-                      SpacingFoundation.horizontalSpace12,
-                      if (userType == UserTileType.influencer) InfluencerAccountMark(),
-                      if (userType == UserTileType.premium) PremiumAccountMark(color: colorScheme.inverseSurface),
-                      if (userType == UserTileType.pro) ProAccountMark(),
-                    ],
-                  ),
-                  Flexible(
-                    child: Text(
-                      showGang
-                          ? S.of(context).InvitesNPeopleTo(invitedUsersData.length).toLowerCase()
-                          : S.of(context).InvitesYouTo.toLowerCase(),
-                      style: theme?.boldTextTheme.caption1Medium.copyWith(
-                        color: colorScheme.inverseSurface,
-                        overflow: TextOverflow.ellipsis,
+              if (customMessageData != null)
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text(
+                          customMessageData!.senderUserName,
+                          style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
+                        ),
+                        SpacingFoundation.horizontalSpace4,
+                        if (customMessageData!.senderUserType == UserTileType.influencer) InfluencerAccountMark(),
+                        if (customMessageData!.senderUserType == UserTileType.premium)
+                          PremiumAccountMark(color: colorScheme.inverseSurface),
+                        if (customMessageData!.senderUserType == UserTileType.pro) ProAccountMark(),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: '${S.current.InvitesVerb.toLowerCase()} ',
+                                style: theme?.boldTextTheme.caption1Medium.copyWith(
+                                  color: colorScheme.inverseSurface,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              TextSpan(
+                                text: customMessageData!.receiverUserName,
+                                style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
+                              )
+                            ],
+                          ),
+                        ),
+                        SpacingFoundation.horizontalSpace4,
+                        if (customMessageData!.receiverUserType == UserTileType.influencer) InfluencerAccountMark(),
+                        if (customMessageData!.receiverUserType == UserTileType.premium)
+                          PremiumAccountMark(color: colorScheme.inverseSurface),
+                        if (customMessageData!.receiverUserType == UserTileType.pro) ProAccountMark(),
+                        if (customMessageData!.receiverUserType != UserTileType.ordinary)
+                          SpacingFoundation.horizontalSpace4,
+                        Text(
+                          S.current.InvitesTo.toLowerCase(),
+                          style: theme?.boldTextTheme.caption1Medium.copyWith(
+                            color: colorScheme.inverseSurface,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              if (customMessageData == null)
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text(
+                          username,
+                          style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
+                        ),
+                        SpacingFoundation.horizontalSpace12,
+                        if (userType == UserTileType.influencer) InfluencerAccountMark(),
+                        if (userType == UserTileType.premium) PremiumAccountMark(color: colorScheme.inverseSurface),
+                        if (userType == UserTileType.pro) ProAccountMark(),
+                      ],
+                    ),
+                    Flexible(
+                      child: Text(
+                        showGang
+                            ? S.of(context).InvitesNPeopleTo(invitedUsersData.length).toLowerCase()
+                            : S.of(context).InvitesYouTo.toLowerCase(),
+                        style: theme?.boldTextTheme.caption1Medium.copyWith(
+                          color: colorScheme.inverseSurface,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
+                  ],
+                ),
             ],
           ),
         ),
@@ -260,6 +319,20 @@ class UiKitInviteMessageContent extends StatelessWidget {
       ],
     );
   }
+}
+
+class InviteCustomMessageData {
+  final String senderUserName;
+  final String receiverUserName;
+  final UserTileType senderUserType;
+  final UserTileType receiverUserType;
+
+  const InviteCustomMessageData({
+    required this.senderUserName,
+    required this.receiverUserName,
+    required this.senderUserType,
+    required this.receiverUserType,
+  });
 }
 
 class InviteMessageUsersData {

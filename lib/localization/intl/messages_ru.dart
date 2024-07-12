@@ -190,6 +190,11 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m64(amountOfInvitedPersons) =>
       "Вы отправили приглашение ${amountOfInvitedPersons} людям";
 
+  static String m65(name) => "Ты уверен, что хочешь удалить ${name}?";
+
+  static String m66(name) =>
+      "Ты больше не сможешь отправлять сообщения ${name}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "AboutUs": MessageLookupByLibrary.simpleMessage("о нас"),
@@ -587,7 +592,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "InviteToFavoritePlaces": MessageLookupByLibrary.simpleMessage(
             "Пригласить в избранные места"),
         "InvitedPeople": MessageLookupByLibrary.simpleMessage("Участники"),
+        "Invites": MessageLookupByLibrary.simpleMessage("Приглашения"),
         "InvitesNPeopleTo": m28,
+        "InvitesTo": MessageLookupByLibrary.simpleMessage("на"),
+        "InvitesVerb": MessageLookupByLibrary.simpleMessage("Приглашает"),
         "InvitesYouTo":
             MessageLookupByLibrary.simpleMessage("Приглашает вас на"),
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("Повторяется"),
@@ -995,6 +1003,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Support": MessageLookupByLibrary.simpleMessage("Помощь"),
         "SupportPeopleAroundYou":
             MessageLookupByLibrary.simpleMessage("Помочь людям вокруг"),
+        "SureYouWantToExit":
+            MessageLookupByLibrary.simpleMessage("Точно хочешь выйти?"),
         "SwipeToStart":
             MessageLookupByLibrary.simpleMessage("Свайп чтобы начать"),
         "SwitchAnyTime": MessageLookupByLibrary.simpleMessage(
@@ -1160,6 +1170,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Вы многое пропустили"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("Вы получили"),
         "YouSentInvitationToNPeople": m64,
+        "YouSureToDeleteX": m65,
+        "YouWillNoLongerSendMessagesTo": m66,
         "YouWillReceiveNewTools": MessageLookupByLibrary.simpleMessage(
             "Вы получите новые инструменты"),
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("Ты найдёшь"),

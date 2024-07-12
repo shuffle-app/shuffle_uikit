@@ -666,7 +666,12 @@
   "FocusOfLight": "Средоточие Света",
   "FocusOfLightDescription": "Свет вселенной заключён здесь. Если потемнеет в душе - свет с тобой. Посмотри и преисполнись покоем.",
   "UnknownRing": "Неизвестное кольцо",
-  "UnknownRingDescription": "Странное кольцо. Не знаем откуда оно здесь…"
+  "UnknownRingDescription": "Странное кольцо. Не знаем откуда оно здесь…",
+  "InvitesVerb": "Приглашает",
+  "InvitesTo": "на",
+  "SureYouWantToExit":  "Точно хочешь выйти?",
+  "YouWillNoLongerSendMessagesTo": "Ты больше не сможешь отправлять сообщения {name}",
+  "YouSureToDeleteX": "Ты уверен, что хочешь удалить {name}?"
 
 }
 

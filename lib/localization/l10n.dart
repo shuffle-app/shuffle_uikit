@@ -6850,6 +6850,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Invites`
+  String get Invites {
+    return Intl.message(
+      'Invites',
+      name: 'Invites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invites`
+  String get InvitesVerb {
+    return Intl.message(
+      'Invites',
+      name: 'InvitesVerb',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To`
+  String get InvitesTo {
+    return Intl.message(
+      'To',
+      name: 'InvitesTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sure you want to exit?`
+  String get SureYouWantToExit {
+    return Intl.message(
+      'Sure you want to exit?',
+      name: 'SureYouWantToExit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can no longer send messages to {name}`
+  String YouWillNoLongerSendMessagesTo(Object name) {
+    return Intl.message(
+      'You can no longer send messages to $name',
+      name: 'YouWillNoLongerSendMessagesTo',
+      desc: '',
+      args: [name],
+    );
+  }
+
+  /// `Sure you want to delete {name}?`
+  String YouSureToDeleteX(Object name) {
+    return Intl.message(
+      'Sure you want to delete $name?',
+      name: 'YouSureToDeleteX',
+      desc: '',
+      args: [name],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
