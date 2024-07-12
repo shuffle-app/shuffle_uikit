@@ -22,6 +22,7 @@ class SliderPlaceCard extends StatelessWidget {
             UiKitPhotoSlider(
               media: slidablePlaceCardData.media ?? [],
               width: size.maxWidth,
+              weatherType: slidablePlaceCardData.weatherType,
             ),
             SpacingFoundation.verticalSpace12,
             Text(

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class BoxIconButton extends StatefulWidget implements ButtonFactory {
+class BoxIconButton extends StatelessWidget implements ButtonFactory {
   final Widget? icon;
   final BaseUiKitButtonIconData? iconInfo;
   final VoidCallback? onPressed;
   final Color? backgroundColor;
-  final bool? initialValue;
-  final bool? isSelectable;
+  final bool? isSelected;
 
   const BoxIconButton({
     super.key,
@@ -15,30 +14,9 @@ class BoxIconButton extends StatefulWidget implements ButtonFactory {
     this.iconInfo,
     this.onPressed,
     this.backgroundColor,
-    this.initialValue,
-    this.isSelectable,
+    this.isSelected,
   }) : assert(iconInfo != null || icon != null,
             'Either iconInfo or icon must be provided');
-
-  @override
-  State<BoxIconButton> createState() => _BoxIconButtonState();
-
-  @override
-  Widget build(BuildContext context) {
-    return this;
-  }
-}
-
-class _BoxIconButtonState extends State<BoxIconButton> {
-  late bool isSelectable;
-  late bool isSelected;
-
-  @override
-  void initState() {
-    isSelectable = widget.isSelectable ?? false;
-    isSelected = widget.initialValue ?? false;
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,28 +25,21 @@ class _BoxIconButtonState extends State<BoxIconButton> {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: () {
-          widget.onPressed;
-          if (isSelectable) {
-            setState(
-              () {
-                isSelected = !isSelected;
-              },
-            );
-          }
-        },
+        onTap:onPressed,
         borderRadius: BorderRadiusFoundation.all8,
         child: Ink(
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all8,
-            color:isSelected? theme?.colorScheme.darkNeutral700 : (widget.backgroundColor ?? theme?.colorScheme.surface1),
+            color: (isSelected ?? false)
+                ? theme?.colorScheme.darkNeutral700
+                : (backgroundColor ?? theme?.colorScheme.surface1),
           ),
           child: ImageWidget(
-            iconData: widget.iconInfo?.iconData,
-            link: widget.iconInfo?.iconPath,
-            height: widget.iconInfo?.size,
+            iconData: iconInfo?.iconData,
+            link: iconInfo?.iconPath,
+            height: iconInfo?.size,
             fit: BoxFit.fitHeight,
-            color: widget.iconInfo?.color ?? theme?.colorScheme.inverseSurface,
+            color: iconInfo?.color ?? theme?.colorScheme.inverseSurface,
           ).paddingAll(EdgeInsetsFoundation.all6),
         ),
       ),

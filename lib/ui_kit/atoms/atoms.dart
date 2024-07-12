@@ -104,3 +104,4 @@ export 'user/pro_member_plate.dart';
 export 'property_management/ui_kit_property_icons.dart';
 export 'property_management/ui_kit_property_related_properties.dart';
 export 'property_management/ui_kit_property_recently_added.dart';
+export 'place/ui_kit_place_weather_animation.dart';

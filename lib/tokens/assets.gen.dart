@@ -77,6 +77,12 @@ class $AssetsAnimationsLottieGen {
   /// File path: assets/animations/lottie/fingerprint-white.json
   LottieGenImage get fingerprintWhite => const LottieGenImage('assets/animations/lottie/fingerprint-white.json');
 
+  /// File path: assets/animations/lottie/moony.json
+  LottieGenImage get moony => const LottieGenImage('assets/animations/lottie/moony.json');
+
+  /// File path: assets/animations/lottie/rainy.json
+  LottieGenImage get rainy => const LottieGenImage('assets/animations/lottie/rainy.json');
+
   /// File path: assets/animations/lottie/shuffle-loader-black-theme.json
   LottieGenImage get shuffleLoaderBlackTheme =>
       const LottieGenImage('assets/animations/lottie/shuffle-loader-black-theme.json');
@@ -91,16 +97,26 @@ class $AssetsAnimationsLottieGen {
   /// File path: assets/animations/lottie/star_outline.json
   LottieGenImage get starOutline => const LottieGenImage('assets/animations/lottie/star_outline.json');
 
+  /// File path: assets/animations/lottie/sunny.json
+  LottieGenImage get sunny => const LottieGenImage('assets/animations/lottie/sunny.json');
+
+  /// File path: assets/animations/lottie/windy.json
+  LottieGenImage get windy => const LottieGenImage('assets/animations/lottie/windy.json');
+
   /// List of all assets
   List<LottieGenImage> get values => [
         brokenHeart,
         wholeHeart,
         fingerprintBlack,
         fingerprintWhite,
+        moony,
+        rainy,
         shuffleLoaderBlackTheme,
         shuffleLoaderWhiteTheme,
         starFill,
-        starOutline
+        starOutline,
+        sunny,
+        windy
       ];
 }
 

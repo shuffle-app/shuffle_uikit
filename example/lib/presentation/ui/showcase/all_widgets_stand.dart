@@ -135,8 +135,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             context.boxIconButton(
-              initialValue: true,
-              isSelectable: true,
+              isSelected: true,
               data: BaseUiKitButtonData(
                 onPressed: () {},
                 iconInfo: BaseUiKitButtonIconData(
@@ -144,8 +143,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
             ),
             context.boxIconButton(
-              isSelectable: true,
-              initialValue: false,
+              isSelected: true,
               data: BaseUiKitButtonData(
                 onPressed: () {},
                 iconInfo: BaseUiKitButtonIconData(
@@ -153,8 +151,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               ),
             ),
             context.boxIconButton(
-              initialValue: false,
-              isSelectable: true,
+              isSelected: false,
               data: BaseUiKitButtonData(
                 onPressed: () {},
                 iconInfo: BaseUiKitButtonIconData(
@@ -163,7 +160,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             ),
           ],
         ),
-
         SliderPlaceCard(
           slidablePlaceCardData: SlidablePlaceCardData(
             media: [
@@ -175,7 +171,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             ],
             title: 'Virgins on the beach',
             placeTags: [
-              UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail,),
+              UiKitTag(
+                title: 'Cheap',
+                icon: ShuffleUiKitIcons.cocktail,
+              ),
               UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
               UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
               UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
@@ -186,9 +185,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
               UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
             ],
+            weatherType: PlaceWeatherType.rainy,
           ),
         ).paddingAll(EdgeInsetsFoundation.all16),
-
         UiKitChatCardWithReplyIn(
           timeOfDay: DateTime.now(),
           text:
@@ -206,7 +205,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             onReplyMassageTap: () {},
             replyUserName: 'Райн гослинг'),
         SpacingFoundation.verticalSpace16,
-
         UiKitVoiceListenCard(
           duration: Duration(seconds: 70),
         ),
