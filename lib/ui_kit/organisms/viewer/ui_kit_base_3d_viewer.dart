@@ -10,25 +10,26 @@ class UiKitBase3DViewer extends StatelessWidget {
   final String? scale;
   final bool? autoPlay;
   final String? environmentImage;
+  final String? skyboxImage;
   final bool? autoRotate;
   final ValueChanged<WebViewController>? onWebViewCreated;
   final Set<JavascriptChannel>? javascriptChannels;
   final VoidCallback? onTap;
   late final JavascriptChannel onTapChannel;
 
-  UiKitBase3DViewer(
-      {super.key,
-      required this.localPath,
-      this.backgroundColor,
-      this.animationName,
-      this.javascriptChannels,
-      this.poster,
-      this.scale,
-      this.autoPlay,
-      this.onWebViewCreated,
-      this.environmentImage,
-      this.onTap,
-      this.autoRotate}) {
+  UiKitBase3DViewer({super.key,
+    required this.localPath,
+    this.backgroundColor,
+    this.animationName,
+    this.javascriptChannels,
+    this.poster,
+    this.scale,
+    this.autoPlay,
+    this.onWebViewCreated,
+    this.environmentImage,
+    this.skyboxImage,
+    this.onTap,
+    this.autoRotate}) {
     onTapChannel = JavascriptChannel('onTapChannel', onMessageReceived: (message) {
       onTap?.call();
     });
@@ -42,7 +43,7 @@ class UiKitBase3DViewer extends StatelessWidget {
       autoPlay: autoPlay,
       id: 'model-viewer',
       backgroundColor: backgroundColor ?? Colors.transparent,
-      src: 'file:///$localPath',
+      src: localPath.startsWith('http') ? localPath : 'file:///$localPath',
       poster: poster,
       scale: scale,
       disableTap: true,
@@ -50,7 +51,7 @@ class UiKitBase3DViewer extends StatelessWidget {
       // disablePan: true,
       // cameraOrbit: '10deg 75deg 0m',
       animationCrossfadeDuration: 500,
-      interactionPrompt: InteractionPrompt.whenFocused,
+      // interactionPrompt: InteractionPrompt.whenFocused,
       // touchAction: TouchAction.panY,
       // xrEnvironment: true,
       // arPlacement: ArPlacement.floor,
@@ -60,6 +61,7 @@ class UiKitBase3DViewer extends StatelessWidget {
       disableZoom: true,
       exposure: 1,
       environmentImage: environmentImage,
+      skyboxImage: skyboxImage,
       javascriptChannels: {...?javascriptChannels, onTapChannel},
       innerModelViewerHtml: '''
       <div class="progress-bar hide" slot="progress-bar">

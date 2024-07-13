@@ -69,14 +69,14 @@ class ProfileCardBody extends StatelessWidget {
                     type: userTileType,
                     userName: name ?? '',
                     imageUrl: avatarUrl,
-                    showAchievements: achievements.isNotEmpty)
+                    showAchievements: false)
               else
                 context.userAvatar(
                     size: UserAvatarSize.x48x48,
                     type: userTileType,
                     userName: name ?? '',
                     imageUrl: avatarUrl,
-                    showAchievements: achievements.isNotEmpty),
+                    showAchievements: false),
               if (canFollow ?? false) SpacingFoundation.horizontalSpace16 else SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: profileType == ProfileCardType.personal

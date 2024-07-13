@@ -10,14 +10,15 @@ class SlidableButton extends StatefulWidget {
   final VoidCallback? onCompleted;
   final VoidCallback? onTap;
 
-  const SlidableButton({super.key,
-    this.isCompleted = false,
-    this.onCompleted,
-    this.onTap,
-    this.customBorder,
-    this.hintText,
-    required this.slidableChild,
-    required this.onCompletedChild});
+  const SlidableButton(
+      {super.key,
+      this.isCompleted = false,
+      this.onCompleted,
+      this.onTap,
+      this.customBorder,
+      this.hintText,
+      required this.slidableChild,
+      required this.onCompletedChild});
 
   @override
   State<SlidableButton> createState() => _SlidableButtonState();
@@ -40,12 +41,28 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
 
   double _updatePosition(double distance) {
     if (distance > 0.8.sw) {
-      WidgetsBinding.instance.addPostFrameCallback((_) =>
-          setState(() {
+      WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
             _isCompleted = true;
             widget.onCompleted?.call();
           }));
       return 0.8.sw;
+    }
+
+    if (_currentPosition.value.dx >= 0.8.sw / 1.2) {
+      FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
+        intensities: [170, 200],
+        pattern: [10, 5],
+      ));
+    } else if (_currentPosition.value.dx >= 0.8.sw / 2.2) {
+      FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
+        intensities: [130, 170],
+        pattern: [10, 5],
+      ));
+    } else if (_currentPosition.value.dx >= _startPosition.dx) {
+      FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
+        intensities: [100, 130],
+        pattern: [10, 5],
+      ));
     }
 
     return distance - 30.w < 0 ? 0 : distance - 30.w;
@@ -71,57 +88,55 @@ class _SlidableButtonState extends State<SlidableButton> with TickerProviderStat
     final theme = context.uiKitTheme;
 
     return GestureDetector(
-        onTap: widget.onTap, child:
-    DecoratedBox(
-        decoration: BoxDecoration(
-            border: widget.customBorder ?? GradientFoundation.gradientBorder,
-            borderRadius: BorderRadiusFoundation.max,
-            color: theme?.colorScheme.surface2),
-        child: SizedBox(
-            height: EdgeInsetsFoundation.vertical14 * 2 +
-                (theme?.boldTextTheme.bodyUpperCase.fontSize ?? 0) * (theme?.boldTextTheme.bodyUpperCase.height ?? 1) +
-                10.h,
-            child: Stack(
-              fit: StackFit.passthrough,
-              alignment: Alignment.centerLeft,
-              children: [
-                if (!_isCompleted)
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const ArrowsAnimation(),
-                      Text(
-                        widget.hintText ?? S
-                            .of(context)
-                            .SwipeToStart,
-                        style: theme?.regularTextTheme.caption1.copyWith(color: theme.colorScheme.darkNeutral400),
+        onTap: widget.onTap,
+        child: DecoratedBox(
+            decoration: BoxDecoration(
+                border: widget.customBorder ?? GradientFoundation.gradientBorder,
+                borderRadius: BorderRadiusFoundation.max,
+                color: theme?.colorScheme.surface2),
+            child: SizedBox(
+                height: EdgeInsetsFoundation.vertical14 * 2 +
+                    (theme?.boldTextTheme.bodyUpperCase.fontSize ?? 0) *
+                        (theme?.boldTextTheme.bodyUpperCase.height ?? 1) +
+                    10.h,
+                child: Stack(
+                  fit: StackFit.passthrough,
+                  alignment: Alignment.centerLeft,
+                  children: [
+                    if (!_isCompleted)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const ArrowsAnimation(),
+                          Text(
+                            widget.hintText ?? S.of(context).SwipeToStart,
+                            style: theme?.regularTextTheme.caption1.copyWith(color: theme.colorScheme.darkNeutral400),
+                          ),
+                          const ArrowsAnimation()
+                        ],
                       ),
-                      const ArrowsAnimation()
-                    ],
-                  ),
-                if (_isCompleted)
-                  Positioned(
-                    right: 0,
-                    left: 0,
-                    child: widget.onCompletedChild,
-                  )
-                else
-                  ValueListenableBuilder(
-                      valueListenable: _currentPosition,
-                      builder: (_, currentPosition, __) =>
-                          AnimatedPositioned(
-                            curve: _isCompleted ? Curves.easeIn : Curves.bounceOut,
-                            duration: _animationDuration,
-                            left: (_isCompleted) ? null : _updatePosition(currentPosition.dx),
-                            right: (_isCompleted) ? 0 : null,
-                            child: GestureDetector(
-                                onPanUpdate: (details) => _isCompleted ? _resetPosition() : _setPosition(details),
-                                onPanStart: (details) => _setPosition(details),
-                                onPanEnd: (_) => _isCompleted ? null : _resetPosition(),
-                                child: AbsorbPointer(child: widget.slidableChild)),
-                          )),
-              ],
-            ).paddingSymmetric(horizontal: 4.w))));
+                    if (_isCompleted)
+                      Positioned(
+                        right: 0,
+                        left: 0,
+                        child: widget.onCompletedChild,
+                      )
+                    else
+                      ValueListenableBuilder(
+                          valueListenable: _currentPosition,
+                          builder: (_, currentPosition, __) => AnimatedPositioned(
+                                curve: _isCompleted ? Curves.easeIn : Curves.bounceOut,
+                                duration: _animationDuration,
+                                left: (_isCompleted) ? null : _updatePosition(currentPosition.dx),
+                                right: (_isCompleted) ? 0 : null,
+                                child: GestureDetector(
+                                    onPanUpdate: (details) => _isCompleted ? _resetPosition() : _setPosition(details),
+                                    onPanStart: (details) => _setPosition(details),
+                                    onPanEnd: (_) => _isCompleted ? null : _resetPosition(),
+                                    child: AbsorbPointer(child: widget.slidableChild)),
+                              )),
+                  ],
+                ).paddingSymmetric(horizontal: 4.w))));
   }
 }

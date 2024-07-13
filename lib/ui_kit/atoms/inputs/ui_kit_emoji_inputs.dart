@@ -123,20 +123,22 @@ class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
                 height: 0.3.sh,
                 checkPlatformCompatibility: true,
                 emojiViewConfig: EmojiViewConfig(
-                  backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
-                  emojiSizeMax: 28 * (foundation.defaultTargetPlatform == TargetPlatform.iOS ? 1.20 : 1.0),
+                  backgroundColor: Colors.transparent,
+                  emojiSizeMax: 28 * (foundation.defaultTargetPlatform == TargetPlatform.iOS ? 1.15 : 1.0),
                 ),
                 swapCategoryAndBottomBar: false,
-                categoryViewConfig: CategoryViewConfig(
-                  backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
+                categoryViewConfig: const CategoryViewConfig(
+                  backgroundColor: Colors.transparent,
+                  indicatorColor: UiKitColors.purple,
+                  iconColorSelected: UiKitColors.purple,
                 ),
                 bottomActionBarConfig: BottomActionBarConfig(
-                  backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
+                  backgroundColor: Colors.transparent,
                   buttonColor: Colors.transparent,
                   buttonIconColor: theme?.colorScheme.inversePrimary ?? Colors.white,
                 ),
                 searchViewConfig: SearchViewConfig(
-                  backgroundColor: theme?.colorScheme.surface1 ?? Colors.white,
+                  backgroundColor: Colors.transparent,
                   buttonIconColor: theme?.colorScheme.inversePrimary ?? Colors.white,
                   hintText: '',
                   textStyle: theme?.regularTextTheme.caption1 ?? TextStyle(color: theme?.colorScheme.inversePrimary),
