@@ -9,8 +9,9 @@ abstract class BaseUiKitMediaWidget extends StatelessWidget {
   factory BaseUiKitMediaWidget.image({
     required BaseUiKitMedia media,
     double? width,
+    PlaceWeatherType? weatherType,
   }) {
-    return UiKitMediaImageWidget(media: media,width:width);
+    return UiKitMediaImageWidget(media: media,width:width,weatherType: weatherType,);
   }
 
   factory BaseUiKitMediaWidget.video({

@@ -248,7 +248,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     }
 
-    throw UnimplementedError('Outlined badge button with your parameters is not implemented');
+    throw UnimplementedError(
+        'Outlined badge button with your parameters is not implemented');
   }
 
   @override
@@ -285,12 +286,14 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   @override
   ButtonFactory createBoxIconButton({
     required BaseUiKitButtonData data,
+    bool? isSelected,
   }) {
     return BoxIconButton(
       iconInfo: data.iconInfo,
       onPressed: data.onPressed,
       icon: data.iconWidget,
       backgroundColor: data.backgroundColor,
+      isSelected: isSelected,
     );
   }
 
@@ -327,7 +330,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
         fit: data.fit,
       );
-    } else if ((data.text != null && (data.text?.isNotEmpty ?? false)) || !hasIcon) {
+    } else if ((data.text != null && (data.text?.isNotEmpty ?? false)) ||
+        !hasIcon) {
       return SmallOutlinedButton(
         onPressed: data.onPressed,
         gradient: gradient,
@@ -357,7 +361,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
       );
     } else {
-      throw UnimplementedError('Outlined button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Outlined button with your parameters is not implemented');
     }
   }
 
@@ -414,7 +419,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         isGradientEnabled: isGradientEnabled ?? false,
       );
     } else {
-      throw UnimplementedError('Outlined button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Outlined button with your parameters is not implemented');
     }
   }
 
@@ -450,7 +456,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
       );
     } else {
-      throw UnimplementedError('Gradient button with your parameters is not implemented');
+      throw UnimplementedError(
+          'Gradient button with your parameters is not implemented');
     }
   }
 
@@ -462,7 +469,10 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool reversed = false,
   }) {
     final hasIcon = data.iconWidget != null || data.iconInfo != null;
-    final onlyIconButton = hasIcon && (data.text?.isEmpty ?? true) && !isTextButton && !(blurred ?? false);
+    final onlyIconButton = hasIcon &&
+        (data.text?.isEmpty ?? true) &&
+        !isTextButton &&
+        !(blurred ?? false);
     if (isTextButton) {
       if (reversed) {
         return OrdinaryReversedTextButton(
@@ -663,7 +673,9 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? secondaryActionWidget,
     Widget? dismissActionWidget,
   }) {
-    final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
+    final hasAllActions = primaryActionWidget != null &&
+        secondaryActionWidget != null &&
+        dismissActionWidget != null;
     if (hasAllActions) {
       return AdditionalActionNotificationPopUp(
         requiredData: requiredData,
@@ -834,7 +846,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  SnackBarFactory createSnackBar({required AppSnackBarType appSnackBarType, required String message}) {
+  SnackBarFactory createSnackBar(
+      {required AppSnackBarType appSnackBarType, required String message}) {
     switch (appSnackBarType) {
       case AppSnackBarType.success:
         return SuccessSnackBar(message: message);
@@ -867,7 +880,8 @@ class AvatarStackWrapper extends StatelessWidget implements UserAvatarFactory {
   final bool showAchievements;
   final Widget child;
 
-  const AvatarStackWrapper({super.key, required this.showAchievements, required this.child});
+  const AvatarStackWrapper(
+      {super.key, required this.showAchievements, required this.child});
 
   @override
   Widget build(BuildContext context) {
