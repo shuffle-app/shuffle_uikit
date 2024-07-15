@@ -79,6 +79,7 @@ export 'inputs/ui_kit_input_field_with_chips.dart';
 export 'inputs/ui_kit_multiselect_suggestion_input.dart';
 export 'inputs/ui_kit_symbols_counter_input_field.dart';
 export 'inputs/ui_kit_titled_wrapped_input.dart';
+export 'place/ui_kit_place_weather_animation.dart';
 export 'profile/grid_titled_item_widget.dart';
 export 'profile/ui_kit_fame_item.dart';
 export 'profile/ui_kit_info_text.dart';

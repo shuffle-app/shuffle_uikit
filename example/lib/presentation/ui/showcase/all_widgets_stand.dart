@@ -128,6 +128,60 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            context.boxIconButton(
+              isSelected: true,
+              data: BaseUiKitButtonData(
+                onPressed: () {},
+                iconInfo: BaseUiKitButtonIconData(iconPath: GraphicsFoundation.instance.svg.sunny.path),
+              ),
+            ),
+            context.boxIconButton(
+              isSelected: true,
+              data: BaseUiKitButtonData(
+                onPressed: () {},
+                iconInfo: BaseUiKitButtonIconData(iconPath: GraphicsFoundation.instance.svg.rain.path),
+              ),
+            ),
+            context.boxIconButton(
+              isSelected: false,
+              data: BaseUiKitButtonData(
+                onPressed: () {},
+                iconInfo: BaseUiKitButtonIconData(iconPath: GraphicsFoundation.instance.svg.windy.path),
+              ),
+            ),
+          ],
+        ),
+        SliderPlaceCard(
+          slidablePlaceCardData: SlidablePlaceCardData(
+            media: [
+              UiKitMediaPhoto(link: GraphicsFoundation.instance.png.leto1.path),
+              UiKitMediaPhoto(link: GraphicsFoundation.instance.png.leto1.path),
+              UiKitMediaPhoto(link: GraphicsFoundation.instance.png.leto1.path),
+              UiKitMediaPhoto(link: GraphicsFoundation.instance.png.leto1.path),
+              UiKitMediaPhoto(link: GraphicsFoundation.instance.png.leto1.path),
+            ],
+            title: 'Virgins on the beach',
+            placeTags: [
+              UiKitTag(
+                title: 'Cheap',
+                icon: ShuffleUiKitIcons.cocktail,
+              ),
+              UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+              UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+              UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+              UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+              UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+              UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+              UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+              UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+              UiKitTag(title: 'Cheap', icon: ShuffleUiKitIcons.cocktail),
+            ],
+            weatherType: PlaceWeatherType.rainy,
+          ),
+        ).paddingAll(EdgeInsetsFoundation.all16),
         UiKitChatCardWithReplyIn(
           replySenderName: '',
           id: -1,

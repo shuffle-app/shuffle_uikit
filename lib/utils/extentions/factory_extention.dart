@@ -133,10 +133,12 @@ extension FactoryExtention on BuildContext {
 
   Widget boxIconButton({
     required BaseUiKitButtonData data,
+    bool? isSelected,
   }) {
     return WidgetsFactory.of(this)!
         .createBoxIconButton(
           data: data,
+          isSelected: isSelected,
         )
         .build(this);
   }

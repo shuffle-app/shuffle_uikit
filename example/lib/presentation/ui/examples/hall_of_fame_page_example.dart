@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/ui_reward_progress_model.dart';
 
 class HallOfFamePageExample extends StatelessWidget {
   const HallOfFamePageExample({super.key});
@@ -13,7 +12,6 @@ class HallOfFamePageExample extends StatelessWidget {
         title: 'Title $index',
         child: UiKitFameItem(
           uiModel: UiKitAchievementsModel(
-            posterUrl: index % 5 == 0 ? null : GraphicsFoundation.instance.png.goldenCup.path,
             title: 'Title $index',
           ),
         ),

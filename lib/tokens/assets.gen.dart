@@ -77,6 +77,12 @@ class $AssetsAnimationsLottieGen {
   /// File path: assets/animations/lottie/fingerprint-white.json
   LottieGenImage get fingerprintWhite => const LottieGenImage('assets/animations/lottie/fingerprint-white.json');
 
+  /// File path: assets/animations/lottie/moony.json
+  LottieGenImage get moony => const LottieGenImage('assets/animations/lottie/moony.json');
+
+  /// File path: assets/animations/lottie/rainy.json
+  LottieGenImage get rainy => const LottieGenImage('assets/animations/lottie/rainy.json');
+
   /// File path: assets/animations/lottie/shuffle-loader-black-theme.json
   LottieGenImage get shuffleLoaderBlackTheme =>
       const LottieGenImage('assets/animations/lottie/shuffle-loader-black-theme.json');
@@ -91,16 +97,26 @@ class $AssetsAnimationsLottieGen {
   /// File path: assets/animations/lottie/star_outline.json
   LottieGenImage get starOutline => const LottieGenImage('assets/animations/lottie/star_outline.json');
 
+  /// File path: assets/animations/lottie/sunny.json
+  LottieGenImage get sunny => const LottieGenImage('assets/animations/lottie/sunny.json');
+
+  /// File path: assets/animations/lottie/windy.json
+  LottieGenImage get windy => const LottieGenImage('assets/animations/lottie/windy.json');
+
   /// List of all assets
   List<LottieGenImage> get values => [
         brokenHeart,
         wholeHeart,
         fingerprintBlack,
         fingerprintWhite,
+        moony,
+        rainy,
         shuffleLoaderBlackTheme,
         shuffleLoaderWhiteTheme,
         starFill,
-        starOutline
+        starOutline,
+        sunny,
+        windy
       ];
 }
 
@@ -1748,6 +1764,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/question.svg
   SvgGenImage get question => const SvgGenImage('assets/images/svg/question.svg');
 
+  /// File path: assets/images/svg/rain.svg
+  SvgGenImage get rain => const SvgGenImage('assets/images/svg/rain.svg');
+
   /// File path: assets/images/svg/record.svg
   SvgGenImage get record => const SvgGenImage('assets/images/svg/record.svg');
 
@@ -1884,6 +1903,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/sunglasses.svg
   SvgGenImage get sunglasses => const SvgGenImage('assets/images/svg/sunglasses.svg');
 
+  /// File path: assets/images/svg/sunny.svg
+  SvgGenImage get sunny => const SvgGenImage('assets/images/svg/sunny.svg');
+
   /// File path: assets/images/svg/swim.svg
   SvgGenImage get swim => const SvgGenImage('assets/images/svg/swim.svg');
 
@@ -1980,6 +2002,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/white_star_transparent_center.svg
   SvgGenImage get whiteStarTransparentCenter =>
       const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
+
+  /// File path: assets/images/svg/windy.svg
+  SvgGenImage get windy => const SvgGenImage('assets/images/svg/windy.svg');
 
   /// File path: assets/images/svg/x.svg
   SvgGenImage get x => const SvgGenImage('assets/images/svg/x.svg');
@@ -2200,6 +2225,7 @@ class $AssetsImagesSvgGen {
         profileOutline,
         profilePlus,
         question,
+        rain,
         record,
         refresh,
         restaurant,
@@ -2245,6 +2271,7 @@ class $AssetsImagesSvgGen {
         sufle,
         sun,
         sunglasses,
+        sunny,
         swim,
         swimming,
         table,
@@ -2277,6 +2304,7 @@ class $AssetsImagesSvgGen {
         waterpool,
         whiteStar,
         whiteStarTransparentCenter,
+        windy,
         x
       ];
 }
