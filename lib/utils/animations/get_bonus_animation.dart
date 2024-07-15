@@ -56,9 +56,9 @@ class _GetBonusAnimationState extends State<GetBonusAnimation> with TickerProvid
             return Transform.translate(
                 offset: Offset(_controllerRolling.value * 0.40.sw, 0.0),
                 child: Transform.rotate(
-                  angle: _controllerRolling.value * 15.7,
+                  angle: _controllerRolling.value * 15.72,
                   child:
-                      Transform.scale(alignment: Alignment.center, scale: _controllerScaling.value + 1, child: child),
+                  Transform.scale(alignment: Alignment.center, scale: _controllerScaling.value + 0.8, child: child),
                 ));
           },
           child: image,

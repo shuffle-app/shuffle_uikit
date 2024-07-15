@@ -426,7 +426,7 @@ class UiKitThemes {
       // dialBackgroundColor: ColorsFoundation.darkNeutral500
     ),
 
-    colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.deepPurple, onSurface: Colors.white),
+    colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.deepPurple, onSurface: Colors.white,brightness: Brightness.dark),
     // colorScheme:  const ColorScheme.light().copyWith(onSurface: Colors.white),
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(
@@ -573,7 +573,8 @@ class UiKitThemes {
           errorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
           focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.white, width: 0.5)),
           focusedErrorBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.error, width: 0.5)),
-          disabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
+          disabledBorder:
+              UnderlineInputBorder(borderSide: BorderSide(color: ColorsFoundation.darkNeutral900, width: 0.5)),
         ),
         customAppBapTheme: AppBarTheme(
           iconTheme: const IconThemeData(

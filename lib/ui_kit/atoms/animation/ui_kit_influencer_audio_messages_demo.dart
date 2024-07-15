@@ -25,7 +25,7 @@ class _UiKitInfluencerAudioMessagesDemoState extends State<UiKitInfluencerAudioM
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 0.3.sh,
+      height: 0.55.sw,
       width: 0.85.sw,
       child: Center(
         child: AnimatedSwitcher(
