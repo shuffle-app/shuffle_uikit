@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/atoms/profile/ui_reward_progress_model.dart';
 
 class HallOfFamePageExample extends StatelessWidget {
   const HallOfFamePageExample({super.key});

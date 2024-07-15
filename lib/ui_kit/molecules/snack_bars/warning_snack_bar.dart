@@ -20,12 +20,12 @@ class WarningSnackBar extends StatelessWidget implements SnackBarFactory {
         children: [
           DecoratedBox(
             decoration: BoxDecoration(
-              color: ColorsFoundation.info.withOpacity(0.16),
+              color: ColorsFoundation.warning.withOpacity(0.16),
               shape: BoxShape.circle,
             ),
             child: const Icon(
-              ShuffleUiKitIcons.info,
-              color: ColorsFoundation.info,
+              ShuffleUiKitIcons.warning,
+              color: ColorsFoundation.warning,
             ).paddingAll(EdgeInsetsFoundation.all6),
           ),
           SpacingFoundation.horizontalSpace8,

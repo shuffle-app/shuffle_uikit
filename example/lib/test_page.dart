@@ -52,10 +52,10 @@ class _TestPageState extends State<TestPage> with SingleTickerProviderStateMixin
         child: Column(
           children: [
             SizedBox(height: MediaQuery.of(context).viewPadding.top, width: 1.sw),
-            UiKitParalaxPhotoCard(
-              frontImage: GraphicsFoundation.instance.png.mockParalaxFrontImage.path,
-              backImage: GraphicsFoundation.instance.png.mockParalaxBackImage.path,
-            ),
+            // UiKitParalaxPhotoCard(
+            //   frontImage: GraphicsFoundation.instance.png.mockParalaxFrontImage.path,
+            //   backImage: GraphicsFoundation.instance.png.mockParalaxBackImage.path,
+            // ),
             // if (xFile != null && selectedImageBytes != null)
             //   UiKitPictureViewFinder(
             //     controller: controller,

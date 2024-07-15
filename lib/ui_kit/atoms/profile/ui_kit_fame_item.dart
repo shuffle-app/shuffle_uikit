@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
@@ -7,7 +8,7 @@ class UiKitFameItem extends StatefulWidget {
   final UiKitAchievementsModel? uiModel;
   final bool isAvailableForPreview;
   final bool preserveDarkTheme;
-  final VoidCallback? onTap;
+  final ValueChanged<String?>? onTap;
 
   const UiKitFameItem({
     super.key,
@@ -24,6 +25,7 @@ class UiKitFameItem extends StatefulWidget {
 class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
   UiKitAchievementsModel? uiModel;
   FileInfo? modelFile;
+  File? envFile;
   double? downloadProgress = 0;
   bool isLoading = false;
 
@@ -66,6 +68,14 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
   @override
   void initState() {
     uiModel = widget.uiModel;
+    CustomCacheManager.personsInstance
+        .getSingleFile(
+        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/3dmodels/environments/Space_2_sn.hdr')
+        .then((value) {
+      setState(() {
+        envFile = value;
+      });
+    });
     if (uiModel?.objectUrl != null) {
       CustomCacheManager.personsInstance.getFileStream(uiModel!.objectUrl!).listen((value) {
         if (value.runtimeType == DownloadProgress) {
@@ -109,18 +119,18 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final backgroundColor =
-        (widget.preserveDarkTheme ? ColorsFoundation.darkNeutral100 : theme?.colorScheme.grayForegroundColor)
-            ?.withOpacity(0.16);
+    (widget.preserveDarkTheme ? ColorsFoundation.darkNeutral100 : theme?.colorScheme.grayForegroundColor)
+        ?.withOpacity(0.16);
 
     return GestureDetector(
         onTap: widget.isAvailableForPreview
             ? () {
-                if (modelFile != null && widget.onTap != null) {
-                  widget.onTap!.call();
-                } else {
-                  SnackBarUtils.show(message: 'Waiting for model to download', context: context);
-                }
-              }
+          if (modelFile != null && widget.onTap != null) {
+            widget.onTap!.call(modelFile?.file.path);
+          } else {
+            SnackBarUtils.show(message: 'Waiting for model to download', context: context);
+          }
+        }
             : null,
         child: Stack(
           alignment: Alignment.center,
@@ -146,10 +156,11 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
                 width: 45,
                 fit: BoxFit.contain,
               ),
-            ...listOfStars.entries.map((e) => Transform.translate(
-                offset: e.value,
-                child: uiModel != null
-                    ? UiKitFloatingAnimation(
+            ...listOfStars.entries.map((e) =>
+                Transform.translate(
+                    offset: e.value,
+                    child: uiModel != null
+                        ? UiKitFloatingAnimation(
                         child: GradientableWidget(
                             active: uiModel != null,
                             gradient: GradientFoundation.defaultRadialGradient,
@@ -160,7 +171,7 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
                               svgAsset: GraphicsFoundation.instance.svg.star2,
                               color: uiModel != null ? Colors.white : backgroundColor,
                             )))
-                    : GradientableWidget(
+                        : GradientableWidget(
                         active: uiModel != null,
                         gradient: GradientFoundation.defaultRadialGradient,
                         child: ImageWidget(

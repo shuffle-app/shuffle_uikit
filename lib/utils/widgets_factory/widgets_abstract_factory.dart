@@ -91,6 +91,14 @@ abstract class WidgetsAbstractFactory {
     BorderRadius? borderRadius,
   });
 
+  ButtonFactory createMidSizeOutlinedButton({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+    bool? blurred,
+    Gradient? gradient,
+    double? blurValue,
+  });
+
   ButtonFactory createColoredButtonWithBorderRadius({
     required BaseUiKitButtonData data,
     BorderRadius? borderRadius,
@@ -295,6 +303,29 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       backgroundColor: data.backgroundColor,
       isSelected: isSelected,
     );
+  }
+
+  @override
+  ButtonFactory createMidSizeOutlinedButton({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+    bool? blurred,
+    Gradient? gradient,
+    double? blurValue,
+  }) {
+    final hasIcon = data.iconWidget != null || data.iconInfo != null;
+    if (hasIcon) {
+      return MidSizeOutlinedIconButton(
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
+        onPressed: data.onPressed,
+        loading: data.loading,
+        borderColor: data.borderColor,
+        fit: data.fit,
+      );
+    }
+
+    throw UnimplementedError('Mid size outlined button with your parameters is not implemented');
   }
 
   @override

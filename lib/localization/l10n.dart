@@ -295,10 +295,10 @@ class S {
     );
   }
 
-  /// `Invites {invitedPeopleCount} people to`
-  String InvitesNPeopleTo(Object invitedPeopleCount) {
+  /// `Invites {invitedPeopleCount, plural, =0{{invitedPeopleCount} people} =1{{invitedPeopleCount} person} =2{{invitedPeopleCount} people} few{{invitedPeopleCount} people} many{{invitedPeopleCount} people} other{{invitedPeopleCount} people}} to`
+  String InvitesNPeopleTo(num invitedPeopleCount) {
     return Intl.message(
-      'Invites $invitedPeopleCount people to',
+      'Invites ${Intl.plural(invitedPeopleCount, zero: '$invitedPeopleCount people', one: '$invitedPeopleCount person', two: '$invitedPeopleCount people', few: '$invitedPeopleCount people', many: '$invitedPeopleCount people', other: '$invitedPeopleCount people')} to',
       name: 'InvitesNPeopleTo',
       desc: '',
       args: [invitedPeopleCount],
@@ -6578,6 +6578,73 @@ class S {
     );
   }
 
+  /// `No messages yet`
+  String get NoMessagesYet {
+    return Intl.message(
+      'No messages yet',
+      name: 'NoMessagesYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crated on {creationDate}.\nWill be deleted {deletionDate}`
+  String ChatDeletionAndCreationMessage(
+      Object creationDate, Object deletionDate) {
+    return Intl.message(
+      'Crated on $creationDate.\nWill be deleted $deletionDate',
+      name: 'ChatDeletionAndCreationMessage',
+      desc: '',
+      args: [creationDate, deletionDate],
+    );
+  }
+
+  /// `{count, plural, =0{{count} members} =1{{count} member} =2{{count} members} few{{count} members} many{{count} members} other{{count} members}}`
+  String MembersCount(num count) {
+    return Intl.plural(
+      count,
+      zero: '$count members',
+      one: '$count member',
+      two: '$count members',
+      few: '$count members',
+      many: '$count members',
+      other: '$count members',
+      name: 'MembersCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Replying to {message}`
+  String ReplyingTo(Object message) {
+    return Intl.message(
+      'Replying to $message',
+      name: 'ReplyingTo',
+      desc: '',
+      args: [message],
+    );
+  }
+
+  /// `Invited people`
+  String get InvitedPeople {
+    return Intl.message(
+      'Invited people',
+      name: 'InvitedPeople',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Plz respect your choice and others' feelings`
+  String get AlreadyInvited {
+    return Intl.message(
+      'Plz respect your choice and others\' feelings',
+      name: 'AlreadyInvited',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Spend`
   String get Spend {
     return Intl.message(
@@ -6779,6 +6846,76 @@ class S {
     return Intl.message(
       'Strange ring. We don\'t know why it is here...',
       name: 'UnknownRingDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invites`
+  String get Invites {
+    return Intl.message(
+      'Invites',
+      name: 'Invites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invites`
+  String get InvitesVerb {
+    return Intl.message(
+      'Invites',
+      name: 'InvitesVerb',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To`
+  String get InvitesTo {
+    return Intl.message(
+      'To',
+      name: 'InvitesTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sure you want to exit?`
+  String get SureYouWantToExit {
+    return Intl.message(
+      'Sure you want to exit?',
+      name: 'SureYouWantToExit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can no longer send messages to {name}`
+  String YouWillNoLongerSendMessagesTo(Object name) {
+    return Intl.message(
+      'You can no longer send messages to $name',
+      name: 'YouWillNoLongerSendMessagesTo',
+      desc: '',
+      args: [name],
+    );
+  }
+
+  /// `Sure you want to delete {name}?`
+  String YouSureToDeleteX(Object name) {
+    return Intl.message(
+      'Sure you want to delete $name?',
+      name: 'YouSureToDeleteX',
+      desc: '',
+      args: [name],
+    );
+  }
+
+  /// `Message not found`
+  String get MessageNotFound {
+    return Intl.message(
+      'Message not found',
+      name: 'MessageNotFound',
       desc: '',
       args: [],
     );

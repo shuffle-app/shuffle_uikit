@@ -27,7 +27,7 @@
   "ChooseYourself": "खुद को चुनें",
   "NoHealthKitAvailableOnYourDevice": "आपके डिवाइस पर कोई स्वास्थ्य किट उपलब्ध नहीं है, इसलिए परिणाम यादृच्छिक होगा",
   "InvitesYouTo": "आपको आमंत्रित करता है",
-  "InvitesNPeopleTo": "{invitedPeopleCount} लोगों को आमंत्रित करता है",
+  "InvitesNPeopleTo": "{invitedPeopleCount, बहुवचन, =0{{invitedPeopleCount} लोग} =1{{invitedPeopleCount} व्यक्ति} =2{{invitedPeopleCount} लोग} कुछ{{invitedPeopleCount} लोग} अनेक{{invitedPeopleCount} लोग} अन्य{{invitedPeopleCount} लोग}} को आमंत्रित करता है",
   "NotNow": "अभी नहीं",
   "Go": "आगे बढ़ो",
   "InviteMore": "और अधिक को आमंत्रित करें",
@@ -638,6 +638,12 @@
   "Influencer": "Influencer",
   "EntertainmentSpecialist": "Entertainment specialist",
   "GoPremium": "Go premiun",
+  "NoMessagesYet": "No messages yet",
+  "ChatDeletionAndCreationMessage": "Crated on {creationDate}.\nWill be deleted {deletionDate}",
+  "MembersCount": "{count, plural, =0{{count} members} =1{{count} member} =2{{count} members} few{{count} members} many{{count} members} other{{count} members}}",
+  "InvitedPeople": "Invited people",
+  "ReplyingTo": "Replying to {message}",
+  "AlreadyInvited": "Plz respect your choice and others' feelings",
   "GoProFree": "GO pro free",
   "Spend": "Spend",
   "ChallengeFeelings": "Challenge Feelings",
@@ -658,7 +664,14 @@
   "FocusOfLight": "Focus of Light",
   "FocusOfLightDescription": "The Light of the universe is contained here. If it gets darker in your soul, the light is with you. Look and be filled with peace.",
   "UnknownRing": "Unknown Ring",
-  "UnknownRingDescription": "Strange ring. We don't know why it is here..."
+  "UnknownRingDescription": "Strange ring. We don't know why it is here...",
+  "Invites": "Invites",
+  "InvitesVerb": "Invites",
+  "InvitesTo": "To",
+  "SureYouWantToExit":  "Sure you want to exit?",
+  "YouWillNoLongerSendMessagesTo": "You can no longer send messages to {name}",
+  "YouSureToDeleteX": "Sure you want to delete {name}?",
+  "MessageNotFound": "Message not found"
 
 
 }

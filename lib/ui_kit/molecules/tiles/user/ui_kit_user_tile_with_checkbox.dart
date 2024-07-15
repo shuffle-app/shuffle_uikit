@@ -7,6 +7,8 @@ class UiKitUserTileWithCheckbox extends StatefulWidget {
     super.key,
     required this.name,
     required this.onTap,
+    this.onDisabledTap,
+    this.disableSelection = false,
     this.rating = 0,
     this.avatarLink,
     this.isSelected = false,
@@ -20,9 +22,11 @@ class UiKitUserTileWithCheckbox extends StatefulWidget {
   final String? avatarLink;
   final bool isSelected;
   final ValueChanged<bool> onTap;
+  final VoidCallback? onDisabledTap;
   final DateTime? date;
   final String? subtitle;
   final bool? handShake;
+  final bool disableSelection;
 
   @override
   State<UiKitUserTileWithCheckbox> createState() => _UiKitUserTileWithCheckboxState();
@@ -49,12 +53,21 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
 
     return GestureDetector(
       onTap: () {
+        if (widget.disableSelection) {
+          widget.onDisabledTap?.call();
+          return;
+        }
         setState(() => _isSelected = !_isSelected);
         widget.onTap.call(_isSelected);
       },
       child: Row(
         children: [
-          UiKitCheckbox(isActive: _isSelected, borderColor: theme?.colorScheme.surface5),
+          UiKitCheckbox(
+            isActive: _isSelected,
+            borderColor: theme?.colorScheme.surface5,
+            disabled: widget.disableSelection,
+            disabledTapReaction: widget.onDisabledTap,
+          ),
           Expanded(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -126,7 +139,7 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                             Text(
                               DateFormat('MMM dd').format(widget.date!),
                               style: theme?.boldTextTheme.caption1Medium.copyWith(
-                                color: theme.colorScheme.darkNeutral100,
+                                color: theme.colorScheme.bodyTypography,
                               ),
                             ),
                           ],
