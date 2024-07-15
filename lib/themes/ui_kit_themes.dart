@@ -11,6 +11,16 @@ class UiKitThemes {
   );
 
   late final lightThemeData = defaultThemeData.copyWith(
+    popupMenuTheme: const PopupMenuThemeData(
+      color: Colors.black,
+      textStyle: TextStyle(
+        fontFamily: 'Unbounded',
+        fontSize: 16,
+        fontWeight: FontWeight.w300,
+        color: Color(0xffffffff),
+        package: 'shuffle_uikit',
+      ),
+    ),
     scaffoldBackgroundColor: ColorsFoundation.lightSurface,
     iconTheme: const IconThemeData(color: ColorsFoundation.solidLightSurface),
     colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.deepPurple, onSurface: Colors.black),
@@ -300,6 +310,16 @@ class UiKitThemes {
     ],
   );
   late final defaultThemeData = ThemeData(
+    popupMenuTheme: const PopupMenuThemeData(
+      color: Colors.white,
+      textStyle: TextStyle(
+        fontFamily: 'Unbounded',
+        fontSize: 16,
+        fontWeight: FontWeight.w300,
+        color: Color(0x00000000),
+        package: 'shuffle_uikit',
+      ),
+    ),
     scaffoldBackgroundColor: Colors.black,
     useMaterial3: false,
     splashColor: ColorsFoundation.darkNeutral500.withOpacity(0.24),
@@ -426,7 +446,8 @@ class UiKitThemes {
       // dialBackgroundColor: ColorsFoundation.darkNeutral500
     ),
 
-    colorScheme: ColorScheme.fromSeed(seedColor: UiKitColors.deepPurple, onSurface: Colors.white,brightness: Brightness.dark),
+    colorScheme:
+        ColorScheme.fromSeed(seedColor: UiKitColors.deepPurple, onSurface: Colors.white, brightness: Brightness.dark),
     // colorScheme:  const ColorScheme.light().copyWith(onSurface: Colors.white),
     extensions: <ThemeExtension<UiKitThemeData>>[
       UiKitThemeData(

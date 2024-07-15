@@ -5,10 +5,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class SupportShuffleButton extends StatelessWidget {
   final ValueChanged<int>? onDonate;
+  final VoidCallback? onCustomDonate;
 
   const SupportShuffleButton({
     super.key,
     this.onDonate,
+    this.onCustomDonate,
   });
 
   @override
@@ -20,7 +22,7 @@ class SupportShuffleButton extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       color: context.uiKitTheme?.colorScheme.surface2,
       child: InkWell(
-        onTap: () => showGeneralDialog(
+        onTap: onCustomDonate ?? () => showGeneralDialog(
           context: context,
           transitionBuilder: (context, animation1, animation2, child) => BackdropFilter(
             filter: ImageFilter.blur(sigmaX: animation1.value * 30, sigmaY: animation1.value * 30),
