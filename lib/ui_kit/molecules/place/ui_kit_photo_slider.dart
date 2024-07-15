@@ -11,6 +11,7 @@ class UiKitPhotoSlider extends StatefulWidget {
   final int maxShowImage;
   final VoidCallback? onTap;
   final List<Widget>? actions;
+  final PlaceWeatherType? weatherType;
 
   const UiKitPhotoSlider({
     super.key,
@@ -20,6 +21,7 @@ class UiKitPhotoSlider extends StatefulWidget {
     this.maxShowImage = 3,
     this.onTap,
     this.actions,
+    this.weatherType,
   });
 
   @override
@@ -84,6 +86,8 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   }
 
   Widget _buildFirstItem(BaseUiKitMedia item) {
+    debugPrint('WEATHER TYPE IS=======> ${widget.weatherType}');
+
     return Positioned(
       left: _cardAnimation.left,
       right: widget.media.length == 1 ? 0 : _cardAnimation.right,
@@ -109,6 +113,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         child: SliderPhotoCard(
           media: item,
           givenSize: Size(widget.width, height),
+          weatherType: widget.weatherType,
         ),
       ),
     );
@@ -116,6 +121,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 
   Widget _buildLeftItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
     final theme = context.uiKitTheme;
+    debugPrint('WEATHER TYPE IS=======> ${widget.weatherType}');
 
     return AnimatedPositioned(
         duration: _animDuration,
@@ -130,12 +136,14 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
           child: SliderPhotoCard(
             media: item,
             givenSize: Size(widget.width - 55, height * (1 - differenceFromFirstCard * 0.1)),
+            weatherType: widget.weatherType,
           ),
         ));
   }
 
   Widget _buildRightItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
     final theme = context.uiKitTheme;
+    debugPrint('WEATHER TYPE IS=======> ${widget.weatherType}');
 
     return AnimatedPositioned(
       duration: _animDuration,
@@ -150,6 +158,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
           child: SliderPhotoCard(
             media: item,
             givenSize: Size(widget.width - 55, height * (1 - differenceFromFirstCard * 0.1)),
+            weatherType: widget.weatherType,
           )),
     );
   }

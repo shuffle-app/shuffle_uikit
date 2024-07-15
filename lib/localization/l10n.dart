@@ -6577,6 +6577,212 @@ class S {
       args: [],
     );
   }
+
+  /// `Spend`
+  String get Spend {
+    return Intl.message(
+      'Spend',
+      name: 'Spend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Challenge Feelings`
+  String get ChallengeFeelings {
+    return Intl.message(
+      'Challenge Feelings',
+      name: 'ChallengeFeelings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{Feedback} =1{Feedback} =2{Feedbacks} few{Feedbacks} many{Feedbacks} other{Feedbacks}}`
+  String Feedbacks(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'Feedback', one: 'Feedback', two: 'Feedbacks', few: 'Feedbacks', many: 'Feedbacks', other: 'Feedbacks')}',
+      name: 'Feedbacks',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Share {count} {count, plural, =0{card} =1{card} =2{cards} few{cards} many{cards} other{cards}}`
+  String ShareCard(num count) {
+    return Intl.message(
+      'Share $count ${Intl.plural(count, zero: 'card', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')}',
+      name: 'ShareCard',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Login to app {count} {count, plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}} in a row`
+  String LoginToAppDaysInARow(num count) {
+    return Intl.message(
+      'Login to app $count ${Intl.plural(count, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')} in a row',
+      name: 'LoginToAppDaysInARow',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Spend {count} {count, plural, =0{hours} =1{hour} =2{hours} few{hours} many{hours} other{hours}} per week`
+  String SpendHoursPerWeek(num count) {
+    return Intl.message(
+      'Spend $count ${Intl.plural(count, zero: 'hours', one: 'hour', two: 'hours', few: 'hours', many: 'hours', other: 'hours')} per week',
+      name: 'SpendHoursPerWeek',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Connects`
+  String get Connects {
+    return Intl.message(
+      'Connects',
+      name: 'Connects',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{cards} =1{card} =2{cards} few{cards} many{cards} other{cards}} opening`
+  String CardOpening(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'cards', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} opening',
+      name: 'CardOpening',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Offer content`
+  String get OfferContent {
+    return Intl.message(
+      'Offer content',
+      name: 'OfferContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bookigns`
+  String get Bookigns {
+    return Intl.message(
+      'Bookigns',
+      name: 'Bookigns',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =0{points} =1{point} =2{points} few{points} many{points} other{points}}`
+  String PointsCount(num count) {
+    return Intl.plural(
+      count,
+      zero: 'points',
+      one: 'point',
+      two: 'points',
+      few: 'points',
+      many: 'points',
+      other: 'points',
+      name: 'PointsCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{Reviews} =1{Review} =2{Reviews} few{Reviews} many{Reviews} other{Reviews}}`
+  String ReviewsCount(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'Reviews', one: 'Review', two: 'Reviews', few: 'Reviews', many: 'Reviews', other: 'Reviews')}',
+      name: 'ReviewsCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Shraziid goblet`
+  String get ShraziidGoblet {
+    return Intl.message(
+      'Shraziid goblet',
+      name: 'ShraziidGoblet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An ancient goblet found in the desert sands. They say that Shraziid himself, the ruler of the great Sand Kingdom, drank from it.`
+  String get ShraziidGobletDescription {
+    return Intl.message(
+      'An ancient goblet found in the desert sands. They say that Shraziid himself, the ruler of the great Sand Kingdom, drank from it.',
+      name: 'ShraziidGobletDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lucky Coin`
+  String get LuckyCoin {
+    return Intl.message(
+      'Lucky Coin',
+      name: 'LuckyCoin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `As long as you have it in your inventory, good luck is with you. Twist it, turn it, touch it to be filled with the energy of good luck.`
+  String get LuckyCoinDescription {
+    return Intl.message(
+      'As long as you have it in your inventory, good luck is with you. Twist it, turn it, touch it to be filled with the energy of good luck.',
+      name: 'LuckyCoinDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Focus of Light`
+  String get FocusOfLight {
+    return Intl.message(
+      'Focus of Light',
+      name: 'FocusOfLight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Light of the universe is contained here. If it gets darker in your soul, the light is with you. Look and be filled with peace.`
+  String get FocusOfLightDescription {
+    return Intl.message(
+      'The Light of the universe is contained here. If it gets darker in your soul, the light is with you. Look and be filled with peace.',
+      name: 'FocusOfLightDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown Ring`
+  String get UnknownRing {
+    return Intl.message(
+      'Unknown Ring',
+      name: 'UnknownRing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Strange ring. We don't know why it is here...`
+  String get UnknownRingDescription {
+    return Intl.message(
+      'Strange ring. We don\'t know why it is here...',
+      name: 'UnknownRingDescription',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

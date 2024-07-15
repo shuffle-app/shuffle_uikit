@@ -77,6 +77,12 @@ class $AssetsAnimationsLottieGen {
   /// File path: assets/animations/lottie/fingerprint-white.json
   LottieGenImage get fingerprintWhite => const LottieGenImage('assets/animations/lottie/fingerprint-white.json');
 
+  /// File path: assets/animations/lottie/moony.json
+  LottieGenImage get moony => const LottieGenImage('assets/animations/lottie/moony.json');
+
+  /// File path: assets/animations/lottie/rainy.json
+  LottieGenImage get rainy => const LottieGenImage('assets/animations/lottie/rainy.json');
+
   /// File path: assets/animations/lottie/shuffle-loader-black-theme.json
   LottieGenImage get shuffleLoaderBlackTheme =>
       const LottieGenImage('assets/animations/lottie/shuffle-loader-black-theme.json');
@@ -91,16 +97,26 @@ class $AssetsAnimationsLottieGen {
   /// File path: assets/animations/lottie/star_outline.json
   LottieGenImage get starOutline => const LottieGenImage('assets/animations/lottie/star_outline.json');
 
+  /// File path: assets/animations/lottie/sunny.json
+  LottieGenImage get sunny => const LottieGenImage('assets/animations/lottie/sunny.json');
+
+  /// File path: assets/animations/lottie/windy.json
+  LottieGenImage get windy => const LottieGenImage('assets/animations/lottie/windy.json');
+
   /// List of all assets
   List<LottieGenImage> get values => [
         brokenHeart,
         wholeHeart,
         fingerprintBlack,
         fingerprintWhite,
+        moony,
+        rainy,
         shuffleLoaderBlackTheme,
         shuffleLoaderWhiteTheme,
         starFill,
-        starOutline
+        starOutline,
+        sunny,
+        windy
       ];
 }
 
@@ -454,6 +470,72 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Yoga.png
   AssetGenImage get yoga => const AssetGenImage('assets/images/png/Yoga.png');
+
+  /// File path: assets/images/png/_no-bg-booking-w.png
+  AssetGenImage get aNoBgBookingW => const AssetGenImage('assets/images/png/_no-bg-booking-w.png');
+
+  /// File path: assets/images/png/_no-bg-booking.png
+  AssetGenImage get aNoBgBooking => const AssetGenImage('assets/images/png/_no-bg-booking.png');
+
+  /// File path: assets/images/png/_no-bg-eye-w.png
+  AssetGenImage get aNoBgEyeW => const AssetGenImage('assets/images/png/_no-bg-eye-w.png');
+
+  /// File path: assets/images/png/_no-bg-eye.png
+  AssetGenImage get aNoBgEye => const AssetGenImage('assets/images/png/_no-bg-eye.png');
+
+  /// File path: assets/images/png/_no-bg-handshake-w.png
+  AssetGenImage get aNoBgHandshakeW => const AssetGenImage('assets/images/png/_no-bg-handshake-w.png');
+
+  /// File path: assets/images/png/_no-bg-handshake.png
+  AssetGenImage get aNoBgHandshake => const AssetGenImage('assets/images/png/_no-bg-handshake.png');
+
+  /// File path: assets/images/png/_no-bg-hourglass-w.png
+  AssetGenImage get aNoBgHourglassW => const AssetGenImage('assets/images/png/_no-bg-hourglass-w.png');
+
+  /// File path: assets/images/png/_no-bg-hourglass.png
+  AssetGenImage get aNoBgHourglass => const AssetGenImage('assets/images/png/_no-bg-hourglass.png');
+
+  /// File path: assets/images/png/_no-bg-index_finger-w.png
+  AssetGenImage get aNoBgIndexFingerW => const AssetGenImage('assets/images/png/_no-bg-index_finger-w.png');
+
+  /// File path: assets/images/png/_no-bg-index_finger.png
+  AssetGenImage get aNoBgIndexFinger => const AssetGenImage('assets/images/png/_no-bg-index_finger.png');
+
+  /// File path: assets/images/png/_no-bg-like-w.png
+  AssetGenImage get aNoBgLikeW => const AssetGenImage('assets/images/png/_no-bg-like-w.png');
+
+  /// File path: assets/images/png/_no-bg-like_icon.png
+  AssetGenImage get aNoBgLikeIcon => const AssetGenImage('assets/images/png/_no-bg-like_icon.png');
+
+  /// File path: assets/images/png/_no-bg-message.png
+  AssetGenImage get aNoBgMessage => const AssetGenImage('assets/images/png/_no-bg-message.png');
+
+  /// File path: assets/images/png/_no-bg-message_bubble-w.png
+  AssetGenImage get aNoBgMessageBubbleW => const AssetGenImage('assets/images/png/_no-bg-message_bubble-w.png');
+
+  /// File path: assets/images/png/_no-bg-open_hand-w.png
+  AssetGenImage get aNoBgOpenHandW => const AssetGenImage('assets/images/png/_no-bg-open_hand-w.png');
+
+  /// File path: assets/images/png/_no-bg-open_hand.png
+  AssetGenImage get aNoBgOpenHand => const AssetGenImage('assets/images/png/_no-bg-open_hand.png');
+
+  /// File path: assets/images/png/_no-bg-share-w.png
+  AssetGenImage get aNoBgShareW => const AssetGenImage('assets/images/png/_no-bg-share-w.png');
+
+  /// File path: assets/images/png/_no-bg-share.png
+  AssetGenImage get aNoBgShare => const AssetGenImage('assets/images/png/_no-bg-share.png');
+
+  /// File path: assets/images/png/_no-bg-two_fingers_up-w.png
+  AssetGenImage get aNoBgTwoFingersUpW => const AssetGenImage('assets/images/png/_no-bg-two_fingers_up-w.png');
+
+  /// File path: assets/images/png/_no-bg-victory-hands.png
+  AssetGenImage get aNoBgVictoryHands => const AssetGenImage('assets/images/png/_no-bg-victory-hands.png');
+
+  /// File path: assets/images/png/_no-bg-walking_man-w.png
+  AssetGenImage get aNoBgWalkingManW => const AssetGenImage('assets/images/png/_no-bg-walking_man-w.png');
+
+  /// File path: assets/images/png/_no-bg-walking_man.png
+  AssetGenImage get aNoBgWalkingMan => const AssetGenImage('assets/images/png/_no-bg-walking_man.png');
 
   /// File path: assets/images/png/atheist.png
   AssetGenImage get atheist => const AssetGenImage('assets/images/png/atheist.png');
@@ -903,6 +985,28 @@ class $AssetsImagesPngGen {
         visitFirst,
         windy,
         yoga,
+        aNoBgBookingW,
+        aNoBgBooking,
+        aNoBgEyeW,
+        aNoBgEye,
+        aNoBgHandshakeW,
+        aNoBgHandshake,
+        aNoBgHourglassW,
+        aNoBgHourglass,
+        aNoBgIndexFingerW,
+        aNoBgIndexFinger,
+        aNoBgLikeW,
+        aNoBgLikeIcon,
+        aNoBgMessage,
+        aNoBgMessageBubbleW,
+        aNoBgOpenHandW,
+        aNoBgOpenHand,
+        aNoBgShareW,
+        aNoBgShare,
+        aNoBgTwoFingersUpW,
+        aNoBgVictoryHands,
+        aNoBgWalkingManW,
+        aNoBgWalkingMan,
         atheist,
         atmosphere,
         balloons,
@@ -1660,6 +1764,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/question.svg
   SvgGenImage get question => const SvgGenImage('assets/images/svg/question.svg');
 
+  /// File path: assets/images/svg/rain.svg
+  SvgGenImage get rain => const SvgGenImage('assets/images/svg/rain.svg');
+
   /// File path: assets/images/svg/record.svg
   SvgGenImage get record => const SvgGenImage('assets/images/svg/record.svg');
 
@@ -1796,6 +1903,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/sunglasses.svg
   SvgGenImage get sunglasses => const SvgGenImage('assets/images/svg/sunglasses.svg');
 
+  /// File path: assets/images/svg/sunny.svg
+  SvgGenImage get sunny => const SvgGenImage('assets/images/svg/sunny.svg');
+
   /// File path: assets/images/svg/swim.svg
   SvgGenImage get swim => const SvgGenImage('assets/images/svg/swim.svg');
 
@@ -1892,6 +2002,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/white_star_transparent_center.svg
   SvgGenImage get whiteStarTransparentCenter =>
       const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
+
+  /// File path: assets/images/svg/windy.svg
+  SvgGenImage get windy => const SvgGenImage('assets/images/svg/windy.svg');
 
   /// File path: assets/images/svg/x.svg
   SvgGenImage get x => const SvgGenImage('assets/images/svg/x.svg');
@@ -2112,6 +2225,7 @@ class $AssetsImagesSvgGen {
         profileOutline,
         profilePlus,
         question,
+        rain,
         record,
         refresh,
         restaurant,
@@ -2157,6 +2271,7 @@ class $AssetsImagesSvgGen {
         sufle,
         sun,
         sunglasses,
+        sunny,
         swim,
         swimming,
         table,
@@ -2189,6 +2304,7 @@ class $AssetsImagesSvgGen {
         waterpool,
         whiteStar,
         whiteStarTransparentCenter,
+        windy,
         x
       ];
 }
