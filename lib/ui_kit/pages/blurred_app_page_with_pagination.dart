@@ -64,7 +64,6 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
     double expandedHeight = appBarBody == null ? toolbarHeight : customToolbarHeight ?? 190.0;
 
     return CustomScrollView(
-      controller: scrollController,
       physics: physics ?? (Platform.isIOS ? const BouncingScrollPhysics() : const ClampingScrollPhysics()),
       cacheExtent: 0.5.sh,
       keyboardDismissBehavior: keyboardDismissBehavior ?? ScrollViewKeyboardDismissBehavior.manual,
@@ -120,7 +119,7 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
               height: 1.sh - expandedHeight - (bodyBottomSpace ?? 0) - (visible ? 0.4.sh : 0),
               width: 1.sw,
               child: PagedListView.separated(
-                key: ValueKey(paginationController.itemList?.length),
+                scrollController: scrollController,
                 padding: reverse
                     ? EdgeInsets.only(
                         top: padding?.top ?? 0,

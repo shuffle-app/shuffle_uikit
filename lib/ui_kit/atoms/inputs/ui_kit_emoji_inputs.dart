@@ -49,6 +49,7 @@ class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final colorScheme = theme?.colorScheme;
 
     return Column(
       children: [
@@ -63,7 +64,10 @@ class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
                   });
                 },
                 child: UiKitInputFieldRightIcon(
+                  hintText: S.current.TypeHere,
+                  fillColor: colorScheme?.surface3,
                   focusNode: widget.inputFieldFocusNode,
+                  maxLines: 3,
                   onTap: () {
                     setState(() {
                       _showKeyboard = true;
@@ -71,38 +75,45 @@ class _UiKitEmojiInputFieldState extends State<UiKitEmojiInputField> {
                     });
                   },
                   controller: widget.textEditingController,
-                  icon: TapRegion(
-                    groupId: _emojiTapRegion,
-                    child: context.iconButtonNoPadding(
-                      data: BaseUiKitButtonData(
-                        iconInfo: BaseUiKitButtonIconData(
-                          iconData: ShuffleUiKitIcons.moodhappy,
+                  icon: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      TapRegion(
+                        groupId: _emojiTapRegion,
+                        child: context.iconButtonNoPadding(
+                          data: BaseUiKitButtonData(
+                            iconInfo: BaseUiKitButtonIconData(
+                              iconData: ShuffleUiKitIcons.moodhappy,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                _showEmojiPicker = !_showEmojiPicker;
+                                FocusScope.of(context).requestFocus(FocusNode());
+                              });
+                            },
+                          ),
                         ),
-                        onPressed: () {
-                          setState(() {
-                            _showEmojiPicker = !_showEmojiPicker;
-                            FocusScope.of(context).requestFocus(FocusNode());
-                          });
-                        },
                       ),
-                    ),
+                      SpacingFoundation.horizontalSpace8,
+                      GradientableWidget(
+                        gradient: GradientFoundation.defaultRadialGradient,
+                        child: context.iconButtonNoPadding(
+                          data: BaseUiKitButtonData(
+                            iconInfo: BaseUiKitButtonIconData(
+                              iconData: ShuffleUiKitIcons.send,
+                              size: 0.07.sw,
+                              color: Colors.white,
+                            ),
+                            onPressed: () {
+                              widget.inputFieldFocusNode.requestFocus();
+                              widget.onSend();
+                            },
+                          ),
+                        ),
+                      ),
+                      SpacingFoundation.horizontalSpace16,
+                    ],
                   ),
-                ),
-              ),
-            ),
-            SpacingFoundation.horizontalSpace8,
-            GradientableWidget(
-              gradient: GradientFoundation.defaultRadialGradient,
-              child: context.iconButtonNoPadding(
-                data: BaseUiKitButtonData(
-                  iconInfo: BaseUiKitButtonIconData(
-                    iconData: ShuffleUiKitIcons.send,
-                    size: 0.07.sw,
-                  ),
-                  onPressed: () {
-                    widget.inputFieldFocusNode.requestFocus();
-                    widget.onSend();
-                  },
                 ),
               ),
             ),

@@ -624,6 +624,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Members": m31,
         "MembersCount": m32,
         "Message": MessageLookupByLibrary.simpleMessage("Сообщение"),
+        "MessageNotFound":
+            MessageLookupByLibrary.simpleMessage("Сообщение не найдено"),
         "Messages": MessageLookupByLibrary.simpleMessage("Сообщения"),
         "Min": MessageLookupByLibrary.simpleMessage("мин"),
         "MinutesAgo": m33,

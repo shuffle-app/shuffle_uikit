@@ -11,21 +11,35 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
     required this.replyText,
     required this.replySenderName,
     required this.id,
+    required this.showAvatar,
+    required this.replyMessageId,
+    this.senderNickname,
     this.text,
     this.child,
     this.onReplyMessage,
+    this.avatarUrl,
+    this.senderName,
+    this.senderType,
   });
 
   final String replyUserAvatar;
   final String replySenderName;
+  final String? senderNickname;
+  final String? avatarUrl;
+  final String? senderName;
+  final UserTileType? senderType;
   final UserTileType replyUserType;
-  final VoidCallback? onReplyMassageTap;
+  final ValueChanged<int>? onReplyMassageTap;
   final ValueChanged<int>? onReplyMessage;
   final DateTime timeOfDay;
   final String? text;
   final String replyText;
   final Widget? child;
   final int id;
+  final int replyMessageId;
+  final bool showAvatar;
+
+  bool get _dataIsValid => avatarUrl != null && senderName != null && senderType != null;
 
   @override
   Widget build(BuildContext context) {
@@ -46,16 +60,44 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            formatChatMessageDate(timeOfDay.toLocal()),
-            style: theme?.regularTextTheme.caption2.copyWith(
-              color: theme.colorScheme.darkNeutral900,
-            ),
+          SizedBox(
+            width: 1.sw -
+                EdgeInsetsFoundation.horizontal16 -
+                EdgeInsetsFoundation.horizontal16 -
+                EdgeInsetsFoundation.horizontal20 -
+                EdgeInsetsFoundation.horizontal8,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                if (senderNickname != null)
+                  Text(
+                    '@$senderNickname',
+                    style: theme?.regularTextTheme.caption2.copyWith(
+                      color: ColorsFoundation.mutedText,
+                    ),
+                  ),
+                Text(
+                  formatChatMessageDate(timeOfDay.toLocal()),
+                  style: theme?.regularTextTheme.caption2.copyWith(
+                    color: theme.colorScheme.darkNeutral900,
+                  ),
+                ),
+              ],
+            ).paddingOnly(left: 0.0625.sw),
           ),
           SpacingFoundation.verticalSpace2,
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              if (showAvatar && _dataIsValid)
+                context
+                    .userAvatar(
+                      size: UserAvatarSize.x20x20,
+                      type: senderType!,
+                      userName: senderName!,
+                      imageUrl: avatarUrl!,
+                    )
+                    .paddingOnly(right: EdgeInsetsFoundation.horizontal8),
               CustomPaint(
                 painter: _MessageTriangle(
                   color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white,
@@ -68,7 +110,7 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
                       ? Column(
                           children: [
                             GestureDetector(
-                              onTap: onReplyMassageTap,
+                              onTap: () => onReplyMassageTap?.call(replyMessageId),
                               child: UiKitCardWrapper(
                                 color: ColorsFoundation.neutral16,
                                 width: width,

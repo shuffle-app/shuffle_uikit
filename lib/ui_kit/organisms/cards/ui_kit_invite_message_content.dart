@@ -52,7 +52,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         SizedBox(
-          height: 0.125.sw,
+          height: showGang ? 0.125.sw : null,
           child: Row(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -65,7 +65,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
                       SizedBox(
                         width: ((invitedUsersData.length + 1) * EdgeInsetsFoundation.horizontal24) +
                             EdgeInsetsFoundation.horizontal16,
-                        height: 0.15.sw,
+                        height: 0.125.sw,
                       ),
                     if (invitedUsersData.length <= 3)
                       ...invitedUsersData.map(
@@ -85,7 +85,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
                     if (invitedUsersData.length > 3) ...[
                       SizedBox(
                         width: (3 * EdgeInsetsFoundation.horizontal24) + avatarWidth + EdgeInsetsFoundation.horizontal4,
-                        height: 0.15.sw,
+                        height: 0.125.sw,
                       ),
                       ...invitedUsersData.sublist(0, 3).map(
                         (e) {
@@ -220,7 +220,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
         UiKitCardWrapper(
           borderRadius: BorderRadiusFoundation.max,
           color: colorScheme.surface1,
-          height: 0.14.sw,
+          height: 0.125.sw + (EdgeInsetsFoundation.all2 * 2),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.max,
@@ -229,7 +229,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
               ClipOval(
                 child: ImageWidget(
                   link: placeImagePath,
-                  width: 0.14.sw,
+                  width: 0.125.sw,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -260,22 +260,20 @@ class UiKitInviteMessageContent extends StatelessWidget {
                   ],
                 ),
               ),
-              context
-                  .midSizeOutlinedButton(
-                    blurred: false,
-                    data: BaseUiKitButtonData(
-                      borderColor: colorScheme.inverseSurface,
-                      backgroundColor: colorScheme.surface1,
-                      onPressed: onPlaceTap,
-                      iconInfo: BaseUiKitButtonIconData(
-                        iconData: ShuffleUiKitIcons.chevronright,
-                        color: colorScheme.inverseSurface,
-                      ),
-                    ),
-                  )
-                  .paddingAll(EdgeInsetsFoundation.all2),
+              context.midSizeOutlinedButton(
+                blurred: false,
+                data: BaseUiKitButtonData(
+                  borderColor: colorScheme.inverseSurface,
+                  backgroundColor: colorScheme.surface1,
+                  onPressed: onPlaceTap,
+                  iconInfo: BaseUiKitButtonIconData(
+                    iconData: ShuffleUiKitIcons.chevronright,
+                    color: colorScheme.inverseSurface,
+                  ),
+                ),
+              ),
             ],
-          ),
+          ).paddingAll(EdgeInsetsFoundation.all2),
         ),
         if (canDenyInvitation)
           Row(

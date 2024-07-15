@@ -4,11 +4,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitChatInCard extends StatelessWidget {
   const UiKitChatInCard({
     super.key,
+    required this.id,
     required this.timeOfDay,
+    required this.showAvatar,
+    this.senderNickname,
     this.text,
     this.child,
     this.onReplyMessage,
-    required this.id,
     this.avatarUrl,
     this.senderName,
     this.senderType,
@@ -18,12 +20,14 @@ class UiKitChatInCard extends StatelessWidget {
   final String? text;
   final String? avatarUrl;
   final String? senderName;
+  final String? senderNickname;
   final UserTileType? senderType;
   final Widget? child;
   final ValueChanged<int>? onReplyMessage;
   final int id;
+  final bool showAvatar;
 
-  bool get showAvatar => avatarUrl != null && senderName != null && senderType != null;
+  bool get _dataIsValid => avatarUrl != null && senderName != null && senderType != null;
 
   @override
   Widget build(BuildContext context) {
@@ -44,24 +48,41 @@ class UiKitChatInCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            formatChatMessageDate(timeOfDay.toLocal()),
-            style: theme?.regularTextTheme.caption2.copyWith(
-              color: theme.colorScheme.darkNeutral900,
-            ),
+          SizedBox(
+            width: width + 0.0625.sw + SpacingFoundation.horizontalSpacing8,
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                if (senderNickname != null)
+                  Text(
+                    '@$senderNickname',
+                    style: theme?.regularTextTheme.caption2.copyWith(
+                      color: ColorsFoundation.mutedText,
+                    ),
+                  ),
+                Text(
+                  formatChatMessageDate(timeOfDay.toLocal()),
+                  style: theme?.regularTextTheme.caption2.copyWith(
+                    color: theme.colorScheme.darkNeutral900,
+                  ),
+                ),
+              ],
+            ).paddingOnly(left: 0.0625.sw + SpacingFoundation.horizontalSpacing8),
           ),
           SpacingFoundation.verticalSpace2,
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (showAvatar)
-                context.userAvatar(
-                  size: UserAvatarSize.x20x20,
-                  type: senderType!,
-                  userName: senderName!,
-                  imageUrl: avatarUrl!,
-                ),
-              SpacingFoundation.horizontalSpace8,
+              if (showAvatar && _dataIsValid)
+                context
+                    .userAvatar(
+                      size: UserAvatarSize.x20x20,
+                      type: senderType!,
+                      userName: senderName!,
+                      imageUrl: avatarUrl!,
+                    )
+                    .paddingOnly(right: EdgeInsetsFoundation.horizontal8),
               CustomPaint(
                   painter: _MessageTriangle(color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white)),
               Flexible(

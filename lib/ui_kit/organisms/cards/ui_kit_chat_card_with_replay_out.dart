@@ -11,6 +11,7 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
     required this.replyText,
     required this.replySenderName,
     required this.id,
+    required this.replyMessageId,
     this.sentByMe = false,
     this.text,
     this.child,
@@ -20,7 +21,7 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
   final String replyUserAvatar;
   final String replySenderName;
   final UserTileType replyUserType;
-  final VoidCallback? onReplyMassageTap;
+  final ValueChanged<int>? onReplyMassageTap;
   final ValueChanged<int>? onReplyMessage;
   final DateTime timeOfDay;
   final String? text;
@@ -28,6 +29,7 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
   final String replyText;
   final Widget? child;
   final int id;
+  final int replyMessageId;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +68,7 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
                       ? Column(
                           children: [
                             GestureDetector(
-                              onTap: onReplyMassageTap,
+                              onTap: () => onReplyMassageTap?.call(replyMessageId),
                               child: UiKitCardWrapper(
                                 color: ColorsFoundation.neutral16,
                                 width: width,
@@ -85,9 +87,7 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
                                       child: Text(
                                         replyText,
                                         style: theme?.regularTextTheme.caption3.copyWith(
-                                          color: sentByMe
-                                              ? theme.colorScheme.inverseBodyTypography
-                                              : theme.colorScheme.bodyTypography,
+                                          color: theme.colorScheme.bodyTypography,
                                         ),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,

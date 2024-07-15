@@ -612,6 +612,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Members": m31,
         "MembersCount": m32,
         "Message": MessageLookupByLibrary.simpleMessage("Message"),
+        "MessageNotFound":
+            MessageLookupByLibrary.simpleMessage("Message not found"),
         "Messages": MessageLookupByLibrary.simpleMessage("Messages"),
         "Min": MessageLookupByLibrary.simpleMessage("min"),
         "MinutesAgo": m33,

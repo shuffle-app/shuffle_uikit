@@ -139,7 +139,7 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                             Text(
                               DateFormat('MMM dd').format(widget.date!),
                               style: theme?.boldTextTheme.caption1Medium.copyWith(
-                                color: theme.colorScheme.darkNeutral100,
+                                color: theme.colorScheme.bodyTypography,
                               ),
                             ),
                           ],

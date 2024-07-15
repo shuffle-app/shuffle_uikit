@@ -6910,6 +6910,16 @@ class S {
       args: [name],
     );
   }
+
+  /// `Message not found`
+  String get MessageNotFound {
+    return Intl.message(
+      'Message not found',
+      name: 'MessageNotFound',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
