@@ -17,6 +17,7 @@ class ProfileCard extends StatelessWidget {
   final Widget? badge;
   final ProfileCardType? profileType;
   final List<UiKitTag>? tags;
+  final VoidCallback? onCustomDonate;
   final VoidCallback? onViewAllAchievements;
   final List<UiKitAchievementsModel> achievements;
   final UserTileType userTileType;
@@ -37,6 +38,7 @@ class ProfileCard extends StatelessWidget {
     this.followers,
     this.onFollow,
     this.onDonate,
+    this.onCustomDonate,
     this.showSupportShuffle = false,
     this.interests,
     this.matchingInterests,
@@ -69,6 +71,7 @@ class ProfileCard extends StatelessWidget {
             profileStats: profileStats,
             showSupportShuffle: showSupportShuffle,
             onDonate: onDonate,
+            onCustomDonate: onCustomDonate,
             onViewAllAchievements: onViewAllAchievements,
             achievements: achievements,
             socialLinks: socialLinks,
