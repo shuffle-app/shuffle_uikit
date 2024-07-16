@@ -27,7 +27,8 @@ class MidSizeOutlinedTextButton extends StatelessWidget implements ButtonFactory
     final textStyle = theme?.boldTextTheme.body;
     final textWidget = Text(
       text.toUpperCase(),
-      style: textStyle,
+      style: textStyle?.copyWith(
+          color: enabled ? borderColor ?? theme!.colorScheme.inversePrimary : theme!.colorScheme.darkNeutral500),
     );
 
     return Material(

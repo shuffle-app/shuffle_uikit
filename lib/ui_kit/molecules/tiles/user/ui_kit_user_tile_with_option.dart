@@ -29,7 +29,9 @@ class UiKitUserTileWithOption extends StatelessWidget {
     return Row(
       children: [
         SpacingFoundation.horizontalSpace12,
-        context.userAvatar(size: UserAvatarSize.x40x40, type: type, userName: name, imageUrl: avatarLink).paddingOnly(bottom: SpacingFoundation.verticalSpacing2),
+        context
+            .userAvatar(size: UserAvatarSize.x40x40, type: type, userName: name, imageUrl: avatarLink)
+            .paddingOnly(bottom: SpacingFoundation.verticalSpacing2),
         SpacingFoundation.horizontalSpace12,
         Expanded(
           child: Column(
@@ -43,7 +45,7 @@ class UiKitUserTileWithOption extends StatelessWidget {
                     Text(
                       DateFormat('MMM dd').format(date!),
                       style: theme?.boldTextTheme.caption1Medium.copyWith(
-                        color: theme.colorScheme.darkNeutral100,
+                        color: theme.colorScheme.bodyTypography,
                       ),
                     ),
                     SpacingFoundation.horizontalSpace16,

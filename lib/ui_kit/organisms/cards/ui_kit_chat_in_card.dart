@@ -35,6 +35,7 @@ class UiKitChatInCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final width = 0.7.sw;
+    final lightTheme = theme?.themeMode == ThemeMode.light;
 
     return Dismissible(
       key: Key(id.toString()),
@@ -54,8 +55,8 @@ class UiKitChatInCard extends StatelessWidget {
             width: showAvatar
                 ? 1.sw + 0.0625.sw + SpacingFoundation.horizontalSpacing8
                 : hasInvitation
-                    ? width
-                    : 1.sw,
+                    ? 1.sw
+                    : width,
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -90,10 +91,21 @@ class UiKitChatInCard extends StatelessWidget {
                     )
                     .paddingOnly(right: EdgeInsetsFoundation.horizontal8),
               CustomPaint(
-                  painter: _MessageTriangle(color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white)),
+                painter: _MessageTriangle(
+                  color: hasInvitation
+                      ? lightTheme
+                          ? Colors.black
+                          : Colors.white
+                      : theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white,
+                ),
+              ),
               Flexible(
                 child: UiKitCardWrapper(
-                  color: theme?.colorScheme.surface2,
+                  color: hasInvitation
+                      ? lightTheme
+                          ? Colors.black
+                          : Colors.white
+                      : theme?.colorScheme.surface2,
                   child: text != null
                       ? SizedBox(
                           width: width,
