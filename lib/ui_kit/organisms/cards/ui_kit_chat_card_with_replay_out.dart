@@ -35,6 +35,8 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final width = 0.7.sw;
+    final lightTheme = theme?.themeMode == ThemeMode.light;
+    final colorScheme = theme?.colorScheme;
 
     return Dismissible(
       key: Key(id.toString()),
@@ -87,7 +89,9 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
                                       child: Text(
                                         replyText,
                                         style: theme?.regularTextTheme.caption3.copyWith(
-                                          color: theme.colorScheme.bodyTypography,
+                                          color: lightTheme
+                                              ? ColorsFoundation.lightBodyTypographyColor
+                                              : colorScheme?.inverseBodyTypography,
                                         ),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,

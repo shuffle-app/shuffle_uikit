@@ -70,10 +70,10 @@ String formatDifference(DateTime date) {
 
 String formatChatMessageDate(DateTime date) {
   if (date.isAtSameDay) {
-    return DateFormat('HH:mm a').format(date);
+    return DateFormat('h:mm a').format(date);
   }
 
-  return DateFormat('MMM d H:MM a').format(date);
+  return DateFormat('MM.dd HH:mm').format(date);
 }
 
 String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay? timeTo, List<String>? wDays) {

@@ -38,6 +38,10 @@ abstract class WidgetsAbstractFactory {
     required BaseUiKitButtonData data,
   });
 
+  ButtonFactory createMidSizeGradientButton({
+    required BaseUiKitButtonData data,
+  });
+
   ButtonFactory createButtonWithProgress({
     BaseUiKitButtonData? data,
     double? progress,
@@ -256,8 +260,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       );
     }
 
-    throw UnimplementedError(
-        'Outlined badge button with your parameters is not implemented');
+    throw UnimplementedError('Outlined badge button with your parameters is not implemented');
   }
 
   @override
@@ -314,6 +317,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     double? blurValue,
   }) {
     final hasIcon = data.iconWidget != null || data.iconInfo != null;
+    final hasText = data.text != null;
+
     if (hasIcon) {
       return MidSizeOutlinedIconButton(
         icon: data.iconWidget,
@@ -322,6 +327,14 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
         borderColor: data.borderColor,
         fit: data.fit,
+      );
+    } else if (hasText) {
+      return MidSizeOutlinedTextButton(
+        text: data.text!,
+        isGradientEnabled: gradient != null,
+        loading: data.loading,
+        onPressed: data.onPressed,
+        borderColor: data.borderColor,
       );
     }
 
@@ -361,8 +374,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
         fit: data.fit,
       );
-    } else if ((data.text != null && (data.text?.isNotEmpty ?? false)) ||
-        !hasIcon) {
+    } else if ((data.text != null && (data.text?.isNotEmpty ?? false)) || !hasIcon) {
       return SmallOutlinedButton(
         onPressed: data.onPressed,
         gradient: gradient,
@@ -392,8 +404,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
       );
     } else {
-      throw UnimplementedError(
-          'Outlined button with your parameters is not implemented');
+      throw UnimplementedError('Outlined button with your parameters is not implemented');
     }
   }
 
@@ -450,8 +461,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         isGradientEnabled: isGradientEnabled ?? false,
       );
     } else {
-      throw UnimplementedError(
-          'Outlined button with your parameters is not implemented');
+      throw UnimplementedError('Outlined button with your parameters is not implemented');
     }
   }
 
@@ -487,8 +497,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
       );
     } else {
-      throw UnimplementedError(
-          'Gradient button with your parameters is not implemented');
+      throw UnimplementedError('Gradient button with your parameters is not implemented');
     }
   }
 
@@ -500,10 +509,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool reversed = false,
   }) {
     final hasIcon = data.iconWidget != null || data.iconInfo != null;
-    final onlyIconButton = hasIcon &&
-        (data.text?.isEmpty ?? true) &&
-        !isTextButton &&
-        !(blurred ?? false);
+    final onlyIconButton = hasIcon && (data.text?.isEmpty ?? true) && !isTextButton && !(blurred ?? false);
     if (isTextButton) {
       if (reversed) {
         return OrdinaryReversedTextButton(
@@ -704,9 +710,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Widget? secondaryActionWidget,
     Widget? dismissActionWidget,
   }) {
-    final hasAllActions = primaryActionWidget != null &&
-        secondaryActionWidget != null &&
-        dismissActionWidget != null;
+    final hasAllActions = primaryActionWidget != null && secondaryActionWidget != null && dismissActionWidget != null;
     if (hasAllActions) {
       return AdditionalActionNotificationPopUp(
         requiredData: requiredData,
@@ -877,8 +881,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  SnackBarFactory createSnackBar(
-      {required AppSnackBarType appSnackBarType, required String message}) {
+  SnackBarFactory createSnackBar({required AppSnackBarType appSnackBarType, required String message}) {
     switch (appSnackBarType) {
       case AppSnackBarType.success:
         return SuccessSnackBar(message: message);
@@ -893,6 +896,24 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       default:
         return NeutralSnackBar(message: message);
     }
+  }
+
+  @override
+  ButtonFactory createMidSizeGradientButton({
+    required BaseUiKitButtonData data,
+  }) {
+    final hasText = data.text != null;
+    final hasIcon = data.iconInfo != null || data.iconWidget != null;
+
+    if (hasText && !hasIcon) {
+      return MidSizeGradientButton(
+        text: data.text!,
+        onPressed: data.onPressed,
+        loading: data.loading,
+      );
+    }
+
+    throw UnimplementedError('There is no mid size gradient button with given parameters');
   }
 
 // @override
@@ -911,8 +932,7 @@ class AvatarStackWrapper extends StatelessWidget implements UserAvatarFactory {
   final bool showAchievements;
   final Widget child;
 
-  const AvatarStackWrapper(
-      {super.key, required this.showAchievements, required this.child});
+  const AvatarStackWrapper({super.key, required this.showAchievements, required this.child});
 
   @override
   Widget build(BuildContext context) {

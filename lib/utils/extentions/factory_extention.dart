@@ -62,6 +62,10 @@ extension FactoryExtention on BuildContext {
     return WidgetsFactory.of(this)!.createSmallGradientButton(data: data).build(this);
   }
 
+  Widget midSizeGradientButton({required BaseUiKitButtonData data}) {
+    return WidgetsFactory.of(this)!.createMidSizeGradientButton(data: data).build(this);
+  }
+
   Widget midSizeOutlinedButton({
     required BaseUiKitButtonData data,
     BorderRadius? borderRadius,
