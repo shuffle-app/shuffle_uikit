@@ -26,8 +26,7 @@ class PropertiesSearchInput extends StatelessWidget {
       builder: (context, constraints) {
         return Autocomplete<String>(
           initialValue: initialValue,
-          fieldViewBuilder: (_, controller, focusNode, onSubmitted) =>
-              ListenableBuilder(
+          fieldViewBuilder: (_, controller, focusNode, onSubmitted) => ListenableBuilder(
             listenable: controller,
             builder: (context, child) {
               if (controller.text.isEmpty) {
@@ -58,22 +57,23 @@ class PropertiesSearchInput extends StatelessWidget {
           optionsViewBuilder: (_, onSelected, options) => UiKitCardWrapper(
             borderRadius: BorderRadiusFoundation.all12,
             color: context.uiKitTheme?.colorScheme.surface2,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: options.map(
-                (e) {
-                  return UiKitHoverAnimationTile(
-                    isFirst: options.toList().indexOf(e) == 0,
-                    isLast: options.toList().last == e,
-                    title: e,
-                    onTap: (title) {
-                      onFieldSubmitted?.call(title);
-                    },
-                  );
-                },
-              ).toList(),
+            child: SingleChildScrollView(
+              child: Column(
+                children: options.map(
+                  (e) {
+                    return UiKitHoverAnimationTile(
+                      isFirst: options.toList().indexOf(e) == 0,
+                      isLast: options.toList().last == e,
+                      title: e,
+                      onTap: (title) {
+                        onFieldSubmitted?.call(title);
+                      },
+                    );
+                  },
+                ).toList(),
+              ),
             ),
-          ),
+          ).paddingOnly(right: 0.7.sw, bottom: 0.5.sw),
           optionsBuilder: (editingValue) async {
             if (editingValue.text == '') {
               if (showAllOptions) return options.call('');
@@ -83,9 +83,7 @@ class PropertiesSearchInput extends StatelessWidget {
 
             final result = options.call(editingValue.text).then((options) {
               return options.where((String option) {
-                return option
-                    .toLowerCase()
-                    .contains(editingValue.text.toLowerCase());
+                return option.toLowerCase().contains(editingValue.text.toLowerCase());
               });
             });
 
