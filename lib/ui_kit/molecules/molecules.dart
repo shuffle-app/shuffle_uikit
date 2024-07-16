@@ -107,3 +107,4 @@ export 'moderation/ui_kit_feedback_info.dart';
 export 'moderation/ui_kit_video_reaction_moderation.dart';
 export 'tiles/ui_kit_video_interview_tile.dart';
 export 'info_cards/ui_kit_voice_listen_card.dart';
+export 'moderation/ui_kit_moderation_video_player.dart';

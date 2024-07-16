@@ -20,6 +20,20 @@ class DialogTestingPage extends StatelessWidget {
                 SpacingFoundation.verticalSpace16,
                 context.button(
                   data: BaseUiKitButtonData(
+                    onPressed: () {
+                      context.push(
+                        UiKitModerationVideoPlayer(
+                          videoUrl:
+                              'https://shuffle-development.s3.amazonaws.com/reactions/910dae9e-02f6-4733-b308-7bbeb1ac7177.mp4',
+                        ),
+                      );
+                    },
+                    text: 'show video player',
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                context.button(
+                  data: BaseUiKitButtonData(
                     text: 'Show location suggestion dialog',
                     onPressed: () => showDialog(
                       context: context,
@@ -98,7 +112,7 @@ class DialogTestingPage extends StatelessWidget {
                         ],
                       ),
                       content: UiKitVideoReactionsModeration(
-                        videoFile: null,
+                        videoUrl: '',
                         feedbackInfo: UiKitFeedbackInfo(
                           onSubmit: (expandThreadIsOpen) {},
                           dateTime: DateTime.now(),
