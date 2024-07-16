@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitChatOutCard extends StatelessWidget {
@@ -11,6 +10,7 @@ class UiKitChatOutCard extends StatelessWidget {
     this.child,
     required this.id,
     this.onReplyMessage,
+    this.brightness = Brightness.light,
   });
 
   final DateTime timeOfDay;
@@ -19,6 +19,7 @@ class UiKitChatOutCard extends StatelessWidget {
   final bool sentByMe;
   final int id;
   final ValueChanged<int>? onReplyMessage;
+  final Brightness brightness;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,6 @@ class UiKitChatOutCard extends StatelessWidget {
     return Dismissible(
       key: Key(id.toString()),
       direction: DismissDirection.horizontal,
-
       confirmDismiss: (direction) async {
         onReplyMessage?.call(id);
         FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
@@ -41,7 +41,7 @@ class UiKitChatOutCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(
-            DateFormat.jm().format(timeOfDay).toLowerCase(),
+            formatChatMessageDate(timeOfDay.toLocal()),
             style: theme?.regularTextTheme.caption2.copyWith(
               color: theme.colorScheme.darkNeutral900,
             ),
@@ -53,14 +53,13 @@ class UiKitChatOutCard extends StatelessWidget {
             children: [
               Flexible(
                 child: UiKitCardWrapper(
-                  color: sentByMe ? Colors.white : theme?.colorScheme.surface3,
+                  color: brightness == Brightness.light ? Colors.white : Colors.black,
                   child: text != null
                       ? SizedBox(
                           width: width,
                           child: Text(
                             text!,
-                            style: theme?.boldTextTheme.caption1Medium.copyWith(
-                                color: sentByMe ? Colors.black : null),
+                            style: theme?.boldTextTheme.caption1Medium.copyWith(color: sentByMe ? Colors.black : null),
                           ).paddingAll(EdgeInsetsFoundation.all12),
                         )
                       : child!.paddingAll(EdgeInsetsFoundation.all12),
@@ -70,9 +69,8 @@ class UiKitChatOutCard extends StatelessWidget {
                 transform: Matrix4.identity()..scale(-1.0, 1.0),
                 child: CustomPaint(
                   painter: _MessageTriangle(
-                      color: sentByMe
-                          ? Colors.white
-                          : theme!.colorScheme.surface3),
+                    color: brightness == Brightness.light ? Colors.white : Colors.black,
+                  ),
                 ),
               ),
             ],

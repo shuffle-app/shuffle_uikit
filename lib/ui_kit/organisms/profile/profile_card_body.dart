@@ -18,6 +18,7 @@ class ProfileCardBody extends StatelessWidget {
   final List<UiKitStats>? profileStats;
   final bool showSupportShuffle;
   final ValueChanged<int>? onDonate;
+  final VoidCallback? onCustomDonate;
   final VoidCallback? onViewAllAchievements;
   final List<UiKitAchievementsModel> achievements;
   final UserTileType userTileType;
@@ -42,6 +43,7 @@ class ProfileCardBody extends StatelessWidget {
     this.followers,
     this.onFollow,
     this.onDonate,
+    this.onCustomDonate,
     this.showSupportShuffle = false,
     this.onViewAllAchievements,
     this.achievements = const [],
@@ -69,14 +71,14 @@ class ProfileCardBody extends StatelessWidget {
                     type: userTileType,
                     userName: name ?? '',
                     imageUrl: avatarUrl,
-                    showAchievements: achievements.isNotEmpty)
+                    showAchievements: false)
               else
                 context.userAvatar(
                     size: UserAvatarSize.x48x48,
                     type: userTileType,
                     userName: name ?? '',
                     imageUrl: avatarUrl,
-                    showAchievements: achievements.isNotEmpty),
+                    showAchievements: false),
               if (canFollow ?? false) SpacingFoundation.horizontalSpace16 else SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: profileType == ProfileCardType.personal
@@ -232,7 +234,7 @@ class ProfileCardBody extends StatelessWidget {
             ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
             if (showSupportShuffle) ...[
               SpacingFoundation.verticalSpace24,
-              SupportShuffleButton(onDonate: onDonate).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
+              SupportShuffleButton(onDonate: onDonate,onCustomDonate:onCustomDonate).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
             ],
             SpacingFoundation.verticalSpace16,
           ],

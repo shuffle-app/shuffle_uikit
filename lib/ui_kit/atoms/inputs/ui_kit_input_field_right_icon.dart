@@ -2,25 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputField {
-  const UiKitInputFieldRightIcon(
-      {super.key,
-      required this.controller,
-      this.errorText,
-      this.fillColor,
-      this.hintText,
-      this.validator,
-      this.enabled = true,
-      this.icon,
-      this.onIconPressed,
-      this.onTap,
-      this.focusNode,
-      this.autofocus = false,
-      this.expands = false,
-      this.onFieldSubmitted,
-      this.borderRadius,
-      this.obscureText = false,
-      this.hintColor,
-      this.onChanged});
+  const UiKitInputFieldRightIcon({
+    super.key,
+    required this.controller,
+    this.errorText,
+    this.fillColor,
+    this.hintText,
+    this.validator,
+    this.enabled = true,
+    this.icon,
+    this.onIconPressed,
+    this.onTap,
+    this.focusNode,
+    this.autofocus = false,
+    this.expands = false,
+    this.onFieldSubmitted,
+    this.borderRadius,
+    this.obscureText = false,
+    this.hintColor,
+    this.onChanged,
+    this.maxLines = 1,
+  });
 
   @override
   final TextEditingController controller;
@@ -38,6 +40,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
   final ValueChanged<String>? onChanged;
   final Widget? icon;
   final BorderRadius? borderRadius;
+  final int maxLines;
   final bool autofocus;
   final bool expands;
   final FocusNode? focusNode;
@@ -86,7 +89,8 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
       ),
       child: TextFormField(
         expands: widget.expands,
-        maxLines: widget.expands ? null : 1,
+        maxLines: widget.expands ? null : widget.maxLines,
+        minLines: 1,
         autofocus: widget.autofocus,
         focusNode: widget.focusNode,
         onTap: widget.onTap,

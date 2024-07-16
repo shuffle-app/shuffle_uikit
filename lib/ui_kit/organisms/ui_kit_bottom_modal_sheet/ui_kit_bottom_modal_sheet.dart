@@ -52,7 +52,7 @@ class UiKitBottomModalSheet extends StatelessWidget {
                                 clipBehavior: Clip.hardEdge,
                                 child: data.isWidgetScrollable ? data.child : SingleChildScrollView(
                                   primary: true,
-                                  physics: const ClampingScrollPhysics(),
+                                  physics: const BouncingScrollPhysics(),
                                   child: data.child.paddingOnly(
                                     bottom: data.bottomBar != null ? kBottomNavigationBarHeight * 1.5 : 0.0,
                                   ),
