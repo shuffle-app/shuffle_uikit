@@ -49,7 +49,13 @@ class _UiKitModerationVideoPlayerState
       child: isReady()
           ? Stack(
               children: [
-                VideoPlayer(_controller),
+                Align(
+                  alignment: Alignment.center,
+                  child: AspectRatio(
+                    aspectRatio: _controller.value.aspectRatio,
+                    child: VideoPlayer(_controller),
+                  ),
+                ),
                 ValueListenableBuilder(
                   builder: (context, value, child) {
                     if (!value.isPlaying && !value.isCompleted) {

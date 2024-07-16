@@ -24,7 +24,7 @@ class DialogTestingPage extends StatelessWidget {
                       context.push(
                         UiKitModerationVideoPlayer(
                           videoUrl:
-                              'https://shuffle-development.s3.amazonaws.com/reactions/910dae9e-02f6-4733-b308-7bbeb1ac7177.mp4',
+                              'https://shuffle-development.s3.amazonaws.com/reactions/97f94f56-b929-4045-8bfb-88fa5fa158a1.mp4',
                         ),
                       );
                     },
