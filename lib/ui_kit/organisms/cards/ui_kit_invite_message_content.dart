@@ -134,7 +134,9 @@ class UiKitInviteMessageContent extends StatelessWidget {
                       children: [
                         Text(
                           customMessageData!.senderUserName,
-                          style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
+                          style: theme?.boldTextTheme.caption1Bold.copyWith(
+                            color: colorScheme.inverseSurface,
+                          ),
                         ),
                         SpacingFoundation.horizontalSpace4,
                         if (customMessageData!.senderUserType == UserTileType.influencer) InfluencerAccountMark(),
@@ -289,7 +291,8 @@ class UiKitInviteMessageContent extends StatelessWidget {
                 child: context.midSizeOutlinedButton(
                   blurred: false,
                   data: BaseUiKitButtonData(
-                    backgroundColor: colorScheme.inverseSurface,
+                    backgroundColor: colorScheme.surface,
+                    borderColor: colorScheme.inverseSurface,
                     onPressed: onDenyTap,
                     text: S.of(context).NotNow.toUpperCase(),
                   ),
