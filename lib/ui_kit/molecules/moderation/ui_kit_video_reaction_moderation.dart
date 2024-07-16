@@ -16,13 +16,8 @@ class UiKitVideoReactionsModeration extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: SizedBox(
-            width: 284,
-            height: 464,
-            child: UiKitFullScreenPortraitVideoPlayer(
-              videoUrl: videoUrl,
-              onVideoComplete: (){},
-            ),
+          child: UiKitModerationVideoPlayer(
+            videoUrl: videoUrl,
           ),
         ),
         SpacingFoundation.horizontalSpace24,
