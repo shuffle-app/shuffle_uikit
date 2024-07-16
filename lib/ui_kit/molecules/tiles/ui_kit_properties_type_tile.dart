@@ -8,21 +8,20 @@ class PropertiesTypeAnimatedButton extends StatefulWidget {
     super.key,
     required this.title,
     required this.onTap,
+    required this.isSelected,
   });
 
   final String title;
   final VoidCallback onTap;
+  final bool isSelected;
 
   @override
-  State<PropertiesTypeAnimatedButton> createState() =>
-      _PropertiesTypeAnimatedButtonState();
+  State<PropertiesTypeAnimatedButton> createState() => _PropertiesTypeAnimatedButtonState();
 }
 
-class _PropertiesTypeAnimatedButtonState
-    extends State<PropertiesTypeAnimatedButton> with TickerProviderStateMixin {
-  bool isTapped = false;
+class _PropertiesTypeAnimatedButtonState extends State<PropertiesTypeAnimatedButton> with TickerProviderStateMixin {
   late final AnimationController _controller;
-  late final Animation<double> _angelAnimation;
+  late final Animation<double> _angleAnimation;
   late final Animation<Color?> _colorAnimation;
 
   @override
@@ -30,37 +29,44 @@ class _PropertiesTypeAnimatedButtonState
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 200),
-    )..addListener(
-        () {
-          setState(() {});
-        },
-      );
-    _angelAnimation = Tween<double>(begin: 0, end: pi).animate(_controller);
+    )..addListener(() {
+        setState(() {});
+      });
+
+    _angleAnimation = Tween<double>(begin: 0, end: pi).animate(_controller);
     _colorAnimation = ColorTween(
       begin: Colors.transparent,
       end: ColorsFoundation.primary200.withOpacity(0.08),
     ).animate(_controller);
+
+    if (widget.isSelected) {
+      _controller.forward();
+    }
+
     super.initState();
   }
 
-  _onTapButton() {
-    if (!isTapped) {
-      widget.onTap.call();
+  @override
+  void didUpdateWidget(PropertiesTypeAnimatedButton oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.isSelected && !oldWidget.isSelected) {
       _controller.forward();
-    } else {
+    } else if (!widget.isSelected && oldWidget.isSelected) {
       _controller.reverse();
     }
-    setState(() {
-      isTapped = !isTapped;
-    });
+  }
+
+  _onTapButton() {
+    widget.onTap.call();
   }
 
   @override
   Widget build(BuildContext context) {
     final uiKitTheme = context.uiKitTheme;
+
     return AnimatedBuilder(
       builder: (context, child) {
-        return  Material(
+        return Material(
           color: Colors.transparent,
           child: InkWell(
             onTap: _onTapButton,
@@ -78,11 +84,9 @@ class _PropertiesTypeAnimatedButtonState
                   Expanded(
                     child: AnimatedDefaultTextStyle(
                       overflow: TextOverflow.ellipsis,
-                      duration: const Duration(microseconds: 200),
+                      duration: const Duration(milliseconds: 200),
                       style: uiKitTheme!.regularTextTheme.body.copyWith(
-                        color: isTapped
-                            ? ColorsFoundation.primary200
-                            : uiKitTheme.colorScheme.bodyTypography,
+                        color: widget.isSelected ? ColorsFoundation.primary200 : uiKitTheme.colorScheme.bodyTypography,
                       ),
                       child: Text(
                         widget.title,
@@ -91,13 +95,11 @@ class _PropertiesTypeAnimatedButtonState
                   ),
                   SpacingFoundation.horizontalSpace16,
                   Transform.rotate(
-                    angle: _angelAnimation.value,
+                    angle: _angleAnimation.value,
                     child: Icon(
-                      ShuffleUiKitIcons.chevronright,
-                      color: isTapped
-                          ? ColorsFoundation.primary200
-                          : uiKitTheme.colorScheme.darkNeutral900,
-                      size: 16.sp,
+                      Icons.chevron_right,
+                      color: widget.isSelected ? ColorsFoundation.primary200 : uiKitTheme.colorScheme.darkNeutral900,
+                      size: 24.sp,
                     ),
                   ),
                 ],
@@ -110,7 +112,8 @@ class _PropertiesTypeAnimatedButtonState
             ),
           ),
         );
-      }, animation: _controller,
+      },
+      animation: _controller,
     );
   }
 }
