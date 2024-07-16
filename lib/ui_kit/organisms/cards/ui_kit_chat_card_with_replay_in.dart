@@ -45,6 +45,8 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final width = 0.7.sw;
+    final colorScheme = theme?.colorScheme;
+    final lightTheme = theme?.themeMode == ThemeMode.light;
 
     return Dismissible(
       key: Key(id.toString()),
@@ -61,11 +63,13 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: 1.sw -
-                EdgeInsetsFoundation.horizontal16 -
-                EdgeInsetsFoundation.horizontal16 -
-                EdgeInsetsFoundation.horizontal20 -
-                EdgeInsetsFoundation.horizontal8,
+            width: showAvatar
+                ? 1.sw -
+                    EdgeInsetsFoundation.horizontal16 -
+                    EdgeInsetsFoundation.horizontal16 -
+                    EdgeInsetsFoundation.horizontal20 -
+                    EdgeInsetsFoundation.horizontal8
+                : width + EdgeInsetsFoundation.horizontal20 + EdgeInsetsFoundation.horizontal12,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -83,7 +87,7 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
                   ),
                 ),
               ],
-            ).paddingOnly(left: 0.0625.sw),
+            ).paddingOnly(left: showAvatar ? 0.0625.sw : 0),
           ),
           SpacingFoundation.verticalSpace2,
           Row(
@@ -128,7 +132,11 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
                                     Flexible(
                                       child: Text(
                                         replyText,
-                                        style: theme?.regularTextTheme.caption3,
+                                        style: theme?.regularTextTheme.caption3.copyWith(
+                                          color: lightTheme
+                                              ? ColorsFoundation.lightBodyTypographyColor
+                                              : colorScheme?.bodyTypography,
+                                        ),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
                                       ),

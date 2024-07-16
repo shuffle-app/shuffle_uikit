@@ -46,7 +46,6 @@ class UiKitInviteMessageContent extends StatelessWidget {
     if (!isDark) colorScheme = UiKitColorScheme.light();
 
     final avatarWidth = 0.125.sw;
-    print('placeImagePath: $placeImagePath');
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -142,26 +141,22 @@ class UiKitInviteMessageContent extends StatelessWidget {
                         if (customMessageData!.senderUserType == UserTileType.premium)
                           PremiumAccountMark(color: colorScheme.inverseSurface),
                         if (customMessageData!.senderUserType == UserTileType.pro) ProAccountMark(),
+                        if (customMessageData!.receiverUserType != UserTileType.ordinary)
+                          SpacingFoundation.horizontalSpace4,
+                        Text(
+                          '${S.current.InvitesVerb.toLowerCase()} ',
+                          style: theme?.boldTextTheme.caption1Medium.copyWith(
+                            color: colorScheme.inverseSurface,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
                       ],
                     ),
                     Row(
                       children: [
-                        RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: '${S.current.InvitesVerb.toLowerCase()} ',
-                                style: theme?.boldTextTheme.caption1Medium.copyWith(
-                                  color: colorScheme.inverseSurface,
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                              ),
-                              TextSpan(
-                                text: customMessageData!.receiverUserName,
-                                style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
-                              )
-                            ],
-                          ),
+                        Text(
+                          customMessageData!.receiverUserName,
+                          style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
                         ),
                         SpacingFoundation.horizontalSpace4,
                         if (customMessageData!.receiverUserType == UserTileType.influencer) InfluencerAccountMark(),
@@ -281,24 +276,22 @@ class UiKitInviteMessageContent extends StatelessWidget {
             children: [
               Expanded(
                 flex: 4,
-                child: context.smallGradientButton(
+                child: context.midSizeGradientButton(
                   data: BaseUiKitButtonData(
                     onPressed: onAcceptTap,
                     text: S.of(context).Go.toUpperCase(),
-                    fit: ButtonFit.fitWidth,
                   ),
                 ),
               ),
               SpacingFoundation.horizontalSpace12,
               Expanded(
                 flex: 6,
-                child: context.smallOutlinedButton(
+                child: context.midSizeOutlinedButton(
                   blurred: false,
                   data: BaseUiKitButtonData(
                     backgroundColor: colorScheme.inverseSurface,
                     onPressed: onDenyTap,
                     text: S.of(context).NotNow.toUpperCase(),
-                    fit: ButtonFit.fitWidth,
                   ),
                 ),
               ),

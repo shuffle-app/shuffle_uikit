@@ -7,6 +7,7 @@ class UiKitChatInCard extends StatelessWidget {
     required this.id,
     required this.timeOfDay,
     required this.showAvatar,
+    required this.hasInvitation,
     this.senderNickname,
     this.text,
     this.child,
@@ -26,6 +27,7 @@ class UiKitChatInCard extends StatelessWidget {
   final ValueChanged<int>? onReplyMessage;
   final int id;
   final bool showAvatar;
+  final bool hasInvitation;
 
   bool get _dataIsValid => avatarUrl != null && senderName != null && senderType != null;
 
@@ -49,7 +51,11 @@ class UiKitChatInCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: width + 0.0625.sw + SpacingFoundation.horizontalSpacing8,
+            width: showAvatar
+                ? 1.sw + 0.0625.sw + SpacingFoundation.horizontalSpacing8
+                : hasInvitation
+                    ? width
+                    : 1.sw,
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,7 +74,7 @@ class UiKitChatInCard extends StatelessWidget {
                   ),
                 ),
               ],
-            ).paddingOnly(left: 0.0625.sw + SpacingFoundation.horizontalSpacing8),
+            ).paddingOnly(left: showAvatar ? 0.0625.sw + SpacingFoundation.horizontalSpacing8 : 0),
           ),
           SpacingFoundation.verticalSpace2,
           Row(
