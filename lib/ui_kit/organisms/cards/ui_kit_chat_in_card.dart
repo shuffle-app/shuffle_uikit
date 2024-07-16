@@ -54,8 +54,8 @@ class UiKitChatInCard extends StatelessWidget {
             width: showAvatar
                 ? 1.sw + 0.0625.sw + SpacingFoundation.horizontalSpacing8
                 : hasInvitation
-                    ? width
-                    : 1.sw,
+                    ? 1.sw
+                    : width,
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

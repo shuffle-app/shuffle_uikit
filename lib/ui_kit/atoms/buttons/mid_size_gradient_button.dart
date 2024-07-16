@@ -28,7 +28,7 @@ class MidSizeGradientButton extends StatelessWidget implements ButtonFactory {
         onTap: enabled && !(loading ?? false) ? onPressed : null,
         child: Ink(
           padding: EdgeInsets.symmetric(
-            vertical: 12,
+            vertical: EdgeInsetsFoundation.vertical12,
             horizontal: EdgeInsetsFoundation.horizontal32,
           ),
           decoration: BoxDecoration(
