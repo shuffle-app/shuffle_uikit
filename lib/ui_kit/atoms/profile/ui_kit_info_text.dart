@@ -4,6 +4,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitInfoText extends StatelessWidget {
   final String text;
   final String? title;
+  final String? additionalText;
   final String? gradientText;
   final Gradient? textGradient;
   final bool? centerText;
@@ -11,6 +12,7 @@ class UiKitInfoText extends StatelessWidget {
   const UiKitInfoText({
     Key? key,
     required this.text,
+    this.additionalText,
     this.title,
     this.gradientText,
     this.textGradient,
@@ -32,6 +34,11 @@ class UiKitInfoText extends StatelessWidget {
             text: text,
             style: boldTextTheme?.caption3Medium.copyWith(color: ColorsFoundation.mutedText),
           ),
+          if (additionalText != null)
+            TextSpan(
+              text: ' $additionalText',
+              style: boldTextTheme?.caption2Bold.copyWith(color: ColorsFoundation.mutedText),
+            ),
         ],
       ),
     );
@@ -49,6 +56,11 @@ class UiKitInfoText extends StatelessWidget {
                   text: gradientText,
                   style: boldTextTheme?.caption3Medium.copyWith(color: Colors.transparent),
                 ),
+                if (additionalText != null)
+                  TextSpan(
+                    text: ' $additionalText',
+                    style: boldTextTheme?.caption2Bold.copyWith(color: ColorsFoundation.mutedText),
+                  )
               ],
             ),
           ),
@@ -65,6 +77,11 @@ class UiKitInfoText extends StatelessWidget {
                     text: gradientText,
                     style: boldTextTheme?.caption3Medium.copyWith(color: Colors.white),
                   ),
+                  if (additionalText != null)
+                    TextSpan(
+                      text: ' $additionalText',
+                      style: boldTextTheme?.caption2Bold.copyWith(color: ColorsFoundation.mutedText),
+                    )
                 ],
               ),
             ),

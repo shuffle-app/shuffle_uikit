@@ -59,7 +59,7 @@
   "WhatYouLike": "Что тебе нравится",
   "TapTwiceToMarkYourFavorites": ". Нажми дважды, чтобы отметить избранное.",
   "TryYourself": "Попробуйте\nсами",
-  "InviteToFavoritePlaces": "Пригласить в избранные места",
+  "InviteToFavoritePlaces": "Пригласить в \"Избранное\"",
   "Invite": "Пригласить",
   "SelectDate": "Выбери дату",
   "Next": "Далее",
@@ -672,7 +672,10 @@
   "SureYouWantToExit":  "Точно хочешь выйти?",
   "YouWillNoLongerSendMessagesTo": "Ты больше не сможешь отправлять сообщения {name}",
   "YouSureToDeleteX": "Ты уверен, что хочешь удалить {name}?",
-  "MessageNotFound": "Сообщение не найдено"
-
+  "MessageNotFound": "Сообщение не найдено",
+  "Connected": "Connected",
+  "You": "Ты",
+  "XInvitesY": "{x} приглашает {y}",
+  "InvitesNPeopleInfo": "Приглашает {invitedPeopleCount, plural, =0{{invitedPeopleCount} людей} =1{{invitedPeopleCount}-о} =2{{invitedPeopleCount}-х} few{{invitedPeopleCount}-х} many{{invitedPeopleCount}-х} other{{invitedPeopleCount}-х}}"
 }
 
