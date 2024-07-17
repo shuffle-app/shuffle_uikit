@@ -61,7 +61,7 @@ class UiKitBase3DViewer extends StatelessWidget {
       autoRotate: autoRotate,
       disableZoom: true,
       exposure: 1,
-      environmentImage: environmentImage,
+      environmentImage: environmentImage ?? 'neutral',
       skyboxImage: skyboxImage,
       javascriptChannels: {...?javascriptChannels, onTapChannel},
       innerModelViewerHtml: '''

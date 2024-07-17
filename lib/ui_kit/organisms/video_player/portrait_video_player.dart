@@ -42,6 +42,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   double width = 0;
   double coverOpacity = 1;
   bool isReady = false;
+  final key = UniqueKey();
 
   // Create a [Player] to control playback.
   late final player = Player();
@@ -102,32 +103,6 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
     });
   }
 
-  _calculateDimensions(double aspectRatio) {
-    if (aspectRatio < 1) {
-      setState(() {
-        height = height - MediaQuery.of(context).padding.top;
-        width = height / aspectRatio;
-      });
-      log('video aspect ratio: $aspectRatio and device aspect ${MediaQuery.sizeOf(context).aspectRatio} so we calculate width: $width and height: $height when screenwidth is ${1.sw} and screenheight is ${1.sh}');
-    }
-  }
-
-  // void _playBackListener() {
-  //   if (!seeking) {
-  //     widget.onProgressChanged
-  //         ?.call(_controller!.value.position.inMilliseconds / _controller!.value.duration.inMilliseconds);
-  //   }
-  //   if (_controller?.value.position.inMilliseconds == _controller?.value.duration.inMilliseconds) {
-  //     if (!seeking) {
-  //       if (widget.onVideoComplete == null) {
-  //         context.pop();
-  //       } else {
-  //         widget.onVideoComplete!.call();
-  //       }
-  //     }
-  //   }
-  // }
-
   @override
   void dispose() {
     // _controller?.dispose();
@@ -182,9 +157,13 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
             Stack(fit: StackFit.expand, children: [
           // :
           Video(
+            key: key,
             controller: controller,
             height: height - MediaQuery.of(context).padding.top,
             width: 1.sw,
+            wakelock: false,
+            pauseUponEnteringBackgroundMode: true,
+            resumeUponEnteringForegroundMode: true,
             fit: BoxFit.cover,
             controls: (_) => const SizedBox.shrink(),
             filterQuality: Platform.isIOS ? FilterQuality.high : FilterQuality.low,

@@ -70,7 +70,7 @@ String formatDifference(DateTime date) {
 
 String formatChatMessageDate(DateTime date) {
   if (date.isAtSameDay) {
-    return DateFormat('h:mm a').format(date);
+    return DateFormat('HH:mm').format(date);
   }
 
   return DateFormat('MM.dd HH:mm').format(date);

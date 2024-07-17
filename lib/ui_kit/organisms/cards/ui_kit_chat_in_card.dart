@@ -38,7 +38,7 @@ class UiKitChatInCard extends StatelessWidget {
 
     return Dismissible(
       key: Key(id.toString()),
-      direction: DismissDirection.horizontal,
+      direction: DismissDirection.endToStart,
       confirmDismiss: (direction) async {
         onReplyMessage?.call(id);
         FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
@@ -97,6 +97,7 @@ class UiKitChatInCard extends StatelessWidget {
               Flexible(
                 child: UiKitCardWrapper(
                   color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white,
+                  clipBehavior: Clip.hardEdge,
                   child: text != null
                       ? SizedBox(
                           width: width,
