@@ -6588,11 +6588,11 @@ class S {
     );
   }
 
-  /// `Crated on {creationDate}.\nWill be deleted {deletionDate}`
+  /// `Created on {creationDate}.\nWill be deleted {deletionDate}`
   String ChatDeletionAndCreationMessage(
       Object creationDate, Object deletionDate) {
     return Intl.message(
-      'Crated on $creationDate.\nWill be deleted $deletionDate',
+      'Created on $creationDate.\nWill be deleted $deletionDate',
       name: 'ChatDeletionAndCreationMessage',
       desc: '',
       args: [creationDate, deletionDate],

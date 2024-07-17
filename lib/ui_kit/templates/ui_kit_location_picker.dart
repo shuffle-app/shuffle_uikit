@@ -151,6 +151,7 @@ class UiKitLocationPicker extends StatelessWidget {
           child: PointerInterceptor(
             child: UiKitElevatedInputWithSwitchingPrefix(
               focusNode: _focusNode,
+              fillColor: Colors.white,
               onTap: () {
                 onSearchTapped?.call();
               },

@@ -32,6 +32,8 @@ class UiKitElevatedInputWithSwitchingPrefix extends StatelessWidget {
     return Material(
       elevation: 2.5,
       borderRadius: BorderRadiusFoundation.max,
+      clipBehavior: Clip.hardEdge,
+      color: fillColor,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

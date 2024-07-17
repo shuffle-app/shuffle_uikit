@@ -37,13 +37,14 @@ class UiKitBase3DViewer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('UiKitBase3DViewer path: $localPath');
     return ModelViewer(
       onWebViewCreated: onWebViewCreated,
       animationName: animationName,
       autoPlay: autoPlay,
       id: 'model-viewer',
       backgroundColor: backgroundColor ?? Colors.transparent,
-      src: localPath.startsWith('http') ? localPath : 'file:///$localPath',
+      src: localPath.startsWith('http') ? localPath : 'file://$localPath',
       poster: poster,
       scale: scale,
       disableTap: true,
@@ -64,6 +65,7 @@ class UiKitBase3DViewer extends StatelessWidget {
       skyboxImage: skyboxImage,
       javascriptChannels: {...?javascriptChannels, onTapChannel},
       innerModelViewerHtml: '''
+      
       <div class="progress-bar hide" slot="progress-bar">
         <div class="update-bar"></div>
     </div>

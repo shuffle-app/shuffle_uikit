@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -39,6 +40,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   bool seeking = false;
   double height = 0;
   double width = 0;
+  double coverOpacity = 1;
   bool isReady = false;
 
   // Create a [Player] to control playback.
@@ -67,8 +69,15 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
     // Play a [Media] or [Playlist].
     player.open(Media(widget.videoUrl));
     controller.waitUntilFirstFrameRendered.then((_) {
-      setState(() {
-        isReady = true;
+      Future.delayed(const Duration(milliseconds: 500), () {
+        setState(() {
+          coverOpacity = 0;
+        });
+        Future.delayed(const Duration(seconds: 1), () {
+          setState(() {
+            isReady = true;
+          });
+        });
       });
     });
     controller.platform.future.then((value) {
@@ -164,43 +173,38 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
           widget.onTapUp?.call(details);
         },
         onVerticalDragEnd: widget.onVerticalSwipe,
-        child: AnimatedSwitcher(
-            duration: const Duration(milliseconds: 500),
-            switchInCurve: Curves.decelerate,
-            child: !isReady
-                ?
-                // Stack(
-                //         fit: StackFit.expand,
-                //         children: [
-                ImageWidget(
-                    link: widget.coverImageUrl,
-                    imageBytes: widget.coverImageBytes,
-                    fit: BoxFit.cover,
-                    width: 1.sw,
-                    height: 1.sh,
-                    // ),
-                    // Container(color: Colors.black.withOpacity(0.5)),
-                    // const Center(child: LoadingWidget()),
-                    // ],
-                  )
-                : Video(
-                    controller: controller,
-                    height: height - MediaQuery.of(context).padding.top,
-                    width: 1.sw,
-                    fit: BoxFit.cover,
-                    controls: (_) => const SizedBox.shrink(),
-                    filterQuality: FilterQuality.high,
-                  )
-            // RepaintBoundary(
-            //         child: Transform.scale(
-            //             scale: _controller!.value.aspectRatio > (MediaQuery.sizeOf(context).aspectRatio + 0.18)
-            //                 ? 1
-            //                 : (width / 1.sw - height / 1.sh),
-            //             child: AspectRatio(
-            //               aspectRatio: _controller!.value.aspectRatio,
-            //               child: VideoPlayer(_controller!),
-            //             )))
-            ),
+        child:
+            // AnimatedSwitcher(
+            //     duration: const Duration(milliseconds: 500),
+            //     switchInCurve: Curves.decelerate,
+            //     child: !isReady
+            //         ?
+            Stack(fit: StackFit.expand, children: [
+          // :
+          Video(
+            controller: controller,
+            height: height - MediaQuery.of(context).padding.top,
+            width: 1.sw,
+            fit: BoxFit.cover,
+            controls: (_) => const SizedBox.shrink(),
+            filterQuality: Platform.isIOS ? FilterQuality.high : FilterQuality.low,
+          ),
+          if (!isReady)
+            AnimatedOpacity(
+                opacity: coverOpacity,
+                duration: const Duration(milliseconds: 200),
+                child: ImageWidget(
+                  link: widget.coverImageUrl,
+                  imageBytes: widget.coverImageBytes,
+                  fit: BoxFit.cover,
+                  width: 1.sw,
+                  height: 1.sh,
+                  // ),
+                  // Container(color: Colors.black.withOpacity(0.5)),
+                  // const Center(child: LoadingWidget()),
+                  // ],
+                )),
+        ]),
       ),
     ).paddingOnly(top: MediaQuery.paddingOf(context).top);
   }
