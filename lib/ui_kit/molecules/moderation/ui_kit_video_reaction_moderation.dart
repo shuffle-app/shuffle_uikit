@@ -14,8 +14,11 @@ class UiKitVideoReactionsModeration extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(
+        SizedBox(
+          width: 284,
+          height: 464,
           child: UiKitModerationVideoPlayer(
             videoUrl: videoUrl,
           ),
@@ -28,9 +31,3 @@ class UiKitVideoReactionsModeration extends StatelessWidget {
     );
   }
 }
-
-//VideoCutter(
-//             videoFile: videoFile,
-//             onExportFinished: (exportPath) {},
-//             outputDirectory: 'output',
-//           )
