@@ -8,13 +8,15 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
   const $AssetsAnimationsGen();
 
+  /// Directory path: assets/animations/lottie
   $AssetsAnimationsLottieGen get lottie => const $AssetsAnimationsLottieGen();
 }
 
@@ -53,7 +55,10 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// Directory path: assets/images/png
   $AssetsImagesPngGen get png => const $AssetsImagesPngGen();
+
+  /// Directory path: assets/images/svg
   $AssetsImagesSvgGen get svg => const $AssetsImagesSvgGen();
 }
 
@@ -467,70 +472,70 @@ class $AssetsImagesPngGen {
   AssetGenImage get yoga => const AssetGenImage('assets/images/png/Yoga.png');
 
   /// File path: assets/images/png/_no-bg-booking-w.png
-  AssetGenImage get noBgBookingW => const AssetGenImage('assets/images/png/_no-bg-booking-w.png');
+  AssetGenImage get aNoBgBookingW => const AssetGenImage('assets/images/png/_no-bg-booking-w.png');
 
   /// File path: assets/images/png/_no-bg-booking.png
-  AssetGenImage get noBgBooking => const AssetGenImage('assets/images/png/_no-bg-booking.png');
+  AssetGenImage get aNoBgBooking => const AssetGenImage('assets/images/png/_no-bg-booking.png');
 
   /// File path: assets/images/png/_no-bg-eye-w.png
-  AssetGenImage get noBgEyeW => const AssetGenImage('assets/images/png/_no-bg-eye-w.png');
+  AssetGenImage get aNoBgEyeW => const AssetGenImage('assets/images/png/_no-bg-eye-w.png');
 
   /// File path: assets/images/png/_no-bg-eye.png
-  AssetGenImage get noBgEye => const AssetGenImage('assets/images/png/_no-bg-eye.png');
+  AssetGenImage get aNoBgEye => const AssetGenImage('assets/images/png/_no-bg-eye.png');
 
   /// File path: assets/images/png/_no-bg-handshake-w.png
-  AssetGenImage get noBgHandshakeW => const AssetGenImage('assets/images/png/_no-bg-handshake-w.png');
+  AssetGenImage get aNoBgHandshakeW => const AssetGenImage('assets/images/png/_no-bg-handshake-w.png');
 
   /// File path: assets/images/png/_no-bg-handshake.png
-  AssetGenImage get noBgHandshake => const AssetGenImage('assets/images/png/_no-bg-handshake.png');
+  AssetGenImage get aNoBgHandshake => const AssetGenImage('assets/images/png/_no-bg-handshake.png');
 
   /// File path: assets/images/png/_no-bg-hourglass-w.png
-  AssetGenImage get noBgHourglassW => const AssetGenImage('assets/images/png/_no-bg-hourglass-w.png');
+  AssetGenImage get aNoBgHourglassW => const AssetGenImage('assets/images/png/_no-bg-hourglass-w.png');
 
   /// File path: assets/images/png/_no-bg-hourglass.png
-  AssetGenImage get noBgHourglass => const AssetGenImage('assets/images/png/_no-bg-hourglass.png');
+  AssetGenImage get aNoBgHourglass => const AssetGenImage('assets/images/png/_no-bg-hourglass.png');
 
   /// File path: assets/images/png/_no-bg-index_finger-w.png
-  AssetGenImage get noBgIndexFingerW => const AssetGenImage('assets/images/png/_no-bg-index_finger-w.png');
+  AssetGenImage get aNoBgIndexFingerW => const AssetGenImage('assets/images/png/_no-bg-index_finger-w.png');
 
   /// File path: assets/images/png/_no-bg-index_finger.png
-  AssetGenImage get noBgIndexFinger => const AssetGenImage('assets/images/png/_no-bg-index_finger.png');
+  AssetGenImage get aNoBgIndexFinger => const AssetGenImage('assets/images/png/_no-bg-index_finger.png');
 
   /// File path: assets/images/png/_no-bg-like-w.png
-  AssetGenImage get noBgLikeW => const AssetGenImage('assets/images/png/_no-bg-like-w.png');
+  AssetGenImage get aNoBgLikeW => const AssetGenImage('assets/images/png/_no-bg-like-w.png');
 
   /// File path: assets/images/png/_no-bg-like_icon.png
-  AssetGenImage get noBgLikeIcon => const AssetGenImage('assets/images/png/_no-bg-like_icon.png');
+  AssetGenImage get aNoBgLikeIcon => const AssetGenImage('assets/images/png/_no-bg-like_icon.png');
 
   /// File path: assets/images/png/_no-bg-message.png
-  AssetGenImage get noBgMessage => const AssetGenImage('assets/images/png/_no-bg-message.png');
+  AssetGenImage get aNoBgMessage => const AssetGenImage('assets/images/png/_no-bg-message.png');
 
   /// File path: assets/images/png/_no-bg-message_bubble-w.png
-  AssetGenImage get noBgMessageBubbleW => const AssetGenImage('assets/images/png/_no-bg-message_bubble-w.png');
+  AssetGenImage get aNoBgMessageBubbleW => const AssetGenImage('assets/images/png/_no-bg-message_bubble-w.png');
 
   /// File path: assets/images/png/_no-bg-open_hand-w.png
-  AssetGenImage get noBgOpenHandW => const AssetGenImage('assets/images/png/_no-bg-open_hand-w.png');
+  AssetGenImage get aNoBgOpenHandW => const AssetGenImage('assets/images/png/_no-bg-open_hand-w.png');
 
   /// File path: assets/images/png/_no-bg-open_hand.png
-  AssetGenImage get noBgOpenHand => const AssetGenImage('assets/images/png/_no-bg-open_hand.png');
+  AssetGenImage get aNoBgOpenHand => const AssetGenImage('assets/images/png/_no-bg-open_hand.png');
 
   /// File path: assets/images/png/_no-bg-share-w.png
-  AssetGenImage get noBgShareW => const AssetGenImage('assets/images/png/_no-bg-share-w.png');
+  AssetGenImage get aNoBgShareW => const AssetGenImage('assets/images/png/_no-bg-share-w.png');
 
   /// File path: assets/images/png/_no-bg-share.png
-  AssetGenImage get noBgShare => const AssetGenImage('assets/images/png/_no-bg-share.png');
+  AssetGenImage get aNoBgShare => const AssetGenImage('assets/images/png/_no-bg-share.png');
 
   /// File path: assets/images/png/_no-bg-two_fingers_up-w.png
-  AssetGenImage get noBgTwoFingersUpW => const AssetGenImage('assets/images/png/_no-bg-two_fingers_up-w.png');
+  AssetGenImage get aNoBgTwoFingersUpW => const AssetGenImage('assets/images/png/_no-bg-two_fingers_up-w.png');
 
   /// File path: assets/images/png/_no-bg-victory-hands.png
-  AssetGenImage get noBgVictoryHands => const AssetGenImage('assets/images/png/_no-bg-victory-hands.png');
+  AssetGenImage get aNoBgVictoryHands => const AssetGenImage('assets/images/png/_no-bg-victory-hands.png');
 
   /// File path: assets/images/png/_no-bg-walking_man-w.png
-  AssetGenImage get noBgWalkingManW => const AssetGenImage('assets/images/png/_no-bg-walking_man-w.png');
+  AssetGenImage get aNoBgWalkingManW => const AssetGenImage('assets/images/png/_no-bg-walking_man-w.png');
 
   /// File path: assets/images/png/_no-bg-walking_man.png
-  AssetGenImage get noBgWalkingMan => const AssetGenImage('assets/images/png/_no-bg-walking_man.png');
+  AssetGenImage get aNoBgWalkingMan => const AssetGenImage('assets/images/png/_no-bg-walking_man.png');
 
   /// File path: assets/images/png/atheist.png
   AssetGenImage get atheist => const AssetGenImage('assets/images/png/atheist.png');
@@ -538,6 +543,7 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
+  /// Directory path: assets/images/png/avatars
   $AssetsImagesPngAvatarsGen get avatars => const $AssetsImagesPngAvatarsGen();
 
   /// File path: assets/images/png/balloons.png
@@ -759,6 +765,7 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
 
+  /// Directory path: assets/images/png/preference_questions
   $AssetsImagesPngPreferenceQuestionsGen get preferenceQuestions => const $AssetsImagesPngPreferenceQuestionsGen();
 
   /// File path: assets/images/png/production.png
@@ -975,28 +982,28 @@ class $AssetsImagesPngGen {
         visitFirst,
         windy,
         yoga,
-        noBgBookingW,
-        noBgBooking,
-        noBgEyeW,
-        noBgEye,
-        noBgHandshakeW,
-        noBgHandshake,
-        noBgHourglassW,
-        noBgHourglass,
-        noBgIndexFingerW,
-        noBgIndexFinger,
-        noBgLikeW,
-        noBgLikeIcon,
-        noBgMessage,
-        noBgMessageBubbleW,
-        noBgOpenHandW,
-        noBgOpenHand,
-        noBgShareW,
-        noBgShare,
-        noBgTwoFingersUpW,
-        noBgVictoryHands,
-        noBgWalkingManW,
-        noBgWalkingMan,
+        aNoBgBookingW,
+        aNoBgBooking,
+        aNoBgEyeW,
+        aNoBgEye,
+        aNoBgHandshakeW,
+        aNoBgHandshake,
+        aNoBgHourglassW,
+        aNoBgHourglass,
+        aNoBgIndexFingerW,
+        aNoBgIndexFinger,
+        aNoBgLikeW,
+        aNoBgLikeIcon,
+        aNoBgMessage,
+        aNoBgMessageBubbleW,
+        aNoBgOpenHandW,
+        aNoBgOpenHand,
+        aNoBgShareW,
+        aNoBgShare,
+        aNoBgTwoFingersUpW,
+        aNoBgVictoryHands,
+        aNoBgWalkingManW,
+        aNoBgWalkingMan,
         atheist,
         atmosphere,
         balloons,
@@ -2618,9 +2625,11 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(this._assetName, {this.size = null});
 
   final String _assetName;
+
+  final Size? size;
 
   Image image({
     Key? key,
@@ -2692,9 +2701,20 @@ class AssetGenImage {
 }
 
 class SvgGenImage {
-  const SvgGenImage(this._assetName);
+  const SvgGenImage(
+    this._assetName, {
+    this.size = null,
+  }) : _isVecFormat = false;
+
+  const SvgGenImage.vec(
+    this._assetName, {
+    this.size = null,
+  }) : _isVecFormat = true;
 
   final String _assetName;
+
+  final Size? size;
+  final bool _isVecFormat;
 
   SvgPicture svg({
     Key? key,
@@ -2709,19 +2729,19 @@ class SvgGenImage {
     WidgetBuilder? placeholderBuilder,
     String? semanticsLabel,
     bool excludeFromSemantics = false,
-    SvgTheme theme = const SvgTheme(),
+    SvgTheme? theme,
     ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
     @deprecated bool cacheColorFilter = false,
   }) {
-    return SvgPicture.asset(
-      _assetName,
+    return SvgPicture(
+      _isVecFormat
+          ? AssetBytesLoader(_assetName, assetBundle: bundle, packageName: package)
+          : SvgAssetLoader(_assetName, assetBundle: bundle, packageName: package),
       key: key,
       matchTextDirection: matchTextDirection,
-      bundle: bundle,
-      package: package,
       width: width,
       height: height,
       fit: fit,
@@ -2731,9 +2751,7 @@ class SvgGenImage {
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
       theme: theme,
-      colorFilter: colorFilter,
-      color: color,
-      colorBlendMode: colorBlendMode,
+      colorFilter: colorFilter ?? (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );

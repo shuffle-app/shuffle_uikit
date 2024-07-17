@@ -66,11 +66,11 @@ class UiKitReactionPreview extends StatelessWidget {
               //     decoration: BoxDecoration(
               //       color: viewed ? ColorsFoundation.darkNeutral900.withOpacity(0.5) : null,
               //     ),
-                  child: ImageWidget(
-                    link: imagePath,
-                    fit: BoxFit.cover,
-                  )),
-            // ),
+              child: ImageWidget(
+                link: imagePath,
+                fit: BoxFit.cover,
+              ),),
+          // ),
           Material(
             color: Colors.transparent,
             borderRadius: BorderRadiusFoundation.all16,
