@@ -353,6 +353,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "CompressingVideoProgress": m8,
         "Confirm": MessageLookupByLibrary.simpleMessage("Подтвердить"),
         "Congratulations": MessageLookupByLibrary.simpleMessage("Поздравляем"),
+        "Connected": MessageLookupByLibrary.simpleMessage("Connected"),
         "Connects": MessageLookupByLibrary.simpleMessage("Объедениться"),
         "ContactPerson":
             MessageLookupByLibrary.simpleMessage("Контактное лицо"),

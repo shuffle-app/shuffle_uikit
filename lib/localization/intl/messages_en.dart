@@ -349,6 +349,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "Congratulations":
             MessageLookupByLibrary.simpleMessage("Congratulations"),
+        "Connected": MessageLookupByLibrary.simpleMessage("Connected"),
         "Connects": MessageLookupByLibrary.simpleMessage("Connects"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("Contact person"),
         "Contacts": MessageLookupByLibrary.simpleMessage("Contacts"),

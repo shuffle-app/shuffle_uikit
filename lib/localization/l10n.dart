@@ -6920,6 +6920,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Connected`
+  String get Connected {
+    return Intl.message(
+      'Connected',
+      name: 'Connected',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

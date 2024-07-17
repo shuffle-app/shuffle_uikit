@@ -348,6 +348,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "CompressingVideoProgress": m8,
         "Confirm": MessageLookupByLibrary.simpleMessage("पुष्टि करना"),
         "Congratulations": MessageLookupByLibrary.simpleMessage("बधाई हो"),
+        "Connected": MessageLookupByLibrary.simpleMessage("Connected"),
         "Connects": MessageLookupByLibrary.simpleMessage("Connects"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("संपर्क व्यक्ति"),
         "Contacts": MessageLookupByLibrary.simpleMessage("संपर्क"),
