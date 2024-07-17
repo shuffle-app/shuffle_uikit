@@ -500,7 +500,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Средоточие Света"),
         "FocusOfLightDescription": MessageLookupByLibrary.simpleMessage(
             "Свет вселенной заключён здесь. Если потемнеет в душе - свет с тобой. Посмотри и преисполнись покоем."),
-        "Follow": MessageLookupByLibrary.simpleMessage("Следовать"),
+        "Follow": MessageLookupByLibrary.simpleMessage("Подписаться"),
         "Followers": MessageLookupByLibrary.simpleMessage("Подписчики"),
         "FollowersCount": m23,
         "Followings": MessageLookupByLibrary.simpleMessage("Подписки"),
@@ -815,7 +815,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ProSubscriptionFeature2": MessageLookupByLibrary.simpleMessage(
             "Возможность создавать свои собственные события"),
         "ProSubscriptionFeature3": MessageLookupByLibrary.simpleMessage(
-            "Дополнительная мотивация потенциальной аудитории (клиентов/посетителей) с помощью системы баллов"),
+            "Дополнительная мотивация потенциальной аудитории (клиентов/посетителей) с помощью системы поинтов"),
         "ProSubscriptionFeature4": MessageLookupByLibrary.simpleMessage(
             "Возможность продавать дополнительный сервис через систему бронирования"),
         "ProSubscriptionFeature5":
@@ -978,7 +978,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SpendIt": MessageLookupByLibrary.simpleMessage("Потратить"),
         "Spent": MessageLookupByLibrary.simpleMessage("Потрачено"),
         "SpentMyPoints":
-            MessageLookupByLibrary.simpleMessage("Потратил мои баллы"),
+            MessageLookupByLibrary.simpleMessage("Потратить мои баллы"),
         "SpinnerHiwHint": m53,
         "SpinnerHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "ты найдешь персонализированные мероприятия"),

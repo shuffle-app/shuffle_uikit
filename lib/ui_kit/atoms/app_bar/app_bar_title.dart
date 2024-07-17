@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -23,11 +24,11 @@ class AppBarTitle extends StatelessWidget {
 
     return Expanded(
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      Text(
+      AutoSizeText(
         title,
         style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
         textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
-        maxLines: 2,
+        maxLines: 1,
       ),
       if (onIWidgetInfoString != null) ...[
         SpacingFoundation.horizontalSpace4,
