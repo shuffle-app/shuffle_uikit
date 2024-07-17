@@ -17,10 +17,12 @@ class UiKitCustomContentPopup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = context.uiKitTheme?.boldTextTheme;
-    final colorScheme = context.uiKitTheme?.colorScheme;
+    final theme = context.uiKitTheme;
+    final textTheme = theme?.boldTextTheme;
+    final colorScheme = theme?.colorScheme;
 
     return Dialog(
+      backgroundColor: theme?.cardTheme.color ?? theme?.colorScheme.inversePrimary,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
       ),

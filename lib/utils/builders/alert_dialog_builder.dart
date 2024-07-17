@@ -12,11 +12,14 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
     barrierDismissible: barrierDismissible,
     context: context,
     builder: (BuildContext context) {
-      final textTheme = context.uiKitTheme?.boldTextTheme;
+      final theme = context.uiKitTheme;
+      final textTheme = theme?.boldTextTheme;
 
       return AlertDialog(
-        backgroundColor: data.customBackgroundColor ?? context.uiKitTheme?.cardTheme.color,
+        backgroundColor: data.customBackgroundColor ?? theme?.cardTheme.color ?? theme?.colorScheme.inversePrimary,
         clipBehavior: Clip.hardEdge,
+        surfaceTintColor: Colors.transparent,
+        shadowColor: Colors.transparent,
         insetPadding: data.insetPadding ?? EdgeInsets.zero,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusFoundation.all24,

@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -189,7 +190,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
                     width: 1.sw,
                     fit: BoxFit.cover,
                     controls: (_) => const SizedBox.shrink(),
-                    filterQuality: FilterQuality.high,
+                    filterQuality: Platform.isIOS ? FilterQuality.high : FilterQuality.low,
                   )
             // RepaintBoundary(
             //         child: Transform.scale(
