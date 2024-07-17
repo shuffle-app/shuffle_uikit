@@ -677,7 +677,9 @@
   "FeelingsGuesses": "{count} {count, plural, =0{догадок} =1{догадка} =2{догадки} few{догадки} many{догадок} other{догадок}} о чувствах",
   "ContentOffers": "{count} {count, plural, =0{предложений} =1{предложение} =2{прижложений} few{предложений} many{предложений} other{предложений}} по контенту",
   "Reactions": "{count} {count, plural, =0{реакций} =1{реакция} =2{реакции} few{реакции} many{реакции} other{реакций}}",
-  "StacksShares": "поделиться {count} {count, plural, =0{стеками} =1{стеком} =2{стеками} few{стеками} many{стеками} other{стеками}}"
+  "StacksShares": "поделиться {count} {count, plural, =0{стеками} =1{стеком} =2{стеками} few{стеками} many{стеками} other{стеками}}",
+  "WiseacreOfSands": "Мудрец песков",
+  "WiseacreLadyOfSands": "Мудрая леди песков"
 
 }
 

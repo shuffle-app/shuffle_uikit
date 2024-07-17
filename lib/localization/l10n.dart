@@ -6960,6 +6960,26 @@ class S {
       args: [count],
     );
   }
+
+  /// `Wiseacre of sands`
+  String get WiseacreOfSands {
+    return Intl.message(
+      'Wiseacre of sands',
+      name: 'WiseacreOfSands',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wiseacre lady of sands`
+  String get WiseacreLadyOfSands {
+    return Intl.message(
+      'Wiseacre lady of sands',
+      name: 'WiseacreLadyOfSands',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

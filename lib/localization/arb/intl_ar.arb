@@ -675,5 +675,7 @@
   "FeelingsGuesses": "{count} {count, plural, =0{feelings} =1{feeling} =2{feelings} few{feelings} many{feelings} other{feelings}} guesses",
   "ContentOffers": "{count} content {count, plural, =0{offers} =1{offer} =2{offers} few{offers} many{offers} other{offers}}",
   "Reactions": "{count} {count, plural, =0{reactions} =1{reaction} =2{reactions} few{reactions} many{reactions} other{reactions}}",
-  "StacksShares": "{count} {count, plural, =0{stacks} =1{stack} =2{stacks} few{stacks} many{stacks} other{stacks}} {count, plural, =0{shares} =1{share} =2{shares} few{shares} many{shares} other{shares}}"
+  "StacksShares": "{count} {count, plural, =0{stacks} =1{stack} =2{stacks} few{stacks} many{stacks} other{stacks}} {count, plural, =0{shares} =1{share} =2{shares} few{shares} many{shares} other{shares}}",
+  "WiseacreOfSands": "Wiseacre of sands",
+  "WiseacreLadyOfSands": "Wiseacre lady of sands"
 }

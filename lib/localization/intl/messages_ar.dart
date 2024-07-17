@@ -1150,6 +1150,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "WillBe": MessageLookupByLibrary.simpleMessage(" will be."),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("Will be implemented soon"),
+        "WiseacreLadyOfSands":
+            MessageLookupByLibrary.simpleMessage("Wiseacre lady of sands"),
+        "WiseacreOfSands":
+            MessageLookupByLibrary.simpleMessage("Wiseacre of sands"),
         "WithInDays": m67,
         "WithYourPreferences":
             MessageLookupByLibrary.simpleMessage("With your\npreferences"),

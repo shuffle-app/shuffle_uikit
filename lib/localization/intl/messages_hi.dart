@@ -1162,6 +1162,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "WillBe": MessageLookupByLibrary.simpleMessage(" होगा।"),
         "WillBeImplementedSoon":
             MessageLookupByLibrary.simpleMessage("जल्द ही लागू किया जाएगा"),
+        "WiseacreLadyOfSands":
+            MessageLookupByLibrary.simpleMessage("Wiseacre lady of sands"),
+        "WiseacreOfSands":
+            MessageLookupByLibrary.simpleMessage("Wiseacre of sands"),
         "WithInDays": m67,
         "WithYourPreferences":
             MessageLookupByLibrary.simpleMessage("आपका\nप्राथमिकताएं के साथ"),
