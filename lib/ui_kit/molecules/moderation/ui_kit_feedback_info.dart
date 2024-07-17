@@ -39,7 +39,7 @@ class _UiKitFeedbackInfoState extends State<UiKitFeedbackInfo> {
       children: [
         Text(
           S.of(context).Info,
-          style: boldTextTheme?.caption1Bold,
+          style: boldTextTheme?.title2.copyWith(fontWeight: FontWeight.w400),
         ),
         SpacingFoundation.verticalSpace4,
         Row(
@@ -47,7 +47,7 @@ class _UiKitFeedbackInfoState extends State<UiKitFeedbackInfo> {
             Flexible(
               child: Text(
                 S.of(context).User,
-                style: regularTextTheme?.labelSmall
+                style: regularTextTheme?.body
                     .copyWith(color: theme?.colorScheme.darkNeutral900),
               ),
             ),
@@ -55,7 +55,7 @@ class _UiKitFeedbackInfoState extends State<UiKitFeedbackInfo> {
             Flexible(
               child: Text(
                 widget.userName,
-                style: regularTextTheme?.caption1,
+                style: regularTextTheme?.body,
               ),
             ),
           ],
