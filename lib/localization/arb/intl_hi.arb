@@ -672,7 +672,8 @@
   "YouWillNoLongerSendMessagesTo": "You can no longer send messages to {name}",
   "YouSureToDeleteX": "Sure you want to delete {name}?",
   "MessageNotFound": "Message not found",
-  "Connected": "Connected"
-
-
+  "Connected": "Connected",
+  "You": "You",
+  "XInvitesY": "{x} invites {y}",
+  "InvitesNPeopleInfo": "Invites {invitedPeopleCount, plural, =0{{invitedPeopleCount} people} =1{{invitedPeopleCount} person} =2{{invitedPeopleCount} people} few{{invitedPeopleCount} people} many{{invitedPeopleCount} people} other{{invitedPeopleCount} people}}"
 }

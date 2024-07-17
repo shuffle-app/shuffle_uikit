@@ -11,12 +11,14 @@ class UiKitMessageCard extends StatelessWidget {
     required this.lastMessage,
     required this.lastMessageTime,
     required this.onTap,
+    this.lastMessageSenderName,
     this.subtitleIconPath,
     this.unreadMessageCount,
     this.disabled = false,
   });
 
   final String name;
+  final String? lastMessageSenderName;
   final String subtitle;
   final String? subtitleIconPath;
   final String lastMessage;
@@ -37,6 +39,7 @@ class UiKitMessageCard extends StatelessWidget {
       lastMessage: '',
       lastMessageTime: '',
       onTap: () {},
+      lastMessageSenderName: '',
     );
   }
 
@@ -46,7 +49,6 @@ class UiKitMessageCard extends StatelessWidget {
     final regularTextTheme = context.uiKitTheme?.regularTextTheme;
     final colorScheme = context.uiKitTheme?.colorScheme;
     final cardColor = context.uiKitTheme?.cardColor;
-    print('chat $name is disabled: $disabled');
 
     return Material(
       borderRadius: BorderRadiusFoundation.all24,
@@ -64,7 +66,11 @@ class UiKitMessageCard extends StatelessWidget {
                 child: Row(
                   children: [
                     context.userAvatar(
-                        size: UserAvatarSize.x40x40, type: userType, userName: name, imageUrl: avatarPath),
+                      size: UserAvatarSize.x40x40,
+                      type: userType,
+                      userName: name,
+                      imageUrl: avatarPath,
+                    ),
                     SpacingFoundation.horizontalSpace12,
                     Expanded(
                       child: Column(
@@ -72,15 +78,29 @@ class UiKitMessageCard extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Flexible(
-                                child: Text(
-                                  name,
-                                  style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
-                                  maxLines: 1,
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: Text(
+                                        name,
+                                        style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
+                                        maxLines: 2,
+                                      ),
+                                    ),
+                                    SpacingFoundation.horizontalSpace4,
+                                    UiKitUserBadge(userType: userType),
+                                    SpacingFoundation.horizontalSpace4,
+                                  ],
                                 ),
                               ),
-                              SpacingFoundation.horizontalSpace8,
-                              UiKitUserBadge(userType: userType)
+                              Text(
+                                lastMessageTime,
+                                style: regularTextTheme?.caption4.copyWith(
+                                  color: colorScheme?.darkNeutral900,
+                                ),
+                                textAlign: TextAlign.end,
+                              ),
                             ],
                           ),
                           SpacingFoundation.verticalSpace2,
@@ -107,30 +127,37 @@ class UiKitMessageCard extends StatelessWidget {
                   ],
                 ),
               ),
-              Text(
-                lastMessageTime,
-                style: regularTextTheme?.caption4.copyWith(
-                  color: colorScheme?.darkNeutral900,
-                ),
-                textAlign: TextAlign.end,
-              ),
               SpacingFoundation.verticalSpace8,
               Row(
                 children: [
                   Flexible(
                     child: ConstrainedBox(
                       constraints: BoxConstraints(minHeight: 20.w),
-                      child: Text(
-                        lastMessage,
-                        overflow: TextOverflow.ellipsis,
-                        style: boldTextTheme?.caption1Medium.copyWith(
-                          color: disabled
-                              ? colorScheme?.inverseSurface
-                              : (unreadMessageCount ?? 0) == 0
-                                  ? colorScheme?.darkNeutral900
-                                  : null,
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            if (lastMessageSenderName != null && lastMessageSenderName!.isNotEmpty)
+                              TextSpan(
+                                text: '$lastMessageSenderName: ',
+                                style: boldTextTheme?.caption1Medium.copyWith(
+                                  overflow: TextOverflow.ellipsis,
+                                  color: ColorsFoundation.neutral48,
+                                ),
+                              ),
+                            TextSpan(
+                              text: lastMessage,
+                              style: boldTextTheme?.caption1Medium.copyWith(
+                                overflow: TextOverflow.ellipsis,
+                                color: disabled
+                                    ? colorScheme?.inverseSurface
+                                    : unreadMessageCount == 0
+                                        ? colorScheme?.darkNeutral900
+                                        : null,
+                              ),
+                            ),
+                          ],
                         ),
-                        textAlign: disabled ? TextAlign.end : TextAlign.start,
+                        textAlign: TextAlign.start,
                       ),
                     ),
                   ),

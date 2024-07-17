@@ -54,7 +54,7 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
         children: [
           Text(
             formatChatMessageDate(timeOfDay.toLocal()),
-            style: theme?.regularTextTheme.caption2.copyWith(
+            style: theme?.regularTextTheme.caption4Regular.copyWith(
               color: theme.colorScheme.darkNeutral900,
             ),
           ),

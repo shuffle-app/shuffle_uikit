@@ -76,13 +76,13 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
                 if (senderNickname != null)
                   Text(
                     '@$senderNickname',
-                    style: theme?.regularTextTheme.caption2.copyWith(
+                    style: theme?.regularTextTheme.caption4Regular.copyWith(
                       color: ColorsFoundation.mutedText,
                     ),
                   ),
                 Text(
                   formatChatMessageDate(timeOfDay.toLocal()),
-                  style: theme?.regularTextTheme.caption2.copyWith(
+                  style: theme?.regularTextTheme.caption4Regular.copyWith(
                     color: theme.colorScheme.darkNeutral900,
                   ),
                 ),
