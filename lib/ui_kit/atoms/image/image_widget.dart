@@ -58,12 +58,14 @@ class ImageWidget extends StatelessWidget {
   });
 
   Future _takeFrameFromVideo(String link) async {
-    final VideoPlayerController controller = VideoPlayerController.networkUrl(Uri.parse(link));
+    final VideoPlayerController controller =
+        VideoPlayerController.networkUrl(Uri.parse(link));
     await controller.initialize();
     if (controller.value.duration.inSeconds > 1) {
       await controller.seekTo(const Duration(seconds: 1));
     } else {
-      await controller.seekTo(Duration(milliseconds: controller.value.duration.inMilliseconds - 50));
+      await controller.seekTo(Duration(
+          milliseconds: controller.value.duration.inMilliseconds - 50));
     }
 
     return controller;
@@ -79,11 +81,13 @@ class ImageWidget extends StatelessWidget {
         color: color,
         height: height,
         frameBuilder: imageBuilder,
-        errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
+        errorBuilder: (context, error, trace) =>
+            errorWidget ?? const DefaultImageErrorWidget(),
       );
     }
 
-    if (iconData != null || (link != null && !link!.contains('/') && link!.isNotEmpty)) {
+    if (iconData != null ||
+        (link != null && !link!.contains('/') && link!.isNotEmpty)) {
       return Icon(
         iconData ?? GraphicsFoundation.instance.iconFromString(link ?? ''),
         color: color,
@@ -100,19 +104,24 @@ class ImageWidget extends StatelessWidget {
         height: height,
         width: width,
         colorBlendMode: colorBlendMode,
-        errorBuilder: (context, error, trace) => errorWidget ?? const DefaultImageErrorWidget(),
+        errorBuilder: (context, error, trace) =>
+            errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else if (svgAsset != null) {
       return svgAsset!.svg(
         package: mentionPackage ? 'shuffle_uikit' : null,
-        colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
+        colorFilter:
+            color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
         fit: fit ?? BoxFit.none,
         height: height,
         width: width,
       );
     } else if (link == null || link!.isEmpty) {
       return cardColor == Colors.transparent
-          ? SizedBox(width: width, height: height, child: errorWidget ?? const DefaultImageErrorWidget())
+          ? SizedBox(
+              width: width,
+              height: height,
+              child: errorWidget ?? const DefaultImageErrorWidget())
           : UiKitCardWrapper(
               width: width,
               color: cardColor,
@@ -129,22 +138,27 @@ class ImageWidget extends StatelessWidget {
                     width: width,
                     height: height,
                     child: RepaintBoundary(
-                      child: VideoPlayer(snapshot.data as VideoPlayerController),
+                      child:
+                          VideoPlayer(snapshot.data as VideoPlayerController),
                     ),
                   )
                 : placeholder;
           },
         );
-      } else if (link!.split('.').lastOrNull == 'svg' || link!.contains('svg-icons')) {
+      } else if (link!.split('.').lastOrNull == 'svg' ||
+          link!.contains('svg-icons')) {
         return kIsWeb
             ? SvgPicture.network(
                 CustomProxyStatic.proxy + link!,
-                colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
+                colorFilter: color == null
+                    ? null
+                    : ColorFilter.mode(color!, BlendMode.srcIn),
                 fit: fit ?? BoxFit.none,
                 height: height,
                 width: width,
                 placeholderBuilder: (_) => ConstrainedBox(
-                  constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
+                  constraints:
+                      BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
                   child: placeholder,
                 ),
               )
@@ -153,7 +167,8 @@ class ImageWidget extends StatelessWidget {
                 width: width,
                 height: height,
                 placeholder: ConstrainedBox(
-                  constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
+                  constraints:
+                      BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
                   child: placeholder,
                 ),
                 link: link!,
@@ -163,7 +178,11 @@ class ImageWidget extends StatelessWidget {
 
       // !.startsWith("http://") || link!.startsWith("https://")) {
       return CachedNetworkImage(
-        imageUrl: CustomProxyStatic.proxy + link! + (width != null ? '?width=${width! * 2.5}' : '?width=${0.7.sw * 2.5}'),
+        imageUrl: CustomProxyStatic.proxy +
+            link! +
+            (width != null
+                ? '?width=${width! * 2.5}'
+                : '?width=${0.7.sw * 2.5}'),
         fit: fit,
         fadeInDuration: const Duration(milliseconds: 200),
         fadeOutDuration: const Duration(milliseconds: 200),
@@ -174,9 +193,11 @@ class ImageWidget extends StatelessWidget {
         colorBlendMode: colorBlendMode,
         cacheManager: CustomCacheManager.imageInstance,
         imageBuilder: (context, image) {
-          final imageWidget = Image(image: image, fit: fit, width: width, height: height);
+          final imageWidget =
+              Image(image: image, fit: fit, width: width, height: height);
 
-          return imageBuilder?.call(context, imageWidget, 1, false) ?? imageWidget;
+          return imageBuilder?.call(context, imageWidget, 1, false) ??
+              imageWidget;
         },
         errorWidget: (context, url, trace) {
           log('Got error while downloading $url', name: 'ImageWidget');
@@ -192,10 +213,12 @@ class ImageWidget extends StatelessWidget {
         link!,
         fit: fit ?? BoxFit.none,
         width: width,
-        colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
+        colorFilter:
+            color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
         height: height,
         package: mentionPackage ? 'shuffle_uikit' : null,
-        placeholderBuilder: (context) => errorWidget ?? const DefaultImageErrorWidget(),
+        placeholderBuilder: (context) =>
+            errorWidget ?? const DefaultImageErrorWidget(),
       );
     } else if (link!.contains('asset')) {
       return Image.asset(
@@ -206,6 +229,7 @@ class ImageWidget extends StatelessWidget {
         height: height,
         colorBlendMode: colorBlendMode,
         package: mentionPackage ? 'shuffle_uikit' : null,
+        filterQuality: FilterQuality.medium,
         frameBuilder: imageBuilder,
         errorBuilder: (context, error, trace) {
           onImageLoadingFailed?.call();
@@ -215,7 +239,9 @@ class ImageWidget extends StatelessWidget {
     } else {
       return kIsWeb
           ? Image.network(
-              link!.startsWith('blob') ? link! : CustomProxyStatic.proxy + link!,
+              link!.startsWith('blob')
+                  ? link!
+                  : CustomProxyStatic.proxy + link!,
               fit: fit,
               width: width,
               color: color,
@@ -246,7 +272,9 @@ class CustomProxyStatic {
   static String? _proxyBase;
 
   static String get proxy {
-    return _proxyBase == null || _proxyBase!.isEmpty ? '' : 'https://$_proxyBase/image-proxy/';
+    return _proxyBase == null || _proxyBase!.isEmpty
+        ? ''
+        : 'https://$_proxyBase/image-proxy/';
   }
 
   static set proxy(String value) {
@@ -263,10 +291,16 @@ class _CustomCachedSvgPicture extends StatefulWidget {
   final Widget placeholder;
 
   const _CustomCachedSvgPicture(
-      {this.fit, this.width, this.height, this.color, required this.link, required this.placeholder});
+      {this.fit,
+      this.width,
+      this.height,
+      this.color,
+      required this.link,
+      required this.placeholder});
 
   @override
-  State<_CustomCachedSvgPicture> createState() => _CustomCachedSvgPictureState();
+  State<_CustomCachedSvgPicture> createState() =>
+      _CustomCachedSvgPictureState();
 }
 
 class _CustomCachedSvgPictureState extends State<_CustomCachedSvgPicture> {
@@ -308,13 +342,16 @@ class _CustomCachedSvgPictureState extends State<_CustomCachedSvgPicture> {
         child: cachedFile != null
             ? SvgPicture.file(
                 cachedFile!,
-                colorFilter: widget.color == null ? null : ColorFilter.mode(widget.color!, BlendMode.srcIn),
+                colorFilter: widget.color == null
+                    ? null
+                    : ColorFilter.mode(widget.color!, BlendMode.srcIn),
                 fit: widget.fit ?? BoxFit.none,
                 height: widget.height,
                 width: widget.width,
               )
             : ConstrainedBox(
-                constraints: BoxConstraints.loose(Size(widget.height ?? 20.w, widget.width ?? 20.w)),
+                constraints: BoxConstraints.loose(
+                    Size(widget.height ?? 20.w, widget.width ?? 20.w)),
                 child: widget.placeholder,
               ));
   }
