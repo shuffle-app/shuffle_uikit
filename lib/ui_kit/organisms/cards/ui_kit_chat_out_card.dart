@@ -28,7 +28,7 @@ class UiKitChatOutCard extends StatelessWidget {
 
     return Dismissible(
       key: Key(id.toString()),
-      direction: DismissDirection.horizontal,
+      direction: DismissDirection.endToStart,
       confirmDismiss: (direction) async {
         onReplyMessage?.call(id);
         FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
@@ -42,7 +42,7 @@ class UiKitChatOutCard extends StatelessWidget {
         children: [
           Text(
             formatChatMessageDate(timeOfDay.toLocal()),
-            style: theme?.regularTextTheme.caption2.copyWith(
+            style: theme?.regularTextTheme.caption4Regular.copyWith(
               color: theme.colorScheme.darkNeutral900,
             ),
           ),
@@ -54,19 +54,22 @@ class UiKitChatOutCard extends StatelessWidget {
               Flexible(
                 child: UiKitCardWrapper(
                   color: brightness == Brightness.light ? Colors.white : Colors.black,
+                  clipBehavior: Clip.hardEdge,
                   child: text != null
                       ? SizedBox(
-                          width: width,
-                          child: Text(
-                            text!,
-                            style: theme?.boldTextTheme.caption1Medium.copyWith(color: sentByMe ? Colors.black : null),
-                          ).paddingAll(EdgeInsetsFoundation.all12),
-                        )
+                    width: width,
+                    child: Text(
+                      text!,
+                      style: theme?.boldTextTheme.caption1Medium.copyWith(color: sentByMe ? Colors.black : null),
+                    ).paddingAll(EdgeInsetsFoundation.all12),
+                  )
                       : child!.paddingAll(EdgeInsetsFoundation.all12),
                 ),
               ),
               Transform(
-                transform: Matrix4.identity()..scale(-1.0, 1.0),
+                transform: Matrix4.identity()
+                  ..scale(-1.0, 1.0),
+                  // ..translate(0.5, 0, 0),
                 child: CustomPaint(
                   painter: _MessageTriangle(
                     color: brightness == Brightness.light ? Colors.white : Colors.black,
@@ -88,7 +91,8 @@ class _MessageTriangle extends CustomPainter {
 
   @override
   void paint(canvas, _) {
-    Paint paint = Paint()..color = color;
+    Paint paint = Paint()
+      ..color = color;
     Path path = Path();
 
     path

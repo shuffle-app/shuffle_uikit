@@ -353,6 +353,21 @@ class GradientFoundation {
     ],
   );
 
+  static const sendMessageButtonRadialGradient = RadialGradient(
+    colors: [
+      ColorsFoundation.orange,
+      ColorsFoundation.yellow,
+      ColorsFoundation.pink,
+    ],
+    radius: 1,
+    center: Alignment(-1, 0),
+    stops: [
+      0.203,
+      0.5,
+      0.79,
+    ],
+  );
+
   static const gradientBorder = GradientBoxBorder(
     gradient: defaultRadialGradient,
     width: 2,

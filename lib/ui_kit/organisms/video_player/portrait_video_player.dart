@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -39,7 +40,9 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   bool seeking = false;
   double height = 0;
   double width = 0;
+  double coverOpacity = 1;
   bool isReady = false;
+  final key = UniqueKey();
 
   // Create a [Player] to control playback.
   late final player = Player();
@@ -67,8 +70,15 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
     // Play a [Media] or [Playlist].
     player.open(Media(widget.videoUrl));
     controller.waitUntilFirstFrameRendered.then((_) {
-      setState(() {
-        isReady = true;
+      Future.delayed(const Duration(milliseconds: 500), () {
+        setState(() {
+          coverOpacity = 0;
+        });
+        Future.delayed(const Duration(seconds: 1), () {
+          setState(() {
+            isReady = true;
+          });
+        });
       });
     });
     controller.platform.future.then((value) {
@@ -92,32 +102,6 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
       });
     });
   }
-
-  _calculateDimensions(double aspectRatio) {
-    if (aspectRatio < 1) {
-      setState(() {
-        height = height - MediaQuery.of(context).padding.top;
-        width = height / aspectRatio;
-      });
-      log('video aspect ratio: $aspectRatio and device aspect ${MediaQuery.sizeOf(context).aspectRatio} so we calculate width: $width and height: $height when screenwidth is ${1.sw} and screenheight is ${1.sh}');
-    }
-  }
-
-  // void _playBackListener() {
-  //   if (!seeking) {
-  //     widget.onProgressChanged
-  //         ?.call(_controller!.value.position.inMilliseconds / _controller!.value.duration.inMilliseconds);
-  //   }
-  //   if (_controller?.value.position.inMilliseconds == _controller?.value.duration.inMilliseconds) {
-  //     if (!seeking) {
-  //       if (widget.onVideoComplete == null) {
-  //         context.pop();
-  //       } else {
-  //         widget.onVideoComplete!.call();
-  //       }
-  //     }
-  //   }
-  // }
 
   @override
   void dispose() {
@@ -164,43 +148,42 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
           widget.onTapUp?.call(details);
         },
         onVerticalDragEnd: widget.onVerticalSwipe,
-        child: AnimatedSwitcher(
-            duration: const Duration(milliseconds: 500),
-            switchInCurve: Curves.decelerate,
-            child: !isReady
-                ?
-                // Stack(
-                //         fit: StackFit.expand,
-                //         children: [
-                ImageWidget(
-                    link: widget.coverImageUrl,
-                    imageBytes: widget.coverImageBytes,
-                    fit: BoxFit.cover,
-                    width: 1.sw,
-                    height: 1.sh,
-                    // ),
-                    // Container(color: Colors.black.withOpacity(0.5)),
-                    // const Center(child: LoadingWidget()),
-                    // ],
-                  )
-                : Video(
-                    controller: controller,
-                    height: height - MediaQuery.of(context).padding.top,
-                    width: 1.sw,
-                    fit: BoxFit.cover,
-                    controls: (_) => const SizedBox.shrink(),
-                    filterQuality: FilterQuality.high,
-                  )
-            // RepaintBoundary(
-            //         child: Transform.scale(
-            //             scale: _controller!.value.aspectRatio > (MediaQuery.sizeOf(context).aspectRatio + 0.18)
-            //                 ? 1
-            //                 : (width / 1.sw - height / 1.sh),
-            //             child: AspectRatio(
-            //               aspectRatio: _controller!.value.aspectRatio,
-            //               child: VideoPlayer(_controller!),
-            //             )))
-            ),
+        child:
+            // AnimatedSwitcher(
+            //     duration: const Duration(milliseconds: 500),
+            //     switchInCurve: Curves.decelerate,
+            //     child: !isReady
+            //         ?
+            Stack(fit: StackFit.expand, children: [
+          // :
+          Video(
+            key: key,
+            controller: controller,
+            height: height - MediaQuery.of(context).padding.top,
+            width: 1.sw,
+            wakelock: false,
+            pauseUponEnteringBackgroundMode: true,
+            resumeUponEnteringForegroundMode: true,
+            fit: BoxFit.cover,
+            controls: (_) => const SizedBox.shrink(),
+            filterQuality: Platform.isIOS ? FilterQuality.high : FilterQuality.low,
+          ),
+          if (!isReady)
+            AnimatedOpacity(
+                opacity: coverOpacity,
+                duration: const Duration(milliseconds: 200),
+                child: ImageWidget(
+                  link: widget.coverImageUrl,
+                  imageBytes: widget.coverImageBytes,
+                  fit: BoxFit.cover,
+                  width: 1.sw,
+                  height: 1.sh,
+                  // ),
+                  // Container(color: Colors.black.withOpacity(0.5)),
+                  // const Center(child: LoadingWidget()),
+                  // ],
+                )),
+        ]),
       ),
     ).paddingOnly(top: MediaQuery.paddingOf(context).top);
   }

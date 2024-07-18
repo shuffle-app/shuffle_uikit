@@ -35,11 +35,10 @@ class UiKitChatInCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final width = 0.7.sw;
-    final lightTheme = theme?.themeMode == ThemeMode.light;
 
     return Dismissible(
       key: Key(id.toString()),
-      direction: DismissDirection.horizontal,
+      direction: DismissDirection.endToStart,
       confirmDismiss: (direction) async {
         onReplyMessage?.call(id);
         FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
@@ -64,13 +63,13 @@ class UiKitChatInCard extends StatelessWidget {
                 if (senderNickname != null)
                   Text(
                     '@$senderNickname',
-                    style: theme?.regularTextTheme.caption2.copyWith(
+                    style: theme?.regularTextTheme.caption4Regular.copyWith(
                       color: ColorsFoundation.mutedText,
                     ),
                   ),
                 Text(
                   formatChatMessageDate(timeOfDay.toLocal()),
-                  style: theme?.regularTextTheme.caption2.copyWith(
+                  style: theme?.regularTextTheme.caption4Regular.copyWith(
                     color: theme.colorScheme.darkNeutral900,
                   ),
                 ),
@@ -92,20 +91,13 @@ class UiKitChatInCard extends StatelessWidget {
                     .paddingOnly(right: EdgeInsetsFoundation.horizontal8),
               CustomPaint(
                 painter: _MessageTriangle(
-                  color: hasInvitation
-                      ? lightTheme
-                          ? Colors.black
-                          : Colors.white
-                      : theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white,
+                  color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white,
                 ),
               ),
               Flexible(
                 child: UiKitCardWrapper(
-                  color: hasInvitation
-                      ? lightTheme
-                          ? Colors.black
-                          : Colors.white
-                      : theme?.colorScheme.surface2,
+                  color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white,
+                  clipBehavior: Clip.hardEdge,
                   child: text != null
                       ? SizedBox(
                           width: width,

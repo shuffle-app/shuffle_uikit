@@ -25,7 +25,6 @@ class UiKitFameItem extends StatefulWidget {
 class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
   UiKitAchievementsModel? uiModel;
   FileInfo? modelFile;
-  File? envFile;
   double? downloadProgress = 0;
   bool isLoading = false;
 
@@ -68,14 +67,6 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
   @override
   void initState() {
     uiModel = widget.uiModel;
-    CustomCacheManager.personsInstance
-        .getSingleFile(
-        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/3dmodels/environments/Space_2_sn.hdr')
-        .then((value) {
-      setState(() {
-        envFile = value;
-      });
-    });
     if (uiModel?.objectUrl != null) {
       CustomCacheManager.personsInstance.getFileStream(uiModel!.objectUrl!).listen((value) {
         if (value.runtimeType == DownloadProgress) {
@@ -83,6 +74,7 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
             downloadProgress = (value as DownloadProgress).progress;
           });
         } else if (value.runtimeType == FileInfo) {
+          debugPrint('File downloaded: ${(value as FileInfo).file.path}');
           setState(() {
             modelFile = value as FileInfo;
             isLoading = false;

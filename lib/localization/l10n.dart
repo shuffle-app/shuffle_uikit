@@ -6588,11 +6588,11 @@ class S {
     );
   }
 
-  /// `Crated on {creationDate}.\nWill be deleted {deletionDate}`
+  /// `Created on {creationDate}.\nWill be deleted {deletionDate}`
   String ChatDeletionAndCreationMessage(
       Object creationDate, Object deletionDate) {
     return Intl.message(
-      'Crated on $creationDate.\nWill be deleted $deletionDate',
+      'Created on $creationDate.\nWill be deleted $deletionDate',
       name: 'ChatDeletionAndCreationMessage',
       desc: '',
       args: [creationDate, deletionDate],
@@ -6918,6 +6918,46 @@ class S {
       name: 'MessageNotFound',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `Connected`
+  String get Connected {
+    return Intl.message(
+      'Connected',
+      name: 'Connected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You`
+  String get You {
+    return Intl.message(
+      'You',
+      name: 'You',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{x} invites {y}`
+  String XInvitesY(Object x, Object y) {
+    return Intl.message(
+      '$x invites $y',
+      name: 'XInvitesY',
+      desc: '',
+      args: [x, y],
+    );
+  }
+
+  /// `Invites {invitedPeopleCount, plural, =0{{invitedPeopleCount} people} =1{{invitedPeopleCount} person} =2{{invitedPeopleCount} people} few{{invitedPeopleCount} people} many{{invitedPeopleCount} people} other{{invitedPeopleCount} people}}`
+  String InvitesNPeopleInfo(num invitedPeopleCount) {
+    return Intl.message(
+      'Invites ${Intl.plural(invitedPeopleCount, zero: '$invitedPeopleCount people', one: '$invitedPeopleCount person', two: '$invitedPeopleCount people', few: '$invitedPeopleCount people', many: '$invitedPeopleCount people', other: '$invitedPeopleCount people')}',
+      name: 'InvitesNPeopleInfo',
+      desc: '',
+      args: [invitedPeopleCount],
     );
   }
 

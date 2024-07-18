@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -64,7 +63,8 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
     double expandedHeight = appBarBody == null ? toolbarHeight : customToolbarHeight ?? 190.0;
 
     return CustomScrollView(
-      physics: physics ?? (Platform.isIOS ? const BouncingScrollPhysics() : const ClampingScrollPhysics()),
+      physics: physics ?? const BouncingScrollPhysics(),
+      primary: true,
       cacheExtent: 0.5.sh,
       keyboardDismissBehavior: keyboardDismissBehavior ?? ScrollViewKeyboardDismissBehavior.manual,
       slivers: [
@@ -119,6 +119,7 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
               height: 1.sh - expandedHeight - (bodyBottomSpace ?? 0) - (visible ? 0.4.sh : 0),
               width: 1.sw,
               child: PagedListView.separated(
+                physics: const BouncingScrollPhysics(),
                 scrollController: scrollController,
                 padding: reverse
                     ? EdgeInsets.only(

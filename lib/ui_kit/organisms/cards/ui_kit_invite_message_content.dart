@@ -10,8 +10,9 @@ class UiKitInviteMessageContent extends StatelessWidget {
     required this.invitedUsersData,
     required this.userType,
     required this.onPlaceTap,
-    this.onInvitePeopleTap,
     required this.tags,
+    required this.hasAcceptedInvite,
+    this.onInvitePeopleTap,
     this.canDenyInvitation = false,
     this.canAddMorePeople = false,
     this.showGang = false,
@@ -31,6 +32,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
   final bool canDenyInvitation;
   final bool canAddMorePeople;
   final bool showGang;
+  final bool hasAcceptedInvite;
   final VoidCallback onPlaceTap;
   final VoidCallback? onInvitePeopleTap;
   final VoidCallback? onAcceptTap;
@@ -272,7 +274,18 @@ class UiKitInviteMessageContent extends StatelessWidget {
             ],
           ).paddingAll(EdgeInsetsFoundation.all2),
         ),
-        if (canDenyInvitation)
+        if (hasAcceptedInvite)
+          GradientableWidget(
+            gradient: GradientFoundation.badgeIcon,
+            child: Text(
+              S.current.Connected,
+              style: theme?.boldTextTheme.caption1Bold.copyWith(
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ).paddingOnly(top: EdgeInsetsFoundation.vertical12),
+        if (canDenyInvitation && !hasAcceptedInvite)
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -300,7 +313,7 @@ class UiKitInviteMessageContent extends StatelessWidget {
               ),
             ],
           ).paddingOnly(top: EdgeInsetsFoundation.vertical12),
-        if (canAddMorePeople)
+        if (canAddMorePeople && !hasAcceptedInvite)
           context
               .gradientButton(
                 data: BaseUiKitButtonData(
