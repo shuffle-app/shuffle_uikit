@@ -625,6 +625,14 @@ class $AssetsImagesPngGen {
   AssetGenImage get aNoBgIndexFinger =>
       const AssetGenImage('assets/images/png/_no-bg-index_finger.png');
 
+  /// File path: assets/images/png/_no-bg-invite-w.png
+  AssetGenImage get aNoBgInviteW =>
+      const AssetGenImage('assets/images/png/_no-bg-invite-w.png');
+
+  /// File path: assets/images/png/_no-bg-invite.png
+  AssetGenImage get aNoBgInvite =>
+      const AssetGenImage('assets/images/png/_no-bg-invite.png');
+
   /// File path: assets/images/png/_no-bg-like-w.png
   AssetGenImage get aNoBgLikeW =>
       const AssetGenImage('assets/images/png/_no-bg-like-w.png');
@@ -657,6 +665,22 @@ class $AssetsImagesPngGen {
   AssetGenImage get aNoBgShare =>
       const AssetGenImage('assets/images/png/_no-bg-share.png');
 
+  /// File path: assets/images/png/_no-bg-smile-w.png
+  AssetGenImage get aNoBgSmileW =>
+      const AssetGenImage('assets/images/png/_no-bg-smile-w.png');
+
+  /// File path: assets/images/png/_no-bg-smile.png
+  AssetGenImage get aNoBgSmile =>
+      const AssetGenImage('assets/images/png/_no-bg-smile.png');
+
+  /// File path: assets/images/png/_no-bg-stacks-w.png
+  AssetGenImage get aNoBgStacksW =>
+      const AssetGenImage('assets/images/png/_no-bg-stacks-w.png');
+
+  /// File path: assets/images/png/_no-bg-stacks.png
+  AssetGenImage get aNoBgStacks =>
+      const AssetGenImage('assets/images/png/_no-bg-stacks.png');
+
   /// File path: assets/images/png/_no-bg-two_fingers_up-w.png
   AssetGenImage get aNoBgTwoFingersUpW =>
       const AssetGenImage('assets/images/png/_no-bg-two_fingers_up-w.png');
@@ -664,6 +688,14 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/_no-bg-victory-hands.png
   AssetGenImage get aNoBgVictoryHands =>
       const AssetGenImage('assets/images/png/_no-bg-victory-hands.png');
+
+  /// File path: assets/images/png/_no-bg-video-reaction-w.png
+  AssetGenImage get aNoBgVideoReactionW =>
+      const AssetGenImage('assets/images/png/_no-bg-video-reaction-w.png');
+
+  /// File path: assets/images/png/_no-bg-video-reaction.png
+  AssetGenImage get aNoBgVideoReaction =>
+      const AssetGenImage('assets/images/png/_no-bg-video-reaction.png');
 
   /// File path: assets/images/png/_no-bg-walking_man-w.png
   AssetGenImage get aNoBgWalkingManW =>
@@ -1225,6 +1257,8 @@ class $AssetsImagesPngGen {
         aNoBgHourglass,
         aNoBgIndexFingerW,
         aNoBgIndexFinger,
+        aNoBgInviteW,
+        aNoBgInvite,
         aNoBgLikeW,
         aNoBgLikeIcon,
         aNoBgMessage,
@@ -1233,8 +1267,14 @@ class $AssetsImagesPngGen {
         aNoBgOpenHand,
         aNoBgShareW,
         aNoBgShare,
+        aNoBgSmileW,
+        aNoBgSmile,
+        aNoBgStacksW,
+        aNoBgStacks,
         aNoBgTwoFingersUpW,
         aNoBgVictoryHands,
+        aNoBgVideoReactionW,
+        aNoBgVideoReaction,
         aNoBgWalkingManW,
         aNoBgWalkingMan,
         atheist,
