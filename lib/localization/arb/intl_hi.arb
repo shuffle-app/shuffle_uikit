@@ -671,7 +671,6 @@
   "SureYouWantToExit":  "Sure you want to exit?",
   "YouWillNoLongerSendMessagesTo": "You can no longer send messages to {name}",
   "YouSureToDeleteX": "Sure you want to delete {name}?",
-  "MessageNotFound": "Message not found",
   "Connected": "Connected",
   "You": "You",
   "XInvitesY": "{x} invites {y}",

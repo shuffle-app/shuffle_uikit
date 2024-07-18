@@ -673,7 +673,6 @@
   "SureYouWantToExit":  "Точно хочешь выйти?",
   "YouWillNoLongerSendMessagesTo": "Ты больше не сможешь отправлять сообщения {name}",
   "YouSureToDeleteX": "Ты уверен, что хочешь удалить {name}?",
-  "MessageNotFound": "Сообщение не найдено",
   "Connected": "Connected",
   "You": "Ты",
   "XInvitesY": "{x} приглашает {y}",
