@@ -1,11 +1,14 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitStatsActionCard extends StatelessWidget {
   final UiKitStats stats;
+  final AutoSizeGroup? group;
 
   const UiKitStatsActionCard({
     super.key,
+    this.group,
     required this.stats,
   });
 
@@ -14,7 +17,9 @@ class UiKitStatsActionCard extends StatelessWidget {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
     return UiKitCardWrapper(
-      color: context.uiKitTheme?.colorScheme.surface3,
+      height: 1.sw <= 380 ? 95.h : 80.h,
+      width: 110.w,
+      color: context.uiKitTheme?.colorScheme.surface1,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -24,8 +29,10 @@ class UiKitStatsActionCard extends StatelessWidget {
               color: ColorsFoundation.darkNeutral900,
             ),
           ),
-          Text(
+          AutoSizeText(
+            group: group,
             stats.value,
+            maxLines: 1,
             style: textTheme?.title2,
           ),
           SpacingFoundation.verticalSpace4,
