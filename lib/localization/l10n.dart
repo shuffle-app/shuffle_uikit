@@ -6675,21 +6675,21 @@ class S {
     );
   }
 
-  /// `Share {count} {count, plural, =0{card} =1{card} =2{cards} few{cards} many{cards} other{cards}}`
+  /// `{count} {count, plural, =0{card} =1{card} =2{cards} few{cards} many{cards} other{cards}} {count, plural, =0{shares} =1{share} =2{shares} few{shares} many{shares} other{shares}}`
   String ShareCard(num count) {
     return Intl.message(
-      'Share $count ${Intl.plural(count, zero: 'card', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')}',
+      '$count ${Intl.plural(count, zero: 'card', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} ${Intl.plural(count, zero: 'shares', one: 'share', two: 'shares', few: 'shares', many: 'shares', other: 'shares')}',
       name: 'ShareCard',
       desc: '',
       args: [count],
     );
   }
 
-  /// `Login to app {count} {count, plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}} in a row`
-  String LoginToAppDaysInARow(num count) {
+  /// `Login in {count} {count, plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}} in a row`
+  String LoginInAppDaysInARow(num count) {
     return Intl.message(
-      'Login to app $count ${Intl.plural(count, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')} in a row',
-      name: 'LoginToAppDaysInARow',
+      'Login in $count ${Intl.plural(count, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')} in a row',
+      name: 'LoginInAppDaysInARow',
       desc: '',
       args: [count],
     );
@@ -6705,20 +6705,20 @@ class S {
     );
   }
 
-  /// `Connects`
-  String get Connects {
+  /// `{count} {count, plural, =0{connects} =1{connect} =2{connect} few{connect} many{connect} other{connect}}`
+  String Connects(num count) {
     return Intl.message(
-      'Connects',
+      '$count ${Intl.plural(count, zero: 'connects', one: 'connect', two: 'connect', few: 'connect', many: 'connect', other: 'connect')}',
       name: 'Connects',
       desc: '',
-      args: [],
+      args: [count],
     );
   }
 
-  /// `{count} {count, plural, =0{cards} =1{card} =2{cards} few{cards} many{cards} other{cards}} opening`
+  /// `{count} {count, plural, =0{cards} =1{card} =2{cards} few{cards} many{cards} other{cards}} {count, plural, =0{openings} =1{opening} =2{openings} few{openings} many{openings} other{openings}}`
   String CardOpening(num count) {
     return Intl.message(
-      '$count ${Intl.plural(count, zero: 'cards', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} opening',
+      '$count ${Intl.plural(count, zero: 'cards', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} ${Intl.plural(count, zero: 'openings', one: 'opening', two: 'openings', few: 'openings', many: 'openings', other: 'openings')}',
       name: 'CardOpening',
       desc: '',
       args: [count],
@@ -6735,13 +6735,13 @@ class S {
     );
   }
 
-  /// `Bookigns`
-  String get Bookigns {
+  /// `{count} {count, plural, =0{bookigns} =1{bookign} =2{bookigns} few{bookigns} many{bookigns} other{bookigns}}`
+  String Bookigns(num count) {
     return Intl.message(
-      'Bookigns',
+      '$count ${Intl.plural(count, zero: 'bookigns', one: 'bookign', two: 'bookigns', few: 'bookigns', many: 'bookigns', other: 'bookigns')}',
       name: 'Bookigns',
       desc: '',
-      args: [],
+      args: [count],
     );
   }
 
@@ -6851,13 +6851,13 @@ class S {
     );
   }
 
-  /// `Invites`
-  String get Invites {
+  /// `{count} {count, plural, =0{invites} =1{invite} =2{invites} few{invites} many{invites} other{invites}}`
+  String InvitesCount(num count) {
     return Intl.message(
-      'Invites',
-      name: 'Invites',
+      '$count ${Intl.plural(count, zero: 'invites', one: 'invite', two: 'invites', few: 'invites', many: 'invites', other: 'invites')}',
+      name: 'InvitesCount',
       desc: '',
-      args: [],
+      args: [count],
     );
   }
 
@@ -6958,6 +6958,66 @@ class S {
       name: 'InvitesNPeopleInfo',
       desc: '',
       args: [invitedPeopleCount],
+    );
+  }
+
+  /// `{count} {count, plural, =0{feelings} =1{feeling} =2{feelings} few{feelings} many{feelings} other{feelings}} guesses`
+  String FeelingsGuesses(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'feelings', one: 'feeling', two: 'feelings', few: 'feelings', many: 'feelings', other: 'feelings')} guesses',
+      name: 'FeelingsGuesses',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} content {count, plural, =0{offers} =1{offer} =2{offers} few{offers} many{offers} other{offers}}`
+  String ContentOffers(num count) {
+    return Intl.message(
+      '$count content ${Intl.plural(count, zero: 'offers', one: 'offer', two: 'offers', few: 'offers', many: 'offers', other: 'offers')}',
+      name: 'ContentOffers',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{reactions} =1{reaction} =2{reactions} few{reactions} many{reactions} other{reactions}}`
+  String Reactions(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'reactions', one: 'reaction', two: 'reactions', few: 'reactions', many: 'reactions', other: 'reactions')}',
+      name: 'Reactions',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{stacks} =1{stack} =2{stacks} few{stacks} many{stacks} other{stacks}} {count, plural, =0{shares} =1{share} =2{shares} few{shares} many{shares} other{shares}}`
+  String StacksShares(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'stacks', one: 'stack', two: 'stacks', few: 'stacks', many: 'stacks', other: 'stacks')} ${Intl.plural(count, zero: 'shares', one: 'share', two: 'shares', few: 'shares', many: 'shares', other: 'shares')}',
+      name: 'StacksShares',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Wiseacre of sands`
+  String get WiseacreOfSands {
+    return Intl.message(
+      'Wiseacre of sands',
+      name: 'WiseacreOfSands',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wiseacre lady of sands`
+  String get WiseacreLadyOfSands {
+    return Intl.message(
+      'Wiseacre lady of sands',
+      name: 'WiseacreLadyOfSands',
+      desc: '',
+      args: [],
     );
   }
 }
