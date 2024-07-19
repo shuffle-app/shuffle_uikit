@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
@@ -8,12 +7,14 @@ class UiKitFameItem extends StatefulWidget {
   final UiKitAchievementsModel? uiModel;
   final bool isAvailableForPreview;
   final bool preserveDarkTheme;
+  final bool showStar;
   final ValueChanged<String?>? onTap;
 
   const UiKitFameItem({
     super.key,
     this.uiModel,
     this.onTap,
+    this.showStar = true,
     this.isAvailableForPreview = true,
     this.preserveDarkTheme = false,
   });
@@ -68,7 +69,9 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
   void initState() {
     uiModel = widget.uiModel;
     if (uiModel?.objectUrl != null) {
-      CustomCacheManager.personsInstance.getFileStream(uiModel!.objectUrl!).listen((value) {
+      CustomCacheManager.personsInstance
+          .getFileStream(uiModel!.objectUrl!)
+          .listen((value) {
         if (value.runtimeType == DownloadProgress) {
           setState(() {
             downloadProgress = (value as DownloadProgress).progress;
@@ -92,7 +95,9 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
       setState(() {
         uiModel = widget.uiModel;
       });
-      CustomCacheManager.personsInstance.getFileStream(uiModel!.objectUrl!).listen((value) {
+      CustomCacheManager.personsInstance
+          .getFileStream(uiModel!.objectUrl!)
+          .listen((value) {
         if (value.runtimeType == DownloadProgress) {
           setState(() {
             downloadProgress = (value as DownloadProgress).progress;
@@ -110,49 +115,55 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final backgroundColor =
-    (widget.preserveDarkTheme ? ColorsFoundation.darkNeutral100 : theme?.colorScheme.grayForegroundColor)
+    final backgroundColor = (widget.preserveDarkTheme
+            ? ColorsFoundation.darkNeutral100
+            : theme?.colorScheme.grayForegroundColor)
         ?.withOpacity(0.16);
 
     return GestureDetector(
-        onTap: widget.isAvailableForPreview
-            ? () {
-          if (modelFile != null && widget.onTap != null) {
-            widget.onTap!.call(modelFile?.file.path);
-          } else {
-            SnackBarUtils.show(message: 'Waiting for model to download', context: context);
-          }
-        }
-            : null,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Transform.rotate(
-              // quarterTurns: 2,
-              angle: 45 * math.pi / 180,
-              child: SizedBox(
-                  height: 50,
-                  width: 50,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadiusFoundation.all8,
-                        color: backgroundColor,
-                        backgroundBlendMode: uiModel != null ? BlendMode.plus : null,
-                        gradient: uiModel != null ? GradientFoundation.fameLinearGradient : null),
-                  )),
+      onTap: widget.isAvailableForPreview
+          ? () {
+              if (modelFile != null && widget.onTap != null) {
+                widget.onTap!.call(modelFile?.file.path);
+              } else {
+                SnackBarUtils.show(
+                    message: 'Waiting for model to download', context: context);
+              }
+            }
+          : null,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Transform.rotate(
+            // quarterTurns: 2,
+            angle: 45 * math.pi / 180,
+            child: SizedBox(
+                height: 50,
+                width: 50,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadiusFoundation.all8,
+                      color: backgroundColor,
+                      backgroundBlendMode:
+                          uiModel != null ? BlendMode.plus : null,
+                      gradient: uiModel != null
+                          ? GradientFoundation.fameLinearGradient
+                          : null),
+                )),
+          ),
+          if (uiModel?.posterUrl != null)
+            ImageWidget(
+              link: uiModel!.posterUrl,
+              height: 45,
+              width: 45,
+              fit: BoxFit.contain,
             ),
-            if (uiModel?.posterUrl != null)
-              ImageWidget(
-                link: uiModel!.posterUrl,
-                height: 45,
-                width: 45,
-                fit: BoxFit.contain,
-              ),
-            ...listOfStars.entries.map((e) =>
-                Transform.translate(
-                    offset: e.value,
-                    child: uiModel != null
-                        ? UiKitFloatingAnimation(
+          if (widget.showStar)
+            ...listOfStars.entries.map(
+              (e) => Transform.translate(
+                offset: e.value,
+                child: uiModel != null
+                    ? UiKitFloatingAnimation(
                         child: GradientableWidget(
                             active: uiModel != null,
                             gradient: GradientFoundation.defaultRadialGradient,
@@ -161,9 +172,11 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
                               width: e.key.sp,
                               fit: BoxFit.contain,
                               svgAsset: GraphicsFoundation.instance.svg.star2,
-                              color: uiModel != null ? Colors.white : backgroundColor,
+                              color: uiModel != null
+                                  ? Colors.white
+                                  : backgroundColor,
                             )))
-                        : GradientableWidget(
+                    : GradientableWidget(
                         active: uiModel != null,
                         gradient: GradientFoundation.defaultRadialGradient,
                         child: ImageWidget(
@@ -171,9 +184,14 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
                           width: e.key.sp,
                           fit: BoxFit.contain,
                           svgAsset: GraphicsFoundation.instance.svg.star2,
-                          color: uiModel != null ? Colors.white : backgroundColor,
-                        ))))
-          ],
-        ));
+                          color:
+                              uiModel != null ? Colors.white : backgroundColor,
+                        ),
+                      ),
+              ),
+            )
+        ],
+      ),
+    );
   }
 }
