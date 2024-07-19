@@ -15,6 +15,7 @@ class ProfileCardBody extends StatelessWidget {
   final List<String>? matchingInterests;
   final ProfileCardType? profileType;
   final List<UiKitTag>? tags;
+  final List<Widget>? profileWidgets;
   final List<UiKitStats>? profileStats;
   final bool showSupportShuffle;
   final ValueChanged<int>? onDonate;
@@ -32,6 +33,7 @@ class ProfileCardBody extends StatelessWidget {
     this.profileType,
     this.canFollow,
     this.nickname,
+    this.profileWidgets,
     this.profileStats,
     this.name,
     this.onShare,
@@ -79,7 +81,10 @@ class ProfileCardBody extends StatelessWidget {
                     userName: name ?? '',
                     imageUrl: avatarUrl,
                     showAchievements: false),
-              if (canFollow ?? false) SpacingFoundation.horizontalSpace16 else SpacingFoundation.horizontalSpace12,
+              if (canFollow ?? false)
+                SpacingFoundation.horizontalSpace16
+              else
+                SpacingFoundation.horizontalSpace12,
               Expanded(
                 child: profileType == ProfileCardType.personal
                     ? PersonalProfileInfo(
@@ -102,7 +107,8 @@ class ProfileCardBody extends StatelessWidget {
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
           SpacingFoundation.verticalSpace16,
-          if (speciality != null || (socialLinks != null && socialLinks!.isNotEmpty)) ...[
+          if (speciality != null ||
+              (socialLinks != null && socialLinks!.isNotEmpty)) ...[
             Row(
               children: [
                 Expanded(
@@ -110,12 +116,14 @@ class ProfileCardBody extends StatelessWidget {
                     gradient: GradientFoundation.defaultLinearGradient,
                     child: Text(
                       speciality ?? '',
-                      style: theme?.boldTextTheme.caption2Medium.copyWith(color: Colors.white),
+                      style: theme?.boldTextTheme.caption2Medium
+                          .copyWith(color: Colors.white),
                     ),
                   ),
                 ),
                 if (socialLinks != null)
-                  for (var (index, icon) in socialLinks!.map((e) => e.icon).toList().indexed)
+                  for (var (index, icon)
+                      in socialLinks!.map((e) => e.icon).toList().indexed)
                     context
                         .smallOutlinedButton(
                             data: BaseUiKitButtonData(
@@ -124,7 +132,8 @@ class ProfileCardBody extends StatelessWidget {
                                   color: theme?.colorScheme.inversePrimary,
                                 ),
                                 onPressed: () {
-                                  launchUrlString(socialLinks![index], mode: LaunchMode.externalApplication);
+                                  launchUrlString(socialLinks![index],
+                                      mode: LaunchMode.externalApplication);
                                 }))
                         .paddingOnly(left: SpacingFoundation.horizontalSpacing6)
               ],
@@ -133,18 +142,25 @@ class ProfileCardBody extends StatelessWidget {
           ],
           if (onFollow != null) ...[
             context
-                .button(data: BaseUiKitButtonData(text: S.of(context).Follow.toUpperCase(), onPressed: onFollow))
+                .button(
+                    data: BaseUiKitButtonData(
+                        text: S.of(context).Follow.toUpperCase(),
+                        onPressed: onFollow))
                 .paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
             SpacingFoundation.verticalSpace16
           ],
           if (followers != null && followers! > 0) ...[
             RichText(
-                textAlign: onFollow != null ? TextAlign.center : TextAlign.start,
+                textAlign:
+                    onFollow != null ? TextAlign.center : TextAlign.start,
                 text: TextSpan(children: [
-                  TextSpan(text: '${followers} ', style: theme?.boldTextTheme.caption1Bold),
+                  TextSpan(
+                      text: '${followers} ',
+                      style: theme?.boldTextTheme.caption1Bold),
                   TextSpan(
                       text: S.of(context).Followers.toLowerCase(),
-                      style: theme?.regularTextTheme.caption1.copyWith(color: ColorsFoundation.mutedText)),
+                      style: theme?.regularTextTheme.caption1
+                          .copyWith(color: ColorsFoundation.mutedText)),
                 ])).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
             SpacingFoundation.verticalSpace16
           ],
@@ -156,7 +172,8 @@ class ProfileCardBody extends StatelessWidget {
                   child: ProfileInterests(
                     matchingInterests: matchingInterests,
                     profileInterests: interests ?? [],
-                  ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing16),
+                  ).paddingSymmetric(
+                      vertical: SpacingFoundation.verticalSpacing16),
                 ),
               ),
               Container(
@@ -164,7 +181,8 @@ class ProfileCardBody extends StatelessWidget {
                   gradient: LinearGradient(
                     colors: [
                       theme?.colorScheme.surface1 ?? Colors.transparent,
-                      (theme?.colorScheme.surface1 ?? Colors.transparent).withOpacity(0)
+                      (theme?.colorScheme.surface1 ?? Colors.transparent)
+                          .withOpacity(0)
                     ],
                     tileMode: TileMode.decal,
                     end: Alignment.bottomCenter,
@@ -184,7 +202,8 @@ class ProfileCardBody extends StatelessWidget {
                     gradient: LinearGradient(
                       colors: [
                         theme?.colorScheme.surface1 ?? Colors.transparent,
-                        (theme?.colorScheme.surface1 ?? Colors.transparent).withOpacity(0)
+                        (theme?.colorScheme.surface1 ?? Colors.transparent)
+                            .withOpacity(0)
                       ],
                       tileMode: TileMode.decal,
                       begin: Alignment.bottomCenter,
@@ -203,21 +222,22 @@ class ProfileCardBody extends StatelessWidget {
               text: description ?? '',
             ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16)
           ],
-          if (achievements.isNotEmpty && onFollow == null) ...[
-            SpacingFoundation.verticalSpace16,
-            PreviewHorizontalScroll(
-              title: S.of(context).HallOfFame,
-              horizontalPadding: EdgeInsetsFoundation.all16,
-              onViewAllTap: onViewAllAchievements,
-              previewItems: achievements
-                  .map((e) => Builder(
-                      builder: (context) => UiKitFameItem(
-                            uiModel: e,
-                            isAvailableForPreview: false,
-                          )))
-                  .toList(),
-            ),
-          ],
+          //TODO remove
+          // if (achievements.isNotEmpty && onFollow == null) ...[
+          //   SpacingFoundation.verticalSpace16,
+          //   PreviewHorizontalScroll(
+          //     title: S.of(context).HallOfFame,
+          //     horizontalPadding: EdgeInsetsFoundation.all16,
+          //     onViewAllTap: onViewAllAchievements,
+          //     previewItems: achievements
+          //         .map((e) => Builder(
+          //             builder: (context) => UiKitFameItem(
+          //                   uiModel: e,
+          //                   isAvailableForPreview: false,
+          //                 )))
+          //         .toList(),
+          //   ),
+          // ],
           if (profileStats != null) ...[
             SpacingFoundation.verticalSpace16,
             Row(
@@ -232,10 +252,26 @@ class ProfileCardBody extends StatelessWidget {
                 ),
               ],
             ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
-            if (showSupportShuffle) ...[
-              SpacingFoundation.verticalSpace24,
-              SupportShuffleButton(onDonate: onDonate,onCustomDonate:onCustomDonate).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
-            ],
+          ],
+          if (profileWidgets != null) ...[
+            SpacingFoundation.verticalSpace16,
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                  child: profileWidgets!.first,
+                ),
+                SpacingFoundation.horizontalSpace16,
+                Expanded(
+                  child: profileWidgets!.last,
+                ),
+              ],
+            ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
+            //TODO remove showSupportShuffle
+            // if (showSupportShuffle) ...[
+            //   SpacingFoundation.verticalSpace24,
+            //   SupportShuffleButton(onDonate: onDonate,onCustomDonate:onCustomDonate).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
+            // ],
             SpacingFoundation.verticalSpace16,
           ],
         ],
