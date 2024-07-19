@@ -51,10 +51,10 @@ class UiKitChatInCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: showAvatar
-                ? 1.sw + 0.0625.sw + SpacingFoundation.horizontalSpacing8
-                : hasInvitation
-                    ? 1.sw
+            width: hasInvitation
+                ? 1.sw
+                : showAvatar
+                    ? width + 0.0625.sw + SpacingFoundation.horizontalSpacing8
                     : width,
             child: Row(
               mainAxisSize: MainAxisSize.max,
