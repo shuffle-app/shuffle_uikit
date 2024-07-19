@@ -73,7 +73,7 @@ String formatChatMessageDate(DateTime date) {
     return DateFormat('HH:mm').format(date);
   }
 
-  return DateFormat('MM.dd HH:mm').format(date);
+  return DateFormat('HH:mm').format(date);
 }
 
 String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay? timeTo, List<String>? wDays) {

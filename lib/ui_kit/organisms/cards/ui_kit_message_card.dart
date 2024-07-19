@@ -48,7 +48,7 @@ class UiKitMessageCard extends StatelessWidget {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final regularTextTheme = context.uiKitTheme?.regularTextTheme;
     final colorScheme = context.uiKitTheme?.colorScheme;
-    final cardColor = context.uiKitTheme?.cardColor;
+    final cardColor = context.uiKitTheme?.colorScheme.surface1;
 
     return Material(
       borderRadius: BorderRadiusFoundation.all24,
@@ -130,35 +130,32 @@ class UiKitMessageCard extends StatelessWidget {
               SpacingFoundation.verticalSpace8,
               Row(
                 children: [
-                  Flexible(
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(minHeight: 20.w),
-                      child: RichText(
-                        text: TextSpan(
-                          children: [
-                            if (lastMessageSenderName != null && lastMessageSenderName!.isNotEmpty)
-                              TextSpan(
-                                text: '$lastMessageSenderName: ',
-                                style: boldTextTheme?.caption1Medium.copyWith(
-                                  overflow: TextOverflow.ellipsis,
-                                  color: ColorsFoundation.neutral48,
-                                ),
-                              ),
+                  Expanded(
+                    child: RichText(
+                      text: TextSpan(
+                        children: [
+                          if (lastMessageSenderName != null && lastMessageSenderName!.isNotEmpty)
                             TextSpan(
-                              text: lastMessage,
-                              style: boldTextTheme?.caption1Medium.copyWith(
+                              text: '$lastMessageSenderName: ',
+                              style: boldTextTheme?.caption3Medium.copyWith(
                                 overflow: TextOverflow.ellipsis,
-                                color: disabled
-                                    ? colorScheme?.inverseSurface
-                                    : unreadMessageCount == 0
-                                        ? colorScheme?.darkNeutral900
-                                        : null,
+                                color: ColorsFoundation.neutral48,
                               ),
                             ),
-                          ],
-                        ),
-                        textAlign: TextAlign.start,
+                          TextSpan(
+                            text: lastMessage,
+                            style: boldTextTheme?.caption3Medium.copyWith(
+                              overflow: TextOverflow.ellipsis,
+                              color: disabled
+                                  ? colorScheme?.inverseSurface
+                                  : unreadMessageCount == 0
+                                      ? colorScheme?.darkNeutral900
+                                      : null,
+                            ),
+                          ),
+                        ],
                       ),
+                      textAlign: TextAlign.start,
                     ),
                   ),
                   SpacingFoundation.horizontalSpace8,
