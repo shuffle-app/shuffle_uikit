@@ -32,7 +32,9 @@ class MidSizeOutlinedIconButton extends StatelessWidget implements ButtonFactory
         onTap: loading ?? false ? null : onPressed,
         borderRadius: BorderRadiusFoundation.max,
         child: Ink(
-          padding: EdgeInsets.all(EdgeInsetsFoundation.all10),
+          height: 0.125.sw,
+          width: 0.125.sw,
+          // padding: EdgeInsets.all(EdgeInsetsFoundation.all10),
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(
@@ -40,14 +42,16 @@ class MidSizeOutlinedIconButton extends StatelessWidget implements ButtonFactory
               width: 2.w,
             ),
           ),
-          child: icon ??
-              ImageWidget(
-                iconData: iconInfo?.iconData,
-                link: iconInfo?.iconPath,
-                height: iconInfo?.size,
-                fit: BoxFit.fitHeight,
-                color: iconInfo?.color ?? theme?.colorScheme.inversePrimary,
-              ).loadingWrap(loading ?? false, color: colorScheme?.surface),
+          child: Center(
+            child: icon ??
+                ImageWidget(
+                  iconData: iconInfo?.iconData,
+                  link: iconInfo?.iconPath,
+                  height: iconInfo?.size,
+                  fit: BoxFit.fitHeight,
+                  color: iconInfo?.color ?? theme?.colorScheme.inversePrimary,
+                ).loadingWrap(loading ?? false, color: colorScheme?.surface),
+          ),
         ),
       ),
     );
