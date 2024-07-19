@@ -1094,6 +1094,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ToOpenTheNextSetOfToolsYouNeedToDo":
             MessageLookupByLibrary.simpleMessage(
                 "Чтобы открыть следующий набор инструментов, вам нужно сделать"),
+        "ToPlan": MessageLookupByLibrary.simpleMessage("Планировать"),
         "Today": MessageLookupByLibrary.simpleMessage("Сегодня"),
         "Top": MessageLookupByLibrary.simpleMessage("ТОП"),
         "TopNDonatorsReceiveXPoints": m63,

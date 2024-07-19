@@ -7020,6 +7020,16 @@ class S {
       args: [],
     );
   }
+
+  /// `To plan`
+  String get ToPlan {
+    return Intl.message(
+      'To plan',
+      name: 'ToPlan',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
