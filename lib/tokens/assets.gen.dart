@@ -8,13 +8,15 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
   const $AssetsAnimationsGen();
 
+  /// Directory path: assets/animations/lottie
   $AssetsAnimationsLottieGen get lottie => const $AssetsAnimationsLottieGen();
 }
 
@@ -59,7 +61,10 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// Directory path: assets/images/png
   $AssetsImagesPngGen get png => const $AssetsImagesPngGen();
+
+  /// Directory path: assets/images/svg
   $AssetsImagesSvgGen get svg => const $AssetsImagesSvgGen();
 }
 
@@ -160,6 +165,10 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Booking.png
   AssetGenImage get booking =>
       const AssetGenImage('assets/images/png/Booking.png');
+
+  /// File path: assets/images/png/Calendar-watch.png
+  AssetGenImage get calendarWatch =>
+      const AssetGenImage('assets/images/png/Calendar-watch.png');
 
   /// File path: assets/images/png/Check-in.png
   AssetGenImage get checkIn =>
@@ -708,6 +717,7 @@ class $AssetsImagesPngGen {
   AssetGenImage get atmosphere =>
       const AssetGenImage('assets/images/png/atmosphere.png');
 
+  /// Directory path: assets/images/png/avatars
   $AssetsImagesPngAvatarsGen get avatars => const $AssetsImagesPngAvatarsGen();
 
   /// File path: assets/images/png/balloons.png
@@ -1242,36 +1252,36 @@ class $AssetsImagesPngGen {
         visitFirst,
         windy,
         yoga,
-        noBgBookingW,
-        noBgBooking,
-        noBgEyeW,
-        noBgEye,
-        noBgHandshakeW,
-        noBgHandshake,
-        noBgHourglassW,
-        noBgHourglass,
-        noBgIndexFingerW,
-        noBgIndexFinger,
-        noBgInviteW,
-        noBgInvite,
-        noBgLikeW,
-        noBgLikeIcon,
-        noBgMessage,
-        noBgMessageBubbleW,
-        noBgOpenHandW,
-        noBgOpenHand,
-        noBgShareW,
-        noBgShare,
-        noBgSmileW,
-        noBgSmile,
-        noBgStacksW,
-        noBgStacks,
-        noBgTwoFingersUpW,
-        noBgVictoryHands,
-        noBgVideoReactionW,
-        noBgVideoReaction,
-        noBgWalkingManW,
-        noBgWalkingMan,
+        aNoBgBookingW,
+        aNoBgBooking,
+        aNoBgEyeW,
+        aNoBgEye,
+        aNoBgHandshakeW,
+        aNoBgHandshake,
+        aNoBgHourglassW,
+        aNoBgHourglass,
+        aNoBgIndexFingerW,
+        aNoBgIndexFinger,
+        aNoBgInviteW,
+        aNoBgInvite,
+        aNoBgLikeW,
+        aNoBgLikeIcon,
+        aNoBgMessage,
+        aNoBgMessageBubbleW,
+        aNoBgOpenHandW,
+        aNoBgOpenHand,
+        aNoBgShareW,
+        aNoBgShare,
+        aNoBgSmileW,
+        aNoBgSmile,
+        aNoBgStacksW,
+        aNoBgStacks,
+        aNoBgTwoFingersUpW,
+        aNoBgVictoryHands,
+        aNoBgVideoReactionW,
+        aNoBgVideoReaction,
+        aNoBgWalkingManW,
+        aNoBgWalkingMan,
         atheist,
         atmosphere,
         balloons,
@@ -3149,9 +3159,11 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(this._assetName, {this.size = null});
 
   final String _assetName;
+
+  final Size? size;
 
   Image image({
     Key? key,
@@ -3223,9 +3235,20 @@ class AssetGenImage {
 }
 
 class SvgGenImage {
-  const SvgGenImage(this._assetName);
+  const SvgGenImage(
+    this._assetName, {
+    this.size = null,
+  }) : _isVecFormat = false;
+
+  const SvgGenImage.vec(
+    this._assetName, {
+    this.size = null,
+  }) : _isVecFormat = true;
 
   final String _assetName;
+
+  final Size? size;
+  final bool _isVecFormat;
 
   SvgPicture svg({
     Key? key,
@@ -3240,7 +3263,7 @@ class SvgGenImage {
     WidgetBuilder? placeholderBuilder,
     String? semanticsLabel,
     bool excludeFromSemantics = false,
-    SvgTheme theme = const SvgTheme(),
+    SvgTheme? theme,
     ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
@@ -3255,8 +3278,6 @@ class SvgGenImage {
               assetBundle: bundle, packageName: package),
       key: key,
       matchTextDirection: matchTextDirection,
-      bundle: bundle,
-      package: package,
       width: width,
       height: height,
       fit: fit,
