@@ -222,22 +222,6 @@ class ProfileCardBody extends StatelessWidget {
               text: description ?? '',
             ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16)
           ],
-          //TODO remove
-          // if (achievements.isNotEmpty && onFollow == null) ...[
-          //   SpacingFoundation.verticalSpace16,
-          //   PreviewHorizontalScroll(
-          //     title: S.of(context).HallOfFame,
-          //     horizontalPadding: EdgeInsetsFoundation.all16,
-          //     onViewAllTap: onViewAllAchievements,
-          //     previewItems: achievements
-          //         .map((e) => Builder(
-          //             builder: (context) => UiKitFameItem(
-          //                   uiModel: e,
-          //                   isAvailableForPreview: false,
-          //                 )))
-          //         .toList(),
-          //   ),
-          // ],
           if (profileStats != null) ...[
             SpacingFoundation.verticalSpace16,
             Row(
@@ -267,11 +251,7 @@ class ProfileCardBody extends StatelessWidget {
                 ),
               ],
             ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
-            //TODO remove showSupportShuffle
-            // if (showSupportShuffle) ...[
-            //   SpacingFoundation.verticalSpace24,
-            //   SupportShuffleButton(onDonate: onDonate,onCustomDonate:onCustomDonate).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
-            // ],
+          
             SpacingFoundation.verticalSpace16,
           ],
         ],
