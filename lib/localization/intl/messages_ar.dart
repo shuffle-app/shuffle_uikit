@@ -1076,6 +1076,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ToOpenTheNextSetOfToolsYouNeedToDo":
             MessageLookupByLibrary.simpleMessage(
                 "To open the next set of tools you need to do"),
+        "ToPlan": MessageLookupByLibrary.simpleMessage("To plan"),
         "Today": MessageLookupByLibrary.simpleMessage("Today"),
         "Top": MessageLookupByLibrary.simpleMessage("Top"),
         "TopNDonatorsReceiveXPoints": m63,
