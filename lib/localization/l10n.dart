@@ -7020,6 +7020,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Couldn't find invite`
+  String get CouldntFindInvite {
+    return Intl.message(
+      'Couldn\'t find invite',
+      name: 'CouldntFindInvite',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

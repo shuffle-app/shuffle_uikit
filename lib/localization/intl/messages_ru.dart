@@ -397,6 +397,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Control": MessageLookupByLibrary.simpleMessage("Контроль"),
         "ConvenientClearAndUseful":
             MessageLookupByLibrary.simpleMessage("удобно, чётко и полезно"),
+        "CouldntFindInvite": MessageLookupByLibrary.simpleMessage(
+            "Не удалось найти приглашение"),
         "CountReviews": m12,
         "CountVideoReaction": m13,
         "Create": MessageLookupByLibrary.simpleMessage("Создать"),
