@@ -23,6 +23,7 @@ dependencies:
   vibration: ^1.8.4
 
   #ui widgets
+  carousel_slider: ^4.2.1
   cached_network_image: ^3.3.1
   gradient_borders: ^1.0.0
   shimmer: ^3.0.0

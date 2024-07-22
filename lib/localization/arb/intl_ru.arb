@@ -683,7 +683,8 @@
   "Reactions": "{count} {count, plural, =0{реакций} =1{реакция} =2{реакции} few{реакции} many{реакции} other{реакций}}",
   "StacksShares": "поделиться {count} {count, plural, =0{стеками} =1{стеком} =2{стеками} few{стеками} many{стеками} other{стеками}}",
   "WiseacreOfSands": "Мудрец песков",
-  "WiseacreLadyOfSands": "Мудрая леди песков"
+  "WiseacreLadyOfSands": "Мудрая леди песков",
+  "ToPlan": "Планировать"
 
 }
 
