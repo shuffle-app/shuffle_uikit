@@ -7011,6 +7011,16 @@ class S {
     );
   }
 
+  /// `Couldn't find invite`
+  String get CouldntFindInvite {
+    return Intl.message(
+      'Couldn\'t find invite',
+      name: 'CouldntFindInvite',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Wiseacre lady of sands`
   String get WiseacreLadyOfSands {
     return Intl.message(
@@ -7021,11 +7031,11 @@ class S {
     );
   }
 
-  /// `Couldn't find invite`
-  String get CouldntFindInvite {
+  /// `To plan`
+  String get ToPlan {
     return Intl.message(
-      'Couldn\'t find invite',
-      name: 'CouldntFindInvite',
+      'To plan',
+      name: 'ToPlan',
       desc: '',
       args: [],
     );
