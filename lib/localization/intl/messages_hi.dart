@@ -942,6 +942,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Search property"),
         "SeeAll": MessageLookupByLibrary.simpleMessage("सभी देखें"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("और देखें"),
+        "SeekingWandererMen":
+            MessageLookupByLibrary.simpleMessage("Seeking wanderer"),
+        "SeekingWandererWom":
+            MessageLookupByLibrary.simpleMessage("Seeking wanderer"),
         "SelectCurrency": MessageLookupByLibrary.simpleMessage("मुद्रा चुनें"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("तारीख़ चुनें"),
         "SelectDateRange":
@@ -1088,6 +1092,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Top": MessageLookupByLibrary.simpleMessage("शीर्ष"),
         "TopNDonatorsReceiveXPoints": m63,
         "TopPlacesRatedBy": m64,
+        "TravelerMen": MessageLookupByLibrary.simpleMessage("Traveler"),
+        "TravelerWom": MessageLookupByLibrary.simpleMessage("Traveler"),
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("परीक्षण अवधि"),
         "TryYourself":
             MessageLookupByLibrary.simpleMessage("स्वयं प्रयास करें"),

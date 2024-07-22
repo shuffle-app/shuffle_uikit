@@ -7030,6 +7030,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Seeking wanderer`
+  String get SeekingWandererMen {
+    return Intl.message(
+      'Seeking wanderer',
+      name: 'SeekingWandererMen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Seeking wanderer`
+  String get SeekingWandererWom {
+    return Intl.message(
+      'Seeking wanderer',
+      name: 'SeekingWandererWom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Traveler`
+  String get TravelerMen {
+    return Intl.message(
+      'Traveler',
+      name: 'TravelerMen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Traveler`
+  String get TravelerWom {
+    return Intl.message(
+      'Traveler',
+      name: 'TravelerWom',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

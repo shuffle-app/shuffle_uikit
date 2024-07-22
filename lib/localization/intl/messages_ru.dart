@@ -28,7 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Допустимые символы ${allowedCharacters}";
 
   static String m3(count) =>
-      "${count} ${Intl.plural(count, zero: 'бронирований', one: 'бронирование', two: 'бронирования', few: 'бронирования', many: 'бронирований', other: 'бронирований')}";
+      "${count} ${Intl.plural(count, zero: 'букингов', one: 'букинг', two: 'букинга', few: 'букинга', many: 'букингов', other: 'букингов')}";
 
   static String m4(count) =>
       "${Intl.plural(count, zero: 'броней', one: 'бронь', two: 'брони', few: 'броней', many: 'броней', other: 'броней')}";
@@ -51,7 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${count} ${Intl.plural(count, zero: 'объединений', one: 'объединение', two: 'объединения', few: 'объединения', many: 'объединений', other: 'объединений')}";
 
   static String m11(count) =>
-      "${count} ${Intl.plural(count, zero: 'предложений', one: 'предложение', two: 'прижложений', few: 'предложений', many: 'предложений', other: 'предложений')} по контенту";
+      "${count} ${Intl.plural(count, zero: 'предложений', one: 'предложение', two: 'прижложения', few: 'предложения', many: 'предложений', other: 'предложений')} контента";
 
   static String m12(count) => "${count} Отзывов";
 
@@ -83,7 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${Intl.plural(item, zero: 'события и места', one: 'фильтруй по тэгам', two: 'выбирай и жми', few: 'прокрути\n', other: 'прокрути\n')}";
 
   static String m23(count) =>
-      "${count} ${Intl.plural(count, zero: 'обратных связей', one: 'обратная связь', two: 'обратные связи', few: 'обратных связей', many: 'обратных связей', other: 'обратных связей')}";
+      "${count} ${Intl.plural(count, zero: 'отзывов', one: 'отзыв', two: 'отзыва', few: 'отзыва', many: 'отзывов', other: 'отзывов')}";
 
   static String m24(count) =>
       "${count} ${Intl.plural(count, zero: 'догадок', one: 'догадка', two: 'догадки', few: 'догадки', many: 'догадок', other: 'догадок')} о чувствах";
@@ -116,7 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Приглашает ${Intl.plural(invitedPeopleCount, zero: '${invitedPeopleCount} людей', one: '${invitedPeopleCount}-о', two: '${invitedPeopleCount}-х', few: '${invitedPeopleCount}-х', many: '${invitedPeopleCount}-х', other: '${invitedPeopleCount}-х')} на";
 
   static String m35(count) =>
-      "Входите в приложение ${count} ${Intl.plural(count, zero: 'дней', one: 'день', two: 'дня', few: 'дня', many: 'дня', other: 'дней')} подряд";
+      "Входите в приложение ${count} ${Intl.plural(count, zero: 'дней', one: 'день', two: 'дня', few: 'дня', many: 'дней', other: 'дней')} подряд";
 
   static String m36(provider) => "Продолжить с ${provider}";
 
@@ -153,7 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${Intl.plural(item, zero: 'найти компаньонов', one: 'похожие предпочтения', two: 'поинты = репутация', few: 'никаких неприятелей', other: 'никаких неприятелей')}";
 
   static String m49(count) =>
-      "${count} ${Intl.plural(count, zero: 'реакций', one: 'реакция', two: 'реакции', few: 'реакции', many: 'реакции', other: 'реакций')}";
+      "${count} ${Intl.plural(count, zero: 'реакций', one: 'реакция', two: 'реакции', few: 'реакции', many: 'реакций', other: 'реакций')}";
 
   static String m50(amount) => "Читать ${amount}";
 
@@ -186,7 +186,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${Intl.plural(item, zero: 'ради забавы', one: 'можно листать категорию', two: 'выбирай и планируй', few: 'ищи и бронируй', other: 'ищи и бронируй')}";
 
   static String m61(count) =>
-      "поделиться ${count} ${Intl.plural(count, zero: 'стеками', one: 'стеком', two: 'стеками', few: 'стеками', many: 'стеками', other: 'стеками')}";
+      "поделиться ${count} ${Intl.plural(count, zero: 'стопок', one: 'стопкой', two: 'стопками', few: 'стопками', many: 'стопками', other: 'стопками')}";
 
   static String m62(separator) => "Расскажи${separator}о себе";
 
@@ -950,6 +950,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "SearchProperty": MessageLookupByLibrary.simpleMessage("Поиск свойств"),
         "SeeAll": MessageLookupByLibrary.simpleMessage("Посмотреть всё"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("Ещё"),
+        "SeekingWandererMen":
+            MessageLookupByLibrary.simpleMessage("Ищущий странник"),
+        "SeekingWandererWom":
+            MessageLookupByLibrary.simpleMessage("Ищущая странница"),
         "SelectCurrency": MessageLookupByLibrary.simpleMessage("Выбери валюту"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("Выбери дату"),
         "SelectDateRange":
@@ -1099,6 +1103,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Top": MessageLookupByLibrary.simpleMessage("ТОП"),
         "TopNDonatorsReceiveXPoints": m63,
         "TopPlacesRatedBy": m64,
+        "TravelerMen": MessageLookupByLibrary.simpleMessage("Путник"),
+        "TravelerWom": MessageLookupByLibrary.simpleMessage("Путница"),
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("Триал период"),
         "TryYourself": MessageLookupByLibrary.simpleMessage("Попробуйте\nсами"),
         "TuesdayShort": MessageLookupByLibrary.simpleMessage("Вт"),
