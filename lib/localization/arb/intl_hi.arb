@@ -682,6 +682,7 @@
   "StacksShares": "{count} {count, plural, =0{stacks} =1{stack} =2{stacks} few{stacks} many{stacks} other{stacks}} {count, plural, =0{shares} =1{share} =2{shares} few{shares} many{shares} other{shares}}",
   "WiseacreOfSands": "Wiseacre of sands",
   "WiseacreLadyOfSands": "Wiseacre lady of sands",
+  "Moderated": "मॉडरेट",
   "ToPlan": "To plan"
 
 }

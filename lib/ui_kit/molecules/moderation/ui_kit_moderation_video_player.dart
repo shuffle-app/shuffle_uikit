@@ -160,6 +160,6 @@ class _UiKitModerationVideoPlayerState
 }
 
 double getCurrentValue(Duration currentDuration, Duration duration) {
-  if (currentDuration == duration) return 1.0;
+  if (currentDuration >= duration  ) return 1.0;
   return currentDuration.inMilliseconds / duration.inMilliseconds;
 }

@@ -7021,6 +7021,16 @@ class S {
     );
   }
 
+  /// `Moderated`
+  String get Moderated {
+    return Intl.message(
+      'Moderated',
+      name: 'Moderated',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `To plan`
   String get ToPlan {
     return Intl.message(
