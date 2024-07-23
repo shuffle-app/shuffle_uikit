@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitFeedbackInfo extends StatefulWidget {
+class UiKitFeedbackInfo extends StatelessWidget {
   final DateTime dateTime;
   final String userName;
-  final Function() removeFunction;
-  final Function(bool expandThreadIsOpen) onSubmit;
+  final bool? expandThreadIsOpen;
+  final VoidCallback removeFunction;
+  final VoidCallback onSubmit;
+  final VoidCallback onModerated;
+  final bool isModerated;
 
-  ///displays the Expandthread button if
+  ///displays the ExpandThread button if
   ///there were responses from the company
-  final bool responsesFromCompanytoReview;
+  final bool responsesFromCompanyToReview;
 
   const UiKitFeedbackInfo({
     super.key,
@@ -18,15 +21,11 @@ class UiKitFeedbackInfo extends StatefulWidget {
     required this.userName,
     required this.removeFunction,
     required this.onSubmit,
-    this.responsesFromCompanytoReview = false,
+    this.responsesFromCompanyToReview = false,
+    this.expandThreadIsOpen,
+    required this.onModerated,
+    required this.isModerated,
   });
-
-  @override
-  State<UiKitFeedbackInfo> createState() => _UiKitFeedbackInfoState();
-}
-
-class _UiKitFeedbackInfoState extends State<UiKitFeedbackInfo> {
-  bool _expandThreadIsOpen = false;
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +36,20 @@ class _UiKitFeedbackInfoState extends State<UiKitFeedbackInfo> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          S.of(context).Info,
-          style: boldTextTheme?.title2.copyWith(fontWeight: FontWeight.w400),
+        Row(
+          children: [
+            Text(
+              S.of(context).Info,
+              style:
+                  boldTextTheme?.title2.copyWith(fontWeight: FontWeight.w400),
+            ),
+            const Spacer(),
+            if (isModerated)
+              const Icon(
+                ShuffleUiKitIcons.flag,
+                color: ColorsFoundation.onHover,
+              )
+          ],
         ),
         SpacingFoundation.verticalSpace4,
         Row(
@@ -54,7 +64,7 @@ class _UiKitFeedbackInfoState extends State<UiKitFeedbackInfo> {
             SpacingFoundation.horizontalSpace16,
             Flexible(
               child: Text(
-                widget.userName,
+                userName,
                 style: regularTextTheme?.body,
               ),
             ),
@@ -65,18 +75,18 @@ class _UiKitFeedbackInfoState extends State<UiKitFeedbackInfo> {
           children: [
             Text(
               S.of(context).Date,
-              style: regularTextTheme?.labelSmall
+              style: regularTextTheme?.body
                   .copyWith(color: theme?.colorScheme.darkNeutral900),
             ),
             SpacingFoundation.horizontalSpace16,
             Text(
-              DateFormat('dd.MM.yyyy').format(widget.dateTime),
-              style: regularTextTheme?.caption1,
+              DateFormat('dd.MM.yyyy').format(dateTime),
+              style: regularTextTheme?.body,
             ),
             const Spacer(),
             Text(
-              DateFormat('HH:mm').format(widget.dateTime),
-              style: regularTextTheme?.caption1,
+              DateFormat('HH:mm').format(dateTime),
+              style: regularTextTheme?.body,
             ),
           ],
         ),
@@ -84,32 +94,45 @@ class _UiKitFeedbackInfoState extends State<UiKitFeedbackInfo> {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            if (widget.responsesFromCompanytoReview) ...[
+            if (responsesFromCompanyToReview) ...[
               context.coloredButtonWithBorderRadius(
                 data: BaseUiKitButtonData(
                   fit: ButtonFit.hugContent,
                   textColor: theme?.colorScheme.inversePrimary,
                   backgroundColor:
                       theme?.colorScheme.darkNeutral900.withOpacity(0.68),
-                  text: _expandThreadIsOpen
-                      ? S.of(context).ExpandThread
-                      : S.of(context).CollapseThread,
-                  onPressed: () {
-                    setState(() {
-                      _expandThreadIsOpen = !_expandThreadIsOpen;
-                    });
-                    widget.onSubmit(_expandThreadIsOpen);
-                  },
+                  text: (expandThreadIsOpen ?? false)
+                      ? S.of(context).CollapseThread
+                      : S.of(context).ExpandThread,
+                  onPressed: onSubmit,
                 ),
               ),
             ],
+            SpacingFoundation.horizontalSpace16,
+            if (!isModerated)
+              Material(
+                borderRadius: BorderRadiusFoundation.all12,
+                color: ColorsFoundation.onHover.withOpacity(0.32),
+                child: InkWell(
+                  borderRadius: BorderRadiusFoundation.all12,
+                  onTap: onModerated,
+                  child: Ink(
+                    child: Container(
+                      child: const ImageWidget(
+                        iconData: ShuffleUiKitIcons.check,
+                        color: ColorsFoundation.onHover,
+                      ).paddingAll(EdgeInsetsFoundation.all12),
+                    ),
+                  ),
+                ),
+              ),
             SpacingFoundation.horizontalSpace16,
             Material(
               borderRadius: BorderRadiusFoundation.all12,
               color: ColorsFoundation.red.withOpacity(0.32),
               child: InkWell(
                 borderRadius: BorderRadiusFoundation.all12,
-                onTap: widget.removeFunction,
+                onTap: removeFunction,
                 child: Ink(
                   child: Container(
                     child: const ImageWidget(
