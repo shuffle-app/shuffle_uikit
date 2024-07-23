@@ -6,7 +6,7 @@ class ProfileContentWidget extends StatefulWidget {
   final VoidCallback? onCalendarTap;
   final String? title;
   final AutoSizeGroup? group;
-  final bool showCalendart;
+  final bool showCalendar;
   final bool showHallOfFrame;
   final List<UiKitAchievementsModel> achievements;
   final VoidCallback? onViewAllAchievements;
@@ -17,7 +17,7 @@ class ProfileContentWidget extends StatefulWidget {
     this.onViewAllAchievements,
     this.title,
     this.group,
-    this.showCalendart = false,
+    this.showCalendar = false,
     this.showHallOfFrame = false,
     this.achievements = const [],
   });
@@ -40,19 +40,20 @@ class _ProfileContentWidgetState extends State<ProfileContentWidget> {
         children: [
           SpacingFoundation.verticalSpace12,
           AutoSizeText(
-            group: widget.group,
-            maxLines: 1,
             widget.title ?? S.of(context).NothingFound,
-            style: theme?.boldTextTheme.caption1Bold,
+            maxLines: 1,
+            group: widget.group,
+            minFontSize: 10,
             textAlign: TextAlign.center,
+            style: theme?.boldTextTheme.caption1Bold,
           ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing12),
-          if (widget.showCalendart) ...[
-            SpacingFoundation.verticalSpace8,
+          if (widget.showCalendar) ...[
+            SpacingFoundation.verticalSpace12,
             GestureDetector(
               onTap: widget.onCalendarTap,
               child: ImageWidget(
                 width: 80.w,
-                height: 1.sw <= 380 ? 54.h : 38.h,
+                height: 1.sw <= 380 ? 60.h : 54.h,
                 link: GraphicsFoundation.instance.png.calendarWatch.path,
               ),
             ).paddingSymmetric(
@@ -84,6 +85,7 @@ class _ProfileContentWidgetState extends State<ProfileContentWidget> {
                 ),
               ),
             ),
+            SpacingFoundation.verticalSpace12,
           ],
         ],
       ),

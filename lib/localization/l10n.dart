@@ -6558,21 +6558,21 @@ class S {
     );
   }
 
-  /// `Go premiun`
+  /// `Go premium`
   String get GoPremium {
     return Intl.message(
-      'Go premiun',
+      'Go premium',
       name: 'GoPremium',
       desc: '',
       args: [],
     );
   }
 
-  /// `GO pro free`
-  String get GoProFree {
+  /// `GO pro`
+  String get GoPro {
     return Intl.message(
-      'GO pro free',
-      name: 'GoProFree',
+      'GO pro',
+      name: 'GoPro',
       desc: '',
       args: [],
     );
@@ -6588,11 +6588,11 @@ class S {
     );
   }
 
-  /// `Created on {creationDate}.\nWill be deleted {deletionDate}`
+  /// `Created on {creationDate}.\nWill be deleted on {deletionDate}`
   String ChatDeletionAndCreationMessage(
       Object creationDate, Object deletionDate) {
     return Intl.message(
-      'Created on $creationDate.\nWill be deleted $deletionDate',
+      'Created on $creationDate.\nWill be deleted on $deletionDate',
       name: 'ChatDeletionAndCreationMessage',
       desc: '',
       args: [creationDate, deletionDate],
@@ -7011,6 +7011,16 @@ class S {
     );
   }
 
+  /// `Couldn't find invite`
+  String get CouldntFindInvite {
+    return Intl.message(
+      'Couldn\'t find invite',
+      name: 'CouldntFindInvite',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Wiseacre lady of sands`
   String get WiseacreLadyOfSands {
     return Intl.message(
@@ -7036,6 +7046,86 @@ class S {
     return Intl.message(
       'To plan',
       name: 'ToPlan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Share`
+  String get Share {
+    return Intl.message(
+      'Share',
+      name: 'Share',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rename`
+  String get Rename {
+    return Intl.message(
+      'Rename',
+      name: 'Rename',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get Delete {
+    return Intl.message(
+      'Delete',
+      name: 'Delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sure you want to delete stack?`
+  String get DeleteFolderAlert {
+    return Intl.message(
+      'Sure you want to delete stack?',
+      name: 'DeleteFolderAlert',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Seeking wanderer`
+  String get SeekingWandererMen {
+    return Intl.message(
+      'Seeking wanderer',
+      name: 'SeekingWandererMen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Seeking wanderer`
+  String get SeekingWandererWom {
+    return Intl.message(
+      'Seeking wanderer',
+      name: 'SeekingWandererWom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Traveler`
+  String get TravelerMen {
+    return Intl.message(
+      'Traveler',
+      name: 'TravelerMen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Traveler`
+  String get TravelerWom {
+    return Intl.message(
+      'Traveler',
+      name: 'TravelerWom',
       desc: '',
       args: [],
     );

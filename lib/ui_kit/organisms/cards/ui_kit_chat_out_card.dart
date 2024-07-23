@@ -68,7 +68,7 @@ class UiKitChatOutCard extends StatelessWidget {
               ),
               Transform(
                 transform: Matrix4.identity()
-                  ..scale(-1.0, 1.0),
+                  ..scale(-1.0,0.9),
                   // ..translate(0.5, 0, 0),
                 child: CustomPaint(
                   painter: _MessageTriangle(

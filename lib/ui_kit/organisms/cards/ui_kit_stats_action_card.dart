@@ -17,7 +17,6 @@ class UiKitStatsActionCard extends StatelessWidget {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
     return UiKitCardWrapper(
-      height: 1.sw <= 380 ? 95.h : 80.h,
       width: 110.w,
       color: context.uiKitTheme?.colorScheme.surface1,
       child: Column(
@@ -26,7 +25,7 @@ class UiKitStatsActionCard extends StatelessWidget {
           Text(
             stats.title,
             style: textTheme?.caption1Medium.copyWith(
-              color: ColorsFoundation.darkNeutral900,
+              color: ColorsFoundation.mutedText,
             ),
           ),
           AutoSizeText(
