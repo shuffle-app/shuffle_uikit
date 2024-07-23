@@ -40,11 +40,12 @@ class _ProfileContentWidgetState extends State<ProfileContentWidget> {
         children: [
           SpacingFoundation.verticalSpace12,
           AutoSizeText(
-            group: widget.group,
-            maxLines: 1,
             widget.title ?? S.of(context).NothingFound,
-            style: theme?.boldTextTheme.caption1Bold,
+            maxLines: 1,
+            group: widget.group,
+            minFontSize: 10,
             textAlign: TextAlign.center,
+            style: theme?.boldTextTheme.caption1Bold,
           ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing12),
           if (widget.showCalendart) ...[
             SpacingFoundation.verticalSpace8,
