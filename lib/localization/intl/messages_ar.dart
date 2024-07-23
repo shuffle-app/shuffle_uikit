@@ -37,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${count} ${Intl.plural(count, zero: 'cards', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} ${Intl.plural(count, zero: 'openings', one: 'opening', two: 'openings', few: 'openings', many: 'openings', other: 'openings')}";
 
   static String m6(creationDate, deletionDate) =>
-      "Created on ${creationDate}.\nWill be deleted ${deletionDate}";
+      "Created on ${creationDate}.\nWill be deleted on ${deletionDate}";
 
   static String m7(item) =>
       "${Intl.plural(item, zero: '3 difficulty levels', one: 'visit first to open next', two: 'visit & check in', few: 'pass & be rewarded', other: 'pass & be rewarded')}";
@@ -392,6 +392,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Control": MessageLookupByLibrary.simpleMessage("Control"),
         "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
             "сonvenient, clear and useful"),
+        "CouldntFindInvite":
+            MessageLookupByLibrary.simpleMessage("Couldn\'t find invite"),
         "CountReviews": m12,
         "CountVideoReaction": m13,
         "Create": MessageLookupByLibrary.simpleMessage("Create"),
@@ -416,8 +418,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "Day": MessageLookupByLibrary.simpleMessage("Day"),
         "Days": m14,
         "DaysOfWeek": MessageLookupByLibrary.simpleMessage("Days of week"),
+        "Delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "DeleteAccount": MessageLookupByLibrary.simpleMessage("Delete account"),
         "DeleteCompany": MessageLookupByLibrary.simpleMessage("Delete company"),
+        "DeleteFolderAlert": MessageLookupByLibrary.simpleMessage(
+            "Sure you want to delete stack?"),
         "DeleteFromList":
             MessageLookupByLibrary.simpleMessage("Delete from list"),
         "DependingOn": MessageLookupByLibrary.simpleMessage("Depending on..."),
@@ -541,8 +546,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
             "Go ahead and grow your business"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
-        "GoPremium": MessageLookupByLibrary.simpleMessage("Go premiun"),
-        "GoProFree": MessageLookupByLibrary.simpleMessage("GO pro free"),
+        "GoPremium": MessageLookupByLibrary.simpleMessage("Go premium"),
+        "GoPro": MessageLookupByLibrary.simpleMessage("GO pro"),
         "GoToSettings": MessageLookupByLibrary.simpleMessage("Go to settings"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
             "Great interview with the owner"),
@@ -871,6 +876,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
+        "Rename": MessageLookupByLibrary.simpleMessage("Rename"),
         "Reply": MessageLookupByLibrary.simpleMessage("Reply"),
         "ReplyingTo": m51,
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
@@ -962,6 +968,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SetWorkHours":
             MessageLookupByLibrary.simpleMessage("Set work schedule"),
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "Share": MessageLookupByLibrary.simpleMessage("Share"),
         "ShareCard": m57,
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("shared with you"),

@@ -86,7 +86,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   }
 
   Widget _buildFirstItem(BaseUiKitMedia item) {
-    debugPrint('WEATHER TYPE IS=======> ${widget.weatherType}');
 
     return Positioned(
       left: _cardAnimation.left,
@@ -121,7 +120,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 
   Widget _buildLeftItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
     final theme = context.uiKitTheme;
-    debugPrint('WEATHER TYPE IS=======> ${widget.weatherType}');
 
     return AnimatedPositioned(
         duration: _animDuration,
@@ -143,7 +141,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 
   Widget _buildRightItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
     final theme = context.uiKitTheme;
-    debugPrint('WEATHER TYPE IS=======> ${widget.weatherType}');
 
     return AnimatedPositioned(
       duration: _animDuration,

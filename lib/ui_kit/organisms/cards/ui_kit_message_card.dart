@@ -81,7 +81,7 @@ class UiKitMessageCard extends StatelessWidget {
                               Expanded(
                                 child: Row(
                                   children: [
-                                    Expanded(
+                                    Flexible(
                                       child: Text(
                                         name,
                                         style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),

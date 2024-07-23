@@ -36,7 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${count} ${Intl.plural(count, zero: 'cards', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} ${Intl.plural(count, zero: 'openings', one: 'opening', two: 'openings', few: 'openings', many: 'openings', other: 'openings')}";
 
   static String m6(creationDate, deletionDate) =>
-      "Created on ${creationDate}.\nWill be deleted ${deletionDate}";
+      "Created on ${creationDate}.\nWill be deleted on ${deletionDate}";
 
   static String m7(item) =>
       "${Intl.plural(item, zero: '3 स्तर की कठिनाई', one: 'पहले जाएं और अगला खोलें', two: 'जाएं और चेक इन करें', few: 'पास करें और पुरस्कृत हों', other: 'पास करें और पुरस्कृत हों')}";
@@ -391,6 +391,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Control": MessageLookupByLibrary.simpleMessage("नियंत्रण"),
         "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
             "сonvenient, clear and useful"),
+        "CouldntFindInvite":
+            MessageLookupByLibrary.simpleMessage("Couldn\'t find invite"),
         "CountReviews": m12,
         "CountVideoReaction": m13,
         "Create": MessageLookupByLibrary.simpleMessage("बनाएँ"),
@@ -415,8 +417,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "Day": MessageLookupByLibrary.simpleMessage("दिन"),
         "Days": m14,
         "DaysOfWeek": MessageLookupByLibrary.simpleMessage("सप्ताह के दिन"),
+        "Delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "DeleteAccount": MessageLookupByLibrary.simpleMessage("खाता हटाएं"),
         "DeleteCompany": MessageLookupByLibrary.simpleMessage("कंपनी हटाएं"),
+        "DeleteFolderAlert": MessageLookupByLibrary.simpleMessage(
+            "Sure you want to delete stack?"),
         "DeleteFromList": MessageLookupByLibrary.simpleMessage("सूची से हटाएँ"),
         "DependingOn":
             MessageLookupByLibrary.simpleMessage("पर निर्भर करता है"),
@@ -542,8 +547,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
             "आगे बढ़ें और अपना व्यवसाय बढ़ाएं"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("जाओ"),
-        "GoPremium": MessageLookupByLibrary.simpleMessage("Go premiun"),
-        "GoProFree": MessageLookupByLibrary.simpleMessage("GO pro free"),
+        "GoPremium": MessageLookupByLibrary.simpleMessage("Go premium"),
+        "GoPro": MessageLookupByLibrary.simpleMessage("GO pro"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("सेटिंग्स में जाओ"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
@@ -880,6 +885,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
+        "Rename": MessageLookupByLibrary.simpleMessage("Rename"),
         "Reply": MessageLookupByLibrary.simpleMessage("जवाब दे दो"),
         "ReplyingTo": m51,
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),
@@ -969,6 +975,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SetWorkHours":
             MessageLookupByLibrary.simpleMessage("कार्य का समय निर्धारित करें"),
         "Settings": MessageLookupByLibrary.simpleMessage("सेटिंग्स"),
+        "Share": MessageLookupByLibrary.simpleMessage("Share"),
         "ShareCard": m57,
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("आपके साथ साझा किया गया"),
