@@ -37,7 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${count} ${Intl.plural(count, zero: 'cards', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} ${Intl.plural(count, zero: 'openings', one: 'opening', two: 'openings', few: 'openings', many: 'openings', other: 'openings')}";
 
   static String m6(creationDate, deletionDate) =>
-      "Created on ${creationDate}.\nWill be deleted ${deletionDate}";
+      "Created on ${creationDate}.\nWill be deleted on ${deletionDate}";
 
   static String m7(item) =>
       "${Intl.plural(item, zero: '3 difficulty levels', one: 'visit first to open next', two: 'visit & check in', few: 'pass & be rewarded', other: 'pass & be rewarded')}";
