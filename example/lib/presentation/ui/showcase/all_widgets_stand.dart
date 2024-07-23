@@ -957,7 +957,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           data: BaseUiKitAdvertisementImageBannerData(
             availableWidth: 1.sw,
             onPressed: () {},
-            imageLink: GraphicsFoundation.instance.png.mockAdBanner1.path,
+            imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
             title: 'Dubai',
             size: AdvertisementBannerSize.small,
           ),
@@ -967,7 +967,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           data: BaseUiKitAdvertisementImageBannerData(
             availableWidth: 1.sw,
             onPressed: () {},
-            imageLink: GraphicsFoundation.instance.png.mockAdBanner2.path,
+            imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_2.png',
             title: 'Dubai',
             size: AdvertisementBannerSize.medium,
           ),
@@ -977,7 +977,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           data: BaseUiKitAdvertisementImageBannerData(
             availableWidth: 1.sw,
             onPressed: () {},
-            imageLink: GraphicsFoundation.instance.png.mockAdBanner3.path,
+            imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_3.png',
             title: 'Dubai',
             size: AdvertisementBannerSize.large,
           ),

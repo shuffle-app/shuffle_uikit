@@ -421,10 +421,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "Day": MessageLookupByLibrary.simpleMessage("День"),
         "Days": m14,
         "DaysOfWeek": MessageLookupByLibrary.simpleMessage("Дни недели"),
+        "Delete": MessageLookupByLibrary.simpleMessage("Удалить"),
         "DeleteAccount":
             MessageLookupByLibrary.simpleMessage("Удалить аккаунт"),
         "DeleteCompany":
             MessageLookupByLibrary.simpleMessage("Удалить компанию"),
+        "DeleteFolderAlert": MessageLookupByLibrary.simpleMessage(
+            "Вы уверены, что хотите удалить папку?"),
         "DeleteFromList":
             MessageLookupByLibrary.simpleMessage("Удалить из списка"),
         "DependingOn": MessageLookupByLibrary.simpleMessage("Зависит от..."),
@@ -550,8 +553,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Продолжай и позволь бизнесу расти"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
         "GoPremium": MessageLookupByLibrary.simpleMessage("Перейти на премиум"),
-        "GoProFree":
-            MessageLookupByLibrary.simpleMessage("Перейти на про бесплатно"),
+        "GoPro": MessageLookupByLibrary.simpleMessage("Перейти на про"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("Перейти в настройки"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
@@ -886,6 +888,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Связанные свойства"),
         "Religion": MessageLookupByLibrary.simpleMessage("Религия"),
+        "Rename": MessageLookupByLibrary.simpleMessage("Переименовать"),
         "Reply": MessageLookupByLibrary.simpleMessage("Ответить"),
         "ReplyingTo": m51,
         "ResendCode":
@@ -973,6 +976,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Services": MessageLookupByLibrary.simpleMessage("Услуги"),
         "SetWorkHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "Settings": MessageLookupByLibrary.simpleMessage("Настройки"),
+        "Share": MessageLookupByLibrary.simpleMessage("Поделиться"),
         "ShareCard": m57,
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("поделилась с вами"),

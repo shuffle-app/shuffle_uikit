@@ -126,14 +126,14 @@ class ProProfilePage extends StatelessWidget {
                   UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: true),
                   UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: true),
                 ],
-                stories: [
+                stories: const [
                   ProfileStory(
-                    image: GraphicsFoundation.instance.png.mockAdBanner1.path,
+                    image: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
                     isEmpty: false,
                     viewed: false,
                   ),
                   ProfileStory(
-                    image: GraphicsFoundation.instance.png.mockAdBanner1.path,
+                    image: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
                     isEmpty: false,
                     viewed: true,
                   ),

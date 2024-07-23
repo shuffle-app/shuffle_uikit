@@ -118,6 +118,7 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
               duration: const Duration(milliseconds: 150),
               height: 1.sh - expandedHeight - (bodyBottomSpace ?? 0) - (visible ? 0.4.sh : 0),
               width: 1.sw,
+              alignment: Alignment.topCenter,
               child: PagedListView.separated(
                 physics: const BouncingScrollPhysics(),
                 scrollController: scrollController,

@@ -416,8 +416,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "Day": MessageLookupByLibrary.simpleMessage("Day"),
         "Days": m14,
         "DaysOfWeek": MessageLookupByLibrary.simpleMessage("Days of week"),
+        "Delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "DeleteAccount": MessageLookupByLibrary.simpleMessage("Delete account"),
         "DeleteCompany": MessageLookupByLibrary.simpleMessage("Delete company"),
+        "DeleteFolderAlert": MessageLookupByLibrary.simpleMessage(
+            "Sure you want to delete stack?"),
         "DeleteFromList":
             MessageLookupByLibrary.simpleMessage("Delete from list"),
         "DependingOn": MessageLookupByLibrary.simpleMessage("Depending on..."),
@@ -541,8 +544,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
             "Go ahead and grow your business"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
-        "GoPremium": MessageLookupByLibrary.simpleMessage("Go premiun"),
-        "GoProFree": MessageLookupByLibrary.simpleMessage("GO pro free"),
+        "GoPremium": MessageLookupByLibrary.simpleMessage("Go premium"),
+        "GoPro": MessageLookupByLibrary.simpleMessage("GO pro"),
         "GoToSettings": MessageLookupByLibrary.simpleMessage("Go to settings"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
             "Great interview with the owner"),
@@ -871,6 +874,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
+        "Rename": MessageLookupByLibrary.simpleMessage("Rename"),
         "Reply": MessageLookupByLibrary.simpleMessage("Reply"),
         "ReplyingTo": m51,
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
@@ -958,6 +962,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SetWorkHours":
             MessageLookupByLibrary.simpleMessage("Set work schedule"),
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "Share": MessageLookupByLibrary.simpleMessage("Share"),
         "ShareCard": m57,
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("shared with you"),

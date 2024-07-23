@@ -50,7 +50,8 @@ class SmallTextAdBanner5 extends StatelessWidget {
           ),
         ),
         availableWidth: 1.sw - SpacingFoundation.verticalSpacing32,
-        imageLink: GraphicsFoundation.instance.png.mockAdBanner32.path,
+        //TODO move to constructor
+        imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_32.png',
         size: AdvertisementBannerSize.small,
       ),
     );
