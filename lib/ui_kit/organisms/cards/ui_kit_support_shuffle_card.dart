@@ -18,8 +18,6 @@ class UiKitSupportShuffle extends StatelessWidget {
     final theme = context.uiKitTheme;
 
     return UiKitCardWrapper(
-      height: 1.sw <= 380 ? 95.h : 80.h,
-      // height: 1.w < 380 ? 95.h : 80.h,
       width: 110.w,
       color: context.uiKitTheme?.colorScheme.surface1,
       child: Column(
@@ -28,7 +26,7 @@ class UiKitSupportShuffle extends StatelessWidget {
           Text(
             S.of(context).Support,
             style: theme?.boldTextTheme.caption1Medium.copyWith(
-              color: ColorsFoundation.darkNeutral900,
+              color: ColorsFoundation.mutedText,
             ),
           ),
           Stack(
@@ -52,37 +50,42 @@ class UiKitSupportShuffle extends StatelessWidget {
             ],
           ),
           SpacingFoundation.verticalSpace4,
-          GestureDetector(
-            onTap: onCustomDonate ??
-                () => showGeneralDialog(
-                      context: context,
-                      transitionBuilder:
-                          (context, animation1, animation2, child) =>
-                              BackdropFilter(
-                        filter: ImageFilter.blur(
-                          sigmaX: animation1.value * 30,
-                          sigmaY: animation1.value * 30,
+          GradientableWidget(
+            gradient: GradientFoundation.attentionCard,
+            child: context.smallOutlinedButton(
+              data: BaseUiKitButtonData(
+                backgroundColor: Colors.transparent,
+                onPressed: onCustomDonate ??
+                    () => showGeneralDialog(
+                          context: context,
+                          transitionBuilder:
+                              (context, animation1, animation2, child) =>
+                                  BackdropFilter(
+                            filter: ImageFilter.blur(
+                              sigmaX: animation1.value * 30,
+                              sigmaY: animation1.value * 30,
+                            ),
+                            child: child,
+                          ),
+                          pageBuilder: (context, animation1, animation2) =>
+                              FadeTransition(
+                            opacity: animation1,
+                            child: DonateToShuffleAlert(onDonate: onDonate),
+                          ),
                         ),
-                        child: child,
-                      ),
-                      pageBuilder: (context, animation1, animation2) =>
-                          FadeTransition(
-                        opacity: animation1,
-                        child: DonateToShuffleAlert(onDonate: onDonate),
-                      ),
-                    ),
-            child: GradientableWidget(
-              gradient: GradientFoundation.attentionCard,
-              child: ImageWidget(
-                iconData: ShuffleUiKitIcons.dollarOutlined,
-                height: 23.h,
-                color: Colors.white,
-                fit: BoxFit.fitHeight,
+                iconInfo: BaseUiKitButtonIconData(
+                  size: 10.h,
+                  iconData: ShuffleUiKitIcons.dollar,
+                ),
               ),
             ),
           ),
         ],
-      ).paddingAll(EdgeInsetsFoundation.all16),
+      ).paddingSymmetric(
+        vertical: 1.sw <= 380
+            ? SpacingFoundation.verticalSpacing20
+            : SpacingFoundation.verticalSpacing24,
+      ),
     );
   }
 }

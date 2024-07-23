@@ -687,6 +687,10 @@
   "Share": "Share",
   "Rename": "Rename",
   "Delete": "Delete",
-  "DeleteFolderAlert": "Sure you want to delete stack?"
+  "DeleteFolderAlert": "Sure you want to delete stack?",
+  "SeekingWandererMen": "Seeking wanderer",
+  "SeekingWandererWom": "Seeking wanderer",
+  "TravelerMen": "Traveler",
+  "TravelerWom": "Traveler"
 
 }

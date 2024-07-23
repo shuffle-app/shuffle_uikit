@@ -939,6 +939,10 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Search property"),
         "SeeAll": MessageLookupByLibrary.simpleMessage("See all"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("See more"),
+        "SeekingWandererMen":
+            MessageLookupByLibrary.simpleMessage("Seeking wanderer"),
+        "SeekingWandererWom":
+            MessageLookupByLibrary.simpleMessage("Seeking wanderer"),
         "SelectCurrency":
             MessageLookupByLibrary.simpleMessage("Select currency"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("Select date"),
@@ -1086,6 +1090,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Top": MessageLookupByLibrary.simpleMessage("Top"),
         "TopNDonatorsReceiveXPoints": m63,
         "TopPlacesRatedBy": m64,
+        "TravelerMen": MessageLookupByLibrary.simpleMessage("Traveler"),
+        "TravelerWom": MessageLookupByLibrary.simpleMessage("Traveler"),
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("Trial period"),
         "TryYourself": MessageLookupByLibrary.simpleMessage("Try\nyourself"),
         "TuesdayShort": MessageLookupByLibrary.simpleMessage("Tue"),
