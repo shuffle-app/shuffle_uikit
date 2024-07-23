@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory {
+class SmallOutlinedButtonNoBlur extends StatelessWidget
+    implements ButtonFactory {
   final String? text;
   final VoidCallback? onPressed;
   final Color? borderColor;
@@ -10,6 +11,7 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
   final BaseUiKitButtonIconData? iconInfo;
   final bool? loading;
   final ButtonFit? fit;
+  final Color? backgroundColor;
 
   bool get textIsEmpty => text?.isEmpty ?? true;
 
@@ -23,6 +25,7 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
     this.loading,
     this.fit,
     this.iconInfo,
+    this.backgroundColor,
   });
 
   @override
@@ -47,10 +50,12 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
             borderRadius: textIsEmpty ? null : BorderRadiusFoundation.max,
             shape: textIsEmpty ? BoxShape.circle : BoxShape.rectangle,
             border: Border.all(
-              color: borderColor ?? context.uiKitTheme!.colorScheme.inversePrimary,
+              color:
+                  borderColor ?? context.uiKitTheme!.colorScheme.inversePrimary,
               width: 2.w,
             ),
-            color: textIsEmpty ? Colors.white.withOpacity(0.1) : null,
+            color: backgroundColor ??
+                (textIsEmpty ? Colors.white.withOpacity(0.1) : null),
           ),
           child: textIsEmpty && (icon != null || iconInfo != null)
               ? ClipOval(
@@ -60,7 +65,8 @@ class SmallOutlinedButtonNoBlur extends StatelessWidget implements ButtonFactory
                         link: iconInfo?.iconPath,
                         height: iconInfo?.size,
                         fit: BoxFit.fitHeight,
-                        color: iconInfo?.color ?? theme?.colorScheme.inversePrimary,
+                        color: iconInfo?.color ??
+                            theme?.colorScheme.inversePrimary,
                       ),
                 )
               : Text(
