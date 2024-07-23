@@ -30,6 +30,7 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
   final String? onIWidgetInfoString;
   final EdgeInsets? padding;
   final bool reverse;
+  final bool hideBottomSpace;
 
   const BlurredAppPageWithPagination({
     super.key,
@@ -55,6 +56,7 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
     this.animatedListKey,
     this.bodyBottomSpace,
     this.onIWidgetInfoString,
+    this.hideBottomSpace = false,
   });
 
   @override
@@ -115,8 +117,16 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
         KeyboardVisibilityBuilder(
           builder: (context, visible) {
             return AnimatedContainer(
-              duration: const Duration(milliseconds: 150),
-              height: 1.sh - expandedHeight - (bodyBottomSpace ?? 0) - (visible ? 0.4.sh : 0),
+              duration: const Duration(milliseconds: 300),
+              curve: Curves.decelerate,
+              height: 1.sh -
+                  expandedHeight -
+                  (hideBottomSpace ? SpacingFoundation.verticalSpacing24 : bodyBottomSpace ?? 0) -
+                  (hideBottomSpace
+                      ? 0
+                      : visible
+                          ? 0.385.sh
+                          : 0),
               width: 1.sw,
               alignment: Alignment.topCenter,
               child: PagedListView.separated(

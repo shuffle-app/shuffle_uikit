@@ -6588,11 +6588,11 @@ class S {
     );
   }
 
-  /// `Created on {creationDate}.\nWill be deleted {deletionDate}`
+  /// `Created on {creationDate}.\nWill be deleted on {deletionDate}`
   String ChatDeletionAndCreationMessage(
       Object creationDate, Object deletionDate) {
     return Intl.message(
-      'Created on $creationDate.\nWill be deleted $deletionDate',
+      'Created on $creationDate.\nWill be deleted on $deletionDate',
       name: 'ChatDeletionAndCreationMessage',
       desc: '',
       args: [creationDate, deletionDate],
@@ -7006,6 +7006,16 @@ class S {
     return Intl.message(
       'Wiseacre of sands',
       name: 'WiseacreOfSands',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Couldn't find invite`
+  String get CouldntFindInvite {
+    return Intl.message(
+      'Couldn\'t find invite',
+      name: 'CouldntFindInvite',
       desc: '',
       args: [],
     );

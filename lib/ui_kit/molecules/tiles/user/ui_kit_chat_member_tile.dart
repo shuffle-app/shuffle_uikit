@@ -73,17 +73,19 @@ class UiKitChatMemberUserTile extends StatelessWidget {
             style: boldTextTheme?.caption2Bold.copyWith(
               color: invertThemeColors ? colorScheme?.surface : null,
             ),
-          ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal4),
+          ).paddingOnly(left: EdgeInsetsFoundation.horizontal4),
         if (canDelete)
-          context.iconButtonNoPadding(
-            data: BaseUiKitButtonData(
-              iconInfo: BaseUiKitButtonIconData(
-                iconData: ShuffleUiKitIcons.cross,
-                color: ColorsFoundation.mutedText,
-              ),
-              onPressed: onDelete,
-            ),
-          ),
+          context
+              .iconButtonNoPadding(
+                data: BaseUiKitButtonData(
+                  iconInfo: BaseUiKitButtonIconData(
+                    iconData: ShuffleUiKitIcons.cross,
+                    color: ColorsFoundation.mutedText,
+                  ),
+                  onPressed: onDelete,
+                ),
+              )
+              .paddingOnly(left: EdgeInsetsFoundation.horizontal4),
       ],
     );
   }

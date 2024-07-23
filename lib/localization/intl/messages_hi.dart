@@ -36,7 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${count} ${Intl.plural(count, zero: 'cards', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} ${Intl.plural(count, zero: 'openings', one: 'opening', two: 'openings', few: 'openings', many: 'openings', other: 'openings')}";
 
   static String m6(creationDate, deletionDate) =>
-      "Created on ${creationDate}.\nWill be deleted ${deletionDate}";
+      "Created on ${creationDate}.\nWill be deleted on ${deletionDate}";
 
   static String m7(item) =>
       "${Intl.plural(item, zero: '3 स्तर की कठिनाई', one: 'पहले जाएं और अगला खोलें', two: 'जाएं और चेक इन करें', few: 'पास करें और पुरस्कृत हों', other: 'पास करें और पुरस्कृत हों')}";
@@ -391,6 +391,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Control": MessageLookupByLibrary.simpleMessage("नियंत्रण"),
         "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
             "сonvenient, clear and useful"),
+        "CouldntFindInvite":
+            MessageLookupByLibrary.simpleMessage("Couldn\'t find invite"),
         "CountReviews": m12,
         "CountVideoReaction": m13,
         "Create": MessageLookupByLibrary.simpleMessage("बनाएँ"),
