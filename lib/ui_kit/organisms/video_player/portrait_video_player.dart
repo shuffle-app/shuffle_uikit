@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
 import 'dart:typed_data';
@@ -35,7 +36,7 @@ class UiKitFullScreenPortraitVideoPlayer extends StatefulWidget {
   State<UiKitFullScreenPortraitVideoPlayer> createState() => _UiKitFullScreenPortraitVideoPlayerState();
 }
 
-class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPortraitVideoPlayer> {
+class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPortraitVideoPlayer> with RouteAware {
   // VideoPlayerController? _controller;
   bool seeking = false;
   double height = 0;
@@ -43,12 +44,8 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   double coverOpacity = 1;
   bool isReady = false;
   final key = UniqueKey();
-
-  // Create a [Player] to control playback.
-  late final player = Player();
-
-  // Create a [VideoController] to handle video output from [Player].
-  late final controller = VideoController(player);
+  StreamSubscription? positionSubscription;
+  StreamSubscription? completeSubscription;
 
   @override
   void initState() {
@@ -68,45 +65,53 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
     //     });
     // });
     // Play a [Media] or [Playlist].
-    player.open(Media(widget.videoUrl));
-    controller.waitUntilFirstFrameRendered.then((_) {
-      Future.delayed(const Duration(milliseconds: 500), () {
-        setState(() {
-          coverOpacity = 0;
-        });
-        Future.delayed(const Duration(seconds: 1), () {
+    _player.open(Media(widget.videoUrl)).then((_) {
+      _controller.waitUntilFirstFrameRendered.then((_) {
+        Future.delayed(const Duration(milliseconds: 500), () {
           setState(() {
-            isReady = true;
+            coverOpacity = 0;
+          });
+          _controller.player.play();
+          Future.delayed(const Duration(seconds: 1), () {
+            setState(() {
+              isReady = true;
+            });
+            completeSubscription = _controller.player.stream.completed.listen((value) {
+              if (!seeking && value) {
+                if (widget.onVideoComplete == null) {
+                  context.pop();
+                } else {
+                  widget.onVideoComplete!.call();
+                }
+              }
+            });
           });
         });
-      });
-    });
-    controller.platform.future.then((value) {
-      if (widget.onVideoInited != null) {
-        Future.delayed(Duration.zero, widget.onVideoInited!);
-      }
-      value.player.stream.position.listen((Duration event) {
-        if (!seeking && controller.player.platform!.state.duration.inSeconds != 0) {
-          widget.onProgressChanged?.call(controller.player.platform!.state.position.inMilliseconds /
-              controller.player.platform!.state.duration.inMilliseconds);
-        }
-      });
-      value.player.stream.completed.listen((value) {
-        if (!seeking && value) {
-          if (widget.onVideoComplete == null) {
-            context.pop();
-          } else {
-            widget.onVideoComplete!.call();
-          }
+        if (widget.onVideoInited != null) {
+          Future.delayed(const Duration(seconds: 1), widget.onVideoInited!);
+          // }
+          positionSubscription = _controller.player.stream.position.listen((Duration event) {
+            if (!seeking && _controller.player.platform!.state.duration.inSeconds != 0) {
+              widget.onProgressChanged?.call(_controller.player.platform!.state.position.inMilliseconds /
+                  _controller.player.platform!.state.duration.inMilliseconds);
+            }
+          });
         }
       });
     });
   }
 
   @override
+  void didPush() {
+    _player.pause();
+    super.didPush();
+  }
+
+  @override
   void dispose() {
-    // _controller?.dispose();
-    player.dispose();
+    positionSubscription?.cancel();
+    completeSubscription?.cancel();
+    _player.pause();
     super.dispose();
   }
 
@@ -141,10 +146,10 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
         //   if (!(controller.player.platform?.state.playing ?? true)) controller.player.play();
         // },
         onTapDown: (details) {
-          controller.player.pause();
+          _controller.player.pause();
         },
         onTapUp: (details) {
-          controller.player.play();
+          _controller.player.play();
           widget.onTapUp?.call(details);
         },
         onVerticalDragEnd: widget.onVerticalSwipe,
@@ -158,7 +163,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
           // :
           Video(
             key: key,
-            controller: controller,
+            controller: _controller,
             height: height - MediaQuery.of(context).padding.top,
             width: 1.sw,
             wakelock: false,
@@ -188,3 +193,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
     ).paddingOnly(top: MediaQuery.paddingOf(context).top);
   }
 }
+
+final _player = Player();
+
+final _controller = VideoController(_player);

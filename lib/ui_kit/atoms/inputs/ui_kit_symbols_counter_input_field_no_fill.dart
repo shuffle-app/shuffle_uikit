@@ -35,6 +35,7 @@ class UiKitSymbolsCounterInputFieldNoFill extends StatefulWidget
   final bool autofocus;
   final bool readOnly;
   final TextStyle? inputTextStyle;
+  final TextInputAction? textInputAction;
 
   const UiKitSymbolsCounterInputFieldNoFill({
     super.key,
@@ -61,6 +62,7 @@ class UiKitSymbolsCounterInputFieldNoFill extends StatefulWidget
     this.customEnabledBorder,
     this.customInputTextColor,
     this.inputTextStyle,
+    this.textInputAction,
     this.expands = false,
     this.autofocus = false,
     this.readOnly = false,
@@ -71,8 +73,7 @@ class UiKitSymbolsCounterInputFieldNoFill extends StatefulWidget
       _UiKitSymbolsCounterInputFieldNoFillState();
 }
 
-class _UiKitSymbolsCounterInputFieldNoFillState
-    extends State<UiKitSymbolsCounterInputFieldNoFill> {
+class _UiKitSymbolsCounterInputFieldNoFillState extends State<UiKitSymbolsCounterInputFieldNoFill> {
   final inputPropertiesColor = const InputStateColor();
 
   final GlobalKey<FormFieldState> _key = GlobalKey<FormFieldState>();
@@ -96,12 +97,12 @@ class _UiKitSymbolsCounterInputFieldNoFillState
             color: _key.currentState?.hasError ?? false
                 ? ColorsFoundation.error
                 : widget.customInputTextColor ??
-                    uiKitTheme.colorScheme.inversePrimary);
+                uiKitTheme.colorScheme.inversePrimary);
     final hintStyle =
-        uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
+    uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
           ? widget.customHintColor ??
-              uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
+          uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
           : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
     return Theme(
@@ -113,11 +114,13 @@ class _UiKitSymbolsCounterInputFieldNoFillState
         key: _key,
         style: inputTextStyle,
         enabled: widget.enabled,
+        autofocus: widget.autofocus,
         controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
         maxLength: widget.maxSymbols,
         minLines: widget.minLines,
         maxLines: widget.maxLines,
+        textInputAction: widget.textInputAction,
         buildCounter: _buildCounter,
         decoration: InputDecoration(
           focusedBorder: widget.customFocusedBorder ??
@@ -141,8 +144,7 @@ class _UiKitSymbolsCounterInputFieldNoFillState
     );
   }
 
-  Widget _buildCounter(
-    BuildContext context, {
+  Widget _buildCounter(BuildContext context, {
     required int currentLength,
     required int? maxLength,
     required bool isFocused,

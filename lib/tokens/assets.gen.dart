@@ -469,96 +469,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Yoga.png
   AssetGenImage get yoga => const AssetGenImage('assets/images/png/Yoga.png');
 
-  /// File path: assets/images/png/_no-bg-booking-w.png
-  AssetGenImage get noBgBookingW => const AssetGenImage('assets/images/png/_no-bg-booking-w.png');
-
-  /// File path: assets/images/png/_no-bg-booking.png
-  AssetGenImage get noBgBooking => const AssetGenImage('assets/images/png/_no-bg-booking.png');
-
-  /// File path: assets/images/png/_no-bg-eye-w.png
-  AssetGenImage get noBgEyeW => const AssetGenImage('assets/images/png/_no-bg-eye-w.png');
-
-  /// File path: assets/images/png/_no-bg-eye.png
-  AssetGenImage get noBgEye => const AssetGenImage('assets/images/png/_no-bg-eye.png');
-
-  /// File path: assets/images/png/_no-bg-handshake-w.png
-  AssetGenImage get noBgHandshakeW => const AssetGenImage('assets/images/png/_no-bg-handshake-w.png');
-
-  /// File path: assets/images/png/_no-bg-handshake.png
-  AssetGenImage get noBgHandshake => const AssetGenImage('assets/images/png/_no-bg-handshake.png');
-
-  /// File path: assets/images/png/_no-bg-hourglass-w.png
-  AssetGenImage get noBgHourglassW => const AssetGenImage('assets/images/png/_no-bg-hourglass-w.png');
-
-  /// File path: assets/images/png/_no-bg-hourglass.png
-  AssetGenImage get noBgHourglass => const AssetGenImage('assets/images/png/_no-bg-hourglass.png');
-
-  /// File path: assets/images/png/_no-bg-index_finger-w.png
-  AssetGenImage get noBgIndexFingerW => const AssetGenImage('assets/images/png/_no-bg-index_finger-w.png');
-
-  /// File path: assets/images/png/_no-bg-index_finger.png
-  AssetGenImage get noBgIndexFinger => const AssetGenImage('assets/images/png/_no-bg-index_finger.png');
-
-  /// File path: assets/images/png/_no-bg-invite-w.png
-  AssetGenImage get noBgInviteW => const AssetGenImage('assets/images/png/_no-bg-invite-w.png');
-
-  /// File path: assets/images/png/_no-bg-invite.png
-  AssetGenImage get noBgInvite => const AssetGenImage('assets/images/png/_no-bg-invite.png');
-
-  /// File path: assets/images/png/_no-bg-like-w.png
-  AssetGenImage get noBgLikeW => const AssetGenImage('assets/images/png/_no-bg-like-w.png');
-
-  /// File path: assets/images/png/_no-bg-like_icon.png
-  AssetGenImage get noBgLikeIcon => const AssetGenImage('assets/images/png/_no-bg-like_icon.png');
-
-  /// File path: assets/images/png/_no-bg-message.png
-  AssetGenImage get noBgMessage => const AssetGenImage('assets/images/png/_no-bg-message.png');
-
-  /// File path: assets/images/png/_no-bg-message_bubble-w.png
-  AssetGenImage get noBgMessageBubbleW => const AssetGenImage('assets/images/png/_no-bg-message_bubble-w.png');
-
-  /// File path: assets/images/png/_no-bg-open_hand-w.png
-  AssetGenImage get noBgOpenHandW => const AssetGenImage('assets/images/png/_no-bg-open_hand-w.png');
-
-  /// File path: assets/images/png/_no-bg-open_hand.png
-  AssetGenImage get noBgOpenHand => const AssetGenImage('assets/images/png/_no-bg-open_hand.png');
-
-  /// File path: assets/images/png/_no-bg-share-w.png
-  AssetGenImage get noBgShareW => const AssetGenImage('assets/images/png/_no-bg-share-w.png');
-
-  /// File path: assets/images/png/_no-bg-share.png
-  AssetGenImage get noBgShare => const AssetGenImage('assets/images/png/_no-bg-share.png');
-
-  /// File path: assets/images/png/_no-bg-smile-w.png
-  AssetGenImage get noBgSmileW => const AssetGenImage('assets/images/png/_no-bg-smile-w.png');
-
-  /// File path: assets/images/png/_no-bg-smile.png
-  AssetGenImage get noBgSmile => const AssetGenImage('assets/images/png/_no-bg-smile.png');
-
-  /// File path: assets/images/png/_no-bg-stacks-w.png
-  AssetGenImage get noBgStacksW => const AssetGenImage('assets/images/png/_no-bg-stacks-w.png');
-
-  /// File path: assets/images/png/_no-bg-stacks.png
-  AssetGenImage get noBgStacks => const AssetGenImage('assets/images/png/_no-bg-stacks.png');
-
-  /// File path: assets/images/png/_no-bg-two_fingers_up-w.png
-  AssetGenImage get noBgTwoFingersUpW => const AssetGenImage('assets/images/png/_no-bg-two_fingers_up-w.png');
-
-  /// File path: assets/images/png/_no-bg-victory-hands.png
-  AssetGenImage get noBgVictoryHands => const AssetGenImage('assets/images/png/_no-bg-victory-hands.png');
-
-  /// File path: assets/images/png/_no-bg-video-reaction-w.png
-  AssetGenImage get noBgVideoReactionW => const AssetGenImage('assets/images/png/_no-bg-video-reaction-w.png');
-
-  /// File path: assets/images/png/_no-bg-video-reaction.png
-  AssetGenImage get noBgVideoReaction => const AssetGenImage('assets/images/png/_no-bg-video-reaction.png');
-
-  /// File path: assets/images/png/_no-bg-walking_man-w.png
-  AssetGenImage get noBgWalkingManW => const AssetGenImage('assets/images/png/_no-bg-walking_man-w.png');
-
-  /// File path: assets/images/png/_no-bg-walking_man.png
-  AssetGenImage get noBgWalkingMan => const AssetGenImage('assets/images/png/_no-bg-walking_man.png');
-
   /// File path: assets/images/png/atheist.png
   AssetGenImage get atheist => const AssetGenImage('assets/images/png/atheist.png');
 
@@ -629,99 +539,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/mock_ad_banner.png
   AssetGenImage get mockAdBanner => const AssetGenImage('assets/images/png/mock_ad_banner.png');
-
-  /// File path: assets/images/png/mock_ad_banner_1.jpeg
-  AssetGenImage get mockAdBanner1 => const AssetGenImage('assets/images/png/mock_ad_banner_1.jpeg');
-
-  /// File path: assets/images/png/mock_ad_banner_10.jpg
-  AssetGenImage get mockAdBanner10 => const AssetGenImage('assets/images/png/mock_ad_banner_10.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_11.png
-  AssetGenImage get mockAdBanner11 => const AssetGenImage('assets/images/png/mock_ad_banner_11.png');
-
-  /// File path: assets/images/png/mock_ad_banner_12.png
-  AssetGenImage get mockAdBanner12 => const AssetGenImage('assets/images/png/mock_ad_banner_12.png');
-
-  /// File path: assets/images/png/mock_ad_banner_13.png
-  AssetGenImage get mockAdBanner13 => const AssetGenImage('assets/images/png/mock_ad_banner_13.png');
-
-  /// File path: assets/images/png/mock_ad_banner_14.png
-  AssetGenImage get mockAdBanner14 => const AssetGenImage('assets/images/png/mock_ad_banner_14.png');
-
-  /// File path: assets/images/png/mock_ad_banner_15.png
-  AssetGenImage get mockAdBanner15 => const AssetGenImage('assets/images/png/mock_ad_banner_15.png');
-
-  /// File path: assets/images/png/mock_ad_banner_16.png
-  AssetGenImage get mockAdBanner16 => const AssetGenImage('assets/images/png/mock_ad_banner_16.png');
-
-  /// File path: assets/images/png/mock_ad_banner_17.png
-  AssetGenImage get mockAdBanner17 => const AssetGenImage('assets/images/png/mock_ad_banner_17.png');
-
-  /// File path: assets/images/png/mock_ad_banner_18.png
-  AssetGenImage get mockAdBanner18 => const AssetGenImage('assets/images/png/mock_ad_banner_18.png');
-
-  /// File path: assets/images/png/mock_ad_banner_19.png
-  AssetGenImage get mockAdBanner19 => const AssetGenImage('assets/images/png/mock_ad_banner_19.png');
-
-  /// File path: assets/images/png/mock_ad_banner_2.jpeg
-  AssetGenImage get mockAdBanner2 => const AssetGenImage('assets/images/png/mock_ad_banner_2.jpeg');
-
-  /// File path: assets/images/png/mock_ad_banner_20.png
-  AssetGenImage get mockAdBanner20 => const AssetGenImage('assets/images/png/mock_ad_banner_20.png');
-
-  /// File path: assets/images/png/mock_ad_banner_21.png
-  AssetGenImage get mockAdBanner21 => const AssetGenImage('assets/images/png/mock_ad_banner_21.png');
-
-  /// File path: assets/images/png/mock_ad_banner_23.jpg
-  AssetGenImage get mockAdBanner23 => const AssetGenImage('assets/images/png/mock_ad_banner_23.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_24.jpg
-  AssetGenImage get mockAdBanner24 => const AssetGenImage('assets/images/png/mock_ad_banner_24.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_25.jpg
-  AssetGenImage get mockAdBanner25 => const AssetGenImage('assets/images/png/mock_ad_banner_25.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_26.png
-  AssetGenImage get mockAdBanner26 => const AssetGenImage('assets/images/png/mock_ad_banner_26.png');
-
-  /// File path: assets/images/png/mock_ad_banner_27.png
-  AssetGenImage get mockAdBanner27 => const AssetGenImage('assets/images/png/mock_ad_banner_27.png');
-
-  /// File path: assets/images/png/mock_ad_banner_28.png
-  AssetGenImage get mockAdBanner28 => const AssetGenImage('assets/images/png/mock_ad_banner_28.png');
-
-  /// File path: assets/images/png/mock_ad_banner_29.png
-  AssetGenImage get mockAdBanner29 => const AssetGenImage('assets/images/png/mock_ad_banner_29.png');
-
-  /// File path: assets/images/png/mock_ad_banner_3.jpeg
-  AssetGenImage get mockAdBanner3 => const AssetGenImage('assets/images/png/mock_ad_banner_3.jpeg');
-
-  /// File path: assets/images/png/mock_ad_banner_30.jpg
-  AssetGenImage get mockAdBanner30 => const AssetGenImage('assets/images/png/mock_ad_banner_30.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_31.png
-  AssetGenImage get mockAdBanner31 => const AssetGenImage('assets/images/png/mock_ad_banner_31.png');
-
-  /// File path: assets/images/png/mock_ad_banner_32.png
-  AssetGenImage get mockAdBanner32 => const AssetGenImage('assets/images/png/mock_ad_banner_32.png');
-
-  /// File path: assets/images/png/mock_ad_banner_4.jpg
-  AssetGenImage get mockAdBanner4 => const AssetGenImage('assets/images/png/mock_ad_banner_4.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_5.jpeg
-  AssetGenImage get mockAdBanner5 => const AssetGenImage('assets/images/png/mock_ad_banner_5.jpeg');
-
-  /// File path: assets/images/png/mock_ad_banner_6.png
-  AssetGenImage get mockAdBanner6 => const AssetGenImage('assets/images/png/mock_ad_banner_6.png');
-
-  /// File path: assets/images/png/mock_ad_banner_7.jpg
-  AssetGenImage get mockAdBanner7 => const AssetGenImage('assets/images/png/mock_ad_banner_7.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_8.jpg
-  AssetGenImage get mockAdBanner8 => const AssetGenImage('assets/images/png/mock_ad_banner_8.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_9.png
-  AssetGenImage get mockAdBanner9 => const AssetGenImage('assets/images/png/mock_ad_banner_9.png');
 
   /// File path: assets/images/png/mock_avatar.png
   AssetGenImage get mockAvatar => const AssetGenImage('assets/images/png/mock_avatar.png');
@@ -1003,36 +820,6 @@ class $AssetsImagesPngGen {
         visitFirst,
         windy,
         yoga,
-        noBgBookingW,
-        noBgBooking,
-        noBgEyeW,
-        noBgEye,
-        noBgHandshakeW,
-        noBgHandshake,
-        noBgHourglassW,
-        noBgHourglass,
-        noBgIndexFingerW,
-        noBgIndexFinger,
-        noBgInviteW,
-        noBgInvite,
-        noBgLikeW,
-        noBgLikeIcon,
-        noBgMessage,
-        noBgMessageBubbleW,
-        noBgOpenHandW,
-        noBgOpenHand,
-        noBgShareW,
-        noBgShare,
-        noBgSmileW,
-        noBgSmile,
-        noBgStacksW,
-        noBgStacks,
-        noBgTwoFingersUpW,
-        noBgVictoryHands,
-        noBgVideoReactionW,
-        noBgVideoReaction,
-        noBgWalkingManW,
-        noBgWalkingMan,
         atheist,
         atmosphere,
         balloons,
@@ -1056,37 +843,6 @@ class $AssetsImagesPngGen {
         manicure,
         mapMock,
         mockAdBanner,
-        mockAdBanner1,
-        mockAdBanner10,
-        mockAdBanner11,
-        mockAdBanner12,
-        mockAdBanner13,
-        mockAdBanner14,
-        mockAdBanner15,
-        mockAdBanner16,
-        mockAdBanner17,
-        mockAdBanner18,
-        mockAdBanner19,
-        mockAdBanner2,
-        mockAdBanner20,
-        mockAdBanner21,
-        mockAdBanner23,
-        mockAdBanner24,
-        mockAdBanner25,
-        mockAdBanner26,
-        mockAdBanner27,
-        mockAdBanner28,
-        mockAdBanner29,
-        mockAdBanner3,
-        mockAdBanner30,
-        mockAdBanner31,
-        mockAdBanner32,
-        mockAdBanner4,
-        mockAdBanner5,
-        mockAdBanner6,
-        mockAdBanner7,
-        mockAdBanner8,
-        mockAdBanner9,
         mockAvatar,
         mockSwiperCard,
         mockUserAvatar,

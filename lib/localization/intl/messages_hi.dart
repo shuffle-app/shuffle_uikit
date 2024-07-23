@@ -417,8 +417,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "Day": MessageLookupByLibrary.simpleMessage("दिन"),
         "Days": m14,
         "DaysOfWeek": MessageLookupByLibrary.simpleMessage("सप्ताह के दिन"),
+        "Delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "DeleteAccount": MessageLookupByLibrary.simpleMessage("खाता हटाएं"),
         "DeleteCompany": MessageLookupByLibrary.simpleMessage("कंपनी हटाएं"),
+        "DeleteFolderAlert": MessageLookupByLibrary.simpleMessage(
+            "Sure you want to delete stack?"),
         "DeleteFromList": MessageLookupByLibrary.simpleMessage("सूची से हटाएँ"),
         "DependingOn":
             MessageLookupByLibrary.simpleMessage("पर निर्भर करता है"),
@@ -544,8 +547,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
             "आगे बढ़ें और अपना व्यवसाय बढ़ाएं"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("जाओ"),
-        "GoPremium": MessageLookupByLibrary.simpleMessage("Go premiun"),
-        "GoProFree": MessageLookupByLibrary.simpleMessage("GO pro free"),
+        "GoPremium": MessageLookupByLibrary.simpleMessage("Go premium"),
+        "GoPro": MessageLookupByLibrary.simpleMessage("GO pro"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("सेटिंग्स में जाओ"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
@@ -882,6 +885,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
+        "Rename": MessageLookupByLibrary.simpleMessage("Rename"),
         "Reply": MessageLookupByLibrary.simpleMessage("जवाब दे दो"),
         "ReplyingTo": m51,
         "ResendCode": MessageLookupByLibrary.simpleMessage("कोड फिर से भेजें"),
@@ -967,6 +971,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SetWorkHours":
             MessageLookupByLibrary.simpleMessage("कार्य का समय निर्धारित करें"),
         "Settings": MessageLookupByLibrary.simpleMessage("सेटिंग्स"),
+        "Share": MessageLookupByLibrary.simpleMessage("Share"),
         "ShareCard": m57,
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("आपके साथ साझा किया गया"),

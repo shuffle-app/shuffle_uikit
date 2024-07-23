@@ -637,8 +637,8 @@
   "StacksAndSomethingElseAreAvailableForYou": "Stacks and something else are available for you...",
   "Influencer": "Influencer",
   "EntertainmentSpecialist": "Entertainment specialist",
-  "GoPremium": "Go premiun",
-  "GoProFree": "GO pro free",
+  "GoPremium": "Go premium",
+  "GoPro": "GO pro",
   "NoMessagesYet": "No messages yet",
   "ChatDeletionAndCreationMessage": "Created on {creationDate}.\nWill be deleted on {deletionDate}",
   "MembersCount": "{count, plural, =0{{count} members} =1{{count} member} =2{{count} members} few{{count} members} many{{count} members} other{{count} members}}",
@@ -683,6 +683,9 @@
   "WiseacreOfSands": "Wiseacre of sands",
   "CouldntFindInvite": "Couldn't find invite",
   "WiseacreLadyOfSands": "Wiseacre lady of sands",
-  "ToPlan": "To plan"
-
+  "ToPlan": "To plan",
+  "Share": "Share",
+  "Rename": "Rename",
+  "Delete": "Delete",
+  "DeleteFolderAlert": "Sure you want to delete stack?"
 }
