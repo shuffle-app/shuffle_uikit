@@ -25,7 +25,7 @@ class DialogTestingPage extends StatelessWidget {
                         UiKitModerationVideoPlayer(
                           videoUrl:
                               'https://shuffle-development.s3.amazonaws.com/reactions/97f94f56-b929-4045-8bfb-88fa5fa158a1.mp4',
-                              // 'https://shuffle-development.s3.amazonaws.com/reactions/260215b2-6d56-4353-bd49-d0badd292768.mp4',
+                          // 'https://shuffle-development.s3.amazonaws.com/reactions/260215b2-6d56-4353-bd49-d0badd292768.mp4',
                         ),
                       );
                     },
@@ -46,18 +46,15 @@ class DialogTestingPage extends StatelessWidget {
                             children: [
                               TextSpan(
                                 text: 'If a place already exists in ',
-                                style: textTheme?.body
-                                    .copyWith(color: colorScheme?.surface),
+                                style: textTheme?.body.copyWith(color: colorScheme?.surface),
                               ),
                               TextSpan(
                                 text: 'shuffle, ',
-                                style: textTheme?.subHeadline
-                                    .copyWith(color: colorScheme?.surface),
+                                style: textTheme?.subHeadline.copyWith(color: colorScheme?.surface),
                               ),
                               TextSpan(
                                 text: 'just confirm it',
-                                style: textTheme?.body
-                                    .copyWith(color: colorScheme?.surface),
+                                style: textTheme?.body.copyWith(color: colorScheme?.surface),
                               ),
                             ],
                           ),
@@ -68,8 +65,7 @@ class DialogTestingPage extends StatelessWidget {
                           return 'Tashkent';
                         },
                         onLocationNameLoaded: (value) {
-                          log('from location name loaded $value',
-                              name: 'DialogTestingPage');
+                          log('from location name loaded $value', name: 'DialogTestingPage');
                         },
                       ),
                     ),
@@ -104,8 +100,7 @@ class DialogTestingPage extends StatelessWidget {
                               Expanded(
                                 child: Text(
                                   S.of(context).VideoReactions,
-                                  style: context
-                                      .uiKitTheme?.regularTextTheme.titleLarge,
+                                  style: context.uiKitTheme?.regularTextTheme.titleLarge,
                                 ),
                               )
                             ],
@@ -115,7 +110,9 @@ class DialogTestingPage extends StatelessWidget {
                       content: UiKitVideoReactionsModeration(
                         videoUrl: '',
                         feedbackInfo: UiKitFeedbackInfo(
-                          onSubmit: (expandThreadIsOpen) {},
+                          isModerated: false,
+                          onModerated: () {},
+                          onSubmit: () {},
                           dateTime: DateTime.now(),
                           removeFunction: () {},
                           userName: 'Ryan Gosling',
@@ -133,10 +130,7 @@ class DialogTestingPage extends StatelessWidget {
                           topPadding: 300,
                           useRootNavigator: false,
                           child: Column(
-                            children: List.generate(
-                                5,
-                                (index) => const Placeholder()
-                                    .paddingSymmetric(vertical: 8)),
+                            children: List.generate(5, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
                           ),
                           bottomBar: Center(
                             child: Container(
@@ -156,8 +150,7 @@ class DialogTestingPage extends StatelessWidget {
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
                   text: 'Dialog calendarFromTo picker',
-                  onPressed: () =>
-                      showUiKitCalendarFromToDialog(context, (from, to) {}),
+                  onPressed: () => showUiKitCalendarFromToDialog(context, (from, to) {}),
                 ),
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
@@ -170,8 +163,7 @@ class DialogTestingPage extends StatelessWidget {
 
                 OrdinaryButton(
                   text: 'Dialog timeFromTo picker',
-                  onPressed: () =>
-                      showUiKitTimeFromToDialog(context, (from, to) {}),
+                  onPressed: () => showUiKitTimeFromToDialog(context, (from, to) {}),
                 ),
                 SpacingFoundation.verticalSpace16,
                 //почему то работает только так отображение поповера, надо подумать
@@ -181,8 +173,7 @@ class DialogTestingPage extends StatelessWidget {
                     onPressed: () => showUiKitPopover(c,
                         title: const Text('Premium account'),
                         buttonText: 'see more',
-                        description: const Text(
-                            'Only premium account users can post reactions')),
+                        description: const Text('Only premium account users can post reactions')),
                   ),
                 ),
                 SpacingFoundation.verticalSpace16,
@@ -192,10 +183,8 @@ class DialogTestingPage extends StatelessWidget {
                     context,
                     AlertDialogData(
                         defaultButtonText: 'text',
-                        title:
-                            const Text('You sent an invitation to 2 people.'),
-                        content: const Text(
-                            'Invitations can be viewed in private messages')),
+                        title: const Text('You sent an invitation to 2 people.'),
+                        content: const Text('Invitations can be viewed in private messages')),
                   ),
                 ),
                 SpacingFoundation.verticalSpace16,
@@ -251,10 +240,7 @@ class DialogTestingPage extends StatelessWidget {
                           color: Colors.white,
                         ),
                         child: Column(
-                          children: List.generate(
-                              5,
-                              (index) => const Placeholder()
-                                  .paddingSymmetric(vertical: 8)),
+                          children: List.generate(5, (index) => const Placeholder().paddingSymmetric(vertical: 8)),
                         ),
                       ),
                     ),
@@ -278,22 +264,18 @@ class DialogTestingPage extends StatelessWidget {
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
                   text: 'show incorrect login pop up',
-                  onPressed: () => showIncorrectLoginPopUp(context,
-                      onForgotPasswordTap: () => context.pop()),
+                  onPressed: () => showIncorrectLoginPopUp(context, onForgotPasswordTap: () => context.pop()),
                 ),
                 SpacingFoundation.verticalSpace16,
                 OrdinaryButton(
                   text: 'show reset password pop up',
                   onPressed: () => showResetPasswordPopUp(context,
                       emailController: TextEditingController(),
-                      onSubmitted: (String value) => log(
-                          'from show reset password pop up $value',
-                          name: 'DialogTestingPage'),
+                      onSubmitted: (String value) =>
+                          log('from show reset password pop up $value', name: 'DialogTestingPage'),
                       emailKey: GlobalKey<FormState>(),
                       validator: (value) {
-                        if (value != null &&
-                            value.length > 5 &&
-                            value.contains('@')) {
+                        if (value != null && value.length > 5 && value.contains('@')) {
                           return null;
                         } else {
                           return 'Incorrect email';
@@ -317,8 +299,7 @@ class DialogTestingPage extends StatelessWidget {
                         listIconPath: List.generate(
                           35,
                           (index) => index.isEven
-                              ? GraphicsFoundation
-                                  .instance.svg.analyticsFill.path
+                              ? GraphicsFoundation.instance.svg.analyticsFill.path
                               : GraphicsFoundation.instance.svg.water.path,
                         ),
                       ),
@@ -373,8 +354,7 @@ class DialogTestingPage extends StatelessWidget {
                           Flexible(
                             child: Text(
                               S.of(context).RecentlyAdded,
-                              style: textTheme?.title1
-                                  .copyWith(color: Colors.black),
+                              style: textTheme?.title1.copyWith(color: Colors.black),
                             ),
                           ),
                           Text(
