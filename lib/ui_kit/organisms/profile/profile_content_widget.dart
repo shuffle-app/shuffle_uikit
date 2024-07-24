@@ -53,7 +53,7 @@ class _ProfileContentWidgetState extends State<ProfileContentWidget> {
               onTap: widget.onCalendarTap,
               child: ImageWidget(
                 width: 80.w,
-                height: 1.sw <= 380 ? 60.h : 54.h,
+                height: 1.sw <= 380 ? 72.h : 58.5.h,
                 link: GraphicsFoundation.instance.png.calendarWatch.path,
               ),
             ).paddingSymmetric(
@@ -64,7 +64,7 @@ class _ProfileContentWidgetState extends State<ProfileContentWidget> {
           if (widget.showHallOfFrame) ...[
             SpacingFoundation.verticalSpace12,
             SizedBox(
-              height: 1.sw <= 380 ? 60.h : 54.h,
+              height: 1.sw <= 380 ? 72.h : 58.5.h,
               child: GestureDetector(
                 onTap: widget.onViewAllAchievements,
                 child: ListenableBuilder(
