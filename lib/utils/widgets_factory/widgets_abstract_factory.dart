@@ -372,6 +372,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         icon: data.iconWidget,
         iconInfo: data.iconInfo,
         loading: data.loading,
+        backgroundColor: data.backgroundColor,
         fit: data.fit,
       );
     } else if ((data.text != null && (data.text?.isNotEmpty ?? false)) || !hasIcon) {
