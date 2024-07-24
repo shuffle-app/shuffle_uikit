@@ -13,9 +13,10 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   final Future<List<HorizontalCaptionedImageData>?>? branches;
   final List<Widget>? actions;
   final ScrollController? listViewController;
+  final bool? initialDescriptionHide;
 
   UiKitMediaSliderWithTags({
-    Key? key,
+    super.key,
     required this.media,
     this.rating,
     ScrollController? scrollController,
@@ -26,8 +27,8 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
     this.branches,
     this.actions,
     this.listViewController,
-  })  : scrollController = scrollController ?? ScrollController(),
-        super(key: key);
+    this.initialDescriptionHide,
+  }) : scrollController = scrollController ?? ScrollController();
 
   @override
   State<UiKitMediaSliderWithTags> createState() =>
@@ -36,7 +37,14 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
 
 class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
   late double scrollPosition;
-  bool isHide = true;
+
+  late bool isHide;
+
+  @override
+  void initState() {
+    isHide = widget.initialDescriptionHide ?? true;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -16,7 +16,7 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
   final int? smileyCount;
 
   const UiKitExtendedInfluencerFeedbackCard({
-    Key? key,
+    super.key,
     this.title,
     this.imageUrl,
     this.datePosted,
@@ -28,7 +28,7 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
     this.fireCount,
     this.sunglassesCount,
     this.smileyCount,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

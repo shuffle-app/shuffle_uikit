@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class NeutralSnackBar extends StatelessWidget implements SnackBarFactory{
+class NeutralSnackBar extends StatelessWidget implements SnackBarFactory {
   const NeutralSnackBar({super.key, required this.message});
 
   final String message;
@@ -16,7 +16,7 @@ class NeutralSnackBar extends StatelessWidget implements SnackBarFactory{
         borderRadius: BorderRadiusFoundation.all12,
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
             child: Text(
@@ -26,7 +26,7 @@ class NeutralSnackBar extends StatelessWidget implements SnackBarFactory{
           ),
           SpacingFoundation.horizontalSpace8,
           InkWell(
-            onTap: () => context.pop(),
+            onTap: context.pop,
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             child: Icon(

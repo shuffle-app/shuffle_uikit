@@ -6,12 +6,16 @@ import 'package:shuffle_uikit/foundation/gradient_foundation.dart';
 class UiKitProgressIndicator extends StatelessWidget {
   final double progress;
   final double width;
+  final Color? color;
+  final Color? backgroundColor;
 
   const UiKitProgressIndicator({
-    Key? key,
+    super.key,
     required this.progress,
     required this.width,
-  }) : super(key: key);
+    this.color,
+    this.backgroundColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +28,7 @@ class UiKitProgressIndicator extends StatelessWidget {
           fit: StackFit.expand,
           children: [
             Container(
-              color: ColorsFoundation.darkNeutral500,
+              color: backgroundColor ?? ColorsFoundation.darkNeutral500,
             ),
             FractionallySizedBox(
               alignment: Alignment.centerLeft,
@@ -32,7 +36,8 @@ class UiKitProgressIndicator extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadiusFoundation.max,
-                  gradient: GradientFoundation.touchIdLinearGradient,
+                  gradient: color == null ? GradientFoundation.touchIdLinearGradient : null,
+                  color: color,
                 ),
               ),
             ),

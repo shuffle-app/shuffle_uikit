@@ -8,14 +8,16 @@ class UiKitRespectEventCard extends StatelessWidget {
   final String title;
   final List<RespectFromUser> respectFromUsers;
   final List<UiKitTag> properties;
+  final PlaceWeatherType? weatherType;
 
   const UiKitRespectEventCard({
-    Key? key,
+    super.key,
     required this.images,
     required this.title,
     required this.respectFromUsers,
     required this.properties,
-  }) : super(key: key);
+     this.weatherType,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +33,7 @@ class UiKitRespectEventCard extends StatelessWidget {
             UiKitPhotoSlider(
               width: 1.sw,
               media: images.map((e) => UiKitMediaPhoto(link: e)).toList(),
+              weatherType: weatherType,
             ),
             Positioned(
               bottom: -SpacingFoundation.verticalSpacing24,
@@ -48,7 +51,8 @@ class UiKitRespectEventCard extends StatelessWidget {
         ),
         SpacingFoundation.verticalSpace4,
         UiKitTagsWidget(
-          baseTags: properties.where((element) => element.unique == false).toList(),
+          baseTags:
+              properties.where((element) => element.unique == false).toList(),
           uniqueTags: properties.where((element) => element.unique).toList(),
         ),
       ],
@@ -60,9 +64,9 @@ class UiKitUsersRespectCard extends StatelessWidget {
   final List<RespectFromUser> users;
 
   const UiKitUsersRespectCard({
-    Key? key,
+    super.key,
     required this.users,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +74,9 @@ class UiKitUsersRespectCard extends StatelessWidget {
 
     return Container(
       height: 1.sw < 380 ? 0.0525.sh : 0.0425.sh,
-      width: users.length == 1 ? 0.0625.sw + 0.18.sw : (0.0625.sw * users.length) + 0.1.sw,
+      width: users.length == 1
+          ? 0.0625.sw + 0.18.sw
+          : (0.0625.sw * (users.length - 1)),
       padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
@@ -105,7 +111,8 @@ class UiKitUsersRespectCard extends StatelessWidget {
                         gradient: GradientFoundation.defaultLinearGradient,
                         child: Text(
                           S.current.Respect.toUpperCase(),
-                          style: regularTextTheme?.caption4.copyWith(color: Colors.white),
+                          style: regularTextTheme?.caption4
+                              .copyWith(color: Colors.white),
                         ),
                       ),
                     ],
@@ -124,7 +131,7 @@ class UiKitUsersRespectCard extends StatelessWidget {
                     imageUrl: e.avatarUrl,
                   ),
                 );
-              }).toList(),
+              }),
             if (users.length >= 4)
               ...users.sublist(0, 3).map((e) {
                 final leftOffset = users.indexOf(e) * (0.0625.sw * 0.6);
@@ -137,7 +144,7 @@ class UiKitUsersRespectCard extends StatelessWidget {
                     imageUrl: e.avatarUrl,
                   ),
                 );
-              }).toList(),
+              }),
             if (users.length >= 4)
               Positioned(
                 left: 0.0625.sw * 0.6 * 3,
@@ -151,7 +158,8 @@ class UiKitUsersRespectCard extends StatelessWidget {
                   child: Center(
                     child: Text(
                       '+${users.length - 3}',
-                      style: regularTextTheme?.caption4.copyWith(color: ColorsFoundation.mutedText),
+                      style: regularTextTheme?.caption4
+                          .copyWith(color: ColorsFoundation.mutedText),
                     ),
                   ),
                 ),
@@ -163,7 +171,8 @@ class UiKitUsersRespectCard extends StatelessWidget {
                   gradient: GradientFoundation.defaultLinearGradient,
                   child: Text(
                     S.current.Respect.toUpperCase(),
-                    style: regularTextTheme?.caption4.copyWith(color: Colors.white),
+                    style: regularTextTheme?.caption4
+                        .copyWith(color: Colors.white),
                   ),
                 ),
               ),

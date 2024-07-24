@@ -38,8 +38,8 @@ class UiKitRatingBadge extends StatelessWidget {
           ),
         ],
       ).paddingSymmetric(
-        vertical: EdgeInsetsFoundation.vertical6,
-        horizontal: EdgeInsetsFoundation.horizontal12,
+        vertical: EdgeInsetsFoundation.vertical4,
+        horizontal: EdgeInsetsFoundation.horizontal16,
       ),
     );
   }

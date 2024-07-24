@@ -8,12 +8,12 @@ class UiKitInputFieldWithChips extends StatelessWidget {
   final ValueChanged<String>? onNotFoundTagCallback;
 
   const UiKitInputFieldWithChips({
-    Key? key,
+    super.key,
     // this.selectedChips,
     this.onNotFoundTagCallback,
     // this.onRemoveChip,
     required this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

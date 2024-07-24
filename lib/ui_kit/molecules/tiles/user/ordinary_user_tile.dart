@@ -3,13 +3,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class OrdinaryUserTile extends BaseUserTile {
   const OrdinaryUserTile({
-    Key? key,
+    super.key,
     super.name,
     super.avatarUrl,
     super.username,
     super.onTap,
   }) : super(
-          key: key,
           avatarBorder: const Border(
             top: BorderSide(color: Colors.white, width: 2),
             right: BorderSide(color: Colors.white, width: 2),

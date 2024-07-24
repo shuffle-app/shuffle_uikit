@@ -1,8 +1,11 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:huawei_map/huawei_map.dart' as hms;
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class MapDirectionsPage extends StatefulWidget {
@@ -13,6 +16,7 @@ class MapDirectionsPage extends StatefulWidget {
   final VoidCallback? onDirectionsRequested;
   final VoidCallback? onTaxisRequested;
   final LatLng destination;
+  final bool isHuawei;
 
   const MapDirectionsPage({
     super.key,
@@ -23,6 +27,7 @@ class MapDirectionsPage extends StatefulWidget {
     required this.searchController,
     required this.destination,
     required this.destinationTitle,
+    this.isHuawei = false,
   });
 
   @override
@@ -31,13 +36,16 @@ class MapDirectionsPage extends StatefulWidget {
 
 class _MapDirectionsPageState extends State<MapDirectionsPage> {
   GoogleMapController? controller;
+  hms.HuaweiMapController? huaweiController;
   BitmapDescriptor markerIcon = BitmapDescriptor.defaultMarker;
   Marker? marker;
   final apiKey = const String.fromEnvironment('googleApiKey');
   List<Polyline> directionLines = [];
   late final FocusNode _focusNode = FocusNode()
     ..addListener(() {
-      if (focusNotifier.value != _focusNode.hasFocus) focusNotifier.value = _focusNode.hasFocus;
+      if (focusNotifier.value != _focusNode.hasFocus) {
+        focusNotifier.value = _focusNode.hasFocus;
+      }
     });
 
   late final ValueNotifier<bool> focusNotifier = ValueNotifier<bool>(false);
@@ -46,6 +54,9 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
   @override
   void initState() {
     super.initState();
+    if (widget.isHuawei) {
+      hms.HuaweiMapInitializer.initializeMap();
+    }
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       Future.delayed(
         const Duration(milliseconds: 500),
@@ -53,7 +64,12 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
           try {
             await widget.onCurrentLocationRequested?.call();
           } catch (e) {
-            await controller?.animateCamera(CameraUpdate.newLatLng(widget.destination));
+            if (widget.isHuawei) {
+              await huaweiController?.animateCamera(
+                  hms.CameraUpdate.newLatLng(hms.LatLng(widget.destination.latitude, widget.destination.longitude)));
+            } else {
+              await controller?.animateCamera(CameraUpdate.newLatLng(widget.destination));
+            }
             setState(() {
               loading = false;
             });
@@ -71,25 +87,44 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
       debugPrint(
           'getRouteBetweenCoordinates from ${widget.currentLocationNotifier.value.latitude} ${widget.currentLocationNotifier.value.longitude} toooo ${widget.destination.latitude} ${widget.destination.longitude}');
       final result = await points.getRouteBetweenCoordinates(
-        apiKey,
-        PointLatLng(widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
-        PointLatLng(widget.destination.latitude, widget.destination.longitude),
-      );
-      await controller?.animateCamera(
-        CameraUpdate.newLatLngBounds(
-          LatLngBounds(
-            southwest: LatLng(
+          googleApiKey: apiKey,
+          request: PolylineRequest(
+            origin: PointLatLng(
+                widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
+            destination: PointLatLng(widget.destination.latitude, widget.destination.longitude),
+            mode: TravelMode.driving,
+          ));
+      if (widget.isHuawei) {
+        await huaweiController?.animateCamera(hms.CameraUpdate.newLatLngBounds(
+          hms.LatLngBounds(
+            southwest: hms.LatLng(
               min(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
               min(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
             ),
-            northeast: LatLng(
+            northeast: hms.LatLng(
               max(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
               max(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
             ),
           ),
           72.w,
-        ),
-      );
+        ));
+      } else {
+        await controller?.animateCamera(
+          CameraUpdate.newLatLngBounds(
+            LatLngBounds(
+              southwest: LatLng(
+                min(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
+                min(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
+              ),
+              northeast: LatLng(
+                max(widget.currentLocationNotifier.value.latitude, widget.destination.latitude),
+                max(widget.currentLocationNotifier.value.longitude, widget.destination.longitude),
+              ),
+            ),
+            72.w,
+          ),
+        );
+      }
 
       setState(() {
         directionLines = [
@@ -137,50 +172,70 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
       body: Stack(
         fit: StackFit.expand,
         children: [
-          GoogleMap(
-            onMapCreated: (mapController) {
-              widget.currentLocationNotifier.addListener(_currentLocationListener);
-              setState(() => controller = mapController);
-              debugPrint('onMapCreated');
-            },
-            initialCameraPosition: CameraPosition(
-              target: widget.currentLocationNotifier.value,
-              zoom: 14,
+          if (widget.isHuawei)
+            hms.HuaweiMap(
+              onMapCreated: (mapController) {
+                widget.currentLocationNotifier.addListener(_currentLocationListener);
+                setState(() => huaweiController = mapController);
+                debugPrint('onMapCreated');
+              },
+              initialCameraPosition: hms.CameraPosition(
+                target: hms.LatLng(
+                    widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
+                zoom: 14,
+              ),
+              markers: {
+                if (marker != null)
+                  hms.Marker(
+                      markerId: hms.MarkerId(marker!.markerId.value),
+                      position: hms.LatLng(marker!.position.latitude, marker!.position.longitude))
+              },
+              polylines: Set.from(directionLines.map((element) => hms.Polyline(
+                  polylineId: hms.PolylineId(element.polylineId.value),
+                  color: ColorsFoundation.info,
+                  width: 4,
+                  startCap: hms.Cap.buttCap,
+                  jointType: hms.JointType.bevel,
+                  endCap: hms.Cap.roundCap,
+                  visible: true,
+                  points: element.points.map((e) => hms.LatLng(e.latitude, e.longitude)).toList()))),
+              myLocationEnabled: true,
+              myLocationButtonEnabled: false,
+            )
+          else
+            GoogleMap(
+              onMapCreated: (mapController) {
+                widget.currentLocationNotifier.addListener(_currentLocationListener);
+                setState(() => controller = mapController);
+                debugPrint('onMapCreated');
+              },
+              initialCameraPosition: CameraPosition(
+                target: widget.currentLocationNotifier.value,
+                zoom: 14,
+              ),
+              markers: {if (marker != null) marker!},
+              polylines: Set.from(directionLines),
+              myLocationEnabled: true,
+              myLocationButtonEnabled: false,
             ),
-            markers: {if (marker != null) marker!},
-            polylines: Set.from(directionLines),
-            myLocationEnabled: true,
-            myLocationButtonEnabled: false,
-          ),
           Positioned(
             top: MediaQuery.viewPaddingOf(context).top + SpacingFoundation.verticalSpacing16,
             left: SpacingFoundation.horizontalSpacing16,
-            width: 1.sw - SpacingFoundation.horizontalSpacing32,
-            child: UiKitElevatedInputWithSwitchingPrefix(
-              focusNode: _focusNode,
-              readOnly: true,
-              controller: widget.searchController,
-              hintText: S.of(context).Search,
-              suffixIcon: SpacingFoundation.none,
-              prefix: UiKitSwitchableInputPrefix(
-                secondary: GestureDetector(
-                  onTap: () {
-                    if (_focusNode.hasFocus) {
-                      Navigator.pop(context);
-                    } else {
-                      _focusNode.unfocus();
-                    }
-                  },
-                  child: const ImageWidget(
+            child: Material(
+              clipBehavior: Clip.none,
+              shape: const CircleBorder(),
+              color: theme?.colorScheme.headingTypography,
+              child: InkWell(
+                borderRadius: BorderRadiusFoundation.all40,
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Ink(
+                  child: ImageWidget(
+                    color: theme?.colorScheme.darkNeutral900,
                     iconData: ShuffleUiKitIcons.arrowleft,
-                    color: ColorsFoundation.darkNeutral900,
-                  ),
+                  ).paddingAll(EdgeInsetsFoundation.all12),
                 ),
-                primary: const ImageWidget(
-                  iconData: ShuffleUiKitIcons.landmark,
-                  color: ColorsFoundation.darkNeutral900,
-                ),
-                notifier: focusNotifier,
               ),
             ),
           ),
@@ -199,7 +254,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
-        onPressed: () async {
+        onPressed: () {
           widget.onCurrentLocationRequested?.call();
         },
         elevation: 0,
@@ -254,19 +309,21 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
               Row(children: [
                 ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.resolveWith((states) {
-                      if (states.contains(MaterialState.disabled)) return theme?.colorScheme.darkNeutral300;
+                    backgroundColor: WidgetStateProperty.resolveWith((states) {
+                      if (states.contains(WidgetState.disabled)) {
+                        return theme?.colorScheme.darkNeutral300;
+                      }
 
                       return theme?.colorScheme.surface1;
                       // return theme?.colorScheme.info;
                     }),
-                    foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-                    elevation: MaterialStateProperty.resolveWith((states) => 0),
+                    foregroundColor: WidgetStateProperty.resolveWith((states) => Colors.white),
+                    elevation: WidgetStateProperty.resolveWith((states) => 0),
                     splashFactory: WaveSplash.splashFactory,
-                    shape: MaterialStateProperty.resolveWith(
+                    shape: WidgetStateProperty.resolveWith(
                       (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.max),
                     ),
-                    padding: MaterialStateProperty.resolveWith(
+                    padding: WidgetStateProperty.resolveWith(
                       (states) => EdgeInsets.symmetric(
                         vertical: EdgeInsetsFoundation.vertical8,
                         horizontal: EdgeInsetsFoundation.horizontal16,
@@ -295,19 +352,21 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                   SpacingFoundation.horizontalSpace4,
                   ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.resolveWith((states) {
-                        if (states.contains(MaterialState.disabled)) return theme?.colorScheme.darkNeutral300;
+                      backgroundColor: WidgetStateProperty.resolveWith((states) {
+                        if (states.contains(WidgetState.disabled)) {
+                          return theme?.colorScheme.darkNeutral300;
+                        }
 
                         return theme?.colorScheme.surface1;
                         // return theme?.colorScheme.info;
                       }),
-                      foregroundColor: MaterialStateProperty.resolveWith((states) => Colors.white),
-                      elevation: MaterialStateProperty.resolveWith((states) => 0),
+                      foregroundColor: WidgetStateProperty.resolveWith((states) => Colors.white),
+                      elevation: WidgetStateProperty.resolveWith((states) => 0),
                       splashFactory: WaveSplash.splashFactory,
-                      shape: MaterialStateProperty.resolveWith(
+                      shape: WidgetStateProperty.resolveWith(
                         (states) => RoundedRectangleBorder(borderRadius: BorderRadiusFoundation.max),
                       ),
-                      padding: MaterialStateProperty.resolveWith(
+                      padding: WidgetStateProperty.resolveWith(
                         (states) => EdgeInsets.symmetric(
                           vertical: EdgeInsetsFoundation.vertical8,
                           horizontal: EdgeInsetsFoundation.horizontal16,

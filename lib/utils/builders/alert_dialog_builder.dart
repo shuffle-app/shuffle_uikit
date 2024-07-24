@@ -12,11 +12,14 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
     barrierDismissible: barrierDismissible,
     context: context,
     builder: (BuildContext context) {
-      final textTheme = context.uiKitTheme?.boldTextTheme;
+      final theme = context.uiKitTheme;
+      final textTheme = theme?.boldTextTheme;
 
       return AlertDialog(
-        backgroundColor: data.customBackgroundColor ?? context.uiKitTheme?.cardTheme.color,
+        backgroundColor: data.customBackgroundColor ?? theme?.cardTheme.color ?? theme?.colorScheme.inversePrimary,
         clipBehavior: Clip.hardEdge,
+        surfaceTintColor: Colors.transparent,
+        shadowColor: Colors.transparent,
         insetPadding: data.insetPadding ?? EdgeInsets.zero,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusFoundation.all24,
@@ -61,7 +64,7 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(BuildContext contex
     context: context,
     barrierColor: Colors.white.withOpacity(0.1),
     useSafeArea: false,
-    builder: (_) => BackdropFilter(
+    builder: (ctx) => BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 16, sigmaY: 16),
       child: Dialog(
         insetPadding: EdgeInsets.symmetric(
@@ -72,7 +75,7 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(BuildContext contex
         ),
         backgroundColor: backgroundColor ?? Theme.of(context).scaffoldBackgroundColor,
         clipBehavior: Clip.hardEdge,
-        child: (child(_, textStyle) as Widget).paddingAll(paddingAll ?? EdgeInsetsFoundation.all24),
+        child: (child(ctx, textStyle) as Widget).paddingAll(paddingAll ?? EdgeInsetsFoundation.all24),
       ),
     ),
   );

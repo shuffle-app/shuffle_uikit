@@ -21,6 +21,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 Future<DateTime?> showUiKitCalendarDialog(BuildContext context,
     {DateTime? lastDate, DateTime? firstDate, bool Function(DateTime day)? selectableDayPredicate}) {
+  final colorScheme = context.uiKitTheme?.colorScheme;
   return showDialog<DateTime?>(
     context: context,
     builder: (context) => Dialog(
@@ -33,12 +34,12 @@ Future<DateTime?> showUiKitCalendarDialog(BuildContext context,
       child: Theme(
         data: Theme.of(context).copyWith(
           datePickerTheme: Theme.of(context).datePickerTheme.copyWith(
-            dayForegroundColor: MaterialStateColor.resolveWith((states) {
-              if (states.contains(MaterialState.disabled)) {
-                return context.uiKitTheme?.colorScheme.darkNeutral500 ?? Colors.white;
+            dayForegroundColor: WidgetStateColor.resolveWith((states) {
+              if (states.contains(WidgetState.disabled)) {
+                return colorScheme?.darkNeutral500 ?? Colors.white;
               }
 
-              return Colors.white;
+              return colorScheme?.inverseSurface ?? Colors.white;
             }),
           ),
         ),
@@ -131,8 +132,7 @@ class _CustomCalendarPickerDialog extends StatefulWidget {
   final bool Function(DateTime day)? selectableDayPredicate;
 
   const _CustomCalendarPickerDialog(
-      {Key? key, this.firstDate, this.lastDate, this.okText, this.cancelText, this.selectableDayPredicate})
-      : super(key: key);
+      {this.firstDate, this.lastDate, this.okText, this.cancelText, this.selectableDayPredicate});
 
   @override
   State<_CustomCalendarPickerDialog> createState() => _CustomCalendarPickerDialogState();
@@ -174,19 +174,28 @@ class _CustomCalendarPickerDialogState extends State<_CustomCalendarPickerDialog
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               context.button(
-                  data: BaseUiKitButtonData(text: widget.cancelText ?? 'Cancel', onPressed: () => context.pop()),
-                  isTextButton: true),
+                data: BaseUiKitButtonData(
+                  text: widget.cancelText ?? S.current.Cancel,
+                  onPressed: () => context.pop(),
+                ),
+                isTextButton: true,
+              ),
               SpacingFoundation.horizontalSpace4,
               context.dialogButton(
-                dialogButtonType: DialogButtonType.buttonWhite,
+                dialogButtonType: context.uiKitTheme?.themeMode == ThemeMode.dark
+                    ? DialogButtonType.buttonWhite
+                    : DialogButtonType.buttonBlack,
                 data: BaseUiKitButtonData(
-                    text: widget.okText ?? 'Ok', onPressed: () => context.pop<DateTime>(result: selectedDate)),
+                  text: widget.okText ?? S.current.Ok,
+                  onPressed: () => context.pop<DateTime>(result: selectedDate),
+                ),
                 small: true,
-              )
+              ),
             ],
           ),
         ],
       ),
-    ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing12, horizontal: SpacingFoundation.horizontalSpacing12);
+    ).paddingSymmetric(
+        vertical: SpacingFoundation.verticalSpacing12, horizontal: SpacingFoundation.horizontalSpacing12);
   }
 }

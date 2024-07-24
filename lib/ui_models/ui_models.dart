@@ -1,4 +1,5 @@
 /// This file exports all the UI models in the UI Kit.
+library;
 
 export 'buttons/base_ui_kit_button_data.dart';
 export 'cards/action_card_decoration_icon_data.dart';

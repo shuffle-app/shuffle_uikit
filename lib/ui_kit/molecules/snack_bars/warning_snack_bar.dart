@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class WarningSnackBar extends StatelessWidget implements SnackBarFactory{
+class WarningSnackBar extends StatelessWidget implements SnackBarFactory {
   const WarningSnackBar({super.key, required this.message});
 
   final String message;
@@ -16,17 +16,16 @@ class WarningSnackBar extends StatelessWidget implements SnackBarFactory{
         borderRadius: BorderRadiusFoundation.all12,
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           DecoratedBox(
             decoration: BoxDecoration(
-              color: ColorsFoundation.info
-                  .withOpacity(0.16),
+              color: ColorsFoundation.warning.withOpacity(0.16),
               shape: BoxShape.circle,
             ),
             child: const Icon(
-              ShuffleUiKitIcons.info,
-              color: ColorsFoundation.info,
+              ShuffleUiKitIcons.warning,
+              color: ColorsFoundation.warning,
             ).paddingAll(EdgeInsetsFoundation.all6),
           ),
           SpacingFoundation.horizontalSpace8,

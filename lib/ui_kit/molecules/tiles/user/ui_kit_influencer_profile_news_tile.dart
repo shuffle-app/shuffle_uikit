@@ -10,14 +10,14 @@ class UiKitInfluencerProfileNewsTile extends StatelessWidget {
   final VoidCallback? onTap;
 
   const UiKitInfluencerProfileNewsTile({
-    Key? key,
+    super.key,
     required this.title,
     this.leading,
     this.titleDecorationIcon,
     this.leadingImageLink,
     this.subtitle,
     this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

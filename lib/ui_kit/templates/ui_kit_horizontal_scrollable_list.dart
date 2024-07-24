@@ -12,6 +12,7 @@ class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
   final ScrollPhysics? physics;
   final ItemWidgetBuilder<ItemType> itemBuilder;
   final Widget? shimmerLoadingChild;
+  final Widget? noItemsFoundIndicator;
 
   late final progressIndicator = Shimmer.fromColors(
     direction: ShimmerDirection.ltr,
@@ -22,15 +23,16 @@ class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
   );
 
   UiKitHorizontalScrollableList({
-    Key? key,
+    super.key,
     required this.itemBuilder,
     required this.pagingController,
+    this.noItemsFoundIndicator,
     this.spacing,
     this.leftPadding,
     this.physics,
     this.scrollController,
     this.shimmerLoadingChild,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +54,9 @@ class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
         firstPageProgressIndicatorBuilder: (c) => progressIndicator,
         newPageProgressIndicatorBuilder: (c) => progressIndicator,
         itemBuilder: itemBuilder,
-        noItemsFoundIndicatorBuilder: (c) => const UiKitNoContentPlaceholder().paddingAll(EdgeInsetsFoundation.all32),
+        noMoreItemsIndicatorBuilder: (c) => const SizedBox.shrink(),
+        noItemsFoundIndicatorBuilder: (c) =>
+            noItemsFoundIndicator ?? const UiKitNoContentPlaceholder().paddingAll(EdgeInsetsFoundation.all32),
       ),
     );
   }

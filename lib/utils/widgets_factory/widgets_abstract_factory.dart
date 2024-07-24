@@ -3,8 +3,11 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/box_icon_button.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/buttons/ui_kit_icon_button_no_padding.dart';
+import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_influncer_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
+
+import '../../ui_kit/atoms/user/avatars/ui_kit_user_avatar_90_x_90.dart';
 
 abstract class WidgetsAbstractFactory {
   ButtonFactory createIconButtonNoPadding({
@@ -32,6 +35,10 @@ abstract class WidgetsAbstractFactory {
   });
 
   ButtonFactory createSmallGradientButton({
+    required BaseUiKitButtonData data,
+  });
+
+  ButtonFactory createMidSizeGradientButton({
     required BaseUiKitButtonData data,
   });
 
@@ -84,6 +91,19 @@ abstract class WidgetsAbstractFactory {
   });
 
   ButtonFactory createSmallOutlinedButton({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+  });
+
+  ButtonFactory createMidSizeOutlinedButton({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+    bool? blurred,
+    Gradient? gradient,
+    double? blurValue,
+  });
+
+  ButtonFactory createColoredButtonWithBorderRadius({
     required BaseUiKitButtonData data,
     BorderRadius? borderRadius,
   });
@@ -213,7 +233,12 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
               type: type,
               imageUrl: imageUrl ?? '',
               userName: userName,
-            )
+            ),
+          (UserAvatarSize.x90x90) => UiKitUserAvatar90x90(
+              type: type,
+              imageUrl: imageUrl ?? '',
+              userName: userName,
+            ),
         });
   }
 
@@ -253,15 +278,67 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
+  ButtonFactory createColoredButtonWithBorderRadius({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+  }) {
+    return ColoredButtonWithBorderRadius(
+      borderRadius: borderRadius,
+      text: data.text,
+      backgroundColor: data.backgroundColor,
+      textColor: data.textColor,
+      onPressed: data.onPressed,
+      loading: data.loading,
+      fit: data.fit,
+      autoSizeGroup: data.autoSizeGroup,
+    );
+  }
+
+  @override
   ButtonFactory createBoxIconButton({
     required BaseUiKitButtonData data,
+    bool? isSelected,
   }) {
     return BoxIconButton(
       iconInfo: data.iconInfo,
       onPressed: data.onPressed,
       icon: data.iconWidget,
       backgroundColor: data.backgroundColor,
+      isSelected: isSelected,
     );
+  }
+
+  @override
+  ButtonFactory createMidSizeOutlinedButton({
+    required BaseUiKitButtonData data,
+    BorderRadius? borderRadius,
+    bool? blurred,
+    Gradient? gradient,
+    double? blurValue,
+  }) {
+    final hasIcon = data.iconWidget != null || data.iconInfo != null;
+    final hasText = data.text != null;
+
+    if (hasIcon) {
+      return MidSizeOutlinedIconButton(
+        icon: data.iconWidget,
+        iconInfo: data.iconInfo,
+        onPressed: data.onPressed,
+        loading: data.loading,
+        borderColor: data.borderColor,
+        fit: data.fit,
+      );
+    } else if (hasText) {
+      return MidSizeOutlinedTextButton(
+        text: data.text!,
+        isGradientEnabled: gradient != null,
+        loading: data.loading,
+        onPressed: data.onPressed,
+        borderColor: data.borderColor,
+      );
+    }
+
+    throw UnimplementedError('Mid size outlined button with your parameters is not implemented');
   }
 
   @override
@@ -351,6 +428,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     Color? borderColor,
     bool? hideBorder,
     bool? isGradientEnabled,
+    EdgeInsetsGeometry? padding,
   }) {
     final hasIcon = data.iconWidget != null || data.iconInfo != null;
 
@@ -371,6 +449,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         hideBorder: hideBorder ?? false,
         loading: data.loading,
         borderColor: borderColor,
+        padding: padding,
       );
     }
     if (data.text?.isNotEmpty ?? false) {
@@ -396,8 +475,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       return GradientIconButton(
         fit: data.fit,
         icon: data.iconWidget,
+        iconInfo: data.iconInfo,
         onPressed: data.onPressed,
-        // borderRadius: BorderRadiusFoundation.max,
         loading: data.loading,
       );
     } else if (!hasIcon && (data.text?.isNotEmpty ?? false)) {
@@ -545,7 +624,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           return BadgedPremiumUserTile(data: data);
 
         case UserTileType.influencer:
-          throw UnimplementedError('There is no influencer user tile with badge');
+          return BadgedInfluncerUserTile(data: data);
 
         default:
           throw UnimplementedError('There is no user tile with badge');
@@ -817,6 +896,24 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       default:
         return NeutralSnackBar(message: message);
     }
+  }
+
+  @override
+  ButtonFactory createMidSizeGradientButton({
+    required BaseUiKitButtonData data,
+  }) {
+    final hasText = data.text != null;
+    final hasIcon = data.iconInfo != null || data.iconWidget != null;
+
+    if (hasText && !hasIcon) {
+      return MidSizeGradientButton(
+        text: data.text!,
+        onPressed: data.onPressed,
+        loading: data.loading,
+      );
+    }
+
+    throw UnimplementedError('There is no mid size gradient button with given parameters');
   }
 
 // @override

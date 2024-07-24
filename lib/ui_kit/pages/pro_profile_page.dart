@@ -10,16 +10,15 @@ class ProProfilePage extends StatelessWidget {
   final int? bookings;
 
   const ProProfilePage({
-    Key? key,
+    super.key,
     this.events,
     this.reviews,
     this.bookings,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = context.uiKitTheme?.colorScheme;
-    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final autoSizeGroup = AutoSizeGroup();
 
     return Scaffold(
@@ -44,8 +43,8 @@ class ProProfilePage extends StatelessWidget {
                 UiKitTag(title: 'Photographer', icon: null),
                 UiKitTag(title: 'Photographer', icon: null),
               ],
-              interests: ['Photography', 'Travel', 'Nature', 'Art'],
-              matchingInterests: ['Photography', 'Travel'],
+              interests: const ['Photography', 'Travel', 'Nature', 'Art'],
+              matchingInterests: const ['Photography', 'Travel'],
               onShare: () {},
               onFollow: () {},
               following: false,
@@ -133,14 +132,14 @@ class ProProfilePage extends StatelessWidget {
                   UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: true),
                   UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: true),
                 ],
-                stories: [
+                stories: const [
                   ProfileStory(
-                    image: GraphicsFoundation.instance.png.mockAdBanner1.path,
+                    image: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
                     isEmpty: false,
                     viewed: false,
                   ),
                   ProfileStory(
-                    image: GraphicsFoundation.instance.png.mockAdBanner1.path,
+                    image: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
                     isEmpty: false,
                     viewed: true,
                   ),

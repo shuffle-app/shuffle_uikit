@@ -3,22 +3,21 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMenuItemTile extends StatelessWidget {
   const UiKitMenuItemTile({
-    Key? key,
+    super.key,
     required this.item,
     this.color,
     this.onTap,
   })  : autoPopUp = true,
-        paddingSymmetric = null,
-        super(key: key);
+        paddingSymmetric = null;
 
   const UiKitMenuItemTile.custom({
-    Key? key,
+    super.key,
     required this.item,
     this.onTap,
     this.color,
     this.paddingSymmetric,
     this.autoPopUp = false,
-  }) : super(key: key);
+  });
 
   final UiKitMenuItem item;
   final VoidCallback? onTap;

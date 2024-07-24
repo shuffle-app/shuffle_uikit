@@ -295,10 +295,10 @@ class S {
     );
   }
 
-  /// `Invites {invitedPeopleCount} people to`
-  String InvitesNPeopleTo(Object invitedPeopleCount) {
+  /// `Invites {invitedPeopleCount, plural, =0{{invitedPeopleCount} people} =1{{invitedPeopleCount} person} =2{{invitedPeopleCount} people} few{{invitedPeopleCount} people} many{{invitedPeopleCount} people} other{{invitedPeopleCount} people}} to`
+  String InvitesNPeopleTo(num invitedPeopleCount) {
     return Intl.message(
-      'Invites $invitedPeopleCount people to',
+      'Invites ${Intl.plural(invitedPeopleCount, zero: '$invitedPeopleCount people', one: '$invitedPeopleCount person', two: '$invitedPeopleCount people', few: '$invitedPeopleCount people', many: '$invitedPeopleCount people', other: '$invitedPeopleCount people')} to',
       name: 'InvitesNPeopleTo',
       desc: '',
       args: [invitedPeopleCount],
@@ -3178,7 +3178,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{your location} =1{your interests} =2{weather around} few{and other 14 scales} other{other}}`
+  /// `{item, plural, =0{your location} =1{your interests} =2{weather around} few{and other 14 scales} other{and other 14 scales}}`
   String FeedFeelingsHiwItems(num item) {
     return Intl.plural(
       item,
@@ -3186,7 +3186,7 @@ class S {
       one: 'your interests',
       two: 'weather around',
       few: 'and other 14 scales',
-      other: 'other',
+      other: 'and other 14 scales',
       name: 'FeedFeelingsHiwItems',
       desc: '',
       args: [item],
@@ -3213,7 +3213,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{events & places} =1{filtering by chips} =2{choose chip & press} few{press & scroll\n} other{other}}`
+  /// `{item, plural, =0{events & places} =1{filtering by chips} =2{choose chip & press} few{press & scroll\n} other{press & scroll\n}}`
   String FeedRandomizerHiwItems(num item) {
     return Intl.plural(
       item,
@@ -3221,7 +3221,7 @@ class S {
       one: 'filtering by chips',
       two: 'choose chip & press',
       few: 'press & scroll\n',
-      other: 'other',
+      other: 'press & scroll\n',
       name: 'FeedRandomizerHiwItems',
       desc: '',
       args: [item],
@@ -3608,7 +3608,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{select the niche} =1{press} =2{get selection} few{choose & plan} other{other}}`
+  /// `{item, plural, =0{select the niche} =1{press} =2{get selection} few{choose & plan} other{choose & plan}}`
   String FeedNichesHiwItems(num item) {
     return Intl.plural(
       item,
@@ -3616,7 +3616,7 @@ class S {
       one: 'press',
       two: 'get selection',
       few: 'choose & plan',
-      other: 'other',
+      other: 'choose & plan',
       name: 'FeedNichesHiwItems',
       desc: '',
       args: [item],
@@ -3643,7 +3643,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{for fun} =1{swipe category} =2{choose & plan} few{search & book} other{other}}`
+  /// `{item, plural, =0{for fun} =1{swipe category} =2{choose & plan} few{search & book} other{search & book}}`
   String SpinnerHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3651,7 +3651,7 @@ class S {
       one: 'swipe category',
       two: 'choose & plan',
       few: 'search & book',
-      other: 'other',
+      other: 'search & book',
       name: 'SpinnerHiwHint',
       desc: '',
       args: [item],
@@ -3678,7 +3678,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{find companions} =1{similar preferences} =2{check point reputation} few{no foes} other{other}}`
+  /// `{item, plural, =0{find companions} =1{similar preferences} =2{check point reputation} few{no foes} other{no foes}}`
   String ProfileFindSomeoneHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3686,7 +3686,7 @@ class S {
       one: 'similar preferences',
       two: 'check point reputation',
       few: 'no foes',
-      other: 'other',
+      other: 'no foes',
       name: 'ProfileFindSomeoneHiwHint',
       desc: '',
       args: [item],
@@ -3713,7 +3713,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{post a dream request} =1{write & make video} =2{be convincing and honest} few{donate others} other{other}}`
+  /// `{item, plural, =0{post a dream request} =1{write & make video} =2{be convincing and honest} few{donate others} other{donate others}}`
   String ProfileAskOrSupportHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3721,7 +3721,7 @@ class S {
       one: 'write & make video',
       two: 'be convincing and honest',
       few: 'donate others',
-      other: 'other',
+      other: 'donate others',
       name: 'ProfileAskOrSupportHiwHint',
       desc: '',
       args: [item],
@@ -3748,7 +3748,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{preferences don’t work} =1{events/places} =2{type & get result} few{use ratings & models} other{other}}`
+  /// `{item, plural, =0{preferences don’t work} =1{events/places} =2{type & get result} few{use ratings & models} other{use ratings & models}}`
   String SearchHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3756,7 +3756,7 @@ class S {
       one: 'events/places',
       two: 'type & get result',
       few: 'use ratings & models',
-      other: 'other',
+      other: 'use ratings & models',
       name: 'SearchHiwHint',
       desc: '',
       args: [item],
@@ -3783,7 +3783,7 @@ class S {
     );
   }
 
-  /// `{item, plural, =0{swipe any direction} =1{swipe place qualities} =2{like dislike favorite} few{teach our system} other{other}}`
+  /// `{item, plural, =0{swipe any direction} =1{swipe place qualities} =2{like dislike favorite} few{teach our system} other{teach our system}}`
   String ShuffleHiwHint(num item) {
     return Intl.plural(
       item,
@@ -3791,7 +3791,7 @@ class S {
       one: 'swipe place qualities',
       two: 'like dislike favorite',
       few: 'teach our system',
-      other: 'other',
+      other: 'teach our system',
       name: 'ShuffleHiwHint',
       desc: '',
       args: [item],
@@ -4120,6 +4120,26 @@ class S {
     return Intl.message(
       'Ability to become an Influencer',
       name: 'PremiumSubscriptionFeature6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ability to create and share convenient stacks of favorites`
+  String get PremiumSubscriptionFeature7 {
+    return Intl.message(
+      'Ability to create and share convenient stacks of favorites',
+      name: 'PremiumSubscriptionFeature7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have your own event scheduler`
+  String get PremiumSubscriptionFeature8 {
+    return Intl.message(
+      'Have your own event scheduler',
+      name: 'PremiumSubscriptionFeature8',
       desc: '',
       args: [],
     );
@@ -5833,6 +5853,36 @@ class S {
     );
   }
 
+  /// `Icons`
+  String get Icons {
+    return Intl.message(
+      'Icons',
+      name: 'Icons',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Related properties`
+  String get RelatedProperties {
+    return Intl.message(
+      'Related properties',
+      name: 'RelatedProperties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search property`
+  String get SearchProperty {
+    return Intl.message(
+      'Search property',
+      name: 'SearchProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Album`
   String get Album {
     return Intl.message(
@@ -5983,11 +6033,1119 @@ class S {
     );
   }
 
+  /// `No people available to invite`
+  String get NoPeopleAvailableToInvite {
+    return Intl.message(
+      'No people available to invite',
+      name: 'NoPeopleAvailableToInvite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Be the first to review`
+  String get NoReviewsMessage {
+    return Intl.message(
+      'Be the first to review',
+      name: 'NoReviewsMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Be the first`
+  String get BeFirstToInvite {
+    return Intl.message(
+      'Be the first',
+      name: 'BeFirstToInvite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reviews by critics`
+  String get ReviewsByCritics {
+    return Intl.message(
+      'Reviews by critics',
+      name: 'ReviewsByCritics',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Visit places and events in Shuffle and make amazing video-reactions`
   String get NoVideoReactionsYet {
     return Intl.message(
       'Visit places and events in Shuffle and make amazing video-reactions',
       name: 'NoVideoReactionsYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accrual`
+  String get Accrual {
+    return Intl.message(
+      'Accrual',
+      name: 'Accrual',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activation`
+  String get Activation {
+    return Intl.message(
+      'Activation',
+      name: 'Activation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View history`
+  String get ViewHistory {
+    return Intl.message(
+      'View history',
+      name: 'ViewHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Icon`
+  String get Icon {
+    return Intl.message(
+      'Icon',
+      name: 'Icon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Info`
+  String get Info {
+    return Intl.message(
+      'Info',
+      name: 'Info',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Video-reactions`
+  String get VideoReactions {
+    return Intl.message(
+      'Video-reactions',
+      name: 'VideoReactions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show deleted`
+  String get ShowDeleted {
+    return Intl.message(
+      'Show deleted',
+      name: 'ShowDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expand thread`
+  String get ExpandThread {
+    return Intl.message(
+      'Expand thread',
+      name: 'ExpandThread',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Collapse thread`
+  String get CollapseThread {
+    return Intl.message(
+      'Collapse thread',
+      name: 'CollapseThread',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can view this profile once it becomes an influencer`
+  String get CantSeePublicProfileMessage {
+    return Intl.message(
+      'You can view this profile once it becomes an influencer',
+      name: 'CantSeePublicProfileMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there`
+  String get InstructionsToEnableHealthKit {
+    return Intl.message(
+      'To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there',
+      name: 'InstructionsToEnableHealthKit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Push up your business`
+  String get PushUpYourBusiness {
+    return Intl.message(
+      'Push up your business',
+      name: 'PushUpYourBusiness',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show\nmore`
+  String get ShowMore {
+    return Intl.message(
+      'Show\nmore',
+      name: 'ShowMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go ahead and grow your business`
+  String get GoAheadAndGrowYourBusiness {
+    return Intl.message(
+      'Go ahead and grow your business',
+      name: 'GoAheadAndGrowYourBusiness',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `about us`
+  String get AboutUs {
+    return Intl.message(
+      'about us',
+      name: 'AboutUs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open now`
+  String get OpenNow {
+    return Intl.message(
+      'Open now',
+      name: 'OpenNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It is a non-public profile that allows you to post your places, branches, and place's events`
+  String get CompanyPresentationSlider1 {
+    return Intl.message(
+      'It is a non-public profile that allows you to post your places, branches, and place\'s events',
+      name: 'CompanyPresentationSlider1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can create branches; in a  place card users will see the entire brench network`
+  String get CompanyPresentationSlider2 {
+    return Intl.message(
+      'You can create branches; in a  place card users will see the entire brench network',
+      name: 'CompanyPresentationSlider2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your content appears in the app's rotation and is recommended to users through the unique Shuffle system, - with user and content properties, behavioral factors, geo, weather, etc`
+  String get CompanyPresentationSlider3 {
+    return Intl.message(
+      'Your content appears in the app\'s rotation and is recommended to users through the unique Shuffle system, - with user and content properties, behavioral factors, geo, weather, etc',
+      name: 'CompanyPresentationSlider3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Increase awareness & traffic to your places and events. All app's & users features are around your content cards`
+  String get CompanyPresentationSlider4 {
+    return Intl.message(
+      'Increase awareness & traffic to your places and events. All app\'s & users features are around your content cards',
+      name: 'CompanyPresentationSlider4',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You attract specialized Shuffle influencers who will elevate the status of your places`
+  String get CompanyPresentationSlider5 {
+    return Intl.message(
+      'You attract specialized Shuffle influencers who will elevate the status of your places',
+      name: 'CompanyPresentationSlider5',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can interact with your audience through the unique functionality of special notifications, reminders, offers and presales`
+  String get CompanyPresentationSlider6 {
+    return Intl.message(
+      'You can interact with your audience through the unique functionality of special notifications, reminders, offers and presales',
+      name: 'CompanyPresentationSlider6',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can use the internal targeted advertising system`
+  String get CompanyPresentationSlider7 {
+    return Intl.message(
+      'You can use the internal targeted advertising system',
+      name: 'CompanyPresentationSlider7',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can integrate your booking system into content cards or use the Shuffle booking system in the future`
+  String get CompanyPresentationSlider8 {
+    return Intl.message(
+      'You can integrate your booking system into content cards or use the Shuffle booking system in the future',
+      name: 'CompanyPresentationSlider8',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Branches`
+  String get Branches {
+    return Intl.message(
+      'Branches',
+      name: 'Branches',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Restaurant`
+  String get Restaurant {
+    return Intl.message(
+      'Restaurant',
+      name: 'Restaurant',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open`
+  String get Open {
+    return Intl.message(
+      'Open',
+      name: 'Open',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `min`
+  String get Min {
+    return Intl.message(
+      'min',
+      name: 'Min',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tasty coffee`
+  String get TastyCoffee {
+    return Intl.message(
+      'Tasty coffee',
+      name: 'TastyCoffee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Calm atmosphere`
+  String get CalmAtmosphere {
+    return Intl.message(
+      'Calm atmosphere',
+      name: 'CalmAtmosphere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tea list`
+  String get TeaList {
+    return Intl.message(
+      'Tea list',
+      name: 'TeaList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Great interview with the owner`
+  String get GreatInterviewWithOwner {
+    return Intl.message(
+      'Great interview with the owner',
+      name: 'GreatInterviewWithOwner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spend it`
+  String get SpendIt {
+    return Intl.message(
+      'Spend it',
+      name: 'SpendIt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no reactions yet, be the first`
+  String get NoReactionsMessage {
+    return Intl.message(
+      'There are no reactions yet, be the first',
+      name: 'NoReactionsMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show the barcode at the checkout when paying`
+  String get ShowTheBarcode {
+    return Intl.message(
+      'Show the barcode at the checkout when paying',
+      name: 'ShowTheBarcode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer successfully activated`
+  String get OfferSuccessfullyActivated {
+    return Intl.message(
+      'Offer successfully activated',
+      name: 'OfferSuccessfullyActivated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spent my points`
+  String get SpentMyPoints {
+    return Intl.message(
+      'Spent my points',
+      name: 'SpentMyPoints',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Categories`
+  String get Categories {
+    return Intl.message(
+      'Categories',
+      name: 'Categories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Entertainment`
+  String get Entertainment {
+    return Intl.message(
+      'Entertainment',
+      name: 'Entertainment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Related personal properties`
+  String get RelatedPersonalProperties {
+    return Intl.message(
+      'Related personal properties',
+      name: 'RelatedPersonalProperties',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add category`
+  String get AddCategory {
+    return Intl.message(
+      'Add category',
+      name: 'AddCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add property`
+  String get AddProperty {
+    return Intl.message(
+      'Add property',
+      name: 'AddProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add place type`
+  String get AddPlaceType {
+    return Intl.message(
+      'Add place type',
+      name: 'AddPlaceType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{drag & and drop cards} =1{create and name stack} =2{line up stacks order} few{share your stacks} other{share your stacks}}`
+  String FeedFavoritesHiwItems(num item) {
+    return Intl.plural(
+      item,
+      zero: 'drag & and drop cards',
+      one: 'create and name stack',
+      two: 'line up stacks order',
+      few: 'share your stacks',
+      other: 'share your stacks',
+      name: 'FeedFavoritesHiwItems',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `сonvenient, clear and useful`
+  String get ConvenientClearAndUseful {
+    return Intl.message(
+      'сonvenient, clear and useful',
+      name: 'ConvenientClearAndUseful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stacks are on`
+  String get StacksAreOn {
+    return Intl.message(
+      'Stacks are on',
+      name: 'StacksAreOn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stacks and something else are available for you...`
+  String get StacksAndSomethingElseAreAvailableForYou {
+    return Intl.message(
+      'Stacks and something else are available for you...',
+      name: 'StacksAndSomethingElseAreAvailableForYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Influencer`
+  String get Influencer {
+    return Intl.message(
+      'Influencer',
+      name: 'Influencer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Entertainment specialist`
+  String get EntertainmentSpecialist {
+    return Intl.message(
+      'Entertainment specialist',
+      name: 'EntertainmentSpecialist',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go premium`
+  String get GoPremium {
+    return Intl.message(
+      'Go premium',
+      name: 'GoPremium',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `GO pro`
+  String get GoPro {
+    return Intl.message(
+      'GO pro',
+      name: 'GoPro',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No messages yet`
+  String get NoMessagesYet {
+    return Intl.message(
+      'No messages yet',
+      name: 'NoMessagesYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Created on {creationDate}.\nWill be deleted on {deletionDate}`
+  String ChatDeletionAndCreationMessage(
+      Object creationDate, Object deletionDate) {
+    return Intl.message(
+      'Created on $creationDate.\nWill be deleted on $deletionDate',
+      name: 'ChatDeletionAndCreationMessage',
+      desc: '',
+      args: [creationDate, deletionDate],
+    );
+  }
+
+  /// `{count, plural, =0{{count} members} =1{{count} member} =2{{count} members} few{{count} members} many{{count} members} other{{count} members}}`
+  String MembersCount(num count) {
+    return Intl.plural(
+      count,
+      zero: '$count members',
+      one: '$count member',
+      two: '$count members',
+      few: '$count members',
+      many: '$count members',
+      other: '$count members',
+      name: 'MembersCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Replying to {message}`
+  String ReplyingTo(Object message) {
+    return Intl.message(
+      'Replying to $message',
+      name: 'ReplyingTo',
+      desc: '',
+      args: [message],
+    );
+  }
+
+  /// `Invited people`
+  String get InvitedPeople {
+    return Intl.message(
+      'Invited people',
+      name: 'InvitedPeople',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Plz respect your choice and others' feelings`
+  String get AlreadyInvited {
+    return Intl.message(
+      'Plz respect your choice and others\' feelings',
+      name: 'AlreadyInvited',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spend`
+  String get Spend {
+    return Intl.message(
+      'Spend',
+      name: 'Spend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Challenge Feelings`
+  String get ChallengeFeelings {
+    return Intl.message(
+      'Challenge Feelings',
+      name: 'ChallengeFeelings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{Feedback} =1{Feedback} =2{Feedbacks} few{Feedbacks} many{Feedbacks} other{Feedbacks}}`
+  String Feedbacks(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'Feedback', one: 'Feedback', two: 'Feedbacks', few: 'Feedbacks', many: 'Feedbacks', other: 'Feedbacks')}',
+      name: 'Feedbacks',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{card} =1{card} =2{cards} few{cards} many{cards} other{cards}} {count, plural, =0{shares} =1{share} =2{shares} few{shares} many{shares} other{shares}}`
+  String ShareCard(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'card', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} ${Intl.plural(count, zero: 'shares', one: 'share', two: 'shares', few: 'shares', many: 'shares', other: 'shares')}',
+      name: 'ShareCard',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Login in {count} {count, plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}} in a row`
+  String LoginInAppDaysInARow(num count) {
+    return Intl.message(
+      'Login in $count ${Intl.plural(count, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')} in a row',
+      name: 'LoginInAppDaysInARow',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Spend {count} {count, plural, =0{hours} =1{hour} =2{hours} few{hours} many{hours} other{hours}} per week`
+  String SpendHoursPerWeek(num count) {
+    return Intl.message(
+      'Spend $count ${Intl.plural(count, zero: 'hours', one: 'hour', two: 'hours', few: 'hours', many: 'hours', other: 'hours')} per week',
+      name: 'SpendHoursPerWeek',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{connects} =1{connect} =2{connect} few{connect} many{connect} other{connect}}`
+  String Connects(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'connects', one: 'connect', two: 'connect', few: 'connect', many: 'connect', other: 'connect')}',
+      name: 'Connects',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{cards} =1{card} =2{cards} few{cards} many{cards} other{cards}} {count, plural, =0{openings} =1{opening} =2{openings} few{openings} many{openings} other{openings}}`
+  String CardOpening(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'cards', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} ${Intl.plural(count, zero: 'openings', one: 'opening', two: 'openings', few: 'openings', many: 'openings', other: 'openings')}',
+      name: 'CardOpening',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Offer content`
+  String get OfferContent {
+    return Intl.message(
+      'Offer content',
+      name: 'OfferContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{bookigns} =1{bookign} =2{bookigns} few{bookigns} many{bookigns} other{bookigns}}`
+  String Bookigns(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'bookigns', one: 'bookign', two: 'bookigns', few: 'bookigns', many: 'bookigns', other: 'bookigns')}',
+      name: 'Bookigns',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count, plural, =0{points} =1{point} =2{points} few{points} many{points} other{points}}`
+  String PointsCount(num count) {
+    return Intl.plural(
+      count,
+      zero: 'points',
+      one: 'point',
+      two: 'points',
+      few: 'points',
+      many: 'points',
+      other: 'points',
+      name: 'PointsCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{Reviews} =1{Review} =2{Reviews} few{Reviews} many{Reviews} other{Reviews}}`
+  String ReviewsCount(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'Reviews', one: 'Review', two: 'Reviews', few: 'Reviews', many: 'Reviews', other: 'Reviews')}',
+      name: 'ReviewsCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Shraziid goblet`
+  String get ShraziidGoblet {
+    return Intl.message(
+      'Shraziid goblet',
+      name: 'ShraziidGoblet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An ancient goblet found in the desert sands. They say that Shraziid himself, the ruler of the great Sand Kingdom, drank from it.`
+  String get ShraziidGobletDescription {
+    return Intl.message(
+      'An ancient goblet found in the desert sands. They say that Shraziid himself, the ruler of the great Sand Kingdom, drank from it.',
+      name: 'ShraziidGobletDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lucky Coin`
+  String get LuckyCoin {
+    return Intl.message(
+      'Lucky Coin',
+      name: 'LuckyCoin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `As long as you have it in your inventory, good luck is with you. Twist it, turn it, touch it to be filled with the energy of good luck.`
+  String get LuckyCoinDescription {
+    return Intl.message(
+      'As long as you have it in your inventory, good luck is with you. Twist it, turn it, touch it to be filled with the energy of good luck.',
+      name: 'LuckyCoinDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Focus of Light`
+  String get FocusOfLight {
+    return Intl.message(
+      'Focus of Light',
+      name: 'FocusOfLight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Light of the universe is contained here. If it gets darker in your soul, the light is with you. Look and be filled with peace.`
+  String get FocusOfLightDescription {
+    return Intl.message(
+      'The Light of the universe is contained here. If it gets darker in your soul, the light is with you. Look and be filled with peace.',
+      name: 'FocusOfLightDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unknown Ring`
+  String get UnknownRing {
+    return Intl.message(
+      'Unknown Ring',
+      name: 'UnknownRing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Strange ring. We don't know why it is here...`
+  String get UnknownRingDescription {
+    return Intl.message(
+      'Strange ring. We don\'t know why it is here...',
+      name: 'UnknownRingDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{invites} =1{invite} =2{invites} few{invites} many{invites} other{invites}}`
+  String InvitesCount(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'invites', one: 'invite', two: 'invites', few: 'invites', many: 'invites', other: 'invites')}',
+      name: 'InvitesCount',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Invites`
+  String get InvitesVerb {
+    return Intl.message(
+      'Invites',
+      name: 'InvitesVerb',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To`
+  String get InvitesTo {
+    return Intl.message(
+      'To',
+      name: 'InvitesTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sure you want to exit?`
+  String get SureYouWantToExit {
+    return Intl.message(
+      'Sure you want to exit?',
+      name: 'SureYouWantToExit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can no longer send messages to {name}`
+  String YouWillNoLongerSendMessagesTo(Object name) {
+    return Intl.message(
+      'You can no longer send messages to $name',
+      name: 'YouWillNoLongerSendMessagesTo',
+      desc: '',
+      args: [name],
+    );
+  }
+
+  /// `Sure you want to delete {name}?`
+  String YouSureToDeleteX(Object name) {
+    return Intl.message(
+      'Sure you want to delete $name?',
+      name: 'YouSureToDeleteX',
+      desc: '',
+      args: [name],
+    );
+  }
+
+  /// `Message not found`
+  String get MessageNotFound {
+    return Intl.message(
+      'Message not found',
+      name: 'MessageNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connected`
+  String get Connected {
+    return Intl.message(
+      'Connected',
+      name: 'Connected',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You`
+  String get You {
+    return Intl.message(
+      'You',
+      name: 'You',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{x} invites {y}`
+  String XInvitesY(Object x, Object y) {
+    return Intl.message(
+      '$x invites $y',
+      name: 'XInvitesY',
+      desc: '',
+      args: [x, y],
+    );
+  }
+
+  /// `Invites {invitedPeopleCount, plural, =0{{invitedPeopleCount} people} =1{{invitedPeopleCount} person} =2{{invitedPeopleCount} people} few{{invitedPeopleCount} people} many{{invitedPeopleCount} people} other{{invitedPeopleCount} people}}`
+  String InvitesNPeopleInfo(num invitedPeopleCount) {
+    return Intl.message(
+      'Invites ${Intl.plural(invitedPeopleCount, zero: '$invitedPeopleCount people', one: '$invitedPeopleCount person', two: '$invitedPeopleCount people', few: '$invitedPeopleCount people', many: '$invitedPeopleCount people', other: '$invitedPeopleCount people')}',
+      name: 'InvitesNPeopleInfo',
+      desc: '',
+      args: [invitedPeopleCount],
+    );
+  }
+
+  /// `{count} {count, plural, =0{feelings} =1{feeling} =2{feelings} few{feelings} many{feelings} other{feelings}} guesses`
+  String FeelingsGuesses(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'feelings', one: 'feeling', two: 'feelings', few: 'feelings', many: 'feelings', other: 'feelings')} guesses',
+      name: 'FeelingsGuesses',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} content {count, plural, =0{offers} =1{offer} =2{offers} few{offers} many{offers} other{offers}}`
+  String ContentOffers(num count) {
+    return Intl.message(
+      '$count content ${Intl.plural(count, zero: 'offers', one: 'offer', two: 'offers', few: 'offers', many: 'offers', other: 'offers')}',
+      name: 'ContentOffers',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{reactions} =1{reaction} =2{reactions} few{reactions} many{reactions} other{reactions}}`
+  String Reactions(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'reactions', one: 'reaction', two: 'reactions', few: 'reactions', many: 'reactions', other: 'reactions')}',
+      name: 'Reactions',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{stacks} =1{stack} =2{stacks} few{stacks} many{stacks} other{stacks}} {count, plural, =0{shares} =1{share} =2{shares} few{shares} many{shares} other{shares}}`
+  String StacksShares(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'stacks', one: 'stack', two: 'stacks', few: 'stacks', many: 'stacks', other: 'stacks')} ${Intl.plural(count, zero: 'shares', one: 'share', two: 'shares', few: 'shares', many: 'shares', other: 'shares')}',
+      name: 'StacksShares',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Wiseacre of sands`
+  String get WiseacreOfSands {
+    return Intl.message(
+      'Wiseacre of sands',
+      name: 'WiseacreOfSands',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Couldn't find invite`
+  String get CouldntFindInvite {
+    return Intl.message(
+      'Couldn\'t find invite',
+      name: 'CouldntFindInvite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wiseacre lady of sands`
+  String get WiseacreLadyOfSands {
+    return Intl.message(
+      'Wiseacre lady of sands',
+      name: 'WiseacreLadyOfSands',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Moderated`
+  String get Moderated {
+    return Intl.message(
+      'Moderated',
+      name: 'Moderated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To plan`
+  String get ToPlan {
+    return Intl.message(
+      'To plan',
+      name: 'ToPlan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Share`
+  String get Share {
+    return Intl.message(
+      'Share',
+      name: 'Share',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rename`
+  String get Rename {
+    return Intl.message(
+      'Rename',
+      name: 'Rename',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get Delete {
+    return Intl.message(
+      'Delete',
+      name: 'Delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sure you want to delete stack?`
+  String get DeleteFolderAlert {
+    return Intl.message(
+      'Sure you want to delete stack?',
+      name: 'DeleteFolderAlert',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Seeking wanderer`
+  String get SeekingWandererMen {
+    return Intl.message(
+      'Seeking wanderer',
+      name: 'SeekingWandererMen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Seeking wanderer`
+  String get SeekingWandererWom {
+    return Intl.message(
+      'Seeking wanderer',
+      name: 'SeekingWandererWom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Traveler`
+  String get TravelerMen {
+    return Intl.message(
+      'Traveler',
+      name: 'TravelerMen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Traveler`
+  String get TravelerWom {
+    return Intl.message(
+      'Traveler',
+      name: 'TravelerWom',
       desc: '',
       args: [],
     );

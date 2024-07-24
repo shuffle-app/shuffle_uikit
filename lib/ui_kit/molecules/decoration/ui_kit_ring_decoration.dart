@@ -5,9 +5,9 @@ class UiKitRingsDecoration extends StatelessWidget {
   final int ringsCount;
 
   const UiKitRingsDecoration({
-    Key? key,
+    super.key,
     required this.ringsCount,
-  }) : super(key: key);
+  });
 
   Size get size => Size(0.3875.sw * ringsCount, 0.3875.sw * ringsCount);
 

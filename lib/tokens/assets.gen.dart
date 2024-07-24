@@ -72,6 +72,12 @@ class $AssetsAnimationsLottieGen {
   /// File path: assets/animations/lottie/fingerprint-white.json
   LottieGenImage get fingerprintWhite => const LottieGenImage('assets/animations/lottie/fingerprint-white.json');
 
+  /// File path: assets/animations/lottie/moony.json
+  LottieGenImage get moony => const LottieGenImage('assets/animations/lottie/moony.json');
+
+  /// File path: assets/animations/lottie/rainy.json
+  LottieGenImage get rainy => const LottieGenImage('assets/animations/lottie/rainy.json');
+
   /// File path: assets/animations/lottie/shuffle-loader-black-theme.json
   LottieGenImage get shuffleLoaderBlackTheme =>
       const LottieGenImage('assets/animations/lottie/shuffle-loader-black-theme.json');
@@ -86,16 +92,26 @@ class $AssetsAnimationsLottieGen {
   /// File path: assets/animations/lottie/star_outline.json
   LottieGenImage get starOutline => const LottieGenImage('assets/animations/lottie/star_outline.json');
 
+  /// File path: assets/animations/lottie/sunny.json
+  LottieGenImage get sunny => const LottieGenImage('assets/animations/lottie/sunny.json');
+
+  /// File path: assets/animations/lottie/windy.json
+  LottieGenImage get windy => const LottieGenImage('assets/animations/lottie/windy.json');
+
   /// List of all assets
   List<LottieGenImage> get values => [
         brokenHeart,
         wholeHeart,
         fingerprintBlack,
         fingerprintWhite,
+        moony,
+        rainy,
         shuffleLoaderBlackTheme,
         shuffleLoaderWhiteTheme,
         starFill,
-        starOutline
+        starOutline,
+        sunny,
+        windy
       ];
 }
 
@@ -117,8 +133,14 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Binoculars.png
   AssetGenImage get binoculars => const AssetGenImage('assets/images/png/Binoculars.png');
 
+  /// File path: assets/images/png/Black-white.png
+  AssetGenImage get blackWhite => const AssetGenImage('assets/images/png/Black-white.png');
+
   /// File path: assets/images/png/Booking.png
   AssetGenImage get booking => const AssetGenImage('assets/images/png/Booking.png');
+
+  /// File path: assets/images/png/Calendar-watch.png
+  AssetGenImage get calendarWatch => const AssetGenImage('assets/images/png/Calendar-watch.png');
 
   /// File path: assets/images/png/Check-in.png
   AssetGenImage get checkIn => const AssetGenImage('assets/images/png/Check-in.png');
@@ -150,6 +172,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Company.png
   AssetGenImage get company => const AssetGenImage('assets/images/png/Company.png');
 
+  /// File path: assets/images/png/Create-name.png
+  AssetGenImage get createName => const AssetGenImage('assets/images/png/Create-name.png');
+
   /// File path: assets/images/png/Dart.png
   AssetGenImage get dart => const AssetGenImage('assets/images/png/Dart.png');
 
@@ -162,14 +187,17 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Donations.png
   AssetGenImage get donations => const AssetGenImage('assets/images/png/Donations.png');
 
+  /// File path: assets/images/png/Drag-card.png
+  AssetGenImage get dragCard => const AssetGenImage('assets/images/png/Drag-card.png');
+
   /// File path: assets/images/png/Events.png
   AssetGenImage get events => const AssetGenImage('assets/images/png/Events.png');
 
+  /// File path: assets/images/png/Favorite-place.png
+  AssetGenImage get favoritePlace => const AssetGenImage('assets/images/png/Favorite-place.png');
+
   /// File path: assets/images/png/Feedback.png
   AssetGenImage get feedback => const AssetGenImage('assets/images/png/Feedback.png');
-
-  /// File path: assets/images/png/Female.png
-  AssetGenImage get female => const AssetGenImage('assets/images/png/Female.png');
 
   /// File path: assets/images/png/Filtering.png
   AssetGenImage get filtering => const AssetGenImage('assets/images/png/Filtering.png');
@@ -216,11 +244,38 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Index-finger-hands.png
   AssetGenImage get indexFingerHands => const AssetGenImage('assets/images/png/Index-finger-hands.png');
 
+  /// File path: assets/images/png/Influencer.png
+  AssetGenImage get influencer => const AssetGenImage('assets/images/png/Influencer.png');
+
   /// File path: assets/images/png/Internet-business.png
   AssetGenImage get internetBusiness => const AssetGenImage('assets/images/png/Internet-business.png');
 
   /// File path: assets/images/png/Key.png
   AssetGenImage get key => const AssetGenImage('assets/images/png/Key.png');
+
+  /// File path: assets/images/png/LETO-1.jpg
+  AssetGenImage get leto1 => const AssetGenImage('assets/images/png/LETO-1.jpg');
+
+  /// File path: assets/images/png/LETO-2.jpg
+  AssetGenImage get leto2 => const AssetGenImage('assets/images/png/LETO-2.jpg');
+
+  /// File path: assets/images/png/LETO-3.jpg
+  AssetGenImage get leto3 => const AssetGenImage('assets/images/png/LETO-3.jpg');
+
+  /// File path: assets/images/png/LETO-4.png
+  AssetGenImage get leto4 => const AssetGenImage('assets/images/png/LETO-4.png');
+
+  /// File path: assets/images/png/LETO-5.jpeg
+  AssetGenImage get leto5 => const AssetGenImage('assets/images/png/LETO-5.jpeg');
+
+  /// File path: assets/images/png/LETO-7.jpg
+  AssetGenImage get leto7 => const AssetGenImage('assets/images/png/LETO-7.jpg');
+
+  /// File path: assets/images/png/LETO-8 2.png
+  AssetGenImage get leto82 => const AssetGenImage('assets/images/png/LETO-8 2.png');
+
+  /// File path: assets/images/png/LETO-logo.png
+  AssetGenImage get lETOLogo => const AssetGenImage('assets/images/png/LETO-logo.png');
 
   /// File path: assets/images/png/Laptop-with-chart.png
   AssetGenImage get laptopWithChart => const AssetGenImage('assets/images/png/Laptop-with-chart.png');
@@ -236,9 +291,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Like-hands.png
   AssetGenImage get likeHands => const AssetGenImage('assets/images/png/Like-hands.png');
-
-  /// File path: assets/images/png/Male.png
-  AssetGenImage get male => const AssetGenImage('assets/images/png/Male.png');
 
   /// File path: assets/images/png/Mango.png
   AssetGenImage get mango => const AssetGenImage('assets/images/png/Mango.png');
@@ -267,14 +319,20 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/No-photo.png
   AssetGenImage get noPhoto => const AssetGenImage('assets/images/png/No-photo.png');
 
+  /// File path: assets/images/png/Notif.png
+  AssetGenImage get notif => const AssetGenImage('assets/images/png/Notif.png');
+
   /// File path: assets/images/png/Ok-hands.png
   AssetGenImage get okHands => const AssetGenImage('assets/images/png/Ok-hands.png');
 
-  /// File path: assets/images/png/Other-gender.png
-  AssetGenImage get otherGender => const AssetGenImage('assets/images/png/Other-gender.png');
+  /// File path: assets/images/png/Order-stack.png
+  AssetGenImage get orderStack => const AssetGenImage('assets/images/png/Order-stack.png');
 
   /// File path: assets/images/png/Outstanding.png
   AssetGenImage get outstanding => const AssetGenImage('assets/images/png/Outstanding.png');
+
+  /// File path: assets/images/png/PRO-label.png
+  AssetGenImage get pROLabel => const AssetGenImage('assets/images/png/PRO-label.png');
 
   /// File path: assets/images/png/Pie-chart.png
   AssetGenImage get pieChart => const AssetGenImage('assets/images/png/Pie-chart.png');
@@ -285,6 +343,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Place-events.png
   AssetGenImage get placeEvents => const AssetGenImage('assets/images/png/Place-events.png');
 
+  /// File path: assets/images/png/Point-gift.png
+  AssetGenImage get pointGift => const AssetGenImage('assets/images/png/Point-gift.png');
+
   /// File path: assets/images/png/Points-reputation.png
   AssetGenImage get pointsReputation => const AssetGenImage('assets/images/png/Points-reputation.png');
 
@@ -293,6 +354,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Preferences.png
   AssetGenImage get preferences => const AssetGenImage('assets/images/png/Preferences.png');
+
+  /// File path: assets/images/png/Presale.png
+  AssetGenImage get presale => const AssetGenImage('assets/images/png/Presale.png');
 
   /// File path: assets/images/png/Press-niche.png
   AssetGenImage get pressNiche => const AssetGenImage('assets/images/png/Press-niche.png');
@@ -309,6 +373,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Rating.png
   AssetGenImage get rating => const AssetGenImage('assets/images/png/Rating.png');
 
+  /// File path: assets/images/png/Reaction.png
+  AssetGenImage get reaction => const AssetGenImage('assets/images/png/Reaction.png');
+
   /// File path: assets/images/png/Real-estate.png
   AssetGenImage get realEstate => const AssetGenImage('assets/images/png/Real-estate.png');
 
@@ -324,11 +391,20 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Rocket.png
   AssetGenImage get rocket => const AssetGenImage('assets/images/png/Rocket.png');
 
+  /// File path: assets/images/png/Scheduler.png
+  AssetGenImage get scheduler => const AssetGenImage('assets/images/png/Scheduler.png');
+
   /// File path: assets/images/png/Select-niche.png
   AssetGenImage get selectNiche => const AssetGenImage('assets/images/png/Select-niche.png');
 
+  /// File path: assets/images/png/Share-stack.png
+  AssetGenImage get shareStack => const AssetGenImage('assets/images/png/Share-stack.png');
+
   /// File path: assets/images/png/Shuffle-any.png
   AssetGenImage get shuffleAny => const AssetGenImage('assets/images/png/Shuffle-any.png');
+
+  /// File path: assets/images/png/Shuffle-label.png
+  AssetGenImage get shuffleLabel => const AssetGenImage('assets/images/png/Shuffle-label.png');
 
   /// File path: assets/images/png/Ski.png
   AssetGenImage get ski => const AssetGenImage('assets/images/png/Ski.png');
@@ -338,6 +414,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Smiley-crazy-face-emoji.png
   AssetGenImage get smileyCrazyFaceEmoji => const AssetGenImage('assets/images/png/Smiley-crazy-face-emoji.png');
+
+  /// File path: assets/images/png/Statistics.png
+  AssetGenImage get statistics => const AssetGenImage('assets/images/png/Statistics.png');
 
   /// File path: assets/images/png/Sun-clear.png
   AssetGenImage get sunClear => const AssetGenImage('assets/images/png/Sun-clear.png');
@@ -375,6 +454,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Training.png
   AssetGenImage get training => const AssetGenImage('assets/images/png/Training.png');
 
+  /// File path: assets/images/png/Upsales.png
+  AssetGenImage get upsales => const AssetGenImage('assets/images/png/Upsales.png');
+
   /// File path: assets/images/png/Victory-hands.png
   AssetGenImage get victoryHands => const AssetGenImage('assets/images/png/Victory-hands.png');
 
@@ -387,12 +469,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Yoga.png
   AssetGenImage get yoga => const AssetGenImage('assets/images/png/Yoga.png');
 
-  /// File path: assets/images/png/angry-emoji.png
-  AssetGenImage get angryEmoji => const AssetGenImage('assets/images/png/angry-emoji.png');
-
-  /// File path: assets/images/png/anxiety-emogi.png
-  AssetGenImage get anxietyEmogi => const AssetGenImage('assets/images/png/anxiety-emogi.png');
-
   /// File path: assets/images/png/atheist.png
   AssetGenImage get atheist => const AssetGenImage('assets/images/png/atheist.png');
 
@@ -404,26 +480,11 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/balloons.png
   AssetGenImage get balloons => const AssetGenImage('assets/images/png/balloons.png');
 
-  /// File path: assets/images/png/buddism_flag.png
-  AssetGenImage get buddismFlag => const AssetGenImage('assets/images/png/buddism_flag.png');
-
-  /// File path: assets/images/png/business_mock_1.png
-  AssetGenImage get businessMock1 => const AssetGenImage('assets/images/png/business_mock_1.png');
-
-  /// File path: assets/images/png/business_mock_2.png
-  AssetGenImage get businessMock2 => const AssetGenImage('assets/images/png/business_mock_2.png');
-
-  /// File path: assets/images/png/calmness-emoji.png
-  AssetGenImage get calmnessEmoji => const AssetGenImage('assets/images/png/calmness-emoji.png');
-
   /// File path: assets/images/png/catering.png
   AssetGenImage get catering => const AssetGenImage('assets/images/png/catering.png');
 
   /// File path: assets/images/png/choosePlan.png
   AssetGenImage get choosePlan => const AssetGenImage('assets/images/png/choosePlan.png');
-
-  /// File path: assets/images/png/christianity.png
-  AssetGenImage get christianity => const AssetGenImage('assets/images/png/christianity.png');
 
   /// File path: assets/images/png/clothing.png
   AssetGenImage get clothing => const AssetGenImage('assets/images/png/clothing.png');
@@ -440,6 +501,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/donat.png
   AssetGenImage get donat => const AssetGenImage('assets/images/png/donat.png');
 
+  /// File path: assets/images/png/entertainment.png
+  AssetGenImage get entertainment => const AssetGenImage('assets/images/png/entertainment.png');
+
   /// File path: assets/images/png/event_avatar.png
   AssetGenImage get eventAvatar => const AssetGenImage('assets/images/png/event_avatar.png');
 
@@ -452,9 +516,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/golden_cup.png
   AssetGenImage get goldenCup => const AssetGenImage('assets/images/png/golden_cup.png');
 
-  /// File path: assets/images/png/golden_medal.png
-  AssetGenImage get goldenMedal => const AssetGenImage('assets/images/png/golden_medal.png');
-
   /// File path: assets/images/png/grocery.png
   AssetGenImage get grocery => const AssetGenImage('assets/images/png/grocery.png');
 
@@ -464,41 +525,11 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/help.png
   AssetGenImage get help => const AssetGenImage('assets/images/png/help.png');
 
-  /// File path: assets/images/png/hindu.png
-  AssetGenImage get hindu => const AssetGenImage('assets/images/png/hindu.png');
-
   /// File path: assets/images/png/honest.png
   AssetGenImage get honest => const AssetGenImage('assets/images/png/honest.png');
 
-  /// File path: assets/images/png/invite_mock_1.png
-  AssetGenImage get inviteMock1 => const AssetGenImage('assets/images/png/invite_mock_1.png');
-
-  /// File path: assets/images/png/invite_mock_2.png
-  AssetGenImage get inviteMock2 => const AssetGenImage('assets/images/png/invite_mock_2.png');
-
-  /// File path: assets/images/png/invite_mock_3.png
-  AssetGenImage get inviteMock3 => const AssetGenImage('assets/images/png/invite_mock_3.png');
-
-  /// File path: assets/images/png/invite_mock_4.png
-  AssetGenImage get inviteMock4 => const AssetGenImage('assets/images/png/invite_mock_4.png');
-
-  /// File path: assets/images/png/invite_mock_5.png
-  AssetGenImage get inviteMock5 => const AssetGenImage('assets/images/png/invite_mock_5.png');
-
-  /// File path: assets/images/png/jordan_flag.png
-  AssetGenImage get jordanFlag => const AssetGenImage('assets/images/png/jordan_flag.png');
-
-  /// File path: assets/images/png/joy-emoji.png
-  AssetGenImage get joyEmoji => const AssetGenImage('assets/images/png/joy-emoji.png');
-
-  /// File path: assets/images/png/judaism.png
-  AssetGenImage get judaism => const AssetGenImage('assets/images/png/judaism.png');
-
   /// File path: assets/images/png/just_coin.png
   AssetGenImage get justCoin => const AssetGenImage('assets/images/png/just_coin.png');
-
-  /// File path: assets/images/png/love-emoji.png
-  AssetGenImage get loveEmoji => const AssetGenImage('assets/images/png/love-emoji.png');
 
   /// File path: assets/images/png/manicure.png
   AssetGenImage get manicure => const AssetGenImage('assets/images/png/manicure.png');
@@ -508,99 +539,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/mock_ad_banner.png
   AssetGenImage get mockAdBanner => const AssetGenImage('assets/images/png/mock_ad_banner.png');
-
-  /// File path: assets/images/png/mock_ad_banner_1.jpeg
-  AssetGenImage get mockAdBanner1 => const AssetGenImage('assets/images/png/mock_ad_banner_1.jpeg');
-
-  /// File path: assets/images/png/mock_ad_banner_10.jpg
-  AssetGenImage get mockAdBanner10 => const AssetGenImage('assets/images/png/mock_ad_banner_10.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_11.png
-  AssetGenImage get mockAdBanner11 => const AssetGenImage('assets/images/png/mock_ad_banner_11.png');
-
-  /// File path: assets/images/png/mock_ad_banner_12.png
-  AssetGenImage get mockAdBanner12 => const AssetGenImage('assets/images/png/mock_ad_banner_12.png');
-
-  /// File path: assets/images/png/mock_ad_banner_13.png
-  AssetGenImage get mockAdBanner13 => const AssetGenImage('assets/images/png/mock_ad_banner_13.png');
-
-  /// File path: assets/images/png/mock_ad_banner_14.png
-  AssetGenImage get mockAdBanner14 => const AssetGenImage('assets/images/png/mock_ad_banner_14.png');
-
-  /// File path: assets/images/png/mock_ad_banner_15.png
-  AssetGenImage get mockAdBanner15 => const AssetGenImage('assets/images/png/mock_ad_banner_15.png');
-
-  /// File path: assets/images/png/mock_ad_banner_16.png
-  AssetGenImage get mockAdBanner16 => const AssetGenImage('assets/images/png/mock_ad_banner_16.png');
-
-  /// File path: assets/images/png/mock_ad_banner_17.png
-  AssetGenImage get mockAdBanner17 => const AssetGenImage('assets/images/png/mock_ad_banner_17.png');
-
-  /// File path: assets/images/png/mock_ad_banner_18.png
-  AssetGenImage get mockAdBanner18 => const AssetGenImage('assets/images/png/mock_ad_banner_18.png');
-
-  /// File path: assets/images/png/mock_ad_banner_19.png
-  AssetGenImage get mockAdBanner19 => const AssetGenImage('assets/images/png/mock_ad_banner_19.png');
-
-  /// File path: assets/images/png/mock_ad_banner_2.jpeg
-  AssetGenImage get mockAdBanner2 => const AssetGenImage('assets/images/png/mock_ad_banner_2.jpeg');
-
-  /// File path: assets/images/png/mock_ad_banner_20.png
-  AssetGenImage get mockAdBanner20 => const AssetGenImage('assets/images/png/mock_ad_banner_20.png');
-
-  /// File path: assets/images/png/mock_ad_banner_21.png
-  AssetGenImage get mockAdBanner21 => const AssetGenImage('assets/images/png/mock_ad_banner_21.png');
-
-  /// File path: assets/images/png/mock_ad_banner_23.jpg
-  AssetGenImage get mockAdBanner23 => const AssetGenImage('assets/images/png/mock_ad_banner_23.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_24.jpg
-  AssetGenImage get mockAdBanner24 => const AssetGenImage('assets/images/png/mock_ad_banner_24.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_25.jpg
-  AssetGenImage get mockAdBanner25 => const AssetGenImage('assets/images/png/mock_ad_banner_25.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_26.png
-  AssetGenImage get mockAdBanner26 => const AssetGenImage('assets/images/png/mock_ad_banner_26.png');
-
-  /// File path: assets/images/png/mock_ad_banner_27.png
-  AssetGenImage get mockAdBanner27 => const AssetGenImage('assets/images/png/mock_ad_banner_27.png');
-
-  /// File path: assets/images/png/mock_ad_banner_28.png
-  AssetGenImage get mockAdBanner28 => const AssetGenImage('assets/images/png/mock_ad_banner_28.png');
-
-  /// File path: assets/images/png/mock_ad_banner_29.png
-  AssetGenImage get mockAdBanner29 => const AssetGenImage('assets/images/png/mock_ad_banner_29.png');
-
-  /// File path: assets/images/png/mock_ad_banner_3.jpeg
-  AssetGenImage get mockAdBanner3 => const AssetGenImage('assets/images/png/mock_ad_banner_3.jpeg');
-
-  /// File path: assets/images/png/mock_ad_banner_30.jpg
-  AssetGenImage get mockAdBanner30 => const AssetGenImage('assets/images/png/mock_ad_banner_30.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_31.png
-  AssetGenImage get mockAdBanner31 => const AssetGenImage('assets/images/png/mock_ad_banner_31.png');
-
-  /// File path: assets/images/png/mock_ad_banner_32.png
-  AssetGenImage get mockAdBanner32 => const AssetGenImage('assets/images/png/mock_ad_banner_32.png');
-
-  /// File path: assets/images/png/mock_ad_banner_4.jpg
-  AssetGenImage get mockAdBanner4 => const AssetGenImage('assets/images/png/mock_ad_banner_4.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_5.jpeg
-  AssetGenImage get mockAdBanner5 => const AssetGenImage('assets/images/png/mock_ad_banner_5.jpeg');
-
-  /// File path: assets/images/png/mock_ad_banner_6.png
-  AssetGenImage get mockAdBanner6 => const AssetGenImage('assets/images/png/mock_ad_banner_6.png');
-
-  /// File path: assets/images/png/mock_ad_banner_7.jpg
-  AssetGenImage get mockAdBanner7 => const AssetGenImage('assets/images/png/mock_ad_banner_7.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_8.jpg
-  AssetGenImage get mockAdBanner8 => const AssetGenImage('assets/images/png/mock_ad_banner_8.jpg');
-
-  /// File path: assets/images/png/mock_ad_banner_9.png
-  AssetGenImage get mockAdBanner9 => const AssetGenImage('assets/images/png/mock_ad_banner_9.png');
 
   /// File path: assets/images/png/mock_avatar.png
   AssetGenImage get mockAvatar => const AssetGenImage('assets/images/png/mock_avatar.png');
@@ -641,6 +579,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/parcel.png
   AssetGenImage get parcel => const AssetGenImage('assets/images/png/parcel.png');
 
+  /// File path: assets/images/png/paywall_slide_video.png
+  AssetGenImage get paywallSlideVideo => const AssetGenImage('assets/images/png/paywall_slide_video.png');
+
   /// File path: assets/images/png/pharmacy.png
   AssetGenImage get pharmacy => const AssetGenImage('assets/images/png/pharmacy.png');
 
@@ -678,58 +619,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/real.png
   AssetGenImage get real => const AssetGenImage('assets/images/png/real.png');
-
-  /// File path: assets/images/png/sadness-emoji.png
-  AssetGenImage get sadnessEmoji => const AssetGenImage('assets/images/png/sadness-emoji.png');
-
-  /// File path: assets/images/png/search_business_clubs.png
-  AssetGenImage get searchBusinessClubs => const AssetGenImage('assets/images/png/search_business_clubs.png');
-
-  /// File path: assets/images/png/search_business_conferences.png
-  AssetGenImage get searchBusinessConferences =>
-      const AssetGenImage('assets/images/png/search_business_conferences.png');
-
-  /// File path: assets/images/png/search_business_exhibition.png
-  AssetGenImage get searchBusinessExhibition => const AssetGenImage('assets/images/png/search_business_exhibition.png');
-
-  /// File path: assets/images/png/search_business_games.png
-  AssetGenImage get searchBusinessGames => const AssetGenImage('assets/images/png/search_business_games.png');
-
-  /// File path: assets/images/png/search_business_networking.png
-  AssetGenImage get searchBusinessNetworking => const AssetGenImage('assets/images/png/search_business_networking.png');
-
-  /// File path: assets/images/png/search_business_speech.png
-  AssetGenImage get searchBusinessSpeech => const AssetGenImage('assets/images/png/search_business_speech.png');
-
-  /// File path: assets/images/png/search_business_training.png
-  AssetGenImage get searchBusinessTraining => const AssetGenImage('assets/images/png/search_business_training.png');
-
-  /// File path: assets/images/png/search_category_adventure.png
-  AssetGenImage get searchCategoryAdventure => const AssetGenImage('assets/images/png/search_category_adventure.png');
-
-  /// File path: assets/images/png/search_category_chill.png
-  AssetGenImage get searchCategoryChill => const AssetGenImage('assets/images/png/search_category_chill.png');
-
-  /// File path: assets/images/png/search_category_extreme.png
-  AssetGenImage get searchCategoryExtreme => const AssetGenImage('assets/images/png/search_category_extreme.png');
-
-  /// File path: assets/images/png/search_category_family.png
-  AssetGenImage get searchCategoryFamily => const AssetGenImage('assets/images/png/search_category_family.png');
-
-  /// File path: assets/images/png/search_category_food.png
-  AssetGenImage get searchCategoryFood => const AssetGenImage('assets/images/png/search_category_food.png');
-
-  /// File path: assets/images/png/search_category_party.png
-  AssetGenImage get searchCategoryParty => const AssetGenImage('assets/images/png/search_category_party.png');
-
-  /// File path: assets/images/png/search_category_self_care.png
-  AssetGenImage get searchCategorySelfCare => const AssetGenImage('assets/images/png/search_category_self_care.png');
-
-  /// File path: assets/images/png/search_category_sport.png
-  AssetGenImage get searchCategorySport => const AssetGenImage('assets/images/png/search_category_sport.png');
-
-  /// File path: assets/images/png/search_category_zadrot.png
-  AssetGenImage get searchCategoryZadrot => const AssetGenImage('assets/images/png/search_category_zadrot.png');
 
   /// File path: assets/images/png/search_feed_text_banner_1.png
   AssetGenImage get searchFeedTextBanner1 => const AssetGenImage('assets/images/png/search_feed_text_banner_1.png');
@@ -785,8 +674,8 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/star_2.png
   AssetGenImage get star2 => const AssetGenImage('assets/images/png/star_2.png');
 
-  /// File path: assets/images/png/surprise-emoji.png
-  AssetGenImage get surpriseEmoji => const AssetGenImage('assets/images/png/surprise-emoji.png');
+  /// File path: assets/images/png/story.png
+  AssetGenImage get story => const AssetGenImage('assets/images/png/story.png');
 
   /// File path: assets/images/png/three-levels.png
   AssetGenImage get threeLevels => const AssetGenImage('assets/images/png/three-levels.png');
@@ -819,7 +708,9 @@ class $AssetsImagesPngGen {
         baggage,
         bell,
         binoculars,
+        blackWhite,
         booking,
+        calendarWatch,
         checkIn,
         chipsSelect,
         choosePlanOld,
@@ -830,13 +721,15 @@ class $AssetsImagesPngGen {
         coin,
         companions,
         company,
+        createName,
         dart,
         discount,
         doctor,
         donations,
+        dragCard,
         events,
+        favoritePlace,
         feedback,
-        female,
         filtering,
         fintech,
         fire,
@@ -852,14 +745,22 @@ class $AssetsImagesPngGen {
         it,
         icecream,
         indexFingerHands,
+        influencer,
         internetBusiness,
         key,
+        leto1,
+        leto2,
+        leto3,
+        leto4,
+        leto5,
+        leto7,
+        leto82,
+        lETOLogo,
         laptopWithChart,
         lifebuoy,
         lightSnowfall,
         likeDislike,
         likeHands,
-        male,
         mango,
         map,
         money,
@@ -869,30 +770,39 @@ class $AssetsImagesPngGen {
         nYDecor1,
         networking,
         noPhoto,
+        notif,
         okHands,
-        otherGender,
+        orderStack,
         outstanding,
+        pROLabel,
         pieChart,
         pixelatedSunglassesEmoji,
         placeEvents,
+        pointGift,
         pointsReputation,
         porthole,
         preferences,
+        presale,
         pressNiche,
         pressScroll,
         puzzle,
         rain,
         rating,
+        reaction,
         realEstate,
         result,
         reward,
         rockNRollHands,
         rocket,
+        scheduler,
         selectNiche,
+        shareStack,
         shuffleAny,
+        shuffleLabel,
         ski,
         smileMood,
         smileyCrazyFaceEmoji,
+        statistics,
         sunClear,
         sunClouds,
         sunWind,
@@ -905,81 +815,34 @@ class $AssetsImagesPngGen {
         trade,
         trainingApparatus,
         training,
+        upsales,
         victoryHands,
         visitFirst,
         windy,
         yoga,
-        angryEmoji,
-        anxietyEmogi,
         atheist,
         atmosphere,
         balloons,
-        buddismFlag,
-        businessMock1,
-        businessMock2,
-        calmnessEmoji,
         catering,
         choosePlan,
-        christianity,
         clothing,
         coach,
         compactRatingCardMock,
         deliveryTruck,
         donat,
+        entertainment,
         eventAvatar,
         fatigueEmoji,
         geoPermit,
         goldenCup,
-        goldenMedal,
         grocery,
         healthPermit,
         help,
-        hindu,
         honest,
-        inviteMock1,
-        inviteMock2,
-        inviteMock3,
-        inviteMock4,
-        inviteMock5,
-        jordanFlag,
-        joyEmoji,
-        judaism,
         justCoin,
-        loveEmoji,
         manicure,
         mapMock,
         mockAdBanner,
-        mockAdBanner1,
-        mockAdBanner10,
-        mockAdBanner11,
-        mockAdBanner12,
-        mockAdBanner13,
-        mockAdBanner14,
-        mockAdBanner15,
-        mockAdBanner16,
-        mockAdBanner17,
-        mockAdBanner18,
-        mockAdBanner19,
-        mockAdBanner2,
-        mockAdBanner20,
-        mockAdBanner21,
-        mockAdBanner23,
-        mockAdBanner24,
-        mockAdBanner25,
-        mockAdBanner26,
-        mockAdBanner27,
-        mockAdBanner28,
-        mockAdBanner29,
-        mockAdBanner3,
-        mockAdBanner30,
-        mockAdBanner31,
-        mockAdBanner32,
-        mockAdBanner4,
-        mockAdBanner5,
-        mockAdBanner6,
-        mockAdBanner7,
-        mockAdBanner8,
-        mockAdBanner9,
         mockAvatar,
         mockSwiperCard,
         mockUserAvatar,
@@ -993,6 +856,7 @@ class $AssetsImagesPngGen {
         onboardingMock2,
         onboardingMock3,
         parcel,
+        paywallSlideVideo,
         pharmacy,
         pharmacyPlus,
         placeSocial1,
@@ -1005,23 +869,6 @@ class $AssetsImagesPngGen {
         profilePost1,
         profileStory1,
         real,
-        sadnessEmoji,
-        searchBusinessClubs,
-        searchBusinessConferences,
-        searchBusinessExhibition,
-        searchBusinessGames,
-        searchBusinessNetworking,
-        searchBusinessSpeech,
-        searchBusinessTraining,
-        searchCategoryAdventure,
-        searchCategoryChill,
-        searchCategoryExtreme,
-        searchCategoryFamily,
-        searchCategoryFood,
-        searchCategoryParty,
-        searchCategorySelfCare,
-        searchCategorySport,
-        searchCategoryZadrot,
         searchFeedTextBanner1,
         searchFeedTextBanner2,
         searchFeedTextBanner3,
@@ -1040,7 +887,7 @@ class $AssetsImagesPngGen {
         spinnerTextBanner2,
         spinnerTextBanner3,
         star2,
-        surpriseEmoji,
+        story,
         threeLevels,
         titledCardBackground1,
         titledCardBackground2,
@@ -1308,6 +1155,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/calendar.svg
   SvgGenImage get calendar => const SvgGenImage('assets/images/svg/calendar.svg');
 
+  /// File path: assets/images/svg/calm.svg
+  SvgGenImage get calm => const SvgGenImage('assets/images/svg/calm.svg');
+
   /// File path: assets/images/svg/camera-plus.svg
   SvgGenImage get cameraPlus => const SvgGenImage('assets/images/svg/camera-plus.svg');
 
@@ -1361,6 +1211,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/cocktail.svg
   SvgGenImage get cocktail => const SvgGenImage('assets/images/svg/cocktail.svg');
+
+  /// File path: assets/images/svg/coffee.svg
+  SvgGenImage get coffee => const SvgGenImage('assets/images/svg/coffee.svg');
 
   /// File path: assets/images/svg/company_layered.svg
   SvgGenImage get companyLayered => const SvgGenImage('assets/images/svg/company_layered.svg');
@@ -1418,6 +1271,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/dollar_outlined.svg
   SvgGenImage get dollarOutlined => const SvgGenImage('assets/images/svg/dollar_outlined.svg');
+
+  /// File path: assets/images/svg/download.svg
+  SvgGenImage get download => const SvgGenImage('assets/images/svg/download.svg');
 
   /// File path: assets/images/svg/dubai-silhouette.svg
   SvgGenImage get dubaiSilhouette => const SvgGenImage('assets/images/svg/dubai-silhouette.svg');
@@ -1593,6 +1449,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/minus.svg
   SvgGenImage get minus => const SvgGenImage('assets/images/svg/minus.svg');
 
+  /// File path: assets/images/svg/moderation.svg
+  SvgGenImage get moderation => const SvgGenImage('assets/images/svg/moderation.svg');
+
   /// File path: assets/images/svg/mood-happy.svg
   SvgGenImage get moodHappy => const SvgGenImage('assets/images/svg/mood-happy.svg');
 
@@ -1686,6 +1545,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/question.svg
   SvgGenImage get question => const SvgGenImage('assets/images/svg/question.svg');
 
+  /// File path: assets/images/svg/rain.svg
+  SvgGenImage get rain => const SvgGenImage('assets/images/svg/rain.svg');
+
   /// File path: assets/images/svg/record.svg
   SvgGenImage get record => const SvgGenImage('assets/images/svg/record.svg');
 
@@ -1756,6 +1618,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/shuffle-banner-semi.svg
   SvgGenImage get shuffleBannerSemi => const SvgGenImage('assets/images/svg/shuffle-banner-semi.svg');
 
+  /// File path: assets/images/svg/shuffle-cut.svg
+  SvgGenImage get shuffleCut => const SvgGenImage('assets/images/svg/shuffle-cut.svg');
+
   /// File path: assets/images/svg/shuffle-fill.svg
   SvgGenImage get shuffleFill => const SvgGenImage('assets/images/svg/shuffle-fill.svg');
 
@@ -1819,6 +1684,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/sunglasses.svg
   SvgGenImage get sunglasses => const SvgGenImage('assets/images/svg/sunglasses.svg');
 
+  /// File path: assets/images/svg/sunny.svg
+  SvgGenImage get sunny => const SvgGenImage('assets/images/svg/sunny.svg');
+
   /// File path: assets/images/svg/swim.svg
   SvgGenImage get swim => const SvgGenImage('assets/images/svg/swim.svg');
 
@@ -1830,6 +1698,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/taxi.svg
   SvgGenImage get taxi => const SvgGenImage('assets/images/svg/taxi.svg');
+
+  /// File path: assets/images/svg/teapot.svg
+  SvgGenImage get teapot => const SvgGenImage('assets/images/svg/teapot.svg');
 
   /// File path: assets/images/svg/thumb-up.svg
   SvgGenImage get thumbUp => const SvgGenImage('assets/images/svg/thumb-up.svg');
@@ -1912,6 +1783,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/white_star_transparent_center.svg
   SvgGenImage get whiteStarTransparentCenter =>
       const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
+
+  /// File path: assets/images/svg/windy.svg
+  SvgGenImage get windy => const SvgGenImage('assets/images/svg/windy.svg');
 
   /// File path: assets/images/svg/x.svg
   SvgGenImage get x => const SvgGenImage('assets/images/svg/x.svg');
@@ -2002,6 +1876,7 @@ class $AssetsImagesSvgGen {
         building,
         businessman,
         calendar,
+        calm,
         cameraPlus,
         check,
         checkCircle,
@@ -2020,6 +1895,7 @@ class $AssetsImagesSvgGen {
         cloudOff,
         club,
         cocktail,
+        coffee,
         companyLayered,
         conferences,
         connectionFill,
@@ -2039,6 +1915,7 @@ class $AssetsImagesSvgGen {
         dollar,
         dollarBlackOutlined,
         dollarOutlined,
+        download,
         dubaiSilhouette,
         emptyRadio,
         exclamation,
@@ -2097,6 +1974,7 @@ class $AssetsImagesSvgGen {
         message,
         minimize,
         minus,
+        moderation,
         moodHappy,
         moon,
         moreVert,
@@ -2128,6 +2006,7 @@ class $AssetsImagesSvgGen {
         profileOutline,
         profilePlus,
         question,
+        rain,
         record,
         refresh,
         restaurant,
@@ -2151,6 +2030,7 @@ class $AssetsImagesSvgGen {
         share,
         shiffleBannerGradient,
         shuffleBannerSemi,
+        shuffleCut,
         shuffleFill,
         shuffleOutline,
         shuffleWhite,
@@ -2172,10 +2052,12 @@ class $AssetsImagesSvgGen {
         sufle,
         sun,
         sunglasses,
+        sunny,
         swim,
         swimming,
         table,
         taxi,
+        teapot,
         thumbUp,
         thumbsUpReversed,
         tiger,
@@ -2203,6 +2085,7 @@ class $AssetsImagesSvgGen {
         waterpool,
         whiteStar,
         whiteStarTransparentCenter,
+        windy,
         x
       ];
 }
@@ -2215,6 +2098,9 @@ class $AssetsImagesPngAvatarsGen {
 
   /// File path: assets/images/png/avatars/Avatar-10.png
   AssetGenImage get avatar10 => const AssetGenImage('assets/images/png/avatars/Avatar-10.png');
+
+  /// File path: assets/images/png/avatars/Avatar-13.png
+  AssetGenImage get avatar13 => const AssetGenImage('assets/images/png/avatars/Avatar-13.png');
 
   /// File path: assets/images/png/avatars/Avatar-2.png
   AssetGenImage get avatar2 => const AssetGenImage('assets/images/png/avatars/Avatar-2.png');
@@ -2240,9 +2126,28 @@ class $AssetsImagesPngAvatarsGen {
   /// File path: assets/images/png/avatars/Avatar.png
   AssetGenImage get avatar => const AssetGenImage('assets/images/png/avatars/Avatar.png');
 
+  /// File path: assets/images/png/avatars/Rectangle 24-1.jpg
+  AssetGenImage get rectangle241 => const AssetGenImage('assets/images/png/avatars/Rectangle 24-1.jpg');
+
+  /// File path: assets/images/png/avatars/Rectangle 24.jpg
+  AssetGenImage get rectangle24 => const AssetGenImage('assets/images/png/avatars/Rectangle 24.jpg');
+
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [avatar1, avatar10, avatar2, avatar3, avatar4, avatar6, avatar7, avatar8, avatar9, avatar];
+  List<AssetGenImage> get values => [
+        avatar1,
+        avatar10,
+        avatar13,
+        avatar2,
+        avatar3,
+        avatar4,
+        avatar6,
+        avatar7,
+        avatar8,
+        avatar9,
+        avatar,
+        rectangle241,
+        rectangle24
+      ];
 }
 
 class $AssetsImagesPngPreferenceQuestionsGen {

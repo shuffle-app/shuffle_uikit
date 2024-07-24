@@ -20,6 +20,21 @@ class DialogTestingPage extends StatelessWidget {
                 SpacingFoundation.verticalSpace16,
                 context.button(
                   data: BaseUiKitButtonData(
+                    onPressed: () {
+                      context.push(
+                        UiKitModerationVideoPlayer(
+                          videoUrl:
+                              'https://shuffle-development.s3.amazonaws.com/reactions/97f94f56-b929-4045-8bfb-88fa5fa158a1.mp4',
+                              // 'https://shuffle-development.s3.amazonaws.com/reactions/260215b2-6d56-4353-bd49-d0badd292768.mp4',
+                        ),
+                      );
+                    },
+                    text: 'show video player',
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                context.button(
+                  data: BaseUiKitButtonData(
                     text: 'Show location suggestion dialog',
                     onPressed: () => showDialog(
                       context: context,
@@ -56,6 +71,55 @@ class DialogTestingPage extends StatelessWidget {
                           log('from location name loaded $value',
                               name: 'DialogTestingPage');
                         },
+                      ),
+                    ),
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
+                  text: 'Video-reactions dialog',
+                  onPressed: () => showUiKitAlertDialog(
+                    context,
+                    AlertDialogData(
+                      customBackgroundColor: colorScheme?.surface3,
+                      defaultButtonText: '',
+                      title: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  context.pop();
+                                },
+                                child: ImageWidget(
+                                  iconData: ShuffleUiKitIcons.x,
+                                  color: colorScheme?.inversePrimary,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  S.of(context).VideoReactions,
+                                  style: context
+                                      .uiKitTheme?.regularTextTheme.titleLarge,
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      content: UiKitVideoReactionsModeration(
+                        videoUrl: '',
+                        feedbackInfo: UiKitFeedbackInfo(
+                          onSubmit: (expandThreadIsOpen) {},
+                          dateTime: DateTime.now(),
+                          removeFunction: () {},
+                          userName: 'Ryan Gosling',
+                        ),
                       ),
                     ),
                   ),
@@ -237,6 +301,109 @@ class DialogTestingPage extends StatelessWidget {
                       }),
                 ),
                 SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
+                  text: 'UiKit Property Management Icons',
+                  onPressed: () => showUiKitAlertDialog(
+                    context,
+                    AlertDialogData(
+                      defaultButtonText: '',
+                      title: Text(
+                        S.of(context).Icons,
+                        style: textTheme?.title1.copyWith(color: Colors.black),
+                      ),
+                      content: UiKitPropertyIcons(
+                        textFieldHintText: S.of(context).Weather,
+                        onPressed: () {},
+                        listIconPath: List.generate(
+                          35,
+                          (index) => index.isEven
+                              ? GraphicsFoundation
+                                  .instance.svg.analyticsFill.path
+                              : GraphicsFoundation.instance.svg.water.path,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
+                  text: 'UiKit Property Management Related Properties',
+                  onPressed: () => showUiKitAlertDialog(
+                    context,
+                    AlertDialogData(
+                      defaultButtonText: '',
+                      title: Text(
+                        S.of(context).RelatedProperties,
+                        style: textTheme?.title1.copyWith(color: Colors.black),
+                      ),
+                      content: UiKitPropertyRelatedProperties(
+                        textEditingController: TextEditingController(),
+                        listRelatedPropertiesItem: [
+                          RelatedPropertiesItemUiModel(
+                            iconData: ShuffleUiKitIcons.active,
+                            propertiesList: [
+                              'Restaurants',
+                              'Cafe',
+                              'Coffee',
+                              'shops',
+                            ],
+                            title: 'Air conditioners on the terrace',
+                          ),
+                          RelatedPropertiesItemUiModel(
+                            iconData: ShuffleUiKitIcons.active,
+                            propertiesList: [
+                              'Swimming pools',
+                            ],
+                            title: 'Cooled',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                OrdinaryButton(
+                  text: 'UiKit Recently Added icons',
+                  onPressed: () => showUiKitAlertDialog(
+                    context,
+                    AlertDialogData(
+                      defaultButtonText: '',
+                      title: Row(
+                        children: [
+                          Flexible(
+                            child: Text(
+                              S.of(context).RecentlyAdded,
+                              style: textTheme?.title1
+                                  .copyWith(color: Colors.black),
+                            ),
+                          ),
+                          Text(
+                            S.of(context).Date,
+                            style: textTheme?.labelLarge.copyWith(
+                              color: const Color(0xFF97999D),
+                            ),
+                          ),
+                          context.boxIconButton(
+                            data: BaseUiKitButtonData(
+                              onPressed: () {},
+                              backgroundColor: Colors.transparent,
+                              iconInfo: BaseUiKitButtonIconData(
+                                iconData: ShuffleUiKitIcons.arrowdown,
+                                color: colorScheme?.darkNeutral900,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                      content: UiKitPropertyRecentlyAdded(
+                        listIconPath: List.generate(
+                          35,
+                          (index) => GraphicsFoundation.instance.svg.water.path,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),

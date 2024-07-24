@@ -10,14 +10,14 @@ class OrdinaryButtonWithIcon extends StatelessWidget implements ButtonFactory {
   final ButtonFit? fit;
 
   const OrdinaryButtonWithIcon({
-    Key? key,
+    super.key,
     this.onPressed,
     this.loading,
     this.fit,
     this.icon,
     this.iconInfo,
     this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -9,12 +9,11 @@ class SmallBlurredButtonWithIcon extends StatelessWidget implements ButtonFactor
   final VoidCallback? onPressed;
 
   const SmallBlurredButtonWithIcon({
-    Key? key,
+    super.key,
     required this.icon,
     this.onPressed,
     this.iconInfo,
-  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
-        super(key: key);
+  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided');
 
   @override
   Widget build(BuildContext context) {

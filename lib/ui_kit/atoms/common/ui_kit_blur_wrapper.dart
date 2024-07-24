@@ -12,14 +12,14 @@ class UiKitBlurWrapper extends StatelessWidget {
   final double? childVerticalPadding;
 
   const UiKitBlurWrapper({
-    Key? key,
+    super.key,
     required this.child,
     this.borderRadius,
     this.border,
     this.blurValue,
     this.childHorizontalPadding,
     this.childVerticalPadding,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

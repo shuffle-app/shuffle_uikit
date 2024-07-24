@@ -5,20 +5,17 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
   final Widget? icon;
   final BaseUiKitButtonIconData? iconInfo;
   final VoidCallback? onPressed;
-
-  // final BorderRadius? borderRadius;
   final bool? loading;
   final ButtonFit? fit;
 
   const GradientIconButton({
-    Key? key,
+    super.key,
     required this.icon,
     this.fit,
     this.onPressed,
-    // this.borderRadius,
     this.loading,
     this.iconInfo,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,20 +34,19 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
     );
 
     return InkWell(
-      // borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
       borderRadius: BorderRadiusFoundation.max,
       onTap: enabled && !(loading ?? false) ? onPressed : null,
-      child: Ink(
+      child: DecoratedBox(
         decoration: BoxDecoration(
-            // borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
             gradient: enabled ? GradientFoundation.attentionCard : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
-            shape: BoxShape.circle),
+            shape: BoxShape.circle
+        ),
         child: loading ?? false
             ? const SizedBox()
             : fit == ButtonFit.hugContent
-                ? child
-                : Center(child: child),
+            ? child
+            : Center(child: child),
       ),
     ).loadingWrap(loading ?? false, color: colorScheme?.surface);
   }

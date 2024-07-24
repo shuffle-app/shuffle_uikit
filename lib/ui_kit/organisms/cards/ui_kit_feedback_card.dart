@@ -11,10 +11,16 @@ class UiKitFeedbackCard extends StatelessWidget {
   final String? text;
   final VoidCallback? onLike;
   final VoidCallback? onPressed;
+  final bool? isHelpful;
+  final int? maxLines;
+  final UserTileType? userTileType;
+  final Color? customBackgroundColor;
+  final Size? avatarSize;
 
   const UiKitFeedbackCard({
     super.key,
     this.title,
+    this.isHelpful,
     this.avatarUrl,
     this.datePosted,
     this.rating,
@@ -23,31 +29,40 @@ class UiKitFeedbackCard extends StatelessWidget {
     this.text,
     this.onLike,
     this.onPressed,
+    this.maxLines,
+    this.userTileType,
+    this.customBackgroundColor, this.avatarSize,
   });
 
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final colorScheme = context.uiKitTheme?.colorScheme;
+    debugPrint('$text is helpful: $isHelpful');
 
     return Material(
-      color: context.uiKitTheme?.colorScheme.surface3,
+      color: customBackgroundColor ?? context.uiKitTheme?.colorScheme.surface3,
       borderRadius: BorderRadiusFoundation.all24,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
         onTap: onPressed,
         child: Ink(
           child: Column(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               UiKitHeaderWithLeading(
                 title: title ?? '',
-                leading: context.userAvatar(
-                  size: UserAvatarSize.x40x40,
-                  type: UserTileType.ordinary,
-                  userName: title ?? '',
-                  imageUrl: avatarUrl,
+                leading: SizedBox(
+                  width: avatarSize?.width,
+                  height: avatarSize?.height,
+                  child: context.userAvatar(
+                    size:  UserAvatarSize.x40x40,
+                    type: userTileType ?? UserTileType.ordinary,
+                    userName: title ?? '',
+                    imageUrl: avatarUrl,
+                  ),
                 ),
                 subtitle: datePosted?.timeAgo ?? '',
                 trailing: rating != null ? UiKitRatingBadge(rating: rating!) : null,
@@ -56,7 +71,7 @@ class UiKitFeedbackCard extends StatelessWidget {
               Text(
                 text ?? '',
                 style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
-                maxLines: 3,
+                maxLines: maxLines ?? 5,
               ),
               SpacingFoundation.verticalSpace12,
               Row(
@@ -73,7 +88,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                     child: ImageWidget(
                       iconData: ShuffleUiKitIcons.like,
                       width: 12.w,
-                      color: ColorsFoundation.darkNeutral900,
+                      color: (isHelpful ?? false) ? colorScheme?.inverseSurface : ColorsFoundation.mutedText,
                     ),
                   ),
                   if (helpfulCount != null) SpacingFoundation.horizontalSpace2,

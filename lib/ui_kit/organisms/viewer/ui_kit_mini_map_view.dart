@@ -7,10 +7,10 @@ class UiKitMiniMapWidget extends StatefulWidget {
   final KnownLocation? initialLocation;
 
   const UiKitMiniMapWidget({
-    Key? key,
+    super.key,
     this.onMapTap,
     this.initialLocation,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitMiniMapWidget> createState() => _UiKitMiniMapWidgetState();

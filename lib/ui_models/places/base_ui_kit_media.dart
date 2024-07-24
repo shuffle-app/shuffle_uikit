@@ -26,10 +26,9 @@ class UiKitMediaPhoto extends BaseUiKitMedia {
 
 class UiKitMediaVideo extends BaseUiKitMedia {
   UiKitMediaVideo({
-    required String link,
+    required super.link,
     String? videoLink,
   }) : super(
-          link: link,
           videoLink: videoLink ?? link,
           type: UiKitMediaType.video,
         );
@@ -61,6 +60,31 @@ class UiKitTag {
     this.textColor,
     bool updateTitle = true,
   }) : title = updateTitle ? title.replaceAll('-', ' ') : title;
+
+  UiKitTag copyWith({
+    String? title,
+    dynamic icon,
+    int? id,
+    bool? unique,
+    Color? iconColor,
+    Color? textColor,
+  }) =>
+      UiKitTag(
+        title: title ?? this.title,
+        icon: icon ?? this.icon,
+        unique: unique ?? this.unique,
+        id: id ?? this.id,
+        iconColor: iconColor ?? this.iconColor,
+        textColor: textColor ?? this.textColor,
+      );
+
+  @override
+  bool operator ==(Object other) {
+    return other is UiKitTag && other.title == title;
+  }
+
+  @override
+  int get hashCode => title.hashCode;
 }
 
 enum UiKitMediaType { image, video }

@@ -267,6 +267,17 @@ class GradientFoundation {
     transform: GradientRotation(pi / 6),
   );
 
+  static final defaultLinearGradientWithOpacity02 = LinearGradient(
+    colors: [
+      ColorsFoundation.pink.withOpacity(0.2),
+      ColorsFoundation.yellow.withOpacity(0.2),
+      ColorsFoundation.error.withOpacity(0.2),
+    ],
+    begin: Alignment.bottomRight,
+    end: Alignment.topLeft,
+    transform: const GradientRotation(pi / 7),
+  );
+
   static const fameLinearGradient = LinearGradient(
     colors: [
       ColorsFoundation.pink,
@@ -339,6 +350,21 @@ class GradientFoundation {
       0,
       0.203,
       1,
+    ],
+  );
+
+  static const sendMessageButtonRadialGradient = RadialGradient(
+    colors: [
+      ColorsFoundation.orange,
+      ColorsFoundation.yellow,
+      ColorsFoundation.pink,
+    ],
+    radius: 1,
+    center: Alignment(-1, 0),
+    stops: [
+      0.203,
+      0.5,
+      0.79,
     ],
   );
 
@@ -576,7 +602,7 @@ class GradientFoundation {
       0.4873,
       0.8003,
     ],
-    transform: GradientRotation((-3 * pi) / 4),
+    transform: const GradientRotation((-3 * pi) / 4),
   );
 
   GradientFoundation._();

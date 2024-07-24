@@ -14,9 +14,11 @@ class ProfileCard extends StatelessWidget {
   final List<String>? interests;
   final List<String>? matchingInterests;
   final List<UiKitStats>? profileStats;
+  final List<Widget>? profileWidgets;
   final Widget? badge;
   final ProfileCardType? profileType;
   final List<UiKitTag>? tags;
+  final VoidCallback? onCustomDonate;
   final VoidCallback? onViewAllAchievements;
   final List<UiKitAchievementsModel> achievements;
   final UserTileType userTileType;
@@ -26,9 +28,10 @@ class ProfileCard extends StatelessWidget {
   final Widget? profileCardBody;
 
   const ProfileCard({
-    Key? key,
+    super.key,
     this.nickname,
     this.profileStats,
+    this.profileWidgets,
     this.description,
     this.avatarUrl,
     this.name,
@@ -37,6 +40,7 @@ class ProfileCard extends StatelessWidget {
     this.followers,
     this.onFollow,
     this.onDonate,
+    this.onCustomDonate,
     this.showSupportShuffle = false,
     this.interests,
     this.matchingInterests,
@@ -48,7 +52,7 @@ class ProfileCard extends StatelessWidget {
     this.socialLinks,
     this.speciality,
     this.profileCardBody,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +71,10 @@ class ProfileCard extends StatelessWidget {
             profileType: profileType,
             tags: tags,
             profileStats: profileStats,
+            profileWidgets: profileWidgets,
             showSupportShuffle: showSupportShuffle,
             onDonate: onDonate,
+            onCustomDonate: onCustomDonate,
             onViewAllAchievements: onViewAllAchievements,
             achievements: achievements,
             socialLinks: socialLinks,

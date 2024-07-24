@@ -5,7 +5,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitInputFieldNoFill extends StatefulWidget
     implements BaseUiKitInputField {
   const UiKitInputFieldNoFill({
-    Key? key,
+    super.key,
     required this.controller,
     this.errorText,
     this.inputFormatters,
@@ -30,9 +30,10 @@ class UiKitInputFieldNoFill extends StatefulWidget
     this.obscureText = false,
     this.maxLines = 1,
     this.minLines,
+    this.autovalidateMode,
     this.readOnly = false,
     required this.label,
-  }) : super(key: key);
+  });
 
   final String label;
   final TextInputType? keyboardType;
@@ -65,6 +66,7 @@ class UiKitInputFieldNoFill extends StatefulWidget
   final bool readOnly;
   final int maxLines;
   final int? minLines;
+  final AutovalidateMode? autovalidateMode;
   @override
   final bool obscureText;
 
@@ -126,6 +128,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         minLines: widget.minLines,
         enabled: widget.enabled,
         autofocus: widget.autofocus,
+        autovalidateMode: widget.autovalidateMode,
         keyboardType: widget.keyboardType,
         controller: widget.enabled ? widget.controller : null,
         style: inputTextStyle,
@@ -143,10 +146,10 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
           contentPadding: widget.contentPadding,
           floatingLabelBehavior: FloatingLabelBehavior.always,
           floatingLabelStyle:
-              MaterialStateTextStyle.resolveWith((states) => labelStyle!),
+              WidgetStateTextStyle.resolveWith((states) => labelStyle!),
           floatingLabelAlignment: FloatingLabelAlignment.start,
           labelStyle:
-              MaterialStateTextStyle.resolveWith((states) => labelStyle!),
+              WidgetStateTextStyle.resolveWith((states) => labelStyle!),
           hintText: widget.hintText,
           prefixStyle: inputTextStyle,
           prefixText: widget.prefixText,

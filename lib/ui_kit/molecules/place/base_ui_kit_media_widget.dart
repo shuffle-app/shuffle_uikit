@@ -3,14 +3,15 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class BaseUiKitMediaWidget extends StatelessWidget {
   const BaseUiKitMediaWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   factory BaseUiKitMediaWidget.image({
     required BaseUiKitMedia media,
     double? width,
+    PlaceWeatherType? weatherType,
   }) {
-    return UiKitMediaImageWidget(media: media,width:width);
+    return UiKitMediaImageWidget(media: media,width:width,weatherType: weatherType,);
   }
 
   factory BaseUiKitMediaWidget.video({

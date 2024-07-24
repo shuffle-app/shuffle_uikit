@@ -70,7 +70,8 @@ Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context,
                   ),
                   const Spacer(),
                   context.button(
-                    data: BaseUiKitButtonData(text: S.of(context).Cancel, onPressed: () => context.pop()),
+                    data: BaseUiKitButtonData(
+                        text: S.of(context).Cancel, onPressed: () => context.pop<DateTimeRange?>(result: initialDateRange)),
                     isTextButton: true,
                   ),
                   SpacingFoundation.horizontalSpace4,
@@ -743,7 +744,6 @@ class _MonthItemState extends State<_MonthItem> {
 
   Widget _buildDayItem(BuildContext context, DateTime dayToBuild, int firstDayOffset, int daysInMonth) {
     final theme = context.uiKitTheme;
-    final colorScheme = theme?.colorScheme;
     final textTheme = theme?.regularTextTheme;
     final MaterialLocalizations localizations = MaterialLocalizations.of(context);
     final DatePickerThemeData datePickerTheme = DatePickerTheme.of(context);
@@ -770,8 +770,7 @@ class _MonthItemState extends State<_MonthItem> {
       return getProperty(datePickerTheme) ?? getProperty(defaults);
     }
 
-    T? resolve<T>(
-        MaterialStateProperty<T>? Function(DatePickerThemeData? theme) getProperty, Set<MaterialState> states) {
+    T? resolve<T>(WidgetStateProperty<T>? Function(DatePickerThemeData? theme) getProperty, Set<WidgetState> states) {
       return effectiveValue(
         (DatePickerThemeData? theme) {
           return getProperty(theme)?.resolve(states);
@@ -779,17 +778,17 @@ class _MonthItemState extends State<_MonthItem> {
       );
     }
 
-    final Set<MaterialState> states = <MaterialState>{
-      if (isDisabled) MaterialState.disabled,
-      if (isSelectedDayStart || isSelectedDayEnd) MaterialState.selected,
+    final Set<WidgetState> states = <WidgetState>{
+      if (isDisabled) WidgetState.disabled,
+      if (isSelectedDayStart || isSelectedDayEnd) WidgetState.selected,
     };
 
     // final Color? dayForegroundColor =
     //     resolve<Color?>((DatePickerThemeData? theme) => theme?.dayForegroundColor, states);
     final Color? dayBackgroundColor =
         resolve<Color?>((DatePickerThemeData? theme) => theme?.dayBackgroundColor, states);
-    final MaterialStateProperty<Color?> dayOverlayColor =
-        MaterialStateProperty.resolveWith<Color?>((Set<MaterialState> states) => effectiveValue(
+    final WidgetStateProperty<Color?> dayOverlayColor =
+        WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) => effectiveValue(
               (DatePickerThemeData? theme) => isInRange
                   ? theme?.rangeSelectionOverlayColor?.resolve(states)
                   : theme?.dayOverlayColor?.resolve(states),
@@ -831,7 +830,7 @@ class _MonthItemState extends State<_MonthItem> {
       itemStyle = textTheme?.caption1;
       // itemStyle = textTheme?.caption1.apply(color: colorScheme.primary);
       decoration = BoxDecoration(
-        border: Border.all(color: ColorsFoundation.deepPurple ?? Colors.transparent),
+        border: Border.all(color: ColorsFoundation.deepPurple),
         // border: Border.all(color: colorScheme.primary),
         shape: BoxShape.circle,
       );
@@ -878,7 +877,7 @@ class _MonthItemState extends State<_MonthItem> {
         focusNode: _dayFocusNodes[day - 1],
         onTap: () => widget.onChanged(dayToBuild),
         radius: _monthItemRowHeight / 2 + 4,
-        statesController: MaterialStatesController(states),
+        statesController: WidgetStatesController(states),
         overlayColor: dayOverlayColor,
         onFocusChange: _dayFocusChanged,
         child: dayWidget,

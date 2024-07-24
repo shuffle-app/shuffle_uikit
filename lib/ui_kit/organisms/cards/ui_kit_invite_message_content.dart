@@ -7,16 +7,19 @@ class UiKitInviteMessageContent extends StatelessWidget {
     required this.username,
     required this.placeName,
     required this.placeImagePath,
-    required this.invitedPeopleAvatarPaths,
+    required this.invitedUsersData,
     required this.userType,
     required this.onPlaceTap,
-    this.onInvitePeopleTap,
     required this.tags,
+    required this.hasAcceptedInvite,
+    this.onInvitePeopleTap,
     this.canDenyInvitation = false,
+    this.canAddMorePeople = false,
     this.showGang = false,
     this.brightness = Brightness.light,
     this.onAcceptTap,
     this.onDenyTap,
+    this.customMessageData,
   });
 
   final String username;
@@ -24,131 +27,210 @@ class UiKitInviteMessageContent extends StatelessWidget {
   final String placeName;
   final String placeImagePath;
   final List<UiKitTag> tags;
-  final List<String?> invitedPeopleAvatarPaths;
+  final List<InviteMessageUsersData> invitedUsersData;
   final UserTileType userType;
   final bool canDenyInvitation;
+  final bool canAddMorePeople;
   final bool showGang;
-
+  final bool hasAcceptedInvite;
   final VoidCallback onPlaceTap;
   final VoidCallback? onInvitePeopleTap;
   final VoidCallback? onAcceptTap;
   final VoidCallback? onDenyTap;
+  final InviteCustomMessageData? customMessageData;
 
   bool get isDark => brightness == Brightness.dark;
 
-  List<String?> _sortAvatars() {
-    final sortedAvatars = invitedPeopleAvatarPaths.where((avatar) => avatar != null).toList();
-
-    return sortedAvatars;
-  }
-
   @override
   Widget build(BuildContext context) {
-    final sortedAvatars = _sortAvatars();
     final theme = context.uiKitTheme;
-    final avatarWidth = 0.1375.sw;
+    UiKitColorScheme colorScheme = UiKitColorScheme.dark();
+    if (!isDark) colorScheme = UiKitColorScheme.light();
+
+    final avatarWidth = 0.125.sw;
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Row(
-          children: [
-            if (sortedAvatars.length >= 3 && showGang)
-              Expanded(
-                child: Stack(
+        SizedBox(
+          height: showGang ? 0.125.sw : null,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              if (showGang)
+                Stack(
+                  clipBehavior: Clip.none,
                   children: [
-                    BorderedUserCircleAvatar(
-                      imageUrl: sortedAvatars.first,
-                      size: avatarWidth,
-                    ),
-                    Positioned(
-                      left: EdgeInsetsFoundation.horizontal32 * 0.7.w,
-                      child: BorderedUserCircleAvatar(
-                        size: avatarWidth,
-                        imageUrl: sortedAvatars[1],
+                    if (invitedUsersData.length <= 3)
+                      SizedBox(
+                        width: ((invitedUsersData.length + 1) * EdgeInsetsFoundation.horizontal24) +
+                            EdgeInsetsFoundation.horizontal16,
+                        height: 0.125.sw,
                       ),
-                    ),
-                    Positioned(
-                      left: EdgeInsetsFoundation.horizontal32 * 1.5.w,
-                      child: BorderedUserCircleAvatar(
-                        size: avatarWidth,
-                        imageUrl: sortedAvatars[2],
+                    if (invitedUsersData.length <= 3)
+                      ...invitedUsersData.map(
+                        (e) {
+                          final index = invitedUsersData.indexOf(e);
+                          return Positioned(
+                            left: EdgeInsetsFoundation.horizontal24 * index, //EdgeInsetsFoundation.horizontal32,
+                            child: context.userAvatar(
+                              size: UserAvatarSize.x40x40,
+                              type: invitedUsersData.elementAt(index).userType,
+                              imageUrl: invitedUsersData.elementAt(index).avatarPath,
+                              userName: invitedUsersData.elementAt(index).name,
+                            ),
+                          );
+                        },
                       ),
-                    ),
-                    if (invitedPeopleAvatarPaths.length - 3 > 0)
+                    if (invitedUsersData.length > 3) ...[
+                      SizedBox(
+                        width: (3 * EdgeInsetsFoundation.horizontal24) + avatarWidth + EdgeInsetsFoundation.horizontal4,
+                        height: 0.125.sw,
+                      ),
+                      ...invitedUsersData.sublist(0, 3).map(
+                        (e) {
+                          final index = invitedUsersData.indexOf(e);
+                          return Positioned(
+                            left: EdgeInsetsFoundation.horizontal24 * index, //EdgeInsetsFoundation.horizontal32,
+                            child: context.userAvatar(
+                              size: UserAvatarSize.x40x40,
+                              type: invitedUsersData.elementAt(index).userType,
+                              imageUrl: invitedUsersData.elementAt(index).avatarPath,
+                              userName: invitedUsersData.elementAt(index).name,
+                            ),
+                          );
+                        },
+                      ),
                       Positioned(
-                        left: EdgeInsetsFoundation.horizontal32 * 2.2.w,
-                        child: CircleAvatar(
-                          radius: avatarWidth / 2,
-                          backgroundColor: isDark ? theme?.colorScheme.surface4 : theme?.colorScheme.darkNeutral100,
-                          child: Text(
-                            '+${invitedPeopleAvatarPaths.length - 3}',
-                            style: theme?.regularTextTheme.caption1.copyWith(
-                              color: theme.colorScheme.darkNeutral900,
+                        left: 3 * EdgeInsetsFoundation.horizontal24,
+                        child: Container(
+                          width: 0.125.sw,
+                          height: 0.125.sw,
+                          clipBehavior: Clip.hardEdge,
+                          decoration: BoxDecoration(
+                            color: colorScheme.darkNeutral100,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Center(
+                            child: Text(
+                              '+${invitedUsersData.length - 3}',
+                              style: theme?.regularTextTheme.caption1.copyWith(
+                                color: ColorsFoundation.mutedText,
+                              ),
                             ),
                           ),
                         ),
                       ),
+                    ],
                   ],
                 ),
-              ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
+              if (customMessageData != null)
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
-                    Text(
-                      username,
-                      style: theme?.boldTextTheme.caption1Bold.copyWith(color: isDark ? Colors.white : Colors.black),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text(
+                          customMessageData!.senderUserName,
+                          style: theme?.boldTextTheme.caption1Bold.copyWith(
+                            color: colorScheme.inverseSurface,
+                          ),
+                        ),
+                        SpacingFoundation.horizontalSpace4,
+                        if (customMessageData!.senderUserType == UserTileType.influencer) InfluencerAccountMark(),
+                        if (customMessageData!.senderUserType == UserTileType.premium)
+                          PremiumAccountMark(color: colorScheme.inverseSurface),
+                        if (customMessageData!.senderUserType == UserTileType.pro) ProAccountMark(),
+                        if (customMessageData!.receiverUserType != UserTileType.ordinary)
+                          SpacingFoundation.horizontalSpace4,
+                        Text(
+                          '${S.current.InvitesVerb.toLowerCase()} ',
+                          style: theme?.boldTextTheme.caption1Medium.copyWith(
+                            color: colorScheme.inverseSurface,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
                     ),
-                    SpacingFoundation.horizontalSpace12,
-                    if (userType == UserTileType.influencer)
-                      GradientableWidget(
-                        gradient: GradientFoundation.defaultLinearGradient,
-                        child: ImageWidget(
-                          iconData: ShuffleUiKitIcons.star2,
-                          color: context.uiKitTheme?.colorScheme.inversePrimary,
-                          height: 16.w,
+                    Row(
+                      children: [
+                        Text(
+                          customMessageData!.receiverUserName,
+                          style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
                         ),
-                      ),
-                    if (userType == UserTileType.premium)
-                      ImageWidget(
-                        iconData: ShuffleUiKitIcons.star2,
-                        color: context.uiKitTheme?.colorScheme.inversePrimary,
-                        height: 16.w,
-                      ),
-                    if (userType == UserTileType.pro)
-                      GradientableWidget(
-                        gradient: GradientFoundation.defaultLinearGradient,
-                        child: Text(
-                          'pro',
-                          style: theme?.boldTextTheme.caption1Bold.copyWith(color: Colors.white),
+                        SpacingFoundation.horizontalSpace4,
+                        if (customMessageData!.receiverUserType == UserTileType.influencer) InfluencerAccountMark(),
+                        if (customMessageData!.receiverUserType == UserTileType.premium)
+                          PremiumAccountMark(color: colorScheme.inverseSurface),
+                        if (customMessageData!.receiverUserType == UserTileType.pro) ProAccountMark(),
+                        if (customMessageData!.receiverUserType != UserTileType.ordinary)
+                          SpacingFoundation.horizontalSpace4,
+                        Text(
+                          S.current.InvitesTo.toLowerCase(),
+                          style: theme?.boldTextTheme.caption1Medium.copyWith(
+                            color: colorScheme.inverseSurface,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
-                      ),
+                      ],
+                    ),
                   ],
                 ),
-                Text(
-                  showGang
-                      ? S.of(context).InvitesNPeopleTo(invitedPeopleAvatarPaths.length).toLowerCase()
-                      : S.of(context).InvitesYouTo.toLowerCase(),
-                  style: theme?.boldTextTheme.caption1Medium.copyWith(
-                    color: isDark ? Colors.white : Colors.black,
-                  ),
+              if (customMessageData == null)
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Text(
+                          username,
+                          style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
+                        ),
+                        SpacingFoundation.horizontalSpace12,
+                        if (userType == UserTileType.influencer) InfluencerAccountMark(),
+                        if (userType == UserTileType.premium) PremiumAccountMark(color: colorScheme.inverseSurface),
+                        if (userType == UserTileType.pro) ProAccountMark(),
+                      ],
+                    ),
+                    Flexible(
+                      child: Text(
+                        showGang
+                            ? S.of(context).InvitesNPeopleTo(invitedUsersData.length).toLowerCase()
+                            : S.of(context).InvitesYouTo.toLowerCase(),
+                        style: theme?.boldTextTheme.caption1Medium.copyWith(
+                          color: colorScheme.inverseSurface,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
         SpacingFoundation.verticalSpace12,
         UiKitCardWrapper(
           borderRadius: BorderRadiusFoundation.max,
-          color: isDark ? theme?.colorScheme.surface4 : theme?.colorScheme.darkNeutral100,
+          color: colorScheme.surface1,
+          height: 0.125.sw + (EdgeInsetsFoundation.all2 * 2),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              BorderedUserCircleAvatar(
-                size: avatarWidth + 5.w,
-                imageUrl: placeImagePath,
+              ClipOval(
+                child: ImageWidget(
+                  link: placeImagePath,
+                  width: 0.125.sw,
+                  fit: BoxFit.cover,
+                ),
               ),
               SpacingFoundation.horizontalSpace12,
               Expanded(
@@ -160,11 +242,11 @@ class UiKitInviteMessageContent extends StatelessWidget {
                       placeName,
                       style: theme?.boldTextTheme.caption1Bold.copyWith(
                         overflow: TextOverflow.ellipsis,
-                        color: isDark ? Colors.white : Colors.black,
+                        color: colorScheme.inverseSurface,
                       ),
                     ),
                     SizedBox(
-                      height: 20.h,
+                      height: 14.h,
                       width: 170.w,
                       child: ListView.separated(
                         padding: EdgeInsets.zero,
@@ -177,63 +259,97 @@ class UiKitInviteMessageContent extends StatelessWidget {
                   ],
                 ),
               ),
-              context
-                  .smallOutlinedButton(
-                    blurred: false,
-
-                    data: BaseUiKitButtonData(
-                      backgroundColor: Colors.black,
-                      onPressed: onPlaceTap,
-                      iconInfo: BaseUiKitButtonIconData(
-                        iconData: ShuffleUiKitIcons.chevronright,
-                        color: Colors.black,
-                      ),
-                    ),
-                  )
-                  .paddingAll(EdgeInsetsFoundation.all2),
+              context.midSizeOutlinedButton(
+                blurred: false,
+                data: BaseUiKitButtonData(
+                  borderColor: colorScheme.inverseSurface,
+                  backgroundColor: colorScheme.surface1,
+                  onPressed: onPlaceTap,
+                  iconInfo: BaseUiKitButtonIconData(
+                    iconData: ShuffleUiKitIcons.chevronright,
+                    color: colorScheme.inverseSurface,
+                  ),
+                ),
+              ),
             ],
-          ),
+          ).paddingAll(EdgeInsetsFoundation.all2),
         ),
-        SpacingFoundation.verticalSpace12,
-        if (canDenyInvitation)
+        if (hasAcceptedInvite)
+          GradientableWidget(
+            gradient: GradientFoundation.badgeIcon,
+            child: Text(
+              S.current.Connected,
+              style: theme?.boldTextTheme.caption1Bold.copyWith(
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ).paddingOnly(top: EdgeInsetsFoundation.vertical12),
+        if (canDenyInvitation && !hasAcceptedInvite)
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [
               Expanded(
                 flex: 4,
-                child: context.smallGradientButton(
+                child: context.midSizeGradientButton(
                   data: BaseUiKitButtonData(
                     onPressed: onAcceptTap,
                     text: S.of(context).Go.toUpperCase(),
-                    fit: ButtonFit.fitWidth,
                   ),
                 ),
               ),
               SpacingFoundation.horizontalSpace12,
               Expanded(
                 flex: 6,
-                child: context.smallOutlinedButton(
-
+                child: context.midSizeOutlinedButton(
                   blurred: false,
                   data: BaseUiKitButtonData(
-                    backgroundColor: isDark ? Colors.white : Colors.black,
+                    backgroundColor: colorScheme.surface,
+                    borderColor: colorScheme.inverseSurface,
                     onPressed: onDenyTap,
                     text: S.of(context).NotNow.toUpperCase(),
-                    fit: ButtonFit.fitWidth,
                   ),
                 ),
               ),
             ],
-          ),
-        if (!canDenyInvitation)
-          context.gradientButton(
-            data: BaseUiKitButtonData(
-              onPressed: onInvitePeopleTap,
-              text: S.of(context).InviteMore.toUpperCase(),
-              fit: ButtonFit.fitWidth,
-            ),
-          ),
+          ).paddingOnly(top: EdgeInsetsFoundation.vertical12),
+        if (canAddMorePeople && !hasAcceptedInvite)
+          context
+              .gradientButton(
+                data: BaseUiKitButtonData(
+                  onPressed: onInvitePeopleTap,
+                  text: S.of(context).InviteMore.toUpperCase(),
+                  fit: ButtonFit.fitWidth,
+                ),
+              )
+              .paddingOnly(top: EdgeInsetsFoundation.vertical12),
       ],
     );
   }
+}
+
+class InviteCustomMessageData {
+  final String senderUserName;
+  final String receiverUserName;
+  final UserTileType senderUserType;
+  final UserTileType receiverUserType;
+
+  const InviteCustomMessageData({
+    required this.senderUserName,
+    required this.receiverUserName,
+    required this.senderUserType,
+    required this.receiverUserType,
+  });
+}
+
+class InviteMessageUsersData {
+  final String avatarPath;
+  final String name;
+  final UserTileType userType;
+
+  const InviteMessageUsersData({
+    required this.avatarPath,
+    required this.userType,
+    required this.name,
+  });
 }

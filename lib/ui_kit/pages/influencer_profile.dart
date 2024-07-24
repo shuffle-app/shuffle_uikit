@@ -8,11 +8,11 @@ class InfluencerProfile extends StatefulWidget {
   final int? pointsEarned;
 
   const InfluencerProfile({
-    Key? key,
+    super.key,
     this.visitedPlaces,
     this.reviewsPosted,
     this.pointsEarned,
-  }) : super(key: key);
+  });
 
   @override
   State<InfluencerProfile> createState() => _InfluencerProfileState();
@@ -199,11 +199,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
               9,
               (index) => UiKitAchievementsModel(
                 title: 'Achievement ${index + 1}',
-                asset: index != 0 && index % 3 == 0
-                    ? null
-                    : index % 2 == 0
-                        ? GraphicsFoundation.instance.png.goldenCup.path
-                        : GraphicsFoundation.instance.png.goldenMedal.path,
+                posterUrl: index != 0 && index % 3 == 0 ? null : GraphicsFoundation.instance.png.goldenCup.path,
               ),
             ),
             badge: const InfluencerMemberPlate(),
@@ -289,7 +285,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                       specialTabsController.animateTo(0);
                     });
                   },
-                  leadingImageLink: GraphicsFoundation.instance.png.mockAdBanner2.path,
+                  leadingImageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_2.png',
                   title: '+2 voices',
                   subtitle: 'La vue citytel group',
                   titleDecorationIcon: GraphicsFoundation.instance.svg.voice.path,
@@ -346,7 +342,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                     children: [
                       UiKitContentVoiceReactionCard(
                         contentTitle: 'The best place',
-                        datePosted: DateTime.now().subtract(Duration(hours: 16)),
+                        datePosted: DateTime.now().subtract(const Duration(hours: 16)),
                         audioMessage: UiKitAudioMessageTile(width: 0.5125.sw, audioWaveCount: 50),
                         imageLink: GraphicsFoundation.instance.png.placeSocial1.path,
                         properties: [
@@ -373,7 +369,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                       SpacingFoundation.verticalSpace16,
                       UiKitContentVoiceReactionCard(
                         contentTitle: 'The best place for a date',
-                        datePosted: DateTime.now().subtract(Duration(hours: 16)),
+                        datePosted: DateTime.now().subtract(const Duration(hours: 16)),
                         audioMessage: UiKitAudioMessageTile(width: 0.5125.sw, audioWaveCount: 50),
                         imageLink: GraphicsFoundation.instance.png.placeSocial1.path,
                         properties: [
@@ -408,11 +404,11 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                       5,
                       (index) {
                         return [
-                          GraphicsFoundation.instance.png.mockAdBanner1.path,
-                          GraphicsFoundation.instance.png.mockAdBanner2.path,
-                          GraphicsFoundation.instance.png.mockAdBanner3.path,
-                          GraphicsFoundation.instance.png.mockAdBanner4.path,
-                          GraphicsFoundation.instance.png.mockAdBanner5.path,
+                          'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
+                          'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_2.png',
+                          'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_3.png',
+                          'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_4.png',
+                          'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_5.png',
                         ].elementAt(index);
                       },
                     ),
@@ -436,7 +432,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                   title: S.current.Interview,
                   content: UiKitVideoPlayerWithContentDetails(
                     videoUrl: 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
-                    contentImageLink: GraphicsFoundation.instance.png.mockAdBanner1.path,
+                    contentImageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
                     contentName: 'La vue citytel group',
                     datePosted: DateTime.now().subtract(const Duration(hours: 12)),
                   ),
@@ -445,7 +441,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                   title: S.current.Chat,
                   onShowMore: () {},
                   content: UiKitInfluencerProfileChatCard(
-                    chatCover: GraphicsFoundation.instance.png.mockAdBanner7.path,
+                    chatCover: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_7.png',
                     chatLastMessage:
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                     newCommentsCount: 10,
@@ -454,7 +450,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                     chatStartDate: DateTime.now().subtract(const Duration(days: 125)),
                     chatContentTitle: 'Best birthday ever',
                     chatContentSubtitle: 'Virgins on the beach',
-                    chatContentImage: GraphicsFoundation.instance.png.mockAdBanner9.path,
+                    chatContentImage: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_9.png',
                     chatContentStartMessage:
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                   ),
@@ -496,7 +492,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                 UiKitShowMoreTitledSection(
                   onShowMore: () {},
                   title: S.current.Video,
-                  content: UiKitVideoPlayerWithContentDetails(
+                  content: const UiKitVideoPlayerWithContentDetails(
                     videoUrl: 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
                   ),
                 ),
@@ -605,7 +601,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                         2,
                         (index) => InfluencerTopContentData(
                           title: 'Virgins on the beach',
-                          imageUrl: GraphicsFoundation.instance.png.mockAdBanner9.path,
+                          imageUrl: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_9.png',
                           datePosted: DateTime.now().subtract(Duration(days: index + 1)),
                           tags: [
                             UiKitTag(
@@ -630,7 +626,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                         2,
                         (index) => InfluencerTopContentData(
                           title: 'Virgins on the beach',
-                          imageUrl: GraphicsFoundation.instance.png.mockAdBanner7.path,
+                          imageUrl: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_7.png',
                           datePosted: DateTime.now().subtract(Duration(days: index + 1)),
                           tags: [
                             UiKitTag(
@@ -679,16 +675,20 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                   items: [
                     ContentPreviewWithRespect(
                       images: [
-                        GraphicsFoundation.instance.png.mockAdBanner7.path,
-                        GraphicsFoundation.instance.png.mockAdBanner11.path,
-                        GraphicsFoundation.instance.png.mockAdBanner10.path,
+                        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_7.png',
+                        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_11.png',
+                        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_10.png',
                       ],
                       title: 'Virgins on the beach',
                       respectFromUsers: [
-                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path),
-                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial1.path),
-                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial2.path),
-                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial4.path),
+                        RespectFromUser(
+                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path),
+                        RespectFromUser(
+                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial1.path),
+                        RespectFromUser(
+                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial2.path),
+                        RespectFromUser(
+                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial4.path),
                       ],
                       properties: [
                         UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: false),
@@ -704,13 +704,14 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                     ),
                     ContentPreviewWithRespect(
                       images: [
-                        GraphicsFoundation.instance.png.mockAdBanner7.path,
-                        GraphicsFoundation.instance.png.mockAdBanner11.path,
-                        GraphicsFoundation.instance.png.mockAdBanner10.path,
+                        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_7.png',
+                        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_11.png',
+                        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_10.png',
                       ],
                       title: 'Virgins on the beach',
                       respectFromUsers: [
-                        RespectFromUser(name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path),
+                        RespectFromUser(
+                            name: 'John Doe', avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path),
                       ],
                       properties: [
                         UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: false),

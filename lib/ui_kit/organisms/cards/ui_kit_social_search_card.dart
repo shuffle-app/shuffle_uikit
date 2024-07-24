@@ -12,7 +12,7 @@ class UiKitSocialSearchCard extends StatelessWidget {
   final bool useAvatars;
 
   const UiKitSocialSearchCard({
-    Key? key,
+    super.key,
     this.imageData,
     this.leadingImageBorderRadius,
     this.onTap,
@@ -21,7 +21,7 @@ class UiKitSocialSearchCard extends StatelessWidget {
     required this.subtitle,
     required this.distance,
     required this.progress,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -21,6 +21,7 @@ export 'data_formatters/time_format.dart';
 export 'enums/advertisement_banner_size.dart';
 export 'enums/button_fit.dart';
 export 'enums/user_avatar_size.dart';
+export 'enums/weather_type_enum_class.dart';
 export 'extentions/date_time_time_ago_extention.dart';
 export 'extentions/factory_extention.dart';
 export 'extentions/loading_extension.dart';

@@ -6,16 +6,17 @@ class BoxIconButton extends StatelessWidget implements ButtonFactory {
   final BaseUiKitButtonIconData? iconInfo;
   final VoidCallback? onPressed;
   final Color? backgroundColor;
+  final bool? isSelected;
 
   const BoxIconButton({
-    Key? key,
+    super.key,
     this.icon,
     this.iconInfo,
     this.onPressed,
     this.backgroundColor,
-  })  : assert(iconInfo != null || icon != null,
-            'Either iconInfo or icon must be provided'),
-        super(key: key);
+    this.isSelected,
+  }) : assert(iconInfo != null || icon != null,
+            'Either iconInfo or icon must be provided');
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +25,14 @@ class BoxIconButton extends StatelessWidget implements ButtonFactory {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: onPressed,
+        onTap:onPressed,
         borderRadius: BorderRadiusFoundation.all8,
         child: Ink(
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all8,
-            color: backgroundColor ?? theme?.colorScheme.surface1,
+            color: (isSelected ?? false)
+                ? theme?.colorScheme.darkNeutral700
+                : (backgroundColor ?? theme?.colorScheme.surface1),
           ),
           child: ImageWidget(
             iconData: iconInfo?.iconData,

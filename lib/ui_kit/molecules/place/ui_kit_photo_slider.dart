@@ -11,16 +11,18 @@ class UiKitPhotoSlider extends StatefulWidget {
   final int maxShowImage;
   final VoidCallback? onTap;
   final List<Widget>? actions;
+  final PlaceWeatherType? weatherType;
 
   const UiKitPhotoSlider({
-    Key? key,
+    super.key,
     required this.media,
     required this.width,
     this.initialIndex = 0,
     this.maxShowImage = 3,
     this.onTap,
     this.actions,
-  }) : super(key: key);
+    this.weatherType,
+  });
 
   @override
   State<UiKitPhotoSlider> createState() => _UiKitPhotoSliderState();
@@ -84,6 +86,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   }
 
   Widget _buildFirstItem(BaseUiKitMedia item) {
+
     return Positioned(
       left: _cardAnimation.left,
       right: widget.media.length == 1 ? 0 : _cardAnimation.right,
@@ -109,6 +112,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         child: SliderPhotoCard(
           media: item,
           givenSize: Size(widget.width, height),
+          weatherType: widget.weatherType,
         ),
       ),
     );
@@ -130,6 +134,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
           child: SliderPhotoCard(
             media: item,
             givenSize: Size(widget.width - 55, height * (1 - differenceFromFirstCard * 0.1)),
+            weatherType: widget.weatherType,
           ),
         ));
   }
@@ -150,6 +155,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
           child: SliderPhotoCard(
             media: item,
             givenSize: Size(widget.width - 55, height * (1 - differenceFromFirstCard * 0.1)),
+            weatherType: widget.weatherType,
           )),
     );
   }

@@ -11,16 +11,17 @@ class BasePlaceActionCard extends StatelessWidget {
   final AssetGenImage? rasterIconAsset;
   final VoidCallback? action;
   final AutoSizeGroup? group;
+  final String? buttonTitle;
 
   const BasePlaceActionCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.value,
     this.iconAsset,
     this.rasterIconAsset,
     required this.action,
-    this.group,
-  }) : super(key: key);
+    this.group, this.buttonTitle,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +65,7 @@ class BasePlaceActionCard extends StatelessWidget {
               ),
               SpacingFoundation.verticalSpace8,
               SmallOrdinaryButton(
-                text: S.of(context).SeeMore,
+                text:buttonTitle?? S.of(context).SeeMore,
                 onPressed: action,
                 group: group,
               ),

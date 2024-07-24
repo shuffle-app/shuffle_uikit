@@ -8,12 +8,12 @@ class OrdinaryReversedTextButton extends StatelessWidget implements ButtonFactor
   final BaseUiKitButtonIconData? iconInfo;
 
   const OrdinaryReversedTextButton({
-    Key? key,
+    super.key,
     required this.text,
     this.onPressed,
     this.icon,
     this.iconInfo,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

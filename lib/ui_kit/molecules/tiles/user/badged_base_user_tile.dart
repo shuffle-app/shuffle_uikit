@@ -7,11 +7,11 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
   final Border avatarBorder;
 
   const BadgedBaseUserTile({
-    Key? key,
+    super.key,
     required this.badge,
     required this.avatarBorder,
     required this.data,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +21,8 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
       userType = UserTileType.premium;
     } else if (badge.runtimeType == ProMemberPlate) {
       userType = UserTileType.pro;
+    } else if (badge.runtimeType == InfluencerMemberPlate) {
+      userType = UserTileType.influencer;
     } else {
       userType = UserTileType.ordinary;
     }
@@ -51,10 +53,10 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
                           style: boldTextTheme?.subHeadline,
                         ),
                         SpacingFoundation.verticalSpace2,
-                         Text(
-                                  data.username ?? '',
-                                  style: boldTextTheme?.body,
-                                ),
+                        Text(
+                          data.username ?? '',
+                          style: boldTextTheme?.body,
+                        ),
                       ],
                     ),
                   ),
@@ -71,8 +73,8 @@ class BadgedBaseUserTile extends StatelessWidget implements UserTileFactory {
                 bottom: -20,
                 right: 5,
                 child: DecoratedBox(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadiusFoundation.all24, color: UiKitColors.surfaceGradientMid),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadiusFoundation.all24, color: UiKitColors.surfaceGradientMid),
                   child: Text(
                     data.speciality!,
                     style: boldTextTheme?.caption3Medium.copyWith(color: ColorsFoundation.darkNeutral100),

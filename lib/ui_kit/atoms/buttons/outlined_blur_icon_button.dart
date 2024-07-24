@@ -9,16 +9,16 @@ class OutlinedBlurIconButton extends StatelessWidget implements ButtonFactory {
   final BaseUiKitButtonIconData? iconInfo;
   final bool? loading;
   final double blurValue;
+final EdgeInsetsGeometry? padding;
 
   const OutlinedBlurIconButton({
-    Key? key,
+    super.key,
     this.onPressed,
     required this.icon,
     this.loading,
     this.iconInfo,
-    this.blurValue = 18,
-  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided'),
-        super(key: key);
+    this.blurValue = 18, this.padding,
+  })  : assert(iconInfo != null || icon != null, 'Either iconInfo or icon must be provided');
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class OutlinedBlurIconButton extends StatelessWidget implements ButtonFactory {
             child: BackdropFilter(
               filter: ImageFilter.blur(sigmaX: blurValue, sigmaY: blurValue),
               child: Padding(
-                padding: EdgeInsets.all(EdgeInsetsFoundation.all14),
+                padding:padding?? EdgeInsets.all(EdgeInsetsFoundation.all14),
                 child: icon ??
                     ImageWidget(
                       iconData: iconInfo?.iconData,

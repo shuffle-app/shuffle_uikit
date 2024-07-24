@@ -3,7 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputField {
   const UiKitInputFieldRightIcon({
-    Key? key,
+    super.key,
     required this.controller,
     this.errorText,
     this.fillColor,
@@ -19,8 +19,10 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
     this.onFieldSubmitted,
     this.borderRadius,
     this.obscureText = false,
-    this.onChanged
-  }) : super(key: key);
+    this.hintColor,
+    this.onChanged,
+    this.maxLines = 1,
+  });
 
   @override
   final TextEditingController controller;
@@ -38,6 +40,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
   final ValueChanged<String>? onChanged;
   final Widget? icon;
   final BorderRadius? borderRadius;
+  final int maxLines;
   final bool autofocus;
   final bool expands;
   final FocusNode? focusNode;
@@ -46,6 +49,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
   final VoidCallback? onTap;
   final ValueChanged<String>? onFieldSubmitted;
   final Color? fillColor;
+  final Color? hintColor;
 
   @override
   State<UiKitInputFieldRightIcon> createState() => _UiKitInputFieldRightIconState();
@@ -70,10 +74,11 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           )
         : uiKitTheme?.iconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
-    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: uiKitTheme.colorScheme.inversePrimary);
+    final inputTextStyle =
+        uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: uiKitTheme.colorScheme.inversePrimary);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
-          ? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
+          ? widget.hintColor ?? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
           : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
 
@@ -84,7 +89,8 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
       ),
       child: TextFormField(
         expands: widget.expands,
-        maxLines: widget.expands ? null : 1,
+        maxLines: widget.expands ? null : widget.maxLines,
+        minLines: 1,
         autofocus: widget.autofocus,
         focusNode: widget.focusNode,
         onTap: widget.onTap,
@@ -104,8 +110,8 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           errorStyle: errorStyle,
           errorMaxLines: 3,
           hintStyle: hintStyle,
-          suffixIconColor: MaterialStateColor.resolveWith((states) {
-            if (states.contains(MaterialState.error)) {
+          suffixIconColor: WidgetStateColor.resolveWith((states) {
+            if (states.contains(WidgetState.error)) {
               return ColorsFoundation.error;
             }
             return context.uiKitTheme?.colorScheme.inversePrimary ?? Colors.white;

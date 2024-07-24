@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInfluencerAudioMessagesDemo extends StatefulWidget {
-  const UiKitInfluencerAudioMessagesDemo({Key? key}) : super(key: key);
+  const UiKitInfluencerAudioMessagesDemo({super.key});
 
   @override
   State<UiKitInfluencerAudioMessagesDemo> createState() => _UiKitInfluencerAudioMessagesDemoState();
@@ -25,7 +25,7 @@ class _UiKitInfluencerAudioMessagesDemoState extends State<UiKitInfluencerAudioM
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 0.3.sh,
+      height: 0.55.sw,
       width: 0.85.sw,
       child: Center(
         child: AnimatedSwitcher(

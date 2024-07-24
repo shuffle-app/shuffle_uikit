@@ -9,12 +9,12 @@ class UiKitInfluencerUserAccountAvatarWrapper extends StatelessWidget {
   final BorderRadius? borderRadius;
 
   const UiKitInfluencerUserAccountAvatarWrapper._({
-    Key? key,
+    super.key,
     required this.disabled,
     required this.child,
     required this.borderWidth,
     this.borderRadius,
-  }) : super(key: key);
+  });
 
   factory UiKitInfluencerUserAccountAvatarWrapper.enabled({
     Key? key,

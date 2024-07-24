@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class ErrorSnackBar extends StatelessWidget implements SnackBarFactory{
+class ErrorSnackBar extends StatelessWidget implements SnackBarFactory {
   const ErrorSnackBar({super.key, required this.message});
 
   final String message;
@@ -10,18 +10,17 @@ class ErrorSnackBar extends StatelessWidget implements SnackBarFactory{
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
     final colorScheme = context.uiKitTheme?.colorScheme;
-    return   DecoratedBox(
+    return DecoratedBox(
       decoration: BoxDecoration(
         color: colorScheme?.surface2,
         borderRadius: BorderRadiusFoundation.all12,
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           DecoratedBox(
             decoration: BoxDecoration(
-              color: ColorsFoundation.error
-                  .withOpacity(0.16),
+              color: ColorsFoundation.error.withOpacity(0.16),
               shape: BoxShape.circle,
             ),
             child: const Icon(
@@ -38,7 +37,7 @@ class ErrorSnackBar extends StatelessWidget implements SnackBarFactory{
           ),
           SpacingFoundation.horizontalSpace8,
           InkWell(
-            onTap: () => context.pop(),
+            onTap: context.pop,
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             child: Icon(

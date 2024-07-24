@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitReactionPreview extends StatelessWidget {
-  final String imagePath;
+  final String? imagePath;
   final bool viewed;
   final bool isEmpty;
   final VoidCallback? onTap;
@@ -10,23 +10,32 @@ class UiKitReactionPreview extends StatelessWidget {
   final double? customHeight;
 
   const UiKitReactionPreview({
-    Key? key,
-    required this.imagePath,
+    super.key,
+    this.imagePath,
     this.viewed = false,
     this.onTap,
     this.isEmpty = false,
     this.customWidth,
     this.customHeight,
-  }) : super(key: key);
+  });
 
-  factory UiKitReactionPreview.empty({VoidCallback? onTap}) => UiKitReactionPreview(
+  factory UiKitReactionPreview.empty({
+    VoidCallback? onTap,
+    double? customWidth,
+    double? customHeight,
+  }) =>
+      UiKitReactionPreview(
         imagePath: '',
         viewed: false,
         isEmpty: true,
+        customWidth: customWidth,
+        customHeight: customHeight,
         onTap: onTap,
       );
-  double get width => customWidth ?? 0.27.sw;
-  double get height => customHeight ?? 0.27.sw * 1.66;
+
+  double get width => customWidth ?? (height * 0.6);
+
+  double get height => customHeight ?? 0.2605.sh;
 
   @override
   Widget build(BuildContext context) {
@@ -52,13 +61,16 @@ class UiKitReactionPreview extends StatelessWidget {
           if (!isEmpty)
             ClipRRect(
               borderRadius: BorderRadiusFoundation.all16,
+              // child: DecoratedBox(
+              //     position: DecorationPosition.foreground,
+              //     decoration: BoxDecoration(
+              //       color: viewed ? ColorsFoundation.darkNeutral900.withOpacity(0.5) : null,
+              //     ),
               child: ImageWidget(
-                color: viewed ? ColorsFoundation.darkNeutral900.withOpacity(0.5) : null,
-                colorBlendMode: viewed ? BlendMode.lighten : null,
                 link: imagePath,
                 fit: BoxFit.cover,
-              ),
-            ),
+              ),),
+          // ),
           Material(
             color: Colors.transparent,
             borderRadius: BorderRadiusFoundation.all16,
@@ -73,8 +85,8 @@ class UiKitReactionPreview extends StatelessWidget {
                   border: isEmpty
                       ? Border.all(width: 2, color: ColorsFoundation.neutral40)
                       : viewed
-                          ? null
-                          : GradientFoundation.gradientBorder,
+                      ? null
+                      : GradientFoundation.gradientBorder,
                 ),
                 child: SizedBox(
                   width: width,
