@@ -550,6 +550,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "GetCode": MessageLookupByLibrary.simpleMessage("Получить код"),
         "GetReward": MessageLookupByLibrary.simpleMessage("Забрать награду"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("Начать"),
+        "Global": MessageLookupByLibrary.simpleMessage("Глобально"),
+        "GlobalAlertText": MessageLookupByLibrary.simpleMessage(
+            "ТОЛЬКО ОПУБЛИКОВАННЫЕ МОЖНО СДЕЛАТЬ ГЛОБАЛ"),
         "Go": MessageLookupByLibrary.simpleMessage("Go!"),
         "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
             "Продолжай и позволь бизнесу расти"),
