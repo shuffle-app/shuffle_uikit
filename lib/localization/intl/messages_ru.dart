@@ -48,7 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m9(progress) => "Сжатие видео ${progress}%";
 
   static String m10(count) =>
-      "${count} ${Intl.plural(count, zero: 'объединений', one: 'объединение', two: 'объединения', few: 'объединения', many: 'объединений', other: 'объединений')}";
+      "${count} ${Intl.plural(count, zero: 'коннектов', one: 'коннект', two: 'коннекта', few: 'коннекта', many: 'коннектов', other: 'коннектов')}";
 
   static String m11(count) =>
       "${count} ${Intl.plural(count, zero: 'предложений', one: 'предложение', two: 'прижложения', few: 'предложения', many: 'предложений', other: 'предложений')} контента";
@@ -86,7 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${count} ${Intl.plural(count, zero: 'отзывов', one: 'отзыв', two: 'отзыва', few: 'отзыва', many: 'отзывов', other: 'отзывов')}";
 
   static String m24(count) =>
-      "${count} ${Intl.plural(count, zero: 'догадок', one: 'догадка', two: 'догадки', few: 'догадки', many: 'догадок', other: 'догадок')} о чувствах";
+      "${count} ${Intl.plural(count, zero: 'челленджей', one: 'челлендж', two: 'челленджа', few: 'челленджа', many: 'челленджей', other: 'челленджей')} feelings";
 
   static String m25(count) =>
       "${Intl.plural(count, zero: '${count} поинтов', one: '${count} поинт', two: '${count} поинта', few: '${count} поинтов', many: '${count} поинтов', other: '${count} поинтов')}";
@@ -116,7 +116,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Приглашает ${Intl.plural(invitedPeopleCount, zero: '${invitedPeopleCount} людей', one: '${invitedPeopleCount}-о', two: '${invitedPeopleCount}-х', few: '${invitedPeopleCount}-х', many: '${invitedPeopleCount}-х', other: '${invitedPeopleCount}-х')} на";
 
   static String m35(count) =>
-      "Входите в приложение ${count} ${Intl.plural(count, zero: 'дней', one: 'день', two: 'дня', few: 'дня', many: 'дней', other: 'дней')} подряд";
+      "Вход в приложение ${count} ${Intl.plural(count, zero: 'дней', one: 'день', two: 'дня', few: 'дня', many: 'дней', other: 'дней')} подряд";
 
   static String m36(provider) => "Продолжить с ${provider}";
 
@@ -153,7 +153,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "${Intl.plural(item, zero: 'найти компаньонов', one: 'похожие предпочтения', two: 'поинты = репутация', few: 'никаких неприятелей', other: 'никаких неприятелей')}";
 
   static String m49(count) =>
-      "${count} ${Intl.plural(count, zero: 'реакций', one: 'реакция', two: 'реакции', few: 'реакции', many: 'реакций', other: 'реакций')}";
+      "${count} ${Intl.plural(count, zero: 'видео-реакций', one: 'видео-реакция', two: 'видео-реакции', few: 'видео-реакции', many: 'видео-реакций', other: 'видео-реакций')}";
 
   static String m50(amount) => "Читать ${amount}";
 
@@ -174,19 +174,19 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m56(type) => "Выбрать ${type}";
 
   static String m57(count) =>
-      "Поделитесь ${count} ${Intl.plural(count, zero: 'карточек', one: 'карточкой', two: 'карточками', few: 'карточками', many: 'карточками', other: 'карточками')}";
+      "Поделиться ${count} ${Intl.plural(count, zero: 'карточек', one: 'карточкой', two: 'карточками', few: 'карточками', many: 'карточками', other: 'карточками')}";
 
   static String m58(item) =>
       "${Intl.plural(item, zero: 'свайпай карточки', one: 'листай свойства места', two: 'ок/не ок/в избранное', few: 'учи нашу систему', other: 'учи нашу систему')}";
 
   static String m59(count) =>
-      "Проводите ${count} ${Intl.plural(count, zero: 'часов', one: 'час', two: 'часа', few: 'часа', many: 'часа', other: 'часов')} в неделю";
+      "Провести ${count} ${Intl.plural(count, zero: 'часов', one: 'час', two: 'часа', few: 'часа', many: 'часа', other: 'часов')} в неделю";
 
   static String m60(item) =>
       "${Intl.plural(item, zero: 'ради забавы', one: 'можно листать категорию', two: 'выбирай и планируй', few: 'ищи и бронируй', other: 'ищи и бронируй')}";
 
   static String m61(count) =>
-      "Поделитесь ${count} ${Intl.plural(count, zero: 'стопок', one: 'стопкой', two: 'стопками', few: 'стопками', many: 'стопками', other: 'стопками')}";
+      "поделиться ${count} ${Intl.plural(count, zero: 'стопок', one: 'стопкой', two: 'стопками', few: 'стопками', many: 'стопками', other: 'стопками')}";
 
   static String m62(separator) => "Расскажи${separator}о себе";
 
