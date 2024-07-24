@@ -48,8 +48,7 @@ class UiKitSupportShuffle extends StatelessWidget {
                 ),
               ),
             ],
-          ),
-          SpacingFoundation.verticalSpace4,
+          ).paddingOnly(bottom: SpacingFoundation.verticalSpacing10),
           GradientableWidget(
             gradient: GradientFoundation.attentionCard,
             child: context.smallOutlinedButton(
@@ -81,11 +80,7 @@ class UiKitSupportShuffle extends StatelessWidget {
             ),
           ),
         ],
-      ).paddingSymmetric(
-        vertical: 1.sw <= 380
-            ? SpacingFoundation.verticalSpacing20
-            : SpacingFoundation.verticalSpacing24,
-      ),
+      ).paddingAll(EdgeInsetsFoundation.all16),
     );
   }
 }
