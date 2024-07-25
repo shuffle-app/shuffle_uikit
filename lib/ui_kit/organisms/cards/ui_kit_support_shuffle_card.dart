@@ -17,14 +17,35 @@ class UiKitSupportShuffle extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
 
-    return UiKitCardWrapper(
+    return GestureDetector(
+        onTap: onCustomDonate ??
+                () =>
+                showGeneralDialog(
+                  context: context,
+                  transitionBuilder:
+                      (context, animation1, animation2, child) =>
+                      BackdropFilter(
+                        filter: ImageFilter.blur(
+                          sigmaX: animation1.value * 30,
+                          sigmaY: animation1.value * 30,
+                        ),
+                        child: child,
+                      ),
+                  pageBuilder: (context, animation1, animation2) =>
+                      FadeTransition(
+                        opacity: animation1,
+                        child: DonateToShuffleAlert(onDonate: onDonate),
+                      ),
+                ), child: UiKitCardWrapper(
       width: 110.w,
       color: context.uiKitTheme?.colorScheme.surface1,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            S.of(context).Support,
+            S
+                .of(context)
+                .Support,
             style: theme?.boldTextTheme.caption1Medium.copyWith(
               color: ColorsFoundation.mutedText,
             ),
@@ -54,24 +75,7 @@ class UiKitSupportShuffle extends StatelessWidget {
             child: context.smallOutlinedButton(
               data: BaseUiKitButtonData(
                 backgroundColor: Colors.transparent,
-                onPressed: onCustomDonate ??
-                    () => showGeneralDialog(
-                          context: context,
-                          transitionBuilder:
-                              (context, animation1, animation2, child) =>
-                                  BackdropFilter(
-                            filter: ImageFilter.blur(
-                              sigmaX: animation1.value * 30,
-                              sigmaY: animation1.value * 30,
-                            ),
-                            child: child,
-                          ),
-                          pageBuilder: (context, animation1, animation2) =>
-                              FadeTransition(
-                            opacity: animation1,
-                            child: DonateToShuffleAlert(onDonate: onDonate),
-                          ),
-                        ),
+                onPressed: () {},
                 iconInfo: BaseUiKitButtonIconData(
                   size: 10.h,
                   iconData: ShuffleUiKitIcons.dollar,
@@ -81,6 +85,6 @@ class UiKitSupportShuffle extends StatelessWidget {
           ),
         ],
       ).paddingAll(EdgeInsetsFoundation.all16),
-    );
+    ));
   }
 }

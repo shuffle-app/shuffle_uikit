@@ -90,7 +90,7 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
       child: TextFormField(
         expands: widget.expands,
         maxLines: widget.expands ? null : widget.maxLines,
-        minLines: 1,
+        minLines: widget.expands ? null : 1,
         autofocus: widget.autofocus,
         focusNode: widget.focusNode,
         onTap: widget.onTap,
