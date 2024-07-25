@@ -542,6 +542,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "GetCode": MessageLookupByLibrary.simpleMessage("Get code"),
         "GetReward": MessageLookupByLibrary.simpleMessage("Get reward"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("Get started"),
+        "Global": MessageLookupByLibrary.simpleMessage("Global"),
+        "GlobalAlertText": MessageLookupByLibrary.simpleMessage(
+            "Only published can be made global"),
         "Go": MessageLookupByLibrary.simpleMessage("Go!"),
         "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
             "Go ahead and grow your business"),

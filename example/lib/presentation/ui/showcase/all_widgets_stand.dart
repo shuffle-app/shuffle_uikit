@@ -131,6 +131,18 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
+        GlobalContentAlertDialog(),
+        SpacingFoundation.verticalSpace16,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: 130,
+              child: UiKitGlobalContentCard(),
+            ),
+          ],
+        ),
+        SpacingFoundation.verticalSpace16,
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -234,11 +246,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         UiKitFeedbackInfo(
-          onSubmit: (expandThreadIsOpen) {},
+          onSubmit: () {},
           userName: 'Ryan Gosling',
           dateTime: DateTime.now(),
           removeFunction: () {},
-          responsesFromCompanytoReview: true,
+          responsesFromCompanyToReview: true,
+          onModerated: () {},
+          isModerated: false,
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         PlaceIconSelector(
@@ -957,7 +971,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           data: BaseUiKitAdvertisementImageBannerData(
             availableWidth: 1.sw,
             onPressed: () {},
-            imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
+            imageLink:
+                'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
             title: 'Dubai',
             size: AdvertisementBannerSize.small,
           ),
@@ -967,7 +982,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           data: BaseUiKitAdvertisementImageBannerData(
             availableWidth: 1.sw,
             onPressed: () {},
-            imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_2.png',
+            imageLink:
+                'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_2.png',
             title: 'Dubai',
             size: AdvertisementBannerSize.medium,
           ),
@@ -977,7 +993,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           data: BaseUiKitAdvertisementImageBannerData(
             availableWidth: 1.sw,
             onPressed: () {},
-            imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_3.png',
+            imageLink:
+                'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_3.png',
             title: 'Dubai',
             size: AdvertisementBannerSize.large,
           ),

@@ -112,3 +112,4 @@ export 'user/premium_account_mark.dart';
 export 'user/premium_member_plate.dart';
 export 'user/pro_account_mark.dart';
 export 'user/pro_member_plate.dart';
+export 'cards/ui_kit_global_content_card.dart';

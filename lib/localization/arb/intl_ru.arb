@@ -694,6 +694,8 @@
   "SeekingWandererMen": "Ищущий странник",
   "SeekingWandererWom": "Ищущая странница",
   "TravelerMen": "Путник",
+  "Global": "Глобально",
+  "GlobalAlertText": "ТОЛЬКО ОПУБЛИКОВАННЫЕ МОЖНО СДЕЛАТЬ ГЛОБАЛ",
   "TravelerWom": "Путница"
 
 }

@@ -543,6 +543,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "GetCode": MessageLookupByLibrary.simpleMessage("कोड प्राप्त करें"),
         "GetReward": MessageLookupByLibrary.simpleMessage("इनाम मिलना"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("शुरू हो जाओ"),
+        "Global": MessageLookupByLibrary.simpleMessage("ग्लोबल"),
+        "GlobalAlertText": MessageLookupByLibrary.simpleMessage(
+            "केवल प्रकाशित को वैश्विक बनाया जा सकता है"),
         "Go": MessageLookupByLibrary.simpleMessage("आगे बढ़ो"),
         "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
             "आगे बढ़ें और अपना व्यवसाय बढ़ाएं"),
