@@ -5,12 +5,14 @@ class PlaceIconSelector extends StatelessWidget {
   final VoidCallback? onPressed;
   final List<String> listIconData;
   final ValueChanged<String> onIconTap;
+  final ScrollController iconsScrollController;
 
   const PlaceIconSelector({
     super.key,
     required this.onPressed,
     required this.listIconData,
     required this.onIconTap,
+    required this.iconsScrollController,
   });
 
   @override
@@ -55,33 +57,50 @@ class PlaceIconSelector extends StatelessWidget {
             ),
           ],
         ),
-        Container(
+        SizedBox(
           width: double.maxFinite,
           height: 0.4.sh,
-          decoration: BoxDecoration(
-            color: ColorsFoundation.lightSurface2,
-            borderRadius: BorderRadiusFoundation.all12,
-          ),
-          child: Scrollbar(
-            thumbVisibility: true,
-            child: GridView.builder(
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              color: ColorsFoundation.lightSurface2,
+              borderRadius: BorderRadiusFoundation.all12,
+            ),
+            child: GridView(
               padding: EdgeInsetsDirectional.zero,
-              shrinkWrap: true,
+              controller: iconsScrollController,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 6,
                 crossAxisSpacing: EdgeInsetsFoundation.all16,
               ),
-              itemCount: listIconData.length,
-              itemBuilder: (context, index) {
-                return HoverableIconButton(
-                  iconLink: listIconData[index],
-                  onTap: () {
-                    onIconTap.call(
-                      listIconData[index],
+              children: List.generate(
+                listIconData.length,
+                (index) {
+                  return
+                    Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: (){
+                          onIconTap.call(
+                            listIconData[index],
+                          );
+                        },
+                        child: Ink(
+                          child: ImageWidget(
+                          link: listIconData[index],
+                                            ),
+                        ),
+                      ),
                     );
-                  },
-                );
-              },
+                  //   HoverableIconButton(
+                  //   iconLink: listIconData[index],
+                  //   onTap: () {
+                  //     onIconTap.call(
+                  //       listIconData[index],
+                  //     );
+                  //   },
+                  // );
+                },
+              ),
             ).paddingAll(EdgeInsetsFoundation.all8),
           ).paddingAll(EdgeInsetsFoundation.all8),
         ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing20)
@@ -90,9 +109,8 @@ class PlaceIconSelector extends StatelessWidget {
   }
 }
 
-
 class HoverableIconButton extends StatefulWidget {
-  final Function() onTap;
+  final VoidCallback onTap;
   final String iconLink;
 
   const HoverableIconButton({
@@ -106,33 +124,26 @@ class HoverableIconButton extends StatefulWidget {
 }
 
 class _HoverableIconButtonState extends State<HoverableIconButton> {
-  Color _backgroundColor = Colors.transparent;
-  Color _iconColor = const Color(0xff2D3645);
+  bool isHover = false;
+  final Color _iconColor = const Color(0xff2D3645);
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) {
-        setState(() {
-          _backgroundColor = const Color(0xFF0A84FF);
-          _iconColor = Colors.white;
-        });
-      },
-      onExit: (_) {
-        setState(() {
-          _backgroundColor = Colors.transparent;
-          _iconColor = const Color(0xff2D3645);
-        });
-      },
-      child: GestureDetector(
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
         onTap: widget.onTap,
-        child: context.boxIconButton(
-          data: BaseUiKitButtonData(
-            backgroundColor: _backgroundColor,
-            iconInfo: BaseUiKitButtonIconData(
-              iconPath: widget.iconLink,
-              color: _iconColor,
-            ),
+        onHover: (value) {
+          setState(() {
+            isHover = value;
+          });
+        },
+        child: Ink(
+          child: ImageWidget(
+            link: widget.iconLink,
+            width: 24,
+            height: 24,
+            color: isHover ? _iconColor : Colors.transparent,
           ),
         ),
       ),
