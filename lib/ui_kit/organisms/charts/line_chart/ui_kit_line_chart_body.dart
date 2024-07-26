@@ -132,8 +132,8 @@ class UiKitLineChartBody extends StatelessWidget {
               builder: (context, child) {
                 return SizedBox(
                   width: chartStepScaleFactor > 1
-                      ? availableSize.width + bodySizingNotifier.value.additionalWidth
-                      : availableSize.width,
+                      ? (datesMaxScrollPosition ?? availableSize.width) + bodySizingNotifier.value.additionalWidth
+                      : datesMaxScrollPosition ?? availableSize.width,
                   height: availableSize.height + SpacingFoundation.verticalSpacing16,
                   child: SingleChildScrollView(
                     controller: scrollController,
@@ -144,7 +144,7 @@ class UiKitLineChartBody extends StatelessWidget {
                       willChange: false,
                       size: Size(
                         chartStepScaleFactor > 1
-                            ? availableSize.width + bodySizingNotifier.value.additionalWidth
+                            ? (datesMaxScrollPosition ?? availableSize.width) + bodySizingNotifier.value.additionalWidth
                             : datesMaxScrollPosition ?? availableSize.width,
                         availableSize.height + SpacingFoundation.verticalSpacing16,
                       ),
