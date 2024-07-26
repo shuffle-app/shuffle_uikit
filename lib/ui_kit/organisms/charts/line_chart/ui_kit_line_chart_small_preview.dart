@@ -21,6 +21,8 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.uiKitTheme?.colorScheme;
+
     return SizedBox.fromSize(
       size: size,
       child: ClipRRect(
@@ -37,6 +39,7 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
                 willChange: false,
                 size: size,
                 painter: LineChartPainter(
+                  pointsStraightLineColor: colorScheme?.inverseSurface ?? Colors.white,
                   size: size,
                   lines: chartItems,
                   step: (size.width) / chartItems.maxDatasetsCount,
@@ -106,6 +109,7 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                 child: GestureDetector(
                   behavior: HitTestBehavior.opaque,
                   onPanUpdate: (details) {
+                    if (previewUpdateNotifier.value.previewWidthFraction >= 0.99) return;
                     double newOffset = previewUpdateNotifier.value.leftOffset + details.delta.dx;
                     if (newOffset <= 0) newOffset = 0;
                     if (newOffset > (size.width * maxRemainingFactor)) newOffset = (size.width * maxRemainingFactor);
@@ -119,6 +123,7 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                     onScroll?.call(scrollOffset);
                   },
                   onPanEnd: (details) {
+                    if (previewUpdateNotifier.value.previewWidthFraction >= 0.99) return;
                     final atEnd = previewUpdateNotifier.value.leftOffset >= (size.width * maxRemainingFactor) - 12;
                     if (atEnd) {
                       onScroll?.call(double.infinity);

@@ -33,16 +33,24 @@ class UiKitLineChartBody extends StatelessWidget {
     this.datesMaxScrollPosition,
   }) : super(key: key);
 
-  double get pointsStep => (datesMaxScrollPosition ?? availableSize.width) / (chartItems.maxDatasetsCount - 1);
+  double get pointsStep {
+    if (smallPreviewUpdateNotifier.value.previewWidthFraction >= 0.99) {
+      return (datesMaxScrollPosition ?? availableSize.width) / (chartItems.maxDatasetsCount);
+    }
+
+    return (datesMaxScrollPosition ?? availableSize.width) / (chartItems.maxDatasetsCount - 1);
+  }
+
+  double get additionalWidth => availableSize.width + (pointsStep * chartStepScaleFactor * chartItems.length);
 
   double get infoCardMaxWidth => 0.4 * availableSize.width;
 
   double get chartStepScaleFactor =>
-      1 - (initialPreviewWidthFraction - smallPreviewUpdateNotifier.value.previewWidthFraction);
+      1 - (smallPreviewUpdateNotifier.value.previewWidthFraction - initialPreviewWidthFraction);
 
   void _setFloatingHintData(Offset position) {
     tapNotifier.value = position;
-    final index = ((scrollController.offset + position.dx) ~/ pointsStep);
+    final index = ((scrollController.offset + position.dx) ~/ (pointsStep * chartStepScaleFactor));
     final items = chartItems.chartItemsWithDatasetAt(index);
     if (items.isNotEmpty || items.first.datasets.isNotEmpty) {
       selectedDataSetNotifier.value = LineChartSelectedPointData(
@@ -116,39 +124,43 @@ class UiKitLineChartBody extends StatelessWidget {
               ),
             ),
             AnimatedBuilder(
-                animation: Listenable.merge([
-                  selectedDataSetNotifier,
-                  smallPreviewUpdateNotifier,
-                ]),
-                builder: (context, child) {
-                  return SizedBox(
-                    width: availableSize.width,
-                    height: availableSize.height + SpacingFoundation.verticalSpacing16,
-                    child: SingleChildScrollView(
-                      controller: scrollController,
-                      scrollDirection: Axis.horizontal,
-                      physics: const NeverScrollableScrollPhysics(),
-                      child: CustomPaint(
-                        isComplex: true,
-                        willChange: false,
+              animation: Listenable.merge([
+                selectedDataSetNotifier,
+                smallPreviewUpdateNotifier,
+              ]),
+              builder: (context, child) {
+                return SizedBox(
+                  width: chartStepScaleFactor > 1 ? availableSize.width + additionalWidth : availableSize.width,
+                  height: availableSize.height + SpacingFoundation.verticalSpacing16,
+                  child: SingleChildScrollView(
+                    controller: scrollController,
+                    scrollDirection: Axis.horizontal,
+                    physics: const NeverScrollableScrollPhysics(),
+                    child: CustomPaint(
+                      isComplex: true,
+                      willChange: false,
+                      size: Size(
+                        chartStepScaleFactor > 1
+                            ? availableSize.width + additionalWidth
+                            : datesMaxScrollPosition ?? availableSize.width,
+                        availableSize.height + SpacingFoundation.verticalSpacing16,
+                      ),
+                      painter: LineChartPainter(
+                        pointsStraightLineColor: colorScheme?.inverseSurface ?? Colors.white,
+                        stepScaleFactor: chartStepScaleFactor,
+                        selectedIndex: selectedDataSetNotifier.value.selectedDataSetIndex,
+                        lines: chartItems,
                         size: Size(
                           datesMaxScrollPosition ?? availableSize.width,
                           availableSize.height + SpacingFoundation.verticalSpacing16,
                         ),
-                        painter: LineChartPainter(
-                          stepScaleFactor: chartStepScaleFactor,
-                          selectedIndex: selectedDataSetNotifier.value.selectedDataSetIndex,
-                          lines: chartItems,
-                          size: Size(
-                            datesMaxScrollPosition ?? availableSize.width,
-                            availableSize.height + SpacingFoundation.verticalSpacing16,
-                          ),
-                          step: pointsStep,
-                        ),
-                      ).paddingOnly(left: EdgeInsetsFoundation.horizontal32),
-                    ),
-                  );
-                }),
+                        step: pointsStep,
+                      ),
+                    ).paddingOnly(left: EdgeInsetsFoundation.horizontal32),
+                  ),
+                );
+              },
+            ),
             AnimatedBuilder(
               animation: tapNotifier,
               builder: (context, child) {
@@ -157,7 +169,6 @@ class UiKitLineChartBody extends StatelessWidget {
                 final rightOffset = availableSize.width - leftOffset;
                 final showInfoCardOnLeft = rightOffset < infoCardMaxWidth;
                 final approximateInfoCardHeight = (selectedDataSetNotifier.value.chartItems.length + 1) * 24.0;
-                print(tapNotifier.value.dy - approximateInfoCardHeight);
 
                 return Positioned(
                   top: max(-approximateInfoCardHeight + 24, tapNotifier.value.dy - approximateInfoCardHeight),

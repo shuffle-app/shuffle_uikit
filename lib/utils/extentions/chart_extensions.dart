@@ -137,4 +137,16 @@ extension ChartItemDataExtension on List<UiKitLineChartItemData> {
         0,
         (previousValue, element) => element.datasets.length > previousValue ? element.datasets.length : previousValue,
       );
+
+  List<DateTime> getNDates(int n) {
+    final datesToReturn = List<DateTime>.empty(growable: true);
+    final step = dates.length ~/ (n - 2);
+    datesToReturn.add(dates.first);
+    for (int i = 1; i < n - 2; i++) {
+      datesToReturn.add(dates[i * step]);
+    }
+    datesToReturn.add(dates.last);
+
+    return datesToReturn;
+  }
 }

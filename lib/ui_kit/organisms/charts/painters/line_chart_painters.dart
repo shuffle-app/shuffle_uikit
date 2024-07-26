@@ -9,11 +9,13 @@ class LineChartPainter extends CustomPainter {
   final Size size;
   final int? selectedIndex;
   final double stepScaleFactor;
+  final Color pointsStraightLineColor;
 
   LineChartPainter({
     super.repaint,
     required this.lines,
     required this.size,
+    required this.pointsStraightLineColor,
     double? step,
     this.selectedIndex,
     this.stepScaleFactor = 1,
@@ -76,6 +78,8 @@ class LineChartPainter extends CustomPainter {
     }
     if (selectedIndex != null && selectedIndex! >= 0) {
       final chartLines = lines.chartItemsWithDatasetAt(selectedIndex!);
+      final currentX = selectedIndex! * step;
+      final lastDataSet = selectedIndex! == lines.maxDatasetsCount - 1;
       for (final line in chartLines) {
         final borderPaint = Paint()
           ..strokeWidth = 2
@@ -85,18 +89,26 @@ class LineChartPainter extends CustomPainter {
         } else if (line.color != null) {
           borderPaint.color = line.color!;
         }
-        final currentX = selectedIndex! * step;
         final currentValue = line.datasets.first.value;
         final currentY = height - ((currentValue / maxValue) * height);
 
-        final lastDataSet = selectedIndex! == lines.maxDatasetsCount - 1;
         final pointOffset = Offset(
           lastDataSet ? currentX - (pointCircleRadius * 1.5) : currentX,
           lastDataSet ? currentY + (pointCircleRadius * 1.5) : currentY,
         );
+
         canvas.drawCircle(pointOffset, pointCircleRadius, innerPaint);
         canvas.drawCircle(pointOffset, pointCircleRadius, borderPaint);
       }
+      final x = lastDataSet ? currentX - (pointCircleRadius * 1.5) : currentX;
+      canvas.drawLine(
+        Offset(x, height),
+        Offset(x, 0),
+        Paint()
+          ..color = pointsStraightLineColor
+          ..strokeWidth = 0.5
+          ..style = PaintingStyle.stroke,
+      );
     }
   }
 

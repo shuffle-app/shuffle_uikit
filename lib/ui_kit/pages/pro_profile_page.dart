@@ -134,12 +134,14 @@ class ProProfilePage extends StatelessWidget {
                 ],
                 stories: const [
                   ProfileStory(
-                    image: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
+                    image:
+                        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
                     isEmpty: false,
                     viewed: false,
                   ),
                   ProfileStory(
-                    image: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
+                    image:
+                        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
                     isEmpty: false,
                     viewed: true,
                   ),
