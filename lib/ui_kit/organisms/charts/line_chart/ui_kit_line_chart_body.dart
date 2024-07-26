@@ -15,6 +15,7 @@ class UiKitLineChartBody extends StatelessWidget {
   final ScrollController scrollController;
   final double? datesMaxScrollPosition;
   final ValueNotifier<Offset> tapNotifier;
+  final ValueNotifier<UiKitBodySizingInfo> bodySizingNotifier;
   final ValueNotifier<LineChartSelectedPointData> selectedDataSetNotifier;
   final ValueNotifier<LineChartSmallPreviewData> smallPreviewUpdateNotifier;
   final double initialRatioWidth;
@@ -30,6 +31,7 @@ class UiKitLineChartBody extends StatelessWidget {
     required this.smallPreviewUpdateNotifier,
     required this.initialRatioWidth,
     required this.initialPreviewWidthFraction,
+    required this.bodySizingNotifier,
     this.datesMaxScrollPosition,
   }) : super(key: key);
 
@@ -40,8 +42,6 @@ class UiKitLineChartBody extends StatelessWidget {
 
     return (datesMaxScrollPosition ?? availableSize.width) / (chartItems.maxDatasetsCount - 1);
   }
-
-  double get additionalWidth => availableSize.width + (pointsStep * chartStepScaleFactor * chartItems.length);
 
   double get infoCardMaxWidth => 0.4 * availableSize.width;
 
@@ -127,10 +127,13 @@ class UiKitLineChartBody extends StatelessWidget {
               animation: Listenable.merge([
                 selectedDataSetNotifier,
                 smallPreviewUpdateNotifier,
+                bodySizingNotifier,
               ]),
               builder: (context, child) {
                 return SizedBox(
-                  width: chartStepScaleFactor > 1 ? availableSize.width + additionalWidth : availableSize.width,
+                  width: chartStepScaleFactor > 1
+                      ? availableSize.width + bodySizingNotifier.value.additionalWidth
+                      : availableSize.width,
                   height: availableSize.height + SpacingFoundation.verticalSpacing16,
                   child: SingleChildScrollView(
                     controller: scrollController,
@@ -141,7 +144,7 @@ class UiKitLineChartBody extends StatelessWidget {
                       willChange: false,
                       size: Size(
                         chartStepScaleFactor > 1
-                            ? availableSize.width + additionalWidth
+                            ? availableSize.width + bodySizingNotifier.value.additionalWidth
                             : datesMaxScrollPosition ?? availableSize.width,
                         availableSize.height + SpacingFoundation.verticalSpacing16,
                       ),

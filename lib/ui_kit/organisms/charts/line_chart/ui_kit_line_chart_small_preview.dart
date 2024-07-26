@@ -115,8 +115,8 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                     if (newOffset > (size.width * maxRemainingFactor)) newOffset = (size.width * maxRemainingFactor);
 
                     previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(leftOffset: newOffset);
-                    final atEnd = newOffset >= (size.width * maxRemainingFactor) - 12 &&
-                        previewUpdateNotifier.value.leftOffset >= (size.width * maxRemainingFactor) - 12;
+                    final atEnd = newOffset >= (size.width * maxRemainingFactor) &&
+                        previewUpdateNotifier.value.leftOffset >= (size.width * maxRemainingFactor);
                     double scrollOffset = newOffset + 16;
                     if (newOffset == 0) scrollOffset = 0;
                     if (atEnd) return;
