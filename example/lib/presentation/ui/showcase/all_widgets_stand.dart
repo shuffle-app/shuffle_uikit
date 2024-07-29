@@ -240,14 +240,11 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         UiKitFeedbackInfo(
           onSubmit: () {},
           isModerated: false,
-          onSubmit: () {},
           userName: 'Ryan Gosling',
           dateTime: DateTime.now(),
           removeFunction: () {},
           onModerated: () {},
           responsesFromCompanyToReview: true,
-          onModerated: () {},
-          isModerated: false,
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         PlaceIconSelector(
@@ -257,6 +254,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             20,
             (index) => GraphicsFoundation.instance.png.company.path,
           ),
+          iconsScrollController: ScrollController(),
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         DecoratedBox(

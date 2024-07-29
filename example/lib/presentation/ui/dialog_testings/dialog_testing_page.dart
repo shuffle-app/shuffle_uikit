@@ -184,8 +184,7 @@ class DialogTestingPage extends StatelessWidget {
                     onPressed: () => showUiKitPopover(c,
                         title: const Text('Premium account'),
                         buttonText: 'see more',
-                        description: const Text(
-                            'Only premium account users can post reactions')),
+                        description: const Text('Only premium account users can post reactions')),
                   ),
                 ),
                 SpacingFoundation.verticalSpace16,
