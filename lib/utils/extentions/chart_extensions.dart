@@ -143,7 +143,9 @@ extension ChartItemDataExtension on List<UiKitLineChartItemData> {
     final step = dates.length ~/ (n - 3);
     datesToReturn.add(dates.first);
     for (int i = 1; i < n - 2; i++) {
-      datesToReturn.add(dates[i * step]);
+      final index = i * step;
+      if (index >= dates.length) continue;
+      datesToReturn.add(dates.elementAt(index));
     }
     datesToReturn.add(dates.last);
 

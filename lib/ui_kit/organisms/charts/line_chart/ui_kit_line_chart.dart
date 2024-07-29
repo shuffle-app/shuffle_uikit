@@ -89,7 +89,6 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       datesToReturn = widget.chartData.items.getNDates(displayableDatesCount);
     }
 
-    print(datesToReturn.length);
     return datesToReturn;
   }
 
@@ -167,10 +166,15 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       if (_smallPreviewUpdateNotifier.value.previewWidthFraction < (initialPreviewWidthFraction ?? 0.35)) {
         /// taking [datesMaxScrollWidth] as a reference to calculate additional width
         /// because dates scroll width is bigger than chart scroll width in this case
-        additionalWidth =
-            datesMaxScrollWidth - chartViewPortSize.width - (datesSpacingExpansionFraction * initialPixelsPerDate);
-        chartToSmallPreviewRatio =
-            (datesMaxScrollWidth - SpacingFoundation.horizontalSpacing56) / smallPreviewSize.width;
+        double datesWidth = datesMaxScrollWidth;
+        if (initialMaxChartScrollablePartWidth! > datesWidth) {
+          datesWidth = initialMaxChartScrollablePartWidth!;
+        }
+        additionalWidth = datesWidth -
+            (2 * datesSpacingExpansionFraction * initialPixelsPerDate) -
+            initialMaxChartScrollablePartWidth!;
+
+        chartToSmallPreviewRatio = datesWidth / (smallPreviewSize.width);
       } else {
         /// need to pass negative value to make chart smaller
         final width = chartViewPortSize.width + (chartMaxScrollWidth - chartViewPortSize.width);
@@ -191,21 +195,19 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   Future<void> _scrollChartToPosition(double position) async {
     double datesScrollPosition = 0;
     double chartScrollPosition = 0;
+    if (position.isInfinite) return;
     final animate = position.isInfinite || position == 0;
-    if (position.isInfinite) {
-      return;
-    } else {
-      datesScrollPosition = math.min(
-        _datesScrollController.position.maxScrollExtent,
-        position * chartToSmallPreviewRatio,
-      );
-      chartScrollPosition = math.min(
-        _chartScrollController.position.maxScrollExtent,
-        position * chartToSmallPreviewRatio,
-      );
-    }
 
-    if (animate) {
+    datesScrollPosition = math.min(
+      _datesScrollController.position.maxScrollExtent,
+      position.isNaN ? 0 : position * chartToSmallPreviewRatio,
+    );
+    chartScrollPosition = math.min(
+      _chartScrollController.position.maxScrollExtent,
+      position.isNaN ? 0 : position * chartToSmallPreviewRatio,
+    );
+
+    if (animate || position.isNaN) {
       await Future.wait([
         _datesScrollController.animateTo(
           datesScrollPosition,

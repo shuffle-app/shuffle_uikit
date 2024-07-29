@@ -70,7 +70,7 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
     this.onScroll,
   }) : super(key: key);
 
-  final fractionBounds = const [0.2, 1];
+  final fractionBounds = const [0.3, 1];
 
   double get maxRemainingFactor => 1 - previewUpdateNotifier.value.previewWidthFraction;
 
@@ -115,12 +115,14 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                     if (newOffset > (size.width * maxRemainingFactor)) newOffset = (size.width * maxRemainingFactor);
 
                     previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(leftOffset: newOffset);
+                    if (previewUpdateNotifier.value.atEdge && previewUpdateNotifier.value.leftOffset == 0) return;
                     final atEnd = newOffset >= (size.width * maxRemainingFactor) &&
                         previewUpdateNotifier.value.leftOffset >= (size.width * maxRemainingFactor);
                     double scrollOffset = newOffset + 16;
-                    if (newOffset == 0) scrollOffset = 0;
-                    if (atEnd) return;
+                    if (newOffset == 0) scrollOffset = double.nan;
+                    if (atEnd) scrollOffset = double.infinity;
                     onScroll?.call(scrollOffset);
+                    previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(atEdge: atEnd || newOffset == 0);
                   },
                   onPanEnd: (details) {
                     if (previewUpdateNotifier.value.previewWidthFraction >= 0.99) return;
@@ -208,7 +210,8 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                                 onPanUpdate: (details) {
                                   final currentWidth = size.width * previewUpdateNotifier.value.previewWidthFraction;
                                   final newWidthFraction = (currentWidth + details.delta.dx) / size.width;
-                                  if (newWidthFraction >= 0.2 && newWidthFraction <= 1) {
+                                  if (newWidthFraction >= fractionBounds.first &&
+                                      newWidthFraction <= fractionBounds.last) {
                                     previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(
                                       previewWidthFraction: newWidthFraction,
                                     );
