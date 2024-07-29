@@ -128,6 +128,18 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
+        GlobalContentAlertDialog(),
+        SpacingFoundation.verticalSpace16,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+              width: 130,
+              child: UiKitGlobalContentCard(),
+            ),
+          ],
+        ),
+        SpacingFoundation.verticalSpace16,
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -228,10 +240,14 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         UiKitFeedbackInfo(
           onSubmit: () {},
           isModerated: false,
+          onSubmit: () {},
           userName: 'Ryan Gosling',
           dateTime: DateTime.now(),
           removeFunction: () {},
           onModerated: () {},
+          responsesFromCompanyToReview: true,
+          onModerated: () {},
+          isModerated: false,
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         PlaceIconSelector(

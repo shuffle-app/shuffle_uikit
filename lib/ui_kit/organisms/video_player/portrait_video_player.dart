@@ -65,6 +65,8 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
     //     });
     // });
     // Play a [Media] or [Playlist].
+    final prevVolume = _player.state.volume;
+    _player.setVolume(0);
     _player.open(Media(widget.videoUrl)).then((_) {
       _controller.waitUntilFirstFrameRendered.then((_) {
         Future.delayed(const Duration(milliseconds: 500), () {
@@ -72,6 +74,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
             coverOpacity = 0;
           });
           _controller.player.play();
+          _player.setVolume(prevVolume);
           Future.delayed(const Duration(seconds: 1), () {
             setState(() {
               isReady = true;
@@ -123,13 +126,13 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
       child: GestureDetector(
         behavior: HitTestBehavior.translucent,
         // onHorizontalDragStart: (details) {
-        //   if (controller.player.platform?.state.playing ?? true) controller.player.pause();
+        //   if (_controller.player.platform?.state.playing ?? true) _controller.player.pause();
         //   setState(() => seeking = true);
         // },
         // onHorizontalDragUpdate: (details) {
         //   if (seeking) {
-        //     final position = controller.player.platform?.state.position.inMilliseconds ?? 0;
-        //     final duration = controller.player.platform?.state.duration.inMilliseconds ?? 0;
+        //     final position = _controller.player.platform?.state.position.inMilliseconds ?? 0;
+        //     final duration = _controller.player.platform?.state.duration.inMilliseconds ?? 0;
         //     int seekTo = (position + details.primaryDelta! * duration ~/ 1000);
         //     if (details.primaryDelta! > 0) {
         //       seekTo += (seekTo ~/ 16).clamp(0, duration);
@@ -138,12 +141,12 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
         //     }
         //     final progress = (seekTo / duration).clamp(0.0, 1.0);
         //     widget.onProgressChanged?.call(progress);
-        //     player.seek(Duration(milliseconds: seekTo));
+        //     _controller.player.seek(Duration(milliseconds: seekTo));
         //   }
         // },
         // onHorizontalDragEnd: (details) {
         //   setState(() => seeking = false);
-        //   if (!(controller.player.platform?.state.playing ?? true)) controller.player.play();
+        //   if (!(_controller.player.platform?.state.playing ?? true)) _controller.player.play();
         // },
         onTapDown: (details) {
           _controller.player.pause();

@@ -694,6 +694,8 @@
   "SeekingWandererMen": "Seeking wanderer",
   "SeekingWandererWom": "Seeking wanderer",
   "TravelerMen": "Traveler",
+  "Global": "Global",
+  "GlobalAlertText": "Only published can be made global",
   "TravelerWom": "Traveler"
 
 }

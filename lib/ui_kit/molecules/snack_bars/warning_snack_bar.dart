@@ -35,17 +35,6 @@ class WarningSnackBar extends StatelessWidget implements SnackBarFactory {
               style: textTheme?.body,
             ),
           ),
-          SpacingFoundation.horizontalSpace8,
-          InkWell(
-            onTap: () => context.pop(),
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            child: Icon(
-              ShuffleUiKitIcons.x,
-              color: ColorsFoundation.mutedText,
-              size: 12.sp,
-            ),
-          )
         ],
       ).paddingAll(EdgeInsetsFoundation.all16),
     );

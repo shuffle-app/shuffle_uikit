@@ -7141,6 +7141,26 @@ class S {
     );
   }
 
+  /// `Global`
+  String get Global {
+    return Intl.message(
+      'Global',
+      name: 'Global',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Only published can be made global`
+  String get GlobalAlertText {
+    return Intl.message(
+      'Only published can be made global',
+      name: 'GlobalAlertText',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Traveler`
   String get TravelerWom {
     return Intl.message(

@@ -55,14 +55,17 @@ class _UiKitDraggableCardState extends State<UiKitDraggableCard> {
             onDragUpdate: (details) {
               setState(() {
                 _offset += details.delta;
+                if (_offset.dy > 0) {
+                  _offset = Offset(_offset.dx, 0);
+                }
               });
               debugPrint('Drag update: details.delta = ${details.delta}');
               if (widget.scrollController != null) {
                 final currentPosition = widget.scrollController!.position.pixels;
                 debugPrint('Drag update: currentPosition = $currentPosition and _offset is $_offset');
-                if (details.globalPosition.dy > 0.7.sh) {
+                if (details.globalPosition.dy > 0.7.sh && _offset.dy > 0) {
                   widget.scrollController?.jumpTo(currentPosition + 20);
-                } else if (details.globalPosition.dy < 0.3.sh) {
+                } else if (currentPosition > 50 && details.globalPosition.dy < 0.3.sh) {
                   widget.scrollController?.jumpTo(currentPosition - 20);
                 }
                 final updatedPosition = widget.scrollController!.position.pixels;

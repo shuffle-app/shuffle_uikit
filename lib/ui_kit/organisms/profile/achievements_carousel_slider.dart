@@ -27,7 +27,7 @@ class AchievementsCarouselSliderState
       child: CarouselSlider.builder(
         itemCount: widget.listOfItems.length,
         itemBuilder: (context, index, realIndex) {
-          final double scale = _currentIndex == index ? 1.0 : 0.9;
+          final double scale = _currentIndex == index ? 1.0 : 0.8;
           final double translateY = _currentIndex == index ? 0.0 : -10.0;
 
           return AnimatedContainer(

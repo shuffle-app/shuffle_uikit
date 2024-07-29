@@ -20,6 +20,17 @@ class DialogTestingPage extends StatelessWidget {
                 SpacingFoundation.verticalSpace16,
                 context.button(
                   data: BaseUiKitButtonData(
+                    text: 'show global content alert dialog',
+                    onPressed: () => showDialog(
+                      context: context,
+                      useSafeArea: true,
+                      builder: (context) => GlobalContentAlertDialog(),
+                    ),
+                  ),
+                ),
+                SpacingFoundation.verticalSpace16,
+                context.button(
+                  data: BaseUiKitButtonData(
                     onPressed: () {
                       context.push(
                         UiKitModerationVideoPlayer(
@@ -110,11 +121,11 @@ class DialogTestingPage extends StatelessWidget {
                       content: UiKitVideoReactionsModeration(
                         videoUrl: '',
                         feedbackInfo: UiKitFeedbackInfo(
-                          isModerated: false,
-                          onModerated: () {},
                           onSubmit: () {},
                           dateTime: DateTime.now(),
                           removeFunction: () {},
+                          isModerated: false,
+                          onModerated: () {},
                           userName: 'Ryan Gosling',
                         ),
                       ),
@@ -173,7 +184,8 @@ class DialogTestingPage extends StatelessWidget {
                     onPressed: () => showUiKitPopover(c,
                         title: const Text('Premium account'),
                         buttonText: 'see more',
-                        description: const Text('Only premium account users can post reactions')),
+                        description: const Text(
+                            'Only premium account users can post reactions')),
                   ),
                 ),
                 SpacingFoundation.verticalSpace16,
