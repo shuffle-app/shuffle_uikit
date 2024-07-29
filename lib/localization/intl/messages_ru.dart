@@ -311,6 +311,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Bookings": m4,
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Брони и Приглашения"),
+        "BookingsHeading": MessageLookupByLibrary.simpleMessage("Брони"),
         "Both": MessageLookupByLibrary.simpleMessage("Оба"),
         "Branches": MessageLookupByLibrary.simpleMessage("Сеть"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Буддизм"),
@@ -628,6 +629,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "InviteToFavoritePlaces":
             MessageLookupByLibrary.simpleMessage("Пригласить в \"Избранное\""),
         "InvitedPeople": MessageLookupByLibrary.simpleMessage("Участники"),
+        "Invites": MessageLookupByLibrary.simpleMessage("Приглашения"),
         "InvitesCount": m32,
         "InvitesNPeopleInfo": m33,
         "InvitesNPeopleTo": m34,

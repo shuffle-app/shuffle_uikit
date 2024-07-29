@@ -5423,6 +5423,26 @@ class S {
     );
   }
 
+  /// `Invites`
+  String get Invites {
+    return Intl.message(
+      'Invites',
+      name: 'Invites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bookings`
+  String get BookingsHeading {
+    return Intl.message(
+      'Bookings',
+      name: 'BookingsHeading',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Select price and currency`
   String get SelectPriceAndCurrency {
     return Intl.message(
