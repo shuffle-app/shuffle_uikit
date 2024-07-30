@@ -7,6 +7,7 @@ export 'cards/base_ui_kit_advertisement_banner_data.dart';
 export 'cards/base_ui_kit_user_tile_data.dart';
 export 'cards/horizontal_captioned_image.dart';
 export 'charts/chart_body_sizing.dart';
+export 'charts/ui_kit_line_chart_additional_data.dart';
 export 'localization/locale_model.dart';
 export 'location/known_location.dart';
 export 'location/location_suggestion.dart';

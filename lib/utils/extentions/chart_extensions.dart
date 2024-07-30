@@ -1,4 +1,6 @@
+import 'package:collection/collection.dart';
 import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
+import 'package:shuffle_uikit/ui_models/charts/ui_kit_line_chart_additional_data.dart';
 
 extension ChartNumberDataSetExtension on List<UiKitChartDataSet> {
   num get maxValue =>
@@ -150,5 +152,41 @@ extension ChartItemDataExtension on List<UiKitLineChartItemData> {
     datesToReturn.add(dates.last);
 
     return datesToReturn;
+  }
+}
+
+extension LineChartAdditionalDataExtension on List<UiKitLineChartAdditionalDataItem> {
+  num overallValueOfGroup(String groupName) {
+    return fold(
+      0,
+      (previousValue, element) => element.groupedValues.groupValue(groupName) + previousValue,
+    );
+  }
+
+  List<UiKitLineChartAdditionalDataItemGroup> get uniqueGroups {
+    final groups = <UiKitLineChartAdditionalDataItemGroup>[];
+    for (final item in this) {
+      for (final group in item.groupedValues) {
+        final index = groups.indexWhere((element) => element.name == group.name);
+        if (index.isNegative) groups.add(group);
+      }
+    }
+    return groups;
+  }
+
+  List<String> get uniqueGroupNames => expand((element) => element.groupedValues.map((e) => e.name)).toSet().toList();
+
+  num get overallValue =>
+      uniqueGroupNames.fold(0, (previousValue, element) => overallValueOfGroup(element) + previousValue);
+
+  bool get hasExceededMaxValue => overallValue > 100;
+}
+
+extension LineChartAdditionalDataItemGroupExtension on List<UiKitLineChartAdditionalDataItemGroup> {
+  num groupValue(String groupName) {
+    final group = firstWhereOrNull((element) => element.name == groupName);
+    if (group == null) return 0;
+
+    return group.value;
   }
 }

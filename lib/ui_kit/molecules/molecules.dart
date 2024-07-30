@@ -12,6 +12,8 @@ export 'badges/ui_kit_rating_badge.dart';
 export 'base/preview_horizontal_scroll.dart';
 export 'base/ui_kit_custom_background_switch_option_widget.dart';
 export 'base/ui_kit_header_with_leading.dart';
+export 'charts/ui_kit_line_chart_additional_data_item_widget.dart';
+export 'charts/ui_kit_line_chart_titled_stat.dart';
 export 'chips/default_importance_chip.dart';
 export 'chips/high_importance_chip.dart';
 export 'chips/medium_importance_chip.dart';
