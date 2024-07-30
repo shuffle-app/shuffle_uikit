@@ -1154,6 +1154,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Video (upload Files)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("View all"),
         "ViewHistory": MessageLookupByLibrary.simpleMessage("View history"),
+        "ViewSources": MessageLookupByLibrary.simpleMessage("View sources"),
         "VisitFirstToOpenNext":
             MessageLookupByLibrary.simpleMessage("Visit first to open next"),
         "Voice": MessageLookupByLibrary.simpleMessage("Voice"),

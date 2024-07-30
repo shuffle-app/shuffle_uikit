@@ -128,6 +128,88 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
+        UiKitRankedTitledBoard(
+          title:
+              'Top events for ${formatDateWithCustomPattern('MMMM dd', DateTime.now().subtract(const Duration(days: 2)))}',
+          rankItems: [
+            '80’s theme invites only party',
+            'Asian Street by Thai',
+            'First summer dance',
+          ],
+        ).paddingSymmetric(horizontal: 16),
+        SpacingFoundation.verticalSpace16,
+        SizedBox(
+          height: 0.265625.sw,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                flex: 3,
+                child: UiKitPieChart(data: mockPieChart),
+              ),
+              SpacingFoundation.horizontalSpace24,
+              Expanded(
+                flex: 8,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: mockPieChart.legend
+                      .map<Widget>(
+                        (legendItem) => UiKitChartLegendWidget(
+                          valueTitle: legendItem.title,
+                          value: legendItem.value,
+                          leading: Container(
+                            width: SpacingFoundation.verticalSpacing8,
+                            height: SpacingFoundation.verticalSpacing8,
+                            decoration: BoxDecoration(
+                              color: legendItem.color,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ).paddingSymmetric(vertical: EdgeInsetsFoundation.vertical2),
+              ),
+            ],
+          ).paddingSymmetric(horizontal: 16),
+        ),
+        SpacingFoundation.verticalSpace16,
+        UiKitGlowingProgressIndicator(
+          maxWidth: 1.sw - 16,
+          progressColor: ColorsFoundation.warning,
+          maxValue: 10,
+          value: 5,
+          title: 'Event rating (by feedback)',
+        ).paddingSymmetric(horizontal: 16),
+        SpacingFoundation.verticalSpace16,
+        UiKitGlowingProgressIndicator(
+          maxWidth: 1.sw - 16,
+          progressColor: ColorsFoundation.success,
+          maxValue: 10,
+          value: 8,
+          title: 'Overall rating of interest',
+        ).paddingSymmetric(horizontal: 16),
+        SpacingFoundation.verticalSpace16,
+        UiKitVerticalTitledInfoBoard(
+          title: 'Portrait of the most active segment',
+          infoList: [
+            TitledInfoModel(
+              title: S.current.Gender,
+              info: S.current.Male,
+            ),
+            TitledInfoModel(
+              title: 'Age',
+              info: '36-45 y.o',
+            ),
+            TitledInfoModel(
+              title: 'Interests',
+              info: 'Snowboard, Free Ride, Hookah, Dance',
+            ),
+          ],
+        ),
+        SpacingFoundation.verticalSpace16,
         GlobalContentAlertDialog(),
         SpacingFoundation.verticalSpace16,
         Row(

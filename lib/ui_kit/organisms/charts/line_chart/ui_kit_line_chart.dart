@@ -8,7 +8,7 @@ import 'package:shuffle_uikit/ui_kit/organisms/charts/line_chart/ui_kit_line_cha
 import 'package:shuffle_uikit/ui_kit/organisms/charts/line_chart/ui_kit_line_chart_small_preview.dart';
 import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
 import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dart';
-import 'package:shuffle_uikit/utils/extentions/chart_extensions.dart';
+import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
 class UiKitLineChart extends StatefulWidget {
   final UiKitLineChartData<num> chartData;

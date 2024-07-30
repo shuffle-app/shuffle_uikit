@@ -1,5 +1,8 @@
+import 'dart:ui';
+
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
+import 'package:shuffle_uikit/ui_models/charts/pie_chart_data.dart';
 
 final UiKitLineChartData<double> mockLineChart = UiKitLineChartData<double>(
   title: S.current.BookingsAndInvites,
@@ -119,6 +122,32 @@ final UiKitLineChartData<double> mockLineChart = UiKitLineChartData<double>(
           value: 789,
         ),
       ],
+    ),
+  ],
+);
+
+final UiKitPieChartData mockPieChart = UiKitPieChartData(
+  chartName: S.current.ViewSources,
+  items: [
+    UiKitPieCharItemData(
+      color: const Color(0xff8DC1FF),
+      value: 62,
+      itemName: 'Randomizer',
+    ),
+    UiKitPieCharItemData(
+      color: const Color(0xff5BA3FF),
+      value: 8,
+      itemName: 'Feelings',
+    ),
+    UiKitPieCharItemData(
+      color: const Color(0xff3088FF),
+      value: 18,
+      itemName: S.current.Search,
+    ),
+    UiKitPieCharItemData(
+      color: ColorsFoundation.info,
+      value: 12,
+      itemName: 'Spinner',
     ),
   ],
 );
