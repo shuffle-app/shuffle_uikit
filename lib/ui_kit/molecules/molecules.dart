@@ -16,6 +16,8 @@ export 'base/ui_kit_header_with_leading.dart';
 export 'base/ui_kit_ranked_titled_board.dart';
 export 'base/ui_kit_titled_info_board.dart';
 export 'charts/ui_kit_chart_legend_widget.dart';
+export 'charts/ui_kit_line_chart_additional_data_item_widget.dart';
+export 'charts/ui_kit_line_chart_titled_stat.dart';
 export 'chips/default_importance_chip.dart';
 export 'chips/high_importance_chip.dart';
 export 'chips/medium_importance_chip.dart';

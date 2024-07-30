@@ -12,10 +12,12 @@ import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
 class UiKitLineChart extends StatefulWidget {
   final UiKitLineChartData<num> chartData;
+  final UiKitLineChartAdditionalData? chartAdditionalData;
 
   const UiKitLineChart({
     Key? key,
     required this.chartData,
+    this.chartAdditionalData,
   }) : super(key: key);
 
   @override
@@ -126,6 +128,22 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      if (widget.chartAdditionalData != null) {
+        log('Additional data: ${widget.chartAdditionalData!.title}');
+        log('Additional data items count: ${widget.chartAdditionalData!.dataItems.length}');
+        log('Additional data items count: ${widget.chartAdditionalData!.dataItems.uniqueGroupNames}');
+        log('Additional data overall value: ${widget.chartAdditionalData!.dataItems.overallValue}');
+        widget.chartAdditionalData!.dataItems.uniqueGroupNames.forEach((name) {
+          log('Additional data item group: $name');
+          log(widget.chartAdditionalData!.dataItems.overallValueOfGroup(name).toString());
+        });
+        widget.chartAdditionalData!.dataItems.forEach((element) {
+          log('Additional data item: ${element.name}');
+          element.groupedValues.forEach((element) {
+            log('Additional data item group: ${element.name} - ${element.value}');
+          });
+        });
+      }
       _datesScrollController.addListener(_datesScrollListener);
       _chartScrollController.addListener(_chartScrollListener);
       setState(() {
@@ -188,7 +206,6 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       _bodySizingNotifier.value = _bodySizingNotifier.value.copyWith(
         additionalWidth: additionalWidth,
       );
-      print(_smallPreviewUpdateNotifier.value.previewWidthFraction);
     });
   }
 
@@ -237,9 +254,9 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final regularTextTheme = context.uiKitTheme?.regularTextTheme;
+    final colorScheme = context.uiKitTheme?.colorScheme;
 
     return UiKitCardWrapper(
-      height: viewPortComputedSize.height,
       width: viewPortComputedSize.width,
       borderRadius: BorderRadiusFoundation.all24,
       child: Column(
@@ -337,6 +354,51 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                 )
                 .toList(),
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+          if (widget.chartAdditionalData != null)
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.chartAdditionalData!.title,
+                  style: boldTextTheme?.caption2Medium,
+                ),
+                SpacingFoundation.verticalSpace4,
+                ...widget.chartAdditionalData!.dataItems.map<Widget>(
+                  (item) => UiKitLineChartAdditionalDataItemWidget(
+                    title: item.name,
+                    dataItems: item.groupedValues,
+                    maxWidth: viewPortComputedSize.width - EdgeInsetsFoundation.all32,
+                  ),
+                ),
+                SpacingFoundation.verticalSpace12,
+                ClipRRect(
+                  borderRadius: BorderRadiusFoundation.max,
+                  child: Divider(
+                    color: colorScheme?.surface4,
+                    thickness: 2,
+                    height: 2,
+                  ),
+                ),
+                SpacingFoundation.verticalSpace12,
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: widget.chartAdditionalData!.dataItems.uniqueGroups.map<Widget>(
+                    (group) {
+                      final value = widget.chartAdditionalData!.dataItems.overallValueOfGroup(group.name);
+                      final color = group.color;
+
+                      return UiKitLineChartTitledStat(
+                        title: group.name,
+                        color: color,
+                        value: '${value.toStringAsFixed(0)}%',
+                      );
+                    },
+                  ).toList(),
+                ),
+              ],
+            ).paddingAll(EdgeInsetsFoundation.all16),
         ],
       ),
     );

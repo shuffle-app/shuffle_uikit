@@ -8,6 +8,7 @@ export 'cards/base_ui_kit_user_tile_data.dart';
 export 'cards/horizontal_captioned_image.dart';
 export 'cards/titled_info_model.dart';
 export 'charts/chart_body_sizing.dart';
+export 'charts/ui_kit_line_chart_additional_data.dart';
 export 'charts/ui_kit_pie_chart_legend_item.dart';
 export 'localization/locale_model.dart';
 export 'location/known_location.dart';
