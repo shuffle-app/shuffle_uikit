@@ -33,7 +33,7 @@ class _UiKitDraggableCardState extends State<UiKitDraggableCard> {
         onDragAccept: widget.onDragAccept,
         child: Transform.translate(
           offset: _offset,
-          child: Draggable<DragTargetData>(
+          child: LongPressDraggable<DragTargetData>(
             data: DragTargetData(key: 'card', data: widget.cardId),
             axis: widget.dragDirection,
             onDragStarted: () {
@@ -47,7 +47,6 @@ class _UiKitDraggableCardState extends State<UiKitDraggableCard> {
                 });
               }
             },
-            affinity: widget.dragDirection,
             childWhenDragging: UiKitCardWrapper(
               padding: EdgeInsets.symmetric(vertical: SpacingFoundation.verticalSpacing8),
               child: widget.child,

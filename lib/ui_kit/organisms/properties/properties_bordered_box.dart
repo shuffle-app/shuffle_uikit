@@ -28,7 +28,9 @@ class PropertiesBorderedBox extends StatelessWidget {
         children: [
           title ?? const SizedBox(),
           spacing ?? SpacingFoundation.verticalSpace16,
-          child ?? const SizedBox(),
+          Expanded(
+            child: child ?? const SizedBox(),
+          )
         ],
       ).paddingAll(EdgeInsetsFoundation.all16),
     );

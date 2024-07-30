@@ -36,7 +36,8 @@ class UiKitSupportShuffle extends StatelessWidget {
                         opacity: animation1,
                         child: DonateToShuffleAlert(onDonate: onDonate),
                       ),
-                ), child: UiKitCardWrapper(
+                ),
+        child: UiKitCardWrapper(
       width: 110.w,
       color: context.uiKitTheme?.colorScheme.surface1,
       child: Column(
@@ -75,7 +76,6 @@ class UiKitSupportShuffle extends StatelessWidget {
             child: context.smallOutlinedButton(
               data: BaseUiKitButtonData(
                 backgroundColor: Colors.transparent,
-                onPressed: () {},
                 iconInfo: BaseUiKitButtonIconData(
                   size: 10.h,
                   iconData: ShuffleUiKitIcons.dollar,

@@ -1,27 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitCloudChip extends StatefulWidget {
+class UiKitCloudChip extends StatelessWidget {
   const UiKitCloudChip({
     super.key,
     this.onTap,
     required this.title,
     this.iconPath,
-    this.isSelectable, this.initialSelect,
+    this.selected = false,
   });
 
   final VoidCallback? onTap;
   final String title;
   final String? iconPath;
-  final bool? isSelectable;
-  final bool? initialSelect;
-
-  @override
-  State<UiKitCloudChip> createState() => _UiKitCloudChipState();
-}
-
-class _UiKitCloudChipState extends State<UiKitCloudChip> {
- late bool selectable = widget.initialSelect ?? false;
+  final bool selected;
 
   @override
   Widget build(BuildContext context) {
@@ -32,31 +24,20 @@ class _UiKitCloudChipState extends State<UiKitCloudChip> {
       color: ColorsFoundation.info.withOpacity(0.2),
       boxShadow: [
         BoxShadow(
-            color: ColorsFoundation.info.withOpacity(0.3),
-            offset: const Offset(0, 2),
-            blurRadius: 3,
-            spreadRadius: 0),
+            color: ColorsFoundation.info.withOpacity(0.3), offset: const Offset(0, 2), blurRadius: 3, spreadRadius: 0),
       ],
     );
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: () {
-          widget.onTap?.call();
-          if (widget.isSelectable != null) {
-            setState(() {
-              selectable = !selectable;
-            });
-          }
-        },
+        onTap: onTap,
         borderRadius: BorderRadiusFoundation.all6,
         child: Ink(
-          decoration: selectable
+          decoration: selected
               ? selectableDecoration
               : BoxDecoration(
                   border: Border.all(
-                    color:
-                        uiKitTheme?.colorScheme.darkNeutral900 ?? Colors.black,
+                    color: uiKitTheme?.colorScheme.darkNeutral900 ?? Colors.black,
                   ),
                   borderRadius: BorderRadiusFoundation.all6,
                   color: uiKitTheme?.colorScheme.surface.withOpacity(0.1),
@@ -65,19 +46,15 @@ class _UiKitCloudChipState extends State<UiKitCloudChip> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              if (widget.iconPath != null)
+              if (iconPath != null)
                 ImageWidget(
-                 link: widget.iconPath,
-                  color: selectable
-                      ? ColorsFoundation.info
-                      : uiKitTheme?.colorScheme.bodyTypography,
+                  link: iconPath,
+                  color: selected ? ColorsFoundation.info : uiKitTheme?.colorScheme.bodyTypography,
                   width: 18.sp,
                 ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
-              Text(widget.title,
+              Text(title,
                   style: uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
-                    color: selectable
-                        ? ColorsFoundation.info
-                        : uiKitTheme.colorScheme.bodyTypography,
+                    color: selected ? ColorsFoundation.info : uiKitTheme.colorScheme.bodyTypography,
                   ),
                   textAlign: TextAlign.center),
             ],
