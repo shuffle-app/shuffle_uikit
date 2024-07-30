@@ -49,6 +49,10 @@ String formatDuration(Duration? duration) {
   return '${minutes}:$seconds';
 }
 
+String formatDateWithCustomPattern(String pattern, DateTime date) {
+  return DateFormat(pattern).format(date);
+}
+
 String formatDifference(DateTime date) {
   final difference = DateTime.now().difference(date).inDays;
   if (difference == 0) {

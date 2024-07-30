@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/decoration/dashed_divider.dart';
-import 'package:shuffle_uikit/ui_kit/organisms/charts/painters/line_chart_painters.dart';
 import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
 import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dart';
-import 'package:shuffle_uikit/utils/extentions/chart_extensions.dart';
+import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
 class UiKitLineChartBody extends StatelessWidget {
   final Size availableSize;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
-import 'package:shuffle_uikit/utils/extentions/chart_extensions.dart';
+import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
 class LineChartPainter extends CustomPainter {
   final List<UiKitLineChartItemData<num>> lines;

@@ -1163,6 +1163,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("वीडियो (फ़ाइलें अपलोड करें)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("सभी देखें"),
         "ViewHistory": MessageLookupByLibrary.simpleMessage("इतिहास देखें"),
+        "ViewSources": MessageLookupByLibrary.simpleMessage("View sources"),
         "VisitFirstToOpenNext":
             MessageLookupByLibrary.simpleMessage("अगला खोलने के लिए पहले जाएँ"),
         "Voice": MessageLookupByLibrary.simpleMessage("आवाज़"),
