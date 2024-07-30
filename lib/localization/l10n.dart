@@ -7170,6 +7170,16 @@ class S {
       args: [],
     );
   }
+
+  /// `View sources`
+  String get ViewSources {
+    return Intl.message(
+      'View sources',
+      name: 'ViewSources',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
