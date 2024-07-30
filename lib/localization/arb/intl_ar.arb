@@ -696,5 +696,6 @@
   "TravelerMen": "Traveler",
   "Global": "Global",
   "GlobalAlertText": "Only published can be made global",
-  "TravelerWom": "Traveler"
+  "TravelerWom": "Traveler",
+  "ViewSources": "View sources"
 }
