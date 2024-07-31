@@ -1,8 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/organisms/charts/line_chart/ui_kit_line_chart.dart';
-import 'package:shuffle_uikit/ui_models/mock/mock_charts.dart';
 
 class ProProfilePage extends StatelessWidget {
   final int? events;
@@ -237,14 +235,14 @@ class ProProfilePage extends StatelessWidget {
                   UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: true),
                   UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: true),
                 ],
-                stories: const [
-                  ProfileStory(
+                videoReactions: const [
+                  ProfileVideoReaction(
                     image:
                         'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
                     isEmpty: false,
                     viewed: false,
                   ),
-                  ProfileStory(
+                  ProfileVideoReaction(
                     image:
                         'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
                     isEmpty: false,

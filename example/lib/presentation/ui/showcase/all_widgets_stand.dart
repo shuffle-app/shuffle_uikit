@@ -386,43 +386,36 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               UiKitCloudChip(
                 title: 'Joke',
                 onTap: () {},
-                isSelectable: true,
                 iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Smoke',
                 onTap: () {},
-                isSelectable: true,
                 iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Drink',
                 onTap: () {},
-                isSelectable: true,
                 iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Swim',
                 onTap: () {},
-                isSelectable: true,
                 iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Relax',
                 onTap: () {},
-                isSelectable: true,
                 iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Relax',
                 onTap: () {},
-                isSelectable: true,
                 iconPath: GraphicsFoundation.instance.png.company.path,
               ),
               UiKitCloudChip(
                 title: 'Relax',
                 onTap: () {},
-                isSelectable: true,
                 iconPath: GraphicsFoundation.instance.png.company.path,
               ),
             ],
@@ -444,7 +437,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ],
         ),
         SpacingFoundation.verticalSpace16,
-        UiKitCloudChip(title: 'Diamond', onTap: () {}, iconPath: "ShuffleUiKitIcons.heartoutline", isSelectable: true)
+        UiKitCloudChip(title: 'Diamond', onTap: () {}, iconPath: "ShuffleUiKitIcons.heartoutline")
             .paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         PropertiesSearchInput(
