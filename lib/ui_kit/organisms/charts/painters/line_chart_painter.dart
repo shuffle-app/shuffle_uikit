@@ -3,7 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
 import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
-class LineChartPainter extends CustomPainter {
+class LineChartPainterWithInfoOverlay extends CustomPainter {
   final List<UiKitLineChartItemData<num>> lines;
   late final double _step;
   final Size size;
@@ -11,7 +11,7 @@ class LineChartPainter extends CustomPainter {
   final double stepScaleFactor;
   final Color pointsStraightLineColor;
 
-  LineChartPainter({
+  LineChartPainterWithInfoOverlay({
     super.repaint,
     required this.lines,
     required this.size,

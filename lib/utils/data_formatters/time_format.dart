@@ -49,8 +49,8 @@ String formatDuration(Duration? duration) {
   return '${minutes}:$seconds';
 }
 
-String formatDateWithCustomPattern(String pattern, DateTime date) {
-  return DateFormat(pattern).format(date);
+String formatDateWithCustomPattern(String pattern, DateTime date, {String? locale}) {
+  return DateFormat(pattern, locale).format(date);
 }
 
 String formatDifference(DateTime date) {

@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -151,3 +152,46 @@ final UiKitPieChartData mockPieChart = UiKitPieChartData(
     ),
   ],
 );
+
+final mockedMiniChartData = [
+  UiKitMiniChartData(
+    title: 'Video-reactions',
+    color: ColorsFoundation.success,
+    items: List.generate(
+      10,
+      (index) => UiKitMiniChartDataItem(
+        time: DateTime.now().subtract(Duration(days: index)),
+        value: Random().nextInt(100),
+      ),
+    ),
+    value: 32,
+    progress: 2.45,
+  ),
+  UiKitMiniChartData(
+    title: 'Average card visit time',
+    color: ColorsFoundation.warning,
+    items: List.generate(
+      10,
+      (index) => UiKitMiniChartDataItem(
+        time: DateTime.now().subtract(Duration(days: index)),
+        value: Random().nextInt(100),
+      ),
+    ),
+    value: 15,
+    progress: -2.45,
+    valueMetricsName: 'min',
+  ),
+  UiKitMiniChartData(
+    title: 'Routes to the place',
+    color: ColorsFoundation.info,
+    items: List.generate(
+      10,
+      (index) => UiKitMiniChartDataItem(
+        time: DateTime.now().subtract(Duration(days: index)),
+        value: Random().nextInt(100),
+      ),
+    ),
+    value: 12,
+    progress: -2.45,
+  ),
+];

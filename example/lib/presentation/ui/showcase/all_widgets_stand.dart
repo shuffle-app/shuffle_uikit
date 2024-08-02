@@ -128,6 +128,10 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
+        UiKitMiniChart(
+          data: mockedMiniChartData,
+        ).paddingSymmetric(horizontal: 16),
+        SpacingFoundation.verticalSpace16,
         UiKitRankedTitledBoard(
           title:
               'Top events for ${formatDateWithCustomPattern('MMMM dd', DateTime.now().subtract(const Duration(days: 2)))}',

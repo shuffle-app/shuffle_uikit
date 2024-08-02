@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_models/charts/pie_chart_data.dart';
+import 'package:shuffle_uikit/utils/extentions/pie_chart_extensions.dart';
 
 class UiKitPieChart extends StatelessWidget {
   final UiKitPieChartData data;
@@ -13,7 +14,7 @@ class UiKitPieChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: UiKitPieChartPainter(data: data.items),
+      painter: UiKitPieChartPainter(data: data.items.sortedByValueAsc),
     );
   }
 }
