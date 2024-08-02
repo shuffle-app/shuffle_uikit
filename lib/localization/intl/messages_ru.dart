@@ -1150,6 +1150,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpgradeForNmoney": m66,
         "UploadingVideo":
             MessageLookupByLibrary.simpleMessage("Загрузка видео"),
+        "Upsales":
+            MessageLookupByLibrary.simpleMessage("Дополнительные продажи"),
+        "UpsalesAvailable": MessageLookupByLibrary.simpleMessage(
+            "Доступны дополнительные продажи"),
+        "UpsalesAvailableHint": MessageLookupByLibrary.simpleMessage(
+            "футболка, шапочка, коврик для йоги, кружка"),
         "User": MessageLookupByLibrary.simpleMessage("Юзер"),
         "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
             "Выбери тип аккаунта, который хочешь создать или войти"),
