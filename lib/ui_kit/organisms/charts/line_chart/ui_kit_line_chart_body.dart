@@ -147,7 +147,7 @@ class UiKitLineChartBody extends StatelessWidget {
                             : datesMaxScrollPosition ?? availableSize.width,
                         availableSize.height + SpacingFoundation.verticalSpacing16,
                       ),
-                      painter: LineChartPainter(
+                      painter: LineChartPainterWithInfoOverlay(
                         pointsStraightLineColor: colorScheme?.inverseSurface ?? Colors.white,
                         stepScaleFactor: chartStepScaleFactor,
                         selectedIndex: selectedDataSetNotifier.value.selectedDataSetIndex,
