@@ -42,12 +42,10 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
             color: enabled ? null : ColorsFoundation.darkNeutral300,
             shape: BoxShape.circle
         ),
-        child: loading ?? false
-            ? const SizedBox()
-            : fit == ButtonFit.hugContent
+        child: fit == ButtonFit.hugContent
             ? child
             : Center(child: child),
       ),
-    ).loadingWrap(loading ?? false, color: colorScheme?.surface);
+    ).loadingWrap(loading ?? false, color: colorScheme?.surface, opacity: 0.5);
   }
 }

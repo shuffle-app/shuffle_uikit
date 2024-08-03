@@ -311,12 +311,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           onPlayTap: () {},
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
-        UiKitEmojiInputField(
-          inputFieldFocusNode: FocusNode(),
-          textEditingController: _emojitextEditingController,
-          onSend: () {},
-        ),
-        SpacingFoundation.verticalSpace16,
         UiKitPointsHistoryTile(
           title: 'Challenge Feelings (hardcore)',
           dateTime: DateTime.now(),
@@ -382,56 +376,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             children: [UiKitCloudChipWithDesc(title: 'Coffee connoisseur', description: 'foodie, forever sloth')],
           ).paddingAll(EdgeInsetsFoundation.all24),
         ).paddingAll(EdgeInsetsFoundation.all16),
-        UiKitPropertiesCloud(
-          child: Wrap(
-            spacing: SpacingFoundation.horizontalSpacing12,
-            runSpacing: SpacingFoundation.verticalSpacing12,
-            children: [
-              UiKitCloudChip(
-                title: 'Joke',
-                onTap: () {},
-                isSelectable: true,
-                iconPath: GraphicsFoundation.instance.png.company.path,
-              ),
-              UiKitCloudChip(
-                title: 'Smoke',
-                onTap: () {},
-                isSelectable: true,
-                iconPath: GraphicsFoundation.instance.png.company.path,
-              ),
-              UiKitCloudChip(
-                title: 'Drink',
-                onTap: () {},
-                isSelectable: true,
-                iconPath: GraphicsFoundation.instance.png.company.path,
-              ),
-              UiKitCloudChip(
-                title: 'Swim',
-                onTap: () {},
-                isSelectable: true,
-                iconPath: GraphicsFoundation.instance.png.company.path,
-              ),
-              UiKitCloudChip(
-                title: 'Relax',
-                onTap: () {},
-                isSelectable: true,
-                iconPath: GraphicsFoundation.instance.png.company.path,
-              ),
-              UiKitCloudChip(
-                title: 'Relax',
-                onTap: () {},
-                isSelectable: true,
-                iconPath: GraphicsFoundation.instance.png.company.path,
-              ),
-              UiKitCloudChip(
-                title: 'Relax',
-                onTap: () {},
-                isSelectable: true,
-                iconPath: GraphicsFoundation.instance.png.company.path,
-              ),
-            ],
-          ).paddingAll(EdgeInsetsFoundation.all24),
-        ).paddingAll(EdgeInsetsFoundation.all16),
+
         SpacingFoundation.verticalSpace16,
         UiKitExpansionTileWithIconButton(
           title: "Food and Drink",
@@ -448,7 +393,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ],
         ),
         SpacingFoundation.verticalSpace16,
-        UiKitCloudChip(title: 'Diamond', onTap: () {}, iconPath: "ShuffleUiKitIcons.heartoutline", isSelectable: true)
+        UiKitCloudChip(title: 'Diamond', onTap: () {}, iconPath: "ShuffleUiKitIcons.heartoutline", selected: true)
             .paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         PropertiesSearchInput(

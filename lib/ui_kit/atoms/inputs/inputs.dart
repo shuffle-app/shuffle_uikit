@@ -13,5 +13,4 @@ export 'ui_kit_suggestion_field.dart';
 export 'ui_kit_titled_text_field.dart';
 export 'ui_kit_wrapped_input_field.dart';
 export 'ui_kit_symbols_counter_input_field_no_fill.dart';
-export 'ui_kit_emoji_inputs.dart';
 export 'ui_kit_input_filled_with_title.dart';

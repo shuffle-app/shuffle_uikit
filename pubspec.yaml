@@ -63,12 +63,6 @@ dependencies:
       ref: main
 
   another_flushbar: ^1.12.30
-
-  #emoji
-  emoji_picker_flutter: 
-    git:
-      url: https://github.com/shuffle-app/emoji_picker_flutter
-      ref: master
       
   flutter_keyboard_visibility: ^6.0.0
 

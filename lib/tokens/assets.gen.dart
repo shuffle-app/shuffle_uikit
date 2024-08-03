@@ -123,9 +123,6 @@ class $AssetsAnimationsLottieGen {
 class $AssetsImagesPngGen {
   const $AssetsImagesPngGen();
 
-  /// File path: assets/images/png/Accountant.png
-  AssetGenImage get accountant => const AssetGenImage('assets/images/png/Accountant.png');
-
   /// File path: assets/images/png/Aubergine.png
   AssetGenImage get aubergine => const AssetGenImage('assets/images/png/Aubergine.png');
 
@@ -185,9 +182,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Discount.png
   AssetGenImage get discount => const AssetGenImage('assets/images/png/Discount.png');
-
-  /// File path: assets/images/png/Doctor.png
-  AssetGenImage get doctor => const AssetGenImage('assets/images/png/Doctor.png');
 
   /// File path: assets/images/png/Donations.png
   AssetGenImage get donations => const AssetGenImage('assets/images/png/Donations.png');
@@ -495,9 +489,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/clothing.png
   AssetGenImage get clothing => const AssetGenImage('assets/images/png/clothing.png');
 
-  /// File path: assets/images/png/coach.png
-  AssetGenImage get coach => const AssetGenImage('assets/images/png/coach.png');
-
   /// File path: assets/images/png/compact_rating_card_mock.png
   AssetGenImage get compactRatingCardMock => const AssetGenImage('assets/images/png/compact_rating_card_mock.png');
 
@@ -537,9 +528,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/just_coin.png
   AssetGenImage get justCoin => const AssetGenImage('assets/images/png/just_coin.png');
 
-  /// File path: assets/images/png/manicure.png
-  AssetGenImage get manicure => const AssetGenImage('assets/images/png/manicure.png');
-
   /// File path: assets/images/png/map_mock.png
   AssetGenImage get mapMock => const AssetGenImage('assets/images/png/map_mock.png');
 
@@ -558,9 +546,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/mock_user_avatar.png
   AssetGenImage get mockUserAvatar => const AssetGenImage('assets/images/png/mock_user_avatar.png');
 
-  /// File path: assets/images/png/muslim_flag.png
-  AssetGenImage get muslimFlag => const AssetGenImage('assets/images/png/muslim_flag.png');
-
   /// File path: assets/images/png/nft_1.png
   AssetGenImage get nft1 => const AssetGenImage('assets/images/png/nft_1.png');
 
@@ -576,23 +561,11 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/notif-permit.png
   AssetGenImage get notifPermit => const AssetGenImage('assets/images/png/notif-permit.png');
 
-  /// File path: assets/images/png/onboarding_mock_1.png
-  AssetGenImage get onboardingMock1 => const AssetGenImage('assets/images/png/onboarding_mock_1.png');
-
-  /// File path: assets/images/png/onboarding_mock_2.png
-  AssetGenImage get onboardingMock2 => const AssetGenImage('assets/images/png/onboarding_mock_2.png');
-
-  /// File path: assets/images/png/onboarding_mock_3.png
-  AssetGenImage get onboardingMock3 => const AssetGenImage('assets/images/png/onboarding_mock_3.png');
-
   /// File path: assets/images/png/parcel.png
   AssetGenImage get parcel => const AssetGenImage('assets/images/png/parcel.png');
 
   /// File path: assets/images/png/paywall_slide_video.png
   AssetGenImage get paywallSlideVideo => const AssetGenImage('assets/images/png/paywall_slide_video.png');
-
-  /// File path: assets/images/png/pharmacy.png
-  AssetGenImage get pharmacy => const AssetGenImage('assets/images/png/pharmacy.png');
 
   /// File path: assets/images/png/pharmacy_plus.png
   AssetGenImage get pharmacyPlus => const AssetGenImage('assets/images/png/pharmacy_plus.png');
@@ -626,9 +599,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
-
-  /// File path: assets/images/png/real.png
-  AssetGenImage get real => const AssetGenImage('assets/images/png/real.png');
 
   /// File path: assets/images/png/search_feed_text_banner_1.png
   AssetGenImage get searchFeedTextBanner1 => const AssetGenImage('assets/images/png/search_feed_text_banner_1.png');
@@ -705,15 +675,8 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/uber.png
   AssetGenImage get uber => const AssetGenImage('assets/images/png/uber.png');
 
-  /// File path: assets/images/png/welcome_slide_1.png
-  AssetGenImage get welcomeSlide1 => const AssetGenImage('assets/images/png/welcome_slide_1.png');
-
-  /// File path: assets/images/png/welcome_slide_2.png
-  AssetGenImage get welcomeSlide2 => const AssetGenImage('assets/images/png/welcome_slide_2.png');
-
   /// List of all assets
   List<AssetGenImage> get values => [
-        accountant,
         aubergine,
         baggage,
         bell,
@@ -734,7 +697,6 @@ class $AssetsImagesPngGen {
         createName,
         dart,
         discount,
-        doctor,
         donations,
         dragCard,
         events,
@@ -836,7 +798,6 @@ class $AssetsImagesPngGen {
         catering,
         choosePlan,
         clothing,
-        coach,
         compactRatingCardMock,
         deliveryTruck,
         donat,
@@ -850,25 +811,19 @@ class $AssetsImagesPngGen {
         help,
         honest,
         justCoin,
-        manicure,
         mapMock,
         merch,
         mockAdBanner,
         mockAvatar,
         mockSwiperCard,
         mockUserAvatar,
-        muslimFlag,
         nft1,
         nft2,
         nft3,
         noInternet,
         notifPermit,
-        onboardingMock1,
-        onboardingMock2,
-        onboardingMock3,
         parcel,
         paywallSlideVideo,
-        pharmacy,
         pharmacyPlus,
         placeSocial1,
         placeSocial2,
@@ -879,7 +834,6 @@ class $AssetsImagesPngGen {
         profileAvatar,
         profilePost1,
         profileStory1,
-        real,
         searchFeedTextBanner1,
         searchFeedTextBanner2,
         searchFeedTextBanner3,
@@ -904,9 +858,7 @@ class $AssetsImagesPngGen {
         titledCardBackground2,
         titledCardBackground3,
         titledCardBackground4,
-        uber,
-        welcomeSlide1,
-        welcomeSlide2
+        uber
       ];
 }
 
