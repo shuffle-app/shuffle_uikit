@@ -11,6 +11,12 @@ class LineChartSmallPreviewData {
     this.atEdge = false,
   });
 
+  factory LineChartSmallPreviewData.initial() => LineChartSmallPreviewData(
+        leftOffset: 0,
+        previewWidthFraction: 0.35,
+        atEdge: true,
+      );
+
   LineChartSmallPreviewData copyWith({
     double? leftOffset,
     double? previewWidthFraction,

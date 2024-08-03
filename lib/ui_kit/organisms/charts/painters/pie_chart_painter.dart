@@ -16,7 +16,7 @@ class UiKitPieChartPainter extends CustomPainter {
     const strokeWidth = 16.0;
     final diameter = min(size.width - strokeWidth, size.height - strokeWidth);
     final radius = diameter / 2;
-    double startAngle = -pi / 2;
+    double startAngle = 0;
 
     for (final item in data) {
       final sweepAngle = (item.value / data.sum) * 2 * pi;

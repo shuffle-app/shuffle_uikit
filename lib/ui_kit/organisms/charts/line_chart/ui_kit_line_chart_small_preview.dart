@@ -37,7 +37,7 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
                 isComplex: true,
                 willChange: false,
                 size: size,
-                painter: LineChartPainter(
+                painter: LineChartPainterWithInfoOverlay(
                   pointsStraightLineColor: colorScheme?.inverseSurface ?? Colors.white,
                   size: size,
                   lines: chartItems,
