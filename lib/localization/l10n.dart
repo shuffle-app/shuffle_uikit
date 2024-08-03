@@ -7180,6 +7180,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Upsales available`
+  String get UpsalesAvailable {
+    return Intl.message(
+      'Upsales available',
+      name: 'UpsalesAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `t-shirt, hat,yoga mat, mug`
+  String get UpsalesAvailableHint {
+    return Intl.message(
+      't-shirt, hat,yoga mat, mug',
+      name: 'UpsalesAvailableHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upsales`
+  String get Upsales {
+    return Intl.message(
+      'Upsales',
+      name: 'Upsales',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

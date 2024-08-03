@@ -695,6 +695,9 @@
   "Global": "ग्लोबल",
   "GlobalAlertText": "केवल प्रकाशित को वैश्विक बनाया जा सकता है",
   "TravelerWom": "Traveler",
-  "ViewSources": "View sources"
+  "ViewSources": "View sources",
+  "UpsalesAvailable": "Upsales available",
+  "UpsalesAvailableHint": "t-shirt, hat,yoga mat, mug",
+  "Upsales": "Upsales"
 
 }
