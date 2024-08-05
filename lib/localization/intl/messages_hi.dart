@@ -1139,6 +1139,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpgradeForNmoney": m66,
         "UploadingVideo":
             MessageLookupByLibrary.simpleMessage("वीडियो अपलोड कर रहा है"),
+        "Upsales": MessageLookupByLibrary.simpleMessage("Upsales"),
+        "UpsalesAvailable":
+            MessageLookupByLibrary.simpleMessage("Upsales available"),
+        "UpsalesAvailableHint":
+            MessageLookupByLibrary.simpleMessage("t-shirt, hat,yoga mat, mug"),
         "User": MessageLookupByLibrary.simpleMessage("उपयोगकर्ता"),
         "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
             "आपके द्वारा बनाने जा रहे खाते का प्रकार चुनें"),

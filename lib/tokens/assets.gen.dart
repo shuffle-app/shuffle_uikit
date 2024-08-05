@@ -8,13 +8,15 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
   const $AssetsAnimationsGen();
 
+  /// Directory path: assets/animations/lottie
   $AssetsAnimationsLottieGen get lottie => const $AssetsAnimationsLottieGen();
 }
 
@@ -53,7 +55,10 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// Directory path: assets/images/png
   $AssetsImagesPngGen get png => const $AssetsImagesPngGen();
+
+  /// Directory path: assets/images/svg
   $AssetsImagesSvgGen get svg => const $AssetsImagesSvgGen();
 }
 
@@ -118,9 +123,6 @@ class $AssetsAnimationsLottieGen {
 class $AssetsImagesPngGen {
   const $AssetsImagesPngGen();
 
-  /// File path: assets/images/png/Accountant.png
-  AssetGenImage get accountant => const AssetGenImage('assets/images/png/Accountant.png');
-
   /// File path: assets/images/png/Aubergine.png
   AssetGenImage get aubergine => const AssetGenImage('assets/images/png/Aubergine.png');
 
@@ -180,9 +182,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Discount.png
   AssetGenImage get discount => const AssetGenImage('assets/images/png/Discount.png');
-
-  /// File path: assets/images/png/Doctor.png
-  AssetGenImage get doctor => const AssetGenImage('assets/images/png/Doctor.png');
 
   /// File path: assets/images/png/Donations.png
   AssetGenImage get donations => const AssetGenImage('assets/images/png/Donations.png');
@@ -475,6 +474,7 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
+  /// Directory path: assets/images/png/avatars
   $AssetsImagesPngAvatarsGen get avatars => const $AssetsImagesPngAvatarsGen();
 
   /// File path: assets/images/png/balloons.png
@@ -488,9 +488,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/clothing.png
   AssetGenImage get clothing => const AssetGenImage('assets/images/png/clothing.png');
-
-  /// File path: assets/images/png/coach.png
-  AssetGenImage get coach => const AssetGenImage('assets/images/png/coach.png');
 
   /// File path: assets/images/png/compact_rating_card_mock.png
   AssetGenImage get compactRatingCardMock => const AssetGenImage('assets/images/png/compact_rating_card_mock.png');
@@ -531,11 +528,11 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/just_coin.png
   AssetGenImage get justCoin => const AssetGenImage('assets/images/png/just_coin.png');
 
-  /// File path: assets/images/png/manicure.png
-  AssetGenImage get manicure => const AssetGenImage('assets/images/png/manicure.png');
-
   /// File path: assets/images/png/map_mock.png
   AssetGenImage get mapMock => const AssetGenImage('assets/images/png/map_mock.png');
+
+  /// File path: assets/images/png/merch.png
+  AssetGenImage get merch => const AssetGenImage('assets/images/png/merch.png');
 
   /// File path: assets/images/png/mock_ad_banner.png
   AssetGenImage get mockAdBanner => const AssetGenImage('assets/images/png/mock_ad_banner.png');
@@ -548,9 +545,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/mock_user_avatar.png
   AssetGenImage get mockUserAvatar => const AssetGenImage('assets/images/png/mock_user_avatar.png');
-
-  /// File path: assets/images/png/muslim_flag.png
-  AssetGenImage get muslimFlag => const AssetGenImage('assets/images/png/muslim_flag.png');
 
   /// File path: assets/images/png/nft_1.png
   AssetGenImage get nft1 => const AssetGenImage('assets/images/png/nft_1.png');
@@ -567,23 +561,11 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/notif-permit.png
   AssetGenImage get notifPermit => const AssetGenImage('assets/images/png/notif-permit.png');
 
-  /// File path: assets/images/png/onboarding_mock_1.png
-  AssetGenImage get onboardingMock1 => const AssetGenImage('assets/images/png/onboarding_mock_1.png');
-
-  /// File path: assets/images/png/onboarding_mock_2.png
-  AssetGenImage get onboardingMock2 => const AssetGenImage('assets/images/png/onboarding_mock_2.png');
-
-  /// File path: assets/images/png/onboarding_mock_3.png
-  AssetGenImage get onboardingMock3 => const AssetGenImage('assets/images/png/onboarding_mock_3.png');
-
   /// File path: assets/images/png/parcel.png
   AssetGenImage get parcel => const AssetGenImage('assets/images/png/parcel.png');
 
   /// File path: assets/images/png/paywall_slide_video.png
   AssetGenImage get paywallSlideVideo => const AssetGenImage('assets/images/png/paywall_slide_video.png');
-
-  /// File path: assets/images/png/pharmacy.png
-  AssetGenImage get pharmacy => const AssetGenImage('assets/images/png/pharmacy.png');
 
   /// File path: assets/images/png/pharmacy_plus.png
   AssetGenImage get pharmacyPlus => const AssetGenImage('assets/images/png/pharmacy_plus.png');
@@ -603,6 +585,7 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
 
+  /// Directory path: assets/images/png/preference_questions
   $AssetsImagesPngPreferenceQuestionsGen get preferenceQuestions => const $AssetsImagesPngPreferenceQuestionsGen();
 
   /// File path: assets/images/png/production.png
@@ -616,9 +599,6 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
-
-  /// File path: assets/images/png/real.png
-  AssetGenImage get real => const AssetGenImage('assets/images/png/real.png');
 
   /// File path: assets/images/png/search_feed_text_banner_1.png
   AssetGenImage get searchFeedTextBanner1 => const AssetGenImage('assets/images/png/search_feed_text_banner_1.png');
@@ -695,15 +675,8 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/uber.png
   AssetGenImage get uber => const AssetGenImage('assets/images/png/uber.png');
 
-  /// File path: assets/images/png/welcome_slide_1.png
-  AssetGenImage get welcomeSlide1 => const AssetGenImage('assets/images/png/welcome_slide_1.png');
-
-  /// File path: assets/images/png/welcome_slide_2.png
-  AssetGenImage get welcomeSlide2 => const AssetGenImage('assets/images/png/welcome_slide_2.png');
-
   /// List of all assets
   List<AssetGenImage> get values => [
-        accountant,
         aubergine,
         baggage,
         bell,
@@ -724,7 +697,6 @@ class $AssetsImagesPngGen {
         createName,
         dart,
         discount,
-        doctor,
         donations,
         dragCard,
         events,
@@ -826,7 +798,6 @@ class $AssetsImagesPngGen {
         catering,
         choosePlan,
         clothing,
-        coach,
         compactRatingCardMock,
         deliveryTruck,
         donat,
@@ -840,24 +811,19 @@ class $AssetsImagesPngGen {
         help,
         honest,
         justCoin,
-        manicure,
         mapMock,
+        merch,
         mockAdBanner,
         mockAvatar,
         mockSwiperCard,
         mockUserAvatar,
-        muslimFlag,
         nft1,
         nft2,
         nft3,
         noInternet,
         notifPermit,
-        onboardingMock1,
-        onboardingMock2,
-        onboardingMock3,
         parcel,
         paywallSlideVideo,
-        pharmacy,
         pharmacyPlus,
         placeSocial1,
         placeSocial2,
@@ -868,7 +834,6 @@ class $AssetsImagesPngGen {
         profileAvatar,
         profilePost1,
         profileStory1,
-        real,
         searchFeedTextBanner1,
         searchFeedTextBanner2,
         searchFeedTextBanner3,
@@ -893,9 +858,7 @@ class $AssetsImagesPngGen {
         titledCardBackground2,
         titledCardBackground3,
         titledCardBackground4,
-        uber,
-        welcomeSlide1,
-        welcomeSlide2
+        uber
       ];
 }
 
@@ -2410,9 +2373,11 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(this._assetName, {this.size = null});
 
   final String _assetName;
+
+  final Size? size;
 
   Image image({
     Key? key,
@@ -2484,9 +2449,20 @@ class AssetGenImage {
 }
 
 class SvgGenImage {
-  const SvgGenImage(this._assetName);
+  const SvgGenImage(
+    this._assetName, {
+    this.size = null,
+  }) : _isVecFormat = false;
+
+  const SvgGenImage.vec(
+    this._assetName, {
+    this.size = null,
+  }) : _isVecFormat = true;
 
   final String _assetName;
+
+  final Size? size;
+  final bool _isVecFormat;
 
   SvgPicture svg({
     Key? key,
@@ -2501,19 +2477,19 @@ class SvgGenImage {
     WidgetBuilder? placeholderBuilder,
     String? semanticsLabel,
     bool excludeFromSemantics = false,
-    SvgTheme theme = const SvgTheme(),
+    SvgTheme? theme,
     ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
     @deprecated bool cacheColorFilter = false,
   }) {
-    return SvgPicture.asset(
-      _assetName,
+    return SvgPicture(
+      _isVecFormat
+          ? AssetBytesLoader(_assetName, assetBundle: bundle, packageName: package)
+          : SvgAssetLoader(_assetName, assetBundle: bundle, packageName: package),
       key: key,
       matchTextDirection: matchTextDirection,
-      bundle: bundle,
-      package: package,
       width: width,
       height: height,
       fit: fit,
@@ -2523,9 +2499,7 @@ class SvgGenImage {
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
       theme: theme,
-      colorFilter: colorFilter,
-      color: color,
-      colorBlendMode: colorBlendMode,
+      colorFilter: colorFilter ?? (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );

@@ -697,5 +697,9 @@
   "Global": "Global",
   "GlobalAlertText": "Only published can be made global",
   "TravelerWom": "Traveler",
-  "ViewSources": "View sources"
+  "ViewSources": "View sources",
+  "UpsalesAvailable": "Upsales available",
+  "UpsalesAvailableHint": "t-shirt, hat,yoga mat, mug",
+  "Upsales": "Upsales"
+
 }

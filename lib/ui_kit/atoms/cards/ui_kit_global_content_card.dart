@@ -21,7 +21,7 @@ class UiKitGlobalContentCard extends StatelessWidget {
         style: context.uiKitTheme?.boldTextTheme.caption1Bold
             .copyWith(color: ColorsFoundation.surface),
       ).paddingSymmetric(
-          horizontal: EdgeInsetsFoundation.horizontal32,
+          horizontal: EdgeInsetsFoundation.horizontal24,
           vertical: EdgeInsetsFoundation.vertical6),
     );
   }

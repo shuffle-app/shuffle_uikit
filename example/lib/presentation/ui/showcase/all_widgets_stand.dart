@@ -311,12 +311,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           onPlayTap: () {},
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
-        UiKitEmojiInputField(
-          inputFieldFocusNode: FocusNode(),
-          textEditingController: _emojitextEditingController,
-          onSend: () {},
-        ),
-        SpacingFoundation.verticalSpace16,
         UiKitPointsHistoryTile(
           title: 'Challenge Feelings (hardcore)',
           dateTime: DateTime.now(),
@@ -382,6 +376,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             children: [UiKitCloudChipWithDesc(title: 'Coffee connoisseur', description: 'foodie, forever sloth')],
           ).paddingAll(EdgeInsetsFoundation.all24),
         ).paddingAll(EdgeInsetsFoundation.all16),
+
         UiKitPropertiesCloud(
           child: Wrap(
             spacing: SpacingFoundation.horizontalSpacing12,
@@ -441,7 +436,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ],
         ),
         SpacingFoundation.verticalSpace16,
-        UiKitCloudChip(title: 'Diamond', onTap: () {}, iconPath: "ShuffleUiKitIcons.heartoutline")
+        UiKitCloudChip(title: 'Diamond', onTap: () {}, iconPath: "ShuffleUiKitIcons.heartoutline", selected: true)
             .paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         PropertiesSearchInput(

@@ -82,21 +82,21 @@ class AppRouter {
             ),
             logoLink: GraphicsFoundation.instance.svg.shuffleWhite.path,
             transitionDuration: const Duration(milliseconds: 500),
-            items: [
+            items: const [
               OnBoardingPageItem(
-                imageLink: GraphicsFoundation.instance.png.onboardingMock1.path,
+                imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/onboarding/onboarding_mock_1.png',
                 title: 'to have some fun',
               ),
               OnBoardingPageItem(
-                imageLink: GraphicsFoundation.instance.png.onboardingMock2.path,
+                imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/onboarding/onboarding_mock_2.png',
                 title: 'to explore leisure and business',
               ),
               OnBoardingPageItem(
-                imageLink: GraphicsFoundation.instance.png.onboardingMock3.path,
+                imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/onboarding/onboarding_mock_3.png',
                 title: 'to just chill out',
               ),
               OnBoardingPageItem(
-                imageLink: GraphicsFoundation.instance.png.onboardingMock1.path,
+                imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/onboarding/onboarding_mock_1.png',
                 title: 'to have some fun',
               ),
             ],
