@@ -13,7 +13,8 @@ class UiKitInputFilledWithTitle extends StatelessWidget {
     required this.title,
     this.hintText,
     this.maxLines,
-    this.minLines, required this.controller,
+    this.minLines,
+    required this.controller,
   });
 
   @override
@@ -32,8 +33,7 @@ class UiKitInputFilledWithTitle extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: regularTextTheme?.body
-                    .copyWith(color: colorScheme?.bodyTypography),
+                style: regularTextTheme?.body.copyWith(color: colorScheme?.bodyTypography),
               ),
             ),
             SpacingFoundation.horizontalSpace4,
@@ -50,6 +50,6 @@ class UiKitInputFilledWithTitle extends StatelessWidget {
           cursorColor: colorScheme?.bodyTypography,
         ),
       ],
-    ).paddingAll(EdgeInsetsFoundation.all16);
+    );
   }
 }

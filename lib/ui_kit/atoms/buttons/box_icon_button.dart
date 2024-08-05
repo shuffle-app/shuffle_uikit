@@ -34,7 +34,7 @@ class BoxIconButton extends StatelessWidget implements ButtonFactory {
                 ? theme?.colorScheme.darkNeutral700
                 : (backgroundColor ?? theme?.colorScheme.surface1),
           ),
-          child: ImageWidget(
+          child: icon ?? ImageWidget(
             iconData: iconInfo?.iconData,
             link: iconInfo?.iconPath,
             height: iconInfo?.size,

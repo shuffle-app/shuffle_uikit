@@ -327,16 +327,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           responsesFromCompanyToReview: true,
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
-        PlaceIconSelector(
-          onPressed: () {},
-          onIconTap: (value) {},
-          listIconData: List.generate(
-            20,
-            (index) => GraphicsFoundation.instance.png.company.path,
-          ),
-          iconsScrollController: ScrollController(),
-        ).paddingAll(EdgeInsetsFoundation.all16),
-        SpacingFoundation.verticalSpace16,
         DecoratedBox(
           decoration: BoxDecoration(
             color: context.uiKitTheme?.colorScheme.surface2,
