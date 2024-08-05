@@ -6,6 +6,7 @@ class PlaceIconSelector extends StatelessWidget {
   final List<String> listIconData;
   final ValueChanged<String> onIconTap;
   final ScrollController iconsScrollController;
+  final TextEditingController iconTextController;
 
   const PlaceIconSelector({
     super.key,
@@ -13,6 +14,7 @@ class PlaceIconSelector extends StatelessWidget {
     required this.listIconData,
     required this.onIconTap,
     required this.iconsScrollController,
+    required this.iconTextController,
   });
 
   @override
@@ -49,13 +51,13 @@ class PlaceIconSelector extends StatelessWidget {
         SpacingFoundation.verticalSpace10,
         UiKitInputFieldNoIcon(
           borderRadius: BorderRadiusFoundation.all12,
-          controller: TextEditingController(),
+          controller: iconTextController,
           fillColor: ColorsFoundation.lightSurface4,
           textColor: context.uiKitTheme?.colorScheme.bodyTypography,
         ),
         SizedBox(
           width: double.maxFinite,
-          height: 0.4.sh,
+          height: 0.35.sh,
           child: DecoratedBox(
             decoration: BoxDecoration(
               color: ColorsFoundation.lightSurface2,
