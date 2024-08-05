@@ -18,44 +18,40 @@ class PlaceIconSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Column(
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  S.current.Icon,
-                  style: context.uiKitTheme?.regularTextTheme.body,
-                ),
-                DecoratedBox(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadiusFoundation.all12,
-                    color: ColorsFoundation.primary200.withOpacity(0.4),
-                  ),
-                  child: context.boxIconButton(
-                    data: BaseUiKitButtonData(
-                      fit: ButtonFit.hugContent,
-                      backgroundColor: Colors.transparent,
-                      iconInfo: BaseUiKitButtonIconData(
-                          iconPath:
-                              GraphicsFoundation.instance.svg.download.path,
-                          color: ColorsFoundation.primary200,
-                          size: 16.sp),
-                      onPressed: onPressed,
-                    ),
-                  ),
-                ),
-              ],
+            Text(
+              S.current.Icon,
+              style: context.uiKitTheme?.regularTextTheme.body,
             ),
-            SpacingFoundation.verticalSpace10,
-            UiKitInputFieldNoIcon(
-              borderRadius: BorderRadiusFoundation.all12,
-              controller: TextEditingController(),
-              fillColor: ColorsFoundation.lightSurface4,
-              textColor: context.uiKitTheme?.colorScheme.bodyTypography,
+            DecoratedBox(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadiusFoundation.all12,
+                color: ColorsFoundation.primary200.withOpacity(0.4),
+              ),
+              child: context.boxIconButton(
+                data: BaseUiKitButtonData(
+                  fit: ButtonFit.hugContent,
+                  backgroundColor: Colors.transparent,
+                  iconInfo: BaseUiKitButtonIconData(
+                      iconPath: GraphicsFoundation.instance.svg.download.path,
+                      color: ColorsFoundation.primary200,
+                      size: 16.sp),
+                  onPressed: onPressed,
+                ),
+              ),
             ),
           ],
+        ),
+        SpacingFoundation.verticalSpace10,
+        UiKitInputFieldNoIcon(
+          borderRadius: BorderRadiusFoundation.all12,
+          controller: TextEditingController(),
+          fillColor: ColorsFoundation.lightSurface4,
+          textColor: context.uiKitTheme?.colorScheme.bodyTypography,
         ),
         SizedBox(
           width: double.maxFinite,
@@ -66,41 +62,37 @@ class PlaceIconSelector extends StatelessWidget {
               borderRadius: BorderRadiusFoundation.all12,
             ),
             child: GridView(
+              shrinkWrap: true,
+              physics: const BouncingScrollPhysics(),
               padding: EdgeInsetsDirectional.zero,
+              addAutomaticKeepAlives: false,
               controller: iconsScrollController,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 6,
                 crossAxisSpacing: EdgeInsetsFoundation.all16,
               ),
-              children: List.generate(
-                listIconData.length,
-                (index) {
-                  return
-                    Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: (){
-                          onIconTap.call(
-                            listIconData[index],
-                          );
-                        },
-                        child: Ink(
-                          child: ImageWidget(
-                          link: listIconData[index],
-                                            ),
-                        ),
-                      ),
-                    );
-                  //   HoverableIconButton(
-                  //   iconLink: listIconData[index],
-                  //   onTap: () {
-                  //     onIconTap.call(
-                  //       listIconData[index],
-                  //     );
-                  //   },
-                  // );
-                },
-              ),
+              children: listIconData
+                  .map((icon) => InkWell(
+                            onTap: () {
+                              onIconTap.call(
+                                icon,
+                              );
+                            },
+                            child: ImageWidget(
+                              link: icon,
+                            ),
+                          )
+                      //   HoverableIconButton(
+                      //   iconLink: listIconData[index],
+                      //   onTap: () {
+                      //     onIconTap.call(
+                      //       listIconData[index],
+                      //     );
+                      //   },
+                      // );
+
+                      )
+                  .toList(),
             ).paddingAll(EdgeInsetsFoundation.all8),
           ).paddingAll(EdgeInsetsFoundation.all8),
         ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing20)
