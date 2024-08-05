@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -128,22 +127,6 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      if (widget.chartAdditionalData != null) {
-        log('Additional data: ${widget.chartAdditionalData!.title}');
-        log('Additional data items count: ${widget.chartAdditionalData!.dataItems.length}');
-        log('Additional data items count: ${widget.chartAdditionalData!.dataItems.uniqueGroupNames}');
-        log('Additional data overall value: ${widget.chartAdditionalData!.dataItems.overallValue}');
-        widget.chartAdditionalData!.dataItems.uniqueGroupNames.forEach((name) {
-          log('Additional data item group: $name');
-          log(widget.chartAdditionalData!.dataItems.overallValueOfGroup(name).toString());
-        });
-        widget.chartAdditionalData!.dataItems.forEach((element) {
-          log('Additional data item: ${element.name}');
-          element.groupedValues.forEach((element) {
-            log('Additional data item group: ${element.name} - ${element.value}');
-          });
-        });
-      }
       _datesScrollController.addListener(_datesScrollListener);
       _chartScrollController.addListener(_chartScrollListener);
       setState(() {
@@ -166,10 +149,6 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
             _smallPreviewUpdateNotifier.addListener(_smallPreviewUpdateListener);
           }
         });
-        log('datesMaxScrollPosition: $initialMaxChartScrollablePartWidth');
-        log('chartToSmallPreviewRatio: $chartToSmallPreviewRatio');
-        log('_chartScrollController.position.maxScrollExtent: ${_chartScrollController.position.maxScrollExtent}');
-        log('_datesScrollController.position.maxScrollExtent: ${_datesScrollController.position.maxScrollExtent + chartViewPortSize.width}');
       });
     });
   }
@@ -269,9 +248,20 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: Text(
-                  widget.chartData.chartTitle,
-                  style: boldTextTheme?.caption2Medium,
+                child: RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: widget.chartData.chartTitle,
+                        style: boldTextTheme?.caption2Medium,
+                      ),
+                      if (widget.chartData.subtitle != null)
+                        TextSpan(
+                          text: '\n${widget.chartData.subtitle}',
+                          style: boldTextTheme?.body,
+                        )
+                    ],
+                  ),
                 ),
               ),
               SpacingFoundation.horizontalSpace4,
@@ -279,6 +269,29 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                 '${DateFormat('MMM dd').format(widget.chartData.items.period.start)} - ${DateFormat('MMM d').format(widget.chartData.items.period.end)}',
                 style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
               ),
+              if (widget.chartData.popUpMenuOptions != null)
+                PopupMenuButton<String>(
+                  onSelected: (value) {},
+                  padding: EdgeInsets.zero,
+                  position: PopupMenuPosition.over,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusFoundation.all16,
+                  ),
+                  icon: Icon(
+                    Icons.more_vert,
+                    color: colorScheme?.inverseSurface,
+                  ),
+                  itemBuilder: (context) => widget.chartData.popUpMenuOptions!
+                      .map<PopupMenuItem<String>>(
+                        (option) => PopupMenuItem(
+                          child: Text(
+                            option,
+                            style: boldTextTheme?.caption2Medium.copyWith(color: colorScheme?.inverseBodyTypography),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ).paddingOnly(left: EdgeInsetsFoundation.horizontal12),
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
           SpacingFoundation.verticalSpace16,
@@ -350,6 +363,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                     text: e.chartItemName,
                     color: e.color,
                     gradient: e.gradient,
+                    iconPath: e.icon,
                   ),
                 )
                 .toList(),

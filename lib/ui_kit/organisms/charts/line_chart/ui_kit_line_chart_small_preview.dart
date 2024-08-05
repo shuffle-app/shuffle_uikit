@@ -32,11 +32,12 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
           clipBehavior: Clip.hardEdge,
           children: [
             Positioned(
+              top: SpacingFoundation.verticalSpacing2,
               left: SpacingFoundation.verticalSpacing12,
               child: CustomPaint(
                 isComplex: true,
                 willChange: false,
-                size: size,
+                size: Size(size.width, size.height - SpacingFoundation.verticalSpacing6),
                 painter: LineChartPainterWithInfoOverlay(
                   pointsStraightLineColor: colorScheme?.inverseSurface ?? Colors.white,
                   size: size,

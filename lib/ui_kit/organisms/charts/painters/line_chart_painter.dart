@@ -60,7 +60,7 @@ class LineChartPainterWithInfoOverlay extends CustomPainter {
         double nextX = (i + 1) * step;
         double currentY = height - ((currentValue / maxValue) * height);
         double nextY = height - ((nextValue / maxValue) * height);
-        if (i == 0) path.moveTo(currentX - (curvatureRadius / 2), currentY);
+        if (i == 0) path.moveTo(currentX - (curvatureRadius / 2), currentY - 4);
 
         /// adding some space to see the line to the point
         if (currentY == height) currentY = height - SpacingFoundation.verticalSpacing2;
@@ -72,7 +72,7 @@ class LineChartPainterWithInfoOverlay extends CustomPainter {
         double midX = nextX - curvatureRadius;
         currentX += curvatureRadius;
 
-        path.cubicTo(currentX, currentY, midX, midY, nextX, nextY);
+        path.cubicTo(currentX, currentY, midX, midY, nextX, nextY + 2);
       }
       canvas.drawPath(path, paint);
     }

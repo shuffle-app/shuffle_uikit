@@ -1,8 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_kit/organisms/charts/line_chart/ui_kit_line_chart.dart';
-import 'package:shuffle_uikit/ui_models/mock/mock_charts.dart';
 
 class ProProfilePage extends StatelessWidget {
   final int? events;
@@ -103,111 +101,7 @@ class ProProfilePage extends StatelessWidget {
           if (events != null && reviews != null && bookings != null) SpacingFoundation.verticalSpace24,
           UiKitLineChart(
             chartData: mockLineChart,
-            chartAdditionalData: UiKitLineChartAdditionalData(
-              title: 'Gender and Age',
-              dataItems: [
-                UiKitLineChartAdditionalDataItem(
-                  name: '18 - 24',
-                  groupedValues: [
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'male',
-                      value: 0,
-                      color: Colors.white,
-                    ),
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'female',
-                      value: 0,
-                      color: ColorsFoundation.darkNeutral900,
-                    ),
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'other',
-                      value: 0,
-                      color: ColorsFoundation.darkNeutral600,
-                    ),
-                  ],
-                ),
-                UiKitLineChartAdditionalDataItem(
-                  name: '25 -35',
-                  groupedValues: [
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'male',
-                      value: 10,
-                      color: Colors.white,
-                    ),
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'female',
-                      value: 18,
-                      color: ColorsFoundation.darkNeutral900,
-                    ),
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'other',
-                      value: 0,
-                      color: ColorsFoundation.darkNeutral600,
-                    ),
-                  ],
-                ),
-                UiKitLineChartAdditionalDataItem(
-                  name: '36 - 45',
-                  groupedValues: [
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'male',
-                      value: 0,
-                      color: Colors.white,
-                    ),
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'female',
-                      value: 0,
-                      color: ColorsFoundation.darkNeutral900,
-                    ),
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'other',
-                      value: 0,
-                      color: ColorsFoundation.darkNeutral600,
-                    ),
-                  ],
-                ),
-                UiKitLineChartAdditionalDataItem(
-                  name: '45 - 50',
-                  groupedValues: [
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'male',
-                      value: 30,
-                      color: Colors.white,
-                    ),
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'female',
-                      value: 48,
-                      color: ColorsFoundation.darkNeutral900,
-                    ),
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'other',
-                      value: 0,
-                      color: ColorsFoundation.darkNeutral600,
-                    ),
-                  ],
-                ),
-                UiKitLineChartAdditionalDataItem(
-                  name: '50+',
-                  groupedValues: [
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'male',
-                      value: 0,
-                      color: Colors.white,
-                    ),
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'female',
-                      value: 0,
-                      color: ColorsFoundation.darkNeutral900,
-                    ),
-                    UiKitLineChartAdditionalDataItemGroup(
-                      name: 'other',
-                      value: 0,
-                      color: ColorsFoundation.darkNeutral600,
-                    ),
-                  ],
-                ),
-              ],
-            ),
+            chartAdditionalData: mockAdditionalData,
           ),
           SpacingFoundation.verticalSpace24,
           UiKitExpandableList(

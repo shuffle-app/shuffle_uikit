@@ -14,6 +14,7 @@ abstract class UiKitChartItem<T> {
   final Color? color;
   final Gradient? gradient;
   final String chartItemName;
+  final String? icon;
   final List<UiKitChartDataSet<T>> datasets;
 
   UiKitChartItem({
@@ -21,6 +22,7 @@ abstract class UiKitChartItem<T> {
     required this.chartItemName,
     this.color,
     this.gradient,
+    this.icon,
   });
 }
 
@@ -48,10 +50,14 @@ class UiKitLineChartData<T> extends UiKitChartData<T> {
   /// overriding field to typecast [items] to list [UiKitLineChartItemData] of type [T]
   @override
   final List<UiKitLineChartItemData<T>> items;
+  final String? subtitle;
+  final List<String>? popUpMenuOptions;
 
   UiKitLineChartData({
     required String title,
     required this.items,
+    this.subtitle,
+    this.popUpMenuOptions,
   }) : super(chartTitle: title, items: items);
 }
 
@@ -61,7 +67,9 @@ class UiKitLineChartItemData<T> extends UiKitChartItem<T> {
     required List<UiKitChartDataSet<T>> datasets,
     required String chartItemName,
     Gradient? gradient,
+    String? icon,
   }) : super(
+          icon: icon,
           color: color,
           datasets: datasets,
           gradient: gradient,

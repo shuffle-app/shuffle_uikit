@@ -5,12 +5,14 @@ class UiKitColoredLegendChip extends StatelessWidget {
   final String text;
   final Color? color;
   final Gradient? gradient;
+  final String? iconPath;
 
   const UiKitColoredLegendChip({
     Key? key,
     required this.text,
     this.color,
     this.gradient,
+    this.iconPath,
   })  : assert(color != null || gradient != null, 'Can\'t have both color and gradient'),
         super(key: key);
 
@@ -38,7 +40,12 @@ class UiKitColoredLegendChip extends StatelessWidget {
           Text(
             text,
             style: regularTextTheme?.caption2,
-          )
+          ),
+          if (iconPath != null)
+            ImageWidget(
+              link: iconPath,
+              color: colorScheme?.inversePrimary,
+            ).paddingOnly(left: EdgeInsetsFoundation.horizontal2),
         ],
       ).paddingSymmetric(
         vertical: EdgeInsetsFoundation.vertical4,
