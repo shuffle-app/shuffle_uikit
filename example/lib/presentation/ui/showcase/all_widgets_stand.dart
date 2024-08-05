@@ -376,7 +376,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             children: [UiKitCloudChipWithDesc(title: 'Coffee connoisseur', description: 'foodie, forever sloth')],
           ).paddingAll(EdgeInsetsFoundation.all24),
         ).paddingAll(EdgeInsetsFoundation.all16),
-
         UiKitPropertiesCloud(
           child: Wrap(
             spacing: SpacingFoundation.horizontalSpacing12,

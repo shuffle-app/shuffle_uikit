@@ -35,12 +35,6 @@ class ProProfilePage extends StatelessWidget {
               name: 'Frankie Hansen',
               nickname: 'fr4nk1eh4',
               avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path,
-              tags: [
-                UiKitTag(title: 'Photographer', icon: null),
-                UiKitTag(title: 'Photographer', icon: null),
-                UiKitTag(title: 'Photographer', icon: null),
-                UiKitTag(title: 'Photographer', icon: null),
-              ],
               interests: const ['Photography', 'Travel', 'Nature', 'Art'],
               matchingInterests: const ['Photography', 'Travel'],
               onShare: () {},

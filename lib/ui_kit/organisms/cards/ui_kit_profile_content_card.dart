@@ -10,7 +10,6 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
   final List<UiKitTag>? properties;
   final List<ProfileVideoReaction>? videoReactions;
   final List<UiKitFeedbackCard>? reviews;
-  final VoidCallback? onVideoReactionTapped;
 
   const UiKitProUserProfileEventCard({
     super.key,
@@ -21,7 +20,6 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
     this.properties,
     this.videoReactions,
     this.reviews,
-    this.onVideoReactionTapped,
   });
 
   @override
@@ -85,7 +83,7 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
                   customHeight: 0.1875.sw,
                   isEmpty: story.isEmpty,
                   viewed: story.viewed,
-                  onTap: onVideoReactionTapped,
+                  onTap: story.onTap,
                 );
               },
               separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace8,

@@ -53,6 +53,13 @@ class UiKitLineChartData<T> extends UiKitChartData<T> {
     required String title,
     required this.items,
   }) : super(chartTitle: title, items: items);
+
+  factory UiKitLineChartData.empty() => UiKitLineChartData<T>(
+        title: '',
+        items: [],
+      );
+
+  bool get isEmpty => items.isEmpty && chartTitle.isEmpty;
 }
 
 class UiKitLineChartItemData<T> extends UiKitChartItem<T> {
