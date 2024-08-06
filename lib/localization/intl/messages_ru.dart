@@ -1040,6 +1040,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "StacksShares": m61,
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Начать изучать"),
+        "Statistics": MessageLookupByLibrary.simpleMessage("Статистика"),
         "Submit": MessageLookupByLibrary.simpleMessage("Отправить"),
         "SubmitContent":
             MessageLookupByLibrary.simpleMessage("Предложить контент"),
