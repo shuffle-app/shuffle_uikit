@@ -2,7 +2,6 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_models/charts/pie_chart_data.dart';
 
 final mockAdditionalData = UiKitLineChartAdditionalData(
   title: 'Gender and Age',
@@ -361,23 +360,23 @@ final UiKitPieChartData mockPieChart = UiKitPieChartData(
   chartName: S.current.ViewSources,
   items: [
     UiKitPieCharItemData(
-      color: const Color(0xff8DC1FF),
-      value: 62,
+      color: ColorsFoundation.info,
+      value: 68,
       itemName: 'Randomizer',
     ),
     UiKitPieCharItemData(
-      color: const Color(0xff5BA3FF),
-      value: 8,
+      color: const Color(0xff8DC1FF),
+      value: 2,
       itemName: 'Feelings',
     ),
     UiKitPieCharItemData(
       color: const Color(0xff3088FF),
-      value: 18,
+      value: 20,
       itemName: S.current.Search,
     ),
     UiKitPieCharItemData(
-      color: ColorsFoundation.info,
-      value: 12,
+      color: const Color(0xff5BA3FF),
+      value: 10,
       itemName: 'Spinner',
     ),
   ],

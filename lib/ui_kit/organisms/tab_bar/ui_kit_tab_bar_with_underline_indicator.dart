@@ -32,6 +32,7 @@ class UiKitTabBarWithUnderlineIndicator extends StatelessWidget {
         splashFactory: NoSplash.splashFactory,
         controller: tabController,
         enableFeedback: true,
+        indicatorSize: TabBarIndicatorSize.tab,
         tabs: tabs,
         indicator: UnderlineTabIndicator(
           borderSide: BorderSide(

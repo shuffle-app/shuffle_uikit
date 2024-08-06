@@ -132,24 +132,21 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
           leftOffset: 0,
           previewWidthFraction: 1,
         );
-        initialMaxChartScrollablePartWidth = 0;
-        initialPreviewWidthFraction = 0;
+        initialMaxChartScrollablePartWidth = viewPortComputedSize.width;
+        initialPreviewWidthFraction = 0.35;
         initialPixelsPerDate = 1;
+        setState(() {});
         return;
       }
-      _datesScrollController.addListener(_datesScrollListener);
-      _chartScrollController.addListener(_chartScrollListener);
-      setState(() {
-        initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
-        initialPreviewWidthFraction = chartViewPortSize.width / initialMaxChartScrollablePartWidth!;
-        _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
-          previewWidthFraction: initialPreviewWidthFraction,
-        );
-      });
 
       /// wait until chart is drawn to avoid exception _positions.isNotEmpty
       Future.delayed(const Duration(milliseconds: 500), () {
         setState(() {
+          initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
+          initialPreviewWidthFraction = chartViewPortSize.width / initialMaxChartScrollablePartWidth!;
+          _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
+            previewWidthFraction: initialPreviewWidthFraction,
+          );
           if (initialMaxChartScrollablePartWidth != null) {
             initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
             chartToSmallPreviewRatio = initialMaxChartScrollablePartWidth! / (smallPreviewSize.width);
@@ -162,10 +159,6 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       });
     });
   }
-
-  Future<void> _chartScrollListener() async {}
-
-  Future<void> _datesScrollListener() async {}
 
   void _smallPreviewUpdateListener() {
     setState(() {
@@ -248,6 +241,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
     return UiKitCardWrapper(
       width: viewPortComputedSize.width,
       borderRadius: BorderRadiusFoundation.all24,
+      color: colorScheme?.surface3,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -320,7 +314,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   smallPreviewUpdateNotifier: _smallPreviewUpdateNotifier,
                 ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
           SpacingFoundation.verticalSpace2,
-          if (widget.chartData.items.isEmpty)
+          if (!widget.chartData.isEmpty)
             SizedBox(
               width: viewPortComputedSize.width,
               height: viewPortComputedSize.height * 0.06,

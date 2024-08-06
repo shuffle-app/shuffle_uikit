@@ -699,5 +699,13 @@
   "UpsalesAvailable": "अपसेल्स उपलब्ध हैं",
   "UpsalesAvailableHint": "टी-शर्ट, टोपी, योगा चटाई, मग",
   "Upsales": "अपसेल्स",
-  "Statistics": "आंकड़े"
+  "Statistics": "आंकड़े",
+  "YearsOld": "{years} {years, plural, =0{वर्ष} =1{वर्ष} =2{वर्ष} few{वर्ष} many{वर्ष} other{वर्ष}}",
+  "FromToYearsOld": "{from} - {to} {from, plural, =0{वर्ष} =1{वर्ष} =2{वर्ष} few{वर्ष} many{वर्ष} other{वर्ष}}",
+  "XYearsPlus": "{years}+ {years, plural, =0{वर्ष} =1{वर्ष} =2{वर्ष} few{वर्ष} many{वर्ष} other{वर्ष}}",
+  "Age": "आयु",
+  "Interests": "रुचियां",
+  "UniqueStatistics": "अद्वितीय आंकड़े",
+  "MostActiveAgeSegment": "सबसे सक्रिय आयु सेगमेंट",
+  "TopEventsFor": "{date} के लिए शीर्ष घटनाएँ"
 }

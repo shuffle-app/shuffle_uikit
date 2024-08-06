@@ -112,7 +112,16 @@ class _ProStatisticsPageState extends State<ProStatisticsPage> with SingleTicker
                     children: [
                       Expanded(
                         flex: 3,
-                        child: UiKitPieChart(data: mockPieChart),
+                        child: Column(
+                          children: [
+                            Text(
+                              S.current.ViewSources,
+                              style: boldTextTheme?.caption2Medium,
+                            ),
+                            SpacingFoundation.verticalSpace2,
+                            UiKitPieChart(data: mockPieChart),
+                          ],
+                        ),
                       ),
                       SpacingFoundation.horizontalSpace24,
                       Expanded(
