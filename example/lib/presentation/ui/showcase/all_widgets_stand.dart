@@ -327,16 +327,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           responsesFromCompanyToReview: true,
         ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
-        PlaceIconSelector(
-          onPressed: () {},
-          onIconTap: (value) {},
-          listIconData: List.generate(
-            20,
-            (index) => GraphicsFoundation.instance.png.company.path,
-          ),
-          iconsScrollController: ScrollController(),
-        ).paddingAll(EdgeInsetsFoundation.all16),
-        SpacingFoundation.verticalSpace16,
         DecoratedBox(
           decoration: BoxDecoration(
             color: context.uiKitTheme?.colorScheme.surface2,
@@ -376,7 +366,49 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             children: [UiKitCloudChipWithDesc(title: 'Coffee connoisseur', description: 'foodie, forever sloth')],
           ).paddingAll(EdgeInsetsFoundation.all24),
         ).paddingAll(EdgeInsetsFoundation.all16),
-
+        UiKitPropertiesCloud(
+          child: Wrap(
+            spacing: SpacingFoundation.horizontalSpacing12,
+            runSpacing: SpacingFoundation.verticalSpacing12,
+            children: [
+              UiKitCloudChip(
+                title: 'Joke',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+              UiKitCloudChip(
+                title: 'Smoke',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+              UiKitCloudChip(
+                title: 'Drink',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+              UiKitCloudChip(
+                title: 'Swim',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+              UiKitCloudChip(
+                title: 'Relax',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+              UiKitCloudChip(
+                title: 'Relax',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+              UiKitCloudChip(
+                title: 'Relax',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+            ],
+          ).paddingAll(EdgeInsetsFoundation.all24),
+        ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         UiKitExpansionTileWithIconButton(
           title: "Food and Drink",

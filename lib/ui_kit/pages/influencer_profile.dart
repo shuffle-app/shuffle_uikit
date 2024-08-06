@@ -285,7 +285,8 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                       specialTabsController.animateTo(0);
                     });
                   },
-                  leadingImageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_2.png',
+                  leadingImageLink:
+                      'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_2.png',
                   title: '+2 voices',
                   subtitle: 'La vue citytel group',
                   titleDecorationIcon: GraphicsFoundation.instance.svg.voice.path,
@@ -432,7 +433,8 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                   title: S.current.Interview,
                   content: UiKitVideoPlayerWithContentDetails(
                     videoUrl: 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
-                    contentImageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
+                    contentImageLink:
+                        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
                     contentName: 'La vue citytel group',
                     datePosted: DateTime.now().subtract(const Duration(hours: 12)),
                   ),
@@ -441,7 +443,8 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                   title: S.current.Chat,
                   onShowMore: () {},
                   content: UiKitInfluencerProfileChatCard(
-                    chatCover: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_7.png',
+                    chatCover:
+                        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_7.png',
                     chatLastMessage:
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                     newCommentsCount: 10,
@@ -450,7 +453,8 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                     chatStartDate: DateTime.now().subtract(const Duration(days: 125)),
                     chatContentTitle: 'Best birthday ever',
                     chatContentSubtitle: 'Virgins on the beach',
-                    chatContentImage: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_9.png',
+                    chatContentImage:
+                        'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_9.png',
                     chatContentStartMessage:
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
                   ),
@@ -523,7 +527,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                     ProfileStoriesList(
                       stories: List.generate(
                         5,
-                        (index) => const ProfileStory(
+                        (index) => const ProfileVideoReaction(
                           image: 'assets/images/png/profile_story_1.png',
                         ),
                       ),
@@ -601,7 +605,8 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                         2,
                         (index) => InfluencerTopContentData(
                           title: 'Virgins on the beach',
-                          imageUrl: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_9.png',
+                          imageUrl:
+                              'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_9.png',
                           datePosted: DateTime.now().subtract(Duration(days: index + 1)),
                           tags: [
                             UiKitTag(
@@ -626,7 +631,8 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                         2,
                         (index) => InfluencerTopContentData(
                           title: 'Virgins on the beach',
-                          imageUrl: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_7.png',
+                          imageUrl:
+                              'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_7.png',
                           datePosted: DateTime.now().subtract(Duration(days: index + 1)),
                           tags: [
                             UiKitTag(

@@ -11,7 +11,8 @@ class UiKitIconedTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return UiKitCardWrapper(
       borderRadius: BorderRadiusFoundation.all24,
-      color:context.uiKitTheme?.colorScheme.surface,
+      color: context.uiKitTheme?.colorScheme.surface,
+      padding: EdgeInsets.all(EdgeInsetsFoundation.all24),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -27,12 +28,12 @@ class UiKitIconedTitle extends StatelessWidget {
               title,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: context.uiKitTheme?.regularTextTheme.title1.copyWith(
-                  color: context.uiKitTheme?.colorScheme.bodyTypography),
+              style: context.uiKitTheme?.regularTextTheme.title1
+                  .copyWith(color: context.uiKitTheme?.colorScheme.bodyTypography),
             ),
           )
         ],
-      ).paddingAll(EdgeInsetsFoundation.all24),
+      ),
     );
   }
 }

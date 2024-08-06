@@ -35,12 +35,6 @@ class ProProfilePage extends StatelessWidget {
               name: 'Frankie Hansen',
               nickname: 'fr4nk1eh4',
               avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path,
-              tags: [
-                UiKitTag(title: 'Photographer', icon: null),
-                UiKitTag(title: 'Photographer', icon: null),
-                UiKitTag(title: 'Photographer', icon: null),
-                UiKitTag(title: 'Photographer', icon: null),
-              ],
               interests: const ['Photography', 'Travel', 'Nature', 'Art'],
               matchingInterests: const ['Photography', 'Travel'],
               onShare: () {},
@@ -131,14 +125,14 @@ class ProProfilePage extends StatelessWidget {
                   UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: true),
                   UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail2, unique: true),
                 ],
-                stories: const [
-                  ProfileStory(
+                videoReactions: const [
+                  ProfileVideoReaction(
                     image:
                         'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
                     isEmpty: false,
                     viewed: false,
                   ),
-                  ProfileStory(
+                  ProfileVideoReaction(
                     image:
                         'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
                     isEmpty: false,

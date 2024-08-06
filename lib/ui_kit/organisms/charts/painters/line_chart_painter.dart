@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
 import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
 class LineChartPainterWithInfoOverlay extends CustomPainter {
@@ -34,6 +33,7 @@ class LineChartPainterWithInfoOverlay extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final width = size.width;
     final height = size.height;
+    if (lines.isEmpty) return;
 
     final innerPaint = Paint()
       ..strokeWidth = 2

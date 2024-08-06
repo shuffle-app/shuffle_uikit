@@ -8,7 +8,7 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
   final DateTime contentDate;
   final double? rating;
   final List<UiKitTag>? properties;
-  final List<ProfileStory>? stories;
+  final List<ProfileVideoReaction>? videoReactions;
   final List<UiKitFeedbackCard>? reviews;
 
   const UiKitProUserProfileEventCard({
@@ -18,7 +18,7 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
     this.previewImage,
     this.rating,
     this.properties,
-    this.stories,
+    this.videoReactions,
     this.reviews,
   });
 
@@ -52,7 +52,8 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
                       style: boldTextTheme?.caption1Bold,
                     ),
                     TextSpan(
-                      text: '\n${DateFormat('MMM dd, yyyy', Localizations.localeOf(context).languageCode).format(contentDate)}',
+                      text:
+                          '\n${DateFormat('MMM dd, yyyy', Localizations.localeOf(context).languageCode).format(contentDate)}',
                       style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.mutedText),
                     ),
                   ],
@@ -67,14 +68,14 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
           uniqueTags: properties?.where((element) => element.unique).toList() ?? [],
         ),
         SpacingFoundation.verticalSpace16,
-        if (stories != null && stories!.isNotEmpty)
+        if (videoReactions != null && videoReactions!.isNotEmpty)
           SizedBox(
             height: 0.1875.sw,
             width: 1.sw,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                final story = stories!.elementAt(index);
+                final story = videoReactions!.elementAt(index);
 
                 return UiKitReactionPreview(
                   imagePath: story.image,
@@ -82,14 +83,14 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
                   customHeight: 0.1875.sw,
                   isEmpty: story.isEmpty,
                   viewed: story.viewed,
-                  onTap: () {},
+                  onTap: story.onTap,
                 );
               },
               separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace8,
-              itemCount: stories!.length,
+              itemCount: videoReactions!.length,
             ),
           ),
-        if (stories != null && stories!.isNotEmpty) SpacingFoundation.verticalSpace16,
+        if (videoReactions != null && videoReactions!.isNotEmpty) SpacingFoundation.verticalSpace16,
         if (reviews != null && reviews!.isNotEmpty)
           SizedBox(
             height: 0.27.sh,

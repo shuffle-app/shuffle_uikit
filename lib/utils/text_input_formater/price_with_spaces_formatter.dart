@@ -48,6 +48,10 @@ extension StringExtension on String {
   String replaceMultipleDotsAndCommas() {
     return replaceAll(RegExp(r'[.,]'), '.');
   }
+
+  String capitalize() {
+    return '${this[0].toUpperCase()}${this.substring(1)}';
+  }
 }
 
 extension StringFormater on String {
