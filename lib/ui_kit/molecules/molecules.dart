@@ -38,6 +38,7 @@ export 'decoration/ui_kit_ring_decoration.dart';
 export 'error_widgets/ui_kit_big_photo_error_widget.dart';
 export 'error_widgets/ui_kit_compact_photo_error_widget.dart';
 export 'error_widgets/ui_kit_empty_list_placeholder.dart';
+export 'filter/ui_kit_checkbox_filter_item.dart';
 export 'filter/ui_kit_titled_filter_chip.dart';
 export 'info_cards/donation_info_indicator_card.dart';
 export 'info_cards/horizontal_message_card.dart';

@@ -128,6 +128,32 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
+        UiKitTitledFilter(
+          onItemSelected: (item) {},
+          onItemDeselected: (item) {},
+          model: TitledFilterModel(
+            title: 'Title',
+            items: [
+              TitledFilterItem(
+                mask: 'mask',
+                value: 123,
+              ),
+              TitledFilterItem(
+                mask: 'mask',
+                value: 123,
+              ),
+              TitledFilterItem(
+                mask: 'mask',
+                value: 123,
+              ),
+              TitledFilterItem(
+                mask: 'mask',
+                value: 123,
+              ),
+            ],
+          ),
+        ),
+        SpacingFoundation.verticalSpace16,
         UiKitMiniChart(
           data: mockedMiniChartData,
         ).paddingSymmetric(horizontal: 16),
@@ -366,7 +392,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             children: [UiKitCloudChipWithDesc(title: 'Coffee connoisseur', description: 'foodie, forever sloth')],
           ).paddingAll(EdgeInsetsFoundation.all24),
         ).paddingAll(EdgeInsetsFoundation.all16),
-
         SpacingFoundation.verticalSpace16,
         UiKitExpansionTileWithIconButton(
           title: "Food and Drink",
