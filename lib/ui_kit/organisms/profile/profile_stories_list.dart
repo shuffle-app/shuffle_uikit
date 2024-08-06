@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-/// [ProfileStoriesList] accepts [List] of [ProfileStory]
+/// [ProfileStoriesList] accepts [List] of [ProfileVideoReaction]
 /// and displays them in a horizontal list.
 class ProfileStoriesList extends StatelessWidget {
-  final List<ProfileStory> stories;
+  final List<ProfileVideoReaction> stories;
 
   const ProfileStoriesList({
     super.key,

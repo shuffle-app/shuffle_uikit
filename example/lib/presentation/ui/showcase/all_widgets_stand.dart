@@ -392,6 +392,49 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             children: [UiKitCloudChipWithDesc(title: 'Coffee connoisseur', description: 'foodie, forever sloth')],
           ).paddingAll(EdgeInsetsFoundation.all24),
         ).paddingAll(EdgeInsetsFoundation.all16),
+        UiKitPropertiesCloud(
+          child: Wrap(
+            spacing: SpacingFoundation.horizontalSpacing12,
+            runSpacing: SpacingFoundation.verticalSpacing12,
+            children: [
+              UiKitCloudChip(
+                title: 'Joke',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+              UiKitCloudChip(
+                title: 'Smoke',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+              UiKitCloudChip(
+                title: 'Drink',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+              UiKitCloudChip(
+                title: 'Swim',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+              UiKitCloudChip(
+                title: 'Relax',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+              UiKitCloudChip(
+                title: 'Relax',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+              UiKitCloudChip(
+                title: 'Relax',
+                onTap: () {},
+                iconPath: GraphicsFoundation.instance.png.company.path,
+              ),
+            ],
+          ).paddingAll(EdgeInsetsFoundation.all24),
+        ).paddingAll(EdgeInsetsFoundation.all16),
         SpacingFoundation.verticalSpace16,
         UiKitExpansionTileWithIconButton(
           title: "Food and Drink",
