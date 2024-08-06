@@ -8,6 +8,13 @@ class UiKitLineChartAdditionalData {
     required this.title,
     required this.dataItems,
   });
+
+  factory UiKitLineChartAdditionalData.empty() {
+    return UiKitLineChartAdditionalData(
+      title: '',
+      dataItems: [],
+    );
+  }
 }
 
 class UiKitLineChartAdditionalDataItem {

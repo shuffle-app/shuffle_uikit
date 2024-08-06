@@ -2,7 +2,6 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
 import 'package:shuffle_uikit/ui_models/charts/pie_chart_data.dart';
 
 final mockAdditionalData = UiKitLineChartAdditionalData(
@@ -181,8 +180,8 @@ final mockBookingAndFavorites = UiKitLineChartData<num>(
   ],
 );
 
-final mockInitiations = UiKitLineChartData<num>(
-  title: 'Initiations',
+final mockInvitations = UiKitLineChartData<num>(
+  title: 'Invitations',
   items: [
     UiKitLineChartItemData(
       datasets: List.generate(

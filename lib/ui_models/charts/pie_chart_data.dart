@@ -16,6 +16,14 @@ class UiKitPieChartData {
   bool get sumOfItemsExceedsOverallValue => items.sum > overallValue;
 
   List<UiKitPieChartLegendItem> get legend => items.legendItems;
+
+  factory UiKitPieChartData.empty() {
+    return UiKitPieChartData(
+      chartName: '',
+      overallValue: 100,
+      items: [],
+    );
+  }
 }
 
 class UiKitPieCharItemData {

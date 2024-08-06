@@ -53,7 +53,7 @@ class _ProStatisticsPageState extends State<ProStatisticsPage> with SingleTicker
           ),
           SpacingFoundation.verticalSpace16,
           UiKitLineChart(
-            chartData: mockInitiations,
+            chartData: mockInvitations,
           ),
           SpacingFoundation.verticalSpace16,
           UiKitCardWrapper(
