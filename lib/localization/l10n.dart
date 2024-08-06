@@ -6755,10 +6755,10 @@ class S {
     );
   }
 
-  /// `{count} {count, plural, =0{bookigns} =1{bookign} =2{bookigns} few{bookigns} many{bookigns} other{bookigns}}`
+  /// `{count} {count, plural, =0{bookings} =1{booking} =2{bookings} few{bookings} many{bookings} other{bookings}}`
   String Bookigns(num count) {
     return Intl.message(
-      '$count ${Intl.plural(count, zero: 'bookigns', one: 'bookign', two: 'bookigns', few: 'bookigns', many: 'bookigns', other: 'bookigns')}',
+      '$count ${Intl.plural(count, zero: 'bookings', one: 'booking', two: 'bookings', few: 'bookings', many: 'bookings', other: 'bookings')}',
       name: 'Bookigns',
       desc: '',
       args: [count],
@@ -7206,6 +7206,16 @@ class S {
     return Intl.message(
       'Upsales',
       name: 'Upsales',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Statistics`
+  String get Statistics {
+    return Intl.message(
+      'Statistics',
+      name: 'Statistics',
       desc: '',
       args: [],
     );

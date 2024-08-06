@@ -128,6 +128,32 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
       ),
       children: [
         SpacingFoundation.verticalSpace16,
+        UiKitTitledFilter(
+          onItemSelected: (item) {},
+          onItemDeselected: (item) {},
+          model: TitledFilterModel(
+            title: 'Title',
+            items: [
+              TitledFilterItem(
+                mask: 'mask',
+                value: 123,
+              ),
+              TitledFilterItem(
+                mask: 'mask',
+                value: 123,
+              ),
+              TitledFilterItem(
+                mask: 'mask',
+                value: 123,
+              ),
+              TitledFilterItem(
+                mask: 'mask',
+                value: 123,
+              ),
+            ],
+          ),
+        ),
+        SpacingFoundation.verticalSpace16,
         UiKitMiniChart(
           data: mockedMiniChartData,
         ).paddingSymmetric(horizontal: 16),
