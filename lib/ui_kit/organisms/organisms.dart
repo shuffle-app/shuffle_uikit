@@ -125,6 +125,7 @@ export 'switches/ui_kit_gradient_switch.dart';
 export 'switches/ui_kit_switch_with_custom_background.dart';
 export 'tab_bar/ui_kit_custom_tab_bar.dart';
 export 'tab_bar/ui_kit_tab_bar_with_underline_indicator.dart';
+export 'titled_selection/ui_kit_titled_filter.dart';
 export 'titled_selection/ui_kit_titled_selection_tile.dart';
 export 'ui_kit_bottom_modal_sheet/ui_kit_bottom_modal_sheet.dart';
 export 'video_player/popup_video_player.dart';

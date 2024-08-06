@@ -26,6 +26,7 @@ export 'profile/profile_place.dart';
 export 'profile/profile_story.dart';
 export 'profile/ui_kit_achievements_model.dart';
 export 'profile/ui_kit_stats.dart';
+export 'selectors/titled_filter_model.dart';
 export 'selectors/ui_kit_area_selector_data.dart';
 export 'selectors/ui_kit_searchable_list_body_item.dart';
 export 'tiles/content_type_tile_data.dart';

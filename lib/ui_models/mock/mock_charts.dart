@@ -386,7 +386,7 @@ final UiKitPieChartData mockPieChart = UiKitPieChartData(
 final mockedMiniChartData = [
   UiKitMiniChartData(
     title: 'Video-reactions',
-    color: ColorsFoundation.success,
+    color: ColorsFoundation.info,
     items: List.generate(
       10,
       (index) => UiKitMiniChartDataItem(
@@ -399,7 +399,7 @@ final mockedMiniChartData = [
   ),
   UiKitMiniChartData(
     title: 'Average card visit time',
-    color: ColorsFoundation.warning,
+    color: ColorsFoundation.info,
     items: List.generate(
       10,
       (index) => UiKitMiniChartDataItem(

@@ -28,7 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Allowed caracters are ${allowedCharacters}";
 
   static String m3(count) =>
-      "${count} ${Intl.plural(count, zero: 'bookigns', one: 'bookign', two: 'bookigns', few: 'bookigns', many: 'bookigns', other: 'bookigns')}";
+      "${count} ${Intl.plural(count, zero: 'bookings', one: 'booking', two: 'bookings', few: 'bookings', many: 'bookings', other: 'bookings')}";
 
   static String m4(count) =>
       "${Intl.plural(count, zero: 'bookings', one: 'booking', two: 'bookings', few: 'bookings', many: 'bookings', other: 'bookings')}";
@@ -1023,6 +1023,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "StacksShares": m61,
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Start to explore"),
+        "Statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
         "Submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "SubmitContent": MessageLookupByLibrary.simpleMessage("Submit content"),
         "SubscribeToProfile": MessageLookupByLibrary.simpleMessage("Follow"),
