@@ -9,7 +9,6 @@ class ProPublicProfileCardBody extends StatelessWidget {
   final String? avatarUrl;
   final String? phone;
   final String? email;
-  final List<UiKitTag>? tags;
   final VoidCallback? onShare;
   final VoidCallback? onFollow;
   final bool? following;
@@ -25,7 +24,6 @@ class ProPublicProfileCardBody extends StatelessWidget {
     this.name,
     this.nickname,
     this.avatarUrl,
-    this.tags,
     this.onShare,
     this.onFollow,
     this.following,
@@ -62,8 +60,10 @@ class ProPublicProfileCardBody extends StatelessWidget {
                   borderRadius: BorderRadiusFoundation.all4,
                 ),
                 child: Text(
-                  '${DateFormat('MMMd', Localizations.localeOf(context).languageCode).format(registrationDate!)}, '
-                  '${DateFormat('yyyy', Localizations.localeOf(context).languageCode).format(registrationDate!)}',
+                  DateFormat('MMM d, yyyy', Localizations.localeOf(context).languageCode)
+                      .format(registrationDate!)
+                      .replaceAll('.', '')
+                      .capitalize(),
                   style: regularTextTheme?.caption4Regular.copyWith(color: ColorsFoundation.darkNeutral800),
                 ).paddingSymmetric(
                     vertical: EdgeInsetsFoundation.vertical2, horizontal: EdgeInsetsFoundation.horizontal4),

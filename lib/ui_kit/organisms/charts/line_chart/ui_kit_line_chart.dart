@@ -6,7 +6,6 @@ import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/organisms/charts/line_chart/ui_kit_line_chart_body.dart';
 import 'package:shuffle_uikit/ui_kit/organisms/charts/line_chart/ui_kit_line_chart_small_preview.dart';
-import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
 import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dart';
 import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
@@ -75,6 +74,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   }
 
   List<DateTime> get dates {
+    if (widget.chartData.items.isEmpty) return [];
     List<DateTime> datesToReturn = widget.chartData.items.dates;
     if (shrinkDates) {
       if (_smallPreviewUpdateNotifier.value.previewWidthFraction >= 0.99) {
@@ -128,6 +128,16 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      if (widget.chartData.items.isEmpty) {
+        _smallPreviewUpdateNotifier.value = LineChartSmallPreviewData(
+          leftOffset: 0,
+          previewWidthFraction: 1,
+        );
+        initialMaxChartScrollablePartWidth = 0;
+        initialPreviewWidthFraction = 0;
+        initialPixelsPerDate = 1;
+        return;
+      }
       if (widget.chartAdditionalData != null) {
         log('Additional data: ${widget.chartAdditionalData!.title}');
         log('Additional data items count: ${widget.chartAdditionalData!.dataItems.length}');
@@ -276,7 +286,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
               ),
               SpacingFoundation.horizontalSpace4,
               Text(
-                '${DateFormat('MMM dd').format(widget.chartData.items.period.start)} - ${DateFormat('MMM d').format(widget.chartData.items.period.end)}',
+                '${DateFormat('MMM d').format(widget.chartData.items.period.start)} - ${DateFormat('MMM d').format(widget.chartData.items.period.end)}',
                 style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
               ),
             ],
@@ -297,39 +307,40 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   smallPreviewUpdateNotifier: _smallPreviewUpdateNotifier,
                 ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
           SpacingFoundation.verticalSpace2,
-          SizedBox(
-            width: viewPortComputedSize.width,
-            height: viewPortComputedSize.height * 0.06,
-            child: AnimatedBuilder(
-              animation: _smallPreviewUpdateNotifier,
-              builder: (context, child) {
-                return ListView.separated(
-                  padding: EdgeInsets.zero,
-                  controller: _datesScrollController,
-                  scrollDirection: Axis.horizontal,
-                  physics: const NeverScrollableScrollPhysics(),
-                  addAutomaticKeepAlives: false,
-                  separatorBuilder: (context, index) {
-                    double spacing = SpacingFoundation.horizontalSpacing8;
-                    if (expandDates) {
-                      spacing += additionalSpacingForDate;
-                    }
+          if (widget.chartData.items.isEmpty)
+            SizedBox(
+              width: viewPortComputedSize.width,
+              height: viewPortComputedSize.height * 0.06,
+              child: AnimatedBuilder(
+                animation: _smallPreviewUpdateNotifier,
+                builder: (context, child) {
+                  return ListView.separated(
+                    padding: EdgeInsets.zero,
+                    controller: _datesScrollController,
+                    scrollDirection: Axis.horizontal,
+                    physics: const NeverScrollableScrollPhysics(),
+                    addAutomaticKeepAlives: false,
+                    separatorBuilder: (context, index) {
+                      double spacing = SpacingFoundation.horizontalSpacing8;
+                      if (expandDates) {
+                        spacing += additionalSpacingForDate;
+                      }
 
-                    return spacing.widthBox;
-                  },
-                  itemBuilder: (context, index) {
-                    final date = dates.elementAt(index);
+                      return spacing.widthBox;
+                    },
+                    itemBuilder: (context, index) {
+                      final date = dates.elementAt(index);
 
-                    return Text(
-                      DateFormat('MMMd', Localizations.localeOf(context).languageCode).format(date),
-                      style: regularTextTheme?.caption2.copyWith(color: ColorsFoundation.neutral40),
-                    );
-                  },
-                  itemCount: dates.length,
-                );
-              },
+                      return Text(
+                        DateFormat('MMMd', Localizations.localeOf(context).languageCode).format(date),
+                        style: regularTextTheme?.caption2.copyWith(color: ColorsFoundation.neutral40),
+                      );
+                    },
+                    itemCount: dates.length,
+                  );
+                },
+              ),
             ),
-          ),
           SpacingFoundation.verticalSpace4,
           Align(
             alignment: Alignment.bottomCenter,
@@ -353,7 +364,8 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   ),
                 )
                 .toList(),
-          ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+          ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16).paddingOnly(
+              bottom: widget.chartAdditionalData != null ? EdgeInsetsFoundation.zero : EdgeInsetsFoundation.vertical16),
           if (widget.chartAdditionalData != null)
             Column(
               mainAxisSize: MainAxisSize.min,
