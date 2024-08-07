@@ -703,7 +703,6 @@
   "UpsalesAvailable": "Доступны дополнительные продажи",
   "UpsalesAvailableHint": "футболка, шапочка, коврик для йоги, кружка",
   "Upsales": "Дополнительные продажи",
-  "Statistics": "Статистика",
   "YearsOld": "{years} {years, plural, =0{лет} =1{год} =2{года} few{года} many{лет} other{лет}}",
   "FromToYearsOld": "{from} - {to} {from, plural, =0{лет} =1{год} =2{года} few{года} many{лет} other{лет}}",
   "XYearsPlus": "{years}+ {years, plural, =0{лет} =1{год} =2{года} few{года} many{лет} other{лет}}",
@@ -717,7 +716,13 @@
   "EnterExternalLink": "Введите внешнюю ссылку",
   "StartBookingCreation": "Начать создание бронирования",
   "AddLink": "Добавить ссылку",
-  "CreateBookingLink": "Создать ссылку для бронирования"
+  "CreateBookingLink": "Создать ссылку для бронирования",
+  "GeneralMas": "Общий",
+  "GeneraFem": "Общая",
+  "OrganicStatistics": "Живая",
+  "Promotion": "Акции",
+  "UserHasNoPublicProfileStart": "У пользователя",
+  "UserHasNoPublicProfileEnd": "нет публичного профиля"
 
 }
 

@@ -558,6 +558,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "FulfillTheDream":
             MessageLookupByLibrary.simpleMessage("Fulfill the dream"),
         "Gender": MessageLookupByLibrary.simpleMessage("Gender"),
+        "GeneraFem": MessageLookupByLibrary.simpleMessage("General"),
+        "GeneralMas": MessageLookupByLibrary.simpleMessage("General"),
         "GetCode": MessageLookupByLibrary.simpleMessage("Get code"),
         "GetReward": MessageLookupByLibrary.simpleMessage("Get reward"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("Get started"),
@@ -778,6 +780,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "OpeningHours": MessageLookupByLibrary.simpleMessage("Opening hours"),
         "OrDragFilesHere":
             MessageLookupByLibrary.simpleMessage("Or drag files here"),
+        "OrganicStatistics": MessageLookupByLibrary.simpleMessage("Organic"),
         "Other": MessageLookupByLibrary.simpleMessage("Other"),
         "OurRecommendationsAboutGeolocation": MessageLookupByLibrary.simpleMessage(
             "Our recommendation system is based on many factors. Geolocation is only part of the system, which will allow us to correctly prioritize, both in terms of distance and the nearest landscape features (mountains, reservoirs, plains, deserts)"),
@@ -882,6 +885,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("go somewhere together"),
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("Do not be alone..."),
+        "Promotion": MessageLookupByLibrary.simpleMessage("Promotion"),
         "Properties": MessageLookupByLibrary.simpleMessage("Properties"),
         "Published": MessageLookupByLibrary.simpleMessage("Published"),
         "PushUpYourBusiness":
@@ -1165,6 +1169,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpsalesAvailableHint":
             MessageLookupByLibrary.simpleMessage("t-shirt, hat,yoga mat, mug"),
         "User": MessageLookupByLibrary.simpleMessage("User"),
+        "UserHasNoPublicProfileEnd": MessageLookupByLibrary.simpleMessage(
+            "doesn\'t have public profile"),
+        "UserHasNoPublicProfileStart":
+            MessageLookupByLibrary.simpleMessage("User"),
         "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
             "Select the type of account you would like to create"),
         "Users": m69,
