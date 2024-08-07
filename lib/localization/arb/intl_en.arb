@@ -714,9 +714,12 @@
   "EnterExternalLink": "Enter external link",
   "StartBookingCreation": "Start booking creation",
   "AddLink":"Add link",
-  "CreateBookingLink": "Create booking link"
-
-
-
+  "CreateBookingLink": "Create booking link",
+  "GeneralMas": "General",
+  "GeneraFem": "General",
+  "OrganicStatistics": "Organic",
+  "Promotion": "Promotion",
+  "UserHasNoPublicProfileStart": "User",
+  "UserHasNoPublicProfileEnd": "doesn't have public profile"
 
 }

@@ -559,6 +559,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "FulfillTheDream":
             MessageLookupByLibrary.simpleMessage("सपना पूरा करो"),
         "Gender": MessageLookupByLibrary.simpleMessage("लिंग"),
+        "GeneraFem": MessageLookupByLibrary.simpleMessage("सामान्य"),
+        "GeneralMas": MessageLookupByLibrary.simpleMessage("सामान्य"),
         "GetCode": MessageLookupByLibrary.simpleMessage("कोड प्राप्त करें"),
         "GetReward": MessageLookupByLibrary.simpleMessage("इनाम मिलना"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("शुरू हो जाओ"),
@@ -786,6 +788,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "OpeningHours": MessageLookupByLibrary.simpleMessage("खुलने का समय"),
         "OrDragFilesHere":
             MessageLookupByLibrary.simpleMessage("या फ़ाइलों को यहां खींचें"),
+        "OrganicStatistics": MessageLookupByLibrary.simpleMessage("जैविक"),
         "Other": MessageLookupByLibrary.simpleMessage("अन्य"),
         "OurRecommendationsAboutGeolocation": MessageLookupByLibrary.simpleMessage(
             "हमारी सिफारिश प्रणाली कई कारकों पर आधारित है ।  जियोलोकेशन सिस्टम का केवल एक हिस्सा है, जो हमें दूरी और निकटतम परिदृश्य सुविधाओं (पहाड़ों, जलाशयों, मैदानों, रेगिस्तान) दोनों के संदर्भ में सही ढंग से प्राथमिकता देने की अनुमति देगा।"),
@@ -889,6 +892,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "किसी को खोजें और उसके साथ जाएं"),
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("अकेले मत रहो..."),
+        "Promotion": MessageLookupByLibrary.simpleMessage("प्रचार"),
         "Properties": MessageLookupByLibrary.simpleMessage("गुण"),
         "Published": MessageLookupByLibrary.simpleMessage("प्रकाशित"),
         "PushUpYourBusiness":
@@ -1176,6 +1180,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpsalesAvailableHint": MessageLookupByLibrary.simpleMessage(
             "टी-शर्ट, टोपी, योगा चटाई, मग"),
         "User": MessageLookupByLibrary.simpleMessage("उपयोगकर्ता"),
+        "UserHasNoPublicProfileEnd": MessageLookupByLibrary.simpleMessage(
+            "का सार्वजनिक प्रोफ़ाइल नहीं है"),
+        "UserHasNoPublicProfileStart":
+            MessageLookupByLibrary.simpleMessage("उपयोगकर्ता"),
         "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
             "आपके द्वारा बनाने जा रहे खाते का प्रकार चुनें"),
         "Users": m69,

@@ -712,6 +712,13 @@
   "EnterExternalLink": "बाह्य लिंक दर्ज करें",
   "StartBookingCreation": "बुकिंग निर्माण शुरू करें",
   "AddLink":"लिंक जोड़ें",
-  "CreateBookingLink": "बुकिंग लिंक बनाएं"
+  "CreateBookingLink": "बुकिंग लिंक बनाएं",
+  "GeneralMas": "सामान्य",
+  "GeneraFem": "सामान्य",
+  "OrganicStatistics": "जैविक",
+  "Promotion": "प्रचार",
+  "UserHasNoPublicProfileStart": "उपयोगकर्ता",
+  "UserHasNoPublicProfileEnd": "का सार्वजनिक प्रोफ़ाइल नहीं है"
+
 
 }

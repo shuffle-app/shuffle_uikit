@@ -566,6 +566,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "FulfillTheDream":
             MessageLookupByLibrary.simpleMessage("Исполнить мечту"),
         "Gender": MessageLookupByLibrary.simpleMessage("Пол"),
+        "GeneraFem": MessageLookupByLibrary.simpleMessage("Общая"),
+        "GeneralMas": MessageLookupByLibrary.simpleMessage("Общий"),
         "GetCode": MessageLookupByLibrary.simpleMessage("Получить код"),
         "GetReward": MessageLookupByLibrary.simpleMessage("Забрать награду"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("Начать"),
@@ -791,6 +793,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "OpeningHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "OrDragFilesHere":
             MessageLookupByLibrary.simpleMessage("Или перетащи файлы"),
+        "OrganicStatistics": MessageLookupByLibrary.simpleMessage("Живая"),
         "Other": MessageLookupByLibrary.simpleMessage("Другое"),
         "OurRecommendationsAboutGeolocation": MessageLookupByLibrary.simpleMessage(
             "Система рекомендаций основана на многих факторах. Геолокация – лишь часть системы, которая позволит правильно расставить приоритеты, по расстоянию, по ближайшим особенностям ландшафта (горы, водоемы, равнины, пустыни)"),
@@ -895,6 +898,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("пойти куда-нибудь вместе"),
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("Не будь один..."),
+        "Promotion": MessageLookupByLibrary.simpleMessage("Акции"),
         "Properties": MessageLookupByLibrary.simpleMessage("Свойства"),
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
         "PushUpYourBusiness":
@@ -1186,6 +1190,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpsalesAvailableHint": MessageLookupByLibrary.simpleMessage(
             "футболка, шапочка, коврик для йоги, кружка"),
         "User": MessageLookupByLibrary.simpleMessage("Юзер"),
+        "UserHasNoPublicProfileEnd":
+            MessageLookupByLibrary.simpleMessage("нет публичного профиля"),
+        "UserHasNoPublicProfileStart":
+            MessageLookupByLibrary.simpleMessage("У пользователя"),
         "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
             "Выбери тип аккаунта, который хочешь создать или войти"),
         "Users": m69,

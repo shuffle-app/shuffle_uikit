@@ -7350,6 +7350,66 @@ class S {
       args: [],
     );
   }
+
+  /// `General`
+  String get GeneralMas {
+    return Intl.message(
+      'General',
+      name: 'GeneralMas',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General`
+  String get GeneraFem {
+    return Intl.message(
+      'General',
+      name: 'GeneraFem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Organic`
+  String get OrganicStatistics {
+    return Intl.message(
+      'Organic',
+      name: 'OrganicStatistics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Promotion`
+  String get Promotion {
+    return Intl.message(
+      'Promotion',
+      name: 'Promotion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User`
+  String get UserHasNoPublicProfileStart {
+    return Intl.message(
+      'User',
+      name: 'UserHasNoPublicProfileStart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `doesn't have public profile`
+  String get UserHasNoPublicProfileEnd {
+    return Intl.message(
+      'doesn\'t have public profile',
+      name: 'UserHasNoPublicProfileEnd',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

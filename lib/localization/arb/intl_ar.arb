@@ -714,6 +714,12 @@
   "Interests": "Interests",
   "UniqueStatistics": "Unique statistics",
   "MostActiveAgeSegment": "Portrait of the most active segment",
-  "TopEventsFor": "Top events for {date}"
+  "TopEventsFor": "Top events for {date}",
+  "GeneralMas": "General",
+  "GeneraFem": "General",
+  "OrganicStatistics": "Organic",
+  "Promotion": "Promotion",
+  "UserHasNoPublicProfileStart": "User",
+  "UserHasNoPublicProfileEnd": "doesn't have public profile"
 
 }
