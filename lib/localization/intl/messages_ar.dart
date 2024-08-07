@@ -249,6 +249,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Describe your experience"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "Write a detailed review, use all the available characters so that as many people as possible can appreciate it"),
+        "AddLink": MessageLookupByLibrary.simpleMessage("Add link"),
         "AddPlaceType": MessageLookupByLibrary.simpleMessage("Add place type"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Add promotion"),
         "AddProperty": MessageLookupByLibrary.simpleMessage("Add property"),
@@ -410,6 +411,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CountReviews": m12,
         "CountVideoReaction": m13,
         "Create": MessageLookupByLibrary.simpleMessage("Create"),
+        "CreateBookingLink":
+            MessageLookupByLibrary.simpleMessage("Create booking link"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Create Event"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
         "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage(
@@ -470,6 +473,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Email verification"),
         "EnableHintSystem":
             MessageLookupByLibrary.simpleMessage("Enable hint system"),
+        "EnterExternalLink":
+            MessageLookupByLibrary.simpleMessage("Enter external link"),
         "EnterInputType": m17,
         "EnterLocation": MessageLookupByLibrary.simpleMessage("Enter location"),
         "EnterNewPassword":
@@ -978,6 +983,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("Select price and currency"),
         "SelectType": m57,
+        "SelectYourBooking":
+            MessageLookupByLibrary.simpleMessage("Select your booking"),
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("Select your religions"),
         "SelectYourSpecialty":
@@ -1037,6 +1044,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Stacks and something else are available for you..."),
         "StacksAreOn": MessageLookupByLibrary.simpleMessage("Stacks are on"),
         "StacksShares": m62,
+        "StartBookingCreation":
+            MessageLookupByLibrary.simpleMessage("Start booking creation"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Start to explore"),
         "Statistics": MessageLookupByLibrary.simpleMessage("Statistics"),

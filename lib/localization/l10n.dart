@@ -7211,16 +7211,6 @@ class S {
     );
   }
 
-  /// `Statistics`
-  String get Statistics {
-    return Intl.message(
-      'Statistics',
-      name: 'Statistics',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `{years} {years, plural, =0{y.o.} =1{y.o.} =2{y.o.} few{y.o.} many{y.o.} other{y.o.}}`
   String YearsOld(num years) {
     return Intl.message(
@@ -7298,6 +7288,66 @@ class S {
       name: 'TopEventsFor',
       desc: '',
       args: [date],
+    );
+  }
+
+  /// `Statistics`
+  String get Statistics {
+    return Intl.message(
+      'Statistics',
+      name: 'Statistics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select your booking`
+  String get SelectYourBooking {
+    return Intl.message(
+      'Select your booking',
+      name: 'SelectYourBooking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter external link`
+  String get EnterExternalLink {
+    return Intl.message(
+      'Enter external link',
+      name: 'EnterExternalLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start booking creation`
+  String get StartBookingCreation {
+    return Intl.message(
+      'Start booking creation',
+      name: 'StartBookingCreation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add link`
+  String get AddLink {
+    return Intl.message(
+      'Add link',
+      name: 'AddLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create booking link`
+  String get CreateBookingLink {
+    return Intl.message(
+      'Create booking link',
+      name: 'CreateBookingLink',
+      desc: '',
+      args: [],
     );
   }
 }

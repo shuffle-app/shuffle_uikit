@@ -252,6 +252,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Опиши свой опыт"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "Напиши подробный отзыв, используй все доступные символы, чтобы как можно больше людей могли его оценить"),
+        "AddLink": MessageLookupByLibrary.simpleMessage("Добавить ссылку"),
         "AddPlaceType":
             MessageLookupByLibrary.simpleMessage("Добавить тип места"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Добавить промо"),
@@ -415,6 +416,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CountReviews": m12,
         "CountVideoReaction": m13,
         "Create": MessageLookupByLibrary.simpleMessage("Создать"),
+        "CreateBookingLink": MessageLookupByLibrary.simpleMessage(
+            "Создать ссылку для бронирования"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Создать место"),
         "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage(
@@ -477,6 +480,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Подтверждение email"),
         "EnableHintSystem":
             MessageLookupByLibrary.simpleMessage("Включить подсказки"),
+        "EnterExternalLink":
+            MessageLookupByLibrary.simpleMessage("Введите внешнюю ссылку"),
         "EnterInputType": m17,
         "EnterLocation":
             MessageLookupByLibrary.simpleMessage("Введите местоположение"),
@@ -993,6 +998,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("Выберите цену и валюту"),
         "SelectType": m57,
+        "SelectYourBooking": MessageLookupByLibrary.simpleMessage(
+            "Выберите вариант бронирования"),
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("Укажи свою религию"),
         "SelectYourSpecialty":
@@ -1054,6 +1061,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "StacksAreOn":
             MessageLookupByLibrary.simpleMessage("Для пользователей"),
         "StacksShares": m62,
+        "StartBookingCreation": MessageLookupByLibrary.simpleMessage(
+            "Начать создание бронирования"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Начать изучать"),
         "Statistics": MessageLookupByLibrary.simpleMessage("Статистика"),
