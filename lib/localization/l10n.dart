@@ -7220,6 +7220,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Select your booking`
+  String get SelectYourBooking {
+    return Intl.message(
+      'Select your booking',
+      name: 'SelectYourBooking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter external link`
+  String get EnterExternalLink {
+    return Intl.message(
+      'Enter external link',
+      name: 'EnterExternalLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start booking creation`
+  String get StartBookingCreation {
+    return Intl.message(
+      'Start booking creation',
+      name: 'StartBookingCreation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add link`
+  String get AddLink {
+    return Intl.message(
+      'Add link',
+      name: 'AddLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create booking link`
+  String get CreateBookingLink {
+    return Intl.message(
+      'Create booking link',
+      name: 'CreateBookingLink',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

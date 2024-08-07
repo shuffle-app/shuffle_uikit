@@ -699,5 +699,11 @@
   "UpsalesAvailable": "अपसेल्स उपलब्ध हैं",
   "UpsalesAvailableHint": "टी-शर्ट, टोपी, योगा चटाई, मग",
   "Upsales": "अपसेल्स",
-  "Statistics": "आंकड़े"
+  "Statistics": "आंकड़े",
+  "SelectYourBooking": "Select your booking",
+  "EnterExternalLink": "Enter external link",
+  "StartBookingCreation": "Start booking creation",
+  "AddLink":"Add link",
+  "CreateBookingLink": "Create booking link"
+
 }

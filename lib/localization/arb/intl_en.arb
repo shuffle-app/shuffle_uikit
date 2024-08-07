@@ -701,7 +701,13 @@
   "UpsalesAvailable": "Upsales available",
   "UpsalesAvailableHint": "t-shirt, hat,yoga mat, mug",
   "Upsales": "Upsales",
-  "Statistics": "Statistics"
+  "Statistics": "Statistics",
+  "SelectYourBooking": "Select your booking",
+  "EnterExternalLink": "Enter external link",
+  "StartBookingCreation": "Start booking creation",
+  "AddLink":"Add link",
+  "CreateBookingLink": "Create booking link"
+
 
 
 
