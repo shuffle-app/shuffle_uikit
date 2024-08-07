@@ -1208,7 +1208,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Видео (загрузить)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("Все"),
         "ViewHistory": MessageLookupByLibrary.simpleMessage("Просмотр истории"),
-        "ViewSources": MessageLookupByLibrary.simpleMessage("Источники"),
+        "ViewSources":
+            MessageLookupByLibrary.simpleMessage("Источники просмотров"),
         "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(
             "Посети первое, открой следующее"),
         "Voice": MessageLookupByLibrary.simpleMessage("Аудиосообщения"),
