@@ -711,6 +711,13 @@
   "Interests": "Интересы",
   "UniqueStatistics": "Уникальная статистика",
   "MostActiveAgeSegment": "Портрет самого активного сегмента",
-  "TopEventsFor": "Топ событий на {date}"
+  "TopEventsFor": "Топ событий на {date}",
+  "Statistics": "Статистика",
+  "SelectYourBooking": "Выберите вариант бронирования",
+  "EnterExternalLink": "Введите внешнюю ссылку",
+  "StartBookingCreation": "Начать создание бронирования",
+  "AddLink": "Добавить ссылку",
+  "CreateBookingLink": "Создать ссылку для бронирования"
+
 }
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider_plus/carousel_slider_plus.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class AchievementsCarouselSlider extends StatefulWidget {

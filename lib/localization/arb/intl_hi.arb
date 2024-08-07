@@ -707,5 +707,12 @@
   "Interests": "रुचियां",
   "UniqueStatistics": "अद्वितीय आंकड़े",
   "MostActiveAgeSegment": "सबसे सक्रिय आयु सेगमेंट",
-  "TopEventsFor": "{date} के लिए शीर्ष घटनाएँ"
+  "TopEventsFor": "{date} के लिए शीर्ष घटनाएँ",
+  "Statistics": "आंकड़े",
+  "SelectYourBooking": "Select your booking",
+  "EnterExternalLink": "Enter external link",
+  "StartBookingCreation": "Start booking creation",
+  "AddLink":"Add link",
+  "CreateBookingLink": "Create booking link"
+
 }
