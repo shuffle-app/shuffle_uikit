@@ -1,13 +1,16 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitTabBarWithUnderlineIndicator extends StatelessWidget {
-  final List<UiKitCustomTab> tabs;
+  final List<CustomTabData> tabs;
   final ValueChanged<int> onTappedTab;
   final String? selectedTab;
   final TabController tabController;
 
-  const UiKitTabBarWithUnderlineIndicator({
+  final group = AutoSizeGroup();
+
+  UiKitTabBarWithUnderlineIndicator({
     Key? key,
     required this.tabs,
     required this.onTappedTab,
@@ -33,7 +36,7 @@ class UiKitTabBarWithUnderlineIndicator extends StatelessWidget {
         controller: tabController,
         enableFeedback: true,
         indicatorSize: TabBarIndicatorSize.tab,
-        tabs: tabs,
+        tabs: tabs.map((e) => UiKitCustomTab.fromDataClass(data: e.copyWith(group: group))).toList(),
         indicator: UnderlineTabIndicator(
           borderSide: BorderSide(
             width: 2,

@@ -16,8 +16,10 @@ abstract class UiKitChartItem<T> {
   final String chartItemName;
   final String? icon;
   final List<UiKitChartDataSet<T>> datasets;
+  final int id;
 
   UiKitChartItem({
+    required this.id,
     required this.datasets,
     required this.chartItemName,
     this.color,
@@ -73,6 +75,7 @@ class UiKitLineChartItemData<T> extends UiKitChartItem<T> {
     Color? color,
     required List<UiKitChartDataSet<T>> datasets,
     required String chartItemName,
+    required int id,
     Gradient? gradient,
     String? icon,
   }) : super(
@@ -81,6 +84,7 @@ class UiKitLineChartItemData<T> extends UiKitChartItem<T> {
           datasets: datasets,
           gradient: gradient,
           chartItemName: chartItemName,
+          id: id,
         );
 }
 

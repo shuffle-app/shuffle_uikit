@@ -113,6 +113,7 @@ final mockFeedbackStats = UiKitLineChartData<num>(
   title: 'Feedback',
   items: [
     UiKitLineChartItemData<num>(
+      id: 1,
       chartItemName: '5',
       icon: GraphicsFoundation.instance.svg.star.path,
       color: ColorsFoundation.success,
@@ -125,6 +126,7 @@ final mockFeedbackStats = UiKitLineChartData<num>(
       ),
     ),
     UiKitLineChartItemData<num>(
+      id: 2,
       chartItemName: '3-4',
       icon: GraphicsFoundation.instance.svg.star.path,
       color: ColorsFoundation.warning,
@@ -137,6 +139,7 @@ final mockFeedbackStats = UiKitLineChartData<num>(
       ),
     ),
     UiKitLineChartItemData<num>(
+      id: 3,
       chartItemName: '1-2',
       icon: GraphicsFoundation.instance.svg.star.path,
       color: ColorsFoundation.error,
@@ -155,6 +158,7 @@ final mockBookingAndFavorites = UiKitLineChartData<num>(
   title: 'Bookings and Favorites',
   items: [
     UiKitLineChartItemData(
+      id: 1,
       datasets: List.generate(
         10,
         (index) => UiKitLineChartDataSet<num>(
@@ -166,6 +170,7 @@ final mockBookingAndFavorites = UiKitLineChartData<num>(
       color: ColorsFoundation.success,
     ),
     UiKitLineChartItemData(
+      id: 2,
       datasets: List.generate(
         10,
         (index) => UiKitLineChartDataSet<num>(
@@ -183,6 +188,7 @@ final mockInvitations = UiKitLineChartData<num>(
   title: 'Invitations',
   items: [
     UiKitLineChartItemData(
+      id: 1,
       datasets: List.generate(
         10,
         (index) => UiKitLineChartDataSet<num>(
@@ -211,6 +217,7 @@ final mockProAccountStats = UiKitLineChartData<num>(
   items: [
     UiKitLineChartItemData<double>(
       chartItemName: 'Views',
+      id: 1,
       color: ColorsFoundation.success,
       datasets: List.generate(
         10,
@@ -222,6 +229,7 @@ final mockProAccountStats = UiKitLineChartData<num>(
     ),
     UiKitLineChartItemData<double>(
       chartItemName: 'Visitors',
+      id: 2,
       color: ColorsFoundation.info,
       datasets: List.generate(
         10,
@@ -238,6 +246,7 @@ final UiKitLineChartData<double> mockLineChart = UiKitLineChartData<double>(
   title: S.current.BookingsAndInvites,
   items: [
     UiKitLineChartItemData<double>(
+      id: 1,
       chartItemName: S.current.Invites,
       color: ColorsFoundation.pink,
       datasets: [
@@ -296,6 +305,7 @@ final UiKitLineChartData<double> mockLineChart = UiKitLineChartData<double>(
       ],
     ),
     UiKitLineChartItemData<double>(
+      id: 2,
       chartItemName: S.current.BookingsHeading,
       gradient: GradientFoundation.defaultLinearGradient,
       datasets: [

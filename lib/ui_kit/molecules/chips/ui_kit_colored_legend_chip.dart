@@ -6,15 +6,58 @@ class UiKitColoredLegendChip extends StatelessWidget {
   final Color? color;
   final Gradient? gradient;
   final String? iconPath;
+  final VoidCallback? onTap;
+  final bool selected;
 
   const UiKitColoredLegendChip({
+    Key? key,
+    required this.text,
+    required this.selected,
+    this.color,
+    this.gradient,
+    this.iconPath,
+    this.onTap,
+  })  : assert(color != null || gradient != null, 'Can\'t have both color and gradient'),
+        super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 250),
+      child: selected
+          ? _SelectedChip(
+              text: text,
+              color: color,
+              gradient: gradient,
+              iconPath: iconPath,
+              onTap: onTap,
+            )
+          : _UnselectedChip(
+              text: text,
+              color: color,
+              gradient: gradient,
+              iconPath: iconPath,
+              onTap: onTap,
+            ),
+    );
+  }
+}
+
+class _SelectedChip extends StatelessWidget {
+  final String text;
+  final Color? color;
+  final Gradient? gradient;
+  final String? iconPath;
+  final VoidCallback? onTap;
+
+  const _SelectedChip({
     Key? key,
     required this.text,
     this.color,
     this.gradient,
     this.iconPath,
-  })  : assert(color != null || gradient != null, 'Can\'t have both color and gradient'),
-        super(key: key);
+    this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,34 +65,104 @@ class UiKitColoredLegendChip extends StatelessWidget {
     final regularTextTheme = theme?.regularTextTheme;
     final colorScheme = theme?.colorScheme;
 
-    return Container(
+    return Material(
       clipBehavior: Clip.hardEdge,
-      decoration: BoxDecoration(
-        color: color,
-        gradient: gradient,
-        borderRadius: BorderRadiusFoundation.max,
+      borderRadius: BorderRadiusFoundation.max,
+      color: gradient == null ? color : Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        child: Ink(
+          height: 0.04.sh,
+          decoration: BoxDecoration(
+            color: color,
+            gradient: gradient,
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ImageWidget(
+                iconData: ShuffleUiKitIcons.check,
+                color: colorScheme?.inversePrimary,
+              ),
+              SpacingFoundation.horizontalSpace2,
+              Text(
+                text,
+                style: regularTextTheme?.caption2,
+              ),
+              if (iconPath != null)
+                ImageWidget(
+                  link: iconPath,
+                  color: colorScheme?.inverseSurface,
+                ).paddingOnly(left: EdgeInsetsFoundation.horizontal2),
+            ],
+          ).paddingSymmetric(
+            horizontal: EdgeInsetsFoundation.horizontal12,
+          ),
+        ),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ImageWidget(
-            iconData: ShuffleUiKitIcons.check,
-            color: colorScheme?.inversePrimary,
+    );
+  }
+}
+
+class _UnselectedChip extends StatelessWidget {
+  final String text;
+  final Color? color;
+  final Gradient? gradient;
+  final String? iconPath;
+  final VoidCallback? onTap;
+
+  const _UnselectedChip({
+    Key? key,
+    required this.text,
+    this.color,
+    this.gradient,
+    this.iconPath,
+    this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GradientableWidget(
+      gradient: gradient,
+      child: Material(
+        clipBehavior: Clip.hardEdge,
+        color: Colors.transparent,
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+            color: color ?? (gradient != null ? Colors.white : Colors.transparent),
           ),
-          SpacingFoundation.horizontalSpace2,
-          Text(
-            text,
-            style: regularTextTheme?.caption2,
+          borderRadius: BorderRadiusFoundation.max,
+        ),
+        child: InkWell(
+          onTap: onTap,
+          child: Ink(
+            height: 0.04.sh,
+            decoration: BoxDecoration(
+              color: Colors.transparent,
+              border: Border.all(
+                color: color ?? (gradient != null ? Colors.white : Colors.transparent),
+              ),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  text,
+                  style: context.uiKitTheme?.regularTextTheme.caption2.copyWith(
+                    color: color ?? Colors.white,
+                  ),
+                ),
+                if (iconPath != null)
+                  ImageWidget(
+                    link: iconPath,
+                    color: color ?? context.uiKitTheme?.colorScheme.inverseSurface,
+                  ).paddingOnly(left: EdgeInsetsFoundation.horizontal2),
+              ],
+            ).paddingSymmetric(
+              horizontal: EdgeInsetsFoundation.horizontal12,
+            ),
           ),
-          if (iconPath != null)
-            ImageWidget(
-              link: iconPath,
-              color: colorScheme?.inversePrimary,
-            ).paddingOnly(left: EdgeInsetsFoundation.horizontal2),
-        ],
-      ).paddingSymmetric(
-        vertical: EdgeInsetsFoundation.vertical4,
-        horizontal: EdgeInsetsFoundation.horizontal12,
+        ),
       ),
     );
   }

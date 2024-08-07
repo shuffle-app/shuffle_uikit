@@ -25,6 +25,7 @@ class UiKitLineChart extends StatefulWidget {
 class _UiKitLineChartState extends State<UiKitLineChart> {
   final ScrollController _datesScrollController = ScrollController();
   final ScrollController _chartScrollController = ScrollController();
+  late List<int> visibleLineIds = widget.chartData.items.map((e) => e.id).toList();
   final bool smallScreen = 1.sw <= 380;
   double chartToSmallPreviewRatio = 1;
   double? initialPreviewWidthFraction;
@@ -34,6 +35,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
     LineChartSmallPreviewData(
       leftOffset: 0,
       previewWidthFraction: 0.35,
+      visibleLinesIds: [],
     ),
   );
   final _tapNotifier = ValueNotifier<Offset>(Offset.zero);
@@ -131,6 +133,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
         _smallPreviewUpdateNotifier.value = LineChartSmallPreviewData(
           leftOffset: 0,
           previewWidthFraction: 1,
+          visibleLinesIds: [],
         );
         initialMaxChartScrollablePartWidth = viewPortComputedSize.width;
         initialPreviewWidthFraction = 0.35;
@@ -146,6 +149,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
           initialPreviewWidthFraction = chartViewPortSize.width / initialMaxChartScrollablePartWidth!;
           _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
             previewWidthFraction: initialPreviewWidthFraction,
+            visibleLinesIds: visibleLineIds,
           );
           if (initialMaxChartScrollablePartWidth != null) {
             initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
@@ -369,6 +373,18 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                     color: e.color,
                     gradient: e.gradient,
                     iconPath: e.icon,
+                    selected: visibleLineIds.contains(e.id),
+                    onTap: () {
+                      if (visibleLineIds.contains(e.id)) {
+                        visibleLineIds.remove(e.id);
+                      } else {
+                        visibleLineIds.add(e.id);
+                      }
+                      _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
+                        visibleLinesIds: visibleLineIds,
+                      );
+                      setState(() {});
+                    },
                   ),
                 )
                 .toList(),

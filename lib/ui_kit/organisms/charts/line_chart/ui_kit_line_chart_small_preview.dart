@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
 import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dart';
 import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
@@ -43,6 +42,7 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
                   size: size,
                   lines: chartItems,
                   step: (size.width) / chartItems.maxDatasetsCount,
+                  visibleLinesIds: smallPreviewUpdateNotifier.value.visibleLinesIds,
                 ),
               ),
             ),

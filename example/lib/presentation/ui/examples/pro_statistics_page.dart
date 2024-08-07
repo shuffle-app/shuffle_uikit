@@ -33,9 +33,9 @@ class _ProStatisticsPageState extends State<ProStatisticsPage> with SingleTicker
             tabController: tabController,
             onTappedTab: (index) {},
             tabs: const [
-              UiKitCustomTab(title: 'General'),
-              UiKitCustomTab(title: 'Organic'),
-              UiKitCustomTab(title: 'Promotion'),
+              CustomTabData(title: 'General'),
+              CustomTabData(title: 'Organic'),
+              CustomTabData(title: 'Promotion'),
             ],
           ),
           SpacingFoundation.verticalSpace16,
@@ -106,22 +106,22 @@ class _ProStatisticsPageState extends State<ProStatisticsPage> with SingleTicker
                   height: SpacingFoundation.verticalSpacing32,
                 ),
                 SizedBox(
-                  height: 0.265625.sw,
+                  width: 1.sw - 32,
+                  child: Text(
+                    S.current.ViewSources,
+                    style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
+                    textAlign: TextAlign.start,
+                  ),
+                ),
+                SpacingFoundation.verticalSpace2,
+                SizedBox(
+                  height: 0.275625.sw,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Expanded(
-                        flex: 3,
-                        child: Column(
-                          children: [
-                            Text(
-                              S.current.ViewSources,
-                              style: boldTextTheme?.caption2Medium,
-                            ),
-                            SpacingFoundation.verticalSpace2,
-                            UiKitPieChart(data: mockPieChart),
-                          ],
-                        ),
+                        flex: 4,
+                        child: UiKitPieChart(data: mockPieChart),
                       ),
                       SpacingFoundation.horizontalSpace24,
                       Expanded(
