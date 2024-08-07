@@ -703,6 +703,12 @@
   "UpsalesAvailable": "Доступны дополнительные продажи",
   "UpsalesAvailableHint": "футболка, шапочка, коврик для йоги, кружка",
   "Upsales": "Дополнительные продажи",
-  "Statistics": "Статистика"
+  "Statistics": "Статистика",
+  "SelectYourBooking": "Выберите вариант бронирования",
+  "EnterExternalLink": "Введите внешнюю ссылку",
+  "StartBookingCreation": "Начать создание бронирования",
+  "AddLink": "Добавить ссылку",
+  "CreateBookingLink": "Создать ссылку для бронирования"
+
 }
 
