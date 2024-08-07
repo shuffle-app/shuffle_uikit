@@ -129,6 +129,7 @@ extension ChartItemDataExtension on List<UiKitLineChartItemData> {
             color: chartItem.color,
             gradient: chartItem.gradient,
             datasets: [chartItem.datasets[index]],
+            id: chartItem.id,
           ),
         )
         .toList();

@@ -1,6 +1,7 @@
 import 'package:example/presentation/routing/app_routes.dart';
 import 'package:example/presentation/ui/ads_page.dart';
 import 'package:example/presentation/ui/animations/animations_page.dart';
+import 'package:example/presentation/ui/examples/pro_statistics_page.dart';
 import 'package:example/presentation/ui/examples/user_content_type_switch_animation.dart';
 import 'package:example/presentation/ui/location_picker/location_picker_page.dart';
 import 'package:example/presentation/ui/main_page/main_page.dart';
@@ -23,6 +24,11 @@ class AppRouter {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) => const MainPage(),
+        );
+      case AppRoutes.proProfileStatistics:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (context) => const ProStatisticsPage(),
         );
       case AppRoutes.hallOfFame:
         return MaterialPageRoute(
@@ -84,19 +90,23 @@ class AppRouter {
             transitionDuration: const Duration(milliseconds: 500),
             items: const [
               OnBoardingPageItem(
-                imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/onboarding/onboarding_mock_1.png',
+                imageLink:
+                    'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/onboarding/onboarding_mock_1.png',
                 title: 'to have some fun',
               ),
               OnBoardingPageItem(
-                imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/onboarding/onboarding_mock_2.png',
+                imageLink:
+                    'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/onboarding/onboarding_mock_2.png',
                 title: 'to explore leisure and business',
               ),
               OnBoardingPageItem(
-                imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/onboarding/onboarding_mock_3.png',
+                imageLink:
+                    'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/onboarding/onboarding_mock_3.png',
                 title: 'to just chill out',
               ),
               OnBoardingPageItem(
-                imageLink: 'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/onboarding/onboarding_mock_1.png',
+                imageLink:
+                    'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/onboarding/onboarding_mock_1.png',
                 title: 'to have some fun',
               ),
             ],

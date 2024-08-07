@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/decoration/dashed_divider.dart';
-import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
 import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dart';
 import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
@@ -148,6 +147,7 @@ class UiKitLineChartBody extends StatelessWidget {
                         availableSize.height + SpacingFoundation.verticalSpacing16,
                       ),
                       painter: LineChartPainterWithInfoOverlay(
+                        visibleLinesIds: smallPreviewUpdateNotifier.value.visibleLinesIds,
                         pointsStraightLineColor: colorScheme?.inverseSurface ?? Colors.white,
                         stepScaleFactor: chartStepScaleFactor,
                         selectedIndex: selectedDataSetNotifier.value.selectedDataSetIndex,
@@ -195,30 +195,32 @@ class UiKitLineChartBody extends StatelessWidget {
                           style: regularTextTheme?.caption2.copyWith(color: ColorsFoundation.mutedText),
                         ),
                         SpacingFoundation.verticalSpace2,
-                        ...selectedDataSetNotifier.value.chartItems.map(
-                          (e) => Row(
-                            children: [
-                              Container(
-                                width: 8,
-                                height: 8,
-                                decoration: BoxDecoration(
-                                  color: e.color,
-                                  gradient: e.gradient,
-                                  shape: BoxShape.circle,
-                                ),
-                              ).paddingAll(EdgeInsetsFoundation.all4),
-                              Text(
-                                e.chartItemName,
-                                style: regularTextTheme?.caption2.copyWith(color: colorScheme?.bodyTypography),
+                        ...selectedDataSetNotifier.value.chartItems
+                            .where((item) => smallPreviewUpdateNotifier.value.visibleLinesIds.contains(item.id))
+                            .map(
+                              (e) => Row(
+                                children: [
+                                  Container(
+                                    width: 8,
+                                    height: 8,
+                                    decoration: BoxDecoration(
+                                      color: e.color,
+                                      gradient: e.gradient,
+                                      shape: BoxShape.circle,
+                                    ),
+                                  ).paddingAll(EdgeInsetsFoundation.all4),
+                                  Text(
+                                    e.chartItemName,
+                                    style: regularTextTheme?.caption2.copyWith(color: colorScheme?.bodyTypography),
+                                  ),
+                                  SpacingFoundation.horizontalSpace2,
+                                  Text(
+                                    e.datasets.first.value.toStringAsFixed(0),
+                                    style: regularTextTheme?.caption2.copyWith(color: colorScheme?.bodyTypography),
+                                  ),
+                                ],
                               ),
-                              SpacingFoundation.horizontalSpace2,
-                              Text(
-                                e.datasets.first.value.toStringAsFixed(0),
-                                style: regularTextTheme?.caption2.copyWith(color: colorScheme?.bodyTypography),
-                              ),
-                            ],
-                          ),
-                        ),
+                            ),
                       ],
                     ).paddingAll(EdgeInsetsFoundation.all4),
                   );

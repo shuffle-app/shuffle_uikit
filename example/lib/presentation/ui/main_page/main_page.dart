@@ -111,6 +111,13 @@ class _MainPageState extends State<MainPage> {
             SpacingFoundation.verticalSpace24,
             context.button(
               data: BaseUiKitButtonData(
+                text: 'Pro statistics page',
+                onPressed: () => Navigator.pushNamed(context, AppRoutes.proProfileStatistics),
+              ),
+            ),
+            SpacingFoundation.verticalSpace24,
+            context.button(
+              data: BaseUiKitButtonData(
                   text: 'UI Kit Hall of Fame', onPressed: () => Navigator.pushNamed(context, AppRoutes.hallOfFame)),
             ),
             SpacingFoundation.verticalSpace16,

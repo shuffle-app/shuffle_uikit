@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
 import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dart';
 import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
@@ -32,16 +31,18 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
           clipBehavior: Clip.hardEdge,
           children: [
             Positioned(
+              top: SpacingFoundation.verticalSpacing2,
               left: SpacingFoundation.verticalSpacing12,
               child: CustomPaint(
                 isComplex: true,
                 willChange: false,
-                size: size,
+                size: Size(size.width, size.height - SpacingFoundation.verticalSpacing6),
                 painter: LineChartPainterWithInfoOverlay(
                   pointsStraightLineColor: colorScheme?.inverseSurface ?? Colors.white,
                   size: size,
                   lines: chartItems,
                   step: (size.width) / chartItems.maxDatasetsCount,
+                  visibleLinesIds: smallPreviewUpdateNotifier.value.visibleLinesIds,
                 ),
               ),
             ),

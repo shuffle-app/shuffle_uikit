@@ -27,15 +27,14 @@ class UiKitRankedTitledBoard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: Text(
                   '#$rank',
                   style: boldTextTheme?.body,
                 ),
               ),
-              SpacingFoundation.horizontalSpace4,
               Expanded(
-                flex: 10,
+                flex: 12,
                 child: Text(
                   item,
                   style: boldTextTheme?.body,

@@ -7211,6 +7211,86 @@ class S {
     );
   }
 
+  /// `{years} {years, plural, =0{y.o.} =1{y.o.} =2{y.o.} few{y.o.} many{y.o.} other{y.o.}}`
+  String YearsOld(num years) {
+    return Intl.message(
+      '$years ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}',
+      name: 'YearsOld',
+      desc: '',
+      args: [years],
+    );
+  }
+
+  /// `{from} - {to} {from, plural, =0{y.o.} =1{y.o.} =2{y.o.} few{y.o.} many{y.o.} other{y.o.}}`
+  String FromToYearsOld(num from, Object to) {
+    return Intl.message(
+      '$from - $to ${Intl.plural(from, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}',
+      name: 'FromToYearsOld',
+      desc: '',
+      args: [from, to],
+    );
+  }
+
+  /// `{years}+ {years, plural, =0{y.o.} =1{y.o.} =2{y.o.} few{y.o.} many{y.o.} other{y.o.}}`
+  String XYearsPlus(num years) {
+    return Intl.message(
+      '$years+ ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}',
+      name: 'XYearsPlus',
+      desc: '',
+      args: [years],
+    );
+  }
+
+  /// `Age`
+  String get Age {
+    return Intl.message(
+      'Age',
+      name: 'Age',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interests`
+  String get Interests {
+    return Intl.message(
+      'Interests',
+      name: 'Interests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unique statistics`
+  String get UniqueStatistics {
+    return Intl.message(
+      'Unique statistics',
+      name: 'UniqueStatistics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Portrait of the most active segment`
+  String get MostActiveAgeSegment {
+    return Intl.message(
+      'Portrait of the most active segment',
+      name: 'MostActiveAgeSegment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top events for {date}`
+  String TopEventsFor(Object date) {
+    return Intl.message(
+      'Top events for $date',
+      name: 'TopEventsFor',
+      desc: '',
+      args: [date],
+    );
+  }
+
   /// `Statistics`
   String get Statistics {
     return Intl.message(

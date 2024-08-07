@@ -15,4 +15,5 @@ class AppRoutes {
   static const String hallOfFame = '/hallOfFame';
   static const String adsPage = '/adsPage';
   static const String proProfile = '/proProfile';
+  static const String proProfileStatistics = '/proProfileStatistics';
 }

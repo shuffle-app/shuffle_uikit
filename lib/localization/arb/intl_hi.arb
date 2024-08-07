@@ -699,11 +699,19 @@
   "UpsalesAvailable": "अपसेल्स उपलब्ध हैं",
   "UpsalesAvailableHint": "टी-शर्ट, टोपी, योगा चटाई, मग",
   "Upsales": "अपसेल्स",
+  "YearsOld": "{years} {years, plural, =0{वर्ष} =1{वर्ष} =2{वर्ष} few{वर्ष} many{वर्ष} other{वर्ष}}",
+  "FromToYearsOld": "{from} - {to} {from, plural, =0{वर्ष} =1{वर्ष} =2{वर्ष} few{वर्ष} many{वर्ष} other{वर्ष}}",
+  "XYearsPlus": "{years}+ {years, plural, =0{वर्ष} =1{वर्ष} =2{वर्ष} few{वर्ष} many{वर्ष} other{वर्ष}}",
+  "Age": "आयु",
+  "Interests": "रुचियां",
+  "UniqueStatistics": "अद्वितीय आंकड़े",
+  "MostActiveAgeSegment": "सबसे सक्रिय आयु सेगमेंट",
+  "TopEventsFor": "{date} के लिए शीर्ष घटनाएँ",
   "Statistics": "आंकड़े",
-  "SelectYourBooking": "Select your booking",
-  "EnterExternalLink": "Enter external link",
-  "StartBookingCreation": "Start booking creation",
-  "AddLink":"Add link",
-  "CreateBookingLink": "Create booking link"
+  "SelectYourBooking": "अपनी बुकिंग चुनें",
+  "EnterExternalLink": "बाह्य लिंक दर्ज करें",
+  "StartBookingCreation": "बुकिंग निर्माण शुरू करें",
+  "AddLink":"लिंक जोड़ें",
+  "CreateBookingLink": "बुकिंग लिंक बनाएं"
 
 }
