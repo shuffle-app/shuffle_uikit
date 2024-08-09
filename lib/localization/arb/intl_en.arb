@@ -720,6 +720,15 @@
   "OrganicStatistics": "Organic",
   "Promotion": "Promotion",
   "UserHasNoPublicProfileStart": "User",
-  "UserHasNoPublicProfileEnd": "doesn't have public profile"
+  "UserHasNoPublicProfileEnd": "doesn't have public profile",
+  "Limit": "Limit",
+  "Booking": "Booking",
+  "BookingLimit": "Booking Limit",
+  "BookingLimitPerOne": "Booking Limit per one",
+  "CreateSubs": "Create subs",
+  "CreateUpsales": "Create upsales",
+  "Subs": "Subs",
+  "PleaseEnterValidTitle": "Please enter a valid title",
+  "PleaseAddPhoto": "Please add photo"
 
 }

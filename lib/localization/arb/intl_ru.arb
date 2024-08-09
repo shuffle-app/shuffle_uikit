@@ -722,7 +722,16 @@
   "OrganicStatistics": "Живая",
   "Promotion": "Акции",
   "UserHasNoPublicProfileStart": "У пользователя",
-  "UserHasNoPublicProfileEnd": "нет публичного профиля"
+  "UserHasNoPublicProfileEnd": "нет публичного профиля",
+  "Limit": "Лимит",
+  "Booking": "Бронирование",
+  "BookingLimit": "Лимит бронирования",
+  "BookingLimitPerOne": "Лимит бронирования для одного",
+  "CreateSubs": "Создать сабы",
+  "CreateUpsales": "Создать дополнительные продажи",
+  "Subs": "Сабы",
+  "PleaseEnterValidTitle": "Пожалуйста, введите допустимое название",
+  "PleaseAddPhoto": "Пожалуйста, добавьте фото"
 
 }
 

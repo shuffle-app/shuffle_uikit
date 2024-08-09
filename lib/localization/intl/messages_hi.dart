@@ -318,6 +318,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "BeInSearch": MessageLookupByLibrary.simpleMessage("खोज में रहो"),
         "BookIt": MessageLookupByLibrary.simpleMessage("बुक करें"),
         "Bookigns": m3,
+        "Booking": MessageLookupByLibrary.simpleMessage("Booking"),
+        "BookingLimit": MessageLookupByLibrary.simpleMessage("Booking Limit"),
+        "BookingLimitPerOne":
+            MessageLookupByLibrary.simpleMessage("Booking Limit per one"),
         "Bookings": m4,
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("बुकिंग और आमंत्रण"),
@@ -413,6 +417,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("बुकिंग लिंक बनाएं"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("कार्यक्रम बनाएँ"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("जगह बनाएं"),
+        "CreateSubs": MessageLookupByLibrary.simpleMessage("Create subs"),
+        "CreateUpsales": MessageLookupByLibrary.simpleMessage("Create upsales"),
         "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage(
             "अपनी घटना बनाएं और लोगों को आमंत्रित करें"),
         "CreateYourPlaceAndInvitePeople": MessageLookupByLibrary.simpleMessage(
@@ -658,6 +664,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Judaism": MessageLookupByLibrary.simpleMessage("यहूदी धर्म"),
         "Leisure": MessageLookupByLibrary.simpleMessage("फुर्सत"),
         "Less": MessageLookupByLibrary.simpleMessage("कम"),
+        "Limit": MessageLookupByLibrary.simpleMessage("Limit"),
         "Loading": MessageLookupByLibrary.simpleMessage("लोड हो रहा है..."),
         "Location": MessageLookupByLibrary.simpleMessage("जगह"),
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
@@ -821,6 +828,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "PlaceType": MessageLookupByLibrary.simpleMessage("जगह प्रकार"),
         "Places": MessageLookupByLibrary.simpleMessage("स्थानों"),
         "PlacesVisited": m44,
+        "PleaseAddPhoto":
+            MessageLookupByLibrary.simpleMessage("Please add photo"),
+        "PleaseEnterValidTitle":
+            MessageLookupByLibrary.simpleMessage("Please enter a valid title"),
         "PleaseFillOutDate":
             MessageLookupByLibrary.simpleMessage("कृपया दिनांक भरें"),
         "PleaseFillOutYourWishes": MessageLookupByLibrary.simpleMessage(
@@ -1061,6 +1072,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Submit": MessageLookupByLibrary.simpleMessage("सबमिट करें"),
         "SubmitContent":
             MessageLookupByLibrary.simpleMessage("सामग्री सबमिट करें"),
+        "Subs": MessageLookupByLibrary.simpleMessage("Subs"),
         "SubscribeToProfile": MessageLookupByLibrary.simpleMessage("फॉलो करें"),
         "Success": MessageLookupByLibrary.simpleMessage("सफलता"),
         "SuccessfullyAnswered":

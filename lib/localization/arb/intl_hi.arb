@@ -718,7 +718,16 @@
   "OrganicStatistics": "जैविक",
   "Promotion": "प्रचार",
   "UserHasNoPublicProfileStart": "उपयोगकर्ता",
-  "UserHasNoPublicProfileEnd": "का सार्वजनिक प्रोफ़ाइल नहीं है"
+  "UserHasNoPublicProfileEnd": "का सार्वजनिक प्रोफ़ाइल नहीं है",
+  "Limit": "Limit",
+  "Booking": "Booking",
+  "BookingLimit": "Booking Limit",
+  "BookingLimitPerOne": "Booking Limit per one",
+  "CreateSubs": "Create subs",
+  "CreateUpsales": "Create upsales",
+  "Subs": "Subs",
+  "PleaseEnterValidTitle": "Please enter a valid title",
+  "PleaseAddPhoto": "Please add photo"
 
 
 }

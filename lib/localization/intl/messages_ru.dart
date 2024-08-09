@@ -321,6 +321,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "BeInSearch": MessageLookupByLibrary.simpleMessage("Быть в поиске"),
         "BookIt": MessageLookupByLibrary.simpleMessage("Букинг"),
         "Bookigns": m3,
+        "Booking": MessageLookupByLibrary.simpleMessage("Бронирование"),
+        "BookingLimit":
+            MessageLookupByLibrary.simpleMessage("Лимит бронирования"),
+        "BookingLimitPerOne": MessageLookupByLibrary.simpleMessage(
+            "Лимит бронирования для одного"),
         "Bookings": m4,
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Брони и Приглашения"),
@@ -420,6 +425,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "Создать ссылку для бронирования"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Создать место"),
+        "CreateSubs": MessageLookupByLibrary.simpleMessage("Создать сабы"),
+        "CreateUpsales": MessageLookupByLibrary.simpleMessage(
+            "Создать дополнительные продажи"),
         "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage(
             "Создай своё событие и пригласи людей"),
         "CreateYourPlaceAndInvitePeople": MessageLookupByLibrary.simpleMessage(
@@ -663,6 +671,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Judaism": MessageLookupByLibrary.simpleMessage("Иудаизм"),
         "Leisure": MessageLookupByLibrary.simpleMessage("Досуг"),
         "Less": MessageLookupByLibrary.simpleMessage("меньше"),
+        "Limit": MessageLookupByLibrary.simpleMessage("Лимит"),
         "Loading": MessageLookupByLibrary.simpleMessage("Загрузка..."),
         "Location": MessageLookupByLibrary.simpleMessage("Локация"),
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
@@ -825,6 +834,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "PlaceType": MessageLookupByLibrary.simpleMessage("Тип места"),
         "Places": MessageLookupByLibrary.simpleMessage("Места"),
         "PlacesVisited": m44,
+        "PleaseAddPhoto":
+            MessageLookupByLibrary.simpleMessage("Пожалуйста, добавьте фото"),
+        "PleaseEnterValidTitle": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, введите допустимое название"),
         "PleaseFillOutDate":
             MessageLookupByLibrary.simpleMessage("Заполни дату, пожалуйста"),
         "PleaseFillOutYourWishes": MessageLookupByLibrary.simpleMessage(
@@ -1073,6 +1086,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Submit": MessageLookupByLibrary.simpleMessage("Отправить"),
         "SubmitContent":
             MessageLookupByLibrary.simpleMessage("Предложить контент"),
+        "Subs": MessageLookupByLibrary.simpleMessage("Сабы"),
         "SubscribeToProfile":
             MessageLookupByLibrary.simpleMessage("Подписаться"),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
