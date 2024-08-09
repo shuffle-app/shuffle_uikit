@@ -29,7 +29,7 @@ class UiKitTitledFilter<T> extends StatelessWidget {
         ...model.items.map(
           (item) => UiKitCheckboxFilterItem(
             item: item,
-            isSelected: item.value == model.selectedItem?.value,
+            isSelected: item.selected,
             onTap: (selected) {
               if (selected) onItemSelected?.call(item);
               if (!selected) onItemDeselected?.call(item);

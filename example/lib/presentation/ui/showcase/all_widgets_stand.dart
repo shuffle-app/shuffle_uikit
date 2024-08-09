@@ -135,18 +135,22 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             title: 'Title',
             items: [
               TitledFilterItem(
+                selected: false,
                 mask: 'mask',
                 value: 123,
               ),
               TitledFilterItem(
+                selected: false,
                 mask: 'mask',
                 value: 123,
               ),
               TitledFilterItem(
+                selected: false,
                 mask: 'mask',
                 value: 123,
               ),
               TitledFilterItem(
+                selected: false,
                 mask: 'mask',
                 value: 123,
               ),
