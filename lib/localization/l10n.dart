@@ -7450,6 +7450,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Limit`
+  String get Limit {
+    return Intl.message(
+      'Limit',
+      name: 'Limit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking`
+  String get Booking {
+    return Intl.message(
+      'Booking',
+      name: 'Booking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking Limit`
+  String get BookingLimit {
+    return Intl.message(
+      'Booking Limit',
+      name: 'BookingLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking Limit per one`
+  String get BookingLimitPerOne {
+    return Intl.message(
+      'Booking Limit per one',
+      name: 'BookingLimitPerOne',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create subs`
+  String get CreateSubs {
+    return Intl.message(
+      'Create subs',
+      name: 'CreateSubs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create upsales`
+  String get CreateUpsales {
+    return Intl.message(
+      'Create upsales',
+      name: 'CreateUpsales',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subs`
+  String get Subs {
+    return Intl.message(
+      'Subs',
+      name: 'Subs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid title`
+  String get PleaseEnterValidTitle {
+    return Intl.message(
+      'Please enter a valid title',
+      name: 'PleaseEnterValidTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please add photo`
+  String get PleaseAddPhoto {
+    return Intl.message(
+      'Please add photo',
+      name: 'PleaseAddPhoto',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
