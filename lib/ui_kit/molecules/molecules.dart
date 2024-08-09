@@ -100,6 +100,7 @@ export 'tiles/ui_kit_expansion_tile_with_icon_button.dart';
 export 'tiles/ui_kit_gradient_switch_tile.dart';
 export 'tiles/ui_kit_hover_animation_tile.dart';
 export 'tiles/ui_kit_leading_radio_tile.dart';
+export 'tiles/ui_kit_content_preview_tile.dart';
 export 'tiles/ui_kit_location_search_tile.dart';
 export 'tiles/ui_kit_pop_up_menu_tile.dart';
 export 'tiles/ui_kit_properties_type_tile.dart';

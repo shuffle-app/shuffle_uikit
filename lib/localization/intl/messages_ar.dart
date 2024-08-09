@@ -284,6 +284,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Allow location services to use this function"),
         "AllowX": m1,
         "AllowedCaracters": m2,
+        "AlreadyHaveActiveReminder": MessageLookupByLibrary.simpleMessage(
+            "You have already created one reminder. To create a new one, pause or remove the previous one."),
         "AlreadyInvited": MessageLookupByLibrary.simpleMessage(
             "Plz respect your choice and others\' feelings"),
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" And "),
@@ -415,6 +417,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Create booking link"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Create Event"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
+        "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
+            "Create free reminder for your clients"),
         "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage(
             "Create your event and invite people"),
         "CreateYourPlaceAndInvitePeople": MessageLookupByLibrary.simpleMessage(
@@ -462,6 +466,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "DonationRaised": m15,
         "DontBeAlone": MessageLookupByLibrary.simpleMessage("Don\'t be alone"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("Don\'t miss it"),
+        "DownloadPdf": MessageLookupByLibrary.simpleMessage("Download PDF"),
         "DubaiEventTicket":
             MessageLookupByLibrary.simpleMessage("Dubai Event Ticket"),
         "Easy": MessageLookupByLibrary.simpleMessage("Eazy"),
@@ -907,6 +912,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
+        "Reminder": MessageLookupByLibrary.simpleMessage("Reminder"),
         "Rename": MessageLookupByLibrary.simpleMessage("Rename"),
         "Reply": MessageLookupByLibrary.simpleMessage("Reply"),
         "ReplyingTo": m52,

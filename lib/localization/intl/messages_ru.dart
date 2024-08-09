@@ -289,6 +289,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Разрешить гео для этой функции"),
         "AllowX": m1,
         "AllowedCaracters": m2,
+        "AlreadyHaveActiveReminder": MessageLookupByLibrary.simpleMessage(
+            "У тебя уже есть активное напоминание. Чтобы создать новое, приостанови или удали предыдущее."),
         "AlreadyInvited": MessageLookupByLibrary.simpleMessage(
             "Плз уважай свой выбор и чувства других"),
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" И "),
@@ -420,6 +422,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Создать ссылку для бронирования"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Создать место"),
+        "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
+            "Создай бесплатное напоминание для твоих клиентов"),
         "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage(
             "Создай своё событие и пригласи людей"),
         "CreateYourPlaceAndInvitePeople": MessageLookupByLibrary.simpleMessage(
@@ -469,6 +473,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "DontBeAlone":
             MessageLookupByLibrary.simpleMessage("Не будьте одиноки"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("Не пропусти"),
+        "DownloadPdf": MessageLookupByLibrary.simpleMessage("Скачать PDF"),
         "DubaiEventTicket":
             MessageLookupByLibrary.simpleMessage("Билет на события в Дубае"),
         "Easy": MessageLookupByLibrary.simpleMessage("Изи"),
@@ -921,6 +926,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Связанные свойства"),
         "Religion": MessageLookupByLibrary.simpleMessage("Религия"),
+        "Reminder": MessageLookupByLibrary.simpleMessage("Напоминание"),
         "Rename": MessageLookupByLibrary.simpleMessage("Переименовать"),
         "Reply": MessageLookupByLibrary.simpleMessage("Ответить"),
         "ReplyingTo": m52,
