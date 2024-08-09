@@ -23,16 +23,14 @@ class UiKitPopUpMenuTile extends StatelessWidget {
 
     return UiKitHeaderWithLeading(
       title: title,
-      titleIcon:titleIcon,
+      titleIcon: titleIcon,
       titleStyle: textTheme?.caption1Medium,
       subtitle: subtitle,
       subtitleStyle: textTheme?.caption1Bold.copyWith(
         color: ColorsFoundation.darkNeutral900,
       ),
       leading: leading,
-      trailing: UiKitPopUpMenuButton(
-        options: menuOptions ?? [],
-      ),
+      trailing: menuOptions == null ? const SizedBox.shrink() : UiKitPopUpMenuButton(options: menuOptions!),
     );
   }
 }

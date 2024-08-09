@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitTitledFilter extends StatelessWidget {
-  final TitledFilterModel model;
-  final ValueChanged<TitledFilterItem>? onItemSelected;
-  final ValueChanged<TitledFilterItem>? onItemDeselected;
+class UiKitTitledFilter<T> extends StatelessWidget {
+  final TitledFilterModel<T> model;
+  final ValueChanged<TitledFilterItem<T>>? onItemSelected;
+  final ValueChanged<TitledFilterItem<T>>? onItemDeselected;
 
   const UiKitTitledFilter({
     Key? key,

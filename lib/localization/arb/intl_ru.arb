@@ -524,7 +524,6 @@
   "SelectCurrency": "Выбери валюту",
   "EnterPrice": "Введи цену",
   "PriceRange": "Диапазон цен",
-  "Invites": "Приглашения",
   "BookingsHeading": "Брони",
   "SelectPriceAndCurrency": "Выберите цену и валюту",
   "Submit": "Отправить",
@@ -539,7 +538,6 @@
   "SuccessfullyAnswered": "Успешно отправлен ответ",
   "RangeEndValueIsLessThanBeginingOne": "Конечное значение диапазона меньше начального",
   "Invites": "Приглашения",
-  "BookingsHeading": "Брони",
   "MinutesAgo": "{minutes}м назад",
   "HoursAgo": "{hours}ч назад",
   "Yesterday": "Вчера",
@@ -722,7 +720,10 @@
   "OrganicStatistics": "Живая",
   "Promotion": "Акции",
   "UserHasNoPublicProfileStart": "У пользователя",
-  "UserHasNoPublicProfileEnd": "нет публичного профиля"
-
+  "UserHasNoPublicProfileEnd": "нет публичного профиля",
+  "DownloadPdf": "Скачать PDF",
+  "CreateReminderDescription": "Создай бесплатное напоминание для твоих клиентов",
+  "Reminder": "Напоминание",
+  "AlreadyHaveActiveReminder": "У тебя уже есть активное напоминание. Чтобы создать новое, приостанови или удали предыдущее."
 }
 
