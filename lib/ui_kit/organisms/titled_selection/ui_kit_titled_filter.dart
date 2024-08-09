@@ -27,14 +27,18 @@ class UiKitTitledFilter<T> extends StatelessWidget {
         ),
         SpacingFoundation.verticalSpace16,
         ...model.items.map(
-          (item) => UiKitCheckboxFilterItem(
-            item: item,
-            isSelected: item.value == model.selectedItem?.value,
-            onTap: (selected) {
-              if (selected) onItemSelected?.call(item);
-              if (!selected) onItemDeselected?.call(item);
-            },
-          ),
+          (item) {
+            final isLastItem = model.items.last.mask == item.mask;
+
+            return UiKitCheckboxFilterItem(
+              item: item,
+              isSelected: item.selected,
+              onTap: (selected) {
+                if (selected) onItemSelected?.call(item);
+                if (!selected) onItemDeselected?.call(item);
+              },
+            ).paddingOnly(bottom: isLastItem ? 0 : EdgeInsetsFoundation.vertical16);
+          },
         ),
       ],
     );
