@@ -310,6 +310,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   itemBuilder: (context) => widget.chartData.popUpMenuOptions!
                       .map<PopupMenuItem<String>>(
                         (option) => PopupMenuItem(
+                          onTap: () => widget.popUpMenuItemSelected?.call(option),
                           child: Text(
                             option,
                             style: boldTextTheme?.caption2Medium.copyWith(color: colorScheme?.inverseBodyTypography),
