@@ -34,3 +34,6 @@ export 'extentions/ui_kit_theme_extention.dart';
 export 'snack_bar_utils.dart';
 export 'text_input_formater/price_with_spaces_formatter.dart';
 export 'widgets_factory/widgets_abstract_factory.dart';
+export 'text_input_formater/max_length_text_input_formatter.dart';
+export 'text_input_formater/only_numbers_formatter.dart';
+export 'text_input_formater/string_with_space.dart';
