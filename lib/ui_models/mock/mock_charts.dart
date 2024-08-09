@@ -196,23 +196,87 @@ final mockInvitations = UiKitLineChartData<num>(
           value: Random().nextInt(100),
         ),
       ),
-      chartItemName: 'Initiations',
+      chartItemName: 'Invitations',
       color: ColorsFoundation.info,
     ),
   ],
 );
 
-final mockProAccountStats = UiKitLineChartData<num>(
+final mockProAccountGeneralStats = UiKitLineChartData<num>(
   title: 'Coverage',
   subtitle: 'Budget 20\$',
   popUpMenuOptions: [
-    'Statistics',
-    'Edit promotion',
-    'Pause promotion',
-    'Delete promotion',
-    'Offers',
-    'Notifications',
-    'Reminders',
+    S.current.Settings,
+    S.current.DownloadPdf,
+  ],
+  items: [
+    UiKitLineChartItemData<double>(
+      chartItemName: 'Views',
+      id: 1,
+      color: ColorsFoundation.success,
+      datasets: List.generate(
+        10,
+        (index) => UiKitLineChartDataSet<double>(
+          date: DateTime.now().subtract(Duration(days: index)),
+          value: Random().nextDouble() * index * 1000,
+        ),
+      ),
+    ),
+    UiKitLineChartItemData<double>(
+      chartItemName: 'Visitors',
+      id: 2,
+      color: ColorsFoundation.info,
+      datasets: List.generate(
+        10,
+        (index) => UiKitLineChartDataSet<double>(
+          date: DateTime.now().subtract(Duration(days: index)),
+          value: Random().nextDouble() * index * 1000,
+        ),
+      ),
+    ),
+  ],
+);
+
+final mockProAccountOrganicStats = UiKitLineChartData<num>(
+  title: 'Coverage',
+  popUpMenuOptions: [
+    S.current.Settings,
+    S.current.DownloadPdf,
+  ],
+  items: [
+    UiKitLineChartItemData<double>(
+      chartItemName: 'Views',
+      id: 1,
+      color: ColorsFoundation.success,
+      datasets: List.generate(
+        10,
+        (index) => UiKitLineChartDataSet<double>(
+          date: DateTime.now().subtract(Duration(days: index)),
+          value: Random().nextDouble() * index * 1000,
+        ),
+      ),
+    ),
+    UiKitLineChartItemData<double>(
+      chartItemName: 'Visitors',
+      id: 2,
+      color: ColorsFoundation.info,
+      datasets: List.generate(
+        10,
+        (index) => UiKitLineChartDataSet<double>(
+          date: DateTime.now().subtract(Duration(days: index)),
+          value: Random().nextDouble() * index * 1000,
+        ),
+      ),
+    ),
+  ],
+);
+
+final mockProAccountPromotionStats = UiKitLineChartData<num>(
+  title: 'Coverage',
+  subtitle: 'Budget 20\$',
+  popUpMenuOptions: [
+    S.current.Settings,
+    S.current.DownloadPdf,
   ],
   items: [
     UiKitLineChartItemData<double>(

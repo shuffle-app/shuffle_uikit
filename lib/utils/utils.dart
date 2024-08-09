@@ -24,6 +24,7 @@ export 'enums/user_avatar_size.dart';
 export 'enums/weather_type_enum_class.dart';
 export 'extentions/date_time_time_ago_extention.dart';
 export 'extentions/factory_extention.dart';
+export 'extentions/line_chart_extensions.dart';
 export 'extentions/loading_extension.dart';
 export 'extentions/navigator_extention.dart';
 export 'extentions/padding_extention.dart';

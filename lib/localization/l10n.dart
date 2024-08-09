@@ -7411,6 +7411,46 @@ class S {
     );
   }
 
+  /// `Download PDF`
+  String get DownloadPdf {
+    return Intl.message(
+      'Download PDF',
+      name: 'DownloadPdf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create free reminder for your clients`
+  String get CreateReminderDescription {
+    return Intl.message(
+      'Create free reminder for your clients',
+      name: 'CreateReminderDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminder`
+  String get Reminder {
+    return Intl.message(
+      'Reminder',
+      name: 'Reminder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have already created one reminder. To create a new one, pause or remove the previous one.`
+  String get AlreadyHaveActiveReminder {
+    return Intl.message(
+      'You have already created one reminder. To create a new one, pause or remove the previous one.',
+      name: 'AlreadyHaveActiveReminder',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Limit`
   String get Limit {
     return Intl.message(

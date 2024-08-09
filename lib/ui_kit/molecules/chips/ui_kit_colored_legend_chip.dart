@@ -22,81 +22,64 @@ class UiKitColoredLegendChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.uiKitTheme?.colorScheme;
+    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
+
     return AnimatedSwitcher(
       duration: const Duration(milliseconds: 250),
-      child: selected
-          ? _SelectedChip(
-              text: text,
-              color: color,
-              gradient: gradient,
-              iconPath: iconPath,
-              onTap: onTap,
-            )
-          : _UnselectedChip(
-              text: text,
-              color: color,
-              gradient: gradient,
-              iconPath: iconPath,
-              onTap: onTap,
-            ),
-    );
-  }
-}
-
-class _SelectedChip extends StatelessWidget {
-  final String text;
-  final Color? color;
-  final Gradient? gradient;
-  final String? iconPath;
-  final VoidCallback? onTap;
-
-  const _SelectedChip({
-    Key? key,
-    required this.text,
-    this.color,
-    this.gradient,
-    this.iconPath,
-    this.onTap,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = context.uiKitTheme;
-    final regularTextTheme = theme?.regularTextTheme;
-    final colorScheme = theme?.colorScheme;
-
-    return Material(
-      clipBehavior: Clip.hardEdge,
-      borderRadius: BorderRadiusFoundation.max,
-      color: gradient == null ? color : Colors.transparent,
-      child: InkWell(
-        onTap: onTap,
-        child: Ink(
-          height: 0.04.sh,
-          decoration: BoxDecoration(
-            color: color,
-            gradient: gradient,
+      child: Material(
+        clipBehavior: Clip.hardEdge,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusFoundation.max,
+          side: BorderSide(
+            color: selected
+                ? color ?? colorScheme?.primary ?? Colors.white
+                : color ?? colorScheme?.surface ?? Colors.white,
           ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ImageWidget(
-                iconData: ShuffleUiKitIcons.check,
-                color: colorScheme?.inversePrimary,
+        ),
+        color: gradient == null
+            ? selected
+                ? color
+                : Colors.transparent
+            : Colors.transparent,
+        child: InkWell(
+          onTap: onTap,
+          child: Ink(
+            height: 0.04.sh,
+            child: AnimatedContainer(
+              duration: const Duration(milliseconds: 250),
+              decoration: BoxDecoration(
+                gradient: gradient,
+                color: gradient == null
+                    ? selected
+                        ? color
+                        : Colors.transparent
+                    : Colors.transparent,
               ),
-              SpacingFoundation.horizontalSpace2,
-              Text(
-                text,
-                style: regularTextTheme?.caption2,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ImageWidget(
+                    iconData: ShuffleUiKitIcons.check,
+                    color: selected ? colorScheme?.inversePrimary : color,
+                  ),
+                  SpacingFoundation.horizontalSpace2,
+                  Text(
+                    text,
+                    style: regularTextTheme?.caption2.copyWith(
+                      color: selected ? colorScheme?.inversePrimary : color,
+                    ),
+                  ),
+                  if (iconPath != null)
+                    ImageWidget(
+                      link: iconPath,
+                      color: selected ? colorScheme?.inverseSurface : color,
+                    ).paddingOnly(left: EdgeInsetsFoundation.horizontal2),
+                ],
+              ).paddingSymmetric(
+                horizontal: EdgeInsetsFoundation.horizontal12,
               ),
-              if (iconPath != null)
-                ImageWidget(
-                  link: iconPath,
-                  color: colorScheme?.inverseSurface,
-                ).paddingOnly(left: EdgeInsetsFoundation.horizontal2),
-            ],
-          ).paddingSymmetric(
-            horizontal: EdgeInsetsFoundation.horizontal12,
+            ),
           ),
         ),
       ),
@@ -122,6 +105,8 @@ class _UnselectedChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.uiKitTheme?.colorScheme;
+
     return GradientableWidget(
       gradient: gradient,
       child: Material(
@@ -146,6 +131,11 @@ class _UnselectedChip extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
+                ImageWidget(
+                  iconData: ShuffleUiKitIcons.check,
+                  color: colorScheme?.inversePrimary,
+                ),
+                SpacingFoundation.horizontalSpace2,
                 Text(
                   text,
                   style: context.uiKitTheme?.regularTextTheme.caption2.copyWith(

@@ -5,7 +5,6 @@ import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/decoration/dashed_divider.dart';
 import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dart';
-import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
 class UiKitLineChartBody extends StatelessWidget {
   final Size availableSize;
@@ -46,15 +45,16 @@ class UiKitLineChartBody extends StatelessWidget {
   double get chartStepScaleFactor =>
       1 - (smallPreviewUpdateNotifier.value.previewWidthFraction - initialPreviewWidthFraction);
 
-  void _setFloatingHintData(Offset position) {
+  void _setFloatingHintData(Offset position, {LineChartSelectedPointDataState? state}) {
     tapNotifier.value = position;
     final index = ((scrollController.offset + position.dx) ~/ (pointsStep * chartStepScaleFactor));
     final items = chartItems.chartItemsWithDatasetAt(index);
     if (items.isNotEmpty || items.first.datasets.isNotEmpty) {
-      selectedDataSetNotifier.value = LineChartSelectedPointData(
+      selectedDataSetNotifier.value = selectedDataSetNotifier.value.copyWith(
         chartItems: items,
         date: items.first.datasets.first.date,
         selectedDataSetIndex: index,
+        state: state,
       );
     }
   }
@@ -70,11 +70,24 @@ class UiKitLineChartBody extends StatelessWidget {
     final colorScheme = context.uiKitTheme?.colorScheme;
 
     return GestureDetector(
-      onTapDown: (details) => _setFloatingHintData(details.localPosition),
+      onTap: () {
+        if (selectedDataSetNotifier.value.state == LineChartSelectedPointDataState.keepOnScreen) return;
+
+        _clearFloatingHintData();
+      },
+      onTapDown: (details) {
+        LineChartSelectedPointDataState state = selectedDataSetNotifier.value.state;
+        if (state == LineChartSelectedPointDataState.hide) {
+          state = LineChartSelectedPointDataState.keepOnScreen;
+        } else if (state == LineChartSelectedPointDataState.keepOnScreen) {
+          _clearFloatingHintData();
+          return;
+        }
+        _setFloatingHintData(details.localPosition, state: state);
+      },
       onPanStart: (details) => _setFloatingHintData(details.localPosition),
       onPanUpdate: (details) => _setFloatingHintData(details.localPosition),
       onPanEnd: (details) => _clearFloatingHintData(),
-      onTapUp: (details) => _clearFloatingHintData(),
       behavior: HitTestBehavior.deferToChild,
       child: SizedBox(
         width: availableSize.width,

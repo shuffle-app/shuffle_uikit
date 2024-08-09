@@ -6,16 +6,21 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/organisms/charts/line_chart/ui_kit_line_chart_body.dart';
 import 'package:shuffle_uikit/ui_kit/organisms/charts/line_chart/ui_kit_line_chart_small_preview.dart';
 import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dart';
-import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
 class UiKitLineChart extends StatefulWidget {
   final UiKitLineChartData<num> chartData;
   final UiKitLineChartAdditionalData? chartAdditionalData;
+  final ValueChanged<String>? popUpMenuItemSelected;
+  final VoidCallback? action;
+  final bool loading;
 
   const UiKitLineChart({
     Key? key,
     required this.chartData,
     this.chartAdditionalData,
+    this.popUpMenuItemSelected,
+    this.action,
+    this.loading = false,
   }) : super(key: key);
 
   @override
@@ -273,13 +278,26 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                 ),
               ),
               SpacingFoundation.horizontalSpace4,
-              Text(
-                '${DateFormat('MMM d').format(widget.chartData.items.period.start)} - ${DateFormat('MMM d').format(widget.chartData.items.period.end)}',
-                style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
-              ),
+              if (!widget.loading)
+                Text(
+                  '${DateFormat('MMM d').format(widget.chartData.items.period.start)} - ${DateFormat('MMM d').format(widget.chartData.items.period.end)}',
+                  style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
+                ),
+              if (widget.action != null)
+                context
+                    .iconButtonNoPadding(
+                      data: BaseUiKitButtonData(
+                        iconInfo: BaseUiKitButtonIconData(
+                          iconData: ShuffleUiKitIcons.chevronright,
+                        ),
+                        onPressed: widget.action,
+                        backgroundColor: colorScheme?.surface3,
+                      ),
+                    )
+                    .paddingOnly(left: EdgeInsetsFoundation.horizontal12),
               if (widget.chartData.popUpMenuOptions != null)
                 PopupMenuButton<String>(
-                  onSelected: (value) {},
+                  onSelected: widget.popUpMenuItemSelected,
                   padding: EdgeInsets.zero,
                   position: PopupMenuPosition.over,
                   shape: RoundedRectangleBorder(
@@ -292,6 +310,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   itemBuilder: (context) => widget.chartData.popUpMenuOptions!
                       .map<PopupMenuItem<String>>(
                         (option) => PopupMenuItem(
+                          onTap: () => widget.popUpMenuItemSelected?.call(option),
                           child: Text(
                             option,
                             style: boldTextTheme?.caption2Medium.copyWith(color: colorScheme?.inverseBodyTypography),
@@ -303,8 +322,11 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
           SpacingFoundation.verticalSpace16,
-          initialMaxChartScrollablePartWidth == null || initialPreviewWidthFraction == null
-              ? SizedBox.fromSize(size: chartViewPortSize, child: const LoadingWidget())
+          initialMaxChartScrollablePartWidth == null || initialPreviewWidthFraction == null || widget.loading
+              ? SizedBox.fromSize(
+                  size: chartViewPortSize,
+                  child: Center(child: CircularProgressIndicator(color: colorScheme?.inverseSurface)),
+                )
               : UiKitLineChartBody(
                   bodySizingNotifier: _bodySizingNotifier,
                   initialPreviewWidthFraction: initialPreviewWidthFraction!,
@@ -353,44 +375,47 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
               ),
             ),
           SpacingFoundation.verticalSpace4,
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: UiKitLineChartSmallPreview(
-              smallPreviewUpdateNotifier: _smallPreviewUpdateNotifier,
-              chartItems: widget.chartData.items,
-              size: smallPreviewSize,
-              onScroll: _scrollChartToPosition,
+          if (!widget.loading)
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: UiKitLineChartSmallPreview(
+                smallPreviewUpdateNotifier: _smallPreviewUpdateNotifier,
+                chartItems: widget.chartData.items,
+                size: smallPreviewSize,
+                onScroll: _scrollChartToPosition,
+              ),
             ),
-          ),
           SpacingFoundation.verticalSpace12,
-          Wrap(
-            runSpacing: SpacingFoundation.verticalSpacing8,
-            spacing: SpacingFoundation.horizontalSpacing8,
-            children: widget.chartData.items
-                .map(
-                  (e) => UiKitColoredLegendChip(
-                    text: e.chartItemName,
-                    color: e.color,
-                    gradient: e.gradient,
-                    iconPath: e.icon,
-                    selected: visibleLineIds.contains(e.id),
-                    onTap: () {
-                      if (visibleLineIds.contains(e.id)) {
-                        visibleLineIds.remove(e.id);
-                      } else {
-                        visibleLineIds.add(e.id);
-                      }
-                      _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
-                        visibleLinesIds: visibleLineIds,
-                      );
-                      setState(() {});
-                    },
-                  ),
-                )
-                .toList(),
-          ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16).paddingOnly(
-              bottom: widget.chartAdditionalData != null ? EdgeInsetsFoundation.zero : EdgeInsetsFoundation.vertical16),
-          if (widget.chartAdditionalData != null)
+          if (!widget.loading)
+            Wrap(
+              runSpacing: SpacingFoundation.verticalSpacing8,
+              spacing: SpacingFoundation.horizontalSpacing8,
+              children: widget.chartData.items
+                  .map(
+                    (e) => UiKitColoredLegendChip(
+                      text: e.chartItemName,
+                      color: e.color,
+                      gradient: e.gradient,
+                      iconPath: e.icon,
+                      selected: visibleLineIds.contains(e.id),
+                      onTap: () {
+                        if (visibleLineIds.contains(e.id)) {
+                          visibleLineIds.remove(e.id);
+                        } else {
+                          visibleLineIds.add(e.id);
+                        }
+                        _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
+                          visibleLinesIds: visibleLineIds,
+                        );
+                        setState(() {});
+                      },
+                    ),
+                  )
+                  .toList(),
+            ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16).paddingOnly(
+                bottom:
+                    widget.chartAdditionalData != null ? EdgeInsetsFoundation.zero : EdgeInsetsFoundation.vertical16),
+          if (widget.chartAdditionalData != null && !widget.loading)
             Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,

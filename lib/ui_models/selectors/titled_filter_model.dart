@@ -8,6 +8,18 @@ class TitledFilterModel<T> {
     required this.items,
     this.selectedItem,
   });
+
+  TitledFilterModel<T> copyWith({
+    String? title,
+    List<TitledFilterItem<T>>? items,
+    TitledFilterItem<T>? selectedItem,
+  }) {
+    return TitledFilterModel<T>(
+      title: title ?? this.title,
+      items: items ?? this.items,
+      selectedItem: selectedItem ?? this.selectedItem,
+    );
+  }
 }
 
 class TitledFilterItem<T> {

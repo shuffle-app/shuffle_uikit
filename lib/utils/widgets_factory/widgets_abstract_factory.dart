@@ -541,6 +541,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         icon: data.iconWidget,
         iconInfo: data.iconInfo,
         onPressed: data.onPressed,
+        backgroundColor: data.backgroundColor,
       );
     } else if (hasIcon && (blurred ?? false)) {
       return BlurredButtonWithIcon(

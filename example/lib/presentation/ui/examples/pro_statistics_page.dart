@@ -20,6 +20,7 @@ class _ProStatisticsPageState extends State<ProStatisticsPage> with SingleTicker
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final colorsScheme = context.uiKitTheme?.colorScheme;
 
     return Scaffold(
       body: BlurredAppBarPage(
@@ -40,7 +41,7 @@ class _ProStatisticsPageState extends State<ProStatisticsPage> with SingleTicker
           ),
           SpacingFoundation.verticalSpace16,
           UiKitLineChart(
-            chartData: mockProAccountStats,
+            chartData: mockProAccountGeneralStats,
             chartAdditionalData: mockAdditionalData,
           ),
           SpacingFoundation.verticalSpace16,
@@ -57,6 +58,7 @@ class _ProStatisticsPageState extends State<ProStatisticsPage> with SingleTicker
           ),
           SpacingFoundation.verticalSpace16,
           UiKitCardWrapper(
+            color: colorsScheme?.surface3,
             padding: EdgeInsets.all(EdgeInsetsFoundation.all16),
             child: UiKitMiniChart(
               data: mockedMiniChartData,
@@ -69,6 +71,7 @@ class _ProStatisticsPageState extends State<ProStatisticsPage> with SingleTicker
           ),
           SpacingFoundation.verticalSpace16,
           UiKitCardWrapper(
+            color: colorsScheme?.surface3,
             padding: EdgeInsets.all(EdgeInsetsFoundation.all16),
             child: Column(
               mainAxisSize: MainAxisSize.min,

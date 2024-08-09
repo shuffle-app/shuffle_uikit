@@ -288,6 +288,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "स्थान सेवाओं को इस फ़ंक्शन का उपयोग करने दें"),
         "AllowX": m1,
         "AllowedCaracters": m2,
+        "AlreadyHaveActiveReminder": MessageLookupByLibrary.simpleMessage(
+            "आपने पहले से ही एक याद दिलाने वाला बना रखा है। एक नया बनाने के लिए, पहले वाले को रोकें या हटाएं।"),
         "AlreadyInvited": MessageLookupByLibrary.simpleMessage(
             "कृपया अपने चयन और दूसरों की भावनाओं का सम्मान करें"),
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage("और"),
@@ -417,6 +419,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("बुकिंग लिंक बनाएं"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("कार्यक्रम बनाएँ"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("जगह बनाएं"),
+        "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
+            "अपने ग्राहकों के लिए मुफ्त याद दिलाने के लिए"),
         "CreateSubs": MessageLookupByLibrary.simpleMessage("Create subs"),
         "CreateUpsales": MessageLookupByLibrary.simpleMessage("Create upsales"),
         "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage(
@@ -466,6 +470,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "DonationRaised": m15,
         "DontBeAlone": MessageLookupByLibrary.simpleMessage("अकेले मत रहो"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("इसे मत चूकिए"),
+        "DownloadPdf": MessageLookupByLibrary.simpleMessage("PDF डाउनलोड करें"),
         "DubaiEventTicket":
             MessageLookupByLibrary.simpleMessage("दुबई घटना टिकट"),
         "Easy": MessageLookupByLibrary.simpleMessage("आसान"),
@@ -927,6 +932,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
+        "Reminder": MessageLookupByLibrary.simpleMessage("याद दिलाने वाला"),
         "Rename": MessageLookupByLibrary.simpleMessage("नाम बदलें"),
         "Reply": MessageLookupByLibrary.simpleMessage("जवाब दे दो"),
         "ReplyingTo": m52,
