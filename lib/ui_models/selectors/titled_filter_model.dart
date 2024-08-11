@@ -1,23 +1,19 @@
 class TitledFilterModel<T> {
   final String title;
   final List<TitledFilterItem<T>> items;
-  final TitledFilterItem<T>? selectedItem;
 
   TitledFilterModel({
     required this.title,
     required this.items,
-    this.selectedItem,
   });
 
   TitledFilterModel<T> copyWith({
     String? title,
     List<TitledFilterItem<T>>? items,
-    TitledFilterItem<T>? selectedItem,
   }) {
     return TitledFilterModel<T>(
       title: title ?? this.title,
       items: items ?? this.items,
-      selectedItem: selectedItem ?? this.selectedItem,
     );
   }
 }
@@ -25,9 +21,22 @@ class TitledFilterModel<T> {
 class TitledFilterItem<T> {
   final String mask;
   final T value;
+  final bool selected;
 
   TitledFilterItem({
     required this.mask,
     required this.value,
+    required this.selected,
   });
+
+  TitledFilterItem<T> copyWith({
+    String? mask,
+    T? value,
+    bool? selected,
+  }) =>
+      TitledFilterItem<T>(
+        mask: mask ?? this.mask,
+        value: value ?? this.value,
+        selected: selected ?? this.selected,
+      );
 }
