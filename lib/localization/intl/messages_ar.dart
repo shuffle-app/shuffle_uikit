@@ -198,7 +198,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m65(amountOfTopDonators, multiplier) =>
       "Top ${amountOfTopDonators} donators receive x${multiplier} points";
 
-  static String m66(separator) => "Top places rated${separator}by";
+  static String m66(separator) => "Top content rated${separator}by";
 
   static String m67(type) => "To use this function plz upgrade to ${type}";
 

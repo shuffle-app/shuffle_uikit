@@ -1006,10 +1006,10 @@ class S {
     );
   }
 
-  /// `Top places rated{separator}by`
+  /// `Top content rated{separator}by`
   String TopPlacesRatedBy(Object separator) {
     return Intl.message(
-      'Top places rated${separator}by',
+      'Top content rated${separator}by',
       name: 'TopPlacesRatedBy',
       desc: '',
       args: [separator],
