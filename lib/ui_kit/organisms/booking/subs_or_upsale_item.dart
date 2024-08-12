@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class SubsOrUpsaleItem extends StatefulWidget {
+class SubsOrUpsaleItem extends StatelessWidget {
   final String? titleOrPrice;
   final String? actualLimit;
   final String? limit;
   final String? description;
   final String? photoLink;
-  final Function() removeItem;
+  final VoidCallback? removeItem;
   final Function()? onEdit;
 
   const SubsOrUpsaleItem({
@@ -17,15 +17,10 @@ class SubsOrUpsaleItem extends StatefulWidget {
     this.titleOrPrice,
     this.photoLink,
     this.actualLimit,
-    required this.removeItem,
+    this.removeItem,
     this.onEdit,
   });
 
-  @override
-  State<SubsOrUpsaleItem> createState() => _SubsOrUpsaleItemState();
-}
-
-class _SubsOrUpsaleItemState extends State<SubsOrUpsaleItem> {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
@@ -40,29 +35,30 @@ class _SubsOrUpsaleItemState extends State<SubsOrUpsaleItem> {
             alignment: Alignment.topRight,
             children: [
               GestureDetector(
-                onTap: widget.onEdit,
-                child: ShaderMask(
-                  shaderCallback: (bounds) {
-                    return LinearGradient(
-                      colors: [theme?.colorScheme.primary ?? Colors.white, Colors.transparent],
-                      stops: const [0.83, 1.0],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ).createShader(bounds);
-                  },
-                  blendMode: BlendMode.dstIn,
-                  child: UiKitCardWrapper(
-                    width: 124.w,
-                    borderRadius: BorderRadiusFoundation.all12,
-                    child: ImageWidget(
-                      height: 1.sw <= 380 ? 90.h : 60.h,
-                      link: widget.photoLink,
-                      fit: BoxFit.fill,
-                    ),
+                onTap: onEdit,
+                child: UiKitCardWrapper(
+                  width: 124.w,
+                  borderRadius: BorderRadiusFoundation.all12,
+                  child: ImageWidget(
+                    height: 1.sw <= 380 ? 90.h : 60.h,
+                    link: photoLink,
+                    fit: BoxFit.fill,
                   ),
                 ).paddingOnly(
                   top: 4,
                   right: 4,
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: theme?.colorScheme.surface ?? Colors.black,
+                      spreadRadius: 8,
+                      blurRadius: 7,
+                      offset: Offset(0, 1.sw <= 380 ? 92.h : 62.h),
+                    ),
+                  ],
                 ),
               ),
               Positioned(
@@ -71,7 +67,7 @@ class _SubsOrUpsaleItemState extends State<SubsOrUpsaleItem> {
                 child: context.outlinedButton(
                   hideBorder: true,
                   data: BaseUiKitButtonData(
-                    onPressed: widget.removeItem,
+                    onPressed: removeItem,
                     iconInfo: BaseUiKitButtonIconData(
                       iconData: ShuffleUiKitIcons.x,
                       size: 12,
@@ -79,12 +75,12 @@ class _SubsOrUpsaleItemState extends State<SubsOrUpsaleItem> {
                   ),
                 ),
               ),
-              if (widget.limit != null && widget.limit!.isNotEmpty)
+              if (limit != null && limit!.isNotEmpty)
                 Positioned(
                   bottom: 4.h,
                   left: 4.w,
                   child: Text(
-                    '${widget.actualLimit ?? 0}/${widget.limit!}',
+                    '${actualLimit ?? 0}/${limit!}',
                     style: theme?.boldTextTheme.caption3Medium,
                   ),
                 )
@@ -92,12 +88,12 @@ class _SubsOrUpsaleItemState extends State<SubsOrUpsaleItem> {
           ),
           SpacingFoundation.verticalSpace2,
           Text(
-            widget.titleOrPrice ?? '',
+            titleOrPrice ?? '',
             style: theme?.boldTextTheme.caption3Medium,
           ),
           SpacingFoundation.verticalSpace2,
           Text(
-            widget.description ?? '',
+            description ?? '',
             style: theme?.regularTextTheme.caption4,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
