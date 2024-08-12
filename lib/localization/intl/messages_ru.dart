@@ -423,8 +423,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CountReviews": m12,
         "CountVideoReaction": m13,
         "Create": MessageLookupByLibrary.simpleMessage("Создать"),
-        "CreateBookingLink": MessageLookupByLibrary.simpleMessage(
-            "Создать ссылку для бронирования"),
+        "CreateBookingLink":
+            MessageLookupByLibrary.simpleMessage("Создать ссылку на Букинг"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Создать место"),
         "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
@@ -494,7 +494,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "EnableHintSystem":
             MessageLookupByLibrary.simpleMessage("Включить подсказки"),
         "EnterExternalLink":
-            MessageLookupByLibrary.simpleMessage("Введите внешнюю ссылку"),
+            MessageLookupByLibrary.simpleMessage("Добавить внешнюю ссылку"),
         "EnterInputType": m17,
         "EnterLocation":
             MessageLookupByLibrary.simpleMessage("Введите местоположение"),
