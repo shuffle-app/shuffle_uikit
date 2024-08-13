@@ -22,64 +22,93 @@ class UiKitColoredLegendChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = context.uiKitTheme?.colorScheme;
-    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
-
     return AnimatedSwitcher(
-      duration: const Duration(milliseconds: 250),
-      child: Material(
-        clipBehavior: Clip.hardEdge,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusFoundation.max,
-          side: BorderSide(
-            color: selected
-                ? color ?? colorScheme?.primary ?? Colors.white
-                : color ?? colorScheme?.surface ?? Colors.white,
-          ),
-        ),
-        color: gradient == null
-            ? selected
-                ? color
-                : Colors.transparent
-            : Colors.transparent,
-        child: InkWell(
-          onTap: onTap,
-          child: Ink(
-            height: 0.04.sh,
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 250),
-              decoration: BoxDecoration(
-                gradient: gradient,
-                color: gradient == null
-                    ? selected
-                        ? color
-                        : Colors.transparent
-                    : Colors.transparent,
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  ImageWidget(
-                    iconData: ShuffleUiKitIcons.check,
-                    color: selected ? colorScheme?.inversePrimary : color,
-                  ),
-                  SpacingFoundation.horizontalSpace2,
-                  Text(
-                    text,
-                    style: regularTextTheme?.caption2.copyWith(
-                      color: selected ? colorScheme?.inversePrimary : color,
-                    ),
-                  ),
-                  if (iconPath != null)
-                    ImageWidget(
-                      link: iconPath,
-                      color: selected ? colorScheme?.inverseSurface : color,
-                    ).paddingOnly(left: EdgeInsetsFoundation.horizontal2),
-                ],
-              ).paddingSymmetric(
-                horizontal: EdgeInsetsFoundation.horizontal12,
-              ),
+      duration: const Duration(milliseconds: 200),
+      transitionBuilder: (child, animation) {
+        return FadeTransition(
+          opacity: animation,
+          child: child,
+        );
+      },
+      child: selected
+          ? _SelectedChip(
+              text: text,
+              color: color,
+              gradient: gradient,
+              iconPath: iconPath,
+              onTap: onTap,
+            )
+          : _UnselectedChip(
+              text: text,
+              color: color,
+              gradient: gradient,
+              iconPath: iconPath,
+              onTap: onTap,
             ),
+    );
+  }
+}
+
+class _SelectedChip extends StatelessWidget {
+  final String text;
+  final Color? color;
+  final Gradient? gradient;
+  final String? iconPath;
+  final VoidCallback? onTap;
+
+  const _SelectedChip({
+    Key? key,
+    required this.text,
+    this.color,
+    this.gradient,
+    this.iconPath,
+    this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
+    final regularTextTheme = theme?.regularTextTheme;
+    final colorScheme = theme?.colorScheme;
+
+    return Material(
+      clipBehavior: Clip.hardEdge,
+      color: gradient == null ? color : Colors.transparent,
+      shape: RoundedRectangleBorder(
+        side: BorderSide(
+          color: color ?? (gradient != null ? Colors.white : Colors.transparent),
+          width: 1,
+        ),
+        borderRadius: BorderRadiusFoundation.max,
+      ),
+      child: InkWell(
+        onTap: onTap,
+        child: Ink(
+          height: 0.04.sh,
+          decoration: BoxDecoration(
+            color: color,
+            gradient: gradient,
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ImageWidget(
+                iconData: ShuffleUiKitIcons.check,
+                color: colorScheme?.inversePrimary,
+              ),
+              SpacingFoundation.horizontalSpace2,
+              Text(
+                text,
+                style: regularTextTheme?.caption2,
+              ),
+              if (iconPath != null)
+                ImageWidget(
+                  link: iconPath,
+                  color: colorScheme?.inverseSurface,
+                ).paddingOnly(left: EdgeInsetsFoundation.horizontal2),
+            ],
+          ).paddingSymmetric(
+            horizontal: EdgeInsetsFoundation.horizontal12,
           ),
         ),
       ),
@@ -105,8 +134,6 @@ class _UnselectedChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = context.uiKitTheme?.colorScheme;
-
     return GradientableWidget(
       gradient: gradient,
       child: Material(
@@ -115,6 +142,7 @@ class _UnselectedChip extends StatelessWidget {
         shape: RoundedRectangleBorder(
           side: BorderSide(
             color: color ?? (gradient != null ? Colors.white : Colors.transparent),
+            width: 1,
           ),
           borderRadius: BorderRadiusFoundation.max,
         ),
@@ -122,18 +150,15 @@ class _UnselectedChip extends StatelessWidget {
           onTap: onTap,
           child: Ink(
             height: 0.04.sh,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.transparent,
-              border: Border.all(
-                color: color ?? (gradient != null ? Colors.white : Colors.transparent),
-              ),
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 ImageWidget(
                   iconData: ShuffleUiKitIcons.check,
-                  color: colorScheme?.inversePrimary,
+                  color: color,
                 ),
                 SpacingFoundation.horizontalSpace2,
                 Text(

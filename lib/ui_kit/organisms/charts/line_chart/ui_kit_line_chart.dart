@@ -30,22 +30,23 @@ class UiKitLineChart extends StatefulWidget {
 class _UiKitLineChartState extends State<UiKitLineChart> {
   final ScrollController _datesScrollController = ScrollController();
   final ScrollController _chartScrollController = ScrollController();
-  late List<int> visibleLineIds = widget.chartData.items.map((e) => e.id).toList();
   final bool smallScreen = 1.sw <= 380;
   double chartToSmallPreviewRatio = 1;
   double? initialPreviewWidthFraction;
   late double initialPixelsPerDate;
   double? initialMaxChartScrollablePartWidth;
-  final _smallPreviewUpdateNotifier = ValueNotifier<LineChartSmallPreviewData>(
+  late final _smallPreviewUpdateNotifier = ValueNotifier<LineChartSmallPreviewData>(
     LineChartSmallPreviewData(
       leftOffset: 0,
       previewWidthFraction: 0.35,
-      visibleLinesIds: [],
+      visibleLinesIds: widget.chartData.items.map((e) => e.id).toList(),
     ),
   );
   final _tapNotifier = ValueNotifier<Offset>(Offset.zero);
   final _bodySizingNotifier = ValueNotifier<UiKitBodySizingInfo>(UiKitBodySizingInfo.initial());
   final _selectedDataSetNotifier = ValueNotifier<LineChartSelectedPointData>(LineChartSelectedPointData.empty());
+
+  List<int> get visibleLineIds => _smallPreviewUpdateNotifier.value.visibleLinesIds;
 
   int get datesFitInChartViewPortCount => (chartViewPortSize.width / initialPixelsPerDate).floor();
 
@@ -344,34 +345,29 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
             SizedBox(
               width: viewPortComputedSize.width,
               height: viewPortComputedSize.height * 0.06,
-              child: AnimatedBuilder(
-                animation: _smallPreviewUpdateNotifier,
-                builder: (context, child) {
-                  return ListView.separated(
-                    padding: EdgeInsets.zero,
-                    controller: _datesScrollController,
-                    scrollDirection: Axis.horizontal,
-                    physics: const NeverScrollableScrollPhysics(),
-                    addAutomaticKeepAlives: false,
-                    separatorBuilder: (context, index) {
-                      double spacing = SpacingFoundation.horizontalSpacing8;
-                      if (expandDates) {
-                        spacing += additionalSpacingForDate;
-                      }
+              child: ListView.separated(
+                padding: EdgeInsets.zero,
+                controller: _datesScrollController,
+                scrollDirection: Axis.horizontal,
+                physics: const NeverScrollableScrollPhysics(),
+                addAutomaticKeepAlives: false,
+                separatorBuilder: (context, index) {
+                  double spacing = SpacingFoundation.horizontalSpacing8;
+                  if (expandDates) {
+                    spacing += additionalSpacingForDate;
+                  }
 
-                      return spacing.widthBox;
-                    },
-                    itemBuilder: (context, index) {
-                      final date = dates.elementAt(index);
+                  return spacing.widthBox;
+                },
+                itemBuilder: (context, index) {
+                  final date = dates.elementAt(index);
 
-                      return Text(
-                        DateFormat('MMMd', Localizations.localeOf(context).languageCode).format(date),
-                        style: regularTextTheme?.caption2.copyWith(color: ColorsFoundation.neutral40),
-                      );
-                    },
-                    itemCount: dates.length,
+                  return Text(
+                    DateFormat('MMMd', Localizations.localeOf(context).languageCode).format(date),
+                    style: regularTextTheme?.caption2.copyWith(color: ColorsFoundation.neutral40),
                   );
                 },
+                itemCount: dates.length,
               ),
             ),
           SpacingFoundation.verticalSpace4,
@@ -399,15 +395,15 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                       iconPath: e.icon,
                       selected: visibleLineIds.contains(e.id),
                       onTap: () {
-                        if (visibleLineIds.contains(e.id)) {
-                          visibleLineIds.remove(e.id);
+                        final ids = visibleLineIds;
+                        if (ids.contains(e.id)) {
+                          ids.remove(e.id);
                         } else {
-                          visibleLineIds.add(e.id);
+                          ids.add(e.id);
                         }
                         _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
-                          visibleLinesIds: visibleLineIds,
+                          visibleLinesIds: ids,
                         );
-                        setState(() {});
                       },
                     ),
                   )

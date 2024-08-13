@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
 class LineChartPainterWithInfoOverlay extends CustomPainter {
   final List<UiKitLineChartItemData<num>> lines;
@@ -66,8 +65,10 @@ class LineChartPainterWithInfoOverlay extends CustomPainter {
         if (i == 0) path.moveTo(currentX - (curvatureRadius / 2), currentY - 4);
 
         /// adding some space to see the line to the point
-        if (currentY == height) currentY = height - SpacingFoundation.verticalSpacing2;
-        if (nextY == height) nextY = height - SpacingFoundation.verticalSpacing2;
+        if (currentY >= height) currentY = height - SpacingFoundation.verticalSpacing2;
+        if (nextY >= height) nextY = height - SpacingFoundation.verticalSpacing2;
+        if (currentY <= 0) currentY = SpacingFoundation.verticalSpacing2;
+        if (nextY <= 0) nextY = SpacingFoundation.verticalSpacing2;
 
         if (isLastDataSet) nextY += 4;
 
@@ -75,7 +76,7 @@ class LineChartPainterWithInfoOverlay extends CustomPainter {
         double midX = nextX - curvatureRadius;
         currentX += curvatureRadius;
 
-        path.cubicTo(currentX, currentY, midX, midY, nextX, nextY + 2);
+        path.cubicTo(currentX, currentY, midX, midY, nextX, nextY);
       }
       canvas.drawPath(path, paint);
     }

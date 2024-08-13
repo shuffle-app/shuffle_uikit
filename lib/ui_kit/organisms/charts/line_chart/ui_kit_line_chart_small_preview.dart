@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dart';
-import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
 class UiKitLineChartSmallPreview extends StatelessWidget {
   final ValueNotifier<LineChartSmallPreviewData> smallPreviewUpdateNotifier;
@@ -32,7 +31,7 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
           children: [
             Positioned(
               top: SpacingFoundation.verticalSpacing2,
-              left: SpacingFoundation.verticalSpacing12,
+              left: SpacingFoundation.horizontalSpacing24,
               child: CustomPaint(
                 isComplex: true,
                 willChange: false,
@@ -88,9 +87,9 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
             builder: (context, child) => ClipPath(
               clipper: CropInnerAreaClipper(
                 Rect.fromLTWH(
-                  previewUpdateNotifier.value.leftOffset + 6,
+                  previewUpdateNotifier.value.leftOffset,
                   2,
-                  size.width * previewUpdateNotifier.value.previewWidthFraction - 12,
+                  size.width * previewUpdateNotifier.value.previewWidthFraction,
                   size.height - 4,
                 ),
                 4,
@@ -161,6 +160,7 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               GestureDetector(
+                                behavior: HitTestBehavior.opaque,
                                 onPanUpdate: (details) {
                                   final currentPreviewViewportWidth =
                                       size.width * previewUpdateNotifier.value.previewWidthFraction;
@@ -197,16 +197,24 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                                     );
                                   }
                                 },
-                                child: Container(
-                                  width: 4,
-                                  height: SpacingFoundation.verticalSpacing8,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadiusFoundation.max,
+                                child: SizedBox(
+                                  height: size.height,
+                                  width: 12,
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: Container(
+                                      width: 4,
+                                      height: SpacingFoundation.verticalSpacing8,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadiusFoundation.max,
+                                      ),
+                                    ).paddingOnly(left: 2),
                                   ),
-                                ).paddingOnly(left: 2),
+                                ),
                               ),
                               GestureDetector(
+                                behavior: HitTestBehavior.opaque,
                                 onPanUpdate: (details) {
                                   final currentWidth = size.width * previewUpdateNotifier.value.previewWidthFraction;
                                   final newWidthFraction = (currentWidth + details.delta.dx) / size.width;
@@ -217,14 +225,21 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                                     );
                                   }
                                 },
-                                child: Container(
-                                  width: 4,
-                                  height: SpacingFoundation.verticalSpacing8,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadiusFoundation.max,
+                                child: SizedBox(
+                                  height: size.height,
+                                  width: 12,
+                                  child: Align(
+                                    alignment: Alignment.centerRight,
+                                    child: Container(
+                                      width: 4,
+                                      height: SpacingFoundation.verticalSpacing8,
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadiusFoundation.max,
+                                      ),
+                                    ).paddingOnly(right: 2),
                                   ),
-                                ).paddingOnly(right: 2),
+                                ),
                               ),
                             ],
                           ),
