@@ -198,7 +198,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m65(amountOfTopDonators, multiplier) =>
       "Top ${amountOfTopDonators} donators receive x${multiplier} points";
 
-  static String m66(separator) => "Top places rated${separator}by";
+  static String m66(separator) => "Top content rated${separator}by";
 
   static String m67(type) => "To use this function plz upgrade to ${type}";
 
@@ -317,6 +317,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "BeInSearch": MessageLookupByLibrary.simpleMessage("Be in search"),
         "BookIt": MessageLookupByLibrary.simpleMessage("Book it"),
         "Bookigns": m3,
+        "Booking": MessageLookupByLibrary.simpleMessage("Booking"),
+        "BookingLimit": MessageLookupByLibrary.simpleMessage("Booking Limit"),
+        "BookingLimitPerOne":
+            MessageLookupByLibrary.simpleMessage("Booking Limit per one"),
         "Bookings": m4,
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Bookings and Invites"),
@@ -419,6 +423,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
         "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
             "Create free reminder for your clients"),
+        "CreateSubs": MessageLookupByLibrary.simpleMessage("Create subs"),
+        "CreateUpsales": MessageLookupByLibrary.simpleMessage("Create upsales"),
         "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage(
             "Create your event and invite people"),
         "CreateYourPlaceAndInvitePeople": MessageLookupByLibrary.simpleMessage(
@@ -657,6 +663,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Judaism": MessageLookupByLibrary.simpleMessage("Judaism"),
         "Leisure": MessageLookupByLibrary.simpleMessage("Leisure"),
         "Less": MessageLookupByLibrary.simpleMessage("less"),
+        "Limit": MessageLookupByLibrary.simpleMessage("Limit"),
         "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
         "Location": MessageLookupByLibrary.simpleMessage("Location"),
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
@@ -818,6 +825,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "PlaceType": MessageLookupByLibrary.simpleMessage("Place type"),
         "Places": MessageLookupByLibrary.simpleMessage("Places"),
         "PlacesVisited": m44,
+        "PleaseAddPhoto":
+            MessageLookupByLibrary.simpleMessage("Please add photo"),
+        "PleaseEnterValidTitle":
+            MessageLookupByLibrary.simpleMessage("Please enter a valid title"),
         "PleaseFillOutDate":
             MessageLookupByLibrary.simpleMessage("Please fill out date"),
         "PleaseFillOutYourWishes":
@@ -1061,6 +1072,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
         "Submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "SubmitContent": MessageLookupByLibrary.simpleMessage("Submit content"),
+        "Subs": MessageLookupByLibrary.simpleMessage("Subs"),
         "SubscribeToProfile": MessageLookupByLibrary.simpleMessage("Follow"),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
         "SuccessfullyAnswered":

@@ -94,7 +94,7 @@
   "LovelyTouchAmazingInteraction": "Lovely-touch amazing\ninteraction",
   "SelectionOfTheBest": "Selection of the best",
   "FreePlaces": "\nfree places",
-  "TopPlacesRatedBy": "Top places rated{separator}by",
+  "TopPlacesRatedBy": "Top content rated{separator}by",
   "NextElements": "Next {elements}",
   "YoullFindIt": "You’ll find it",
   "DescribeYourClaim": "Describe your claim",
@@ -724,5 +724,15 @@
   "DownloadPdf": "Download PDF",
   "CreateReminderDescription": "Create free reminder for your clients",
   "Reminder": "Reminder",
-  "AlreadyHaveActiveReminder": "You have already created one reminder. To create a new one, pause or remove the previous one."
+  "AlreadyHaveActiveReminder": "You have already created one reminder. To create a new one, pause or remove the previous one.",
+  "Limit": "Limit",
+  "Booking": "Booking",
+  "BookingLimit": "Booking Limit",
+  "BookingLimitPerOne": "Booking Limit per one",
+  "CreateSubs": "Create subs",
+  "CreateUpsales": "Create upsales",
+  "Subs": "Subs",
+  "PleaseEnterValidTitle": "Please enter a valid title",
+  "PleaseAddPhoto": "Please add photo"
+
 }

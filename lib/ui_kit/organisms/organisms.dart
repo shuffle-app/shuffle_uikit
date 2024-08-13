@@ -135,3 +135,5 @@ export 'viewer/ui_kit_fotoramio_viewer.dart';
 export 'viewer/ui_kit_mini_map_view.dart';
 export 'viewer/ui_kit_video_player.dart';
 export 'wheel_value_selector/ui_kit_horizontal_wheel_number_selector.dart';
+export 'booking/row_with_add_photo.dart';
+export 'booking/subs_or_upsale_item.dart';

@@ -711,10 +711,10 @@
   "TopEventsFor": "Топ событий на {date}",
   "Statistics": "Статистика",
   "SelectYourBooking": "Выберите вариант бронирования",
-  "EnterExternalLink": "Введите внешнюю ссылку",
+  "EnterExternalLink": "Добавить внешнюю ссылку",
   "StartBookingCreation": "Начать создание бронирования",
   "AddLink": "Добавить ссылку",
-  "CreateBookingLink": "Создать ссылку для бронирования",
+  "CreateBookingLink": "Создать ссылку на Букинг",
   "GeneralMas": "Общий",
   "GeneraFem": "Общая",
   "OrganicStatistics": "Живая",
@@ -724,6 +724,16 @@
   "DownloadPdf": "Скачать PDF",
   "CreateReminderDescription": "Создай бесплатное напоминание для твоих клиентов",
   "Reminder": "Напоминание",
-  "AlreadyHaveActiveReminder": "У тебя уже есть активное напоминание. Чтобы создать новое, приостанови или удали предыдущее."
+  "AlreadyHaveActiveReminder": "У тебя уже есть активное напоминание. Чтобы создать новое, приостанови или удали предыдущее.",
+  "Limit": "Лимит",
+  "Booking": "Бронирование",
+  "BookingLimit": "Лимит бронирования",
+  "BookingLimitPerOne": "Лимит бронирования для одного",
+  "CreateSubs": "Создать сабы",
+  "CreateUpsales": "Создать дополнительные продажи",
+  "Subs": "Сабы",
+  "PleaseEnterValidTitle": "Пожалуйста, введите допустимое название",
+  "PleaseAddPhoto": "Пожалуйста, добавьте фото"
+
 }
 
