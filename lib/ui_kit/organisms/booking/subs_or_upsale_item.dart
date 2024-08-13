@@ -9,6 +9,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
   final String? photoLink;
   final VoidCallback? removeItem;
   final Function()? onEdit;
+  final bool isSubs;
 
   const SubsOrUpsaleItem({
     super.key,
@@ -19,6 +20,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
     this.actualLimit,
     this.removeItem,
     this.onEdit,
+    this.isSubs = true,
   });
 
   @override
@@ -36,29 +38,26 @@ class SubsOrUpsaleItem extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: onEdit,
-                child: UiKitCardWrapper(
-                  width: 124.w,
-                  borderRadius: BorderRadiusFoundation.all12,
-                  child: ImageWidget(
-                    height: 1.sw <= 380 ? 90.h : 60.h,
-                    link: photoLink,
-                    fit: BoxFit.fill,
+                child: GradientableWidget(
+                  blendMode: BlendMode.dstIn,
+                  gradient: LinearGradient(
+                    colors: [theme?.colorScheme.primary ?? Colors.white, Colors.transparent],
+                    stops: const [0.80, 1.0],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
                   ),
-                ).paddingOnly(
-                  top: 4,
-                  right: 4,
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: theme?.colorScheme.surface ?? Colors.black,
-                      spreadRadius: 8,
-                      blurRadius: 7,
-                      offset: Offset(0, 1.sw <= 380 ? 92.h : 62.h),
+                  child: UiKitCardWrapper(
+                    width: 124.w,
+                    borderRadius: BorderRadiusFoundation.all12,
+                    child: ImageWidget(
+                      height: 1.sw <= 380 ? 90.h : 60.h,
+                      link: photoLink,
+                      fit: BoxFit.fill,
                     ),
-                  ],
+                  ).paddingOnly(
+                    top: 4,
+                    right: 4,
+                  ),
                 ),
               ),
               Positioned(
@@ -89,12 +88,19 @@ class SubsOrUpsaleItem extends StatelessWidget {
           SpacingFoundation.verticalSpace2,
           Text(
             titleOrPrice ?? '',
-            style: theme?.boldTextTheme.caption3Medium,
+            style: isSubs
+                ? theme?.regularTextTheme.caption4.copyWith(
+                    fontSize: 9.w,
+                    fontWeight: FontWeight.w600,
+                  )
+                : theme?.boldTextTheme.caption3Medium,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
           SpacingFoundation.verticalSpace2,
           Text(
             description ?? '',
-            style: theme?.regularTextTheme.caption4,
+            style: theme?.regularTextTheme.caption4Regular,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
