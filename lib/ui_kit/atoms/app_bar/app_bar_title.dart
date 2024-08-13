@@ -8,12 +8,14 @@ class AppBarTitle extends StatelessWidget {
   final String title;
   final bool? centerTitle;
   final String? onIWidgetInfoString;
+  final bool? expanded;
 
   const AppBarTitle({
     super.key,
     required this.title,
     this.centerTitle,
     this.onIWidgetInfoString,
+    this.expanded,
   });
 
   @override
@@ -24,12 +26,22 @@ class AppBarTitle extends StatelessWidget {
 
     return Expanded(
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      AutoSizeText(
-        title,
-        style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
-        textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
-        maxLines: 1,
-      ),
+      if (expanded == false)
+        AutoSizeText(
+          title,
+          style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
+          textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
+          maxLines: 1,
+        )
+      else
+        Flexible(
+          child: Text(
+            title,
+            style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
+            textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
+            maxLines: 2,
+          ),
+        ),
       if (onIWidgetInfoString != null) ...[
         SpacingFoundation.horizontalSpace4,
         Builder(
