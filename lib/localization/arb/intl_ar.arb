@@ -724,6 +724,15 @@
   "DownloadPdf": "Download PDF",
   "CreateReminderDescription": "Create free reminder for your clients",
   "AlreadyHaveActiveReminder": "You have already created one reminder. To create a new one, pause or remove the previous one.",
-  "Reminder": "Reminder"
+  "Reminder": "Reminder",
+  "Limit": "Limit",
+  "Booking": "Booking",
+  "BookingLimit": "Booking Limit",
+  "BookingLimitPerOne": "Booking Limit per one",
+  "CreateSubs": "Create subs",
+  "CreateUpsales": "Create upsales",
+  "Subs": "Subs",
+  "PleaseEnterValidTitle": "Please enter a valid title",
+  "PleaseAddPhoto": "Please add photo"
 
 }
