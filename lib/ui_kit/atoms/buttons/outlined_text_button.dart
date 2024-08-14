@@ -8,6 +8,8 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
   final bool? loading;
   final Color? borderColor;
   final bool isGradientEnabled;
+  final Color? textColor;
+  final Color? backgroundColor;
 
   const OutlinedTextButton({
     super.key,
@@ -15,7 +17,9 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
     this.onPressed,
     this.loading,
     this.borderColor,
+    this.textColor,
     this.isGradientEnabled = false,
+    this.backgroundColor,
   });
 
   @override
@@ -24,7 +28,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
 
     final theme = context.uiKitTheme;
     final colorScheme = theme?.colorScheme;
-    final textStyle = theme?.boldTextTheme.bodyUpperCase;
+    final textStyle = theme?.boldTextTheme.bodyUpperCase.copyWith(color: textColor);
     final textWidget = Text(
       text.toUpperCase(),
       style: textStyle,
@@ -47,6 +51,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
         borderRadius: isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.all24,
         child: Ink(
           decoration: BoxDecoration(
+            color: backgroundColor,
             borderRadius: isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.all24,
             border: isGradientEnabled
                 ? GradientBoxBorder(
