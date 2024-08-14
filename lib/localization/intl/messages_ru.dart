@@ -340,7 +340,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Лимит бронирования"),
         "BookingLimitPerOne": MessageLookupByLibrary.simpleMessage(
             "Лимит бронирования для одного"),
-        "BookingList": MessageLookupByLibrary.simpleMessage("Спсиок букингов"),
+        "BookingList": MessageLookupByLibrary.simpleMessage("Список букингов"),
         "Bookings": m4,
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Брони и Приглашения"),
@@ -355,8 +355,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Business": MessageLookupByLibrary.simpleMessage("Бизнес"),
         "ByContinuingYouAcceptThe":
             MessageLookupByLibrary.simpleMessage("Продолжая, ты принимаешь"),
-        "ByEmail": MessageLookupByLibrary.simpleMessage("по e-mail"),
-        "ByMessage": MessageLookupByLibrary.simpleMessage("по сообщению"),
+        "ByEmail": MessageLookupByLibrary.simpleMessage("через e-mail"),
+        "ByMessage": MessageLookupByLibrary.simpleMessage("через сообщения"),
         "CalmAtmosphere":
             MessageLookupByLibrary.simpleMessage("Спокойная атмосфера"),
         "Cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
