@@ -3,14 +3,23 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 getRefundBookingDialogUiKit({
   required BuildContext context,
-  bool isFullRefun = true,
   final String? userName,
-  final int? ticketRefun,
-  final int? allTicket,
-  final int? upsaleRefun,
-  final int? allUpsale,
+  int ticketRefun = 0,
+  int upsaleRefun = 0,
+  final int allTicket = 0,
+  final int allUpsale = 0,
+  final VoidCallback? onGoAheadTap,
+  final VoidCallback? onContactTap,
 }) {
   final theme = context.uiKitTheme;
+  final isFullRefun = (allTicket <= ticketRefun) && (allUpsale <= upsaleRefun);
+
+  if (ticketRefun > allTicket) {
+    ticketRefun = allTicket;
+  }
+  if (upsaleRefun > allUpsale) {
+    upsaleRefun = allUpsale;
+  }
 
   return showUiKitAlertDialog(
     context,
@@ -30,7 +39,7 @@ getRefundBookingDialogUiKit({
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                if ((ticketRefun != null && allTicket != null) && ticketRefun > 0 && allTicket >= ticketRefun) ...[
+                if (ticketRefun > 0 && allTicket >= ticketRefun) ...[
                   Text(
                     '${S.of(context).TicketFrom(ticketRefun)} $allTicket',
                     style: theme?.boldTextTheme.body.copyWith(
@@ -39,7 +48,7 @@ getRefundBookingDialogUiKit({
                     textAlign: TextAlign.center,
                   ),
                 ],
-                if ((upsaleRefun != null && allUpsale != null) && upsaleRefun > 0 && allUpsale >= upsaleRefun) ...[
+                if (upsaleRefun > 0 && allUpsale >= upsaleRefun) ...[
                   SpacingFoundation.verticalSpace2,
                   Text(
                     '${S.of(context).UpsalesProductsFrom(upsaleRefun)} $allUpsale',
@@ -61,7 +70,7 @@ getRefundBookingDialogUiKit({
             fit: ButtonFit.fitWidth,
             textColor: theme?.colorScheme.inversePrimary,
             text: S.of(context).GoAhead.toUpperCase(),
-            onPressed: () {},
+            onPressed: onGoAheadTap,
           ),
         ),
         SpacingFoundation.verticalSpace16,
@@ -71,7 +80,7 @@ getRefundBookingDialogUiKit({
             fit: ButtonFit.fitWidth,
             textColor: theme?.colorScheme.primary,
             text: S.of(context).Contact.toUpperCase(),
-            onPressed: () {},
+            onPressed: onContactTap,
           ),
         )
       ],
