@@ -664,6 +664,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Leisure": MessageLookupByLibrary.simpleMessage("Leisure"),
         "Less": MessageLookupByLibrary.simpleMessage("less"),
         "Limit": MessageLookupByLibrary.simpleMessage("Limit"),
+        "LimitLessSumLimitsSubs": MessageLookupByLibrary.simpleMessage(
+            "Limit less than sum of limits for subs"),
+        "LimitLessTotalLimit": MessageLookupByLibrary.simpleMessage(
+            "Limit for one must be less than total limit"),
         "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
         "Location": MessageLookupByLibrary.simpleMessage("Location"),
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
@@ -827,6 +831,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "PlacesVisited": m44,
         "PleaseAddPhoto":
             MessageLookupByLibrary.simpleMessage("Please add photo"),
+        "PleaseEnterCurrentLimit":
+            MessageLookupByLibrary.simpleMessage("Please enter current limit"),
+        "PleaseEnterLimit":
+            MessageLookupByLibrary.simpleMessage("Please enter limit"),
         "PleaseEnterValidTitle":
             MessageLookupByLibrary.simpleMessage("Please enter a valid title"),
         "PleaseFillOutDate":

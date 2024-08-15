@@ -733,7 +733,11 @@
   "CreateUpsales": "Создать дополнительные продажи",
   "Subs": "Сабы",
   "PleaseEnterValidTitle": "Пожалуйста, введите допустимое название",
-  "PleaseAddPhoto": "Пожалуйста, добавьте фото"
+  "PleaseAddPhoto": "Пожалуйста, добавьте фото",
+  "PleaseEnterLimit": "Пожалуйста, добавьте лимит",
+  "PleaseEnterCurrentLimit": "Пожалуйста, введите допустимый лимит",
+  "LimitLessTotalLimit": "Этот лимит должен быть меньше общего лимита",
+  "LimitLessSumLimitsSubs" : "Лимит меньше суммы лимитов у сабов"
 
 }
 
