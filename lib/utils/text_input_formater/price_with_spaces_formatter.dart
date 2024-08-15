@@ -1,15 +1,24 @@
 import 'package:flutter/services.dart';
 
 class PriceWithSpacesFormatter extends TextInputFormatter {
+  final bool allowDecimal;
+
+  PriceWithSpacesFormatter({this.allowDecimal = true});
+
   @override
   TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
     String newText = newValue.text.replaceAll(RegExp(r'[^\d.,]'), '');
+    String formattedText = '';
 
-    int firstDecimalPointIndex = newText.indexOf(RegExp(r'[.,]'));
-    if (firstDecimalPointIndex >= 0) {
-      String beforeDecimal = newText.substring(0, firstDecimalPointIndex + 1);
-      String afterDecimal = newText.substring(firstDecimalPointIndex + 1).replaceAll(RegExp(r'[.,]'), '');
-      newText = beforeDecimal + afterDecimal;
+    if (allowDecimal) {
+      int firstDecimalPointIndex = newText.indexOf(RegExp(r'[.,]'));
+      if (firstDecimalPointIndex >= 0) {
+        String beforeDecimal = newText.substring(0, firstDecimalPointIndex + 1);
+        String afterDecimal = newText.substring(firstDecimalPointIndex + 1).replaceAll(RegExp(r'[.,]'), '');
+        newText = beforeDecimal + afterDecimal;
+      }
+    } else {
+      newText = newText.replaceAll(RegExp(r'[.,]'), '');
     }
 
     int decimalPointIndex = newText.indexOf(RegExp(r'[.,]'));
@@ -31,7 +40,7 @@ class PriceWithSpacesFormatter extends TextInputFormatter {
       formattedIntegerPart += integerPart[i];
     }
 
-    String formattedText = formattedIntegerPart + decimalPart;
+    formattedText = formattedIntegerPart + decimalPart;
 
     return newValue.copyWith(
       text: formattedText.replaceMultipleDotsAndCommas(),
@@ -50,7 +59,7 @@ extension StringExtension on String {
   }
 
   String capitalize() {
-    return '${this[0].toUpperCase()}${this.substring(1)}';
+    return '${this[0].toUpperCase()}${substring(1)}';
   }
 }
 
