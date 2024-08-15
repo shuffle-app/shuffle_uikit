@@ -47,7 +47,6 @@ class BookingRequestPlaceItemUiKit extends StatelessWidget {
             ),
           ),
           SpacingFoundation.horizontalSpace8,
-          //TODO center icon
           SizedBox(
             width: 0.125.sw,
             height: 0.125.sw,
@@ -55,9 +54,10 @@ class BookingRequestPlaceItemUiKit extends StatelessWidget {
               data: BaseUiKitButtonData(
                 onPressed: onTap,
                 backgroundColor: theme?.colorScheme.surface3,
-                iconWidget: ImageWidget(
+                iconInfo: BaseUiKitButtonIconData(
                   iconData: CupertinoIcons.chevron_forward,
                   color: theme?.colorScheme.headingTypography,
+                  padding: 0,
                 ),
               ),
             ),

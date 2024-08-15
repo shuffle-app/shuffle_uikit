@@ -34,6 +34,7 @@ class BaseUiKitButtonIconData {
   final Color? color;
   final double? size;
   final Alignment? _iconAlignment;
+  final double? padding;
 
   bool get isLeftIcon =>
       _iconAlignment == Alignment.bottomLeft ||
@@ -50,6 +51,7 @@ class BaseUiKitButtonIconData {
     this.iconPath,
     this.color,
     this.size,
+    this.padding,
     Alignment? iconAlignment,
   }) : _iconAlignment = iconAlignment ?? Alignment.centerRight;
 }
