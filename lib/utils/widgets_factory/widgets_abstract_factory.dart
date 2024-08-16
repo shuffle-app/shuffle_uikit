@@ -459,6 +459,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: data.onPressed,
         loading: data.loading,
         borderColor: borderColor,
+        textColor: data.textColor,
+        backgroundColor: data.backgroundColor,
         isGradientEnabled: isGradientEnabled ?? false,
       );
     } else {

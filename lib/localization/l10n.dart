@@ -7540,6 +7540,176 @@ class S {
       args: [],
     );
   }
+
+  /// `Booking list`
+  String get BookingList {
+    return Intl.message(
+      'Booking list',
+      name: 'BookingList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{tickets} =1{ticket} =2{tickets} few{tickets} many{tickets} other{tickets}}`
+  String Tickets(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'tickets', one: 'ticket', two: 'tickets', few: 'tickets', many: 'tickets', other: 'tickets')}',
+      name: 'Tickets',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{product} =1{products} =2{products} few{products} many{products} other{products}}`
+  String Products(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'product', one: 'products', two: 'products', few: 'products', many: 'products', other: 'products')}',
+      name: 'Products',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Full refund`
+  String get FullRefund {
+    return Intl.message(
+      'Full refund',
+      name: 'FullRefund',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Partial refund`
+  String get PartialRefund {
+    return Intl.message(
+      'Partial refund',
+      name: 'PartialRefund',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact`
+  String get Contact {
+    return Intl.message(
+      'Contact',
+      name: 'Contact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact`
+  String get ContactWith {
+    return Intl.message(
+      'Contact',
+      name: 'ContactWith',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `by message`
+  String get ByMessage {
+    return Intl.message(
+      'by message',
+      name: 'ByMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `by e-mail`
+  String get ByEmail {
+    return Intl.message(
+      'by e-mail',
+      name: 'ByEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Refund everyone`
+  String get RefundEveryone {
+    return Intl.message(
+      'Refund everyone',
+      name: 'RefundEveryone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `requests`
+  String get Requests {
+    return Intl.message(
+      'requests',
+      name: 'Requests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `full`
+  String get Full {
+    return Intl.message(
+      'full',
+      name: 'Full',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `partial`
+  String get Partial {
+    return Intl.message(
+      'partial',
+      name: 'Partial',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `refund`
+  String get Refund {
+    return Intl.message(
+      'refund',
+      name: 'Refund',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{tickets} =1{ticket} =2{tickets} few{tickets} many{tickets} other{tickets}} form`
+  String TicketFrom(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'tickets', one: 'ticket', two: 'tickets', few: 'tickets', many: 'tickets', other: 'tickets')} form',
+      name: 'TicketFrom',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} upsales {count, plural, =0{product} =1{products} =2{products} few{products} many{products} other{products}} from`
+  String UpsalesProductsFrom(num count) {
+    return Intl.message(
+      '$count upsales ${Intl.plural(count, zero: 'product', one: 'products', two: 'products', few: 'products', many: 'products', other: 'products')} from',
+      name: 'UpsalesProductsFrom',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Go ahead`
+  String get GoAhead {
+    return Intl.message(
+      'Go ahead',
+      name: 'GoAhead',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
