@@ -57,7 +57,7 @@ class UiKitInputFieldNoFill extends StatefulWidget
   final EdgeInsets? contentPadding;
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onFieldSubmitted;
-  final Function(PointerDownEvent)? onTapOutside;
+  final ValueChanged<PointerDownEvent>? onTapOutside;
   final VoidCallback? onTap;
   final Color? customLabelColor;
   final Color? customHintColor;
