@@ -34,7 +34,7 @@ class BaseUiKitButtonIconData {
   final Color? color;
   final double? size;
   final Alignment? _iconAlignment;
-  final double? padding;
+  final EdgeInsets? padding;
 
   bool get isLeftIcon =>
       _iconAlignment == Alignment.bottomLeft ||

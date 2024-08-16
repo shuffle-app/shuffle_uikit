@@ -57,7 +57,7 @@ class BookingsControlPlaceItemUiKit extends StatelessWidget {
                 iconInfo: BaseUiKitButtonIconData(
                   iconData: CupertinoIcons.chevron_forward,
                   color: theme?.colorScheme.headingTypography,
-                  padding: 0,
+                  padding: EdgeInsets.zero,
                 ),
               ),
             ),
