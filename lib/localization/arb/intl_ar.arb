@@ -751,7 +751,6 @@
   "TicketFrom": "{count} {count, plural, =0{tickets} =1{ticket} =2{tickets} few{tickets} many{tickets} other{tickets}} form",
   "UpsalesProductsFrom": "{count} upsales {count, plural, =0{product} =1{products} =2{products} few{products} many{products} other{products}} from",
   "GoAhead":"Go ahead",
-  "PleaseAddPhoto": "Please add photo",
   "PleaseEnterLimit": "Please enter limit",
   "PleaseEnterCurrentLimit": "Please enter current limit",
   "LimitLessTotalLimit": "Limit for one must be less than total limit",
