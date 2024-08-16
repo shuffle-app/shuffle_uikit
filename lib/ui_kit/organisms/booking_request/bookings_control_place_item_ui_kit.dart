@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class BookingRequestPlaceItemUiKit extends StatelessWidget {
+class BookingsControlPlaceItemUiKit extends StatelessWidget {
   final String? title;
   final String? imageUrl;
   final String? description;
   final VoidCallback? onTap;
-  const BookingRequestPlaceItemUiKit({
+  const BookingsControlPlaceItemUiKit({
     super.key,
     this.title,
     this.imageUrl,
@@ -28,7 +28,7 @@ class BookingRequestPlaceItemUiKit extends StatelessWidget {
             size: UserAvatarSize.x40x40,
             type: UserTileType.ordinary,
             userName: title ?? '',
-            imageUrl: GraphicsFoundation.instance.png.avatars.avatar.path,
+            imageUrl: imageUrl,
           ),
           SpacingFoundation.horizontalSpace8,
           Expanded(
