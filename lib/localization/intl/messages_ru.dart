@@ -697,6 +697,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Leisure": MessageLookupByLibrary.simpleMessage("Досуг"),
         "Less": MessageLookupByLibrary.simpleMessage("меньше"),
         "Limit": MessageLookupByLibrary.simpleMessage("Лимит"),
+        "LimitLessSumLimitsSubs": MessageLookupByLibrary.simpleMessage(
+            "Лимит меньше суммы лимитов у сабов"),
+        "LimitLessTotalLimit": MessageLookupByLibrary.simpleMessage(
+            "Этот лимит должен быть меньше общего лимита"),
         "Loading": MessageLookupByLibrary.simpleMessage("Загрузка..."),
         "Location": MessageLookupByLibrary.simpleMessage("Локация"),
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
@@ -864,6 +868,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "PlacesVisited": m44,
         "PleaseAddPhoto":
             MessageLookupByLibrary.simpleMessage("Пожалуйста, добавьте фото"),
+        "PleaseEnterCurrentLimit": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, введите допустимый лимит"),
+        "PleaseEnterLimit":
+            MessageLookupByLibrary.simpleMessage("Пожалуйста, добавьте лимит"),
         "PleaseEnterValidTitle": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, введите допустимое название"),
         "PleaseFillOutDate":

@@ -7710,6 +7710,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Please enter limit`
+  String get PleaseEnterLimit {
+    return Intl.message(
+      'Please enter limit',
+      name: 'PleaseEnterLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter current limit`
+  String get PleaseEnterCurrentLimit {
+    return Intl.message(
+      'Please enter current limit',
+      name: 'PleaseEnterCurrentLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Limit for one must be less than total limit`
+  String get LimitLessTotalLimit {
+    return Intl.message(
+      'Limit for one must be less than total limit',
+      name: 'LimitLessTotalLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Limit less than sum of limits for subs`
+  String get LimitLessSumLimitsSubs {
+    return Intl.message(
+      'Limit less than sum of limits for subs',
+      name: 'LimitLessSumLimitsSubs',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

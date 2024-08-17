@@ -750,7 +750,11 @@
   "Refund": "возврат",
   "TicketFrom": "{count} {count, plural, =0{билетов} =1{билет} =2{билета} few{билета} many{билета} other{билетов}} из",
   "UpsalesProductsFrom": "{count} {count, plural, =0{продутов} =1{проукт} =2{продукта} few{продукта} many{продукта} other{продукта}} дополнительных продаж из",
-  "GoAhead":"Вперед"
+  "GoAhead":"Вперед",
+  "PleaseEnterLimit": "Пожалуйста, добавьте лимит",
+  "PleaseEnterCurrentLimit": "Пожалуйста, введите допустимый лимит",
+  "LimitLessTotalLimit": "Этот лимит должен быть меньше общего лимита",
+  "LimitLessSumLimitsSubs" : "Лимит меньше суммы лимитов у сабов"
 
 }
 

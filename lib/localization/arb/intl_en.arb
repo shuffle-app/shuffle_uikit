@@ -750,6 +750,10 @@
   "Refund": "refund",
   "TicketFrom": "{count} {count, plural, =0{tickets} =1{ticket} =2{tickets} few{tickets} many{tickets} other{tickets}} form",
   "UpsalesProductsFrom": "{count} upsales {count, plural, =0{product} =1{products} =2{products} few{products} many{products} other{products}} from",
-  "GoAhead":"Go ahead"
+  "GoAhead":"Go ahead",
+  "PleaseEnterLimit": "Please enter limit",
+  "PleaseEnterCurrentLimit": "Please enter current limit",
+  "LimitLessTotalLimit": "Limit for one must be less than total limit",
+  "LimitLessSumLimitsSubs" : "Limit less than sum of limits for subs"
 
 }
