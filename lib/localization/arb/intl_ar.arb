@@ -754,6 +754,9 @@
   "PleaseEnterLimit": "Please enter limit",
   "PleaseEnterCurrentLimit": "Please enter current limit",
   "LimitLessTotalLimit": "Limit for one must be less than total limit",
-  "LimitLessSumLimitsSubs" : "Limit less than sum of limits for subs"
+  "LimitLessSumLimitsSubs" : "Limit less than sum of limits for subs",
+  "PointsHiwItems": "{item, plural, =0{reputation and currency} =1{increase rating or spend} =2{perform actions} few{earn points} other{earn points}}",
+  "PointsAre": "Points are...",
+  "ShuffleExchangeSystem": "...Shuffle exchange system"
 
 }

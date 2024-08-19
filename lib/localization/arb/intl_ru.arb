@@ -754,7 +754,10 @@
   "PleaseEnterLimit": "Пожалуйста, добавьте лимит",
   "PleaseEnterCurrentLimit": "Пожалуйста, введите допустимый лимит",
   "LimitLessTotalLimit": "Этот лимит должен быть меньше общего лимита",
-  "LimitLessSumLimitsSubs" : "Лимит меньше суммы лимитов у сабов"
+  "LimitLessSumLimitsSubs" : "Лимит меньше суммы лимитов у сабов",
+  "PointsAre": "Поинты это...",
+  "PointsHiwItems": "{item, plural, =0{репутация и валюта} =1{повышай рейтинг или трать} =2{делай действия} few{получай поинты} other{получай поинты}}",
+  "ShuffleExchangeSystem": "...система обмена Shuffle"
 
 }
 
