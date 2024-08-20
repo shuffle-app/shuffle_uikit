@@ -4,11 +4,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitEmojiReaction extends StatelessWidget {
   final String iconPath;
   final int reactionsCount;
+  final Color? textColor;
 
   const UiKitEmojiReaction({
     super.key,
     required this.iconPath,
     required this.reactionsCount,
+    this.textColor,
   });
 
   @override
@@ -20,7 +22,7 @@ class UiKitEmojiReaction extends StatelessWidget {
       children: [
         Text(
           reactionsFormatter(reactionsCount),
-          style: regularTextTheme?.caption2,
+          style: regularTextTheme?.caption2.copyWith(color: textColor),
         ),
         ImageWidget(link: iconPath),
       ],

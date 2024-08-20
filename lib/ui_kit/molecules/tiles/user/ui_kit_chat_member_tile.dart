@@ -68,12 +68,13 @@ class UiKitChatMemberUserTile extends StatelessWidget {
           ),
         ),
         if (acceptedInvite)
-          Text(
-            S.current.Go.toLowerCase(),
-            style: boldTextTheme?.caption2Bold.copyWith(
-              color: invertThemeColors ? colorScheme?.surface : null,
-            ),
-          ).paddingOnly(left: EdgeInsetsFoundation.horizontal4),
+          GradientableWidget(
+            gradient: GradientFoundation.defaultLinearGradient,
+            child: Text(
+              S.current.Go.toLowerCase(),
+              style: boldTextTheme?.caption2Bold.copyWith(color: Colors.white),
+            ).paddingOnly(left: EdgeInsetsFoundation.horizontal4),
+          ),
         if (canDelete)
           context
               .iconButtonNoPadding(

@@ -108,6 +108,10 @@ class UiKitColors {
   static const primary200 = Color(0xff7367F0);
   static const onHover = Color(0xff28C76F);
   static const danger = Color(0xffEA5455);
+  static const cyanGradientBegin = Color(0xff80A9A3);
+  static const cyanGradientEnd = Color(0xff639C8F);
+  static const brownGradientBegin = Color(0xff605D4C);
+  static const brownGradientEnd = Color(0xff5F4F42);
 
   UiKitColors._();
 }

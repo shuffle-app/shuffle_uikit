@@ -190,56 +190,60 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   }
 
   @override
-  UserAvatarFactory createUserAvatar(
-      {required UserAvatarSize size,
-      required UserTileType type,
-      String? imageUrl,
-      required String userName,
-      required bool showAchievements}) {
+  UserAvatarFactory createUserAvatar({
+    required UserAvatarSize size,
+    required UserTileType type,
+    String? imageUrl,
+    required String userName,
+    required bool showAchievements,
+    int? badgeValue,
+  }) {
     return AvatarStackWrapper(
-        showAchievements: showAchievements,
-        child: switch (size) {
-          (UserAvatarSize.x20x20) => UiKitUserAvatar20x20(
-              type: type,
-              imageUrl: imageUrl ?? '',
-              userName: userName,
-            ),
-          (UserAvatarSize.x24x24) => UiKitUserAvatar24x24(
-              type: type,
-              imageUrl: imageUrl ?? '',
-              userName: userName,
-            ),
-          (UserAvatarSize.x32x32) => UiKitUserAvatar32x32(
-              type: type,
-              imageUrl: imageUrl ?? '',
-              userName: userName,
-            ),
-          (UserAvatarSize.x40x40) => UiKitUserAvatar40x40(
-              type: type,
-              imageUrl: imageUrl ?? '',
-              userName: userName,
-            ),
-          (UserAvatarSize.x48x48) => UiKitUserAvatar48x48(
-              type: type,
-              imageUrl: imageUrl ?? '',
-              userName: userName,
-            ),
-          (UserAvatarSize.x60x60) => UiKitUserAvatar60x60(
-              type: type,
-              imageUrl: imageUrl ?? '',
-              userName: userName,
-            ),
-          (UserAvatarSize.x120x120) => UiKitUserAvatar120x120(
-              type: type,
-              imageUrl: imageUrl ?? '',
-              userName: userName,
-            ),
-          (UserAvatarSize.x90x90) => UiKitUserAvatar90x90(
-              type: type,
-              imageUrl: imageUrl ?? '',
-              userName: userName,
-            ),
-        });
+      showAchievements: showAchievements,
+      badgeValue: badgeValue,
+      child: switch (size) {
+        (UserAvatarSize.x20x20) => UiKitUserAvatar20x20(
+            type: type,
+            imageUrl: imageUrl ?? '',
+            userName: userName,
+          ),
+        (UserAvatarSize.x24x24) => UiKitUserAvatar24x24(
+            type: type,
+            imageUrl: imageUrl ?? '',
+            userName: userName,
+          ),
+        (UserAvatarSize.x32x32) => UiKitUserAvatar32x32(
+            type: type,
+            imageUrl: imageUrl ?? '',
+            userName: userName,
+          ),
+        (UserAvatarSize.x40x40) => UiKitUserAvatar40x40(
+            type: type,
+            imageUrl: imageUrl ?? '',
+            userName: userName,
+          ),
+        (UserAvatarSize.x48x48) => UiKitUserAvatar48x48(
+            type: type,
+            imageUrl: imageUrl ?? '',
+            userName: userName,
+          ),
+        (UserAvatarSize.x60x60) => UiKitUserAvatar60x60(
+            type: type,
+            imageUrl: imageUrl ?? '',
+            userName: userName,
+          ),
+        (UserAvatarSize.x120x120) => UiKitUserAvatar120x120(
+            type: type,
+            imageUrl: imageUrl ?? '',
+            userName: userName,
+          ),
+        (UserAvatarSize.x90x90) => UiKitUserAvatar90x90(
+            type: type,
+            imageUrl: imageUrl ?? '',
+            userName: userName,
+          ),
+      },
+    );
   }
 
   @override
@@ -615,6 +619,16 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   UserTileFactory createUserTile({
     required BaseUiKitUserTileData data,
   }) {
+    if (data.noMaterialOverlay == true) {
+      return UiKitLightweightUserTile(
+        name: data.name,
+        username: data.username,
+        avatarUrl: data.avatarUrl,
+        userType: data.type,
+        userNameTextColor: data.userNameTextColor,
+      );
+    }
+
     if (data.showBadge ?? false) {
       switch (data.type) {
         case UserTileType.pro:
@@ -933,15 +947,46 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 class AvatarStackWrapper extends StatelessWidget implements UserAvatarFactory {
   final bool showAchievements;
   final Widget child;
+  final int? badgeValue;
 
-  const AvatarStackWrapper({super.key, required this.showAchievements, required this.child});
+  const AvatarStackWrapper({
+    super.key,
+    required this.showAchievements,
+    required this.child,
+    this.badgeValue,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = context.uiKitTheme?.colorScheme;
+    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
+
     return Stack(
       clipBehavior: Clip.none,
       children: [
         RepaintBoundary(child: child),
+        if (badgeValue != null && badgeValue != 0)
+          ConstrainedBox(
+            constraints: BoxConstraints(
+              minWidth: 0.05.sw,
+              minHeight: 0.05.sw,
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: GradientFoundation.defaultRadialGradient,
+                border: Border.all(color: colorScheme?.surface ?? Colors.black, width: 1),
+              ),
+              child: Text(
+                badgeValue.toString(),
+                style: regularTextTheme?.caption4.copyWith(
+                  color: colorScheme?.surface,
+                  fontWeight: FontWeight.w500,
+                ),
+                textAlign: TextAlign.center,
+              ).paddingAll(EdgeInsetsFoundation.all2),
+            ),
+          ),
         if (showAchievements)
           Positioned(
               right: -3.sp,

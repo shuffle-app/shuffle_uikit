@@ -733,7 +733,18 @@
   "CreateUpsales": "Создать дополнительные продажи",
   "Subs": "Сабы",
   "PleaseEnterValidTitle": "Пожалуйста, введите допустимое название",
-  "PleaseAddPhoto": "Пожалуйста, добавьте фото"
-
+  "PleaseAddPhoto": "Пожалуйста, добавьте фото",
+  "Latest": "Свежее",
+  "Unread": "Анрид",
+  "PlusXNewReviews": "{count, plural, =0{+{count} Новых отзывов} =1{+{count} Новый отзыв} =2{+{count} Новых отзыва} few{+{count} Новых отзыва} many{+{count} Новых отзывов} other{+{count} Новых отзывов}}",
+  "PlusXNewVideoReactions": "{count, plural, =0{+{count} видео реакций} =1{+{count} видео реакция} =2{+{count} видео реакции} few{+{count} видео реакции} many{+{count} видео реакций} other{+{count} видео реакций}}",
+  "PlusXNewVoices": "{count, plural, =0{+{count} Новых аудиосообщений} =1{+{count} Новое аудиосообщение} =2{+{count} Новых аудиосообщения} few{+{count} Новых аудиосообщения} many{+{count} Новых аудиосообщений} other{+{count} Новых аудиосообщений}}",
+  "PlusXNewVideos": "{count, plural, =0{+{count} Новых видео} =1{+{count} Новое видео} =2{+{count} Новых видео} few{+{count} Новых видео} many{+{count} Новых видео} other{+{count} Новых видео}}",
+  "PlusXNewRoutes": "{count, plural, =0{+{count} Новых маршрутов} =1{+{count} Новый маршрут} =2{+{count} Новых маршрута} few{+{count} Новых маршрута} many{+{count} Новых маршрутов} other{+{count} Новых маршрутов}}",
+  "PlusXNewInterviews": "{count, plural, =0{+{count} Новых интервью} =1{+{count} Новое интервью} =2{+{count} Новых интервью} few{+{count} Новых интервью} many{+{count} Новых интервью} other{+{count} Новых интервью}}",
+  "PlusXNewContests": "{count, plural, =0{+{count} Новых конкурсов} =1{+{count} Новый конкурс} =2{+{count} Новых конкурса} few{+{count} Новых конкурса} many{+{count} Новых конкурсов} other{+{count} Новых конкурсов}}",
+  "PlusXNewChatComments": "{count, plural, =0{+{count} Новых комментариев} =1{+{count} Новый комментарий} =2{+{count} Новых комментария} few{+{count} Новых комментария} many{+{count} Новых комментариев} other{+{count} Новых комментариев}}",
+  "PlusXPhotos": "{count, plural, =0{+{count} Фото} =1{+{count} Фото} =2{+{count} Фото} few{+{count} Фото} many{+{count} Фото} other{+{count} Фото}}",
+  "DontLiveAlone": "Не живи один, подпишись на людей, которые тебе нравятся"
 }
 
