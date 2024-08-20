@@ -3,39 +3,40 @@ import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputField {
-  const UiKitInputFieldNoIcon({
-    super.key,
-    required this.controller,
-    this.errorText,
-    this.hintText,
-    this.validator,
-    this.onChanged,
-    this.fillColor,
-    this.onTapOutside,
-    this.minLines,
-    this.maxLines,
-    this.enabled = true,
-    this.expands = false,
-    this.borderRadius,
-    this.node,
-    this.customPadding,
-    this.textAlign,
-    this.textInputAction,
-    this.onSubmitted,
-    this.hintTextColor,
-    this.textColor,
-    this.keyboardType,
-    this.maxSymbols,
-    this.inputFormatters,
-    this.obscureText = false,
-    this.label,
-    this.onTap,
-    this.customLabelColor,
-    this.customFocusedBorder,
-    this.customEnabledBorder,
-    this.customErrorBorder,
-    this.autofocus = false, this.cursorColor,
-  });
+  const UiKitInputFieldNoIcon(
+      {super.key,
+      required this.controller,
+      this.errorText,
+      this.hintText,
+      this.validator,
+      this.onChanged,
+      this.fillColor,
+      this.onTapOutside,
+      this.minLines,
+      this.maxLines,
+      this.enabled = true,
+      this.expands = false,
+      this.borderRadius,
+      this.node,
+      this.customPadding,
+      this.textAlign,
+      this.textInputAction,
+      this.onSubmitted,
+      this.hintTextColor,
+      this.textColor,
+      this.keyboardType,
+      this.maxSymbols,
+      this.inputFormatters,
+      this.obscureText = false,
+      this.label,
+      this.onTap,
+      this.customLabelColor,
+      this.customFocusedBorder,
+      this.customEnabledBorder,
+      this.customErrorBorder,
+      this.autofocus = false,
+      this.cursorColor,
+      this.readOnly});
 
   @override
   final TextEditingController controller;
@@ -77,6 +78,7 @@ class UiKitInputFieldNoIcon extends StatefulWidget implements BaseUiKitInputFiel
   final InputBorder? customFocusedBorder;
   final InputBorder? customEnabledBorder;
   final InputBorder? customErrorBorder;
+  final bool? readOnly;
 
   @override
   State<UiKitInputFieldNoIcon> createState() => _UiKitInputFieldNoIconState();
@@ -128,6 +130,7 @@ class _UiKitInputFieldNoIconState extends State<UiKitInputFieldNoIcon> {
       ),
       child: TextFormField(
         key: _key,
+        readOnly: widget.readOnly ?? false,
         enabled: widget.enabled,
         onChanged: widget.onChanged,
         autofocus: widget.autofocus,

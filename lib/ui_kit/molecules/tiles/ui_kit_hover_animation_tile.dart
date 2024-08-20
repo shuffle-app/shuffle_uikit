@@ -6,14 +6,10 @@ class UiKitHoverAnimationTile extends StatefulWidget {
     super.key,
     required this.title,
     required this.onTap,
-    this.isLast,
-    this.isFirst,
   });
 
   final String title;
   final ValueChanged<String> onTap;
-  final bool? isLast;
-  final bool? isFirst;
 
   @override
   State<UiKitHoverAnimationTile> createState() =>
@@ -46,14 +42,6 @@ class _UiKitHoverAnimationTileState extends State<UiKitHoverAnimationTile> {
             color: isHover
                 ? ColorsFoundation.onHover.withOpacity(0.08)
                 : uiKitTheme?.colorScheme.surface1,
-            border: Border.symmetric(
-              horizontal: BorderSide(
-                  color: ((widget.isFirst ?? false) || (widget.isLast ?? false))
-                      ? Colors.transparent
-                      : uiKitTheme?.colorScheme.darkNeutral500
-                              .withOpacity(0.24) ??
-                          Colors.transparent),
-            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

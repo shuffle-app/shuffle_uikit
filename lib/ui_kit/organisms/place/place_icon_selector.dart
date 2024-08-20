@@ -37,7 +37,7 @@ class PlaceIconSelector extends StatelessWidget {
                 iconInfo: BaseUiKitButtonIconData(
                     iconPath: GraphicsFoundation.instance.svg.download.path,
                     color: ColorsFoundation.primary200,
-                    size: 16.sp),
+                    size: 16),
                 onPressed: onPressed,
               ),
             ),
@@ -49,6 +49,7 @@ class PlaceIconSelector extends StatelessWidget {
           controller: iconTextController,
           fillColor: theme?.colorScheme.surface2,
           textColor: theme?.colorScheme.bodyTypography,
+          readOnly: true,
         ),
         SizedBox(
           width: double.maxFinite,
