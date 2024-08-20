@@ -19,6 +19,7 @@ class PlaceIconSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -27,23 +28,17 @@ class PlaceIconSelector extends StatelessWidget {
           children: [
             Text(
               S.current.Icon,
-              style: context.uiKitTheme?.regularTextTheme.body,
+              style: theme?.regularTextTheme.body,
             ),
-            DecoratedBox(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadiusFoundation.all12,
-                color: ColorsFoundation.primary200.withOpacity(0.4),
-              ),
-              child: context.boxIconButton(
-                data: BaseUiKitButtonData(
-                  fit: ButtonFit.hugContent,
-                  backgroundColor: Colors.transparent,
-                  iconInfo: BaseUiKitButtonIconData(
-                      iconPath: GraphicsFoundation.instance.svg.download.path,
-                      color: ColorsFoundation.primary200,
-                      size: 16.sp),
-                  onPressed: onPressed,
-                ),
+            context.boxIconButton(
+              data: BaseUiKitButtonData(
+                fit: ButtonFit.hugContent,
+                backgroundColor: ColorsFoundation.primary200.withOpacity(0.4),
+                iconInfo: BaseUiKitButtonIconData(
+                    iconPath: GraphicsFoundation.instance.svg.download.path,
+                    color: ColorsFoundation.primary200,
+                    size: 16.sp),
+                onPressed: onPressed,
               ),
             ),
           ],
@@ -52,15 +47,15 @@ class PlaceIconSelector extends StatelessWidget {
         UiKitInputFieldNoIcon(
           borderRadius: BorderRadiusFoundation.all12,
           controller: iconTextController,
-          fillColor: ColorsFoundation.lightSurface4,
-          textColor: context.uiKitTheme?.colorScheme.bodyTypography,
+          fillColor: theme?.colorScheme.surface2,
+          textColor: theme?.colorScheme.bodyTypography,
         ),
         SizedBox(
           width: double.maxFinite,
           height: 0.35.sh,
           child: DecoratedBox(
             decoration: BoxDecoration(
-              color: ColorsFoundation.lightSurface2,
+              color: theme?.colorScheme.surface2,
               borderRadius: BorderRadiusFoundation.all12,
             ),
             child: GridView(
@@ -82,6 +77,7 @@ class PlaceIconSelector extends StatelessWidget {
                             },
                             child: ImageWidget(
                               link: icon,
+                              color: theme?.colorScheme.inversePrimary,
                             ),
                           )
                       //   HoverableIconButton(

@@ -22,6 +22,7 @@ class PropertiesSearchInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final uiKitTheme = context.uiKitTheme;
     return LayoutBuilder(
       builder: (context, constraints) {
         return Autocomplete<String>(
@@ -57,21 +58,20 @@ class PropertiesSearchInput extends StatelessWidget {
           optionsViewBuilder: (_, onSelected, options) => UiKitCardWrapper(
             borderRadius: BorderRadiusFoundation.all12,
             color: context.uiKitTheme?.colorScheme.surface2,
-            child: SingleChildScrollView(
-              child: Column(
-                children: options.map(
-                  (e) {
-                    return UiKitHoverAnimationTile(
-                      isFirst: options.toList().indexOf(e) == 0,
-                      isLast: options.toList().last == e,
-                      title: e,
-                      onTap: (title) {
-                        onFieldSubmitted?.call(title);
-                      },
-                    );
+            child: ListView.separated(
+              padding: EdgeInsets.zero,
+              separatorBuilder: (_, __) =>
+                  Divider(height: 1, thickness: 1, color: uiKitTheme?.colorScheme.darkNeutral500.withOpacity(0.24)),
+              itemCount: options.length,
+              itemBuilder: (context, index) {
+                final e = options.elementAt(index);
+                return UiKitHoverAnimationTile(
+                  title: e,
+                  onTap: (title) {
+                    onFieldSubmitted?.call(title);
                   },
-                ).toList(),
-              ),
+                );
+              },
             ),
           ).paddingOnly(right: 0.7.sw, bottom: 0.5.sw),
           optionsBuilder: (editingValue) async {
@@ -81,10 +81,15 @@ class PropertiesSearchInput extends StatelessWidget {
               return const Iterable<String>.empty();
             }
 
-            final result = options.call(editingValue.text).then((options) {
-              return options.where((String option) {
+            final Future<Iterable<String>> result = options.call(editingValue.text).then((options) {
+              final ops = options.where((String option) {
                 return option.toLowerCase().contains(editingValue.text.toLowerCase());
               });
+              if (ops.isEmpty) {
+                return [editingValue.text];
+              } else {
+                return ops;
+              }
             });
 
             return result;
