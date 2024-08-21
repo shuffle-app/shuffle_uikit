@@ -49,7 +49,6 @@ class PlaceIconSelector extends StatelessWidget {
           controller: iconTextController,
           fillColor: theme?.colorScheme.surface2,
           textColor: theme?.colorScheme.bodyTypography,
-          readOnly: true,
         ),
         SizedBox(
           width: double.maxFinite,
