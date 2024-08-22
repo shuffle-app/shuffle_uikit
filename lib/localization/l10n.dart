@@ -7531,6 +7531,16 @@ class S {
     );
   }
 
+  /// `Please enter a description`
+  String get PleaseEnterValidDescription {
+    return Intl.message(
+      'Please enter a description',
+      name: 'PleaseEnterValidDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please add photo`
   String get PleaseAddPhoto {
     return Intl.message(
@@ -7826,6 +7836,41 @@ class S {
     return Intl.message(
       'Leave feedback',
       name: 'LeaveFeedback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Points are...`
+  String get PointsAre {
+    return Intl.message(
+      'Points are...',
+      name: 'PointsAre',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{reputation and currency} =1{increase rating or spend} =2{perform actions} few{earn points} other{earn points}}`
+  String PointsHiwItems(num item) {
+    return Intl.plural(
+      item,
+      zero: 'reputation and currency',
+      one: 'increase rating or spend',
+      two: 'perform actions',
+      few: 'earn points',
+      other: 'earn points',
+      name: 'PointsHiwItems',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `...Shuffle exchange system`
+  String get ShuffleExchangeSystem {
+    return Intl.message(
+      '...Shuffle exchange system',
+      name: 'ShuffleExchangeSystem',
       desc: '',
       args: [],
     );
