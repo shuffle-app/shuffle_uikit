@@ -756,7 +756,14 @@
   "LimitLessSumLimitsSubs" : "Limit less than sum of limits for subs",
   "PointsAre": "Points are...",
   "PointsHiwItems": "{item, plural, =0{reputation and currency} =1{increase rating or spend} =2{perform actions} few{earn points} other{earn points}}",
-  "ShuffleExchangeSystem": "...Shuffle exchange system"
-
+  "ShuffleExchangeSystem": "...Shuffle exchange system",
+  "MyBooking": "My booking",
+  "Upcoming": "Upcoming",
+  "Past": "Past",
+  "Ticket": "Ticket",
+  "Product": "Product",
+  "Total": "Total",
+  "YouCanStillRequestRefundYourComplaint": "You can still request a refund on your complaint",
+  "LeaveFeedback": "Leave feedback"
 
 }

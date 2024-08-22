@@ -697,6 +697,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("Повторяется"),
         "Islam": MessageLookupByLibrary.simpleMessage("Ислам"),
         "Judaism": MessageLookupByLibrary.simpleMessage("Иудаизм"),
+        "LeaveFeedback": MessageLookupByLibrary.simpleMessage("Оставьте отзыв"),
         "Leisure": MessageLookupByLibrary.simpleMessage("Досуг"),
         "Less": MessageLookupByLibrary.simpleMessage("меньше"),
         "Limit": MessageLookupByLibrary.simpleMessage("Лимит"),
@@ -745,6 +746,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Вы должны выбрать хотя бы одно видео"),
         "MustVisitTechnologyConf": MessageLookupByLibrary.simpleMessage(
             "Обязательно посетите технологическую конференцию"),
+        "MyBooking": MessageLookupByLibrary.simpleMessage("Мои букинги"),
         "MyCard": MessageLookupByLibrary.simpleMessage("Профиль"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("Мои события"),
         "MyFeedback": MessageLookupByLibrary.simpleMessage("Мои отзывы"),
@@ -848,6 +850,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Буквы, цифры, ! “ @ # \$ % &, не менее 8 символов"),
         "PasswordMustBeAtLeast8Characters":
             MessageLookupByLibrary.simpleMessage("Пароль не менее 8 символов"),
+        "Past": MessageLookupByLibrary.simpleMessage("Прошедние"),
         "Permissions": MessageLookupByLibrary.simpleMessage("Разрешения"),
         "Personal": MessageLookupByLibrary.simpleMessage("Личный"),
         "PersonalCredentials":
@@ -944,6 +947,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
             "Возможность использовать специальные уведомления"),
         "ProTools": MessageLookupByLibrary.simpleMessage("Pro tools"),
+        "Product": MessageLookupByLibrary.simpleMessage("Продукт"),
         "Products": m49,
         "ProfileAskOrSupportHiwHint": m50,
         "ProfileAskOrSupportHiwSubtitle":
@@ -1193,6 +1197,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "Неагрегаторная система специально для вас"),
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("Чт"),
+        "Ticket": MessageLookupByLibrary.simpleMessage("Билет"),
         "TicketFrom": m66,
         "Tickets": m67,
         "Time": MessageLookupByLibrary.simpleMessage("Время"),
@@ -1212,6 +1217,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TopEventsFor": m68,
         "TopNDonatorsReceiveXPoints": m69,
         "TopPlacesRatedBy": m70,
+        "Total": MessageLookupByLibrary.simpleMessage("Сумма"),
         "TravelerMen": MessageLookupByLibrary.simpleMessage("Путник"),
         "TravelerWom": MessageLookupByLibrary.simpleMessage("Путница"),
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("Триал период"),
@@ -1234,6 +1240,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Странное кольцо. Не знаем откуда оно здесь…"),
         "UnsubscribeFromProfile":
             MessageLookupByLibrary.simpleMessage("Отписаться"),
+        "Upcoming": MessageLookupByLibrary.simpleMessage("Грядущие"),
         "UpcomingEvent":
             MessageLookupByLibrary.simpleMessage("Предстоящее событие"),
         "UpcomingGlobalEvents":
@@ -1335,6 +1342,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Тебе лучше взглянуть"),
         "YouCanGet": MessageLookupByLibrary.simpleMessage("Ты можешь получить"),
+        "YouCanStillRequestRefundYourComplaint":
+            MessageLookupByLibrary.simpleMessage(
+                "Вы все еще можете запросить возврат средств по вашей жалобе"),
         "YouGetAccessToTrial": MessageLookupByLibrary.simpleMessage(
             "Ты получишь доступ ко всем функциям на"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(

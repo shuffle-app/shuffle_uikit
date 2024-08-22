@@ -758,7 +758,15 @@
   "LimitLessSumLimitsSubs" : "Лимит меньше суммы лимитов у сабов",
   "PointsAre": "Поинты это...",
   "PointsHiwItems": "{item, plural, =0{репутация и валюта} =1{повышай рейтинг или трать} =2{делай действия} few{получай поинты} other{получай поинты}}",
-  "ShuffleExchangeSystem": "...система обмена Shuffle"
+  "ShuffleExchangeSystem": "...система обмена Shuffle",
+  "MyBooking": "Мои букинги",
+  "Upcoming": "Грядущие",
+  "Past": "Прошедние",
+  "Ticket": "Билет",
+  "Product": "Продукт",
+  "Total": "Сумма",
+  "YouCanStillRequestRefundYourComplaint": "Вы все еще можете запросить возврат средств по вашей жалобе",
+  "LeaveFeedback": "Оставьте отзыв"
 
 }
 
