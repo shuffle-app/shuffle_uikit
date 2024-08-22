@@ -875,6 +875,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Пожалуйста, введите допустимый лимит"),
         "PleaseEnterLimit":
             MessageLookupByLibrary.simpleMessage("Пожалуйста, добавьте лимит"),
+        "PleaseEnterValidDescription": MessageLookupByLibrary.simpleMessage(
+            "Пожалуйста, введите допустимое описание"),
         "PleaseEnterValidTitle": MessageLookupByLibrary.simpleMessage(
             "Пожалуйста, введите допустимое название"),
         "PleaseFillOutDate":
