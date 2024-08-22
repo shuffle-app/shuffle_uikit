@@ -15,6 +15,7 @@ class UiKitChatInCard extends StatelessWidget {
     this.avatarUrl,
     this.senderName,
     this.senderType,
+    this.onUsernameTapped,
   });
 
   final DateTime timeOfDay;
@@ -28,6 +29,7 @@ class UiKitChatInCard extends StatelessWidget {
   final int id;
   final bool showAvatar;
   final bool hasInvitation;
+  final VoidCallback? onUsernameTapped;
 
   bool get _dataIsValid => avatarUrl != null && senderName != null && senderType != null;
 
@@ -61,10 +63,13 @@ class UiKitChatInCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 if (senderNickname != null)
-                  Text(
-                    '@$senderNickname',
-                    style: theme?.regularTextTheme.caption4Regular.copyWith(
-                      color: ColorsFoundation.mutedText,
+                  GestureDetector(
+                    onTap: onUsernameTapped,
+                    child: Text(
+                      '@$senderNickname',
+                      style: theme?.regularTextTheme.caption4Regular.copyWith(
+                        color: ColorsFoundation.mutedText,
+                      ),
                     ),
                   ),
                 Text(

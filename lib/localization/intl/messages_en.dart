@@ -863,6 +863,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please fill out date"),
         "PleaseFillOutYourWishes":
             MessageLookupByLibrary.simpleMessage("Please fill out your wishes"),
+        "PleaseFillOutYourWishesAndSelectDate":
+            MessageLookupByLibrary.simpleMessage(
+                "Please fill out your wishes and select date"),
         "PleaseSelectANiche":
             MessageLookupByLibrary.simpleMessage("Please select a niche"),
         "PleaseSelectAtLeastNReligion": m45,

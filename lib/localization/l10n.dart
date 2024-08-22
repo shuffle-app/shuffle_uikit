@@ -1176,6 +1176,16 @@ class S {
     );
   }
 
+  /// `Please fill out your wishes and select date`
+  String get PleaseFillOutYourWishesAndSelectDate {
+    return Intl.message(
+      'Please fill out your wishes and select date',
+      name: 'PleaseFillOutYourWishesAndSelectDate',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Type here`
   String get TypeHere {
     return Intl.message(
