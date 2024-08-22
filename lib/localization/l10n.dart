@@ -7531,6 +7531,16 @@ class S {
     );
   }
 
+  /// `Please enter a description`
+  String get PleaseEnterValidDescription {
+    return Intl.message(
+      'Please enter a description',
+      name: 'PleaseEnterValidDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please add photo`
   String get PleaseAddPhoto {
     return Intl.message(

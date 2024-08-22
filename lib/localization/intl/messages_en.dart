@@ -860,6 +860,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please enter current limit"),
         "PleaseEnterLimit":
             MessageLookupByLibrary.simpleMessage("Please enter limit"),
+        "PleaseEnterValidDescription":
+            MessageLookupByLibrary.simpleMessage("Please enter a description"),
         "PleaseEnterValidTitle":
             MessageLookupByLibrary.simpleMessage("Please enter a valid title"),
         "PleaseFillOutDate":

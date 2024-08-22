@@ -731,6 +731,7 @@
   "CreateUpsales": "Create upsales",
   "Subs": "Subs",
   "PleaseEnterValidTitle": "Please enter a valid title",
+  "PleaseEnterValidDescription": "Please enter a description",
   "PleaseAddPhoto": "Please add photo",
   "BookingList": "Booking list",
   "Tickets": "{count} {count, plural, =0{tickets} =1{ticket} =2{tickets} few{tickets} many{tickets} other{tickets}}",
