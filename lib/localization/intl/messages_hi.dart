@@ -687,6 +687,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("आवर्तक है"),
         "Islam": MessageLookupByLibrary.simpleMessage("इस्लाम"),
         "Judaism": MessageLookupByLibrary.simpleMessage("यहूदी धर्म"),
+        "LeaveFeedback": MessageLookupByLibrary.simpleMessage("Leave feedback"),
         "Leisure": MessageLookupByLibrary.simpleMessage("फुर्सत"),
         "Less": MessageLookupByLibrary.simpleMessage("कम"),
         "Limit": MessageLookupByLibrary.simpleMessage("Limit"),
@@ -735,6 +736,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "आपको कम से कम एक वीडियो चुनना होगा"),
         "MustVisitTechnologyConf": MessageLookupByLibrary.simpleMessage(
             "प्रौद्योगिकी सम्मेलन का दौरा करना चाहिए"),
+        "MyBooking": MessageLookupByLibrary.simpleMessage("My booking"),
         "MyCard": MessageLookupByLibrary.simpleMessage("मेरा कार्ड"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("मेरी घटनाएँ"),
         "MyFeedback": MessageLookupByLibrary.simpleMessage("मेरी प्रतिक्रिया"),
@@ -838,6 +840,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "PasswordMustBeAtLeast8Characters":
             MessageLookupByLibrary.simpleMessage(
                 "पासवर्ड कम से कम 8 अक्षर होना चाहिए"),
+        "Past": MessageLookupByLibrary.simpleMessage("Past"),
         "Permissions": MessageLookupByLibrary.simpleMessage("अनुमतियाँ"),
         "Personal": MessageLookupByLibrary.simpleMessage("व्यक्तिगत"),
         "PersonalCredentials":
@@ -928,6 +931,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
             "विशेष सूचनाओं का उपयोग करने की क्षमता"),
         "ProTools": MessageLookupByLibrary.simpleMessage("Pro tools"),
+        "Product": MessageLookupByLibrary.simpleMessage("Product"),
         "Products": m48,
         "ProfileAskOrSupportHiwHint": m49,
         "ProfileAskOrSupportHiwSubtitle":
@@ -1170,6 +1174,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "एक गैर के माध्यम से-\nएग्रीगेटर प्रणाली\nविशेष रूप से आप के लिए"),
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("गुरुवार"),
+        "Ticket": MessageLookupByLibrary.simpleMessage("Ticket"),
         "TicketFrom": m65,
         "Tickets": m66,
         "Time": MessageLookupByLibrary.simpleMessage("समय"),
@@ -1191,6 +1196,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TopEventsFor": m67,
         "TopNDonatorsReceiveXPoints": m68,
         "TopPlacesRatedBy": m69,
+        "Total": MessageLookupByLibrary.simpleMessage("Total"),
         "TravelerMen": MessageLookupByLibrary.simpleMessage("यात्री"),
         "TravelerWom": MessageLookupByLibrary.simpleMessage("यात्री"),
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("परीक्षण अवधि"),
@@ -1214,6 +1220,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "अजीब रिंग। हमें यह नहीं पता क्यों यह यहाँ है..."),
         "UnsubscribeFromProfile":
             MessageLookupByLibrary.simpleMessage("अनफॉलो"),
+        "Upcoming": MessageLookupByLibrary.simpleMessage("Upcoming"),
         "UpcomingEvent":
             MessageLookupByLibrary.simpleMessage("आगामी कार्यक्रम"),
         "UpcomingGlobalEvents":
@@ -1314,6 +1321,9 @@ class MessageLookup extends MessageLookupByLibrary {
             "बेहतर होगा कि आप इसकी जांच कर लें"),
         "YouCanGet":
             MessageLookupByLibrary.simpleMessage("आप प्राप्त कर सकते हैं"),
+        "YouCanStillRequestRefundYourComplaint":
+            MessageLookupByLibrary.simpleMessage(
+                "You can still request a refund on your complaint"),
         "YouGetAccessToTrial": MessageLookupByLibrary.simpleMessage(
             "आपको सभी लाभ मुफ्त में मिलते हैं"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(

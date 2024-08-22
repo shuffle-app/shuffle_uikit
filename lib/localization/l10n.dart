@@ -7750,6 +7750,86 @@ class S {
       args: [],
     );
   }
+
+  /// `My booking`
+  String get MyBooking {
+    return Intl.message(
+      'My booking',
+      name: 'MyBooking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upcoming`
+  String get Upcoming {
+    return Intl.message(
+      'Upcoming',
+      name: 'Upcoming',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Past`
+  String get Past {
+    return Intl.message(
+      'Past',
+      name: 'Past',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ticket`
+  String get Ticket {
+    return Intl.message(
+      'Ticket',
+      name: 'Ticket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product`
+  String get Product {
+    return Intl.message(
+      'Product',
+      name: 'Product',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get Total {
+    return Intl.message(
+      'Total',
+      name: 'Total',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can still request a refund on your complaint`
+  String get YouCanStillRequestRefundYourComplaint {
+    return Intl.message(
+      'You can still request a refund on your complaint',
+      name: 'YouCanStillRequestRefundYourComplaint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Leave feedback`
+  String get LeaveFeedback {
+    return Intl.message(
+      'Leave feedback',
+      name: 'LeaveFeedback',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

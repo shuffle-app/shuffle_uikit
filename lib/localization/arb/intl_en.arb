@@ -754,6 +754,14 @@
   "PleaseEnterLimit": "Please enter limit",
   "PleaseEnterCurrentLimit": "Please enter current limit",
   "LimitLessTotalLimit": "Limit for one must be less than total limit",
-  "LimitLessSumLimitsSubs" : "Limit less than sum of limits for subs"
+  "LimitLessSumLimitsSubs" : "Limit less than sum of limits for subs",
+  "MyBooking": "My booking",
+  "Upcoming": "Upcoming",
+  "Past": "Past",
+  "Ticket": "Ticket",
+  "Product": "Product",
+  "Total": "Total",
+  "YouCanStillRequestRefundYourComplaint": "You can still request a refund on your complaint",
+  "LeaveFeedback": "Leave feedback"
 
 }
