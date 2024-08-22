@@ -9,6 +9,7 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
   final bool? loading;
   final ButtonFit? fit;
   final AutoSizeGroup? autoSizeGroup;
+  final EdgeInsetsGeometry? padding;
 
   const GradientButton({
     super.key,
@@ -17,6 +18,7 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
     this.loading,
     this.fit,
     this.autoSizeGroup,
+    this.padding,
   });
 
   @override
@@ -48,11 +50,12 @@ class GradientButton extends StatelessWidget implements ButtonFactory {
         onTap: enabled && !(loading ?? false) ? onPressed : null,
         child: Ink(
           width: fit == ButtonFit.fitWidth ? double.infinity : null,
-          padding: EdgeInsets.symmetric(
-            vertical: EdgeInsetsFoundation.vertical14,
-            horizontal:
-                fit == ButtonFit.hugContent ? EdgeInsetsFoundation.horizontal20 : EdgeInsetsFoundation.horizontal44,
-          ),
+          padding: padding ??
+              EdgeInsets.symmetric(
+                vertical: EdgeInsetsFoundation.vertical14,
+                horizontal:
+                    fit == ButtonFit.hugContent ? EdgeInsetsFoundation.horizontal20 : EdgeInsetsFoundation.horizontal44,
+              ),
           decoration: BoxDecoration(
             borderRadius: kIsWeb ? BorderRadiusFoundation.all10 : BorderRadiusFoundation.max,
             gradient: enabled ? GradientFoundation.buttonGradientLinear : null,
