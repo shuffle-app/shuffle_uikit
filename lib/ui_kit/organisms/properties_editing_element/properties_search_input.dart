@@ -58,6 +58,7 @@ class PropertiesSearchInput extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: SizedBox(
                       width: constraints.maxWidth,
+                      height: 0.22.sh,
                       child: Material(
                         borderRadius: BorderRadiusFoundation.all12,
                         color: context.uiKitTheme?.colorScheme.surface2,
