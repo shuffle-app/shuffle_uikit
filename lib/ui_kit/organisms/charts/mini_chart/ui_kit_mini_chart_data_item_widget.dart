@@ -17,7 +17,7 @@ class UiKitMiniChartDataItemWidget extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          flex: 6,
+          flex: 7,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,6 +53,7 @@ class UiKitMiniChartDataItemWidget extends StatelessWidget {
             ],
           ),
         ),
+        SpacingFoundation.horizontalSpace16,
         Expanded(
           flex: 6,
           child: Column(
@@ -70,7 +71,7 @@ class UiKitMiniChartDataItemWidget extends StatelessWidget {
                 clipper: MiniChartClipper(data: data.items),
                 child: Container(
                   height: 0.05.sh,
-                  width: 0.5.sw - SpacingFoundation.horizontalSpacing32,
+                  width: 0.5.sw,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,

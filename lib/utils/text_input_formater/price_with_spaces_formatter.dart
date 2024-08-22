@@ -9,6 +9,10 @@ class PriceWithSpacesFormatter extends TextInputFormatter {
     this.maxDecimalPlaces = 2,
   });
 
+  final bool allowDecimal;
+
+  PriceWithSpacesFormatter({this.allowDecimal = true});
+
   @override
   TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
     String newText = newValue.text.replaceAll(RegExp(r'[^\d.,]'), '');
@@ -32,6 +36,17 @@ class PriceWithSpacesFormatter extends TextInputFormatter {
           afterDecimal = afterDecimal.substring(0, maxDecimalPlaces);
         }
 
+        newText = beforeDecimal + afterDecimal;
+      }
+    } else {
+      newText = newText.replaceAll(RegExp(r'[.,]'), '');
+    String formattedText = '';
+
+    if (allowDecimal) {
+      int firstDecimalPointIndex = newText.indexOf(RegExp(r'[.,]'));
+      if (firstDecimalPointIndex >= 0) {
+        String beforeDecimal = newText.substring(0, firstDecimalPointIndex + 1);
+        String afterDecimal = newText.substring(firstDecimalPointIndex + 1).replaceAll(RegExp(r'[.,]'), '');
         newText = beforeDecimal + afterDecimal;
       }
     } else {

@@ -1006,10 +1006,10 @@ class S {
     );
   }
 
-  /// `Top places rated{separator}by`
+  /// `Top content rated{separator}by`
   String TopPlacesRatedBy(Object separator) {
     return Intl.message(
-      'Top places rated${separator}by',
+      'Top content rated${separator}by',
       name: 'TopPlacesRatedBy',
       desc: '',
       args: [separator],
@@ -7211,6 +7211,86 @@ class S {
     );
   }
 
+  /// `{years} {years, plural, =0{y.o.} =1{y.o.} =2{y.o.} few{y.o.} many{y.o.} other{y.o.}}`
+  String YearsOld(num years) {
+    return Intl.message(
+      '$years ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}',
+      name: 'YearsOld',
+      desc: '',
+      args: [years],
+    );
+  }
+
+  /// `{from} - {to} {from, plural, =0{y.o.} =1{y.o.} =2{y.o.} few{y.o.} many{y.o.} other{y.o.}}`
+  String FromToYearsOld(num from, Object to) {
+    return Intl.message(
+      '$from - $to ${Intl.plural(from, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}',
+      name: 'FromToYearsOld',
+      desc: '',
+      args: [from, to],
+    );
+  }
+
+  /// `{years}+ {years, plural, =0{y.o.} =1{y.o.} =2{y.o.} few{y.o.} many{y.o.} other{y.o.}}`
+  String XYearsPlus(num years) {
+    return Intl.message(
+      '$years+ ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}',
+      name: 'XYearsPlus',
+      desc: '',
+      args: [years],
+    );
+  }
+
+  /// `Age`
+  String get Age {
+    return Intl.message(
+      'Age',
+      name: 'Age',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interests`
+  String get Interests {
+    return Intl.message(
+      'Interests',
+      name: 'Interests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unique statistics`
+  String get UniqueStatistics {
+    return Intl.message(
+      'Unique statistics',
+      name: 'UniqueStatistics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Portrait of the most active segment`
+  String get MostActiveAgeSegment {
+    return Intl.message(
+      'Portrait of the most active segment',
+      name: 'MostActiveAgeSegment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Top events for {date}`
+  String TopEventsFor(Object date) {
+    return Intl.message(
+      'Top events for $date',
+      name: 'TopEventsFor',
+      desc: '',
+      args: [date],
+    );
+  }
+
   /// `Statistics`
   String get Statistics {
     return Intl.message(
@@ -7266,6 +7346,441 @@ class S {
     return Intl.message(
       'Create booking link',
       name: 'CreateBookingLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General`
+  String get GeneralMas {
+    return Intl.message(
+      'General',
+      name: 'GeneralMas',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General`
+  String get GeneraFem {
+    return Intl.message(
+      'General',
+      name: 'GeneraFem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Organic`
+  String get OrganicStatistics {
+    return Intl.message(
+      'Organic',
+      name: 'OrganicStatistics',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Promotion`
+  String get Promotion {
+    return Intl.message(
+      'Promotion',
+      name: 'Promotion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User`
+  String get UserHasNoPublicProfileStart {
+    return Intl.message(
+      'User',
+      name: 'UserHasNoPublicProfileStart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `doesn't have public profile`
+  String get UserHasNoPublicProfileEnd {
+    return Intl.message(
+      'doesn\'t have public profile',
+      name: 'UserHasNoPublicProfileEnd',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Download PDF`
+  String get DownloadPdf {
+    return Intl.message(
+      'Download PDF',
+      name: 'DownloadPdf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create free reminder for your clients`
+  String get CreateReminderDescription {
+    return Intl.message(
+      'Create free reminder for your clients',
+      name: 'CreateReminderDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminder`
+  String get Reminder {
+    return Intl.message(
+      'Reminder',
+      name: 'Reminder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have already created one reminder. To create a new one, pause or remove the previous one.`
+  String get AlreadyHaveActiveReminder {
+    return Intl.message(
+      'You have already created one reminder. To create a new one, pause or remove the previous one.',
+      name: 'AlreadyHaveActiveReminder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Limit`
+  String get Limit {
+    return Intl.message(
+      'Limit',
+      name: 'Limit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking`
+  String get Booking {
+    return Intl.message(
+      'Booking',
+      name: 'Booking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking Limit`
+  String get BookingLimit {
+    return Intl.message(
+      'Booking Limit',
+      name: 'BookingLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking Limit per one`
+  String get BookingLimitPerOne {
+    return Intl.message(
+      'Booking Limit per one',
+      name: 'BookingLimitPerOne',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create subs`
+  String get CreateSubs {
+    return Intl.message(
+      'Create subs',
+      name: 'CreateSubs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create upsales`
+  String get CreateUpsales {
+    return Intl.message(
+      'Create upsales',
+      name: 'CreateUpsales',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subs`
+  String get Subs {
+    return Intl.message(
+      'Subs',
+      name: 'Subs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid title`
+  String get PleaseEnterValidTitle {
+    return Intl.message(
+      'Please enter a valid title',
+      name: 'PleaseEnterValidTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please add photo`
+  String get PleaseAddPhoto {
+    return Intl.message(
+      'Please add photo',
+      name: 'PleaseAddPhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking list`
+  String get BookingList {
+    return Intl.message(
+      'Booking list',
+      name: 'BookingList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{tickets} =1{ticket} =2{tickets} few{tickets} many{tickets} other{tickets}}`
+  String Tickets(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'tickets', one: 'ticket', two: 'tickets', few: 'tickets', many: 'tickets', other: 'tickets')}',
+      name: 'Tickets',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{product} =1{products} =2{products} few{products} many{products} other{products}}`
+  String Products(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'product', one: 'products', two: 'products', few: 'products', many: 'products', other: 'products')}',
+      name: 'Products',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Full refund`
+  String get FullRefund {
+    return Intl.message(
+      'Full refund',
+      name: 'FullRefund',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Partial refund`
+  String get PartialRefund {
+    return Intl.message(
+      'Partial refund',
+      name: 'PartialRefund',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact`
+  String get Contact {
+    return Intl.message(
+      'Contact',
+      name: 'Contact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact`
+  String get ContactWith {
+    return Intl.message(
+      'Contact',
+      name: 'ContactWith',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `by message`
+  String get ByMessage {
+    return Intl.message(
+      'by message',
+      name: 'ByMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `by e-mail`
+  String get ByEmail {
+    return Intl.message(
+      'by e-mail',
+      name: 'ByEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Refund everyone`
+  String get RefundEveryone {
+    return Intl.message(
+      'Refund everyone',
+      name: 'RefundEveryone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `requests`
+  String get Requests {
+    return Intl.message(
+      'requests',
+      name: 'Requests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `full`
+  String get Full {
+    return Intl.message(
+      'full',
+      name: 'Full',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `partial`
+  String get Partial {
+    return Intl.message(
+      'partial',
+      name: 'Partial',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `refund`
+  String get Refund {
+    return Intl.message(
+      'refund',
+      name: 'Refund',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{tickets} =1{ticket} =2{tickets} few{tickets} many{tickets} other{tickets}} form`
+  String TicketFrom(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'tickets', one: 'ticket', two: 'tickets', few: 'tickets', many: 'tickets', other: 'tickets')} form',
+      name: 'TicketFrom',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} upsales {count, plural, =0{product} =1{products} =2{products} few{products} many{products} other{products}} from`
+  String UpsalesProductsFrom(num count) {
+    return Intl.message(
+      '$count upsales ${Intl.plural(count, zero: 'product', one: 'products', two: 'products', few: 'products', many: 'products', other: 'products')} from',
+      name: 'UpsalesProductsFrom',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Go ahead`
+  String get GoAhead {
+    return Intl.message(
+      'Go ahead',
+      name: 'GoAhead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter limit`
+  String get PleaseEnterLimit {
+    return Intl.message(
+      'Please enter limit',
+      name: 'PleaseEnterLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter current limit`
+  String get PleaseEnterCurrentLimit {
+    return Intl.message(
+      'Please enter current limit',
+      name: 'PleaseEnterCurrentLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Limit for one must be less than total limit`
+  String get LimitLessTotalLimit {
+    return Intl.message(
+      'Limit for one must be less than total limit',
+      name: 'LimitLessTotalLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Limit less than sum of limits for subs`
+  String get LimitLessSumLimitsSubs {
+    return Intl.message(
+      'Limit less than sum of limits for subs',
+      name: 'LimitLessSumLimitsSubs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Points are...`
+  String get PointsAre {
+    return Intl.message(
+      'Points are...',
+      name: 'PointsAre',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{reputation and currency} =1{increase rating or spend} =2{perform actions} few{earn points} other{earn points}}`
+  String PointsHiwItems(num item) {
+    return Intl.plural(
+      item,
+      zero: 'reputation and currency',
+      one: 'increase rating or spend',
+      two: 'perform actions',
+      few: 'earn points',
+      other: 'earn points',
+      name: 'PointsHiwItems',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `...Shuffle exchange system`
+  String get ShuffleExchangeSystem {
+    return Intl.message(
+      '...Shuffle exchange system',
+      name: 'ShuffleExchangeSystem',
       desc: '',
       args: [],
     );

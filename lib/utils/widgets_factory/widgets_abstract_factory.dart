@@ -459,6 +459,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: data.onPressed,
         loading: data.loading,
         borderColor: borderColor,
+        textColor: data.textColor,
+        backgroundColor: data.backgroundColor,
         isGradientEnabled: isGradientEnabled ?? false,
       );
     } else {
@@ -541,6 +543,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         icon: data.iconWidget,
         iconInfo: data.iconInfo,
         onPressed: data.onPressed,
+        backgroundColor: data.backgroundColor,
       );
     } else if (hasIcon && (blurred ?? false)) {
       return BlurredButtonWithIcon(

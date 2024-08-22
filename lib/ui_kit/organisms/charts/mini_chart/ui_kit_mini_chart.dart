@@ -16,7 +16,7 @@ class UiKitMiniChart extends StatefulWidget {
 class _UiKitMiniChartState extends State<UiKitMiniChart> {
   final ScrollController _datesScrollController = ScrollController();
   double? datesToPreviewWidthRatio;
-  Size get previewSize => Size(1.sw - (SpacingFoundation.verticalSpacing32), 0.07.sh);
+  Size get previewSize => Size(1.sw - (72), 0.07.sh);
   Size get datesViewPortSize => Size(
         previewSize.width,
         0.0281.sh,

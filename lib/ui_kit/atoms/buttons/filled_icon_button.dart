@@ -4,6 +4,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class FilledIconButton extends StatelessWidget implements ButtonFactory {
   final Widget? icon;
   final BaseUiKitButtonIconData? iconInfo;
+  final Color? backgroundColor;
   final VoidCallback? onPressed;
 
   const FilledIconButton({
@@ -11,7 +12,8 @@ class FilledIconButton extends StatelessWidget implements ButtonFactory {
     this.icon,
     this.iconInfo,
     this.onPressed,
-  })  : assert(icon != null || iconInfo != null, 'Either icon or iconInfo must be provided');
+    this.backgroundColor,
+  }) : assert(icon != null || iconInfo != null, 'Either icon or iconInfo must be provided');
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class FilledIconButton extends StatelessWidget implements ButtonFactory {
     final colorScheme = context.uiKitTheme?.colorScheme;
 
     return Material(
-      color: enabled ? colorScheme?.inversePrimary : ColorsFoundation.darkNeutral300,
+      color: enabled ? backgroundColor ?? colorScheme?.inversePrimary : ColorsFoundation.darkNeutral300,
       shape: const CircleBorder(),
       clipBehavior: Clip.hardEdge,
       child: InkWell(
@@ -30,7 +32,7 @@ class FilledIconButton extends StatelessWidget implements ButtonFactory {
             shape: BoxShape.circle,
           ),
           child: Padding(
-            padding: EdgeInsets.all(EdgeInsetsFoundation.all14),
+            padding: iconInfo?.padding ?? EdgeInsets.all(EdgeInsetsFoundation.all14),
             child: icon ??
                 ImageWidget(
                   iconData: iconInfo?.iconData,

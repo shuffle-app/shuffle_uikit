@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/utils/extentions/line_chart_extensions.dart';
 
 class LineChartPainterWithInfoOverlay extends CustomPainter {
   final List<UiKitLineChartItemData<num>> lines;
@@ -9,12 +8,14 @@ class LineChartPainterWithInfoOverlay extends CustomPainter {
   final int? selectedIndex;
   final double stepScaleFactor;
   final Color pointsStraightLineColor;
+  final List<int> visibleLinesIds;
 
   LineChartPainterWithInfoOverlay({
     super.repaint,
     required this.lines,
     required this.size,
     required this.pointsStraightLineColor,
+    required this.visibleLinesIds,
     double? step,
     this.selectedIndex,
     this.stepScaleFactor = 1,
@@ -41,6 +42,7 @@ class LineChartPainterWithInfoOverlay extends CustomPainter {
       ..color = Colors.white;
     final maxValue = lines.maxValue;
     for (final lineData in lines) {
+      if (!visibleLinesIds.contains(lineData.id)) continue;
       final path = Path();
       final paint = Paint()
         ..strokeCap = StrokeCap.round
@@ -60,11 +62,13 @@ class LineChartPainterWithInfoOverlay extends CustomPainter {
         double nextX = (i + 1) * step;
         double currentY = height - ((currentValue / maxValue) * height);
         double nextY = height - ((nextValue / maxValue) * height);
-        if (i == 0) path.moveTo(currentX - (curvatureRadius / 2), currentY);
+        if (i == 0) path.moveTo(currentX - (curvatureRadius / 2), currentY - 4);
 
         /// adding some space to see the line to the point
-        if (currentY == height) currentY = height - SpacingFoundation.verticalSpacing2;
-        if (nextY == height) nextY = height - SpacingFoundation.verticalSpacing2;
+        if (currentY >= height) currentY = height - SpacingFoundation.verticalSpacing2;
+        if (nextY >= height) nextY = height - SpacingFoundation.verticalSpacing2;
+        if (currentY <= 0) currentY = SpacingFoundation.verticalSpacing2;
+        if (nextY <= 0) nextY = SpacingFoundation.verticalSpacing2;
 
         if (isLastDataSet) nextY += 4;
 
@@ -77,7 +81,8 @@ class LineChartPainterWithInfoOverlay extends CustomPainter {
       canvas.drawPath(path, paint);
     }
     if (selectedIndex != null && selectedIndex! >= 0) {
-      final chartLines = lines.chartItemsWithDatasetAt(selectedIndex!);
+      final chartLines =
+          lines.where((line) => visibleLinesIds.contains(line.id)).toList().chartItemsWithDatasetAt(selectedIndex!);
       final currentX = selectedIndex! * step;
       final lastDataSet = selectedIndex! == lines.maxDatasetsCount - 1;
       for (final line in chartLines) {
@@ -90,11 +95,14 @@ class LineChartPainterWithInfoOverlay extends CustomPainter {
           borderPaint.color = line.color!;
         }
         final currentValue = line.datasets.first.value;
-        final currentY = height - ((currentValue / maxValue) * height);
+        double currentY = height - ((currentValue / maxValue) * height);
+        if (currentY == height) currentY -= curvatureRadius / 8;
 
         final pointOffset = Offset(
           lastDataSet ? currentX - (pointCircleRadius * 1.5) : currentX,
-          lastDataSet ? currentY + (pointCircleRadius * 1.5) : currentY,
+          lastDataSet
+              ? currentY + (pointCircleRadius * 1.5)
+              : currentY - (selectedIndex == 0 ? curvatureRadius / 8 : 0),
         );
 
         canvas.drawCircle(pointOffset, pointCircleRadius, innerPaint);

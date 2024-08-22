@@ -32,6 +32,7 @@ class UiKitInputFieldNoFill extends StatefulWidget
     this.minLines,
     this.autovalidateMode,
     this.readOnly = false,
+    this.maxSymbols,
     required this.label,
   });
 
@@ -69,6 +70,7 @@ class UiKitInputFieldNoFill extends StatefulWidget
   final AutovalidateMode? autovalidateMode;
   @override
   final bool obscureText;
+  final int? maxSymbols;
 
   @override
   State<UiKitInputFieldNoFill> createState() => _UiKitInputFieldNoFillState();
@@ -136,6 +138,8 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         onFieldSubmitted: widget.onFieldSubmitted,
         validator: widget.validator,
         inputFormatters: widget.inputFormatters,
+        maxLength: widget.maxSymbols,
+        buildCounter: widget.maxSymbols == null ? null : _buildCounter,
         decoration: InputDecoration(
           focusedBorder: widget.customFocusedBorder ??
               context.uiKitTheme?.noFillInputTheme.focusedBorder,
@@ -148,8 +152,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
           floatingLabelStyle:
               WidgetStateTextStyle.resolveWith((states) => labelStyle!),
           floatingLabelAlignment: FloatingLabelAlignment.start,
-          labelStyle:
-              WidgetStateTextStyle.resolveWith((states) => labelStyle!),
+          labelStyle: WidgetStateTextStyle.resolveWith((states) => labelStyle!),
           hintText: widget.hintText,
           prefixStyle: inputTextStyle,
           prefixText: widget.prefixText,
@@ -162,4 +165,18 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
       ),
     );
   }
+}
+
+Widget _buildCounter(
+  BuildContext context, {
+  required int currentLength,
+  required int? maxLength,
+  required bool isFocused,
+}) {
+  final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+  return Text(
+    '$currentLength/$maxLength',
+    style: boldTextTheme?.caption2Medium
+        .copyWith(color: ColorsFoundation.mutedText),
+  );
 }

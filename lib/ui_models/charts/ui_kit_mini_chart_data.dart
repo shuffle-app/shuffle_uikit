@@ -16,6 +16,16 @@ class UiKitMiniChartData {
     required this.color,
     this.valueMetricsName,
   });
+
+  factory UiKitMiniChartData.empty() {
+    return UiKitMiniChartData(
+      title: '',
+      items: [],
+      progress: 0,
+      value: 0,
+      color: Colors.transparent,
+    );
+  }
 }
 
 class UiKitMiniChartDataItem {
