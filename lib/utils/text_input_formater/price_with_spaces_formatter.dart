@@ -2,19 +2,36 @@ import 'package:flutter/services.dart';
 
 class PriceWithSpacesFormatter extends TextInputFormatter {
   final bool allowDecimal;
+  final int maxDecimalPlaces;
 
-  PriceWithSpacesFormatter({this.allowDecimal = true});
+  PriceWithSpacesFormatter({
+    this.allowDecimal = true,
+    this.maxDecimalPlaces = 2,
+  });
 
   @override
   TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
     String newText = newValue.text.replaceAll(RegExp(r'[^\d.,]'), '');
     String formattedText = '';
 
+    if (newText.startsWith('.') || newText.startsWith(',')) {
+      newText = '';
+    }
+
+    if (newText.startsWith('0') && !newText.startsWith('0.') && !newText.startsWith('0,') && newText.length > 1) {
+      newText = newText.substring(1, 2);
+    }
+
     if (allowDecimal) {
       int firstDecimalPointIndex = newText.indexOf(RegExp(r'[.,]'));
       if (firstDecimalPointIndex >= 0) {
         String beforeDecimal = newText.substring(0, firstDecimalPointIndex + 1);
         String afterDecimal = newText.substring(firstDecimalPointIndex + 1).replaceAll(RegExp(r'[.,]'), '');
+
+        if (afterDecimal.length > maxDecimalPlaces) {
+          afterDecimal = afterDecimal.substring(0, maxDecimalPlaces);
+        }
+
         newText = beforeDecimal + afterDecimal;
       }
     } else {

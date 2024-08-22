@@ -734,6 +734,7 @@
   "CreateUpsales": "Создать дополнительные продажи",
   "Subs": "Сабы",
   "PleaseEnterValidTitle": "Пожалуйста, введите допустимое название",
+  "PleaseEnterValidDescription": "Пожалуйста, введите допустимое описание",
   "PleaseAddPhoto": "Пожалуйста, добавьте фото",
   "BookingList": "Список букингов",
   "Tickets": "{count} {count, plural, =0{билетов} =1{билет} =2{билета} few{билета} many{билета} other{билетов}}",
@@ -755,7 +756,10 @@
   "PleaseEnterLimit": "Пожалуйста, добавьте лимит",
   "PleaseEnterCurrentLimit": "Пожалуйста, введите допустимый лимит",
   "LimitLessTotalLimit": "Этот лимит должен быть меньше общего лимита",
-  "LimitLessSumLimitsSubs" : "Лимит меньше суммы лимитов у сабов"
+  "LimitLessSumLimitsSubs" : "Лимит меньше суммы лимитов у сабов",
+  "PointsAre": "Поинты это...",
+  "PointsHiwItems": "{item, plural, =0{репутация и валюта} =1{повышай рейтинг или трать} =2{делай действия} few{получай поинты} other{получай поинты}}",
+  "ShuffleExchangeSystem": "...система обмена Shuffle"
 
 }
 
