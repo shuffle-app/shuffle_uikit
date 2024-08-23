@@ -113,10 +113,13 @@ class UiKitMessageCard extends StatelessWidget {
                                   fit: BoxFit.fitHeight,
                                   color: colorScheme?.darkNeutral900,
                                 ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
-                              Text(
-                                subtitle,
-                                style: boldTextTheme?.caption1Bold.copyWith(
-                                  color: colorScheme?.darkNeutral900,
+                              Flexible(
+                                child: Text(
+                                  subtitle,
+                                  style: boldTextTheme?.caption1Bold.copyWith(
+                                    color: colorScheme?.darkNeutral900,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
                               ),
                             ],
@@ -127,7 +130,7 @@ class UiKitMessageCard extends StatelessWidget {
                   ],
                 ),
               ),
-              SpacingFoundation.verticalSpace8,
+              SpacingFoundation.verticalSpace4,
               Row(
                 children: [
                   Expanded(
@@ -158,7 +161,7 @@ class UiKitMessageCard extends StatelessWidget {
                       textAlign: TextAlign.start,
                     ),
                   ),
-                  SpacingFoundation.horizontalSpace8,
+                  SpacingFoundation.horizontalSpace4,
                   if (unreadMessageCount != null && unreadMessageCount! > 0)
                     Container(
                       decoration: BoxDecoration(

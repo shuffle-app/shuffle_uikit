@@ -69,9 +69,11 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
     this.onScroll,
   }) : super(key: key);
 
-  final fractionBounds = const [0.3, 1];
+  List<double> get fractionBounds => [0.3, maxPossibleWidthFraction];
 
   double get maxRemainingFactor => 1 - previewUpdateNotifier.value.previewWidthFraction;
+
+  double get maxPossibleWidthFraction => 1 - previewUpdateNotifier.value.leftOffset / size.width;
 
   List<double> get offsetBounds => [0, size.width * maxRemainingFactor];
 
@@ -186,16 +188,21 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                                     /// when panning right
                                     newLeftOffset = currentLeftOffset + details.delta.dx;
                                   }
+                                  final atEnd = newLeftOffset >= (size.width * maxRemainingFactor) - 12;
+                                  print('atEnd: $atEnd');
                                   final withinFractionBounds = newWidthFraction >= fractionBounds.first &&
                                       newWidthFraction <= fractionBounds.last;
                                   final withinOffsetBounds =
                                       newLeftOffset >= offsetBounds.first && newLeftOffset <= offsetBounds.last;
+                                  print('withinOffsetBounds: $withinOffsetBounds');
+                                  print('withinFractionBounds: $withinFractionBounds');
                                   if (withinFractionBounds && withinOffsetBounds) {
                                     previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(
                                       previewWidthFraction: newWidthFraction,
                                       leftOffset: newLeftOffset,
                                     );
                                   }
+                                  print('newWidthFraction: $newWidthFraction');
                                 },
                                 child: SizedBox(
                                   height: size.height,
