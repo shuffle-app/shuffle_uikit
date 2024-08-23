@@ -180,7 +180,6 @@ extension FactoryExtention on BuildContext {
     bool? isGradientEnabled,
     bool? blurred,
     EdgeInsetsGeometry? padding,
-    bool showOnCenter = true,
   }) {
     return WidgetsFactory.of(this)!
         .createOutlinedButton(
@@ -190,7 +189,6 @@ extension FactoryExtention on BuildContext {
           isGradientEnabled: isGradientEnabled,
           blurred: blurred,
           padding: padding,
-          showOnCenter: showOnCenter,
         )
         .build(this);
   }

@@ -10,7 +10,6 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
   final bool isGradientEnabled;
   final Color? textColor;
   final Color? backgroundColor;
-  final bool showOnCenter;
 
   const OutlinedTextButton({
     super.key,
@@ -21,7 +20,6 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
     this.textColor,
     this.isGradientEnabled = false,
     this.backgroundColor,
-    this.showOnCenter = true,
   });
 
   @override
@@ -34,7 +32,6 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
     final textWidget = Text(
       text.toUpperCase(),
       style: textStyle,
-      textAlign: showOnCenter ? null : TextAlign.center,
     );
 
     return Material(
@@ -65,20 +62,8 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
           ),
           child: loading ?? false
               ? SpacingFoundation.none
-              : showOnCenter
-                  ? Center(
-                      child: isGradientEnabled
-                          ? GradientableWidget(
-                              gradient: GradientFoundation.attentionCard,
-                              child: textWidget.paddingSymmetric(
-                                vertical: SpacingFoundation.verticalSpacing12,
-                              ),
-                            )
-                          : textWidget.paddingSymmetric(
-                              vertical: SpacingFoundation.verticalSpacing8,
-                            ),
-                    )
-                  : isGradientEnabled
+              : Center(
+                  child: isGradientEnabled
                       ? GradientableWidget(
                           gradient: GradientFoundation.attentionCard,
                           child: textWidget.paddingSymmetric(
@@ -88,6 +73,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
                       : textWidget.paddingSymmetric(
                           vertical: SpacingFoundation.verticalSpacing8,
                         ),
+                ),
         ),
       ),
     ).loadingWrap(loading ?? false, color: colorScheme?.surface);
