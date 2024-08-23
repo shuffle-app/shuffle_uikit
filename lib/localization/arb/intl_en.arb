@@ -766,6 +766,7 @@
   "LeaveFeedback": "Leave feedback",
   "PointsAre": "Points are...",
   "PointsHiwItems": "{item, plural, =0{reputation and currency} =1{increase rating or spend} =2{perform actions} few{earn points} other{earn points}}",
-  "ShuffleExchangeSystem": "...Shuffle exchange system"
+  "ShuffleExchangeSystem": "...Shuffle exchange system",
+  "NoBookingsYet": "No bookings yet"
 
 }

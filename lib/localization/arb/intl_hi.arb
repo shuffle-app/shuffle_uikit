@@ -764,6 +764,7 @@
   "Product": "Product",
   "Total": "Total",
   "YouCanStillRequestRefundYourComplaint": "You can still request a refund on your complaint",
-  "LeaveFeedback": "Leave feedback"
+  "LeaveFeedback": "Leave feedback",
+  "NoBookingsYet": "No bookings yet"
 
 }
