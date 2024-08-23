@@ -737,7 +737,7 @@
   "PleaseAddPhoto": "Пожалуйста, добавьте фото",
   "BookingList": "Список букингов",
   "Tickets": "{count} {count, plural, =0{билетов} =1{билет} =2{билета} few{билета} many{билета} other{билетов}}",
-  "Products": "{count} {count, plural, =0{продутов} =1{проукт} =2{продукта} few{продукта} many{продукта} other{продуктов}}",
+  "Products": "{count} {count, plural, =0{продутов} =1{проукт} =2{продукта} few{продукта} many{продуктов} other{продуктов}}",
   "FullRefund": "Полный возврат",
   "PartialRefund": "Частичный возврат",
   "Contact": "Связаться",
