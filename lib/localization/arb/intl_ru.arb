@@ -766,7 +766,8 @@
   "Product": "Продукт",
   "Total": "Сумма",
   "YouCanStillRequestRefundYourComplaint": "Вы все еще можете запросить возврат средств по вашей жалобе",
-  "LeaveFeedback": "Оставьте отзыв"
+  "LeaveFeedback": "Оставьте отзыв",
+  "NoBookingsYet": "Букингов пока нет"
 
 }
 

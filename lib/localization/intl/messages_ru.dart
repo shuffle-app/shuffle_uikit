@@ -772,6 +772,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Nickname": MessageLookupByLibrary.simpleMessage("Ник"),
         "NicknameIsTakenTryAnotherOne":
             MessageLookupByLibrary.simpleMessage("Ник занят, попробуй другой"),
+        "NoBookingsYet":
+            MessageLookupByLibrary.simpleMessage("Букингов пока нет"),
         "NoConnection": MessageLookupByLibrary.simpleMessage(
             "Потеряно соединение с интернетом"),
         "NoDateSelected":

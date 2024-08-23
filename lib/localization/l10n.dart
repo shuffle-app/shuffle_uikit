@@ -7875,6 +7875,16 @@ class S {
       args: [],
     );
   }
+
+  /// `No bookings yet`
+  String get NoBookingsYet {
+    return Intl.message(
+      'No bookings yet',
+      name: 'NoBookingsYet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
