@@ -246,10 +246,14 @@ extension FactoryExtention on BuildContext {
         .build(this);
   }
 
-  Widget gradientButton({required BaseUiKitButtonData data}) {
+  Widget gradientButton({
+    required BaseUiKitButtonData data,
+    final EdgeInsetsGeometry? padding,
+  }) {
     return WidgetsFactory.of(this)!
         .createGradientButton(
           data: data,
+          padding: padding,
         )
         .build(this);
   }

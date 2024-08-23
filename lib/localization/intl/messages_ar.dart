@@ -684,6 +684,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("Is recurrent"),
         "Islam": MessageLookupByLibrary.simpleMessage("Islam"),
         "Judaism": MessageLookupByLibrary.simpleMessage("Judaism"),
+        "LeaveFeedback": MessageLookupByLibrary.simpleMessage("Leave feedback"),
         "Leisure": MessageLookupByLibrary.simpleMessage("Leisure"),
         "Less": MessageLookupByLibrary.simpleMessage("less"),
         "Limit": MessageLookupByLibrary.simpleMessage("Limit"),
@@ -732,6 +733,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "You must select at least one video"),
         "MustVisitTechnologyConf":
             MessageLookupByLibrary.simpleMessage("Must visit technology conf"),
+        "MyBooking": MessageLookupByLibrary.simpleMessage("My booking"),
         "MyCard": MessageLookupByLibrary.simpleMessage("My card"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("My events"),
         "MyFeedback": MessageLookupByLibrary.simpleMessage("My feedback"),
@@ -757,6 +759,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Nickname": MessageLookupByLibrary.simpleMessage("Nickname"),
         "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(
             "Nickname is taken, try another one"),
+        "NoBookingsYet":
+            MessageLookupByLibrary.simpleMessage("No bookings yet"),
         "NoConnection": MessageLookupByLibrary.simpleMessage(
             "Sorry, no internet connection"),
         "NoDateSelected":
@@ -833,6 +837,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "PasswordMustBeAtLeast8Characters":
             MessageLookupByLibrary.simpleMessage(
                 "Password must be at least 8 characters"),
+        "Past": MessageLookupByLibrary.simpleMessage("Past"),
         "Permissions": MessageLookupByLibrary.simpleMessage("Permissions"),
         "Personal": MessageLookupByLibrary.simpleMessage("Personal"),
         "PersonalCredentials":
@@ -931,6 +936,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
             "Ability to use specialised notifications"),
         "ProTools": MessageLookupByLibrary.simpleMessage("Pro tools"),
+        "Product": MessageLookupByLibrary.simpleMessage("Product"),
         "Products": m49,
         "ProfileAskOrSupportHiwHint": m50,
         "ProfileAskOrSupportHiwSubtitle":
@@ -1175,6 +1181,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "Through a non-\naggregator system \nespecially for you"),
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("Thu"),
+        "Ticket": MessageLookupByLibrary.simpleMessage("Ticket"),
         "TicketFrom": m66,
         "Tickets": m67,
         "Time": MessageLookupByLibrary.simpleMessage("Time"),
@@ -1194,6 +1201,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TopEventsFor": m68,
         "TopNDonatorsReceiveXPoints": m69,
         "TopPlacesRatedBy": m70,
+        "Total": MessageLookupByLibrary.simpleMessage("Total"),
         "TravelerMen": MessageLookupByLibrary.simpleMessage("Traveler"),
         "TravelerWom": MessageLookupByLibrary.simpleMessage("Traveler"),
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("Trial period"),
@@ -1216,6 +1224,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Strange ring. We don\'t know why it is here..."),
         "UnsubscribeFromProfile":
             MessageLookupByLibrary.simpleMessage("Unfollow"),
+        "Upcoming": MessageLookupByLibrary.simpleMessage("Upcoming"),
         "UpcomingEvent": MessageLookupByLibrary.simpleMessage("Upcoming Event"),
         "UpcomingGlobalEvents":
             MessageLookupByLibrary.simpleMessage("Upcoming globals"),
@@ -1314,6 +1323,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("You better check this out"),
         "YouCanGet": MessageLookupByLibrary.simpleMessage("You can get"),
+        "YouCanStillRequestRefundYourComplaint":
+            MessageLookupByLibrary.simpleMessage(
+                "You can still request a refund on your complaint"),
         "YouGetAccessToTrial": MessageLookupByLibrary.simpleMessage(
             "You get access to all benefits free of charge for"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
