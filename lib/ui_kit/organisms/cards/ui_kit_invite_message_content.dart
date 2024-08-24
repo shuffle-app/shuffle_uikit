@@ -126,59 +126,70 @@ class UiKitInviteMessageContent extends StatelessWidget {
                   ],
                 ),
               if (customMessageData != null)
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Text(
-                          customMessageData!.senderUserName,
-                          style: theme?.boldTextTheme.caption1Bold.copyWith(
-                            color: colorScheme.inverseSurface,
+                SizedBox(
+                  height: 28.h,
+                  width: 1.sw - 72,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Flexible(
+                            child: Text(
+                              customMessageData!.senderUserName,
+                              style: theme?.boldTextTheme.caption1Bold.copyWith(
+                                color: colorScheme.inverseSurface,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
                           ),
-                        ),
-                        SpacingFoundation.horizontalSpace4,
-                        if (customMessageData!.senderUserType == UserTileType.influencer) InfluencerAccountMark(),
-                        if (customMessageData!.senderUserType == UserTileType.premium)
-                          PremiumAccountMark(color: colorScheme.inverseSurface),
-                        if (customMessageData!.senderUserType == UserTileType.pro) ProAccountMark(),
-                        if (customMessageData!.receiverUserType != UserTileType.ordinary)
                           SpacingFoundation.horizontalSpace4,
-                        Text(
-                          '${S.current.InvitesVerb.toLowerCase()} ',
-                          style: theme?.boldTextTheme.caption1Medium.copyWith(
-                            color: colorScheme.inverseSurface,
-                            overflow: TextOverflow.ellipsis,
+                          if (customMessageData!.senderUserType == UserTileType.influencer) InfluencerAccountMark(),
+                          if (customMessageData!.senderUserType == UserTileType.premium)
+                            PremiumAccountMark(color: colorScheme.inverseSurface),
+                          if (customMessageData!.senderUserType == UserTileType.pro) ProAccountMark(),
+                          if (customMessageData!.receiverUserType != UserTileType.ordinary)
+                            SpacingFoundation.horizontalSpace4,
+                          Flexible(
+                            child: Text(
+                              '${S.current.InvitesVerb.toLowerCase()} ',
+                              style: theme?.boldTextTheme.caption1Medium.copyWith(
+                                color: colorScheme.inverseSurface,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
                           ),
+                        ],
+                      ),
+                      Expanded(
+                        child: Row(
+                          children: [
+                            Text(
+                              customMessageData!.receiverUserName,
+                              style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
+                            ),
+                            SpacingFoundation.horizontalSpace4,
+                            if (customMessageData!.receiverUserType == UserTileType.influencer) InfluencerAccountMark(),
+                            if (customMessageData!.receiverUserType == UserTileType.premium)
+                              PremiumAccountMark(color: colorScheme.inverseSurface),
+                            if (customMessageData!.receiverUserType == UserTileType.pro) ProAccountMark(),
+                            if (customMessageData!.receiverUserType != UserTileType.ordinary)
+                              SpacingFoundation.horizontalSpace4,
+                            Text(
+                              S.current.InvitesTo.toLowerCase(),
+                              style: theme?.boldTextTheme.caption1Medium.copyWith(
+                                color: colorScheme.inverseSurface,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          customMessageData!.receiverUserName,
-                          style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
-                        ),
-                        SpacingFoundation.horizontalSpace4,
-                        if (customMessageData!.receiverUserType == UserTileType.influencer) InfluencerAccountMark(),
-                        if (customMessageData!.receiverUserType == UserTileType.premium)
-                          PremiumAccountMark(color: colorScheme.inverseSurface),
-                        if (customMessageData!.receiverUserType == UserTileType.pro) ProAccountMark(),
-                        if (customMessageData!.receiverUserType != UserTileType.ordinary)
-                          SpacingFoundation.horizontalSpace4,
-                        Text(
-                          S.current.InvitesTo.toLowerCase(),
-                          style: theme?.boldTextTheme.caption1Medium.copyWith(
-                            color: colorScheme.inverseSurface,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
               if (customMessageData == null)
                 Column(

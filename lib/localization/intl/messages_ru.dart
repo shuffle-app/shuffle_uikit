@@ -888,6 +888,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Заполни дату, пожалуйста"),
         "PleaseFillOutYourWishes": MessageLookupByLibrary.simpleMessage(
             "Заполни пожелания, пожалуйста"),
+        "PleaseFillOutYourWishesAndSelectDate":
+            MessageLookupByLibrary.simpleMessage(
+                "Пожалуйста, заполни пожелания и выбери дату"),
         "PleaseSelectANiche":
             MessageLookupByLibrary.simpleMessage("Выбери нишу, пожалуйста"),
         "PleaseSelectAtLeastNReligion": m45,
