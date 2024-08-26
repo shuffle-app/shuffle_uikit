@@ -7895,6 +7895,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Login with email`
+  String get LogInWithEmail {
+    return Intl.message(
+      'Login with email',
+      name: 'LogInWithEmail',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -768,7 +768,8 @@
   "Total": "Сумма",
   "YouCanStillRequestRefundYourComplaint": "Вы все еще можете запросить возврат средств по вашей жалобе",
   "LeaveFeedback": "Оставьте отзыв",
-  "NoBookingsYet": "Букингов пока нет"
+  "NoBookingsYet": "Букингов пока нет",
+  "LogInWithEmail": "Продолжить с email"
 
 }
 

@@ -766,6 +766,7 @@
   "Total": "Total",
   "YouCanStillRequestRefundYourComplaint": "You can still request a refund on your complaint",
   "LeaveFeedback": "Leave feedback",
-  "NoBookingsYet": "No bookings yet"
+  "NoBookingsYet": "No bookings yet",
+  "LogInWithEmail": "Login with email"
 
 }
