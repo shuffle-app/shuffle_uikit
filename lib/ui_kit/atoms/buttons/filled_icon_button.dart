@@ -32,7 +32,7 @@ class FilledIconButton extends StatelessWidget implements ButtonFactory {
             shape: BoxShape.circle,
           ),
           child: Padding(
-            padding: EdgeInsets.all(EdgeInsetsFoundation.all14),
+            padding: iconInfo?.padding ?? EdgeInsets.all(EdgeInsetsFoundation.all14),
             child: icon ??
                 ImageWidget(
                   iconData: iconInfo?.iconData,

@@ -567,15 +567,6 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ),
         ),
         SpacingFoundation.verticalSpace16,
-        UiKitHoverAnimationTile(
-          title: "Party",
-          onTap: (title) {},
-          isFirst: true,
-        ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
-        UiKitHoverAnimationTile(title: "Party Dance", onTap: (title) {})
-            .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
-        UiKitHoverAnimationTile(title: "Party Swim", onTap: (title) {}, isLast: true)
-            .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
         PropertiesTypeAnimatedButton(
           title: 'Active tiger',
           onTap: () {},

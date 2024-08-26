@@ -76,7 +76,7 @@ class _SelectedChip extends StatelessWidget {
       color: gradient == null ? color : Colors.transparent,
       shape: RoundedRectangleBorder(
         side: BorderSide(
-          color: color ?? (gradient != null ? Colors.white : Colors.transparent),
+          color: color ?? (gradient != null ? Colors.transparent : Colors.transparent),
           width: 1,
         ),
         borderRadius: BorderRadiusFoundation.max,

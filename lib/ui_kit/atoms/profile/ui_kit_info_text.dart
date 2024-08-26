@@ -37,7 +37,7 @@ class UiKitInfoText extends StatelessWidget {
           if (additionalText != null)
             TextSpan(
               text: ' $additionalText',
-              style: boldTextTheme?.caption2Bold.copyWith(color: ColorsFoundation.mutedText),
+              style: boldTextTheme?.caption3Medium.copyWith(color: ColorsFoundation.mutedText),
             ),
         ],
       ),
@@ -59,7 +59,7 @@ class UiKitInfoText extends StatelessWidget {
                 if (additionalText != null)
                   TextSpan(
                     text: ' $additionalText',
-                    style: boldTextTheme?.caption2Bold.copyWith(color: ColorsFoundation.mutedText),
+                    style: boldTextTheme?.caption3Medium.copyWith(color: ColorsFoundation.mutedText),
                   )
               ],
             ),
@@ -70,7 +70,7 @@ class UiKitInfoText extends StatelessWidget {
               text: TextSpan(
                 children: [
                   TextSpan(
-                    text: text,
+                    text: '$text ',
                     style: boldTextTheme?.caption3Medium.copyWith(color: Colors.transparent),
                   ),
                   TextSpan(
@@ -80,7 +80,7 @@ class UiKitInfoText extends StatelessWidget {
                   if (additionalText != null)
                     TextSpan(
                       text: ' $additionalText',
-                      style: boldTextTheme?.caption2Bold.copyWith(color: ColorsFoundation.mutedText),
+                      style: boldTextTheme?.caption3Medium.copyWith(color: ColorsFoundation.transparent),
                     )
                 ],
               ),

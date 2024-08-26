@@ -25,12 +25,17 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
   final ScrollViewKeyboardDismissBehavior? keyboardDismissBehavior;
   final PagedChildBuilderDelegate<T> builderDelegate;
   final double? bodyBottomSpace;
+  final double bottomSheetHeight;
   final double? childrenSpacing;
   final Key? animatedListKey;
   final String? onIWidgetInfoString;
   final EdgeInsets? padding;
   final bool reverse;
   final bool hideBottomSpace;
+
+  /// Additional bottom padding for reply message in chat screen
+  /// defaults to 0
+  final double keyboardPadding;
 
   const BlurredAppPageWithPagination({
     super.key,
@@ -57,6 +62,8 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
     this.bodyBottomSpace,
     this.onIWidgetInfoString,
     this.hideBottomSpace = false,
+    this.keyboardPadding = 0,
+    this.bottomSheetHeight = 0,
   });
 
   @override
@@ -117,16 +124,9 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
         KeyboardVisibilityBuilder(
           builder: (context, visible) {
             return AnimatedContainer(
-              duration: const Duration(milliseconds: 300),
+              duration: const Duration(milliseconds: 150),
               curve: Curves.decelerate,
-              height: 1.sh -
-                  expandedHeight -
-                  (hideBottomSpace ? SpacingFoundation.verticalSpacing24 : bodyBottomSpace ?? 0) -
-                  (hideBottomSpace
-                      ? 0
-                      : visible
-                          ? 0.385.sh
-                          : 0),
+              height: 1.sh - expandedHeight - (bottomSheetHeight) - (bodyBottomSpace ?? 0) - keyboardPadding,
               width: 1.sw,
               alignment: Alignment.topCenter,
               child: PagedListView.separated(

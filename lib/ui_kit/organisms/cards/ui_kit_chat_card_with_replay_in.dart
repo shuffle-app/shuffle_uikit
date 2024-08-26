@@ -20,6 +20,7 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
     this.avatarUrl,
     this.senderName,
     this.senderType,
+    this.onUsernameTapped,
   });
 
   final String replyUserAvatar;
@@ -38,6 +39,7 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
   final int id;
   final int replyMessageId;
   final bool showAvatar;
+  final VoidCallback? onUsernameTapped;
 
   bool get _dataIsValid => avatarUrl != null && senderName != null && senderType != null;
 
@@ -74,10 +76,13 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 if (senderNickname != null)
-                  Text(
-                    '@$senderNickname',
-                    style: theme?.regularTextTheme.caption4Regular.copyWith(
-                      color: ColorsFoundation.mutedText,
+                  GestureDetector(
+                    onTap: onUsernameTapped,
+                    child: Text(
+                      '@$senderNickname',
+                      style: theme?.regularTextTheme.caption4Regular.copyWith(
+                        color: ColorsFoundation.mutedText,
+                      ),
                     ),
                   ),
                 Text(

@@ -8,13 +8,15 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsAnimationsGen {
   const $AssetsAnimationsGen();
 
+  /// Directory path: assets/animations/lottie
   $AssetsAnimationsLottieGen get lottie => const $AssetsAnimationsLottieGen();
 }
 
@@ -53,7 +55,10 @@ class $AssetsFontsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// Directory path: assets/images/png
   $AssetsImagesPngGen get png => const $AssetsImagesPngGen();
+
+  /// Directory path: assets/images/svg
   $AssetsImagesSvgGen get svg => const $AssetsImagesSvgGen();
 }
 
@@ -117,6 +122,9 @@ class $AssetsAnimationsLottieGen {
 
 class $AssetsImagesPngGen {
   const $AssetsImagesPngGen();
+
+  /// File path: assets/images/png/Action.png
+  AssetGenImage get action => const AssetGenImage('assets/images/png/Action.png');
 
   /// File path: assets/images/png/Aubergine.png
   AssetGenImage get aubergine => const AssetGenImage('assets/images/png/Aubergine.png');
@@ -183,6 +191,12 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Drag-card.png
   AssetGenImage get dragCard => const AssetGenImage('assets/images/png/Drag-card.png');
+
+  /// File path: assets/images/png/Earning.png
+  AssetGenImage get earning => const AssetGenImage('assets/images/png/Earning.png');
+
+  /// File path: assets/images/png/Encrease-raiting.png
+  AssetGenImage get encreaseRaiting => const AssetGenImage('assets/images/png/Encrease-raiting.png');
 
   /// File path: assets/images/png/Events.png
   AssetGenImage get events => const AssetGenImage('assets/images/png/Events.png');
@@ -373,6 +387,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Real-estate.png
   AssetGenImage get realEstate => const AssetGenImage('assets/images/png/Real-estate.png');
 
+  /// File path: assets/images/png/Reputation.png
+  AssetGenImage get reputation => const AssetGenImage('assets/images/png/Reputation.png');
+
   /// File path: assets/images/png/Result.png
   AssetGenImage get result => const AssetGenImage('assets/images/png/Result.png');
 
@@ -469,6 +486,7 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/atmosphere.png
   AssetGenImage get atmosphere => const AssetGenImage('assets/images/png/atmosphere.png');
 
+  /// Directory path: assets/images/png/avatars
   $AssetsImagesPngAvatarsGen get avatars => const $AssetsImagesPngAvatarsGen();
 
   /// File path: assets/images/png/balloons.png
@@ -579,6 +597,7 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/place.png
   AssetGenImage get place => const AssetGenImage('assets/images/png/place.png');
 
+  /// Directory path: assets/images/png/preference_questions
   $AssetsImagesPngPreferenceQuestionsGen get preferenceQuestions => const $AssetsImagesPngPreferenceQuestionsGen();
 
   /// File path: assets/images/png/production.png
@@ -670,6 +689,7 @@ class $AssetsImagesPngGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        action,
         aubergine,
         baggage,
         bell,
@@ -692,6 +712,8 @@ class $AssetsImagesPngGen {
         discount,
         donations,
         dragCard,
+        earning,
+        encreaseRaiting,
         events,
         favoritePlace,
         feedback,
@@ -755,6 +777,7 @@ class $AssetsImagesPngGen {
         rating,
         reaction,
         realEstate,
+        reputation,
         result,
         reward,
         rockNRollHands,
@@ -2366,9 +2389,16 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  });
 
   final String _assetName;
+
+  final Size? size;
+  final Set<String> flavors;
 
   Image image({
     Key? key,
@@ -2440,9 +2470,22 @@ class AssetGenImage {
 }
 
 class SvgGenImage {
-  const SvgGenImage(this._assetName);
+  const SvgGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  }) : _isVecFormat = false;
+
+  const SvgGenImage.vec(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  }) : _isVecFormat = true;
 
   final String _assetName;
+  final Size? size;
+  final Set<String> flavors;
+  final bool _isVecFormat;
 
   SvgPicture svg({
     Key? key,
@@ -2457,19 +2500,32 @@ class SvgGenImage {
     WidgetBuilder? placeholderBuilder,
     String? semanticsLabel,
     bool excludeFromSemantics = false,
-    SvgTheme theme = const SvgTheme(),
+    SvgTheme? theme,
     ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
     @deprecated bool cacheColorFilter = false,
   }) {
-    return SvgPicture.asset(
-      _assetName,
+    final BytesLoader loader;
+    if (_isVecFormat) {
+      loader = AssetBytesLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+      );
+    } else {
+      loader = SvgAssetLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+        theme: theme,
+      );
+    }
+    return SvgPicture(
+      loader,
       key: key,
       matchTextDirection: matchTextDirection,
-      bundle: bundle,
-      package: package,
       width: width,
       height: height,
       fit: fit,
@@ -2478,10 +2534,7 @@ class SvgGenImage {
       placeholderBuilder: placeholderBuilder,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
-      theme: theme,
-      colorFilter: colorFilter,
-      color: color,
-      colorBlendMode: colorBlendMode,
+      colorFilter: colorFilter ?? (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );
@@ -2493,9 +2546,13 @@ class SvgGenImage {
 }
 
 class LottieGenImage {
-  const LottieGenImage(this._assetName);
+  const LottieGenImage(
+    this._assetName, {
+    this.flavors = const {},
+  });
 
   final String _assetName;
+  final Set<String> flavors;
 
   LottieBuilder lottie({
     Animation<double>? controller,

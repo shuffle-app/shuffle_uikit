@@ -463,6 +463,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: data.onPressed,
         loading: data.loading,
         borderColor: borderColor,
+        textColor: data.textColor,
+        backgroundColor: data.backgroundColor,
         isGradientEnabled: isGradientEnabled ?? false,
       );
     } else {
@@ -473,6 +475,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
   @override
   ButtonFactory createGradientButton({
     required BaseUiKitButtonData data,
+    final EdgeInsetsGeometry? padding,
   }) {
     final hasIcon = data.iconWidget != null || data.iconInfo != null;
     final gradientIconButton = hasIcon && (data.text?.isEmpty ?? true);
@@ -491,6 +494,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         onPressed: data.onPressed,
         loading: data.loading,
         autoSizeGroup: data.autoSizeGroup,
+        padding: padding,
       );
     } else if (hasIcon && (data.text?.isNotEmpty ?? false)) {
       return GradientButtonWithTextAndIcon(
