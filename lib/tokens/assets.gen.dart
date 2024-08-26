@@ -492,6 +492,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/balloons.png
   AssetGenImage get balloons => const AssetGenImage('assets/images/png/balloons.png');
 
+  /// File path: assets/images/png/blur_back_logo.png
+  AssetGenImage get blurBackLogo => const AssetGenImage('assets/images/png/blur_back_logo.png');
+
   /// File path: assets/images/png/catering.png
   AssetGenImage get catering => const AssetGenImage('assets/images/png/catering.png');
 
@@ -811,6 +814,7 @@ class $AssetsImagesPngGen {
         atheist,
         atmosphere,
         balloons,
+        blurBackLogo,
         catering,
         choosePlan,
         clothing,
@@ -1404,6 +1408,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/logout.svg
   SvgGenImage get logout => const SvgGenImage('assets/images/svg/logout.svg');
 
+  /// File path: assets/images/svg/mail.svg
+  SvgGenImage get mail => const SvgGenImage('assets/images/svg/mail.svg');
+
   /// File path: assets/images/svg/manicure.svg
   SvgGenImage get manicure => const SvgGenImage('assets/images/svg/manicure.svg');
 
@@ -1945,6 +1952,7 @@ class $AssetsImagesSvgGen {
         locationSearching,
         logo,
         logout,
+        mail,
         manicure,
         mapOutlined,
         mask,
