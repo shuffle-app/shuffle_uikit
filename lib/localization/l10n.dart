@@ -7541,21 +7541,171 @@ class S {
     );
   }
 
-  /// `Please enter a description`
-  String get PleaseEnterValidDescription {
-    return Intl.message(
-      'Please enter a description',
-      name: 'PleaseEnterValidDescription',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Please add photo`
   String get PleaseAddPhoto {
     return Intl.message(
       'Please add photo',
       name: 'PleaseAddPhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latest`
+  String get Latest {
+    return Intl.message(
+      'Latest',
+      name: 'Latest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unread`
+  String get Unread {
+    return Intl.message(
+      'Unread',
+      name: 'Unread',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =0{+{count} video-reactions} =1{+{count} video-reaction} =2{+{count} video-reactions} few{+{count} video-reactions} many{+{count} video-reactions} other{+{count} video-reactions}}`
+  String PlusXNewVideoReactions(num count) {
+    return Intl.plural(
+      count,
+      zero: '+$count video-reactions',
+      one: '+$count video-reaction',
+      two: '+$count video-reactions',
+      few: '+$count video-reactions',
+      many: '+$count video-reactions',
+      other: '+$count video-reactions',
+      name: 'PlusXNewVideoReactions',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count, plural, =0{+{count} New reviews} =1{+{count} New review} =2{+{count} New reviews} few{+{count} New reviews} many{+{count} New reviews} other{+{count} New reviews}}`
+  String PlusXNewReviews(num count) {
+    return Intl.plural(
+      count,
+      zero: '+$count New reviews',
+      one: '+$count New review',
+      two: '+$count New reviews',
+      few: '+$count New reviews',
+      many: '+$count New reviews',
+      other: '+$count New reviews',
+      name: 'PlusXNewReviews',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count, plural, =0{+{count} New voices} =1{+{count} New voice} =2{+{count} New voices} few{+{count} New voices} many{+{count} New voices} other{+{count} New voices}}`
+  String PlusXNewVoices(num count) {
+    return Intl.plural(
+      count,
+      zero: '+$count New voices',
+      one: '+$count New voice',
+      two: '+$count New voices',
+      few: '+$count New voices',
+      many: '+$count New voices',
+      other: '+$count New voices',
+      name: 'PlusXNewVoices',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `+ New video`
+  String get PlusXNewVideos {
+    return Intl.message(
+      '+ New video',
+      name: 'PlusXNewVideos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `+ New route`
+  String get PlusXNewRoutes {
+    return Intl.message(
+      '+ New route',
+      name: 'PlusXNewRoutes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `+ New interview`
+  String get PlusXNewInterviews {
+    return Intl.message(
+      '+ New interview',
+      name: 'PlusXNewInterviews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `+ New assignment`
+  String get PlusXNewContests {
+    return Intl.message(
+      '+ New assignment',
+      name: 'PlusXNewContests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =0{+{count} comments} =1{+{count} comment} =2{+{count} comments} few{+{count} comments} many{+{count} comments} other{+{count} comments}}`
+  String PlusXNewChatComments(num count) {
+    return Intl.plural(
+      count,
+      zero: '+$count comments',
+      one: '+$count comment',
+      two: '+$count comments',
+      few: '+$count comments',
+      many: '+$count comments',
+      other: '+$count comments',
+      name: 'PlusXNewChatComments',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count, plural, =0{+{count} Photos} =1{+{count} Photo} =2{+{count} Photos} few{+{count} Photos} many{+{count} Photos} other{+{count} Photos}}`
+  String PlusXPhotos(num count) {
+    return Intl.plural(
+      count,
+      zero: '+$count Photos',
+      one: '+$count Photo',
+      two: '+$count Photos',
+      few: '+$count Photos',
+      many: '+$count Photos',
+      other: '+$count Photos',
+      name: 'PlusXPhotos',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Don't live alone, subscribe to people you like`
+  String get DontLiveAlone {
+    return Intl.message(
+      'Don\'t live alone, subscribe to people you like',
+      name: 'DontLiveAlone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a description`
+  String get PleaseEnterValidDescription {
+    return Intl.message(
+      'Please enter a description',
+      name: 'PleaseEnterValidDescription',
       desc: '',
       args: [],
     );
@@ -7886,6 +8036,16 @@ class S {
     );
   }
 
+  /// `Login with email`
+  String get LogInWithEmail {
+    return Intl.message(
+      'Login with email',
+      name: 'LogInWithEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `No bookings yet`
   String get NoBookingsYet {
     return Intl.message(
@@ -7896,13 +8056,19 @@ class S {
     );
   }
 
-  /// `Login with email`
-  String get LogInWithEmail {
-    return Intl.message(
-      'Login with email',
-      name: 'LogInWithEmail',
+  /// `{count, plural, =0{+{count} respects} =1{+{count} respect} =2{+{count} respects} few{+{count} respects} many{+{count} respects} other{+{count} respects}}`
+  String PlusXNewRespects(num count) {
+    return Intl.plural(
+      count,
+      zero: '+$count respects',
+      one: '+$count respect',
+      two: '+$count respects',
+      few: '+$count respects',
+      many: '+$count respects',
+      other: '+$count respects',
+      name: 'PlusXNewRespects',
       desc: '',
-      args: [],
+      args: [count],
     );
   }
 }

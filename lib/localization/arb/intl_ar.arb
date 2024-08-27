@@ -769,6 +769,19 @@
   "PointsAre": "Points are...",
   "ShuffleExchangeSystem": "...Shuffle exchange system",
   "NoBookingsYet": "No bookings yet",
-  "LogInWithEmail": "Login with email"
+  "LogInWithEmail": "Login with email",
+  "Latest": "Latest",
+  "Unread": "Unread",
+  "PlusXNewVideoReactions": "{count, plural, =0{+{count} video-reactions} =1{+{count} video-reaction} =2{+{count} video-reactions} few{+{count} video-reactions} many{+{count} video-reactions} other{+{count} video-reactions}}",
+  "PlusXNewReviews": "{count, plural, =0{+{count} New reviews} =1{+{count} New review} =2{+{count} New reviews} few{+{count} New reviews} many{+{count} New reviews} other{+{count} New reviews}}",
+  "PlusXNewVoices": "{count, plural, =0{+{count} New voices} =1{+{count} New voice} =2{+{count} New voices} few{+{count} New voices} many{+{count} New voices} other{+{count} New voices}}",
+  "PlusXNewVideos": "+ New video",
+  "PlusXNewRoutes": "+ New route",
+  "PlusXNewInterviews": "+ New interview",
+  "PlusXNewContests": "+ New assignment",
+  "PlusXNewChatComments": "{count, plural, =0{+{count} comments} =1{+{count} comment} =2{+{count} comments} few{+{count} comments} many{+{count} comments} other{+{count} comments}}",
+  "PlusXPhotos": "{count, plural, =0{+{count} Photos} =1{+{count} Photo} =2{+{count} Photos} few{+{count} Photos} many{+{count} Photos} other{+{count} Photos}}",
+  "DontLiveAlone": "Don't live alone, subscribe to people you like",
+  "PlusXNewRespects": "{count, plural, =0{+{count} respects} =1{+{count} respect} =2{+{count} respects} few{+{count} respects} many{+{count} respects} other{+{count} respects}}"
 
 }

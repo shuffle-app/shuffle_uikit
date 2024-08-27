@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BaseUiKitUserTileData {
@@ -7,7 +9,9 @@ class BaseUiKitUserTileData {
   final UserTileType? type;
   final void Function()? onTap;
   final bool? showBadge;
+  final bool? noMaterialOverlay;
   final String? speciality;
+  final Color? userNameTextColor;
 
   BaseUiKitUserTileData({
     this.name,
@@ -17,5 +21,7 @@ class BaseUiKitUserTileData {
     this.onTap,
     this.showBadge,
     this.speciality,
+    this.noMaterialOverlay,
+    this.userNameTextColor,
   });
 }
