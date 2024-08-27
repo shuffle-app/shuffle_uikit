@@ -768,7 +768,7 @@
   "PointsHiwItems": "{item, plural, =0{reputation and currency} =1{increase rating or spend} =2{perform actions} few{earn points} other{earn points}}",
   "PointsAre": "Points are...",
   "ShuffleExchangeSystem": "...Shuffle exchange system",
-  "NoBookingsYet": "No bookings yet"
-
+  "NoBookingsYet": "No bookings yet",
+  "LogInWithEmail": "Login with email"
 
 }
