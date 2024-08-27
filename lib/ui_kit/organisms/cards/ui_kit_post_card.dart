@@ -11,11 +11,11 @@ class UiKitPostCard extends StatelessWidget {
   final String authorSpeciality;
   final String text;
   final UserTileType authorUserType;
-  final int heartEyesCount;
-  final int likesCount;
-  final int sunglassesCount;
-  final int firesCount;
-  final int smileyCount;
+  final int? heartEyesCount;
+  final int? likesCount;
+  final int? sunglassesCount;
+  final int? firesCount;
+  final int? smileyCount;
   final bool hasNewMark;
 
   const UiKitPostCard({
@@ -26,11 +26,11 @@ class UiKitPostCard extends StatelessWidget {
     required this.authorSpeciality,
     required this.text,
     required this.authorUserType,
-    required this.heartEyesCount,
-    required this.likesCount,
-    required this.sunglassesCount,
-    required this.firesCount,
-    required this.smileyCount,
+    this.heartEyesCount,
+    this.likesCount,
+    this.sunglassesCount,
+    this.firesCount,
+    this.smileyCount,
     this.hasNewMark = false,
   }) : super(key: key);
 
@@ -80,27 +80,27 @@ class UiKitPostCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     UiKitHeartEyesReaction(
-                      reactionsCount: heartEyesCount,
+                      reactionsCount: heartEyesCount ?? 0,
                       textColor: reactionTextColor,
                     ),
                     SpacingFoundation.horizontalSpace4,
                     UiKitLikeReaction(
-                      reactionsCount: likesCount,
+                      reactionsCount: likesCount ?? 0,
                       textColor: reactionTextColor,
                     ),
                     SpacingFoundation.horizontalSpace4,
                     UiKitFireReaction(
-                      reactionsCount: firesCount,
+                      reactionsCount: firesCount ?? 0,
                       textColor: reactionTextColor,
                     ),
                     SpacingFoundation.horizontalSpace4,
                     UiKitSunglassesReaction(
-                      reactionsCount: sunglassesCount,
+                      reactionsCount: sunglassesCount ?? 0,
                       textColor: reactionTextColor,
                     ),
                     SpacingFoundation.horizontalSpace4,
                     UiKitSmileyReaction(
-                      reactionsCount: smileyCount,
+                      reactionsCount: smileyCount ?? 0,
                       textColor: reactionTextColor,
                     ),
                   ],
