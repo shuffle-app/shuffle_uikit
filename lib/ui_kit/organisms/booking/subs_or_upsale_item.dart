@@ -10,8 +10,9 @@ class SubsOrUpsaleItem extends StatelessWidget {
   final VoidCallback? removeItem;
   final Function()? onEdit;
   final bool isSubs;
+  late final bool actualLimitIsFull;
 
-  const SubsOrUpsaleItem({
+  SubsOrUpsaleItem({
     super.key,
     this.description,
     this.limit,
@@ -21,7 +22,13 @@ class SubsOrUpsaleItem extends StatelessWidget {
     this.removeItem,
     this.onEdit,
     this.isSubs = true,
-  });
+  }) {
+    if (int.tryParse(actualLimit ?? '0') == int.tryParse(limit ?? '0')) {
+      actualLimitIsFull = true;
+    } else {
+      actualLimitIsFull = false;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,31 +56,51 @@ class SubsOrUpsaleItem extends StatelessWidget {
                   child: UiKitCardWrapper(
                     width: 124.w,
                     borderRadius: BorderRadiusFoundation.all12,
-                    child: ImageWidget(
-                      height: 1.sw <= 380 ? 90.h : 60.h,
-                      link: photoLink,
-                      fit: BoxFit.fill,
-                    ),
+                    child: actualLimitIsFull
+                        ? Stack(
+                            children: [
+                              ImageWidget(
+                                height: 1.sw <= 380 ? 90.h : 60.h,
+                                link: photoLink,
+                                fit: BoxFit.fill,
+                              ),
+                              DecoratedBox(
+                                decoration: BoxDecoration(
+                                  color: ColorsFoundation.darkNeutral500.withOpacity(0.5),
+                                ),
+                                child: SizedBox(
+                                  width: 124.w,
+                                  height: 1.sw <= 380 ? 90.h : 60.h,
+                                ),
+                              ),
+                            ],
+                          )
+                        : ImageWidget(
+                            height: 1.sw <= 380 ? 90.h : 60.h,
+                            link: photoLink,
+                            fit: BoxFit.fill,
+                          ),
                   ).paddingOnly(
                     top: 4,
                     right: 4,
                   ),
                 ),
               ),
-              Positioned(
-                top: 0,
-                right: 0,
-                child: context.outlinedButton(
-                  hideBorder: true,
-                  data: BaseUiKitButtonData(
-                    onPressed: removeItem,
-                    iconInfo: BaseUiKitButtonIconData(
-                      iconData: ShuffleUiKitIcons.x,
-                      size: 12,
+              if (removeItem != null)
+                Positioned(
+                  top: 0,
+                  right: 0,
+                  child: context.outlinedButton(
+                    hideBorder: true,
+                    data: BaseUiKitButtonData(
+                      onPressed: removeItem,
+                      iconInfo: BaseUiKitButtonIconData(
+                        iconData: ShuffleUiKitIcons.x,
+                        size: 12,
+                      ),
                     ),
                   ),
                 ),
-              ),
               if (limit != null && limit!.isNotEmpty)
                 Positioned(
                   bottom: 4.h,
@@ -92,6 +119,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
                 ? theme?.regularTextTheme.caption4.copyWith(
                     fontSize: 9.w,
                     fontWeight: FontWeight.w600,
+                    color: actualLimitIsFull ? ColorsFoundation.mutedText : null,
                   )
                 : theme?.boldTextTheme.caption3Medium,
             maxLines: 1,
@@ -100,7 +128,9 @@ class SubsOrUpsaleItem extends StatelessWidget {
           SpacingFoundation.verticalSpace2,
           Text(
             description ?? '',
-            style: theme?.regularTextTheme.caption4Regular,
+            style: theme?.regularTextTheme.caption4Regular.copyWith(
+              color: actualLimitIsFull ? ColorsFoundation.mutedText : null,
+            ),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
