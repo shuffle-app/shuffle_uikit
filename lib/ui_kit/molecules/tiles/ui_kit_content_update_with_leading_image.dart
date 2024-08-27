@@ -7,7 +7,7 @@ class UiKitContentUpdateWithLeadingImage extends UiKitContentUpdateWidget {
   const UiKitContentUpdateWithLeadingImage({
     Key? key,
     required String imageUrl,
-    required this.updateIconUrl,
+    this.updateIconUrl = '',
     required super.title,
     super.subtitle,
   }) : super(leadingImageUrl: imageUrl);
@@ -48,13 +48,14 @@ class UiKitContentUpdateWithLeadingImage extends UiKitContentUpdateWidget {
                       style: boldTextTheme?.caption3Medium,
                     ),
                     SpacingFoundation.horizontalSpace4,
-                    ImageWidget(
-                      link: updateIconUrl,
-                      color: colorScheme?.inverseSurface,
-                      height: 0.040625.sw,
-                      width: 0.040625.sw,
-                      fit: BoxFit.cover,
-                    ),
+                    if (updateIconUrl.isNotEmpty)
+                      ImageWidget(
+                        link: updateIconUrl,
+                        color: colorScheme?.inverseSurface,
+                        height: 0.040625.sw,
+                        width: 0.040625.sw,
+                        fit: BoxFit.cover,
+                      ),
                   ],
                 ),
                 if (subtitle != null)

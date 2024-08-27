@@ -5,24 +5,6 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
-  static const brownGradient = LinearGradient(
-    colors: [
-      ColorsFoundation.brownGradientBegin,
-      ColorsFoundation.brownGradientEnd,
-    ],
-    begin: Alignment.topCenter,
-    end: Alignment.bottomCenter,
-  );
-
-  static const cyanGradient = LinearGradient(
-    colors: [
-      ColorsFoundation.cyanGradientBegin,
-      ColorsFoundation.cyanGradientEnd,
-    ],
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-  );
-
   static const goldGradient = LinearGradient(
     colors: [
       ColorsFoundation.goldGradientBegin,

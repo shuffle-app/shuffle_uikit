@@ -92,6 +92,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
     final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
+    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
 
     return BlurredAppBarPage(
       title: 'Edit Profile',
@@ -186,7 +187,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                     height: 0.125.sw * 1.7,
                     width: 0.125.sw,
                     title: S.current.PlusXNewVideoReactions(3).toLowerCase(),
-                    gradient: GradientFoundation.brownGradient,
+                    imagePath: GraphicsFoundation.instance.png.avatars.avatar13.path,
                   ),
                 ],
               ),
@@ -194,14 +195,71 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             UiKitContentUpdateWithLeadingImage(
               imageUrl: GraphicsFoundation.instance.png.mapMock.path,
               updateIconUrl: GraphicsFoundation.instance.svg.landmark.path,
-              title: S.current.PlusXNewRoutes(10),
+              title: S.current.PlusXNewRoutes,
               subtitle: 'Virgins on the beach',
             ),
             UiKitContentUpdateWithLeadingImage(
               imageUrl: GraphicsFoundation.instance.png.place.path,
               updateIconUrl: GraphicsFoundation.instance.svg.playOutline.path,
-              title: S.current.PlusXNewInterviews(10),
+              title: S.current.PlusXNewInterviews,
               subtitle: 'Virgins on the beach',
+            ),
+            UiKitCustomChildContentUpdateWidget(
+              height: 0.75 * 0.125.sw,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadiusFoundation.all8,
+                    child: ImageWidget(
+                      link: GraphicsFoundation.instance.png.placeSocial1.path,
+                      width: 0.125.sw,
+                      height: 0.75 * 0.125.sw,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  SpacingFoundation.horizontalSpace8,
+                  UiKitContentUpdatePlaceholder(
+                    height: 0.75 * 0.125.sw,
+                    width: 0.125.sw,
+                    title: S.current.PlusXNewRespects(2).toLowerCase(),
+                    imagePath: GraphicsFoundation.instance.png.placeSocial2.path,
+                  ),
+                ],
+              ),
+            ),
+            UiKitContentUpdateWithLeadingImage(
+              imageUrl: GraphicsFoundation.instance.png.spinnerTextBanner2.path,
+              updateIconUrl: GraphicsFoundation.instance.svg.playOutline.path,
+              title: S.current.PlusXNewVideos,
+              subtitle: 'Virgins on the beach',
+            ),
+            UiKitContestUpdateWidget(
+              title: S.current.PlusXNewContests,
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                  'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                  'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              contestVideo: UiKitReactionPreview(
+                viewed: false,
+                isEmpty: false,
+                imagePath: GraphicsFoundation.instance.png.serviceSocial3.path,
+                customHeight: 0.125.sw * 1.7,
+                customWidth: 0.125.sw,
+              ),
+              height: 0.125.sw * 1.7,
+            ),
+            UiKitOnlyTextContentUpdateWidget(
+              updateIcon: GraphicsFoundation.instance.svg.message.path,
+              title: '${S.current.Chat.toUpperCase()} ${S.current.PlusXNewChatComments(10)}',
+              text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
+                  'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
+                  'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+              titleTrailing: Text(
+                formatDifference(DateTime.now().subtract(const Duration(hours: 2))),
+                style: regularTextTheme?.caption3.copyWith(color: ColorsFoundation.mutedText),
+                textAlign: TextAlign.end,
+              ),
             ),
           ],
         ).paddingSymmetric(horizontal: 16),

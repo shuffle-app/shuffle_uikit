@@ -27,7 +27,7 @@ class UiKitAnimatedPullToShowRow extends StatelessWidget {
           color: colorScheme?.surface2,
           borderRadius: BorderRadiusFoundation.zero,
           padding: EdgeInsets.all(EdgeInsetsFoundation.all16),
-          height: (0.125.sw + (SpacingFoundation.verticalSpacing16 * 2)) * progressNotifier.value,
+          height: (0.15.sw + (SpacingFoundation.verticalSpacing16 * 2)) * progressNotifier.value,
           child: AnimatedOpacity(
             duration: const Duration(milliseconds: 20),
             opacity: progressNotifier.value,

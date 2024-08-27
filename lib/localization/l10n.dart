@@ -1176,6 +1176,16 @@ class S {
     );
   }
 
+  /// `Please fill out your wishes and select date`
+  String get PleaseFillOutYourWishesAndSelectDate {
+    return Intl.message(
+      'Please fill out your wishes and select date',
+      name: 'PleaseFillOutYourWishesAndSelectDate',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Type here`
   String get TypeHere {
     return Intl.message(
@@ -7609,80 +7619,56 @@ class S {
     );
   }
 
-  /// `{count, plural, =0{+{count} New videos} =1{+{count} New video} =2{+{count} New videos} few{+{count} New videos} many{+{count} New videos} other{+{count} New videos}}`
-  String PlusXNewVideos(num count) {
-    return Intl.plural(
-      count,
-      zero: '+$count New videos',
-      one: '+$count New video',
-      two: '+$count New videos',
-      few: '+$count New videos',
-      many: '+$count New videos',
-      other: '+$count New videos',
+  /// `+ New video`
+  String get PlusXNewVideos {
+    return Intl.message(
+      '+ New video',
       name: 'PlusXNewVideos',
       desc: '',
-      args: [count],
+      args: [],
     );
   }
 
-  /// `{count, plural, =0{+{count} New routes} =1{+{count} New route} =2{+{count} New routes} few{+{count} New routes} many{+{count} New routes} other{+{count} New routes}}`
-  String PlusXNewRoutes(num count) {
-    return Intl.plural(
-      count,
-      zero: '+$count New routes',
-      one: '+$count New route',
-      two: '+$count New routes',
-      few: '+$count New routes',
-      many: '+$count New routes',
-      other: '+$count New routes',
+  /// `+ New route`
+  String get PlusXNewRoutes {
+    return Intl.message(
+      '+ New route',
       name: 'PlusXNewRoutes',
       desc: '',
-      args: [count],
+      args: [],
     );
   }
 
-  /// `{count, plural, =0{+{count} New interviews} =1{+{count} New interview} =2{+{count} New interviews} few{+{count} New interviews} many{+{count} New interviews} other{+{count} New interviews}}`
-  String PlusXNewInterviews(num count) {
-    return Intl.plural(
-      count,
-      zero: '+$count New interviews',
-      one: '+$count New interview',
-      two: '+$count New interviews',
-      few: '+$count New interviews',
-      many: '+$count New interviews',
-      other: '+$count New interviews',
+  /// `+ New interview`
+  String get PlusXNewInterviews {
+    return Intl.message(
+      '+ New interview',
       name: 'PlusXNewInterviews',
       desc: '',
-      args: [count],
+      args: [],
     );
   }
 
-  /// `{count, plural, =0{+{count} New contests} =1{+{count} New contest} =2{+{count} New contests} few{+{count} New contests} many{+{count} New contests} other{+{count} New contests}}`
-  String PlusXNewContests(num count) {
-    return Intl.plural(
-      count,
-      zero: '+$count New contests',
-      one: '+$count New contest',
-      two: '+$count New contests',
-      few: '+$count New contests',
-      many: '+$count New contests',
-      other: '+$count New contests',
+  /// `+ New assignment`
+  String get PlusXNewContests {
+    return Intl.message(
+      '+ New assignment',
       name: 'PlusXNewContests',
       desc: '',
-      args: [count],
+      args: [],
     );
   }
 
-  /// `{count, plural, =0{+{count} New chat comments} =1{+{count} New chat comment} =2{+{count} New chat comments} few{+{count} New chat comments} many{+{count} New chat comments} other{+{count} New chat comments}}`
+  /// `{count, plural, =0{+{count} comments} =1{+{count} comment} =2{+{count} comments} few{+{count} comments} many{+{count} comments} other{+{count} comments}}`
   String PlusXNewChatComments(num count) {
     return Intl.plural(
       count,
-      zero: '+$count New chat comments',
-      one: '+$count New chat comment',
-      two: '+$count New chat comments',
-      few: '+$count New chat comments',
-      many: '+$count New chat comments',
-      other: '+$count New chat comments',
+      zero: '+$count comments',
+      one: '+$count comment',
+      two: '+$count comments',
+      few: '+$count comments',
+      many: '+$count comments',
+      other: '+$count comments',
       name: 'PlusXNewChatComments',
       desc: '',
       args: [count],
@@ -7712,6 +7698,367 @@ class S {
       name: 'DontLiveAlone',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `Please enter a description`
+  String get PleaseEnterValidDescription {
+    return Intl.message(
+      'Please enter a description',
+      name: 'PleaseEnterValidDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking list`
+  String get BookingList {
+    return Intl.message(
+      'Booking list',
+      name: 'BookingList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{tickets} =1{ticket} =2{tickets} few{tickets} many{tickets} other{tickets}}`
+  String Tickets(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'tickets', one: 'ticket', two: 'tickets', few: 'tickets', many: 'tickets', other: 'tickets')}',
+      name: 'Tickets',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{product} =1{products} =2{products} few{products} many{products} other{products}}`
+  String Products(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'product', one: 'products', two: 'products', few: 'products', many: 'products', other: 'products')}',
+      name: 'Products',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Full refund`
+  String get FullRefund {
+    return Intl.message(
+      'Full refund',
+      name: 'FullRefund',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Partial refund`
+  String get PartialRefund {
+    return Intl.message(
+      'Partial refund',
+      name: 'PartialRefund',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact`
+  String get Contact {
+    return Intl.message(
+      'Contact',
+      name: 'Contact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact`
+  String get ContactWith {
+    return Intl.message(
+      'Contact',
+      name: 'ContactWith',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `by message`
+  String get ByMessage {
+    return Intl.message(
+      'by message',
+      name: 'ByMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `by e-mail`
+  String get ByEmail {
+    return Intl.message(
+      'by e-mail',
+      name: 'ByEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Refund everyone`
+  String get RefundEveryone {
+    return Intl.message(
+      'Refund everyone',
+      name: 'RefundEveryone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `requests`
+  String get Requests {
+    return Intl.message(
+      'requests',
+      name: 'Requests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `full`
+  String get Full {
+    return Intl.message(
+      'full',
+      name: 'Full',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `partial`
+  String get Partial {
+    return Intl.message(
+      'partial',
+      name: 'Partial',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `refund`
+  String get Refund {
+    return Intl.message(
+      'refund',
+      name: 'Refund',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{tickets} =1{ticket} =2{tickets} few{tickets} many{tickets} other{tickets}} form`
+  String TicketFrom(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'tickets', one: 'ticket', two: 'tickets', few: 'tickets', many: 'tickets', other: 'tickets')} form',
+      name: 'TicketFrom',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} upsales {count, plural, =0{product} =1{products} =2{products} few{products} many{products} other{products}} from`
+  String UpsalesProductsFrom(num count) {
+    return Intl.message(
+      '$count upsales ${Intl.plural(count, zero: 'product', one: 'products', two: 'products', few: 'products', many: 'products', other: 'products')} from',
+      name: 'UpsalesProductsFrom',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Go ahead`
+  String get GoAhead {
+    return Intl.message(
+      'Go ahead',
+      name: 'GoAhead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter limit`
+  String get PleaseEnterLimit {
+    return Intl.message(
+      'Please enter limit',
+      name: 'PleaseEnterLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter current limit`
+  String get PleaseEnterCurrentLimit {
+    return Intl.message(
+      'Please enter current limit',
+      name: 'PleaseEnterCurrentLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Limit for one must be less than total limit`
+  String get LimitLessTotalLimit {
+    return Intl.message(
+      'Limit for one must be less than total limit',
+      name: 'LimitLessTotalLimit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Limit less than sum of limits for subs`
+  String get LimitLessSumLimitsSubs {
+    return Intl.message(
+      'Limit less than sum of limits for subs',
+      name: 'LimitLessSumLimitsSubs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My booking`
+  String get MyBooking {
+    return Intl.message(
+      'My booking',
+      name: 'MyBooking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upcoming`
+  String get Upcoming {
+    return Intl.message(
+      'Upcoming',
+      name: 'Upcoming',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Past`
+  String get Past {
+    return Intl.message(
+      'Past',
+      name: 'Past',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ticket`
+  String get Ticket {
+    return Intl.message(
+      'Ticket',
+      name: 'Ticket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Product`
+  String get Product {
+    return Intl.message(
+      'Product',
+      name: 'Product',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get Total {
+    return Intl.message(
+      'Total',
+      name: 'Total',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can still request a refund on your complaint`
+  String get YouCanStillRequestRefundYourComplaint {
+    return Intl.message(
+      'You can still request a refund on your complaint',
+      name: 'YouCanStillRequestRefundYourComplaint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Leave feedback`
+  String get LeaveFeedback {
+    return Intl.message(
+      'Leave feedback',
+      name: 'LeaveFeedback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Points are...`
+  String get PointsAre {
+    return Intl.message(
+      'Points are...',
+      name: 'PointsAre',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{item, plural, =0{reputation and currency} =1{increase rating or spend} =2{perform actions} few{earn points} other{earn points}}`
+  String PointsHiwItems(num item) {
+    return Intl.plural(
+      item,
+      zero: 'reputation and currency',
+      one: 'increase rating or spend',
+      two: 'perform actions',
+      few: 'earn points',
+      other: 'earn points',
+      name: 'PointsHiwItems',
+      desc: '',
+      args: [item],
+    );
+  }
+
+  /// `...Shuffle exchange system`
+  String get ShuffleExchangeSystem {
+    return Intl.message(
+      '...Shuffle exchange system',
+      name: 'ShuffleExchangeSystem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No bookings yet`
+  String get NoBookingsYet {
+    return Intl.message(
+      'No bookings yet',
+      name: 'NoBookingsYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =0{+{count} respects} =1{+{count} respect} =2{+{count} respects} few{+{count} respects} many{+{count} respects} other{+{count} respects}}`
+  String PlusXNewRespects(num count) {
+    return Intl.plural(
+      count,
+      zero: '+$count respects',
+      one: '+$count respect',
+      two: '+$count respects',
+      few: '+$count respects',
+      many: '+$count respects',
+      other: '+$count respects',
+      name: 'PlusXNewRespects',
+      desc: '',
+      args: [count],
     );
   }
 }
