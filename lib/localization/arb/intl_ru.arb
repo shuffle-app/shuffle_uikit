@@ -768,7 +768,6 @@
   "Total": "Сумма",
   "YouCanStillRequestRefundYourComplaint": "Вы все еще можете запросить возврат средств по вашей жалобе",
   "LeaveFeedback": "Оставьте отзыв",
-  "NoBookingsYet": "Букингов пока нет",
   "Latest": "Свежее",
   "Unread": "Анрид",
   "PlusXNewReviews": "{count, plural, =0{+{count} Новых отзывов} =1{+{count} Новый отзыв} =2{+{count} Новых отзыва} few{+{count} Новых отзыва} many{+{count} Новых отзывов} other{+{count} Новых отзывов}}",
@@ -782,5 +781,8 @@
   "PlusXPhotos": "{count, plural, =0{+{count} Фото} =1{+{count} Фото} =2{+{count} Фото} few{+{count} Фото} many{+{count} Фото} other{+{count} Фото}}",
   "DontLiveAlone": "Не живи один, подпишись на людей, которые тебе нравятся",
   "PlusXNewRespects": "{count, plural, =0{+{count} респектов} =1{+{count} респект} =2{+{count} респекта} few{+{count} респекта} many{+{count} респектов} other{+{count} респектов}}"
+  "NoBookingsYet": "Букингов пока нет",
+  "LogInWithEmail": "Продолжить с email"
+
 }
 

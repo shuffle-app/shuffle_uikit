@@ -27,7 +27,7 @@ class UiKitPointsHistoryTile extends StatelessWidget {
           children: [
             Expanded(
               child: Text(
-                '$points ${S.current.Points}',
+                S.current.FindSomeoneCardPoints(points),
                 style: uiKitTheme?.boldTextTheme.caption1Bold,
                 overflow: TextOverflow.ellipsis,
               ),

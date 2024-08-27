@@ -87,6 +87,7 @@ class UiKitBlurredListTile extends StatelessWidget {
                         ),
                       ),
                       if (titleTrailing != null) ...[
+                        if(title?.isNotEmpty ?? false)
                         SpacingFoundation.horizontalSpace8,
                         titleTrailing!,
                       ],
