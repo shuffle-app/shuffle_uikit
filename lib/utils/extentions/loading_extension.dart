@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 extension LoadingExtension on Widget {
   Widget loadingWrap(bool active, {Color? color, double? opacity}) {
@@ -12,8 +12,8 @@ extension LoadingExtension on Widget {
         SizedBox(
           width: 20,
           height: 20,
-          child: CircularProgressIndicator(
-            color: color ?? Colors.black,
+          child: CupertinoActivityIndicator(
+            color: color ?? CupertinoColors.black,
           ),
         ),
       ],
