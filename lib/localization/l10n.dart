@@ -8036,6 +8036,16 @@ class S {
     );
   }
 
+  /// `Login with email`
+  String get LogInWithEmail {
+    return Intl.message(
+      'Login with email',
+      name: 'LogInWithEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `No bookings yet`
   String get NoBookingsYet {
     return Intl.message(
