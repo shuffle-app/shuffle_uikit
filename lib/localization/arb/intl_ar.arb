@@ -769,6 +769,6 @@
   "PointsAre": "Points are...",
   "ShuffleExchangeSystem": "...Shuffle exchange system",
   "NoBookingsYet": "No bookings yet",
-  "LogInWithEmail": "Login with email"
-
+  "LogInWithEmail": "Login with email",
+  "ShowInContentCard": "Show in content card"
 }

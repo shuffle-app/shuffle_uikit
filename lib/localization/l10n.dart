@@ -7905,6 +7905,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Show in content card`
+  String get ShowInContentCard {
+    return Intl.message(
+      'Show in content card',
+      name: 'ShowInContentCard',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

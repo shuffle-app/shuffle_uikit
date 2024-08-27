@@ -767,6 +767,7 @@
   "YouCanStillRequestRefundYourComplaint": "You can still request a refund on your complaint",
   "LeaveFeedback": "Leave feedback",
   "NoBookingsYet": "No bookings yet",
-  "LogInWithEmail": "Login with email"
+  "LogInWithEmail": "Login with email",
+  "ShowInContentCard": "Show in content card"
 
 }
