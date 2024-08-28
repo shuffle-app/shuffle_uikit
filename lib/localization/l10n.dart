@@ -8036,6 +8036,16 @@ class S {
     );
   }
 
+  /// `No bookings yet`
+  String get NoBookingsYet {
+    return Intl.message(
+      'No bookings yet',
+      name: 'NoBookingsYet',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Login with email`
   String get LogInWithEmail {
     return Intl.message(
@@ -8046,11 +8056,11 @@ class S {
     );
   }
 
-  /// `No bookings yet`
-  String get NoBookingsYet {
+  /// `Show in content card`
+  String get ShowInContentCard {
     return Intl.message(
-      'No bookings yet',
-      name: 'NoBookingsYet',
+      'Show in content card',
+      name: 'ShowInContentCard',
       desc: '',
       args: [],
     );

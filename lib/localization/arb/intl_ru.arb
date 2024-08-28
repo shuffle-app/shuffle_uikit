@@ -780,9 +780,10 @@
   "PlusXNewChatComments": "{count, plural, =0{+{count} комментариев} =1{+{count} комментарий} =2{+{count} комментария} few{+{count} комментария} many{+{count} комментариев} other{+{count} комментариев}}",
   "PlusXPhotos": "{count, plural, =0{+{count} Фото} =1{+{count} Фото} =2{+{count} Фото} few{+{count} Фото} many{+{count} Фото} other{+{count} Фото}}",
   "DontLiveAlone": "Не живи один, подпишись на людей, которые тебе нравятся",
-  "PlusXNewRespects": "{count, plural, =0{+{count} респектов} =1{+{count} респект} =2{+{count} респекта} few{+{count} респекта} many{+{count} респектов} other{+{count} респектов}}"
+  "PlusXNewRespects": "{count, plural, =0{+{count} респектов} =1{+{count} респект} =2{+{count} респекта} few{+{count} респекта} many{+{count} респектов} other{+{count} респектов}}",
   "NoBookingsYet": "Букингов пока нет",
-  "LogInWithEmail": "Продолжить с email"
+  "LogInWithEmail": "Продолжить с email",
+  "ShowInContentCard": "Показать в карточке контента"
 
 }
 

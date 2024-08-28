@@ -1127,6 +1127,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("поделилась с вами"),
         "ShowDeleted":
             MessageLookupByLibrary.simpleMessage("Показать удаленные"),
+        "ShowInContentCard": MessageLookupByLibrary.simpleMessage(
+            "Показать в карточке контента"),
         "ShowMore": MessageLookupByLibrary.simpleMessage("Показать\nбольше"),
         "ShowResult":
             MessageLookupByLibrary.simpleMessage("Показать результат"),

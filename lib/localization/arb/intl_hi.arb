@@ -779,7 +779,8 @@
   "PlusXNewChatComments": "{count} {count, plural, =0{नई चैट टिप्पणियाँ} =1{नई चैट टिप्पणी} =2{नई चैट टिप्पणियाँ} few{नई चैट टिप्पणियाँ} many{नई चैट टिप्पणियाँ} other{नई चैट टिप्पणियाँ}}",
   "PlusXPhotos": "{count} {count, plural, =0{नई फोटो} =1{नई फोटो} =2{नई फोटो} few{नई फोटो} many{नई फोटो} other{नई फोटो}}",
   "DontLiveAlone": "अकेले न रहें, उन लोगों की सदस्यता लें जिन्हें आप पसंद करते हैं",
-  "PlusXNewRespects": "{count} {count, plural, =0{सम्मान} =1{सम्मान} =2{सम्मान} few{सम्मान} many{सम्मान} other{सम्मान}}"
-  "LogInWithEmail": "ईमेल के साथ लॉगिन करें"
+  "PlusXNewRespects": "{count} {count, plural, =0{सम्मान} =1{सम्मान} =2{सम्मान} few{सम्मान} many{सम्मान} other{सम्मान}}",
+  "LogInWithEmail": "ईमेल के साथ लॉगिन करें",
+  "ShowInContentCard": "Show in content card"
 
 }

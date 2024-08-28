@@ -1109,6 +1109,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("shared with you"),
         "ShowDeleted": MessageLookupByLibrary.simpleMessage("Show deleted"),
+        "ShowInContentCard":
+            MessageLookupByLibrary.simpleMessage("Show in content card"),
         "ShowMore": MessageLookupByLibrary.simpleMessage("Show\nmore"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("Show result"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
