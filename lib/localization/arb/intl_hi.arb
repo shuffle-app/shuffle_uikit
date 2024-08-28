@@ -781,6 +781,7 @@
   "DontLiveAlone": "अकेले न रहें, उन लोगों की सदस्यता लें जिन्हें आप पसंद करते हैं",
   "PlusXNewRespects": "{count} {count, plural, =0{सम्मान} =1{सम्मान} =2{सम्मान} few{सम्मान} many{सम्मान} other{सम्मान}}",
   "LogInWithEmail": "ईमेल के साथ लॉगिन करें",
+  "ShowInContentCard": "Show in content card",
   "LogIn": "Log in",
   "Locked": "Locked",
   "LogInTo": "Log in",
