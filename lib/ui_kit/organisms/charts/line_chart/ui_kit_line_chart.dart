@@ -172,6 +172,11 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                 widget.chartData.items.dates.length;
             _smallPreviewUpdateNotifier.addListener(_smallPreviewUpdateListener);
           }
+          final visibleDates = (chartViewPortSize.width ~/ initialPixelsPerDate) - 1;
+          _visibleDateRangeNotifier.value = DateRange(
+            start: dates.first,
+            end: visibleDates - 1 < dates.length ? dates.elementAt(visibleDates - 1) : dates.last,
+          );
         });
       });
     });
@@ -206,16 +211,19 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
         additionalWidth: additionalWidth,
       );
     });
+    _setVisibleDateRange();
+  }
+
+  void _setVisibleDateRange() {
     final offsetIndex = ((_smallPreviewUpdateNotifier.value.leftOffset * chartToSmallPreviewRatio) /
             (initialPixelsPerDate +
                 additionalSpacingForDate +
                 SpacingFoundation.horizontalSpacing8 +
                 additionalSpacingForDate))
         .ceil();
-    print(offsetIndex);
     DateTime startDate = dates.elementAt(offsetIndex);
     DateTime endDate = offsetIndex + datesVisibleInViewport < dates.length
-        ? dates.elementAt(datesVisibleInViewport - 1 + offsetIndex)
+        ? dates.elementAt(datesVisibleInViewport - 2 + offsetIndex)
         : dates.last;
     _visibleDateRangeNotifier.value = DateRange(start: startDate, end: endDate);
   }
