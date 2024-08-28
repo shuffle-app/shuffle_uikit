@@ -179,11 +179,15 @@ class UiKitLineChartBody extends StatelessWidget {
             AnimatedBuilder(
               animation: tapNotifier,
               builder: (context, child) {
-                if (tapNotifier.value == Offset.zero) return const SizedBox();
                 final leftOffset = tapNotifier.value.dx + (pointsStep / 4);
+                final distanceToEnd = availableSize.width - leftOffset;
                 final rightOffset = availableSize.width - leftOffset;
                 final showInfoCardOnLeft = rightOffset < infoCardMaxWidth;
                 final approximateInfoCardHeight = (selectedDataSetNotifier.value.chartItems.length + 1) * 24.0;
+
+                if (tapNotifier.value == Offset.zero ||
+                    tapNotifier.value.dx <= pointsStep / 4 ||
+                    distanceToEnd.isNegative) return const SizedBox();
 
                 return Positioned(
                   top: max(-approximateInfoCardHeight + 24, tapNotifier.value.dy - approximateInfoCardHeight),
