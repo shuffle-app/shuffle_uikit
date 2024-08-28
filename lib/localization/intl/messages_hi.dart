@@ -725,7 +725,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
             "चेक इन करने के लिए स्थान आवश्यक है"),
         "LogInWithEmail":
-            MessageLookupByLibrary.simpleMessage("Login with email"),
+            MessageLookupByLibrary.simpleMessage("ईमेल के साथ लॉगिन करें"),
         "LoginInAppDaysInARow": m36,
         "LoginWith": m37,
         "Logo": MessageLookupByLibrary.simpleMessage("प्रतीक चिन्ह"),
