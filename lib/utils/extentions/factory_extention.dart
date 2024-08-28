@@ -14,6 +14,7 @@ extension FactoryExtention on BuildContext {
     String? imageUrl,
     required String userName,
     bool showAchievements = false,
+    int? badgeValue,
   }) =>
       WidgetsFactory.of(this)!
           .createUserAvatar(
@@ -22,6 +23,7 @@ extension FactoryExtention on BuildContext {
             imageUrl: imageUrl,
             userName: userName,
             showAchievements: showAchievements,
+            badgeValue: badgeValue,
           )
           .build(this);
 

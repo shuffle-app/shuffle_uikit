@@ -5,8 +5,6 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
-  // background: linear-gradient(90deg, #EECE6E 0%, #BB8930 26.05%, #F6DA76 62.77%, #DBB44D 105.09%);
-
   static const goldGradient = LinearGradient(
     colors: [
       ColorsFoundation.goldGradientBegin,
@@ -582,6 +580,20 @@ class GradientFoundation {
     ],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
+    stops: const [
+      0.1753,
+      0.4873,
+      0.8003,
+    ],
+  );
+  static final shunyGreyGradientInverted = LinearGradient(
+    colors: [
+      ColorsFoundation.shunyGreyGradientMid.withOpacity(0.32),
+      ColorsFoundation.shunyGreyGradientEnd.withOpacity(0.12),
+      ColorsFoundation.shunyGreyGradientMid.withOpacity(0.32),
+    ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
     stops: const [
       0.1753,
       0.4873,
