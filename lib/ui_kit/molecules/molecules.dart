@@ -58,6 +58,7 @@ export 'info_cards/ui_kit_voice_listen_card.dart';
 export 'info_cards/ui_kit_weather_info_card.dart';
 export 'info_cards/vertical_message_card.dart';
 export 'info_cards/wide_vertical_message_card.dart';
+export 'info_cards/locked_info_card.dart';
 export 'loading/loading_widget.dart';
 export 'loading/progress_linear_indicator.dart';
 export 'loading/ui_kit_progress_indicator.dart';
