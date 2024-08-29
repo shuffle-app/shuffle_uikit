@@ -7,7 +7,8 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
   title: 'Gender and Age',
   dataItems: [
     UiKitLineChartAdditionalDataItem(
-      name: '18 - 24',
+      identifier: '18-24',
+      mask: '18 - 24',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
           name: 'male',
@@ -27,7 +28,8 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       ],
     ),
     UiKitLineChartAdditionalDataItem(
-      name: '25 -35',
+      identifier: '25-35',
+      mask: '25 - 35',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
           name: 'male',
@@ -47,7 +49,8 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       ],
     ),
     UiKitLineChartAdditionalDataItem(
-      name: '36 - 45',
+      identifier: '36-45',
+      mask: '36 - 45',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
           name: 'male',
@@ -67,7 +70,8 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       ],
     ),
     UiKitLineChartAdditionalDataItem(
-      name: '45 - 50',
+      identifier: '46-50',
+      mask: '46 - 50',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
           name: 'male',
@@ -87,7 +91,8 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       ],
     ),
     UiKitLineChartAdditionalDataItem(
-      name: '50+',
+      identifier: '50+',
+      mask: '50+',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
           name: 'male',
