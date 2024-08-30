@@ -626,6 +626,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
         "GoPremium": MessageLookupByLibrary.simpleMessage("Go premium"),
         "GoPro": MessageLookupByLibrary.simpleMessage("GO pro"),
+        "GoToPayment": MessageLookupByLibrary.simpleMessage("Go to payment"),
         "GoToSettings": MessageLookupByLibrary.simpleMessage("Go to settings"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
             "Great interview with the owner"),
@@ -1029,6 +1030,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReviewsReceived": m63,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Sat"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
+        "Schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
         "SearchBusinessChooseYourself1":
             MessageLookupByLibrary.simpleMessage("Business clubs"),
@@ -1082,6 +1084,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDate": MessageLookupByLibrary.simpleMessage("Select date"),
         "SelectDateRange":
             MessageLookupByLibrary.simpleMessage("Select Date Range"),
+        "SelectDateTime":
+            MessageLookupByLibrary.simpleMessage("Select date and time"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Select days "),
         "SelectGender": MessageLookupByLibrary.simpleMessage("Select gender"),
         "SelectLanguage":
@@ -1089,9 +1093,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectOption": MessageLookupByLibrary.simpleMessage("Select option"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("Select price and currency"),
+        "SelectSubs": MessageLookupByLibrary.simpleMessage("Select subs"),
         "SelectType": m65,
         "SelectYourBooking":
             MessageLookupByLibrary.simpleMessage("Select your booking"),
+        "SelectYourFavoriteProduct": MessageLookupByLibrary.simpleMessage(
+            "Select your favorite product"),
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("Select your religions"),
         "SelectYourSpecialty":
@@ -1220,6 +1227,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("Thu"),
         "Ticket": MessageLookupByLibrary.simpleMessage("Ticket"),
         "TicketFrom": m72,
+        "TicketPrice": MessageLookupByLibrary.simpleMessage("Ticket price"),
         "Tickets": m73,
         "Time": MessageLookupByLibrary.simpleMessage("Time"),
         "Title": MessageLookupByLibrary.simpleMessage("Title"),

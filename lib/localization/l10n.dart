@@ -8081,6 +8081,66 @@ class S {
       args: [count],
     );
   }
+
+  /// `Select subs`
+  String get SelectSubs {
+    return Intl.message(
+      'Select subs',
+      name: 'SelectSubs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ticket price`
+  String get TicketPrice {
+    return Intl.message(
+      'Ticket price',
+      name: 'TicketPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select your favorite product`
+  String get SelectYourFavoriteProduct {
+    return Intl.message(
+      'Select your favorite product',
+      name: 'SelectYourFavoriteProduct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to payment`
+  String get GoToPayment {
+    return Intl.message(
+      'Go to payment',
+      name: 'GoToPayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select date and time`
+  String get SelectDateTime {
+    return Intl.message(
+      'Select date and time',
+      name: 'SelectDateTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Schedule`
+  String get Schedule {
+    return Intl.message(
+      'Schedule',
+      name: 'Schedule',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

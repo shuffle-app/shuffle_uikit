@@ -636,6 +636,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
         "GoPremium": MessageLookupByLibrary.simpleMessage("Перейти на премиум"),
         "GoPro": MessageLookupByLibrary.simpleMessage("Перейти на про"),
+        "GoToPayment": MessageLookupByLibrary.simpleMessage("Перейти к оплате"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("Перейти в настройки"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
@@ -1049,6 +1050,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReviewsReceived": m63,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Сб"),
         "Save": MessageLookupByLibrary.simpleMessage("Сохранить"),
+        "Schedule": MessageLookupByLibrary.simpleMessage("График"),
         "Search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "SearchBusinessChooseYourself1":
             MessageLookupByLibrary.simpleMessage("Бизнес-клубы"),
@@ -1100,6 +1102,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDate": MessageLookupByLibrary.simpleMessage("Выбери дату"),
         "SelectDateRange":
             MessageLookupByLibrary.simpleMessage("Выбери диапазон дат"),
+        "SelectDateTime":
+            MessageLookupByLibrary.simpleMessage("Выберите дату и время"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Выбрать дни "),
         "SelectGender": MessageLookupByLibrary.simpleMessage("Выберите пол"),
         "SelectLanguage":
@@ -1107,9 +1111,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectOption": MessageLookupByLibrary.simpleMessage("Выбирай"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("Выберите цену и валюту"),
+        "SelectSubs": MessageLookupByLibrary.simpleMessage("Выберите сабы"),
         "SelectType": m65,
         "SelectYourBooking": MessageLookupByLibrary.simpleMessage(
             "Выберите вариант бронирования"),
+        "SelectYourFavoriteProduct": MessageLookupByLibrary.simpleMessage(
+            "Выберите свой любимый продукт"),
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("Укажи свою религию"),
         "SelectYourSpecialty":
@@ -1242,6 +1249,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("Чт"),
         "Ticket": MessageLookupByLibrary.simpleMessage("Билет"),
         "TicketFrom": m72,
+        "TicketPrice": MessageLookupByLibrary.simpleMessage("Цена билета"),
         "Tickets": m73,
         "Time": MessageLookupByLibrary.simpleMessage("Время"),
         "Title": MessageLookupByLibrary.simpleMessage("Название"),

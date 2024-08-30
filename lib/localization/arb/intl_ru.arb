@@ -783,7 +783,13 @@
   "PlusXNewRespects": "{count, plural, =0{+{count} респектов} =1{+{count} респект} =2{+{count} респекта} few{+{count} респекта} many{+{count} респектов} other{+{count} респектов}}",
   "NoBookingsYet": "Букингов пока нет",
   "LogInWithEmail": "Продолжить с email",
-  "ShowInContentCard": "Показать в карточке контента"
+  "ShowInContentCard": "Показать в карточке контента",
+  "SelectSubs": "Выберите сабы",
+  "TicketPrice": "Цена билета",
+  "SelectYourFavoriteProduct": "Выберите свой любимый продукт",
+  "GoToPayment": "Перейти к оплате",
+  "SelectDateTime": "Выберите дату и время",
+  "Schedule": "График"
 
 }
 

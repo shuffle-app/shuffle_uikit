@@ -783,6 +783,11 @@
   "PlusXNewChatComments": "{count, plural, =0{+{count} comments} =1{+{count} comment} =2{+{count} comments} few{+{count} comments} many{+{count} comments} other{+{count} comments}}",
   "PlusXPhotos": "{count, plural, =0{+{count} Photos} =1{+{count} Photo} =2{+{count} Photos} few{+{count} Photos} many{+{count} Photos} other{+{count} Photos}}",
   "DontLiveAlone": "Don't live alone, subscribe to people you like",
-  "PlusXNewRespects": "{count, plural, =0{+{count} respects} =1{+{count} respect} =2{+{count} respects} few{+{count} respects} many{+{count} respects} other{+{count} respects}}"
-
+  "PlusXNewRespects": "{count, plural, =0{+{count} respects} =1{+{count} respect} =2{+{count} respects} few{+{count} respects} many{+{count} respects} other{+{count} respects}}",
+  "SelectSubs": "Select subs",
+  "TicketPrice": "Ticket price",
+  "SelectYourFavoriteProduct": "Select your favorite product",
+  "GoToPayment": "Go to payment",
+  "SelectDateTime": "Select date and time",
+  "Schedule": "Schedule"
 }
