@@ -7351,11 +7351,11 @@ class S {
     );
   }
 
-  /// `Create booking link`
-  String get CreateBookingLink {
+  /// `Create booking`
+  String get CreateBooking {
     return Intl.message(
-      'Create booking link',
-      name: 'CreateBookingLink',
+      'Create booking',
+      name: 'CreateBooking',
       desc: '',
       args: [],
     );
@@ -8079,6 +8079,16 @@ class S {
       name: 'PlusXNewRespects',
       desc: '',
       args: [count],
+    );
+  }
+
+  /// `Supported formats: JPEG/JPG/PNG.\nMax size - 10 MB.\nMax resolution - 3840 x 2200 px`
+  String get SupportedFormatsBooking {
+    return Intl.message(
+      'Supported formats: JPEG/JPG/PNG.\nMax size - 10 MB.\nMax resolution - 3840 x 2200 px',
+      name: 'SupportedFormatsBooking',
+      desc: '',
+      args: [],
     );
   }
 }

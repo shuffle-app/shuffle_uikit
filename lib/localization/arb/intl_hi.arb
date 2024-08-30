@@ -713,7 +713,7 @@
   "EnterExternalLink": "बाह्य लिंक दर्ज करें",
   "StartBookingCreation": "बुकिंग निर्माण शुरू करें",
   "AddLink":"लिंक जोड़ें",
-  "CreateBookingLink": "बुकिंग लिंक बनाएं",
+  "CreateBooking": "Create booking",
   "GeneralMas": "सामान्य",
   "GeneraFem": "सामान्य",
   "OrganicStatistics": "जैविक",
@@ -781,6 +781,7 @@
   "DontLiveAlone": "अकेले न रहें, उन लोगों की सदस्यता लें जिन्हें आप पसंद करते हैं",
   "PlusXNewRespects": "{count} {count, plural, =0{सम्मान} =1{सम्मान} =2{सम्मान} few{सम्मान} many{सम्मान} other{सम्मान}}",
   "LogInWithEmail": "ईमेल के साथ लॉगिन करें",
-  "ShowInContentCard": "Show in content card"
+  "ShowInContentCard": "Show in content card",
+  "SupportedFormatsBooking": "Supported formats: JPEG/JPG/PNG.\nMax size - 10 MB.\nMax resolution - 3840 x 2200 px"
 
 }
