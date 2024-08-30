@@ -11,6 +11,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
   final Function()? onEdit;
   final bool isSubs;
   late final bool actualLimitIsFull;
+  final bool selectedItem;
 
   SubsOrUpsaleItem({
     super.key,
@@ -22,6 +23,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
     this.removeItem,
     this.onEdit,
     this.isSubs = true,
+    this.selectedItem = false,
   }) {
     if (int.tryParse(actualLimit ?? '0') == int.tryParse(limit ?? '0')) {
       actualLimitIsFull = true;
@@ -45,44 +47,48 @@ class SubsOrUpsaleItem extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: onEdit,
-                child: GradientableWidget(
-                  blendMode: BlendMode.dstIn,
-                  gradient: LinearGradient(
-                    colors: [theme?.colorScheme.primary ?? Colors.white, Colors.transparent],
-                    stops: const [0.80, 1.0],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                  ),
-                  child: UiKitCardWrapper(
-                    width: 124.w,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadiusFoundation.all12,
-                    child: actualLimitIsFull
-                        ? Stack(
-                            children: [
-                              ImageWidget(
-                                height: 1.sw <= 380 ? 90.h : 60.h,
-                                link: photoLink,
-                                fit: BoxFit.fill,
-                              ),
-                              DecoratedBox(
-                                decoration: BoxDecoration(
-                                  color: ColorsFoundation.darkNeutral500.withOpacity(0.5),
-                                ),
-                                child: SizedBox(
+                    border: selectedItem ? GradientFoundation.gradientBorder : null,
+                  ),
+                  child: GradientableWidget(
+                    blendMode: BlendMode.dstIn,
+                    gradient: LinearGradient(
+                      colors: [theme?.colorScheme.primary ?? Colors.white, Colors.transparent],
+                      stops: const [0.80, 1.0],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                    child: UiKitCardWrapper(
+                      width: 124.w,
+                      borderRadius: BorderRadiusFoundation.all10,
+                      child: actualLimitIsFull && !selectedItem
+                          ? Stack(
+                              children: [
+                                ImageWidget(
                                   width: 124.w,
                                   height: 1.sw <= 380 ? 90.h : 60.h,
+                                  link: photoLink,
+                                  fit: BoxFit.fill,
                                 ),
-                              ),
-                            ],
-                          )
-                        : ImageWidget(
-                            height: 1.sw <= 380 ? 90.h : 60.h,
-                            link: photoLink,
-                            fit: BoxFit.fill,
-                          ),
-                  ).paddingOnly(
-                    top: 4,
-                    right: 4,
+                                DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    color: ColorsFoundation.darkNeutral500.withOpacity(0.5),
+                                  ),
+                                  child: SizedBox(
+                                    width: 124.w,
+                                    height: 1.sw <= 380 ? 90.h : 60.h,
+                                  ),
+                                ),
+                              ],
+                            )
+                          : ImageWidget(
+                              height: 1.sw <= 380 ? 90.h : 60.h,
+                              link: photoLink,
+                              fit: BoxFit.fill,
+                            ),
+                    ).paddingAll(2),
                   ),
                 ),
               ),
@@ -119,7 +125,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
                 ? theme?.regularTextTheme.caption4.copyWith(
                     fontSize: 9.w,
                     fontWeight: FontWeight.w600,
-                    color: actualLimitIsFull ? ColorsFoundation.mutedText : null,
+                    color: (actualLimitIsFull && !selectedItem) ? ColorsFoundation.mutedText : null,
                   )
                 : theme?.boldTextTheme.caption3Medium,
             maxLines: 1,
@@ -129,7 +135,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
           Text(
             description ?? '',
             style: theme?.regularTextTheme.caption4Regular.copyWith(
-              color: actualLimitIsFull ? ColorsFoundation.mutedText : null,
+              color: (actualLimitIsFull && !selectedItem) ? ColorsFoundation.mutedText : null,
             ),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
