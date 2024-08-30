@@ -6,12 +6,14 @@ import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dar
 class UiKitSmallMultiLineChartPreview extends StatelessWidget {
   final List<CustomPainter> linePainters;
   final Size size;
+  final ValueNotifier<LineChartSmallPreviewData> previewUpdatesNotifier;
   final ValueChanged<double>? onScroll;
 
   const UiKitSmallMultiLineChartPreview({
     Key? key,
     required this.linePainters,
     required this.size,
+    required this.previewUpdatesNotifier,
     this.onScroll,
   }) : super(key: key);
 
@@ -38,7 +40,7 @@ class UiKitSmallMultiLineChartPreview extends StatelessWidget {
             ),
             UiKitLineChartSmallPreviewOverlay(
               size: size,
-              previewUpdateNotifier: ValueNotifier(LineChartSmallPreviewData.initial()),
+              previewUpdateNotifier: previewUpdatesNotifier,
               onScroll: onScroll,
             ),
           ],
