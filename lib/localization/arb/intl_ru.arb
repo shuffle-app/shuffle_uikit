@@ -715,7 +715,7 @@
   "EnterExternalLink": "Добавить внешнюю ссылку",
   "StartBookingCreation": "Начать создание бронирования",
   "AddLink": "Добавить ссылку",
-  "CreateBookingLink": "Создать ссылку на Букинг",
+  "CreateBooking": "Создать букинг",
   "GeneralMas": "Общий",
   "GeneraFem": "Общая",
   "OrganicStatistics": "Живая",
@@ -783,7 +783,8 @@
   "PlusXNewRespects": "{count, plural, =0{+{count} респектов} =1{+{count} респект} =2{+{count} респекта} few{+{count} респекта} many{+{count} респектов} other{+{count} респектов}}",
   "NoBookingsYet": "Букингов пока нет",
   "LogInWithEmail": "Продолжить с email",
-  "ShowInContentCard": "Показать в карточке контента"
+  "ShowInContentCard": "Показать в карточке контента",
+  "SupportedFormatsBooking": "Поддерживаемые форматы: JPEG/JPG/PNG.\nМаксимальный размер - 10 MB.\nМаксимальное разрешение - 3840 x 2200 px"
 
 }
 
