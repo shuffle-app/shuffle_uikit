@@ -5,6 +5,7 @@ class UiKitTitledSelectionTile extends StatelessWidget {
   final String title;
   final List<String>? selectedItems;
   final VoidCallback? onSelectionChanged;
+  final String? imagePath;
   // final ValueChanged<List<String>>? onChanged;
 
   const UiKitTitledSelectionTile({
@@ -12,6 +13,7 @@ class UiKitTitledSelectionTile extends StatelessWidget {
     required this.title,
     this.selectedItems,
     this.onSelectionChanged,
+    this.imagePath,
     // this.onChanged,
   });
 
@@ -27,9 +29,23 @@ class UiKitTitledSelectionTile extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            title,
-            style: textTheme?.labelSmall,
+          Row(
+            children: [
+              if (imagePath != null)
+                ImageWidget(
+                  link: imagePath,
+                  height: 100,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
+              Flexible(
+                child: Text(
+                  title,
+                  style: textTheme?.labelSmall,
+                  maxLines: 1,
+                ),
+              ),
+            ],
           ),
           SpacingFoundation.verticalSpace2,
           Row(

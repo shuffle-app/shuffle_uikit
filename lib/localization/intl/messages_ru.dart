@@ -1417,7 +1417,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourNiche": MessageLookupByLibrary.simpleMessage("Твоя ниша"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("Ваша позиция"),
         "YourPriceSegment":
-            MessageLookupByLibrary.simpleMessage("Your price segment"),
+            MessageLookupByLibrary.simpleMessage("Твой ценовой сегмент"),
         "YourProgress": MessageLookupByLibrary.simpleMessage("Ваш прогресс"),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("Ваш трафик"),
         "daynight": MessageLookupByLibrary.simpleMessage("Днём и ночью"),
