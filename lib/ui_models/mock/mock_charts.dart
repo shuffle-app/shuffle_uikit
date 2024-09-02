@@ -7,7 +7,8 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
   title: 'Gender and Age',
   dataItems: [
     UiKitLineChartAdditionalDataItem(
-      name: '18 - 24',
+      identifier: '18-24',
+      mask: '18 - 24',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
           name: 'male',
@@ -27,7 +28,8 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       ],
     ),
     UiKitLineChartAdditionalDataItem(
-      name: '25 -35',
+      identifier: '25-35',
+      mask: '25 - 35',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
           name: 'male',
@@ -47,7 +49,8 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       ],
     ),
     UiKitLineChartAdditionalDataItem(
-      name: '36 - 45',
+      identifier: '36-45',
+      mask: '36 - 45',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
           name: 'male',
@@ -67,7 +70,8 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       ],
     ),
     UiKitLineChartAdditionalDataItem(
-      name: '45 - 50',
+      identifier: '46-50',
+      mask: '46 - 50',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
           name: 'male',
@@ -87,7 +91,8 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       ],
     ),
     UiKitLineChartAdditionalDataItem(
-      name: '50+',
+      identifier: '50+',
+      mask: '50+',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
           name: 'male',
@@ -313,119 +318,25 @@ final UiKitLineChartData<double> mockLineChart = UiKitLineChartData<double>(
       id: 1,
       chartItemName: S.current.Invites,
       color: ColorsFoundation.pink,
-      datasets: [
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 12)),
-          value: 56,
+      datasets: List.generate(
+        15,
+        (index) => UiKitLineChartDataSet<double>(
+          value: Random().nextDouble() * 1000,
+          date: DateTime.now().subtract(Duration(days: index)),
         ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 11)),
-          value: 123,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 10)),
-          value: 44,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 9)),
-          value: 522,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 8)),
-          value: 55,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 7)),
-          value: 234,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 6)),
-          value: 124,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 5)),
-          value: 633,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 4)),
-          value: 11,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 3)),
-          value: 321,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 2)),
-          value: 401,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 1)),
-          value: 234,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now(),
-          value: 193,
-        ),
-      ],
+      ),
     ),
     UiKitLineChartItemData<double>(
       id: 2,
       chartItemName: S.current.BookingsHeading,
       gradient: GradientFoundation.defaultLinearGradient,
-      datasets: [
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 12)),
-          value: 33,
+      datasets: List.generate(
+        15,
+        (index) => UiKitLineChartDataSet<double>(
+          value: Random().nextDouble() * 1000,
+          date: DateTime.now().subtract(Duration(days: index)),
         ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 11)),
-          value: 313,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 10)),
-          value: 245,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 9)),
-          value: 150,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 8)),
-          value: 67,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 7)),
-          value: 65,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 6)),
-          value: 98,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 5)),
-          value: 123,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 4)),
-          value: 189,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 3)),
-          value: 288,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 2)),
-          value: 360,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now().subtract(const Duration(days: 1)),
-          value: 456,
-        ),
-        UiKitLineChartDataSet<double>(
-          date: DateTime.now(),
-          value: 789,
-        ),
-      ],
+      ),
     ),
   ],
 );

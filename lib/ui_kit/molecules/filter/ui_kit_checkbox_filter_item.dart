@@ -27,9 +27,12 @@ class UiKitCheckboxFilterItem extends StatelessWidget {
         ),
         SpacingFoundation.horizontalSpace12,
         Flexible(
-          child: Text(
-            item.mask,
-            style: boldTextTheme?.labelLarge,
+          child: GestureDetector(
+            onTap: () => onTap.call(!isSelected),
+            child: Text(
+              item.mask,
+              style: boldTextTheme?.labelLarge,
+            ),
           ),
         ),
       ],

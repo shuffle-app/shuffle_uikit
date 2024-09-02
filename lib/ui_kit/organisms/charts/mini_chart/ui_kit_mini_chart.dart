@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dart';
+import 'package:shuffle_uikit/utils/extentions/mini_chart_extension.dart';
 
 class UiKitMiniChart extends StatefulWidget {
   final List<UiKitMiniChartData> data;
@@ -21,14 +23,39 @@ class _UiKitMiniChartState extends State<UiKitMiniChart> {
         previewSize.width,
         0.0281.sh,
       );
+  double get pixelsPerDate => previewSize.width / widget.data.period.start.difference(widget.data.period.end).inDays;
+  late final ValueNotifier<DateRange> _dateNotifier = ValueNotifier(DateRange(
+    start: widget.data.period.start,
+    end: widget.data.period.end,
+  ));
+  final ValueNotifier<LineChartSmallPreviewData> _previewUpdatesNotifier =
+      ValueNotifier(LineChartSmallPreviewData.initial());
 
   @override
   void initState() {
     super.initState();
+    final difference = widget.data.period.start.difference(widget.data.period.end).inDays;
+    final visibleDatesCount = difference * _previewUpdatesNotifier.value.previewWidthFraction;
+    _dateNotifier.value = DateRange(
+      start: widget.data.period.start,
+      end: widget.data.period.start.add(Duration(days: visibleDatesCount.toInt())),
+    );
     WidgetsBinding.instance.addPostFrameCallback((time) {
       datesToPreviewWidthRatio =
           (_datesScrollController.position.maxScrollExtent + datesViewPortSize.width) / previewSize.width;
+      _previewUpdatesNotifier.addListener(_fractionListener);
     });
+  }
+
+  void _fractionListener() {
+    final difference = widget.data.period.end.difference(widget.data.period.start).inDays;
+    final visibleDatesCount = difference * _previewUpdatesNotifier.value.previewWidthFraction;
+    final offsetIndex = _previewUpdatesNotifier.value.leftOffset ~/ pixelsPerDate;
+
+    final newStart = widget.data.period.start.add(Duration(days: offsetIndex));
+    final newEnd = newStart.add(Duration(days: visibleDatesCount.toInt() + 1));
+
+    _dateNotifier.value = DateRange(start: newStart, end: newEnd);
   }
 
   @override
@@ -45,7 +72,10 @@ class _UiKitMiniChartState extends State<UiKitMiniChart> {
       mainAxisSize: MainAxisSize.min,
       children: [
         ...widget.data.map<Widget>(
-          (e) => UiKitMiniChartDataItemWidget(data: e).paddingSymmetric(vertical: EdgeInsetsFoundation.vertical4),
+          (e) => UiKitMiniChartDataItemWidget(
+            data: e,
+            currentPeriodNotifier: _dateNotifier,
+          ).paddingSymmetric(vertical: EdgeInsetsFoundation.vertical4),
         ),
         SpacingFoundation.verticalSpace8,
 
@@ -69,6 +99,7 @@ class _UiKitMiniChartState extends State<UiKitMiniChart> {
 
         /// preview
         UiKitSmallMultiLineChartPreview(
+          previewUpdatesNotifier: _previewUpdatesNotifier,
           size: previewSize,
           linePainters:
               widget.data.map<CustomPainter>((e) => UiKitMiniChartPainter(data: e.items, color: e.color)).toList(),

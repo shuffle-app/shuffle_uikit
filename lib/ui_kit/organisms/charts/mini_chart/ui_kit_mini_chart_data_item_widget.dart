@@ -4,10 +4,12 @@ import 'package:shuffle_uikit/utils/extentions/mini_chart_extension.dart';
 
 class UiKitMiniChartDataItemWidget extends StatelessWidget {
   final UiKitMiniChartData data;
+  final ValueNotifier<DateRange>? currentPeriodNotifier;
 
   const UiKitMiniChartDataItemWidget({
     Key? key,
     required this.data,
+    this.currentPeriodNotifier,
   }) : super(key: key);
 
   @override
@@ -60,12 +62,25 @@ class UiKitMiniChartDataItemWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text(
-                '${formatDateWithCustomPattern('MMM dd', data.items.period.start, locale: Localizations.localeOf(context).languageCode)}'
-                ' - '
-                '${formatDateWithCustomPattern('MMM dd', data.items.period.end, locale: Localizations.localeOf(context).languageCode)}',
-                style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
-              ),
+              if (currentPeriodNotifier != null)
+                ValueListenableBuilder(
+                  valueListenable: currentPeriodNotifier!,
+                  builder: (context, value, child) {
+                    return Text(
+                      '${formatDateWithCustomPattern('MMM dd', value.start, locale: Localizations.localeOf(context).languageCode)}'
+                      ' - '
+                      '${formatDateWithCustomPattern('MMM dd', value.end, locale: Localizations.localeOf(context).languageCode)}',
+                      style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
+                    );
+                  },
+                ),
+              if (currentPeriodNotifier == null)
+                Text(
+                  '${formatDateWithCustomPattern('MMM dd', data.items.period.start, locale: Localizations.localeOf(context).languageCode)}'
+                  ' - '
+                  '${formatDateWithCustomPattern('MMM dd', data.items.period.end, locale: Localizations.localeOf(context).languageCode)}',
+                  style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
+                ),
               SpacingFoundation.verticalSpace4,
               ClipPath(
                 clipper: MiniChartClipper(data: data.items),

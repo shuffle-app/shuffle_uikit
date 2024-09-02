@@ -167,9 +167,11 @@ class UiKitInviteMessageContent extends StatelessWidget {
                       Expanded(
                         child: Row(
                           children: [
-                            Text(
-                              customMessageData!.receiverUserName,
-                              style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
+                            Flexible(
+                              child: Text(
+                                customMessageData!.receiverUserName,
+                                style: theme?.boldTextTheme.caption1Bold.copyWith(color: colorScheme.inverseSurface),
+                              ),
                             ),
                             SpacingFoundation.horizontalSpace4,
                             if (customMessageData!.receiverUserType == UserTileType.influencer) InfluencerAccountMark(),

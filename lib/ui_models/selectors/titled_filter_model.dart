@@ -7,6 +7,10 @@ class TitledFilterModel<T> {
     required this.items,
   });
 
+  List<TitledFilterItem<T>> get onlySelectedItems => items.where((item) => item.selected).toList();
+
+  List<TitledFilterItem<T>> get onlyUnselectedItems => items.where((item) => !item.selected).toList();
+
   TitledFilterModel<T> copyWith({
     String? title,
     List<TitledFilterItem<T>>? items,
@@ -39,4 +43,6 @@ class TitledFilterItem<T> {
         value: value ?? this.value,
         selected: selected ?? this.selected,
       );
+
+  String toString() => 'TitledFilterItem(mask: $mask, value: $value, selected: $selected)';
 }
