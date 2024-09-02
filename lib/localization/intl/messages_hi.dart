@@ -456,8 +456,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "CountReviews": m12,
         "CountVideoReaction": m13,
         "Create": MessageLookupByLibrary.simpleMessage("बनाएँ"),
-        "CreateBookingLink":
-            MessageLookupByLibrary.simpleMessage("बुकिंग लिंक बनाएं"),
+        "CreateBooking": MessageLookupByLibrary.simpleMessage("Create booking"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("कार्यक्रम बनाएँ"),
         "CreatePlace": MessageLookupByLibrary.simpleMessage("जगह बनाएं"),
         "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
@@ -1186,6 +1185,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Support": MessageLookupByLibrary.simpleMessage("सहायता"),
         "SupportPeopleAroundYou": MessageLookupByLibrary.simpleMessage(
             "अपने आसपास के लोगों का समर्थन करें"),
+        "SupportedFormatsBooking": MessageLookupByLibrary.simpleMessage(
+            "Supported formats: JPEG/JPG/PNG.\nMax size - 10 MB.\nMax resolution - 3840 x 2200 px"),
         "SureYouWantToExit":
             MessageLookupByLibrary.simpleMessage("क्या आप निकलना चाहते हैं?"),
         "SwipeToStart": MessageLookupByLibrary.simpleMessage(
