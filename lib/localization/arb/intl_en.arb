@@ -784,6 +784,11 @@
   "LogInWithEmail": "Login with email",
   "ShowInContentCard": "Show in content card",
   "PlusXNewRespects": "{count, plural, =0{+{count} respects} =1{+{count} respect} =2{+{count} respects} few{+{count} respects} many{+{count} respects} other{+{count} respects}}",
-  "SupportedFormatsBooking": "Supported formats: JPEG/JPG/PNG.\nMax size - 10 MB.\nMax resolution - 3840 x 2200 px"
-
+  "SupportedFormatsBooking": "Supported formats: JPEG/JPG/PNG.\nMax size - 10 MB.\nMax resolution - 3840 x 2200 px",
+  "LogIn": "Log in",
+  "Locked": "Locked",
+  "LogInTo": "Log in",
+  "ToUnlock": "To unlock",
+  "ToOpen": "To open",
+  "LoginBenefits": "{count, plural, =0{leasure & business events & places} =1{locked sections & functions} =2{points, rewards & money} few{invites, chats, hang outs} many{your preferences & mood\ncontent recommendation system} other{Premium, PRO & organisation, Influencer accounts (use & create content)}}"
 }
