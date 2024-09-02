@@ -51,20 +51,24 @@ class LockedInfoCard extends StatelessWidget {
                         ])))
               ])),
               SpacingFoundation.horizontalSpace12,
-              Transform.rotate(
-                  angle: 0.2,
-                  child: ImageWidget(
-                    rasterAsset: GraphicsFoundation.instance.png.key,
-                    height: 53,
-                  ))
+              Transform.scale(
+                  scale: 1.5.sp,
+                  child: Transform.rotate(
+                      angle: 0.2,
+                      child: ImageWidget(
+                        rasterAsset: GraphicsFoundation.instance.png.oneKey,
+                        height: 40,
+                      )))
             ],
           ),
-          icon: Transform.rotate(
-              angle: -0.2,
-              child: ImageWidget(
-                rasterAsset: GraphicsFoundation.instance.png.lock,
-                height: 53,
-              ))),
+          icon: Transform.scale(
+              scale: 1.5.sp,
+              child: Transform.rotate(
+                  angle: -0.2,
+                  child: ImageWidget(
+                    rasterAsset: GraphicsFoundation.instance.png.lock,
+                    height: 40,
+                  )))),
     );
   }
 }

@@ -576,6 +576,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/notif-permit.png
   AssetGenImage get notifPermit => const AssetGenImage('assets/images/png/notif-permit.png');
 
+  /// File path: assets/images/png/one-key.png
+  AssetGenImage get oneKey => const AssetGenImage('assets/images/png/one-key.png');
+
   /// File path: assets/images/png/parcel.png
   AssetGenImage get parcel => const AssetGenImage('assets/images/png/parcel.png');
 
@@ -843,6 +846,7 @@ class $AssetsImagesPngGen {
         nft3,
         noInternet,
         notifPermit,
+        oneKey,
         parcel,
         paywallSlideVideo,
         pharmacyPlus,
