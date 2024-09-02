@@ -135,6 +135,7 @@ class UiKitMessageCard extends StatelessWidget {
                 children: [
                   Expanded(
                     child: RichText(
+                      maxLines: 1,
                       text: TextSpan(
                         children: [
                           if (lastMessageSenderName != null && lastMessageSenderName!.isNotEmpty)
@@ -159,6 +160,7 @@ class UiKitMessageCard extends StatelessWidget {
                         ],
                       ),
                       textAlign: TextAlign.start,
+                      overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   SpacingFoundation.horizontalSpace4,

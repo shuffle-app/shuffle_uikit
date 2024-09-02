@@ -63,12 +63,15 @@ class UiKitChatInCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 if (senderNickname != null)
-                  GestureDetector(
-                    onTap: onUsernameTapped,
-                    child: Text(
-                      '@$senderNickname',
-                      style: theme?.regularTextTheme.caption4Regular.copyWith(
-                        color: ColorsFoundation.mutedText,
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: onUsernameTapped,
+                      child: Text(
+                        '@$senderNickname',
+                        style: theme?.regularTextTheme.caption4Regular.copyWith(
+                          color: ColorsFoundation.mutedText,
+                        ),
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ),
@@ -86,14 +89,17 @@ class UiKitChatInCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (showAvatar && _dataIsValid)
-                context
-                    .userAvatar(
-                      size: UserAvatarSize.x20x20,
-                      type: senderType!,
-                      userName: senderName!,
-                      imageUrl: avatarUrl!,
-                    )
-                    .paddingOnly(right: EdgeInsetsFoundation.horizontal8),
+                GestureDetector(
+                  onTap: onUsernameTapped,
+                  child: context
+                      .userAvatar(
+                        size: UserAvatarSize.x20x20,
+                        type: senderType!,
+                        userName: senderName!,
+                        imageUrl: avatarUrl!,
+                      )
+                      .paddingOnly(right: EdgeInsetsFoundation.horizontal8),
+                ),
               CustomPaint(
                 painter: _MessageTriangle(
                   color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white,
@@ -108,7 +114,7 @@ class UiKitChatInCard extends StatelessWidget {
                           width: width,
                           child: Text(
                             text!,
-                            style: theme?.boldTextTheme.caption1Medium,
+                            style: theme?.boldTextTheme.caption2Medium,
                           ).paddingAll(EdgeInsetsFoundation.all12),
                         )
                       : child!.paddingAll(EdgeInsetsFoundation.all12),

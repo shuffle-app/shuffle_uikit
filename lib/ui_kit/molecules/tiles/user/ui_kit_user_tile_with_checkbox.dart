@@ -161,7 +161,7 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                         SpacingFoundation.verticalSpace2,
                         Text(
                           widget.subtitle!,
-                          style: theme?.boldTextTheme.caption1Medium.copyWith(
+                          style: theme?.regularTextTheme.caption3.copyWith(
                             color: theme.colorScheme.darkNeutral900,
                           ),
                         )
