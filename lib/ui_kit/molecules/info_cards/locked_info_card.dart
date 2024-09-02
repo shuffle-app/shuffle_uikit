@@ -20,6 +20,7 @@ class LockedInfoCard extends StatelessWidget {
           gradientBorder: true,
           customTitle: Row(
             children: [
+              SpacingFoundation.horizontalSpace12,
               Expanded(
                   child: Stack(children: [
                 RichText(
