@@ -443,9 +443,10 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   )
                   .toList(),
             ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16).paddingOnly(
-                bottom:
-                    widget.chartAdditionalData != null ? EdgeInsetsFoundation.zero : EdgeInsetsFoundation.vertical16),
-          if (widget.chartAdditionalData != null && !widget.loading)
+                bottom: widget.chartAdditionalData != null && widget.chartAdditionalData!.isNotEmpty
+                    ? EdgeInsetsFoundation.zero
+                    : EdgeInsetsFoundation.vertical16),
+          if (widget.chartAdditionalData != null && widget.chartAdditionalData!.isNotEmpty && !widget.loading)
             Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -457,7 +458,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                 SpacingFoundation.verticalSpace4,
                 ...widget.chartAdditionalData!.dataItems.map<Widget>(
                   (item) => UiKitLineChartAdditionalDataItemWidget(
-                    title: item.name,
+                    title: item.mask,
                     dataItems: item.groupedValues,
                     maxWidth: viewPortComputedSize.width - EdgeInsetsFoundation.all32,
                   ),
