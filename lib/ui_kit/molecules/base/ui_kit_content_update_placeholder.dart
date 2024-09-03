@@ -43,7 +43,11 @@ class UiKitContentUpdatePlaceholder extends StatelessWidget {
             ),
           ),
           BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 25, sigmaY: 25),
+            filter: ImageFilter.blur(
+              sigmaX: 25,
+              sigmaY: 25,
+              tileMode: TileMode.repeated,
+            ),
             child: ClipRRect(
               borderRadius: BorderRadiusFoundation.all8,
               child: ColoredBox(

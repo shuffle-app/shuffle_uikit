@@ -57,19 +57,18 @@ class UiKitChatOutCard extends StatelessWidget {
                   clipBehavior: Clip.hardEdge,
                   child: text != null
                       ? SizedBox(
-                    width: width,
-                    child: Text(
-                      text!,
-                      style: theme?.boldTextTheme.caption1Medium.copyWith(color: sentByMe ? Colors.black : null),
-                    ).paddingAll(EdgeInsetsFoundation.all12),
-                  )
+                          width: width,
+                          child: Text(
+                            text!,
+                            style: theme?.boldTextTheme.caption2Medium.copyWith(color: sentByMe ? Colors.black : null),
+                          ).paddingAll(EdgeInsetsFoundation.all12),
+                        )
                       : child!.paddingAll(EdgeInsetsFoundation.all12),
                 ),
               ),
               Transform(
-                transform: Matrix4.identity()
-                  ..scale(-1.0,0.9),
-                  // ..translate(0.5, 0, 0),
+                transform: Matrix4.identity()..scale(-1.0, 0.9),
+                // ..translate(0.5, 0, 0),
                 child: CustomPaint(
                   painter: _MessageTriangle(
                     color: brightness == Brightness.light ? Colors.white : Colors.black,
@@ -91,8 +90,7 @@ class _MessageTriangle extends CustomPainter {
 
   @override
   void paint(canvas, _) {
-    Paint paint = Paint()
-      ..color = color;
+    Paint paint = Paint()..color = color;
     Path path = Path();
 
     path

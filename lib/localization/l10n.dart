@@ -7351,11 +7351,11 @@ class S {
     );
   }
 
-  /// `Create booking link`
-  String get CreateBookingLink {
+  /// `Create booking`
+  String get CreateBooking {
     return Intl.message(
-      'Create booking link',
-      name: 'CreateBookingLink',
+      'Create booking',
+      name: 'CreateBooking',
       desc: '',
       args: [],
     );
@@ -8077,6 +8077,83 @@ class S {
       many: '+$count respects',
       other: '+$count respects',
       name: 'PlusXNewRespects',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Supported formats: JPEG/JPG/PNG.\nMax size - 10 MB.\nMax resolution - 3840 x 2200 px`
+  String get SupportedFormatsBooking {
+    return Intl.message(
+      'Supported formats: JPEG/JPG/PNG.\nMax size - 10 MB.\nMax resolution - 3840 x 2200 px',
+      name: 'SupportedFormatsBooking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log in`
+  String get LogIn {
+    return Intl.message(
+      'Log in',
+      name: 'LogIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Locked`
+  String get Locked {
+    return Intl.message(
+      'Locked',
+      name: 'Locked',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log in`
+  String get LogInTo {
+    return Intl.message(
+      'Log in',
+      name: 'LogInTo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To unlock`
+  String get ToUnlock {
+    return Intl.message(
+      'To unlock',
+      name: 'ToUnlock',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To open`
+  String get ToOpen {
+    return Intl.message(
+      'To open',
+      name: 'ToOpen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =0{leasure & business events & places} =1{locked sections & functions} =2{points, rewards & money} few{invites, chats, hang outs} many{your preferences & mood\ncontent recommendation system} other{Premium, PRO & organisation, Influencer accounts (use & create content)}}`
+  String LoginBenefits(num count) {
+    return Intl.plural(
+      count,
+      zero: 'leasure & business events & places',
+      one: 'locked sections & functions',
+      two: 'points, rewards & money',
+      few: 'invites, chats, hang outs',
+      many: 'your preferences & mood\ncontent recommendation system',
+      other:
+          'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      name: 'LoginBenefits',
       desc: '',
       args: [count],
     );

@@ -45,6 +45,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   final _tapNotifier = ValueNotifier<Offset>(Offset.zero);
   final _bodySizingNotifier = ValueNotifier<UiKitBodySizingInfo>(UiKitBodySizingInfo.initial());
   final _selectedDataSetNotifier = ValueNotifier<LineChartSelectedPointData>(LineChartSelectedPointData.empty());
+  late final _visibleDateRangeNotifier = ValueNotifier<DateRange>(widget.chartData.items.period);
 
   List<int> get visibleLineIds => _smallPreviewUpdateNotifier.value.visibleLinesIds;
 
@@ -131,6 +132,12 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
         (widget.chartData.items.maxDatasetsCount - 1);
   }
 
+  int get datesVisibleInViewport {
+    /// returns number of dates that can be displayed in the viewport
+
+    return chartViewPortSize.width ~/ (initialPixelsPerDate + additionalSpacingForDate);
+  }
+
   @override
   void initState() {
     super.initState();
@@ -165,6 +172,11 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                 widget.chartData.items.dates.length;
             _smallPreviewUpdateNotifier.addListener(_smallPreviewUpdateListener);
           }
+          final visibleDates = (chartViewPortSize.width ~/ initialPixelsPerDate) - 1;
+          _visibleDateRangeNotifier.value = DateRange(
+            start: dates.first,
+            end: visibleDates - 1 < dates.length ? dates.elementAt(visibleDates - 1) : dates.last,
+          );
         });
       });
     });
@@ -199,6 +211,21 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
         additionalWidth: additionalWidth,
       );
     });
+    _setVisibleDateRange();
+  }
+
+  void _setVisibleDateRange() {
+    final offsetIndex = ((_smallPreviewUpdateNotifier.value.leftOffset * chartToSmallPreviewRatio) /
+            (initialPixelsPerDate +
+                additionalSpacingForDate +
+                SpacingFoundation.horizontalSpacing8 +
+                additionalSpacingForDate))
+        .ceil();
+    DateTime startDate = dates.elementAt(offsetIndex);
+    DateTime endDate = offsetIndex + datesVisibleInViewport < dates.length
+        ? dates.elementAt(datesVisibleInViewport - 2 + offsetIndex)
+        : dates.last;
+    _visibleDateRangeNotifier.value = DateRange(start: startDate, end: endDate);
   }
 
   Future<void> _scrollChartToPosition(double position) async {
@@ -280,9 +307,16 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
               ),
               SpacingFoundation.horizontalSpace4,
               if (!widget.loading)
-                Text(
-                  '${DateFormat('MMM d').format(widget.chartData.items.period.start)} - ${DateFormat('MMM d').format(widget.chartData.items.period.end)}',
-                  style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
+                ValueListenableBuilder(
+                  valueListenable: _visibleDateRangeNotifier,
+                  builder: (context, range, child) {
+                    final text =
+                        '${DateFormat('MMM d').format(_visibleDateRangeNotifier.value.start)} - ${DateFormat('MMM d').format(_visibleDateRangeNotifier.value.end)}';
+                    return Text(
+                      text,
+                      style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
+                    );
+                  },
                 ),
               if (widget.action != null)
                 context
@@ -319,7 +353,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                         ),
                       )
                       .toList(),
-                ).paddingOnly(left: EdgeInsetsFoundation.horizontal12),
+                ),
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
           SpacingFoundation.verticalSpace16,
@@ -409,9 +443,10 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   )
                   .toList(),
             ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16).paddingOnly(
-                bottom:
-                    widget.chartAdditionalData != null ? EdgeInsetsFoundation.zero : EdgeInsetsFoundation.vertical16),
-          if (widget.chartAdditionalData != null && !widget.loading)
+                bottom: widget.chartAdditionalData != null && widget.chartAdditionalData!.isNotEmpty
+                    ? EdgeInsetsFoundation.zero
+                    : EdgeInsetsFoundation.vertical16),
+          if (widget.chartAdditionalData != null && widget.chartAdditionalData!.isNotEmpty && !widget.loading)
             Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -423,7 +458,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                 SpacingFoundation.verticalSpace4,
                 ...widget.chartAdditionalData!.dataItems.map<Widget>(
                   (item) => UiKitLineChartAdditionalDataItemWidget(
-                    title: item.name,
+                    title: item.mask,
                     dataItems: item.groupedValues,
                     maxWidth: viewPortComputedSize.width - EdgeInsetsFoundation.all32,
                   ),

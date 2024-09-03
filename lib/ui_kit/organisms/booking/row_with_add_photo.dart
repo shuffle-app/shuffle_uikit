@@ -24,39 +24,60 @@ class RowWithAddPhoto extends StatelessWidget {
           S.of(context).Photo,
           style: theme?.regularTextTheme.labelSmall,
         ),
+        SpacingFoundation.horizontalSpace12,
+        Builder(
+          builder: (context) => GestureDetector(
+            onTap: () => showUiKitPopover(
+              context,
+              customMinHeight: 30.h,
+              showButton: false,
+              title: Text(
+                S.of(context).SupportedFormatsBooking,
+                style: theme?.regularTextTheme.body.copyWith(color: Colors.black87),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            child: ImageWidget(
+              iconData: ShuffleUiKitIcons.info,
+              width: 20.w,
+              color: theme?.colorScheme.darkNeutral900,
+            ),
+          ),
+        ),
         SpacingFoundation.horizontalSpace8,
-        link.isNotEmpty
-            ? Stack(
-                alignment: Alignment.topRight,
-                children: [
-                  UiKitCardWrapper(
-                    borderRadius: BorderRadiusFoundation.all8,
-                    child: ImageWidget(
-                      height: 40.h,
-                      link: link,
-                    ),
-                  ).paddingAll(8),
-                  context.outlinedButton(
-                    hideBorder: true,
-                    data: BaseUiKitButtonData(
-                      onPressed: onPhotoDeleted,
-                      iconInfo: BaseUiKitButtonIconData(
-                        iconData: ShuffleUiKitIcons.x,
-                        size: 12,
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            : Expanded(
-                child: Text(
-                  S.of(context).PleaseAddPhoto,
-                  style: theme?.regularTextTheme.labelSmall.copyWith(
-                    color: ColorsFoundation.error,
+        if (link.isNotEmpty) ...[
+          Stack(
+            alignment: Alignment.topRight,
+            children: [
+              UiKitCardWrapper(
+                borderRadius: BorderRadiusFoundation.all8,
+                child: ImageWidget(
+                  height: 40.h,
+                  link: link,
+                ),
+              ).paddingAll(8),
+              context.outlinedButton(
+                hideBorder: true,
+                data: BaseUiKitButtonData(
+                  onPressed: onPhotoDeleted,
+                  iconInfo: BaseUiKitButtonIconData(
+                    iconData: ShuffleUiKitIcons.x,
+                    size: 12,
                   ),
                 ),
               ),
-        const Spacer(),
+            ],
+          ),
+          const Spacer(),
+        ] else
+          Expanded(
+            child: Text(
+              S.of(context).PleaseAddPhoto,
+              style: theme?.regularTextTheme.labelSmall.copyWith(
+                color: ColorsFoundation.error,
+              ),
+            ),
+          ),
         context.outlinedButton(
           data: BaseUiKitButtonData(
             onPressed: onAddPhoto,

@@ -14,7 +14,8 @@ class OrdinaryNotificationPopUp extends BaseNotificationPopup {
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = context.uiKitTheme?.boldTextTheme.body.copyWith(color: context.uiKitTheme?.colorScheme.inverseSurface);
+    final titleStyle =
+        context.uiKitTheme?.boldTextTheme.body.copyWith(color: context.uiKitTheme?.colorScheme.inverseSurface);
 
     return BlurredCardWithBorder(
       height: requiredData.customHeight,
@@ -40,8 +41,7 @@ class OrdinaryNotificationPopUp extends BaseNotificationPopup {
             ],
           ),
           SpacingFoundation.verticalSpace8,
-          primaryActionWidget ?? const SizedBox(),
-          SpacingFoundation.verticalSpace8,
+          if (primaryActionWidget != null) ...[primaryActionWidget!, SpacingFoundation.verticalSpace8],
           dismissActionWidget ?? const SizedBox(),
         ],
       ),

@@ -59,7 +59,7 @@ class UiKitUserTileWithOption extends StatelessWidget {
                   style: theme?.boldTextTheme.caption1Medium.copyWith(
                     color: theme.colorScheme.darkNeutral900,
                   ),
-                )
+                ).paddingOnly(right: EdgeInsetsFoundation.horizontal16)
             ],
           ),
         ),

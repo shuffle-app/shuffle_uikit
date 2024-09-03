@@ -13,22 +13,26 @@ extension NavigatorExtention on BuildContext {
     RouteSettings? settings,
     bool maintainState = true,
     bool nativeTransition = true,
-        bool useRootNavigator = false,
+    bool useRootNavigator = false,
+    RoutePageBuilder? pageBuilder,
   }) async =>
-      await Navigator.of(this,rootNavigator: useRootNavigator).push(nativeTransition
-          ? MaterialPageRoute(
-              builder: (_) => screen,
-              settings: settings,
-              maintainState: maintainState,
-            )
-          : PageRouteBuilder(
-              pageBuilder: (context, animation, _) => FadeTransition(
-                opacity: animation,
-                child: screen,
+      await Navigator.of(this, rootNavigator: useRootNavigator).push(
+        nativeTransition
+            ? MaterialPageRoute(
+                builder: (_) => screen,
+                settings: settings,
+                maintainState: maintainState,
+              )
+            : PageRouteBuilder(
+                pageBuilder: pageBuilder ??
+                    (context, animation, _) => FadeTransition(
+                          opacity: animation,
+                          child: screen,
+                        ),
+                settings: settings,
+                maintainState: maintainState,
               ),
-              settings: settings,
-              maintainState: maintainState,
-            ));
+      );
 
   /// performs a simple [Navigator.pushReplacement] action with given [route]
   Future<dynamic> pushReplacement(
@@ -36,6 +40,7 @@ extension NavigatorExtention on BuildContext {
     RouteSettings? settings,
     bool maintainState = true,
     bool nativeTransition = true,
+    RoutePageBuilder? pageBuilder,
   }) async =>
       await Navigator.of(this).pushReplacement(nativeTransition
           ? MaterialPageRoute(
@@ -44,10 +49,11 @@ extension NavigatorExtention on BuildContext {
               maintainState: maintainState,
             )
           : PageRouteBuilder(
-              pageBuilder: (context, animation, _) => FadeTransition(
-                opacity: animation,
-                child: screen,
-              ),
+              pageBuilder: pageBuilder ??
+                  (context, animation, _) => FadeTransition(
+                        opacity: animation,
+                        child: screen,
+                      ),
               settings: settings,
               maintainState: maintainState,
             ));
@@ -59,6 +65,7 @@ extension NavigatorExtention on BuildContext {
     bool maintainState = true,
     RoutePredicate? routePredicate,
     bool nativeTransition = true,
+    RoutePageBuilder? pageBuilder,
   }) async =>
       await Navigator.of(this).pushAndRemoveUntil(
           nativeTransition
@@ -68,10 +75,11 @@ extension NavigatorExtention on BuildContext {
                   maintainState: maintainState,
                 )
               : PageRouteBuilder(
-                  pageBuilder: (context, animation, _) => FadeTransition(
-                    opacity: animation,
-                    child: screen,
-                  ),
+                  pageBuilder: pageBuilder ??
+                      (context, animation, _) => FadeTransition(
+                            opacity: animation,
+                            child: screen,
+                          ),
                   settings: settings,
                   maintainState: maintainState,
                 ),
@@ -102,7 +110,6 @@ extension NavigatorExtention on BuildContext {
     Object? arguments,
     bool routes = false,
   }) async =>
-      await Navigator.of(this).pushNamedAndRemoveUntil(
-          screenName, (Route<dynamic> route) => routes,
-          arguments: arguments);
+      await Navigator.of(this)
+          .pushNamedAndRemoveUntil(screenName, (Route<dynamic> route) => routes, arguments: arguments);
 }

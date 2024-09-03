@@ -14,6 +14,7 @@ class FingerprintButton extends StatefulWidget {
     required this.parentWidth,
     required this.animationPath,
     required this.onCompletedWidget,
+    required this.onPressedShouldRecall,
     this.width,
     this.height,
     this.subtitle,
@@ -30,6 +31,7 @@ class FingerprintButton extends StatefulWidget {
   final Widget? subtitle;
   final Widget onCompletedWidget;
   final bool? isCompleted;
+  final bool onPressedShouldRecall;
   final VoidCallback? onPressed;
   final AsyncCallback? onCompleted;
 
@@ -117,7 +119,12 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
       });
       _shadowController.forward();
     } else if (status == AnimationStatus.dismissed) {
-      setState(() => _isPressed = false);
+      setState(() {
+        _isPressed = false;
+        if(widget.onPressedShouldRecall){
+          _isOnPressedCallbackCalled = false;
+        }
+      });
       _shadowController.reverse();
     }
   }
@@ -229,6 +236,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
             front: GestureDetector(
               onTapDown: (_) => _startAnimation(),
               onTapUp: (_) => _reverseAnimation(),
+              onTapCancel: () => _reverseAnimation(),
               onPanUpdate: (details) => _onPanDisabled ? _resetPosition() : _setPosition(details),
               onPanStart: (details) => _onPanDisabled ? null : _setPosition(details),
               onPanEnd: (_) => _onPanDisabled ? null : _resetPosition(),

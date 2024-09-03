@@ -77,7 +77,7 @@ class _UiKitExpansionTileState extends State<UiKitExpansionTile> {
               horizontal: EdgeInsetsFoundation.horizontal32,
               vertical: EdgeInsetsFoundation.vertical16,
             ),
-            height: expanded ? widget.children.length * 42.h : 0,
+            height: expanded ? widget.children.length * (MediaQuery.sizeOf(context).width <= 375 ? 48.5.h : 42.h) : 0,
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,

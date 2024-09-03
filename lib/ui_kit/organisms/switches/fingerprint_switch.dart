@@ -11,6 +11,7 @@ class FingerprintSwitch extends StatefulWidget {
     required this.onCompletedWidget,
     required this.isHealthKitEnabled,
     required this.animationPath,
+    required this.onPressedShouldRecall,
     this.height,
     this.subtitle,
     this.isCompleted,
@@ -25,6 +26,7 @@ class FingerprintSwitch extends StatefulWidget {
   final bool? isCompleted;
   final ImageWidget backgroundImage;
   final bool isHealthKitEnabled;
+  final bool onPressedShouldRecall;
   final String animationPath;
   final VoidCallback? onPressed;
   final AsyncCallback? onCompleted;
@@ -118,6 +120,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
           subtitle: widget.subtitle,
           parentWidth: _currentWidth,
           onPressed: widget.onPressed,
+    onPressedShouldRecall:widget.onPressedShouldRecall,
           onCompleted: () async => await widget.onCompleted?.call().then((_) => _isCompleted.value = true),
           isCompleted: _isCompleted.value,
           onCompletedWidget: widget.onCompletedWidget,
