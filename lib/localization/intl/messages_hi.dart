@@ -629,6 +629,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("जाओ"),
         "GoPremium": MessageLookupByLibrary.simpleMessage("प्रीमियम जाएं"),
         "GoPro": MessageLookupByLibrary.simpleMessage("GO pro"),
+        "GoToPayment": MessageLookupByLibrary.simpleMessage("Go to payment"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("सेटिंग्स में जाओ"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
@@ -1045,6 +1046,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReviewsReceived": m64,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("शनिवार"),
         "Save": MessageLookupByLibrary.simpleMessage("सहेजें"),
+        "Schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "Search": MessageLookupByLibrary.simpleMessage("खोजें"),
         "SearchBusinessChooseYourself1":
             MessageLookupByLibrary.simpleMessage("व्यापारिक क्लब"),
@@ -1097,15 +1099,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDate": MessageLookupByLibrary.simpleMessage("तारीख़ चुनें"),
         "SelectDateRange":
             MessageLookupByLibrary.simpleMessage("तिथि सीमा चुनें"),
+        "SelectDateTime":
+            MessageLookupByLibrary.simpleMessage("Select date and time"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("दिन चुनें"),
         "SelectGender": MessageLookupByLibrary.simpleMessage("लिंग चुनें"),
         "SelectLanguage": MessageLookupByLibrary.simpleMessage("भाषा चुने"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("मूल्य और मुद्रा चुनें"),
+        "SelectSubs": MessageLookupByLibrary.simpleMessage("Select subs"),
         "SelectType": m66,
         "SelectYourBooking":
             MessageLookupByLibrary.simpleMessage("अपनी बुकिंग चुनें"),
+        "SelectYourFavoriteProduct": MessageLookupByLibrary.simpleMessage(
+            "Select your favorite product"),
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("अपने धर्म चुनें"),
         "SelectYourSpecialty":
@@ -1236,6 +1243,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("गुरुवार"),
         "Ticket": MessageLookupByLibrary.simpleMessage("टिकट"),
         "TicketFrom": m73,
+        "TicketPrice": MessageLookupByLibrary.simpleMessage("Ticket price"),
         "Tickets": m74,
         "Time": MessageLookupByLibrary.simpleMessage("समय"),
         "Title": MessageLookupByLibrary.simpleMessage("शीर्षक"),

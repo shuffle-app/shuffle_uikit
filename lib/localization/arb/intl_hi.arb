@@ -788,5 +788,12 @@
   "LogInTo": "Log in",
   "ToUnlock": "To unlock",
   "ToOpen": "To open",
-  "LoginBenefits": "{count, plural, =0{leasure & business events & places} =1{locked sections & functions} =2{points, rewards & money} few{invites, chats, hang outs} many{your preferences & mood\ncontent recommendation system} other{Premium, PRO & organisation, Influencer accounts (use & create content)}}"
+  "LoginBenefits": "{count, plural, =0{leasure & business events & places} =1{locked sections & functions} =2{points, rewards & money} few{invites, chats, hang outs} many{your preferences & mood\ncontent recommendation system} other{Premium, PRO & organisation, Influencer accounts (use & create content)}}",
+  "SelectSubs": "Select subs",
+  "TicketPrice": "Ticket price",
+  "SelectYourFavoriteProduct": "Select your favorite product",
+  "GoToPayment": "Go to payment",
+  "SelectDateTime": "Select date and time",
+  "Schedule": "Schedule"
+
 }
