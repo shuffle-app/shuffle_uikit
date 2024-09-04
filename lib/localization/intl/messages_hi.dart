@@ -117,7 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "{invitedPeopleCount, बहुवचन, =0{${invitedPeopleCount} लोग} =1{${invitedPeopleCount} व्यक्ति} =2{${invitedPeopleCount} लोग} कुछ{${invitedPeopleCount} लोग} अनेक{${invitedPeopleCount} लोग} अन्य{${invitedPeopleCount} लोग}} को आमंत्रित करता है";
 
   static String m36(count) =>
-      "${Intl.plural(count, zero: 'leasure & business events & places', one: 'locked sections & functions', two: 'points, rewards & money', few: 'invites, chats, hang outs', many: 'your preferences & mood\ncontent recommendation system', other: 'Premium, PRO & organisation, Influencer accounts (use & create content)')}";
+      "${Intl.plural(count, zero: 'अवकाश और व्यावसायिक कार्यक्रम और स्थान', one: 'लॉक किए गए अनुभाग और फ़ंक्शन', two: 'अंक, पुरस्कार और पैसे', few: 'आमंत्रण, चैट, हैंगआउट', many: 'आपकी प्राथमिकताएँ और मूड सामग्री अनुशंसा प्रणाली', other: 'प्रीमियम, प्रो और संगठन, प्रभावशाली खाते (सामग्री का उपयोग और निर्माण)')}";
 
   static String m37(count) =>
       "${count} ${Intl.plural(count, zero: 'दिन', one: 'दिन', two: 'दिन', few: 'दिन', many: 'दिन', other: 'दिन')} लॉगिन इन एप्लिकेशन में लॉगिन";

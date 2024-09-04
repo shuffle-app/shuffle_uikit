@@ -119,7 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Приглашает ${Intl.plural(invitedPeopleCount, zero: '${invitedPeopleCount} людей', one: '${invitedPeopleCount}-о', two: '${invitedPeopleCount}-х', few: '${invitedPeopleCount}-х', many: '${invitedPeopleCount}-х', other: '${invitedPeopleCount}-х')} на";
 
   static String m36(count) =>
-      "${Intl.plural(count, zero: 'развлечения & бизнес события & места', one: 'заблокированные секции & функции', two: 'поинты, награды & деньги', few: 'приглашения, чаты, связи', many: 'ваши настройки & настроение система рекоммендаций', other: 'Premium, PRO & организация, Influencer аккаунты (использование & создание контента)')}";
+      "${Intl.plural(count, zero: 'досуг и бизнес события и места', one: 'закрытые разделы и функции', two: 'поинты, награды и деньги', few: 'приглашения, чаты, тусовки', many: 'система рекомендаций контента по вашим предпочтениям и настроению', other: 'Премиум, PRO и организация, аккаунт Инфлюенсера (пользуйся и создавай контент)')}";
 
   static String m37(count) =>
       "Вход в приложение ${count} ${Intl.plural(count, zero: 'дней', one: 'день', two: 'дня', few: 'дня', many: 'дней', other: 'дней')} подряд";
@@ -735,7 +735,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Локация необходима для использования функции"),
         "Locked": MessageLookupByLibrary.simpleMessage("Залочено"),
         "LogIn": MessageLookupByLibrary.simpleMessage("Войти"),
-        "LogInTo": MessageLookupByLibrary.simpleMessage("Войдите"),
+        "LogInTo": MessageLookupByLibrary.simpleMessage("Залогинься"),
         "LogInWithEmail":
             MessageLookupByLibrary.simpleMessage("Продолжить с email"),
         "LoginBenefits": m36,
