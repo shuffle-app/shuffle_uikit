@@ -8158,6 +8158,222 @@ class S {
       args: [count],
     );
   }
+
+  /// `Offers`
+  String get Offers {
+    return Intl.message(
+      'Offers',
+      name: 'Offers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create a new offer for your {placeOrEvent} and increase attendance`
+  String CreateNewOfferYourPlace(Object placeOrEvent) {
+    return Intl.message(
+      'Create a new offer for your $placeOrEvent and increase attendance',
+      name: 'CreateNewOfferYourPlace',
+      desc: '',
+      args: [placeOrEvent],
+    );
+  }
+
+  /// `Personalize your offer`
+  String get PersonalizeYourOffer {
+    return Intl.message(
+      'Personalize your offer',
+      name: 'PersonalizeYourOffer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By default, your offer will display an image from the uploaded place photos`
+  String get ByDefaultYourOfferWillDisplay {
+    return Intl.message(
+      'By default, your offer will display an image from the uploaded place photos',
+      name: 'ByDefaultYourOfferWillDisplay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notify the audience`
+  String get NotifyTheAudience {
+    return Intl.message(
+      'Notify the audience',
+      name: 'NotifyTheAudience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The offer will be added to the personal profile of users who view your content or make a booking`
+  String get TheOfferWillBeAddedToPersonal {
+    return Intl.message(
+      'The offer will be added to the personal profile of users who view your content or make a booking',
+      name: 'TheOfferWillBeAddedToPersonal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your offer will be shown 1 time and included in the list of offers of your audience. It will disappear after the end of the event.`
+  String get YourOfferWillShown1Time {
+    return Intl.message(
+      'Your offer will be shown 1 time and included in the list of offers of your audience. It will disappear after the end of the event.',
+      name: 'YourOfferWillShown1Time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer price {count}$`
+  String OfferPrice(Object count) {
+    return Intl.message(
+      'Offer price $count\$',
+      name: 'OfferPrice',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Save and pay`
+  String get SaveAndPay {
+    return Intl.message(
+      'Save and pay',
+      name: 'SaveAndPay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay for the bonus offer`
+  String get PayForTheBonusOffer {
+    return Intl.message(
+      'Pay for the bonus offer',
+      name: 'PayForTheBonusOffer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay`
+  String get Pay {
+    return Intl.message(
+      'Pay',
+      name: 'Pay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer successfully created`
+  String get OfferSuccessfullyCreated {
+    return Intl.message(
+      'Offer successfully created',
+      name: 'OfferSuccessfullyCreated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can see your offers in the promotion menu`
+  String get YouCanSeeYourOffersPromotionMenu {
+    return Intl.message(
+      'You can see your offers in the promotion menu',
+      name: 'YouCanSeeYourOffersPromotionMenu',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer`
+  String get Offer {
+    return Intl.message(
+      'Offer',
+      name: 'Offer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select period of valid`
+  String get SelectPeriodOfValid {
+    return Intl.message(
+      'Select period of valid',
+      name: 'SelectPeriodOfValid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please add a date(-s)`
+  String get PleaseAddDatePeriod {
+    return Intl.message(
+      'Please add a date(-s)',
+      name: 'PleaseAddDatePeriod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove`
+  String get Remove {
+    return Intl.message(
+      'Remove',
+      name: 'Remove',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Launched`
+  String get Launched {
+    return Intl.message(
+      'Launched',
+      name: 'Launched',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Expired`
+  String get Expired {
+    return Intl.message(
+      'Expired',
+      name: 'Expired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =0{Points} =1{Point} =2{Points} few{Points} many{Points} other{Points}}`
+  String PointsInOffer(num count) {
+    return Intl.plural(
+      count,
+      zero: 'Points',
+      one: 'Point',
+      two: 'Points',
+      few: 'Points',
+      many: 'Points',
+      other: 'Points',
+      name: 'PointsInOffer',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Your offer has already been published to your audience, by changing or deleting it you are responsible for their potential negative attitude.`
+  String get YourOfferHasAlreadyBeenPublishedToYourAudience {
+    return Intl.message(
+      'Your offer has already been published to your audience, by changing or deleting it you are responsible for their potential negative attitude.',
+      name: 'YourOfferHasAlreadyBeenPublishedToYourAudience',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
