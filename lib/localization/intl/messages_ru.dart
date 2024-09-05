@@ -122,7 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Приглашает ${Intl.plural(invitedPeopleCount, zero: '${invitedPeopleCount} людей', one: '${invitedPeopleCount}-о', two: '${invitedPeopleCount}-х', few: '${invitedPeopleCount}-х', many: '${invitedPeopleCount}-х', other: '${invitedPeopleCount}-х')} на";
 
   static String m37(count) =>
-      "${Intl.plural(count, zero: 'развлечения & бизнес события & места', one: 'заблокированные секции & функции', two: 'поинты, награды & деньги', few: 'приглашения, чаты, связи', many: 'ваши настройки & настроение система рекоммендаций', other: 'Premium, PRO & организация, Influencer аккаунты (использование & создание контента)')}";
+      "${Intl.plural(count, zero: 'досуг и бизнес события и места', one: 'закрытые разделы и функции', two: 'поинты, награды и деньги', few: 'приглашения, чаты, тусовки', many: 'система рекомендаций контента по вашим предпочтениям и настроению', other: 'Премиум, PRO и организация, аккаунт Инфлюенсера (пользуйся и создавай контент)')}";
 
   static String m38(count) =>
       "Вход в приложение ${count} ${Intl.plural(count, zero: 'дней', one: 'день', two: 'дня', few: 'дня', many: 'дней', other: 'дней')} подряд";
@@ -650,6 +650,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
         "GoPremium": MessageLookupByLibrary.simpleMessage("Перейти на премиум"),
         "GoPro": MessageLookupByLibrary.simpleMessage("Перейти на про"),
+        "GoToPayment": MessageLookupByLibrary.simpleMessage("Перейти к оплате"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("Перейти в настройки"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
@@ -747,7 +748,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Локация необходима для использования функции"),
         "Locked": MessageLookupByLibrary.simpleMessage("Залочено"),
         "LogIn": MessageLookupByLibrary.simpleMessage("Войти"),
-        "LogInTo": MessageLookupByLibrary.simpleMessage("Войдите"),
+        "LogInTo": MessageLookupByLibrary.simpleMessage("Залогинься"),
         "LogInWithEmail":
             MessageLookupByLibrary.simpleMessage("Продолжить с email"),
         "LoginBenefits": m37,
@@ -1086,6 +1087,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Save": MessageLookupByLibrary.simpleMessage("Сохранить"),
         "SaveAndPay":
             MessageLookupByLibrary.simpleMessage("Сохранить и оплатить"),
+        "Schedule": MessageLookupByLibrary.simpleMessage("График"),
         "Search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "SearchBusinessChooseYourself1":
             MessageLookupByLibrary.simpleMessage("Бизнес-клубы"),
@@ -1137,6 +1139,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDate": MessageLookupByLibrary.simpleMessage("Выбери дату"),
         "SelectDateRange":
             MessageLookupByLibrary.simpleMessage("Выбери диапазон дат"),
+        "SelectDateTime":
+            MessageLookupByLibrary.simpleMessage("Выберите дату и время"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Выбрать дни "),
         "SelectGender": MessageLookupByLibrary.simpleMessage("Выберите пол"),
         "SelectLanguage":
@@ -1146,9 +1150,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Выберите период действия"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("Выберите цену и валюту"),
+        "SelectSubs": MessageLookupByLibrary.simpleMessage("Выберите сабы"),
         "SelectType": m69,
         "SelectYourBooking": MessageLookupByLibrary.simpleMessage(
             "Выберите вариант бронирования"),
+        "SelectYourFavoriteProduct": MessageLookupByLibrary.simpleMessage(
+            "Выберите свой любимый продукт"),
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("Укажи свою религию"),
         "SelectYourSpecialty":
@@ -1285,6 +1292,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("Чт"),
         "Ticket": MessageLookupByLibrary.simpleMessage("Билет"),
         "TicketFrom": m76,
+        "TicketPrice": MessageLookupByLibrary.simpleMessage("Цена билета"),
         "Tickets": m77,
         "Time": MessageLookupByLibrary.simpleMessage("Время"),
         "Title": MessageLookupByLibrary.simpleMessage("Название"),
