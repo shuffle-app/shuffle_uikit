@@ -814,6 +814,6 @@
   "Remove": "Remove",
   "Launched":"Launched", 
   "Expired": "Expired",
-  "PointsInOffer": "{count, plural, =0{Points} =1{Point} =2{Points} few{Points} many{Points} other{Points}}",
+  "PointsInOffer": "{count, plural, =0{Points} =1{Point} =2{Points} few{Points} many{Points} other{Points}} ",
   "YourOfferHasAlreadyBeenPublishedToYourAudience": "Your offer has already been published to your audience, by changing or deleting it you are responsible for their potential negative attitude."
 }
