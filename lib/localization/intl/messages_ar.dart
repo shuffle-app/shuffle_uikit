@@ -24,8 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(allowValue) => "Allow ${allowValue}";
 
-  static String m2(allowedCharacters) =>
-      "Allowed caracters are ${allowedCharacters}";
+  static String m2(allowedCharacters) => "Allowed caracters are ${allowedCharacters}";
 
   static String m3(count) =>
       "${count} ${Intl.plural(count, zero: 'bookings', one: 'booking', two: 'bookings', few: 'bookings', many: 'bookings', other: 'bookings')}";
@@ -36,8 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m5(count) =>
       "${count} ${Intl.plural(count, zero: 'cards', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} ${Intl.plural(count, zero: 'openings', one: 'opening', two: 'openings', few: 'openings', many: 'openings', other: 'openings')}";
 
-  static String m6(creationDate, deletionDate) =>
-      "Created on ${creationDate}.\nWill be deleted on ${deletionDate}";
+  static String m6(creationDate, deletionDate) => "Created on ${creationDate}.\nWill be deleted on ${deletionDate}";
 
   static String m7(item) =>
       "${Intl.plural(item, zero: '3 difficulty levels', one: 'visit first to open next', two: 'visit & check in', few: 'pass & be rewarded', other: 'pass & be rewarded')}";
@@ -57,14 +55,12 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m13(count) => "${count} Video-Reaction";
 
-  static String m14(x, y) =>
-      "Create a new ${x} for your ${y} and increase attendance";
+  static String m14(x, y) => "Create a new ${x} for your ${y} and increase attendance";
 
   static String m15(days) =>
       "${Intl.plural(days, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')}";
 
-  static String m16(actuallyRaised, goal) =>
-      "raised ${actuallyRaised}/\$${goal}\$";
+  static String m16(actuallyRaised, goal) => "raised ${actuallyRaised}/\$${goal}\$";
 
   static String m17(editingType) => "${editingType} place";
 
@@ -124,6 +120,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m37(count) =>
       "${Intl.plural(count, zero: 'leasure & business events & places', one: 'locked sections & functions', two: 'points, rewards & money', few: 'invites, chats, hang outs', many: 'your preferences & mood\ncontent recommendation system', other: 'Premium, PRO & organisation, Influencer accounts (use & create content)')}";
 
+  static String m37(count) =>
+      "${Intl.plural(count, zero: 'invites, chats, hang outs', one: 'your preferences & mood\ncontent recommendation system', two: 'Premium, PRO & organisation, Influencer accounts (use & create content)', few: 'invites, chats, hang outs', other: 'invites, chats, hang outs')}";
+
   static String m38(count) =>
       "Login in ${count} ${Intl.plural(count, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')} in a row";
 
@@ -143,147 +142,135 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m45(amountOfPeople) => "Next ${amountOfPeople} people";
 
-  static String m46(count) => "Offer price ${count}\$";
-
-  static String m47(count) =>
+  static String m46(count) =>
       "${Intl.plural(count, zero: 'visits', one: 'visit', two: 'visits', few: 'visits', many: 'visits', other: 'visits')}";
 
-  static String m48(religionCount) =>
-      "Please select at least ${religionCount} religion";
+  static String m46(religionCount) => "Please select at least ${religionCount} religion";
 
-  static String m49(count) =>
+  static String m48(count) =>
       "${Intl.plural(count, zero: '+${count} comments', one: '+${count} comment', two: '+${count} comments', few: '+${count} comments', many: '+${count} comments', other: '+${count} comments')}";
 
-  static String m50(count) =>
+  static String m49(count) =>
       "${Intl.plural(count, zero: '+${count} respects', one: '+${count} respect', two: '+${count} respects', few: '+${count} respects', many: '+${count} respects', other: '+${count} respects')}";
 
-  static String m51(count) =>
+  static String m50(count) =>
       "${Intl.plural(count, zero: '+${count} New reviews', one: '+${count} New review', two: '+${count} New reviews', few: '+${count} New reviews', many: '+${count} New reviews', other: '+${count} New reviews')}";
 
-  static String m52(count) =>
+  static String m51(count) =>
       "${Intl.plural(count, zero: '+${count} video-reactions', one: '+${count} video-reaction', two: '+${count} video-reactions', few: '+${count} video-reactions', many: '+${count} video-reactions', other: '+${count} video-reactions')}";
 
-  static String m53(count) =>
+  static String m51(count) =>
       "${Intl.plural(count, zero: '+${count} New voices', one: '+${count} New voice', two: '+${count} New voices', few: '+${count} New voices', many: '+${count} New voices', other: '+${count} New voices')}";
 
-  static String m54(count) =>
+  static String m52(count) =>
       "${Intl.plural(count, zero: '+${count} Photos', one: '+${count} Photo', two: '+${count} Photos', few: '+${count} Photos', many: '+${count} Photos', other: '+${count} Photos')}";
 
-  static String m55(count) =>
+  static String m53(count) =>
       "${Intl.plural(count, zero: 'points', one: 'point', two: 'points', few: 'points', many: 'points', other: 'points')}";
 
-  static String m56(count) =>
+  static String m54(count) =>
       "${Intl.plural(count, zero: 'points', one: 'point', two: 'points', few: 'points', many: 'points', other: 'points')}";
 
-  static String m57(item) =>
+  static String m55(item) =>
       "${Intl.plural(item, zero: 'reputation and currency', one: 'increase rating or spend', two: 'perform actions', few: 'earn points', other: 'earn points')}";
 
-  static String m58(count) =>
-      "${Intl.plural(count, zero: 'Points', one: 'Point', two: 'Points', few: 'Points', many: 'Points', other: 'Points')} ";
-
-  static String m59(count) =>
+  static String m56(count) =>
       "${count} ${Intl.plural(count, zero: 'product', one: 'products', two: 'products', few: 'products', many: 'products', other: 'products')}";
 
-  static String m60(item) =>
+  static String m57(item) =>
       "${Intl.plural(item, zero: 'post a dream request', one: 'write & make video', two: 'be convincing and honest', few: 'donate others', other: 'donate others')}";
 
-  static String m61(item) =>
+  static String m58(item) =>
       "${Intl.plural(item, zero: 'find companions', one: 'similar preferences', two: 'check point reputation', few: 'no foes', other: 'no foes')}";
 
-  static String m62(count) =>
+  static String m59(count) =>
       "${count} ${Intl.plural(count, zero: 'reactions', one: 'reaction', two: 'reactions', few: 'reactions', many: 'reactions', other: 'reactions')}";
 
-  static String m63(amount) => "Read ${amount}";
+  static String m60(amount) => "Read ${amount}";
 
-  static String m64(message) => "Replying to ${message}";
+  static String m61(message) => "Replying to ${message}";
 
-  static String m65(count) =>
+  static String m62(count) =>
       "${count} ${Intl.plural(count, zero: 'Reviews', one: 'Review', two: 'Reviews', few: 'Reviews', many: 'Reviews', other: 'Reviews')}";
 
-  static String m66(count) =>
+  static String m63(count) =>
       "${Intl.plural(count, zero: 'reviews', one: 'review', two: 'reviews', few: 'reviews', many: 'reviews', other: 'reviews')}";
 
-  static String m67(count) =>
+  static String m64(count) =>
       "${Intl.plural(count, zero: 'reviews', one: 'review', two: 'reviews', few: 'reviews', many: 'reviews', other: 'reviews')}";
 
-  static String m68(item) =>
+  static String m65(item) =>
       "${Intl.plural(item, zero: 'preferences don’t work', one: 'events/places', two: 'type & get result', few: 'use ratings & models', other: 'use ratings & models')}";
 
-  static String m69(type) => "select ${type}";
+  static String m66(type) => "select ${type}";
 
-  static String m70(count) =>
+  static String m67(count) =>
       "${count} ${Intl.plural(count, zero: 'card', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} ${Intl.plural(count, zero: 'shares', one: 'share', two: 'shares', few: 'shares', many: 'shares', other: 'shares')}";
 
-  static String m71(item) =>
+  static String m68(item) =>
       "${Intl.plural(item, zero: 'swipe any direction', one: 'swipe place qualities', two: 'like dislike favorite', few: 'teach our system', other: 'teach our system')}";
 
-  static String m72(count) =>
+  static String m69(count) =>
       "Spend ${count} ${Intl.plural(count, zero: 'hours', one: 'hour', two: 'hours', few: 'hours', many: 'hours', other: 'hours')} per week";
 
-  static String m73(item) =>
+  static String m70(item) =>
       "${Intl.plural(item, zero: 'for fun', one: 'swipe category', two: 'choose & plan', few: 'search & book', other: 'search & book')}";
 
-  static String m74(count) =>
+  static String m71(count) =>
       "${count} ${Intl.plural(count, zero: 'stacks', one: 'stack', two: 'stacks', few: 'stacks', many: 'stacks', other: 'stacks')} ${Intl.plural(count, zero: 'shares', one: 'share', two: 'shares', few: 'shares', many: 'shares', other: 'shares')}";
 
-  static String m75(separator) => "Tell us more${separator}about yourself";
+  static String m72(separator) => "Tell us more${separator}about yourself";
 
-  static String m76(count) =>
+  static String m73(count) =>
       "${count} ${Intl.plural(count, zero: 'tickets', one: 'ticket', two: 'tickets', few: 'tickets', many: 'tickets', other: 'tickets')} form";
 
-  static String m77(count) =>
+  static String m74(count) =>
       "${count} ${Intl.plural(count, zero: 'tickets', one: 'ticket', two: 'tickets', few: 'tickets', many: 'tickets', other: 'tickets')}";
 
-  static String m78(date) => "Top events for ${date}";
+  static String m75(date) => "Top events for ${date}";
 
-  static String m79(amountOfTopDonators, multiplier) =>
+  static String m76(amountOfTopDonators, multiplier) =>
       "Top ${amountOfTopDonators} donators receive x${multiplier} points";
 
-  static String m80(separator) => "Top content rated${separator}by";
+  static String m77(separator) => "Top content rated${separator}by";
 
-  static String m81(type) => "To use this function plz upgrade to ${type}";
+  static String m78(type) => "To use this function plz upgrade to ${type}";
 
-  static String m82(forNMoney) => "Upgrade ${forNMoney}";
+  static String m79(forNMoney) => "Upgrade ${forNMoney}";
 
-  static String m83(count) =>
+  static String m80(count) =>
       "${count} upsales ${Intl.plural(count, zero: 'product', one: 'products', two: 'products', few: 'products', many: 'products', other: 'products')} from";
 
-  static String m84(count) =>
+  static String m81(count) =>
       "${Intl.plural(count, zero: '${count} users', one: '${count} user', two: '${count} users', few: '${count} users', many: '${count} users', other: '${count} users')}";
 
-  static String m85(days) =>
+  static String m82(days) =>
       "in ${days} ${Intl.plural(days, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')}";
 
-  static String m86(value) => "${value} could not be empty";
+  static String m83(value) => "${value} could not be empty";
 
-  static String m87(x, y) => "${x} invites ${y}";
+  static String m84(x, y) => "${x} invites ${y}";
 
-  static String m88(title) => "${title} is required";
+  static String m85(title) => "${title} is required";
 
-  static String m89(x) => "${x} successfully created";
+  static String m86(value) => "${value} successfully updated";
 
-  static String m90(value) => "${value} successfully updated";
-
-  static String m91(years) =>
+  static String m87(years) =>
       "${years}+ ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}";
 
-  static String m92(years) =>
+  static String m88(years) =>
       "${years} ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}";
 
-  static String m93(x) => "You can see your ${x} in the promotion menu";
+  static String m89(amountOfInvitedPersons) => "You sent an invitation to ${amountOfInvitedPersons} people";
 
-  static String m94(amountOfInvitedPersons) =>
-      "You sent an invitation to ${amountOfInvitedPersons} people";
+  static String m90(name) => "Sure you want to delete ${name}?";
 
-  static String m95(name) => "Sure you want to delete ${name}?";
-
-  static String m96(name) => "You can no longer send messages to ${name}";
+  static String m91(name) => "You can no longer send messages to ${name}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "AboutUs": MessageLookupByLibrary.simpleMessage("about us"),
-        "AcceptDonations": MessageLookupByLibrary.simpleMessage(
-            "Accept donations or help others realize their dreams"),
+        "AcceptDonations": MessageLookupByLibrary.simpleMessage("Accept donations or help others realize their dreams"),
         "Account": MessageLookupByLibrary.simpleMessage("Account"),
         "Accrual": MessageLookupByLibrary.simpleMessage("Accrual"),
         "Activation": MessageLookupByLibrary.simpleMessage("Activation"),
@@ -291,10 +278,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ActivityTypes": MessageLookupByLibrary.simpleMessage("Activity types"),
         "AddCategory": MessageLookupByLibrary.simpleMessage("Add category"),
         "AddFeedback": MessageLookupByLibrary.simpleMessage("Add feedback"),
-        "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
-            "Tell us what you liked or remember"),
-        "AddFeedbackFieldTitle":
-            MessageLookupByLibrary.simpleMessage("Describe your experience"),
+        "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage("Tell us what you liked or remember"),
+        "AddFeedbackFieldTitle": MessageLookupByLibrary.simpleMessage("Describe your experience"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "Write a detailed review, use all the available characters so that as many people as possible can appreciate it"),
         "AddLink": MessageLookupByLibrary.simpleMessage("Add link"),
@@ -303,52 +288,39 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddProperty": MessageLookupByLibrary.simpleMessage("Add property"),
         "AddReactions": MessageLookupByLibrary.simpleMessage("Add reaction"),
         "AddReview": MessageLookupByLibrary.simpleMessage("Add review"),
-        "AddReviewFieldHint":
-            MessageLookupByLibrary.simpleMessage("Write a useful addition"),
-        "AddReviewFieldTitle":
-            MessageLookupByLibrary.simpleMessage("Describe your experience"),
+        "AddReviewFieldHint": MessageLookupByLibrary.simpleMessage("Write a useful addition"),
+        "AddReviewFieldTitle": MessageLookupByLibrary.simpleMessage("Describe your experience"),
         "AddReviewPopOverText": MessageLookupByLibrary.simpleMessage(
             "Write an addition to the review that will be useful for other visitors."),
-        "AddToMyFavorites":
-            MessageLookupByLibrary.simpleMessage("Add to my favorites"),
-        "AddToPersonalTop":
-            MessageLookupByLibrary.simpleMessage("Add to personal TOP"),
-        "AddYourselfToList":
-            MessageLookupByLibrary.simpleMessage("Add yourself to list"),
+        "AddToMyFavorites": MessageLookupByLibrary.simpleMessage("Add to my favorites"),
+        "AddToPersonalTop": MessageLookupByLibrary.simpleMessage("Add to personal TOP"),
+        "AddYourselfToList": MessageLookupByLibrary.simpleMessage("Add yourself to list"),
         "Address": MessageLookupByLibrary.simpleMessage("Address"),
         "Age": MessageLookupByLibrary.simpleMessage("Age"),
         "Album": MessageLookupByLibrary.simpleMessage("Album"),
         "Albums": MessageLookupByLibrary.simpleMessage("Albums"),
         "AllAlbums": MessageLookupByLibrary.simpleMessage("All albums"),
-        "AllAppNotification":
-            MessageLookupByLibrary.simpleMessage("All app notifications"),
+        "AllAppNotification": MessageLookupByLibrary.simpleMessage("All app notifications"),
         "AllXFeaturesAvailable": m0,
         "Allow": MessageLookupByLibrary.simpleMessage("Allow"),
         "AllowAll": MessageLookupByLibrary.simpleMessage("Allow all"),
-        "AllowGeolocation":
-            MessageLookupByLibrary.simpleMessage("Click to use geolocation"),
+        "AllowGeolocation": MessageLookupByLibrary.simpleMessage("Click to use geolocation"),
         "AllowLocationServicesToUseThisFunction":
-            MessageLookupByLibrary.simpleMessage(
-                "Allow location services to use this function"),
+            MessageLookupByLibrary.simpleMessage("Allow location services to use this function"),
         "AllowX": m1,
         "AllowedCaracters": m2,
         "AlreadyHaveActiveReminder": MessageLookupByLibrary.simpleMessage(
             "You have already created one reminder. To create a new one, pause or remove the previous one."),
-        "AlreadyInvited": MessageLookupByLibrary.simpleMessage(
-            "Plz respect your choice and others\' feelings"),
+        "AlreadyInvited": MessageLookupByLibrary.simpleMessage("Plz respect your choice and others\' feelings"),
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" And "),
         "Archive": MessageLookupByLibrary.simpleMessage("Archive"),
         "Archived": MessageLookupByLibrary.simpleMessage("Archived"),
         "AreYouSureYouWantToDeleteYourAccount":
-            MessageLookupByLibrary.simpleMessage(
-                "Are you sure you want to delete your account?"),
+            MessageLookupByLibrary.simpleMessage("Are you sure you want to delete your account?"),
         "AreYouSureYouWantToDeleteYourCompanyProfile":
-            MessageLookupByLibrary.simpleMessage(
-                "Are you sure you want to delete your company profile?"),
-        "AreYouSureYouWantToLogOut": MessageLookupByLibrary.simpleMessage(
-            "Are you sure you want to log out?"),
-        "AskForDonations":
-            MessageLookupByLibrary.simpleMessage("Ask for donations"),
+            MessageLookupByLibrary.simpleMessage("Are you sure you want to delete your company profile?"),
+        "AreYouSureYouWantToLogOut": MessageLookupByLibrary.simpleMessage("Are you sure you want to log out?"),
+        "AskForDonations": MessageLookupByLibrary.simpleMessage("Ask for donations"),
         "AskOrSupport": MessageLookupByLibrary.simpleMessage("Ask or support"),
         "AskPeople": MessageLookupByLibrary.simpleMessage("Ask people"),
         "Atheism": MessageLookupByLibrary.simpleMessage("Atheism"),
@@ -356,78 +328,61 @@ class MessageLookup extends MessageLookupByLibrary {
         "AverageBill": MessageLookupByLibrary.simpleMessage("Average bill"),
         "Back": MessageLookupByLibrary.simpleMessage("Back"),
         "Balance": MessageLookupByLibrary.simpleMessage("Balance"),
-        "BaseProperties":
-            MessageLookupByLibrary.simpleMessage("Base properties"),
-        "BasedOnYourActivityWeDetermineYourCondition":
-            MessageLookupByLibrary.simpleMessage(
-                "Based on your activity, heart rate and other factors, we determine your condition and try to recommend exactly what you need right now, specifically for you"),
+        "BaseProperties": MessageLookupByLibrary.simpleMessage("Base properties"),
+        "BasedOnYourActivityWeDetermineYourCondition": MessageLookupByLibrary.simpleMessage(
+            "Based on your activity, heart rate and other factors, we determine your condition and try to recommend exactly what you need right now, specifically for you"),
         "BeFirstToInvite": MessageLookupByLibrary.simpleMessage("Be the first"),
         "BeInSearch": MessageLookupByLibrary.simpleMessage("Be in search"),
         "BookIt": MessageLookupByLibrary.simpleMessage("Book it"),
         "Bookigns": m3,
         "Booking": MessageLookupByLibrary.simpleMessage("Booking"),
         "BookingLimit": MessageLookupByLibrary.simpleMessage("Booking Limit"),
-        "BookingLimitPerOne":
-            MessageLookupByLibrary.simpleMessage("Booking Limit per one"),
+        "BookingLimitPerOne": MessageLookupByLibrary.simpleMessage("Booking Limit per one"),
         "BookingList": MessageLookupByLibrary.simpleMessage("Booking list"),
         "Bookings": m4,
-        "BookingsAndInvites":
-            MessageLookupByLibrary.simpleMessage("Bookings and Invites"),
+        "BookingsAndInvites": MessageLookupByLibrary.simpleMessage("Bookings and Invites"),
         "BookingsHeading": MessageLookupByLibrary.simpleMessage("Bookings"),
         "Both": MessageLookupByLibrary.simpleMessage("Both"),
         "Branches": MessageLookupByLibrary.simpleMessage("Branches"),
         "Buddhism": MessageLookupByLibrary.simpleMessage("Buddhism"),
-        "BuildYOurBusiness":
-            MessageLookupByLibrary.simpleMessage("Build your business with"),
-        "BuildingNumber":
-            MessageLookupByLibrary.simpleMessage("Building number"),
+        "BuildYOurBusiness": MessageLookupByLibrary.simpleMessage("Build your business with"),
+        "BuildingNumber": MessageLookupByLibrary.simpleMessage("Building number"),
         "BurnedToday": MessageLookupByLibrary.simpleMessage("Burned today"),
         "Business": MessageLookupByLibrary.simpleMessage("Business"),
-        "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage(
-            "By continuing you accept the "),
+        "ByContinuingYouAcceptThe": MessageLookupByLibrary.simpleMessage("By continuing you accept the "),
         "ByDefaultYourOfferWillDisplay": MessageLookupByLibrary.simpleMessage(
             "By default, your offer will display an image from the uploaded place photos"),
         "ByDefaultYourReminderWillDisplay": MessageLookupByLibrary.simpleMessage(
             "By default, your reminder will display an image from the uploaded place photos"),
         "ByEmail": MessageLookupByLibrary.simpleMessage("by e-mail"),
         "ByMessage": MessageLookupByLibrary.simpleMessage("by message"),
-        "CalmAtmosphere":
-            MessageLookupByLibrary.simpleMessage("Calm atmosphere"),
+        "CalmAtmosphere": MessageLookupByLibrary.simpleMessage("Calm atmosphere"),
         "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
-        "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
-            "You can view this profile once it becomes an influencer"),
+        "CantSeePublicProfileMessage":
+            MessageLookupByLibrary.simpleMessage("You can view this profile once it becomes an influencer"),
         "CardOpening": m5,
         "Categories": MessageLookupByLibrary.simpleMessage("Categories"),
         "Category": MessageLookupByLibrary.simpleMessage("Category"),
-        "ChallengeFeelings":
-            MessageLookupByLibrary.simpleMessage("Challenge Feelings"),
+        "ChallengeFeelings": MessageLookupByLibrary.simpleMessage("Challenge Feelings"),
         "ChangePhoto": MessageLookupByLibrary.simpleMessage("Change photo"),
         "Chat": MessageLookupByLibrary.simpleMessage("Chat"),
         "ChatDeletionAndCreationMessage": m6,
         "CheckIn": MessageLookupByLibrary.simpleMessage("Check in"),
         "CheckInHiwHint": m7,
-        "CheckInHiwSubtitle": MessageLookupByLibrary.simpleMessage(
-            "cure your feeling or enchance it!"),
-        "CheckInHiwTitle": MessageLookupByLibrary.simpleMessage(
-            "Suitable city content will..."),
+        "CheckInHiwSubtitle": MessageLookupByLibrary.simpleMessage("cure your feeling or enchance it!"),
+        "CheckInHiwTitle": MessageLookupByLibrary.simpleMessage("Suitable city content will..."),
         "CheckItOut": MessageLookupByLibrary.simpleMessage("Check it out"),
         "ChooseOption": MessageLookupByLibrary.simpleMessage("Choose option"),
-        "ChooseYourself":
-            MessageLookupByLibrary.simpleMessage("Choose yourself"),
+        "ChooseYourself": MessageLookupByLibrary.simpleMessage("Choose yourself"),
         "Christianity": MessageLookupByLibrary.simpleMessage("Christianity"),
-        "ClickEnterToSearch":
-            MessageLookupByLibrary.simpleMessage("Click Enter to search"),
-        "CollapseThread":
-            MessageLookupByLibrary.simpleMessage("Collapse thread"),
+        "ClickEnterToSearch": MessageLookupByLibrary.simpleMessage("Click Enter to search"),
+        "CollapseThread": MessageLookupByLibrary.simpleMessage("Collapse thread"),
         "Comments": m8,
         "Company": MessageLookupByLibrary.simpleMessage("Company"),
-        "CompanyAnswered":
-            MessageLookupByLibrary.simpleMessage("Сompany answered"),
-        "CompanyCredentials":
-            MessageLookupByLibrary.simpleMessage("Company credentials"),
+        "CompanyAnswered": MessageLookupByLibrary.simpleMessage("Сompany answered"),
+        "CompanyCredentials": MessageLookupByLibrary.simpleMessage("Company credentials"),
         "CompanyName": MessageLookupByLibrary.simpleMessage("Company name"),
-        "CompanyPosition":
-            MessageLookupByLibrary.simpleMessage("Company position"),
+        "CompanyPosition": MessageLookupByLibrary.simpleMessage("Company position"),
         "CompanyPresentationSlider1": MessageLookupByLibrary.simpleMessage(
             "It is a non-public profile that allows you to post your places, branches, and place\'s events"),
         "CompanyPresentationSlider2": MessageLookupByLibrary.simpleMessage(
@@ -440,37 +395,31 @@ class MessageLookup extends MessageLookupByLibrary {
             "You attract specialized Shuffle influencers who will elevate the status of your places"),
         "CompanyPresentationSlider6": MessageLookupByLibrary.simpleMessage(
             "You can interact with your audience through the unique functionality of special notifications, reminders, offers and presales"),
-        "CompanyPresentationSlider7": MessageLookupByLibrary.simpleMessage(
-            "You can use the internal targeted advertising system"),
+        "CompanyPresentationSlider7":
+            MessageLookupByLibrary.simpleMessage("You can use the internal targeted advertising system"),
         "CompanyPresentationSlider8": MessageLookupByLibrary.simpleMessage(
             "You can integrate your booking system into content cards or use the Shuffle booking system in the future"),
-        "CompressingVideo":
-            MessageLookupByLibrary.simpleMessage("Compressing video"),
+        "CompressingVideo": MessageLookupByLibrary.simpleMessage("Compressing video"),
         "CompressingVideoProgress": m9,
         "Confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
-        "Congratulations":
-            MessageLookupByLibrary.simpleMessage("Congratulations"),
+        "Congratulations": MessageLookupByLibrary.simpleMessage("Congratulations"),
         "Connected": MessageLookupByLibrary.simpleMessage("Connected"),
         "Connects": m10,
         "Contact": MessageLookupByLibrary.simpleMessage("Contact"),
         "ContactPerson": MessageLookupByLibrary.simpleMessage("Contact person"),
         "ContactWith": MessageLookupByLibrary.simpleMessage("Contact"),
         "Contacts": MessageLookupByLibrary.simpleMessage("Contacts"),
-        "ContentIdNotProvidedError":
-            MessageLookupByLibrary.simpleMessage("Content id not provided"),
+        "ContentIdNotProvidedError": MessageLookupByLibrary.simpleMessage("Content id not provided"),
         "ContentOffers": m11,
         "ContentQualityNotice": MessageLookupByLibrary.simpleMessage(
             "In any case, content will be moderated, please take care of the quality"),
         "ContentThatIsAvailableForYouToViewWillAppearHere":
-            MessageLookupByLibrary.simpleMessage(
-                "Content that is available for you to view will appear here"),
+            MessageLookupByLibrary.simpleMessage("Content that is available for you to view will appear here"),
         "Contest": MessageLookupByLibrary.simpleMessage("Contest"),
         "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
         "Control": MessageLookupByLibrary.simpleMessage("Control"),
-        "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
-            "сonvenient, clear and useful"),
-        "CouldntFindInvite":
-            MessageLookupByLibrary.simpleMessage("Couldn\'t find invite"),
+        "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage("сonvenient, clear and useful"),
+        "CouldntFindInvite": MessageLookupByLibrary.simpleMessage("Couldn\'t find invite"),
         "CountReviews": m12,
         "CountVideoReaction": m13,
         "Create": MessageLookupByLibrary.simpleMessage("Create"),
@@ -478,21 +427,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Create Event"),
         "CreateNewXForYourY": m14,
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
-        "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
-            "Create free reminder for your clients"),
+        "CreateReminderDescription": MessageLookupByLibrary.simpleMessage("Create free reminder for your clients"),
         "CreateSubs": MessageLookupByLibrary.simpleMessage("Create subs"),
         "CreateUpsales": MessageLookupByLibrary.simpleMessage("Create upsales"),
-        "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage(
-            "Create your event and invite people"),
-        "CreateYourPlaceAndInvitePeople": MessageLookupByLibrary.simpleMessage(
-            "Create your place and invite people"),
+        "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage("Create your event and invite people"),
+        "CreateYourPlaceAndInvitePeople": MessageLookupByLibrary.simpleMessage("Create your place and invite people"),
         "CredentialsCodeVerificationSubtitle":
-            MessageLookupByLibrary.simpleMessage(
-                "Please type verification code sent to"),
-        "CredentialsVerificationPrompt": MessageLookupByLibrary.simpleMessage(
-            "To gain access you must log in first"),
-        "CredentialsVerificationTitle":
-            MessageLookupByLibrary.simpleMessage("Happy to see you"),
+            MessageLookupByLibrary.simpleMessage("Please type verification code sent to"),
+        "CredentialsVerificationPrompt": MessageLookupByLibrary.simpleMessage("To gain access you must log in first"),
+        "CredentialsVerificationTitle": MessageLookupByLibrary.simpleMessage("Happy to see you"),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("Cutting video"),
         "Daily": MessageLookupByLibrary.simpleMessage("Daily "),
         "Date": MessageLookupByLibrary.simpleMessage("Date"),
@@ -504,112 +447,81 @@ class MessageLookup extends MessageLookupByLibrary {
         "Delete": MessageLookupByLibrary.simpleMessage("Delete"),
         "DeleteAccount": MessageLookupByLibrary.simpleMessage("Delete account"),
         "DeleteCompany": MessageLookupByLibrary.simpleMessage("Delete company"),
-        "DeleteFolderAlert": MessageLookupByLibrary.simpleMessage(
-            "Sure you want to delete stack?"),
-        "DeleteFromList":
-            MessageLookupByLibrary.simpleMessage("Delete from list"),
+        "DeleteFolderAlert": MessageLookupByLibrary.simpleMessage("Sure you want to delete stack?"),
+        "DeleteFromList": MessageLookupByLibrary.simpleMessage("Delete from list"),
         "DependingOn": MessageLookupByLibrary.simpleMessage("Depending on..."),
-        "DescribeYourBusiness":
-            MessageLookupByLibrary.simpleMessage("Describe your business"),
-        "DescribeYourClaim":
-            MessageLookupByLibrary.simpleMessage("Describe your claim"),
-        "DescribeYourIssue":
-            MessageLookupByLibrary.simpleMessage("Describe your issue"),
-        "DescribeYourWishes":
-            MessageLookupByLibrary.simpleMessage("Describe your wishes"),
-        "DescribeYourself":
-            MessageLookupByLibrary.simpleMessage("Describe yourself"),
+        "DescribeYourBusiness": MessageLookupByLibrary.simpleMessage("Describe your business"),
+        "DescribeYourClaim": MessageLookupByLibrary.simpleMessage("Describe your claim"),
+        "DescribeYourIssue": MessageLookupByLibrary.simpleMessage("Describe your issue"),
+        "DescribeYourWishes": MessageLookupByLibrary.simpleMessage("Describe your wishes"),
+        "DescribeYourself": MessageLookupByLibrary.simpleMessage("Describe yourself"),
         "Description": MessageLookupByLibrary.simpleMessage("Description"),
         "Details": MessageLookupByLibrary.simpleMessage("Details"),
-        "DifferentNumberOfPoints":
-            MessageLookupByLibrary.simpleMessage("Different number of points"),
+        "DifferentNumberOfPoints": MessageLookupByLibrary.simpleMessage("Different number of points"),
         "Directions": MessageLookupByLibrary.simpleMessage("Directions"),
         "DonationHint": MessageLookupByLibrary.simpleMessage(
             "You can create one request per month and spend money only on your dream"),
         "DonationRaised": m16,
         "DontBeAlone": MessageLookupByLibrary.simpleMessage("Don\'t be alone"),
-        "DontLiveAlone": MessageLookupByLibrary.simpleMessage(
-            "Don\'t live alone, subscribe to people you like"),
+        "DontLiveAlone": MessageLookupByLibrary.simpleMessage("Don\'t live alone, subscribe to people you like"),
         "DontMissIt": MessageLookupByLibrary.simpleMessage("Don\'t miss it"),
         "DownloadPdf": MessageLookupByLibrary.simpleMessage("Download PDF"),
-        "DubaiEventTicket":
-            MessageLookupByLibrary.simpleMessage("Dubai Event Ticket"),
+        "DubaiEventTicket": MessageLookupByLibrary.simpleMessage("Dubai Event Ticket"),
         "Easy": MessageLookupByLibrary.simpleMessage("Eazy"),
         "Edit": MessageLookupByLibrary.simpleMessage("Edit"),
         "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
         "EditingTypePlace": m17,
         "Email": MessageLookupByLibrary.simpleMessage("Email"),
-        "EmailVerification":
-            MessageLookupByLibrary.simpleMessage("Email verification"),
-        "EnableHintSystem":
-            MessageLookupByLibrary.simpleMessage("Enable hint system"),
-        "EnterExternalLink":
-            MessageLookupByLibrary.simpleMessage("Enter external link"),
+        "EmailVerification": MessageLookupByLibrary.simpleMessage("Email verification"),
+        "EnableHintSystem": MessageLookupByLibrary.simpleMessage("Enable hint system"),
+        "EnterExternalLink": MessageLookupByLibrary.simpleMessage("Enter external link"),
         "EnterInputType": m18,
         "EnterLocation": MessageLookupByLibrary.simpleMessage("Enter location"),
-        "EnterNewPassword":
-            MessageLookupByLibrary.simpleMessage("Enter new password"),
-        "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
-            "Please enter place’s address"),
+        "EnterNewPassword": MessageLookupByLibrary.simpleMessage("Enter new password"),
+        "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage("Please enter place’s address"),
         "EnterPrice": MessageLookupByLibrary.simpleMessage("Enter price"),
         "EnterTitle": MessageLookupByLibrary.simpleMessage("Enter title"),
-        "EnterYourEmailAddress":
-            MessageLookupByLibrary.simpleMessage("Enter your e-mail address"),
+        "EnterYourEmailAddress": MessageLookupByLibrary.simpleMessage("Enter your e-mail address"),
         "Entertainment": MessageLookupByLibrary.simpleMessage("Entertainment"),
-        "EntertainmentSpecialist":
-            MessageLookupByLibrary.simpleMessage("Entertainment specialist"),
+        "EntertainmentSpecialist": MessageLookupByLibrary.simpleMessage("Entertainment specialist"),
         "ErrorOccured": MessageLookupByLibrary.simpleMessage("Error occured"),
-        "ErrorOccuredWithoutMessage": MessageLookupByLibrary.simpleMessage(
-            "Error occured without message"),
+        "ErrorOccuredWithoutMessage": MessageLookupByLibrary.simpleMessage("Error occured without message"),
         "Event": MessageLookupByLibrary.simpleMessage("Event"),
         "EventType": MessageLookupByLibrary.simpleMessage("Event type"),
         "Events": MessageLookupByLibrary.simpleMessage("Events"),
         "EventsCount": m19,
-        "EventsReminders":
-            MessageLookupByLibrary.simpleMessage("Events reminders"),
+        "EventsReminders": MessageLookupByLibrary.simpleMessage("Events reminders"),
         "Exit": MessageLookupByLibrary.simpleMessage("Exit"),
         "ExpandThread": MessageLookupByLibrary.simpleMessage("Expand thread"),
         "Expired": MessageLookupByLibrary.simpleMessage("Expired"),
         "Fair": MessageLookupByLibrary.simpleMessage("Fair"),
         "Faq": MessageLookupByLibrary.simpleMessage("Faq"),
-        "FaqUnderDev": MessageLookupByLibrary.simpleMessage(
-            "Gathering requests for FAQ. \nUnder development"),
+        "FaqUnderDev": MessageLookupByLibrary.simpleMessage("Gathering requests for FAQ. \nUnder development"),
         "Favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
-        "FeaturesEnableGeolocation":
-            MessageLookupByLibrary.simpleMessage("Features enable geolocation"),
+        "FeaturesEnableGeolocation": MessageLookupByLibrary.simpleMessage("Features enable geolocation"),
         "FeedFavoritesHiwItems": m20,
         "FeedFeelingsHiwItems": m21,
-        "FeedFeelingsHiwSubtitle": MessageLookupByLibrary.simpleMessage(
-            "you get exactly what you need"),
-        "FeedFeelingsHiwTitle":
-            MessageLookupByLibrary.simpleMessage("Depending on..."),
+        "FeedFeelingsHiwSubtitle": MessageLookupByLibrary.simpleMessage("you get exactly what you need"),
+        "FeedFeelingsHiwTitle": MessageLookupByLibrary.simpleMessage("Depending on..."),
         "FeedNichesHiwItems": m22,
-        "FeedNichesHiwSubtitle":
-            MessageLookupByLibrary.simpleMessage("get exactly what you need"),
-        "FeedNichesHiwTitle":
-            MessageLookupByLibrary.simpleMessage("Great match..."),
+        "FeedNichesHiwSubtitle": MessageLookupByLibrary.simpleMessage("get exactly what you need"),
+        "FeedNichesHiwTitle": MessageLookupByLibrary.simpleMessage("Great match..."),
         "FeedRandomizerHiwItems": m23,
-        "FeedRandomizerHiwSubtitle":
-            MessageLookupByLibrary.simpleMessage("you press and get random"),
-        "FeedRandomizerHiwTitle":
-            MessageLookupByLibrary.simpleMessage("Randomizing..."),
+        "FeedRandomizerHiwSubtitle": MessageLookupByLibrary.simpleMessage("you press and get random"),
+        "FeedRandomizerHiwTitle": MessageLookupByLibrary.simpleMessage("Randomizing..."),
         "Feedback": MessageLookupByLibrary.simpleMessage("Feedback"),
         "FeedbackAddedSuccessfullyMessage":
-            MessageLookupByLibrary.simpleMessage(
-                "Your feedback has been successfully added"),
+            MessageLookupByLibrary.simpleMessage("Your feedback has been successfully added"),
         "Feedbacks": m24,
         "Feeling": MessageLookupByLibrary.simpleMessage("Feeling"),
         "FeelingsGuesses": m25,
         "Female": MessageLookupByLibrary.simpleMessage("Female"),
-        "FileNotExistsMessage":
-            MessageLookupByLibrary.simpleMessage("File does not exist"),
+        "FileNotExistsMessage": MessageLookupByLibrary.simpleMessage("File does not exist"),
         "Filters": MessageLookupByLibrary.simpleMessage("Filters"),
         "FindSomeoneCardPoints": m26,
         "FindSomeoneCardSameInterests": m27,
-        "FindSomeoneToHangOutWith": MessageLookupByLibrary.simpleMessage(
-            "Find someone to hang out with"),
-        "FindSomeoneToNetworkWith": MessageLookupByLibrary.simpleMessage(
-            "Find someone to network with"),
+        "FindSomeoneToHangOutWith": MessageLookupByLibrary.simpleMessage("Find someone to hang out with"),
+        "FindSomeoneToNetworkWith": MessageLookupByLibrary.simpleMessage("Find someone to network with"),
         "FocusOfLight": MessageLookupByLibrary.simpleMessage("Focus of Light"),
         "FocusOfLightDescription": MessageLookupByLibrary.simpleMessage(
             "The Light of the universe is contained here. If it gets darker in your soul, the light is with you. Look and be filled with peace."),
@@ -620,14 +532,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "For": MessageLookupByLibrary.simpleMessage("For"),
         "ForFormattedPrice": m29,
         "ForPeriod": MessageLookupByLibrary.simpleMessage("For"),
-        "ForgotPassword":
-            MessageLookupByLibrary.simpleMessage("Forgot password"),
+        "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot password"),
         "Free": MessageLookupByLibrary.simpleMessage("Free"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("\nfree places"),
         "FridayShort": MessageLookupByLibrary.simpleMessage("Fri"),
         "FromToYearsOld": m30,
-        "FulfillTheDream":
-            MessageLookupByLibrary.simpleMessage("Fulfill the dream"),
+        "FulfillTheDream": MessageLookupByLibrary.simpleMessage("Fulfill the dream"),
         "Full": MessageLookupByLibrary.simpleMessage("full"),
         "FullRefund": MessageLookupByLibrary.simpleMessage("Full refund"),
         "Gender": MessageLookupByLibrary.simpleMessage("Gender"),
@@ -637,83 +547,66 @@ class MessageLookup extends MessageLookupByLibrary {
         "GetReward": MessageLookupByLibrary.simpleMessage("Get reward"),
         "GetStarted": MessageLookupByLibrary.simpleMessage("Get started"),
         "Global": MessageLookupByLibrary.simpleMessage("Global"),
-        "GlobalAlertText": MessageLookupByLibrary.simpleMessage(
-            "Only published can be made global"),
+        "GlobalAlertText": MessageLookupByLibrary.simpleMessage("Only published can be made global"),
         "Go": MessageLookupByLibrary.simpleMessage("Go!"),
         "GoAhead": MessageLookupByLibrary.simpleMessage("Go ahead"),
-        "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage(
-            "Go ahead and grow your business"),
+        "GoAheadAndGrowYourBusiness": MessageLookupByLibrary.simpleMessage("Go ahead and grow your business"),
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("Go"),
         "GoPremium": MessageLookupByLibrary.simpleMessage("Go premium"),
         "GoPro": MessageLookupByLibrary.simpleMessage("GO pro"),
         "GoToPayment": MessageLookupByLibrary.simpleMessage("Go to payment"),
         "GoToSettings": MessageLookupByLibrary.simpleMessage("Go to settings"),
-        "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
-            "Great interview with the owner"),
+        "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage("Great interview with the owner"),
         "Guess": MessageLookupByLibrary.simpleMessage("Guess"),
         "HallOfFame": MessageLookupByLibrary.simpleMessage("Hall of Fame"),
         "HardToAnswer": MessageLookupByLibrary.simpleMessage("Hard to answer"),
         "Hardcore": MessageLookupByLibrary.simpleMessage("Hardcore"),
         "HealthKit": MessageLookupByLibrary.simpleMessage("Health Kit"),
-        "HealthRandomAlert": MessageLookupByLibrary.simpleMessage(
-            "Give access to health kit usage otherwise the result will be random"),
+        "HealthRandomAlert":
+            MessageLookupByLibrary.simpleMessage("Give access to health kit usage otherwise the result will be random"),
         "Helpful": MessageLookupByLibrary.simpleMessage("Helpful"),
         "HelpfulNCount": m31,
         "Hindu": MessageLookupByLibrary.simpleMessage("Hindu"),
-        "HintAverageBill":
-            MessageLookupByLibrary.simpleMessage("Select price or price range"),
-        "HintNumberEventsForPro": MessageLookupByLibrary.simpleMessage(
-            "3 events available & add more for extra price"),
-        "HintSystemDisabled":
-            MessageLookupByLibrary.simpleMessage("Hint system disabled"),
+        "HintAverageBill": MessageLookupByLibrary.simpleMessage("Select price or price range"),
+        "HintNumberEventsForPro": MessageLookupByLibrary.simpleMessage("3 events available & add more for extra price"),
+        "HintSystemDisabled": MessageLookupByLibrary.simpleMessage("Hint system disabled"),
         "HintSystemEnabled": m32,
         "HoursAgo": m33,
-        "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
-            "How’re you feeling this morning?"),
-        "HowAreYouFeelingToday":
-            MessageLookupByLibrary.simpleMessage("How’re you feeling today?"),
-        "HowAreYouFeelingTonight":
-            MessageLookupByLibrary.simpleMessage("How’re you feeling tonight?"),
+        "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage("How’re you feeling this morning?"),
+        "HowAreYouFeelingToday": MessageLookupByLibrary.simpleMessage("How’re you feeling today?"),
+        "HowAreYouFeelingTonight": MessageLookupByLibrary.simpleMessage("How’re you feeling tonight?"),
         "HowItWorks": MessageLookupByLibrary.simpleMessage("How it\nworks"),
-        "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage(
-            "How much \$ do you want to donate?"),
+        "HowMuchDoYouWantToDonate": MessageLookupByLibrary.simpleMessage("How much \$ do you want to donate?"),
         "Icon": MessageLookupByLibrary.simpleMessage("Icon"),
         "Icons": MessageLookupByLibrary.simpleMessage("Icons"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("Ideal route"),
-        "IncorrectLoginOrPassword":
-            MessageLookupByLibrary.simpleMessage("Incorrect login or password"),
+        "IncorrectLoginOrPassword": MessageLookupByLibrary.simpleMessage("Incorrect login or password"),
         "Influencer": MessageLookupByLibrary.simpleMessage("Influencer"),
         "InfluencerSubscriptionFeature1": MessageLookupByLibrary.simpleMessage(
             "You can declare yourself and show your expertise in one of the areas of social life of the city or the world"),
-        "InfluencerSubscriptionFeature2": MessageLookupByLibrary.simpleMessage(
-            "You can gather your own new or supplement an existing audience"),
-        "InfluencerSubscriptionFeature3": MessageLookupByLibrary.simpleMessage(
-            "Get a set of tools for working with "),
+        "InfluencerSubscriptionFeature2":
+            MessageLookupByLibrary.simpleMessage("You can gather your own new or supplement an existing audience"),
+        "InfluencerSubscriptionFeature3": MessageLookupByLibrary.simpleMessage("Get a set of tools for working with "),
         "InfluencerSubscriptionFeature3v1":
-            MessageLookupByLibrary.simpleMessage(
-                " content and interacting with your audience"),
-        "InfluencerSubscriptionFeature4": MessageLookupByLibrary.simpleMessage(
-            "Become a thought leader in your field and earn a reputation"),
+            MessageLookupByLibrary.simpleMessage(" content and interacting with your audience"),
+        "InfluencerSubscriptionFeature4":
+            MessageLookupByLibrary.simpleMessage("Become a thought leader in your field and earn a reputation"),
         "InfluencerSubscriptionFeature5": MessageLookupByLibrary.simpleMessage(
             "Influence people\\\'s choices and enhance the significance of places and events"),
-        "InfluencerSubscriptionFeature6":
-            MessageLookupByLibrary.simpleMessage("Monetization"),
+        "InfluencerSubscriptionFeature6": MessageLookupByLibrary.simpleMessage("Monetization"),
         "Info": MessageLookupByLibrary.simpleMessage("Info"),
         "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
             "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there"),
         "Interests": MessageLookupByLibrary.simpleMessage("Interests"),
         "Interview": MessageLookupByLibrary.simpleMessage("Interview"),
-        "InventoryItems":
-            MessageLookupByLibrary.simpleMessage("Inventory items"),
+        "InventoryItems": MessageLookupByLibrary.simpleMessage("Inventory items"),
         "InvitationsCanBeViewedInPrivateMessages":
-            MessageLookupByLibrary.simpleMessage(
-                "Invitations can be viewed in private messages"),
+            MessageLookupByLibrary.simpleMessage("Invitations can be viewed in private messages"),
         "Invite": MessageLookupByLibrary.simpleMessage("Invite"),
         "InviteList": MessageLookupByLibrary.simpleMessage("Invite list"),
         "InviteMore": MessageLookupByLibrary.simpleMessage("Invite more"),
         "InvitePeople": MessageLookupByLibrary.simpleMessage("Invite people"),
-        "InviteToFavoritePlaces":
-            MessageLookupByLibrary.simpleMessage("Invite to favourite places"),
+        "InviteToFavoritePlaces": MessageLookupByLibrary.simpleMessage("Invite to favourite places"),
         "InvitedPeople": MessageLookupByLibrary.simpleMessage("Invited people"),
         "Invites": MessageLookupByLibrary.simpleMessage("Invites"),
         "InvitesCount": m34,
@@ -731,39 +624,31 @@ class MessageLookup extends MessageLookupByLibrary {
         "Leisure": MessageLookupByLibrary.simpleMessage("Leisure"),
         "Less": MessageLookupByLibrary.simpleMessage("less"),
         "Limit": MessageLookupByLibrary.simpleMessage("Limit"),
-        "LimitLessSumLimitsSubs": MessageLookupByLibrary.simpleMessage(
-            "Limit less than sum of limits for subs"),
-        "LimitLessTotalLimit": MessageLookupByLibrary.simpleMessage(
-            "Limit for one must be less than total limit"),
+        "LimitLessSumLimitsSubs": MessageLookupByLibrary.simpleMessage("Limit less than sum of limits for subs"),
+        "LimitLessTotalLimit": MessageLookupByLibrary.simpleMessage("Limit for one must be less than total limit"),
         "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
         "Location": MessageLookupByLibrary.simpleMessage("Location"),
-        "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
-            "Location is required to procceed check in"),
+        "LocationIsRequired": MessageLookupByLibrary.simpleMessage("Location is required to procceed check in"),
         "Locked": MessageLookupByLibrary.simpleMessage("Locked"),
         "LogIn": MessageLookupByLibrary.simpleMessage("Log in"),
         "LogInTo": MessageLookupByLibrary.simpleMessage("Log in"),
-        "LogInWithEmail":
-            MessageLookupByLibrary.simpleMessage("Login with email"),
-        "LoginBenefits": m37,
-        "LoginInAppDaysInARow": m38,
-        "LoginWith": m39,
+        "LogInWithEmail": MessageLookupByLibrary.simpleMessage("Login with email"),
+        "LoginBenefits": m36,
+        "LoginInAppDaysInARow": m37,
+        "LoginWith": m38,
         "Logo": MessageLookupByLibrary.simpleMessage("Logo"),
-        "LogoUploadFiles":
-            MessageLookupByLibrary.simpleMessage("Logo (upload Files)"),
-        "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage(
-            "Lovely-touch amazing\ninteraction"),
+        "LogoUploadFiles": MessageLookupByLibrary.simpleMessage("Logo (upload Files)"),
+        "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage("Lovely-touch amazing\ninteraction"),
         "LuckyCoin": MessageLookupByLibrary.simpleMessage("Lucky Coin"),
         "LuckyCoinDescription": MessageLookupByLibrary.simpleMessage(
             "As long as you have it in your inventory, good luck is with you. Twist it, turn it, touch it to be filled with the energy of good luck."),
         "MakeSureYouAreCloseToMakeCheckIn":
-            MessageLookupByLibrary.simpleMessage(
-                "Make sure you are close and try check in again"),
+            MessageLookupByLibrary.simpleMessage("Make sure you are close and try check in again"),
         "Male": MessageLookupByLibrary.simpleMessage("Male"),
         "Members": m40,
         "MembersCount": m41,
         "Message": MessageLookupByLibrary.simpleMessage("Message"),
-        "MessageNotFound":
-            MessageLookupByLibrary.simpleMessage("Message not found"),
+        "MessageNotFound": MessageLookupByLibrary.simpleMessage("Message not found"),
         "Messages": MessageLookupByLibrary.simpleMessage("Messages"),
         "Min": MessageLookupByLibrary.simpleMessage("min"),
         "MinutesAgo": m42,
@@ -772,16 +657,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "Month": MessageLookupByLibrary.simpleMessage("Month"),
         "Monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
         "More": MessageLookupByLibrary.simpleMessage("more"),
-        "MoreAboutThisEvent":
-            MessageLookupByLibrary.simpleMessage("More about this event"),
-        "MoreAboutThisPlace":
-            MessageLookupByLibrary.simpleMessage("More about this place"),
-        "MostActiveAgeSegment": MessageLookupByLibrary.simpleMessage(
-            "Portrait of the most active segment"),
-        "MustSelectVideo": MessageLookupByLibrary.simpleMessage(
-            "You must select at least one video"),
-        "MustVisitTechnologyConf":
-            MessageLookupByLibrary.simpleMessage("Must visit technology conf"),
+        "MoreAboutThisEvent": MessageLookupByLibrary.simpleMessage("More about this event"),
+        "MoreAboutThisPlace": MessageLookupByLibrary.simpleMessage("More about this place"),
+        "MostActiveAgeSegment": MessageLookupByLibrary.simpleMessage("Portrait of the most active segment"),
+        "MustSelectVideo": MessageLookupByLibrary.simpleMessage("You must select at least one video"),
+        "MustVisitTechnologyConf": MessageLookupByLibrary.simpleMessage("Must visit technology conf"),
         "MyBooking": MessageLookupByLibrary.simpleMessage("My booking"),
         "MyCard": MessageLookupByLibrary.simpleMessage("My card"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("My events"),
@@ -790,14 +670,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
         "NPlace": m43,
         "Name": MessageLookupByLibrary.simpleMessage("Name"),
-        "NameOrNickname":
-            MessageLookupByLibrary.simpleMessage("Name or nickname"),
+        "NameOrNickname": MessageLookupByLibrary.simpleMessage("Name or nickname"),
         "New": MessageLookupByLibrary.simpleMessage("New"),
         "NewDonates": MessageLookupByLibrary.simpleMessage("New donates"),
         "NewFeatures": MessageLookupByLibrary.simpleMessage("New features"),
         "NewFollowers": MessageLookupByLibrary.simpleMessage("New followers"),
-        "NewLocationHasOpenedToday": MessageLookupByLibrary.simpleMessage(
-            "A new location has opened today. Come! You\'ll like it!"),
+        "NewLocationHasOpenedToday":
+            MessageLookupByLibrary.simpleMessage("A new location has opened today. Come! You\'ll like it!"),
         "NewPlace": MessageLookupByLibrary.simpleMessage("New place"),
         "News": MessageLookupByLibrary.simpleMessage("News"),
         "Next": MessageLookupByLibrary.simpleMessage("Next"),
@@ -806,82 +685,59 @@ class MessageLookup extends MessageLookupByLibrary {
         "NextWithChevrons": MessageLookupByLibrary.simpleMessage("Next >>>"),
         "Niche": MessageLookupByLibrary.simpleMessage("Niche"),
         "Nickname": MessageLookupByLibrary.simpleMessage("Nickname"),
-        "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage(
-            "Nickname is taken, try another one"),
-        "NoBookingsYet":
-            MessageLookupByLibrary.simpleMessage("No bookings yet"),
-        "NoConnection": MessageLookupByLibrary.simpleMessage(
-            "Sorry, no internet connection"),
-        "NoDateSelected":
-            MessageLookupByLibrary.simpleMessage("No date selected"),
-        "NoFavoritesFound":
-            MessageLookupByLibrary.simpleMessage("No favorites found"),
-        "NoFeedbacksYet": MessageLookupByLibrary.simpleMessage(
-            "Visit places and events in Shuffle and share your impressions"),
+        "NicknameIsTakenTryAnotherOne": MessageLookupByLibrary.simpleMessage("Nickname is taken, try another one"),
+        "NoBookingsYet": MessageLookupByLibrary.simpleMessage("No bookings yet"),
+        "NoConnection": MessageLookupByLibrary.simpleMessage("Sorry, no internet connection"),
+        "NoDateSelected": MessageLookupByLibrary.simpleMessage("No date selected"),
+        "NoFavoritesFound": MessageLookupByLibrary.simpleMessage("No favorites found"),
+        "NoFeedbacksYet":
+            MessageLookupByLibrary.simpleMessage("Visit places and events in Shuffle and share your impressions"),
         "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
             "No health kit available on your device, so the result will be random"),
-        "NoMessagesYet":
-            MessageLookupByLibrary.simpleMessage("No messages yet"),
-        "NoPeopleAvailableToInvite": MessageLookupByLibrary.simpleMessage(
-            "No people available to invite"),
-        "NoPhotoHereYet":
-            MessageLookupByLibrary.simpleMessage("No photo here yet!"),
-        "NoPreferencesChosen":
-            MessageLookupByLibrary.simpleMessage("No preferences chosen"),
-        "NoReactionsMessage": MessageLookupByLibrary.simpleMessage(
-            "There are no reactions yet, be the first"),
-        "NoReviewsMessage":
-            MessageLookupByLibrary.simpleMessage("Be the first to review"),
+        "NoMessagesYet": MessageLookupByLibrary.simpleMessage("No messages yet"),
+        "NoPeopleAvailableToInvite": MessageLookupByLibrary.simpleMessage("No people available to invite"),
+        "NoPhotoHereYet": MessageLookupByLibrary.simpleMessage("No photo here yet!"),
+        "NoPreferencesChosen": MessageLookupByLibrary.simpleMessage("No preferences chosen"),
+        "NoReactionsMessage": MessageLookupByLibrary.simpleMessage("There are no reactions yet, be the first"),
+        "NoReviewsMessage": MessageLookupByLibrary.simpleMessage("Be the first to review"),
         "NoThx": MessageLookupByLibrary.simpleMessage("No, thx"),
-        "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
-            "Visit places and events in Shuffle and make amazing video-reactions"),
+        "NoVideoReactionsYet":
+            MessageLookupByLibrary.simpleMessage("Visit places and events in Shuffle and make amazing video-reactions"),
         "NotNow": MessageLookupByLibrary.simpleMessage("Not now"),
         "NotOften": MessageLookupByLibrary.simpleMessage("Not often"),
         "NotSet": MessageLookupByLibrary.simpleMessage("Not set"),
         "NothingFound": MessageLookupByLibrary.simpleMessage("Nothing found"),
-        "NothingWasFoundWithEmoji":
-            MessageLookupByLibrary.simpleMessage("Nothing was found :c"),
+        "NothingWasFoundWithEmoji": MessageLookupByLibrary.simpleMessage("Nothing was found :c"),
         "Notification": MessageLookupByLibrary.simpleMessage("Notification"),
-        "NotificationText":
-            MessageLookupByLibrary.simpleMessage("Notification text"),
+        "NotificationText": MessageLookupByLibrary.simpleMessage("Notification text"),
         "Notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
-        "NotifyTheAudience":
-            MessageLookupByLibrary.simpleMessage("Notify the audience"),
-        "NowLetsGetToKnowEachOther": MessageLookupByLibrary.simpleMessage(
-            "Now let\'s get to know each other"),
-        "NowWeKnowYouBetter": MessageLookupByLibrary.simpleMessage(
-            "Thanks!\nNow we know you better"),
+        "NotifyTheAudience": MessageLookupByLibrary.simpleMessage("Notify the audience"),
+        "NowLetsGetToKnowEachOther": MessageLookupByLibrary.simpleMessage("Now let\'s get to know each other"),
+        "NowWeKnowYouBetter": MessageLookupByLibrary.simpleMessage("Thanks!\nNow we know you better"),
         "Off": MessageLookupByLibrary.simpleMessage("Off"),
         "Offer": MessageLookupByLibrary.simpleMessage("Offer"),
         "OfferContent": MessageLookupByLibrary.simpleMessage("Offer content"),
         "OfferPrice": m46,
-        "OfferSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
-            "Offer successfully activated"),
+        "OfferSuccessfullyActivated": MessageLookupByLibrary.simpleMessage("Offer successfully activated"),
         "Offers": MessageLookupByLibrary.simpleMessage("Offers"),
-        "OfficeAppartmentNumber":
-            MessageLookupByLibrary.simpleMessage("Office or appt number"),
+        "OfficeAppartmentNumber": MessageLookupByLibrary.simpleMessage("Office or appt number"),
         "OhYeahSure": MessageLookupByLibrary.simpleMessage("Oh yeah, sure!"),
         "Ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "Okay": MessageLookupByLibrary.simpleMessage("Okay"),
         "OkayCool": MessageLookupByLibrary.simpleMessage("Okay, cool!"),
-        "OnboardingSlide1":
-            MessageLookupByLibrary.simpleMessage("to have some fun"),
-        "OnboardingSlide2": MessageLookupByLibrary.simpleMessage(
-            "to explore\nleisure and\nbusiness"),
-        "OnboardingSlide3":
-            MessageLookupByLibrary.simpleMessage("to just chill out"),
+        "OnboardingSlide1": MessageLookupByLibrary.simpleMessage("to have some fun"),
+        "OnboardingSlide2": MessageLookupByLibrary.simpleMessage("to explore\nleisure and\nbusiness"),
+        "OnboardingSlide3": MessageLookupByLibrary.simpleMessage("to just chill out"),
         "Ooops": MessageLookupByLibrary.simpleMessage("Ooops!"),
         "Oops": MessageLookupByLibrary.simpleMessage("Oops"),
-        "OopsIWillTryAgain":
-            MessageLookupByLibrary.simpleMessage("Oops, I\'ll try again"),
+        "OopsIWillTryAgain": MessageLookupByLibrary.simpleMessage("Oops, I\'ll try again"),
         "Open": MessageLookupByLibrary.simpleMessage("Open"),
         "OpenFrom": MessageLookupByLibrary.simpleMessage("Open from"),
         "OpenNow": MessageLookupByLibrary.simpleMessage("Open now"),
         "OpenPlace": MessageLookupByLibrary.simpleMessage("Open place"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("Open to"),
         "OpeningHours": MessageLookupByLibrary.simpleMessage("Opening hours"),
-        "OrDragFilesHere":
-            MessageLookupByLibrary.simpleMessage("Or drag files here"),
+        "OrDragFilesHere": MessageLookupByLibrary.simpleMessage("Or drag files here"),
         "OrganicStatistics": MessageLookupByLibrary.simpleMessage("Organic"),
         "Other": MessageLookupByLibrary.simpleMessage("Other"),
         "OurRecommendationsAboutGeolocation": MessageLookupByLibrary.simpleMessage(
@@ -891,178 +747,130 @@ class MessageLookup extends MessageLookupByLibrary {
         "Password": MessageLookupByLibrary.simpleMessage("Password"),
         "PasswordConditions": MessageLookupByLibrary.simpleMessage(
             "Password must contain at least one uppercase letter, one lowercase letter, one number and one special character"),
-        "PasswordHint": MessageLookupByLibrary.simpleMessage(
-            "Letters, numbers, ! “ @ # \$ % & symbols, 8 characters"),
+        "PasswordHint": MessageLookupByLibrary.simpleMessage("Letters, numbers, ! “ @ # \$ % & symbols, 8 characters"),
         "PasswordMustBeAtLeast8Characters":
-            MessageLookupByLibrary.simpleMessage(
-                "Password must be at least 8 characters"),
+            MessageLookupByLibrary.simpleMessage("Password must be at least 8 characters"),
         "Past": MessageLookupByLibrary.simpleMessage("Past"),
         "Paused": MessageLookupByLibrary.simpleMessage("Paused"),
         "Pay": MessageLookupByLibrary.simpleMessage("Pay"),
-        "PayForTheBonusOffer":
-            MessageLookupByLibrary.simpleMessage("Pay for the bonus offer"),
-        "PayForTheNotification":
-            MessageLookupByLibrary.simpleMessage("Pay for the notification"),
+        "PayForTheBonusOffer": MessageLookupByLibrary.simpleMessage("Pay for the bonus offer"),
+        "PayForTheNotification": MessageLookupByLibrary.simpleMessage("Pay for the notification"),
         "Permissions": MessageLookupByLibrary.simpleMessage("Permissions"),
         "Personal": MessageLookupByLibrary.simpleMessage("Personal"),
-        "PersonalCredentials":
-            MessageLookupByLibrary.simpleMessage("Personal credentials"),
-        "PersonalRespect":
-            MessageLookupByLibrary.simpleMessage("Personal respect"),
+        "PersonalCredentials": MessageLookupByLibrary.simpleMessage("Personal credentials"),
+        "PersonalRespect": MessageLookupByLibrary.simpleMessage("Personal respect"),
         "PersonalTop": MessageLookupByLibrary.simpleMessage("Personal TOP"),
-        "PersonalizeYourOffer":
-            MessageLookupByLibrary.simpleMessage("Personalize your offer"),
-        "PersonalizeYourReminder":
-            MessageLookupByLibrary.simpleMessage("Personalize your reminder"),
+        "PersonalizeYourOffer": MessageLookupByLibrary.simpleMessage("Personalize your offer"),
+        "PersonalizeYourReminder": MessageLookupByLibrary.simpleMessage("Personalize your reminder"),
         "Phone": MessageLookupByLibrary.simpleMessage("Phone"),
-        "PhoneVerification":
-            MessageLookupByLibrary.simpleMessage("Phone verification"),
+        "PhoneVerification": MessageLookupByLibrary.simpleMessage("Phone verification"),
         "Photo": MessageLookupByLibrary.simpleMessage("Photo"),
-        "PhotoUploadFiles":
-            MessageLookupByLibrary.simpleMessage("Photo (upload Files)"),
+        "PhotoUploadFiles": MessageLookupByLibrary.simpleMessage("Photo (upload Files)"),
         "Photos": MessageLookupByLibrary.simpleMessage("Photos"),
         "PickFromMap": MessageLookupByLibrary.simpleMessage("Pick from map"),
         "Place": MessageLookupByLibrary.simpleMessage("Place"),
-        "PlaceSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage(
-            "Place submitted successfully"),
+        "PlaceSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage("Place submitted successfully"),
         "PlaceType": MessageLookupByLibrary.simpleMessage("Place type"),
         "Places": MessageLookupByLibrary.simpleMessage("Places"),
-        "PlacesVisited": m47,
-        "PleaseAddDatePeriod":
-            MessageLookupByLibrary.simpleMessage("Please add a date(-s)"),
-        "PleaseAddPhoto":
-            MessageLookupByLibrary.simpleMessage("Please add photo"),
-        "PleaseEnterCurrentLimit":
-            MessageLookupByLibrary.simpleMessage("Please enter current limit"),
-        "PleaseEnterLimit":
-            MessageLookupByLibrary.simpleMessage("Please enter limit"),
-        "PleaseEnterValidDescription":
-            MessageLookupByLibrary.simpleMessage("Please enter a description"),
-        "PleaseEnterValidTitle":
-            MessageLookupByLibrary.simpleMessage("Please enter a valid title"),
-        "PleaseFillOutDate":
-            MessageLookupByLibrary.simpleMessage("Please fill out date"),
-        "PleaseFillOutYourWishes":
-            MessageLookupByLibrary.simpleMessage("Please fill out your wishes"),
+        "PlacesVisited": m45,
+        "PleaseAddPhoto": MessageLookupByLibrary.simpleMessage("Please add photo"),
+        "PleaseEnterCurrentLimit": MessageLookupByLibrary.simpleMessage("Please enter current limit"),
+        "PleaseEnterLimit": MessageLookupByLibrary.simpleMessage("Please enter limit"),
+        "PleaseEnterValidDescription": MessageLookupByLibrary.simpleMessage("Please enter a description"),
+        "PleaseEnterValidTitle": MessageLookupByLibrary.simpleMessage("Please enter a valid title"),
+        "PleaseFillOutDate": MessageLookupByLibrary.simpleMessage("Please fill out date"),
+        "PleaseFillOutYourWishes": MessageLookupByLibrary.simpleMessage("Please fill out your wishes"),
         "PleaseFillOutYourWishesAndSelectDate":
-            MessageLookupByLibrary.simpleMessage(
-                "Please fill out your wishes and select date"),
-        "PleaseSelectANiche":
-            MessageLookupByLibrary.simpleMessage("Please select a niche"),
-        "PleaseSelectAtLeastNReligion": m48,
-        "PleaseSelectAtLeastOneAgeRange": MessageLookupByLibrary.simpleMessage(
-            "Please select at least one age range"),
+            MessageLookupByLibrary.simpleMessage("Please fill out your wishes and select date"),
+        "PleaseSelectANiche": MessageLookupByLibrary.simpleMessage("Please select a niche"),
+        "PleaseSelectAtLeastNReligion": m46,
+        "PleaseSelectAtLeastOneAgeRange": MessageLookupByLibrary.simpleMessage("Please select at least one age range"),
         "PleaseSelectAtLeastOnePriceSegment":
-            MessageLookupByLibrary.simpleMessage(
-                "Please select at least one price segment"),
-        "PleaseSelectGender":
-            MessageLookupByLibrary.simpleMessage("Please select a gender"),
-        "PleaseSelectOneType":
-            MessageLookupByLibrary.simpleMessage("Please select one type"),
-        "PlusXNewChatComments": m49,
-        "PlusXNewContests":
-            MessageLookupByLibrary.simpleMessage("+ New assignment"),
-        "PlusXNewInterviews":
-            MessageLookupByLibrary.simpleMessage("+ New interview"),
-        "PlusXNewRespects": m50,
-        "PlusXNewReviews": m51,
+            MessageLookupByLibrary.simpleMessage("Please select at least one price segment"),
+        "PleaseSelectGender": MessageLookupByLibrary.simpleMessage("Please select a gender"),
+        "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage("Please select one type"),
+        "PlusXNewChatComments": m47,
+        "PlusXNewContests": MessageLookupByLibrary.simpleMessage("+ New assignment"),
+        "PlusXNewInterviews": MessageLookupByLibrary.simpleMessage("+ New interview"),
+        "PlusXNewRespects": m48,
+        "PlusXNewReviews": m49,
         "PlusXNewRoutes": MessageLookupByLibrary.simpleMessage("+ New route"),
-        "PlusXNewVideoReactions": m52,
+        "PlusXNewVideoReactions": m50,
         "PlusXNewVideos": MessageLookupByLibrary.simpleMessage("+ New video"),
-        "PlusXNewVoices": m53,
-        "PlusXPhotos": m54,
+        "PlusXNewVoices": m51,
+        "PlusXPhotos": m52,
         "PointBalance": MessageLookupByLibrary.simpleMessage("Point Balance"),
         "Points": MessageLookupByLibrary.simpleMessage("Points"),
         "PointsAre": MessageLookupByLibrary.simpleMessage("Points are..."),
-        "PointsCount": m55,
-        "PointsEarned": m56,
-        "PointsHiwItems": m57,
-        "PointsInOffer": m58,
+        "PointsCount": m53,
+        "PointsEarned": m54,
+        "PointsHiwItems": m55,
         "Position": MessageLookupByLibrary.simpleMessage("Position"),
         "Preferences": MessageLookupByLibrary.simpleMessage("Preferences"),
         "Premium": MessageLookupByLibrary.simpleMessage("Premium"),
-        "PremiumAccount":
-            MessageLookupByLibrary.simpleMessage("Premium account"),
+        "PremiumAccount": MessageLookupByLibrary.simpleMessage("Premium account"),
         "PremiumSubscriptionFeature1": MessageLookupByLibrary.simpleMessage(
             "Unique feature \"Connects\".  Search, communicate, meet someone, networking"),
-        "PremiumSubscriptionFeature2":
-            MessageLookupByLibrary.simpleMessage("Special profile label"),
+        "PremiumSubscriptionFeature2": MessageLookupByLibrary.simpleMessage("Special profile label"),
         "PremiumSubscriptionFeature3": MessageLookupByLibrary.simpleMessage(
             "Ability to leave reviews, shoot video-reactions about places and events, participate in ratings"),
-        "PremiumSubscriptionFeature4": MessageLookupByLibrary.simpleMessage(
-            "Ability to add/suggest favorite places"),
-        "PremiumSubscriptionFeature5": MessageLookupByLibrary.simpleMessage(
-            "Ability to switch dark/light design theme"),
-        "PremiumSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
-            "Ability to become an Influencer"),
-        "PremiumSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
-            "Ability to create and share convenient stacks of favorites"),
-        "PremiumSubscriptionFeature8": MessageLookupByLibrary.simpleMessage(
-            "Have your own event scheduler"),
+        "PremiumSubscriptionFeature4": MessageLookupByLibrary.simpleMessage("Ability to add/suggest favorite places"),
+        "PremiumSubscriptionFeature5":
+            MessageLookupByLibrary.simpleMessage("Ability to switch dark/light design theme"),
+        "PremiumSubscriptionFeature6": MessageLookupByLibrary.simpleMessage("Ability to become an Influencer"),
+        "PremiumSubscriptionFeature7":
+            MessageLookupByLibrary.simpleMessage("Ability to create and share convenient stacks of favorites"),
+        "PremiumSubscriptionFeature8": MessageLookupByLibrary.simpleMessage("Have your own event scheduler"),
         "Price": MessageLookupByLibrary.simpleMessage("Price"),
         "PriceRange": MessageLookupByLibrary.simpleMessage("Price range"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Privacy"),
         "PrivacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
         "Pro": MessageLookupByLibrary.simpleMessage("Pro"),
         "ProAccount": MessageLookupByLibrary.simpleMessage("Pro account"),
-        "ProSubscriptionFeature1":
-            MessageLookupByLibrary.simpleMessage("Special profile label"),
-        "ProSubscriptionFeature2": MessageLookupByLibrary.simpleMessage(
-            "Ability to create your own events"),
+        "ProSubscriptionFeature1": MessageLookupByLibrary.simpleMessage("Special profile label"),
+        "ProSubscriptionFeature2": MessageLookupByLibrary.simpleMessage("Ability to create your own events"),
         "ProSubscriptionFeature3": MessageLookupByLibrary.simpleMessage(
             "Additional motivation of potential audience (clients/visitors) with the help of points system"),
-        "ProSubscriptionFeature4": MessageLookupByLibrary.simpleMessage(
-            "Ability to sell related services through ticket booking"),
-        "ProSubscriptionFeature5":
-            MessageLookupByLibrary.simpleMessage("Upsales"),
+        "ProSubscriptionFeature4":
+            MessageLookupByLibrary.simpleMessage("Ability to sell related services through ticket booking"),
+        "ProSubscriptionFeature5": MessageLookupByLibrary.simpleMessage("Upsales"),
         "ProSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
             "Internal targeted promotion of your events, statistics and analytics"),
-        "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
-            "Ability to use specialised notifications"),
+        "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage("Ability to use specialised notifications"),
         "ProTools": MessageLookupByLibrary.simpleMessage("Pro tools"),
         "Product": MessageLookupByLibrary.simpleMessage("Product"),
-        "Products": m59,
-        "ProfileAskOrSupportHiwHint": m60,
-        "ProfileAskOrSupportHiwSubtitle":
-            MessageLookupByLibrary.simpleMessage("yours or someone else\'s"),
-        "ProfileAskOrSupportHiwTitle":
-            MessageLookupByLibrary.simpleMessage("Fulfill the dream..."),
-        "ProfileFindSomeoneHiwHint": m61,
-        "ProfileFindSomeoneHiwSubtitle":
-            MessageLookupByLibrary.simpleMessage("go somewhere together"),
-        "ProfileFindSomeoneHiwTitle":
-            MessageLookupByLibrary.simpleMessage("Do not be alone..."),
+        "Products": m56,
+        "ProfileAskOrSupportHiwHint": m57,
+        "ProfileAskOrSupportHiwSubtitle": MessageLookupByLibrary.simpleMessage("yours or someone else\'s"),
+        "ProfileAskOrSupportHiwTitle": MessageLookupByLibrary.simpleMessage("Fulfill the dream..."),
+        "ProfileFindSomeoneHiwHint": m58,
+        "ProfileFindSomeoneHiwSubtitle": MessageLookupByLibrary.simpleMessage("go somewhere together"),
+        "ProfileFindSomeoneHiwTitle": MessageLookupByLibrary.simpleMessage("Do not be alone..."),
         "Promotion": MessageLookupByLibrary.simpleMessage("Promotion"),
         "Properties": MessageLookupByLibrary.simpleMessage("Properties"),
         "Published": MessageLookupByLibrary.simpleMessage("Published"),
-        "PushUpYourBusiness":
-            MessageLookupByLibrary.simpleMessage("Push up your business"),
+        "PushUpYourBusiness": MessageLookupByLibrary.simpleMessage("Push up your business"),
         "RangeEndValueIsLessThanBeginingOne":
-            MessageLookupByLibrary.simpleMessage(
-                "Range end value is less than begining one"),
+            MessageLookupByLibrary.simpleMessage("Range end value is less than begining one"),
         "Rating": MessageLookupByLibrary.simpleMessage("Rating"),
-        "Reactions": m62,
+        "Reactions": m59,
         "ReactionsBy": MessageLookupByLibrary.simpleMessage("Reactions\nby"),
-        "ReactionsByCritics":
-            MessageLookupByLibrary.simpleMessage("Reactions by critics"),
-        "Read": m63,
+        "ReactionsByCritics": MessageLookupByLibrary.simpleMessage("Reactions by critics"),
+        "Read": m60,
         "RealMoney": MessageLookupByLibrary.simpleMessage("Real money"),
         "RecentlyAdded": MessageLookupByLibrary.simpleMessage("Recently added"),
         "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
         "Refund": MessageLookupByLibrary.simpleMessage("refund"),
-        "RefundEveryone":
-            MessageLookupByLibrary.simpleMessage("Refund everyone"),
-        "RelatedPersonalProperties":
-            MessageLookupByLibrary.simpleMessage("Related personal properties"),
-        "RelatedProperties":
-            MessageLookupByLibrary.simpleMessage("Related properties"),
+        "RefundEveryone": MessageLookupByLibrary.simpleMessage("Refund everyone"),
+        "RelatedPersonalProperties": MessageLookupByLibrary.simpleMessage("Related personal properties"),
+        "RelatedProperties": MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
         "Reminder": MessageLookupByLibrary.simpleMessage("Reminder"),
         "Reminders": MessageLookupByLibrary.simpleMessage("Reminders"),
         "Remove": MessageLookupByLibrary.simpleMessage("Remove"),
         "Rename": MessageLookupByLibrary.simpleMessage("Rename"),
         "Reply": MessageLookupByLibrary.simpleMessage("Reply"),
-        "ReplyingTo": m64,
+        "ReplyingTo": m61,
         "Requests": MessageLookupByLibrary.simpleMessage("requests"),
         "ResendCode": MessageLookupByLibrary.simpleMessage("Resend code"),
         "Reset": MessageLookupByLibrary.simpleMessage("Reset"),
@@ -1070,243 +878,173 @@ class MessageLookup extends MessageLookupByLibrary {
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset password"),
         "Respect": MessageLookupByLibrary.simpleMessage("Respect"),
         "Restaurant": MessageLookupByLibrary.simpleMessage("Restaurant"),
-        "RestorePurchase":
-            MessageLookupByLibrary.simpleMessage("Restore purchases"),
+        "RestorePurchase": MessageLookupByLibrary.simpleMessage("Restore purchases"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
-        "ReviewsByCritics":
-            MessageLookupByLibrary.simpleMessage("Reviews by critics"),
-        "ReviewsCount": m65,
-        "ReviewsPosted": m66,
-        "ReviewsReceived": m67,
+        "ReviewsByCritics": MessageLookupByLibrary.simpleMessage("Reviews by critics"),
+        "ReviewsCount": m62,
+        "ReviewsPosted": m63,
+        "ReviewsReceived": m64,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Sat"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "SaveAndPay": MessageLookupByLibrary.simpleMessage("Save and pay"),
         "Schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
-        "SearchBusinessChooseYourself1":
-            MessageLookupByLibrary.simpleMessage("Business clubs"),
-        "SearchBusinessChooseYourself2":
-            MessageLookupByLibrary.simpleMessage("Digital & IT conferences"),
-        "SearchBusinessChooseYourself3":
-            MessageLookupByLibrary.simpleMessage("Pitch sessions"),
-        "SearchBusinessChooseYourself4":
-            MessageLookupByLibrary.simpleMessage("Business games"),
-        "SearchBusinessChooseYourself5": MessageLookupByLibrary.simpleMessage(
-            "Forums (industry exhibitions)"),
-        "SearchBusinessChooseYourself6":
-            MessageLookupByLibrary.simpleMessage("Networking"),
-        "SearchBusinessChooseYourself7":
-            MessageLookupByLibrary.simpleMessage("Seminars and trainings"),
-        "SearchChooseYourself1": MessageLookupByLibrary.simpleMessage(
-            "Happiness for children and family"),
-        "SearchChooseYourself2":
-            MessageLookupByLibrary.simpleMessage("Thirst for adventure"),
-        "SearchChooseYourself3":
-            MessageLookupByLibrary.simpleMessage("Parties and dancing"),
-        "SearchChooseYourself4":
-            MessageLookupByLibrary.simpleMessage("Extremes and thrills"),
-        "SearchChooseYourself5":
-            MessageLookupByLibrary.simpleMessage("Age of enlightenment"),
-        "SearchChooseYourself6":
-            MessageLookupByLibrary.simpleMessage("Fine dining"),
-        "SearchChooseYourself7":
-            MessageLookupByLibrary.simpleMessage("Bliss and chill"),
-        "SearchChooseYourself8":
-            MessageLookupByLibrary.simpleMessage("Sporty movements"),
-        "SearchChooseYourself9": MessageLookupByLibrary.simpleMessage(
-            "Self-care (Health and beauty/self-love)"),
-        "SearchHiwHint": m68,
-        "SearchHiwSubtitle": MessageLookupByLibrary.simpleMessage(
-            "search or choose others choice"),
-        "SearchHiwTitle":
-            MessageLookupByLibrary.simpleMessage("Usual search..."),
-        "SearchOrAddTag":
-            MessageLookupByLibrary.simpleMessage("Search or add tag"),
-        "SearchProperty":
-            MessageLookupByLibrary.simpleMessage("Search property"),
+        "SearchBusinessChooseYourself1": MessageLookupByLibrary.simpleMessage("Business clubs"),
+        "SearchBusinessChooseYourself2": MessageLookupByLibrary.simpleMessage("Digital & IT conferences"),
+        "SearchBusinessChooseYourself3": MessageLookupByLibrary.simpleMessage("Pitch sessions"),
+        "SearchBusinessChooseYourself4": MessageLookupByLibrary.simpleMessage("Business games"),
+        "SearchBusinessChooseYourself5": MessageLookupByLibrary.simpleMessage("Forums (industry exhibitions)"),
+        "SearchBusinessChooseYourself6": MessageLookupByLibrary.simpleMessage("Networking"),
+        "SearchBusinessChooseYourself7": MessageLookupByLibrary.simpleMessage("Seminars and trainings"),
+        "SearchChooseYourself1": MessageLookupByLibrary.simpleMessage("Happiness for children and family"),
+        "SearchChooseYourself2": MessageLookupByLibrary.simpleMessage("Thirst for adventure"),
+        "SearchChooseYourself3": MessageLookupByLibrary.simpleMessage("Parties and dancing"),
+        "SearchChooseYourself4": MessageLookupByLibrary.simpleMessage("Extremes and thrills"),
+        "SearchChooseYourself5": MessageLookupByLibrary.simpleMessage("Age of enlightenment"),
+        "SearchChooseYourself6": MessageLookupByLibrary.simpleMessage("Fine dining"),
+        "SearchChooseYourself7": MessageLookupByLibrary.simpleMessage("Bliss and chill"),
+        "SearchChooseYourself8": MessageLookupByLibrary.simpleMessage("Sporty movements"),
+        "SearchChooseYourself9": MessageLookupByLibrary.simpleMessage("Self-care (Health and beauty/self-love)"),
+        "SearchHiwHint": m65,
+        "SearchHiwSubtitle": MessageLookupByLibrary.simpleMessage("search or choose others choice"),
+        "SearchHiwTitle": MessageLookupByLibrary.simpleMessage("Usual search..."),
+        "SearchOrAddTag": MessageLookupByLibrary.simpleMessage("Search or add tag"),
+        "SearchProperty": MessageLookupByLibrary.simpleMessage("Search property"),
         "SeeAll": MessageLookupByLibrary.simpleMessage("See all"),
         "SeeMore": MessageLookupByLibrary.simpleMessage("See more"),
-        "SeekingWandererMen":
-            MessageLookupByLibrary.simpleMessage("Seeking wanderer"),
-        "SeekingWandererWom":
-            MessageLookupByLibrary.simpleMessage("Seeking wanderer"),
-        "SelectCurrency":
-            MessageLookupByLibrary.simpleMessage("Select currency"),
+        "SeekingWandererMen": MessageLookupByLibrary.simpleMessage("Seeking wanderer"),
+        "SeekingWandererWom": MessageLookupByLibrary.simpleMessage("Seeking wanderer"),
+        "SelectCurrency": MessageLookupByLibrary.simpleMessage("Select currency"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("Select date"),
-        "SelectDateRange":
-            MessageLookupByLibrary.simpleMessage("Select Date Range"),
-        "SelectDateTime":
-            MessageLookupByLibrary.simpleMessage("Select date and time"),
+        "SelectDateRange": MessageLookupByLibrary.simpleMessage("Select Date Range"),
+        "SelectDateTime": MessageLookupByLibrary.simpleMessage("Select date and time"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Select days "),
         "SelectGender": MessageLookupByLibrary.simpleMessage("Select gender"),
-        "SelectLanguage":
-            MessageLookupByLibrary.simpleMessage("Please select language"),
+        "SelectLanguage": MessageLookupByLibrary.simpleMessage("Please select language"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("Select option"),
-        "SelectPeriodOfValid":
-            MessageLookupByLibrary.simpleMessage("Select period of valid"),
-        "SelectPriceAndCurrency":
-            MessageLookupByLibrary.simpleMessage("Select price and currency"),
+        "SelectPeriodOfValid": MessageLookupByLibrary.simpleMessage("Select period of valid"),
+        "SelectPriceAndCurrency": MessageLookupByLibrary.simpleMessage("Select price and currency"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("Select subs"),
-        "SelectType": m69,
-        "SelectYourBooking":
-            MessageLookupByLibrary.simpleMessage("Select your booking"),
-        "SelectYourFavoriteProduct": MessageLookupByLibrary.simpleMessage(
-            "Select your favorite product"),
-        "SelectYourReligions":
-            MessageLookupByLibrary.simpleMessage("Select your religions"),
-        "SelectYourSpecialty":
-            MessageLookupByLibrary.simpleMessage("Select your specialty"),
-        "SelectionOfTheBest":
-            MessageLookupByLibrary.simpleMessage("Selection of the best"),
+        "SelectType": m66,
+        "SelectYourBooking": MessageLookupByLibrary.simpleMessage("Select your booking"),
+        "SelectYourFavoriteProduct": MessageLookupByLibrary.simpleMessage("Select your favorite product"),
+        "SelectYourReligions": MessageLookupByLibrary.simpleMessage("Select your religions"),
+        "SelectYourSpecialty": MessageLookupByLibrary.simpleMessage("Select your specialty"),
+        "SelectionOfTheBest": MessageLookupByLibrary.simpleMessage("Selection of the best"),
         "Send": MessageLookupByLibrary.simpleMessage("Send"),
         "SendIt": MessageLookupByLibrary.simpleMessage("Send it"),
         "Services": MessageLookupByLibrary.simpleMessage("Services"),
-        "SetWorkHours":
-            MessageLookupByLibrary.simpleMessage("Set work schedule"),
+        "SetWorkHours": MessageLookupByLibrary.simpleMessage("Set work schedule"),
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "Share": MessageLookupByLibrary.simpleMessage("Share"),
-        "ShareCard": m70,
-        "SharedWithYou":
-            MessageLookupByLibrary.simpleMessage("shared with you"),
+        "ShareCard": m67,
+        "SharedWithYou": MessageLookupByLibrary.simpleMessage("shared with you"),
         "ShowDeleted": MessageLookupByLibrary.simpleMessage("Show deleted"),
-        "ShowInContentCard":
-            MessageLookupByLibrary.simpleMessage("Show in content card"),
+        "ShowInContentCard": MessageLookupByLibrary.simpleMessage("Show in content card"),
         "ShowMore": MessageLookupByLibrary.simpleMessage("Show\nmore"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("Show result"),
-        "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
-            "Show the barcode at the checkout when paying"),
-        "ShraziidGoblet":
-            MessageLookupByLibrary.simpleMessage("Shraziid goblet"),
+        "ShowTheBarcode": MessageLookupByLibrary.simpleMessage("Show the barcode at the checkout when paying"),
+        "ShraziidGoblet": MessageLookupByLibrary.simpleMessage("Shraziid goblet"),
         "ShraziidGobletDescription": MessageLookupByLibrary.simpleMessage(
             "An ancient goblet found in the desert sands. They say that Shraziid himself, the ruler of the great Sand Kingdom, drank from it."),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
-        "ShuffleExchangeSystem":
-            MessageLookupByLibrary.simpleMessage("...Shuffle exchange system"),
-        "ShuffleHiwHint": m71,
-        "ShuffleHiwSubtitle":
-            MessageLookupByLibrary.simpleMessage("finding personalized places"),
-        "ShuffleHiwTitle":
-            MessageLookupByLibrary.simpleMessage("Shuffling places..."),
-        "ShuffleWithRightWhitespace":
-            MessageLookupByLibrary.simpleMessage("Shuffle "),
+        "ShuffleExchangeSystem": MessageLookupByLibrary.simpleMessage("...Shuffle exchange system"),
+        "ShuffleHiwHint": m68,
+        "ShuffleHiwSubtitle": MessageLookupByLibrary.simpleMessage("finding personalized places"),
+        "ShuffleHiwTitle": MessageLookupByLibrary.simpleMessage("Shuffling places..."),
+        "ShuffleWithRightWhitespace": MessageLookupByLibrary.simpleMessage("Shuffle "),
         "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "SkipIt": MessageLookupByLibrary.simpleMessage("Skip it"),
         "Small": MessageLookupByLibrary.simpleMessage("Small"),
-        "SmartLeisureSelection": MessageLookupByLibrary.simpleMessage(
-            "Smart leisure selection for everyone, everywhere"),
-        "SocialSubtitle":
-            MessageLookupByLibrary.simpleMessage("Useful services and places"),
-        "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
-            "Something went wrong. Please try again."),
+        "SmartLeisureSelection":
+            MessageLookupByLibrary.simpleMessage("Smart leisure selection for everyone, everywhere"),
+        "SocialSubtitle": MessageLookupByLibrary.simpleMessage("Useful services and places"),
+        "SomethingWentWrong": MessageLookupByLibrary.simpleMessage("Something went wrong. Please try again."),
         "Spend": MessageLookupByLibrary.simpleMessage("Spend"),
-        "SpendHoursPerWeek": m72,
+        "SpendHoursPerWeek": m69,
         "SpendIt": MessageLookupByLibrary.simpleMessage("Spend it"),
         "Spent": MessageLookupByLibrary.simpleMessage("Spent"),
-        "SpentMyPoints":
-            MessageLookupByLibrary.simpleMessage("Spent my points"),
-        "SpinnerHiwHint": m73,
-        "SpinnerHiwSubtitle": MessageLookupByLibrary.simpleMessage(
-            "you find personalized events"),
-        "SpinnerHiwTitle":
-            MessageLookupByLibrary.simpleMessage("You spin it..."),
-        "SpinnerTitle": MessageLookupByLibrary.simpleMessage(
-            "Events you don\'t wanna miss"),
+        "SpentMyPoints": MessageLookupByLibrary.simpleMessage("Spent my points"),
+        "SpinnerHiwHint": m70,
+        "SpinnerHiwSubtitle": MessageLookupByLibrary.simpleMessage("you find personalized events"),
+        "SpinnerHiwTitle": MessageLookupByLibrary.simpleMessage("You spin it..."),
+        "SpinnerTitle": MessageLookupByLibrary.simpleMessage("Events you don\'t wanna miss"),
         "StacksAndSomethingElseAreAvailableForYou":
-            MessageLookupByLibrary.simpleMessage(
-                "Stacks and something else are available for you..."),
+            MessageLookupByLibrary.simpleMessage("Stacks and something else are available for you..."),
         "StacksAreOn": MessageLookupByLibrary.simpleMessage("Stacks are on"),
-        "StacksShares": m74,
-        "StartBookingCreation":
-            MessageLookupByLibrary.simpleMessage("Start booking creation"),
-        "StartToExplore":
-            MessageLookupByLibrary.simpleMessage("Start to explore"),
+        "StacksShares": m71,
+        "StartBookingCreation": MessageLookupByLibrary.simpleMessage("Start booking creation"),
+        "StartToExplore": MessageLookupByLibrary.simpleMessage("Start to explore"),
         "Statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
         "Submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "SubmitContent": MessageLookupByLibrary.simpleMessage("Submit content"),
         "Subs": MessageLookupByLibrary.simpleMessage("Subs"),
         "SubscribeToProfile": MessageLookupByLibrary.simpleMessage("Follow"),
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
-        "SuccessfullyAnswered":
-            MessageLookupByLibrary.simpleMessage("Successfully answered"),
+        "SuccessfullyAnswered": MessageLookupByLibrary.simpleMessage("Successfully answered"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("Sun"),
         "Sunny": MessageLookupByLibrary.simpleMessage("Sunny"),
         "Support": MessageLookupByLibrary.simpleMessage("Support"),
-        "SupportPeopleAroundYou":
-            MessageLookupByLibrary.simpleMessage("Support people around you"),
+        "SupportPeopleAroundYou": MessageLookupByLibrary.simpleMessage("Support people around you"),
         "SupportedFormatsBooking": MessageLookupByLibrary.simpleMessage(
             "Supported formats: JPEG/JPG/PNG.\nMax size - 10 MB.\nMax resolution - 3840 x 2200 px"),
-        "SureYouWantToExit":
-            MessageLookupByLibrary.simpleMessage("Sure you want to exit?"),
+        "SureYouWantToExit": MessageLookupByLibrary.simpleMessage("Sure you want to exit?"),
         "SwipeToStart": MessageLookupByLibrary.simpleMessage("Swipe to start"),
-        "SwitchAnyTime": MessageLookupByLibrary.simpleMessage(
-            "You can switch it at any time in your profile settings"),
+        "SwitchAnyTime": MessageLookupByLibrary.simpleMessage("You can switch it at any time in your profile settings"),
         "Tags": MessageLookupByLibrary.simpleMessage("Tags"),
         "TapIt": MessageLookupByLibrary.simpleMessage("Tap it"),
-        "TapOnceToChoose":
-            MessageLookupByLibrary.simpleMessage("Tap once to choose"),
+        "TapOnceToChoose": MessageLookupByLibrary.simpleMessage("Tap once to choose"),
         "TapToSeeMore": MessageLookupByLibrary.simpleMessage("Tap to see more"),
-        "TapToSetAddress":
-            MessageLookupByLibrary.simpleMessage("Tap to set address"),
-        "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(
-            ". Tap twice to mark your favorites."),
+        "TapToSetAddress": MessageLookupByLibrary.simpleMessage("Tap to set address"),
+        "TapTwiceToMarkYourFavorites": MessageLookupByLibrary.simpleMessage(". Tap twice to mark your favorites."),
         "TastyCoffee": MessageLookupByLibrary.simpleMessage("Tasty coffee"),
         "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
         "TeaList": MessageLookupByLibrary.simpleMessage("Tea list"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("Tell us more"),
-        "TellUsMoreAboutYourself": m75,
+        "TellUsMoreAboutYourself": m72,
         "Terms": MessageLookupByLibrary.simpleMessage("Terms"),
-        "TermsOfService":
-            MessageLookupByLibrary.simpleMessage("Terms of Service"),
-        "ThatsAllForNow":
-            MessageLookupByLibrary.simpleMessage("That\'s all for now!"),
-        "TheBestParties":
-            MessageLookupByLibrary.simpleMessage("The best parties"),
-        "TheBestTechConf":
-            MessageLookupByLibrary.simpleMessage("The best tech conf"),
+        "TermsOfService": MessageLookupByLibrary.simpleMessage("Terms of Service"),
+        "ThatsAllForNow": MessageLookupByLibrary.simpleMessage("That\'s all for now!"),
+        "TheBestParties": MessageLookupByLibrary.simpleMessage("The best parties"),
+        "TheBestTechConf": MessageLookupByLibrary.simpleMessage("The best tech conf"),
         "TheBestTechListSuccessfullyAdded":
-            MessageLookupByLibrary.simpleMessage(
-                "List “The best technologies conf” successfully added"),
-        "TheBestTechnologiesConf":
-            MessageLookupByLibrary.simpleMessage("The best technologies conf"),
+            MessageLookupByLibrary.simpleMessage("List “The best technologies conf” successfully added"),
+        "TheBestTechnologiesConf": MessageLookupByLibrary.simpleMessage("The best technologies conf"),
         "TheMoreInfoWeAboutYouGetTheBetter":
-            MessageLookupByLibrary.simpleMessage(
-                "The more info we get about you, the better"),
-        "TheMoreInfoWeGetTheBetter": MessageLookupByLibrary.simpleMessage(
-            "The more info we get, the better "),
+            MessageLookupByLibrary.simpleMessage("The more info we get about you, the better"),
+        "TheMoreInfoWeGetTheBetter": MessageLookupByLibrary.simpleMessage("The more info we get, the better "),
         "TheOfferWillBeAddedToPersonal": MessageLookupByLibrary.simpleMessage(
             "The offer will be added to the personal profile of users who view your content or make a booking"),
-        "ThenCheckThisOut":
-            MessageLookupByLibrary.simpleMessage("Then check this out"),
+        "ThenCheckThisOut": MessageLookupByLibrary.simpleMessage("Then check this out"),
         "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
             "These content is on your other lists. When added, it will be removed from the current."),
         "ThisIs": MessageLookupByLibrary.simpleMessage("This is"),
-        "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
-            "Through a non-\naggregator system \nespecially for you"),
+        "ThroughANonAggregatorSystem":
+            MessageLookupByLibrary.simpleMessage("Through a non-\naggregator system \nespecially for you"),
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("Thu"),
         "Ticket": MessageLookupByLibrary.simpleMessage("Ticket"),
-        "TicketFrom": m76,
+        "TicketFrom": m73,
         "TicketPrice": MessageLookupByLibrary.simpleMessage("Ticket price"),
-        "Tickets": m77,
+        "Tickets": m74,
         "Time": MessageLookupByLibrary.simpleMessage("Time"),
         "Title": MessageLookupByLibrary.simpleMessage("Title"),
         "TitleYourTop": MessageLookupByLibrary.simpleMessage("Title your TOP"),
         "ToAccessAll": MessageLookupByLibrary.simpleMessage("To access all"),
         "ToAllowAccessGoToSettings": MessageLookupByLibrary.simpleMessage(
             "To allow access to send push notifications, go to your phone settings"),
-        "ToBecomeAnInfluencerYouNeedToDo": MessageLookupByLibrary.simpleMessage(
-            "To become an influencer you need to do"),
+        "ToBecomeAnInfluencerYouNeedToDo":
+            MessageLookupByLibrary.simpleMessage("To become an influencer you need to do"),
         "ToFavorites": MessageLookupByLibrary.simpleMessage("To favorites"),
         "ToOpen": MessageLookupByLibrary.simpleMessage("To open"),
         "ToOpenTheNextSetOfToolsYouNeedToDo":
-            MessageLookupByLibrary.simpleMessage(
-                "To open the next set of tools you need to do"),
+            MessageLookupByLibrary.simpleMessage("To open the next set of tools you need to do"),
         "ToPlan": MessageLookupByLibrary.simpleMessage("To plan"),
         "ToUnlock": MessageLookupByLibrary.simpleMessage("To unlock"),
         "Today": MessageLookupByLibrary.simpleMessage("Today"),
         "Top": MessageLookupByLibrary.simpleMessage("Top"),
-        "TopEventsFor": m78,
-        "TopNDonatorsReceiveXPoints": m79,
-        "TopPlacesRatedBy": m80,
+        "TopEventsFor": m75,
+        "TopNDonatorsReceiveXPoints": m76,
+        "TopPlacesRatedBy": m77,
         "Total": MessageLookupByLibrary.simpleMessage("Total"),
         "TravelerMen": MessageLookupByLibrary.simpleMessage("Traveler"),
         "TravelerWom": MessageLookupByLibrary.simpleMessage("Traveler"),
@@ -1314,83 +1052,60 @@ class MessageLookup extends MessageLookupByLibrary {
         "TryYourself": MessageLookupByLibrary.simpleMessage("Try\nyourself"),
         "TuesdayShort": MessageLookupByLibrary.simpleMessage("Tue"),
         "TypeHere": MessageLookupByLibrary.simpleMessage("Type here"),
-        "TypeOfContent":
-            MessageLookupByLibrary.simpleMessage("Type of content"),
+        "TypeOfContent": MessageLookupByLibrary.simpleMessage("Type of content"),
         "Undefined": MessageLookupByLibrary.simpleMessage("Undefined"),
-        "UnderDevelopmentMessage":
-            MessageLookupByLibrary.simpleMessage("Under development"),
+        "UnderDevelopmentMessage": MessageLookupByLibrary.simpleMessage("Under development"),
         "UnderService": MessageLookupByLibrary.simpleMessage("Under service"),
         "Unfollow": MessageLookupByLibrary.simpleMessage("Unfollow"),
-        "UniqueProperties":
-            MessageLookupByLibrary.simpleMessage("Unique properties"),
-        "UniqueStatistics":
-            MessageLookupByLibrary.simpleMessage("Unique statistics"),
+        "UniqueProperties": MessageLookupByLibrary.simpleMessage("Unique properties"),
+        "UniqueStatistics": MessageLookupByLibrary.simpleMessage("Unique statistics"),
         "UnknownRing": MessageLookupByLibrary.simpleMessage("Unknown Ring"),
-        "UnknownRingDescription": MessageLookupByLibrary.simpleMessage(
-            "Strange ring. We don\'t know why it is here..."),
+        "UnknownRingDescription":
+            MessageLookupByLibrary.simpleMessage("Strange ring. We don\'t know why it is here..."),
         "Unread": MessageLookupByLibrary.simpleMessage("Unread"),
-        "UnsubscribeFromProfile":
-            MessageLookupByLibrary.simpleMessage("Unfollow"),
+        "UnsubscribeFromProfile": MessageLookupByLibrary.simpleMessage("Unfollow"),
         "Upcoming": MessageLookupByLibrary.simpleMessage("Upcoming"),
         "UpcomingEvent": MessageLookupByLibrary.simpleMessage("Upcoming Event"),
-        "UpcomingGlobalEvents":
-            MessageLookupByLibrary.simpleMessage("Upcoming globals"),
+        "UpcomingGlobalEvents": MessageLookupByLibrary.simpleMessage("Upcoming globals"),
         "Update": MessageLookupByLibrary.simpleMessage("Update"),
         "UpdateAppMessage": MessageLookupByLibrary.simpleMessage(
             "It\'s been a while since you\'ve updated our app, and we\'ve added a lot of handy stuff in the meantime"),
-        "UpdateAppMessageTitle":
-            MessageLookupByLibrary.simpleMessage("Time for update"),
-        "UpgradeAccount": m81,
-        "UpgradeAccountConfirmation":
-            MessageLookupByLibrary.simpleMessage("Upgrade"),
-        "UpgradeForNmoney": m82,
-        "UploadingVideo":
-            MessageLookupByLibrary.simpleMessage("Uploading video"),
+        "UpdateAppMessageTitle": MessageLookupByLibrary.simpleMessage("Time for update"),
+        "UpgradeAccount": m78,
+        "UpgradeAccountConfirmation": MessageLookupByLibrary.simpleMessage("Upgrade"),
+        "UpgradeForNmoney": m79,
+        "UploadingVideo": MessageLookupByLibrary.simpleMessage("Uploading video"),
         "Upsales": MessageLookupByLibrary.simpleMessage("Upsales"),
-        "UpsalesAvailable":
-            MessageLookupByLibrary.simpleMessage("Upsales available"),
-        "UpsalesAvailableHint":
-            MessageLookupByLibrary.simpleMessage("t-shirt, hat,yoga mat, mug"),
-        "UpsalesProductsFrom": m83,
+        "UpsalesAvailable": MessageLookupByLibrary.simpleMessage("Upsales available"),
+        "UpsalesAvailableHint": MessageLookupByLibrary.simpleMessage("t-shirt, hat,yoga mat, mug"),
+        "UpsalesProductsFrom": m80,
         "User": MessageLookupByLibrary.simpleMessage("User"),
-        "UserHasNoPublicProfileEnd": MessageLookupByLibrary.simpleMessage(
-            "doesn\'t have public profile"),
-        "UserHasNoPublicProfileStart":
-            MessageLookupByLibrary.simpleMessage("User"),
-        "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
-            "Select the type of account you would like to create"),
-        "Users": m84,
-        "UsingHealthKit":
-            MessageLookupByLibrary.simpleMessage("Using health kit"),
-        "UsingNotifications":
-            MessageLookupByLibrary.simpleMessage("Use notifications"),
-        "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
-            "Value must be at least 3 characters long"),
+        "UserHasNoPublicProfileEnd": MessageLookupByLibrary.simpleMessage("doesn\'t have public profile"),
+        "UserHasNoPublicProfileStart": MessageLookupByLibrary.simpleMessage("User"),
+        "UserTypeSelectionPrompt":
+            MessageLookupByLibrary.simpleMessage("Select the type of account you would like to create"),
+        "Users": m81,
+        "UsingHealthKit": MessageLookupByLibrary.simpleMessage("Using health kit"),
+        "UsingNotifications": MessageLookupByLibrary.simpleMessage("Use notifications"),
+        "ValueMustBeAtLeast3Characters":
+            MessageLookupByLibrary.simpleMessage("Value must be at least 3 characters long"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("Very often"),
         "Video": MessageLookupByLibrary.simpleMessage("Video"),
-        "VideoFileNotCut":
-            MessageLookupByLibrary.simpleMessage("Video file not cut"),
-        "VideoReactionAdded": MessageLookupByLibrary.simpleMessage(
-            "Your reaction has been successfully added"),
-        "VideoReactionUploadedMessage":
-            MessageLookupByLibrary.simpleMessage("Reaction successfully added"),
-        "VideoReactions":
-            MessageLookupByLibrary.simpleMessage("Video-reactions"),
-        "VideoUploadFiles":
-            MessageLookupByLibrary.simpleMessage("Video (upload Files)"),
+        "VideoFileNotCut": MessageLookupByLibrary.simpleMessage("Video file not cut"),
+        "VideoReactionAdded": MessageLookupByLibrary.simpleMessage("Your reaction has been successfully added"),
+        "VideoReactionUploadedMessage": MessageLookupByLibrary.simpleMessage("Reaction successfully added"),
+        "VideoReactions": MessageLookupByLibrary.simpleMessage("Video-reactions"),
+        "VideoUploadFiles": MessageLookupByLibrary.simpleMessage("Video (upload Files)"),
         "ViewAll": MessageLookupByLibrary.simpleMessage("View all"),
         "ViewHistory": MessageLookupByLibrary.simpleMessage("View history"),
         "ViewSources": MessageLookupByLibrary.simpleMessage("View sources"),
-        "VisitFirstToOpenNext":
-            MessageLookupByLibrary.simpleMessage("Visit first to open next"),
+        "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage("Visit first to open next"),
         "Voice": MessageLookupByLibrary.simpleMessage("Voice"),
         "Voices": MessageLookupByLibrary.simpleMessage("Voices"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(
             "We do not spam all kinds of notifications and advertisements. Only those notifications that may be important to you and match your preferences"),
-        "WeHavePlacesJustForYou":
-            MessageLookupByLibrary.simpleMessage("We have places just for you"),
-        "WeWillLetKnowResults": MessageLookupByLibrary.simpleMessage(
-            "We will let you know the results"),
+        "WeHavePlacesJustForYou": MessageLookupByLibrary.simpleMessage("We have places just for you"),
+        "WeWillLetKnowResults": MessageLookupByLibrary.simpleMessage("We will let you know the results"),
         "Weather": MessageLookupByLibrary.simpleMessage("Weather"),
         "Website": MessageLookupByLibrary.simpleMessage("Website"),
         "WednesdayShort": MessageLookupByLibrary.simpleMessage("Wed"),
@@ -1399,85 +1114,66 @@ class MessageLookup extends MessageLookupByLibrary {
         "WhatIs": MessageLookupByLibrary.simpleMessage("What is \n"),
         "WhatYouLike": MessageLookupByLibrary.simpleMessage("What you like"),
         "WhiteTheme": MessageLookupByLibrary.simpleMessage("White theme"),
-        "WhyDoYouLoveIt":
-            MessageLookupByLibrary.simpleMessage("Why do you love it?"),
+        "WhyDoYouLoveIt": MessageLookupByLibrary.simpleMessage("Why do you love it?"),
         "WillBe": MessageLookupByLibrary.simpleMessage(" will be."),
-        "WillBeImplementedSoon":
-            MessageLookupByLibrary.simpleMessage("Will be implemented soon"),
-        "WiseacreLadyOfSands":
-            MessageLookupByLibrary.simpleMessage("Wiseacre lady of sands"),
-        "WiseacreOfSands":
-            MessageLookupByLibrary.simpleMessage("Wiseacre of sands"),
-        "WithInDays": m85,
-        "WithYourPreferences":
-            MessageLookupByLibrary.simpleMessage("With your\npreferences"),
+        "WillBeImplementedSoon": MessageLookupByLibrary.simpleMessage("Will be implemented soon"),
+        "WiseacreLadyOfSands": MessageLookupByLibrary.simpleMessage("Wiseacre lady of sands"),
+        "WiseacreOfSands": MessageLookupByLibrary.simpleMessage("Wiseacre of sands"),
+        "WithInDays": m82,
+        "WithYourPreferences": MessageLookupByLibrary.simpleMessage("With your\npreferences"),
         "WorkHours": MessageLookupByLibrary.simpleMessage("Work hours"),
-        "WriteTheAnswer":
-            MessageLookupByLibrary.simpleMessage("Write the answer"),
-        "WrongSecurityCode":
-            MessageLookupByLibrary.simpleMessage("Wrong security code"),
-        "XCouldNotBeEmpty": m86,
-        "XInvitesY": m87,
-        "XIsRequired": m88,
-        "XSuccessfullyCreated": m89,
-        "XSuccessfullyUpdated": m90,
-        "XYearsPlus": m91,
+        "WriteTheAnswer": MessageLookupByLibrary.simpleMessage("Write the answer"),
+        "WrongSecurityCode": MessageLookupByLibrary.simpleMessage("Wrong security code"),
+        "XCouldNotBeEmpty": m83,
+        "XInvitesY": m84,
+        "XIsRequired": m85,
+        "XSuccessfullyUpdated": m86,
+        "XYearsPlus": m87,
         "Year": MessageLookupByLibrary.simpleMessage("Year"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Yearly"),
-        "YearsOld": m92,
+        "YearsOld": m88,
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "Yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
         "You": MessageLookupByLibrary.simpleMessage("You"),
-        "YouBetterCheckThisOut":
-            MessageLookupByLibrary.simpleMessage("You better check this out"),
+        "YouBetterCheckThisOut": MessageLookupByLibrary.simpleMessage("You better check this out"),
         "YouCanGet": MessageLookupByLibrary.simpleMessage("You can get"),
         "YouCanSeeYourXPromotionMenu": m93,
         "YouCanStillRequestRefundYourComplaint":
-            MessageLookupByLibrary.simpleMessage(
-                "You can still request a refund on your complaint"),
-        "YouGetAccessToTrial": MessageLookupByLibrary.simpleMessage(
-            "You get access to all benefits free of charge for"),
-        "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
-            "You get exactly what you need"),
-        "YouMissedALot":
-            MessageLookupByLibrary.simpleMessage("You missed a lot"),
+            MessageLookupByLibrary.simpleMessage("You can still request a refund on your complaint"),
+        "YouGetAccessToTrial":
+            MessageLookupByLibrary.simpleMessage("You get access to all benefits free of charge for"),
+        "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage("You get exactly what you need"),
+        "YouMissedALot": MessageLookupByLibrary.simpleMessage("You missed a lot"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
-        "YouSentInvitationToNPeople": m94,
-        "YouSureToDeleteX": m95,
-        "YouWillNoLongerSendMessagesTo": m96,
-        "YouWillReceiveNewTools":
-            MessageLookupByLibrary.simpleMessage("You will receive new tools"),
+        "YouSentInvitationToNPeople": m89,
+        "YouSureToDeleteX": m90,
+        "YouWillNoLongerSendMessagesTo": m91,
+        "YouWillReceiveNewTools": MessageLookupByLibrary.simpleMessage("You will receive new tools"),
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("You’ll find it"),
         "YourAge": MessageLookupByLibrary.simpleMessage("Your age"),
-        "YourAudienceAge":
-            MessageLookupByLibrary.simpleMessage("Your audience age"),
-        "YourClaimHasBeenSent":
-            MessageLookupByLibrary.simpleMessage("Your claim has been sent"),
+        "YourAudienceAge": MessageLookupByLibrary.simpleMessage("Your audience age"),
+        "YourClaimHasBeenSent": MessageLookupByLibrary.simpleMessage("Your claim has been sent"),
         "YourEmail": MessageLookupByLibrary.simpleMessage("Your email"),
         "YourEvent": MessageLookupByLibrary.simpleMessage("Your event"),
-        "YourLeisureSelection":
-            MessageLookupByLibrary.simpleMessage("Your leisure selection"),
+        "YourLeisureSelection": MessageLookupByLibrary.simpleMessage("Your leisure selection"),
         "YourName": MessageLookupByLibrary.simpleMessage("Your name"),
         "YourNewTools": MessageLookupByLibrary.simpleMessage("Your new tools"),
         "YourNiche": MessageLookupByLibrary.simpleMessage("Your niche"),
         "YourNotificationWillBeShown": MessageLookupByLibrary.simpleMessage(
             "Your notification will be shown 3 times a week during the specified period of valid, no more than 1 show per person."),
-        "YourOfferHasAlreadyBeenPublishedToYourAudience":
-            MessageLookupByLibrary.simpleMessage(
-                "Your offer has already been published to your audience, by changing or deleting it you are responsible for their potential negative attitude."),
+        "YourOfferHasAlreadyBeenPublishedToYourAudience": MessageLookupByLibrary.simpleMessage(
+            "Your offer has already been published to your audience, by changing or deleting it you are responsible for their potential negative attitude."),
         "YourOfferWillShown1Time": MessageLookupByLibrary.simpleMessage(
             "Your offer will be shown 1 time and included in the list of offers of your audience. It will disappear after the end of the event."),
         "YourPosition": MessageLookupByLibrary.simpleMessage("Your position"),
-        "YourPriceSegment":
-            MessageLookupByLibrary.simpleMessage("Your price segment"),
+        "YourPriceSegment": MessageLookupByLibrary.simpleMessage("Your price segment"),
         "YourProgress": MessageLookupByLibrary.simpleMessage("Your progress"),
-        "YourReminderIsShown1Time": MessageLookupByLibrary.simpleMessage(
-            "Your reminder is shown 1 time on the specified date."),
+        "YourReminderIsShown1Time":
+            MessageLookupByLibrary.simpleMessage("Your reminder is shown 1 time on the specified date."),
         "YourReminderIsShown1TimeMax3": MessageLookupByLibrary.simpleMessage(
             "Your reminder is shown 1 time on the specified date. You have a maximum of 3 attempts to be reminded."),
         "YourReminderShown1TimeOnTheSpecifiedDate":
-            MessageLookupByLibrary.simpleMessage(
-                "Your reminder is shown 1 time on the specified date."),
+            MessageLookupByLibrary.simpleMessage("Your reminder is shown 1 time on the specified date."),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("Your traffic"),
         "daynight": MessageLookupByLibrary.simpleMessage("Day and night"),
         "key": MessageLookupByLibrary.simpleMessage("ar")

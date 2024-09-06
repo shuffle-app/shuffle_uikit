@@ -29,61 +29,64 @@ class _UiKitDraggableCardState extends State<UiKitDraggableCard> {
   @override
   Widget build(BuildContext context) {
     return DragTargetWrapper(
-        childCardId: widget.cardId,
-        onDragAccept: widget.onDragAccept,
-        child: Transform.translate(
-          offset: _offset,
-          child: LongPressDraggable<DragTargetData>(
-            data: DragTargetData(key: 'card', data: widget.cardId),
-            axis: widget.dragDirection,
-            onDragStarted: () {
-              FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
-                intensities: [130, 170],
-                pattern: [10, 5],
-              ));
-              if (widget.scrollController != null) {
-                setState(() {
-                  startDragPositionPixels = widget.scrollController!.position.pixels;
-                });
-              }
-            },
-            childWhenDragging: UiKitCardWrapper(
+      childCardId: widget.cardId,
+      onDragAccept: widget.onDragAccept,
+      child: LongPressDraggable<DragTargetData>(
+        data: DragTargetData(key: 'card', data: widget.cardId),
+        axis: widget.dragDirection,
+        onDragStarted: () {
+          FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
+            intensities: [130, 170],
+            pattern: [10, 5],
+          ));
+          if (widget.scrollController != null) {
+            setState(() {
+              startDragPositionPixels = widget.scrollController!.position.pixels;
+            });
+          }
+        },
+        childWhenDragging: Transform.translate(
+            offset: _offset,
+            child: UiKitCardWrapper(
               padding: EdgeInsets.symmetric(vertical: SpacingFoundation.verticalSpacing8),
               child: widget.child,
-            ),
-            onDragUpdate: (details) {
-              setState(() {
-                _offset += details.delta;
-                if (_offset.dy > 0) {
-                  _offset = Offset(_offset.dx, 0);
-                }
-              });
-              debugPrint('Drag update: details.delta = ${details.delta}');
-              if (widget.scrollController != null) {
-                final currentPosition = widget.scrollController!.position.pixels;
-                debugPrint('Drag update: currentPosition = $currentPosition and _offset is $_offset');
-                if (details.globalPosition.dy > 0.7.sh && _offset.dy > 0) {
-                  widget.scrollController?.jumpTo(currentPosition + 20);
-                } else if (currentPosition > 50 && details.globalPosition.dy < 0.3.sh) {
-                  widget.scrollController?.jumpTo(currentPosition - 20);
-                }
-                final updatedPosition = widget.scrollController!.position.pixels;
-                if (currentPosition != updatedPosition) {
-                  setState(() {
-                    _offset = _offset.translate(0, updatedPosition - currentPosition);
-                  });
-                }
-              }
-            },
-            onDragEnd: (details) {
-              setState(() {
-                _offset = Offset.zero;
-              });
-            },
-            feedback: widget.feedbackChild,
-            child: widget.child,
-          ),
-        ));
+            )),
+        rootOverlay: true,
+        onDragUpdate: (details) {
+          setState(() {
+            _offset = _offset.translate(0, details.delta.dy);
+            if (_offset.dy > 0) {
+              _offset = Offset(_offset.dx, 0);
+            }
+          });
+          debugPrint('Drag update: details.delta = ${details.delta}');
+          if (widget.scrollController != null) {
+            final currentPosition = widget.scrollController!.position.pixels;
+            debugPrint('Drag update: currentPosition = $currentPosition and _offset is $_offset');
+            if (details.globalPosition.dy > 0.5.sh && _offset.dy > 0) {
+              widget.scrollController?.jumpTo(currentPosition + 20);
+            } else if (currentPosition > 50 && details.globalPosition.dy < 0.3.sh) {
+              widget.scrollController?.jumpTo(currentPosition - 20);
+            }
+            final updatedPosition = widget.scrollController!.position.pixels;
+            debugPrint('Drag update: updatedPosition = $updatedPosition');
+            if (currentPosition != updatedPosition) {
+              // setState(() {
+              _offset = _offset.translate(0, (updatedPosition - currentPosition - details.delta.dy));
+              // });
+            }
+          }
+        },
+        onDragEnd: (details) {
+          debugPrint('Drag end: $_offset');
+          setState(() {
+            _offset = Offset.zero;
+          });
+        },
+        feedback: widget.feedbackChild,
+        child: widget.child,
+      ),
+    );
   }
 }
 
