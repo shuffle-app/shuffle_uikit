@@ -385,6 +385,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         gradient: gradient,
         blurred: blurred ?? false,
         text: data.text ?? '',
+        backgroundColor: data.backgroundColor,
         borderColor: data.borderColor,
         textColor: gradient != null ? Colors.white : data.textColor,
         loading: data.loading,

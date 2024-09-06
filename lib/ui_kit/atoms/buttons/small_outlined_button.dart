@@ -9,6 +9,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final Color? borderColor;
   final Color? textColor;
+  final Color? backgroundColor;
   final ImageWidget? icon;
   final bool blurred;
   final bool? loading;
@@ -19,6 +20,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
     required this.text,
     this.onPressed,
     this.borderColor,
+    this.backgroundColor,
     this.textColor,
     this.gradient,
     required this.blurred,
@@ -41,7 +43,11 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
       borderRadius: text.isEmpty ? null : BorderRadiusFoundation.max,
       shape: text.isEmpty ? const CircleBorder() : null,
       clipBehavior: Clip.hardEdge,
-      color: text.isEmpty || blurred ? Colors.white.withOpacity(0.1) : Colors.transparent,
+      color: backgroundColor != null
+          ? backgroundColor
+          : text.isEmpty || blurred
+              ? Colors.white.withOpacity(0.1)
+              : Colors.transparent,
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: blurValue, sigmaY: blurValue),
         child: InkWell(
