@@ -8229,13 +8229,13 @@ class S {
     );
   }
 
-  /// `Create a new offer for your {placeOrEvent} and increase attendance`
-  String CreateNewOfferYourPlace(Object placeOrEvent) {
+  /// `Create a new {x} for your {y} and increase attendance`
+  String CreateNewXForYourY(Object x, Object y) {
     return Intl.message(
-      'Create a new offer for your $placeOrEvent and increase attendance',
-      name: 'CreateNewOfferYourPlace',
+      'Create a new $x for your $y and increase attendance',
+      name: 'CreateNewXForYourY',
       desc: '',
-      args: [placeOrEvent],
+      args: [x, y],
     );
   }
 
@@ -8329,23 +8329,23 @@ class S {
     );
   }
 
-  /// `Offer successfully created`
-  String get OfferSuccessfullyCreated {
+  /// `{x} successfully created`
+  String XSuccessfullyCreated(Object x) {
     return Intl.message(
-      'Offer successfully created',
-      name: 'OfferSuccessfullyCreated',
+      '$x successfully created',
+      name: 'XSuccessfullyCreated',
       desc: '',
-      args: [],
+      args: [x],
     );
   }
 
-  /// `You can see your offers in the promotion menu`
-  String get YouCanSeeYourOffersPromotionMenu {
+  /// `You can see your {x} in the promotion menu`
+  String YouCanSeeYourXPromotionMenu(Object x) {
     return Intl.message(
-      'You can see your offers in the promotion menu',
-      name: 'YouCanSeeYourOffersPromotionMenu',
+      'You can see your $x in the promotion menu',
+      name: 'YouCanSeeYourXPromotionMenu',
       desc: '',
-      args: [],
+      args: [x],
     );
   }
 
@@ -8424,6 +8424,166 @@ class S {
     return Intl.message(
       'Your offer has already been published to your audience, by changing or deleting it you are responsible for their potential negative attitude.',
       name: 'YourOfferHasAlreadyBeenPublishedToYourAudience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification`
+  String get Notification {
+    return Intl.message(
+      'Notification',
+      name: 'Notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your notification will be shown 3 times a week during the specified period of valid, no more than 1 show per person.`
+  String get YourNotificationWillBeShown {
+    return Intl.message(
+      'Your notification will be shown 3 times a week during the specified period of valid, no more than 1 show per person.',
+      name: 'YourNotificationWillBeShown',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification text`
+  String get NotificationText {
+    return Intl.message(
+      'Notification text',
+      name: 'NotificationText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay for the notification`
+  String get PayForTheNotification {
+    return Intl.message(
+      'Pay for the notification',
+      name: 'PayForTheNotification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To favorites`
+  String get ToFavorites {
+    return Intl.message(
+      'To favorites',
+      name: 'ToFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open place`
+  String get OpenPlace {
+    return Intl.message(
+      'Open place',
+      name: 'OpenPlace',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skip it`
+  String get SkipIt {
+    return Intl.message(
+      'Skip it',
+      name: 'SkipIt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Paused`
+  String get Paused {
+    return Intl.message(
+      'Paused',
+      name: 'Paused',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminders`
+  String get Reminders {
+    return Intl.message(
+      'Reminders',
+      name: 'Reminders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your event`
+  String get YourEvent {
+    return Intl.message(
+      'Your event',
+      name: 'YourEvent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personalize your reminder`
+  String get PersonalizeYourReminder {
+    return Intl.message(
+      'Personalize your reminder',
+      name: 'PersonalizeYourReminder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By default, your reminder will display an image from the uploaded place photos`
+  String get ByDefaultYourReminderWillDisplay {
+    return Intl.message(
+      'By default, your reminder will display an image from the uploaded place photos',
+      name: 'ByDefaultYourReminderWillDisplay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your reminder is shown 1 time on the specified date.`
+  String get YourReminderShown1TimeOnTheSpecifiedDate {
+    return Intl.message(
+      'Your reminder is shown 1 time on the specified date.',
+      name: 'YourReminderShown1TimeOnTheSpecifiedDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oh yeah, sure!`
+  String get OhYeahSure {
+    return Intl.message(
+      'Oh yeah, sure!',
+      name: 'OhYeahSure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your reminder is shown 1 time on the specified date. You have a maximum of 3 attempts to be reminded.`
+  String get YourReminderIsShown1TimeMax3 {
+    return Intl.message(
+      'Your reminder is shown 1 time on the specified date. You have a maximum of 3 attempts to be reminded.',
+      name: 'YourReminderIsShown1TimeMax3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your reminder is shown 1 time on the specified date.`
+  String get YourReminderIsShown1Time {
+    return Intl.message(
+      'Your reminder is shown 1 time on the specified date.',
+      name: 'YourReminderIsShown1Time',
       desc: '',
       args: [],
     );

@@ -56,8 +56,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m13(count) => "${count} Video-Reaction";
 
-  static String m14(placeOrEvent) =>
-      "Create a new offer for your ${placeOrEvent} and increase attendance";
+  static String m14(x, y) =>
+      "Create a new ${x} for your ${y} and increase attendance";
 
   static String m15(days) =>
       "${Intl.plural(days, zero: 'दिन', one: 'दिन', two: 'दिन', few: 'दिन', many: 'दिन', other: 'दिन')}";
@@ -260,20 +260,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m88(title) => "{शीर्षक} आवश्यक है";
 
-  static String m89(value) => "${value}  सफलतापूर्वक अद्यतन";
+  static String m89(x) => "${x} successfully created";
 
-  static String m90(years) =>
-      "${years}+ ${Intl.plural(years, zero: 'वर्ष', one: 'वर्ष', two: 'वर्ष', few: 'वर्ष', many: 'वर्ष', other: 'वर्ष')}";
+  static String m90(value) => "${value}  सफलतापूर्वक अद्यतन";
 
   static String m91(years) =>
+      "${years}+ ${Intl.plural(years, zero: 'वर्ष', one: 'वर्ष', two: 'वर्ष', few: 'वर्ष', many: 'वर्ष', other: 'वर्ष')}";
+
+  static String m92(years) =>
       "${years} ${Intl.plural(years, zero: 'वर्ष', one: 'वर्ष', two: 'वर्ष', few: 'वर्ष', many: 'वर्ष', other: 'वर्ष')}";
 
-  static String m92(amountOfInvitedPersons) =>
+  static String m93(x) => "You can see your ${x} in the promotion menu";
+
+  static String m94(amountOfInvitedPersons) =>
       "आपने ${amountOfInvitedPersons} लोगों को निमंत्रण भेजा है";
 
-  static String m93(name) => "क्या आप ${name} को हटाना चाहते हैं?";
+  static String m95(name) => "क्या आप ${name} को हटाना चाहते हैं?";
 
-  static String m94(name) => "आप ${name} को अब संदेश नहीं भेज सकते";
+  static String m96(name) => "आप ${name} को अब संदेश नहीं भेज सकते";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -384,6 +388,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "जारी रखकर आप स्वीकार करते हैं"),
         "ByDefaultYourOfferWillDisplay": MessageLookupByLibrary.simpleMessage(
             "By default, your offer will display an image from the uploaded place photos"),
+        "ByDefaultYourReminderWillDisplay": MessageLookupByLibrary.simpleMessage(
+            "By default, your reminder will display an image from the uploaded place photos"),
         "ByEmail": MessageLookupByLibrary.simpleMessage("ईमेल द्वारा"),
         "ByMessage": MessageLookupByLibrary.simpleMessage("संदेश द्वारा"),
         "CalmAtmosphere": MessageLookupByLibrary.simpleMessage("शांत वातावरण"),
@@ -468,7 +474,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Create": MessageLookupByLibrary.simpleMessage("बनाएँ"),
         "CreateBooking": MessageLookupByLibrary.simpleMessage("Create booking"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("कार्यक्रम बनाएँ"),
-        "CreateNewOfferYourPlace": m14,
+        "CreateNewXForYourY": m14,
         "CreatePlace": MessageLookupByLibrary.simpleMessage("जगह बनाएं"),
         "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
             "अपने ग्राहकों के लिए मुफ्त याद दिलाने के लिए"),
@@ -843,6 +849,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("कुछ भी नहीं मिला"),
         "NothingWasFoundWithEmoji":
             MessageLookupByLibrary.simpleMessage("कुछ नहीं मिला"),
+        "Notification": MessageLookupByLibrary.simpleMessage("Notification"),
+        "NotificationText":
+            MessageLookupByLibrary.simpleMessage("Notification text"),
         "Notifications": MessageLookupByLibrary.simpleMessage("सूचनाएं"),
         "NotifyTheAudience":
             MessageLookupByLibrary.simpleMessage("Notify the audience"),
@@ -857,11 +866,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "OfferPrice": m46,
         "OfferSuccessfullyActivated":
             MessageLookupByLibrary.simpleMessage("प्रस्ताव सफलतापूर्वक सक्रिय"),
-        "OfferSuccessfullyCreated":
-            MessageLookupByLibrary.simpleMessage("Offer successfully created"),
         "Offers": MessageLookupByLibrary.simpleMessage("Offers"),
         "OfficeAppartmentNumber":
             MessageLookupByLibrary.simpleMessage("कार्यालय या अपार्टमेंट नंबर"),
+        "OhYeahSure": MessageLookupByLibrary.simpleMessage("Oh yeah, sure!"),
         "Ok": MessageLookupByLibrary.simpleMessage("ठीक है"),
         "Okay": MessageLookupByLibrary.simpleMessage("ठीक है"),
         "OkayCool": MessageLookupByLibrary.simpleMessage("ठीक है अद्भुत"),
@@ -878,6 +886,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Open": MessageLookupByLibrary.simpleMessage("ओपन"),
         "OpenFrom": MessageLookupByLibrary.simpleMessage("से खोलें"),
         "OpenNow": MessageLookupByLibrary.simpleMessage("अभी खोलें"),
+        "OpenPlace": MessageLookupByLibrary.simpleMessage("Open place"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("के लिए खुला"),
         "OpeningHours": MessageLookupByLibrary.simpleMessage("खुलने का समय"),
         "OrDragFilesHere":
@@ -897,9 +906,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "पासवर्ड कम से कम 8 अक्षर होना चाहिए"),
         "Past": MessageLookupByLibrary.simpleMessage("बीता हुआ"),
+        "Paused": MessageLookupByLibrary.simpleMessage("Paused"),
         "Pay": MessageLookupByLibrary.simpleMessage("Pay"),
         "PayForTheBonusOffer":
             MessageLookupByLibrary.simpleMessage("Pay for the bonus offer"),
+        "PayForTheNotification":
+            MessageLookupByLibrary.simpleMessage("Pay for the notification"),
         "Permissions": MessageLookupByLibrary.simpleMessage("अनुमतियाँ"),
         "Personal": MessageLookupByLibrary.simpleMessage("व्यक्तिगत"),
         "PersonalCredentials":
@@ -909,6 +921,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "PersonalTop": MessageLookupByLibrary.simpleMessage("व्यक्तिगत शीर्ष"),
         "PersonalizeYourOffer":
             MessageLookupByLibrary.simpleMessage("Personalize your offer"),
+        "PersonalizeYourReminder":
+            MessageLookupByLibrary.simpleMessage("Personalize your reminder"),
         "Phone": MessageLookupByLibrary.simpleMessage("फ़ोन"),
         "PhoneVerification":
             MessageLookupByLibrary.simpleMessage("फ़ोन सत्यापन"),
@@ -1054,6 +1068,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
         "Reminder": MessageLookupByLibrary.simpleMessage("याद दिलाने वाला"),
+        "Reminders": MessageLookupByLibrary.simpleMessage("Reminders"),
         "Remove": MessageLookupByLibrary.simpleMessage("Remove"),
         "Rename": MessageLookupByLibrary.simpleMessage("नाम बदलें"),
         "Reply": MessageLookupByLibrary.simpleMessage("जवाब दे दो"),
@@ -1182,6 +1197,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ShuffleWithRightWhitespace":
             MessageLookupByLibrary.simpleMessage("मिश्रण"),
         "Skip": MessageLookupByLibrary.simpleMessage("छोड़ें"),
+        "SkipIt": MessageLookupByLibrary.simpleMessage("Skip it"),
         "Small": MessageLookupByLibrary.simpleMessage("छोटा"),
         "SmartLeisureSelection": MessageLookupByLibrary.simpleMessage(
             "हर जगह, हर किसी के लिए स्मार्ट अवकाश चयन।"),
@@ -1289,6 +1305,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "पुश सूचनाएँ भेजने की अनुमति देने के लिए, अपने फ़ोन की सेटिंग पर जाएँ"),
         "ToBecomeAnInfluencerYouNeedToDo": MessageLookupByLibrary.simpleMessage(
             "To become an influencer you need to do"),
+        "ToFavorites": MessageLookupByLibrary.simpleMessage("To favorites"),
         "ToOpen": MessageLookupByLibrary.simpleMessage("To open"),
         "ToOpenTheNextSetOfToolsYouNeedToDo":
             MessageLookupByLibrary.simpleMessage(
@@ -1414,11 +1431,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "XCouldNotBeEmpty": m86,
         "XInvitesY": m87,
         "XIsRequired": m88,
-        "XSuccessfullyUpdated": m89,
-        "XYearsPlus": m90,
+        "XSuccessfullyCreated": m89,
+        "XSuccessfullyUpdated": m90,
+        "XYearsPlus": m91,
         "Year": MessageLookupByLibrary.simpleMessage("वर्ष"),
         "Yearly": MessageLookupByLibrary.simpleMessage("सालाना"),
-        "YearsOld": m91,
+        "YearsOld": m92,
         "Yes": MessageLookupByLibrary.simpleMessage("हाँ"),
         "Yesterday": MessageLookupByLibrary.simpleMessage("कल"),
         "You": MessageLookupByLibrary.simpleMessage("आप"),
@@ -1426,9 +1444,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "बेहतर होगा कि आप इसकी जांच कर लें"),
         "YouCanGet":
             MessageLookupByLibrary.simpleMessage("आप प्राप्त कर सकते हैं"),
-        "YouCanSeeYourOffersPromotionMenu":
-            MessageLookupByLibrary.simpleMessage(
-                "You can see your offers in the promotion menu"),
+        "YouCanSeeYourXPromotionMenu": m93,
         "YouCanStillRequestRefundYourComplaint":
             MessageLookupByLibrary.simpleMessage(
                 "आप अपनी शिकायत पर वापसी का अनुरोध कर सकते हैं"),
@@ -1439,9 +1455,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouMissedALot":
             MessageLookupByLibrary.simpleMessage("आपने बहुत कुछ छोड़ दिया"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("आपको मिला"),
-        "YouSentInvitationToNPeople": m92,
-        "YouSureToDeleteX": m93,
-        "YouWillNoLongerSendMessagesTo": m94,
+        "YouSentInvitationToNPeople": m94,
+        "YouSureToDeleteX": m95,
+        "YouWillNoLongerSendMessagesTo": m96,
         "YouWillReceiveNewTools":
             MessageLookupByLibrary.simpleMessage("आपको नए उपकरण मिलेंगे"),
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("आप उसे खोज लोगे"),
@@ -1451,11 +1467,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourClaimHasBeenSent":
             MessageLookupByLibrary.simpleMessage("आपका दावा भेज दिया गया है"),
         "YourEmail": MessageLookupByLibrary.simpleMessage("आपका ईमेल"),
+        "YourEvent": MessageLookupByLibrary.simpleMessage("Your event"),
         "YourLeisureSelection":
             MessageLookupByLibrary.simpleMessage("आपका अवकाश चयन"),
         "YourName": MessageLookupByLibrary.simpleMessage("आपका नाम"),
         "YourNewTools": MessageLookupByLibrary.simpleMessage("आपके नए उपकरण"),
         "YourNiche": MessageLookupByLibrary.simpleMessage("आपका आला"),
+        "YourNotificationWillBeShown": MessageLookupByLibrary.simpleMessage(
+            "Your notification will be shown 3 times a week during the specified period of valid, no more than 1 show per person."),
         "YourOfferHasAlreadyBeenPublishedToYourAudience":
             MessageLookupByLibrary.simpleMessage(
                 "Your offer has already been published to your audience, by changing or deleting it you are responsible for their potential negative attitude."),
@@ -1465,6 +1484,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourPriceSegment":
             MessageLookupByLibrary.simpleMessage("Your price segment"),
         "YourProgress": MessageLookupByLibrary.simpleMessage("Your progress"),
+        "YourReminderIsShown1Time": MessageLookupByLibrary.simpleMessage(
+            "Your reminder is shown 1 time on the specified date."),
+        "YourReminderIsShown1TimeMax3": MessageLookupByLibrary.simpleMessage(
+            "Your reminder is shown 1 time on the specified date. You have a maximum of 3 attempts to be reminded."),
+        "YourReminderShown1TimeOnTheSpecifiedDate":
+            MessageLookupByLibrary.simpleMessage(
+                "Your reminder is shown 1 time on the specified date."),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("आपका ट्रैफ़िक"),
         "daynight": MessageLookupByLibrary.simpleMessage("दिन और रात"),
         "key": MessageLookupByLibrary.simpleMessage("")

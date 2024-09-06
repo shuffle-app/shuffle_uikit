@@ -57,8 +57,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m13(count) => "${count} Video-Reaction";
 
-  static String m14(placeOrEvent) =>
-      "Create a new offer for your ${placeOrEvent} and increase attendance";
+  static String m14(x, y) =>
+      "Create a new ${x} for your ${y} and increase attendance";
 
   static String m15(days) =>
       "${Intl.plural(days, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')}";
@@ -260,20 +260,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m88(title) => "${title} is required";
 
-  static String m89(value) => "${value} successfully updated";
+  static String m89(x) => "${x} successfully created";
 
-  static String m90(years) =>
-      "${years}+ ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}";
+  static String m90(value) => "${value} successfully updated";
 
   static String m91(years) =>
+      "${years}+ ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}";
+
+  static String m92(years) =>
       "${years} ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}";
 
-  static String m92(amountOfInvitedPersons) =>
+  static String m93(x) => "You can see your ${x} in the promotion menu";
+
+  static String m94(amountOfInvitedPersons) =>
       "You sent an invitation to ${amountOfInvitedPersons} people";
 
-  static String m93(name) => "Sure you want to delete ${name}?";
+  static String m95(name) => "Sure you want to delete ${name}?";
 
-  static String m94(name) => "You can no longer send messages to ${name}";
+  static String m96(name) => "You can no longer send messages to ${name}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -383,6 +387,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "By continuing you accept the "),
         "ByDefaultYourOfferWillDisplay": MessageLookupByLibrary.simpleMessage(
             "By default, your offer will display an image from the uploaded place photos"),
+        "ByDefaultYourReminderWillDisplay": MessageLookupByLibrary.simpleMessage(
+            "By default, your reminder will display an image from the uploaded place photos"),
         "ByEmail": MessageLookupByLibrary.simpleMessage("by e-mail"),
         "ByMessage": MessageLookupByLibrary.simpleMessage("by message"),
         "CalmAtmosphere":
@@ -470,7 +476,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Create": MessageLookupByLibrary.simpleMessage("Create"),
         "CreateBooking": MessageLookupByLibrary.simpleMessage("Create booking"),
         "CreateEvent": MessageLookupByLibrary.simpleMessage("Create Event"),
-        "CreateNewOfferYourPlace": m14,
+        "CreateNewXForYourY": m14,
         "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
         "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
             "Create free reminder for your clients"),
@@ -835,6 +841,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "NothingFound": MessageLookupByLibrary.simpleMessage("Nothing found"),
         "NothingWasFoundWithEmoji":
             MessageLookupByLibrary.simpleMessage("Nothing was found :c"),
+        "Notification": MessageLookupByLibrary.simpleMessage("Notification"),
+        "NotificationText":
+            MessageLookupByLibrary.simpleMessage("Notification text"),
         "Notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "NotifyTheAudience":
             MessageLookupByLibrary.simpleMessage("Notify the audience"),
@@ -848,11 +857,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "OfferPrice": m46,
         "OfferSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
             "Offer successfully activated"),
-        "OfferSuccessfullyCreated":
-            MessageLookupByLibrary.simpleMessage("Offer successfully created"),
         "Offers": MessageLookupByLibrary.simpleMessage("Offers"),
         "OfficeAppartmentNumber":
             MessageLookupByLibrary.simpleMessage("Office or appt number"),
+        "OhYeahSure": MessageLookupByLibrary.simpleMessage("Oh yeah, sure!"),
         "Ok": MessageLookupByLibrary.simpleMessage("Ok"),
         "Okay": MessageLookupByLibrary.simpleMessage("Okay"),
         "OkayCool": MessageLookupByLibrary.simpleMessage("Okay, cool!"),
@@ -869,6 +877,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Open": MessageLookupByLibrary.simpleMessage("Open"),
         "OpenFrom": MessageLookupByLibrary.simpleMessage("Open from"),
         "OpenNow": MessageLookupByLibrary.simpleMessage("Open now"),
+        "OpenPlace": MessageLookupByLibrary.simpleMessage("Open place"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("Open to"),
         "OpeningHours": MessageLookupByLibrary.simpleMessage("Opening hours"),
         "OrDragFilesHere":
@@ -888,9 +897,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Password must be at least 8 characters"),
         "Past": MessageLookupByLibrary.simpleMessage("Past"),
+        "Paused": MessageLookupByLibrary.simpleMessage("Paused"),
         "Pay": MessageLookupByLibrary.simpleMessage("Pay"),
         "PayForTheBonusOffer":
             MessageLookupByLibrary.simpleMessage("Pay for the bonus offer"),
+        "PayForTheNotification":
+            MessageLookupByLibrary.simpleMessage("Pay for the notification"),
         "Permissions": MessageLookupByLibrary.simpleMessage("Permissions"),
         "Personal": MessageLookupByLibrary.simpleMessage("Personal"),
         "PersonalCredentials":
@@ -900,6 +912,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "PersonalTop": MessageLookupByLibrary.simpleMessage("Personal TOP"),
         "PersonalizeYourOffer":
             MessageLookupByLibrary.simpleMessage("Personalize your offer"),
+        "PersonalizeYourReminder":
+            MessageLookupByLibrary.simpleMessage("Personalize your reminder"),
         "Phone": MessageLookupByLibrary.simpleMessage("Phone"),
         "PhoneVerification":
             MessageLookupByLibrary.simpleMessage("Phone verification"),
@@ -1044,6 +1058,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
         "Reminder": MessageLookupByLibrary.simpleMessage("Reminder"),
+        "Reminders": MessageLookupByLibrary.simpleMessage("Reminders"),
         "Remove": MessageLookupByLibrary.simpleMessage("Remove"),
         "Rename": MessageLookupByLibrary.simpleMessage("Rename"),
         "Reply": MessageLookupByLibrary.simpleMessage("Reply"),
@@ -1175,6 +1190,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ShuffleWithRightWhitespace":
             MessageLookupByLibrary.simpleMessage("Shuffle "),
         "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "SkipIt": MessageLookupByLibrary.simpleMessage("Skip it"),
         "Small": MessageLookupByLibrary.simpleMessage("Small"),
         "SmartLeisureSelection": MessageLookupByLibrary.simpleMessage(
             "Smart leisure selection for everyone, everywhere"),
@@ -1279,6 +1295,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "To allow access to send push notifications, go to your phone settings"),
         "ToBecomeAnInfluencerYouNeedToDo": MessageLookupByLibrary.simpleMessage(
             "To become an influencer you need to do"),
+        "ToFavorites": MessageLookupByLibrary.simpleMessage("To favorites"),
         "ToOpen": MessageLookupByLibrary.simpleMessage("To open"),
         "ToOpenTheNextSetOfToolsYouNeedToDo":
             MessageLookupByLibrary.simpleMessage(
@@ -1402,20 +1419,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "XCouldNotBeEmpty": m86,
         "XInvitesY": m87,
         "XIsRequired": m88,
-        "XSuccessfullyUpdated": m89,
-        "XYearsPlus": m90,
+        "XSuccessfullyCreated": m89,
+        "XSuccessfullyUpdated": m90,
+        "XYearsPlus": m91,
         "Year": MessageLookupByLibrary.simpleMessage("Year"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Yearly"),
-        "YearsOld": m91,
+        "YearsOld": m92,
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "Yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
         "You": MessageLookupByLibrary.simpleMessage("You"),
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("You better check this out"),
         "YouCanGet": MessageLookupByLibrary.simpleMessage("You can get"),
-        "YouCanSeeYourOffersPromotionMenu":
-            MessageLookupByLibrary.simpleMessage(
-                "You can see your offers in the promotion menu"),
+        "YouCanSeeYourXPromotionMenu": m93,
         "YouCanStillRequestRefundYourComplaint":
             MessageLookupByLibrary.simpleMessage(
                 "You can still request a refund on your complaint"),
@@ -1426,9 +1442,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouMissedALot":
             MessageLookupByLibrary.simpleMessage("You missed a lot"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
-        "YouSentInvitationToNPeople": m92,
-        "YouSureToDeleteX": m93,
-        "YouWillNoLongerSendMessagesTo": m94,
+        "YouSentInvitationToNPeople": m94,
+        "YouSureToDeleteX": m95,
+        "YouWillNoLongerSendMessagesTo": m96,
         "YouWillReceiveNewTools":
             MessageLookupByLibrary.simpleMessage("You will receive new tools"),
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("You’ll find it"),
@@ -1438,11 +1454,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourClaimHasBeenSent":
             MessageLookupByLibrary.simpleMessage("Your claim has been sent"),
         "YourEmail": MessageLookupByLibrary.simpleMessage("Your email"),
+        "YourEvent": MessageLookupByLibrary.simpleMessage("Your event"),
         "YourLeisureSelection":
             MessageLookupByLibrary.simpleMessage("Your leisure selection"),
         "YourName": MessageLookupByLibrary.simpleMessage("Your name"),
         "YourNewTools": MessageLookupByLibrary.simpleMessage("Your new tools"),
         "YourNiche": MessageLookupByLibrary.simpleMessage("Your niche"),
+        "YourNotificationWillBeShown": MessageLookupByLibrary.simpleMessage(
+            "Your notification will be shown 3 times a week during the specified period of valid, no more than 1 show per person."),
         "YourOfferHasAlreadyBeenPublishedToYourAudience":
             MessageLookupByLibrary.simpleMessage(
                 "Your offer has already been published to your audience, by changing or deleting it you are responsible for their potential negative attitude."),
@@ -1452,6 +1471,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourPriceSegment":
             MessageLookupByLibrary.simpleMessage("Your price segment"),
         "YourProgress": MessageLookupByLibrary.simpleMessage("Your progress"),
+        "YourReminderIsShown1Time": MessageLookupByLibrary.simpleMessage(
+            "Your reminder is shown 1 time on the specified date."),
+        "YourReminderIsShown1TimeMax3": MessageLookupByLibrary.simpleMessage(
+            "Your reminder is shown 1 time on the specified date. You have a maximum of 3 attempts to be reminded."),
+        "YourReminderShown1TimeOnTheSpecifiedDate":
+            MessageLookupByLibrary.simpleMessage(
+                "Your reminder is shown 1 time on the specified date."),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("Your traffic"),
         "daynight": MessageLookupByLibrary.simpleMessage("Day and night"),
         "key": MessageLookupByLibrary.simpleMessage("ar")
