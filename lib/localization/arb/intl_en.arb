@@ -796,5 +796,7 @@
   "SelectYourFavoriteProduct": "Select your favorite product",
   "GoToPayment": "Go to payment",
   "SelectDateTime": "Select date and time",
-  "Schedule": "Schedule"
+  "Schedule": "Schedule",
+  "SureYouWantToDeleteChat": "Sure you want to delete chat?",
+  "YouWillNoLongerSendMessagesToChat": "You can no longer send messages to chat"
 }

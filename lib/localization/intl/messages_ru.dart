@@ -1209,6 +1209,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Помочь людям вокруг"),
         "SupportedFormatsBooking": MessageLookupByLibrary.simpleMessage(
             "Поддерживаемые форматы: JPEG/JPG/PNG.\nМаксимальный размер - 10 MB.\nМаксимальное разрешение - 3840 x 2200 px"),
+        "SureYouWantToDeleteChat":
+            MessageLookupByLibrary.simpleMessage("Точно хочешь удалить чат?"),
         "SureYouWantToExit":
             MessageLookupByLibrary.simpleMessage("Точно хочешь выйти?"),
         "SwipeToStart":
@@ -1417,6 +1419,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouSentInvitationToNPeople": m89,
         "YouSureToDeleteX": m90,
         "YouWillNoLongerSendMessagesTo": m91,
+        "YouWillNoLongerSendMessagesToChat":
+            MessageLookupByLibrary.simpleMessage(
+                "Ты больше не сможешь отправлять сообщения в чат"),
         "YouWillReceiveNewTools": MessageLookupByLibrary.simpleMessage(
             "Вы получите новые инструменты"),
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("Ты найдёшь"),
