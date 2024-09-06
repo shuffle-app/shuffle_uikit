@@ -1,7 +1,10 @@
 import 'dart:ui';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+
+final group = AutoSizeGroup();
 
 uiKitNotificationCreatedDialog({
   required BuildContext context,
@@ -52,7 +55,7 @@ uiKitNotificationCreatedDialog({
                 ),
                 SpacingFoundation.verticalSpace16,
                 Container(
-                  height: 165.h,
+                  height: 1.sw <= 380 ? 200.h : 155.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadiusFoundation.all24r,
                     boxShadow: [
@@ -126,6 +129,7 @@ uiKitNotificationCreatedDialog({
                             Flexible(
                               child: context.smallOutlinedButton(
                                 data: BaseUiKitButtonData(
+                                  autoSizeGroup: group,
                                   text: S.of(context).ToFavorites,
                                   onPressed: () {},
                                 ),
@@ -135,6 +139,7 @@ uiKitNotificationCreatedDialog({
                             Flexible(
                               child: context.smallOutlinedButton(
                                 data: BaseUiKitButtonData(
+                                  autoSizeGroup: group,
                                   text: S.of(context).OpenPlace,
                                   textColor: theme?.colorScheme.primary,
                                   backgroundColor: theme?.colorScheme.inversePrimary,
