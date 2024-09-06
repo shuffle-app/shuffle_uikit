@@ -117,7 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "{invitedPeopleCount, बहुवचन, =0{${invitedPeopleCount} लोग} =1{${invitedPeopleCount} व्यक्ति} =2{${invitedPeopleCount} लोग} कुछ{${invitedPeopleCount} लोग} अनेक{${invitedPeopleCount} लोग} अन्य{${invitedPeopleCount} लोग}} को आमंत्रित करता है";
 
   static String m36(count) =>
-      "${Intl.plural(count, zero: 'leasure & business events & places', one: 'locked sections & functions', two: 'points, rewards & money', few: 'invites, chats, hang outs', many: 'your preferences & mood\ncontent recommendation system', other: 'Premium, PRO & organisation, Influencer accounts (use & create content)')}";
+      "${Intl.plural(count, zero: 'अवकाश और व्यावसायिक कार्यक्रम और स्थान', one: 'लॉक किए गए अनुभाग और फ़ंक्शन', two: 'अंक, पुरस्कार और पैसे', few: 'आमंत्रण, चैट, हैंगआउट', many: 'आपकी प्राथमिकताएँ और मूड सामग्री अनुशंसा प्रणाली', other: 'प्रीमियम, प्रो और संगठन, प्रभावशाली खाते (सामग्री का उपयोग और निर्माण)')}";
 
   static String m37(count) =>
       "${count} ${Intl.plural(count, zero: 'दिन', one: 'दिन', two: 'दिन', few: 'दिन', many: 'दिन', other: 'दिन')} लॉगिन इन एप्लिकेशन में लॉगिन";
@@ -629,6 +629,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("जाओ"),
         "GoPremium": MessageLookupByLibrary.simpleMessage("प्रीमियम जाएं"),
         "GoPro": MessageLookupByLibrary.simpleMessage("GO pro"),
+        "GoToPayment": MessageLookupByLibrary.simpleMessage("Go to payment"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("सेटिंग्स में जाओ"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
@@ -1045,6 +1046,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReviewsReceived": m64,
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("शनिवार"),
         "Save": MessageLookupByLibrary.simpleMessage("सहेजें"),
+        "Schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "Search": MessageLookupByLibrary.simpleMessage("खोजें"),
         "SearchBusinessChooseYourself1":
             MessageLookupByLibrary.simpleMessage("व्यापारिक क्लब"),
@@ -1097,15 +1099,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDate": MessageLookupByLibrary.simpleMessage("तारीख़ चुनें"),
         "SelectDateRange":
             MessageLookupByLibrary.simpleMessage("तिथि सीमा चुनें"),
+        "SelectDateTime":
+            MessageLookupByLibrary.simpleMessage("Select date and time"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("दिन चुनें"),
         "SelectGender": MessageLookupByLibrary.simpleMessage("लिंग चुनें"),
         "SelectLanguage": MessageLookupByLibrary.simpleMessage("भाषा चुने"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("मूल्य और मुद्रा चुनें"),
+        "SelectSubs": MessageLookupByLibrary.simpleMessage("Select subs"),
         "SelectType": m66,
         "SelectYourBooking":
             MessageLookupByLibrary.simpleMessage("अपनी बुकिंग चुनें"),
+        "SelectYourFavoriteProduct": MessageLookupByLibrary.simpleMessage(
+            "Select your favorite product"),
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("अपने धर्म चुनें"),
         "SelectYourSpecialty":
@@ -1236,6 +1243,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("गुरुवार"),
         "Ticket": MessageLookupByLibrary.simpleMessage("टिकट"),
         "TicketFrom": m73,
+        "TicketPrice": MessageLookupByLibrary.simpleMessage("Ticket price"),
         "Tickets": m74,
         "Time": MessageLookupByLibrary.simpleMessage("समय"),
         "Title": MessageLookupByLibrary.simpleMessage("शीर्षक"),
