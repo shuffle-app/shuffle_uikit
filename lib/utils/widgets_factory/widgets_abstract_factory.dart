@@ -389,6 +389,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         borderColor: data.borderColor,
         textColor: gradient != null ? Colors.white : data.textColor,
         loading: data.loading,
+        group: data.autoSizeGroup,
       );
     } else if ((blurred ?? false) && hasIcon && !hasText) {
       return SmallBlurredOutlinedIconButton(
