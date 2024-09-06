@@ -263,7 +263,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m89(title) => "${title} требуется";
 
-  static String m90(x) => "${x} успешно созданн";
+  static String m90(x) => "${x} успешно созданно";
 
   static String m91(value) => "${value} успешно обновлено";
 
@@ -896,7 +896,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Open": MessageLookupByLibrary.simpleMessage("Открыто"),
         "OpenFrom": MessageLookupByLibrary.simpleMessage("С"),
         "OpenNow": MessageLookupByLibrary.simpleMessage("Часы работы"),
-        "OpenPlace": MessageLookupByLibrary.simpleMessage("Открытое место"),
+        "OpenPlace": MessageLookupByLibrary.simpleMessage("Открыть место"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("До"),
         "OpeningHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "OrDragFilesHere":
