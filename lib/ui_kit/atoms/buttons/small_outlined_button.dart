@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/gradient_borders.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -14,6 +15,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
   final bool blurred;
   final bool? loading;
   final Gradient? gradient;
+  final AutoSizeGroup? group;
 
   const SmallOutlinedButton({
     super.key,
@@ -26,6 +28,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
     required this.blurred,
     this.icon,
     this.loading,
+    this.group,
   });
 
   @override
@@ -43,11 +46,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
       borderRadius: text.isEmpty ? null : BorderRadiusFoundation.max,
       shape: text.isEmpty ? const CircleBorder() : null,
       clipBehavior: Clip.hardEdge,
-      color: backgroundColor != null
-          ? backgroundColor
-          : text.isEmpty || blurred
-              ? Colors.white.withOpacity(0.1)
-              : Colors.transparent,
+      color: backgroundColor ?? (text.isEmpty || blurred ? Colors.white.withOpacity(0.1) : Colors.transparent),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: blurValue, sigmaY: blurValue),
         child: InkWell(
@@ -83,10 +82,13 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
                   : GradientableWidget(
                       active: gradient != null,
                       gradient: gradient,
-                      child: Text(
+                      child: AutoSizeText(
                         text,
                         style: textStyle,
                         textAlign: TextAlign.center,
+                        group: group,
+                        maxLines: 2,
+                        wrapWords: false,
                       ))),
         ),
       ),
