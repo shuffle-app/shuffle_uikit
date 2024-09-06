@@ -22,6 +22,7 @@ class UiKitTagsWidget extends StatelessWidget {
       children: [
         if (rating != null) ...[
           UiKitCardWrapper(
+            height: SpacingFoundation.horizontalSpacing16 + 2 + SpacingFoundation.horizontalSpacing24 +SpacingFoundation.verticalSpacing4,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -67,7 +68,7 @@ class UiKitTagsWidget extends StatelessWidget {
               if (uniqueTags != null && uniqueTags!.isNotEmpty) ...[
                 SpacingFoundation.verticalSpace4,
                 SizedBox(
-                  height: SpacingFoundation.horizontalSpacing24,
+                  height: SpacingFoundation.horizontalSpacing16 + 2,
                   child: ListView.separated(
                     padding: EdgeInsets.zero,
                     scrollDirection: Axis.horizontal,

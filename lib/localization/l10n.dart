@@ -8159,6 +8159,22 @@ class S {
     );
   }
 
+  /// `{count, plural, =0{invites, chats, hang outs} =1{your preferences & mood\ncontent recommendation system} =2{Premium, PRO & organisation, Influencer accounts (use & create content)} few{invites, chats, hang outs} other{invites, chats, hang outs}}`
+  String LoginBenefits2(num count) {
+    return Intl.plural(
+      count,
+      zero: 'invites, chats, hang outs',
+      one: 'your preferences & mood\ncontent recommendation system',
+      two:
+          'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      few: 'invites, chats, hang outs',
+      other: 'invites, chats, hang outs',
+      name: 'LoginBenefits2',
+      desc: '',
+      args: [count],
+    );
+  }
+
   /// `Select subs`
   String get SelectSubs {
     return Intl.message(
