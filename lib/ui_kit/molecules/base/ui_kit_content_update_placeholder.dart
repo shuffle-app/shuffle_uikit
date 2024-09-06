@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html_iframe/shims/dart_ui_real.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitContentUpdatePlaceholder extends StatelessWidget {
@@ -20,6 +19,7 @@ class UiKitContentUpdatePlaceholder extends StatelessWidget {
   Widget build(BuildContext context) {
     final regularTextTheme = context.uiKitTheme?.regularTextTheme;
     final colorScheme = context.uiKitTheme?.colorScheme;
+    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
 
     return Container(
       height: height,
@@ -36,29 +36,18 @@ class UiKitContentUpdatePlaceholder extends StatelessWidget {
             child: ImageWidget(
               link: imagePath,
               fit: BoxFit.cover,
+              color: colorScheme?.surface.withOpacity(0.5),
+              colorBlendMode: isLightTheme ? BlendMode.lighten : BlendMode.darken,
 
               /// -1 to avid overflow
               height: height - 1,
               width: width,
             ),
           ),
-          BackdropFilter(
-            filter: ImageFilter.blur(
-              sigmaX: 25,
-              sigmaY: 25,
-              tileMode: TileMode.repeated,
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadiusFoundation.all8,
-              child: ColoredBox(
-                color: Colors.white.withOpacity(0.01),
-              ),
-            ),
-          ),
           Center(
             child: Text(
               title,
-              style: regularTextTheme?.caption4.copyWith(color: colorScheme?.surface),
+              style: regularTextTheme?.caption4.copyWith(color: colorScheme?.bodyTypography),
               textAlign: TextAlign.center,
             ),
           ),

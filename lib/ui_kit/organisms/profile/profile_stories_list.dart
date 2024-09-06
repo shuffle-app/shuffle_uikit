@@ -25,6 +25,8 @@ class ProfileStoriesList extends StatelessWidget {
 
             return UiKitReactionPreview(
               imagePath: story.image,
+              customHeight: 0.28125.sw * 1.75,
+              customWidth: 0.28125.sw,
             );
           },
           separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace12,

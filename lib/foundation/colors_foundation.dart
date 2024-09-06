@@ -101,6 +101,7 @@ class ColorsFoundation {
   static const Color cyanGradientEnd = UiKitColors.cyanGradientEnd;
   static const Color brownGradientBegin = UiKitColors.brownGradientBegin;
   static const Color brownGradientEnd = UiKitColors.brownGradientEnd;
+  static const Color f6f6f6 = UiKitColors.f6f6f6;
 
   ColorsFoundation._();
 }
