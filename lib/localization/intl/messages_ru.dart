@@ -1303,7 +1303,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Неизвестное кольцо"),
         "UnknownRingDescription": MessageLookupByLibrary.simpleMessage(
             "Странное кольцо. Не знаем откуда оно здесь…"),
-        "Unread": MessageLookupByLibrary.simpleMessage("Анрид"),
+        "Unread": MessageLookupByLibrary.simpleMessage("Новое"),
         "UnsubscribeFromProfile":
             MessageLookupByLibrary.simpleMessage("Отписаться"),
         "Upcoming": MessageLookupByLibrary.simpleMessage("Грядущие"),

@@ -59,7 +59,7 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
     } else if (index == 2) {
       _activityTabsContentHeight = 2 *
           (bigScreen
-              ? 0.41.sh
+              ? 0.43.sh
               : midScreen
                   ? 0.45.sh
                   : 0.5.sh);
