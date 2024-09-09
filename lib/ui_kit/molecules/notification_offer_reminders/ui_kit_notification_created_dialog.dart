@@ -58,7 +58,7 @@ uiKitNotificationCreatedDialog({
                 ),
                 SpacingFoundation.verticalSpace16,
                 Container(
-                  height: 1.sw <= 380 ? 200.h : 155.h,
+                  height: 1.sw <= 380 ? 200.h : 165.h,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadiusFoundation.all24r,
                     boxShadow: [
