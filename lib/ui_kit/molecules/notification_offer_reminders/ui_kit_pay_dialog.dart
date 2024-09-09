@@ -27,7 +27,7 @@ uiKitPayDialog({
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           GestureDetector(
-            onTap: () => Navigator.of(context).pop(),
+            onTap: context.pop,
             child: ImageWidget(
               iconData: ShuffleUiKitIcons.cross,
               color: theme?.colorScheme.darkNeutral900,
