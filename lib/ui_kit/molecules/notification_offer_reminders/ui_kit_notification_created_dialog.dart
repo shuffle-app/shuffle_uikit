@@ -4,7 +4,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-final group = AutoSizeGroup();
+final _group = AutoSizeGroup();
 
 uiKitNotificationCreatedDialog({
   required BuildContext context,
@@ -15,6 +15,9 @@ uiKitNotificationCreatedDialog({
   String? defaultNotificationImageUrl,
   String? notificationText,
   bool isNotification = true,
+  VoidCallback? onToFavoritesTap,
+  VoidCallback? onOpenPlaceTap,
+  VoidCallback? onYeahSureTap,
 }) {
   final theme = context.uiKitTheme;
 
@@ -129,9 +132,9 @@ uiKitNotificationCreatedDialog({
                             Flexible(
                               child: context.smallOutlinedButton(
                                 data: BaseUiKitButtonData(
-                                  autoSizeGroup: group,
+                                  autoSizeGroup: _group,
                                   text: S.of(context).ToFavorites,
-                                  onPressed: () {},
+                                  onPressed: onToFavoritesTap,
                                 ),
                               ),
                             ),
@@ -139,11 +142,11 @@ uiKitNotificationCreatedDialog({
                             Flexible(
                               child: context.smallOutlinedButton(
                                 data: BaseUiKitButtonData(
-                                  autoSizeGroup: group,
+                                  autoSizeGroup: _group,
                                   text: S.of(context).OpenPlace,
                                   textColor: theme?.colorScheme.primary,
                                   backgroundColor: theme?.colorScheme.inversePrimary,
-                                  onPressed: () {},
+                                  onPressed: onOpenPlaceTap,
                                 ),
                               ),
                             ),
@@ -154,7 +157,7 @@ uiKitNotificationCreatedDialog({
                                   text: S.of(context).OhYeahSure,
                                   textColor: theme?.colorScheme.primary,
                                   backgroundColor: theme?.colorScheme.inversePrimary,
-                                  onPressed: () {},
+                                  onPressed: onYeahSureTap,
                                 ),
                               ),
                             ),
@@ -186,9 +189,7 @@ uiKitNotificationCreatedDialog({
             data: BaseUiKitButtonData(
               fit: ButtonFit.fitWidth,
               text: S.of(context).Okay,
-              onPressed: () {
-                context.pop();
-              },
+              onPressed: context.pop,
             ),
           ),
         ],
