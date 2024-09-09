@@ -6,14 +6,14 @@ class UiKitSelectDateWidget extends StatelessWidget {
   final List<DateTime?>? selectedDates;
   final bool dateToWord;
   final DateTime? lastDate;
-  final VoidCallback? onDateSelected;
+  final VoidCallback? onCalenderTap;
 
   const UiKitSelectDateWidget({
     super.key,
     this.selectedDates,
     this.dateToWord = false,
     this.lastDate,
-    this.onDateSelected,
+    this.onCalenderTap,
   });
 
   @override
@@ -43,7 +43,7 @@ class UiKitSelectDateWidget extends StatelessWidget {
           padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
           data: BaseUiKitButtonData(
             iconInfo: BaseUiKitButtonIconData(iconData: ShuffleUiKitIcons.calendar),
-            onPressed: onDateSelected,
+            onPressed: onCalenderTap,
           ),
         )
       ],
