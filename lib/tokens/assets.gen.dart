@@ -582,6 +582,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/notif-permit.png
   AssetGenImage get notifPermit => const AssetGenImage('assets/images/png/notif-permit.png');
 
+  /// Directory path: assets/images/png/offer
+  $AssetsImagesPngOfferGen get offer => const $AssetsImagesPngOfferGen();
+
   /// File path: assets/images/png/one-key.png
   AssetGenImage get oneKey => const AssetGenImage('assets/images/png/one-key.png');
 
@@ -623,6 +626,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/profile_story_1.png
   AssetGenImage get profileStory1 => const AssetGenImage('assets/images/png/profile_story_1.png');
+
+  /// Directory path: assets/images/png/reminder
+  $AssetsImagesPngReminderGen get reminder => const $AssetsImagesPngReminderGen();
 
   /// File path: assets/images/png/search_feed_text_banner_1.png
   AssetGenImage get searchFeedTextBanner1 => const AssetGenImage('assets/images/png/search_feed_text_banner_1.png');
@@ -2154,6 +2160,47 @@ class $AssetsImagesPngAvatarsGen {
       ];
 }
 
+class $AssetsImagesPngOfferGen {
+  const $AssetsImagesPngOfferGen();
+
+  /// File path: assets/images/png/offer/banana-2.png
+  AssetGenImage get banana2 => const AssetGenImage('assets/images/png/offer/banana-2.png');
+
+  /// File path: assets/images/png/offer/chupa-chups.png
+  AssetGenImage get chupaChups => const AssetGenImage('assets/images/png/offer/chupa-chups.png');
+
+  /// File path: assets/images/png/offer/cocktail-1.png
+  AssetGenImage get cocktail1 => const AssetGenImage('assets/images/png/offer/cocktail-1.png');
+
+  /// File path: assets/images/png/offer/cocktail-2.png
+  AssetGenImage get cocktail2 => const AssetGenImage('assets/images/png/offer/cocktail-2.png');
+
+  /// File path: assets/images/png/offer/cocktail-3.png
+  AssetGenImage get cocktail3 => const AssetGenImage('assets/images/png/offer/cocktail-3.png');
+
+  /// File path: assets/images/png/offer/hat-1.png
+  AssetGenImage get hat1 => const AssetGenImage('assets/images/png/offer/hat-1.png');
+
+  /// File path: assets/images/png/offer/heart.png
+  AssetGenImage get heart => const AssetGenImage('assets/images/png/offer/heart.png');
+
+  /// File path: assets/images/png/offer/mango-1.png
+  AssetGenImage get mango1 => const AssetGenImage('assets/images/png/offer/mango-1.png');
+
+  /// File path: assets/images/png/offer/percent.png
+  AssetGenImage get percent => const AssetGenImage('assets/images/png/offer/percent.png');
+
+  /// File path: assets/images/png/offer/pineapple-3.png
+  AssetGenImage get pineapple3 => const AssetGenImage('assets/images/png/offer/pineapple-3.png');
+
+  /// File path: assets/images/png/offer/strawberry-1.png
+  AssetGenImage get strawberry1 => const AssetGenImage('assets/images/png/offer/strawberry-1.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [banana2, chupaChups, cocktail1, cocktail2, cocktail3, hat1, heart, mango1, percent, pineapple3, strawberry1];
+}
+
 class $AssetsImagesPngPreferenceQuestionsGen {
   const $AssetsImagesPngPreferenceQuestionsGen();
 
@@ -2401,6 +2448,74 @@ class $AssetsImagesPngPreferenceQuestionsGen {
         waterSport,
         wheat,
         wristwatch
+      ];
+}
+
+class $AssetsImagesPngReminderGen {
+  const $AssetsImagesPngReminderGen();
+
+  /// File path: assets/images/png/reminder/backpack-1.png
+  AssetGenImage get backpack1 => const AssetGenImage('assets/images/png/reminder/backpack-1.png');
+
+  /// File path: assets/images/png/reminder/baggage-1.png
+  AssetGenImage get baggage1 => const AssetGenImage('assets/images/png/reminder/baggage-1.png');
+
+  /// File path: assets/images/png/reminder/basketball-1.png
+  AssetGenImage get basketball1 => const AssetGenImage('assets/images/png/reminder/basketball-1.png');
+
+  /// File path: assets/images/png/reminder/boat-1.png
+  AssetGenImage get boat1 => const AssetGenImage('assets/images/png/reminder/boat-1.png');
+
+  /// File path: assets/images/png/reminder/cake-3.png
+  AssetGenImage get cake3 => const AssetGenImage('assets/images/png/reminder/cake-3.png');
+
+  /// File path: assets/images/png/reminder/football-1.png
+  AssetGenImage get football1 => const AssetGenImage('assets/images/png/reminder/football-1.png');
+
+  /// File path: assets/images/png/reminder/mug-1.png
+  AssetGenImage get mug1 => const AssetGenImage('assets/images/png/reminder/mug-1.png');
+
+  /// File path: assets/images/png/reminder/skateboard-2.png
+  AssetGenImage get skateboard2 => const AssetGenImage('assets/images/png/reminder/skateboard-2.png');
+
+  /// File path: assets/images/png/reminder/snowboard-1.png
+  AssetGenImage get snowboard1 => const AssetGenImage('assets/images/png/reminder/snowboard-1.png');
+
+  /// File path: assets/images/png/reminder/spagetti.png
+  AssetGenImage get spagetti => const AssetGenImage('assets/images/png/reminder/spagetti.png');
+
+  /// File path: assets/images/png/reminder/surfing-1.png
+  AssetGenImage get surfing1 => const AssetGenImage('assets/images/png/reminder/surfing-1.png');
+
+  /// File path: assets/images/png/reminder/swimming ring-1.png
+  AssetGenImage get swimmingRing1 => const AssetGenImage('assets/images/png/reminder/swimming ring-1.png');
+
+  /// File path: assets/images/png/reminder/swimming ring-2.png
+  AssetGenImage get swimmingRing2 => const AssetGenImage('assets/images/png/reminder/swimming ring-2.png');
+
+  /// File path: assets/images/png/reminder/volleyball-1.png
+  AssetGenImage get volleyball1 => const AssetGenImage('assets/images/png/reminder/volleyball-1.png');
+
+  /// File path: assets/images/png/reminder/yoga-1.png
+  AssetGenImage get yoga1 => const AssetGenImage('assets/images/png/reminder/yoga-1.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [
+        backpack1,
+        baggage1,
+        basketball1,
+        boat1,
+        cake3,
+        football1,
+        mug1,
+        skateboard2,
+        snowboard1,
+        spagetti,
+        surfing1,
+        swimmingRing1,
+        swimmingRing2,
+        volleyball1,
+        yoga1
       ];
 }
 
