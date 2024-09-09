@@ -8234,6 +8234,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Sure you want to delete chat?`
+  String get SureYouWantToDeleteChat {
+    return Intl.message(
+      'Sure you want to delete chat?',
+      name: 'SureYouWantToDeleteChat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can no longer send messages to chat`
+  String get YouWillNoLongerSendMessagesToChat {
+    return Intl.message(
+      'You can no longer send messages to chat',
+      name: 'YouWillNoLongerSendMessagesToChat',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
