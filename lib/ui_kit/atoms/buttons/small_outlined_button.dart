@@ -53,43 +53,51 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
           onTap: loading ?? false ? null : onPressed,
           borderRadius: BorderRadiusFoundation.max,
           child: Ink(
-              padding: EdgeInsets.symmetric(
-                vertical: EdgeInsetsFoundation.vertical4,
-                horizontal: EdgeInsetsFoundation.horizontal16,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: text.isEmpty ? null : BorderRadiusFoundation.max,
-                shape: text.isEmpty ? BoxShape.circle : BoxShape.rectangle,
-                //TODO explore why border is behind blur filter
-                border: gradient != null
-                    ? GradientBoxBorder(
-                        gradient: gradient!,
-                        width: 2.w,
-                      )
-                    : Border.all(
-                        color: onPressed == null
-                            ? colorScheme!.inversePrimary.withOpacity(0.5)
-                            : borderColor ?? colorScheme!.inversePrimary,
-                        width: 2.w,
-                        strokeAlign: BorderSide.strokeAlignInside,
-                      ),
-                color: text.isEmpty ? Colors.white.withOpacity(0.1) : null,
-              ),
-              child: text.isEmpty && icon != null
-                  ? ClipOval(
-                      child: icon!.paddingAll(EdgeInsetsFoundation.all8),
+            padding: EdgeInsets.symmetric(
+              vertical: EdgeInsetsFoundation.vertical4,
+              horizontal: EdgeInsetsFoundation.horizontal16,
+            ),
+            decoration: BoxDecoration(
+              borderRadius: text.isEmpty ? null : BorderRadiusFoundation.max,
+              shape: text.isEmpty ? BoxShape.circle : BoxShape.rectangle,
+              //TODO explore why border is behind blur filter
+              border: gradient != null
+                  ? GradientBoxBorder(
+                      gradient: gradient!,
+                      width: 2.w,
                     )
-                  : GradientableWidget(
-                      active: gradient != null,
-                      gradient: gradient,
-                      child: AutoSizeText(
-                        text,
-                        style: textStyle,
-                        textAlign: TextAlign.center,
-                        group: group,
-                        maxLines: 2,
-                        wrapWords: false,
-                      ))),
+                  : Border.all(
+                      color: onPressed == null
+                          ? colorScheme!.inversePrimary.withOpacity(0.5)
+                          : borderColor ?? colorScheme!.inversePrimary,
+                      width: 2.w,
+                      strokeAlign: BorderSide.strokeAlignInside,
+                    ),
+              color: text.isEmpty ? Colors.white.withOpacity(0.1) : null,
+            ),
+            child: text.isEmpty && icon != null
+                ? ClipOval(
+                    child: icon!.paddingAll(EdgeInsetsFoundation.all8),
+                  )
+                : GradientableWidget(
+                    active: gradient != null,
+                    gradient: gradient,
+                    child: group != null
+                        ? AutoSizeText(
+                            text,
+                            style: textStyle,
+                            textAlign: TextAlign.center,
+                            group: group,
+                            maxLines: 2,
+                            wrapWords: false,
+                          )
+                        : Text(
+                            text,
+                            style: textStyle,
+                            textAlign: TextAlign.center,
+                          ),
+                  ),
+          ),
         ),
       ),
     ).loadingWrap(loading ?? false, color: colorScheme?.surface);
