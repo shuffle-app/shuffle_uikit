@@ -21,6 +21,7 @@ class UiKitSelectedIconWidget extends StatelessWidget {
         itemCount: iconList?.length ?? 0,
         separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
         scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () => onIconTap?.call(index),
