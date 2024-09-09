@@ -650,7 +650,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "GoNoExclamation": MessageLookupByLibrary.simpleMessage("जाओ"),
         "GoPremium": MessageLookupByLibrary.simpleMessage("प्रीमियम जाएं"),
         "GoPro": MessageLookupByLibrary.simpleMessage("GO pro"),
-        "GoToPayment": MessageLookupByLibrary.simpleMessage("Go to payment"),
+        "GoToPayment": MessageLookupByLibrary.simpleMessage("भुगतान पर जाएं"),
         "GoToSettings":
             MessageLookupByLibrary.simpleMessage("सेटिंग्स में जाओ"),
         "GreatInterviewWithOwner": MessageLookupByLibrary.simpleMessage(
@@ -750,8 +750,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
             "चेक इन करने के लिए स्थान आवश्यक है"),
         "Locked": MessageLookupByLibrary.simpleMessage("लॉक किया गया"),
-        "LogIn": MessageLookupByLibrary.simpleMessage("Log in"),
-        "LogInTo": MessageLookupByLibrary.simpleMessage("Log in"),
+        "LogIn": MessageLookupByLibrary.simpleMessage("लॉग इन करें"),
+        "LogInTo": MessageLookupByLibrary.simpleMessage("लॉग इन करें"),
         "LogInWithEmail":
             MessageLookupByLibrary.simpleMessage("ईमेल के साथ लॉगिन करें"),
         "LoginBenefits": m37,
@@ -1095,7 +1095,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("शनिवार"),
         "Save": MessageLookupByLibrary.simpleMessage("सहेजें"),
         "SaveAndPay": MessageLookupByLibrary.simpleMessage("Save and pay"),
-        "Schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
+        "Schedule": MessageLookupByLibrary.simpleMessage("अनुसूची"),
         "Search": MessageLookupByLibrary.simpleMessage("खोजें"),
         "SearchBusinessChooseYourself1":
             MessageLookupByLibrary.simpleMessage("व्यापारिक क्लब"),
@@ -1149,7 +1149,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDateRange":
             MessageLookupByLibrary.simpleMessage("तिथि सीमा चुनें"),
         "SelectDateTime":
-            MessageLookupByLibrary.simpleMessage("Select date and time"),
+            MessageLookupByLibrary.simpleMessage("तारीख और समय चुनें"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("दिन चुनें"),
         "SelectGender": MessageLookupByLibrary.simpleMessage("लिंग चुनें"),
         "SelectLanguage": MessageLookupByLibrary.simpleMessage("भाषा चुने"),
@@ -1158,12 +1158,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select period of valid"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("मूल्य और मुद्रा चुनें"),
-        "SelectSubs": MessageLookupByLibrary.simpleMessage("Select subs"),
+        "SelectSubs": MessageLookupByLibrary.simpleMessage("सब्स चुनें"),
         "SelectType": m70,
         "SelectYourBooking":
             MessageLookupByLibrary.simpleMessage("अपनी बुकिंग चुनें"),
-        "SelectYourFavoriteProduct": MessageLookupByLibrary.simpleMessage(
-            "Select your favorite product"),
+        "SelectYourFavoriteProduct":
+            MessageLookupByLibrary.simpleMessage("अपना पसंदीदा उत्पाद चुनें"),
         "SelectYourReligions":
             MessageLookupByLibrary.simpleMessage("अपने धर्म चुनें"),
         "SelectYourSpecialty":
@@ -1182,7 +1182,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("आपके साथ साझा किया गया"),
         "ShowDeleted": MessageLookupByLibrary.simpleMessage("हटाए गए दिखाएं"),
         "ShowInContentCard":
-            MessageLookupByLibrary.simpleMessage("Show in content card"),
+            MessageLookupByLibrary.simpleMessage("सामग्री कार्ड में दिखाएं"),
         "ShowMore": MessageLookupByLibrary.simpleMessage("अधिक\nदिखाएं"),
         "ShowResult": MessageLookupByLibrary.simpleMessage("परिणाम दिखाओ"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
@@ -1245,7 +1245,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "SupportPeopleAroundYou": MessageLookupByLibrary.simpleMessage(
             "अपने आसपास के लोगों का समर्थन करें"),
         "SupportedFormatsBooking": MessageLookupByLibrary.simpleMessage(
-            "Supported formats: JPEG/JPG/PNG.\nMax size - 10 MB.\nMax resolution - 3840 x 2200 px"),
+            "समर्थित प्रारूप: JPEG/JPG/PNG।\nअधिकतम आकार - 10 MB।\nअधिकतम संकलन - 3840 x 2200 px"),
+        "SureYouWantToDeleteChat": MessageLookupByLibrary.simpleMessage(
+            "क्या आप चैट हटाना चाहते हैं?"),
         "SureYouWantToExit":
             MessageLookupByLibrary.simpleMessage("क्या आप निकलना चाहते हैं?"),
         "SwipeToStart": MessageLookupByLibrary.simpleMessage(
@@ -1297,7 +1299,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("गुरुवार"),
         "Ticket": MessageLookupByLibrary.simpleMessage("टिकट"),
         "TicketFrom": m77,
-        "TicketPrice": MessageLookupByLibrary.simpleMessage("Ticket price"),
+        "TicketPrice": MessageLookupByLibrary.simpleMessage("टिकट कीमत"),
         "Tickets": m78,
         "Time": MessageLookupByLibrary.simpleMessage("समय"),
         "Title": MessageLookupByLibrary.simpleMessage("शीर्षक"),
@@ -1310,12 +1312,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "ToBecomeAnInfluencerYouNeedToDo": MessageLookupByLibrary.simpleMessage(
             "To become an influencer you need to do"),
         "ToFavorites": MessageLookupByLibrary.simpleMessage("To favorites"),
-        "ToOpen": MessageLookupByLibrary.simpleMessage("To open"),
+        "ToOpen": MessageLookupByLibrary.simpleMessage("खोलने के लिए"),
         "ToOpenTheNextSetOfToolsYouNeedToDo":
             MessageLookupByLibrary.simpleMessage(
                 "अगले टूल सेट को खोलने के लिए आपको यह करना होगा"),
         "ToPlan": MessageLookupByLibrary.simpleMessage("योजना"),
-        "ToUnlock": MessageLookupByLibrary.simpleMessage("To unlock"),
+        "ToUnlock": MessageLookupByLibrary.simpleMessage("अनलॉक करने के लिए"),
         "Today": MessageLookupByLibrary.simpleMessage("आज"),
         "Top": MessageLookupByLibrary.simpleMessage("शीर्ष"),
         "TopEventsFor": m79,
@@ -1462,6 +1464,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouSentInvitationToNPeople": m95,
         "YouSureToDeleteX": m96,
         "YouWillNoLongerSendMessagesTo": m97,
+        "YouWillNoLongerSendMessagesToChat":
+            MessageLookupByLibrary.simpleMessage(
+                "आप अब चैट में संदेश नहीं भेज सकते"),
         "YouWillReceiveNewTools":
             MessageLookupByLibrary.simpleMessage("आपको नए उपकरण मिलेंगे"),
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("आप उसे खोज लोगे"),

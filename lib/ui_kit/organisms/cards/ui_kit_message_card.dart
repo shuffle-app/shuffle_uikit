@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitMessageCard extends StatelessWidget {
+class UiKitMessageCard extends StatefulWidget {
   const UiKitMessageCard({
     super.key,
     required this.name,
@@ -15,6 +15,7 @@ class UiKitMessageCard extends StatelessWidget {
     this.subtitleIconPath,
     this.unreadMessageCount,
     this.disabled = false,
+    this.onDelete,
   });
 
   final String name;
@@ -26,6 +27,7 @@ class UiKitMessageCard extends StatelessWidget {
   final String avatarPath;
   final UserTileType userType;
   final VoidCallback onTap;
+  final VoidCallback? onDelete;
   final bool disabled;
 
   final int? unreadMessageCount;
@@ -44,142 +46,192 @@ class UiKitMessageCard extends StatelessWidget {
   }
 
   @override
+  State<UiKitMessageCard> createState() => _UiKitMessageCardState();
+}
+
+class _UiKitMessageCardState extends State<UiKitMessageCard> {
+  bool canDelete = false;
+
+  @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final regularTextTheme = context.uiKitTheme?.regularTextTheme;
     final colorScheme = context.uiKitTheme?.colorScheme;
     final cardColor = context.uiKitTheme?.colorScheme.surface1;
 
-    return Material(
-      borderRadius: BorderRadiusFoundation.all24,
-      clipBehavior: Clip.hardEdge,
-      color: cardColor,
-      child: InkWell(
-        onTap: disabled ? null : () => onTap.call(),
-        child: Ink(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Opacity(
-                opacity: disabled ? 0.5 : 1.0,
-                child: Row(
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: 0.325 * 0.9.sw,
+        maxHeight: 0.375 * 0.9.sw,
+        maxWidth: 1.sw,
+        minWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
+      ),
+      child: Material(
+        borderRadius: BorderRadiusFoundation.all24,
+        clipBehavior: Clip.hardEdge,
+        color: cardColor,
+        child: InkWell(
+          onTap: () {
+            if (!widget.disabled) widget.onTap.call();
+            setState(() => canDelete = false);
+          },
+          onLongPress: () {
+            setState(() => canDelete = true);
+          },
+          child: Ink(
+            child: Stack(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    context.userAvatar(
-                      size: UserAvatarSize.x40x40,
-                      type: userType,
-                      userName: name,
-                      imageUrl: avatarPath,
-                    ),
-                    SpacingFoundation.horizontalSpace12,
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                    Opacity(
+                      opacity: widget.disabled ? 0.5 : 1.0,
+                      child: Row(
                         children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Row(
+                          context.userAvatar(
+                            size: UserAvatarSize.x40x40,
+                            type: widget.userType,
+                            userName: widget.name,
+                            imageUrl: widget.avatarPath,
+                          ),
+                          SpacingFoundation.horizontalSpace12,
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Row(
                                   children: [
-                                    Flexible(
-                                      child: Text(
-                                        name,
-                                        style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
-                                        maxLines: 2,
+                                    Expanded(
+                                      child: Row(
+                                        children: [
+                                          Flexible(
+                                            child: Text(
+                                              widget.name,
+                                              style: boldTextTheme?.caption1Medium
+                                                  .copyWith(overflow: TextOverflow.ellipsis),
+                                              maxLines: 2,
+                                            ),
+                                          ),
+                                          SpacingFoundation.horizontalSpace4,
+                                          UiKitUserBadge(userType: widget.userType),
+                                          SpacingFoundation.horizontalSpace4,
+                                        ],
                                       ),
                                     ),
-                                    SpacingFoundation.horizontalSpace4,
-                                    UiKitUserBadge(userType: userType),
-                                    SpacingFoundation.horizontalSpace4,
+                                    Text(
+                                      widget.lastMessageTime,
+                                      style: regularTextTheme?.caption4.copyWith(
+                                        color: colorScheme?.darkNeutral900,
+                                      ),
+                                      textAlign: TextAlign.end,
+                                    ),
                                   ],
                                 ),
-                              ),
-                              Text(
-                                lastMessageTime,
-                                style: regularTextTheme?.caption4.copyWith(
-                                  color: colorScheme?.darkNeutral900,
+                                SpacingFoundation.verticalSpace2,
+                                Row(
+                                  children: [
+                                    if (widget.subtitleIconPath != null)
+                                      ImageWidget(
+                                        link: widget.subtitleIconPath,
+                                        height: 14.h,
+                                        fit: BoxFit.fitHeight,
+                                        color: colorScheme?.darkNeutral900,
+                                      ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
+                                    Flexible(
+                                      child: Text(
+                                        widget.subtitle,
+                                        style: boldTextTheme?.caption1Bold.copyWith(
+                                          color: colorScheme?.darkNeutral900,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                textAlign: TextAlign.end,
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                          SpacingFoundation.verticalSpace2,
-                          Row(
-                            children: [
-                              if (subtitleIconPath != null)
-                                ImageWidget(
-                                  link: subtitleIconPath,
-                                  height: 14.h,
-                                  fit: BoxFit.fitHeight,
-                                  color: colorScheme?.darkNeutral900,
-                                ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
-                              Flexible(
-                                child: Text(
-                                  subtitle,
-                                  style: boldTextTheme?.caption1Bold.copyWith(
-                                    color: colorScheme?.darkNeutral900,
+                        ],
+                      ),
+                    ),
+                    SpacingFoundation.verticalSpace4,
+                    Row(
+                      children: [
+                        Expanded(
+                          child: RichText(
+                            maxLines: 1,
+                            text: TextSpan(
+                              children: [
+                                if (widget.lastMessageSenderName != null && widget.lastMessageSenderName!.isNotEmpty)
+                                  TextSpan(
+                                    text: '${widget.lastMessageSenderName}: ',
+                                    style: boldTextTheme?.caption3Medium.copyWith(
+                                      overflow: TextOverflow.ellipsis,
+                                      color: ColorsFoundation.neutral48,
+                                    ),
+                                  ),
+                                TextSpan(
+                                  text: widget.lastMessage,
+                                  style: boldTextTheme?.caption3Medium.copyWith(
                                     overflow: TextOverflow.ellipsis,
+                                    color: widget.disabled
+                                        ? colorScheme?.inverseSurface
+                                        : widget.unreadMessageCount == 0
+                                            ? colorScheme?.darkNeutral900
+                                            : null,
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
+                            textAlign: TextAlign.start,
+                            overflow: TextOverflow.ellipsis,
                           ),
-                        ],
-                      ),
+                        ),
+                        SpacingFoundation.horizontalSpace4,
+                        if (widget.unreadMessageCount != null && widget.unreadMessageCount! > 0)
+                          Container(
+                            decoration: BoxDecoration(
+                              color: colorScheme?.inversePrimary,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Text(
+                              widget.unreadMessageCount!.toStringAsFixed(0),
+                              style: boldTextTheme?.caption1Bold.copyWith(color: colorScheme?.primary),
+                              textAlign: TextAlign.center,
+                            ).paddingAll(EdgeInsetsFoundation.all4),
+                          )
+                      ],
                     ),
                   ],
-                ),
-              ),
-              SpacingFoundation.verticalSpace4,
-              Row(
-                children: [
-                  Expanded(
-                    child: RichText(
-                      maxLines: 1,
-                      text: TextSpan(
-                        children: [
-                          if (lastMessageSenderName != null && lastMessageSenderName!.isNotEmpty)
-                            TextSpan(
-                              text: '$lastMessageSenderName: ',
-                              style: boldTextTheme?.caption3Medium.copyWith(
-                                overflow: TextOverflow.ellipsis,
-                                color: ColorsFoundation.neutral48,
-                              ),
-                            ),
-                          TextSpan(
-                            text: lastMessage,
-                            style: boldTextTheme?.caption3Medium.copyWith(
-                              overflow: TextOverflow.ellipsis,
-                              color: disabled
-                                  ? colorScheme?.inverseSurface
-                                  : unreadMessageCount == 0
-                                      ? colorScheme?.darkNeutral900
-                                      : null,
-                            ),
+                ).paddingAll(EdgeInsetsFoundation.all16),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 200),
+                  child: canDelete
+                      ? ColoredBox(
+                          color: ColorsFoundation.neutral48,
+                          child: Center(
+                            child: context
+                                .outlinedButton(
+                                  data: BaseUiKitButtonData(
+                                    iconInfo: BaseUiKitButtonIconData(
+                                      iconData: ShuffleUiKitIcons.trash,
+                                      size: 18.h,
+                                      color: colorScheme?.inverseSurface,
+                                    ),
+                                    borderColor: colorScheme?.inverseSurface,
+                                    onPressed: widget.onDelete,
+                                  ),
+                                  blurred: true,
+                                )
+                                .paddingSymmetric(vertical: EdgeInsetsFoundation.vertical24),
                           ),
-                        ],
-                      ),
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  SpacingFoundation.horizontalSpace4,
-                  if (unreadMessageCount != null && unreadMessageCount! > 0)
-                    Container(
-                      decoration: BoxDecoration(
-                        color: colorScheme?.inversePrimary,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Text(
-                        unreadMessageCount!.toStringAsFixed(0),
-                        style: boldTextTheme?.caption1Bold.copyWith(color: colorScheme?.primary),
-                        textAlign: TextAlign.center,
-                      ).paddingAll(EdgeInsetsFoundation.all4),
-                    )
-                ],
-              ),
-            ],
-          ).paddingAll(EdgeInsetsFoundation.all16),
+                        )
+                      : const SizedBox.shrink(),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

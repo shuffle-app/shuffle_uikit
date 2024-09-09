@@ -1262,6 +1262,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Помочь людям вокруг"),
         "SupportedFormatsBooking": MessageLookupByLibrary.simpleMessage(
             "Поддерживаемые форматы: JPEG/JPG/PNG.\nМаксимальный размер - 10 MB.\nМаксимальное разрешение - 3840 x 2200 px"),
+        "SureYouWantToDeleteChat":
+            MessageLookupByLibrary.simpleMessage("Точно хочешь удалить чат?"),
         "SureYouWantToExit":
             MessageLookupByLibrary.simpleMessage("Точно хочешь выйти?"),
         "SwipeToStart":
@@ -1355,7 +1357,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Неизвестное кольцо"),
         "UnknownRingDescription": MessageLookupByLibrary.simpleMessage(
             "Странное кольцо. Не знаем откуда оно здесь…"),
-        "Unread": MessageLookupByLibrary.simpleMessage("Анрид"),
+        "Unread": MessageLookupByLibrary.simpleMessage("Новое"),
         "UnsubscribeFromProfile":
             MessageLookupByLibrary.simpleMessage("Отписаться"),
         "Upcoming": MessageLookupByLibrary.simpleMessage("Грядущие"),
@@ -1475,6 +1477,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouSentInvitationToNPeople": m95,
         "YouSureToDeleteX": m96,
         "YouWillNoLongerSendMessagesTo": m97,
+        "YouWillNoLongerSendMessagesToChat":
+            MessageLookupByLibrary.simpleMessage(
+                "Ты больше не сможешь отправлять сообщения в чат"),
         "YouWillReceiveNewTools": MessageLookupByLibrary.simpleMessage(
             "Вы получите новые инструменты"),
         "YoullFindIt": MessageLookupByLibrary.simpleMessage("Ты найдёшь"),

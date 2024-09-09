@@ -981,12 +981,12 @@ class AvatarStackWrapper extends StatelessWidget implements UserAvatarFactory {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: GradientFoundation.defaultRadialGradient,
-                border: Border.all(color: colorScheme?.surface ?? Colors.black, width: 1),
+                border: Border.all(color: Colors.black, width: 1),
               ),
               child: Text(
                 badgeValue.toString(),
                 style: regularTextTheme?.caption4.copyWith(
-                  color: colorScheme?.surface,
+                  color: Colors.black,
                   fontWeight: FontWeight.w500,
                 ),
                 textAlign: TextAlign.center,

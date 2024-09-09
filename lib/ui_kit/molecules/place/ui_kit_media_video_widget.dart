@@ -5,11 +5,15 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
   final BaseUiKitMedia media;
   final double? width;
+  final BorderRadius? borderRadius;
+  final Offset? playButtonCustomOffset;
 
   const UiKitMediaVideoWidget({
     super.key,
     required this.media,
     this.width,
+    this.borderRadius,
+    this.playButtonCustomOffset,
   });
 
   @override
@@ -18,7 +22,7 @@ class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
       fit: StackFit.passthrough,
       children: [
         ClipRRect(
-          borderRadius: BorderRadiusFoundation.all24,
+          borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
           child: ImageWidget(
             link: media.link,
             isVideo: true,
@@ -28,10 +32,11 @@ class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
           ),
         ),
         Positioned(
-          top: 12.h,
-          left: 12.w,
+          top: playButtonCustomOffset?.dy ?? 12.h,
+          left: playButtonCustomOffset?.dx ?? 12.w,
           child: BlurredPlaceVideoPlayButton(
-            onPressed: () => Navigator.of(context, rootNavigator: true).push(PopUpVideoPlayer(videoUri: media.videoLink!)),
+            onPressed: () =>
+                Navigator.of(context, rootNavigator: true).push(PopUpVideoPlayer(videoUri: media.videoLink!)),
           ),
         ),
       ],

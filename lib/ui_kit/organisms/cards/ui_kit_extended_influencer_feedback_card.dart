@@ -48,7 +48,7 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadiusFoundation.all24,
+                  borderRadius: BorderRadiusFoundation.all12,
                   child: ImageWidget(
                     link: imageUrl,
                     width: width * 0.27,
