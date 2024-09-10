@@ -9,6 +9,7 @@ class UiKitReactionPreview extends StatelessWidget {
   final double? customWidth;
   final double? customHeight;
   final BorderRadius? borderRadius;
+  final bool isModerated;
 
   const UiKitReactionPreview({
     super.key,
@@ -19,6 +20,7 @@ class UiKitReactionPreview extends StatelessWidget {
     this.customWidth,
     this.customHeight,
     this.borderRadius,
+    this.isModerated = false,
   });
 
   factory UiKitReactionPreview.empty({
@@ -33,6 +35,7 @@ class UiKitReactionPreview extends StatelessWidget {
         customWidth: customWidth,
         customHeight: customHeight,
         onTap: onTap,
+        isModerated: false,
       );
 
   double get width => customWidth ?? (height * 0.6);
@@ -92,6 +95,20 @@ class UiKitReactionPreview extends StatelessWidget {
               ),
             ),
           ),
+          if (isModerated)
+            Align(
+              alignment: Alignment.topRight,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadiusFoundation.max,
+                ),
+                child: ImageWidget(
+                  height: 20.h,
+                  iconData: ShuffleUiKitIcons.flag,
+                ).paddingAll(EdgeInsetsFoundation.all6),
+              ),
+            ).paddingAll(EdgeInsetsFoundation.all16),
         ],
       ),
     );
