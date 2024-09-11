@@ -92,7 +92,7 @@
   "LovelyTouchAmazingInteraction": "Приятный на ощупь интерфейс",
   "SelectionOfTheBest": "Выбор лучших",
   "FreePlaces": "\nбесплатных мест",
-  "TopPlacesRatedBy": "Топовые места,{separator}от",
+  "TopPlacesRatedBy": "Топовые места{separator}от",
   "NextElements": "Ещё {elements}",
   "YoullFindIt": "Ты найдёшь",
   "DescribeYourClaim": "Рассказывай",

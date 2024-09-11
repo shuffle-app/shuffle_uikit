@@ -41,15 +41,6 @@ class UiKitOverflownActionCard extends StatelessWidget {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  title,
-                  action,
-                ],
-              ).paddingAll(EdgeInsetsFoundation.all16),
               Positioned(
                 right: -overflownIconWidth * 0.25,
                 bottom: -8,
@@ -89,6 +80,15 @@ class UiKitOverflownActionCard extends StatelessWidget {
                   );
                 },
               ),
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  title,
+                  action,
+                ],
+              ).paddingAll(EdgeInsetsFoundation.all16),
             ],
           ),
         );

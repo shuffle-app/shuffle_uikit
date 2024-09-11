@@ -242,7 +242,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m80(amountOfTopDonators, multiplier) =>
       "Топовые ${amountOfTopDonators} донаторы получают x${multiplier} поинтов";
 
-  static String m81(separator) => "Топовые места,${separator}от";
+  static String m81(separator) => "Топовые места${separator}от";
 
   static String m82(type) => "Чтобы пользоваться этим нужен ${type} аккаунт";
 
