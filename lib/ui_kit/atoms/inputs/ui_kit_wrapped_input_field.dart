@@ -84,6 +84,24 @@ class _UiKitWrappedInputFieldState extends State<UiKitWrappedInputField> {
   String? errorText;
 
   @override
+  void initState() {
+    super.initState();
+    errorText = widget.errorText;
+  }
+
+  @override
+  void didUpdateWidget(covariant UiKitWrappedInputField oldWidget) {
+
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.errorText!= widget.errorText) {
+      setState(() {
+        errorText = widget.errorText;
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final uiKitTheme = context.uiKitTheme;
 
@@ -97,7 +115,12 @@ class _UiKitWrappedInputFieldState extends State<UiKitWrappedInputField> {
                 controller: widget.controller,
                 errorText: errorText,
                 hintText: widget.hintText,
-                validator: widget.validator,
+                validator: (value) {
+                  setState(() {
+                    errorText = widget.validator?.call(value);
+                  });
+                  return errorText;
+                },
                 onChanged: widget.onChanged,
                 fillColor: widget.fillColor,
                 minLines: widget.minLines,
@@ -134,7 +157,12 @@ class _UiKitWrappedInputFieldState extends State<UiKitWrappedInputField> {
                 controller: widget.controller,
                 errorText: errorText,
                 hintText: widget.hintText,
-                validator: widget.validator,
+                validator: (value) {
+                  setState(() {
+                    errorText = widget.validator?.call(value);
+                  });
+                  return errorText;
+                },
                 onChanged: widget.onChanged,
                 enabled: widget.enabled,
                 expands: widget.expands,

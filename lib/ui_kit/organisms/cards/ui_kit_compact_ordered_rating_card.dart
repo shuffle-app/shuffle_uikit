@@ -103,7 +103,8 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                         if (rating != null)
                           ImageWidget(
                             iconData: ShuffleUiKitIcons.star,
-                            height: textTheme?.subHeadline.height,
+                            height: textTheme?.subHeadline.height ?? textTheme?.subHeadline.fontSize,
+                            fit: BoxFit.fitHeight,
                             color: context.uiKitTheme?.colorScheme.inversePrimary,
                           ),
                         SpacingFoundation.verticalSpace4,
