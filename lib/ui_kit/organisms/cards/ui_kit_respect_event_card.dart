@@ -16,7 +16,7 @@ class UiKitRespectEventCard extends StatelessWidget {
     required this.title,
     required this.respectFromUsers,
     required this.properties,
-     this.weatherType,
+    this.weatherType,
   });
 
   @override
@@ -51,8 +51,7 @@ class UiKitRespectEventCard extends StatelessWidget {
         ),
         SpacingFoundation.verticalSpace4,
         UiKitTagsWidget(
-          baseTags:
-              properties.where((element) => element.unique == false).toList(),
+          baseTags: properties.where((element) => element.unique == false).toList(),
           uniqueTags: properties.where((element) => element.unique).toList(),
         ),
       ],
@@ -74,9 +73,7 @@ class UiKitUsersRespectCard extends StatelessWidget {
 
     return Container(
       height: 1.sw < 380 ? 0.0525.sh : 0.0425.sh,
-      width: users.length == 1
-          ? 0.0625.sw + 0.18.sw
-          : (0.0625.sw * (users.length - 1)),
+      width: users.length == 1 ? 0.0625.sw + 0.18.sw : (0.0625.sw * (users.length - 1)) + 0.165.sw,
       padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
@@ -111,8 +108,7 @@ class UiKitUsersRespectCard extends StatelessWidget {
                         gradient: GradientFoundation.defaultLinearGradient,
                         child: Text(
                           S.current.Respect.toUpperCase(),
-                          style: regularTextTheme?.caption4
-                              .copyWith(color: Colors.white),
+                          style: regularTextTheme?.caption4.copyWith(color: Colors.white),
                         ),
                       ),
                     ],
@@ -158,8 +154,7 @@ class UiKitUsersRespectCard extends StatelessWidget {
                   child: Center(
                     child: Text(
                       '+${users.length - 3}',
-                      style: regularTextTheme?.caption4
-                          .copyWith(color: ColorsFoundation.mutedText),
+                      style: regularTextTheme?.caption4.copyWith(color: ColorsFoundation.mutedText),
                     ),
                   ),
                 ),
@@ -171,8 +166,7 @@ class UiKitUsersRespectCard extends StatelessWidget {
                   gradient: GradientFoundation.defaultLinearGradient,
                   child: Text(
                     S.current.Respect.toUpperCase(),
-                    style: regularTextTheme?.caption4
-                        .copyWith(color: Colors.white),
+                    style: regularTextTheme?.caption4.copyWith(color: Colors.white),
                   ),
                 ),
               ),

@@ -140,6 +140,8 @@ flutter:
     - assets/images/png/
     - assets/images/png/preference_questions/
     - assets/images/png/avatars/
+    - assets/images/png/offer/
+    - assets/images/png/reminder/
     - assets/images/svg/
     - assets/fonts/
     - assets/audio/

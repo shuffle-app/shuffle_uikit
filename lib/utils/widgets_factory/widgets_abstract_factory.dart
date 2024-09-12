@@ -385,9 +385,11 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         gradient: gradient,
         blurred: blurred ?? false,
         text: data.text ?? '',
+        backgroundColor: data.backgroundColor,
         borderColor: data.borderColor,
         textColor: gradient != null ? Colors.white : data.textColor,
         loading: data.loading,
+        group: data.autoSizeGroup,
       );
     } else if ((blurred ?? false) && hasIcon && !hasText) {
       return SmallBlurredOutlinedIconButton(
@@ -979,12 +981,12 @@ class AvatarStackWrapper extends StatelessWidget implements UserAvatarFactory {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: GradientFoundation.defaultRadialGradient,
-                border: Border.all(color: colorScheme?.surface ?? Colors.black, width: 1),
+                border: Border.all(color: Colors.black, width: 1),
               ),
               child: Text(
                 badgeValue.toString(),
                 style: regularTextTheme?.caption4.copyWith(
-                  color: colorScheme?.surface,
+                  color: Colors.black,
                   fontWeight: FontWeight.w500,
                 ),
                 textAlign: TextAlign.center,

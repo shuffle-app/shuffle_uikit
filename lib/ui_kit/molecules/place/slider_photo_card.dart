@@ -17,9 +17,15 @@ class SliderPhotoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox.fromSize(
       size: givenSize,
-      child: media.type == UiKitMediaType.image
-          ? BaseUiKitMediaWidget.image(media: media, weatherType: weatherType)
-          : BaseUiKitMediaWidget.video(media: media),
+      child: media.link == 'loading'
+          ? ImageWidget.placeholder
+          : (media.type == UiKitMediaType.image
+              ? BaseUiKitMediaWidget.image(
+                  media: media,
+                  weatherType: weatherType,
+                  width: givenSize.width,
+                )
+              : BaseUiKitMediaWidget.video(media: media)),
     );
   }
 }

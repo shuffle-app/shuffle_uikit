@@ -164,7 +164,7 @@ class ImageWidget extends StatelessWidget {
       // !.startsWith("http://") || link!.startsWith("https://")) {
       return CachedNetworkImage(
         imageUrl:
-            CustomProxyStatic.proxy + link! + (width != null ? '?width=${width! * 2.5}' : '?width=${0.7.sw * 2.5}'),
+            CustomProxyStatic.proxy + link! + (width != null ? '?width=${width! * 2}' : '?width=${0.7.sw * 2}'),
         fit: fit,
         fadeInDuration: const Duration(milliseconds: 200),
         fadeOutDuration: const Duration(milliseconds: 200),
@@ -174,6 +174,7 @@ class ImageWidget extends StatelessWidget {
         height: height,
         colorBlendMode: colorBlendMode,
         cacheManager: CustomCacheManager.imageInstance,
+        cacheKey: link,
         imageBuilder: (context, image) {
           final imageWidget = Image(image: image, fit: fit, width: width, height: height);
 

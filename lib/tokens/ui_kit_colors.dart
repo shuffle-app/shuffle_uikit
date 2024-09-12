@@ -112,6 +112,7 @@ class UiKitColors {
   static const cyanGradientEnd = Color(0xff639C8F);
   static const brownGradientBegin = Color(0xff605D4C);
   static const brownGradientEnd = Color(0xff5F4F42);
+  static const f6f6f6 = Color(0xfff6f6f6);
 
   UiKitColors._();
 }

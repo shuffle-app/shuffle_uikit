@@ -48,7 +48,7 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                       children: [
                         Text(
                           '#',
-                          style: textTheme?.body,
+                          style: textTheme?.subHeadline,
                         ),
                         SpacingFoundation.verticalSpace2,
                         AutoSizeText(
@@ -103,6 +103,8 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                         if (rating != null)
                           ImageWidget(
                             iconData: ShuffleUiKitIcons.star,
+                            height: textTheme?.subHeadline.height ?? textTheme?.subHeadline.fontSize,
+                            fit: BoxFit.fitHeight,
                             color: context.uiKitTheme?.colorScheme.inversePrimary,
                           ),
                         SpacingFoundation.verticalSpace4,

@@ -8,6 +8,8 @@ class UiKitReactionPreview extends StatelessWidget {
   final VoidCallback? onTap;
   final double? customWidth;
   final double? customHeight;
+  final BorderRadius? borderRadius;
+  final bool isModerated;
 
   const UiKitReactionPreview({
     super.key,
@@ -17,6 +19,8 @@ class UiKitReactionPreview extends StatelessWidget {
     this.isEmpty = false,
     this.customWidth,
     this.customHeight,
+    this.borderRadius,
+    this.isModerated = false,
   });
 
   factory UiKitReactionPreview.empty({
@@ -31,6 +35,7 @@ class UiKitReactionPreview extends StatelessWidget {
         customWidth: customWidth,
         customHeight: customHeight,
         onTap: onTap,
+        isModerated: false,
       );
 
   double get width => customWidth ?? (height * 0.6);
@@ -60,20 +65,15 @@ class UiKitReactionPreview extends StatelessWidget {
             ),
           if (!isEmpty)
             ClipRRect(
-              borderRadius: BorderRadiusFoundation.all16,
-              // child: DecoratedBox(
-              //     position: DecorationPosition.foreground,
-              //     decoration: BoxDecoration(
-              //       color: viewed ? ColorsFoundation.darkNeutral900.withOpacity(0.5) : null,
-              //     ),
+              borderRadius: borderRadius ?? BorderRadiusFoundation.all16,
               child: ImageWidget(
                 link: imagePath,
                 fit: BoxFit.cover,
-              ),),
-          // ),
+              ),
+            ),
           Material(
             color: Colors.transparent,
-            borderRadius: BorderRadiusFoundation.all16,
+            borderRadius: borderRadius ?? BorderRadiusFoundation.all16,
             clipBehavior: Clip.hardEdge,
             child: InkWell(
               onTap: onTap,
@@ -81,12 +81,12 @@ class UiKitReactionPreview extends StatelessWidget {
                 width: width,
                 height: height,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadiusFoundation.all16,
+                  borderRadius: borderRadius ?? BorderRadiusFoundation.all16,
                   border: isEmpty
                       ? Border.all(width: 2, color: ColorsFoundation.neutral40)
                       : viewed
-                      ? null
-                      : GradientFoundation.gradientBorder,
+                          ? null
+                          : GradientFoundation.gradientBorder,
                 ),
                 child: SizedBox(
                   width: width,
@@ -95,6 +95,20 @@ class UiKitReactionPreview extends StatelessWidget {
               ),
             ),
           ),
+          if (isModerated)
+            Align(
+              alignment: Alignment.topRight,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadiusFoundation.max,
+                ),
+                child: ImageWidget(
+                  height: 20.h,
+                  iconData: ShuffleUiKitIcons.flag,
+                ).paddingAll(EdgeInsetsFoundation.all6),
+              ),
+            ).paddingAll(EdgeInsetsFoundation.all16),
         ],
       ),
     );
