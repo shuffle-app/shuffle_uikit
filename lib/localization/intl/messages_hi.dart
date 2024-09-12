@@ -1311,6 +1311,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "पुश सूचनाएँ भेजने की अनुमति देने के लिए, अपने फ़ोन की सेटिंग पर जाएँ"),
         "ToBecomeAnInfluencerYouNeedToDo": MessageLookupByLibrary.simpleMessage(
             "To become an influencer you need to do"),
+        "ToExtendYourUseSelectPayment": MessageLookupByLibrary.simpleMessage(
+            "To extend your use, select payment"),
         "ToFavorites": MessageLookupByLibrary.simpleMessage("To favorites"),
         "ToOpen": MessageLookupByLibrary.simpleMessage("खोलने के लिए"),
         "ToOpenTheNextSetOfToolsYouNeedToDo":
@@ -1361,6 +1363,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpgradeAccount": m82,
         "UpgradeAccountConfirmation":
             MessageLookupByLibrary.simpleMessage("अपग्रेड"),
+        "UpgradeForFree":
+            MessageLookupByLibrary.simpleMessage("upgrade for free"),
         "UpgradeForNmoney": m83,
         "UploadingVideo":
             MessageLookupByLibrary.simpleMessage("वीडियो अपलोड कर रहा है"),

@@ -8624,6 +8624,26 @@ class S {
       args: [],
     );
   }
+
+  /// `To extend your use, select payment`
+  String get ToExtendYourUseSelectPayment {
+    return Intl.message(
+      'To extend your use, select payment',
+      name: 'ToExtendYourUseSelectPayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `upgrade for free`
+  String get UpgradeForFree {
+    return Intl.message(
+      'upgrade for free',
+      name: 'UpgradeForFree',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
