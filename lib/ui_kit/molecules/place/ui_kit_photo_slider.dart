@@ -42,6 +42,9 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 
   int? get _currentIndex => _undoableIndex.state;
 
+  bool showBackStack = false;
+  bool showFirstCard = false;
+
   @override
   void initState() {
     super.initState();
@@ -58,6 +61,25 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
     _cardAnimation = CardAnimation(
       _animationController,
     );
+
+    CustomCacheManager.imageInstance.getSingleFile(widget.media.first.link).then((_) {
+      if (mounted) {
+        setState(() {
+          showFirstCard = true;
+        });
+      } else {
+        showFirstCard = true;
+      }
+      Future.delayed(const Duration(milliseconds: 200), () {
+        if (mounted) {
+          setState(() {
+            showBackStack = true;
+          });
+        } else {
+          showBackStack = true;
+        }
+      });
+    });
   }
 
   _getBackStack([bool reversed = false]) {
@@ -78,7 +100,8 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         if (rightList.isNotEmpty) ...items,
 
       //build left stack
-      if (leftList.isNotEmpty) ...leftList.map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1)).toList().reversed,
+      if (leftList.isNotEmpty)
+        ...leftList.map((e) => _buildLeftItem(context, e, leftList.indexOf(e) + 1)).toList().reversed,
       if (!reversed)
         //build right stack if user wants to slide right
         if (rightList.isNotEmpty) ...items,
@@ -86,7 +109,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   }
 
   Widget _buildFirstItem(BaseUiKitMedia item) {
-
     return Positioned(
       left: _cardAnimation.left,
       right: widget.media.length == 1 ? 0 : _cardAnimation.right,
@@ -230,7 +252,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   Widget build(BuildContext context) {
     if (widget.media.isEmpty) return const SizedBox.shrink();
 
-    final List<Widget> backStack = _getBackStack(_cardAnimation.right < widget.width / 10);
+    final List<Widget> backStack = showBackStack ? _getBackStack(_cardAnimation.right < widget.width / 10) : [];
 
     return SizedBox(
       height: height,
@@ -242,7 +264,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         children: [
           ...backStack,
           //ignore: avoid-returning-widgets
-          _buildFirstItem(widget.media[_currentIndex ?? 0]),
+          _buildFirstItem(showFirstCard ? widget.media[_currentIndex ?? 0] : UiKitMediaPhoto(link: 'loading')),
           if (widget.actions != null && widget.actions!.isNotEmpty)
             Positioned(
               bottom: 0,

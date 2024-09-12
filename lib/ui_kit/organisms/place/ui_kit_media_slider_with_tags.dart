@@ -10,7 +10,7 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   final List<UiKitTag> uniqueTags;
   final double horizontalMargin;
   final ScrollController scrollController;
-  final Future<List<HorizontalCaptionedImageData>?>? branches;
+  final Future<List<HorizontalCaptionedImageData>?>? Function()? branches;
   final List<Widget>? actions;
   final ScrollController? listViewController;
   final bool? initialDescriptionHide;
@@ -31,8 +31,7 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   }) : scrollController = scrollController ?? ScrollController();
 
   @override
-  State<UiKitMediaSliderWithTags> createState() =>
-      _UiKitMediaSliderWithTagsState();
+  State<UiKitMediaSliderWithTags> createState() => _UiKitMediaSliderWithTagsState();
 }
 
 class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
@@ -40,10 +39,16 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
 
   late bool isHide;
 
+  List<HorizontalCaptionedImageData>? branches;
+
   @override
   void initState() {
     isHide = widget.initialDescriptionHide ?? true;
     super.initState();
+    widget.branches?.call()?.then((value) {
+      branches = value;
+      if (mounted) setState(() {});
+    });
   }
 
   @override
@@ -62,19 +67,14 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                 behavior: HitTestBehavior.opaque,
                 onTapUp: (TapUpDetails details) {
                   if (details.globalPosition.dx > 1.sw / 2) {
-                    widget.scrollController.animateTo(
-                        widget.scrollController.offset + 0.83.sw,
-                        duration: const Duration(milliseconds: 200),
-                        curve: Curves.easeInOut);
+                    widget.scrollController.animateTo(widget.scrollController.offset + 0.83.sw,
+                        duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
                   } else if (widget.scrollController.offset < 1.sw / 2) {
-                    widget.scrollController.animateTo(0,
-                        duration: const Duration(milliseconds: 200),
-                        curve: Curves.easeInOut);
+                    widget.scrollController
+                        .animateTo(0, duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
                   } else {
-                    widget.scrollController.animateTo(
-                        widget.scrollController.offset - 0.83.sw,
-                        duration: const Duration(milliseconds: 200),
-                        curve: Curves.easeInOut);
+                    widget.scrollController.animateTo(widget.scrollController.offset - 0.83.sw,
+                        duration: const Duration(milliseconds: 200), curve: Curves.easeInOut);
                   }
                 },
                 child: ListView.separated(
@@ -85,21 +85,18 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                   itemCount: widget.media.length,
                   padding: EdgeInsets.zero,
                   cacheExtent: 0.75.sw,
-                  separatorBuilder: (context, index) =>
-                      SpacingFoundation.horizontalSpace16,
+                  separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
                   itemBuilder: (context, index) {
                     final mediaItem = widget.media.elementAt(index);
                     if (mediaItem.type == UiKitMediaType.video) {
                       return BaseUiKitMediaWidget.video(
                         media: mediaItem,
                         width: widget.media.length == 1 ? mediaWidth : null,
-                      ).paddingOnly(
-                          left: index == 0 ? widget.horizontalMargin : 0);
+                      ).paddingOnly(left: index == 0 ? widget.horizontalMargin : 0);
                     }
 
                     return BaseUiKitMediaWidget.image(media: mediaItem)
-                        .paddingOnly(
-                            left: index == 0 ? widget.horizontalMargin : 0);
+                        .paddingOnly(left: index == 0 ? widget.horizontalMargin : 0);
                   },
                 ),
               ),
@@ -125,68 +122,58 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
           uniqueTags: widget.uniqueTags,
         ).paddingSymmetric(horizontal: widget.horizontalMargin),
         SpacingFoundation.verticalSpace14,
-        if (widget.branches != null)
-          FutureBuilder(
-              future: widget.branches,
-              builder: (context, snapshot) => AnimatedSize(
-                      duration: const Duration(milliseconds: 200),
-                      curve: Curves.easeInOut,
-                      child: !snapshot.hasData || (snapshot.data ?? []).isEmpty
-                          ? const SizedBox.shrink()
-                          : UiKitCardWrapper(
-                              borderRadius: BorderRadius.zero,
-                              color: context.uiKitTheme?.colorScheme.surface1,
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  Text(
-                                    'Branches',
-                                    style: context.uiKitTheme?.boldTextTheme
-                                        .caption2Medium,
-                                  ),
-                                  SpacingFoundation.verticalSpace4,
-                                  ConstrainedBox(
-                                    constraints: BoxConstraints(
-                                        maxHeight: 0.28125.sw * 0.577),
-                                    child: ListView.separated(
-                                      padding: EdgeInsets.zero,
-                                      shrinkWrap: true,
-                                      addAutomaticKeepAlives: false,
-                                      scrollDirection: Axis.horizontal,
-                                      itemBuilder: (context, index) {
-                                        final branch =
-                                            snapshot.data!.elementAt(index);
+        AnimatedSize(
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.easeInOut,
+                child: (branches ?? []).isEmpty
+                    ? const SizedBox.shrink()
+                    : UiKitCardWrapper(
+                        borderRadius: BorderRadius.zero,
+                        color: context.uiKitTheme?.colorScheme.surface1,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text(
+                              'Branches',
+                              style: context.uiKitTheme?.boldTextTheme.caption2Medium,
+                            ),
+                            SpacingFoundation.verticalSpace4,
+                            ConstrainedBox(
+                              constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
+                              child: ListView.separated(
+                                padding: EdgeInsets.zero,
+                                shrinkWrap: true,
+                                addAutomaticKeepAlives: false,
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (context, index) {
+                                  final branch = branches!.elementAt(index);
 
-                                        return UiKitHorizontalCaptionedImage(
-                                          title: branch.caption,
-                                          imageLink: branch.imageUrl,
-                                          borderRadius:
-                                              BorderRadiusFoundation.all16,
-                                          onTap: branch.onTap,
-                                        );
-                                      },
-                                      separatorBuilder: (context, index) =>
-                                          SpacingFoundation.horizontalSpace16,
-                                      itemCount: snapshot.data!.length,
-                                    ),
-                                  ),
-                                ],
-                              ).paddingOnly(
-                                top: EdgeInsetsFoundation.vertical12,
-                                bottom: EdgeInsetsFoundation.vertical12,
-                                left: EdgeInsetsFoundation.horizontal16,
+                                  return UiKitHorizontalCaptionedImage(
+                                    title: branch.caption,
+                                    imageLink: branch.imageUrl,
+                                    borderRadius: BorderRadiusFoundation.all16,
+                                    onTap: branch.onTap,
+                                  );
+                                },
+                                separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                                itemCount: branches!.length,
                               ),
-                            ))
-                  .paddingOnly(bottom: SpacingFoundation.verticalSpacing14)),
+                            ),
+                          ],
+                        ).paddingOnly(
+                          top: EdgeInsetsFoundation.vertical12,
+                          bottom: EdgeInsetsFoundation.vertical12,
+                          left: EdgeInsetsFoundation.horizontal16,
+                        ),
+                      ))
+            .paddingOnly(bottom: SpacingFoundation.verticalSpacing14),
         DescriptionWidget(
           isHide: isHide,
           onReadLess: () {
             setState(() {
               widget.listViewController
-                  ?.animateTo(scrollPosition,
-                      duration: const Duration(milliseconds: 100),
-                      curve: Curves.easeIn)
+                  ?.animateTo(scrollPosition, duration: const Duration(milliseconds: 100), curve: Curves.easeIn)
                   .then(
                 (value) {
                   setState(() {
