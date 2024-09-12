@@ -1324,6 +1324,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Чтобы разрешить push-уведомления, зайдите в настройки телефона"),
         "ToBecomeAnInfluencerYouNeedToDo": MessageLookupByLibrary.simpleMessage(
             "Чтобы стать инфлюенсером вам необходимо выполнить"),
+        "ToExtendYourUseSelectPayment": MessageLookupByLibrary.simpleMessage(
+            "Чтобы продлить срок использования, выберите пункт оплата"),
         "ToFavorites": MessageLookupByLibrary.simpleMessage("В избранное"),
         "ToOpen": MessageLookupByLibrary.simpleMessage("Чтобы открыть"),
         "ToOpenTheNextSetOfToolsYouNeedToDo":
@@ -1373,6 +1375,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpgradeAccount": m82,
         "UpgradeAccountConfirmation":
             MessageLookupByLibrary.simpleMessage("Оформить"),
+        "UpgradeForFree":
+            MessageLookupByLibrary.simpleMessage("обновитесь бесплатно"),
         "UpgradeForNmoney": m83,
         "UploadingVideo":
             MessageLookupByLibrary.simpleMessage("Загрузка видео"),

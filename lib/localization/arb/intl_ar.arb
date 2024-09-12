@@ -836,5 +836,7 @@
   "YourReminderShown1TimeOnTheSpecifiedDate": "Your reminder is shown 1 time on the specified date.",
   "OhYeahSure": "Oh yeah, sure!",
   "YourReminderIsShown1TimeMax3": "Your reminder is shown 1 time on the specified date. You have a maximum of 3 attempts to be reminded.",
-  "YourReminderIsShown1Time": "Your reminder is shown 1 time on the specified date."
+  "YourReminderIsShown1Time": "Your reminder is shown 1 time on the specified date.",
+  "ToExtendYourUseSelectPayment": "To extend your use, select payment",
+  "UpgradeForFree": "upgrade for free"
 }

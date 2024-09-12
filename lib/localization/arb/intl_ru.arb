@@ -836,6 +836,8 @@
   "YourReminderShown1TimeOnTheSpecifiedDate": "Ваше напоминание показывается 1 раз в указанную дату.",
   "OhYeahSure": "О да, конечно!",
   "YourReminderIsShown1TimeMax3": "Ваше напоминание отображается 1 раз в указанный день. У вас есть максимум 3 попытки получить напоминание.",
-  "YourReminderIsShown1Time": "Ваше напоминание отображается 1 раз в указанный день."
+  "YourReminderIsShown1Time": "Ваше напоминание отображается 1 раз в указанный день.",
+  "ToExtendYourUseSelectPayment": "Чтобы продлить срок использования, выберите пункт оплата",
+  "UpgradeForFree": "обновитесь бесплатно"
 }
 

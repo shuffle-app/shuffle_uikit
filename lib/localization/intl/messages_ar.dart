@@ -1301,6 +1301,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "To allow access to send push notifications, go to your phone settings"),
         "ToBecomeAnInfluencerYouNeedToDo": MessageLookupByLibrary.simpleMessage(
             "To become an influencer you need to do"),
+        "ToExtendYourUseSelectPayment": MessageLookupByLibrary.simpleMessage(
+            "To extend your use, select payment"),
         "ToFavorites": MessageLookupByLibrary.simpleMessage("To favorites"),
         "ToOpen": MessageLookupByLibrary.simpleMessage("To open"),
         "ToOpenTheNextSetOfToolsYouNeedToDo":
@@ -1349,6 +1351,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "UpgradeAccount": m82,
         "UpgradeAccountConfirmation":
             MessageLookupByLibrary.simpleMessage("Upgrade"),
+        "UpgradeForFree":
+            MessageLookupByLibrary.simpleMessage("upgrade for free"),
         "UpgradeForNmoney": m83,
         "UploadingVideo":
             MessageLookupByLibrary.simpleMessage("Uploading video"),
