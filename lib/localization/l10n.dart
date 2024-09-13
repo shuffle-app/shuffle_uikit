@@ -8615,16 +8615,6 @@ class S {
     );
   }
 
-  /// `Your reminder is shown 1 time on the specified date.`
-  String get YourReminderIsShown1Time {
-    return Intl.message(
-      'Your reminder is shown 1 time on the specified date.',
-      name: 'YourReminderIsShown1Time',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Bookings and Favorites`
   String get BookingsAndFavorites {
     return Intl.message(
@@ -8640,6 +8630,36 @@ class S {
     return Intl.message(
       'Invitations',
       name: 'Invitations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your reminder is shown 1 time on the specified date.`
+  String get YourReminderIsShown1Time {
+    return Intl.message(
+      'Your reminder is shown 1 time on the specified date.',
+      name: 'YourReminderIsShown1Time',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To extend your use, select payment`
+  String get ToExtendYourUseSelectPayment {
+    return Intl.message(
+      'To extend your use, select payment',
+      name: 'ToExtendYourUseSelectPayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `upgrade for free`
+  String get UpgradeForFree {
+    return Intl.message(
+      'upgrade for free',
+      name: 'UpgradeForFree',
       desc: '',
       args: [],
     );
