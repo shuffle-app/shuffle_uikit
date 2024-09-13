@@ -1,5 +1,6 @@
 import 'dart:collection';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -62,24 +63,29 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
       _animationController,
     );
 
-    CustomCacheManager.imageInstance.getSingleFile(widget.media.first.link).then((_) {
-      if (mounted) {
-        setState(() {
-          showFirstCard = true;
-        });
-      } else {
-        showFirstCard = true;
-      }
-      Future.delayed(const Duration(milliseconds: 200), () {
+    if (kIsWeb) {
+      showFirstCard = true;
+      showBackStack = true;
+    } else {
+      CustomCacheManager.imageInstance.getSingleFile(widget.media.first.link).then((_) {
         if (mounted) {
           setState(() {
-            showBackStack = true;
+            showFirstCard = true;
           });
         } else {
-          showBackStack = true;
+          showFirstCard = true;
         }
+        Future.delayed(const Duration(milliseconds: 200), () {
+          if (mounted) {
+            setState(() {
+              showBackStack = true;
+            });
+          } else {
+            showBackStack = true;
+          }
+        });
       });
-    });
+    }
   }
 
   _getBackStack([bool reversed = false]) {

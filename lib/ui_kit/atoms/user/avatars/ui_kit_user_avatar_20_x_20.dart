@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -20,8 +21,8 @@ class UiKitUserAvatar20x20 extends StatelessWidget implements UserAvatarFactory 
 
     return ImageWidget(
       link: imageUrl,
-      width: 0.0625.sw,
-      height: 0.0625.sw,
+      width: kIsWeb ? 40 : 0.0625.sw,
+      height: kIsWeb ? 40 : 0.0625.sw,
       fit: BoxFit.cover,
       cardColor: Colors.transparent,
       imageBuilder: (context, child, frame, syncLoaded) {
