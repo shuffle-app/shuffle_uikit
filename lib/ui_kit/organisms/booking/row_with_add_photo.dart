@@ -68,16 +68,8 @@ class RowWithAddPhoto extends StatelessWidget {
               ),
             ],
           ),
-          const Spacer(),
-        ] else
-          Expanded(
-            child: Text(
-              S.of(context).PleaseAddPhoto,
-              style: theme?.regularTextTheme.labelSmall.copyWith(
-                color: ColorsFoundation.error,
-              ),
-            ),
-          ),
+        ],
+        const Spacer(),
         context.outlinedButton(
           data: BaseUiKitButtonData(
             onPressed: onAddPhoto,
