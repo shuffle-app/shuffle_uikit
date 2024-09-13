@@ -17,7 +17,7 @@ class UiKitColoredLegendChip extends StatelessWidget {
     this.gradient,
     this.iconPath,
     this.onTap,
-  })  : assert(color != null || gradient != null, 'Can\'t have both color and gradient'),
+  })  :
         super(key: key);
 
   @override
@@ -86,8 +86,8 @@ class _SelectedChip extends StatelessWidget {
         child: Ink(
           height: 0.04.sh,
           decoration: BoxDecoration(
-            color: color,
-            gradient: gradient,
+            color: gradient != null ? null : color,
+            gradient: color != null ? null : gradient,
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,

@@ -8624,6 +8624,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Bookings and Favorites`
+  String get BookingsAndFavorites {
+    return Intl.message(
+      'Bookings and Favorites',
+      name: 'BookingsAndFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invitations`
+  String get Invitations {
+    return Intl.message(
+      'Invitations',
+      name: 'Invitations',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

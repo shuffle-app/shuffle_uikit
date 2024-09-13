@@ -374,6 +374,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Booking Limit per one"),
         "BookingList": MessageLookupByLibrary.simpleMessage("Booking list"),
         "Bookings": m4,
+        "BookingsAndFavorites":
+            MessageLookupByLibrary.simpleMessage("Bookings and Favorites"),
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Bookings and Invites"),
         "BookingsHeading": MessageLookupByLibrary.simpleMessage("Bookings"),
@@ -708,6 +710,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Interview": MessageLookupByLibrary.simpleMessage("Interview"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("Inventory items"),
+        "Invitations": MessageLookupByLibrary.simpleMessage("Invitations"),
         "InvitationsCanBeViewedInPrivateMessages":
             MessageLookupByLibrary.simpleMessage(
                 "Invitations can be viewed in private messages"),

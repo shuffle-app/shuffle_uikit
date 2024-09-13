@@ -377,6 +377,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "एक व्यक्ति प्रति बुकिंग सीमा"),
         "BookingList": MessageLookupByLibrary.simpleMessage("बुकिंग सूची"),
         "Bookings": m4,
+        "BookingsAndFavorites":
+            MessageLookupByLibrary.simpleMessage("Bookings and Favorites"),
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("बुकिंग और आमंत्रण"),
         "Both": MessageLookupByLibrary.simpleMessage("Both"),
@@ -712,6 +714,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Interview": MessageLookupByLibrary.simpleMessage("साक्षात्कार"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("इन्वेंटरी आइटम"),
+        "Invitations": MessageLookupByLibrary.simpleMessage("Invitations"),
         "InvitationsCanBeViewedInPrivateMessages":
             MessageLookupByLibrary.simpleMessage(
                 "निमंत्रण निजी संदेशों में देखे जा सकते हैं"),

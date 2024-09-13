@@ -381,6 +381,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Лимит бронирования для одного"),
         "BookingList": MessageLookupByLibrary.simpleMessage("Список букингов"),
         "Bookings": m4,
+        "BookingsAndFavorites":
+            MessageLookupByLibrary.simpleMessage("Букинги и избранное"),
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Брони и Приглашения"),
         "BookingsHeading": MessageLookupByLibrary.simpleMessage("Брони"),
@@ -719,6 +721,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Interview": MessageLookupByLibrary.simpleMessage("Интервью"),
         "InventoryItems":
             MessageLookupByLibrary.simpleMessage("Предметы инвентаря"),
+        "Invitations": MessageLookupByLibrary.simpleMessage("Приглашения"),
         "InvitationsCanBeViewedInPrivateMessages":
             MessageLookupByLibrary.simpleMessage(
                 "Приглашения можно посмотреть в сообщениях"),
