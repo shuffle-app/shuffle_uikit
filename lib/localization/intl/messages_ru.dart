@@ -707,7 +707,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 " контентом и своей аудиторией"),
         "InfluencerSubscriptionFeature4": MessageLookupByLibrary.simpleMessage(
-            "Стань лидером и зарабатывай репутацию в совей сфере"),
+            "Стань лидером и зарабатывай репутацию в своей сфере"),
         "InfluencerSubscriptionFeature5": MessageLookupByLibrary.simpleMessage(
             "Влияй на выбор людей и усиливай значимость мест и событий"),
         "InfluencerSubscriptionFeature6":
@@ -1016,7 +1016,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "PremiumSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
             "Возможность стать Инфлюенсером"),
         "PremiumSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
-            "Возможность создавать удобные стпоки избранного и делиться ими"),
+            "Возможность создавать удобные стопки избранного и делиться ими"),
         "PremiumSubscriptionFeature8": MessageLookupByLibrary.simpleMessage(
             "Свой собственный планировщик событий"),
         "Price": MessageLookupByLibrary.simpleMessage("Цена"),
