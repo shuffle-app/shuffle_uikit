@@ -14,7 +14,7 @@ class GradientBottomNavigationBar extends StatelessWidget {
     super.key,
     required this.items,
     required this.controller,
-  })  : assert(controller.tabItemsCount == items.length);
+  }) : assert(controller.tabItemsCount == items.length);
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +83,7 @@ class GradientBottomNavigationBarItem extends TabType {
   static final analytics = GradientBottomNavigationBarItem._(
     selectedIcon: ShuffleUiKitIcons.analyticsfill,
     unselectedIcon: ShuffleUiKitIcons.analyticsoutline,
-    index: 2,
+    index: 1,
   );
   static final search = GradientBottomNavigationBarItem._(
     selectedIcon: ShuffleUiKitIcons.searchfill,
@@ -103,7 +103,7 @@ class GradientBottomNavigationBarItem extends TabType {
   static final settings = GradientBottomNavigationBarItem._(
     selectedIcon: ShuffleUiKitIcons.settingsfill,
     unselectedIcon: ShuffleUiKitIcons.settingsoutline,
-    index: 4,
+    index: 2,
   );
 
   final IconData selectedIcon;
@@ -119,7 +119,8 @@ class GradientBottomNavigationBarItem extends TabType {
 class GradientBottomNavigationBarController {
   final int tabItemsCount;
 
-  final BehaviorSubject<GradientBottomNavigationBarItem> _changeController = BehaviorSubject<GradientBottomNavigationBarItem>();
+  final BehaviorSubject<GradientBottomNavigationBarItem> _changeController =
+      BehaviorSubject<GradientBottomNavigationBarItem>();
   final BehaviorSubject<GradientBottomNavigationBarVisibility> _visibilityController =
       BehaviorSubject<GradientBottomNavigationBarVisibility>.seeded(GradientBottomNavigationBarVisibility.visible);
 
