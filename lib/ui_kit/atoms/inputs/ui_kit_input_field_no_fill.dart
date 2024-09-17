@@ -33,6 +33,7 @@ class UiKitInputFieldNoFill extends StatefulWidget
     this.autovalidateMode,
     this.readOnly = false,
     this.maxSymbols,
+    this.textInputAction,
     required this.label,
   });
 
@@ -71,6 +72,7 @@ class UiKitInputFieldNoFill extends StatefulWidget
   @override
   final bool obscureText;
   final int? maxSymbols;
+  final TextInputAction? textInputAction;
 
   @override
   State<UiKitInputFieldNoFill> createState() => _UiKitInputFieldNoFillState();
@@ -124,7 +126,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         onTap: widget.onTap,
         readOnly: widget.readOnly,
         obscureText: widget.obscureText,
-        textInputAction: TextInputAction.next,
+        textInputAction: widget.textInputAction ?? TextInputAction.next,
         expands: widget.expands,
         maxLines: widget.expands ? null : widget.maxLines,
         minLines: widget.minLines,
