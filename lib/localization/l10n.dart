@@ -8624,6 +8624,36 @@ class S {
       args: [],
     );
   }
+
+  /// `To extend your use, select payment`
+  String get ToExtendYourUseSelectPayment {
+    return Intl.message(
+      'To extend your use, select payment',
+      name: 'ToExtendYourUseSelectPayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `upgrade for free`
+  String get UpgradeForFree {
+    return Intl.message(
+      'upgrade for free',
+      name: 'UpgradeForFree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create a USP for ${count} for your clients`
+  String CreateAUSP(Object count) {
+    return Intl.message(
+      'Create a USP for \$$count for your clients',
+      name: 'CreateAUSP',
+      desc: '',
+      args: [count],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
