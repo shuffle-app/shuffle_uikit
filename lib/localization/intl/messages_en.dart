@@ -605,6 +605,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "FeedbackAddedSuccessfullyMessage":
             MessageLookupByLibrary.simpleMessage(
                 "Your feedback has been successfully added"),
+        "FeedbackPluralNoNumber":
+            MessageLookupByLibrary.simpleMessage("Feedbacks"),
         "Feedbacks": m25,
         "Feeling": MessageLookupByLibrary.simpleMessage("Feeling"),
         "FeelingsGuesses": m26,

@@ -841,6 +841,7 @@
   "UpgradeForFree": "обновитесь бесплатно",
   "YourReminderIsShown1Time": "Ваше напоминание отображается 1 раз в указанный день.",
   "BookingsAndFavorites": "Букинги и избранное",
-  "Invitations": "Приглашения"
+  "Invitations": "Приглашения",
+  "FeedbackPluralNoNumber": "Отзывы"
 }
 

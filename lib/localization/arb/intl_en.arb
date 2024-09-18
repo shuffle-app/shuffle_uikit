@@ -841,5 +841,6 @@
   "YourReminderIsShown1Time": "Your reminder is shown 1 time on the specified date.",
   "ToExtendYourUseSelectPayment": "To extend your use, select payment",
   "UpgradeForFree": "upgrade for free",
-  "CreateAUSP": "Create a USP for ${count} for your clients"
+  "CreateAUSP": "Create a USP for ${count} for your clients",
+  "FeedbackPluralNoNumber": "Feedbacks"
 }

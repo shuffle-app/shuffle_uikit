@@ -615,6 +615,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Feedback": MessageLookupByLibrary.simpleMessage("Отзыв"),
         "FeedbackAddedSuccessfullyMessage":
             MessageLookupByLibrary.simpleMessage("Твой отзыв успешно добавлен"),
+        "FeedbackPluralNoNumber":
+            MessageLookupByLibrary.simpleMessage("Отзывы"),
         "Feedbacks": m25,
         "Feeling": MessageLookupByLibrary.simpleMessage("Чувство"),
         "FeelingsGuesses": m26,

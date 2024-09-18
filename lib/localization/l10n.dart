@@ -8674,6 +8674,16 @@ class S {
       args: [count],
     );
   }
+
+  /// `Feedbacks`
+  String get FeedbackPluralNoNumber {
+    return Intl.message(
+      'Feedbacks',
+      name: 'FeedbackPluralNoNumber',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
