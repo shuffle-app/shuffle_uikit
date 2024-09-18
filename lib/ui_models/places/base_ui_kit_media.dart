@@ -41,11 +41,13 @@ class UiKitTag {
   final bool unique;
   final Color? iconColor;
   final Color? textColor;
+  final bool showShadow;
 
   UiKitTagWidget get widget => UiKitTagWidget(
         iconCustomColor: iconColor,
         title: title,
         icon: icon,
+        showShadow: showShadow,
         uniqueTag: unique,
         textColor: textColor ?? ColorsFoundation.darkNeutral500,
         tagSize: icon is String ? SpacingFoundation.horizontalSpacing20 : SpacingFoundation.horizontalSpacing16,
@@ -55,6 +57,7 @@ class UiKitTag {
     required String title,
     required this.icon,
     this.unique = false,
+    this.showShadow = false,
     this.id,
     this.iconColor,
     this.textColor,
@@ -66,6 +69,7 @@ class UiKitTag {
     dynamic icon,
     int? id,
     bool? unique,
+    bool? showShadow,
     Color? iconColor,
     Color? textColor,
   }) =>
@@ -73,6 +77,7 @@ class UiKitTag {
         title: title ?? this.title,
         icon: icon ?? this.icon,
         unique: unique ?? this.unique,
+        showShadow: showShadow ?? this.showShadow,
         id: id ?? this.id,
         iconColor: iconColor ?? this.iconColor,
         textColor: textColor ?? this.textColor,
