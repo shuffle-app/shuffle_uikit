@@ -24,14 +24,17 @@ class UiKitContentTypeColoredTile extends StatelessWidget {
       width: size.width,
       height: size.height,
       child: Stack(
+        alignment: Alignment.center,
         fit: StackFit.expand,
         children: [
           Container(
             width: size.width,
             height: size.height,
-            transform: Transform.rotate(
+            transform: Transform
+                .rotate(
               angle: angle,
-            ).transform,
+            )
+                .transform,
             transformAlignment: Alignment.center,
             decoration: BoxDecoration(
               borderRadius: BorderRadiusFoundation.all16,
@@ -41,9 +44,11 @@ class UiKitContentTypeColoredTile extends StatelessWidget {
           Container(
             width: size.width,
             height: size.height,
-            transform: Transform.rotate(
+            transform: Transform
+                .rotate(
               angle: angle,
-            ).transform,
+            )
+                .transform,
             transformAlignment: Alignment.center,
             decoration: BoxDecoration(
               borderRadius: BorderRadiusFoundation.all16,
@@ -69,44 +74,43 @@ class UiKitContentTypeColoredTile extends StatelessWidget {
               ],
             ),
           ),
-          Center(
-            child: Opacity(
-              opacity: 0.5,
-              child: Container(
-                width: size.width,
-                height: size.height,
-                transform: Transform.rotate(
-                  angle: -angle,
-                ).transform,
-                transformAlignment: Alignment.center,
-                clipBehavior: Clip.hardEdge,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadiusFoundation.all16,
-                  color: Colors.white.withOpacity(0.3),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.white.withOpacity(0.25),
-                    ),
-                    BoxShadow(
-                      color: color,
-                    ),
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.35),
-                      offset: const Offset(-2, -14),
-                      blurRadius: 10,
-                      spreadRadius: -12,
-                    ),
-                  ],
-                ),
-              ).paddingAll(EdgeInsetsFoundation.all16),
-            ),
+          Opacity(
+            opacity: 0.5,
+            child: Container(
+              width: size.width,
+              height: size.height,
+              transform: Transform
+                  .rotate(
+                angle: -angle,
+              )
+                  .transform,
+              transformAlignment: Alignment.center,
+              clipBehavior: Clip.hardEdge,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadiusFoundation.all16,
+                color: Colors.white.withOpacity(0.3),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.white.withOpacity(0.25),
+                  ),
+                  BoxShadow(
+                    color: color,
+                  ),
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.35),
+                    offset: const Offset(-2, -14),
+                    blurRadius: 10,
+                    spreadRadius: -12,
+                  ),
+                ],
+              ),
+            ).paddingAll(EdgeInsetsFoundation.all16),
           ),
-          Center(
-            child: ImageWidget(
-              iconData: icon,
-              color: Colors.black,
-              height: 64,
-            ),
+          ImageWidget(
+            iconData: icon,
+            color: Colors.black,
+            height: size.height/2,
+            fit: BoxFit.fitHeight,
           ),
         ],
       ),
