@@ -86,7 +86,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
                           : ImageWidget(
                               height: 1.sw <= 380 ? 90.h : 60.h,
                               link: photoLink,
-                              fit: BoxFit.fill,
+                              fit: BoxFit.cover,
                             ),
                     ).paddingAll(2),
                   ),

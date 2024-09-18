@@ -8664,6 +8664,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Create a USP for ${count} for your clients`
+  String CreateAUSP(Object count) {
+    return Intl.message(
+      'Create a USP for \$$count for your clients',
+      name: 'CreateAUSP',
+      desc: '',
+      args: [count],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
