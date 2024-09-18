@@ -15,6 +15,14 @@ abstract class BaseUiKitMedia {
   });
 
   ImageWidget widget(Size size) => ImageWidget(link: link, height: size.height, width: size.width, fit: BoxFit.cover);
+
+  @override
+  bool operator ==(Object other) {
+    return other is BaseUiKitMedia && other.link == link && other.type == type && other.previewType == previewType;
+  }
+
+  @override
+  int get hashCode => link.hashCode ^ type.hashCode ^ (previewType?.hashCode?? 1);
 }
 
 class UiKitMediaPhoto extends BaseUiKitMedia {
