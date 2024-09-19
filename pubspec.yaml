@@ -98,9 +98,14 @@ dependencies:
   flutter_polyline_points: ^2.0.1
   huawei_map: ^6.11.2+303
   countries_flag: ^1.0.0
+
   dropdown_button2: ^2.3.9
+
+  #image processing
   image_picker: ^1.1.2
   image: ^4.2.0
+  flutter_image_compress: ^2.3.0
+
   infinite_carousel: ^1.1.1
   video_editor:
 #    path: ../video_editor
