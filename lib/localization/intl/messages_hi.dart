@@ -828,6 +828,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "क्षमा करें, कोई इंटरनेट कनेक्शन नहीं"),
         "NoDateSelected":
             MessageLookupByLibrary.simpleMessage("कोई दिनांक चयनित नहीं"),
+        "NoEndTime": MessageLookupByLibrary.simpleMessage("No end time"),
         "NoFavoritesFound":
             MessageLookupByLibrary.simpleMessage("कोई पसंदीदा नहीं मिला"),
         "NoFeedbacksYet": MessageLookupByLibrary.simpleMessage(
@@ -1157,6 +1158,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDateTime":
             MessageLookupByLibrary.simpleMessage("तारीख और समय चुनें"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("दिन चुनें"),
+        "SelectEndTime":
+            MessageLookupByLibrary.simpleMessage("Select an ending time"),
         "SelectGender": MessageLookupByLibrary.simpleMessage("लिंग चुनें"),
         "SelectLanguage": MessageLookupByLibrary.simpleMessage("भाषा चुने"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),
@@ -1164,6 +1167,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select period of valid"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("मूल्य और मुद्रा चुनें"),
+        "SelectStartTime":
+            MessageLookupByLibrary.simpleMessage("Select a starting time"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("सब्स चुनें"),
         "SelectType": m71,
         "SelectYourBooking":

@@ -8694,6 +8694,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Select a starting time`
+  String get SelectStartTime {
+    return Intl.message(
+      'Select a starting time',
+      name: 'SelectStartTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select an ending time`
+  String get SelectEndTime {
+    return Intl.message(
+      'Select an ending time',
+      name: 'SelectEndTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No end time`
+  String get NoEndTime {
+    return Intl.message(
+      'No end time',
+      name: 'NoEndTime',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

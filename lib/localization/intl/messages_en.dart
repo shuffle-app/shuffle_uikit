@@ -821,6 +821,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Sorry, no internet connection"),
         "NoDateSelected":
             MessageLookupByLibrary.simpleMessage("No date selected"),
+        "NoEndTime": MessageLookupByLibrary.simpleMessage("No end time"),
         "NoFavoritesFound":
             MessageLookupByLibrary.simpleMessage("No favorites found"),
         "NoFeedbacksYet": MessageLookupByLibrary.simpleMessage(
@@ -1148,6 +1149,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDateTime":
             MessageLookupByLibrary.simpleMessage("Select date and time"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Select days "),
+        "SelectEndTime":
+            MessageLookupByLibrary.simpleMessage("Select an ending time"),
         "SelectGender": MessageLookupByLibrary.simpleMessage("Select gender"),
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Please select language"),
@@ -1156,6 +1159,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select period of valid"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("Select price and currency"),
+        "SelectStartTime":
+            MessageLookupByLibrary.simpleMessage("Select a starting time"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("Select subs"),
         "SelectType": m71,
         "SelectYourBooking":

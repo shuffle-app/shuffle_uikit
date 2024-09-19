@@ -841,6 +841,9 @@
   "RemainsToCreate": "Remains to create",
   "SaveTemplate": "Save template",
   "TemplateName": "Template name",
-  "TimeRangeError": "End time could not be before start time"
+  "TimeRangeError": "End time could not be before start time",
+  "SelectStartTime": "Select a starting time",
+  "SelectEndTime": "Select an ending time",
+  "NoEndTime": "No end time"
 
 }

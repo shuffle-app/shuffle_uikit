@@ -834,6 +834,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Потеряно соединение с интернетом"),
         "NoDateSelected":
             MessageLookupByLibrary.simpleMessage("Дата не выбрана"),
+        "NoEndTime":
+            MessageLookupByLibrary.simpleMessage("Без времени окончания"),
         "NoFavoritesFound":
             MessageLookupByLibrary.simpleMessage("Нет избранных"),
         "NoFeedbacksYet": MessageLookupByLibrary.simpleMessage(
@@ -1168,6 +1170,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDateTime":
             MessageLookupByLibrary.simpleMessage("Выберите дату и время"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Выбрать дни "),
+        "SelectEndTime":
+            MessageLookupByLibrary.simpleMessage("Выберите время окончания"),
         "SelectGender": MessageLookupByLibrary.simpleMessage("Выберите пол"),
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Пожалуйста выбери язык"),
@@ -1176,6 +1180,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Выберите период действия"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("Выберите цену и валюту"),
+        "SelectStartTime":
+            MessageLookupByLibrary.simpleMessage("Выберите время старта"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("Выберите сабы"),
         "SelectType": m71,
         "SelectYourBooking": MessageLookupByLibrary.simpleMessage(
