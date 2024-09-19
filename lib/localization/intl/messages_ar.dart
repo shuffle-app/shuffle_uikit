@@ -300,9 +300,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "Tell us what you liked or remember"),
         "AddFeedbackFieldTitle":
             MessageLookupByLibrary.simpleMessage("Describe your experience"),
+        "AddImage": MessageLookupByLibrary.simpleMessage("Add Image"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "Write a detailed review, use all the available characters so that as many people as possible can appreciate it"),
         "AddLink": MessageLookupByLibrary.simpleMessage("Add link"),
+        "AddPhotoHere": MessageLookupByLibrary.simpleMessage("Add photo here"),
         "AddPlaceType": MessageLookupByLibrary.simpleMessage("Add place type"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Add promotion"),
         "AddProperty": MessageLookupByLibrary.simpleMessage("Add property"),
@@ -478,6 +480,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Couldn\'t find invite"),
         "CountReviews": m12,
         "CountVideoReaction": m13,
+        "Cover": MessageLookupByLibrary.simpleMessage("Cover"),
         "Create": MessageLookupByLibrary.simpleMessage("Create"),
         "CreateAUSP": m14,
         "CreateBooking": MessageLookupByLibrary.simpleMessage("Create booking"),
@@ -499,6 +502,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "To gain access you must log in first"),
         "CredentialsVerificationTitle":
             MessageLookupByLibrary.simpleMessage("Happy to see you"),
+        "CropHorizontal":
+            MessageLookupByLibrary.simpleMessage("Crop to horizontal"),
+        "CropVertical":
+            MessageLookupByLibrary.simpleMessage("Crop to vertical"),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("Cutting video"),
         "Daily": MessageLookupByLibrary.simpleMessage("Daily "),
         "Date": MessageLookupByLibrary.simpleMessage("Date"),
@@ -631,6 +638,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Free": MessageLookupByLibrary.simpleMessage("Free"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("\nfree places"),
         "FridayShort": MessageLookupByLibrary.simpleMessage("Fri"),
+        "FromGallery": MessageLookupByLibrary.simpleMessage("From gallery"),
         "FromToYearsOld": m31,
         "FulfillTheDream":
             MessageLookupByLibrary.simpleMessage("Fulfill the dream"),
@@ -673,6 +681,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "HintSystemDisabled":
             MessageLookupByLibrary.simpleMessage("Hint system disabled"),
         "HintSystemEnabled": m33,
+        "HorizontalFormat":
+            MessageLookupByLibrary.simpleMessage("Horizontal format"),
         "HoursAgo": m34,
         "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
             "How’re you feeling this morning?"),
@@ -1162,6 +1172,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectStartTime":
             MessageLookupByLibrary.simpleMessage("Select a starting time"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("Select subs"),
+        "SelectToSetPreview": MessageLookupByLibrary.simpleMessage(
+            "Select a photo to set preview"),
         "SelectType": m71,
         "SelectYourBooking":
             MessageLookupByLibrary.simpleMessage("Select your booking"),
@@ -1390,6 +1402,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Use notifications"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Value must be at least 3 characters long"),
+        "VerticalFormat":
+            MessageLookupByLibrary.simpleMessage("Vertical format"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("Very often"),
         "Video": MessageLookupByLibrary.simpleMessage("Video"),
         "VideoFileNotCut":

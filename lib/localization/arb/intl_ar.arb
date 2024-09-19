@@ -846,5 +846,14 @@
   "TimeRangeError": "End time could not be before start time",
   "SelectStartTime": "Select a starting time",
   "SelectEndTime": "Select an ending time",
-  "NoEndTime": "No end time"
+  "NoEndTime": "No end time",
+  "AddImage": "Add Image",
+  "Cover": "Cover",
+  "HorizontalFormat": "Horizontal format",
+  "VerticalFormat": "Vertical format",
+  "AddPhotoHere": "Add photo here",
+  "FromGallery": "From gallery",
+  "SelectToSetPreview": "Select a photo to set preview",
+  "CropVertical": "Crop to vertical",
+  "CropHorizontal": "Crop to horizontal"
 }

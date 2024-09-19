@@ -177,7 +177,7 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
     );
     widget.controller.completeCrop();
     widget.onCropCompleted?.call(await FlutterImageCompress.compressWithList(imageBytes,
-        minHeight: cropHeight * 2, minWidth: cropWidth * 2, format: CompressFormat.png)
+        minHeight: cropHeight * 2, minWidth: cropWidth * 2, format: CompressFormat.jpeg)
         .onError((error, st) {
       dev.log('compressing error: $error');
       return imageBytes;

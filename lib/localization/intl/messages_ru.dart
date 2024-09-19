@@ -303,9 +303,13 @@ class MessageLookup extends MessageLookupByLibrary {
             "Расскажи что тебе понравилось или запомнилось"),
         "AddFeedbackFieldTitle":
             MessageLookupByLibrary.simpleMessage("Опиши свой опыт"),
+        "AddImage":
+            MessageLookupByLibrary.simpleMessage("Добавить изображения"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "Напиши подробный отзыв, используй все доступные символы, чтобы как можно больше людей могли его оценить"),
         "AddLink": MessageLookupByLibrary.simpleMessage("Добавить ссылку"),
+        "AddPhotoHere":
+            MessageLookupByLibrary.simpleMessage("Добавьте фото здесь"),
         "AddPlaceType":
             MessageLookupByLibrary.simpleMessage("Добавить тип места"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Добавить промо"),
@@ -484,6 +488,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Не удалось найти приглашение"),
         "CountReviews": m12,
         "CountVideoReaction": m13,
+        "Cover": MessageLookupByLibrary.simpleMessage("Обложка"),
         "Create": MessageLookupByLibrary.simpleMessage("Создать"),
         "CreateAUSP": m14,
         "CreateBooking": MessageLookupByLibrary.simpleMessage("Создать букинг"),
@@ -506,6 +511,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Чтобы продолжить, сначала пройди регистрацию"),
         "CredentialsVerificationTitle":
             MessageLookupByLibrary.simpleMessage("Мы рады тебя видеть"),
+        "CropHorizontal":
+            MessageLookupByLibrary.simpleMessage("Обрезать для горизонтали"),
+        "CropVertical":
+            MessageLookupByLibrary.simpleMessage("Обрезать для вертикали"),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("Обрезка видео"),
         "Daily": MessageLookupByLibrary.simpleMessage("Ежедневно "),
         "Date": MessageLookupByLibrary.simpleMessage("Дата"),
@@ -641,6 +650,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Free": MessageLookupByLibrary.simpleMessage("Бесплатно"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("\nбесплатных мест"),
         "FridayShort": MessageLookupByLibrary.simpleMessage("Пт"),
+        "FromGallery": MessageLookupByLibrary.simpleMessage("Из галлереи"),
         "FromToYearsOld": m31,
         "FulfillTheDream":
             MessageLookupByLibrary.simpleMessage("Исполнить мечту"),
@@ -684,6 +694,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
             "Система подсказок деактивирована"),
         "HintSystemEnabled": m33,
+        "HorizontalFormat":
+            MessageLookupByLibrary.simpleMessage("Горизонтальный формат"),
         "HoursAgo": m34,
         "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
             "Как себя чувствуешь этим утром?"),
@@ -1183,6 +1195,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectStartTime":
             MessageLookupByLibrary.simpleMessage("Выберите время старта"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("Выберите сабы"),
+        "SelectToSetPreview": MessageLookupByLibrary.simpleMessage(
+            "Выберите фото чтобы задать превью"),
         "SelectType": m71,
         "SelectYourBooking": MessageLookupByLibrary.simpleMessage(
             "Выберите вариант бронирования"),
@@ -1417,6 +1431,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Уведомления"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Значение не менее 3 символов"),
+        "VerticalFormat":
+            MessageLookupByLibrary.simpleMessage("Вертикальный формат"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("Часто"),
         "Video": MessageLookupByLibrary.simpleMessage("Видео"),
         "VideoFileNotCut":

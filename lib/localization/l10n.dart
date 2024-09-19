@@ -8724,6 +8724,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Add Image`
+  String get AddImage {
+    return Intl.message(
+      'Add Image',
+      name: 'AddImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cover`
+  String get Cover {
+    return Intl.message(
+      'Cover',
+      name: 'Cover',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Horizontal format`
+  String get HorizontalFormat {
+    return Intl.message(
+      'Horizontal format',
+      name: 'HorizontalFormat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vertical format`
+  String get VerticalFormat {
+    return Intl.message(
+      'Vertical format',
+      name: 'VerticalFormat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add photo here`
+  String get AddPhotoHere {
+    return Intl.message(
+      'Add photo here',
+      name: 'AddPhotoHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From gallery`
+  String get FromGallery {
+    return Intl.message(
+      'From gallery',
+      name: 'FromGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select a photo to set preview`
+  String get SelectToSetPreview {
+    return Intl.message(
+      'Select a photo to set preview',
+      name: 'SelectToSetPreview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crop to vertical`
+  String get CropVertical {
+    return Intl.message(
+      'Crop to vertical',
+      name: 'CropVertical',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crop to horizontal`
+  String get CropHorizontal {
+    return Intl.message(
+      'Crop to horizontal',
+      name: 'CropHorizontal',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

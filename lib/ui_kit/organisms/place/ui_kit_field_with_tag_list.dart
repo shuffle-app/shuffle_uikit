@@ -21,7 +21,7 @@ class UiKitFieldWithTagList extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: context.uiKitTheme?.regularTextTheme.body,
+                style: context.uiKitTheme?.regularTextTheme.labelSmall,
               ),
             ),
             context.outlinedButton(
