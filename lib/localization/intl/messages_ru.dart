@@ -839,6 +839,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Потеряно соединение с интернетом"),
         "NoDateSelected":
             MessageLookupByLibrary.simpleMessage("Дата не выбрана"),
+        "NoEndTime":
+            MessageLookupByLibrary.simpleMessage("Без времени окончания"),
         "NoFavoritesFound":
             MessageLookupByLibrary.simpleMessage("Нет избранных"),
         "NoFeedbacksYet": MessageLookupByLibrary.simpleMessage(
@@ -1086,6 +1088,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Связанные свойства"),
         "Religion": MessageLookupByLibrary.simpleMessage("Религия"),
+        "RemainsToCreate":
+            MessageLookupByLibrary.simpleMessage("Осталось создать"),
         "Reminder": MessageLookupByLibrary.simpleMessage("Напоминание"),
         "Reminders": MessageLookupByLibrary.simpleMessage("Напоминания"),
         "Remove": MessageLookupByLibrary.simpleMessage("Удалить"),
@@ -1114,6 +1118,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Save": MessageLookupByLibrary.simpleMessage("Сохранить"),
         "SaveAndPay":
             MessageLookupByLibrary.simpleMessage("Сохранить и оплатить"),
+        "SaveTemplate":
+            MessageLookupByLibrary.simpleMessage("Сохранить шаблон"),
         "Schedule": MessageLookupByLibrary.simpleMessage("График"),
         "Search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "SearchBusinessChooseYourself1":
@@ -1169,6 +1175,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDateTime":
             MessageLookupByLibrary.simpleMessage("Выберите дату и время"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Выбрать дни "),
+        "SelectEndTime":
+            MessageLookupByLibrary.simpleMessage("Выберите время окончания"),
         "SelectGender": MessageLookupByLibrary.simpleMessage("Выберите пол"),
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Пожалуйста выбери язык"),
@@ -1177,6 +1185,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Выберите период действия"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("Выберите цену и валюту"),
+        "SelectStartTime":
+            MessageLookupByLibrary.simpleMessage("Выберите время старта"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("Выберите сабы"),
         "SelectType": m71,
         "SelectYourBooking": MessageLookupByLibrary.simpleMessage(
@@ -1292,6 +1302,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TeaList": MessageLookupByLibrary.simpleMessage("Чайная карта"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("Расскажи ещё"),
         "TellUsMoreAboutYourself": m77,
+        "TemplateName": MessageLookupByLibrary.simpleMessage("Имя шаблона"),
         "Terms": MessageLookupByLibrary.simpleMessage("Условия"),
         "TermsOfService":
             MessageLookupByLibrary.simpleMessage("Условия использования"),
@@ -1325,6 +1336,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "TicketPrice": MessageLookupByLibrary.simpleMessage("Цена билета"),
         "Tickets": m79,
         "Time": MessageLookupByLibrary.simpleMessage("Время"),
+        "TimeRangeError": MessageLookupByLibrary.simpleMessage(
+            "Время окончания не может быть раньше времени начала"),
         "Title": MessageLookupByLibrary.simpleMessage("Название"),
         "TitleYourTop": MessageLookupByLibrary.simpleMessage("Назови свой ТОП"),
         "ToAccessAll": MessageLookupByLibrary.simpleMessage("Полный доступ"),

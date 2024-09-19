@@ -837,11 +837,18 @@
   "OhYeahSure": "О да, конечно!",
   "YourReminderIsShown1TimeMax3": "Ваше напоминание отображается 1 раз в указанный день. У вас есть максимум 3 попытки получить напоминание.",
   "ToExtendYourUseSelectPayment": "Чтобы продлить срок использования, выберите пункт оплата",
-  "CreateAUSP": "Создайте УТП за ${count} для своих клиентов",
   "UpgradeForFree": "обновитесь бесплатно",
   "YourReminderIsShown1Time": "Ваше напоминание отображается 1 раз в указанный день.",
   "BookingsAndFavorites": "Букинги и избранное",
   "Invitations": "Приглашения",
-  "FeedbackPluralNoNumber": "Отзывы"
+  "FeedbackPluralNoNumber": "Отзывы",
+  "CreateAUSP": "Создайте УТП за ${count} для своих клиентов",
+  "RemainsToCreate": "Осталось создать",
+  "SaveTemplate": "Сохранить шаблон",
+  "TemplateName": "Имя шаблона",
+  "TimeRangeError": "Время окончания не может быть раньше времени начала",
+  "SelectStartTime": "Выберите время старта",
+  "SelectEndTime": "Выберите время окончания",
+  "NoEndTime": "Без времени окончания"
 }
 

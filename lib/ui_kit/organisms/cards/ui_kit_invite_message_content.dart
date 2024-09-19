@@ -44,8 +44,8 @@ class UiKitInviteMessageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    UiKitColorScheme colorScheme = UiKitColorScheme.dark();
-    if (!isDark) colorScheme = UiKitColorScheme.light();
+    UiKitColorScheme colorScheme = const UiKitColorScheme.dark();
+    if (!isDark) colorScheme = const UiKitColorScheme.light();
 
     final avatarWidth = 0.125.sw;
 

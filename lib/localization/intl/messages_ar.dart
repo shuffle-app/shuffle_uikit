@@ -826,6 +826,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Sorry, no internet connection"),
         "NoDateSelected":
             MessageLookupByLibrary.simpleMessage("No date selected"),
+        "NoEndTime": MessageLookupByLibrary.simpleMessage("No end time"),
         "NoFavoritesFound":
             MessageLookupByLibrary.simpleMessage("No favorites found"),
         "NoFeedbacksYet": MessageLookupByLibrary.simpleMessage(
@@ -1069,6 +1070,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
+        "RemainsToCreate":
+            MessageLookupByLibrary.simpleMessage("Remains to create"),
         "Reminder": MessageLookupByLibrary.simpleMessage("Reminder"),
         "Reminders": MessageLookupByLibrary.simpleMessage("Reminders"),
         "Remove": MessageLookupByLibrary.simpleMessage("Remove"),
@@ -1093,6 +1096,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Sat"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "SaveAndPay": MessageLookupByLibrary.simpleMessage("Save and pay"),
+        "SaveTemplate": MessageLookupByLibrary.simpleMessage("Save template"),
         "Schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
         "SearchBusinessChooseYourself1":
@@ -1150,6 +1154,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDateTime":
             MessageLookupByLibrary.simpleMessage("Select date and time"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("Select days "),
+        "SelectEndTime":
+            MessageLookupByLibrary.simpleMessage("Select an ending time"),
         "SelectGender": MessageLookupByLibrary.simpleMessage("Select gender"),
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Please select language"),
@@ -1158,6 +1164,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select period of valid"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("Select price and currency"),
+        "SelectStartTime":
+            MessageLookupByLibrary.simpleMessage("Select a starting time"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("Select subs"),
         "SelectType": m71,
         "SelectYourBooking":
@@ -1268,6 +1276,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TeaList": MessageLookupByLibrary.simpleMessage("Tea list"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("Tell us more"),
         "TellUsMoreAboutYourself": m77,
+        "TemplateName": MessageLookupByLibrary.simpleMessage("Template name"),
         "Terms": MessageLookupByLibrary.simpleMessage("Terms"),
         "TermsOfService":
             MessageLookupByLibrary.simpleMessage("Terms of Service"),
@@ -1302,6 +1311,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "TicketPrice": MessageLookupByLibrary.simpleMessage("Ticket price"),
         "Tickets": m79,
         "Time": MessageLookupByLibrary.simpleMessage("Time"),
+        "TimeRangeError": MessageLookupByLibrary.simpleMessage(
+            "End time could not be before start time"),
         "Title": MessageLookupByLibrary.simpleMessage("Title"),
         "TitleYourTop": MessageLookupByLibrary.simpleMessage("Title your TOP"),
         "ToAccessAll": MessageLookupByLibrary.simpleMessage("To access all"),

@@ -59,6 +59,8 @@ class UiKitColors {
   static const mutedText = Color(0xff8E9094);
 
   static const yellow = Color(0xffC6E216);
+  static const yellowDarkShadow = Color(0xffFFE1CB);
+  static const yellowBrightShadow = Color(0xFCD27F99);
   static const brightYellow = Color(0xffFAE634);
   static const lemon = Color(0xffFCE600);
   static const weatherYellow = Color(0xffE5C130);

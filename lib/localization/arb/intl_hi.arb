@@ -840,6 +840,14 @@
   "ToExtendYourUseSelectPayment": "अपने उपयोग को बढ़ाने के लिए भुगतान का चयन करें",
   "UpgradeForFree": "मुफ्त अपग्रेड करें",
   "CreateAUSP": "अपने ग्राहकों के लिए एक USP बनाएं",
-  "FeedbackPluralNoNumber": "प्रतिक्रिया"
+  "FeedbackPluralNoNumber": "प्रतिक्रिया",
+  "RemainsToCreate": "Remains to create",
+  "RemainsToCreate": "Remains to create",
+  "SaveTemplate": "Save template",
+  "TemplateName": "Template name",
+  "TimeRangeError": "End time could not be before start time",
+  "SelectStartTime": "Select a starting time",
+  "SelectEndTime": "Select an ending time",
+  "NoEndTime": "No end time"
 
 }

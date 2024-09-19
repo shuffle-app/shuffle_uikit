@@ -841,6 +841,13 @@
   "YourReminderIsShown1Time": "Your reminder is shown 1 time on the specified date.",
   "ToExtendYourUseSelectPayment": "To extend your use, select payment",
   "UpgradeForFree": "upgrade for free",
+  "FeedbackPluralNoNumber": "Feedbacks",
   "CreateAUSP": "Create a USP for ${count} for your clients",
-  "FeedbackPluralNoNumber": "Feedbacks"
+  "RemainsToCreate": "Remains to create",
+  "SaveTemplate": "Save template",
+  "TemplateName": "Template name",
+  "TimeRangeError": "End time could not be before start time",
+  "SelectStartTime": "Select a starting time",
+  "SelectEndTime": "Select an ending time",
+  "NoEndTime": "No end time"
 }
