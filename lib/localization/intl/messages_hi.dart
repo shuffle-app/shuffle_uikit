@@ -1074,6 +1074,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
+        "RemainsToCreate":
+            MessageLookupByLibrary.simpleMessage("Remains to create"),
         "Reminder": MessageLookupByLibrary.simpleMessage("याद दिलाने वाला"),
         "Reminders": MessageLookupByLibrary.simpleMessage("Reminders"),
         "Remove": MessageLookupByLibrary.simpleMessage("Remove"),
@@ -1098,6 +1100,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("शनिवार"),
         "Save": MessageLookupByLibrary.simpleMessage("सहेजें"),
         "SaveAndPay": MessageLookupByLibrary.simpleMessage("Save and pay"),
+        "SaveTemplate": MessageLookupByLibrary.simpleMessage("Save template"),
         "Schedule": MessageLookupByLibrary.simpleMessage("अनुसूची"),
         "Search": MessageLookupByLibrary.simpleMessage("खोजें"),
         "SearchBusinessChooseYourself1":
@@ -1272,6 +1275,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TeaList": MessageLookupByLibrary.simpleMessage("चाय की सूची"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("और बताओ"),
         "TellUsMoreAboutYourself": m77,
+        "TemplateName": MessageLookupByLibrary.simpleMessage("Template name"),
         "Terms": MessageLookupByLibrary.simpleMessage("शर्तें"),
         "TermsOfService":
             MessageLookupByLibrary.simpleMessage("सेवा की शर्तें"),
@@ -1305,6 +1309,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "TicketPrice": MessageLookupByLibrary.simpleMessage("टिकट कीमत"),
         "Tickets": m79,
         "Time": MessageLookupByLibrary.simpleMessage("समय"),
+        "TimeRangeError": MessageLookupByLibrary.simpleMessage(
+            "End time could not be before start time"),
         "Title": MessageLookupByLibrary.simpleMessage("शीर्षक"),
         "TitleYourTop":
             MessageLookupByLibrary.simpleMessage("अपने शीर्ष का शीर्षक दें"),

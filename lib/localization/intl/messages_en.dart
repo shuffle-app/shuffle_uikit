@@ -1064,6 +1064,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
+        "RemainsToCreate":
+            MessageLookupByLibrary.simpleMessage("Remains to create"),
         "Reminder": MessageLookupByLibrary.simpleMessage("Reminder"),
         "Reminders": MessageLookupByLibrary.simpleMessage("Reminders"),
         "Remove": MessageLookupByLibrary.simpleMessage("Remove"),
@@ -1088,6 +1090,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Sat"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "SaveAndPay": MessageLookupByLibrary.simpleMessage("Save and pay"),
+        "SaveTemplate": MessageLookupByLibrary.simpleMessage("Save template"),
         "Schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
         "SearchBusinessChooseYourself1":
@@ -1263,6 +1266,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TeaList": MessageLookupByLibrary.simpleMessage("Tea list"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("Tell us more"),
         "TellUsMoreAboutYourself": m77,
+        "TemplateName": MessageLookupByLibrary.simpleMessage("Template name"),
         "Terms": MessageLookupByLibrary.simpleMessage("Terms"),
         "TermsOfService":
             MessageLookupByLibrary.simpleMessage("Terms of Service"),
@@ -1297,6 +1301,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "TicketPrice": MessageLookupByLibrary.simpleMessage("Ticket price"),
         "Tickets": m79,
         "Time": MessageLookupByLibrary.simpleMessage("Time"),
+        "TimeRangeError": MessageLookupByLibrary.simpleMessage(
+            "End time could not be before start time"),
         "Title": MessageLookupByLibrary.simpleMessage("Title"),
         "TitleYourTop": MessageLookupByLibrary.simpleMessage("Title your TOP"),
         "ToAccessAll": MessageLookupByLibrary.simpleMessage("To access all"),

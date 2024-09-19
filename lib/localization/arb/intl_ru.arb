@@ -839,6 +839,10 @@
   "YourReminderIsShown1Time": "Ваше напоминание отображается 1 раз в указанный день.",
   "ToExtendYourUseSelectPayment": "Чтобы продлить срок использования, выберите пункт оплата",
   "UpgradeForFree": "обновитесь бесплатно",
-  "CreateAUSP": "Создайте УТП за ${count} для своих клиентов"
+  "CreateAUSP": "Создайте УТП за ${count} для своих клиентов",
+  "RemainsToCreate": "Осталось создать",
+  "SaveTemplate": "Сохранить шаблон",
+  "TemplateName": "Имя шаблона",
+  "TimeRangeError": "Время окончания не может быть раньше времени начала"
 }
 

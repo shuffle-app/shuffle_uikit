@@ -8654,6 +8654,46 @@ class S {
       args: [count],
     );
   }
+
+  /// `Remains to create`
+  String get RemainsToCreate {
+    return Intl.message(
+      'Remains to create',
+      name: 'RemainsToCreate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save template`
+  String get SaveTemplate {
+    return Intl.message(
+      'Save template',
+      name: 'SaveTemplate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Template name`
+  String get TemplateName {
+    return Intl.message(
+      'Template name',
+      name: 'TemplateName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `End time could not be before start time`
+  String get TimeRangeError {
+    return Intl.message(
+      'End time could not be before start time',
+      name: 'TimeRangeError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
