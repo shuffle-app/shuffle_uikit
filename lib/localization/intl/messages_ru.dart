@@ -519,6 +519,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Daily": MessageLookupByLibrary.simpleMessage("Ежедневно "),
         "Date": MessageLookupByLibrary.simpleMessage("Дата"),
         "DateOfBirth": MessageLookupByLibrary.simpleMessage("Дата рождения"),
+        "DateRange": MessageLookupByLibrary.simpleMessage("Диапазон дат"),
         "Dates": MessageLookupByLibrary.simpleMessage("Даты"),
         "Day": MessageLookupByLibrary.simpleMessage("День"),
         "Days": m16,

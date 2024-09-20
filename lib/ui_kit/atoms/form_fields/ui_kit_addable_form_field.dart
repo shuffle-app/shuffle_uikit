@@ -9,14 +9,13 @@ class UiKitAddableFormField extends StatelessWidget {
   final VoidCallback? onRemove;
   final Widget child;
 
-  const UiKitAddableFormField(
-      {super.key,
-      required this.title,
-      this.isAbleToAdd = true,
-      this.onAdd,
-      this.isAbleToRemove = false,
-      this.onRemove,
-      required this.child});
+  const UiKitAddableFormField({super.key,
+    required this.title,
+    this.isAbleToAdd = true,
+    this.onAdd,
+    this.isAbleToRemove = false,
+    this.onRemove,
+    required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -33,19 +32,23 @@ class UiKitAddableFormField extends StatelessWidget {
         SpacingFoundation.verticalSpace2,
         Row(
           children: [
-            child,
+            Expanded(
+                flex: 3,
+                child:
+            child),
             const Spacer(),
             if (isAbleToAdd)
               context
                   .smallOutlinedButton(
-                      data: BaseUiKitButtonData(
-                          onPressed: onAdd, iconInfo: BaseUiKitButtonIconData(iconData: ShuffleUiKitIcons.plus,size: 18)))
+                  data: BaseUiKitButtonData(
+                      onPressed: onAdd, iconInfo: BaseUiKitButtonIconData(iconData: ShuffleUiKitIcons.plus, size: 18)))
                   .paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing4),
             if (isAbleToRemove)
               context
                   .smallOutlinedButton(
-                      data: BaseUiKitButtonData(
-                          onPressed: onRemove, iconInfo: BaseUiKitButtonIconData(iconData: ShuffleUiKitIcons.minus,size: 18)))
+                  data: BaseUiKitButtonData(
+                      onPressed: onRemove,
+                      iconInfo: BaseUiKitButtonIconData(iconData: ShuffleUiKitIcons.minus, size: 18)))
                   .paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing4),
           ],
         )

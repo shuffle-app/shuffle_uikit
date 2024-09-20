@@ -4275,6 +4275,16 @@ class S {
     );
   }
 
+  /// `Date Range`
+  String get DateRange {
+    return Intl.message(
+      'Date Range',
+      name: 'DateRange',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Reset`
   String get Reset {
     return Intl.message(
