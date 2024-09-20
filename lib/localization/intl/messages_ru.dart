@@ -1334,6 +1334,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Предложение будет добавлено в личный профиль пользователей, которые просматривают ваш контент или совершают бронирование"),
         "ThenCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Тогда зацени это"),
+        "ThereNoEventsYet":
+            MessageLookupByLibrary.simpleMessage("Ивентов пока нет"),
+        "ThereNoPlacesYet":
+            MessageLookupByLibrary.simpleMessage("Мест пока нет"),
         "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
             "Этот контент есть в других ваших списках. После добавления он будет удален из текущего."),
         "ThisIs": MessageLookupByLibrary.simpleMessage("Это"),
