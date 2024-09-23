@@ -849,5 +849,11 @@
   "TimeRangeError": "End time could not be before start time",
   "SelectStartTime": "Select a starting time",
   "SelectEndTime": "Select an ending time",
-  "NoEndTime": "No end time"
+  "NoEndTime": "No end time",
+  "Coverage": "Coverage",
+  "Views": "Views",
+  "Visitors": "Visitors",
+  "Budget": "Budget {sum}{currency}",
+  "Organic": "Organic"
+
 }

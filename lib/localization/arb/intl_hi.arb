@@ -841,13 +841,17 @@
   "UpgradeForFree": "मुफ्त अपग्रेड करें",
   "CreateAUSP": "अपने ग्राहकों के लिए एक USP बनाएं",
   "FeedbackPluralNoNumber": "प्रतिक्रिया",
-  "RemainsToCreate": "Remains to create",
-  "RemainsToCreate": "Remains to create",
-  "SaveTemplate": "Save template",
-  "TemplateName": "Template name",
-  "TimeRangeError": "End time could not be before start time",
-  "SelectStartTime": "Select a starting time",
-  "SelectEndTime": "Select an ending time",
-  "NoEndTime": "No end time"
+  "RemainsToCreate": "बनाने के लिए बचा है",
+  "SaveTemplate": "टेम्पलेट सहेजें",
+  "TemplateName": "टेम्पलेट का नाम",
+  "TimeRangeError": "समय सीमा त्रुटि",
+  "SelectStartTime": "एक प्रारंभ समय चुनें",
+  "SelectEndTime": "एक समाप्ति समय चुनें",
+  "NoEndTime": "कोई समाप्ति समय नहीं",
+  "Coverage": "कवरेज",
+  "Views": "दृश्य",
+  "Visitors": "आगंतुक",
+  "Budget": "बजट {sum}{currency}",
+  "Organic": "जैविक"
 
 }

@@ -8665,6 +8665,16 @@ class S {
     );
   }
 
+  /// `Feedbacks`
+  String get FeedbackPluralNoNumber {
+    return Intl.message(
+      'Feedbacks',
+      name: 'FeedbackPluralNoNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Create a USP for ${count} for your clients`
   String CreateAUSP(Object count) {
     return Intl.message(
@@ -8675,11 +8685,121 @@ class S {
     );
   }
 
-  /// `Feedbacks`
-  String get FeedbackPluralNoNumber {
+  /// `Remains to create`
+  String get RemainsToCreate {
     return Intl.message(
-      'Feedbacks',
-      name: 'FeedbackPluralNoNumber',
+      'Remains to create',
+      name: 'RemainsToCreate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save template`
+  String get SaveTemplate {
+    return Intl.message(
+      'Save template',
+      name: 'SaveTemplate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Template name`
+  String get TemplateName {
+    return Intl.message(
+      'Template name',
+      name: 'TemplateName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `End time could not be before start time`
+  String get TimeRangeError {
+    return Intl.message(
+      'End time could not be before start time',
+      name: 'TimeRangeError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select a starting time`
+  String get SelectStartTime {
+    return Intl.message(
+      'Select a starting time',
+      name: 'SelectStartTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select an ending time`
+  String get SelectEndTime {
+    return Intl.message(
+      'Select an ending time',
+      name: 'SelectEndTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No end time`
+  String get NoEndTime {
+    return Intl.message(
+      'No end time',
+      name: 'NoEndTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Coverage`
+  String get Coverage {
+    return Intl.message(
+      'Coverage',
+      name: 'Coverage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Views`
+  String get Views {
+    return Intl.message(
+      'Views',
+      name: 'Views',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Visitors`
+  String get Visitors {
+    return Intl.message(
+      'Visitors',
+      name: 'Visitors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Budget {sum}{currency}`
+  String Budget(Object sum, Object currency) {
+    return Intl.message(
+      'Budget $sum$currency',
+      name: 'Budget',
+      desc: '',
+      args: [sum, currency],
+    );
+  }
+
+  /// `Organic`
+  String get Organic {
+    return Intl.message(
+      'Organic',
+      name: 'Organic',
       desc: '',
       args: [],
     );
