@@ -15,8 +15,8 @@ Future<TimeOfDay?> showUiKitTimeDialog(BuildContext context) {
       ),
       child: TimePickerDialog(
         initialTime: TimeOfDay.fromDateTime(DateTime.now()),
-        cancelText: 'Cancel',
-        confirmText: 'Ok',
+        cancelText: S.current.Cancel,
+        confirmText: S.current.Ok,
       ),
     ),
   );
@@ -34,10 +34,10 @@ Future<void> showUiKitTimeFromToDialog(BuildContext context, Function(TimeOfDay?
             borderRadius: BorderRadiusFoundation.all24,
           ),
           child: TimePickerDialog(
-            helpText: 'Select a starting time',
+            helpText: S.current.SelectStartTime,
             initialTime: TimeOfDay.fromDateTime(DateTime.now()),
-            cancelText: 'Cancel',
-            confirmText: 'Next',
+            cancelText: S.current.Cancel,
+            confirmText: S.current.Next,
           ),
         );
       });
@@ -55,10 +55,10 @@ Future<void> showUiKitTimeFromToDialog(BuildContext context, Function(TimeOfDay?
             borderRadius: BorderRadiusFoundation.all24,
           ),
           child: TimePickerDialog(
-            helpText: 'Select an ending time',
+            helpText: S.current.SelectEndTime,
             initialTime: TimeOfDay.fromDateTime(DateTime.now()),
-            cancelText: 'No end time',
-            confirmText: 'Confirm',
+            cancelText: S.current.NoEndTime,
+            confirmText: S.current.Confirm,
           ),
         );
       });

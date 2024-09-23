@@ -404,6 +404,7 @@
   "Archive": "Архив",
   "DeleteCompany": "Удалить компанию",
   "SelectDateRange": "Выбери диапазон дат",
+  "DateRange": "Диапазон дат",
   "Reset": "Сбросить",
   "NowWeKnowYouBetter": "Спасибо!\nТеперь мы знаем тебя лучше",
   "TellUsMore": "Расскажи ещё",
@@ -839,6 +840,24 @@
   "YourReminderIsShown1Time": "Ваше напоминание отображается 1 раз в указанный день.",
   "ToExtendYourUseSelectPayment": "Чтобы продлить срок использования, выберите пункт оплата",
   "UpgradeForFree": "обновитесь бесплатно",
-  "CreateAUSP": "Создайте УТП за ${count} для своих клиентов"
+  "CreateAUSP": "Создайте УТП за ${count} для своих клиентов",
+  "RemainsToCreate": "Осталось создать",
+  "SaveTemplate": "Сохранить шаблон",
+  "TemplateName": "Имя шаблона",
+  "TimeRangeError": "Время окончания не может быть раньше времени начала",
+  "SelectStartTime": "Выберите время старта",
+  "SelectEndTime": "Выберите время окончания",
+  "NoEndTime": "Без времени окончания",
+  "AddImage": "Добавить изображения",
+  "Cover": "Обложка",
+  "HorizontalFormat": "Горизонтальный формат",
+  "VerticalFormat": "Вертикальный формат",
+  "AddPhotoHere": "Добавьте фото здесь",
+  "FromGallery": "Из галлереи",
+  "SelectToSetPreview": "Выберите фото чтобы задать превью",
+  "CropVertical": "Обрезать для вертикали",
+  "CropHorizontal": "Обрезать для горизонтали",
+  "ThereNoPlacesYet": "Мест пока нет",
+  "ThereNoEventsYet": "Ивентов пока нет"
 }
 

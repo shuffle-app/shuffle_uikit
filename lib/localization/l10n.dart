@@ -4275,6 +4275,16 @@ class S {
     );
   }
 
+  /// `Date Range`
+  String get DateRange {
+    return Intl.message(
+      'Date Range',
+      name: 'DateRange',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Reset`
   String get Reset {
     return Intl.message(
@@ -8652,6 +8662,186 @@ class S {
       name: 'CreateAUSP',
       desc: '',
       args: [count],
+    );
+  }
+
+  /// `Remains to create`
+  String get RemainsToCreate {
+    return Intl.message(
+      'Remains to create',
+      name: 'RemainsToCreate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save template`
+  String get SaveTemplate {
+    return Intl.message(
+      'Save template',
+      name: 'SaveTemplate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Template name`
+  String get TemplateName {
+    return Intl.message(
+      'Template name',
+      name: 'TemplateName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `End time could not be before start time`
+  String get TimeRangeError {
+    return Intl.message(
+      'End time could not be before start time',
+      name: 'TimeRangeError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select a starting time`
+  String get SelectStartTime {
+    return Intl.message(
+      'Select a starting time',
+      name: 'SelectStartTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select an ending time`
+  String get SelectEndTime {
+    return Intl.message(
+      'Select an ending time',
+      name: 'SelectEndTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No end time`
+  String get NoEndTime {
+    return Intl.message(
+      'No end time',
+      name: 'NoEndTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Image`
+  String get AddImage {
+    return Intl.message(
+      'Add Image',
+      name: 'AddImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cover`
+  String get Cover {
+    return Intl.message(
+      'Cover',
+      name: 'Cover',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Horizontal format`
+  String get HorizontalFormat {
+    return Intl.message(
+      'Horizontal format',
+      name: 'HorizontalFormat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vertical format`
+  String get VerticalFormat {
+    return Intl.message(
+      'Vertical format',
+      name: 'VerticalFormat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add photo here`
+  String get AddPhotoHere {
+    return Intl.message(
+      'Add photo here',
+      name: 'AddPhotoHere',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From gallery`
+  String get FromGallery {
+    return Intl.message(
+      'From gallery',
+      name: 'FromGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select a photo to set preview`
+  String get SelectToSetPreview {
+    return Intl.message(
+      'Select a photo to set preview',
+      name: 'SelectToSetPreview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crop to vertical`
+  String get CropVertical {
+    return Intl.message(
+      'Crop to vertical',
+      name: 'CropVertical',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Crop to horizontal`
+  String get CropHorizontal {
+    return Intl.message(
+      'Crop to horizontal',
+      name: 'CropHorizontal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no places yet`
+  String get ThereNoPlacesYet {
+    return Intl.message(
+      'There are no places yet',
+      name: 'ThereNoPlacesYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no events yet`
+  String get ThereNoEventsYet {
+    return Intl.message(
+      'There are no events yet',
+      name: 'ThereNoEventsYet',
+      desc: '',
+      args: [],
     );
   }
 }

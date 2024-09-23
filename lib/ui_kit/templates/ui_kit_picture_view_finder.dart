@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:image/image.dart' as image_lib;
 
 import '../../shuffle_uikit.dart';
@@ -156,10 +157,14 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
 
   void cropImage(Uint8List data) async {
     if (image == null) return;
-    final cropStartX = (_positionAndSize.value.position.dx / (fittedImageSize.width / imageOriginalSize.width)).ceil().toInt();
-    final cropStartY = (_positionAndSize.value.position.dy / (fittedImageSize.height / imageOriginalSize.height)).ceil().toInt();
-    final cropWidth = (_positionAndSize.value.size.width / (fittedImageSize.width / imageOriginalSize.width)).ceil().toInt();
-    final cropHeight = (_positionAndSize.value.size.height / (fittedImageSize.height / imageOriginalSize.height)).ceil().toInt();
+    final cropStartX =
+    (_positionAndSize.value.position.dx / (fittedImageSize.width / imageOriginalSize.width)).ceil().toInt();
+    final cropStartY =
+    (_positionAndSize.value.position.dy / (fittedImageSize.height / imageOriginalSize.height)).ceil().toInt();
+    final cropWidth =
+    (_positionAndSize.value.size.width / (fittedImageSize.width / imageOriginalSize.width)).ceil().toInt();
+    final cropHeight =
+    (_positionAndSize.value.size.height / (fittedImageSize.height / imageOriginalSize.height)).ceil().toInt();
     final imageBytes = await compute(
       _cropImageInBackground,
       CropImageInBackgroundData(
@@ -171,7 +176,12 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
       ),
     );
     widget.controller.completeCrop();
-    widget.onCropCompleted?.call(imageBytes);
+    widget.onCropCompleted?.call(await FlutterImageCompress.compressWithList(imageBytes,
+        minHeight: cropHeight * 2, minWidth: cropWidth * 2, format: CompressFormat.jpeg)
+        .onError((error, st) {
+      dev.log('compressing error: $error');
+      return imageBytes;
+    }));
   }
 
   final ValueNotifier<SizeAndPosition> _positionAndSize = ValueNotifier<SizeAndPosition>(SizeAndPosition(
@@ -283,7 +293,8 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
 
       dev.log('Initialization finished');
       dev.log('image original orientation: ${isHorizontalPicture ? 'horizontal' : 'vertical'}');
-      dev.log('externally set orientation: ${widget.viewFinderOrientation == Axis.horizontal ? 'horizontal' : 'vertical'}');
+      dev.log(
+          'externally set orientation: ${widget.viewFinderOrientation == Axis.horizontal ? 'horizontal' : 'vertical'}');
       dev.log('square image: $isSquareImage');
       dev.log('fittedImageSize: $fittedImageSize');
       dev.log('imageOriginalSize: $imageOriginalSize');
@@ -400,8 +411,11 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
                   Positioned(
                     left: _positionAndSize.value.position.dx,
                     top: _positionAndSize.value.position.dy,
-                    right: fittedImageSize.width - (_positionAndSize.value.size.width + _positionAndSize.value.position.dx),
-                    bottom: fittedImageSize.height - _positionAndSize.value.size.height - _positionAndSize.value.position.dy,
+                    right: fittedImageSize.width -
+                        (_positionAndSize.value.size.width + _positionAndSize.value.position.dx),
+                    bottom: fittedImageSize.height -
+                        _positionAndSize.value.size.height -
+                        _positionAndSize.value.position.dy,
                     child: GestureDetector(
                       behavior: HitTestBehavior.translucent,
                       onPanUpdate: (details) {
@@ -440,16 +454,17 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
             },
             child: AnimatedBuilder(
               animation: _positionAndSize,
-              builder: (context, child) => Container(
-                clipBehavior: Clip.hardEdge,
-                width: _positionAndSize.value.size.width,
-                height: _positionAndSize.value.size.height,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadiusFoundation.all16,
-                  border: Border.all(color: Colors.white, width: 2),
-                ),
-                child: child,
-              ),
+              builder: (context, child) =>
+                  Container(
+                    clipBehavior: Clip.hardEdge,
+                    width: _positionAndSize.value.size.width,
+                    height: _positionAndSize.value.size.height,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadiusFoundation.all16,
+                      border: Border.all(color: Colors.white, width: 2),
+                    ),
+                    child: child,
+                  ),
               child: Stack(
                 children: [
                   Align(

@@ -302,9 +302,11 @@ class MessageLookup extends MessageLookupByLibrary {
             "बताएं कि आपको क्या पसंद आया या याद रहा"),
         "AddFeedbackFieldTitle":
             MessageLookupByLibrary.simpleMessage("अपने अनुभव का वर्णन करें"),
+        "AddImage": MessageLookupByLibrary.simpleMessage("Add Image"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "एक विस्तृत समीक्षा लिखें, सभी उपलब्ध वर्णों का उपयोग करें ताकि जितने अधिक लोग संवाद कर सकें"),
         "AddLink": MessageLookupByLibrary.simpleMessage("लिंक जोड़ें"),
+        "AddPhotoHere": MessageLookupByLibrary.simpleMessage("Add photo here"),
         "AddPlaceType":
             MessageLookupByLibrary.simpleMessage("जगह प्रकार जोड़ें"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("प्रचार जोड़ें"),
@@ -476,6 +478,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("आमंत्रण नहीं मिल सका"),
         "CountReviews": m12,
         "CountVideoReaction": m13,
+        "Cover": MessageLookupByLibrary.simpleMessage("Cover"),
         "Create": MessageLookupByLibrary.simpleMessage("बनाएँ"),
         "CreateAUSP": m14,
         "CreateBooking": MessageLookupByLibrary.simpleMessage("Create booking"),
@@ -497,10 +500,15 @@ class MessageLookup extends MessageLookupByLibrary {
             "पहुँच प्राप्त करने के लिए पहले लॉग इन करें"),
         "CredentialsVerificationTitle":
             MessageLookupByLibrary.simpleMessage("आपको खुश देखकर अच्छा लगा"),
+        "CropHorizontal":
+            MessageLookupByLibrary.simpleMessage("Crop to horizontal"),
+        "CropVertical":
+            MessageLookupByLibrary.simpleMessage("Crop to vertical"),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("वीडियो को काटना"),
         "Daily": MessageLookupByLibrary.simpleMessage("दैनिक"),
         "Date": MessageLookupByLibrary.simpleMessage("तारीख"),
         "DateOfBirth": MessageLookupByLibrary.simpleMessage("जन्म की तारीख"),
+        "DateRange": MessageLookupByLibrary.simpleMessage("सीमा चुनें"),
         "Dates": MessageLookupByLibrary.simpleMessage("तिथियां"),
         "Day": MessageLookupByLibrary.simpleMessage("दिन"),
         "Days": m16,
@@ -632,6 +640,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Free": MessageLookupByLibrary.simpleMessage("मुफ्त"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("निःशुल्क स्थान"),
         "FridayShort": MessageLookupByLibrary.simpleMessage("शुक्रवार"),
+        "FromGallery": MessageLookupByLibrary.simpleMessage("From gallery"),
         "FromToYearsOld": m31,
         "FulfillTheDream":
             MessageLookupByLibrary.simpleMessage("सपना पूरा करो"),
@@ -676,6 +685,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "HintSystemDisabled":
             MessageLookupByLibrary.simpleMessage("संकेत प्रणाली अक्षम है"),
         "HintSystemEnabled": m33,
+        "HorizontalFormat":
+            MessageLookupByLibrary.simpleMessage("Horizontal format"),
         "HoursAgo": m34,
         "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
             "आप आज सुबह कैसा महसूस कर रहे हैं?"),
@@ -828,6 +839,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "क्षमा करें, कोई इंटरनेट कनेक्शन नहीं"),
         "NoDateSelected":
             MessageLookupByLibrary.simpleMessage("कोई दिनांक चयनित नहीं"),
+        "NoEndTime": MessageLookupByLibrary.simpleMessage("No end time"),
         "NoFavoritesFound":
             MessageLookupByLibrary.simpleMessage("कोई पसंदीदा नहीं मिला"),
         "NoFeedbacksYet": MessageLookupByLibrary.simpleMessage(
@@ -1074,6 +1086,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "RelatedProperties":
             MessageLookupByLibrary.simpleMessage("Related properties"),
         "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
+        "RemainsToCreate":
+            MessageLookupByLibrary.simpleMessage("Remains to create"),
         "Reminder": MessageLookupByLibrary.simpleMessage("याद दिलाने वाला"),
         "Reminders": MessageLookupByLibrary.simpleMessage("Reminders"),
         "Remove": MessageLookupByLibrary.simpleMessage("Remove"),
@@ -1098,6 +1112,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("शनिवार"),
         "Save": MessageLookupByLibrary.simpleMessage("सहेजें"),
         "SaveAndPay": MessageLookupByLibrary.simpleMessage("Save and pay"),
+        "SaveTemplate": MessageLookupByLibrary.simpleMessage("Save template"),
         "Schedule": MessageLookupByLibrary.simpleMessage("अनुसूची"),
         "Search": MessageLookupByLibrary.simpleMessage("खोजें"),
         "SearchBusinessChooseYourself1":
@@ -1154,6 +1169,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectDateTime":
             MessageLookupByLibrary.simpleMessage("तारीख और समय चुनें"),
         "SelectDays": MessageLookupByLibrary.simpleMessage("दिन चुनें"),
+        "SelectEndTime":
+            MessageLookupByLibrary.simpleMessage("Select an ending time"),
         "SelectGender": MessageLookupByLibrary.simpleMessage("लिंग चुनें"),
         "SelectLanguage": MessageLookupByLibrary.simpleMessage("भाषा चुने"),
         "SelectOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),
@@ -1161,7 +1178,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select period of valid"),
         "SelectPriceAndCurrency":
             MessageLookupByLibrary.simpleMessage("मूल्य और मुद्रा चुनें"),
+        "SelectStartTime":
+            MessageLookupByLibrary.simpleMessage("Select a starting time"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("सब्स चुनें"),
+        "SelectToSetPreview": MessageLookupByLibrary.simpleMessage(
+            "Select a photo to set preview"),
         "SelectType": m71,
         "SelectYourBooking":
             MessageLookupByLibrary.simpleMessage("अपनी बुकिंग चुनें"),
@@ -1272,6 +1293,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TeaList": MessageLookupByLibrary.simpleMessage("चाय की सूची"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("और बताओ"),
         "TellUsMoreAboutYourself": m77,
+        "TemplateName": MessageLookupByLibrary.simpleMessage("Template name"),
         "Terms": MessageLookupByLibrary.simpleMessage("शर्तें"),
         "TermsOfService":
             MessageLookupByLibrary.simpleMessage("सेवा की शर्तें"),
@@ -1294,6 +1316,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "The offer will be added to the personal profile of users who view your content or make a booking"),
         "ThenCheckThisOut":
             MessageLookupByLibrary.simpleMessage("फिर इसे जांचें"),
+        "ThereNoEventsYet":
+            MessageLookupByLibrary.simpleMessage("There are no events yet"),
+        "ThereNoPlacesYet":
+            MessageLookupByLibrary.simpleMessage("There are no places yet"),
         "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
             "ये सामग्री आपकी अन्य सूचियों पर है ।  जोड़े जाने पर, इसे वर्तमान से हटा दिया जाएगा । "),
         "ThisIs": MessageLookupByLibrary.simpleMessage("यह है"),
@@ -1305,6 +1331,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "TicketPrice": MessageLookupByLibrary.simpleMessage("टिकट कीमत"),
         "Tickets": m79,
         "Time": MessageLookupByLibrary.simpleMessage("समय"),
+        "TimeRangeError": MessageLookupByLibrary.simpleMessage(
+            "End time could not be before start time"),
         "Title": MessageLookupByLibrary.simpleMessage("शीर्षक"),
         "TitleYourTop":
             MessageLookupByLibrary.simpleMessage("अपने शीर्ष का शीर्षक दें"),
@@ -1391,6 +1419,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("सूचनाएँ उपयोग करें"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "मान कम से कम 3 वर्ण लंबा होना चाहिए"),
+        "VerticalFormat":
+            MessageLookupByLibrary.simpleMessage("Vertical format"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("बहुत अक्सर"),
         "Video": MessageLookupByLibrary.simpleMessage("वीडियो"),
         "VideoFileNotCut": MessageLookupByLibrary.simpleMessage(
