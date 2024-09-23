@@ -1308,6 +1308,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "The offer will be added to the personal profile of users who view your content or make a booking"),
         "ThenCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Then check this out"),
+        "ThereNoEventsYet":
+            MessageLookupByLibrary.simpleMessage("There are no events yet"),
+        "ThereNoPlacesYet":
+            MessageLookupByLibrary.simpleMessage("There are no places yet"),
         "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
             "These content is on your other lists. When added, it will be removed from the current."),
         "ThisIs": MessageLookupByLibrary.simpleMessage("This is"),

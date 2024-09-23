@@ -854,6 +854,8 @@
   "FromGallery": "From gallery",
   "SelectToSetPreview": "Select a photo to set preview",
   "CropVertical": "Crop to vertical",
-  "CropHorizontal": "Crop to horizontal"
+  "CropHorizontal": "Crop to horizontal",
+  "ThereNoPlacesYet": "There are no places yet",
+  "ThereNoEventsYet": "There are no events yet"
 
 }

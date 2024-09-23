@@ -8824,6 +8824,26 @@ class S {
       args: [],
     );
   }
+
+  /// `There are no places yet`
+  String get ThereNoPlacesYet {
+    return Intl.message(
+      'There are no places yet',
+      name: 'ThereNoPlacesYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no events yet`
+  String get ThereNoEventsYet {
+    return Intl.message(
+      'There are no events yet',
+      name: 'ThereNoEventsYet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

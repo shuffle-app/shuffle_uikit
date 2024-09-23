@@ -856,6 +856,8 @@
   "FromGallery": "Из галлереи",
   "SelectToSetPreview": "Выберите фото чтобы задать превью",
   "CropVertical": "Обрезать для вертикали",
-  "CropHorizontal": "Обрезать для горизонтали"
+  "CropHorizontal": "Обрезать для горизонтали",
+  "ThereNoPlacesYet": "Мест пока нет",
+  "ThereNoEventsYet": "Ивентов пока нет"
 }
 

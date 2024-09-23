@@ -16,6 +16,7 @@ export 'builders/general_dialog_fullscreen_builder.dart';
 export 'builders/social_links_edit_builder.dart';
 export 'builders/ui_kit_bottomsheet_selector_builder.dart';
 export 'builders/week_days_selector_builder.dart';
+export 'builders/contact_for_refund_dialog.dart';
 export 'cache/custom_cache_manager.dart';
 export 'data_formatters/time_format.dart';
 export 'enums/advertisement_banner_size.dart';

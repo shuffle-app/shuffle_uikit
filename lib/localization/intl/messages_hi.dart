@@ -1316,6 +1316,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "The offer will be added to the personal profile of users who view your content or make a booking"),
         "ThenCheckThisOut":
             MessageLookupByLibrary.simpleMessage("फिर इसे जांचें"),
+        "ThereNoEventsYet":
+            MessageLookupByLibrary.simpleMessage("There are no events yet"),
+        "ThereNoPlacesYet":
+            MessageLookupByLibrary.simpleMessage("There are no places yet"),
         "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
             "ये सामग्री आपकी अन्य सूचियों पर है ।  जोड़े जाने पर, इसे वर्तमान से हटा दिया जाएगा । "),
         "ThisIs": MessageLookupByLibrary.simpleMessage("यह है"),

@@ -4,21 +4,21 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 getRefundBookingDialogUiKit({
   required BuildContext context,
   final String? userName,
-  int ticketRefun = 0,
-  int upsaleRefun = 0,
+  int ticketRefund = 0,
+  int upsaleRefund = 0,
   final int allTicket = 0,
   final int allUpsale = 0,
   final VoidCallback? onGoAheadTap,
   final VoidCallback? onContactTap,
 }) {
   final theme = context.uiKitTheme;
-  final isFullRefun = (allTicket <= ticketRefun) && (allUpsale <= upsaleRefun);
+  final isFullRefund = (allTicket <= ticketRefund) && (allUpsale <= upsaleRefund);
 
-  if (ticketRefun > allTicket) {
-    ticketRefun = allTicket;
+  if (ticketRefund > allTicket) {
+    ticketRefund = allTicket;
   }
-  if (upsaleRefun > allUpsale) {
-    upsaleRefun = allUpsale;
+  if (upsaleRefund > allUpsale) {
+    upsaleRefund = allUpsale;
   }
 
   return showUiKitAlertDialog(
@@ -27,31 +27,31 @@ getRefundBookingDialogUiKit({
       defaultButtonText: '',
       insetPadding: EdgeInsets.all(EdgeInsetsFoundation.all24),
       title: Text(
-        '$userName ${S.of(context).Requests} ${isFullRefun ? S.of(context).Full : S.of(context).Partial} ${S.of(context).Refund}',
+        '$userName ${S.of(context).Requests} ${isFullRefund ? S.of(context).Full : S.of(context).Partial} ${S.of(context).Refund}',
         style: theme?.boldTextTheme.title2.copyWith(
           color: theme.colorScheme.inverseHeadingTypography,
         ),
         textAlign: TextAlign.center,
       ),
       actions: [
-        if (!isFullRefun) ...[
+        if (!isFullRefund) ...[
           Align(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                if (ticketRefun > 0 && allTicket >= ticketRefun) ...[
+                if (ticketRefund > 0 && allTicket >= ticketRefund) ...[
                   Text(
-                    '${S.of(context).TicketFrom(ticketRefun)} $allTicket',
+                    '${S.of(context).TicketFrom(ticketRefund)} $allTicket',
                     style: theme?.boldTextTheme.body.copyWith(
                       color: theme.colorScheme.inverseBodyTypography,
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ],
-                if (upsaleRefun > 0 && allUpsale >= upsaleRefun) ...[
+                if (upsaleRefund > 0 && allUpsale >= upsaleRefund) ...[
                   SpacingFoundation.verticalSpace2,
                   Text(
-                    '${S.of(context).UpsalesProductsFrom(upsaleRefun)} $allUpsale',
+                    '${S.of(context).UpsalesProductsFrom(upsaleRefund)} $allUpsale',
                     style: theme?.boldTextTheme.body.copyWith(
                       color: theme.colorScheme.inverseBodyTypography,
                     ),
