@@ -414,6 +414,7 @@
   "Archive": "Archive",
   "DeleteCompany": "Delete company",
   "SelectDateRange": "Select Date Range",
+  "DateRange": "Date Range",
   "Reset": "Reset",
   "NowWeKnowYouBetter": "Thanks!\nNow we know you better",
   "TellUsMore": "Tell us more",
@@ -854,6 +855,16 @@
   "Views": "Views",
   "Visitors": "Visitors",
   "Budget": "Budget {sum}{currency}",
-  "Organic": "Organic"
-
+  "Organic": "Organic",
+  "AddImage": "Add Image",
+  "Cover": "Cover",
+  "HorizontalFormat": "Horizontal format",
+  "VerticalFormat": "Vertical format",
+  "AddPhotoHere": "Add photo here",
+  "FromGallery": "From gallery",
+  "SelectToSetPreview": "Select a photo to set preview",
+  "CropVertical": "Crop to vertical",
+  "CropHorizontal": "Crop to horizontal",
+  "ThereNoPlacesYet": "There are no places yet",
+  "ThereNoEventsYet": "There are no events yet"
 }

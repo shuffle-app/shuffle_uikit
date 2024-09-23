@@ -1152,6 +1152,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/big_cutted_logo.svg
   SvgGenImage get bigCuttedLogo => const SvgGenImage('assets/images/svg/big_cutted_logo.svg');
 
+  /// File path: assets/images/svg/booking.svg
+  SvgGenImage get booking => const SvgGenImage('assets/images/svg/booking.svg');
+
   /// File path: assets/images/svg/building.svg
   SvgGenImage get building => const SvgGenImage('assets/images/svg/building.svg');
 
@@ -1882,6 +1885,7 @@ class $AssetsImagesSvgGen {
         bell,
         bigArrow,
         bigCuttedLogo,
+        booking,
         building,
         businessman,
         calendar,

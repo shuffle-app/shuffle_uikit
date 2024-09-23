@@ -404,6 +404,7 @@
   "Archive": "संग्रहीत",
   "DeleteCompany": "कंपनी हटाएं",
   "SelectDateRange": "तिथि सीमा चुनें",
+  "DateRange": "सीमा चुनें",
   "Reset": "रीसेट",
   "NowWeKnowYouBetter": "धन्यवाद!\nअब हम आपको बेहतर जानते हैं",
   "TellUsMore": "और बताओ",
@@ -852,6 +853,17 @@
   "Views": "दृश्य",
   "Visitors": "आगंतुक",
   "Budget": "बजट {sum}{currency}",
-  "Organic": "जैविक"
+  "Organic": "जैविक",
+  "AddImage": "Add Image",
+  "Cover": "Cover",
+  "HorizontalFormat": "Horizontal format",
+  "VerticalFormat": "Vertical format",
+  "AddPhotoHere": "Add photo here",
+  "FromGallery": "From gallery",
+  "SelectToSetPreview": "Select a photo to set preview",
+  "CropVertical": "Crop to vertical",
+  "CropHorizontal": "Crop to horizontal",
+  "ThereNoPlacesYet": "There are no places yet",
+  "ThereNoEventsYet": "There are no events yet"
 
 }
