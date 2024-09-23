@@ -305,9 +305,13 @@ class MessageLookup extends MessageLookupByLibrary {
             "Расскажи что тебе понравилось или запомнилось"),
         "AddFeedbackFieldTitle":
             MessageLookupByLibrary.simpleMessage("Опиши свой опыт"),
+        "AddImage":
+            MessageLookupByLibrary.simpleMessage("Добавить изображения"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "Напиши подробный отзыв, используй все доступные символы, чтобы как можно больше людей могли его оценить"),
         "AddLink": MessageLookupByLibrary.simpleMessage("Добавить ссылку"),
+        "AddPhotoHere":
+            MessageLookupByLibrary.simpleMessage("Добавьте фото здесь"),
         "AddPlaceType":
             MessageLookupByLibrary.simpleMessage("Добавить тип места"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("Добавить промо"),
@@ -489,6 +493,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Не удалось найти приглашение"),
         "CountReviews": m13,
         "CountVideoReaction": m14,
+        "Cover": MessageLookupByLibrary.simpleMessage("Обложка"),
         "Coverage": MessageLookupByLibrary.simpleMessage("Охват"),
         "Create": MessageLookupByLibrary.simpleMessage("Создать"),
         "CreateAUSP": m15,
@@ -512,10 +517,15 @@ class MessageLookup extends MessageLookupByLibrary {
             "Чтобы продолжить, сначала пройди регистрацию"),
         "CredentialsVerificationTitle":
             MessageLookupByLibrary.simpleMessage("Мы рады тебя видеть"),
+        "CropHorizontal":
+            MessageLookupByLibrary.simpleMessage("Обрезать для горизонтали"),
+        "CropVertical":
+            MessageLookupByLibrary.simpleMessage("Обрезать для вертикали"),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("Обрезка видео"),
         "Daily": MessageLookupByLibrary.simpleMessage("Ежедневно "),
         "Date": MessageLookupByLibrary.simpleMessage("Дата"),
         "DateOfBirth": MessageLookupByLibrary.simpleMessage("Дата рождения"),
+        "DateRange": MessageLookupByLibrary.simpleMessage("Диапазон дат"),
         "Dates": MessageLookupByLibrary.simpleMessage("Даты"),
         "Day": MessageLookupByLibrary.simpleMessage("День"),
         "Days": m17,
@@ -649,6 +659,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Free": MessageLookupByLibrary.simpleMessage("Бесплатно"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("\nбесплатных мест"),
         "FridayShort": MessageLookupByLibrary.simpleMessage("Пт"),
+        "FromGallery": MessageLookupByLibrary.simpleMessage("Из галлереи"),
         "FromToYearsOld": m32,
         "FulfillTheDream":
             MessageLookupByLibrary.simpleMessage("Исполнить мечту"),
@@ -692,6 +703,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
             "Система подсказок деактивирована"),
         "HintSystemEnabled": m34,
+        "HorizontalFormat":
+            MessageLookupByLibrary.simpleMessage("Горизонтальный формат"),
         "HoursAgo": m35,
         "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
             "Как себя чувствуешь этим утром?"),
@@ -1193,6 +1206,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectStartTime":
             MessageLookupByLibrary.simpleMessage("Выберите время старта"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("Выберите сабы"),
+        "SelectToSetPreview": MessageLookupByLibrary.simpleMessage(
+            "Выберите фото чтобы задать превью"),
         "SelectType": m72,
         "SelectYourBooking": MessageLookupByLibrary.simpleMessage(
             "Выберите вариант бронирования"),
@@ -1330,6 +1345,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "Предложение будет добавлено в личный профиль пользователей, которые просматривают ваш контент или совершают бронирование"),
         "ThenCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Тогда зацени это"),
+        "ThereNoEventsYet":
+            MessageLookupByLibrary.simpleMessage("Ивентов пока нет"),
+        "ThereNoPlacesYet":
+            MessageLookupByLibrary.simpleMessage("Мест пока нет"),
         "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
             "Этот контент есть в других ваших списках. После добавления он будет удален из текущего."),
         "ThisIs": MessageLookupByLibrary.simpleMessage("Это"),
@@ -1427,6 +1446,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Уведомления"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "Значение не менее 3 символов"),
+        "VerticalFormat":
+            MessageLookupByLibrary.simpleMessage("Вертикальный формат"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("Часто"),
         "Video": MessageLookupByLibrary.simpleMessage("Видео"),
         "VideoFileNotCut":
