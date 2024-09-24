@@ -133,8 +133,12 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
     _controller.forward(from: 0);
   }
 
-  void _reverseAnimation() {
-    _controller.reverse().then((value) {
+  void _reverseAnimation([needAwait = false]) async {
+    if (needAwait) {
+      await Future.delayed(const Duration(milliseconds: 50));
+      if (_currentPosition.value == Offset.zero) return;
+    }
+    await _controller.reverse().then((value) {
       final touchCenter = _finishPosition.dx / 1.6 + _buttonCenter;
       if (_currentPosition.value.dx < touchCenter) {
         setState(() => _animationDuration = const Duration(milliseconds: 800));
@@ -236,8 +240,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
             front: GestureDetector(
               onTapDown: (_) => _startAnimation(),
               onTapUp: (_) => _reverseAnimation(),
-              onTapCancel: () =>
-                  _currentPosition.value == Offset.zero ? _reverseAnimation() : null,
+              onTapCancel: () => _reverseAnimation(true),
               onPanUpdate: (details) => _onPanDisabled ? _resetPosition() : _setPosition(details),
               onPanStart: (details) => _onPanDisabled ? null : _setPosition(details),
               onPanEnd: (_) => _onPanDisabled ? null : _resetPosition(),
