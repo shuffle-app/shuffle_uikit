@@ -121,7 +121,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
     } else if (status == AnimationStatus.dismissed) {
       setState(() {
         _isPressed = false;
-        if(widget.onPressedShouldRecall){
+        if (widget.onPressedShouldRecall) {
           _isOnPressedCallbackCalled = false;
         }
       });
@@ -236,7 +236,8 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
             front: GestureDetector(
               onTapDown: (_) => _startAnimation(),
               onTapUp: (_) => _reverseAnimation(),
-              onTapCancel: () => _reverseAnimation(),
+              onTapCancel: () =>
+                  _currentPosition.value == Offset.zero ? _reverseAnimation() : null,
               onPanUpdate: (details) => _onPanDisabled ? _resetPosition() : _setPosition(details),
               onPanStart: (details) => _onPanDisabled ? null : _setPosition(details),
               onPanEnd: (_) => _onPanDisabled ? null : _resetPosition(),

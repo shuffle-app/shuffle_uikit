@@ -108,9 +108,10 @@ class UiKitCompactOrderedRatingCard extends StatelessWidget {
                             color: context.uiKitTheme?.colorScheme.inversePrimary,
                           ),
                         SpacingFoundation.verticalSpace4,
-                        Text(
+                        AutoSizeText(
                           rating?.toStringAsFixed(1) ?? '',
                           style: textTheme?.body,
+                          maxLines: 1,
                         ),
                       ],
                     ).paddingSymmetric(
