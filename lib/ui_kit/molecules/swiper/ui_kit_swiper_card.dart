@@ -4,6 +4,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitSwiperCard extends BaseUiKitSwiperCard {
   final ScrollController? tagsScrollController;
+  final PlaceWeatherType? weatherType;
 
   const UiKitSwiperCard({
     super.key,
@@ -16,6 +17,7 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
     required super.title,
     required super.subtitle,
     this.tagsScrollController,
+    this.weatherType,
   });
 
   @override
@@ -45,6 +47,14 @@ class UiKitSwiperCard extends BaseUiKitSwiperCard {
                           errorWidget: const UiKitBigPhotoErrorWidget(),
                         ),
                       ),
+                      if (weatherType != null)
+                        Positioned(
+                          top: 12.w,
+                          left: 12.w,
+                          child: UiKitPlaceWeatherAnimation(
+                            weatherType: weatherType!,
+                          ),
+                        ),
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         crossAxisAlignment: CrossAxisAlignment.stretch,

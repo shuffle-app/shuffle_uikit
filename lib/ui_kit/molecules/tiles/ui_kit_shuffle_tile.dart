@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitShuffleTile extends StatelessWidget {
-  const UiKitShuffleTile({Key? key}) : super(key: key);
+  const UiKitShuffleTile({super.key});
 
   @override
   Widget build(BuildContext context) {

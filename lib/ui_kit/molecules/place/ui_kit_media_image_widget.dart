@@ -33,7 +33,7 @@ class UiKitMediaImageWidget extends BaseUiKitMediaWidget {
         ),
         if (weatherType != null)
           Positioned(
-            top: 12.h,
+            top: 12.w,
             left: 12.w,
             child: UiKitPlaceWeatherAnimation(
               weatherType: weatherType!,
