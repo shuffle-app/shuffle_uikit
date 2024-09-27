@@ -79,6 +79,7 @@ export 'form_fields/ui_kit_addable_form_field.dart';
 export 'image/big_avatar_error_widget.dart';
 export 'image/default_image_error_widget.dart';
 export 'image/image_widget.dart';
+export 'image/glow_image_widget.dart';
 export 'image/large_circular_avatar_error_widget.dart';
 export 'inputs/inputs.dart';
 export 'inputs/ui_kit_code_input_field.dart';
