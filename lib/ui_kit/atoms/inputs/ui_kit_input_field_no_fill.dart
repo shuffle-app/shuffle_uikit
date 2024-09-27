@@ -13,6 +13,7 @@ class UiKitInputFieldNoFill extends StatefulWidget
     this.onTap,
     this.onChanged,
     this.onFieldSubmitted,
+    this.onTapOutside,
     this.hintText,
     this.validator,
     this.keyboardType,
@@ -57,6 +58,7 @@ class UiKitInputFieldNoFill extends StatefulWidget
   final EdgeInsets? contentPadding;
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onFieldSubmitted;
+  final ValueChanged<PointerDownEvent>? onTapOutside;
   final VoidCallback? onTap;
   final Color? customLabelColor;
   final Color? customHintColor;
@@ -138,6 +140,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         style: inputTextStyle,
         onChanged: widget.onChanged,
         onFieldSubmitted: widget.onFieldSubmitted,
+        onTapOutside: widget.onTapOutside,
         validator: widget.validator,
         inputFormatters: widget.inputFormatters,
         maxLength: widget.maxSymbols,
