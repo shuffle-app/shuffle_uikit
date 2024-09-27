@@ -23,18 +23,28 @@ class UiKitAnimatedPullToShowRow extends StatefulWidget {
 }
 
 class _UiKitAnimatedPullToShowRowState extends State<UiKitAnimatedPullToShowRow> {
-  bool _isHintVisible = true;
+  bool _isFirstHintVisible = true;
+  bool _isSecondHintVisible = false;
   final double _hintVisibleThreshold = 0.5;
-  bool _showSecondHint = false;
   late Timer _debouncer = Timer(_timerDuration, () {});
 
   final _subscribedUsersFirstPhaseThreshold = 0.3;
 
-  final _subscribedUsersSecondPhaseThreshold = 1.4;
+  final _subscribedUsersSecondPhaseThreshold = 1.5;
 
-  final _subscribedUsersThirdPhaseThreshold = 1.7;
+  final _subscribedUsersThirdPhaseThreshold = 1;
 
-  Duration get _timerDuration => const Duration(milliseconds: 500);
+  Duration get _timerDuration => const Duration(milliseconds: 1000);
+
+  bool get passedNone => widget.progressNotifier.value < _subscribedUsersFirstPhaseThreshold;
+
+  bool get passedFirstPhase => !passedNone && widget.progressNotifier.value >= _subscribedUsersFirstPhaseThreshold;
+
+  bool get passedSecondPhase =>
+      passedFirstPhase && widget.progressNotifier.value >= _subscribedUsersSecondPhaseThreshold;
+
+  bool get passedThirdPhase =>
+      passedSecondPhase && widget.progressNotifier.value >= _subscribedUsersThirdPhaseThreshold;
 
   _runDebouncerCallback(VoidCallback callback) {
     _debouncer.cancel();
@@ -50,13 +60,16 @@ class _UiKitAnimatedPullToShowRowState extends State<UiKitAnimatedPullToShowRow>
   }
 
   void _pullListener() {
-    if (widget.progressNotifier.value < _subscribedUsersFirstPhaseThreshold) {
-      if (!_isHintVisible) setState(() => _isHintVisible = true);
-    } else if (widget.progressNotifier.value >= _subscribedUsersFirstPhaseThreshold) {
-      if (_isHintVisible) setState(() => _isHintVisible = false);
-      _runDebouncerCallback(() => setState(() => _showSecondHint = true));
-    } else if (widget.progressNotifier.value >= _subscribedUsersThirdPhaseThreshold) {
-      setState(() => _showSecondHint = true);
+    if (!passedNone) {
+      // if (!_isFirstHintVisible) setState(() => _isFirstHintVisible = true);
+      // } else if (passedFirstPhase && !passedSecondPhase) {
+      //   if (!_isFirstHintVisible) setState(() => _isFirstHintVisible = true);
+      // } else if (passedSecondPhase && !passedThirdPhase) {
+      //   if (!_isSecondHintVisible) setState(() => _isSecondHintVisible = true);
+      // } else if (passedThirdPhase) {
+      //   _runDebouncerCallback(() {
+      //     widget.stateNotifier.value = AnimatedPullToShowState.showLastPhase;
+      // });
     }
   }
 
@@ -78,25 +91,20 @@ class _UiKitAnimatedPullToShowRowState extends State<UiKitAnimatedPullToShowRow>
         return UiKitCardWrapper(
           color: colorScheme?.surface2,
           borderRadius: BorderRadiusFoundation.zero,
-          height: (0.15.sw + (SpacingFoundation.verticalSpacing16 * 2)) *
-              (_isHintVisible
-                  ? widget.progressNotifier.value
-                  : _showSecondHint
-                      ? widget.progressNotifier.value
-                      : min(1, widget.progressNotifier.value)),
+          height: (0.15.sw + (SpacingFoundation.verticalSpacing16 * 2)) * widget.progressNotifier.value,
           child: Stack(
             children: [
-              if (_showSecondHint || _isHintVisible)
+              if (_isFirstHintVisible)
                 AnimatedPositioned(
-                  duration: const Duration(milliseconds: 20),
+                  duration: const Duration(milliseconds: 200),
                   bottom: 0,
                   left: (1.sw / 2) - (0.15625.sw / 2),
                   child: const AnimatedPullToShowHint(),
                 ),
-              if (!_isHintVisible)
+              if (!_isFirstHintVisible)
                 AnimatedPositioned(
-                  duration: const Duration(milliseconds: 20),
-                  top: _showSecondHint ? 0.125.sw / 2 : 0,
+                  duration: const Duration(milliseconds: 200),
+                  top: _isSecondHintVisible ? 0.125.sw / 2 : 0,
                   height: 0.125.sw + (EdgeInsetsFoundation.all16 * 2),
                   child: child!,
                 ),

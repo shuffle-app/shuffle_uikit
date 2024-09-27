@@ -24,9 +24,9 @@ class DialogTestingPage extends StatelessWidget {
                     onPressed: () => getRefundBookingDialogUiKit(
                       context: context,
                       allTicket: 2,
-                      ticketRefun: 1,
+                      // ticketRefun: 1,
                       allUpsale: 2,
-                      upsaleRefun: 1,
+                      // upsaleRefun: 1,
                       userName: 'test userName',
                     ),
                   ),
