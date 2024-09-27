@@ -16,9 +16,9 @@ class GlowShadowWidget extends StatelessWidget {
     const opacity = 0.6;
 
     return Transform.scale(
-      scale: 1.1,
+      scale: 1.12,
       child: ImageFiltered(
-        imageFilter: ImageFilter.blur(sigmaY: 2, sigmaX: 2),
+        imageFilter: ImageFilter.blur(sigmaY: 2.3, sigmaX: 2.3),
         child: DecoratedBox(
           decoration: BoxDecoration(
             border: Border.all(

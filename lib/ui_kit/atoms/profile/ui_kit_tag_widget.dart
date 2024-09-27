@@ -33,8 +33,6 @@ class UiKitTagWidget extends StatelessWidget {
       color: textColor ?? ColorsFoundation.darkNeutral500,
     );
 
-    final isDarkMode = context.uiKitTheme?.colorScheme.surface == UiKitColorScheme.dark().surface;
-
     final iconColor = iconCustomColor ?? (uniqueTag ? Colors.white : textColor ?? ColorsFoundation.darkNeutral500);
 
     final image = ImageWidget(
