@@ -20,20 +20,6 @@ class DialogTestingPage extends StatelessWidget {
                 SpacingFoundation.verticalSpace16,
                 context.button(
                   data: BaseUiKitButtonData(
-                    text: 'show get Refund Booking Dialog UiKit',
-                    onPressed: () => getRefundBookingDialogUiKit(
-                      context: context,
-                      allTicket: 2,
-                      // ticketRefun: 1,
-                      allUpsale: 2,
-                      // upsaleRefun: 1,
-                      userName: 'test userName',
-                    ),
-                  ),
-                ),
-                SpacingFoundation.verticalSpace16,
-                context.button(
-                  data: BaseUiKitButtonData(
                     text: 'show global content alert dialog',
                     onPressed: () => showDialog(
                       context: context,
