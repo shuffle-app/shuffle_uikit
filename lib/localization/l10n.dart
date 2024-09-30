@@ -8924,6 +8924,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Select the time corresponding to the content card`
+  String get SelectTimeCorrespondingToContentCard {
+    return Intl.message(
+      'Select the time corresponding to the content card',
+      name: 'SelectTimeCorrespondingToContentCard',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

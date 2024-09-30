@@ -866,5 +866,6 @@
   "CropVertical": "Crop to vertical",
   "CropHorizontal": "Crop to horizontal",
   "ThereNoPlacesYet": "There are no places yet",
-  "ThereNoEventsYet": "There are no events yet"
+  "ThereNoEventsYet": "There are no events yet",
+  "SelectTimeCorrespondingToContentCard": "Select the time corresponding to the content card"
 }

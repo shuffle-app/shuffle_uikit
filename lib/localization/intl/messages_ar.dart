@@ -1183,6 +1183,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectStartTime":
             MessageLookupByLibrary.simpleMessage("Select a starting time"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("Select subs"),
+        "SelectTimeCorrespondingToContentCard":
+            MessageLookupByLibrary.simpleMessage(
+                "Select the time corresponding to the content card"),
         "SelectToSetPreview": MessageLookupByLibrary.simpleMessage(
             "Select a photo to set preview"),
         "SelectType": m72,
