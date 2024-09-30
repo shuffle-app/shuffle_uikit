@@ -858,6 +858,7 @@
   "CropVertical": "Обрезать для вертикали",
   "CropHorizontal": "Обрезать для горизонтали",
   "ThereNoPlacesYet": "Мест пока нет",
-  "ThereNoEventsYet": "Ивентов пока нет"
+  "ThereNoEventsYet": "Ивентов пока нет",
+  "SelectTimeCorrespondingToContentCard": "Выберите время соответствующее карточке контента"
 }
 
