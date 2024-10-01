@@ -867,5 +867,8 @@
   "CropHorizontal": "Crop to horizontal",
   "ThereNoPlacesYet": "There are no places yet",
   "ThereNoEventsYet": "There are no events yet",
-  "SelectTimeCorrespondingToContentCard": "Select the time corresponding to the content card"
+  "SelectTimeCorrespondingToContentCard": "Select the time corresponding to the content card",
+  "BookingPlural": "Bookings",
+  "AverageContentViewTime": "Average card visit time",
+  "Routes": "Routes"
 }

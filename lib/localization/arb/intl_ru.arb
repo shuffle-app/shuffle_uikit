@@ -867,6 +867,10 @@
   "CropHorizontal": "Обрезать для горизонтали",
   "ThereNoPlacesYet": "Мест пока нет",
   "ThereNoEventsYet": "Ивентов пока нет",
-  "SelectTimeCorrespondingToContentCard": "Выберите время соответствующее карточке контента"
+  "SelectTimeCorrespondingToContentCard": "Выберите время соответствующее карточке контента",
+  "BookingPlural": "Брони",
+  "AverageContentViewTime": "Среднее время просмотра карточки",
+  "Routes": "Маршруты"
+
 }
 

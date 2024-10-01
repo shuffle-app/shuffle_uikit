@@ -303,11 +303,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "बताएं कि आपको क्या पसंद आया या याद रहा"),
         "AddFeedbackFieldTitle":
             MessageLookupByLibrary.simpleMessage("अपने अनुभव का वर्णन करें"),
-        "AddImage": MessageLookupByLibrary.simpleMessage("Add Image"),
+        "AddImage": MessageLookupByLibrary.simpleMessage("छवि जोड़ें"),
         "AddInfluencerFeedbackPopOverText": MessageLookupByLibrary.simpleMessage(
             "एक विस्तृत समीक्षा लिखें, सभी उपलब्ध वर्णों का उपयोग करें ताकि जितने अधिक लोग संवाद कर सकें"),
         "AddLink": MessageLookupByLibrary.simpleMessage("लिंक जोड़ें"),
-        "AddPhotoHere": MessageLookupByLibrary.simpleMessage("Add photo here"),
+        "AddPhotoHere":
+            MessageLookupByLibrary.simpleMessage("फोटो यहाँ जोड़ें"),
         "AddPlaceType":
             MessageLookupByLibrary.simpleMessage("जगह प्रकार जोड़ें"),
         "AddPromotion": MessageLookupByLibrary.simpleMessage("प्रचार जोड़ें"),
@@ -366,6 +367,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Atheism": MessageLookupByLibrary.simpleMessage("नास्तिकता"),
         "Athlete": MessageLookupByLibrary.simpleMessage("एथलीट"),
         "AverageBill": MessageLookupByLibrary.simpleMessage("औसत बिल"),
+        "AverageContentViewTime":
+            MessageLookupByLibrary.simpleMessage("औसत कार्ड देखने का समय"),
         "Back": MessageLookupByLibrary.simpleMessage("वापस"),
         "Balance": MessageLookupByLibrary.simpleMessage("शेष राशि"),
         "BaseProperties": MessageLookupByLibrary.simpleMessage("आधार गुण"),
@@ -381,6 +384,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BookingLimitPerOne": MessageLookupByLibrary.simpleMessage(
             "एक व्यक्ति प्रति बुकिंग सीमा"),
         "BookingList": MessageLookupByLibrary.simpleMessage("बुकिंग सूची"),
+        "BookingPlural": MessageLookupByLibrary.simpleMessage("बुकिंग"),
         "Bookings": m4,
         "BookingsAndFavorites":
             MessageLookupByLibrary.simpleMessage("बुकिंग और पसंदीदा"),
@@ -482,7 +486,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("आमंत्रण नहीं मिल सका"),
         "CountReviews": m13,
         "CountVideoReaction": m14,
-        "Cover": MessageLookupByLibrary.simpleMessage("Cover"),
+        "Cover": MessageLookupByLibrary.simpleMessage("कवर"),
         "Coverage": MessageLookupByLibrary.simpleMessage("कवरेज"),
         "Create": MessageLookupByLibrary.simpleMessage("बनाएँ"),
         "CreateAUSP": m15,
@@ -506,9 +510,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "CredentialsVerificationTitle":
             MessageLookupByLibrary.simpleMessage("आपको खुश देखकर अच्छा लगा"),
         "CropHorizontal":
-            MessageLookupByLibrary.simpleMessage("Crop to horizontal"),
+            MessageLookupByLibrary.simpleMessage("क्षैतिज करने के लिए"),
         "CropVertical":
-            MessageLookupByLibrary.simpleMessage("Crop to vertical"),
+            MessageLookupByLibrary.simpleMessage("लंबवत करने के लिए"),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("वीडियो को काटना"),
         "Daily": MessageLookupByLibrary.simpleMessage("दैनिक"),
         "Date": MessageLookupByLibrary.simpleMessage("तारीख"),
@@ -647,7 +651,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Free": MessageLookupByLibrary.simpleMessage("मुफ्त"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("निःशुल्क स्थान"),
         "FridayShort": MessageLookupByLibrary.simpleMessage("शुक्रवार"),
-        "FromGallery": MessageLookupByLibrary.simpleMessage("From gallery"),
+        "FromGallery": MessageLookupByLibrary.simpleMessage("गैलरी से"),
         "FromToYearsOld": m32,
         "FulfillTheDream":
             MessageLookupByLibrary.simpleMessage("सपना पूरा करो"),
@@ -693,7 +697,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("संकेत प्रणाली अक्षम है"),
         "HintSystemEnabled": m34,
         "HorizontalFormat":
-            MessageLookupByLibrary.simpleMessage("Horizontal format"),
+            MessageLookupByLibrary.simpleMessage("क्षैतिज प्रारूप"),
         "HoursAgo": m35,
         "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
             "आप आज सुबह कैसा महसूस कर रहे हैं?"),
@@ -1119,6 +1123,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReviewsCount": m68,
         "ReviewsPosted": m69,
         "ReviewsReceived": m70,
+        "Routes": MessageLookupByLibrary.simpleMessage("रूट"),
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("शनिवार"),
         "Save": MessageLookupByLibrary.simpleMessage("सहेजें"),
         "SaveAndPay":
@@ -1194,9 +1199,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectSubs": MessageLookupByLibrary.simpleMessage("सब्स चुनें"),
         "SelectTimeCorrespondingToContentCard":
             MessageLookupByLibrary.simpleMessage(
-                "Select the time corresponding to the content card"),
+                "सामग्री कार्ड के अनुसार समय चुनें"),
         "SelectToSetPreview": MessageLookupByLibrary.simpleMessage(
-            "Select a photo to set preview"),
+            "पूर्वावलोकन सेट करने के लिए एक फोटो चुनें"),
         "SelectType": m72,
         "SelectYourBooking":
             MessageLookupByLibrary.simpleMessage("अपनी बुकिंग चुनें"),
@@ -1331,9 +1336,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThenCheckThisOut":
             MessageLookupByLibrary.simpleMessage("फिर इसे जांचें"),
         "ThereNoEventsYet":
-            MessageLookupByLibrary.simpleMessage("There are no events yet"),
+            MessageLookupByLibrary.simpleMessage("अब तक कोई घटना नहीं है"),
         "ThereNoPlacesYet":
-            MessageLookupByLibrary.simpleMessage("There are no places yet"),
+            MessageLookupByLibrary.simpleMessage("अब तक कोई स्थान नहीं है"),
         "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
             "ये सामग्री आपकी अन्य सूचियों पर है ।  जोड़े जाने पर, इसे वर्तमान से हटा दिया जाएगा । "),
         "ThisIs": MessageLookupByLibrary.simpleMessage("यह है"),
@@ -1433,8 +1438,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("सूचनाएँ उपयोग करें"),
         "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
             "मान कम से कम 3 वर्ण लंबा होना चाहिए"),
-        "VerticalFormat":
-            MessageLookupByLibrary.simpleMessage("Vertical format"),
+        "VerticalFormat": MessageLookupByLibrary.simpleMessage("लंबवत प्रारूप"),
         "VeryOften": MessageLookupByLibrary.simpleMessage("बहुत अक्सर"),
         "Video": MessageLookupByLibrary.simpleMessage("वीडियो"),
         "VideoFileNotCut": MessageLookupByLibrary.simpleMessage(

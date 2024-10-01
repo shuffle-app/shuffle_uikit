@@ -363,6 +363,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Atheism": MessageLookupByLibrary.simpleMessage("Atheism"),
         "Athlete": MessageLookupByLibrary.simpleMessage("Athlete"),
         "AverageBill": MessageLookupByLibrary.simpleMessage("Average bill"),
+        "AverageContentViewTime":
+            MessageLookupByLibrary.simpleMessage("Average card visit time"),
         "Back": MessageLookupByLibrary.simpleMessage("Back"),
         "Balance": MessageLookupByLibrary.simpleMessage("Balance"),
         "BaseProperties":
@@ -379,6 +381,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BookingLimitPerOne":
             MessageLookupByLibrary.simpleMessage("Booking Limit per one"),
         "BookingList": MessageLookupByLibrary.simpleMessage("Booking list"),
+        "BookingPlural": MessageLookupByLibrary.simpleMessage("Bookings"),
         "Bookings": m4,
         "BookingsAndFavorites":
             MessageLookupByLibrary.simpleMessage("Bookings and Favorites"),
@@ -1109,6 +1112,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReviewsCount": m68,
         "ReviewsPosted": m69,
         "ReviewsReceived": m70,
+        "Routes": MessageLookupByLibrary.simpleMessage("Routes"),
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Sat"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "SaveAndPay": MessageLookupByLibrary.simpleMessage("Save and pay"),

@@ -8934,6 +8934,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Bookings`
+  String get BookingPlural {
+    return Intl.message(
+      'Bookings',
+      name: 'BookingPlural',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average card visit time`
+  String get AverageContentViewTime {
+    return Intl.message(
+      'Average card visit time',
+      name: 'AverageContentViewTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Routes`
+  String get Routes {
+    return Intl.message(
+      'Routes',
+      name: 'Routes',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

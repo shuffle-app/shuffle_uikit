@@ -371,6 +371,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Atheism": MessageLookupByLibrary.simpleMessage("Атеизм"),
         "Athlete": MessageLookupByLibrary.simpleMessage("Спортсмен"),
         "AverageBill": MessageLookupByLibrary.simpleMessage("Средний чек"),
+        "AverageContentViewTime": MessageLookupByLibrary.simpleMessage(
+            "Среднее время просмотра карточки"),
         "Back": MessageLookupByLibrary.simpleMessage("Назад"),
         "Balance": MessageLookupByLibrary.simpleMessage("Баланс "),
         "BaseProperties":
@@ -388,6 +390,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BookingLimitPerOne": MessageLookupByLibrary.simpleMessage(
             "Лимит бронирования для одного"),
         "BookingList": MessageLookupByLibrary.simpleMessage("Список букингов"),
+        "BookingPlural": MessageLookupByLibrary.simpleMessage("Брони"),
         "Bookings": m4,
         "BookingsAndFavorites":
             MessageLookupByLibrary.simpleMessage("Букинги и избранное"),
@@ -1132,6 +1135,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReviewsCount": m68,
         "ReviewsPosted": m69,
         "ReviewsReceived": m70,
+        "Routes": MessageLookupByLibrary.simpleMessage("Маршруты"),
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Сб"),
         "Save": MessageLookupByLibrary.simpleMessage("Сохранить"),
         "SaveAndPay":
