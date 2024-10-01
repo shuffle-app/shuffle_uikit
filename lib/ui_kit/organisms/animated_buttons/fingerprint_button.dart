@@ -135,8 +135,8 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
 
   void _reverseAnimation([needAwait = false]) async {
     if (needAwait) {
-      await Future.delayed(const Duration(milliseconds: 50));
-      if (_currentPosition.value == Offset.zero) return;
+      await Future.delayed(const Duration(milliseconds: 200));
+      if (_currentPosition.value != Offset.zero) return;
     }
     await _controller.reverse().then((value) {
       final touchCenter = _finishPosition.dx / 1.6 + _buttonCenter;

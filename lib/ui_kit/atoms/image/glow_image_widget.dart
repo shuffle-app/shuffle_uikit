@@ -13,27 +13,21 @@ class GlowShadowWidget extends StatelessWidget {
     final theme = context.uiKitTheme;
     final isDarkMode = theme?.colorScheme.surface == const UiKitColorScheme.dark().surface;
     final shadowColor = (isDarkMode ? UiKitColors.yellowDarkShadow : UiKitColors.yellowBrightShadow);
-    const opacity = 0.6;
+    const opacity = 0.7;
+    const scaleFactor = 1.1;
 
     return Transform.scale(
-      scale: 1.12,
+      scale: scaleFactor,
       child: ImageFiltered(
         imageFilter: ImageFilter.blur(sigmaY: 2.3, sigmaX: 2.3),
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            border: Border.all(
-              color: Colors.transparent,
-              width: 0,
-            ),
-          ),
-          child: Opacity(
+        child: Opacity(
             opacity: opacity,
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(shadowColor, BlendMode.srcATop),
               child: child,
             ),
           ),
-        ),
+
       ),
     );
   }
