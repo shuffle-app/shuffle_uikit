@@ -22,6 +22,7 @@ contactForRefundDialog({
         textAlign: TextAlign.center,
       ),
       actions: [
+        if(contactByMessageTap!=null)
         Row(
           children: [
             Expanded(
