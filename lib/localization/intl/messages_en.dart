@@ -797,6 +797,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Messages": MessageLookupByLibrary.simpleMessage("Messages"),
         "Min": MessageLookupByLibrary.simpleMessage("min"),
         "MinutesAgo": m45,
+        "MinutesShort": MessageLookupByLibrary.simpleMessage("min"),
         "Moderated": MessageLookupByLibrary.simpleMessage("Moderated"),
         "MondayShort": MessageLookupByLibrary.simpleMessage("Mon"),
         "Month": MessageLookupByLibrary.simpleMessage("Month"),

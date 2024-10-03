@@ -868,6 +868,7 @@
   "ThereNoEventsYet": "अब तक कोई घटना नहीं है",
   "SelectTimeCorrespondingToContentCard": "सामग्री कार्ड के अनुसार समय चुनें",
   "AverageContentViewTime": "औसत कार्ड देखने का समय",
-  "Routes": "रूट"
+  "Routes": "रूट",
+  "MinutesShort": "मिनट"
 
 }

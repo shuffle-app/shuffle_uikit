@@ -870,7 +870,8 @@
   "SelectTimeCorrespondingToContentCard": "Выберите время соответствующее карточке контента",
   "BookingPlural": "Брони",
   "AverageContentViewTime": "Среднее время просмотра карточки",
-  "Routes": "Маршруты"
+  "Routes": "Маршруты",
+  "MinutesShort": "мин"
 
 }
 

@@ -8964,6 +8964,16 @@ class S {
       args: [],
     );
   }
+
+  /// `min`
+  String get MinutesShort {
+    return Intl.message(
+      'min',
+      name: 'MinutesShort',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

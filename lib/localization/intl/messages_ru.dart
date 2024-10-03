@@ -812,6 +812,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Messages": MessageLookupByLibrary.simpleMessage("Сообщения"),
         "Min": MessageLookupByLibrary.simpleMessage("мин"),
         "MinutesAgo": m45,
+        "MinutesShort": MessageLookupByLibrary.simpleMessage("мин"),
         "Moderated": MessageLookupByLibrary.simpleMessage("Модерировано"),
         "MondayShort": MessageLookupByLibrary.simpleMessage("Пн"),
         "Month": MessageLookupByLibrary.simpleMessage("Месяц"),

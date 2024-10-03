@@ -870,6 +870,7 @@
   "SelectTimeCorrespondingToContentCard": "Select the time corresponding to the content card",
   "BookingPlural": "Bookings",
   "AverageContentViewTime": "Average card visit time",
-  "Routes": "Routes"
+  "Routes": "Routes",
+  "MinutesShort": "min"
 
 }
