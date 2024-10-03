@@ -18,7 +18,7 @@ class UiKitMiniChart extends StatefulWidget {
 class _UiKitMiniChartState extends State<UiKitMiniChart> {
   final ScrollController _datesScrollController = ScrollController();
   double? datesToPreviewWidthRatio;
-  Size get previewSize => Size(1.sw - (72), 0.07.sh);
+  Size get previewSize => Size(1.sw - 72, (1.sw - 72) * 0.15625);
   Size get datesViewPortSize => Size(
         previewSize.width,
         0.0281.sh,
@@ -34,7 +34,9 @@ class _UiKitMiniChartState extends State<UiKitMiniChart> {
   @override
   void initState() {
     super.initState();
-    final difference = widget.data.period.start.difference(widget.data.period.end).inDays;
+    final difference = widget.data.period.start.isAtSameMomentAs(widget.data.period.end)
+        ? 0
+        : widget.data.period.start.difference(widget.data.period.end).inDays;
     final visibleDatesCount = difference * _previewUpdatesNotifier.value.previewWidthFraction;
     _dateNotifier.value = DateRange(
       start: widget.data.period.start,

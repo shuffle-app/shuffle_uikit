@@ -117,7 +117,7 @@ class UiKitLineChartBody extends StatelessWidget {
                           children: [
                             DashedDivider(color: ColorsFoundation.darkNeutral900, availableWidth: availableSize.width),
                             Text(
-                              e,
+                              e == '0' ? '' : e,
                               style: regularTextTheme?.caption2.copyWith(color: ColorsFoundation.mutedText),
                             ),
                             DashedDivider(color: ColorsFoundation.darkNeutral900, availableWidth: availableSize.width),

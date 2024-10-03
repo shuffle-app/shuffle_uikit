@@ -8625,6 +8625,26 @@ class S {
     );
   }
 
+  /// `Bookings and Favorites`
+  String get BookingsAndFavorites {
+    return Intl.message(
+      'Bookings and Favorites',
+      name: 'BookingsAndFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invitations`
+  String get Invitations {
+    return Intl.message(
+      'Invitations',
+      name: 'Invitations',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Your reminder is shown 1 time on the specified date.`
   String get YourReminderIsShown1Time {
     return Intl.message(
@@ -8650,6 +8670,16 @@ class S {
     return Intl.message(
       'upgrade for free',
       name: 'UpgradeForFree',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Feedbacks`
+  String get FeedbackPluralNoNumber {
+    return Intl.message(
+      'Feedbacks',
+      name: 'FeedbackPluralNoNumber',
       desc: '',
       args: [],
     );
@@ -8730,6 +8760,56 @@ class S {
     return Intl.message(
       'No end time',
       name: 'NoEndTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Coverage`
+  String get Coverage {
+    return Intl.message(
+      'Coverage',
+      name: 'Coverage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Views`
+  String get Views {
+    return Intl.message(
+      'Views',
+      name: 'Views',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Visitors`
+  String get Visitors {
+    return Intl.message(
+      'Visitors',
+      name: 'Visitors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Budget {sum}{currency}`
+  String Budget(Object sum, Object currency) {
+    return Intl.message(
+      'Budget $sum$currency',
+      name: 'Budget',
+      desc: '',
+      args: [sum, currency],
+    );
+  }
+
+  /// `Organic`
+  String get Organic {
+    return Intl.message(
+      'Organic',
+      name: 'Organic',
       desc: '',
       args: [],
     );
@@ -8850,6 +8930,46 @@ class S {
     return Intl.message(
       'Select the time corresponding to the content card',
       name: 'SelectTimeCorrespondingToContentCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bookings`
+  String get BookingPlural {
+    return Intl.message(
+      'Bookings',
+      name: 'BookingPlural',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average card visit time`
+  String get AverageContentViewTime {
+    return Intl.message(
+      'Average card visit time',
+      name: 'AverageContentViewTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Routes`
+  String get Routes {
+    return Intl.message(
+      'Routes',
+      name: 'Routes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `min`
+  String get MinutesShort {
+    return Intl.message(
+      'min',
+      name: 'MinutesShort',
       desc: '',
       args: [],
     );

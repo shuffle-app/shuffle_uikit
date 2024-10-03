@@ -837,9 +837,12 @@
   "YourReminderShown1TimeOnTheSpecifiedDate": "Ваше напоминание показывается 1 раз в указанную дату.",
   "OhYeahSure": "О да, конечно!",
   "YourReminderIsShown1TimeMax3": "Ваше напоминание отображается 1 раз в указанный день. У вас есть максимум 3 попытки получить напоминание.",
-  "YourReminderIsShown1Time": "Ваше напоминание отображается 1 раз в указанный день.",
   "ToExtendYourUseSelectPayment": "Чтобы продлить срок использования, выберите пункт оплата",
   "UpgradeForFree": "обновитесь бесплатно",
+  "YourReminderIsShown1Time": "Ваше напоминание отображается 1 раз в указанный день.",
+  "BookingsAndFavorites": "Букинги и избранное",
+  "Invitations": "Приглашения",
+  "FeedbackPluralNoNumber": "Отзывы",
   "CreateAUSP": "Создайте УТП за ${count} для своих клиентов",
   "RemainsToCreate": "Осталось создать",
   "SaveTemplate": "Сохранить шаблон",
@@ -848,6 +851,11 @@
   "SelectStartTime": "Выберите время старта",
   "SelectEndTime": "Выберите время окончания",
   "NoEndTime": "Без времени окончания",
+  "Coverage": "Охват",
+  "Views": "Просмотры",
+  "Visitors": "Посетители",
+  "Budget": "Бюджет {sum}{currency}",
+  "Organic": "Органическая",
   "AddImage": "Добавить изображения",
   "Cover": "Обложка",
   "HorizontalFormat": "Горизонтальный формат",
@@ -859,6 +867,11 @@
   "CropHorizontal": "Обрезать для горизонтали",
   "ThereNoPlacesYet": "Мест пока нет",
   "ThereNoEventsYet": "Ивентов пока нет",
-  "SelectTimeCorrespondingToContentCard": "Выберите время соответствующее карточке контента"
+  "SelectTimeCorrespondingToContentCard": "Выберите время соответствующее карточке контента",
+  "BookingPlural": "Брони",
+  "AverageContentViewTime": "Среднее время просмотра карточки",
+  "Routes": "Маршруты",
+  "MinutesShort": "мин"
+
 }
 

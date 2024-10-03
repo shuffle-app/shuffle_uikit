@@ -33,6 +33,11 @@ class LineChartSmallPreviewData {
       visibleLinesIds: visibleLinesIds ?? this.visibleLinesIds,
     );
   }
+
+  @override
+  String toString() {
+    return 'LineChartSmallPreviewData(leftOffset: $leftOffset, previewWidthFraction: $previewWidthFraction, atEdge: $atEdge, visibleLinesIds: $visibleLinesIds)';
+  }
 }
 
 class LineChartSelectedPointData {
