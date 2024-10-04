@@ -327,6 +327,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Добавить в избранное"),
         "AddToPersonalTop":
             MessageLookupByLibrary.simpleMessage("Добавить в личный ТОП"),
+        "AddToScheduler":
+            MessageLookupByLibrary.simpleMessage("Добавить планировщик"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Добавиться в список"),
         "Address": MessageLookupByLibrary.simpleMessage("Адрес"),
@@ -1253,6 +1255,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Полезные сервисы и места"),
         "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Что-то пошло не так. Попробуй еще раз."),
+        "Soon": MessageLookupByLibrary.simpleMessage("Скоро"),
         "Spend": MessageLookupByLibrary.simpleMessage("Потратить"),
         "SpendHoursPerWeek": m74,
         "SpendIt": MessageLookupByLibrary.simpleMessage("Потратить"),

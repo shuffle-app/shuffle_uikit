@@ -859,6 +859,8 @@
   "CropHorizontal": "Обрезать для горизонтали",
   "ThereNoPlacesYet": "Мест пока нет",
   "ThereNoEventsYet": "Ивентов пока нет",
-  "SelectTimeCorrespondingToContentCard": "Выберите время соответствующее карточке контента"
+  "SelectTimeCorrespondingToContentCard": "Выберите время соответствующее карточке контента",
+  "AddToScheduler": "Добавить планировщик",
+  "Soon": "Скоро" 
 }
 

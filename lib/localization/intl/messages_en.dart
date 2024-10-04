@@ -320,6 +320,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Add to my favorites"),
         "AddToPersonalTop":
             MessageLookupByLibrary.simpleMessage("Add to personal TOP"),
+        "AddToScheduler":
+            MessageLookupByLibrary.simpleMessage("Add to scheduler"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Add yourself to list"),
         "Address": MessageLookupByLibrary.simpleMessage("Address"),
@@ -1229,6 +1231,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Useful services and places"),
         "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Something went wrong. Please try again."),
+        "Soon": MessageLookupByLibrary.simpleMessage("Soon"),
         "Spend": MessageLookupByLibrary.simpleMessage("Spend"),
         "SpendHoursPerWeek": m74,
         "SpendIt": MessageLookupByLibrary.simpleMessage("Spend it"),

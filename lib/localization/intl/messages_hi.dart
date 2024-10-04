@@ -324,6 +324,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("मेरे पसंदीदा में जोड़ें"),
         "AddToPersonalTop":
             MessageLookupByLibrary.simpleMessage("व्यक्तिगत शीर्ष पर जोड़ें"),
+        "AddToScheduler":
+            MessageLookupByLibrary.simpleMessage("Add to scheduler"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("स्वयं को सूची में जोड़ें"),
         "Address": MessageLookupByLibrary.simpleMessage("पता"),
@@ -1236,6 +1238,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("उपयोगी सेवाएँ और स्थान"),
         "SomethingWentWrong":
             MessageLookupByLibrary.simpleMessage("कुछ गलत हो गया"),
+        "Soon": MessageLookupByLibrary.simpleMessage("Soon"),
         "Spend": MessageLookupByLibrary.simpleMessage("खर्च करें"),
         "SpendHoursPerWeek": m74,
         "SpendIt": MessageLookupByLibrary.simpleMessage("इसे खर्च करें"),

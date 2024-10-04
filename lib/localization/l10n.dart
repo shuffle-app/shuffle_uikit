@@ -8854,6 +8854,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Add to scheduler`
+  String get AddToScheduler {
+    return Intl.message(
+      'Add to scheduler',
+      name: 'AddToScheduler',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Soon`
+  String get Soon {
+    return Intl.message(
+      'Soon',
+      name: 'Soon',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
