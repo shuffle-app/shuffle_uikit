@@ -62,13 +62,13 @@ class SubsOrUpsaleItem extends StatelessWidget {
                     ),
                     child: UiKitCardWrapper(
                       width: 124.w,
-                      borderRadius: BorderRadiusFoundation.all10,
+                      borderRadius: BorderRadiusFoundation.all12,
                       child: actualLimitIsFull && !selectedItem
                           ? Stack(
                               children: [
                                 ImageWidget(
                                   width: 124.w,
-                                  height: 1.sw <= 380 ? 90.h : 60.h,
+                                  height: 1.sw <= 380 ? 90.h : 70.h,
                                   link: photoLink,
                                   fit: BoxFit.fill,
                                 ),
@@ -78,13 +78,13 @@ class SubsOrUpsaleItem extends StatelessWidget {
                                   ),
                                   child: SizedBox(
                                     width: 124.w,
-                                    height: 1.sw <= 380 ? 90.h : 60.h,
+                                    height: 1.sw <= 380 ? 90.h : 70.h,
                                   ),
                                 ),
                               ],
                             )
                           : ImageWidget(
-                              height: 1.sw <= 380 ? 90.h : 60.h,
+                              height: 1.sw <= 380 ? 90.h : 70.h,
                               link: photoLink,
                               fit: BoxFit.cover,
                             ),
