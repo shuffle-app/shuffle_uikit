@@ -9,6 +9,8 @@ import 'package:shimmer/shimmer.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:video_player/video_player.dart';
 
+import '../../../utils/icon_matcher/icon_matcher.dart';
+
 class ImageWidget extends StatelessWidget {
   static final placeholder = Shimmer.fromColors(
     direction: ShimmerDirection.ltr,
@@ -136,6 +138,18 @@ class ImageWidget extends StatelessWidget {
           },
         );
       } else if (link!.split('.').lastOrNull == 'svg' || link!.contains('svg-icons')) {
+        if (link!.split('.').lastOrNull == 'svg' && IconMatcher.matchSvgToIcon(link!) != null) {
+          return Transform.scale(
+            scale: 0.8,
+            child: Icon(
+            IconMatcher.matchSvgToIcon(link!)!,
+            color: color,
+            size: height ?? width,
+            opticalSize: height ?? width,
+            grade: 25,
+          ));
+        }
+
         return kIsWeb
             ? SvgPicture.network(
                 CustomProxyStatic.proxy + link!,
@@ -163,8 +177,7 @@ class ImageWidget extends StatelessWidget {
 
       // !.startsWith("http://") || link!.startsWith("https://")) {
       return CachedNetworkImage(
-        imageUrl:
-            CustomProxyStatic.proxy + link! + (width != null ? '?width=${width! * 2}' : '?width=${0.7.sw * 2}'),
+        imageUrl: CustomProxyStatic.proxy + link! + (width != null ? '?width=${width! * 2}' : '?width=${0.7.sw * 2}'),
         fit: fit,
         fadeInDuration: const Duration(milliseconds: 200),
         fadeOutDuration: const Duration(milliseconds: 200),
@@ -180,10 +193,12 @@ class ImageWidget extends StatelessWidget {
 
           return imageBuilder?.call(context, imageWidget, 1, false) ?? imageWidget;
         },
+        errorListener: (error) {
+          onImageLoadingFailed?.call();
+        },
         errorWidget: (context, url, trace) {
           log('Got error while downloading $url', name: 'ImageWidget');
           log(trace.toString(), name: 'ImageWidget');
-          onImageLoadingFailed?.call();
 
           return errorWidget ?? const DefaultImageErrorWidget();
         },
@@ -191,14 +206,14 @@ class ImageWidget extends StatelessWidget {
       );
     } else if (link!.contains('svg')) {
       return SvgPicture.asset(
-              link!,
-              fit: fit ?? BoxFit.none,
-              width: width,
-              colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
-              height: height,
-              package: mentionPackage ? 'shuffle_uikit' : null,
-              placeholderBuilder: (context) => errorWidget ?? const DefaultImageErrorWidget(),
-            );
+        link!,
+        fit: fit ?? BoxFit.none,
+        width: width,
+        colorFilter: color == null ? null : ColorFilter.mode(color!, BlendMode.srcIn),
+        height: height,
+        package: mentionPackage ? 'shuffle_uikit' : null,
+        placeholderBuilder: (context) => errorWidget ?? const DefaultImageErrorWidget(),
+      );
     } else if (link!.contains('asset')) {
       return Image.asset(
         link!,
@@ -325,9 +340,14 @@ class _CustomCachedSvgPictureState extends State<_CustomCachedSvgPicture> {
                 height: widget.height,
                 width: widget.width,
               )
-            : ConstrainedBox(
-                constraints: BoxConstraints.loose(Size(widget.height ?? 20.w, widget.width ?? 20.w)),
-                child: widget.placeholder,
-              ));
+            : Transform.scale(
+                scale: 0.8,
+                child: Icon(
+                  ShuffleUiKitIcons.logo,
+                  color: widget.color,
+                  size: widget.height ?? widget.width,
+                  opticalSize: widget.height ?? widget.width,
+                  grade: 25,
+                )));
   }
 }

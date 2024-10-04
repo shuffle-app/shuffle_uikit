@@ -947,7 +947,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Буквы, цифры, ! “ @ # \$ % &, не менее 8 символов"),
         "PasswordMustBeAtLeast8Characters":
             MessageLookupByLibrary.simpleMessage("Пароль не менее 8 символов"),
-        "Past": MessageLookupByLibrary.simpleMessage("Прошедние"),
+        "Past": MessageLookupByLibrary.simpleMessage("Прошедшие"),
         "Paused": MessageLookupByLibrary.simpleMessage("Остановлен"),
         "Pay": MessageLookupByLibrary.simpleMessage("Оплатить"),
         "PayForTheBonusOffer": MessageLookupByLibrary.simpleMessage(
