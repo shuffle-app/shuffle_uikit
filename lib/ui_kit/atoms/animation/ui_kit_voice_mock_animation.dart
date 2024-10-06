@@ -34,8 +34,8 @@ class _UiKitVoiceMockAnimationState extends State<UiKitVoiceMockAnimation> {
             child: AnimatedScale(
               duration: const Duration(milliseconds: 250),
               scale: decoratedButtonScale,
-              child: UiKitGradientedDecoratedButton(
-                iconPath: GraphicsFoundation.instance.svg.record.path,
+              child: const UiKitGradientedDecoratedButton(
+                iconData: ShuffleUiKitIcons.record,
               ),
             ),
           ),

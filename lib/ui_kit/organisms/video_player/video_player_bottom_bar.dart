@@ -63,13 +63,13 @@ class _VideoPlayerBottomBarState extends State<VideoPlayerBottomBar> {
                             duration: iconSwitchDuration,
                             child: value.isPlaying
                                 ? ImageWidget(
-                                    iconData: ShuffleUiKitIcons.pause,
+                                    iconData: ShuffleUiKitIcons.pausefill,
                                     height: height,
                                     fit: BoxFit.fitHeight,
                                     color: Colors.white,
                                   )
                                 : ImageWidget(
-                                    iconData: ShuffleUiKitIcons.play,
+                                    iconData: ShuffleUiKitIcons.playfill,
                                     height: height,
                                     fit: BoxFit.fitHeight,
                                     color: Colors.white,

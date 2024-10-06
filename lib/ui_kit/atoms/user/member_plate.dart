@@ -31,8 +31,8 @@ class MemberPlate extends StatelessWidget {
             style: textTheme?.caption1Bold.copyWith(color: Colors.black),
           ),
           SpacingFoundation.horizontalSpace4,
-          const ImageWidget(
-            iconData: ShuffleUiKitIcons.memeberGradientStar,
+          ImageWidget(
+            svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
             color: Colors.black,
           ),
           SpacingFoundation.horizontalSpace4,

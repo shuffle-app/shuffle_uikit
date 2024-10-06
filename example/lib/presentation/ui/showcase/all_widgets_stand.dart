@@ -32,37 +32,37 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
     UiKitMenuItem<String>(
       title: 'Active Tiger',
       value: 'tiger',
-      icon: ShuffleUiKitIcons.tiger,
+      iconLink: GraphicsFoundation.instance.svg.tiger.path,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'interested Adventurer',
       value: 'adventurer',
-      icon: ShuffleUiKitIcons.adventure,
+      iconLink: GraphicsFoundation.instance.svg.adventure.path,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'forever Resting sloth',
       value: 'resting sloth',
-      icon: ShuffleUiKitIcons.sleep,
+      iconLink: GraphicsFoundation.instance.svg.sleep.path,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
       value: 'tiger',
-      icon: ShuffleUiKitIcons.swim,
+      iconLink: GraphicsFoundation.instance.svg.swim.path,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
       value: 'tiger',
-      icon: ShuffleUiKitIcons.athlete,
+      iconLink: GraphicsFoundation.instance.svg.athlete.path,
       type: 'leisure',
     ),
     UiKitMenuItem<String>(
       title: 'Active Tiger',
       value: 'tiger',
-      icon: ShuffleUiKitIcons.food,
+      iconLink: GraphicsFoundation.instance.svg.food.path,
       type: 'leisure',
     ),
   ];
@@ -151,13 +151,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             ),
             UiKitContentUpdateWithLeadingImage(
               imageUrl: GraphicsFoundation.instance.png.placeSocial2.path,
-              updateIconUrl: GraphicsFoundation.instance.svg.starFill.path,
+              iconData: ShuffleUiKitIcons.starfill,
               title: S.current.PlusXNewReviews(10),
               subtitle: 'Virgins on the beach',
             ),
             UiKitContentUpdateWithLeadingImage(
               imageUrl: GraphicsFoundation.instance.png.placeSocial1.path,
-              updateIconUrl: GraphicsFoundation.instance.svg.voice.path,
+              iconData: ShuffleUiKitIcons.voice,
               title: S.current.PlusXNewVoices(10),
               subtitle: 'Virgins on the beach',
             ),
@@ -194,13 +194,13 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             ),
             UiKitContentUpdateWithLeadingImage(
               imageUrl: GraphicsFoundation.instance.png.mapMock.path,
-              updateIconUrl: GraphicsFoundation.instance.svg.landmark.path,
+              iconData: ShuffleUiKitIcons.landmark,
               title: S.current.PlusXNewRoutes,
               subtitle: 'Virgins on the beach',
             ),
             UiKitContentUpdateWithLeadingImage(
               imageUrl: GraphicsFoundation.instance.png.place.path,
-              updateIconUrl: GraphicsFoundation.instance.svg.playOutline.path,
+              iconData: ShuffleUiKitIcons.playoutline,
               title: S.current.PlusXNewInterviews,
               subtitle: 'Virgins on the beach',
             ),
@@ -231,7 +231,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             ),
             UiKitContentUpdateWithLeadingImage(
               imageUrl: GraphicsFoundation.instance.png.spinnerTextBanner2.path,
-              updateIconUrl: GraphicsFoundation.instance.svg.playOutline.path,
+              iconData: ShuffleUiKitIcons.playoutline,
               title: S.current.PlusXNewVideos,
               subtitle: 'Virgins on the beach',
             ),
@@ -250,7 +250,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               height: 0.125.sw * 1.7,
             ),
             UiKitOnlyTextContentUpdateWidget(
-              updateIcon: GraphicsFoundation.instance.svg.message.path,
+              updateIcon: ShuffleUiKitIcons.message,
               title: '${S.current.Chat.toUpperCase()} ${S.current.PlusXNewChatComments(10)}',
               text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
                   'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. '
@@ -415,21 +415,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               isSelected: true,
               data: BaseUiKitButtonData(
                 onPressed: () {},
-                iconInfo: BaseUiKitButtonIconData(iconPath: GraphicsFoundation.instance.svg.sunny.path),
+                iconInfo: BaseUiKitButtonIconData(iconData: ShuffleUiKitIcons.sunny),
               ),
             ),
             context.boxIconButton(
               isSelected: true,
               data: BaseUiKitButtonData(
                 onPressed: () {},
-                iconInfo: BaseUiKitButtonIconData(iconPath: GraphicsFoundation.instance.svg.rain.path),
+                iconInfo: BaseUiKitButtonIconData(iconData: ShuffleUiKitIcons.rain),
               ),
             ),
             context.boxIconButton(
               isSelected: false,
               data: BaseUiKitButtonData(
                 onPressed: () {},
-                iconInfo: BaseUiKitButtonIconData(iconPath: GraphicsFoundation.instance.svg.windy.path),
+                iconInfo: BaseUiKitButtonIconData(iconData: ShuffleUiKitIcons.windy),
               ),
             ),
           ],
@@ -1168,7 +1168,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
         SpacingFoundation.verticalSpace16,
         ShortLogInButton(
-          icon: ShuffleUiKitIcons.googleLogo,
+          link: GraphicsFoundation.instance.svg.googleLogo.path,
           title: 'continue with google',
           onTap: () {},
         ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal20),
@@ -1338,8 +1338,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                   'shuffle',
                   style: textTheme?.caption1Bold.copyWith(color: Colors.black),
                 ),
-                const ImageWidget(
-                  iconData: ShuffleUiKitIcons.memeberGradientStar,
+                ImageWidget(
+                  svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
                 ),
               ],
             ),
@@ -1413,8 +1413,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         UiKitPopUpMenuTile(
           title: 'Eugene Carter',
-          titleIcon: const ImageWidget(
-            iconData: ShuffleUiKitIcons.memeberGradientStar,
+          titleIcon: ImageWidget(
+            svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
           ),
           subtitle: '@raceboi',
           leading: BorderedUserCircleAvatar(
@@ -1439,8 +1439,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         SpacingFoundation.verticalSpace16,
         UiKitPopUpMenuTile(
           title: 'Eugene Carter',
-          titleIcon: const ImageWidget(
-            iconData: ShuffleUiKitIcons.memeberGradientStar,
+          titleIcon: ImageWidget(
+            svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
           ),
           subtitle: '@raceboi',
           leading: BorderedUserCircleAvatar(
@@ -1497,7 +1497,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               iconSize: 92,
             ),
             ActionCardDecorationIconData(
-              icon: ShuffleUiKitIcons.bellnotification,
+              iconLink: GraphicsFoundation.instance.svg.bellNotification.path,
               position: DecorationIconPosition(
                 right: 0,
                 top: 4,
@@ -1580,7 +1580,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               rotationAngle: 47.5,
             ),
             ActionCardDecorationIconData(
-              icon: ShuffleUiKitIcons.icecream,
+              iconLink: GraphicsFoundation.instance.svg.icecream.path,
               position: DecorationIconPosition(
                 right: 86,
                 bottom: 0,
@@ -1588,7 +1588,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               rotationAngle: -15,
             ),
             ActionCardDecorationIconData(
-              icon: ShuffleUiKitIcons.firstaidkit,
+              iconLink: GraphicsFoundation.instance.svg.firstAidKit.path,
               iconSize: 44,
               position: DecorationIconPosition(
                 top: 32,
@@ -1753,19 +1753,19 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             UiKitMenuItem<String>(
               title: 'Active Tiger Business',
               value: 'tiger',
-              icon: ShuffleUiKitIcons.swim,
+              iconLink: GraphicsFoundation.instance.svg.swim.path,
               type: 'business',
             ),
             UiKitMenuItem<String>(
               title: 'Active Tiger Business',
               value: 'tiger',
-              icon: ShuffleUiKitIcons.athlete,
+              iconLink: GraphicsFoundation.instance.svg.athlete.path,
               type: 'business',
             ),
             UiKitMenuItem<String>(
               title: 'Active Tiger Business',
               value: 'tiger',
-              icon: ShuffleUiKitIcons.food,
+              iconLink: GraphicsFoundation.instance.svg.food.path,
               type: 'business',
             ),
           ],
@@ -1785,8 +1785,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: UiKitVerticalChip(
                   selected: selection,
                   caption: 'Male',
-                  sign: const ImageWidget(
-                    iconData: ShuffleUiKitIcons.male,
+                  sign: ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.male,
                   ),
                   onTap: () => setState(() => selection = !selection),
                 ),
@@ -1796,8 +1796,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: UiKitVerticalChip(
                   selected: selection,
                   caption: 'Female',
-                  sign: const ImageWidget(
-                    iconData: ShuffleUiKitIcons.femle,
+                  sign: ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.femle,
                   ),
                   onTap: () => setState(() => selection = !selection),
                 ),
@@ -1807,8 +1807,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 child: UiKitVerticalChip(
                   selected: selection,
                   caption: 'Other',
-                  sign: const ImageWidget(
-                    iconData: ShuffleUiKitIcons.othergender,
+                  sign: ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.otherGender,
                   ),
                   onTap: () => setState(() => selection = !selection),
                 ),
@@ -1857,8 +1857,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ),
           requiredData: NotificationPopupRequiredData(
             titleString: 'Yoga today at Palm Jumeirah. You go?',
-            icon: const ImageWidget(
-              iconData: ShuffleUiKitIcons.heartinhandemoji,
+            icon: ImageWidget(
+              svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
             ),
             hasShadow: true,
           ),
@@ -1873,8 +1873,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ),
           requiredData: NotificationPopupRequiredData(
             titleString: 'Yoga today at Palm Jumeirah. You go?',
-            icon: const ImageWidget(
-              iconData: ShuffleUiKitIcons.heartinhandemoji,
+            icon: ImageWidget(
+              svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
             ),
           ),
         ),
@@ -1891,8 +1891,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ),
           requiredData: NotificationPopupRequiredData(
             titleString: 'Yoga today at Palm Jumeirah. You go?',
-            icon: const ImageWidget(
-              iconData: ShuffleUiKitIcons.heartinhandemoji,
+            icon: ImageWidget(
+              svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
             ),
             hasShadow: true,
           ),
@@ -1910,8 +1910,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           ),
           requiredData: NotificationPopupRequiredData(
             titleString: 'Yoga today at Palm Jumeirah. You go?',
-            icon: const ImageWidget(
-              iconData: ShuffleUiKitIcons.heartinhandemoji,
+            icon: ImageWidget(
+              svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
             ),
           ),
         ),
@@ -1932,8 +1932,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  const ImageWidget(
-                    iconData: ShuffleUiKitIcons.ski,
+                  ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.ski,
                   ),
                   SpacingFoundation.horizontalSpace12,
                   Expanded(
@@ -1980,8 +1980,8 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
                 style: context.uiKitTheme?.boldTextTheme.subHeadline,
               ),
               SpacingFoundation.verticalSpace8,
-              const ImageWidget(
-                iconData: ShuffleUiKitIcons.heartinhandemoji,
+              ImageWidget(
+                svgAsset: GraphicsFoundation.instance.svg.heartInHandEmoji,
               ),
             ],
           ),
@@ -2069,21 +2069,21 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               UiKitMessageCardWithIcon(
                 onPressed: () {},
                 message: 'Want to have some fun',
-                icon: ShuffleUiKitIcons.smileycrazyfaceemoji,
+                iconLink: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji.path,
                 layoutDirection: Axis.vertical,
               ),
               SpacingFoundation.horizontalSpace12,
               UiKitMessageCardWithIcon(
                 onPressed: () {},
                 message: 'Want to have',
-                icon: ShuffleUiKitIcons.angryemoji,
+                iconLink: GraphicsFoundation.instance.svg.angryEmoji.path,
                 layoutDirection: Axis.vertical,
               ),
               SpacingFoundation.horizontalSpace12,
               UiKitMessageCardWithIcon(
                 onPressed: () {},
                 message: 'Want to have Want to have',
-                icon: ShuffleUiKitIcons.smileycrazyfaceemoji,
+                iconLink: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji.path,
                 layoutDirection: Axis.vertical,
               ),
             ],
@@ -2093,7 +2093,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         UiKitMessageCardWithIcon(
           onPressed: () {},
           message: 'need to cool down a bit?',
-          icon: ShuffleUiKitIcons.smileycrazyfaceemoji,
+          iconLink: GraphicsFoundation.instance.svg.smileyCrazyFaceEmoji.path,
           layoutDirection: Axis.horizontal,
         ),
         SpacingFoundation.verticalSpace16,
@@ -2112,7 +2112,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.horizontalSpace12,
               UiKitTitledFilterChip(
                 title: 'Favorites',
-                icon: ShuffleUiKitIcons.star,
+                icon: ShuffleUiKitIcons.starwhite,
                 selected: false,
                 onPressed: () {},
               ),
@@ -2133,7 +2133,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
               SpacingFoundation.horizontalSpace12,
               UiKitTitledFilterChip(
                 title: 'Favorites',
-                icon: ShuffleUiKitIcons.star,
+                icon: ShuffleUiKitIcons.starwhite,
                 selected: false,
                 onPressed: () {},
               ),
@@ -2231,7 +2231,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             Expanded(
               child: UpcomingEventPlaceActionCard(
                 value: 'in 2 days',
-                iconAsset: ShuffleUiKitIcons.events,
+                rasterIconAsset: GraphicsFoundation.instance.png.events,
                 action: () {},
               ),
             ),
@@ -2239,7 +2239,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
             Expanded(
               child: PointBalancePlaceActionCard(
                 value: '2 650',
-                iconAsset: ShuffleUiKitIcons.money,
+                rasterIconAsset: GraphicsFoundation.instance.png.money,
                 action: () {},
               ),
             ),

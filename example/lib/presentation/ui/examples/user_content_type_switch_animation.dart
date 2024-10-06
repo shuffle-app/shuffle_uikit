@@ -33,7 +33,7 @@ class _ExamplesPageState extends State<ExamplesPage> with SingleTickerProviderSt
             const UiKitContentTypeColoredTile(
               size: Size(96, 96),
               color: ColorsFoundation.brightRed,
-              icon: ShuffleUiKitIcons.shuffleWhite,
+              icon: ShuffleUiKitIcons.shuffleDefault,
             ),
           ],
         ),

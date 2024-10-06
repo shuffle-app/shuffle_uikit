@@ -5,10 +5,9 @@ class IconMatcher {
   static IconData? matchSvgToIcon(String svgPath) {
     final svgName = svgPath.split('/').last.split('.').first.replaceAll('-', '').replaceAll('_', '');
 
-    if (svgName == 'default') return ShuffleUiKitIcons.logo;
+    if (svgName == 'default') return ShuffleUiKitIcons.shuffleDefault;
 
     switch (svgName) {
-
       default:
         return null;
     }

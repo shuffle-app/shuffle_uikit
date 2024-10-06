@@ -24,7 +24,7 @@ class DialogTestingPage extends StatelessWidget {
                     onPressed: () => showDialog(
                       context: context,
                       useSafeArea: true,
-                      builder: (context) => GlobalContentAlertDialog(),
+                      builder: (context) => const GlobalContentAlertDialog(),
                     ),
                   ),
                 ),
@@ -33,7 +33,7 @@ class DialogTestingPage extends StatelessWidget {
                   data: BaseUiKitButtonData(
                     onPressed: () {
                       context.push(
-                        UiKitModerationVideoPlayer(
+                        const UiKitModerationVideoPlayer(
                           videoUrl:
                               'https://shuffle-development.s3.amazonaws.com/reactions/97f94f56-b929-4045-8bfb-88fa5fa158a1.mp4',
                           // 'https://shuffle-development.s3.amazonaws.com/reactions/260215b2-6d56-4353-bd49-d0badd292768.mp4',
@@ -210,8 +210,8 @@ class DialogTestingPage extends StatelessWidget {
                         subtitle: 'you get exactly what you need',
                         dismissText: 'OKAY, COOL!',
                         onDismiss: () => Navigator.pop(_),
-                        hintTiles: const [
-                          UiKitIconHintCard(
+                        hintTiles: [
+                          const UiKitIconHintCard(
                             icon: ImageWidget(
                               iconData: ShuffleUiKitIcons.map,
                             ),
@@ -219,19 +219,19 @@ class DialogTestingPage extends StatelessWidget {
                           ),
                           UiKitIconHintCard(
                             icon: ImageWidget(
-                              iconData: ShuffleUiKitIcons.dart,
+                              svgAsset: GraphicsFoundation.instance.svg.dart,
                             ),
                             hint: 'your interests',
                           ),
-                          UiKitIconHintCard(
+                          const UiKitIconHintCard(
                             icon: ImageWidget(
-                              iconData: ShuffleUiKitIcons.sunclouds,
+                              iconData: ShuffleUiKitIcons.cloudsun,
                             ),
                             hint: 'weather around',
                           ),
-                          UiKitIconHintCard(
+                          const UiKitIconHintCard(
                             icon: ImageWidget(
-                              iconData: ShuffleUiKitIcons.smilemood,
+                              iconData: ShuffleUiKitIcons.moodawe,
                             ),
                             hint: 'and other 14 scales',
                           ),
@@ -307,12 +307,7 @@ class DialogTestingPage extends StatelessWidget {
                       content: UiKitPropertyIcons(
                         textFieldHintText: S.of(context).Weather,
                         onPressed: () {},
-                        listIconPath: List.generate(
-                          35,
-                          (index) => index.isEven
-                              ? GraphicsFoundation.instance.svg.analyticsFill.path
-                              : GraphicsFoundation.instance.svg.water.path,
-                        ),
+                        listIconPath: [],
                       ),
                     ),
                   ),
@@ -387,10 +382,7 @@ class DialogTestingPage extends StatelessWidget {
                         ],
                       ),
                       content: UiKitPropertyRecentlyAdded(
-                        listIconPath: List.generate(
-                          35,
-                          (index) => GraphicsFoundation.instance.svg.water.path,
-                        ),
+                        listIconPath: [],
                       ),
                     ),
                   ),

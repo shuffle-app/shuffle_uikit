@@ -429,7 +429,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                       text: e.chartItemName,
                       color: e.color,
                       gradient: e.gradient,
-                      iconPath: e.icon,
+                      iconPath: e.iconPath,
                       selected: visibleLineIds.contains(e.id),
                       onTap: () {
                         final ids = visibleLineIds;

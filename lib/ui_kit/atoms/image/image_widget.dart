@@ -1,7 +1,8 @@
 import 'dart:developer';
 import 'dart:io';
-import 'package:collection/collection.dart';
+
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -85,9 +86,9 @@ class ImageWidget extends StatelessWidget {
       );
     }
 
-    if (iconData != null || (link != null && !link!.contains('/') && link!.isNotEmpty)) {
+    if (iconData != null) {
       return Icon(
-        iconData ?? GraphicsFoundation.instance.iconFromString(link ?? ''),
+        iconData,
         color: color,
         size: height ?? width,
         opticalSize: height ?? width,
@@ -140,14 +141,14 @@ class ImageWidget extends StatelessWidget {
       } else if (link!.split('.').lastOrNull == 'svg' || link!.contains('svg-icons')) {
         if (link!.split('.').lastOrNull == 'svg' && IconMatcher.matchSvgToIcon(link!) != null) {
           return Transform.scale(
-            scale: 0.8,
-            child: Icon(
-            IconMatcher.matchSvgToIcon(link!)!,
-            color: color,
-            size: height ?? width,
-            opticalSize: height ?? width,
-            grade: 25,
-          ));
+              scale: 0.8,
+              child: Icon(
+                IconMatcher.matchSvgToIcon(link!)!,
+                color: color,
+                size: height ?? width,
+                opticalSize: height ?? width,
+                grade: 25,
+              ));
         }
 
         return kIsWeb
@@ -331,23 +332,25 @@ class _CustomCachedSvgPictureState extends State<_CustomCachedSvgPicture> {
   @override
   Widget build(BuildContext context) {
     return AnimatedSwitcher(
-        duration: const Duration(milliseconds: 150),
-        child: cachedFile != null
-            ? SvgPicture.file(
-                cachedFile!,
-                colorFilter: widget.color == null ? null : ColorFilter.mode(widget.color!, BlendMode.srcIn),
-                fit: widget.fit ?? BoxFit.none,
-                height: widget.height,
-                width: widget.width,
-              )
-            : Transform.scale(
-                scale: 0.8,
-                child: Icon(
-                  ShuffleUiKitIcons.logo,
-                  color: widget.color,
-                  size: widget.height ?? widget.width,
-                  opticalSize: widget.height ?? widget.width,
-                  grade: 25,
-                )));
+      duration: const Duration(milliseconds: 150),
+      child: cachedFile != null
+          ? SvgPicture.file(
+              cachedFile!,
+              colorFilter: widget.color == null ? null : ColorFilter.mode(widget.color!, BlendMode.srcIn),
+              fit: widget.fit ?? BoxFit.none,
+              height: widget.height,
+              width: widget.width,
+            )
+          : Transform.scale(
+              scale: 0.8,
+              child: Icon(
+                ShuffleUiKitIcons.shuffleDefault,
+                color: widget.color,
+                size: widget.height ?? widget.width,
+                opticalSize: widget.height ?? widget.width,
+                grade: 25,
+              ),
+            ),
+    );
   }
 }

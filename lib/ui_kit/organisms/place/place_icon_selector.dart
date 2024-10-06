@@ -35,9 +35,10 @@ class PlaceIconSelector extends StatelessWidget {
                 fit: ButtonFit.hugContent,
                 backgroundColor: ColorsFoundation.primary200.withOpacity(0.4),
                 iconInfo: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.svg.download.path,
-                    color: ColorsFoundation.primary200,
-                    size: 16),
+                  iconData: ShuffleUiKitIcons.download,
+                  color: ColorsFoundation.primary200,
+                  size: 16,
+                ),
                 onPressed: onPressed,
               ),
             ),

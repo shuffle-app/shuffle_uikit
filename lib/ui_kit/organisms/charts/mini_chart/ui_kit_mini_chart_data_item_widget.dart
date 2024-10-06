@@ -38,9 +38,7 @@ class UiKitMiniChartDataItemWidget extends StatelessWidget {
                   SpacingFoundation.horizontalSpace4,
                   if (data.progress != null)
                     ImageWidget(
-                      svgAsset: data.progress!.isNegative
-                          ? GraphicsFoundation.instance.svg.trendDown
-                          : GraphicsFoundation.instance.svg.trendUp,
+                      iconData: data.progress!.isNegative ? ShuffleUiKitIcons.trenddown : ShuffleUiKitIcons.trendup,
                       color: data.progress!.isNegative ? ColorsFoundation.error : ColorsFoundation.success,
                     ),
                   if (data.progress != null) SpacingFoundation.horizontalSpace2,

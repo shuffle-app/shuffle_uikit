@@ -90,20 +90,19 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                             bottom: -1,
                             right: 3,
                             child: DecoratedBox(
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: UiKitColors.pinkDark.withOpacity(0.6),
-                                    border: GradientFoundation.gradientBorder),
-                                child: GradientableWidget(
-                                  gradient: GradientFoundation.defaultLinearGradient,
-                                  child: ImageWidget(
-                                    iconData: ShuffleUiKitIcons.handshake2,
-                                    color: Colors.white,
-                                    fit: BoxFit.cover,
-                                    height: 10.sp,
-                                    width: 10.sp,
-                                  ).paddingAll(3.sp),
-                                )),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: UiKitColors.pinkDark.withOpacity(0.6),
+                                border: GradientFoundation.gradientBorder,
+                              ),
+                              child: ImageWidget(
+                                svgAsset: GraphicsFoundation.instance.svg.handShake2,
+                                color: Colors.white,
+                                fit: BoxFit.cover,
+                                height: 10.sp,
+                                width: 10.sp,
+                              ).paddingAll(3.sp),
+                            ),
                           ),
                       ],
                     ),

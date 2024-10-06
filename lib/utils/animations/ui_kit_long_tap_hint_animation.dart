@@ -1,4 +1,5 @@
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -94,7 +95,7 @@ class _UiKitLongTapHintAnimationState extends State<UiKitLongTapHintAnimation> w
                         : 0.8,
                 alignment: Alignment.topCenter,
                 child: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.clockCursor,
+                  iconData: ShuffleUiKitIcons.cursorclock,
                   color: Colors.white,
                   width: 30.w,
                   height: 30.w,
