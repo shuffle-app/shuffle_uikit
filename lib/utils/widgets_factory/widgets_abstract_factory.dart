@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -552,6 +554,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         iconInfo: data.iconInfo,
         onPressed: data.onPressed,
         backgroundColor: data.backgroundColor,
+        borderColor: data.borderColor,
       );
     } else if (hasIcon && (blurred ?? false)) {
       return BlurredButtonWithIcon(
