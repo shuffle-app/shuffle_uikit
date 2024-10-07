@@ -61,6 +61,8 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
   late bool _isCompleted;
   UiKitThemeData? theme;
 
+  final List<Timer> _timers = List.empty(growable: true);
+
   @override
   void initState() {
     super.initState();
@@ -91,7 +93,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
   }
 
   void _setVibrationListener() {
-    Timer.periodic(_vibrationDuration, (timer) {
+    _timers.add( Timer.periodic(_vibrationDuration, (timer) {
       if (_currentPosition.value.dx >= _finishPosition.dx / 1.2) {
         FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
           intensities: [170, 200],
@@ -111,7 +113,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
       if ((!_isPressed && _controller.isDismissed) || _isCompleted) {
         timer.cancel();
       }
-    });
+    }));
   }
 
   void _setAnimationListener(status) {
@@ -220,6 +222,9 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
     // _flipController.controller?.dispose();
     _currentPosition.dispose();
     _shadowController.dispose();
+    for (var timer in _timers) {
+      timer.cancel();
+    }
     super.dispose();
   }
 

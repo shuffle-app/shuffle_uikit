@@ -173,7 +173,7 @@ showMenuInDialog<T>(BuildContext context,
       singleType ? (items.length + 1) * 48.h : (items.where((element) => element.type == allTypes.first).length + 3) * 41.h;
   // final elementsHeight = ((items.length + 1) * 52) + (SpacingFoundation.verticalSpacing16 * 3);
   final topPadding = customTopPadding ?? max(1.sh - elementsHeight, 0.0);
-  showUiKitGeneralFullScreenDialog(
+  return showUiKitGeneralFullScreenDialog(
     context,
     GeneralDialogData(
       isDismissible:isDismissible,
