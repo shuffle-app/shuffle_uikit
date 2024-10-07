@@ -59,6 +59,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
   bool _isPressed = false;
   bool _onPanDisabled = false;
   late bool _isCompleted;
+  UiKitThemeData? theme;
 
   @override
   void initState() {
@@ -81,6 +82,12 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
         _flipController.toggleCard();
       });
     }
+  }
+
+  @override
+  void didChangeDependencies() {
+    theme = context.uiKitTheme;
+    super.didChangeDependencies();
   }
 
   void _setVibrationListener() {
@@ -200,6 +207,8 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
       if (_isCompleted && (_flipController.state?.isFront ?? false)) {
         _flipController.toggleCard();
       }
+    } else {
+      _reverseAnimation(true);
     }
   }
 
@@ -216,6 +225,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
 
   @override
   Widget build(BuildContext context) {
+    theme ??= context.uiKitTheme;
     final height = 0.27.sw * 1.68;
 
     return ValueListenableBuilder(
@@ -265,7 +275,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
                 child: UiKitCardWrapper(
                   width: widget.width ?? 105.w,
                   height: widget.height ?? height,
-                  color: context.uiKitTheme?.colorScheme.surface3,
+                  color: theme?.colorScheme.surface3,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

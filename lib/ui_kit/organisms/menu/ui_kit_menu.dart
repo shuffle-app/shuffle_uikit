@@ -144,7 +144,7 @@ showMenuInDialog<T>(BuildContext context,
     Color? tilesColor,
     double? menuSheetHorizontalPadding,
     Widget? separator,
-    bool useCustomTiles = false}) {
+    bool useCustomTiles = false,bool isDismissible = true}) {
   bool singleType = () {
     for (int itemIndex = 0; itemIndex < items.length; itemIndex++) {
       final currentElement = items.elementAt(itemIndex);
@@ -176,6 +176,7 @@ showMenuInDialog<T>(BuildContext context,
   showUiKitGeneralFullScreenDialog(
     context,
     GeneralDialogData(
+      isDismissible:isDismissible,
       useRootNavigator: true,
       topPadding: topPadding,
       child: singleType

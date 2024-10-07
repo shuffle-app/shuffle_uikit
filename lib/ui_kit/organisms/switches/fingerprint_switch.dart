@@ -42,6 +42,8 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
   double _currentWidth = 0.0;
   late ValueNotifier<bool> _isCompleted;
 
+  UiKitThemeData? theme;
+
   @override
   void initState() {
     super.initState();
@@ -63,6 +65,12 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
   }
 
   @override
+  void didChangeDependencies() {
+    theme = context.uiKitTheme;
+    super.didChangeDependencies();
+  }
+
+  @override
   void didUpdateWidget(covariant FingerprintSwitch oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (widget.isCompleted != null) {
@@ -81,8 +89,9 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
 
   @override
   Widget build(BuildContext context) {
+    theme ??= context.uiKitTheme;
     final height = widget.height ?? 0.95.sw * 0.51;
-    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
+    final isLightTheme = theme?.themeMode == ThemeMode.light;
 
     return Stack(
       children: [
@@ -120,7 +129,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
           subtitle: widget.subtitle,
           parentWidth: _currentWidth,
           onPressed: widget.onPressed,
-    onPressedShouldRecall:widget.onPressedShouldRecall,
+          onPressedShouldRecall: widget.onPressedShouldRecall,
           onCompleted: () async => await widget.onCompleted?.call().then((_) => _isCompleted.value = true),
           isCompleted: _isCompleted.value,
           onCompletedWidget: widget.onCompletedWidget,
@@ -138,7 +147,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
                       gradient: GradientFoundation.touchIdLinearGradient,
                       child: Text(
                         S.of(context).TapIt,
-                        style: context.uiKitTheme?.boldTextTheme.subHeadline.copyWith(
+                        style: theme?.boldTextTheme.subHeadline.copyWith(
                           color: Colors.white,
                         ),
                       ),
@@ -153,7 +162,7 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
             child: UiKitCardWrapper(
               height: height + 0.1.h,
               width: _currentWidth + 0.1.w,
-              color: context.uiKitTheme?.colorScheme.surface3,
+              color: theme?.colorScheme.surface3,
               borderRadius: BorderRadiusFoundation.all28,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
