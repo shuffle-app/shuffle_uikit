@@ -861,6 +861,11 @@
   "ThereNoEventsYet": "Ивентов пока нет",
   "SelectTimeCorrespondingToContentCard": "Выберите время соответствующее карточке контента",
   "AddToScheduler": "Добавить планировщик",
-  "Soon": "Скоро" 
+  "Soon": "Скоро", 
+  "FreeNowXLater": "Сейчас бесплатно, позже {count}$",
+  "CodeScanner": "Сканер кода",
+  "OfferInfo": "Информация о предложении",
+  "Confirmed": "Подтвержденн",
+  "ThereNoUsersWhoHaveBoughtOfferYet" : "Пока еще нет пользователей, которые купили это предложение"
 }
 

@@ -861,6 +861,11 @@
   "ThereNoEventsYet": "There are no events yet",
   "SelectTimeCorrespondingToContentCard": "Select the time corresponding to the content card",
   "AddToScheduler": "Add to scheduler",
-  "Soon": "Soon"
+  "Soon": "Soon",
+  "FreeNowXLater": "Free now, {count}$ later",
+  "CodeScanner": "Code scanner",
+  "OfferInfo": "Offer info",
+  "Confirmed": "Confirmed",
+  "ThereNoUsersWhoHaveBoughtOfferYet" : "There are no users who have bought the offer yet"
 
 }

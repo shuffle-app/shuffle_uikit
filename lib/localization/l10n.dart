@@ -8874,6 +8874,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Free now, {count}$ later`
+  String FreeNowXLater(Object count) {
+    return Intl.message(
+      'Free now, $count\$ later',
+      name: 'FreeNowXLater',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Code scanner`
+  String get CodeScanner {
+    return Intl.message(
+      'Code scanner',
+      name: 'CodeScanner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer info`
+  String get OfferInfo {
+    return Intl.message(
+      'Offer info',
+      name: 'OfferInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirmed`
+  String get Confirmed {
+    return Intl.message(
+      'Confirmed',
+      name: 'Confirmed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no users who have bought the offer yet`
+  String get ThereNoUsersWhoHaveBoughtOfferYet {
+    return Intl.message(
+      'There are no users who have bought the offer yet',
+      name: 'ThereNoUsersWhoHaveBoughtOfferYet',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
