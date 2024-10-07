@@ -378,7 +378,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.taxi,
+                          iconData: ShuffleUiKitIcons.taxi,
                           height: 15.h,
                           color: Colors.white,
                           fit: BoxFit.fitHeight,

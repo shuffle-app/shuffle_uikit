@@ -38,7 +38,7 @@ class UiKitDropDownList<T extends Object> extends StatelessWidget {
           isExpanded: true,
           iconStyleData: IconStyleData(
             icon: ImageWidget(
-              svgAsset: GraphicsFoundation.instance.svg.chevronDown,
+              iconData: ShuffleUiKitIcons.chevrondown,
               color: colorScheme?.inverseSurface,
               fit: BoxFit.cover,
               width: 16,

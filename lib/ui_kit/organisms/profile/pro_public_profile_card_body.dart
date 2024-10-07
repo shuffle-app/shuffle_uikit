@@ -161,7 +161,7 @@ class ProPublicProfileCardBody extends StatelessWidget {
                 data: BaseUiKitButtonData(
                   onPressed: onTelegramPressed,
                   iconInfo: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.svg.socialTelegram.path,
+                    iconData: ShuffleUiKitIcons.socialtelegram,
                   ),
                 ),
               ),
@@ -170,7 +170,7 @@ class ProPublicProfileCardBody extends StatelessWidget {
                 data: BaseUiKitButtonData(
                   onPressed: onWhatsappPressed,
                   iconInfo: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.svg.socialWhatsapp.path,
+                    iconData: ShuffleUiKitIcons.socialwhatsapp,
                   ),
                 ),
               ),

@@ -87,12 +87,12 @@ class GradientBottomNavigationBarItem extends TabType {
   );
   static final search = GradientBottomNavigationBarItem._(
     selectedIcon: ShuffleUiKitIcons.searchfill,
-    unselectedIcon: ShuffleUiKitIcons.searchoutline,
+    unselectedIcon: ShuffleUiKitIcons.search,
     index: 3,
   );
   static final connection = GradientBottomNavigationBarItem._(
-    selectedIcon: ShuffleUiKitIcons.connectionfill,
-    unselectedIcon: ShuffleUiKitIcons.connectionoutline,
+    selectedIcon: ShuffleUiKitIcons.messagefill,
+    unselectedIcon: ShuffleUiKitIcons.message,
     index: 3,
   );
   static final profile = GradientBottomNavigationBarItem._(

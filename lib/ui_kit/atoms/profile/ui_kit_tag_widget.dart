@@ -40,7 +40,7 @@ class UiKitTagWidget extends StatelessWidget {
       iconData: icon is IconData ? icon as IconData : null,
       cardColor: Colors.transparent,
       errorWidget: ImageWidget(
-          iconData: ShuffleUiKitIcons.logo,
+          iconData: ShuffleUiKitIcons.shuffleDefault,
           height: tagSize ?? SpacingFoundation.horizontalSpacing16,
           width: tagSize ?? SpacingFoundation.horizontalSpacing16,
           color: iconColor,

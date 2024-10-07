@@ -1,17 +1,18 @@
+import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 extension SocialMediaStringValidator on String {
-  SvgGenImage get icon {
-    if(contains('instagram')) return GraphicsFoundation.instance.svg.socialInstagram;
+  IconData get icon {
+    if (contains('instagram')) return ShuffleUiKitIcons.socialinstagram;
     //TODO add icons
     // if(contains('facebook')) return ShuffleUiKitIcons.facebook;
-    if(contains('twitter')) return GraphicsFoundation.instance.svg.socialTwitter;
-    if(contains('wa.me')) return GraphicsFoundation.instance.svg.socialWhatsapp;
+    if (contains('twitter')) return ShuffleUiKitIcons.socialtwitter;
+    if (contains('wa.me')) return ShuffleUiKitIcons.socialwhatsapp;
     // if(contains('youtube')) return ShuffleUiKitIcons.youtube;
     // if(contains('tiktok')) return ShuffleUiKitIcons.tiktok;
     // if(contains('pinterest')) return ShuffleUiKitIcons.pinterest;
-    if(contains('t.me')) return GraphicsFoundation.instance.svg.socialTelegram;
+    if (contains('t.me')) return ShuffleUiKitIcons.socialtelegram;
 
-    return GraphicsFoundation.instance.svg.alertCircle;
+    return ShuffleUiKitIcons.alertcircle;
   }
 }

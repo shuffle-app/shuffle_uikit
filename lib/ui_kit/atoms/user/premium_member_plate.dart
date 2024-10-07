@@ -31,14 +31,9 @@ class PremiumMemberPlate extends StatelessWidget {
             style: textTheme?.caption1Bold.copyWith(color: Colors.black),
           ),
           SpacingFoundation.horizontalSpace4,
-          const
-          // GradientableWidget(
-          //     gradient: GradientFoundation.defaultRadialGradient,
-          //     child:
-              ImageWidget(
-                iconData: ShuffleUiKitIcons.memeberGradientStar,
-                color: Colors.white,
-              // )
+          ImageWidget(
+            svgAsset: GraphicsFoundation.instance.svg.memeberGradientStar,
+            color: Colors.white,
           ),
         ],
       ).paddingSymmetric(

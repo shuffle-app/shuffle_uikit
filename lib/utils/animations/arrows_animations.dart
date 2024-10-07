@@ -38,7 +38,7 @@ class _ArrowsAnimationState extends State<ArrowsAnimation> with SingleTickerProv
         (index) => GradientableWidget(
           gradient: GradientFoundation.badgeIcon,
           child: ImageWidget(
-            svgAsset: GraphicsFoundation.instance.svg.chevronNoPadding,
+            iconData: ShuffleUiKitIcons.chevronfeelings,
             color: Colors.white,
             fit: BoxFit.fitWidth,
             width: 10.w,

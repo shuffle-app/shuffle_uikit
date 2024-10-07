@@ -111,8 +111,8 @@ class _UiKitVideoPlayerWithContentDetailsState extends State<UiKitVideoPlayerWit
                               color: Colors.black.withOpacity(0.15),
                               shape: BoxShape.circle,
                             ),
-                            child: ImageWidget(
-                              link: GraphicsFoundation.instance.svg.cross.path,
+                            child: const ImageWidget(
+                              iconData: ShuffleUiKitIcons.cross,
                               color: Colors.white,
                             ).paddingAll(EdgeInsetsFoundation.all6),
                           ).paddingSymmetric(
@@ -153,9 +153,7 @@ class _UiKitVideoPlayerWithContentDetailsState extends State<UiKitVideoPlayerWit
                     gradient: GradientFoundation.defaultRadialGradient,
                     child: ImageWidget(
                       color: Colors.white,
-                      link: value.isPlaying
-                          ? GraphicsFoundation.instance.svg.pauseFill.path
-                          : GraphicsFoundation.instance.svg.playFill.path,
+                      iconData: value.isPlaying ? ShuffleUiKitIcons.pauseoutline : ShuffleUiKitIcons.playoutline,
                     ),
                   ),
                 ),
@@ -173,20 +171,18 @@ class _UiKitVideoPlayerWithContentDetailsState extends State<UiKitVideoPlayerWit
                     gradient: GradientFoundation.defaultRadialGradient,
                     child: ImageWidget(
                       color: Colors.white,
-                      link: value.volume == 0
-                          ? GraphicsFoundation.instance.svg.volumeOff.path
-                          : GraphicsFoundation.instance.svg.volume.path,
+                      iconData: value.volume == 0 ? ShuffleUiKitIcons.volumeoff : ShuffleUiKitIcons.volume,
                     ),
                   ),
                 ),
                 SpacingFoundation.horizontalSpace8,
                 GestureDetector(
                   onTap: goFullScreen,
-                  child: GradientableWidget(
+                  child: const GradientableWidget(
                     gradient: GradientFoundation.defaultRadialGradient,
                     child: ImageWidget(
                       color: Colors.white,
-                      link: GraphicsFoundation.instance.svg.maximize.path,
+                      iconData: ShuffleUiKitIcons.maximize,
                     ),
                   ),
                 ),

@@ -120,7 +120,7 @@ final mockFeedbackStats = UiKitLineChartData<num>(
     UiKitLineChartItemData<num>(
       id: 1,
       chartItemName: '5',
-      icon: GraphicsFoundation.instance.svg.star.path,
+      iconData: ShuffleUiKitIcons.starfill,
       color: ColorsFoundation.success,
       datasets: List.generate(
         10,
@@ -133,7 +133,7 @@ final mockFeedbackStats = UiKitLineChartData<num>(
     UiKitLineChartItemData<num>(
       id: 2,
       chartItemName: '3-4',
-      icon: GraphicsFoundation.instance.svg.star.path,
+      iconData: ShuffleUiKitIcons.starfill,
       color: ColorsFoundation.warning,
       datasets: List.generate(
         10,
@@ -146,7 +146,7 @@ final mockFeedbackStats = UiKitLineChartData<num>(
     UiKitLineChartItemData<num>(
       id: 3,
       chartItemName: '1-2',
-      icon: GraphicsFoundation.instance.svg.star.path,
+      iconData: ShuffleUiKitIcons.starfill,
       color: ColorsFoundation.error,
       datasets: List.generate(
         10,

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 abstract class UiKitContentUpdateWidget extends StatelessWidget {
   final String? title;
-  final String? icon;
+  final String? iconLink;
+  final IconData? iconData;
   final String? leadingImageUrl;
   final String? subtitle;
   final Widget? customChild;
@@ -10,10 +11,11 @@ abstract class UiKitContentUpdateWidget extends StatelessWidget {
   const UiKitContentUpdateWidget({
     Key? key,
     this.title,
-    this.icon,
+    this.iconLink,
     this.leadingImageUrl,
     this.customChild,
     this.subtitle,
+    this.iconData,
   }) : super(key: key);
 
   double get height;

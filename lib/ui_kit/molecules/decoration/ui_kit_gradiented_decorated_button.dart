@@ -3,11 +3,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitGradientedDecoratedButton extends StatelessWidget {
   final String? iconPath;
+  final IconData? iconData;
 
   const UiKitGradientedDecoratedButton({
     super.key,
     this.iconPath,
-  });
+    this.iconData,
+  }) : assert(iconPath == null || iconData == null,
+            'Only one of iconPath or iconData must be provided in UiKitGradientedDecoratedButton');
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +67,7 @@ class UiKitGradientedDecoratedButton extends StatelessWidget {
               gradient: GradientFoundation.defaultRadialGradient,
               child: ImageWidget(
                 link: iconPath,
+                iconData: iconData,
                 fit: BoxFit.cover,
                 color: Colors.white,
                 width: 40.w,
