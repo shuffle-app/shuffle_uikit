@@ -28,10 +28,6 @@ class UiKitExtendedInfluencerFeedbackCardWithoutBottom extends StatelessWidget {
       builder: (context, size) {
         final theme = context.uiKitTheme;
         final textTheme = theme?.boldTextTheme;
-        // final titleStyle = textTheme?.caption2Bold.copyWith(
-        //     color: theme?.themeMode == ThemeMode.dark
-        //         ? ColorsFoundation.lightBodyTypographyColor
-        //         : ColorsFoundation.darkBodyTypographyColor);
         final titleStyle = textTheme?.caption2Bold;
         final width = size.maxWidth;
 
