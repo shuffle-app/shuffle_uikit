@@ -69,6 +69,7 @@ class UiKitVideoReactionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
 
     return Row(
       mainAxisSize: MainAxisSize.max,
@@ -99,7 +100,10 @@ class UiKitVideoReactionTile extends StatelessWidget {
                     if (reactionDate != null)
                       TextSpan(
                         text: formatDateTimeDifferenceWithMonthName(reactionDate!),
-                        style: boldTextTheme?.caption1Bold.copyWith(color: Colors.white38),
+                        style: regularTextTheme?.caption4Regular.copyWith(
+                          color: Colors.white38,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                   ],
                 ),
@@ -116,7 +120,10 @@ class UiKitVideoReactionTile extends StatelessWidget {
                       if (eventDate != null)
                         TextSpan(
                           text: '  ${formatDateTimeDifferenceWithMonthName(eventDate!)}',
-                          style: boldTextTheme?.caption1Bold.copyWith(color: Colors.white38),
+                          style: regularTextTheme?.caption4Regular.copyWith(
+                            color: Colors.white38,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                     ],
                   ),
