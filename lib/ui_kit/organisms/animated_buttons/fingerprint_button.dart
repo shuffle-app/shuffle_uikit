@@ -59,6 +59,9 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
   bool _isPressed = false;
   bool _onPanDisabled = false;
   late bool _isCompleted;
+  UiKitThemeData? theme;
+
+  final List<Timer> _timers = List.empty(growable: true);
 
   @override
   void initState() {
@@ -83,8 +86,14 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
     }
   }
 
+  @override
+  void didChangeDependencies() {
+    theme = context.uiKitTheme;
+    super.didChangeDependencies();
+  }
+
   void _setVibrationListener() {
-    Timer.periodic(_vibrationDuration, (timer) {
+    _timers.add( Timer.periodic(_vibrationDuration, (timer) {
       if (_currentPosition.value.dx >= _finishPosition.dx / 1.2) {
         FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
           intensities: [170, 200],
@@ -104,7 +113,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
       if ((!_isPressed && _controller.isDismissed) || _isCompleted) {
         timer.cancel();
       }
-    });
+    }));
   }
 
   void _setAnimationListener(status) {
@@ -200,6 +209,8 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
       if (_isCompleted && (_flipController.state?.isFront ?? false)) {
         _flipController.toggleCard();
       }
+    } else {
+      _reverseAnimation(true);
     }
   }
 
@@ -211,11 +222,15 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
     // _flipController.controller?.dispose();
     _currentPosition.dispose();
     _shadowController.dispose();
+    for (var timer in _timers) {
+      timer.cancel();
+    }
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    theme ??= context.uiKitTheme;
     final height = 0.27.sw * 1.68;
 
     return ValueListenableBuilder(
@@ -265,7 +280,7 @@ class _FingerprintButtonState extends State<FingerprintButton> with TickerProvid
                 child: UiKitCardWrapper(
                   width: widget.width ?? 105.w,
                   height: widget.height ?? height,
-                  color: context.uiKitTheme?.colorScheme.surface3,
+                  color: theme?.colorScheme.surface3,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

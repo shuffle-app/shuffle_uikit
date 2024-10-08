@@ -15,7 +15,7 @@ class UiKitNoContentPlaceholder extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Ooops!',
+            '${S.of(context).Ooops}!',
             style: textTheme?.body.copyWith(
               color: ColorsFoundation.darkNeutral900,
             ),

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -69,8 +70,10 @@ class UiKitMenuItemTile extends StatelessWidget {
                   SpacingFoundation.horizontalSpace8,
                 ],
                 Expanded(
-                  child: Text(
+                  child: AutoSizeText(
                     item.title.toUpperCase(),
+                    maxLines: 2,
+                    group: _autoSizeTextGroup,
                     style: boldTextTheme?.caption1UpperCaseMedium,
                   ),
                 ),
@@ -97,3 +100,5 @@ class UiKitMenuItemTileModel<T> {
     this.icon,
   });
 }
+
+final _autoSizeTextGroup = AutoSizeGroup();
