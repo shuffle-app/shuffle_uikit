@@ -216,75 +216,78 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m71(item) =>
       "${Intl.plural(item, zero: 'предпочтения не работают', one: 'события/места', two: 'введи и получай', few: 'смотри на рейтинги', other: 'смотри на рейтинги')}";
 
-  static String m72(type) => "Выбрать ${type}";
+  static String m72(count) =>
+      "${Intl.plural(count, zero: 'Систему рекомендаций контента специально для тебя', one: 'Встречи единомышленников с помощью системы соответствия пользователей', two: 'Каждый раз новые места и события, подходящие тебе', other: 'Легче найти нужных людей, а им найти тебя')}";
 
-  static String m73(count) =>
+  static String m73(type) => "Выбрать ${type}";
+
+  static String m74(count) =>
       "Поделиться ${count} ${Intl.plural(count, zero: 'карточек', one: 'карточкой', two: 'карточками', few: 'карточками', many: 'карточками', other: 'карточками')}";
 
-  static String m74(item) =>
+  static String m75(item) =>
       "${Intl.plural(item, zero: 'свайпай карточки', one: 'листай свойства места', two: 'ок/не ок/в избранное', few: 'учи нашу систему', other: 'учи нашу систему')}";
 
-  static String m75(count) =>
+  static String m76(count) =>
       "Провести ${count} ${Intl.plural(count, zero: 'часов', one: 'час', two: 'часа', few: 'часа', many: 'часа', other: 'часов')} в неделю";
 
-  static String m76(item) =>
+  static String m77(item) =>
       "${Intl.plural(item, zero: 'ради забавы', one: 'можно листать категорию', two: 'выбирай и планируй', few: 'ищи и бронируй', other: 'ищи и бронируй')}";
 
-  static String m77(count) =>
+  static String m78(count) =>
       "поделиться ${count} ${Intl.plural(count, zero: 'стопок', one: 'стопкой', two: 'стопками', few: 'стопками', many: 'стопками', other: 'стопками')}";
 
-  static String m78(separator) => "Расскажи${separator}о себе";
-
-  static String m79(count) =>
-      "${count} ${Intl.plural(count, zero: 'билетов', one: 'билет', two: 'билета', few: 'билета', many: 'билета', other: 'билетов')} из";
+  static String m79(separator) => "Расскажи${separator}о себе";
 
   static String m80(count) =>
+      "${count} ${Intl.plural(count, zero: 'билетов', one: 'билет', two: 'билета', few: 'билета', many: 'билета', other: 'билетов')} из";
+
+  static String m81(count) =>
       "${count} ${Intl.plural(count, zero: 'билетов', one: 'билет', two: 'билета', few: 'билета', many: 'билета', other: 'билетов')}";
 
-  static String m81(date) => "Топ событий на ${date}";
+  static String m82(date) => "Топ событий на ${date}";
 
-  static String m82(amountOfTopDonators, multiplier) =>
+  static String m83(amountOfTopDonators, multiplier) =>
       "Топовые ${amountOfTopDonators} донаторы получают x${multiplier} поинтов";
 
-  static String m83(separator) => "Топовые места${separator}от";
+  static String m84(separator) => "Топовые места${separator}от";
 
-  static String m84(type) => "Чтобы пользоваться этим нужен ${type} аккаунт";
+  static String m85(type) => "Чтобы пользоваться этим нужен ${type} аккаунт";
 
-  static String m85(forNMoney) => "Купить ${forNMoney}";
-
-  static String m86(count) =>
-      "${count} ${Intl.plural(count, zero: 'продутов', one: 'проукт', two: 'продукта', few: 'продукта', many: 'продукта', other: 'продукта')} дополнительных продаж из";
+  static String m86(forNMoney) => "Купить ${forNMoney}";
 
   static String m87(count) =>
+      "${count} ${Intl.plural(count, zero: 'продутов', one: 'проукт', two: 'продукта', few: 'продукта', many: 'продукта', other: 'продукта')} дополнительных продаж из";
+
+  static String m88(count) =>
       "${Intl.plural(count, zero: '${count} человек', one: '${count} человек', two: '${count} человека', few: '${count} людей', many: '${count} человек', other: '${count} человек')}";
 
-  static String m88(days) =>
+  static String m89(days) =>
       "через ${days} ${Intl.plural(days, zero: 'дней', one: 'день', two: 'дня', few: 'дня', many: 'дней', other: 'дней')}";
 
-  static String m89(value) => "${value} не может быть пустым";
+  static String m90(value) => "${value} не может быть пустым";
 
-  static String m90(x, y) => "${x} приглашает ${y}";
+  static String m91(x, y) => "${x} приглашает ${y}";
 
-  static String m91(title) => "${title} требуется";
+  static String m92(title) => "${title} требуется";
 
-  static String m92(x) => "${x} успешно созданно";
+  static String m93(x) => "${x} успешно созданно";
 
-  static String m93(value) => "${value} успешно обновлено";
-
-  static String m94(years) =>
-      "${years}+ ${Intl.plural(years, zero: 'лет', one: 'год', two: 'года', few: 'года', many: 'лет', other: 'лет')}";
+  static String m94(value) => "${value} успешно обновлено";
 
   static String m95(years) =>
+      "${years}+ ${Intl.plural(years, zero: 'лет', one: 'год', two: 'года', few: 'года', many: 'лет', other: 'лет')}";
+
+  static String m96(years) =>
       "${years} ${Intl.plural(years, zero: 'лет', one: 'год', two: 'года', few: 'года', many: 'лет', other: 'лет')}";
 
-  static String m96(x) => "Вы можете увидеть своё ${x} в меню акции";
+  static String m97(x) => "Вы можете увидеть своё ${x} в меню акции";
 
-  static String m97(amountOfInvitedPersons) =>
+  static String m98(amountOfInvitedPersons) =>
       "Вы отправили приглашение ${amountOfInvitedPersons} людям";
 
-  static String m98(name) => "Ты уверен, что хочешь удалить ${name}?";
+  static String m99(name) => "Ты уверен, что хочешь удалить ${name}?";
 
-  static String m99(name) =>
+  static String m100(name) =>
       "Ты больше не сможешь отправлять сообщения ${name}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -352,6 +355,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "У тебя уже есть активное напоминание. Чтобы создать новое, приостанови или удали предыдущее."),
         "AlreadyInvited": MessageLookupByLibrary.simpleMessage(
             "Плз уважай свой выбор и чувства других"),
+        "AndGet": MessageLookupByLibrary.simpleMessage("и получи"),
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" И "),
         "Archive": MessageLookupByLibrary.simpleMessage("Архив"),
         "Archived": MessageLookupByLibrary.simpleMessage("Архив"),
@@ -1032,6 +1036,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "PlusXNewVideos": MessageLookupByLibrary.simpleMessage("+ Новое видео"),
         "PlusXNewVoices": m56,
         "PlusXPhotos": m57,
+        "PlzEnterName": MessageLookupByLibrary.simpleMessage(
+            "Плз, введи свое имя & никнейм"),
         "PointBalance": MessageLookupByLibrary.simpleMessage("Баланс\nпоинтов"),
         "Points": MessageLookupByLibrary.simpleMessage("Поинты"),
         "PointsAre": MessageLookupByLibrary.simpleMessage("Поинты это..."),
@@ -1213,6 +1219,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectGender": MessageLookupByLibrary.simpleMessage("Выберите пол"),
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Пожалуйста выбери язык"),
+        "SelectMindsetInvitation": m72,
         "SelectOption": MessageLookupByLibrary.simpleMessage("Выбирай"),
         "SelectPeriodOfValid":
             MessageLookupByLibrary.simpleMessage("Выберите период действия"),
@@ -1226,7 +1233,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Выберите время соответствующее карточке контента"),
         "SelectToSetPreview": MessageLookupByLibrary.simpleMessage(
             "Выберите фото чтобы задать превью"),
-        "SelectType": m72,
+        "SelectType": m73,
         "SelectYourBooking": MessageLookupByLibrary.simpleMessage(
             "Выберите вариант бронирования"),
         "SelectYourFavoriteProduct": MessageLookupByLibrary.simpleMessage(
@@ -1243,7 +1250,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "SetWorkHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "Settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "Share": MessageLookupByLibrary.simpleMessage("Поделиться"),
-        "ShareCard": m73,
+        "ShareCard": m74,
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("поделилась с вами"),
         "ShowDeleted":
@@ -1262,7 +1269,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
         "ShuffleExchangeSystem":
             MessageLookupByLibrary.simpleMessage("...система обмена Shuffle"),
-        "ShuffleHiwHint": m74,
+        "ShuffleHiwHint": m75,
         "ShuffleHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "поиск персонализированных мест"),
         "ShuffleHiwTitle":
@@ -1279,12 +1286,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
             "Что-то пошло не так. Попробуй еще раз."),
         "Spend": MessageLookupByLibrary.simpleMessage("Потратить"),
-        "SpendHoursPerWeek": m75,
+        "SpendHoursPerWeek": m76,
         "SpendIt": MessageLookupByLibrary.simpleMessage("Потратить"),
         "Spent": MessageLookupByLibrary.simpleMessage("Потрачено"),
         "SpentMyPoints":
             MessageLookupByLibrary.simpleMessage("Потратить мои баллы"),
-        "SpinnerHiwHint": m76,
+        "SpinnerHiwHint": m77,
         "SpinnerHiwSubtitle": MessageLookupByLibrary.simpleMessage(
             "ты найдешь персонализированные мероприятия"),
         "SpinnerHiwTitle":
@@ -1296,7 +1303,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Для вас доступны стопки и кое-что еще..."),
         "StacksAreOn":
             MessageLookupByLibrary.simpleMessage("Для пользователей"),
-        "StacksShares": m77,
+        "StacksShares": m78,
         "StartBookingCreation": MessageLookupByLibrary.simpleMessage(
             "Начать создание бронирования"),
         "StartToExplore":
@@ -1339,8 +1346,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "TastyCoffee": MessageLookupByLibrary.simpleMessage("Вкусный кофе"),
         "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
         "TeaList": MessageLookupByLibrary.simpleMessage("Чайная карта"),
+        "TellUsAbout": MessageLookupByLibrary.simpleMessage("Расскажи о"),
         "TellUsMore": MessageLookupByLibrary.simpleMessage("Расскажи ещё"),
-        "TellUsMoreAboutYourself": m78,
+        "TellUsMoreAboutYourself": m79,
         "TemplateName": MessageLookupByLibrary.simpleMessage("Имя шаблона"),
         "Terms": MessageLookupByLibrary.simpleMessage("Условия"),
         "TermsOfService":
@@ -1376,9 +1384,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Thursday": MessageLookupByLibrary.simpleMessage("Четверг"),
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("Чт"),
         "Ticket": MessageLookupByLibrary.simpleMessage("Билет"),
-        "TicketFrom": m79,
+        "TicketFrom": m80,
         "TicketPrice": MessageLookupByLibrary.simpleMessage("Цена билета"),
-        "Tickets": m80,
+        "Tickets": m81,
         "Time": MessageLookupByLibrary.simpleMessage("Время"),
         "TimeRangeError": MessageLookupByLibrary.simpleMessage(
             "Время окончания не может быть раньше времени начала"),
@@ -1400,9 +1408,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "ToUnlock": MessageLookupByLibrary.simpleMessage("Чтобы открыть"),
         "Today": MessageLookupByLibrary.simpleMessage("Сегодня"),
         "Top": MessageLookupByLibrary.simpleMessage("ТОП"),
-        "TopEventsFor": m81,
-        "TopNDonatorsReceiveXPoints": m82,
-        "TopPlacesRatedBy": m83,
+        "TopEventsFor": m82,
+        "TopNDonatorsReceiveXPoints": m83,
+        "TopPlacesRatedBy": m84,
         "Total": MessageLookupByLibrary.simpleMessage("Сумма"),
         "TravelerMen": MessageLookupByLibrary.simpleMessage("Путник"),
         "TravelerWom": MessageLookupByLibrary.simpleMessage("Путница"),
@@ -1438,12 +1446,12 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ты давно не обновлял приложение, а мы добавили много удобных штук"),
         "UpdateAppMessageTitle":
             MessageLookupByLibrary.simpleMessage("Пора обновиться"),
-        "UpgradeAccount": m84,
+        "UpgradeAccount": m85,
         "UpgradeAccountConfirmation":
             MessageLookupByLibrary.simpleMessage("Оформить"),
         "UpgradeForFree":
             MessageLookupByLibrary.simpleMessage("обновитесь бесплатно"),
-        "UpgradeForNmoney": m85,
+        "UpgradeForNmoney": m86,
         "UploadingVideo":
             MessageLookupByLibrary.simpleMessage("Загрузка видео"),
         "Upsales":
@@ -1452,7 +1460,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Доступны дополнительные продажи"),
         "UpsalesAvailableHint": MessageLookupByLibrary.simpleMessage(
             "футболка, шапочка, коврик для йоги, кружка"),
-        "UpsalesProductsFrom": m86,
+        "UpsalesProductsFrom": m87,
         "User": MessageLookupByLibrary.simpleMessage("Юзер"),
         "UserHasNoPublicProfileEnd":
             MessageLookupByLibrary.simpleMessage("нет публичного профиля"),
@@ -1460,7 +1468,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("У пользователя"),
         "UserTypeSelectionPrompt": MessageLookupByLibrary.simpleMessage(
             "Выбери тип аккаунта, который хочешь создать или войти"),
-        "Users": m87,
+        "Users": m88,
         "UsingHealthKit":
             MessageLookupByLibrary.simpleMessage("Данные здоровья"),
         "UsingNotifications":
@@ -1515,7 +1523,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Мудрая леди песков"),
         "WiseacreOfSands":
             MessageLookupByLibrary.simpleMessage("Мудрец песков"),
-        "WithInDays": m88,
+        "WithInDays": m89,
         "WithYourPreferences":
             MessageLookupByLibrary.simpleMessage("С учетом твоих предпочтений"),
         "WorkHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
@@ -1523,15 +1531,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Напишите ответ"),
         "WrongSecurityCode":
             MessageLookupByLibrary.simpleMessage("Неверный код"),
-        "XCouldNotBeEmpty": m89,
-        "XInvitesY": m90,
-        "XIsRequired": m91,
-        "XSuccessfullyCreated": m92,
-        "XSuccessfullyUpdated": m93,
-        "XYearsPlus": m94,
+        "XCouldNotBeEmpty": m90,
+        "XInvitesY": m91,
+        "XIsRequired": m92,
+        "XSuccessfullyCreated": m93,
+        "XSuccessfullyUpdated": m94,
+        "XYearsPlus": m95,
         "Year": MessageLookupByLibrary.simpleMessage("Год"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Годовой"),
-        "YearsOld": m95,
+        "YearsOld": m96,
         "YearsOldShort": MessageLookupByLibrary.simpleMessage("лет"),
         "Yes": MessageLookupByLibrary.simpleMessage("Да"),
         "Yesterday": MessageLookupByLibrary.simpleMessage("Вчера"),
@@ -1539,7 +1547,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Тебе лучше взглянуть"),
         "YouCanGet": MessageLookupByLibrary.simpleMessage("Ты можешь получить"),
-        "YouCanSeeYourXPromotionMenu": m96,
+        "YouCanSeeYourXPromotionMenu": m97,
         "YouCanStillRequestRefundYourComplaint":
             MessageLookupByLibrary.simpleMessage(
                 "Вы все еще можете запросить возврат средств по вашей жалобе"),
@@ -1550,9 +1558,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouMissedALot":
             MessageLookupByLibrary.simpleMessage("Вы многое пропустили"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("Вы получили"),
-        "YouSentInvitationToNPeople": m97,
-        "YouSureToDeleteX": m98,
-        "YouWillNoLongerSendMessagesTo": m99,
+        "YouSentInvitationToNPeople": m98,
+        "YouSureToDeleteX": m99,
+        "YouWillNoLongerSendMessagesTo": m100,
         "YouWillNoLongerSendMessagesToChat":
             MessageLookupByLibrary.simpleMessage(
                 "Ты больше не сможешь отправлять сообщения в чат"),
@@ -1591,6 +1599,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Ваше напоминание показывается 1 раз в указанную дату."),
         "YourTraffic": MessageLookupByLibrary.simpleMessage("Ваш трафик"),
+        "Yourself": MessageLookupByLibrary.simpleMessage("Себе"),
         "daynight": MessageLookupByLibrary.simpleMessage("Днём и ночью"),
         "key": MessageLookupByLibrary.simpleMessage("")
       };

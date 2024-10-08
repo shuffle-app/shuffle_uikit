@@ -9094,6 +9094,60 @@ class S {
       args: [],
     );
   }
+
+  /// `Tell us about`
+  String get TellUsAbout {
+    return Intl.message(
+      'Tell us about',
+      name: 'TellUsAbout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yourself`
+  String get Yourself {
+    return Intl.message(
+      'Yourself',
+      name: 'Yourself',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `And get`
+  String get AndGet {
+    return Intl.message(
+      'And get',
+      name: 'AndGet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count, plural, =0{Content recommendation system especially for you} =1{Meeting like-minded people using the user matching system} =2{Every time new places and events that suit you} other{It's easier to find the right people, and for them to find you}}`
+  String SelectMindsetInvitation(num count) {
+    return Intl.plural(
+      count,
+      zero: 'Content recommendation system especially for you',
+      one: 'Meeting like-minded people using the user matching system',
+      two: 'Every time new places and events that suit you',
+      other: 'It\'s easier to find the right people, and for them to find you',
+      name: 'SelectMindsetInvitation',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Plz, enter your name & nickname`
+  String get PlzEnterName {
+    return Intl.message(
+      'Plz, enter your name & nickname',
+      name: 'PlzEnterName',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
