@@ -871,5 +871,17 @@
   "BookingPlural": "Bookings",
   "AverageContentViewTime": "Average card visit time",
   "Routes": "Routes",
-  "MinutesShort": "min"
+  "MinutesShort": "min",
+  "EventRatingByFeedback": "Event rating (by feedback)",
+  "PlaceRatingByFeedback": "Place rating (by feedback)",
+  "OverallRatingOfInterest": "Overall rating of interest",
+  "Monday": "Monday",
+  "Tuesday": "Tuesday",
+  "Wednesday": "Wednesday",
+  "Thursday": "Thursday",
+  "Friday": "Friday",
+  "Saturday": "Saturday",
+  "Sunday": "Sunday",
+  "YearsOldShort": "y.o",
+  "GenderAndAge": "Gender and Age"
 }

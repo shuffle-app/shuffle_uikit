@@ -585,6 +585,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ErrorOccuredWithoutMessage": MessageLookupByLibrary.simpleMessage(
             "Error occured without message"),
         "Event": MessageLookupByLibrary.simpleMessage("Event"),
+        "EventRatingByFeedback":
+            MessageLookupByLibrary.simpleMessage("Event rating (by feedback)"),
         "EventType": MessageLookupByLibrary.simpleMessage("Event type"),
         "Events": MessageLookupByLibrary.simpleMessage("Events"),
         "EventsCount": m21,
@@ -649,6 +651,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Forgot password"),
         "Free": MessageLookupByLibrary.simpleMessage("Free"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("\nfree places"),
+        "Friday": MessageLookupByLibrary.simpleMessage("Friday"),
         "FridayShort": MessageLookupByLibrary.simpleMessage("Fri"),
         "FromGallery": MessageLookupByLibrary.simpleMessage("From gallery"),
         "FromToYearsOld": m32,
@@ -657,6 +660,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Full": MessageLookupByLibrary.simpleMessage("full"),
         "FullRefund": MessageLookupByLibrary.simpleMessage("Full refund"),
         "Gender": MessageLookupByLibrary.simpleMessage("Gender"),
+        "GenderAndAge": MessageLookupByLibrary.simpleMessage("Gender and Age"),
         "GeneraFem": MessageLookupByLibrary.simpleMessage("General"),
         "GeneralMas": MessageLookupByLibrary.simpleMessage("General"),
         "GetCode": MessageLookupByLibrary.simpleMessage("Get code"),
@@ -799,6 +803,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "MinutesAgo": m45,
         "MinutesShort": MessageLookupByLibrary.simpleMessage("min"),
         "Moderated": MessageLookupByLibrary.simpleMessage("Moderated"),
+        "Monday": MessageLookupByLibrary.simpleMessage("Monday"),
         "MondayShort": MessageLookupByLibrary.simpleMessage("Mon"),
         "Month": MessageLookupByLibrary.simpleMessage("Month"),
         "Monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
@@ -919,6 +924,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Other": MessageLookupByLibrary.simpleMessage("Other"),
         "OurRecommendationsAboutGeolocation": MessageLookupByLibrary.simpleMessage(
             "Our recommendation system is based on many factors. Geolocation is only part of the system, which will allow us to correctly prioritize, both in terms of distance and the nearest landscape features (mountains, reservoirs, plains, deserts)"),
+        "OverallRatingOfInterest":
+            MessageLookupByLibrary.simpleMessage("Overall rating of interest"),
         "Partial": MessageLookupByLibrary.simpleMessage("partial"),
         "PartialRefund": MessageLookupByLibrary.simpleMessage("Partial refund"),
         "Password": MessageLookupByLibrary.simpleMessage("Password"),
@@ -956,6 +963,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Photos": MessageLookupByLibrary.simpleMessage("Photos"),
         "PickFromMap": MessageLookupByLibrary.simpleMessage("Pick from map"),
         "Place": MessageLookupByLibrary.simpleMessage("Place"),
+        "PlaceRatingByFeedback":
+            MessageLookupByLibrary.simpleMessage("Place rating (by feedback)"),
         "PlaceSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Place submitted successfully"),
         "PlaceType": MessageLookupByLibrary.simpleMessage("Place type"),
@@ -1114,6 +1123,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReviewsPosted": m69,
         "ReviewsReceived": m70,
         "Routes": MessageLookupByLibrary.simpleMessage("Routes"),
+        "Saturday": MessageLookupByLibrary.simpleMessage("Saturday"),
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Sat"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "SaveAndPay": MessageLookupByLibrary.simpleMessage("Save and pay"),
@@ -1274,6 +1284,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
         "SuccessfullyAnswered":
             MessageLookupByLibrary.simpleMessage("Successfully answered"),
+        "Sunday": MessageLookupByLibrary.simpleMessage("Sunday"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("Sun"),
         "Sunny": MessageLookupByLibrary.simpleMessage("Sunny"),
         "Support": MessageLookupByLibrary.simpleMessage("Support"),
@@ -1335,6 +1346,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThisIs": MessageLookupByLibrary.simpleMessage("This is"),
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "Through a non-\naggregator system \nespecially for you"),
+        "Thursday": MessageLookupByLibrary.simpleMessage("Thursday"),
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("Thu"),
         "Ticket": MessageLookupByLibrary.simpleMessage("Ticket"),
         "TicketFrom": m79,
@@ -1369,6 +1381,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TravelerWom": MessageLookupByLibrary.simpleMessage("Traveler"),
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("Trial period"),
         "TryYourself": MessageLookupByLibrary.simpleMessage("Try\nyourself"),
+        "Tuesday": MessageLookupByLibrary.simpleMessage("Tuesday"),
         "TuesdayShort": MessageLookupByLibrary.simpleMessage("Tue"),
         "TypeHere": MessageLookupByLibrary.simpleMessage("Type here"),
         "TypeOfContent":
@@ -1456,6 +1469,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "We will let you know the results"),
         "Weather": MessageLookupByLibrary.simpleMessage("Weather"),
         "Website": MessageLookupByLibrary.simpleMessage("Website"),
+        "Wednesday": MessageLookupByLibrary.simpleMessage("Wednesday"),
         "WednesdayShort": MessageLookupByLibrary.simpleMessage("Wed"),
         "WeekAgo": MessageLookupByLibrary.simpleMessage("a week ago"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
@@ -1488,6 +1502,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Year": MessageLookupByLibrary.simpleMessage("Year"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Yearly"),
         "YearsOld": m95,
+        "YearsOldShort": MessageLookupByLibrary.simpleMessage("y.o"),
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "Yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
         "You": MessageLookupByLibrary.simpleMessage("You"),

@@ -8974,6 +8974,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Place rating (by feedback)`
+  String get PlaceRatingByFeedback {
+    return Intl.message(
+      'Place rating (by feedback)',
+      name: 'PlaceRatingByFeedback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Event rating (by feedback)`
+  String get EventRatingByFeedback {
+    return Intl.message(
+      'Event rating (by feedback)',
+      name: 'EventRatingByFeedback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Overall rating of interest`
+  String get OverallRatingOfInterest {
+    return Intl.message(
+      'Overall rating of interest',
+      name: 'OverallRatingOfInterest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Monday`
+  String get Monday {
+    return Intl.message(
+      'Monday',
+      name: 'Monday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tuesday`
+  String get Tuesday {
+    return Intl.message(
+      'Tuesday',
+      name: 'Tuesday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wednesday`
+  String get Wednesday {
+    return Intl.message(
+      'Wednesday',
+      name: 'Wednesday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Thursday`
+  String get Thursday {
+    return Intl.message(
+      'Thursday',
+      name: 'Thursday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Friday`
+  String get Friday {
+    return Intl.message(
+      'Friday',
+      name: 'Friday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saturday`
+  String get Saturday {
+    return Intl.message(
+      'Saturday',
+      name: 'Saturday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sunday`
+  String get Sunday {
+    return Intl.message(
+      'Sunday',
+      name: 'Sunday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `y.o`
+  String get YearsOldShort {
+    return Intl.message(
+      'y.o',
+      name: 'YearsOldShort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gender and Age`
+  String get GenderAndAge {
+    return Intl.message(
+      'Gender and Age',
+      name: 'GenderAndAge',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

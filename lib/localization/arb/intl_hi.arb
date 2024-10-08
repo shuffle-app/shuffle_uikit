@@ -869,6 +869,17 @@
   "SelectTimeCorrespondingToContentCard": "सामग्री कार्ड के अनुसार समय चुनें",
   "AverageContentViewTime": "औसत कार्ड देखने का समय",
   "Routes": "रूट",
-  "MinutesShort": "मिनट"
-
+  "MinutesShort": "मिनट",
+  "EventRatingByFeedback": "घटना रेटिंग (प्रतिक्रिया द्वारा)",
+  "PlaceRatingByFeedback": "स्थान रेटिंग (प्रतिक्रिया द्वारा)",
+  "OverallRatingOfInterest": "रुचि की समग्र रेटिंग",
+  "Monday": "सोमवार",
+  "Tuesday": "मंगलवार",
+  "Wednesday": "बुधवार",
+  "Thursday": "गुरुवार",
+  "Friday": "शुक्रवार",
+  "Saturday": "शनिवार",
+  "Sunday": "रविवार",
+  "YearsOldShort": "वर्ष",
+  "GenderAndAge": "लिंग और आय"
 }

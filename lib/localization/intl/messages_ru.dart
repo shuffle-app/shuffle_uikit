@@ -597,6 +597,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ErrorOccuredWithoutMessage":
             MessageLookupByLibrary.simpleMessage("Ошибка без сообщения"),
         "Event": MessageLookupByLibrary.simpleMessage("Событие"),
+        "EventRatingByFeedback": MessageLookupByLibrary.simpleMessage(
+            "Рейтинг событий (по отзывам)"),
         "EventType": MessageLookupByLibrary.simpleMessage("Тип события"),
         "Events": MessageLookupByLibrary.simpleMessage("События"),
         "EventsCount": m21,
@@ -661,6 +663,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ForgotPassword": MessageLookupByLibrary.simpleMessage("Забыл пароль"),
         "Free": MessageLookupByLibrary.simpleMessage("Бесплатно"),
         "FreePlaces": MessageLookupByLibrary.simpleMessage("\nбесплатных мест"),
+        "Friday": MessageLookupByLibrary.simpleMessage("Пятница"),
         "FridayShort": MessageLookupByLibrary.simpleMessage("Пт"),
         "FromGallery": MessageLookupByLibrary.simpleMessage("Из галлереи"),
         "FromToYearsOld": m32,
@@ -669,6 +672,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Full": MessageLookupByLibrary.simpleMessage("полный"),
         "FullRefund": MessageLookupByLibrary.simpleMessage("Полный возврат"),
         "Gender": MessageLookupByLibrary.simpleMessage("Пол"),
+        "GenderAndAge": MessageLookupByLibrary.simpleMessage("Пол и возраст"),
         "GeneraFem": MessageLookupByLibrary.simpleMessage("Общая"),
         "GeneralMas": MessageLookupByLibrary.simpleMessage("Общий"),
         "GetCode": MessageLookupByLibrary.simpleMessage("Получить код"),
@@ -814,6 +818,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "MinutesAgo": m45,
         "MinutesShort": MessageLookupByLibrary.simpleMessage("мин"),
         "Moderated": MessageLookupByLibrary.simpleMessage("Модерировано"),
+        "Monday": MessageLookupByLibrary.simpleMessage("Понедельник"),
         "MondayShort": MessageLookupByLibrary.simpleMessage("Пн"),
         "Month": MessageLookupByLibrary.simpleMessage("Месяц"),
         "Monthly": MessageLookupByLibrary.simpleMessage("Месячный"),
@@ -937,6 +942,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Other": MessageLookupByLibrary.simpleMessage("Другое"),
         "OurRecommendationsAboutGeolocation": MessageLookupByLibrary.simpleMessage(
             "Система рекомендаций основана на многих факторах. Геолокация – лишь часть системы, которая позволит правильно расставить приоритеты, по расстоянию, по ближайшим особенностям ландшафта (горы, водоемы, равнины, пустыни)"),
+        "OverallRatingOfInterest":
+            MessageLookupByLibrary.simpleMessage("Общий рейтинг интереса"),
         "Partial": MessageLookupByLibrary.simpleMessage("частичный"),
         "PartialRefund":
             MessageLookupByLibrary.simpleMessage("Частичный возврат"),
@@ -974,6 +981,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Photos": MessageLookupByLibrary.simpleMessage("Фото"),
         "PickFromMap": MessageLookupByLibrary.simpleMessage("Выбрать на карте"),
         "Place": MessageLookupByLibrary.simpleMessage("Место"),
+        "PlaceRatingByFeedback":
+            MessageLookupByLibrary.simpleMessage("Рейтинг мест (по отзывам)"),
         "PlaceSubmittedSuccessfully": MessageLookupByLibrary.simpleMessage(
             "Предложение успешно отправлено"),
         "PlaceType": MessageLookupByLibrary.simpleMessage("Тип места"),
@@ -1137,6 +1146,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ReviewsPosted": m69,
         "ReviewsReceived": m70,
         "Routes": MessageLookupByLibrary.simpleMessage("Маршруты"),
+        "Saturday": MessageLookupByLibrary.simpleMessage("Суббота"),
         "SaturdayShort": MessageLookupByLibrary.simpleMessage("Сб"),
         "Save": MessageLookupByLibrary.simpleMessage("Сохранить"),
         "SaveAndPay":
@@ -1301,6 +1311,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Success": MessageLookupByLibrary.simpleMessage("Success"),
         "SuccessfullyAnswered":
             MessageLookupByLibrary.simpleMessage("Успешно отправлен ответ"),
+        "Sunday": MessageLookupByLibrary.simpleMessage("Воскресенье"),
         "SundayShort": MessageLookupByLibrary.simpleMessage("Вс"),
         "Sunny": MessageLookupByLibrary.simpleMessage("Солнечно"),
         "Support": MessageLookupByLibrary.simpleMessage("Помощь"),
@@ -1362,6 +1373,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ThisIs": MessageLookupByLibrary.simpleMessage("Это"),
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "Неагрегаторная система специально для вас"),
+        "Thursday": MessageLookupByLibrary.simpleMessage("Четверг"),
         "ThursdayShort": MessageLookupByLibrary.simpleMessage("Чт"),
         "Ticket": MessageLookupByLibrary.simpleMessage("Билет"),
         "TicketFrom": m79,
@@ -1396,6 +1408,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TravelerWom": MessageLookupByLibrary.simpleMessage("Путница"),
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("Триал период"),
         "TryYourself": MessageLookupByLibrary.simpleMessage("Попробуйте\nсами"),
+        "Tuesday": MessageLookupByLibrary.simpleMessage("Вторник"),
         "TuesdayShort": MessageLookupByLibrary.simpleMessage("Вт"),
         "TypeHere": MessageLookupByLibrary.simpleMessage("Напиши тут"),
         "TypeOfContent": MessageLookupByLibrary.simpleMessage("Тип контента"),
@@ -1485,6 +1498,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Мы оповестим вас о результатах"),
         "Weather": MessageLookupByLibrary.simpleMessage("Погода"),
         "Website": MessageLookupByLibrary.simpleMessage("Сайт"),
+        "Wednesday": MessageLookupByLibrary.simpleMessage("Среда"),
         "WednesdayShort": MessageLookupByLibrary.simpleMessage("Ср"),
         "WeekAgo": MessageLookupByLibrary.simpleMessage("неделю назад"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Велкам"),
@@ -1518,6 +1532,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Year": MessageLookupByLibrary.simpleMessage("Год"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Годовой"),
         "YearsOld": m95,
+        "YearsOldShort": MessageLookupByLibrary.simpleMessage("лет"),
         "Yes": MessageLookupByLibrary.simpleMessage("Да"),
         "Yesterday": MessageLookupByLibrary.simpleMessage("Вчера"),
         "You": MessageLookupByLibrary.simpleMessage("Ты"),

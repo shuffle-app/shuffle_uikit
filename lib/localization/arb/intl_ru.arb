@@ -871,7 +871,18 @@
   "BookingPlural": "Брони",
   "AverageContentViewTime": "Среднее время просмотра карточки",
   "Routes": "Маршруты",
-  "MinutesShort": "мин"
-
+  "MinutesShort": "мин",
+  "EventRatingByFeedback": "Рейтинг событий (по отзывам)",
+  "PlaceRatingByFeedback": "Рейтинг мест (по отзывам)",
+  "OverallRatingOfInterest": "Общий рейтинг интереса",
+  "Monday": "Понедельник",
+  "Tuesday": "Вторник",
+  "Wednesday": "Среда",
+  "Thursday": "Четверг",
+  "Friday": "Пятница",
+  "Saturday": "Суббота",
+  "Sunday": "Воскресенье",
+  "YearsOldShort": "лет",
+  "GenderAndAge": "Пол и возраст"
 }
 
