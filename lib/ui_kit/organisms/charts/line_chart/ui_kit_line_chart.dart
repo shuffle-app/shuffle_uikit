@@ -176,10 +176,19 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
             _smallPreviewUpdateNotifier.addListener(_smallPreviewUpdateListener);
           }
           final visibleDates = (chartViewPortSize.width ~/ initialPixelsPerDate) - 1;
-          _visibleDateRangeNotifier.value = DateRange(
-            start: dates.first,
-            end: visibleDates - 1 < dates.length ? dates.elementAt(visibleDates - 1) : dates.last,
+          DateRange dateRange = DateRange(
+            start: widget.chartData.items.earliestDate,
+            end: widget.chartData.items.latestDate,
           );
+
+          /// check if dates are not empty to avoid exception
+          if (dates.isNotEmpty) {
+            dateRange = DateRange(
+              start: dates.first,
+              end: visibleDates - 1 < dates.length ? dates.elementAt(visibleDates - 1) : dates.last,
+            );
+          }
+          _visibleDateRangeNotifier.value = dateRange;
         });
       });
     });
