@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/ui_models/charts/ui_kit_line_chart_additional_data.dart';
 
 abstract class UiKitChartData<T> {
   final String chartTitle;
@@ -56,12 +57,14 @@ class UiKitLineChartData<T> extends UiKitChartData<T> {
   final List<UiKitLineChartItemData<T>> items;
   final String? subtitle;
   final List<String>? popUpMenuOptions;
+  final UiKitLineChartAdditionalData? additionalData;
 
   UiKitLineChartData({
     required String title,
     required this.items,
     this.subtitle,
     this.popUpMenuOptions,
+    this.additionalData,
   }) : super(chartTitle: title, items: items);
 
   factory UiKitLineChartData.empty() => UiKitLineChartData<T>(

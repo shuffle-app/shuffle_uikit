@@ -870,10 +870,23 @@
   "AverageContentViewTime": "औसत कार्ड देखने का समय",
   "Routes": "रूट",
   "MinutesShort": "मिनट",
+  "EventRatingByFeedback": "घटना रेटिंग (प्रतिक्रिया द्वारा)",
+  "PlaceRatingByFeedback": "स्थान रेटिंग (प्रतिक्रिया द्वारा)",
+  "OverallRatingOfInterest": "रुचि की समग्र रेटिंग",
+  "Monday": "सोमवार",
+  "Tuesday": "मंगलवार",
+  "Wednesday": "बुधवार",
+  "Thursday": "गुरुवार",
+  "Friday": "शुक्रवार",
+  "Saturday": "शनिवार",
+  "Sunday": "रविवार",
+  "YearsOldShort": "वर्ष",
+  "GenderAndAge": "लिंग और आय",
   "TellUsAbout": "Tell us about",
   "Yourself": "Yourself",
   "AndGet": "And get",
   "SelectMindsetInvitation": "{count, plural, =0{Content recommendation system especially for you} =1{Meeting like-minded people using the user matching system} =2{Every time new places and events that suit you} other{It's easier to find the right people, and for them to find you}}",
-  "PlzEnterName": "Plz, enter your name & nickname"
+  "PlzEnterName": "Plz, enter your name & nickname",
+  "OpenedUpcomingEvents": "Opened \"Upcoming events\" block"
 
 }
