@@ -720,7 +720,7 @@
   "GeneralMas": "General",
   "GeneraFem": "General",
   "OrganicStatistics": "Organic",
-  "Promotion": "Promotion",
+  "Promotion": "Promo",
   "UserHasNoPublicProfileStart": "User",
   "UserHasNoPublicProfileEnd": "doesn't have public profile",
   "DownloadPdf": "Download PDF",
@@ -888,5 +888,6 @@
   "Saturday": "Saturday",
   "Sunday": "Sunday",
   "YearsOldShort": "y.o",
-  "GenderAndAge": "Gender and Age"
+  "GenderAndAge": "Gender and Age",
+  "OpenedUpcomingEvents": "Opened \"Upcoming events\" block"
 }

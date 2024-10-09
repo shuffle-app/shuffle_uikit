@@ -7401,10 +7401,10 @@ class S {
     );
   }
 
-  /// `Promotion`
+  /// `Promo`
   String get Promotion {
     return Intl.message(
-      'Promotion',
+      'Promo',
       name: 'Promotion',
       desc: '',
       args: [],
@@ -9144,6 +9144,16 @@ class S {
     return Intl.message(
       'Plz, enter your name & nickname',
       name: 'PlzEnterName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Opened "Upcoming events" block`
+  String get OpenedUpcomingEvents {
+    return Intl.message(
+      'Opened "Upcoming events" block',
+      name: 'OpenedUpcomingEvents',
       desc: '',
       args: [],
     );

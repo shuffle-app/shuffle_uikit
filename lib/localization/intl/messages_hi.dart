@@ -930,6 +930,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "OpenNow": MessageLookupByLibrary.simpleMessage("अभी खोलें"),
         "OpenPlace": MessageLookupByLibrary.simpleMessage("खुला स्थान"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("के लिए खुला"),
+        "OpenedUpcomingEvents": MessageLookupByLibrary.simpleMessage(
+            "Opened \"Upcoming events\" block"),
         "OpeningHours": MessageLookupByLibrary.simpleMessage("खुलने का समय"),
         "OrDragFilesHere":
             MessageLookupByLibrary.simpleMessage("या फ़ाइलों को यहां खींचें"),

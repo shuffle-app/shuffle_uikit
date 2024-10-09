@@ -375,8 +375,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Atheism": MessageLookupByLibrary.simpleMessage("Атеизм"),
         "Athlete": MessageLookupByLibrary.simpleMessage("Спортсмен"),
         "AverageBill": MessageLookupByLibrary.simpleMessage("Средний чек"),
-        "AverageContentViewTime": MessageLookupByLibrary.simpleMessage(
-            "Среднее время просмотра карточки"),
+        "AverageContentViewTime":
+            MessageLookupByLibrary.simpleMessage("Среднее время визита"),
         "Back": MessageLookupByLibrary.simpleMessage("Назад"),
         "Balance": MessageLookupByLibrary.simpleMessage("Баланс "),
         "BaseProperties":
@@ -397,7 +397,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "BookingPlural": MessageLookupByLibrary.simpleMessage("Брони"),
         "Bookings": m4,
         "BookingsAndFavorites":
-            MessageLookupByLibrary.simpleMessage("Букинги и избранное"),
+            MessageLookupByLibrary.simpleMessage("Букинг и Избранное"),
         "BookingsAndInvites":
             MessageLookupByLibrary.simpleMessage("Брони и Приглашения"),
         "BookingsHeading": MessageLookupByLibrary.simpleMessage("Брони"),
@@ -501,7 +501,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "CountReviews": m13,
         "CountVideoReaction": m14,
         "Cover": MessageLookupByLibrary.simpleMessage("Обложка"),
-        "Coverage": MessageLookupByLibrary.simpleMessage("Охват"),
+        "Coverage": MessageLookupByLibrary.simpleMessage("Охваты"),
         "Create": MessageLookupByLibrary.simpleMessage("Создать"),
         "CreateAUSP": m15,
         "CreateBooking": MessageLookupByLibrary.simpleMessage("Создать букинг"),
@@ -601,8 +601,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ErrorOccuredWithoutMessage":
             MessageLookupByLibrary.simpleMessage("Ошибка без сообщения"),
         "Event": MessageLookupByLibrary.simpleMessage("Событие"),
-        "EventRatingByFeedback": MessageLookupByLibrary.simpleMessage(
-            "Рейтинг событий (по отзывам)"),
+        "EventRatingByFeedback":
+            MessageLookupByLibrary.simpleMessage("Общий рейтинг (по отзывам)"),
         "EventType": MessageLookupByLibrary.simpleMessage("Тип события"),
         "Events": MessageLookupByLibrary.simpleMessage("События"),
         "EventsCount": m21,
@@ -938,11 +938,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "OpenNow": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "OpenPlace": MessageLookupByLibrary.simpleMessage("Открыть место"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("До"),
+        "OpenedUpcomingEvents": MessageLookupByLibrary.simpleMessage(
+            "Открытие блока \"Предстоящие события\""),
         "OpeningHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
         "OrDragFilesHere":
             MessageLookupByLibrary.simpleMessage("Или перетащи файлы"),
         "Organic": MessageLookupByLibrary.simpleMessage("Органическая"),
-        "OrganicStatistics": MessageLookupByLibrary.simpleMessage("Живая"),
+        "OrganicStatistics": MessageLookupByLibrary.simpleMessage("Органика"),
         "Other": MessageLookupByLibrary.simpleMessage("Другое"),
         "OurRecommendationsAboutGeolocation": MessageLookupByLibrary.simpleMessage(
             "Система рекомендаций основана на многих факторах. Геолокация – лишь часть системы, которая позволит правильно расставить приоритеты, по расстоянию, по ближайшим особенностям ландшафта (горы, водоемы, равнины, пустыни)"),
@@ -1100,7 +1102,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("пойти куда-нибудь вместе"),
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("Не будь один..."),
-        "Promotion": MessageLookupByLibrary.simpleMessage("Акции"),
+        "Promotion": MessageLookupByLibrary.simpleMessage("Промо"),
         "Properties": MessageLookupByLibrary.simpleMessage("Свойства"),
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
         "PushUpYourBusiness":
@@ -1495,7 +1497,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Views": MessageLookupByLibrary.simpleMessage("Просмотры"),
         "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(
             "Посети первое, открой следующее"),
-        "Visitors": MessageLookupByLibrary.simpleMessage("Посетители"),
+        "Visitors": MessageLookupByLibrary.simpleMessage("Визиты"),
         "Voice": MessageLookupByLibrary.simpleMessage("Аудиосообщения"),
         "Voices": MessageLookupByLibrary.simpleMessage("Голосовые записи"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(

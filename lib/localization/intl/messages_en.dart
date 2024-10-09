@@ -920,6 +920,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "OpenNow": MessageLookupByLibrary.simpleMessage("Open now"),
         "OpenPlace": MessageLookupByLibrary.simpleMessage("Open place"),
         "OpenTo": MessageLookupByLibrary.simpleMessage("Open to"),
+        "OpenedUpcomingEvents": MessageLookupByLibrary.simpleMessage(
+            "Opened \"Upcoming events\" block"),
         "OpeningHours": MessageLookupByLibrary.simpleMessage("Opening hours"),
         "OrDragFilesHere":
             MessageLookupByLibrary.simpleMessage("Or drag files here"),
@@ -1080,7 +1082,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("go somewhere together"),
         "ProfileFindSomeoneHiwTitle":
             MessageLookupByLibrary.simpleMessage("Do not be alone..."),
-        "Promotion": MessageLookupByLibrary.simpleMessage("Promotion"),
+        "Promotion": MessageLookupByLibrary.simpleMessage("Promo"),
         "Properties": MessageLookupByLibrary.simpleMessage("Properties"),
         "Published": MessageLookupByLibrary.simpleMessage("Published"),
         "PushUpYourBusiness":
