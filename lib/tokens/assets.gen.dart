@@ -1150,6 +1150,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/dubai-silhouette.svg
   SvgGenImage get dubaiSilhouette => const SvgGenImage('assets/images/svg/dubai-silhouette.svg');
 
+  /// File path: assets/images/svg/empty_radio.svg
+  SvgGenImage get emptyRadio => const SvgGenImage('assets/images/svg/empty_radio.svg');
+
   /// File path: assets/images/svg/facebook_logo.svg
   SvgGenImage get facebookLogo => const SvgGenImage('assets/images/svg/facebook_logo.svg');
 
@@ -1391,6 +1394,7 @@ class $AssetsImagesSvgGen {
         coworking,
         deliveryTruck,
         dubaiSilhouette,
+        emptyRadio,
         facebookLogo,
         family,
         filledRadio,
