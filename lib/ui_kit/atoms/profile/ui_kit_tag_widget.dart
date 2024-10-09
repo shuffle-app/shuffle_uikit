@@ -33,8 +33,6 @@ class UiKitTagWidget extends StatelessWidget {
       color: textColor ?? ColorsFoundation.darkNeutral500,
     );
 
-    final isDarkMode = context.uiKitTheme?.colorScheme.surface == UiKitColorScheme.dark().surface;
-
     final iconColor = iconCustomColor ?? (uniqueTag ? Colors.white : textColor ?? ColorsFoundation.darkNeutral500);
 
     final image = ImageWidget(
@@ -42,7 +40,7 @@ class UiKitTagWidget extends StatelessWidget {
       iconData: icon is IconData ? icon as IconData : null,
       cardColor: Colors.transparent,
       errorWidget: ImageWidget(
-          iconData: ShuffleUiKitIcons.logo,
+          iconData: ShuffleUiKitIcons.shuffleDefault,
           height: tagSize ?? SpacingFoundation.horizontalSpacing16,
           width: tagSize ?? SpacingFoundation.horizontalSpacing16,
           color: iconColor,

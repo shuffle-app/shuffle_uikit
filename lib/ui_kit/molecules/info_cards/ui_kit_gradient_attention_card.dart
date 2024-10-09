@@ -18,40 +18,43 @@ class UiKitGradientAttentionCard extends StatelessWidget {
     final messageStyle = context.uiKitTheme?.boldTextTheme.subHeadline;
 
     return RepaintBoundary(
-        child: SizedBox(
-            height: width,
-            width: width,
-            child: ClipRRect(
-                clipBehavior: Clip.hardEdge,
-                borderRadius: BorderRadiusFoundation.all24,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    gradient: GradientFoundation.attentionCard,
-                    borderRadius: BorderRadiusFoundation.all24,
+      child: SizedBox(
+        height: width,
+        width: width,
+        child: ClipRRect(
+          clipBehavior: Clip.hardEdge,
+          borderRadius: BorderRadiusFoundation.all24,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              gradient: GradientFoundation.attentionCard,
+              borderRadius: BorderRadiusFoundation.all24,
+            ),
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                Text(
+                  message,
+                  style: messageStyle?.copyWith(color: textColor),
+                ).paddingOnly(
+                  left: EdgeInsetsFoundation.all16,
+                  top: EdgeInsetsFoundation.all16,
+                  right: EdgeInsetsFoundation.all16,
+                ),
+                Positioned(
+                  bottom: SpacingFoundation.verticalSpacing8,
+                  left: 0,
+                  child: ImageWidget(
+                    width: width * 0.75,
+                    fit: BoxFit.fitWidth,
+                    color: Colors.black,
+                    svgAsset: GraphicsFoundation.instance.svg.tripleArrowBlack,
                   ),
-                  child: Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      Text(
-                        message,
-                        style: messageStyle?.copyWith(color: textColor),
-                      ).paddingOnly(
-                        left: EdgeInsetsFoundation.all16,
-                        top: EdgeInsetsFoundation.all16,
-                        right: EdgeInsetsFoundation.all16,
-                      ),
-                      Positioned(
-                        bottom: SpacingFoundation.verticalSpacing8,
-                        left: 0,
-                        child: ImageWidget(
-                          width: width * 0.75,
-                          fit: BoxFit.fitWidth,
-                          color: Colors.black,
-                          iconData: ShuffleUiKitIcons.tripleArrowBlack,
-                        ),
-                      ),
-                    ],
-                  ),
-                ))));
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

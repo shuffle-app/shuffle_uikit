@@ -15,21 +15,36 @@ class UiKitBottomModalSheet extends StatelessWidget {
     final shape = bottomSheetTheme?.shape;
 
     double topPadding = data.topPadding ??
-        (MediaQuery.viewPaddingOf(context).top == 0 ? 45.h : MediaQuery.viewPaddingOf(context).top + 30.h);
+        (MediaQuery
+            .viewPaddingOf(context)
+            .top == 0 ? 45.h : MediaQuery
+            .viewPaddingOf(context)
+            .top + 30.h);
 
     ///проверяем не открыта ли клавиатура, вычитаем ее размер из верхнего отступа
-    if (MediaQuery.viewInsetsOf(context).bottom != 0 && data.resizeToAvoidBottomInset) {
-      topPadding -= MediaQuery.viewInsetsOf(context).bottom;
-      topPadding = topPadding < 0 ? MediaQuery.viewPaddingOf(context).top + 30.h : topPadding;
+    if (MediaQuery
+        .viewInsetsOf(context)
+        .bottom != 0 && data.resizeToAvoidBottomInset) {
+      topPadding -= MediaQuery
+          .viewInsetsOf(context)
+          .bottom;
+      topPadding = topPadding < 0 ? MediaQuery
+          .viewPaddingOf(context)
+          .top + 30.h : topPadding;
     }
 
     return RepaintBoundary(
       child: Stack(
         fit: StackFit.expand,
         children: [
-          GestureDetector(onTap: Navigator.of(context).pop),
+          if( data.isDismissible)
+            GestureDetector(onTap: Navigator
+                .of(context)
+                .pop),
           SizedBox(
-              height: 1.sh - (data.topPadding ?? 0) - MediaQuery.viewPaddingOf(context).top,
+              height: 1.sh - (data.topPadding ?? 0) - MediaQuery
+                  .viewPaddingOf(context)
+                  .top,
               child: ClipRRect(
                   borderRadius: BorderRadiusFoundation.onlyTop24,
                   child: ColoredBox(

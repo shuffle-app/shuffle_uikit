@@ -18,6 +18,7 @@ class UiKitSpinnerCard extends StatefulWidget {
   final String? ownerTileSubtitle;
   final UserTileType? ownerTileType;
   final double availableHeight;
+  final PlaceWeatherType? weatherType;
 
   const UiKitSpinnerCard({
     super.key,
@@ -34,6 +35,7 @@ class UiKitSpinnerCard extends StatefulWidget {
     this.ownerTileSubtitle,
     this.ownerTileType,
     this.weekdays,
+    this.weatherType,
   });
 
   @override
@@ -192,6 +194,14 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
                               errorWidget: errorWidget,
                             ),
                           ),
+                          if (widget.weatherType != null)
+                            Positioned(
+                              top: 12.w,
+                              left: 12.w,
+                              child: UiKitPlaceWeatherAnimation(
+                                weatherType: widget.weatherType!,
+                              ),
+                            ),
                           Positioned(
                             bottom: SpacingFoundation.verticalSpacing10,
                             left: SpacingFoundation.horizontalSpacing10,

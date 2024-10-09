@@ -46,10 +46,11 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   bool showBackStack = false;
   bool showFirstCard = false;
 
+  UiKitThemeData? theme;
+
   @override
   void initState() {
     super.initState();
-
     _undoableIndex.state = widget.initialIndex;
 
     _animationController = AnimationController(
@@ -63,10 +64,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
       _animationController,
     );
 
-    if (kIsWeb) {
-      showFirstCard = true;
-      showBackStack = true;
-    } else {
+     if(widget.media.first.link.startsWith('http') && !kIsWeb) {
       CustomCacheManager.imageInstance.getSingleFile(widget.media.first.link).then((_) {
         if (mounted) {
           setState(() {
@@ -85,7 +83,15 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
           }
         });
       });
-    }
+    } else {
+       showFirstCard = true;
+       showBackStack = true;
+     }
+  }
+  @override
+  void didChangeDependencies() {
+    theme = context.uiKitTheme;
+    super.didChangeDependencies();
   }
 
   _getBackStack([bool reversed = false]) {
@@ -147,7 +153,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   }
 
   Widget _buildLeftItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
-    final theme = context.uiKitTheme;
 
     return AnimatedPositioned(
         duration: _animDuration,
@@ -168,7 +173,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   }
 
   Widget _buildRightItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
-    final theme = context.uiKitTheme;
 
     return AnimatedPositioned(
       duration: _animDuration,
@@ -256,6 +260,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 
   @override
   Widget build(BuildContext context) {
+    theme ??=context.uiKitTheme;
     if (widget.media.isEmpty) return const SizedBox.shrink();
 
     final List<Widget> backStack = showBackStack ? _getBackStack(_cardAnimation.right < widget.width / 10) : [];

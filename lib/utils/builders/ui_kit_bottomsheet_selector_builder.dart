@@ -24,7 +24,7 @@ uiKitBottomsheetSelectorBuilder(BuildContext context, {required List<ListTile> w
                         controller: searchController,
                         icon: searchController.text.isEmpty
                             ? ImageWidget(
-                                svgAsset: GraphicsFoundation.instance.svg.search,
+                                iconData: ShuffleUiKitIcons.search,
                                 color: colorScheme?.bodyTypography,
                               )
                             : null,

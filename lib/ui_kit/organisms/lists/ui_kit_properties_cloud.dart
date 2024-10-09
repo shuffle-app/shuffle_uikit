@@ -15,10 +15,9 @@ class UiKitPropertiesCloud extends StatelessWidget {
     return UiKitCardWrapper(
       color: uiKitTheme?.colorScheme.surface1,
       borderRadius: BorderRadiusFoundation.all12,
-      child: SizedBox(
-        width: 1.sw,
-        child: child,
-      ),
+      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      child: child,
+
     );
   }
 }

@@ -33,6 +33,8 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
   late final FixedExtentScrollController _scrollController;
   bool hasUserInteracted = false;
 
+  UiKitThemeData? theme;
+
   @override
   void initState() {
     _scrollController = FixedExtentScrollController(initialItem: widget.initialValue);
@@ -47,6 +49,12 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
   }
 
   @override
+  void didChangeDependencies() {
+    theme = context.uiKitTheme;
+    super.didChangeDependencies();
+  }
+
+  @override
   void dispose() {
     _currentValueNotifier.dispose();
     super.dispose();
@@ -54,7 +62,8 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
 
   @override
   Widget build(BuildContext context) {
-    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    theme ??= context.uiKitTheme;
+    final boldTextTheme = theme?.boldTextTheme;
     final itemWidth = 49.w;
     final itemHeight = itemWidth * 0.82;
 
@@ -161,7 +170,7 @@ class _UiKitHorizontalWheelNumberSelectorState extends State<UiKitHorizontalWhee
                               borderRadius: BorderRadiusFoundation.all10,
                               border: Border.all(
                                 color: widget.numbersColor ??
-                                    context.uiKitTheme?.colorScheme.inverseSurface ??
+                                    theme?.colorScheme.inverseSurface ??
                                     Colors.white,
                                 width: 2,
                               ),

@@ -143,14 +143,16 @@ class ProPublicProfileCardBody extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Text(
-                      phone ?? '',
-                      style: regularTextTheme?.caption2,
-                    ),
-                    Text(
-                      email ?? '',
-                      style: regularTextTheme?.caption2,
-                    ),
+                    if (phone != null)
+                      Text(
+                        phone!,
+                        style: regularTextTheme?.caption2,
+                      ),
+                    if (email != null)
+                      Text(
+                        email!,
+                        style: regularTextTheme?.caption2,
+                      ),
                   ],
                 ),
               ),
@@ -159,7 +161,7 @@ class ProPublicProfileCardBody extends StatelessWidget {
                 data: BaseUiKitButtonData(
                   onPressed: onTelegramPressed,
                   iconInfo: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.svg.socialTelegram.path,
+                    iconData: ShuffleUiKitIcons.socialtelegram,
                   ),
                 ),
               ),
@@ -168,7 +170,7 @@ class ProPublicProfileCardBody extends StatelessWidget {
                 data: BaseUiKitButtonData(
                   onPressed: onWhatsappPressed,
                   iconInfo: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.svg.socialWhatsapp.path,
+                    iconData: ShuffleUiKitIcons.socialwhatsapp,
                   ),
                 ),
               ),

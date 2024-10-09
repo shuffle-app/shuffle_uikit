@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:shuffle_uikit/utils/extentions/mini_chart_extension.dart';
 
 class UiKitMiniChartDataItemWidget extends StatelessWidget {
   final UiKitMiniChartData data;
@@ -37,19 +36,19 @@ class UiKitMiniChartDataItemWidget extends StatelessWidget {
                     style: boldTextTheme?.body,
                   ),
                   SpacingFoundation.horizontalSpace4,
-                  ImageWidget(
-                    svgAsset: data.progress.isNegative
-                        ? GraphicsFoundation.instance.svg.trendDown
-                        : GraphicsFoundation.instance.svg.trendUp,
-                    color: data.progress.isNegative ? ColorsFoundation.error : ColorsFoundation.success,
-                  ),
-                  SpacingFoundation.horizontalSpace2,
-                  Text(
-                    '${data.progress.toStringAsFixed(2)}%',
-                    style: boldTextTheme?.caption2Medium.copyWith(
-                      color: data.progress.isNegative ? ColorsFoundation.error : ColorsFoundation.success,
+                  if (data.progress != null)
+                    ImageWidget(
+                      iconData: data.progress!.isNegative ? ShuffleUiKitIcons.trenddown : ShuffleUiKitIcons.trendup,
+                      color: data.progress!.isNegative ? ColorsFoundation.error : ColorsFoundation.success,
                     ),
-                  ),
+                  if (data.progress != null) SpacingFoundation.horizontalSpace2,
+                  if (data.progress != null)
+                    Text(
+                      '${data.progress!.toStringAsFixed(2)}%',
+                      style: boldTextTheme?.caption2Medium.copyWith(
+                        color: data.progress!.isNegative ? ColorsFoundation.error : ColorsFoundation.success,
+                      ),
+                    ),
                 ],
               ),
             ],

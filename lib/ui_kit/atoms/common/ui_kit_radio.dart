@@ -45,7 +45,7 @@ class _UiKitRadioState extends State<UiKitRadio> {
             )
           : ImageWidget(
               key: offKey,
-              svgAsset: GraphicsFoundation.instance.svg.emptyRadio,
+              iconData: ShuffleUiKitIcons.emptyRadio,
             ),
     );
 

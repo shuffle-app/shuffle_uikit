@@ -55,7 +55,7 @@ class UiKitReactionPreview extends StatelessWidget {
               child: GradientableWidget(
                 gradient: GradientFoundation.defaultLinearGradient,
                 child: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.plus,
+                  iconData: ShuffleUiKitIcons.plus,
                   color: Colors.white,
                   fit: BoxFit.cover,
                   height: 32.w,

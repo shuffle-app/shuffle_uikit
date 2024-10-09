@@ -26,7 +26,7 @@ class UiKitRatingBadge extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           ImageWidget(
-            iconData: icon ?? ShuffleUiKitIcons.star,
+            iconData: icon ?? ShuffleUiKitIcons.starfill,
             color: color,
             height: 16,
             fit: BoxFit.cover,

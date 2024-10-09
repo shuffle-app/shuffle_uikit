@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -13,6 +14,7 @@ class UiKitLineChart extends StatefulWidget {
   final ValueChanged<String>? popUpMenuItemSelected;
   final VoidCallback? action;
   final bool loading;
+  final double? customHorizontalPadding;
 
   const UiKitLineChart({
     Key? key,
@@ -21,6 +23,7 @@ class UiKitLineChart extends StatefulWidget {
     this.popUpMenuItemSelected,
     this.action,
     this.loading = false,
+    this.customHorizontalPadding,
   }) : super(key: key);
 
   @override
@@ -61,7 +64,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       );
 
   Size get chartViewPortSize => Size(
-        viewPortComputedSize.width - SpacingFoundation.verticalSpacing32,
+        viewPortComputedSize.width - (widget.customHorizontalPadding ?? SpacingFoundation.verticalSpacing32),
         viewPortComputedSize.height * 0.45,
       );
 
@@ -105,7 +108,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   int get maxDisplayableDatesCount => chartMaxScrollWidth ~/ (initialPixelsPerDate * datesSpacingExpansionFraction);
 
   bool get shrinkDates {
-    if (initialPreviewWidthFraction != null) {
+    if (initialPreviewWidthFraction != null && _chartScrollController.hasClients) {
       return _smallPreviewUpdateNotifier.value.previewWidthFraction > initialPreviewWidthFraction!;
     }
     return false;
@@ -161,7 +164,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
           initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
           initialPreviewWidthFraction = chartViewPortSize.width / initialMaxChartScrollablePartWidth!;
           _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
-            previewWidthFraction: initialPreviewWidthFraction,
+            previewWidthFraction: min(1, initialPreviewWidthFraction!),
             visibleLinesIds: visibleLineIds,
           );
           if (initialMaxChartScrollablePartWidth != null) {
@@ -426,7 +429,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                       text: e.chartItemName,
                       color: e.color,
                       gradient: e.gradient,
-                      iconPath: e.icon,
+                      iconPath: e.iconPath,
                       selected: visibleLineIds.contains(e.id),
                       onTap: () {
                         final ids = visibleLineIds;

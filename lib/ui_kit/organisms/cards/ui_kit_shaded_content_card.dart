@@ -72,8 +72,8 @@ class UiKitShadedContentCard extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        ImageWidget(
-                          svgAsset: GraphicsFoundation.instance.svg.thumbUp,
+                        const ImageWidget(
+                          iconData: ShuffleUiKitIcons.thumbup,
                           color: Colors.black,
                           height: 16,
                           fit: BoxFit.fitHeight,
