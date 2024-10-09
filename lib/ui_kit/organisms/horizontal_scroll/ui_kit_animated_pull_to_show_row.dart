@@ -193,7 +193,7 @@ class _AnimatedPullToShowHintState extends State<AnimatedPullToShowHint> with Si
           child: ImageWidget(
             height: ballSize.height / 2,
             width: ballSize.width * 0.75,
-            svgAsset: GraphicsFoundation.instance.svg.chevronDown,
+            iconData: ShuffleUiKitIcons.chevrondown,
             fit: BoxFit.cover,
             color: Colors.white.withOpacity(0.5),
           ),
