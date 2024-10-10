@@ -606,6 +606,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         icon: data.iconWidget,
         iconInfo: data.iconInfo,
         onPressed: data.onPressed,
+        backgroundColor: data.backgroundColor,
       );
     }
 

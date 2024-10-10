@@ -5,19 +5,21 @@ class SmallButtonWithIcon extends StatelessWidget implements ButtonFactory {
   final Widget? icon;
   final BaseUiKitButtonIconData? iconInfo;
   final VoidCallback? onPressed;
+  final Color? backgroundColor;
 
   const SmallButtonWithIcon({
     super.key,
     this.icon,
     this.onPressed,
     this.iconInfo,
+    this.backgroundColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Material(
       shape: const CircleBorder(),
-      color: Colors.white.withOpacity(0.1),
+      color: backgroundColor ?? Colors.white.withOpacity(0.1),
       child: InkWell(
         onTap: onPressed,
         borderRadius: BorderRadiusFoundation.max,
