@@ -341,6 +341,32 @@ final UiKitLineChartData<double> mockLineChart = UiKitLineChartData<double>(
   ],
 );
 
+final UiKitPieChartData emptyPieChart = UiKitPieChartData(
+  chartName: S.current.ViewSources,
+  items: [
+    UiKitPieCharItemData(
+      color: ColorsFoundation.info,
+      value: 0,
+      itemName: 'Randomizer',
+    ),
+    UiKitPieCharItemData(
+      color: const Color(0xff8DC1FF),
+      value: 0,
+      itemName: 'Feelings',
+    ),
+    UiKitPieCharItemData(
+      color: const Color(0xff3088FF),
+      value: 0,
+      itemName: S.current.Search,
+    ),
+    UiKitPieCharItemData(
+      color: const Color(0xff5BA3FF),
+      value: 0,
+      itemName: 'Spinner',
+    ),
+  ],
+);
+
 final UiKitPieChartData mockPieChart = UiKitPieChartData(
   chartName: S.current.ViewSources,
   items: [
