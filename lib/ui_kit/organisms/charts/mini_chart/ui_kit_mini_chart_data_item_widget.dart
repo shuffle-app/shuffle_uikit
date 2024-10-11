@@ -1,13 +1,16 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitMiniChartDataItemWidget extends StatelessWidget {
   final UiKitMiniChartData data;
   final ValueNotifier<DateRange>? currentPeriodNotifier;
+  final AutoSizeGroup textAutoSizeGroup;
 
   const UiKitMiniChartDataItemWidget({
     Key? key,
     required this.data,
+    required this.textAutoSizeGroup,
     this.currentPeriodNotifier,
   }) : super(key: key);
 
@@ -65,20 +68,22 @@ class UiKitMiniChartDataItemWidget extends StatelessWidget {
                 ValueListenableBuilder(
                   valueListenable: currentPeriodNotifier!,
                   builder: (context, value, child) {
-                    return Text(
+                    return AutoSizeText(
                       '${formatDateWithCustomPattern('MMM dd', value.start, locale: Localizations.localeOf(context).languageCode)}'
                       ' - '
                       '${formatDateWithCustomPattern('MMM dd', value.end, locale: Localizations.localeOf(context).languageCode)}',
-                      style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
+                      style: boldTextTheme?.caption3Medium.copyWith(color: ColorsFoundation.mutedText),
+                      group: textAutoSizeGroup,
                     );
                   },
                 ),
               if (currentPeriodNotifier == null)
-                Text(
+                AutoSizeText(
                   '${formatDateWithCustomPattern('MMM dd', data.items.period.start, locale: Localizations.localeOf(context).languageCode)}'
                   ' - '
                   '${formatDateWithCustomPattern('MMM dd', data.items.period.end, locale: Localizations.localeOf(context).languageCode)}',
-                  style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
+                  style: boldTextTheme?.caption3Medium.copyWith(color: ColorsFoundation.mutedText),
+                  group: textAutoSizeGroup,
                 ),
               SpacingFoundation.verticalSpace4,
               ClipPath(

@@ -25,6 +25,7 @@ class UiKitLineChartTitledStat extends StatelessWidget {
         Text(
           title.toUpperCase(),
           style: boldTextTheme?.caption2UpperCaseMedium,
+          overflow: TextOverflow.ellipsis,
         ),
         SpacingFoundation.verticalSpace2,
         Row(

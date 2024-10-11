@@ -11,16 +11,19 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       mask: '18 - 24',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Male,
           name: 'male',
           value: 0,
           color: const Color(0xffffffff),
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Female,
           name: 'female',
           value: 0,
           color: ColorsFoundation.darkNeutral900,
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Other,
           name: 'other',
           value: 0,
           color: ColorsFoundation.darkNeutral600,
@@ -32,16 +35,19 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       mask: '25 - 35',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Male,
           name: 'male',
           value: 10,
           color: const Color(0xffffffff),
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Female,
           name: 'female',
           value: 18,
           color: ColorsFoundation.darkNeutral900,
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Other,
           name: 'other',
           value: 0,
           color: ColorsFoundation.darkNeutral600,
@@ -53,16 +59,19 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       mask: '36 - 45',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Male,
           name: 'male',
           value: 0,
           color: const Color(0xffffffff),
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Female,
           name: 'female',
           value: 0,
           color: ColorsFoundation.darkNeutral900,
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Other,
           name: 'other',
           value: 0,
           color: ColorsFoundation.darkNeutral600,
@@ -74,16 +83,19 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       mask: '46 - 50',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Male,
           name: 'male',
           value: 30,
           color: const Color(0xffffffff),
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Female,
           name: 'female',
           value: 48,
           color: ColorsFoundation.darkNeutral900,
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Other,
           name: 'other',
           value: 0,
           color: ColorsFoundation.darkNeutral600,
@@ -95,16 +107,19 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       mask: '50+',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Male,
           name: 'male',
           value: 0,
           color: const Color(0xffffffff),
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Female,
           name: 'female',
           value: 0,
           color: ColorsFoundation.darkNeutral900,
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Other,
           name: 'other',
           value: 0,
           color: ColorsFoundation.darkNeutral600,

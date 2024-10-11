@@ -79,10 +79,12 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
   final List<Widget> children;
   final String noChildrenText;
   final double topPadding;
+  final ValueNotifier<double> lastPhaseScaleNotifier;
 
   UiKitAnimatedPullToShowDelegate({
     required this.topPadding,
     required this.children,
+    required this.lastPhaseScaleNotifier,
     this.noChildrenText = '',
   });
 
@@ -101,11 +103,36 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     final colorScheme = context.uiKitTheme?.colorScheme;
     final shrinkToMaxExtentRatio = shrinkOffset / maxExtent;
-    print(shrinkToMaxExtentRatio);
 
     return Column(
       children: [
-        topPadding.heightBox,
+        AnimatedBuilder(
+          animation: lastPhaseScaleNotifier,
+          builder: (context, child) {
+            final scale = lastPhaseScaleNotifier.value;
+            if (lastPhaseScaleNotifier.value == 0) return topPadding.heightBox;
+            return Transform.scale(
+              scale: scale,
+              child: SizedBox(
+                height: (topPadding * scale),
+                width: 1.sw,
+                child: child,
+              ),
+            );
+          },
+          child: Center(
+            child: GradientableWidget(
+              gradient: GradientFoundation.badgeIcon,
+              child: ImageWidget(
+                svgAsset: GraphicsFoundation.instance.svg.filmstrip,
+                color: Colors.white,
+                width: 0.1.sw,
+                height: 0.1.sw,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
         UiKitCardWrapper(
           borderRadius: BorderRadiusFoundation.zero,
           height: max(0, maxExtent - topPadding - shrinkOffset),

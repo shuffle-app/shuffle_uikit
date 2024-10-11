@@ -34,7 +34,7 @@ class UiKitLineChartAdditionalData {
         final values = allGroupedValues.where((element) => element.name == name).toList();
         final value = values.fold<double>(0, (previousValue, element) => previousValue + element.value);
         final color = values.first.color;
-        return UiKitLineChartAdditionalDataItemGroup(name: name, value: value, color: color);
+        return UiKitLineChartAdditionalDataItemGroup(name: name, value: value, color: color, mask: values.first.mask);
       }).toList();
       return UiKitLineChartAdditionalDataItem(
         mask: items.firstWhere((e) => e.identifier == id).mask,
@@ -95,10 +95,12 @@ class UiKitLineChartAdditionalDataItem {
 
 class UiKitLineChartAdditionalDataItemGroup {
   final String name;
+  final String mask;
   final double value;
   final Color color;
 
   UiKitLineChartAdditionalDataItemGroup({
+    required this.mask,
     required this.name,
     required this.value,
     required this.color,

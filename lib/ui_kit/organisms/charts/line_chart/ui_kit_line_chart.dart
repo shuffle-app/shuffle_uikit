@@ -162,7 +162,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       Future.delayed(const Duration(milliseconds: 500), () {
         setState(() {
           initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
-          initialPreviewWidthFraction = chartViewPortSize.width / initialMaxChartScrollablePartWidth!;
+          initialPreviewWidthFraction = (chartViewPortSize.width / initialMaxChartScrollablePartWidth!).clamp(0.1, 1);
           _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
             previewWidthFraction: min(1, initialPreviewWidthFraction!),
             visibleLinesIds: visibleLineIds,
@@ -490,13 +490,16 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: widget.chartAdditionalData!.dataItems.uniqueGroups.map<Widget>(
                     (group) {
-                      final value = widget.chartAdditionalData!.dataItems.overallValueOfGroup(group.name);
+                      final isLast = widget.chartAdditionalData!.dataItems.uniqueGroups.last.name == group.name;
+                      final value = widget.chartAdditionalData!.dataItems.groupPercentage(group.name);
                       final color = group.color;
 
-                      return UiKitLineChartTitledStat(
-                        title: group.name,
-                        color: color,
-                        value: '${value.toStringAsFixed(0)}%',
+                      return Expanded(
+                        child: UiKitLineChartTitledStat(
+                          title: group.mask,
+                          color: color,
+                          value: '${value.toStringAsFixed(1)}%',
+                        ).paddingOnly(right: isLast ? EdgeInsetsFoundation.zero : EdgeInsetsFoundation.horizontal2),
                       );
                     },
                   ).toList(),

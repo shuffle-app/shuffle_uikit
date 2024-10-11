@@ -69,7 +69,7 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
     this.onScroll,
   }) : super(key: key);
 
-  List<double> get fractionBounds => [0.3, maxPossibleWidthFraction];
+  List<double> get fractionBounds => [0.1, maxPossibleWidthFraction];
 
   double get maxRemainingFactor => 1 - previewUpdateNotifier.value.previewWidthFraction;
 
