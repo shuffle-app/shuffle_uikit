@@ -41,7 +41,8 @@ class UiKitLineChartAdditionalDataItemWidget extends StatelessWidget {
                   (item) => Row(
                     children: [
                       Container(
-                        width: max(EdgeInsetsFoundation.horizontal4, (item.value / 100) * progressWidth),
+                        /// to avoid overflow error on the right side need to use 0.75 of the progressWidth
+                        width: max(EdgeInsetsFoundation.horizontal4, (item.value / 100) * (progressWidth * 0.75)),
                         height: EdgeInsetsFoundation.vertical4,
                         decoration: BoxDecoration(
                           color: item.color,

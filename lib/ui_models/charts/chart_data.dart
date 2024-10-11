@@ -73,6 +73,22 @@ class UiKitLineChartData<T> extends UiKitChartData<T> {
       );
 
   bool get isEmpty => items.isEmpty && chartTitle.isEmpty;
+
+  UiKitLineChartData<T> copyWith({
+    String? title,
+    List<UiKitLineChartItemData<T>>? items,
+    String? subtitle,
+    List<String>? popUpMenuOptions,
+    UiKitLineChartAdditionalData? additionalData,
+  }) {
+    return UiKitLineChartData<T>(
+      title: title ?? this.chartTitle,
+      items: items ?? this.items,
+      subtitle: subtitle ?? this.subtitle,
+      popUpMenuOptions: popUpMenuOptions ?? this.popUpMenuOptions,
+      additionalData: additionalData ?? this.additionalData,
+    );
+  }
 }
 
 class UiKitLineChartItemData<T> extends UiKitChartItem<T> {
