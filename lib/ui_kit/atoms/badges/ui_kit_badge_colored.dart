@@ -53,8 +53,8 @@ class UiKitBadgeColored extends StatelessWidget {
             if ((iconSvg != null || iconData != null) && title != null) 4.w.widthBox,
             if (iconSvg != null || iconData != null)
               ImageWidget(
-                svgAsset: iconSvg!,
-                iconData: iconData!,
+                svgAsset: iconSvg,
+                iconData: iconData,
                 height: 30.h,
                 fit: BoxFit.fitHeight,
                 color: color,
