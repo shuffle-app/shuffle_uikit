@@ -889,6 +889,8 @@
   "AndGet": "And get",
   "SelectMindsetInvitation": "{count, plural, =0{Content recommendation system especially for you} =1{Meeting like-minded people using the user matching system} =2{Every time new places and events that suit you} other{It's easier to find the right people, and for them to find you}}",
   "PlzEnterName": "Plz, enter your name & nickname",
-  "OpenedUpcomingEvents": "Opened \"Upcoming events\" block"
+  "OpenedUpcomingEvents": "Opened \"Upcoming events\" block",
+  "YouProgressed": "You progressed!",
+  "AvailableSoon": "Available soon"
 
 }

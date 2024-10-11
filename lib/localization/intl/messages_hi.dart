@@ -370,6 +370,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AskPeople": MessageLookupByLibrary.simpleMessage("लोगों से पूछें"),
         "Atheism": MessageLookupByLibrary.simpleMessage("नास्तिकता"),
         "Athlete": MessageLookupByLibrary.simpleMessage("एथलीट"),
+        "AvailableSoon": MessageLookupByLibrary.simpleMessage("Available soon"),
         "AverageBill": MessageLookupByLibrary.simpleMessage("औसत बिल"),
         "AverageContentViewTime":
             MessageLookupByLibrary.simpleMessage("औसत कार्ड देखने का समय"),
@@ -1543,6 +1544,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "आपको वही मिलता है जो आपको चाहि"),
         "YouMissedALot":
             MessageLookupByLibrary.simpleMessage("आपने बहुत कुछ छोड़ दिया"),
+        "YouProgressed":
+            MessageLookupByLibrary.simpleMessage("You progressed!"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("आपको मिला"),
         "YouSentInvitationToNPeople": m98,
         "YouSureToDeleteX": m99,
