@@ -517,6 +517,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/catering.png
   AssetGenImage get catering => const AssetGenImage('assets/images/png/catering.png');
 
+  /// File path: assets/images/png/chess-3-nobg.png
+  AssetGenImage get chess3Nobg => const AssetGenImage('assets/images/png/chess-3-nobg.png');
+
   /// File path: assets/images/png/choosePlan.png
   AssetGenImage get choosePlan => const AssetGenImage('assets/images/png/choosePlan.png');
 
@@ -853,6 +856,7 @@ class $AssetsImagesPngGen {
         atmosphere,
         balloons,
         catering,
+        chess3Nobg,
         choosePlan,
         clothing,
         compactRatingCardMock,
@@ -1906,7 +1910,7 @@ class AssetGenImage {
     ImageRepeat repeat = ImageRepeat.noRepeat,
     Rect? centerSlice,
     bool matchTextDirection = false,
-    bool gaplessPlayback = false,
+    bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
     FilterQuality filterQuality = FilterQuality.low,
