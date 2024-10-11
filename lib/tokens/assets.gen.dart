@@ -517,9 +517,6 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/catering.png
   AssetGenImage get catering => const AssetGenImage('assets/images/png/catering.png');
 
-  /// File path: assets/images/png/chess-3-nobg.png
-  AssetGenImage get chess3Nobg => const AssetGenImage('assets/images/png/chess-3-nobg.png');
-
   /// File path: assets/images/png/choosePlan.png
   AssetGenImage get choosePlan => const AssetGenImage('assets/images/png/choosePlan.png');
 
@@ -856,7 +853,6 @@ class $AssetsImagesPngGen {
         atmosphere,
         balloons,
         catering,
-        chess3Nobg,
         choosePlan,
         clothing,
         compactRatingCardMock,
@@ -1130,6 +1126,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/check-circle-gradient.svg
   SvgGenImage get checkCircleGradient => const SvgGenImage('assets/images/svg/check-circle-gradient.svg');
 
+  /// File path: assets/images/svg/chess-3-nobg.svg
+  SvgGenImage get chess3Nobg => const SvgGenImage('assets/images/svg/chess-3-nobg.svg');
+
   /// File path: assets/images/svg/clothing.svg
   SvgGenImage get clothing => const SvgGenImage('assets/images/svg/clothing.svg');
 
@@ -1387,6 +1386,7 @@ class $AssetsImagesSvgGen {
         bigCuttedLogo,
         businessman,
         checkCircleGradient,
+        chess3Nobg,
         clothing,
         club,
         coinGradient,
