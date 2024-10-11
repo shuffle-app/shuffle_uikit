@@ -103,7 +103,7 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
                         backgroundColor: Colors.black,
                         iconInfo: BaseUiKitButtonIconData(
                           iconData: ShuffleUiKitIcons.chevronright,
-                          color: colorScheme?.surface,
+                          color: Colors.white,
                         ),
                         onPressed: widget.onPickFromMap,
                       ),
