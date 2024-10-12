@@ -157,6 +157,17 @@ extension ChartItemDataExtension on List<UiKitLineChartItemData> {
 }
 
 extension LineChartAdditionalDataExtension on List<UiKitLineChartAdditionalDataItem> {
+  double get total => fold(
+      0,
+      (previousValue, element) =>
+          element.groupedValues.fold<double>(0, (previousValue, element) => element.value + previousValue) +
+          previousValue);
+
+  double groupPercentage(String groupName) {
+    final groupValue = overallValueOfGroup(groupName);
+    return groupValue / total * 100;
+  }
+
   num overallValueOfGroup(String groupName) {
     return fold(
       0,
@@ -189,5 +200,13 @@ extension LineChartAdditionalDataItemGroupExtension on List<UiKitLineChartAdditi
     if (group == null) return 0;
 
     return group.value;
+  }
+
+  double get groupTotal => fold(0, (previousValue, element) => element.value + previousValue);
+
+  double groupItemPercentage(String groupName) {
+    final givenGroupValue = groupValue(groupName);
+    if (groupTotal == 0) return 0;
+    return givenGroupValue / groupTotal;
   }
 }

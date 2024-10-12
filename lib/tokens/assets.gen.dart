@@ -1165,6 +1165,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/filled_radio.svg
   SvgGenImage get filledRadio => const SvgGenImage('assets/images/svg/filled_radio.svg');
 
+  /// File path: assets/images/svg/filmstrip.svg
+  SvgGenImage get filmstrip => const SvgGenImage('assets/images/svg/filmstrip.svg');
+
   /// File path: assets/images/svg/finance.svg
   SvgGenImage get finance => const SvgGenImage('assets/images/svg/finance.svg');
 
@@ -1405,6 +1408,7 @@ class $AssetsImagesSvgGen {
         facebookLogo,
         family,
         filledRadio,
+        filmstrip,
         finance,
         fingerPrint,
         fireEmoji,
