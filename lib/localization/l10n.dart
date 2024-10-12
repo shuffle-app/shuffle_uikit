@@ -9158,6 +9158,26 @@ class S {
       args: [],
     );
   }
+
+  /// `You progressed!`
+  String get YouProgressed {
+    return Intl.message(
+      'You progressed!',
+      name: 'YouProgressed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Available soon`
+  String get AvailableSoon {
+    return Intl.message(
+      'Available soon',
+      name: 'AvailableSoon',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

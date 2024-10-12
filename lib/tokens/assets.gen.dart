@@ -1126,6 +1126,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/check-circle-gradient.svg
   SvgGenImage get checkCircleGradient => const SvgGenImage('assets/images/svg/check-circle-gradient.svg');
 
+  /// File path: assets/images/svg/chess-3-nobg.svg
+  SvgGenImage get chess3Nobg => const SvgGenImage('assets/images/svg/chess-3-nobg.svg');
+
   /// File path: assets/images/svg/clothing.svg
   SvgGenImage get clothing => const SvgGenImage('assets/images/svg/clothing.svg');
 
@@ -1389,6 +1392,7 @@ class $AssetsImagesSvgGen {
         bigCuttedLogo,
         businessman,
         checkCircleGradient,
+        chess3Nobg,
         clothing,
         club,
         coinGradient,
@@ -1914,7 +1918,7 @@ class AssetGenImage {
     ImageRepeat repeat = ImageRepeat.noRepeat,
     Rect? centerSlice,
     bool matchTextDirection = false,
-    bool gaplessPlayback = false,
+    bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
     FilterQuality filterQuality = FilterQuality.low,

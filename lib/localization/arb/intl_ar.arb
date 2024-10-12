@@ -889,5 +889,7 @@
   "Sunday": "Sunday",
   "YearsOldShort": "y.o",
   "GenderAndAge": "Gender and Age",
-  "OpenedUpcomingEvents": "Opened \"Upcoming events\" block"
+  "OpenedUpcomingEvents": "Opened \"Upcoming events\" block",
+  "YouProgressed": "You progressed!",
+  "AvailableSoon": "Available soon"
 }

@@ -366,6 +366,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AskPeople": MessageLookupByLibrary.simpleMessage("Ask people"),
         "Atheism": MessageLookupByLibrary.simpleMessage("Atheism"),
         "Athlete": MessageLookupByLibrary.simpleMessage("Athlete"),
+        "AvailableSoon": MessageLookupByLibrary.simpleMessage("Available soon"),
         "AverageBill": MessageLookupByLibrary.simpleMessage("Average bill"),
         "AverageContentViewTime":
             MessageLookupByLibrary.simpleMessage("Average card visit time"),
@@ -1529,6 +1530,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "You get exactly what you need"),
         "YouMissedALot":
             MessageLookupByLibrary.simpleMessage("You missed a lot"),
+        "YouProgressed":
+            MessageLookupByLibrary.simpleMessage("You progressed!"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
         "YouSentInvitationToNPeople": m98,
         "YouSureToDeleteX": m99,
