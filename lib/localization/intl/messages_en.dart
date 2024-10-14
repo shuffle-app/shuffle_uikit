@@ -520,6 +520,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Crop to horizontal"),
         "CropVertical":
             MessageLookupByLibrary.simpleMessage("Crop to vertical"),
+        "CuisineType": MessageLookupByLibrary.simpleMessage("Cuisine type"),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("Cutting video"),
         "Daily": MessageLookupByLibrary.simpleMessage("Daily "),
         "Date": MessageLookupByLibrary.simpleMessage("Date"),
@@ -664,6 +665,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fulfill the dream"),
         "Full": MessageLookupByLibrary.simpleMessage("full"),
         "FullRefund": MessageLookupByLibrary.simpleMessage("Full refund"),
+        "GalleryType": MessageLookupByLibrary.simpleMessage("Gallery type"),
         "Gender": MessageLookupByLibrary.simpleMessage("Gender"),
         "GenderAndAge": MessageLookupByLibrary.simpleMessage("Gender and Age"),
         "GeneraFem": MessageLookupByLibrary.simpleMessage("General"),
@@ -819,6 +821,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("More about this place"),
         "MostActiveAgeSegment": MessageLookupByLibrary.simpleMessage(
             "Portrait of the most active segment"),
+        "MuseumType": MessageLookupByLibrary.simpleMessage("Museum type"),
+        "MusicType": MessageLookupByLibrary.simpleMessage("Music type"),
         "MustSelectVideo": MessageLookupByLibrary.simpleMessage(
             "You must select at least one video"),
         "MustVisitTechnologyConf":

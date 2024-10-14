@@ -518,6 +518,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("क्षैतिज करने के लिए"),
         "CropVertical":
             MessageLookupByLibrary.simpleMessage("लंबवत करने के लिए"),
+        "CuisineType": MessageLookupByLibrary.simpleMessage("Cuisine type"),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("वीडियो को काटना"),
         "Daily": MessageLookupByLibrary.simpleMessage("दैनिक"),
         "Date": MessageLookupByLibrary.simpleMessage("तारीख"),
@@ -665,6 +666,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("सपना पूरा करो"),
         "Full": MessageLookupByLibrary.simpleMessage("पूर्ण"),
         "FullRefund": MessageLookupByLibrary.simpleMessage("पूर्ण वापसी"),
+        "GalleryType": MessageLookupByLibrary.simpleMessage("Gallery type"),
         "Gender": MessageLookupByLibrary.simpleMessage("लिंग"),
         "GenderAndAge": MessageLookupByLibrary.simpleMessage("लिंग और आय"),
         "GeneraFem": MessageLookupByLibrary.simpleMessage("सामान्य"),
@@ -826,6 +828,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "इस स्थान के बारे में और जानें"),
         "MostActiveAgeSegment":
             MessageLookupByLibrary.simpleMessage("सबसे सक्रिय आयु सेगमेंट"),
+        "MuseumType": MessageLookupByLibrary.simpleMessage("Museum type"),
+        "MusicType": MessageLookupByLibrary.simpleMessage("Music type"),
         "MustSelectVideo": MessageLookupByLibrary.simpleMessage(
             "आपको कम से कम एक वीडियो चुनना होगा"),
         "MustVisitTechnologyConf": MessageLookupByLibrary.simpleMessage(

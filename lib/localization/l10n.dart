@@ -1896,6 +1896,46 @@ class S {
     );
   }
 
+  /// `Cuisine type`
+  String get CuisineType {
+    return Intl.message(
+      'Cuisine type',
+      name: 'CuisineType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Museum type`
+  String get MuseumType {
+    return Intl.message(
+      'Museum type',
+      name: 'MuseumType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gallery type`
+  String get GalleryType {
+    return Intl.message(
+      'Gallery type',
+      name: 'GalleryType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Music type`
+  String get MusicType {
+    return Intl.message(
+      'Music type',
+      name: 'MusicType',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Create Event`
   String get CreateEvent {
     return Intl.message(

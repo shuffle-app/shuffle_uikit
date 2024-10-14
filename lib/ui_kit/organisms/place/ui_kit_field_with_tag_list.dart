@@ -15,6 +15,7 @@ class UiKitFieldWithTagList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         Row(
           children: [
@@ -24,7 +25,7 @@ class UiKitFieldWithTagList extends StatelessWidget {
                 style: context.uiKitTheme?.regularTextTheme.labelSmall,
               ),
             ),
-            context.outlinedButton(
+            context.smallOutlinedButton(
               data: BaseUiKitButtonData(
                 onPressed: onTap,
                 iconInfo: BaseUiKitButtonIconData(

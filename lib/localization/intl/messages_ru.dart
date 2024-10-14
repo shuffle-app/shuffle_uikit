@@ -530,6 +530,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Обрезать для горизонтали"),
         "CropVertical":
             MessageLookupByLibrary.simpleMessage("Обрезать для вертикали"),
+        "CuisineType": MessageLookupByLibrary.simpleMessage("Тип кухни"),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("Обрезка видео"),
         "Daily": MessageLookupByLibrary.simpleMessage("Ежедневно "),
         "Date": MessageLookupByLibrary.simpleMessage("Дата"),
@@ -677,6 +678,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Исполнить мечту"),
         "Full": MessageLookupByLibrary.simpleMessage("полный"),
         "FullRefund": MessageLookupByLibrary.simpleMessage("Полный возврат"),
+        "GalleryType": MessageLookupByLibrary.simpleMessage("Тип галлереи"),
         "Gender": MessageLookupByLibrary.simpleMessage("Пол"),
         "GenderAndAge": MessageLookupByLibrary.simpleMessage("Пол и возраст"),
         "GeneraFem": MessageLookupByLibrary.simpleMessage("Общая"),
@@ -835,6 +837,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Больше об этом месте"),
         "MostActiveAgeSegment": MessageLookupByLibrary.simpleMessage(
             "Портрет самого активного сегмента"),
+        "MuseumType": MessageLookupByLibrary.simpleMessage("Тип музея"),
+        "MusicType": MessageLookupByLibrary.simpleMessage("Тип музыки"),
         "MustSelectVideo": MessageLookupByLibrary.simpleMessage(
             "Вы должны выбрать хотя бы одно видео"),
         "MustVisitTechnologyConf": MessageLookupByLibrary.simpleMessage(

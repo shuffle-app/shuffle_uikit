@@ -40,6 +40,7 @@ class _RotatableWidgetState extends State<RotatableWidget> with SingleTickerProv
     super.initState();
     () async {
       await Future.delayed(widget.startDelay ?? Duration.zero);
+      if(!mounted) return;
       controller
         ..forward()
         ..addStatusListener(listenAnim);
