@@ -17,23 +17,24 @@ Flushbar showNoNetworkFlushbar(BuildContext context) {
     borderRadius: BorderRadiusFoundation.all4,
     isDismissible: false,
     messageText: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-      GradientableWidget(
-        gradient: GradientFoundation.touchIdLinearGradient,
-        child: ImageWidget(
-          svgAsset: Assets.images.svg.cloudOff,
-          color: Colors.white,
-          height: 11.w,
-          fit: BoxFit.fitHeight,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        GradientableWidget(
+          gradient: GradientFoundation.touchIdLinearGradient,
+          child: ImageWidget(
+            iconData: ShuffleUiKitIcons.cloudoff,
+            color: Colors.white,
+            height: 11.w,
+            fit: BoxFit.fitHeight,
+          ),
         ),
-      ),
-      SpacingFoundation.horizontalSpace8,
-      Text(
-        S.current.NoConnection,
-        style: theme?.regularTextTheme.caption4Regular ?? const TextStyle(color: Colors.white, fontSize: 9)
-      )
-    ]),
+        SpacingFoundation.horizontalSpace8,
+        Text(
+          S.current.NoConnection,
+          style: theme?.regularTextTheme.caption4Regular ?? const TextStyle(color: Colors.white, fontSize: 9),
+        )
+      ],
+    ),
   );
 
   flushbar.show(context);

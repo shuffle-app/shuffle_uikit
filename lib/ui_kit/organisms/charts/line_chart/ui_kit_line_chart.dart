@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -13,6 +14,7 @@ class UiKitLineChart extends StatefulWidget {
   final ValueChanged<String>? popUpMenuItemSelected;
   final VoidCallback? action;
   final bool loading;
+  final double? customHorizontalPadding;
 
   const UiKitLineChart({
     Key? key,
@@ -21,6 +23,7 @@ class UiKitLineChart extends StatefulWidget {
     this.popUpMenuItemSelected,
     this.action,
     this.loading = false,
+    this.customHorizontalPadding,
   }) : super(key: key);
 
   @override
@@ -61,7 +64,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       );
 
   Size get chartViewPortSize => Size(
-        viewPortComputedSize.width - SpacingFoundation.verticalSpacing32,
+        viewPortComputedSize.width - (widget.customHorizontalPadding ?? SpacingFoundation.verticalSpacing32),
         viewPortComputedSize.height * 0.45,
       );
 
@@ -105,7 +108,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   int get maxDisplayableDatesCount => chartMaxScrollWidth ~/ (initialPixelsPerDate * datesSpacingExpansionFraction);
 
   bool get shrinkDates {
-    if (initialPreviewWidthFraction != null) {
+    if (initialPreviewWidthFraction != null && _chartScrollController.hasClients) {
       return _smallPreviewUpdateNotifier.value.previewWidthFraction > initialPreviewWidthFraction!;
     }
     return false;
@@ -159,9 +162,9 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       Future.delayed(const Duration(milliseconds: 500), () {
         setState(() {
           initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
-          initialPreviewWidthFraction = chartViewPortSize.width / initialMaxChartScrollablePartWidth!;
+          initialPreviewWidthFraction = (chartViewPortSize.width / initialMaxChartScrollablePartWidth!).clamp(0.1, 1);
           _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
-            previewWidthFraction: initialPreviewWidthFraction,
+            previewWidthFraction: min(1, initialPreviewWidthFraction!),
             visibleLinesIds: visibleLineIds,
           );
           if (initialMaxChartScrollablePartWidth != null) {
@@ -173,10 +176,19 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
             _smallPreviewUpdateNotifier.addListener(_smallPreviewUpdateListener);
           }
           final visibleDates = (chartViewPortSize.width ~/ initialPixelsPerDate) - 1;
-          _visibleDateRangeNotifier.value = DateRange(
-            start: dates.first,
-            end: visibleDates - 1 < dates.length ? dates.elementAt(visibleDates - 1) : dates.last,
+          DateRange dateRange = DateRange(
+            start: widget.chartData.items.earliestDate,
+            end: widget.chartData.items.latestDate,
           );
+
+          /// check if dates are not empty to avoid exception
+          if (dates.isNotEmpty) {
+            dateRange = DateRange(
+              start: dates.first,
+              end: visibleDates - 1 < dates.length ? dates.elementAt(visibleDates - 1) : dates.last,
+            );
+          }
+          _visibleDateRangeNotifier.value = dateRange;
         });
       });
     });
@@ -426,7 +438,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                       text: e.chartItemName,
                       color: e.color,
                       gradient: e.gradient,
-                      iconPath: e.icon,
+                      iconPath: e.iconPath,
                       selected: visibleLineIds.contains(e.id),
                       onTap: () {
                         final ids = visibleLineIds;
@@ -478,13 +490,16 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: widget.chartAdditionalData!.dataItems.uniqueGroups.map<Widget>(
                     (group) {
-                      final value = widget.chartAdditionalData!.dataItems.overallValueOfGroup(group.name);
+                      final isLast = widget.chartAdditionalData!.dataItems.uniqueGroups.last.name == group.name;
+                      final value = widget.chartAdditionalData!.dataItems.groupPercentage(group.name);
                       final color = group.color;
 
-                      return UiKitLineChartTitledStat(
-                        title: group.name,
-                        color: color,
-                        value: '${value.toStringAsFixed(0)}%',
+                      return Expanded(
+                        child: UiKitLineChartTitledStat(
+                          title: group.mask,
+                          color: color,
+                          value: '${value.toStringAsFixed(1)}%',
+                        ).paddingOnly(right: isLast ? EdgeInsetsFoundation.zero : EdgeInsetsFoundation.horizontal2),
                       );
                     },
                   ).toList(),

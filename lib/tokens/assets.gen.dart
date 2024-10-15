@@ -68,6 +68,9 @@ class $AssetsAnimationsLottieGen {
   /// File path: assets/animations/lottie/Broken heart.json
   LottieGenImage get brokenHeart => const LottieGenImage('assets/animations/lottie/Broken heart.json');
 
+  /// File path: assets/animations/lottie/Ticket.json
+  LottieGenImage get ticket => const LottieGenImage('assets/animations/lottie/Ticket.json');
+
   /// File path: assets/animations/lottie/Whole heart.json
   LottieGenImage get wholeHeart => const LottieGenImage('assets/animations/lottie/Whole heart.json');
 
@@ -106,6 +109,7 @@ class $AssetsAnimationsLottieGen {
   /// List of all assets
   List<LottieGenImage> get values => [
         brokenHeart,
+        ticket,
         wholeHeart,
         fingerprintBlack,
         fingerprintWhite,
@@ -210,6 +214,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Filtering.png
   AssetGenImage get filtering => const AssetGenImage('assets/images/png/Filtering.png');
 
+  /// File path: assets/images/png/Find-people.png
+  AssetGenImage get findPeople => const AssetGenImage('assets/images/png/Find-people.png');
+
   /// File path: assets/images/png/Fintech.png
   AssetGenImage get fintech => const AssetGenImage('assets/images/png/Fintech.png');
 
@@ -300,6 +307,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/Like-hands.png
   AssetGenImage get likeHands => const AssetGenImage('assets/images/png/Like-hands.png');
 
+  /// File path: assets/images/png/Like-minded.png
+  AssetGenImage get likeMinded => const AssetGenImage('assets/images/png/Like-minded.png');
+
   /// File path: assets/images/png/Lock.png
   AssetGenImage get lock => const AssetGenImage('assets/images/png/Lock.png');
 
@@ -326,6 +336,9 @@ class $AssetsImagesPngGen {
 
   /// File path: assets/images/png/Networking.png
   AssetGenImage get networking => const AssetGenImage('assets/images/png/Networking.png');
+
+  /// File path: assets/images/png/New-places-events.png
+  AssetGenImage get newPlacesEvents => const AssetGenImage('assets/images/png/New-places-events.png');
 
   /// File path: assets/images/png/No-photo.png
   AssetGenImage get noPhoto => const AssetGenImage('assets/images/png/No-photo.png');
@@ -740,6 +753,7 @@ class $AssetsImagesPngGen {
         favoritePlace,
         feedback,
         filtering,
+        findPeople,
         fintech,
         fire,
         firstAidKit,
@@ -770,6 +784,7 @@ class $AssetsImagesPngGen {
         lightSnowfall,
         likeDislike,
         likeHands,
+        likeMinded,
         lock,
         mango,
         map,
@@ -779,6 +794,7 @@ class $AssetsImagesPngGen {
         moonWindy,
         nYDecor1,
         networking,
+        newPlacesEvents,
         noPhoto,
         notif,
         okHands,
@@ -1080,20 +1096,8 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/Yoga.svg
   SvgGenImage get yoga => const SvgGenImage('assets/images/svg/Yoga.svg');
 
-  /// File path: assets/images/svg/active.svg
-  SvgGenImage get active => const SvgGenImage('assets/images/svg/active.svg');
-
   /// File path: assets/images/svg/adventure.svg
   SvgGenImage get adventure => const SvgGenImage('assets/images/svg/adventure.svg');
-
-  /// File path: assets/images/svg/alert-circle.svg
-  SvgGenImage get alertCircle => const SvgGenImage('assets/images/svg/alert-circle.svg');
-
-  /// File path: assets/images/svg/analytics-fill.svg
-  SvgGenImage get analyticsFill => const SvgGenImage('assets/images/svg/analytics-fill.svg');
-
-  /// File path: assets/images/svg/analytics-outline.svg
-  SvgGenImage get analyticsOutline => const SvgGenImage('assets/images/svg/analytics-outline.svg');
 
   /// File path: assets/images/svg/analytics_business.svg
   SvgGenImage get analyticsBusiness => const SvgGenImage('assets/images/svg/analytics_business.svg');
@@ -1107,44 +1111,8 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/arabic.svg
   SvgGenImage get arabic => const SvgGenImage('assets/images/svg/arabic.svg');
 
-  /// File path: assets/images/svg/archive.svg
-  SvgGenImage get archive => const SvgGenImage('assets/images/svg/archive.svg');
-
-  /// File path: assets/images/svg/armchair.svg
-  SvgGenImage get armchair => const SvgGenImage('assets/images/svg/armchair.svg');
-
-  /// File path: assets/images/svg/arrow-down.svg
-  SvgGenImage get arrowDown => const SvgGenImage('assets/images/svg/arrow-down.svg');
-
-  /// File path: assets/images/svg/arrow-left.svg
-  SvgGenImage get arrowLeft => const SvgGenImage('assets/images/svg/arrow-left.svg');
-
-  /// File path: assets/images/svg/arrow-result.svg
-  SvgGenImage get arrowResult => const SvgGenImage('assets/images/svg/arrow-result.svg');
-
-  /// File path: assets/images/svg/arrow-right.svg
-  SvgGenImage get arrowRight => const SvgGenImage('assets/images/svg/arrow-right.svg');
-
-  /// File path: assets/images/svg/arrow-up.svg
-  SvgGenImage get arrowUp => const SvgGenImage('assets/images/svg/arrow-up.svg');
-
-  /// File path: assets/images/svg/arrows-sort.svg
-  SvgGenImage get arrowsSort => const SvgGenImage('assets/images/svg/arrows-sort.svg');
-
   /// File path: assets/images/svg/athlete.svg
   SvgGenImage get athlete => const SvgGenImage('assets/images/svg/athlete.svg');
-
-  /// File path: assets/images/svg/baby.svg
-  SvgGenImage get baby => const SvgGenImage('assets/images/svg/baby.svg');
-
-  /// File path: assets/images/svg/barcode.svg
-  SvgGenImage get barcode => const SvgGenImage('assets/images/svg/barcode.svg');
-
-  /// File path: assets/images/svg/bath.svg
-  SvgGenImage get bath => const SvgGenImage('assets/images/svg/bath.svg');
-
-  /// File path: assets/images/svg/bell.svg
-  SvgGenImage get bell => const SvgGenImage('assets/images/svg/bell.svg');
 
   /// File path: assets/images/svg/big_arrow.svg
   SvgGenImage get bigArrow => const SvgGenImage('assets/images/svg/big_arrow.svg');
@@ -1152,77 +1120,23 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/big_cutted_logo.svg
   SvgGenImage get bigCuttedLogo => const SvgGenImage('assets/images/svg/big_cutted_logo.svg');
 
-  /// File path: assets/images/svg/booking.svg
-  SvgGenImage get booking => const SvgGenImage('assets/images/svg/booking.svg');
-
-  /// File path: assets/images/svg/building.svg
-  SvgGenImage get building => const SvgGenImage('assets/images/svg/building.svg');
-
   /// File path: assets/images/svg/businessman.svg
   SvgGenImage get businessman => const SvgGenImage('assets/images/svg/businessman.svg');
 
-  /// File path: assets/images/svg/calendar.svg
-  SvgGenImage get calendar => const SvgGenImage('assets/images/svg/calendar.svg');
+  /// File path: assets/images/svg/check-circle-gradient.svg
+  SvgGenImage get checkCircleGradient => const SvgGenImage('assets/images/svg/check-circle-gradient.svg');
 
-  /// File path: assets/images/svg/calm.svg
-  SvgGenImage get calm => const SvgGenImage('assets/images/svg/calm.svg');
-
-  /// File path: assets/images/svg/camera-plus.svg
-  SvgGenImage get cameraPlus => const SvgGenImage('assets/images/svg/camera-plus.svg');
-
-  /// File path: assets/images/svg/check.svg
-  SvgGenImage get check => const SvgGenImage('assets/images/svg/check.svg');
-
-  /// File path: assets/images/svg/check_circle.svg
-  SvgGenImage get checkCircle => const SvgGenImage('assets/images/svg/check_circle.svg');
-
-  /// File path: assets/images/svg/checklist.svg
-  SvgGenImage get checklist => const SvgGenImage('assets/images/svg/checklist.svg');
-
-  /// File path: assets/images/svg/chess.svg
-  SvgGenImage get chess => const SvgGenImage('assets/images/svg/chess.svg');
-
-  /// File path: assets/images/svg/chevron-down.svg
-  SvgGenImage get chevronDown => const SvgGenImage('assets/images/svg/chevron-down.svg');
-
-  /// File path: assets/images/svg/chevron-left.svg
-  SvgGenImage get chevronLeft => const SvgGenImage('assets/images/svg/chevron-left.svg');
-
-  /// File path: assets/images/svg/chevron-no-padding.svg
-  SvgGenImage get chevronNoPadding => const SvgGenImage('assets/images/svg/chevron-no-padding.svg');
-
-  /// File path: assets/images/svg/chevron-right.svg
-  SvgGenImage get chevronRight => const SvgGenImage('assets/images/svg/chevron-right.svg');
-
-  /// File path: assets/images/svg/chevron-up-long.svg
-  SvgGenImage get chevronUpLong => const SvgGenImage('assets/images/svg/chevron-up-long.svg');
-
-  /// File path: assets/images/svg/chevron-up.svg
-  SvgGenImage get chevronUp => const SvgGenImage('assets/images/svg/chevron-up.svg');
-
-  /// File path: assets/images/svg/cleaning.svg
-  SvgGenImage get cleaning => const SvgGenImage('assets/images/svg/cleaning.svg');
-
-  /// File path: assets/images/svg/clock.svg
-  SvgGenImage get clock => const SvgGenImage('assets/images/svg/clock.svg');
-
-  /// File path: assets/images/svg/clock_cursor.svg
-  SvgGenImage get clockCursor => const SvgGenImage('assets/images/svg/clock_cursor.svg');
+  /// File path: assets/images/svg/chess-3-nobg.svg
+  SvgGenImage get chess3Nobg => const SvgGenImage('assets/images/svg/chess-3-nobg.svg');
 
   /// File path: assets/images/svg/clothing.svg
   SvgGenImage get clothing => const SvgGenImage('assets/images/svg/clothing.svg');
 
-  /// File path: assets/images/svg/cloud_off.svg
-  SvgGenImage get cloudOff => const SvgGenImage('assets/images/svg/cloud_off.svg');
-
   /// File path: assets/images/svg/club.svg
   SvgGenImage get club => const SvgGenImage('assets/images/svg/club.svg');
 
-  /// File path: assets/images/svg/cocktail.svg
-  SvgGenImage get cocktail => const SvgGenImage('assets/images/svg/cocktail.svg');
-
-  /// File path: assets/images/svg/coffee.svg
-  SvgGenImage get coffee => const SvgGenImage('assets/images/svg/coffee.svg');
+  /// File path: assets/images/svg/coin-gradient.svg
+  SvgGenImage get coinGradient => const SvgGenImage('assets/images/svg/coin-gradient.svg');
 
   /// File path: assets/images/svg/company_layered.svg
   SvgGenImage get companyLayered => const SvgGenImage('assets/images/svg/company_layered.svg');
@@ -1230,59 +1144,11 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/conferences.svg
   SvgGenImage get conferences => const SvgGenImage('assets/images/svg/conferences.svg');
 
-  /// File path: assets/images/svg/connection-fill.svg
-  SvgGenImage get connectionFill => const SvgGenImage('assets/images/svg/connection-fill.svg');
-
-  /// File path: assets/images/svg/connection-outline.svg
-  SvgGenImage get connectionOutline => const SvgGenImage('assets/images/svg/connection-outline.svg');
-
   /// File path: assets/images/svg/coworking.svg
   SvgGenImage get coworking => const SvgGenImage('assets/images/svg/coworking.svg');
 
-  /// File path: assets/images/svg/cross.svg
-  SvgGenImage get cross => const SvgGenImage('assets/images/svg/cross.svg');
-
-  /// File path: assets/images/svg/cup.svg
-  SvgGenImage get cup => const SvgGenImage('assets/images/svg/cup.svg');
-
-  /// File path: assets/images/svg/current-location.svg
-  SvgGenImage get currentLocation => const SvgGenImage('assets/images/svg/current-location.svg');
-
-  /// File path: assets/images/svg/cursor.svg
-  SvgGenImage get cursor => const SvgGenImage('assets/images/svg/cursor.svg');
-
-  /// File path: assets/images/svg/cutlery.svg
-  SvgGenImage get cutlery => const SvgGenImage('assets/images/svg/cutlery.svg');
-
   /// File path: assets/images/svg/delivery-truck.svg
   SvgGenImage get deliveryTruck => const SvgGenImage('assets/images/svg/delivery-truck.svg');
-
-  /// File path: assets/images/svg/diamond.svg
-  SvgGenImage get diamond => const SvgGenImage('assets/images/svg/diamond.svg');
-
-  /// File path: assets/images/svg/dice.svg
-  SvgGenImage get dice => const SvgGenImage('assets/images/svg/dice.svg');
-
-  /// File path: assets/images/svg/diskette.svg
-  SvgGenImage get diskette => const SvgGenImage('assets/images/svg/diskette.svg');
-
-  /// File path: assets/images/svg/docs-fill.svg
-  SvgGenImage get docsFill => const SvgGenImage('assets/images/svg/docs-fill.svg');
-
-  /// File path: assets/images/svg/docs-outline.svg
-  SvgGenImage get docsOutline => const SvgGenImage('assets/images/svg/docs-outline.svg');
-
-  /// File path: assets/images/svg/dollar.svg
-  SvgGenImage get dollar => const SvgGenImage('assets/images/svg/dollar.svg');
-
-  /// File path: assets/images/svg/dollar_black_outlined.svg
-  SvgGenImage get dollarBlackOutlined => const SvgGenImage('assets/images/svg/dollar_black_outlined.svg');
-
-  /// File path: assets/images/svg/dollar_outlined.svg
-  SvgGenImage get dollarOutlined => const SvgGenImage('assets/images/svg/dollar_outlined.svg');
-
-  /// File path: assets/images/svg/download.svg
-  SvgGenImage get download => const SvgGenImage('assets/images/svg/download.svg');
 
   /// File path: assets/images/svg/dubai-silhouette.svg
   SvgGenImage get dubaiSilhouette => const SvgGenImage('assets/images/svg/dubai-silhouette.svg');
@@ -1290,26 +1156,17 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/empty_radio.svg
   SvgGenImage get emptyRadio => const SvgGenImage('assets/images/svg/empty_radio.svg');
 
-  /// File path: assets/images/svg/exclamation.svg
-  SvgGenImage get exclamation => const SvgGenImage('assets/images/svg/exclamation.svg');
-
-  /// File path: assets/images/svg/eye-off.svg
-  SvgGenImage get eyeOff => const SvgGenImage('assets/images/svg/eye-off.svg');
-
   /// File path: assets/images/svg/facebook_logo.svg
   SvgGenImage get facebookLogo => const SvgGenImage('assets/images/svg/facebook_logo.svg');
 
   /// File path: assets/images/svg/family.svg
   SvgGenImage get family => const SvgGenImage('assets/images/svg/family.svg');
 
-  /// File path: assets/images/svg/files.svg
-  SvgGenImage get files => const SvgGenImage('assets/images/svg/files.svg');
-
   /// File path: assets/images/svg/filled_radio.svg
   SvgGenImage get filledRadio => const SvgGenImage('assets/images/svg/filled_radio.svg');
 
-  /// File path: assets/images/svg/filter.svg
-  SvgGenImage get filter => const SvgGenImage('assets/images/svg/filter.svg');
+  /// File path: assets/images/svg/filmstrip.svg
+  SvgGenImage get filmstrip => const SvgGenImage('assets/images/svg/filmstrip.svg');
 
   /// File path: assets/images/svg/finance.svg
   SvgGenImage get finance => const SvgGenImage('assets/images/svg/finance.svg');
@@ -1319,12 +1176,6 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/fire_emoji.svg
   SvgGenImage get fireEmoji => const SvgGenImage('assets/images/svg/fire_emoji.svg');
-
-  /// File path: assets/images/svg/fire_white.svg
-  SvgGenImage get fireWhite => const SvgGenImage('assets/images/svg/fire_white.svg');
-
-  /// File path: assets/images/svg/flag.svg
-  SvgGenImage get flag => const SvgGenImage('assets/images/svg/flag.svg');
 
   /// File path: assets/images/svg/food.svg
   SvgGenImage get food => const SvgGenImage('assets/images/svg/food.svg');
@@ -1347,35 +1198,8 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/hand-shake-2.svg
   SvgGenImage get handShake2 => const SvgGenImage('assets/images/svg/hand-shake-2.svg');
 
-  /// File path: assets/images/svg/hand-shake.svg
-  SvgGenImage get handShake => const SvgGenImage('assets/images/svg/hand-shake.svg');
-
-  /// File path: assets/images/svg/heart-broken-fill.svg
-  SvgGenImage get heartBrokenFill => const SvgGenImage('assets/images/svg/heart-broken-fill.svg');
-
-  /// File path: assets/images/svg/heart-fill.svg
-  SvgGenImage get heartFill => const SvgGenImage('assets/images/svg/heart-fill.svg');
-
-  /// File path: assets/images/svg/heart-outline.svg
-  SvgGenImage get heartOutline => const SvgGenImage('assets/images/svg/heart-outline.svg');
-
   /// File path: assets/images/svg/heart_eyes.svg
   SvgGenImage get heartEyes => const SvgGenImage('assets/images/svg/heart_eyes.svg');
-
-  /// File path: assets/images/svg/history.svg
-  SvgGenImage get history => const SvgGenImage('assets/images/svg/history.svg');
-
-  /// File path: assets/images/svg/home-fill.svg
-  SvgGenImage get homeFill => const SvgGenImage('assets/images/svg/home-fill.svg');
-
-  /// File path: assets/images/svg/home-outline.svg
-  SvgGenImage get homeOutline => const SvgGenImage('assets/images/svg/home-outline.svg');
-
-  /// File path: assets/images/svg/home.svg
-  SvgGenImage get home => const SvgGenImage('assets/images/svg/home.svg');
-
-  /// File path: assets/images/svg/hookah.svg
-  SvgGenImage get hookah => const SvgGenImage('assets/images/svg/hookah.svg');
 
   /// File path: assets/images/svg/india.svg
   SvgGenImage get india => const SvgGenImage('assets/images/svg/india.svg');
@@ -1383,101 +1207,20 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/influencer_account_mark.svg
   SvgGenImage get influencerAccountMark => const SvgGenImage('assets/images/svg/influencer_account_mark.svg');
 
-  /// File path: assets/images/svg/info.svg
-  SvgGenImage get info => const SvgGenImage('assets/images/svg/info.svg');
-
   /// File path: assets/images/svg/investment.svg
   SvgGenImage get investment => const SvgGenImage('assets/images/svg/investment.svg');
 
   /// File path: assets/images/svg/karaoke.svg
   SvgGenImage get karaoke => const SvgGenImage('assets/images/svg/karaoke.svg');
 
-  /// File path: assets/images/svg/keyboard.svg
-  SvgGenImage get keyboard => const SvgGenImage('assets/images/svg/keyboard.svg');
-
-  /// File path: assets/images/svg/label.svg
-  SvgGenImage get label => const SvgGenImage('assets/images/svg/label.svg');
-
-  /// File path: assets/images/svg/landmark.svg
-  SvgGenImage get landmark => const SvgGenImage('assets/images/svg/landmark.svg');
-
-  /// File path: assets/images/svg/language.svg
-  SvgGenImage get language => const SvgGenImage('assets/images/svg/language.svg');
-
-  /// File path: assets/images/svg/laptop.svg
-  SvgGenImage get laptop => const SvgGenImage('assets/images/svg/laptop.svg');
-
-  /// File path: assets/images/svg/layout-grid.svg
-  SvgGenImage get layoutGrid => const SvgGenImage('assets/images/svg/layout-grid.svg');
-
-  /// File path: assets/images/svg/layout-sidebar.svg
-  SvgGenImage get layoutSidebar => const SvgGenImage('assets/images/svg/layout-sidebar.svg');
-
   /// File path: assets/images/svg/lifebuoy.svg
   SvgGenImage get lifebuoy => const SvgGenImage('assets/images/svg/lifebuoy.svg');
-
-  /// File path: assets/images/svg/like.svg
-  SvgGenImage get like => const SvgGenImage('assets/images/svg/like.svg');
-
-  /// File path: assets/images/svg/loader.svg
-  SvgGenImage get loader => const SvgGenImage('assets/images/svg/loader.svg');
-
-  /// File path: assets/images/svg/location.svg
-  SvgGenImage get location => const SvgGenImage('assets/images/svg/location.svg');
-
-  /// File path: assets/images/svg/location_searching.svg
-  SvgGenImage get locationSearching => const SvgGenImage('assets/images/svg/location_searching.svg');
 
   /// File path: assets/images/svg/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/images/svg/logo.svg');
 
-  /// File path: assets/images/svg/logout.svg
-  SvgGenImage get logout => const SvgGenImage('assets/images/svg/logout.svg');
-
-  /// File path: assets/images/svg/mail.svg
-  SvgGenImage get mail => const SvgGenImage('assets/images/svg/mail.svg');
-
-  /// File path: assets/images/svg/manicure.svg
-  SvgGenImage get manicure => const SvgGenImage('assets/images/svg/manicure.svg');
-
-  /// File path: assets/images/svg/map_outlined.svg
-  SvgGenImage get mapOutlined => const SvgGenImage('assets/images/svg/map_outlined.svg');
-
-  /// File path: assets/images/svg/mask.svg
-  SvgGenImage get mask => const SvgGenImage('assets/images/svg/mask.svg');
-
-  /// File path: assets/images/svg/maximize.svg
-  SvgGenImage get maximize => const SvgGenImage('assets/images/svg/maximize.svg');
-
   /// File path: assets/images/svg/memeber_gradient_star.svg
   SvgGenImage get memeberGradientStar => const SvgGenImage('assets/images/svg/memeber_gradient_star.svg');
-
-  /// File path: assets/images/svg/message.svg
-  SvgGenImage get message => const SvgGenImage('assets/images/svg/message.svg');
-
-  /// File path: assets/images/svg/minimize.svg
-  SvgGenImage get minimize => const SvgGenImage('assets/images/svg/minimize.svg');
-
-  /// File path: assets/images/svg/minus.svg
-  SvgGenImage get minus => const SvgGenImage('assets/images/svg/minus.svg');
-
-  /// File path: assets/images/svg/moderation.svg
-  SvgGenImage get moderation => const SvgGenImage('assets/images/svg/moderation.svg');
-
-  /// File path: assets/images/svg/mood-happy.svg
-  SvgGenImage get moodHappy => const SvgGenImage('assets/images/svg/mood-happy.svg');
-
-  /// File path: assets/images/svg/moon.svg
-  SvgGenImage get moon => const SvgGenImage('assets/images/svg/moon.svg');
-
-  /// File path: assets/images/svg/more-vert.svg
-  SvgGenImage get moreVert => const SvgGenImage('assets/images/svg/more-vert.svg');
-
-  /// File path: assets/images/svg/musculous.svg
-  SvgGenImage get musculous => const SvgGenImage('assets/images/svg/musculous.svg');
-
-  /// File path: assets/images/svg/music.svg
-  SvgGenImage get music => const SvgGenImage('assets/images/svg/music.svg');
 
   /// File path: assets/images/svg/no_photo.svg
   SvgGenImage get noPhoto => const SvgGenImage('assets/images/svg/no_photo.svg');
@@ -1485,50 +1228,14 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/parcel.svg
   SvgGenImage get parcel => const SvgGenImage('assets/images/svg/parcel.svg');
 
-  /// File path: assets/images/svg/pause-fill.svg
-  SvgGenImage get pauseFill => const SvgGenImage('assets/images/svg/pause-fill.svg');
-
-  /// File path: assets/images/svg/pause-outline.svg
-  SvgGenImage get pauseOutline => const SvgGenImage('assets/images/svg/pause-outline.svg');
-
-  /// File path: assets/images/svg/pause.svg
-  SvgGenImage get pause => const SvgGenImage('assets/images/svg/pause.svg');
-
-  /// File path: assets/images/svg/paw.svg
-  SvgGenImage get paw => const SvgGenImage('assets/images/svg/paw.svg');
-
-  /// File path: assets/images/svg/pencil.svg
-  SvgGenImage get pencil => const SvgGenImage('assets/images/svg/pencil.svg');
-
   /// File path: assets/images/svg/person_layered.svg
   SvgGenImage get personLayered => const SvgGenImage('assets/images/svg/person_layered.svg');
 
   /// File path: assets/images/svg/pharmacy.svg
   SvgGenImage get pharmacy => const SvgGenImage('assets/images/svg/pharmacy.svg');
 
-  /// File path: assets/images/svg/photo.svg
-  SvgGenImage get photo => const SvgGenImage('assets/images/svg/photo.svg');
-
-  /// File path: assets/images/svg/pie_chart_outlined.svg
-  SvgGenImage get pieChartOutlined => const SvgGenImage('assets/images/svg/pie_chart_outlined.svg');
-
-  /// File path: assets/images/svg/play-fill.svg
-  SvgGenImage get playFill => const SvgGenImage('assets/images/svg/play-fill.svg');
-
-  /// File path: assets/images/svg/play-outline.svg
-  SvgGenImage get playOutline => const SvgGenImage('assets/images/svg/play-outline.svg');
-
-  /// File path: assets/images/svg/play.svg
-  SvgGenImage get play => const SvgGenImage('assets/images/svg/play.svg');
-
   /// File path: assets/images/svg/play_arrow.svg
   SvgGenImage get playArrow => const SvgGenImage('assets/images/svg/play_arrow.svg');
-
-  /// File path: assets/images/svg/plus.svg
-  SvgGenImage get plus => const SvgGenImage('assets/images/svg/plus.svg');
-
-  /// File path: assets/images/svg/point.svg
-  SvgGenImage get point => const SvgGenImage('assets/images/svg/point.svg');
 
   /// File path: assets/images/svg/pointy-head.svg
   SvgGenImage get pointyHead => const SvgGenImage('assets/images/svg/pointy-head.svg');
@@ -1539,33 +1246,6 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/pro_account_mark.svg
   SvgGenImage get proAccountMark => const SvgGenImage('assets/images/svg/pro_account_mark.svg');
 
-  /// File path: assets/images/svg/profile-check.svg
-  SvgGenImage get profileCheck => const SvgGenImage('assets/images/svg/profile-check.svg');
-
-  /// File path: assets/images/svg/profile-delete.svg
-  SvgGenImage get profileDelete => const SvgGenImage('assets/images/svg/profile-delete.svg');
-
-  /// File path: assets/images/svg/profile-fill.svg
-  SvgGenImage get profileFill => const SvgGenImage('assets/images/svg/profile-fill.svg');
-
-  /// File path: assets/images/svg/profile-outline.svg
-  SvgGenImage get profileOutline => const SvgGenImage('assets/images/svg/profile-outline.svg');
-
-  /// File path: assets/images/svg/profile-plus.svg
-  SvgGenImage get profilePlus => const SvgGenImage('assets/images/svg/profile-plus.svg');
-
-  /// File path: assets/images/svg/question.svg
-  SvgGenImage get question => const SvgGenImage('assets/images/svg/question.svg');
-
-  /// File path: assets/images/svg/rain.svg
-  SvgGenImage get rain => const SvgGenImage('assets/images/svg/rain.svg');
-
-  /// File path: assets/images/svg/record.svg
-  SvgGenImage get record => const SvgGenImage('assets/images/svg/record.svg');
-
-  /// File path: assets/images/svg/refresh.svg
-  SvgGenImage get refresh => const SvgGenImage('assets/images/svg/refresh.svg');
-
   /// File path: assets/images/svg/restaurant.svg
   SvgGenImage get restaurant => const SvgGenImage('assets/images/svg/restaurant.svg');
 
@@ -1575,44 +1255,11 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/roadworks.svg
   SvgGenImage get roadworks => const SvgGenImage('assets/images/svg/roadworks.svg');
 
-  /// File path: assets/images/svg/rocket_outlined.svg
-  SvgGenImage get rocketOutlined => const SvgGenImage('assets/images/svg/rocket_outlined.svg');
-
-  /// File path: assets/images/svg/route.svg
-  SvgGenImage get route => const SvgGenImage('assets/images/svg/route.svg');
-
   /// File path: assets/images/svg/russia.svg
   SvgGenImage get russia => const SvgGenImage('assets/images/svg/russia.svg');
 
   /// File path: assets/images/svg/satelite.svg
   SvgGenImage get satelite => const SvgGenImage('assets/images/svg/satelite.svg');
-
-  /// File path: assets/images/svg/scan.svg
-  SvgGenImage get scan => const SvgGenImage('assets/images/svg/scan.svg');
-
-  /// File path: assets/images/svg/search-fill.svg
-  SvgGenImage get searchFill => const SvgGenImage('assets/images/svg/search-fill.svg');
-
-  /// File path: assets/images/svg/search-outline.svg
-  SvgGenImage get searchOutline => const SvgGenImage('assets/images/svg/search-outline.svg');
-
-  /// File path: assets/images/svg/search-people.svg
-  SvgGenImage get searchPeople => const SvgGenImage('assets/images/svg/search-people.svg');
-
-  /// File path: assets/images/svg/search.svg
-  SvgGenImage get search => const SvgGenImage('assets/images/svg/search.svg');
-
-  /// File path: assets/images/svg/send-min.svg
-  SvgGenImage get sendMin => const SvgGenImage('assets/images/svg/send-min.svg');
-
-  /// File path: assets/images/svg/send.svg
-  SvgGenImage get send => const SvgGenImage('assets/images/svg/send.svg');
-
-  /// File path: assets/images/svg/settings-fill.svg
-  SvgGenImage get settingsFill => const SvgGenImage('assets/images/svg/settings-fill.svg');
-
-  /// File path: assets/images/svg/settings-outline.svg
-  SvgGenImage get settingsOutline => const SvgGenImage('assets/images/svg/settings-outline.svg');
 
   /// File path: assets/images/svg/settings.svg
   SvgGenImage get settings => const SvgGenImage('assets/images/svg/settings.svg');
@@ -1621,23 +1268,11 @@ class $AssetsImagesSvgGen {
   SvgGenImage get shadeContentTypeLoaderTile =>
       const SvgGenImage('assets/images/svg/shade_content_type_loader_tile.svg');
 
-  /// File path: assets/images/svg/share.svg
-  SvgGenImage get share => const SvgGenImage('assets/images/svg/share.svg');
-
   /// File path: assets/images/svg/shiffle-banner-gradient.svg
   SvgGenImage get shiffleBannerGradient => const SvgGenImage('assets/images/svg/shiffle-banner-gradient.svg');
 
   /// File path: assets/images/svg/shuffle-banner-semi.svg
   SvgGenImage get shuffleBannerSemi => const SvgGenImage('assets/images/svg/shuffle-banner-semi.svg');
-
-  /// File path: assets/images/svg/shuffle-cut.svg
-  SvgGenImage get shuffleCut => const SvgGenImage('assets/images/svg/shuffle-cut.svg');
-
-  /// File path: assets/images/svg/shuffle-fill.svg
-  SvgGenImage get shuffleFill => const SvgGenImage('assets/images/svg/shuffle-fill.svg');
-
-  /// File path: assets/images/svg/shuffle-outline.svg
-  SvgGenImage get shuffleOutline => const SvgGenImage('assets/images/svg/shuffle-outline.svg');
 
   /// File path: assets/images/svg/shuffle_white.svg
   SvgGenImage get shuffleWhite => const SvgGenImage('assets/images/svg/shuffle_white.svg');
@@ -1648,92 +1283,23 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/smiley.svg
   SvgGenImage get smiley => const SvgGenImage('assets/images/svg/smiley.svg');
 
-  /// File path: assets/images/svg/social-instagram.svg
-  SvgGenImage get socialInstagram => const SvgGenImage('assets/images/svg/social-instagram.svg');
-
-  /// File path: assets/images/svg/social-telegram.svg
-  SvgGenImage get socialTelegram => const SvgGenImage('assets/images/svg/social-telegram.svg');
-
-  /// File path: assets/images/svg/social-twitter.svg
-  SvgGenImage get socialTwitter => const SvgGenImage('assets/images/svg/social-twitter.svg');
-
-  /// File path: assets/images/svg/social-whatsapp.svg
-  SvgGenImage get socialWhatsapp => const SvgGenImage('assets/images/svg/social-whatsapp.svg');
-
-  /// File path: assets/images/svg/spinner-fill.svg
-  SvgGenImage get spinnerFill => const SvgGenImage('assets/images/svg/spinner-fill.svg');
-
-  /// File path: assets/images/svg/spinner-outline.svg
-  SvgGenImage get spinnerOutline => const SvgGenImage('assets/images/svg/spinner-outline.svg');
-
   /// File path: assets/images/svg/spinner_wheel.svg
   SvgGenImage get spinnerWheel => const SvgGenImage('assets/images/svg/spinner_wheel.svg');
-
-  /// File path: assets/images/svg/star-2.svg
-  SvgGenImage get star2 => const SvgGenImage('assets/images/svg/star-2.svg');
-
-  /// File path: assets/images/svg/star-fill.svg
-  SvgGenImage get starFill => const SvgGenImage('assets/images/svg/star-fill.svg');
-
-  /// File path: assets/images/svg/star-outline.svg
-  SvgGenImage get starOutline => const SvgGenImage('assets/images/svg/star-outline.svg');
-
-  /// File path: assets/images/svg/star.svg
-  SvgGenImage get star => const SvgGenImage('assets/images/svg/star.svg');
-
-  /// File path: assets/images/svg/stop-outline.svg
-  SvgGenImage get stopOutline => const SvgGenImage('assets/images/svg/stop-outline.svg');
-
-  /// File path: assets/images/svg/stop.svg
-  SvgGenImage get stop => const SvgGenImage('assets/images/svg/stop.svg');
 
   /// File path: assets/images/svg/sufle.svg
   SvgGenImage get sufle => const SvgGenImage('assets/images/svg/sufle.svg');
 
-  /// File path: assets/images/svg/sun.svg
-  SvgGenImage get sun => const SvgGenImage('assets/images/svg/sun.svg');
-
   /// File path: assets/images/svg/sunglasses.svg
   SvgGenImage get sunglasses => const SvgGenImage('assets/images/svg/sunglasses.svg');
 
-  /// File path: assets/images/svg/sunny.svg
-  SvgGenImage get sunny => const SvgGenImage('assets/images/svg/sunny.svg');
-
   /// File path: assets/images/svg/swim.svg
   SvgGenImage get swim => const SvgGenImage('assets/images/svg/swim.svg');
-
-  /// File path: assets/images/svg/swimming.svg
-  SvgGenImage get swimming => const SvgGenImage('assets/images/svg/swimming.svg');
-
-  /// File path: assets/images/svg/table.svg
-  SvgGenImage get table => const SvgGenImage('assets/images/svg/table.svg');
-
-  /// File path: assets/images/svg/taxi.svg
-  SvgGenImage get taxi => const SvgGenImage('assets/images/svg/taxi.svg');
-
-  /// File path: assets/images/svg/teapot.svg
-  SvgGenImage get teapot => const SvgGenImage('assets/images/svg/teapot.svg');
-
-  /// File path: assets/images/svg/thumb-up.svg
-  SvgGenImage get thumbUp => const SvgGenImage('assets/images/svg/thumb-up.svg');
 
   /// File path: assets/images/svg/thumbs_up_reversed.svg
   SvgGenImage get thumbsUpReversed => const SvgGenImage('assets/images/svg/thumbs_up_reversed.svg');
 
   /// File path: assets/images/svg/tiger.svg
   SvgGenImage get tiger => const SvgGenImage('assets/images/svg/tiger.svg');
-
-  /// File path: assets/images/svg/tool.svg
-  SvgGenImage get tool => const SvgGenImage('assets/images/svg/tool.svg');
-
-  /// File path: assets/images/svg/trash.svg
-  SvgGenImage get trash => const SvgGenImage('assets/images/svg/trash.svg');
-
-  /// File path: assets/images/svg/trend-down.svg
-  SvgGenImage get trendDown => const SvgGenImage('assets/images/svg/trend-down.svg');
-
-  /// File path: assets/images/svg/trend-up.svg
-  SvgGenImage get trendUp => const SvgGenImage('assets/images/svg/trend-up.svg');
 
   /// File path: assets/images/svg/triple_arrow.svg
   SvgGenImage get tripleArrow => const SvgGenImage('assets/images/svg/triple_arrow.svg');
@@ -1750,57 +1316,15 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/united_kingdom.svg
   SvgGenImage get unitedKingdom => const SvgGenImage('assets/images/svg/united_kingdom.svg');
 
-  /// File path: assets/images/svg/unlink.svg
-  SvgGenImage get unlink => const SvgGenImage('assets/images/svg/unlink.svg');
-
   /// File path: assets/images/svg/us_flag.svg
   SvgGenImage get usFlag => const SvgGenImage('assets/images/svg/us_flag.svg');
-
-  /// File path: assets/images/svg/user.svg
-  SvgGenImage get user => const SvgGenImage('assets/images/svg/user.svg');
-
-  /// File path: assets/images/svg/video-plus.svg
-  SvgGenImage get videoPlus => const SvgGenImage('assets/images/svg/video-plus.svg');
-
-  /// File path: assets/images/svg/view-action.svg
-  SvgGenImage get viewAction => const SvgGenImage('assets/images/svg/view-action.svg');
-
-  /// File path: assets/images/svg/view.svg
-  SvgGenImage get view => const SvgGenImage('assets/images/svg/view.svg');
-
-  /// File path: assets/images/svg/voice.svg
-  SvgGenImage get voice => const SvgGenImage('assets/images/svg/voice.svg');
-
-  /// File path: assets/images/svg/volume-off.svg
-  SvgGenImage get volumeOff => const SvgGenImage('assets/images/svg/volume-off.svg');
-
-  /// File path: assets/images/svg/volume.svg
-  SvgGenImage get volume => const SvgGenImage('assets/images/svg/volume.svg');
-
-  /// File path: assets/images/svg/wallet.svg
-  SvgGenImage get wallet => const SvgGenImage('assets/images/svg/wallet.svg');
-
-  /// File path: assets/images/svg/warning.svg
-  SvgGenImage get warning => const SvgGenImage('assets/images/svg/warning.svg');
-
-  /// File path: assets/images/svg/water.svg
-  SvgGenImage get water => const SvgGenImage('assets/images/svg/water.svg');
 
   /// File path: assets/images/svg/waterpool.svg
   SvgGenImage get waterpool => const SvgGenImage('assets/images/svg/waterpool.svg');
 
-  /// File path: assets/images/svg/white_star.svg
-  SvgGenImage get whiteStar => const SvgGenImage('assets/images/svg/white_star.svg');
-
   /// File path: assets/images/svg/white_star_transparent_center.svg
   SvgGenImage get whiteStarTransparentCenter =>
       const SvgGenImage('assets/images/svg/white_star_transparent_center.svg');
-
-  /// File path: assets/images/svg/windy.svg
-  SvgGenImage get windy => const SvgGenImage('assets/images/svg/windy.svg');
-
-  /// File path: assets/images/svg/x.svg
-  SvgGenImage get x => const SvgGenImage('assets/images/svg/x.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
@@ -1861,88 +1385,33 @@ class $AssetsImagesSvgGen {
         trainingApparatus,
         victoryHands,
         yoga,
-        active,
         adventure,
-        alertCircle,
-        analyticsFill,
-        analyticsOutline,
         analyticsBusiness,
         appleLogo,
         aquapark,
         arabic,
-        archive,
-        armchair,
-        arrowDown,
-        arrowLeft,
-        arrowResult,
-        arrowRight,
-        arrowUp,
-        arrowsSort,
         athlete,
-        baby,
-        barcode,
-        bath,
-        bell,
         bigArrow,
         bigCuttedLogo,
-        booking,
-        building,
         businessman,
-        calendar,
-        calm,
-        cameraPlus,
-        check,
-        checkCircle,
-        checklist,
-        chess,
-        chevronDown,
-        chevronLeft,
-        chevronNoPadding,
-        chevronRight,
-        chevronUpLong,
-        chevronUp,
-        cleaning,
-        clock,
-        clockCursor,
+        checkCircleGradient,
+        chess3Nobg,
         clothing,
-        cloudOff,
         club,
-        cocktail,
-        coffee,
+        coinGradient,
         companyLayered,
         conferences,
-        connectionFill,
-        connectionOutline,
         coworking,
-        cross,
-        cup,
-        currentLocation,
-        cursor,
-        cutlery,
         deliveryTruck,
-        diamond,
-        dice,
-        diskette,
-        docsFill,
-        docsOutline,
-        dollar,
-        dollarBlackOutlined,
-        dollarOutlined,
-        download,
         dubaiSilhouette,
         emptyRadio,
-        exclamation,
-        eyeOff,
         facebookLogo,
         family,
-        files,
         filledRadio,
-        filter,
+        filmstrip,
         finance,
         fingerPrint,
         fireEmoji,
-        fireWhite,
-        flag,
         food,
         googleLogo,
         gradientPlus,
@@ -1950,157 +1419,48 @@ class $AssetsImagesSvgGen {
         grocery,
         gym,
         handShake2,
-        handShake,
-        heartBrokenFill,
-        heartFill,
-        heartOutline,
         heartEyes,
-        history,
-        homeFill,
-        homeOutline,
-        home,
-        hookah,
         india,
         influencerAccountMark,
-        info,
         investment,
         karaoke,
-        keyboard,
-        label,
-        landmark,
-        language,
-        laptop,
-        layoutGrid,
-        layoutSidebar,
         lifebuoy,
-        like,
-        loader,
-        location,
-        locationSearching,
         logo,
-        logout,
-        mail,
-        manicure,
-        mapOutlined,
-        mask,
-        maximize,
         memeberGradientStar,
-        message,
-        minimize,
-        minus,
-        moderation,
-        moodHappy,
-        moon,
-        moreVert,
-        musculous,
-        music,
         noPhoto,
         parcel,
-        pauseFill,
-        pauseOutline,
-        pause,
-        paw,
-        pencil,
         personLayered,
         pharmacy,
-        photo,
-        pieChartOutlined,
-        playFill,
-        playOutline,
-        play,
         playArrow,
-        plus,
-        point,
         pointyHead,
         premiumAccountMark,
         proAccountMark,
-        profileCheck,
-        profileDelete,
-        profileFill,
-        profileOutline,
-        profilePlus,
-        question,
-        rain,
-        record,
-        refresh,
         restaurant,
         risingTrendIcon,
         roadworks,
-        rocketOutlined,
-        route,
         russia,
         satelite,
-        scan,
-        searchFill,
-        searchOutline,
-        searchPeople,
-        search,
-        sendMin,
-        send,
-        settingsFill,
-        settingsOutline,
         settings,
         shadeContentTypeLoaderTile,
-        share,
         shiffleBannerGradient,
         shuffleBannerSemi,
-        shuffleCut,
-        shuffleFill,
-        shuffleOutline,
         shuffleWhite,
         sleep,
         smiley,
-        socialInstagram,
-        socialTelegram,
-        socialTwitter,
-        socialWhatsapp,
-        spinnerFill,
-        spinnerOutline,
         spinnerWheel,
-        star2,
-        starFill,
-        starOutline,
-        star,
-        stopOutline,
-        stop,
         sufle,
-        sun,
         sunglasses,
-        sunny,
         swim,
-        swimming,
-        table,
-        taxi,
-        teapot,
-        thumbUp,
         thumbsUpReversed,
         tiger,
-        tool,
-        trash,
-        trendDown,
-        trendUp,
         tripleArrow,
         tripleArrowBlack,
         trippleArrowCliped,
         uniqueMarker,
         unitedKingdom,
-        unlink,
         usFlag,
-        user,
-        videoPlus,
-        viewAction,
-        view,
-        voice,
-        volumeOff,
-        volume,
-        wallet,
-        warning,
-        water,
         waterpool,
-        whiteStar,
-        whiteStarTransparentCenter,
-        windy,
-        x
+        whiteStarTransparentCenter
       ];
 }
 
@@ -2562,7 +1922,7 @@ class AssetGenImage {
     ImageRepeat repeat = ImageRepeat.noRepeat,
     Rect? centerSlice,
     bool matchTextDirection = false,
-    bool gaplessPlayback = false,
+    bool gaplessPlayback = true,
     bool isAntiAlias = false,
     String? package,
     FilterQuality filterQuality = FilterQuality.low,

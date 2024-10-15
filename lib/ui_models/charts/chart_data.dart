@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/ui_models/charts/ui_kit_line_chart_additional_data.dart';
 
 abstract class UiKitChartData<T> {
   final String chartTitle;
@@ -14,7 +15,8 @@ abstract class UiKitChartItem<T> {
   final Color? color;
   final Gradient? gradient;
   final String chartItemName;
-  final String? icon;
+  final String? iconPath;
+  final IconData? icon;
   final List<UiKitChartDataSet<T>> datasets;
   final int id;
 
@@ -22,9 +24,10 @@ abstract class UiKitChartItem<T> {
     required this.id,
     required this.datasets,
     required this.chartItemName,
+    this.icon,
     this.color,
     this.gradient,
-    this.icon,
+    this.iconPath,
   });
 }
 
@@ -54,12 +57,14 @@ class UiKitLineChartData<T> extends UiKitChartData<T> {
   final List<UiKitLineChartItemData<T>> items;
   final String? subtitle;
   final List<String>? popUpMenuOptions;
+  final UiKitLineChartAdditionalData? additionalData;
 
   UiKitLineChartData({
     required String title,
     required this.items,
     this.subtitle,
     this.popUpMenuOptions,
+    this.additionalData,
   }) : super(chartTitle: title, items: items);
 
   factory UiKitLineChartData.empty() => UiKitLineChartData<T>(
@@ -68,6 +73,22 @@ class UiKitLineChartData<T> extends UiKitChartData<T> {
       );
 
   bool get isEmpty => items.isEmpty && chartTitle.isEmpty;
+
+  UiKitLineChartData<T> copyWith({
+    String? title,
+    List<UiKitLineChartItemData<T>>? items,
+    String? subtitle,
+    List<String>? popUpMenuOptions,
+    UiKitLineChartAdditionalData? additionalData,
+  }) {
+    return UiKitLineChartData<T>(
+      title: title ?? this.chartTitle,
+      items: items ?? this.items,
+      subtitle: subtitle ?? this.subtitle,
+      popUpMenuOptions: popUpMenuOptions ?? this.popUpMenuOptions,
+      additionalData: additionalData ?? this.additionalData,
+    );
+  }
 }
 
 class UiKitLineChartItemData<T> extends UiKitChartItem<T> {
@@ -78,8 +99,10 @@ class UiKitLineChartItemData<T> extends UiKitChartItem<T> {
     required int id,
     Gradient? gradient,
     String? icon,
+    IconData? iconData,
   }) : super(
-          icon: icon,
+          iconPath: icon,
+          icon: iconData,
           color: color,
           datasets: datasets,
           gradient: gradient,

@@ -16,6 +16,39 @@ class UiKitLineChartAdditionalData {
     );
   }
 
+  factory UiKitLineChartAdditionalData.merge(Iterable<UiKitLineChartAdditionalData> list) {
+    if (list.isEmpty) throw UnimplementedError('Cannot merge empty list');
+
+    if (!list.every((item) => item.title == list.first.title)) {
+      throw UnimplementedError('Cannot merge items with different titles');
+    }
+
+    if (list.every((item) => item.dataItems.isEmpty)) return UiKitLineChartAdditionalData.empty();
+
+    final allDataItems = list.expand((element) => element.dataItems);
+    final mergedDataItems = allDataItems.map((e) => e.identifier).toSet().map((id) {
+      final items = allDataItems.where((element) => element.identifier == id).toList();
+      final allGroupedValues = items.expand((element) => element.groupedValues);
+      final uniqueGroupNames = allGroupedValues.map((e) => e.name).toSet();
+      final groupedValues = uniqueGroupNames.map((name) {
+        final values = allGroupedValues.where((element) => element.name == name).toList();
+        final value = values.fold<double>(0, (previousValue, element) => previousValue + element.value);
+        final color = values.first.color;
+        return UiKitLineChartAdditionalDataItemGroup(name: name, value: value, color: color, mask: values.first.mask);
+      }).toList();
+      return UiKitLineChartAdditionalDataItem(
+        mask: items.firstWhere((e) => e.identifier == id).mask,
+        identifier: id,
+        groupedValues: groupedValues,
+      );
+    }).toList();
+
+    return UiKitLineChartAdditionalData(
+      title: list.first.title,
+      dataItems: mergedDataItems,
+    );
+  }
+
   bool get isEmpty => dataItems.isEmpty;
 
   bool get isNotEmpty => !isEmpty;
@@ -62,10 +95,12 @@ class UiKitLineChartAdditionalDataItem {
 
 class UiKitLineChartAdditionalDataItemGroup {
   final String name;
+  final String mask;
   final double value;
   final Color color;
 
   UiKitLineChartAdditionalDataItemGroup({
+    required this.mask,
     required this.name,
     required this.value,
     required this.color,

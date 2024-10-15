@@ -22,12 +22,15 @@ class UiKitTagsWidget extends StatelessWidget {
       children: [
         if (rating != null) ...[
           UiKitCardWrapper(
-            height: SpacingFoundation.horizontalSpacing16 + 2 + SpacingFoundation.horizontalSpacing24 +SpacingFoundation.verticalSpacing4,
+            height: SpacingFoundation.horizontalSpacing16 +
+                2 +
+                SpacingFoundation.horizontalSpacing24 +
+                SpacingFoundation.verticalSpacing4,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 ImageWidget(
-                  iconData: ShuffleUiKitIcons.star,
+                  iconData: ShuffleUiKitIcons.starfill,
                   height: SpacingFoundation.horizontalSpacing16,
                   fit: BoxFit.fitHeight,
                   color: context.uiKitTheme?.colorScheme.inversePrimary,

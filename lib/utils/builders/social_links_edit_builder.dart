@@ -61,7 +61,7 @@ Future<List<String>> socialLinksEditBuilder(BuildContext context, {List<String> 
                 },
                 label: 'URL',
                 prefixIcon: ImageWidget(
-                  svgAsset: controller.text.icon,
+                  iconData: controller.text.icon,
                   color: theme?.colorScheme.inversePrimary,
                 ),
               ).paddingOnly(bottom: SpacingFoundation.verticalSpacing16),

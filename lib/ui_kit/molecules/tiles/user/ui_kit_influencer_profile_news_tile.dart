@@ -5,7 +5,8 @@ class UiKitInfluencerProfileNewsTile extends StatelessWidget {
   final Widget? leading;
   final String? leadingImageLink;
   final String title;
-  final String? titleDecorationIcon;
+  final String? titleDecorationIconLink;
+  final IconData? titleDecorationIcon;
   final String? subtitle;
   final VoidCallback? onTap;
 
@@ -13,11 +14,13 @@ class UiKitInfluencerProfileNewsTile extends StatelessWidget {
     super.key,
     required this.title,
     this.leading,
+    this.titleDecorationIconLink,
     this.titleDecorationIcon,
     this.leadingImageLink,
     this.subtitle,
     this.onTap,
-  });
+  }) : assert(titleDecorationIconLink == null || titleDecorationIcon == null,
+            'You can only provide one of the titleDecorationIconLink or titleDecorationIcon of UiKitInfluencerProfileNewsTile');
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +57,10 @@ class UiKitInfluencerProfileNewsTile extends StatelessWidget {
                       textAlign: TextAlign.left,
                     ),
                     SpacingFoundation.horizontalSpace4,
-                    if (titleDecorationIcon != null)
+                    if (titleDecorationIconLink != null || titleDecorationIcon != null)
                       ImageWidget(
-                        link: titleDecorationIcon,
+                        link: titleDecorationIconLink,
+                        iconData: titleDecorationIcon,
                         color: colorScheme?.inversePrimary,
                       ),
                   ],

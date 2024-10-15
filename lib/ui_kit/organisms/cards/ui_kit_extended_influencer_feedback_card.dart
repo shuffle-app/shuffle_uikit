@@ -82,7 +82,7 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
                             if (rating != null)
                               UiKitTagWidget(
                                   title: rating!.toStringAsFixed(0),
-                                  icon: ShuffleUiKitIcons.star,
+                                  icon: ShuffleUiKitIcons.starfill,
                                   textColor: theme?.colorScheme.inversePrimary),
                             ...tags
                                     ?.map<Widget>((e) => UiKitTagWidget(

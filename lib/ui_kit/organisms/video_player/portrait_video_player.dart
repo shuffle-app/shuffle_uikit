@@ -45,11 +45,11 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   final key = UniqueKey();
   StreamSubscription? positionSubscription;
   StreamSubscription? completeSubscription;
-  Timer _seekDebouncer = Timer(Duration(milliseconds: 150), () {});
+  Timer _seekDebouncer = Timer(const Duration(milliseconds: 150), () {});
 
   _seekTo(double progress) {
     _seekDebouncer.cancel();
-    _seekDebouncer = Timer(Duration(milliseconds: 150), () {
+    _seekDebouncer = Timer(const Duration(milliseconds: 150), () {
       final seekTo = _controller.player.platform!.state.duration.inMilliseconds * progress;
       _controller.player.seek(Duration(milliseconds: seekTo.toInt()));
     });

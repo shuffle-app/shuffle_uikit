@@ -151,8 +151,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: showEmptyReactionsState
                         ? [
-                            ImageWidget(
-                              svgAsset: GraphicsFoundation.instance.svg.thumbUp,
+                            const ImageWidget(
+                              iconData: ShuffleUiKitIcons.thumbup,
                               color: ColorsFoundation.mutedText,
                             ),
                           ]

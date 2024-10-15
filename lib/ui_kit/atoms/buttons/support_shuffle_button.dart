@@ -22,17 +22,18 @@ class SupportShuffleButton extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       color: context.uiKitTheme?.colorScheme.surface2,
       child: InkWell(
-        onTap: onCustomDonate ?? () => showGeneralDialog(
-          context: context,
-          transitionBuilder: (context, animation1, animation2, child) => BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: animation1.value * 30, sigmaY: animation1.value * 30),
-            child: child,
-          ),
-          pageBuilder: (context, animation1, animation2) => FadeTransition(
-            opacity: animation1,
-            child: DonateToShuffleAlert(onDonate: onDonate),
-          ),
-        ),
+        onTap: onCustomDonate ??
+            () => showGeneralDialog(
+                  context: context,
+                  transitionBuilder: (context, animation1, animation2, child) => BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: animation1.value * 30, sigmaY: animation1.value * 30),
+                    child: child,
+                  ),
+                  pageBuilder: (context, animation1, animation2) => FadeTransition(
+                    opacity: animation1,
+                    child: DonateToShuffleAlert(onDonate: onDonate),
+                  ),
+                ),
         child: Ink(
           padding: EdgeInsets.symmetric(
             vertical: EdgeInsetsFoundation.vertical10,
@@ -91,7 +92,7 @@ class SupportShuffleButton extends StatelessWidget {
               GradientableWidget(
                 gradient: GradientFoundation.attentionCard,
                 child: ImageWidget(
-                  iconData: ShuffleUiKitIcons.dollarOutlined,
+                  svgAsset: GraphicsFoundation.instance.svg.coinGradient,
                   height: 20.h,
                   color: Colors.white,
                   fit: BoxFit.fitHeight,

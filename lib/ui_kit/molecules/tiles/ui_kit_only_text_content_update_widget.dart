@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitOnlyTextContentUpdateWidget extends UiKitContentUpdateWidget {
-  final String updateIcon;
+  final IconData updateIcon;
   final Widget titleTrailing;
   final String text;
 
@@ -38,7 +38,7 @@ class UiKitOnlyTextContentUpdateWidget extends UiKitContentUpdateWidget {
               ),
               SpacingFoundation.horizontalSpace4,
               ImageWidget(
-                link: updateIcon,
+                iconData: updateIcon,
                 height: 0.040625.sw,
                 width: 0.040625.sw,
                 fit: BoxFit.cover,

@@ -73,9 +73,7 @@ class UiKitMetricsCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const ImageWidget(
-                            iconData: ShuffleUiKitIcons.risingTrendIcon,
-                          ),
+                          ImageWidget(svgAsset: GraphicsFoundation.instance.svg.risingTrendIcon),
                           Text(
                             unit,
                             style: titleStyle?.copyWith(fontSize: 8),

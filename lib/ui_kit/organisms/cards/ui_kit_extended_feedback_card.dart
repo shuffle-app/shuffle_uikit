@@ -43,8 +43,8 @@ class UiKitExtendedFeedbackCard extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: onEdit,
-                child: ImageWidget(
-                  svgAsset: GraphicsFoundation.instance.svg.pencil,
+                child: const ImageWidget(
+                  iconData: ShuffleUiKitIcons.pencil,
                   color: ColorsFoundation.darkNeutral900,
                 ),
               ),

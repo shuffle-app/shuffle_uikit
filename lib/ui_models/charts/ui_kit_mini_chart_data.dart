@@ -4,14 +4,14 @@ class UiKitMiniChartData {
   final String title;
   final List<UiKitMiniChartDataItem> items;
   final num value;
-  final num progress;
+  final num? progress;
   final String? valueMetricsName;
   final Color color;
 
   UiKitMiniChartData({
     required this.title,
     required this.items,
-    required this.progress,
+    this.progress,
     required this.value,
     required this.color,
     this.valueMetricsName,

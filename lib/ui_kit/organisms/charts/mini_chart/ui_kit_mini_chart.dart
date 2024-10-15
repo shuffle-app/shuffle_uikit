@@ -1,7 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_models/charts/line_chart_small_preview_data.dart';
-import 'package:shuffle_uikit/utils/extentions/mini_chart_extension.dart';
 
 class UiKitMiniChart extends StatefulWidget {
   final List<UiKitMiniChartData> data;
@@ -18,7 +18,7 @@ class UiKitMiniChart extends StatefulWidget {
 class _UiKitMiniChartState extends State<UiKitMiniChart> {
   final ScrollController _datesScrollController = ScrollController();
   double? datesToPreviewWidthRatio;
-  Size get previewSize => Size(1.sw - (72), 0.07.sh);
+  Size get previewSize => Size(1.sw - 78, (1.sw - 72) * 0.15625);
   Size get datesViewPortSize => Size(
         previewSize.width,
         0.0281.sh,
@@ -30,11 +30,14 @@ class _UiKitMiniChartState extends State<UiKitMiniChart> {
   ));
   final ValueNotifier<LineChartSmallPreviewData> _previewUpdatesNotifier =
       ValueNotifier(LineChartSmallPreviewData.initial());
+  final AutoSizeGroup _autoSizeGroup = AutoSizeGroup();
 
   @override
   void initState() {
     super.initState();
-    final difference = widget.data.period.start.difference(widget.data.period.end).inDays;
+    final difference = widget.data.period.start.isAtSameMomentAs(widget.data.period.end)
+        ? 0
+        : widget.data.period.start.difference(widget.data.period.end).inDays;
     final visibleDatesCount = difference * _previewUpdatesNotifier.value.previewWidthFraction;
     _dateNotifier.value = DateRange(
       start: widget.data.period.start,
@@ -75,6 +78,7 @@ class _UiKitMiniChartState extends State<UiKitMiniChart> {
           (e) => UiKitMiniChartDataItemWidget(
             data: e,
             currentPeriodNotifier: _dateNotifier,
+            textAutoSizeGroup: _autoSizeGroup,
           ).paddingSymmetric(vertical: EdgeInsetsFoundation.vertical4),
         ),
         SpacingFoundation.verticalSpace8,
@@ -108,7 +112,7 @@ class _UiKitMiniChartState extends State<UiKitMiniChart> {
             if (offset.isInfinite) {
               _datesScrollController.animateTo(
                 _datesScrollController.position.maxScrollExtent,
-                duration: const Duration(milliseconds: 200),
+                duration: const Duration(milliseconds: 750),
                 curve: Curves.decelerate,
               );
             } else if (offset.isNaN) {

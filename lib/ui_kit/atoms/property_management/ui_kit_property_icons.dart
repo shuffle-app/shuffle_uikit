@@ -59,7 +59,7 @@ class UiKitPropertyIconsState extends State<UiKitPropertyIcons> {
                   fit: ButtonFit.hugContent,
                   backgroundColor: Colors.transparent,
                   iconInfo: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.svg.download.path,
+                    iconData: ShuffleUiKitIcons.download,
                     color: ColorsFoundation.primary200,
                   ),
                   onPressed: widget.onPressed,
@@ -117,10 +117,8 @@ class HoverableImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final backgroundColor =
-        isSelected ? ColorsFoundation.info : Colors.transparent;
-    final iconColor =
-        isSelected ? Colors.white : ColorsFoundation.lightBodyTypographyColor;
+    final backgroundColor = isSelected ? ColorsFoundation.info : Colors.transparent;
+    final iconColor = isSelected ? Colors.white : ColorsFoundation.lightBodyTypographyColor;
 
     return GestureDetector(
       onTap: () {

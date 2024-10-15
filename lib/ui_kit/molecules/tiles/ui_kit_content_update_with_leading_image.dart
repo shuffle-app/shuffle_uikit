@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitContentUpdateWithLeadingImage extends UiKitContentUpdateWidget {
-  final String updateIconUrl;
-
   const UiKitContentUpdateWithLeadingImage({
     Key? key,
     required String imageUrl,
-    this.updateIconUrl = '',
     required super.title,
+    IconData? iconData,
     super.subtitle,
-  }) : super(leadingImageUrl: imageUrl);
+  }) : super(leadingImageUrl: imageUrl, iconData: iconData, key: key);
 
   @override
   double get height => 0.16875.sw * 0.74;
@@ -48,14 +46,13 @@ class UiKitContentUpdateWithLeadingImage extends UiKitContentUpdateWidget {
                       style: boldTextTheme?.caption3Medium,
                     ),
                     SpacingFoundation.horizontalSpace4,
-                    if (updateIconUrl.isNotEmpty)
-                      ImageWidget(
-                        link: updateIconUrl,
-                        color: colorScheme?.inverseSurface,
-                        height: 0.040625.sw,
-                        width: 0.040625.sw,
-                        fit: BoxFit.cover,
-                      ),
+                    ImageWidget(
+                      iconData: iconData,
+                      color: colorScheme?.inverseSurface,
+                      height: 0.040625.sw,
+                      width: 0.040625.sw,
+                      fit: BoxFit.cover,
+                    ),
                   ],
                 ),
                 if (subtitle != null)

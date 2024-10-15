@@ -86,7 +86,7 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   const ImageWidget(
-                    iconData: ShuffleUiKitIcons.mapOutlined,
+                    iconData: ShuffleUiKitIcons.map,
                     color: ColorsFoundation.darkNeutral900,
                   ),
                   SpacingFoundation.horizontalSpace8,
@@ -103,7 +103,7 @@ class _LocationPickerSearchOverlayState extends State<LocationPickerSearchOverla
                         backgroundColor: Colors.black,
                         iconInfo: BaseUiKitButtonIconData(
                           iconData: ShuffleUiKitIcons.chevronright,
-                          color: colorScheme?.surface,
+                          color: Colors.white,
                         ),
                         onPressed: widget.onPickFromMap,
                       ),

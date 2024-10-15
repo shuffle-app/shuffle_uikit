@@ -11,16 +11,19 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       mask: '18 - 24',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Male,
           name: 'male',
           value: 0,
           color: const Color(0xffffffff),
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Female,
           name: 'female',
           value: 0,
           color: ColorsFoundation.darkNeutral900,
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Other,
           name: 'other',
           value: 0,
           color: ColorsFoundation.darkNeutral600,
@@ -32,16 +35,19 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       mask: '25 - 35',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Male,
           name: 'male',
           value: 10,
           color: const Color(0xffffffff),
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Female,
           name: 'female',
           value: 18,
           color: ColorsFoundation.darkNeutral900,
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Other,
           name: 'other',
           value: 0,
           color: ColorsFoundation.darkNeutral600,
@@ -53,16 +59,19 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       mask: '36 - 45',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Male,
           name: 'male',
           value: 0,
           color: const Color(0xffffffff),
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Female,
           name: 'female',
           value: 0,
           color: ColorsFoundation.darkNeutral900,
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Other,
           name: 'other',
           value: 0,
           color: ColorsFoundation.darkNeutral600,
@@ -74,16 +83,19 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       mask: '46 - 50',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Male,
           name: 'male',
           value: 30,
           color: const Color(0xffffffff),
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Female,
           name: 'female',
           value: 48,
           color: ColorsFoundation.darkNeutral900,
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Other,
           name: 'other',
           value: 0,
           color: ColorsFoundation.darkNeutral600,
@@ -95,16 +107,19 @@ final mockAdditionalData = UiKitLineChartAdditionalData(
       mask: '50+',
       groupedValues: [
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Male,
           name: 'male',
           value: 0,
           color: const Color(0xffffffff),
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Female,
           name: 'female',
           value: 0,
           color: ColorsFoundation.darkNeutral900,
         ),
         UiKitLineChartAdditionalDataItemGroup(
+          mask: S.current.Other,
           name: 'other',
           value: 0,
           color: ColorsFoundation.darkNeutral600,
@@ -120,7 +135,7 @@ final mockFeedbackStats = UiKitLineChartData<num>(
     UiKitLineChartItemData<num>(
       id: 1,
       chartItemName: '5',
-      icon: GraphicsFoundation.instance.svg.star.path,
+      iconData: ShuffleUiKitIcons.starfill,
       color: ColorsFoundation.success,
       datasets: List.generate(
         10,
@@ -133,7 +148,7 @@ final mockFeedbackStats = UiKitLineChartData<num>(
     UiKitLineChartItemData<num>(
       id: 2,
       chartItemName: '3-4',
-      icon: GraphicsFoundation.instance.svg.star.path,
+      iconData: ShuffleUiKitIcons.starfill,
       color: ColorsFoundation.warning,
       datasets: List.generate(
         10,
@@ -146,7 +161,7 @@ final mockFeedbackStats = UiKitLineChartData<num>(
     UiKitLineChartItemData<num>(
       id: 3,
       chartItemName: '1-2',
-      icon: GraphicsFoundation.instance.svg.star.path,
+      iconData: ShuffleUiKitIcons.starfill,
       color: ColorsFoundation.error,
       datasets: List.generate(
         10,
@@ -337,6 +352,32 @@ final UiKitLineChartData<double> mockLineChart = UiKitLineChartData<double>(
           date: DateTime.now().subtract(Duration(days: index)),
         ),
       ),
+    ),
+  ],
+);
+
+final UiKitPieChartData emptyPieChart = UiKitPieChartData(
+  chartName: S.current.ViewSources,
+  items: [
+    UiKitPieCharItemData(
+      color: ColorsFoundation.info,
+      value: 0,
+      itemName: 'Randomizer',
+    ),
+    UiKitPieCharItemData(
+      color: const Color(0xff8DC1FF),
+      value: 0,
+      itemName: 'Feelings',
+    ),
+    UiKitPieCharItemData(
+      color: const Color(0xff3088FF),
+      value: 0,
+      itemName: S.current.Search,
+    ),
+    UiKitPieCharItemData(
+      color: const Color(0xff5BA3FF),
+      value: 0,
+      itemName: 'Spinner',
     ),
   ],
 );
