@@ -35,9 +35,11 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
     super.initState();
     animationController.value = 1;
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      animationController.addListener(_animationListener);
-      widget.onStarted?.call();
-      _playBlinkAnimation();
+      if (mounted) {
+        animationController.addListener(_animationListener);
+        widget.onStarted?.call();
+        _playBlinkAnimation();
+      }
     });
   }
 
@@ -55,22 +57,27 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
 
   _playBlinkAnimation() async {
     await animationController.animateBack(0);
+    if (!mounted) return;
     await Future.delayed(
       animControllerDuration,
       () => animationController.animateTo(0.25),
     );
+    if (!mounted) return;
     await Future.delayed(
       animControllerDuration,
       () => animationController.animateBack(0),
     );
+    if (!mounted) return;
     await Future.delayed(
       animControllerDuration,
       () => animationController.animateTo(0.25),
     );
+    if (!mounted) return;
     await Future.delayed(
       animControllerDuration,
       () => animationController.animateBack(0),
     );
+    if (!mounted) return;
     await Future.delayed(
       animControllerDuration,
       () => animationController.forward(from: 0),
@@ -79,6 +86,7 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
 
   @override
   void dispose() {
+    animationController.removeListener(_animationListener);
     animationController.dispose();
     super.dispose();
   }

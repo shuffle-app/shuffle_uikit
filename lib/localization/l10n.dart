@@ -8192,7 +8192,7 @@ class S {
     );
   }
 
-  /// `{count, plural, =0{leasure & business events & places} =1{locked sections & functions} =2{points, rewards & money} few{invites, chats, hang outs} many{your preferences & mood\ncontent recommendation system} other{Premium, PRO & organisation, Influencer accounts (use & create content)}}`
+  /// `{count, plural, =0{leasure & business events & places} =1{locked sections & functions} =2{points, rewards & money} few{invites, chats, hang outs} other{Premium, PRO & organisation, Influencer accounts (use & create content)}}`
   String LoginBenefits(num count) {
     return Intl.plural(
       count,
@@ -8200,7 +8200,6 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      many: 'your preferences & mood\ncontent recommendation system',
       other:
           'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
@@ -8209,19 +8208,13 @@ class S {
     );
   }
 
-  /// `{count, plural, =0{invites, chats, hang outs} =1{your preferences & mood\ncontent recommendation system} =2{Premium, PRO & organisation, Influencer accounts (use & create content)} few{invites, chats, hang outs} other{invites, chats, hang outs}}`
-  String LoginBenefits2(num count) {
-    return Intl.plural(
-      count,
-      zero: 'invites, chats, hang outs',
-      one: 'your preferences & mood\ncontent recommendation system',
-      two:
-          'Premium, PRO & organisation, Influencer accounts (use & create content)',
-      few: 'invites, chats, hang outs',
-      other: 'invites, chats, hang outs',
-      name: 'LoginBenefits2',
+  /// `If your subscription is terminated, your content will be removed from rotation until your subscription is renewed`
+  String get PlaceCompanyInfo {
+    return Intl.message(
+      'If your subscription is terminated, your content will be removed from rotation until your subscription is renewed',
+      name: 'PlaceCompanyInfo',
       desc: '',
-      args: [count],
+      args: [],
     );
   }
 
