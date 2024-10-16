@@ -899,7 +899,7 @@
   "AddToScheduler": "Add to scheduler",
   "Soon": "Soon",
   "FreeNowXLater": "Free now, {count}$ later",
-  "CodeScanner": "Code scanner",
+  "CodeScanner": "Code scanner", 
   "OfferInfo": "Offer info",
   "Confirmed": "Confirmed",
   "ThereNoUsersWhoHaveBoughtOfferYet" : "There are no users who have bought the offer yet"

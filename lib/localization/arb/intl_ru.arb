@@ -895,7 +895,7 @@
   "PlzEnterName": "Плз, введи свое имя & никнейм",
   "OpenedUpcomingEvents": "Открытие блока \"Предстоящие события\"",
   "YouProgressed": "Вы продвинулись!",
-  "AvailableSoon": "Скоро будет доступно",
+  "AvailableSoon": "Скоро будет доступно", 
   "AddToScheduler": "Добавить планировщик",
   "Soon": "Скоро", 
   "FreeNowXLater": "Сейчас бесплатно, позже {count}$",
