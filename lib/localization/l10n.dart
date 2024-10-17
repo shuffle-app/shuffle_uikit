@@ -9211,6 +9211,16 @@ class S {
       args: [],
     );
   }
+
+  /// `The booking limit for one person has been reached`
+  String get BookingLimitError {
+    return Intl.message(
+      'The booking limit for one person has been reached',
+      name: 'BookingLimitError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -390,6 +390,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Booking": MessageLookupByLibrary.simpleMessage("Бронирование"),
         "BookingLimit":
             MessageLookupByLibrary.simpleMessage("Лимит бронирования"),
+        "BookingLimitError": MessageLookupByLibrary.simpleMessage(
+            "Достигнут лимит бронирования на одного человека"),
         "BookingLimitPerOne": MessageLookupByLibrary.simpleMessage(
             "Лимит бронирования для одного"),
         "BookingList": MessageLookupByLibrary.simpleMessage("Список букингов"),
