@@ -37,7 +37,7 @@ class UiKitTagsWidget extends StatelessWidget {
                 ),
                 SpacingFoundation.horizontalSpace8,
                 Text(
-                  rating.toString(),
+                  doubleFormat(rating!),
                   style: theme?.boldTextTheme.caption1Bold,
                 ),
               ],

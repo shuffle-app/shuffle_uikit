@@ -44,6 +44,7 @@ class GradientBottomNavigationBar extends StatelessWidget {
                   behavior: HitTestBehavior.opaque,
                   child: NavBarTile(
                     icon: selected ? e.selectedIcon : e.unselectedIcon,
+                    iconPath: !selected ? e.unselectedIconPath : null,
                     selected: selected,
                   ),
                 ),
@@ -87,7 +88,7 @@ class GradientBottomNavigationBarItem extends TabType {
   );
   static final search = GradientBottomNavigationBarItem._(
     selectedIcon: ShuffleUiKitIcons.searchfill,
-    unselectedIcon: ShuffleUiKitIcons.search,
+    unselectedIconPath: GraphicsFoundation.instance.svg.searchOutline.path,
     index: 3,
   );
   static final connection = GradientBottomNavigationBarItem._(
@@ -107,11 +108,13 @@ class GradientBottomNavigationBarItem extends TabType {
   );
 
   final IconData selectedIcon;
-  final IconData unselectedIcon;
+  final IconData? unselectedIcon;
+  final String? unselectedIconPath;
 
   GradientBottomNavigationBarItem._({
     required this.selectedIcon,
-    required this.unselectedIcon,
+    this.unselectedIcon,
+    this.unselectedIconPath,
     required int index,
   }) : super(index);
 }

@@ -68,7 +68,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
                               children: [
                                 ImageWidget(
                                   width: 124.w,
-                                  height: 1.sw <= 380 ? 90.h : 60.h,
+                                  height: 0.28.sw,
                                   link: photoLink,
                                   fit: BoxFit.fill,
                                 ),
@@ -78,13 +78,13 @@ class SubsOrUpsaleItem extends StatelessWidget {
                                   ),
                                   child: SizedBox(
                                     width: 124.w,
-                                    height: 1.sw <= 380 ? 90.h : 60.h,
+                                    height: 0.28.sw,
                                   ),
                                 ),
                               ],
                             )
                           : ImageWidget(
-                              height: 1.sw <= 380 ? 90.h : 60.h,
+                              height: 0.28.sw,
                               link: photoLink,
                               fit: BoxFit.cover,
                             ),

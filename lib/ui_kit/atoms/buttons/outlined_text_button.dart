@@ -10,6 +10,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
   final bool isGradientEnabled;
   final Color? textColor;
   final Color? backgroundColor;
+  final BorderRadius? borderRadius;
 
   const OutlinedTextButton({
     super.key,
@@ -20,6 +21,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
     this.textColor,
     this.isGradientEnabled = false,
     this.backgroundColor,
+    this.borderRadius,
   });
 
   @override
@@ -38,7 +40,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
       clipBehavior: Clip.hardEdge,
       color: enabled ? Colors.white.withOpacity(0.01) : ColorsFoundation.darkNeutral300,
       shape: RoundedRectangleBorder(
-        borderRadius: isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.all24,
+        borderRadius: borderRadius ?? (isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.all24),
         side: !isGradientEnabled
             ? BorderSide(
                 color: enabled ? borderColor ?? theme!.colorScheme.inversePrimary : theme!.colorScheme.darkNeutral500,
