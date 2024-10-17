@@ -895,6 +895,7 @@
   "PlzEnterName": "Plz, enter your name & nickname",
   "OpenedUpcomingEvents": "Opened \"Upcoming events\" block",
   "YouProgressed": "You progressed!",
-  "AvailableSoon": "Available soon"
+  "AvailableSoon": "Available soon",
+  "BookingLimitError": "The booking limit for one person has been reached"
 
 }

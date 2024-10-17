@@ -380,6 +380,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Bookigns": m3,
         "Booking": MessageLookupByLibrary.simpleMessage("Booking"),
         "BookingLimit": MessageLookupByLibrary.simpleMessage("Booking Limit"),
+        "BookingLimitError": MessageLookupByLibrary.simpleMessage(
+            "The booking limit for one person has been reached"),
         "BookingLimitPerOne":
             MessageLookupByLibrary.simpleMessage("Booking Limit per one"),
         "BookingList": MessageLookupByLibrary.simpleMessage("Booking list"),
