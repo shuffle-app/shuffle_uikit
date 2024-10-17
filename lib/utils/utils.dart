@@ -39,3 +39,4 @@ export 'widgets_factory/widgets_abstract_factory.dart';
 export 'text_input_formater/only_numbers_formatter.dart';
 export 'text_input_formater/string_with_space.dart';
 export 'format_date_time/is_time_within_range.dart';
+export 'text_formatter/double_format.dart';
