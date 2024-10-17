@@ -1228,6 +1228,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/parcel.svg
   SvgGenImage get parcel => const SvgGenImage('assets/images/svg/parcel.svg');
 
+  /// File path: assets/images/svg/pencil.svg
+  SvgGenImage get pencil => const SvgGenImage('assets/images/svg/pencil.svg');
+
   /// File path: assets/images/svg/person_layered.svg
   SvgGenImage get personLayered => const SvgGenImage('assets/images/svg/person_layered.svg');
 
@@ -1260,6 +1263,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/satelite.svg
   SvgGenImage get satelite => const SvgGenImage('assets/images/svg/satelite.svg');
+
+  /// File path: assets/images/svg/search-outline.svg
+  SvgGenImage get searchOutline => const SvgGenImage('assets/images/svg/search-outline.svg');
 
   /// File path: assets/images/svg/settings.svg
   SvgGenImage get settings => const SvgGenImage('assets/images/svg/settings.svg');
@@ -1429,6 +1435,7 @@ class $AssetsImagesSvgGen {
         memeberGradientStar,
         noPhoto,
         parcel,
+        pencil,
         personLayered,
         pharmacy,
         playArrow,
@@ -1440,6 +1447,7 @@ class $AssetsImagesSvgGen {
         roadworks,
         russia,
         satelite,
+        searchOutline,
         settings,
         shadeContentTypeLoaderTile,
         shiffleBannerGradient,
