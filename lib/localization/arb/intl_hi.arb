@@ -620,7 +620,7 @@
   "GreatInterviewWithOwner": "मालिक के साथ महान साक्षात्कार",
   "BeFirstToInvite": "Be the first",
   "ShowTheBarcode": "भुगतान करते समय चेकआउट पर बारकोड दिखाएं",
-  "OfferSuccessfullyActivated": "प्रस्ताव सफलतापूर्वक सक्रिय",
+  "XSuccessfullyActivated": "{x} सफलतापूर्वक सक्रिय",
   "SpentMyPoints": "मेरे अंक बिताए",
   "Info": "जानकारी",
   "VideoReactions": "वीडियो प्रतिक्रियाएँ",

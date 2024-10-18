@@ -267,24 +267,26 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m91(title) => "${title} is required";
 
-  static String m92(x) => "${x} successfully created";
+  static String m92(x) => "${x} successfully activated";
 
-  static String m93(value) => "${value} successfully updated";
+  static String m93(x) => "${x} successfully created";
 
-  static String m94(years) =>
-      "${years}+ ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}";
+  static String m94(value) => "${value} successfully updated";
 
   static String m95(years) =>
+      "${years}+ ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}";
+
+  static String m96(years) =>
       "${years} ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}";
 
-  static String m96(x) => "You can see your ${x} in the promotion menu";
+  static String m97(x) => "You can see your ${x} in the promotion menu";
 
-  static String m97(amountOfInvitedPersons) =>
+  static String m98(amountOfInvitedPersons) =>
       "You sent an invitation to ${amountOfInvitedPersons} people";
 
-  static String m98(name) => "Sure you want to delete ${name}?";
+  static String m99(name) => "Sure you want to delete ${name}?";
 
-  static String m99(name) => "You can no longer send messages to ${name}";
+  static String m100(name) => "You can no longer send messages to ${name}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -899,8 +901,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "Offer": MessageLookupByLibrary.simpleMessage("Offer"),
         "OfferContent": MessageLookupByLibrary.simpleMessage("Offer content"),
         "OfferPrice": m48,
-        "OfferSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
-            "Offer successfully activated"),
         "Offers": MessageLookupByLibrary.simpleMessage("Offers"),
         "OfficeAppartmentNumber":
             MessageLookupByLibrary.simpleMessage("Office or appt number"),
@@ -1511,12 +1511,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "XCouldNotBeEmpty": m89,
         "XInvitesY": m90,
         "XIsRequired": m91,
-        "XSuccessfullyCreated": m92,
-        "XSuccessfullyUpdated": m93,
-        "XYearsPlus": m94,
+        "XSuccessfullyActivated": m92,
+        "XSuccessfullyCreated": m93,
+        "XSuccessfullyUpdated": m94,
+        "XYearsPlus": m95,
         "Year": MessageLookupByLibrary.simpleMessage("Year"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Yearly"),
-        "YearsOld": m95,
+        "YearsOld": m96,
         "YearsOldShort": MessageLookupByLibrary.simpleMessage("y.o"),
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "Yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
@@ -1524,7 +1525,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("You better check this out"),
         "YouCanGet": MessageLookupByLibrary.simpleMessage("You can get"),
-        "YouCanSeeYourXPromotionMenu": m96,
+        "YouCanSeeYourXPromotionMenu": m97,
         "YouCanStillRequestRefundYourComplaint":
             MessageLookupByLibrary.simpleMessage(
                 "You can still request a refund on your complaint"),
@@ -1537,9 +1538,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouProgressed":
             MessageLookupByLibrary.simpleMessage("You progressed!"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
-        "YouSentInvitationToNPeople": m97,
-        "YouSureToDeleteX": m98,
-        "YouWillNoLongerSendMessagesTo": m99,
+        "YouSentInvitationToNPeople": m98,
+        "YouSureToDeleteX": m99,
+        "YouWillNoLongerSendMessagesTo": m100,
         "YouWillNoLongerSendMessagesToChat":
             MessageLookupByLibrary.simpleMessage(
                 "You can no longer send messages to chat"),
