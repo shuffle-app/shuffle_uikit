@@ -631,7 +631,7 @@
   "SpendIt": "Spend it",
   "NoReactionsMessage": "There are no reactions yet, be the first",
   "ShowTheBarcode": "Show the barcode at the checkout when paying",
-  "OfferSuccessfullyActivated": "Offer successfully activated",
+  "XSuccessfullyActivated": "{x} successfully activated",
   "SpentMyPoints": "Spent my points",
   "Categories": "Categories",
   "Entertainment": "Entertainment",

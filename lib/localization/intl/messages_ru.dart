@@ -267,24 +267,26 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m91(title) => "${title} требуется";
 
-  static String m92(x) => "${x} успешно созданно";
+  static String m92(x) => " успешно активировано";
 
-  static String m93(value) => "${value} успешно обновлено";
+  static String m93(x) => "${x} успешно созданно";
 
-  static String m94(years) =>
-      "${years}+ ${Intl.plural(years, zero: 'лет', one: 'год', two: 'года', few: 'года', many: 'лет', other: 'лет')}";
+  static String m94(value) => "${value} успешно обновлено";
 
   static String m95(years) =>
+      "${years}+ ${Intl.plural(years, zero: 'лет', one: 'год', two: 'года', few: 'года', many: 'лет', other: 'лет')}";
+
+  static String m96(years) =>
       "${years} ${Intl.plural(years, zero: 'лет', one: 'год', two: 'года', few: 'года', many: 'лет', other: 'лет')}";
 
-  static String m96(x) => "Вы можете увидеть своё ${x} в меню акции";
+  static String m97(x) => "Вы можете увидеть своё ${x} в меню акции";
 
-  static String m97(amountOfInvitedPersons) =>
+  static String m98(amountOfInvitedPersons) =>
       "Вы отправили приглашение ${amountOfInvitedPersons} людям";
 
-  static String m98(name) => "Ты уверен, что хочешь удалить ${name}?";
+  static String m99(name) => "Ты уверен, что хочешь удалить ${name}?";
 
-  static String m99(name) =>
+  static String m100(name) =>
       "Ты больше не сможешь отправлять сообщения ${name}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -919,8 +921,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "OfferContent":
             MessageLookupByLibrary.simpleMessage("Предложить контент"),
         "OfferPrice": m48,
-        "OfferSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
-            "Предложение успешно активировано"),
         "Offers": MessageLookupByLibrary.simpleMessage("Предложения"),
         "OfficeAppartmentNumber":
             MessageLookupByLibrary.simpleMessage("Номер офиса"),
@@ -1542,12 +1542,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "XCouldNotBeEmpty": m89,
         "XInvitesY": m90,
         "XIsRequired": m91,
-        "XSuccessfullyCreated": m92,
-        "XSuccessfullyUpdated": m93,
-        "XYearsPlus": m94,
+        "XSuccessfullyActivated": m92,
+        "XSuccessfullyCreated": m93,
+        "XSuccessfullyUpdated": m94,
+        "XYearsPlus": m95,
         "Year": MessageLookupByLibrary.simpleMessage("Год"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Годовой"),
-        "YearsOld": m95,
+        "YearsOld": m96,
         "YearsOldShort": MessageLookupByLibrary.simpleMessage("лет"),
         "Yes": MessageLookupByLibrary.simpleMessage("Да"),
         "Yesterday": MessageLookupByLibrary.simpleMessage("Вчера"),
@@ -1555,7 +1556,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Тебе лучше взглянуть"),
         "YouCanGet": MessageLookupByLibrary.simpleMessage("Ты можешь получить"),
-        "YouCanSeeYourXPromotionMenu": m96,
+        "YouCanSeeYourXPromotionMenu": m97,
         "YouCanStillRequestRefundYourComplaint":
             MessageLookupByLibrary.simpleMessage(
                 "Вы все еще можете запросить возврат средств по вашей жалобе"),
@@ -1568,9 +1569,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouProgressed":
             MessageLookupByLibrary.simpleMessage("Вы продвинулись!"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("Вы получили"),
-        "YouSentInvitationToNPeople": m97,
-        "YouSureToDeleteX": m98,
-        "YouWillNoLongerSendMessagesTo": m99,
+        "YouSentInvitationToNPeople": m98,
+        "YouSureToDeleteX": m99,
+        "YouWillNoLongerSendMessagesTo": m100,
         "YouWillNoLongerSendMessagesToChat":
             MessageLookupByLibrary.simpleMessage(
                 "Ты больше не сможешь отправлять сообщения в чат"),

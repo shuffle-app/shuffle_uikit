@@ -6493,13 +6493,13 @@ class S {
     );
   }
 
-  /// `Offer successfully activated`
-  String get OfferSuccessfullyActivated {
+  /// `{x} successfully activated`
+  String XSuccessfullyActivated(Object x) {
     return Intl.message(
-      'Offer successfully activated',
-      name: 'OfferSuccessfullyActivated',
+      '$x successfully activated',
+      name: 'XSuccessfullyActivated',
       desc: '',
-      args: [],
+      args: [x],
     );
   }
 
