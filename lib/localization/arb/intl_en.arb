@@ -903,7 +903,6 @@
   "OfferInfo": "Offer info",
   "Confirmed": "Confirmed",
   "ThereNoUsersWhoHaveBoughtOfferYet" : "There are no users who have bought the offer yet",
-  "AvailableSoon": "Available soon",
   "BookingLimitError": "The booking limit for one person has been reached"
 
 }
