@@ -8106,6 +8106,16 @@ class S {
     );
   }
 
+  /// `Enter {title}`
+  String EnterX(Object title) {
+    return Intl.message(
+      'Enter $title',
+      name: 'EnterX',
+      desc: '',
+      args: [title],
+    );
+  }
+
   /// `Show in content card`
   String get ShowInContentCard {
     return Intl.message(
