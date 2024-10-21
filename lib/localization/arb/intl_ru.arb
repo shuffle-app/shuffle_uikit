@@ -600,7 +600,7 @@
   "RelatedPersonalProperties": "Относительные личные свойства",
   "BeFirstToInvite": "Будь первым",
   "ShowTheBarcode": "Показывайте штрих-код при оплате",
-  "XSuccessfullyActivated": " успешно активировано",
+  "XSuccessfullyActivated": "{x} успешно активировано",
   "SpentMyPoints": "Потратить мои баллы",
   "Icon": "Иконка",
   "Info": "Информация",
@@ -896,7 +896,8 @@
   "OpenedUpcomingEvents": "Открытие блока \"Предстоящие события\"",
   "YouProgressed": "Вы продвинулись!",
   "AvailableSoon": "Скоро будет доступно",
-  "BookingLimitError": "Достигнут лимит бронирования на одного человека"
-
+  "BookingLimitError": "Достигнут лимит бронирования на одного человека",
+  "ThisIsEmptyNowBook": "Пока здесь пусто, забронируйте посещение и оно появится здесь",
+  "NoPastBookings": "Нет прошедших броней"
 }
 

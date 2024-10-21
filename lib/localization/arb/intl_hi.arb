@@ -894,5 +894,7 @@
   "OpenedUpcomingEvents": "Opened \"Upcoming events\" block",
   "YouProgressed": "You progressed!",
   "AvailableSoon": "Available soon",
-  "BookingLimitError": "The booking limit for one person has been reached"
+  "BookingLimitError": "The booking limit for one person has been reached",
+  "ThisIsEmptyNowBook": "यह अभी खाली है, अपनी यात्रा बुक करें और यह यहाँ दिखाई देगा",
+  "NoPastBookings": "कोई पिछली बुकिंग नहीं"
 }

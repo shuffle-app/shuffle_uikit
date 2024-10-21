@@ -896,6 +896,8 @@
   "OpenedUpcomingEvents": "Opened \"Upcoming events\" block",
   "YouProgressed": "You progressed!",
   "AvailableSoon": "Available soon",
-  "BookingLimitError": "The booking limit for one person has been reached"
+  "BookingLimitError": "The booking limit for one person has been reached",
+  "ThisIsEmptyNowBook": "This is empty now, book your visit and it will appear here",
+  "NoPastBookings": "No past bookings"
 
 }
