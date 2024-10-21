@@ -9,7 +9,7 @@ uiKitOfferCreatedDialog(BuildContext context) {
     AlertDialogData(
       insetPadding: EdgeInsets.symmetric(horizontal: SpacingFoundation.horizontalSpacing16),
       title: Text(
-        S.of(context).OfferSuccessfullyActivated,
+        S.of(context).XSuccessfullyActivated(S.of(context).Offer),
         style: theme?.boldTextTheme.title2.copyWith(color: theme.colorScheme.primary),
         textAlign: TextAlign.center,
       ),

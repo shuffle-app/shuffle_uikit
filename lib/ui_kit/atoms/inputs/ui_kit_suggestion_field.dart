@@ -36,6 +36,11 @@ class UiKitSuggestionField extends StatelessWidget {
           hintText: hintText,
           fillColor: fillColor,
           borderRadius: borderRadius ?? BorderRadiusFoundation.max,
+          onIconPressed: (){
+            controller.clear();
+            onSubmitted.call();
+            onFieldSubmitted?.call('');
+          },
           onFieldSubmitted: (selection) {
             onSubmitted.call();
             onFieldSubmitted?.call(selection);

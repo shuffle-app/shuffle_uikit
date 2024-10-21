@@ -631,7 +631,7 @@
   "SpendIt": "Spend it",
   "NoReactionsMessage": "There are no reactions yet, be the first",
   "ShowTheBarcode": "Show the barcode at the checkout when paying",
-  "OfferSuccessfullyActivated": "Offer successfully activated",
+  "XSuccessfullyActivated": "{x} successfully activated",
   "SpentMyPoints": "Spent my points",
   "Categories": "Categories",
   "Entertainment": "Entertainment",
@@ -902,6 +902,8 @@
   "CodeScanner": "Code scanner", 
   "OfferInfo": "Offer info",
   "Confirmed": "Confirmed",
-  "ThereNoUsersWhoHaveBoughtOfferYet" : "There are no users who have bought the offer yet"
+  "ThereNoUsersWhoHaveBoughtOfferYet" : "There are no users who have bought the offer yet",
+  "AvailableSoon": "Available soon",
+  "BookingLimitError": "The booking limit for one person has been reached"
 
 }

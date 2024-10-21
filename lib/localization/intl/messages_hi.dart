@@ -268,24 +268,26 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m92(title) => "{शीर्षक} आवश्यक है";
 
-  static String m93(x) => "${x} सफलतापूर्वक बनाया गया";
+  static String m93(x) => "${x} सफलतापूर्वक सक्रिय";
 
-  static String m94(value) => "${value}  सफलतापूर्वक अद्यतन";
+  static String m94(x) => "${x} सफलतापूर्वक बनाया गया";
 
-  static String m95(years) =>
-      "${years}+ ${Intl.plural(years, zero: 'वर्ष', one: 'वर्ष', two: 'वर्ष', few: 'वर्ष', many: 'वर्ष', other: 'वर्ष')}";
+  static String m95(value) => "${value}  सफलतापूर्वक अद्यतन";
 
   static String m96(years) =>
+      "${years}+ ${Intl.plural(years, zero: 'वर्ष', one: 'वर्ष', two: 'वर्ष', few: 'वर्ष', many: 'वर्ष', other: 'वर्ष')}";
+
+  static String m97(years) =>
       "${years} ${Intl.plural(years, zero: 'वर्ष', one: 'वर्ष', two: 'वर्ष', few: 'वर्ष', many: 'वर्ष', other: 'वर्ष')}";
 
-  static String m97(x) => "आप अपने ${x} को प्रमोशन मेनू में देख सकते हैं";
+  static String m98(x) => "आप अपने ${x} को प्रमोशन मेनू में देख सकते हैं";
 
-  static String m98(amountOfInvitedPersons) =>
+  static String m99(amountOfInvitedPersons) =>
       "आपने ${amountOfInvitedPersons} लोगों को निमंत्रण भेजा है";
 
-  static String m99(name) => "क्या आप ${name} को हटाना चाहते हैं?";
+  static String m100(name) => "क्या आप ${name} को हटाना चाहते हैं?";
 
-  static String m100(name) => "आप ${name} को अब संदेश नहीं भेज सकते";
+  static String m101(name) => "आप ${name} को अब संदेश नहीं भेज सकते";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -387,6 +389,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Bookigns": m3,
         "Booking": MessageLookupByLibrary.simpleMessage("बुकिंग"),
         "BookingLimit": MessageLookupByLibrary.simpleMessage("बुकिंग सीमा"),
+        "BookingLimitError": MessageLookupByLibrary.simpleMessage(
+            "The booking limit for one person has been reached"),
         "BookingLimitPerOne": MessageLookupByLibrary.simpleMessage(
             "एक व्यक्ति प्रति बुकिंग सीमा"),
         "BookingList": MessageLookupByLibrary.simpleMessage("बुकिंग सूची"),
@@ -915,8 +919,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("प्रस्ताव सामग्री"),
         "OfferInfo": MessageLookupByLibrary.simpleMessage("Offer info"),
         "OfferPrice": m49,
-        "OfferSuccessfullyActivated":
-            MessageLookupByLibrary.simpleMessage("प्रस्ताव सफलतापूर्वक सक्रिय"),
         "Offers": MessageLookupByLibrary.simpleMessage("प्रस्ताव"),
         "OfficeAppartmentNumber":
             MessageLookupByLibrary.simpleMessage("कार्यालय या अपार्टमेंट नंबर"),
@@ -1534,12 +1536,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "XCouldNotBeEmpty": m90,
         "XInvitesY": m91,
         "XIsRequired": m92,
-        "XSuccessfullyCreated": m93,
-        "XSuccessfullyUpdated": m94,
-        "XYearsPlus": m95,
+        "XSuccessfullyActivated": m93,
+        "XSuccessfullyCreated": m94,
+        "XSuccessfullyUpdated": m95,
+        "XYearsPlus": m96,
         "Year": MessageLookupByLibrary.simpleMessage("वर्ष"),
         "Yearly": MessageLookupByLibrary.simpleMessage("सालाना"),
-        "YearsOld": m96,
+        "YearsOld": m97,
         "YearsOldShort": MessageLookupByLibrary.simpleMessage("वर्ष"),
         "Yes": MessageLookupByLibrary.simpleMessage("हाँ"),
         "Yesterday": MessageLookupByLibrary.simpleMessage("कल"),
@@ -1548,7 +1551,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "बेहतर होगा कि आप इसकी जांच कर लें"),
         "YouCanGet":
             MessageLookupByLibrary.simpleMessage("आप प्राप्त कर सकते हैं"),
-        "YouCanSeeYourXPromotionMenu": m97,
+        "YouCanSeeYourXPromotionMenu": m98,
         "YouCanStillRequestRefundYourComplaint":
             MessageLookupByLibrary.simpleMessage(
                 "आप अपनी शिकायत पर वापसी का अनुरोध कर सकते हैं"),
@@ -1561,9 +1564,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouProgressed":
             MessageLookupByLibrary.simpleMessage("You progressed!"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("आपको मिला"),
-        "YouSentInvitationToNPeople": m98,
-        "YouSureToDeleteX": m99,
-        "YouWillNoLongerSendMessagesTo": m100,
+        "YouSentInvitationToNPeople": m99,
+        "YouSureToDeleteX": m100,
+        "YouWillNoLongerSendMessagesTo": m101,
         "YouWillNoLongerSendMessagesToChat":
             MessageLookupByLibrary.simpleMessage(
                 "आप अब चैट में संदेश नहीं भेज सकते"),

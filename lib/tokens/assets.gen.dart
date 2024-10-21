@@ -1270,6 +1270,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/satelite.svg
   SvgGenImage get satelite => const SvgGenImage('assets/images/svg/satelite.svg');
 
+  /// File path: assets/images/svg/search-outline.svg
+  SvgGenImage get searchOutline => const SvgGenImage('assets/images/svg/search-outline.svg');
+
   /// File path: assets/images/svg/settings.svg
   SvgGenImage get settings => const SvgGenImage('assets/images/svg/settings.svg');
 
@@ -1455,6 +1458,7 @@ class $AssetsImagesSvgGen {
         roadworks,
         russia,
         satelite,
+        searchOutline,
         settings,
         shadeContentTypeLoaderTile,
         shiffleBannerGradient,

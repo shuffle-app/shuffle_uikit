@@ -269,24 +269,26 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m92(title) => "${title} is required";
 
-  static String m93(x) => "${x} successfully created";
+  static String m93(x) => "${x} successfully activated";
 
-  static String m94(value) => "${value} successfully updated";
+  static String m94(x) => "${x} successfully created";
 
-  static String m95(years) =>
-      "${years}+ ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}";
+  static String m95(value) => "${value} successfully updated";
 
   static String m96(years) =>
+      "${years}+ ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}";
+
+  static String m97(years) =>
       "${years} ${Intl.plural(years, zero: 'y.o.', one: 'y.o.', two: 'y.o.', few: 'y.o.', many: 'y.o.', other: 'y.o.')}";
 
-  static String m97(x) => "You can see your ${x} in the promotion menu";
+  static String m98(x) => "You can see your ${x} in the promotion menu";
 
-  static String m98(amountOfInvitedPersons) =>
+  static String m99(amountOfInvitedPersons) =>
       "You sent an invitation to ${amountOfInvitedPersons} people";
 
-  static String m99(name) => "Sure you want to delete ${name}?";
+  static String m100(name) => "Sure you want to delete ${name}?";
 
-  static String m100(name) => "You can no longer send messages to ${name}";
+  static String m101(name) => "You can no longer send messages to ${name}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -384,6 +386,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Bookigns": m3,
         "Booking": MessageLookupByLibrary.simpleMessage("Booking"),
         "BookingLimit": MessageLookupByLibrary.simpleMessage("Booking Limit"),
+        "BookingLimitError": MessageLookupByLibrary.simpleMessage(
+            "The booking limit for one person has been reached"),
         "BookingLimitPerOne":
             MessageLookupByLibrary.simpleMessage("Booking Limit per one"),
         "BookingList": MessageLookupByLibrary.simpleMessage("Booking list"),
@@ -905,8 +909,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "OfferContent": MessageLookupByLibrary.simpleMessage("Offer content"),
         "OfferInfo": MessageLookupByLibrary.simpleMessage("Offer info"),
         "OfferPrice": m49,
-        "OfferSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
-            "Offer successfully activated"),
         "Offers": MessageLookupByLibrary.simpleMessage("Offers"),
         "OfficeAppartmentNumber":
             MessageLookupByLibrary.simpleMessage("Office or appt number"),
@@ -1521,12 +1523,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "XCouldNotBeEmpty": m90,
         "XInvitesY": m91,
         "XIsRequired": m92,
-        "XSuccessfullyCreated": m93,
-        "XSuccessfullyUpdated": m94,
-        "XYearsPlus": m95,
+        "XSuccessfullyActivated": m93,
+        "XSuccessfullyCreated": m94,
+        "XSuccessfullyUpdated": m95,
+        "XYearsPlus": m96,
         "Year": MessageLookupByLibrary.simpleMessage("Year"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Yearly"),
-        "YearsOld": m96,
+        "YearsOld": m97,
         "YearsOldShort": MessageLookupByLibrary.simpleMessage("y.o"),
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "Yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
@@ -1534,7 +1537,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("You better check this out"),
         "YouCanGet": MessageLookupByLibrary.simpleMessage("You can get"),
-        "YouCanSeeYourXPromotionMenu": m97,
+        "YouCanSeeYourXPromotionMenu": m98,
         "YouCanStillRequestRefundYourComplaint":
             MessageLookupByLibrary.simpleMessage(
                 "You can still request a refund on your complaint"),
@@ -1547,9 +1550,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouProgressed":
             MessageLookupByLibrary.simpleMessage("You progressed!"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
-        "YouSentInvitationToNPeople": m98,
-        "YouSureToDeleteX": m99,
-        "YouWillNoLongerSendMessagesTo": m100,
+        "YouSentInvitationToNPeople": m99,
+        "YouSureToDeleteX": m100,
+        "YouWillNoLongerSendMessagesTo": m101,
         "YouWillNoLongerSendMessagesToChat":
             MessageLookupByLibrary.simpleMessage(
                 "You can no longer send messages to chat"),

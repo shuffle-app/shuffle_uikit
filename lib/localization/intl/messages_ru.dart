@@ -269,24 +269,26 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m92(title) => "${title} требуется";
 
-  static String m93(x) => "${x} успешно созданно";
+  static String m93(x) => " успешно активировано";
 
-  static String m94(value) => "${value} успешно обновлено";
+  static String m94(x) => "${x} успешно созданно";
 
-  static String m95(years) =>
-      "${years}+ ${Intl.plural(years, zero: 'лет', one: 'год', two: 'года', few: 'года', many: 'лет', other: 'лет')}";
+  static String m95(value) => "${value} успешно обновлено";
 
   static String m96(years) =>
+      "${years}+ ${Intl.plural(years, zero: 'лет', one: 'год', two: 'года', few: 'года', many: 'лет', other: 'лет')}";
+
+  static String m97(years) =>
       "${years} ${Intl.plural(years, zero: 'лет', one: 'год', two: 'года', few: 'года', many: 'лет', other: 'лет')}";
 
-  static String m97(x) => "Вы можете увидеть своё ${x} в меню акции";
+  static String m98(x) => "Вы можете увидеть своё ${x} в меню акции";
 
-  static String m98(amountOfInvitedPersons) =>
+  static String m99(amountOfInvitedPersons) =>
       "Вы отправили приглашение ${amountOfInvitedPersons} людям";
 
-  static String m99(name) => "Ты уверен, что хочешь удалить ${name}?";
+  static String m100(name) => "Ты уверен, что хочешь удалить ${name}?";
 
-  static String m100(name) =>
+  static String m101(name) =>
       "Ты больше не сможешь отправлять сообщения ${name}";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -394,6 +396,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Booking": MessageLookupByLibrary.simpleMessage("Бронирование"),
         "BookingLimit":
             MessageLookupByLibrary.simpleMessage("Лимит бронирования"),
+        "BookingLimitError": MessageLookupByLibrary.simpleMessage(
+            "Достигнут лимит бронирования на одного человека"),
         "BookingLimitPerOne": MessageLookupByLibrary.simpleMessage(
             "Лимит бронирования для одного"),
         "BookingList": MessageLookupByLibrary.simpleMessage("Список букингов"),
@@ -926,8 +930,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "OfferInfo":
             MessageLookupByLibrary.simpleMessage("Информация о предложении"),
         "OfferPrice": m49,
-        "OfferSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
-            "Предложение успешно активировано"),
         "Offers": MessageLookupByLibrary.simpleMessage("Предложения"),
         "OfficeAppartmentNumber":
             MessageLookupByLibrary.simpleMessage("Номер офиса"),
@@ -1553,12 +1555,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "XCouldNotBeEmpty": m90,
         "XInvitesY": m91,
         "XIsRequired": m92,
-        "XSuccessfullyCreated": m93,
-        "XSuccessfullyUpdated": m94,
-        "XYearsPlus": m95,
+        "XSuccessfullyActivated": m93,
+        "XSuccessfullyCreated": m94,
+        "XSuccessfullyUpdated": m95,
+        "XYearsPlus": m96,
         "Year": MessageLookupByLibrary.simpleMessage("Год"),
         "Yearly": MessageLookupByLibrary.simpleMessage("Годовой"),
-        "YearsOld": m96,
+        "YearsOld": m97,
         "YearsOldShort": MessageLookupByLibrary.simpleMessage("лет"),
         "Yes": MessageLookupByLibrary.simpleMessage("Да"),
         "Yesterday": MessageLookupByLibrary.simpleMessage("Вчера"),
@@ -1566,7 +1569,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Тебе лучше взглянуть"),
         "YouCanGet": MessageLookupByLibrary.simpleMessage("Ты можешь получить"),
-        "YouCanSeeYourXPromotionMenu": m97,
+        "YouCanSeeYourXPromotionMenu": m98,
         "YouCanStillRequestRefundYourComplaint":
             MessageLookupByLibrary.simpleMessage(
                 "Вы все еще можете запросить возврат средств по вашей жалобе"),
@@ -1579,9 +1582,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouProgressed":
             MessageLookupByLibrary.simpleMessage("Вы продвинулись!"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("Вы получили"),
-        "YouSentInvitationToNPeople": m98,
-        "YouSureToDeleteX": m99,
-        "YouWillNoLongerSendMessagesTo": m100,
+        "YouSentInvitationToNPeople": m99,
+        "YouSureToDeleteX": m100,
+        "YouWillNoLongerSendMessagesTo": m101,
         "YouWillNoLongerSendMessagesToChat":
             MessageLookupByLibrary.simpleMessage(
                 "Ты больше не сможешь отправлять сообщения в чат"),

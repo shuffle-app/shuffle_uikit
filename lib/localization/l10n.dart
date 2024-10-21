@@ -6493,13 +6493,13 @@ class S {
     );
   }
 
-  /// `Offer successfully activated`
-  String get OfferSuccessfullyActivated {
+  /// `{x} successfully activated`
+  String XSuccessfullyActivated(Object x) {
     return Intl.message(
-      'Offer successfully activated',
-      name: 'OfferSuccessfullyActivated',
+      '$x successfully activated',
+      name: 'XSuccessfullyActivated',
       desc: '',
-      args: [],
+      args: [x],
     );
   }
 
@@ -9277,6 +9277,16 @@ class S {
     return Intl.message(
       'There are no users who have bought the offer yet',
       name: 'ThereNoUsersWhoHaveBoughtOfferYet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The booking limit for one person has been reached`
+  String get BookingLimitError {
+    return Intl.message(
+      'The booking limit for one person has been reached',
+      name: 'BookingLimitError',
       desc: '',
       args: [],
     );

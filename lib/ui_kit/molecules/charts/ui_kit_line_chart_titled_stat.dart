@@ -16,7 +16,6 @@ class UiKitLineChartTitledStat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final regularTextTheme = context.uiKitTheme?.regularTextTheme;
-    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -24,7 +23,7 @@ class UiKitLineChartTitledStat extends StatelessWidget {
       children: [
         Text(
           title.toUpperCase(),
-          style: boldTextTheme?.caption2UpperCaseMedium,
+          style: regularTextTheme?.caption4Regular,
           overflow: TextOverflow.ellipsis,
         ),
         SpacingFoundation.verticalSpace2,

@@ -600,7 +600,7 @@
   "RelatedPersonalProperties": "Относительные личные свойства",
   "BeFirstToInvite": "Будь первым",
   "ShowTheBarcode": "Показывайте штрих-код при оплате",
-  "OfferSuccessfullyActivated": "Предложение успешно активировано",
+  "XSuccessfullyActivated": " успешно активировано",
   "SpentMyPoints": "Потратить мои баллы",
   "Icon": "Иконка",
   "Info": "Информация",
@@ -902,6 +902,8 @@
   "CodeScanner": "Сканер кода",
   "OfferInfo": "Информация о предложении",
   "Confirmed": "Подтвержденн",
-  "ThereNoUsersWhoHaveBoughtOfferYet" : "Пока еще нет пользователей, которые купили это предложение"
+  "ThereNoUsersWhoHaveBoughtOfferYet" : "Пока еще нет пользователей, которые купили это предложение",
+  "BookingLimitError": "Достигнут лимит бронирования на одного человека"
+
 }
 

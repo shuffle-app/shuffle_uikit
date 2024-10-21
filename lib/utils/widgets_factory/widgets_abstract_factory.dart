@@ -436,6 +436,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
     bool? hideBorder,
     bool? isGradientEnabled,
     EdgeInsetsGeometry? padding,
+    BorderRadius? borderRadius,
   }) {
     final hasIcon = data.iconWidget != null || data.iconInfo != null;
 
@@ -468,6 +469,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         textColor: data.textColor,
         backgroundColor: data.backgroundColor,
         isGradientEnabled: isGradientEnabled ?? false,
+        borderRadius: borderRadius,
       );
     } else {
       throw UnimplementedError('Outlined button with your parameters is not implemented');
