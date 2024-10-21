@@ -267,7 +267,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m91(title) => "${title} требуется";
 
-  static String m92(x) => " успешно активировано";
+  static String m92(x) => "${x} успешно активировано";
 
   static String m93(x) => "${x} успешно созданно";
 
@@ -886,6 +886,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Не доступны данные здоровья, результат будет случайным"),
         "NoMessagesYet":
             MessageLookupByLibrary.simpleMessage("Пока нет сообщений"),
+        "NoPastBookings":
+            MessageLookupByLibrary.simpleMessage("Нет прошедших броней"),
         "NoPeopleAvailableToInvite": MessageLookupByLibrary.simpleMessage(
             "Нет пользователей для инвайта"),
         "NoPhotoHereYet":
@@ -1387,6 +1389,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
             "Этот контент есть в других ваших списках. После добавления он будет удален из текущего."),
         "ThisIs": MessageLookupByLibrary.simpleMessage("Это"),
+        "ThisIsEmptyNowBook": MessageLookupByLibrary.simpleMessage(
+            "Пока здесь пусто, забронируйте посещение и оно появится здесь"),
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "Неагрегаторная система специально для вас"),
         "Thursday": MessageLookupByLibrary.simpleMessage("Четверг"),

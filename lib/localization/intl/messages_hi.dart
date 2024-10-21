@@ -876,6 +876,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "आपके डिवाइस पर कोई स्वास्थ्य किट उपलब्ध नहीं है, इसलिए परिणाम यादृच्छिक होगा"),
         "NoMessagesYet":
             MessageLookupByLibrary.simpleMessage("अब तक कोई संदेश नहीं"),
+        "NoPastBookings":
+            MessageLookupByLibrary.simpleMessage("कोई पिछली बुकिंग नहीं"),
         "NoPeopleAvailableToInvite": MessageLookupByLibrary.simpleMessage(
             "आमंत्रित करने के लिए कोई लोग उपलब्ध नहीं हैं"),
         "NoPhotoHereYet": MessageLookupByLibrary.simpleMessage(
@@ -1369,6 +1371,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
             "ये सामग्री आपकी अन्य सूचियों पर है ।  जोड़े जाने पर, इसे वर्तमान से हटा दिया जाएगा । "),
         "ThisIs": MessageLookupByLibrary.simpleMessage("यह है"),
+        "ThisIsEmptyNowBook": MessageLookupByLibrary.simpleMessage(
+            "यह अभी खाली है, अपनी यात्रा बुक करें और यह यहाँ दिखाई देगा"),
         "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
             "एक गैर के माध्यम से-\nएग्रीगेटर प्रणाली\nविशेष रूप से आप के लिए"),
         "Thursday": MessageLookupByLibrary.simpleMessage("गुरुवार"),
