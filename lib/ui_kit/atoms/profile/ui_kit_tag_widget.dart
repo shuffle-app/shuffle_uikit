@@ -57,7 +57,7 @@ class UiKitTagWidget extends StatelessWidget {
       children: [
         if (showSpacing) customSpace ?? SpacingFoundation.horizontalSpace12,
         Stack(clipBehavior: Clip.none, alignment: Alignment.center, children: [
-          if (showShadow) RepaintBoundary(child: GlowShadowWidget(child: image)),
+          if (showShadow) GlowShadowWidget(child: image),
           GradientableWidget(active: uniqueTag, gradient: GradientFoundation.badgeIcon, child: image)
         ]),
         SpacingFoundation.horizontalSpace2,

@@ -789,6 +789,7 @@
   "LogIn": "Log in",
   "Locked": "Locked",
   "LogInTo": "Log in",
+  "EnterX": "Enter {title}",
   "ToUnlock": "To unlock",
   "ToOpen": "To open",
   "LoginBenefits": "{count, plural, =0{leasure & business events & places} =1{locked sections & functions} =2{points, rewards & money} few{invites, chats, hang outs} other{Premium, PRO & organisation, Influencer accounts (use & create content)}}",
@@ -903,5 +904,7 @@
   "OfferInfo": "Offer info",
   "Confirmed": "Confirmed",
   "ThereNoUsersWhoHaveBoughtOfferYet" : "There are no users who have bought the offer yet",
-  "BookingLimitError": "The booking limit for one person has been reached"
+  "BookingLimitError": "The booking limit for one person has been reached",
+  "ThisIsEmptyNowBook": "This is empty now, book your visit and it will appear here",
+  "NoPastBookings": "No past bookings"
 }

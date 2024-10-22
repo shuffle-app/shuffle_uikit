@@ -92,7 +92,7 @@
   "LovelyTouchAmazingInteraction": "Приятный на ощупь интерфейс",
   "SelectionOfTheBest": "Выбор лучших",
   "FreePlaces": "\nбесплатных мест",
-  "TopPlacesRatedBy": "Топовые места{separator}от",
+  "TopPlacesRatedBy": "Топовый контент{separator}от",
   "NextElements": "Ещё {elements}",
   "YoullFindIt": "Ты найдёшь",
   "DescribeYourClaim": "Рассказывай",
@@ -143,7 +143,7 @@
   "YourNiche": "Твоя ниша",
   "DontMissIt": "Не пропусти",
   "HowAreYouFeelingTonight": "Как себя чувствуешь этим вечером?",
-  "HowAreYouFeelingToday": "Как себя чувствуешь этим днём?",
+  "HowAreYouFeelingToday": "Как себя чувствуешь сегодня?",
   "HowAreYouFeelingThisMorning": "Как себя чувствуешь этим утром?",
   "Guess": "Угадать",
   "YouBetterCheckThisOut": "Тебе лучше взглянуть",
@@ -170,6 +170,7 @@
   "Location": "Локация",
   "WorkHours": "Часы работы",
   "XIsRequired": "{title} требуется",
+  "EnterX": "Введите {title}",
   "Description": "Описание",
   "Photos": "Фото",
   "Logo": "Лого",
@@ -600,7 +601,7 @@
   "RelatedPersonalProperties": "Относительные личные свойства",
   "BeFirstToInvite": "Будь первым",
   "ShowTheBarcode": "Показывайте штрих-код при оплате",
-  "XSuccessfullyActivated": " успешно активировано",
+  "XSuccessfullyActivated": "{x} успешно активировано",
   "SpentMyPoints": "Потратить мои баллы",
   "Icon": "Иконка",
   "Info": "Информация",
@@ -895,7 +896,6 @@
   "PlzEnterName": "Плз, введи свое имя & никнейм",
   "OpenedUpcomingEvents": "Открытие блока \"Предстоящие события\"",
   "YouProgressed": "Вы продвинулись!",
-  "AvailableSoon": "Скоро будет доступно", 
   "AddToScheduler": "Добавить планировщик",
   "Soon": "Скоро", 
   "FreeNowXLater": "Сейчас бесплатно, позже {count}$",
@@ -903,7 +903,9 @@
   "OfferInfo": "Информация о предложении",
   "Confirmed": "Подтвержденн",
   "ThereNoUsersWhoHaveBoughtOfferYet" : "Пока еще нет пользователей, которые купили это предложение",
-  "BookingLimitError": "Достигнут лимит бронирования на одного человека"
-
+  "AvailableSoon": "Скоро будет доступно",
+  "BookingLimitError": "Достигнут лимит бронирования на одного человека",
+  "ThisIsEmptyNowBook": "Пока здесь пусто, забронируйте посещение и оно появится здесь",
+  "NoPastBookings": "Нет прошедших броней"
 }
 

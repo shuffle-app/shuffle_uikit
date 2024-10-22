@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -18,8 +19,7 @@ class UiKitIconedTitle extends StatelessWidget {
         children: [
           ImageWidget(
             link: icon,
-            width: 26.sp,
-            height: 26.sp,
+            width: kIsWeb ? 24 : 24.sp,
             color: context.uiKitTheme?.colorScheme.bodyTypography,
           ),
           SpacingFoundation.horizontalSpace8,

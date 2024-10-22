@@ -8106,6 +8106,16 @@ class S {
     );
   }
 
+  /// `Enter {title}`
+  String EnterX(Object title) {
+    return Intl.message(
+      'Enter $title',
+      name: 'EnterX',
+      desc: '',
+      args: [title],
+    );
+  }
+
   /// `Show in content card`
   String get ShowInContentCard {
     return Intl.message(
@@ -9287,6 +9297,26 @@ class S {
     return Intl.message(
       'The booking limit for one person has been reached',
       name: 'BookingLimitError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This is empty now, book your visit and it will appear here`
+  String get ThisIsEmptyNowBook {
+    return Intl.message(
+      'This is empty now, book your visit and it will appear here',
+      name: 'ThisIsEmptyNowBook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No past bookings`
+  String get NoPastBookings {
+    return Intl.message(
+      'No past bookings',
+      name: 'NoPastBookings',
       desc: '',
       args: [],
     );

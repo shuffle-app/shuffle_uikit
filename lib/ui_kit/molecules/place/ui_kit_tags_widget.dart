@@ -58,6 +58,8 @@ class UiKitTagsWidget extends StatelessWidget {
                 child: ListView.separated(
                   padding: EdgeInsets.zero,
                   scrollDirection: Axis.horizontal,
+                  addAutomaticKeepAlives: false,
+                  addRepaintBoundaries: false,
                   primary: false,
                   itemBuilder: (context, index) {
                     final tag = baseTags.elementAt(index);
@@ -75,6 +77,8 @@ class UiKitTagsWidget extends StatelessWidget {
                   child: ListView.separated(
                     padding: EdgeInsets.zero,
                     scrollDirection: Axis.horizontal,
+                    addAutomaticKeepAlives: false,
+                    addRepaintBoundaries: false,
                     primary: false,
                     separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace8,
                     itemCount: uniqueTags!.length,
