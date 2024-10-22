@@ -293,6 +293,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m102(name) =>
       "Ты больше не сможешь отправлять сообщения ${name}";
 
+  static String m103(x) => "через ${x} дня";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "AboutUs": MessageLookupByLibrary.simpleMessage("о нас"),
@@ -1632,6 +1634,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourTraffic": MessageLookupByLibrary.simpleMessage("Ваш трафик"),
         "Yourself": MessageLookupByLibrary.simpleMessage("Себе"),
         "daynight": MessageLookupByLibrary.simpleMessage("Днём и ночью"),
+        "inXDays": m103,
         "key": MessageLookupByLibrary.simpleMessage("")
       };
 }

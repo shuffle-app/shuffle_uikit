@@ -906,5 +906,6 @@
   "ThereNoUsersWhoHaveBoughtOfferYet" : "There are no users who have bought the offer yet",
   "BookingLimitError": "The booking limit for one person has been reached",
   "ThisIsEmptyNowBook": "This is empty now, book your visit and it will appear here",
-  "NoPastBookings": "No past bookings"
+  "NoPastBookings": "No past bookings",
+  "inXDays": "in {x} days"
 }

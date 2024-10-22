@@ -9321,6 +9321,16 @@ class S {
       args: [],
     );
   }
+
+  /// `in {x} days`
+  String inXDays(Object x) {
+    return Intl.message(
+      'in $x days',
+      name: 'inXDays',
+      desc: '',
+      args: [x],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
