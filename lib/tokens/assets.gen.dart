@@ -1129,9 +1129,6 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/chess-3-nobg.svg
   SvgGenImage get chess3Nobg => const SvgGenImage('assets/images/svg/chess-3-nobg.svg');
 
-  /// File path: assets/images/svg/chevron-right.svg
-  SvgGenImage get chevronRight => const SvgGenImage('assets/images/svg/chevron-right.svg');
-
   /// File path: assets/images/svg/clothing.svg
   SvgGenImage get clothing => const SvgGenImage('assets/images/svg/clothing.svg');
 
@@ -1240,9 +1237,6 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/pharmacy.svg
   SvgGenImage get pharmacy => const SvgGenImage('assets/images/svg/pharmacy.svg');
 
-  /// File path: assets/images/svg/play-outline.svg
-  SvgGenImage get playOutline => const SvgGenImage('assets/images/svg/play-outline.svg');
-
   /// File path: assets/images/svg/play_arrow.svg
   SvgGenImage get playArrow => const SvgGenImage('assets/images/svg/play_arrow.svg');
 
@@ -1297,9 +1291,6 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/spinner_wheel.svg
   SvgGenImage get spinnerWheel => const SvgGenImage('assets/images/svg/spinner_wheel.svg');
-
-  /// File path: assets/images/svg/stop-outline.svg
-  SvgGenImage get stopOutline => const SvgGenImage('assets/images/svg/stop-outline.svg');
 
   /// File path: assets/images/svg/sufle.svg
   SvgGenImage get sufle => const SvgGenImage('assets/images/svg/sufle.svg');
@@ -1411,7 +1402,6 @@ class $AssetsImagesSvgGen {
         businessman,
         checkCircleGradient,
         chess3Nobg,
-        chevronRight,
         clothing,
         club,
         coinGradient,
@@ -1448,7 +1438,6 @@ class $AssetsImagesSvgGen {
         pencil,
         personLayered,
         pharmacy,
-        playOutline,
         playArrow,
         pointyHead,
         premiumAccountMark,
@@ -1467,7 +1456,6 @@ class $AssetsImagesSvgGen {
         sleep,
         smiley,
         spinnerWheel,
-        stopOutline,
         sufle,
         sunglasses,
         swim,
