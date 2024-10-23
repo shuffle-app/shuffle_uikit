@@ -46,7 +46,7 @@ dependencies:
   infinite_scroll_pagination:
     git:
       url: https://github.com/EdsonBueno/infinite_scroll_pagination.git
-      ref: develop
+      ref: master
   flutter_gallery_3d:
 #        path: ../flutter_gallery_3d_plus
     git:

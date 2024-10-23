@@ -9222,6 +9222,76 @@ class S {
     );
   }
 
+  /// `Add to scheduler`
+  String get AddToScheduler {
+    return Intl.message(
+      'Add to scheduler',
+      name: 'AddToScheduler',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Soon`
+  String get Soon {
+    return Intl.message(
+      'Soon',
+      name: 'Soon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Free now, {count}$ later`
+  String FreeNowXLater(Object count) {
+    return Intl.message(
+      'Free now, $count\$ later',
+      name: 'FreeNowXLater',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Code scanner`
+  String get CodeScanner {
+    return Intl.message(
+      'Code scanner',
+      name: 'CodeScanner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer info`
+  String get OfferInfo {
+    return Intl.message(
+      'Offer info',
+      name: 'OfferInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirmed`
+  String get Confirmed {
+    return Intl.message(
+      'Confirmed',
+      name: 'Confirmed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no users who have bought the offer yet`
+  String get ThereNoUsersWhoHaveBoughtOfferYet {
+    return Intl.message(
+      'There are no users who have bought the offer yet',
+      name: 'ThereNoUsersWhoHaveBoughtOfferYet',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `The booking limit for one person has been reached`
   String get BookingLimitError {
     return Intl.message(
@@ -9249,6 +9319,16 @@ class S {
       name: 'NoPastBookings',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `in {x} days`
+  String inXDays(Object x) {
+    return Intl.message(
+      'in $x days',
+      name: 'inXDays',
+      desc: '',
+      args: [x],
     );
   }
 }

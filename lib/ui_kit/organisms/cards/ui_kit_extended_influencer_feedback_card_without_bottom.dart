@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
+//TODO
 /// думаю стоит перенепсти этот виджет в компонентную библиотеку разобрав его на атомы
 class UiKitExtendedInfluencerFeedbackCardWithoutBottom extends StatelessWidget {
   final String? title;
@@ -20,63 +22,42 @@ class UiKitExtendedInfluencerFeedbackCardWithoutBottom extends StatelessWidget {
       builder: (context, size) {
         final theme = context.uiKitTheme;
         final textTheme = theme?.boldTextTheme;
-        final titleStyle = textTheme?.caption2Bold
-            .copyWith(
-            color: theme?.themeMode == ThemeMode.dark ? ColorsFoundation
-                .lightBodyTypographyColor :ColorsFoundation.
-            darkBodyTypographyColor);
+        final titleStyle = textTheme?.caption2Bold;
         final width = size.maxWidth;
 
-        return Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        return Row(
+          mainAxisSize: MainAxisSize.max,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
+            ClipRRect(
+              borderRadius: BorderRadiusFoundation.all12,
+              child: ImageWidget(
+                link: imageUrl,
+                width: width * 0.27,
+                height: (width * 0.27) * 0.75,
+                fit: BoxFit.cover,
+              ),
+            ),
+            SpacingFoundation.horizontalSpace10,
+            Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadiusFoundation.all12,
-                  child: ImageWidget(
-                    link: imageUrl,
-                    width: width * 0.27,
-                    height: (width * 0.27) * 0.75,
-                    fit: BoxFit.cover,
+                SizedBox(
+                  width: (size.maxWidth * 0.7) - SpacingFoundation.horizontalSpacing10,
+                  child: AutoSizeText(
+                    title ?? '',
+                    style: titleStyle,
                   ),
                 ),
-                SpacingFoundation.horizontalSpace10,
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title ?? '',
-                      style: titleStyle,
+                SpacingFoundation.verticalSpace2,
+                if (tags != null && tags!.isNotEmpty)
+                  SizedBox(
+                    width: (size.maxWidth * 0.7) - SpacingFoundation.horizontalSpacing10,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: UiKitTagsWidget(baseTags: tags!),
                     ),
-                    SpacingFoundation.verticalSpace4,
-                    SizedBox(
-                      width: (size.maxWidth * 0.7) -
-                          SpacingFoundation.horizontalSpacing10,
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: [
-                            ...tags
-                                ?.map<Widget>(
-                                  (e) =>
-                                  UiKitTagWidget(
-                                    title: e.title,
-                                    icon: e.icon,
-                                    showSpacing: tags?.indexOf(e) != 0,
-                                  ),
-                            )
-                                .toList() ??
-                                [],
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
               ],
             ),
           ],

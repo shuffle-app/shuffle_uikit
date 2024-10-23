@@ -896,9 +896,17 @@
   "PlzEnterName": "Плз, введи свое имя & никнейм",
   "OpenedUpcomingEvents": "Открытие блока \"Предстоящие события\"",
   "YouProgressed": "Вы продвинулись!",
+  "AddToScheduler": "Добавить планировщик",
+  "Soon": "Скоро", 
+  "FreeNowXLater": "Сейчас бесплатно, позже {count}$",
+  "CodeScanner": "Сканер кода",
+  "OfferInfo": "Информация о предложении",
+  "Confirmed": "Подтвержденн",
+  "ThereNoUsersWhoHaveBoughtOfferYet" : "Пока еще нет пользователей, которые купили это предложение",
   "AvailableSoon": "Скоро будет доступно",
   "BookingLimitError": "Достигнут лимит бронирования на одного человека",
   "ThisIsEmptyNowBook": "Пока здесь пусто, забронируйте посещение и оно появится здесь",
-  "NoPastBookings": "Нет прошедших броней"
+  "NoPastBookings": "Нет прошедших броней",
+  "inXDays": "через {x} дня"
 }
 
