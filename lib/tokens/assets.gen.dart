@@ -74,6 +74,9 @@ class $AssetsAnimationsLottieGen {
   /// File path: assets/animations/lottie/Whole heart.json
   LottieGenImage get wholeHeart => const LottieGenImage('assets/animations/lottie/Whole heart.json');
 
+  /// File path: assets/animations/lottie/code-scanner-pink.json
+  LottieGenImage get codeScannerPink => const LottieGenImage('assets/animations/lottie/code-scanner-pink.json');
+
   /// File path: assets/animations/lottie/fingerprint-black.json
   LottieGenImage get fingerprintBlack => const LottieGenImage('assets/animations/lottie/fingerprint-black.json');
 
@@ -111,6 +114,7 @@ class $AssetsAnimationsLottieGen {
         brokenHeart,
         ticket,
         wholeHeart,
+        codeScannerPink,
         fingerprintBlack,
         fingerprintWhite,
         moony,
