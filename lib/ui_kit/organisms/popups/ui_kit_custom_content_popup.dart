@@ -22,7 +22,7 @@ class UiKitCustomContentPopup extends StatelessWidget {
     final colorScheme = theme?.colorScheme;
 
     return Dialog(
-      backgroundColor: theme?.cardTheme.color ?? theme?.colorScheme.inversePrimary,
+      backgroundColor: Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusFoundation.all24,
       ),
