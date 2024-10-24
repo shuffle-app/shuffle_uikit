@@ -899,6 +899,11 @@
   "AvailableSoon": "Скоро будет доступно",
   "BookingLimitError": "Достигнут лимит бронирования на одного человека",
   "ThisIsEmptyNowBook": "Пока здесь пусто, забронируйте посещение и оно появится здесь",
-  "NoPastBookings": "Нет прошедших броней"
+  "NoPastBookings": "Нет прошедших броней",
+  "Scanner": "Сканер",
+  "ScanControllerNotReady": "Контроллер не готов",
+  "ScanPermissionDenied": "В разрешении отказано",
+  "ScanningIsUnsupported": "Сканирование на этом устройстве не поддерживается",
+  "ScanGenericError": "Общая ошибка"
 }
 

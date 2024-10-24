@@ -9251,6 +9251,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Scanner`
+  String get Scanner {
+    return Intl.message(
+      'Scanner',
+      name: 'Scanner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Controller not ready`
+  String get ScanControllerNotReady {
+    return Intl.message(
+      'Controller not ready',
+      name: 'ScanControllerNotReady',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Permission denied`
+  String get ScanPermissionDenied {
+    return Intl.message(
+      'Permission denied',
+      name: 'ScanPermissionDenied',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Scanning is unsupported on this device`
+  String get ScanningIsUnsupported {
+    return Intl.message(
+      'Scanning is unsupported on this device',
+      name: 'ScanningIsUnsupported',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Generic Error`
+  String get ScanGenericError {
+    return Intl.message(
+      'Generic Error',
+      name: 'ScanGenericError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

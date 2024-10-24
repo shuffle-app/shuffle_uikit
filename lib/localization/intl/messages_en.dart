@@ -1146,6 +1146,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "SaveAndPay": MessageLookupByLibrary.simpleMessage("Save and pay"),
         "SaveTemplate": MessageLookupByLibrary.simpleMessage("Save template"),
+        "ScanControllerNotReady":
+            MessageLookupByLibrary.simpleMessage("Controller not ready"),
+        "ScanGenericError":
+            MessageLookupByLibrary.simpleMessage("Generic Error"),
+        "ScanPermissionDenied":
+            MessageLookupByLibrary.simpleMessage("Permission denied"),
+        "Scanner": MessageLookupByLibrary.simpleMessage("Scanner"),
+        "ScanningIsUnsupported": MessageLookupByLibrary.simpleMessage(
+            "Scanning is unsupported on this device"),
         "Schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "Search": MessageLookupByLibrary.simpleMessage("Search"),
         "SearchBusinessChooseYourself1":

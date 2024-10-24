@@ -899,6 +899,11 @@
   "AvailableSoon": "Available soon",
   "BookingLimitError": "The booking limit for one person has been reached",
   "ThisIsEmptyNowBook": "This is empty now, book your visit and it will appear here",
-  "NoPastBookings": "No past bookings"
+  "NoPastBookings": "No past bookings",
+  "Scanner": "Scanner",
+  "ScanControllerNotReady": "Controller not ready",
+  "ScanPermissionDenied": "Permission denied",
+  "ScanningIsUnsupported": "Scanning is unsupported on this device",
+  "ScanGenericError": "Generic Error"
 
 }
