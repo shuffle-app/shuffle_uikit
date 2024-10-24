@@ -905,5 +905,10 @@
   "BookingLimitError": "The booking limit for one person has been reached",
   "ThisIsEmptyNowBook": "यह अभी खाली है, अपनी यात्रा बुक करें और यह यहाँ दिखाई देगा",
   "NoPastBookings": "कोई पिछली बुकिंग नहीं",
-  "inXDays": "in {x} days"
+  "inXDays": "in {x} days",
+  "Scanner": "Scanner",
+  "ScanControllerNotReady": "Controller not ready",
+  "ScanPermissionDenied": "Permission denied",
+  "ScanningIsUnsupported": "Scanning is unsupported on this device",
+  "ScanGenericError": "Generic Error"
 }

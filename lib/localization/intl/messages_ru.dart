@@ -1183,6 +1183,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Сохранить и оплатить"),
         "SaveTemplate":
             MessageLookupByLibrary.simpleMessage("Сохранить шаблон"),
+        "ScanControllerNotReady":
+            MessageLookupByLibrary.simpleMessage("Контроллер не готов"),
+        "ScanGenericError":
+            MessageLookupByLibrary.simpleMessage("Общая ошибка"),
+        "ScanPermissionDenied":
+            MessageLookupByLibrary.simpleMessage("В разрешении отказано"),
+        "Scanner": MessageLookupByLibrary.simpleMessage("Сканер"),
+        "ScanningIsUnsupported": MessageLookupByLibrary.simpleMessage(
+            "Сканирование на этом устройстве не поддерживается"),
         "Schedule": MessageLookupByLibrary.simpleMessage("График"),
         "Search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "SearchBusinessChooseYourself1":

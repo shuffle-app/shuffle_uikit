@@ -907,6 +907,11 @@
   "BookingLimitError": "Достигнут лимит бронирования на одного человека",
   "ThisIsEmptyNowBook": "Пока здесь пусто, забронируйте посещение и оно появится здесь",
   "NoPastBookings": "Нет прошедших броней",
-  "inXDays": "через {x} дня"
+  "inXDays": "через {x} дня",
+  "Scanner": "Сканер",
+  "ScanControllerNotReady": "Контроллер не готов",
+  "ScanPermissionDenied": "В разрешении отказано",
+  "ScanningIsUnsupported": "Сканирование на этом устройстве не поддерживается",
+  "ScanGenericError": "Общая ошибка"
 }
 
