@@ -97,9 +97,36 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   }
 
   @override
-  void didPush() {
+  void didPushNext() {
+    debugPrint('[UiKitFullScreenPortraitVideoPlayer] didPushNext here');
     _player.pause();
     super.didPush();
+  }
+
+  @override
+  void didPush() {
+    debugPrint('[UiKitFullScreenPortraitVideoPlayer] didPush here');
+    _player.pause();
+    super.didPush();
+  }
+
+  @override
+  void didPop() {
+    debugPrint('[UiKitFullScreenPortraitVideoPlayer] didPop here');
+    _player.play();
+    super.didPop();
+  }
+
+  // @override
+  // void didPopNext() {
+  //   debugPrint('[UiKitFullScreenPortraitVideoPlayer] didPopNext here');
+  //   super.didPopNext();
+  // }
+
+  @override
+  void didChangeDependencies() {
+    routeObserver.subscribe(this, ModalRoute.of(context) as PageRoute);
+    super.didChangeDependencies();
   }
 
   @override
@@ -107,6 +134,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
     positionSubscription?.cancel();
     completeSubscription?.cancel();
     _player.pause();
+    routeObserver.unsubscribe(this);
     super.dispose();
   }
 
@@ -177,3 +205,10 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
 final _player = Player();
 
 final _controller = VideoController(_player);
+
+final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
+
+//TODO remove when will find better way to catch bottom sheet showings
+pauseVideo()=>_player.pause();
+
+playVideo()=>_player.play();
