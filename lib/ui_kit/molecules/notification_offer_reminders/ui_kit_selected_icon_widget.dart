@@ -16,7 +16,7 @@ class UiKitSelectedIconWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 45.h,
+      height: 0.18.sw,
       child: ListView.separated(
         itemCount: iconList?.length ?? 0,
         separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
@@ -31,7 +31,7 @@ class UiKitSelectedIconWidget extends StatelessWidget {
                 borderRadius: BorderRadiusFoundation.all24r,
               ),
               child: ImageWidget(
-                height: 45.h,
+                height: 0.18.sw,
                 fit: BoxFit.fitHeight,
                 link: iconList?[index],
               ).paddingAll(EdgeInsetsFoundation.all2),

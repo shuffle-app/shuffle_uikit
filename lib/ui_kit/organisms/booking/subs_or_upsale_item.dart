@@ -62,7 +62,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
                     ),
                     child: UiKitCardWrapper(
                       width: 124.w,
-                      borderRadius: BorderRadiusFoundation.all10,
+                      borderRadius: BorderRadiusFoundation.all12,
                       child: actualLimitIsFull && !selectedItem
                           ? Stack(
                               children: [
