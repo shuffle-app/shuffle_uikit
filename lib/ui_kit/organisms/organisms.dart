@@ -116,7 +116,6 @@ export 'profile/pro_public_profile_card_body.dart';
 export 'profile/profile_card.dart';
 export 'profile/profile_card_animated.dart';
 export 'profile/profile_content_widget.dart';
-export 'profile/profile_highlights.dart';
 export 'profile/profile_posts_places.dart';
 export 'profile/profile_stories_list.dart';
 export 'properties/properties_bordered_box.dart';

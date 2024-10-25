@@ -3,12 +3,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ProfileHighlightCard extends StatelessWidget {
   final String title;
-  final int value;
+  final String value;
+  final Gradient? valueGradient;
 
   const ProfileHighlightCard({
     super.key,
     required this.title,
     required this.value,
+    this.valueGradient,
   });
 
   @override
@@ -25,11 +27,14 @@ class ProfileHighlightCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          GradientableWidget(
+              gradient: valueGradient,
+              child:
           Text(
-            '${value > 1000 ? '${value ~/ 1000}k+' : value}',
+            value,
             style: valueStyle,
             textAlign: TextAlign.center,
-          ),
+          )),
           SpacingFoundation.verticalSpace12,
           Text(
             title,
