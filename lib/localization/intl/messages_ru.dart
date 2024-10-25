@@ -1295,6 +1295,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Показать результат"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
             "Показывайте штрих-код при оплате"),
+        "ShowTheBarcodeCheckout":
+            MessageLookupByLibrary.simpleMessage("Покажите штрих-код на кассе"),
         "ShraziidGoblet":
             MessageLookupByLibrary.simpleMessage("Кубок Шразиида"),
         "ShraziidGobletDescription": MessageLookupByLibrary.simpleMessage(
@@ -1601,6 +1603,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Вы продвинулись!"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("Вы получили"),
         "YouSentInvitationToNPeople": m100,
+        "YouSharedTicket":
+            MessageLookupByLibrary.simpleMessage("Вы поделились билетом"),
         "YouSureToDeleteX": m101,
         "YouWillNoLongerSendMessagesTo": m102,
         "YouWillNoLongerSendMessagesToChat":

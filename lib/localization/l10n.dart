@@ -9381,6 +9381,26 @@ class S {
       args: [],
     );
   }
+
+  /// `You shared a ticket`
+  String get YouSharedTicket {
+    return Intl.message(
+      'You shared a ticket',
+      name: 'YouSharedTicket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show the barcode at the checkout`
+  String get ShowTheBarcodeCheckout {
+    return Intl.message(
+      'Show the barcode at the checkout',
+      name: 'ShowTheBarcodeCheckout',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

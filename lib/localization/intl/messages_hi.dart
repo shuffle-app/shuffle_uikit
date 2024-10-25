@@ -1279,6 +1279,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ShowResult": MessageLookupByLibrary.simpleMessage("परिणाम दिखाओ"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
             "भुगतान करते समय चेकआउट पर बारकोड दिखाएं"),
+        "ShowTheBarcodeCheckout": MessageLookupByLibrary.simpleMessage(
+            "Show the barcode at the checkout"),
         "ShraziidGoblet":
             MessageLookupByLibrary.simpleMessage("श्राज़ीद गोब्लेट"),
         "ShraziidGobletDescription": MessageLookupByLibrary.simpleMessage(
@@ -1583,6 +1585,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("You progressed!"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("आपको मिला"),
         "YouSentInvitationToNPeople": m100,
+        "YouSharedTicket":
+            MessageLookupByLibrary.simpleMessage("You shared a ticket"),
         "YouSureToDeleteX": m101,
         "YouWillNoLongerSendMessagesTo": m102,
         "YouWillNoLongerSendMessagesToChat":
