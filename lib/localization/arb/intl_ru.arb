@@ -912,6 +912,8 @@
   "ScanControllerNotReady": "Контроллер не готов",
   "ScanPermissionDenied": "В разрешении отказано",
   "ScanningIsUnsupported": "Сканирование на этом устройстве не поддерживается",
-  "ScanGenericError": "Общая ошибка"
+  "ScanGenericError": "Общая ошибка",
+  "YouSharedTicket": "Вы поделились билетом",
+  "ShowTheBarcodeCheckout": "Покажите штрих-код на кассе"
 }
 

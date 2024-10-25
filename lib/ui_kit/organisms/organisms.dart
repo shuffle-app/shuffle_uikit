@@ -144,3 +144,4 @@ export 'viewer/ui_kit_mini_map_view.dart';
 export 'viewer/ui_kit_video_player.dart';
 export 'wheel_value_selector/ui_kit_horizontal_wheel_number_selector.dart';
 export 'event/add_to_scheduler_event_action_card.dart';
+export 'barcode/custom_barcode.dart';

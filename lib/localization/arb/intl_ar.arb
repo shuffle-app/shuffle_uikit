@@ -912,5 +912,7 @@
   "ScanControllerNotReady": "Controller not ready",
   "ScanPermissionDenied": "Permission denied",
   "ScanningIsUnsupported": "Scanning is unsupported on this device",
-  "ScanGenericError": "Generic Error"
+  "ScanGenericError": "Generic Error",
+  "YouSharedTicket": "You shared a ticket",
+  "ShowTheBarcodeCheckout": "Show the barcode at the checkout"
 }

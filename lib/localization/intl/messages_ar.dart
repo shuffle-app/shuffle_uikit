@@ -1269,6 +1269,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ShowResult": MessageLookupByLibrary.simpleMessage("Show result"),
         "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
             "Show the barcode at the checkout when paying"),
+        "ShowTheBarcodeCheckout": MessageLookupByLibrary.simpleMessage(
+            "Show the barcode at the checkout"),
         "ShraziidGoblet":
             MessageLookupByLibrary.simpleMessage("Shraziid goblet"),
         "ShraziidGobletDescription": MessageLookupByLibrary.simpleMessage(
@@ -1569,6 +1571,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("You progressed!"),
         "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),
         "YouSentInvitationToNPeople": m100,
+        "YouSharedTicket":
+            MessageLookupByLibrary.simpleMessage("You shared a ticket"),
         "YouSureToDeleteX": m101,
         "YouWillNoLongerSendMessagesTo": m102,
         "YouWillNoLongerSendMessagesToChat":
