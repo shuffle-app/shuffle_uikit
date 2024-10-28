@@ -12,6 +12,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
   final bool isSubs;
   late final bool actualLimitIsFull;
   final bool selectedItem;
+  final bool isViewMode;
 
   SubsOrUpsaleItem({
     super.key,
@@ -24,6 +25,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
     this.onEdit,
     this.isSubs = true,
     this.selectedItem = false,
+    this.isViewMode = false,
   }) {
     if (int.tryParse(actualLimit ?? '0') == int.tryParse(limit ?? '0')) {
       actualLimitIsFull = true;
@@ -115,7 +117,13 @@ class SubsOrUpsaleItem extends StatelessWidget {
                     '${actualLimit ?? 0}/${limit!}',
                     style: theme?.boldTextTheme.caption3Medium,
                   ),
-                )
+                ),
+              if (isViewMode)
+                Positioned.fill(
+                  child: ColoredBox(
+                    color: theme?.colorScheme.primary.withOpacity(0.5) ?? Colors.black.withOpacity(0.5),
+                  ),
+                ),
             ],
           ),
           SpacingFoundation.verticalSpace2,
@@ -125,9 +133,9 @@ class SubsOrUpsaleItem extends StatelessWidget {
                 ? theme?.regularTextTheme.caption4.copyWith(
                     fontSize: 9.w,
                     fontWeight: FontWeight.w600,
-                    color: (actualLimitIsFull && !selectedItem) ? ColorsFoundation.mutedText : null,
+                    color: (actualLimitIsFull && !selectedItem) || isViewMode ? ColorsFoundation.mutedText : null,
                   )
-                : theme?.boldTextTheme.caption3Medium,
+                : theme?.boldTextTheme.caption3Medium.copyWith(color: isViewMode ? ColorsFoundation.mutedText : null),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
@@ -135,7 +143,7 @@ class SubsOrUpsaleItem extends StatelessWidget {
           Text(
             description ?? '',
             style: theme?.regularTextTheme.caption4Regular.copyWith(
-              color: (actualLimitIsFull && !selectedItem) ? ColorsFoundation.mutedText : null,
+              color: (actualLimitIsFull && !selectedItem) || isViewMode ? ColorsFoundation.mutedText : null,
             ),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
