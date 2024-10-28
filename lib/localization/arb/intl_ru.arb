@@ -914,6 +914,8 @@
   "ScanningIsUnsupported": "Сканирование на этом устройстве не поддерживается",
   "ScanGenericError": "Общая ошибка",
   "YouSharedTicket": "Вы поделились билетом",
-  "ShowTheBarcodeCheckout": "Покажите штрих-код на кассе"
+  "ShowTheBarcodeCheckout": "Покажите штрих-код на кассе",
+  "LongTapCardEdit": "Чтобы отредактировать зажмите карточку",
+  "YouCannotCreateOfferDate": "Вы не можете создать оффер, так как ивент или место уже завершено"
 }
 

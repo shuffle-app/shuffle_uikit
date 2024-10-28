@@ -803,6 +803,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Logo": MessageLookupByLibrary.simpleMessage("Logo"),
         "LogoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Logo (upload Files)"),
+        "LongTapCardEdit":
+            MessageLookupByLibrary.simpleMessage("Long tap card to edit"),
         "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage(
             "Lovely-touch amazing\ninteraction"),
         "LuckyCoin": MessageLookupByLibrary.simpleMessage("Lucky Coin"),
@@ -1561,6 +1563,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouCanStillRequestRefundYourComplaint":
             MessageLookupByLibrary.simpleMessage(
                 "You can still request a refund on your complaint"),
+        "YouCannotCreateOfferDate": MessageLookupByLibrary.simpleMessage(
+            "You cannot create an offer because the event or venue has already been completed"),
         "YouGetAccessToTrial": MessageLookupByLibrary.simpleMessage(
             "You get access to all benefits free of charge for"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(

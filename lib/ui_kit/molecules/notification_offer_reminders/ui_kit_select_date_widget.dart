@@ -5,14 +5,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 class UiKitSelectDateWidget extends StatelessWidget {
   final List<DateTime?>? selectedDates;
   final bool dateToWord;
-  final DateTime? lastDate;
   final VoidCallback? onCalenderTap;
 
   const UiKitSelectDateWidget({
     super.key,
     this.selectedDates,
     this.dateToWord = false,
-    this.lastDate,
     this.onCalenderTap,
   });
 
