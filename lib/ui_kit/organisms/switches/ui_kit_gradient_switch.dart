@@ -16,8 +16,8 @@ class UiKitGradientSwitch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: kIsWeb ? 22: 0.035.sh,
-      width:  (kIsWeb ? 22: 0.035.sh) / 0.6,
+      height: kIsWeb ? 22 : 0.035.sh,
+      width: (kIsWeb ? 22 : 0.035.sh) / 0.6,
       child: GestureDetector(
         onTap: () => onChanged?.call(!switchedOn),
         child: Stack(
@@ -60,6 +60,12 @@ class UiKitGradientSwitch extends StatelessWidget {
                 ),
               ),
             ),
+            if (onChanged == null)
+              Positioned.fill(
+                child: ColoredBox(
+                  color: context.uiKitTheme?.colorScheme.primary.withOpacity(0.5) ?? Colors.black.withOpacity(0.5),
+                ),
+              ),
           ],
         ),
       ),
