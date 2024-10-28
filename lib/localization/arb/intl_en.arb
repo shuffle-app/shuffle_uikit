@@ -914,6 +914,8 @@
   "ScanningIsUnsupported": "Scanning is unsupported on this device",
   "ScanGenericError": "Generic Error",
   "YouSharedTicket": "You shared a ticket",
-  "ShowTheBarcodeCheckout": "Show the barcode at the checkout"
+  "ShowTheBarcodeCheckout": "Show the barcode at the checkout",
+  "LongTapCardEdit": "Long tap card to edit",
+  "YouCannotCreateOfferDate": "You cannot create an offer because the event or venue has already been completed"
 
 }

@@ -810,6 +810,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Logo": MessageLookupByLibrary.simpleMessage("प्रतीक चिन्ह"),
         "LogoUploadFiles":
             MessageLookupByLibrary.simpleMessage("लोगो (फ़ाइलें अपलोड करें)"),
+        "LongTapCardEdit":
+            MessageLookupByLibrary.simpleMessage("Long tap card to edit"),
         "LovelyTouchAmazingInteraction": MessageLookupByLibrary.simpleMessage(
             "प्यारा-स्पर्श अद्भुत\nइंटरैक्शन"),
         "LuckyCoin": MessageLookupByLibrary.simpleMessage("भाग्यशाली सिक्का"),
@@ -1575,6 +1577,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouCanStillRequestRefundYourComplaint":
             MessageLookupByLibrary.simpleMessage(
                 "आप अपनी शिकायत पर वापसी का अनुरोध कर सकते हैं"),
+        "YouCannotCreateOfferDate": MessageLookupByLibrary.simpleMessage(
+            "You cannot create an offer because the event or venue has already been completed"),
         "YouGetAccessToTrial": MessageLookupByLibrary.simpleMessage(
             "आपको सभी लाभ मुफ्त में मिलते हैं"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(

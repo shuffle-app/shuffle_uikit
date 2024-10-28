@@ -9401,6 +9401,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Long tap card to edit`
+  String get LongTapCardEdit {
+    return Intl.message(
+      'Long tap card to edit',
+      name: 'LongTapCardEdit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You cannot create an offer because the event or venue has already been completed`
+  String get YouCannotCreateOfferDate {
+    return Intl.message(
+      'You cannot create an offer because the event or venue has already been completed',
+      name: 'YouCannotCreateOfferDate',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

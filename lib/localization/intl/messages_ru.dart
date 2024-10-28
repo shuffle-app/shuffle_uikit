@@ -819,6 +819,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Logo": MessageLookupByLibrary.simpleMessage("Лого"),
         "LogoUploadFiles":
             MessageLookupByLibrary.simpleMessage("Лого (загрузить)"),
+        "LongTapCardEdit": MessageLookupByLibrary.simpleMessage(
+            "Чтобы отредактировать зажмите карточку"),
         "LovelyTouchAmazingInteraction":
             MessageLookupByLibrary.simpleMessage("Приятный на ощупь интерфейс"),
         "LuckyCoin": MessageLookupByLibrary.simpleMessage("Монета удачи"),
@@ -1593,6 +1595,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "YouCanStillRequestRefundYourComplaint":
             MessageLookupByLibrary.simpleMessage(
                 "Вы все еще можете запросить возврат средств по вашей жалобе"),
+        "YouCannotCreateOfferDate": MessageLookupByLibrary.simpleMessage(
+            "Вы не можете создать оффер, так как ивент или место уже завершено"),
         "YouGetAccessToTrial": MessageLookupByLibrary.simpleMessage(
             "Ты получишь доступ ко всем функциям на"),
         "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
