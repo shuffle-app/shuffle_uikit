@@ -6,7 +6,10 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class GlowShadowWidget extends StatelessWidget {
   final ImageWidget child;
 
-  const GlowShadowWidget({super.key, required this.child,});
+  const GlowShadowWidget({
+    super.key,
+    required this.child,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +22,14 @@ class GlowShadowWidget extends StatelessWidget {
     return Transform.scale(
       scale: scaleFactor,
       child: ImageFiltered(
-        imageFilter: ImageFilter.blur(sigmaY: 1.2, sigmaX: 1.2),
+        imageFilter: ImageFilter.blur(sigmaY: 1.2, sigmaX: 1.2, tileMode: TileMode.decal),
         child: Opacity(
-            opacity: opacity,
-            child: ColorFiltered(
-              colorFilter: ColorFilter.mode(shadowColor, BlendMode.srcATop),
-              child: child,
-            ),
+          opacity: opacity,
+          child: ColorFiltered(
+            colorFilter: ColorFilter.mode(shadowColor, BlendMode.srcATop),
+            child: child,
           ),
-
+        ),
       ),
     );
   }
