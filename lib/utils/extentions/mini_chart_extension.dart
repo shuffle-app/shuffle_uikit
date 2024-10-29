@@ -11,6 +11,11 @@ extension MiniChartDataExtension on List<UiKitMiniChartData> {
         fold(DateTime.now(), (prev, curr) => prev.isBefore(curr.items.period.start) ? prev : curr.items.period.start);
     final DateTime maxDate =
         fold(DateTime(0), (prev, curr) => prev.isAfter(curr.items.period.end) ? prev : curr.items.period.end);
+
+    if(maxDate.isBefore(minDate)) {
+      return DateTimeRange(start: minDate, end: DateTime.now());
+    }
+
     return DateTimeRange(start: minDate, end: maxDate);
   }
 }
