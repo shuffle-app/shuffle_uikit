@@ -1297,6 +1297,12 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/smiley.svg
   SvgGenImage get smiley => const SvgGenImage('assets/images/svg/smiley.svg');
 
+  /// File path: assets/images/svg/social-telegram.svg
+  SvgGenImage get socialTelegram => const SvgGenImage('assets/images/svg/social-telegram.svg');
+
+  /// File path: assets/images/svg/social-whatsapp.svg
+  SvgGenImage get socialWhatsapp => const SvgGenImage('assets/images/svg/social-whatsapp.svg');
+
   /// File path: assets/images/svg/spinner_wheel.svg
   SvgGenImage get spinnerWheel => const SvgGenImage('assets/images/svg/spinner_wheel.svg');
 
@@ -1463,6 +1469,8 @@ class $AssetsImagesSvgGen {
         shuffleWhite,
         sleep,
         smiley,
+        socialTelegram,
+        socialWhatsapp,
         spinnerWheel,
         sufle,
         sunglasses,

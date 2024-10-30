@@ -8,11 +8,11 @@ class UiKitMiniChartDataItemWidget extends StatelessWidget {
   final AutoSizeGroup textAutoSizeGroup;
 
   const UiKitMiniChartDataItemWidget({
-    Key? key,
+    super.key,
     required this.data,
     required this.textAutoSizeGroup,
     this.currentPeriodNotifier,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class UiKitMiniChartDataItemWidget extends StatelessWidget {
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
-                      stops: [0.5, 0.85, 1],
+                      stops: const [0.5, 0.85, 1],
                       colors: [
                         data.color.withOpacity(0.5),
                         data.color.withOpacity(0.15),

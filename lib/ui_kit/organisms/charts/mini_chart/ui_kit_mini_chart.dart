@@ -7,9 +7,9 @@ class UiKitMiniChart extends StatefulWidget {
   final List<UiKitMiniChartData> data;
 
   const UiKitMiniChart({
-    Key? key,
+    super.key,
     required this.data,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitMiniChart> createState() => _UiKitMiniChartState();
@@ -38,7 +38,10 @@ class _UiKitMiniChartState extends State<UiKitMiniChart> {
     final difference = widget.data.period.start.isAtSameMomentAs(widget.data.period.end)
         ? 0
         : widget.data.period.start.difference(widget.data.period.end).inDays;
-    final visibleDatesCount = difference * _previewUpdatesNotifier.value.previewWidthFraction;
+
+    debugPrint('[UiKitMiniChart] difference $difference');
+    final visibleDatesCount = (difference * _previewUpdatesNotifier.value.previewWidthFraction).toInt().abs();
+    debugPrint('[UiKitMiniChart] visibleDatesCount $visibleDatesCount');
     _dateNotifier.value = DateRange(
       start: widget.data.period.start,
       end: widget.data.period.start.add(Duration(days: visibleDatesCount.toInt())),
@@ -52,6 +55,7 @@ class _UiKitMiniChartState extends State<UiKitMiniChart> {
 
   void _fractionListener() {
     final difference = widget.data.period.end.difference(widget.data.period.start).inDays;
+    debugPrint('[UiKitMiniChart] difference $difference');
     final visibleDatesCount = difference * _previewUpdatesNotifier.value.previewWidthFraction;
     final offsetIndex = _previewUpdatesNotifier.value.leftOffset ~/ pixelsPerDate;
 
