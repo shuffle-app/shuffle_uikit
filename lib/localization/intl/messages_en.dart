@@ -709,6 +709,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Give access to health kit usage otherwise the result will be random"),
         "Helpful": MessageLookupByLibrary.simpleMessage("Helpful"),
         "HelpfulNCount": m35,
+        "HiHereTicket":
+            MessageLookupByLibrary.simpleMessage("Hi, here\'s a ticket"),
         "Hindu": MessageLookupByLibrary.simpleMessage("Hindu"),
         "HintAverageBill":
             MessageLookupByLibrary.simpleMessage("Select price or price range"),

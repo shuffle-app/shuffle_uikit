@@ -678,6 +678,9 @@ class $AssetsImagesPngGen {
   AssetGenImage get shuffleInfluencersFeedAvatar =>
       const AssetGenImage('assets/images/png/shuffle_influencers_feed_avatar.png');
 
+  /// File path: assets/images/png/shuffle_logo.png
+  AssetGenImage get shuffleLogo => const AssetGenImage('assets/images/png/shuffle_logo.png');
+
   /// File path: assets/images/png/shuffle_text_banner_1.png
   AssetGenImage get shuffleTextBanner1 => const AssetGenImage('assets/images/png/shuffle_text_banner_1.png');
 
@@ -906,6 +909,7 @@ class $AssetsImagesPngGen {
         serviceSocial4,
         shoot,
         shuffleInfluencersFeedAvatar,
+        shuffleLogo,
         shuffleTextBanner1,
         shuffleTextBanner2,
         shuffleTextBanner3,

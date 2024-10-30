@@ -723,6 +723,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Предоставь доступ к хэлс киту иначе результат будет рандомным"),
         "Helpful": MessageLookupByLibrary.simpleMessage("Полезно"),
         "HelpfulNCount": m35,
+        "HiHereTicket":
+            MessageLookupByLibrary.simpleMessage("Привет, держи билет"),
         "Hindu": MessageLookupByLibrary.simpleMessage("Индуизм"),
         "HintAverageBill": MessageLookupByLibrary.simpleMessage(
             "Выбери цену или диапазон цен"),
