@@ -9421,6 +9421,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Hi, here's a ticket`
+  String get HiHereTicket {
+    return Intl.message(
+      'Hi, here\'s a ticket',
+      name: 'HiHereTicket',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
