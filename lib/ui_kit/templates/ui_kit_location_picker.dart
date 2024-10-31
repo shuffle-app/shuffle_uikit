@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:huawei_map/huawei_map.dart' as hms;
 import 'package:pointer_interceptor/pointer_interceptor.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -13,13 +14,14 @@ class UiKitLocationPicker extends StatelessWidget {
   final ValueChanged<LocationSuggestion>? onSuggestionChosen;
   final LocationPickerSearchOverlayController locationPickerSearchOverlayController;
   final LocationDetailsSheetController locationDetailsSheetController;
-  final ValueChanged<GoogleMapController> onMapCreated;
+  final ValueChanged<dynamic> onMapCreated;
   final ValueChanged<CameraPosition> onCameraMoved;
   final ValueChanged<LatLng>? onMapTapped;
   final CameraPosition initialCameraPosition;
   final Set<Marker> markers;
   final VoidCallback? onLocationConfirmed;
   final ValueChanged<KnownLocation>? onKnownLocationConfirmed;
+  final bool isHuawei;
   final void Function(
       {String address,
       double latitude,
@@ -44,6 +46,7 @@ class UiKitLocationPicker extends StatelessWidget {
     this.onCurrentLocationTapped,
     this.suggestionPlaces,
     this.newPlace = true,
+    required this.isHuawei,
     required this.onLocationChanged,
     required this.onNewPlaceTap,
     required this.onMapCreated,
@@ -77,17 +80,39 @@ class UiKitLocationPicker extends StatelessWidget {
       alignment: Alignment.center,
       fit: StackFit.expand,
       children: [
-        GoogleMap(
-          onMapCreated: onMapCreated,
-          initialCameraPosition: initialCameraPosition,
-          onCameraMove: onCameraMoved,
-          markers: markers,
-          webGestureHandling: WebGestureHandling.cooperative,
-          onTap: onMapTapped,
-          zoomControlsEnabled: false,
-          myLocationButtonEnabled: false,
-          myLocationEnabled: true,
-        ),
+        if (isHuawei)
+          hms.HuaweiMap(
+            onMapCreated: onMapCreated,
+            initialCameraPosition: hms.CameraPosition(
+              target: hms.LatLng(initialCameraPosition.target.latitude, initialCameraPosition.target.longitude),
+              zoom: initialCameraPosition.zoom,
+            ),
+            onCameraMove: (cameraPosition) => onCameraMoved(CameraPosition(
+                target: LatLng(cameraPosition.target.lat, cameraPosition.target.lng), zoom: cameraPosition.zoom)),
+            // markers: markers,
+            markers: markers
+                .map((marker) => hms.Marker(
+                    markerId: hms.MarkerId(marker.markerId.value),
+                    position: hms.LatLng(marker.position.latitude, marker.position.longitude)))
+                .toList()
+                .toSet(),
+            onClick: (latLn) => onMapTapped?.call(LatLng(latLn.lat, latLn.lng)),
+            zoomControlsEnabled: false,
+            myLocationEnabled: false,
+            myLocationButtonEnabled: false,
+          )
+        else
+          GoogleMap(
+            onMapCreated: onMapCreated,
+            initialCameraPosition: initialCameraPosition,
+            onCameraMove: onCameraMoved,
+            markers: markers,
+            webGestureHandling: WebGestureHandling.cooperative,
+            onTap: onMapTapped,
+            zoomControlsEnabled: false,
+            myLocationButtonEnabled: false,
+            myLocationEnabled: true,
+          ),
         LocationPickerSearchOverlay(
           onSuggestionChosen: (suggestion) {
             locationPickerSearchOverlayController.updateState(LocationPickerOverlayState.hidden);
