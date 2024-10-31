@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -21,11 +22,11 @@ class ProfileHighlightCard extends StatelessWidget {
     titleStyle = titleStyle?.copyWith(color: ColorsFoundation.darkNeutral100);
 
     return UiKitCardWrapper(
-      height: 106,
+      height: 1.sw/3.55,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           GradientableWidget(
               gradient: valueGradient,
@@ -36,8 +37,10 @@ class ProfileHighlightCard extends StatelessWidget {
             textAlign: TextAlign.center,
           )),
           SpacingFoundation.verticalSpace12,
-          Text(
+          AutoSizeText(
             title,
+            maxLines: 2,
+            group: _group,
             style: titleStyle?.copyWith(
               color: context.uiKitTheme?.colorScheme.grayForegroundColor,
             ),
@@ -48,3 +51,5 @@ class ProfileHighlightCard extends StatelessWidget {
     );
   }
 }
+
+final AutoSizeGroup _group = AutoSizeGroup();
