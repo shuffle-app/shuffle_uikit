@@ -17,6 +17,7 @@ class UiKitPostCard extends StatelessWidget {
   final int? firesCount;
   final int? smileyCount;
   final bool hasNewMark;
+  final ValueChanged<String>? onReactionsTapped;
 
   bool get showEmptyReactionsState =>
       (heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
@@ -27,7 +28,7 @@ class UiKitPostCard extends StatelessWidget {
           smileyCount == null);
 
   const UiKitPostCard({
-    Key? key,
+    super.key,
     required this.authorName,
     required this.authorUsername,
     required this.authorAvatarUrl,
@@ -40,7 +41,8 @@ class UiKitPostCard extends StatelessWidget {
     this.firesCount,
     this.smileyCount,
     this.hasNewMark = false,
-  }) : super(key: key);
+    this.onReactionsTapped,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -51,14 +53,17 @@ class UiKitPostCard extends StatelessWidget {
     final reactionTextColor = colorScheme?.inverseBodyTypography;
     final isLightTheme = theme?.themeMode == ThemeMode.light;
 
+    OverlayEntry? overlayEntry;
+    bool isOverlayVisible = false;
+
     return ConstrainedBox(
       constraints: BoxConstraints(
         minHeight: 0.2.sh,
-        maxHeight: 0.25.sh,
         maxWidth: 1.sw,
         minWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
       ),
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           UiKitCardWrapper(
             color: colorScheme?.inverseSurface,
@@ -85,50 +90,65 @@ class UiKitPostCard extends StatelessWidget {
                   style: regularTextTheme?.caption2.copyWith(color: colorScheme?.surface),
                 ),
                 SpacingFoundation.verticalSpace8,
-                GestureDetector(
-                  behavior: HitTestBehavior.opaque,
-                  onTap: () {
-                    /// todo show pop over with reactions
-                    print('Reactions tapped');
+                Builder(
+                  builder: (c) {
+                    return TapRegion(
+                      behavior: HitTestBehavior.opaque,
+                      onTapInside: (value) {
+                        isOverlayVisible
+                            ? hideReactionOverlay(overlayEntry)
+                            : showReactionOverlay(
+                                c,
+                                overlayEntry,
+                                reactionTextColor,
+                                onReactionsTapped,
+                              );
+                        isOverlayVisible = !isOverlayVisible;
+                      },
+                      onTapOutside: (event) {
+                        isOverlayVisible = false;
+                        hideReactionOverlay(overlayEntry);
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: showEmptyReactionsState
+                            ? [
+                                const ImageWidget(
+                                  iconData: ShuffleUiKitIcons.thumbup,
+                                  color: ColorsFoundation.mutedText,
+                                ),
+                              ]
+                            : [
+                                UiKitHeartEyesReaction(
+                                  reactionsCount: heartEyesCount ?? 0,
+                                  textColor: reactionTextColor,
+                                ),
+                                SpacingFoundation.horizontalSpace4,
+                                UiKitLikeReaction(
+                                  reactionsCount: likesCount ?? 0,
+                                  textColor: reactionTextColor,
+                                ),
+                                SpacingFoundation.horizontalSpace4,
+                                UiKitFireReaction(
+                                  reactionsCount: firesCount ?? 0,
+                                  textColor: reactionTextColor,
+                                ),
+                                SpacingFoundation.horizontalSpace4,
+                                UiKitSunglassesReaction(
+                                  reactionsCount: sunglassesCount ?? 0,
+                                  textColor: reactionTextColor,
+                                ),
+                                SpacingFoundation.horizontalSpace4,
+                                UiKitSmileyReaction(
+                                  reactionsCount: smileyCount ?? 0,
+                                  textColor: reactionTextColor,
+                                ),
+                              ],
+                      ),
+                    );
                   },
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: showEmptyReactionsState
-                        ? [
-                            const ImageWidget(
-                              iconData: ShuffleUiKitIcons.thumbup,
-                              color: ColorsFoundation.mutedText,
-                            ),
-                          ]
-                        : [
-                            UiKitHeartEyesReaction(
-                              reactionsCount: heartEyesCount ?? 0,
-                              textColor: reactionTextColor,
-                            ),
-                            SpacingFoundation.horizontalSpace4,
-                            UiKitLikeReaction(
-                              reactionsCount: likesCount ?? 0,
-                              textColor: reactionTextColor,
-                            ),
-                            SpacingFoundation.horizontalSpace4,
-                            UiKitFireReaction(
-                              reactionsCount: firesCount ?? 0,
-                              textColor: reactionTextColor,
-                            ),
-                            SpacingFoundation.horizontalSpace4,
-                            UiKitSunglassesReaction(
-                              reactionsCount: sunglassesCount ?? 0,
-                              textColor: reactionTextColor,
-                            ),
-                            SpacingFoundation.horizontalSpace4,
-                            UiKitSmileyReaction(
-                              reactionsCount: smileyCount ?? 0,
-                              textColor: reactionTextColor,
-                            ),
-                          ],
-                  ),
-                ),
+                )
               ],
             ),
           ),
@@ -149,8 +169,9 @@ class UiKitPostCard extends StatelessWidget {
                 ),
               ).paddingOnly(top: EdgeInsetsFoundation.vertical2),
             ),
-          Align(
-            alignment: Alignment.bottomRight,
+          Positioned(
+            right: 0,
+            bottom: -SpacingFoundation.verticalSpacing8,
             child: ClipRRect(
               borderRadius: BorderRadiusFoundation.max,
               child: BackdropFilter(
