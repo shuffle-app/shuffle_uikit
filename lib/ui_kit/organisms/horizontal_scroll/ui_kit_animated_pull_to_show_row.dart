@@ -80,12 +80,14 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
   final String noChildrenText;
   final double topPadding;
   final ValueNotifier<double> lastPhaseScaleNotifier;
+  final bool showHints;
 
   UiKitAnimatedPullToShowDelegate({
     required this.topPadding,
     required this.children,
     required this.lastPhaseScaleNotifier,
     this.noChildrenText = '',
+    this.showHints = true,
   });
 
   @override
@@ -107,32 +109,31 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
     return Column(
       children: [
         AnimatedBuilder(
-          animation: lastPhaseScaleNotifier,
-          builder: (context, child) {
-            final scale = lastPhaseScaleNotifier.value;
-            if (lastPhaseScaleNotifier.value == 0) return topPadding.heightBox;
-            return Transform.scale(
-              scale: scale,
-              child: SizedBox(
-                height: (topPadding * scale),
-                width: 1.sw,
-                child: child,
+            animation: lastPhaseScaleNotifier,
+            builder: (context, child) {
+              final scale = lastPhaseScaleNotifier.value;
+              if (lastPhaseScaleNotifier.value == 0) return topPadding.heightBox;
+              return Transform.scale(
+                scale: scale,
+                child: SizedBox(
+                  height: (topPadding * scale),
+                  width: 1.sw,
+                  child: child,
+                ),
+              );
+            },
+            child: Center(
+              child: GradientableWidget(
+                gradient: GradientFoundation.badgeIcon,
+                child: ImageWidget(
+                  svgAsset: GraphicsFoundation.instance.svg.filmstrip,
+                  color: Colors.white,
+                  width: 0.1.sw,
+                  height: 0.1.sw,
+                  fit: BoxFit.cover,
+                ),
               ),
-            );
-          },
-          child: Center(
-            child: GradientableWidget(
-              gradient: GradientFoundation.badgeIcon,
-              child: ImageWidget(
-                svgAsset: GraphicsFoundation.instance.svg.filmstrip,
-                color: Colors.white,
-                width: 0.1.sw,
-                height: 0.1.sw,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-        ),
+            )),
         UiKitCardWrapper(
           borderRadius: BorderRadiusFoundation.zero,
           height: max(0, maxExtent - topPadding - shrinkOffset),
@@ -140,12 +141,13 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
           color: colorScheme?.surface2,
           child: Stack(
             children: [
-              AnimatedPositioned(
-                left: (1.sw / 2) - (0.15625.sw / 2),
-                top: shrinkToMaxExtentRatio < 0.05 ? (-0.15625.sw * 0.6) : -0.15625.sw,
-                duration: const Duration(milliseconds: 250),
-                child: const AnimatedPullToShowHint(),
-              ),
+              if (showHints)
+                AnimatedPositioned(
+                  left: (1.sw / 2) - (0.15625.sw / 2),
+                  top: shrinkToMaxExtentRatio < 0.05 ? (-0.15625.sw * 0.6) : -0.15625.sw,
+                  duration: const Duration(milliseconds: 250),
+                  child: const AnimatedPullToShowHint(),
+                ),
               AnimatedPositioned(
                 duration: const Duration(milliseconds: 250),
                 bottom: shrinkToMaxExtentRatio < 0.25 ? 0 : SpacingFoundation.verticalSpacing2,
@@ -166,7 +168,9 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
                             itemCount: children.length,
                           ),
                         )
-                      : const AnimatedPullToShowHint(),
+                      : showHints
+                          ? const AnimatedPullToShowHint()
+                          : null,
                 ),
               ),
             ],
