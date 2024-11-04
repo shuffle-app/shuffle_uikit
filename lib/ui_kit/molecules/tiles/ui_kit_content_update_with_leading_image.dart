@@ -46,13 +46,14 @@ class UiKitContentUpdateWithLeadingImage extends UiKitContentUpdateWidget {
                       style: boldTextTheme?.caption3Medium,
                     ),
                     SpacingFoundation.horizontalSpace4,
-                    ImageWidget(
-                      iconData: iconData,
-                      color: colorScheme?.inverseSurface,
-                      height: 0.040625.sw,
-                      width: 0.040625.sw,
-                      fit: BoxFit.cover,
-                    ),
+                    if (iconData != null)
+                      ImageWidget(
+                        iconData: iconData,
+                        color: colorScheme?.inverseSurface,
+                        height: 0.040625.sw,
+                        width: 0.040625.sw,
+                        fit: BoxFit.cover,
+                      ),
                   ],
                 ),
                 if (subtitle != null)

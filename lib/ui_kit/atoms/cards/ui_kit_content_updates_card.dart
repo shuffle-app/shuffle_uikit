@@ -18,6 +18,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
   final int? fireReactionsCount;
   final int? sunglassesReactionsCount;
   final int? smileyReactionsCount;
+  final ValueChanged<String>? onReactionsTapped;
 
   bool get showEmptyReactionsState =>
       (heartEyesReactionsCount == 0 &&
@@ -47,11 +48,13 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     this.fireReactionsCount,
     this.sunglassesReactionsCount,
     this.smileyReactionsCount,
+    this.onReactionsTapped,
   }) : super(key: key);
 
   factory UiKitContentUpdatesCard.fromShuffle({
     required List<UiKitContentUpdateWidget> children,
     required String text,
+    ValueChanged<String>? onReactionsTapped,
     int? heartEyesReactionsCount,
     int? likeReactionsCount,
     int? fireReactionsCount,
@@ -72,6 +75,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
         fireReactionsCount: fireReactionsCount,
         sunglassesReactionsCount: sunglassesReactionsCount,
         smileyReactionsCount: smileyReactionsCount,
+        onReactionsTapped: onReactionsTapped,
         children: children,
       );
 
@@ -99,6 +103,9 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     final colorScheme = context.uiKitTheme?.colorScheme;
     final reactionTextColor = colorScheme?.bodyTypography;
     final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
+
+    bool isOverlayVisible = false;
+    OverlayEntry? overlayEntry;
 
     return ConstrainedBox(
       constraints: BoxConstraints(
@@ -146,42 +153,62 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                 }),
                 SpacingFoundation.verticalSpace8,
                 if (hasReactions)
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: showEmptyReactionsState
-                        ? [
-                            const ImageWidget(
-                              iconData: ShuffleUiKitIcons.thumbup,
-                              color: ColorsFoundation.mutedText,
-                            ),
-                          ]
-                        : [
-                            UiKitHeartEyesReaction(
-                              reactionsCount: heartEyesReactionsCount ?? 0,
-                              textColor: reactionTextColor,
-                            ),
-                            SpacingFoundation.horizontalSpace4,
-                            UiKitLikeReaction(
-                              reactionsCount: likeReactionsCount ?? 0,
-                              textColor: reactionTextColor,
-                            ),
-                            SpacingFoundation.horizontalSpace4,
-                            UiKitFireReaction(
-                              reactionsCount: fireReactionsCount ?? 0,
-                              textColor: reactionTextColor,
-                            ),
-                            SpacingFoundation.horizontalSpace4,
-                            UiKitSunglassesReaction(
-                              reactionsCount: sunglassesReactionsCount ?? 0,
-                              textColor: reactionTextColor,
-                            ),
-                            SpacingFoundation.horizontalSpace4,
-                            UiKitSmileyReaction(
-                              reactionsCount: smileyReactionsCount ?? 0,
-                              textColor: reactionTextColor,
-                            ),
-                          ],
+                  Builder(
+                    builder: (c) => TapRegion(
+                      behavior: HitTestBehavior.opaque,
+                      onTapInside: (value) {
+                        isOverlayVisible
+                            ? hideReactionOverlay(overlayEntry)
+                            : showReactionOverlay(
+                                c,
+                                overlayEntry,
+                                reactionTextColor,
+                                onReactionsTapped,
+                              );
+                        isOverlayVisible = !isOverlayVisible;
+                      },
+                      onTapOutside: (event) {
+                        isOverlayVisible = false;
+                        hideReactionOverlay(overlayEntry);
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: showEmptyReactionsState
+                            ? [
+                                const ImageWidget(
+                                  iconData: ShuffleUiKitIcons.thumbup,
+                                  color: ColorsFoundation.mutedText,
+                                ),
+                              ]
+                            : [
+                                UiKitHeartEyesReaction(
+                                  reactionsCount: heartEyesReactionsCount ?? 0,
+                                  textColor: reactionTextColor,
+                                ),
+                                SpacingFoundation.horizontalSpace4,
+                                UiKitLikeReaction(
+                                  reactionsCount: likeReactionsCount ?? 0,
+                                  textColor: reactionTextColor,
+                                ),
+                                SpacingFoundation.horizontalSpace4,
+                                UiKitFireReaction(
+                                  reactionsCount: fireReactionsCount ?? 0,
+                                  textColor: reactionTextColor,
+                                ),
+                                SpacingFoundation.horizontalSpace4,
+                                UiKitSunglassesReaction(
+                                  reactionsCount: sunglassesReactionsCount ?? 0,
+                                  textColor: reactionTextColor,
+                                ),
+                                SpacingFoundation.horizontalSpace4,
+                                UiKitSmileyReaction(
+                                  reactionsCount: smileyReactionsCount ?? 0,
+                                  textColor: reactionTextColor,
+                                ),
+                              ],
+                      ),
+                    ),
                   ),
               ],
             ).paddingAll(EdgeInsetsFoundation.all16),
