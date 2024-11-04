@@ -5,9 +5,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 String normalizedTi(TimeOfDay? time, {bool showDateName = true}) {
   if (time == null) return 'nn';
 
-  return '${leadingZeros(showDateName ? time.hourOfPeriod : time.hour)}:${leadingZeros(time.minute)}${showDateName
-      ? ' ${time.period.name}'
-      : ''}';
+  return '${leadingZeros(showDateName ? time.hourOfPeriod : time.hour)}:${leadingZeros(time.minute)}${showDateName ? ' ${time.period.name}' : ''}';
 }
 
 String profileStatsFormatter(int value) {
@@ -31,15 +29,9 @@ String leadingZeros(int number) {
 }
 
 String formatDateTimeDifferenceWithMonthName(DateTime date) {
-  final difference = DateTime
-      .now()
-      .difference(date)
-      .inDays;
+  final difference = DateTime.now().difference(date).inDays;
   if (difference == 0) {
-    final differenceInHours = DateTime
-        .now()
-        .difference(date)
-        .inHours;
+    final differenceInHours = DateTime.now().difference(date).inHours;
     return '${differenceInHours}h';
   } else {
     return DateFormat('MMMM dd').format(date);
@@ -62,20 +54,11 @@ String formatDateWithCustomPattern(String pattern, DateTime date, {String? local
 }
 
 String formatDifference(DateTime date) {
-  final difference = DateTime
-      .now()
-      .difference(date)
-      .inDays;
+  final difference = DateTime.now().difference(date).inDays;
   if (difference == 0) {
-    final differenceInHours = DateTime
-        .now()
-        .difference(date)
-        .inHours;
+    final differenceInHours = DateTime.now().difference(date).inHours;
     if (differenceInHours == 0) {
-      final differenceInMinutes = DateTime
-          .now()
-          .difference(date)
-          .inMinutes;
+      final differenceInMinutes = DateTime.now().difference(date).inMinutes;
       return S.current.MinutesAgo(differenceInMinutes);
     }
 
@@ -130,7 +113,7 @@ String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay?
     }
 
     return convDate;
-  } else if(!showDateFirst) {
+  } else if (!showDateFirst) {
     convDate += date != null ? '${convDate.isEmpty ? '' : ', '}${DateFormat('MMM dd').format(date)}' : '';
     if (dateTo != null && dateTo != date) {
       convDate += '${date != null ? ' - ' : convDate.isEmpty ? '' : ', '}${DateFormat('MMM dd, yyyy').format(dateTo)}';
@@ -138,4 +121,47 @@ String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay?
   }
 
   return convDate;
+}
+
+showTimeInfoDialog(BuildContext context, List<List<String>> times) {
+  final theme = context.uiKitTheme;
+  showGeneralDialog(
+      barrierColor: const Color(0xff2A2A2A),
+      transitionBuilder: (context, a1, a2, widget) {
+        return Transform.scale(
+          scale: a1.value,
+          child: Opacity(
+            opacity: a1.value,
+            child: widget,
+          ),
+        );
+      },
+      transitionDuration: const Duration(milliseconds: 200),
+      barrierDismissible: true,
+      barrierLabel: '',
+      context: context,
+      pageBuilder: (context, animation1, animation2) {
+        return Dialog(
+          insetPadding: EdgeInsets.all(EdgeInsetsFoundation.all16),
+          backgroundColor: Colors.transparent,
+          clipBehavior: Clip.antiAlias,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusFoundation.all24,
+          ),
+          child: CustomContentInfoDialog(
+            title: S.current.WorkHours,
+            children: times
+                .map((time) => Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: time
+                        .map((timeText) => Flexible(
+                                child: Text(
+                              timeText,
+                              style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
+                            )))
+                        .toList()))
+                .toList(),
+          ),
+        );
+      });
 }

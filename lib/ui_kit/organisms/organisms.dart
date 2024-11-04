@@ -97,6 +97,7 @@ export 'place/upcoming_event_place_action_card.dart';
 export 'popups/additional_action_notification_popup.dart';
 export 'popups/base_notification_popup.dart';
 export 'popups/compact_alert_pop_up.dart';
+export 'popups/custom_content_info_dialog.dart';
 export 'popups/complaint_pop_up.dart';
 export 'popups/donate_to_shuffle_alert.dart';
 export 'popups/geolocation_alert.dart';

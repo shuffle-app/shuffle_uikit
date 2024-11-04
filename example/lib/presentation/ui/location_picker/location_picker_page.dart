@@ -28,6 +28,7 @@ class _LocationPickerPageState extends State<LocationPickerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: UiKitLocationPicker(
+        isHuawei: false,
         onMapCreated: (controller) {},
         initialCameraPosition: const CameraPosition(
           target: LatLng(0, 0),
