@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:sliver_tools/sliver_tools.dart';
@@ -64,7 +65,10 @@ class BlurredAppBarPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       controller: controller,
-      physics: physics ?? (Platform.isIOS ? const BouncingScrollPhysics() : const ClampingScrollPhysics()),
+      physics: physics ??
+          (kIsWeb
+              ? const BouncingScrollPhysics()
+              : (Platform.isIOS ? const BouncingScrollPhysics() : const ClampingScrollPhysics())),
       cacheExtent: 0.5.sh,
       keyboardDismissBehavior: keyboardDismissBehavior ?? ScrollViewKeyboardDismissBehavior.manual,
       slivers: [
