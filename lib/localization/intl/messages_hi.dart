@@ -304,6 +304,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ActivityType":
             MessageLookupByLibrary.simpleMessage("क्रिया के प्रकार"),
         "ActivityTypes": MessageLookupByLibrary.simpleMessage("गतिविधि प्रकार"),
+        "Add": MessageLookupByLibrary.simpleMessage("Add"),
         "AddCategory": MessageLookupByLibrary.simpleMessage("श्रेणी जोड़ें"),
         "AddFeedback":
             MessageLookupByLibrary.simpleMessage("प्रतिक्रिया जोड़ें"),

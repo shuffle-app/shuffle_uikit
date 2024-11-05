@@ -917,5 +917,6 @@
   "ShowTheBarcodeCheckout": "Show the barcode at the checkout",
   "LongTapCardEdit": "Long tap card to edit",
   "YouCannotCreateOfferDate": "You cannot create an offer because the event or venue has already been completed",
-  "HiHereTicket": "Hi, here's a ticket"
+  "HiHereTicket": "Hi, here's a ticket",
+  "Add": "Add"
 }

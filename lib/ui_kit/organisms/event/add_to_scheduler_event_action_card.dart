@@ -10,7 +10,5 @@ class AddToSchedulerEventActionCard extends BasePlaceActionCard {
     super.iconAsset,
     required super.action,
     super.group,
-  }) : super(
-          title: S.current.AddToScheduler,
-        );
+  }) : super(title: S.current.AddToScheduler);
 }

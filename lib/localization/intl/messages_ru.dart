@@ -306,6 +306,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ActivityType": MessageLookupByLibrary.simpleMessage("Тип активности"),
         "ActivityTypes":
             MessageLookupByLibrary.simpleMessage("Типы активности"),
+        "Add": MessageLookupByLibrary.simpleMessage("Добавить"),
         "AddCategory":
             MessageLookupByLibrary.simpleMessage("Добавить категорию"),
         "AddFeedback": MessageLookupByLibrary.simpleMessage("Поставить оценку"),
@@ -338,7 +339,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddToPersonalTop":
             MessageLookupByLibrary.simpleMessage("Добавить в личный ТОП"),
         "AddToScheduler":
-            MessageLookupByLibrary.simpleMessage("Добавить планировщик"),
+            MessageLookupByLibrary.simpleMessage("Добавить в планы"),
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Добавиться в список"),
         "Address": MessageLookupByLibrary.simpleMessage("Адрес"),

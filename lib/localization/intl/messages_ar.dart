@@ -304,6 +304,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Activation": MessageLookupByLibrary.simpleMessage("Activation"),
         "ActivityType": MessageLookupByLibrary.simpleMessage("Activity type"),
         "ActivityTypes": MessageLookupByLibrary.simpleMessage("Activity types"),
+        "Add": MessageLookupByLibrary.simpleMessage("Add"),
         "AddCategory": MessageLookupByLibrary.simpleMessage("Add category"),
         "AddFeedback": MessageLookupByLibrary.simpleMessage("Add feedback"),
         "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(

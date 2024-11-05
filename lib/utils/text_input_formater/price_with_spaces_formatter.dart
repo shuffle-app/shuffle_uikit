@@ -3,10 +3,12 @@ import 'package:flutter/services.dart';
 class PriceWithSpacesFormatter extends TextInputFormatter {
   final bool allowDecimal;
   final int maxDecimalPlaces;
+  final String? currency;
 
   PriceWithSpacesFormatter({
     this.allowDecimal = true,
     this.maxDecimalPlaces = 2,
+    this.currency,
   });
 
   @override
@@ -19,7 +21,7 @@ class PriceWithSpacesFormatter extends TextInputFormatter {
     }
 
     if (newText.startsWith('0') && !newText.startsWith('0.') && !newText.startsWith('0,') && newText.length > 1) {
-      newText = newText.substring(1, 2);
+      newText = newText.substring(1);
     }
 
     if (allowDecimal) {
@@ -59,9 +61,17 @@ class PriceWithSpacesFormatter extends TextInputFormatter {
 
     formattedText = formattedIntegerPart + decimalPart;
 
-    return newValue.copyWith(
-      text: formattedText.replaceMultipleDotsAndCommas(),
-      selection: TextSelection.collapsed(offset: formattedText.length),
+    int newOffset = formattedText.length;
+
+    if (currency != null && currency!.isNotEmpty) {
+      if (!formattedText.endsWith(' ${currency}')) {
+        formattedText += ' ${currency}';
+        newOffset = formattedText.length - 4;
+      }
+    }
+    return TextEditingValue(
+      text: formattedText,
+      selection: TextSelection.collapsed(offset: newOffset),
     );
   }
 
