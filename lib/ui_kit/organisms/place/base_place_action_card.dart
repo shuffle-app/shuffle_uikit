@@ -20,12 +20,14 @@ class BasePlaceActionCard extends StatelessWidget {
     this.iconAsset,
     this.rasterIconAsset,
     required this.action,
-    this.group, this.buttonTitle,
+    this.group,
+    this.buttonTitle,
   });
 
   @override
   Widget build(BuildContext context) {
-    final titleStyle = context.uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900);
+    final titleStyle =
+        context.uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: ColorsFoundation.darkNeutral900);
     final valueStyle = context.uiKitTheme?.boldTextTheme.body;
 
     /// [matrixValues] взято из Figma
@@ -53,19 +55,22 @@ class BasePlaceActionCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text(
+              AutoSizeText(
                 title,
                 style: titleStyle,
                 textAlign: TextAlign.left,
+                maxLines: 2,
+                group: group,
               ),
-              Text(
+              AutoSizeText(
                 value,
                 style: valueStyle,
                 textAlign: TextAlign.left,
+                group: group,
               ),
               SpacingFoundation.verticalSpace8,
               SmallOrdinaryButton(
-                text:buttonTitle?? S.of(context).SeeMore,
+                text: buttonTitle ?? S.of(context).SeeMore,
                 onPressed: action,
                 group: group,
               ),
