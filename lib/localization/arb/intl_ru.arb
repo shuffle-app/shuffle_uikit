@@ -896,7 +896,7 @@
   "PlzEnterName": "Плз, введи свое имя & никнейм",
   "OpenedUpcomingEvents": "Открытие блока \"Предстоящие события\"",
   "YouProgressed": "Вы продвинулись!",
-  "AddToScheduler": "Добавить планировщик",
+  "AddToScheduler": "Добавить в планы",
   "Soon": "Скоро", 
   "FreeNowXLater": "Сейчас бесплатно, позже {count}$",
   "CodeScanner": "Сканер кода",
@@ -917,6 +917,7 @@
   "ShowTheBarcodeCheckout": "Покажите штрих-код на кассе",
   "LongTapCardEdit": "Чтобы отредактировать зажмите карточку",
   "YouCannotCreateOfferDate": "Вы не можете создать оффер, так как ивент или место уже завершено",
-  "HiHereTicket": "Привет, держи билет"
+  "HiHereTicket": "Привет, держи билет",
+  "Add": "Добавить"
 }
 
