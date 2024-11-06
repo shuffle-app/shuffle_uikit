@@ -918,6 +918,9 @@
   "LongTapCardEdit": "Long tap card to edit",
   "YouCannotCreateOfferDate": "You cannot create an offer because the event or venue has already been completed",
   "HiHereTicket": "Hi, here's a ticket",
-  "Add": "Add"
+  "Add": "Add",
+  "IfPlaceAlreadyExistsIn": "If a place already exists in",
+  "JustConfirmIt": "just confirm it",
+  "LimitMustBeGreaterThanZero": "The limit must be greater than zero"
 
 }

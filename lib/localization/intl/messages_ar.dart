@@ -735,6 +735,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Icon": MessageLookupByLibrary.simpleMessage("Icon"),
         "Icons": MessageLookupByLibrary.simpleMessage("Icons"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("Ideal route"),
+        "IfPlaceAlreadyExistsIn": MessageLookupByLibrary.simpleMessage(
+            "If a place already exists in"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Incorrect login or password"),
         "Influencer": MessageLookupByLibrary.simpleMessage("Influencer"),
@@ -781,6 +783,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("Is recurrent"),
         "Islam": MessageLookupByLibrary.simpleMessage("Islam"),
         "Judaism": MessageLookupByLibrary.simpleMessage("Judaism"),
+        "JustConfirmIt":
+            MessageLookupByLibrary.simpleMessage("just confirm it"),
         "Latest": MessageLookupByLibrary.simpleMessage("Latest"),
         "Launched": MessageLookupByLibrary.simpleMessage("Launched"),
         "LeaveFeedback": MessageLookupByLibrary.simpleMessage("Leave feedback"),
@@ -791,6 +795,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Limit less than sum of limits for subs"),
         "LimitLessTotalLimit": MessageLookupByLibrary.simpleMessage(
             "Limit for one must be less than total limit"),
+        "LimitMustBeGreaterThanZero": MessageLookupByLibrary.simpleMessage(
+            "The limit must be greater than zero"),
         "Loading": MessageLookupByLibrary.simpleMessage("Loading..."),
         "Location": MessageLookupByLibrary.simpleMessage("Location"),
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
