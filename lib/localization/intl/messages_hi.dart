@@ -739,6 +739,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Icon": MessageLookupByLibrary.simpleMessage("आइकन"),
         "Icons": MessageLookupByLibrary.simpleMessage("Icons"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("आदर्श मार्ग"),
+        "IfPlaceAlreadyExistsIn": MessageLookupByLibrary.simpleMessage(
+            "If a place already exists in"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("गलत लॉगिन या पासवर्ड"),
         "Influencer": MessageLookupByLibrary.simpleMessage("Influencer"),
@@ -787,6 +789,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("आवर्तक है"),
         "Islam": MessageLookupByLibrary.simpleMessage("इस्लाम"),
         "Judaism": MessageLookupByLibrary.simpleMessage("यहूदी धर्म"),
+        "JustConfirmIt":
+            MessageLookupByLibrary.simpleMessage("just confirm it"),
         "Latest": MessageLookupByLibrary.simpleMessage("नवीनतम"),
         "Launched": MessageLookupByLibrary.simpleMessage("लॉन्च"),
         "LeaveFeedback":
@@ -798,6 +802,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "सब्स के लिए सीमा कुल सीमा की जोड़ से कम होनी चाहिए"),
         "LimitLessTotalLimit": MessageLookupByLibrary.simpleMessage(
             "एक के लिए सीमा को कुल सीमा से कम होना चाहिए"),
+        "LimitMustBeGreaterThanZero": MessageLookupByLibrary.simpleMessage(
+            "The limit must be greater than zero"),
         "Loading": MessageLookupByLibrary.simpleMessage("लोड हो रहा है..."),
         "Location": MessageLookupByLibrary.simpleMessage("जगह"),
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(

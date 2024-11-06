@@ -9441,6 +9441,36 @@ class S {
       args: [],
     );
   }
+
+  /// `If a place already exists in`
+  String get IfPlaceAlreadyExistsIn {
+    return Intl.message(
+      'If a place already exists in',
+      name: 'IfPlaceAlreadyExistsIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `just confirm it`
+  String get JustConfirmIt {
+    return Intl.message(
+      'just confirm it',
+      name: 'JustConfirmIt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The limit must be greater than zero`
+  String get LimitMustBeGreaterThanZero {
+    return Intl.message(
+      'The limit must be greater than zero',
+      name: 'LimitMustBeGreaterThanZero',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

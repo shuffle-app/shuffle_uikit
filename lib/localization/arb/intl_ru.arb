@@ -918,6 +918,9 @@
   "LongTapCardEdit": "Чтобы отредактировать зажмите карточку",
   "YouCannotCreateOfferDate": "Вы не можете создать оффер, так как ивент или место уже завершено",
   "HiHereTicket": "Привет, держи билет",
-  "Add": "Добавить"
+  "Add": "Добавить",
+  "IfPlaceAlreadyExistsIn": "Если место уже существует в",
+  "JustConfirmIt": "просто подтверди это",
+  "LimitMustBeGreaterThanZero": "Лимит должен быть больше нуля"
 }
 

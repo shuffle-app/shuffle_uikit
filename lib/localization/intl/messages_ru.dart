@@ -749,6 +749,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Icon": MessageLookupByLibrary.simpleMessage("Иконка"),
         "Icons": MessageLookupByLibrary.simpleMessage("Иконки"),
         "IdealRoute": MessageLookupByLibrary.simpleMessage("Идеальный маршрут"),
+        "IfPlaceAlreadyExistsIn":
+            MessageLookupByLibrary.simpleMessage("Если место уже существует в"),
         "IncorrectLoginOrPassword":
             MessageLookupByLibrary.simpleMessage("Не тот логин или пароль"),
         "Influencer": MessageLookupByLibrary.simpleMessage("Инфлюенсер"),
@@ -797,6 +799,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("Повторяется"),
         "Islam": MessageLookupByLibrary.simpleMessage("Ислам"),
         "Judaism": MessageLookupByLibrary.simpleMessage("Иудаизм"),
+        "JustConfirmIt":
+            MessageLookupByLibrary.simpleMessage("просто подтверди это"),
         "Latest": MessageLookupByLibrary.simpleMessage("Свежее"),
         "Launched": MessageLookupByLibrary.simpleMessage("Запущен"),
         "LeaveFeedback": MessageLookupByLibrary.simpleMessage("Оставьте отзыв"),
@@ -807,6 +811,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Лимит меньше суммы лимитов у сабов"),
         "LimitLessTotalLimit": MessageLookupByLibrary.simpleMessage(
             "Этот лимит должен быть меньше общего лимита"),
+        "LimitMustBeGreaterThanZero": MessageLookupByLibrary.simpleMessage(
+            "Лимит должен быть больше нуля"),
         "Loading": MessageLookupByLibrary.simpleMessage("Загрузка..."),
         "Location": MessageLookupByLibrary.simpleMessage("Локация"),
         "LocationIsRequired": MessageLookupByLibrary.simpleMessage(
