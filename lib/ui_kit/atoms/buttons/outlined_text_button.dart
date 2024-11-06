@@ -40,7 +40,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
       clipBehavior: Clip.hardEdge,
       color: enabled ? Colors.white.withOpacity(0.01) : ColorsFoundation.darkNeutral300,
       shape: RoundedRectangleBorder(
-        borderRadius: borderRadius ?? (isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.all24),
+        borderRadius: borderRadius ?? (isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.max),
         side: !isGradientEnabled
             ? BorderSide(
                 color: enabled ? borderColor ?? theme!.colorScheme.inversePrimary : theme!.colorScheme.darkNeutral500,
@@ -50,11 +50,11 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
       ),
       child: InkWell(
         onTap: enabled && !(loading ?? false) ? onPressed : null,
-        borderRadius: isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.all24,
+        borderRadius: isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.max,
         child: Ink(
           decoration: BoxDecoration(
             color: backgroundColor,
-            borderRadius: isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.all24,
+            borderRadius: isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.max,
             border: isGradientEnabled
                 ? GradientBoxBorder(
                     gradient: GradientFoundation.attentionCard,
@@ -73,7 +73,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
                           ),
                         )
                       : textWidget.paddingSymmetric(
-                          vertical: SpacingFoundation.verticalSpacing8,
+                          vertical: SpacingFoundation.verticalSpacing16,
                         ),
                 ),
         ),
