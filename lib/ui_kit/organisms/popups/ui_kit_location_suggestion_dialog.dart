@@ -21,13 +21,7 @@ class UiKitLocationSuggestionDialog extends StatefulWidget {
 }
 
 class _UiKitLocationSuggestionDialogState extends State<UiKitLocationSuggestionDialog> {
-
-
-
-
   final TextEditingController controller = TextEditingController();
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -72,16 +66,22 @@ class _UiKitLocationSuggestionDialogState extends State<UiKitLocationSuggestionD
             customHintColor: ColorsFoundation.placeHolderTextColor,
             hintText: 'Burj Khalifa 127th floor, Dubai, UAE',
             customLabelColor: colorScheme?.inverseBodyTypography,
-            icon: ImageWidget(
-              iconData: ShuffleUiKitIcons.landmark,
-              color: colorScheme?.inverseHeadingTypography,
+            icon: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ImageWidget(
+                  iconData: ShuffleUiKitIcons.landmark,
+                  color: colorScheme?.inverseHeadingTypography,
+                  height: 15.h,
+                ),
+                SpacingFoundation.verticalSpace2,
+              ],
             ),
             onTap: () {
               widget.onLocationFieldTapped?.call().then((value) {
                 debugPrint('fsd with $value');
                 controller.text = value ?? '';
-                setState(() {
-                });
+                setState(() {});
                 widget.onLocationNameLoaded?.call(value);
               });
             },
