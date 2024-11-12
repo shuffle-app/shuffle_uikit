@@ -921,6 +921,10 @@
   "Add": "Добавить",
   "IfPlaceAlreadyExistsIn": "Если место уже существует в",
   "JustConfirmIt": "просто подтверди это",
-  "LimitMustBeGreaterThanZero": "Лимит должен быть больше нуля"
+  "LimitMustBeGreaterThanZero": "Лимит должен быть больше нуля",  
+  "StartTimeShouldBeEarlierThanEndTime" : "Начальное время должно быть раньше конечного",
+  "TheSelectedTimeCannotBeElapsed" : "Выбранное время не может быть прошедшим",
+  "ItNecessaryToChooseADay": "Необходимо выбрать день",
+  "APeriodOrPartOfPeriodOfTimeCannotBeInPast": "Промежуток или часть промежутка времени, не может находиться в прошлом"
 }
 
