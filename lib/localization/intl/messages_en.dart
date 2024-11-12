@@ -296,6 +296,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "APeriodOrPartOfPeriodOfTimeCannotBeInPast":
+            MessageLookupByLibrary.simpleMessage(
+                "A period or part of a period of time cannot be in the past"),
         "AboutUs": MessageLookupByLibrary.simpleMessage("about us"),
         "AcceptDonations": MessageLookupByLibrary.simpleMessage(
             "Accept donations or help others realize their dreams"),
@@ -782,6 +785,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "InvitesYouTo": MessageLookupByLibrary.simpleMessage("Invites you to"),
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("Is recurrent"),
         "Islam": MessageLookupByLibrary.simpleMessage("Islam"),
+        "ItNecessaryToChooseADay": MessageLookupByLibrary.simpleMessage(
+            "It is necessary to choose a day"),
         "Judaism": MessageLookupByLibrary.simpleMessage("Judaism"),
         "JustConfirmIt":
             MessageLookupByLibrary.simpleMessage("just confirm it"),
@@ -1326,6 +1331,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "StacksShares": m79,
         "StartBookingCreation":
             MessageLookupByLibrary.simpleMessage("Start booking creation"),
+        "StartTimeShouldBeEarlierThanEndTime":
+            MessageLookupByLibrary.simpleMessage(
+                "The start time should be earlier than the end time"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Start to explore"),
         "Statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
@@ -1388,6 +1396,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "The more info we get, the better "),
         "TheOfferWillBeAddedToPersonal": MessageLookupByLibrary.simpleMessage(
             "The offer will be added to the personal profile of users who view your content or make a booking"),
+        "TheSelectedTimeCannotBeElapsed": MessageLookupByLibrary.simpleMessage(
+            "The selected time cannot be elapsed"),
         "ThenCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Then check this out"),
         "ThereNoEventsYet":

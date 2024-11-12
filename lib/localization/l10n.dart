@@ -9471,6 +9471,46 @@ class S {
       args: [],
     );
   }
+
+  /// `The start time should be earlier than the end time`
+  String get StartTimeShouldBeEarlierThanEndTime {
+    return Intl.message(
+      'The start time should be earlier than the end time',
+      name: 'StartTimeShouldBeEarlierThanEndTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The selected time cannot be elapsed`
+  String get TheSelectedTimeCannotBeElapsed {
+    return Intl.message(
+      'The selected time cannot be elapsed',
+      name: 'TheSelectedTimeCannotBeElapsed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It is necessary to choose a day`
+  String get ItNecessaryToChooseADay {
+    return Intl.message(
+      'It is necessary to choose a day',
+      name: 'ItNecessaryToChooseADay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A period or part of a period of time cannot be in the past`
+  String get APeriodOrPartOfPeriodOfTimeCannotBeInPast {
+    return Intl.message(
+      'A period or part of a period of time cannot be in the past',
+      name: 'APeriodOrPartOfPeriodOfTimeCannotBeInPast',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

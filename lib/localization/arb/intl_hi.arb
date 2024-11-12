@@ -919,5 +919,9 @@
   "Add": "Add",
   "IfPlaceAlreadyExistsIn": "If a place already exists in",
   "JustConfirmIt": "just confirm it",
-  "LimitMustBeGreaterThanZero": "The limit must be greater than zero"
+  "LimitMustBeGreaterThanZero": "The limit must be greater than zero",  
+  "StartTimeShouldBeEarlierThanEndTime" : "The start time should be earlier than the end time",
+  "TheSelectedTimeCannotBeElapsed" : "The selected time cannot be elapsed",
+  "ItNecessaryToChooseADay": "It is necessary to choose a day",
+  "APeriodOrPartOfPeriodOfTimeCannotBeInPast": "A period or part of a period of time cannot be in the past"
 }

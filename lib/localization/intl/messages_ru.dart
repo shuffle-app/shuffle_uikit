@@ -297,6 +297,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "APeriodOrPartOfPeriodOfTimeCannotBeInPast":
+            MessageLookupByLibrary.simpleMessage(
+                "Промежуток или часть промежутка времени, не может находиться в прошлом"),
         "AboutUs": MessageLookupByLibrary.simpleMessage("о нас"),
         "AcceptDonations": MessageLookupByLibrary.simpleMessage(
             "Принимать донаты или помогать другим воплотить мечты"),
@@ -798,6 +801,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Приглашает вас на"),
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("Повторяется"),
         "Islam": MessageLookupByLibrary.simpleMessage("Ислам"),
+        "ItNecessaryToChooseADay":
+            MessageLookupByLibrary.simpleMessage("Необходимо выбрать день"),
         "Judaism": MessageLookupByLibrary.simpleMessage("Иудаизм"),
         "JustConfirmIt":
             MessageLookupByLibrary.simpleMessage("просто подтверди это"),
@@ -1353,6 +1358,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "StacksShares": m79,
         "StartBookingCreation": MessageLookupByLibrary.simpleMessage(
             "Начать создание бронирования"),
+        "StartTimeShouldBeEarlierThanEndTime":
+            MessageLookupByLibrary.simpleMessage(
+                "Начальное время должно быть раньше конечного"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("Начать изучать"),
         "Statistics": MessageLookupByLibrary.simpleMessage("Статистика"),
@@ -1417,6 +1425,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Чем больше инфы мы получим, тем лучше"),
         "TheOfferWillBeAddedToPersonal": MessageLookupByLibrary.simpleMessage(
             "Предложение будет добавлено в личный профиль пользователей, которые просматривают ваш контент или совершают бронирование"),
+        "TheSelectedTimeCannotBeElapsed": MessageLookupByLibrary.simpleMessage(
+            "Выбранное время не может быть прошедшим"),
         "ThenCheckThisOut":
             MessageLookupByLibrary.simpleMessage("Тогда зацени это"),
         "ThereNoEventsYet":

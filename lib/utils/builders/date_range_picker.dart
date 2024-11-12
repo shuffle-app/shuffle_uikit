@@ -7,12 +7,13 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context,
     {DateTimeRange? initialDateRange, String? title}) async {
+  DateTimeRange range = initialDateRange ?? DateTimeRange(start: DateTime.now(), end: DateTime.now());
+
   final DateTimeRange? result = await showDialog(
     context: context,
     builder: (context) {
       final textTheme = context.uiKitTheme?.boldTextTheme;
       final lastDate = DateTime.now().add(const Duration(days: 365 * 3));
-      DateTimeRange range = initialDateRange ?? DateTimeRange(start: DateTime.now(), end: DateTime.now());
 
       return Dialog(
         backgroundColor: context.uiKitTheme?.cardColor,
@@ -71,14 +72,18 @@ Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context,
                   const Spacer(),
                   context.button(
                     data: BaseUiKitButtonData(
-                        text: S.of(context).Cancel, onPressed: () => context.pop<DateTimeRange?>(result: initialDateRange)),
+                      text: S.of(context).Cancel,
+                      onPressed: () => context.pop<DateTimeRange?>(result: initialDateRange),
+                    ),
                     isTextButton: true,
                   ),
                   SpacingFoundation.horizontalSpace4,
                   context.dialogButton(
                     dialogButtonType: DialogButtonType.buttonWhite,
                     data: BaseUiKitButtonData(
-                        text: S.of(context).Ok, onPressed: () => context.pop<DateTimeRange>(result: range)),
+                      text: S.of(context).Ok,
+                      onPressed: () => context.pop<DateTimeRange>(result: range),
+                    ),
                     small: true,
                   )
                 ],

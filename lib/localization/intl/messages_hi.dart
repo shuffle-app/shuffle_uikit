@@ -295,6 +295,9 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "APeriodOrPartOfPeriodOfTimeCannotBeInPast":
+            MessageLookupByLibrary.simpleMessage(
+                "A period or part of a period of time cannot be in the past"),
         "AboutUs": MessageLookupByLibrary.simpleMessage("हमारे बारे में"),
         "AcceptDonations": MessageLookupByLibrary.simpleMessage(
             "दान स्वीकार करें या दूसरों की सपने पूरे करने में मदद करें"),
@@ -788,6 +791,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("आपको आमंत्रित करता है"),
         "IsRecurrent": MessageLookupByLibrary.simpleMessage("आवर्तक है"),
         "Islam": MessageLookupByLibrary.simpleMessage("इस्लाम"),
+        "ItNecessaryToChooseADay": MessageLookupByLibrary.simpleMessage(
+            "It is necessary to choose a day"),
         "Judaism": MessageLookupByLibrary.simpleMessage("यहूदी धर्म"),
         "JustConfirmIt":
             MessageLookupByLibrary.simpleMessage("just confirm it"),
@@ -1334,6 +1339,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "StacksShares": m79,
         "StartBookingCreation":
             MessageLookupByLibrary.simpleMessage("बुकिंग निर्माण शुरू करें"),
+        "StartTimeShouldBeEarlierThanEndTime":
+            MessageLookupByLibrary.simpleMessage(
+                "The start time should be earlier than the end time"),
         "StartToExplore":
             MessageLookupByLibrary.simpleMessage("अन्वेषण करना प्रारंभ करें"),
         "Statistics": MessageLookupByLibrary.simpleMessage("आंकड़े"),
@@ -1398,6 +1406,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "हमें जितनी अधिक जानकारी मिलेगी, उतना बेहतर होगा"),
         "TheOfferWillBeAddedToPersonal": MessageLookupByLibrary.simpleMessage(
             "उन उपयोगकर्ताओं के व्यक्तिगत प्रोफ़ाइल में प्रस्ताव जो आपकी सामग्री देखते हैं या बुकिंग करते हैं"),
+        "TheSelectedTimeCannotBeElapsed": MessageLookupByLibrary.simpleMessage(
+            "The selected time cannot be elapsed"),
         "ThenCheckThisOut":
             MessageLookupByLibrary.simpleMessage("फिर इसे जांचें"),
         "ThereNoEventsYet":
