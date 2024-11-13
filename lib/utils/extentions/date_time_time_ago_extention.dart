@@ -9,6 +9,10 @@ extension DateTimeTimeAgoExtention on DateTime {
   bool get isAtSameDay {
     return DateTime.now().difference(this).inDays == 0 && DateTime.now().day == day;
   }
+
+  bool isAtSameDayAs(DateTime dateTime) {
+    return dateTime.difference(this).inDays == 0 && dateTime.day == day;
+  }
 }
 
 extension TimeIsNightExtention on TimeOfDay {
