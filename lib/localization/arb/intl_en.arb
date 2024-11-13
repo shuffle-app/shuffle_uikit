@@ -925,6 +925,9 @@
   "StartTimeShouldBeEarlierThanEndTime" : "The start time should be earlier than the end time",
   "TheSelectedTimeCannotBeElapsed" : "The selected time cannot be elapsed",
   "ItNecessaryToChooseADay": "It is necessary to choose a day",
-  "APeriodOrPartOfPeriodOfTimeCannotBeInPast": "A period or part of a period of time cannot be in the past"
+  "APeriodOrPartOfPeriodOfTimeCannotBeInPast": "A period or part of a period of time cannot be in the past",
+  "StatusXAvailable": "Status: {x} - Available",
+  "StatusXIsNotAvailable": "Status {x} - Access is restricted or the page is not found",
+  "ErrorFailedConnectToX": "Failed to connect to {x}"
 
 }

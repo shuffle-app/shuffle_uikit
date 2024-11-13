@@ -9511,6 +9511,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Status: {x} - Available`
+  String StatusXAvailable(Object x) {
+    return Intl.message(
+      'Status: $x - Available',
+      name: 'StatusXAvailable',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `Status {x} - Access is restricted or the page is not found`
+  String StatusXIsNotAvailable(Object x) {
+    return Intl.message(
+      'Status $x - Access is restricted or the page is not found',
+      name: 'StatusXIsNotAvailable',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `Failed to connect to {x}`
+  String ErrorFailedConnectToX(Object x) {
+    return Intl.message(
+      'Failed to connect to $x',
+      name: 'ErrorFailedConnectToX',
+      desc: '',
+      args: [x],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

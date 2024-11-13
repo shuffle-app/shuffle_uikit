@@ -925,6 +925,10 @@
   "StartTimeShouldBeEarlierThanEndTime" : "Начальное время должно быть раньше конечного",
   "TheSelectedTimeCannotBeElapsed" : "Выбранное время не может быть прошедшим",
   "ItNecessaryToChooseADay": "Необходимо выбрать день",
-  "APeriodOrPartOfPeriodOfTimeCannotBeInPast": "Промежуток или часть промежутка времени, не может находиться в прошлом"
+  "APeriodOrPartOfPeriodOfTimeCannotBeInPast": "Промежуток или часть промежутка времени, не может находиться в прошлом",
+  "StatusXAvailable": "Статус: {x} - Доступно",
+  "StatusXIsNotAvailable": "Статус {x} - Доступ ограничен или страница не найдена",
+  "ErrorFailedConnectToX": "Не удалось подключиться к {x}"
+ 
 }
 
