@@ -17,6 +17,7 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
   final TextEditingController _emojitextEditingController = TextEditingController();
   final TextEditingController _controller = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _urlController = TextEditingController();
 
   // final ScrollController _scrollController = ScrollController();
   final GlobalKey _gradientTextKey = GlobalKey();
@@ -128,6 +129,19 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
         ),
       ),
       children: [
+        SpacingFoundation.verticalSpace16,
+        UiKitInputFieldNoIcon(
+          controller: _urlController,
+          fillColor: Colors.green,
+          borderRadius: BorderRadiusFoundation.all12,
+          onSubmitted: (p0) {
+            LinkUrl.validateUrl(_urlController.text.trim()).then(
+              (str) {
+                debugPrint('validate result ${str}');
+              },
+            );
+          },
+        ),
         SpacingFoundation.verticalSpace16,
         UiKitContentUpdatesCard(
           authorSpeciality: 'Friendly neighbour',
