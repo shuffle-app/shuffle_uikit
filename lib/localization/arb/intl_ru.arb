@@ -901,7 +901,7 @@
   "FreeNowXLater": "Сейчас бесплатно, позже {count}$",
   "CodeScanner": "Сканер кода",
   "OfferInfo": "Информация о предложении",
-  "Confirmed": "Подтвержденн",
+  "Confirmed": "Подтверждено",
   "ThereNoUsersWhoHaveBoughtOfferYet" : "Пока еще нет пользователей, которые купили это предложение",
   "AvailableSoon": "Скоро будет доступно",
   "BookingLimitError": "Достигнут лимит бронирования на одного человека",
@@ -928,7 +928,10 @@
   "APeriodOrPartOfPeriodOfTimeCannotBeInPast": "Промежуток или часть промежутка времени, не может находиться в прошлом",
   "StatusXAvailable": "Статус: {x} - Доступно",
   "StatusXIsNotAvailable": "Статус {x} - Доступ ограничен или страница не найдена",
-  "ErrorFailedConnectToX": "Не удалось подключиться к {x}"
- 
+  "ErrorFailedConnectToX": "Не удалось подключиться к {x}",
+  "TicketSuccessfullyActivated": "Билет успешно активирован",
+  "CouldNotFindThisTicket": "Не удалось найти этот билет",
+  "SelectTemplate": "Выберите шаблон"
+  
 }
 

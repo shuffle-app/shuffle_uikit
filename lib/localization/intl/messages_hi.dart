@@ -509,6 +509,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Control": MessageLookupByLibrary.simpleMessage("नियंत्रण"),
         "ConvenientClearAndUseful":
             MessageLookupByLibrary.simpleMessage("सुविधाजनक, स्पष्ट और उपयोगी"),
+        "CouldNotFindThisTicket":
+            MessageLookupByLibrary.simpleMessage("Couldn\'t find this ticket"),
         "CouldntFindInvite":
             MessageLookupByLibrary.simpleMessage("आमंत्रण नहीं मिल सका"),
         "CountReviews": m13,
@@ -1270,6 +1272,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectStartTime":
             MessageLookupByLibrary.simpleMessage("एक प्रारंभ समय चुनें"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("सब्स चुनें"),
+        "SelectTemplate":
+            MessageLookupByLibrary.simpleMessage("Select template"),
         "SelectTimeCorrespondingToContentCard":
             MessageLookupByLibrary.simpleMessage(
                 "सामग्री कार्ड के अनुसार समय चुनें"),
@@ -1439,6 +1443,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Ticket": MessageLookupByLibrary.simpleMessage("टिकट"),
         "TicketFrom": m84,
         "TicketPrice": MessageLookupByLibrary.simpleMessage("टिकट कीमत"),
+        "TicketSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
+            "The ticket has been successfully activated"),
         "Tickets": m85,
         "Time": MessageLookupByLibrary.simpleMessage("समय"),
         "TimeRangeError":

@@ -9541,6 +9541,36 @@ class S {
       args: [x],
     );
   }
+
+  /// `The ticket has been successfully activated`
+  String get TicketSuccessfullyActivated {
+    return Intl.message(
+      'The ticket has been successfully activated',
+      name: 'TicketSuccessfullyActivated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Couldn't find this ticket`
+  String get CouldNotFindThisTicket {
+    return Intl.message(
+      'Couldn\'t find this ticket',
+      name: 'CouldNotFindThisTicket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select template`
+  String get SelectTemplate {
+    return Intl.message(
+      'Select template',
+      name: 'SelectTemplate',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
