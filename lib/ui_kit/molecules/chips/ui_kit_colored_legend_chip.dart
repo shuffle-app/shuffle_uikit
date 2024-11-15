@@ -109,6 +109,7 @@ class _SelectedChip extends StatelessWidget {
                 ImageWidget(
                   link: iconPath,
                   iconData: icon,
+                  height: icon != null ? 14.w : null,
                   color: colorScheme?.inverseSurface,
                 ).paddingOnly(left: EdgeInsetsFoundation.horizontal2)
             ],
@@ -174,15 +175,11 @@ class _UnselectedChip extends StatelessWidget {
                     color: color ?? Colors.white,
                   ),
                 ),
-                if (iconPath != null)
+                if (iconPath != null || icon != null)
                   ImageWidget(
                     link: iconPath,
-                    color: color ?? context.uiKitTheme?.colorScheme.inverseSurface,
-                  ).paddingOnly(left: EdgeInsetsFoundation.horizontal2)
-                else if (icon != null)
-                  ImageWidget(
                     iconData: icon,
-                    height: 14.w,
+                    height: icon != null ? 14.w : null,
                     color: color ?? context.uiKitTheme?.colorScheme.inverseSurface,
                   ).paddingOnly(left: EdgeInsetsFoundation.horizontal2)
               ],
