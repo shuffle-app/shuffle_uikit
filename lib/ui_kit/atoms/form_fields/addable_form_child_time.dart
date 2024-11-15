@@ -45,7 +45,7 @@ class AddableFormChildTime<T> extends StatelessWidget {
               )
             else
               Text(
-                '${DateFormat('HH:mm').format((initialValue as DateTimeRange).start)} - ${DateFormat('HH:mm').format((initialValue as DateTimeRange).end)}',
+                (initialValue as TimeRange).formatted(),
                 style: textStyle,
               ),
           ],

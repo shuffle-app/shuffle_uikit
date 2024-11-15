@@ -498,7 +498,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Сжатие видео"),
         "CompressingVideoProgress": m10,
         "Confirm": MessageLookupByLibrary.simpleMessage("Подтвердить"),
-        "Confirmed": MessageLookupByLibrary.simpleMessage("Подтвержденн"),
+        "Confirmed": MessageLookupByLibrary.simpleMessage("Подтверждено"),
         "Congratulations": MessageLookupByLibrary.simpleMessage("Поздравляем"),
         "Connected": MessageLookupByLibrary.simpleMessage("Connected"),
         "Connects": m11,
@@ -520,6 +520,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Control": MessageLookupByLibrary.simpleMessage("Контроль"),
         "ConvenientClearAndUseful":
             MessageLookupByLibrary.simpleMessage("удобно, чётко и полезно"),
+        "CouldNotFindThisTicket":
+            MessageLookupByLibrary.simpleMessage("Не удалось найти этот билет"),
         "CouldntFindInvite": MessageLookupByLibrary.simpleMessage(
             "Не удалось найти приглашение"),
         "CountReviews": m13,
@@ -1285,6 +1287,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectStartTime":
             MessageLookupByLibrary.simpleMessage("Выберите время старта"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("Выберите сабы"),
+        "SelectTemplate":
+            MessageLookupByLibrary.simpleMessage("Выберите шаблон"),
         "SelectTimeCorrespondingToContentCard":
             MessageLookupByLibrary.simpleMessage(
                 "Выберите время соответствующее карточке контента"),
@@ -1458,6 +1462,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Ticket": MessageLookupByLibrary.simpleMessage("Билет"),
         "TicketFrom": m84,
         "TicketPrice": MessageLookupByLibrary.simpleMessage("Цена билета"),
+        "TicketSuccessfullyActivated":
+            MessageLookupByLibrary.simpleMessage("Билет успешно активирован"),
         "Tickets": m85,
         "Time": MessageLookupByLibrary.simpleMessage("Время"),
         "TimeRangeError": MessageLookupByLibrary.simpleMessage(

@@ -30,6 +30,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
         child: Ink(
           child: Row(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Transform.translate(
                   offset: Offset(0, icon is IconData ? -2.h : 0),
@@ -47,7 +48,8 @@ class UiKitTitledFilterChip extends StatelessWidget {
                 ),
               ),
             ],
-          ).paddingAll(EdgeInsetsFoundation.all16),
+          ).paddingSymmetric(
+              horizontal: SpacingFoundation.horizontalSpacing16, vertical: SpacingFoundation.verticalSpacing14),
         ),
       ),
     );

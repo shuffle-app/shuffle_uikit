@@ -25,49 +25,54 @@ class AppBarTitle extends StatelessWidget {
     textStyle = textStyle?.copyWith(color: theme?.colorScheme.inversePrimary);
 
     return Expanded(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-      if (expanded == false)
-        AutoSizeText(
-          title,
-          style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
-          textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
-          maxLines: 1,
-        )
-      else
-        Flexible(
-          child: Text(
-            title,
-            style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
-            textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
-            maxLines: 2,
-          ),
-        ),
-      if (onIWidgetInfoString != null) ...[
-        SpacingFoundation.horizontalSpace4,
-        Builder(
-          builder: (context) {
-            return GestureDetector(
-              onTap: () => showUiKitPopover(
-                context,
-                customMinHeight: 30.h,
-                showButton: false,
-                title: Text(
-                  onIWidgetInfoString!,
-                  style: theme?.regularTextTheme.body.copyWith(
-                    color: Colors.black87,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (expanded == false)
+            AutoSizeText(
+              title,
+              style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
+              textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
+              maxLines: 1,
+            )
+          else
+            Flexible(
+              child: Text(
+                title,
+                style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
+                textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
+                maxLines: 2,
+              ),
+            ),
+          if (onIWidgetInfoString != null) ...[
+            SpacingFoundation.horizontalSpace4,
+            Builder(
+              builder: (context) {
+                return GestureDetector(
+                  onTap: () => showUiKitPopover(
+                    context,
+                    customMinHeight: 30.h,
+                    showButton: false,
+                    title: Text(
+                      onIWidgetInfoString!,
+                      style: theme?.regularTextTheme.body.copyWith(
+                        color: Colors.black87,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              child: ImageWidget(
-                iconData: ShuffleUiKitIcons.info,
-                width: 16.w,
-                color: theme?.colorScheme.darkNeutral900,
-              ),
-            );
-          },
-        ),
-      ]
-    ]));
+                  child: ImageWidget(
+                    iconData: ShuffleUiKitIcons.info,
+                    width: 16.w,
+                    color: theme?.colorScheme.darkNeutral900,
+                  ),
+                );
+              },
+            ),
+          ]
+        ],
+      ),
+    );
   }
 }

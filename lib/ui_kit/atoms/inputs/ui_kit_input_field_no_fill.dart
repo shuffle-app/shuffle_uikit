@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitInputFieldNoFill extends StatefulWidget
-    implements BaseUiKitInputField {
+class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputField {
   const UiKitInputFieldNoFill({
     super.key,
     required this.controller,
@@ -95,26 +94,21 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
   Widget build(BuildContext context) {
     final uiKitTheme = context.uiKitTheme;
     final inputTheme = uiKitTheme?.noFillInputTheme;
-    final errorStyle = uiKitTheme?.regularTextTheme.caption2
-        .copyWith(color: ColorsFoundation.error);
+    final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
     final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(
         color: _key.currentState?.hasError ?? false
             ? ColorsFoundation.error
-            : widget.customInputTextColor ??
-                uiKitTheme.colorScheme.inversePrimary);
+            : widget.customInputTextColor ?? uiKitTheme.colorScheme.inversePrimary);
     TextStyle? labelStyle = uiKitTheme?.regularTextTheme.labelSmall;
     labelStyle = _key.currentState?.hasError ?? false
         ? labelStyle?.copyWith(color: ColorsFoundation.error)
         : labelStyle?.copyWith(
             color: widget.enabled
-                ? widget.customLabelColor ??
-                    uiKitTheme?.colorScheme.bodyTypography
+                ? widget.customLabelColor ?? uiKitTheme?.colorScheme.bodyTypography
                 : uiKitTheme?.colorScheme.darkNeutral900);
-    final hintStyle =
-        uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
+    final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
-          ? widget.customHintColor ??
-              uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
+          ? widget.customHintColor ?? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
           : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
 
@@ -146,16 +140,13 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         maxLength: widget.maxSymbols,
         buildCounter: widget.maxSymbols == null ? null : _buildCounter,
         decoration: InputDecoration(
-          focusedBorder: widget.customFocusedBorder ??
-              context.uiKitTheme?.noFillInputTheme.focusedBorder,
-          enabledBorder: widget.customEnabledBorder ??
-              context.uiKitTheme?.noFillInputTheme.enabledBorder,
+          focusedBorder: widget.customFocusedBorder ?? context.uiKitTheme?.noFillInputTheme.focusedBorder,
+          enabledBorder: widget.customEnabledBorder ?? context.uiKitTheme?.noFillInputTheme.enabledBorder,
           suffixIcon: widget.icon,
           prefixIcon: widget.prefixIcon,
           contentPadding: widget.contentPadding,
-          floatingLabelBehavior: FloatingLabelBehavior.always,
-          floatingLabelStyle:
-              WidgetStateTextStyle.resolveWith((states) => labelStyle!),
+          floatingLabelBehavior: FloatingLabelBehavior.auto,
+          floatingLabelStyle: WidgetStateTextStyle.resolveWith((states) => labelStyle!),
           floatingLabelAlignment: FloatingLabelAlignment.start,
           labelStyle: WidgetStateTextStyle.resolveWith((states) => labelStyle!),
           hintText: widget.hintText,
@@ -181,7 +172,6 @@ Widget _buildCounter(
   final boldTextTheme = context.uiKitTheme?.boldTextTheme;
   return Text(
     '$currentLength/$maxLength',
-    style: boldTextTheme?.caption2Medium
-        .copyWith(color: ColorsFoundation.mutedText),
+    style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
   );
 }

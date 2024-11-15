@@ -511,6 +511,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Control": MessageLookupByLibrary.simpleMessage("Control"),
         "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
             "сonvenient, clear and useful"),
+        "CouldNotFindThisTicket":
+            MessageLookupByLibrary.simpleMessage("Couldn\'t find this ticket"),
         "CouldntFindInvite":
             MessageLookupByLibrary.simpleMessage("Couldn\'t find invite"),
         "CountReviews": m13,
@@ -1260,6 +1262,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectStartTime":
             MessageLookupByLibrary.simpleMessage("Select a starting time"),
         "SelectSubs": MessageLookupByLibrary.simpleMessage("Select subs"),
+        "SelectTemplate":
+            MessageLookupByLibrary.simpleMessage("Select template"),
         "SelectTimeCorrespondingToContentCard":
             MessageLookupByLibrary.simpleMessage(
                 "Select the time corresponding to the content card"),
@@ -1429,6 +1433,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Ticket": MessageLookupByLibrary.simpleMessage("Ticket"),
         "TicketFrom": m84,
         "TicketPrice": MessageLookupByLibrary.simpleMessage("Ticket price"),
+        "TicketSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
+            "The ticket has been successfully activated"),
         "Tickets": m85,
         "Time": MessageLookupByLibrary.simpleMessage("Time"),
         "TimeRangeError": MessageLookupByLibrary.simpleMessage(
