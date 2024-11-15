@@ -77,6 +77,7 @@ class CustomAppBar extends PreferredSize {
                           onIWidgetInfoString: onIWidgetInfoString,
                           expanded: expandTitle,
                         ),
+                    if (showLeading && appBarTrailing == null) SpacingFoundation.horizontalSpace8,
                     if (appBarTrailing != null && !centerTitle) SpacingFoundation.horizontalSpace8,
                     if (appBarTrailing != null) appBarTrailing!,
                     if (appBarTrailing == null && centerTitle) SpacingFoundation.horizontalSpace24,
