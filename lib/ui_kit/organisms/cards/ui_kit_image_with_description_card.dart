@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -46,11 +47,15 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
                   link: imageUrl,
                 ),
               ),
-              SpacingFoundation.verticalSpace8,
-              Text(
-                title,
-                style: textTheme?.caption1Bold,
-              ),
+              SpacingFoundation.verticalSpace4,
+              SizedBox(
+                  height: 26.h,
+                  child: AutoSizeText(
+                    title,
+                    group: _autoSizeGroup,
+                    maxLines: 2,
+                    style: textTheme?.caption1Bold,
+                  )),
               SpacingFoundation.verticalSpace4,
               Row(
                 mainAxisSize: MainAxisSize.min,
@@ -92,3 +97,5 @@ class UiKitImageWithDescriptionCard extends StatelessWidget {
         ));
   }
 }
+
+final AutoSizeGroup _autoSizeGroup = AutoSizeGroup();
