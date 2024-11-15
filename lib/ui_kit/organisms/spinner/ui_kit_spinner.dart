@@ -384,4 +384,14 @@ extension ToString on DateTimeRange {
   String toRangeString() {
     return '${DateFormat('dd.MM.yyyy').format(start)} - ${DateFormat('dd.MM.yyyy').format(end)}';
   }
+
+  String toPrettyString() {
+    if(start.isAtSameDayAs(end)) {
+      return DateFormat('dd MMM yyyy').format(start);
+    }
+    if(start.year == end.year) {
+      return DateFormat('dd MMM').format(start) +' - '+ DateFormat('dd MMM yyyy').format(end);
+    }
+    return DateFormat('dd MMM yyyy').format(start) +' - '+ DateFormat('dd MMM yyyy').format(end);
+  }
 }

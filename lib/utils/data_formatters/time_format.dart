@@ -5,7 +5,9 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 String normalizedTi(TimeOfDay? time, {bool showDateName = true}) {
   if (time == null) return 'nn';
 
-  return '${leadingZeros(showDateName ? time.hourOfPeriod : time.hour)}:${leadingZeros(time.minute)}${showDateName ? ' ${time.period.name}' : ''}';
+  return '${leadingZeros(showDateName ? time.hourOfPeriod : time.hour)}:${leadingZeros(time.minute)}${showDateName
+      ? ' ${time.period.name}'
+      : ''}';
 }
 
 String profileStatsFormatter(int value) {
@@ -29,9 +31,15 @@ String leadingZeros(int number) {
 }
 
 String formatDateTimeDifferenceWithMonthName(DateTime date) {
-  final difference = DateTime.now().difference(date).inDays;
+  final difference = DateTime
+      .now()
+      .difference(date)
+      .inDays;
   if (difference == 0) {
-    final differenceInHours = DateTime.now().difference(date).inHours;
+    final differenceInHours = DateTime
+        .now()
+        .difference(date)
+        .inHours;
     return '${differenceInHours}h';
   } else {
     return DateFormat('MMMM dd').format(date);
@@ -54,11 +62,20 @@ String formatDateWithCustomPattern(String pattern, DateTime date, {String? local
 }
 
 String formatDifference(DateTime date) {
-  final difference = DateTime.now().difference(date).inDays;
+  final difference = DateTime
+      .now()
+      .difference(date)
+      .inDays;
   if (difference == 0) {
-    final differenceInHours = DateTime.now().difference(date).inHours;
+    final differenceInHours = DateTime
+        .now()
+        .difference(date)
+        .inHours;
     if (differenceInHours == 0) {
-      final differenceInMinutes = DateTime.now().difference(date).inMinutes;
+      final differenceInMinutes = DateTime
+          .now()
+          .difference(date)
+          .inMinutes;
       return S.current.MinutesAgo(differenceInMinutes);
     }
 
@@ -151,15 +168,25 @@ showTimeInfoDialog(BuildContext context, List<List<String>> times) {
           child: CustomContentInfoDialog(
             title: S.current.WorkHours,
             children: times
-                .map((time) => Row(
+                .map((time) =>
+                Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: time
-                        .map((timeText) => Flexible(
-                                child: Text(
-                              timeText,
+                    children: [ Flexible(
+                        child: Text(
+                          time.first,
+                          style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
+                        )),
+                      if(time.last != time.first)...[
+                        SpacingFoundation.horizontalSpace16,
+                        Flexible(
+                            child: Text(
+                              time.last,
+                              textAlign: TextAlign.end,
                               style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
-                            )))
-                        .toList()))
+                            )),
+                      ]
+                    ])
+            )
                 .toList(),
           ),
         );
