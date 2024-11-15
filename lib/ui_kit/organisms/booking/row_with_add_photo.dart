@@ -39,7 +39,7 @@ class RowWithAddPhoto extends StatelessWidget {
             ),
             child: ImageWidget(
               iconData: ShuffleUiKitIcons.info,
-              width: 20.w,
+              width: 16.w,
               color: theme?.colorScheme.darkNeutral900,
             ),
           ),
@@ -70,7 +70,7 @@ class RowWithAddPhoto extends StatelessWidget {
           ),
         ],
         const Spacer(),
-        context.outlinedButton(
+        context.smallOutlinedButton(
           data: BaseUiKitButtonData(
             onPressed: onAddPhoto,
             iconInfo: BaseUiKitButtonIconData(
