@@ -15,7 +15,7 @@ Future<T?> showUiKitPopover<T extends Object?>(
   return showPopover<T>(
     context: context,
     backgroundColor: context.uiKitTheme?.cardTheme.color ?? Colors.white,
-    transitionDuration: const Duration(milliseconds: 250),
+    transitionDuration: const Duration(milliseconds: 125),
     bodyBuilder: (context) => ConstrainedBox(
       constraints: BoxConstraints(
         maxWidth: 1.sw - SpacingFoundation.horizontalSpacing32,
