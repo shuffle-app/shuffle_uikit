@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -16,83 +17,87 @@ Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context,
       final lastDate = DateTime.now().add(const Duration(days: 365 * 3));
 
       return Dialog(
-        backgroundColor: context.uiKitTheme?.cardColor,
-        clipBehavior: Clip.hardEdge,
-        insetPadding: EdgeInsets.zero,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusFoundation.all24,
-        ),
-        child: StatefulBuilder(
-          builder: (context, setState) => Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SpacingFoundation.verticalSpace8,
-              Text(
-                title ?? S.of(context).SelectDateRange,
-                style: textTheme?.title2,
-              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
-              SpacingFoundation.verticalSpace8,
-              _CalendarDateRangePicker(
-                initialStartDate: initialDateRange?.start,
-                initialEndDate: initialDateRange?.end,
-                firstDate: DateTime(2020),
-                lastDate: lastDate,
-                onStartDateChanged: (DateTime? value) {
-                  if (value != null) {
-                    setState(() {
-                      range = DateTimeRange(start: value, end: value);
-                      // range = DateTimeRange(start: value, end: value.isAfter(range.end) ? value : range.end);
-                    });
-                  }
-                },
-                onEndDateChanged: (DateTime? value) {
-                  if (value != null) {
-                    setState(() {
-                      // range = DateTimeRange(end: value, start: range.start);
-                      if (range.start.isBefore(value)) {
-                        range = DateTimeRange(end: value, start: range.start);
-                      } else {
-                        range = DateTimeRange(end: value, start: value);
-                      }
-                    });
-                  }
-                },
-              ),
-              SpacingFoundation.horizontalSpace16,
-              Row(
-                children: [
-                  context.button(
-                    data: BaseUiKitButtonData(
-                      text: S.of(context).Reset,
-                      onPressed: () => context.pop<DateTimeRange?>(result: null),
-                    ),
-                    isTextButton: true,
-                  ),
-                  const Spacer(),
-                  context.button(
-                    data: BaseUiKitButtonData(
-                      text: S.of(context).Cancel,
-                      onPressed: () => context.pop<DateTimeRange?>(result: initialDateRange),
-                    ),
-                    isTextButton: true,
-                  ),
-                  SpacingFoundation.horizontalSpace4,
-                  context.dialogButton(
-                    dialogButtonType: DialogButtonType.buttonWhite,
-                    data: BaseUiKitButtonData(
-                      text: S.of(context).Ok,
-                      onPressed: () => context.pop<DateTimeRange>(result: range),
-                    ),
-                    small: true,
-                  )
-                ],
-              ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16),
-              SpacingFoundation.verticalSpace16,
-            ],
+          backgroundColor: context.uiKitTheme?.cardColor,
+          clipBehavior: Clip.hardEdge,
+          insetPadding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusFoundation.all24,
           ),
-        ),
-      ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16);
+          child: Container(
+            constraints: kIsWeb
+                ? BoxConstraints.loose(Size(300, 0.75.sh))
+                : null,
+            child: StatefulBuilder(
+              builder: (context, setState) => Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SpacingFoundation.verticalSpace8,
+                  Text(
+                    title ?? S.of(context).SelectDateRange,
+                    style: textTheme?.title2,
+                  ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+                  SpacingFoundation.verticalSpace8,
+                  _CalendarDateRangePicker(
+                    initialStartDate: initialDateRange?.start,
+                    initialEndDate: initialDateRange?.end,
+                    firstDate: DateTime(2020),
+                    lastDate: lastDate,
+                    onStartDateChanged: (DateTime? value) {
+                      if (value != null) {
+                        setState(() {
+                          range = DateTimeRange(start: value, end: value);
+                          // range = DateTimeRange(start: value, end: value.isAfter(range.end) ? value : range.end);
+                        });
+                      }
+                    },
+                    onEndDateChanged: (DateTime? value) {
+                      if (value != null) {
+                        setState(() {
+                          // range = DateTimeRange(end: value, start: range.start);
+                          if (range.start.isBefore(value)) {
+                            range = DateTimeRange(end: value, start: range.start);
+                          } else {
+                            range = DateTimeRange(end: value, start: value);
+                          }
+                        });
+                      }
+                    },
+                  ),
+                  SpacingFoundation.horizontalSpace16,
+                  Row(
+                    children: [
+                      context.button(
+                        data: BaseUiKitButtonData(
+                          text: S.of(context).Reset,
+                          onPressed: () => context.pop<DateTimeRange?>(result: null),
+                        ),
+                        isTextButton: true,
+                      ),
+                      const Spacer(),
+                      context.button(
+                        data: BaseUiKitButtonData(
+                          text: S.of(context).Cancel,
+                          onPressed: () => context.pop<DateTimeRange?>(result: initialDateRange),
+                        ),
+                        isTextButton: true,
+                      ),
+                      SpacingFoundation.horizontalSpace4,
+                      context.dialogButton(
+                        dialogButtonType: DialogButtonType.buttonWhite,
+                        data: BaseUiKitButtonData(
+                          text: S.of(context).Ok,
+                          onPressed: () => context.pop<DateTimeRange>(result: range),
+                        ),
+                        small: true,
+                      )
+                    ],
+                  ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16),
+                  SpacingFoundation.verticalSpace16,
+                ],
+              ),
+            ),
+          ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16));
     },
   );
 
@@ -255,9 +260,10 @@ class _CalendarDateRangePickerState extends State<_CalendarDateRangePicker> {
   Widget build(BuildContext context) {
     const Key sliverAfterKey = Key('sliverAfterKey');
 
-    return SizedBox(
-        height: SizesFoundation.standartCalendarPopupSize.height / 1.3,
-        width: SizesFoundation.standartCalendarPopupSize.width,
+    return ConstrainedBox(
+        constraints: kIsWeb
+            ? BoxConstraints.loose(SizesFoundation.webCalendarPopupSize)
+            : BoxConstraints.loose(SizesFoundation.standartCalendarPopupSize),
         child: Column(
           children: <Widget>[
             const _DayHeaders(),
@@ -509,7 +515,7 @@ class _DayHeaders extends StatelessWidget {
     labels.insert(0, Container());
     labels.add(Container());
 
-    return Container(
+    return ConstrainedBox(
       constraints: BoxConstraints(
         maxWidth: MediaQuery.orientationOf(context) == Orientation.landscape
             ? _maxCalendarWidthLandscape

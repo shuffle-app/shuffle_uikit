@@ -135,9 +135,9 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           fillColor: Colors.green,
           borderRadius: BorderRadiusFoundation.all12,
           onSubmitted: (p0) {
-            LinkUrl.validateUrl(_urlController.text.trim()).then(
+            UrlValidator.validateUrl(_urlController.text.trim()).then(
               (str) {
-                debugPrint('validate result ${str}');
+                debugPrint('validate result $str');
               },
             );
           },

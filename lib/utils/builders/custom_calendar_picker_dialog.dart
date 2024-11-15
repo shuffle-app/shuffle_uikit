@@ -155,7 +155,7 @@ class _CustomCalendarPickerDialogState extends State<_CustomCalendarPickerDialog
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ConstrainedBox(
       constraints: kIsWeb
           ? BoxConstraints.loose(SizesFoundation.webCalendarPopupSize)
           : BoxConstraints.loose(SizesFoundation.standartCalendarPopupSize),
