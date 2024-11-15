@@ -6,6 +6,7 @@ class UiKitColoredLegendChip extends StatelessWidget {
   final Color? color;
   final Gradient? gradient;
   final String? iconPath;
+  final IconData? icon;
   final VoidCallback? onTap;
   final bool selected;
 
@@ -16,9 +17,9 @@ class UiKitColoredLegendChip extends StatelessWidget {
     this.color,
     this.gradient,
     this.iconPath,
+    this.icon,
     this.onTap,
-  })  :
-        super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +38,7 @@ class UiKitColoredLegendChip extends StatelessWidget {
               gradient: gradient,
               iconPath: iconPath,
               onTap: onTap,
+              icon: icon,
             )
           : _UnselectedChip(
               text: text,
@@ -44,6 +46,7 @@ class UiKitColoredLegendChip extends StatelessWidget {
               gradient: gradient,
               iconPath: iconPath,
               onTap: onTap,
+              icon: icon,
             ),
     );
   }
@@ -55,6 +58,7 @@ class _SelectedChip extends StatelessWidget {
   final Gradient? gradient;
   final String? iconPath;
   final VoidCallback? onTap;
+  final IconData? icon;
 
   const _SelectedChip({
     Key? key,
@@ -63,6 +67,7 @@ class _SelectedChip extends StatelessWidget {
     this.gradient,
     this.iconPath,
     this.onTap,
+    this.icon,
   }) : super(key: key);
 
   @override
@@ -70,7 +75,6 @@ class _SelectedChip extends StatelessWidget {
     final theme = context.uiKitTheme;
     final regularTextTheme = theme?.regularTextTheme;
     final colorScheme = theme?.colorScheme;
-
     return Material(
       clipBehavior: Clip.hardEdge,
       color: gradient == null ? color : Colors.transparent,
@@ -101,11 +105,12 @@ class _SelectedChip extends StatelessWidget {
                 text,
                 style: regularTextTheme?.caption2,
               ),
-              if (iconPath != null)
+              if (iconPath != null || icon != null)
                 ImageWidget(
                   link: iconPath,
+                  iconData: icon,
                   color: colorScheme?.inverseSurface,
-                ).paddingOnly(left: EdgeInsetsFoundation.horizontal2),
+                ).paddingOnly(left: EdgeInsetsFoundation.horizontal2)
             ],
           ).paddingSymmetric(
             horizontal: EdgeInsetsFoundation.horizontal12,
@@ -122,6 +127,7 @@ class _UnselectedChip extends StatelessWidget {
   final Gradient? gradient;
   final String? iconPath;
   final VoidCallback? onTap;
+  final IconData? icon;
 
   const _UnselectedChip({
     Key? key,
@@ -130,6 +136,7 @@ class _UnselectedChip extends StatelessWidget {
     this.gradient,
     this.iconPath,
     this.onTap,
+    this.icon,
   }) : super(key: key);
 
   @override
@@ -171,7 +178,13 @@ class _UnselectedChip extends StatelessWidget {
                   ImageWidget(
                     link: iconPath,
                     color: color ?? context.uiKitTheme?.colorScheme.inverseSurface,
-                  ).paddingOnly(left: EdgeInsetsFoundation.horizontal2),
+                  ).paddingOnly(left: EdgeInsetsFoundation.horizontal2)
+                else if (icon != null)
+                  ImageWidget(
+                    iconData: icon,
+                    height: 14.w,
+                    color: color ?? context.uiKitTheme?.colorScheme.inverseSurface,
+                  ).paddingOnly(left: EdgeInsetsFoundation.horizontal2)
               ],
             ).paddingSymmetric(
               horizontal: EdgeInsetsFoundation.horizontal12,
