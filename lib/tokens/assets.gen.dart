@@ -1224,6 +1224,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/lifebuoy.svg
   SvgGenImage get lifebuoy => const SvgGenImage('assets/images/svg/lifebuoy.svg');
 
+  /// File path: assets/images/svg/location.svg
+  SvgGenImage get location => const SvgGenImage('assets/images/svg/location.svg');
+
   /// File path: assets/images/svg/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/images/svg/logo.svg');
 
@@ -1445,6 +1448,7 @@ class $AssetsImagesSvgGen {
         investment,
         karaoke,
         lifebuoy,
+        location,
         logo,
         memeberGradientStar,
         noPhoto,

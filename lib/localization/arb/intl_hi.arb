@@ -929,5 +929,8 @@
   "ErrorFailedConnectToX": "Failed to connect to {x}",
   "TicketSuccessfullyActivated": "The ticket has been successfully activated",
   "CouldNotFindThisTicket": "Couldn't find this ticket",
-  "SelectTemplate": "Select template"
+  "SelectTemplate": "Select template",
+  "SelectLocation": "Select location",
+  "CurrentLocation": "Current location: ",
+  "SelectOptionSchedule": "Select option"
 }

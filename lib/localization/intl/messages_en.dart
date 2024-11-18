@@ -545,6 +545,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CropVertical":
             MessageLookupByLibrary.simpleMessage("Crop to vertical"),
         "CuisineType": MessageLookupByLibrary.simpleMessage("Cuisine type"),
+        "CurrentLocation":
+            MessageLookupByLibrary.simpleMessage("Current location: "),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("Cutting video"),
         "Daily": MessageLookupByLibrary.simpleMessage("Daily "),
         "Date": MessageLookupByLibrary.simpleMessage("Date"),
@@ -1253,8 +1255,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectGender": MessageLookupByLibrary.simpleMessage("Select gender"),
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Please select language"),
+        "SelectLocation":
+            MessageLookupByLibrary.simpleMessage("Select location"),
         "SelectMindsetInvitation": m74,
         "SelectOption": MessageLookupByLibrary.simpleMessage("Select option"),
+        "SelectOptionSchedule":
+            MessageLookupByLibrary.simpleMessage("Select option"),
         "SelectPeriodOfValid":
             MessageLookupByLibrary.simpleMessage("Select period of valid"),
         "SelectPriceAndCurrency":

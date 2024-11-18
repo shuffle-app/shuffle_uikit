@@ -931,7 +931,9 @@
   "ErrorFailedConnectToX": "Не удалось подключиться к {x}",
   "TicketSuccessfullyActivated": "Билет успешно активирован",
   "CouldNotFindThisTicket": "Не удалось найти этот билет",
-  "SelectTemplate": "Выберите шаблон"
-  
+  "SelectTemplate": "Выберите шаблон",
+  "SelectLocation": "Выберите местоположение",
+  "CurrentLocation": "Текущее местоположение: ",
+  "SelectOptionSchedule": "Выберите опцию"
 }
 
