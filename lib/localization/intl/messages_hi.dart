@@ -543,6 +543,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CropVertical":
             MessageLookupByLibrary.simpleMessage("लंबवत करने के लिए"),
         "CuisineType": MessageLookupByLibrary.simpleMessage("Cuisine type"),
+        "CurrentLocation":
+            MessageLookupByLibrary.simpleMessage("Current location: "),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("वीडियो को काटना"),
         "Daily": MessageLookupByLibrary.simpleMessage("दैनिक"),
         "Date": MessageLookupByLibrary.simpleMessage("तारीख"),
@@ -1263,8 +1265,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("एक समाप्ति समय चुनें"),
         "SelectGender": MessageLookupByLibrary.simpleMessage("लिंग चुनें"),
         "SelectLanguage": MessageLookupByLibrary.simpleMessage("भाषा चुने"),
+        "SelectLocation":
+            MessageLookupByLibrary.simpleMessage("Select location"),
         "SelectMindsetInvitation": m74,
         "SelectOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),
+        "SelectOptionSchedule":
+            MessageLookupByLibrary.simpleMessage("Select option"),
         "SelectPeriodOfValid":
             MessageLookupByLibrary.simpleMessage("मान्य की अवधि का चयन करें"),
         "SelectPriceAndCurrency":

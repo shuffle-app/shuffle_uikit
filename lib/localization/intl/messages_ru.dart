@@ -555,6 +555,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CropVertical":
             MessageLookupByLibrary.simpleMessage("Обрезать для вертикали"),
         "CuisineType": MessageLookupByLibrary.simpleMessage("Тип кухни"),
+        "CurrentLocation":
+            MessageLookupByLibrary.simpleMessage("Текущее местоположение: "),
         "CuttingVideo": MessageLookupByLibrary.simpleMessage("Обрезка видео"),
         "Daily": MessageLookupByLibrary.simpleMessage("Ежедневно "),
         "Date": MessageLookupByLibrary.simpleMessage("Дата"),
@@ -1278,8 +1280,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "SelectGender": MessageLookupByLibrary.simpleMessage("Выберите пол"),
         "SelectLanguage":
             MessageLookupByLibrary.simpleMessage("Пожалуйста выбери язык"),
+        "SelectLocation":
+            MessageLookupByLibrary.simpleMessage("Выберите местоположение"),
         "SelectMindsetInvitation": m74,
         "SelectOption": MessageLookupByLibrary.simpleMessage("Выбирай"),
+        "SelectOptionSchedule":
+            MessageLookupByLibrary.simpleMessage("Выберите опцию"),
         "SelectPeriodOfValid":
             MessageLookupByLibrary.simpleMessage("Выберите период действия"),
         "SelectPriceAndCurrency":

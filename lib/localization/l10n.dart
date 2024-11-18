@@ -9571,6 +9571,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Select location`
+  String get SelectLocation {
+    return Intl.message(
+      'Select location',
+      name: 'SelectLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current location: `
+  String get CurrentLocation {
+    return Intl.message(
+      'Current location: ',
+      name: 'CurrentLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select option`
+  String get SelectOptionSchedule {
+    return Intl.message(
+      'Select option',
+      name: 'SelectOptionSchedule',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
