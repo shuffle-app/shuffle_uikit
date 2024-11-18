@@ -33,12 +33,9 @@ class TimeRange {
 
 List<TimeRange> listTimeDayToTimeRange(List<TimeOfDay> times) {
   var result = <TimeRange>[];
-  debugPrint('times.length is ${times.length}');
   for (int i = 0; i < times.length; i++) {
     if (i.isOdd) continue;
-    debugPrint('i is $i');
     result.add(TimeRange(start: times[i], end: i + 1 >= times.length ? null : times[i + 1]));
-    // }
   }
   return result;
 }
