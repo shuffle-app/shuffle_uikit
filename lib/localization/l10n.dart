@@ -9601,6 +9601,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Are you sure want to delete {x} forever?`
+  String DeleteXAlert(Object x) {
+    return Intl.message(
+      'Are you sure want to delete $x forever?',
+      name: 'DeleteXAlert',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `Are you sure want to archive {x}?`
+  String ArchiveXAlert(Object x) {
+    return Intl.message(
+      'Are you sure want to archive $x?',
+      name: 'ArchiveXAlert',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `You will send {x} to moderation`
+  String UnArchiveXAlert(Object x) {
+    return Intl.message(
+      'You will send $x to moderation',
+      name: 'UnArchiveXAlert',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `Unarchive`
+  String get UnArchive {
+    return Intl.message(
+      'Unarchive',
+      name: 'UnArchive',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Changing schedule type will wipe all data in this form!`
+  String get ChangingScheduleTypeAlert {
+    return Intl.message(
+      'Changing schedule type will wipe all data in this form!',
+      name: 'ChangingScheduleTypeAlert',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time Range`
+  String get TimeRange {
+    return Intl.message(
+      'Time Range',
+      name: 'TimeRange',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -934,6 +934,12 @@
   "SelectTemplate": "Выберите шаблон",
   "SelectLocation": "Выберите местоположение",
   "CurrentLocation": "Текущее местоположение: ",
-  "SelectOptionSchedule": "Выберите опцию"
+  "SelectOptionSchedule": "Выберите опцию",
+  "DeleteXAlert": "Вы уверены что хотите удалить {x} навсегда?",
+  "ArchiveXAlert": "Вы уверены что хотите заархивировать {x}?",
+  "UnArchiveXAlert": "Вы отправляете {x} на модерацию",
+  "UnArchive": "Вернуть из архива",
+  "ChangingScheduleTypeAlert": "Изменив тип расписания, занесенные данные очистятся!",
+  "TimeRange": "Промежуток времени"
 }
 

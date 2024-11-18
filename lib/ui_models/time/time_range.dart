@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class TimeRange {
   final TimeOfDay? start;
@@ -18,4 +19,26 @@ class TimeRange {
   String formatted() {
     return '${formatTime(start)} - ${formatTime(end)}';
   }
+
+  @override
+  String toString() {
+    return normalizedTi(start) + (end != null ? '-${normalizedTi(end)}' : '');
+  }
+
+  TimeRange copyWith({TimeOfDay? start, TimeOfDay? end}) => TimeRange(
+        start: start ?? this.start,
+        end: end ?? this.end,
+      );
+}
+
+List<TimeRange> listTimeDayToTimeRange(List<TimeOfDay> times) {
+  var result = <TimeRange>[];
+  debugPrint('times.length is ${times.length}');
+  for (int i = 0; i < times.length; i++) {
+    if (i.isOdd) continue;
+    debugPrint('i is $i');
+    result.add(TimeRange(start: times[i], end: i + 1 >= times.length ? null : times[i + 1]));
+    // }
+  }
+  return result;
 }

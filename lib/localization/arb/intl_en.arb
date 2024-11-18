@@ -934,6 +934,12 @@
   "SelectTemplate": "Select template",
   "SelectLocation": "Select location",
   "CurrentLocation": "Current location: ",
-  "SelectOptionSchedule": "Select option"
+  "SelectOptionSchedule": "Select option",
+  "DeleteXAlert": "Are you sure want to delete {x} forever?",
+  "ArchiveXAlert": "Are you sure want to archive {x}?",
+  "UnArchiveXAlert": "You will send {x} to moderation",
+  "UnArchive": "Unarchive",
+  "ChangingScheduleTypeAlert": "Changing schedule type will wipe all data in this form!",
+  "TimeRange": "Time Range"
 
 }
