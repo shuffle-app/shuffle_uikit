@@ -390,8 +390,8 @@ extension ToString on DateTimeRange {
       return DateFormat('dd MMM yyyy').format(start);
     }
     if(start.year == end.year) {
-      return DateFormat('dd MMM').format(start) +' - '+ DateFormat('dd MMM yyyy').format(end);
+      return DateFormat('dd MMM').format(start) +'\n-\n'+ DateFormat('dd MMM yyyy').format(end);
     }
-    return DateFormat('dd MMM yyyy').format(start) +' - '+ DateFormat('dd MMM yyyy').format(end);
+    return DateFormat('dd MMM yyyy').format(start) +'\n-\n'+ DateFormat('dd MMM yyyy').format(end);
   }
 }

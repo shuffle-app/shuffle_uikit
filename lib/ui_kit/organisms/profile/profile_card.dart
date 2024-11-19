@@ -14,6 +14,7 @@ class ProfileCard extends StatelessWidget {
   final List<String>? interests;
   final List<String>? matchingInterests;
   final List<UiKitStats>? profileStats;
+  final ProfileStats? proStats;
   final List<Widget>? profileWidgets;
   final Widget? badge;
   final ProfileCardType? profileType;
@@ -40,6 +41,7 @@ class ProfileCard extends StatelessWidget {
     this.followers,
     this.onFollow,
     this.onDonate,
+    this.proStats,
     this.onCustomDonate,
     this.showSupportShuffle = false,
     this.interests,
@@ -71,6 +73,7 @@ class ProfileCard extends StatelessWidget {
             profileType: profileType,
             tags: tags,
             profileStats: profileStats,
+            proStats: proStats,
             profileWidgets: profileWidgets,
             showSupportShuffle: showSupportShuffle,
             onDonate: onDonate,

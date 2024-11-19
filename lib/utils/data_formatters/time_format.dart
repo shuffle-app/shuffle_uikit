@@ -172,6 +172,7 @@ showTimeInfoDialog(BuildContext context, List<List<String>> times) {
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [ Flexible(
+                        flex: 2,
                         child: Text(
                           time.first,
                           style: theme?.regularTextTheme.body.copyWith(color: Colors.black),

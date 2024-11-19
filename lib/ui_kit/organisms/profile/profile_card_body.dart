@@ -14,6 +14,7 @@ class ProfileCardBody extends StatelessWidget {
   final bool? canFollow;
   final List<String>? matchingInterests;
   final ProfileCardType? profileType;
+  final ProfileStats? proStats;
   final List<UiKitTag>? tags;
   final List<Widget>? profileWidgets;
   final List<UiKitStats>? profileStats;
@@ -35,6 +36,7 @@ class ProfileCardBody extends StatelessWidget {
     this.nickname,
     this.profileWidgets,
     this.profileStats,
+    this.proStats,
     this.name,
     this.onShare,
     this.tags,
@@ -61,7 +63,8 @@ class ProfileCardBody extends StatelessWidget {
       color: theme?.colorScheme.surface1,
       child: Column(
         mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           /// Frame 359 in Figma
           Row(
@@ -219,7 +222,12 @@ class ProfileCardBody extends StatelessWidget {
                 ),
               ],
             ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
-          ],
+          ] else if(proStats!= null)
+            for(var stat in proStats!.getUiKitCards(context))
+              ...[
+                stat.paddingSymmetric(vertical: SpacingFoundation.verticalSpacing2,horizontal: SpacingFoundation.horizontalSpacing16)
+              ],
+
           if (profileWidgets != null) ...[
             SpacingFoundation.verticalSpace16,
             Row(

@@ -114,6 +114,7 @@ export 'profile/influencer_profile_chat_card.dart';
 export 'profile/influencer_public_profile_card_body.dart';
 export 'profile/influencer_respect_tab.dart';
 export 'profile/pro_public_profile_card_body.dart';
+export 'profile/data/profile_stats.dart';
 export 'profile/profile_card.dart';
 export 'profile/profile_card_animated.dart';
 export 'profile/profile_content_widget.dart';
