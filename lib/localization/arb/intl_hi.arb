@@ -938,5 +938,20 @@
   "UnArchiveXAlert": "You will send {x} to moderation",
   "UnArchive": "Unarchive",
   "ChangingScheduleTypeAlert": "Changing schedule type will wipe all data in this form!",
-  "TimeRange": "Time Range"
+  "TimeRange": "Time Range",
+  "TopographingLocation": "Topographing the location",
+  "SendingGeologistToPoint": "We are sending a geologist to the point",
+  "SendingGoogleCarForVerification": "We are sending a Google car for verification",
+  "DistributeInformation": "We distribute information",
+  "PutItInRotation": "We put it in rotation",
+  "PeopleStartingToTalkAboutYou": "People are starting to talk about you",
+  "LightingUpTimeTableau": "Lighting up the time tableau",
+  "PrintingCalendar": "Printing a calendar",
+  "SettingUpAlarmClocks": "Setting up alarm clocks",
+  "WeBringStillLifes": "We bring still lifes",
+  "FillTheAirWithFreshPaint": "Fill the air with fresh paint",
+  "UnloadingTheCanvases": "Unloading the canvases",
+  "InstallingCurtains": "Installing curtains",
+  "PuttingUpPoster": "We are putting up a poster",
+  "WeInstallAndWashShowcase": "We install and wash the showcase"
 }

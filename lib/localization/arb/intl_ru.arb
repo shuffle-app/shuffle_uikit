@@ -940,6 +940,22 @@
   "UnArchiveXAlert": "Вы отправляете {x} на модерацию",
   "UnArchive": "Вернуть из архива",
   "ChangingScheduleTypeAlert": "Изменив тип расписания, занесенные данные очистятся!",
-  "TimeRange": "Промежуток времени"
+  "TimeRange": "Промежуток времени",
+  "TopographingLocation": "Топографируем локацию",
+  "SendingGeologistToPoint": "Высылаем геолога на точку",
+  "SendingGoogleCarForVerification": "Посылаем Google-авто для проверки",
+  "DistributeInformation": "Распространяем информацию",
+  "PutItInRotation": "Закидываем в ротацию",
+  "PeopleStartingToTalkAboutYou": "Люди начинают говорить про вас",
+  "LightingUpTimeTableau": "Зажигаем табло времени",
+  "PrintingCalendar": "Печатаем календарик",
+  "SettingUpAlarmClocks": "Заводим будильники",
+  "WeBringStillLifes": "Подвозим натюрморты",
+  "FillTheAirWithFreshPaint": "Наполняем воздух свежей краской",
+  "UnloadingTheCanvases": "Выгружаем полотна",
+  "InstallingCurtains": "Устанавливаем занавески",
+  "PuttingUpPoster": "Вешаем плакат",
+  "WeInstallAndWashShowcase": "Устанавливаем и моем витрину"
+
 }
 

@@ -600,6 +600,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "DifferentNumberOfPoints":
             MessageLookupByLibrary.simpleMessage("Разное количество поинтов"),
         "Directions": MessageLookupByLibrary.simpleMessage("Направления"),
+        "DistributeInformation":
+            MessageLookupByLibrary.simpleMessage("Распространяем информацию"),
         "DonationHint": MessageLookupByLibrary.simpleMessage(
             "Ты можешь создавать один запрос в месяц и потратить деньги только на свою мечту "),
         "DonationRaised": m20,
@@ -687,6 +689,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Female": MessageLookupByLibrary.simpleMessage("Женщина"),
         "FileNotExistsMessage":
             MessageLookupByLibrary.simpleMessage("Файл не существует"),
+        "FillTheAirWithFreshPaint": MessageLookupByLibrary.simpleMessage(
+            "Наполняем воздух свежей краской"),
         "Filters": MessageLookupByLibrary.simpleMessage("Фильтры"),
         "FindSomeoneCardPoints": m32,
         "FindSomeoneCardSameInterests": m33,
@@ -795,6 +799,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("Монетизация"),
         "Info": MessageLookupByLibrary.simpleMessage("Информация"),
+        "InstallingCurtains":
+            MessageLookupByLibrary.simpleMessage("Устанавливаем занавески"),
         "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
             "Чтобы включить кит здоровья, перейдите в раздел «Конфиденциальность и безопасность» в настройках, затем перейдите в раздел «Здоровье» и выберите там «Shuffle app»."),
         "Interests": MessageLookupByLibrary.simpleMessage("Интересы"),
@@ -833,6 +839,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "LeaveFeedback": MessageLookupByLibrary.simpleMessage("Оставьте отзыв"),
         "Leisure": MessageLookupByLibrary.simpleMessage("Досуг"),
         "Less": MessageLookupByLibrary.simpleMessage("меньше"),
+        "LightingUpTimeTableau":
+            MessageLookupByLibrary.simpleMessage("Зажигаем табло времени"),
         "Limit": MessageLookupByLibrary.simpleMessage("Лимит"),
         "LimitLessSumLimitsSubs": MessageLookupByLibrary.simpleMessage(
             "Лимит меньше суммы лимитов у сабов"),
@@ -1025,6 +1033,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Оплатите бонусное предложение"),
         "PayForTheNotification":
             MessageLookupByLibrary.simpleMessage("Оплатите уведомление"),
+        "PeopleStartingToTalkAboutYou": MessageLookupByLibrary.simpleMessage(
+            "Люди начинают говорить про вас"),
         "Permissions": MessageLookupByLibrary.simpleMessage("Разрешения"),
         "Personal": MessageLookupByLibrary.simpleMessage("Личный"),
         "PersonalCredentials":
@@ -1130,6 +1140,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Свой собственный планировщик событий"),
         "Price": MessageLookupByLibrary.simpleMessage("Цена"),
         "PriceRange": MessageLookupByLibrary.simpleMessage("Диапазон цен"),
+        "PrintingCalendar":
+            MessageLookupByLibrary.simpleMessage("Печатаем календарик"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Конфиденциальность"),
         "PrivacyPolicy":
             MessageLookupByLibrary.simpleMessage("Политика конфиденциальности"),
@@ -1167,6 +1179,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Published": MessageLookupByLibrary.simpleMessage("Опубликовано"),
         "PushUpYourBusiness":
             MessageLookupByLibrary.simpleMessage("Прокачай свой бизнес"),
+        "PutItInRotation":
+            MessageLookupByLibrary.simpleMessage("Закидываем в ротацию"),
+        "PuttingUpPoster":
+            MessageLookupByLibrary.simpleMessage("Вешаем плакат"),
         "RangeEndValueIsLessThanBeginingOne":
             MessageLookupByLibrary.simpleMessage(
                 "Конечное значение диапазона меньше начального"),
@@ -1323,8 +1339,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Выбор лучших"),
         "Send": MessageLookupByLibrary.simpleMessage("Отправить"),
         "SendIt": MessageLookupByLibrary.simpleMessage("Отправить"),
+        "SendingGeologistToPoint":
+            MessageLookupByLibrary.simpleMessage("Высылаем геолога на точку"),
+        "SendingGoogleCarForVerification": MessageLookupByLibrary.simpleMessage(
+            "Посылаем Google-авто для проверки"),
         "Services": MessageLookupByLibrary.simpleMessage("Услуги"),
         "SetWorkHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
+        "SettingUpAlarmClocks":
+            MessageLookupByLibrary.simpleMessage("Заводим будильники"),
         "Settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "Share": MessageLookupByLibrary.simpleMessage("Поделиться"),
         "ShareCard": m78,
@@ -1506,6 +1528,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "TopEventsFor": m88,
         "TopNDonatorsReceiveXPoints": m89,
         "TopPlacesRatedBy": m90,
+        "TopographingLocation":
+            MessageLookupByLibrary.simpleMessage("Топографируем локацию"),
         "Total": MessageLookupByLibrary.simpleMessage("Сумма"),
         "TravelerMen": MessageLookupByLibrary.simpleMessage("Путник"),
         "TravelerWom": MessageLookupByLibrary.simpleMessage("Путница"),
@@ -1530,6 +1554,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Неизвестное кольцо"),
         "UnknownRingDescription": MessageLookupByLibrary.simpleMessage(
             "Странное кольцо. Не знаем откуда оно здесь…"),
+        "UnloadingTheCanvases":
+            MessageLookupByLibrary.simpleMessage("Выгружаем полотна"),
         "Unread": MessageLookupByLibrary.simpleMessage("Новое"),
         "UnsubscribeFromProfile":
             MessageLookupByLibrary.simpleMessage("Отписаться"),
@@ -1595,10 +1621,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "Visitors": MessageLookupByLibrary.simpleMessage("Визиты"),
         "Voice": MessageLookupByLibrary.simpleMessage("Аудиосообщения"),
         "Voices": MessageLookupByLibrary.simpleMessage("Голосовые записи"),
+        "WeBringStillLifes":
+            MessageLookupByLibrary.simpleMessage("Подвозим натюрморты"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(
             "Мы не спамим уведомлениями и рекламой. Только то, что важно для вас и соответствуют вашим предпочтениям."),
         "WeHavePlacesJustForYou": MessageLookupByLibrary.simpleMessage(
             "Есть решения именно для тебя"),
+        "WeInstallAndWashShowcase": MessageLookupByLibrary.simpleMessage(
+            "Устанавливаем и моем витрину"),
         "WeWillLetKnowResults": MessageLookupByLibrary.simpleMessage(
             "Мы оповестим вас о результатах"),
         "Weather": MessageLookupByLibrary.simpleMessage("Погода"),

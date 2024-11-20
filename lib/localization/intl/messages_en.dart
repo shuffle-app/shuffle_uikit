@@ -589,6 +589,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "DifferentNumberOfPoints":
             MessageLookupByLibrary.simpleMessage("Different number of points"),
         "Directions": MessageLookupByLibrary.simpleMessage("Directions"),
+        "DistributeInformation":
+            MessageLookupByLibrary.simpleMessage("We distribute information"),
         "DonationHint": MessageLookupByLibrary.simpleMessage(
             "You can create one request per month and spend money only on your dream"),
         "DonationRaised": m20,
@@ -674,6 +676,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Female": MessageLookupByLibrary.simpleMessage("Female"),
         "FileNotExistsMessage":
             MessageLookupByLibrary.simpleMessage("File does not exist"),
+        "FillTheAirWithFreshPaint": MessageLookupByLibrary.simpleMessage(
+            "Fill the air with fresh paint"),
         "Filters": MessageLookupByLibrary.simpleMessage("Filters"),
         "FindSomeoneCardPoints": m32,
         "FindSomeoneCardSameInterests": m33,
@@ -781,6 +785,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("Monetization"),
         "Info": MessageLookupByLibrary.simpleMessage("Info"),
+        "InstallingCurtains":
+            MessageLookupByLibrary.simpleMessage("Installing curtains"),
         "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
             "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there"),
         "Interests": MessageLookupByLibrary.simpleMessage("Interests"),
@@ -817,6 +823,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "LeaveFeedback": MessageLookupByLibrary.simpleMessage("Leave feedback"),
         "Leisure": MessageLookupByLibrary.simpleMessage("Leisure"),
         "Less": MessageLookupByLibrary.simpleMessage("less"),
+        "LightingUpTimeTableau": MessageLookupByLibrary.simpleMessage(
+            "Lighting up the time tableau"),
         "Limit": MessageLookupByLibrary.simpleMessage("Limit"),
         "LimitLessSumLimitsSubs": MessageLookupByLibrary.simpleMessage(
             "Limit less than sum of limits for subs"),
@@ -1005,6 +1013,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Pay for the bonus offer"),
         "PayForTheNotification":
             MessageLookupByLibrary.simpleMessage("Pay for the notification"),
+        "PeopleStartingToTalkAboutYou": MessageLookupByLibrary.simpleMessage(
+            "People are starting to talk about you"),
         "Permissions": MessageLookupByLibrary.simpleMessage("Permissions"),
         "Personal": MessageLookupByLibrary.simpleMessage("Personal"),
         "PersonalCredentials":
@@ -1109,6 +1119,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Have your own event scheduler"),
         "Price": MessageLookupByLibrary.simpleMessage("Price"),
         "PriceRange": MessageLookupByLibrary.simpleMessage("Price range"),
+        "PrintingCalendar":
+            MessageLookupByLibrary.simpleMessage("Printing a calendar"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Privacy"),
         "PrivacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
         "Pro": MessageLookupByLibrary.simpleMessage("Pro"),
@@ -1145,6 +1157,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Published": MessageLookupByLibrary.simpleMessage("Published"),
         "PushUpYourBusiness":
             MessageLookupByLibrary.simpleMessage("Push up your business"),
+        "PutItInRotation":
+            MessageLookupByLibrary.simpleMessage("We put it in rotation"),
+        "PuttingUpPoster":
+            MessageLookupByLibrary.simpleMessage("We are putting up a poster"),
         "RangeEndValueIsLessThanBeginingOne":
             MessageLookupByLibrary.simpleMessage(
                 "Range end value is less than begining one"),
@@ -1298,9 +1314,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Selection of the best"),
         "Send": MessageLookupByLibrary.simpleMessage("Send"),
         "SendIt": MessageLookupByLibrary.simpleMessage("Send it"),
+        "SendingGeologistToPoint": MessageLookupByLibrary.simpleMessage(
+            "We are sending a geologist to the point"),
+        "SendingGoogleCarForVerification": MessageLookupByLibrary.simpleMessage(
+            "We are sending a Google car for verification"),
         "Services": MessageLookupByLibrary.simpleMessage("Services"),
         "SetWorkHours":
             MessageLookupByLibrary.simpleMessage("Set work schedule"),
+        "SettingUpAlarmClocks":
+            MessageLookupByLibrary.simpleMessage("Setting up alarm clocks"),
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "Share": MessageLookupByLibrary.simpleMessage("Share"),
         "ShareCard": m78,
@@ -1477,6 +1499,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "TopEventsFor": m88,
         "TopNDonatorsReceiveXPoints": m89,
         "TopPlacesRatedBy": m90,
+        "TopographingLocation":
+            MessageLookupByLibrary.simpleMessage("Topographing the location"),
         "Total": MessageLookupByLibrary.simpleMessage("Total"),
         "TravelerMen": MessageLookupByLibrary.simpleMessage("Traveler"),
         "TravelerWom": MessageLookupByLibrary.simpleMessage("Traveler"),
@@ -1501,6 +1525,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "UnknownRing": MessageLookupByLibrary.simpleMessage("Unknown Ring"),
         "UnknownRingDescription": MessageLookupByLibrary.simpleMessage(
             "Strange ring. We don\'t know why it is here..."),
+        "UnloadingTheCanvases":
+            MessageLookupByLibrary.simpleMessage("Unloading the canvases"),
         "Unread": MessageLookupByLibrary.simpleMessage("Unread"),
         "UnsubscribeFromProfile":
             MessageLookupByLibrary.simpleMessage("Unfollow"),
@@ -1564,10 +1590,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "Visitors": MessageLookupByLibrary.simpleMessage("Visitors"),
         "Voice": MessageLookupByLibrary.simpleMessage("Voice"),
         "Voices": MessageLookupByLibrary.simpleMessage("Voices"),
+        "WeBringStillLifes":
+            MessageLookupByLibrary.simpleMessage("We bring still lifes"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(
             "We do not spam all kinds of notifications and advertisements. Only those notifications that may be important to you and match your preferences"),
         "WeHavePlacesJustForYou": MessageLookupByLibrary.simpleMessage(
             "We have solution just for you"),
+        "WeInstallAndWashShowcase": MessageLookupByLibrary.simpleMessage(
+            "We install and wash the showcase"),
         "WeWillLetKnowResults": MessageLookupByLibrary.simpleMessage(
             "We will let you know the results"),
         "Weather": MessageLookupByLibrary.simpleMessage("Weather"),
