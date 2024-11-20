@@ -587,6 +587,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "DifferentNumberOfPoints":
             MessageLookupByLibrary.simpleMessage("अलग संख्या के अंक"),
         "Directions": MessageLookupByLibrary.simpleMessage("दिशा-निर्देश"),
+        "DistributeInformation":
+            MessageLookupByLibrary.simpleMessage("We distribute information"),
         "DonationHint": MessageLookupByLibrary.simpleMessage(
             "आप प्रति महीने एक अनुरोध बना सकते हैं और अपने सपने पर ही पैसा खर्च कर सकते हैं"),
         "DonationRaised": m20,
@@ -674,6 +676,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Female": MessageLookupByLibrary.simpleMessage("महिला"),
         "FileNotExistsMessage":
             MessageLookupByLibrary.simpleMessage("फ़ाइल मौजूद नहीं है"),
+        "FillTheAirWithFreshPaint": MessageLookupByLibrary.simpleMessage(
+            "Fill the air with fresh paint"),
         "Filters": MessageLookupByLibrary.simpleMessage("फ़िल्टर"),
         "FindSomeoneCardPoints": m32,
         "FindSomeoneCardSameInterests": m33,
@@ -785,6 +789,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "InfluencerSubscriptionFeature6":
             MessageLookupByLibrary.simpleMessage("मुद्रीकरण"),
         "Info": MessageLookupByLibrary.simpleMessage("जानकारी"),
+        "InstallingCurtains":
+            MessageLookupByLibrary.simpleMessage("Installing curtains"),
         "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
             "To enable health kit please go to Privacy & Security section in Settings, then go to Health section and select Shuffle App there"),
         "Interests": MessageLookupByLibrary.simpleMessage("रुचियां"),
@@ -824,6 +830,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("प्रतिक्रिया दें"),
         "Leisure": MessageLookupByLibrary.simpleMessage("फुर्सत"),
         "Less": MessageLookupByLibrary.simpleMessage("कम"),
+        "LightingUpTimeTableau": MessageLookupByLibrary.simpleMessage(
+            "Lighting up the time tableau"),
         "Limit": MessageLookupByLibrary.simpleMessage("सीमा"),
         "LimitLessSumLimitsSubs": MessageLookupByLibrary.simpleMessage(
             "सब्स के लिए सीमा कुल सीमा की जोड़ से कम होनी चाहिए"),
@@ -1015,6 +1023,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "बोनस प्रस्ताव के लिए भुगतान करें"),
         "PayForTheNotification":
             MessageLookupByLibrary.simpleMessage("अधिसूचना के लिए भुगतान करें"),
+        "PeopleStartingToTalkAboutYou": MessageLookupByLibrary.simpleMessage(
+            "People are starting to talk about you"),
         "Permissions": MessageLookupByLibrary.simpleMessage("अनुमतियाँ"),
         "Personal": MessageLookupByLibrary.simpleMessage("व्यक्तिगत"),
         "PersonalCredentials":
@@ -1118,6 +1128,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Have your own event scheduler"),
         "Price": MessageLookupByLibrary.simpleMessage("मूल्य"),
         "PriceRange": MessageLookupByLibrary.simpleMessage("मूल्य सीमा"),
+        "PrintingCalendar":
+            MessageLookupByLibrary.simpleMessage("Printing a calendar"),
         "Privacy": MessageLookupByLibrary.simpleMessage("गोपनीयता"),
         "PrivacyPolicy": MessageLookupByLibrary.simpleMessage("गोपनीयता नीति"),
         "Pro": MessageLookupByLibrary.simpleMessage("प्रो"),
@@ -1154,6 +1166,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Published": MessageLookupByLibrary.simpleMessage("प्रकाशित"),
         "PushUpYourBusiness":
             MessageLookupByLibrary.simpleMessage("अपने व्यवसाय को पुश करें"),
+        "PutItInRotation":
+            MessageLookupByLibrary.simpleMessage("We put it in rotation"),
+        "PuttingUpPoster":
+            MessageLookupByLibrary.simpleMessage("We are putting up a poster"),
         "RangeEndValueIsLessThanBeginingOne":
             MessageLookupByLibrary.simpleMessage(
                 "सीमा समाप्ति मान प्रारंभिक मान से कम है"),
@@ -1308,9 +1324,15 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("सर्वश्रेष्ठ का चयन"),
         "Send": MessageLookupByLibrary.simpleMessage("भेजना"),
         "SendIt": MessageLookupByLibrary.simpleMessage("इसे भेजो"),
+        "SendingGeologistToPoint": MessageLookupByLibrary.simpleMessage(
+            "We are sending a geologist to the point"),
+        "SendingGoogleCarForVerification": MessageLookupByLibrary.simpleMessage(
+            "We are sending a Google car for verification"),
         "Services": MessageLookupByLibrary.simpleMessage("सेवाएं"),
         "SetWorkHours":
             MessageLookupByLibrary.simpleMessage("कार्य का समय निर्धारित करें"),
+        "SettingUpAlarmClocks":
+            MessageLookupByLibrary.simpleMessage("Setting up alarm clocks"),
         "Settings": MessageLookupByLibrary.simpleMessage("सेटिंग्स"),
         "Share": MessageLookupByLibrary.simpleMessage("शेयर"),
         "ShareCard": m78,
@@ -1489,6 +1511,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "TopEventsFor": m88,
         "TopNDonatorsReceiveXPoints": m89,
         "TopPlacesRatedBy": m90,
+        "TopographingLocation":
+            MessageLookupByLibrary.simpleMessage("Topographing the location"),
         "Total": MessageLookupByLibrary.simpleMessage("कुल"),
         "TravelerMen": MessageLookupByLibrary.simpleMessage("यात्री"),
         "TravelerWom": MessageLookupByLibrary.simpleMessage("यात्री"),
@@ -1514,6 +1538,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "UnknownRing": MessageLookupByLibrary.simpleMessage("अज्ञात रिंग"),
         "UnknownRingDescription": MessageLookupByLibrary.simpleMessage(
             "अजीब रिंग। हमें यह नहीं पता क्यों यह यहाँ है..."),
+        "UnloadingTheCanvases":
+            MessageLookupByLibrary.simpleMessage("Unloading the canvases"),
         "Unread": MessageLookupByLibrary.simpleMessage("अपठित"),
         "UnsubscribeFromProfile":
             MessageLookupByLibrary.simpleMessage("अनफॉलो"),
@@ -1577,10 +1603,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "Visitors": MessageLookupByLibrary.simpleMessage("आगंतुक"),
         "Voice": MessageLookupByLibrary.simpleMessage("आवाज़"),
         "Voices": MessageLookupByLibrary.simpleMessage("आवाज़ें"),
+        "WeBringStillLifes":
+            MessageLookupByLibrary.simpleMessage("We bring still lifes"),
         "WeDoNotSpamAllKindsOfNotifications": MessageLookupByLibrary.simpleMessage(
             "हम सभी प्रकार की सूचनाओं और विज्ञापनों को स्पैम नहीं करते हैं ।  केवल वे सूचनाएं जो आपके लिए महत्वपूर्ण हो सकती हैं और आपकी प्राथमिकताओं से मेल खाती हैं"),
         "WeHavePlacesJustForYou": MessageLookupByLibrary.simpleMessage(
             "हमारे पास सिर्फ आपके लिए जगहें हैं"),
+        "WeInstallAndWashShowcase": MessageLookupByLibrary.simpleMessage(
+            "We install and wash the showcase"),
         "WeWillLetKnowResults":
             MessageLookupByLibrary.simpleMessage("हम आपको नतीजे बताएंगे"),
         "Weather": MessageLookupByLibrary.simpleMessage("मौसम"),

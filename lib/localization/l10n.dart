@@ -9661,6 +9661,156 @@ class S {
       args: [],
     );
   }
+
+  /// `Topographing the location`
+  String get TopographingLocation {
+    return Intl.message(
+      'Topographing the location',
+      name: 'TopographingLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We are sending a geologist to the point`
+  String get SendingGeologistToPoint {
+    return Intl.message(
+      'We are sending a geologist to the point',
+      name: 'SendingGeologistToPoint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We are sending a Google car for verification`
+  String get SendingGoogleCarForVerification {
+    return Intl.message(
+      'We are sending a Google car for verification',
+      name: 'SendingGoogleCarForVerification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We distribute information`
+  String get DistributeInformation {
+    return Intl.message(
+      'We distribute information',
+      name: 'DistributeInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We put it in rotation`
+  String get PutItInRotation {
+    return Intl.message(
+      'We put it in rotation',
+      name: 'PutItInRotation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `People are starting to talk about you`
+  String get PeopleStartingToTalkAboutYou {
+    return Intl.message(
+      'People are starting to talk about you',
+      name: 'PeopleStartingToTalkAboutYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lighting up the time tableau`
+  String get LightingUpTimeTableau {
+    return Intl.message(
+      'Lighting up the time tableau',
+      name: 'LightingUpTimeTableau',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Printing a calendar`
+  String get PrintingCalendar {
+    return Intl.message(
+      'Printing a calendar',
+      name: 'PrintingCalendar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Setting up alarm clocks`
+  String get SettingUpAlarmClocks {
+    return Intl.message(
+      'Setting up alarm clocks',
+      name: 'SettingUpAlarmClocks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We bring still lifes`
+  String get WeBringStillLifes {
+    return Intl.message(
+      'We bring still lifes',
+      name: 'WeBringStillLifes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fill the air with fresh paint`
+  String get FillTheAirWithFreshPaint {
+    return Intl.message(
+      'Fill the air with fresh paint',
+      name: 'FillTheAirWithFreshPaint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unloading the canvases`
+  String get UnloadingTheCanvases {
+    return Intl.message(
+      'Unloading the canvases',
+      name: 'UnloadingTheCanvases',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Installing curtains`
+  String get InstallingCurtains {
+    return Intl.message(
+      'Installing curtains',
+      name: 'InstallingCurtains',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We are putting up a poster`
+  String get PuttingUpPoster {
+    return Intl.message(
+      'We are putting up a poster',
+      name: 'PuttingUpPoster',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We install and wash the showcase`
+  String get WeInstallAndWashShowcase {
+    return Intl.message(
+      'We install and wash the showcase',
+      name: 'WeInstallAndWashShowcase',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
