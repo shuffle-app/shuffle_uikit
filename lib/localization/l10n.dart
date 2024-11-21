@@ -9811,6 +9811,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Show {x} in profile`
+  String ShowXInProfile(Object x) {
+    return Intl.message(
+      'Show $x in profile',
+      name: 'ShowXInProfile',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `Please enter a link`
+  String get PleaseEnterLink {
+    return Intl.message(
+      'Please enter a link',
+      name: 'PleaseEnterLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid {x} link`
+  String PleaseEnterValidXLink(Object x) {
+    return Intl.message(
+      'Please enter a valid $x link',
+      name: 'PleaseEnterValidXLink',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `Links`
+  String get Links {
+    return Intl.message(
+      'Links',
+      name: 'Links',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

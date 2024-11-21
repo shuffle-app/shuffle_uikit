@@ -953,5 +953,9 @@
   "UnloadingTheCanvases": "Unloading the canvases",
   "InstallingCurtains": "Installing curtains",
   "PuttingUpPoster": "We are putting up a poster",
-  "WeInstallAndWashShowcase": "We install and wash the showcase"
+  "WeInstallAndWashShowcase": "We install and wash the showcase",
+  "ShowXInProfile": "Show {x} in profile",
+  "PleaseEnterLink": "Please enter a link",
+  "PleaseEnterValidXLink": "Please enter a valid {x} link",
+  "Links": "Links"
 }

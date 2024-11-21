@@ -955,7 +955,11 @@
   "UnloadingTheCanvases": "Выгружаем полотна",
   "InstallingCurtains": "Устанавливаем занавески",
   "PuttingUpPoster": "Вешаем плакат",
-  "WeInstallAndWashShowcase": "Устанавливаем и моем витрину"
+  "WeInstallAndWashShowcase": "Устанавливаем и моем витрину",
+  "ShowXInProfile": "Показать {x} в профиле",
+  "PleaseEnterLink": "Пожалуйста, введите ссылку",
+  "PleaseEnterValidXLink": "Пожалуйста, введите действительную {x} ссылку",
+  "Links": "Ссылки"
 
 }
 
