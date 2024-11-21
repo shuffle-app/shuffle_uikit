@@ -29,6 +29,7 @@ class AppBarTitle extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
+          if (onIWidgetInfoString != null) 14.w.widthBox,
           if (expanded == false)
             AutoSizeText(
               title,
