@@ -27,6 +27,7 @@ class ProfileCard extends StatelessWidget {
   final List<String>? socialLinks;
   final String? speciality;
   final Widget? profileCardBody;
+  final ValueChanged<String?>? onSocialLinksTap;
 
   const ProfileCard({
     super.key,
@@ -54,6 +55,7 @@ class ProfileCard extends StatelessWidget {
     this.socialLinks,
     this.speciality,
     this.profileCardBody,
+    this.onSocialLinksTap,
   });
 
   @override
