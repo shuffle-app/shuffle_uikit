@@ -30,8 +30,6 @@ class ProProfilePage extends StatelessWidget {
           ProfileCard(
             profileCardBody: ProPublicProfileCardBody(
               registrationDate: DateTime.now(),
-              onTelegramPressed: () {},
-              onWhatsappPressed: () {},
               name: 'Frankie Hansen',
               nickname: 'fr4nk1eh4',
               avatarUrl: GraphicsFoundation.instance.png.serviceSocial3.path,
