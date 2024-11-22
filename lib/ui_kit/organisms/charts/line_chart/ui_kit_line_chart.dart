@@ -17,14 +17,14 @@ class UiKitLineChart extends StatefulWidget {
   final double? customHorizontalPadding;
 
   const UiKitLineChart({
-    Key? key,
+    super.key,
     required this.chartData,
     this.chartAdditionalData,
     this.popUpMenuItemSelected,
     this.action,
     this.loading = false,
     this.customHorizontalPadding,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitLineChart> createState() => _UiKitLineChartState();
