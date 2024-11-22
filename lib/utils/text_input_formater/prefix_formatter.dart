@@ -1,7 +1,9 @@
 import 'package:flutter/services.dart';
 
-class HttpsPrefixFormatter extends TextInputFormatter {
-  final String prefix = 'https://';
+class PrefixFormatter extends TextInputFormatter {
+  final String prefix;
+
+  PrefixFormatter({required this.prefix});
 
   @override
   TextEditingValue formatEditUpdate(
@@ -16,7 +18,7 @@ class HttpsPrefixFormatter extends TextInputFormatter {
       return newValue.copyWith(
         text: '',
         selection: TextSelection.fromPosition(
-          const TextPosition(offset: ''.length),
+          const TextPosition(offset: 0),
         ),
       );
     }

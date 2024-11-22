@@ -1300,6 +1300,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/smiley.svg
   SvgGenImage get smiley => const SvgGenImage('assets/images/svg/smiley.svg');
 
+  /// File path: assets/images/svg/social-facebook.svg
+  SvgGenImage get socialFacebook => const SvgGenImage('assets/images/svg/social-facebook.svg');
+
   /// File path: assets/images/svg/social-telegram.svg
   SvgGenImage get socialTelegram => const SvgGenImage('assets/images/svg/social-telegram.svg');
 
@@ -1473,6 +1476,7 @@ class $AssetsImagesSvgGen {
         shuffleWhite,
         sleep,
         smiley,
+        socialFacebook,
         socialTelegram,
         socialWhatsapp,
         spinnerWheel,

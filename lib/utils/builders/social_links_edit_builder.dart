@@ -1,59 +1,109 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-Future<List<String>> socialLinksEditBuilder(BuildContext context, {List<String> socialLinks = const []}) async {
+socialLinksEditBuilder(
+  BuildContext context, {
+  List<String> socialLinks = const [],
+  ValueChanged<List<String>>? onSave,
+}) async {
   final theme = context.uiKitTheme;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   final TextEditingController instagramController = TextEditingController(
-      text: socialLinks.firstWhere((link) => link.contains('instagram'),
-          orElse: () => 'https://instagram.com/your_username'));
+    text: socialLinks.firstWhere(
+      (link) => link.contains('instagram'),
+      orElse: () => '',
+    ),
+  );
   final TextEditingController twitterController = TextEditingController(
-      text: socialLinks.firstWhere((link) => link.contains('twitter'),
-          orElse: () => 'https://twitter.com/your_username'));
+    text: socialLinks.firstWhere(
+      (link) => link.contains('twitter'),
+      orElse: () => '',
+    ),
+  );
   final TextEditingController whatsappController = TextEditingController(
-      text: socialLinks.firstWhere((link) => link.contains('wa.me'), orElse: () => 'https://wa.me/your_phone_number'));
+    text: socialLinks.firstWhere(
+      (link) => link.contains('wa.me'),
+      orElse: () => '',
+    ),
+  );
   final TextEditingController telegramController = TextEditingController(
-      text: socialLinks.firstWhere((link) => link.contains('t.me'), orElse: () => 'https://t.me/your_username'));
-  final controllers = [instagramController, twitterController, whatsappController, telegramController];
+    text: socialLinks.firstWhere(
+      (link) => link.contains('t.me'),
+      orElse: () => '',
+    ),
+  );
+  final TextEditingController faceBookController = TextEditingController(
+    text: socialLinks.firstWhere(
+      (link) => link.contains('facebook'),
+      orElse: () => '',
+    ),
+  );
+  final controllers = [
+    instagramController,
+    twitterController,
+    whatsappController,
+    telegramController,
+    faceBookController,
+  ];
+
+  final controllersPrefix = [
+    'https://instagram.com/',
+    'https://twitter.com/',
+    'https://wa.me/',
+    'https://t.me/',
+    'https://facebook.com/',
+  ];
 
   return showUiKitGeneralFullScreenDialog(
     context,
     GeneralDialogData(
-        topPadding: 0.4.sh,
+      topPadding: 0.4.sh,
+      child: Form(
+        key: formKey,
         child: Column(
           children: [
-            SpacingFoundation.horizontalSpace8,
+            SpacingFoundation.verticalSpace16,
             Text(
-              'Edit links',
+              S.of(context).AddLink,
               style: theme?.boldTextTheme.subHeadline,
             ),
-            SpacingFoundation.horizontalSpace16,
+            SpacingFoundation.verticalSpace16,
             for (var (index, controller) in controllers.indexed)
               UiKitInputFieldNoFill(
                 contentPadding: EdgeInsets.symmetric(horizontal: SpacingFoundation.horizontalSpacing6),
                 controller: controller,
+                inputFormatters: [PrefixFormatter(prefix: controllersPrefix[index])],
                 validator: (text) {
-                  if (controller.text.isEmpty) {
-                    return 'Please enter a link';
+                  final currentLink = text?.split('/').last;
+                  if ((currentLink?.isEmpty ?? false) && (text?.isNotEmpty ?? false)) {
+                    return S.of(context).PleaseEnterLink;
                   }
+
                   switch (index) {
                     case 0:
-                      if (!controller.text.contains('instagram.com')) {
-                        return 'Please enter a valid instagram link';
+                      if (!controller.text.contains('instagram.com') && controller.text.isNotEmpty) {
+                        return S.of(context).PleaseEnterValidXLink('instagram');
                       }
                       break;
                     case 1:
-                      if (!controller.text.contains('twitter.com')) {
-                        return 'Please enter a valid twitter link';
+                      if (!controller.text.contains('twitter.com') && controller.text.isNotEmpty) {
+                        return S.of(context).PleaseEnterValidXLink('twitter');
                       }
                       break;
                     case 2:
-                      if (!controller.text.contains('wa.me')) {
-                        return 'Please enter a valid whatsapp link';
+                      if (!controller.text.contains('wa.me') && controller.text.isNotEmpty) {
+                        return S.of(context).PleaseEnterValidXLink('whatsapp');
                       }
                       break;
                     case 3:
-                      if (!controller.text.contains('t.me')) {
-                        return 'Please enter a valid telegram link';
+                      if (!controller.text.contains('t.me') && controller.text.isNotEmpty) {
+                        return S.of(context).PleaseEnterValidXLink('telegram');
+                      }
+                      break;
+                    case 4:
+                      if (!controller.text.contains('facebook') && controller.text.isNotEmpty) {
+                        return S.of(context).PleaseEnterValidXLink('facebook');
                       }
                       break;
                   }
@@ -61,24 +111,39 @@ Future<List<String>> socialLinksEditBuilder(BuildContext context, {List<String> 
                 },
                 label: 'URL',
                 prefixIcon: ImageWidget(
-                  iconData: controller.text.icon,
+                  iconData: controllersPrefix[index].icon,
+                  link: controllersPrefix[index].iconSvg,
                   color: theme?.colorScheme.inversePrimary,
                 ),
               ).paddingOnly(bottom: SpacingFoundation.verticalSpacing16),
             context.gradientButton(
-                data: BaseUiKitButtonData(
-                    fit: ButtonFit.fitWidth,
-                    text: S.current.Save,
-                    onPressed: () {
-                      context.pop(
-                          result: [
-                        telegramController.text,
-                        instagramController.text,
-                        twitterController.text,
-                        whatsappController.text
-                      ].where((element) => element.isNotEmpty).toList());
-                    }))
+              data: BaseUiKitButtonData(
+                fit: ButtonFit.fitWidth,
+                text: S.current.Save,
+                onPressed: () {
+                  if (formKey.currentState?.validate() ?? false) {
+                    onSave?.call([
+                      telegramController.text,
+                      instagramController.text,
+                      twitterController.text,
+                      whatsappController.text,
+                      faceBookController.text,
+                    ].where((element) {
+                      if (element.isNotEmpty) {
+                        final currentLink = element.split('/').last;
+                        if (currentLink.isNotEmpty) {
+                          return true;
+                        }
+                      }
+                      return false;
+                    }).toList());
+                  }
+                },
+              ),
+            )
           ],
-        ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16)),
+        ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16),
+      ),
+    ),
   );
 }
