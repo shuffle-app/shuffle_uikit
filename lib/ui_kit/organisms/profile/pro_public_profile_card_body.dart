@@ -15,8 +15,8 @@ class ProPublicProfileCardBody extends StatelessWidget {
   final int followers;
   final List<String>? interests;
   final List<String>? matchingInterests;
-  final VoidCallback? onTelegramPressed;
-  final VoidCallback? onWhatsappPressed;
+  final ValueChanged<String>? onSocialLinksPressed;
+  final List<String>? socialLinks;
 
   const ProPublicProfileCardBody({
     super.key,
@@ -32,8 +32,8 @@ class ProPublicProfileCardBody extends StatelessWidget {
     this.matchingInterests,
     this.phone,
     this.email,
-    this.onTelegramPressed,
-    this.onWhatsappPressed,
+    this.onSocialLinksPressed,
+    this.socialLinks,
   });
 
   @override
@@ -156,27 +156,52 @@ class ProPublicProfileCardBody extends StatelessWidget {
                   ],
                 ),
               ),
-              SpacingFoundation.horizontalSpace4,
-              context.smallOutlinedButton(
-                data: BaseUiKitButtonData(
-                  onPressed: onTelegramPressed,
-                  iconInfo: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.svg.socialTelegram.path,
-                  ),
+              if (socialLinks != null && socialLinks!.isNotEmpty && socialLinks!.length <= 2) ...[
+                SpacingFoundation.horizontalSpace4,
+                ...socialLinks!.map(
+                  (e) {
+                    return context
+                        .smallOutlinedButton(
+                          data: BaseUiKitButtonData(
+                            onPressed: () {
+                              onSocialLinksPressed?.call(e);
+                            },
+                            iconInfo: BaseUiKitButtonIconData(
+                              iconPath: e.iconSvg,
+                              iconData: e.icon,
+                            ),
+                          ),
+                        )
+                        .paddingOnly(right: e != socialLinks?.last ? SpacingFoundation.horizontalSpacing4 : 0);
+                  },
                 ),
-              ),
-              SpacingFoundation.horizontalSpace4,
-              context.smallOutlinedButton(
-                data: BaseUiKitButtonData(
-                  onPressed: onWhatsappPressed,
-                  iconInfo: BaseUiKitButtonIconData(
-                    iconPath: GraphicsFoundation.instance.svg.socialWhatsapp.path,
-                  ),
-                ),
-              ),
-              SpacingFoundation.horizontalSpace4,
+                SpacingFoundation.horizontalSpace4,
+              ],
             ],
           ),
+          SpacingFoundation.verticalSpace16,
+          if (socialLinks != null && socialLinks!.isNotEmpty && socialLinks!.length > 2)
+            Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              children: socialLinks?.map(
+                    (e) {
+                      return context
+                          .smallOutlinedButton(
+                            data: BaseUiKitButtonData(
+                              onPressed: () {
+                                onSocialLinksPressed?.call(e);
+                              },
+                              iconInfo: BaseUiKitButtonIconData(
+                                iconPath: e.iconSvg,
+                                iconData: e.icon,
+                              ),
+                            ),
+                          )
+                          .paddingOnly(right: e != socialLinks?.last ? SpacingFoundation.horizontalSpacing4 : 0);
+                    },
+                  ).toList() ??
+                  [],
+            ),
         ],
       ).paddingAll(EdgeInsetsFoundation.all16),
     );
