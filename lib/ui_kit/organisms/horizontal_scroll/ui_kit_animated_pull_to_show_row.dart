@@ -5,8 +5,8 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class AnimatedPullToShowHint extends StatefulWidget {
   const AnimatedPullToShowHint({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<AnimatedPullToShowHint> createState() => _AnimatedPullToShowHintState();
@@ -77,17 +77,17 @@ enum AnimatedPullToShowState { showFirstHint, showSecondHint, showLastPhase }
 
 class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
   final List<Widget> children;
-  final String noChildrenText;
   final double topPadding;
   final ValueNotifier<double> lastPhaseScaleNotifier;
   final bool showHints;
+  final bool expandHint;
 
   UiKitAnimatedPullToShowDelegate({
     required this.topPadding,
     required this.children,
     required this.lastPhaseScaleNotifier,
-    this.noChildrenText = '',
     this.showHints = true,
+    this.expandHint = true,
   });
 
   @override
@@ -105,6 +105,7 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     final colorScheme = context.uiKitTheme?.colorScheme;
     final shrinkToMaxExtentRatio = shrinkOffset / maxExtent;
+    final extentToShowListOfChildren = expandHint ? 0.25 : 0.4;
 
     return Column(
       children: [
@@ -113,8 +114,9 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
             builder: (context, child) {
               final scale = lastPhaseScaleNotifier.value;
               if (lastPhaseScaleNotifier.value == 0) return topPadding.heightBox;
-              return Transform.scale(
+              return AnimatedScale(
                 scale: scale,
+                duration: const Duration(milliseconds: 50),
                 child: SizedBox(
                   height: (topPadding * scale),
                   width: 1.sw,
@@ -136,10 +138,13 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
             )),
         UiKitCardWrapper(
           borderRadius: BorderRadiusFoundation.zero,
-          height: max(0, maxExtent - topPadding - shrinkOffset),
+          height: max(0, maxExtent - topPadding - shrinkOffset - SpacingFoundation.verticalSpacing16),
           width: 1.sw,
+          alignment: Alignment.topCenter,
           color: colorScheme?.surface2,
           child: Stack(
+            alignment: Alignment.topCenter,
+            fit: StackFit.expand,
             children: [
               if (showHints)
                 AnimatedPositioned(
@@ -149,28 +154,38 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
                   child: const AnimatedPullToShowHint(),
                 ),
               AnimatedPositioned(
-                duration: const Duration(milliseconds: 250),
-                bottom: shrinkToMaxExtentRatio < 0.25 ? 0 : SpacingFoundation.verticalSpacing2,
-                left: shrinkToMaxExtentRatio < 0.25 ? null : (1.sw / 2) - (0.15625.sw / 2),
-                child: AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 250),
-                  child: shrinkToMaxExtentRatio < 0.25
-                      ? SizedBox(
-                          height: 0.15.sw + (SpacingFoundation.verticalSpacing16 * 2),
-                          width: 1.sw,
-                          child: ListView.separated(
-                            clipBehavior: Clip.none,
-                            scrollDirection: Axis.horizontal,
-                            shrinkWrap: true,
-                            padding: EdgeInsets.all(EdgeInsetsFoundation.all16),
-                            itemBuilder: (context, index) => children.elementAt(index),
-                            separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
-                            itemCount: children.length,
-                          ),
-                        )
+                duration: const Duration(milliseconds: 50),
+                bottom: shrinkToMaxExtentRatio * SpacingFoundation.verticalSpacing2,
+                // bottom: shrinkToMaxExtentRatio < 0.25 ? 0 : SpacingFoundation.verticalSpacing2,
+                // bottom: 0,
+                top: shrinkToMaxExtentRatio < extentToShowListOfChildren
+                    ? SpacingFoundation.verticalSpacing16 * (1 - shrinkToMaxExtentRatio*6)
+                    : null,
+                // left: shrinkToMaxExtentRatio * 1.sw/2,
+                // left: shrinkToMaxExtentRatio < 0.25 ? null : (1.sw / 2) - (0.15625.sw / 2),
+                child: AnimatedSize(
+                  duration: const Duration(milliseconds: 350),
+                  alignment: shrinkToMaxExtentRatio < extentToShowListOfChildren ? Alignment.topLeft : Alignment.center,
+                  child: shrinkToMaxExtentRatio < extentToShowListOfChildren
+                      ? AnimatedScale(
+                          scale: 1 - shrinkToMaxExtentRatio,
+                          duration: const Duration(milliseconds: 50),
+                          child: SizedBox(
+                            height: 0.15.sw + SpacingFoundation.verticalSpacing16 / 2,
+                            width: 1.sw,
+                            child: ListView.separated(
+                              clipBehavior: Clip.none,
+                              scrollDirection: Axis.horizontal,
+                              shrinkWrap: true,
+                              padding: EdgeInsets.symmetric(horizontal: EdgeInsetsFoundation.vertical16),
+                              itemBuilder: (context, index) => children.elementAt(index),
+                              separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                              itemCount: children.length,
+                            ),
+                          ))
                       : showHints
                           ? const AnimatedPullToShowHint()
-                          : null,
+                          : const SizedBox.shrink(),
                 ),
               ),
             ],

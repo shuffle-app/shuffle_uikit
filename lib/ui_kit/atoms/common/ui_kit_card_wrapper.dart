@@ -12,6 +12,7 @@ class UiKitCardWrapper extends StatelessWidget {
   final Gradient? gradient;
   final EdgeInsets? padding;
   final Clip? clipBehavior;
+  final Alignment? alignment;
 
   const UiKitCardWrapper({
     super.key,
@@ -25,6 +26,7 @@ class UiKitCardWrapper extends StatelessWidget {
     this.boxShadow,
     this.border,
     this.clipBehavior,
+    this.alignment,
   });
 
   @override
@@ -46,6 +48,7 @@ class UiKitCardWrapper extends StatelessWidget {
           height: height,
           padding: padding,
           clipBehavior: Clip.hardEdge,
+          alignment: alignment,
           decoration: BoxDecoration(
             borderRadius: borderRadius,
             boxShadow: boxShadow,
