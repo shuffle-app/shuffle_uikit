@@ -110,17 +110,20 @@ class ProfileCardBody extends StatelessWidget {
           if (speciality != null || (socialLinks != null && socialLinks!.isNotEmpty)) ...[
             Row(
               children: [
-                Expanded(
-                  child: GradientableWidget(
-                    gradient: GradientFoundation.defaultLinearGradient,
-                    child: Text(
-                      speciality ?? '',
-                      style: theme?.boldTextTheme.caption2Medium.copyWith(color: Colors.white),
+                if (speciality != null) ...[
+                  Expanded(
+                    child: GradientableWidget(
+                      gradient: GradientFoundation.defaultLinearGradient,
+                      child: Text(
+                        speciality ?? '',
+                        style: theme?.boldTextTheme.caption2Medium.copyWith(color: Colors.white),
+                      ),
                     ),
                   ),
-                ),
+                  SpacingFoundation.horizontalSpace8
+                ],
                 if (socialLinks != null)
-                  for (var (index, icon) in socialLinks!.map((e) => e.icon).toList().indexed)
+                  for (var (index, icon) in socialLinks!.map((e) => e.icon).nonNulls.toList().indexed)
                     context
                         .smallOutlinedButton(
                             data: BaseUiKitButtonData(
@@ -131,10 +134,22 @@ class ProfileCardBody extends StatelessWidget {
                                 onPressed: () {
                                   launchUrlString(socialLinks![index], mode: LaunchMode.externalApplication);
                                 }))
-                        .paddingOnly(left: SpacingFoundation.horizontalSpacing6)
+                        .paddingOnly(right: SpacingFoundation.horizontalSpacing6),
+                for (var (index, icon) in socialLinks!.map((e) => e.iconSvg).nonNulls.toList().indexed)
+                  context
+                      .smallOutlinedButton(
+                          data: BaseUiKitButtonData(
+                              iconWidget: ImageWidget(
+                                link: icon,
+                                color: theme?.colorScheme.inversePrimary,
+                              ),
+                              onPressed: () {
+                                launchUrlString(socialLinks![index], mode: LaunchMode.externalApplication);
+                              }))
+                      .paddingOnly(right: SpacingFoundation.horizontalSpacing6)
               ],
             ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
-            SpacingFoundation.verticalSpace16,
+            // SpacingFoundation.verticalSpace8,
           ],
           if (onFollow != null) ...[
             context
@@ -222,11 +237,11 @@ class ProfileCardBody extends StatelessWidget {
                 ),
               ],
             ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
-          ] else if(proStats!= null)
-            for(var stat in proStats!.getUiKitCards(context))
-              ...[
-                stat.paddingSymmetric(vertical: SpacingFoundation.verticalSpacing2,horizontal: SpacingFoundation.horizontalSpacing16)
-              ],
+          ] else if (proStats != null)
+            for (var stat in proStats!.getUiKitCards(context)) ...[
+              stat.paddingSymmetric(
+                  vertical: SpacingFoundation.verticalSpacing2, horizontal: SpacingFoundation.horizontalSpacing16)
+            ],
 
           if (profileWidgets != null) ...[
             SpacingFoundation.verticalSpace16,
