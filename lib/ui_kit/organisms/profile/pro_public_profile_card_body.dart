@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ProPublicProfileCardBody extends StatelessWidget {
   final DateTime? registrationDate;
@@ -144,15 +145,19 @@ class ProPublicProfileCardBody extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     if (phone != null)
-                      Text(
-                        phone!,
-                        style: regularTextTheme?.caption2,
-                      ),
+                      GestureDetector(
+                          onTap: () => launchUrlString('tel:+$phone'),
+                          child: Text(
+                            phone!,
+                            style: regularTextTheme?.caption2,
+                          )),
                     if (email != null)
-                      Text(
-                        email!,
-                        style: regularTextTheme?.caption2,
-                      ),
+                      GestureDetector(
+                          onTap: () => launchUrlString('mailto:$email'),
+                          child: Text(
+                            email!,
+                            style: regularTextTheme?.caption2,
+                          )),
                   ],
                 ),
               ),
