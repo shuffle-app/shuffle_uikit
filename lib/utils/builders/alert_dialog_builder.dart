@@ -24,7 +24,7 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusFoundation.all24,
         ),
-        titlePadding: const EdgeInsets.fromLTRB(24, 24, 24, 8),
+        titlePadding: data.titlePadding ?? const EdgeInsets.fromLTRB(24, 24, 24, 8),
         title: ConstrainedBox(
             constraints: BoxConstraints(
               maxWidth: 0.8.sw,
@@ -33,7 +33,7 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
         titleTextStyle: textTheme?.caption2Bold,
         content: data.content,
         contentTextStyle: textTheme?.body,
-        contentPadding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
+        contentPadding: data.contentPadding ?? const EdgeInsets.fromLTRB(24, 8, 24, 8),
         actions: data.actions ??
             [
               if (data.additionalButton != null) data.additionalButton!,
@@ -50,7 +50,7 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
                 )
             ],
         actionsAlignment: MainAxisAlignment.center,
-        actionsPadding: const EdgeInsets.fromLTRB(24, 8, 24, 24),
+        actionsPadding: data.actionsPadding ?? const EdgeInsets.fromLTRB(24, 8, 24, 24),
       );
     },
   );
@@ -84,6 +84,9 @@ Future<T?> showUiKitFullScreenAlertDialog<T extends Object?>(BuildContext contex
 //ignore: prefer-match-file-name
 class AlertDialogData {
   final EdgeInsets? insetPadding;
+  final EdgeInsets? contentPadding;
+  final EdgeInsets? titlePadding;
+  final EdgeInsets? actionsPadding;
   final VoidCallback? onPop;
   final Widget? title;
   final Widget? content;
@@ -106,5 +109,8 @@ class AlertDialogData {
     this.defaultButtonOutlined,
     this.actions,
     this.insetPadding,
+    this.contentPadding,
+    this.titlePadding,
+    this.actionsPadding,
   });
 }
