@@ -55,6 +55,7 @@ class InfluencerStats extends ProfileStats {
     final TextStyle? titleStyle = theme?.regularTextTheme.caption2.copyWith(color: colorScheme?.grayForegroundColor);
     return [
       UiKitCardWrapper(
+        borderRadius: BorderRadiusFoundation.all8,
           color: colorScheme?.surface2,
           padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
           child: Row(
@@ -75,6 +76,7 @@ class InfluencerStats extends ProfileStats {
             ],
           )),
       UiKitCardWrapper(
+          borderRadius: BorderRadiusFoundation.all8,
           color: colorScheme?.surface2,
           padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
           child: Row(mainAxisSize: MainAxisSize.min, children: [
@@ -92,6 +94,7 @@ class InfluencerStats extends ProfileStats {
             )
           ])),
       UiKitCardWrapper(
+          borderRadius: BorderRadiusFoundation.all8,
           color: colorScheme?.surface2,
           padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
           child: Row(
@@ -149,6 +152,7 @@ class ProProfileStats extends ProfileStats {
     final TextStyle? titleStyle = theme?.regularTextTheme.caption2.copyWith(color: colorScheme?.grayForegroundColor);
     return [
       UiKitCardWrapper(
+          borderRadius: BorderRadiusFoundation.all8,
           color: colorScheme?.surface2,
           padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
           child: Row(
@@ -169,6 +173,7 @@ class ProProfileStats extends ProfileStats {
             ],
           )),
       UiKitCardWrapper(
+          borderRadius: BorderRadiusFoundation.all8,
           color: colorScheme?.surface2,
           padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
           child: Row(mainAxisSize: MainAxisSize.min, children: [
@@ -186,6 +191,7 @@ class ProProfileStats extends ProfileStats {
             )
           ])),
       UiKitCardWrapper(
+          borderRadius: BorderRadiusFoundation.all8,
           color: colorScheme?.surface2,
           padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
           child: Row(
