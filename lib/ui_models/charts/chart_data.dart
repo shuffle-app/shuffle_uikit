@@ -49,6 +49,9 @@ class DateRange {
     required this.start,
     required this.end,
   });
+
+  @override
+  toString() => 'From ${start.toLocal()} to ${end.toLocal()}';
 }
 
 class UiKitLineChartData<T> extends UiKitChartData<T> {
@@ -93,27 +96,22 @@ class UiKitLineChartData<T> extends UiKitChartData<T> {
 
 class UiKitLineChartItemData<T> extends UiKitChartItem<T> {
   UiKitLineChartItemData({
-    Color? color,
-    required List<UiKitChartDataSet<T>> datasets,
-    required String chartItemName,
-    required int id,
-    Gradient? gradient,
+    super.color,
+    required super.datasets,
+    required super.chartItemName,
+    required super.id,
+    super.gradient,
     String? icon,
     IconData? iconData,
   }) : super(
           iconPath: icon,
           icon: iconData,
-          color: color,
-          datasets: datasets,
-          gradient: gradient,
-          chartItemName: chartItemName,
-          id: id,
         );
 }
 
 class UiKitLineChartDataSet<T> extends UiKitChartDataSet<T> {
   UiKitLineChartDataSet({
-    required DateTime date,
-    required T value,
-  }) : super(date: date, value: value);
+    required super.date,
+    required super.value,
+  });
 }

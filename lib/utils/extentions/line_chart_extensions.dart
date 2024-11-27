@@ -46,10 +46,14 @@ extension ChartNumberDataSetExtension on List<UiKitChartDataSet> {
 }
 
 extension ChartItemsExtension on List<UiKitChartItem> {
-  num get maxValue => fold(
-      0,
-      (previousValue, element) =>
-          element.datasets.maxValue > previousValue ? element.datasets.maxValue : previousValue);
+  num get maxValue {
+    final maxValue = fold<num>(
+        0,
+        (previousValue, element) =>
+            element.datasets.maxValue > previousValue ? element.datasets.maxValue : previousValue);
+    if (maxValue == 0) return 1.0;
+    return maxValue;
+  }
 
   num get minValue => fold(
       maxValue,

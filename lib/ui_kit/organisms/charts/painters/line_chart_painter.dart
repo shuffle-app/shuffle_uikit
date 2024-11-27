@@ -55,7 +55,7 @@ class LineChartPainterWithInfoOverlay extends CustomPainter {
         paint.color = lineData.color!;
       }
       for (int i = 0; i < lineData.datasets.length - 1; i++) {
-        final isLastDataSet = i + 1 == lineData.datasets.length - 1;
+        final isLastDataSet = i + 1 == lineData.datasets.length;
         final currentValue = lineData.datasets.elementAt(i).value;
         final nextValue = lineData.datasets.elementAt(i + 1).value;
         double currentX = (i * step);

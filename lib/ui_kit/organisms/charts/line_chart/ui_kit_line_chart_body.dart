@@ -19,7 +19,7 @@ class UiKitLineChartBody extends StatelessWidget {
   final double initialPreviewWidthFraction;
 
   const UiKitLineChartBody({
-    Key? key,
+    super.key,
     required this.availableSize,
     required this.chartItems,
     required this.tapNotifier,
@@ -30,7 +30,7 @@ class UiKitLineChartBody extends StatelessWidget {
     required this.initialPreviewWidthFraction,
     required this.bodySizingNotifier,
     this.datesMaxScrollPosition,
-  }) : super(key: key);
+  });
 
   double get pointsStep {
     if (smallPreviewUpdateNotifier.value.previewWidthFraction >= 0.99) {
@@ -49,7 +49,7 @@ class UiKitLineChartBody extends StatelessWidget {
     tapNotifier.value = position;
     final index = ((scrollController.offset + position.dx) ~/ (pointsStep * chartStepScaleFactor));
     final items = chartItems.chartItemsWithDatasetAt(index);
-    if (items.isNotEmpty || items.first.datasets.isNotEmpty) {
+    if (items.isNotEmpty || (items.firstOrNull?.datasets ?? []).isNotEmpty) {
       selectedDataSetNotifier.value = selectedDataSetNotifier.value.copyWith(
         chartItems: items,
         date: items.first.datasets.first.date,
@@ -217,15 +217,16 @@ class UiKitLineChartBody extends StatelessWidget {
                             .map(
                               (e) => Row(
                                 children: [
-                                  Container(
-                                    width: 8,
-                                    height: 8,
-                                    decoration: BoxDecoration(
-                                      color: e.color,
-                                      gradient: e.gradient,
-                                      shape: BoxShape.circle,
-                                    ),
-                                  ).paddingAll(EdgeInsetsFoundation.all4),
+                                  SizedBox(
+                                      width: 8,
+                                      height: 8,
+                                      child: DecoratedBox(
+                                        decoration: BoxDecoration(
+                                          color: e.color,
+                                          gradient: e.gradient,
+                                          shape: BoxShape.circle,
+                                        ),
+                                      )).paddingAll(EdgeInsetsFoundation.all4),
                                   Text(
                                     e.chartItemName,
                                     style: regularTextTheme?.caption2.copyWith(color: colorScheme?.bodyTypography),
