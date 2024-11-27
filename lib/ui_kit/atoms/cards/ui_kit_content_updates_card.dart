@@ -21,19 +21,10 @@ class UiKitContentUpdatesCard extends StatelessWidget {
   final ValueChanged<String>? onReactionsTapped;
 
   bool get showEmptyReactionsState =>
-      (heartEyesReactionsCount == 0 &&
-          likeReactionsCount == 0 &&
-          sunglassesReactionsCount == 0 &&
-          fireReactionsCount == 0 &&
-          smileyReactionsCount == 0) ||
-      (heartEyesReactionsCount == null &&
-          likeReactionsCount == null &&
-          sunglassesReactionsCount == null &&
-          fireReactionsCount == null &&
-          smileyReactionsCount == null);
+      heartCount == 0 && likeCount == 0 && sunglassesCount == 0 && fireCount == 0 && smileyCount == 0;
 
   const UiKitContentUpdatesCard({
-    Key? key,
+    super.key,
     required this.children,
     required this.authorSpeciality,
     required this.authorName,
@@ -49,7 +40,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     this.sunglassesReactionsCount,
     this.smileyReactionsCount,
     this.onReactionsTapped,
-  }) : super(key: key);
+  });
 
   factory UiKitContentUpdatesCard.fromShuffle({
     required List<UiKitContentUpdateWidget> children,
@@ -84,17 +75,27 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     double reactionsSpacing = 0;
     if (hasGradientBorder && comment != null) {
       final linesCount = comment!.length ~/ 30;
-      additionalSpacingForComment += linesCount * 14.5.h;
+      additionalSpacingForComment += linesCount * 15.h;
     }
     if (hasReactions) reactionsSpacing += SpacingFoundation.verticalSpacing8 + SpacingFoundation.verticalSpacing20;
 
     return children.fold(0.0, (previousValue, element) => previousValue + element.height) +
         ((children.length + 2) * SpacingFoundation.verticalSpacing16) +
-        0.125.sw +
+        0.15.sw +
         EdgeInsetsFoundation.vertical24 +
         reactionsSpacing +
         additionalSpacingForComment;
   }
+
+  int get heartCount => heartEyesReactionsCount ?? 0;
+
+  int get likeCount => likeReactionsCount ?? 0;
+
+  int get fireCount => fireReactionsCount ?? 0;
+
+  int get sunglassesCount => sunglassesReactionsCount ?? 0;
+
+  int get smileyCount => smileyReactionsCount ?? 0;
 
   @override
   Widget build(BuildContext context) {
@@ -106,6 +107,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
 
     bool isOverlayVisible = false;
     OverlayEntry? overlayEntry;
+
+    debugPrint('updates card build here and overallHeight: $overallHeight');
 
     return ConstrainedBox(
       constraints: BoxConstraints(
@@ -144,14 +147,16 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                     style: regularTextTheme?.caption2,
                     textAlign: TextAlign.start,
                   ).paddingOnly(top: EdgeInsetsFoundation.vertical16),
-                SpacingFoundation.verticalSpace4,
-                ...children.map((child) {
-                  final isLastChild = children.indexOf(child) == children.length - 1;
+                if (children.isNotEmpty) ...[
+                  SpacingFoundation.verticalSpace4,
+                  ...children.map((child) {
+                    final isLastChild = children.indexOf(child) == children.length - 1;
 
-                  if (!isLastChild) return child.paddingOnly(bottom: EdgeInsetsFoundation.vertical16);
-                  return child;
-                }),
-                SpacingFoundation.verticalSpace8,
+                    if (!isLastChild) return child.paddingOnly(bottom: EdgeInsetsFoundation.vertical16);
+                    return child;
+                  }),
+                  SpacingFoundation.verticalSpace8,
+                ],
                 if (hasReactions)
                   Builder(
                     builder: (c) => TapRegion(
@@ -182,30 +187,39 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                                 ),
                               ]
                             : [
-                                UiKitHeartEyesReaction(
-                                  reactionsCount: heartEyesReactionsCount ?? 0,
-                                  textColor: reactionTextColor,
-                                ),
-                                SpacingFoundation.horizontalSpace4,
-                                UiKitLikeReaction(
-                                  reactionsCount: likeReactionsCount ?? 0,
-                                  textColor: reactionTextColor,
-                                ),
-                                SpacingFoundation.horizontalSpace4,
-                                UiKitFireReaction(
-                                  reactionsCount: fireReactionsCount ?? 0,
-                                  textColor: reactionTextColor,
-                                ),
-                                SpacingFoundation.horizontalSpace4,
-                                UiKitSunglassesReaction(
-                                  reactionsCount: sunglassesReactionsCount ?? 0,
-                                  textColor: reactionTextColor,
-                                ),
-                                SpacingFoundation.horizontalSpace4,
-                                UiKitSmileyReaction(
-                                  reactionsCount: smileyReactionsCount ?? 0,
-                                  textColor: reactionTextColor,
-                                ),
+                                if (heartCount != 0)
+                                  UiKitHeartEyesReaction(
+                                    reactionsCount: heartCount,
+                                    textColor: reactionTextColor,
+                                  ),
+                                if (likeCount != 0) ...[
+                                  SpacingFoundation.horizontalSpace4,
+                                  UiKitLikeReaction(
+                                    reactionsCount: likeCount,
+                                    textColor: reactionTextColor,
+                                  )
+                                ],
+                                if (fireCount != 0) ...[
+                                  SpacingFoundation.horizontalSpace4,
+                                  UiKitFireReaction(
+                                    reactionsCount: fireCount,
+                                    textColor: reactionTextColor,
+                                  )
+                                ],
+                                if (sunglassesCount != 0) ...[
+                                  SpacingFoundation.horizontalSpace4,
+                                  UiKitSunglassesReaction(
+                                    reactionsCount: sunglassesCount,
+                                    textColor: reactionTextColor,
+                                  )
+                                ],
+                                if (smileyCount != 0) ...[
+                                  SpacingFoundation.horizontalSpace4,
+                                  UiKitSmileyReaction(
+                                    reactionsCount: smileyCount,
+                                    textColor: reactionTextColor,
+                                  )
+                                ],
                               ],
                       ),
                     ),
