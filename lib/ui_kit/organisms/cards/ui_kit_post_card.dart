@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'dart:ui';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -58,9 +59,9 @@ class UiKitPostCard extends StatelessWidget {
 
     return ConstrainedBox(
       constraints: BoxConstraints(
-        minHeight: 0.2.sh,
-        maxWidth: 1.sw,
-        minWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
+        minHeight: kIsWeb ? 60 : 0.2.sh,
+        maxWidth: kIsWeb ? 90 : 1.sw,
+        minWidth: kIsWeb ? 60 : 1.sw - EdgeInsetsFoundation.horizontal32,
       ),
       child: Stack(
         clipBehavior: Clip.none,

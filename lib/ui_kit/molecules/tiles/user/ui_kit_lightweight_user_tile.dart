@@ -6,13 +6,13 @@ class UiKitLightweightUserTile extends BaseUserTile {
   final Color? userNameTextColor;
 
   const UiKitLightweightUserTile({
-    Key? key,
+    super.key,
     super.name,
     super.username,
     super.avatarUrl,
     this.userType,
     this.userNameTextColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

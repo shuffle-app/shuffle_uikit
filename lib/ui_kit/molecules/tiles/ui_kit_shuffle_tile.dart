@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -15,8 +16,8 @@ class UiKitShuffleTile extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          height: 0.125.sw,
-          width: 0.125.sw,
+          height: kIsWeb ? 30 : 0.125.sw,
+          width: kIsWeb ? 30 : 0.125.sw,
           clipBehavior: Clip.hardEdge,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
@@ -33,8 +34,8 @@ class UiKitShuffleTile extends StatelessWidget {
               fit: StackFit.expand,
               children: [
                 Container(
-                  height: 0.125.sw,
-                  width: 0.125.sw,
+                  height: kIsWeb ? 30 : 0.125.sw,
+                  width: kIsWeb ? 30 : 0.125.sw,
                   clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
@@ -49,8 +50,8 @@ class UiKitShuffleTile extends StatelessWidget {
                   ),
                   child: ImageWidget(
                     rasterAsset: GraphicsFoundation.instance.png.shuffleInfluencersFeedAvatar,
-                    width: 0.125.sw,
-                    height: 0.125.sw,
+                    width: kIsWeb ? 30 : 0.125.sw,
+                    height: kIsWeb ? 30 : 0.125.sw,
                     fit: BoxFit.cover,
                   ).paddingAll(EdgeInsetsFoundation.all2),
                 ).paddingAll(EdgeInsetsFoundation.all2),

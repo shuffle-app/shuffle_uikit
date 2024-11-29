@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -75,13 +76,13 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     double reactionsSpacing = 0;
     if (hasGradientBorder && comment != null) {
       final linesCount = comment!.length ~/ 30;
-      additionalSpacingForComment += linesCount * 15.h;
+      additionalSpacingForComment += linesCount * (kIsWeb ? 15 : 15.h);
     }
     if (hasReactions) reactionsSpacing += SpacingFoundation.verticalSpacing8 + SpacingFoundation.verticalSpacing20;
 
     return children.fold(0.0, (previousValue, element) => previousValue + element.height) +
         ((children.length + 2) * SpacingFoundation.verticalSpacing16) +
-        0.15.sw +
+        (kIsWeb ? 17 :0.15.sw) +
         EdgeInsetsFoundation.vertical24 +
         reactionsSpacing +
         additionalSpacingForComment;
@@ -112,8 +113,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
 
     return ConstrainedBox(
       constraints: BoxConstraints(
-        minWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
-        maxWidth: 1.sw,
+        minWidth: kIsWeb ? 60 : 1.sw - EdgeInsetsFoundation.horizontal32,
+        maxWidth: kIsWeb ? 90 : 1.sw,
         maxHeight: overallHeight,
       ),
       child: Stack(
@@ -121,7 +122,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Container(
-            width: 1.sw,
+            width: kIsWeb ? 90 : 1.sw,
             height: overallHeight,
             clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
@@ -138,7 +139,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 SizedBox(
-                  width: 1.sw,
+                  width:kIsWeb ? 90 : 1.sw,
                   child: const UiKitShuffleTile(),
                 ),
                 if (hasGradientBorder && comment != null && comment!.isNotEmpty)
