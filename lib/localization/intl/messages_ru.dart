@@ -1431,7 +1431,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Subs": MessageLookupByLibrary.simpleMessage("Сабы"),
         "SubscribeToProfile":
             MessageLookupByLibrary.simpleMessage("Подписаться"),
-        "Success": MessageLookupByLibrary.simpleMessage("Success"),
+        "Success": MessageLookupByLibrary.simpleMessage("Успешно"),
         "SuccessfullyAnswered":
             MessageLookupByLibrary.simpleMessage("Успешно отправлен ответ"),
         "Sunday": MessageLookupByLibrary.simpleMessage("Воскресенье"),
