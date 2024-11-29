@@ -129,8 +129,8 @@ class SelectTimeFromRangeState extends State<SelectTimeFromRange> {
                     style: theme?.boldTextTheme.caption1Bold,
                     maxLines: 1,
                   ).paddingSymmetric(
-                    horizontal: SpacingFoundation.horizontalSpacing8,
-                    vertical: SpacingFoundation.verticalSpacing12,
+                    horizontal: SpacingFoundation.horizontalSpacing4,
+                    vertical: SpacingFoundation.verticalSpacing8,
                   ),
                 ),
               ),
