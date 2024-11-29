@@ -63,6 +63,7 @@ abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
                   children: [
                     Row(
                       mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Flexible(
                           child: Text(
@@ -72,7 +73,7 @@ abstract class BaseUserTile extends StatelessWidget implements UserTileFactory {
                             ),
                           ),
                         ),
-                        SpacingFoundation.horizontalSpace8,
+                        6.w.widthBox,
                         if (trailing != null) trailing!,
                       ],
                     ),
