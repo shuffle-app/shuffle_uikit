@@ -9851,6 +9851,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Shocking content`
+  String get ShockingContent {
+    return Intl.message(
+      'Shocking content',
+      name: 'ShockingContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sexual content`
+  String get SexualContent {
+    return Intl.message(
+      'Sexual content',
+      name: 'SexualContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copyright infringement`
+  String get CopyrightInfringement {
+    return Intl.message(
+      'Copyright infringement',
+      name: 'CopyrightInfringement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Misleading`
+  String get Misleading {
+    return Intl.message(
+      'Misleading',
+      name: 'Misleading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your claim`
+  String get YourClaim {
+    return Intl.message(
+      'Your claim',
+      name: 'YourClaim',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

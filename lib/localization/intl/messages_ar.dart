@@ -524,6 +524,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Control": MessageLookupByLibrary.simpleMessage("Control"),
         "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
             "сonvenient, clear and useful"),
+        "CopyrightInfringement":
+            MessageLookupByLibrary.simpleMessage("Copyright infringement"),
         "CouldNotFindThisTicket":
             MessageLookupByLibrary.simpleMessage("Couldn\'t find this ticket"),
         "CouldntFindInvite":
@@ -872,6 +874,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Min": MessageLookupByLibrary.simpleMessage("min"),
         "MinutesAgo": m49,
         "MinutesShort": MessageLookupByLibrary.simpleMessage("min"),
+        "Misleading": MessageLookupByLibrary.simpleMessage("Misleading"),
         "Moderated": MessageLookupByLibrary.simpleMessage("Moderated"),
         "Monday": MessageLookupByLibrary.simpleMessage("Monday"),
         "MondayShort": MessageLookupByLibrary.simpleMessage("Mon"),
@@ -1332,10 +1335,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "SettingUpAlarmClocks":
             MessageLookupByLibrary.simpleMessage("Setting up alarm clocks"),
         "Settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "SexualContent": MessageLookupByLibrary.simpleMessage("Sexual content"),
         "Share": MessageLookupByLibrary.simpleMessage("Share"),
         "ShareCard": m79,
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("shared with you"),
+        "ShockingContent":
+            MessageLookupByLibrary.simpleMessage("Shocking content"),
         "ShowDeleted": MessageLookupByLibrary.simpleMessage("Show deleted"),
         "ShowInContentCard":
             MessageLookupByLibrary.simpleMessage("Show in content card"),
@@ -1681,6 +1687,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourAge": MessageLookupByLibrary.simpleMessage("Your age"),
         "YourAudienceAge":
             MessageLookupByLibrary.simpleMessage("Your audience age"),
+        "YourClaim": MessageLookupByLibrary.simpleMessage("Your claim"),
         "YourClaimHasBeenSent":
             MessageLookupByLibrary.simpleMessage("Your claim has been sent"),
         "YourEmail": MessageLookupByLibrary.simpleMessage("Your email"),

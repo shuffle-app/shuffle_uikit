@@ -959,7 +959,12 @@
   "ShowXInProfile": "Показать {x} в профиле",
   "PleaseEnterLink": "Пожалуйста, введите ссылку",
   "PleaseEnterValidXLink": "Пожалуйста, введите действительную {x} ссылку",
-  "Links": "Ссылки"
+  "Links": "Ссылки",
+  "ShockingContent": "Шокирующий контент",
+  "SexualContent": "Сексуальный контент",
+  "CopyrightInfringement": "Нарушение авторских прав",
+  "Misleading": "Вводит в заблуждение",
+  "YourClaim": "Ваша претензия"
 
 }
 
