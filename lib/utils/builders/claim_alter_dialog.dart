@@ -31,12 +31,14 @@ class ClaimAlterDialogWidget extends StatefulWidget {
 
 class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
   final TextEditingController descriptionController = TextEditingController();
-  final Map<String, bool> claimMap = {
-    S.current.ShockingContent: false,
-    S.current.SexualContent: false,
-    S.current.CopyrightInfringement: false,
-    S.current.Misleading: false,
-  };
+
+  String selectedClaim = '';
+  final List<String> claims = [
+    S.current.ShockingContent,
+    S.current.SexualContent,
+    S.current.CopyrightInfringement,
+    S.current.Misleading,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -50,17 +52,17 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
           style: theme?.boldTextTheme.title2.copyWith(color: theme.colorScheme.inverseHeadingTypography),
         ),
         SpacingFoundation.verticalSpace16,
-        ...claimMap.keys.map(
+        ...claims.map(
           (e) => Row(
             children: [
               InkWell(
                 onTap: () {
                   setState(() {
                     descriptionController.clear();
-                    claimMap[e] = !(claimMap[e] ?? false);
+                    selectedClaim += '$e ';
                   });
                 },
-                child: UiKitRadio(selected: claimMap[e] ?? false),
+                child: UiKitRadio(selected: selectedClaim.contains(e)),
               ),
               SpacingFoundation.horizontalSpace12,
               Expanded(
@@ -70,7 +72,7 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
                 ),
               )
             ],
-          ).paddingOnly(bottom: e != claimMap.keys.last ? SpacingFoundation.verticalSpacing12 : 0),
+          ).paddingOnly(bottom: e != claims.last ? SpacingFoundation.verticalSpacing12 : 0),
         ),
         SpacingFoundation.verticalSpace12,
         UiKitInputFieldNoFill(
@@ -87,20 +89,16 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
           label: S.current.Description,
           onChanged: (value) {
             setState(() {
-              claimMap.forEach(
-                (key, value) {
-                  claimMap[key] = false;
-                },
-              );
+              if (selectedClaim.isNotEmpty) {
+                selectedClaim = '';
+              }
             });
           },
           onTap: () {
             setState(() {
-              claimMap.forEach(
-                (key, value) {
-                  claimMap[key] = false;
-                },
-              );
+              if (selectedClaim.isNotEmpty) {
+                selectedClaim = '';
+              }
             });
           },
         ),
@@ -112,20 +110,11 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
               textColor: theme?.colorScheme.inversePrimary,
               backgroundColor: theme?.colorScheme.surface,
               onPressed: () {
-                String claim = '';
                 if (descriptionController.text.isNotEmpty) {
-                  claim = descriptionController.text;
-                } else {
-                  claimMap.forEach(
-                    (key, value) {
-                      if (claimMap[key] ?? false) {
-                        claim += '$key ';
-                      }
-                    },
-                  );
+                  selectedClaim = descriptionController.text;
                 }
 
-                widget.onSubmit?.call(claim);
+                widget.onSubmit?.call(selectedClaim);
                 context.pop();
               },
               text: S.current.Send,

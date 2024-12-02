@@ -42,7 +42,7 @@ class UiKitLightweightUserTile extends BaseUserTile {
                       style: boldTextTheme?.caption1Bold.copyWith(color: userNameTextColor),
                     ),
                   ),
-                  6.w.widthBox,
+                  SpacingFoundation.horizontalSpacing6.widthBox,
                   if (userType == UserTileType.influencer) InfluencerAccountMark(),
                   if (userType == UserTileType.pro) ProAccountMark(),
                 ],
