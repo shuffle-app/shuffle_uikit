@@ -33,6 +33,8 @@ class UiKitLightweightUserTile extends BaseUserTile {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Row(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Flexible(
                     child: Text(
@@ -40,7 +42,7 @@ class UiKitLightweightUserTile extends BaseUserTile {
                       style: boldTextTheme?.caption1Bold.copyWith(color: userNameTextColor),
                     ),
                   ),
-                  SpacingFoundation.horizontalSpace8,
+                  SpacingFoundation.horizontalSpacing6.widthBox,
                   if (userType == UserTileType.influencer) InfluencerAccountMark(),
                   if (userType == UserTileType.pro) ProAccountMark(),
                 ],

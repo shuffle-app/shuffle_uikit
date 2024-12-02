@@ -18,7 +18,7 @@ void showReactionOverlay(
   overlayEntry = OverlayEntry(
     builder: (context) => Positioned(
       top: position.dy - 40,
-      right: position.dx - 20,
+      right: 0,
       child: Material(
         color: Colors.transparent,
         child: UiKitCardWrapper(

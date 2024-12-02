@@ -35,6 +35,7 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
     this.maxSymbols,
     this.textInputAction,
     required this.label,
+    this.cursorColor,
   });
 
   final String label;
@@ -74,6 +75,7 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
   final bool obscureText;
   final int? maxSymbols;
   final TextInputAction? textInputAction;
+  final Color? cursorColor;
 
   @override
   State<UiKitInputFieldNoFill> createState() => _UiKitInputFieldNoFillState();
@@ -139,6 +141,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         inputFormatters: widget.inputFormatters,
         maxLength: widget.maxSymbols,
         buildCounter: widget.maxSymbols == null ? null : _buildCounter,
+        cursorColor: widget.cursorColor,
         decoration: InputDecoration(
           focusedBorder: widget.customFocusedBorder ?? context.uiKitTheme?.noFillInputTheme.focusedBorder,
           enabledBorder: widget.customEnabledBorder ?? context.uiKitTheme?.noFillInputTheme.enabledBorder,

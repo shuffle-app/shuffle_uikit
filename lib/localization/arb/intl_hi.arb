@@ -957,5 +957,10 @@
   "ShowXInProfile": "Show {x} in profile",
   "PleaseEnterLink": "Please enter a link",
   "PleaseEnterValidXLink": "Please enter a valid {x} link",
-  "Links": "Links"
+  "Links": "Links",
+  "ShockingContent": "Shocking content",
+  "SexualContent": "Sexual content",
+  "CopyrightInfringement": "Copyright infringement",
+  "Misleading": "Misleading",
+  "YourClaim": "Your claim"
 }

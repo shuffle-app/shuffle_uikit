@@ -522,6 +522,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Control": MessageLookupByLibrary.simpleMessage("नियंत्रण"),
         "ConvenientClearAndUseful":
             MessageLookupByLibrary.simpleMessage("सुविधाजनक, स्पष्ट और उपयोगी"),
+        "CopyrightInfringement":
+            MessageLookupByLibrary.simpleMessage("Copyright infringement"),
         "CouldNotFindThisTicket":
             MessageLookupByLibrary.simpleMessage("Couldn\'t find this ticket"),
         "CouldntFindInvite":
@@ -879,6 +881,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Min": MessageLookupByLibrary.simpleMessage("मिन"),
         "MinutesAgo": m49,
         "MinutesShort": MessageLookupByLibrary.simpleMessage("मिनट"),
+        "Misleading": MessageLookupByLibrary.simpleMessage("Misleading"),
         "Moderated": MessageLookupByLibrary.simpleMessage("मॉडरेट"),
         "Monday": MessageLookupByLibrary.simpleMessage("सोमवार"),
         "MondayShort": MessageLookupByLibrary.simpleMessage("सोमवार"),
@@ -1342,10 +1345,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "SettingUpAlarmClocks":
             MessageLookupByLibrary.simpleMessage("Setting up alarm clocks"),
         "Settings": MessageLookupByLibrary.simpleMessage("सेटिंग्स"),
+        "SexualContent": MessageLookupByLibrary.simpleMessage("Sexual content"),
         "Share": MessageLookupByLibrary.simpleMessage("शेयर"),
         "ShareCard": m79,
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("आपके साथ साझा किया गया"),
+        "ShockingContent":
+            MessageLookupByLibrary.simpleMessage("Shocking content"),
         "ShowDeleted": MessageLookupByLibrary.simpleMessage("हटाए गए दिखाएं"),
         "ShowInContentCard":
             MessageLookupByLibrary.simpleMessage("सामग्री कार्ड में दिखाएं"),
@@ -1695,6 +1701,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourAge": MessageLookupByLibrary.simpleMessage("आपकी उम्र"),
         "YourAudienceAge":
             MessageLookupByLibrary.simpleMessage("आपके दर्शकों की उम्र"),
+        "YourClaim": MessageLookupByLibrary.simpleMessage("Your claim"),
         "YourClaimHasBeenSent":
             MessageLookupByLibrary.simpleMessage("आपका दावा भेज दिया गया है"),
         "YourEmail": MessageLookupByLibrary.simpleMessage("आपका ईमेल"),

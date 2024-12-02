@@ -533,6 +533,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Control": MessageLookupByLibrary.simpleMessage("Контроль"),
         "ConvenientClearAndUseful":
             MessageLookupByLibrary.simpleMessage("удобно, чётко и полезно"),
+        "CopyrightInfringement":
+            MessageLookupByLibrary.simpleMessage("Нарушение авторских прав"),
         "CouldNotFindThisTicket":
             MessageLookupByLibrary.simpleMessage("Не удалось найти этот билет"),
         "CouldntFindInvite": MessageLookupByLibrary.simpleMessage(
@@ -888,6 +890,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Min": MessageLookupByLibrary.simpleMessage("мин"),
         "MinutesAgo": m49,
         "MinutesShort": MessageLookupByLibrary.simpleMessage("мин"),
+        "Misleading":
+            MessageLookupByLibrary.simpleMessage("Вводит в заблуждение"),
         "Moderated": MessageLookupByLibrary.simpleMessage("Модерировано"),
         "Monday": MessageLookupByLibrary.simpleMessage("Понедельник"),
         "MondayShort": MessageLookupByLibrary.simpleMessage("Пн"),
@@ -1356,10 +1360,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "SettingUpAlarmClocks":
             MessageLookupByLibrary.simpleMessage("Заводим будильники"),
         "Settings": MessageLookupByLibrary.simpleMessage("Настройки"),
+        "SexualContent":
+            MessageLookupByLibrary.simpleMessage("Сексуальный контент"),
         "Share": MessageLookupByLibrary.simpleMessage("Поделиться"),
         "ShareCard": m79,
         "SharedWithYou":
             MessageLookupByLibrary.simpleMessage("поделилась с вами"),
+        "ShockingContent":
+            MessageLookupByLibrary.simpleMessage("Шокирующий контент"),
         "ShowDeleted":
             MessageLookupByLibrary.simpleMessage("Показать удаленные"),
         "ShowInContentCard": MessageLookupByLibrary.simpleMessage(
@@ -1713,6 +1721,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourAge": MessageLookupByLibrary.simpleMessage("Твой возраст"),
         "YourAudienceAge":
             MessageLookupByLibrary.simpleMessage("Возраст аудитории"),
+        "YourClaim": MessageLookupByLibrary.simpleMessage("Ваша претензия"),
         "YourClaimHasBeenSent":
             MessageLookupByLibrary.simpleMessage("Ваше заявление отправлено"),
         "YourEmail": MessageLookupByLibrary.simpleMessage("Твоя почта"),
