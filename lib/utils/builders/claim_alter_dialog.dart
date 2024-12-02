@@ -50,6 +50,7 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
         Text(
           S.of(context).DescribeYourClaim,
           style: theme?.boldTextTheme.title2.copyWith(color: theme.colorScheme.inverseHeadingTypography),
+          textAlign: TextAlign.center,
         ),
         SpacingFoundation.verticalSpace16,
         ...claims.map(
