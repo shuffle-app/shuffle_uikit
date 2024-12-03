@@ -17,7 +17,11 @@ class TimeRange {
 
   /// Formats the TimeRange as strings like "11:20 - 02:03".
   String formatted() {
-    return '${formatTime(start)} - ${formatTime(end)}';
+    if (end != null) {
+      return '${formatTime(start)} - ${formatTime(end)}';
+    } else {
+      return formatTime(start);
+    }
   }
 
   @override

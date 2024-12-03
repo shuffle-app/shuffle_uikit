@@ -1739,6 +1739,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Ваше предложение уже было опубликовано для вашей аудитории, изменяя или удаляя его, вы несете ответственность за их потенциальное негативное отношение."),
         "YourOfferWillShown1Time": MessageLookupByLibrary.simpleMessage(
             "Ваше предложение будет показано 1 раз и включено в список предложений вашей аудитории. Оно исчезнет после окончания мероприятия."),
+        "YourOwnClaim":
+            MessageLookupByLibrary.simpleMessage("Ваша собственная жалоба"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("Ваша позиция"),
         "YourPriceSegment":
             MessageLookupByLibrary.simpleMessage("Твой ценовой сегмент"),

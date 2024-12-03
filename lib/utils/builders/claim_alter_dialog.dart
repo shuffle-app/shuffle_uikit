@@ -30,6 +30,7 @@ class ClaimAlterDialogWidget extends StatefulWidget {
 }
 
 class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
+  bool myClaim = false;
   final TextEditingController descriptionController = TextEditingController();
 
   String selectedClaim = '';
@@ -59,8 +60,13 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
               InkWell(
                 onTap: () {
                   setState(() {
+                    myClaim = false;
                     descriptionController.clear();
-                    selectedClaim += '$e ';
+                    if (selectedClaim.contains(e)) {
+                      selectedClaim = selectedClaim.replaceFirst(e, '');
+                    } else {
+                      selectedClaim += '$e ';
+                    }
                   });
                 },
                 child: UiKitRadio(selected: selectedClaim.contains(e)),
@@ -75,8 +81,33 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
             ],
           ).paddingOnly(bottom: e != claims.last ? SpacingFoundation.verticalSpacing12 : 0),
         ),
+        Divider(
+          thickness: 1.w,
+          color: ColorsFoundation.darkNeutral400,
+        ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing6),
+        Row(
+          children: [
+            InkWell(
+              onTap: () {
+                setState(() {
+                  myClaim = !myClaim;
+                  selectedClaim = '';
+                });
+              },
+              child: UiKitRadio(selected: myClaim),
+            ),
+            SpacingFoundation.horizontalSpace12,
+            Expanded(
+              child: Text(
+                S.of(context).YourOwnClaim,
+                style: theme?.regularTextTheme.labelLarge.copyWith(color: theme.colorScheme.inverseBodyTypography),
+              ),
+            )
+          ],
+        ),
         SpacingFoundation.verticalSpace12,
         UiKitInputFieldNoFill(
+          enabled: myClaim,
           customLabelColor: theme?.colorScheme.inverseBodyTypography ?? Colors.black,
           controller: descriptionController,
           customFocusedBorder:
@@ -88,20 +119,6 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
           customHintColor: Colors.grey,
           customInputTextColor: theme?.colorScheme.inverseBodyTypography ?? Colors.black,
           label: S.current.Description,
-          onChanged: (value) {
-            setState(() {
-              if (selectedClaim.isNotEmpty) {
-                selectedClaim = '';
-              }
-            });
-          },
-          onTap: () {
-            setState(() {
-              if (selectedClaim.isNotEmpty) {
-                selectedClaim = '';
-              }
-            });
-          },
         ),
         SpacingFoundation.verticalSpace16,
         SizedBox(
@@ -115,7 +132,7 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
                   selectedClaim = descriptionController.text;
                 }
 
-                widget.onSubmit?.call(selectedClaim);
+                widget.onSubmit?.call(selectedClaim.trim());
                 context.pop();
               },
               text: S.current.Send,

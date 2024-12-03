@@ -9901,6 +9901,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Your own claim`
+  String get YourOwnClaim {
+    return Intl.message(
+      'Your own claim',
+      name: 'YourOwnClaim',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
