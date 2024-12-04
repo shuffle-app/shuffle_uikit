@@ -62,6 +62,8 @@ class SpacingFoundation {
 
   static Widget get horizontalSpace4 => horizontalSpacing4.horizontalSpace;
 
+  static Widget get horizontalSpace6 => horizontalSpacing6.horizontalSpace;
+
   static Widget get horizontalSpace8 => horizontalSpacing8.horizontalSpace;
 
   static Widget get horizontalSpace10 => horizontalSpacing10.horizontalSpace;
@@ -92,8 +94,7 @@ class SpacingFoundation {
 
   static Widget get verticalSpace24 => verticalSpacing24.heightBox;
 
-  static Widget get bottomNavigationBarSpacing =>
-      kBottomNavigationBarHeight.verticalSpace;
+  static Widget get bottomNavigationBarSpacing => kBottomNavigationBarHeight.verticalSpace;
 
   SpacingFoundation._();
 }

@@ -9902,11 +9902,11 @@ class S {
     );
   }
 
-  /// `Your own claim`
-  String get YourOwnClaim {
+  /// `Another reason`
+  String get AnotherReason {
     return Intl.message(
-      'Your own claim',
-      name: 'YourOwnClaim',
+      'Another reason',
+      name: 'AnotherReason',
       desc: '',
       args: [],
     );

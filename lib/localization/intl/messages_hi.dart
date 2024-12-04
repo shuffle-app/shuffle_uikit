@@ -382,6 +382,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "कृपया अपने चयन और दूसरों की भावनाओं का सम्मान करें"),
         "AndGet": MessageLookupByLibrary.simpleMessage("And get"),
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage("और"),
+        "AnotherReason": MessageLookupByLibrary.simpleMessage("Another reason"),
         "Archive": MessageLookupByLibrary.simpleMessage("संग्रहीत"),
         "ArchiveXAlert": m3,
         "Archived": MessageLookupByLibrary.simpleMessage("संग्रहीत"),
@@ -1718,7 +1719,6 @@ class MessageLookup extends MessageLookupByLibrary {
                 "आपका प्रस्ताव पहले से ही आपके दर्शकों को प्रकाशित किया गया है, इसे बदलकर या हटाकर आप उनके संभावित नकारात्मक दृष्टिकोण के लिए जिम्मेदार हैं।"),
         "YourOfferWillShown1Time": MessageLookupByLibrary.simpleMessage(
             "आपका प्रस्ताव 1 बार दिखाया जाएगा और आपके दर्शकों के प्रस्तावों की सूची में शामिल किया जाएगा। इसे इवेंट समाप्त होने के बाद यह गायब हो जाएगा।"),
-        "YourOwnClaim": MessageLookupByLibrary.simpleMessage("Your own claim"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("आपका मत"),
         "YourPriceSegment":
             MessageLookupByLibrary.simpleMessage("Your price segment"),
