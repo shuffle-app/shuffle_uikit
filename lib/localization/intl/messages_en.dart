@@ -378,6 +378,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Plz respect your choice and others\' feelings"),
         "AndGet": MessageLookupByLibrary.simpleMessage("And get"),
         "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" And "),
+        "AnotherReason": MessageLookupByLibrary.simpleMessage("Another reason"),
         "Archive": MessageLookupByLibrary.simpleMessage("Archive"),
         "ArchiveXAlert": m3,
         "Archived": MessageLookupByLibrary.simpleMessage("Archived"),
@@ -1704,7 +1705,6 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Your offer has already been published to your audience, by changing or deleting it you are responsible for their potential negative attitude."),
         "YourOfferWillShown1Time": MessageLookupByLibrary.simpleMessage(
             "Your offer will be shown 1 time and included in the list of offers of your audience. It will disappear after the end of the event."),
-        "YourOwnClaim": MessageLookupByLibrary.simpleMessage("Your own claim"),
         "YourPosition": MessageLookupByLibrary.simpleMessage("Your position"),
         "YourPriceSegment":
             MessageLookupByLibrary.simpleMessage("Your price segment"),
