@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class AnimatedPullToShowHint extends StatefulWidget {
@@ -91,6 +92,7 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
   });
 
   @override
+  // double get maxExtent =>  topPadding;
   double get maxExtent => 0.175.sw + (SpacingFoundation.verticalSpacing16 * 2) + topPadding;
 
   @override
@@ -98,7 +100,7 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   bool shouldRebuild(UiKitAnimatedPullToShowDelegate oldDelegate) {
-    return false;
+    return true;
   }
 
   @override
@@ -108,6 +110,7 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
     final extentToShowListOfChildren = expandHint ? 0.25 : 0.4;
 
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         AnimatedBuilder(
             animation: lastPhaseScaleNotifier,
@@ -159,7 +162,7 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
                 // bottom: shrinkToMaxExtentRatio < 0.25 ? 0 : SpacingFoundation.verticalSpacing2,
                 // bottom: 0,
                 top: shrinkToMaxExtentRatio < extentToShowListOfChildren
-                    ? SpacingFoundation.verticalSpacing16 * (1 - shrinkToMaxExtentRatio*6)
+                    ? SpacingFoundation.verticalSpacing16 * (1 - shrinkToMaxExtentRatio * 6)
                     : null,
                 // left: shrinkToMaxExtentRatio * 1.sw/2,
                 // left: shrinkToMaxExtentRatio < 0.25 ? null : (1.sw / 2) - (0.15625.sw / 2),
@@ -191,6 +194,179 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
             ],
           ),
         ),
+      ],
+    );
+  }
+}
+
+class UiKitPullToShowWidgetBar extends StatefulWidget {
+  final List<Widget> children;
+  final double topPadding;
+  final ValueNotifier<double> lastPhaseScaleNotifier;
+  final ValueNotifier<double> secondPhaseScaleNotifier;
+  final bool showHints;
+  final bool expandHint;
+  final AnimatedPullToShowState state;
+
+  const UiKitPullToShowWidgetBar(
+      {super.key,
+      required this.children,
+      required this.topPadding,
+      required this.lastPhaseScaleNotifier,
+      required this.secondPhaseScaleNotifier,
+      this.showHints = true,
+      this.state = AnimatedPullToShowState.showFirstHint,
+      this.expandHint = true});
+
+  @override
+  State<UiKitPullToShowWidgetBar> createState() => _UiKitPullToShowWidgetBarState();
+}
+
+class _UiKitPullToShowWidgetBarState extends State<UiKitPullToShowWidgetBar> {
+  AnimatedPullToShowState phase = AnimatedPullToShowState.showFirstHint;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.secondPhaseScaleNotifier.addListener(_firstPhaseScaleNotifier);
+  }
+
+  _firstPhaseScaleNotifier() {
+    if (phase == AnimatedPullToShowState.showLastPhase) {
+      return;
+    } else if (phase == AnimatedPullToShowState.showSecondHint) {
+      setState(() {});
+      if(widget.secondPhaseScaleNotifier.value > 68){
+        setState(() {
+          phase = AnimatedPullToShowState.showLastPhase;
+        });
+      }
+    }
+  }
+
+  @override
+  void didUpdateWidget(covariant UiKitPullToShowWidgetBar oldWidget) {
+    setState(() {
+      // if(oldWidget.state)
+
+      phase = widget.state;
+    });
+    super.didUpdateWidget(oldWidget);
+  }
+
+  double get maxExtent => 0.175.sw + (SpacingFoundation.verticalSpacing16 * 2) + widget.topPadding;
+
+  double get minExtent => maxExtent * 0.325;
+
+  @override
+  void dispose() {
+    widget.secondPhaseScaleNotifier.removeListener(_firstPhaseScaleNotifier);
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    debugPrint('building phase $phase');
+    final colorScheme = context.uiKitTheme?.colorScheme;
+    final shrinkOffset =
+        phase == AnimatedPullToShowState.showLastPhase ? 0 :  maxExtent/2 -widget.secondPhaseScaleNotifier.value;
+    debugPrint('shrinkOffset is $shrinkOffset');
+    final shrinkToMaxExtentRatio = shrinkOffset / maxExtent;
+    final extentToShowListOfChildren = widget.expandHint ? 0.25 : 0.4;
+    debugPrint('shrinkToMaxExtentRatio is $shrinkToMaxExtentRatio');
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (phase == AnimatedPullToShowState.showLastPhase)
+          AnimatedBuilder(
+              animation: widget.lastPhaseScaleNotifier,
+              builder: (context, child) {
+                final scale = widget.lastPhaseScaleNotifier.value;
+                if (widget.lastPhaseScaleNotifier.value == 0) return widget.topPadding.heightBox;
+                return AnimatedScale(
+                  scale: scale,
+                  duration: const Duration(milliseconds: 50),
+                  child: SizedBox(
+                    height: (widget.topPadding * scale),
+                    width: 1.sw,
+                    child: child,
+                  ),
+                );
+              },
+              child: Center(
+                child: GradientableWidget(
+                  gradient: GradientFoundation.badgeIcon,
+                  child: ImageWidget(
+                    svgAsset: GraphicsFoundation.instance.svg.filmstrip,
+                    color: Colors.white,
+                    width: 0.1.sw,
+                    height: 0.1.sw,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ))
+        else
+          widget.topPadding.heightBox,
+        if (phase != AnimatedPullToShowState.showFirstHint)
+          AnimatedSize(
+              duration: const Duration(milliseconds: 50),
+              child: UiKitCardWrapper(
+                borderRadius: BorderRadiusFoundation.zero,
+                height: max(0, maxExtent - widget.topPadding - shrinkOffset - SpacingFoundation.verticalSpacing16),
+                width: 1.sw,
+                alignment: Alignment.topCenter,
+                color: colorScheme?.surface2,
+                child: Stack(
+                  alignment: Alignment.topCenter,
+                  fit: StackFit.expand,
+                  children: [
+                    if (widget.showHints)
+                      AnimatedPositioned(
+                        left: (1.sw / 2) - (0.15625.sw / 2),
+                        top: shrinkToMaxExtentRatio < 0.05 ? (-0.15625.sw * 0.6) : -0.15625.sw,
+                        duration: const Duration(milliseconds: 250),
+                        child: const AnimatedPullToShowHint(),
+                      ),
+                    AnimatedPositioned(
+                      duration: const Duration(milliseconds: 50),
+                      bottom: shrinkToMaxExtentRatio * SpacingFoundation.verticalSpacing2,
+                      // bottom: shrinkToMaxExtentRatio < 0.25 ? 0 : SpacingFoundation.verticalSpacing2,
+                      // bottom: 0,
+                      top: shrinkToMaxExtentRatio < extentToShowListOfChildren
+                          ? SpacingFoundation.verticalSpacing16 * (1 - shrinkToMaxExtentRatio * 6)
+                          : null,
+                      // left: shrinkToMaxExtentRatio * 1.sw/2,
+                      // left: shrinkToMaxExtentRatio < 0.25 ? null : (1.sw / 2) - (0.15625.sw / 2),
+                      child: AnimatedSize(
+                        duration: const Duration(milliseconds: 350),
+                        alignment:
+                            shrinkToMaxExtentRatio < extentToShowListOfChildren ? Alignment.topLeft : Alignment.center,
+                        child: shrinkToMaxExtentRatio < extentToShowListOfChildren
+                            ? AnimatedScale(
+                                scale: 1 - shrinkToMaxExtentRatio,
+                                duration: const Duration(milliseconds: 50),
+                                child: SizedBox(
+                                  height: 0.15.sw + SpacingFoundation.verticalSpacing16 / 2,
+                                  width: 1.sw,
+                                  child: ListView.separated(
+                                    clipBehavior: Clip.none,
+                                    scrollDirection: Axis.horizontal,
+                                    shrinkWrap: true,
+                                    padding: EdgeInsets.symmetric(horizontal: EdgeInsetsFoundation.vertical16),
+                                    itemBuilder: (context, index) => widget.children.elementAt(index),
+                                    separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                                    itemCount: widget.children.length,
+                                  ),
+                                ))
+                            : widget.showHints
+                                ? const AnimatedPullToShowHint()
+                                : const SizedBox.shrink(),
+                      ),
+                    ),
+                  ],
+                ),
+              )),
       ],
     );
   }

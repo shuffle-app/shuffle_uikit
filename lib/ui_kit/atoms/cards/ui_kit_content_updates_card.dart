@@ -79,14 +79,14 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     double additionalSpacingForComment = 0;
     double reactionsSpacing = 0;
     if (hasGradientBorder && comment != null) {
-      final linesCount = comment!.length ~/ 30;
-      additionalSpacingForComment += linesCount * (kIsWeb ? 15 : 15.h);
+      final linesCount = comment!.length ~/ charactersPerLine;
+      additionalSpacingForComment += linesCount * (kIsWeb ? 15 : 13.5.h);
     }
     if (hasReactions) reactionsSpacing += SpacingFoundation.verticalSpacing8 + SpacingFoundation.verticalSpacing20;
 
     return children.fold(0.0, (previousValue, element) => previousValue + element.height) +
         ((children.length + 2) * SpacingFoundation.verticalSpacing16) +
-        (kIsWeb ? 17 : 0.15.sw) +
+        (kIsWeb ? 17 : 0.152.sw) +
         EdgeInsetsFoundation.vertical24 +
         reactionsSpacing +
         additionalSpacingForComment;
@@ -102,13 +102,16 @@ class UiKitContentUpdatesCard extends StatelessWidget {
 
   int get smileyCount => smileyReactionsCount ?? 0;
 
+  int get charactersPerLine => 1.sw > 380 ? 35 : 30;
+
   @override
   Widget build(BuildContext context) {
-    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
-    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
-    final colorScheme = context.uiKitTheme?.colorScheme;
+    final theme = context.uiKitTheme;
+    final boldTextTheme = theme?.boldTextTheme;
+    final regularTextTheme = theme?.regularTextTheme;
+    final colorScheme = theme?.colorScheme;
     final reactionTextColor = colorScheme?.bodyTypography;
-    final isLightTheme = context.uiKitTheme?.themeMode == ThemeMode.light;
+    final isLightTheme = theme?.themeMode == ThemeMode.light;
 
     bool isOverlayVisible = false;
     OverlayEntry? overlayEntry;
@@ -171,11 +174,10 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                       children: [
                         showEmptyReactionsState
                             ? Builder(
-                          builder: (c) =>
-                              TapRegion(
-                                behavior: HitTestBehavior.opaque,
-                                onTapInside: (value) {
-                                  if (onReactionsTapped != null) {
+                                builder: (c) => TapRegion(
+                                  behavior: HitTestBehavior.opaque,
+                                  onTapInside: (value) {
+                                    if (onReactionsTapped != null) {
                                       isOverlayVisible
                                           ? hideReactionOverlay(overlayEntry)
                                           : showReactionOverlay(
@@ -187,74 +189,73 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                                       isOverlayVisible = !isOverlayVisible;
                                     }
                                   },
-                                onTapOutside: (event) {
-                                  isOverlayVisible = false;
-                                  hideReactionOverlay(overlayEntry);
-                                },
-                                child: const ImageWidget(
-                                  iconData: ShuffleUiKitIcons.thumbup,
-                                  color: ColorsFoundation.mutedText,
+                                  onTapOutside: (event) {
+                                    isOverlayVisible = false;
+                                    hideReactionOverlay(overlayEntry);
+                                  },
+                                  child: const ImageWidget(
+                                    iconData: ShuffleUiKitIcons.thumbup,
+                                    color: ColorsFoundation.mutedText,
+                                  ),
                                 ),
-                              ),
-                        )
+                              )
                             : Builder(
-                          builder: (c) =>
-                              TapRegion(
-                                behavior: HitTestBehavior.opaque,
-                                onTapInside: (value) {
-                                  isOverlayVisible
-                                      ? hideReactionOverlay(overlayEntry)
-                                      : showReactionOverlay(
-                                    c,
-                                    overlayEntry,
-                                    reactionTextColor,
-                                    onReactionsTapped,
-                                  );
-                                  isOverlayVisible = !isOverlayVisible;
-                                },
-                                onTapOutside: (event) {
-                                  isOverlayVisible = false;
-                                  hideReactionOverlay(overlayEntry);
-                                },
-                                child: Row(
-                                  children: [
-                                    if (heartCount != 0)
-                                      UiKitHeartEyesReaction(
-                                        reactionsCount: heartCount,
-                                        textColor: reactionTextColor,
-                                      ),
-                                    if (likeCount != 0) ...[
-                                      SpacingFoundation.horizontalSpace4,
-                                      UiKitLikeReaction(
-                                        reactionsCount: likeCount,
-                                        textColor: reactionTextColor,
-                                      )
+                                builder: (c) => TapRegion(
+                                  behavior: HitTestBehavior.opaque,
+                                  onTapInside: (value) {
+                                    isOverlayVisible
+                                        ? hideReactionOverlay(overlayEntry)
+                                        : showReactionOverlay(
+                                            c,
+                                            overlayEntry,
+                                            reactionTextColor,
+                                            onReactionsTapped,
+                                          );
+                                    isOverlayVisible = !isOverlayVisible;
+                                  },
+                                  onTapOutside: (event) {
+                                    isOverlayVisible = false;
+                                    hideReactionOverlay(overlayEntry);
+                                  },
+                                  child: Row(
+                                    children: [
+                                      if (heartCount != 0)
+                                        UiKitHeartEyesReaction(
+                                          reactionsCount: heartCount,
+                                          textColor: reactionTextColor,
+                                        ),
+                                      if (likeCount != 0) ...[
+                                        SpacingFoundation.horizontalSpace4,
+                                        UiKitLikeReaction(
+                                          reactionsCount: likeCount,
+                                          textColor: reactionTextColor,
+                                        )
+                                      ],
+                                      if (fireCount != 0) ...[
+                                        SpacingFoundation.horizontalSpace4,
+                                        UiKitFireReaction(
+                                          reactionsCount: fireCount,
+                                          textColor: reactionTextColor,
+                                        )
+                                      ],
+                                      if (sunglassesCount != 0) ...[
+                                        SpacingFoundation.horizontalSpace4,
+                                        UiKitSunglassesReaction(
+                                          reactionsCount: sunglassesCount,
+                                          textColor: reactionTextColor,
+                                        )
+                                      ],
+                                      if (smileyCount != 0) ...[
+                                        SpacingFoundation.horizontalSpace4,
+                                        UiKitSmileyReaction(
+                                          reactionsCount: smileyCount,
+                                          textColor: reactionTextColor,
+                                        )
+                                      ],
                                     ],
-                                    if (fireCount != 0) ...[
-                                      SpacingFoundation.horizontalSpace4,
-                                      UiKitFireReaction(
-                                        reactionsCount: fireCount,
-                                        textColor: reactionTextColor,
-                                      )
-                                    ],
-                                    if (sunglassesCount != 0) ...[
-                                      SpacingFoundation.horizontalSpace4,
-                                      UiKitSunglassesReaction(
-                                        reactionsCount: sunglassesCount,
-                                        textColor: reactionTextColor,
-                                      )
-                                    ],
-                                    if (smileyCount != 0) ...[
-                                      SpacingFoundation.horizontalSpace4,
-                                      UiKitSmileyReaction(
-                                        reactionsCount: smileyCount,
-                                        textColor: reactionTextColor,
-                                      )
-                                    ],
-                                  ],
+                                  ),
                                 ),
                               ),
-                        ),
                       ],
                     )
                 ],

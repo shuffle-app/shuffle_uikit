@@ -23,11 +23,11 @@ class UiKitPostCard extends StatelessWidget {
 
   bool get showEmptyReactionsState =>
       (heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
-          (heartEyesCount == null &&
-              likesCount == null &&
-              sunglassesCount == null &&
-              firesCount == null &&
-              smileyCount == null);
+      (heartEyesCount == null &&
+          likesCount == null &&
+          sunglassesCount == null &&
+          firesCount == null &&
+          smileyCount == null);
 
   const UiKitPostCard({
     super.key,
@@ -46,6 +46,16 @@ class UiKitPostCard extends StatelessWidget {
     this.onReactionsTapped,
     this.onLongPress,
   });
+
+  int get heartCount => heartEyesCount ?? 0;
+
+  int get likeCount => likesCount ?? 0;
+
+  int get fireCount => firesCount ?? 0;
+
+  int get sunglassesCountNotNull => sunglassesCount ?? 0;
+
+  int get smileyCountNotNull => smileyCount ?? 0;
 
   @override
   Widget build(BuildContext context) {
@@ -101,82 +111,92 @@ class UiKitPostCard extends StatelessWidget {
                     children: [
                       showEmptyReactionsState
                           ? Builder(
-                        builder: (c) {
-                          return TapRegion(
-                            behavior: HitTestBehavior.opaque,
-                            onTapInside: (value) {
-                              if (onReactionsTapped != null)
-                                isOverlayVisible
-                                    ? hideReactionOverlay(overlayEntry)
-                                    : showReactionOverlay(
-                                  c,
-                                  overlayEntry,
-                                  reactionTextColor,
-                                  onReactionsTapped,
+                              builder: (c) {
+                                return TapRegion(
+                                  behavior: HitTestBehavior.opaque,
+                                  onTapInside: (value) {
+                                    if (onReactionsTapped != null) {
+                                      isOverlayVisible
+                                          ? hideReactionOverlay(overlayEntry)
+                                          : showReactionOverlay(
+                                              c,
+                                              overlayEntry,
+                                              reactionTextColor,
+                                              onReactionsTapped,
+                                            );
+                                      isOverlayVisible = !isOverlayVisible;
+                                    }
+                                  },
+                                  onTapOutside: (event) {
+                                    isOverlayVisible = false;
+                                    hideReactionOverlay(overlayEntry);
+                                  },
+                                  child: const ImageWidget(
+                                    iconData: ShuffleUiKitIcons.thumbup,
+                                    color: ColorsFoundation.mutedText,
+                                  ),
                                 );
-                              isOverlayVisible = !isOverlayVisible;
-                            },
-                            onTapOutside: (event) {
-                              isOverlayVisible = false;
-                              hideReactionOverlay(overlayEntry);
-                            },
-                            child: const ImageWidget(
-                              iconData: ShuffleUiKitIcons.thumbup,
-                              color: ColorsFoundation.mutedText,
-                            ),
-                          );
-                        },
-                      )
+                              },
+                            )
                           : Builder(
-                        builder: (c) {
-                          return TapRegion(
-                            behavior: HitTestBehavior.opaque,
-                            onTapInside: (value) {
-                              isOverlayVisible
-                                  ? hideReactionOverlay(overlayEntry)
-                                  : showReactionOverlay(
-                                c,
-                                overlayEntry,
-                                reactionTextColor,
-                                onReactionsTapped,
-                              );
-                              isOverlayVisible = !isOverlayVisible;
-                            },
-                            onTapOutside: (event) {
-                              isOverlayVisible = false;
-                              hideReactionOverlay(overlayEntry);
-                            },
-                            child: Row(
-                              children: [
-                                UiKitHeartEyesReaction(
-                                  reactionsCount: heartEyesCount ?? 0,
-                                  textColor: reactionTextColor,
-                                ),
-                                SpacingFoundation.horizontalSpace4,
-                                UiKitLikeReaction(
-                                  reactionsCount: likesCount ?? 0,
-                                  textColor: reactionTextColor,
-                                ),
-                                SpacingFoundation.horizontalSpace4,
-                                UiKitFireReaction(
-                                  reactionsCount: firesCount ?? 0,
-                                  textColor: reactionTextColor,
-                                ),
-                                SpacingFoundation.horizontalSpace4,
-                                UiKitSunglassesReaction(
-                                  reactionsCount: sunglassesCount ?? 0,
-                                  textColor: reactionTextColor,
-                                ),
-                                SpacingFoundation.horizontalSpace4,
-                                UiKitSmileyReaction(
-                                  reactionsCount: smileyCount ?? 0,
-                                  textColor: reactionTextColor,
-                                ),
-                              ],
+                              builder: (c) {
+                                return TapRegion(
+                                  behavior: HitTestBehavior.opaque,
+                                  onTapInside: (value) {
+                                    isOverlayVisible
+                                        ? hideReactionOverlay(overlayEntry)
+                                        : showReactionOverlay(
+                                            c,
+                                            overlayEntry,
+                                            reactionTextColor,
+                                            onReactionsTapped,
+                                          );
+                                    isOverlayVisible = !isOverlayVisible;
+                                  },
+                                  onTapOutside: (event) {
+                                    isOverlayVisible = false;
+                                    hideReactionOverlay(overlayEntry);
+                                  },
+                                  child: Row(
+                                    children: [
+                                      if (heartCount > 0)
+                                        UiKitHeartEyesReaction(
+                                          reactionsCount: heartCount,
+                                          textColor: reactionTextColor,
+                                        ),
+                                      if (likeCount > 0) ...[
+                                        SpacingFoundation.horizontalSpace4,
+                                        UiKitLikeReaction(
+                                          reactionsCount: likeCount,
+                                          textColor: reactionTextColor,
+                                        )
+                                      ],
+                                      if (fireCount > 0) ...[
+                                        SpacingFoundation.horizontalSpace4,
+                                        UiKitFireReaction(
+                                          reactionsCount: fireCount,
+                                          textColor: reactionTextColor,
+                                        )
+                                      ],
+                                      if (sunglassesCountNotNull > 0) ...[
+                                        SpacingFoundation.horizontalSpace4,
+                                        UiKitSunglassesReaction(
+                                          reactionsCount: sunglassesCountNotNull,
+                                          textColor: reactionTextColor,
+                                        )
+                                      ],
+                                      if (smileyCountNotNull > 0) ...[
+                                        SpacingFoundation.horizontalSpace4,
+                                        UiKitSmileyReaction(
+                                          reactionsCount: smileyCountNotNull,
+                                          textColor: reactionTextColor,
+                                        )
+                                      ],
+                                    ],
+                                  ),
+                                );
+                              },
                             ),
-                          );
-                        },
-                      ),
                     ],
                   ),
                 ],

@@ -246,7 +246,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
         .ceil();
     DateTime startDate = dates.elementAt(offsetIndex);
     DateTime endDate = offsetIndex + datesVisibleInViewport < dates.length
-        ? dates.elementAt(datesVisibleInViewport - 2 + offsetIndex)
+        ? dates.elementAt(max(0,datesVisibleInViewport - 2 + offsetIndex))
         : dates.last;
     _visibleDateRangeNotifier.value = DateRange(start: startDate, end: endDate);
   }
