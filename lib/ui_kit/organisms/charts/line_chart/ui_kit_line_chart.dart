@@ -145,51 +145,63 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      if (widget.chartData.items.isEmpty) {
-        _smallPreviewUpdateNotifier.value = LineChartSmallPreviewData(
-          leftOffset: 0,
-          previewWidthFraction: 1,
-          visibleLinesIds: [],
-        );
-        initialMaxChartScrollablePartWidth = viewPortComputedSize.width;
-        initialPreviewWidthFraction = 0.35;
-        initialPixelsPerDate = 1;
-        setState(() {});
-        return;
+      _initChartLines();
+    });
+  }
+
+  @override
+  void didUpdateWidget(covariant UiKitLineChart oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      _initChartLines();
+    });
+  }
+
+  _initChartLines(){
+    if (widget.chartData.items.isEmpty) {
+      _smallPreviewUpdateNotifier.value = LineChartSmallPreviewData(
+        leftOffset: 0,
+        previewWidthFraction: 1,
+        visibleLinesIds: [],
+      );
+      initialMaxChartScrollablePartWidth = viewPortComputedSize.width;
+      initialPreviewWidthFraction = 0.35;
+      initialPixelsPerDate = 1;
+      setState(() {});
+      return;
+    }
+
+    /// wait until chart is drawn to avoid exception _positions.isNotEmpty
+    Future.delayed(const Duration(milliseconds: 300), () {
+      initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
+      initialPreviewWidthFraction = (chartViewPortSize.width / initialMaxChartScrollablePartWidth!).clamp(0.1, 1);
+      _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
+        previewWidthFraction: min(1, initialPreviewWidthFraction!),
+        visibleLinesIds: visibleLineIds,
+      );
+      if (initialMaxChartScrollablePartWidth != null) {
+        initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
+        chartToSmallPreviewRatio = initialMaxChartScrollablePartWidth! / (smallPreviewSize.width);
+        initialPixelsPerDate = (initialMaxChartScrollablePartWidth! -
+            ((widget.chartData.items.dates.length - 1) * SpacingFoundation.horizontalSpacing8)) /
+            widget.chartData.items.dates.length;
+        _smallPreviewUpdateNotifier.addListener(_smallPreviewUpdateListener);
       }
 
-      /// wait until chart is drawn to avoid exception _positions.isNotEmpty
-      Future.delayed(const Duration(milliseconds: 300), () {
-        initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
-        initialPreviewWidthFraction = (chartViewPortSize.width / initialMaxChartScrollablePartWidth!).clamp(0.1, 1);
-        _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
-          previewWidthFraction: min(1, initialPreviewWidthFraction!),
-          visibleLinesIds: visibleLineIds,
+      final visibleDates = (chartViewPortSize.width ~/ initialPixelsPerDate) - 1;
+      DateRange dateRange = DateRange(
+        start: widget.chartData.items.earliestDate,
+        end: widget.chartData.items.latestDate,
+      );
+      /// check if dates are not empty to avoid exception
+      if (dates.isNotEmpty) {
+        dateRange = DateRange(
+          start: dates.first,
+          end: visibleDates - 1 < dates.length ? dates.elementAt(visibleDates - 1) : dates.last,
         );
-        if (initialMaxChartScrollablePartWidth != null) {
-          initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
-          chartToSmallPreviewRatio = initialMaxChartScrollablePartWidth! / (smallPreviewSize.width);
-          initialPixelsPerDate = (initialMaxChartScrollablePartWidth! -
-                  ((widget.chartData.items.dates.length - 1) * SpacingFoundation.horizontalSpacing8)) /
-              widget.chartData.items.dates.length;
-          _smallPreviewUpdateNotifier.addListener(_smallPreviewUpdateListener);
-        }
-
-        final visibleDates = (chartViewPortSize.width ~/ initialPixelsPerDate) - 1;
-        DateRange dateRange = DateRange(
-          start: widget.chartData.items.earliestDate,
-          end: widget.chartData.items.latestDate,
-        );
-        /// check if dates are not empty to avoid exception
-        if (dates.isNotEmpty) {
-          dateRange = DateRange(
-            start: dates.first,
-            end: visibleDates - 1 < dates.length ? dates.elementAt(visibleDates - 1) : dates.last,
-          );
-        }
-        _visibleDateRangeNotifier.value = dateRange;
-        setState(() {});
-      });
+      }
+      _visibleDateRangeNotifier.value = dateRange;
+      setState(() {});
     });
   }
 

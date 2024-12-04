@@ -6,6 +6,7 @@ class UiKitTitledDescriptionWithDivider extends StatelessWidget {
   final List<String> description;
   final Axis direction;
   final VoidCallback? onTrailingTap;
+  final IconData? iconForTrailing;
 
   const UiKitTitledDescriptionWithDivider({
     super.key,
@@ -13,6 +14,7 @@ class UiKitTitledDescriptionWithDivider extends StatelessWidget {
     required this.description,
     this.direction = Axis.vertical,
     this.onTrailingTap,
+    this.iconForTrailing,
   });
 
   @override
@@ -41,6 +43,7 @@ class UiKitTitledDescriptionWithDivider extends StatelessWidget {
           ]
         ] else
           Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Expanded(
                 child: SizedBox(
@@ -70,7 +73,7 @@ class UiKitTitledDescriptionWithDivider extends StatelessWidget {
                         ),
                       ),
                       child: ImageWidget(
-                        iconData: ShuffleUiKitIcons.clock,
+                        iconData: iconForTrailing ?? ShuffleUiKitIcons.clock,
                         color: context.uiKitTheme?.colorScheme.inversePrimary,
                       ).paddingAll(EdgeInsetsFoundation.all16),
                     ),

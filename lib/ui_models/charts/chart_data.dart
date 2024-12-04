@@ -85,7 +85,7 @@ class UiKitLineChartData<T> extends UiKitChartData<T> {
     UiKitLineChartAdditionalData? additionalData,
   }) {
     return UiKitLineChartData<T>(
-      title: title ?? this.chartTitle,
+      title: title ?? chartTitle,
       items: items ?? this.items,
       subtitle: subtitle ?? this.subtitle,
       popUpMenuOptions: popUpMenuOptions ?? this.popUpMenuOptions,

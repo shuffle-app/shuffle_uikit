@@ -31,22 +31,23 @@ class _UiKitMiniChartState extends State<UiKitMiniChart> {
     start: widget.data.period.start,
     end: widget.data.period.end,
   ));
-  final ValueNotifier<LineChartSmallPreviewData> _previewUpdatesNotifier =
-      ValueNotifier(LineChartSmallPreviewData.initial());
+  // final ValueNotifier<LineChartSmallPreviewData> _previewUpdatesNotifier =
+  //     ValueNotifier(LineChartSmallPreviewData.initial());
   final AutoSizeGroup _autoSizeGroup = AutoSizeGroup();
 
   @override
   void initState() {
     super.initState();
-    final difference = widget.data.period.start.isAtSameMomentAs(widget.data.period.end)
-        ? 0
-        : widget.data.period.start.difference(widget.data.period.end).inDays;
+    // final difference = widget.data.period.start.isAtSameDayAs(widget.data.period.end)
+    //     ? 0
+    //     : widget.data.period.start.difference(widget.data.period.end).inDays;
 
-    final visibleDatesCount = (difference * _previewUpdatesNotifier.value.previewWidthFraction).toInt().abs();
-    WidgetsBinding.instance.addPostFrameCallback((time) => _dateNotifier.value = DateRange(
-          start: widget.data.period.start,
-          end: widget.data.period.start.add(Duration(days: visibleDatesCount.toInt())),
-        ));
+    // final visibleDatesCount = (difference * _previewUpdatesNotifier.value.previewWidthFraction).toInt().abs();
+    // WidgetsBinding.instance.addPostFrameCallback((time) => _dateNotifier.value = DateRange(
+    //       start: widget.data.period.start,
+    //       end: widget.data.period.end,
+    //       // end: widget.data.period.start.add(Duration(days: visibleDatesCount.toInt())),
+    //     ));
     // WidgetsBinding.instance.addPostFrameCallback((time) {
     //   datesToPreviewWidthRatio =
     //       (_datesScrollController.position.maxScrollExtent + datesViewPortSize.width) / previewSize.width;
