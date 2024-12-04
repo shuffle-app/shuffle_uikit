@@ -10,19 +10,6 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
   final List<UiKitTag>? properties;
   final List<ProfileVideoReaction>? videoReactions;
   final List<UiKitFeedbackCard>? reviews;
-  final int? heartEyesCount;
-  final int? likesCount;
-  final int? sunglassesCount;
-  final int? firesCount;
-  final int? smileyCount;
-
-  bool get showEmptyReactionsState =>
-      (heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
-      (heartEyesCount == null &&
-          likesCount == null &&
-          sunglassesCount == null &&
-          firesCount == null &&
-          smileyCount == null);
 
   const UiKitProUserProfileEventCard({
     super.key,
@@ -33,17 +20,11 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
     this.properties,
     this.videoReactions,
     this.reviews,
-    this.heartEyesCount,
-    this.likesCount,
-    this.sunglassesCount,
-    this.firesCount,
-    this.smileyCount,
   });
 
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
-    final reactionTextColor = context.uiKitTheme?.colorScheme.inverseBodyTypography;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -109,37 +90,6 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
               itemCount: videoReactions!.length,
             ),
           ),
-        if (!showEmptyReactionsState)
-          Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              UiKitHeartEyesReaction(
-                reactionsCount: heartEyesCount ?? 0,
-                textColor: reactionTextColor,
-              ),
-              SpacingFoundation.horizontalSpace4,
-              UiKitLikeReaction(
-                reactionsCount: likesCount ?? 0,
-                textColor: reactionTextColor,
-              ),
-              SpacingFoundation.horizontalSpace4,
-              UiKitFireReaction(
-                reactionsCount: firesCount ?? 0,
-                textColor: reactionTextColor,
-              ),
-              SpacingFoundation.horizontalSpace4,
-              UiKitSunglassesReaction(
-                reactionsCount: sunglassesCount ?? 0,
-                textColor: reactionTextColor,
-              ),
-              SpacingFoundation.horizontalSpace4,
-              UiKitSmileyReaction(
-                reactionsCount: smileyCount ?? 0,
-                textColor: reactionTextColor,
-              ),
-            ],
-          ).paddingOnly(bottom: SpacingFoundation.verticalSpacing16),
         if (videoReactions != null && videoReactions!.isNotEmpty) SpacingFoundation.verticalSpace16,
         if (reviews != null && reviews!.isNotEmpty)
           SizedBox(
