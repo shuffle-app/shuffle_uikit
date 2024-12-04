@@ -41,6 +41,8 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
     S.current.Misleading,
   ];
 
+  String? errorText;
+
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
@@ -61,6 +63,7 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
                 onTap: () {
                   setState(() {
                     myClaim = false;
+                    errorText = null;
                     descriptionController.clear();
                     if (selectedClaim.contains(e)) {
                       selectedClaim = selectedClaim.replaceFirst(e, '');
@@ -92,6 +95,7 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
                 setState(() {
                   myClaim = !myClaim;
                   selectedClaim = '';
+                  if (myClaim == false) descriptionController.clear();
                 });
               },
               child: UiKitRadio(selected: myClaim),
@@ -99,7 +103,7 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
             SpacingFoundation.horizontalSpace12,
             Expanded(
               child: Text(
-                S.of(context).YourOwnClaim,
+                S.of(context).AnotherReason,
                 style: theme?.regularTextTheme.labelLarge.copyWith(color: theme.colorScheme.inverseBodyTypography),
               ),
             )
@@ -121,6 +125,12 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
           label: S.current.Description,
         ),
         SpacingFoundation.verticalSpace16,
+        if (errorText != null && errorText!.isNotEmpty) ...[
+          Text(
+            errorText!,
+            style: theme?.regularTextTheme.labelLarge.copyWith(color: ColorsFoundation.error),
+          ).paddingOnly(bottom: SpacingFoundation.verticalSpacing16)
+        ],
         SizedBox(
           width: 1.sw,
           child: context.button(
@@ -128,7 +138,12 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
               textColor: theme?.colorScheme.inversePrimary,
               backgroundColor: theme?.colorScheme.surface,
               onPressed: () {
-                if (descriptionController.text.isNotEmpty) {
+                if (descriptionController.text.isEmpty && myClaim) {
+                  setState(() {
+                    errorText = S.of(context).XIsRequired(S.of(context).Description);
+                  });
+                  return;
+                } else if (descriptionController.text.isNotEmpty) {
                   selectedClaim = descriptionController.text;
                 }
 
