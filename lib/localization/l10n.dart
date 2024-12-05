@@ -9911,6 +9911,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Translate`
+  String get Translate {
+    return Intl.message(
+      'Translate',
+      name: 'Translate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Original`
+  String get Original {
+    return Intl.message(
+      'Original',
+      name: 'Original',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
