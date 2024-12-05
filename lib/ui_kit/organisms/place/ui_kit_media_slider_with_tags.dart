@@ -14,6 +14,8 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   final List<Widget>? actions;
   final ScrollController? listViewController;
   final bool? initialDescriptionHide;
+  final ValueNotifier<String?>? translateDescription;
+  final ValueNotifier<bool>? showTranslateButton;
 
   UiKitMediaSliderWithTags({
     super.key,
@@ -28,6 +30,8 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
     this.actions,
     this.listViewController,
     this.initialDescriptionHide,
+    this.showTranslateButton,
+    this.translateDescription,
   }) : scrollController = scrollController ?? ScrollController();
 
   @override
@@ -38,12 +42,16 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
   late double scrollPosition;
 
   late bool isHide;
+  bool isTranslate = false;
 
   List<HorizontalCaptionedImageData>? branches;
+
+  String currentDescription = '';
 
   @override
   void initState() {
     isHide = widget.initialDescriptionHide ?? true;
+    currentDescription = widget.description;
     super.initState();
     widget.branches?.call()?.then((value) {
       branches = value;
@@ -169,6 +177,7 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                       ))
             .paddingOnly(bottom: SpacingFoundation.verticalSpacing14),
         DescriptionWidget(
+          isTranslate: isTranslate,
           isHide: isHide,
           onReadLess: () {
             setState(() {
@@ -189,7 +198,18 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
               scrollPosition = widget.listViewController?.position.pixels ?? 0;
             });
           },
-          description: widget.description,
+          description: currentDescription,
+          onTranslateTap: () {
+            setState(() {
+              isTranslate = !isTranslate;
+              currentDescription = (isTranslate &&
+                      widget.translateDescription?.value != null &&
+                      widget.translateDescription!.value!.isNotEmpty)
+                  ? widget.translateDescription!.value!
+                  : widget.description;
+            });
+          },
+          showTranslateButton: widget.showTranslateButton,
         ).paddingOnly(
           left: widget.horizontalMargin,
           right: widget.horizontalMargin,
