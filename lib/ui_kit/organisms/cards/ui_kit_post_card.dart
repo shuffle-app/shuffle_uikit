@@ -143,15 +143,17 @@ class UiKitPostCard extends StatelessWidget {
                                 return TapRegion(
                                   behavior: HitTestBehavior.opaque,
                                   onTapInside: (value) {
-                                    isOverlayVisible
-                                        ? hideReactionOverlay(overlayEntry)
-                                        : showReactionOverlay(
-                                            c,
-                                            overlayEntry,
-                                            reactionTextColor,
-                                            onReactionsTapped,
-                                          );
-                                    isOverlayVisible = !isOverlayVisible;
+                                    if (onReactionsTapped != null) {
+                                      isOverlayVisible
+                                          ? hideReactionOverlay(overlayEntry)
+                                          : showReactionOverlay(
+                                              c,
+                                              overlayEntry,
+                                              reactionTextColor,
+                                              onReactionsTapped,
+                                            );
+                                      isOverlayVisible = !isOverlayVisible;
+                                    }
                                   },
                                   onTapOutside: (event) {
                                     isOverlayVisible = false;
