@@ -965,7 +965,8 @@
   "CopyrightInfringement": "Нарушение авторских прав",
   "Misleading": "Вводит в заблуждение",
   "YourClaim": "Ваша претензия",
-  "AnotherReason": "Другая причина"
+  "AnotherReason": "Другая причина",
+  "PleaseValidateXDetailsBeforeModeration": "Пожалуйста проверьте детали {x} перед отправкой на модерацию"
 
 }
 

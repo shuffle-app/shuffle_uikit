@@ -965,5 +965,6 @@
   "CopyrightInfringement": "Copyright infringement",
   "Misleading": "Misleading",
   "YourClaim": "Your claim",
-  "AnotherReason": "Another reason"
+  "AnotherReason": "Another reason",
+  "PleaseValidateXDetailsBeforeModeration": "Please validate {x} details before sending it to moderation"
 }
