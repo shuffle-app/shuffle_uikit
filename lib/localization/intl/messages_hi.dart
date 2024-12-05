@@ -1013,6 +1013,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("या फ़ाइलों को यहां खींचें"),
         "Organic": MessageLookupByLibrary.simpleMessage("जैविक"),
         "OrganicStatistics": MessageLookupByLibrary.simpleMessage("जैविक"),
+        "Original": MessageLookupByLibrary.simpleMessage("Original"),
         "Other": MessageLookupByLibrary.simpleMessage("अन्य"),
         "OurRecommendationsAboutGeolocation": MessageLookupByLibrary.simpleMessage(
             "हमारी सिफारिश प्रणाली कई कारकों पर आधारित है ।  जियोलोकेशन सिस्टम का केवल एक हिस्सा है, जो हमें दूरी और निकटतम परिदृश्य सुविधाओं (पहाड़ों, जलाशयों, मैदानों, रेगिस्तान) दोनों के संदर्भ में सही ढंग से प्राथमिकता देने की अनुमति देगा।"),
@@ -1534,6 +1535,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TopographingLocation":
             MessageLookupByLibrary.simpleMessage("Topographing the location"),
         "Total": MessageLookupByLibrary.simpleMessage("कुल"),
+        "Translate": MessageLookupByLibrary.simpleMessage("Translate"),
         "TravelerMen": MessageLookupByLibrary.simpleMessage("यात्री"),
         "TravelerWom": MessageLookupByLibrary.simpleMessage("यात्री"),
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("परीक्षण अवधि"),

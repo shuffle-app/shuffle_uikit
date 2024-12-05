@@ -966,6 +966,8 @@
   "Misleading": "Вводит в заблуждение",
   "YourClaim": "Ваша претензия",
   "AnotherReason": "Другая причина",
+  "Translate": "Перевести",
+  "Original": "Оригинал",
   "PleaseValidateXDetailsBeforeModeration": "Пожалуйста проверьте детали {x} перед отправкой на модерацию"
 
 }

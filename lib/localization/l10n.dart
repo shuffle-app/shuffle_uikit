@@ -9912,6 +9912,26 @@ class S {
     );
   }
 
+  /// `Translate`
+  String get Translate {
+    return Intl.message(
+      'Translate',
+      name: 'Translate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Original`
+  String get Original {
+    return Intl.message(
+      'Original',
+      name: 'Original',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please validate {x} details before sending it to moderation`
   String PleaseValidateXDetailsBeforeModeration(Object x) {
     return Intl.message(

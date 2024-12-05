@@ -1024,6 +1024,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Или перетащи файлы"),
         "Organic": MessageLookupByLibrary.simpleMessage("Органическая"),
         "OrganicStatistics": MessageLookupByLibrary.simpleMessage("Органика"),
+        "Original": MessageLookupByLibrary.simpleMessage("Оригинал"),
         "Other": MessageLookupByLibrary.simpleMessage("Другое"),
         "OurRecommendationsAboutGeolocation": MessageLookupByLibrary.simpleMessage(
             "Система рекомендаций основана на многих факторах. Геолокация – лишь часть системы, которая позволит правильно расставить приоритеты, по расстоянию, по ближайшим особенностям ландшафта (горы, водоемы, равнины, пустыни)"),
@@ -1553,6 +1554,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TopographingLocation":
             MessageLookupByLibrary.simpleMessage("Топографируем локацию"),
         "Total": MessageLookupByLibrary.simpleMessage("Сумма"),
+        "Translate": MessageLookupByLibrary.simpleMessage("Перевести"),
         "TravelerMen": MessageLookupByLibrary.simpleMessage("Путник"),
         "TravelerWom": MessageLookupByLibrary.simpleMessage("Путница"),
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("Триал период"),

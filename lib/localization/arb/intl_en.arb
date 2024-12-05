@@ -966,6 +966,8 @@
   "Misleading": "Misleading",
   "YourClaim": "Your claim",
   "AnotherReason": "Another reason",
+  "Translate": "Translate",
+  "Original": "Original",
   "PleaseValidateXDetailsBeforeModeration": "Please validate {x} details before sending it to moderation"
 
 }

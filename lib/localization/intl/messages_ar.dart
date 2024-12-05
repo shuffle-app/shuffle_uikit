@@ -1003,6 +1003,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Or drag files here"),
         "Organic": MessageLookupByLibrary.simpleMessage("Organic"),
         "OrganicStatistics": MessageLookupByLibrary.simpleMessage("Organic"),
+        "Original": MessageLookupByLibrary.simpleMessage("Original"),
         "Other": MessageLookupByLibrary.simpleMessage("Other"),
         "OurRecommendationsAboutGeolocation": MessageLookupByLibrary.simpleMessage(
             "Our recommendation system is based on many factors. Geolocation is only part of the system, which will allow us to correctly prioritize, both in terms of distance and the nearest landscape features (mountains, reservoirs, plains, deserts)"),
@@ -1522,6 +1523,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TopographingLocation":
             MessageLookupByLibrary.simpleMessage("Topographing the location"),
         "Total": MessageLookupByLibrary.simpleMessage("Total"),
+        "Translate": MessageLookupByLibrary.simpleMessage("Translate"),
         "TravelerMen": MessageLookupByLibrary.simpleMessage("Traveler"),
         "TravelerWom": MessageLookupByLibrary.simpleMessage("Traveler"),
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("Trial period"),
