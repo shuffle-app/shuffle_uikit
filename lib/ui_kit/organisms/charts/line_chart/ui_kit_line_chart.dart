@@ -158,6 +158,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   }
 
   _initChartLines(){
+    if(!mounted) return;
     if (widget.chartData.items.isEmpty) {
       _smallPreviewUpdateNotifier.value = LineChartSmallPreviewData(
         leftOffset: 0,
@@ -206,7 +207,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   }
 
   void _smallPreviewUpdateListener() {
-    setState(() {
+
       double? additionalWidth;
       if (_smallPreviewUpdateNotifier.value.previewWidthFraction < (initialPreviewWidthFraction ?? 0.35)) {
         /// taking [datesMaxScrollWidth] as a reference to calculate additional width
@@ -233,11 +234,12 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       _bodySizingNotifier.value = _bodySizingNotifier.value.copyWith(
         additionalWidth: additionalWidth,
       );
-    });
+      setState(() {});
     _setVisibleDateRange();
   }
 
   void _setVisibleDateRange() {
+    // debugPrint('_setVisibleDateRange: initialPixelsPerDaten $initialPixelsPerDate chartToSmallPreviewRatio $chartToSmallPreviewRatio');
     final offsetIndex = ((_smallPreviewUpdateNotifier.value.leftOffset * chartToSmallPreviewRatio) /
             (initialPixelsPerDate +
                 additionalSpacingForDate +

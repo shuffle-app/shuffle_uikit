@@ -9931,6 +9931,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Please validate {x} details before sending it to moderation`
+  String PleaseValidateXDetailsBeforeModeration(Object x) {
+    return Intl.message(
+      'Please validate $x details before sending it to moderation',
+      name: 'PleaseValidateXDetailsBeforeModeration',
+      desc: '',
+      args: [x],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

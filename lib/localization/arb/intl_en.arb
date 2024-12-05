@@ -967,6 +967,7 @@
   "YourClaim": "Your claim",
   "AnotherReason": "Another reason",
   "Translate": "Translate",
-  "Original": "Original"
+  "Original": "Original",
+  "PleaseValidateXDetailsBeforeModeration": "Please validate {x} details before sending it to moderation"
 
 }
