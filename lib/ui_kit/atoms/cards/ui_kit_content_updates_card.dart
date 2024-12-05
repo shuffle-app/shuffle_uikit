@@ -116,7 +116,150 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     bool isOverlayVisible = false;
     OverlayEntry? overlayEntry;
 
-    debugPrint('updates card build here and overallHeight: $overallHeight');
+    _children() {
+      return hasGradientBorder
+          ? Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(
+                  width: kIsWeb ? 90 : 1.sw,
+                  child: const UiKitShuffleTile(),
+                ),
+                if (hasGradientBorder && comment != null && comment!.isNotEmpty)
+                  Text(
+                    comment!,
+                    style: regularTextTheme?.caption2,
+                    textAlign: TextAlign.start,
+                  ).paddingOnly(top: EdgeInsetsFoundation.vertical16),
+                if (children.isNotEmpty) ...[
+                  SpacingFoundation.verticalSpace4,
+                  ...children.map((child) {
+                    final isLastChild = children.indexOf(child) == children.length - 1;
+
+                    if (!isLastChild) return child.paddingOnly(bottom: EdgeInsetsFoundation.vertical16);
+                    return child;
+                  }),
+                  SpacingFoundation.verticalSpace8,
+                ],
+                if (hasReactions)
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      showEmptyReactionsState
+                          ? Builder(
+                              builder: (c) => TapRegion(
+                                behavior: HitTestBehavior.opaque,
+                                onTapInside: (value) {
+                                  if (onReactionsTapped != null) {
+                                    isOverlayVisible
+                                        ? hideReactionOverlay(overlayEntry)
+                                        : showReactionOverlay(
+                                            c,
+                                            overlayEntry,
+                                            reactionTextColor,
+                                            onReactionsTapped,
+                                          );
+                                    isOverlayVisible = !isOverlayVisible;
+                                  }
+                                },
+                                onTapOutside: (event) {
+                                  isOverlayVisible = false;
+                                  hideReactionOverlay(overlayEntry);
+                                },
+                                child: const ImageWidget(
+                                  iconData: ShuffleUiKitIcons.thumbup,
+                                  color: ColorsFoundation.mutedText,
+                                ),
+                              ),
+                            )
+                          : Builder(
+                              builder: (c) => TapRegion(
+                                behavior: HitTestBehavior.opaque,
+                                onTapInside: (value) {
+                                  if (onReactionsTapped != null) {
+                                    isOverlayVisible
+                                        ? hideReactionOverlay(overlayEntry)
+                                        : showReactionOverlay(
+                                            c,
+                                            overlayEntry,
+                                            reactionTextColor,
+                                            onReactionsTapped,
+                                          );
+                                    isOverlayVisible = !isOverlayVisible;
+                                  }
+                                },
+                                onTapOutside: (event) {
+                                  isOverlayVisible = false;
+                                  hideReactionOverlay(overlayEntry);
+                                },
+                                child: Row(
+                                  children: [
+                                    if (heartCount != 0)
+                                      UiKitHeartEyesReaction(
+                                        reactionsCount: heartCount,
+                                        textColor: reactionTextColor,
+                                      ),
+                                    if (likeCount != 0) ...[
+                                      SpacingFoundation.horizontalSpace4,
+                                      UiKitLikeReaction(
+                                        reactionsCount: likeCount,
+                                        textColor: reactionTextColor,
+                                      )
+                                    ],
+                                    if (fireCount != 0) ...[
+                                      SpacingFoundation.horizontalSpace4,
+                                      UiKitFireReaction(
+                                        reactionsCount: fireCount,
+                                        textColor: reactionTextColor,
+                                      )
+                                    ],
+                                    if (sunglassesCount != 0) ...[
+                                      SpacingFoundation.horizontalSpace4,
+                                      UiKitSunglassesReaction(
+                                        reactionsCount: sunglassesCount,
+                                        textColor: reactionTextColor,
+                                      )
+                                    ],
+                                    if (smileyCount != 0) ...[
+                                      SpacingFoundation.horizontalSpace4,
+                                      UiKitSmileyReaction(
+                                        reactionsCount: smileyCount,
+                                        textColor: reactionTextColor,
+                                      )
+                                    ],
+                                  ],
+                                ),
+                              ),
+                            ),
+                    ],
+                  )
+              ],
+            ).paddingAll(EdgeInsetsFoundation.all16)
+          : Column(
+              children: [
+                context.userTile(
+                  data: BaseUiKitUserTileData(
+                    name: authorName,
+                    username: authorUsername,
+                    avatarUrl: authorAvatarUrl,
+                    type: authorUserType,
+                    noMaterialOverlay: true,
+                  ),
+                ),
+                SpacingFoundation.verticalSpace8,
+                ...children.map((child) {
+                  final isLastChild = children.indexOf(child) == children.length - 1;
+
+                  if (!isLastChild) return child.paddingOnly(bottom: EdgeInsetsFoundation.vertical16);
+                  return child;
+                }),
+              ],
+            ).paddingAll(EdgeInsetsFoundation.all16);
+    }
+
+    // debugPrint('updates card build here and overallHeight: $overallHeight');
 
     return GestureDetector(
       onLongPress: onLongPress,
@@ -128,161 +271,33 @@ class UiKitContentUpdatesCard extends StatelessWidget {
         ),
         child: Stack(
           clipBehavior: Clip.none,
-          fit: StackFit.expand,
+          // fit: StackFit.expand,
           children: [
-            Container(
-              width: kIsWeb ? 90 : 1.sw,
-              height: overallHeight,
-              clipBehavior: Clip.hardEdge,
-              decoration: BoxDecoration(
-                color: isLightTheme ? colorScheme?.surface2 : null,
-                gradient: isLightTheme ? null : GradientFoundation.shunyGreyGradientInverted,
+            ClipRRect(
                 borderRadius: BorderRadiusFoundation.all24,
-                border: hasGradientBorder ? GradientFoundation.touchIdgradientBorder : null,
-              ),
-              child: BackdropFilter(filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50)),
-            ),
-            if (hasGradientBorder)
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  SizedBox(
-                    width: kIsWeb ? 90 : 1.sw,
-                    child: const UiKitShuffleTile(),
+                clipBehavior: Clip.hardEdge,
+                child: DecoratedBox(
+                  // width: kIsWeb ? 90 : 1.sw,
+                  // height: overallHeight,
+                  // clipBehavior: Clip.hardEdge,
+                  position: DecorationPosition.foreground,
+                  decoration: BoxDecoration(
+                    color: isLightTheme ? colorScheme?.surface2 : null,
+                    gradient: isLightTheme ? null : GradientFoundation.shunyGreyGradientInverted,
+                    borderRadius: BorderRadiusFoundation.all24,
+                    border: hasGradientBorder ? GradientFoundation.touchIdgradientBorder : null,
                   ),
-                  if (hasGradientBorder && comment != null && comment!.isNotEmpty)
-                    Text(
-                      comment!,
-                      style: regularTextTheme?.caption2,
-                      textAlign: TextAlign.start,
-                    ).paddingOnly(top: EdgeInsetsFoundation.vertical16),
-                  if (children.isNotEmpty) ...[
-                    SpacingFoundation.verticalSpace4,
-                    ...children.map((child) {
-                      final isLastChild = children.indexOf(child) == children.length - 1;
-
-                      if (!isLastChild) return child.paddingOnly(bottom: EdgeInsetsFoundation.vertical16);
-                      return child;
-                    }),
-                    SpacingFoundation.verticalSpace8,
-                  ],
-                  if (hasReactions)
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        showEmptyReactionsState
-                            ? Builder(
-                                builder: (c) => TapRegion(
-                                  behavior: HitTestBehavior.opaque,
-                                  onTapInside: (value) {
-                                    if (onReactionsTapped != null) {
-                                      isOverlayVisible
-                                          ? hideReactionOverlay(overlayEntry)
-                                          : showReactionOverlay(
-                                              c,
-                                              overlayEntry,
-                                              reactionTextColor,
-                                              onReactionsTapped,
-                                            );
-                                      isOverlayVisible = !isOverlayVisible;
-                                    }
-                                  },
-                                  onTapOutside: (event) {
-                                    isOverlayVisible = false;
-                                    hideReactionOverlay(overlayEntry);
-                                  },
-                                  child: const ImageWidget(
-                                    iconData: ShuffleUiKitIcons.thumbup,
-                                    color: ColorsFoundation.mutedText,
-                                  ),
-                                ),
-                              )
-                            : Builder(
-                                builder: (c) => TapRegion(
-                                  behavior: HitTestBehavior.opaque,
-                                  onTapInside: (value) {
-                                    if (onReactionsTapped != null) {
-                                      isOverlayVisible
-                                          ? hideReactionOverlay(overlayEntry)
-                                          : showReactionOverlay(
-                                              c,
-                                              overlayEntry,
-                                              reactionTextColor,
-                                              onReactionsTapped,
-                                            );
-                                      isOverlayVisible = !isOverlayVisible;
-                                    }
-                                  },
-                                  onTapOutside: (event) {
-                                    isOverlayVisible = false;
-                                    hideReactionOverlay(overlayEntry);
-                                  },
-                                  child: Row(
-                                    children: [
-                                      if (heartCount != 0)
-                                        UiKitHeartEyesReaction(
-                                          reactionsCount: heartCount,
-                                          textColor: reactionTextColor,
-                                        ),
-                                      if (likeCount != 0) ...[
-                                        SpacingFoundation.horizontalSpace4,
-                                        UiKitLikeReaction(
-                                          reactionsCount: likeCount,
-                                          textColor: reactionTextColor,
-                                        )
-                                      ],
-                                      if (fireCount != 0) ...[
-                                        SpacingFoundation.horizontalSpace4,
-                                        UiKitFireReaction(
-                                          reactionsCount: fireCount,
-                                          textColor: reactionTextColor,
-                                        )
-                                      ],
-                                      if (sunglassesCount != 0) ...[
-                                        SpacingFoundation.horizontalSpace4,
-                                        UiKitSunglassesReaction(
-                                          reactionsCount: sunglassesCount,
-                                          textColor: reactionTextColor,
-                                        )
-                                      ],
-                                      if (smileyCount != 0) ...[
-                                        SpacingFoundation.horizontalSpace4,
-                                        UiKitSmileyReaction(
-                                          reactionsCount: smileyCount,
-                                          textColor: reactionTextColor,
-                                        )
-                                      ],
-                                    ],
-                                  ),
-                                ),
-                              ),
-                      ],
-                    )
-                ],
-              ).paddingAll(EdgeInsetsFoundation.all16),
-            if (!hasGradientBorder)
-              Column(
-                children: [
-                  context.userTile(
-                    data: BaseUiKitUserTileData(
-                      name: authorName,
-                      username: authorUsername,
-                      avatarUrl: authorAvatarUrl,
-                      type: authorUserType,
-                      noMaterialOverlay: true,
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
+                    child: IgnorePointer(
+                      child: Opacity(
+                        opacity: 0,
+                        child: _children(),
+                      ),
                     ),
                   ),
-                  SpacingFoundation.verticalSpace8,
-                  ...children.map((child) {
-                    final isLastChild = children.indexOf(child) == children.length - 1;
-
-                    if (!isLastChild) return child.paddingOnly(bottom: EdgeInsetsFoundation.vertical16);
-                    return child;
-                  }),
-                ],
-              ).paddingAll(EdgeInsetsFoundation.all16),
+                )),
+            _children(),
             if (authorSpeciality.isNotEmpty)
               Positioned(
                 right: 0,
