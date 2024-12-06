@@ -145,7 +145,16 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      _initChartLines();
+      _initChartLines().then((_) {
+        debugPrint('chart lines initialized');
+        if(mounted) {
+          final visibleLinesIds = widget.chartData.items.map((e) => e.id).toList();
+          debugPrint('visible lines: $visibleLinesIds');
+          _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
+            visibleLinesIds: visibleLinesIds,
+          );
+        }
+      });
     });
   }
 
@@ -157,7 +166,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
     });
   }
 
-  _initChartLines() {
+  _initChartLines() async {
     if (!mounted) return;
     if (widget.chartData.items.isEmpty) {
       _smallPreviewUpdateNotifier.value = LineChartSmallPreviewData(
@@ -173,7 +182,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
     }
 
     /// wait until chart is drawn to avoid exception _positions.isNotEmpty
-    Future.delayed(const Duration(milliseconds: 300), () {
+    await Future.delayed(const Duration(milliseconds: 500), () {
       initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
       initialPreviewWidthFraction = (chartViewPortSize.width / initialMaxChartScrollablePartWidth!).clamp(0.1, 1);
       _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
@@ -190,6 +199,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       }
 
       final visibleDates = (chartViewPortSize.width ~/ initialPixelsPerDate) - 1;
+      debugPrint('visible dates: $visibleDates with initialPixelsPerDate $initialPixelsPerDate and chartViewPortSize.width ${chartViewPortSize.width}');
       DateRange dateRange = DateRange(
         start: widget.chartData.items.earliestDate,
         end: widget.chartData.items.latestDate,
@@ -199,7 +209,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       if (dates.isNotEmpty) {
         dateRange = DateRange(
           start: dates.first,
-          end: visibleDates - 1 < dates.length ? dates.elementAt(visibleDates - 1) : dates.last,
+          end: visibleDates - 1 < dates.length ? dates.elementAt(max(0, visibleDates - 1)) : dates.last,
         );
       }
       _visibleDateRangeNotifier.value = dateRange;
