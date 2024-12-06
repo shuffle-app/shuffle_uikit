@@ -157,8 +157,8 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
     });
   }
 
-  _initChartLines(){
-    if(!mounted) return;
+  _initChartLines() {
+    if (!mounted) return;
     if (widget.chartData.items.isEmpty) {
       _smallPreviewUpdateNotifier.value = LineChartSmallPreviewData(
         leftOffset: 0,
@@ -184,7 +184,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
         initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
         chartToSmallPreviewRatio = initialMaxChartScrollablePartWidth! / (smallPreviewSize.width);
         initialPixelsPerDate = (initialMaxChartScrollablePartWidth! -
-            ((widget.chartData.items.dates.length - 1) * SpacingFoundation.horizontalSpacing8)) /
+                ((widget.chartData.items.dates.length - 1) * SpacingFoundation.horizontalSpacing8)) /
             widget.chartData.items.dates.length;
         _smallPreviewUpdateNotifier.addListener(_smallPreviewUpdateListener);
       }
@@ -194,6 +194,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
         start: widget.chartData.items.earliestDate,
         end: widget.chartData.items.latestDate,
       );
+
       /// check if dates are not empty to avoid exception
       if (dates.isNotEmpty) {
         dateRange = DateRange(
@@ -207,34 +208,32 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   }
 
   void _smallPreviewUpdateListener() {
-
-      double? additionalWidth;
-      if (_smallPreviewUpdateNotifier.value.previewWidthFraction < (initialPreviewWidthFraction ?? 0.35)) {
-        /// taking [datesMaxScrollWidth] as a reference to calculate additional width
-        /// because dates scroll width is bigger than chart scroll width in this case
-        double datesWidth = datesMaxScrollWidth;
-        if (initialMaxChartScrollablePartWidth! > datesWidth) {
-          datesWidth = initialMaxChartScrollablePartWidth!;
-        }
-        additionalWidth = datesWidth -
-            (2 * datesSpacingExpansionFraction * initialPixelsPerDate) -
-            initialMaxChartScrollablePartWidth!;
-
-        chartToSmallPreviewRatio = datesWidth / (smallPreviewSize.width);
-      } else {
-        /// need to pass negative value to make chart smaller
-        final width = chartViewPortSize.width + (chartMaxScrollWidth - chartViewPortSize.width);
-        additionalWidth = chartViewPortSize.width - chartMaxScrollWidth;
-        chartToSmallPreviewRatio = width / smallPreviewSize.width;
+    double? additionalWidth;
+    if (_smallPreviewUpdateNotifier.value.previewWidthFraction < (initialPreviewWidthFraction ?? 0.35)) {
+      /// taking [datesMaxScrollWidth] as a reference to calculate additional width
+      /// because dates scroll width is bigger than chart scroll width in this case
+      double datesWidth = datesMaxScrollWidth;
+      if (initialMaxChartScrollablePartWidth! > datesWidth) {
+        datesWidth = initialMaxChartScrollablePartWidth!;
       }
-      if (_smallPreviewUpdateNotifier.value.previewWidthFraction == initialPreviewWidthFraction) {
-        chartToSmallPreviewRatio = (initialMaxChartScrollablePartWidth ?? 0) / smallPreviewSize.width;
-        additionalWidth = 0;
-      }
-      _bodySizingNotifier.value = _bodySizingNotifier.value.copyWith(
-        additionalWidth: additionalWidth,
-      );
-      setState(() {});
+      additionalWidth =
+          datesWidth - (2 * datesSpacingExpansionFraction * initialPixelsPerDate) - initialMaxChartScrollablePartWidth!;
+
+      chartToSmallPreviewRatio = datesWidth / (smallPreviewSize.width);
+    } else {
+      /// need to pass negative value to make chart smaller
+      final width = chartViewPortSize.width + (chartMaxScrollWidth - chartViewPortSize.width);
+      additionalWidth = chartViewPortSize.width - chartMaxScrollWidth;
+      chartToSmallPreviewRatio = width / smallPreviewSize.width;
+    }
+    if (_smallPreviewUpdateNotifier.value.previewWidthFraction == initialPreviewWidthFraction) {
+      chartToSmallPreviewRatio = (initialMaxChartScrollablePartWidth ?? 0) / smallPreviewSize.width;
+      additionalWidth = 0;
+    }
+    _bodySizingNotifier.value = _bodySizingNotifier.value.copyWith(
+      additionalWidth: additionalWidth,
+    );
+    setState(() {});
     _setVisibleDateRange();
   }
 
@@ -248,7 +247,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
         .ceil();
     DateTime startDate = dates.elementAt(offsetIndex);
     DateTime endDate = offsetIndex + datesVisibleInViewport < dates.length
-        ? dates.elementAt(max(0,datesVisibleInViewport - 2 + offsetIndex))
+        ? dates.elementAt(max(0, datesVisibleInViewport - 2 + offsetIndex))
         : dates.last;
     _visibleDateRangeNotifier.value = DateRange(start: startDate, end: endDate);
   }
