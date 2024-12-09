@@ -1554,7 +1554,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "TopographingLocation":
             MessageLookupByLibrary.simpleMessage("Топографируем локацию"),
         "Total": MessageLookupByLibrary.simpleMessage("Сумма"),
-        "Translate": MessageLookupByLibrary.simpleMessage("Перевести"),
+        "Translate": MessageLookupByLibrary.simpleMessage("Перевод"),
         "TravelerMen": MessageLookupByLibrary.simpleMessage("Путник"),
         "TravelerWom": MessageLookupByLibrary.simpleMessage("Путница"),
         "TrialPeriod": MessageLookupByLibrary.simpleMessage("Триал период"),
