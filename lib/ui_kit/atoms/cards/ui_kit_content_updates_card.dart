@@ -116,6 +116,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     bool isOverlayVisible = false;
     OverlayEntry? overlayEntry;
 
+    debugPrint('UiKitContentUpdatesCard with children ${children.length}');
+
     _children() {
       return hasGradientBorder
           ? Column(

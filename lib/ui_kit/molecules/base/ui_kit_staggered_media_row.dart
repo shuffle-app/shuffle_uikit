@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitStaggeredMediaRow extends UiKitContentUpdateWidget {
@@ -12,7 +13,7 @@ class UiKitStaggeredMediaRow extends UiKitContentUpdateWidget {
   }) : super(key: key);
 
   @override
-  double get height => 0.125.sw;
+  double get height => kIsWeb ? 50 : 0.125.sw;
 
   @override
   Widget build(BuildContext context) {
