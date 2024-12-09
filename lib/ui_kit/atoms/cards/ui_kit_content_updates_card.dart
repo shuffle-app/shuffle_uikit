@@ -271,7 +271,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
         constraints: BoxConstraints(
           minWidth: kIsWeb ? 60 : 1.sw - EdgeInsetsFoundation.horizontal32,
           maxWidth: kIsWeb ? 90 : 1.sw,
-          // maxHeight: overallHeight,
+          maxHeight: overallHeight,
         ),
         child: Stack(
           clipBehavior: Clip.none,
