@@ -89,6 +89,7 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
   final ValueNotifier<double> lastPhaseScaleNotifier;
   final bool showHints;
   final bool expandHint;
+  final bool hide;
 
   UiKitAnimatedPullToShowDelegate({
     required this.topPadding,
@@ -96,11 +97,12 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
     required this.lastPhaseScaleNotifier,
     this.showHints = true,
     this.expandHint = true,
+    this.hide = false,
   });
 
   @override
   // double get maxExtent =>  topPadding;
-  double get maxExtent => 0.175.sw + (SpacingFoundation.verticalSpacing16 * 2) + topPadding;
+  double get maxExtent => (hide ? 0 : 0.175.sw + (SpacingFoundation.verticalSpacing16 * 2)) + topPadding;
 
   @override
   double get minExtent => maxExtent * 0.325;

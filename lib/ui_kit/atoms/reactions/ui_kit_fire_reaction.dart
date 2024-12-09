@@ -7,11 +7,11 @@ class UiKitFireReaction extends StatelessWidget {
   final Color? textColor;
 
   const UiKitFireReaction({
-    Key? key,
+    super.key,
     required this.reactionsCount,
     this.onTap,
     this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class UiKitFireReaction extends StatelessWidget {
       behavior: HitTestBehavior.opaque,
       onTap: onTap,
       child: UiKitEmojiReaction(
-        iconPath: GraphicsFoundation.instance.svg.fireEmoji.path,
+        iconSvgGen: GraphicsFoundation.instance.svg.fireEmoji,
         reactionsCount: reactionsCount,
         textColor: textColor,
       ),

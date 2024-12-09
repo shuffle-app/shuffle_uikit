@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitEmojiReaction extends StatelessWidget {
-  final String iconPath;
+  final SvgGenImage iconSvgGen;
   final int reactionsCount;
   final Color? textColor;
 
   const UiKitEmojiReaction({
     super.key,
-    required this.iconPath,
+    required this.iconSvgGen,
     required this.reactionsCount,
     this.textColor,
   });
@@ -24,7 +24,7 @@ class UiKitEmojiReaction extends StatelessWidget {
           reactionsFormatter(reactionsCount),
           style: regularTextTheme?.caption2.copyWith(color: textColor),
         ),
-        ImageWidget(link: iconPath),
+        ImageWidget(svgAsset: iconSvgGen),
       ],
     );
   }

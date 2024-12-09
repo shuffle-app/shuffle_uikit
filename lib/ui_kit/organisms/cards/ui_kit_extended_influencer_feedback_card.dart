@@ -115,27 +115,27 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
               children: [
                 if (heartEyeCount != null)
                   UiKitEmojiReaction(
-                    iconPath: GraphicsFoundation.instance.svg.heartEyes.path,
+                    iconSvgGen: GraphicsFoundation.instance.svg.heartEyes,
                     reactionsCount: heartEyeCount!,
                   ).paddingOnly(right: EdgeInsetsFoundation.horizontal2),
                 if (thumbsUpCount != null)
                   UiKitEmojiReaction(
-                    iconPath: GraphicsFoundation.instance.svg.thumbsUpReversed.path,
+                    iconSvgGen: GraphicsFoundation.instance.svg.thumbsUpReversed,
                     reactionsCount: thumbsUpCount!,
                   ).paddingOnly(right: EdgeInsetsFoundation.horizontal2),
                 if (fireCount != null)
                   UiKitEmojiReaction(
-                    iconPath: GraphicsFoundation.instance.svg.fireEmoji.path,
+                    iconSvgGen: GraphicsFoundation.instance.svg.fireEmoji,
                     reactionsCount: fireCount!,
                   ).paddingOnly(right: EdgeInsetsFoundation.horizontal2),
                 if (sunglassesCount != null)
                   UiKitEmojiReaction(
-                    iconPath: GraphicsFoundation.instance.svg.sunglasses.path,
+                    iconSvgGen: GraphicsFoundation.instance.svg.sunglasses,
                     reactionsCount: sunglassesCount!,
                   ).paddingOnly(right: EdgeInsetsFoundation.horizontal2),
                 if (smileyCount != null)
                   UiKitEmojiReaction(
-                    iconPath: GraphicsFoundation.instance.svg.smiley.path,
+                    iconSvgGen: GraphicsFoundation.instance.svg.smiley,
                     reactionsCount: smileyCount!,
                   ),
                 const Spacer(),

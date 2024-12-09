@@ -71,27 +71,27 @@ class UiKitPhotoSliderWithReactions extends StatelessWidget {
               if (hearEyesReactions != null)
                 UiKitEmojiReaction(
                   reactionsCount: hearEyesReactions!,
-                  iconPath: GraphicsFoundation.instance.svg.heartEyes.path,
+                  iconSvgGen: GraphicsFoundation.instance.svg.heartEyes,
                 ).paddingOnly(right: EdgeInsetsFoundation.horizontal2),
               if (thumbsUpReactions != null)
                 UiKitEmojiReaction(
                   reactionsCount: thumbsUpReactions!,
-                  iconPath: GraphicsFoundation.instance.svg.thumbsUpReversed.path,
+                  iconSvgGen: GraphicsFoundation.instance.svg.thumbsUpReversed,
                 ).paddingOnly(right: EdgeInsetsFoundation.horizontal2),
               if (sunglassesReactions != null)
                 UiKitEmojiReaction(
                   reactionsCount: sunglassesReactions!,
-                  iconPath: GraphicsFoundation.instance.svg.sunglasses.path,
+                  iconSvgGen: GraphicsFoundation.instance.svg.sunglasses,
                 ).paddingOnly(right: EdgeInsetsFoundation.horizontal2),
               if (fireReactions != null)
                 UiKitEmojiReaction(
                   reactionsCount: fireReactions!,
-                  iconPath: GraphicsFoundation.instance.svg.fireEmoji.path,
+                  iconSvgGen: GraphicsFoundation.instance.svg.fireEmoji,
                 ).paddingOnly(right: EdgeInsetsFoundation.horizontal2),
               if (smileyReactions != null)
                 UiKitEmojiReaction(
                   reactionsCount: smileyReactions!,
-                  iconPath: GraphicsFoundation.instance.svg.smiley.path,
+                  iconSvgGen: GraphicsFoundation.instance.svg.smiley,
                 ),
             ],
           ),

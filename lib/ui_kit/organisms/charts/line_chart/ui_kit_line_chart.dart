@@ -146,10 +146,8 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       _initChartLines().then((_) {
-        debugPrint('chart lines initialized');
         if(mounted) {
           final visibleLinesIds = widget.chartData.items.map((e) => e.id).toList();
-          debugPrint('visible lines: $visibleLinesIds');
           _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
             visibleLinesIds: visibleLinesIds,
           );
@@ -199,7 +197,6 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       }
 
       final visibleDates = (chartViewPortSize.width ~/ initialPixelsPerDate) - 1;
-      debugPrint('visible dates: $visibleDates with initialPixelsPerDate $initialPixelsPerDate and chartViewPortSize.width ${chartViewPortSize.width}');
       DateRange dateRange = DateRange(
         start: widget.chartData.items.earliestDate,
         end: widget.chartData.items.latestDate,
@@ -248,7 +245,6 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   }
 
   void _setVisibleDateRange() {
-    // debugPrint('_setVisibleDateRange: initialPixelsPerDaten $initialPixelsPerDate chartToSmallPreviewRatio $chartToSmallPreviewRatio');
     final offsetIndex = ((_smallPreviewUpdateNotifier.value.leftOffset * chartToSmallPreviewRatio) /
             (initialPixelsPerDate +
                 additionalSpacingForDate +

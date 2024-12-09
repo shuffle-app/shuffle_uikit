@@ -7,11 +7,11 @@ class UiKitLikeReaction extends StatelessWidget {
   final Color? textColor;
 
   const UiKitLikeReaction({
-    Key? key,
+    super.key,
     required this.reactionsCount,
     this.onTap,
     this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class UiKitLikeReaction extends StatelessWidget {
       onTap: onTap,
       child: UiKitEmojiReaction(
         reactionsCount: reactionsCount,
-        iconPath: GraphicsFoundation.instance.svg.thumbsUpReversed.path,
+        iconSvgGen: GraphicsFoundation.instance.svg.thumbsUpReversed,
         textColor: textColor,
       ),
     );

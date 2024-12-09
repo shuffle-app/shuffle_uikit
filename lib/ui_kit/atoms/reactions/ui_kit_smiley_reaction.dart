@@ -7,11 +7,11 @@ class UiKitSmileyReaction extends StatelessWidget {
   final Color? textColor;
 
   const UiKitSmileyReaction({
-    Key? key,
+    super.key,
     required this.reactionsCount,
     this.onTap,
     this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class UiKitSmileyReaction extends StatelessWidget {
       onTap: onTap,
       child: UiKitEmojiReaction(
         reactionsCount: reactionsCount,
-        iconPath: GraphicsFoundation.instance.svg.smiley.path,
+        iconSvgGen: GraphicsFoundation.instance.svg.smiley,
         textColor: textColor,
       ),
     );
