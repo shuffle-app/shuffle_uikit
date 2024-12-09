@@ -36,7 +36,7 @@ class UiKitFieldWithTagList extends StatelessWidget {
             )
           ],
         ),
-        listUiKitTags != null
+        listUiKitTags != null && listUiKitTags!.isNotEmpty
             ? UiKitTagsWidget(baseTags: listUiKitTags!).paddingOnly(top: SpacingFoundation.verticalSpacing8)
             : SpacingFoundation.none,
       ],
