@@ -15,6 +15,8 @@ extension NavigatorExtention on BuildContext {
     bool nativeTransition = true,
     bool useRootNavigator = false,
     RoutePageBuilder? pageBuilder,
+    Duration? transitionDuration,
+    Duration? reverseTransitionDuration,
   }) async =>
       await Navigator.of(this, rootNavigator: useRootNavigator).push(
         nativeTransition
@@ -24,6 +26,8 @@ extension NavigatorExtention on BuildContext {
                 maintainState: maintainState,
               )
             : PageRouteBuilder(
+                transitionDuration: transitionDuration ?? const Duration(milliseconds: 300),
+                reverseTransitionDuration: reverseTransitionDuration ?? const Duration(milliseconds: 300),
                 pageBuilder: pageBuilder ??
                     (context, animation, _) => FadeTransition(
                           opacity: animation,

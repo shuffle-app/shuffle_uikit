@@ -7,11 +7,11 @@ class UiKitHeartEyesReaction extends StatelessWidget {
   final Color? textColor;
 
   const UiKitHeartEyesReaction({
-    Key? key,
+    super.key,
     required this.reactionsCount,
     this.onTap,
     this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class UiKitHeartEyesReaction extends StatelessWidget {
       onTap: onTap,
       child: UiKitEmojiReaction(
         reactionsCount: reactionsCount,
-        iconPath: GraphicsFoundation.instance.svg.heartEyes.path,
+        iconSvgGen: GraphicsFoundation.instance.svg.heartEyes,
         textColor: textColor,
       ),
     );

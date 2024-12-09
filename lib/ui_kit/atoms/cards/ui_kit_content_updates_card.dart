@@ -81,7 +81,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     double additionalSpacingForComment = 0;
     double reactionsSpacing = 0;
     if (hasGradientBorder && comment != null) {
-      final linesCount = comment!.length ~/ charactersPerLine;
+      final linesCount = (comment!.length ~/ charactersPerLine) + comment!.split('\n').length;
       additionalSpacingForComment += linesCount * (kIsWeb ? 15 : 13.5.h);
     }
     if (hasReactions) reactionsSpacing += SpacingFoundation.verticalSpacing8 + SpacingFoundation.verticalSpacing20;
@@ -104,7 +104,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
 
   int get smileyCount => smileyReactionsCount ?? 0;
 
-  int get charactersPerLine => 1.sw > 380 ? 35 : 30;
+  int get charactersPerLine => 1.sw >= 380 ? 38 : 33;
 
   @override
   Widget build(BuildContext context) {
@@ -117,6 +117,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
 
     bool isOverlayVisible = false;
     OverlayEntry? overlayEntry;
+
+    debugPrint('UiKitContentUpdatesCard with children ${children.length}');
 
     _children() {
       return hasGradientBorder

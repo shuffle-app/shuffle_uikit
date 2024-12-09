@@ -10,6 +10,7 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
   final List<UiKitTag>? properties;
   final List<ProfileVideoReaction>? videoReactions;
   final List<UiKitFeedbackCard>? reviews;
+  final VoidCallback? onTap;
 
   const UiKitProUserProfileEventCard({
     super.key,
@@ -20,6 +21,7 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
     this.properties,
     this.videoReactions,
     this.reviews,
+    this.onTap,
   });
 
   @override
@@ -30,38 +32,43 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadiusFoundation.all12,
-              child: ImageWidget(
-                link: previewImage,
-                width: 0.25.sw,
-                height: 0.25.sw * 0.75,
-                fit: BoxFit.cover,
-              ),
-            ),
-            SpacingFoundation.horizontalSpace12,
-            Expanded(
-              child: RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: title,
-                      style: boldTextTheme?.caption1Bold,
-                    ),
-                    TextSpan(
-                      text:
-                          '\n${DateFormat('MMM dd, yyyy', Localizations.localeOf(context).languageCode).format(contentDate)}',
-                      style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.mutedText),
-                    ),
-                  ],
+        GestureDetector(
+            onTap: onTap,
+            child:
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadiusFoundation.all12,
+                  child: ImageWidget(
+                    link: previewImage,
+                    width: 0.25.sw,
+                    height: 0.25.sw * 0.75,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-              ),
-            ),
-          ],
-        ),
+                SpacingFoundation.horizontalSpace12,
+                Expanded(
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: title,
+                          style: boldTextTheme?.caption1Bold,
+                        ),
+                        TextSpan(
+                          text:
+                          '\n${DateFormat('MMM dd, yyyy', Localizations
+                              .localeOf(context)
+                              .languageCode).format(contentDate)}',
+                          style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.mutedText),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            )),
         SpacingFoundation.verticalSpace16,
         UiKitTagsWidget(
           baseTags: properties?.where((element) => !element.unique).toList() ?? [],
@@ -98,11 +105,12 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace8,
-              itemBuilder: (context, index) => SizedBox(
-                height: 0.27.sh,
-                width: 0.859375.sw,
-                child: reviews!.elementAt(index),
-              ),
+              itemBuilder: (context, index) =>
+                  SizedBox(
+                    height: 0.27.sh,
+                    width: 0.859375.sw,
+                    child: reviews!.elementAt(index),
+                  ),
               itemCount: reviews!.length,
             ),
           ),

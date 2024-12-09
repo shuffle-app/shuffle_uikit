@@ -18,7 +18,7 @@ class ImageWidget extends StatelessWidget {
     baseColor: Colors.white,
     period: const Duration(milliseconds: 1000),
     highlightColor: ColorsFoundation.gradientGreyLight3,
-    child: const UiKitBigPhotoErrorWidget(),
+    child: const UiKitBigPhotoErrorWidget.withoutText(),
   );
 
   final String? link;

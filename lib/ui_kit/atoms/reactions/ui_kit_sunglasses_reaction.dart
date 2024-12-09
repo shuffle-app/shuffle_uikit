@@ -7,11 +7,11 @@ class UiKitSunglassesReaction extends StatelessWidget {
   final Color? textColor;
 
   const UiKitSunglassesReaction({
-    Key? key,
+    super.key,
     required this.reactionsCount,
     this.onTap,
     this.textColor,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class UiKitSunglassesReaction extends StatelessWidget {
       onTap: onTap,
       child: UiKitEmojiReaction(
         reactionsCount: reactionsCount,
-        iconPath: GraphicsFoundation.instance.svg.sunglasses.path,
+        iconSvgGen: GraphicsFoundation.instance.svg.sunglasses,
         textColor: textColor,
       ),
     );
