@@ -46,6 +46,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
   });
 
   factory UiKitContentUpdatesCard.fromShuffle({
+    Key? key,
     required List<UiKitContentUpdateWidget> children,
     required String text,
     ValueChanged<String>? onReactionsTapped,
@@ -57,6 +58,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     int? smileyReactionsCount,
   }) =>
       UiKitContentUpdatesCard(
+        key: key,
         authorSpeciality: '',
         authorUserType: UserTileType.influencer,
         authorName: 'Shuffle',
@@ -142,8 +144,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                     if (!isLastChild) return child.paddingOnly(bottom: EdgeInsetsFoundation.vertical16);
                     return child;
                   }),
-                  SpacingFoundation.verticalSpace8,
                 ],
+                SpacingFoundation.verticalSpace8,
                 if (hasReactions)
                   Row(
                     mainAxisSize: MainAxisSize.max,
@@ -264,7 +266,13 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     // debugPrint('updates card build here and overallHeight: $overallHeight');
 
     return GestureDetector(
-      onLongPress: onLongPress,
+      onLongPress: () {
+        FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
+          intensities: [130, 170],
+          pattern: [10, 5],
+        ));
+        onLongPress?.call();
+      },
       child: ConstrainedBox(
         constraints: BoxConstraints(
           minWidth: kIsWeb ? 60 : 1.sw - EdgeInsetsFoundation.horizontal32,
