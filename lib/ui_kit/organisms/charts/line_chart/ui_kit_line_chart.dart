@@ -245,6 +245,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   }
 
   void _setVisibleDateRange() {
+    if(!mounted) return;
     final offsetIndex = ((_smallPreviewUpdateNotifier.value.leftOffset * chartToSmallPreviewRatio) /
             (initialPixelsPerDate +
                 additionalSpacingForDate +

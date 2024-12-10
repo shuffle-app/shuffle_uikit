@@ -102,7 +102,7 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   // double get maxExtent =>  topPadding;
-  double get maxExtent => (hide ? 0 : 0.175.sw + (SpacingFoundation.verticalSpacing16 * 2)) + topPadding;
+  double get maxExtent => (hide ? 0 : (0.175 * 380) + (SpacingFoundation.verticalSpacing16 * 2)) + topPadding;
 
   @override
   double get minExtent => maxExtent * 0.325;
