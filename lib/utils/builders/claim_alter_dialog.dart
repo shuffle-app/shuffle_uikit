@@ -57,57 +57,59 @@ class _ClaimAlterDialogWidgetState extends State<ClaimAlterDialogWidget> {
         ),
         SpacingFoundation.verticalSpace16,
         ...claims.map(
-          (e) => Row(
-            children: [
-              InkWell(
-                onTap: () {
-                  setState(() {
-                    myClaim = false;
-                    errorText = null;
-                    descriptionController.clear();
-                    if (selectedClaim.contains(e)) {
-                      selectedClaim = selectedClaim.replaceFirst(e, '');
-                    } else {
-                      selectedClaim += '$e ';
-                    }
-                  });
-                },
-                child: UiKitRadio(selected: selectedClaim.contains(e)),
-              ),
-              SpacingFoundation.horizontalSpace12,
-              Expanded(
-                child: Text(
-                  e,
-                  style: theme?.regularTextTheme.labelLarge.copyWith(color: theme.colorScheme.inverseBodyTypography),
-                ),
-              )
-            ],
-          ).paddingOnly(bottom: e != claims.last ? SpacingFoundation.verticalSpacing12 : 0),
+          (e) => InkWell(
+            splashFactory: NoSplash.splashFactory,
+            onTap: () {
+              setState(() {
+                myClaim = false;
+                errorText = null;
+                descriptionController.clear();
+                if (selectedClaim.contains(e)) {
+                  selectedClaim = selectedClaim.replaceFirst(e, '');
+                } else {
+                  selectedClaim += '$e ';
+                }
+              });
+            },
+            child: Row(
+              children: [
+                UiKitRadio(selected: selectedClaim.contains(e)),
+                SpacingFoundation.horizontalSpace12,
+                Expanded(
+                  child: Text(
+                    e,
+                    style: theme?.regularTextTheme.labelLarge.copyWith(color: theme.colorScheme.inverseBodyTypography),
+                  ),
+                )
+              ],
+            ).paddingOnly(bottom: e != claims.last ? SpacingFoundation.verticalSpacing12 : 0),
+          ),
         ),
         Divider(
           thickness: 1.w,
           color: ColorsFoundation.darkNeutral400,
         ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing6),
-        Row(
-          children: [
-            InkWell(
-              onTap: () {
-                setState(() {
-                  myClaim = !myClaim;
-                  selectedClaim = '';
-                  if (myClaim == false) descriptionController.clear();
-                });
-              },
-              child: UiKitRadio(selected: myClaim),
-            ),
-            SpacingFoundation.horizontalSpace12,
-            Expanded(
-              child: Text(
-                S.of(context).AnotherReason,
-                style: theme?.regularTextTheme.labelLarge.copyWith(color: theme.colorScheme.inverseBodyTypography),
-              ),
-            )
-          ],
+        InkWell(
+          splashFactory: NoSplash.splashFactory,
+          onTap: () {
+            setState(() {
+              myClaim = !myClaim;
+              selectedClaim = '';
+              if (myClaim == false) descriptionController.clear();
+            });
+          },
+          child: Row(
+            children: [
+              UiKitRadio(selected: myClaim),
+              SpacingFoundation.horizontalSpace12,
+              Expanded(
+                child: Text(
+                  S.of(context).AnotherReason,
+                  style: theme?.regularTextTheme.labelLarge.copyWith(color: theme.colorScheme.inverseBodyTypography),
+                ),
+              )
+            ],
+          ),
         ),
         SpacingFoundation.verticalSpace12,
         UiKitInputFieldNoFill(
