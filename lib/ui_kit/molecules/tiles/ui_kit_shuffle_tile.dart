@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitShuffleTile extends StatelessWidget {
-  const UiKitShuffleTile({super.key});
+  final Widget? trailing;
+
+  const UiKitShuffleTile({super.key, this.trailing});
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +71,7 @@ class UiKitShuffleTile extends StatelessWidget {
         ),
         SpacingFoundation.horizontalSpace4,
         InfluencerAccountMark(),
+        if (trailing != null) ...[const Spacer(), trailing!]
       ],
     );
   }

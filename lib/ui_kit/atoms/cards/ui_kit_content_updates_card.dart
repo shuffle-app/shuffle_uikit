@@ -21,6 +21,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
   final int? smileyReactionsCount;
   final ValueChanged<String>? onReactionsTapped;
   final VoidCallback? onLongPress;
+  final VoidCallback? onSharePress;
+  final String createdAt;
 
   bool get showEmptyReactionsState =>
       heartCount == 0 && likeCount == 0 && sunglassesCount == 0 && fireCount == 0 && smileyCount == 0;
@@ -43,6 +45,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     this.smileyReactionsCount,
     this.onReactionsTapped,
     this.onLongPress,
+    this.onSharePress,
+    this.createdAt = '',
   });
 
   factory UiKitContentUpdatesCard.fromShuffle({
@@ -51,11 +55,13 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     required String text,
     ValueChanged<String>? onReactionsTapped,
     VoidCallback? onLongPress,
+    VoidCallback? onSharePress,
     int? heartEyesReactionsCount,
     int? likeReactionsCount,
     int? fireReactionsCount,
     int? sunglassesReactionsCount,
     int? smileyReactionsCount,
+    String? createdAt,
   }) =>
       UiKitContentUpdatesCard(
         key: key,
@@ -74,7 +80,9 @@ class UiKitContentUpdatesCard extends StatelessWidget {
         smileyReactionsCount: smileyReactionsCount,
         onReactionsTapped: onReactionsTapped,
         onLongPress: onLongPress,
+        onSharePress: onSharePress,
         children: children,
+        createdAt: createdAt ?? '',
       );
 
   double get overallHeight {
@@ -128,7 +136,17 @@ class UiKitContentUpdatesCard extends StatelessWidget {
               children: [
                 SizedBox(
                   width: kIsWeb ? 90 : 1.sw,
-                  child: const UiKitShuffleTile(),
+                  child: UiKitShuffleTile(
+                    trailing: onSharePress != null
+                        ? context.iconButtonNoPadding(
+                            data: BaseUiKitButtonData(
+                                onPressed: onSharePress,
+                                iconInfo: BaseUiKitButtonIconData(
+                                  iconData: ShuffleUiKitIcons.share,
+                                  color: colorScheme?.darkNeutral800,
+                                )))
+                        : null,
+                  ),
                 ),
                 if (hasGradientBorder && comment != null && comment!.isNotEmpty)
                   Text(
@@ -149,8 +167,16 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                 if (hasReactions)
                   Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      UiKitCardWrapper(
+                        color: colorScheme?.darkNeutral900,
+                        borderRadius: BorderRadiusFoundation.max,
+                        padding: EdgeInsets.symmetric(
+                            horizontal: SpacingFoundation.horizontalSpacing4,
+                            vertical: SpacingFoundation.verticalSpacing2),
+                        child: Text(createdAt, style: regularTextTheme?.caption3),
+                      ),
                       showEmptyReactionsState
                           ? Builder(
                               builder: (c) => TapRegion(

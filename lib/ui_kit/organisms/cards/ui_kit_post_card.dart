@@ -20,6 +20,8 @@ class UiKitPostCard extends StatelessWidget {
   final bool hasNewMark;
   final ValueChanged<String>? onReactionsTapped;
   final VoidCallback? onLongPress;
+  final VoidCallback? onSharePress;
+  final String createdAt;
 
   bool get showEmptyReactionsState =>
       (heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
@@ -45,6 +47,8 @@ class UiKitPostCard extends StatelessWidget {
     this.hasNewMark = false,
     this.onReactionsTapped,
     this.onLongPress,
+    this.onSharePress,
+    this.createdAt = '',
   });
 
   int get heartCount => heartEyesCount ?? 0;
@@ -94,17 +98,27 @@ class UiKitPostCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  context.userTile(
-                    data: BaseUiKitUserTileData(
-                      avatarUrl: authorAvatarUrl,
-                      name: authorName,
-                      username: authorUsername,
-                      type: authorUserType,
-                      showBadge: true,
-                      noMaterialOverlay: true,
-                      userNameTextColor: colorScheme?.inverseBodyTypography,
+                  Row(children: [
+                    context.userTile(
+                      data: BaseUiKitUserTileData(
+                        avatarUrl: authorAvatarUrl,
+                        name: authorName,
+                        username: authorUsername,
+                        type: authorUserType,
+                        showBadge: true,
+                        noMaterialOverlay: true,
+                        userNameTextColor: colorScheme?.inverseBodyTypography,
+                      ),
                     ),
-                  ),
+                    const Spacer(),
+                    context.iconButtonNoPadding(
+                        data: BaseUiKitButtonData(
+                            onPressed: onSharePress,
+                            iconInfo: BaseUiKitButtonIconData(
+                              iconData: ShuffleUiKitIcons.share,
+                              color: colorScheme?.darkNeutral800,
+                            )))
+                  ]),
                   SpacingFoundation.verticalSpace8,
                   Text(
                     text,
@@ -113,8 +127,16 @@ class UiKitPostCard extends StatelessWidget {
                   SpacingFoundation.verticalSpace8,
                   Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      UiKitCardWrapper(
+                        color: colorScheme?.darkNeutral900,
+                        borderRadius: BorderRadiusFoundation.max,
+                        padding: EdgeInsets.symmetric(
+                            horizontal: SpacingFoundation.horizontalSpacing4,
+                            vertical: SpacingFoundation.verticalSpacing2),
+                        child: Text(createdAt, style: regularTextTheme?.caption3),
+                      ),
                       showEmptyReactionsState
                           ? Builder(
                               builder: (c) {
