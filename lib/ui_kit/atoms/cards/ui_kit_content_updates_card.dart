@@ -266,7 +266,13 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     // debugPrint('updates card build here and overallHeight: $overallHeight');
 
     return GestureDetector(
-      onLongPress: onLongPress,
+      onLongPress: () {
+        FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
+          intensities: [130, 170],
+          pattern: [10, 5],
+        ));
+        onLongPress?.call();
+      },
       child: ConstrainedBox(
         constraints: BoxConstraints(
           minWidth: kIsWeb ? 60 : 1.sw - EdgeInsetsFoundation.horizontal32,

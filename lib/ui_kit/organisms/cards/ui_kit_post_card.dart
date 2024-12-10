@@ -70,7 +70,13 @@ class UiKitPostCard extends StatelessWidget {
     bool isOverlayVisible = false;
 
     return GestureDetector(
-      onLongPress: onLongPress,
+      onLongPress: () {
+        FeedbackIsolate.instance.addEvent(FeedbackIsolateHaptics(
+          intensities: [130, 170],
+          pattern: [10, 5],
+        ));
+        onLongPress?.call();
+      },
       child: ConstrainedBox(
         constraints: BoxConstraints(
           minHeight: kIsWeb ? 60 : 0.2.sh,
