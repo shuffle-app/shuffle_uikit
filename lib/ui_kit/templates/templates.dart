@@ -7,3 +7,4 @@ export 'ui_kit_location_picker.dart';
 export 'ui_kit_no_content_placeholder.dart';
 export 'ui_kit_picture_view_finder.dart';
 export 'video_cutter.dart';
+export 'cover_select.dart';

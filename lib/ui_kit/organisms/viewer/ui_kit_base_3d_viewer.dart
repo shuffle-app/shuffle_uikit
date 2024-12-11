@@ -16,6 +16,7 @@ class UiKitBase3DViewer extends StatelessWidget {
   final Set<JavascriptChannel>? javascriptChannels;
   final VoidCallback? onTap;
   late final JavascriptChannel onTapChannel;
+  late final JavascriptChannel onErrorChannel;
 
   UiKitBase3DViewer({super.key,
     required this.localPath,
@@ -32,6 +33,9 @@ class UiKitBase3DViewer extends StatelessWidget {
     this.autoRotate}) {
     onTapChannel = JavascriptChannel('onTapChannel', onMessageReceived: (message) {
       onTap?.call();
+    });
+    onErrorChannel = JavascriptChannel('onErrorChannel', onMessageReceived: (message) {
+      print('Error: $message');
     });
   }
 
@@ -63,7 +67,7 @@ class UiKitBase3DViewer extends StatelessWidget {
       autoRotate: autoRotate,
       disableZoom: true,
       exposure: 1,
-      debugLogging: false,
+      // debugLogging: false,
       environmentImage: environmentImage ?? 'neutral',
       skyboxImage: skyboxImage,
       javascriptChannels: {...?javascriptChannels, onTapChannel},
