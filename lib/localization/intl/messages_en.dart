@@ -869,6 +869,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Make sure you are close and try check in again"),
         "Male": MessageLookupByLibrary.simpleMessage("Male"),
+        "MaxNumberOfEvents": MessageLookupByLibrary.simpleMessage(
+            "You\'ve reached the maximum number of created events"),
         "Members": m47,
         "MembersCount": m48,
         "Message": MessageLookupByLibrary.simpleMessage("Message"),

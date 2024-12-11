@@ -968,7 +968,8 @@
   "AnotherReason": "Другая причина",
   "Translate": "Перевод",
   "Original": "Оригинал",
-  "PleaseValidateXDetailsBeforeModeration": "Пожалуйста проверьте детали {x} перед отправкой на модерацию"
+  "PleaseValidateXDetailsBeforeModeration": "Пожалуйста проверьте детали {x} перед отправкой на модерацию",
+  "MaxNumberOfEvents": "Достигнуто максимальное количество созданных событий"
 
 }
 

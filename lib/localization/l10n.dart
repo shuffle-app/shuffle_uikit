@@ -9941,6 +9941,16 @@ class S {
       args: [x],
     );
   }
+
+  /// `You've reached the maximum number of created events`
+  String get MaxNumberOfEvents {
+    return Intl.message(
+      'You\'ve reached the maximum number of created events',
+      name: 'MaxNumberOfEvents',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

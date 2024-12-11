@@ -968,5 +968,6 @@
   "AnotherReason": "Another reason",
   "Translate": "Translate",
   "Original": "Original",
-  "PleaseValidateXDetailsBeforeModeration": "Please validate {x} details before sending it to moderation"
+  "PleaseValidateXDetailsBeforeModeration": "Please validate {x} details before sending it to moderation",
+  "MaxNumberOfEvents": "You've reached the maximum number of created events"
 }

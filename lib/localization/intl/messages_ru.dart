@@ -885,6 +885,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Убедись что ты близко и повтори"),
         "Male": MessageLookupByLibrary.simpleMessage("Мужчина"),
+        "MaxNumberOfEvents": MessageLookupByLibrary.simpleMessage(
+            "Достигнуто максимальное количество созданных событий"),
         "Members": m47,
         "MembersCount": m48,
         "Message": MessageLookupByLibrary.simpleMessage("Сообщение"),
