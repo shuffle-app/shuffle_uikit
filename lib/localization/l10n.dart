@@ -9941,6 +9941,16 @@ class S {
       args: [x],
     );
   }
+
+  /// `This barcode has already been activated`
+  String get BarcodeAlreadyBeenActivated {
+    return Intl.message(
+      'This barcode has already been activated',
+      name: 'BarcodeAlreadyBeenActivated',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
