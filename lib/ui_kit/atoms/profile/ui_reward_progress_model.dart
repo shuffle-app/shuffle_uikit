@@ -8,4 +8,15 @@ class UiRewardProgressModel {
     this.current,
     this.total,
   });
+
+  UiRewardProgressModel copyWith({
+    String? title,
+    double? current,
+    double? total,
+  }) =>
+      UiRewardProgressModel(
+        title: title ?? this.title,
+        current: current ?? this.current,
+        total: total ?? this.total,
+      );
 }

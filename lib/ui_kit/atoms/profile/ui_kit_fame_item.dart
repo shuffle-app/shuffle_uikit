@@ -78,7 +78,7 @@ class _UiKitFameItemState extends State<UiKitFameItem> with RouteAware {
         } else if (value.runtimeType == FileInfo) {
           debugPrint('File downloaded: ${(value as FileInfo).file.path}');
           setState(() {
-            modelFile = value as FileInfo;
+            modelFile = value;
             isLoading = false;
           });
         }
