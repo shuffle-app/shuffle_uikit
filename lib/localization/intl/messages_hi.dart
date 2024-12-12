@@ -882,6 +882,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "सुनिश्चित करें कि आप निकट हैं और फिर से चेक इन करें"),
         "Male": MessageLookupByLibrary.simpleMessage("पुरुष"),
+        "MaxNumberOfEvents": MessageLookupByLibrary.simpleMessage(
+            "You\'ve reached the maximum number of created events"),
         "Members": m48,
         "MembersCount": m49,
         "Message": MessageLookupByLibrary.simpleMessage("संदेश"),

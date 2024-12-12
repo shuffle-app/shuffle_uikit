@@ -17,29 +17,29 @@ dependencies:
     sdk: flutter
 
   #ui utils
-  flutter_svg: ^2.0.10+1
+  flutter_svg: ^2.0.16
   flutter_cache_manager: ^3.4.1
-  flutter_screenutil: ^5.9.1
-  vibration: ^2.0.0
+  flutter_screenutil: ^5.9.3
+  vibration: ^2.0.1
 
   #for barcode generate
   barcode_widget: ^2.0.4
 
   #ui widgets
-  carousel_slider_plus: ^7.0.0
-  cached_network_image: ^3.4.0
+  carousel_slider_plus: ^7.1.0
+  cached_network_image: ^3.4.1
   gradient_borders: ^1.0.1
   shimmer: ^3.0.0
   flutter_html: ^3.0.0-beta.2
   auto_size_text: ^3.0.0
-  url_launcher: ^6.3.0
+  url_launcher: ^6.3.1
   flutter_html_iframe: any
   flutter_html_svg: any
   flutter_html_table_extension:
     git:
       url: https://github.com/shuffle-app/flutter_html_table_extension.git
       ref: main
-  pointer_interceptor: ^0.9.3+6
+  pointer_interceptor: ^0.10.1+2
   pinput:
     git:
       url: https://github.com/donik1998/Flutter_Pinput.git
@@ -56,7 +56,7 @@ dependencies:
       url: https://github.com/shuffle-app/flutter_gallery_3d_plus
       ref: master
   flip_card: ^0.7.0
-  model_viewer_plus: ^1.8.0
+  model_viewer_plus: ^1.9.1
 
   #dialogs widgets
   popover:
@@ -76,7 +76,7 @@ dependencies:
       url: https://github.com/shuffle-app/tabnavigator_plus
       ref: main
   rxdart: any
-  lottie: ^3.1.2
+  lottie: ^3.2.0
   flutter_card_swiper:
     git:
       #      url: https://github.com/rel1nce/shuffle_swiper.git
@@ -85,19 +85,19 @@ dependencies:
       ref: e4391ca40994c91acc563477c7959fbdeff50004
 
   intl: ^0.19.0
-  just_audio: ^0.9.39
+  just_audio: ^0.9.42
 
   #custom splash factory
   flutter_platform_widgets: ^7.0.1
   dynamic_color: ^1.7.0
 
   #video player
-  media_kit: ^1.1.10+1
-  media_kit_video: ^1.2.4
-  media_kit_libs_video: ^1.0.4
+#  media_kit: ^1.1.11
+#  media_kit_video: ^1.2.5
+#  media_kit_libs_video: ^1.0.5
 
   #maps
-  google_maps_flutter: ^2.9.0
+  google_maps_flutter: ^2.10.0
   flutter_polyline_points: ^2.0.1
   huawei_map: ^6.11.2+303
   countries_flag: ^1.0.0
@@ -106,7 +106,7 @@ dependencies:
 
   #image processing
   image_picker: ^1.1.2
-  image: ^4.2.0
+  image: ^4.3.0
   flutter_image_compress: ^2.3.0
 
   infinite_carousel: ^1.1.1
@@ -116,7 +116,7 @@ dependencies:
       url: https://github.com/shuffle-app/video_editor.git
       ref: master
   ffmpeg_kit_flutter_min: ^6.0.3
-  flutter_tilt: ^3.0.5
+  flutter_tilt: ^3.1.0
   sensors_plus: ^6.0.1
 
   collection: any

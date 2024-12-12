@@ -9942,6 +9942,16 @@ class S {
     );
   }
 
+  /// `You've reached the maximum number of created events`
+  String get MaxNumberOfEvents {
+    return Intl.message(
+      'You\'ve reached the maximum number of created events',
+      name: 'MaxNumberOfEvents',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Open event`
   String get OpenEvent {
     return Intl.message(
