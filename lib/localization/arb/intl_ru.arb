@@ -968,7 +968,12 @@
   "AnotherReason": "Другая причина",
   "Translate": "Перевод",
   "Original": "Оригинал",
-  "PleaseValidateXDetailsBeforeModeration": "Пожалуйста проверьте детали {x} перед отправкой на модерацию"
+  "PleaseValidateXDetailsBeforeModeration": "Пожалуйста проверьте детали {x} перед отправкой на модерацию",
+  "OpenEvent": "Открыть ивент",
+  "SeeList": "Посмотреть лист",
+  "BecomePro": "Страть pro",
+  "BookItX": "Букинг (+{x})",
+  "IChangedMyMind": "Я передумал"
 
 }
 

@@ -966,5 +966,10 @@
   "AnotherReason": "Another reason",
   "Translate": "Translate",
   "Original": "Original",
-  "PleaseValidateXDetailsBeforeModeration": "Please validate {x} details before sending it to moderation"
+  "PleaseValidateXDetailsBeforeModeration": "Please validate {x} details before sending it to moderation",
+  "OpenEvent": "Open event",
+  "SeeList": "See list",
+  "BecomePro": "Become pro",
+  "BookItX": "Book it (+{x})" ,
+  "IChangedMyMind": "I changed my mind"
 }

@@ -9941,6 +9941,56 @@ class S {
       args: [x],
     );
   }
+
+  /// `Open event`
+  String get OpenEvent {
+    return Intl.message(
+      'Open event',
+      name: 'OpenEvent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See list`
+  String get SeeList {
+    return Intl.message(
+      'See list',
+      name: 'SeeList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Become pro`
+  String get BecomePro {
+    return Intl.message(
+      'Become pro',
+      name: 'BecomePro',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Book it (+{x})`
+  String BookItX(Object x) {
+    return Intl.message(
+      'Book it (+$x)',
+      name: 'BookItX',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `I changed my mind`
+  String get IChangedMyMind {
+    return Intl.message(
+      'I changed my mind',
+      name: 'IChangedMyMind',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
