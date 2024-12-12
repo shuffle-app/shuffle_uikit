@@ -279,6 +279,7 @@ extension FactoryExtention on BuildContext {
       WidgetsFactory.of(this)!.createAdvertisementTextBanner(data: data).build(this);
 
   Widget notificationPopUp({
+    bool showTwoNotifications = false,
     required NotificationPopupRequiredData requiredData,
     Widget? primaryActionWidget,
     Widget? secondaryActionWidget,
@@ -286,6 +287,7 @@ extension FactoryExtention on BuildContext {
   }) {
     Widget popUp = WidgetsFactory.of(this)!
         .createNotificationPopUp(
+          showTwoNotifications: showTwoNotifications,
           requiredData: requiredData,
           primaryActionWidget: primaryActionWidget,
           secondaryActionWidget: secondaryActionWidget,
