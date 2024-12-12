@@ -35,6 +35,10 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   bool seeking = false;
   double height = 0;
   double width = 0;
+  final key = UniqueKey();
+  VideoPlayerController? _controller;
+  double coverOpacity = 1;
+  bool isReady = false;
 
   @override
   void initState() {
@@ -43,14 +47,22 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl))
-        ..initialize().then((_) {
+        ..initialize().then((_) async {
+          _currentActiveVideoPlayer = _controller;
           _calculateDimensions(_controller!.value.aspectRatio);
-          setState(() {});
-          _controller!.play();
+          setState(() {
+            coverOpacity = 0;
+          });
+          await _controller!.play();
           _controller!.addListener(_playBackListener);
           if (widget.onVideoInited != null) {
-            Future.delayed(Duration.zero, widget.onVideoInited!);
+            Future.delayed(const Duration(milliseconds: 200), widget.onVideoInited!);
           }
+          Future.delayed(const Duration(milliseconds: 200), () {
+            setState(() {
+              isReady = true;
+            });
+          });
         });
     });
   }
@@ -70,7 +82,8 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
       widget.onProgressChanged
           ?.call(_controller!.value.position.inMilliseconds / _controller!.value.duration.inMilliseconds);
     }
-    if (_controller?.value.position.inMilliseconds == _controller?.value.duration.inMilliseconds) {
+    if (_controller?.value.position.inMilliseconds == _controller?.value.duration.inMilliseconds &&
+        _controller?.value.duration.inMilliseconds != 0) {
       if (!seeking) {
         if (widget.onVideoComplete == null) {
           context.pop();
@@ -83,6 +96,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
 
   @override
   void dispose() {
+    _controller?.removeListener(_playBackListener);
     _controller?.dispose();
     super.dispose();
   }
@@ -93,73 +107,75 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
       height: width,
       width: height,
       child: GestureDetector(
-        behavior: HitTestBehavior.translucent,
-        onHorizontalDragStart: (details) {
-          if (_controller!.value.isPlaying) _controller!.pause();
-          setState(() => seeking = true);
-        },
-        onHorizontalDragUpdate: (details) {
-          if (seeking) {
-            final position = _controller!.value.position.inMilliseconds;
-            final duration = _controller!.value.duration.inMilliseconds;
-            int seekTo = (position + details.primaryDelta! * duration ~/ 1000);
-            if (details.primaryDelta! > 0) {
-              seekTo += (seekTo ~/ 16).clamp(0, duration);
-            } else {
-              seekTo -= (seekTo ~/ 16).abs().clamp(0, duration);
+          behavior: HitTestBehavior.translucent,
+          onHorizontalDragStart: (details) {
+            if (_controller!.value.isPlaying) _controller!.pause();
+            setState(() => seeking = true);
+          },
+          onHorizontalDragUpdate: (details) {
+            if (seeking) {
+              final position = _controller!.value.position.inMilliseconds;
+              final duration = _controller!.value.duration.inMilliseconds;
+              int seekTo = (position + details.primaryDelta! * duration ~/ 1000);
+              if (details.primaryDelta! > 0) {
+                seekTo += (seekTo ~/ 16).clamp(0, duration);
+              } else {
+                seekTo -= (seekTo ~/ 16).abs().clamp(0, duration);
+              }
+              final progress = (seekTo / duration).clamp(0.0, 1.0);
+              widget.onProgressChanged?.call(progress);
+              _controller!.seekTo(Duration(milliseconds: seekTo));
             }
-            final progress = (seekTo / duration).clamp(0.0, 1.0);
-            widget.onProgressChanged?.call(progress);
-            _controller!.seekTo(Duration(milliseconds: seekTo));
-          }
-        },
-        onHorizontalDragEnd: (details) {
-          setState(() => seeking = false);
-          if (!_controller!.value.isPlaying) _controller!.play();
-        },
-        onTapDown: (details) {
-          if (_controller == null) return;
-          _controller!.pause();
-        },
-        onTapUp: (details) {
-          if (_controller == null) return;
-          _controller!.play();
-          widget.onTapUp?.call(details);
-        },
-        onVerticalDragEnd: widget.onVerticalSwipe,
-        child: AnimatedSwitcher(
-            duration: const Duration(milliseconds: 500),
-            switchInCurve: Curves.decelerate,
-            child: _controller == null || !(_controller?.value.isInitialized ?? false)
-                ? Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      ImageWidget(
-                        link: widget.coverImageUrl,
-                        imageBytes: widget.coverImageBytes,
-                        fit: BoxFit.cover,
-                        width: 1.sw,
-                        height: 1.sh,
-                      ),
-                      Container(color: Colors.black.withOpacity(0.5)),
-                      const Center(child: LoadingWidget()),
-                    ],
-                  )
-                : Transform.scale(
+          },
+          onHorizontalDragEnd: (details) {
+            setState(() => seeking = false);
+            if (!_controller!.value.isPlaying) _controller!.play();
+          },
+          onTapDown: (details) {
+            if (_controller == null) return;
+            _controller!.pause();
+          },
+          onTapUp: (details) {
+            if (_controller == null) return;
+            _controller!.play();
+            widget.onTapUp?.call(details);
+          },
+          onVerticalDragEnd: widget.onVerticalSwipe,
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              if (_controller != null && (_controller?.value.isInitialized ?? false))
+                Transform.scale(
                     scale: _controller!.value.aspectRatio > (MediaQuery.sizeOf(context).aspectRatio + 0.18)
                         ? 1
                         : (width / 1.sw - height / 1.sh),
                     child: AspectRatio(
                       aspectRatio: _controller!.value.aspectRatio,
-                      child: VideoPlayer(_controller!),
-                    ))),
-      ),
+                      child: VideoPlayer(
+                        _controller!,
+                        key: key,
+                      ),
+                    )),
+              if (!isReady)
+                AnimatedOpacity(
+                  opacity: coverOpacity,
+                  duration: const Duration(milliseconds: 200),
+                  child: ImageWidget(
+                    link: widget.coverImageUrl,
+                    imageBytes: widget.coverImageBytes,
+                    fit: BoxFit.cover,
+                    width: 1.sw,
+                    height: 1.sh,
+                  ),
+                ),
+            ],
+          )),
     ).paddingOnly(top: MediaQuery.paddingOf(context).top);
   }
 }
 
-VideoPlayerController? _controller;
+VideoPlayerController? _currentActiveVideoPlayer;
 
-playVideo() => _controller?.play();
+playVideo() => _currentActiveVideoPlayer?.play();
 
-pauseVideo() => _controller?.pause();
+pauseVideo() => _currentActiveVideoPlayer?.pause();
