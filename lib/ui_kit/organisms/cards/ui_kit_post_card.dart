@@ -111,6 +111,7 @@ class UiKitPostCard extends StatelessWidget {
                         userNameTextColor: colorScheme?.inverseBodyTypography,
                       ),
                     )),
+                    if(onSharePress!=null)
                     context.iconButtonNoPadding(
                         data: BaseUiKitButtonData(
                             onPressed: onSharePress,
