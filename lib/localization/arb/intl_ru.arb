@@ -969,7 +969,12 @@
   "Translate": "Перевод",
   "Original": "Оригинал",
   "PleaseValidateXDetailsBeforeModeration": "Пожалуйста проверьте детали {x} перед отправкой на модерацию",
-  "MaxNumberOfEvents": "Достигнуто максимальное количество созданных событий"
+  "MaxNumberOfEvents": "Достигнуто максимальное количество созданных событий",
+  "OpenEvent": "Открыть ивент",
+  "SeeList": "Посмотреть лист",
+  "BecomePro": "Страть pro",
+  "BookItX": "Букинг (+{x})",
+  "IChangedMyMind": "Я передумал"
 
 }
 

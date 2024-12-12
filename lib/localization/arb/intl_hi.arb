@@ -967,5 +967,10 @@
   "Translate": "Translate",
   "Original": "Original",
   "PleaseValidateXDetailsBeforeModeration": "Please validate {x} details before sending it to moderation",
-  "MaxNumberOfEvents": "You've reached the maximum number of created events"
+  "MaxNumberOfEvents": "You've reached the maximum number of created events",
+  "OpenEvent": "Open event",
+  "SeeList": "See list",
+  "BecomePro": "Become pro",
+  "BookItX": "Book it (+{x})" ,
+  "IChangedMyMind": "I changed my mind"
 }
