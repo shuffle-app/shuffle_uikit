@@ -18,15 +18,15 @@ class ReactionAnimation extends StatefulWidget {
 class _ReactionAnimationState extends State<ReactionAnimation> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
-  final numberOfReactions = 3;
+  final numberOfReactions = 1;
 
   // Define the final offsets for each widget
   final List<Offset> finalOffsets = const [
-    Offset(-15.0, 0), // Top-left
+    // Offset(-15.0, 0), // Top-left
     // Offset(-8, -5), // Bottom-left
     Offset(0.0, -15), // Top-center
     // Offset(8, -5), // Bottom-right
-    Offset(15, 0), // Top-right
+    // Offset(15, 0), // Top-right
   ];
 
   @override

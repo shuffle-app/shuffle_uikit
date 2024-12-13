@@ -56,7 +56,7 @@ void showReactionOverlay(
                   onTap: () {
                     onReactionsTapped?.call('fire');
                     hideReactionOverlay(overlayEntry);
-                    showAnimatedReactionOverlay(context, reaction: GraphicsFoundation.instance.svg.fire);
+                    showAnimatedReactionOverlay(context, reaction: GraphicsFoundation.instance.svg.fireEmoji);
                   },
                 ),
                 SpacingFoundation.horizontalSpace4,
