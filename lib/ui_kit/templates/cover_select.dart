@@ -101,7 +101,7 @@ class CoverSelect extends StatelessWidget {
                 color: colorScheme?.surface1 ?? ColorsFoundation.surface1,
                 child: SingleChildScrollView(
                   child: Wrap(
-                    alignment: WrapAlignment.spaceAround,
+                    // alignment: WrapAlignment.spaceAround,
                     spacing: SpacingFoundation.horizontalSpacing2,
                     runSpacing: SpacingFoundation.horizontalSpacing2,
                     children: covers

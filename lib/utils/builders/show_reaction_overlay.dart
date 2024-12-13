@@ -36,6 +36,7 @@ void showReactionOverlay(
                   onTap: () {
                     onReactionsTapped?.call('heart_eyes');
                     hideReactionOverlay(overlayEntry);
+                    showAnimatedReactionOverlay(context, reaction: GraphicsFoundation.instance.svg.heartEyes);
                   },
                 ),
                 SpacingFoundation.horizontalSpace4,
@@ -45,6 +46,7 @@ void showReactionOverlay(
                   onTap: () {
                     onReactionsTapped?.call('like');
                     hideReactionOverlay(overlayEntry);
+                    showAnimatedReactionOverlay(context, reaction: GraphicsFoundation.instance.svg.thumbsUpReversed);
                   },
                 ),
                 SpacingFoundation.horizontalSpace4,
@@ -54,6 +56,7 @@ void showReactionOverlay(
                   onTap: () {
                     onReactionsTapped?.call('fire');
                     hideReactionOverlay(overlayEntry);
+                    showAnimatedReactionOverlay(context, reaction: GraphicsFoundation.instance.svg.fire);
                   },
                 ),
                 SpacingFoundation.horizontalSpace4,
@@ -63,6 +66,7 @@ void showReactionOverlay(
                   onTap: () {
                     onReactionsTapped?.call('sunglasses');
                     hideReactionOverlay(overlayEntry);
+                    showAnimatedReactionOverlay(context, reaction: GraphicsFoundation.instance.svg.sunglasses);
                   },
                 ),
                 SpacingFoundation.horizontalSpace4,
@@ -71,12 +75,39 @@ void showReactionOverlay(
                   onTap: () {
                     onReactionsTapped?.call('smiley');
                     hideReactionOverlay(overlayEntry);
+                    showAnimatedReactionOverlay(context, reaction: GraphicsFoundation.instance.svg.smiley);
                   },
                   textColor: reactionTextColor,
                 ),
               ],
             ),
           ),
+        ),
+      ),
+    ),
+  );
+
+  Overlay.of(context).insert(overlayEntry);
+}
+
+showAnimatedReactionOverlay(
+  BuildContext context, {
+  required SvgGenImage reaction,
+  OverlayEntry? overlayEntry,
+}) {
+  RenderBox renderBox = context.findRenderObject() as RenderBox;
+  Offset position = renderBox.localToGlobal(Offset.zero);
+  overlayEntry = OverlayEntry(
+    builder: (context) => Positioned(
+      top: position.dy+40,
+      right: 40,
+      child: Material(
+        color: Colors.transparent,
+        child: ReactionAnimation(
+          reaction: reaction,
+          onAnimationEnd: () {
+            hideReactionOverlay(overlayEntry);
+          },
         ),
       ),
     ),
