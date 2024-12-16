@@ -1,16 +1,21 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class PhotoViewerPage extends StatelessWidget {
-  PhotoViewerPage({super.key});
+class PhotoViewerPage extends StatefulWidget {
+  const PhotoViewerPage({super.key});
 
+  @override
+  State<PhotoViewerPage> createState() => _PhotoViewerPageState();
+}
+
+class _PhotoViewerPageState extends State<PhotoViewerPage> {
   final List<String> images = [
     GraphicsFoundation.instance.png.leto1.path,
     GraphicsFoundation.instance.png.leto2.path,
     GraphicsFoundation.instance.png.leto3.path,
   ];
+
+  int? selectedIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -34,20 +39,35 @@ class PhotoViewerPage extends StatelessWidget {
 
               return GestureDetector(
                 onTap: () {
-                  context.push(
-                    PhotoDialog(
-                      tag: heroTag,
-                      images: images,
-                      initialIndex: index,
+                  setState(() {
+                    selectedIndex = index;
+                  });
+
+                  Navigator.of(context)
+                      .push(
+                    MaterialPageRoute(
+                      builder: (_) => PhotoDialog(
+                        tag: heroTag,
+                        images: images,
+                        initialIndex: index,
+                      ),
                     ),
-                  );
+                  )
+                      .then((_) {
+                    setState(() {
+                      selectedIndex = null;
+                    });
+                  });
                 },
-                child: Hero(
-                  transitionOnUserGestures: true,
-                  tag: heroTag,
-                  child: ImageWidget(
-                    link: images[index],
-                    fit: BoxFit.cover,
+                child: HeroMode(
+                  enabled: selectedIndex != index,
+                  child: Hero(
+                    transitionOnUserGestures: true,
+                    tag: heroTag,
+                    child: ImageWidget(
+                      link: images[index],
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               );
