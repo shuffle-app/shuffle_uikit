@@ -44,21 +44,34 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
       duration: const Duration(milliseconds: 300),
     );
 
-    _animationController.addListener(() {
-      _transformationController.value = _animation.value;
-    });
+    _setupAnimationListeners();
+  }
 
-    _animationController.addStatusListener((status) {
-      if (status == AnimationStatus.completed) {
-        setState(() {
-          isAnimating = false;
-        });
-      }
-    });
+  void _setupAnimationListeners() {
+    _animationController.addListener(_onAnimationControllerUpdate);
+    _animationController.addStatusListener(_onAnimationStatusUpdate);
+  }
+
+  void _removeAnimationListeners() {
+    _animationController.removeListener(_onAnimationControllerUpdate);
+    _animationController.removeStatusListener(_onAnimationStatusUpdate);
+  }
+
+  void _onAnimationControllerUpdate() {
+    _transformationController.value = _animation.value;
+  }
+
+  void _onAnimationStatusUpdate(AnimationStatus status) {
+    if (status == AnimationStatus.completed) {
+      setState(() {
+        isAnimating = false;
+      });
+    }
   }
 
   @override
   void dispose() {
+    _removeAnimationListeners();
     _pageController.dispose();
     _transformationController.dispose();
     _animationController.dispose();
@@ -93,8 +106,7 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
     if (!isTwoFingerGesture && !isPageChanging) {
       if (details.primaryVelocity! > 250 || details.primaryVelocity! < -250) {
         setState(() {
-          offsetY =
-              details.primaryVelocity! > 0 ? MediaQuery.of(context).size.height : -MediaQuery.of(context).size.height;
+          offsetY = details.primaryVelocity! > 0 ? 1.sh : -1.sh;
           isAnimating = true;
         });
 
