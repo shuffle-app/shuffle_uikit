@@ -24,11 +24,12 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
   late AnimationController _animationController;
   late Animation<Matrix4> _animation;
 
-  int currentIndex = 0;
   double offsetY = 0.0;
-  bool isAnimating = false;
-
+  int currentIndex = 0;
   int activePointers = 0;
+
+  bool isAnimating = false;
+  bool isPageChanging = false;
   bool isTwoFingerGesture = false;
 
   @override
@@ -81,7 +82,7 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
   }
 
   void _handleVerticalDragUpdate(DragUpdateDetails details) {
-    if (!isAnimating && !isTwoFingerGesture) {
+    if (!isAnimating && !isTwoFingerGesture && !isPageChanging) {
       setState(() {
         offsetY += details.primaryDelta ?? 0.0;
       });
@@ -89,7 +90,7 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
   }
 
   void _handleVerticalDragEnd(DragEndDetails details) {
-    if (!isTwoFingerGesture) {
+    if (!isTwoFingerGesture && !isPageChanging) {
       if (details.primaryVelocity! > 250 || details.primaryVelocity! < -250) {
         setState(() {
           offsetY =
@@ -97,7 +98,7 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
           isAnimating = true;
         });
 
-        Future.delayed(const Duration(milliseconds: 300), () {
+        Future.delayed(const Duration(milliseconds: 150), () {
           context.pop();
         });
       } else {
@@ -141,14 +142,24 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
                 controller: _pageController,
                 onPageChanged: (index) {
                   setState(() {
+                    isPageChanging = true;
                     currentIndex = index;
                     _animateResetScale();
                     offsetY = 0.0;
+                  });
+
+                  Future.delayed(const Duration(milliseconds: 600), () {
+                    setState(() {
+                      isPageChanging = false;
+                    });
                   });
                 },
                 itemCount: widget.images.length,
                 itemBuilder: (context, index) {
                   final isCurrentPage = index == currentIndex;
+
+                  final String lastPartOfTag = widget.tag.split('--').last;
+                  final String dynamicHeroTag = '${widget.images[index]}--${lastPartOfTag}';
 
                   return Stack(
                     children: [
@@ -168,7 +179,7 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
                             }
                           },
                           child: Hero(
-                            tag: widget.tag,
+                            tag: dynamicHeroTag,
                             transitionOnUserGestures: true,
                             child: ImageWidget(
                               width: 1.sw,
@@ -182,23 +193,6 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
                     ],
                   ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing2);
                 },
-              ),
-            ),
-          ),
-          Positioned(
-            right: SpacingFoundation.horizontalSpacing8,
-            top: SpacingFoundation.verticalSpacing8,
-            child: GestureDetector(
-              onTap: isAnimating
-                  ? null
-                  : () {
-                      context.pop();
-                    },
-              child: ImageWidget(
-                width: 14.w,
-                height: 14.w,
-                iconData: ShuffleUiKitIcons.x,
-                color: context.uiKitTheme?.colorScheme.inversePrimary,
               ),
             ),
           ),
