@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -32,15 +34,16 @@ class PhotoViewerPage extends StatelessWidget {
 
               return GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(
-                    PopUpPhotoView(
-                      heroTag: heroTag,
+                  context.push(
+                    PhotoDialog(
+                      tag: heroTag,
                       images: images,
                       initialIndex: index,
                     ),
                   );
                 },
                 child: Hero(
+                  transitionOnUserGestures: true,
                   tag: heroTag,
                   child: ImageWidget(
                     link: images[index],
