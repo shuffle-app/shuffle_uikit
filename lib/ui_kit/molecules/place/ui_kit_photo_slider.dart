@@ -10,7 +10,7 @@ class UiKitPhotoSlider extends StatefulWidget {
   final double width;
   final int initialIndex;
   final int maxShowImage;
-  final VoidCallback? onTap;
+  final ValueChanged<int?>? onTap;
   final List<Widget>? actions;
   final PlaceWeatherType? weatherType;
 
@@ -64,7 +64,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
       _animationController,
     );
 
-     if(widget.media.first.link.startsWith('http') && !kIsWeb) {
+    if (widget.media.first.link.startsWith('http') && !kIsWeb) {
       CustomCacheManager.imageInstance.getSingleFile(widget.media.first.link).then((_) {
         if (mounted) {
           setState(() {
@@ -84,10 +84,11 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         });
       });
     } else {
-       showFirstCard = true;
-       showBackStack = true;
-     }
+      showFirstCard = true;
+      showBackStack = true;
+    }
   }
+
   @override
   void didChangeDependencies() {
     theme = context.uiKitTheme;
@@ -121,11 +122,13 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   }
 
   Widget _buildFirstItem(BaseUiKitMedia item) {
+    final heroTag = '${item.link}--$_currentIndex';
+
     return Positioned(
       left: _cardAnimation.left,
       right: widget.media.length == 1 ? 0 : _cardAnimation.right,
       child: GestureDetector(
-        onTap: widget.onTap,
+        onTap: () => widget.onTap?.call(_currentIndex),
         onHorizontalDragUpdate: (tapInfo) {
           final deltaX = tapInfo.delta.dx;
           final isLastCard = _currentIndex! == widget.media.length - 1;
@@ -145,6 +148,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         },
         child: SliderPhotoCard(
           media: item,
+          heroTag: heroTag,
           givenSize: Size(widget.width, height),
           weatherType: widget.weatherType,
         ),
@@ -153,7 +157,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   }
 
   Widget _buildLeftItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
-
     return AnimatedPositioned(
         duration: _animDuration,
         left: 4 * ((_currentIndex ?? 0) + 1) - differenceFromFirstCard * 10,
@@ -173,7 +176,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   }
 
   Widget _buildRightItem(BuildContext context, BaseUiKitMedia item, int differenceFromFirstCard) {
-
     return AnimatedPositioned(
       duration: _animDuration,
       right: 4 * (5 - (_currentIndex ?? 0) + 1) - differenceFromFirstCard * 10,
@@ -260,7 +262,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 
   @override
   Widget build(BuildContext context) {
-    theme ??=context.uiKitTheme;
+    theme ??= context.uiKitTheme;
     if (widget.media.isEmpty) return const SizedBox.shrink();
 
     final List<Widget> backStack = showBackStack ? _getBackStack(_cardAnimation.right < widget.width / 10) : [];
