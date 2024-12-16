@@ -6,6 +6,7 @@ import 'package:shuffle_uikit/ui_kit/atoms/buttons/ui_kit_icon_button_no_padding
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_influncer_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_premium_user_tile.dart';
 import 'package:shuffle_uikit/ui_kit/molecules/tiles/user/badged_pro_user_tile.dart';
+import 'package:shuffle_uikit/ui_kit/organisms/popups/two_additional_notification_popup.dart';
 
 import '../../ui_kit/atoms/user/avatars/ui_kit_user_avatar_90_x_90.dart';
 
@@ -731,6 +732,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
 
   @override
   NotificationPopUpFactory createNotificationPopUp({
+    bool showTwoNotifications = false,
     required NotificationPopupRequiredData requiredData,
     Widget? primaryActionWidget,
     Widget? secondaryActionWidget,
@@ -742,6 +744,14 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         requiredData: requiredData,
         primaryActionWidget: primaryActionWidget,
         secondaryActionWidget: secondaryActionWidget,
+        dismissActionWidget: dismissActionWidget,
+      );
+    }
+
+    if (!hasAllActions && showTwoNotifications) {
+      return TwoActionNotificationPopUp(
+        requiredData: requiredData,
+        primaryActionWidget: primaryActionWidget,
         dismissActionWidget: dismissActionWidget,
       );
     }
@@ -826,6 +836,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       text: data.text ?? '',
       onPressed: data.onPressed,
       loading: data.loading,
+      group: data.autoSizeGroup,
     );
   }
 

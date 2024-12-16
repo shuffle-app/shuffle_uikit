@@ -14,6 +14,7 @@ export 'animation/lottie_animation.dart';
 export 'animation/ui_kit_influencer_audio_messages_demo.dart';
 export 'animation/ui_kit_mocked_audio_messages_animation.dart';
 export 'animation/ui_kit_tilt_wrapper.dart';
+export 'animation/reaction_animation.dart';
 export 'animation/ui_kit_voice_mock_animation.dart';
 export 'app_bar/app_bar_back_button.dart';
 export 'app_bar/app_bar_title.dart';

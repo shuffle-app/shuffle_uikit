@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -5,12 +6,14 @@ class SmallGradientButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final String text;
   final bool? loading;
+  final AutoSizeGroup? group;
 
   const SmallGradientButton({
     super.key,
     this.onPressed,
     this.loading,
     required this.text,
+    this.group,
   });
 
   @override
@@ -36,10 +39,12 @@ class SmallGradientButton extends StatelessWidget implements ButtonFactory {
             gradient: enabled ? GradientFoundation.buttonGradientLinear : null,
             color: enabled ? null : ColorsFoundation.darkNeutral300,
           ),
-          child: Text(
+          child: AutoSizeText(
+            group: group,
             text.toUpperCase(),
             style: textStyle,
             textAlign: TextAlign.center,
+            maxLines: 1,
           ).loadingWrap(loading ?? false, color: colorScheme?.surface),
         ),
       ),

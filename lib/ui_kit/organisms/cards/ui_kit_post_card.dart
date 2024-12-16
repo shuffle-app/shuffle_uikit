@@ -98,8 +98,9 @@ class UiKitPostCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Row(children: [
-                    context.userTile(
+                  Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                    Expanded(
+                        child: context.userTile(
                       data: BaseUiKitUserTileData(
                         avatarUrl: authorAvatarUrl,
                         name: authorName,
@@ -109,8 +110,8 @@ class UiKitPostCard extends StatelessWidget {
                         noMaterialOverlay: true,
                         userNameTextColor: colorScheme?.inverseBodyTypography,
                       ),
-                    ),
-                    const Spacer(),
+                    )),
+                    if(onSharePress!=null)
                     context.iconButtonNoPadding(
                         data: BaseUiKitButtonData(
                             onPressed: onSharePress,
