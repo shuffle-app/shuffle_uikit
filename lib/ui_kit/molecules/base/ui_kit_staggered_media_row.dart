@@ -7,47 +7,64 @@ class UiKitStaggeredMediaRow extends UiKitContentUpdateWidget {
   final int visibleMediaCount;
 
   const UiKitStaggeredMediaRow({
-    Key? key,
+    super.key,
     required this.mediaList,
     required this.visibleMediaCount,
-  }) : super(key: key);
+  });
 
   @override
   double get height => kIsWeb ? 50 : 0.125.sw;
 
   @override
   Widget build(BuildContext context) {
+    final microseconds = DateTime.now().microsecondsSinceEpoch;
+
     return Row(
       mainAxisSize: MainAxisSize.max,
       children: [
         if (visibleMediaCount < mediaList.length)
           ...mediaList.sublist(0, visibleMediaCount).map(
-                (photo) => _itemBuilder(photo),
+                (photo) => _itemBuilder(photo, context, microseconds: microseconds),
               ),
         if (visibleMediaCount >= mediaList.length)
           ...mediaList.map(
-            (photo) => _itemBuilder(photo),
+            (photo) => _itemBuilder(photo, context, microseconds: microseconds),
           ),
       ],
     );
   }
 
-  Widget _itemBuilder(UiKitMediaPhoto photo) {
-    final isHorizontal = mediaList.indexOf(photo) % 2 == 0;
-    final isLast = mediaList.indexOf(photo) == visibleMediaCount - 1;
+  Widget _itemBuilder(UiKitMediaPhoto photo, BuildContext context, {int? microseconds}) {
+    final indexOfPhoto = mediaList.indexOf(photo);
+    final String heroTag = '${photo.link}--${microseconds}';
+
+    final isHorizontal = indexOfPhoto % 2 == 0;
+    final isLast = indexOfPhoto == visibleMediaCount - 1;
     double width = isHorizontal ? height * 1.325 : height;
 
     return Row(
       children: [
-        ClipRRect(
-          borderRadius: BorderRadiusFoundation.all8,
-          child: ImageWidget(
-            height: height,
-            width: width,
-            link: photo.link,
-            fit: BoxFit.cover,
-          ),
-        ).paddingOnly(right: EdgeInsetsFoundation.horizontal6),
+        GestureDetector(
+          onTap: () {
+            context.push(
+              PhotoDialog(
+                images: mediaList.map((e) => e.link).toList(),
+                initialIndex: indexOfPhoto,
+                tag: heroTag,
+              ),
+            );
+          },
+          child: Hero(
+            tag: heroTag,
+            transitionOnUserGestures: true,
+            child: ImageWidget(
+              height: height,
+              width: width,
+              link: photo.link,
+              fit: BoxFit.cover,
+            ),
+          ).paddingOnly(right: EdgeInsetsFoundation.horizontal6),
+        ),
         if (isLast)
           UiKitContentUpdatePlaceholder(
             title: S.current.PlusXPhotos(mediaList.length - visibleMediaCount).toLowerCase(),
