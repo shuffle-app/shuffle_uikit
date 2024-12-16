@@ -1,52 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class PopUpPhotoView extends ModalRoute<void> {
-  final List<String> images;
-  final int initialIndex;
-  final String heroTag;
-
-  @override
-  Duration get transitionDuration => const Duration(milliseconds: 300);
-
-  @override
-  bool get opaque => false;
-
-  @override
-  bool get barrierDismissible => false;
-
-  @override
-  Color get barrierColor => ColorsFoundation.surface1.withOpacity(0.9);
-
-  @override
-  String get barrierLabel => 'null';
-
-  @override
-  bool get maintainState => true;
-
-  PopUpPhotoView({
-    required this.images,
-    required this.initialIndex,
-    required this.heroTag,
-  });
-
-  @override
-  Widget buildPage(
-    BuildContext context,
-    Animation<double> animation,
-    Animation<double> secondaryAnimation,
-  ) {
-    return Material(
-      type: MaterialType.transparency,
-      child: PhotoDialog(
-        tag: heroTag,
-        images: images,
-        initialIndex: initialIndex,
-      ),
-    );
-  }
-}
-
 class PhotoDialog extends StatefulWidget {
   final List<String> images;
   final int initialIndex;
@@ -73,6 +27,9 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
   int currentIndex = 0;
   double offsetY = 0.0;
   bool isAnimating = false;
+
+  int activePointers = 0;
+  bool isTwoFingerGesture = false;
 
   @override
   void initState() {
@@ -124,7 +81,7 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
   }
 
   void _handleVerticalDragUpdate(DragUpdateDetails details) {
-    if (!isAnimating) {
+    if (!isAnimating && !isTwoFingerGesture) {
       setState(() {
         offsetY += details.primaryDelta ?? 0.0;
       });
@@ -132,21 +89,41 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
   }
 
   void _handleVerticalDragEnd(DragEndDetails details) {
-    if (details.primaryVelocity! > 250 || details.primaryVelocity! < -250) {
-      setState(() {
-        offsetY =
-            details.primaryVelocity! > 0 ? MediaQuery.of(context).size.height : -MediaQuery.of(context).size.height;
-        isAnimating = true;
-      });
+    if (!isTwoFingerGesture) {
+      if (details.primaryVelocity! > 250 || details.primaryVelocity! < -250) {
+        setState(() {
+          offsetY =
+              details.primaryVelocity! > 0 ? MediaQuery.of(context).size.height : -MediaQuery.of(context).size.height;
+          isAnimating = true;
+        });
 
-      Future.delayed(const Duration(milliseconds: 300), () {
-        context.pop();
-      });
-    } else {
-      setState(() {
-        offsetY = 0.0;
-      });
+        Future.delayed(const Duration(milliseconds: 300), () {
+          context.pop();
+        });
+      } else {
+        setState(() {
+          offsetY = 0.0;
+        });
+      }
     }
+  }
+
+  void _handlePointerDown(PointerDownEvent event) {
+    setState(() {
+      activePointers++;
+      if (activePointers == 2) {
+        isTwoFingerGesture = true;
+      }
+    });
+  }
+
+  void _handlePointerUp(PointerUpEvent event) {
+    setState(() {
+      activePointers = (activePointers - 1).clamp(0, double.infinity).toInt();
+      if (activePointers < 2) {
+        isTwoFingerGesture = false;
+      }
+    });
   }
 
   @override
@@ -154,53 +131,58 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
     return SafeArea(
       child: Stack(
         children: [
-          GestureDetector(
-            onVerticalDragUpdate: _handleVerticalDragUpdate,
-            onVerticalDragEnd: _handleVerticalDragEnd,
-            child: PageView.builder(
-              controller: _pageController,
-              onPageChanged: (index) {
-                setState(() {
-                  currentIndex = index;
-                  _animateResetScale();
-                  offsetY = 0.0;
-                });
-              },
-              itemCount: widget.images.length,
-              itemBuilder: (context, index) {
-                final isCurrentPage = index == currentIndex;
+          Listener(
+            onPointerDown: _handlePointerDown,
+            onPointerUp: _handlePointerUp,
+            child: GestureDetector(
+              onVerticalDragUpdate: _handleVerticalDragUpdate,
+              onVerticalDragEnd: _handleVerticalDragEnd,
+              child: PageView.builder(
+                controller: _pageController,
+                onPageChanged: (index) {
+                  setState(() {
+                    currentIndex = index;
+                    _animateResetScale();
+                    offsetY = 0.0;
+                  });
+                },
+                itemCount: widget.images.length,
+                itemBuilder: (context, index) {
+                  final isCurrentPage = index == currentIndex;
 
-                return Stack(
-                  children: [
-                    AnimatedPositioned(
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeOut,
-                      top: offsetY,
-                      child: InteractiveViewer(
-                        transformationController: _transformationController,
-                        panEnabled: isCurrentPage && !isAnimating,
-                        scaleEnabled: isCurrentPage && !isAnimating,
-                        minScale: 1.0,
-                        maxScale: 4.0,
-                        onInteractionEnd: (_) {
-                          if (_transformationController.value != Matrix4.identity() && !isAnimating) {
-                            _animateResetScale();
-                          }
-                        },
-                        child: Hero(
-                          tag: widget.tag,
-                          child: ImageWidget(
-                            width: 1.sw,
-                            height: 0.95.sh,
-                            link: widget.images[index],
-                            fit: BoxFit.contain,
+                  return Stack(
+                    children: [
+                      AnimatedPositioned(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeOut,
+                        top: offsetY,
+                        child: InteractiveViewer(
+                          transformationController: _transformationController,
+                          panEnabled: isCurrentPage && !isAnimating && !isTwoFingerGesture,
+                          scaleEnabled: isCurrentPage && !isAnimating,
+                          minScale: 1.0,
+                          maxScale: 4.0,
+                          onInteractionEnd: (_) {
+                            if (_transformationController.value != Matrix4.identity() && !isAnimating) {
+                              _animateResetScale();
+                            }
+                          },
+                          child: Hero(
+                            tag: widget.tag,
+                            transitionOnUserGestures: true,
+                            child: ImageWidget(
+                              width: 1.sw,
+                              height: 0.95.sh,
+                              link: widget.images[index],
+                              fit: BoxFit.contain,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing2);
-              },
+                    ],
+                  ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing2);
+                },
+              ),
             ),
           ),
           Positioned(
