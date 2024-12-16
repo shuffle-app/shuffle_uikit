@@ -146,3 +146,5 @@ export 'viewer/ui_kit_video_player.dart';
 export 'wheel_value_selector/ui_kit_horizontal_wheel_number_selector.dart';
 export 'event/add_to_scheduler_event_action_card.dart';
 export 'barcode/custom_barcode.dart';
+export 'photo_viewer/photo_viewer_page.dart';
+export 'photo_viewer/pop_up_photo_view.dart';

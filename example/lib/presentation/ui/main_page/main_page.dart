@@ -188,6 +188,13 @@ class _MainPageState extends State<MainPage> {
             SpacingFoundation.verticalSpace16,
             context.button(
               data: BaseUiKitButtonData(
+                text: 'Photo view page',
+                onPressed: () => Navigator.pushNamed(context, AppRoutes.photoViewerPage),
+              ),
+            ),
+            SpacingFoundation.verticalSpace16,
+            context.button(
+              data: BaseUiKitButtonData(
                 text: 'Video cutter',
                 onPressed: () => Navigator.push(
                   context,

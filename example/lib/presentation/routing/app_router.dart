@@ -132,6 +132,11 @@ class AppRouter {
           builder: (context) => const AnimationsPage(),
           settings: settings,
         );
+      case AppRoutes.photoViewerPage:
+        return MaterialPageRoute(
+          builder: (context) => PhotoViewerPage(),
+          settings: settings,
+        );
       case AppRoutes.mapDirections:
         return MaterialPageRoute(
           builder: (context) => MapDirectionsPage(
