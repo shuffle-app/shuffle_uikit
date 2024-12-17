@@ -90,16 +90,12 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
   final List<Widget> children;
   final double topPadding;
   final ValueNotifier<double> lastPhaseScaleNotifier;
-  final bool showHints;
-  final bool expandHint;
   final bool hide;
 
   UiKitAnimatedPullToShowDelegate({
     required this.topPadding,
     required this.children,
     required this.lastPhaseScaleNotifier,
-    this.showHints = true,
-    this.expandHint = true,
     this.hide = false,
   });
 
@@ -119,7 +115,7 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     final colorScheme = context.uiKitTheme?.colorScheme;
     final shrinkToMaxExtentRatio = shrinkOffset / maxExtent;
-    final extentToShowListOfChildren = expandHint ? 0.25 : 0.4;
+    const extentToShowListOfChildren = 0.4;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -133,17 +129,12 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
                 scale: scale,
                 duration: const Duration(milliseconds: 50),
                 child: SizedBox(
-                  height: (topPadding * scale),
+                  height: (topPadding * (max(scale, 1))),
                   width: 1.sw,
                   child: child,
                 ),
               );
             },
-            // child: Transform.translate(
-            //     offset: Offset(0, -0.08.sw),
-            //     child: const AnimatedPullToShowHint(
-            //       showGradient: false,
-            //     )),
             child: Center(
               child: GradientableWidget(
                 gradient: GradientFoundation.badgeIcon,
@@ -203,9 +194,7 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
                               itemCount: children.length,
                             ),
                           ))
-                      : false
-                          ? const AnimatedPullToShowHint()
-                          : const SizedBox.shrink(),
+                      : const SizedBox.shrink(),
                 ),
               ),
             ],
@@ -410,7 +399,7 @@ class _UiKitAnimatedPullToShowHintState extends State<UiKitAnimatedPullToShowHin
   _scaleNotifier() {
     if (!mounted) return;
 
-    if (widget.scaleNotifier.value >= 2) {
+    if (widget.scaleNotifier.value >= 2.3) {
       setState(() {
         showFinalState = true;
       });
@@ -431,18 +420,17 @@ class _UiKitAnimatedPullToShowHintState extends State<UiKitAnimatedPullToShowHin
       animation: widget.scaleNotifier,
       builder: (context, child) {
         final scale = widget.scaleNotifier.value;
-        return Stack(fit: StackFit.loose, alignment: Alignment.bottomCenter, clipBehavior: Clip.none, children: [
+        return Stack(fit: StackFit.loose, alignment: Alignment.center, clipBehavior: Clip.none, children: [
           widget.topPadding.heightBox,
           AnimatedSize(
-              duration: const Duration(milliseconds: 200),
-              reverseDuration: const Duration(milliseconds: 200),
+              duration: const Duration(milliseconds: 50),
+              reverseDuration: const Duration(milliseconds: 50),
               curve: Curves.bounceInOut,
               alignment: Alignment.topCenter,
               child: AnimatedCrossFade(
                   duration: const Duration(milliseconds: 500),
                   crossFadeState: showFinalState ? CrossFadeState.showSecond : CrossFadeState.showFirst,
                   firstChild: UiKitCardWrapper(
-                      // color: colorScheme?.darkNeutral500,
                       gradient: GradientFoundation.defaultLinearGradient,
                       borderRadius: BorderRadiusFoundation.max,
                       width: min(scale * .1.sw, .1.sw),
@@ -453,9 +441,9 @@ class _UiKitAnimatedPullToShowHintState extends State<UiKitAnimatedPullToShowHin
                       child: Icon(
                         Icons.arrow_downward_rounded,
                         color: colorScheme?.inversePrimary,
+                        size: min(scale * .05.sw, .05.sw),
                       )),
                   secondChild: UiKitBorderWrapper(
-                    // color: colorScheme?.darkNeutral500,
                     borderRadius: BorderRadiusFoundation.max,
                     width: min(scale * .1.sw, .1.sw),
                     height: scale * .089.sw,
@@ -463,8 +451,11 @@ class _UiKitAnimatedPullToShowHintState extends State<UiKitAnimatedPullToShowHin
                         alignment: Alignment.bottomCenter,
                         child: GradientableWidget(
                             gradient: GradientFoundation.defaultLinearGradient,
-                            child: const Icon(Icons.check_circle_outline_rounded)
-                                .paddingSymmetric(horizontal: 4.w, vertical: 2.h))),
+                            child: Icon(
+                              Icons.check_circle_outline_rounded,
+                              color: Colors.white,
+                              size: min(scale * .05.sw, .05.sw),
+                            ).paddingSymmetric(horizontal: 4.w, vertical: 2.h))),
                   )))
         ]);
 
