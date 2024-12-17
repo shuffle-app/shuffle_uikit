@@ -32,7 +32,7 @@ class _ReactionAnimationState extends State<ReactionAnimation> with SingleTicker
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this, duration: widget.duration,upperBound: 2);
+    _controller = AnimationController(vsync: this, duration: widget.duration,upperBound: 2.6);
     _controller.addStatusListener(_animationStatusChanged);
     _controller.forward();
   }

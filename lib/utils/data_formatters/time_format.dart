@@ -24,6 +24,12 @@ extension TimeOfDayExtension on TimeOfDay {
   }
 }
 
+extension TimeRangeExtension on TimeRange {
+  String get normalizedString {
+    return '${normalizedTi(start, showDateName: false)}${end != null ? ' - ${normalizedTi(end, showDateName: false)}' : ''}';
+  }
+}
+
 String leadingZeros(int number) {
   return number.toString().padLeft(2, '0');
 }

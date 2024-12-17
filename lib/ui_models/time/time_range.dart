@@ -16,9 +16,12 @@ class TimeRange {
   }
 
   /// Formats the TimeRange as strings like "11:20 - 02:03".
-  String formatted() {
+  String formatted([bool withSpace = true]) {
     if (end != null) {
-      return '${formatTime(start)} - ${formatTime(end)}';
+      if (withSpace)
+        return '${formatTime(start)} - ${formatTime(end)}';
+      else
+        return '${formatTime(start)}-${formatTime(end)}';
     } else {
       return formatTime(start);
     }
@@ -29,7 +32,8 @@ class TimeRange {
     return normalizedTi(start) + (end != null ? '-${normalizedTi(end)}' : '');
   }
 
-  TimeRange copyWith({TimeOfDay? start, TimeOfDay? end}) => TimeRange(
+  TimeRange copyWith({TimeOfDay? start, TimeOfDay? end}) =>
+      TimeRange(
         start: start ?? this.start,
         end: end ?? this.end,
       );
