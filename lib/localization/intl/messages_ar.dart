@@ -915,6 +915,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Name": MessageLookupByLibrary.simpleMessage("Name"),
         "NameOrNickname":
             MessageLookupByLibrary.simpleMessage("Name or nickname"),
+        "NeedEmailVerification":
+            MessageLookupByLibrary.simpleMessage("Need email verification"),
         "New": MessageLookupByLibrary.simpleMessage("New"),
         "NewDonates": MessageLookupByLibrary.simpleMessage("New donates"),
         "NewFeatures": MessageLookupByLibrary.simpleMessage("New features"),

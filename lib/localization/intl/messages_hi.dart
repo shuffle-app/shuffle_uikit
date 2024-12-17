@@ -922,6 +922,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NPlace": m51,
         "Name": MessageLookupByLibrary.simpleMessage("नाम"),
         "NameOrNickname": MessageLookupByLibrary.simpleMessage("नाम या उपनाम"),
+        "NeedEmailVerification":
+            MessageLookupByLibrary.simpleMessage("Need email verification"),
         "New": MessageLookupByLibrary.simpleMessage("नया"),
         "NewDonates": MessageLookupByLibrary.simpleMessage("नई दान"),
         "NewFeatures": MessageLookupByLibrary.simpleMessage("नई सुविधाएँ"),

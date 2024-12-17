@@ -314,6 +314,7 @@
   "Both": "Both",
   "CredentialsCodeVerificationSubtitle": "कृपया उस ईमेल पते पर भेजे गए कोड को दर्ज करें",
   "EmailVerification": "ईमेल सत्यापन",
+  "NeedEmailVerification": "Need email verification",
   "PhoneVerification": "फ़ोन सत्यापन",
   "ResendCode": "कोड फिर से भेजें",
   "EnterNewPassword": "नया पासवर्ड दर्ज करें",

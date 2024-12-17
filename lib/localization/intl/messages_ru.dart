@@ -930,6 +930,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "NPlace": m51,
         "Name": MessageLookupByLibrary.simpleMessage("Имя"),
         "NameOrNickname": MessageLookupByLibrary.simpleMessage("Имя или ник"),
+        "NeedEmailVerification":
+            MessageLookupByLibrary.simpleMessage("Требуется подтвердить email"),
         "New": MessageLookupByLibrary.simpleMessage("Новое"),
         "NewDonates": MessageLookupByLibrary.simpleMessage("Новые донаты"),
         "NewFeatures": MessageLookupByLibrary.simpleMessage("Новые функции"),

@@ -332,6 +332,7 @@
   "Both": "Оба",
   "CredentialsCodeVerificationSubtitle": "Пожалуйста, введи код, отправленный на",
   "EmailVerification": "Подтверждение email",
+  "NeedEmailVerification": "Требуется подтвердить email",
   "PhoneVerification": "Подтверждение номера телефона",
   "ResendCode": "Отправить код еще раз",
   "EnterNewPassword": "Новый пароль",

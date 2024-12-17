@@ -3458,6 +3458,16 @@ class S {
     );
   }
 
+  /// `Need email verification`
+  String get NeedEmailVerification {
+    return Intl.message(
+      'Need email verification',
+      name: 'NeedEmailVerification',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Phone verification`
   String get PhoneVerification {
     return Intl.message(

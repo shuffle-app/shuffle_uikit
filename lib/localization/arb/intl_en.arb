@@ -337,6 +337,7 @@
   "Both": "Both",
   "CredentialsCodeVerificationSubtitle": "Please type verification code sent to",
   "EmailVerification": "Email verification",
+  "NeedEmailVerification": "Need email verification",
   "PhoneVerification": "Phone verification",
   "ResendCode": "Resend code",
   "EnterNewPassword": "Enter new password",
