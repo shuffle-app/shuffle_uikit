@@ -22,16 +22,13 @@ class UiKitPostCard extends StatelessWidget {
   final VoidCallback? onLongPress;
   final VoidCallback? onSharePress;
   final String createdAt;
+  final ValueNotifier<bool>? showTranslateButton;
+  final ValueNotifier<String>? translateText;
 
-  bool get showEmptyReactionsState =>
-      (heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
-      (heartEyesCount == null &&
-          likesCount == null &&
-          sunglassesCount == null &&
-          firesCount == null &&
-          smileyCount == null);
+  late final ValueNotifier<String> description;
+  late final ValueNotifier<bool> isTranslate;
 
-  const UiKitPostCard({
+  UiKitPostCard({
     super.key,
     required this.authorName,
     required this.authorUsername,
@@ -49,7 +46,20 @@ class UiKitPostCard extends StatelessWidget {
     this.onLongPress,
     this.onSharePress,
     this.createdAt = '',
-  });
+    this.showTranslateButton,
+    this.translateText,
+  }) {
+    description = ValueNotifier<String>(text);
+    isTranslate = ValueNotifier<bool>(false);
+  }
+
+  bool get showEmptyReactionsState =>
+      (heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
+      (heartEyesCount == null &&
+          likesCount == null &&
+          sunglassesCount == null &&
+          firesCount == null &&
+          smileyCount == null);
 
   int get heartCount => heartEyesCount ?? 0;
 
@@ -72,6 +82,11 @@ class UiKitPostCard extends StatelessWidget {
 
     OverlayEntry? overlayEntry;
     bool isOverlayVisible = false;
+
+    void toggleTranslation() {
+      isTranslate.value = !isTranslate.value;
+      description.value = isTranslate.value ? (translateText?.value ?? text) : text;
+    }
 
     return GestureDetector(
       onLongPress: () {
@@ -100,42 +115,70 @@ class UiKitPostCard extends StatelessWidget {
                 children: [
                   Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                     Expanded(
-                        child: context.userTile(
-                      data: BaseUiKitUserTileData(
-                        avatarUrl: authorAvatarUrl,
-                        name: authorName,
-                        username: authorUsername,
-                        type: authorUserType,
-                        showBadge: true,
-                        noMaterialOverlay: true,
-                        userNameTextColor: colorScheme?.inverseBodyTypography,
+                      child: context.userTile(
+                        data: BaseUiKitUserTileData(
+                          avatarUrl: authorAvatarUrl,
+                          name: authorName,
+                          username: authorUsername,
+                          type: authorUserType,
+                          showBadge: true,
+                          noMaterialOverlay: true,
+                          userNameTextColor: colorScheme?.inverseBodyTypography,
+                        ),
                       ),
-                    )),
-                    if(onSharePress!=null)
-                    context.iconButtonNoPadding(
+                    ),
+                    if (onSharePress != null)
+                      context.iconButtonNoPadding(
                         data: BaseUiKitButtonData(
-                            onPressed: onSharePress,
-                            iconInfo: BaseUiKitButtonIconData(
-                              iconData: ShuffleUiKitIcons.share,
-                              color: colorScheme?.darkNeutral800,
-                            )))
+                          onPressed: onSharePress,
+                          iconInfo: BaseUiKitButtonIconData(
+                            iconData: ShuffleUiKitIcons.share,
+                            color: colorScheme?.darkNeutral800,
+                          ),
+                        ),
+                      )
                   ]),
                   SpacingFoundation.verticalSpace8,
-                  Text(
-                    text,
-                    style: regularTextTheme?.caption2.copyWith(color: colorScheme?.surface),
+                  ValueListenableBuilder<String>(
+                    valueListenable: description,
+                    builder: (_, desc, __) => Text(
+                      desc,
+                      style: regularTextTheme?.caption2.copyWith(color: colorScheme?.surface),
+                    ),
                   ),
                   SpacingFoundation.verticalSpace8,
+                  if (showTranslateButton != null)
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ValueListenableBuilder<bool>(
+                          valueListenable: isTranslate,
+                          builder: (_, isTranslating, __) => InkWell(
+                            onTap: toggleTranslation,
+                            child: showTranslateButton!.value
+                                ? Text(
+                                    isTranslating ? S.of(context).Original : S.of(context).Translate,
+                                    style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
+                                      color: isLightTheme
+                                          ? ColorsFoundation.darkNeutral700
+                                          : ColorsFoundation.darkNeutral300,
+                                    ),
+                                  )
+                                : const SizedBox.shrink(),
+                          ),
+                        ),
+                      ],
+                    ).paddingOnly(bottom: SpacingFoundation.verticalSpacing8),
                   Row(
-                    mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       UiKitCardWrapper(
                         color: colorScheme?.darkNeutral900,
                         borderRadius: BorderRadiusFoundation.max,
                         padding: EdgeInsets.symmetric(
-                            horizontal: SpacingFoundation.horizontalSpacing4,
-                            vertical: SpacingFoundation.verticalSpacing2),
+                          horizontal: SpacingFoundation.horizontalSpacing4,
+                          vertical: SpacingFoundation.verticalSpacing2,
+                        ),
                         child: Text(createdAt, style: regularTextTheme?.caption3),
                       ),
                       showEmptyReactionsState
