@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitPostCard extends StatelessWidget {
+class UiKitPostCard extends StatefulWidget {
   final String authorName;
   final String authorUsername;
   final String authorAvatarUrl;
@@ -22,14 +22,8 @@ class UiKitPostCard extends StatelessWidget {
   final VoidCallback? onLongPress;
   final VoidCallback? onSharePress;
   final String createdAt;
-
-  bool get showEmptyReactionsState =>
-      (heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
-      (heartEyesCount == null &&
-          likesCount == null &&
-          sunglassesCount == null &&
-          firesCount == null &&
-          smileyCount == null);
+  final ValueNotifier<bool>? showTranslateButton;
+  final ValueNotifier<String>? translateText;
 
   const UiKitPostCard({
     super.key,
@@ -49,17 +43,47 @@ class UiKitPostCard extends StatelessWidget {
     this.onLongPress,
     this.onSharePress,
     this.createdAt = '',
+    this.showTranslateButton,
+    this.translateText,
   });
 
-  int get heartCount => heartEyesCount ?? 0;
+  @override
+  State<UiKitPostCard> createState() => _UiKitPostCardState();
+}
 
-  int get likeCount => likesCount ?? 0;
+class _UiKitPostCardState extends State<UiKitPostCard> {
+  bool get showEmptyReactionsState =>
+      (widget.heartEyesCount == 0 &&
+          widget.likesCount == 0 &&
+          widget.sunglassesCount == 0 &&
+          widget.firesCount == 0 &&
+          widget.smileyCount == 0) ||
+      (widget.heartEyesCount == null &&
+          widget.likesCount == null &&
+          widget.sunglassesCount == null &&
+          widget.firesCount == null &&
+          widget.smileyCount == null);
 
-  int get fireCount => firesCount ?? 0;
+  int get heartCount => widget.heartEyesCount ?? 0;
 
-  int get sunglassesCountNotNull => sunglassesCount ?? 0;
+  int get likeCount => widget.likesCount ?? 0;
 
-  int get smileyCountNotNull => smileyCount ?? 0;
+  int get fireCount => widget.firesCount ?? 0;
+
+  int get sunglassesCountNotNull => widget.sunglassesCount ?? 0;
+
+  int get smileyCountNotNull => widget.smileyCount ?? 0;
+
+  bool isTranslate = false;
+
+  late String description;
+
+  @override
+  void initState() {
+    super.initState();
+
+    description = widget.text;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +103,7 @@ class UiKitPostCard extends StatelessWidget {
           intensities: [130, 170],
           pattern: [10, 5],
         ));
-        onLongPress?.call();
+        widget.onLongPress?.call();
       },
       child: ConstrainedBox(
         constraints: BoxConstraints(
@@ -102,30 +126,64 @@ class UiKitPostCard extends StatelessWidget {
                     Expanded(
                         child: context.userTile(
                       data: BaseUiKitUserTileData(
-                        avatarUrl: authorAvatarUrl,
-                        name: authorName,
-                        username: authorUsername,
-                        type: authorUserType,
+                        avatarUrl: widget.authorAvatarUrl,
+                        name: widget.authorName,
+                        username: widget.authorUsername,
+                        type: widget.authorUserType,
                         showBadge: true,
                         noMaterialOverlay: true,
                         userNameTextColor: colorScheme?.inverseBodyTypography,
                       ),
                     )),
-                    if(onSharePress!=null)
-                    context.iconButtonNoPadding(
-                        data: BaseUiKitButtonData(
-                            onPressed: onSharePress,
-                            iconInfo: BaseUiKitButtonIconData(
-                              iconData: ShuffleUiKitIcons.share,
-                              color: colorScheme?.darkNeutral800,
-                            )))
+                    if (widget.onSharePress != null)
+                      context.iconButtonNoPadding(
+                          data: BaseUiKitButtonData(
+                              onPressed: widget.onSharePress,
+                              iconInfo: BaseUiKitButtonIconData(
+                                iconData: ShuffleUiKitIcons.share,
+                                color: colorScheme?.darkNeutral800,
+                              )))
                   ]),
                   SpacingFoundation.verticalSpace8,
                   Text(
-                    text,
+                    description,
                     style: regularTextTheme?.caption2.copyWith(color: colorScheme?.surface),
                   ),
                   SpacingFoundation.verticalSpace8,
+                  if (widget.showTranslateButton != null)
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        ListenableBuilder(
+                          listenable: widget.showTranslateButton!,
+                          builder: (context, child) => InkWell(
+                            onTap: () {
+                              setState(() {
+                                isTranslate = !isTranslate;
+                                if (isTranslate) {
+                                  if (widget.translateText?.value != null && widget.translateText!.value.isNotEmpty) {
+                                    description = widget.translateText!.value;
+                                  }
+                                } else {
+                                  description = widget.text;
+                                }
+                              });
+                            },
+                            child: widget.showTranslateButton!.value
+                                ? Text(
+                                    isTranslate ? S.of(context).Original : S.of(context).Translate,
+                                    style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
+                                      color: isLightTheme
+                                          ? ColorsFoundation.darkNeutral700
+                                          : ColorsFoundation.darkNeutral300,
+                                    ),
+                                  )
+                                : const SizedBox.shrink(),
+                          ),
+                        ),
+                      ],
+                    ).paddingOnly(bottom: SpacingFoundation.verticalSpacing8),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -136,7 +194,7 @@ class UiKitPostCard extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                             horizontal: SpacingFoundation.horizontalSpacing4,
                             vertical: SpacingFoundation.verticalSpacing2),
-                        child: Text(createdAt, style: regularTextTheme?.caption3),
+                        child: Text(widget.createdAt, style: regularTextTheme?.caption3),
                       ),
                       showEmptyReactionsState
                           ? Builder(
@@ -144,14 +202,14 @@ class UiKitPostCard extends StatelessWidget {
                                 return TapRegion(
                                   behavior: HitTestBehavior.opaque,
                                   onTapInside: (value) {
-                                    if (onReactionsTapped != null) {
+                                    if (widget.onReactionsTapped != null) {
                                       isOverlayVisible
                                           ? hideReactionOverlay(overlayEntry)
                                           : showReactionOverlay(
                                               c,
                                               overlayEntry,
                                               reactionTextColor,
-                                              onReactionsTapped,
+                                              widget.onReactionsTapped,
                                             );
                                       isOverlayVisible = !isOverlayVisible;
                                     }
@@ -172,14 +230,14 @@ class UiKitPostCard extends StatelessWidget {
                                 return TapRegion(
                                   behavior: HitTestBehavior.opaque,
                                   onTapInside: (value) {
-                                    if (onReactionsTapped != null) {
+                                    if (widget.onReactionsTapped != null) {
                                       isOverlayVisible
                                           ? hideReactionOverlay(overlayEntry)
                                           : showReactionOverlay(
                                               c,
                                               overlayEntry,
                                               reactionTextColor,
-                                              onReactionsTapped,
+                                              widget.onReactionsTapped,
                                             );
                                       isOverlayVisible = !isOverlayVisible;
                                     }
@@ -233,7 +291,7 @@ class UiKitPostCard extends StatelessWidget {
                 ],
               ),
             ),
-            if (hasNewMark)
+            if (widget.hasNewMark)
               Align(
                 alignment: Alignment.topRight,
                 child: Transform.rotate(
@@ -250,7 +308,7 @@ class UiKitPostCard extends StatelessWidget {
                   ),
                 ).paddingOnly(top: EdgeInsetsFoundation.vertical2),
               ),
-            if (authorSpeciality.isNotEmpty)
+            if (widget.authorSpeciality.isNotEmpty)
               Positioned(
                 right: 0,
                 bottom: -SpacingFoundation.verticalSpacing8,
@@ -261,7 +319,7 @@ class UiKitPostCard extends StatelessWidget {
                     child: ColoredBox(
                       color: isLightTheme ? ColorsFoundation.darkNeutral300 : ColorsFoundation.neutral16,
                       child: Text(
-                        authorSpeciality,
+                        widget.authorSpeciality,
                         style: boldTextTheme?.caption3Medium.copyWith(
                           color: isLightTheme ? colorScheme?.darkNeutral800 : colorScheme?.darkNeutral100,
                         ),
