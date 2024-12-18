@@ -25,7 +25,10 @@ class UiKitPostCard extends StatelessWidget {
   final ValueNotifier<bool>? showTranslateButton;
   final ValueNotifier<String>? translateText;
 
-  const UiKitPostCard({
+  late final ValueNotifier<String> description;
+  late final ValueNotifier<bool> isTranslate;
+
+  UiKitPostCard({
     super.key,
     required this.authorName,
     required this.authorUsername,
@@ -45,7 +48,10 @@ class UiKitPostCard extends StatelessWidget {
     this.createdAt = '',
     this.showTranslateButton,
     this.translateText,
-  });
+  }) {
+    description = ValueNotifier<String>(text);
+    isTranslate = ValueNotifier<bool>(false);
+  }
 
   bool get showEmptyReactionsState =>
       (heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
@@ -76,9 +82,6 @@ class UiKitPostCard extends StatelessWidget {
 
     OverlayEntry? overlayEntry;
     bool isOverlayVisible = false;
-
-    final description = ValueNotifier<String>(text);
-    final isTranslate = ValueNotifier<bool>(false);
 
     void toggleTranslation() {
       isTranslate.value = !isTranslate.value;

@@ -26,6 +26,9 @@ class UiKitContentUpdatesCard extends StatelessWidget {
   final ValueNotifier<bool>? showTranslateButton;
   final ValueNotifier<String>? translateText;
 
+  late final ValueNotifier<String> description;
+  late final ValueNotifier<bool> isTranslate;
+
   UiKitContentUpdatesCard({
     super.key,
     required this.children,
@@ -48,7 +51,10 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     this.createdAt = '',
     this.showTranslateButton,
     this.translateText,
-  });
+  }) {
+    description = ValueNotifier<String>(comment ?? '');
+    isTranslate = ValueNotifier<bool>(false);
+  }
 
   factory UiKitContentUpdatesCard.fromShuffle({
     Key? key,
@@ -142,9 +148,6 @@ class UiKitContentUpdatesCard extends StatelessWidget {
 
     bool isOverlayVisible = false;
     OverlayEntry? overlayEntry;
-
-    final description = ValueNotifier<String>(comment ?? '');
-    final isTranslate = ValueNotifier<bool>(false);
 
     void toggleTranslation() {
       isTranslate.value = !isTranslate.value;
