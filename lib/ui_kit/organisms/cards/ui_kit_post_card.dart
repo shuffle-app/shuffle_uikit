@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitPostCard extends StatefulWidget {
+class UiKitPostCard extends StatelessWidget {
   final String authorName;
   final String authorUsername;
   final String authorAvatarUrl;
@@ -47,43 +47,13 @@ class UiKitPostCard extends StatefulWidget {
     this.translateText,
   });
 
-  @override
-  State<UiKitPostCard> createState() => _UiKitPostCardState();
-}
-
-class _UiKitPostCardState extends State<UiKitPostCard> {
   bool get showEmptyReactionsState =>
-      (widget.heartEyesCount == 0 &&
-          widget.likesCount == 0 &&
-          widget.sunglassesCount == 0 &&
-          widget.firesCount == 0 &&
-          widget.smileyCount == 0) ||
-      (widget.heartEyesCount == null &&
-          widget.likesCount == null &&
-          widget.sunglassesCount == null &&
-          widget.firesCount == null &&
-          widget.smileyCount == null);
-
-  int get heartCount => widget.heartEyesCount ?? 0;
-
-  int get likeCount => widget.likesCount ?? 0;
-
-  int get fireCount => widget.firesCount ?? 0;
-
-  int get sunglassesCountNotNull => widget.sunglassesCount ?? 0;
-
-  int get smileyCountNotNull => widget.smileyCount ?? 0;
-
-  bool isTranslate = false;
-
-  late String description;
-
-  @override
-  void initState() {
-    super.initState();
-
-    description = widget.text;
-  }
+      (heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
+      (heartEyesCount == null &&
+          likesCount == null &&
+          sunglassesCount == null &&
+          firesCount == null &&
+          smileyCount == null);
 
   @override
   Widget build(BuildContext context) {
@@ -94,8 +64,13 @@ class _UiKitPostCardState extends State<UiKitPostCard> {
     final reactionTextColor = colorScheme?.inverseBodyTypography;
     final isLightTheme = theme?.themeMode == ThemeMode.light;
 
-    OverlayEntry? overlayEntry;
-    bool isOverlayVisible = false;
+    final description = ValueNotifier<String>(text);
+    final isTranslate = ValueNotifier<bool>(false);
+
+    void toggleTranslation() {
+      isTranslate.value = !isTranslate.value;
+      description.value = isTranslate.value ? (translateText?.value ?? text) : text;
+    }
 
     return GestureDetector(
       onLongPress: () {
@@ -103,7 +78,7 @@ class _UiKitPostCardState extends State<UiKitPostCard> {
           intensities: [130, 170],
           pattern: [10, 5],
         ));
-        widget.onLongPress?.call();
+        onLongPress?.call();
       },
       child: ConstrainedBox(
         constraints: BoxConstraints(
@@ -124,55 +99,49 @@ class _UiKitPostCardState extends State<UiKitPostCard> {
                 children: [
                   Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                     Expanded(
-                        child: context.userTile(
-                      data: BaseUiKitUserTileData(
-                        avatarUrl: widget.authorAvatarUrl,
-                        name: widget.authorName,
-                        username: widget.authorUsername,
-                        type: widget.authorUserType,
-                        showBadge: true,
-                        noMaterialOverlay: true,
-                        userNameTextColor: colorScheme?.inverseBodyTypography,
+                      child: context.userTile(
+                        data: BaseUiKitUserTileData(
+                          avatarUrl: authorAvatarUrl,
+                          name: authorName,
+                          username: authorUsername,
+                          type: authorUserType,
+                          showBadge: true,
+                          noMaterialOverlay: true,
+                          userNameTextColor: colorScheme?.inverseBodyTypography,
+                        ),
                       ),
-                    )),
-                    if (widget.onSharePress != null)
+                    ),
+                    if (onSharePress != null)
                       context.iconButtonNoPadding(
-                          data: BaseUiKitButtonData(
-                              onPressed: widget.onSharePress,
-                              iconInfo: BaseUiKitButtonIconData(
-                                iconData: ShuffleUiKitIcons.share,
-                                color: colorScheme?.darkNeutral800,
-                              )))
+                        data: BaseUiKitButtonData(
+                          onPressed: onSharePress,
+                          iconInfo: BaseUiKitButtonIconData(
+                            iconData: ShuffleUiKitIcons.share,
+                            color: colorScheme?.darkNeutral800,
+                          ),
+                        ),
+                      )
                   ]),
                   SpacingFoundation.verticalSpace8,
-                  Text(
-                    description,
-                    style: regularTextTheme?.caption2.copyWith(color: colorScheme?.surface),
+                  ValueListenableBuilder<String>(
+                    valueListenable: description,
+                    builder: (_, desc, __) => Text(
+                      desc,
+                      style: regularTextTheme?.caption2.copyWith(color: colorScheme?.surface),
+                    ),
                   ),
                   SpacingFoundation.verticalSpace8,
-                  if (widget.showTranslateButton != null)
+                  if (showTranslateButton != null)
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      mainAxisSize: MainAxisSize.max,
                       children: [
-                        ListenableBuilder(
-                          listenable: widget.showTranslateButton!,
-                          builder: (context, child) => InkWell(
-                            onTap: () {
-                              setState(() {
-                                isTranslate = !isTranslate;
-                                if (isTranslate) {
-                                  if (widget.translateText?.value != null && widget.translateText!.value.isNotEmpty) {
-                                    description = widget.translateText!.value;
-                                  }
-                                } else {
-                                  description = widget.text;
-                                }
-                              });
-                            },
-                            child: widget.showTranslateButton!.value
+                        ValueListenableBuilder<bool>(
+                          valueListenable: isTranslate,
+                          builder: (_, isTranslating, __) => InkWell(
+                            onTap: toggleTranslation,
+                            child: showTranslateButton!.value
                                 ? Text(
-                                    isTranslate ? S.of(context).Original : S.of(context).Translate,
+                                    isTranslating ? S.of(context).Original : S.of(context).Translate,
                                     style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
                                       color: isLightTheme
                                           ? ColorsFoundation.darkNeutral700
@@ -185,113 +154,42 @@ class _UiKitPostCardState extends State<UiKitPostCard> {
                       ],
                     ).paddingOnly(bottom: SpacingFoundation.verticalSpacing8),
                   Row(
-                    mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       UiKitCardWrapper(
                         color: colorScheme?.darkNeutral900,
                         borderRadius: BorderRadiusFoundation.max,
                         padding: EdgeInsets.symmetric(
-                            horizontal: SpacingFoundation.horizontalSpacing4,
-                            vertical: SpacingFoundation.verticalSpacing2),
-                        child: Text(widget.createdAt, style: regularTextTheme?.caption3),
+                          horizontal: SpacingFoundation.horizontalSpacing4,
+                          vertical: SpacingFoundation.verticalSpacing2,
+                        ),
+                        child: Text(createdAt, style: regularTextTheme?.caption3),
                       ),
                       showEmptyReactionsState
-                          ? Builder(
-                              builder: (c) {
-                                return TapRegion(
-                                  behavior: HitTestBehavior.opaque,
-                                  onTapInside: (value) {
-                                    if (widget.onReactionsTapped != null) {
-                                      isOverlayVisible
-                                          ? hideReactionOverlay(overlayEntry)
-                                          : showReactionOverlay(
-                                              c,
-                                              overlayEntry,
-                                              reactionTextColor,
-                                              widget.onReactionsTapped,
-                                            );
-                                      isOverlayVisible = !isOverlayVisible;
-                                    }
-                                  },
-                                  onTapOutside: (event) {
-                                    isOverlayVisible = false;
-                                    hideReactionOverlay(overlayEntry);
-                                  },
-                                  child: const ImageWidget(
-                                    iconData: ShuffleUiKitIcons.thumbup,
-                                    color: ColorsFoundation.mutedText,
-                                  ),
-                                );
-                              },
+                          ? const ImageWidget(
+                              iconData: ShuffleUiKitIcons.thumbup,
+                              color: ColorsFoundation.mutedText,
                             )
-                          : Builder(
-                              builder: (c) {
-                                return TapRegion(
-                                  behavior: HitTestBehavior.opaque,
-                                  onTapInside: (value) {
-                                    if (widget.onReactionsTapped != null) {
-                                      isOverlayVisible
-                                          ? hideReactionOverlay(overlayEntry)
-                                          : showReactionOverlay(
-                                              c,
-                                              overlayEntry,
-                                              reactionTextColor,
-                                              widget.onReactionsTapped,
-                                            );
-                                      isOverlayVisible = !isOverlayVisible;
-                                    }
-                                  },
-                                  onTapOutside: (event) {
-                                    isOverlayVisible = false;
-                                    hideReactionOverlay(overlayEntry);
-                                  },
-                                  child: Row(
-                                    children: [
-                                      if (heartCount > 0)
-                                        UiKitHeartEyesReaction(
-                                          reactionsCount: heartCount,
-                                          textColor: reactionTextColor,
-                                        ),
-                                      if (likeCount > 0) ...[
-                                        SpacingFoundation.horizontalSpace4,
-                                        UiKitLikeReaction(
-                                          reactionsCount: likeCount,
-                                          textColor: reactionTextColor,
-                                        )
-                                      ],
-                                      if (fireCount > 0) ...[
-                                        SpacingFoundation.horizontalSpace4,
-                                        UiKitFireReaction(
-                                          reactionsCount: fireCount,
-                                          textColor: reactionTextColor,
-                                        )
-                                      ],
-                                      if (sunglassesCountNotNull > 0) ...[
-                                        SpacingFoundation.horizontalSpace4,
-                                        UiKitSunglassesReaction(
-                                          reactionsCount: sunglassesCountNotNull,
-                                          textColor: reactionTextColor,
-                                        )
-                                      ],
-                                      if (smileyCountNotNull > 0) ...[
-                                        SpacingFoundation.horizontalSpace4,
-                                        UiKitSmileyReaction(
-                                          reactionsCount: smileyCountNotNull,
-                                          textColor: reactionTextColor,
-                                        )
-                                      ],
-                                    ],
+                          : Row(
+                              children: [
+                                if (heartEyesCount != null && heartEyesCount! > 0)
+                                  UiKitHeartEyesReaction(
+                                    reactionsCount: heartEyesCount!,
+                                    textColor: reactionTextColor,
                                   ),
-                                );
-                              },
+                                if (likesCount != null && likesCount! > 0)
+                                  UiKitLikeReaction(
+                                    reactionsCount: likesCount!,
+                                    textColor: reactionTextColor,
+                                  ),
+                              ],
                             ),
                     ],
                   ),
                 ],
               ),
             ),
-            if (widget.hasNewMark)
+            if (hasNewMark)
               Align(
                 alignment: Alignment.topRight,
                 child: Transform.rotate(
@@ -308,7 +206,7 @@ class _UiKitPostCardState extends State<UiKitPostCard> {
                   ),
                 ).paddingOnly(top: EdgeInsetsFoundation.vertical2),
               ),
-            if (widget.authorSpeciality.isNotEmpty)
+            if (authorSpeciality.isNotEmpty)
               Positioned(
                 right: 0,
                 bottom: -SpacingFoundation.verticalSpacing8,
@@ -319,7 +217,7 @@ class _UiKitPostCardState extends State<UiKitPostCard> {
                     child: ColoredBox(
                       color: isLightTheme ? ColorsFoundation.darkNeutral300 : ColorsFoundation.neutral16,
                       child: Text(
-                        widget.authorSpeciality,
+                        authorSpeciality,
                         style: boldTextTheme?.caption3Medium.copyWith(
                           color: isLightTheme ? colorScheme?.darkNeutral800 : colorScheme?.darkNeutral100,
                         ),
