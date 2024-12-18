@@ -13,7 +13,6 @@ class UiKitContentUpdatesCard extends StatelessWidget {
   final UserTileType authorUserType;
   final bool hasGradientBorder;
   final String? comment;
-  final bool hasReactions;
   final int? heartEyesReactionsCount;
   final int? likeReactionsCount;
   final int? fireReactionsCount;
@@ -39,7 +38,6 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     required this.authorUserType,
     this.comment,
     this.hasGradientBorder = false,
-    this.hasReactions = false,
     this.heartEyesReactionsCount,
     this.likeReactionsCount,
     this.fireReactionsCount,
@@ -80,7 +78,6 @@ class UiKitContentUpdatesCard extends StatelessWidget {
         authorUsername: '',
         authorAvatarUrl: GraphicsFoundation.instance.png.avatars.avatar13.path,
         hasGradientBorder: true,
-        hasReactions: true,
         comment: text,
         heartEyesReactionsCount: heartEyesReactionsCount,
         likeReactionsCount: likeReactionsCount,
@@ -102,27 +99,27 @@ class UiKitContentUpdatesCard extends StatelessWidget {
   double overallHeight() {
     double additionalSpacingForComment = 0;
     double reactionsSpacing = 0;
-    double translateButtonSpacing = 0;
+    // double translateButtonSpacing = 0;
 
     if (hasGradientBorder && comment != null && comment!.isNotEmpty) {
       final linesCount = (comment!.length ~/ charactersPerLine) + comment!.split('\n').length;
 
       additionalSpacingForComment += linesCount * (kIsWeb ? 15 : 18.h);
     }
-    if (hasReactions) {
+    // if (hasReactions) {
       reactionsSpacing += SpacingFoundation.verticalSpacing8 + SpacingFoundation.verticalSpacing20;
-    }
-    if (showTranslateButton != null && showTranslateButton!.value) {
-      translateButtonSpacing += SpacingFoundation.verticalSpacing32;
-    }
+    // }
+    // if (showTranslateButton != null && showTranslateButton!.value) {
+    //   translateButtonSpacing += SpacingFoundation.verticalSpacing32;
+    // }
 
     return children.fold(0.0, (previousValue, element) => previousValue + element.height) +
         ((children.length + 2) * SpacingFoundation.verticalSpacing24) +
         (kIsWeb ? 17 : 0.152.sw) +
         EdgeInsetsFoundation.vertical24 +
         reactionsSpacing +
-        additionalSpacingForComment +
-        translateButtonSpacing;
+        additionalSpacingForComment;
+        // translateButtonSpacing;
   }
 
   int get heartCount => heartEyesReactionsCount ?? 0;
@@ -193,30 +190,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                   }),
                 ],
                 SpacingFoundation.verticalSpace8,
-                if (showTranslateButton != null)
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      ValueListenableBuilder<bool>(
-                        valueListenable: isTranslate,
-                        builder: (_, isTranslating, __) => InkWell(
-                          onTap: toggleTranslation,
-                          child: showTranslateButton!.value
-                              ? Text(
-                                  isTranslating ? S.of(context).Original : S.of(context).Translate,
-                                  style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
-                                    color: isLightTheme
-                                        ? ColorsFoundation.darkNeutral700
-                                        : ColorsFoundation.darkNeutral300,
-                                  ),
-                                )
-                              : const SizedBox.shrink(),
-                        ),
-                      ),
-                    ],
-                  ).paddingOnly(bottom: SpacingFoundation.verticalSpacing8),
-                if (hasReactions)
+
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -227,8 +201,25 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                             horizontal: SpacingFoundation.horizontalSpacing4,
                             vertical: SpacingFoundation.verticalSpacing2),
-                        child: Text(createdAt, style: regularTextTheme?.caption3),
+                        child: Text(createdAt, style: regularTextTheme?.caption4),
                       ),
+                      if (showTranslateButton != null)
+                        ValueListenableBuilder<bool>(
+                          valueListenable: isTranslate,
+                          builder: (_, isTranslating, __) => InkWell(
+                            onTap: toggleTranslation,
+                            child: showTranslateButton!.value
+                                ? Text(
+                              isTranslating ? S.of(context).Original : S.of(context).Translate,
+                              style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
+                                color: isLightTheme
+                                    ? ColorsFoundation.darkNeutral700
+                                    : ColorsFoundation.darkNeutral300,
+                              ),
+                            )
+                                : const SizedBox.shrink(),
+                          ),
+                        ),
                       showEmptyReactionsState
                           ? Builder(
                               builder: (c) => TapRegion(

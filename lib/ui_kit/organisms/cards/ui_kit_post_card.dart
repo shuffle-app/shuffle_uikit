@@ -147,10 +147,19 @@ class UiKitPostCard extends StatelessWidget {
                     ),
                   ),
                   SpacingFoundation.verticalSpace8,
-                  if (showTranslateButton != null)
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      UiKitCardWrapper(
+                        color: colorScheme?.darkNeutral900,
+                        borderRadius: BorderRadiusFoundation.max,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: SpacingFoundation.horizontalSpacing4,
+                          vertical: SpacingFoundation.verticalSpacing2,
+                        ),
+                        child: Text(createdAt, style: regularTextTheme?.caption4),
+                      ),
+                      if (showTranslateButton != null)
                         ValueListenableBuilder<bool>(
                           valueListenable: isTranslate,
                           builder: (_, isTranslating, __) => InkWell(
@@ -167,20 +176,6 @@ class UiKitPostCard extends StatelessWidget {
                                 : const SizedBox.shrink(),
                           ),
                         ),
-                      ],
-                    ).paddingOnly(bottom: SpacingFoundation.verticalSpacing8),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      UiKitCardWrapper(
-                        color: colorScheme?.darkNeutral900,
-                        borderRadius: BorderRadiusFoundation.max,
-                        padding: EdgeInsets.symmetric(
-                          horizontal: SpacingFoundation.horizontalSpacing4,
-                          vertical: SpacingFoundation.verticalSpacing2,
-                        ),
-                        child: Text(createdAt, style: regularTextTheme?.caption3),
-                      ),
                       showEmptyReactionsState
                           ? Builder(
                               builder: (c) {

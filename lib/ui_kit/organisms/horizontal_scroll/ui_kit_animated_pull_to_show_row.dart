@@ -399,7 +399,7 @@ class _UiKitAnimatedPullToShowHintState extends State<UiKitAnimatedPullToShowHin
   _scaleNotifier() {
     if (!mounted) return;
 
-    if (widget.scaleNotifier.value >= 2.3) {
+    if (widget.scaleNotifier.value >= 2.1) {
       setState(() {
         showFinalState = true;
       });
@@ -459,14 +459,4 @@ class _UiKitAnimatedPullToShowHintState extends State<UiKitAnimatedPullToShowHin
                     ));
               })
         ]));
-
-    //   AnimatedScale(
-    //   scale: scale,
-    //   duration: const Duration(milliseconds: 50),
-    //   child: SizedBox(
-    //     height: (topPadding * scale),
-    //     width: .04.sw,
-    //     child: child,
-    //   ),
-    // );
   }}
