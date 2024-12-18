@@ -52,6 +52,7 @@ class UiKitStaggeredMediaRow extends UiKitContentUpdateWidget {
                 initialIndex: indexOfPhoto,
                 tag: heroTag,
               ),
+              nativeTransition: false,
             );
           },
           child: Hero(
