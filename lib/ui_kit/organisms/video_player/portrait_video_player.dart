@@ -100,8 +100,12 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   @override
   void dispose() {
     _controller.removeListener(_playBackListener);
-    _controller.pause();
-    _controller.seekTo(Duration.zero);
+    if (widget.videoPlayer == null) {
+      _controller.dispose();
+    } else {
+      _controller.pause();
+      _controller.seekTo(Duration.zero);
+    }
     super.dispose();
   }
 
