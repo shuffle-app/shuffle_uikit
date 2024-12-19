@@ -53,6 +53,8 @@ class UiKitStaggeredMediaRow extends UiKitContentUpdateWidget {
                 tag: heroTag,
               ),
               nativeTransition: false,
+              transitionDuration: const Duration(milliseconds: 500),
+                useRootNavigator: true
             );
           },
           child: Hero(

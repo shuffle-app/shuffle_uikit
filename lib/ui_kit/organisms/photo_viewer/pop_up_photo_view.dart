@@ -141,75 +141,78 @@ class _PhotoDialogState extends State<PhotoDialog> with SingleTickerProviderStat
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Stack(
-        children: [
-          Listener(
-            onPointerDown: _handlePointerDown,
-            onPointerUp: _handlePointerUp,
-            child: GestureDetector(
-              onVerticalDragUpdate: _handleVerticalDragUpdate,
-              onVerticalDragEnd: _handleVerticalDragEnd,
-              child: PageView.builder(
-                controller: _pageController,
-                onPageChanged: (index) {
-                  setState(() {
-                    isPageChanging = true;
-                    currentIndex = index;
-                    _animateResetScale();
-                    offsetY = 0.0;
-                  });
+    final colorScheme = context.uiKitTheme?.colorScheme;
+    return ColoredBox(
+        color: colorScheme?.surface1 ?? Colors.black,
+        child: SafeArea(
+          child: Stack(
+            children: [
+              Listener(
+                onPointerDown: _handlePointerDown,
+                onPointerUp: _handlePointerUp,
+                child: GestureDetector(
+                  onVerticalDragUpdate: _handleVerticalDragUpdate,
+                  onVerticalDragEnd: _handleVerticalDragEnd,
+                  child: PageView.builder(
+                    controller: _pageController,
+                    onPageChanged: (index) {
+                      setState(() {
+                        isPageChanging = true;
+                        currentIndex = index;
+                        _animateResetScale();
+                        offsetY = 0.0;
+                      });
 
-                  Future.delayed(const Duration(milliseconds: 600), () {
-                    setState(() {
-                      isPageChanging = false;
-                    });
-                  });
-                },
-                itemCount: widget.images.length,
-                itemBuilder: (context, index) {
-                  final isCurrentPage = index == currentIndex;
+                      Future.delayed(const Duration(milliseconds: 600), () {
+                        setState(() {
+                          isPageChanging = false;
+                        });
+                      });
+                    },
+                    itemCount: widget.images.length,
+                    itemBuilder: (context, index) {
+                      final isCurrentPage = index == currentIndex;
 
-                  final String lastPartOfTag = widget.tag.split('--').last;
-                  final String dynamicHeroTag = '${widget.images[index]}--${lastPartOfTag}';
+                      final String lastPartOfTag = widget.tag.split('--').last;
+                      final String dynamicHeroTag = '${widget.images[index]}--${lastPartOfTag}';
 
-                  return Stack(
-                    children: [
-                      AnimatedPositioned(
-                        duration: const Duration(milliseconds: 300),
-                        curve: Curves.easeOut,
-                        top: offsetY,
-                        child: InteractiveViewer(
-                          transformationController: _transformationController,
-                          panEnabled: isCurrentPage && !isAnimating && !isTwoFingerGesture,
-                          scaleEnabled: isCurrentPage && !isAnimating,
-                          minScale: 1.0,
-                          maxScale: 4.0,
-                          onInteractionEnd: (_) {
-                            if (_transformationController.value != Matrix4.identity() && !isAnimating) {
-                              _animateResetScale();
-                            }
-                          },
-                          child: Hero(
-                            tag: dynamicHeroTag,
-                            transitionOnUserGestures: true,
-                            child: ImageWidget(
-                              width: 1.sw,
-                              height: 0.95.sh,
-                              link: widget.images[index],
-                              fit: BoxFit.contain,
+                      return Stack(
+                        children: [
+                          AnimatedPositioned(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeOut,
+                            top: offsetY,
+                            child: InteractiveViewer(
+                              transformationController: _transformationController,
+                              panEnabled: isCurrentPage && !isAnimating && !isTwoFingerGesture,
+                              scaleEnabled: isCurrentPage && !isAnimating,
+                              minScale: 1.0,
+                              maxScale: 4.0,
+                              onInteractionEnd: (_) {
+                                if (_transformationController.value != Matrix4.identity() && !isAnimating) {
+                                  _animateResetScale();
+                                }
+                              },
+                              child: Hero(
+                                tag: dynamicHeroTag,
+                                transitionOnUserGestures: true,
+                                child: ImageWidget(
+                                  width: 1.sw,
+                                  height: 0.95.sh,
+                                  link: widget.images[index],
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
-                      ),
-                    ],
-                  ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing2);
-                },
+                        ],
+                      ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing2);
+                    },
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
-        ],
-      ),
-    );
+        ));
   }
 }
