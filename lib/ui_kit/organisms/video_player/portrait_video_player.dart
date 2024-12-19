@@ -15,6 +15,7 @@ class UiKitFullScreenPortraitVideoPlayer extends StatefulWidget {
   final VoidCallback? onVideoComplete;
   final VoidCallback? onVideoInited;
   final VideoPlayerController? videoPlayer;
+  final ValueChanged<VideoPlayerController>? onSetPlayer;
 
   const UiKitFullScreenPortraitVideoPlayer({
     super.key,
@@ -27,6 +28,7 @@ class UiKitFullScreenPortraitVideoPlayer extends StatefulWidget {
     this.onVideoComplete,
     this.onVideoInited,
     this.videoPlayer,
+    this.onSetPlayer,
   });
 
   @override
@@ -47,6 +49,9 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
     width = 1.sw;
     height = 1.sw;
     _controller = (widget.videoPlayer ?? VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl)));
+    if(widget.videoPlayer == null){
+      widget.onSetPlayer?.call(_controller);
+    }
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (!_controller.value.isInitialized) {
