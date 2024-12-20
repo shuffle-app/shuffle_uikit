@@ -128,23 +128,23 @@ class ImageWidget extends StatelessWidget {
               height: height,
               child: errorWidget ?? const DefaultImageErrorWidget(),
             );
+    } else if (link!.split('.').lastOrNull == 'mp4' || isVideo) {
+      return FutureBuilder(
+        future: _takeFrameFromVideo(link!),
+        builder: (context, snapshot) {
+          return snapshot.connectionState == ConnectionState.done
+              ? SizedBox(
+                  width: width,
+                  height: height,
+                  child: RepaintBoundary(
+                    child: VideoPlayer(snapshot.data as VideoPlayerController),
+                  ),
+                )
+              : placeholder;
+        },
+      );
     } else if (link!.length > 4 && link!.substring(0, 4) == 'http') {
-      if (link!.split('.').lastOrNull == 'mp4' || isVideo) {
-        return FutureBuilder(
-          future: _takeFrameFromVideo(link!),
-          builder: (context, snapshot) {
-            return snapshot.connectionState == ConnectionState.done
-                ? SizedBox(
-                    width: width,
-                    height: height,
-                    child: RepaintBoundary(
-                      child: VideoPlayer(snapshot.data as VideoPlayerController),
-                    ),
-                  )
-                : placeholder;
-          },
-        );
-      } else if (link!.split('.').lastOrNull == 'svg' || link!.contains('svg-icons')) {
+      if (link!.split('.').lastOrNull == 'svg' || link!.contains('svg-icons')) {
         if (link!.split('.').lastOrNull == 'svg' && IconMatcher.matchSvgToIcon(link!) != null) {
           return Transform.scale(
               scale: 0.8,
