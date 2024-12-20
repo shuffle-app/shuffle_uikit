@@ -8,6 +8,7 @@ class UiKitProUserAccountAvatarWrapper extends StatelessWidget {
   final Widget child;
   final double borderWidth;
   final BorderRadius? borderRadius;
+  final Color? backgroundColor;
 
   const UiKitProUserAccountAvatarWrapper._({
     super.key,
@@ -15,6 +16,7 @@ class UiKitProUserAccountAvatarWrapper extends StatelessWidget {
     required this.child,
     required this.borderWidth,
     this.borderRadius,
+    this.backgroundColor,
   });
 
   factory UiKitProUserAccountAvatarWrapper.enabled({
@@ -22,12 +24,14 @@ class UiKitProUserAccountAvatarWrapper extends StatelessWidget {
     required Widget child,
     required double borderWidth,
     BorderRadius? borderRadius,
+    Color? backgroundColor,
   }) =>
       UiKitProUserAccountAvatarWrapper._(
         key: key,
         disabled: false,
         borderWidth: borderWidth,
         borderRadius: borderRadius,
+        backgroundColor: backgroundColor,
         child: child,
       );
 
@@ -36,12 +40,14 @@ class UiKitProUserAccountAvatarWrapper extends StatelessWidget {
     required Widget child,
     required double borderWidth,
     BorderRadius? borderRadius,
+    Color? backgroundColor,
   }) =>
       UiKitProUserAccountAvatarWrapper._(
         key: key,
         disabled: true,
         borderWidth: borderWidth,
         borderRadius: borderRadius,
+        backgroundColor: backgroundColor,
         child: child,
       );
 
@@ -51,7 +57,7 @@ class UiKitProUserAccountAvatarWrapper extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: ColorsFoundation.darkNeutral400,
+        color: backgroundColor ?? ColorsFoundation.darkNeutral400,
         borderRadius: borderRadius ?? BorderRadiusFoundation.max,
         boxShadow: [
           BoxShadow(

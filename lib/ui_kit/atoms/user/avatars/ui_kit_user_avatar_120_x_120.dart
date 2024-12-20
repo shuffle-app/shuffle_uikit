@@ -46,18 +46,21 @@ class UiKitUserAvatar120x120 extends StatelessWidget implements UserAvatarFactor
             return UiKitProUserAccountAvatarWrapper.enabled(
               borderWidth: borderWidth,
               borderRadius: BorderRadiusFoundation.all20,
+              backgroundColor: imageUrl.isEmpty ? null : Colors.black,
               child: child,
             );
           case UserTileType.premium:
             return UiKitPremiumUserAccountAvatarWrapper.enabled(
               borderWidth: borderWidth,
               borderRadius: BorderRadiusFoundation.all20,
+              backgroundColor: imageUrl.isEmpty ? null : Colors.black,
               child: child,
             );
           case UserTileType.influencer:
             return UiKitInfluencerUserAccountAvatarWrapper.enabled(
               borderWidth: borderWidth,
               borderRadius: BorderRadiusFoundation.all20,
+              backgroundColor: imageUrl.isEmpty ? null : Colors.black,
               child: child,
             );
         }
@@ -65,6 +68,7 @@ class UiKitUserAvatar120x120 extends StatelessWidget implements UserAvatarFactor
       errorWidget: switch (type) {
         UserTileType.ordinary => UiKitProUserAccountAvatarWrapper.disabled(
             borderWidth: borderWidth,
+            backgroundColor: imageUrl.isEmpty ? null : Colors.black,
             child: _Placeholder(
               text: userName.split(' ').length > 1
                   ? userName
@@ -74,6 +78,7 @@ class UiKitUserAvatar120x120 extends StatelessWidget implements UserAvatarFactor
             )),
         UserTileType.premium => UiKitPremiumUserAccountAvatarWrapper.enabled(
             borderWidth: borderWidth,
+            backgroundColor: imageUrl.isEmpty ? null : Colors.black,
             child: _Placeholder(
               text: userName.split(' ').length > 1
                   ? userName
@@ -83,6 +88,7 @@ class UiKitUserAvatar120x120 extends StatelessWidget implements UserAvatarFactor
             )),
         UserTileType.influencer => UiKitInfluencerUserAccountAvatarWrapper.enabled(
             borderWidth: borderWidth,
+            backgroundColor: imageUrl.isEmpty ? null : Colors.black,
             child: _Placeholder(
               text: userName.split(' ').length > 1
                   ? userName
@@ -92,6 +98,7 @@ class UiKitUserAvatar120x120 extends StatelessWidget implements UserAvatarFactor
             )),
         UserTileType.pro => UiKitProUserAccountAvatarWrapper.enabled(
             borderWidth: borderWidth,
+          backgroundColor: imageUrl.isEmpty ? null : Colors.black,
             child: _Placeholder(
               text: userName.split(' ').length > 1
                   ? userName

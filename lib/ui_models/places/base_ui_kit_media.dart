@@ -14,7 +14,7 @@ abstract class BaseUiKitMedia {
     this.previewType,
   });
 
-  ImageWidget widget(Size size) => ImageWidget(link: link, height: size.height, width: size.width, fit: BoxFit.cover);
+  ImageWidget widget(Size size) => ImageWidget(link: previewLink ?? link, height: size.height, width: size.width, fit: BoxFit.cover,isVideo: type == UiKitMediaType.video,);
 
   @override
   bool operator ==(Object other) {

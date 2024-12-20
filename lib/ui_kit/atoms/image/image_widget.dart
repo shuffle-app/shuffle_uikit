@@ -61,7 +61,13 @@ class ImageWidget extends StatelessWidget {
   });
 
   Future _takeFrameFromVideo(String link) async {
-    final VideoPlayerController controller = VideoPlayerController.networkUrl(Uri.parse(link));
+    debugPrint('Taking frame from video: $link');
+    late final VideoPlayerController controller;
+    if (link.startsWith('http')) {
+      controller = VideoPlayerController.networkUrl(Uri.parse(link));
+    } else {
+      controller = VideoPlayerController.file(File(link));
+    }
     await controller.initialize();
     if (controller.value.duration.inSeconds > 1) {
       await controller.seekTo(const Duration(seconds: 1));
