@@ -3,14 +3,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class BaseUiKitMedia {
   final String link;
-  final String? videoLink;
+  final String? previewLink;
   final UiKitMediaType type;
   UiKitPreviewType? previewType;
 
   BaseUiKitMedia({
     required this.link,
     required this.type,
-    this.videoLink,
+    this.previewLink,
     this.previewType,
   });
 
@@ -35,9 +35,9 @@ class UiKitMediaPhoto extends BaseUiKitMedia {
 class UiKitMediaVideo extends BaseUiKitMedia {
   UiKitMediaVideo({
     required super.link,
-    String? videoLink,
+    super.previewType,
+    super.previewLink,
   }) : super(
-          videoLink: videoLink ?? link,
           type: UiKitMediaType.video,
         );
 }

@@ -24,7 +24,7 @@ class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
         ClipRRect(
           borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
           child: ImageWidget(
-            link: media.link,
+            link: media.previewLink ?? media.link,
             isVideo: true,
             width: width ?? (kIsWeb ? 300 : 0.83.sw),
             fit: BoxFit.cover,
@@ -36,7 +36,7 @@ class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
           left: playButtonCustomOffset?.dx ?? 12.w,
           child: BlurredPlaceVideoPlayButton(
             onPressed: () =>
-                Navigator.of(context, rootNavigator: true).push(PopUpVideoPlayer(videoUri: media.videoLink!)),
+                Navigator.of(context, rootNavigator: true).push(PopUpVideoPlayer(videoUri: media.link!)),
           ),
         ),
       ],
