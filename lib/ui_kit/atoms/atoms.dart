@@ -69,6 +69,7 @@ export 'cards/drag_target_wrapper.dart';
 export 'cards/ui_kit_content_updates_card.dart';
 export 'cards/ui_kit_draggable_card.dart';
 export 'cards/ui_kit_global_content_card.dart';
+export 'cards/ui_kit_digest_card.dart';
 export 'common/gradientable_widget.dart';
 export 'common/ui_kit_influencer_user_account_avatar_wrapper.dart';
 export 'common/ui_kit_premium_user_account_avatar_wrapper.dart';
