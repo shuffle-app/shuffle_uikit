@@ -1375,6 +1375,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ShraziidGobletDescription": MessageLookupByLibrary.simpleMessage(
             "An ancient goblet found in the desert sands. They say that Shraziid himself, the ruler of the great Sand Kingdom, drank from it."),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
+        "ShuffleDigest": MessageLookupByLibrary.simpleMessage("Shuffle digest"),
         "ShuffleExchangeSystem":
             MessageLookupByLibrary.simpleMessage("...Shuffle exchange system"),
         "ShuffleHiwHint": m83,

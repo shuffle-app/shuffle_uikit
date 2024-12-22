@@ -1385,6 +1385,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ShraziidGobletDescription": MessageLookupByLibrary.simpleMessage(
             "एक प्राचीन गोब्लेट जो रेत के राज्य के महान श्राज़ीद खुद ने पिया था।"),
         "Shuffle": MessageLookupByLibrary.simpleMessage("मिश्रण"),
+        "ShuffleDigest": MessageLookupByLibrary.simpleMessage("Shuffle digest"),
         "ShuffleExchangeSystem":
             MessageLookupByLibrary.simpleMessage("...Shuffle एक्सचेंज सिस्टम"),
         "ShuffleHiwHint": m83,

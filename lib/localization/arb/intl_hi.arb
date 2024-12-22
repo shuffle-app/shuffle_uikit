@@ -973,5 +973,6 @@
   "SeeList": "See list",
   "BecomePro": "Become pro",
   "BookItX": "Book it (+{x})" ,
-  "IChangedMyMind": "I changed my mind"
+  "IChangedMyMind": "I changed my mind",
+  "ShuffleDigest": "Shuffle digest"
 }
