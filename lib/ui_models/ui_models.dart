@@ -32,3 +32,4 @@ export 'selectors/ui_kit_area_selector_data.dart';
 export 'selectors/ui_kit_searchable_list_body_item.dart';
 export 'tiles/content_type_tile_data.dart';
 export 'time/time_range.dart';
+export 'cards/digest_ui_model.dart';
