@@ -143,6 +143,40 @@ class _AllWidgetsStandState extends State<AllWidgetsStand> {
           },
         ),
         SpacingFoundation.verticalSpace16,
+        UiKitDigestCard(
+          title: "Don't miss the opportunity",
+          underTitleText: "Visit 4 exciting events this week from 12.09 to 15.09. Read the digest and run quickly!",
+          digestUiModels: [
+            DigestUiModel(
+              title: 'Virgins on the beach',
+              imageUrl: GraphicsFoundation.instance.png.leto2.path,
+              tags: [
+                UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail),
+                UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail),
+                UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail),
+              ],
+              rating: 5,
+              contentDescription:
+                  "Came for lunch with my sister. We loved our Thai-style mains which were amazing with lots of flavour, very impressive for a vegetarian restaurant...",
+              description:
+                  "Welcome to Harmony Haven Yoga, your sanctuary for inner peace and physical well-being. Nestled in a serene and inviting space, Harmony Haven offers a diverse range of yoga classes designed to suit all levels, from beginners to seasoned practitioners.",
+            ),
+            DigestUiModel(
+              title: 'Virgins on the beach',
+              imageUrl: GraphicsFoundation.instance.png.leto2.path,
+              tags: [
+                UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail),
+                UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail),
+                UiKitTag(title: 'Club', icon: ShuffleUiKitIcons.cocktail),
+              ],
+              contentDescription:
+                  "Came for lunch with my sister. We loved our Thai-style mains which were amazing with lots of flavour, very impressive for a vegetarian restaurant...",
+              description:
+                  "Welcome to Harmony Haven Yoga, your sanctuary for inner peace and physical well-being. Nestled in a serene and inviting space, Harmony Haven offers a diverse range of yoga classes designed to suit all levels, from beginners to seasoned practitioners.",
+            ),
+          ],
+        ).paddingSymmetric(horizontal: 16),
+        SpacingFoundation.verticalSpace16,
         UiKitContentUpdatesCard(
           authorSpeciality: 'Friendly neighbour',
           authorUsername: 'spiderman',

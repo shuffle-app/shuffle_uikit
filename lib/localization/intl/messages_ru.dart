@@ -1402,6 +1402,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ShraziidGobletDescription": MessageLookupByLibrary.simpleMessage(
             "Древний кубок, найденный в песках пустыни. Говорят, что из него пил сам Шразиид, правитель великого Песчаного царства."),
         "Shuffle": MessageLookupByLibrary.simpleMessage("Shuffle"),
+        "ShuffleDigest":
+            MessageLookupByLibrary.simpleMessage("Shuffle дайджест"),
         "ShuffleExchangeSystem":
             MessageLookupByLibrary.simpleMessage("...система обмена Shuffle"),
         "ShuffleHiwHint": m83,

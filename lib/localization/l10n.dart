@@ -10011,6 +10011,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Shuffle digest`
+  String get ShuffleDigest {
+    return Intl.message(
+      'Shuffle digest',
+      name: 'ShuffleDigest',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
