@@ -148,3 +148,4 @@ export 'event/add_to_scheduler_event_action_card.dart';
 export 'barcode/custom_barcode.dart';
 export 'photo_viewer/photo_viewer_page.dart';
 export 'photo_viewer/pop_up_photo_view.dart';
+export 'pinned_publication/pinned_publication.dart';
