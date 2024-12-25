@@ -25,7 +25,7 @@ class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
           borderRadius: borderRadius ?? BorderRadiusFoundation.all24,
           child: ImageWidget(
             link: media.previewLink ?? media.link,
-            isVideo: true,
+            isVideo: media.previewLink != null ? false : true,
             width: width ?? (kIsWeb ? 300 : 0.83.sw),
             fit: BoxFit.cover,
             errorWidget: const UiKitBigPhotoErrorWidget(),
