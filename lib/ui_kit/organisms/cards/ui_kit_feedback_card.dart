@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -42,8 +43,8 @@ class UiKitFeedbackCard extends StatelessWidget {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
     final colorScheme = context.uiKitTheme?.colorScheme;
 
-    final shufflePostVideoWidgetWidth = 0.16845.sw;
-    final shufflePostVideoWidgetHeight = 0.16845.sw * 0.75;
+    final shufflePostVideoWidgetWidth = kIsWeb ? 50.0 : 0.16845.sw;
+    final shufflePostVideoWidgetHeight = kIsWeb ? 45.0 : 0.16845.sw * 0.75;
     final playButtonSize = Size(32.w, 24.h);
     final xOffset = shufflePostVideoWidgetWidth / 2 - playButtonSize.width / 2;
     final yOffset = shufflePostVideoWidgetHeight / 2 - playButtonSize.height / 2;
