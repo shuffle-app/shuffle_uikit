@@ -6,12 +6,14 @@ class UiKitMediaImageWidget extends BaseUiKitMediaWidget {
   final BaseUiKitMedia media;
   final double? width;
   final PlaceWeatherType? weatherType;
+  final BorderRadius? borderRadius;
 
   const UiKitMediaImageWidget({
     super.key,
     required this.media,
     this.width,
     this.weatherType,
+    this.borderRadius,
   });
 
   @override
@@ -20,9 +22,7 @@ class UiKitMediaImageWidget extends BaseUiKitMediaWidget {
       fit: StackFit.passthrough,
       children: [
         ClipRRect(
-          borderRadius: kIsWeb
-              ? BorderRadiusFoundation.all16
-              : BorderRadiusFoundation.all24,
+          borderRadius: kIsWeb ? BorderRadiusFoundation.all16 : (borderRadius ?? BorderRadiusFoundation.all24),
           child: ImageWidget(
             lowerQuality: true,
             link: media.link,

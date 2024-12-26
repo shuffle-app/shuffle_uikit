@@ -36,7 +36,7 @@ class UiKitMediaVideoWidget extends BaseUiKitMediaWidget {
           left: playButtonCustomOffset?.dx ?? 12.w,
           child: BlurredPlaceVideoPlayButton(
             onPressed: () =>
-                Navigator.of(context, rootNavigator: true).push(PopUpVideoPlayer(videoUri: media.link!)),
+                Navigator.of(context, rootNavigator: true).push(PopUpVideoPlayer(videoUri: media.link)),
           ),
         ),
       ],
