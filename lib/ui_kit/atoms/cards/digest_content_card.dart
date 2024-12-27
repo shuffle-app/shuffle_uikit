@@ -38,9 +38,13 @@ class DigestContentCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   if (digestUiModel?.title != null && digestUiModel!.title!.isNotEmpty)
-                    Text(
-                      digestUiModel!.title!,
-                      style: boldTextTheme?.caption3Medium,
+                    SizedBox(
+                      width: 175.w,
+                      child: Text(
+                        digestUiModel!.title!,
+                        style: boldTextTheme?.caption3Medium,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                   SpacingFoundation.verticalSpace4,
                   SizedBox(

@@ -14,7 +14,13 @@ abstract class BaseUiKitMedia {
     this.previewType,
   });
 
-  ImageWidget widget(Size size) => ImageWidget(link: previewLink ?? link, height: size.height, width: size.width, fit: BoxFit.cover,isVideo: type == UiKitMediaType.video,);
+  ImageWidget widget(Size size) => ImageWidget(
+        link: previewLink ?? link,
+        height: size.height,
+        width: size.width,
+        fit: BoxFit.cover,
+        isVideo: type == UiKitMediaType.video && previewLink == null,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -22,7 +28,10 @@ abstract class BaseUiKitMedia {
   }
 
   @override
-  int get hashCode => link.hashCode ^ type.hashCode ^ (previewType?.hashCode?? 1);
+  int get hashCode => link.hashCode ^ type.hashCode ^ (previewType?.hashCode ?? 1);
+
+  @override
+  String toString() => 'BaseUiKitMedia{link: $link, type: $type, previewType: $previewType}';
 }
 
 class UiKitMediaPhoto extends BaseUiKitMedia {

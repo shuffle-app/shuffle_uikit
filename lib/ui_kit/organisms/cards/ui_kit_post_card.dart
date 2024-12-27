@@ -21,6 +21,7 @@ class UiKitPostCard extends StatelessWidget {
   final ValueChanged<String>? onReactionsTapped;
   final VoidCallback? onLongPress;
   final VoidCallback? onSharePress;
+  final VoidCallback? onProfilePress;
   final String createdAt;
   final ValueNotifier<bool>? showTranslateButton;
   final ValueNotifier<String>? translateText;
@@ -47,6 +48,7 @@ class UiKitPostCard extends StatelessWidget {
     this.onReactionsTapped,
     this.onLongPress,
     this.onSharePress,
+    this.onProfilePress,
     this.createdAt = '',
     this.showTranslateButton,
     this.translateText,
@@ -116,39 +118,45 @@ class UiKitPostCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                    Expanded(
-                      child: context.userTile(
-                        data: BaseUiKitUserTileData(
-                          avatarUrl: authorAvatarUrl,
-                          name: authorName,
-                          username: authorUsername,
-                          type: authorUserType,
-                          showBadge: true,
-                          noMaterialOverlay: true,
-                          userNameTextColor: colorScheme?.inverseBodyTypography,
-                        ),
-                      ),
-                    ),
-                    if (isPinned && kIsWeb)
-                      ImageWidget(
-                        link: GraphicsFoundation.instance.svg.pinned.path,
-                        height: 18,
-                        width: 18,
-                        fit: BoxFit.fill,
-                        color: ColorsFoundation.mutedText,
-                      ).paddingOnly(right: onSharePress != null ? SpacingFoundation.horizontalSpacing20 : 0.0),
-                    if (onSharePress != null)
-                      context.iconButtonNoPadding(
-                        data: BaseUiKitButtonData(
-                          onPressed: onSharePress,
-                          iconInfo: BaseUiKitButtonIconData(
-                            iconData: ShuffleUiKitIcons.share,
-                            color: colorScheme?.darkNeutral800,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: onProfilePress,
+                          child: context.userTile(
+                            data: BaseUiKitUserTileData(
+                              avatarUrl: authorAvatarUrl,
+                              name: authorName,
+                              username: authorUsername,
+                              type: authorUserType,
+                              showBadge: true,
+                              noMaterialOverlay: true,
+                              userNameTextColor: colorScheme?.inverseBodyTypography,
+                            ),
                           ),
                         ),
-                      )
-                  ]),
+                      ),
+                      if (isPinned && kIsWeb)
+                        ImageWidget(
+                          link: GraphicsFoundation.instance.svg.pinned.path,
+                          height: 18,
+                          width: 18,
+                          fit: BoxFit.fill,
+                          color: ColorsFoundation.mutedText,
+                        ).paddingOnly(right: onSharePress != null ? SpacingFoundation.horizontalSpacing20 : 0.0),
+                      if (onSharePress != null)
+                        context.iconButtonNoPadding(
+                          data: BaseUiKitButtonData(
+                            onPressed: onSharePress,
+                            iconInfo: BaseUiKitButtonIconData(
+                              iconData: ShuffleUiKitIcons.share,
+                              color: colorScheme?.darkNeutral800,
+                            ),
+                          ),
+                        )
+                    ],
+                  ),
                   SpacingFoundation.verticalSpace8,
                   ValueListenableBuilder<String>(
                     valueListenable: description,

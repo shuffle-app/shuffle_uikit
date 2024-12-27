@@ -132,7 +132,7 @@ class ImageWidget extends StatelessWidget {
       return FutureBuilder(
         future: _takeFrameFromVideo(link!),
         builder: (context, snapshot) {
-          return snapshot.connectionState == ConnectionState.done
+          return snapshot.connectionState == ConnectionState.done && snapshot.data != null
               ? SizedBox(
                   width: width,
                   height: height,

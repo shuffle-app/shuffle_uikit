@@ -21,9 +21,9 @@ class SliderPhotoCard extends StatelessWidget {
       size: givenSize,
       child: media.link == 'loading'
           ? ImageWidget.placeholder
-          : (media.type == UiKitMediaType.image
+          : (media.type == UiKitMediaType.image && heroTag != null
               ? Hero(
-                  tag: heroTag ?? '',
+                  tag: heroTag!,
                   transitionOnUserGestures: true,
                   child: BaseUiKitMediaWidget.image(
                     media: media,

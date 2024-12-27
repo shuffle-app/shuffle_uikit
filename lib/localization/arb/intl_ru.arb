@@ -153,8 +153,8 @@
   "PleaseSelectAtLeastOnePriceSegment": "Выбери хотя бы один ценовой сегмент",
   "PleaseSelectAtLeastOneAgeRange": "Выбери хотя бы одну возрастную группу",
   "TheMoreInfoWeGetTheBetter": "Чем больше инфы мы получим, тем лучше",
-  "YourTraffic": "Ваш трафик",
-  "YourPosition": "Ваша позиция",
+  "YourTraffic": "Твой трафик",
+  "YourPosition": "Твоя позиция",
   "Title": "Название",
   "ContactPerson": "Контактное лицо",
   "Position": "Позиция",
@@ -976,7 +976,8 @@
   "BecomePro": "Страть pro",
   "BookItX": "Букинг (+{x})",
   "IChangedMyMind": "Я передумал",
-  "ShuffleDigest": "Shuffle дайджест"
+  "ShuffleDigest": "Shuffle дайджест",
+  "CannotFindThisPlaceOrEvent": "Не удается найти это место или ивен"
 
 }
 

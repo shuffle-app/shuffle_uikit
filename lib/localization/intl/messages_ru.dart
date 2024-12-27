@@ -462,6 +462,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CalmAtmosphere":
             MessageLookupByLibrary.simpleMessage("Спокойная атмосфера"),
         "Cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
+        "CannotFindThisPlaceOrEvent": MessageLookupByLibrary.simpleMessage(
+            "Не удается найти это место или ивен"),
         "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
             "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером"),
         "CardOpening": m8,
@@ -1759,7 +1761,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Ваше предложение уже было опубликовано для вашей аудитории, изменяя или удаляя его, вы несете ответственность за их потенциальное негативное отношение."),
         "YourOfferWillShown1Time": MessageLookupByLibrary.simpleMessage(
             "Ваше предложение будет показано 1 раз и включено в список предложений вашей аудитории. Оно исчезнет после окончания мероприятия."),
-        "YourPosition": MessageLookupByLibrary.simpleMessage("Ваша позиция"),
+        "YourPosition": MessageLookupByLibrary.simpleMessage("Твоя позиция"),
         "YourPriceSegment":
             MessageLookupByLibrary.simpleMessage("Твой ценовой сегмент"),
         "YourProgress": MessageLookupByLibrary.simpleMessage("Ваш прогресс"),
@@ -1770,7 +1772,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "YourReminderShown1TimeOnTheSpecifiedDate":
             MessageLookupByLibrary.simpleMessage(
                 "Ваше напоминание показывается 1 раз в указанную дату."),
-        "YourTraffic": MessageLookupByLibrary.simpleMessage("Ваш трафик"),
+        "YourTraffic": MessageLookupByLibrary.simpleMessage("Твой трафик"),
         "Yourself": MessageLookupByLibrary.simpleMessage("Себе"),
         "daynight": MessageLookupByLibrary.simpleMessage("Днём и ночью"),
         "inXDays": m113,
