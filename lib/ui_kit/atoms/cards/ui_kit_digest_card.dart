@@ -29,6 +29,8 @@ class UiKitDigestCard extends StatelessWidget {
 
   late final DigestUiModel? digestUiModel;
 
+  final bool isPinned;
+
   UiKitDigestCard({
     super.key,
     this.title,
@@ -45,6 +47,7 @@ class UiKitDigestCard extends StatelessWidget {
     this.showTranslateButton,
     this.titleTranslateText,
     this.underTitleTranslateText,
+    this.isPinned = false,
   }) {
     digestUiModel = digestUiModels != null && digestUiModels!.isNotEmpty ? digestUiModels![0] : null;
 
@@ -104,7 +107,20 @@ class UiKitDigestCard extends StatelessWidget {
         children: [
           SizedBox(
             width: kIsWeb ? 90 : 1.sw,
-            child: const UiKitShuffleTile(),
+            child: UiKitShuffleTile(
+              trailing: Row(
+                children: [
+                  if (isPinned && kIsWeb)
+                    ImageWidget(
+                      link: GraphicsFoundation.instance.svg.pinned.path,
+                      height: 18,
+                      width: 18,
+                      fit: BoxFit.fill,
+                      color: ColorsFoundation.mutedText,
+                    ).paddingOnly(right: SpacingFoundation.horizontalSpacing20),
+                ],
+              ),
+            ),
           ),
           if (title != null && title!.isNotEmpty)
             ValueListenableBuilder<String>(

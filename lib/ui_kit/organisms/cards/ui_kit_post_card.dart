@@ -28,6 +28,8 @@ class UiKitPostCard extends StatelessWidget {
   late final ValueNotifier<String> description;
   late final ValueNotifier<bool> isTranslate;
 
+  final bool isPinned;
+
   UiKitPostCard({
     super.key,
     required this.authorName,
@@ -48,6 +50,7 @@ class UiKitPostCard extends StatelessWidget {
     this.createdAt = '',
     this.showTranslateButton,
     this.translateText,
+    this.isPinned = false,
   }) {
     description = ValueNotifier<String>(text);
     isTranslate = ValueNotifier<bool>(false);
@@ -127,6 +130,14 @@ class UiKitPostCard extends StatelessWidget {
                         ),
                       ),
                     ),
+                    if (isPinned && kIsWeb)
+                      ImageWidget(
+                        link: GraphicsFoundation.instance.svg.pinned.path,
+                        height: 18,
+                        width: 18,
+                        fit: BoxFit.fill,
+                        color: ColorsFoundation.mutedText,
+                      ).paddingOnly(right: onSharePress != null ? SpacingFoundation.horizontalSpacing20 : 0.0),
                     if (onSharePress != null)
                       context.iconButtonNoPadding(
                         data: BaseUiKitButtonData(
