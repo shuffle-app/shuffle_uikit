@@ -116,21 +116,21 @@ class UiKitPostCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                    GestureDetector(
-                        onTap: onProfilePress,
-                        child: Expanded(
-                          child: context.userTile(
-                            data: BaseUiKitUserTileData(
-                              avatarUrl: authorAvatarUrl,
-                              name: authorName,
-                              username: authorUsername,
-                              type: authorUserType,
-                              showBadge: true,
-                              noMaterialOverlay: true,
-                              userNameTextColor: colorScheme?.inverseBodyTypography,
-                            ),
-                          ),
-                        )),
+                    Expanded(
+                        child: GestureDetector(
+                      onTap: onProfilePress,
+                      child: context.userTile(
+                        data: BaseUiKitUserTileData(
+                          avatarUrl: authorAvatarUrl,
+                          name: authorName,
+                          username: authorUsername,
+                          type: authorUserType,
+                          showBadge: true,
+                          noMaterialOverlay: true,
+                          userNameTextColor: colorScheme?.inverseBodyTypography,
+                        ),
+                      ),
+                    )),
                     if (onSharePress != null)
                       context.iconButtonNoPadding(
                         data: BaseUiKitButtonData(
