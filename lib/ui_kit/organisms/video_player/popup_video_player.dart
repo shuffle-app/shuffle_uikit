@@ -59,19 +59,26 @@ class _PopupVideoPlayerState extends State<PopupVideoPlayer> {
   final _partScreenHeight = 200.h;
   final _barHeight = 40.0;
 
-  late VideoPlayerController _controller;
+  late final VideoPlayerController _controller;
 
   @override
   void initState() {
     log('initializing video player with url ${widget.videoUri}',name: 'PopUpVideoPlayer');
 
     super.initState();
-    _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUri))
-      ..initialize().then((_) {
-        setState(() {
-          _controller.play();
-        });
+    try {
+      _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUri));
+      log('controller created successfully', name: 'PopUpVideoPlayer');
+      _controller.initialize().onError((error,st){
+        log('Failed to initialize video player: $error', name: 'PopUpVideoPlayer');
+      }).then((_) async {
+        log('controller initialized successfully', name: 'PopUpVideoPlayer');
+        await _controller.play();
+        setState(() {});
       });
+    } catch (error) {
+      log('Failed to initialize video player: $error', name: 'PopUpVideoPlayer');
+    }
   }
 
   @override

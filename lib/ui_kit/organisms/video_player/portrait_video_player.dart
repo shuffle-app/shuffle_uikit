@@ -39,7 +39,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   bool seeking = false;
   double height = 0;
   double width = 0;
-  final key = UniqueKey();
+  late final ValueKey key;
   late final VideoPlayerController _controller;
   double coverOpacity = 1;
   bool isReady = false;
@@ -48,6 +48,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   void initState() {
     width = 1.sw;
     height = 1.sw;
+    key = ValueKey(widget.videoUrl);
     _controller = (widget.videoPlayer ?? VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl)));
     if(widget.videoPlayer == null){
       widget.onSetPlayer?.call(_controller);
@@ -153,30 +154,32 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
           },
           onVerticalDragEnd: widget.onVerticalSwipe,
           child: Transform.scale(
-              scale: _controller.value.aspectRatio > (MediaQuery.sizeOf(context).aspectRatio + 0.18)
-                  ? 1
-                  : (width / 1.sw - height / 1.sh),
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  if (_controller.value.isInitialized)
-                    VideoPlayer(
-                      _controller,
-                      key: key,
-                    ),
-                  // if (!isReady)
-                  //   AnimatedOpacity(
-                  //       opacity: coverOpacity,
-                  //       duration: const Duration(milliseconds: 300),
-                  //       child: ImageWidget(
-                  //         link: widget.coverImageUrl,
-                  //         imageBytes: widget.coverImageBytes,
-                  //         fit: BoxFit.fitHeight,
-                  //         width: 1.sw,
-                  //         height: 1.sh,
-                  //       )),
-                ],
-              ))),
+            scale: _controller.value.aspectRatio > (MediaQuery.sizeOf(context).aspectRatio + 0.18)
+                ? 1
+                : (width / 1.sw - height / 1.sh),
+            child:
+                // Stack(
+                //   fit: StackFit.expand,
+                //   children: [
+                //     if (_controller.value.isInitialized)
+                VideoPlayer(
+              _controller,
+              key: key,
+            ),
+            // if (!isReady)
+            //   AnimatedOpacity(
+            //       opacity: coverOpacity,
+            //       duration: const Duration(milliseconds: 300),
+            //       child: ImageWidget(
+            //         link: widget.coverImageUrl,
+            //         imageBytes: widget.coverImageBytes,
+            //         fit: BoxFit.fitHeight,
+            //         width: 1.sw,
+            //         height: 1.sh,
+            //       )),
+            //   ],
+            // )
+          )),
     ).paddingOnly(top: MediaQuery.paddingOf(context).top);
   }
 }
