@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/ui_models/places/base_ui_kit_media.dart';
 
 class DigestUiModel {
+  final int? placeId;
+  final int? eventId;
   final String? title;
   final String? imageUrl;
   final List<UiKitTag>? tags;
@@ -17,6 +19,8 @@ class DigestUiModel {
   late final ValueNotifier<String>? descriptionNotifier;
 
   DigestUiModel({
+    this.placeId,
+    this.eventId,
     this.title,
     this.imageUrl,
     this.tags,
