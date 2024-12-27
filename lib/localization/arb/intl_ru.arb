@@ -976,7 +976,8 @@
   "BecomePro": "Страть pro",
   "BookItX": "Букинг (+{x})",
   "IChangedMyMind": "Я передумал",
-  "ShuffleDigest": "Shuffle дайджест"
+  "ShuffleDigest": "Shuffle дайджест",
+  "CannotFindThisPlaceOrEvent": "Не удается найти это место или ивен"
 
 }
 

@@ -976,6 +976,7 @@
   "BecomePro": "Become pro",
   "BookItX": "Book it (+{x})",
   "IChangedMyMind": "I changed my mind",
-  "ShuffleDigest": "Shuffle digest"
+  "ShuffleDigest": "Shuffle digest",
+  "CannotFindThisPlaceOrEvent": "Cannot find this place or event"
 
 }
