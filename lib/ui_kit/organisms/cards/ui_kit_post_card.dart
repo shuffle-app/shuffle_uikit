@@ -21,6 +21,7 @@ class UiKitPostCard extends StatelessWidget {
   final ValueChanged<String>? onReactionsTapped;
   final VoidCallback? onLongPress;
   final VoidCallback? onSharePress;
+  final VoidCallback? onProfilePress;
   final String createdAt;
   final ValueNotifier<bool>? showTranslateButton;
   final ValueNotifier<String>? translateText;
@@ -45,6 +46,7 @@ class UiKitPostCard extends StatelessWidget {
     this.onReactionsTapped,
     this.onLongPress,
     this.onSharePress,
+    this.onProfilePress,
     this.createdAt = '',
     this.showTranslateButton,
     this.translateText,
@@ -114,19 +116,21 @@ class UiKitPostCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                    Expanded(
-                      child: context.userTile(
-                        data: BaseUiKitUserTileData(
-                          avatarUrl: authorAvatarUrl,
-                          name: authorName,
-                          username: authorUsername,
-                          type: authorUserType,
-                          showBadge: true,
-                          noMaterialOverlay: true,
-                          userNameTextColor: colorScheme?.inverseBodyTypography,
-                        ),
-                      ),
-                    ),
+                    GestureDetector(
+                        onTap: onProfilePress,
+                        child: Expanded(
+                          child: context.userTile(
+                            data: BaseUiKitUserTileData(
+                              avatarUrl: authorAvatarUrl,
+                              name: authorName,
+                              username: authorUsername,
+                              type: authorUserType,
+                              showBadge: true,
+                              noMaterialOverlay: true,
+                              userNameTextColor: colorScheme?.inverseBodyTypography,
+                            ),
+                          ),
+                        )),
                     if (onSharePress != null)
                       context.iconButtonNoPadding(
                         data: BaseUiKitButtonData(
