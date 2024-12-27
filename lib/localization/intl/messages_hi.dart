@@ -453,6 +453,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "ByMessage": MessageLookupByLibrary.simpleMessage("संदेश द्वारा"),
         "CalmAtmosphere": MessageLookupByLibrary.simpleMessage("शांत वातावरण"),
         "Cancel": MessageLookupByLibrary.simpleMessage("रद्द करें"),
+        "CannotFindThisPlaceOrEvent": MessageLookupByLibrary.simpleMessage(
+            "Cannot find this place or event"),
         "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
             "आप इस प्रोफ़ाइल को एक इन्फ्लुएंसर बनने पर देख सकते हैं"),
         "CardOpening": m8,

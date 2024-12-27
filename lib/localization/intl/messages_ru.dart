@@ -462,6 +462,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "CalmAtmosphere":
             MessageLookupByLibrary.simpleMessage("Спокойная атмосфера"),
         "Cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
+        "CannotFindThisPlaceOrEvent": MessageLookupByLibrary.simpleMessage(
+            "Не удается найти это место или ивен"),
         "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
             "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером"),
         "CardOpening": m8,

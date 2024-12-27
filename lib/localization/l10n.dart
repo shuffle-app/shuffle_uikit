@@ -10021,6 +10021,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Cannot find this place or event`
+  String get CannotFindThisPlaceOrEvent {
+    return Intl.message(
+      'Cannot find this place or event',
+      name: 'CannotFindThisPlaceOrEvent',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
