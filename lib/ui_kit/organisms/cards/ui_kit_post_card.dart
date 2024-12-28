@@ -29,6 +29,8 @@ class UiKitPostCard extends StatelessWidget {
   late final ValueNotifier<String> description;
   late final ValueNotifier<bool> isTranslate;
 
+  final bool isPinned;
+
   UiKitPostCard({
     super.key,
     required this.authorName,
@@ -50,6 +52,7 @@ class UiKitPostCard extends StatelessWidget {
     this.createdAt = '',
     this.showTranslateButton,
     this.translateText,
+    this.isPinned = false,
   }) {
     description = ValueNotifier<String>(text);
     isTranslate = ValueNotifier<bool>(false);
@@ -115,33 +118,45 @@ class UiKitPostCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                    Expanded(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
                         child: GestureDetector(
-                      onTap: onProfilePress,
-                      child: context.userTile(
-                        data: BaseUiKitUserTileData(
-                          avatarUrl: authorAvatarUrl,
-                          name: authorName,
-                          username: authorUsername,
-                          type: authorUserType,
-                          showBadge: true,
-                          noMaterialOverlay: true,
-                          userNameTextColor: colorScheme?.inverseBodyTypography,
-                        ),
-                      ),
-                    )),
-                    if (onSharePress != null)
-                      context.iconButtonNoPadding(
-                        data: BaseUiKitButtonData(
-                          onPressed: onSharePress,
-                          iconInfo: BaseUiKitButtonIconData(
-                            iconData: ShuffleUiKitIcons.share,
-                            color: colorScheme?.darkNeutral800,
+                          onTap: onProfilePress,
+                          child: context.userTile(
+                            data: BaseUiKitUserTileData(
+                              avatarUrl: authorAvatarUrl,
+                              name: authorName,
+                              username: authorUsername,
+                              type: authorUserType,
+                              showBadge: true,
+                              noMaterialOverlay: true,
+                              userNameTextColor: colorScheme?.inverseBodyTypography,
+                            ),
                           ),
                         ),
-                      )
-                  ]),
+                      ),
+                      if (isPinned && kIsWeb)
+                        ImageWidget(
+                          link: GraphicsFoundation.instance.svg.pinned.path,
+                          height: 18,
+                          width: 18,
+                          fit: BoxFit.fill,
+                          color: ColorsFoundation.mutedText,
+                        ).paddingOnly(right: onSharePress != null ? SpacingFoundation.horizontalSpacing20 : 0.0),
+                      if (onSharePress != null)
+                        context.iconButtonNoPadding(
+                          data: BaseUiKitButtonData(
+                            onPressed: onSharePress,
+                            iconInfo: BaseUiKitButtonIconData(
+                              iconData: ShuffleUiKitIcons.share,
+                              color: colorScheme?.darkNeutral800,
+                            ),
+                          ),
+                        )
+                    ],
+                  ),
                   SpacingFoundation.verticalSpace8,
                   ValueListenableBuilder<String>(
                     valueListenable: description,
