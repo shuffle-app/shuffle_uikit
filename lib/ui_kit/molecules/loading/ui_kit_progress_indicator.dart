@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/foundation/border_radius_foundation.dart';
 import 'package:shuffle_uikit/foundation/colors_foundation.dart';
@@ -27,13 +29,14 @@ class UiKitProgressIndicator extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            Container(
+            ColoredBox(
               color: backgroundColor ?? ColorsFoundation.darkNeutral500,
             ),
             FractionallySizedBox(
               alignment: Alignment.centerLeft,
-              widthFactor: progress,
-              child: Container(
+              widthFactor: max(0.01, progress),
+              child: DecoratedBox(
+                position: DecorationPosition.foreground,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadiusFoundation.max,
                   gradient: color == null ? GradientFoundation.touchIdLinearGradient : null,

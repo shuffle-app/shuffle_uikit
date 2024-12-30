@@ -7,6 +7,7 @@ class UiKitInfluencerUserAccountAvatarWrapper extends StatelessWidget {
   final Widget child;
   final double borderWidth;
   final BorderRadius? borderRadius;
+  final Color? backgroundColor;
 
   const UiKitInfluencerUserAccountAvatarWrapper._({
     super.key,
@@ -14,6 +15,7 @@ class UiKitInfluencerUserAccountAvatarWrapper extends StatelessWidget {
     required this.child,
     required this.borderWidth,
     this.borderRadius,
+    this.backgroundColor,
   });
 
   factory UiKitInfluencerUserAccountAvatarWrapper.enabled({
@@ -21,12 +23,14 @@ class UiKitInfluencerUserAccountAvatarWrapper extends StatelessWidget {
     required Widget child,
     required double borderWidth,
     BorderRadius? borderRadius,
+    Color? backgroundColor,
   }) =>
       UiKitInfluencerUserAccountAvatarWrapper._(
         key: key,
         disabled: false,
         borderWidth: borderWidth,
         borderRadius: borderRadius,
+        backgroundColor: backgroundColor,
         child: child,
       );
 
@@ -35,12 +39,14 @@ class UiKitInfluencerUserAccountAvatarWrapper extends StatelessWidget {
     required Widget child,
     required double borderWidth,
     BorderRadius? borderRadius,
+    Color? backgroundColor,
   }) =>
       UiKitInfluencerUserAccountAvatarWrapper._(
         key: key,
         disabled: true,
         borderWidth: borderWidth,
         borderRadius: borderRadius,
+        backgroundColor: backgroundColor,
         child: child,
       );
 
@@ -50,7 +56,7 @@ class UiKitInfluencerUserAccountAvatarWrapper extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          color: ColorsFoundation.darkNeutral400,
+          color: backgroundColor ?? ColorsFoundation.darkNeutral400,
           borderRadius: borderRadius ?? BorderRadiusFoundation.max,
           boxShadow: [
             BoxShadow(

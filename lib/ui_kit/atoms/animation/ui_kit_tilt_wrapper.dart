@@ -22,18 +22,10 @@ class _UiKitTiltWrapperState extends State<UiKitTiltWrapper> with SingleTickerPr
     _controller =
         AnimationController(vsync: this, duration: const Duration(milliseconds: 250), upperBound: 2.0, lowerBound: -1);
     widget.tiltNotifier?.addListener(tiltListener);
-    // _controller.addStatusListener(statusListener);
-    _controller.animateTo(0.0,duration: Duration.zero);
+    _controller.animateTo(0.0, duration: Duration.zero);
   }
 
-  // statusListener(AnimationStatus status) {
-  //  if(status == AnimationStatus.completed) {
-  //    _controller.animateTo(0.0, duration: const Duration(milliseconds: 250));
-  //  }
-  // }
-
   tiltListener() {
-    debugPrint('Tilt value: ${widget.tiltNotifier!.value}');
     _controller.animateTo(widget.tiltNotifier!.value, duration: const Duration(milliseconds: 250));
   }
 

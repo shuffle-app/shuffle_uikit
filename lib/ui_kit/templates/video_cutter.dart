@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:video_editor/video_editor.dart';
 import 'package:video_player/video_player.dart';
+import 'package:video_editor/src/models/cover_data.dart';
+import 'package:video_editor/src/utils/thumbnails.dart';
 
 class VideoCutter extends StatefulWidget {
   /// making field dynamic to avoid exceptions in web
@@ -14,6 +16,9 @@ class VideoCutter extends StatefulWidget {
 
   /// [onExportFinished] returns exported video-file path
   final ValueChanged<String> onExportFinished;
+
+  /// [onCoversCreated] returns a list of cover-images and their corresponding timestamps
+  final ValueChanged<Stream<List<CoverData>>>? onCoversCreated;
 
   /// [onBackPressed] is called when back button is pressed
   /// it takes user back to previous screen and does not return anything
@@ -29,6 +34,7 @@ class VideoCutter extends StatefulWidget {
     required this.onExportFinished,
     required this.outputDirectory,
     this.onBackPressed,
+    this.onCoversCreated,
   });
 
   @override
@@ -86,21 +92,6 @@ class _VideoCutterState extends State<VideoCutter> {
     });
   }
 
-  // List<Widget> _buildThumbnails() {
-  //   final thumbnails = <Widget>[];
-  //   if (_videoEditorController == null) return thumbnails;
-  //
-  //   final frameCount = _videoEditorController!.frameCount;
-  //
-  //   for (var i = 0; i < frameCount; i++) {
-  //     final frame = _videoEditorController!;
-  //     final thumbnail = Image.memory(frame, width: frameThumbnailWidth, height: frameThumbnailWidth * 16 / 9);
-  //     thumbnails.add(thumbnail);
-  //   }
-  //
-  //   return thumbnails;
-  // }
-
   Future<void> exportCroppedVideo() async {
     if (_videoEditorController == null) return;
     setState(() => cuttingVideo = true);
@@ -116,6 +107,10 @@ class _VideoCutterState extends State<VideoCutter> {
         }
       },
     );
+    if (widget.onCoversCreated != null) {
+      final quantity = (_videoEditorController!.endTrim - _videoEditorController!.startTrim).inSeconds / 1.2;
+      widget.onCoversCreated!(generateCoverThumbnails(_videoEditorController!, quantity: quantity.floor()));
+    }
 
     final exportResult = await config.getExecuteConfig();
     log('Exporting video: ${exportResult.command}');

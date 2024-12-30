@@ -3458,6 +3458,16 @@ class S {
     );
   }
 
+  /// `Need email verification`
+  String get NeedEmailVerification {
+    return Intl.message(
+      'Need email verification',
+      name: 'NeedEmailVerification',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Phone verification`
   String get PhoneVerification {
     return Intl.message(
@@ -9939,6 +9949,86 @@ class S {
       name: 'PleaseValidateXDetailsBeforeModeration',
       desc: '',
       args: [x],
+    );
+  }
+
+  /// `You've reached the maximum number of created events`
+  String get MaxNumberOfEvents {
+    return Intl.message(
+      'You\'ve reached the maximum number of created events',
+      name: 'MaxNumberOfEvents',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Open event`
+  String get OpenEvent {
+    return Intl.message(
+      'Open event',
+      name: 'OpenEvent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See list`
+  String get SeeList {
+    return Intl.message(
+      'See list',
+      name: 'SeeList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Become pro`
+  String get BecomePro {
+    return Intl.message(
+      'Become pro',
+      name: 'BecomePro',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Book it (+{x})`
+  String BookItX(Object x) {
+    return Intl.message(
+      'Book it (+$x)',
+      name: 'BookItX',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `I changed my mind`
+  String get IChangedMyMind {
+    return Intl.message(
+      'I changed my mind',
+      name: 'IChangedMyMind',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shuffle digest`
+  String get ShuffleDigest {
+    return Intl.message(
+      'Shuffle digest',
+      name: 'ShuffleDigest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cannot find this place or event`
+  String get CannotFindThisPlaceOrEvent {
+    return Intl.message(
+      'Cannot find this place or event',
+      name: 'CannotFindThisPlaceOrEvent',
+      desc: '',
+      args: [],
     );
   }
 

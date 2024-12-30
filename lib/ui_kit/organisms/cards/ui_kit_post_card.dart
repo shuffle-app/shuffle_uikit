@@ -20,16 +20,18 @@ class UiKitPostCard extends StatelessWidget {
   final bool hasNewMark;
   final ValueChanged<String>? onReactionsTapped;
   final VoidCallback? onLongPress;
+  final VoidCallback? onSharePress;
+  final VoidCallback? onProfilePress;
+  final String createdAt;
+  final ValueNotifier<bool>? showTranslateButton;
+  final ValueNotifier<String>? translateText;
 
-  bool get showEmptyReactionsState =>
-      (heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
-      (heartEyesCount == null &&
-          likesCount == null &&
-          sunglassesCount == null &&
-          firesCount == null &&
-          smileyCount == null);
+  late final ValueNotifier<String> description;
+  late final ValueNotifier<bool> isTranslate;
 
-  const UiKitPostCard({
+  final bool isPinned;
+
+  UiKitPostCard({
     super.key,
     required this.authorName,
     required this.authorUsername,
@@ -45,7 +47,24 @@ class UiKitPostCard extends StatelessWidget {
     this.hasNewMark = false,
     this.onReactionsTapped,
     this.onLongPress,
-  });
+    this.onSharePress,
+    this.onProfilePress,
+    this.createdAt = '',
+    this.showTranslateButton,
+    this.translateText,
+    this.isPinned = false,
+  }) {
+    description = ValueNotifier<String>(text);
+    isTranslate = ValueNotifier<bool>(false);
+  }
+
+  bool get showEmptyReactionsState =>
+      (heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
+      (heartEyesCount == null &&
+          likesCount == null &&
+          sunglassesCount == null &&
+          firesCount == null &&
+          smileyCount == null);
 
   int get heartCount => heartEyesCount ?? 0;
 
@@ -68,6 +87,11 @@ class UiKitPostCard extends StatelessWidget {
 
     OverlayEntry? overlayEntry;
     bool isOverlayVisible = false;
+
+    void toggleTranslation() {
+      isTranslate.value = !isTranslate.value;
+      description.value = isTranslate.value ? (translateText?.value ?? text) : text;
+    }
 
     return GestureDetector(
       onLongPress: () {
@@ -94,27 +118,83 @@ class UiKitPostCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  context.userTile(
-                    data: BaseUiKitUserTileData(
-                      avatarUrl: authorAvatarUrl,
-                      name: authorName,
-                      username: authorUsername,
-                      type: authorUserType,
-                      showBadge: true,
-                      noMaterialOverlay: true,
-                      userNameTextColor: colorScheme?.inverseBodyTypography,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: onProfilePress,
+                          child: context.userTile(
+                            data: BaseUiKitUserTileData(
+                              avatarUrl: authorAvatarUrl,
+                              name: authorName,
+                              username: authorUsername,
+                              type: authorUserType,
+                              showBadge: true,
+                              noMaterialOverlay: true,
+                              userNameTextColor: colorScheme?.inverseBodyTypography,
+                            ),
+                          ),
+                        ),
+                      ),
+                      if (isPinned && kIsWeb)
+                        ImageWidget(
+                          link: GraphicsFoundation.instance.svg.pinned.path,
+                          height: 18,
+                          width: 18,
+                          fit: BoxFit.fill,
+                          color: ColorsFoundation.mutedText,
+                        ).paddingOnly(right: onSharePress != null ? SpacingFoundation.horizontalSpacing20 : 0.0),
+                      if (onSharePress != null)
+                        context.iconButtonNoPadding(
+                          data: BaseUiKitButtonData(
+                            onPressed: onSharePress,
+                            iconInfo: BaseUiKitButtonIconData(
+                              iconData: ShuffleUiKitIcons.share,
+                              color: colorScheme?.darkNeutral800,
+                            ),
+                          ),
+                        )
+                    ],
+                  ),
+                  SpacingFoundation.verticalSpace8,
+                  ValueListenableBuilder<String>(
+                    valueListenable: description,
+                    builder: (_, desc, __) => Text(
+                      desc,
+                      style: regularTextTheme?.caption2.copyWith(color: colorScheme?.surface),
                     ),
                   ),
                   SpacingFoundation.verticalSpace8,
-                  Text(
-                    text,
-                    style: regularTextTheme?.caption2.copyWith(color: colorScheme?.surface),
-                  ),
-                  SpacingFoundation.verticalSpace8,
                   Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      UiKitCardWrapper(
+                        color: colorScheme?.darkNeutral900,
+                        borderRadius: BorderRadiusFoundation.max,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: SpacingFoundation.horizontalSpacing4,
+                          vertical: SpacingFoundation.verticalSpacing2,
+                        ),
+                        child: Text(createdAt, style: regularTextTheme?.caption4),
+                      ),
+                      if (showTranslateButton != null)
+                        ValueListenableBuilder<bool>(
+                          valueListenable: isTranslate,
+                          builder: (_, isTranslating, __) => InkWell(
+                            onTap: toggleTranslation,
+                            child: showTranslateButton!.value
+                                ? Text(
+                                    isTranslating ? S.of(context).Original : S.of(context).Translate,
+                                    style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
+                                      color: isLightTheme
+                                          ? ColorsFoundation.darkNeutral700
+                                          : ColorsFoundation.darkNeutral300,
+                                    ),
+                                  )
+                                : const SizedBox.shrink(),
+                          ),
+                        ),
                       showEmptyReactionsState
                           ? Builder(
                               builder: (c) {

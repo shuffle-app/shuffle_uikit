@@ -45,7 +45,7 @@ class UiKitCodeInputField extends StatelessWidget {
 
       return Pinput(
         controller: controller,
-        separator: SpacingFoundation.horizontalSpace12,
+        separatorBuilder: (_) => SpacingFoundation.horizontalSpace12,
         length: codeDigitsCount,
         autofocus: autofocus,
         inputFormatters: [

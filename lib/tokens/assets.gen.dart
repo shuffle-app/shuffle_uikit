@@ -1224,6 +1224,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/lifebuoy.svg
   SvgGenImage get lifebuoy => const SvgGenImage('assets/images/svg/lifebuoy.svg');
 
+  /// File path: assets/images/svg/list.svg
+  SvgGenImage get list => const SvgGenImage('assets/images/svg/list.svg');
+
   /// File path: assets/images/svg/location.svg
   SvgGenImage get location => const SvgGenImage('assets/images/svg/location.svg');
 
@@ -1247,6 +1250,15 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/pharmacy.svg
   SvgGenImage get pharmacy => const SvgGenImage('assets/images/svg/pharmacy.svg');
+
+  /// File path: assets/images/svg/pin.svg
+  SvgGenImage get pin => const SvgGenImage('assets/images/svg/pin.svg');
+
+  /// File path: assets/images/svg/pinned-off.svg
+  SvgGenImage get pinnedOff => const SvgGenImage('assets/images/svg/pinned-off.svg');
+
+  /// File path: assets/images/svg/pinned.svg
+  SvgGenImage get pinned => const SvgGenImage('assets/images/svg/pinned.svg');
 
   /// File path: assets/images/svg/play_arrow.svg
   SvgGenImage get playArrow => const SvgGenImage('assets/images/svg/play_arrow.svg');
@@ -1451,6 +1463,7 @@ class $AssetsImagesSvgGen {
         investment,
         karaoke,
         lifebuoy,
+        list,
         location,
         logo,
         memeberGradientStar,
@@ -1459,6 +1472,9 @@ class $AssetsImagesSvgGen {
         pencil,
         personLayered,
         pharmacy,
+        pin,
+        pinnedOff,
+        pinned,
         playArrow,
         pointyHead,
         premiumAccountMark,

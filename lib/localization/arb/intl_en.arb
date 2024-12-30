@@ -337,6 +337,7 @@
   "Both": "Both",
   "CredentialsCodeVerificationSubtitle": "Please type verification code sent to",
   "EmailVerification": "Email verification",
+  "NeedEmailVerification": "Need email verification",
   "PhoneVerification": "Phone verification",
   "ResendCode": "Resend code",
   "EnterNewPassword": "Enter new password",
@@ -969,5 +970,13 @@
   "Translate": "Translate",
   "Original": "Original",
   "PleaseValidateXDetailsBeforeModeration": "Please validate {x} details before sending it to moderation",
+  "MaxNumberOfEvents": "You've reached the maximum number of created events",
+  "OpenEvent": "Open event",
+  "SeeList": "See list",
+  "BecomePro": "Become pro",
+  "BookItX": "Book it (+{x})",
+  "IChangedMyMind": "I changed my mind",
+  "ShuffleDigest": "Shuffle digest",
+  "CannotFindThisPlaceOrEvent": "Cannot find this place or event",
   "BarcodeAlreadyBeenActivated": "This barcode has already been activated"
 }

@@ -2,7 +2,10 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+
+import '../../content_wrappers/ui_kit_border_wrapper.dart';
 
 class AnimatedPullToShowHint extends StatefulWidget {
   final bool showGradient;
@@ -26,7 +29,8 @@ class _AnimatedPullToShowHintState extends State<AnimatedPullToShowHint> with Si
       vsync: this,
       duration: const Duration(milliseconds: 1000),
       value: 0,
-    )..addListener(_animationListener);
+    )
+      ..addListener(_animationListener);
     _controller.forward();
   }
 
@@ -87,22 +91,18 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
   final List<Widget> children;
   final double topPadding;
   final ValueNotifier<double> lastPhaseScaleNotifier;
-  final bool showHints;
-  final bool expandHint;
   final bool hide;
 
   UiKitAnimatedPullToShowDelegate({
     required this.topPadding,
     required this.children,
     required this.lastPhaseScaleNotifier,
-    this.showHints = true,
-    this.expandHint = true,
     this.hide = false,
   });
 
   @override
   // double get maxExtent =>  topPadding;
-  double get maxExtent => (hide ? 0 : 0.175.sw + (SpacingFoundation.verticalSpacing16 * 2)) + topPadding;
+  double get maxExtent => (hide ? 0 : (0.175 * 380) + (SpacingFoundation.verticalSpacing16 * 2)) + topPadding;
 
   @override
   double get minExtent => maxExtent * 0.325;
@@ -116,44 +116,38 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     final colorScheme = context.uiKitTheme?.colorScheme;
     final shrinkToMaxExtentRatio = shrinkOffset / maxExtent;
-    final extentToShowListOfChildren = expandHint ? 0.25 : 0.4;
+    const extentToShowListOfChildren = 0.4;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         AnimatedBuilder(
-          animation: lastPhaseScaleNotifier,
-          builder: (context, child) {
-            final scale = lastPhaseScaleNotifier.value;
-            if (lastPhaseScaleNotifier.value == 0) return topPadding.heightBox;
-            return AnimatedScale(
-              scale: scale,
-              duration: const Duration(milliseconds: 50),
-              child: SizedBox(
-                height: (topPadding * scale),
-                width: 1.sw,
-                child: child,
+            animation: lastPhaseScaleNotifier,
+            builder: (context, child) {
+              final scale = lastPhaseScaleNotifier.value;
+              if (lastPhaseScaleNotifier.value == 0) return topPadding.heightBox;
+              return AnimatedScale(
+                scale: scale,
+                duration: const Duration(milliseconds: 50),
+                child: SizedBox(
+                  height: (topPadding * (max(scale, 1))),
+                  width: 1.sw,
+                  child: child,
+                ),
+              );
+            },
+            child: Center(
+              child: GradientableWidget(
+                gradient: GradientFoundation.badgeIcon,
+                child: ImageWidget(
+                  svgAsset: GraphicsFoundation.instance.svg.filmstrip,
+                  color: Colors.white,
+                  width: 0.1.sw,
+                  height: 0.1.sw,
+                  fit: BoxFit.cover,
+                ),
               ),
-            );
-          },
-          // child: Transform.translate(
-          //     offset: Offset(0, -0.08.sw),
-          //     child: const AnimatedPullToShowHint(
-          //       showGradient: false,
-          //     )),
-          child: Center(
-            child: GradientableWidget(
-              gradient: GradientFoundation.badgeIcon,
-              child: ImageWidget(
-                svgAsset: GraphicsFoundation.instance.svg.filmstrip,
-                color: Colors.white,
-                width: 0.1.sw,
-                height: 0.1.sw,
-                fit: BoxFit.cover,
-              ),
-            ),
-          )
-        ),
+            )),
         UiKitCardWrapper(
           borderRadius: BorderRadiusFoundation.zero,
           height: max(0, maxExtent - topPadding - shrinkOffset - SpacingFoundation.verticalSpacing16),
@@ -186,24 +180,22 @@ class UiKitAnimatedPullToShowDelegate extends SliverPersistentHeaderDelegate {
                   alignment: shrinkToMaxExtentRatio < extentToShowListOfChildren ? Alignment.topLeft : Alignment.center,
                   child: shrinkToMaxExtentRatio < extentToShowListOfChildren
                       ? AnimatedScale(
-                          scale: 1 - shrinkToMaxExtentRatio,
-                          duration: const Duration(milliseconds: 50),
-                          child: SizedBox(
-                            height: 0.15.sw + SpacingFoundation.verticalSpacing16 / 2,
-                            width: 1.sw,
-                            child: ListView.separated(
-                              clipBehavior: Clip.none,
-                              scrollDirection: Axis.horizontal,
-                              shrinkWrap: true,
-                              padding: EdgeInsets.symmetric(horizontal: EdgeInsetsFoundation.vertical16),
-                              itemBuilder: (context, index) => children.elementAt(index),
-                              separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
-                              itemCount: children.length,
-                            ),
-                          ))
-                      : false
-                          ? const AnimatedPullToShowHint()
-                          : const SizedBox.shrink(),
+                      scale: 1 - shrinkToMaxExtentRatio,
+                      duration: const Duration(milliseconds: 50),
+                      child: SizedBox(
+                        height: 0.15.sw + SpacingFoundation.verticalSpacing16 / 2,
+                        width: 1.sw,
+                        child: ListView.separated(
+                          clipBehavior: Clip.none,
+                          scrollDirection: Axis.horizontal,
+                          shrinkWrap: true,
+                          padding: EdgeInsets.symmetric(horizontal: EdgeInsetsFoundation.vertical16),
+                          itemBuilder: (context, index) => children.elementAt(index),
+                          separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                          itemCount: children.length,
+                        ),
+                      ))
+                      : const SizedBox.shrink(),
                 ),
               ),
             ],
@@ -223,15 +215,14 @@ class UiKitPullToShowWidgetBar extends StatefulWidget {
   final bool expandHint;
   final AnimatedPullToShowState state;
 
-  const UiKitPullToShowWidgetBar(
-      {super.key,
-      required this.children,
-      required this.topPadding,
-      required this.lastPhaseScaleNotifier,
-      required this.secondPhaseScaleNotifier,
-      this.showHints = true,
-      this.state = AnimatedPullToShowState.showFirstHint,
-      this.expandHint = true});
+  const UiKitPullToShowWidgetBar({super.key,
+    required this.children,
+    required this.topPadding,
+    required this.lastPhaseScaleNotifier,
+    required this.secondPhaseScaleNotifier,
+    this.showHints = true,
+    this.state = AnimatedPullToShowState.showFirstHint,
+    this.expandHint = true});
 
   @override
   State<UiKitPullToShowWidgetBar> createState() => _UiKitPullToShowWidgetBarState();
@@ -284,11 +275,10 @@ class _UiKitPullToShowWidgetBarState extends State<UiKitPullToShowWidgetBar> {
     debugPrint('building phase $phase');
     final colorScheme = context.uiKitTheme?.colorScheme;
     final shrinkOffset =
-        phase == AnimatedPullToShowState.showLastPhase ? 0 : maxExtent / 2 - widget.secondPhaseScaleNotifier.value;
+    phase == AnimatedPullToShowState.showLastPhase ? 0 : maxExtent / 2 - widget.secondPhaseScaleNotifier.value;
     debugPrint('shrinkOffset is $shrinkOffset');
     final shrinkToMaxExtentRatio = shrinkOffset / maxExtent;
     final extentToShowListOfChildren = widget.expandHint ? 0.25 : 0.4;
-    debugPrint('shrinkToMaxExtentRatio is $shrinkToMaxExtentRatio');
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -356,27 +346,27 @@ class _UiKitPullToShowWidgetBarState extends State<UiKitPullToShowWidgetBar> {
                       child: AnimatedSize(
                         duration: const Duration(milliseconds: 350),
                         alignment:
-                            shrinkToMaxExtentRatio < extentToShowListOfChildren ? Alignment.topLeft : Alignment.center,
+                        shrinkToMaxExtentRatio < extentToShowListOfChildren ? Alignment.topLeft : Alignment.center,
                         child: shrinkToMaxExtentRatio < extentToShowListOfChildren
                             ? AnimatedScale(
-                                scale: 1 - shrinkToMaxExtentRatio,
-                                duration: const Duration(milliseconds: 50),
-                                child: SizedBox(
-                                  height: 0.15.sw + SpacingFoundation.verticalSpacing16 / 2,
-                                  width: 1.sw,
-                                  child: ListView.separated(
-                                    clipBehavior: Clip.none,
-                                    scrollDirection: Axis.horizontal,
-                                    shrinkWrap: true,
-                                    padding: EdgeInsets.symmetric(horizontal: EdgeInsetsFoundation.vertical16),
-                                    itemBuilder: (context, index) => widget.children.elementAt(index),
-                                    separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
-                                    itemCount: widget.children.length,
-                                  ),
-                                ))
+                            scale: 1 - shrinkToMaxExtentRatio,
+                            duration: const Duration(milliseconds: 50),
+                            child: SizedBox(
+                              height: 0.15.sw + SpacingFoundation.verticalSpacing16 / 2,
+                              width: 1.sw,
+                              child: ListView.separated(
+                                clipBehavior: Clip.none,
+                                scrollDirection: Axis.horizontal,
+                                shrinkWrap: true,
+                                padding: EdgeInsets.symmetric(horizontal: EdgeInsetsFoundation.vertical16),
+                                itemBuilder: (context, index) => widget.children.elementAt(index),
+                                separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                                itemCount: widget.children.length,
+                              ),
+                            ))
                             : widget.showHints
-                                ? const AnimatedPullToShowHint()
-                                : const SizedBox.shrink(),
+                            ? const AnimatedPullToShowHint()
+                            : const SizedBox.shrink(),
                       ),
                     ),
                   ],
@@ -386,3 +376,87 @@ class _UiKitPullToShowWidgetBarState extends State<UiKitPullToShowWidgetBar> {
     );
   }
 }
+
+class UiKitAnimatedPullToShowHint extends StatefulWidget {
+  final double topPadding;
+  final ValueNotifier<double> scaleNotifier;
+
+  const UiKitAnimatedPullToShowHint({super.key, required this.topPadding, required this.scaleNotifier});
+
+  @override
+  State<UiKitAnimatedPullToShowHint> createState() => _UiKitAnimatedPullToShowHintState();
+}
+
+class _UiKitAnimatedPullToShowHintState extends State<UiKitAnimatedPullToShowHint> {
+  bool showFinalState = false;
+
+  @override
+  void initState() {
+    widget.scaleNotifier.addListener(_scaleNotifier);
+    super.initState();
+  }
+
+  _scaleNotifier() {
+    if (!mounted) return;
+
+    if (widget.scaleNotifier.value >= 2.1) {
+      setState(() {
+        showFinalState = true;
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    widget.scaleNotifier.removeListener(_scaleNotifier);
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
+    final colorScheme = theme?.colorScheme;
+    return AnimatedSize(
+        duration: const Duration(milliseconds: 50),
+        reverseDuration: const Duration(milliseconds: 50),
+        curve: Curves.bounceInOut,
+        alignment: Alignment.topCenter,
+        child: Stack(fit: StackFit.loose, alignment: Alignment.center, clipBehavior: Clip.none, children: [
+          widget.topPadding.heightBox,
+          AnimatedBuilder(
+              animation: widget.scaleNotifier,
+              builder: (context, child) {
+                final scale = widget.scaleNotifier.value;
+                return AnimatedCrossFade(
+                    duration: const Duration(milliseconds: 500),
+                    crossFadeState: showFinalState ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+                    firstChild: UiKitCardWrapper(
+                        gradient: GradientFoundation.defaultLinearGradient,
+                        borderRadius: BorderRadiusFoundation.max,
+                        width: min(scale * .1.sw, .1.sw),
+                        height: scale * .089.sw,
+                        clipBehavior: Clip.hardEdge,
+                        padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 2.h),
+                        alignment: Alignment.bottomCenter,
+                        child: Icon(
+                          Icons.arrow_downward_rounded,
+                          color: colorScheme?.inversePrimary,
+                          size: min(scale * .05.sw, .05.sw),
+                        )),
+                    secondChild: UiKitBorderWrapper(
+                      borderRadius: BorderRadiusFoundation.max,
+                      width: min(scale * .1.sw, .1.sw),
+                      height: scale * .089.sw,
+                      child: Align(
+                          alignment: Alignment.bottomCenter,
+                          child: GradientableWidget(
+                              gradient: GradientFoundation.defaultLinearGradient,
+                              child: Icon(
+                                Icons.check_circle_outline_rounded,
+                                color: Colors.white,
+                                size: min(scale * .05.sw, .05.sw),
+                              ).paddingSymmetric(horizontal: 4.w, vertical: 2.h))),
+                    ));
+              })
+        ]));
+  }}

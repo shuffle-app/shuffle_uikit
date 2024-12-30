@@ -66,9 +66,11 @@ class _UiKitSpinnerCardState extends State<UiKitSpinnerCard> with TickerProvider
     animationHorizontalController.addListener(_horizontalAnimationListener);
     animationVerticalController.addListener(_rotateAnimationListener);
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      setState(() {
-        opacity = 1;
-      });
+      if (mounted) {
+        setState(() {
+          opacity = 1;
+        });
+      }
     });
   }
 

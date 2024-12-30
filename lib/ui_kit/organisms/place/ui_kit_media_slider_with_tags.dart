@@ -16,6 +16,7 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   final bool? initialDescriptionHide;
   final ValueNotifier<String?>? translateDescription;
   final ValueNotifier<bool>? showTranslateButton;
+  final ValueChanged<int>? onImageTap;
 
   UiKitMediaSliderWithTags({
     super.key,
@@ -32,6 +33,7 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
     this.initialDescriptionHide,
     this.showTranslateButton,
     this.translateDescription,
+    this.onImageTap,
   }) : scrollController = scrollController ?? ScrollController();
 
   @override
@@ -96,6 +98,8 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                   separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
                   itemBuilder: (context, index) {
                     final mediaItem = widget.media.elementAt(index);
+                    final heroTag = '${mediaItem.link}--$index';
+
                     if (mediaItem.type == UiKitMediaType.video) {
                       return BaseUiKitMediaWidget.video(
                         media: mediaItem,
@@ -103,8 +107,15 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                       ).paddingOnly(left: index == 0 ? widget.horizontalMargin : 0);
                     }
 
-                    return BaseUiKitMediaWidget.image(media: mediaItem)
-                        .paddingOnly(left: index == 0 ? widget.horizontalMargin : 0);
+                    return GestureDetector(
+                      onTap: () => widget.onImageTap?.call(index),
+                      child: Hero(
+                        tag: heroTag,
+                        transitionOnUserGestures: true,
+                        child: BaseUiKitMediaWidget.image(media: mediaItem)
+                            .paddingOnly(left: index == 0 ? widget.horizontalMargin : 0),
+                      ),
+                    );
                   },
                 ),
               ),

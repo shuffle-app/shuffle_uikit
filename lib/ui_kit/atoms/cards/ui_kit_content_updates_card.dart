@@ -13,7 +13,6 @@ class UiKitContentUpdatesCard extends StatelessWidget {
   final UserTileType authorUserType;
   final bool hasGradientBorder;
   final String? comment;
-  final bool hasReactions;
   final int? heartEyesReactionsCount;
   final int? likeReactionsCount;
   final int? fireReactionsCount;
@@ -21,11 +20,17 @@ class UiKitContentUpdatesCard extends StatelessWidget {
   final int? smileyReactionsCount;
   final ValueChanged<String>? onReactionsTapped;
   final VoidCallback? onLongPress;
+  final VoidCallback? onSharePress;
+  final String createdAt;
+  final ValueNotifier<bool>? showTranslateButton;
+  final ValueNotifier<String>? translateText;
 
-  bool get showEmptyReactionsState =>
-      heartCount == 0 && likeCount == 0 && sunglassesCount == 0 && fireCount == 0 && smileyCount == 0;
+  late final ValueNotifier<String> description;
+  late final ValueNotifier<bool> isTranslate;
 
-  const UiKitContentUpdatesCard({
+  final bool isPinned;
+
+  UiKitContentUpdatesCard({
     super.key,
     required this.children,
     required this.authorSpeciality,
@@ -35,7 +40,6 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     required this.authorUserType,
     this.comment,
     this.hasGradientBorder = false,
-    this.hasReactions = false,
     this.heartEyesReactionsCount,
     this.likeReactionsCount,
     this.fireReactionsCount,
@@ -43,7 +47,15 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     this.smileyReactionsCount,
     this.onReactionsTapped,
     this.onLongPress,
-  });
+    this.onSharePress,
+    this.createdAt = '',
+    this.showTranslateButton,
+    this.translateText,
+    this.isPinned = false,
+  }) {
+    description = ValueNotifier<String>(comment ?? '');
+    isTranslate = ValueNotifier<bool>(false);
+  }
 
   factory UiKitContentUpdatesCard.fromShuffle({
     Key? key,
@@ -51,11 +63,16 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     required String text,
     ValueChanged<String>? onReactionsTapped,
     VoidCallback? onLongPress,
+    VoidCallback? onSharePress,
     int? heartEyesReactionsCount,
     int? likeReactionsCount,
     int? fireReactionsCount,
     int? sunglassesReactionsCount,
     int? smileyReactionsCount,
+    String? createdAt,
+    ValueNotifier<bool>? showTranslateButton,
+    ValueNotifier<String>? translateText,
+    bool isPinned = false,
   }) =>
       UiKitContentUpdatesCard(
         key: key,
@@ -65,7 +82,6 @@ class UiKitContentUpdatesCard extends StatelessWidget {
         authorUsername: '',
         authorAvatarUrl: GraphicsFoundation.instance.png.avatars.avatar13.path,
         hasGradientBorder: true,
-        hasReactions: true,
         comment: text,
         heartEyesReactionsCount: heartEyesReactionsCount,
         likeReactionsCount: likeReactionsCount,
@@ -74,24 +90,41 @@ class UiKitContentUpdatesCard extends StatelessWidget {
         smileyReactionsCount: smileyReactionsCount,
         onReactionsTapped: onReactionsTapped,
         onLongPress: onLongPress,
+        onSharePress: onSharePress,
+        createdAt: createdAt ?? '',
+        showTranslateButton: showTranslateButton,
+        translateText: translateText,
+        isPinned: isPinned,
         children: children,
       );
 
-  double get overallHeight {
+  bool get showEmptyReactionsState =>
+      heartCount == 0 && likeCount == 0 && sunglassesCount == 0 && fireCount == 0 && smileyCount == 0;
+
+  double overallHeight() {
     double additionalSpacingForComment = 0;
     double reactionsSpacing = 0;
-    if (hasGradientBorder && comment != null) {
+    // double translateButtonSpacing = 0;
+
+    if (hasGradientBorder && comment != null && comment!.isNotEmpty) {
       final linesCount = (comment!.length ~/ charactersPerLine) + comment!.split('\n').length;
-      additionalSpacingForComment += linesCount * (kIsWeb ? 15 : 13.5.h);
+
+      additionalSpacingForComment += linesCount * (kIsWeb ? 15 : 18.h);
     }
-    if (hasReactions) reactionsSpacing += SpacingFoundation.verticalSpacing8 + SpacingFoundation.verticalSpacing20;
+    // if (hasReactions) {
+    reactionsSpacing += SpacingFoundation.verticalSpacing8 + SpacingFoundation.verticalSpacing20;
+    // }
+    // if (showTranslateButton != null && showTranslateButton!.value) {
+    //   translateButtonSpacing += SpacingFoundation.verticalSpacing32;
+    // }
 
     return children.fold(0.0, (previousValue, element) => previousValue + element.height) +
-        ((children.length + 2) * SpacingFoundation.verticalSpacing16) +
+        ((children.length + 2) * SpacingFoundation.verticalSpacing24) +
         (kIsWeb ? 17 : 0.152.sw) +
         EdgeInsetsFoundation.vertical24 +
         reactionsSpacing +
         additionalSpacingForComment;
+    // translateButtonSpacing;
   }
 
   int get heartCount => heartEyesReactionsCount ?? 0;
@@ -118,7 +151,10 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     bool isOverlayVisible = false;
     OverlayEntry? overlayEntry;
 
-    debugPrint('UiKitContentUpdatesCard with children ${children.length}');
+    void toggleTranslation() {
+      isTranslate.value = !isTranslate.value;
+      description.value = isTranslate.value ? (translateText?.value ?? comment ?? '') : comment ?? '';
+    }
 
     _children() {
       return hasGradientBorder
@@ -128,14 +164,40 @@ class UiKitContentUpdatesCard extends StatelessWidget {
               children: [
                 SizedBox(
                   width: kIsWeb ? 90 : 1.sw,
-                  child: const UiKitShuffleTile(),
+                  child: UiKitShuffleTile(
+                    trailing: Row(
+                      children: [
+                        if (isPinned && kIsWeb)
+                          ImageWidget(
+                            link: GraphicsFoundation.instance.svg.pinned.path,
+                            height: 18,
+                            width: 18,
+                            fit: BoxFit.fill,
+                            color: ColorsFoundation.mutedText,
+                          ).paddingOnly(right: onSharePress != null ? SpacingFoundation.horizontalSpacing20 : 0.0),
+                        if (onSharePress != null)
+                          context.iconButtonNoPadding(
+                            data: BaseUiKitButtonData(
+                              onPressed: onSharePress,
+                              iconInfo: BaseUiKitButtonIconData(
+                                iconData: ShuffleUiKitIcons.share,
+                                color: colorScheme?.darkNeutral800,
+                              ),
+                            ),
+                          )
+                      ],
+                    ),
+                  ),
                 ),
-                if (hasGradientBorder && comment != null && comment!.isNotEmpty)
-                  Text(
-                    comment!,
-                    style: regularTextTheme?.caption2,
-                    textAlign: TextAlign.start,
-                  ).paddingOnly(top: EdgeInsetsFoundation.vertical16),
+                if (hasGradientBorder && description.value.isNotEmpty)
+                  ValueListenableBuilder<String>(
+                    valueListenable: description,
+                    builder: (_, desc, __) => Text(
+                      desc,
+                      style: regularTextTheme?.caption2,
+                      textAlign: TextAlign.start,
+                    ).paddingOnly(top: EdgeInsetsFoundation.vertical16),
+                  ),
                 if (children.isNotEmpty) ...[
                   SpacingFoundation.verticalSpace4,
                   ...children.map((child) {
@@ -146,99 +208,123 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                   }),
                 ],
                 SpacingFoundation.verticalSpace8,
-                if (hasReactions)
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      showEmptyReactionsState
-                          ? Builder(
-                              builder: (c) => TapRegion(
-                                behavior: HitTestBehavior.opaque,
-                                onTapInside: (value) {
-                                  if (onReactionsTapped != null) {
-                                    isOverlayVisible
-                                        ? hideReactionOverlay(overlayEntry)
-                                        : showReactionOverlay(
-                                            c,
-                                            overlayEntry,
-                                            reactionTextColor,
-                                            onReactionsTapped,
-                                          );
-                                    isOverlayVisible = !isOverlayVisible;
-                                  }
-                                },
-                                onTapOutside: (event) {
-                                  isOverlayVisible = false;
-                                  hideReactionOverlay(overlayEntry);
-                                },
-                                child: const ImageWidget(
-                                  iconData: ShuffleUiKitIcons.thumbup,
-                                  color: ColorsFoundation.mutedText,
-                                ),
-                              ),
-                            )
-                          : Builder(
-                              builder: (c) => TapRegion(
-                                behavior: HitTestBehavior.opaque,
-                                onTapInside: (value) {
-                                  if (onReactionsTapped != null) {
-                                    isOverlayVisible
-                                        ? hideReactionOverlay(overlayEntry)
-                                        : showReactionOverlay(
-                                            c,
-                                            overlayEntry,
-                                            reactionTextColor,
-                                            onReactionsTapped,
-                                          );
-                                    isOverlayVisible = !isOverlayVisible;
-                                  }
-                                },
-                                onTapOutside: (event) {
-                                  isOverlayVisible = false;
-                                  hideReactionOverlay(overlayEntry);
-                                },
-                                child: Row(
-                                  children: [
-                                    if (heartCount != 0)
-                                      UiKitHeartEyesReaction(
-                                        reactionsCount: heartCount,
-                                        textColor: reactionTextColor,
-                                      ),
-                                    if (likeCount != 0) ...[
-                                      SpacingFoundation.horizontalSpace4,
-                                      UiKitLikeReaction(
-                                        reactionsCount: likeCount,
-                                        textColor: reactionTextColor,
-                                      )
-                                    ],
-                                    if (fireCount != 0) ...[
-                                      SpacingFoundation.horizontalSpace4,
-                                      UiKitFireReaction(
-                                        reactionsCount: fireCount,
-                                        textColor: reactionTextColor,
-                                      )
-                                    ],
-                                    if (sunglassesCount != 0) ...[
-                                      SpacingFoundation.horizontalSpace4,
-                                      UiKitSunglassesReaction(
-                                        reactionsCount: sunglassesCount,
-                                        textColor: reactionTextColor,
-                                      )
-                                    ],
-                                    if (smileyCount != 0) ...[
-                                      SpacingFoundation.horizontalSpace4,
-                                      UiKitSmileyReaction(
-                                        reactionsCount: smileyCount,
-                                        textColor: reactionTextColor,
-                                      )
-                                    ],
-                                  ],
-                                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    UiKitCardWrapper(
+                      color: colorScheme?.darkNeutral900,
+                      borderRadius: BorderRadiusFoundation.max,
+                      padding: EdgeInsets.symmetric(
+                          horizontal: SpacingFoundation.horizontalSpacing4,
+                          vertical: SpacingFoundation.verticalSpacing2),
+                      child: Text(createdAt, style: regularTextTheme?.caption4),
+                    ),
+                    if (showTranslateButton != null)
+                      ValueListenableBuilder<bool>(
+                        valueListenable: isTranslate,
+                        builder: (_, isTranslating, __) => InkWell(
+                          onTap: toggleTranslation,
+                          child: showTranslateButton!.value
+                              ? Text(
+                                  isTranslating ? S.of(context).Original : S.of(context).Translate,
+                                  style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
+                                    color: isLightTheme
+                                        ? ColorsFoundation.darkNeutral700
+                                        : ColorsFoundation.darkNeutral300,
+                                  ),
+                                )
+                              : const SizedBox.shrink(),
+                        ),
+                      ),
+                    showEmptyReactionsState
+                        ? Builder(
+                            builder: (c) => TapRegion(
+                              behavior: HitTestBehavior.opaque,
+                              onTapInside: (value) {
+                                if (onReactionsTapped != null) {
+                                  isOverlayVisible
+                                      ? hideReactionOverlay(overlayEntry)
+                                      : showReactionOverlay(
+                                          c,
+                                          overlayEntry,
+                                          reactionTextColor,
+                                          onReactionsTapped,
+                                        );
+                                  isOverlayVisible = !isOverlayVisible;
+                                }
+                              },
+                              onTapOutside: (event) {
+                                isOverlayVisible = false;
+                                hideReactionOverlay(overlayEntry);
+                              },
+                              child: const ImageWidget(
+                                iconData: ShuffleUiKitIcons.thumbup,
+                                color: ColorsFoundation.mutedText,
                               ),
                             ),
-                    ],
-                  )
+                          )
+                        : Builder(
+                            builder: (c) => TapRegion(
+                              behavior: HitTestBehavior.opaque,
+                              onTapInside: (value) {
+                                if (onReactionsTapped != null) {
+                                  isOverlayVisible
+                                      ? hideReactionOverlay(overlayEntry)
+                                      : showReactionOverlay(
+                                          c,
+                                          overlayEntry,
+                                          reactionTextColor,
+                                          onReactionsTapped,
+                                        );
+                                  isOverlayVisible = !isOverlayVisible;
+                                }
+                              },
+                              onTapOutside: (event) {
+                                isOverlayVisible = false;
+                                hideReactionOverlay(overlayEntry);
+                              },
+                              child: Row(
+                                children: [
+                                  if (heartCount != 0)
+                                    UiKitHeartEyesReaction(
+                                      reactionsCount: heartCount,
+                                      textColor: reactionTextColor,
+                                    ),
+                                  if (likeCount != 0) ...[
+                                    SpacingFoundation.horizontalSpace4,
+                                    UiKitLikeReaction(
+                                      reactionsCount: likeCount,
+                                      textColor: reactionTextColor,
+                                    )
+                                  ],
+                                  if (fireCount != 0) ...[
+                                    SpacingFoundation.horizontalSpace4,
+                                    UiKitFireReaction(
+                                      reactionsCount: fireCount,
+                                      textColor: reactionTextColor,
+                                    )
+                                  ],
+                                  if (sunglassesCount != 0) ...[
+                                    SpacingFoundation.horizontalSpace4,
+                                    UiKitSunglassesReaction(
+                                      reactionsCount: sunglassesCount,
+                                      textColor: reactionTextColor,
+                                    )
+                                  ],
+                                  if (smileyCount != 0) ...[
+                                    SpacingFoundation.horizontalSpace4,
+                                    UiKitSmileyReaction(
+                                      reactionsCount: smileyCount,
+                                      textColor: reactionTextColor,
+                                    )
+                                  ],
+                                ],
+                              ),
+                            ),
+                          ),
+                  ],
+                )
               ],
             ).paddingAll(EdgeInsetsFoundation.all16)
           : Column(
@@ -277,7 +363,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
         constraints: BoxConstraints(
           minWidth: kIsWeb ? 60 : 1.sw - EdgeInsetsFoundation.horizontal32,
           maxWidth: kIsWeb ? 90 : 1.sw,
-          maxHeight: overallHeight,
+          maxHeight: overallHeight(),
         ),
         child: Stack(
           clipBehavior: Clip.none,

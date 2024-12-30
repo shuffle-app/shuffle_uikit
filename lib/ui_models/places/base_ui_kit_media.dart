@@ -3,18 +3,24 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class BaseUiKitMedia {
   final String link;
-  final String? videoLink;
+  final String? previewLink;
   final UiKitMediaType type;
   UiKitPreviewType? previewType;
 
   BaseUiKitMedia({
     required this.link,
     required this.type,
-    this.videoLink,
+    this.previewLink,
     this.previewType,
   });
 
-  ImageWidget widget(Size size) => ImageWidget(link: link, height: size.height, width: size.width, fit: BoxFit.cover);
+  ImageWidget widget(Size size) => ImageWidget(
+        link: previewLink ?? link,
+        height: size.height,
+        width: size.width,
+        fit: BoxFit.cover,
+        isVideo: type == UiKitMediaType.video && previewLink == null,
+      );
 
   @override
   bool operator ==(Object other) {
@@ -22,7 +28,10 @@ abstract class BaseUiKitMedia {
   }
 
   @override
-  int get hashCode => link.hashCode ^ type.hashCode ^ (previewType?.hashCode?? 1);
+  int get hashCode => link.hashCode ^ type.hashCode ^ (previewType?.hashCode ?? 1);
+
+  @override
+  String toString() => 'BaseUiKitMedia{link: $link, type: $type, previewType: $previewType}';
 }
 
 class UiKitMediaPhoto extends BaseUiKitMedia {
@@ -35,9 +44,9 @@ class UiKitMediaPhoto extends BaseUiKitMedia {
 class UiKitMediaVideo extends BaseUiKitMedia {
   UiKitMediaVideo({
     required super.link,
-    String? videoLink,
+    super.previewType,
+    super.previewLink,
   }) : super(
-          videoLink: videoLink ?? link,
           type: UiKitMediaType.video,
         );
 }

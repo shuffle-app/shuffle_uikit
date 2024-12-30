@@ -1,4 +1,6 @@
-import 'package:shuffle_uikit/ui_kit/atoms/profile/ui_reward_progress_model.dart';
+import 'dart:ui';
+
+import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitAchievementsModel {
   final String title;
@@ -7,6 +9,8 @@ class UiKitAchievementsModel {
   final String? objectUrl;
   final String? animationName;
   final UiRewardProgressModel? uiRewardProgressModel;
+  final VoidCallback? onLoad;
+  final VoidCallback? unLoad;
 
   const UiKitAchievementsModel({
     required this.title,
@@ -15,6 +19,8 @@ class UiKitAchievementsModel {
     this.objectUrl,
     this.animationName,
     this.uiRewardProgressModel,
+    this.onLoad,
+    this.unLoad,
   });
 
   UiKitAchievementsModel copyWith({
@@ -25,6 +31,8 @@ class UiKitAchievementsModel {
     String? animationName,
     double? current,
     double? total,
+    VoidCallback? onLoad,
+    VoidCallback? unLoad,
   }) =>
       UiKitAchievementsModel(
         title: title ?? this.title,
@@ -32,6 +40,9 @@ class UiKitAchievementsModel {
         posterUrl: posterUrl ?? this.posterUrl,
         objectUrl: objectUrl ?? this.objectUrl,
         animationName: animationName ?? this.animationName,
+        uiRewardProgressModel: uiRewardProgressModel?.copyWith(current: current, total: total),
+        onLoad: onLoad ?? this.onLoad,
+        unLoad: unLoad ?? this.unLoad,
       );
 
   @override
