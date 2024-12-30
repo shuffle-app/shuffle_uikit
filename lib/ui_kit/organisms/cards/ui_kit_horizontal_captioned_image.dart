@@ -50,6 +50,7 @@ class UiKitHorizontalCaptionedImage extends StatelessWidget {
                         height: 52, // imageHeight,
                         width: 90, //imageWidth,
                         fit: BoxFit.cover,
+                        borderRadius: BorderRadiusFoundation.all8,
                       ),
                     ),
                   )),

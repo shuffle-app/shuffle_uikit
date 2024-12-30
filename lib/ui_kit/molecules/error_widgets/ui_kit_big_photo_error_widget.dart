@@ -3,16 +3,18 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitBigPhotoErrorWidget extends StatelessWidget {
   final bool showText;
+  final BorderRadius? borderRadius;
 
-  const UiKitBigPhotoErrorWidget({super.key}) : showText = true;
+  const UiKitBigPhotoErrorWidget({super.key,this.borderRadius}) : showText = true;
 
-  const UiKitBigPhotoErrorWidget.withoutText({super.key}) : showText = false;
+  const UiKitBigPhotoErrorWidget.withoutText({super.key,this.borderRadius}) : showText = false;
 
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
     return UiKitCardWrapper(
+      borderRadius: borderRadius,
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,

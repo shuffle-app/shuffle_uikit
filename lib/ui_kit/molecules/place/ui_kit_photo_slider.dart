@@ -122,7 +122,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   }
 
   Widget _buildFirstItem(BaseUiKitMedia item) {
-    final heroTag = '${item.link}--$_currentIndex';
 
     return Positioned(
       left: _cardAnimation.left,
@@ -148,7 +147,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
         },
         child: SliderPhotoCard(
           media: item,
-          heroTag: heroTag,
           givenSize: Size(widget.width, height),
           weatherType: widget.weatherType,
         ),

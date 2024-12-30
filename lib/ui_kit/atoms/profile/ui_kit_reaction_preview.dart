@@ -69,6 +69,7 @@ class UiKitReactionPreview extends StatelessWidget {
               child: ImageWidget(
                 link: imagePath,
                 fit: BoxFit.cover,
+                borderRadius: borderRadius ?? BorderRadiusFoundation.all16,
               ),
             ),
           Material(

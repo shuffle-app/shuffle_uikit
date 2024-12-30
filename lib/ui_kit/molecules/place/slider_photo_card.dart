@@ -21,16 +21,22 @@ class SliderPhotoCard extends StatelessWidget {
       size: givenSize,
       child: media.link == 'loading'
           ? ImageWidget.placeholder
-          : (media.type == UiKitMediaType.image && heroTag != null
-              ? Hero(
-                  tag: heroTag!,
-                  transitionOnUserGestures: true,
-                  child: BaseUiKitMediaWidget.image(
-                    media: media,
-                    weatherType: weatherType,
-                    width: givenSize.width,
-                  ),
-                )
+          : (media.type == UiKitMediaType.image
+              ? (heroTag != null
+                  ? Hero(
+                      tag: heroTag!,
+                      transitionOnUserGestures: true,
+                      child: BaseUiKitMediaWidget.image(
+                        media: media,
+                        weatherType: weatherType,
+                        width: givenSize.width,
+                      ),
+                    )
+                  : BaseUiKitMediaWidget.image(
+                      media: media,
+                      weatherType: weatherType,
+                      width: givenSize.width,
+                    ))
               : BaseUiKitMediaWidget.video(media: media)),
     );
   }
