@@ -21,6 +21,15 @@ class ImageWidget extends StatelessWidget {
     child: const UiKitBigPhotoErrorWidget.withoutText(),
   );
 
+
+  Widget get borderedPlaceholder => borderRadius == null ? placeholder : Shimmer.fromColors(
+    direction: ShimmerDirection.ltr,
+    baseColor: Colors.white,
+    period: const Duration(milliseconds: 1000),
+    highlightColor: ColorsFoundation.gradientGreyLight3,
+    child: UiKitBigPhotoErrorWidget.withoutText(borderRadius: borderRadius,),
+  );
+
   final String? link;
   final AssetGenImage? rasterAsset;
   final SvgGenImage? svgAsset;
@@ -38,6 +47,7 @@ class ImageWidget extends StatelessWidget {
   final ImageFrameBuilder? imageBuilder;
   final VoidCallback? onImageLoadingFailed;
   final Uint8List? imageBytes;
+  final BorderRadius? borderRadius;
 
   const ImageWidget({
     super.key,
@@ -58,10 +68,10 @@ class ImageWidget extends StatelessWidget {
     this.imageBuilder,
     this.imageBytes,
     this.onImageLoadingFailed,
+    this.borderRadius,
   });
 
-  Future _takeFrameFromVideo(String link) async {
-    debugPrint('Taking frame from video: $link');
+  Future<VideoPlayerController> _takeFrameFromVideo(String link) async {
     late final VideoPlayerController controller;
     if (link.startsWith('http') || kIsWeb) {
       controller = VideoPlayerController.networkUrl(Uri.parse(link));
@@ -140,7 +150,7 @@ class ImageWidget extends StatelessWidget {
                     child: VideoPlayer(snapshot.data as VideoPlayerController),
                   ),
                 )
-              : placeholder;
+              : borderedPlaceholder;
         },
       );
     } else if (link!.length > 4 && link!.substring(0, 4) == 'http') {
@@ -166,7 +176,7 @@ class ImageWidget extends StatelessWidget {
                 width: width,
                 placeholderBuilder: (_) => ConstrainedBox(
                   constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
-                  child: placeholder,
+                  child: borderedPlaceholder,
                 ),
               )
             : _CustomCachedSvgPicture(
@@ -175,7 +185,7 @@ class ImageWidget extends StatelessWidget {
                 height: height,
                 placeholder: ConstrainedBox(
                   constraints: BoxConstraints.loose(Size(height ?? 20.w, width ?? 20.w)),
-                  child: placeholder,
+                  child: borderedPlaceholder,
                 ),
                 link: link!,
                 fit: fit,
@@ -209,7 +219,7 @@ class ImageWidget extends StatelessWidget {
 
           return errorWidget ?? const DefaultImageErrorWidget();
         },
-        placeholder: (_, __) => placeholder,
+        placeholder: (_, __) => borderedPlaceholder,
       );
     } else if (link!.contains('svg')) {
       return SvgPicture.asset(
