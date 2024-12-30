@@ -977,7 +977,8 @@
   "BookItX": "Букинг (+{x})",
   "IChangedMyMind": "Я передумал",
   "ShuffleDigest": "Shuffle дайджест",
-  "CannotFindThisPlaceOrEvent": "Не удается найти это место или ивен"
+  "CannotFindThisPlaceOrEvent": "Не удается найти это место или ивен",
+  "BarcodeAlreadyBeenActivated": "Этот баркод уже активирован"
 
 }
 

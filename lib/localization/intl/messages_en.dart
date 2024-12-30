@@ -407,6 +407,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Average card visit time"),
         "Back": MessageLookupByLibrary.simpleMessage("Back"),
         "Balance": MessageLookupByLibrary.simpleMessage("Balance"),
+        "BarcodeAlreadyBeenActivated": MessageLookupByLibrary.simpleMessage(
+            "This barcode has already been activated"),
         "BaseProperties":
             MessageLookupByLibrary.simpleMessage("Base properties"),
         "BasedOnYourActivityWeDetermineYourCondition":

@@ -411,6 +411,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("औसत कार्ड देखने का समय"),
         "Back": MessageLookupByLibrary.simpleMessage("वापस"),
         "Balance": MessageLookupByLibrary.simpleMessage("शेष राशि"),
+        "BarcodeAlreadyBeenActivated": MessageLookupByLibrary.simpleMessage(
+            "This barcode has already been activated"),
         "BaseProperties": MessageLookupByLibrary.simpleMessage("आधार गुण"),
         "BasedOnYourActivityWeDetermineYourCondition":
             MessageLookupByLibrary.simpleMessage(

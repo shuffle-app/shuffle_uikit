@@ -416,6 +416,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Среднее время визита"),
         "Back": MessageLookupByLibrary.simpleMessage("Назад"),
         "Balance": MessageLookupByLibrary.simpleMessage("Баланс "),
+        "BarcodeAlreadyBeenActivated":
+            MessageLookupByLibrary.simpleMessage("Этот баркод уже активирован"),
         "BaseProperties":
             MessageLookupByLibrary.simpleMessage("Базовые свойства"),
         "BasedOnYourActivityWeDetermineYourCondition":

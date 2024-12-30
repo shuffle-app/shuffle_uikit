@@ -975,5 +975,6 @@
   "BookItX": "Book it (+{x})" ,
   "IChangedMyMind": "I changed my mind",
   "ShuffleDigest": "Shuffle digest",
-  "CannotFindThisPlaceOrEvent": "Cannot find this place or event"
+  "CannotFindThisPlaceOrEvent": "Cannot find this place or event",
+  "BarcodeAlreadyBeenActivated": "This barcode has already been activated"
 }
