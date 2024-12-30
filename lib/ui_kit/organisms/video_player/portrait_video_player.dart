@@ -92,7 +92,6 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   }
 
   void _playBackListener() {
-    debugPrint('_playBackListener with play status ${_controller.value.isPlaying}');
     if (!seeking) {
       widget.onProgressChanged
           ?.call(_controller.value.position.inMilliseconds / _controller.value.duration.inMilliseconds);
@@ -107,7 +106,6 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
         }
       }
     }
-    setState(() {});
   }
 
   @override
