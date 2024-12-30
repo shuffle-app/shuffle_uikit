@@ -50,17 +50,22 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
     height = 1.sw;
     key = ValueKey(widget.videoUrl);
     _controller = (widget.videoPlayer ?? VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl)));
-    if(widget.videoPlayer == null){
+    if (widget.videoPlayer == null) {
+      debugPrint('Video player not provided, created a new one and passed to the model');
       widget.onSetPlayer?.call(_controller);
     }
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       if (!_controller.value.isInitialized) {
-        await _controller.initialize();
+        debugPrint('Video player not initialized, initializing now');
+        await _controller.initialize().onError((error, stackTrace) {
+          debugPrint('Error initializing video player: $error, stack trace: $stackTrace');
+        });
       }
-      _currentActiveVideoPlayer = _controller;
       _calculateDimensions(_controller.value.aspectRatio);
-      await _controller.play();
+      await _controller.play().onError((error, stackTrace) {
+        debugPrint('Error playing video player: $error, stack trace: $stackTrace');
+      });
       setState(() {
         coverOpacity = 0;
       });
@@ -82,11 +87,12 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
         height = height - MediaQuery.of(context).padding.top;
         width = height / aspectRatio;
       });
-      log('video aspect ratio: $aspectRatio and device aspect ${MediaQuery.sizeOf(context).aspectRatio} so we calculate width: $width and height: $height when screenwidth is ${1.sw} and screenheight is ${1.sh}');
+      debugPrint('Portrait mode height: $height, width: $width');
     }
   }
 
   void _playBackListener() {
+    debugPrint('_playBackListener with play status ${_controller.value.isPlaying}');
     if (!seeking) {
       widget.onProgressChanged
           ?.call(_controller.value.position.inMilliseconds / _controller.value.duration.inMilliseconds);
@@ -101,17 +107,14 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
         }
       }
     }
+    setState(() {});
   }
 
   @override
   void dispose() {
+    debugPrint('dispose called');
     _controller.removeListener(_playBackListener);
-    if (widget.videoPlayer == null) {
-      _controller.dispose();
-    } else {
-      _controller.pause();
-      _controller.seekTo(Duration.zero);
-    }
+    _controller.dispose();
     super.dispose();
   }
 
@@ -157,35 +160,11 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
             scale: _controller.value.aspectRatio > (MediaQuery.sizeOf(context).aspectRatio + 0.18)
                 ? 1
                 : (width / 1.sw - height / 1.sh),
-            child:
-                // Stack(
-                //   fit: StackFit.expand,
-                //   children: [
-                //     if (_controller.value.isInitialized)
-                VideoPlayer(
+            child: VideoPlayer(
               _controller,
               key: key,
             ),
-            // if (!isReady)
-            //   AnimatedOpacity(
-            //       opacity: coverOpacity,
-            //       duration: const Duration(milliseconds: 300),
-            //       child: ImageWidget(
-            //         link: widget.coverImageUrl,
-            //         imageBytes: widget.coverImageBytes,
-            //         fit: BoxFit.fitHeight,
-            //         width: 1.sw,
-            //         height: 1.sh,
-            //       )),
-            //   ],
-            // )
           )),
     ).paddingOnly(top: MediaQuery.paddingOf(context).top);
   }
 }
-
-VideoPlayerController? _currentActiveVideoPlayer;
-
-playVideo() => _currentActiveVideoPlayer?.play();
-
-pauseVideo() => _currentActiveVideoPlayer?.pause();
