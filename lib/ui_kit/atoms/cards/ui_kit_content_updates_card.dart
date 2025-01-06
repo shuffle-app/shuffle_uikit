@@ -200,12 +200,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                   ),
                 if (children.isNotEmpty) ...[
                   SpacingFoundation.verticalSpace4,
-                  ...children.map((child) {
-                    final isLastChild = children.indexOf(child) == children.length - 1;
-
-                    if (!isLastChild) return child.paddingOnly(bottom: EdgeInsetsFoundation.vertical16);
-                    return child;
-                  }),
+                  ...children,
+                  SpacingFoundation.verticalSpace16
                 ],
                 SpacingFoundation.verticalSpace8,
                 Row(
@@ -328,6 +324,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
               ],
             ).paddingAll(EdgeInsetsFoundation.all16)
           : Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 context.userTile(
                   data: BaseUiKitUserTileData(
@@ -339,17 +337,11 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                   ),
                 ),
                 SpacingFoundation.verticalSpace8,
-                ...children.map((child) {
-                  final isLastChild = children.indexOf(child) == children.length - 1;
-
-                  if (!isLastChild) return child.paddingOnly(bottom: EdgeInsetsFoundation.vertical16);
-                  return child;
-                }),
+                ...children,
+                SpacingFoundation.verticalSpace16
               ],
             ).paddingAll(EdgeInsetsFoundation.all16);
     }
-
-    // debugPrint('updates card build here and overallHeight: $overallHeight');
 
     return GestureDetector(
       onLongPress: () {
@@ -373,9 +365,6 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                 borderRadius: BorderRadiusFoundation.all24,
                 clipBehavior: Clip.hardEdge,
                 child: DecoratedBox(
-                  // width: kIsWeb ? 90 : 1.sw,
-                  // height: overallHeight,
-                  // clipBehavior: Clip.hardEdge,
                   position: DecorationPosition.foreground,
                   decoration: BoxDecoration(
                     color: isLightTheme ? colorScheme?.surface2 : null,
