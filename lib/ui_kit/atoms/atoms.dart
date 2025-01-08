@@ -17,6 +17,7 @@ export 'animation/ui_kit_tilt_wrapper.dart';
 export 'animation/reaction_animation.dart';
 export 'animation/ui_kit_voice_mock_animation.dart';
 export 'app_bar/app_bar_back_button.dart';
+export 'app_bar/status_weather_search_bar.dart';
 export 'app_bar/app_bar_title.dart';
 export 'badges/ui_kit_badge_colored.dart';
 export 'badges/ui_kit_badge_outlined.dart';

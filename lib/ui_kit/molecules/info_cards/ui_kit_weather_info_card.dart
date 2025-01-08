@@ -78,7 +78,7 @@ class UiKitWeatherInfoCard extends StatelessWidget {
               shape: BoxShape.circle,
             ),
             child: ImageWidget(
-              rasterAsset: _matcherWeatherType(weatherType),
+              rasterAsset: matcherWeatherType(weatherType),
               color: active ? null : offColor,
               width: 40.w,
               fit: BoxFit.fitWidth,
@@ -89,25 +89,7 @@ class UiKitWeatherInfoCard extends StatelessWidget {
     );
   }
 
-  AssetGenImage _matcherWeatherType(String weatherType) {
-    weatherType = weatherType.toLowerCase();
-    final isNight = TimeOfDay.fromDateTime(DateTime.now()).isNight;
-    if (weatherType.contains('cloud')) {
-      //TODO think about heavy clouds
-      return isNight ? GraphicsFoundation.instance.png.moonClouds : GraphicsFoundation.instance.png.sunClouds;
-    } else if (weatherType.contains('rain')) {
-      return GraphicsFoundation.instance.png.rain;
-    } else if (weatherType.contains('snow')) {
-      return GraphicsFoundation.instance.png.lightSnowfall;
-    } else if (weatherType.contains('thunderstorm')) {
-      return GraphicsFoundation.instance.png.thunderstorm;
-    } else if (weatherType.contains('wind')) {
-      if (weatherType.contains('strong')) {
-        return GraphicsFoundation.instance.png.windy;
-      } else {
-        return isNight ? GraphicsFoundation.instance.png.moonWindy : GraphicsFoundation.instance.png.sunWindy;
-      }
-    }
-    return isNight ? GraphicsFoundation.instance.png.moonClear : GraphicsFoundation.instance.png.sunClear;
-  }
+
 }
+
+
