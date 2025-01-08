@@ -59,6 +59,7 @@ class UiKitTag {
   final Color? iconColor;
   final Color? textColor;
   final bool showShadow;
+  final bool colorIsNull;
 
   UiKitTagWidget get widget => UiKitTagWidget(
         iconCustomColor: iconColor,
@@ -68,6 +69,7 @@ class UiKitTag {
         uniqueTag: unique,
         textColor: textColor ?? ColorsFoundation.darkNeutral500,
         tagSize: icon is String ? SpacingFoundation.horizontalSpacing20 : SpacingFoundation.horizontalSpacing16,
+        colorIsNull: colorIsNull,
       );
 
   UiKitTag({
@@ -78,6 +80,7 @@ class UiKitTag {
     this.id,
     this.iconColor,
     this.textColor,
+    this.colorIsNull = false,
     bool updateTitle = true,
   }) : title = updateTitle ? title.replaceAll('-', ' ') : title;
 
@@ -89,6 +92,7 @@ class UiKitTag {
     bool? showShadow,
     Color? iconColor,
     Color? textColor,
+    bool? colorIsNull,
   }) =>
       UiKitTag(
         title: title ?? this.title,
@@ -98,6 +102,7 @@ class UiKitTag {
         id: id ?? this.id,
         iconColor: iconColor ?? this.iconColor,
         textColor: textColor ?? this.textColor,
+        colorIsNull: colorIsNull ?? this.colorIsNull,
       );
 
   @override
