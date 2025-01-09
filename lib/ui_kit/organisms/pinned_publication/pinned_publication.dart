@@ -38,7 +38,7 @@ class PinnedPublication extends StatelessWidget {
                         child: Stack(
                           children: [
                             Positioned(
-                              bottom: -4.w,
+                              bottom: images!.length > 1 ? -4.w : 0,
                               child: ImageWidget(
                                 height: 0.125.sw,
                                 width: 0.125.sw,
