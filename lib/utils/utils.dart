@@ -20,6 +20,7 @@ export 'builders/contact_for_refund_dialog.dart';
 export 'builders/time_picker_dialog.dart';
 export 'cache/custom_cache_manager.dart';
 export 'data_formatters/time_format.dart';
+export 'data_formatters/weather_formatters.dart';
 export 'enums/advertisement_banner_size.dart';
 export 'enums/button_fit.dart';
 export 'enums/user_avatar_size.dart';

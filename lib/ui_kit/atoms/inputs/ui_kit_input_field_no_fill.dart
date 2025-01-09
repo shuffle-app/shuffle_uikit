@@ -36,6 +36,7 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
     this.textInputAction,
     required this.label,
     this.cursorColor,
+    this.focusNode
   });
 
   final String label;
@@ -76,6 +77,7 @@ class UiKitInputFieldNoFill extends StatefulWidget implements BaseUiKitInputFiel
   final int? maxSymbols;
   final TextInputAction? textInputAction;
   final Color? cursorColor;
+  final FocusNode? focusNode;
 
   @override
   State<UiKitInputFieldNoFill> createState() => _UiKitInputFieldNoFillState();
@@ -132,6 +134,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
         autofocus: widget.autofocus,
         autovalidateMode: widget.autovalidateMode,
         keyboardType: widget.keyboardType,
+        focusNode: widget.focusNode,
         controller: widget.enabled ? widget.controller : null,
         style: inputTextStyle,
         onChanged: widget.onChanged,
@@ -160,6 +163,7 @@ class _UiKitInputFieldNoFillState extends State<UiKitInputFieldNoFill> {
           errorText: widget.errorText,
           errorMaxLines: 1,
           errorStyle: errorStyle,
+
         ),
       ),
     );

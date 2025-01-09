@@ -10,6 +10,7 @@ class UiKitTagWidget extends StatelessWidget {
   final bool uniqueTag;
   final double? tagSize;
   final bool showShadow;
+  final bool colorIsNull;
 
   /// [customSpace] needs to be specified using [SpacingFoundation]
   final Widget? customSpace;
@@ -25,6 +26,7 @@ class UiKitTagWidget extends StatelessWidget {
     this.uniqueTag = false,
     this.showSpacing = false,
     this.showShadow = false,
+    this.colorIsNull = false,
   });
 
   @override
@@ -47,7 +49,7 @@ class UiKitTagWidget extends StatelessWidget {
           fit: tagSize != null ? BoxFit.cover : BoxFit.fitHeight),
       height: tagSize ?? SpacingFoundation.horizontalSpacing16,
       width: tagSize ?? SpacingFoundation.horizontalSpacing16,
-      color: iconColor,
+      color: colorIsNull ? null : iconColor,
       fit: tagSize != null ? BoxFit.cover : BoxFit.fitHeight,
     );
 

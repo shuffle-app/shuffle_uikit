@@ -22,6 +22,14 @@ class UiKitRegularTextTheme extends UiKitTextTheme {
         package: 'shuffle_uikit',
       );
 
+  TextStyle get caption4Semibold => TextStyle(
+    fontFamily: 'Unbounded',
+    fontSize: 9.w,
+    fontWeight: FontWeight.w600,
+    color: foregroundColor,
+    package: 'shuffle_uikit',
+  );
+
   TextStyle get caption4Regular => TextStyle(
         fontFamily: 'Unbounded',
         fontSize: 9.w,
