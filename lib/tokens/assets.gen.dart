@@ -1575,6 +1575,9 @@ class $AssetsImagesPngAvatarsGen {
 class $AssetsImagesPngOfferGen {
   const $AssetsImagesPngOfferGen();
 
+  /// File path: assets/images/png/offer/Index-finger-hands.png
+  AssetGenImage get indexFingerHands => const AssetGenImage('assets/images/png/offer/Index-finger-hands.png');
+
   /// File path: assets/images/png/offer/banana-2.png
   AssetGenImage get banana2 => const AssetGenImage('assets/images/png/offer/banana-2.png');
 
@@ -1609,8 +1612,20 @@ class $AssetsImagesPngOfferGen {
   AssetGenImage get strawberry1 => const AssetGenImage('assets/images/png/offer/strawberry-1.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [banana2, chupaChups, cocktail1, cocktail2, cocktail3, hat1, heart, mango1, percent, pineapple3, strawberry1];
+  List<AssetGenImage> get values => [
+        indexFingerHands,
+        banana2,
+        chupaChups,
+        cocktail1,
+        cocktail2,
+        cocktail3,
+        hat1,
+        heart,
+        mango1,
+        percent,
+        pineapple3,
+        strawberry1
+      ];
 }
 
 class $AssetsImagesPngPreferenceQuestionsGen {
