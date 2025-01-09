@@ -978,5 +978,8 @@
   "IChangedMyMind": "I changed my mind",
   "ShuffleDigest": "Shuffle digest",
   "CannotFindThisPlaceOrEvent": "Cannot find this place or event",
-  "BarcodeAlreadyBeenActivated": "This barcode has already been activated"
+  "BarcodeAlreadyBeenActivated": "This barcode has already been activated",
+  "CityXWasDetected": "The city is automatically detected as {x}.",
+  "ChangeInSettings": "You can change it in the settings.",
+  "WantToChange": "Want to change?"
 }

@@ -10041,6 +10041,36 @@ class S {
       args: [],
     );
   }
+
+  /// `The city is automatically detected as {x}.`
+  String CityXWasDetected(Object x) {
+    return Intl.message(
+      'The city is automatically detected as $x.',
+      name: 'CityXWasDetected',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `You can change it in the settings.`
+  String get ChangeInSettings {
+    return Intl.message(
+      'You can change it in the settings.',
+      name: 'ChangeInSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Want to change?`
+  String get WantToChange {
+    return Intl.message(
+      'Want to change?',
+      name: 'WantToChange',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

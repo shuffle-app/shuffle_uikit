@@ -978,7 +978,9 @@
   "IChangedMyMind": "Я передумал",
   "ShuffleDigest": "Shuffle дайджест",
   "CannotFindThisPlaceOrEvent": "Не удается найти это место или ивен",
-  "BarcodeAlreadyBeenActivated": "Этот баркод уже активирован"
-
+  "BarcodeAlreadyBeenActivated": "Этот баркод уже активирован",
+  "CityXWasDetected": "Город автоматически определяется как {x}.",
+  "ChangeInSettings": "Вы можете изменить это в настройках.",
+  "WantToChange": "Хотите изменить?"
 }
 
