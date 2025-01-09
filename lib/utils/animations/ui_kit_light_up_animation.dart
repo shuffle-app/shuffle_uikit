@@ -46,7 +46,7 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
   double get reversedAnimationValue => 1 - animationController.value;
 
   void _animationListener() {
-    if (animationController.isCompleted) {
+    if (animationController.isCompleted && mounted) {
       phasesPassed++;
       if (phasesPassed % 3 == 0) {
         widget.onFinished?.call();
@@ -97,8 +97,6 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
       animation: animationController,
       builder: (context, child) {
         return DecoratedBox(
-          // curve: Curves.decelerate,
-          // duration: animDuration,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             boxShadow: [

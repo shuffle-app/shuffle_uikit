@@ -28,7 +28,7 @@ IconData matcherWeatherTypeIcon(String weatherType) {
   weatherType = weatherType.toLowerCase();
   if (weatherType.contains('cloud')) {
     //TODO think about heavy clouds
-    return ShuffleUiKitIcons.cloudoff;
+    return Icons.cloud;
   } else if (weatherType.contains('rain')) {
     return ShuffleUiKitIcons.rain;
   } else if (weatherType.contains('snow')) {
