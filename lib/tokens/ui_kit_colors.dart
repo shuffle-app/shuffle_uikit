@@ -115,6 +115,11 @@ class UiKitColors {
   static const brownGradientBegin = Color(0xff605D4C);
   static const brownGradientEnd = Color(0xff5F4F42);
   static const f6f6f6 = Color(0xfff6f6f6);
+  static const pieChart20 = Color(0xFFD1E7FF);
+  static const pieChart40 = Color(0xFFA4CEFF);
+  static const pieChart60 = Color(0xFF79B5FE);
+  static const pieChart80 = Color(0xFF539DFF);
+  static const pieChart100 = Color(0xFF3685FE);
 
   UiKitColors._();
 }

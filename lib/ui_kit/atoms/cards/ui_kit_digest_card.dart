@@ -306,7 +306,7 @@ class UiKitDigestCard extends StatelessWidget {
               position: DecorationPosition.foreground,
               decoration: BoxDecoration(
                 color: isLightTheme ? colorScheme?.surface2 : null,
-                gradient: isLightTheme ? null : GradientFoundation.shunyGreyGradientInverted,
+                gradient: isLightTheme ? null : GradientFoundation.digestCardGradient,
                 borderRadius: BorderRadiusFoundation.all24,
                 border: GradientFoundation.touchIdgradientBorder,
               ),

@@ -17,12 +17,7 @@ class UiKitSelectDateWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final title = selectedDates != null && selectedDates?.first != null
-        ? dateToWord
-            ? '${formatDateWithCustomPattern('MMMM d', selectedDates!.first!.toLocal()).capitalize()} ${selectedDates!.last != null ? (selectedDates!.last?.month == selectedDates!.first?.month) ? ' - ${formatDateWithCustomPattern('MMMM dd', selectedDates!.last!.toLocal())}' : selectedDates!.last?.year != selectedDates!.first?.year ? ' - ${formatDateWithCustomPattern('dd.MM.yyyy', selectedDates!.last!.toLocal())}' : ' - ${formatDateWithCustomPattern('MMMM dd', selectedDates!.last!.toLocal())}' : ''}'
-            : '${formatDateWithCustomPattern('dd.MM.yyyy', selectedDates!.first!.toLocal())} '
-                '${selectedDates!.last != null ? '- ${formatDateWithCustomPattern('dd.MM.yyyy', selectedDates!.last!.toLocal())}' : ''}'
-        : S.of(context).PleaseAddDatePeriod;
+    final title = _formatDateRange(selectedDates, dateToWord, context);
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -47,4 +42,34 @@ class UiKitSelectDateWidget extends StatelessWidget {
       ],
     );
   }
+}
+
+String _formatDateRange(List<DateTime?>? selectedDates, bool dateToWord, BuildContext context) {
+  if (selectedDates == null || selectedDates.isEmpty) {
+    return S.of(context).PleaseAddDatePeriod;
+  }
+
+  final firstDate = selectedDates[0];
+  final firstDateFormatted = firstDate != null
+      ? dateToWord
+          ? formatDateWithCustomPattern('MMMM d', firstDate.toLocal()).capitalize()
+          : formatDateWithCustomPattern('dd.MM.yyyy', firstDate.toLocal())
+      : '';
+
+  if (selectedDates.length > 1) {
+    final secondDate = selectedDates[1];
+    if (secondDate != null) {
+      final secondDateFormatted = dateToWord
+          ? (secondDate.month == firstDate?.month)
+              ? formatDateWithCustomPattern('MMMM dd', secondDate.toLocal())
+              : (secondDate.year != firstDate?.year)
+                  ? formatDateWithCustomPattern('dd.MM.yyyy', secondDate.toLocal())
+                  : formatDateWithCustomPattern('MMMM dd', secondDate.toLocal())
+          : formatDateWithCustomPattern('dd.MM.yyyy', secondDate.toLocal());
+
+      return '$firstDateFormatted - $secondDateFormatted';
+    }
+  }
+
+  return firstDateFormatted;
 }
