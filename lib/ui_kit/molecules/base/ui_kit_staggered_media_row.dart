@@ -54,17 +54,20 @@ class UiKitStaggeredMediaRow extends UiKitContentUpdateWidget {
               ),
               nativeTransition: false,
               transitionDuration: const Duration(milliseconds: 500),
-                useRootNavigator: true
+              useRootNavigator: true,
             );
           },
           child: Hero(
             tag: heroTag,
             transitionOnUserGestures: true,
-            child: ImageWidget(
-              height: height,
-              width: width,
-              link: photo.link,
-              fit: BoxFit.cover,
+            child: UiKitCardWrapper(
+              borderRadius: BorderRadiusFoundation.all8,
+              child: ImageWidget(
+                height: height,
+                width: width,
+                link: photo.link,
+                fit: BoxFit.cover,
+              ),
             ),
           ).paddingOnly(right: EdgeInsetsFoundation.horizontal6),
         ),
