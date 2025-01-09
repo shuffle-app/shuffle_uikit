@@ -57,8 +57,7 @@ uiKitNotificationCreatedDialog({
                   textAlign: TextAlign.center,
                 ),
                 SpacingFoundation.verticalSpace16,
-                Container(
-                  height: 1.sw <= 380 ? 200.h : 165.h,
+                DecoratedBox(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadiusFoundation.all24r,
                     boxShadow: [
@@ -85,15 +84,19 @@ uiKitNotificationCreatedDialog({
                             imageUrl: placeImageUrl,
                           ),
                           SpacingFoundation.horizontalSpace12,
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                placeTitle ?? '',
-                                style: theme?.boldTextTheme.caption2Bold,
-                              ),
-                              cheap?.widget ?? SpacingFoundation.none,
-                            ],
+                          Flexible(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  placeTitle ?? '',
+                                  style: theme?.boldTextTheme.caption2Bold,
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                cheap?.widget ?? SpacingFoundation.none,
+                              ],
+                            ),
                           )
                         ],
                       ),
@@ -178,6 +181,7 @@ uiKitNotificationCreatedDialog({
                           ),
                         ],
                       ),
+                      SpacingFoundation.verticalSpace16,
                     ],
                   ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16),
                 ),
