@@ -102,6 +102,11 @@ class ColorsFoundation {
   static const Color brownGradientBegin = UiKitColors.brownGradientBegin;
   static const Color brownGradientEnd = UiKitColors.brownGradientEnd;
   static const Color f6f6f6 = UiKitColors.f6f6f6;
+  static const Color pieChart20 = UiKitColors.pieChart20;
+  static const Color pieChart40 = UiKitColors.pieChart40;
+  static const Color pieChart60 = UiKitColors.pieChart60;
+  static const Color pieChart80 = UiKitColors.pieChart80;
+  static const Color pieChart100 = UiKitColors.pieChart100;
 
   ColorsFoundation._();
 }
