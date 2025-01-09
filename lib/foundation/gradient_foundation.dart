@@ -5,6 +5,21 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
+  static final digestCardGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.shunyGreyGradientMid.withOpacity(0.25),
+      ColorsFoundation.shunyGreyGradientEnd.withOpacity(0.12),
+      ColorsFoundation.shunyGreyGradientMid.withOpacity(0.25),
+    ],
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+    stops: const [
+      0.1753,
+      0.4873,
+      0.8003,
+    ],
+  );
+
   static const goldGradient = LinearGradient(
     colors: [
       ColorsFoundation.goldGradientBegin,
