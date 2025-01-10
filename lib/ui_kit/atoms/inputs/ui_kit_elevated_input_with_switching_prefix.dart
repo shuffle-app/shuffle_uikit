@@ -38,7 +38,6 @@ class UiKitElevatedInputWithSwitchingPrefix extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           if (prefix != null) prefix!,
-          SpacingFoundation.horizontalSpace8,
           Expanded(
             child: TextField(
               onTap: onTap,
