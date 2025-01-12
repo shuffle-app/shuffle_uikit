@@ -6,6 +6,7 @@ class PinnedPublication extends StatelessWidget {
   final String text;
   final List<String?>? images;
   final VoidCallback? onPinnedPublicationTap;
+  final bool pinnedIsLoading;
 
   const PinnedPublication({
     super.key,
@@ -13,6 +14,7 @@ class PinnedPublication extends StatelessWidget {
     this.images,
     this.isCardVisible = false,
     this.onPinnedPublicationTap,
+    this.pinnedIsLoading = false,
   });
 
   @override
@@ -67,7 +69,16 @@ class PinnedPublication extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
-                    )
+                    ),
+                    if (pinnedIsLoading)
+                      SizedBox(
+                        height: 14.h,
+                        width: 14.h,
+                        child: CircularProgressIndicator(
+                          color: theme?.colorScheme.headingTypography,
+                          strokeWidth: 2.0,
+                        ),
+                      )
                   ],
                 ).paddingSymmetric(
                   vertical: SpacingFoundation.verticalSpacing8,
