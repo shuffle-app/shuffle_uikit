@@ -1,6 +1,10 @@
+import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:shuffle_uikit/utils/text_formatter/days_of_week_range_formatter.dart';
+import 'package:shuffle_uikit/utils/text_formatter/string_cleaner_formatter.dart';
 
 String normalizedTi(TimeOfDay? time, {bool showDateName = true}) {
   if (time == null) return 'nn';
@@ -131,51 +135,112 @@ String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay?
 
 showTimeInfoDialog(BuildContext context, List<List<String>> times) {
   final theme = context.uiKitTheme;
+
   showGeneralDialog(
-      barrierColor: const Color(0xff2A2A2A),
-      transitionBuilder: (context, a1, a2, widget) {
-        return Transform.scale(
-          scale: a1.value,
-          child: Opacity(
-            opacity: a1.value,
-            child: widget,
-          ),
-        );
-      },
-      transitionDuration: const Duration(milliseconds: 200),
-      barrierDismissible: true,
-      barrierLabel: '',
-      context: context,
-      pageBuilder: (context, animation1, animation2) {
-        return Dialog(
-          insetPadding: EdgeInsets.all(EdgeInsetsFoundation.all16),
-          backgroundColor: Colors.transparent,
-          clipBehavior: Clip.antiAlias,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadiusFoundation.all24,
-          ),
-          child: CustomContentInfoDialog(
-            title: S.current.WorkHours,
-            children: times
-                .map((time) => Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                      Flexible(
-                          flex: 2,
-                          child: Text(
-                            time.first,
-                            style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
-                          )),
-                      if (time.last != time.first) ...[
-                        SpacingFoundation.horizontalSpace16,
+    barrierColor: const Color(0xff2A2A2A),
+    transitionBuilder: (context, a1, a2, widget) {
+      return Transform.scale(
+        scale: a1.value,
+        child: Opacity(
+          opacity: a1.value,
+          child: widget,
+        ),
+      );
+    },
+    transitionDuration: const Duration(milliseconds: 200),
+    barrierDismissible: true,
+    barrierLabel: '',
+    context: context,
+    pageBuilder: (context, animation1, animation2) {
+      return Dialog(
+        insetPadding: EdgeInsets.all(EdgeInsetsFoundation.all16),
+        backgroundColor: Colors.transparent,
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusFoundation.all24,
+        ),
+        child: CustomContentInfoDialog(
+          title: S.current.WorkHours,
+          children: times.map(
+            (time) {
+              return LayoutBuilder(
+                builder: (context, constraints) {
+                  final firstText = time.first.isDaysOfWeek
+                      ? time.first.cleanWhitespace().toDayRanges()
+                      : time.first.cleanWhitespace();
+                  final secondText = time.last != time.first ? time.last : '';
+
+                  final firstTextPainter = TextPainter(
+                    text: TextSpan(
+                      text: firstText,
+                      style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
+                    ),
+                    maxLines: 1,
+                    textDirection: ui.TextDirection.ltr,
+                  )..layout();
+
+                  final secondTextPainter = TextPainter(
+                    text: TextSpan(
+                      text: secondText,
+                      style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
+                    ),
+                    maxLines: 1,
+                    textDirection: ui.TextDirection.ltr,
+                  )..layout();
+
+                  final totalWidth = firstTextPainter.width + secondTextPainter.width;
+                  final fitsInOneLine = totalWidth <= constraints.maxWidth;
+
+                  if (fitsInOneLine) {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
                         Flexible(
-                            child: Text(
-                          time.last,
-                          textAlign: TextAlign.end,
+                          child: AutoSizeText(
+                            firstText,
+                            style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
+                            maxLines: 1,
+                            minFontSize: 8,
+                          ),
+                        ),
+                        if (secondText.isNotEmpty)
+                          Flexible(
+                            child: AutoSizeText(
+                              secondText,
+                              textAlign: TextAlign.end,
+                              style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
+                              maxLines: 1,
+                              minFontSize: 8,
+                            ),
+                          ),
+                      ],
+                    );
+                  } else {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AutoSizeText(
+                          firstText,
                           style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
-                        )),
-                      ]
-                    ]))
-                .toList(),
-          ),
-        );
-      });
+                          maxLines: 1,
+                          minFontSize: 8,
+                        ),
+                        if (secondText.isNotEmpty)
+                          AutoSizeText(
+                            secondText,
+                            style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
+                            maxLines: 1,
+                            minFontSize: 8,
+                          ).paddingOnly(top: SpacingFoundation.verticalSpacing8),
+                      ],
+                    );
+                  }
+                },
+              );
+            },
+          ).toList(),
+        ),
+      );
+    },
+  );
 }
