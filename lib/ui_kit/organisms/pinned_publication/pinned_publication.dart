@@ -78,7 +78,7 @@ class PinnedPublication extends StatelessWidget {
                           color: theme?.colorScheme.headingTypography,
                           strokeWidth: 2.0,
                         ),
-                      )
+                      ).paddingOnly(left: SpacingFoundation.horizontalSpacing4)
                   ],
                 ).paddingSymmetric(
                   vertical: SpacingFoundation.verticalSpacing8,
