@@ -50,7 +50,7 @@ class UiKitTagWidget extends StatelessWidget {
       height: tagSize ?? SpacingFoundation.horizontalSpacing16,
       width: tagSize ?? SpacingFoundation.horizontalSpacing16,
       color: colorIsNull ? null : iconColor,
-      fit: tagSize != null ? BoxFit.cover : BoxFit.fitHeight,
+      fit: colorIsNull ? BoxFit.contain : (tagSize != null ? BoxFit.cover : BoxFit.fitHeight),
     );
 
     return Row(

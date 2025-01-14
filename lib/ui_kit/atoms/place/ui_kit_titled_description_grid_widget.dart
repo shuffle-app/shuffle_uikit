@@ -47,7 +47,7 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
                   )
                 : Text(
                     description,
-                    maxLines: 3,
+                    maxLines: 2,
                     overflow: TextOverflow.ellipsis,
                     style: textTheme?.caption1Bold.copyWith(
                       color: context.uiKitTheme?.colorScheme.bodyTypography,
