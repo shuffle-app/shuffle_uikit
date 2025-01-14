@@ -47,6 +47,8 @@ class UiKitSelectDateWidget extends StatelessWidget {
 String _formatDateRange(List<DateTime?>? selectedDates, bool dateToWord, BuildContext context) {
   if (selectedDates == null || selectedDates.isEmpty) {
     return S.of(context).PleaseAddDatePeriod;
+  } else if ((selectedDates.isNotEmpty && selectedDates.first == null)) {
+    return S.of(context).PleaseAddDatePeriod;
   }
 
   final firstDate = selectedDates[0];
