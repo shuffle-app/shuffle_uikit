@@ -459,6 +459,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         loading: data.loading,
         borderColor: borderColor,
         padding: padding,
+        backgroundColor: data.backgroundColor,
       );
     }
     if (data.text?.isNotEmpty ?? false) {
