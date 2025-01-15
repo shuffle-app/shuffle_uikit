@@ -6,18 +6,20 @@ class UiKitSelectDateWidget extends StatelessWidget {
   final List<DateTime?>? selectedDates;
   final bool dateToWord;
   final VoidCallback? onCalenderTap;
+  final bool Function(DateTime)? selectableDayPredicate;
 
   const UiKitSelectDateWidget({
     super.key,
     this.selectedDates,
     this.dateToWord = false,
     this.onCalenderTap,
+    this.selectableDayPredicate,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final title = _formatDateRange(selectedDates, dateToWord, context);
+    final title = _formatDateRange(selectedDates, dateToWord, context, selectableDayPredicate);
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -44,10 +46,19 @@ class UiKitSelectDateWidget extends StatelessWidget {
   }
 }
 
-String _formatDateRange(List<DateTime?>? selectedDates, bool dateToWord, BuildContext context) {
+String _formatDateRange(
+  List<DateTime?>? selectedDates,
+  bool dateToWord,
+  BuildContext context,
+  bool Function(DateTime)? selectableDayPredicate,
+) {
   if (selectedDates == null || selectedDates.isEmpty) {
     return S.of(context).PleaseAddDatePeriod;
   } else if ((selectedDates.isNotEmpty && selectedDates.first == null)) {
+    return S.of(context).PleaseAddDatePeriod;
+  } else if (selectableDayPredicate != null && !selectableDayPredicate(selectedDates.first!)) {
+    return S.of(context).PleaseAddDatePeriod;
+  } else if (selectableDayPredicate != null && selectedDates.length > 1 && !selectableDayPredicate(selectedDates[1]!)) {
     return S.of(context).PleaseAddDatePeriod;
   }
 
