@@ -44,7 +44,7 @@ class UiKitUserTileWithOption extends StatelessWidget {
                   if (date != null) ...[
                     Text(
                       DateFormat('MMM dd').format(date!),
-                      style: theme?.boldTextTheme.caption1Medium.copyWith(
+                      style: theme?.regularTextTheme.caption4.copyWith(
                         color: theme.colorScheme.bodyTypography,
                       ),
                     ),
