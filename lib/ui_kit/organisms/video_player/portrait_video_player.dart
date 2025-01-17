@@ -47,7 +47,7 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   @override
   void initState() {
     width = 1.sw;
-    height = 1.sw;
+    height = 1.sh;
     key = ValueKey(widget.videoUrl);
     _controller = (widget.videoPlayer ?? VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl)));
     if (widget.videoPlayer == null) {
@@ -84,10 +84,9 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
   _calculateDimensions(double aspectRatio) {
     if (aspectRatio < 1) {
       setState(() {
-        height = height - MediaQuery.of(context).padding.top;
-        width = height / aspectRatio;
+        height = height - MediaQuery.paddingOf(context).top;
+        width = height * aspectRatio;
       });
-      debugPrint('Portrait mode height: $height, width: $width');
     }
   }
 
@@ -118,51 +117,50 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: width,
-      width: height,
-      child: GestureDetector(
-          behavior: HitTestBehavior.translucent,
-          onHorizontalDragStart: (details) {
-            if (_controller.value.isPlaying) _controller.pause();
-            setState(() => seeking = true);
-          },
-          onHorizontalDragUpdate: (details) {
-            if (seeking) {
-              final position = _controller.value.position.inMilliseconds;
-              final duration = _controller.value.duration.inMilliseconds;
-              int seekTo = (position + details.primaryDelta! * duration ~/ 1000);
-              if (details.primaryDelta! > 0) {
-                seekTo += (seekTo ~/ 16).clamp(0, duration);
-              } else {
-                seekTo -= (seekTo ~/ 16).abs().clamp(0, duration);
-              }
-              final progress = (seekTo / duration).clamp(0.0, 1.0);
-              widget.onProgressChanged?.call(progress);
-              _controller.seekTo(Duration(milliseconds: seekTo));
-            }
-          },
-          onHorizontalDragEnd: (details) {
-            setState(() => seeking = false);
-            if (!_controller.value.isPlaying) _controller.play();
-          },
-          onTapDown: (details) {
-            _controller.pause();
-          },
-          onTapUp: (details) {
-            _controller.play();
-            widget.onTapUp?.call(details);
-          },
-          onVerticalDragEnd: widget.onVerticalSwipe,
-          child: Transform.scale(
-            scale: _controller.value.aspectRatio > (MediaQuery.sizeOf(context).aspectRatio + 0.18)
-                ? 1
-                : (width / 1.sw - height / 1.sh),
-            child: VideoPlayer(
-              _controller,
-              key: key,
-            ),
-          )),
+    return GestureDetector(
+      behavior: HitTestBehavior.translucent,
+      onHorizontalDragStart: (details) {
+        if (_controller.value.isPlaying) _controller.pause();
+        setState(() => seeking = true);
+      },
+      onHorizontalDragUpdate: (details) {
+        if (seeking) {
+          final position = _controller.value.position.inMilliseconds;
+          final duration = _controller.value.duration.inMilliseconds;
+          int seekTo = (position + details.primaryDelta! * duration ~/ 1000);
+          if (details.primaryDelta! > 0) {
+            seekTo += (seekTo ~/ 16).clamp(0, duration);
+          } else {
+            seekTo -= (seekTo ~/ 16).abs().clamp(0, duration);
+          }
+          final progress = (seekTo / duration).clamp(0.0, 1.0);
+          widget.onProgressChanged?.call(progress);
+          _controller.seekTo(Duration(milliseconds: seekTo));
+        }
+      },
+      onHorizontalDragEnd: (details) {
+        setState(() => seeking = false);
+        if (!_controller.value.isPlaying) _controller.play();
+      },
+      onTapDown: (details) {
+        _controller.pause();
+      },
+      onTapUp: (details) {
+        _controller.play();
+        widget.onTapUp?.call(details);
+      },
+      onVerticalDragEnd: widget.onVerticalSwipe,
+      child: Transform.scale(
+        scale: _controller.value.aspectRatio > (MediaQuery.sizeOf(context).aspectRatio + 0.18)
+            ? 1
+            : width > 1.sw
+                ? width / 1.sw
+                : 1.sw / width,
+        child: VideoPlayer(
+          _controller,
+          key: key,
+        ),
+      ),
     ).paddingOnly(top: MediaQuery.paddingOf(context).top);
   }
 }
