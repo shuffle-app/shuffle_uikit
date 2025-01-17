@@ -12,7 +12,7 @@ class UiKitDigestCard extends StatelessWidget {
   final VoidCallback? onReadTap;
   final ValueChanged<String>? onReactionsTapped;
   final String createdAt;
-
+  final VoidCallback? onSharePress;
   final int? heartEyesReactionsCount;
   final int? likeReactionsCount;
   final int? fireReactionsCount;
@@ -48,6 +48,7 @@ class UiKitDigestCard extends StatelessWidget {
     this.titleTranslateText,
     this.underTitleTranslateText,
     this.isPinned = false,
+    this.onSharePress,
   }) {
     digestUiModel = digestUiModels != null && digestUiModels!.isNotEmpty ? digestUiModels![0] : null;
 
@@ -118,6 +119,16 @@ class UiKitDigestCard extends StatelessWidget {
                       fit: BoxFit.fill,
                       color: ColorsFoundation.mutedText,
                     ).paddingOnly(right: SpacingFoundation.horizontalSpacing20),
+                  if (onSharePress != null)
+                    context.iconButtonNoPadding(
+                      data: BaseUiKitButtonData(
+                        onPressed: onSharePress,
+                        iconInfo: BaseUiKitButtonIconData(
+                          iconData: ShuffleUiKitIcons.share,
+                          color: colorScheme?.darkNeutral800,
+                        ),
+                      ),
+                    )
                 ],
               ),
             ),
