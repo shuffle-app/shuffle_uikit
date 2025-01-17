@@ -41,6 +41,7 @@ class UiKitStaggeredMediaRow extends UiKitContentUpdateWidget {
     final isHorizontal = indexOfPhoto % 2 == 0;
     final isLast = indexOfPhoto == visibleMediaCount - 1;
     double width = isHorizontal ? height * 1.325 : height;
+    final countPlusPhoto = mediaList.length - visibleMediaCount;
 
     return Row(
       children: [
@@ -71,9 +72,9 @@ class UiKitStaggeredMediaRow extends UiKitContentUpdateWidget {
             ),
           ).paddingOnly(right: EdgeInsetsFoundation.horizontal6),
         ),
-        if (isLast)
+        if (isLast && (countPlusPhoto > 0))
           UiKitContentUpdatePlaceholder(
-            title: S.current.PlusXPhotos(mediaList.length - visibleMediaCount).toLowerCase(),
+            title: S.current.PlusXPhotos(countPlusPhoto).toLowerCase(),
             imagePath: mediaList.last.link,
             height: height,
             width: height,
