@@ -80,6 +80,12 @@ class UiKitDigestCard extends StatelessWidget {
     final isLightTheme = theme?.themeMode == ThemeMode.light;
     final reactionTextColor = colorScheme?.bodyTypography;
 
+    final shufflePostVideoWidgetHeight = 0.16845.sw * 0.75;
+    final shufflePostVideoWidgetWidth = 0.16845.sw;
+    final playButtonSize = Size(32.w, 24.h);
+    final xOffset = shufflePostVideoWidgetWidth / 2 - playButtonSize.width / 2;
+    final yOffset = shufflePostVideoWidgetHeight / 2 - playButtonSize.height / 2;
+
     bool isOverlayVisible = false;
     OverlayEntry? overlayEntry;
 
@@ -99,6 +105,10 @@ class UiKitDigestCard extends StatelessWidget {
       digestUiModel?.descriptionNotifier?.value = isTranslate.value
           ? (digestUiModel?.descriptionTranslate?.value ?? digestUiModel?.description ?? '')
           : digestUiModel?.description ?? '';
+
+      digestUiModel?.subTitleNotifier?.value = isTranslate.value
+          ? (digestUiModel?.subTitleTranslate?.value ?? digestUiModel?.subTitle ?? '')
+          : digestUiModel?.subTitle ?? '';
     }
 
     _children() {
@@ -152,10 +162,67 @@ class UiKitDigestCard extends StatelessWidget {
               ).paddingOnly(top: SpacingFoundation.verticalSpacing12),
             ),
           SpacingFoundation.verticalSpace12,
-          if (digestUiModel != null)
-            DigestContentCard(
-              digestUiModel: digestUiModel,
-            ),
+          if (digestUiModel != null) ...[
+            if (digestUiModel?.subTitle != null && digestUiModel!.subTitle != null)
+              ValueListenableBuilder<String>(
+                valueListenable: digestUiModel!.subTitleNotifier!,
+                builder: (_, subtitle, __) => Text(
+                  subtitle,
+                  style: boldTextTheme?.caption1Bold,
+                  textAlign: TextAlign.start,
+                ).paddingOnly(bottom: SpacingFoundation.verticalSpacing12),
+              ),
+            if (digestUiModel?.placeId != null || digestUiModel?.eventId != null)
+              UiKitCardWrapper(
+                  color: theme?.colorScheme.surface3,
+                  borderRadius: BorderRadiusFoundation.all16,
+                  padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      DigestContentCard(
+                        digestUiModel: digestUiModel,
+                      ),
+                      if (digestUiModel?.contentDescriptionNotifier != null &&
+                          digestUiModel!.contentDescriptionNotifier!.value.isNotEmpty)
+                        ValueListenableBuilder<String>(
+                          valueListenable: digestUiModel!.contentDescriptionNotifier!,
+                          builder: (_, contentDescriptionTranslate, __) => Text(
+                            contentDescriptionTranslate,
+                            style: regularTextTheme?.caption4Regular,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                    ],
+                  ))
+            else if (digestUiModel?.newPhotos != null && digestUiModel!.newPhotos!.isNotEmpty)
+              UiKitStaggeredMediaRow(
+                mediaList: digestUiModel!.newPhotos!,
+                visibleMediaCount: 4,
+              )
+            else if (digestUiModel?.newVideos != null && digestUiModel!.newVideos!.isNotEmpty)
+              UiKitCustomChildContentUpdateWidget(
+                height: shufflePostVideoWidgetHeight,
+                child: Row(
+                  children: digestUiModel!.newVideos!.map(
+                    (video) {
+                      final isLast = digestUiModel!.newVideos!.last == video;
+
+                      return SizedBox(
+                        height: shufflePostVideoWidgetHeight,
+                        child: UiKitMediaVideoWidget(
+                          width: shufflePostVideoWidgetWidth,
+                          playButtonCustomOffset: Offset(xOffset, yOffset),
+                          media: video,
+                          borderRadius: BorderRadiusFoundation.all8,
+                        ).paddingOnly(right: isLast ? 0 : EdgeInsetsFoundation.horizontal16),
+                      );
+                    },
+                  ).toList(),
+                ),
+              ),
+          ],
           if (digestUiModel?.descriptionNotifier != null && digestUiModel!.descriptionNotifier!.value.isNotEmpty)
             ValueListenableBuilder<String>(
               valueListenable: digestUiModel!.descriptionNotifier!,
