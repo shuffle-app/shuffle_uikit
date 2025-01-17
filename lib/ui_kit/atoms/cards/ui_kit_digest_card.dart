@@ -178,6 +178,7 @@ class UiKitDigestCard extends StatelessWidget {
                   borderRadius: BorderRadiusFoundation.all16,
                   padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       DigestContentCard(
                         digestUiModel: digestUiModel,
