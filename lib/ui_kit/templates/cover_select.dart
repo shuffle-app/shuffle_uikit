@@ -125,7 +125,7 @@ class CoverSelect extends StatelessWidget {
                                             child: Icon(
                                               ShuffleUiKitIcons.checkcircle,
                                               color: Colors.white,
-                                              size: 15,
+                                              size: 25,
                                             ),
                                           )
                                       ]))),
