@@ -7,6 +7,7 @@ class UiKitTitledDescriptionWithDivider extends StatelessWidget {
   final Axis direction;
   final VoidCallback? onTrailingTap;
   final IconData? iconForTrailing;
+  final int? maxLines;
 
   const UiKitTitledDescriptionWithDivider({
     super.key,
@@ -15,6 +16,7 @@ class UiKitTitledDescriptionWithDivider extends StatelessWidget {
     this.direction = Axis.vertical,
     this.onTrailingTap,
     this.iconForTrailing,
+    this.maxLines,
   });
 
   @override
@@ -35,6 +37,8 @@ class UiKitTitledDescriptionWithDivider extends StatelessWidget {
             Text(
               i,
               style: textTheme?.caption1Bold,
+              maxLines: maxLines,
+              overflow: TextOverflow.ellipsis,
             ),
             if (description.indexOf(i) + 1 != description.length)
               const Divider(
@@ -54,6 +58,8 @@ class UiKitTitledDescriptionWithDivider extends StatelessWidget {
                     itemBuilder: (context, index) => Text(
                       description[index],
                       style: textTheme?.caption1Bold,
+                      maxLines: maxLines,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     separatorBuilder: (context, index) => const VerticalDivider(
                       color: UiKitColors.darkNeutral500,

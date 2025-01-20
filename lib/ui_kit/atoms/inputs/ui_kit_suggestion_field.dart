@@ -13,6 +13,7 @@ class UiKitSuggestionField extends StatelessWidget {
     this.fillColor,
     this.borderRadius,
     this.onFieldSubmitted,
+    this.onTagSelected,
     this.showAllOptions = false,
   });
 
@@ -24,6 +25,7 @@ class UiKitSuggestionField extends StatelessWidget {
   final Color? fillColor;
   final BorderRadius? borderRadius;
   final ValueChanged<String>? onFieldSubmitted;
+  final ValueChanged<String>? onTagSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class UiKitSuggestionField extends StatelessWidget {
           hintText: hintText,
           fillColor: fillColor,
           borderRadius: borderRadius ?? BorderRadiusFoundation.max,
-          onIconPressed: (){
+          onIconPressed: () {
             controller.clear();
             onSubmitted.call();
             onFieldSubmitted?.call('');
@@ -46,10 +48,10 @@ class UiKitSuggestionField extends StatelessWidget {
             onFieldSubmitted?.call(selection);
           },
         ),
-        onSelected: (String selection) {
-          log('we selected $selection', name: 'UiKitSuggestionField');
-          onFieldSubmitted?.call(selection);
-        },
+        // onSelected: (String selection) {
+        //   log('we selected $selection', name: 'UiKitSuggestionField');
+        //   onFieldSubmitted?.call(selection);
+        // },
         optionsViewBuilder: (_, onSelected, options) => Align(
           alignment: Alignment.topLeft,
           child: SizedBox(
@@ -60,7 +62,11 @@ class UiKitSuggestionField extends StatelessWidget {
                 onTagSelected: (option) {
                   log('we selected option $option', name: 'UiKitSuggestionField');
                   onSelected.call(option);
-                  onFieldSubmitted?.call(option);
+                  if (onTagSelected != null) {
+                    onTagSelected?.call(option);
+                  } else {
+                    onFieldSubmitted?.call(option);
+                  }
                 },
                 tags: options.toList(),
                 showTextField: false,
