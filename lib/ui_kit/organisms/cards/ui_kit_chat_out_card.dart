@@ -24,6 +24,7 @@ class UiKitChatOutCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final isEmoji = text != null && isOnlyEmoji(text!);
     final width = 0.7.sw;
 
     return Dismissible(
@@ -53,28 +54,38 @@ class UiKitChatOutCard extends StatelessWidget {
             children: [
               Flexible(
                 child: UiKitCardWrapper(
-                  color: brightness == Brightness.light ? Colors.white : Colors.black,
+                  color: isEmoji
+                      ? Colors.transparent
+                      : brightness == Brightness.light
+                          ? Colors.white
+                          : Colors.black,
                   clipBehavior: Clip.hardEdge,
                   child: text != null
                       ? SizedBox(
                           width: width,
                           child: Text(
                             text!,
-                            style: theme?.boldTextTheme.caption2Medium.copyWith(color: sentByMe ? Colors.black : null),
+                            style: theme?.boldTextTheme.caption2Medium.copyWith(
+                              color: sentByMe ? Colors.black : null,
+                              fontSize: isEmoji ? 28.w : null,
+                            ),
+                            textAlign: isEmoji ? TextAlign.end : null,
                           ).paddingAll(EdgeInsetsFoundation.all12),
                         )
                       : child!.paddingAll(EdgeInsetsFoundation.all12),
                 ),
               ),
-              Transform(
-                transform: Matrix4.identity()..scale(-1.0, 0.9),
-                // ..translate(0.5, 0, 0),
-                child: CustomPaint(
-                  painter: _MessageTriangle(
-                    color: brightness == Brightness.light ? Colors.white : Colors.black,
-                  ),
-                ),
-              ),
+              isOnlyEmoji(text ?? '')
+                  ? SizedBox.shrink()
+                  : Transform(
+                      transform: Matrix4.identity()..scale(-1.0, 0.9),
+                      // ..translate(0.5, 0, 0),
+                      child: CustomPaint(
+                        painter: _MessageTriangle(
+                          color: brightness == Brightness.light ? Colors.white : Colors.black,
+                        ),
+                      ),
+                    ),
             ],
           ),
         ],
