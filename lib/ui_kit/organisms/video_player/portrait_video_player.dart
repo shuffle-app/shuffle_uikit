@@ -117,6 +117,11 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
 
   @override
   Widget build(BuildContext context) {
+    final videoPlayer = VideoPlayer(
+      _controller,
+      key: key,
+    );
+
     return GestureDetector(
       behavior: HitTestBehavior.translucent,
       onHorizontalDragStart: (details) {
@@ -151,16 +156,14 @@ class _UiKitFullScreenPortraitVideoPlayerState extends State<UiKitFullScreenPort
       },
       onVerticalDragEnd: widget.onVerticalSwipe,
       child: Transform.scale(
-        scale: _controller.value.aspectRatio > (MediaQuery.sizeOf(context).aspectRatio + 0.18)
-            ? 1
-            : width > 1.sw
-                ? width / 1.sw
-                : 1.sw / width,
-        child: VideoPlayer(
-          _controller,
-          key: key,
-        ),
-      ),
+          scale: _controller.value.aspectRatio > (MediaQuery.sizeOf(context).aspectRatio + 0.18)
+              ? 1
+              : width > 1.sw
+                  ? width / 1.sw
+                  : 1.sw / width,
+          child: _controller.value.aspectRatio > 1
+              ? AspectRatio(aspectRatio: _controller.value.aspectRatio, child: videoPlayer)
+              : videoPlayer),
     ).paddingOnly(top: MediaQuery.paddingOf(context).top);
   }
 }
