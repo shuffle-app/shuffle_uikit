@@ -173,7 +173,7 @@ showTimeInfoDialog(BuildContext context, List<List<String>> times) {
                   final firstTextPainter = TextPainter(
                     text: TextSpan(
                       text: firstText,
-                      style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
+                      style: theme?.regularTextTheme.caption2.copyWith(color: Colors.black),
                     ),
                     maxLines: 1,
                     textDirection: ui.TextDirection.ltr,
@@ -182,7 +182,7 @@ showTimeInfoDialog(BuildContext context, List<List<String>> times) {
                   final secondTextPainter = TextPainter(
                     text: TextSpan(
                       text: secondText,
-                      style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
+                      style: theme?.boldTextTheme.caption1Medium.copyWith(color: Colors.black),
                     ),
                     maxLines: 1,
                     textDirection: ui.TextDirection.ltr,
@@ -198,7 +198,7 @@ showTimeInfoDialog(BuildContext context, List<List<String>> times) {
                         Flexible(
                           child: AutoSizeText(
                             firstText,
-                            style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
+                            style: theme?.regularTextTheme.caption2.copyWith(color: Colors.black),
                             maxLines: 1,
                             minFontSize: 8,
                           ),
@@ -208,7 +208,7 @@ showTimeInfoDialog(BuildContext context, List<List<String>> times) {
                             child: AutoSizeText(
                               secondText,
                               textAlign: TextAlign.end,
-                              style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
+                              style: theme?.boldTextTheme.caption1Medium.copyWith(color: Colors.black),
                               maxLines: 1,
                               minFontSize: 8,
                             ),
@@ -221,15 +221,13 @@ showTimeInfoDialog(BuildContext context, List<List<String>> times) {
                       children: [
                         AutoSizeText(
                           firstText,
-                          style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
-                          maxLines: 1,
+                          style: theme?.regularTextTheme.caption2.copyWith(color: Colors.black),
                           minFontSize: 8,
                         ),
                         if (secondText.isNotEmpty)
                           AutoSizeText(
                             secondText,
-                            style: theme?.regularTextTheme.body.copyWith(color: Colors.black),
-                            maxLines: 1,
+                            style: theme?.boldTextTheme.caption1Medium.copyWith(color: Colors.black),
                             minFontSize: 8,
                           ).paddingOnly(top: SpacingFoundation.verticalSpacing8),
                       ],
