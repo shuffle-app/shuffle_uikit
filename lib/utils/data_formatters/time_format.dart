@@ -160,6 +160,7 @@ showTimeInfoDialog(BuildContext context, List<List<String>> times) {
           borderRadius: BorderRadiusFoundation.all24,
         ),
         child: CustomContentInfoDialog(
+          width: 1.sw,
           title: S.current.WorkHours,
           children: times.map(
             (time) {
