@@ -46,6 +46,7 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final isEmoji = text != null && isOnlyEmoji(text!);
     final width = 0.7.sw;
     final colorScheme = theme?.colorScheme;
     final lightTheme = theme?.themeMode == ThemeMode.light;
@@ -88,9 +89,9 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
                 Text(
                   formatChatMessageDate(timeOfDay.toLocal()),
                   style: theme?.regularTextTheme.caption4Regular.copyWith(
-                    color: theme.colorScheme.darkNeutral900,
+                    color: colorScheme?.darkNeutral900,
                   ),
-                ),
+                ).paddingOnly(right: isEmoji ? SpacingFoundation.horizontalSpacing12 : 0.0),
               ],
             ).paddingOnly(left: showAvatar ? 0.0625.sw : 0),
           ),
@@ -107,14 +108,16 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
                       imageUrl: avatarUrl!,
                     )
                     .paddingOnly(right: EdgeInsetsFoundation.horizontal8),
-              CustomPaint(
-                painter: _MessageTriangle(
-                  color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white,
-                ),
-              ),
+              isEmoji
+                  ? SizedBox.shrink()
+                  : CustomPaint(
+                      painter: _MessageTriangle(
+                        color: colorScheme?.surface2 ?? theme?.cardColor ?? Colors.white,
+                      ),
+                    ),
               Flexible(
                 child: UiKitCardWrapper(
-                  color: theme?.colorScheme.surface2,
+                  color: isEmoji ? Colors.transparent : colorScheme?.surface2,
                   child: text != null
                       ? Column(
                           children: [
@@ -155,11 +158,13 @@ class UiKitChatCardWithReplyIn extends StatelessWidget {
                               width: width,
                               child: Text(
                                 text!,
-                                style: theme?.boldTextTheme.caption1Medium,
+                                style: theme?.boldTextTheme.caption1Medium.copyWith(
+                                  fontSize: isEmoji ? 28.w : null,
+                                ),
                               ),
                             ),
                           ],
-                        ).paddingAll(EdgeInsetsFoundation.all12)
+                        ).paddingAll(isEmoji ? EdgeInsetsFoundation.all4 : EdgeInsetsFoundation.all12)
                       : child!.paddingAll(EdgeInsetsFoundation.all12),
                 ),
               ),
