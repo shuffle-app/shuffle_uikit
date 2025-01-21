@@ -4,8 +4,16 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class CustomContentInfoDialog extends StatelessWidget {
   final String title;
   final List<Widget> children;
+  final double? width;
+  final double? height;
 
-  const CustomContentInfoDialog({super.key, required this.title, required this.children});
+  const CustomContentInfoDialog({
+    super.key,
+    required this.title,
+    required this.children,
+    this.width,
+    this.height,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +34,8 @@ class CustomContentInfoDialog extends StatelessWidget {
         ),
         SpacingFoundation.verticalSpace16,
         UiKitCardWrapper(
+          width: width,
+          height: height,
           color: Colors.white,
           child: Column(
             mainAxisSize: MainAxisSize.min,
