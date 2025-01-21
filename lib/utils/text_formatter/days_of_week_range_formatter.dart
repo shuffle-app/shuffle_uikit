@@ -37,6 +37,6 @@ extension DaysOfWeekRangeFormatter on String {
       }
     }
 
-    return ranges.join(', ');
+    return '${ranges.join(', ')}:';
   }
 }

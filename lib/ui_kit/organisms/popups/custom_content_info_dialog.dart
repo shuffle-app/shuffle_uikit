@@ -29,6 +29,7 @@ class CustomContentInfoDialog extends StatelessWidget {
           color: Colors.white,
           child: Column(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 title,
