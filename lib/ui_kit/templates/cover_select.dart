@@ -120,12 +120,12 @@ class CoverSelect extends StatelessWidget {
                                           fit: BoxFit.cover,
                                         ),
                                         if (e.timeMs == selectedCover?.timeMs)
-                                          const ColoredBox(
+                                          ColoredBox(
                                             color: Colors.black38,
                                             child: Icon(
                                               ShuffleUiKitIcons.checkcircle,
                                               color: Colors.white,
-                                              size: 25,
+                                              size: 40.sp,
                                             ),
                                           )
                                       ]))),
