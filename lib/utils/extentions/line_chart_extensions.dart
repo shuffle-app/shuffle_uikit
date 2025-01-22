@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:flutter/foundation.dart';
 import 'package:shuffle_uikit/ui_models/charts/chart_data.dart';
 import 'package:shuffle_uikit/ui_models/charts/ui_kit_line_chart_additional_data.dart';
 
@@ -147,9 +148,10 @@ extension ChartItemDataExtension on List<UiKitLineChartItemData> {
 
   List<DateTime> getNDates(int n) {
     final datesToReturn = List<DateTime>.empty(growable: true);
-    final step = dates.length ~/ (n - 3);
+    int step = (dates.length / n).ceil();
+    if (step == 0) step = 1;
     datesToReturn.add(dates.first);
-    for (int i = 1; i < n - 2; i++) {
+    for (int i = 1; i < n; i++) {
       final index = i * step;
       if (index >= dates.length) continue;
       datesToReturn.add(dates.elementAt(index));

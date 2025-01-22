@@ -52,9 +52,13 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
 
   List<int> get visibleLineIds => _smallPreviewUpdateNotifier.value.visibleLinesIds;
 
-  int get datesFitInChartViewPortCount => (chartViewPortSize.width / initialPixelsPerDate).floor();
+  int get datesFitInChartViewPortCount => chartViewPortSize.width ~/ initialPixelsPerDate;
 
-  double get datesMaxScrollWidth => _datesScrollController.position.maxScrollExtent + chartViewPortSize.width;
+  // int get datesFitInChartViewPortCount => (chartViewPortSize.width / initialPixelsPerDate).floor();
+
+  double get datesMaxScrollWidth => _datesScrollController.position.maxScrollExtent;
+
+  // double get datesMaxScrollWidth => _datesScrollController.position.maxScrollExtent + chartViewPortSize.width;
 
   double get chartMaxScrollWidth => chartPointsStep * widget.chartData.items.maxDatasetsCount;
 
@@ -73,10 +77,10 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
         chartViewPortSize.width * 0.15,
       );
 
+  double get smallPreviewWidth => smallPreviewSize.width * _smallPreviewUpdateNotifier.value.previewWidthFraction;
+
   double get additionalSpacingForDate {
-    final spacePerDate =
-        (_chartScrollController.position.maxScrollExtent * _smallPreviewUpdateNotifier.value.previewWidthFraction) /
-            dates.length;
+    final spacePerDate = (chartMaxScrollWidth * _smallPreviewUpdateNotifier.value.previewWidthFraction) / dates.length;
     double result = spacePerDate - initialPixelsPerDate;
     if (initialPixelsPerDate > spacePerDate) {
       result = initialPixelsPerDate - spacePerDate;
@@ -90,9 +94,9 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
     if (shrinkDates) {
       if (_smallPreviewUpdateNotifier.value.previewWidthFraction >= 0.99) {
         datesToReturn = widget.chartData.items.getNDates(datesFitInChartViewPortCount);
+        return datesToReturn;
       }
-      final width =
-          _chartScrollController.position.maxScrollExtent * (_smallPreviewUpdateNotifier.value.previewWidthFraction);
+      final width = chartMaxScrollWidth * (_smallPreviewUpdateNotifier.value.previewWidthFraction);
       int displayableDatesCount = math.max(
         maxDisplayableDatesCount,
         widget.chartData.items.dates.length -
@@ -105,7 +109,10 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
     return datesToReturn;
   }
 
-  int get maxDisplayableDatesCount => chartMaxScrollWidth ~/ (initialPixelsPerDate * datesSpacingExpansionFraction);
+  int get maxDisplayableDatesCount =>
+      (datesVisibleInViewport / (_smallPreviewUpdateNotifier.value.previewWidthFraction * 1.05)).ceil();
+
+  // int get maxDisplayableDatesCount => (chartMaxScrollWidth / (initialPixelsPerDate * datesSpacingExpansionFraction)).ceil();
 
   bool get shrinkDates {
     if (initialPreviewWidthFraction != null && _chartScrollController.hasClients) {
@@ -114,12 +121,12 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
     return false;
   }
 
-  bool get expandDates {
-    if (initialPreviewWidthFraction != null) {
-      return _smallPreviewUpdateNotifier.value.previewWidthFraction < initialPreviewWidthFraction!;
-    }
-    return false;
-  }
+  // bool get expandDates {
+  //   if (initialPreviewWidthFraction != null) {
+  //     return _smallPreviewUpdateNotifier.value.previewWidthFraction < initialPreviewWidthFraction!;
+  //   }
+  //   return false;
+  // }
 
   double get datesSpacingExpansionFraction {
     return _smallPreviewUpdateNotifier.value.previewWidthFraction / (initialPreviewWidthFraction ?? 0.35);
@@ -137,8 +144,11 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
 
   int get datesVisibleInViewport {
     /// returns number of dates that can be displayed in the viewport
-
-    return chartViewPortSize.width ~/ (initialPixelsPerDate + additionalSpacingForDate);
+    // final visibleDatesCount = (chartViewPortSize.width / (initialPixelsPerDate + additionalSpacingForDate)).toInt();
+    // if(visibleDatesCount == 0){
+    return datesFitInChartViewPortCount;
+    // }
+    // return visibleDatesCount;
   }
 
   @override
@@ -146,7 +156,7 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       _initChartLines().then((_) {
-        if(mounted) {
+        if (mounted) {
           final visibleLinesIds = widget.chartData.items.map((e) => e.id).toList();
           _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
             visibleLinesIds: visibleLinesIds,
@@ -214,7 +224,14 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
     });
   }
 
+  double get chartStepScaleFactor =>
+      (initialPreviewWidthFraction ?? 0.35) / (_smallPreviewUpdateNotifier.value.previewWidthFraction * 1.05);
+
+  double get maxChartScrollablePartWidth => _smallPreviewUpdateNotifier.value.previewWidthFraction >=0.99 ? chartViewPortSize.width : chartMaxScrollWidth * chartStepScaleFactor;
+
   void _smallPreviewUpdateListener() {
+    if (!mounted) return;
+    if (_chartScrollController.positions.isEmpty) return;
     double? additionalWidth;
     if (_smallPreviewUpdateNotifier.value.previewWidthFraction < (initialPreviewWidthFraction ?? 0.35)) {
       /// taking [datesMaxScrollWidth] as a reference to calculate additional width
@@ -229,9 +246,9 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       chartToSmallPreviewRatio = datesWidth / (smallPreviewSize.width);
     } else {
       /// need to pass negative value to make chart smaller
-      final width = chartViewPortSize.width + (chartMaxScrollWidth - chartViewPortSize.width);
+      // final width = chartViewPortSize.width + (chartMaxScrollWidth - chartViewPortSize.width);
       additionalWidth = chartViewPortSize.width - chartMaxScrollWidth;
-      chartToSmallPreviewRatio = width / smallPreviewSize.width;
+      chartToSmallPreviewRatio = smallPreviewSize.width / smallPreviewWidth;
     }
     if (_smallPreviewUpdateNotifier.value.previewWidthFraction == initialPreviewWidthFraction) {
       chartToSmallPreviewRatio = (initialMaxChartScrollablePartWidth ?? 0) / smallPreviewSize.width;
@@ -245,18 +262,21 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   }
 
   void _setVisibleDateRange() {
-    if(!mounted) return;
-    if(_chartScrollController.positions.isEmpty) return;
-    final offsetIndex = ((_smallPreviewUpdateNotifier.value.leftOffset * chartToSmallPreviewRatio) /
-            (initialPixelsPerDate +
-                additionalSpacingForDate +
-                SpacingFoundation.horizontalSpacing8 +
-                additionalSpacingForDate))
-        .ceil();
-    DateTime startDate = dates.elementAt(offsetIndex);
-    DateTime endDate = offsetIndex + datesVisibleInViewport < dates.length
-        ? dates.elementAt(max(0, datesVisibleInViewport - 2 + offsetIndex))
-        : dates.last;
+    if (!mounted) return;
+    if (_chartScrollController.positions.isEmpty) return;
+
+    final List<DateTime> allDates = widget.chartData.items.dates;
+
+    final int visibleDatesLength = (_smallPreviewUpdateNotifier.value.previewWidthFraction * allDates.length).toInt();
+
+    final leftOffsetRatio = _smallPreviewUpdateNotifier.value.leftOffset / smallPreviewWidth;
+
+    final int leftUnvisibleDatesLength = (visibleDatesLength * leftOffsetRatio).toInt();
+
+    final DateTime startDate = allDates.elementAt(leftUnvisibleDatesLength);
+    final DateTime endDate =
+        allDates.elementAt(min(allDates.length - 1, leftUnvisibleDatesLength + visibleDatesLength));
+
     _visibleDateRangeNotifier.value = DateRange(start: startDate, end: endDate);
   }
 
@@ -271,7 +291,8 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
       position.isNaN ? 0 : position * chartToSmallPreviewRatio,
     );
     chartScrollPosition = math.min(
-      _chartScrollController.position.maxScrollExtent,
+      maxChartScrollablePartWidth,
+      // _chartScrollController.position.maxScrollExtent,
       position.isNaN ? 0 : position * chartToSmallPreviewRatio,
     );
 
@@ -418,12 +439,13 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                 physics: const NeverScrollableScrollPhysics(),
                 addAutomaticKeepAlives: false,
                 separatorBuilder: (context, index) {
-                  double spacing = SpacingFoundation.horizontalSpacing8;
-                  if (expandDates) {
-                    spacing += additionalSpacingForDate;
-                  }
-
-                  return spacing.widthBox;
+                  return SpacingFoundation.horizontalSpace8;
+                  // double spacing = SpacingFoundation.horizontalSpacing8;
+                  // if (shrinkDates) {
+                  //   spacing += additionalSpacingForDate;
+                  // }
+                  //
+                  // return spacing.widthBox;
                 },
                 itemBuilder: (context, index) {
                   final date = dates.elementAt(index);
@@ -441,11 +463,11 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
             Align(
               alignment: Alignment.bottomCenter,
               child: UiKitLineChartSmallPreview(
-                smallPreviewUpdateNotifier: _smallPreviewUpdateNotifier,
-                chartItems: widget.chartData.items,
-                size: smallPreviewSize,
-                onScroll: _scrollChartToPosition,
-              ),
+                  smallPreviewUpdateNotifier: _smallPreviewUpdateNotifier,
+                  chartItems: widget.chartData.items,
+                  size: smallPreviewSize,
+                  onScroll: _scrollChartToPosition,
+                  initialPreviewWidthFraction: initialPreviewWidthFraction),
             ),
           SpacingFoundation.verticalSpace12,
           if (!widget.loading)

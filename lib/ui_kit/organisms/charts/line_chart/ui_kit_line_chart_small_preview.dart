@@ -7,6 +7,7 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
   final List<UiKitLineChartItemData<num>> chartItems;
   final ValueChanged<double>? onScroll;
   final Size size;
+  final double? initialPreviewWidthFraction;
 
   const UiKitLineChartSmallPreview({
     super.key,
@@ -14,6 +15,7 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
     required this.chartItems,
     required this.size,
     this.onScroll,
+    this.initialPreviewWidthFraction,
   });
 
   @override
@@ -46,10 +48,10 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
               ),
             ),
             UiKitLineChartSmallPreviewOverlay(
-              size: size,
-              onScroll: onScroll,
-              previewUpdateNotifier: smallPreviewUpdateNotifier,
-            ),
+                size: size,
+                onScroll: onScroll,
+                previewUpdateNotifier: smallPreviewUpdateNotifier,
+                initialPreviewWidthFraction: initialPreviewWidthFraction ?? 0),
           ],
         ),
       ),
@@ -61,12 +63,14 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
   final Size size;
   final ValueChanged<double>? onScroll;
   final ValueNotifier<LineChartSmallPreviewData> previewUpdateNotifier;
+  final double initialPreviewWidthFraction;
 
   const UiKitLineChartSmallPreviewOverlay({
     super.key,
     required this.previewUpdateNotifier,
     required this.size,
     this.onScroll,
+    this.initialPreviewWidthFraction = 0,
   });
 
   List<double> get fractionBounds => [0.1, maxPossibleWidthFraction];
@@ -119,19 +123,21 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                     if (previewUpdateNotifier.value.atEdge && previewUpdateNotifier.value.leftOffset == 0) return;
                     final atEnd = newOffset >= (size.width * maxRemainingFactor) &&
                         previewUpdateNotifier.value.leftOffset >= (size.width * maxRemainingFactor);
-                    double scrollOffset = newOffset + 16;
+                    // double scrollOffset = newOffset + 16;
+                    double scrollOffset = newOffset;
                     if (newOffset == 0) scrollOffset = double.nan;
-                    if (atEnd) scrollOffset = double.infinity;
+                    // if (atEnd) scrollOffset = double.infinity;
+                    // if (atEnd) scrollOffset = size.width;
                     onScroll?.call(scrollOffset);
                     previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(atEdge: atEnd || newOffset == 0);
                   },
-                  onPanEnd: (details) {
-                    if (previewUpdateNotifier.value.previewWidthFraction >= 0.99) return;
-                    final atEnd = previewUpdateNotifier.value.leftOffset >= (size.width * maxRemainingFactor) - 12;
-                    if (atEnd) {
-                      onScroll?.call(double.infinity);
-                    }
-                  },
+                  // onPanEnd: (details) {
+                  //   if (previewUpdateNotifier.value.previewWidthFraction >= 0.99) return;
+                  //   final atEnd = previewUpdateNotifier.value.leftOffset >= (size.width * maxRemainingFactor) - 12;
+                  //   if (atEnd) {
+                  //     onScroll?.call(double.infinity);
+                  //   }
+                  // },
                   child: AnimatedBuilder(
                     animation: previewUpdateNotifier,
                     builder: (context, child) {
@@ -163,49 +169,52 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                             children: [
                               GestureDetector(
                                 behavior: HitTestBehavior.opaque,
-                                // onPanUpdate: (details) {
-                                //   final currentPreviewViewportWidth =
-                                //       size.width * previewUpdateNotifier.value.previewWidthFraction;
-                                //   final currentLeftOffset = previewUpdateNotifier.value.leftOffset;
-                                //
-                                //   /// need to calculate the new width fraction based
-                                //   /// on the current preview viewport width and the delta
-                                //   /// of the pan
-                                //   final newWidthFraction =
-                                //       (currentPreviewViewportWidth - details.delta.dx) / size.width;
-                                //   final panLeft = details.delta.dx.isNegative;
-                                //   double newLeftOffset = 0;
-                                //
-                                //   /// need to change offset based on pan direction
-                                //   /// if pan left then we need to increase the offset
-                                //   /// if pan right then we need to decrease the offset
-                                //   if (panLeft) {
-                                //     /// because delta is always negative when panning left
-                                //     /// we need to use abs to get the positive value
-                                //     newLeftOffset = currentLeftOffset - details.delta.dx.abs();
-                                //   } else {
-                                //     /// there is no need to get the abs value because delta is always positive
-                                //     /// when panning right
-                                //     newLeftOffset = currentLeftOffset + details.delta.dx;
-                                //   }
-                                //   final withinFractionBounds = newWidthFraction >= fractionBounds.first &&
-                                //       newWidthFraction <= fractionBounds.last;
-                                //   final withinOffsetBounds =
-                                //       newLeftOffset >= offsetBounds.first && newLeftOffset <= offsetBounds.last;
-                                //   if (withinFractionBounds && newLeftOffset >= 0) {
-                                //     previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(
-                                //       previewWidthFraction: newWidthFraction,
-                                //     );
-                                //   }
-                                //   if (withinOffsetBounds && newWidthFraction >= fractionBounds.first) {
-                                //     previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(
-                                //       leftOffset: newLeftOffset,
-                                //     );
-                                //
-                                //     /// send changes in offset to parent
-                                //     onScroll?.call(newLeftOffset);
-                                //   }
-                                // },
+                                onPanUpdate: (details) {
+                                  final currentPreviewViewportWidth =
+                                      size.width * previewUpdateNotifier.value.previewWidthFraction;
+                                  final currentLeftOffset = previewUpdateNotifier.value.leftOffset;
+
+                                  /// need to calculate the new width fraction based
+                                  /// on the current preview viewport width and the delta
+                                  /// of the pan
+                                  final newWidthFraction =
+                                      (currentPreviewViewportWidth - details.delta.dx) / size.width;
+                                  if (newWidthFraction <= initialPreviewWidthFraction) {
+                                    return;
+                                  }
+                                  final panLeft = details.delta.dx.isNegative;
+                                  double newLeftOffset = 0;
+
+                                  /// need to change offset based on pan direction
+                                  /// if pan left then we need to increase the offset
+                                  /// if pan right then we need to decrease the offset
+                                  if (panLeft) {
+                                    /// because delta is always negative when panning left
+                                    /// we need to use abs to get the positive value
+                                    newLeftOffset = currentLeftOffset - details.delta.dx.abs();
+                                  } else {
+                                    /// there is no need to get the abs value because delta is always positive
+                                    /// when panning right
+                                    newLeftOffset = currentLeftOffset + details.delta.dx;
+                                  }
+                                  final withinFractionBounds = newWidthFraction >= fractionBounds.first &&
+                                      newWidthFraction <= fractionBounds.last;
+                                  final withinOffsetBounds =
+                                      newLeftOffset >= offsetBounds.first && newLeftOffset <= offsetBounds.last;
+                                  if (withinFractionBounds && newLeftOffset >= 0) {
+                                    previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(
+                                      previewWidthFraction: newWidthFraction,
+                                    );
+                                  }
+                                  if (withinOffsetBounds && newWidthFraction >= fractionBounds.first) {
+                                    previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(
+                                      leftOffset: newLeftOffset,
+                                    );
+
+                                    /// send changes in offset to parent
+                                    onScroll?.call(newLeftOffset);
+                                  }
+                                },
                                 child: SizedBox(
                                   height: size.height,
                                   width: 12,
@@ -224,16 +233,19 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                               ),
                               GestureDetector(
                                 behavior: HitTestBehavior.opaque,
-                                // onPanUpdate: (details) {
-                                //   final currentWidth = size.width * previewUpdateNotifier.value.previewWidthFraction;
-                                //   final newWidthFraction = (currentWidth + details.delta.dx) / size.width;
-                                //   if (newWidthFraction >= fractionBounds.first &&
-                                //       newWidthFraction <= fractionBounds.last) {
-                                //     previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(
-                                //       previewWidthFraction: newWidthFraction,
-                                //     );
-                                //   }
-                                // },
+                                onPanUpdate: (details) {
+                                  final currentWidth = size.width * previewUpdateNotifier.value.previewWidthFraction;
+                                  final newWidthFraction = (currentWidth + details.delta.dx) / size.width;
+                                  if (newWidthFraction <= initialPreviewWidthFraction) {
+                                    return;
+                                  }
+                                  if (newWidthFraction >= fractionBounds.first &&
+                                      newWidthFraction <= fractionBounds.last) {
+                                    previewUpdateNotifier.value = previewUpdateNotifier.value.copyWith(
+                                      previewWidthFraction: newWidthFraction,
+                                    );
+                                  }
+                                },
                                 child: SizedBox(
                                   height: size.height,
                                   width: 12,

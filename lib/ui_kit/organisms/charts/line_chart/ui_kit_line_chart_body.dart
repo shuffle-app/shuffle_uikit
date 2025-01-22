@@ -43,7 +43,7 @@ class UiKitLineChartBody extends StatelessWidget {
   double get infoCardMaxWidth => 0.4 * availableSize.width;
 
   double get chartStepScaleFactor =>
-      1 - (smallPreviewUpdateNotifier.value.previewWidthFraction - initialPreviewWidthFraction);
+      initialPreviewWidthFraction / (smallPreviewUpdateNotifier.value.previewWidthFraction * 1.05);
 
   void _setFloatingHintData(Offset position, {LineChartSelectedPointDataState? state}) {
     tapNotifier.value = position;
@@ -187,7 +187,9 @@ class UiKitLineChartBody extends StatelessWidget {
 
                 if (tapNotifier.value == Offset.zero ||
                     tapNotifier.value.dx <= pointsStep / 4 ||
-                    distanceToEnd.isNegative) return const SizedBox();
+                    distanceToEnd.isNegative) {
+                  return const SizedBox.shrink();
+                }
 
                 return Positioned(
                   top: max(-approximateInfoCardHeight + 24, tapNotifier.value.dy - approximateInfoCardHeight),
