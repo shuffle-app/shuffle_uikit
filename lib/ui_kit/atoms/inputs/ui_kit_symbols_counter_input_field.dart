@@ -17,6 +17,8 @@ class UiKitSymbolsCounterInputField extends StatefulWidget implements BaseUiKitI
   final int maxSymbols;
   final int minLines;
   final int? maxLines;
+  final FocusNode? focusNode;
+  final VoidCallback? onTap;
 
   const UiKitSymbolsCounterInputField({
     super.key,
@@ -29,6 +31,8 @@ class UiKitSymbolsCounterInputField extends StatefulWidget implements BaseUiKitI
     this.hintText,
     this.validator,
     this.maxLines,
+    this.focusNode,
+    this.onTap,
   });
 
   @override
@@ -70,7 +74,9 @@ class _UiKitSymbolsCounterInputFieldState extends State<UiKitSymbolsCounterInput
       child: TextFormField(
         key: _key,
         style: inputTextStyle,
+        onTap: widget.onTap,
         enabled: widget.enabled,
+        focusNode: widget.focusNode,
         controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
         maxLength: widget.maxSymbols,
