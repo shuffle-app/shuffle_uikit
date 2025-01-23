@@ -541,6 +541,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("सुविधाजनक, स्पष्ट और उपयोगी"),
         "CopyrightInfringement":
             MessageLookupByLibrary.simpleMessage("Copyright infringement"),
+        "CouldNotFindThisReview":
+            MessageLookupByLibrary.simpleMessage("Couldn\'t find this review"),
         "CouldNotFindThisTicket":
             MessageLookupByLibrary.simpleMessage("Couldn\'t find this ticket"),
         "CouldntFindInvite":
@@ -1246,6 +1248,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Restaurant": MessageLookupByLibrary.simpleMessage("रेस्तरां"),
         "RestorePurchase": MessageLookupByLibrary.simpleMessage(
             "खरीदारी को पुनः स्थापित करें"),
+        "ReviewWasSuccessfullyEdited": MessageLookupByLibrary.simpleMessage(
+            "Review was successfully edited"),
         "Reviews": MessageLookupByLibrary.simpleMessage("समीक्षाएं"),
         "ReviewsByCritics":
             MessageLookupByLibrary.simpleMessage("निरंकुशों द्वारा समीक्षा"),

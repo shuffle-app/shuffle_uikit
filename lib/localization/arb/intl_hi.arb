@@ -979,5 +979,7 @@
   "BarcodeAlreadyBeenActivated": "This barcode has already been activated",
   "CityXWasDetected": "The city is automatically detected as {x}.",
   "ChangeInSettings": "You can change it in the settings.",
-  "WantToChange": "Want to change?"
+  "WantToChange": "Want to change?",
+  "CouldNotFindThisReview": "Couldn't find this review",
+  "ReviewWasSuccessfullyEdited": "Review was successfully edited"
 }

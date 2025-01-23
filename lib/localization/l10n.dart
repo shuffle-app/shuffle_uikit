@@ -10071,6 +10071,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Couldn't find this review`
+  String get CouldNotFindThisReview {
+    return Intl.message(
+      'Couldn\'t find this review',
+      name: 'CouldNotFindThisReview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Review was successfully edited`
+  String get ReviewWasSuccessfullyEdited {
+    return Intl.message(
+      'Review was successfully edited',
+      name: 'ReviewWasSuccessfullyEdited',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
