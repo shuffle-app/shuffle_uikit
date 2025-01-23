@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class BaseUiKitMedia {
+  final int? id;
   final String link;
   final String? previewLink;
   final UiKitMediaType type;
   UiKitPreviewType? previewType;
 
   BaseUiKitMedia({
+    this.id,
     required this.link,
     required this.type,
     this.previewLink,
@@ -35,14 +37,18 @@ abstract class BaseUiKitMedia {
 }
 
 class UiKitMediaPhoto extends BaseUiKitMedia {
-  UiKitMediaPhoto({required super.link, super.previewType})
-      : super(
+  UiKitMediaPhoto({
+    required super.link,
+    super.previewType,
+    super.id,
+  }) : super(
           type: UiKitMediaType.image,
         );
 }
 
 class UiKitMediaVideo extends BaseUiKitMedia {
   UiKitMediaVideo({
+    super.id,
     required super.link,
     super.previewType,
     super.previewLink,
