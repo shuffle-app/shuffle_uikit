@@ -3,12 +3,14 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitRatingBarWithStars extends StatefulWidget {
   final int? maxRating;
+  final int? rating;
   final ValueChanged<int>? onRatingChanged;
 
   const UiKitRatingBarWithStars({
     super.key,
     this.maxRating,
     this.onRatingChanged,
+    this.rating,
   });
 
   @override
@@ -19,6 +21,12 @@ class _UiKitRatingBarWithStarsState extends State<UiKitRatingBarWithStars> {
   int rating = 0;
   final width = 0.9.sw;
   late final height = width * 0.2777777;
+
+  @override
+  void initState() {
+    rating = widget.rating ?? 0;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
