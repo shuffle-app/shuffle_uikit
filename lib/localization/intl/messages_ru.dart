@@ -1262,8 +1262,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Restaurant": MessageLookupByLibrary.simpleMessage("Рестораны"),
         "RestorePurchase":
             MessageLookupByLibrary.simpleMessage("Восстановить покупки"),
-        "ReviewWasSuccessfullyEdited": MessageLookupByLibrary.simpleMessage(
-            "Отзыв был успешно отредактирован"),
+        "ReviewWasSuccessfullyEdited":
+            MessageLookupByLibrary.simpleMessage("Отзыв был успешно изменён"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Отзывы"),
         "ReviewsByCritics":
             MessageLookupByLibrary.simpleMessage("Отзывы критиков"),
