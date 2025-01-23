@@ -18,8 +18,16 @@ class UiKitFeedbackCard extends StatelessWidget {
   final Color? customBackgroundColor;
   final Size? avatarSize;
   final List<BaseUiKitMedia> media;
+  final VoidCallback? onEdit;
+  final bool canEdit;
 
-  const UiKitFeedbackCard({
+  final ValueNotifier<bool>? showTranslateButton;
+  final ValueNotifier<String>? translateText;
+
+  late final ValueNotifier<bool> isTranslate;
+  late final ValueNotifier<String> description;
+
+  UiKitFeedbackCard({
     super.key,
     this.title,
     this.isHelpful,
@@ -36,12 +44,20 @@ class UiKitFeedbackCard extends StatelessWidget {
     this.customBackgroundColor,
     this.avatarSize,
     this.media = const [],
-  });
+    this.onEdit,
+    this.canEdit = false,
+    this.showTranslateButton,
+    this.translateText,
+  }) {
+    description = ValueNotifier<String>(text ?? '');
+    isTranslate = ValueNotifier<bool>(false);
+  }
 
   @override
   Widget build(BuildContext context) {
-    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
-    final colorScheme = context.uiKitTheme?.colorScheme;
+    final theme = context.uiKitTheme;
+    final boldTextTheme = theme?.boldTextTheme;
+    final colorScheme = theme?.colorScheme;
 
     final shufflePostVideoWidgetWidth = kIsWeb ? 50.0 : 0.16845.sw;
     final shufflePostVideoWidgetHeight = kIsWeb ? 45.0 : 0.16845.sw * 0.75;
@@ -51,8 +67,13 @@ class UiKitFeedbackCard extends StatelessWidget {
 
     final int microseconds = DateTime.now().millisecondsSinceEpoch;
 
+    void toggleTranslation() {
+      isTranslate.value = !isTranslate.value;
+      description.value = isTranslate.value ? (translateText?.value ?? text ?? '') : text ?? '';
+    }
+
     return Material(
-      color: customBackgroundColor ?? context.uiKitTheme?.colorScheme.surface3,
+      color: customBackgroundColor ?? colorScheme?.surface3,
       borderRadius: BorderRadiusFoundation.all24,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
@@ -79,11 +100,15 @@ class UiKitFeedbackCard extends StatelessWidget {
                 trailing: rating != null ? UiKitRatingBadge(rating: rating!) : null,
               ),
               SpacingFoundation.verticalSpace12,
-              Text(
-                text ?? '',
-                style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
-                maxLines: maxLines ?? (media.isNotEmpty ? 3 : 5),
-              ),
+              if (description.value.isNotEmpty)
+                ValueListenableBuilder<String>(
+                  valueListenable: description,
+                  builder: (_, text, __) => Text(
+                    text,
+                    style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
+                    maxLines: maxLines ?? (media.isNotEmpty ? 3 : 5),
+                  ),
+                ),
               SpacingFoundation.verticalSpace12,
               if (media.isNotEmpty) ...[
                 SizedBox(
@@ -132,9 +157,42 @@ class UiKitFeedbackCard extends StatelessWidget {
                 ),
                 SpacingFoundation.verticalSpace12
               ],
+              if (showTranslateButton != null)
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    ValueListenableBuilder<bool>(
+                      valueListenable: isTranslate,
+                      builder: (_, isTranslating, __) => InkWell(
+                        onTap: toggleTranslation,
+                        child: showTranslateButton!.value
+                            ? Text(
+                                isTranslating ? S.of(context).Original : S.of(context).Translate,
+                                style: theme?.regularTextTheme.caption4Regular.copyWith(
+                                  color: theme.themeMode == ThemeMode.light
+                                      ? ColorsFoundation.darkNeutral700
+                                      : ColorsFoundation.darkNeutral300,
+                                ),
+                              )
+                            : const SizedBox.shrink(),
+                      ),
+                    ),
+                  ],
+                ).paddingOnly(bottom: SpacingFoundation.verticalSpacing12),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
+                  if (canEdit)
+                    GestureDetector(
+                      onTap: onEdit,
+                      child: ImageWidget(
+                        link: GraphicsFoundation.instance.svg.pencil.path,
+                        width: 14.w,
+                        color: ColorsFoundation.mutedText,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
                   if (companyAnswered ?? false)
                     Text(
                       S.of(context).CompanyAnswered,

@@ -36,6 +36,7 @@ class UiKitChatInCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
+    final isEmoji = text != null && isOnlyEmoji(text!);
     final width = 0.7.sw;
 
     return Dismissible(
@@ -60,10 +61,10 @@ class UiKitChatInCard extends StatelessWidget {
                     : width,
             child: Row(
               mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: isEmoji ? MainAxisAlignment.start : MainAxisAlignment.spaceBetween,
               children: [
                 if (senderNickname != null)
-                  Expanded(
+                  Flexible(
                     child: GestureDetector(
                       onTap: onUsernameTapped,
                       child: Text(
@@ -80,7 +81,7 @@ class UiKitChatInCard extends StatelessWidget {
                   style: theme?.regularTextTheme.caption4Regular.copyWith(
                     color: theme.colorScheme.darkNeutral900,
                   ),
-                ),
+                ).paddingOnly(left: isEmoji ? SpacingFoundation.horizontalSpacing4 : 0.0),
               ],
             ).paddingOnly(left: showAvatar ? 0.0625.sw + SpacingFoundation.horizontalSpacing8 : 0),
           ),
@@ -100,22 +101,24 @@ class UiKitChatInCard extends StatelessWidget {
                       )
                       .paddingOnly(right: EdgeInsetsFoundation.horizontal8),
                 ),
-              CustomPaint(
-                painter: _MessageTriangle(
-                  color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white,
-                ),
-              ),
+              isEmoji
+                  ? SizedBox.shrink()
+                  : CustomPaint(
+                      painter: _MessageTriangle(
+                        color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white,
+                      ),
+                    ),
               Flexible(
                 child: UiKitCardWrapper(
-                  color: theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white,
+                  color: isEmoji ? Colors.transparent : theme?.colorScheme.surface2 ?? theme?.cardColor ?? Colors.white,
                   clipBehavior: Clip.hardEdge,
                   child: text != null
                       ? SizedBox(
                           width: width,
                           child: Text(
                             text!,
-                            style: theme?.boldTextTheme.caption2Medium,
-                          ).paddingAll(EdgeInsetsFoundation.all12),
+                            style: theme?.boldTextTheme.caption2Medium.copyWith(fontSize: isEmoji ? 28.w : null),
+                          ).paddingAll(isEmoji ? EdgeInsetsFoundation.all4 : EdgeInsetsFoundation.all12),
                         )
                       : child!.paddingAll(EdgeInsetsFoundation.all12),
                 ),

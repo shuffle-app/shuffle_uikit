@@ -52,37 +52,58 @@ String _formatDateRange(
   BuildContext context,
   bool Function(DateTime)? selectableDayPredicate,
 ) {
-  if (selectedDates == null || selectedDates.isEmpty) {
-    return S.of(context).PleaseAddDatePeriod;
-  } else if ((selectedDates.isNotEmpty && selectedDates.first == null)) {
-    return S.of(context).PleaseAddDatePeriod;
-  } else if (selectableDayPredicate != null && !selectableDayPredicate(selectedDates.first!)) {
-    return S.of(context).PleaseAddDatePeriod;
-  } else if (selectableDayPredicate != null && selectedDates.length > 1 && !selectableDayPredicate(selectedDates[1]!)) {
+  final List<DateTime> generateDateList = generateDateRange(selectedDates);
+  if (generateDateList.isEmpty) return S.of(context).PleaseAddDatePeriod;
+
+  if (selectableDayPredicate != null && !generateDateList.any((element) => selectableDayPredicate(element))) {
     return S.of(context).PleaseAddDatePeriod;
   }
 
-  final firstDate = selectedDates[0];
-  final firstDateFormatted = firstDate != null
-      ? dateToWord
-          ? formatDateWithCustomPattern('MMMM d', firstDate.toLocal()).capitalize()
-          : formatDateWithCustomPattern('dd.MM.yyyy', firstDate.toLocal())
-      : '';
+  final firstDate = generateDateList[0];
+  final firstDateFormatted = dateToWord
+      ? formatDateWithCustomPattern('MMMM d', firstDate.toLocal()).capitalize()
+      : formatDateWithCustomPattern('dd.MM.yyyy', firstDate.toLocal());
 
-  if (selectedDates.length > 1) {
-    final secondDate = selectedDates[1];
-    if (secondDate != null) {
-      final secondDateFormatted = dateToWord
-          ? (secondDate.month == firstDate?.month)
-              ? formatDateWithCustomPattern('MMMM dd', secondDate.toLocal())
-              : (secondDate.year != firstDate?.year)
-                  ? formatDateWithCustomPattern('dd.MM.yyyy', secondDate.toLocal())
-                  : formatDateWithCustomPattern('MMMM dd', secondDate.toLocal())
-          : formatDateWithCustomPattern('dd.MM.yyyy', secondDate.toLocal());
+  if (generateDateList.length > 1) {
+    final secondDate = generateDateList.last;
+    final secondDateFormatted = dateToWord
+        ? (secondDate.month == firstDate.month)
+            ? formatDateWithCustomPattern('MMMM dd', secondDate.toLocal())
+            : (secondDate.year != firstDate.year)
+                ? formatDateWithCustomPattern('dd.MM.yyyy', secondDate.toLocal())
+                : formatDateWithCustomPattern('MMMM dd', secondDate.toLocal())
+        : formatDateWithCustomPattern('dd.MM.yyyy', secondDate.toLocal());
 
-      return '$firstDateFormatted - $secondDateFormatted';
-    }
+    return '$firstDateFormatted - $secondDateFormatted';
   }
 
   return firstDateFormatted;
+}
+
+List<DateTime> generateDateRange(List<DateTime?>? selectedDates) {
+  if (selectedDates == null) {
+    return [];
+  } else if (selectedDates.length != 2 && selectedDates.first != null) {
+    return [selectedDates.first!];
+  } else if (selectedDates.length != 2) {
+    return [];
+  }
+
+  final startDate = selectedDates[0];
+  final endDate = selectedDates[1];
+
+  if (startDate == null || endDate == null) {
+    return [];
+  }
+
+  final dateRange = <DateTime>[];
+
+  DateTime currentDate = DateTime(startDate.year, startDate.month, startDate.day);
+
+  while (currentDate.isBefore(endDate) || currentDate.isAtSameMomentAs(endDate)) {
+    dateRange.add(DateTime(currentDate.year, currentDate.month, currentDate.day));
+    currentDate = currentDate.add(const Duration(days: 1));
+  }
+
+  return dateRange;
 }

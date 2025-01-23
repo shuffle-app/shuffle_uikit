@@ -552,6 +552,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("удобно, чётко и полезно"),
         "CopyrightInfringement":
             MessageLookupByLibrary.simpleMessage("Нарушение авторских прав"),
+        "CouldNotFindThisReview":
+            MessageLookupByLibrary.simpleMessage("Не удалось найти этот отзыв"),
         "CouldNotFindThisTicket":
             MessageLookupByLibrary.simpleMessage("Не удалось найти этот билет"),
         "CouldntFindInvite": MessageLookupByLibrary.simpleMessage(
@@ -1260,6 +1262,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Restaurant": MessageLookupByLibrary.simpleMessage("Рестораны"),
         "RestorePurchase":
             MessageLookupByLibrary.simpleMessage("Восстановить покупки"),
+        "ReviewWasSuccessfullyEdited":
+            MessageLookupByLibrary.simpleMessage("Отзыв был успешно изменён"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Отзывы"),
         "ReviewsByCritics":
             MessageLookupByLibrary.simpleMessage("Отзывы критиков"),

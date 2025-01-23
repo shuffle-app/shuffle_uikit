@@ -543,6 +543,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "сonvenient, clear and useful"),
         "CopyrightInfringement":
             MessageLookupByLibrary.simpleMessage("Copyright infringement"),
+        "CouldNotFindThisReview":
+            MessageLookupByLibrary.simpleMessage("Couldn\'t find this review"),
         "CouldNotFindThisTicket":
             MessageLookupByLibrary.simpleMessage("Couldn\'t find this ticket"),
         "CouldntFindInvite":
@@ -1235,6 +1237,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Restaurant": MessageLookupByLibrary.simpleMessage("Restaurant"),
         "RestorePurchase":
             MessageLookupByLibrary.simpleMessage("Restore purchases"),
+        "ReviewWasSuccessfullyEdited": MessageLookupByLibrary.simpleMessage(
+            "Review was successfully edited"),
         "Reviews": MessageLookupByLibrary.simpleMessage("Reviews"),
         "ReviewsByCritics":
             MessageLookupByLibrary.simpleMessage("Reviews by critics"),

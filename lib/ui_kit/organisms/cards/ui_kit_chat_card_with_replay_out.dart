@@ -37,6 +37,7 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
     final width = 0.7.sw;
     final lightTheme = theme?.themeMode == ThemeMode.light;
     final colorScheme = theme?.colorScheme;
+    final isEmoji = text != null && isOnlyEmoji(text!);
 
     return Dismissible(
       key: Key(id.toString()),
@@ -55,7 +56,7 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
           Text(
             formatChatMessageDate(timeOfDay.toLocal()),
             style: theme?.regularTextTheme.caption4Regular.copyWith(
-              color: theme.colorScheme.darkNeutral900,
+              color: colorScheme?.darkNeutral900,
             ),
           ),
           SpacingFoundation.verticalSpace2,
@@ -65,7 +66,11 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
             children: [
               Flexible(
                 child: UiKitCardWrapper(
-                  color: sentByMe ? Colors.white : theme?.colorScheme.surface3,
+                  color: isEmoji
+                      ? Colors.transparent
+                      : sentByMe
+                          ? Colors.white
+                          : colorScheme?.surface3,
                   child: text != null
                       ? Column(
                           children: [
@@ -106,8 +111,11 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
                               width: width,
                               child: Text(
                                 text!,
-                                style:
-                                    theme?.boldTextTheme.caption1Medium.copyWith(color: sentByMe ? Colors.black : null),
+                                style: theme?.boldTextTheme.caption1Medium.copyWith(
+                                  color: sentByMe ? Colors.black : null,
+                                  fontSize: isEmoji ? 28.w : null,
+                                ),
+                                textAlign: isEmoji ? TextAlign.end : null,
                               ),
                             ),
                           ],
@@ -115,12 +123,14 @@ class UiKitChatCardWithReplyOut extends StatelessWidget {
                       : child!.paddingAll(EdgeInsetsFoundation.all12),
                 ),
               ),
-              Transform(
-                transform: Matrix4.identity()..scale(-1.0, 1.0),
-                child: CustomPaint(
-                  painter: _MessageTriangle(color: sentByMe ? Colors.white : theme!.colorScheme.surface3),
-                ),
-              ),
+              isOnlyEmoji(text ?? '')
+                  ? SizedBox.shrink()
+                  : Transform(
+                      transform: Matrix4.identity()..scale(-1.0, 1.0),
+                      child: CustomPaint(
+                        painter: _MessageTriangle(color: sentByMe ? Colors.white : theme!.colorScheme.surface3),
+                      ),
+                    ),
             ],
           )
         ],

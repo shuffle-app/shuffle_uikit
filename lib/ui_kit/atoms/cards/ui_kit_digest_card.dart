@@ -161,7 +161,6 @@ class UiKitDigestCard extends StatelessWidget {
                 textAlign: TextAlign.start,
               ).paddingOnly(top: SpacingFoundation.verticalSpacing12),
             ),
-          SpacingFoundation.verticalSpace12,
           if (digestUiModel != null) ...[
             if (digestUiModel?.subTitle != null && digestUiModel!.subTitle != null)
               ValueListenableBuilder<String>(
