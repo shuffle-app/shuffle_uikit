@@ -136,7 +136,6 @@ dev_dependencies:
   flutter_gen_runner: ^5.8.0
   build_runner: ^2.4.14
   icon_font_generator: ^4.0.0
-  intl_utils: ^2.8.0
 
 #  dart_code_metrics: ^5.7.3
 
