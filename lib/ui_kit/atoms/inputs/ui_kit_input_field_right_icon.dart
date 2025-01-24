@@ -64,21 +64,22 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
   @override
   Widget build(BuildContext context) {
     final uiKitTheme = context.uiKitTheme;
+    final colorScheme = uiKitTheme?.colorScheme;
     final inputTheme = widget.borderRadius != null
         ? uiKitTheme?.iconInputTheme.copyWith(
             focusedBorder: OutlineInputBorder(
               borderRadius: widget.borderRadius!,
-              borderSide: BorderSide(color: uiKitTheme.colorScheme.inversePrimary, width: 2),
+              borderSide: BorderSide(color: colorScheme!.inversePrimary, width: 2),
             ),
             enabledBorder: OutlineInputBorder(borderRadius: widget.borderRadius!, borderSide: BorderSide.none),
           )
         : uiKitTheme?.iconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
     final inputTextStyle =
-        uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: uiKitTheme.colorScheme.inversePrimary);
+        uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: colorScheme?.inversePrimary);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
-          ? widget.hintColor ?? uiKitTheme.colorScheme.inversePrimary.withOpacity(0.48)
+          ? widget.hintColor ?? colorScheme?.inversePrimary.withOpacity(0.48)
           : ColorsFoundation.darkNeutral900.withOpacity(0.16),
     );
 
@@ -114,13 +115,13 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
             if (states.contains(WidgetState.error)) {
               return ColorsFoundation.error;
             }
-            return context.uiKitTheme?.colorScheme.inversePrimary ?? Colors.white;
+            return colorScheme?.inversePrimary ?? Colors.white;
           }),
           suffixIcon: widget.icon ??
               IconButton(
                 icon: Icon(
                   Icons.close,
-                  color: uiKitTheme?.colorScheme.inversePrimary,
+                  color: colorScheme?.inversePrimary,
                 ),
                 onPressed: widget.onIconPressed ??
                     () {
