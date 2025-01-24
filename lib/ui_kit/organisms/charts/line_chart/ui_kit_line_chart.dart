@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'dart:math';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -227,7 +228,9 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
   double get chartStepScaleFactor =>
       (initialPreviewWidthFraction ?? 0.35) / (_smallPreviewUpdateNotifier.value.previewWidthFraction * 1.05);
 
-  double get maxChartScrollablePartWidth => _smallPreviewUpdateNotifier.value.previewWidthFraction >=0.99 ? chartViewPortSize.width : chartMaxScrollWidth * chartStepScaleFactor;
+  double get maxChartScrollablePartWidth => _smallPreviewUpdateNotifier.value.previewWidthFraction >= 0.99
+      ? chartViewPortSize.width
+      : chartMaxScrollWidth * chartStepScaleFactor;
 
   void _smallPreviewUpdateListener() {
     if (!mounted) return;
@@ -365,9 +368,14 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
                   builder: (context, range, child) {
                     final text =
                         '${DateFormat('MMM d').format(_visibleDateRangeNotifier.value.start)} - ${DateFormat('MMM d').format(_visibleDateRangeNotifier.value.end)}';
-                    return Text(
-                      text,
-                      style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
+                    return SizedBox(
+                      width: 0.36.sw,
+                      child: AutoSizeText(
+                        text,
+                        textAlign: TextAlign.end,
+                        maxLines: 1,
+                        style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.mutedText),
+                      ),
                     );
                   },
                 ),
