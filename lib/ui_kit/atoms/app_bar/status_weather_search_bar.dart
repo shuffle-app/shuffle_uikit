@@ -21,6 +21,7 @@ class StatusWeatherSearchBar extends StatelessWidget {
           style: theme?.regularTextTheme.caption4Semibold.copyWith(color: theme.colorScheme.grayForegroundColor),
         ),
         if (weather != null) weather!,
+        SpacingFoundation.horizontalSpace4,
         context.iconButtonNoPadding(
             data: BaseUiKitButtonData(
                 onPressed: onSearchPressed,

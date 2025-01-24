@@ -84,7 +84,7 @@ class PinnedPublication extends StatelessWidget {
                   vertical: SpacingFoundation.verticalSpacing8,
                   horizontal: SpacingFoundation.horizontalSpacing16,
                 ),
-              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+              ),
             )
           : SpacingFoundation.none,
     );

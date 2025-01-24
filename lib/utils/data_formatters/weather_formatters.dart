@@ -26,6 +26,7 @@ AssetGenImage matcherWeatherType(String weatherType) {
 
 IconData matcherWeatherTypeIcon(String weatherType) {
   weatherType = weatherType.toLowerCase();
+  final isNight = TimeOfDay.fromDateTime(DateTime.now()).isNight;
   if (weatherType.contains('cloud')) {
     //TODO think about heavy clouds
     return Icons.cloud;
@@ -42,5 +43,5 @@ IconData matcherWeatherTypeIcon(String weatherType) {
       return Icons.wind_power;
     }
   }
-  return ShuffleUiKitIcons.sunny;
+  return isNight ? ShuffleUiKitIcons.moon : ShuffleUiKitIcons.sunny;
 }
