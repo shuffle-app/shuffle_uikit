@@ -1357,6 +1357,24 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/us_flag.svg
   SvgGenImage get usFlag => const SvgGenImage('assets/images/svg/us_flag.svg');
 
+  /// File path: assets/images/svg/wallpaperFeed1.svg
+  SvgGenImage get wallpaperFeed1 => const SvgGenImage('assets/images/svg/wallpaperFeed1.svg');
+
+  /// File path: assets/images/svg/wallpaperFeed2.svg
+  SvgGenImage get wallpaperFeed2 => const SvgGenImage('assets/images/svg/wallpaperFeed2.svg');
+
+  /// File path: assets/images/svg/wallpaperFeed3.svg
+  SvgGenImage get wallpaperFeed3 => const SvgGenImage('assets/images/svg/wallpaperFeed3.svg');
+
+  /// File path: assets/images/svg/wallpaperFeed4.svg
+  SvgGenImage get wallpaperFeed4 => const SvgGenImage('assets/images/svg/wallpaperFeed4.svg');
+
+  /// File path: assets/images/svg/wallpaperFeed5.svg
+  SvgGenImage get wallpaperFeed5 => const SvgGenImage('assets/images/svg/wallpaperFeed5.svg');
+
+  /// File path: assets/images/svg/wallpaperFeed6.svg
+  SvgGenImage get wallpaperFeed6 => const SvgGenImage('assets/images/svg/wallpaperFeed6.svg');
+
   /// File path: assets/images/svg/waterpool.svg
   SvgGenImage get waterpool => const SvgGenImage('assets/images/svg/waterpool.svg');
 
@@ -1507,6 +1525,12 @@ class $AssetsImagesSvgGen {
         uniqueMarker,
         unitedKingdom,
         usFlag,
+        wallpaperFeed1,
+        wallpaperFeed2,
+        wallpaperFeed3,
+        wallpaperFeed4,
+        wallpaperFeed5,
+        wallpaperFeed6,
         waterpool,
         whiteStarTransparentCenter
       ];
