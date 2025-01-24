@@ -7,9 +7,9 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class GradientFoundation {
   static final digestCardGradient = LinearGradient(
     colors: [
-      ColorsFoundation.shunyGreyGradientMid.withOpacity(0.25),
+      ColorsFoundation.darkNeutral500.withOpacity(0.25),
       ColorsFoundation.shunyGreyGradientEnd.withOpacity(0.12),
-      ColorsFoundation.shunyGreyGradientMid.withOpacity(0.25),
+      ColorsFoundation.darkNeutral500.withOpacity(0.25),
     ],
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
