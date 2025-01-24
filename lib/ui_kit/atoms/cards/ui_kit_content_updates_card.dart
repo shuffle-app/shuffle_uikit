@@ -358,27 +358,21 @@ class UiKitContentUpdatesCard extends StatelessWidget {
           // fit: StackFit.expand,
           children: [
             ClipRRect(
-                borderRadius: BorderRadiusFoundation.all24,
-                clipBehavior: Clip.hardEdge,
+              borderRadius: BorderRadiusFoundation.all24,
+              clipBehavior: Clip.hardEdge,
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
                 child: DecoratedBox(
-                  position: DecorationPosition.foreground,
                   decoration: BoxDecoration(
                     color: isLightTheme ? colorScheme?.surface2 : null,
                     gradient: isLightTheme ? null : GradientFoundation.shunyGreyGradientInverted,
                     borderRadius: BorderRadiusFoundation.all24,
                     border: hasGradientBorder ? GradientFoundation.touchIdgradientBorder : null,
                   ),
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
-                    child: IgnorePointer(
-                      child: Opacity(
-                        opacity: 0,
-                        child: _children,
-                      ),
-                    ),
-                  ),
-                )),
-            _children,
+                  child: _children,
+                ),
+              ),
+            ),
             if (authorSpeciality.isNotEmpty)
               Positioned(
                 right: 0,
