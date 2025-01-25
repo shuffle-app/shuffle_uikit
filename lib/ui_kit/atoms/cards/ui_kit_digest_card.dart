@@ -162,44 +162,43 @@ class UiKitDigestCard extends StatelessWidget {
               ).paddingOnly(top: SpacingFoundation.verticalSpacing12),
             ),
           if (digestUiModel != null) ...[
-            if (digestUiModel?.subTitle != null && digestUiModel!.subTitle != null)
+            if (digestUiModel?.subTitle != null && digestUiModel!.subTitle!.isNotEmpty)
               ValueListenableBuilder<String>(
                 valueListenable: digestUiModel!.subTitleNotifier!,
                 builder: (_, subtitle, __) => Text(
                   subtitle,
                   style: boldTextTheme?.caption1Bold,
                   textAlign: TextAlign.start,
-                ).paddingOnly(bottom: SpacingFoundation.verticalSpacing12),
-              ),
+                ),
+              ).paddingOnly(top: SpacingFoundation.verticalSpacing12),
             if (digestUiModel?.placeId != null || digestUiModel?.eventId != null)
               UiKitCardWrapper(
-                  color: theme?.colorScheme.surface3,
-                  borderRadius: BorderRadiusFoundation.all16,
-                  padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      DigestContentCard(
-                        digestUiModel: digestUiModel,
-                      ),
-                      if (digestUiModel?.contentDescriptionNotifier != null &&
-                          digestUiModel!.contentDescriptionNotifier!.value.isNotEmpty)
-                        ValueListenableBuilder<String>(
-                          valueListenable: digestUiModel!.contentDescriptionNotifier!,
-                          builder: (_, contentDescriptionTranslate, __) => Text(
-                            contentDescriptionTranslate,
-                            style: regularTextTheme?.caption4Regular,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                color: theme?.colorScheme.surface3,
+                borderRadius: BorderRadiusFoundation.all16,
+                padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    DigestContentCard(digestUiModel: digestUiModel),
+                    if (digestUiModel?.contentDescriptionNotifier != null &&
+                        digestUiModel!.contentDescriptionNotifier!.value.isNotEmpty)
+                      ValueListenableBuilder<String>(
+                        valueListenable: digestUiModel!.contentDescriptionNotifier!,
+                        builder: (_, contentDescriptionTranslate, __) => Text(
+                          contentDescriptionTranslate,
+                          style: regularTextTheme?.caption4Regular,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                    ],
-                  ))
+                      ),
+                  ],
+                ),
+              ).paddingOnly(top: SpacingFoundation.verticalSpacing12)
             else if (digestUiModel?.newPhotos != null && digestUiModel!.newPhotos!.isNotEmpty)
               UiKitStaggeredMediaRow(
                 mediaList: digestUiModel!.newPhotos!,
                 visibleMediaCount: 4,
-              )
+              ).paddingOnly(top: SpacingFoundation.verticalSpacing12)
             else if (digestUiModel?.newVideos != null && digestUiModel!.newVideos!.isNotEmpty)
               UiKitCustomChildContentUpdateWidget(
                 height: shufflePostVideoWidgetHeight,
@@ -220,7 +219,7 @@ class UiKitDigestCard extends StatelessWidget {
                     },
                   ).toList(),
                 ),
-              ),
+              ).paddingOnly(top: SpacingFoundation.verticalSpacing12),
           ],
           if (digestUiModel?.descriptionNotifier != null && digestUiModel!.descriptionNotifier!.value.isNotEmpty)
             ValueListenableBuilder<String>(
@@ -374,32 +373,21 @@ class UiKitDigestCard extends StatelessWidget {
         minWidth: kIsWeb ? 60 : 1.sw - EdgeInsetsFoundation.horizontal32,
         maxWidth: kIsWeb ? 90 : 1.sw,
       ),
-      child: Stack(
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadiusFoundation.all24,
-            clipBehavior: Clip.hardEdge,
-            child: DecoratedBox(
-              position: DecorationPosition.foreground,
-              decoration: BoxDecoration(
-                color: isLightTheme ? colorScheme?.surface2 : null,
-                gradient: isLightTheme ? null : GradientFoundation.digestCardGradient,
-                borderRadius: BorderRadiusFoundation.all24,
-                border: GradientFoundation.touchIdgradientBorder,
-              ),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
-                child: IgnorePointer(
-                  child: Opacity(
-                    opacity: 0,
-                    child: _children(),
-                  ),
-                ),
-              ),
+      child: ClipRRect(
+        borderRadius: BorderRadiusFoundation.all24,
+        clipBehavior: Clip.hardEdge,
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 50, sigmaY: 50),
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              color: isLightTheme ? colorScheme?.surface2 : null,
+              gradient: isLightTheme ? null : GradientFoundation.digestCardGradient,
+              borderRadius: BorderRadiusFoundation.all24,
+              border: GradientFoundation.touchIdgradientBorder,
             ),
+            child: _children(),
           ),
-          _children(),
-        ],
+        ),
       ),
     );
   }
