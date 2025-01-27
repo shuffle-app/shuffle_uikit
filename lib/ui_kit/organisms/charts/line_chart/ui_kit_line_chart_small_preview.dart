@@ -185,9 +185,14 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                                   final panLeft = details.delta.dx.isNegative;
                                   double newLeftOffset = 0;
 
+                                  final withinFractionBounds = newWidthFraction >= fractionBounds.first &&
+                                      newWidthFraction <= fractionBounds.last;
+                                  final widthDifference =
+                                      (previewUpdateNotifier.value.previewWidthFraction- newWidthFraction) * size.width ;
+
                                   /// need to change offset based on pan direction
-                                  /// if pan left then we need to increase the offset
-                                  /// if pan right then we need to decrease the offset
+                                  /// if pan right then we need to increase the offset
+                                  /// if pan left then we need to decrease the offset
                                   if (panLeft) {
                                     /// because delta is always negative when panning left
                                     /// we need to use abs to get the positive value
@@ -195,10 +200,17 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                                   } else {
                                     /// there is no need to get the abs value because delta is always positive
                                     /// when panning right
-                                    newLeftOffset = currentLeftOffset + details.delta.dx;
+                                    if (withinFractionBounds && -details.delta.dx < currentLeftOffset) {
+                                      newLeftOffset =
+                                          currentLeftOffset + widthDifference;
+                                    } else {
+                                      newLeftOffset =
+                                          currentLeftOffset + details.delta.dx;
+                                    }
+
+                                    //adding the difference in width to the current offset
                                   }
-                                  final withinFractionBounds = newWidthFraction >= fractionBounds.first &&
-                                      newWidthFraction <= fractionBounds.last;
+
                                   final withinOffsetBounds =
                                       newLeftOffset >= offsetBounds.first && newLeftOffset <= offsetBounds.last;
                                   if (withinFractionBounds && newLeftOffset >= 0) {

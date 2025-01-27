@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/ui_models/charts/ui_kit_mini_chart_data.dart';
 
+import '../../ui_models/charts/chart_data.dart';
+
 extension MiniChartDataExtension on List<UiKitMiniChartData> {
   num get minValue => 0;
 
@@ -30,4 +32,8 @@ extension MiniChartDataItemExtension on List<UiKitMiniChartDataItem> {
   DateTime get maxDate => fold(DateTime.now(), (prev, curr) => prev.isAfter(curr.time) ? prev : curr.time);
 
   num get sum => fold(0, (prev, curr) => prev + curr.value);
+}
+
+extension DateTimeRangeExtension on DateRange {
+  int get days => end.difference(start).inDays;
 }
