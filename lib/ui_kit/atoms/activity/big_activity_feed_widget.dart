@@ -3,12 +3,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class BigActivityFeedWidget extends StatelessWidget {
   final VoidCallback? onTap;
-  final int? myCount;
+  final int? commonCount;
 
   const BigActivityFeedWidget({
     super.key,
     this.onTap,
-    this.myCount,
+    this.commonCount,
   });
 
   @override
@@ -39,7 +39,7 @@ class BigActivityFeedWidget extends StatelessWidget {
                   ),
                   SpacingFoundation.verticalSpace4,
                   Text(
-                    '$myCount',
+                    '$commonCount',
                     style: theme?.regularTextTheme.title1.copyWith(color: textColor),
                   ),
                 ],
