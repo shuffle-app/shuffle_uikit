@@ -490,6 +490,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "CollapseThread":
             MessageLookupByLibrary.simpleMessage("धागा संकुचित करें"),
         "Comments": m12,
+        "Common": MessageLookupByLibrary.simpleMessage("Common"),
         "Company": MessageLookupByLibrary.simpleMessage("कंपनी"),
         "CompanyAnswered":
             MessageLookupByLibrary.simpleMessage("कंपनी ने उत्तर दिया"),
@@ -923,6 +924,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "आपको कम से कम एक वीडियो चुनना होगा"),
         "MustVisitTechnologyConf": MessageLookupByLibrary.simpleMessage(
             "प्रौद्योगिकी सम्मेलन का दौरा करना चाहिए"),
+        "My": MessageLookupByLibrary.simpleMessage("My"),
         "MyBooking": MessageLookupByLibrary.simpleMessage("मेरी बुकिंग"),
         "MyCard": MessageLookupByLibrary.simpleMessage("मेरा कार्ड"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("मेरी घटनाएँ"),
@@ -1671,6 +1673,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "WhatIs": MessageLookupByLibrary.simpleMessage("क्या है"),
         "WhatYouLike":
             MessageLookupByLibrary.simpleMessage("आप को क्या पसंद है"),
+        "WheresTheActivity":
+            MessageLookupByLibrary.simpleMessage("Where\'s the activity?"),
         "WhiteTheme": MessageLookupByLibrary.simpleMessage("सफेद थीम"),
         "WhyDoYouLoveIt": MessageLookupByLibrary.simpleMessage(
             "आप इसे क्यों प्यार करते हैं ?"),

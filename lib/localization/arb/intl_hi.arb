@@ -981,5 +981,8 @@
   "ChangeInSettings": "You can change it in the settings.",
   "WantToChange": "Want to change?",
   "CouldNotFindThisReview": "Couldn't find this review",
-  "ReviewWasSuccessfullyEdited": "Review was successfully edited"
+  "ReviewWasSuccessfullyEdited": "Review was successfully edited",
+  "My": "My",
+  "Common": "Common",
+  "WheresTheActivity": "Where's the activity?"
 }
