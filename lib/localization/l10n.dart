@@ -10091,6 +10091,36 @@ class S {
       args: [],
     );
   }
+
+  /// `My`
+  String get My {
+    return Intl.message(
+      'My',
+      name: 'My',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Common`
+  String get Common {
+    return Intl.message(
+      'Common',
+      name: 'Common',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Where's the activity?`
+  String get WheresTheActivity {
+    return Intl.message(
+      'Where\'s the activity?',
+      name: 'WheresTheActivity',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

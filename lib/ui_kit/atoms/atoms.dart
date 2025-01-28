@@ -125,3 +125,5 @@ export 'user/premium_account_mark.dart';
 export 'user/premium_member_plate.dart';
 export 'user/pro_account_mark.dart';
 export 'user/pro_member_plate.dart';
+export 'activity/big_activity_feed_widget.dart';
+export 'activity/small_activity_feed_widget.dart';

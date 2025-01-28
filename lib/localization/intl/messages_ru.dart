@@ -499,6 +499,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "CollapseThread":
             MessageLookupByLibrary.simpleMessage("Свернуть ветку"),
         "Comments": m12,
+        "Common": MessageLookupByLibrary.simpleMessage("Общий"),
         "Company": MessageLookupByLibrary.simpleMessage("Компания"),
         "CompanyAnswered":
             MessageLookupByLibrary.simpleMessage("Ответ компании"),
@@ -932,6 +933,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Вы должны выбрать хотя бы одно видео"),
         "MustVisitTechnologyConf": MessageLookupByLibrary.simpleMessage(
             "Обязательно посетите технологическую конференцию"),
+        "My": MessageLookupByLibrary.simpleMessage("Мой"),
         "MyBooking": MessageLookupByLibrary.simpleMessage("Мои букинги"),
         "MyCard": MessageLookupByLibrary.simpleMessage("Профиль"),
         "MyEvents": MessageLookupByLibrary.simpleMessage("Мои события"),
@@ -1692,6 +1694,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "WhatIs": MessageLookupByLibrary.simpleMessage("Зачем нужен"),
         "WhatYouLike":
             MessageLookupByLibrary.simpleMessage("Что тебе нравится"),
+        "WheresTheActivity": MessageLookupByLibrary.simpleMessage("Где движ?"),
         "WhiteTheme": MessageLookupByLibrary.simpleMessage("Светлая тема"),
         "WhyDoYouLoveIt": MessageLookupByLibrary.simpleMessage(
             "Почему тебе это так нравится?"),
