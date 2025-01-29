@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class ProfileStats {
+  const ProfileStats();
   String getStringValue(int value) {
     if (value >= 100000) {
       return '99k+';
@@ -26,7 +27,7 @@ class InfluencerStats extends ProfileStats {
   final int reviewsPosted;
   final int points;
 
-  InfluencerStats({required this.placesVisited, required this.reviewsPosted, required this.points});
+  const InfluencerStats({required this.placesVisited, required this.reviewsPosted, required this.points});
 
   @override
   List<ProfileHighlightCard> get profileHighlightCards => [
@@ -123,7 +124,7 @@ class ProProfileStats extends ProfileStats {
   final int reviewsReceived;
   final int bookingsReceived;
 
-  ProProfileStats({required this.eventsCreated, required this.reviewsReceived, required this.bookingsReceived});
+  const ProProfileStats({required this.eventsCreated, required this.reviewsReceived, required this.bookingsReceived});
 
   @override
   List<ProfileHighlightCard> get profileHighlightCards => [

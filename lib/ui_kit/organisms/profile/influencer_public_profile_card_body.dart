@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class InfluencerPublicProfileCardBody extends StatelessWidget {
   final String? name;
@@ -8,7 +9,8 @@ class InfluencerPublicProfileCardBody extends StatelessWidget {
   final String? description;
   final String? avatarUrl;
   final String? speciality;
-  final List<Widget>? socialLinks;
+  final String? phone;
+  final String? email;
   final List<String>? interests;
   final List<String>? matchingInterests;
   final VoidCallback? onShare;
@@ -16,6 +18,9 @@ class InfluencerPublicProfileCardBody extends StatelessWidget {
   final int followers;
   final VoidCallback? onFollow;
   final bool? following;
+  final ValueChanged<String>? onSocialLinksPressed;
+  final List<String>? socialLinks;
+  final DateTime? registrationDate;
 
   const InfluencerPublicProfileCardBody({
     super.key,
@@ -32,12 +37,17 @@ class InfluencerPublicProfileCardBody extends StatelessWidget {
     this.followers = 0,
     this.onFollow,
     this.following,
+    this.phone,
+    this.email,
+    this.onSocialLinksPressed,
+    this.registrationDate,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final boldTextTheme = theme?.boldTextTheme;
+    final regularTextTheme = theme?.regularTextTheme;
     final colorScheme = theme?.colorScheme;
 
     return UiKitCardWrapper(
@@ -46,6 +56,27 @@ class InfluencerPublicProfileCardBody extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          if (registrationDate != null)
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                clipBehavior: Clip.hardEdge,
+                decoration: BoxDecoration(
+                  color: colorScheme?.darkNeutral500.withOpacity(0.16) ??
+                      ColorsFoundation.darkNeutral500.withOpacity(0.16),
+                  borderRadius: BorderRadiusFoundation.all4,
+                ),
+                child: Text(
+                  DateFormat('MMM d, yyyy', Localizations.localeOf(context).languageCode)
+                      .format(registrationDate!)
+                      .replaceAll('.', '')
+                      .capitalize(),
+                  style: regularTextTheme?.caption4Regular.copyWith(color: ColorsFoundation.darkNeutral800),
+                ).paddingSymmetric(
+                    vertical: EdgeInsetsFoundation.vertical2, horizontal: EdgeInsetsFoundation.horizontal4),
+              ),
+            ),
+          SpacingFoundation.verticalSpace8,
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -90,16 +121,6 @@ class InfluencerPublicProfileCardBody extends StatelessWidget {
                   ),
                 ),
               ),
-              SpacingFoundation.horizontalSpace16,
-              if (socialLinks != null)
-                ...socialLinks!.map((e) {
-                  final index = socialLinks!.indexOf(e);
-
-                  return e.paddingOnly(
-                    right:
-                        index != socialLinks!.length - 1 ? EdgeInsetsFoundation.horizontal8 : EdgeInsetsFoundation.zero,
-                  );
-                }),
             ],
           ),
           SpacingFoundation.verticalSpace16,
@@ -137,6 +158,82 @@ class InfluencerPublicProfileCardBody extends StatelessWidget {
             Text(
               description!,
               style: boldTextTheme?.caption1Bold,
+            ),
+          Text(
+            S.current.Contacts,
+            style: regularTextTheme?.labelSmall.copyWith(color: ColorsFoundation.mutedText),
+          ),
+          SpacingFoundation.verticalSpace4,
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Expanded(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    if (phone != null)
+                      GestureDetector(
+                          onTap: () => launchUrlString('tel:+$phone'),
+                          child: Text(
+                            phone!,
+                            style: regularTextTheme?.caption2,
+                          )),
+                    if (email != null)
+                      GestureDetector(
+                          onTap: () => launchUrlString('mailto:$email'),
+                          child: Text(
+                            email!,
+                            style: regularTextTheme?.caption2,
+                          )),
+                  ],
+                ),
+              ),
+              if (socialLinks != null && socialLinks!.isNotEmpty && socialLinks!.length <= 2) ...[
+                SpacingFoundation.horizontalSpace4,
+                ...socialLinks!.map(
+                  (e) {
+                    return context
+                        .smallOutlinedButton(
+                          data: BaseUiKitButtonData(
+                            onPressed: () {
+                              onSocialLinksPressed?.call(e);
+                            },
+                            iconInfo: BaseUiKitButtonIconData(
+                              iconPath: e.iconSvg,
+                              iconData: e.icon,
+                            ),
+                          ),
+                        )
+                        .paddingOnly(right: e != socialLinks?.last ? SpacingFoundation.horizontalSpacing4 : 0);
+                  },
+                ),
+                SpacingFoundation.horizontalSpace4,
+              ],
+            ],
+          ),
+          SpacingFoundation.verticalSpace16,
+          if (socialLinks != null && socialLinks!.isNotEmpty && socialLinks!.length > 2)
+            Wrap(
+              alignment: WrapAlignment.spaceBetween,
+              children: socialLinks?.map(
+                    (e) {
+                      return context
+                          .smallOutlinedButton(
+                            data: BaseUiKitButtonData(
+                              onPressed: () {
+                                onSocialLinksPressed?.call(e);
+                              },
+                              iconInfo: BaseUiKitButtonIconData(
+                                iconPath: e.iconSvg,
+                                iconData: e.icon,
+                              ),
+                            ),
+                          )
+                          .paddingOnly(right: e != socialLinks?.last ? SpacingFoundation.horizontalSpacing4 : 0);
+                    },
+                  ).toList() ??
+                  [],
             ),
         ],
       ).paddingAll(EdgeInsetsFoundation.all16),

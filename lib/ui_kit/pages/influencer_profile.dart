@@ -171,24 +171,24 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
               avatarUrl: GraphicsFoundation.instance.png.profileAvatar.path,
               speciality: 'Entertainment specialist',
               hasAchievements: true,
-              socialLinks: [
-                context.smallOutlinedButton(
-                  data: BaseUiKitButtonData(
-                    onPressed: () {},
-                    iconInfo: BaseUiKitButtonIconData(
-                      iconData: ShuffleUiKitIcons.socialtelegram,
-                    ),
-                  ),
-                ),
-                context.smallOutlinedButton(
-                  data: BaseUiKitButtonData(
-                    onPressed: () {},
-                    iconInfo: BaseUiKitButtonIconData(
-                      iconData: ShuffleUiKitIcons.socialinstagram,
-                    ),
-                  ),
-                ),
-              ],
+              // socialLinks: [
+              //   context.smallOutlinedButton(
+              //     data: BaseUiKitButtonData(
+              //       onPressed: () {},
+              //       iconInfo: BaseUiKitButtonIconData(
+              //         iconData: ShuffleUiKitIcons.socialtelegram,
+              //       ),
+              //     ),
+              //   ),
+              //   context.smallOutlinedButton(
+              //     data: BaseUiKitButtonData(
+              //       onPressed: () {},
+              //       iconInfo: BaseUiKitButtonIconData(
+              //         iconData: ShuffleUiKitIcons.socialinstagram,
+              //       ),
+              //     ),
+              //   ),
+              // ],
               interests: const ['Restaurants', 'Hookah', 'Roller Coaster', 'Swimmings'],
               matchingInterests: const ['Restaurants'],
               onShare: () {},
