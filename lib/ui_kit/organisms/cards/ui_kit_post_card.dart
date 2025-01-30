@@ -22,7 +22,7 @@ class UiKitPostCard extends StatelessWidget {
   final VoidCallback? onLongPress;
   final VoidCallback? onSharePress;
   final VoidCallback? onProfilePress;
-  final String createdAt;
+  final ViewShareDate? viewShareDate;
   final ValueNotifier<bool>? showTranslateButton;
   final ValueNotifier<String>? translateText;
 
@@ -49,7 +49,7 @@ class UiKitPostCard extends StatelessWidget {
     this.onLongPress,
     this.onSharePress,
     this.onProfilePress,
-    this.createdAt = '',
+    this.viewShareDate,
     this.showTranslateButton,
     this.translateText,
     this.isPinned = false,
@@ -169,15 +169,6 @@ class UiKitPostCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      UiKitCardWrapper(
-                        color: colorScheme?.darkNeutral900,
-                        borderRadius: BorderRadiusFoundation.max,
-                        padding: EdgeInsets.symmetric(
-                          horizontal: SpacingFoundation.horizontalSpacing4,
-                          vertical: SpacingFoundation.verticalSpacing2,
-                        ),
-                        child: Text(createdAt, style: regularTextTheme?.caption4),
-                      ),
                       if (showTranslateButton != null)
                         ValueListenableBuilder<bool>(
                           valueListenable: isTranslate,
@@ -186,11 +177,7 @@ class UiKitPostCard extends StatelessWidget {
                             child: showTranslateButton!.value
                                 ? Text(
                                     isTranslating ? S.of(context).Original : S.of(context).Translate,
-                                    style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
-                                      color: isLightTheme
-                                          ? ColorsFoundation.darkNeutral700
-                                          : ColorsFoundation.darkNeutral300,
-                                    ),
+                                    style: context.uiKitTheme?.regularTextTheme.caption4Semibold,
                                   )
                                 : const SizedBox.shrink(),
                           ),
@@ -217,9 +204,9 @@ class UiKitPostCard extends StatelessWidget {
                                     isOverlayVisible = false;
                                     hideReactionOverlay(overlayEntry);
                                   },
-                                  child: const ImageWidget(
+                                  child: ImageWidget(
                                     iconData: ShuffleUiKitIcons.thumbup,
-                                    color: ColorsFoundation.mutedText,
+                                    color: colorScheme?.inversePrimary,
                                   ),
                                 );
                               },
@@ -287,6 +274,9 @@ class UiKitPostCard extends StatelessWidget {
                             ),
                     ],
                   ),
+                  if (viewShareDate != null)
+                    UiKitViewShareDateWidget(viewShareDate: viewShareDate!)
+                        .paddingOnly(top: SpacingFoundation.verticalSpacing16),
                 ],
               ),
             ),
