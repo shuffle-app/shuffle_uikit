@@ -177,7 +177,7 @@ class UiKitPostCard extends StatelessWidget {
                             child: showTranslateButton!.value
                                 ? Text(
                                     isTranslating ? S.of(context).Original : S.of(context).Translate,
-                                    style: context.uiKitTheme?.regularTextTheme.caption4Semibold,
+                                    style: regularTextTheme?.caption4Semibold,
                                   )
                                 : const SizedBox.shrink(),
                           ),
