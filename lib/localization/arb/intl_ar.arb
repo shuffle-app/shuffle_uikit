@@ -983,5 +983,16 @@
   "ChangeInSettings": "You can change it in the settings.",
   "WantToChange": "Want to change?",
   "CouldNotFindThisReview": "Couldn't find this review",
-  "ReviewWasSuccessfullyEdited": "Review was successfully edited"
+  "ReviewWasSuccessfullyEdited": "Review was successfully edited",
+  "ShowUpRatio": "Show up ratio",
+  "BookingPopUpText": "Show up ratio takes into account how long a user has been online, whether they have notifications enabled, and their no-show ratio",
+  "NoShows": "No shows",
+  "NoShowsRatioTakesIntoAccount": "No shows ratio takes into account the no show ratios for all users",
+  "ShowUp": "Show up",
+  "YourShowUpRatio": "Your Show up ratio",
+  "IsOverX": "is over {x}%", 
+  "KeepItUp": "Keep it up! Use our tools to improve it even more",
+  "YourTurnoutRate": "Your turnout rate",
+  "IsLessThanX": "Is less than {x}%",
+  "UseOurToolsToImproveIt": "Use our tools to improve it"
 }

@@ -10091,6 +10091,116 @@ class S {
       args: [],
     );
   }
+
+  /// `Show up ratio`
+  String get ShowUpRatio {
+    return Intl.message(
+      'Show up ratio',
+      name: 'ShowUpRatio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show up ratio takes into account how long a user has been online, whether they have notifications enabled, and their no-show ratio`
+  String get BookingPopUpText {
+    return Intl.message(
+      'Show up ratio takes into account how long a user has been online, whether they have notifications enabled, and their no-show ratio',
+      name: 'BookingPopUpText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No shows`
+  String get NoShows {
+    return Intl.message(
+      'No shows',
+      name: 'NoShows',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No shows ratio takes into account the no show ratios for all users`
+  String get NoShowsRatioTakesIntoAccount {
+    return Intl.message(
+      'No shows ratio takes into account the no show ratios for all users',
+      name: 'NoShowsRatioTakesIntoAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show up`
+  String get ShowUp {
+    return Intl.message(
+      'Show up',
+      name: 'ShowUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Show up ratio`
+  String get YourShowUpRatio {
+    return Intl.message(
+      'Your Show up ratio',
+      name: 'YourShowUpRatio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `is over {x}%`
+  String IsOverX(Object x) {
+    return Intl.message(
+      'is over $x%',
+      name: 'IsOverX',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `Keep it up! Use our tools to improve it even more`
+  String get KeepItUp {
+    return Intl.message(
+      'Keep it up! Use our tools to improve it even more',
+      name: 'KeepItUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your turnout rate`
+  String get YourTurnoutRate {
+    return Intl.message(
+      'Your turnout rate',
+      name: 'YourTurnoutRate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Is less than {x}%`
+  String IsLessThanX(Object x) {
+    return Intl.message(
+      'Is less than $x%',
+      name: 'IsLessThanX',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `Use our tools to improve it`
+  String get UseOurToolsToImproveIt {
+    return Intl.message(
+      'Use our tools to improve it',
+      name: 'UseOurToolsToImproveIt',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
