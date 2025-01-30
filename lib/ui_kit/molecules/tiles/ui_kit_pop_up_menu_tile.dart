@@ -7,6 +7,7 @@ class UiKitPopUpMenuTile extends StatelessWidget {
   final Widget? titleIcon;
   final Widget? leading;
   final List<UiKitPopUpMenuButtonOption>? menuOptions;
+  final Widget? noShows;
 
   const UiKitPopUpMenuTile({
     super.key,
@@ -15,6 +16,7 @@ class UiKitPopUpMenuTile extends StatelessWidget {
     this.titleIcon,
     this.leading,
     this.menuOptions,
+    this.noShows,
   });
 
   @override
@@ -31,6 +33,7 @@ class UiKitPopUpMenuTile extends StatelessWidget {
       ),
       leading: leading,
       trailing: menuOptions == null ? const SizedBox.shrink() : UiKitPopUpMenuButton(options: menuOptions!),
+      noShows: noShows,
     );
   }
 }
