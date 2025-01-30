@@ -21,7 +21,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
   final ValueChanged<String>? onReactionsTapped;
   final VoidCallback? onLongPress;
   final VoidCallback? onSharePress;
-  final String createdAt;
+  final ViewShareDate? viewShareDate;
   final ValueNotifier<bool>? showTranslateButton;
   final ValueNotifier<String>? translateText;
 
@@ -48,7 +48,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     this.onReactionsTapped,
     this.onLongPress,
     this.onSharePress,
-    this.createdAt = '',
+    this.viewShareDate,
     this.showTranslateButton,
     this.translateText,
     this.isPinned = false,
@@ -69,7 +69,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     int? fireReactionsCount,
     int? sunglassesReactionsCount,
     int? smileyReactionsCount,
-    String? createdAt,
+    ViewShareDate? viewShareDate,
     ValueNotifier<bool>? showTranslateButton,
     ValueNotifier<String>? translateText,
     bool isPinned = false,
@@ -91,7 +91,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
         onReactionsTapped: onReactionsTapped,
         onLongPress: onLongPress,
         onSharePress: onSharePress,
-        createdAt: createdAt ?? '',
+        viewShareDate: viewShareDate,
         showTranslateButton: showTranslateButton,
         translateText: translateText,
         isPinned: isPinned,
@@ -112,7 +112,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
       additionalSpacingForComment += linesCount * (kIsWeb ? 15 : 18.h);
     }
     // if (hasReactions) {
-    reactionsSpacing += SpacingFoundation.verticalSpacing8 + SpacingFoundation.verticalSpacing20;
+    reactionsSpacing += SpacingFoundation.verticalSpacing16 + SpacingFoundation.verticalSpacing24;
     // }
     // if (showTranslateButton != null && showTranslateButton!.value) {
     //   translateButtonSpacing += SpacingFoundation.verticalSpacing32;
@@ -121,7 +121,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     return children.fold(0.0, (previousValue, element) => previousValue + element.height) +
         ((children.length + 2) * SpacingFoundation.verticalSpacing24) +
         (kIsWeb ? 17 : 0.152.sw) +
-        EdgeInsetsFoundation.vertical24 +
+        EdgeInsetsFoundation.vertical32 +
         reactionsSpacing +
         additionalSpacingForComment;
     // translateButtonSpacing;
@@ -207,13 +207,6 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  UiKitCardWrapper(
-                    color: colorScheme?.darkNeutral900,
-                    borderRadius: BorderRadiusFoundation.max,
-                    padding: EdgeInsets.symmetric(
-                        horizontal: SpacingFoundation.horizontalSpacing4, vertical: SpacingFoundation.verticalSpacing2),
-                    child: Text(createdAt, style: regularTextTheme?.caption4),
-                  ),
                   if (showTranslateButton != null)
                     ValueListenableBuilder<bool>(
                       valueListenable: isTranslate,
@@ -222,10 +215,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                         child: showTranslateButton!.value
                             ? Text(
                                 isTranslating ? S.of(context).Original : S.of(context).Translate,
-                                style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
-                                  color:
-                                      isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
-                                ),
+                                style: regularTextTheme?.caption4Semibold,
                               )
                             : const SizedBox.shrink(),
                       ),
@@ -251,9 +241,9 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                               isOverlayVisible = false;
                               hideReactionOverlay(overlayEntry);
                             },
-                            child: const ImageWidget(
+                            child: ImageWidget(
                               iconData: ShuffleUiKitIcons.thumbup,
-                              color: ColorsFoundation.mutedText,
+                              color: colorScheme?.inversePrimary,
                             ),
                           ),
                         )
@@ -317,7 +307,10 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                           ),
                         ),
                 ],
-              )
+              ),
+              if (viewShareDate != null)
+                UiKitViewShareDateWidget(viewShareDate: viewShareDate!)
+                    .paddingOnly(top: SpacingFoundation.verticalSpacing16),
             ],
           ).paddingAll(EdgeInsetsFoundation.all16)
         : Column(

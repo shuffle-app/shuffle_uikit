@@ -24,7 +24,11 @@ class UiKitEmojiReaction extends StatelessWidget {
           reactionsFormatter(reactionsCount),
           style: regularTextTheme?.caption2.copyWith(color: textColor),
         ),
-        ImageWidget(svgAsset: iconSvgGen),
+        ImageWidget(
+          height: 16.h,
+          svgAsset: iconSvgGen,
+          fit: BoxFit.fill,
+        ),
       ],
     );
   }

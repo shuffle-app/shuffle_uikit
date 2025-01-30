@@ -150,3 +150,4 @@ export 'photo_viewer/photo_viewer_page.dart';
 export 'photo_viewer/pop_up_photo_view.dart';
 export 'pinned_publication/pinned_publication.dart';
 export 'feed/fill_for_feed_widget.dart';
+export 'feed/ui_kit_view_share_date_widget.dart';

@@ -11,7 +11,7 @@ class UiKitDigestCard extends StatelessWidget {
   final List<DigestUiModel>? digestUiModels;
   final VoidCallback? onReadTap;
   final ValueChanged<String>? onReactionsTapped;
-  final String createdAt;
+  final ViewShareDate? viewShareDate;
   final VoidCallback? onSharePress;
   final int? heartEyesReactionsCount;
   final int? likeReactionsCount;
@@ -43,7 +43,7 @@ class UiKitDigestCard extends StatelessWidget {
     this.sunglassesReactionsCount,
     this.smileyReactionsCount,
     this.onReactionsTapped,
-    this.createdAt = '',
+    this.viewShareDate,
     this.showTranslateButton,
     this.titleTranslateText,
     this.underTitleTranslateText,
@@ -246,21 +246,6 @@ class UiKitDigestCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              if (createdAt.isNotEmpty)
-                UiKitCardWrapper(
-                  color: colorScheme?.darkNeutral900,
-                  borderRadius: BorderRadiusFoundation.max,
-                  padding: EdgeInsets.symmetric(
-                    horizontal: SpacingFoundation.horizontalSpacing4,
-                    vertical: SpacingFoundation.verticalSpacing2,
-                  ),
-                  child: Text(
-                    createdAt,
-                    style: regularTextTheme?.caption4,
-                  ),
-                )
-              else
-                const SizedBox.shrink(),
               if (showTranslateButton != null)
                 ValueListenableBuilder<bool>(
                   valueListenable: isTranslate,
@@ -269,9 +254,7 @@ class UiKitDigestCard extends StatelessWidget {
                     child: showTranslateButton!.value
                         ? Text(
                             isTranslating ? S.of(context).Original : S.of(context).Translate,
-                            style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
-                              color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
-                            ),
+                            style: regularTextTheme?.caption4Semibold,
                           )
                         : const SizedBox.shrink(),
                   ),
@@ -297,9 +280,9 @@ class UiKitDigestCard extends StatelessWidget {
                           isOverlayVisible = false;
                           hideReactionOverlay(overlayEntry);
                         },
-                        child: const ImageWidget(
+                        child: ImageWidget(
                           iconData: ShuffleUiKitIcons.thumbup,
-                          color: ColorsFoundation.mutedText,
+                          color: colorScheme?.inversePrimary,
                         ),
                       ),
                     )
@@ -364,6 +347,9 @@ class UiKitDigestCard extends StatelessWidget {
                     ),
             ],
           ),
+          if (viewShareDate != null)
+            UiKitViewShareDateWidget(viewShareDate: viewShareDate!)
+                .paddingOnly(top: SpacingFoundation.verticalSpacing16),
         ],
       ).paddingAll(EdgeInsetsFoundation.all16);
     }
