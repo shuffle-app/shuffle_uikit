@@ -3,6 +3,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class ProfileStats {
   const ProfileStats();
+
   String getStringValue(int value) {
     if (value >= 100000) {
       return '99k+';
@@ -56,7 +57,7 @@ class InfluencerStats extends ProfileStats {
     final TextStyle? titleStyle = theme?.regularTextTheme.caption2.copyWith(color: colorScheme?.grayForegroundColor);
     return [
       UiKitCardWrapper(
-        borderRadius: BorderRadiusFoundation.all8,
+          borderRadius: BorderRadiusFoundation.all8,
           color: colorScheme?.surface2,
           padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
           child: Row(

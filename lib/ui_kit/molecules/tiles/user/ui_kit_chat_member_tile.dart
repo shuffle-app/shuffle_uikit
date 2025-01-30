@@ -12,7 +12,7 @@ class UiKitChatMemberUserTile extends StatelessWidget {
   final bool invertThemeColors;
 
   const UiKitChatMemberUserTile({
-    Key? key,
+    super.key,
     required this.name,
     required this.nickname,
     required this.userType,
@@ -21,7 +21,7 @@ class UiKitChatMemberUserTile extends StatelessWidget {
     this.invertThemeColors = false,
     this.avatarPath,
     this.onDelete,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

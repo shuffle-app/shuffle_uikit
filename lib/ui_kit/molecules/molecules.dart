@@ -98,6 +98,7 @@ export 'swiper/ui_kit_swiper_card_info.dart';
 export 'tab_bar/ui_kit_badged_custom_tab.dart';
 export 'tab_bar/ui_kit_custom_tab.dart';
 export 'tiles/ui_kit_action_card_tile.dart';
+export 'tiles/ui_kit_public_chat_tile.dart';
 export 'tiles/ui_kit_blurred_list_tile.dart';
 export 'tiles/ui_kit_content_preview_tile.dart';
 export 'tiles/ui_kit_content_type_colored_tile.dart';
