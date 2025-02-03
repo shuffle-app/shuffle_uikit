@@ -988,6 +988,9 @@
   "Common": "Общий",
   "WheresTheActivity": "Где движ?",
   "ChatName": "Название чата",
-  "Admin": "Админ"
+  "Admin": "Админ",
+  "YouAskedToBeAddedToTheChat": "Вы запросили добавиться в чат",
+  "WaitAdminResponse": "Ждите ответа админа чата",
+  "PrivateChatApply": "Приватный чат. Пожалуйста, подайте заявку на вход, нажав"
 }
 

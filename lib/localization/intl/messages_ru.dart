@@ -1348,6 +1348,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PrivacyPolicy": MessageLookupByLibrary.simpleMessage(
       "Политика конфиденциальности",
     ),
+    "PrivateChatApply": MessageLookupByLibrary.simpleMessage(
+      "Приватный чат. Пожалуйста, подайте заявку на вход, нажав",
+    ),
     "Pro": MessageLookupByLibrary.simpleMessage("Pro"),
     "ProAccount": MessageLookupByLibrary.simpleMessage("Pro аккаунт"),
     "ProSubscriptionFeature1": MessageLookupByLibrary.simpleMessage(
@@ -1932,6 +1935,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Visitors": MessageLookupByLibrary.simpleMessage("Визиты"),
     "Voice": MessageLookupByLibrary.simpleMessage("Аудиосообщения"),
     "Voices": MessageLookupByLibrary.simpleMessage("Голосовые записи"),
+    "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
+      "Ждите ответа админа чата",
+    ),
     "WantToChange": MessageLookupByLibrary.simpleMessage("Хотите изменить?"),
     "WeBringStillLifes": MessageLookupByLibrary.simpleMessage(
       "Подвозим натюрморты",
@@ -1990,6 +1996,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Yes": MessageLookupByLibrary.simpleMessage("Да"),
     "Yesterday": MessageLookupByLibrary.simpleMessage("Вчера"),
     "You": MessageLookupByLibrary.simpleMessage("Ты"),
+    "YouAskedToBeAddedToTheChat": MessageLookupByLibrary.simpleMessage(
+      "Вы запросили добавиться в чат",
+    ),
     "YouBetterCheckThisOut": MessageLookupByLibrary.simpleMessage(
       "Тебе лучше взглянуть",
     ),

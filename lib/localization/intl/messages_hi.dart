@@ -1348,6 +1348,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Privacy": MessageLookupByLibrary.simpleMessage("गोपनीयता"),
     "PrivacyPolicy": MessageLookupByLibrary.simpleMessage("गोपनीयता नीति"),
+    "PrivateChatApply": MessageLookupByLibrary.simpleMessage(
+      "Private chat. Please apply by pressing",
+    ),
     "Pro": MessageLookupByLibrary.simpleMessage("प्रो"),
     "ProAccount": MessageLookupByLibrary.simpleMessage("प्रो खाता"),
     "ProSubscriptionFeature1": MessageLookupByLibrary.simpleMessage(
@@ -1942,6 +1945,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Visitors": MessageLookupByLibrary.simpleMessage("आगंतुक"),
     "Voice": MessageLookupByLibrary.simpleMessage("आवाज़"),
     "Voices": MessageLookupByLibrary.simpleMessage("आवाज़ें"),
+    "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
+      "Wait for the admin\'s response",
+    ),
     "WantToChange": MessageLookupByLibrary.simpleMessage("Want to change?"),
     "WeBringStillLifes": MessageLookupByLibrary.simpleMessage(
       "We bring still lifes",
@@ -2006,6 +2012,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Yes": MessageLookupByLibrary.simpleMessage("हाँ"),
     "Yesterday": MessageLookupByLibrary.simpleMessage("कल"),
     "You": MessageLookupByLibrary.simpleMessage("आप"),
+    "YouAskedToBeAddedToTheChat": MessageLookupByLibrary.simpleMessage(
+      "You asked to be added to the chat",
+    ),
     "YouBetterCheckThisOut": MessageLookupByLibrary.simpleMessage(
       "बेहतर होगा कि आप इसकी जांच कर लें",
     ),

@@ -988,5 +988,8 @@
   "Common": "Common",
   "WheresTheActivity": "Where's the activity?",
   "ChatName": "Chat name",
-  "Admin": "Admin"
+  "Admin": "Admin",
+  "YouAskedToBeAddedToTheChat": "You asked to be added to the chat",
+  "WaitAdminResponse": "Wait for the admin's response",
+  "PrivateChatApply": "Private chat. Please apply by pressing"
 }
