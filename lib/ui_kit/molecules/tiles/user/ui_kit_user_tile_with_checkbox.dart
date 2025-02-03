@@ -85,7 +85,7 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                             imageUrl: widget.avatarLink,
                             type: widget.userTileType ?? UserTileType.ordinary,
                             userName: widget.name),
-                        if (widget.handShake != null)
+                        if (widget.handShake == true)
                           Positioned(
                             bottom: -1,
                             right: 3,
