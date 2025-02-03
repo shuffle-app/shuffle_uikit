@@ -989,5 +989,7 @@
   "Admin": "Admin",
   "YouAskedToBeAddedToTheChat": "You asked to be added to the chat",
   "WaitAdminResponse": "Wait for the admin's response",
-  "PrivateChatApply": "Private chat. Please apply by pressing"
+  "PrivateChatApply": "Private chat. Please apply by pressing",
+  "SelectCity": "Select city",
+  "City": "City"
 }
