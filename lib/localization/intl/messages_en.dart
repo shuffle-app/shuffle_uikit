@@ -363,6 +363,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "AddYourselfToList":
             MessageLookupByLibrary.simpleMessage("Add yourself to list"),
         "Address": MessageLookupByLibrary.simpleMessage("Address"),
+        "Admin": MessageLookupByLibrary.simpleMessage("Admin"),
         "Age": MessageLookupByLibrary.simpleMessage("Age"),
         "Album": MessageLookupByLibrary.simpleMessage("Album"),
         "Albums": MessageLookupByLibrary.simpleMessage("Albums"),
@@ -473,6 +474,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Changing schedule type will wipe all data in this form!"),
         "Chat": MessageLookupByLibrary.simpleMessage("Chat"),
         "ChatDeletionAndCreationMessage": m9,
+        "ChatName": MessageLookupByLibrary.simpleMessage("Chat name"),
         "CheckIn": MessageLookupByLibrary.simpleMessage("Check in"),
         "CheckInHiwHint": m10,
         "CheckInHiwSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -1165,6 +1167,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Printing a calendar"),
         "Privacy": MessageLookupByLibrary.simpleMessage("Privacy"),
         "PrivacyPolicy": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+        "PrivateChatApply": MessageLookupByLibrary.simpleMessage(
+            "Private chat. Please apply by pressing"),
         "Pro": MessageLookupByLibrary.simpleMessage("Pro"),
         "ProAccount": MessageLookupByLibrary.simpleMessage("Pro account"),
         "ProSubscriptionFeature1":
@@ -1642,6 +1646,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Visitors": MessageLookupByLibrary.simpleMessage("Visitors"),
         "Voice": MessageLookupByLibrary.simpleMessage("Voice"),
         "Voices": MessageLookupByLibrary.simpleMessage("Voices"),
+        "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
+            "Wait for the admin\'s response"),
         "WantToChange": MessageLookupByLibrary.simpleMessage("Want to change?"),
         "WeBringStillLifes":
             MessageLookupByLibrary.simpleMessage("We bring still lifes"),
@@ -1695,6 +1701,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
         "Yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
         "You": MessageLookupByLibrary.simpleMessage("You"),
+        "YouAskedToBeAddedToTheChat": MessageLookupByLibrary.simpleMessage(
+            "You asked to be added to the chat"),
         "YouBetterCheckThisOut":
             MessageLookupByLibrary.simpleMessage("You better check this out"),
         "YouCanGet": MessageLookupByLibrary.simpleMessage("You can get"),

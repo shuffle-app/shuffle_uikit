@@ -12,6 +12,7 @@ class UiKitMessageCard extends StatefulWidget {
     required this.lastMessageTime,
     required this.onTap,
     this.lastMessageSenderName,
+    this.chatName,
     this.subtitleIconPath,
     this.unreadMessageCount,
     this.disabled = false,
@@ -20,6 +21,7 @@ class UiKitMessageCard extends StatefulWidget {
 
   final String name;
   final String? lastMessageSenderName;
+  final String? chatName;
   final String subtitle;
   final String? subtitleIconPath;
   final String lastMessage;
@@ -91,73 +93,96 @@ class _UiKitMessageCardState extends State<UiKitMessageCard> {
                     children: [
                       Opacity(
                         opacity: widget.disabled ? 0.5 : 1.0,
-                        child: Row(
-                          children: [
-                            context.userAvatar(
-                              size: UserAvatarSize.x40x40,
-                              type: widget.userType,
-                              userName: widget.name,
-                              imageUrl: widget.avatarPath,
-                            ),
-                            SpacingFoundation.horizontalSpace12,
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          children: [
-                                            Flexible(
-                                              child: Text(
-                                                widget.name,
-                                                style: boldTextTheme?.caption1Medium
-                                                    .copyWith(overflow: TextOverflow.ellipsis),
-                                                maxLines: 2,
+                        child: Column(children: [
+                          if (widget.chatName != null)
+                            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                              Text(
+                                widget.chatName!,
+                                style: boldTextTheme?.caption1Bold.copyWith(overflow: TextOverflow.ellipsis),
+                                maxLines: 1,
+                              ),
+                              Text(
+                                widget.lastMessageTime,
+                                style: regularTextTheme?.caption4.copyWith(
+                                  color: colorScheme?.darkNeutral900,
+                                ),
+                                textAlign: TextAlign.end,
+                              ),
+                            ]).paddingOnly(bottom: SpacingFoundation.verticalSpacing4),
+                          Row(
+                            children: [
+                              context.userAvatar(
+                                size: UserAvatarSize.x40x40,
+                                type: widget.userType,
+                                userName: widget.name,
+                                imageUrl: widget.avatarPath,
+                              ),
+                              SpacingFoundation.horizontalSpace12,
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: Row(
+                                            children: [
+                                              Flexible(
+                                                child: Text(
+                                                  widget.name,
+                                                  style: (widget.chatName != null
+                                                          ? boldTextTheme?.caption2Bold
+                                                          : boldTextTheme?.caption1Medium)
+                                                      ?.copyWith(overflow: TextOverflow.ellipsis),
+                                                  maxLines: 2,
+                                                ),
                                               ),
-                                            ),
-                                            SpacingFoundation.horizontalSpace4,
-                                            UiKitUserBadge(userType: widget.userType),
-                                            SpacingFoundation.horizontalSpace4,
-                                          ],
-                                        ),
-                                      ),
-                                      Text(
-                                        widget.lastMessageTime,
-                                        style: regularTextTheme?.caption4.copyWith(
-                                          color: colorScheme?.darkNeutral900,
-                                        ),
-                                        textAlign: TextAlign.end,
-                                      ),
-                                    ],
-                                  ),
-                                  SpacingFoundation.verticalSpace2,
-                                  Row(
-                                    children: [
-                                      if (widget.subtitleIconPath != null)
-                                        ImageWidget(
-                                          link: widget.subtitleIconPath,
-                                          height: 14.h,
-                                          fit: BoxFit.fitHeight,
-                                          color: colorScheme?.darkNeutral900,
-                                        ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
-                                      Flexible(
-                                        child: Text(
-                                          widget.subtitle,
-                                          style: boldTextTheme?.caption1Bold.copyWith(
-                                            color: colorScheme?.darkNeutral900,
-                                            overflow: TextOverflow.ellipsis,
+                                              SpacingFoundation.horizontalSpace4,
+                                              UiKitUserBadge(userType: widget.userType),
+                                              SpacingFoundation.horizontalSpace4,
+                                            ],
                                           ),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
+                                        if (widget.chatName == null)
+                                          Text(
+                                            widget.lastMessageTime,
+                                            style: regularTextTheme?.caption4.copyWith(
+                                              color: colorScheme?.darkNeutral900,
+                                            ),
+                                            textAlign: TextAlign.end,
+                                          ),
+                                      ],
+                                    ),
+                                    SpacingFoundation.verticalSpace2,
+                                    Row(
+                                      children: [
+                                        if (widget.subtitleIconPath != null)
+                                          ImageWidget(
+                                            link: widget.subtitleIconPath,
+                                            height: 14.h,
+                                            fit: BoxFit.fitHeight,
+                                            color: colorScheme?.darkNeutral900,
+                                          ).paddingOnly(right: EdgeInsetsFoundation.horizontal4),
+                                        Flexible(
+                                          child: Text(
+                                            widget.subtitle,
+                                            style: (widget.chatName != null
+                                                    ? boldTextTheme?.caption2Bold
+                                                    : boldTextTheme?.caption1Bold)
+                                                ?.copyWith(
+                                              color: colorScheme?.darkNeutral900,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
+                            ],
+                          )
+                        ]),
                       ),
                       SpacingFoundation.verticalSpace4,
                       Row(

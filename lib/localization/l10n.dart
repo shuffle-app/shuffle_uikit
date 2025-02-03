@@ -10122,6 +10122,56 @@ class S {
     );
   }
 
+  /// `Chat name`
+  String get ChatName {
+    return Intl.message(
+      'Chat name',
+      name: 'ChatName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Admin`
+  String get Admin {
+    return Intl.message(
+      'Admin',
+      name: 'Admin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You asked to be added to the chat`
+  String get YouAskedToBeAddedToTheChat {
+    return Intl.message(
+      'You asked to be added to the chat',
+      name: 'YouAskedToBeAddedToTheChat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wait for the admin's response`
+  String get WaitAdminResponse {
+    return Intl.message(
+      'Wait for the admin\'s response',
+      name: 'WaitAdminResponse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Private chat. Please apply by pressing`
+  String get PrivateChatApply {
+    return Intl.message(
+      'Private chat. Please apply by pressing',
+      name: 'PrivateChatApply',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Select city`
   String get SelectCity {
     return Intl.message(
