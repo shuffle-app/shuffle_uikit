@@ -986,5 +986,7 @@
   "ReviewWasSuccessfullyEdited": "Review was successfully edited",
   "My": "My",
   "Common": "Common",
-  "WheresTheActivity": "Where's the activity?"
+  "WheresTheActivity": "Where's the activity?",
+  "SelectCity": "Select city",
+  "City": "City"
 }

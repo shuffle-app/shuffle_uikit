@@ -484,6 +484,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ChooseYourself":
             MessageLookupByLibrary.simpleMessage("Choose yourself"),
         "Christianity": MessageLookupByLibrary.simpleMessage("Christianity"),
+        "City": MessageLookupByLibrary.simpleMessage("City"),
         "CityXWasDetected": m11,
         "ClickEnterToSearch":
             MessageLookupByLibrary.simpleMessage("Click Enter to search"),
@@ -1312,6 +1313,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Seeking wanderer"),
         "SeekingWandererWom":
             MessageLookupByLibrary.simpleMessage("Seeking wanderer"),
+        "SelectCity": MessageLookupByLibrary.simpleMessage("Select city"),
         "SelectCurrency":
             MessageLookupByLibrary.simpleMessage("Select currency"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("Select date"),

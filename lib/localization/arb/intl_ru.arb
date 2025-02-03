@@ -986,6 +986,8 @@
   "ReviewWasSuccessfullyEdited": "Отзыв был успешно изменён",
   "My": "Мой",
   "Common": "Общий",
-  "WheresTheActivity": "Где движ?"
+  "WheresTheActivity": "Где движ?",
+  "SelectCity": "Выберите город",
+  "City": "Город"
 }
 

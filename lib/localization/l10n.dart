@@ -10121,6 +10121,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Select city`
+  String get SelectCity {
+    return Intl.message(
+      'Select city',
+      name: 'SelectCity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `City`
+  String get City {
+    return Intl.message(
+      'City',
+      name: 'City',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

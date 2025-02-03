@@ -483,6 +483,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ChooseOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),
         "ChooseYourself": MessageLookupByLibrary.simpleMessage("खुद को चुनें"),
         "Christianity": MessageLookupByLibrary.simpleMessage("ईसाई धर्म"),
+        "City": MessageLookupByLibrary.simpleMessage("City"),
         "CityXWasDetected": m11,
         "ClickEnterToSearch": MessageLookupByLibrary.simpleMessage(
             "क्लिक करें दर्ज खोज करने के लिए"),
@@ -1324,6 +1325,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("खोज रहा है वैंडरर"),
         "SeekingWandererWom":
             MessageLookupByLibrary.simpleMessage("खोज रही है वैंडरर"),
+        "SelectCity": MessageLookupByLibrary.simpleMessage("Select city"),
         "SelectCurrency": MessageLookupByLibrary.simpleMessage("मुद्रा चुनें"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("तारीख़ चुनें"),
         "SelectDateRange":

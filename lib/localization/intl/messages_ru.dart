@@ -492,6 +492,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ChooseOption": MessageLookupByLibrary.simpleMessage("Выбери"),
         "ChooseYourself": MessageLookupByLibrary.simpleMessage("Выбери себя"),
         "Christianity": MessageLookupByLibrary.simpleMessage("Христианство"),
+        "City": MessageLookupByLibrary.simpleMessage("Город"),
         "CityXWasDetected": m11,
         "ClickEnterToSearch":
             MessageLookupByLibrary.simpleMessage("Нажми Ввод для поиска"),
@@ -1338,6 +1339,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Ищущий странник"),
         "SeekingWandererWom":
             MessageLookupByLibrary.simpleMessage("Ищущая странница"),
+        "SelectCity": MessageLookupByLibrary.simpleMessage("Выберите город"),
         "SelectCurrency": MessageLookupByLibrary.simpleMessage("Выбери валюту"),
         "SelectDate": MessageLookupByLibrary.simpleMessage("Выбери дату"),
         "SelectDateRange":
