@@ -108,6 +108,7 @@ export 'reactions/ui_kit_heart_eyes_reaction.dart';
 export 'reactions/ui_kit_like_reaction.dart';
 export 'reactions/ui_kit_smiley_reaction.dart';
 export 'reactions/ui_kit_sunglasses_reaction.dart';
+export 'reactions/ui_kit_column_statistic_reaction.dart';
 export 'user/avatars/ui_kit_user_avatar_120_x_120.dart';
 export 'user/avatars/ui_kit_user_avatar_20_x_20.dart';
 export 'user/avatars/ui_kit_user_avatar_24_x_24.dart';
