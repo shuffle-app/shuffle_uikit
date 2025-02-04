@@ -125,6 +125,7 @@ export 'properties_editing_element//properties_search_input.dart';
 export 'selectors/ui_kit_country_selector.dart';
 export 'selectors/ui_kit_tag_selector.dart';
 export 'sheets/ui_kit_message_with_actions_sheet.dart';
+export 'sheets/ui_kit_calendar_compact.dart';
 export 'spinner/ui_kit_spinner.dart';
 export 'spinner/ui_kit_spinner_card.dart';
 export 'switches/fingerprint_switch.dart';
