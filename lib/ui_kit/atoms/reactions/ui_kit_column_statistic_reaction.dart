@@ -13,6 +13,8 @@ class UiKitColumnStatisticReaction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textStyle = context.uiKitTheme?.regularTextTheme.caption4Semibold;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       mainAxisSize: MainAxisSize.min,
@@ -27,7 +29,7 @@ class UiKitColumnStatisticReaction extends StatelessWidget {
                 children: [
                   Text(
                     '${reactionStatisticUiModel!.viewCount}',
-                    style: context.uiKitTheme?.regularTextTheme.caption4Semibold,
+                    style: textStyle,
                   ),
                   SpacingFoundation.horizontalSpace8,
                   ImageWidget(
@@ -53,7 +55,7 @@ class UiKitColumnStatisticReaction extends StatelessWidget {
                 children: [
                   Text(
                     '${reactionStatisticUiModel!.likeCount}',
-                    style: context.uiKitTheme?.regularTextTheme.caption4Semibold,
+                    style: textStyle,
                   ),
                   SpacingFoundation.horizontalSpace8,
                   ImageWidget(
