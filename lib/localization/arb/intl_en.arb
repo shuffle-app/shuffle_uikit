@@ -232,8 +232,8 @@
   "UsingHealthKit": "Use health data",
   "BasedOnYourActivityWeDetermineYourCondition": "Based on your activity, heart rate and other factors, we determine your condition and try to recommend exactly what you need right now, specifically for you",
   "Skip": "Skip",
-  "Allow": "Continue",
-  "AllowAll": "Continue",
+  "Allow": "Allow",
+  "AllowAll": "Allow all",
   "WrongSecurityCode": "Wrong security code",
   "ErrorOccured": "Error occured",
   "CompanyName": "Company name",
@@ -993,5 +993,6 @@
   "WaitAdminResponse": "Wait for the admin's response",
   "PrivateChatApply": "Private chat. Please apply by pressing",
   "SelectCity": "Select city",
-  "City": "City"
+  "City": "City",
+  "WantToJoin": "wants to join"
 }
