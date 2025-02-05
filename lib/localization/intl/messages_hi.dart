@@ -1952,6 +1952,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Wait for the admin\'s response",
     ),
     "WantToChange": MessageLookupByLibrary.simpleMessage("Want to change?"),
+    "WantToJoin": MessageLookupByLibrary.simpleMessage("wants to join"),
     "WeBringStillLifes": MessageLookupByLibrary.simpleMessage(
       "We bring still lifes",
     ),

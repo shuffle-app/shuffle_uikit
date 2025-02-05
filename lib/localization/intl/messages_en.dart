@@ -382,8 +382,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "All app notifications",
     ),
     "AllXFeaturesAvailable": m0,
-    "Allow": MessageLookupByLibrary.simpleMessage("Continue"),
-    "AllowAll": MessageLookupByLibrary.simpleMessage("Continue"),
+    "Allow": MessageLookupByLibrary.simpleMessage("Allow"),
+    "AllowAll": MessageLookupByLibrary.simpleMessage("Allow all"),
     "AllowGeolocation": MessageLookupByLibrary.simpleMessage(
       "Continue to use geolocation",
     ),
@@ -1927,6 +1927,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Wait for the admin\'s response",
     ),
     "WantToChange": MessageLookupByLibrary.simpleMessage("Want to change?"),
+    "WantToJoin": MessageLookupByLibrary.simpleMessage("wants to join"),
     "WeBringStillLifes": MessageLookupByLibrary.simpleMessage(
       "We bring still lifes",
     ),

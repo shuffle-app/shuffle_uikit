@@ -383,8 +383,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Все уведомления",
     ),
     "AllXFeaturesAvailable": m0,
-    "Allow": MessageLookupByLibrary.simpleMessage("Продолжить"),
-    "AllowAll": MessageLookupByLibrary.simpleMessage("Продолжить"),
+    "Allow": MessageLookupByLibrary.simpleMessage("Разрешить"),
+    "AllowAll": MessageLookupByLibrary.simpleMessage("Разрешить все"),
     "AllowGeolocation": MessageLookupByLibrary.simpleMessage(
       "Использовать геолокацию",
     ),
@@ -1942,6 +1942,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ждите ответа админа чата",
     ),
     "WantToChange": MessageLookupByLibrary.simpleMessage("Хотите изменить?"),
+    "WantToJoin": MessageLookupByLibrary.simpleMessage("хочет присоединиться"),
     "WeBringStillLifes": MessageLookupByLibrary.simpleMessage(
       "Подвозим натюрморты",
     ),

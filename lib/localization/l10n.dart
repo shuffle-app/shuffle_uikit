@@ -1893,14 +1893,14 @@ class S {
     return Intl.message('Skip', name: 'Skip', desc: '', args: []);
   }
 
-  /// `Continue`
+  /// `Allow`
   String get Allow {
-    return Intl.message('Continue', name: 'Allow', desc: '', args: []);
+    return Intl.message('Allow', name: 'Allow', desc: '', args: []);
   }
 
-  /// `Continue`
+  /// `Allow all`
   String get AllowAll {
-    return Intl.message('Continue', name: 'AllowAll', desc: '', args: []);
+    return Intl.message('Allow all', name: 'AllowAll', desc: '', args: []);
   }
 
   /// `Wrong security code`
@@ -8484,6 +8484,16 @@ class S {
   /// `Scheduler`
   String get Scheduler {
     return Intl.message('Scheduler', name: 'Scheduler', desc: '', args: []);
+  }
+
+  /// `wants to join`
+  String get WantToJoin {
+    return Intl.message(
+      'wants to join',
+      name: 'WantToJoin',
+      desc: '',
+      args: [],
+    );
   }
 }
 
