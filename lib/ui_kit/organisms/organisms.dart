@@ -31,6 +31,7 @@ export 'booking_request/bookings_control_place_item_ui_kit.dart';
 export 'booking_request/get_refund_booking_dialog_uil_kit.dart';
 export 'bottom_navigation_bar/gradient_bottom_navigation_bar.dart';
 export 'cards/ui_kit_card_swiper.dart';
+export 'cards/ui_kit_planner_content_card.dart';
 export 'cards/ui_kit_chat_card_with_replay_in.dart';
 export 'cards/ui_kit_chat_card_with_replay_out.dart';
 export 'cards/ui_kit_chat_in_card.dart';

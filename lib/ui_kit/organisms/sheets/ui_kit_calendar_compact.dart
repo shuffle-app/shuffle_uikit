@@ -15,7 +15,6 @@ class UiKitCalendarCompact extends StatelessWidget {
     DateTime focusedDay,
   )? onDaySelected;
   final ValueChanged<PageController>? onCalendarCreated;
-  final Key calendarKey;
 
   const UiKitCalendarCompact(
       {super.key,
@@ -26,7 +25,7 @@ class UiKitCalendarCompact extends StatelessWidget {
       this.eventLoader,
       this.onCalendarCreated,
       this.onDaySelected,
-      this.onPageChanged, required this.calendarKey});
+      this.onPageChanged,});
 
   @override
   Widget build(BuildContext context) {
