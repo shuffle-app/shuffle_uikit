@@ -56,10 +56,11 @@ class _UiKitMessageCardState extends State<UiKitMessageCard> {
 
   @override
   Widget build(BuildContext context) {
-    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
-    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
-    final colorScheme = context.uiKitTheme?.colorScheme;
-    final cardColor = context.uiKitTheme?.colorScheme.surface1;
+    final theme = context.uiKitTheme;
+    final boldTextTheme = theme?.boldTextTheme;
+    final regularTextTheme = theme?.regularTextTheme;
+    final colorScheme = theme?.colorScheme;
+    final cardColor = theme?.colorScheme.surface1;
 
     return ConstrainedBox(
       constraints: BoxConstraints(
