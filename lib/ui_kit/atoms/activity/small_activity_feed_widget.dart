@@ -32,6 +32,7 @@ class SmallActivityFeedWidget extends StatelessWidget {
             child: UiKitCardWrapper(
               height: 0.45.sw,
               borderRadius: BorderRadiusFoundation.all24r,
+              border: BorderSide(width: 1.5.h, color: ColorsFoundation.neutral8),
               gradient: gradient,
               child: Stack(
                 children: [
@@ -108,6 +109,7 @@ class SmallActivityFeedWidget extends StatelessWidget {
             child: UiKitCardWrapper(
               height: 0.45.sw,
               borderRadius: BorderRadiusFoundation.all24r,
+              border: BorderSide(width: 1.5.h, color: ColorsFoundation.neutral8),
               gradient: gradient,
               child: Stack(
                 children: [
