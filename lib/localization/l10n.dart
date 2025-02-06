@@ -8481,6 +8481,11 @@ class S {
     return Intl.message('City', name: 'City', desc: '', args: []);
   }
 
+  /// `Scheduler`
+  String get Scheduler {
+    return Intl.message('Scheduler', name: 'Scheduler', desc: '', args: []);
+  }
+
   /// `wants to join`
   String get WantToJoin {
     return Intl.message(

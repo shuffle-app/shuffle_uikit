@@ -1467,6 +1467,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Сканирование на этом устройстве не поддерживается",
     ),
     "Schedule": MessageLookupByLibrary.simpleMessage("График"),
+    "Scheduler": MessageLookupByLibrary.simpleMessage("Планировщик"),
     "Search": MessageLookupByLibrary.simpleMessage("Поиск"),
     "SearchBusinessChooseYourself1": MessageLookupByLibrary.simpleMessage(
       "Бизнес-клубы",

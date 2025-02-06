@@ -1477,6 +1477,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Scanning is unsupported on this device",
     ),
     "Schedule": MessageLookupByLibrary.simpleMessage("अनुसूची"),
+    "Scheduler": MessageLookupByLibrary.simpleMessage("Scheduler"),
     "Search": MessageLookupByLibrary.simpleMessage("खोजें"),
     "SearchBusinessChooseYourself1": MessageLookupByLibrary.simpleMessage(
       "व्यापारिक क्लब",

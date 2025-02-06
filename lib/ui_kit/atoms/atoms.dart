@@ -54,6 +54,7 @@ export 'buttons/small_blurred_outlined_icon_button.dart';
 export 'buttons/small_button_with_icon.dart';
 export 'buttons/small_button_with_text_and_icon.dart';
 export 'buttons/small_gradient_button.dart';
+export 'buttons/flat_circle_button.dart';
 export 'buttons/small_gradient_icon_button.dart';
 export 'buttons/small_ordinary_button.dart';
 export 'buttons/small_outlined_button.dart';

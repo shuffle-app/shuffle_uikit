@@ -33,6 +33,7 @@ dependencies:
   flutter_html: ^3.0.0-beta.2
   auto_size_text: ^3.0.0
   url_launcher: ^6.3.1
+  table_calendar: ^3.2.0
   flutter_html_iframe: any
   flutter_html_svg: any
   flutter_html_table_extension:
@@ -82,7 +83,7 @@ dependencies:
       url: https://github.com/shuffle-app/shuffle_swiper.git
       ref: e4391ca40994c91acc563477c7959fbdeff50004
 
-  intl: ^0.19.0
+  intl: ^0.20.0
   just_audio: ^0.9.42
 
   #custom splash factory
@@ -123,6 +124,7 @@ dependencies:
   vector_graphics: any
 
 dependency_overrides:
+  intl: ^0.20.0
   video_player:
     git:
       url: https://github.com/flutter/packages.git
