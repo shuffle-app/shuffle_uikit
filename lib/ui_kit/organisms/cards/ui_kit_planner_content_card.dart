@@ -38,17 +38,14 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
     final colorScheme = theme?.colorScheme;
     final cardColor = theme?.colorScheme.surface1;
 
-    return ConstrainedBox(
-      constraints: BoxConstraints(
-        minHeight: 0.325 * 0.9.sw,
-        maxHeight: 0.375 * 0.9.sw,
-        maxWidth: 1.sw,
-        minWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
-      ),
-      child: Material(
+    return SizedBox(
+      height: 0.375 * 0.9.sw,
+      width: 1.sw - EdgeInsetsFoundation.horizontal32,
+      child: UiKitCardWrapper(
         borderRadius: BorderRadiusFoundation.all24,
         clipBehavior: Clip.hardEdge,
         color: cardColor,
+        padding: EdgeInsets.all(EdgeInsetsFoundation.all16),
         child: TapRegion(
           onTapOutside: (event) {
             setState(() => canDelete = false);
@@ -67,11 +64,15 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
                   Column(children: [
                     if (widget.dateTime != null)
                       Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                        GradientableWidget(
-                            gradient: GradientFoundation.defaultLinearGradient,
-                            child: ImageWidget(
-                              iconData: ShuffleUiKitIcons.calendar,
-                            )),
+                        Transform.translate(
+                            offset: const Offset(0, -2),
+                            child: GradientableWidget(
+                                gradient: GradientFoundation.defaultLinearGradient,
+                                child: ImageWidget(
+                                  iconData: ShuffleUiKitIcons.calendar,
+                                  height: boldTextTheme?.caption1Bold.height,
+                                  fit: BoxFit.fitHeight,
+                                ))),
                         SpacingFoundation.horizontalSpace4,
                         Text(
                           DateFormat('EEEE, dd.MM.yyyy').format(widget.dateTime!),
@@ -87,7 +88,9 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
                           textAlign: TextAlign.end,
                         ),
                       ]).paddingOnly(bottom: SpacingFoundation.verticalSpacing4),
-                    Row(
+                    SpacingFoundation.verticalSpace16,
+                    Expanded(
+                        child: Row(
                       children: [
                         context.userAvatar(
                           size: UserAvatarSize.x40x40,
@@ -96,25 +99,25 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
                           imageUrl: widget.avatarPath,
                         ),
                         SpacingFoundation.horizontalSpace12,
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Flexible(
-                                child: Text(
-                                  widget.contentTitle,
-                                  style: boldTextTheme?.caption2Bold.copyWith(overflow: TextOverflow.ellipsis),
-                                  maxLines: 2,
-                                ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Flexible(
+                              child: Text(
+                                widget.contentTitle,
+                                style: boldTextTheme?.caption2Bold.copyWith(overflow: TextOverflow.ellipsis),
+                                maxLines: 2,
                               ),
-                              SpacingFoundation.horizontalSpace4,
-                              SpacingFoundation.verticalSpace2,
-                              UiKitTagsWidget(baseTags: widget.tags)
-                            ],
-                          ),
+                            ),
+                            SpacingFoundation.horizontalSpace4,
+                            Row(
+                                children: widget.tags
+                                    .map((e) => e.widget.paddingOnly(right: SpacingFoundation.horizontalSpacing2))
+                                    .toList())
+                          ],
                         ),
                       ],
-                    )
+                    ))
                   ]),
                   AnimatedSwitcher(
                     duration: const Duration(milliseconds: 200),
