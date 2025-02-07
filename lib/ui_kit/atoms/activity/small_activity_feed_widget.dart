@@ -71,7 +71,7 @@ class SmallActivityFeedWidget extends StatelessWidget {
                         blendMode: BlendMode.dstIn,
                         child: ImageWidget(
                           svgAsset: GraphicsFoundation.instance.svg.logo,
-                          height: isSmallDevice ? 0.36.sw : 0.36.sw,
+                          height: 0.36.sw,
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -151,7 +151,7 @@ class SmallActivityFeedWidget extends StatelessWidget {
                         blendMode: BlendMode.dstIn,
                         child: ImageWidget(
                           svgAsset: GraphicsFoundation.instance.svg.logo,
-                          height: isSmallDevice ? 0.36.sw : 0.36.sw,
+                          height: 0.36.sw,
                           fit: BoxFit.fitHeight,
                         ),
                       ),
