@@ -33,17 +33,17 @@ class InfluencerStats extends ProfileStats {
   @override
   List<ProfileHighlightCard> get profileHighlightCards => [
         ProfileHighlightCard(
-          title: 'Places visited',
+          title: S.current.PlacesVisitedInf,
           value: getStringValue(placesVisited),
           valueGradient: getGradient(placesVisited),
         ),
         ProfileHighlightCard(
-          title: 'Reviews posted',
+          title: S.current.ReviewsPostedInf,
           value: getStringValue(reviewsPosted),
           valueGradient: getGradient(reviewsPosted),
         ),
         ProfileHighlightCard(
-          title: S.current.Points,
+          title: S.current.PointsEarnedInf,
           value: getStringValue(points),
           valueGradient: getGradient(points),
         ),
