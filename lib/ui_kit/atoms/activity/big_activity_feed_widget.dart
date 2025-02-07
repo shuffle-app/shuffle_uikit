@@ -35,8 +35,11 @@ class BigActivityFeedWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    S.current.Common,
-                    style: theme?.boldTextTheme.bodyUpperCase.copyWith(color: textColor),
+                    S.current.Common.toUpperCase(),
+                    style: theme?.boldTextTheme.caption1UpperCase.copyWith(
+                      color: textColor,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                   SpacingFoundation.verticalSpace4,
                   Text(
