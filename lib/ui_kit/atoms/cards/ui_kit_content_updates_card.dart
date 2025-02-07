@@ -201,8 +201,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                 SpacingFoundation.verticalSpace4,
                 ...children,
                 SpacingFoundation.verticalSpace16
-              ],
-              SpacingFoundation.verticalSpace8,
+              ] else
+                SpacingFoundation.verticalSpace8,
               Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -310,7 +310,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
               ),
               if (viewShareDate != null)
                 UiKitViewShareDateWidget(viewShareDate: viewShareDate!)
-                    .paddingOnly(top: SpacingFoundation.verticalSpacing16),
+                    .paddingOnly(top: SpacingFoundation.verticalSpacing12),
             ],
           ).paddingAll(EdgeInsetsFoundation.all16)
         : Column(
