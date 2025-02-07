@@ -155,7 +155,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                     shrinkWrap: true,
                   ),
                 ),
-                SpacingFoundation.verticalSpace12
+                SpacingFoundation.verticalSpace10
               ],
               if (showTranslateButton != null)
                 Row(
@@ -174,12 +174,12 @@ class UiKitFeedbackCard extends StatelessWidget {
                                       ? ColorsFoundation.darkNeutral700
                                       : ColorsFoundation.darkNeutral300,
                                 ),
-                              )
+                              ).paddingOnly(bottom: SpacingFoundation.verticalSpacing10)
                             : const SizedBox.shrink(),
                       ),
                     ),
                   ],
-                ).paddingOnly(bottom: SpacingFoundation.verticalSpacing12),
+                ),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
