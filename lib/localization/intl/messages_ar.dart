@@ -1240,6 +1240,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PlaceType": MessageLookupByLibrary.simpleMessage("Place type"),
     "Places": MessageLookupByLibrary.simpleMessage("Places"),
     "PlacesVisited": m56,
+    "PlacesVisitedInf": MessageLookupByLibrary.simpleMessage("Places visited"),
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
       "Please add a date(-s)",
     ),
@@ -1309,6 +1310,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PointsAre": MessageLookupByLibrary.simpleMessage("Points are..."),
     "PointsCount": m66,
     "PointsEarned": m67,
+    "PointsEarnedInf": MessageLookupByLibrary.simpleMessage("Points earned"),
     "PointsHiwItems": m68,
     "PointsInOffer": m69,
     "Position": MessageLookupByLibrary.simpleMessage("Position"),
@@ -1449,6 +1451,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ReviewsCount": m76,
     "ReviewsPosted": m77,
+    "ReviewsPostedInf": MessageLookupByLibrary.simpleMessage("Reviews posted"),
     "ReviewsReceived": m78,
     "Routes": MessageLookupByLibrary.simpleMessage("Routes"),
     "Saturday": MessageLookupByLibrary.simpleMessage("Saturday"),
