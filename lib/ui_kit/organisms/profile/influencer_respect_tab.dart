@@ -26,7 +26,7 @@ class InfluencerRespectTab extends StatelessWidget {
           physics: const NeverScrollableScrollPhysics(),
           padding: EdgeInsets.zero,
           shrinkWrap: true,
-          separatorBuilder: (context, index) => SpacingFoundation.verticalSpace16,
+          separatorBuilder: (context, index) => SpacingFoundation.verticalSpace24,
           itemBuilder: (context, index) {
             final item = items[index];
 
