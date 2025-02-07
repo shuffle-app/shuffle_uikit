@@ -70,10 +70,11 @@ class UiKitUsersRespectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final regularTextTheme = context.uiKitTheme?.regularTextTheme;
+    final double widthOneRespect = (0.0650.sw + 0.18.sw);
 
     return Container(
       height: 1.sw < 380 ? 0.0525.sh : 0.0425.sh,
-      width: users.length == 1 ? 0.0625.sw + 0.18.sw : (0.0625.sw * (users.length - 1)) + 0.165.sw,
+      width: users.length == 1 ? widthOneRespect : (0.0650.sw * (users.length - 1)) + 0.165.sw,
       padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
@@ -100,9 +101,13 @@ class UiKitUsersRespectCard extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        users.first.name,
-                        style: regularTextTheme?.caption4,
+                      SizedBox(
+                        width: widthOneRespect / 1.5,
+                        child: Text(
+                          users.first.name,
+                          style: regularTextTheme?.caption4,
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                       GradientableWidget(
                         gradient: GradientFoundation.defaultLinearGradient,
@@ -133,6 +138,7 @@ class UiKitUsersRespectCard extends StatelessWidget {
                 final leftOffset = users.indexOf(e) * (0.0625.sw * 0.6);
                 return Positioned(
                   left: leftOffset,
+                  top: 1.w,
                   child: context.userAvatar(
                     size: UserAvatarSize.x20x20,
                     type: UserTileType.ordinary,
@@ -144,6 +150,7 @@ class UiKitUsersRespectCard extends StatelessWidget {
             if (users.length >= 4)
               Positioned(
                 left: 0.0625.sw * 0.6 * 3,
+                top: 1.w,
                 child: Container(
                   height: 0.0625.sw,
                   width: 0.0625.sw,

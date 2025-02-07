@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -61,9 +62,12 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      title ?? '',
-                      style: titleStyle,
+                    SizedBox(
+                      width: (size.maxWidth * 0.7) - SpacingFoundation.horizontalSpacing10,
+                      child: AutoSizeText(
+                        title ?? '',
+                        style: titleStyle,
+                      ),
                     ),
                     SpacingFoundation.verticalSpace2,
                     Text(
@@ -139,9 +143,11 @@ class UiKitExtendedInfluencerFeedbackCard extends StatelessWidget {
                     reactionsCount: smileyCount!,
                   ),
                 const Spacer(),
-                const ImageWidget(
+                ImageWidget(
                   iconData: ShuffleUiKitIcons.like,
                   color: ColorsFoundation.darkNeutral900,
+                  height: 16.w,
+                  width: 16.w,
                 ),
               ],
             ),

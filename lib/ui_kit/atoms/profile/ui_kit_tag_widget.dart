@@ -11,6 +11,7 @@ class UiKitTagWidget extends StatelessWidget {
   final double? tagSize;
   final bool showShadow;
   final bool colorIsNull;
+  final TextStyle? customTextStyle;
 
   /// [customSpace] needs to be specified using [SpacingFoundation]
   final Widget? customSpace;
@@ -27,13 +28,15 @@ class UiKitTagWidget extends StatelessWidget {
     this.showSpacing = false,
     this.showShadow = false,
     this.colorIsNull = false,
+    this.customTextStyle,
   });
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
-      color: textColor ?? ColorsFoundation.darkNeutral500,
-    );
+    final textStyle = customTextStyle ??
+        context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
+          color: textColor ?? ColorsFoundation.darkNeutral500,
+        );
 
     final iconColor = iconCustomColor ?? (uniqueTag ? Colors.white : textColor ?? ColorsFoundation.darkNeutral500);
 
