@@ -31,7 +31,8 @@ class UiKitChatTile extends StatelessWidget {
     final regularTextTheme = theme?.regularTextTheme;
     final colorScheme = theme?.colorScheme;
 
-    return GestureDetector(
+    return InkWell(
+        borderRadius: BorderRadiusFoundation.max,
         onTap: onTap,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
