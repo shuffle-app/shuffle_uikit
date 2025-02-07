@@ -13,12 +13,16 @@ class InfluencerTopCategory {
 }
 
 class InfluencerTopContentData {
+  final int? placeId;
+  final int? eventId;
   final String title;
   final String imageUrl;
   final DateTime datePosted;
   final List<UiKitTag> tags;
 
   InfluencerTopContentData({
+    this.placeId,
+    this.eventId,
     required this.title,
     required this.imageUrl,
     required this.datePosted,
