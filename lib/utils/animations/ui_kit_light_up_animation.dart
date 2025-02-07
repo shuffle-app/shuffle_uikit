@@ -60,27 +60,27 @@ class _UiKitLightUpAnimationState extends State<UiKitLightUpAnimation> with Sing
     if (!mounted) return;
     await Future.delayed(
       animControllerDuration,
-      () => animationController.animateTo(0.25),
+          () => mounted ? animationController.animateTo(0.25) : null,
     );
     if (!mounted) return;
     await Future.delayed(
       animControllerDuration,
-      () => animationController.animateBack(0),
+          () => mounted ? animationController.animateBack(0) : null,
     );
     if (!mounted) return;
     await Future.delayed(
       animControllerDuration,
-      () => animationController.animateTo(0.25),
+          () => mounted ? animationController.animateTo(0.25) : null,
     );
     if (!mounted) return;
     await Future.delayed(
       animControllerDuration,
-      () => animationController.animateBack(0),
+          () => mounted ? animationController.animateBack(0) : null,
     );
     if (!mounted) return;
     await Future.delayed(
       animControllerDuration,
-      () => animationController.forward(from: 0),
+          () => mounted ? animationController.forward(from: 0) : null,
     );
   }
 

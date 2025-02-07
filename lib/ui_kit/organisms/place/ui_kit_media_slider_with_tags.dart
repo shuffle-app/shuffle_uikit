@@ -10,7 +10,7 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   final List<UiKitTag> uniqueTags;
   final double horizontalMargin;
   final ScrollController scrollController;
-  final Future<List<HorizontalCaptionedImageData>?>? Function()? branches;
+  final ValueNotifier<List<HorizontalCaptionedImageData>?>? branches;
   final List<Widget>? actions;
   final ScrollController? listViewController;
   final bool? initialDescriptionHide;
@@ -54,15 +54,25 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
   void initState() {
     isHide = widget.initialDescriptionHide ?? true;
     currentDescription = widget.description;
+    branches = widget.branches?.value;
     super.initState();
-    widget.branches?.call()?.then((value) {
-      branches = value;
-      if (mounted) setState(() {});
-    });
+    widget.branches?.addListener(onLoadBranches);
+  }
+
+  onLoadBranches() {
+    branches = widget.branches?.value;
+    if (mounted) setState(() {});
+  }
+
+  @override
+  void dispose() {
+    widget.branches?.removeListener(onLoadBranches);
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
     final mediaWidth = kIsWeb ? 358.0 : (1.sw - widget.horizontalMargin * 2);
 
     return Column(
@@ -146,46 +156,48 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                 curve: Curves.easeInOut,
                 child: (branches ?? []).isEmpty
                     ? const SizedBox.shrink()
-                    : UiKitCardWrapper(
-                        borderRadius: BorderRadius.zero,
-                        color: context.uiKitTheme?.colorScheme.surface1,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Text(
-                              'Branches',
-                              style: context.uiKitTheme?.boldTextTheme.caption2Medium,
-                            ),
-                            SpacingFoundation.verticalSpace4,
-                            ConstrainedBox(
-                              constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
-                              child: ListView.separated(
-                                padding: EdgeInsets.zero,
-                                shrinkWrap: true,
-                                addAutomaticKeepAlives: false,
-                                scrollDirection: Axis.horizontal,
-                                itemBuilder: (context, index) {
-                                  final branch = branches!.elementAt(index);
-
-                                  return UiKitHorizontalCaptionedImage(
-                                    title: branch.caption,
-                                    imageLink: branch.imageUrl,
-                                    borderRadius: BorderRadiusFoundation.all16,
-                                    onTap: branch.onTap,
-                                  );
-                                },
-                                separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
-                                itemCount: branches!.length,
+                    : SizedBox(
+                        height: 0.28125.sw * 0.577 + 38.h,
+                        child: UiKitCardWrapper(
+                          borderRadius: BorderRadius.zero,
+                          color: theme?.colorScheme.surface1,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Text(
+                                S.of(context).Branches,
+                                style: theme?.boldTextTheme.caption2Medium,
                               ),
-                            ),
-                          ],
-                        ).paddingOnly(
-                          top: EdgeInsetsFoundation.vertical12,
-                          bottom: EdgeInsetsFoundation.vertical12,
-                          left: EdgeInsetsFoundation.horizontal16,
-                        ),
-                      ))
+                              SpacingFoundation.verticalSpace4,
+                              ConstrainedBox(
+                                constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
+                                child: ListView.separated(
+                                  padding: EdgeInsets.zero,
+                                  shrinkWrap: true,
+                                  addAutomaticKeepAlives: false,
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: (context, index) {
+                                    final branch = branches!.elementAt(index);
+
+                                    return UiKitHorizontalCaptionedImage(
+                                      title: branch.caption,
+                                      imageLink: branch.imageUrl,
+                                      borderRadius: BorderRadiusFoundation.all16,
+                                      onTap: branch.onTap,
+                                    );
+                                  },
+                                  separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                                  itemCount: branches!.length,
+                                ),
+                              ),
+                            ],
+                          ).paddingOnly(
+                            top: EdgeInsetsFoundation.vertical12,
+                            bottom: EdgeInsetsFoundation.vertical12,
+                            left: EdgeInsetsFoundation.horizontal16,
+                          ),
+                        )))
             .paddingOnly(bottom: SpacingFoundation.verticalSpacing14),
         DescriptionWidget(
           isTranslate: isTranslate,

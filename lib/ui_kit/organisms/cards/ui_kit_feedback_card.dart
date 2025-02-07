@@ -199,7 +199,8 @@ class UiKitFeedbackCard extends StatelessWidget {
                       style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                     ),
                   const Spacer(),
-                  GestureDetector(
+                  InkWell(
+                    borderRadius: BorderRadiusFoundation.max,
                     onTap: onLike,
                     child: ImageWidget(
                       iconData: ShuffleUiKitIcons.like,
@@ -209,12 +210,16 @@ class UiKitFeedbackCard extends StatelessWidget {
                   ),
                   if (helpfulCount != null) SpacingFoundation.horizontalSpace2,
                   if (helpfulCount != null)
-                    Text(
-                      helpfulCount?.toString() ?? '',
-                      style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
-                    ),
+                    InkWell(
+                        borderRadius: BorderRadiusFoundation.max,
+                        onTap: onLike,
+                        child: Text(
+                          helpfulCount?.toString() ?? '',
+                          style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
+                        )),
                   SpacingFoundation.horizontalSpace8,
-                  GestureDetector(
+                  InkWell(
+                    borderRadius: BorderRadiusFoundation.max,
                     onTap: onLike,
                     child: Text(
                       S.of(context).Helpful,
