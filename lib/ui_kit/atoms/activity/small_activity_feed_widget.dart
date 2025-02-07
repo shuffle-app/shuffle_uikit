@@ -41,8 +41,11 @@ class SmallActivityFeedWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          S.current.My,
-                          style: theme?.regularTextTheme.caption1UpperCase.copyWith(color: textColor),
+                          S.current.My.toUpperCase(),
+                          style: theme?.boldTextTheme.caption1UpperCase.copyWith(
+                            color: textColor,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                         SpacingFoundation.verticalSpace2,
                         Text(
@@ -55,8 +58,7 @@ class SmallActivityFeedWidget extends StatelessWidget {
                   OverflowBox(
                     alignment: Alignment.centerRight,
                     child: Transform.translate(
-                      //0.15.sw
-                      offset: Offset(isSmallDevice ? 0.15.sw : 0.13.sw, 0),
+                      offset: Offset(isSmallDevice ? 0.15.sw : 0.14.sw, 0),
                       child: ShaderMask(
                         shaderCallback: (Rect bounds) {
                           return LinearGradient(
@@ -69,6 +71,8 @@ class SmallActivityFeedWidget extends StatelessWidget {
                         blendMode: BlendMode.dstIn,
                         child: ImageWidget(
                           svgAsset: GraphicsFoundation.instance.svg.logo,
+                          height: isSmallDevice ? 0.36.sw : 0.36.sw,
+                          fit: BoxFit.fitHeight,
                         ),
                       ),
                     ),
@@ -117,8 +121,11 @@ class SmallActivityFeedWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          S.current.Common,
-                          style: theme?.regularTextTheme.caption1UpperCase.copyWith(color: textColor),
+                          S.current.Common.toUpperCase(),
+                          style: theme?.boldTextTheme.caption1UpperCase.copyWith(
+                            color: textColor,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                         SpacingFoundation.verticalSpace2,
                         Text(
@@ -129,9 +136,9 @@ class SmallActivityFeedWidget extends StatelessWidget {
                     ),
                   ).paddingOnly(top: 30.h, left: SpacingFoundation.horizontalSpacing16),
                   OverflowBox(
-                    alignment: Alignment.centerRight,
+                    alignment: Alignment.centerLeft,
                     child: Transform.translate(
-                      offset: Offset(isSmallDevice ? -0.3.sw : -0.32.sw, 0),
+                      offset: Offset(isSmallDevice ? -0.15.sw : -0.14.sw, 0),
                       child: ShaderMask(
                         shaderCallback: (Rect bounds) {
                           return LinearGradient(
@@ -144,6 +151,8 @@ class SmallActivityFeedWidget extends StatelessWidget {
                         blendMode: BlendMode.dstIn,
                         child: ImageWidget(
                           svgAsset: GraphicsFoundation.instance.svg.logo,
+                          height: isSmallDevice ? 0.36.sw : 0.36.sw,
+                          fit: BoxFit.fitHeight,
                         ),
                       ),
                     ),
