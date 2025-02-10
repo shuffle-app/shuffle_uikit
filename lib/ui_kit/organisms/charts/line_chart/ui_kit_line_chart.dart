@@ -185,7 +185,10 @@ class _UiKitLineChartState extends State<UiKitLineChart> {
     /// wait until chart is drawn to avoid exception _positions.isNotEmpty
     await Future.delayed(const Duration(milliseconds: 500), () {
       initialMaxChartScrollablePartWidth = datesMaxScrollWidth - SpacingFoundation.horizontalSpacing32;
-      initialPreviewWidthFraction = (chartViewPortSize.width / initialMaxChartScrollablePartWidth!).clamp(0.1, 1);
+      initialPreviewWidthFraction = (chartViewPortSize.width / initialMaxChartScrollablePartWidth!).clamp(0.1, 2);
+      // initialPreviewWidthFraction = (chartViewPortSize.width / initialMaxChartScrollablePartWidth!).clamp(0.1, 1);
+      debugPrint('initialPreviewWidthFraction: $initialPreviewWidthFraction chartViewPortSize.width: ${chartViewPortSize
+          .width} initialMaxChartScrollablePartWidth: $initialMaxChartScrollablePartWidth');
       _smallPreviewUpdateNotifier.value = _smallPreviewUpdateNotifier.value.copyWith(
         previewWidthFraction: min(1, initialPreviewWidthFraction!),
         visibleLinesIds: visibleLineIds,

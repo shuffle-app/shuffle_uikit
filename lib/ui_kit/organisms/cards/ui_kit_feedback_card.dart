@@ -155,7 +155,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                     shrinkWrap: true,
                   ),
                 ),
-                SpacingFoundation.verticalSpace12
+                SpacingFoundation.verticalSpace10
               ],
               if (showTranslateButton != null)
                 Row(
@@ -174,12 +174,12 @@ class UiKitFeedbackCard extends StatelessWidget {
                                       ? ColorsFoundation.darkNeutral700
                                       : ColorsFoundation.darkNeutral300,
                                 ),
-                              )
+                              ).paddingOnly(bottom: SpacingFoundation.verticalSpacing10)
                             : const SizedBox.shrink(),
                       ),
                     ),
                   ],
-                ).paddingOnly(bottom: SpacingFoundation.verticalSpacing12),
+                ),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -199,7 +199,8 @@ class UiKitFeedbackCard extends StatelessWidget {
                       style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                     ),
                   const Spacer(),
-                  GestureDetector(
+                  InkWell(
+                    borderRadius: BorderRadiusFoundation.max,
                     onTap: onLike,
                     child: ImageWidget(
                       iconData: ShuffleUiKitIcons.like,
@@ -209,12 +210,16 @@ class UiKitFeedbackCard extends StatelessWidget {
                   ),
                   if (helpfulCount != null) SpacingFoundation.horizontalSpace2,
                   if (helpfulCount != null)
-                    Text(
-                      helpfulCount?.toString() ?? '',
-                      style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
-                    ),
+                    InkWell(
+                        borderRadius: BorderRadiusFoundation.max,
+                        onTap: onLike,
+                        child: Text(
+                          helpfulCount?.toString() ?? '',
+                          style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
+                        )),
                   SpacingFoundation.horizontalSpace8,
-                  GestureDetector(
+                  InkWell(
+                    borderRadius: BorderRadiusFoundation.max,
                     onTap: onLike,
                     child: Text(
                       S.of(context).Helpful,

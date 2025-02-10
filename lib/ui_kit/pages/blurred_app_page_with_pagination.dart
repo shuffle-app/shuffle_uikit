@@ -18,6 +18,7 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
   final ScrollController? scrollController;
   final Widget? topFixedAddition;
   final ScrollPhysics? physics;
+  final ScrollPhysics? pagingPhysics;
   final double? customToolbarHeight;
   final animDuration = const Duration(milliseconds: 250);
   final bool? canFoldAppBar;
@@ -31,7 +32,6 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
   final String? onIWidgetInfoString;
   final EdgeInsets? padding;
   final bool reverse;
-  final bool hideBottomSpace;
 
   /// Additional bottom padding for reply message in chat screen
   /// defaults to 0
@@ -51,6 +51,7 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
     this.canFoldAppBar,
     this.appBarBody,
     this.physics,
+    this.pagingPhysics,
     this.appBarTrailing,
     this.customToolbarHeight,
     this.customToolbarBaseHeight,
@@ -61,7 +62,6 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
     this.animatedListKey,
     this.bodyBottomSpace,
     this.onIWidgetInfoString,
-    this.hideBottomSpace = false,
     this.keyboardPadding = 0,
     this.bottomSheetHeight = 0,
   });
@@ -130,7 +130,7 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
               width: 1.sw,
               alignment: Alignment.topCenter,
               child: PagedListView.separated(
-                physics: const BouncingScrollPhysics(),
+                physics: pagingPhysics ?? const BouncingScrollPhysics(),
                 scrollController: scrollController,
                 padding: reverse
                     ? EdgeInsets.only(

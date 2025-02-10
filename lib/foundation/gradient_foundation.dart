@@ -5,6 +5,36 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
+  static final lightActivityGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.pink.withOpacity(0.4),
+      ColorsFoundation.pink.withOpacity(0),
+      ColorsFoundation.darkBodyTypographyColor.withOpacity(0.1),
+    ],
+    begin: Alignment.bottomCenter,
+    end: Alignment.topCenter,
+    stops: const [
+      -0.1659,
+      0.55,
+      0.35,
+    ],
+  );
+
+  static final blackActivityGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.pink.withOpacity(0.4),
+      ColorsFoundation.pink.withOpacity(0),
+      ColorsFoundation.surface1,
+    ],
+    begin: Alignment.bottomCenter,
+    end: Alignment.topCenter,
+    stops: const [
+      -0.1659,
+      0.55,
+      0.35,
+    ],
+  );
+
   static final showUpGradient = LinearGradient(
     colors: [
       ColorsFoundation.goldGradientBegin,

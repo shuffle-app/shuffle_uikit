@@ -1,6 +1,8 @@
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ProfilePlace {
+  final int? placeId;
+  final int? eventId;
   final String image;
   final String title;
   final DateTime createdAt;
@@ -14,6 +16,8 @@ class ProfilePlace {
   final List<UiKitTag> tags;
 
   ProfilePlace({
+    this.placeId,
+    this.eventId,
     required this.image,
     required this.title,
     required this.postBody,

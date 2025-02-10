@@ -4,24 +4,29 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitInfoText extends StatelessWidget {
   final String text;
   final String? title;
+  final String? chatName;
   final String? additionalText;
   final String? gradientText;
   final Gradient? textGradient;
   final bool? centerText;
 
   const UiKitInfoText({
-    Key? key,
+    super.key,
     required this.text,
+    this.chatName,
     this.additionalText,
     this.title,
     this.gradientText,
     this.textGradient,
     this.centerText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
-    final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final theme = context.uiKitTheme;
+    final boldTextTheme = theme?.boldTextTheme;
+    final regularTextTheme = theme?.regularTextTheme;
+
     Widget child = RichText(
       text: TextSpan(
         children: [
@@ -87,6 +92,39 @@ class UiKitInfoText extends StatelessWidget {
             ),
           ),
         ],
+      );
+    }
+
+    if (chatName != null) {
+      child = RichText(
+        text: TextSpan(
+          children: [
+            WidgetSpan(
+                child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  chatName!,
+                  style: boldTextTheme?.caption3Medium,
+                ),
+                if (title != null)
+                  Text(
+                    title!,
+                    style: regularTextTheme?.caption4Regular,
+                  ),
+              ],
+            )),
+            TextSpan(
+              text: text,
+              style: boldTextTheme?.caption3Medium.copyWith(color: ColorsFoundation.mutedText),
+            ),
+            if (additionalText != null)
+              TextSpan(
+                text: ' $additionalText',
+                style: boldTextTheme?.caption3Medium.copyWith(color: ColorsFoundation.mutedText),
+              ),
+          ],
+        ),
       );
     }
 

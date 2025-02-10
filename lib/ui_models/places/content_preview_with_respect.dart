@@ -1,12 +1,16 @@
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ContentPreviewWithRespect {
+  final int? placeId;
+  final int? eventId;
   final List<String> images;
   final String title;
   final List<RespectFromUser> respectFromUsers;
   final List<UiKitTag> properties;
 
   ContentPreviewWithRespect({
+    this.placeId,
+    this.eventId,
     required this.images,
     required this.title,
     required this.respectFromUsers,

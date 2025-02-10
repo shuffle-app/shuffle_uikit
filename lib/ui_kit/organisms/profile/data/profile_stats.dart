@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 abstract class ProfileStats {
+  const ProfileStats();
+
   String getStringValue(int value) {
     if (value >= 100000) {
       return '99k+';
@@ -26,22 +28,22 @@ class InfluencerStats extends ProfileStats {
   final int reviewsPosted;
   final int points;
 
-  InfluencerStats({required this.placesVisited, required this.reviewsPosted, required this.points});
+  const InfluencerStats({required this.placesVisited, required this.reviewsPosted, required this.points});
 
   @override
   List<ProfileHighlightCard> get profileHighlightCards => [
         ProfileHighlightCard(
-          title: 'Places visited',
+          title: S.current.PlacesVisitedInf,
           value: getStringValue(placesVisited),
           valueGradient: getGradient(placesVisited),
         ),
         ProfileHighlightCard(
-          title: 'Reviews posted',
+          title: S.current.ReviewsPostedInf,
           value: getStringValue(reviewsPosted),
           valueGradient: getGradient(reviewsPosted),
         ),
         ProfileHighlightCard(
-          title: S.current.Points,
+          title: S.current.PointsEarnedInf,
           value: getStringValue(points),
           valueGradient: getGradient(points),
         ),
@@ -55,7 +57,7 @@ class InfluencerStats extends ProfileStats {
     final TextStyle? titleStyle = theme?.regularTextTheme.caption2.copyWith(color: colorScheme?.grayForegroundColor);
     return [
       UiKitCardWrapper(
-        borderRadius: BorderRadiusFoundation.all8,
+          borderRadius: BorderRadiusFoundation.all8,
           color: colorScheme?.surface2,
           padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
           child: Row(
@@ -123,7 +125,7 @@ class ProProfileStats extends ProfileStats {
   final int reviewsReceived;
   final int bookingsReceived;
 
-  ProProfileStats({required this.eventsCreated, required this.reviewsReceived, required this.bookingsReceived});
+  const ProProfileStats({required this.eventsCreated, required this.reviewsReceived, required this.bookingsReceived});
 
   @override
   List<ProfileHighlightCard> get profileHighlightCards => [

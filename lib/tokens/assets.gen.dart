@@ -1155,6 +1155,12 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/coworking.svg
   SvgGenImage get coworking => const SvgGenImage('assets/images/svg/coworking.svg');
 
+  /// File path: assets/images/svg/dancers-disco.svg
+  SvgGenImage get dancersDisco => const SvgGenImage('assets/images/svg/dancers-disco.svg');
+
+  /// File path: assets/images/svg/dancers.svg
+  SvgGenImage get dancers => const SvgGenImage('assets/images/svg/dancers.svg');
+
   /// File path: assets/images/svg/delivery-truck.svg
   SvgGenImage get deliveryTruck => const SvgGenImage('assets/images/svg/delivery-truck.svg');
 
@@ -1229,6 +1235,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/location.svg
   SvgGenImage get location => const SvgGenImage('assets/images/svg/location.svg');
+
+  /// File path: assets/images/svg/login.svg
+  SvgGenImage get login => const SvgGenImage('assets/images/svg/login.svg');
 
   /// File path: assets/images/svg/logo.svg
   SvgGenImage get logo => const SvgGenImage('assets/images/svg/logo.svg');
@@ -1348,6 +1357,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/tripple_arrow_cliped.svg
   SvgGenImage get trippleArrowCliped => const SvgGenImage('assets/images/svg/tripple_arrow_cliped.svg');
 
+  /// File path: assets/images/svg/two-people.svg
+  SvgGenImage get twoPeople => const SvgGenImage('assets/images/svg/two-people.svg');
+
   /// File path: assets/images/svg/unique-marker.svg
   SvgGenImage get uniqueMarker => const SvgGenImage('assets/images/svg/unique-marker.svg');
 
@@ -1458,6 +1470,8 @@ class $AssetsImagesSvgGen {
         companyLayered,
         conferences,
         coworking,
+        dancersDisco,
+        dancers,
         deliveryTruck,
         dubaiSilhouette,
         emptyRadio,
@@ -1483,6 +1497,7 @@ class $AssetsImagesSvgGen {
         lifebuoy,
         list,
         location,
+        login,
         logo,
         memeberGradientStar,
         noPhoto,
@@ -1522,6 +1537,7 @@ class $AssetsImagesSvgGen {
         tripleArrow,
         tripleArrowBlack,
         trippleArrowCliped,
+        twoPeople,
         uniqueMarker,
         unitedKingdom,
         usFlag,

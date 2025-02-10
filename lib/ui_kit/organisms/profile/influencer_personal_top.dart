@@ -3,10 +3,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class InfluencerPersonalTop extends StatelessWidget {
   final List<InfluencerTopCategory> categories;
+  final Function(int? placeId, int? eventId)? onItemTap;
 
   const InfluencerPersonalTop({
     super.key,
     required this.categories,
+    this.onItemTap,
   });
 
   double get contentImageWidth => 0.25.sw;
@@ -66,42 +68,45 @@ class InfluencerPersonalTop extends StatelessWidget {
                   (content) {
                     final isLast = category.items.indexOf(content) == category.items.length - 1;
 
-                    return Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadiusFoundation.all12,
-                          child: ImageWidget(
-                            link: content.imageUrl,
-                            width: contentImageWidth,
-                            height: contentImageHeight,
-                            fit: BoxFit.cover,
+                    return GestureDetector(
+                      onTap: () => onItemTap?.call(content.placeId, content.eventId),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadiusFoundation.all12,
+                            child: ImageWidget(
+                              link: content.imageUrl,
+                              width: contentImageWidth,
+                              height: contentImageHeight,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        ),
-                        SpacingFoundation.horizontalSpace12,
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Text(
-                                content.title,
-                                style: boldTextTheme?.caption1Bold,
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              Text(
-                                formatDifference(content.datePosted),
-                                style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.mutedText),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              SpacingFoundation.verticalSpace8,
-                              UiKitTagsWidget(baseTags: content.tags),
-                            ],
+                          SpacingFoundation.horizontalSpace12,
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                Text(
+                                  content.title,
+                                  style: boldTextTheme?.caption1Bold,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                Text(
+                                  formatDifference(content.datePosted),
+                                  style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.mutedText),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                                SpacingFoundation.verticalSpace8,
+                                UiKitTagsWidget(baseTags: content.tags),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
-                    ).paddingOnly(bottom: isLast ? 0 : EdgeInsetsFoundation.vertical16);
+                        ],
+                      ).paddingOnly(bottom: isLast ? 0 : EdgeInsetsFoundation.vertical16),
+                    );
                   },
                 ),
               ],
