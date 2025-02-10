@@ -68,7 +68,7 @@ class UiKitCustomTabBar extends StatelessWidget {
           length: tabs.length,
           initialIndex: initialTab.isNegative ? 0 : initialTab,
           child: SizedBox(
-            height: badged ? 64 : null,
+            height: badged ? 48.w : null,
             child: TabBar(
               controller: tabController,
               isScrollable: scrollable,

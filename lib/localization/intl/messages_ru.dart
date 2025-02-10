@@ -1241,6 +1241,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PlaceType": MessageLookupByLibrary.simpleMessage("Тип места"),
     "Places": MessageLookupByLibrary.simpleMessage("Места"),
     "PlacesVisited": m56,
+    "PlacesVisitedInf": MessageLookupByLibrary.simpleMessage(
+      "Посещенные места",
+    ),
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, добавьте даты(-у)",
     ),
@@ -1310,6 +1313,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PointsAre": MessageLookupByLibrary.simpleMessage("Поинты это..."),
     "PointsCount": m66,
     "PointsEarned": m67,
+    "PointsEarnedInf": MessageLookupByLibrary.simpleMessage(
+      "Заработанные поинты",
+    ),
     "PointsHiwItems": m68,
     "PointsInOffer": m69,
     "Position": MessageLookupByLibrary.simpleMessage("Позиция"),
@@ -1448,6 +1454,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ReviewsByCritics": MessageLookupByLibrary.simpleMessage("Отзывы критиков"),
     "ReviewsCount": m76,
     "ReviewsPosted": m77,
+    "ReviewsPostedInf": MessageLookupByLibrary.simpleMessage(
+      "Опубликованные отзывы",
+    ),
     "ReviewsReceived": m78,
     "Routes": MessageLookupByLibrary.simpleMessage("Маршруты"),
     "Saturday": MessageLookupByLibrary.simpleMessage("Суббота"),

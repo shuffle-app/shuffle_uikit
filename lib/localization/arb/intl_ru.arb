@@ -995,6 +995,10 @@
   "SelectCity": "Выберите город",
   "City": "Город",
   "Scheduler": "Планировщик",
-  "WantToJoin": "хочет присоединиться"
+  "WantToJoin": "хочет присоединиться",
+  "PlacesVisitedInf": "Посещенные места",
+  "ReviewsPostedInf": "Опубликованные отзывы",
+  "PointsEarnedInf": "Заработанные поинты"
+
 }
 

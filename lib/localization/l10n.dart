@@ -8495,6 +8495,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Places visited`
+  String get PlacesVisitedInf {
+    return Intl.message(
+      'Places visited',
+      name: 'PlacesVisitedInf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reviews posted`
+  String get ReviewsPostedInf {
+    return Intl.message(
+      'Reviews posted',
+      name: 'ReviewsPostedInf',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Points earned`
+  String get PointsEarnedInf {
+    return Intl.message(
+      'Points earned',
+      name: 'PointsEarnedInf',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

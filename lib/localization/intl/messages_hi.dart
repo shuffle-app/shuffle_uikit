@@ -1245,6 +1245,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PlaceType": MessageLookupByLibrary.simpleMessage("जगह प्रकार"),
     "Places": MessageLookupByLibrary.simpleMessage("स्थानों"),
     "PlacesVisited": m56,
+    "PlacesVisitedInf": MessageLookupByLibrary.simpleMessage("Places visited"),
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
       "कृपया एक तिथि या तिथियाँ जोड़ें",
     ),
@@ -1312,6 +1313,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PointsAre": MessageLookupByLibrary.simpleMessage("अंक हैं..."),
     "PointsCount": m66,
     "PointsEarned": m67,
+    "PointsEarnedInf": MessageLookupByLibrary.simpleMessage("Points earned"),
     "PointsHiwItems": m68,
     "PointsInOffer": m69,
     "Position": MessageLookupByLibrary.simpleMessage("पद"),
@@ -1458,6 +1460,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ReviewsCount": m76,
     "ReviewsPosted": m77,
+    "ReviewsPostedInf": MessageLookupByLibrary.simpleMessage("Reviews posted"),
     "ReviewsReceived": m78,
     "Routes": MessageLookupByLibrary.simpleMessage("रूट"),
     "Saturday": MessageLookupByLibrary.simpleMessage("शनिवार"),

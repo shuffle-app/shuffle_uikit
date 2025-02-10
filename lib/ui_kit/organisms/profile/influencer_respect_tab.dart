@@ -3,10 +3,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class InfluencerRespectTab extends StatelessWidget {
   final List<ContentPreviewWithRespect> items;
+  final Function(int? placeId, int? eventId)? onItemTap;
 
   const InfluencerRespectTab({
     super.key,
     required this.items,
+    this.onItemTap,
   });
 
   @override
@@ -30,11 +32,14 @@ class InfluencerRespectTab extends StatelessWidget {
           itemBuilder: (context, index) {
             final item = items[index];
 
-            return UiKitRespectEventCard(
-              images: item.images,
-              title: item.title,
-              respectFromUsers: item.respectFromUsers,
-              properties: item.properties,
+            return GestureDetector(
+              onTap: () => onItemTap?.call(item.placeId, item.eventId),
+              child: UiKitRespectEventCard(
+                images: item.images,
+                title: item.title,
+                respectFromUsers: item.respectFromUsers,
+                properties: item.properties,
+              ),
             );
           },
           itemCount: items.length,

@@ -5,12 +5,14 @@ class ProfilePostsPlaces extends StatelessWidget {
   final List<ProfilePlace> places;
   final double? horizontalMargin;
   final VoidCallback? onExpand;
+  final Function(int? placeId, int? eventId)? onItemTap;
 
   const ProfilePostsPlaces({
     super.key,
     required this.places,
     this.horizontalMargin,
     this.onExpand,
+    this.onItemTap,
   });
 
   @override
@@ -33,18 +35,21 @@ class ProfilePostsPlaces extends StatelessWidget {
                   thickness: 1,
                   color: ColorsFoundation.surface2,
                 ),
-              UiKitExtendedInfluencerFeedbackCard(
-                title: place.title,
-                imageUrl: place.image,
-                datePosted: place.createdAt,
-                tags: place.tags,
-                text: place.postBody,
-                smileyCount: place.smileyCount,
-                sunglassesCount: place.sunglassesCount,
-                fireCount: place.fireCount,
-                thumbsUpCount: place.thumbsUpCount,
-                heartEyeCount: place.heartEyeCount,
-                rating: place.stars,
+              GestureDetector(
+                onTap: () => onItemTap?.call(place.placeId, place.eventId),
+                child: UiKitExtendedInfluencerFeedbackCard(
+                  title: place.title,
+                  imageUrl: place.image,
+                  datePosted: place.createdAt,
+                  tags: place.tags,
+                  text: place.postBody,
+                  smileyCount: place.smileyCount,
+                  sunglassesCount: place.sunglassesCount,
+                  fireCount: place.fireCount,
+                  thumbsUpCount: place.thumbsUpCount,
+                  heartEyeCount: place.heartEyeCount,
+                  rating: place.stars,
+                ),
               ),
             ],
           ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16);
