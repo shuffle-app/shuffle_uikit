@@ -98,7 +98,7 @@ class AlertDialogData {
   final List<Widget>? actions;
   final Color? customBackgroundColor;
 
-  AlertDialogData({
+  const AlertDialogData({
     required this.defaultButtonText,
     this.onPop,
     this.customBackgroundColor,
