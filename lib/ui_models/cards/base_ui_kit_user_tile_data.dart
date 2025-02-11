@@ -13,6 +13,7 @@ class BaseUiKitUserTileData {
   final bool? noMaterialOverlay;
   final String? speciality;
   final Color? userNameTextColor;
+  final int? noShows;
 
   BaseUiKitUserTileData({
     this.id,
@@ -25,5 +26,6 @@ class BaseUiKitUserTileData {
     this.speciality,
     this.noMaterialOverlay,
     this.userNameTextColor,
+    this.noShows,
   });
 }

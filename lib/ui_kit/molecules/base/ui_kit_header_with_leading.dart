@@ -9,6 +9,7 @@ class UiKitHeaderWithLeading extends StatelessWidget {
   final Widget? titleIcon;
   final TextStyle? titleStyle;
   final TextStyle? subtitleStyle;
+  final Widget? noShows;
 
   const UiKitHeaderWithLeading({
     super.key,
@@ -19,6 +20,7 @@ class UiKitHeaderWithLeading extends StatelessWidget {
     this.trailing,
     this.titleStyle,
     this.subtitleStyle,
+    this.noShows,
   });
 
   @override
@@ -52,6 +54,10 @@ class UiKitHeaderWithLeading extends StatelessWidget {
             ],
           ),
         ),
+        if (noShows != null) ...[
+          SpacingFoundation.horizontalSpace12,
+          noShows!,
+        ],
         SpacingFoundation.horizontalSpace12,
         trailing ?? const SizedBox(),
       ],
