@@ -146,7 +146,8 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                           Rect.fromLTWH(
                             12,
                             2,
-                            size.width * previewUpdateNotifier.value.previewWidthFraction - 24,
+                            size.width * previewUpdateNotifier.value.previewWidthFraction -
+                                (previewUpdateNotifier.value.previewWidthFraction < 1 ? 24 : 0),
                             size.height - 4,
                           ),
                           4,
@@ -188,7 +189,8 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                                   final withinFractionBounds = newWidthFraction >= fractionBounds.first &&
                                       newWidthFraction <= fractionBounds.last;
                                   final widthDifference =
-                                      (previewUpdateNotifier.value.previewWidthFraction- newWidthFraction) * size.width ;
+                                      (previewUpdateNotifier.value.previewWidthFraction - newWidthFraction) *
+                                          size.width;
 
                                   /// need to change offset based on pan direction
                                   /// if pan right then we need to increase the offset
@@ -201,11 +203,9 @@ class UiKitLineChartSmallPreviewOverlay extends StatelessWidget {
                                     /// there is no need to get the abs value because delta is always positive
                                     /// when panning right
                                     if (withinFractionBounds && -details.delta.dx < currentLeftOffset) {
-                                      newLeftOffset =
-                                          currentLeftOffset + widthDifference;
+                                      newLeftOffset = currentLeftOffset + widthDifference;
                                     } else {
-                                      newLeftOffset =
-                                          currentLeftOffset + details.delta.dx;
+                                      newLeftOffset = currentLeftOffset + details.delta.dx;
                                     }
 
                                     //adding the difference in width to the current offset
