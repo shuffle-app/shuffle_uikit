@@ -54,8 +54,10 @@ class UiKitHeaderWithLeading extends StatelessWidget {
             ],
           ),
         ),
-        SpacingFoundation.horizontalSpace12,
-        noShows ?? const SizedBox(),
+        if (noShows != null) ...[
+          SpacingFoundation.horizontalSpace12,
+          noShows!,
+        ],
         SpacingFoundation.horizontalSpace12,
         trailing ?? const SizedBox(),
       ],
