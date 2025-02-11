@@ -996,5 +996,7 @@
   "WantToJoin": "wants to join",
   "PlacesVisitedInf": "Places visited",
   "ReviewsPostedInf": "Reviews posted",
-  "PointsEarnedInf": "Points earned"
+  "PointsEarnedInf": "Points earned",
+  "PleaseEnterABranchTitle": "Please, enter a branch title",
+  "CreateLinkWith": "Create link with"
 }

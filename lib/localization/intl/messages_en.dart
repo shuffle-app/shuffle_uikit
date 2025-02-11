@@ -609,6 +609,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateAUSP": m18,
     "CreateBooking": MessageLookupByLibrary.simpleMessage("Create booking"),
     "CreateEvent": MessageLookupByLibrary.simpleMessage("Create Event"),
+    "CreateLinkWith": MessageLookupByLibrary.simpleMessage("Create link with"),
     "CreateNewXForYourY": m19,
     "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
     "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
@@ -1245,6 +1246,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please add a date(-s)",
     ),
     "PleaseAddPhoto": MessageLookupByLibrary.simpleMessage("Please add photo"),
+    "PleaseEnterABranchTitle": MessageLookupByLibrary.simpleMessage(
+      "Please, enter a branch title",
+    ),
     "PleaseEnterCurrentLimit": MessageLookupByLibrary.simpleMessage(
       "Please enter current limit",
     ),

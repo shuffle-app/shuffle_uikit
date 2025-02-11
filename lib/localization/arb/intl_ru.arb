@@ -998,7 +998,9 @@
   "WantToJoin": "хочет присоединиться",
   "PlacesVisitedInf": "Посещенные места",
   "ReviewsPostedInf": "Опубликованные отзывы",
-  "PointsEarnedInf": "Заработанные поинты"
+  "PointsEarnedInf": "Заработанные поинты",
+  "PleaseEnterABranchTitle": "Пожалуйста, введите название сети",
+  "CreateLinkWith": "Создать сеть с"
 
 }
 

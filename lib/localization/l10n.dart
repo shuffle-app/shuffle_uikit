@@ -8525,6 +8525,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Please, enter a branch title`
+  String get PleaseEnterABranchTitle {
+    return Intl.message(
+      'Please, enter a branch title',
+      name: 'PleaseEnterABranchTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create link with`
+  String get CreateLinkWith {
+    return Intl.message(
+      'Create link with',
+      name: 'CreateLinkWith',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

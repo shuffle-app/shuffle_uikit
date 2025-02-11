@@ -610,6 +610,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateAUSP": m18,
     "CreateBooking": MessageLookupByLibrary.simpleMessage("Создать букинг"),
     "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
+    "CreateLinkWith": MessageLookupByLibrary.simpleMessage("Создать сеть с"),
     "CreateNewXForYourY": m19,
     "CreatePlace": MessageLookupByLibrary.simpleMessage("Создать место"),
     "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
@@ -1249,6 +1250,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "PleaseAddPhoto": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, добавьте фото",
+    ),
+    "PleaseEnterABranchTitle": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, введите название сети",
     ),
     "PleaseEnterCurrentLimit": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, введите допустимый лимит",
