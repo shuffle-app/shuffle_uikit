@@ -17,6 +17,11 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   final ValueNotifier<String?>? translateDescription;
   final ValueNotifier<bool>? showTranslateButton;
   final ValueChanged<int>? onImageTap;
+  final VoidCallback? onCreateBranchesTap;
+  final VoidCallback? onRenameTap;
+  final ValueNotifier<String?>? branchName;
+  final ValueChanged<int>? removeBranchItem;
+  final bool showBranches;
 
   UiKitMediaSliderWithTags({
     super.key,
@@ -34,6 +39,11 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
     this.showTranslateButton,
     this.translateDescription,
     this.onImageTap,
+    this.onCreateBranchesTap,
+    this.onRenameTap,
+    this.branchName,
+    this.removeBranchItem,
+    this.showBranches = false,
   }) : scrollController = scrollController ?? ScrollController();
 
   @override
@@ -47,6 +57,7 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
   bool isTranslate = false;
 
   List<HorizontalCaptionedImageData>? branches;
+  bool _showBranches = false;
 
   String currentDescription = '';
 
@@ -55,12 +66,22 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
     isHide = widget.initialDescriptionHide ?? true;
     currentDescription = widget.description;
     branches = widget.branches?.value;
+    if (branches != null && branches!.isNotEmpty) {
+      _showBranches = true;
+    } else {
+      _showBranches = widget.showBranches;
+    }
     super.initState();
-    widget.branches?.addListener(onLoadBranches);
+    widget.branches != null ? widget.branches?.addListener(onLoadBranches) : _showBranches = widget.showBranches;
   }
 
   onLoadBranches() {
     branches = widget.branches?.value;
+    if (branches != null && branches!.isNotEmpty) {
+      _showBranches = true;
+    } else {
+      _showBranches = widget.showBranches;
+    }
     if (mounted) setState(() {});
   }
 
@@ -154,10 +175,10 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
         AnimatedSize(
                 duration: const Duration(milliseconds: 200),
                 curve: Curves.easeInOut,
-                child: (branches ?? []).isEmpty
+                child: !_showBranches
                     ? const SizedBox.shrink()
                     : SizedBox(
-                        height: 0.28125.sw * 0.577 + 38.h,
+                        height: 0.28125.sw * 0.577 + 1.sw <= 380 ? 45.h : 38.h,
                         child: UiKitCardWrapper(
                           borderRadius: BorderRadius.zero,
                           color: theme?.colorScheme.surface1,
@@ -165,9 +186,35 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                             mainAxisSize: MainAxisSize.min,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              Text(
-                                S.of(context).Branches,
-                                style: theme?.boldTextTheme.caption2Medium,
+                              Row(
+                                children: [
+                                  if (widget.branchName != null)
+                                    ValueListenableBuilder(
+                                      valueListenable: widget.branchName!,
+                                      builder: (__, value, _) {
+                                        return Text(
+                                          widget.showBranches
+                                              ? (value ?? S.of(context).Branches)
+                                              : S.of(context).Branches,
+                                          style: theme?.boldTextTheme.caption2Medium,
+                                        );
+                                      },
+                                    ),
+                                  Spacer(),
+                                  if (widget.branchName?.value != null &&
+                                      widget.branchName!.value!.isNotEmpty &&
+                                      widget.showBranches)
+                                    InkWell(
+                                      onTap: widget.onRenameTap,
+                                      child: ImageWidget(
+                                        svgAsset: GraphicsFoundation.instance.svg.pencil,
+                                        color: Colors.white,
+                                        width: 18.w,
+                                        height: 18.w,
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ).paddingOnly(right: SpacingFoundation.horizontalSpacing16),
+                                ],
                               ),
                               SpacingFoundation.verticalSpace4,
                               ConstrainedBox(
@@ -178,17 +225,91 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                                   addAutomaticKeepAlives: false,
                                   scrollDirection: Axis.horizontal,
                                   itemBuilder: (context, index) {
-                                    final branch = branches!.elementAt(index);
+                                    if (index == 0 && widget.showBranches) {
+                                      return SizedBox(
+                                        width: 0.17.sw,
+                                        child: context.badgeButtonNoValue(
+                                          data: BaseUiKitButtonData(
+                                            onPressed: widget.onCreateBranchesTap,
+                                            iconWidget: DecoratedBox(
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.rectangle,
+                                                border: Border.fromBorderSide(
+                                                  BorderSide(
+                                                    color: ColorsFoundation.neutral40,
+                                                    width: 2,
+                                                  ),
+                                                ),
+                                                borderRadius: BorderRadiusFoundation.all12,
+                                              ),
+                                              child: GradientableWidget(
+                                                gradient: GradientFoundation.defaultLinearGradient,
+                                                child: ImageWidget(
+                                                  iconData: ShuffleUiKitIcons.plus,
+                                                  height: 30.w,
+                                                  width: 30.w,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
 
-                                    return UiKitHorizontalCaptionedImage(
-                                      title: branch.caption,
-                                      imageLink: branch.imageUrl,
-                                      borderRadius: BorderRadiusFoundation.all16,
-                                      onTap: branch.onTap,
+                                    final branch = branches!.elementAt(index - (widget.showBranches ? 1 : 0));
+
+                                    return GestureDetector(
+                                      onLongPress: () {
+                                        if (widget.showBranches) {
+                                          setState(() {
+                                            branch.isSelected = !branch.isSelected;
+                                          });
+                                        }
+                                      },
+                                      child: Stack(
+                                        children: [
+                                          UiKitHorizontalCaptionedImage(
+                                            title: branch.caption,
+                                            imageLink: branch.imageUrl,
+                                            borderRadius: BorderRadiusFoundation.all16,
+                                            onTap: branch.isSelected ? null : branch.onTap,
+                                          ),
+                                          if (branch.isSelected)
+                                            SizedBox(
+                                              width: 0.28125.sw,
+                                              height: 0.28125.sw * 0.577,
+                                              child: Center(
+                                                child: TapRegion(
+                                                  onTapInside: (_) {
+                                                    if (widget.showBranches) {
+                                                      widget.removeBranchItem?.call(branch.placeId);
+                                                      setState(() {
+                                                        branch.isSelected = false;
+                                                      });
+                                                    }
+                                                  },
+                                                  onTapOutside: (_) {
+                                                    if (widget.showBranches) {
+                                                      setState(() {
+                                                        branch.isSelected = false;
+                                                      });
+                                                    }
+                                                  },
+                                                  child: ImageWidget(
+                                                    iconData: ShuffleUiKitIcons.unlink,
+                                                    color: Colors.white.withValues(alpha: 0.7),
+                                                    width: 42.w,
+                                                    height: 42.w,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
                                     );
                                   },
                                   separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
-                                  itemCount: branches!.length,
+                                  itemCount: (branches?.length ?? 0) + (widget.showBranches ? 1 : 0),
                                 ),
                               ),
                             ],
