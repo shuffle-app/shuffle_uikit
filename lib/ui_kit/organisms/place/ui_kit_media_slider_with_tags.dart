@@ -178,7 +178,7 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                 child: !_showBranches
                     ? const SizedBox.shrink()
                     : SizedBox(
-                        height: 0.28125.sw * 0.577 + 1.sw <= 380 ? 45.h : 38.h,
+                        height: 0.28125.sw * 0.577 + (1.sw <= 380 ? 45.h : 38.h),
                         child: UiKitCardWrapper(
                           borderRadius: BorderRadius.zero,
                           color: theme?.colorScheme.surface1,
