@@ -999,6 +999,17 @@
   "PlacesVisitedInf": "Places visited",
   "ReviewsPostedInf": "Reviews posted",
   "PointsEarnedInf": "Points earned",
+  "ShowUpRatio": "Show up ratio",
+  "BookingPopUpText": "Show up ratio takes into account how long a user has been online, whether they have notifications enabled, and their no-show ratio",
+  "NoShows": "No shows",
+  "NoShowsRatioTakesIntoAccount": "No shows ratio takes into account the no show ratios for all users",
+  "ShowUp": "Show up",
+  "YourShowUpRatio": "Your Show up ratio",
+  "IsOverX": "is over {x}%", 
+  "KeepItUp": "Keep it up! Use our tools to improve it even more",
+  "YourTurnoutRate": "Your turnout rate",
+  "IsLessThanX": "Is less than {x}%",
+  "UseOurToolsToImproveIt": "Use our tools to improve it",
   "PleaseEnterABranchTitle": "Please, enter a branch title",
   "CreateLinkWith": "Create link with"
 

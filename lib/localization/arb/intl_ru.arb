@@ -999,6 +999,17 @@
   "PlacesVisitedInf": "Посещенные места",
   "ReviewsPostedInf": "Опубликованные отзывы",
   "PointsEarnedInf": "Заработанные поинты",
+  "ShowUpRatio": "Коэффициент Show up",
+  "BookingPopUpText": "Коэффициент явки учитывает, как давно пользователь был онлайн, включены ли у него уведомления и его процент неявок", 
+  "NoShows": "Неявка",
+  "NoShowsRatioTakesIntoAccount": "Коэффициент неявки учитывает коэффициенты неявки по всем пользователям",
+  "ShowUp": "Явки",
+  "YourShowUpRatio": "Ваш Коэффициент явки",
+  "IsOverX": "Более {x}%", 
+  "KeepItUp": "Так держать! Используйте наши инструменты, чтобы улучшить его еще больше",
+  "YourTurnoutRate": "Ваш уровень явки",
+  "IsLessThanX": "Менее {x}%",
+  "UseOurToolsToImproveIt": "Используйте наши инструменты, чтобы улучшить его",
   "PleaseEnterABranchTitle": "Пожалуйста, введите название сети",
   "CreateLinkWith": "Создать сеть с"
 

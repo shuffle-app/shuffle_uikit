@@ -35,6 +35,17 @@ class GradientFoundation {
     ],
   );
 
+  static final showUpGradient = LinearGradient(
+    colors: [
+      ColorsFoundation.goldGradientBegin,
+      ColorsFoundation.yellow,
+      ColorsFoundation.goldGradientEnd,
+    ],
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
+    transform: GradientRotation(-pi / 12),
+  );
+
   static final digestCardGradient = LinearGradient(
     colors: [
       ColorsFoundation.darkNeutral500.withOpacity(0.25),

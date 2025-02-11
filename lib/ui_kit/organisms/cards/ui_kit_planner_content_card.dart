@@ -8,10 +8,8 @@ class UiKitPlannerContentCard extends StatefulWidget {
   final String contentTitle;
   final String avatarPath;
   final VoidCallback onTap;
-  final VoidCallback? onDelete;
-  final VoidCallback? onSwipe;
-
-  //TODO add notification icon and actions
+  final VoidCallback? onNotification;
+  final bool showNotificationSet;
 
   const UiKitPlannerContentCard(
       {super.key,
@@ -20,15 +18,15 @@ class UiKitPlannerContentCard extends StatefulWidget {
       required this.contentTitle,
       required this.avatarPath,
       required this.onTap,
-      this.onDelete,
-      this.onSwipe});
+      this.onNotification,
+      this.showNotificationSet = false});
 
   @override
   State<UiKitPlannerContentCard> createState() => _UiKitPlannerContentCardState();
 }
 
 class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
-  bool canDelete = false;
+  bool showNotificationSetOverlay = false;
 
   @override
   Widget build(BuildContext context) {
@@ -45,18 +43,17 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
         borderRadius: BorderRadiusFoundation.all24,
         clipBehavior: Clip.hardEdge,
         color: cardColor,
-        padding: EdgeInsets.all(EdgeInsetsFoundation.all16),
         child: TapRegion(
           onTapOutside: (event) {
-            setState(() => canDelete = false);
+            setState(() => showNotificationSetOverlay = false);
           },
           child: InkWell(
             onTap: () {
               widget.onTap.call();
-              setState(() => canDelete = false);
+              setState(() => showNotificationSetOverlay = false);
             },
             onLongPress: () {
-              setState(() => canDelete = true);
+              setState(() => showNotificationSetOverlay = true);
             },
             child: Ink(
               child: Stack(
@@ -118,24 +115,32 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
                         ),
                       ],
                     ))
-                  ]),
+                  ]).paddingAll(EdgeInsetsFoundation.all16),
+                  if (widget.showNotificationSet)
+                    Positioned(
+                        right: -5,
+                        top: -5,
+                        child: GradientableWidget(
+                            gradient: GradientFoundation.defaultLinearGradient,
+                            child: Icon(
+                              ShuffleUiKitIcons.bell,
+                              color: Colors.white,
+                            ))),
                   AnimatedSwitcher(
                     duration: const Duration(milliseconds: 200),
-                    child: canDelete
+                    child: showNotificationSetOverlay
                         ? ColoredBox(
                             color: ColorsFoundation.neutral48,
                             child: Center(
                               child: context
                                   .button(
                                     data: BaseUiKitButtonData(
-                                      backgroundColor: colorScheme?.surface3,
                                       iconInfo: BaseUiKitButtonIconData(
-                                        iconData: ShuffleUiKitIcons.trash,
-                                        size: 18.h,
+                                        iconData: ShuffleUiKitIcons.bell,
                                         color: colorScheme?.inverseSurface,
                                       ),
                                       borderColor: colorScheme?.inverseSurface,
-                                      onPressed: widget.onDelete,
+                                      onPressed: widget.onNotification,
                                     ),
                                     // blurred: true,
                                   )

@@ -5,15 +5,16 @@ import 'package:shuffle_uikit/ui_models/charts/pie_chart_data.dart';
 import 'package:shuffle_uikit/utils/extentions/pie_chart_extensions.dart';
 
 class UiKitPieChartPainter extends CustomPainter {
+  final double strokeWidth;
   final List<UiKitPieCharItemData> data;
 
-  UiKitPieChartPainter({
+  const UiKitPieChartPainter({
     required this.data,
+    required this.strokeWidth,
   });
 
   @override
   void paint(Canvas canvas, Size size) {
-    const strokeWidth = 16.0;
     final diameter = min(size.width - strokeWidth, size.height - strokeWidth);
     final radius = diameter / 2;
     double startAngle = 0;
