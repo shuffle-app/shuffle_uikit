@@ -12,11 +12,12 @@ class UiKitAdvertisingShowCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final regularTextTheme = context.uiKitTheme?.regularTextTheme;
+    final theme = context.uiKitTheme;
+    final regularTextTheme = theme?.regularTextTheme;
 
     return UiKitCardWrapper(
       borderRadius: BorderRadiusFoundation.all12,
-      color: context.uiKitTheme?.colorScheme.surface2,
+      color: theme?.colorScheme.surface2,
       child: Row(
         children: [
           Expanded(
