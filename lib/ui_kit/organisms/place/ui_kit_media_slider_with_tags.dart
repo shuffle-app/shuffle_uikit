@@ -17,9 +17,9 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   final ValueNotifier<String?>? translateDescription;
   final ValueNotifier<bool>? showTranslateButton;
   final ValueChanged<int>? onImageTap;
-  final VoidCallback? onCreateBranchesTap;
-  final VoidCallback? onRenameTap;
-  final ValueNotifier<String?>? branchName;
+  final Future<String?> Function()? onCreateBranchesTap;
+  final Future<String?> Function()? onRenameTap;
+  final String? branchName;
   final ValueChanged<int>? removeBranchItem;
   final bool showBranches;
 
@@ -51,14 +51,14 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
 }
 
 class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
+  final double plusIconSize = kIsWeb ? 30 : 30.w;
+  late String? currentBranchName;
   late double scrollPosition;
-
   late bool isHide;
+
   bool isTranslate = false;
-
-  List<HorizontalCaptionedImageData>? branches;
   bool _showBranches = false;
-
+  List<HorizontalCaptionedImageData>? branches;
   String currentDescription = '';
 
   @override
@@ -66,6 +66,7 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
     isHide = widget.initialDescriptionHide ?? true;
     currentDescription = widget.description;
     branches = widget.branches?.value;
+    currentBranchName = widget.branchName;
     if (branches != null && branches!.isNotEmpty) {
       _showBranches = true;
     } else {
@@ -83,6 +84,14 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
       _showBranches = widget.showBranches;
     }
     if (mounted) setState(() {});
+  }
+
+  renameBranch(String? branchName) {
+    if (branchName != null && branchName.isNotEmpty) {
+      setState(() {
+        currentBranchName = branchName;
+      });
+    }
   }
 
   @override
@@ -188,24 +197,19 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                             children: [
                               Row(
                                 children: [
-                                  if (widget.branchName != null)
-                                    ValueListenableBuilder(
-                                      valueListenable: widget.branchName!,
-                                      builder: (__, value, _) {
-                                        return Text(
-                                          widget.showBranches
-                                              ? (value ?? S.of(context).Branches)
-                                              : S.of(context).Branches,
-                                          style: theme?.boldTextTheme.caption2Medium,
-                                        );
-                                      },
-                                    ),
+                                  Text(
+                                    widget.showBranches
+                                        ? (currentBranchName ?? S.of(context).Branches)
+                                        : S.of(context).Branches,
+                                    style: theme?.boldTextTheme.caption2Medium,
+                                  ),
                                   Spacer(),
-                                  if (widget.branchName?.value != null &&
-                                      widget.branchName!.value!.isNotEmpty &&
-                                      widget.showBranches)
+                                  if (currentBranchName != null && currentBranchName!.isNotEmpty && widget.showBranches)
                                     InkWell(
-                                      onTap: widget.onRenameTap,
+                                      onTap: () async {
+                                        final upcomingBranchName = await widget.onRenameTap?.call();
+                                        renameBranch(upcomingBranchName);
+                                      },
                                       child: ImageWidget(
                                         svgAsset: GraphicsFoundation.instance.svg.pencil,
                                         color: Colors.white,
@@ -226,31 +230,31 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                                   scrollDirection: Axis.horizontal,
                                   itemBuilder: (context, index) {
                                     if (index == 0 && widget.showBranches) {
-                                      return SizedBox(
-                                        width: 0.17.sw,
-                                        child: context.badgeButtonNoValue(
-                                          data: BaseUiKitButtonData(
-                                            onPressed: widget.onCreateBranchesTap,
-                                            iconWidget: DecoratedBox(
-                                              decoration: BoxDecoration(
-                                                shape: BoxShape.rectangle,
-                                                border: Border.fromBorderSide(
-                                                  BorderSide(
-                                                    color: ColorsFoundation.neutral40,
-                                                    width: 2,
-                                                  ),
-                                                ),
-                                                borderRadius: BorderRadiusFoundation.all12,
-                                              ),
-                                              child: GradientableWidget(
-                                                gradient: GradientFoundation.defaultLinearGradient,
-                                                child: ImageWidget(
-                                                  iconData: ShuffleUiKitIcons.plus,
-                                                  height: 30.w,
-                                                  width: 30.w,
+                                      return context.badgeButtonNoValue(
+                                        data: BaseUiKitButtonData(
+                                          onPressed: () async {
+                                            final upcomingBranchName = await widget.onCreateBranchesTap?.call();
+                                            renameBranch(upcomingBranchName);
+                                          },
+                                          iconWidget: DecoratedBox(
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.rectangle,
+                                              border: Border.fromBorderSide(
+                                                BorderSide(
+                                                  color: ColorsFoundation.neutral40,
+                                                  width: 2,
                                                 ),
                                               ),
+                                              borderRadius: BorderRadiusFoundation.all12,
                                             ),
+                                            child: GradientableWidget(
+                                              gradient: GradientFoundation.defaultLinearGradient,
+                                              child: ImageWidget(
+                                                iconData: ShuffleUiKitIcons.plus,
+                                                height: plusIconSize,
+                                                width: plusIconSize,
+                                              ),
+                                            ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing12),
                                           ),
                                         ),
                                       );
@@ -276,8 +280,8 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                                           ),
                                           if (branch.isSelected)
                                             SizedBox(
-                                              width: 0.28125.sw,
-                                              height: 0.28125.sw * 0.577,
+                                              width: kIsWeb ? 90 : 0.28125.sw,
+                                              height: kIsWeb ? 52 : (0.28125.sw * 0.577),
                                               child: Center(
                                                 child: TapRegion(
                                                   onTapInside: (_) {
@@ -285,6 +289,7 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                                                       widget.removeBranchItem?.call(branch.placeId);
                                                       setState(() {
                                                         branch.isSelected = false;
+                                                        currentBranchName = null;
                                                       });
                                                     }
                                                   },
