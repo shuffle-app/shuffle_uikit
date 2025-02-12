@@ -1009,5 +1009,8 @@
   "KeepItUp": "Keep it up! Use our tools to improve it even more",
   "YourTurnoutRate": "Your turnout rate",
   "IsLessThanX": "Is less than {x}%",
-  "UseOurToolsToImproveIt": "Use our tools to improve it"
+  "UseOurToolsToImproveIt": "Use our tools to improve it",
+  "PleaseEnterABranchTitle": "Please, enter a branch title",
+  "CreateLinkWith": "Create link with"
+
 }

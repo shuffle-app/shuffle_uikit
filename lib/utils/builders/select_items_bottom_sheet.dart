@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-selectCityBottomSheet(
+selectItemsBottomSheet(
   BuildContext context, {
-  ValueChanged<String>? onSelectCity,
-  List<String?>? cites,
-  String? selectedCity,
+  ValueChanged<String>? onSelectItem,
+  List<String?>? items,
+  String? selectedItem,
+  String? title,
 }) {
   final theme = context.uiKitTheme;
   final boldTextTheme = theme?.boldTextTheme;
-  final itemCount = cites?.length ?? 1;
+  final itemCount = items?.length ?? 1;
+
   //TODO for big device
   final topPadding = itemCount <= 2
       ? 0.55.sh
@@ -27,10 +29,10 @@ selectCityBottomSheet(
       child: Column(
         children: [
           Text(
-            S.of(context).SelectCity,
+            title ?? S.of(context).SelectCity,
             style: boldTextTheme?.subHeadline,
           ).paddingAll(EdgeInsetsFoundation.all16),
-          if (cites == null || cites.isEmpty)
+          if (items == null || items.isEmpty)
             Center(
               child: Text(
                 S.of(context).NothingFound,
@@ -42,12 +44,11 @@ selectCityBottomSheet(
               child: ListView.builder(
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-                // padding: EdgeInsets.only(bottom: MediaQuery.viewInsetsOf(context).bottom),
                 itemCount: itemCount,
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      onSelectCity?.call(cites[index] ?? '');
+                      onSelectItem?.call(items[index] ?? '');
                       context.pop();
                     },
                     child: Column(
@@ -58,14 +59,19 @@ selectCityBottomSheet(
                             bottom: SpacingFoundation.verticalSpacing16,
                           ),
                         Row(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            if (selectedCity != null && selectedCity.isNotEmpty)
+                            if (selectedItem != null && selectedItem.isNotEmpty)
                               UiKitRadio(
-                                selected: cites[index] == selectedCity,
+                                selected: items[index] == selectedItem,
                               ).paddingOnly(right: SpacingFoundation.horizontalSpacing8),
-                            Text(
-                              cites[index] ?? '',
-                              style: boldTextTheme?.caption1Medium,
+                            Flexible(
+                              child: Text(
+                                items[index] ?? '',
+                                style: boldTextTheme?.caption1Medium,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
                           ],
                         ),

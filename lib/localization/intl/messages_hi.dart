@@ -616,6 +616,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateAUSP": m18,
     "CreateBooking": MessageLookupByLibrary.simpleMessage("Create booking"),
     "CreateEvent": MessageLookupByLibrary.simpleMessage("कार्यक्रम बनाएँ"),
+    "CreateLinkWith": MessageLookupByLibrary.simpleMessage("Create link with"),
     "CreateNewXForYourY": m19,
     "CreatePlace": MessageLookupByLibrary.simpleMessage("जगह बनाएं"),
     "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
@@ -1266,6 +1267,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "कृपया एक तिथि या तिथियाँ जोड़ें",
     ),
     "PleaseAddPhoto": MessageLookupByLibrary.simpleMessage("कृपया फोटो जोड़ें"),
+    "PleaseEnterABranchTitle": MessageLookupByLibrary.simpleMessage(
+      "Please, enter a branch title",
+    ),
     "PleaseEnterCurrentLimit": MessageLookupByLibrary.simpleMessage(
       "कृपया वर्तमान सीमा दर्ज करें",
     ),

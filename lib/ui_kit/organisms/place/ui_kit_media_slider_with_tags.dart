@@ -17,6 +17,11 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   final ValueNotifier<String?>? translateDescription;
   final ValueNotifier<bool>? showTranslateButton;
   final ValueChanged<int>? onImageTap;
+  final Future<String?> Function()? onCreateBranchesTap;
+  final Future<String?> Function()? onRenameTap;
+  final String? branchName;
+  final ValueChanged<int>? removeBranchItem;
+  final bool showBranches;
 
   UiKitMediaSliderWithTags({
     super.key,
@@ -34,6 +39,11 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
     this.showTranslateButton,
     this.translateDescription,
     this.onImageTap,
+    this.onCreateBranchesTap,
+    this.onRenameTap,
+    this.branchName,
+    this.removeBranchItem,
+    this.showBranches = false,
   }) : scrollController = scrollController ?? ScrollController();
 
   @override
@@ -41,13 +51,14 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
 }
 
 class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
+  final double plusIconSize = kIsWeb ? 30 : 30.w;
+  late String? currentBranchName;
   late double scrollPosition;
-
   late bool isHide;
+
   bool isTranslate = false;
-
+  bool _showBranches = false;
   List<HorizontalCaptionedImageData>? branches;
-
   String currentDescription = '';
 
   @override
@@ -55,13 +66,32 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
     isHide = widget.initialDescriptionHide ?? true;
     currentDescription = widget.description;
     branches = widget.branches?.value;
+    currentBranchName = widget.branchName;
+    if (branches != null && branches!.isNotEmpty) {
+      _showBranches = true;
+    } else {
+      _showBranches = widget.showBranches;
+    }
     super.initState();
-    widget.branches?.addListener(onLoadBranches);
+    widget.branches != null ? widget.branches?.addListener(onLoadBranches) : _showBranches = widget.showBranches;
   }
 
   onLoadBranches() {
     branches = widget.branches?.value;
+    if (branches != null && branches!.isNotEmpty) {
+      _showBranches = true;
+    } else {
+      _showBranches = widget.showBranches;
+    }
     if (mounted) setState(() {});
+  }
+
+  renameBranch(String? branchName) {
+    if (branchName != null && branchName.isNotEmpty) {
+      setState(() {
+        currentBranchName = branchName;
+      });
+    }
   }
 
   @override
@@ -154,10 +184,10 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
         AnimatedSize(
                 duration: const Duration(milliseconds: 200),
                 curve: Curves.easeInOut,
-                child: (branches ?? []).isEmpty
+                child: !_showBranches
                     ? const SizedBox.shrink()
                     : SizedBox(
-                        height: 0.28125.sw * 0.577 + 38.h,
+                        height: 0.28125.sw * 0.577 + (1.sw <= 380 ? 45.h : 38.h),
                         child: UiKitCardWrapper(
                           borderRadius: BorderRadius.zero,
                           color: theme?.colorScheme.surface1,
@@ -165,9 +195,30 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                             mainAxisSize: MainAxisSize.min,
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              Text(
-                                S.of(context).Branches,
-                                style: theme?.boldTextTheme.caption2Medium,
+                              Row(
+                                children: [
+                                  Text(
+                                    widget.showBranches
+                                        ? (currentBranchName ?? S.of(context).Branches)
+                                        : S.of(context).Branches,
+                                    style: theme?.boldTextTheme.caption2Medium,
+                                  ),
+                                  Spacer(),
+                                  if (currentBranchName != null && currentBranchName!.isNotEmpty && widget.showBranches)
+                                    InkWell(
+                                      onTap: () async {
+                                        final upcomingBranchName = await widget.onRenameTap?.call();
+                                        renameBranch(upcomingBranchName);
+                                      },
+                                      child: ImageWidget(
+                                        svgAsset: GraphicsFoundation.instance.svg.pencil,
+                                        color: Colors.white,
+                                        width: 18.w,
+                                        height: 18.w,
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ).paddingOnly(right: SpacingFoundation.horizontalSpacing16),
+                                ],
                               ),
                               SpacingFoundation.verticalSpace4,
                               ConstrainedBox(
@@ -178,17 +229,92 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                                   addAutomaticKeepAlives: false,
                                   scrollDirection: Axis.horizontal,
                                   itemBuilder: (context, index) {
-                                    final branch = branches!.elementAt(index);
+                                    if (index == 0 && widget.showBranches) {
+                                      return context.badgeButtonNoValue(
+                                        data: BaseUiKitButtonData(
+                                          onPressed: () async {
+                                            final upcomingBranchName = await widget.onCreateBranchesTap?.call();
+                                            renameBranch(upcomingBranchName);
+                                          },
+                                          iconWidget: DecoratedBox(
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.rectangle,
+                                              border: Border.fromBorderSide(
+                                                BorderSide(
+                                                  color: ColorsFoundation.neutral40,
+                                                  width: 2,
+                                                ),
+                                              ),
+                                              borderRadius: BorderRadiusFoundation.all12,
+                                            ),
+                                            child: GradientableWidget(
+                                              gradient: GradientFoundation.defaultLinearGradient,
+                                              child: ImageWidget(
+                                                iconData: ShuffleUiKitIcons.plus,
+                                                height: plusIconSize,
+                                                width: plusIconSize,
+                                              ),
+                                            ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing12),
+                                          ),
+                                        ),
+                                      );
+                                    }
 
-                                    return UiKitHorizontalCaptionedImage(
-                                      title: branch.caption,
-                                      imageLink: branch.imageUrl,
-                                      borderRadius: BorderRadiusFoundation.all16,
-                                      onTap: branch.onTap,
+                                    final branch = branches!.elementAt(index - (widget.showBranches ? 1 : 0));
+
+                                    return GestureDetector(
+                                      onLongPress: () {
+                                        if (widget.showBranches) {
+                                          setState(() {
+                                            branch.isSelected = !branch.isSelected;
+                                          });
+                                        }
+                                      },
+                                      child: Stack(
+                                        children: [
+                                          UiKitHorizontalCaptionedImage(
+                                            title: branch.caption,
+                                            imageLink: branch.imageUrl,
+                                            borderRadius: BorderRadiusFoundation.all16,
+                                            onTap: branch.isSelected ? null : branch.onTap,
+                                          ),
+                                          if (branch.isSelected)
+                                            SizedBox(
+                                              width: kIsWeb ? 90 : 0.28125.sw,
+                                              height: kIsWeb ? 52 : (0.28125.sw * 0.577),
+                                              child: Center(
+                                                child: TapRegion(
+                                                  onTapInside: (_) {
+                                                    if (widget.showBranches) {
+                                                      widget.removeBranchItem?.call(branch.placeId);
+                                                      setState(() {
+                                                        branch.isSelected = false;
+                                                        currentBranchName = null;
+                                                      });
+                                                    }
+                                                  },
+                                                  onTapOutside: (_) {
+                                                    if (widget.showBranches) {
+                                                      setState(() {
+                                                        branch.isSelected = false;
+                                                      });
+                                                    }
+                                                  },
+                                                  child: ImageWidget(
+                                                    iconData: ShuffleUiKitIcons.unlink,
+                                                    color: Colors.white.withValues(alpha: 0.7),
+                                                    width: 42.w,
+                                                    height: 42.w,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                        ],
+                                      ),
                                     );
                                   },
                                   separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
-                                  itemCount: branches!.length,
+                                  itemCount: (branches?.length ?? 0) + (widget.showBranches ? 1 : 0),
                                 ),
                               ),
                             ],
