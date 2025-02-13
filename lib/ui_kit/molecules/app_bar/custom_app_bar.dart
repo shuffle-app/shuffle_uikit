@@ -15,6 +15,7 @@ class CustomAppBar extends PreferredSize {
   final Widget? leading;
   final String? onIWidgetInfoString;
   final bool? expandTitle;
+  final CrossAxisAlignment? crossAxisAlignment;
 
   const CustomAppBar({
     super.key,
@@ -30,6 +31,7 @@ class CustomAppBar extends PreferredSize {
     this.onIWidgetInfoString,
     this.expandTitle,
     super.preferredSize = const Size(double.infinity, 84),
+    this.crossAxisAlignment,
   }) : super(child: const SizedBox());
 
   @override
@@ -64,7 +66,7 @@ class CustomAppBar extends PreferredSize {
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     if (!showLeading) const SizedBox(),

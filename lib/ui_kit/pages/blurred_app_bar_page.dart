@@ -31,6 +31,7 @@ class BlurredAppBarPage extends StatelessWidget {
   final Key? animatedListKey;
   final String? onIWidgetInfoString;
   final bool? expandTitle;
+  final CrossAxisAlignment? crossAxisAlignment;
 
   const BlurredAppBarPage({
     super.key,
@@ -57,6 +58,7 @@ class BlurredAppBarPage extends StatelessWidget {
     this.bodyBottomSpace,
     this.onIWidgetInfoString,
     this.expandTitle,
+    this.crossAxisAlignment,
   })  : assert(childrenBuilder == null || childrenCount != null,
             'childrenCount must be not null if childrenBuilder is not null'),
         assert(childrenBuilder != null || children != null, 'childrenBuilder or body must be not null');
@@ -113,6 +115,7 @@ class BlurredAppBarPage extends StatelessWidget {
                     autoImplyLeading: autoImplyLeading,
                     centerTitle: centerTitle,
                     expandTitle: expandTitle,
+                    crossAxisAlignment: crossAxisAlignment,
                   ),
                   // bottom: bottom,
                 );

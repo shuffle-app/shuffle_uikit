@@ -5,6 +5,21 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class GradientFoundation {
+  static final walletCardGradient = LinearGradient(
+    begin: Alignment(0.5, 1),
+    end: Alignment(-1, -1.5),
+    colors: [
+      Color(0xfF222222).withValues(alpha: 0.66),
+      Color(0xff7f7f7f).withValues(alpha: 0.32),
+      Color(0xff565656).withValues(alpha: 0.22),
+    ],
+    stops: [
+      0.16,
+      0.55,
+      0.77,
+    ],
+  );
+
   static final lightActivityGradient = LinearGradient(
     colors: [
       ColorsFoundation.pink.withOpacity(0.4),

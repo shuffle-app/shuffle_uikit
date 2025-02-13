@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
+
 class ReactionStatisticUiModel {
-  final int? viewCount;
-  final int? likeCount;
+  final ValueNotifier<int?>? viewCount;
+  final ValueNotifier<int?>? likeCount;
 
   ReactionStatisticUiModel({
     this.viewCount,
