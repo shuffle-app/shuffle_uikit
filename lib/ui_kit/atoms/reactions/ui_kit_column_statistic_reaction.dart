@@ -18,6 +18,8 @@ class UiKitColumnStatisticReaction extends StatelessWidget {
         ? ValueListenableBuilder(
             valueListenable: reactionStatisticUiModel!,
             builder: (_, value, __) {
+              final likeCountIsNotNull = (value?.likeCount != null && value!.likeCount! > 0);
+
               return Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisSize: MainAxisSize.max,
@@ -47,9 +49,9 @@ class UiKitColumnStatisticReaction extends StatelessWidget {
                               vertical: SpacingFoundation.verticalSpacing4,
                             ),
                           ),
-                        ).paddingOnly(bottom: SpacingFoundation.verticalSpacing12)
+                        ).paddingOnly(bottom: likeCountIsNotNull ? SpacingFoundation.verticalSpacing12 : 0.0)
                       : SizedBox.shrink(),
-                  (value?.likeCount != null && value!.likeCount! > 0)
+                  likeCountIsNotNull
                       ? ClipRRect(
                           borderRadius: BorderRadiusFoundation.all12,
                           child: BackdropFilter(
