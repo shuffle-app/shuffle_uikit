@@ -1,11 +1,19 @@
-import 'package:flutter/material.dart';
-
 class ReactionStatisticUiModel {
-  final ValueNotifier<int?>? viewCount;
-  final ValueNotifier<int?>? likeCount;
+  final int? viewCount;
+  final int? likeCount;
 
   ReactionStatisticUiModel({
     this.viewCount,
     this.likeCount,
   });
+
+  ReactionStatisticUiModel copyWith({
+    int? viewCount,
+    int? likeCount,
+  }) {
+    return ReactionStatisticUiModel(
+      viewCount: viewCount ?? this.viewCount,
+      likeCount: likeCount ?? this.likeCount,
+    );
+  }
 }
