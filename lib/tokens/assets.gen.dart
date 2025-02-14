@@ -1137,6 +1137,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/chess-3-nobg.svg
   SvgGenImage get chess3Nobg => const SvgGenImage('assets/images/svg/chess-3-nobg.svg');
 
+  /// File path: assets/images/svg/city.svg
+  SvgGenImage get city => const SvgGenImage('assets/images/svg/city.svg');
+
   /// File path: assets/images/svg/clothing.svg
   SvgGenImage get clothing => const SvgGenImage('assets/images/svg/clothing.svg');
 
@@ -1181,6 +1184,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/filmstrip.svg
   SvgGenImage get filmstrip => const SvgGenImage('assets/images/svg/filmstrip.svg');
+
+  /// File path: assets/images/svg/filter.svg
+  SvgGenImage get filter => const SvgGenImage('assets/images/svg/filter.svg');
 
   /// File path: assets/images/svg/finance.svg
   SvgGenImage get finance => const SvgGenImage('assets/images/svg/finance.svg');
@@ -1464,6 +1470,7 @@ class $AssetsImagesSvgGen {
         businessman,
         checkCircleGradient,
         chess3Nobg,
+        city,
         clothing,
         club,
         coinGradient,
@@ -1479,6 +1486,7 @@ class $AssetsImagesSvgGen {
         family,
         filledRadio,
         filmstrip,
+        filter,
         finance,
         fingerPrint,
         fireEmoji,

@@ -426,6 +426,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "AskPeople": MessageLookupByLibrary.simpleMessage("Спросить"),
     "Atheism": MessageLookupByLibrary.simpleMessage("Атеизм"),
     "Athlete": MessageLookupByLibrary.simpleMessage("Спортсмен"),
+    "AvailableBalance": MessageLookupByLibrary.simpleMessage(
+      "Доступный баланс",
+    ),
     "AvailableSoon": MessageLookupByLibrary.simpleMessage(
       "Скоро будет доступно",
     ),
@@ -1976,6 +1979,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
       "Ждите ответа админа чата",
     ),
+    "Wallet": MessageLookupByLibrary.simpleMessage("Кошелек"),
     "WantToChange": MessageLookupByLibrary.simpleMessage("Хотите изменить?"),
     "WantToJoin": MessageLookupByLibrary.simpleMessage("хочет присоединиться"),
     "WeBringStillLifes": MessageLookupByLibrary.simpleMessage(

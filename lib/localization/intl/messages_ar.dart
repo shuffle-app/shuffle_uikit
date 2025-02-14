@@ -427,6 +427,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "AskPeople": MessageLookupByLibrary.simpleMessage("Ask people"),
     "Atheism": MessageLookupByLibrary.simpleMessage("Atheism"),
     "Athlete": MessageLookupByLibrary.simpleMessage("Athlete"),
+    "AvailableBalance": MessageLookupByLibrary.simpleMessage(
+      "Available balance",
+    ),
     "AvailableSoon": MessageLookupByLibrary.simpleMessage("Available soon"),
     "AverageBill": MessageLookupByLibrary.simpleMessage("Average bill"),
     "AverageContentViewTime": MessageLookupByLibrary.simpleMessage(
@@ -1955,6 +1958,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
       "Wait for the admin\'s response",
     ),
+    "Wallet": MessageLookupByLibrary.simpleMessage("Wallet"),
     "WantToChange": MessageLookupByLibrary.simpleMessage("Want to change?"),
     "WantToJoin": MessageLookupByLibrary.simpleMessage("wants to join"),
     "WeBringStillLifes": MessageLookupByLibrary.simpleMessage(
