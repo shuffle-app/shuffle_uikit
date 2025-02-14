@@ -1009,5 +1009,6 @@
   "IsLessThanX": "Is less than {x}%",
   "UseOurToolsToImproveIt": "Use our tools to improve it",
   "PleaseEnterABranchTitle": "Please, enter a branch title",
-  "CreateLinkWith": "Create link with"
+  "CreateLinkWith": "Create link with",
+  "TitleYourTOP": "Title your TOP"
 }

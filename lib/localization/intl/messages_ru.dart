@@ -1833,6 +1833,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Время окончания не может быть раньше времени начала",
     ),
     "Title": MessageLookupByLibrary.simpleMessage("Название"),
+    "TitleYourTOP": MessageLookupByLibrary.simpleMessage("Назови свой ТОП"),
     "TitleYourTop": MessageLookupByLibrary.simpleMessage("Назови свой ТОП"),
     "ToAccessAll": MessageLookupByLibrary.simpleMessage("Полный доступ"),
     "ToAllowAccessGoToSettings": MessageLookupByLibrary.simpleMessage(

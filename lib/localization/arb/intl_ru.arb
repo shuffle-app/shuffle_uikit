@@ -1011,7 +1011,8 @@
   "IsLessThanX": "Менее {x}%",
   "UseOurToolsToImproveIt": "Используйте наши инструменты, чтобы улучшить его",
   "PleaseEnterABranchTitle": "Пожалуйста, введите название сети",
-  "CreateLinkWith": "Создать сеть с"
+  "CreateLinkWith": "Создать сеть с",
+  "TitleYourTOP": "Назови свой ТОП"
 
 }
 

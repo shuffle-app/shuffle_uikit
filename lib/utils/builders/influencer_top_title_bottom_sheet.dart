@@ -20,7 +20,7 @@ Future<void> influencerTopTitleBottomSheet(
         children: [
           SpacingFoundation.verticalSpace16,
           Text(
-            'Title your TOP',
+            S.of(context).TitleYourTOP,
             style: theme?.boldTextTheme.subHeadline,
           ),
           SpacingFoundation.verticalSpacing32.heightBox,
