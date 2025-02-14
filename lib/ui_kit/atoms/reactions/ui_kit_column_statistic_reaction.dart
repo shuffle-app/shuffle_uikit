@@ -50,7 +50,7 @@ class UiKitColumnStatisticReaction extends StatelessWidget {
                             ),
                           ),
                         ).paddingOnly(bottom: likeCountIsNotNull ? SpacingFoundation.verticalSpacing12 : 0.0)
-                      : SizedBox.shrink(),
+                      : const SizedBox.shrink(),
                   likeCountIsNotNull
                       ? ClipRRect(
                           borderRadius: BorderRadiusFoundation.all12,
@@ -77,11 +77,11 @@ class UiKitColumnStatisticReaction extends StatelessWidget {
                             ),
                           ),
                         )
-                      : SizedBox.shrink()
+                      : const SizedBox.shrink()
                 ],
               );
             },
           )
-        : SizedBox.shrink();
+        : const SizedBox.shrink();
   }
 }

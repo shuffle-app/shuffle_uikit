@@ -2,7 +2,7 @@ class ReactionStatisticUiModel {
   final int? viewCount;
   final int? likeCount;
 
-  ReactionStatisticUiModel({
+  const ReactionStatisticUiModel({
     this.viewCount,
     this.likeCount,
   });
