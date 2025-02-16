@@ -1838,6 +1838,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "TimeRange": MessageLookupByLibrary.simpleMessage("Time Range"),
     "TimeRangeError": MessageLookupByLibrary.simpleMessage("समय सीमा त्रुटि"),
     "Title": MessageLookupByLibrary.simpleMessage("शीर्षक"),
+    "TitleYourTOP": MessageLookupByLibrary.simpleMessage("Title your TOP"),
     "TitleYourTop": MessageLookupByLibrary.simpleMessage(
       "अपने शीर्ष का शीर्षक दें",
     ),

@@ -8641,6 +8641,16 @@ class S {
     );
   }
 
+  /// `Title your TOP`
+  String get TitleYourTOP {
+    return Intl.message(
+      'Title your TOP',
+      name: 'TitleYourTOP',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Wallet`
   String get Wallet {
     return Intl.message('Wallet', name: 'Wallet', desc: '', args: []);
