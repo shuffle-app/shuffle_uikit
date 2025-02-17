@@ -7,7 +7,6 @@ class FingerprintSwitch extends StatefulWidget {
   const FingerprintSwitch({
     super.key,
     required this.title,
-    required this.backgroundImage,
     required this.onCompletedWidget,
     required this.isHealthKitEnabled,
     required this.animationPath,
@@ -17,6 +16,7 @@ class FingerprintSwitch extends StatefulWidget {
     this.isCompleted,
     this.onPressed,
     this.onCompleted,
+    required this.filingsBackground,
   });
 
   final double? height;
@@ -24,12 +24,12 @@ class FingerprintSwitch extends StatefulWidget {
   final Widget? subtitle;
   final Widget onCompletedWidget;
   final bool? isCompleted;
-  final ImageWidget backgroundImage;
   final bool isHealthKitEnabled;
   final bool onPressedShouldRecall;
   final String animationPath;
   final VoidCallback? onPressed;
   final AsyncCallback? onCompleted;
+  final FilingsBackground filingsBackground;
 
   @override
   State<FingerprintSwitch> createState() => _FingerprintSwitchState();
@@ -95,17 +95,10 @@ class _FingerprintSwitchState extends State<FingerprintSwitch> with TickerProvid
 
     return Stack(
       children: [
-        SizedBox(
-          height: height * 0.75,
-          width: 0.95.sw,
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: ClipRRect(
-              borderRadius: BorderRadiusFoundation.all28,
-              child: widget.backgroundImage,
-            ),
-          ),
-        ).paddingOnly(top: height * 0.25),
+        widget.filingsBackground.currentBackground(
+          height,
+          color: theme?.colorScheme.surface1,
+        ),
         UiKitBorderWrapper(
           height: height,
           width: 0.95.sw,

@@ -40,6 +40,7 @@ export 'extentions/sizebox_extention.dart';
 export 'extentions/sliver_extention.dart';
 export 'extentions/social_media_string_validator.dart';
 export 'extentions/ui_kit_theme_extention.dart';
+export 'extentions/filings_background_widget.dart';
 export 'snack_bar_utils.dart';
 export 'text_input_formater/price_with_spaces_formatter.dart';
 export 'widgets_factory/widgets_abstract_factory.dart';
