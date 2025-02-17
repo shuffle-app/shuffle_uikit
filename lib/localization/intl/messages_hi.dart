@@ -711,6 +711,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "EditingTypePlace": m23,
     "Email": MessageLookupByLibrary.simpleMessage("ईमेल"),
     "EmailVerification": MessageLookupByLibrary.simpleMessage("ईमेल सत्यापन"),
+    "EmptyChallengeEasy": MessageLookupByLibrary.simpleMessage("Easy"),
+    "EmptyChallengeFair": MessageLookupByLibrary.simpleMessage("Fair"),
+    "EmptyChallengeHardcode": MessageLookupByLibrary.simpleMessage("Hardcode"),
+    "EmptyChallengeMessage": MessageLookupByLibrary.simpleMessage(
+      "Challenge right now,\ncheck out another one",
+    ),
+    "EmptyChallengeNo": MessageLookupByLibrary.simpleMessage("No"),
     "EnableHintSystem": MessageLookupByLibrary.simpleMessage(
       "संकेत प्रणाली सक्षम करें",
     ),
@@ -1986,6 +1993,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Wallet": MessageLookupByLibrary.simpleMessage("Wallet"),
     "WantToChange": MessageLookupByLibrary.simpleMessage("Want to change?"),
     "WantToJoin": MessageLookupByLibrary.simpleMessage("wants to join"),
+    "WeArePreparingChallengesForTomorrow": MessageLookupByLibrary.simpleMessage(
+      "We are preparing challenges for tomorrow, come later",
+    ),
     "WeBringStillLifes": MessageLookupByLibrary.simpleMessage(
       "We bring still lifes",
     ),

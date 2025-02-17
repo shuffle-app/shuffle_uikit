@@ -1014,6 +1014,12 @@
   "CreateLinkWith": "Create link with",
   "TitleYourTOP": "Title your TOP",
   "Wallet": "Wallet",
-  "AvailableBalance": "Available balance"
+  "AvailableBalance": "Available balance",
+  "EmptyChallengeNo":  "No",
+  "EmptyChallengeEasy":  "Easy",
+  "EmptyChallengeFair":  "Fair",
+  "EmptyChallengeHardcode":  "Hardcode",
+  "EmptyChallengeMessage":  "Challenge right now,\ncheck out another one",
+  "WeArePreparingChallengesForTomorrow": "We are preparing challenges for tomorrow, come later"
 
 }
