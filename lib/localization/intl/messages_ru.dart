@@ -712,6 +712,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "EmailVerification": MessageLookupByLibrary.simpleMessage(
       "Подтверждение email",
     ),
+    "EmptyChallengeEasy": MessageLookupByLibrary.simpleMessage("Легких"),
+    "EmptyChallengeFair": MessageLookupByLibrary.simpleMessage("Средних"),
+    "EmptyChallengeHardcode": MessageLookupByLibrary.simpleMessage("Тяжелых"),
+    "EmptyChallengeMessage": MessageLookupByLibrary.simpleMessage(
+      "челенджей,\nпроверьте другие",
+    ),
+    "EmptyChallengeNo": MessageLookupByLibrary.simpleMessage("Сейчас нет"),
     "EnableHintSystem": MessageLookupByLibrary.simpleMessage(
       "Включить подсказки",
     ),
@@ -1982,6 +1989,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Wallet": MessageLookupByLibrary.simpleMessage("Кошелек"),
     "WantToChange": MessageLookupByLibrary.simpleMessage("Хотите изменить?"),
     "WantToJoin": MessageLookupByLibrary.simpleMessage("хочет присоединиться"),
+    "WeArePreparingChallengesForTomorrow": MessageLookupByLibrary.simpleMessage(
+      "Мы готовим челленджи на завтра, приходите позже",
+    ),
     "WeBringStillLifes": MessageLookupByLibrary.simpleMessage(
       "Подвозим натюрморты",
     ),

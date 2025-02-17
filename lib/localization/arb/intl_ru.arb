@@ -1014,7 +1014,13 @@
   "CreateLinkWith": "Создать сеть с",
   "TitleYourTOP": "Назови свой ТОП",
   "Wallet": "Кошелек",
-  "AvailableBalance": "Доступный баланс"
+  "AvailableBalance": "Доступный баланс",
+  "EmptyChallengeNo":  "Сейчас нет",
+  "EmptyChallengeEasy":  "Легких",
+  "EmptyChallengeFair":  "Средних",
+  "EmptyChallengeHardcode":  "Тяжелых",
+  "EmptyChallengeMessage":  "челенджей,\nпроверьте другие",
+  "WeArePreparingChallengesForTomorrow": "Мы готовим челленджи на завтра, приходите позже"
 
 }
 

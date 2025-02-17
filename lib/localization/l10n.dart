@@ -8660,6 +8660,51 @@ class S {
       args: [],
     );
   }
+
+  /// `No`
+  String get EmptyChallengeNo {
+    return Intl.message('No', name: 'EmptyChallengeNo', desc: '', args: []);
+  }
+
+  /// `Easy`
+  String get EmptyChallengeEasy {
+    return Intl.message('Easy', name: 'EmptyChallengeEasy', desc: '', args: []);
+  }
+
+  /// `Fair`
+  String get EmptyChallengeFair {
+    return Intl.message('Fair', name: 'EmptyChallengeFair', desc: '', args: []);
+  }
+
+  /// `Hardcode`
+  String get EmptyChallengeHardcode {
+    return Intl.message(
+      'Hardcode',
+      name: 'EmptyChallengeHardcode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Challenge right now,\ncheck out another one`
+  String get EmptyChallengeMessage {
+    return Intl.message(
+      'Challenge right now,\ncheck out another one',
+      name: 'EmptyChallengeMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We are preparing challenges for tomorrow, come later`
+  String get WeArePreparingChallengesForTomorrow {
+    return Intl.message(
+      'We are preparing challenges for tomorrow, come later',
+      name: 'WeArePreparingChallengesForTomorrow',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
