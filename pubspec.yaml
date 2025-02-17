@@ -182,12 +182,12 @@ flutter_gen:
     lottie: true
   assets:
     enabled: true
-    # fonts:
-    #   enabled: false
-    outputs:
+#    fonts:
+#      enabled: false
+    output:
       style: dot-delimiter
       package_parameter_enabled: true
-      # synthetic-package: false
+#      synthetic-package: false
 
 # extensions
 flutter_intl:

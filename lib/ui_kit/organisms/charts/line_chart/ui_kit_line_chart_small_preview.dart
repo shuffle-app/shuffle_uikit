@@ -33,7 +33,7 @@ class UiKitLineChartSmallPreview extends StatelessWidget {
           children: [
             Positioned(
               top: SpacingFoundation.verticalSpacing2,
-              left: SpacingFoundation.horizontalSpacing2,
+              left: SpacingFoundation.horizontalSpacing4,
               child: CustomPaint(
                 isComplex: true,
                 willChange: false,

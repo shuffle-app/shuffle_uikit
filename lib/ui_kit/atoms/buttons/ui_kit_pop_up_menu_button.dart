@@ -36,7 +36,7 @@ class UiKitPopUpMenuButton extends StatelessWidget {
             value: option.value,
             onTap: option.onTap,
             child: SizedBox(
-                width: 128.w,
+                width: 100.w,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

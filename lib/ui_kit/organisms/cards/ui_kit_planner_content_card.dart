@@ -29,6 +29,12 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
   bool showNotificationSetOverlay = false;
 
   @override
+  void didUpdateWidget(covariant UiKitPlannerContentCard oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    showNotificationSetOverlay = false;
+  }
+
+  @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final boldTextTheme = theme?.boldTextTheme;
@@ -135,13 +141,13 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
                               child: context
                                   .button(
                                     data: BaseUiKitButtonData(
-                                      iconInfo: BaseUiKitButtonIconData(
-                                        iconData: ShuffleUiKitIcons.bell,
-                                        color: colorScheme?.inverseSurface,
-                                      ),
-                                      borderColor: colorScheme?.inverseSurface,
-                                      onPressed: widget.onNotification,
-                                    ),
+                                        iconInfo: BaseUiKitButtonIconData(
+                                          iconData: ShuffleUiKitIcons.bell,
+                                          color: colorScheme?.inverseSurface,
+                                        ),
+                                        borderColor: colorScheme?.inverseSurface,
+                                        onPressed: widget.onNotification,
+                                        backgroundColor: Colors.transparent),
                                     // blurred: true,
                                   )
                                   .paddingSymmetric(vertical: EdgeInsetsFoundation.vertical24),

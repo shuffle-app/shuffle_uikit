@@ -47,3 +47,7 @@ List<TimeRange> listTimeDayToTimeRange(List<TimeOfDay> times) {
   }
   return result;
 }
+
+extension ToTimeRange on List<TimeOfDay> {
+  List<TimeRange> get toTimeRange => listTimeDayToTimeRange(this);
+}

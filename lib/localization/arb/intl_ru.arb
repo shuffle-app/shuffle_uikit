@@ -897,7 +897,7 @@
   "PlzEnterName": "Плз, введи свое имя & никнейм",
   "OpenedUpcomingEvents": "Открытие блока \"Предстоящие события\"",
   "YouProgressed": "Вы продвинулись!",
-  "AddToScheduler": "Добавить в планы",
+  "AddToScheduler": "Запланировать",
   "Soon": "Скоро", 
   "FreeNowXLater": "Сейчас бесплатно, позже {count}$",
   "CodeScanner": "Сканер кода",
