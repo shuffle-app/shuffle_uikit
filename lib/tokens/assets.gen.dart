@@ -24,7 +24,7 @@ class $AssetsAudioGen {
   const $AssetsAudioGen();
 
   /// File path: assets/audio/rachet_click.mp3
-  String get rachetClick => 'assets/audio/rachet_click.mp3';
+  String get rachetClick => 'packages/shuffle_uikit/assets/audio/rachet_click.mp3';
 
   /// List of all assets
   List<String> get values => [rachetClick];
@@ -34,19 +34,19 @@ class $AssetsFontsGen {
   const $AssetsFontsGen();
 
   /// File path: assets/fonts/Unbounded-Light.ttf
-  String get unboundedLight => 'assets/fonts/Unbounded-Light.ttf';
+  String get unboundedLight => 'packages/shuffle_uikit/assets/fonts/Unbounded-Light.ttf';
 
   /// File path: assets/fonts/Unbounded-Medium.ttf
-  String get unboundedMedium => 'assets/fonts/Unbounded-Medium.ttf';
+  String get unboundedMedium => 'packages/shuffle_uikit/assets/fonts/Unbounded-Medium.ttf';
 
   /// File path: assets/fonts/Unbounded-Regular.ttf
-  String get unboundedRegular => 'assets/fonts/Unbounded-Regular.ttf';
+  String get unboundedRegular => 'packages/shuffle_uikit/assets/fonts/Unbounded-Regular.ttf';
 
   /// File path: assets/fonts/Unbounded-SemiBold.ttf
-  String get unboundedSemiBold => 'assets/fonts/Unbounded-SemiBold.ttf';
+  String get unboundedSemiBold => 'packages/shuffle_uikit/assets/fonts/Unbounded-SemiBold.ttf';
 
   /// File path: assets/fonts/shuffle_ui_kit_icons.otf
-  String get shuffleUiKitIcons => 'assets/fonts/shuffle_ui_kit_icons.otf';
+  String get shuffleUiKitIcons => 'packages/shuffle_uikit/assets/fonts/shuffle_ui_kit_icons.otf';
 
   /// List of all assets
   List<String> get values => [unboundedLight, unboundedMedium, unboundedRegular, unboundedSemiBold, shuffleUiKitIcons];
@@ -729,6 +729,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/uber.png
   AssetGenImage get uber => const AssetGenImage('assets/images/png/uber.png');
 
+  /// Directory path: assets/images/png/wallet
+  $AssetsImagesPngWalletGen get wallet => const $AssetsImagesPngWalletGen();
+
   /// List of all assets
   List<AssetGenImage> get values => [
         action,
@@ -1170,6 +1173,12 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/dubai-silhouette.svg
   SvgGenImage get dubaiSilhouette => const SvgGenImage('assets/images/svg/dubai-silhouette.svg');
 
+  /// File path: assets/images/svg/elephant-1.svg
+  SvgGenImage get elephant1 => const SvgGenImage('assets/images/svg/elephant-1.svg');
+
+  /// File path: assets/images/svg/elephant-3.svg
+  SvgGenImage get elephant3 => const SvgGenImage('assets/images/svg/elephant-3.svg');
+
   /// File path: assets/images/svg/empty_radio.svg
   SvgGenImage get emptyRadio => const SvgGenImage('assets/images/svg/empty_radio.svg');
 
@@ -1256,6 +1265,9 @@ class $AssetsImagesSvgGen {
 
   /// File path: assets/images/svg/parcel.svg
   SvgGenImage get parcel => const SvgGenImage('assets/images/svg/parcel.svg');
+
+  /// File path: assets/images/svg/pavilion.svg
+  SvgGenImage get pavilion => const SvgGenImage('assets/images/svg/pavilion.svg');
 
   /// File path: assets/images/svg/pencil.svg
   SvgGenImage get pencil => const SvgGenImage('assets/images/svg/pencil.svg');
@@ -1481,6 +1493,8 @@ class $AssetsImagesSvgGen {
         dancers,
         deliveryTruck,
         dubaiSilhouette,
+        elephant1,
+        elephant3,
         emptyRadio,
         facebookLogo,
         family,
@@ -1510,6 +1524,7 @@ class $AssetsImagesSvgGen {
         memeberGradientStar,
         noPhoto,
         parcel,
+        pavilion,
         pencil,
         personLayered,
         pharmacy,
@@ -1994,8 +2009,51 @@ class $AssetsImagesPngReminderGen {
       ];
 }
 
+class $AssetsImagesPngWalletGen {
+  const $AssetsImagesPngWalletGen();
+
+  /// File path: assets/images/png/wallet/artbreeder-1.jpeg
+  AssetGenImage get artbreeder1 => const AssetGenImage('assets/images/png/wallet/artbreeder-1.jpeg');
+
+  /// File path: assets/images/png/wallet/card-1.png
+  AssetGenImage get card1 => const AssetGenImage('assets/images/png/wallet/card-1.png');
+
+  /// File path: assets/images/png/wallet/card-2.png
+  AssetGenImage get card2 => const AssetGenImage('assets/images/png/wallet/card-2.png');
+
+  /// File path: assets/images/png/wallet/card-3.png
+  AssetGenImage get card3 => const AssetGenImage('assets/images/png/wallet/card-3.png');
+
+  /// File path: assets/images/png/wallet/card-4.png
+  AssetGenImage get card4 => const AssetGenImage('assets/images/png/wallet/card-4.png');
+
+  /// File path: assets/images/png/wallet/craiyon-1.png
+  AssetGenImage get craiyon1 => const AssetGenImage('assets/images/png/wallet/craiyon-1.png');
+
+  /// File path: assets/images/png/wallet/craiyon-2.png
+  AssetGenImage get craiyon2 => const AssetGenImage('assets/images/png/wallet/craiyon-2.png');
+
+  /// File path: assets/images/png/wallet/kandinsky-.png
+  AssetGenImage get kandinsky => const AssetGenImage('assets/images/png/wallet/kandinsky-.png');
+
+  /// File path: assets/images/png/wallet/pattern-1.png
+  AssetGenImage get pattern1 => const AssetGenImage('assets/images/png/wallet/pattern-1.png');
+
+  /// File path: assets/images/png/wallet/pattern-4.png
+  AssetGenImage get pattern4 => const AssetGenImage('assets/images/png/wallet/pattern-4.png');
+
+  /// File path: assets/images/png/wallet/sW-1.png
+  AssetGenImage get sW1 => const AssetGenImage('assets/images/png/wallet/sW-1.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [artbreeder1, card1, card2, card3, card4, craiyon1, craiyon2, kandinsky, pattern1, pattern4, sW1];
+}
+
 class Assets {
-  Assets._();
+  const Assets._();
+
+  static const String package = 'shuffle_uikit';
 
   static const $AssetsAnimationsGen animations = $AssetsAnimationsGen();
   static const $AssetsAudioGen audio = $AssetsAudioGen();
@@ -2011,6 +2069,8 @@ class AssetGenImage {
   });
 
   final String _assetName;
+
+  static const String package = 'shuffle_uikit';
 
   final Size? size;
   final Set<String> flavors;
@@ -2035,8 +2095,8 @@ class AssetGenImage {
     bool matchTextDirection = false,
     bool gaplessPlayback = true,
     bool isAntiAlias = false,
-    String? package,
-    FilterQuality filterQuality = FilterQuality.low,
+    @Deprecated('Do not specify package for a generated library asset') String? package = package,
+    FilterQuality filterQuality = FilterQuality.medium,
     int? cacheWidth,
     int? cacheHeight,
   }) {
@@ -2070,7 +2130,7 @@ class AssetGenImage {
 
   ImageProvider provider({
     AssetBundle? bundle,
-    String? package,
+    @Deprecated('Do not specify package for a generated library asset') String? package = package,
   }) {
     return AssetImage(
       _assetName,
@@ -2081,7 +2141,7 @@ class AssetGenImage {
 
   String get path => _assetName;
 
-  String get keyName => _assetName;
+  String get keyName => 'packages/shuffle_uikit/$_assetName';
 }
 
 class SvgGenImage {
@@ -2102,11 +2162,13 @@ class SvgGenImage {
   final Set<String> flavors;
   final bool _isVecFormat;
 
+  static const String package = 'shuffle_uikit';
+
   _svg.SvgPicture svg({
     Key? key,
     bool matchTextDirection = false,
     AssetBundle? bundle,
-    String? package,
+    @Deprecated('Do not specify package for a generated library asset') String? package = package,
     double? width,
     double? height,
     BoxFit fit = BoxFit.contain,
@@ -2157,7 +2219,7 @@ class SvgGenImage {
 
   String get path => _assetName;
 
-  String get keyName => _assetName;
+  String get keyName => 'packages/shuffle_uikit/$_assetName';
 }
 
 class LottieGenImage {
@@ -2168,6 +2230,8 @@ class LottieGenImage {
 
   final String _assetName;
   final Set<String> flavors;
+
+  static const String package = 'shuffle_uikit';
 
   _lottie.LottieBuilder lottie({
     Animation<double>? controller,
@@ -2191,7 +2255,7 @@ class LottieGenImage {
     double? height,
     BoxFit? fit,
     AlignmentGeometry? alignment,
-    String? package,
+    @Deprecated('Do not specify package for a generated library asset') String? package = package,
     bool? addRepaintBoundary,
     FilterQuality? filterQuality,
     void Function(String)? onWarning,
@@ -2224,5 +2288,5 @@ class LottieGenImage {
 
   String get path => _assetName;
 
-  String get keyName => _assetName;
+  String get keyName => 'packages/shuffle_uikit/$_assetName';
 }
