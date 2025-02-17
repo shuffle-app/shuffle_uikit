@@ -372,7 +372,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AddToPersonalTop": MessageLookupByLibrary.simpleMessage(
       "Add to personal TOP",
     ),
-    "AddToScheduler": MessageLookupByLibrary.simpleMessage("Add to scheduler"),
+    "AddToScheduler": MessageLookupByLibrary.simpleMessage("Plan it"),
     "AddYourselfToList": MessageLookupByLibrary.simpleMessage(
       "Add yourself to list",
     ),

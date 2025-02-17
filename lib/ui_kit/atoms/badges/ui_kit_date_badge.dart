@@ -7,7 +7,7 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 class UiKitDateBadge extends StatelessWidget {
   final DateTime date;
 
-  const UiKitDateBadge({Key? key, required this.date}) : super(key: key);
+  const UiKitDateBadge({super.key, required this.date});
 
   @override
   Widget build(BuildContext context) {

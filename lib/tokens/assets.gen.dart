@@ -729,6 +729,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/uber.png
   AssetGenImage get uber => const AssetGenImage('assets/images/png/uber.png');
 
+  /// Directory path: assets/images/png/wallet
+  $AssetsImagesPngWalletGen get wallet => const $AssetsImagesPngWalletGen();
+
   /// List of all assets
   List<AssetGenImage> get values => [
         action,
@@ -1992,6 +1995,47 @@ class $AssetsImagesPngReminderGen {
         volleyball1,
         yoga1
       ];
+}
+
+class $AssetsImagesPngWalletGen {
+  const $AssetsImagesPngWalletGen();
+
+  /// File path: assets/images/png/wallet/artbreeder-1.jpeg
+  AssetGenImage get artbreeder1 => const AssetGenImage('assets/images/png/wallet/artbreeder-1.jpeg');
+
+  /// File path: assets/images/png/wallet/card-1.png
+  AssetGenImage get card1 => const AssetGenImage('assets/images/png/wallet/card-1.png');
+
+  /// File path: assets/images/png/wallet/card-2.png
+  AssetGenImage get card2 => const AssetGenImage('assets/images/png/wallet/card-2.png');
+
+  /// File path: assets/images/png/wallet/card-3.png
+  AssetGenImage get card3 => const AssetGenImage('assets/images/png/wallet/card-3.png');
+
+  /// File path: assets/images/png/wallet/card-4.png
+  AssetGenImage get card4 => const AssetGenImage('assets/images/png/wallet/card-4.png');
+
+  /// File path: assets/images/png/wallet/craiyon-1.png
+  AssetGenImage get craiyon1 => const AssetGenImage('assets/images/png/wallet/craiyon-1.png');
+
+  /// File path: assets/images/png/wallet/craiyon-2.png
+  AssetGenImage get craiyon2 => const AssetGenImage('assets/images/png/wallet/craiyon-2.png');
+
+  /// File path: assets/images/png/wallet/kandinsky-.png
+  AssetGenImage get kandinsky => const AssetGenImage('assets/images/png/wallet/kandinsky-.png');
+
+  /// File path: assets/images/png/wallet/pattern-1.png
+  AssetGenImage get pattern1 => const AssetGenImage('assets/images/png/wallet/pattern-1.png');
+
+  /// File path: assets/images/png/wallet/pattern-4.png
+  AssetGenImage get pattern4 => const AssetGenImage('assets/images/png/wallet/pattern-4.png');
+
+  /// File path: assets/images/png/wallet/sW-1.png
+  AssetGenImage get sW1 => const AssetGenImage('assets/images/png/wallet/sW-1.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [artbreeder1, card1, card2, card3, card4, craiyon1, craiyon2, kandinsky, pattern1, pattern4, sW1];
 }
 
 class Assets {

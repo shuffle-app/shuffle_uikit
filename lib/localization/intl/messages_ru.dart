@@ -373,7 +373,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AddToPersonalTop": MessageLookupByLibrary.simpleMessage(
       "Добавить в личный ТОП",
     ),
-    "AddToScheduler": MessageLookupByLibrary.simpleMessage("Добавить в планы"),
+    "AddToScheduler": MessageLookupByLibrary.simpleMessage("Запланировать"),
     "AddYourselfToList": MessageLookupByLibrary.simpleMessage(
       "Добавиться в список",
     ),

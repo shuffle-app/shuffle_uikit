@@ -153,6 +153,7 @@ flutter:
     - assets/images/png/avatars/
     - assets/images/png/offer/
     - assets/images/png/reminder/
+    - assets/images/png/wallet/
     - assets/images/svg/
     - assets/fonts/
     - assets/audio/
@@ -181,12 +182,12 @@ flutter_gen:
     lottie: true
   assets:
     enabled: true
-    fonts:
-      enabled: false
+#    fonts:
+#      enabled: false
     output:
       style: dot-delimiter
       package_parameter_enabled: true
-      synthetic-package: false
+#      synthetic-package: false
 
 # extensions
 flutter_intl:

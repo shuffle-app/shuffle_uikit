@@ -7636,14 +7636,9 @@ class S {
     );
   }
 
-  /// `Add to scheduler`
+  /// `Plan it`
   String get AddToScheduler {
-    return Intl.message(
-      'Add to scheduler',
-      name: 'AddToScheduler',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Plan it', name: 'AddToScheduler', desc: '', args: []);
   }
 
   /// `Soon`
