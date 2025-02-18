@@ -20,7 +20,7 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   final Future<String?> Function()? onCreateBranchesTap;
   final Future<String?> Function()? onRenameTap;
   final String? branchName;
-  final ValueChanged<int>? removeBranchItem;
+  final Future<String?> Function(int)? removeBranchItem;
   final bool showBranches;
 
   UiKitMediaSliderWithTags({
@@ -284,13 +284,13 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                                               height: kIsWeb ? 52 : (0.28125.sw * 0.577),
                                               child: Center(
                                                 child: TapRegion(
-                                                  onTapInside: (_) {
+                                                  onTapInside: (_) async {
                                                     if (widget.showBranches) {
-                                                      widget.removeBranchItem?.call(branch.placeId);
-                                                      setState(() {
-                                                        branch.isSelected = false;
-                                                        currentBranchName = null;
-                                                      });
+                                                      currentBranchName =
+                                                          await widget.removeBranchItem?.call(branch.placeId);
+                                                      branch.isSelected = false;
+
+                                                      setState(() {});
                                                     }
                                                   },
                                                   onTapOutside: (_) {

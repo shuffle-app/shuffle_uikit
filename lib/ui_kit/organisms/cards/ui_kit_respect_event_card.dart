@@ -30,11 +30,26 @@ class UiKitRespectEventCard extends StatelessWidget {
         Stack(
           clipBehavior: Clip.none,
           children: [
-            UiKitPhotoSlider(
-              width: 1.sw,
-              media: images.map((e) => UiKitMediaPhoto(link: e)).toList(),
-              weatherType: weatherType,
-            ),
+            if (images.isNotEmpty)
+              UiKitPhotoSlider(
+                width: 1.sw,
+                media: images.map((e) => UiKitMediaPhoto(link: e)).toList(),
+                weatherType: weatherType,
+              )
+            else
+              SizedBox(
+                width: 1.sw,
+                height: 1.sw / 1.7495454545,
+                child: Center(
+                  child: Text(
+                    S.of(context).NoPhotoHereYet,
+                    style: boldTextTheme?.body.copyWith(
+                      color: ColorsFoundation.darkNeutral900,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
             Positioned(
               bottom: -SpacingFoundation.verticalSpacing24,
               left: 0,

@@ -64,7 +64,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
       _animationController,
     );
 
-    if (widget.media.first.link.startsWith('http') && !kIsWeb) {
+    if (widget.media.isNotEmpty && widget.media.first.link.startsWith('http') && !kIsWeb) {
       CustomCacheManager.imageInstance.getSingleFile(widget.media.first.link).then((_) {
         if (mounted) {
           setState(() {
@@ -122,7 +122,6 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   }
 
   Widget _buildFirstItem(BaseUiKitMedia item) {
-
     return Positioned(
       left: _cardAnimation.left,
       right: widget.media.length == 1 ? 0 : _cardAnimation.right,
