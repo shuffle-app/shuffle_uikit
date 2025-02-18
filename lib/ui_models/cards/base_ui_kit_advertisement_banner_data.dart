@@ -8,7 +8,7 @@ abstract class BaseUiKitAdvertisementBannerConfig {
   final String imageLink;
   final AdvertisementBannerSize size;
 
-  BaseUiKitAdvertisementBannerConfig({
+  const BaseUiKitAdvertisementBannerConfig({
     required this.availableWidth,
     required this.imageLink,
     required this.size,
@@ -20,7 +20,7 @@ abstract class BaseUiKitAdvertisementBannerConfig {
 class BaseUiKitAdvertisementImageBannerData extends BaseUiKitAdvertisementBannerConfig {
   final String title;
 
-  BaseUiKitAdvertisementImageBannerData({
+  const BaseUiKitAdvertisementImageBannerData({
     required this.title,
     required super.availableWidth,
     required super.imageLink,
@@ -38,7 +38,7 @@ class BaseUiKitAdvertisementTextBannerData extends BaseUiKitAdvertisementImageBa
   final Widget? decoration;
   final BoxFit? imageFit;
 
-  BaseUiKitAdvertisementTextBannerData({
+  const BaseUiKitAdvertisementTextBannerData({
     required this.textWidget,
     this.textAlignment,
     this.textExactOffset,

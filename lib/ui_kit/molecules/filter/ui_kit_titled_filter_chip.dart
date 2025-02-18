@@ -38,7 +38,10 @@ class UiKitTitledFilterChip extends StatelessWidget {
 
     textPainter.layout();
 
-    final loadingWidth = textPainter.width;
+    final chipWidth = SpacingFoundation.horizontalSpacing8 +
+        (SpacingFoundation.horizontalSpacing16 * 2) +
+        textPainter.width +
+        (40.h - SpacingFoundation.verticalSpacing14 * 2.5);
 
     return InkWell(
       borderRadius: BorderRadiusFoundation.max,
@@ -46,37 +49,39 @@ class UiKitTitledFilterChip extends StatelessWidget {
       child: UiKitCardWrapper(
           borderRadius: BorderRadiusFoundation.max,
           color: background,
+          width: chipWidth,
           clipBehavior: Clip.hardEdge,
           padding: EdgeInsets.symmetric(
               horizontal: SpacingFoundation.horizontalSpacing16, vertical: SpacingFoundation.verticalSpacing14),
           child: loading
-              ? SizedBox(
-                  width: SpacingFoundation.horizontalSpacing8 * 2 +
-                      (SpacingFoundation.horizontalSpacing16 * 2) +
-                      loadingWidth,
-                  child: Center(
-                    child: SizedBox(
-                      width: 40.h,
-                      child: CircularProgressIndicator.adaptive(
-                        valueColor: AlwaysStoppedAnimation(foreground),
-                        backgroundColor: Colors.transparent,
-                      ),
+              ? Center(
+                  child: SizedBox(
+                    width: 40.h,
+                    child: CircularProgressIndicator.adaptive(
+                      valueColor: AlwaysStoppedAnimation(foreground),
+                      backgroundColor: Colors.transparent,
                     ),
                   ),
                 )
-              : Row(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+              : Stack(
+                  alignment: Alignment.centerRight,
+                  // mainAxisSize: MainAxisSize.min,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Transform.translate(
-                        offset: Offset(0, icon is IconData ? -2.h : 0),
+                    Positioned(
+                        top: icon is IconData ? -2.h : 0,
+                        left: 0,
+                        bottom: 0,
+                        // Transform.translate(
+                        //     offset: Offset(0, icon is IconData ? -2.h : 0),
                         child: ImageWidget(
                           fit: BoxFit.fitHeight,
                           iconData: icon is IconData ? icon as IconData : null,
                           link: icon is String ? icon as String : null,
                           color: foreground,
                         )),
-                    SpacingFoundation.horizontalSpace8,
+                    // SpacingFoundation.horizontalSpace8,
                     Text(title, style: textStyle),
                   ],
                 )),
