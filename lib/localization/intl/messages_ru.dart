@@ -1667,7 +1667,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Покажите штрих-код на кассе",
     ),
     "ShowUp": MessageLookupByLibrary.simpleMessage("Явки"),
-    "ShowUpRatio": MessageLookupByLibrary.simpleMessage("Коэффициент Show up"),
+    "ShowUpRatio": MessageLookupByLibrary.simpleMessage("Коэффициент явки"),
     "ShowXInProfile": m85,
     "ShraziidGoblet": MessageLookupByLibrary.simpleMessage("Кубок Шразиида"),
     "ShraziidGobletDescription": MessageLookupByLibrary.simpleMessage(

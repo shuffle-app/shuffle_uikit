@@ -102,7 +102,7 @@ class UiKitNoShowStatisticCard extends StatelessWidget {
             borderRadius: BorderRadiusFoundation.all24,
             backgroundColor: colorScheme?.surface3,
             color: currentColor,
-            value: percent != null ? double.tryParse('0.$percent') : 0.0,
+            value: percent != null ? (percent == 100 ? 1.0 : double.tryParse('0.$percent')) : 0.0,
           )
         ],
       ).paddingAll(EdgeInsetsFoundation.all12),
