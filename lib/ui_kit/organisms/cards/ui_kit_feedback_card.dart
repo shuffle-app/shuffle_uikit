@@ -20,6 +20,7 @@ class UiKitFeedbackCard extends StatelessWidget {
   final List<BaseUiKitMedia> media;
   final VoidCallback? onEdit;
   final bool canEdit;
+  final VoidCallback? onAvatarTap;
 
   final ValueNotifier<bool>? showTranslateButton;
   final ValueNotifier<String>? translateText;
@@ -46,6 +47,7 @@ class UiKitFeedbackCard extends StatelessWidget {
     this.media = const [],
     this.onEdit,
     this.canEdit = false,
+    this.onAvatarTap,
     this.showTranslateButton,
     this.translateText,
   }) {
@@ -84,20 +86,23 @@ class UiKitFeedbackCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              UiKitHeaderWithLeading(
-                title: title ?? '',
-                leading: SizedBox(
-                  width: avatarSize?.width,
-                  height: avatarSize?.height,
-                  child: context.userAvatar(
-                    size: UserAvatarSize.x40x40,
-                    type: userTileType ?? UserTileType.ordinary,
-                    userName: title ?? '',
-                    imageUrl: avatarUrl,
+              GestureDetector(
+                onTap: onAvatarTap,
+                child: UiKitHeaderWithLeading(
+                  title: title ?? '',
+                  leading: SizedBox(
+                    width: avatarSize?.width,
+                    height: avatarSize?.height,
+                    child: context.userAvatar(
+                      size: UserAvatarSize.x40x40,
+                      type: userTileType ?? UserTileType.ordinary,
+                      userName: title ?? '',
+                      imageUrl: avatarUrl,
+                    ),
                   ),
+                  subtitle: datePosted?.timeAgo ?? '',
+                  trailing: rating != null ? UiKitRatingBadge(rating: rating!) : null,
                 ),
-                subtitle: datePosted?.timeAgo ?? '',
-                trailing: rating != null ? UiKitRatingBadge(rating: rating!) : null,
               ),
               SpacingFoundation.verticalSpace12,
               if (description.value.isNotEmpty)
