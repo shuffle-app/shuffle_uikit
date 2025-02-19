@@ -8705,6 +8705,126 @@ class S {
       args: [],
     );
   }
+
+  /// `Use your opportunities`
+  String get UseYourOpportunities {
+    return Intl.message(
+      'Use your opportunities',
+      name: 'UseYourOpportunities',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Refresher`
+  String get Refresher {
+    return Intl.message('Refresher', name: 'Refresher', desc: '', args: []);
+  }
+
+  /// `Survey for no shows users`
+  String get SurveyForNoShowsUsers {
+    return Intl.message(
+      'Survey for no shows users',
+      name: 'SurveyForNoShowsUsers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Agenda`
+  String get Agenda {
+    return Intl.message('Agenda', name: 'Agenda', desc: '', args: []);
+  }
+
+  /// `Remind those who interacted with your content to show up`
+  String get RemindThoseWhoInteractedWithYourContent {
+    return Intl.message(
+      'Remind those who interacted with your content to show up',
+      name: 'RemindThoseWhoInteractedWithYourContent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notify potentially interested audiences`
+  String get NotifyPotentiallyInterestedAudiences {
+    return Intl.message(
+      'Notify potentially interested audiences',
+      name: 'NotifyPotentiallyInterestedAudiences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer bonus to your guests through Shuffle activity`
+  String get OfferBonusToYourGuestsThroughShuffleActivity {
+    return Intl.message(
+      'Offer bonus to your guests through Shuffle activity',
+      name: 'OfferBonusToYourGuestsThroughShuffleActivity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remind your bookings one week, one day and one hour before the start`
+  String get RemindYourBookingsOneWeekOneDay {
+    return Intl.message(
+      'Remind your bookings one week, one day and one hour before the start',
+      name: 'RemindYourBookingsOneWeekOneDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Include a survey for no-shows to work with the cause`
+  String get IncludeASurveyForNoShows {
+    return Intl.message(
+      'Include a survey for no-shows to work with the cause',
+      name: 'IncludeASurveyForNoShows',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add an agenda and highlight the speakers`
+  String get AddAnAgendaAndHighlightTheSpeakers {
+    return Intl.message(
+      'Add an agenda and highlight the speakers',
+      name: 'AddAnAgendaAndHighlightTheSpeakers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name of Branch can not be empty`
+  String get NameOfBranchCanNotBeEmpty {
+    return Intl.message(
+      'Name of Branch can not be empty',
+      name: 'NameOfBranchCanNotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error: This name has already been registered`
+  String get ErrorThisNameHasAlreadyBeenRegistered {
+    return Intl.message(
+      'Error: This name has already been registered',
+      name: 'ErrorThisNameHasAlreadyBeenRegistered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select place or branch`
+  String get PleaseSelectPlace {
+    return Intl.message(
+      'Please select place or branch',
+      name: 'PleaseSelectPlace',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

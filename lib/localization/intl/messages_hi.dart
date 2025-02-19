@@ -337,6 +337,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ActivityType": MessageLookupByLibrary.simpleMessage("क्रिया के प्रकार"),
     "ActivityTypes": MessageLookupByLibrary.simpleMessage("गतिविधि प्रकार"),
     "Add": MessageLookupByLibrary.simpleMessage("Add"),
+    "AddAnAgendaAndHighlightTheSpeakers": MessageLookupByLibrary.simpleMessage(
+      "Add an agenda and highlight the speakers",
+    ),
     "AddCategory": MessageLookupByLibrary.simpleMessage("श्रेणी जोड़ें"),
     "AddFeedback": MessageLookupByLibrary.simpleMessage("प्रतिक्रिया जोड़ें"),
     "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
@@ -378,6 +381,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Address": MessageLookupByLibrary.simpleMessage("पता"),
     "Admin": MessageLookupByLibrary.simpleMessage("Admin"),
     "Age": MessageLookupByLibrary.simpleMessage("आयु"),
+    "Agenda": MessageLookupByLibrary.simpleMessage("Agenda"),
     "Album": MessageLookupByLibrary.simpleMessage("एल्बम"),
     "Albums": MessageLookupByLibrary.simpleMessage("एल्बम"),
     "AllAlbums": MessageLookupByLibrary.simpleMessage("सभी एल्बम"),
@@ -747,6 +751,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "ErrorOccuredWithoutMessage": MessageLookupByLibrary.simpleMessage(
       "संदेश के बिना त्रुटि हुई",
     ),
+    "ErrorThisNameHasAlreadyBeenRegistered":
+        MessageLookupByLibrary.simpleMessage(
+          "Error: This name has already been registered",
+        ),
     "Event": MessageLookupByLibrary.simpleMessage("घटना"),
     "EventRatingByFeedback": MessageLookupByLibrary.simpleMessage(
       "घटना रेटिंग (प्रतिक्रिया द्वारा)",
@@ -907,6 +915,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "IdealRoute": MessageLookupByLibrary.simpleMessage("आदर्श मार्ग"),
     "IfPlaceAlreadyExistsIn": MessageLookupByLibrary.simpleMessage(
       "If a place already exists in",
+    ),
+    "IncludeASurveyForNoShows": MessageLookupByLibrary.simpleMessage(
+      "Include a survey for no-shows to work with the cause",
     ),
     "IncorrectLoginOrPassword": MessageLookupByLibrary.simpleMessage(
       "गलत लॉगिन या पासवर्ड",
@@ -1075,6 +1086,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
     "NPlace": m54,
     "Name": MessageLookupByLibrary.simpleMessage("नाम"),
+    "NameOfBranchCanNotBeEmpty": MessageLookupByLibrary.simpleMessage(
+      "Name of Branch can not be empty",
+    ),
     "NameOrNickname": MessageLookupByLibrary.simpleMessage("नाम या उपनाम"),
     "NeedEmailVerification": MessageLookupByLibrary.simpleMessage(
       "Need email verification",
@@ -1155,6 +1169,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "Notification": MessageLookupByLibrary.simpleMessage("अधिसूचना"),
     "NotificationText": MessageLookupByLibrary.simpleMessage("अधिसूचना पाठ"),
     "Notifications": MessageLookupByLibrary.simpleMessage("सूचनाएं"),
+    "NotifyPotentiallyInterestedAudiences":
+        MessageLookupByLibrary.simpleMessage(
+          "Notify potentially interested audiences",
+        ),
     "NotifyTheAudience": MessageLookupByLibrary.simpleMessage(
       "दर्शक को सूचित करें",
     ),
@@ -1166,6 +1184,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Off": MessageLookupByLibrary.simpleMessage("बंद"),
     "Offer": MessageLookupByLibrary.simpleMessage("प्रस्ताव"),
+    "OfferBonusToYourGuestsThroughShuffleActivity":
+        MessageLookupByLibrary.simpleMessage(
+          "Offer bonus to your guests through Shuffle activity",
+        ),
     "OfferContent": MessageLookupByLibrary.simpleMessage("प्रस्ताव सामग्री"),
     "OfferInfo": MessageLookupByLibrary.simpleMessage("Offer info"),
     "OfferPrice": m57,
@@ -1322,6 +1344,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
       "कृपया एक प्रकार चुनें",
     ),
+    "PleaseSelectPlace": MessageLookupByLibrary.simpleMessage(
+      "Please select place or branch",
+    ),
     "PleaseValidateXDetailsBeforeModeration": m61,
     "PlusXNewChatComments": m62,
     "PlusXNewContests": MessageLookupByLibrary.simpleMessage(
@@ -1453,6 +1478,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "हाल ही में जोड़ा गया",
     ),
     "Recommended": MessageLookupByLibrary.simpleMessage("अनुशंसित"),
+    "Refresher": MessageLookupByLibrary.simpleMessage("Refresher"),
     "Refund": MessageLookupByLibrary.simpleMessage("वापसी"),
     "RefundEveryone": MessageLookupByLibrary.simpleMessage("सभी को वापसी करें"),
     "RelatedPersonalProperties": MessageLookupByLibrary.simpleMessage(
@@ -1464,6 +1490,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
     "RemainsToCreate": MessageLookupByLibrary.simpleMessage(
       "बनाने के लिए बचा है",
+    ),
+    "RemindThoseWhoInteractedWithYourContent":
+        MessageLookupByLibrary.simpleMessage(
+          "Remind those who interacted with your content to show up",
+        ),
+    "RemindYourBookingsOneWeekOneDay": MessageLookupByLibrary.simpleMessage(
+      "Remind your bookings one week, one day and one hour before the start",
     ),
     "Reminder": MessageLookupByLibrary.simpleMessage("याद दिलाने वाला"),
     "Reminders": MessageLookupByLibrary.simpleMessage("याद दिलाने वाला"),
@@ -1756,6 +1789,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SureYouWantToExit": MessageLookupByLibrary.simpleMessage(
       "क्या आप निकलना चाहते हैं?",
     ),
+    "SurveyForNoShowsUsers": MessageLookupByLibrary.simpleMessage(
+      "Survey for no shows users",
+    ),
     "SwipeToStart": MessageLookupByLibrary.simpleMessage(
       "शुरू करने के लिए स्वाइप करें",
     ),
@@ -1938,6 +1974,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "UpsalesProductsFrom": m101,
     "UseOurToolsToImproveIt": MessageLookupByLibrary.simpleMessage(
       "Use our tools to improve it",
+    ),
+    "UseYourOpportunities": MessageLookupByLibrary.simpleMessage(
+      "Use your opportunities",
     ),
     "User": MessageLookupByLibrary.simpleMessage("उपयोगकर्ता"),
     "UserHasNoPublicProfileEnd": MessageLookupByLibrary.simpleMessage(
