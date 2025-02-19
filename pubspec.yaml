@@ -154,6 +154,7 @@ flutter:
     - assets/images/png/offer/
     - assets/images/png/reminder/
     - assets/images/png/wallet/
+    - assets/images/png/no_shows/
     - assets/images/svg/
     - assets/fonts/
     - assets/audio/
@@ -184,7 +185,7 @@ flutter_gen:
     enabled: true
 #    fonts:
 #      enabled: false
-    output:
+    outputs:
       style: dot-delimiter
       package_parameter_enabled: true
 #      synthetic-package: false
