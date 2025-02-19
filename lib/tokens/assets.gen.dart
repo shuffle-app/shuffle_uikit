@@ -596,6 +596,9 @@ class $AssetsImagesPngGen {
   /// File path: assets/images/png/no_internet.png
   AssetGenImage get noInternet => const AssetGenImage('assets/images/png/no_internet.png');
 
+  /// Directory path: assets/images/png/no_shows
+  $AssetsImagesPngNoShowsGen get noShows => const $AssetsImagesPngNoShowsGen();
+
   /// File path: assets/images/png/notif-permit.png
   AssetGenImage get notifPermit => const AssetGenImage('assets/images/png/notif-permit.png');
 
@@ -1633,6 +1636,31 @@ class $AssetsImagesPngAvatarsGen {
         rectangle241,
         rectangle24
       ];
+}
+
+class $AssetsImagesPngNoShowsGen {
+  const $AssetsImagesPngNoShowsGen();
+
+  /// File path: assets/images/png/no_shows/Agenda.png
+  AssetGenImage get agenda => const AssetGenImage('assets/images/png/no_shows/Agenda.png');
+
+  /// File path: assets/images/png/no_shows/Cuisine.png
+  AssetGenImage get cuisine => const AssetGenImage('assets/images/png/no_shows/Cuisine.png');
+
+  /// File path: assets/images/png/no_shows/Offer.png
+  AssetGenImage get offer => const AssetGenImage('assets/images/png/no_shows/Offer.png');
+
+  /// File path: assets/images/png/no_shows/Remind.png
+  AssetGenImage get remind => const AssetGenImage('assets/images/png/no_shows/Remind.png');
+
+  /// File path: assets/images/png/no_shows/Start notif.png
+  AssetGenImage get startNotif => const AssetGenImage('assets/images/png/no_shows/Start notif.png');
+
+  /// File path: assets/images/png/no_shows/Survey.png
+  AssetGenImage get survey => const AssetGenImage('assets/images/png/no_shows/Survey.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [agenda, cuisine, offer, remind, startNotif, survey];
 }
 
 class $AssetsImagesPngOfferGen {

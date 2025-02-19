@@ -339,6 +339,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ActivityType": MessageLookupByLibrary.simpleMessage("Тип активности"),
     "ActivityTypes": MessageLookupByLibrary.simpleMessage("Типы активности"),
     "Add": MessageLookupByLibrary.simpleMessage("Добавить"),
+    "AddAnAgendaAndHighlightTheSpeakers": MessageLookupByLibrary.simpleMessage(
+      "Добавь повестку дня и выдели спикеров",
+    ),
     "AddCategory": MessageLookupByLibrary.simpleMessage("Добавить категорию"),
     "AddFeedback": MessageLookupByLibrary.simpleMessage("Поставить оценку"),
     "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
@@ -380,6 +383,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Address": MessageLookupByLibrary.simpleMessage("Адрес"),
     "Admin": MessageLookupByLibrary.simpleMessage("Админ"),
     "Age": MessageLookupByLibrary.simpleMessage("Возраст"),
+    "Agenda": MessageLookupByLibrary.simpleMessage("Повестка дня"),
     "Album": MessageLookupByLibrary.simpleMessage("Альбом"),
     "Albums": MessageLookupByLibrary.simpleMessage("Альбомы"),
     "AllAlbums": MessageLookupByLibrary.simpleMessage("Все альбомы"),
@@ -751,6 +755,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "ErrorOccuredWithoutMessage": MessageLookupByLibrary.simpleMessage(
       "Ошибка без сообщения",
     ),
+    "ErrorThisNameHasAlreadyBeenRegistered":
+        MessageLookupByLibrary.simpleMessage(
+          "Ошибка: Это имя уже было зарегистрировано",
+        ),
     "Event": MessageLookupByLibrary.simpleMessage("Событие"),
     "EventRatingByFeedback": MessageLookupByLibrary.simpleMessage(
       "Общий рейтинг (по отзывам)",
@@ -911,6 +919,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "IdealRoute": MessageLookupByLibrary.simpleMessage("Идеальный маршрут"),
     "IfPlaceAlreadyExistsIn": MessageLookupByLibrary.simpleMessage(
       "Если место уже существует в",
+    ),
+    "IncludeASurveyForNoShows": MessageLookupByLibrary.simpleMessage(
+      "Включи опрос, чтобы разобраться с причиной неявки",
     ),
     "IncorrectLoginOrPassword": MessageLookupByLibrary.simpleMessage(
       "Не тот логин или пароль",
@@ -1078,6 +1089,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
     "NPlace": m54,
     "Name": MessageLookupByLibrary.simpleMessage("Имя"),
+    "NameOfBranchCanNotBeEmpty": MessageLookupByLibrary.simpleMessage(
+      "Название филиала не может быть пустым",
+    ),
     "NameOrNickname": MessageLookupByLibrary.simpleMessage("Имя или ник"),
     "NeedEmailVerification": MessageLookupByLibrary.simpleMessage(
       "Требуется подтвердить email",
@@ -1152,6 +1166,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Текст уведомления",
     ),
     "Notifications": MessageLookupByLibrary.simpleMessage("Уведомления"),
+    "NotifyPotentiallyInterestedAudiences":
+        MessageLookupByLibrary.simpleMessage(
+          "Уведоми потенциально заинтересованную аудиторию",
+        ),
     "NotifyTheAudience": MessageLookupByLibrary.simpleMessage(
       "Оповестите аудиторию",
     ),
@@ -1163,6 +1181,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Off": MessageLookupByLibrary.simpleMessage("Выкл"),
     "Offer": MessageLookupByLibrary.simpleMessage("Предложение"),
+    "OfferBonusToYourGuestsThroughShuffleActivity":
+        MessageLookupByLibrary.simpleMessage(
+          "Предложи бонус своим гостям за счет активности в Shuffle",
+        ),
     "OfferContent": MessageLookupByLibrary.simpleMessage("Предложить контент"),
     "OfferInfo": MessageLookupByLibrary.simpleMessage(
       "Информация о предложении",
@@ -1325,6 +1347,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, выбери один тип",
     ),
+    "PleaseSelectPlace": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, выберите место или филиал",
+    ),
     "PleaseValidateXDetailsBeforeModeration": m61,
     "PlusXNewChatComments": m62,
     "PlusXNewContests": MessageLookupByLibrary.simpleMessage("+ Новый конкурс"),
@@ -1454,6 +1479,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "RealMoney": MessageLookupByLibrary.simpleMessage("Реальные деньги"),
     "RecentlyAdded": MessageLookupByLibrary.simpleMessage("Недавно добавлено"),
     "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
+    "Refresher": MessageLookupByLibrary.simpleMessage("Освежитель"),
     "Refund": MessageLookupByLibrary.simpleMessage("возврат"),
     "RefundEveryone": MessageLookupByLibrary.simpleMessage("Вернуть всем"),
     "RelatedPersonalProperties": MessageLookupByLibrary.simpleMessage(
@@ -1464,6 +1490,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Religion": MessageLookupByLibrary.simpleMessage("Религия"),
     "RemainsToCreate": MessageLookupByLibrary.simpleMessage("Осталось создать"),
+    "RemindThoseWhoInteractedWithYourContent": MessageLookupByLibrary.simpleMessage(
+      "Напомни тем, кто взаимодействовал с вашим контентом, о необходимости явиться",
+    ),
+    "RemindYourBookingsOneWeekOneDay": MessageLookupByLibrary.simpleMessage(
+      "Напомни о бронировании за неделю, за день и за час до начала",
+    ),
     "Reminder": MessageLookupByLibrary.simpleMessage("Напоминание"),
     "Reminders": MessageLookupByLibrary.simpleMessage("Напоминания"),
     "Remove": MessageLookupByLibrary.simpleMessage("Удалить"),
@@ -1761,6 +1793,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SureYouWantToExit": MessageLookupByLibrary.simpleMessage(
       "Точно хочешь выйти?",
     ),
+    "SurveyForNoShowsUsers": MessageLookupByLibrary.simpleMessage(
+      "Опрос для неявившихся пользователей",
+    ),
     "SwipeToStart": MessageLookupByLibrary.simpleMessage("Свайп чтобы начать"),
     "SwitchAnyTime": MessageLookupByLibrary.simpleMessage(
       "Можно переключить в любое время в настройках профиля",
@@ -1945,6 +1980,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "UpsalesProductsFrom": m101,
     "UseOurToolsToImproveIt": MessageLookupByLibrary.simpleMessage(
       "Используйте наши инструменты, чтобы улучшить его",
+    ),
+    "UseYourOpportunities": MessageLookupByLibrary.simpleMessage(
+      "Используйте свои возможности",
     ),
     "User": MessageLookupByLibrary.simpleMessage("Юзер"),
     "UserHasNoPublicProfileEnd": MessageLookupByLibrary.simpleMessage(

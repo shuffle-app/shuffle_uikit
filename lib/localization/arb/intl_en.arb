@@ -1022,5 +1022,19 @@
   "EmptyChallengeMessage":  "Challenge right now,\ncheck out another one",
   "WeArePreparingChallengesForTomorrow": "We are preparing challenges for tomorrow, come later",
   "CannotFindThisAuthor": "Cannot find this author",
-  "ThisAuthorDoesNotHaveSuitableAccount": "This author does not have a suitable account"
+  "ThisAuthorDoesNotHaveSuitableAccount": "This author does not have a suitable account",
+  "UseYourOpportunities": "Use your opportunities",
+  "Refresher": "Refresher",
+  "SurveyForNoShowsUsers": "Survey for no shows users",
+  "Agenda": "Agenda",
+  "RemindThoseWhoInteractedWithYourContent": "Remind those who interacted with your content to show up",
+  "NotifyPotentiallyInterestedAudiences": "Notify potentially interested audiences",
+  "OfferBonusToYourGuestsThroughShuffleActivity": "Offer bonus to your guests through Shuffle activity",
+  "RemindYourBookingsOneWeekOneDay": "Remind your bookings one week, one day and one hour before the start",
+  "IncludeASurveyForNoShows": "Include a survey for no-shows to work with the cause",
+  "AddAnAgendaAndHighlightTheSpeakers": "Add an agenda and highlight the speakers",
+  "NameOfBranchCanNotBeEmpty": "Name of Branch can not be empty",
+  "ErrorThisNameHasAlreadyBeenRegistered": "Error: This name has already been registered",
+  "PleaseSelectPlace": "Please select place or branch"
+
 }

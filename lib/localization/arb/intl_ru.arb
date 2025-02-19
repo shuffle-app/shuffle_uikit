@@ -1022,7 +1022,21 @@
   "EmptyChallengeMessage":  "челенджей,\nпроверьте другие",
   "WeArePreparingChallengesForTomorrow": "Мы готовим челленджи на завтра, приходите позже",
   "CannotFindThisAuthor": "Не удается найти этого автора",
-  "ThisAuthorDoesNotHaveSuitableAccount": "У этого автора нет подходящей учетной записи"
+  "ThisAuthorDoesNotHaveSuitableAccount": "У этого автора нет подходящей учетной записи",
+  "UseYourOpportunities": "Используйте свои возможности",
+  "Refresher": "Освежитель",
+  "SurveyForNoShowsUsers": "Опрос для неявившихся пользователей",
+  "Agenda": "Повестка дня",
+  "RemindThoseWhoInteractedWithYourContent": "Напомни тем, кто взаимодействовал с вашим контентом, о необходимости явиться",
+  "NotifyPotentiallyInterestedAudiences": "Уведоми потенциально заинтересованную аудиторию",
+  "OfferBonusToYourGuestsThroughShuffleActivity": "Предложи бонус своим гостям за счет активности в Shuffle",
+  "RemindYourBookingsOneWeekOneDay": "Напомни о бронировании за неделю, за день и за час до начала",
+  "IncludeASurveyForNoShows": "Включи опрос, чтобы разобраться с причиной неявки",
+  "AddAnAgendaAndHighlightTheSpeakers": "Добавь повестку дня и выдели спикеров",
+  "NameOfBranchCanNotBeEmpty": "Название филиала не может быть пустым",
+  "ErrorThisNameHasAlreadyBeenRegistered": "Ошибка: Это имя уже было зарегистрировано",
+  "PleaseSelectPlace": "Пожалуйста, выберите место или филиал"
+
 
 }
 
