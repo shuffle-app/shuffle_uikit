@@ -502,6 +502,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Спокойная атмосфера",
     ),
     "Cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
+    "CannotFindThisAuthor": MessageLookupByLibrary.simpleMessage(
+      "Не удается найти этого автора",
+    ),
     "CannotFindThisPlaceOrEvent": MessageLookupByLibrary.simpleMessage(
       "Не удается найти это место или ивен",
     ),
@@ -1856,6 +1859,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
       "Этот контент есть в других ваших списках. После добавления он будет удален из текущего.",
     ),
+    "ThisAuthorDoesNotHaveSuitableAccount":
+        MessageLookupByLibrary.simpleMessage(
+          "У этого автора нет подходящей учетной записи",
+        ),
     "ThisIs": MessageLookupByLibrary.simpleMessage("Это"),
     "ThisIsEmptyNowBook": MessageLookupByLibrary.simpleMessage(
       "Пока здесь пусто, забронируйте посещение и оно появится здесь",

@@ -499,6 +499,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ByMessage": MessageLookupByLibrary.simpleMessage("by message"),
     "CalmAtmosphere": MessageLookupByLibrary.simpleMessage("Calm atmosphere"),
     "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "CannotFindThisAuthor": MessageLookupByLibrary.simpleMessage(
+      "Cannot find this author",
+    ),
     "CannotFindThisPlaceOrEvent": MessageLookupByLibrary.simpleMessage(
       "Cannot find this place or event",
     ),
@@ -1844,6 +1847,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
       "These content is on your other lists. When added, it will be removed from the current.",
     ),
+    "ThisAuthorDoesNotHaveSuitableAccount":
+        MessageLookupByLibrary.simpleMessage(
+          "This author does not have a suitable account",
+        ),
     "ThisIs": MessageLookupByLibrary.simpleMessage("This is"),
     "ThisIsEmptyNowBook": MessageLookupByLibrary.simpleMessage(
       "This is empty now, book your visit and it will appear here",

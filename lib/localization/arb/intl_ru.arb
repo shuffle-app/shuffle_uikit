@@ -1021,6 +1021,8 @@
   "EmptyChallengeHardcode":  "Тяжелых",
   "EmptyChallengeMessage":  "челенджей,\nпроверьте другие",
   "WeArePreparingChallengesForTomorrow": "Мы готовим челленджи на завтра, приходите позже",
+  "CannotFindThisAuthor": "Не удается найти этого автора",
+  "ThisAuthorDoesNotHaveSuitableAccount": "У этого автора нет подходящей учетной записи",
   "UseYourOpportunities": "Используйте свои возможности",
   "Refresher": "Освежитель",
   "SurveyForNoShowsUsers": "Опрос для неявившихся пользователей",

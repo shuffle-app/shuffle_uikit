@@ -1021,6 +1021,8 @@
   "EmptyChallengeHardcode":  "Hardcode",
   "EmptyChallengeMessage":  "Challenge right now,\ncheck out another one",
   "WeArePreparingChallengesForTomorrow": "We are preparing challenges for tomorrow, come later",
+  "CannotFindThisAuthor": "Cannot find this author",
+  "ThisAuthorDoesNotHaveSuitableAccount": "This author does not have a suitable account",
   "UseYourOpportunities": "Use your opportunities",
   "Refresher": "Refresher",
   "SurveyForNoShowsUsers": "Survey for no shows users",
