@@ -489,7 +489,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "BookingsHeading": MessageLookupByLibrary.simpleMessage("Брони"),
     "Both": MessageLookupByLibrary.simpleMessage("Оба"),
-    "Branches": MessageLookupByLibrary.simpleMessage("Сеть"),
+    "Branches": MessageLookupByLibrary.simpleMessage("Филиал"),
     "Buddhism": MessageLookupByLibrary.simpleMessage("Буддизм"),
     "Budget": m7,
     "BuildYOurBusiness": MessageLookupByLibrary.simpleMessage(
