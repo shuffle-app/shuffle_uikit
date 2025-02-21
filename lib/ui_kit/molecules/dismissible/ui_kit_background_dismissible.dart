@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitSecondaryBackgroundDismissible extends StatelessWidget {
-  const UiKitSecondaryBackgroundDismissible({super.key});
+class UiKitBackgroundDismissible extends StatelessWidget {
+  const UiKitBackgroundDismissible({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -135,4 +135,4 @@ export 'notification_offer_reminders/ui_kit_offer_created_dialog.dart';
 export 'notification_offer_reminders/ui_kit_pay_dialog.dart';
 export 'notification_offer_reminders/ui_kit_selected_icon_widget.dart';
 export 'notification_offer_reminders/ui_kit_select_date_widget.dart';
-export 'dismissible/ui_kit_secondary_background_dismissible.dart';
+export 'dismissible/ui_kit_background_dismissible.dart';
