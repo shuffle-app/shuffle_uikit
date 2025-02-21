@@ -1035,7 +1035,21 @@
   "AddAnAgendaAndHighlightTheSpeakers": "Добавь повестку дня и выдели спикеров",
   "NameOfBranchCanNotBeEmpty": "Название филиала не может быть пустым",
   "ErrorThisNameHasAlreadyBeenRegistered": "Ошибка: Это имя уже было зарегистрировано",
-  "PleaseSelectPlace": "Пожалуйста, выберите место или филиал"
+  "PleaseSelectPlace": "Пожалуйста, выберите место или филиал",
+  "SetUpARefresherForX": "Настройте Освежитель за ${x}",
+  "SetUpNewRefresher": "Установить новый Освежитель",
+  "Text": "Текст",
+  "PleaseEnterValidText": "Пожалуйста введите корректный текст",
+  "YourStartNotificationWillBeShownXTimes": "Уведомление о начале мероприятия будет показано {x} раза: за неделю, за день и за час до его начала.",
+  "XWeek": "{x} Неделя",
+  "XDay": "{x} День",
+  "XHour": "{x} Час",
+  "TextForTheWeek": "Текст за неделю",
+  "TextForTheDay": "Текст за день",
+  "TextInAnHour": "Текст за час",
+  "RefresherCannotBeEmpty": "Освежитель не может быть пустым",
+  "CannotFindThisRefresher": "Не удается найти этот освежитель",
+  "PayForTheStartNotification": "Оплатите уведомление о запуске"
 
 
 }
