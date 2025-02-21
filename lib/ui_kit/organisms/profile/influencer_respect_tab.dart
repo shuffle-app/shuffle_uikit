@@ -35,6 +35,7 @@ class InfluencerRespectTab extends StatelessWidget {
             return GestureDetector(
               onTap: () => onItemTap?.call(item.placeId, item.eventId),
               child: UiKitRespectEventCard(
+                onTap: () => onItemTap?.call(item.placeId, item.eventId),
                 images: item.images,
                 title: item.title,
                 respectFromUsers: item.respectFromUsers,
