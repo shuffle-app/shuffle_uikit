@@ -1035,6 +1035,20 @@
   "AddAnAgendaAndHighlightTheSpeakers": "Add an agenda and highlight the speakers",
   "NameOfBranchCanNotBeEmpty": "Name of Branch can not be empty",
   "ErrorThisNameHasAlreadyBeenRegistered": "Error: This name has already been registered",
-  "PleaseSelectPlace": "Please select place or branch"
+  "PleaseSelectPlace": "Please select place or branch",
+  "SetUpARefresherForX": "Set up a Refresher for ${x}",
+  "SetUpNewRefresher": "Set up new Refresher",
+  "Text": "Text",
+  "PleaseEnterValidText": "Please enter valid text",
+  "YourStartNotificationWillBeShownXTimes": "Your start notification will be shown {x} times: a week, a day and an hour before the event start",
+  "XWeek": "{x} Week",
+  "XDay": "{x} Day",
+  "XHour": "{x} Hour",
+  "TextForTheWeek": "Text for the week",
+  "TextForTheDay": "text for the day",
+  "TextInAnHour": "text in an hour",
+  "RefresherCannotBeEmpty": "Refresher cannot be empty",
+  "CannotFindThisRefresher": "Cannot find this refresher",
+  "PayForTheStartNotification": "Pay for the start notification"
 
 }

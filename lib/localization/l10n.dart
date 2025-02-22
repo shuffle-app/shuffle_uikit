@@ -28,7 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -6796,7 +6799,8 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      other: 'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      other:
+          'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
       desc: '',
       args: [count],
@@ -8837,6 +8841,126 @@ class S {
     return Intl.message(
       'Please select place or branch',
       name: 'PleaseSelectPlace',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set up a Refresher for ${x}`
+  String SetUpARefresherForX(Object x) {
+    return Intl.message(
+      'Set up a Refresher for \$$x',
+      name: 'SetUpARefresherForX',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `Set up new Refresher`
+  String get SetUpNewRefresher {
+    return Intl.message(
+      'Set up new Refresher',
+      name: 'SetUpNewRefresher',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Text`
+  String get Text {
+    return Intl.message('Text', name: 'Text', desc: '', args: []);
+  }
+
+  /// `Please enter valid text`
+  String get PleaseEnterValidText {
+    return Intl.message(
+      'Please enter valid text',
+      name: 'PleaseEnterValidText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your start notification will be shown {x} times: a week, a day and an hour before the event start`
+  String YourStartNotificationWillBeShownXTimes(Object x) {
+    return Intl.message(
+      'Your start notification will be shown $x times: a week, a day and an hour before the event start',
+      name: 'YourStartNotificationWillBeShownXTimes',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `{x} Week`
+  String XWeek(Object x) {
+    return Intl.message('$x Week', name: 'XWeek', desc: '', args: [x]);
+  }
+
+  /// `{x} Day`
+  String XDay(Object x) {
+    return Intl.message('$x Day', name: 'XDay', desc: '', args: [x]);
+  }
+
+  /// `{x} Hour`
+  String XHour(Object x) {
+    return Intl.message('$x Hour', name: 'XHour', desc: '', args: [x]);
+  }
+
+  /// `Text for the week`
+  String get TextForTheWeek {
+    return Intl.message(
+      'Text for the week',
+      name: 'TextForTheWeek',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `text for the day`
+  String get TextForTheDay {
+    return Intl.message(
+      'text for the day',
+      name: 'TextForTheDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `text in an hour`
+  String get TextInAnHour {
+    return Intl.message(
+      'text in an hour',
+      name: 'TextInAnHour',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Refresher cannot be empty`
+  String get RefresherCannotBeEmpty {
+    return Intl.message(
+      'Refresher cannot be empty',
+      name: 'RefresherCannotBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cannot find this refresher`
+  String get CannotFindThisRefresher {
+    return Intl.message(
+      'Cannot find this refresher',
+      name: 'CannotFindThisRefresher',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pay for the start notification`
+  String get PayForTheStartNotification {
+    return Intl.message(
+      'Pay for the start notification',
+      name: 'PayForTheStartNotification',
       desc: '',
       args: [],
     );

@@ -67,6 +67,7 @@ export 'cards/ui_kit_support_shuffle_card.dart';
 export 'cards/ui_kit_titled_action_card.dart';
 export 'cards/ui_kit_titled_card_with_background.dart';
 export 'cards/ui_kit_vertical_chip.dart';
+export 'cards/ui_kit_personal_tool_in_content_card.dart';
 export 'charts/line_chart/ui_kit_line_chart.dart';
 export 'charts/mini_chart/ui_kit_mini_chart.dart';
 export 'charts/mini_chart/ui_kit_mini_chart_data_item_widget.dart';
