@@ -9,6 +9,7 @@ export 'animations/ui_kit_scale_animation.dart';
 export 'builders/alert_dialog_builder.dart';
 export 'builders/comment_dialog_builder.dart';
 export 'builders/custom_calendar_picker_dialog.dart';
+export 'builders/stripe_email_confirm_bottom_sheet.dart';
 export 'builders/custom_time_picker_dialog.dart';
 export 'builders/date_range_picker.dart';
 export 'builders/flushbar_builder.dart';

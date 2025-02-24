@@ -1053,6 +1053,12 @@
   "Remainder": "Напоминание",
   "RemindBefore": "Напомнить за",
   "YouHaveExistingItems": "У вас есть созданные записи",
-  "SelectItemToEdit": "Выберите запись для редактирования"
+  "SelectItemToEdit": "Выберите запись для редактирования",
+  "Completed": "Завершено",
+  "InProgress": "В процессе",
+  "NotStarted": "Не начато",
+  "NeedAction": "Требуется действие",
+  "ConfirmOrEditX": "Подтверди или отредактируй {x}",
+  "RegistrationStripeExplanation": "Можешь использовать платные функции и принимать платежи после регистрации в Stripe"
 }
 

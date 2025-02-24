@@ -1053,5 +1053,11 @@
   "Remainder": "Remainder",
   "RemindBefore": "Remind before",
   "YouHaveExistingItems": "You have existing items",
-  "SelectItemToEdit": "Select item to edit"
+  "SelectItemToEdit": "Select item to edit",
+  "Completed": "Completed",
+  "InProgress": "In progress",
+  "NotStarted": "Not started",
+  "NeedAction": "Need action",
+  "ConfirmOrEditX": "Confirm or edit {x}",
+  "RegistrationStripeExplanation": "You can use paid features and accept payments after registering with Stripe"
 }
