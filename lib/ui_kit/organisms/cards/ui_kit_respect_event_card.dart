@@ -9,6 +9,7 @@ class UiKitRespectEventCard extends StatelessWidget {
   final List<RespectFromUser> respectFromUsers;
   final List<UiKitTag> properties;
   final PlaceWeatherType? weatherType;
+  final VoidCallback? onTap;
 
   const UiKitRespectEventCard({
     super.key,
@@ -17,6 +18,7 @@ class UiKitRespectEventCard extends StatelessWidget {
     required this.respectFromUsers,
     required this.properties,
     this.weatherType,
+    this.onTap,
   });
 
   @override
@@ -33,6 +35,7 @@ class UiKitRespectEventCard extends StatelessWidget {
             if (images.isNotEmpty)
               UiKitPhotoSlider(
                 width: 1.sw,
+                onTap: (value) => onTap?.call(),
                 media: images.map((e) => UiKitMediaPhoto(link: e)).toList(),
                 weatherType: weatherType,
               )
