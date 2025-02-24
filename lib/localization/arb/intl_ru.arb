@@ -1049,8 +1049,10 @@
   "TextInAnHour": "Текст за час",
   "RefresherCannotBeEmpty": "Освежитель не может быть пустым",
   "CannotFindThisRefresher": "Не удается найти этот освежитель",
-  "PayForTheStartNotification": "Оплатите уведомление о запуске"
-
-
+  "PayForTheStartNotification": "Оплатите уведомление о запуске",
+  "Remainder": "Напоминание",
+  "RemindBefore": "Напомнить за",
+  "YouHaveExistingItems": "У вас есть созданные записи",
+  "SelectItemToEdit": "Выберите запись для редактирования"
 }
 

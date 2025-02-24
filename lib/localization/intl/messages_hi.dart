@@ -1514,9 +1514,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Related properties",
     ),
     "Religion": MessageLookupByLibrary.simpleMessage("धर्म"),
+    "Remainder": MessageLookupByLibrary.simpleMessage("Remainder"),
     "RemainsToCreate": MessageLookupByLibrary.simpleMessage(
       "बनाने के लिए बचा है",
     ),
+    "RemindBefore": MessageLookupByLibrary.simpleMessage("Remind before"),
     "RemindThoseWhoInteractedWithYourContent":
         MessageLookupByLibrary.simpleMessage(
           "Remind those who interacted with your content to show up",
@@ -1649,6 +1651,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "एक समाप्ति समय चुनें",
     ),
     "SelectGender": MessageLookupByLibrary.simpleMessage("लिंग चुनें"),
+    "SelectItemToEdit": MessageLookupByLibrary.simpleMessage(
+      "Select item to edit",
+    ),
     "SelectLanguage": MessageLookupByLibrary.simpleMessage("भाषा चुने"),
     "SelectLocation": MessageLookupByLibrary.simpleMessage("Select location"),
     "SelectMindsetInvitation": m82,
@@ -2159,6 +2164,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
       "आपको वही मिलता है जो आपको चाहि",
+    ),
+    "YouHaveExistingItems": MessageLookupByLibrary.simpleMessage(
+      "You have existing items",
     ),
     "YouMissedALot": MessageLookupByLibrary.simpleMessage(
       "आपने बहुत कुछ छोड़ दिया",

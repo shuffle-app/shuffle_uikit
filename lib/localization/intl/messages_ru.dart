@@ -1512,7 +1512,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Связанные свойства",
     ),
     "Religion": MessageLookupByLibrary.simpleMessage("Религия"),
+    "Remainder": MessageLookupByLibrary.simpleMessage("Напоминание"),
     "RemainsToCreate": MessageLookupByLibrary.simpleMessage("Осталось создать"),
+    "RemindBefore": MessageLookupByLibrary.simpleMessage("Напомнить за"),
     "RemindThoseWhoInteractedWithYourContent": MessageLookupByLibrary.simpleMessage(
       "Напомни тем, кто взаимодействовал с вашим контентом, о необходимости явиться",
     ),
@@ -1646,6 +1648,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Выберите время окончания",
     ),
     "SelectGender": MessageLookupByLibrary.simpleMessage("Выберите пол"),
+    "SelectItemToEdit": MessageLookupByLibrary.simpleMessage(
+      "Выберите запись для редактирования",
+    ),
     "SelectLanguage": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста выбери язык",
     ),
@@ -2148,6 +2153,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
       "Ты получаешь точно то, что нужно",
+    ),
+    "YouHaveExistingItems": MessageLookupByLibrary.simpleMessage(
+      "У вас есть созданные записи",
     ),
     "YouMissedALot": MessageLookupByLibrary.simpleMessage(
       "Вы многое пропустили",

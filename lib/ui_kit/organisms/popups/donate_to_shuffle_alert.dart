@@ -32,24 +32,7 @@ class _DonateToShuffleAlertState extends State<DonateToShuffleAlert> {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
 
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        GestureDetector(
-          onTap: () => Navigator.of(context).pop(),
-          child: ImageWidget(
-            iconData: ShuffleUiKitIcons.cross,
-            color: theme?.colorScheme.darkNeutral900,
-            height: 19.h,
-            fit: BoxFit.fitHeight,
-          ),
-        ),
-        SpacingFoundation.verticalSpace16,
-        UiKitCardWrapper(
-          color: Colors.white,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
+    return BaseDismissiblePopup(
             children: [
               Text(
                 S.of(context).HowMuchDoYouWantToDonate,
@@ -77,9 +60,9 @@ class _DonateToShuffleAlertState extends State<DonateToShuffleAlert> {
                   },
                 ),
               ),
-            ],
-          ).paddingAll(EdgeInsetsFoundation.all16),
-        ),
+
+
+
       ],
     ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16);
   }

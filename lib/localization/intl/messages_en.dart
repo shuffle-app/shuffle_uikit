@@ -1505,9 +1505,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Related properties",
     ),
     "Religion": MessageLookupByLibrary.simpleMessage("Religion"),
+    "Remainder": MessageLookupByLibrary.simpleMessage("Remainder"),
     "RemainsToCreate": MessageLookupByLibrary.simpleMessage(
       "Remains to create",
     ),
+    "RemindBefore": MessageLookupByLibrary.simpleMessage("Remind before"),
     "RemindThoseWhoInteractedWithYourContent":
         MessageLookupByLibrary.simpleMessage(
           "Remind those who interacted with your content to show up",
@@ -1640,6 +1642,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Select an ending time",
     ),
     "SelectGender": MessageLookupByLibrary.simpleMessage("Select gender"),
+    "SelectItemToEdit": MessageLookupByLibrary.simpleMessage(
+      "Select item to edit",
+    ),
     "SelectLanguage": MessageLookupByLibrary.simpleMessage(
       "Please select language",
     ),
@@ -2134,6 +2139,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
       "You get exactly what you need",
+    ),
+    "YouHaveExistingItems": MessageLookupByLibrary.simpleMessage(
+      "You have existing items",
     ),
     "YouMissedALot": MessageLookupByLibrary.simpleMessage("You missed a lot"),
     "YouProgressed": MessageLookupByLibrary.simpleMessage("You progressed!"),

@@ -8965,6 +8965,41 @@ class S {
       args: [],
     );
   }
+
+  /// `Remainder`
+  String get Remainder {
+    return Intl.message('Remainder', name: 'Remainder', desc: '', args: []);
+  }
+
+  /// `Remind before`
+  String get RemindBefore {
+    return Intl.message(
+      'Remind before',
+      name: 'RemindBefore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have existing items`
+  String get YouHaveExistingItems {
+    return Intl.message(
+      'You have existing items',
+      name: 'YouHaveExistingItems',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select item to edit`
+  String get SelectItemToEdit {
+    return Intl.message(
+      'Select item to edit',
+      name: 'SelectItemToEdit',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

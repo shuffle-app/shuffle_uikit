@@ -1047,6 +1047,10 @@
   "TextInAnHour": "text in an hour",
   "RefresherCannotBeEmpty": "Refresher cannot be empty",
   "CannotFindThisRefresher": "Cannot find this refresher",
-  "PayForTheStartNotification": "Pay for the start notification"
+  "PayForTheStartNotification": "Pay for the start notification",
+  "Remainder": "Remainder",
+  "RemindBefore": "Remind before",
+  "YouHaveExistingItems": "You have existing items",
+  "SelectItemToEdit": "Select item to edit"
 
 }
