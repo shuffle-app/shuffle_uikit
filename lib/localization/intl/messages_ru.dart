@@ -377,6 +377,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Добавить в личный ТОП",
     ),
     "AddToScheduler": MessageLookupByLibrary.simpleMessage("Запланировать"),
+    "AddVoice": MessageLookupByLibrary.simpleMessage("Добавить голосовое"),
     "AddYourselfToList": MessageLookupByLibrary.simpleMessage(
       "Добавиться в список",
     ),
@@ -390,6 +391,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AllAppNotification": MessageLookupByLibrary.simpleMessage(
       "Все уведомления",
     ),
+    "AllVoices": MessageLookupByLibrary.simpleMessage("Все голосовые"),
     "AllXFeaturesAvailable": m0,
     "Allow": MessageLookupByLibrary.simpleMessage("Разрешить"),
     "AllowAll": MessageLookupByLibrary.simpleMessage("Разрешить все"),
@@ -2184,6 +2186,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Yourself": MessageLookupByLibrary.simpleMessage("Себе"),
     "daynight": MessageLookupByLibrary.simpleMessage("Днём и ночью"),
     "inXDays": m116,
+    "interview": MessageLookupByLibrary.simpleMessage("Интервью"),
     "key": MessageLookupByLibrary.simpleMessage(""),
   };
 }

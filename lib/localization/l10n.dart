@@ -28,7 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -6796,7 +6799,8 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      other: 'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      other:
+          'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
       desc: '',
       args: [count],
@@ -8840,6 +8844,21 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `All voices`
+  String get AllVoices {
+    return Intl.message('All voices', name: 'AllVoices', desc: '', args: []);
+  }
+
+  /// `Add voice`
+  String get AddVoice {
+    return Intl.message('Add voice', name: 'AddVoice', desc: '', args: []);
+  }
+
+  /// `interview`
+  String get interview {
+    return Intl.message('interview', name: 'interview', desc: '', args: []);
   }
 }
 

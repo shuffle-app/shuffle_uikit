@@ -375,6 +375,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "व्यक्तिगत शीर्ष पर जोड़ें",
     ),
     "AddToScheduler": MessageLookupByLibrary.simpleMessage("Plan it"),
+    "AddVoice": MessageLookupByLibrary.simpleMessage("Add voice"),
     "AddYourselfToList": MessageLookupByLibrary.simpleMessage(
       "स्वयं को सूची में जोड़ें",
     ),
@@ -388,6 +389,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AllAppNotification": MessageLookupByLibrary.simpleMessage(
       "सभी ऐप सूचनाएँ",
     ),
+    "AllVoices": MessageLookupByLibrary.simpleMessage("All voices"),
     "AllXFeaturesAvailable": m0,
     "Allow": MessageLookupByLibrary.simpleMessage("अनुमति दें"),
     "AllowAll": MessageLookupByLibrary.simpleMessage("सभी को अनुमति दें"),
@@ -2195,6 +2197,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Yourself": MessageLookupByLibrary.simpleMessage("Yourself"),
     "daynight": MessageLookupByLibrary.simpleMessage("दिन और रात"),
     "inXDays": m116,
+    "interview": MessageLookupByLibrary.simpleMessage("interview"),
     "key": MessageLookupByLibrary.simpleMessage(""),
   };
 }

@@ -376,6 +376,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Add to personal TOP",
     ),
     "AddToScheduler": MessageLookupByLibrary.simpleMessage("Plan it"),
+    "AddVoice": MessageLookupByLibrary.simpleMessage("Add voice"),
     "AddYourselfToList": MessageLookupByLibrary.simpleMessage(
       "Add yourself to list",
     ),
@@ -389,6 +390,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AllAppNotification": MessageLookupByLibrary.simpleMessage(
       "All app notifications",
     ),
+    "AllVoices": MessageLookupByLibrary.simpleMessage("All voices"),
     "AllXFeaturesAvailable": m0,
     "Allow": MessageLookupByLibrary.simpleMessage("Allow"),
     "AllowAll": MessageLookupByLibrary.simpleMessage("Allow all"),
@@ -2168,6 +2170,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Yourself": MessageLookupByLibrary.simpleMessage("Yourself"),
     "daynight": MessageLookupByLibrary.simpleMessage("Day and night"),
     "inXDays": m116,
+    "interview": MessageLookupByLibrary.simpleMessage("interview"),
     "key": MessageLookupByLibrary.simpleMessage(""),
   };
 }

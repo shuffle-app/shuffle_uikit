@@ -1033,6 +1033,9 @@
   "AddAnAgendaAndHighlightTheSpeakers": "Add an agenda and highlight the speakers",
   "NameOfBranchCanNotBeEmpty": "Name of Branch can not be empty",
   "ErrorThisNameHasAlreadyBeenRegistered": "Error: This name has already been registered",
-  "PleaseSelectPlace": "Please select place or branch"
+  "PleaseSelectPlace": "Please select place or branch",
+  "AllVoices": "All voices",
+  "AddVoice": "Add voice",
+  "interview": "interview"
 
 }

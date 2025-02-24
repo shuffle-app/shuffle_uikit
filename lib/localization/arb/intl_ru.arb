@@ -1035,7 +1035,10 @@
   "AddAnAgendaAndHighlightTheSpeakers": "Добавь повестку дня и выдели спикеров",
   "NameOfBranchCanNotBeEmpty": "Название филиала не может быть пустым",
   "ErrorThisNameHasAlreadyBeenRegistered": "Ошибка: Это имя уже было зарегистрировано",
-  "PleaseSelectPlace": "Пожалуйста, выберите место или филиал"
+  "PleaseSelectPlace": "Пожалуйста, выберите место или филиал",
+  "AllVoices": "Все голосовые",
+  "AddVoice": "Добавить голосовое",
+  "interview": "Интервью"
 
 
 }
