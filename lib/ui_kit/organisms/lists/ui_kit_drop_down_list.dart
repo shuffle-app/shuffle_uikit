@@ -8,6 +8,7 @@ class UiKitDropDownList<T extends Object> extends StatelessWidget {
   final void Function(T?)? onChanged;
   final double? width;
   final double? height;
+  final double? maxHeight;
   final Color? customColor;
   final EdgeInsets? contentPadding;
   final BorderRadius? contentBorderRadius;
@@ -20,6 +21,7 @@ class UiKitDropDownList<T extends Object> extends StatelessWidget {
     this.customColor,
     this.width,
     this.height,
+    this.maxHeight,
     this.contentPadding,
     this.contentBorderRadius,
   });
@@ -55,6 +57,7 @@ class UiKitDropDownList<T extends Object> extends StatelessWidget {
           buttonStyleData: ButtonStyleData(padding: contentPadding),
           dropdownStyleData: DropdownStyleData(
             width: width ?? 0.3.sw,
+            maxHeight: maxHeight,
             elevation: 0,
             offset: const Offset(-12, 5),
             padding: contentPadding,
