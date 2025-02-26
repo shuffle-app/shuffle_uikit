@@ -452,6 +452,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AverageContentViewTime": MessageLookupByLibrary.simpleMessage(
       "Average card visit time",
     ),
+    "AwaitingPayment": MessageLookupByLibrary.simpleMessage("Awaiting payment"),
     "Back": MessageLookupByLibrary.simpleMessage("Back"),
     "Balance": MessageLookupByLibrary.simpleMessage("Balance"),
     "BarcodeAlreadyBeenActivated": MessageLookupByLibrary.simpleMessage(
@@ -1277,6 +1278,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PayForTheStartNotification": MessageLookupByLibrary.simpleMessage(
       "Pay for the start notification",
     ),
+    "Pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "PeopleStartingToTalkAboutYou": MessageLookupByLibrary.simpleMessage(
       "People are starting to talk about you",
     ),

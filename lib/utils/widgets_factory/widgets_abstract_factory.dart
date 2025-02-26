@@ -391,6 +391,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         textColor: gradient != null ? Colors.white : data.textColor,
         loading: data.loading,
         group: data.autoSizeGroup,
+        fit: data.fit,
       );
     } else if ((blurred ?? false) && hasIcon && !hasText) {
       return SmallBlurredOutlinedIconButton(
@@ -838,6 +839,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
       onPressed: data.onPressed,
       loading: data.loading,
       group: data.autoSizeGroup,
+      fit: data.fit,
     );
   }
 

@@ -1059,6 +1059,8 @@
   "NotStarted": "Не начато",
   "NeedAction": "Требуется действие",
   "ConfirmOrEditX": "Подтверди или отредактируй {x}",
-  "RegistrationStripeExplanation": "Можешь использовать платные функции и принимать платежи после регистрации в Stripe"
+  "RegistrationStripeExplanation": "Можешь использовать платные функции и принимать платежи после регистрации в Stripe",
+  "AwaitingPayment": "Ожидает оплаты",
+  "Pending": "Ожидает"
 }
 

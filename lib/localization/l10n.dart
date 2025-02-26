@@ -9040,6 +9040,21 @@ class S {
       args: [],
     );
   }
+
+  /// `Awaiting payment`
+  String get AwaitingPayment {
+    return Intl.message(
+      'Awaiting payment',
+      name: 'AwaitingPayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pending`
+  String get Pending {
+    return Intl.message('Pending', name: 'Pending', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

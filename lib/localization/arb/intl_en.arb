@@ -1059,5 +1059,7 @@
   "NotStarted": "Not started",
   "NeedAction": "Need action",
   "ConfirmOrEditX": "Confirm or edit {x}",
-  "RegistrationStripeExplanation": "You can use paid features and accept payments after registering with Stripe"
+  "RegistrationStripeExplanation": "You can use paid features and accept payments after registering with Stripe",
+  "AwaitingPayment": "Awaiting payment",
+  "Pending": "Pending"
 }

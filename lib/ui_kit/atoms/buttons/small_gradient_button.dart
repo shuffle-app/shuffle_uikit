@@ -7,6 +7,7 @@ class SmallGradientButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final bool? loading;
   final AutoSizeGroup? group;
+  final ButtonFit? fit;
 
   const SmallGradientButton({
     super.key,
@@ -14,6 +15,7 @@ class SmallGradientButton extends StatelessWidget implements ButtonFactory {
     this.loading,
     required this.text,
     this.group,
+    this.fit
   });
 
   @override
@@ -30,6 +32,7 @@ class SmallGradientButton extends StatelessWidget implements ButtonFactory {
         borderRadius: BorderRadiusFoundation.max,
         onTap: enabled && !(loading ?? false) ? onPressed : null,
         child: Ink(
+          width: fit == ButtonFit.fitWidth ? double.infinity : null,
           padding: EdgeInsets.symmetric(
             vertical: EdgeInsetsFoundation.vertical6,
             horizontal: EdgeInsetsFoundation.horizontal16,
