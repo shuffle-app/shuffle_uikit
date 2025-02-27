@@ -25,6 +25,9 @@ dependencies:
   #for barcode generate
   barcode_widget: ^2.0.4
 
+  #voice
+  flutter_sound_record: ^3.3.2
+
   #ui widgets
   carousel_slider_plus: ^7.1.0
   cached_network_image: ^3.4.1
