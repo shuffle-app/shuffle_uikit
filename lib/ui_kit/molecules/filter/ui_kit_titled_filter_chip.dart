@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitTitledFilterChip extends StatelessWidget {
@@ -57,9 +59,10 @@ class UiKitTitledFilterChip extends StatelessWidget {
               ? Center(
                   child: SizedBox(
                     width: 40.h,
-                    child: CircularProgressIndicator.adaptive(
-                      valueColor: AlwaysStoppedAnimation(foreground),
-                      backgroundColor: Colors.transparent,
+                    child: CupertinoActivityIndicator(
+                      color: colorScheme?.primary,
+                      // valueColor: AlwaysStoppedAnimation(foreground),
+                      // backgroundColor: Colors.transparent,
                     ),
                   ),
                 )

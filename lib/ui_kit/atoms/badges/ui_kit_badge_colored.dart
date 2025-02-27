@@ -8,6 +8,7 @@ class UiKitBadgeColored extends StatelessWidget {
   final SvgGenImage? iconSvg;
   final IconData? iconData;
   final double borderWidth;
+  final BorderRadius? borderRadius;
 
   const UiKitBadgeColored({
     super.key,
@@ -16,6 +17,7 @@ class UiKitBadgeColored extends StatelessWidget {
     this.onPressed,
     this.iconSvg,
     this.borderWidth = 1,
+    this.borderRadius,
     this.iconData,
   }) : assert(iconSvg == null || iconData == null, 'Only one icon can be provided');
 
@@ -24,10 +26,11 @@ class UiKitBadgeColored extends StatelessWidget {
     this.title,
     required this.color,
     this.onPressed,
+    this.borderRadius,
     this.iconSvg,
-    this.borderWidth = 0,
     this.iconData,
-  }) : assert(iconSvg == null || iconData == null, 'Only one icon can be provided');
+  })  : borderWidth = 0,
+        assert(iconSvg == null || iconData == null, 'Only one icon can be provided');
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +43,7 @@ class UiKitBadgeColored extends StatelessWidget {
         decoration: BoxDecoration(
           border: borderWidth == 0 ? null : Border.all(width: borderWidth.sp, color: color),
           color: color.withOpacity(0.16),
-          borderRadius: BorderRadius.circular(4.sp),
+          borderRadius: borderRadius ?? BorderRadius.circular(4.sp),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,

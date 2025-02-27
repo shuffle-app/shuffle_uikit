@@ -28,10 +28,7 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -6799,8 +6796,7 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      other:
-          'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      other: 'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
       desc: '',
       args: [count],
@@ -8999,6 +8995,61 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Completed`
+  String get Completed {
+    return Intl.message('Completed', name: 'Completed', desc: '', args: []);
+  }
+
+  /// `In progress`
+  String get InProgress {
+    return Intl.message('In progress', name: 'InProgress', desc: '', args: []);
+  }
+
+  /// `Not started`
+  String get NotStarted {
+    return Intl.message('Not started', name: 'NotStarted', desc: '', args: []);
+  }
+
+  /// `Need action`
+  String get NeedAction {
+    return Intl.message('Need action', name: 'NeedAction', desc: '', args: []);
+  }
+
+  /// `Confirm or edit {x}`
+  String ConfirmOrEditX(Object x) {
+    return Intl.message(
+      'Confirm or edit $x',
+      name: 'ConfirmOrEditX',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `You can use paid features and accept payments after registering with Stripe`
+  String get RegistrationStripeExplanation {
+    return Intl.message(
+      'You can use paid features and accept payments after registering with Stripe',
+      name: 'RegistrationStripeExplanation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Awaiting payment`
+  String get AwaitingPayment {
+    return Intl.message(
+      'Awaiting payment',
+      name: 'AwaitingPayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pending`
+  String get Pending {
+    return Intl.message('Pending', name: 'Pending', desc: '', args: []);
   }
 
   /// `All voices`

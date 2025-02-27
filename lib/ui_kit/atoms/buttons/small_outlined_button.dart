@@ -16,6 +16,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
   final bool? loading;
   final Gradient? gradient;
   final AutoSizeGroup? group;
+  final ButtonFit? fit;
 
   const SmallOutlinedButton({
     super.key,
@@ -29,6 +30,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
     this.icon,
     this.loading,
     this.group,
+    this.fit,
   });
 
   @override
@@ -53,6 +55,7 @@ class SmallOutlinedButton extends StatelessWidget implements ButtonFactory {
           onTap: loading ?? false ? null : onPressed,
           borderRadius: BorderRadiusFoundation.max,
           child: Ink(
+            width: fit == ButtonFit.fitWidth ? double.infinity : null,
             padding: EdgeInsets.symmetric(
               vertical: EdgeInsetsFoundation.vertical4,
               horizontal: EdgeInsetsFoundation.horizontal16,

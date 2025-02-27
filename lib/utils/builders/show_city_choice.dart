@@ -14,7 +14,7 @@ void showCitiesOverlay({
 
   overlayEntry = OverlayEntry(
     builder: (context) => Positioned(
-        top: (position.dy / 2) + 10.h,
+        top: position.dy*2 + 10.h*3,
         right: 10.w,
         child: Material(
           color: Colors.transparent,

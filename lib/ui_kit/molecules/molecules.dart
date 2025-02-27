@@ -121,6 +121,7 @@ export 'tiles/ui_kit_shuffle_tile.dart';
 export 'tiles/ui_kit_video_interview_tile.dart';
 export 'tiles/ui_kit_video_reaction_tile.dart';
 export 'tiles/ui_kit_view_history_tile.dart';
+export 'tiles/ui_kit_stripe_registration_tile.dart';
 export 'tiles/user/badged_base_user_tile.dart';
 export 'tiles/user/base_user_tile.dart';
 export 'tiles/user/influencer_user_tile.dart';

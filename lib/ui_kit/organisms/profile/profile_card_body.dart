@@ -245,18 +245,21 @@ class ProfileCardBody extends StatelessWidget {
 
           if (profileWidgets != null) ...[
             SpacingFoundation.verticalSpace16,
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Expanded(
-                  child: profileWidgets!.first,
-                ),
-                SpacingFoundation.horizontalSpace16,
-                Expanded(
-                  child: profileWidgets!.last,
-                ),
-              ],
-            ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
+            if (profileWidgets!.length == 1)
+              profileWidgets!.first
+            else
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: profileWidgets!.first,
+                  ),
+                  SpacingFoundation.horizontalSpace16,
+                  Expanded(
+                    child: profileWidgets!.last,
+                  ),
+                ],
+              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
             SpacingFoundation.verticalSpace16,
           ],
         ],
