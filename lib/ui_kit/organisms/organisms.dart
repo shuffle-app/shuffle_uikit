@@ -159,3 +159,4 @@ export 'feed/fill_for_feed_widget.dart';
 export 'feed/ui_kit_view_share_date_widget.dart';
 export 'selected_city_row/selected_city_row.dart';
 export 'filings/empty_filings_widget.dart';
+export 'voice/waveform_painter.dart';
