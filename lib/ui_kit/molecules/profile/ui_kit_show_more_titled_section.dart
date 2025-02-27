@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class UiKitShowMoreTitledSection extends StatelessWidget {
   final String title;
@@ -29,8 +30,9 @@ class UiKitShowMoreTitledSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-              child: Text(
+              child: AutoSizeText(
                 title,
+                maxLines: 1,
                 style: boldTextTheme?.title2,
               ),
             ),
@@ -46,7 +48,7 @@ class UiKitShowMoreTitledSection extends StatelessWidget {
                 ),
               ),
           ],
-        ),
+        ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16),
         SpacingFoundation.verticalSpace16,
         Stack(
           fit: StackFit.passthrough,
