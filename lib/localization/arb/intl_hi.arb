@@ -1054,6 +1054,9 @@
   "SelectItemToEdit": "Select item to edit",
   "AllVoices": "All voices",
   "AddVoice": "Add voice",
-  "interview": "interview"
+  "interview": "interview",
+  "CouldntFindVoiceMessages": "Couldn't find voice messages",
+  "CouldntSendVoiceMessages": "Couldn't send voice messages",
+  "AnErrorOccurredWhenDownloadingAudioFromDevice": "An error occurred when downloading audio from the device"
 
 }

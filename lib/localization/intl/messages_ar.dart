@@ -420,6 +420,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "AlreadyInvited": MessageLookupByLibrary.simpleMessage(
       "Plz respect your choice and others\' feelings",
     ),
+    "AnErrorOccurredWhenDownloadingAudioFromDevice":
+        MessageLookupByLibrary.simpleMessage(
+          "An error occurred when downloading audio from the device",
+        ),
     "AndGet": MessageLookupByLibrary.simpleMessage("And get"),
     "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" And "),
     "AnotherReason": MessageLookupByLibrary.simpleMessage("Another reason"),
@@ -633,6 +637,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CouldntFindInvite": MessageLookupByLibrary.simpleMessage(
       "Couldn\'t find invite",
+    ),
+    "CouldntFindVoiceMessages": MessageLookupByLibrary.simpleMessage(
+      "Couldn\'t find voice messages",
+    ),
+    "CouldntSendVoiceMessages": MessageLookupByLibrary.simpleMessage(
+      "Couldn\'t send voice messages",
     ),
     "CountReviews": m16,
     "CountVideoReaction": m17,

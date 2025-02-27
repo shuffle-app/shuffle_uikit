@@ -1056,7 +1056,10 @@
   "SelectItemToEdit": "Выберите запись для редактирования",
   "AllVoices": "Все голосовые",
   "AddVoice": "Добавить голосовое",
-  "interview": "Интервью"
+  "interview": "Интервью",
+  "CouldntFindVoiceMessages": "Не удалось найти голосовые сообщения",
+  "CouldntSendVoiceMessages": "Не удалось отправить голосовые сообщения",
+  "AnErrorOccurredWhenDownloadingAudioFromDevice": "Произошла ошибка при загрузке аудио с девайса"
 
 
 }

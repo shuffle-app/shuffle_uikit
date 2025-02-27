@@ -419,6 +419,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "AlreadyInvited": MessageLookupByLibrary.simpleMessage(
       "Плз уважай свой выбор и чувства других",
     ),
+    "AnErrorOccurredWhenDownloadingAudioFromDevice":
+        MessageLookupByLibrary.simpleMessage(
+          "Произошла ошибка при загрузке аудио с девайса",
+        ),
     "AndGet": MessageLookupByLibrary.simpleMessage("и получи"),
     "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" И "),
     "AnotherReason": MessageLookupByLibrary.simpleMessage("Другая причина"),
@@ -634,6 +638,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CouldntFindInvite": MessageLookupByLibrary.simpleMessage(
       "Не удалось найти приглашение",
+    ),
+    "CouldntFindVoiceMessages": MessageLookupByLibrary.simpleMessage(
+      "Не удалось найти голосовые сообщения",
+    ),
+    "CouldntSendVoiceMessages": MessageLookupByLibrary.simpleMessage(
+      "Не удалось отправить голосовые сообщения",
     ),
     "CountReviews": m16,
     "CountVideoReaction": m17,
