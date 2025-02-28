@@ -6,7 +6,8 @@ class UiKitContentVoiceReactionCard extends StatelessWidget {
   final String contentTitle;
   final List<UiKitTag> properties;
   final DateTime? datePosted;
-  final UiKitAudioMessageTile audioMessage;
+  final UiKitAudioMessageTile? audioMessage;
+  final Widget? customVoiceWidget;
 
   const UiKitContentVoiceReactionCard({
     super.key,
@@ -14,7 +15,8 @@ class UiKitContentVoiceReactionCard extends StatelessWidget {
     required this.contentTitle,
     required this.properties,
     this.datePosted,
-    required this.audioMessage,
+    this.audioMessage,
+    this.customVoiceWidget,
   });
 
   double get imageWidth => 0.25.sw;
@@ -75,7 +77,8 @@ class UiKitContentVoiceReactionCard extends StatelessWidget {
           ],
         ),
         SpacingFoundation.verticalSpace8,
-        audioMessage,
+        customVoiceWidget ?? SizedBox.shrink(),
+        audioMessage ?? SizedBox.shrink(),
       ],
     );
   }

@@ -1,3 +1,4 @@
+import 'package:just_audio/just_audio.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class ProfilePlace {
@@ -14,6 +15,7 @@ class ProfilePlace {
   final int? sunglassesCount;
   final int? smileyCount;
   final List<UiKitTag> tags;
+  final AudioSource? source;
 
   ProfilePlace({
     this.placeId,
@@ -29,6 +31,7 @@ class ProfilePlace {
     this.sunglassesCount,
     this.smileyCount,
     required this.tags,
+    this.source,
   });
 }
 

@@ -388,6 +388,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "व्यक्तिगत शीर्ष पर जोड़ें",
     ),
     "AddToScheduler": MessageLookupByLibrary.simpleMessage("Plan it"),
+    "AddVoice": MessageLookupByLibrary.simpleMessage("Add voice"),
     "AddYourselfToList": MessageLookupByLibrary.simpleMessage(
       "स्वयं को सूची में जोड़ें",
     ),
@@ -401,6 +402,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AllAppNotification": MessageLookupByLibrary.simpleMessage(
       "सभी ऐप सूचनाएँ",
     ),
+    "AllVoices": MessageLookupByLibrary.simpleMessage("All voices"),
     "AllXFeaturesAvailable": m0,
     "Allow": MessageLookupByLibrary.simpleMessage("अनुमति दें"),
     "AllowAll": MessageLookupByLibrary.simpleMessage("सभी को अनुमति दें"),
@@ -419,6 +421,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "AlreadyInvited": MessageLookupByLibrary.simpleMessage(
       "कृपया अपने चयन और दूसरों की भावनाओं का सम्मान करें",
     ),
+    "AnErrorOccurredWhenDownloadingAudioFromDevice":
+        MessageLookupByLibrary.simpleMessage(
+          "An error occurred when downloading audio from the device",
+        ),
     "AndGet": MessageLookupByLibrary.simpleMessage("And get"),
     "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage("और"),
     "AnotherReason": MessageLookupByLibrary.simpleMessage("Another reason"),
@@ -636,6 +642,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CouldntFindInvite": MessageLookupByLibrary.simpleMessage(
       "आमंत्रण नहीं मिल सका",
+    ),
+    "CouldntFindVoiceMessages": MessageLookupByLibrary.simpleMessage(
+      "Couldn\'t find voice messages",
+    ),
+    "CouldntSendVoiceMessages": MessageLookupByLibrary.simpleMessage(
+      "Couldn\'t send voice messages",
     ),
     "CountReviews": m17,
     "CountVideoReaction": m18,
@@ -2250,6 +2262,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Yourself": MessageLookupByLibrary.simpleMessage("Yourself"),
     "daynight": MessageLookupByLibrary.simpleMessage("दिन और रात"),
     "inXDays": m122,
+    "interview": MessageLookupByLibrary.simpleMessage("interview"),
     "key": MessageLookupByLibrary.simpleMessage(""),
   };
 }

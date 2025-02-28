@@ -390,6 +390,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Добавить в личный ТОП",
     ),
     "AddToScheduler": MessageLookupByLibrary.simpleMessage("Запланировать"),
+    "AddVoice": MessageLookupByLibrary.simpleMessage("Добавить голосовое"),
     "AddYourselfToList": MessageLookupByLibrary.simpleMessage(
       "Добавиться в список",
     ),
@@ -403,6 +404,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AllAppNotification": MessageLookupByLibrary.simpleMessage(
       "Все уведомления",
     ),
+    "AllVoices": MessageLookupByLibrary.simpleMessage("Все голосовые"),
     "AllXFeaturesAvailable": m0,
     "Allow": MessageLookupByLibrary.simpleMessage("Разрешить"),
     "AllowAll": MessageLookupByLibrary.simpleMessage("Разрешить все"),
@@ -419,6 +421,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "AlreadyInvited": MessageLookupByLibrary.simpleMessage(
       "Плз уважай свой выбор и чувства других",
     ),
+    "AnErrorOccurredWhenDownloadingAudioFromDevice":
+        MessageLookupByLibrary.simpleMessage(
+          "Произошла ошибка при загрузке аудио с девайса",
+        ),
     "AndGet": MessageLookupByLibrary.simpleMessage("и получи"),
     "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" И "),
     "AnotherReason": MessageLookupByLibrary.simpleMessage("Другая причина"),
@@ -637,6 +643,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CouldntFindInvite": MessageLookupByLibrary.simpleMessage(
       "Не удалось найти приглашение",
+    ),
+    "CouldntFindVoiceMessages": MessageLookupByLibrary.simpleMessage(
+      "Не удалось найти голосовые сообщения",
+    ),
+    "CouldntSendVoiceMessages": MessageLookupByLibrary.simpleMessage(
+      "Не удалось отправить голосовые сообщения",
     ),
     "CountReviews": m17,
     "CountVideoReaction": m18,
@@ -2239,6 +2251,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Yourself": MessageLookupByLibrary.simpleMessage("Себе"),
     "daynight": MessageLookupByLibrary.simpleMessage("Днём и ночью"),
     "inXDays": m122,
+    "interview": MessageLookupByLibrary.simpleMessage("Интервью"),
     "key": MessageLookupByLibrary.simpleMessage(""),
   };
 }

@@ -28,10 +28,7 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -6799,8 +6796,7 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      other:
-          'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      other: 'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
       desc: '',
       args: [count],
@@ -9054,6 +9050,51 @@ class S {
   /// `Pending`
   String get Pending {
     return Intl.message('Pending', name: 'Pending', desc: '', args: []);
+  }
+
+  /// `All voices`
+  String get AllVoices {
+    return Intl.message('All voices', name: 'AllVoices', desc: '', args: []);
+  }
+
+  /// `Add voice`
+  String get AddVoice {
+    return Intl.message('Add voice', name: 'AddVoice', desc: '', args: []);
+  }
+
+  /// `interview`
+  String get interview {
+    return Intl.message('interview', name: 'interview', desc: '', args: []);
+  }
+
+  /// `Couldn't find voice messages`
+  String get CouldntFindVoiceMessages {
+    return Intl.message(
+      'Couldn\'t find voice messages',
+      name: 'CouldntFindVoiceMessages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Couldn't send voice messages`
+  String get CouldntSendVoiceMessages {
+    return Intl.message(
+      'Couldn\'t send voice messages',
+      name: 'CouldntSendVoiceMessages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred when downloading audio from the device`
+  String get AnErrorOccurredWhenDownloadingAudioFromDevice {
+    return Intl.message(
+      'An error occurred when downloading audio from the device',
+      name: 'AnErrorOccurredWhenDownloadingAudioFromDevice',
+      desc: '',
+      args: [],
+    );
   }
 }
 

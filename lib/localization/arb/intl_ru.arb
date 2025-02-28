@@ -1061,6 +1061,14 @@
   "ConfirmOrEditX": "Подтверди или отредактируй {x}",
   "RegistrationStripeExplanation": "Можешь использовать платные функции и принимать платежи после регистрации в Stripe",
   "AwaitingPayment": "Ожидает оплаты",
-  "Pending": "Ожидает"
+  "Pending": "Ожидает",
+  "AllVoices": "Все голосовые",
+  "AddVoice": "Добавить голосовое",
+  "interview": "Интервью",
+  "CouldntFindVoiceMessages": "Не удалось найти голосовые сообщения",
+  "CouldntSendVoiceMessages": "Не удалось отправить голосовые сообщения",
+  "AnErrorOccurredWhenDownloadingAudioFromDevice": "Произошла ошибка при загрузке аудио с девайса"
+
+
 }
 

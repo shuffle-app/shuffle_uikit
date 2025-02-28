@@ -389,6 +389,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Add to personal TOP",
     ),
     "AddToScheduler": MessageLookupByLibrary.simpleMessage("Plan it"),
+    "AddVoice": MessageLookupByLibrary.simpleMessage("Add voice"),
     "AddYourselfToList": MessageLookupByLibrary.simpleMessage(
       "Add yourself to list",
     ),
@@ -402,6 +403,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AllAppNotification": MessageLookupByLibrary.simpleMessage(
       "All app notifications",
     ),
+    "AllVoices": MessageLookupByLibrary.simpleMessage("All voices"),
     "AllXFeaturesAvailable": m0,
     "Allow": MessageLookupByLibrary.simpleMessage("Allow"),
     "AllowAll": MessageLookupByLibrary.simpleMessage("Allow all"),
@@ -420,6 +422,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "AlreadyInvited": MessageLookupByLibrary.simpleMessage(
       "Plz respect your choice and others\' feelings",
     ),
+    "AnErrorOccurredWhenDownloadingAudioFromDevice":
+        MessageLookupByLibrary.simpleMessage(
+          "An error occurred when downloading audio from the device",
+        ),
     "AndGet": MessageLookupByLibrary.simpleMessage("And get"),
     "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" And "),
     "AnotherReason": MessageLookupByLibrary.simpleMessage("Another reason"),
@@ -636,6 +642,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CouldntFindInvite": MessageLookupByLibrary.simpleMessage(
       "Couldn\'t find invite",
+    ),
+    "CouldntFindVoiceMessages": MessageLookupByLibrary.simpleMessage(
+      "Couldn\'t find voice messages",
+    ),
+    "CouldntSendVoiceMessages": MessageLookupByLibrary.simpleMessage(
+      "Couldn\'t send voice messages",
     ),
     "CountReviews": m17,
     "CountVideoReaction": m18,
@@ -2223,6 +2235,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Yourself": MessageLookupByLibrary.simpleMessage("Yourself"),
     "daynight": MessageLookupByLibrary.simpleMessage("Day and night"),
     "inXDays": m122,
+    "interview": MessageLookupByLibrary.simpleMessage("interview"),
     "key": MessageLookupByLibrary.simpleMessage("ar"),
   };
 }
