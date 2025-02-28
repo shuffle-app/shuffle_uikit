@@ -58,9 +58,11 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
               widget.onTap.call();
               setState(() => showNotificationSetOverlay = false);
             },
-            onLongPress: () {
-              setState(() => showNotificationSetOverlay = true);
-            },
+            onLongPress: (widget.dateTime != null && widget.dateTime!.isAfter(DateTime.now()))
+                ? () {
+                    setState(() => showNotificationSetOverlay = true);
+                  }
+                : null,
             child: Ink(
               child: Stack(
                 children: [
