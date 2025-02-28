@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitMockAudioWaveCurrent extends StatefulWidget {
+class UiKitAudioWavePrioritized extends StatefulWidget {
   final List<double> amplitudes;
   final Color? color;
   final double? spacing;
   final double? availableWidth;
   final bool? scrollable;
 
-  const UiKitMockAudioWaveCurrent({
+  const UiKitAudioWavePrioritized({
     super.key,
     required this.amplitudes,
     this.color,
@@ -18,10 +18,10 @@ class UiKitMockAudioWaveCurrent extends StatefulWidget {
   });
 
   @override
-  State<UiKitMockAudioWaveCurrent> createState() => _UiKitMockAudioWaveCurrentState();
+  State<UiKitAudioWavePrioritized> createState() => _UiKitAudioWavePrioritizedState();
 }
 
-class _UiKitMockAudioWaveCurrentState extends State<UiKitMockAudioWaveCurrent> {
+class _UiKitAudioWavePrioritizedState extends State<UiKitAudioWavePrioritized> {
   final height = 72.0;
   late final ScrollController scrollController;
   int _prevAmplitudesLength = 0;
@@ -34,7 +34,7 @@ class _UiKitMockAudioWaveCurrentState extends State<UiKitMockAudioWaveCurrent> {
   }
 
   @override
-  void didUpdateWidget(UiKitMockAudioWaveCurrent oldWidget) {
+  void didUpdateWidget(UiKitAudioWavePrioritized oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (widget.amplitudes.length > _prevAmplitudesLength) {
       _prevAmplitudesLength = widget.amplitudes.length;

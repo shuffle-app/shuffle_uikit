@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitGradientedDecoratedButtonCurrent extends StatelessWidget {
+class UiKitGradientedDecoratedButtonPrioritized extends StatelessWidget {
   final String? iconPath;
   final IconData? iconData;
   final double audioLevel;
   final VoidCallback? onPressed;
 
-  const UiKitGradientedDecoratedButtonCurrent({
+  const UiKitGradientedDecoratedButtonPrioritized({
     super.key,
     this.iconPath,
     this.iconData,
