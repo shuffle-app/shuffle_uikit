@@ -15,17 +15,22 @@ class UiKitCalendarCompact extends StatelessWidget {
     DateTime focusedDay,
   )? onDaySelected;
   final ValueChanged<PageController>? onCalendarCreated;
+  final CalendarFormat calendarFormat;
+  final bool wasChangedDateToSpecific;
 
-  const UiKitCalendarCompact(
-      {super.key,
-      required this.focusedDate,
-      required this.firstDay,
-      required this.lastDay,
-      this.enabledDayPredicate,
-      this.eventLoader,
-      this.onCalendarCreated,
-      this.onDaySelected,
-      this.onPageChanged,});
+  const UiKitCalendarCompact({
+    super.key,
+    required this.focusedDate,
+    required this.firstDay,
+    required this.lastDay,
+    this.enabledDayPredicate,
+    this.eventLoader,
+    this.onCalendarCreated,
+    this.onDaySelected,
+    this.onPageChanged,
+    this.wasChangedDateToSpecific = false,
+    this.calendarFormat = CalendarFormat.twoWeeks,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -34,11 +39,18 @@ class UiKitCalendarCompact extends StatelessWidget {
     final regularTextTheme = theme.regularTextTheme;
     final boldTextTheme = theme.boldTextTheme;
 
+    final today = DateTime.now();
+
     return TableCalendar(
       // key: calendarKey,
       eventLoader: eventLoader,
       availableGestures: AvailableGestures.horizontalSwipe,
-      // availableCalendarFormats: [CalendarFormat.month],
+      // availableCalendarFormats: {
+      //   CalendarFormat.month: 'Month',
+      //   CalendarFormat.twoWeeks: '2 weeks',
+      // },
+      calendarFormat: calendarFormat,
+      currentDay: today,
       enabledDayPredicate: enabledDayPredicate,
       rangeSelectionMode: RangeSelectionMode.disabled,
       onPageChanged: onPageChanged,
@@ -62,7 +74,7 @@ class UiKitCalendarCompact extends StatelessWidget {
       // ),
       onDaySelected: onDaySelected,
       calendarStyle: CalendarStyle(
-      //     cellAlignment: Alignment.center,
+          //     cellAlignment: Alignment.center,
           markerSize: 0),
       //     markersMaxCount: 5,
       //     cellPadding: EdgeInsets.symmetric(horizontal: 5, vertical: SpacingFoundation.verticalSpacing6),
@@ -86,9 +98,19 @@ class UiKitCalendarCompact extends StatelessWidget {
           Expanded(
               child: UiKitCardWrapper(
                   width: double.infinity,
+                  boxShadow: [
+                    if (today.isAtSameDayAs(day))
+                      BoxShadow(
+                          color: colorScheme.inversePrimary.withOpacity(0.5),
+                          blurStyle: BlurStyle.normal,
+                          spreadRadius: 0,
+                          blurRadius: 3.5)
+                  ],
                   borderRadius: BorderRadiusFoundation.all8,
-                  clipBehavior: Clip.antiAlias,
-                  border: focusedDay.isAtSameDayAs(day) ? BorderSide(color: ColorsFoundation.purple) : null,
+                  clipBehavior: Clip.none,
+                  border: focusedDay.isAtSameDayAs(day) && wasChangedDateToSpecific
+                      ? BorderSide(color: ColorsFoundation.purple)
+                      : null,
                   padding: EdgeInsets.symmetric(
                       horizontal: EdgeInsetsFoundation.horizontal10, vertical: EdgeInsetsFoundation.vertical6),
                   child: Column(

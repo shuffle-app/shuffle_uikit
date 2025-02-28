@@ -6,7 +6,7 @@ class PlannerRemainderCreationPopup extends StatefulWidget {
   final List<String> values;
   final ValueChanged<String> onValueSelected;
   final bool isActivated;
-  final String? initialValue;
+  final String? selectedValue;
 
   const PlannerRemainderCreationPopup(
       {super.key,
@@ -14,7 +14,7 @@ class PlannerRemainderCreationPopup extends StatefulWidget {
       this.values = const [],
       required this.onValueSelected,
       required this.isActivated,
-      this.initialValue});
+      this.selectedValue});
 
   @override
   State<PlannerRemainderCreationPopup> createState() => _PlannerRemainderCreationPopupState();
@@ -22,12 +22,10 @@ class PlannerRemainderCreationPopup extends StatefulWidget {
 
 class _PlannerRemainderCreationPopupState extends State<PlannerRemainderCreationPopup> {
   bool switchedOn = false;
-  String? selectedValue;
 
   @override
   void initState() {
     switchedOn = widget.isActivated;
-    selectedValue = widget.initialValue;
     super.initState();
   }
 
@@ -64,12 +62,11 @@ class _PlannerRemainderCreationPopupState extends State<PlannerRemainderCreation
           )),
           Expanded(
               child: UiKitDropDownList<String>(
-                  selectedItem: selectedValue,
+                  selectedItem: widget.selectedValue,
                   customColor: UiKitColors.lightSurface3,
                   contentBorderRadius: BorderRadiusFoundation.all40,
                   contentPadding: EdgeInsets.symmetric(horizontal: SpacingFoundation.horizontalSpacing16),
                   onChanged: (value) {
-                    selectedValue = value;
                     if (value != null) {
                       widget.onValueSelected(value);
                     }
