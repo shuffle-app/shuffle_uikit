@@ -2,12 +2,12 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class InfluencerTopCategory {
   final String title;
-  final String iconPath;
+  final String? iconPath;
   final List<InfluencerTopContentData> items;
 
   InfluencerTopCategory({
     required this.title,
-    required this.iconPath,
+    this.iconPath,
     required this.items,
   });
 }

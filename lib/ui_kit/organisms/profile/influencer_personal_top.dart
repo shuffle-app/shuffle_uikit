@@ -41,15 +41,7 @@ class InfluencerPersonalTop extends StatelessWidget {
               children: [
                 Row(
                   mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    ImageWidget(
-                      link: category.iconPath,
-                      width: 0.1.sw,
-                      height: 0.1.sw,
-                      fit: BoxFit.cover,
-                    ),
-                    SpacingFoundation.horizontalSpace4,
                     Expanded(
                       child: GradientableWidget(
                         gradient: GradientFoundation.defaultLinearGradient,
