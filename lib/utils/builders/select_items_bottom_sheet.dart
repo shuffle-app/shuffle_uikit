@@ -24,6 +24,7 @@ selectItemsBottomSheet(
   return showUiKitGeneralFullScreenDialog(
     context,
     GeneralDialogData(
+      isDismissible: false,
       isWidgetScrollable: true,
       topPadding: topPadding,
       child: Column(

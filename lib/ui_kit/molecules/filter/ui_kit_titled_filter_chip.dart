@@ -85,7 +85,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
                           color: foreground,
                         )),
                     // SpacingFoundation.horizontalSpace8,
-                    Text(title, style: textStyle),
+                    Text(title, style: textStyle).paddingOnly(left: SpacingFoundation.horizontalSpacing14),
                   ],
                 )),
     );
