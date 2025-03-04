@@ -9150,6 +9150,21 @@ class S {
       args: [],
     );
   }
+
+  /// `Your TOP`
+  String get YourTop {
+    return Intl.message('Your TOP', name: 'YourTop', desc: '', args: []);
+  }
+
+  /// `Select title`
+  String get SelectTitle {
+    return Intl.message(
+      'Select title',
+      name: 'SelectTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

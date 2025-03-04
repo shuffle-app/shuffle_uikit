@@ -1073,7 +1073,9 @@
   "DeleteThisPhoto": "Delete these photo?",
   "AddTitle": "Add title",
   "ErrorWhenUploadImage": "Error when upload image",
-  "ErrorWhenCreateImage": "Error when create image"
+  "ErrorWhenCreateImage": "Error when create image",
+  "YourTop": "Your TOP",
+  "SelectTitle": "Select title"
 
 
   
