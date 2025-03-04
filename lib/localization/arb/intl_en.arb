@@ -1067,6 +1067,12 @@
   "interview": "interview",
   "CouldntFindVoiceMessages": "Couldn't find voice messages",
   "CouldntSendVoiceMessages": "Couldn't send voice messages",
-  "AnErrorOccurredWhenDownloadingAudioFromDevice": "An error occurred when downloading audio from the device"
+  "AnErrorOccurredWhenDownloadingAudioFromDevice": "An error occurred when downloading audio from the device",
+  "PhotoTitle": "Photo title",
+  "DeleteThesePhotos": "Delete these photos?",
+  "DeleteThisPhoto": "Delete these photo?",
+  "AddTitle": "Add title",
+  "ErrorWhenUploadImage": "Error when upload image",
+  "ErrorWhenCreateImage": "Error when create image"
 
 }

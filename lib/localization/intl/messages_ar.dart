@@ -382,6 +382,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AddReviewPopOverText": MessageLookupByLibrary.simpleMessage(
       "Write an addition to the review that will be useful for other visitors.",
     ),
+    "AddTitle": MessageLookupByLibrary.simpleMessage("Add title"),
     "AddToMyFavorites": MessageLookupByLibrary.simpleMessage(
       "Add to my favorites",
     ),
@@ -704,6 +705,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Sure you want to delete stack?",
     ),
     "DeleteFromList": MessageLookupByLibrary.simpleMessage("Delete from list"),
+    "DeleteThesePhotos": MessageLookupByLibrary.simpleMessage(
+      "Delete these photos?",
+    ),
+    "DeleteThisPhoto": MessageLookupByLibrary.simpleMessage(
+      "Delete these photo?",
+    ),
     "DeleteXAlert": m22,
     "DependingOn": MessageLookupByLibrary.simpleMessage("Depending on..."),
     "DescribeYourBusiness": MessageLookupByLibrary.simpleMessage(
@@ -791,6 +798,12 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Error: This name has already been registered",
         ),
+    "ErrorWhenCreateImage": MessageLookupByLibrary.simpleMessage(
+      "Error when create image",
+    ),
+    "ErrorWhenUploadImage": MessageLookupByLibrary.simpleMessage(
+      "Error when upload image",
+    ),
     "Event": MessageLookupByLibrary.simpleMessage("Event"),
     "EventRatingByFeedback": MessageLookupByLibrary.simpleMessage(
       "Event rating (by feedback)",
@@ -1312,6 +1325,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Phone verification",
     ),
     "Photo": MessageLookupByLibrary.simpleMessage("Photo"),
+    "PhotoTitle": MessageLookupByLibrary.simpleMessage("Photo title"),
     "PhotoUploadFiles": MessageLookupByLibrary.simpleMessage(
       "Photo (upload Files)",
     ),
