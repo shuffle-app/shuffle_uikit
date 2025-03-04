@@ -56,7 +56,7 @@ class UiKitShowMoreTitledSection extends StatelessWidget {
           children: [
             UiKitCardWrapper(
               child: content.paddingAll(EdgeInsetsFoundation.all16),
-            ),
+            ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16),
             if (underService ?? false)
               Positioned(
                 bottom: -12,
