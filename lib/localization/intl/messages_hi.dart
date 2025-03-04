@@ -381,6 +381,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AddReviewPopOverText": MessageLookupByLibrary.simpleMessage(
       "एक समीक्षा जोड़ें जो अन्य आगंतुकों के लिए उपयोगी होगी",
     ),
+    "AddTitle": MessageLookupByLibrary.simpleMessage("Add title"),
     "AddToMyFavorites": MessageLookupByLibrary.simpleMessage(
       "मेरे पसंदीदा में जोड़ें",
     ),
@@ -704,6 +705,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "क्या आप स्टैक हटाना चाहते हैं?",
     ),
     "DeleteFromList": MessageLookupByLibrary.simpleMessage("सूची से हटाएँ"),
+    "DeleteThesePhotos": MessageLookupByLibrary.simpleMessage(
+      "Delete these photos?",
+    ),
+    "DeleteThisPhoto": MessageLookupByLibrary.simpleMessage(
+      "Delete this photo?",
+    ),
     "DeleteXAlert": m22,
     "DependingOn": MessageLookupByLibrary.simpleMessage("पर निर्भर करता है"),
     "DescribeYourBusiness": MessageLookupByLibrary.simpleMessage(
@@ -789,6 +796,12 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Error: This name has already been registered",
         ),
+    "ErrorWhenCreateImage": MessageLookupByLibrary.simpleMessage(
+      "Error when create image",
+    ),
+    "ErrorWhenUploadImage": MessageLookupByLibrary.simpleMessage(
+      "Error when upload image",
+    ),
     "Event": MessageLookupByLibrary.simpleMessage("घटना"),
     "EventRatingByFeedback": MessageLookupByLibrary.simpleMessage(
       "घटना रेटिंग (प्रतिक्रिया द्वारा)",
@@ -1317,6 +1330,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Phone": MessageLookupByLibrary.simpleMessage("फ़ोन"),
     "PhoneVerification": MessageLookupByLibrary.simpleMessage("फ़ोन सत्यापन"),
     "Photo": MessageLookupByLibrary.simpleMessage("फोटो"),
+    "PhotoTitle": MessageLookupByLibrary.simpleMessage("Photo title"),
     "PhotoUploadFiles": MessageLookupByLibrary.simpleMessage(
       "फोटो (फाइल अपलोड)",
     ),

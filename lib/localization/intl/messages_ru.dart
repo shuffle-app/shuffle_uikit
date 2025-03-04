@@ -383,6 +383,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AddReviewPopOverText": MessageLookupByLibrary.simpleMessage(
       "Напиши дополнение к отзыву, которое будет полезно для других посетителей",
     ),
+    "AddTitle": MessageLookupByLibrary.simpleMessage("Добавьте заголовок"),
     "AddToMyFavorites": MessageLookupByLibrary.simpleMessage(
       "Добавить в избранное",
     ),
@@ -709,6 +710,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Вы уверены, что хотите удалить папку?",
     ),
     "DeleteFromList": MessageLookupByLibrary.simpleMessage("Удалить из списка"),
+    "DeleteThesePhotos": MessageLookupByLibrary.simpleMessage(
+      "Удалить эти фотографии?",
+    ),
+    "DeleteThisPhoto": MessageLookupByLibrary.simpleMessage(
+      "Удалить это фото?",
+    ),
     "DeleteXAlert": m22,
     "DependingOn": MessageLookupByLibrary.simpleMessage("Зависит от..."),
     "DescribeYourBusiness": MessageLookupByLibrary.simpleMessage(
@@ -790,6 +797,12 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Ошибка: Это имя уже было зарегистрировано",
         ),
+    "ErrorWhenCreateImage": MessageLookupByLibrary.simpleMessage(
+      "Ошибка при создании изображения",
+    ),
+    "ErrorWhenUploadImage": MessageLookupByLibrary.simpleMessage(
+      "Ошибка при загрузке изображения",
+    ),
     "Event": MessageLookupByLibrary.simpleMessage("Событие"),
     "EventRatingByFeedback": MessageLookupByLibrary.simpleMessage(
       "Общий рейтинг (по отзывам)",
@@ -1313,6 +1326,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Подтверждение номера телефона",
     ),
     "Photo": MessageLookupByLibrary.simpleMessage("Фото"),
+    "PhotoTitle": MessageLookupByLibrary.simpleMessage("Название фотографии"),
     "PhotoUploadFiles": MessageLookupByLibrary.simpleMessage(
       "Фото (загрузить)",
     ),

@@ -36,3 +36,4 @@ export 'cards/digest_ui_model.dart';
 export 'view_share_date/view_share_date.dart';
 export 'reaction/reaction_statistic_ui_model.dart';
 export 'voice/voice_ui_model.dart';
+export 'influencer/influencer_photo_ui_model.dart';

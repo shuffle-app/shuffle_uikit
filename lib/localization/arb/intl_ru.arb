@@ -1067,7 +1067,13 @@
   "interview": "Интервью",
   "CouldntFindVoiceMessages": "Не удалось найти голосовые сообщения",
   "CouldntSendVoiceMessages": "Не удалось отправить голосовые сообщения",
-  "AnErrorOccurredWhenDownloadingAudioFromDevice": "Произошла ошибка при загрузке аудио с девайса"
+  "AnErrorOccurredWhenDownloadingAudioFromDevice": "Произошла ошибка при загрузке аудио с девайса",
+  "PhotoTitle": "Название фотографии",
+  "DeleteThesePhotos": "Удалить эти фотографии?",
+  "DeleteThisPhoto": "Удалить это фото?",
+  "AddTitle": "Добавьте заголовок",
+  "ErrorWhenUploadImage": "Ошибка при загрузке изображения",
+  "ErrorWhenCreateImage": "Ошибка при создании изображения"
 
 
 }

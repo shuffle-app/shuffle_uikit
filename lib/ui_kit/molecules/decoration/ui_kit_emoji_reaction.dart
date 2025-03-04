@@ -5,12 +5,16 @@ class UiKitEmojiReaction extends StatelessWidget {
   final SvgGenImage iconSvgGen;
   final int reactionsCount;
   final Color? textColor;
+  final double? height;
+  final double? fontSize;
 
   const UiKitEmojiReaction({
     super.key,
     required this.iconSvgGen,
     required this.reactionsCount,
     this.textColor,
+    this.height,
+    this.fontSize,
   });
 
   @override
@@ -22,10 +26,13 @@ class UiKitEmojiReaction extends StatelessWidget {
       children: [
         Text(
           reactionsFormatter(reactionsCount),
-          style: regularTextTheme?.caption2.copyWith(color: textColor),
+          style: regularTextTheme?.caption2.copyWith(
+            color: textColor,
+            fontSize: fontSize,
+          ),
         ),
         ImageWidget(
-          height: 16.h,
+          height: height ?? 16.h,
           svgAsset: iconSvgGen,
           fit: BoxFit.fill,
         ),

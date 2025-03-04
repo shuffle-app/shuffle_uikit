@@ -397,30 +397,30 @@ class _InfluencerProfileState extends State<InfluencerProfile> with TickerProvid
                     ],
                   ),
                 ),
-                UiKitShowMoreTitledSection(
-                  title: S.current.Photo,
-                  onShowMore: () {},
-                  content: UiKitPhotoSliderWithReactions(
-                    photos: List<String>.generate(
-                      5,
-                      (index) {
-                        return [
-                          'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
-                          'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_2.png',
-                          'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_3.png',
-                          'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_4.png',
-                          'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_5.png',
-                        ].elementAt(index);
-                      },
-                    ),
-                    title: 'The best title',
-                    hearEyesReactions: 100,
-                    thumbsUpReactions: 14,
-                    sunglassesReactions: 0,
-                    fireReactions: 0,
-                    smileyReactions: 0,
-                  ),
-                ),
+                // UiKitShowMoreTitledSection(
+                //   title: S.current.Photo,
+                //   onShowMore: () {},
+                //   content: UiKitPhotoSliderWithReactions(
+                //     photos: List<String>.generate(
+                //       5,
+                //       (index) {
+                //         return [
+                //           'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_1.png',
+                //           'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_2.png',
+                //           'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_3.png',
+                //           'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_4.png',
+                //           'https://shuffle-app-production.s3.eu-west-2.amazonaws.com/static-files/app-ads-banners/mock_ad_banner_5.png',
+                //         ].elementAt(index);
+                //       },
+                //     ),
+                //     title: 'The best title',
+                //     hearEyesReactions: 100,
+                //     thumbsUpReactions: 14,
+                //     sunglassesReactions: 0,
+                //     fireReactions: 0,
+                //     smileyReactions: 0,
+                //   ),
+                // ),
                 UiKitShowMoreTitledSection(
                   onShowMore: () {},
                   title: S.current.IdealRoute,

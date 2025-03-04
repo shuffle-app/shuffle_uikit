@@ -11,14 +11,16 @@ void showReactionOverlay(
   BuildContext context,
   OverlayEntry? overlayEntry,
   Color? reactionTextColor,
-  ValueChanged<String>? onReactionsTapped,
-) {
+  ValueChanged<String>? onReactionsTapped, {
+  bool isFeedItemCard = true,
+}) {
   RenderBox renderBox = context.findRenderObject() as RenderBox;
   Offset position = renderBox.localToGlobal(Offset.zero);
   overlayEntry = OverlayEntry(
     builder: (context) => Positioned(
       top: position.dy - 40,
-      right: 0,
+      right: isFeedItemCard ? 0 : null,
+      left: isFeedItemCard ? null : position.dx - 100,
       child: Material(
         color: Colors.transparent,
         child: UiKitCardWrapper(
@@ -36,7 +38,11 @@ void showReactionOverlay(
                   onTap: () {
                     onReactionsTapped?.call('heart_eyes');
                     hideReactionOverlay(overlayEntry);
-                    showAnimatedReactionOverlay(context, reaction: GraphicsFoundation.instance.svg.heartEyes);
+                    showAnimatedReactionOverlay(
+                      context,
+                      reaction: GraphicsFoundation.instance.svg.heartEyes,
+                      isFeedItemCard: isFeedItemCard,
+                    );
                   },
                 ),
                 SpacingFoundation.horizontalSpace4,
@@ -46,7 +52,11 @@ void showReactionOverlay(
                   onTap: () {
                     onReactionsTapped?.call('like');
                     hideReactionOverlay(overlayEntry);
-                    showAnimatedReactionOverlay(context, reaction: GraphicsFoundation.instance.svg.thumbsUpReversed);
+                    showAnimatedReactionOverlay(
+                      context,
+                      reaction: GraphicsFoundation.instance.svg.thumbsUpReversed,
+                      isFeedItemCard: isFeedItemCard,
+                    );
                   },
                 ),
                 SpacingFoundation.horizontalSpace4,
@@ -56,7 +66,11 @@ void showReactionOverlay(
                   onTap: () {
                     onReactionsTapped?.call('fire');
                     hideReactionOverlay(overlayEntry);
-                    showAnimatedReactionOverlay(context, reaction: GraphicsFoundation.instance.svg.fireEmoji);
+                    showAnimatedReactionOverlay(
+                      context,
+                      reaction: GraphicsFoundation.instance.svg.fireEmoji,
+                      isFeedItemCard: isFeedItemCard,
+                    );
                   },
                 ),
                 SpacingFoundation.horizontalSpace4,
@@ -66,7 +80,11 @@ void showReactionOverlay(
                   onTap: () {
                     onReactionsTapped?.call('sunglasses');
                     hideReactionOverlay(overlayEntry);
-                    showAnimatedReactionOverlay(context, reaction: GraphicsFoundation.instance.svg.sunglasses);
+                    showAnimatedReactionOverlay(
+                      context,
+                      reaction: GraphicsFoundation.instance.svg.sunglasses,
+                      isFeedItemCard: isFeedItemCard,
+                    );
                   },
                 ),
                 SpacingFoundation.horizontalSpace4,
@@ -75,7 +93,11 @@ void showReactionOverlay(
                   onTap: () {
                     onReactionsTapped?.call('smiley');
                     hideReactionOverlay(overlayEntry);
-                    showAnimatedReactionOverlay(context, reaction: GraphicsFoundation.instance.svg.smiley);
+                    showAnimatedReactionOverlay(
+                      context,
+                      reaction: GraphicsFoundation.instance.svg.smiley,
+                      isFeedItemCard: isFeedItemCard,
+                    );
                   },
                   textColor: reactionTextColor,
                 ),
@@ -94,13 +116,15 @@ showAnimatedReactionOverlay(
   BuildContext context, {
   required SvgGenImage reaction,
   OverlayEntry? overlayEntry,
+  bool isFeedItemCard = true,
 }) {
   RenderBox renderBox = context.findRenderObject() as RenderBox;
   Offset position = renderBox.localToGlobal(Offset.zero);
   overlayEntry = OverlayEntry(
     builder: (context) => Positioned(
-      top: position.dy+40,
-      right: 40,
+      top: position.dy + 40,
+      right: isFeedItemCard ? 40 : null,
+      left: isFeedItemCard ? null : position.dx + 100,
       child: Material(
         color: Colors.transparent,
         child: ReactionAnimation(

@@ -28,7 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -6796,7 +6799,8 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      other: 'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      other:
+          'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
       desc: '',
       args: [count],
@@ -9092,6 +9096,56 @@ class S {
     return Intl.message(
       'An error occurred when downloading audio from the device',
       name: 'AnErrorOccurredWhenDownloadingAudioFromDevice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Photo title`
+  String get PhotoTitle {
+    return Intl.message('Photo title', name: 'PhotoTitle', desc: '', args: []);
+  }
+
+  /// `Delete these photos?`
+  String get DeleteThesePhotos {
+    return Intl.message(
+      'Delete these photos?',
+      name: 'DeleteThesePhotos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete these photo?`
+  String get DeleteThisPhoto {
+    return Intl.message(
+      'Delete these photo?',
+      name: 'DeleteThisPhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add title`
+  String get AddTitle {
+    return Intl.message('Add title', name: 'AddTitle', desc: '', args: []);
+  }
+
+  /// `Error when upload image`
+  String get ErrorWhenUploadImage {
+    return Intl.message(
+      'Error when upload image',
+      name: 'ErrorWhenUploadImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error when create image`
+  String get ErrorWhenCreateImage {
+    return Intl.message(
+      'Error when create image',
+      name: 'ErrorWhenCreateImage',
       desc: '',
       args: [],
     );
