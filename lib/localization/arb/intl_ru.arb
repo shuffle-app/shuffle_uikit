@@ -1073,7 +1073,9 @@
   "DeleteThisPhoto": "Удалить это фото?",
   "AddTitle": "Добавьте заголовок",
   "ErrorWhenUploadImage": "Ошибка при загрузке изображения",
-  "ErrorWhenCreateImage": "Ошибка при создании изображения"
+  "ErrorWhenCreateImage": "Ошибка при создании изображения",
+  "YourTop": "Твой TOP",
+  "SelectTitle": "Выберите заголовок"
 
 
 }
