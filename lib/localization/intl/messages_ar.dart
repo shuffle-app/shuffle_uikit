@@ -660,6 +660,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateEvent": MessageLookupByLibrary.simpleMessage("Create Event"),
     "CreateLinkWith": MessageLookupByLibrary.simpleMessage("Create link with"),
     "CreateNewXForYourY": m20,
+    "CreateNews": MessageLookupByLibrary.simpleMessage("Create news"),
     "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
     "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
       "Create free reminder for your clients",
@@ -1909,6 +1910,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "ThenCheckThisOut": MessageLookupByLibrary.simpleMessage(
       "Then check this out",
     ),
+    "ThereIsNothingYetCreateYourFirstNews":
+        MessageLookupByLibrary.simpleMessage(
+          "There is nothing yet! Create your first news",
+        ),
     "ThereNoEventsYet": MessageLookupByLibrary.simpleMessage(
       "There are no events yet",
     ),
@@ -2114,6 +2119,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
     "WhatIs": MessageLookupByLibrary.simpleMessage("What is \n"),
     "WhatYouLike": MessageLookupByLibrary.simpleMessage("What you like"),
+    "WhatsNew": MessageLookupByLibrary.simpleMessage("What\'s new?"),
     "WheresTheActivity": MessageLookupByLibrary.simpleMessage(
       "Where\'s the activity?",
     ),

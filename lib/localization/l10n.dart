@@ -9150,6 +9150,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Create news`
+  String get CreateNews {
+    return Intl.message('Create news', name: 'CreateNews', desc: '', args: []);
+  }
+
+  /// `What's new?`
+  String get WhatsNew {
+    return Intl.message('What\'s new?', name: 'WhatsNew', desc: '', args: []);
+  }
+
+  /// `There is nothing yet! Create your first news`
+  String get ThereIsNothingYetCreateYourFirstNews {
+    return Intl.message(
+      'There is nothing yet! Create your first news',
+      name: 'ThereIsNothingYetCreateYourFirstNews',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

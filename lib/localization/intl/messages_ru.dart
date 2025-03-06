@@ -661,6 +661,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
     "CreateLinkWith": MessageLookupByLibrary.simpleMessage("Создать сеть с"),
     "CreateNewXForYourY": m20,
+    "CreateNews": MessageLookupByLibrary.simpleMessage("Создать новость"),
     "CreatePlace": MessageLookupByLibrary.simpleMessage("Создать место"),
     "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
       "Создай бесплатное напоминание для твоих клиентов",
@@ -1923,6 +1924,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "ThenCheckThisOut": MessageLookupByLibrary.simpleMessage(
       "Тогда зацени это",
     ),
+    "ThereIsNothingYetCreateYourFirstNews":
+        MessageLookupByLibrary.simpleMessage(
+          "Пока ничего нет! Создайте свою первую новость",
+        ),
     "ThereNoEventsYet": MessageLookupByLibrary.simpleMessage(
       "Ивентов пока нет",
     ),
@@ -2134,6 +2139,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Welcome": MessageLookupByLibrary.simpleMessage("Велкам"),
     "WhatIs": MessageLookupByLibrary.simpleMessage("Зачем нужен"),
     "WhatYouLike": MessageLookupByLibrary.simpleMessage("Что тебе нравится"),
+    "WhatsNew": MessageLookupByLibrary.simpleMessage("Что нового?"),
     "WheresTheActivity": MessageLookupByLibrary.simpleMessage("Где движ?"),
     "WhiteTheme": MessageLookupByLibrary.simpleMessage("Светлая тема"),
     "WhyDoYouLoveIt": MessageLookupByLibrary.simpleMessage(

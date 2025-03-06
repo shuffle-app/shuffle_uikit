@@ -660,6 +660,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateEvent": MessageLookupByLibrary.simpleMessage("कार्यक्रम बनाएँ"),
     "CreateLinkWith": MessageLookupByLibrary.simpleMessage("Create link with"),
     "CreateNewXForYourY": m20,
+    "CreateNews": MessageLookupByLibrary.simpleMessage("Create news"),
     "CreatePlace": MessageLookupByLibrary.simpleMessage("जगह बनाएं"),
     "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
       "अपने ग्राहकों के लिए मुफ्त याद दिलाने के लिए",
@@ -1926,6 +1927,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "The selected time cannot be elapsed",
     ),
     "ThenCheckThisOut": MessageLookupByLibrary.simpleMessage("फिर इसे जांचें"),
+    "ThereIsNothingYetCreateYourFirstNews":
+        MessageLookupByLibrary.simpleMessage(
+          "There is nothing yet! Create your first news",
+        ),
     "ThereNoEventsYet": MessageLookupByLibrary.simpleMessage(
       "अब तक कोई घटना नहीं है",
     ),
@@ -2139,6 +2144,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Welcome": MessageLookupByLibrary.simpleMessage("स्वागत"),
     "WhatIs": MessageLookupByLibrary.simpleMessage("क्या है"),
     "WhatYouLike": MessageLookupByLibrary.simpleMessage("आप को क्या पसंद है"),
+    "WhatsNew": MessageLookupByLibrary.simpleMessage("What\'s new?"),
     "WheresTheActivity": MessageLookupByLibrary.simpleMessage(
       "Where\'s the activity?",
     ),
