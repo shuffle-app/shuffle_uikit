@@ -1715,6 +1715,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "सामग्री कार्ड के अनुसार समय चुनें",
         ),
+    "SelectTitle": MessageLookupByLibrary.simpleMessage("Select title"),
     "SelectToSetPreview": MessageLookupByLibrary.simpleMessage(
       "पूर्वावलोकन सेट करने के लिए एक फोटो चुनें",
     ),
@@ -2275,6 +2276,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your Show up ratio",
     ),
     "YourStartNotificationWillBeShownXTimes": m121,
+    "YourTop": MessageLookupByLibrary.simpleMessage("Your TOP"),
     "YourTraffic": MessageLookupByLibrary.simpleMessage("आपका ट्रैफ़िक"),
     "YourTurnoutRate": MessageLookupByLibrary.simpleMessage(
       "Your turnout rate",

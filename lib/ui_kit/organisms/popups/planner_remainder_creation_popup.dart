@@ -8,13 +8,12 @@ class PlannerRemainderCreationPopup extends StatefulWidget {
   final bool isActivated;
   final String? selectedValue;
 
-  const PlannerRemainderCreationPopup(
-      {super.key,
-      required this.onRemainderToggled,
-      this.values = const [],
-      required this.onValueSelected,
-      required this.isActivated,
-      this.selectedValue});
+  const PlannerRemainderCreationPopup({super.key,
+    required this.onRemainderToggled,
+    this.values = const [],
+    required this.onValueSelected,
+    required this.isActivated,
+    this.selectedValue});
 
   @override
   State<PlannerRemainderCreationPopup> createState() => _PlannerRemainderCreationPopupState();
@@ -30,7 +29,9 @@ class _PlannerRemainderCreationPopupState extends State<PlannerRemainderCreation
   }
 
   onChanged(bool value) {
-    switchedOn = value;
+    setState(() {
+      switchedOn = value;
+    });
     widget.onRemainderToggled(value);
   }
 
@@ -43,9 +44,11 @@ class _PlannerRemainderCreationPopupState extends State<PlannerRemainderCreation
         children: [
           Expanded(
               child: Text(
-            S.of(context).Remainder,
-            style: theme?.boldTextTheme.title2.copyWith(color: Colors.black),
-          )),
+                S
+                    .of(context)
+                    .Remainder,
+                style: theme?.boldTextTheme.title2.copyWith(color: Colors.black),
+              )),
           UiKitGradientSwitch(
             onChanged: onChanged,
             switchedOn: switchedOn,
@@ -57,14 +60,17 @@ class _PlannerRemainderCreationPopupState extends State<PlannerRemainderCreation
         children: [
           Expanded(
               child: Text(
-            S.of(context).RemindBefore,
-            style: theme?.regularTextTheme.caption1.copyWith(color: Colors.black),
-          )),
+                S
+                    .of(context)
+                    .RemindBefore,
+                style: theme?.regularTextTheme.caption1.copyWith(color: Colors.black),
+              )),
           Expanded(
               child: UiKitDropDownList<String>(
                   selectedItem: widget.selectedValue,
                   customColor: UiKitColors.lightSurface3,
                   contentBorderRadius: BorderRadiusFoundation.all40,
+                  width: 0.45.sw,
                   contentPadding: EdgeInsets.symmetric(horizontal: SpacingFoundation.horizontalSpacing16),
                   onChanged: (value) {
                     if (value != null) {
@@ -72,13 +78,14 @@ class _PlannerRemainderCreationPopupState extends State<PlannerRemainderCreation
                     }
                   },
                   items: widget.values
-                      .map((e) => DropdownMenuItem(
-                            value: e,
-                            child: Text(
-                              e,
-                              style: theme?.regularTextTheme.caption1.copyWith(color: Colors.black),
-                            ),
-                          ))
+                      .map((e) =>
+                      DropdownMenuItem(
+                        value: e,
+                        child: Text(
+                          e,
+                          style: theme?.regularTextTheme.caption1.copyWith(color: Colors.black),
+                        ),
+                      ))
                       .toList()))
         ],
       )

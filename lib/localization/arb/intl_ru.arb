@@ -1074,6 +1074,8 @@
   "AddTitle": "Добавьте заголовок",
   "ErrorWhenUploadImage": "Ошибка при загрузке изображения",
   "ErrorWhenCreateImage": "Ошибка при создании изображения",
+  "YourTop": "Твой TOP",
+  "SelectTitle": "Выберите заголовок",
   "CreateNews": "Создать новость",
   "WhatsNew": "Что нового?",
   "ThereIsNothingYetCreateYourFirstNews": "Пока ничего нет! Создайте свою первую новость"

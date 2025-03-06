@@ -1155,6 +1155,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/coin-gradient.svg
   SvgGenImage get coinGradient => const SvgGenImage('assets/images/svg/coin-gradient.svg');
 
+  /// File path: assets/images/svg/collapsed_calendar.svg
+  SvgGenImage get collapsedCalendar => const SvgGenImage('assets/images/svg/collapsed_calendar.svg');
+
   /// File path: assets/images/svg/company_layered.svg
   SvgGenImage get companyLayered => const SvgGenImage('assets/images/svg/company_layered.svg');
 
@@ -1363,6 +1366,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/swim.svg
   SvgGenImage get swim => const SvgGenImage('assets/images/svg/swim.svg');
 
+  /// File path: assets/images/svg/thailand.svg
+  SvgGenImage get thailand => const SvgGenImage('assets/images/svg/thailand.svg');
+
   /// File path: assets/images/svg/thumbs_up_reversed.svg
   SvgGenImage get thumbsUpReversed => const SvgGenImage('assets/images/svg/thumbs_up_reversed.svg');
 
@@ -1489,6 +1495,7 @@ class $AssetsImagesSvgGen {
         clothing,
         club,
         coinGradient,
+        collapsedCalendar,
         companyLayered,
         conferences,
         coworking,
@@ -1558,6 +1565,7 @@ class $AssetsImagesSvgGen {
         sufle,
         sunglasses,
         swim,
+        thailand,
         thumbsUpReversed,
         tiger,
         tripleArrow,
@@ -2079,7 +2087,7 @@ class $AssetsImagesPngWalletGen {
 }
 
 class Assets {
-  const Assets._();
+  Assets._();
 
   static const String package = 'shuffle_uikit';
 
@@ -2124,7 +2132,7 @@ class AssetGenImage {
     bool gaplessPlayback = true,
     bool isAntiAlias = false,
     @Deprecated('Do not specify package for a generated library asset') String? package = package,
-    FilterQuality filterQuality = FilterQuality.medium,
+    FilterQuality filterQuality = FilterQuality.low,
     int? cacheWidth,
     int? cacheHeight,
   }) {

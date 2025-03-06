@@ -1716,6 +1716,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "Выберите время соответствующее карточке контента",
         ),
+    "SelectTitle": MessageLookupByLibrary.simpleMessage("Выберите заголовок"),
     "SelectToSetPreview": MessageLookupByLibrary.simpleMessage(
       "Выберите фото чтобы задать превью",
     ),
@@ -2266,6 +2267,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ваш Коэффициент явки",
     ),
     "YourStartNotificationWillBeShownXTimes": m121,
+    "YourTop": MessageLookupByLibrary.simpleMessage("Твой TOP"),
     "YourTraffic": MessageLookupByLibrary.simpleMessage("Твой трафик"),
     "YourTurnoutRate": MessageLookupByLibrary.simpleMessage("Ваш уровень явки"),
     "Yourself": MessageLookupByLibrary.simpleMessage("Себе"),
