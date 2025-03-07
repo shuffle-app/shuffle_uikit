@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-selectItemsBottomSheet(BuildContext context, {
+selectItemsBottomSheet(
+  BuildContext context, {
   ValueChanged<String>? onSelectItem,
   List<String?>? items,
   String? selectedItem,
@@ -15,31 +16,27 @@ selectItemsBottomSheet(BuildContext context, {
   final topPadding = itemCount <= 2
       ? 0.55.sh
       : itemCount <= 3
-      ? 0.45.sh
-      : itemCount <= 4
-      ? 0.35.sh
-      : 0.3.sh;
+          ? 0.45.sh
+          : itemCount <= 4
+              ? 0.35.sh
+              : 0.3.sh;
 
   return showUiKitGeneralFullScreenDialog(
     context,
     GeneralDialogData(
-      isDismissible: false,
+      isDismissible: true,
       isWidgetScrollable: true,
       topPadding: topPadding,
       child: Column(
         children: [
           Text(
-            title ?? S
-                .of(context)
-                .SelectCity,
+            title ?? S.of(context).SelectCity,
             style: boldTextTheme?.subHeadline,
           ).paddingAll(EdgeInsetsFoundation.all16),
           if (items == null || items.isEmpty)
             Center(
               child: Text(
-                S
-                    .of(context)
-                    .NothingFound,
+                S.of(context).NothingFound,
                 style: boldTextTheme?.caption1Bold,
               ),
             )
@@ -56,7 +53,8 @@ selectItemsBottomSheet(BuildContext context, {
                       onSelectItem?.call(items[index] ?? '');
                       context.pop(result: items[index]);
                     },
-                    child: Ink(child: Column(
+                    child: Ink(
+                        child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         if (index == 0)
