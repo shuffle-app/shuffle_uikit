@@ -28,7 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -6796,7 +6799,8 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      other: 'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      other:
+          'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
       desc: '',
       args: [count],
@@ -9180,6 +9184,101 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Error when creating a tweet`
+  String get ErrorWhenCreatingATweet {
+    return Intl.message(
+      'Error when creating a tweet',
+      name: 'ErrorWhenCreatingATweet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a message for the news`
+  String get PleaseEnterAMessageForTheNews {
+    return Intl.message(
+      'Please enter a message for the news',
+      name: 'PleaseEnterAMessageForTheNews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cannot find this news`
+  String get CannotFindThisNews {
+    return Intl.message(
+      'Cannot find this news',
+      name: 'CannotFindThisNews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =0{years} =1{year} =2{years} few{years} many{years} other{years}} ago`
+  String YearsAgoX(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'years', one: 'year', two: 'years', few: 'years', many: 'years', other: 'years')} ago',
+      name: 'YearsAgoX',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{mouths} =1{mouth} =2{mouths} few{mouths} many{mouths} other{mouths}} ago`
+  String MouthsAgoX(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'mouths', one: 'mouth', two: 'mouths', few: 'mouths', many: 'mouths', other: 'mouths')} ago',
+      name: 'MouthsAgoX',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{weeks} =1{week} =2{weeks} few{weeks} many{weeks} other{weeks}} ago`
+  String WeeksAgoX(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'weeks', one: 'week', two: 'weeks', few: 'weeks', many: 'weeks', other: 'weeks')} ago',
+      name: 'WeeksAgoX',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}} ago`
+  String DaysAgoX(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'days', one: 'day', two: 'days', few: 'days', many: 'days', other: 'days')} ago',
+      name: 'DaysAgoX',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `{count} {count, plural, =0{hours} =1{hour} =2{hours} few{hours} many{hours} other{hours}} ago`
+  String HoursAgoX(num count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, zero: 'hours', one: 'hour', two: 'hours', few: 'hours', many: 'hours', other: 'hours')} ago',
+      name: 'HoursAgoX',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `min ago`
+  String get MinAgoX {
+    return Intl.message('min ago', name: 'MinAgoX', desc: '', args: []);
+  }
+
+  /// `sec ago`
+  String get SecAgoX {
+    return Intl.message('sec ago', name: 'SecAgoX', desc: '', args: []);
+  }
+
+  /// `Just now`
+  String get JustNow {
+    return Intl.message('Just now', name: 'JustNow', desc: '', args: []);
   }
 }
 
