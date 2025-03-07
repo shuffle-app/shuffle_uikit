@@ -25,11 +25,13 @@ class UiKitPostCard extends StatelessWidget {
   final ViewShareDate? viewShareDate;
   final ValueNotifier<bool>? showTranslateButton;
   final ValueNotifier<String>? translateText;
+  final DateTime? createAt;
 
   late final ValueNotifier<String> description;
   late final ValueNotifier<bool> isTranslate;
 
   final bool isPinned;
+  final bool isFeed;
 
   UiKitPostCard({
     super.key,
@@ -52,19 +54,22 @@ class UiKitPostCard extends StatelessWidget {
     this.viewShareDate,
     this.showTranslateButton,
     this.translateText,
+    this.createAt,
     this.isPinned = false,
+    this.isFeed = true,
   }) {
     description = ValueNotifier<String>(text);
     isTranslate = ValueNotifier<bool>(false);
   }
 
   bool get showEmptyReactionsState =>
-      (heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
-      (heartEyesCount == null &&
-          likesCount == null &&
-          sunglassesCount == null &&
-          firesCount == null &&
-          smileyCount == null);
+      ((heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
+          (heartEyesCount == null &&
+              likesCount == null &&
+              sunglassesCount == null &&
+              firesCount == null &&
+              smileyCount == null)) &&
+      isFeed;
 
   int get heartCount => heartEyesCount ?? 0;
 
@@ -103,7 +108,7 @@ class UiKitPostCard extends StatelessWidget {
       },
       child: ConstrainedBox(
         constraints: BoxConstraints(
-          minHeight: kIsWeb ? 60 : 0.2.sh,
+          minHeight: kIsWeb ? 60 : (isFeed ? 0.2.sh : 0.1.sh),
           maxWidth: kIsWeb ? 90 : 1.sw,
           minWidth: kIsWeb ? 60 : 1.sw - EdgeInsetsFoundation.horizontal32,
         ),
@@ -120,42 +125,50 @@ class UiKitPostCard extends StatelessWidget {
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: onProfilePress,
-                          child: context.userTile(
-                            data: BaseUiKitUserTileData(
-                              avatarUrl: authorAvatarUrl,
-                              name: authorName,
-                              username: authorUsername,
-                              type: authorUserType,
-                              showBadge: true,
-                              noMaterialOverlay: true,
-                              userNameTextColor: colorScheme?.inverseBodyTypography,
+                    children: isFeed
+                        ? [
+                            Expanded(
+                              child: GestureDetector(
+                                onTap: onProfilePress,
+                                child: context.userTile(
+                                  data: BaseUiKitUserTileData(
+                                    avatarUrl: authorAvatarUrl,
+                                    name: authorName,
+                                    username: authorUsername,
+                                    type: authorUserType,
+                                    showBadge: true,
+                                    noMaterialOverlay: true,
+                                    userNameTextColor: colorScheme?.inverseBodyTypography,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      ),
-                      if (isPinned && kIsWeb)
-                        ImageWidget(
-                          link: GraphicsFoundation.instance.svg.pinned.path,
-                          height: 18,
-                          width: 18,
-                          fit: BoxFit.fill,
-                          color: ColorsFoundation.mutedText,
-                        ).paddingOnly(right: onSharePress != null ? SpacingFoundation.horizontalSpacing20 : 0.0),
-                      if (onSharePress != null)
-                        context.iconButtonNoPadding(
-                          data: BaseUiKitButtonData(
-                            onPressed: onSharePress,
-                            iconInfo: BaseUiKitButtonIconData(
-                              iconData: ShuffleUiKitIcons.share,
-                              color: colorScheme?.darkNeutral800,
-                            ),
-                          ),
-                        )
-                    ],
+                            if (isPinned && kIsWeb)
+                              ImageWidget(
+                                link: GraphicsFoundation.instance.svg.pinned.path,
+                                height: 18,
+                                width: 18,
+                                fit: BoxFit.fill,
+                                color: ColorsFoundation.mutedText,
+                              ).paddingOnly(right: onSharePress != null ? SpacingFoundation.horizontalSpacing20 : 0.0),
+                            if (onSharePress != null)
+                              context.iconButtonNoPadding(
+                                data: BaseUiKitButtonData(
+                                  onPressed: onSharePress,
+                                  iconInfo: BaseUiKitButtonIconData(
+                                    iconData: ShuffleUiKitIcons.share,
+                                    color: colorScheme?.darkNeutral800,
+                                  ),
+                                ),
+                              )
+                          ]
+                        : [
+                            Spacer(),
+                            Text(
+                              createAt?.timeAgoFormat() ?? '',
+                              style: regularTextTheme?.caption3.copyWith(color: ColorsFoundation.mutedText),
+                            )
+                          ],
                   ),
                   SpacingFoundation.verticalSpace8,
                   ValueListenableBuilder<String>(
@@ -216,7 +229,7 @@ class UiKitPostCard extends StatelessWidget {
                                 return TapRegion(
                                   behavior: HitTestBehavior.opaque,
                                   onTapInside: (value) {
-                                    if (onReactionsTapped != null) {
+                                    if (onReactionsTapped != null && isFeed) {
                                       isOverlayVisible
                                           ? hideReactionOverlay(overlayEntry)
                                           : showReactionOverlay(
