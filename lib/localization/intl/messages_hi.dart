@@ -2109,6 +2109,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Visitors": MessageLookupByLibrary.simpleMessage("आगंतुक"),
     "Voice": MessageLookupByLibrary.simpleMessage("आवाज़"),
     "Voices": MessageLookupByLibrary.simpleMessage("आवाज़ें"),
+    "VoicesIsEmpty": MessageLookupByLibrary.simpleMessage("Voices is empty"),
     "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
       "Wait for the admin\'s response",
     ),

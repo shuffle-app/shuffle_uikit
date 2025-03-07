@@ -1076,7 +1076,8 @@
   "ErrorWhenCreateImage": "Ошибка при создании изображения",
   "YourTop": "Твой TOP",
   "SelectTitle": "Выберите заголовок",
-  "Drafts": "Черновики"
+  "Drafts": "Черновики",
+  "VoicesIsEmpty": "Нет голосовых"
 
 }
 

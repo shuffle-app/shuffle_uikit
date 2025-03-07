@@ -1076,5 +1076,6 @@
   "ErrorWhenCreateImage": "Error when create image",
   "YourTop": "Your TOP",
   "SelectTitle": "Select title",
-  "Drafts": "Drafts"
+  "Drafts": "Drafts",
+  "VoicesIsEmpty": "Voices is empty"
 }

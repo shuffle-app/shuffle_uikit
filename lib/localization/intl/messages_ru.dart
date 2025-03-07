@@ -2104,6 +2104,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Visitors": MessageLookupByLibrary.simpleMessage("Визиты"),
     "Voice": MessageLookupByLibrary.simpleMessage("Аудиосообщения"),
     "Voices": MessageLookupByLibrary.simpleMessage("Голосовые записи"),
+    "VoicesIsEmpty": MessageLookupByLibrary.simpleMessage("Нет голосовых"),
     "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
       "Ждите ответа админа чата",
     ),
