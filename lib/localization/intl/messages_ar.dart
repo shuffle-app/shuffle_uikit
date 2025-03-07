@@ -747,6 +747,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "DontMissIt": MessageLookupByLibrary.simpleMessage("Don\'t miss it"),
     "DownloadPdf": MessageLookupByLibrary.simpleMessage("Download PDF"),
+    "Drafts": MessageLookupByLibrary.simpleMessage("Drafts"),
     "DubaiEventTicket": MessageLookupByLibrary.simpleMessage(
       "Dubai Event Ticket",
     ),

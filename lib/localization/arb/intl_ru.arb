@@ -1075,8 +1075,8 @@
   "ErrorWhenUploadImage": "Ошибка при загрузке изображения",
   "ErrorWhenCreateImage": "Ошибка при создании изображения",
   "YourTop": "Твой TOP",
-  "SelectTitle": "Выберите заголовок"
-
+  "SelectTitle": "Выберите заголовок",
+  "Drafts": "Черновики"
 
 }
 

@@ -9165,6 +9165,11 @@ class S {
       args: [],
     );
   }
+
+  /// `Drafts`
+  String get Drafts {
+    return Intl.message('Drafts', name: 'Drafts', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
