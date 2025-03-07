@@ -9170,6 +9170,16 @@ class S {
   String get Drafts {
     return Intl.message('Drafts', name: 'Drafts', desc: '', args: []);
   }
+
+  /// `Voices is empty`
+  String get VoicesIsEmpty {
+    return Intl.message(
+      'Voices is empty',
+      name: 'VoicesIsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
