@@ -14,18 +14,19 @@ class UiKitSymbolsCounterInputField extends StatefulWidget implements BaseUiKitI
   final String? Function(String? p1)? validator;
   @override
   final bool obscureText;
-  final int maxSymbols;
+  final int? maxSymbols;
   final int minLines;
   final int? maxLines;
   final FocusNode? focusNode;
   final VoidCallback? onTap;
+  final bool showSymbols;
 
   const UiKitSymbolsCounterInputField({
     super.key,
     required this.controller,
     required this.enabled,
     required this.obscureText,
-    required this.maxSymbols,
+    this.maxSymbols,
     this.minLines = 5,
     this.errorText,
     this.hintText,
@@ -33,6 +34,7 @@ class UiKitSymbolsCounterInputField extends StatefulWidget implements BaseUiKitI
     this.maxLines,
     this.focusNode,
     this.onTap,
+    this.showSymbols = true,
   });
 
   @override
@@ -82,7 +84,7 @@ class _UiKitSymbolsCounterInputFieldState extends State<UiKitSymbolsCounterInput
         maxLength: widget.maxSymbols,
         minLines: widget.minLines,
         maxLines: widget.maxLines,
-        buildCounter: _buildCounter,
+        buildCounter: widget.showSymbols ? _buildCounter : null,
         decoration: InputDecoration(
           hintText: widget.hintText,
           errorText: widget.errorText,
