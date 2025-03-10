@@ -532,6 +532,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "CannotFindThisRefresher": MessageLookupByLibrary.simpleMessage(
       "Не удается найти этот освежитель",
     ),
+    "CannotFindThisVoice": MessageLookupByLibrary.simpleMessage(
+      "Не удаётся найти это голосовое",
+    ),
     "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
       "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером",
     ),

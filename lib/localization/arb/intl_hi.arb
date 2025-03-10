@@ -1076,5 +1076,6 @@
   "SelectTitle": "Select title",
   "Drafts": "Drafts",
   "VoicesIsEmpty": "Voices is empty",
-  "SupportedFormatsVideo": "Supported video MP4, up to 80MB"
+  "SupportedFormatsVideo": "Supported video MP4, up to 80MB",
+  "CannotFindThisVoice": "Cannot find this voice"
 }

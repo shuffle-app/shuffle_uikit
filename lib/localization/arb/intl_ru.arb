@@ -1078,7 +1078,8 @@
   "SelectTitle": "Выберите заголовок",
   "Drafts": "Черновики",
   "VoicesIsEmpty": "Нет голосовых",
-  "SupportedFormatsVideo": "Поддерживаемы форматы видео MP4, до 80MB"
+  "SupportedFormatsVideo": "Поддерживаемы форматы видео MP4, до 80MB",
+  "CannotFindThisVoice": "Не удаётся найти это голосовое"
 
 }
 
