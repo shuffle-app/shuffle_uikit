@@ -47,13 +47,14 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
       width: 1.sw - EdgeInsetsFoundation.horizontal32,
       child: UiKitCardWrapper(
         borderRadius: BorderRadiusFoundation.all24,
-        clipBehavior: Clip.hardEdge,
+        clipBehavior: Clip.none,
         color: cardColor,
         child: TapRegion(
           onTapOutside: (event) {
             setState(() => showNotificationSetOverlay = false);
           },
           child: InkWell(
+            borderRadius: BorderRadiusFoundation.all24,
             onTap: () {
               widget.onTap.call();
               setState(() => showNotificationSetOverlay = false);
@@ -149,7 +150,7 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
                                         ),
                                         borderColor: colorScheme?.inverseSurface,
                                         onPressed: widget.onNotification,
-                                        backgroundColor: Colors.transparent),
+                                        backgroundColor: ColorsFoundation.neutral8),
                                     // blurred: true,
                                   )
                                   .paddingSymmetric(vertical: EdgeInsetsFoundation.vertical24),

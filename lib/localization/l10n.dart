@@ -28,10 +28,7 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -6799,8 +6796,7 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      other:
-          'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      other: 'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
       desc: '',
       args: [count],
@@ -9176,6 +9172,16 @@ class S {
     return Intl.message(
       'Voices is empty',
       name: 'VoicesIsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Supported video MP4, up to 80MB`
+  String get SupportedFormatsVideo {
+    return Intl.message(
+      'Supported video MP4, up to 80MB',
+      name: 'SupportedFormatsVideo',
       desc: '',
       args: [],
     );

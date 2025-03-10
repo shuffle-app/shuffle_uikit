@@ -47,7 +47,7 @@ class UiKitCardWrapper extends StatelessWidget {
           width: width,
           height: height,
           padding: padding,
-          clipBehavior: Clip.hardEdge,
+          clipBehavior: clipBehavior ?? Clip.hardEdge,
           alignment: alignment,
           decoration: BoxDecoration(
             borderRadius: borderRadius,

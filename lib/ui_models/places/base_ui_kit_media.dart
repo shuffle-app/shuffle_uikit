@@ -42,7 +42,7 @@ abstract class BaseUiKitMedia {
         'previewLink': previewLink,
         'type': type.name,
         'previewType': previewType?.name,
-      };
+      }..removeWhere((k, v) => v == null);
 
   static BaseUiKitMedia fromMap(Map<String, dynamic> map) {
     final type = UiKitMediaType.values.firstWhere((type) => type.name == map['type']);
@@ -157,7 +157,7 @@ class UiKitTag {
         'textColor': textColor,
         'colorIsNull': colorIsNull,
         'updateTitle': false,
-      };
+      }..removeWhere((k, v) => v == null);
 
   static UiKitTag fromMap(Map<String, dynamic> map) => UiKitTag(
         title: map['title'],
