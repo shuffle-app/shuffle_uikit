@@ -1859,6 +1859,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SupportedFormatsBooking": MessageLookupByLibrary.simpleMessage(
       "Поддерживаемые форматы: JPEG/JPG/PNG.\nМаксимальный размер - 10 MB.\nМаксимальное разрешение - 3840 x 2200 px",
     ),
+    "SupportedFormatsVideo": MessageLookupByLibrary.simpleMessage(
+      "Поддерживаемы форматы видео MP4, до 80MB",
+    ),
     "SureYouWantToDeleteChat": MessageLookupByLibrary.simpleMessage(
       "Точно хочешь удалить чат?",
     ),

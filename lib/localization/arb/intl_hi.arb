@@ -1075,5 +1075,6 @@
   "YourTop": "Your TOP",
   "SelectTitle": "Select title",
   "Drafts": "Drafts",
-  "VoicesIsEmpty": "Voices is empty"
+  "VoicesIsEmpty": "Voices is empty",
+  "SupportedFormatsVideo": "Supported video MP4, up to 80MB"
 }

@@ -1845,6 +1845,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SupportedFormatsBooking": MessageLookupByLibrary.simpleMessage(
       "Supported formats: JPEG/JPG/PNG.\nMax size - 10 MB.\nMax resolution - 3840 x 2200 px",
     ),
+    "SupportedFormatsVideo": MessageLookupByLibrary.simpleMessage(
+      "Supported video MP4, up to 80MB",
+    ),
     "SureYouWantToDeleteChat": MessageLookupByLibrary.simpleMessage(
       "Sure you want to delete chat?",
     ),

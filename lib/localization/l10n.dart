@@ -9180,6 +9180,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Supported video MP4, up to 80MB`
+  String get SupportedFormatsVideo {
+    return Intl.message(
+      'Supported video MP4, up to 80MB',
+      name: 'SupportedFormatsVideo',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

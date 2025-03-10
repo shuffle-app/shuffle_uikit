@@ -1077,7 +1077,8 @@
   "YourTop": "Твой TOP",
   "SelectTitle": "Выберите заголовок",
   "Drafts": "Черновики",
-  "VoicesIsEmpty": "Нет голосовых"
+  "VoicesIsEmpty": "Нет голосовых",
+  "SupportedFormatsVideo": "Поддерживаемы форматы видео MP4, до 80MB"
 
 }
 
