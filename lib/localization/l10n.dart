@@ -9180,6 +9180,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Cannot find this voice`
+  String get CannotFindThisVoice {
+    return Intl.message(
+      'Cannot find this voice',
+      name: 'CannotFindThisVoice',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -529,6 +529,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "CannotFindThisRefresher": MessageLookupByLibrary.simpleMessage(
       "Cannot find this refresher",
     ),
+    "CannotFindThisVoice": MessageLookupByLibrary.simpleMessage(
+      "Cannot find this voice",
+    ),
     "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
       "You can view this profile once it becomes an influencer",
     ),

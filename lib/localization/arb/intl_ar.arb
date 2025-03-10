@@ -1077,6 +1077,7 @@
   "YourTop": "Your TOP",
   "SelectTitle": "Select title",
   "Drafts": "Drafts",
-  "VoicesIsEmpty": "Voices is empty"
+  "VoicesIsEmpty": "Voices is empty",
+  "CannotFindThisVoice": "Cannot find this voice"
 
 }
