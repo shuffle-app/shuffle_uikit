@@ -632,6 +632,9 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "Contest": MessageLookupByLibrary.simpleMessage("Конкурс"),
     "Continue": MessageLookupByLibrary.simpleMessage("Продолжить"),
+    "ContinueWithDraft": MessageLookupByLibrary.simpleMessage(
+      "Продолжить редактирование",
+    ),
     "Control": MessageLookupByLibrary.simpleMessage("Контроль"),
     "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
       "удобно, чётко и полезно",
@@ -2060,6 +2063,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "футболка, шапочка, коврик для йоги, кружка",
     ),
     "UpsalesProductsFrom": m103,
+    "UseDraft": MessageLookupByLibrary.simpleMessage("Использовать черновик"),
     "UseOurToolsToImproveIt": MessageLookupByLibrary.simpleMessage(
       "Используйте наши инструменты, чтобы улучшить его",
     ),

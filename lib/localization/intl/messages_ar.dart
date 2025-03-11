@@ -631,6 +631,9 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "Contest": MessageLookupByLibrary.simpleMessage("Contest"),
     "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
+    "ContinueWithDraft": MessageLookupByLibrary.simpleMessage(
+      "Continue with draft",
+    ),
     "Control": MessageLookupByLibrary.simpleMessage("Control"),
     "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
       "сonvenient, clear and useful",
@@ -2042,6 +2045,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "t-shirt, hat,yoga mat, mug",
     ),
     "UpsalesProductsFrom": m103,
+    "UseDraft": MessageLookupByLibrary.simpleMessage("Use draft"),
     "UseOurToolsToImproveIt": MessageLookupByLibrary.simpleMessage(
       "Use our tools to improve it",
     ),

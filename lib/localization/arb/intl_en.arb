@@ -1079,5 +1079,7 @@
   "Drafts": "Drafts",
   "VoicesIsEmpty": "Voices is empty",
   "SupportedFormatsVideo": "Supported video MP4, up to 80MB",
-  "CannotFindThisVoice": "Cannot find this voice"
+  "CannotFindThisVoice": "Cannot find this voice",
+  "ContinueWithDraft": "Continue with draft",
+  "UseDraft": "Use draft"
 }
