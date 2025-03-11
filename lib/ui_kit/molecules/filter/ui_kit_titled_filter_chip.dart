@@ -43,7 +43,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
     final chipWidth = SpacingFoundation.horizontalSpacing8 +
         (SpacingFoundation.horizontalSpacing16 * 2) +
         textPainter.width +
-        (40.h - SpacingFoundation.verticalSpacing14 * 2.5);
+        (40.h - SpacingFoundation.verticalSpacing14.w * 2.5);
 
     return InkWell(
       borderRadius: BorderRadiusFoundation.max,
@@ -85,7 +85,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
                           color: foreground,
                         )),
                     // SpacingFoundation.horizontalSpace8,
-                    Text(title, style: textStyle).paddingOnly(left: SpacingFoundation.horizontalSpacing14),
+                    Text(title, style: textStyle).paddingOnly(left: SpacingFoundation.horizontalSpacing14.w),
                   ],
                 )),
     );
