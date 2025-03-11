@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class UiKitShowMoreTitledSection extends StatelessWidget {
   final String title;
-  final Widget content;
+  final Widget? content;
   final VoidCallback? onShowMore;
   final bool? underService;
+  final double? contentHeight;
+  final double? contentWidth;
+  final bool needOverflowContent;
 
   const UiKitShowMoreTitledSection({
     super.key,
     required this.title,
-    required this.content,
+    this.content,
     this.onShowMore,
     this.underService = false,
+    this.contentHeight,
+    this.contentWidth,
+    this.needOverflowContent = false,
   });
 
   @override
@@ -54,9 +61,17 @@ class UiKitShowMoreTitledSection extends StatelessWidget {
           fit: StackFit.passthrough,
           clipBehavior: Clip.none,
           children: [
-            UiKitCardWrapper(
-              child: content.paddingAll(EdgeInsetsFoundation.all16),
-            ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16),
+            if (content != null)
+              UiKitCardWrapper(
+                height: contentHeight,
+                width: contentWidth,
+                child: needOverflowContent
+                    ? OverflowBox(
+                        fit: OverflowBoxFit.deferToChild,
+                        child: content!.paddingAll(EdgeInsetsFoundation.all16),
+                      )
+                    : content!.paddingAll(EdgeInsetsFoundation.all16),
+              ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16),
             if (underService ?? false)
               Positioned(
                 bottom: -12,

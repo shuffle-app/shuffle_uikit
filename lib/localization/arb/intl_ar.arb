@@ -1084,7 +1084,20 @@
   "UseDraft": "Use draft",
   "YourTOPs": "Your TOPs",
   "AddNew": "Add new",
-  "NewTOP": "New TOP"
-
+  "NewTOP": "New TOP",
+  "CreateNews": "Create news",
+  "WhatsNew": "What's new?",
+  "ThereIsNothingYetCreateYourFirstNews": "There is nothing yet! Create your first news",
+  "ErrorWhenCreatingATweet": "Error when creating a tweet",
+  "PleaseEnterAMessageForTheNews": "Please enter a message for the news",
+  "CannotFindThisNews": "Cannot find this news",
+  "YearsAgoX": "{count} {count, plural, =0{years} =1{year} =2{years} few{years} many{years} other{years}} ago",
+  "MouthsAgoX": "{count} {count, plural, =0{mouths} =1{mouth} =2{mouths} few{mouths} many{mouths} other{mouths}} ago",
+  "WeeksAgoX": "{count} {count, plural, =0{weeks} =1{week} =2{weeks} few{weeks} many{weeks} other{weeks}} ago",
+  "DaysAgoX": "{count} {count, plural, =0{days} =1{day} =2{days} few{days} many{days} other{days}} ago",
+  "HoursAgoX": "{count} {count, plural, =0{hours} =1{hour} =2{hours} few{hours} many{hours} other{hours}} ago",
+  "MinAgoX": "min ago",
+  "SecAgoX": "sec ago",
+  "JustNow": "Just now"
 
 }

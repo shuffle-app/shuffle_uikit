@@ -1084,7 +1084,21 @@
   "UseDraft": "Использовать черновик",
   "YourTOPs": "Твои ТОПы",
   "AddNew": "Добавить новый",
-  "NewTOP": "Новый ТОП"
+  "NewTOP": "Новый ТОП",
+  "CreateNews": "Создать новость",
+  "WhatsNew": "Что нового?",
+  "ThereIsNothingYetCreateYourFirstNews": "Пока ничего нет! Создайте свою первую новость",
+  "ErrorWhenCreatingATweet": "Ошибка при создании твита",
+  "PleaseEnterAMessageForTheNews": "Пожалуйста, введите сообщение для новости",
+  "CannotFindThisNews": "Не удается найти эту новость",
+  "YearsAgoX": "{count} {count, plural, =0{лет} =1{год} =2{года} few{лет} many{лет} other{лет}} назад",
+  "MouthsAgoX": "{count} {count, plural, =0{месяцев} =1{месяц} =2{месяца} few{месяца} many{месяцев} other{месяцев}} назад",
+  "WeeksAgoX": "{count} {count, plural, =0{неделей} =1{неделя} =2{недели} few{недели} many{недель} other{недели}} назад",
+  "DaysAgoX": "{count} {count, plural, =0{дней} =1{день} =2{дня} few{дня} many{дней} other{дней}} назад",
+  "HoursAgoX": "{count} {count, plural, =0{часов} =1{час} =2{часа} few{часов} many{часов} other{часов}} назад",
+  "MinAgoX": "мин назад",
+  "SecAgoX": "сек назад",
+  "JustNow": "Прямо сейчас"
 
 }
 
