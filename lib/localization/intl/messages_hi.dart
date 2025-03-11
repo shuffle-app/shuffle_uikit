@@ -381,6 +381,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "एक विस्तृत समीक्षा लिखें, सभी उपलब्ध वर्णों का उपयोग करें ताकि जितने अधिक लोग संवाद कर सकें",
     ),
     "AddLink": MessageLookupByLibrary.simpleMessage("लिंक जोड़ें"),
+    "AddNew": MessageLookupByLibrary.simpleMessage("Add new"),
     "AddPhotoHere": MessageLookupByLibrary.simpleMessage("फोटो यहाँ जोड़ें"),
     "AddPlaceType": MessageLookupByLibrary.simpleMessage("जगह प्रकार जोड़ें"),
     "AddPromotion": MessageLookupByLibrary.simpleMessage("प्रचार जोड़ें"),
@@ -545,6 +546,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "CannotFindThisRefresher": MessageLookupByLibrary.simpleMessage(
       "Cannot find this refresher",
     ),
+    "CannotFindThisVoice": MessageLookupByLibrary.simpleMessage(
+      "Cannot find this voice",
+    ),
     "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
       "आप इस प्रोफ़ाइल को एक इन्फ्लुएंसर बनने पर देख सकते हैं",
     ),
@@ -646,6 +650,9 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "Contest": MessageLookupByLibrary.simpleMessage("प्रतियोगिता"),
     "Continue": MessageLookupByLibrary.simpleMessage("जारी रखें"),
+    "ContinueWithDraft": MessageLookupByLibrary.simpleMessage(
+      "Continue with draft",
+    ),
     "Control": MessageLookupByLibrary.simpleMessage("नियंत्रण"),
     "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
       "सुविधाजनक, स्पष्ट और उपयोगी",
@@ -767,6 +774,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "DontMissIt": MessageLookupByLibrary.simpleMessage("इसे मत चूकिए"),
     "DownloadPdf": MessageLookupByLibrary.simpleMessage("PDF डाउनलोड करें"),
+    "Drafts": MessageLookupByLibrary.simpleMessage("Drafts"),
     "DubaiEventTicket": MessageLookupByLibrary.simpleMessage("दुबई घटना टिकट"),
     "Easy": MessageLookupByLibrary.simpleMessage("आसान"),
     "Edit": MessageLookupByLibrary.simpleMessage("संपादित करें"),
@@ -1177,6 +1185,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "आज एक नया स्थान खुल गया है ।  आओ! आप इसे पसंद करेंगे!",
     ),
     "NewPlace": MessageLookupByLibrary.simpleMessage("नयी जगह"),
+    "NewTOP": MessageLookupByLibrary.simpleMessage("New TOP"),
     "News": MessageLookupByLibrary.simpleMessage("समाचार"),
     "Next": MessageLookupByLibrary.simpleMessage("अगला"),
     "NextElements": m59,
@@ -1888,6 +1897,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SupportedFormatsBooking": MessageLookupByLibrary.simpleMessage(
       "समर्थित प्रारूप: JPEG/JPG/PNG।\nअधिकतम आकार - 10 MB।\nअधिकतम संकलन - 3840 x 2200 px",
     ),
+    "SupportedFormatsVideo": MessageLookupByLibrary.simpleMessage(
+      "Supported video MP4, up to 80MB",
+    ),
     "SureYouWantToDeleteChat": MessageLookupByLibrary.simpleMessage(
       "क्या आप चैट हटाना चाहते हैं?",
     ),
@@ -2089,6 +2101,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "टी-शर्ट, टोपी, योगा चटाई, मग",
     ),
     "UpsalesProductsFrom": m106,
+    "UseDraft": MessageLookupByLibrary.simpleMessage("Use draft"),
     "UseOurToolsToImproveIt": MessageLookupByLibrary.simpleMessage(
       "Use our tools to improve it",
     ),
@@ -2143,6 +2156,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Visitors": MessageLookupByLibrary.simpleMessage("आगंतुक"),
     "Voice": MessageLookupByLibrary.simpleMessage("आवाज़"),
     "Voices": MessageLookupByLibrary.simpleMessage("आवाज़ें"),
+    "VoicesIsEmpty": MessageLookupByLibrary.simpleMessage("Voices is empty"),
     "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
       "Wait for the admin\'s response",
     ),
@@ -2308,6 +2322,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your Show up ratio",
     ),
     "YourStartNotificationWillBeShownXTimes": m126,
+    "YourTOPs": MessageLookupByLibrary.simpleMessage("Your TOPs"),
     "YourTop": MessageLookupByLibrary.simpleMessage("Your TOP"),
     "YourTraffic": MessageLookupByLibrary.simpleMessage("आपका ट्रैफ़िक"),
     "YourTurnoutRate": MessageLookupByLibrary.simpleMessage(

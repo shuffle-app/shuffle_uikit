@@ -382,6 +382,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Write a detailed review, use all the available characters so that as many people as possible can appreciate it",
     ),
     "AddLink": MessageLookupByLibrary.simpleMessage("Add link"),
+    "AddNew": MessageLookupByLibrary.simpleMessage("Add new"),
     "AddPhotoHere": MessageLookupByLibrary.simpleMessage("Add photo here"),
     "AddPlaceType": MessageLookupByLibrary.simpleMessage("Add place type"),
     "AddPromotion": MessageLookupByLibrary.simpleMessage("Add promotion"),
@@ -547,6 +548,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "CannotFindThisRefresher": MessageLookupByLibrary.simpleMessage(
       "Cannot find this refresher",
     ),
+    "CannotFindThisVoice": MessageLookupByLibrary.simpleMessage(
+      "Cannot find this voice",
+    ),
     "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
       "You can view this profile once it becomes an influencer",
     ),
@@ -646,6 +650,9 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "Contest": MessageLookupByLibrary.simpleMessage("Contest"),
     "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
+    "ContinueWithDraft": MessageLookupByLibrary.simpleMessage(
+      "Continue with draft",
+    ),
     "Control": MessageLookupByLibrary.simpleMessage("Control"),
     "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
       "сonvenient, clear and useful",
@@ -767,6 +774,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "DontMissIt": MessageLookupByLibrary.simpleMessage("Don\'t miss it"),
     "DownloadPdf": MessageLookupByLibrary.simpleMessage("Download PDF"),
+    "Drafts": MessageLookupByLibrary.simpleMessage("Drafts"),
     "DubaiEventTicket": MessageLookupByLibrary.simpleMessage(
       "Dubai Event Ticket",
     ),
@@ -1176,6 +1184,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "A new location has opened today. Come! You\'ll like it!",
     ),
     "NewPlace": MessageLookupByLibrary.simpleMessage("New place"),
+    "NewTOP": MessageLookupByLibrary.simpleMessage("New TOP"),
     "News": MessageLookupByLibrary.simpleMessage("News"),
     "Next": MessageLookupByLibrary.simpleMessage("Next"),
     "NextElements": m59,
@@ -1875,6 +1884,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SupportedFormatsBooking": MessageLookupByLibrary.simpleMessage(
       "Supported formats: JPEG/JPG/PNG.\nMax size - 10 MB.\nMax resolution - 3840 x 2200 px",
     ),
+    "SupportedFormatsVideo": MessageLookupByLibrary.simpleMessage(
+      "Supported video MP4, up to 80MB",
+    ),
     "SureYouWantToDeleteChat": MessageLookupByLibrary.simpleMessage(
       "Sure you want to delete chat?",
     ),
@@ -2070,6 +2082,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "t-shirt, hat,yoga mat, mug",
     ),
     "UpsalesProductsFrom": m106,
+    "UseDraft": MessageLookupByLibrary.simpleMessage("Use draft"),
     "UseOurToolsToImproveIt": MessageLookupByLibrary.simpleMessage(
       "Use our tools to improve it",
     ),
@@ -2118,6 +2131,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Visitors": MessageLookupByLibrary.simpleMessage("Visitors"),
     "Voice": MessageLookupByLibrary.simpleMessage("Voice"),
     "Voices": MessageLookupByLibrary.simpleMessage("Voices"),
+    "VoicesIsEmpty": MessageLookupByLibrary.simpleMessage("Voices is empty"),
     "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
       "Wait for the admin\'s response",
     ),
@@ -2281,6 +2295,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your Show up ratio",
     ),
     "YourStartNotificationWillBeShownXTimes": m126,
+    "YourTOPs": MessageLookupByLibrary.simpleMessage("Your TOPs"),
     "YourTop": MessageLookupByLibrary.simpleMessage("Your TOP"),
     "YourTraffic": MessageLookupByLibrary.simpleMessage("Your traffic"),
     "YourTurnoutRate": MessageLookupByLibrary.simpleMessage(

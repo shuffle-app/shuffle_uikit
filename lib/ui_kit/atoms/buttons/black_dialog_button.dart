@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class BlackDialogButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
   final bool small;
   final ButtonFit? fit;
+  final AutoSizeGroup? group;
 
   const BlackDialogButton({
     super.key,
@@ -13,7 +15,9 @@ class BlackDialogButton extends StatelessWidget implements ButtonFactory {
     required this.small,
     this.onPressed,
     this.fit,
+    this.group,
   });
+
   @override
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
@@ -44,10 +48,17 @@ class BlackDialogButton extends StatelessWidget implements ButtonFactory {
         splashFactory: InkSplash.splashFactory,
       ),
       onPressed: onPressed,
-      child: Text(
-        text.toUpperCase(),
-        style: textStyle?.copyWith(color: Colors.white),
-      ),
+      child: group != null
+          ? AutoSizeText(
+              text.toUpperCase(),
+              style: textStyle?.copyWith(color: Colors.white),
+              maxLines: 1,
+              group: group,
+            )
+          : Text(
+              text.toUpperCase(),
+              style: textStyle?.copyWith(color: Colors.white),
+            ),
     );
   }
 }

@@ -24,7 +24,7 @@ selectItemsBottomSheet(
   return showUiKitGeneralFullScreenDialog(
     context,
     GeneralDialogData(
-      isDismissible: false,
+      isDismissible: true,
       isWidgetScrollable: true,
       topPadding: topPadding,
       child: Column(
@@ -47,12 +47,14 @@ selectItemsBottomSheet(
                 physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                 itemCount: itemCount,
                 itemBuilder: (context, index) {
-                  return GestureDetector(
+                  return InkWell(
+                    borderRadius: BorderRadiusFoundation.all24,
                     onTap: () {
                       onSelectItem?.call(items[index] ?? '');
-                      context.pop();
+                      context.pop(result: items[index]);
                     },
-                    child: Column(
+                    child: Ink(
+                        child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         if (index == 0)
@@ -84,7 +86,7 @@ selectItemsBottomSheet(
                       bottom: SpacingFoundation.verticalSpacing16,
                       left: SpacingFoundation.horizontalSpacing16,
                       right: SpacingFoundation.horizontalSpacing16,
-                    ),
+                    )),
                   );
                 },
               ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing16),

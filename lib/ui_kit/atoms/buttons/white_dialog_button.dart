@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class WhiteDialogButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
   final bool small;
   final bool isOutlined;
+  final AutoSizeGroup? group;
 
   const WhiteDialogButton({
     super.key,
@@ -13,6 +15,7 @@ class WhiteDialogButton extends StatelessWidget implements ButtonFactory {
     required this.small,
     this.isOutlined = false,
     this.onPressed,
+    this.group,
   });
 
   @override
@@ -45,15 +48,29 @@ class WhiteDialogButton extends StatelessWidget implements ButtonFactory {
       onPressed: onPressed,
       child: isOutlined
           ? Center(
-              child: Text(
-                text.toUpperCase(),
-                style: textStyle?.copyWith(color: Colors.black),
-              ),
+              child: group != null
+                  ? AutoSizeText(
+                      text.toUpperCase(),
+                      style: textStyle?.copyWith(color: Colors.white),
+                      maxLines: 1,
+                      group: group,
+                    )
+                  : Text(
+                      text.toUpperCase(),
+                      style: textStyle?.copyWith(color: Colors.black),
+                    ),
             )
-          : Text(
-              text.toUpperCase(),
-              style: textStyle?.copyWith(color: Colors.black),
-            ),
+          : group != null
+              ? AutoSizeText(
+                  text.toUpperCase(),
+                  style: textStyle?.copyWith(color: Colors.white),
+                  maxLines: 1,
+                  group: group,
+                )
+              : Text(
+                  text.toUpperCase(),
+                  style: textStyle?.copyWith(color: Colors.black),
+                ),
     );
   }
 }

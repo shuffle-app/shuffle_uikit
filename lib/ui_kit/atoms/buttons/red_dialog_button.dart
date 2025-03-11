@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class RedDialogButton extends StatelessWidget implements ButtonFactory {
   final String text;
   final VoidCallback? onPressed;
   final bool small;
+  final AutoSizeGroup? group;
 
   const RedDialogButton({
     super.key,
     required this.text,
     required this.small,
     this.onPressed,
+    this.group,
   });
   @override
   Widget build(BuildContext context) {
@@ -37,7 +40,14 @@ class RedDialogButton extends StatelessWidget implements ButtonFactory {
         splashFactory: InkSplash.splashFactory,
       ),
       onPressed: onPressed,
-      child: Text(
+      child:group != null
+          ? AutoSizeText(
+        text.toUpperCase(),
+        style: textStyle?.copyWith(color: Colors.white),
+        maxLines: 1,
+        group: group,
+      )
+          : Text(
         text.toUpperCase(),
         style: textStyle?.copyWith(color: Colors.white),
       ),

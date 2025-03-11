@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -34,6 +35,33 @@ abstract class BaseUiKitMedia {
 
   @override
   String toString() => 'BaseUiKitMedia{link: $link, type: $type, previewType: $previewType}';
+
+  Map<String, dynamic> toMap() => {
+        'id': id,
+        'link': link,
+        'previewLink': previewLink,
+        'type': type.name,
+        'previewType': previewType?.name,
+      }..removeWhere((k, v) => v == null);
+
+  static BaseUiKitMedia fromMap(Map<String, dynamic> map) {
+    final type = UiKitMediaType.values.firstWhere((type) => type.name == map['type']);
+    switch (type) {
+      case UiKitMediaType.image:
+        return UiKitMediaPhoto(
+          id: map['id'],
+          link: map['link'],
+          previewType: UiKitPreviewType.values.firstWhereOrNull((type) => type.name == map['previewType']),
+        );
+      case UiKitMediaType.video:
+        return UiKitMediaVideo(
+          id: map['id'],
+          link: map['link'],
+          previewType: UiKitPreviewType.values.firstWhereOrNull((type) => type.name == map['previewType']),
+          previewLink: map['previewLink'],
+        );
+    }
+  }
 }
 
 class UiKitMediaPhoto extends BaseUiKitMedia {
@@ -118,6 +146,30 @@ class UiKitTag {
 
   @override
   int get hashCode => title.hashCode;
+
+  Map<String, dynamic> toMap() => {
+        'title': title,
+        // 'icon': icon,
+        'unique': unique,
+        'showShadow': showShadow,
+        'id': id,
+        'iconColor': iconColor,
+        'textColor': textColor,
+        'colorIsNull': colorIsNull,
+        'updateTitle': false,
+      }..removeWhere((k, v) => v == null);
+
+  static UiKitTag fromMap(Map<String, dynamic> map) => UiKitTag(
+        title: map['title'],
+        icon: map['icon'],
+        unique: map['unique'],
+        showShadow: map['showShadow'],
+        id: map['id'],
+        iconColor: map['iconColor'],
+        textColor: map['textColor'],
+        colorIsNull: map['colorIsNull'],
+        updateTitle: map['updateTitle'] ?? false,
+      );
 }
 
 enum UiKitMediaType { image, video }

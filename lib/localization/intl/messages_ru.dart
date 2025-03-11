@@ -383,6 +383,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Напиши подробный отзыв, используй все доступные символы, чтобы как можно больше людей могли его оценить",
     ),
     "AddLink": MessageLookupByLibrary.simpleMessage("Добавить ссылку"),
+    "AddNew": MessageLookupByLibrary.simpleMessage("Добавить новый"),
     "AddPhotoHere": MessageLookupByLibrary.simpleMessage("Добавьте фото здесь"),
     "AddPlaceType": MessageLookupByLibrary.simpleMessage("Добавить тип места"),
     "AddPromotion": MessageLookupByLibrary.simpleMessage("Добавить промо"),
@@ -550,6 +551,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "CannotFindThisRefresher": MessageLookupByLibrary.simpleMessage(
       "Не удается найти этот освежитель",
     ),
+    "CannotFindThisVoice": MessageLookupByLibrary.simpleMessage(
+      "Не удаётся найти это голосовое",
+    ),
     "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
       "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером",
     ),
@@ -647,6 +651,9 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "Contest": MessageLookupByLibrary.simpleMessage("Конкурс"),
     "Continue": MessageLookupByLibrary.simpleMessage("Продолжить"),
+    "ContinueWithDraft": MessageLookupByLibrary.simpleMessage(
+      "Продолжить редактирование",
+    ),
     "Control": MessageLookupByLibrary.simpleMessage("Контроль"),
     "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
       "удобно, чётко и полезно",
@@ -766,6 +773,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "DontMissIt": MessageLookupByLibrary.simpleMessage("Не пропусти"),
     "DownloadPdf": MessageLookupByLibrary.simpleMessage("Скачать PDF"),
+    "Drafts": MessageLookupByLibrary.simpleMessage("Черновики"),
     "DubaiEventTicket": MessageLookupByLibrary.simpleMessage(
       "Билет на события в Дубае",
     ),
@@ -1177,6 +1185,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Сегодня открылось новое место. Приходи! Понравится!",
     ),
     "NewPlace": MessageLookupByLibrary.simpleMessage("Новое место"),
+    "NewTOP": MessageLookupByLibrary.simpleMessage("Новый ТОП"),
     "News": MessageLookupByLibrary.simpleMessage("Новости"),
     "Next": MessageLookupByLibrary.simpleMessage("Далее"),
     "NextElements": m59,
@@ -1889,6 +1898,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SupportedFormatsBooking": MessageLookupByLibrary.simpleMessage(
       "Поддерживаемые форматы: JPEG/JPG/PNG.\nМаксимальный размер - 10 MB.\nМаксимальное разрешение - 3840 x 2200 px",
     ),
+    "SupportedFormatsVideo": MessageLookupByLibrary.simpleMessage(
+      "Поддерживаемы форматы видео MP4, до 80MB",
+    ),
     "SureYouWantToDeleteChat": MessageLookupByLibrary.simpleMessage(
       "Точно хочешь удалить чат?",
     ),
@@ -2088,6 +2100,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "футболка, шапочка, коврик для йоги, кружка",
     ),
     "UpsalesProductsFrom": m106,
+    "UseDraft": MessageLookupByLibrary.simpleMessage("Использовать черновик"),
     "UseOurToolsToImproveIt": MessageLookupByLibrary.simpleMessage(
       "Используйте наши инструменты, чтобы улучшить его",
     ),
@@ -2138,6 +2151,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Visitors": MessageLookupByLibrary.simpleMessage("Визиты"),
     "Voice": MessageLookupByLibrary.simpleMessage("Аудиосообщения"),
     "Voices": MessageLookupByLibrary.simpleMessage("Голосовые записи"),
+    "VoicesIsEmpty": MessageLookupByLibrary.simpleMessage("Нет голосовых"),
     "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
       "Ждите ответа админа чата",
     ),
@@ -2299,6 +2313,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ваш Коэффициент явки",
     ),
     "YourStartNotificationWillBeShownXTimes": m126,
+    "YourTOPs": MessageLookupByLibrary.simpleMessage("Твои ТОПы"),
     "YourTop": MessageLookupByLibrary.simpleMessage("Твой TOP"),
     "YourTraffic": MessageLookupByLibrary.simpleMessage("Твой трафик"),
     "YourTurnoutRate": MessageLookupByLibrary.simpleMessage("Ваш уровень явки"),

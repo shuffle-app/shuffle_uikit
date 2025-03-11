@@ -3,88 +3,97 @@ import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 Future<void> influencerTopTitleBottomSheet(
   BuildContext context, {
-  required TextEditingController controller,
   VoidCallback? onTap,
-  VoidCallback? onSelectTopTap,
-  bool showYourTops = false,
-  ValueNotifier<String?>? selectedTitle,
+  ValueChanged<String>? onSelectTopTap,
+  required ValueNotifier<String?> selectedItem,
+  VoidCallback? onAddNewTap,
+  ValueNotifier<List<String>>? tops,
 }) async {
   final theme = context.uiKitTheme;
-  final topPadding = showYourTops ? (1.sw <= 380 ? 0.4.sh : 0.35.sh) : (1.sw <= 380 ? 0.5.sh : 0.45.sh);
+  final topPadding = ((1.sw <= 380 ? 0.54.sh : 0.6.sh) - (tops?.value.length ?? 0) * 0.08.sh);
 
   return showUiKitGeneralFullScreenDialog(
     context,
     GeneralDialogData(
-      topPadding: topPadding,
+      topPadding: topPadding > 0.0 ? topPadding : 0.0,
       useRootNavigator: false,
-      isWidgetScrollable: true,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           SpacingFoundation.verticalSpace16,
           Text(
-            S.of(context).TitleYourTOP,
+            S.of(context).YourTOPs,
             style: theme?.boldTextTheme.subHeadline,
           ),
-          SpacingFoundation.verticalSpacing32.heightBox,
-          if (selectedTitle != null)
+          SpacingFoundation.verticalSpace16,
+          Divider(thickness: 2.h, color: theme?.colorScheme.surface2),
+          SpacingFoundation.verticalSpace16,
+          GestureDetector(
+            onTap: onAddNewTap,
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    S.of(context).AddNew,
+                    style: theme?.boldTextTheme.caption1Medium,
+                  ),
+                ),
+                ImageWidget(
+                  width: 13.w,
+                  height: 13.w,
+                  iconData: ShuffleUiKitIcons.plus,
+                  color: theme?.colorScheme.inversePrimary,
+                )
+              ],
+            ),
+          ),
+          SpacingFoundation.verticalSpace16,
+          Divider(thickness: 2.h, color: theme?.colorScheme.surface2),
+          if (tops != null && tops.value.isNotEmpty)
             ValueListenableBuilder(
-              valueListenable: selectedTitle,
-              builder: (_, title, __) => UiKitInputFieldNoIcon(
-                minLines: 1,
-                maxSymbols: 100,
-                controller: controller,
-                hintText: S.current.Title,
-                fillColor: theme?.colorScheme.surface1,
-                enabled: !(title != null && title.isNotEmpty),
+              valueListenable: tops,
+              builder: (_, tops, __) => ListView.builder(
+                shrinkWrap: true,
+                itemCount: tops.length,
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) => ValueListenableBuilder(
+                  valueListenable: selectedItem,
+                  builder: (_, selectedItem, __) => GestureDetector(
+                    onTap: () => onSelectTopTap?.call(tops[index]),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            UiKitRadio(selected: tops[index] == selectedItem),
+                            SpacingFoundation.horizontalSpace8,
+                            Expanded(
+                              child: Text(
+                                tops[index],
+                                style: theme?.boldTextTheme.caption1Medium,
+                              ),
+                            ),
+                          ],
+                        ).paddingOnly(top: SpacingFoundation.verticalSpacing16),
+                        Divider(thickness: 2.h, color: theme?.colorScheme.surface2).paddingOnly(
+                          top: SpacingFoundation.verticalSpacing16,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
-            )
-          else
-            UiKitInputFieldNoIcon(
-              minLines: 1,
-              maxSymbols: 100,
-              controller: controller,
-              hintText: S.current.Title,
-              fillColor: theme?.colorScheme.surface1,
             ),
           SpacingFoundation.verticalSpace24,
-          if (showYourTops && selectedTitle != null)
-            GestureDetector(
-              onTap: onSelectTopTap,
-              child: UiKitCardWrapper(
-                width: double.infinity,
-                color: theme?.colorScheme.surface3,
-                borderRadius: BorderRadiusFoundation.all24r,
-                child: Row(
-                  children: [
-                    ValueListenableBuilder(
-                      valueListenable: selectedTitle,
-                      builder: (_, title, __) {
-                        return Text(
-                          (title != null && title.isNotEmpty) ? title : S.of(context).SelectTitle,
-                          style: theme?.boldTextTheme.caption1Medium,
-                        );
-                      },
-                    ),
-                    const Spacer(),
-                    ImageWidget(
-                      iconData: ShuffleUiKitIcons.chevronright,
-                      color: theme?.colorScheme.inversePrimary,
-                    ),
-                  ],
-                ).paddingSymmetric(
-                  vertical: SpacingFoundation.verticalSpacing14,
-                  horizontal: SpacingFoundation.horizontalSpacing20,
-                ),
-              ).paddingOnly(top: SpacingFoundation.verticalSpacing16),
-            ).paddingOnly(bottom: SpacingFoundation.verticalSpacing32),
           Row(
             children: [
               Expanded(
-                child: context.gradientButton(
-                  data: BaseUiKitButtonData(
-                    text: S.current.Save.toUpperCase(),
-                    onPressed: onTap,
+                child: ValueListenableBuilder(
+                  valueListenable: selectedItem,
+                  builder: (_, selectedItem, __) => context.gradientButton(
+                    data: BaseUiKitButtonData(
+                      text: S.current.Save.toUpperCase(),
+                      onPressed: (selectedItem != null && selectedItem.trim().isNotEmpty) ? onTap : null,
+                    ),
                   ),
                 ),
               ),

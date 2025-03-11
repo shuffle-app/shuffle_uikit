@@ -28,10 +28,7 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -6799,8 +6796,7 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      other:
-          'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      other: 'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
       desc: '',
       args: [count],
@@ -9164,6 +9160,71 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Drafts`
+  String get Drafts {
+    return Intl.message('Drafts', name: 'Drafts', desc: '', args: []);
+  }
+
+  /// `Voices is empty`
+  String get VoicesIsEmpty {
+    return Intl.message(
+      'Voices is empty',
+      name: 'VoicesIsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Supported video MP4, up to 80MB`
+  String get SupportedFormatsVideo {
+    return Intl.message(
+      'Supported video MP4, up to 80MB',
+      name: 'SupportedFormatsVideo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cannot find this voice`
+  String get CannotFindThisVoice {
+    return Intl.message(
+      'Cannot find this voice',
+      name: 'CannotFindThisVoice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue with draft`
+  String get ContinueWithDraft {
+    return Intl.message(
+      'Continue with draft',
+      name: 'ContinueWithDraft',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Use draft`
+  String get UseDraft {
+    return Intl.message('Use draft', name: 'UseDraft', desc: '', args: []);
+  }
+
+  /// `Your TOPs`
+  String get YourTOPs {
+    return Intl.message('Your TOPs', name: 'YourTOPs', desc: '', args: []);
+  }
+
+  /// `Add new`
+  String get AddNew {
+    return Intl.message('Add new', name: 'AddNew', desc: '', args: []);
+  }
+
+  /// `New TOP`
+  String get NewTOP {
+    return Intl.message('New TOP', name: 'NewTOP', desc: '', args: []);
   }
 
   /// `Create news`

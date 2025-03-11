@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-Future<void> enterNameForBranchUiKitDialog(
+Future<void> enterNameUiKitDialog(
   BuildContext context, {
   required TextEditingController controller,
   VoidCallback? onConfirmTap,
+  String? title,
+  String? buttonText,
 }) async {
   final theme = context.uiKitTheme;
   final colorsScheme = theme?.colorScheme;
@@ -15,7 +17,7 @@ Future<void> enterNameForBranchUiKitDialog(
     context,
     AlertDialogData(
       title: Text(
-        S.current.PleaseEnterABranchTitle,
+        title ?? S.current.PleaseEnterABranchTitle,
         style: theme?.boldTextTheme.title2.copyWith(
           color: colorsScheme?.inverseHeadingTypography,
         ),
@@ -44,7 +46,7 @@ Future<void> enterNameForBranchUiKitDialog(
           data: BaseUiKitButtonData(
             backgroundColor: colorsScheme?.primary,
             textColor: colorsScheme?.inversePrimary,
-            text: S.current.Confirm,
+            text: buttonText ?? S.current.Confirm,
             onPressed: () {
               focusNode.unfocus();
               onConfirmTap?.call();

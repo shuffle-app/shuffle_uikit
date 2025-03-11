@@ -47,13 +47,14 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
       width: 1.sw - EdgeInsetsFoundation.horizontal32,
       child: UiKitCardWrapper(
         borderRadius: BorderRadiusFoundation.all24,
-        clipBehavior: Clip.hardEdge,
+        clipBehavior: Clip.none,
         color: cardColor,
         child: TapRegion(
           onTapOutside: (event) {
             setState(() => showNotificationSetOverlay = false);
           },
           child: InkWell(
+            borderRadius: BorderRadiusFoundation.all24,
             onTap: () {
               widget.onTap.call();
               setState(() => showNotificationSetOverlay = false);
@@ -66,95 +67,100 @@ class _UiKitPlannerContentCardState extends State<UiKitPlannerContentCard> {
             child: Ink(
               child: Stack(
                 children: [
-                  Column(children: [
-                    if (widget.dateTime != null)
-                      Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                        Transform.translate(
-                            offset: const Offset(0, -2),
-                            child: GradientableWidget(
-                                gradient: GradientFoundation.defaultLinearGradient,
-                                child: ImageWidget(
-                                  iconData: ShuffleUiKitIcons.calendar,
-                                  height: boldTextTheme?.caption1Bold.height,
-                                  fit: BoxFit.fitHeight,
-                                ))),
-                        SpacingFoundation.horizontalSpace4,
-                        Text(
-                          DateFormat('EEEE, dd.MM.yyyy').format(widget.dateTime!),
-                          style: boldTextTheme?.caption1Bold.copyWith(overflow: TextOverflow.ellipsis),
-                          maxLines: 1,
-                        ),
-                        const Spacer(),
-                        Text(
-                          DateFormat('HH:mm').format(widget.dateTime!),
-                          style: regularTextTheme?.caption4.copyWith(
-                            color: colorScheme?.darkNeutral900,
-                          ),
-                          textAlign: TextAlign.end,
-                        ),
-                      ]).paddingOnly(bottom: SpacingFoundation.verticalSpacing4),
-                    SpacingFoundation.verticalSpace16,
-                    Expanded(
-                        child: Row(
-                      children: [
-                        context.userAvatar(
-                          size: UserAvatarSize.x40x40,
-                          type: UserTileType.ordinary,
-                          userName: widget.contentTitle,
-                          imageUrl: widget.avatarPath,
-                        ),
-                        SpacingFoundation.horizontalSpace12,
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Flexible(
-                              child: Text(
-                                widget.contentTitle,
-                                style: boldTextTheme?.caption2Bold.copyWith(overflow: TextOverflow.ellipsis),
-                                maxLines: 2,
-                              ),
-                            ),
+                  ClipRRect(
+                      clipBehavior: Clip.hardEdge,
+                      child: Column(children: [
+                        if (widget.dateTime != null)
+                          Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+                            Transform.translate(
+                                offset: const Offset(0, -2),
+                                child: GradientableWidget(
+                                    gradient: GradientFoundation.defaultLinearGradient,
+                                    child: ImageWidget(
+                                      iconData: ShuffleUiKitIcons.calendar,
+                                      height: boldTextTheme?.caption1Bold.height,
+                                      fit: BoxFit.fitHeight,
+                                    ))),
                             SpacingFoundation.horizontalSpace4,
-                            Row(
-                                children: widget.tags
-                                    .map((e) => e.widget.paddingOnly(right: SpacingFoundation.horizontalSpacing2))
-                                    .toList())
+                            Text(
+                              DateFormat('EEEE, dd.MM.yyyy').format(widget.dateTime!),
+                              style: boldTextTheme?.caption1Bold.copyWith(overflow: TextOverflow.ellipsis),
+                              maxLines: 1,
+                            ),
+                            const Spacer(),
+                            Text(
+                              DateFormat('HH:mm').format(widget.dateTime!),
+                              style: regularTextTheme?.caption4.copyWith(
+                                color: colorScheme?.darkNeutral900,
+                              ),
+                              textAlign: TextAlign.end,
+                            ),
+                          ]).paddingOnly(bottom: SpacingFoundation.verticalSpacing4),
+                        SpacingFoundation.verticalSpace16,
+                        Expanded(
+                            child: Row(
+                          children: [
+                            context.userAvatar(
+                              size: UserAvatarSize.x40x40,
+                              type: UserTileType.ordinary,
+                              userName: widget.contentTitle,
+                              imageUrl: widget.avatarPath,
+                            ),
+                            SpacingFoundation.horizontalSpace12,
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Flexible(
+                                  child: Text(
+                                    widget.contentTitle,
+                                    style: boldTextTheme?.caption2Bold.copyWith(overflow: TextOverflow.ellipsis),
+                                    maxLines: 2,
+                                  ),
+                                ),
+                                SpacingFoundation.horizontalSpace4,
+                                Row(
+                                    children: widget.tags
+                                        .map((e) => e.widget.paddingOnly(right: SpacingFoundation.horizontalSpacing2))
+                                        .toList())
+                              ],
+                            ),
                           ],
-                        ),
-                      ],
-                    ))
-                  ]).paddingAll(EdgeInsetsFoundation.all16),
+                        ))
+                      ]).paddingAll(EdgeInsetsFoundation.all16)),
                   if (widget.showNotificationSet)
                     Positioned(
-                        right: -5,
-                        top: -5,
+                        right: -2,
+                        top: 0,
                         child: GradientableWidget(
                             gradient: GradientFoundation.defaultLinearGradient,
                             child: Icon(
-                              ShuffleUiKitIcons.bell,
+                              Icons.notifications,
                               color: Colors.white,
                             ))),
                   AnimatedSwitcher(
                     duration: const Duration(milliseconds: 200),
                     child: showNotificationSetOverlay
-                        ? ColoredBox(
-                            color: ColorsFoundation.neutral48,
-                            child: Center(
-                              child: context
-                                  .button(
-                                    data: BaseUiKitButtonData(
-                                        iconInfo: BaseUiKitButtonIconData(
-                                          iconData: ShuffleUiKitIcons.bell,
-                                          color: colorScheme?.inverseSurface,
-                                        ),
-                                        borderColor: colorScheme?.inverseSurface,
-                                        onPressed: widget.onNotification,
-                                        backgroundColor: Colors.transparent),
-                                    // blurred: true,
-                                  )
-                                  .paddingSymmetric(vertical: EdgeInsetsFoundation.vertical24),
-                            ),
-                          )
+                        ? ClipRRect(
+                            borderRadius: BorderRadiusFoundation.all24,
+                            clipBehavior: Clip.hardEdge,
+                            child: ColoredBox(
+                              color: ColorsFoundation.neutral48,
+                              child: Center(
+                                child: context
+                                    .button(
+                                      data: BaseUiKitButtonData(
+                                          iconInfo: BaseUiKitButtonIconData(
+                                            iconData: ShuffleUiKitIcons.bell,
+                                            color: colorScheme?.inverseSurface,
+                                          ),
+                                          borderColor: colorScheme?.inverseSurface,
+                                          onPressed: widget.onNotification,
+                                          backgroundColor: ColorsFoundation.mutedText),
+                                      // blurred: true,
+                                    )
+                                    .paddingSymmetric(vertical: EdgeInsetsFoundation.vertical24),
+                              ),
+                            ))
                         : const SizedBox.shrink(),
                   ),
                 ],

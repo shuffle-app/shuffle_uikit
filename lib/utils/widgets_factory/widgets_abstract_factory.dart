@@ -713,6 +713,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           onPressed: data.onPressed,
           small: small ?? false,
           isOutlined: isOutlined ?? false,
+          group:data.autoSizeGroup,
         );
       case DialogButtonType.buttonBlack:
         return BlackDialogButton(
@@ -720,6 +721,8 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           fit: data.fit,
           onPressed: data.onPressed,
           small: small ?? false,
+          group:data.autoSizeGroup,
+
         );
       case null:
         throw UnimplementedError();
@@ -728,6 +731,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
           text: data.text ?? '',
           onPressed: data.onPressed,
           small: small ?? false,
+          group:data.autoSizeGroup,
         );
     }
   }
