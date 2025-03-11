@@ -367,6 +367,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Write a detailed review, use all the available characters so that as many people as possible can appreciate it",
     ),
     "AddLink": MessageLookupByLibrary.simpleMessage("Add link"),
+    "AddNew": MessageLookupByLibrary.simpleMessage("Add new"),
     "AddPhotoHere": MessageLookupByLibrary.simpleMessage("Add photo here"),
     "AddPlaceType": MessageLookupByLibrary.simpleMessage("Add place type"),
     "AddPromotion": MessageLookupByLibrary.simpleMessage("Add promotion"),
@@ -1156,6 +1157,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "A new location has opened today. Come! You\'ll like it!",
     ),
     "NewPlace": MessageLookupByLibrary.simpleMessage("New place"),
+    "NewTOP": MessageLookupByLibrary.simpleMessage("New TOP"),
     "News": MessageLookupByLibrary.simpleMessage("News"),
     "Next": MessageLookupByLibrary.simpleMessage("Next"),
     "NextElements": m56,
@@ -2255,6 +2257,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your Show up ratio",
     ),
     "YourStartNotificationWillBeShownXTimes": m121,
+    "YourTOPs": MessageLookupByLibrary.simpleMessage("Your TOPs"),
     "YourTop": MessageLookupByLibrary.simpleMessage("Your TOP"),
     "YourTraffic": MessageLookupByLibrary.simpleMessage("Your traffic"),
     "YourTurnoutRate": MessageLookupByLibrary.simpleMessage(
