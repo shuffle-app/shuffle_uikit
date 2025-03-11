@@ -41,7 +41,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
     textPainter.layout();
 
     final chipWidth = SpacingFoundation.horizontalSpacing8 +
-        (SpacingFoundation.horizontalSpacing16 * 2) +
+        (SpacingFoundation.horizontalSpacing16 * 2.3) +
         textPainter.width +
         (40.h - SpacingFoundation.verticalSpacing14.w * 2.5);
 
@@ -85,7 +85,7 @@ class UiKitTitledFilterChip extends StatelessWidget {
                           color: foreground,
                         )),
                     // SpacingFoundation.horizontalSpace8,
-                    Text(title, style: textStyle).paddingOnly(left: SpacingFoundation.horizontalSpacing14.w),
+                    Text(title, style: textStyle,maxLines: 1,).paddingOnly(left: SpacingFoundation.horizontalSpacing14.w),
                   ],
                 )),
     );
