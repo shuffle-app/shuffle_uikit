@@ -1079,7 +1079,10 @@
   "Drafts": "Черновики",
   "VoicesIsEmpty": "Нет голосовых",
   "SupportedFormatsVideo": "Поддерживаемы форматы видео MP4, до 80MB",
-  "CannotFindThisVoice": "Не удаётся найти это голосовое"
+  "CannotFindThisVoice": "Не удаётся найти это голосовое",
+  "YourTOPs": "Твои ТОПы",
+  "AddNew": "Добавить новый",
+  "NewTOP": "Новый ТОП"
 
 }
 

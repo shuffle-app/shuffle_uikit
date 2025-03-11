@@ -366,6 +366,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "एक विस्तृत समीक्षा लिखें, सभी उपलब्ध वर्णों का उपयोग करें ताकि जितने अधिक लोग संवाद कर सकें",
     ),
     "AddLink": MessageLookupByLibrary.simpleMessage("लिंक जोड़ें"),
+    "AddNew": MessageLookupByLibrary.simpleMessage("Add new"),
     "AddPhotoHere": MessageLookupByLibrary.simpleMessage("फोटो यहाँ जोड़ें"),
     "AddPlaceType": MessageLookupByLibrary.simpleMessage("जगह प्रकार जोड़ें"),
     "AddPromotion": MessageLookupByLibrary.simpleMessage("प्रचार जोड़ें"),
@@ -1154,6 +1155,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "आज एक नया स्थान खुल गया है ।  आओ! आप इसे पसंद करेंगे!",
     ),
     "NewPlace": MessageLookupByLibrary.simpleMessage("नयी जगह"),
+    "NewTOP": MessageLookupByLibrary.simpleMessage("New TOP"),
     "News": MessageLookupByLibrary.simpleMessage("समाचार"),
     "Next": MessageLookupByLibrary.simpleMessage("अगला"),
     "NextElements": m56,
@@ -2278,6 +2280,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your Show up ratio",
     ),
     "YourStartNotificationWillBeShownXTimes": m121,
+    "YourTOPs": MessageLookupByLibrary.simpleMessage("Your TOPs"),
     "YourTop": MessageLookupByLibrary.simpleMessage("Your TOP"),
     "YourTraffic": MessageLookupByLibrary.simpleMessage("आपका ट्रैफ़िक"),
     "YourTurnoutRate": MessageLookupByLibrary.simpleMessage(
