@@ -10,22 +10,20 @@ class UiKitPopUpMenuButton extends StatelessWidget {
     super.key,
     required this.options,
   }) : asset = ShuffleUiKitIcons.morevert {
-    items = (context) =>
-        options
-            .map(
-              (option) =>
-              PopupMenuItem(
-                value: option.value,
-                onTap: option.onTap,
-                child: Text(
-                  option.title,
-                  style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
-                    color: option.textColor ?? Colors.black,
-                  ),
-                ),
+    items = (context) => options
+        .map(
+          (option) => PopupMenuItem(
+            value: option.value,
+            onTap: option.onTap,
+            child: Text(
+              option.title,
+              style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
+                color: option.textColor ?? Colors.black,
               ),
+            ),
+          ),
         )
-            .toList();
+        .toList();
   }
 
   UiKitPopUpMenuButton.optionWithIcon({
@@ -35,46 +33,51 @@ class UiKitPopUpMenuButton extends StatelessWidget {
     final longestTitle = options.map((option) => option.title).fold(0, (i, v) => v.length > i ? v.length : i);
     final TextPainter painter = TextPainter(
         text: TextSpan(
-            text: options.map((option) => option.title).firstWhere((e) => e.length == longestTitle), style: TextStyle(
-          fontFamily: 'Unbounded',
-          fontSize: 12.w,
-          fontWeight: FontWeight.w500,
-          // color: foregroundColor,
-          package: 'shuffle_uikit',
-        )),
+            text: options.map((option) => option.title).firstWhere((e) => e.length == longestTitle),
+            style: TextStyle(
+              fontFamily: 'Unbounded',
+              fontSize: 12.w,
+              fontWeight: FontWeight.w500,
+              // color: foregroundColor,
+              package: 'shuffle_uikit',
+            )),
         textDirection: TextDirection.ltr,
         maxLines: 1);
     painter.layout();
     final width = painter.width;
 
-    items = (context) =>
-        options
-            .map(
-              (option) =>
-              PopupMenuItem(
-                value: option.value,
-                onTap: option.onTap,
-                child: SizedBox(
-                    width: width.w + SpacingFoundation.horizontalSpacing24,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          option.title,
-                          style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
-                            color: option.textColor ?? Colors.black,
-                          ),
+    items = (context) => options
+        .map(
+          (option) => PopupMenuItem(
+            value: option.value,
+            onTap: option.onTap,
+            padding: EdgeInsets.zero,
+            child: SizedBox(
+                width: width + SpacingFoundation.horizontalSpacing24,
+                child: Transform.translate(
+                  offset: Offset(SpacingFoundation.horizontalSpacing20, 0),
+                  child: Row(
+                    // crossAxisAlignment: CrossAxisAlignment.stretch,
+                    // mainAxisAlignment: MainAxisAlignment.s,
+                    children: [
+                      Expanded(
+                          child: Text(
+                        option.title,
+                        style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
+                          color: option.textColor ?? Colors.black,
                         ),
-                        Icon(
-                          option.icon,
-                          size: 24,
-                          color: option.iconColor ?? Colors.black,
-                        ),
-                      ],
-                    )),
-              ),
+                      )),
+                      Icon(
+                        option.icon,
+                        size: 24,
+                        color: option.iconColor ?? Colors.black,
+                      ),
+                    ],
+                  ),
+                )),
+          ),
         )
-            .toList();
+        .toList();
   }
 
   UiKitPopUpMenuButton.custom({
@@ -82,12 +85,11 @@ class UiKitPopUpMenuButton extends StatelessWidget {
     required List<Widget> children,
     required this.asset,
   }) : options = [] {
-    items = (context) =>
-        children
-            .map(
-              (option) => PopupMenuItem(child: option),
+    items = (context) => children
+        .map(
+          (option) => PopupMenuItem(child: option),
         )
-            .toList();
+        .toList();
   }
 
   UiKitPopUpMenuButton.customMenu({

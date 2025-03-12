@@ -1098,6 +1098,6 @@
   "HoursAgoX": "{count} {count, plural, =0{hours} =1{hour} =2{hours} few{hours} many{hours} other{hours}} ago",
   "MinAgoX": "min ago",
   "SecAgoX": "sec ago",
-  "JustNow": "Just now"
-
+  "JustNow": "Just now",
+  "YouHaveUnpaidTickets": "You have unpaid tickets to review, do you want to view the in My booking page?"
 }

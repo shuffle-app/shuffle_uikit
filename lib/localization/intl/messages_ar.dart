@@ -2234,6 +2234,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "YouHaveExistingItems": MessageLookupByLibrary.simpleMessage(
       "You have existing items",
     ),
+    "YouHaveUnpaidTickets": MessageLookupByLibrary.simpleMessage(
+      "You have unpaid tickets to review, do you want to view the in My booking page?",
+    ),
     "YouMissedALot": MessageLookupByLibrary.simpleMessage("You missed a lot"),
     "YouProgressed": MessageLookupByLibrary.simpleMessage("You progressed!"),
     "YouReceived": MessageLookupByLibrary.simpleMessage("You received"),

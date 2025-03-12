@@ -2248,6 +2248,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "YouHaveExistingItems": MessageLookupByLibrary.simpleMessage(
       "У вас есть созданные записи",
     ),
+    "YouHaveUnpaidTickets": MessageLookupByLibrary.simpleMessage(
+      "У вас есть неоплаченные билеты, перейдите в список заказов, чтобы оплатить уже созданный билет",
+    ),
     "YouMissedALot": MessageLookupByLibrary.simpleMessage(
       "Вы многое пропустили",
     ),
