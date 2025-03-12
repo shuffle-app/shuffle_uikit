@@ -1104,7 +1104,8 @@
   "CreateAPromotionForYourXAndIncreaseAttendance": "Создайте рекламную акцию для твоего {x} и увеличьте посещаемость",
   "PlacePromo": "Места",
   "EventPromo": "Ивента",
-  "PleaseSelectImage": "Пожалуйста, выберите изображение"
+  "PleaseSelectImage": "Пожалуйста, выберите изображение",
+  "AddAtLeastOneXToPromoteIt": "Добавьте хотя бы одно {x} для его продвижения"
 
 }
 

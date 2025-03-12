@@ -9390,6 +9390,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Add at least one {x} to promote it`
+  String AddAtLeastOneXToPromoteIt(Object x) {
+    return Intl.message(
+      'Add at least one $x to promote it',
+      name: 'AddAtLeastOneXToPromoteIt',
+      desc: '',
+      args: [x],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
