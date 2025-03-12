@@ -51,7 +51,7 @@ class WhiteDialogButton extends StatelessWidget implements ButtonFactory {
               child: group != null
                   ? AutoSizeText(
                       text.toUpperCase(),
-                      style: textStyle?.copyWith(color: Colors.white),
+                      style: textStyle?.copyWith(color: Colors.black),
                       maxLines: 1,
                       group: group,
                     )
@@ -63,7 +63,7 @@ class WhiteDialogButton extends StatelessWidget implements ButtonFactory {
           : group != null
               ? AutoSizeText(
                   text.toUpperCase(),
-                  style: textStyle?.copyWith(color: Colors.white),
+                  style: textStyle?.copyWith(color: Colors.black),
                   maxLines: 1,
                   group: group,
                 )

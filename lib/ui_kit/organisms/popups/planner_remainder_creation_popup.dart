@@ -28,6 +28,14 @@ class _PlannerRemainderCreationPopupState extends State<PlannerRemainderCreation
     super.initState();
   }
 
+  @override
+  void didUpdateWidget(covariant PlannerRemainderCreationPopup oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    setState(() {
+      switchedOn = widget.isActivated;
+    });
+  }
+
   onChanged(bool value) {
     setState(() {
       switchedOn = value;

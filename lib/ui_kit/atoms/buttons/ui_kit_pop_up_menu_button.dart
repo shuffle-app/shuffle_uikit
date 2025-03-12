@@ -30,28 +30,50 @@ class UiKitPopUpMenuButton extends StatelessWidget {
     super.key,
     required this.options,
   }) : asset = ShuffleUiKitIcons.morevert {
+    final longestTitle = options.map((option) => option.title).fold(0, (i, v) => v.length > i ? v.length : i);
+    final TextPainter painter = TextPainter(
+        text: TextSpan(
+            text: options.map((option) => option.title).firstWhere((e) => e.length == longestTitle),
+            style: TextStyle(
+              fontFamily: 'Unbounded',
+              fontSize: 12.w,
+              fontWeight: FontWeight.w500,
+              // color: foregroundColor,
+              package: 'shuffle_uikit',
+            )),
+        textDirection: TextDirection.ltr,
+        maxLines: 1);
+    painter.layout();
+    final width = painter.width;
+
     items = (context) => options
         .map(
           (option) => PopupMenuItem(
             value: option.value,
             onTap: option.onTap,
+            padding: EdgeInsets.zero,
             child: SizedBox(
-                width: 100.w,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      option.title,
-                      style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
-                        color: option.textColor ?? Colors.black,
+                width: width + SpacingFoundation.horizontalSpacing24,
+                child: Transform.translate(
+                  offset: Offset(SpacingFoundation.horizontalSpacing20, 0),
+                  child: Row(
+                    // crossAxisAlignment: CrossAxisAlignment.stretch,
+                    // mainAxisAlignment: MainAxisAlignment.s,
+                    children: [
+                      Expanded(
+                          child: Text(
+                        option.title,
+                        style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
+                          color: option.textColor ?? Colors.black,
+                        ),
+                      )),
+                      Icon(
+                        option.icon,
+                        size: 24,
+                        color: option.iconColor ?? Colors.black,
                       ),
-                    ),
-                    Icon(
-                      option.icon,
-                      size: 24,
-                      color: option.iconColor ?? Colors.black,
-                    ),
-                  ],
+                    ],
+                  ),
                 )),
           ),
         )
