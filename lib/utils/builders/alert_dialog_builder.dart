@@ -20,7 +20,7 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
         clipBehavior: Clip.hardEdge,
         surfaceTintColor: Colors.transparent,
         shadowColor: Colors.transparent,
-        insetPadding: data.insetPadding ?? EdgeInsets.zero,
+        insetPadding: data.insetPadding ?? EdgeInsets.symmetric(horizontal: SpacingFoundation.horizontalSpacing16),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusFoundation.all24,
         ),
@@ -36,18 +36,35 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
         contentPadding: data.contentPadding ?? const EdgeInsets.fromLTRB(24, 8, 24, 8),
         actions: data.actions ??
             [
-              if (data.additionalButton != null) data.additionalButton!,
-              if (data.defaultButtonText.isNotEmpty)
-                context.dialogButton(
-                  data: BaseUiKitButtonData(
-                    onPressed: data.onPop ?? () => context.pop(),
-                    text: data.defaultButtonText,
-                  ),
-                  small: data.defaultButtonSmall ?? true,
-                  isOutlined: data.defaultButtonOutlined,
-                  dialogButtonType:
-                      data.additionalButton != null ? DialogButtonType.buttonWhite : DialogButtonType.buttonBlack,
-                )
+              if (data.actionsAlignment == Axis.vertical) ...[
+                if (data.additionalButton != null) SizedBox(width: 0.8.sw, child: data.additionalButton!),
+                if (data.defaultButtonText.isNotEmpty)
+                  SizedBox(
+                      width: 0.8.sw,
+                      child: context.dialogButton(
+                        data: BaseUiKitButtonData(
+                          onPressed: data.onPop ?? () => context.pop(),
+                          text: data.defaultButtonText,
+                        ),
+                        small: data.defaultButtonSmall ?? true,
+                        isOutlined: data.defaultButtonOutlined,
+                        dialogButtonType:
+                            data.additionalButton != null ? DialogButtonType.buttonWhite : DialogButtonType.buttonBlack,
+                      ))
+              ] else ...[
+                if (data.additionalButton != null) data.additionalButton!,
+                if (data.defaultButtonText.isNotEmpty)
+                  context.dialogButton(
+                    data: BaseUiKitButtonData(
+                      onPressed: data.onPop ?? () => context.pop(),
+                      text: data.defaultButtonText,
+                    ),
+                    small: data.defaultButtonSmall ?? true,
+                    isOutlined: data.defaultButtonOutlined,
+                    dialogButtonType:
+                        data.additionalButton != null ? DialogButtonType.buttonWhite : DialogButtonType.buttonBlack,
+                  )
+              ]
             ],
         actionsAlignment: MainAxisAlignment.center,
         actionsPadding: data.actionsPadding ?? const EdgeInsets.fromLTRB(24, 8, 24, 24),
@@ -87,6 +104,7 @@ class AlertDialogData {
   final EdgeInsets? contentPadding;
   final EdgeInsets? titlePadding;
   final EdgeInsets? actionsPadding;
+  final Axis? actionsAlignment;
   final VoidCallback? onPop;
   final Widget? title;
   final Widget? content;
@@ -108,6 +126,7 @@ class AlertDialogData {
     this.defaultButtonSmall,
     this.defaultButtonOutlined,
     this.actions,
+    this.actionsAlignment,
     this.insetPadding,
     this.contentPadding,
     this.titlePadding,
