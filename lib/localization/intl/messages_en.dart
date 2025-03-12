@@ -1439,6 +1439,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PleaseSelectGender": MessageLookupByLibrary.simpleMessage(
       "Please select a gender",
     ),
+    "PleaseSelectImage": MessageLookupByLibrary.simpleMessage(
+      "Please select image",
+    ),
     "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
       "Please select one type",
     ),

@@ -1103,6 +1103,7 @@
   "Promotions": "Promotions",
   "CreateAPromotionForYourXAndIncreaseAttendance": "Create a promotion for your {x} and increase attendance",
   "PlacePromo": "Place",
-  "EventPromo": "Event"
+  "EventPromo": "Event",
+  "PleaseSelectImage": "Please select image"
 
 }

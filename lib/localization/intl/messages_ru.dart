@@ -1444,6 +1444,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PleaseSelectGender": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, укажи пол",
     ),
+    "PleaseSelectImage": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, выберите изображение",
+    ),
     "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, выбери один тип",
     ),

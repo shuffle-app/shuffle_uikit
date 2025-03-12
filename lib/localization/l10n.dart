@@ -9380,6 +9380,16 @@ class S {
   String get EventPromo {
     return Intl.message('Event', name: 'EventPromo', desc: '', args: []);
   }
+
+  /// `Please select image`
+  String get PleaseSelectImage {
+    return Intl.message(
+      'Please select image',
+      name: 'PleaseSelectImage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

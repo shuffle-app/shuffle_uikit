@@ -1103,7 +1103,8 @@
   "Promotions": "Акции",
   "CreateAPromotionForYourXAndIncreaseAttendance": "Создайте рекламную акцию для твоего {x} и увеличьте посещаемость",
   "PlacePromo": "Места",
-  "EventPromo": "Ивента"
+  "EventPromo": "Ивента",
+  "PleaseSelectImage": "Пожалуйста, выберите изображение"
 
 }
 
