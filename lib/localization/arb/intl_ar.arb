@@ -1099,5 +1099,12 @@
   "MinAgoX": "min ago",
   "SecAgoX": "sec ago",
   "JustNow": "Just now",
-  "YouHaveUnpaidTickets": "You have unpaid tickets to review, do you want to view the in My booking page?"
+  "YouHaveUnpaidTickets": "You have unpaid tickets to review, do you want to view the in My booking page?",
+  "Promotions": "Promotions",
+  "CreateAPromotionForYourXAndIncreaseAttendance": "Create a promotion for your {x} and increase attendance",
+  "PlacePromo": "Place",
+  "EventPromo": "Event",
+  "PleaseSelectImage": "Please select image",
+  "AddAtLeastOneXToPromoteIt": "Add at least one {x} to promote it"
+
 }

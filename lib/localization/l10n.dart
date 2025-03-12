@@ -9355,6 +9355,51 @@ class S {
       args: [],
     );
   }
+
+  /// `Promotions`
+  String get Promotions {
+    return Intl.message('Promotions', name: 'Promotions', desc: '', args: []);
+  }
+
+  /// `Create a promotion for your {x} and increase attendance`
+  String CreateAPromotionForYourXAndIncreaseAttendance(Object x) {
+    return Intl.message(
+      'Create a promotion for your $x and increase attendance',
+      name: 'CreateAPromotionForYourXAndIncreaseAttendance',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `Place`
+  String get PlacePromo {
+    return Intl.message('Place', name: 'PlacePromo', desc: '', args: []);
+  }
+
+  /// `Event`
+  String get EventPromo {
+    return Intl.message('Event', name: 'EventPromo', desc: '', args: []);
+  }
+
+  /// `Please select image`
+  String get PleaseSelectImage {
+    return Intl.message(
+      'Please select image',
+      name: 'PleaseSelectImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add at least one {x} to promote it`
+  String AddAtLeastOneXToPromoteIt(Object x) {
+    return Intl.message(
+      'Add at least one $x to promote it',
+      name: 'AddAtLeastOneXToPromoteIt',
+      desc: '',
+      args: [x],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

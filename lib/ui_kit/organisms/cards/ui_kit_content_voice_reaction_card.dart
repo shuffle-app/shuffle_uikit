@@ -8,6 +8,7 @@ class UiKitContentVoiceReactionCard extends StatelessWidget {
   final DateTime? datePosted;
   final UiKitAudioMessageTile? audioMessage;
   final Widget? customVoiceWidget;
+  final VoidCallback? onItemTap;
 
   const UiKitContentVoiceReactionCard({
     super.key,
@@ -17,6 +18,7 @@ class UiKitContentVoiceReactionCard extends StatelessWidget {
     this.datePosted,
     this.audioMessage,
     this.customVoiceWidget,
+    this.onItemTap,
   });
 
   double get imageWidth => 0.25.sw;
@@ -31,50 +33,53 @@ class UiKitContentVoiceReactionCard extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadiusFoundation.all12,
-              child: ImageWidget(
-                link: imageLink,
-                width: imageWidth,
-                height: imageHeight,
-                fit: BoxFit.cover,
-              ),
-            ),
-            SpacingFoundation.horizontalSpace12,
-            Expanded(
-              child: SizedBox(
-                height: imageHeight,
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Text(
-                          contentTitle,
-                          style: boldTextTheme?.caption1Bold,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        if (datePosted != null)
-                          Text(
-                            formatDifference(datePosted!),
-                            style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.mutedText),
-                          ),
-                      ],
-                    ),
-                    UiKitTagsWidget(baseTags: properties),
-                  ],
+        GestureDetector(
+          onTap: onItemTap,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadiusFoundation.all12,
+                child: ImageWidget(
+                  link: imageLink,
+                  width: imageWidth,
+                  height: imageHeight,
+                  fit: BoxFit.cover,
                 ),
               ),
-            ),
-          ],
+              SpacingFoundation.horizontalSpace12,
+              Expanded(
+                child: SizedBox(
+                  height: imageHeight,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Text(
+                            contentTitle,
+                            style: boldTextTheme?.caption1Bold,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          if (datePosted != null)
+                            Text(
+                              formatDifference(datePosted!),
+                              style: boldTextTheme?.caption1Medium.copyWith(color: ColorsFoundation.mutedText),
+                            ),
+                        ],
+                      ),
+                      UiKitTagsWidget(baseTags: properties),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
         SpacingFoundation.verticalSpace8,
         customVoiceWidget ?? SizedBox.shrink(),
