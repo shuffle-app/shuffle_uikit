@@ -1081,7 +1081,11 @@
   "SupportedFormatsVideo": "Поддерживаемы форматы видео MP4, до 80MB",
   "CannotFindThisVoice": "Не удаётся найти это голосовое",
   "ContinueWithDraft": "Продолжить редактирование",
-  "UseDraft": "Использовать черновик"
+  "UseDraft": "Использовать черновик",
+  "Promotions": "Акции",
+  "CreateAPromotionForYourXAndIncreaseAttendance": "Создайте рекламную акцию для твоего {x} и увеличьте посещаемость",
+  "PlacePromo": "Места",
+  "EventPromo": "Ивента"
 
 }
 

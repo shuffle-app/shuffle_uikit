@@ -1081,6 +1081,10 @@
   "SupportedFormatsVideo": "Supported video MP4, up to 80MB",
   "CannotFindThisVoice": "Cannot find this voice",
   "ContinueWithDraft": "Continue with draft",
-  "UseDraft": "Use draft"
+  "UseDraft": "Use draft",
+  "Promotions": "Promotions",
+  "CreateAPromotionForYourXAndIncreaseAttendance": "Create a promotion for your {x} and increase attendance",
+  "PlacePromo": "Place",
+  "EventPromo": "Event"
 
 }
