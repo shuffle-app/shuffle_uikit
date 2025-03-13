@@ -364,6 +364,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AcceptDonations": MessageLookupByLibrary.simpleMessage(
       "दान स्वीकार करें या दूसरों की सपने पूरे करने में मदद करें",
     ),
+    "AcceptPayments": MessageLookupByLibrary.simpleMessage("Accept payments"),
     "Account": MessageLookupByLibrary.simpleMessage("खाता"),
     "Accrual": MessageLookupByLibrary.simpleMessage("प्रोद्भवन"),
     "Activation": MessageLookupByLibrary.simpleMessage("सक्रियण"),
@@ -591,6 +592,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ClickEnterToSearch": MessageLookupByLibrary.simpleMessage(
       "क्लिक करें दर्ज खोज करने के लिए",
     ),
+    "Close": MessageLookupByLibrary.simpleMessage("Close"),
     "CodeScanner": MessageLookupByLibrary.simpleMessage("Code scanner"),
     "CollapseThread": MessageLookupByLibrary.simpleMessage("धागा संकुचित करें"),
     "Comments": m13,
@@ -918,8 +920,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "FollowersCount": m40,
     "Followings": MessageLookupByLibrary.simpleMessage("निम्नलिखित"),
     "For": MessageLookupByLibrary.simpleMessage("के लिए"),
+    "ForCrypto": MessageLookupByLibrary.simpleMessage("For crypto"),
     "ForFormattedPrice": m41,
+    "ForMoney": MessageLookupByLibrary.simpleMessage("For money"),
     "ForPeriod": MessageLookupByLibrary.simpleMessage("के लिए"),
+    "ForYourBooking": MessageLookupByLibrary.simpleMessage("For your booking"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("पासवर्ड भूल गए"),
     "Free": MessageLookupByLibrary.simpleMessage("मुफ्त"),
     "FreeNowXLater": m42,
@@ -1000,6 +1005,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Icon": MessageLookupByLibrary.simpleMessage("आइकन"),
     "Icons": MessageLookupByLibrary.simpleMessage("Icons"),
     "IdealRoute": MessageLookupByLibrary.simpleMessage("आदर्श मार्ग"),
+    "If": MessageLookupByLibrary.simpleMessage("If"),
     "IfPlaceAlreadyExistsIn": MessageLookupByLibrary.simpleMessage(
       "If a place already exists in",
     ),
@@ -1075,6 +1081,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "It is necessary to choose a day",
     ),
     "Judaism": MessageLookupByLibrary.simpleMessage("यहूदी धर्म"),
+    "Just": MessageLookupByLibrary.simpleMessage("Just"),
     "JustConfirmIt": MessageLookupByLibrary.simpleMessage("just confirm it"),
     "JustNow": MessageLookupByLibrary.simpleMessage("Just now"),
     "KeepItUp": MessageLookupByLibrary.simpleMessage(
@@ -1252,6 +1259,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
       "शफल में स्थानों और घटनाओं का दौरा करें और अद्भुत वीडियो-प्रतिक्रियाएँ बनाएं",
     ),
+    "Not": MessageLookupByLibrary.simpleMessage("Not"),
     "NotNow": MessageLookupByLibrary.simpleMessage("अभी नहीं"),
     "NotOften": MessageLookupByLibrary.simpleMessage("अक्सर नहीं"),
     "NotSet": MessageLookupByLibrary.simpleMessage("सेट नहीं किया गया"),
@@ -1302,6 +1310,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "OnboardingSlide3": MessageLookupByLibrary.simpleMessage(
       "बस आराम करने के लिए",
     ),
+    "Online": MessageLookupByLibrary.simpleMessage("Online"),
     "Ooops": MessageLookupByLibrary.simpleMessage("उफ़!"),
     "Oops": MessageLookupByLibrary.simpleMessage("Oops"),
     "OopsIWillTryAgain": MessageLookupByLibrary.simpleMessage(
@@ -1814,6 +1823,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "आपके साथ साझा किया गया",
     ),
     "ShockingContent": MessageLookupByLibrary.simpleMessage("Shocking content"),
+    "ShowBarcode": MessageLookupByLibrary.simpleMessage(
+      "Show the barcode at the entrance",
+    ),
     "ShowDeleted": MessageLookupByLibrary.simpleMessage("हटाए गए दिखाएं"),
     "ShowInContentCard": MessageLookupByLibrary.simpleMessage(
       "सामग्री कार्ड में दिखाएं",
@@ -1892,6 +1904,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Statistics": MessageLookupByLibrary.simpleMessage("आंकड़े"),
     "StatusXAvailable": m97,
     "StatusXIsNotAvailable": m98,
+    "StripeRegistration": MessageLookupByLibrary.simpleMessage(
+      "Stripe\nregistration",
+    ),
     "Submit": MessageLookupByLibrary.simpleMessage("सबमिट करें"),
     "SubmitContent": MessageLookupByLibrary.simpleMessage("सामग्री सबमिट करें"),
     "Subs": MessageLookupByLibrary.simpleMessage("सब्स"),
@@ -2003,6 +2018,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "This author does not have a suitable account",
         ),
+    "ThisBottom": MessageLookupByLibrary.simpleMessage("This bottom sheet"),
     "ThisIs": MessageLookupByLibrary.simpleMessage("यह है"),
     "ThisIsEmptyNowBook": MessageLookupByLibrary.simpleMessage(
       "यह अभी खाली है, अपनी यात्रा बुक करें और यह यहाँ दिखाई देगा",
@@ -2174,6 +2190,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Wait for the admin\'s response",
     ),
     "Wallet": MessageLookupByLibrary.simpleMessage("Wallet"),
+    "WantTo": MessageLookupByLibrary.simpleMessage("Want to"),
     "WantToChange": MessageLookupByLibrary.simpleMessage("Want to change?"),
     "WantToJoin": MessageLookupByLibrary.simpleMessage("wants to join"),
     "WeArePreparingChallengesForTomorrow": MessageLookupByLibrary.simpleMessage(
@@ -2272,11 +2289,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "YouHaveExistingItems": MessageLookupByLibrary.simpleMessage(
       "You have existing items",
     ),
+    "YouHaveTimeToPayTicket": MessageLookupByLibrary.simpleMessage(
+      "You have 15 minutes to pay, otherwise the ticket will be cancelled",
+    ),
     "YouHaveUnpaidTickets": MessageLookupByLibrary.simpleMessage(
       "You have unpaid tickets to review, do you want to view the in My booking page?",
     ),
     "YouMissedALot": MessageLookupByLibrary.simpleMessage(
       "आपने बहुत कुछ छोड़ दिया",
+    ),
+    "YouNeedSelectMethods": MessageLookupByLibrary.simpleMessage(
+      "You need to select one or more methods",
     ),
     "YouProgressed": MessageLookupByLibrary.simpleMessage("You progressed!"),
     "YouReceived": MessageLookupByLibrary.simpleMessage("आपको मिला"),

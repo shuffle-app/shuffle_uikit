@@ -366,6 +366,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AcceptDonations": MessageLookupByLibrary.simpleMessage(
       "Принимать донаты или помогать другим воплотить мечты",
     ),
+    "AcceptPayments": MessageLookupByLibrary.simpleMessage("Принимай оплаты"),
     "Account": MessageLookupByLibrary.simpleMessage("Аккаунт"),
     "Accrual": MessageLookupByLibrary.simpleMessage("Начисление"),
     "Activation": MessageLookupByLibrary.simpleMessage("Активация"),
@@ -596,6 +597,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ClickEnterToSearch": MessageLookupByLibrary.simpleMessage(
       "Нажми Ввод для поиска",
     ),
+    "Close": MessageLookupByLibrary.simpleMessage("Закрой"),
     "CodeScanner": MessageLookupByLibrary.simpleMessage("Сканер кода"),
     "CollapseThread": MessageLookupByLibrary.simpleMessage("Свернуть ветку"),
     "Comments": m13,
@@ -919,8 +921,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "FollowersCount": m40,
     "Followings": MessageLookupByLibrary.simpleMessage("Подписки"),
     "For": MessageLookupByLibrary.simpleMessage("Для"),
+    "ForCrypto": MessageLookupByLibrary.simpleMessage("За крипто"),
     "ForFormattedPrice": m41,
+    "ForMoney": MessageLookupByLibrary.simpleMessage("За деньги"),
     "ForPeriod": MessageLookupByLibrary.simpleMessage("на"),
+    "ForYourBooking": MessageLookupByLibrary.simpleMessage(
+      "Для бронирования контента",
+    ),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("Забыл пароль"),
     "Free": MessageLookupByLibrary.simpleMessage("Бесплатно"),
     "FreeNowXLater": m42,
@@ -1001,6 +1008,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Icon": MessageLookupByLibrary.simpleMessage("Иконка"),
     "Icons": MessageLookupByLibrary.simpleMessage("Иконки"),
     "IdealRoute": MessageLookupByLibrary.simpleMessage("Идеальный маршрут"),
+    "If": MessageLookupByLibrary.simpleMessage("Если"),
     "IfPlaceAlreadyExistsIn": MessageLookupByLibrary.simpleMessage(
       "Если место уже существует в",
     ),
@@ -1073,6 +1081,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Необходимо выбрать день",
     ),
     "Judaism": MessageLookupByLibrary.simpleMessage("Иудаизм"),
+    "Just": MessageLookupByLibrary.simpleMessage("Просто"),
     "JustConfirmIt": MessageLookupByLibrary.simpleMessage(
       "просто подтверди это",
     ),
@@ -1171,7 +1180,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "My": MessageLookupByLibrary.simpleMessage("Мой"),
     "MyBooking": MessageLookupByLibrary.simpleMessage("Мои букинги"),
     "MyCard": MessageLookupByLibrary.simpleMessage("Профиль"),
-    "MyEvents": MessageLookupByLibrary.simpleMessage("Мои события"),
+    "MyEvents": MessageLookupByLibrary.simpleMessage("События"),
     "MyFeedback": MessageLookupByLibrary.simpleMessage("Мои отзывы"),
     "MyReactions": MessageLookupByLibrary.simpleMessage("Мои реакции"),
     "NFT": MessageLookupByLibrary.simpleMessage("NFT"),
@@ -1244,6 +1253,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
       "Посещайте места и события в Shuffle и делитесь видеореакциями",
     ),
+    "Not": MessageLookupByLibrary.simpleMessage("Нет"),
     "NotNow": MessageLookupByLibrary.simpleMessage("Не сейчас"),
     "NotOften": MessageLookupByLibrary.simpleMessage("Не часто"),
     "NotSet": MessageLookupByLibrary.simpleMessage("Не указано"),
@@ -1294,6 +1304,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "развлечения\nи бизнес",
     ),
     "OnboardingSlide3": MessageLookupByLibrary.simpleMessage("просто чилить"),
+    "Online": MessageLookupByLibrary.simpleMessage("Онлайн"),
     "Ooops": MessageLookupByLibrary.simpleMessage("Ууупс!"),
     "Oops": MessageLookupByLibrary.simpleMessage("Уупс"),
     "OopsIWillTryAgain": MessageLookupByLibrary.simpleMessage(
@@ -1813,6 +1824,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ShockingContent": MessageLookupByLibrary.simpleMessage(
       "Шокирующий контент",
     ),
+    "ShowBarcode": MessageLookupByLibrary.simpleMessage(
+      "Покажи штрих-код на входе",
+    ),
     "ShowDeleted": MessageLookupByLibrary.simpleMessage("Показать удаленные"),
     "ShowInContentCard": MessageLookupByLibrary.simpleMessage(
       "Показать в карточке контента",
@@ -1893,6 +1907,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Statistics": MessageLookupByLibrary.simpleMessage("Статистика"),
     "StatusXAvailable": m97,
     "StatusXIsNotAvailable": m98,
+    "StripeRegistration": MessageLookupByLibrary.simpleMessage(
+      "Регистрация в страйп",
+    ),
     "Submit": MessageLookupByLibrary.simpleMessage("Отправить"),
     "SubmitContent": MessageLookupByLibrary.simpleMessage("Предложить контент"),
     "Subs": MessageLookupByLibrary.simpleMessage("Сабы"),
@@ -1998,6 +2015,7 @@ class MessageLookup extends MessageLookupByLibrary {
         MessageLookupByLibrary.simpleMessage(
           "У этого автора нет подходящей учетной записи",
         ),
+    "ThisBottom": MessageLookupByLibrary.simpleMessage("Этот боттом"),
     "ThisIs": MessageLookupByLibrary.simpleMessage("Это"),
     "ThisIsEmptyNowBook": MessageLookupByLibrary.simpleMessage(
       "Пока здесь пусто, забронируйте посещение и оно появится здесь",
@@ -2169,6 +2187,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ждите ответа админа чата",
     ),
     "Wallet": MessageLookupByLibrary.simpleMessage("Кошелек"),
+    "WantTo": MessageLookupByLibrary.simpleMessage("Хочешь"),
     "WantToChange": MessageLookupByLibrary.simpleMessage("Хотите изменить?"),
     "WantToJoin": MessageLookupByLibrary.simpleMessage("хочет присоединиться"),
     "WeArePreparingChallengesForTomorrow": MessageLookupByLibrary.simpleMessage(
@@ -2261,11 +2280,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "YouHaveExistingItems": MessageLookupByLibrary.simpleMessage(
       "У вас есть созданные записи",
     ),
+    "YouHaveTimeToPayTicket": MessageLookupByLibrary.simpleMessage(
+      "15 минут для оплаты билета, иначе он вернется в общий пул",
+    ),
     "YouHaveUnpaidTickets": MessageLookupByLibrary.simpleMessage(
       "У вас есть неоплаченные билеты, перейдите в список заказов, чтобы оплатить уже созданный билет",
     ),
     "YouMissedALot": MessageLookupByLibrary.simpleMessage(
       "Вы многое пропустили",
+    ),
+    "YouNeedSelectMethods": MessageLookupByLibrary.simpleMessage(
+      "You need to select one or more methods",
     ),
     "YouProgressed": MessageLookupByLibrary.simpleMessage("Вы продвинулись!"),
     "YouReceived": MessageLookupByLibrary.simpleMessage("Вы получили"),

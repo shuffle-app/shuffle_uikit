@@ -9400,6 +9400,116 @@ class S {
       args: [x],
     );
   }
+
+  /// `You have 15 minutes to pay, otherwise the ticket will be cancelled`
+  String get YouHaveTimeToPayTicket {
+    return Intl.message(
+      'You have 15 minutes to pay, otherwise the ticket will be cancelled',
+      name: 'YouHaveTimeToPayTicket',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show the barcode at the entrance`
+  String get ShowBarcode {
+    return Intl.message(
+      'Show the barcode at the entrance',
+      name: 'ShowBarcode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Stripe\nregistration`
+  String get StripeRegistration {
+    return Intl.message(
+      'Stripe\nregistration',
+      name: 'StripeRegistration',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accept payments`
+  String get AcceptPayments {
+    return Intl.message(
+      'Accept payments',
+      name: 'AcceptPayments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Online`
+  String get Online {
+    return Intl.message('Online', name: 'Online', desc: '', args: []);
+  }
+
+  /// `Want to`
+  String get WantTo {
+    return Intl.message('Want to', name: 'WantTo', desc: '', args: []);
+  }
+
+  /// `For your booking`
+  String get ForYourBooking {
+    return Intl.message(
+      'For your booking',
+      name: 'ForYourBooking',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You need to select one or more methods`
+  String get YouNeedSelectMethods {
+    return Intl.message(
+      'You need to select one or more methods',
+      name: 'YouNeedSelectMethods',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not`
+  String get Not {
+    return Intl.message('Not', name: 'Not', desc: '', args: []);
+  }
+
+  /// `Close`
+  String get Close {
+    return Intl.message('Close', name: 'Close', desc: '', args: []);
+  }
+
+  /// `This bottom sheet`
+  String get ThisBottom {
+    return Intl.message(
+      'This bottom sheet',
+      name: 'ThisBottom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If`
+  String get If {
+    return Intl.message('If', name: 'If', desc: '', args: []);
+  }
+
+  /// `Just`
+  String get Just {
+    return Intl.message('Just', name: 'Just', desc: '', args: []);
+  }
+
+  /// `For money`
+  String get ForMoney {
+    return Intl.message('For money', name: 'ForMoney', desc: '', args: []);
+  }
+
+  /// `For crypto`
+  String get ForCrypto {
+    return Intl.message('For crypto', name: 'ForCrypto', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

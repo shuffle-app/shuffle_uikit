@@ -133,7 +133,7 @@
   "NothingFound": "Ничего не найдено",
   "FindSomeoneToHangOutWith": "Найти с кем затусить",
   "NPlace": "{placeIndex} место",
-  "MyEvents": "Мои события",
+  "MyEvents": "События",
   "AskOrSupport": "Попросить или помочь",
   "FulfillTheDream": "Исполнить мечту",
   "Support": "Помощь",
@@ -1105,7 +1105,21 @@
   "PlacePromo": "Места",
   "EventPromo": "Ивента",
   "PleaseSelectImage": "Пожалуйста, выберите изображение",
-  "AddAtLeastOneXToPromoteIt": "Добавьте хотя бы одно {x} для его продвижения"
-
+  "AddAtLeastOneXToPromoteIt": "Добавьте хотя бы одно {x} для его продвижения",
+  "YouHaveTimeToPayTicket": "15 минут для оплаты билета, иначе он вернется в общий пул",
+  "ShowBarcode": "Покажи штрих-код на входе",
+  "StripeRegistration": "Регистрация в страйп",
+  "AcceptPayments": "Принимай оплаты",
+  "Online": "Онлайн",
+  "WantTo": "Хочешь",
+  "ForYourBooking": "Для бронирования контента",
+  "YouNeedSelectMethods": "You need to select one or more methods",
+  "Not": "Нет",
+  "Close": "Закрой",
+  "ThisBottom": "Этот боттом",
+  "If": "Если",
+  "Just": "Просто",
+  "ForMoney": "За деньги",
+  "ForCrypto": "За крипто"
 }
 

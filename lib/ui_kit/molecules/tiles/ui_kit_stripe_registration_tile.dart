@@ -18,7 +18,8 @@ class UiKitStripeRegistrationTile extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Stripe\nregistration', style: theme?.regularTextTheme.caption3.copyWith(fontWeight: FontWeight.w500)),
+            Text(S.current.StripeRegistration, style: theme?.regularTextTheme.caption3.copyWith(fontWeight: FontWeight.w500)),
+           SpacingFoundation.horizontalSpace12,
             UiKitBadgeColored.withoutBorder(
               title: status.stringValue,
               color: status.colorValue,

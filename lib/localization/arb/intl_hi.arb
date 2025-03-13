@@ -1103,5 +1103,20 @@
   "PlacePromo": "Place",
   "EventPromo": "Event",
   "PleaseSelectImage": "Please select image",
-  "AddAtLeastOneXToPromoteIt": "Add at least one {x} to promote it"
+  "AddAtLeastOneXToPromoteIt": "Add at least one {x} to promote it",
+  "YouHaveTimeToPayTicket": "You have 15 minutes to pay, otherwise the ticket will be cancelled",
+  "ShowBarcode": "Show the barcode at the entrance",
+  "StripeRegistration": "Stripe\nregistration",
+  "AcceptPayments": "Accept payments",
+  "Online": "Online",
+  "WantTo": "Want to",
+  "ForYourBooking": "For your booking",
+  "YouNeedSelectMethods": "You need to select one or more methods",
+  "Not": "Not",
+  "Close": "Close",
+  "ThisBottom": "This bottom sheet",
+  "If": "If",
+  "Just": "Just",
+  "ForMoney": "For money",
+  "ForCrypto": "For crypto"
 }
