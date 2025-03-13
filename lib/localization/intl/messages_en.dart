@@ -472,6 +472,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "AskOrSupport": MessageLookupByLibrary.simpleMessage("Ask or support"),
     "AskPeople": MessageLookupByLibrary.simpleMessage("Ask people"),
+    "AtEntrance": MessageLookupByLibrary.simpleMessage("At entrance"),
     "Atheism": MessageLookupByLibrary.simpleMessage("Atheism"),
     "Athlete": MessageLookupByLibrary.simpleMessage("Athlete"),
     "AvailableBalance": MessageLookupByLibrary.simpleMessage(
@@ -562,6 +563,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "You can view this profile once it becomes an influencer",
     ),
     "CardOpening": m9,
+    "Cash": MessageLookupByLibrary.simpleMessage("Cash"),
     "Categories": MessageLookupByLibrary.simpleMessage("Categories"),
     "Category": MessageLookupByLibrary.simpleMessage("Category"),
     "ChallengeFeelings": MessageLookupByLibrary.simpleMessage(
@@ -920,9 +922,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "FollowersCount": m40,
     "Followings": MessageLookupByLibrary.simpleMessage("Followings"),
     "For": MessageLookupByLibrary.simpleMessage("For"),
-    "ForCrypto": MessageLookupByLibrary.simpleMessage("For crypto"),
+    "ForCrypto": MessageLookupByLibrary.simpleMessage("Crypto"),
     "ForFormattedPrice": m41,
-    "ForMoney": MessageLookupByLibrary.simpleMessage("For money"),
+    "ForMoney": MessageLookupByLibrary.simpleMessage("Money"),
     "ForPeriod": MessageLookupByLibrary.simpleMessage("For"),
     "ForYourBooking": MessageLookupByLibrary.simpleMessage("For your booking"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("Forgot password"),
@@ -982,6 +984,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "HintNumberEventsForPro": MessageLookupByLibrary.simpleMessage(
       "3 events available & add more for extra price",
+    ),
+    "HintStripe": MessageLookupByLibrary.simpleMessage(
+      "To make it available, create a Stripe account",
     ),
     "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
       "Hint system disabled",
@@ -1356,6 +1361,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PayForTheStartNotification": MessageLookupByLibrary.simpleMessage(
       "Pay for the start notification",
     ),
+    "PaymentMethod": MessageLookupByLibrary.simpleMessage("Payment method"),
     "Pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "PeopleStartingToTalkAboutYou": MessageLookupByLibrary.simpleMessage(
       "People are starting to talk about you",
@@ -1727,6 +1733,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "SeekingWandererWom": MessageLookupByLibrary.simpleMessage(
       "Seeking wanderer",
+    ),
+    "SelectBookingType": MessageLookupByLibrary.simpleMessage(
+      "Select booking type",
     ),
     "SelectCity": MessageLookupByLibrary.simpleMessage("Select city"),
     "SelectCurrency": MessageLookupByLibrary.simpleMessage("Select currency"),

@@ -9,6 +9,7 @@ class UiKitBadgeColored extends StatelessWidget {
   final IconData? iconData;
   final double borderWidth;
   final BorderRadius? borderRadius;
+  final TextStyle? customTextStyle;
 
   const UiKitBadgeColored({
     super.key,
@@ -19,6 +20,7 @@ class UiKitBadgeColored extends StatelessWidget {
     this.borderWidth = 1,
     this.borderRadius,
     this.iconData,
+    this.customTextStyle,
   }) : assert(iconSvg == null || iconData == null, 'Only one icon can be provided');
 
   const UiKitBadgeColored.withoutBorder({
@@ -29,7 +31,9 @@ class UiKitBadgeColored extends StatelessWidget {
     this.borderRadius,
     this.iconSvg,
     this.iconData,
-  })  : borderWidth = 0,
+    this.customTextStyle,
+  })
+      : borderWidth = 0,
         assert(iconSvg == null || iconData == null, 'Only one icon can be provided');
 
   @override
@@ -52,7 +56,8 @@ class UiKitBadgeColored extends StatelessWidget {
               Text(title!,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: theme?.boldTextTheme.caption1Medium.copyWith(color: color)),
+                  style: customTextStyle?.copyWith(color: color) ??
+                      theme?.boldTextTheme.caption1Medium.copyWith(color: color)),
             if ((iconSvg != null || iconData != null) && title != null) 4.w.widthBox,
             if (iconSvg != null || iconData != null)
               ImageWidget(

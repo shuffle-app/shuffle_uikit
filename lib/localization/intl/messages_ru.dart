@@ -471,6 +471,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Попросить или помочь",
     ),
     "AskPeople": MessageLookupByLibrary.simpleMessage("Спросить"),
+    "AtEntrance": MessageLookupByLibrary.simpleMessage("На входе"),
     "Atheism": MessageLookupByLibrary.simpleMessage("Атеизм"),
     "Athlete": MessageLookupByLibrary.simpleMessage("Спортсмен"),
     "AvailableBalance": MessageLookupByLibrary.simpleMessage(
@@ -565,6 +566,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером",
     ),
     "CardOpening": m9,
+    "Cash": MessageLookupByLibrary.simpleMessage("Наличные"),
     "Categories": MessageLookupByLibrary.simpleMessage("Категории"),
     "Category": MessageLookupByLibrary.simpleMessage("категория"),
     "ChallengeFeelings": MessageLookupByLibrary.simpleMessage(
@@ -921,9 +923,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "FollowersCount": m40,
     "Followings": MessageLookupByLibrary.simpleMessage("Подписки"),
     "For": MessageLookupByLibrary.simpleMessage("Для"),
-    "ForCrypto": MessageLookupByLibrary.simpleMessage("За крипто"),
+    "ForCrypto": MessageLookupByLibrary.simpleMessage("Крипто"),
     "ForFormattedPrice": m41,
-    "ForMoney": MessageLookupByLibrary.simpleMessage("За деньги"),
+    "ForMoney": MessageLookupByLibrary.simpleMessage("Деньги"),
     "ForPeriod": MessageLookupByLibrary.simpleMessage("на"),
     "ForYourBooking": MessageLookupByLibrary.simpleMessage(
       "Для бронирования контента",
@@ -981,6 +983,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "HintNumberEventsForPro": MessageLookupByLibrary.simpleMessage(
       "3 события доступны & добавь больше за отдельную цену",
+    ),
+    "HintStripe": MessageLookupByLibrary.simpleMessage(
+      "Чтобы стало доступно, создайте аккаунт Stripe",
     ),
     "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
       "Система подсказок деактивирована",
@@ -1357,6 +1362,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PayForTheStartNotification": MessageLookupByLibrary.simpleMessage(
       "Оплатите уведомление о запуске",
     ),
+    "PaymentMethod": MessageLookupByLibrary.simpleMessage("Тип оплаты"),
     "Pending": MessageLookupByLibrary.simpleMessage("Ожидает"),
     "PeopleStartingToTalkAboutYou": MessageLookupByLibrary.simpleMessage(
       "Люди начинают говорить про вас",
@@ -1735,6 +1741,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "SeekingWandererWom": MessageLookupByLibrary.simpleMessage(
       "Ищущая странница",
+    ),
+    "SelectBookingType": MessageLookupByLibrary.simpleMessage(
+      "Выбери тип резерваций",
     ),
     "SelectCity": MessageLookupByLibrary.simpleMessage("Выберите город"),
     "SelectCurrency": MessageLookupByLibrary.simpleMessage("Выбери валюту"),

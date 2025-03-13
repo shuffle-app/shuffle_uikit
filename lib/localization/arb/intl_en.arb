@@ -1119,6 +1119,11 @@
   "ThisBottom": "This bottom sheet",
   "If": "If",
   "Just": "Just",
-  "ForMoney": "For money",
-  "ForCrypto": "For crypto"
+  "ForMoney": "Money",
+  "ForCrypto": "Crypto",
+  "SelectBookingType": "Select booking type",
+  "AtEntrance": "At entrance",
+  "HintStripe": "To make it available, create a Stripe account",
+  "Cash": "Cash",
+  "PaymentMethod": "Payment method"
 }

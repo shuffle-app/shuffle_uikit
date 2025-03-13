@@ -9501,14 +9501,54 @@ class S {
     return Intl.message('Just', name: 'Just', desc: '', args: []);
   }
 
-  /// `For money`
+  /// `Money`
   String get ForMoney {
-    return Intl.message('For money', name: 'ForMoney', desc: '', args: []);
+    return Intl.message('Money', name: 'ForMoney', desc: '', args: []);
   }
 
-  /// `For crypto`
+  /// `Crypto`
   String get ForCrypto {
-    return Intl.message('For crypto', name: 'ForCrypto', desc: '', args: []);
+    return Intl.message('Crypto', name: 'ForCrypto', desc: '', args: []);
+  }
+
+  /// `Select booking type`
+  String get SelectBookingType {
+    return Intl.message(
+      'Select booking type',
+      name: 'SelectBookingType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `At entrance`
+  String get AtEntrance {
+    return Intl.message('At entrance', name: 'AtEntrance', desc: '', args: []);
+  }
+
+  /// `To make it available, create a Stripe account`
+  String get HintStripe {
+    return Intl.message(
+      'To make it available, create a Stripe account',
+      name: 'HintStripe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash`
+  String get Cash {
+    return Intl.message('Cash', name: 'Cash', desc: '', args: []);
+  }
+
+  /// `Payment method`
+  String get PaymentMethod {
+    return Intl.message(
+      'Payment method',
+      name: 'PaymentMethod',
+      desc: '',
+      args: [],
+    );
   }
 }
 

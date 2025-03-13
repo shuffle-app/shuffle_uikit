@@ -32,7 +32,7 @@ class UiKitCheckbox extends StatelessWidget {
           padding: EdgeInsets.all(EdgeInsetsFoundation.all2),
           decoration: BoxDecoration(
             borderRadius: BorderRadiusFoundation.all4,
-            border: isActive || disabled
+            border: isActive
                 ? GradientFoundation.gradientBorder
                 : Border.all(
                     color: borderColor ?? colorScheme?.inversePrimary.withOpacity(0.3) ?? Colors.black38,
@@ -42,7 +42,7 @@ class UiKitCheckbox extends StatelessWidget {
           child: AnimatedScale(
             duration: const Duration(milliseconds: 200),
             curve: Curves.fastOutSlowIn,
-            scale: isActive || disabled ? 1.0 : 0,
+            scale: isActive ? 1.0 : 0,
             child: GradientableWidget(
               active: isActive || disabled,
               gradient: GradientFoundation.attentionCard,

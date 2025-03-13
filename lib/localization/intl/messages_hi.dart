@@ -471,6 +471,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "पूछें या समर्थन करें",
     ),
     "AskPeople": MessageLookupByLibrary.simpleMessage("लोगों से पूछें"),
+    "AtEntrance": MessageLookupByLibrary.simpleMessage("At entrance"),
     "Atheism": MessageLookupByLibrary.simpleMessage("नास्तिकता"),
     "Athlete": MessageLookupByLibrary.simpleMessage("एथलीट"),
     "AvailableBalance": MessageLookupByLibrary.simpleMessage(
@@ -560,6 +561,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "आप इस प्रोफ़ाइल को एक इन्फ्लुएंसर बनने पर देख सकते हैं",
     ),
     "CardOpening": m9,
+    "Cash": MessageLookupByLibrary.simpleMessage("Cash"),
     "Categories": MessageLookupByLibrary.simpleMessage("श्रेणियाँ"),
     "Category": MessageLookupByLibrary.simpleMessage("श्रेणी"),
     "ChallengeFeelings": MessageLookupByLibrary.simpleMessage(
@@ -920,9 +922,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "FollowersCount": m40,
     "Followings": MessageLookupByLibrary.simpleMessage("निम्नलिखित"),
     "For": MessageLookupByLibrary.simpleMessage("के लिए"),
-    "ForCrypto": MessageLookupByLibrary.simpleMessage("For crypto"),
+    "ForCrypto": MessageLookupByLibrary.simpleMessage("Crypto"),
     "ForFormattedPrice": m41,
-    "ForMoney": MessageLookupByLibrary.simpleMessage("For money"),
+    "ForMoney": MessageLookupByLibrary.simpleMessage("Money"),
     "ForPeriod": MessageLookupByLibrary.simpleMessage("के लिए"),
     "ForYourBooking": MessageLookupByLibrary.simpleMessage("For your booking"),
     "ForgotPassword": MessageLookupByLibrary.simpleMessage("पासवर्ड भूल गए"),
@@ -980,6 +982,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "HintNumberEventsForPro": MessageLookupByLibrary.simpleMessage(
       "3 घटनाएँ उपलब्ध हैं और अधिक कीमत के लिए अधिक जोड़ें",
+    ),
+    "HintStripe": MessageLookupByLibrary.simpleMessage(
+      "To make it available, create a Stripe account",
     ),
     "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
       "संकेत प्रणाली अक्षम है",
@@ -1363,6 +1368,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PayForTheStartNotification": MessageLookupByLibrary.simpleMessage(
       "Pay for the start notification",
     ),
+    "PaymentMethod": MessageLookupByLibrary.simpleMessage("Payment method"),
     "Pending": MessageLookupByLibrary.simpleMessage("Pending"),
     "PeopleStartingToTalkAboutYou": MessageLookupByLibrary.simpleMessage(
       "People are starting to talk about you",
@@ -1738,6 +1744,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "SeekingWandererWom": MessageLookupByLibrary.simpleMessage(
       "खोज रही है वैंडरर",
+    ),
+    "SelectBookingType": MessageLookupByLibrary.simpleMessage(
+      "Select booking type",
     ),
     "SelectCity": MessageLookupByLibrary.simpleMessage("Select city"),
     "SelectCurrency": MessageLookupByLibrary.simpleMessage("मुद्रा चुनें"),

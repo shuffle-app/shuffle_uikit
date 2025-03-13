@@ -1119,7 +1119,12 @@
   "ThisBottom": "Этот боттом",
   "If": "Если",
   "Just": "Просто",
-  "ForMoney": "За деньги",
-  "ForCrypto": "За крипто"
+  "ForMoney": "Деньги",
+  "ForCrypto": "Крипто",
+  "SelectBookingType": "Выбери тип резерваций",
+  "AtEntrance": "На входе",
+  "HintStripe": "Чтобы стало доступно, создайте аккаунт Stripe",
+  "Cash": "Наличные",
+  "PaymentMethod": "Тип оплаты"
 }
 

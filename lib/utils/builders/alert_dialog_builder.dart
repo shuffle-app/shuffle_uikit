@@ -50,7 +50,7 @@ Future<T?> showUiKitAlertDialog<T extends Object?>(
                         isOutlined: data.defaultButtonOutlined,
                         dialogButtonType:
                             data.additionalButton != null ? DialogButtonType.buttonWhite : DialogButtonType.buttonBlack,
-                      ))
+                      )).paddingOnly(top: SpacingFoundation.verticalSpacing4)
               ] else ...[
                 if (data.additionalButton != null) data.additionalButton!,
                 if (data.defaultButtonText.isNotEmpty)
