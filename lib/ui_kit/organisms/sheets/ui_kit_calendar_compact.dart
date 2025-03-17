@@ -51,6 +51,7 @@ class UiKitCalendarCompact extends StatelessWidget {
       // },
       calendarFormat: calendarFormat,
       currentDay: today,
+
       enabledDayPredicate: enabledDayPredicate,
       rangeSelectionMode: RangeSelectionMode.disabled,
       onPageChanged: onPageChanged,
@@ -62,7 +63,7 @@ class UiKitCalendarCompact extends StatelessWidget {
       headerStyle: HeaderStyle(
           formatButtonVisible: false,
           titleTextFormatter: (DateTime date, dynamic locale) {
-            return DateFormat('MMM yyyy', locale).format(date);
+            return DateFormat('MMMM yyyy', locale).format(date).capitalize();
           },
           titleTextStyle: boldTextTheme.title2,
           headerPadding: EdgeInsets.symmetric(
