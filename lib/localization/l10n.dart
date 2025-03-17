@@ -7242,10 +7242,10 @@ class S {
     );
   }
 
-  /// `Create a USP for ${count} for your clients`
+  /// `Create a USP for ${count}`
   String CreateAUSP(Object count) {
     return Intl.message(
-      'Create a USP for \$$count for your clients',
+      'Create a USP for \$$count',
       name: 'CreateAUSP',
       desc: '',
       args: [count],
@@ -7320,6 +7320,11 @@ class S {
   /// `Coverage`
   String get Coverage {
     return Intl.message('Coverage', name: 'Coverage', desc: '', args: []);
+  }
+
+  /// `Audience`
+  String get Audience {
+    return Intl.message('Audience', name: 'Audience', desc: '', args: []);
   }
 
   /// `Views`
@@ -9546,6 +9551,281 @@ class S {
     return Intl.message(
       'Payment method',
       name: 'PaymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clicks`
+  String get Clicks {
+    return Intl.message('Clicks', name: 'Clicks', desc: '', args: []);
+  }
+
+  /// `Bookings`
+  String get BookingsPromo {
+    return Intl.message('Bookings', name: 'BookingsPromo', desc: '', args: []);
+  }
+
+  /// `Budget`
+  String get BudgetPromo {
+    return Intl.message('Budget', name: 'BudgetPromo', desc: '', args: []);
+  }
+
+  /// `Card views within a promotion`
+  String get CardViewsWithinAPromotion {
+    return Intl.message(
+      'Card views within a promotion',
+      name: 'CardViewsWithinAPromotion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clicks on the card within a promotion`
+  String get ClicksOnTheCardWithinAPromotion {
+    return Intl.message(
+      'Clicks on the card within a promotion',
+      name: 'ClicksOnTheCardWithinAPromotion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of unique views`
+  String get NumberOfUniqueViews {
+    return Intl.message(
+      'Number of unique views',
+      name: 'NumberOfUniqueViews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bookings for your event`
+  String get BookingsForYourEvent {
+    return Intl.message(
+      'Bookings for your event',
+      name: 'BookingsForYourEvent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to Favorites`
+  String get AddToFavorites {
+    return Intl.message(
+      'Add to Favorites',
+      name: 'AddToFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of participants in the invitation list`
+  String get NumberOfParticipantsInTheInvitationList {
+    return Intl.message(
+      'Number of participants in the invitation list',
+      name: 'NumberOfParticipantsInTheInvitationList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Spent on promotion today`
+  String get SpentOnPromotionToday {
+    return Intl.message(
+      'Spent on promotion today',
+      name: 'SpentOnPromotionToday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Audience Definition`
+  String get AudienceDefinition {
+    return Intl.message(
+      'Audience Definition',
+      name: 'AudienceDefinition',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit promotion`
+  String get EditPromotion {
+    return Intl.message(
+      'Edit promotion',
+      name: 'EditPromotion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pause promotion`
+  String get PausePromotion {
+    return Intl.message(
+      'Pause promotion',
+      name: 'PausePromotion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete promotion`
+  String get DeletePromotion {
+    return Intl.message(
+      'Delete promotion',
+      name: 'DeletePromotion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Today's summary: {x}`
+  String TodaysSummaryX(Object x) {
+    return Intl.message(
+      'Today\'s summary: $x',
+      name: 'TodaysSummaryX',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `Potential coverage of {x} people`
+  String PotentialCoverageOfXPeople(Object x) {
+    return Intl.message(
+      'Potential coverage of $x people',
+      name: 'PotentialCoverageOfXPeople',
+      desc: '',
+      args: [x],
+    );
+  }
+
+  /// `Promotion launch results`
+  String get PromotionLaunchResults {
+    return Intl.message(
+      'Promotion launch results',
+      name: 'PromotionLaunchResults',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `January`
+  String get January {
+    return Intl.message('January', name: 'January', desc: '', args: []);
+  }
+
+  /// `February`
+  String get February {
+    return Intl.message('February', name: 'February', desc: '', args: []);
+  }
+
+  /// `March`
+  String get March {
+    return Intl.message('March', name: 'March', desc: '', args: []);
+  }
+
+  /// `April`
+  String get April {
+    return Intl.message('April', name: 'April', desc: '', args: []);
+  }
+
+  /// `May`
+  String get May {
+    return Intl.message('May', name: 'May', desc: '', args: []);
+  }
+
+  /// `June`
+  String get June {
+    return Intl.message('June', name: 'June', desc: '', args: []);
+  }
+
+  /// `July`
+  String get July {
+    return Intl.message('July', name: 'July', desc: '', args: []);
+  }
+
+  /// `August`
+  String get August {
+    return Intl.message('August', name: 'August', desc: '', args: []);
+  }
+
+  /// `September`
+  String get September {
+    return Intl.message('September', name: 'September', desc: '', args: []);
+  }
+
+  /// `October`
+  String get October {
+    return Intl.message('October', name: 'October', desc: '', args: []);
+  }
+
+  /// `November`
+  String get November {
+    return Intl.message('November', name: 'November', desc: '', args: []);
+  }
+
+  /// `December`
+  String get December {
+    return Intl.message('December', name: 'December', desc: '', args: []);
+  }
+
+  /// `Promotion evaluation`
+  String get PromotionEvaluation {
+    return Intl.message(
+      'Promotion evaluation',
+      name: 'PromotionEvaluation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your indicators has set the bar high! It can be`
+  String get YourIndicatorsHasSetTheBarHighItCanBe {
+    return Intl.message(
+      'Your indicators has set the bar high! It can be',
+      name: 'YourIndicatorsHasSetTheBarHighItCanBe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `even higher`
+  String get EvenHigher {
+    return Intl.message('even higher', name: 'EvenHigher', desc: '', args: []);
+  }
+
+  /// `if you apply the promotion`
+  String get IfYouApplyThePromotion {
+    return Intl.message(
+      'if you apply the promotion',
+      name: 'IfYouApplyThePromotion',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `How many people registered in the app will potentially see the post`
+  String get HowManyPeopleRegisteredInTheAppWillPotentiallySeeThePost {
+    return Intl.message(
+      'How many people registered in the app will potentially see the post',
+      name: 'HowManyPeopleRegisteredInTheAppWillPotentiallySeeThePost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wait...`
+  String get Wait {
+    return Intl.message('Wait...', name: 'Wait', desc: '', args: []);
+  }
+
+  /// `Cannot find this promotion`
+  String get CannotFindThisPromotion {
+    return Intl.message(
+      'Cannot find this promotion',
+      name: 'CannotFindThisPromotion',
       desc: '',
       args: [],
     );
