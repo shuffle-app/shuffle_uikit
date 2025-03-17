@@ -55,13 +55,16 @@ class BasePlaceActionCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              AutoSizeText(
+              Flexible(
+                  child: AutoSizeText(
                 title,
                 style: titleStyle,
                 textAlign: TextAlign.left,
                 maxLines: 2,
+                wrapWords: true,
+                softWrap: true,
                 group: group,
-              ),
+              )),
               AutoSizeText(
                 value,
                 style: valueStyle,
@@ -75,7 +78,7 @@ class BasePlaceActionCard extends StatelessWidget {
                 group: group,
               ),
             ],
-          ).paddingAll(EdgeInsetsFoundation.all12),
+          ).paddingLTRB(EdgeInsetsFoundation.all12, EdgeInsetsFoundation.all12, EdgeInsetsFoundation.all24, EdgeInsetsFoundation.all12),
         ],
       ),
     );
