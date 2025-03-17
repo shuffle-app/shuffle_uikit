@@ -27,6 +27,7 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final boldTextTheme = context.uiKitTheme?.boldTextTheme;
+    final isSmallScreen = MediaQuery.sizeOf(context).width <= 375;
 
     return Column(
       mainAxisSize: MainAxisSize.min,
@@ -107,7 +108,7 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
               separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace8,
               itemBuilder: (context, index) =>
                   SizedBox(
-                    height: 0.27.sh,
+                    height: (isSmallScreen ? 168.5.h : 0.286.sh),
                     width: 0.859375.sw,
                     child: reviews!.elementAt(index),
                   ),

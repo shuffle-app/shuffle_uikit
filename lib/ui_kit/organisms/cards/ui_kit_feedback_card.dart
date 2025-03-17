@@ -109,12 +109,12 @@ class UiKitFeedbackCard extends StatelessWidget {
                 ValueListenableBuilder<String>(
                   valueListenable: description,
                   builder: (_, text, __) => Text(
-                    text,
+                    text.trim(),
                     style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
                     maxLines: maxLines ?? (media.isNotEmpty ? 3 : 5),
                   ),
                 ),
-              SpacingFoundation.verticalSpace12,
+              SpacingFoundation.verticalSpace8,
               if (media.isNotEmpty) ...[
                 SizedBox(
                   height: shufflePostVideoWidgetHeight,
@@ -160,31 +160,16 @@ class UiKitFeedbackCard extends StatelessWidget {
                     shrinkWrap: true,
                   ),
                 ),
-                SpacingFoundation.verticalSpace10
+                SpacingFoundation.verticalSpace4
               ],
-              if (showTranslateButton != null)
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    ValueListenableBuilder<bool>(
-                      valueListenable: isTranslate,
-                      builder: (_, isTranslating, __) => InkWell(
-                        onTap: toggleTranslation,
-                        child: showTranslateButton!.value
-                            ? Text(
-                                isTranslating ? S.of(context).Original : S.of(context).Translate,
-                                style: theme?.regularTextTheme.caption4Regular.copyWith(
-                                  color: theme.themeMode == ThemeMode.light
-                                      ? ColorsFoundation.darkNeutral700
-                                      : ColorsFoundation.darkNeutral300,
-                                ),
-                              ).paddingOnly(bottom: SpacingFoundation.verticalSpacing10)
-                            : const SizedBox.shrink(),
-                      ),
-                    ),
-                  ],
-                ),
+              // if (showTranslateButton != null)
+              //   Row(
+              //     mainAxisSize: MainAxisSize.max,
+              //     mainAxisAlignment: MainAxisAlignment.end,
+              //     children: [
+              //
+              //     ],
+              //   ),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -203,7 +188,26 @@ class UiKitFeedbackCard extends StatelessWidget {
                       S.of(context).CompanyAnswered,
                       style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                     ),
-                  const Spacer(),
+                  if (showTranslateButton != null)
+                    Expanded(
+                        child: ValueListenableBuilder<bool>(
+                      valueListenable: isTranslate,
+                      builder: (_, isTranslating, __) => InkWell(
+                        onTap: toggleTranslation,
+                        child: showTranslateButton!.value
+                            ? Text(
+                                isTranslating ? S.of(context).Original : S.of(context).Translate,
+                                style: theme?.regularTextTheme.caption4Regular.copyWith(
+                                  color: theme.themeMode == ThemeMode.light
+                                      ? ColorsFoundation.darkNeutral700
+                                      : ColorsFoundation.darkNeutral300,
+    ))
+                              // ).paddingOnly(bottom: SpacingFoundation.verticalSpacing10)
+                            : const SizedBox.shrink(),
+                      ),
+                    ))
+                  else
+                    const Spacer(),
                   InkWell(
                     borderRadius: BorderRadiusFoundation.max,
                     onTap: onLike,
