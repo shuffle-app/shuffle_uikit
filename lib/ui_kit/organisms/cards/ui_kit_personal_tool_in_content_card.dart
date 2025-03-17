@@ -29,7 +29,7 @@ class UiKitPersonalToolInContentCard extends StatelessWidget {
             group: group,
             style: theme?.boldTextTheme.caption2Medium,
             textAlign: TextAlign.center,
-            maxLines: 3,
+            maxLines: 2,
           ),
           SpacingFoundation.verticalSpace8,
           GradientableWidget(
