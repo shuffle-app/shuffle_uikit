@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class UiKitStripeRegistrationTile extends StatelessWidget {
   final VoidCallback? onTap;
@@ -12,28 +13,40 @@ class UiKitStripeRegistrationTile extends StatelessWidget {
     final theme = context.uiKitTheme;
     final colorScheme = theme?.colorScheme;
     return UiKitCardWrapper(
-        borderRadius: BorderRadiusFoundation.all12,
-        color: colorScheme?.surface2,
-        padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(S.current.StripeRegistration, style: theme?.regularTextTheme.caption3.copyWith(fontWeight: FontWeight.w500)),
-           SpacingFoundation.horizontalSpace12,
-            UiKitBadgeColored.withoutBorder(
-              title: status.stringValue,
-              color: status.colorValue,
-              borderRadius: BorderRadiusFoundation.all12,
+      borderRadius: BorderRadiusFoundation.all12,
+      color: colorScheme?.surface2,
+      padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Flexible(
+            child: AutoSizeText(
+              S.current.StripeRegistration,
+              style: theme?.regularTextTheme.caption3.copyWith(fontWeight: FontWeight.w500),
+              maxLines: 2,
+              minFontSize: 6,
             ),
-            if (onTap != null)
-              context.smallOutlinedButton(
+          ),
+          SpacingFoundation.horizontalSpace12,
+          UiKitBadgeColored.withoutBorder(
+            title: status.stringValue,
+            color: status.colorValue,
+            borderRadius: BorderRadiusFoundation.all12,
+          ),
+          if (onTap != null)
+            context
+                .smallOutlinedButton(
                   data: BaseUiKitButtonData(
-                      onPressed: onTap,
-                      borderColor: colorScheme?.inversePrimary,
-                      iconInfo: BaseUiKitButtonIconData(
-                          iconData: ShuffleUiKitIcons.chevronright, color: colorScheme?.inversePrimary)))
-          ],
-        ));
+                    onPressed: onTap,
+                    borderColor: colorScheme?.inversePrimary,
+                    iconInfo: BaseUiKitButtonIconData(
+                        iconData: ShuffleUiKitIcons.chevronright, color: colorScheme?.inversePrimary),
+                  ),
+                )
+                .paddingOnly(left: SpacingFoundation.horizontalSpacing8)
+        ],
+      ),
+    );
   }
 }
 
