@@ -572,7 +572,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Не удается найти эту новость",
     ),
     "CannotFindThisPlaceOrEvent": MessageLookupByLibrary.simpleMessage(
-      "Не удается найти это место или ивен",
+      "Не удается найти это место или ивент",
+    ),
+    "CannotFindThisPromotion": MessageLookupByLibrary.simpleMessage(
+      "Не удается найти эту рекламную акцию",
     ),
     "CannotFindThisRefresher": MessageLookupByLibrary.simpleMessage(
       "Не удается найти этот освежитель",

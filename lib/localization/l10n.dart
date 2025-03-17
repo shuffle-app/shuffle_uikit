@@ -9820,6 +9820,16 @@ class S {
   String get Wait {
     return Intl.message('Wait...', name: 'Wait', desc: '', args: []);
   }
+
+  /// `Cannot find this promotion`
+  String get CannotFindThisPromotion {
+    return Intl.message(
+      'Cannot find this promotion',
+      name: 'CannotFindThisPromotion',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

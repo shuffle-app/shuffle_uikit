@@ -1161,7 +1161,8 @@
   "EvenHigher": "even higher",
   "IfYouApplyThePromotion": "if you apply the promotion",
   "HowManyPeopleRegisteredInTheAppWillPotentiallySeeThePost": "How many people registered in the app will potentially see the post",
-  "Wait": "Wait..."
+  "Wait": "Wait...",
+  "CannotFindThisPromotion": "Cannot find this promotion"
 
 
 

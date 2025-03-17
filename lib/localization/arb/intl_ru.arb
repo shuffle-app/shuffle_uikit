@@ -978,7 +978,7 @@
   "BookItX": "Букинг (+{x})",
   "IChangedMyMind": "Я передумал",
   "ShuffleDigest": "Shuffle дайджест",
-  "CannotFindThisPlaceOrEvent": "Не удается найти это место или ивен",
+  "CannotFindThisPlaceOrEvent": "Не удается найти это место или ивент",
   "BarcodeAlreadyBeenActivated": "Этот баркод уже активирован",
   "CityXWasDetected": "Город автоматически определяется как {x}.",
   "ChangeInSettings": "Вы можете изменить это в настройках.",
@@ -1161,6 +1161,7 @@
   "EvenHigher": "еще выше",
   "IfYouApplyThePromotion": "если вы воспользуетесь акцией",
   "HowManyPeopleRegisteredInTheAppWillPotentiallySeeThePost": "Скольким людям из зарегистрированных в приложении потенциально покажется пост",
-  "Wait": "Подождите..."
+  "Wait": "Подождите...",
+  "CannotFindThisPromotion": "Не удается найти эту рекламную акцию"
 }
 

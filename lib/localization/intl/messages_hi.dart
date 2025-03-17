@@ -568,6 +568,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "CannotFindThisPlaceOrEvent": MessageLookupByLibrary.simpleMessage(
       "Cannot find this place or event",
     ),
+    "CannotFindThisPromotion": MessageLookupByLibrary.simpleMessage(
+      "Cannot find this promotion",
+    ),
     "CannotFindThisRefresher": MessageLookupByLibrary.simpleMessage(
       "Cannot find this refresher",
     ),
