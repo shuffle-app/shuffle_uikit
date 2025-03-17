@@ -17,12 +17,17 @@ Future<void> createPhotoDialog(
     context,
     AlertDialogData(
       defaultButtonText: '',
-      title: Text(
-        S.current.PhotoTitle,
-        style: theme?.boldTextTheme.title2.copyWith(
-          color: colorsScheme?.inverseBodyTypography,
-        ),
-        textAlign: TextAlign.center,
+      title: ValueListenableBuilder(
+        valueListenable: imageIsLoading,
+        builder: (_, value, child) {
+          return Text(
+            value ? S.current.Wait : S.current.PhotoTitle,
+            style: theme?.boldTextTheme.title2.copyWith(
+              color: colorsScheme?.inverseBodyTypography,
+            ),
+            textAlign: TextAlign.center,
+          );
+        },
       ),
       content: ValueListenableBuilder(
         valueListenable: imageIsLoading,
