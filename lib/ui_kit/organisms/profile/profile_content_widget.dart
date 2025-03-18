@@ -32,10 +32,11 @@ class ProfileContentWidget extends StatelessWidget {
         onTap: onCalendarTap ?? onViewAllAchievements,
         child: UiKitCardWrapper(
           color: theme?.colorScheme.surface2,
+          padding: EdgeInsets.symmetric(vertical: SpacingFoundation.verticalSpacing16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SpacingFoundation.verticalSpace12,
+              // SpacingFoundation.verticalSpace12,
               AutoSizeText(
                 title ?? S.of(context).NothingFound,
                 maxLines: 1,
@@ -44,8 +45,10 @@ class ProfileContentWidget extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: theme?.boldTextTheme.caption1Bold,
               ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing12),
-              if (showCalendar) ...[
-                SpacingFoundation.verticalSpace12,
+              SpacingFoundation.verticalSpace12,
+              if (showCalendar)
+                // ...[
+                // SpacingFoundation.verticalSpace12,
                 ImageWidget(
                   width: 80.w,
                   height: 1.sw <= 380 ? 72.h : 58.5.h,
@@ -53,10 +56,11 @@ class ProfileContentWidget extends StatelessWidget {
                 ).paddingSymmetric(
                   horizontal: SpacingFoundation.horizontalSpacing12,
                 ),
-                SpacingFoundation.verticalSpace12,
-              ],
-              if (showHallOfFrame) ...[
-                SpacingFoundation.verticalSpace12,
+              // SpacingFoundation.verticalSpace12,
+              // ],
+              if (showHallOfFrame)
+                // ...[
+                // SpacingFoundation.verticalSpace12,
                 SizedBox(
                   height: 1.sw <= 380 ? 72.h : 58.5.h,
                   child: ListenableBuilder(
@@ -76,8 +80,8 @@ class ProfileContentWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                SpacingFoundation.verticalSpace12,
-              ],
+              // SpacingFoundation.verticalSpace12,
+              // ],
             ],
           ),
         ));
