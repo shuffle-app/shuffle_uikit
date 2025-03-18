@@ -326,7 +326,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m117(x, y) => "${x} приглашает ${y}";
 
-  static String m118(title) => "${title} требуется";
+  static String m118(title) => "Требуется: ${title}";
 
   static String m119(x) => "${x} успешно активировано";
 
@@ -1470,7 +1470,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Посещенные места",
     ),
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
-      "Пожалуйста, добавьте даты(-у)",
+      "Пожалуйста, добавьте диапазон дат",
     ),
     "PleaseAddPhoto": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, добавьте фото",

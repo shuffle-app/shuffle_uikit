@@ -27,7 +27,7 @@ class UiKitSelectDateWidget extends StatelessWidget {
         Expanded(
           child: AutoSizeText(
             title,
-            style: selectedDates != null && selectedDates!.first != null
+            style: selectedDates != null && selectedDates!.length > 1
                 ? theme?.boldTextTheme.body
                 : theme?.boldTextTheme.body.copyWith(color: ColorsFoundation.error),
             maxLines: 1,

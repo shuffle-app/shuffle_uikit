@@ -1459,7 +1459,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PlacesVisited": m64,
     "PlacesVisitedInf": MessageLookupByLibrary.simpleMessage("Places visited"),
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
-      "Please add a date(-s)",
+      "Please add a date period",
     ),
     "PleaseAddPhoto": MessageLookupByLibrary.simpleMessage("Please add photo"),
     "PleaseEnterABranchTitle": MessageLookupByLibrary.simpleMessage(

@@ -7017,10 +7017,10 @@ class S {
     );
   }
 
-  /// `Please add a date(-s)`
+  /// `Please add a date period`
   String get PleaseAddDatePeriod {
     return Intl.message(
-      'Please add a date(-s)',
+      'Please add a date period',
       name: 'PleaseAddDatePeriod',
       desc: '',
       args: [],

@@ -822,7 +822,7 @@
   "YouCanSeeYourXPromotionMenu": "You can see your {x} in the promotion menu",
   "Offer": "Offer",
   "SelectPeriodOfValid": "Select period of valid",
-  "PleaseAddDatePeriod": "Please add a date(-s)",
+  "PleaseAddDatePeriod": "Please add a date period",
   "Remove": "Remove",
   "Launched":"Launched", 
   "Expired": "Expired",

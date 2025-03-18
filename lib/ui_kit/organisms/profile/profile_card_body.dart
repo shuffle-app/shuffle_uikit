@@ -123,30 +123,19 @@ class ProfileCardBody extends StatelessWidget {
                   SpacingFoundation.horizontalSpace8
                 ],
                 if (socialLinks != null)
-                  for (var (index, icon) in socialLinks!.map((e) => e.icon).nonNulls.toList().indexed)
+                  for (var (index, icon) in socialLinks!.map((e) => e.icon ?? e.iconSvg).nonNulls.toList().indexed)
                     context
                         .smallOutlinedButton(
                             data: BaseUiKitButtonData(
                                 iconWidget: ImageWidget(
-                                  iconData: icon,
+                                  iconData: (icon.runtimeType == IconData) ? (icon as IconData) : null,
+                                  link: (icon.runtimeType == String) ? (icon as String) : null,
                                   color: theme?.colorScheme.inversePrimary,
                                 ),
                                 onPressed: () {
                                   launchUrlString(socialLinks![index], mode: LaunchMode.externalApplication);
                                 }))
                         .paddingOnly(right: SpacingFoundation.horizontalSpacing6),
-                for (var (index, icon) in socialLinks!.map((e) => e.iconSvg).nonNulls.toList().indexed)
-                  context
-                      .smallOutlinedButton(
-                          data: BaseUiKitButtonData(
-                              iconWidget: ImageWidget(
-                                link: icon,
-                                color: theme?.colorScheme.inversePrimary,
-                              ),
-                              onPressed: () {
-                                launchUrlString(socialLinks![index], mode: LaunchMode.externalApplication);
-                              }))
-                      .paddingOnly(right: SpacingFoundation.horizontalSpacing6)
               ],
             ).paddingSymmetric(horizontal: EdgeInsetsFoundation.all16),
             // SpacingFoundation.verticalSpace8,
