@@ -9531,10 +9531,10 @@ class S {
     return Intl.message('At entrance', name: 'AtEntrance', desc: '', args: []);
   }
 
-  /// `To make it available, create a Stripe account`
+  /// `To make it available, create a Stripe account in Settings "Wallet"`
   String get HintStripe {
     return Intl.message(
-      'To make it available, create a Stripe account',
+      'To make it available, create a Stripe account in Settings "Wallet"',
       name: 'HintStripe',
       desc: '',
       args: [],

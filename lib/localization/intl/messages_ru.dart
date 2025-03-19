@@ -421,7 +421,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Добавить в личный ТОП",
     ),
     "AddToScheduler": MessageLookupByLibrary.simpleMessage("Запланировать"),
-    "AddVoice": MessageLookupByLibrary.simpleMessage("Добавить голосовое"),
+    "AddVoice": MessageLookupByLibrary.simpleMessage("Добавить аудио"),
     "AddYourselfToList": MessageLookupByLibrary.simpleMessage(
       "Добавиться в список",
     ),
@@ -435,7 +435,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AllAppNotification": MessageLookupByLibrary.simpleMessage(
       "Все уведомления",
     ),
-    "AllVoices": MessageLookupByLibrary.simpleMessage("Все голосовые"),
+    "AllVoices": MessageLookupByLibrary.simpleMessage("Все аудио"),
     "AllXFeaturesAvailable": m1,
     "Allow": MessageLookupByLibrary.simpleMessage("Разрешить"),
     "AllowAll": MessageLookupByLibrary.simpleMessage("Разрешить все"),
@@ -581,7 +581,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Не удается найти этот освежитель",
     ),
     "CannotFindThisVoice": MessageLookupByLibrary.simpleMessage(
-      "Не удаётся найти это голосовое",
+      "Не удаётся найти это аудио",
     ),
     "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
       "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером",
@@ -709,10 +709,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Не удалось найти приглашение",
     ),
     "CouldntFindVoiceMessages": MessageLookupByLibrary.simpleMessage(
-      "Не удалось найти голосовые сообщения",
+      "Не удалось найти аудио",
     ),
     "CouldntSendVoiceMessages": MessageLookupByLibrary.simpleMessage(
-      "Не удалось отправить голосовые сообщения",
+      "Не удалось отправить аудио",
     ),
     "CountReviews": m18,
     "CountVideoReaction": m19,
@@ -1020,7 +1020,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "3 события доступны & добавь больше за отдельную цену",
     ),
     "HintStripe": MessageLookupByLibrary.simpleMessage(
-      "Чтобы стало доступно, создайте аккаунт Stripe",
+      "Чтобы воспользоваться, создайте аккаунт Stripe в Настройках «Кошелек»",
     ),
     "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
       "Система подсказок деактивирована",
@@ -2260,9 +2260,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Посети первое, открой следующее",
     ),
     "Visitors": MessageLookupByLibrary.simpleMessage("Визиты"),
-    "Voice": MessageLookupByLibrary.simpleMessage("Аудиосообщения"),
-    "Voices": MessageLookupByLibrary.simpleMessage("Голосовые записи"),
-    "VoicesIsEmpty": MessageLookupByLibrary.simpleMessage("Нет голосовых"),
+    "Voice": MessageLookupByLibrary.simpleMessage("Аудио"),
+    "Voices": MessageLookupByLibrary.simpleMessage("Аудио"),
+    "VoicesIsEmpty": MessageLookupByLibrary.simpleMessage("Нет аудио"),
     "Wait": MessageLookupByLibrary.simpleMessage("Подождите..."),
     "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
       "Ждите ответа админа чата",

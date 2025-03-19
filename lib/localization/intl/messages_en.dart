@@ -1017,7 +1017,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "3 events available & add more for extra price",
     ),
     "HintStripe": MessageLookupByLibrary.simpleMessage(
-      "To make it available, create a Stripe account",
+      "To make it available, create a Stripe account in Settings \"Wallet\"",
     ),
     "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
       "Hint system disabled",

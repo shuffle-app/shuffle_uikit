@@ -1016,7 +1016,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "3 घटनाएँ उपलब्ध हैं और अधिक कीमत के लिए अधिक जोड़ें",
     ),
     "HintStripe": MessageLookupByLibrary.simpleMessage(
-      "To make it available, create a Stripe account",
+      "To make it available, create a Stripe account in Settings \"Wallet\"",
     ),
     "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
       "संकेत प्रणाली अक्षम है",
