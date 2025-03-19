@@ -1162,6 +1162,14 @@
   "IfYouApplyThePromotion": "если вы воспользуетесь акцией",
   "HowManyPeopleRegisteredInTheAppWillPotentiallySeeThePost": "Скольким людям из зарегистрированных в приложении потенциально покажется пост",
   "Wait": "Подождите...",
-  "CannotFindThisPromotion": "Не удается найти эту рекламную акцию"
+  "CannotFindThisPromotion": "Не удается найти эту рекламную акцию",
+  "Mon": "Пон",
+  "Tue": "Вт" ,
+  "Wed": "Ср",
+  "Thu": "Чт",
+  "Fri": "Пт",
+  "Sat": "Сб",
+  "Sun": "Вс",
+  "AreYouSureYouWantToDeleteThisVoice": "Вы точно хотите удалить этот войс?"
 }
 

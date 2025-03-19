@@ -462,6 +462,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Archive": MessageLookupByLibrary.simpleMessage("संग्रहीत"),
     "ArchiveXAlert": m4,
     "Archived": MessageLookupByLibrary.simpleMessage("संग्रहीत"),
+    "AreYouSureYouWantToDeleteThisVoice": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to delete this voice?",
+    ),
     "AreYouSureYouWantToDeleteYourAccount":
         MessageLookupByLibrary.simpleMessage(
           "क्या आप वाकई अपना खाता हटाना चाहते हैं?",
@@ -963,6 +966,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Free": MessageLookupByLibrary.simpleMessage("मुफ्त"),
     "FreeNowXLater": m42,
     "FreePlaces": MessageLookupByLibrary.simpleMessage("निःशुल्क स्थान"),
+    "Fri": MessageLookupByLibrary.simpleMessage("Fri"),
     "Friday": MessageLookupByLibrary.simpleMessage("शुक्रवार"),
     "FridayShort": MessageLookupByLibrary.simpleMessage("शुक्रवार"),
     "FromGallery": MessageLookupByLibrary.simpleMessage("गैलरी से"),
@@ -1201,6 +1205,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "MinutesShort": MessageLookupByLibrary.simpleMessage("मिनट"),
     "Misleading": MessageLookupByLibrary.simpleMessage("Misleading"),
     "Moderated": MessageLookupByLibrary.simpleMessage("मॉडरेट"),
+    "Mon": MessageLookupByLibrary.simpleMessage("Mon"),
     "Monday": MessageLookupByLibrary.simpleMessage("सोमवार"),
     "MondayShort": MessageLookupByLibrary.simpleMessage("सोमवार"),
     "Month": MessageLookupByLibrary.simpleMessage("महीना"),
@@ -1720,6 +1725,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ReviewsPostedInf": MessageLookupByLibrary.simpleMessage("Reviews posted"),
     "ReviewsReceived": m87,
     "Routes": MessageLookupByLibrary.simpleMessage("रूट"),
+    "Sat": MessageLookupByLibrary.simpleMessage("Sat"),
     "Saturday": MessageLookupByLibrary.simpleMessage("शनिवार"),
     "SaturdayShort": MessageLookupByLibrary.simpleMessage("शनिवार"),
     "Save": MessageLookupByLibrary.simpleMessage("सहेजें"),
@@ -1989,6 +1995,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SuccessfullyAnswered": MessageLookupByLibrary.simpleMessage(
       "सफलतापूर्वक उत्तर दिया",
     ),
+    "Sun": MessageLookupByLibrary.simpleMessage("Sun"),
     "Sunday": MessageLookupByLibrary.simpleMessage("रविवार"),
     "SundayShort": MessageLookupByLibrary.simpleMessage("रविवार"),
     "Sunny": MessageLookupByLibrary.simpleMessage("सनी"),
@@ -2100,6 +2107,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
       "एक गैर के माध्यम से-\nएग्रीगेटर प्रणाली\nविशेष रूप से आप के लिए",
     ),
+    "Thu": MessageLookupByLibrary.simpleMessage("Thu"),
     "Thursday": MessageLookupByLibrary.simpleMessage("गुरुवार"),
     "ThursdayShort": MessageLookupByLibrary.simpleMessage("गुरुवार"),
     "Ticket": MessageLookupByLibrary.simpleMessage("टिकट"),
@@ -2151,6 +2159,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "TravelerWom": MessageLookupByLibrary.simpleMessage("यात्री"),
     "TrialPeriod": MessageLookupByLibrary.simpleMessage("परीक्षण अवधि"),
     "TryYourself": MessageLookupByLibrary.simpleMessage("स्वयं प्रयास करें"),
+    "Tue": MessageLookupByLibrary.simpleMessage("Tue"),
     "Tuesday": MessageLookupByLibrary.simpleMessage("मंगलवार"),
     "TuesdayShort": MessageLookupByLibrary.simpleMessage("मंगलवार"),
     "TypeHere": MessageLookupByLibrary.simpleMessage("यहाँ टाइप करें"),
@@ -2289,6 +2298,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Weather": MessageLookupByLibrary.simpleMessage("मौसम"),
     "Website": MessageLookupByLibrary.simpleMessage("वेबसाइट"),
+    "Wed": MessageLookupByLibrary.simpleMessage("Wed"),
     "Wednesday": MessageLookupByLibrary.simpleMessage("बुधवार"),
     "WednesdayShort": MessageLookupByLibrary.simpleMessage("बुधवार"),
     "WeekAgo": MessageLookupByLibrary.simpleMessage("एक सप्ताह पहले"),

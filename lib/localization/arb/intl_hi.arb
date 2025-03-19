@@ -1160,6 +1160,14 @@
   "IfYouApplyThePromotion": "if you apply the promotion",
   "HowManyPeopleRegisteredInTheAppWillPotentiallySeeThePost": "How many people registered in the app will potentially see the post",
   "Wait": "Wait...",
-  "CannotFindThisPromotion": "Cannot find this promotion"
+  "CannotFindThisPromotion": "Cannot find this promotion",
+  "Mon": "Mon",
+  "Tue": "Tue" ,
+  "Wed": "Wed",
+  "Thu": "Thu",
+  "Fri": "Fri",
+  "Sat": "Sat",
+  "Sun": "Sun",
+  "AreYouSureYouWantToDeleteThisVoice": "Are you sure you want to delete this voice?"
 
 }

@@ -463,6 +463,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Archive": MessageLookupByLibrary.simpleMessage("Архив"),
     "ArchiveXAlert": m4,
     "Archived": MessageLookupByLibrary.simpleMessage("Архив"),
+    "AreYouSureYouWantToDeleteThisVoice": MessageLookupByLibrary.simpleMessage(
+      "Вы точно хотите удалить этот войс?",
+    ),
     "AreYouSureYouWantToDeleteYourAccount":
         MessageLookupByLibrary.simpleMessage(
           "Уверены, что хотите удалить аккаунт?",
@@ -969,6 +972,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Free": MessageLookupByLibrary.simpleMessage("Бесплатно"),
     "FreeNowXLater": m42,
     "FreePlaces": MessageLookupByLibrary.simpleMessage("\nбесплатных мест"),
+    "Fri": MessageLookupByLibrary.simpleMessage("Пт"),
     "Friday": MessageLookupByLibrary.simpleMessage("Пятница"),
     "FridayShort": MessageLookupByLibrary.simpleMessage("Пт"),
     "FromGallery": MessageLookupByLibrary.simpleMessage("Из галлереи"),
@@ -1206,6 +1210,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "MinutesShort": MessageLookupByLibrary.simpleMessage("мин"),
     "Misleading": MessageLookupByLibrary.simpleMessage("Вводит в заблуждение"),
     "Moderated": MessageLookupByLibrary.simpleMessage("Модерировано"),
+    "Mon": MessageLookupByLibrary.simpleMessage("Пон"),
     "Monday": MessageLookupByLibrary.simpleMessage("Понедельник"),
     "MondayShort": MessageLookupByLibrary.simpleMessage("Пн"),
     "Month": MessageLookupByLibrary.simpleMessage("Месяц"),
@@ -1722,6 +1727,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ReviewsReceived": m87,
     "Routes": MessageLookupByLibrary.simpleMessage("Маршруты"),
+    "Sat": MessageLookupByLibrary.simpleMessage("Сб"),
     "Saturday": MessageLookupByLibrary.simpleMessage("Суббота"),
     "SaturdayShort": MessageLookupByLibrary.simpleMessage("Сб"),
     "Save": MessageLookupByLibrary.simpleMessage("Сохранить"),
@@ -1997,6 +2003,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SuccessfullyAnswered": MessageLookupByLibrary.simpleMessage(
       "Успешно отправлен ответ",
     ),
+    "Sun": MessageLookupByLibrary.simpleMessage("Вс"),
     "Sunday": MessageLookupByLibrary.simpleMessage("Воскресенье"),
     "SundayShort": MessageLookupByLibrary.simpleMessage("Вс"),
     "Sunny": MessageLookupByLibrary.simpleMessage("Солнечно"),
@@ -2102,6 +2109,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ThroughANonAggregatorSystem": MessageLookupByLibrary.simpleMessage(
       "Неагрегаторная система специально для вас",
     ),
+    "Thu": MessageLookupByLibrary.simpleMessage("Чт"),
     "Thursday": MessageLookupByLibrary.simpleMessage("Четверг"),
     "ThursdayShort": MessageLookupByLibrary.simpleMessage("Чт"),
     "Ticket": MessageLookupByLibrary.simpleMessage("Билет"),
@@ -2151,6 +2159,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "TravelerWom": MessageLookupByLibrary.simpleMessage("Путница"),
     "TrialPeriod": MessageLookupByLibrary.simpleMessage("Триал период"),
     "TryYourself": MessageLookupByLibrary.simpleMessage("Попробуйте\nсами"),
+    "Tue": MessageLookupByLibrary.simpleMessage("Вт"),
     "Tuesday": MessageLookupByLibrary.simpleMessage("Вторник"),
     "TuesdayShort": MessageLookupByLibrary.simpleMessage("Вт"),
     "TypeHere": MessageLookupByLibrary.simpleMessage("Напиши тут"),
@@ -2291,6 +2300,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Weather": MessageLookupByLibrary.simpleMessage("Погода"),
     "Website": MessageLookupByLibrary.simpleMessage("Сайт"),
+    "Wed": MessageLookupByLibrary.simpleMessage("Ср"),
     "Wednesday": MessageLookupByLibrary.simpleMessage("Среда"),
     "WednesdayShort": MessageLookupByLibrary.simpleMessage("Ср"),
     "WeekAgo": MessageLookupByLibrary.simpleMessage("неделю назад"),

@@ -9830,6 +9830,51 @@ class S {
       args: [],
     );
   }
+
+  /// `Mon`
+  String get Mon {
+    return Intl.message('Mon', name: 'Mon', desc: '', args: []);
+  }
+
+  /// `Tue`
+  String get Tue {
+    return Intl.message('Tue', name: 'Tue', desc: '', args: []);
+  }
+
+  /// `Wed`
+  String get Wed {
+    return Intl.message('Wed', name: 'Wed', desc: '', args: []);
+  }
+
+  /// `Thu`
+  String get Thu {
+    return Intl.message('Thu', name: 'Thu', desc: '', args: []);
+  }
+
+  /// `Fri`
+  String get Fri {
+    return Intl.message('Fri', name: 'Fri', desc: '', args: []);
+  }
+
+  /// `Sat`
+  String get Sat {
+    return Intl.message('Sat', name: 'Sat', desc: '', args: []);
+  }
+
+  /// `Sun`
+  String get Sun {
+    return Intl.message('Sun', name: 'Sun', desc: '', args: []);
+  }
+
+  /// `Are you sure you want to delete this voice?`
+  String get AreYouSureYouWantToDeleteThisVoice {
+    return Intl.message(
+      'Are you sure you want to delete this voice?',
+      name: 'AreYouSureYouWantToDeleteThisVoice',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
