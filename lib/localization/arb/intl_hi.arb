@@ -2285,6 +2285,11 @@
   "IfYouApplyThePromotion": "if you apply the promotion",
   "HowManyPeopleRegisteredInTheAppWillPotentiallySeeThePost": "How many people registered in the app will potentially see the post",
   "Wait": "Wait...",
-  "CannotFindThisPromotion": "Cannot find this promotion"
-
+  "CannotFindThisPromotion": "Cannot find this promotion",
+  "CreateAudienceOrSelectOne": "Create a new audience or use a saved one",
+  "From": "From",
+  "To": "To",
+  "Birthday": "Birthday",
+  "Device": "Device",
+  "Information": "Information"
 }

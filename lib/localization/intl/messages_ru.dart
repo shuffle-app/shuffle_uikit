@@ -511,6 +511,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "BeFirstToInvite": MessageLookupByLibrary.simpleMessage("Будь первым"),
     "BeInSearch": MessageLookupByLibrary.simpleMessage("Быть в поиске"),
     "BecomePro": MessageLookupByLibrary.simpleMessage("Страть pro"),
+    "Birthday": MessageLookupByLibrary.simpleMessage("День рождения"),
     "BookIt": MessageLookupByLibrary.simpleMessage("Букинг"),
     "BookItX": m5,
     "Bookigns": m6,
@@ -721,6 +722,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Create": MessageLookupByLibrary.simpleMessage("Создать"),
     "CreateAPromotionForYourXAndIncreaseAttendance": m20,
     "CreateAUSP": m21,
+    "CreateAudienceOrSelectOne": MessageLookupByLibrary.simpleMessage(
+      "Создайте аудиторию или выберете сохраненную",
+    ),
     "CreateBooking": MessageLookupByLibrary.simpleMessage("Создать букинг"),
     "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
     "CreateLinkWith": MessageLookupByLibrary.simpleMessage("Создать сеть с"),
@@ -797,6 +801,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "DescribeYourself": MessageLookupByLibrary.simpleMessage("Опиши себя"),
     "Description": MessageLookupByLibrary.simpleMessage("Описание"),
     "Details": MessageLookupByLibrary.simpleMessage("Детали"),
+    "Device": MessageLookupByLibrary.simpleMessage("Девайс"),
     "DifferentNumberOfPoints": MessageLookupByLibrary.simpleMessage(
       "Разное количество поинтов",
     ),
@@ -971,6 +976,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "FreePlaces": MessageLookupByLibrary.simpleMessage("\nбесплатных мест"),
     "Friday": MessageLookupByLibrary.simpleMessage("Пятница"),
     "FridayShort": MessageLookupByLibrary.simpleMessage("Пт"),
+    "From": MessageLookupByLibrary.simpleMessage("От"),
     "FromGallery": MessageLookupByLibrary.simpleMessage("Из галлереи"),
     "FromToYearsOld": m43,
     "FulfillTheDream": MessageLookupByLibrary.simpleMessage("Исполнить мечту"),
@@ -1089,6 +1095,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Монетизация",
     ),
     "Info": MessageLookupByLibrary.simpleMessage("Информация"),
+    "Information": MessageLookupByLibrary.simpleMessage("Информация"),
     "InstallingCurtains": MessageLookupByLibrary.simpleMessage(
       "Устанавливаем занавески",
     ),
@@ -2119,6 +2126,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Title": MessageLookupByLibrary.simpleMessage("Название"),
     "TitleYourTOP": MessageLookupByLibrary.simpleMessage("Назови свой ТОП"),
     "TitleYourTop": MessageLookupByLibrary.simpleMessage("Назови свой ТОП"),
+    "To": MessageLookupByLibrary.simpleMessage("До"),
     "ToAccessAll": MessageLookupByLibrary.simpleMessage("Полный доступ"),
     "ToAllowAccessGoToSettings": MessageLookupByLibrary.simpleMessage(
       "Чтобы разрешить push-уведомления, зайдите в настройки телефона",

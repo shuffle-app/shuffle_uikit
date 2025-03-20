@@ -508,6 +508,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "BeFirstToInvite": MessageLookupByLibrary.simpleMessage("Be the first"),
     "BeInSearch": MessageLookupByLibrary.simpleMessage("Be in search"),
     "BecomePro": MessageLookupByLibrary.simpleMessage("Become pro"),
+    "Birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
     "BookIt": MessageLookupByLibrary.simpleMessage("Book it"),
     "BookItX": m5,
     "Bookigns": m6,
@@ -718,6 +719,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Create": MessageLookupByLibrary.simpleMessage("Create"),
     "CreateAPromotionForYourXAndIncreaseAttendance": m20,
     "CreateAUSP": m21,
+    "CreateAudienceOrSelectOne": MessageLookupByLibrary.simpleMessage(
+      "Create a new audience or use a saved one",
+    ),
     "CreateBooking": MessageLookupByLibrary.simpleMessage("Create booking"),
     "CreateEvent": MessageLookupByLibrary.simpleMessage("Create Event"),
     "CreateLinkWith": MessageLookupByLibrary.simpleMessage("Create link with"),
@@ -796,6 +800,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Description": MessageLookupByLibrary.simpleMessage("Description"),
     "Details": MessageLookupByLibrary.simpleMessage("Details"),
+    "Device": MessageLookupByLibrary.simpleMessage("Device"),
     "DifferentNumberOfPoints": MessageLookupByLibrary.simpleMessage(
       "Different number of points",
     ),
@@ -964,6 +969,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "FreePlaces": MessageLookupByLibrary.simpleMessage("\nfree places"),
     "Friday": MessageLookupByLibrary.simpleMessage("Friday"),
     "FridayShort": MessageLookupByLibrary.simpleMessage("Fri"),
+    "From": MessageLookupByLibrary.simpleMessage("From"),
     "FromGallery": MessageLookupByLibrary.simpleMessage("From gallery"),
     "FromToYearsOld": m43,
     "FulfillTheDream": MessageLookupByLibrary.simpleMessage(
@@ -1086,6 +1092,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Monetization",
     ),
     "Info": MessageLookupByLibrary.simpleMessage("Info"),
+    "Information": MessageLookupByLibrary.simpleMessage("Information"),
     "InstallingCurtains": MessageLookupByLibrary.simpleMessage(
       "Installing curtains",
     ),
@@ -2099,6 +2106,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Title": MessageLookupByLibrary.simpleMessage("Title"),
     "TitleYourTOP": MessageLookupByLibrary.simpleMessage("Title your TOP"),
     "TitleYourTop": MessageLookupByLibrary.simpleMessage("Title your TOP"),
+    "To": MessageLookupByLibrary.simpleMessage("To"),
     "ToAccessAll": MessageLookupByLibrary.simpleMessage("To access all"),
     "ToAllowAccessGoToSettings": MessageLookupByLibrary.simpleMessage(
       "To allow access to send push notifications, go to your phone settings",

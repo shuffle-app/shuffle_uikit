@@ -2289,5 +2289,11 @@
   "IfYouApplyThePromotion": "если вы воспользуетесь акцией",
   "HowManyPeopleRegisteredInTheAppWillPotentiallySeeThePost": "Скольким людям из зарегистрированных в приложении потенциально покажется пост",
   "Wait": "Подождите...",
-  "CannotFindThisPromotion": "Не удается найти эту рекламную акцию"
+  "CannotFindThisPromotion": "Не удается найти эту рекламную акцию",
+  "CreateAudienceOrSelectOne": "Создайте аудиторию или выберете сохраненную",
+  "From": "От",
+  "To": "До",
+  "Birthday": "День рождения",
+  "Device": "Девайс",
+  "Information": "Информация"
 }

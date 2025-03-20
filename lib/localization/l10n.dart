@@ -9830,6 +9830,41 @@ class S {
       args: [],
     );
   }
+
+  /// `Create a new audience or use a saved one`
+  String get CreateAudienceOrSelectOne {
+    return Intl.message(
+      'Create a new audience or use a saved one',
+      name: 'CreateAudienceOrSelectOne',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From`
+  String get From {
+    return Intl.message('From', name: 'From', desc: '', args: []);
+  }
+
+  /// `To`
+  String get To {
+    return Intl.message('To', name: 'To', desc: '', args: []);
+  }
+
+  /// `Birthday`
+  String get Birthday {
+    return Intl.message('Birthday', name: 'Birthday', desc: '', args: []);
+  }
+
+  /// `Device`
+  String get Device {
+    return Intl.message('Device', name: 'Device', desc: '', args: []);
+  }
+
+  /// `Information`
+  String get Information {
+    return Intl.message('Information', name: 'Information', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
