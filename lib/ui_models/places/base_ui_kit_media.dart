@@ -149,7 +149,7 @@ class UiKitTag {
 
   Map<String, dynamic> toMap() => {
         'title': title,
-        // 'icon': icon,
+        'icon': icon is String ? icon : null,
         'unique': unique,
         'showShadow': showShadow,
         'id': id,
