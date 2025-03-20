@@ -22,6 +22,7 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   final String? branchName;
   final Future<String?> Function(int)? removeBranchItem;
   final bool showBranches;
+  final ValueChanged<IconData>? onTagTap;
 
   UiKitMediaSliderWithTags({
     super.key,
@@ -44,6 +45,7 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
     this.branchName,
     this.removeBranchItem,
     this.showBranches = false,
+    this.onTagTap,
   }) : scrollController = scrollController ?? ScrollController();
 
   @override
@@ -179,6 +181,7 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
           rating: widget.rating,
           baseTags: widget.baseTags,
           uniqueTags: widget.uniqueTags,
+          onTagTap: widget.onTagTap,
         ).paddingSymmetric(horizontal: widget.horizontalMargin),
         SpacingFoundation.verticalSpace14,
         AnimatedSize(
