@@ -108,7 +108,7 @@ class UiKitProUserProfileEventCard extends StatelessWidget {
               separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace8,
               itemBuilder: (context, index) =>
                   SizedBox(
-                    height: (isSmallScreen ? 168.5.h : 0.286.sh),
+                    height: (isSmallScreen ? 172.h : 0.286.sh),
                     width: 0.859375.sw,
                     child: reviews!.elementAt(index),
                   ),

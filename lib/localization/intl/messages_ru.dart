@@ -326,7 +326,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m117(x, y) => "${x} приглашает ${y}";
 
-  static String m118(title) => "${title} требуется";
+  static String m118(title) => "Требуется: ${title}";
 
   static String m119(x) => "${x} успешно активировано";
 
@@ -421,7 +421,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Добавить в личный ТОП",
     ),
     "AddToScheduler": MessageLookupByLibrary.simpleMessage("Запланировать"),
-    "AddVoice": MessageLookupByLibrary.simpleMessage("Добавить голосовое"),
+    "AddVoice": MessageLookupByLibrary.simpleMessage("Добавить аудио"),
     "AddYourselfToList": MessageLookupByLibrary.simpleMessage(
       "Добавиться в список",
     ),
@@ -435,7 +435,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AllAppNotification": MessageLookupByLibrary.simpleMessage(
       "Все уведомления",
     ),
-    "AllVoices": MessageLookupByLibrary.simpleMessage("Все голосовые"),
+    "AllVoices": MessageLookupByLibrary.simpleMessage("Все аудио"),
     "AllXFeaturesAvailable": m1,
     "Allow": MessageLookupByLibrary.simpleMessage("Разрешить"),
     "AllowAll": MessageLookupByLibrary.simpleMessage("Разрешить все"),
@@ -514,6 +514,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "BeFirstToInvite": MessageLookupByLibrary.simpleMessage("Будь первым"),
     "BeInSearch": MessageLookupByLibrary.simpleMessage("Быть в поиске"),
     "BecomePro": MessageLookupByLibrary.simpleMessage("Страть pro"),
+    "Birthday": MessageLookupByLibrary.simpleMessage("День рождения"),
     "BookIt": MessageLookupByLibrary.simpleMessage("Букинг"),
     "BookItX": m5,
     "Bookigns": m6,
@@ -584,7 +585,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Не удается найти этот освежитель",
     ),
     "CannotFindThisVoice": MessageLookupByLibrary.simpleMessage(
-      "Не удаётся найти это голосовое",
+      "Не удаётся найти это аудио",
     ),
     "CantSeePublicProfileMessage": MessageLookupByLibrary.simpleMessage(
       "Ты сможешь увидеть этот профиль, когда он станет инфлюенсером",
@@ -712,10 +713,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Не удалось найти приглашение",
     ),
     "CouldntFindVoiceMessages": MessageLookupByLibrary.simpleMessage(
-      "Не удалось найти голосовые сообщения",
+      "Не удалось найти аудио",
     ),
     "CouldntSendVoiceMessages": MessageLookupByLibrary.simpleMessage(
-      "Не удалось отправить голосовые сообщения",
+      "Не удалось отправить аудио",
     ),
     "CountReviews": m18,
     "CountVideoReaction": m19,
@@ -724,6 +725,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Create": MessageLookupByLibrary.simpleMessage("Создать"),
     "CreateAPromotionForYourXAndIncreaseAttendance": m20,
     "CreateAUSP": m21,
+    "CreateAudienceOrSelectOne": MessageLookupByLibrary.simpleMessage(
+      "Создайте аудиторию или выберете сохраненную",
+    ),
     "CreateBooking": MessageLookupByLibrary.simpleMessage("Создать букинг"),
     "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
     "CreateLinkWith": MessageLookupByLibrary.simpleMessage("Создать сеть с"),
@@ -804,6 +808,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "DescribeYourself": MessageLookupByLibrary.simpleMessage("Опиши себя"),
     "Description": MessageLookupByLibrary.simpleMessage("Описание"),
     "Details": MessageLookupByLibrary.simpleMessage("Детали"),
+    "Device": MessageLookupByLibrary.simpleMessage("Девайс"),
     "DifferentNumberOfPoints": MessageLookupByLibrary.simpleMessage(
       "Разное количество поинтов",
     ),
@@ -979,6 +984,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Fri": MessageLookupByLibrary.simpleMessage("Пт"),
     "Friday": MessageLookupByLibrary.simpleMessage("Пятница"),
     "FridayShort": MessageLookupByLibrary.simpleMessage("Пт"),
+    "From": MessageLookupByLibrary.simpleMessage("От"),
     "FromGallery": MessageLookupByLibrary.simpleMessage("Из галлереи"),
     "FromToYearsOld": m43,
     "FulfillTheDream": MessageLookupByLibrary.simpleMessage("Исполнить мечту"),
@@ -1028,7 +1034,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "3 события доступны & добавь больше за отдельную цену",
     ),
     "HintStripe": MessageLookupByLibrary.simpleMessage(
-      "Чтобы стало доступно, создайте аккаунт Stripe",
+      "Чтобы воспользоваться, создайте аккаунт Stripe в Настройках «Кошелек»",
     ),
     "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
       "Система подсказок деактивирована",
@@ -1097,6 +1103,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Монетизация",
     ),
     "Info": MessageLookupByLibrary.simpleMessage("Информация"),
+    "Information": MessageLookupByLibrary.simpleMessage("Информация"),
     "InstallingCurtains": MessageLookupByLibrary.simpleMessage(
       "Устанавливаем занавески",
     ),
@@ -1479,7 +1486,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Посещенные места",
     ),
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
-      "Пожалуйста, добавьте даты(-у)",
+      "Пожалуйста, добавьте диапазон дат",
     ),
     "PleaseAddPhoto": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, добавьте фото",
@@ -2131,6 +2138,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Title": MessageLookupByLibrary.simpleMessage("Название"),
     "TitleYourTOP": MessageLookupByLibrary.simpleMessage("Назови свой ТОП"),
     "TitleYourTop": MessageLookupByLibrary.simpleMessage("Назови свой ТОП"),
+    "To": MessageLookupByLibrary.simpleMessage("До"),
     "ToAccessAll": MessageLookupByLibrary.simpleMessage("Полный доступ"),
     "ToAllowAccessGoToSettings": MessageLookupByLibrary.simpleMessage(
       "Чтобы разрешить push-уведомления, зайдите в настройки телефона",
@@ -2146,7 +2154,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ToOpenTheNextSetOfToolsYouNeedToDo": MessageLookupByLibrary.simpleMessage(
       "Чтобы открыть следующий набор инструментов, вам нужно сделать",
     ),
-    "ToPlan": MessageLookupByLibrary.simpleMessage("Планировать"),
+    "ToPlan": MessageLookupByLibrary.simpleMessage("Планировщик"),
     "ToUnlock": MessageLookupByLibrary.simpleMessage("Чтобы открыть"),
     "Today": MessageLookupByLibrary.simpleMessage("Сегодня"),
     "TodaysSummaryX": m103,
@@ -2273,9 +2281,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Посети первое, открой следующее",
     ),
     "Visitors": MessageLookupByLibrary.simpleMessage("Визиты"),
-    "Voice": MessageLookupByLibrary.simpleMessage("Аудиосообщения"),
-    "Voices": MessageLookupByLibrary.simpleMessage("Голосовые записи"),
-    "VoicesIsEmpty": MessageLookupByLibrary.simpleMessage("Нет голосовых"),
+    "Voice": MessageLookupByLibrary.simpleMessage("Аудио"),
+    "Voices": MessageLookupByLibrary.simpleMessage("Аудио"),
+    "VoicesIsEmpty": MessageLookupByLibrary.simpleMessage("Нет аудио"),
     "Wait": MessageLookupByLibrary.simpleMessage("Подождите..."),
     "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
       "Ждите ответа админа чата",

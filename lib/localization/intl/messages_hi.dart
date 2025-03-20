@@ -511,6 +511,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "BeFirstToInvite": MessageLookupByLibrary.simpleMessage("Be the first"),
     "BeInSearch": MessageLookupByLibrary.simpleMessage("खोज में रहो"),
     "BecomePro": MessageLookupByLibrary.simpleMessage("Become pro"),
+    "Birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
     "BookIt": MessageLookupByLibrary.simpleMessage("बुक करें"),
     "BookItX": m5,
     "Bookigns": m6,
@@ -722,6 +723,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Create": MessageLookupByLibrary.simpleMessage("बनाएँ"),
     "CreateAPromotionForYourXAndIncreaseAttendance": m20,
     "CreateAUSP": m21,
+    "CreateAudienceOrSelectOne": MessageLookupByLibrary.simpleMessage(
+      "Create a new audience or use a saved one",
+    ),
     "CreateBooking": MessageLookupByLibrary.simpleMessage("Create booking"),
     "CreateEvent": MessageLookupByLibrary.simpleMessage("कार्यक्रम बनाएँ"),
     "CreateLinkWith": MessageLookupByLibrary.simpleMessage("Create link with"),
@@ -802,6 +806,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Description": MessageLookupByLibrary.simpleMessage("विवरण"),
     "Details": MessageLookupByLibrary.simpleMessage("विवरण"),
+    "Device": MessageLookupByLibrary.simpleMessage("Device"),
     "DifferentNumberOfPoints": MessageLookupByLibrary.simpleMessage(
       "अलग संख्या के अंक",
     ),
@@ -971,6 +976,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Fri": MessageLookupByLibrary.simpleMessage("Fri"),
     "Friday": MessageLookupByLibrary.simpleMessage("शुक्रवार"),
     "FridayShort": MessageLookupByLibrary.simpleMessage("शुक्रवार"),
+    "From": MessageLookupByLibrary.simpleMessage("From"),
     "FromGallery": MessageLookupByLibrary.simpleMessage("गैलरी से"),
     "FromToYearsOld": m43,
     "FulfillTheDream": MessageLookupByLibrary.simpleMessage("सपना पूरा करो"),
@@ -1022,7 +1028,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "3 घटनाएँ उपलब्ध हैं और अधिक कीमत के लिए अधिक जोड़ें",
     ),
     "HintStripe": MessageLookupByLibrary.simpleMessage(
-      "To make it available, create a Stripe account",
+      "To make it available, create a Stripe account in Settings \"Wallet\"",
     ),
     "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
       "संकेत प्रणाली अक्षम है",
@@ -1089,6 +1095,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "मुद्रीकरण",
     ),
     "Info": MessageLookupByLibrary.simpleMessage("जानकारी"),
+    "Information": MessageLookupByLibrary.simpleMessage("Information"),
     "InstallingCurtains": MessageLookupByLibrary.simpleMessage(
       "Installing curtains",
     ),
@@ -1472,7 +1479,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PlacesVisited": m64,
     "PlacesVisitedInf": MessageLookupByLibrary.simpleMessage("Places visited"),
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
-      "कृपया एक तिथि या तिथियाँ जोड़ें",
+      "कृपया एक तिथि अवधि जोड़ें",
     ),
     "PleaseAddPhoto": MessageLookupByLibrary.simpleMessage("कृपया फोटो जोड़ें"),
     "PleaseEnterABranchTitle": MessageLookupByLibrary.simpleMessage(
@@ -2127,6 +2134,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "TitleYourTop": MessageLookupByLibrary.simpleMessage(
       "अपने शीर्ष का शीर्षक दें",
     ),
+    "To": MessageLookupByLibrary.simpleMessage("To"),
     "ToAccessAll": MessageLookupByLibrary.simpleMessage(
       "सभी तक पहुँचने के लिए",
     ),

@@ -28,10 +28,7 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -6799,8 +6796,7 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      other:
-          'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      other: 'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
       desc: '',
       args: [count],
@@ -7017,10 +7013,10 @@ class S {
     );
   }
 
-  /// `Please add a date(-s)`
+  /// `Please add a date period`
   String get PleaseAddDatePeriod {
     return Intl.message(
-      'Please add a date(-s)',
+      'Please add a date period',
       name: 'PleaseAddDatePeriod',
       desc: '',
       args: [],
@@ -9531,10 +9527,10 @@ class S {
     return Intl.message('At entrance', name: 'AtEntrance', desc: '', args: []);
   }
 
-  /// `To make it available, create a Stripe account`
+  /// `To make it available, create a Stripe account in Settings "Wallet"`
   String get HintStripe {
     return Intl.message(
-      'To make it available, create a Stripe account',
+      'To make it available, create a Stripe account in Settings "Wallet"',
       name: 'HintStripe',
       desc: '',
       args: [],
@@ -9829,6 +9825,41 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Create a new audience or use a saved one`
+  String get CreateAudienceOrSelectOne {
+    return Intl.message(
+      'Create a new audience or use a saved one',
+      name: 'CreateAudienceOrSelectOne',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From`
+  String get From {
+    return Intl.message('From', name: 'From', desc: '', args: []);
+  }
+
+  /// `To`
+  String get To {
+    return Intl.message('To', name: 'To', desc: '', args: []);
+  }
+
+  /// `Birthday`
+  String get Birthday {
+    return Intl.message('Birthday', name: 'Birthday', desc: '', args: []);
+  }
+
+  /// `Device`
+  String get Device {
+    return Intl.message('Device', name: 'Device', desc: '', args: []);
+  }
+
+  /// `Information`
+  String get Information {
+    return Intl.message('Information', name: 'Information', desc: '', args: []);
   }
 
   /// `Mon`

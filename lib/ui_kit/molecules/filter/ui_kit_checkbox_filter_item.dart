@@ -7,11 +7,11 @@ class UiKitCheckboxFilterItem extends StatelessWidget {
   final ValueChanged<bool> onTap;
 
   const UiKitCheckboxFilterItem({
-    Key? key,
+    super.key,
     required this.item,
     required this.isSelected,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

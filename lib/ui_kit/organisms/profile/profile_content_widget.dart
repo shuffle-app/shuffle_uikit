@@ -32,9 +32,11 @@ class ProfileContentWidget extends StatelessWidget {
         onTap: onCalendarTap ?? onViewAllAchievements,
         child: UiKitCardWrapper(
           color: theme?.colorScheme.surface2,
-          padding: EdgeInsets.symmetric(vertical: SpacingFoundation.verticalSpacing16),
+          padding: EdgeInsets.only(top: SpacingFoundation.verticalSpacing20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.ce,
+            mainAxisSize: MainAxisSize.min,
             children: [
               // SpacingFoundation.verticalSpace12,
               AutoSizeText(
@@ -45,13 +47,13 @@ class ProfileContentWidget extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: theme?.boldTextTheme.caption1Bold,
               ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing12),
-              SpacingFoundation.verticalSpace12,
+              // SpacingFoundation.verticalSpace4,
               if (showCalendar)
                 // ...[
                 // SpacingFoundation.verticalSpace12,
                 ImageWidget(
                   width: 80.w,
-                  height: 1.sw <= 380 ? 72.h : 58.5.h,
+                  height: 1.sw <= 380 ? 0.22.sw : 58.5.h,
                   link: GraphicsFoundation.instance.png.calendarWatch.path,
                 ).paddingSymmetric(
                   horizontal: SpacingFoundation.horizontalSpacing12,
@@ -62,7 +64,7 @@ class ProfileContentWidget extends StatelessWidget {
                 // ...[
                 // SpacingFoundation.verticalSpace12,
                 SizedBox(
-                  height: 1.sw <= 380 ? 72.h : 58.5.h,
+                  height: 1.sw <= 380 ? 0.22.sw : 58.5.h,
                   child: ListenableBuilder(
                     listenable: _currentIndex,
                     builder: (context, child) => AchievementsCarouselSlider(
