@@ -90,49 +90,6 @@ String formatChatMessageDate(DateTime date) {
   return DateFormat('HH:mm').format(date);
 }
 
-String? formatDate(DateTime? date, DateTime? dateTo, TimeOfDay? time, TimeOfDay? timeTo, List<String>? wDays,
-    [bool showDateFirst = false]) {
-  if (date == null && dateTo == null && time == null && timeTo == null && wDays == null) return null;
-  String convDate = '';
-  if (showDateFirst) {
-    convDate += date != null ? '${convDate.isEmpty ? '' : ', '}${DateFormat('MMM dd').format(date)}' : '';
-    if (dateTo != null && dateTo != date) {
-      convDate += '${date != null ? ' - ' : convDate.isEmpty ? '' : ', '}${DateFormat('MMM dd, yyyy').format(dateTo)}';
-    }
-  }
-  if ((time != null && timeTo != null) && time == timeTo) {
-    convDate += S.current.daynight;
-  } else {
-    if (time != null) {
-      convDate += (convDate.isEmpty ? '' : ', ') + normalizedTi(time, showDateName: false);
-    }
-    if (timeTo != null) {
-      convDate += '${convDate.isEmpty ? '' : ' - '}${normalizedTi(timeTo, showDateName: false)}';
-    }
-  }
-  if (wDays != null && wDays.isNotEmpty) {
-    final List<String> days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    final int start = days.indexOf(wDays.first);
-    final int end = days.indexOf(wDays.last);
-    if (start == end) {
-      convDate += ', ${wDays.first}';
-    } else {
-      convDate += end - start == wDays.length - 1
-          ? '${convDate.isEmpty ? '' : ', '}${wDays.first} - ${wDays.last}'
-          : ', ${wDays.join(', ')}';
-    }
-
-    return convDate;
-  } else if (!showDateFirst) {
-    convDate += date != null ? '${convDate.isEmpty ? '' : ', '}${DateFormat('MMM dd').format(date)}' : '';
-    if (dateTo != null && dateTo != date) {
-      convDate += '${date != null ? ' - ' : convDate.isEmpty ? '' : ', '}${DateFormat('MMM dd, yyyy').format(dateTo)}';
-    }
-  }
-
-  return convDate;
-}
-
 showTimeInfoDialog(BuildContext context, List<List<String>> times) {
   final theme = context.uiKitTheme;
 
@@ -198,7 +155,7 @@ showTimeInfoDialog(BuildContext context, List<List<String>> times) {
                       children: [
                         Flexible(
                           child: AutoSizeText(
-                            firstText,
+                            '$firstText:',
                             style: theme?.regularTextTheme.caption2.copyWith(color: Colors.black),
                             maxLines: 1,
                             minFontSize: 8,
@@ -221,7 +178,7 @@ showTimeInfoDialog(BuildContext context, List<List<String>> times) {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         AutoSizeText(
-                          firstText,
+                          '$firstText:',
                           style: theme?.regularTextTheme.caption2.copyWith(color: Colors.black),
                           minFontSize: 8,
                         ),
@@ -242,4 +199,114 @@ showTimeInfoDialog(BuildContext context, List<List<String>> times) {
       );
     },
   );
+}
+
+/// Correct Format date and time 20.03.25
+
+enum WeekdayKey { Mon, Tue, Wed, Thu, Fri, Sat, Sun }
+
+String normalizeDateKey(String key) {
+  final parts = key.split('/');
+  final start = DateFormat('yy-MM-dd').parse(parts[0]);
+  final end = DateFormat('yy-MM-dd').parse(parts[1]);
+
+  final dates = [start, end]..sort((a, b) => a.compareTo(b));
+  final formattedStart = DateFormat('dd.MM.yy').format(dates[0]);
+  final formattedEnd = DateFormat('dd.MM.yy').format(dates[1]);
+
+  return dates[0] == dates[1] ? formattedStart : '$formattedStart – $formattedEnd';
+}
+
+WeekdayKey parseWeekdayKey(String input) {
+  const mapping = {
+    'Mon': WeekdayKey.Mon,
+    'Tue': WeekdayKey.Tue,
+    'Wed': WeekdayKey.Wed,
+    'Thu': WeekdayKey.Thu,
+    'Fri': WeekdayKey.Fri,
+    'Sat': WeekdayKey.Sat,
+    'Sun': WeekdayKey.Sun,
+    'Пн': WeekdayKey.Mon,
+    'Вт': WeekdayKey.Tue,
+    'Ср': WeekdayKey.Wed,
+    'Чт': WeekdayKey.Thu,
+    'Пт': WeekdayKey.Fri,
+    'Сб': WeekdayKey.Sat,
+    'Вс': WeekdayKey.Sun,
+  };
+
+  final key = mapping[input.trim()];
+  if (key == null) throw FormatException('Invalid weekday: $input');
+  return key;
+}
+
+String normalizeDayKey(String originalKey) {
+  final days = originalKey.split(', ').map((d) => parseWeekdayKey(d.trim())).toList()
+    ..sort((a, b) => a.index.compareTo(b.index));
+
+  return days.map((d) => d.toString().split('.').last).join(', ');
+}
+
+int timeComparator(String a, String b) {
+  return compareTimeStrings(a.split(' – ')[0], b.split(' – ')[0]);
+}
+
+int compareTimeStrings(String a, String b) {
+  final timeA = DateFormat('HH:mm').parse(a);
+  final timeB = DateFormat('HH:mm').parse(b);
+  return timeA.compareTo(timeB);
+}
+
+String formatRange(WeekdayKey start, WeekdayKey end) {
+  String localizedDay(WeekdayKey key) {
+    switch (key) {
+      case WeekdayKey.Mon:
+        return S.current.Mon;
+      case WeekdayKey.Tue:
+        return S.current.Tue;
+      case WeekdayKey.Wed:
+        return S.current.Wed;
+      case WeekdayKey.Thu:
+        return S.current.Thu;
+      case WeekdayKey.Fri:
+        return S.current.Fri;
+      case WeekdayKey.Sat:
+        return S.current.Sat;
+      case WeekdayKey.Sun:
+        return S.current.Sun;
+    }
+  }
+
+  final startStr = localizedDay(start);
+  final endStr = localizedDay(end);
+  return start == end ? startStr : '$startStr – $endStr';
+}
+
+String compactDays(List<String> dayStrings) {
+  if (dayStrings.isEmpty) return '';
+
+  final days = dayStrings.map(parseWeekdayKey).toList();
+  days.sort((a, b) => a.index.compareTo(b.index));
+
+  List<List<WeekdayKey>> ranges = [];
+  List<WeekdayKey> currentRange = [days.first];
+
+  for (int i = 1; i < days.length; i++) {
+    if (days[i].index == days[i - 1].index + 1) {
+      currentRange.add(days[i]);
+    } else {
+      ranges.add(currentRange);
+      currentRange = [days[i]];
+    }
+  }
+  ranges.add(currentRange);
+
+  return ranges.map((range) {
+    return formatRange(range.first, range.last);
+  }).join(', ');
+}
+
+String dateFormatterToString(String dateStr, {required String locale}) {
+  final date = DateFormat('yy-MM-dd').parse(dateStr);
+  return DateFormat('dd.MM.yy', locale).format(date);
 }
