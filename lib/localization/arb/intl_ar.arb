@@ -1170,8 +1170,9 @@
   "Fri": "Fri",
   "Sat": "Sat",
   "Sun": "Sun",
-  "AreYouSureYouWantToDeleteThisVoice": "Are you sure you want to delete this voice?"
-
+  "AreYouSureYouWantToDeleteThisVoice": "Are you sure you want to delete this voice?",
+  "DateTime": "Date – Time",
+  "DateRangeTime": "Date Range – Time"
 
 
 }

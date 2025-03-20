@@ -761,6 +761,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "Date": MessageLookupByLibrary.simpleMessage("तारीख"),
     "DateOfBirth": MessageLookupByLibrary.simpleMessage("जन्म की तारीख"),
     "DateRange": MessageLookupByLibrary.simpleMessage("सीमा चुनें"),
+    "DateRangeTime": MessageLookupByLibrary.simpleMessage("Date Range – Time"),
+    "DateTime": MessageLookupByLibrary.simpleMessage("Date – Time"),
     "Dates": MessageLookupByLibrary.simpleMessage("तिथियां"),
     "Day": MessageLookupByLibrary.simpleMessage("दिन"),
     "Days": m23,

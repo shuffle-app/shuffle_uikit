@@ -9875,6 +9875,21 @@ class S {
       args: [],
     );
   }
+
+  /// `Date – Time`
+  String get DateTime {
+    return Intl.message('Date – Time', name: 'DateTime', desc: '', args: []);
+  }
+
+  /// `Date Range – Time`
+  String get DateRangeTime {
+    return Intl.message(
+      'Date Range – Time',
+      name: 'DateRangeTime',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

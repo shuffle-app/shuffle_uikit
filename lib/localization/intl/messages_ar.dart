@@ -760,6 +760,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "Date": MessageLookupByLibrary.simpleMessage("Date"),
     "DateOfBirth": MessageLookupByLibrary.simpleMessage("Date of birth"),
     "DateRange": MessageLookupByLibrary.simpleMessage("Date Range"),
+    "DateRangeTime": MessageLookupByLibrary.simpleMessage("Date Range – Time"),
+    "DateTime": MessageLookupByLibrary.simpleMessage("Date – Time"),
     "Dates": MessageLookupByLibrary.simpleMessage("Dates"),
     "Day": MessageLookupByLibrary.simpleMessage("Day"),
     "Days": m23,

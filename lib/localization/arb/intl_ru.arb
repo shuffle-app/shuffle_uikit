@@ -1163,13 +1163,15 @@
   "HowManyPeopleRegisteredInTheAppWillPotentiallySeeThePost": "Скольким людям из зарегистрированных в приложении потенциально покажется пост",
   "Wait": "Подождите...",
   "CannotFindThisPromotion": "Не удается найти эту рекламную акцию",
-  "Mon": "Пон",
+  "Mon": "Пн",
   "Tue": "Вт" ,
   "Wed": "Ср",
   "Thu": "Чт",
   "Fri": "Пт",
   "Sat": "Сб",
   "Sun": "Вс",
-  "AreYouSureYouWantToDeleteThisVoice": "Вы точно хотите удалить этот войс?"
+  "AreYouSureYouWantToDeleteThisVoice": "Вы точно хотите удалить этот войс?",
+  "DateTime": "Дата – Время",
+  "DateRangeTime": "Диапазон дат – Время"
 }
 
