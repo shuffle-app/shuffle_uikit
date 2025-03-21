@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -10,6 +11,7 @@ class UiKitBadgeColored extends StatelessWidget {
   final double borderWidth;
   final BorderRadius? borderRadius;
   final TextStyle? customTextStyle;
+  final AutoSizeGroup? group;
 
   const UiKitBadgeColored({
     super.key,
@@ -20,6 +22,7 @@ class UiKitBadgeColored extends StatelessWidget {
     this.borderWidth = 1,
     this.borderRadius,
     this.iconData,
+    this.group,
     this.customTextStyle,
   }) : assert(iconSvg == null || iconData == null, 'Only one icon can be provided');
 
@@ -31,9 +34,9 @@ class UiKitBadgeColored extends StatelessWidget {
     this.borderRadius,
     this.iconSvg,
     this.iconData,
+    this.group,
     this.customTextStyle,
-  })
-      : borderWidth = 0,
+  })  : borderWidth = 0,
         assert(iconSvg == null || iconData == null, 'Only one icon can be provided');
 
   @override
@@ -53,11 +56,19 @@ class UiKitBadgeColored extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             if (title != null)
-              Text(title!,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: customTextStyle?.copyWith(color: color) ??
-                      theme?.boldTextTheme.caption1Medium.copyWith(color: color)),
+              if (group != null)
+                AutoSizeText(title!,
+                    maxLines: 1,
+                    group: group,
+                    overflow: TextOverflow.ellipsis,
+                    style: customTextStyle?.copyWith(color: color) ??
+                        theme?.boldTextTheme.caption1Medium.copyWith(color: color))
+              else
+                Text(title!,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: customTextStyle?.copyWith(color: color) ??
+                        theme?.boldTextTheme.caption1Medium.copyWith(color: color)),
             if ((iconSvg != null || iconData != null) && title != null) 4.w.widthBox,
             if (iconSvg != null || iconData != null)
               ImageWidget(

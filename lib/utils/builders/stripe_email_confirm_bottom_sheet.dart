@@ -13,7 +13,7 @@ stripeEmailConfirmBottomSheet(BuildContext context, {required TextEditingControl
           context,
           GeneralDialogData(
               isWidgetScrollable: true,
-              topPadding: 0.1.sh,
+              topPadding: .35.sw,
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 SpacingFoundation.verticalSpace16,
                 Align(

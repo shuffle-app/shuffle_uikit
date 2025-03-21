@@ -12,6 +12,7 @@ class UiKitStripeRegistrationTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
     final colorScheme = theme?.colorScheme;
+
     return UiKitCardWrapper(
       borderRadius: BorderRadiusFoundation.all12,
       color: colorScheme?.surface2,
@@ -25,12 +26,14 @@ class UiKitStripeRegistrationTile extends StatelessWidget {
               style: theme?.regularTextTheme.caption3.copyWith(fontWeight: FontWeight.w500),
               maxLines: 2,
               minFontSize: 6,
+              group: _group,
             ),
           ),
           SpacingFoundation.horizontalSpace12,
           UiKitBadgeColored.withoutBorder(
             title: status.stringValue,
             color: status.colorValue,
+            group: _group,
             borderRadius: BorderRadiusFoundation.all12,
           ),
           if (onTap != null)
@@ -49,6 +52,8 @@ class UiKitStripeRegistrationTile extends StatelessWidget {
     );
   }
 }
+
+final AutoSizeGroup _group = AutoSizeGroup();
 
 enum StripeRegistrationStatus { notStarted, inProgress, completed, needAction }
 
