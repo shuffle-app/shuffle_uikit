@@ -259,7 +259,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m90(type) => "select ${type}";
 
-  static String m91(x) => "Set up a Refresher for \$${x}";
+  static String m91(x) => "Set up Refresher for \$${x}";
 
   static String m92(count) =>
       "${count} ${Intl.plural(count, zero: 'card', one: 'card', two: 'cards', few: 'cards', many: 'cards', other: 'cards')} ${Intl.plural(count, zero: 'shares', one: 'share', two: 'shares', few: 'shares', many: 'shares', other: 'shares')}";
@@ -510,7 +510,7 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "BeFirstToInvite": MessageLookupByLibrary.simpleMessage("Be the first"),
     "BeInSearch": MessageLookupByLibrary.simpleMessage("Be in search"),
-    "BecomePro": MessageLookupByLibrary.simpleMessage("Become pro"),
+    "BecomePro": MessageLookupByLibrary.simpleMessage("Become Pro"),
     "Birthday": MessageLookupByLibrary.simpleMessage("Birthday"),
     "BookIt": MessageLookupByLibrary.simpleMessage("Book it"),
     "BookItX": m5,
@@ -526,7 +526,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "BookingList": MessageLookupByLibrary.simpleMessage("Booking list"),
     "BookingPlural": MessageLookupByLibrary.simpleMessage("Bookings"),
     "BookingPopUpText": MessageLookupByLibrary.simpleMessage(
-      "Show up ratio takes into account how long a user has been online, whether they have notifications enabled, and their no-show ratio",
+      "Show up ratio takes into account how long ago the user was online, whether he has notifications enabled, and his no-show ratio",
     ),
     "Bookings": m7,
     "BookingsAndFavorites": MessageLookupByLibrary.simpleMessage(
@@ -838,7 +838,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "EmptyChallengeEasy": MessageLookupByLibrary.simpleMessage("Easy"),
     "EmptyChallengeFair": MessageLookupByLibrary.simpleMessage("Fair"),
-    "EmptyChallengeHardcode": MessageLookupByLibrary.simpleMessage("Hardcode"),
+    "EmptyChallengeHardcode": MessageLookupByLibrary.simpleMessage("Hardcore"),
     "EmptyChallengeMessage": MessageLookupByLibrary.simpleMessage(
       "Challenge right now,\ncheck out another one",
     ),
@@ -874,7 +874,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ErrorThisNameHasAlreadyBeenRegistered":
         MessageLookupByLibrary.simpleMessage(
-          "Error: This name has already been registered",
+          "Error: name has already been registered",
         ),
     "ErrorWhenCreateImage": MessageLookupByLibrary.simpleMessage(
       "Error when create image",
@@ -1306,7 +1306,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "NoShows": MessageLookupByLibrary.simpleMessage("No shows"),
     "NoShowsRatioTakesIntoAccount": MessageLookupByLibrary.simpleMessage(
-      "No shows ratio takes into account the no show ratios for all users",
+      "No shows ratio takes into account all users no shows",
     ),
     "NoThx": MessageLookupByLibrary.simpleMessage("No, thx"),
     "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
@@ -2363,7 +2363,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "You have 15 minutes to pay, otherwise the ticket will be cancelled",
     ),
     "YouHaveUnpaidTickets": MessageLookupByLibrary.simpleMessage(
-      "You have unpaid tickets to review, do you want to view the in My booking page?",
+      "You have unpaid tickets, want to review them in My booking page?",
     ),
     "YouMissedALot": MessageLookupByLibrary.simpleMessage("You missed a lot"),
     "YouNeedSelectMethods": MessageLookupByLibrary.simpleMessage(

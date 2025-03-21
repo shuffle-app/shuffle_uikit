@@ -8311,9 +8311,9 @@ class S {
     return Intl.message('See list', name: 'SeeList', desc: '', args: []);
   }
 
-  /// `Become pro`
+  /// `Become Pro`
   String get BecomePro {
-    return Intl.message('Become pro', name: 'BecomePro', desc: '', args: []);
+    return Intl.message('Become Pro', name: 'BecomePro', desc: '', args: []);
   }
 
   /// `Book it (+{x})`
@@ -8536,10 +8536,10 @@ class S {
     );
   }
 
-  /// `Show up ratio takes into account how long a user has been online, whether they have notifications enabled, and their no-show ratio`
+  /// `Show up ratio takes into account how long ago the user was online, whether he has notifications enabled, and his no-show ratio`
   String get BookingPopUpText {
     return Intl.message(
-      'Show up ratio takes into account how long a user has been online, whether they have notifications enabled, and their no-show ratio',
+      'Show up ratio takes into account how long ago the user was online, whether he has notifications enabled, and his no-show ratio',
       name: 'BookingPopUpText',
       desc: '',
       args: [],
@@ -8551,10 +8551,10 @@ class S {
     return Intl.message('No shows', name: 'NoShows', desc: '', args: []);
   }
 
-  /// `No shows ratio takes into account the no show ratios for all users`
+  /// `No shows ratio takes into account all users no shows`
   String get NoShowsRatioTakesIntoAccount {
     return Intl.message(
-      'No shows ratio takes into account the no show ratios for all users',
+      'No shows ratio takes into account all users no shows',
       name: 'NoShowsRatioTakesIntoAccount',
       desc: '',
       args: [],
@@ -8681,10 +8681,10 @@ class S {
     return Intl.message('Fair', name: 'EmptyChallengeFair', desc: '', args: []);
   }
 
-  /// `Hardcode`
+  /// `Hardcore`
   String get EmptyChallengeHardcode {
     return Intl.message(
-      'Hardcode',
+      'Hardcore',
       name: 'EmptyChallengeHardcode',
       desc: '',
       args: [],
@@ -8831,10 +8831,10 @@ class S {
     );
   }
 
-  /// `Error: This name has already been registered`
+  /// `Error: name has already been registered`
   String get ErrorThisNameHasAlreadyBeenRegistered {
     return Intl.message(
-      'Error: This name has already been registered',
+      'Error: name has already been registered',
       name: 'ErrorThisNameHasAlreadyBeenRegistered',
       desc: '',
       args: [],
@@ -8851,10 +8851,10 @@ class S {
     );
   }
 
-  /// `Set up a Refresher for ${x}`
+  /// `Set up Refresher for ${x}`
   String SetUpARefresherForX(Object x) {
     return Intl.message(
-      'Set up a Refresher for \$$x',
+      'Set up Refresher for \$$x',
       name: 'SetUpARefresherForX',
       desc: '',
       args: [x],
@@ -9351,10 +9351,10 @@ class S {
     return Intl.message('Just now', name: 'JustNow', desc: '', args: []);
   }
 
-  /// `You have unpaid tickets to review, do you want to view the in My booking page?`
+  /// `You have unpaid tickets, want to review them in My booking page?`
   String get YouHaveUnpaidTickets {
     return Intl.message(
-      'You have unpaid tickets to review, do you want to view the in My booking page?',
+      'You have unpaid tickets, want to review them in My booking page?',
       name: 'YouHaveUnpaidTickets',
       desc: '',
       args: [],
