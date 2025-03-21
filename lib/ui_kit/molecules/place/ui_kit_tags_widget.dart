@@ -5,12 +5,14 @@ class UiKitTagsWidget extends StatelessWidget {
   final double? rating;
   final List<UiKitTag> baseTags;
   final List<UiKitTag>? uniqueTags;
+  final ValueChanged<IconData>? onTagTap;
 
   const UiKitTagsWidget({
     super.key,
     this.rating,
     required this.baseTags,
     this.uniqueTags,
+    this.onTagTap,
   });
 
   @override
@@ -64,7 +66,14 @@ class UiKitTagsWidget extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final tag = baseTags.elementAt(index);
 
-                    return tag.widget;
+                    return GestureDetector(
+                      child: tag.widget,
+                      onTap: () {
+                        if (tag.icon.runtimeType == IconData) {
+                          onTagTap?.call(tag.icon);
+                        }
+                      },
+                    );
                   },
                   separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace8,
                   itemCount: baseTags.length,

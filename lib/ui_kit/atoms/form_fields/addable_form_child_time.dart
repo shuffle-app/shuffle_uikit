@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 ///There are only two options for the time picker.
@@ -40,7 +39,7 @@ class AddableFormChildTime<T> extends StatelessWidget {
               if (T == TimeOfDay) hintTimeWidget else hintTimeRangeWidget
             else if (T == TimeOfDay)
               Text(
-                normalizedTi(initialValue as TimeOfDay),
+                (initialValue as TimeOfDay).format(context),
                 style: textStyle,
               )
             else

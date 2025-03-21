@@ -2291,5 +2291,16 @@
   "To": "To",
   "Birthday": "Birthday",
   "Device": "Device",
-  "Information": "Information"
+  "Information": "Information",
+  "Mon": "Mon",
+  "Tue": "Tue" ,
+  "Wed": "Wed",
+  "Thu": "Thu",
+  "Fri": "Fri",
+  "Sat": "Sat",
+  "Sun": "Sun",
+  "AreYouSureYouWantToDeleteThisVoice": "Are you sure you want to delete this voice?",
+  "DateTime": "Date – Time",
+  "DateRangeTime": "Date Range – Time"
+
 }

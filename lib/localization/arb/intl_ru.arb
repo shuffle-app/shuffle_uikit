@@ -2295,5 +2295,15 @@
   "To": "До",
   "Birthday": "День рождения",
   "Device": "Девайс",
-  "Information": "Информация"
+  "Information": "Информация",
+  "Mon": "Пн",
+  "Tue": "Вт" ,
+  "Wed": "Ср",
+  "Thu": "Чт",
+  "Fri": "Пт",
+  "Sat": "Сб",
+  "Sun": "Вс",
+  "AreYouSureYouWantToDeleteThisVoice": "Вы точно хотите удалить этот войс?",
+  "DateTime": "Дата – Время",
+  "DateRangeTime": "Диапазон дат – Время"
 }
