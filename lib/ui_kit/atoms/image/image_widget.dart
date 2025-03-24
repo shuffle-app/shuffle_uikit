@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
-
+import 'package:flutter_video_thumbnail_plus/flutter_video_thumbnail_plus.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
-import 'package:video_player/video_player.dart';
 
 import '../../../utils/icon_matcher/icon_matcher.dart';
 
@@ -21,14 +20,17 @@ class ImageWidget extends StatelessWidget {
     child: const UiKitBigPhotoErrorWidget.withoutText(),
   );
 
-
-  Widget get borderedPlaceholder => borderRadius == null ? placeholder : Shimmer.fromColors(
-    direction: ShimmerDirection.ltr,
-    baseColor: Colors.white,
-    period: const Duration(milliseconds: 1000),
-    highlightColor: ColorsFoundation.gradientGreyLight3,
-    child: UiKitBigPhotoErrorWidget.withoutText(borderRadius: borderRadius,),
-  );
+  Widget get borderedPlaceholder => borderRadius == null
+      ? placeholder
+      : Shimmer.fromColors(
+          direction: ShimmerDirection.ltr,
+          baseColor: Colors.white,
+          period: const Duration(milliseconds: 1000),
+          highlightColor: ColorsFoundation.gradientGreyLight3,
+          child: UiKitBigPhotoErrorWidget.withoutText(
+            borderRadius: borderRadius,
+          ),
+        );
 
   final String? link;
   final AssetGenImage? rasterAsset;
@@ -71,21 +73,15 @@ class ImageWidget extends StatelessWidget {
     this.borderRadius,
   });
 
-  Future<VideoPlayerController> _takeFrameFromVideo(String link) async {
-    late final VideoPlayerController controller;
+  Future _fetchVideoThumbnail(String link) async {
+    late final Future thumbnailData;
     if (link.startsWith('http') || kIsWeb) {
-      controller = VideoPlayerController.networkUrl(Uri.parse(link));
+      thumbnailData = FlutterVideoThumbnailPlus.thumbnailData(video: link);
     } else {
-      controller = VideoPlayerController.file(File(link));
+      thumbnailData = FlutterVideoThumbnailPlus.thumbnailFile(video: link);
     }
-    await controller.initialize();
-    if (controller.value.duration.inSeconds > 1) {
-      await controller.seekTo(const Duration(seconds: 1));
-    } else {
-      await controller.seekTo(Duration(milliseconds: controller.value.duration.inMilliseconds - 50));
-    }
-
-    return controller;
+    //could be string or bytedata
+    return await thumbnailData;
   }
 
   @override
@@ -140,17 +136,37 @@ class ImageWidget extends StatelessWidget {
             );
     } else if (link!.split('.').lastOrNull == 'mp4' || isVideo) {
       return FutureBuilder(
-        future: _takeFrameFromVideo(link!),
+        future: _fetchVideoThumbnail(link!),
         builder: (context, snapshot) {
-          return snapshot.connectionState == ConnectionState.done && snapshot.data != null
-              ? SizedBox(
-                  width: width,
-                  height: height,
-                  child: RepaintBoundary(
-                    child: VideoPlayer(snapshot.data as VideoPlayerController),
-                  ),
-                )
-              : borderedPlaceholder;
+          if (snapshot.data is String) {
+            return Image.file(
+              File(snapshot.data!),
+              fit: fit,
+              width: width,
+              color: color,
+              height: height,
+              frameBuilder: imageBuilder,
+              errorBuilder: (context, error, trace) {
+                onImageLoadingFailed?.call();
+                return errorWidget ?? const DefaultImageErrorWidget();
+              },
+            );
+          } else if (snapshot.data is Uint8List) {
+            return Image.memory(
+              snapshot.data!,
+              fit: fit,
+              width: width,
+              color: color,
+              height: height,
+              frameBuilder: imageBuilder,
+              errorBuilder: (context, error, trace) {
+                onImageLoadingFailed?.call();
+                return errorWidget ?? const DefaultImageErrorWidget();
+              },
+            );
+          } else {
+            return borderedPlaceholder;
+          }
         },
       );
     } else if (link!.length > 4 && link!.substring(0, 4) == 'http') {
