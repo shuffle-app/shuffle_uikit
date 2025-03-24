@@ -37,6 +37,8 @@ class TimeRange {
         start: start ?? this.start,
         end: end ?? this.end,
       );
+
+  bool get isEmpty => start == null || end == null;
 }
 
 List<TimeRange> listTimeDayToTimeRange(List<TimeOfDay> times) {

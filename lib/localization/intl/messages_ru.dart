@@ -2162,7 +2162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ToOpenTheNextSetOfToolsYouNeedToDo": MessageLookupByLibrary.simpleMessage(
       "Чтобы открыть следующий набор инструментов, вам нужно сделать",
     ),
-    "ToPlan": MessageLookupByLibrary.simpleMessage("Планировщик"),
+    "ToPlan": MessageLookupByLibrary.simpleMessage("Планер"),
     "ToUnlock": MessageLookupByLibrary.simpleMessage("Чтобы открыть"),
     "Today": MessageLookupByLibrary.simpleMessage("Сегодня"),
     "TodaysSummaryX": m103,

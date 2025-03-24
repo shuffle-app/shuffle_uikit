@@ -45,4 +45,10 @@ class LocaleModel {
           'ar' => 4,
           String() => 0,
         };
+
+  @override
+  bool operator ==(Object other) => other is LocaleModel && other.name == name;
+
+  @override
+  int get hashCode => name.hashCode;
 }

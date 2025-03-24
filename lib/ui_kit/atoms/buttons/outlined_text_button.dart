@@ -30,7 +30,7 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
 
     final theme = context.uiKitTheme;
     final colorScheme = theme?.colorScheme;
-    final textStyle = theme?.boldTextTheme.bodyUpperCase.copyWith(color: textColor);
+    final textStyle = theme?.boldTextTheme.bodyUpperCase.copyWith(color: !enabled ? colorScheme?.darkNeutral900 : textColor);
     final textWidget = Text(
       text.toUpperCase(),
       style: textStyle,
@@ -38,12 +38,12 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
 
     return Material(
       clipBehavior: Clip.hardEdge,
-      color: enabled ? Colors.white.withOpacity(0.01) : ColorsFoundation.darkNeutral300,
+      color: enabled ? Colors.white.withOpacity(0.01) : ColorsFoundation.darkNeutral500,
       shape: RoundedRectangleBorder(
         borderRadius: borderRadius ?? (isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.max),
         side: !isGradientEnabled
             ? BorderSide(
-                color: enabled ? borderColor ?? theme!.colorScheme.inversePrimary : theme!.colorScheme.darkNeutral500,
+                color: enabled ? (borderColor ?? colorScheme!.inversePrimary) : colorScheme!.darkNeutral900,
                 width: 2.w,
               )
             : BorderSide.none,
