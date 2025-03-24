@@ -2354,5 +2354,13 @@
   "DateTime": "Date – Time",
   "@DateTime": {},
   "DateRangeTime": "Date Range – Time",
-  "@DateRangeTime": {}
+  "@DateRangeTime": {},
+  "EverydayPromoSchedule": "Everyday, around the clock",
+  "HourlyPromoSchedule": "Hourly setting",
+  "ContinuouslyPromoSchedule": "Continuously",
+  "SetStartEndDatesPromoSchedule": "Set start and end dates",
+  "Start": "Start",
+  "Ending": "Ending",
+  "Timing": "Timing"
+
 }

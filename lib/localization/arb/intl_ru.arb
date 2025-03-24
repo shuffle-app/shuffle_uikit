@@ -2358,5 +2358,12 @@
   "DateTime": "Дата – Время",
   "@DateTime": {},
   "DateRangeTime": "Диапазон дат – Время",
-  "@DateRangeTime": {}
+  "@DateRangeTime": {},
+  "EverydayPromoSchedule": "Каждый день 24/7",
+  "HourlyPromoSchedule": "Почасовая настройка",
+  "ContinuouslyPromoSchedule": "Безостановочно",
+  "SetStartEndDatesPromoSchedule": "Задать начало и конец",
+  "Start": "Начало",
+  "Ending": "Конец",
+  "Timing": "Расписание"
 }

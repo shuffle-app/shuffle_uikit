@@ -694,6 +694,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ContinueWithDraft": MessageLookupByLibrary.simpleMessage(
       "Continue with draft",
     ),
+    "ContinuouslyPromoSchedule": MessageLookupByLibrary.simpleMessage(
+      "Continuously",
+    ),
     "Control": MessageLookupByLibrary.simpleMessage("नियंत्रण"),
     "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
       "सुविधाजनक, स्पष्ट और उपयोगी",
@@ -845,6 +848,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "EnableHintSystem": MessageLookupByLibrary.simpleMessage(
       "संकेत प्रणाली सक्षम करें",
     ),
+    "Ending": MessageLookupByLibrary.simpleMessage("Ending"),
     "EnterExternalLink": MessageLookupByLibrary.simpleMessage(
       "बाह्य लिंक दर्ज करें",
     ),
@@ -895,6 +899,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "EventsCount": m31,
     "EventsReminders": MessageLookupByLibrary.simpleMessage(
       "घटनाएँ और याद दिलाने वाले",
+    ),
+    "EverydayPromoSchedule": MessageLookupByLibrary.simpleMessage(
+      "Everyday, around the clock",
     ),
     "Exit": MessageLookupByLibrary.simpleMessage("बाहर निकलें"),
     "ExpandThread": MessageLookupByLibrary.simpleMessage("धागा फैलाएं"),
@@ -1035,6 +1042,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "HintSystemEnabled": m45,
     "HorizontalFormat": MessageLookupByLibrary.simpleMessage("क्षैतिज प्रारूप"),
+    "HourlyPromoSchedule": MessageLookupByLibrary.simpleMessage(
+      "Hourly setting",
+    ),
     "HoursAgo": m46,
     "HoursAgoX": m47,
     "HowAreYouFeelingThisMorning": MessageLookupByLibrary.simpleMessage(
@@ -1891,6 +1901,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "September": MessageLookupByLibrary.simpleMessage("September"),
     "Services": MessageLookupByLibrary.simpleMessage("सेवाएं"),
+    "SetStartEndDatesPromoSchedule": MessageLookupByLibrary.simpleMessage(
+      "Set start and end dates",
+    ),
     "SetUpARefresherForX": m91,
     "SetUpNewRefresher": MessageLookupByLibrary.simpleMessage(
       "Set up new Refresher",
@@ -1981,6 +1994,7 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "StacksAreOn": MessageLookupByLibrary.simpleMessage("स्टैक्स चालू हैं"),
     "StacksShares": m97,
+    "Start": MessageLookupByLibrary.simpleMessage("Start"),
     "StartBookingCreation": MessageLookupByLibrary.simpleMessage(
       "बुकिंग निर्माण शुरू करें",
     ),
@@ -2129,6 +2143,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Time": MessageLookupByLibrary.simpleMessage("समय"),
     "TimeRange": MessageLookupByLibrary.simpleMessage("Time Range"),
     "TimeRangeError": MessageLookupByLibrary.simpleMessage("समय सीमा त्रुटि"),
+    "Timing": MessageLookupByLibrary.simpleMessage("Timing"),
     "Title": MessageLookupByLibrary.simpleMessage("शीर्षक"),
     "TitleYourTOP": MessageLookupByLibrary.simpleMessage("Title your TOP"),
     "TitleYourTop": MessageLookupByLibrary.simpleMessage(

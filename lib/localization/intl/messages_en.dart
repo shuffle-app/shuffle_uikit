@@ -394,7 +394,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "AddLink": MessageLookupByLibrary.simpleMessage("Add link"),
     "AddNew": MessageLookupByLibrary.simpleMessage("Add new"),
-    "AddPhotoHere": MessageLookupByLibrary.simpleMessage("Add photo here"),
+    "AddPhotoHere": MessageLookupByLibrary.simpleMessage("Add photo"),
     "AddPlaceType": MessageLookupByLibrary.simpleMessage("Add place type"),
     "AddPromotion": MessageLookupByLibrary.simpleMessage("Add promotion"),
     "AddProperty": MessageLookupByLibrary.simpleMessage("Add property"),
@@ -555,10 +555,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "By continuing you accept the ",
     ),
     "ByDefaultYourOfferWillDisplay": MessageLookupByLibrary.simpleMessage(
-      "By default, your offer will display an image from the uploaded place photos",
+      "By default, your offer will display an image from the uploaded photos",
     ),
     "ByDefaultYourReminderWillDisplay": MessageLookupByLibrary.simpleMessage(
-      "By default, your reminder will display an image from the uploaded place photos",
+      "By default, your reminder will display an image from the uploaded photos",
     ),
     "ByEmail": MessageLookupByLibrary.simpleMessage("by e-mail"),
     "ByMessage": MessageLookupByLibrary.simpleMessage("by message"),
@@ -692,6 +692,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
     "ContinueWithDraft": MessageLookupByLibrary.simpleMessage(
       "Continue with draft",
+    ),
+    "ContinuouslyPromoSchedule": MessageLookupByLibrary.simpleMessage(
+      "Continuously",
     ),
     "Control": MessageLookupByLibrary.simpleMessage("Control"),
     "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
@@ -846,6 +849,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "EnableHintSystem": MessageLookupByLibrary.simpleMessage(
       "Enable hint system",
     ),
+    "Ending": MessageLookupByLibrary.simpleMessage("Ending"),
     "EnterExternalLink": MessageLookupByLibrary.simpleMessage(
       "Enter external link",
     ),
@@ -895,6 +899,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Events": MessageLookupByLibrary.simpleMessage("Events"),
     "EventsCount": m31,
     "EventsReminders": MessageLookupByLibrary.simpleMessage("Events reminders"),
+    "EverydayPromoSchedule": MessageLookupByLibrary.simpleMessage(
+      "Everyday, around the clock",
+    ),
     "Exit": MessageLookupByLibrary.simpleMessage("Exit"),
     "ExpandThread": MessageLookupByLibrary.simpleMessage("Expand thread"),
     "Expired": MessageLookupByLibrary.simpleMessage("Expired"),
@@ -1037,6 +1044,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "HintSystemEnabled": m45,
     "HorizontalFormat": MessageLookupByLibrary.simpleMessage(
       "Horizontal format",
+    ),
+    "HourlyPromoSchedule": MessageLookupByLibrary.simpleMessage(
+      "Hourly setting",
     ),
     "HoursAgo": m46,
     "HoursAgoX": m47,
@@ -1883,6 +1893,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "September": MessageLookupByLibrary.simpleMessage("September"),
     "Services": MessageLookupByLibrary.simpleMessage("Services"),
+    "SetStartEndDatesPromoSchedule": MessageLookupByLibrary.simpleMessage(
+      "Set start and end dates",
+    ),
     "SetUpARefresherForX": m91,
     "SetUpNewRefresher": MessageLookupByLibrary.simpleMessage(
       "Set up new Refresher",
@@ -1969,6 +1982,7 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "StacksAreOn": MessageLookupByLibrary.simpleMessage("Stacks are on"),
     "StacksShares": m97,
+    "Start": MessageLookupByLibrary.simpleMessage("Start"),
     "StartBookingCreation": MessageLookupByLibrary.simpleMessage(
       "Start booking creation",
     ),
@@ -2113,6 +2127,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "TimeRangeError": MessageLookupByLibrary.simpleMessage(
       "End time could not be before start time",
     ),
+    "Timing": MessageLookupByLibrary.simpleMessage("Timing"),
     "Title": MessageLookupByLibrary.simpleMessage("Title"),
     "TitleYourTOP": MessageLookupByLibrary.simpleMessage("Title your TOP"),
     "TitleYourTop": MessageLookupByLibrary.simpleMessage("Title your TOP"),
@@ -2348,7 +2363,7 @@ class MessageLookup extends MessageLookupByLibrary {
           "You can still request a refund on your complaint",
         ),
     "YouCannotCreateOfferDate": MessageLookupByLibrary.simpleMessage(
-      "You cannot create an offer because the event or venue has already been completed",
+      "You cannot create an offer because the event has already been completed",
     ),
     "YouGetAccessToTrial": MessageLookupByLibrary.simpleMessage(
       "You get access to all benefits free of charge for",
@@ -2409,7 +2424,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "YourOfferHasAlreadyBeenPublishedToYourAudience":
         MessageLookupByLibrary.simpleMessage(
-          "Your offer has already been published to your audience, by changing or deleting it you are responsible for their potential negative attitude.",
+          "Offer has already been published to your audience, by changing or deleting it, you are responsible for the potential negative reaction.",
         ),
     "YourOfferWillShown1Time": MessageLookupByLibrary.simpleMessage(
       "Your offer will be shown 1 time and included in the list of offers of your audience. It will disappear after the end of the event.",
@@ -2423,7 +2438,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your reminder is shown 1 time on the specified date.",
     ),
     "YourReminderIsShown1TimeMax3": MessageLookupByLibrary.simpleMessage(
-      "Your reminder is shown 1 time on the specified date. You have a maximum of 3 attempts to be reminded.",
+      "Your reminder is shown 1 time on the specified date. Maximum – 3 attempts.",
     ),
     "YourReminderShown1TimeOnTheSpecifiedDate":
         MessageLookupByLibrary.simpleMessage(

@@ -693,6 +693,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "ContinueWithDraft": MessageLookupByLibrary.simpleMessage(
       "Continue with draft",
     ),
+    "ContinuouslyPromoSchedule": MessageLookupByLibrary.simpleMessage(
+      "Continuously",
+    ),
     "Control": MessageLookupByLibrary.simpleMessage("Control"),
     "ConvenientClearAndUseful": MessageLookupByLibrary.simpleMessage(
       "сonvenient, clear and useful",
@@ -846,6 +849,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "EnableHintSystem": MessageLookupByLibrary.simpleMessage(
       "Enable hint system",
     ),
+    "Ending": MessageLookupByLibrary.simpleMessage("Ending"),
     "EnterExternalLink": MessageLookupByLibrary.simpleMessage(
       "Enter external link",
     ),
@@ -895,6 +899,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Events": MessageLookupByLibrary.simpleMessage("Events"),
     "EventsCount": m31,
     "EventsReminders": MessageLookupByLibrary.simpleMessage("Events reminders"),
+    "EverydayPromoSchedule": MessageLookupByLibrary.simpleMessage(
+      "Everyday, around the clock",
+    ),
     "Exit": MessageLookupByLibrary.simpleMessage("Exit"),
     "ExpandThread": MessageLookupByLibrary.simpleMessage("Expand thread"),
     "Expired": MessageLookupByLibrary.simpleMessage("Expired"),
@@ -1037,6 +1044,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "HintSystemEnabled": m45,
     "HorizontalFormat": MessageLookupByLibrary.simpleMessage(
       "Horizontal format",
+    ),
+    "HourlyPromoSchedule": MessageLookupByLibrary.simpleMessage(
+      "Hourly setting",
     ),
     "HoursAgo": m46,
     "HoursAgoX": m47,
@@ -1883,6 +1893,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "September": MessageLookupByLibrary.simpleMessage("September"),
     "Services": MessageLookupByLibrary.simpleMessage("Services"),
+    "SetStartEndDatesPromoSchedule": MessageLookupByLibrary.simpleMessage(
+      "Set start and end dates",
+    ),
     "SetUpARefresherForX": m91,
     "SetUpNewRefresher": MessageLookupByLibrary.simpleMessage(
       "Set up new Refresher",
@@ -1969,6 +1982,7 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "StacksAreOn": MessageLookupByLibrary.simpleMessage("Stacks are on"),
     "StacksShares": m97,
+    "Start": MessageLookupByLibrary.simpleMessage("Start"),
     "StartBookingCreation": MessageLookupByLibrary.simpleMessage(
       "Start booking creation",
     ),
@@ -2113,6 +2127,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "TimeRangeError": MessageLookupByLibrary.simpleMessage(
       "End time could not be before start time",
     ),
+    "Timing": MessageLookupByLibrary.simpleMessage("Timing"),
     "Title": MessageLookupByLibrary.simpleMessage("Title"),
     "TitleYourTOP": MessageLookupByLibrary.simpleMessage("Title your TOP"),
     "TitleYourTop": MessageLookupByLibrary.simpleMessage("Title your TOP"),

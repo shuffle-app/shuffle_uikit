@@ -6912,10 +6912,10 @@ class S {
     );
   }
 
-  /// `By default, your offer will display an image from the uploaded place photos`
+  /// `By default, your offer will display an image from the uploaded photos`
   String get ByDefaultYourOfferWillDisplay {
     return Intl.message(
-      'By default, your offer will display an image from the uploaded place photos',
+      'By default, your offer will display an image from the uploaded photos',
       name: 'ByDefaultYourOfferWillDisplay',
       desc: '',
       args: [],
@@ -7052,10 +7052,10 @@ class S {
     );
   }
 
-  /// `Your offer has already been published to your audience, by changing or deleting it you are responsible for their potential negative attitude.`
+  /// `Offer has already been published to your audience, by changing or deleting it, you are responsible for the potential negative reaction.`
   String get YourOfferHasAlreadyBeenPublishedToYourAudience {
     return Intl.message(
-      'Your offer has already been published to your audience, by changing or deleting it you are responsible for their potential negative attitude.',
+      'Offer has already been published to your audience, by changing or deleting it, you are responsible for the potential negative reaction.',
       name: 'YourOfferHasAlreadyBeenPublishedToYourAudience',
       desc: '',
       args: [],
@@ -7147,10 +7147,10 @@ class S {
     );
   }
 
-  /// `By default, your reminder will display an image from the uploaded place photos`
+  /// `By default, your reminder will display an image from the uploaded photos`
   String get ByDefaultYourReminderWillDisplay {
     return Intl.message(
-      'By default, your reminder will display an image from the uploaded place photos',
+      'By default, your reminder will display an image from the uploaded photos',
       name: 'ByDefaultYourReminderWillDisplay',
       desc: '',
       args: [],
@@ -7177,10 +7177,10 @@ class S {
     );
   }
 
-  /// `Your reminder is shown 1 time on the specified date. You have a maximum of 3 attempts to be reminded.`
+  /// `Your reminder is shown 1 time on the specified date. Maximum – 3 attempts.`
   String get YourReminderIsShown1TimeMax3 {
     return Intl.message(
-      'Your reminder is shown 1 time on the specified date. You have a maximum of 3 attempts to be reminded.',
+      'Your reminder is shown 1 time on the specified date. Maximum – 3 attempts.',
       name: 'YourReminderIsShown1TimeMax3',
       desc: '',
       args: [],
@@ -7382,14 +7382,9 @@ class S {
     );
   }
 
-  /// `Add photo here`
+  /// `Add photo`
   String get AddPhotoHere {
-    return Intl.message(
-      'Add photo here',
-      name: 'AddPhotoHere',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Add photo', name: 'AddPhotoHere', desc: '', args: []);
   }
 
   /// `From gallery`
@@ -7801,10 +7796,10 @@ class S {
     );
   }
 
-  /// `You cannot create an offer because the event or venue has already been completed`
+  /// `You cannot create an offer because the event has already been completed`
   String get YouCannotCreateOfferDate {
     return Intl.message(
-      'You cannot create an offer because the event or venue has already been completed',
+      'You cannot create an offer because the event has already been completed',
       name: 'YouCannotCreateOfferDate',
       desc: '',
       args: [],
@@ -9924,6 +9919,61 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Everyday, around the clock`
+  String get EverydayPromoSchedule {
+    return Intl.message(
+      'Everyday, around the clock',
+      name: 'EverydayPromoSchedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hourly setting`
+  String get HourlyPromoSchedule {
+    return Intl.message(
+      'Hourly setting',
+      name: 'HourlyPromoSchedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continuously`
+  String get ContinuouslyPromoSchedule {
+    return Intl.message(
+      'Continuously',
+      name: 'ContinuouslyPromoSchedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set start and end dates`
+  String get SetStartEndDatesPromoSchedule {
+    return Intl.message(
+      'Set start and end dates',
+      name: 'SetStartEndDatesPromoSchedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start`
+  String get Start {
+    return Intl.message('Start', name: 'Start', desc: '', args: []);
+  }
+
+  /// `Ending`
+  String get Ending {
+    return Intl.message('Ending', name: 'Ending', desc: '', args: []);
+  }
+
+  /// `Timing`
+  String get Timing {
+    return Intl.message('Timing', name: 'Timing', desc: '', args: []);
   }
 }
 
