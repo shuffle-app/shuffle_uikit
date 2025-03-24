@@ -2365,5 +2365,8 @@
   "SetStartEndDatesPromoSchedule": "Задать начало и конец",
   "Start": "Начало",
   "Ending": "Конец",
-  "Timing": "Расписание"
+  "Timing": "Расписание",
+  "Any": "Любой",
+  "ShowTime": "Тип показа",
+  "ShowSchedule": "Настройка времени"
 }

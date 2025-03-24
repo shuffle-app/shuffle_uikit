@@ -9975,6 +9975,26 @@ class S {
   String get Timing {
     return Intl.message('Timing', name: 'Timing', desc: '', args: []);
   }
+
+  /// `Any`
+  String get Any {
+    return Intl.message('Any', name: 'Any', desc: '', args: []);
+  }
+
+  /// `Show time`
+  String get ShowTime {
+    return Intl.message('Show time', name: 'ShowTime', desc: '', args: []);
+  }
+
+  /// `Show schedule`
+  String get ShowSchedule {
+    return Intl.message(
+      'Show schedule',
+      name: 'ShowSchedule',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

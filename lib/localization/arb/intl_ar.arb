@@ -2365,7 +2365,10 @@
   "SetStartEndDatesPromoSchedule": "Set start and end dates",
   "Start": "Start",
   "Ending": "Ending",
-  "Timing": "Timing"
+  "Timing": "Timing",
+  "Any": "Any",
+  "ShowTime": "Show time",
+  "ShowSchedule": "Show schedule"
 
 
 }

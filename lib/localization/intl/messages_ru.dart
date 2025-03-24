@@ -458,6 +458,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AndGet": MessageLookupByLibrary.simpleMessage("и получи"),
     "AndWithWhitespaces": MessageLookupByLibrary.simpleMessage(" И "),
     "AnotherReason": MessageLookupByLibrary.simpleMessage("Другая причина"),
+    "Any": MessageLookupByLibrary.simpleMessage("Любой"),
     "April": MessageLookupByLibrary.simpleMessage("Апрель"),
     "Archive": MessageLookupByLibrary.simpleMessage("Архив"),
     "ArchiveXAlert": m4,
@@ -1932,12 +1933,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ShowMore": MessageLookupByLibrary.simpleMessage("Показать\nбольше"),
     "ShowResult": MessageLookupByLibrary.simpleMessage("Показать результат"),
+    "ShowSchedule": MessageLookupByLibrary.simpleMessage("Настройка времени"),
     "ShowTheBarcode": MessageLookupByLibrary.simpleMessage(
       "Показывайте штрих-код при оплате",
     ),
     "ShowTheBarcodeCheckout": MessageLookupByLibrary.simpleMessage(
       "Покажи штрих-код на контроле",
     ),
+    "ShowTime": MessageLookupByLibrary.simpleMessage("Тип показа"),
     "ShowUp": MessageLookupByLibrary.simpleMessage("Явки"),
     "ShowUpRatio": MessageLookupByLibrary.simpleMessage("Show up ratio"),
     "ShowXInProfile": m93,
