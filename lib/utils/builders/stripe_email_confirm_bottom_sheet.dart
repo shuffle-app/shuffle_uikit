@@ -131,8 +131,9 @@ stripeEmailConfirmBottomSheet(BuildContext context, {required TextEditingControl
                     data: BaseUiKitButtonData(
                         fit: ButtonFit.fitWidth, text: S.current.Go, onPressed: () => context.pop(result: true)))
               ]).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing16)))
-      .then((_) {
+      .then((v) {
     selectedMoney.dispose();
     selectedCrypto.dispose();
+    return v;
   });
 }
