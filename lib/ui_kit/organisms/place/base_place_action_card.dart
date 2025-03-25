@@ -69,6 +69,7 @@ class BasePlaceActionCard extends StatelessWidget {
               AutoSizeText(
                 value,
                 style: valueStyle,
+                minFontSize: 6,
                 textAlign: TextAlign.left,
                 group: group,
               ),
