@@ -16,6 +16,7 @@ class UiKitWrappedInputField extends StatefulWidget {
     this.expands = false,
     this.borderRadius,
     this.node,
+    this.label,
     this.textInputAction,
     this.onSubmitted,
     this.hintTextColor,
@@ -41,6 +42,7 @@ class UiKitWrappedInputField extends StatefulWidget {
     this.borderRadius,
     this.node,
     this.icon,
+    this.label,
     this.textInputAction,
     this.onSubmitted,
     this.hintTextColor,
@@ -73,6 +75,7 @@ class UiKitWrappedInputField extends StatefulWidget {
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
   final Widget? icon;
+  final Widget? label;
 
   final String type;
 
@@ -91,10 +94,9 @@ class _UiKitWrappedInputFieldState extends State<UiKitWrappedInputField> {
 
   @override
   void didUpdateWidget(covariant UiKitWrappedInputField oldWidget) {
-
     super.didUpdateWidget(oldWidget);
 
-    if (oldWidget.errorText!= widget.errorText) {
+    if (oldWidget.errorText != widget.errorText) {
       setState(() {
         errorText = widget.errorText;
       });
@@ -107,71 +109,82 @@ class _UiKitWrappedInputFieldState extends State<UiKitWrappedInputField> {
 
     return UiKitCardWrapper(
         color: uiKitTheme?.colorScheme.surface1,
-        borderRadius: (errorText ?? '').isEmpty ? BorderRadiusFoundation.max : BorderRadiusFoundation.all20,
-        child: () {
-          switch (widget.type) {
-            case 'uiKitInputFieldNoIcon':
-              return UiKitInputFieldNoIcon(
-                controller: widget.controller,
-                errorText: errorText,
-                hintText: widget.hintText,
-                validator: (value) {
-                  setState(() {
-                    errorText = widget.validator?.call(value);
-                  });
-                  return errorText;
-                },
-                onChanged: widget.onChanged,
-                fillColor: widget.fillColor,
-                minLines: widget.minLines,
-                maxLines: widget.maxLines,
-                enabled: widget.enabled,
-                expands: widget.expands,
-                borderRadius: widget.borderRadius,
-                node: widget.node,
-                textInputAction: widget.textInputAction,
-                onSubmitted: widget.onSubmitted,
-                hintTextColor: widget.hintTextColor,
-                textColor: widget.textColor,
-                keyboardType: widget.keyboardType,
-                obscureText: widget.obscureText,
-              );
-            case 'uiKitInputFieldRightIcon':
-              return UiKitInputFieldRightIcon(
-                obscureText: widget.obscureText,
-                enabled: widget.enabled,
-                hintText: widget.hintText,
-                controller: widget.controller,
-                fillColor: widget.fillColor,
-                validator: (value) {
-                  setState(() {
-                    errorText = widget.validator?.call(value);
-                  });
-                  return errorText;
-                },
-                icon: widget.icon,
-                onIconPressed: widget.onIconPressed,
-              );
-            default:
-              return UiKitInputFieldNoFill(
-                controller: widget.controller,
-                errorText: errorText,
-                hintText: widget.hintText,
-                validator: (value) {
-                  setState(() {
-                    errorText = widget.validator?.call(value);
-                  });
-                  return errorText;
-                },
-                onChanged: widget.onChanged,
-                enabled: widget.enabled,
-                expands: widget.expands,
-                keyboardType: widget.keyboardType,
-                obscureText: widget.obscureText,
-                label: '',
-              );
-          }
-        }()
-            .paddingAll(EdgeInsetsFoundation.all4));
+        borderRadius: (errorText ?? '').isEmpty
+            ? widget.label != null
+                ? BorderRadiusFoundation.all24
+                : BorderRadiusFoundation.max
+            : BorderRadiusFoundation.all20,
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.min, children: [
+          if (widget.label != null)
+            widget.label!.paddingLTRB(SpacingFoundation.horizontalSpacing16, SpacingFoundation.verticalSpacing12,
+                SpacingFoundation.horizontalSpacing16, SpacingFoundation.verticalSpacing2),
+          () {
+            switch (widget.type) {
+              case 'uiKitInputFieldNoIcon':
+                return UiKitInputFieldNoIcon(
+                  controller: widget.controller,
+                  errorText: errorText,
+                  hintText: widget.hintText,
+                  validator: (value) {
+                    setState(() {
+                      errorText = widget.validator?.call(value);
+                    });
+                    return errorText;
+                  },
+                  onChanged: widget.onChanged,
+                  fillColor: widget.fillColor,
+                  minLines: widget.minLines,
+                  maxLines: widget.maxLines,
+                  enabled: widget.enabled,
+                  expands: widget.expands,
+                  borderRadius: widget.borderRadius,
+                  node: widget.node,
+                  textInputAction: widget.textInputAction,
+                  onSubmitted: widget.onSubmitted,
+                  hintTextColor: widget.hintTextColor,
+                  textColor: widget.textColor,
+                  keyboardType: widget.keyboardType,
+                  obscureText: widget.obscureText,
+                );
+              case 'uiKitInputFieldRightIcon':
+                return UiKitInputFieldRightIcon(
+                  obscureText: widget.obscureText,
+                  enabled: widget.enabled,
+                  hintText: widget.hintText,
+                  controller: widget.controller,
+                  fillColor: widget.fillColor,
+                  validator: (value) {
+                    setState(() {
+                      errorText = widget.validator?.call(value);
+                    });
+                    return errorText;
+                  },
+                  icon: widget.icon,
+                  onIconPressed: widget.onIconPressed,
+                );
+              default:
+                return UiKitInputFieldNoFill(
+                  controller: widget.controller,
+                  errorText: errorText,
+                  hintText: widget.hintText,
+                  validator: (value) {
+                    setState(() {
+                      errorText = widget.validator?.call(value);
+                    });
+                    return errorText;
+                  },
+                  onChanged: widget.onChanged,
+                  enabled: widget.enabled,
+                  expands: widget.expands,
+                  keyboardType: widget.keyboardType,
+                  obscureText: widget.obscureText,
+                  label: '',
+                );
+            }
+          }()
+              .paddingAll(EdgeInsetsFoundation.all4)
+        ]));
   }
 }
