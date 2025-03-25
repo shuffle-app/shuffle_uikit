@@ -59,6 +59,7 @@ class BasePlaceActionCard extends StatelessWidget {
                   child: AutoSizeText(
                 title,
                 style: titleStyle,
+                minFontSize: 8,
                 textAlign: TextAlign.left,
                 maxLines: 2,
                 wrapWords: true,
@@ -78,7 +79,8 @@ class BasePlaceActionCard extends StatelessWidget {
                 group: group,
               ),
             ],
-          ).paddingLTRB(EdgeInsetsFoundation.all12, EdgeInsetsFoundation.all12, EdgeInsetsFoundation.all24, EdgeInsetsFoundation.all12),
+          ).paddingLTRB(EdgeInsetsFoundation.all12, EdgeInsetsFoundation.all12, EdgeInsetsFoundation.all24,
+              EdgeInsetsFoundation.all12),
         ],
       ),
     );
