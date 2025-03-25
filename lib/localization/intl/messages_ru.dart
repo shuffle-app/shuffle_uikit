@@ -2459,7 +2459,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "YourProgress": MessageLookupByLibrary.simpleMessage("Ваш прогресс"),
     "YourReminderIsShown1Time": MessageLookupByLibrary.simpleMessage(
-      "Напоминание отображается 1 раз в указанный день.",
+      "Напоминание будет показано один раз в день в выбранные даты",
     ),
     "YourReminderIsShown1TimeMax3": MessageLookupByLibrary.simpleMessage(
       "Напоминание отображается 1 раз в указанный день. Максимум – 3 попытки.",
