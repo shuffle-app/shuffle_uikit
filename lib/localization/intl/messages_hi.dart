@@ -656,7 +656,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "आप विशेष शफल प्रभावितों को आकर्षित करते हैं जो आपके स्थानों की स्थिति को बढ़ाएंगे",
     ),
     "CompanyPresentationSlider6": MessageLookupByLibrary.simpleMessage(
-      "आप विशेष सूचनाओं, रिमाइंडर, ऑफ़र और प्रीसेल की अनूठी कार्यक्षमता के माध्यम से अपने दर्शकों के साथ बातचीत कर सकते हैं",
+      "आप विशेष सूचनाओं, अनुस्मारकों, ऑफ़र और अपसेल की अनूठी कार्यक्षमता के माध्यम से अपने दर्शकों के साथ बातचीत कर सकते हैं",
     ),
     "CompanyPresentationSlider7": MessageLookupByLibrary.simpleMessage(
       "आप आंतरिक लक्षित विज्ञापन प्रणाली का उपयोग कर सकते हैं",
@@ -1580,7 +1580,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Premium": MessageLookupByLibrary.simpleMessage("अधिमूल्य"),
     "PremiumAccount": MessageLookupByLibrary.simpleMessage("प्रीमियम खाता"),
     "PremiumSubscriptionFeature1": MessageLookupByLibrary.simpleMessage(
-      "अद्वितीय सुविधा \"कनेक्ट्स\"।  खोजें, संवाद करें, किसी से मिलें, नेटवर्किंग",
+      "अद्वितीय सुविधा \"कनेक्ट्स\"। खोजें, संवाद करें, किसी से मिलें, नेटवर्किंग",
     ),
     "PremiumSubscriptionFeature2": MessageLookupByLibrary.simpleMessage(
       "विशेष प्रोफ़ाइल लेबल",
@@ -1627,9 +1627,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ProSubscriptionFeature4": MessageLookupByLibrary.simpleMessage(
       "पसंदीदा स्थानों को जोड़ने/सुझाव देने की क्षमता",
     ),
-    "ProSubscriptionFeature5": MessageLookupByLibrary.simpleMessage(
-      "डार्क/लाइट डिजाइन थीम स्विच करने की क्षमता",
-    ),
+    "ProSubscriptionFeature5": MessageLookupByLibrary.simpleMessage("अपसेल्स"),
     "ProSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
       "आपकी घटनाओं, सांख्यिकी और विश्लेषण की आंतरिक लक्षित प्रचार",
     ),
@@ -1811,7 +1809,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "खेल और खेलने की चीजें",
     ),
     "SearchChooseYourself9": MessageLookupByLibrary.simpleMessage(
-      "सेल्फ-केयर (स्वास्थ्य और सौंदर्य/स्वास्थ्य और सौंदर्य/स्वास्थ्य और सौंदर्य)",
+      "खुद की देखभाल",
     ),
     "SearchHiwHint": m88,
     "SearchHiwSubtitle": MessageLookupByLibrary.simpleMessage(

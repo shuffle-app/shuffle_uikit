@@ -3317,10 +3317,10 @@ class S {
     );
   }
 
-  /// `Unique feature "Connects".  Search, communicate, meet someone, networking`
+  /// `Unique feature "Connects". Search, communicate, meet someone, networking`
   String get PremiumSubscriptionFeature1 {
     return Intl.message(
-      'Unique feature "Connects".  Search, communicate, meet someone, networking',
+      'Unique feature "Connects". Search, communicate, meet someone, networking',
       name: 'PremiumSubscriptionFeature1',
       desc: '',
       args: [],
@@ -3437,10 +3437,10 @@ class S {
     );
   }
 
-  /// `Upsales`
+  /// `Upsells`
   String get ProSubscriptionFeature5 {
     return Intl.message(
-      'Upsales',
+      'Upsells',
       name: 'ProSubscriptionFeature5',
       desc: '',
       args: [],
@@ -3632,10 +3632,10 @@ class S {
     );
   }
 
-  /// `Self-care (Health and beauty/self-love)`
+  /// `Self-care`
   String get SearchChooseYourself9 {
     return Intl.message(
-      'Self-care (Health and beauty/self-love)',
+      'Self-care',
       name: 'SearchChooseYourself9',
       desc: '',
       args: [],
@@ -4002,10 +4002,10 @@ class S {
     );
   }
 
-  /// `Dubai Event Ticket`
+  /// `Event tickets`
   String get DubaiEventTicket {
     return Intl.message(
-      'Dubai Event Ticket',
+      'Event tickets',
       name: 'DubaiEventTicket',
       desc: '',
       args: [],
@@ -4655,10 +4655,10 @@ class S {
     );
   }
 
-  /// `Content that is available for you to view will appear here`
+  /// `Available content will appear here`
   String get ContentThatIsAvailableForYouToViewWillAppearHere {
     return Intl.message(
-      'Content that is available for you to view will appear here',
+      'Available content will appear here',
       name: 'ContentThatIsAvailableForYouToViewWillAppearHere',
       desc: '',
       args: [],
@@ -5205,10 +5205,10 @@ class S {
     );
   }
 
-  /// `You can create branches; in a  place card users will see the entire brench network`
+  /// `You can create branches; in a place card users will see the entire chain`
   String get CompanyPresentationSlider2 {
     return Intl.message(
-      'You can create branches; in a  place card users will see the entire brench network',
+      'You can create branches; in a place card users will see the entire chain',
       name: 'CompanyPresentationSlider2',
       desc: '',
       args: [],
@@ -5245,10 +5245,10 @@ class S {
     );
   }
 
-  /// `You can interact with your audience through the unique functionality of special notifications, reminders, offers and presales`
+  /// `You can interact with your audience through the unique functionality of special notifications, reminders, offers and upsells`
   String get CompanyPresentationSlider6 {
     return Intl.message(
-      'You can interact with your audience through the unique functionality of special notifications, reminders, offers and presales',
+      'You can interact with your audience through the unique functionality of special notifications, reminders, offers and upsells',
       name: 'CompanyPresentationSlider6',
       desc: '',
       args: [],
@@ -6015,10 +6015,10 @@ class S {
     );
   }
 
-  /// `Upsales available`
+  /// `Upsells available`
   String get UpsalesAvailable {
     return Intl.message(
-      'Upsales available',
+      'Upsells available',
       name: 'UpsalesAvailable',
       desc: '',
       args: [],
@@ -6035,9 +6035,9 @@ class S {
     );
   }
 
-  /// `Upsales`
+  /// `Upsells`
   String get Upsales {
-    return Intl.message('Upsales', name: 'Upsales', desc: '', args: []);
+    return Intl.message('Upsells', name: 'Upsales', desc: '', args: []);
   }
 
   /// `{years} {years, plural, =0{y.o.} =1{y.o.} =2{y.o.} few{y.o.} many{y.o.} other{y.o.}}`
@@ -6275,10 +6275,10 @@ class S {
     return Intl.message('Create subs', name: 'CreateSubs', desc: '', args: []);
   }
 
-  /// `Create upsales`
+  /// `Create upsells`
   String get CreateUpsales {
     return Intl.message(
-      'Create upsales',
+      'Create upsells',
       name: 'CreateUpsales',
       desc: '',
       args: [],
