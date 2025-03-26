@@ -643,7 +643,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "It is a non-public profile that allows you to post your places, branches, and place\'s events",
     ),
     "CompanyPresentationSlider2": MessageLookupByLibrary.simpleMessage(
-      "You can create branches; in a  place card users will see the entire brench network",
+      "You can create branches; in a place card users will see the entire chain",
     ),
     "CompanyPresentationSlider3": MessageLookupByLibrary.simpleMessage(
       "Your content appears in the app\'s rotation and is recommended to users through the unique Shuffle system, - with user and content properties, behavioral factors, geo, weather, etc",
@@ -655,7 +655,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "You attract specialized Shuffle influencers who will elevate the status of your places",
     ),
     "CompanyPresentationSlider6": MessageLookupByLibrary.simpleMessage(
-      "You can interact with your audience through the unique functionality of special notifications, reminders, offers and presales",
+      "You can interact with your audience through the unique functionality of special notifications, reminders, offers and upsells",
     ),
     "CompanyPresentationSlider7": MessageLookupByLibrary.simpleMessage(
       "You can use the internal targeted advertising system",
@@ -687,7 +687,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ContentThatIsAvailableForYouToViewWillAppearHere":
         MessageLookupByLibrary.simpleMessage(
-          "Content that is available for you to view will appear here",
+          "Available content will appear here",
         ),
     "Contest": MessageLookupByLibrary.simpleMessage("Contest"),
     "Continue": MessageLookupByLibrary.simpleMessage("Continue"),
@@ -739,7 +739,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Create free reminder for your clients",
     ),
     "CreateSubs": MessageLookupByLibrary.simpleMessage("Create subs"),
-    "CreateUpsales": MessageLookupByLibrary.simpleMessage("Create upsales"),
+    "CreateUpsales": MessageLookupByLibrary.simpleMessage("Create upsells"),
     "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage(
       "Create your event and invite people",
     ),
@@ -828,9 +828,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "DontMissIt": MessageLookupByLibrary.simpleMessage("Don\'t miss it"),
     "DownloadPdf": MessageLookupByLibrary.simpleMessage("Download PDF"),
     "Drafts": MessageLookupByLibrary.simpleMessage("Drafts"),
-    "DubaiEventTicket": MessageLookupByLibrary.simpleMessage(
-      "Dubai Event Ticket",
-    ),
+    "DubaiEventTicket": MessageLookupByLibrary.simpleMessage("Event tickets"),
     "Easy": MessageLookupByLibrary.simpleMessage("Eazy"),
     "Edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
@@ -1577,7 +1575,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Premium": MessageLookupByLibrary.simpleMessage("Premium"),
     "PremiumAccount": MessageLookupByLibrary.simpleMessage("Premium account"),
     "PremiumSubscriptionFeature1": MessageLookupByLibrary.simpleMessage(
-      "Unique feature \"Connects\".  Search, communicate, meet someone, networking",
+      "Unique feature \"Connects\". Search, communicate, meet someone, networking",
     ),
     "PremiumSubscriptionFeature2": MessageLookupByLibrary.simpleMessage(
       "Special profile label",
@@ -1624,7 +1622,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ProSubscriptionFeature4": MessageLookupByLibrary.simpleMessage(
       "Ability to sell related services through ticket booking",
     ),
-    "ProSubscriptionFeature5": MessageLookupByLibrary.simpleMessage("Upsales"),
+    "ProSubscriptionFeature5": MessageLookupByLibrary.simpleMessage("Upsells"),
     "ProSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
       "Internal targeted promotion of your events, statistics and analytics",
     ),
@@ -1801,9 +1799,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SearchChooseYourself8": MessageLookupByLibrary.simpleMessage(
       "Sporty movements",
     ),
-    "SearchChooseYourself9": MessageLookupByLibrary.simpleMessage(
-      "Self-care (Health and beauty/self-love)",
-    ),
+    "SearchChooseYourself9": MessageLookupByLibrary.simpleMessage("Self-care"),
     "SearchHiwHint": m88,
     "SearchHiwSubtitle": MessageLookupByLibrary.simpleMessage(
       "search or choose others choice",
@@ -2215,9 +2211,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "UpgradeForFree": MessageLookupByLibrary.simpleMessage("upgrade for free"),
     "UpgradeForNmoney": m109,
     "UploadingVideo": MessageLookupByLibrary.simpleMessage("Uploading video"),
-    "Upsales": MessageLookupByLibrary.simpleMessage("Upsales"),
+    "Upsales": MessageLookupByLibrary.simpleMessage("Upsells"),
     "UpsalesAvailable": MessageLookupByLibrary.simpleMessage(
-      "Upsales available",
+      "Upsells available",
     ),
     "UpsalesAvailableHint": MessageLookupByLibrary.simpleMessage(
       "t-shirt, hat,yoga mat, mug",

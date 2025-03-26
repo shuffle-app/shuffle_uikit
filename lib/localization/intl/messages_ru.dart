@@ -20,7 +20,7 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ru';
 
-  static String m0(x) => "Добавьте хотя бы одно ${x} для его продвижения";
+  static String m0(x) => "Добавь хотя бы одно ${x} для его продвижения";
 
   static String m1(value) => "Все ${value} фичи доступны!";
 
@@ -70,7 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m19(count) => "${count} Видео-Реакций";
 
   static String m20(x) =>
-      "Создайте рекламную акцию для твоего ${x} и увеличьте посещаемость";
+      "Создай рекламную акцию для твоего ${x} и увеличь посещаемость";
 
   static String m21(count) => "Создай УТП за \$${count}";
 
@@ -349,7 +349,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m127(amountOfInvitedPersons) =>
       "Вы отправили приглашение ${amountOfInvitedPersons} людям";
 
-  static String m128(name) => "Ты уверен, что хочешь удалить ${name}?";
+  static String m128(name) => "Уверены, что хотите удалить ${name}?";
 
   static String m129(name) =>
       "Ты больше не сможешь отправлять сообщения ${name}";
@@ -367,7 +367,7 @@ class MessageLookup extends MessageLookupByLibrary {
         ),
     "AboutUs": MessageLookupByLibrary.simpleMessage("о нас"),
     "AcceptDonations": MessageLookupByLibrary.simpleMessage(
-      "Принимать донаты или помогать другим воплотить мечты",
+      "Принимать донаты или помогать другим исполнить мечты",
     ),
     "AcceptPayments": MessageLookupByLibrary.simpleMessage("Принимай оплату"),
     "Account": MessageLookupByLibrary.simpleMessage("Аккаунт"),
@@ -383,7 +383,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AddCategory": MessageLookupByLibrary.simpleMessage("Добавить категорию"),
     "AddFeedback": MessageLookupByLibrary.simpleMessage("Поставить оценку"),
     "AddFeedbackFieldHint": MessageLookupByLibrary.simpleMessage(
-      "Расскажи что тебе понравилось или запомнилось",
+      "Расскажи, что понравилось или запомнилось",
     ),
     "AddFeedbackFieldTitle": MessageLookupByLibrary.simpleMessage(
       "Опиши свой опыт",
@@ -464,7 +464,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ArchiveXAlert": m4,
     "Archived": MessageLookupByLibrary.simpleMessage("Архив"),
     "AreYouSureYouWantToDeleteThisVoice": MessageLookupByLibrary.simpleMessage(
-      "Вы точно хотите удалить этот войс?",
+      "Точно хочешь удалить этот войс?",
     ),
     "AreYouSureYouWantToDeleteYourAccount":
         MessageLookupByLibrary.simpleMessage(
@@ -509,7 +509,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "BaseProperties": MessageLookupByLibrary.simpleMessage("Базовые свойства"),
     "BasedOnYourActivityWeDetermineYourCondition":
         MessageLookupByLibrary.simpleMessage(
-          "На основании вашей активности, пульса и других факторов мы определяем ваше состояние и стараемся рекомендовать то, что вам нужно прямо сейчас, конкретно для вас.",
+          "На основании твоей активности, пульса и других факторов мы определяем состояние и стараемся рекомендовать то, что нужно конкретно тебе прямо сейчас",
         ),
     "BeFirstToInvite": MessageLookupByLibrary.simpleMessage("Будь первым"),
     "BeInSearch": MessageLookupByLibrary.simpleMessage("Быть в поиске"),
@@ -592,13 +592,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CardOpening": m9,
     "CardViewsWithinAPromotion": MessageLookupByLibrary.simpleMessage(
-      "Просмотры карточек в рекламной акции",
+      "Просмотры карточек в промо",
     ),
     "Cash": MessageLookupByLibrary.simpleMessage("Наличные"),
     "Categories": MessageLookupByLibrary.simpleMessage("Категории"),
     "Category": MessageLookupByLibrary.simpleMessage("категория"),
     "ChallengeFeelings": MessageLookupByLibrary.simpleMessage(
-      "Бросьте вызов чувствам",
+      "Брось вызов чувствам",
     ),
     "ChangeInSettings": MessageLookupByLibrary.simpleMessage(
       "Можешь изменить это в настройках.",
@@ -629,7 +629,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Clicks": MessageLookupByLibrary.simpleMessage("Клики"),
     "ClicksOnTheCardWithinAPromotion": MessageLookupByLibrary.simpleMessage(
-      "Клики по карточке в рекламной акции",
+      "Клики по карточке в промо",
     ),
     "Close": MessageLookupByLibrary.simpleMessage("Закрой"),
     "CodeScanner": MessageLookupByLibrary.simpleMessage("Сканер кода"),
@@ -642,30 +642,30 @@ class MessageLookup extends MessageLookupByLibrary {
       "Данные компании",
     ),
     "CompanyName": MessageLookupByLibrary.simpleMessage("Название компании"),
-    "CompanyPosition": MessageLookupByLibrary.simpleMessage("Позиция компания"),
+    "CompanyPosition": MessageLookupByLibrary.simpleMessage("Должность"),
     "CompanyPresentationSlider1": MessageLookupByLibrary.simpleMessage(
-      "Это закрытый профиль, который позволяет вам публиковать свои места, филиалы и события",
+      "Это закрытый профиль, который позволяет публиковать места, филиалы и события",
     ),
     "CompanyPresentationSlider2": MessageLookupByLibrary.simpleMessage(
-      "Вы можете создавать филиалы; в карточке места пользователи увидят всю сеть",
+      "Ты можешь создавать филиалы; в карточке места пользователи увидят всю сеть",
     ),
     "CompanyPresentationSlider3": MessageLookupByLibrary.simpleMessage(
-      "Ваш контент появляется в ротации приложения и рекомендуется пользователям через уникальную систему Shuffle.",
+      "Твой контент появляется в ротации и рекомендуется через уникальную систему Shuffle, - через свойства юзеров и контента, факторы поведения, гео, погоду и тд",
     ),
     "CompanyPresentationSlider4": MessageLookupByLibrary.simpleMessage(
-      "Повысьте узнаваемость и посещаемость ваших мест и событий. Все функции приложения и пользователей находятся в вашем контенте",
+      "Повысь узнаваемость и посещаемость мест и событий. Всё выстроено вокруг твоих карточек контента",
     ),
     "CompanyPresentationSlider5": MessageLookupByLibrary.simpleMessage(
-      "Вы привлекаете специализированных инфлюенсеров Shuffle, которые повысят статус ваших мест",
+      "Ты привлекаешь инфлюенсеров-экспертов Shuffle, которые повысят статус твоих мест",
     ),
     "CompanyPresentationSlider6": MessageLookupByLibrary.simpleMessage(
-      "Вы можете взаимодействовать со своей аудиторией через уникальный функционал специальных уведомлений, напоминаний, предложений и пресейлов",
+      "Ты можешь взаимодействовать с аудиторией через уникальный функционал специальных уведомлений, напоминаний, предложений и апселлов",
     ),
     "CompanyPresentationSlider7": MessageLookupByLibrary.simpleMessage(
-      "Вы можете использовать внутреннюю систему таргетированной рекламы",
+      "Ты можешь использовать внутреннюю систему таргетированной рекламы",
     ),
     "CompanyPresentationSlider8": MessageLookupByLibrary.simpleMessage(
-      "Вы можете интегрировать свою систему бронирования в контент или использовать систему бронирования Shuffle в будущем",
+      "Ты можешь интегрировать свою систему бронирования или использовать систему Shuffle в будущем",
     ),
     "Completed": MessageLookupByLibrary.simpleMessage("Завершено"),
     "CompressingVideo": MessageLookupByLibrary.simpleMessage("Сжатие видео"),
@@ -685,11 +685,11 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ContentOffers": m17,
     "ContentQualityNotice": MessageLookupByLibrary.simpleMessage(
-      "Контент будет проходить модерацию, ожидаем высокое качество контента",
+      "Контент будет проходить модерацию, позаботься о его качестве",
     ),
     "ContentThatIsAvailableForYouToViewWillAppearHere":
         MessageLookupByLibrary.simpleMessage(
-          "Контент, доступный вам для просмотра, появится здесь",
+          "Доступный контент появится здесь",
         ),
     "Contest": MessageLookupByLibrary.simpleMessage("Конкурс"),
     "Continue": MessageLookupByLibrary.simpleMessage("Продолжить"),
@@ -729,7 +729,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateAPromotionForYourXAndIncreaseAttendance": m20,
     "CreateAUSP": m21,
     "CreateAudienceOrSelectOne": MessageLookupByLibrary.simpleMessage(
-      "Создайте аудиторию или выберете сохраненную",
+      "Создай аудиторию или выбери сохраненную",
     ),
     "CreateBooking": MessageLookupByLibrary.simpleMessage("Создать букинг"),
     "CreateEvent": MessageLookupByLibrary.simpleMessage("Создать событие"),
@@ -741,9 +741,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Создай бесплатное напоминание для твоих клиентов",
     ),
     "CreateSubs": MessageLookupByLibrary.simpleMessage("Создать сабы"),
-    "CreateUpsales": MessageLookupByLibrary.simpleMessage(
-      "Создать дополнительные продажи",
-    ),
+    "CreateUpsales": MessageLookupByLibrary.simpleMessage("Создать апселлы"),
     "CreateYourEventAndInvitePeople": MessageLookupByLibrary.simpleMessage(
       "Создай своё событие и пригласи людей",
     ),
@@ -791,7 +789,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Вы уверены, что хотите удалить папку?",
     ),
     "DeleteFromList": MessageLookupByLibrary.simpleMessage("Удалить из списка"),
-    "DeletePromotion": MessageLookupByLibrary.simpleMessage("Удалить акцию"),
+    "DeletePromotion": MessageLookupByLibrary.simpleMessage("Удалить промо"),
     "DeleteThesePhotos": MessageLookupByLibrary.simpleMessage(
       "Удалить эти фото?",
     ),
@@ -831,13 +829,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "DownloadPdf": MessageLookupByLibrary.simpleMessage("Скачать PDF"),
     "Drafts": MessageLookupByLibrary.simpleMessage("Черновики"),
     "DubaiEventTicket": MessageLookupByLibrary.simpleMessage(
-      "Билет на события в Дубае",
+      "Билеты на события",
     ),
     "Easy": MessageLookupByLibrary.simpleMessage("Изи"),
     "Edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
     "EditProfile": MessageLookupByLibrary.simpleMessage("Редактировать"),
     "EditPromotion": MessageLookupByLibrary.simpleMessage(
-      "Редактировать акцию",
+      "Редактировать промо",
     ),
     "EditingTypePlace": m27,
     "Email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -859,15 +857,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "Добавить внешнюю ссылку",
     ),
     "EnterInputType": m28,
-    "EnterLocation": MessageLookupByLibrary.simpleMessage(
-      "Введите местоположение",
-    ),
+    "EnterLocation": MessageLookupByLibrary.simpleMessage("Введи локацию"),
     "EnterNewPassword": MessageLookupByLibrary.simpleMessage("Новый пароль"),
     "EnterPlaceAddressPrompt": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, введи адрес места",
     ),
     "EnterPrice": MessageLookupByLibrary.simpleMessage("Введи цену"),
-    "EnterTitle": MessageLookupByLibrary.simpleMessage("Введите название"),
+    "EnterTitle": MessageLookupByLibrary.simpleMessage("Введи название"),
     "EnterX": m29,
     "EnterYourEmailAddress": MessageLookupByLibrary.simpleMessage(
       "Введи адрес эл. почты",
@@ -1038,10 +1034,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Выбери цену или диапазон цен",
     ),
     "HintNumberEventsForPro": MessageLookupByLibrary.simpleMessage(
-      "3 события доступны & добавь больше за отдельную цену",
+      "Доступно 3 события & добавь больше за отдельную цену",
     ),
     "HintStripe": MessageLookupByLibrary.simpleMessage(
-      "Чтобы воспользоваться, создайте аккаунт Stripe в Настройках «Кошелек»",
+      "Чтобы воспользоваться, создай аккаунт Stripe в Настройках «Кошелек»",
     ),
     "HintSystemDisabled": MessageLookupByLibrary.simpleMessage(
       "Система подсказок деактивирована",
@@ -1081,7 +1077,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Если место уже существует в",
     ),
     "IfYouApplyThePromotion": MessageLookupByLibrary.simpleMessage(
-      "если вы воспользуетесь акцией",
+      "если воспользуешься промо",
     ),
     "InProgress": MessageLookupByLibrary.simpleMessage("В процессе"),
     "IncludeASurveyForNoShows": MessageLookupByLibrary.simpleMessage(
@@ -1118,7 +1114,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Устанавливаем занавески",
     ),
     "InstructionsToEnableHealthKit": MessageLookupByLibrary.simpleMessage(
-      "Чтобы включить кит здоровья, перейдите в раздел «Конфиденциальность и безопасность» в настройках, затем перейдите в раздел «Здоровье» и выберите там «Shuffle app».",
+      "Чтобы включить кит здоровья, перейди в «Конфиденциальность и безопасность» в настройках, затем в «Здоровье» и выбери там «Shuffle app»",
     ),
     "Interests": MessageLookupByLibrary.simpleMessage("Интересы"),
     "Interview": MessageLookupByLibrary.simpleMessage("Интервью"),
@@ -1210,7 +1206,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Пока она у тебя в инвентаре - удача с тобой. Покрути, поверти её, прикоснись к ней, чтобы наполниться энергией удачи.",
     ),
     "MakeSureYouAreCloseToMakeCheckIn": MessageLookupByLibrary.simpleMessage(
-      "Убедись что ты близко и повтори",
+      "Убедись, что ты рядом и попробуй ещё раз",
     ),
     "Male": MessageLookupByLibrary.simpleMessage("Мужчина"),
     "March": MessageLookupByLibrary.simpleMessage("Март"),
@@ -1250,10 +1246,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "MuseumType": MessageLookupByLibrary.simpleMessage("Тип музея"),
     "MusicType": MessageLookupByLibrary.simpleMessage("Тип музыки"),
     "MustSelectVideo": MessageLookupByLibrary.simpleMessage(
-      "Вы должны выбрать хотя бы одно видео",
+      "Нужно выбрать хотя бы одно видео",
     ),
     "MustVisitTechnologyConf": MessageLookupByLibrary.simpleMessage(
-      "Обязательно посетите технологическую конференцию",
+      "Обязательно посети технологическую конференцию",
     ),
     "My": MessageLookupByLibrary.simpleMessage("Мой"),
     "MyBooking": MessageLookupByLibrary.simpleMessage("Мои букинги"),
@@ -1299,7 +1295,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "NoEndTime": MessageLookupByLibrary.simpleMessage("Без времени окончания"),
     "NoFavoritesFound": MessageLookupByLibrary.simpleMessage("Нет избранных"),
     "NoFeedbacksYet": MessageLookupByLibrary.simpleMessage(
-      "Посещайте места и события в Shuffle и делитесь впечатлениями",
+      "Посещай места и события в Shuffle и делись впечатлениями",
     ),
     "NoHealthKitAvailableOnYourDevice": MessageLookupByLibrary.simpleMessage(
       "Не доступны данные здоровья, результат будет случайным",
@@ -1329,7 +1325,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "NoThx": MessageLookupByLibrary.simpleMessage("Нет, спс"),
     "NoVideoReactionsYet": MessageLookupByLibrary.simpleMessage(
-      "Посещайте места и события в Shuffle и делитесь видеореакциями",
+      "Посещай места и события в Shuffle и делись видео-реакциями",
     ),
     "Not": MessageLookupByLibrary.simpleMessage("Нет"),
     "NotNow": MessageLookupByLibrary.simpleMessage("Не сейчас"),
@@ -1432,7 +1428,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Past": MessageLookupByLibrary.simpleMessage("Прошедшие"),
     "PausePromotion": MessageLookupByLibrary.simpleMessage(
-      "Приостановить акцию",
+      "Приостановить промо",
     ),
     "Paused": MessageLookupByLibrary.simpleMessage("Остановлен"),
     "Pay": MessageLookupByLibrary.simpleMessage("Оплатить"),
@@ -1478,7 +1474,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PickFromMap": MessageLookupByLibrary.simpleMessage("Выбрать на карте"),
     "Place": MessageLookupByLibrary.simpleMessage("Место"),
     "PlaceCompanyInfo": MessageLookupByLibrary.simpleMessage(
-      "В случае остановки подписки, ваш контент будет удален из ротации до тех пор, пока подписка не будет возобновлена.",
+      "В случае остановки подписки, твой контент будет удален из ротации до возобновления подписки",
     ),
     "PlacePromo": MessageLookupByLibrary.simpleMessage("Места"),
     "PlaceRatingByFeedback": MessageLookupByLibrary.simpleMessage(
@@ -1499,32 +1495,28 @@ class MessageLookup extends MessageLookupByLibrary {
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
       "Добавь диапазон дат",
     ),
-    "PleaseAddPhoto": MessageLookupByLibrary.simpleMessage(
-      "Пожалуйста, добавьте фото",
-    ),
+    "PleaseAddPhoto": MessageLookupByLibrary.simpleMessage("Добавь фото"),
     "PleaseEnterABranchTitle": MessageLookupByLibrary.simpleMessage(
       "Введи название сети",
     ),
     "PleaseEnterAMessageForTheNews": MessageLookupByLibrary.simpleMessage(
-      "Пожалуйста, введите сообщение для новости",
+      "Введи сообщение для новости",
     ),
     "PleaseEnterCurrentLimit": MessageLookupByLibrary.simpleMessage(
-      "Пожалуйста, введите допустимый лимит",
+      "Введи допустимый лимит",
     ),
-    "PleaseEnterLimit": MessageLookupByLibrary.simpleMessage(
-      "Пожалуйста, добавьте лимит",
-    ),
+    "PleaseEnterLimit": MessageLookupByLibrary.simpleMessage("Добавь лимит"),
     "PleaseEnterLink": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, введи ссылку",
     ),
     "PleaseEnterValidDescription": MessageLookupByLibrary.simpleMessage(
-      "Пожалуйста, введите допустимое описание",
+      "Введи допустимое описание",
     ),
     "PleaseEnterValidText": MessageLookupByLibrary.simpleMessage(
       "Введи корректный текст",
     ),
     "PleaseEnterValidTitle": MessageLookupByLibrary.simpleMessage(
-      "Пожалуйста, введите допустимое название",
+      "Введи допустимое название",
     ),
     "PleaseEnterValidXLink": m65,
     "PleaseFillOutDate": MessageLookupByLibrary.simpleMessage(
@@ -1551,7 +1543,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Пожалуйста, укажи пол",
     ),
     "PleaseSelectImage": MessageLookupByLibrary.simpleMessage(
-      "Пожалуйста, выберите изображение",
+      "Выбери изображение",
     ),
     "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, выбери один тип",
@@ -1591,7 +1583,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Premium": MessageLookupByLibrary.simpleMessage("Premium"),
     "PremiumAccount": MessageLookupByLibrary.simpleMessage("Premium аккаунт"),
     "PremiumSubscriptionFeature1": MessageLookupByLibrary.simpleMessage(
-      "Уникальная функция “Connects”. Поиск, общение, встречи с компаньонами, нетворкинг",
+      "Уникальная функция “Коннекты”. Поиск, общение, встречи, нетворкинг",
     ),
     "PremiumSubscriptionFeature2": MessageLookupByLibrary.simpleMessage(
       "Специальный бейдж в профиле",
@@ -1632,7 +1624,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Специальный бейдж в профиле",
     ),
     "ProSubscriptionFeature2": MessageLookupByLibrary.simpleMessage(
-      "Возможность создавать свои собственные события",
+      "Возможность создавать свои события",
     ),
     "ProSubscriptionFeature3": MessageLookupByLibrary.simpleMessage(
       "Дополнительная мотивация потенциальной аудитории (клиентов/посетителей) с помощью системы поинтов",
@@ -1644,7 +1636,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Допродажи",
     ),
     "ProSubscriptionFeature6": MessageLookupByLibrary.simpleMessage(
-      "Внутренняя таргетированная реклама ваших событий, статистика и аналитика",
+      "Внутренняя таргетированная реклама событий, статистика и аналитика",
     ),
     "ProSubscriptionFeature7": MessageLookupByLibrary.simpleMessage(
       "Возможность использовать специальные уведомления",
@@ -1671,7 +1663,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Оценка\nпродвижения",
     ),
     "PromotionLaunchResults": MessageLookupByLibrary.simpleMessage(
-      "Результаты запуска рекламной акции",
+      "Результаты запуска промо",
     ),
     "Promotions": MessageLookupByLibrary.simpleMessage("Акции"),
     "Properties": MessageLookupByLibrary.simpleMessage("Свойства"),
@@ -1815,7 +1807,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Спортивные движения",
     ),
     "SearchChooseYourself9": MessageLookupByLibrary.simpleMessage(
-      "Забота о себе любимом",
+      "Забота о себе",
     ),
     "SearchHiwHint": m88,
     "SearchHiwSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -1823,7 +1815,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "SearchHiwTitle": MessageLookupByLibrary.simpleMessage("Обычный поиск..."),
     "SearchOrAddTag": MessageLookupByLibrary.simpleMessage(
-      "Поиск или добавить тег",
+      "Искать или добавить тег",
     ),
     "SearchProperty": MessageLookupByLibrary.simpleMessage("Поиск свойств"),
     "SecAgoX": MessageLookupByLibrary.simpleMessage("сек назад"),
@@ -1852,7 +1844,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SelectEndTime": MessageLookupByLibrary.simpleMessage(
       "Выбери время окончания",
     ),
-    "SelectGender": MessageLookupByLibrary.simpleMessage("Выберите пол"),
+    "SelectGender": MessageLookupByLibrary.simpleMessage("Выбери пол"),
     "SelectItemToEdit": MessageLookupByLibrary.simpleMessage(
       "Выбери запись для редактирования",
     ),
@@ -1888,7 +1880,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "SelectType": m90,
     "SelectYourBooking": MessageLookupByLibrary.simpleMessage(
-      "Выберите вариант бронирования",
+      "Выбери вариант бронирования",
     ),
     "SelectYourFavoriteProduct": MessageLookupByLibrary.simpleMessage(
       "Выбери любимый продукт",
@@ -1897,7 +1889,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Укажи свою религию",
     ),
     "SelectYourSpecialty": MessageLookupByLibrary.simpleMessage(
-      "Выберите свою специальность",
+      "Выбери специализацию",
     ),
     "SelectionOfTheBest": MessageLookupByLibrary.simpleMessage("Выбор лучших"),
     "Send": MessageLookupByLibrary.simpleMessage("Отправить"),
@@ -1987,7 +1979,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Потратить мои баллы",
     ),
     "SpentOnPromotionToday": MessageLookupByLibrary.simpleMessage(
-      "Потрачено на акции сегодня",
+      "Потрачено на промо сегодня",
     ),
     "SpinnerHiwHint": m96,
     "SpinnerHiwSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -2001,7 +1993,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "StacksAndSomethingElseAreAvailableForYou":
         MessageLookupByLibrary.simpleMessage(
-          "Для вас доступны стопки и кое-что еще...",
+          "Для тебя доступны стопки и кое-что еще...",
         ),
     "StacksAreOn": MessageLookupByLibrary.simpleMessage("Для пользователей"),
     "StacksShares": m97,
@@ -2025,7 +2017,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SubscribeToProfile": MessageLookupByLibrary.simpleMessage("Подписаться"),
     "Success": MessageLookupByLibrary.simpleMessage("Успешно"),
     "SuccessfullyAnswered": MessageLookupByLibrary.simpleMessage(
-      "Успешно отправлен ответ",
+      "Ответ успешно отправлен",
     ),
     "Sun": MessageLookupByLibrary.simpleMessage("Вс"),
     "Sunday": MessageLookupByLibrary.simpleMessage("Воскресенье"),
@@ -2039,7 +2031,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Форматы: JPEG/JPG/PNG.\nМакс. размер - 10 MB.\nМакс. разрешение - 3840 x 2200 px",
     ),
     "SupportedFormatsVideo": MessageLookupByLibrary.simpleMessage(
-      "Поддерживаемы форматы видео MP4, до 80MB",
+      "Форматы видео MP4, до 80MB",
     ),
     "SureYouWantToDeleteChat": MessageLookupByLibrary.simpleMessage(
       "Точно хочешь удалить чат?",
@@ -2109,7 +2101,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ThereIsNothingYetCreateYourFirstNews":
         MessageLookupByLibrary.simpleMessage(
-          "Пока ничего нет! Создайте свою первую новость",
+          "Пока ничего нет! Создай первую новость",
         ),
     "ThereNoEventsYet": MessageLookupByLibrary.simpleMessage(
       "Ивентов пока нет",
@@ -2119,7 +2111,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Пока еще нет пользователей, которые купили этот оффер",
     ),
     "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
-      "Этот контент есть в других ваших списках. После добавления он будет удален из текущего.",
+      "Контент есть в других твоих списках. После добавления он будет удален из текущего.",
     ),
     "ThisAuthorDoesNotHaveSuitableAccount":
         MessageLookupByLibrary.simpleMessage(
@@ -2158,7 +2150,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Чтобы разрешить push-уведомления, зайди в настройки телефона",
     ),
     "ToBecomeAnInfluencerYouNeedToDo": MessageLookupByLibrary.simpleMessage(
-      "Чтобы стать инфлюенсером вам необходимо выполнить",
+      "Чтобы стать инфлюенсером нужно выполнить",
     ),
     "ToExtendYourUseSelectPayment": MessageLookupByLibrary.simpleMessage(
       "Чтобы продлить срок использования, выбери пункт оплата",
@@ -2166,7 +2158,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ToFavorites": MessageLookupByLibrary.simpleMessage("В избранное"),
     "ToOpen": MessageLookupByLibrary.simpleMessage("Чтобы открыть"),
     "ToOpenTheNextSetOfToolsYouNeedToDo": MessageLookupByLibrary.simpleMessage(
-      "Чтобы открыть следующий набор инструментов, вам нужно сделать",
+      "Чтобы открыть следующий набор инструментов, нужно сделать",
     ),
     "ToPlan": MessageLookupByLibrary.simpleMessage("Планер"),
     "ToUnlock": MessageLookupByLibrary.simpleMessage("Чтобы открыть"),
@@ -2238,9 +2230,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "UpgradeForNmoney": m109,
     "UploadingVideo": MessageLookupByLibrary.simpleMessage("Загрузка видео"),
-    "Upsales": MessageLookupByLibrary.simpleMessage("Дополнительные продажи"),
+    "Upsales": MessageLookupByLibrary.simpleMessage("Допродажи"),
     "UpsalesAvailable": MessageLookupByLibrary.simpleMessage(
-      "Доступны дополнительные продажи",
+      "Доступны допродажи",
     ),
     "UpsalesAvailableHint": MessageLookupByLibrary.simpleMessage(
       "футболка, шапочка, коврик для йоги, кружка",
@@ -2267,7 +2259,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "UsingHealthKit": MessageLookupByLibrary.simpleMessage("Данные здоровья"),
     "UsingNotifications": MessageLookupByLibrary.simpleMessage("Уведомления"),
     "ValueMustBeAtLeast3Characters": MessageLookupByLibrary.simpleMessage(
-      "Значение не менее 3 символов",
+      "Значение не менее 3 символов",
     ),
     "VerticalFormat": MessageLookupByLibrary.simpleMessage(
       "Вертикальный формат",
@@ -2298,7 +2290,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Voice": MessageLookupByLibrary.simpleMessage("Аудио"),
     "Voices": MessageLookupByLibrary.simpleMessage("Аудио"),
     "VoicesIsEmpty": MessageLookupByLibrary.simpleMessage("Нет аудио"),
-    "Wait": MessageLookupByLibrary.simpleMessage("Подождите..."),
+    "Wait": MessageLookupByLibrary.simpleMessage("Подожди..."),
     "WaitAdminResponse": MessageLookupByLibrary.simpleMessage(
       "Ожидай ответ админа чата",
     ),
@@ -2338,7 +2330,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "WheresTheActivity": MessageLookupByLibrary.simpleMessage("Где движ?"),
     "WhiteTheme": MessageLookupByLibrary.simpleMessage("Светлая тема"),
     "WhyDoYouLoveIt": MessageLookupByLibrary.simpleMessage(
-      "Почему тебе это так нравится?",
+      "Почему тебе это нравится?",
     ),
     "WillBe": MessageLookupByLibrary.simpleMessage(" будет."),
     "WillBeImplementedSoon": MessageLookupByLibrary.simpleMessage(
@@ -2353,7 +2345,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "С учетом твоих предпочтений",
     ),
     "WorkHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
-    "WriteTheAnswer": MessageLookupByLibrary.simpleMessage("Напишите ответ"),
+    "WriteTheAnswer": MessageLookupByLibrary.simpleMessage("Напиши ответ"),
     "WrongSecurityCode": MessageLookupByLibrary.simpleMessage("Неверный код"),
     "XCouldNotBeEmpty": m114,
     "XDay": m115,
@@ -2424,7 +2416,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ты больше не сможешь отправлять сообщения в чат",
     ),
     "YouWillReceiveNewTools": MessageLookupByLibrary.simpleMessage(
-      "Вы получите новые инструменты",
+      "Ты получишь новые инструменты",
     ),
     "YoullFindIt": MessageLookupByLibrary.simpleMessage("Ты найдёшь"),
     "YourAge": MessageLookupByLibrary.simpleMessage("Твой возраст"),
@@ -2439,14 +2431,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "YourEvent": MessageLookupByLibrary.simpleMessage("Твоё событие"),
     "YourIndicatorsHasSetTheBarHighItCanBe":
         MessageLookupByLibrary.simpleMessage(
-          "Ваши показатели установили высокую планку! Они могут быть",
+          "Показатели установили высокую планку! Они могут быть",
         ),
     "YourLeisureSelection": MessageLookupByLibrary.simpleMessage(
       "твой выбор досуга",
     ),
     "YourName": MessageLookupByLibrary.simpleMessage("Твоё имя"),
     "YourNewTools": MessageLookupByLibrary.simpleMessage(
-      "Теперь вам доступны инструменты",
+      "Твои новые инструменты",
     ),
     "YourNiche": MessageLookupByLibrary.simpleMessage("Твоя ниша"),
     "YourNotificationWillBeShown": MessageLookupByLibrary.simpleMessage(
@@ -2463,7 +2455,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "YourPriceSegment": MessageLookupByLibrary.simpleMessage(
       "Твой ценовой сегмент",
     ),
-    "YourProgress": MessageLookupByLibrary.simpleMessage("Ваш прогресс"),
+    "YourProgress": MessageLookupByLibrary.simpleMessage("Твой прогресс"),
     "YourReminderIsShown1Time": MessageLookupByLibrary.simpleMessage(
       "Напоминание будет показано один раз в день в выбранные даты",
     ),
