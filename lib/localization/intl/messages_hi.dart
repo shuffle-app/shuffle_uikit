@@ -737,7 +737,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateNews": MessageLookupByLibrary.simpleMessage("Create news"),
     "CreatePlace": MessageLookupByLibrary.simpleMessage("जगह बनाएं"),
     "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
-      "अपने ग्राहकों के लिए मुफ्त याद दिलाने के लिए",
+      "अपने ग्राहकों के लिए अनुस्मारक प्राप्त करने के लिए",
     ),
     "CreateSubs": MessageLookupByLibrary.simpleMessage("सब्स बनाएं"),
     "CreateUpsales": MessageLookupByLibrary.simpleMessage("अपसेल्स बनाएं"),

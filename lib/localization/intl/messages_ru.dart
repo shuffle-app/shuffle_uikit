@@ -738,7 +738,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateNews": MessageLookupByLibrary.simpleMessage("Создать новость"),
     "CreatePlace": MessageLookupByLibrary.simpleMessage("Создать место"),
     "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
-      "Создай бесплатное напоминание для твоих клиентов",
+      "Создай напоминание для твоих клиентов",
     ),
     "CreateSubs": MessageLookupByLibrary.simpleMessage("Создать сабы"),
     "CreateUpsales": MessageLookupByLibrary.simpleMessage("Создать апселлы"),

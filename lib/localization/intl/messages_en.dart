@@ -736,7 +736,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateNews": MessageLookupByLibrary.simpleMessage("Create news"),
     "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
     "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
-      "Create free reminder for your clients",
+      "Create reminder for your clients",
     ),
     "CreateSubs": MessageLookupByLibrary.simpleMessage("Create subs"),
     "CreateUpsales": MessageLookupByLibrary.simpleMessage("Create upsells"),

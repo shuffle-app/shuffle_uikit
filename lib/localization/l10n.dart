@@ -6210,10 +6210,10 @@ class S {
     );
   }
 
-  /// `Create free reminder for your clients`
+  /// `Create reminder for your clients`
   String get CreateReminderDescription {
     return Intl.message(
-      'Create free reminder for your clients',
+      'Create reminder for your clients',
       name: 'CreateReminderDescription',
       desc: '',
       args: [],
