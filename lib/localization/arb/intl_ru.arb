@@ -805,7 +805,7 @@
   "@ProSubscriptionFeature7": {},
   "PickFromMap": "Выбрать на карте",
   "@PickFromMap": {},
-  "AddPromotion": "Добавить промо",
+  "AddPromotion": "Промо",
   "@AddPromotion": {},
   "Archive": "Архив",
   "@Archive": {},
@@ -2368,5 +2368,7 @@
   "Timing": "Расписание",
   "Any": "Любой",
   "ShowTime": "Тип показа",
-  "ShowSchedule": "Настройка времени"
+  "ShowSchedule": "Настройка времени",
+  "YouHaveAlreadyCreatedOneReminder": "Вы уже создали напоминание. Чтобы создать новое, приостановите или удалите предыдущее",
+  "PleaseAddDate": "Пожалуйста, укажите дату"
 }

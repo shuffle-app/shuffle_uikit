@@ -396,7 +396,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AddNew": MessageLookupByLibrary.simpleMessage("Add new"),
     "AddPhotoHere": MessageLookupByLibrary.simpleMessage("फोटो यहाँ जोड़ें"),
     "AddPlaceType": MessageLookupByLibrary.simpleMessage("जगह प्रकार जोड़ें"),
-    "AddPromotion": MessageLookupByLibrary.simpleMessage("प्रचार जोड़ें"),
+    "AddPromotion": MessageLookupByLibrary.simpleMessage("प्रचार अभियान"),
     "AddProperty": MessageLookupByLibrary.simpleMessage("संपत्ति जोड़ें"),
     "AddReactions": MessageLookupByLibrary.simpleMessage("प्रतिक्रिया जोड़ें"),
     "AddReview": MessageLookupByLibrary.simpleMessage("समीक्षा जोड़ें"),
@@ -1489,6 +1489,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Places": MessageLookupByLibrary.simpleMessage("स्थानों"),
     "PlacesVisited": m64,
     "PlacesVisitedInf": MessageLookupByLibrary.simpleMessage("Places visited"),
+    "PleaseAddDate": MessageLookupByLibrary.simpleMessage("Please add date"),
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
       "कृपया एक तिथि अवधि जोड़ें",
     ),
@@ -2399,6 +2400,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
       "आपको वही मिलता है जो आपको चाहि",
+    ),
+    "YouHaveAlreadyCreatedOneReminder": MessageLookupByLibrary.simpleMessage(
+      "You have already created one reminder. To create a new one, pause or remove the previous one.",
     ),
     "YouHaveExistingItems": MessageLookupByLibrary.simpleMessage(
       "You have existing items",

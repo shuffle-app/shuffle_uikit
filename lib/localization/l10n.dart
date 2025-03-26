@@ -3477,14 +3477,9 @@ class S {
     );
   }
 
-  /// `Add promotion`
+  /// `Promotion`
   String get AddPromotion {
-    return Intl.message(
-      'Add promotion',
-      name: 'AddPromotion',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Promotion', name: 'AddPromotion', desc: '', args: []);
   }
 
   /// `Archive`
@@ -9991,6 +9986,26 @@ class S {
     return Intl.message(
       'Show schedule',
       name: 'ShowSchedule',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have already created one reminder. To create a new one, pause or remove the previous one.`
+  String get YouHaveAlreadyCreatedOneReminder {
+    return Intl.message(
+      'You have already created one reminder. To create a new one, pause or remove the previous one.',
+      name: 'YouHaveAlreadyCreatedOneReminder',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please add date`
+  String get PleaseAddDate {
+    return Intl.message(
+      'Please add date',
+      name: 'PleaseAddDate',
       desc: '',
       args: [],
     );

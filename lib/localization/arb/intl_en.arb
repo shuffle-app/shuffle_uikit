@@ -831,7 +831,7 @@
   "@ProSubscriptionFeature7": {},
   "PickFromMap": "Pick from map",
   "@PickFromMap": {},
-  "AddPromotion": "Add promotion",
+  "AddPromotion": "Promotion",
   "@AddPromotion": {},
   "Archive": "Archive",
   "@Archive": {},
@@ -2368,6 +2368,8 @@
   "Timing": "Timing",
   "Any": "Any",
   "ShowTime": "Show time",
-  "ShowSchedule": "Show schedule"
+  "ShowSchedule": "Show schedule",
+  "YouHaveAlreadyCreatedOneReminder": "You have already created one reminder. To create a new one, pause or remove the previous one.",
+  "PleaseAddDate": "Please add date"
 
 }

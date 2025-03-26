@@ -396,7 +396,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AddNew": MessageLookupByLibrary.simpleMessage("Добавить новый"),
     "AddPhotoHere": MessageLookupByLibrary.simpleMessage("Добавьте фото"),
     "AddPlaceType": MessageLookupByLibrary.simpleMessage("Добавить тип места"),
-    "AddPromotion": MessageLookupByLibrary.simpleMessage("Добавить промо"),
+    "AddPromotion": MessageLookupByLibrary.simpleMessage("Промо"),
     "AddProperty": MessageLookupByLibrary.simpleMessage("Добавить свойство"),
     "AddReactions": MessageLookupByLibrary.simpleMessage("Добавить рекцию"),
     "AddReview": MessageLookupByLibrary.simpleMessage("Оставить отзыв"),
@@ -1493,6 +1493,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PlacesVisitedInf": MessageLookupByLibrary.simpleMessage(
       "Посещенные места",
     ),
+    "PleaseAddDate": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, укажите дату",
+    ),
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
       "Добавь диапазон дат",
     ),
@@ -2390,6 +2393,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
       "Ты получаешь точно то, что нужно",
+    ),
+    "YouHaveAlreadyCreatedOneReminder": MessageLookupByLibrary.simpleMessage(
+      "Вы уже создали напоминание. Чтобы создать новое, приостановите или удалите предыдущее",
     ),
     "YouHaveExistingItems": MessageLookupByLibrary.simpleMessage(
       "Есть созданные записи",
