@@ -396,7 +396,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AddNew": MessageLookupByLibrary.simpleMessage("Добавить новый"),
     "AddPhotoHere": MessageLookupByLibrary.simpleMessage("Добавьте фото"),
     "AddPlaceType": MessageLookupByLibrary.simpleMessage("Добавить тип места"),
-    "AddPromotion": MessageLookupByLibrary.simpleMessage("Добавить промо"),
+    "AddPromotion": MessageLookupByLibrary.simpleMessage("Промо"),
     "AddProperty": MessageLookupByLibrary.simpleMessage("Добавить свойство"),
     "AddReactions": MessageLookupByLibrary.simpleMessage("Добавить рекцию"),
     "AddReview": MessageLookupByLibrary.simpleMessage("Оставить отзыв"),
