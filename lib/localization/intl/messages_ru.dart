@@ -738,7 +738,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateNews": MessageLookupByLibrary.simpleMessage("Создать новость"),
     "CreatePlace": MessageLookupByLibrary.simpleMessage("Создать место"),
     "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
-      "Создай бесплатное напоминание для твоих клиентов",
+      "Создай напоминание для твоих клиентов",
     ),
     "CreateSubs": MessageLookupByLibrary.simpleMessage("Создать сабы"),
     "CreateUpsales": MessageLookupByLibrary.simpleMessage("Создать апселлы"),
@@ -1488,6 +1488,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PlacesVisited": m64,
     "PlacesVisitedInf": MessageLookupByLibrary.simpleMessage(
       "Посещенные места",
+    ),
+    "PleaseAddDate": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста, укажите дату",
     ),
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
       "Добавь диапазон дат",
@@ -2382,6 +2385,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
       "Ты получаешь точно то, что нужно",
+    ),
+    "YouHaveAlreadyCreatedOneReminder": MessageLookupByLibrary.simpleMessage(
+      "Вы уже создали напоминание. Чтобы создать новое, приостановите или удалите предыдущее",
     ),
     "YouHaveExistingItems": MessageLookupByLibrary.simpleMessage(
       "Есть созданные записи",

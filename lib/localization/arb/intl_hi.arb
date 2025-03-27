@@ -803,7 +803,7 @@
   "@ProSubscriptionFeature7": {},
   "PickFromMap": "नक्शे से चुनें",
   "@PickFromMap": {},
-  "AddPromotion": "प्रचार जोड़ें",
+  "AddPromotion": "प्रचार अभियान",
   "@AddPromotion": {},
   "Archive": "संग्रहीत",
   "@Archive": {},
@@ -1447,7 +1447,7 @@
   "@UserHasNoPublicProfileEnd": {},
   "DownloadPdf": "PDF डाउनलोड करें",
   "@DownloadPdf": {},
-  "CreateReminderDescription": "अपने ग्राहकों के लिए मुफ्त याद दिलाने के लिए",
+  "CreateReminderDescription": "अपने ग्राहकों के लिए अनुस्मारक प्राप्त करने के लिए",
   "@CreateReminderDescription": {},
   "Reminder": "याद दिलाने वाला",
   "@Reminder": {},
@@ -2374,5 +2374,8 @@
   "ShowTime": "Show time",
   "@ShowTime": {},
   "ShowSchedule": "Show schedule",
-  "@ShowSchedule": {}
+  "@ShowSchedule": {},
+  "YouHaveAlreadyCreatedOneReminder": "You have already created one reminder. To create a new one, pause or remove the previous one.",
+  "PleaseAddDate": "Please add date"
+
 }

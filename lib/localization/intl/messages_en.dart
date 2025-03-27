@@ -396,7 +396,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "AddNew": MessageLookupByLibrary.simpleMessage("Add new"),
     "AddPhotoHere": MessageLookupByLibrary.simpleMessage("Add photo"),
     "AddPlaceType": MessageLookupByLibrary.simpleMessage("Add place type"),
-    "AddPromotion": MessageLookupByLibrary.simpleMessage("Add promotion"),
+    "AddPromotion": MessageLookupByLibrary.simpleMessage("Promotion"),
     "AddProperty": MessageLookupByLibrary.simpleMessage("Add property"),
     "AddReactions": MessageLookupByLibrary.simpleMessage("Add reaction"),
     "AddReview": MessageLookupByLibrary.simpleMessage("Add review"),
@@ -736,7 +736,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "CreateNews": MessageLookupByLibrary.simpleMessage("Create news"),
     "CreatePlace": MessageLookupByLibrary.simpleMessage("Create place"),
     "CreateReminderDescription": MessageLookupByLibrary.simpleMessage(
-      "Create free reminder for your clients",
+      "Create reminder for your clients",
     ),
     "CreateSubs": MessageLookupByLibrary.simpleMessage("Create subs"),
     "CreateUpsales": MessageLookupByLibrary.simpleMessage("Create upsells"),
@@ -1481,6 +1481,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Places": MessageLookupByLibrary.simpleMessage("Places"),
     "PlacesVisited": m64,
     "PlacesVisitedInf": MessageLookupByLibrary.simpleMessage("Places visited"),
+    "PleaseAddDate": MessageLookupByLibrary.simpleMessage("Please add date"),
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
       "Please add a date period",
     ),
@@ -2369,6 +2370,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "YouGetExactlyWhatYouNeed": MessageLookupByLibrary.simpleMessage(
       "You get exactly what you need",
+    ),
+    "YouHaveAlreadyCreatedOneReminder": MessageLookupByLibrary.simpleMessage(
+      "You have already created one reminder. To create a new one, pause or remove the previous one.",
     ),
     "YouHaveExistingItems": MessageLookupByLibrary.simpleMessage(
       "You have existing items",

@@ -7,6 +7,7 @@ class UiKitSelectDateWidget extends StatelessWidget {
   final bool dateToWord;
   final VoidCallback? onCalenderTap;
   final bool Function(DateTime)? selectableDayPredicate;
+  final bool isOneDate;
 
   const UiKitSelectDateWidget({
     super.key,
@@ -14,12 +15,13 @@ class UiKitSelectDateWidget extends StatelessWidget {
     this.dateToWord = false,
     this.onCalenderTap,
     this.selectableDayPredicate,
+    this.isOneDate = false,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    final title = _formatDateRange(selectedDates, dateToWord, context, selectableDayPredicate);
+    final title = _formatDateRange(context, selectedDates, dateToWord, selectableDayPredicate, isOneDate);
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -27,7 +29,8 @@ class UiKitSelectDateWidget extends StatelessWidget {
         Expanded(
           child: AutoSizeText(
             title,
-            style: selectedDates != null && selectedDates!.length > 1
+            style: selectedDates != null &&
+                    (isOneDate ? selectedDates!.nonNulls.length == 1 : selectedDates!.nonNulls.length > 1)
                 ? theme?.boldTextTheme.body
                 : theme?.boldTextTheme.body.copyWith(color: ColorsFoundation.error),
             maxLines: 1,
@@ -47,16 +50,18 @@ class UiKitSelectDateWidget extends StatelessWidget {
 }
 
 String _formatDateRange(
+  BuildContext context,
   List<DateTime?>? selectedDates,
   bool dateToWord,
-  BuildContext context,
   bool Function(DateTime)? selectableDayPredicate,
+  bool isOneDate,
 ) {
   final List<DateTime> generateDateList = generateDateRange(selectedDates);
-  if (generateDateList.isEmpty) return S.of(context).PleaseAddDatePeriod;
+
+  if (generateDateList.isEmpty) return isOneDate ? S.of(context).PleaseAddDate : S.of(context).PleaseAddDatePeriod;
 
   if (selectableDayPredicate != null && !generateDateList.any((element) => selectableDayPredicate(element))) {
-    return S.of(context).PleaseAddDatePeriod;
+    return isOneDate ? S.of(context).PleaseAddDate : S.of(context).PleaseAddDatePeriod;
   }
 
   final firstDate = generateDateList[0];

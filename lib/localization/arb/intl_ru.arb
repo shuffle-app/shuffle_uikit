@@ -1453,7 +1453,7 @@
   "@UserHasNoPublicProfileEnd": {},
   "DownloadPdf": "Скачать PDF",
   "@DownloadPdf": {},
-  "CreateReminderDescription": "Создай бесплатное напоминание для твоих клиентов",
+  "CreateReminderDescription": "Создай напоминание для твоих клиентов",
   "@CreateReminderDescription": {},
   "Reminder": "Напоминание",
   "@Reminder": {},
@@ -2378,5 +2378,7 @@
   "ShowTime": "Тип показа",
   "@ShowTime": {},
   "ShowSchedule": "Настройка времени",
-  "@ShowSchedule": {}
+  "@ShowSchedule": {},
+  "YouHaveAlreadyCreatedOneReminder": "Вы уже создали напоминание. Чтобы создать новое, приостановите или удалите предыдущее",
+  "PleaseAddDate": "Пожалуйста, укажите дату"
 }

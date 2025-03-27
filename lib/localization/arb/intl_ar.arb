@@ -803,7 +803,7 @@
   "@ProSubscriptionFeature7": {},
   "PickFromMap": "Pick from map",
   "@PickFromMap": {},
-  "AddPromotion": "Add promotion",
+  "AddPromotion": "Promotion",
   "@AddPromotion": {},
   "Archive": "Archive",
   "@Archive": {},
@@ -1451,7 +1451,7 @@
   "@UserHasNoPublicProfileEnd": {},
   "DownloadPdf": "Download PDF",
   "@DownloadPdf": {},
-  "CreateReminderDescription": "Create free reminder for your clients",
+  "CreateReminderDescription": "Create reminder for your clients",
   "@CreateReminderDescription": {},
   "AlreadyHaveActiveReminder": "You have already created one reminder. To create a new one, pause or remove the previous one.",
   "@AlreadyHaveActiveReminder": {},
@@ -2378,5 +2378,9 @@
   "ShowTime": "Show time",
   "@ShowTime": {},
   "ShowSchedule": "Show schedule",
-  "@ShowSchedule": {}
+  "@ShowSchedule": {},
+  "YouHaveAlreadyCreatedOneReminder": "You have already created one reminder. To create a new one, pause or remove the previous one.",
+  "PleaseAddDate": "Please add date"
+
+
 }
