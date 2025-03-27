@@ -10050,6 +10050,26 @@ class S {
       args: [],
     );
   }
+
+  /// `These dates are not included in the opening hours of the Place or Events`
+  String get TheseDatesAreNotIncludedInTheOpeningHours {
+    return Intl.message(
+      'These dates are not included in the opening hours of the Place or Events',
+      name: 'TheseDatesAreNotIncludedInTheOpeningHours',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This date is not included in the opening hours of the Place or Events`
+  String get ThisDateIsNotIncludedInTheOpeningHours {
+    return Intl.message(
+      'This date is not included in the opening hours of the Place or Events',
+      name: 'ThisDateIsNotIncludedInTheOpeningHours',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

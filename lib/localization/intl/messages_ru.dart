@@ -2121,11 +2121,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
       "Контент есть в других твоих списках. После добавления он будет удален из текущего.",
     ),
+    "TheseDatesAreNotIncludedInTheOpeningHours":
+        MessageLookupByLibrary.simpleMessage(
+          "Эти даты не включены в часы работы Места или Ивента",
+        ),
     "ThisAuthorDoesNotHaveSuitableAccount":
         MessageLookupByLibrary.simpleMessage(
           "У этого автора нет подходящей учетной записи",
         ),
     "ThisBottom": MessageLookupByLibrary.simpleMessage("Этот боттом"),
+    "ThisDateIsNotIncludedInTheOpeningHours":
+        MessageLookupByLibrary.simpleMessage(
+          "Эта дата не включена в часы работы Места или Ивента",
+        ),
     "ThisIs": MessageLookupByLibrary.simpleMessage("Это"),
     "ThisIsEmptyNowBook": MessageLookupByLibrary.simpleMessage(
       "Пока пусто, забронируй и букинг появится здесь",

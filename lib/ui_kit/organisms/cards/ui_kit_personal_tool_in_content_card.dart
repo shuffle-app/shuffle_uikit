@@ -23,6 +23,7 @@ class UiKitPersonalToolInContentCard extends StatelessWidget {
       color: colorScheme?.surface1,
       borderRadius: BorderRadiusFoundation.all16,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           AutoSizeText(
             text ?? '',

@@ -2386,7 +2386,9 @@
   "BudgetLabel": "Budget",
   "DailyBudget": "Daily budget",
   "AverageCPC": "Average\nCPC",
-  "GeneralBudget": "General budget constraint"
+  "GeneralBudget": "General budget constraint",
+  "TheseDatesAreNotIncludedInTheOpeningHours": "These dates are not included in the opening hours of the Place or Events",
+  "ThisDateIsNotIncludedInTheOpeningHours": "This date is not included in the opening hours of the Place or Events"
 
 
 }
