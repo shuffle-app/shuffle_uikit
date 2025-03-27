@@ -189,7 +189,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m65(x) => "Введи действительную ${x} ссылку";
 
   static String m66(religionCount) =>
-      "Пожалуйста, выбери из списка ${religionCount} религию";
+      "Выбери из списка ${religionCount} религию";
 
   static String m67(x) => "Пожалуйста, проверь детали ${x} перед модерацией";
 
@@ -497,6 +497,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Скоро будет доступно",
     ),
     "AverageBill": MessageLookupByLibrary.simpleMessage("Средний чек"),
+    "AverageCPC": MessageLookupByLibrary.simpleMessage("Среднее\nCPC"),
     "AverageContentViewTime": MessageLookupByLibrary.simpleMessage(
       "Среднее время визита",
     ),
@@ -547,6 +548,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Branches": MessageLookupByLibrary.simpleMessage("Филиал"),
     "Buddhism": MessageLookupByLibrary.simpleMessage("Буддизм"),
     "Budget": m8,
+    "BudgetLabel": MessageLookupByLibrary.simpleMessage("Бюджет"),
     "BudgetPromo": MessageLookupByLibrary.simpleMessage("Бюджет"),
     "BuildYOurBusiness": MessageLookupByLibrary.simpleMessage(
       "Построй свой бизнес c",
@@ -769,6 +771,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CuttingVideo": MessageLookupByLibrary.simpleMessage("Обрезка видео"),
     "Daily": MessageLookupByLibrary.simpleMessage("Ежедневно "),
+    "DailyBudget": MessageLookupByLibrary.simpleMessage("Дневной бюджет"),
     "Date": MessageLookupByLibrary.simpleMessage("Дата"),
     "DateOfBirth": MessageLookupByLibrary.simpleMessage("Дата рождения"),
     "DateRange": MessageLookupByLibrary.simpleMessage("Диапазон дат"),
@@ -997,7 +1000,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "Gender": MessageLookupByLibrary.simpleMessage("Пол"),
     "GenderAndAge": MessageLookupByLibrary.simpleMessage("Пол и возраст"),
     "GeneraFem": MessageLookupByLibrary.simpleMessage("Общая"),
+    "GeneralBudget": MessageLookupByLibrary.simpleMessage(
+      "Общая планка бюджета",
+    ),
     "GeneralMas": MessageLookupByLibrary.simpleMessage("Общий"),
+    "Geography": MessageLookupByLibrary.simpleMessage("География"),
     "GetCode": MessageLookupByLibrary.simpleMessage("Получить код"),
     "GetReward": MessageLookupByLibrary.simpleMessage("Забрать награду"),
     "GetStarted": MessageLookupByLibrary.simpleMessage("Начать"),
@@ -1140,7 +1147,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "InvitesNPeopleTo": m50,
     "InvitesTo": MessageLookupByLibrary.simpleMessage("на"),
     "InvitesVerb": MessageLookupByLibrary.simpleMessage("Приглашает"),
-    "InvitesYouTo": MessageLookupByLibrary.simpleMessage("Приглашает вас на"),
+    "InvitesYouTo": MessageLookupByLibrary.simpleMessage("Приглашает тебя на"),
     "IsLessThanX": m51,
     "IsOverX": m52,
     "IsRecurrent": MessageLookupByLibrary.simpleMessage("Повторяется"),
@@ -1232,6 +1239,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "MondayShort": MessageLookupByLibrary.simpleMessage("Пн"),
     "Month": MessageLookupByLibrary.simpleMessage("Месяц"),
     "Monthly": MessageLookupByLibrary.simpleMessage("Месячный"),
+    "Mood": MessageLookupByLibrary.simpleMessage("Настроение"),
     "More": MessageLookupByLibrary.simpleMessage("больше"),
     "MoreAboutThisEvent": MessageLookupByLibrary.simpleMessage(
       "Больше об этом событии",
@@ -2062,7 +2070,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
     "TeaList": MessageLookupByLibrary.simpleMessage("Чайная карта"),
     "TellUsAbout": MessageLookupByLibrary.simpleMessage("Расскажи о"),
-    "TellUsMore": MessageLookupByLibrary.simpleMessage("Расскажи ещё"),
+    "TellUsMore": MessageLookupByLibrary.simpleMessage("Ещё о тебе"),
     "TellUsMoreAboutYourself": m100,
     "TemplateName": MessageLookupByLibrary.simpleMessage("Имя шаблона"),
     "Terms": MessageLookupByLibrary.simpleMessage("Условия"),
@@ -2314,7 +2322,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Устанавливаем и моем витрину",
     ),
     "WeWillLetKnowResults": MessageLookupByLibrary.simpleMessage(
-      "Мы оповестим вас о результатах",
+      "Мы оповестим о результатах",
     ),
     "Weather": MessageLookupByLibrary.simpleMessage("Погода"),
     "Website": MessageLookupByLibrary.simpleMessage("Сайт"),
@@ -2425,7 +2433,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "YourClaim": MessageLookupByLibrary.simpleMessage("Твоя претензия"),
     "YourClaimHasBeenSent": MessageLookupByLibrary.simpleMessage(
-      "Ваше заявление отправлено",
+      "Твоё заявление отправлено",
     ),
     "YourEmail": MessageLookupByLibrary.simpleMessage("Твоя почта"),
     "YourEvent": MessageLookupByLibrary.simpleMessage("Твоё событие"),

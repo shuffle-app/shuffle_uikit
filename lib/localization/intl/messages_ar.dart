@@ -495,6 +495,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "AvailableSoon": MessageLookupByLibrary.simpleMessage("Available soon"),
     "AverageBill": MessageLookupByLibrary.simpleMessage("Average bill"),
+    "AverageCPC": MessageLookupByLibrary.simpleMessage("Average\nCPC"),
     "AverageContentViewTime": MessageLookupByLibrary.simpleMessage(
       "Average card visit time",
     ),
@@ -545,6 +546,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Branches": MessageLookupByLibrary.simpleMessage("Branches"),
     "Buddhism": MessageLookupByLibrary.simpleMessage("Buddhism"),
     "Budget": m8,
+    "BudgetLabel": MessageLookupByLibrary.simpleMessage("Budget"),
     "BudgetPromo": MessageLookupByLibrary.simpleMessage("Budget"),
     "BuildYOurBusiness": MessageLookupByLibrary.simpleMessage(
       "Build your business with",
@@ -765,6 +767,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CuttingVideo": MessageLookupByLibrary.simpleMessage("Cutting video"),
     "Daily": MessageLookupByLibrary.simpleMessage("Daily "),
+    "DailyBudget": MessageLookupByLibrary.simpleMessage("Daily budget"),
     "Date": MessageLookupByLibrary.simpleMessage("Date"),
     "DateOfBirth": MessageLookupByLibrary.simpleMessage("Date of birth"),
     "DateRange": MessageLookupByLibrary.simpleMessage("Date Range"),
@@ -995,7 +998,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "Gender": MessageLookupByLibrary.simpleMessage("Gender"),
     "GenderAndAge": MessageLookupByLibrary.simpleMessage("Gender and Age"),
     "GeneraFem": MessageLookupByLibrary.simpleMessage("General"),
+    "GeneralBudget": MessageLookupByLibrary.simpleMessage(
+      "General budget constraint",
+    ),
     "GeneralMas": MessageLookupByLibrary.simpleMessage("General"),
+    "Geography": MessageLookupByLibrary.simpleMessage("Geography"),
     "GetCode": MessageLookupByLibrary.simpleMessage("Get code"),
     "GetReward": MessageLookupByLibrary.simpleMessage("Get reward"),
     "GetStarted": MessageLookupByLibrary.simpleMessage("Get started"),
@@ -1228,6 +1235,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "MondayShort": MessageLookupByLibrary.simpleMessage("Mon"),
     "Month": MessageLookupByLibrary.simpleMessage("Month"),
     "Monthly": MessageLookupByLibrary.simpleMessage("Monthly"),
+    "Mood": MessageLookupByLibrary.simpleMessage("Mood"),
     "More": MessageLookupByLibrary.simpleMessage("more"),
     "MoreAboutThisEvent": MessageLookupByLibrary.simpleMessage(
       "More about this event",

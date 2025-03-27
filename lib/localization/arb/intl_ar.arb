@@ -2380,7 +2380,13 @@
   "ShowSchedule": "Show schedule",
   "@ShowSchedule": {},
   "YouHaveAlreadyCreatedOneReminder": "You have already created one reminder. To create a new one, pause or remove the previous one.",
-  "PleaseAddDate": "Please add date"
+  "PleaseAddDate": "Please add date",
+  "Geography": "Geography",
+  "Mood": "Mood",
+  "BudgetLabel": "Budget",
+  "DailyBudget": "Daily budget",
+  "AverageCPC": "Average\nCPC",
+  "GeneralBudget": "General budget constraint"
 
 
 }

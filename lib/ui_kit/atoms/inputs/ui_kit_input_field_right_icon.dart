@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputField {
@@ -22,6 +23,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
     this.hintColor,
     this.onChanged,
     this.maxLines = 1,
+    this.inputFormatters,
   });
 
   @override
@@ -50,6 +52,7 @@ class UiKitInputFieldRightIcon extends StatefulWidget implements BaseUiKitInputF
   final ValueChanged<String>? onFieldSubmitted;
   final Color? fillColor;
   final Color? hintColor;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   State<UiKitInputFieldRightIcon> createState() => _UiKitInputFieldRightIconState();
@@ -75,8 +78,7 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
           )
         : uiKitTheme?.iconInputTheme;
     final errorStyle = uiKitTheme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.error);
-    final inputTextStyle =
-        uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: colorScheme?.inversePrimary);
+    final inputTextStyle = uiKitTheme?.boldTextTheme.caption1Medium.copyWith(color: colorScheme?.inversePrimary);
     final hintStyle = uiKitTheme?.boldTextTheme.caption1UpperCaseMedium.copyWith(
       color: widget.enabled
           ? widget.hintColor ?? colorScheme?.inversePrimary.withOpacity(0.48)
@@ -97,6 +99,7 @@ class _UiKitInputFieldRightIconState extends State<UiKitInputFieldRightIcon> {
         onTap: widget.onTap,
         onFieldSubmitted: widget.onFieldSubmitted,
         enabled: widget.enabled,
+        inputFormatters: widget.inputFormatters,
         controller: widget.enabled ? widget.controller : null,
         validator: widget.validator,
         obscureText: widget.obscureText,

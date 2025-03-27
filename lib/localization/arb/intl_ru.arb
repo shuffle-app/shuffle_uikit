@@ -2380,5 +2380,11 @@
   "ShowSchedule": "Настройка времени",
   "@ShowSchedule": {},
   "YouHaveAlreadyCreatedOneReminder": "Вы уже создали напоминание. Чтобы создать новое, приостановите или удалите предыдущее",
-  "PleaseAddDate": "Пожалуйста, укажите дату"
+  "PleaseAddDate": "Пожалуйста, укажите дату",
+  "Geography": "География",
+  "Mood": "Настроение",
+  "BudgetLabel": "Бюджет",
+  "DailyBudget": "Дневной бюджет",
+  "AverageCPC": "Среднее\nCPC",
+  "GeneralBudget": "Общая планка бюджета"
 }

@@ -66,7 +66,7 @@ class PriceWithSpacesFormatter extends TextInputFormatter {
     if (currency != null && currency!.isNotEmpty) {
       if (!formattedText.endsWith(' ${currency}')) {
         formattedText += ' ${currency}';
-        newOffset = formattedText.length - 4;
+        newOffset = formattedText.length - currency!.length - 1;
       }
     }
     return TextEditingValue(

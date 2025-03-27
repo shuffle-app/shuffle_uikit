@@ -10010,6 +10010,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Geography`
+  String get Geography {
+    return Intl.message('Geography', name: 'Geography', desc: '', args: []);
+  }
+
+  /// `Mood`
+  String get Mood {
+    return Intl.message('Mood', name: 'Mood', desc: '', args: []);
+  }
+
+  /// `Budget`
+  String get BudgetLabel {
+    return Intl.message('Budget', name: 'BudgetLabel', desc: '', args: []);
+  }
+
+  /// `Daily budget`
+  String get DailyBudget {
+    return Intl.message(
+      'Daily budget',
+      name: 'DailyBudget',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average\nCPC`
+  String get AverageCPC {
+    return Intl.message('Average\nCPC', name: 'AverageCPC', desc: '', args: []);
+  }
+
+  /// `General budget constraint`
+  String get GeneralBudget {
+    return Intl.message(
+      'General budget constraint',
+      name: 'GeneralBudget',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
