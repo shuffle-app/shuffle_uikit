@@ -2120,11 +2120,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
       "ये सामग्री आपकी अन्य सूचियों पर है ।  जोड़े जाने पर, इसे वर्तमान से हटा दिया जाएगा । ",
     ),
+    "TheseDatesAreNotIncludedInTheOpeningHours":
+        MessageLookupByLibrary.simpleMessage(
+          "These dates are not included in the opening hours of the Place or Events",
+        ),
     "ThisAuthorDoesNotHaveSuitableAccount":
         MessageLookupByLibrary.simpleMessage(
           "This author does not have a suitable account",
         ),
     "ThisBottom": MessageLookupByLibrary.simpleMessage("This bottom sheet"),
+    "ThisDateIsNotIncludedInTheOpeningHours":
+        MessageLookupByLibrary.simpleMessage(
+          "This date is not included in the opening hours of the Place or Events",
+        ),
     "ThisIs": MessageLookupByLibrary.simpleMessage("यह है"),
     "ThisIsEmptyNowBook": MessageLookupByLibrary.simpleMessage(
       "यह अभी खाली है, अपनी यात्रा बुक करें और यह यहाँ दिखाई देगा",

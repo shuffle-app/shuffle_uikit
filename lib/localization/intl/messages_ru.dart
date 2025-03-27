@@ -189,7 +189,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static String m65(x) => "Введи действительную ${x} ссылку";
 
   static String m66(religionCount) =>
-      "Пожалуйста, выбери из списка ${religionCount} религию";
+      "Выбери из списка ${religionCount} религию";
 
   static String m67(x) => "Пожалуйста, проверь детали ${x} перед модерацией";
 
@@ -1140,7 +1140,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "InvitesNPeopleTo": m50,
     "InvitesTo": MessageLookupByLibrary.simpleMessage("на"),
     "InvitesVerb": MessageLookupByLibrary.simpleMessage("Приглашает"),
-    "InvitesYouTo": MessageLookupByLibrary.simpleMessage("Приглашает вас на"),
+    "InvitesYouTo": MessageLookupByLibrary.simpleMessage("Приглашает тебя на"),
     "IsLessThanX": m51,
     "IsOverX": m52,
     "IsRecurrent": MessageLookupByLibrary.simpleMessage("Повторяется"),
@@ -2062,7 +2062,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Taxi": MessageLookupByLibrary.simpleMessage("Taxi"),
     "TeaList": MessageLookupByLibrary.simpleMessage("Чайная карта"),
     "TellUsAbout": MessageLookupByLibrary.simpleMessage("Расскажи о"),
-    "TellUsMore": MessageLookupByLibrary.simpleMessage("Расскажи ещё"),
+    "TellUsMore": MessageLookupByLibrary.simpleMessage("Ещё о тебе"),
     "TellUsMoreAboutYourself": m100,
     "TemplateName": MessageLookupByLibrary.simpleMessage("Имя шаблона"),
     "Terms": MessageLookupByLibrary.simpleMessage("Условия"),
@@ -2113,11 +2113,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "TheseContentIsOnYourOtherLists": MessageLookupByLibrary.simpleMessage(
       "Контент есть в других твоих списках. После добавления он будет удален из текущего.",
     ),
+    "TheseDatesAreNotIncludedInTheOpeningHours":
+        MessageLookupByLibrary.simpleMessage(
+          "Эти даты не включены в часы работы Места или Ивента",
+        ),
     "ThisAuthorDoesNotHaveSuitableAccount":
         MessageLookupByLibrary.simpleMessage(
           "У этого автора нет подходящей учетной записи",
         ),
     "ThisBottom": MessageLookupByLibrary.simpleMessage("Этот боттом"),
+    "ThisDateIsNotIncludedInTheOpeningHours":
+        MessageLookupByLibrary.simpleMessage(
+          "Эта дата не включена в часы работы Места или Ивента",
+        ),
     "ThisIs": MessageLookupByLibrary.simpleMessage("Это"),
     "ThisIsEmptyNowBook": MessageLookupByLibrary.simpleMessage(
       "Пока пусто, забронируй и букинг появится здесь",
@@ -2314,7 +2322,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Устанавливаем и моем витрину",
     ),
     "WeWillLetKnowResults": MessageLookupByLibrary.simpleMessage(
-      "Мы оповестим вас о результатах",
+      "Мы оповестим о результатах",
     ),
     "Weather": MessageLookupByLibrary.simpleMessage("Погода"),
     "Website": MessageLookupByLibrary.simpleMessage("Сайт"),
@@ -2425,7 +2433,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "YourClaim": MessageLookupByLibrary.simpleMessage("Твоя претензия"),
     "YourClaimHasBeenSent": MessageLookupByLibrary.simpleMessage(
-      "Ваше заявление отправлено",
+      "Твоё заявление отправлено",
     ),
     "YourEmail": MessageLookupByLibrary.simpleMessage("Твоя почта"),
     "YourEvent": MessageLookupByLibrary.simpleMessage("Твоё событие"),

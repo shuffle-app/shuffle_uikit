@@ -2380,5 +2380,7 @@
   "ShowSchedule": "Настройка времени",
   "@ShowSchedule": {},
   "YouHaveAlreadyCreatedOneReminder": "Вы уже создали напоминание. Чтобы создать новое, приостановите или удалите предыдущее",
-  "PleaseAddDate": "Пожалуйста, укажите дату"
+  "PleaseAddDate": "Пожалуйста, укажите дату",
+  "TheseDatesAreNotIncludedInTheOpeningHours": "Эти даты не включены в часы работы Места или Ивента",
+  "ThisDateIsNotIncludedInTheOpeningHours": "Эта дата не включена в часы работы Места или Ивента"
 }
