@@ -61,7 +61,9 @@ String _formatDateRange(
   if (generateDateList.isEmpty) return isOneDate ? S.of(context).PleaseAddDate : S.of(context).PleaseAddDatePeriod;
 
   if (selectableDayPredicate != null && !generateDateList.any((element) => selectableDayPredicate(element))) {
-    return isOneDate ? S.of(context).PleaseAddDate : S.of(context).PleaseAddDatePeriod;
+    return isOneDate
+        ? S.of(context).ThisDateIsNotIncludedInTheOpeningHours
+        : S.of(context).TheseDatesAreNotIncludedInTheOpeningHours;
   }
 
   final firstDate = generateDateList[0];
