@@ -155,7 +155,7 @@ showTimeInfoDialog(BuildContext context, List<List<String>> times) {
                       children: [
                         Flexible(
                           child: AutoSizeText(
-                            '$firstText:',
+                            firstText,
                             style: theme?.regularTextTheme.caption2.copyWith(color: Colors.black),
                             maxLines: 1,
                             minFontSize: 8,
