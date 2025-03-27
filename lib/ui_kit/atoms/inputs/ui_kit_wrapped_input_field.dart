@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitWrappedInputField extends StatefulWidget {
@@ -7,6 +8,7 @@ class UiKitWrappedInputField extends StatefulWidget {
     required this.controller,
     this.errorText,
     this.hintText,
+    this.inputFormatters,
     this.validator,
     this.onChanged,
     this.fillColor,
@@ -32,6 +34,7 @@ class UiKitWrappedInputField extends StatefulWidget {
     required this.controller,
     this.errorText,
     this.hintText,
+    this.inputFormatters,
     this.validator,
     this.onChanged,
     this.fillColor,
@@ -76,6 +79,7 @@ class UiKitWrappedInputField extends StatefulWidget {
   final TextInputAction? textInputAction;
   final Widget? icon;
   final Widget? label;
+  final List<TextInputFormatter>? inputFormatters;
 
   final String type;
 
@@ -141,6 +145,7 @@ class _UiKitWrappedInputFieldState extends State<UiKitWrappedInputField> {
                   expands: widget.expands,
                   borderRadius: widget.borderRadius,
                   node: widget.node,
+                  inputFormatters: widget.inputFormatters,
                   textInputAction: widget.textInputAction,
                   onSubmitted: widget.onSubmitted,
                   hintTextColor: widget.hintTextColor,
@@ -161,6 +166,7 @@ class _UiKitWrappedInputFieldState extends State<UiKitWrappedInputField> {
                     });
                     return errorText;
                   },
+                  inputFormatters: widget.inputFormatters,
                   icon: widget.icon,
                   onIconPressed: widget.onIconPressed,
                 );
@@ -175,6 +181,7 @@ class _UiKitWrappedInputFieldState extends State<UiKitWrappedInputField> {
                     });
                     return errorText;
                   },
+                  inputFormatters: widget.inputFormatters,
                   onChanged: widget.onChanged,
                   enabled: widget.enabled,
                   expands: widget.expands,

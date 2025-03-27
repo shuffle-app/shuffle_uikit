@@ -90,6 +90,6 @@ class TitleWithAvatar extends StatelessWidget {
           trailing!,
         ],
       ],
-    ).paddingSymmetric(horizontal: horizontalMargin ?? 0);
+    ).paddingOnly(left: horizontalMargin ?? 0);
   }
 }

@@ -497,6 +497,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Скоро будет доступно",
     ),
     "AverageBill": MessageLookupByLibrary.simpleMessage("Средний чек"),
+    "AverageCPC": MessageLookupByLibrary.simpleMessage("Среднее\nCPC"),
     "AverageContentViewTime": MessageLookupByLibrary.simpleMessage(
       "Среднее время визита",
     ),
@@ -547,6 +548,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Branches": MessageLookupByLibrary.simpleMessage("Филиал"),
     "Buddhism": MessageLookupByLibrary.simpleMessage("Буддизм"),
     "Budget": m8,
+    "BudgetLabel": MessageLookupByLibrary.simpleMessage("Бюджет"),
     "BudgetPromo": MessageLookupByLibrary.simpleMessage("Бюджет"),
     "BuildYOurBusiness": MessageLookupByLibrary.simpleMessage(
       "Построй свой бизнес c",
@@ -769,6 +771,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CuttingVideo": MessageLookupByLibrary.simpleMessage("Обрезка видео"),
     "Daily": MessageLookupByLibrary.simpleMessage("Ежедневно "),
+    "DailyBudget": MessageLookupByLibrary.simpleMessage("Дневной бюджет"),
     "Date": MessageLookupByLibrary.simpleMessage("Дата"),
     "DateOfBirth": MessageLookupByLibrary.simpleMessage("Дата рождения"),
     "DateRange": MessageLookupByLibrary.simpleMessage("Диапазон дат"),
@@ -997,7 +1000,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "Gender": MessageLookupByLibrary.simpleMessage("Пол"),
     "GenderAndAge": MessageLookupByLibrary.simpleMessage("Пол и возраст"),
     "GeneraFem": MessageLookupByLibrary.simpleMessage("Общая"),
+    "GeneralBudget": MessageLookupByLibrary.simpleMessage(
+      "Общая планка бюджета",
+    ),
     "GeneralMas": MessageLookupByLibrary.simpleMessage("Общий"),
+    "Geography": MessageLookupByLibrary.simpleMessage("География"),
     "GetCode": MessageLookupByLibrary.simpleMessage("Получить код"),
     "GetReward": MessageLookupByLibrary.simpleMessage("Забрать награду"),
     "GetStarted": MessageLookupByLibrary.simpleMessage("Начать"),
@@ -1232,6 +1239,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "MondayShort": MessageLookupByLibrary.simpleMessage("Пн"),
     "Month": MessageLookupByLibrary.simpleMessage("Месяц"),
     "Monthly": MessageLookupByLibrary.simpleMessage("Месячный"),
+    "Mood": MessageLookupByLibrary.simpleMessage("Настроение"),
     "More": MessageLookupByLibrary.simpleMessage("больше"),
     "MoreAboutThisEvent": MessageLookupByLibrary.simpleMessage(
       "Больше об этом событии",

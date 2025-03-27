@@ -2381,6 +2381,12 @@
   "@ShowSchedule": {},
   "YouHaveAlreadyCreatedOneReminder": "You have already created one reminder. To create a new one, pause or remove the previous one.",
   "PleaseAddDate": "Please add date",
+  "Geography": "Geography",
+  "Mood": "Mood",
+  "BudgetLabel": "Budget",
+  "DailyBudget": "Daily budget",
+  "AverageCPC": "Average\nCPC",
+  "GeneralBudget": "General budget constraint",
   "TheseDatesAreNotIncludedInTheOpeningHours": "These dates are not included in the opening hours of the Place or Events",
   "ThisDateIsNotIncludedInTheOpeningHours": "This date is not included in the opening hours of the Place or Events"
 

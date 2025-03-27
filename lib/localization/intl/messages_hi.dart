@@ -495,6 +495,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "AvailableSoon": MessageLookupByLibrary.simpleMessage("Available soon"),
     "AverageBill": MessageLookupByLibrary.simpleMessage("औसत बिल"),
+    "AverageCPC": MessageLookupByLibrary.simpleMessage("Average\nCPC"),
     "AverageContentViewTime": MessageLookupByLibrary.simpleMessage(
       "औसत कार्ड देखने का समय",
     ),
@@ -544,6 +545,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Branches": MessageLookupByLibrary.simpleMessage("शाखाएँ"),
     "Buddhism": MessageLookupByLibrary.simpleMessage("बौद्ध धर्म"),
     "Budget": m8,
+    "BudgetLabel": MessageLookupByLibrary.simpleMessage("Budget"),
     "BudgetPromo": MessageLookupByLibrary.simpleMessage("Budget"),
     "BuildYOurBusiness": MessageLookupByLibrary.simpleMessage(
       "अपने व्यापार को बढ़ाएं",
@@ -766,6 +768,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "CuttingVideo": MessageLookupByLibrary.simpleMessage("वीडियो को काटना"),
     "Daily": MessageLookupByLibrary.simpleMessage("दैनिक"),
+    "DailyBudget": MessageLookupByLibrary.simpleMessage("Daily budget"),
     "Date": MessageLookupByLibrary.simpleMessage("तारीख"),
     "DateOfBirth": MessageLookupByLibrary.simpleMessage("जन्म की तारीख"),
     "DateRange": MessageLookupByLibrary.simpleMessage("सीमा चुनें"),
@@ -994,7 +997,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "Gender": MessageLookupByLibrary.simpleMessage("लिंग"),
     "GenderAndAge": MessageLookupByLibrary.simpleMessage("लिंग और आय"),
     "GeneraFem": MessageLookupByLibrary.simpleMessage("सामान्य"),
+    "GeneralBudget": MessageLookupByLibrary.simpleMessage(
+      "General budget constraint",
+    ),
     "GeneralMas": MessageLookupByLibrary.simpleMessage("सामान्य"),
+    "Geography": MessageLookupByLibrary.simpleMessage("Geography"),
     "GetCode": MessageLookupByLibrary.simpleMessage("कोड प्राप्त करें"),
     "GetReward": MessageLookupByLibrary.simpleMessage("इनाम मिलना"),
     "GetStarted": MessageLookupByLibrary.simpleMessage("शुरू हो जाओ"),
@@ -1230,6 +1237,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "MondayShort": MessageLookupByLibrary.simpleMessage("सोमवार"),
     "Month": MessageLookupByLibrary.simpleMessage("महीना"),
     "Monthly": MessageLookupByLibrary.simpleMessage("मासिक"),
+    "Mood": MessageLookupByLibrary.simpleMessage("Mood"),
     "More": MessageLookupByLibrary.simpleMessage("और"),
     "MoreAboutThisEvent": MessageLookupByLibrary.simpleMessage(
       "इस घटना के बारे में और जानें",

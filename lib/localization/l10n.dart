@@ -28,10 +28,7 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -6794,8 +6791,7 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      other:
-          'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      other: 'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
       desc: '',
       args: [count],
@@ -10006,6 +10002,46 @@ class S {
     return Intl.message(
       'Please add date',
       name: 'PleaseAddDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Geography`
+  String get Geography {
+    return Intl.message('Geography', name: 'Geography', desc: '', args: []);
+  }
+
+  /// `Mood`
+  String get Mood {
+    return Intl.message('Mood', name: 'Mood', desc: '', args: []);
+  }
+
+  /// `Budget`
+  String get BudgetLabel {
+    return Intl.message('Budget', name: 'BudgetLabel', desc: '', args: []);
+  }
+
+  /// `Daily budget`
+  String get DailyBudget {
+    return Intl.message(
+      'Daily budget',
+      name: 'DailyBudget',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average\nCPC`
+  String get AverageCPC {
+    return Intl.message('Average\nCPC', name: 'AverageCPC', desc: '', args: []);
+  }
+
+  /// `General budget constraint`
+  String get GeneralBudget {
+    return Intl.message(
+      'General budget constraint',
+      name: 'GeneralBudget',
       desc: '',
       args: [],
     );
