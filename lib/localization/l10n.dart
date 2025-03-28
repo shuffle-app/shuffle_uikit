@@ -10070,6 +10070,16 @@ class S {
       args: [],
     );
   }
+
+  /// `A reminder with this date has already been created, please select a different date`
+  String get ReminderWithThisDateHasAlreadyCreated {
+    return Intl.message(
+      'A reminder with this date has already been created, please select a different date',
+      name: 'ReminderWithThisDateHasAlreadyCreated',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
