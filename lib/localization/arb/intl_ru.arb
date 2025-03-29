@@ -2380,5 +2380,7 @@
   "ShowSchedule": "Настройка времени",
   "@ShowSchedule": {},
   "YouHaveAlreadyCreatedOneReminder": "Вы уже создали напоминание. Чтобы создать новое, приостановите или удалите предыдущее",
-  "PleaseAddDate": "Пожалуйста, укажите дату"
+  "@YouHaveAlreadyCreatedOneReminder": {},
+  "PleaseAddDate": "Укажи дату, плз",
+  "@PleaseAddDate": {}
 }
