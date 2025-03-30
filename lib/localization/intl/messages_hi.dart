@@ -1725,6 +1725,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Remind your bookings one week, one day and one hour before the start",
     ),
     "Reminder": MessageLookupByLibrary.simpleMessage("याद दिलाने वाला"),
+    "ReminderWithThisDateHasAlreadyCreated": MessageLookupByLibrary.simpleMessage(
+      "A reminder with this date has already been created, please select a different date",
+    ),
     "Reminders": MessageLookupByLibrary.simpleMessage("याद दिलाने वाला"),
     "Remove": MessageLookupByLibrary.simpleMessage("हटाएं"),
     "Rename": MessageLookupByLibrary.simpleMessage("नाम बदलें"),

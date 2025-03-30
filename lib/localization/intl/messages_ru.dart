@@ -1722,6 +1722,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Напомни о бронировании за неделю, за день и за час до начала",
     ),
     "Reminder": MessageLookupByLibrary.simpleMessage("Напоминание"),
+    "ReminderWithThisDateHasAlreadyCreated":
+        MessageLookupByLibrary.simpleMessage(
+          "Ремайндер с этой датой уже создан, пожалуйста выберите другую дату",
+        ),
     "Reminders": MessageLookupByLibrary.simpleMessage("Напоминания"),
     "Remove": MessageLookupByLibrary.simpleMessage("Удалить"),
     "Rename": MessageLookupByLibrary.simpleMessage("Переименовать"),

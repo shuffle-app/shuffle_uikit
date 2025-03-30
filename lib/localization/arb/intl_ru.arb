@@ -2388,5 +2388,6 @@
   "AverageCPC": "Среднее\nCPC",
   "GeneralBudget": "Общая планка бюджета",
   "TheseDatesAreNotIncludedInTheOpeningHours": "Эти даты не включены в часы работы Места или Ивента",
-  "ThisDateIsNotIncludedInTheOpeningHours": "Эта дата не включена в часы работы Места или Ивента"
+  "ThisDateIsNotIncludedInTheOpeningHours": "Эта дата не включена в часы работы Места или Ивента",
+  "ReminderWithThisDateHasAlreadyCreated":"Ремайндер с этой датой уже создан, пожалуйста выберите другую дату"
 }
