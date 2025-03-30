@@ -141,11 +141,11 @@ class UiKitTag {
 
   @override
   bool operator ==(Object other) {
-    return other is UiKitTag && other.title == title;
+    return other is UiKitTag && (other.id != null && id != null ? other.id == id : other.title == title);
   }
 
   @override
-  int get hashCode => title.hashCode;
+  int get hashCode => id?.hashCode ?? title.hashCode;
 
   Map<String, dynamic> toMap() => {
         'title': title,
