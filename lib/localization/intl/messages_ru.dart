@@ -1497,9 +1497,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PlacesVisitedInf": MessageLookupByLibrary.simpleMessage(
       "Посещенные места",
     ),
-    "PleaseAddDate": MessageLookupByLibrary.simpleMessage(
-      "Пожалуйста, укажите дату",
-    ),
+    "PleaseAddDate": MessageLookupByLibrary.simpleMessage("Укажи дату, плз"),
     "PleaseAddDatePeriod": MessageLookupByLibrary.simpleMessage(
       "Добавь диапазон дат",
     ),
