@@ -42,17 +42,21 @@ Future<void> enterNameUiKitDialog(
         cursorColor: colorsScheme?.inverseHeadingTypography,
       ),
       actions: [
-        context.button(
-          data: BaseUiKitButtonData(
-            backgroundColor: colorsScheme?.primary,
-            textColor: colorsScheme?.inversePrimary,
-            text: buttonText ?? S.current.Confirm,
-            onPressed: () {
-              focusNode.unfocus();
-              onConfirmTap?.call();
-            },
-          ),
-        ),
+        AnimatedBuilder(
+            animation: controller,
+            builder: (context, _) => context.button(
+                  data: BaseUiKitButtonData(
+                    backgroundColor: colorsScheme?.primary,
+                    textColor: colorsScheme?.inversePrimary,
+                    text: buttonText ?? S.current.Confirm,
+                    onPressed: controller.text.isEmpty
+                        ? null
+                        : () {
+                            focusNode.unfocus();
+                            onConfirmTap?.call();
+                          },
+                  ),
+                )),
       ],
       defaultButtonText: '',
     ),

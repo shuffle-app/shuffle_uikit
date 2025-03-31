@@ -10080,6 +10080,31 @@ class S {
       args: [],
     );
   }
+
+  /// `Sold out`
+  String get SoldOut {
+    return Intl.message('Sold out', name: 'SoldOut', desc: '', args: []);
+  }
+
+  /// `Received`
+  String get Received {
+    return Intl.message('Received', name: 'Received', desc: '', args: []);
+  }
+
+  /// `Closed`
+  String get Closed {
+    return Intl.message('Closed', name: 'Closed', desc: '', args: []);
+  }
+
+  /// `Tomorrow`
+  String get Tomorrow {
+    return Intl.message('Tomorrow', name: 'Tomorrow', desc: '', args: []);
+  }
+
+  /// `During week`
+  String get DuringWeek {
+    return Intl.message('During week', name: 'DuringWeek', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

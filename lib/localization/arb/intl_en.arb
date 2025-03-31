@@ -2389,6 +2389,10 @@
   "GeneralBudget": "General budget constraint",
   "TheseDatesAreNotIncludedInTheOpeningHours": "These dates are not included in the opening hours of the Place or Events",
   "ThisDateIsNotIncludedInTheOpeningHours": "This date is not included in the opening hours of the Place or Events",
-  "ReminderWithThisDateHasAlreadyCreated":"A reminder with this date has already been created, please select a different date"
-
+  "ReminderWithThisDateHasAlreadyCreated": "A reminder with this date has already been created, please select a different date",
+  "SoldOut": "Sold out",
+  "Received": "Received",
+  "Closed": "Closed",
+  "Tomorrow": "Tomorrow",
+  "DuringWeek": "During week"
 }

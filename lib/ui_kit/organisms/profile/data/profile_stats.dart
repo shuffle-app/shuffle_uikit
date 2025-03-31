@@ -72,7 +72,7 @@ class InfluencerStats extends ProfileStats {
                   )),
               SpacingFoundation.horizontalSpace8,
               Text(
-                'Places visited',
+                S.current.PlacesVisitedInf,
                 style: titleStyle,
               )
             ],
@@ -91,7 +91,7 @@ class InfluencerStats extends ProfileStats {
                 )),
             SpacingFoundation.horizontalSpace8,
             Text(
-              'Reviews posted',
+              S.current.ReviewsPostedInf,
               style: titleStyle,
             )
           ])),
@@ -135,12 +135,12 @@ class ProProfileStats extends ProfileStats {
           valueGradient: getGradient(eventsCreated),
         ),
         ProfileHighlightCard(
-          title: 'Reviews received',
+          title: '${S.current.ReviewsReceived(4).capitalize()} ${S.current.Received.toLowerCase()}',
           value: getStringValue(reviewsReceived),
           valueGradient: getGradient(reviewsReceived),
         ),
         ProfileHighlightCard(
-          title: 'Bookings',
+          title: S.current.BookingsHeading,
           value: getStringValue(bookingsReceived),
           valueGradient: getGradient(bookingsReceived),
         ),
@@ -188,7 +188,7 @@ class ProProfileStats extends ProfileStats {
                 )),
             SpacingFoundation.horizontalSpace8,
             Text(
-              'Reviews received',
+              '${S.current.ReviewsReceived(4).capitalize()} ${S.current.Received.toLowerCase()}',
               style: titleStyle,
             )
           ])),
@@ -208,7 +208,7 @@ class ProProfileStats extends ProfileStats {
                   )),
               SpacingFoundation.horizontalSpace8,
               Text(
-                'Bookings',
+                S.current.BookingsHeading,
                 style: titleStyle,
               )
             ],

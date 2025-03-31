@@ -6,8 +6,9 @@ class UiKitRadioTile extends StatelessWidget {
   final bool selected;
   final String title;
   final VoidCallback? onTapped;
+  final AutoSizeGroup? autoSizeGroup;
 
-  const UiKitRadioTile({super.key, required this.selected, this.onTapped, required this.title});
+  const UiKitRadioTile({super.key, required this.selected, this.onTapped, required this.title, this.autoSizeGroup});
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +18,14 @@ class UiKitRadioTile extends StatelessWidget {
       child: Row(
         children: [
           UiKitRadio(selected: selected).paddingOnly(right: SpacingFoundation.horizontalSpacing12),
-          AutoSizeText(
+          Flexible(
+              child: AutoSizeText(
             title,
             style: theme?.boldTextTheme.labelLarge,
             maxLines: 1,
             minFontSize: 8,
-          ),
+            group: autoSizeGroup,
+          )),
         ],
       ).paddingSymmetric(vertical: SpacingFoundation.verticalSpacing12),
     );

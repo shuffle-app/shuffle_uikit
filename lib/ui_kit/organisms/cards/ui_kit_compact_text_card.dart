@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -6,6 +7,7 @@ class UiKitCompactTextCard extends StatelessWidget {
   final bool showRemoveButton;
   final VoidCallback? onTap;
   final bool showCheckedBackground;
+  final AutoSizeGroup? autoSizeGroup;
 
   const UiKitCompactTextCard({
     super.key,
@@ -13,6 +15,7 @@ class UiKitCompactTextCard extends StatelessWidget {
     this.onTap,
     this.showRemoveButton = false,
     this.showCheckedBackground = false,
+    this.autoSizeGroup,
   });
 
   @override
@@ -29,11 +32,17 @@ class UiKitCompactTextCard extends StatelessWidget {
         child: Ink(
           decoration: showCheckedBackground
               ? BoxDecoration(
-              borderRadius: BorderRadiusFoundation.all24,
-              border: Border.all(color: theme!.colorScheme.inversePrimary))
+                  borderRadius: BorderRadiusFoundation.all24,
+                  border: Border.all(color: theme!.colorScheme.inversePrimary))
               : null,
           child: Row(mainAxisSize: MainAxisSize.min, children: [
-            Text(text, style: textTheme?.caption1Medium),
+            Flexible(
+                child: AutoSizeText(text,
+                    maxLines: 1,
+                    softWrap: true,
+                    wrapWords: true,
+                    group: autoSizeGroup,
+                    style: textTheme?.caption1Medium)),
             if (showRemoveButton) ...[
               SpacingFoundation.horizontalSpace4,
               ImageWidget(

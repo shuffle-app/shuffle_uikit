@@ -634,6 +634,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Клики по карточке в промо",
     ),
     "Close": MessageLookupByLibrary.simpleMessage("Закрой"),
+    "Closed": MessageLookupByLibrary.simpleMessage("Закрыто"),
     "CodeScanner": MessageLookupByLibrary.simpleMessage("Сканер кода"),
     "CollapseThread": MessageLookupByLibrary.simpleMessage("Свернуть ветку"),
     "Comments": m13,
@@ -834,6 +835,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "DubaiEventTicket": MessageLookupByLibrary.simpleMessage(
       "Билеты на события",
     ),
+    "DuringWeek": MessageLookupByLibrary.simpleMessage("В течение недели"),
     "Easy": MessageLookupByLibrary.simpleMessage("Изи"),
     "Edit": MessageLookupByLibrary.simpleMessage("Редактировать"),
     "EditProfile": MessageLookupByLibrary.simpleMessage("Редактировать"),
@@ -1692,6 +1694,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Read": m83,
     "RealMoney": MessageLookupByLibrary.simpleMessage("Реальные деньги"),
+    "Received": MessageLookupByLibrary.simpleMessage("Получено"),
     "RecentlyAdded": MessageLookupByLibrary.simpleMessage("Недавно добавлено"),
     "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
     "Refresher": MessageLookupByLibrary.simpleMessage("Освежитель"),
@@ -1977,6 +1980,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SocialSubtitle": MessageLookupByLibrary.simpleMessage(
       "Полезные сервисы и места",
     ),
+    "SoldOut": MessageLookupByLibrary.simpleMessage("Распродано"),
     "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Что-то пошло не так. Попробуй еще раз.",
     ),
@@ -2182,6 +2186,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ToUnlock": MessageLookupByLibrary.simpleMessage("Чтобы открыть"),
     "Today": MessageLookupByLibrary.simpleMessage("Сегодня"),
     "TodaysSummaryX": m103,
+    "Tomorrow": MessageLookupByLibrary.simpleMessage("Завтра"),
     "Top": MessageLookupByLibrary.simpleMessage("ТОП"),
     "TopEventsFor": m104,
     "TopNDonatorsReceiveXPoints": m105,

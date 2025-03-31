@@ -629,6 +629,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Clicks on the card within a promotion",
     ),
     "Close": MessageLookupByLibrary.simpleMessage("Close"),
+    "Closed": MessageLookupByLibrary.simpleMessage("Closed"),
     "CodeScanner": MessageLookupByLibrary.simpleMessage("Code scanner"),
     "CollapseThread": MessageLookupByLibrary.simpleMessage("धागा संकुचित करें"),
     "Comments": m13,
@@ -833,6 +834,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "DownloadPdf": MessageLookupByLibrary.simpleMessage("PDF डाउनलोड करें"),
     "Drafts": MessageLookupByLibrary.simpleMessage("Drafts"),
     "DubaiEventTicket": MessageLookupByLibrary.simpleMessage("दुबई घटना टिकट"),
+    "DuringWeek": MessageLookupByLibrary.simpleMessage("During week"),
     "Easy": MessageLookupByLibrary.simpleMessage("आसान"),
     "Edit": MessageLookupByLibrary.simpleMessage("संपादित करें"),
     "EditProfile": MessageLookupByLibrary.simpleMessage(
@@ -1692,6 +1694,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Read": m83,
     "RealMoney": MessageLookupByLibrary.simpleMessage("असली पैसे"),
+    "Received": MessageLookupByLibrary.simpleMessage("Received"),
     "RecentlyAdded": MessageLookupByLibrary.simpleMessage(
       "हाल ही में जोड़ा गया",
     ),
@@ -1979,6 +1982,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SocialSubtitle": MessageLookupByLibrary.simpleMessage(
       "उपयोगी सेवाएँ और स्थान",
     ),
+    "SoldOut": MessageLookupByLibrary.simpleMessage("Sold out"),
     "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "कुछ गलत हो गया",
     ),
@@ -2192,6 +2196,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ToUnlock": MessageLookupByLibrary.simpleMessage("अनलॉक करने के लिए"),
     "Today": MessageLookupByLibrary.simpleMessage("आज"),
     "TodaysSummaryX": m103,
+    "Tomorrow": MessageLookupByLibrary.simpleMessage("Tomorrow"),
     "Top": MessageLookupByLibrary.simpleMessage("शीर्ष"),
     "TopEventsFor": m104,
     "TopNDonatorsReceiveXPoints": m105,

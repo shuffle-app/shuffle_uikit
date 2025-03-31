@@ -630,6 +630,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Clicks on the card within a promotion",
     ),
     "Close": MessageLookupByLibrary.simpleMessage("Close"),
+    "Closed": MessageLookupByLibrary.simpleMessage("Closed"),
     "CodeScanner": MessageLookupByLibrary.simpleMessage("Code scanner"),
     "CollapseThread": MessageLookupByLibrary.simpleMessage("Collapse thread"),
     "Comments": m13,
@@ -834,6 +835,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "DubaiEventTicket": MessageLookupByLibrary.simpleMessage(
       "Dubai Event Ticket",
     ),
+    "DuringWeek": MessageLookupByLibrary.simpleMessage("During week"),
     "Easy": MessageLookupByLibrary.simpleMessage("Eazy"),
     "Edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "EditProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
@@ -1686,6 +1688,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Read": m83,
     "RealMoney": MessageLookupByLibrary.simpleMessage("Real money"),
+    "Received": MessageLookupByLibrary.simpleMessage("Received"),
     "RecentlyAdded": MessageLookupByLibrary.simpleMessage("Recently added"),
     "Recommended": MessageLookupByLibrary.simpleMessage("Recommended"),
     "Refresher": MessageLookupByLibrary.simpleMessage("Refresher"),
@@ -1971,6 +1974,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SocialSubtitle": MessageLookupByLibrary.simpleMessage(
       "Useful services and places",
     ),
+    "SoldOut": MessageLookupByLibrary.simpleMessage("Sold out"),
     "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "Something went wrong. Please try again.",
     ),
@@ -2174,6 +2178,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ToUnlock": MessageLookupByLibrary.simpleMessage("To unlock"),
     "Today": MessageLookupByLibrary.simpleMessage("Today"),
     "TodaysSummaryX": m103,
+    "Tomorrow": MessageLookupByLibrary.simpleMessage("Tomorrow"),
     "Top": MessageLookupByLibrary.simpleMessage("Top"),
     "TopEventsFor": m104,
     "TopNDonatorsReceiveXPoints": m105,
