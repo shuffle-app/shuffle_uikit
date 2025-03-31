@@ -71,12 +71,14 @@ class CoverSelect extends StatelessWidget {
                         style: theme?.boldTextTheme.body.copyWith(color: ColorsFoundation.darkNeutral900),
                       )),
                       if (selectedCover != null)
-                        ImageWidget(
-                          width: double.infinity,
-                          height: double.infinity,
-                          imageBytes: selectedCover!.thumbData,
-                          fit: BoxFit.cover,
-                        ),
+                        ClipRRect(
+                            borderRadius: BorderRadiusFoundation.all12,
+                            child: ImageWidget(
+                              width: double.infinity,
+                              height: double.infinity,
+                              imageBytes: selectedCover!.thumbData,
+                              fit: BoxFit.cover,
+                            )),
                     ],
                   )),
               if (selectedCover != null)
