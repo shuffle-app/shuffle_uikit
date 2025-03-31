@@ -567,6 +567,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ByEmail": MessageLookupByLibrary.simpleMessage("через e-mail"),
     "ByMessage": MessageLookupByLibrary.simpleMessage("через сообщения"),
+    "CPCHintDescription": MessageLookupByLibrary.simpleMessage(
+      "Общая стоимость кликов /\nОбщее количество кликов",
+    ),
+    "CPCHintTitle": MessageLookupByLibrary.simpleMessage(
+      "Средняя стоимость клика",
+    ),
     "CalmAtmosphere": MessageLookupByLibrary.simpleMessage(
       "Спокойная атмосфера",
     ),

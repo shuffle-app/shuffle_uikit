@@ -565,6 +565,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "ByEmail": MessageLookupByLibrary.simpleMessage("by e-mail"),
     "ByMessage": MessageLookupByLibrary.simpleMessage("by message"),
+    "CPCHintDescription": MessageLookupByLibrary.simpleMessage(
+      "Total Cost of Clicks /\nTotal Number of Clicks",
+    ),
+    "CPCHintTitle": MessageLookupByLibrary.simpleMessage(
+      "Average cost per click",
+    ),
     "CalmAtmosphere": MessageLookupByLibrary.simpleMessage("Calm atmosphere"),
     "Cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "CannotFindThisAuthor": MessageLookupByLibrary.simpleMessage(

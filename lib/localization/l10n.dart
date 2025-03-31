@@ -10105,6 +10105,26 @@ class S {
   String get DuringWeek {
     return Intl.message('During week', name: 'DuringWeek', desc: '', args: []);
   }
+
+  /// `Average cost per click`
+  String get CPCHintTitle {
+    return Intl.message(
+      'Average cost per click',
+      name: 'CPCHintTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Cost of Clicks /\nTotal Number of Clicks`
+  String get CPCHintDescription {
+    return Intl.message(
+      'Total Cost of Clicks /\nTotal Number of Clicks',
+      name: 'CPCHintDescription',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

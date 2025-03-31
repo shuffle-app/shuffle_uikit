@@ -2394,5 +2394,7 @@
   "Received": "Received",
   "Closed": "Closed",
   "Tomorrow": "Tomorrow",
-  "DuringWeek": "During week"
+  "DuringWeek": "During week",
+  "CPCHintTitle": "Average cost per click",
+  "CPCHintDescription": "Total Cost of Clicks /\nTotal Number of Clicks"
 }
