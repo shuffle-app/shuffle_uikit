@@ -28,6 +28,7 @@ class UiKitSpinner extends StatefulWidget {
 }
 
 class _UiKitSpinnerState extends State<UiKitSpinner> {
+  UiKitThemeData? theme;
   final _animDuration = const Duration(milliseconds: 150);
   final _rotationNotifier = ValueNotifier<double>(0);
   final _transitionNotifier = ValueNotifier<double>(0);
@@ -141,6 +142,12 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     _lastScrollPositionOffsetNotifier.value = nearestElementOffset;
   }
 
+  @override
+  void didChangeDependencies() {
+    theme = context.uiKitTheme;
+    super.didChangeDependencies();
+  }
+
   double _lastRotationValue = 0;
 
   @override
@@ -155,8 +162,9 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
 
   @override
   Widget build(BuildContext context) {
+    theme ??= context.uiKitTheme;
     const maxSpinnerUpValue = -60.0;
-    final colorScheme = context.uiKitTheme?.colorScheme;
+    final colorScheme = theme?.colorScheme;
     // return LayoutBuilder(
     //   builder: (context, size) {
     //     final availableWidth = size.maxWidth;
@@ -199,7 +207,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                         return category.substring(0, 1).toUpperCase() + category.substring(1);
                       }(),
                       maxLines: 2,
-                      style: context.uiKitTheme?.boldTextTheme.title1,
+                      style: theme?.boldTextTheme.title1,
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -335,7 +343,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                   bottom: kBottomNavigationBarHeight + 10.h,
                   child: Text(
                     widget.filterDate?.toRangeString() ?? '',
-                    style: context.uiKitTheme?.regularTextTheme.caption4.copyWith(color: colorScheme?.primary),
+                    style: theme?.regularTextTheme.caption4.copyWith(color: colorScheme?.primary),
                     textAlign: TextAlign.center,
                   ),
                 )
@@ -386,12 +394,12 @@ extension ToString on DateTimeRange {
   }
 
   String toPrettyString() {
-    if(start.isAtSameDayAs(end)) {
+    if (start.isAtSameDayAs(end)) {
       return DateFormat('dd MMM yyyy').format(start);
     }
-    if(start.year == end.year) {
-      return DateFormat('dd MMM').format(start) +' -\n'+ DateFormat('dd MMM yyyy').format(end);
+    if (start.year == end.year) {
+      return DateFormat('dd MMM').format(start) + ' -\n' + DateFormat('dd MMM yyyy').format(end);
     }
-    return DateFormat('dd MMM yyyy').format(start) +'\n-\n'+ DateFormat('dd MMM yyyy').format(end);
+    return DateFormat('dd MMM yyyy').format(start) + '\n-\n' + DateFormat('dd MMM yyyy').format(end);
   }
 }
