@@ -158,13 +158,13 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
   void cropImage(Uint8List data) async {
     if (image == null) return;
     final cropStartX =
-    (_positionAndSize.value.position.dx / (fittedImageSize.width / imageOriginalSize.width)).ceil().toInt();
+        (_positionAndSize.value.position.dx / (fittedImageSize.width / imageOriginalSize.width)).ceil().toInt();
     final cropStartY =
-    (_positionAndSize.value.position.dy / (fittedImageSize.height / imageOriginalSize.height)).ceil().toInt();
+        (_positionAndSize.value.position.dy / (fittedImageSize.height / imageOriginalSize.height)).ceil().toInt();
     final cropWidth =
-    (_positionAndSize.value.size.width / (fittedImageSize.width / imageOriginalSize.width)).ceil().toInt();
+        (_positionAndSize.value.size.width / (fittedImageSize.width / imageOriginalSize.width)).ceil().toInt();
     final cropHeight =
-    (_positionAndSize.value.size.height / (fittedImageSize.height / imageOriginalSize.height)).ceil().toInt();
+        (_positionAndSize.value.size.height / (fittedImageSize.height / imageOriginalSize.height)).ceil().toInt();
     final imageBytes = await compute(
       _cropImageInBackground,
       CropImageInBackgroundData(
@@ -177,7 +177,7 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
     );
     widget.controller.completeCrop();
     widget.onCropCompleted?.call(await FlutterImageCompress.compressWithList(imageBytes,
-        minHeight: cropHeight * 2, minWidth: cropWidth * 2, format: CompressFormat.jpeg)
+            minHeight: cropHeight * 2, minWidth: cropWidth * 2, format: CompressFormat.jpeg)
         .onError((error, st) {
       dev.log('compressing error: $error');
       return imageBytes;
@@ -207,7 +207,9 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
       if (isVerticalPicture) {
         /// fit height of the image to the [widget.viewPortAvailableSize] saving aspect ratio
         double fittedHeight = widget.viewPortAvailableSize.height;
-        if (fittedHeight >= imageOriginalSize.height) fittedHeight = imageOriginalSize.height;
+        if (fittedHeight >= imageOriginalSize.height) {
+          fittedHeight = min(widget.viewPortAvailableSize.height, min(imageOriginalSize.height, 900));
+        }
         final fittedWidth = _setupViewFinderWidth(fittedHeight, customAspectRatio: imageOriginalAspectRatio);
         if (fittedWidth > widget.viewPortAvailableSize.width) {
           fittedImageSize = Size(
@@ -369,7 +371,7 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
                   16,
                 ),
                 child: Container(
-                  color: Colors.black.withOpacity(0.5),
+                  color: Colors.black.withValues(alpha: 0.5),
                 ),
               );
             },
@@ -405,17 +407,22 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
           AnimatedBuilder(
             animation: _positionAndSize,
             builder: (context, child) {
+              final safeRight = fittedImageSize.width -
+                  _positionAndSize.value.position.dx -
+                  _positionAndSize.value.size.width -
+                  (fittedImageSize.width >= 0.9.sw && !kIsWeb ? (1.sw <= 380 ? 16 : 8) : 0);
+
+              final safeBottom =
+                  fittedImageSize.height - _positionAndSize.value.position.dy - _positionAndSize.value.size.height;
+
               return Stack(
                 fit: StackFit.expand,
                 children: [
                   Positioned(
                     left: _positionAndSize.value.position.dx,
                     top: _positionAndSize.value.position.dy,
-                    right: fittedImageSize.width -
-                        (_positionAndSize.value.size.width + _positionAndSize.value.position.dx),
-                    bottom: fittedImageSize.height -
-                        _positionAndSize.value.size.height -
-                        _positionAndSize.value.position.dy,
+                    right: safeRight > 0 ? safeRight : 0,
+                    bottom: safeBottom > 0 ? safeBottom : 0,
                     child: GestureDetector(
                       behavior: HitTestBehavior.translucent,
                       onPanUpdate: (details) {
@@ -454,27 +461,28 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
             },
             child: AnimatedBuilder(
               animation: _positionAndSize,
-              builder: (context, child) =>
-                  Container(
-                    clipBehavior: Clip.hardEdge,
-                    width: _positionAndSize.value.size.width,
-                    height: _positionAndSize.value.size.height,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadiusFoundation.all16,
-                      border: Border.all(color: Colors.white, width: 2),
-                    ),
-                    child: child,
-                  ),
+              builder: (context, child) => Container(
+                clipBehavior: Clip.hardEdge,
+                width: _positionAndSize.value.size.width,
+                height: _positionAndSize.value.size.height,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadiusFoundation.all16,
+                  border: Border.all(color: Colors.white, width: 2),
+                ),
+                child: child,
+              ),
               child: Stack(
                 children: [
                   Align(
                     alignment: Alignment.topRight,
                     child: GestureDetector(
-                      dragStartBehavior: DragStartBehavior.down,
                       onPanUpdate: (details) {
                         final viewFinderWidth = _positionAndSize.value.size.width;
                         final width = viewFinderWidth + details.delta.dx;
                         final height = _setupViewFinderHeight(width);
+
+                        if (width <= 50 || height <= 50) return;
+
                         if (width > fittedImageSize.width || height > fittedImageSize.height) return;
                         _positionAndSize.value = _positionAndSize.value.copyWith(
                           size: Size(width, height),
@@ -494,6 +502,9 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
                         final viewFinderHeight = _positionAndSize.value.size.height;
                         final height = viewFinderHeight + details.delta.dy;
                         final width = _setupViewFinderWidth(height);
+
+                        if (width <= 50 || height <= 50) return;
+
                         if (width > fittedImageSize.width || height > fittedImageSize.height) return;
                         _positionAndSize.value = _positionAndSize.value.copyWith(
                           size: Size(width, height),
