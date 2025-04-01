@@ -613,6 +613,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Chat": MessageLookupByLibrary.simpleMessage("चैट"),
     "ChatDeletionAndCreationMessage": m10,
     "ChatName": MessageLookupByLibrary.simpleMessage("Chat name"),
+    "Chats": MessageLookupByLibrary.simpleMessage("Chats"),
     "CheckIn": MessageLookupByLibrary.simpleMessage("चेक इन करें"),
     "CheckInHiwHint": m11,
     "CheckInHiwSubtitle": MessageLookupByLibrary.simpleMessage(

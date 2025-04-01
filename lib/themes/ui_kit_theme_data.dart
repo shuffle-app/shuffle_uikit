@@ -37,7 +37,7 @@ class UiKitThemeData extends ThemeExtension<UiKitThemeData> {
         overlayColor: WidgetStateProperty.resolveWith((states) => Colors.transparent),
       );
 
-  UiKitThemeData({
+  const UiKitThemeData({
     required this.iconInputTheme,
     required this.blurredBottomNavigationBarTheme,
     required this.ordinaryButtonStyle,
@@ -140,7 +140,7 @@ class UiKitChipThemeData {
   final Color backgroundColor;
   final Border? border;
 
-  UiKitChipThemeData({
+  const UiKitChipThemeData({
     required this.backgroundColor,
     this.border,
   });
@@ -149,7 +149,7 @@ class UiKitChipThemeData {
 class BlurredBottomNavigationBarTheme {
   final Color iconColors;
 
-  BlurredBottomNavigationBarTheme({
+  const BlurredBottomNavigationBarTheme({
     required this.iconColors,
   });
 }

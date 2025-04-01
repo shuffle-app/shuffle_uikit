@@ -2396,5 +2396,6 @@
   "Tomorrow": "Tomorrow",
   "DuringWeek": "During week",
   "CPCHintTitle": "Average cost per click",
-  "CPCHintDescription": "Total Cost of Clicks /\nTotal Number of Clicks"
+  "CPCHintDescription": "Total Cost of Clicks /\nTotal Number of Clicks",
+  "Chats": "Chats"
 }
