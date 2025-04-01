@@ -21,7 +21,7 @@ class UiKitSwiperCardInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
     final titleStyle = textTheme?.body.copyWith(color: Colors.white);
-    final subtitleStyle = textTheme?.caption1Medium.copyWith(color: Colors.white);
+    final subtitleStyle = textTheme?.caption3Medium.copyWith(color: Colors.white);
 
     return RepaintBoundary(
       child: ClipRRect(
