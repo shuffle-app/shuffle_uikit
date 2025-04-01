@@ -10130,6 +10130,11 @@ class S {
   String get Chats {
     return Intl.message('Chats', name: 'Chats', desc: '', args: []);
   }
+
+  /// `Card`
+  String get VirtualCard {
+    return Intl.message('Card', name: 'VirtualCard', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

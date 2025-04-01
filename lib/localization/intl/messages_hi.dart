@@ -2321,6 +2321,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ViewHistory": MessageLookupByLibrary.simpleMessage("इतिहास देखें"),
     "ViewSources": MessageLookupByLibrary.simpleMessage("स्रोत देखें"),
     "Views": MessageLookupByLibrary.simpleMessage("दृश्य"),
+    "VirtualCard": MessageLookupByLibrary.simpleMessage("Card"),
     "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(
       "अगला खोलने के लिए पहले जाएँ",
     ),

@@ -2313,6 +2313,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ViewHistory": MessageLookupByLibrary.simpleMessage("Просмотр истории"),
     "ViewSources": MessageLookupByLibrary.simpleMessage("Источники просмотров"),
     "Views": MessageLookupByLibrary.simpleMessage("Просмотры"),
+    "VirtualCard": MessageLookupByLibrary.simpleMessage("Карта"),
     "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(
       "Посети первое, открой следующее",
     ),
