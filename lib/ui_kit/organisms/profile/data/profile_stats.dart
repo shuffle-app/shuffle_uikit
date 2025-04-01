@@ -152,67 +152,101 @@ class ProProfileStats extends ProfileStats {
     final colorScheme = theme?.colorScheme;
     final TextStyle? valueStyle = theme?.boldTextTheme.caption2Bold;
     final TextStyle? titleStyle = theme?.regularTextTheme.caption2.copyWith(color: colorScheme?.grayForegroundColor);
+
+    double calculateMaxWidth(String text) {
+      final textPainter = TextPainter(
+        text: TextSpan(text: text, style: valueStyle),
+        textDirection: TextDirection.ltr,
+        maxLines: 1,
+      )..layout();
+      return textPainter.width;
+    }
+
+    final maxWidth = [
+      calculateMaxWidth(getStringValue(eventsCreated)),
+      calculateMaxWidth(getStringValue(reviewsReceived)),
+      calculateMaxWidth(getStringValue(bookingsReceived)),
+    ].reduce((a, b) => a > b ? a : b);
+
     return [
       UiKitCardWrapper(
-          borderRadius: BorderRadiusFoundation.all8,
-          color: colorScheme?.surface2,
-          padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              GradientableWidget(
-                  gradient: getGradient(eventsCreated),
-                  child: Text(
-                    getStringValue(eventsCreated),
-                    style: valueStyle,
-                    textAlign: TextAlign.center,
-                  )),
-              SpacingFoundation.horizontalSpace8,
-              Text(
-                S.current.Events,
-                style: titleStyle,
-              )
-            ],
-          )),
+        borderRadius: BorderRadiusFoundation.all8,
+        color: colorScheme?.surface2,
+        padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              constraints: BoxConstraints(minWidth: maxWidth),
+              child: GradientableWidget(
+                gradient: getGradient(eventsCreated),
+                child: Text(
+                  getStringValue(eventsCreated),
+                  style: valueStyle,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            SpacingFoundation.horizontalSpace8,
+            Text(
+              S.current.Events,
+              style: titleStyle,
+            )
+          ],
+        ),
+      ),
       UiKitCardWrapper(
-          borderRadius: BorderRadiusFoundation.all8,
-          color: colorScheme?.surface2,
-          padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
-          child: Row(mainAxisSize: MainAxisSize.min, children: [
-            GradientableWidget(
+        borderRadius: BorderRadiusFoundation.all8,
+        color: colorScheme?.surface2,
+        padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              constraints: BoxConstraints(minWidth: maxWidth),
+              child: GradientableWidget(
                 gradient: getGradient(reviewsReceived),
                 child: Text(
                   getStringValue(reviewsReceived),
                   style: valueStyle,
                   textAlign: TextAlign.center,
-                )),
+                ),
+              ),
+            ),
             SpacingFoundation.horizontalSpace8,
             Text(
               '${S.current.ReviewsReceived(4).capitalize()} ${S.current.Received.toLowerCase()}',
               style: titleStyle,
             )
-          ])),
+          ],
+        ),
+      ),
       UiKitCardWrapper(
-          borderRadius: BorderRadiusFoundation.all8,
-          color: colorScheme?.surface2,
-          padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              GradientableWidget(
-                  gradient: getGradient(bookingsReceived),
-                  child: Text(
-                    getStringValue(bookingsReceived),
-                    style: valueStyle,
-                    textAlign: TextAlign.center,
-                  )),
-              SpacingFoundation.horizontalSpace8,
-              Text(
-                S.current.BookingsHeading,
-                style: titleStyle,
-              )
-            ],
-          )),
+        borderRadius: BorderRadiusFoundation.all8,
+        color: colorScheme?.surface2,
+        padding: EdgeInsets.all(EdgeInsetsFoundation.all4),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              constraints: BoxConstraints(minWidth: maxWidth),
+              child: GradientableWidget(
+                gradient: getGradient(bookingsReceived),
+                child: Text(
+                  getStringValue(bookingsReceived),
+                  style: valueStyle,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            SpacingFoundation.horizontalSpace8,
+            Text(
+              S.current.BookingsHeading,
+              style: titleStyle,
+            )
+          ],
+        ),
+      ),
     ];
   }
 }
