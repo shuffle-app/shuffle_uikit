@@ -493,6 +493,7 @@ class WidgetsFactory extends InheritedWidget implements WidgetsAbstractFactory {
         iconInfo: data.iconInfo,
         onPressed: data.onPressed,
         loading: data.loading,
+        padding: padding,
       );
     } else if (!hasIcon && (data.text?.isNotEmpty ?? false)) {
       return GradientButton(
