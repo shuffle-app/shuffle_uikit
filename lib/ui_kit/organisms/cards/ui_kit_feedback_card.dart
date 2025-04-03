@@ -61,7 +61,9 @@ class UiKitFeedbackCard extends StatelessWidget {
     final boldTextTheme = theme?.boldTextTheme;
     final colorScheme = theme?.colorScheme;
 
-    final int microseconds = DateTime.now().millisecondsSinceEpoch;
+    final int microseconds = DateTime
+        .now()
+        .millisecondsSinceEpoch;
 
     void toggleTranslation() {
       isTranslate.value = !isTranslate.value;
@@ -108,7 +110,8 @@ class UiKitFeedbackCard extends StatelessWidget {
                 text: TextSpan(text: text, style: style),
                 maxLines: 100,
                 textDirection: TextDirection.ltr,
-              )..layout(maxWidth: maxWidth);
+              )
+                ..layout(maxWidth: maxWidth);
 
               final lineHeight = textPainter.preferredLineHeight;
               if (lineHeight <= 0) return 3;
@@ -173,11 +176,12 @@ class UiKitFeedbackCard extends StatelessWidget {
 
                         return ValueListenableBuilder<String>(
                           valueListenable: description,
-                          builder: (_, text, __) => Text(
-                            text.trim(),
-                            style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
-                            maxLines: maxLines ?? calculatedMaxLines,
-                          ),
+                          builder: (_, text, __) =>
+                              Text(
+                                text.trim(),
+                                style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
+                                maxLines: maxLines ?? calculatedMaxLines,
+                              ),
                         );
                       },
                     ),
@@ -201,7 +205,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                             return GestureDetector(
                                 onTap: () {
                                   final listLinks =
-                                      media.where((e) => e.type == UiKitMediaType.image).map((e) => e.link).toList();
+                                  media.where((e) => e.type == UiKitMediaType.image).map((e) => e.link).toList();
                                   context.push(
                                       PhotoDialog(
                                         images: listLinks,
@@ -249,29 +253,36 @@ class UiKitFeedbackCard extends StatelessWidget {
                             color: ColorsFoundation.mutedText,
                             fit: BoxFit.contain,
                           ),
-                        ),
+                        ).paddingOnly(right: SpacingFoundation.horizontalSpacing16),
                       if (companyAnswered ?? false)
                         Text(
-                          S.of(context).CompanyAnswered,
+                          S
+                              .of(context)
+                              .CompanyAnswered,
                           style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
-                        ),
+                        ).paddingOnly(right: SpacingFoundation.horizontalSpacing16),
                       if (showTranslateButton != null)
                         Expanded(
                             child: ValueListenableBuilder<bool>(
-                          valueListenable: isTranslate,
-                          builder: (_, isTranslating, __) => InkWell(
-                            onTap: toggleTranslation,
-                            child: showTranslateButton!.value
-                                ? Text(isTranslating ? S.of(context).Original : S.of(context).Translate,
-                                    style: theme?.regularTextTheme.caption4Regular.copyWith(
-                                      color: theme.themeMode == ThemeMode.light
-                                          ? ColorsFoundation.darkNeutral700
-                                          : ColorsFoundation.darkNeutral300,
-                                    ))
-                                // ).paddingOnly(bottom: SpacingFoundation.verticalSpacing10)
-                                : const SizedBox.shrink(),
-                          ),
-                        ))
+                              valueListenable: isTranslate,
+                              builder: (_, isTranslating, __) =>
+                                  InkWell(
+                                    onTap: toggleTranslation,
+                                    child: showTranslateButton!.value
+                                        ? Text(isTranslating ? S
+                                        .of(context)
+                                        .Original : S
+                                        .of(context)
+                                        .Translate,
+                                        style: theme?.regularTextTheme.caption4Regular.copyWith(
+                                          color: theme.themeMode == ThemeMode.light
+                                              ? ColorsFoundation.darkNeutral700
+                                              : ColorsFoundation.darkNeutral300,
+                                        ))
+                                    // ).paddingOnly(bottom: SpacingFoundation.verticalSpacing10)
+                                        : const SizedBox.shrink(),
+                                  ),
+                            ))
                       else
                         const Spacer(),
                       InkWell(
@@ -297,7 +308,9 @@ class UiKitFeedbackCard extends StatelessWidget {
                         borderRadius: BorderRadiusFoundation.max,
                         onTap: onLike,
                         child: Text(
-                          S.of(context).Helpful,
+                          S
+                              .of(context)
+                              .Helpful,
                           style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                         ),
                       ),

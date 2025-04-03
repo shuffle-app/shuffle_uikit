@@ -7,9 +7,9 @@ abstract class BaseUiKitMedia {
   final String link;
   final String? previewLink;
   final UiKitMediaType type;
-  UiKitPreviewType? previewType;
+  final UiKitPreviewType? previewType;
 
-  BaseUiKitMedia({
+  const BaseUiKitMedia({
     this.id,
     required this.link,
     required this.type,
@@ -65,7 +65,7 @@ abstract class BaseUiKitMedia {
 }
 
 class UiKitMediaPhoto extends BaseUiKitMedia {
-  UiKitMediaPhoto({
+  const UiKitMediaPhoto({
     required super.link,
     super.previewType,
     super.id,
@@ -75,7 +75,7 @@ class UiKitMediaPhoto extends BaseUiKitMedia {
 }
 
 class UiKitMediaVideo extends BaseUiKitMedia {
-  UiKitMediaVideo({
+  const UiKitMediaVideo({
     super.id,
     required super.link,
     super.previewType,
