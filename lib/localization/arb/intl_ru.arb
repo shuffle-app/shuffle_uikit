@@ -2400,5 +2400,6 @@
   "CPCHintTitle": "Средняя стоимость клика",
   "CPCHintDescription": "Общая стоимость кликов /\nОбщее количество кликов",
   "Chats": "Чаты",
-  "VirtualCard": "Карта"
+  "VirtualCard": "Карта",
+  "Leave": "Выйти"
 }

@@ -29,7 +29,7 @@ class UiKitPhotoSlider extends StatefulWidget {
   State<UiKitPhotoSlider> createState() => _UiKitPhotoSliderState();
 }
 
-class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProviderStateMixin {
+class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with SingleTickerProviderStateMixin {
   final _animDuration = const Duration(milliseconds: 150);
   late CardAnimation _cardAnimation;
   late AnimationController _animationController;
@@ -37,7 +37,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
   double get height => widget.width / 1.7495454545;
 
   final _undoableIndex = Undoable<int?>(null);
-  final Queue<CardSwiperDirection> _directionHistory = Queue();
+  // final Queue<CardSwiperDirection> _directionHistory = Queue();
   SwipeType _swipeType = SwipeType.none;
   CardSwiperDirection _detectedDirection = CardSwiperDirection.none;
 
@@ -217,7 +217,7 @@ class _UiKitPhotoSliderState extends State<UiKitPhotoSlider> with TickerProvider
 
   void _handleCompleteSwipe() {
     _undoableIndex.state = (_currentIndex ?? 0) + (_detectedDirection == CardSwiperDirection.left ? 1 : -1);
-    _directionHistory.add(_detectedDirection);
+    // _directionHistory.add(_detectedDirection);
   }
 
   void _reset(double rightMargin, double leftMargin) {

@@ -1172,6 +1172,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Latest": MessageLookupByLibrary.simpleMessage("Latest"),
     "Launched": MessageLookupByLibrary.simpleMessage("Launched"),
+    "Leave": MessageLookupByLibrary.simpleMessage("Leave"),
     "LeaveFeedback": MessageLookupByLibrary.simpleMessage("Leave feedback"),
     "Leisure": MessageLookupByLibrary.simpleMessage("Leisure"),
     "Less": MessageLookupByLibrary.simpleMessage("less"),

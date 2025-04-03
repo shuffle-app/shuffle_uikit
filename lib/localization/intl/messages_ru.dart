@@ -1178,6 +1178,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Latest": MessageLookupByLibrary.simpleMessage("Свежее"),
     "Launched": MessageLookupByLibrary.simpleMessage("Запущен"),
+    "Leave": MessageLookupByLibrary.simpleMessage("Выйти"),
     "LeaveFeedback": MessageLookupByLibrary.simpleMessage("Оставь отзыв"),
     "Leisure": MessageLookupByLibrary.simpleMessage("Досуг"),
     "Less": MessageLookupByLibrary.simpleMessage("меньше"),

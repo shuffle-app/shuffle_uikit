@@ -2394,5 +2394,6 @@
   "CPCHintTitle": "Average cost per click",
   "CPCHintDescription": "Total Cost of Clicks /\nTotal Number of Clicks",
   "Chats": "Chats",
-  "VirtualCard": "Card"
+  "VirtualCard": "Card",
+  "Leave": "Leave"
 }

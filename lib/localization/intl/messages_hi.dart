@@ -1176,6 +1176,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Latest": MessageLookupByLibrary.simpleMessage("नवीनतम"),
     "Launched": MessageLookupByLibrary.simpleMessage("लॉन्च"),
+    "Leave": MessageLookupByLibrary.simpleMessage("Leave"),
     "LeaveFeedback": MessageLookupByLibrary.simpleMessage("प्रतिक्रिया दें"),
     "Leisure": MessageLookupByLibrary.simpleMessage("फुर्सत"),
     "Less": MessageLookupByLibrary.simpleMessage("कम"),
