@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -45,13 +46,17 @@ class WideVerticalMessageCard extends StatelessWidget {
                 ),
               if (iconData != null || iconLink != null) SpacingFoundation.verticalSpace2,
               Text(
-                /// end line symbols added to make sure that the text is more than 3 lines
-                /// so that the card height is always fixed
-                '$message\n\n\n'.toUpperCase(),
-                style: messageStyle,
-                textAlign: TextAlign.center,
-                maxLines: 3,
-              ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12),
+
+                      /// end line symbols added to make sure that the text is more than 3 lines
+                      /// so that the card height is always fixed
+                      '$message\n\n\n'.toUpperCase(),
+                      style: messageStyle,
+                      textAlign: TextAlign.center,
+                      // wrapWords: true,
+                      // minFontSize: 8,
+                      maxLines: 3,
+                      softWrap: true)
+                  .paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal12),
               SpacingFoundation.verticalSpace12,
             ],
           ),
