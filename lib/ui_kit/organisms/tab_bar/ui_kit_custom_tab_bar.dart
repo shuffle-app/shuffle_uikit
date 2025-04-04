@@ -70,6 +70,7 @@ class UiKitCustomTabBar extends StatelessWidget {
           child: SizedBox(
             height: badged ? 48.w : null,
             child: TabBar(
+              labelPadding: tabs.any((e) => e.height == 24) ? EdgeInsets.only(top: EdgeInsetsFoundation.all2) : null,
               controller: tabController,
               isScrollable: scrollable,
               enableFeedback: true,
