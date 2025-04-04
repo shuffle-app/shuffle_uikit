@@ -14,7 +14,7 @@ class BaseUiKitButtonData {
   final Color? textColor;
   final AutoSizeGroup? autoSizeGroup;
 
-  BaseUiKitButtonData({
+  const BaseUiKitButtonData({
     this.onPressed,
     this.text,
     this.iconInfo,
@@ -46,7 +46,7 @@ class BaseUiKitButtonIconData {
       _iconAlignment == Alignment.centerRight ||
       _iconAlignment == Alignment.topRight;
 
-  BaseUiKitButtonIconData({
+  const BaseUiKitButtonIconData({
     this.iconData,
     this.iconPath,
     this.color,

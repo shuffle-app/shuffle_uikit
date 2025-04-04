@@ -7,9 +7,9 @@ abstract class BaseUiKitMedia {
   final String link;
   final String? previewLink;
   final UiKitMediaType type;
-  UiKitPreviewType? previewType;
+  final UiKitPreviewType? previewType;
 
-  BaseUiKitMedia({
+  const BaseUiKitMedia({
     this.id,
     required this.link,
     required this.type,
@@ -65,7 +65,7 @@ abstract class BaseUiKitMedia {
 }
 
 class UiKitMediaPhoto extends BaseUiKitMedia {
-  UiKitMediaPhoto({
+  const UiKitMediaPhoto({
     required super.link,
     super.previewType,
     super.id,
@@ -75,7 +75,7 @@ class UiKitMediaPhoto extends BaseUiKitMedia {
 }
 
 class UiKitMediaVideo extends BaseUiKitMedia {
-  UiKitMediaVideo({
+  const UiKitMediaVideo({
     super.id,
     required super.link,
     super.previewType,
@@ -96,6 +96,7 @@ class UiKitTag {
   final bool colorIsNull;
 
   UiKitTagWidget get widget => UiKitTagWidget(
+        key: ValueKey(id ?? title),
         iconCustomColor: iconColor,
         title: title,
         icon: icon,
@@ -106,8 +107,8 @@ class UiKitTag {
         colorIsNull: colorIsNull,
       );
 
-  UiKitTag({
-    required String title,
+  const UiKitTag({
+    required this.title,
     required this.icon,
     this.unique = false,
     this.showShadow = false,
@@ -115,8 +116,7 @@ class UiKitTag {
     this.iconColor,
     this.textColor,
     this.colorIsNull = false,
-    bool updateTitle = true,
-  }) : title = updateTitle ? title.replaceAll('-', ' ') : title;
+  });
 
   UiKitTag copyWith({
     String? title,
@@ -156,7 +156,6 @@ class UiKitTag {
         'iconColor': iconColor,
         'textColor': textColor,
         'colorIsNull': colorIsNull,
-        'updateTitle': false,
       }..removeWhere((k, v) => v == null);
 
   static UiKitTag fromMap(Map<String, dynamic> map) => UiKitTag(
@@ -168,7 +167,6 @@ class UiKitTag {
         iconColor: map['iconColor'],
         textColor: map['textColor'],
         colorIsNull: map['colorIsNull'],
-        updateTitle: map['updateTitle'] ?? false,
       );
 }
 

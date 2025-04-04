@@ -226,9 +226,9 @@ class ImageWidget extends StatelessWidget {
 
           return imageBuilder?.call(context, imageWidget, 1, false) ?? imageWidget;
         },
-        errorListener: (error) {
-          onImageLoadingFailed?.call();
-        },
+        // errorListener: (error) {
+        //   onImageLoadingFailed?.call();
+        // },
         errorWidget: (context, url, trace) {
           log('Got error while downloading $url', name: 'ImageWidget');
           log(trace.toString(), name: 'ImageWidget');

@@ -618,6 +618,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Chat": MessageLookupByLibrary.simpleMessage("Чат"),
     "ChatDeletionAndCreationMessage": m10,
     "ChatName": MessageLookupByLibrary.simpleMessage("Название чата"),
+    "Chats": MessageLookupByLibrary.simpleMessage("Чаты"),
     "CheckIn": MessageLookupByLibrary.simpleMessage("Check in"),
     "CheckInHiwHint": m11,
     "CheckInHiwSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -1177,6 +1178,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Latest": MessageLookupByLibrary.simpleMessage("Свежее"),
     "Launched": MessageLookupByLibrary.simpleMessage("Запущен"),
+    "Leave": MessageLookupByLibrary.simpleMessage("Выйти"),
     "LeaveFeedback": MessageLookupByLibrary.simpleMessage("Оставь отзыв"),
     "Leisure": MessageLookupByLibrary.simpleMessage("Досуг"),
     "Less": MessageLookupByLibrary.simpleMessage("меньше"),
@@ -2312,6 +2314,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ViewHistory": MessageLookupByLibrary.simpleMessage("Просмотр истории"),
     "ViewSources": MessageLookupByLibrary.simpleMessage("Источники просмотров"),
     "Views": MessageLookupByLibrary.simpleMessage("Просмотры"),
+    "VirtualCard": MessageLookupByLibrary.simpleMessage("Карта"),
     "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(
       "Посети первое, открой следующее",
     ),

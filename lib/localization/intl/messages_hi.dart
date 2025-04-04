@@ -613,6 +613,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Chat": MessageLookupByLibrary.simpleMessage("चैट"),
     "ChatDeletionAndCreationMessage": m10,
     "ChatName": MessageLookupByLibrary.simpleMessage("Chat name"),
+    "Chats": MessageLookupByLibrary.simpleMessage("Chats"),
     "CheckIn": MessageLookupByLibrary.simpleMessage("चेक इन करें"),
     "CheckInHiwHint": m11,
     "CheckInHiwSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -1175,6 +1176,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Latest": MessageLookupByLibrary.simpleMessage("नवीनतम"),
     "Launched": MessageLookupByLibrary.simpleMessage("लॉन्च"),
+    "Leave": MessageLookupByLibrary.simpleMessage("Leave"),
     "LeaveFeedback": MessageLookupByLibrary.simpleMessage("प्रतिक्रिया दें"),
     "Leisure": MessageLookupByLibrary.simpleMessage("फुर्सत"),
     "Less": MessageLookupByLibrary.simpleMessage("कम"),
@@ -2320,6 +2322,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ViewHistory": MessageLookupByLibrary.simpleMessage("इतिहास देखें"),
     "ViewSources": MessageLookupByLibrary.simpleMessage("स्रोत देखें"),
     "Views": MessageLookupByLibrary.simpleMessage("दृश्य"),
+    "VirtualCard": MessageLookupByLibrary.simpleMessage("Card"),
     "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(
       "अगला खोलने के लिए पहले जाएँ",
     ),

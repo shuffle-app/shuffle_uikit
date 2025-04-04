@@ -10125,6 +10125,21 @@ class S {
       args: [],
     );
   }
+
+  /// `Chats`
+  String get Chats {
+    return Intl.message('Chats', name: 'Chats', desc: '', args: []);
+  }
+
+  /// `Card`
+  String get VirtualCard {
+    return Intl.message('Card', name: 'VirtualCard', desc: '', args: []);
+  }
+
+  /// `Leave`
+  String get Leave {
+    return Intl.message('Leave', name: 'Leave', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

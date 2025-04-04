@@ -25,9 +25,8 @@ class SmallGradientIconButton extends StatelessWidget implements ButtonFactory {
             gradient: GradientFoundation.defaultRadialGradient,
             shape: BoxShape.circle,
           ),
-          child: Padding(
-            padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
-            child: icon ??
+          child: Center(
+              child: icon ??
                 ImageWidget(
                   iconData: iconInfo?.iconData,
                   link: iconInfo?.iconPath,

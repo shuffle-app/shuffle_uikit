@@ -65,7 +65,7 @@ class _UiKitMessageCardState extends State<UiKitMessageCard> {
     return ConstrainedBox(
       constraints: BoxConstraints(
         minHeight: 0.325 * 0.9.sw,
-        maxHeight: 0.375 * 0.9.sw,
+        maxHeight: 0.375.w * 0.9.sw,
         maxWidth: 1.sw,
         minWidth: 1.sw - EdgeInsetsFoundation.horizontal32,
       ),

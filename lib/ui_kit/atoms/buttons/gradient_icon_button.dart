@@ -7,6 +7,7 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
   final VoidCallback? onPressed;
   final bool? loading;
   final ButtonFit? fit;
+  final EdgeInsetsGeometry? padding;
 
   const GradientIconButton({
     super.key,
@@ -15,6 +16,7 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
     this.onPressed,
     this.loading,
     this.iconInfo,
+    this.padding,
   });
 
   @override
@@ -22,7 +24,7 @@ class GradientIconButton extends StatelessWidget implements ButtonFactory {
     final enabled = onPressed != null;
     final colorScheme = context.uiKitTheme?.colorScheme;
     final child = Padding(
-      padding: EdgeInsets.all(EdgeInsetsFoundation.all12),
+      padding: padding ?? EdgeInsets.all(EdgeInsetsFoundation.all12),
       child: icon ??
           ImageWidget(
             iconData: iconInfo?.iconData,

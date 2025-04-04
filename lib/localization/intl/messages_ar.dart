@@ -614,6 +614,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Chat": MessageLookupByLibrary.simpleMessage("Chat"),
     "ChatDeletionAndCreationMessage": m10,
     "ChatName": MessageLookupByLibrary.simpleMessage("Chat name"),
+    "Chats": MessageLookupByLibrary.simpleMessage("Chats"),
     "CheckIn": MessageLookupByLibrary.simpleMessage("Check in"),
     "CheckInHiwHint": m11,
     "CheckInHiwSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -1173,6 +1174,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Latest": MessageLookupByLibrary.simpleMessage("Latest"),
     "Launched": MessageLookupByLibrary.simpleMessage("Launched"),
+    "Leave": MessageLookupByLibrary.simpleMessage("Leave"),
     "LeaveFeedback": MessageLookupByLibrary.simpleMessage("Leave feedback"),
     "Leisure": MessageLookupByLibrary.simpleMessage("Leisure"),
     "Less": MessageLookupByLibrary.simpleMessage("less"),
@@ -2296,6 +2298,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ViewHistory": MessageLookupByLibrary.simpleMessage("View history"),
     "ViewSources": MessageLookupByLibrary.simpleMessage("View sources"),
     "Views": MessageLookupByLibrary.simpleMessage("Views"),
+    "VirtualCard": MessageLookupByLibrary.simpleMessage("Card"),
     "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(
       "Visit first to open next",
     ),

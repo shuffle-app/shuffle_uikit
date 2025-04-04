@@ -21,7 +21,10 @@ class AppBarTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    TextStyle? textStyle = theme?.boldTextTheme.title1 ?? Theme.of(context).primaryTextTheme.titleMedium;
+    TextStyle? textStyle = theme?.boldTextTheme.title1 ?? Theme
+        .of(context)
+        .primaryTextTheme
+        .titleMedium;
     textStyle = textStyle?.copyWith(color: theme?.colorScheme.inversePrimary);
 
     return Expanded(
@@ -31,12 +34,13 @@ class AppBarTitle extends StatelessWidget {
         children: [
           if (onIWidgetInfoString != null) 14.w.widthBox,
           if (expanded == false)
-            AutoSizeText(
-              title,
-              style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
-              textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
-              maxLines: 1,
-            )
+            Flexible(
+                child: AutoSizeText(
+                  title,
+                  style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
+                  textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
+                  maxLines: 1,
+                ))
           else
             Flexible(
               child: Text(
@@ -51,18 +55,19 @@ class AppBarTitle extends StatelessWidget {
             Builder(
               builder: (context) {
                 return GestureDetector(
-                  onTap: () => showUiKitPopover(
-                    context,
-                    customMinHeight: 30.h,
-                    showButton: false,
-                    title: Text(
-                      onIWidgetInfoString!,
-                      style: theme?.regularTextTheme.body.copyWith(
-                        color: Colors.black87,
+                  onTap: () =>
+                      showUiKitPopover(
+                        context,
+                        customMinHeight: 30.h,
+                        showButton: false,
+                        title: Text(
+                          onIWidgetInfoString!,
+                          style: theme?.regularTextTheme.body.copyWith(
+                            color: Colors.black87,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
                   child: ImageWidget(
                     iconData: ShuffleUiKitIcons.info,
                     width: 16.w,

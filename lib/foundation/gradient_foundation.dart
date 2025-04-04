@@ -428,12 +428,12 @@ class GradientFoundation {
       ColorsFoundation.yellow,
       ColorsFoundation.pink,
     ],
-    radius: 1,
-    center: Alignment(-1, 0),
+    radius: 1.8,
+    center: Alignment(-1.5, -0.75),
     stops: [
       0.203,
       0.5,
-      0.79,
+      0.799,
     ],
   );
 

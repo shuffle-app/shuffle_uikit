@@ -255,15 +255,16 @@ class _UiKitFeedbackCardState extends State<UiKitFeedbackCard> {
                             color: ColorsFoundation.mutedText,
                             fit: BoxFit.contain,
                           ),
-                        ).paddingOnly(right: SpacingFoundation.horizontalSpacing8),
+                        ).paddingOnly(right: SpacingFoundation.horizontalSpacing16),
                       if (widget.companyAnswered ?? false)
                         Text(
                           S.of(context).CompanyAnswered,
                           style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
-                        ),
+                        ).paddingOnly(right: SpacingFoundation.horizontalSpacing16),
                       if (widget.showTranslateButton)
                         if (widget.isTranslateLoading != null)
-                          ValueListenableBuilder(
+                          Expanded(
+                              child: ValueListenableBuilder(
                             valueListenable: widget.isTranslateLoading!,
                             builder: (context, value, child) {
                               if (value) {
@@ -285,14 +286,15 @@ class _UiKitFeedbackCardState extends State<UiKitFeedbackCard> {
                                 );
                               }
                             },
-                          )
+                          ))
                         else
                           TranslateButton(
                             isTranslate: isTranslate,
                             showTranslateButton: widget.showTranslateButton,
                             toggleTranslation: toggleTranslation,
-                          ),
-                      Spacer(),
+                          )
+                      else
+                        const Spacer(),
                       InkWell(
                         borderRadius: BorderRadiusFoundation.max,
                         onTap: widget.onLike,

@@ -61,15 +61,12 @@ class UiKitTitledFilterChip extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   if (icon != null)
-                    Transform.translate(
-                      offset: Offset(0, icon is IconData ? -2.h : 0),
-                      child: ImageWidget(
-                        fit: BoxFit.fitHeight,
-                        iconData: icon is IconData ? icon as IconData : null,
-                        link: icon is String ? icon as String : null,
-                        color: foreground,
-                      ),
-                    ),
+                    ImageWidget(
+                      fit: BoxFit.fitHeight,
+                      iconData: icon is IconData ? icon as IconData : null,
+                      link: icon is String ? icon as String : null,
+                      color: foreground,
+                    ).paddingOnly(bottom: icon is IconData ? 2.1.h : 0),
                   SizedBox(width: SpacingFoundation.horizontalSpacing14.w),
                   Text(
                     title,
