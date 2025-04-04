@@ -22,15 +22,13 @@ class UiKitContentUpdatesCard extends StatelessWidget {
   final VoidCallback? onLongPress;
   final VoidCallback? onSharePress;
   final ViewShareDate? viewShareDate;
-  final ValueNotifier<bool>? showTranslateButton;
+  final bool showTranslateButton;
   final ValueNotifier<String>? translateText;
-
-  late final ValueNotifier<String> description;
-  late final ValueNotifier<bool> isTranslate;
+  final Future<String?> Function()? onTranslateTap;
 
   final bool isPinned;
 
-  UiKitContentUpdatesCard({
+  const UiKitContentUpdatesCard({
     super.key,
     required this.children,
     required this.authorSpeciality,
@@ -49,13 +47,11 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     this.onLongPress,
     this.onSharePress,
     this.viewShareDate,
-    this.showTranslateButton,
+    this.showTranslateButton = false,
     this.translateText,
     this.isPinned = false,
-  }) {
-    description = ValueNotifier<String>(comment ?? '');
-    isTranslate = ValueNotifier<bool>(false);
-  }
+    this.onTranslateTap,
+  });
 
   factory UiKitContentUpdatesCard.fromShuffle({
     Key? key,
@@ -70,9 +66,10 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     int? sunglassesReactionsCount,
     int? smileyReactionsCount,
     ViewShareDate? viewShareDate,
-    ValueNotifier<bool>? showTranslateButton,
+    bool showTranslateButton = false,
     ValueNotifier<String>? translateText,
     bool isPinned = false,
+    Future<String?> Function()? onTranslateTap,
   }) =>
       UiKitContentUpdatesCard(
         key: key,
@@ -95,6 +92,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
         showTranslateButton: showTranslateButton,
         translateText: translateText,
         isPinned: isPinned,
+        onTranslateTap: onTranslateTap,
         children: children,
       );
 
@@ -151,9 +149,15 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     bool isOverlayVisible = false;
     OverlayEntry? overlayEntry;
 
-    void toggleTranslation() {
-      isTranslate.value = !isTranslate.value;
-      description.value = isTranslate.value ? (translateText?.value ?? comment ?? '') : comment ?? '';
+    Future<void> toggleTranslation() async {
+      if (translateText?.value != comment) {
+        translateText?.value = comment ?? '';
+      } else {
+        final translate = await onTranslateTap?.call();
+        if (translate != null && translate.isNotEmpty) {
+          translateText?.value = translate;
+        }
+      }
     }
 
     final Widget _children = hasGradientBorder
@@ -188,9 +192,9 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                   ),
                 ),
               ),
-              if (hasGradientBorder && description.value.isNotEmpty)
+              if (hasGradientBorder && translateText != null && translateText!.value.isNotEmpty)
                 ValueListenableBuilder<String>(
-                  valueListenable: description,
+                  valueListenable: translateText!,
                   builder: (_, desc, __) => Text(
                     desc,
                     style: regularTextTheme?.caption2,
@@ -207,19 +211,18 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  if (showTranslateButton != null)
-                    ValueListenableBuilder<bool>(
-                      valueListenable: isTranslate,
-                      builder: (_, isTranslating, __) => InkWell(
-                        onTap: toggleTranslation,
-                        child: showTranslateButton!.value
-                            ? Text(
-                                isTranslating ? S.of(context).Original : S.of(context).Translate,
-                                style: regularTextTheme?.caption4Semibold,
-                              )
-                            : const SizedBox.shrink(),
-                      ),
+                  ValueListenableBuilder<String>(
+                    valueListenable: translateText!,
+                    builder: (_, desc, __) => InkWell(
+                      onTap: toggleTranslation,
+                      child: showTranslateButton
+                          ? Text(
+                              desc != comment ? S.of(context).Original : S.of(context).Translate,
+                              style: regularTextTheme?.caption4Semibold,
+                            )
+                          : const SizedBox.shrink(),
                     ),
+                  ),
                   showEmptyReactionsState
                       ? Builder(
                           builder: (c) => TapRegion(

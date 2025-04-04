@@ -23,17 +23,15 @@ class UiKitPostCard extends StatelessWidget {
   final VoidCallback? onSharePress;
   final VoidCallback? onProfilePress;
   final ViewShareDate? viewShareDate;
-  final ValueNotifier<bool>? showTranslateButton;
+  final bool showTranslateButton;
   final ValueNotifier<String>? translateText;
+  final Future<String?> Function()? onTranslateTap;
   final DateTime? createAt;
-
-  late final ValueNotifier<String> description;
-  late final ValueNotifier<bool> isTranslate;
 
   final bool isPinned;
   final bool isFeed;
 
-  UiKitPostCard({
+  const UiKitPostCard({
     super.key,
     required this.authorName,
     required this.authorUsername,
@@ -52,15 +50,13 @@ class UiKitPostCard extends StatelessWidget {
     this.onSharePress,
     this.onProfilePress,
     this.viewShareDate,
-    this.showTranslateButton,
+    this.showTranslateButton = false,
     this.translateText,
     this.createAt,
     this.isPinned = false,
     this.isFeed = true,
-  }) {
-    description = ValueNotifier<String>(text);
-    isTranslate = ValueNotifier<bool>(false);
-  }
+    this.onTranslateTap,
+  });
 
   bool get showEmptyReactionsState =>
       ((heartEyesCount == 0 && likesCount == 0 && sunglassesCount == 0 && firesCount == 0 && smileyCount == 0) ||
@@ -93,9 +89,15 @@ class UiKitPostCard extends StatelessWidget {
     OverlayEntry? overlayEntry;
     bool isOverlayVisible = false;
 
-    void toggleTranslation() {
-      isTranslate.value = !isTranslate.value;
-      description.value = isTranslate.value ? (translateText?.value ?? text) : text;
+    Future<void> toggleTranslation() async {
+      if (translateText?.value != text) {
+        translateText?.value = text;
+      } else {
+        final translate = await onTranslateTap?.call();
+        if (translate != null && translate.isNotEmpty) {
+          translateText?.value = translate;
+        }
+      }
     }
 
     return GestureDetector(
@@ -171,25 +173,26 @@ class UiKitPostCard extends StatelessWidget {
                           ],
                   ),
                   SpacingFoundation.verticalSpace8,
-                  ValueListenableBuilder<String>(
-                    valueListenable: description,
-                    builder: (_, desc, __) => Text(
-                      desc,
-                      style: regularTextTheme?.caption2.copyWith(color: colorScheme?.surface),
+                  if (translateText != null)
+                    ValueListenableBuilder<String>(
+                      valueListenable: translateText!,
+                      builder: (_, desc, __) => Text(
+                        desc,
+                        style: regularTextTheme?.caption2.copyWith(color: colorScheme?.surface),
+                      ),
                     ),
-                  ),
                   SpacingFoundation.verticalSpace8,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      if (showTranslateButton != null)
-                        ValueListenableBuilder<bool>(
-                          valueListenable: isTranslate,
-                          builder: (_, isTranslating, __) => InkWell(
+                      if (translateText != null)
+                        ValueListenableBuilder<String>(
+                          valueListenable: translateText!,
+                          builder: (_, desc, __) => InkWell(
                             onTap: toggleTranslation,
-                            child: showTranslateButton!.value
+                            child: showTranslateButton
                                 ? Text(
-                                    isTranslating ? S.of(context).Original : S.of(context).Translate,
+                                    desc != text ? S.of(context).Original : S.of(context).Translate,
                                     style: regularTextTheme?.caption4Semibold,
                                   )
                                 : const SizedBox.shrink(),
