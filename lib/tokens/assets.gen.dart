@@ -1326,6 +1326,9 @@ class $AssetsImagesSvgGen {
   /// File path: assets/images/svg/search-outline.svg
   SvgGenImage get searchOutline => const SvgGenImage('assets/images/svg/search-outline.svg');
 
+  /// File path: assets/images/svg/send.svg
+  SvgGenImage get send => const SvgGenImage('assets/images/svg/send.svg');
+
   /// File path: assets/images/svg/settings.svg
   SvgGenImage get settings => const SvgGenImage('assets/images/svg/settings.svg');
 
@@ -1555,6 +1558,7 @@ class $AssetsImagesSvgGen {
         russia,
         satelite,
         searchOutline,
+        send,
         settings,
         shadeContentTypeLoaderTile,
         shiffleBannerGradient,
@@ -2091,7 +2095,7 @@ class $AssetsImagesPngWalletGen {
 }
 
 class Assets {
-  const Assets._();
+  Assets._();
 
   static const String package = 'shuffle_uikit';
 
@@ -2136,7 +2140,7 @@ class AssetGenImage {
     bool gaplessPlayback = true,
     bool isAntiAlias = false,
     @Deprecated('Do not specify package for a generated library asset') String? package = package,
-    FilterQuality filterQuality = FilterQuality.medium,
+    FilterQuality filterQuality = FilterQuality.low,
     int? cacheWidth,
     int? cacheHeight,
   }) {
@@ -2299,9 +2303,6 @@ class LottieGenImage {
     bool? addRepaintBoundary,
     FilterQuality? filterQuality,
     void Function(String)? onWarning,
-    _lottie.LottieDecoder? decoder,
-    _lottie.RenderCache? renderCache,
-    bool? backgroundLoading,
   }) {
     return _lottie.Lottie.asset(
       _assetName,
@@ -2326,9 +2327,6 @@ class LottieGenImage {
       addRepaintBoundary: addRepaintBoundary,
       filterQuality: filterQuality,
       onWarning: onWarning,
-      decoder: decoder,
-      renderCache: renderCache,
-      backgroundLoading: backgroundLoading,
     );
   }
 

@@ -33,8 +33,10 @@ class UiKitLocationPicker extends StatelessWidget {
   final List<KnownLocation>? suggestionPlaces;
   final ValueChanged<bool> onNewPlaceTap;
   final bool newPlace;
+  final ValueNotifier<bool> focusNotifier;
+  final FocusNode focusNode;
 
-  UiKitLocationPicker({
+  const UiKitLocationPicker({
     super.key,
     this.onSearchTapped,
     this.onPickFromMap,
@@ -56,23 +58,9 @@ class UiKitLocationPicker extends StatelessWidget {
     required this.locationPickerSearchOverlayController,
     required this.initialCameraPosition,
     required this.markers,
+    required this.focusNotifier, required this.focusNode
   });
 
-  late final FocusNode _focusNode = FocusNode()
-    ..addListener(() {
-      if (!_focusNode.hasFocus) {
-        SystemChrome.setSystemUIOverlayStyle(
-          const SystemUiOverlayStyle(
-            statusBarBrightness: Brightness.dark,
-            statusBarIconBrightness: Brightness.dark,
-            systemNavigationBarIconBrightness: Brightness.dark,
-          ),
-        );
-      }
-      if (focusNotifier.value != _focusNode.hasFocus) focusNotifier.value = _focusNode.hasFocus;
-    });
-
-  late final ValueNotifier<bool> focusNotifier = ValueNotifier<bool>(false);
 
   @override
   Widget build(BuildContext context) {
@@ -117,13 +105,13 @@ class UiKitLocationPicker extends StatelessWidget {
           onSuggestionChosen: (suggestion) {
             locationPickerSearchOverlayController.updateState(LocationPickerOverlayState.hidden);
             locationDetailsSheetController.updateSheetState(LocationDetailsSheetState.visible);
-            _focusNode.unfocus();
+            focusNode.unfocus();
             onSuggestionChosen?.call(suggestion);
           },
           onPickFromMap: () {
             locationPickerSearchOverlayController.updateState(LocationPickerOverlayState.hidden);
             onPickFromMap?.call();
-            _focusNode.unfocus();
+            focusNode.unfocus();
           },
           controller: locationPickerSearchOverlayController,
         ),
@@ -175,7 +163,7 @@ class UiKitLocationPicker extends StatelessWidget {
           width: (kIsWeb ? 0.3.sw : 1.sw) - SpacingFoundation.horizontalSpacing32,
           child: PointerInterceptor(
             child: UiKitElevatedInputWithSwitchingPrefix(
-              focusNode: _focusNode,
+              focusNode: focusNode,
               fillColor: Colors.white,
               onTap: () {
                 onSearchTapped?.call();
@@ -188,7 +176,7 @@ class UiKitLocationPicker extends StatelessWidget {
                   onTap: () {
                     locationDetailsSheetController.updateSheetState(LocationDetailsSheetState.visible);
                     locationPickerSearchOverlayController.updateState(LocationPickerOverlayState.hidden);
-                    _focusNode.unfocus();
+                    focusNode.unfocus();
                     searchController.clear();
                   },
                   child: const ImageWidget(
