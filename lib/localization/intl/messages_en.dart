@@ -1727,7 +1727,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Reminder": MessageLookupByLibrary.simpleMessage("Reminder"),
     "ReminderWithThisDateHasAlreadyCreated": MessageLookupByLibrary.simpleMessage(
-      "A reminder with this date has already been created, please select a different date",
+      "A reminder with this date has already been created, plz select a different date",
     ),
     "Reminders": MessageLookupByLibrary.simpleMessage("Reminders"),
     "Remove": MessageLookupByLibrary.simpleMessage("Remove"),
