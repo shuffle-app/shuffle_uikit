@@ -184,150 +184,147 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
           onTagTap: widget.onTagTap,
         ).paddingSymmetric(horizontal: widget.horizontalMargin),
         SpacingFoundation.verticalSpace14,
+        if(_showBranches)
         AnimatedSize(
-                duration: const Duration(milliseconds: 200),
-                curve: Curves.easeInOut,
-                child: !_showBranches
-                    ? const SizedBox.shrink()
-                    : SizedBox(
-                        height: 0.28125.sw * 0.577 + (1.sw <= 380 ? 45.h : 38.h),
-                        child: UiKitCardWrapper(
-                          borderRadius: BorderRadius.zero,
-                          color: theme?.colorScheme.surface1,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Row(
-                                children: [
-                                  Text(
-                                    widget.showBranches
-                                        ? (currentBranchName ?? S.of(context).Branches)
-                                        : S.of(context).Branches,
-                                    style: theme?.boldTextTheme.caption2Medium,
-                                  ),
-                                  Spacer(),
-                                  if (currentBranchName != null && currentBranchName!.isNotEmpty && widget.showBranches)
-                                    InkWell(
-                                      onTap: () async {
-                                        final upcomingBranchName = await widget.onRenameTap?.call();
-                                        renameBranch(upcomingBranchName);
-                                      },
-                                      child: ImageWidget(
-                                        svgAsset: GraphicsFoundation.instance.svg.pencil,
-                                        color: Colors.white,
-                                        width: 18.w,
-                                        height: 18.w,
-                                        fit: BoxFit.contain,
-                                      ),
-                                    ).paddingOnly(right: SpacingFoundation.horizontalSpacing16),
-                                ],
+            duration: const Duration(milliseconds: 200),
+            curve: Curves.easeInOut,
+            child: SizedBox(
+                height: !_showBranches ? 0 : (0.28125.sw * 0.577 + (1.sw <= 380 ? 45.h : 38.h)),
+                child: UiKitCardWrapper(
+                  borderRadius: BorderRadius.zero,
+                  color: theme?.colorScheme.surface1,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            widget.showBranches
+                                ? (currentBranchName ?? S.of(context).Branches)
+                                : S.of(context).Branches,
+                            style: theme?.boldTextTheme.caption2Medium,
+                          ),
+                          const Spacer(),
+                          if (currentBranchName != null && currentBranchName!.isNotEmpty && widget.showBranches)
+                            InkWell(
+                              onTap: () async {
+                                final upcomingBranchName = await widget.onRenameTap?.call();
+                                renameBranch(upcomingBranchName);
+                              },
+                              child: ImageWidget(
+                                svgAsset: GraphicsFoundation.instance.svg.pencil,
+                                color: Colors.white,
+                                width: 18.w,
+                                height: 18.w,
+                                fit: BoxFit.contain,
                               ),
-                              SpacingFoundation.verticalSpace4,
-                              ConstrainedBox(
-                                constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
-                                child: ListView.separated(
-                                  padding: EdgeInsets.zero,
-                                  shrinkWrap: true,
-                                  addAutomaticKeepAlives: false,
-                                  scrollDirection: Axis.horizontal,
-                                  itemBuilder: (context, index) {
-                                    if (index == 0 && widget.showBranches) {
-                                      return context.badgeButtonNoValue(
-                                        data: BaseUiKitButtonData(
-                                          onPressed: () async {
-                                            final upcomingBranchName = await widget.onCreateBranchesTap?.call();
-                                            renameBranch(upcomingBranchName);
+                            ).paddingOnly(right: SpacingFoundation.horizontalSpacing16),
+                        ],
+                      ),
+                      SpacingFoundation.verticalSpace4,
+                      ConstrainedBox(
+                        constraints: BoxConstraints(maxHeight: 0.28125.sw * 0.577),
+                        child: ListView.separated(
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          addAutomaticKeepAlives: false,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            if (index == 0 && widget.showBranches) {
+                              return context.badgeButtonNoValue(
+                                data: BaseUiKitButtonData(
+                                  onPressed: () async {
+                                    final upcomingBranchName = await widget.onCreateBranchesTap?.call();
+                                    renameBranch(upcomingBranchName);
+                                  },
+                                  iconWidget: DecoratedBox(
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.rectangle,
+                                      border: Border.fromBorderSide(
+                                        BorderSide(
+                                          color: ColorsFoundation.neutral40,
+                                          width: 2,
+                                        ),
+                                      ),
+                                      borderRadius: BorderRadiusFoundation.all12,
+                                    ),
+                                    child: GradientableWidget(
+                                      gradient: GradientFoundation.defaultLinearGradient,
+                                      child: ImageWidget(
+                                        iconData: ShuffleUiKitIcons.plus,
+                                        height: plusIconSize,
+                                        width: plusIconSize,
+                                      ),
+                                    ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing12),
+                                  ),
+                                ),
+                              );
+                            }
+
+                            final branch = branches!.elementAt(index - (widget.showBranches ? 1 : 0));
+
+                            return GestureDetector(
+                              onLongPress: () {
+                                if (widget.showBranches) {
+                                  setState(() {
+                                    branch.isSelected = !branch.isSelected;
+                                  });
+                                }
+                              },
+                              child: Stack(
+                                children: [
+                                  UiKitHorizontalCaptionedImage(
+                                    title: branch.caption,
+                                    imageLink: branch.imageUrl,
+                                    borderRadius: BorderRadiusFoundation.all16,
+                                    onTap: branch.isSelected ? null : branch.onTap,
+                                  ),
+                                  if (branch.isSelected)
+                                    SizedBox(
+                                      width: kIsWeb ? 90 : 0.28125.sw,
+                                      height: kIsWeb ? 52 : (0.28125.sw * 0.577),
+                                      child: Center(
+                                        child: TapRegion(
+                                          onTapInside: (_) async {
+                                            if (widget.showBranches) {
+                                              currentBranchName = await widget.removeBranchItem?.call(branch.placeId);
+                                              branch.isSelected = false;
+
+                                              setState(() {});
+                                            }
                                           },
-                                          iconWidget: DecoratedBox(
-                                            decoration: BoxDecoration(
-                                              shape: BoxShape.rectangle,
-                                              border: Border.fromBorderSide(
-                                                BorderSide(
-                                                  color: ColorsFoundation.neutral40,
-                                                  width: 2,
-                                                ),
-                                              ),
-                                              borderRadius: BorderRadiusFoundation.all12,
-                                            ),
-                                            child: GradientableWidget(
-                                              gradient: GradientFoundation.defaultLinearGradient,
-                                              child: ImageWidget(
-                                                iconData: ShuffleUiKitIcons.plus,
-                                                height: plusIconSize,
-                                                width: plusIconSize,
-                                              ),
-                                            ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing12),
+                                          onTapOutside: (_) {
+                                            if (widget.showBranches) {
+                                              setState(() {
+                                                branch.isSelected = false;
+                                              });
+                                            }
+                                          },
+                                          child: ImageWidget(
+                                            iconData: ShuffleUiKitIcons.unlink,
+                                            color: Colors.white.withValues(alpha: 0.7),
+                                            width: 42.w,
+                                            height: 42.w,
                                           ),
                                         ),
-                                      );
-                                    }
-
-                                    final branch = branches!.elementAt(index - (widget.showBranches ? 1 : 0));
-
-                                    return GestureDetector(
-                                      onLongPress: () {
-                                        if (widget.showBranches) {
-                                          setState(() {
-                                            branch.isSelected = !branch.isSelected;
-                                          });
-                                        }
-                                      },
-                                      child: Stack(
-                                        children: [
-                                          UiKitHorizontalCaptionedImage(
-                                            title: branch.caption,
-                                            imageLink: branch.imageUrl,
-                                            borderRadius: BorderRadiusFoundation.all16,
-                                            onTap: branch.isSelected ? null : branch.onTap,
-                                          ),
-                                          if (branch.isSelected)
-                                            SizedBox(
-                                              width: kIsWeb ? 90 : 0.28125.sw,
-                                              height: kIsWeb ? 52 : (0.28125.sw * 0.577),
-                                              child: Center(
-                                                child: TapRegion(
-                                                  onTapInside: (_) async {
-                                                    if (widget.showBranches) {
-                                                      currentBranchName =
-                                                          await widget.removeBranchItem?.call(branch.placeId);
-                                                      branch.isSelected = false;
-
-                                                      setState(() {});
-                                                    }
-                                                  },
-                                                  onTapOutside: (_) {
-                                                    if (widget.showBranches) {
-                                                      setState(() {
-                                                        branch.isSelected = false;
-                                                      });
-                                                    }
-                                                  },
-                                                  child: ImageWidget(
-                                                    iconData: ShuffleUiKitIcons.unlink,
-                                                    color: Colors.white.withValues(alpha: 0.7),
-                                                    width: 42.w,
-                                                    height: 42.w,
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                        ],
                                       ),
-                                    );
-                                  },
-                                  separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
-                                  itemCount: (branches?.length ?? 0) + (widget.showBranches ? 1 : 0),
-                                ),
+                                    ),
+                                ],
                               ),
-                            ],
-                          ).paddingOnly(
-                            top: EdgeInsetsFoundation.vertical12,
-                            bottom: EdgeInsetsFoundation.vertical12,
-                            left: EdgeInsetsFoundation.horizontal16,
-                          ),
-                        )))
-            .paddingOnly(bottom: SpacingFoundation.verticalSpacing14),
+                            );
+                          },
+                          separatorBuilder: (context, index) => SpacingFoundation.horizontalSpace16,
+                          itemCount: (branches?.length ?? 0) + (widget.showBranches ? 1 : 0),
+                        ),
+                      ),
+                    ],
+                  ).paddingOnly(
+                    top: EdgeInsetsFoundation.vertical12,
+                    bottom: EdgeInsetsFoundation.vertical12,
+                    left: EdgeInsetsFoundation.horizontal16,
+                  ),
+                ))).paddingOnly(bottom: SpacingFoundation.verticalSpacing14),
         DescriptionWidget(
           isTranslate: isTranslate,
           isHide: isHide,
