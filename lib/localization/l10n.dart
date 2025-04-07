@@ -10140,6 +10140,26 @@ class S {
   String get Leave {
     return Intl.message('Leave', name: 'Leave', desc: '', args: []);
   }
+
+  /// `Select payment method`
+  String get SelectPaymentMethod {
+    return Intl.message(
+      'Select payment method',
+      name: 'SelectPaymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select payment method`
+  String get PleaseSelectPaymentMethod {
+    return Intl.message(
+      'Please select payment method',
+      name: 'PleaseSelectPaymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

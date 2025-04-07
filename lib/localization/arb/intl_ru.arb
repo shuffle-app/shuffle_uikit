@@ -2401,5 +2401,7 @@
   "CPCHintDescription": "Общая стоимость кликов /\nОбщее количество кликов",
   "Chats": "Чаты",
   "VirtualCard": "Карта",
-  "Leave": "Выйти"
+  "Leave": "Выйти",
+  "SelectPaymentMethod": "Выберите способ оплаты",
+  "PleaseSelectPaymentMethod": "Пожалуйста выберите способ оплаты"
 }

@@ -2395,5 +2395,7 @@
   "CPCHintDescription": "Total Cost of Clicks /\nTotal Number of Clicks",
   "Chats": "Chats",
   "VirtualCard": "Card",
-  "Leave": "Leave"
+  "Leave": "Leave",
+  "SelectPaymentMethod": "Select payment method",
+  "PleaseSelectPaymentMethod": "Please select payment method"
 }

@@ -1564,6 +1564,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, выбери один тип",
     ),
+    "PleaseSelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста выберите способ оплаты",
+    ),
     "PleaseSelectPlace": MessageLookupByLibrary.simpleMessage(
       "Выбери место или филиал",
     ),
@@ -1879,6 +1882,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SelectOption": MessageLookupByLibrary.simpleMessage("Выбирай"),
     "SelectOptionSchedule": MessageLookupByLibrary.simpleMessage(
       "Выбери опцию",
+    ),
+    "SelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Выберите способ оплаты",
     ),
     "SelectPeriodOfValid": MessageLookupByLibrary.simpleMessage(
       "Выбери период действия",

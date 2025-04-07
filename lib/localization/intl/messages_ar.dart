@@ -1560,6 +1560,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
       "Please select one type",
     ),
+    "PleaseSelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Please select payment method",
+    ),
     "PleaseSelectPlace": MessageLookupByLibrary.simpleMessage(
       "Please select place or branch",
     ),
@@ -1871,6 +1874,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SelectOption": MessageLookupByLibrary.simpleMessage("Select option"),
     "SelectOptionSchedule": MessageLookupByLibrary.simpleMessage(
       "Select option",
+    ),
+    "SelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Select payment method",
     ),
     "SelectPeriodOfValid": MessageLookupByLibrary.simpleMessage(
       "Select period of valid",

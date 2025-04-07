@@ -1566,6 +1566,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
       "कृपया एक प्रकार चुनें",
     ),
+    "PleaseSelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Please select payment method",
+    ),
     "PleaseSelectPlace": MessageLookupByLibrary.simpleMessage(
       "Please select place or branch",
     ),
@@ -1877,6 +1880,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SelectOption": MessageLookupByLibrary.simpleMessage("विकल्प चुनें"),
     "SelectOptionSchedule": MessageLookupByLibrary.simpleMessage(
       "Select option",
+    ),
+    "SelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Select payment method",
     ),
     "SelectPeriodOfValid": MessageLookupByLibrary.simpleMessage(
       "मान्य की अवधि का चयन करें",
