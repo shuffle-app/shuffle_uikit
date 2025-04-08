@@ -38,6 +38,7 @@ class UiKitSwiperCardInfo extends StatelessWidget {
                 maxLines: 1,
                 style: titleStyle,
               ),
+              SpacingFoundation.verticalSpace2,
               Text(
                 subtitle,
                 maxLines: 2,

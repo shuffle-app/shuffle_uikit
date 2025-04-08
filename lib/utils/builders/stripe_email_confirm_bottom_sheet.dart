@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 stripeEmailConfirmBottomSheet(BuildContext context, {required TextEditingController emailController}) {
-  final bool isBigScreen = 1.sw > 380;
   final theme = context.uiKitTheme;
   final boldTextTheme = theme?.boldTextTheme;
   final bodyTextStyle = boldTextTheme?.subHeadline;
@@ -13,7 +12,7 @@ stripeEmailConfirmBottomSheet(BuildContext context, {required TextEditingControl
           context,
           GeneralDialogData(
               isWidgetScrollable: true,
-              topPadding: .29.sw,
+              topPadding: .274.sw,
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 SpacingFoundation.verticalSpace16,
                 Align(
@@ -45,7 +44,7 @@ stripeEmailConfirmBottomSheet(BuildContext context, {required TextEditingControl
                           child: GradientableWidget(
                               gradient: GradientFoundation.defaultLinearGradient,
                               child: Text(
-                                S.current.Online.toLowerCase(),
+                                '${S.current.Online.toLowerCase()}?',
                                 style: bodyTextStyle?.copyWith(color: Colors.white),
                               )))
                     ])),
@@ -68,7 +67,7 @@ stripeEmailConfirmBottomSheet(BuildContext context, {required TextEditingControl
                           child: GradientableWidget(
                               gradient: GradientFoundation.adBannerGradient,
                               child: Text(
-                                '${S.current.Not.toLowerCase()} ',
+                                '${S.current.Not.toLowerCase()}, ',
                                 style: bodyTextStyle?.copyWith(color: Colors.white),
                               ))),
                       TextSpan(text: '${S.current.Just.toLowerCase()} ', style: bodyTextStyle),
@@ -85,6 +84,7 @@ stripeEmailConfirmBottomSheet(BuildContext context, {required TextEditingControl
                     ])),
                 SpacingFoundation.verticalSpace16,
                 ListTile(
+                    dense: true,
                     leading: Transform.scale(
                         scale: 1.22,
                         child: AnimatedBuilder(
@@ -93,7 +93,7 @@ stripeEmailConfirmBottomSheet(BuildContext context, {required TextEditingControl
                                   isActive: selectedMoney.value,
                                   onChanged: () {
                                     selectedMoney.value = !selectedMoney.value;
-                                    if(!selectedMoney.value && !selectedCrypto.value) {
+                                    if (!selectedMoney.value && !selectedCrypto.value) {
                                       selectedCrypto.value = true;
                                     }
                                   },
@@ -102,6 +102,7 @@ stripeEmailConfirmBottomSheet(BuildContext context, {required TextEditingControl
                     titleTextStyle: boldTextTheme?.labelLarge,
                     horizontalTitleGap: 0),
                 ListTile(
+                    dense: true,
                     leading: Transform.scale(
                         scale: 1.22,
                         child: AnimatedBuilder(
@@ -110,7 +111,7 @@ stripeEmailConfirmBottomSheet(BuildContext context, {required TextEditingControl
                                   isActive: selectedCrypto.value,
                                   onChanged: () {
                                     selectedCrypto.value = !selectedCrypto.value;
-                                    if(!selectedCrypto.value && !selectedMoney.value) {
+                                    if (!selectedCrypto.value && !selectedMoney.value) {
                                       selectedMoney.value = true;
                                     }
                                   },

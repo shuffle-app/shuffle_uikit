@@ -188,13 +188,10 @@ class _VideoCutterState extends State<VideoCutter> {
                     fit: StackFit.expand,
                     alignment: Alignment.center,
                     children: [
-                      SizedBox(
-                          height: _videoEditorController?.video.value.size.height,
-                          child:
-                          AspectRatio(
-                            aspectRatio: _videoEditorController!.video.value.aspectRatio,
-                            child: VideoPlayer(_videoEditorController!.video),
-                          )),
+                      AspectRatio(
+                        aspectRatio: _videoEditorController!.video.value.aspectRatio,
+                        child: VideoPlayer(_videoEditorController!.video),
+                      ),
                       Positioned(
                         top: 0,
                         child: Container(

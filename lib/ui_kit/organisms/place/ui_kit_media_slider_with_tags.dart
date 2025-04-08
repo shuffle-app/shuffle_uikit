@@ -184,7 +184,6 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
           onTagTap: widget.onTagTap,
         ).paddingSymmetric(horizontal: widget.horizontalMargin),
         SpacingFoundation.verticalSpace14,
-        if(_showBranches)
         AnimatedSize(
             duration: const Duration(milliseconds: 200),
             curve: Curves.easeInOut,
