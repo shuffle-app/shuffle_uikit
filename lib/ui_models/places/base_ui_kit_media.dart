@@ -1,4 +1,5 @@
 import 'package:collection/collection.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -8,6 +9,7 @@ abstract class BaseUiKitMedia {
   final String? previewLink;
   final UiKitMediaType type;
   final UiKitPreviewType? previewType;
+  final Uint8List? previewData;
 
   const BaseUiKitMedia({
     this.id,
@@ -15,10 +17,12 @@ abstract class BaseUiKitMedia {
     required this.type,
     this.previewLink,
     this.previewType,
+    this.previewData,
   });
 
   ImageWidget widget(Size size) => ImageWidget(
         link: previewLink ?? link,
+        imageBytes: previewData,
         height: size.height,
         width: size.width,
         fit: BoxFit.cover,
@@ -69,6 +73,7 @@ class UiKitMediaPhoto extends BaseUiKitMedia {
     required super.link,
     super.previewType,
     super.id,
+    super.previewData,
   }) : super(
           type: UiKitMediaType.image,
         );
@@ -80,6 +85,7 @@ class UiKitMediaVideo extends BaseUiKitMedia {
     required super.link,
     super.previewType,
     super.previewLink,
+    super.previewData,
   }) : super(
           type: UiKitMediaType.video,
         );
