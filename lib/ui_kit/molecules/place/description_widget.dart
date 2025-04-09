@@ -9,7 +9,7 @@ class DescriptionWidget extends StatelessWidget {
   final VoidCallback? onReadMore;
   final VoidCallback? onReadLess;
   final VoidCallback? onTranslateTap;
-  final ValueNotifier<bool>? isTranslateLoading;
+  final bool isLoading;
 
   const DescriptionWidget({
     super.key,
@@ -20,7 +20,7 @@ class DescriptionWidget extends StatelessWidget {
     required this.isTranslate,
     this.onTranslateTap,
     this.showTranslateButton,
-    this.isTranslateLoading,
+    this.isLoading = false,
   });
 
   @override
@@ -78,37 +78,7 @@ class DescriptionWidget extends StatelessWidget {
                     valueListenable: showTranslateButton!,
                     builder: (_, value, __) {
                       if (value) {
-                        if (isTranslateLoading != null) {
-                          return ValueListenableBuilder(
-                            valueListenable: isTranslateLoading!,
-                            builder: (context, value, child) {
-                              if (value) {
-                                return SizedBox(
-                                  width: 14.w,
-                                  height: 14.w,
-                                  child: CircularProgressIndicator(
-                                    color: isLightTheme
-                                        ? ColorsFoundation.darkNeutral700
-                                        : ColorsFoundation.darkNeutral300,
-                                    strokeWidth: 2.w,
-                                  ),
-                                );
-                              } else {
-                                return InkWell(
-                                  onTap: onTranslateTap,
-                                  child: Text(
-                                    isTranslate ? S.of(context).Original : S.of(context).Translate,
-                                    style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
-                                      color: isLightTheme
-                                          ? ColorsFoundation.darkNeutral700
-                                          : ColorsFoundation.darkNeutral300,
-                                    ),
-                                  ),
-                                );
-                              }
-                            },
-                          );
-                        } else {
+                        if (!isLoading) {
                           return InkWell(
                             onTap: onTranslateTap,
                             child: Text(
@@ -116,6 +86,15 @@ class DescriptionWidget extends StatelessWidget {
                               style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
                                 color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
                               ),
+                            ),
+                          );
+                        } else {
+                          return SizedBox(
+                            width: 14.w,
+                            height: 14.w,
+                            child: CircularProgressIndicator(
+                              color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
+                              strokeWidth: 2.w,
                             ),
                           );
                         }
