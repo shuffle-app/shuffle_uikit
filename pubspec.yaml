@@ -62,10 +62,10 @@ dependencies:
 
   #dialogs widgets
   popover:
-    path: ../popover
-#    git:
-#      url: https://github.com/shuffle-app/popover.git
-#      ref: main
+#    path: ../popover
+    git:
+      url: https://github.com/shuffle-app/popover.git
+      ref: main
 
   another_flushbar: ^1.12.30
       
