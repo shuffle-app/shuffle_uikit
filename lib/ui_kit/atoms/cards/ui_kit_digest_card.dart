@@ -20,7 +20,7 @@ class UiKitDigestCard extends StatefulWidget {
   final int? smileyReactionsCount;
 
   final bool showTranslateButton;
-  final Future<List<String>> Function()? onTranslateTap;
+  final AsyncValueGetter<List<String>>? onTranslateTap;
 
   final bool isPinned;
 
@@ -53,7 +53,9 @@ class _UiKitDigestCardState extends State<UiKitDigestCard> {
   final playButtonSize = Size(32.w, 24.h);
   late final xOffset = shufflePostVideoWidgetWidth / 2 - playButtonSize.width / 2;
   late final yOffset = shufflePostVideoWidgetHeight / 2 - playButtonSize.height / 2;
+
   bool isTranslate = false;
+  bool isLoadingTranslate = false;
 
   late final DigestUiModel? digestUiModel;
   late final List<String> translateListText;
@@ -80,6 +82,9 @@ class _UiKitDigestCardState extends State<UiKitDigestCard> {
   }
 
   Future<void> toggleTranslation() async {
+    isLoadingTranslate = true;
+    setState(() {});
+
     if (isTranslate) {
       isTranslate = !isTranslate;
     } else {
@@ -92,6 +97,7 @@ class _UiKitDigestCardState extends State<UiKitDigestCard> {
       isTranslate = !isTranslate;
     }
 
+    isLoadingTranslate = false;
     setState(() {});
   }
 
@@ -228,15 +234,26 @@ class _UiKitDigestCardState extends State<UiKitDigestCard> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InkWell(
-                onTap: toggleTranslation,
-                child: widget.showTranslateButton
-                    ? Text(
-                        isTranslate ? S.of(context).Original : S.of(context).Translate,
-                        style: regularTextTheme?.caption4Semibold,
-                      )
-                    : const SizedBox.shrink(),
-              ),
+              if (widget.showTranslateButton)
+                if (isLoadingTranslate)
+                  SizedBox(
+                    width: 14.w,
+                    height: 14.w,
+                    child: CircularProgressIndicator(
+                      color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
+                      strokeWidth: 2.w,
+                    ),
+                  )
+                else
+                  InkWell(
+                    onTap: toggleTranslation,
+                    child: widget.showTranslateButton
+                        ? Text(
+                            isTranslate ? S.of(context).Original : S.of(context).Translate,
+                            style: regularTextTheme?.caption4Semibold,
+                          )
+                        : const SizedBox.shrink(),
+                  ),
               showEmptyReactionsState
                   ? Builder(
                       builder: (c) => TapRegion(

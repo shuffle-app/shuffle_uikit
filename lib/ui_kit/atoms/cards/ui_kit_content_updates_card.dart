@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitContentUpdatesCard extends StatelessWidget {
+class UiKitContentUpdatesCard extends StatefulWidget {
   final List<UiKitContentUpdateWidget> children;
   final String authorSpeciality;
   final String authorName;
@@ -23,8 +23,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
   final VoidCallback? onSharePress;
   final ViewShareDate? viewShareDate;
   final bool showTranslateButton;
-  final ValueNotifier<String>? translateText;
-  final Future<String?> Function()? onTranslateTap;
+  final AsyncValueGetter<String?>? onTranslateTap;
 
   final bool isPinned;
 
@@ -48,7 +47,6 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     this.onSharePress,
     this.viewShareDate,
     this.showTranslateButton = false,
-    this.translateText,
     this.isPinned = false,
     this.onTranslateTap,
   });
@@ -67,9 +65,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     int? smileyReactionsCount,
     ViewShareDate? viewShareDate,
     bool showTranslateButton = false,
-    ValueNotifier<String>? translateText,
     bool isPinned = false,
-    Future<String?> Function()? onTranslateTap,
+    AsyncValueGetter<String?>? onTranslateTap,
   }) =>
       UiKitContentUpdatesCard(
         key: key,
@@ -90,12 +87,16 @@ class UiKitContentUpdatesCard extends StatelessWidget {
         onSharePress: onSharePress,
         viewShareDate: viewShareDate,
         showTranslateButton: showTranslateButton,
-        translateText: translateText,
         isPinned: isPinned,
         onTranslateTap: onTranslateTap,
         children: children,
       );
 
+  @override
+  State<UiKitContentUpdatesCard> createState() => _UiKitContentUpdatesCardState();
+}
+
+class _UiKitContentUpdatesCardState extends State<UiKitContentUpdatesCard> {
   bool get showEmptyReactionsState =>
       heartCount == 0 && likeCount == 0 && sunglassesCount == 0 && fireCount == 0 && smileyCount == 0;
 
@@ -104,8 +105,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     double reactionsSpacing = 0;
     // double translateButtonSpacing = 0;
 
-    if (hasGradientBorder && comment != null && comment!.isNotEmpty) {
-      final linesCount = (comment!.length ~/ charactersPerLine) + comment!.split('\n').length;
+    if (widget.hasGradientBorder && widget.comment != null && widget.comment!.isNotEmpty) {
+      final linesCount = (widget.comment!.length ~/ charactersPerLine) + widget.comment!.split('\n').length;
 
       additionalSpacingForComment += linesCount * (kIsWeb ? 15 : 18.h);
     }
@@ -116,8 +117,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     //   translateButtonSpacing += SpacingFoundation.verticalSpacing32;
     // }
 
-    return children.fold(0.0, (previousValue, element) => previousValue + element.height) +
-        ((children.length + 2) * SpacingFoundation.verticalSpacing24) +
+    return widget.children.fold(0.0, (previousValue, element) => previousValue + element.height) +
+        ((widget.children.length + 2) * SpacingFoundation.verticalSpacing24) +
         (kIsWeb ? 17 : 0.152.sw) +
         EdgeInsetsFoundation.vertical32 +
         reactionsSpacing +
@@ -125,17 +126,46 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     // translateButtonSpacing;
   }
 
-  int get heartCount => heartEyesReactionsCount ?? 0;
+  int get heartCount => widget.heartEyesReactionsCount ?? 0;
 
-  int get likeCount => likeReactionsCount ?? 0;
+  int get likeCount => widget.likeReactionsCount ?? 0;
 
-  int get fireCount => fireReactionsCount ?? 0;
+  int get fireCount => widget.fireReactionsCount ?? 0;
 
-  int get sunglassesCount => sunglassesReactionsCount ?? 0;
+  int get sunglassesCount => widget.sunglassesReactionsCount ?? 0;
 
-  int get smileyCount => smileyReactionsCount ?? 0;
+  int get smileyCount => widget.smileyReactionsCount ?? 0;
 
   int get charactersPerLine => 1.sw >= 380 ? 38 : 33;
+
+  late String? currentDescription;
+  bool isLoadingTranslate = false;
+  bool isTranslate = false;
+
+  Future<void> toggleTranslation() async {
+    isLoadingTranslate = true;
+    setState(() {});
+
+    if (isTranslate) {
+      currentDescription = widget.comment;
+      isTranslate = !isTranslate;
+    } else {
+      final translate = await widget.onTranslateTap?.call();
+      if (translate != null && translate.isNotEmpty) {
+        currentDescription = translate;
+        isTranslate = !isTranslate;
+      }
+    }
+
+    isLoadingTranslate = false;
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    currentDescription = widget.comment;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -149,18 +179,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
     bool isOverlayVisible = false;
     OverlayEntry? overlayEntry;
 
-    Future<void> toggleTranslation() async {
-      if (translateText?.value != comment) {
-        translateText?.value = comment ?? '';
-      } else {
-        final translate = await onTranslateTap?.call();
-        if (translate != null && translate.isNotEmpty) {
-          translateText?.value = translate;
-        }
-      }
-    }
-
-    final Widget _children = hasGradientBorder
+    final Widget _children = widget.hasGradientBorder
         ? Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -170,18 +189,18 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                 child: UiKitShuffleTile(
                   trailing: Row(
                     children: [
-                      if (isPinned && kIsWeb)
+                      if (widget.isPinned && kIsWeb)
                         ImageWidget(
                           link: GraphicsFoundation.instance.svg.pinned.path,
                           height: 18,
                           width: 18,
                           fit: BoxFit.fill,
                           color: ColorsFoundation.mutedText,
-                        ).paddingOnly(right: onSharePress != null ? SpacingFoundation.horizontalSpacing20 : 0.0),
-                      if (onSharePress != null)
+                        ).paddingOnly(right: widget.onSharePress != null ? SpacingFoundation.horizontalSpacing20 : 0.0),
+                      if (widget.onSharePress != null)
                         context.iconButtonNoPadding(
                           data: BaseUiKitButtonData(
-                            onPressed: onSharePress,
+                            onPressed: widget.onSharePress,
                             iconInfo: BaseUiKitButtonIconData(
                               iconData: ShuffleUiKitIcons.share,
                               color: colorScheme?.darkNeutral800,
@@ -192,18 +211,15 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                   ),
                 ),
               ),
-              if (hasGradientBorder && translateText != null && translateText!.value.isNotEmpty)
-                ValueListenableBuilder<String>(
-                  valueListenable: translateText!,
-                  builder: (_, desc, __) => Text(
-                    desc,
-                    style: regularTextTheme?.caption2,
-                    textAlign: TextAlign.start,
-                  ).paddingOnly(top: EdgeInsetsFoundation.vertical16),
-                ),
-              if (children.isNotEmpty) ...[
+              if (currentDescription != null && currentDescription!.isNotEmpty)
+                Text(
+                  currentDescription!,
+                  style: regularTextTheme?.caption2,
+                  textAlign: TextAlign.start,
+                ).paddingOnly(top: EdgeInsetsFoundation.vertical16),
+              if (widget.children.isNotEmpty) ...[
                 SpacingFoundation.verticalSpace4,
-                ...children,
+                ...widget.children,
                 SpacingFoundation.verticalSpace16
               ] else
                 SpacingFoundation.verticalSpace8,
@@ -211,31 +227,39 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ValueListenableBuilder<String>(
-                    valueListenable: translateText!,
-                    builder: (_, desc, __) => InkWell(
-                      onTap: toggleTranslation,
-                      child: showTranslateButton
-                          ? Text(
-                              desc != comment ? S.of(context).Original : S.of(context).Translate,
-                              style: regularTextTheme?.caption4Semibold,
-                            )
-                          : const SizedBox.shrink(),
-                    ),
-                  ),
+                  if (widget.showTranslateButton)
+                    if (isLoadingTranslate)
+                      SizedBox(
+                        width: 14.w,
+                        height: 14.w,
+                        child: CircularProgressIndicator(
+                          color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
+                          strokeWidth: 2.w,
+                        ),
+                      )
+                    else
+                      InkWell(
+                        onTap: toggleTranslation,
+                        child: widget.showTranslateButton
+                            ? Text(
+                                isTranslate ? S.of(context).Original : S.of(context).Translate,
+                                style: regularTextTheme?.caption4Semibold,
+                              )
+                            : const SizedBox.shrink(),
+                      ),
                   showEmptyReactionsState
                       ? Builder(
                           builder: (c) => TapRegion(
                             behavior: HitTestBehavior.opaque,
                             onTapInside: (value) {
-                              if (onReactionsTapped != null) {
+                              if (widget.onReactionsTapped != null) {
                                 isOverlayVisible
                                     ? hideReactionOverlay(overlayEntry)
                                     : showReactionOverlay(
                                         c,
                                         overlayEntry,
                                         reactionTextColor,
-                                        onReactionsTapped,
+                                        widget.onReactionsTapped,
                                       );
                                 isOverlayVisible = !isOverlayVisible;
                               }
@@ -254,14 +278,14 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                           builder: (c) => TapRegion(
                             behavior: HitTestBehavior.opaque,
                             onTapInside: (value) {
-                              if (onReactionsTapped != null) {
+                              if (widget.onReactionsTapped != null) {
                                 isOverlayVisible
                                     ? hideReactionOverlay(overlayEntry)
                                     : showReactionOverlay(
                                         c,
                                         overlayEntry,
                                         reactionTextColor,
-                                        onReactionsTapped,
+                                        widget.onReactionsTapped,
                                       );
                                 isOverlayVisible = !isOverlayVisible;
                               }
@@ -311,8 +335,8 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                         ),
                 ],
               ),
-              if (viewShareDate != null)
-                UiKitViewShareDateWidget(viewShareDate: viewShareDate!)
+              if (widget.viewShareDate != null)
+                UiKitViewShareDateWidget(viewShareDate: widget.viewShareDate!)
                     .paddingOnly(top: SpacingFoundation.verticalSpacing12),
             ],
           ).paddingAll(EdgeInsetsFoundation.all16)
@@ -322,15 +346,15 @@ class UiKitContentUpdatesCard extends StatelessWidget {
             children: [
               context.userTile(
                 data: BaseUiKitUserTileData(
-                  name: authorName,
-                  username: authorUsername,
-                  avatarUrl: authorAvatarUrl,
-                  type: authorUserType,
+                  name: widget.authorName,
+                  username: widget.authorUsername,
+                  avatarUrl: widget.authorAvatarUrl,
+                  type: widget.authorUserType,
                   noMaterialOverlay: true,
                 ),
               ),
               SpacingFoundation.verticalSpace8,
-              ...children,
+              ...widget.children,
               SpacingFoundation.verticalSpace16
             ],
           ).paddingAll(EdgeInsetsFoundation.all16);
@@ -341,7 +365,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
           intensities: [130, 170],
           pattern: [10, 5],
         ));
-        onLongPress?.call();
+        widget.onLongPress?.call();
       },
       child: ConstrainedBox(
         constraints: BoxConstraints(
@@ -363,13 +387,13 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                     color: isLightTheme ? colorScheme?.surface2 : null,
                     gradient: isLightTheme ? null : GradientFoundation.shunyGreyGradientInverted,
                     borderRadius: BorderRadiusFoundation.all24,
-                    border: hasGradientBorder ? GradientFoundation.touchIdgradientBorder : null,
+                    border: widget.hasGradientBorder ? GradientFoundation.touchIdgradientBorder : null,
                   ),
                   child: _children,
                 ),
               ),
             ),
-            if (authorSpeciality.isNotEmpty)
+            if (widget.authorSpeciality.isNotEmpty)
               Positioned(
                 right: 0,
                 bottom: -SpacingFoundation.verticalSpacing8,
@@ -380,7 +404,7 @@ class UiKitContentUpdatesCard extends StatelessWidget {
                     child: ColoredBox(
                       color: isLightTheme ? ColorsFoundation.darkNeutral300 : ColorsFoundation.neutral16,
                       child: Text(
-                        authorSpeciality,
+                        widget.authorSpeciality,
                         style: boldTextTheme?.caption3Medium.copyWith(
                           color: isLightTheme ? colorScheme?.darkNeutral800 : colorScheme?.darkNeutral100,
                         ),

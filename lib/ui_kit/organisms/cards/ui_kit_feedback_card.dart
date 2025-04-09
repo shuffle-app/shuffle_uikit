@@ -23,8 +23,7 @@ class UiKitFeedbackCard extends StatefulWidget {
   final VoidCallback? onAvatarTap;
 
   final bool showTranslateButton;
-  final ValueNotifier<bool>? isTranslateLoading;
-  final Future<String?> Function()? onTranslateTap;
+  final AsyncValueGetter<String?>? onTranslateTap;
 
   const UiKitFeedbackCard({
     super.key,
@@ -48,7 +47,6 @@ class UiKitFeedbackCard extends StatefulWidget {
     this.onAvatarTap,
     this.showTranslateButton = false,
     this.onTranslateTap,
-    this.isTranslateLoading,
   });
 
   @override
@@ -58,21 +56,33 @@ class UiKitFeedbackCard extends StatefulWidget {
 class _UiKitFeedbackCardState extends State<UiKitFeedbackCard> {
   final int microseconds = DateTime.now().millisecondsSinceEpoch;
   late String description = widget.text ?? '';
+  String? translateText;
+  bool isTranslateLoading = false;
   bool isTranslate = false;
 
   Future<void> toggleTranslation() async {
+    isTranslateLoading = true;
+    setState(() {});
+
     if (isTranslate) {
       description = widget.text ?? '';
       isTranslate = !isTranslate;
     } else {
-      final translateDescription = await widget.onTranslateTap?.call();
-
-      if (translateDescription != null && translateDescription.isNotEmpty) {
-        description = translateDescription;
+      if (translateText != null && translateText!.isNotEmpty) {
+        description = translateText!;
         isTranslate = !isTranslate;
+      } else {
+        final translateDescription = await widget.onTranslateTap?.call();
+
+        if (translateDescription != null && translateDescription.isNotEmpty) {
+          translateText = translateDescription;
+          description = translateText!;
+          isTranslate = !isTranslate;
+        }
       }
     }
 
+    isTranslateLoading = false;
     setState(() {});
   }
 
@@ -262,37 +272,25 @@ class _UiKitFeedbackCardState extends State<UiKitFeedbackCard> {
                           style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                         ).paddingOnly(right: SpacingFoundation.horizontalSpacing16),
                       if (widget.showTranslateButton)
-                        if (widget.isTranslateLoading != null)
+                        if (!isTranslateLoading)
                           Expanded(
-                              child: ValueListenableBuilder(
-                            valueListenable: widget.isTranslateLoading!,
-                            builder: (context, value, child) {
-                              if (value) {
-                                return SizedBox(
-                                  width: 14.w,
-                                  height: 14.w,
-                                  child: CircularProgressIndicator(
-                                    color: isLightTheme
-                                        ? ColorsFoundation.darkNeutral700
-                                        : ColorsFoundation.darkNeutral300,
-                                    strokeWidth: 2.w,
-                                  ),
-                                );
-                              } else {
-                                return TranslateButton(
-                                  isTranslate: isTranslate,
-                                  showTranslateButton: widget.showTranslateButton,
-                                  toggleTranslation: toggleTranslation,
-                                );
-                              }
-                            },
-                          ))
-                        else
-                          TranslateButton(
-                            isTranslate: isTranslate,
-                            showTranslateButton: widget.showTranslateButton,
-                            toggleTranslation: toggleTranslation,
+                            child: TranslateButton(
+                              isTranslate: isTranslate,
+                              showTranslateButton: widget.showTranslateButton,
+                              toggleTranslation: toggleTranslation,
+                            ),
                           )
+                        else ...[
+                          SizedBox(
+                            width: 14.w,
+                            height: 14.w,
+                            child: CircularProgressIndicator(
+                              color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
+                              strokeWidth: 2.w,
+                            ),
+                          ),
+                          const Spacer(),
+                        ]
                       else
                         const Spacer(),
                       InkWell(

@@ -16,14 +16,13 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
   final bool? initialDescriptionHide;
   final ValueNotifier<bool>? showTranslateButton;
   final ValueChanged<int>? onImageTap;
-  final Future<String?> Function()? onCreateBranchesTap;
-  final Future<String?> Function()? onRenameTap;
+  final AsyncValueGetter<String?>? onCreateBranchesTap;
+  final AsyncValueGetter<String?>? onRenameTap;
   final String? branchName;
   final Future<String?> Function(int)? removeBranchItem;
   final bool showBranches;
   final ValueChanged<IconData>? onTagTap;
-  final Future<String?> Function()? onTranslateTap;
-  final ValueNotifier<bool>? isTranslateLoading;
+  final AsyncValueGetter<String?>? onTranslateTap;
 
   UiKitMediaSliderWithTags({
     super.key,
@@ -47,7 +46,6 @@ class UiKitMediaSliderWithTags extends StatefulWidget {
     this.showBranches = false,
     this.onTagTap,
     this.onTranslateTap,
-    this.isTranslateLoading,
   }) : scrollController = scrollController ?? ScrollController();
 
   @override
@@ -61,9 +59,11 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
   late bool isHide;
 
   bool isTranslate = false;
+  bool isLoadingTranslate = false;
   bool _showBranches = false;
   List<HorizontalCaptionedImageData>? branches;
   String currentDescription = '';
+  String? translateText;
 
   @override
   void initState() {
@@ -331,7 +331,7 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
                         )))
             .paddingOnly(bottom: SpacingFoundation.verticalSpacing14),
         DescriptionWidget(
-          isTranslateLoading: widget.isTranslateLoading,
+          isLoading: isLoadingTranslate,
           isTranslate: isTranslate,
           isHide: isHide,
           onReadLess: () {
@@ -355,18 +355,28 @@ class _UiKitMediaSliderWithTagsState extends State<UiKitMediaSliderWithTags> {
           },
           description: currentDescription,
           onTranslateTap: () async {
+            isLoadingTranslate = true;
+            setState(() {});
+
             if (isTranslate) {
               currentDescription = widget.description;
               isTranslate = !isTranslate;
             } else {
-              final translateDescription = await widget.onTranslateTap?.call();
-
-              if (translateDescription != null && translateDescription.isNotEmpty) {
-                currentDescription = translateDescription;
+              if (translateText != null && translateText!.isNotEmpty) {
+                currentDescription = translateText!;
                 isTranslate = !isTranslate;
+              } else {
+                final translateDescription = await widget.onTranslateTap?.call();
+
+                if (translateDescription != null && translateDescription.isNotEmpty) {
+                  translateText = translateDescription;
+                  currentDescription = translateText!;
+                  isTranslate = !isTranslate;
+                }
               }
             }
 
+            isLoadingTranslate = false;
             setState(() {});
           },
           showTranslateButton: widget.showTranslateButton,

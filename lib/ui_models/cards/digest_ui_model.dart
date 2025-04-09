@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/ui_models/places/base_ui_kit_media.dart';
 
 class DigestUiModel {
@@ -16,7 +15,6 @@ class DigestUiModel {
 
   ///Transitions
   final bool? showTranslateButton;
-  final ValueNotifier<String>? translateText;
 
   const DigestUiModel({
     this.placeId,
@@ -31,6 +29,5 @@ class DigestUiModel {
     this.newPhotos,
     this.newVideos,
     this.showTranslateButton,
-    this.translateText,
   });
 }
