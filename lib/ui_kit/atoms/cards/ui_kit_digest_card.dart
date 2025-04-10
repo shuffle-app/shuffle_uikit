@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:shuffle_uikit/ui_kit/atoms/cards/digest_content_card.dart';
 
-class UiKitDigestCard extends StatelessWidget {
+class UiKitDigestCard extends StatefulWidget {
   final String? title;
   final String? underTitleText;
   final List<DigestUiModel>? digestUiModels;
@@ -19,19 +19,12 @@ class UiKitDigestCard extends StatelessWidget {
   final int? sunglassesReactionsCount;
   final int? smileyReactionsCount;
 
-  final ValueNotifier<bool>? showTranslateButton;
-  final ValueNotifier<String>? titleTranslateText;
-  final ValueNotifier<String>? underTitleTranslateText;
-
-  late final ValueNotifier<String> titleNotifier;
-  late final ValueNotifier<String> underTitleNotifier;
-  late final ValueNotifier<bool> isTranslate;
-
-  late final DigestUiModel? digestUiModel;
+  final bool showTranslateButton;
+  final AsyncValueGetter<List<String>>? onTranslateTap;
 
   final bool isPinned;
 
-  UiKitDigestCard({
+  const UiKitDigestCard({
     super.key,
     this.title,
     this.underTitleText,
@@ -44,32 +37,69 @@ class UiKitDigestCard extends StatelessWidget {
     this.smileyReactionsCount,
     this.onReactionsTapped,
     this.viewShareDate,
-    this.showTranslateButton,
-    this.titleTranslateText,
-    this.underTitleTranslateText,
+    this.showTranslateButton = false,
+    this.onTranslateTap,
     this.isPinned = false,
     this.onSharePress,
-  }) {
-    digestUiModel = digestUiModels != null && digestUiModels!.isNotEmpty ? digestUiModels![0] : null;
+  });
 
-    titleNotifier = ValueNotifier<String>(title ?? '');
-    underTitleNotifier = ValueNotifier<String>(underTitleText ?? '');
+  @override
+  State<UiKitDigestCard> createState() => _UiKitDigestCardState();
+}
 
-    isTranslate = ValueNotifier<bool>(false);
-  }
+class _UiKitDigestCardState extends State<UiKitDigestCard> {
+  final shufflePostVideoWidgetHeight = 0.16845.sw * 0.75;
+  final shufflePostVideoWidgetWidth = 0.16845.sw;
+  final playButtonSize = Size(32.w, 24.h);
+  late final xOffset = shufflePostVideoWidgetWidth / 2 - playButtonSize.width / 2;
+  late final yOffset = shufflePostVideoWidgetHeight / 2 - playButtonSize.height / 2;
 
-  int get heartCount => heartEyesReactionsCount ?? 0;
+  bool isTranslate = false;
+  bool isLoadingTranslate = false;
 
-  int get likeCount => likeReactionsCount ?? 0;
+  late final DigestUiModel? digestUiModel;
+  late final List<String> translateListText;
 
-  int get fireCount => fireReactionsCount ?? 0;
+  int get heartCount => widget.heartEyesReactionsCount ?? 0;
 
-  int get sunglassesCount => sunglassesReactionsCount ?? 0;
+  int get likeCount => widget.likeReactionsCount ?? 0;
 
-  int get smileyCount => smileyReactionsCount ?? 0;
+  int get fireCount => widget.fireReactionsCount ?? 0;
+
+  int get sunglassesCount => widget.sunglassesReactionsCount ?? 0;
+
+  int get smileyCount => widget.smileyReactionsCount ?? 0;
 
   bool get showEmptyReactionsState =>
       heartCount == 0 && likeCount == 0 && sunglassesCount == 0 && fireCount == 0 && smileyCount == 0;
+
+  @override
+  void initState() {
+    digestUiModel =
+        widget.digestUiModels != null && widget.digestUiModels!.isNotEmpty ? widget.digestUiModels![0] : null;
+    translateListText = List.empty(growable: true);
+    super.initState();
+  }
+
+  Future<void> toggleTranslation() async {
+    isLoadingTranslate = true;
+    setState(() {});
+
+    if (isTranslate) {
+      isTranslate = !isTranslate;
+    } else {
+      if (translateListText.isEmpty) {
+        List<String>? translate = await widget.onTranslateTap?.call();
+
+        if (translate != null && translate.isNotEmpty) translateListText.addAll(translate);
+      }
+
+      isTranslate = !isTranslate;
+    }
+
+    isLoadingTranslate = false;
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,36 +110,8 @@ class UiKitDigestCard extends StatelessWidget {
     final isLightTheme = theme?.themeMode == ThemeMode.light;
     final reactionTextColor = colorScheme?.bodyTypography;
 
-    final shufflePostVideoWidgetHeight = 0.16845.sw * 0.75;
-    final shufflePostVideoWidgetWidth = 0.16845.sw;
-    final playButtonSize = Size(32.w, 24.h);
-    final xOffset = shufflePostVideoWidgetWidth / 2 - playButtonSize.width / 2;
-    final yOffset = shufflePostVideoWidgetHeight / 2 - playButtonSize.height / 2;
-
     bool isOverlayVisible = false;
     OverlayEntry? overlayEntry;
-
-    void toggleTranslation() {
-      isTranslate.value = !isTranslate.value;
-
-      ///Translate in publication
-      titleNotifier.value = isTranslate.value ? (titleTranslateText?.value ?? title ?? '') : title ?? '';
-      underTitleNotifier.value =
-          isTranslate.value ? (underTitleTranslateText?.value ?? underTitleText ?? '') : underTitleText ?? '';
-
-      ///Translate in content card
-      digestUiModel?.contentDescriptionNotifier?.value = isTranslate.value
-          ? (digestUiModel?.contentDescriptionTranslate?.value ?? digestUiModel?.contentDescription ?? '')
-          : digestUiModel?.contentDescription ?? '';
-
-      digestUiModel?.descriptionNotifier?.value = isTranslate.value
-          ? (digestUiModel?.descriptionTranslate?.value ?? digestUiModel?.description ?? '')
-          : digestUiModel?.description ?? '';
-
-      digestUiModel?.subTitleNotifier?.value = isTranslate.value
-          ? (digestUiModel?.subTitleTranslate?.value ?? digestUiModel?.subTitle ?? '')
-          : digestUiModel?.subTitle ?? '';
-    }
 
     _children() {
       return Column(
@@ -121,7 +123,7 @@ class UiKitDigestCard extends StatelessWidget {
             child: UiKitShuffleTile(
               trailing: Row(
                 children: [
-                  if (isPinned && kIsWeb)
+                  if (widget.isPinned && kIsWeb)
                     ImageWidget(
                       link: GraphicsFoundation.instance.svg.pinned.path,
                       height: 18,
@@ -129,10 +131,10 @@ class UiKitDigestCard extends StatelessWidget {
                       fit: BoxFit.fill,
                       color: ColorsFoundation.mutedText,
                     ).paddingOnly(right: SpacingFoundation.horizontalSpacing20),
-                  if (onSharePress != null)
+                  if (widget.onSharePress != null)
                     context.iconButtonNoPadding(
                       data: BaseUiKitButtonData(
-                        onPressed: onSharePress,
+                        onPressed: widget.onSharePress,
                         iconInfo: BaseUiKitButtonIconData(
                           iconData: ShuffleUiKitIcons.share,
                           color: colorScheme?.darkNeutral800,
@@ -143,33 +145,24 @@ class UiKitDigestCard extends StatelessWidget {
               ),
             ),
           ),
-          if (title != null && title!.isNotEmpty)
-            ValueListenableBuilder<String>(
-              valueListenable: titleNotifier,
-              builder: (_, title, __) => Text(
-                title,
-                style: boldTextTheme?.caption1Bold,
-                textAlign: TextAlign.start,
-              ).paddingOnly(top: SpacingFoundation.verticalSpacing12),
-            ),
-          if (underTitleText != null && underTitleText!.isNotEmpty)
-            ValueListenableBuilder<String>(
-              valueListenable: underTitleNotifier,
-              builder: (_, underTitleText, __) => Text(
-                underTitleText,
-                style: regularTextTheme?.caption1,
-                textAlign: TextAlign.start,
-              ).paddingOnly(top: SpacingFoundation.verticalSpacing12),
-            ),
+          if (widget.title != null && widget.title!.isNotEmpty)
+            Text(
+              isTranslate && translateListText.isNotEmpty ? translateListText[0] : widget.title!,
+              style: boldTextTheme?.caption1Bold,
+              textAlign: TextAlign.start,
+            ).paddingOnly(top: SpacingFoundation.verticalSpacing12),
+          if (widget.underTitleText != null && widget.underTitleText!.isNotEmpty)
+            Text(
+              isTranslate && translateListText.length >= 2 ? translateListText[1] : widget.underTitleText!,
+              style: regularTextTheme?.caption1,
+              textAlign: TextAlign.start,
+            ).paddingOnly(top: SpacingFoundation.verticalSpacing12),
           if (digestUiModel != null) ...[
             if (digestUiModel?.subTitle != null && digestUiModel!.subTitle!.isNotEmpty)
-              ValueListenableBuilder<String>(
-                valueListenable: digestUiModel!.subTitleNotifier!,
-                builder: (_, subtitle, __) => Text(
-                  subtitle,
-                  style: boldTextTheme?.caption1Bold,
-                  textAlign: TextAlign.start,
-                ),
+              Text(
+                isTranslate && translateListText.length >= 3 ? translateListText[2] : digestUiModel!.subTitle!,
+                style: boldTextTheme?.caption1Bold,
+                textAlign: TextAlign.start,
               ).paddingOnly(top: SpacingFoundation.verticalSpacing12),
             if (digestUiModel?.placeId != null || digestUiModel?.eventId != null)
               UiKitCardWrapper(
@@ -180,16 +173,14 @@ class UiKitDigestCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     DigestContentCard(digestUiModel: digestUiModel),
-                    if (digestUiModel?.contentDescriptionNotifier != null &&
-                        digestUiModel!.contentDescriptionNotifier!.value.isNotEmpty)
-                      ValueListenableBuilder<String>(
-                        valueListenable: digestUiModel!.contentDescriptionNotifier!,
-                        builder: (_, contentDescriptionTranslate, __) => Text(
-                          contentDescriptionTranslate,
-                          style: regularTextTheme?.caption4Regular,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                    if (digestUiModel?.contentDescription != null && digestUiModel!.contentDescription!.isNotEmpty)
+                      Text(
+                        isTranslate && translateListText.length >= 4
+                            ? translateListText[3]
+                            : digestUiModel!.contentDescription!,
+                        style: regularTextTheme?.caption4Regular,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                       ),
                   ],
                 ),
@@ -221,23 +212,20 @@ class UiKitDigestCard extends StatelessWidget {
                 ),
               ).paddingOnly(top: SpacingFoundation.verticalSpacing12),
           ],
-          if (digestUiModel?.descriptionNotifier != null && digestUiModel!.descriptionNotifier!.value.isNotEmpty)
-            ValueListenableBuilder<String>(
-              valueListenable: digestUiModel!.descriptionNotifier!,
-              builder: (_, underTitleText, __) => Text(
-                underTitleText,
-                style: regularTextTheme?.caption2,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-              ).paddingOnly(top: SpacingFoundation.verticalSpacing8),
-            ),
+          if (digestUiModel?.description != null && digestUiModel!.description!.isNotEmpty)
+            Text(
+              isTranslate && translateListText.length >= 5 ? translateListText[4] : digestUiModel!.description!,
+              style: regularTextTheme?.caption2,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
+            ).paddingOnly(top: SpacingFoundation.verticalSpacing8),
           SpacingFoundation.verticalSpace12,
           GradientableWidget(
             gradient: GradientFoundation.buttonGradient,
             child: context.smallOutlinedButton(
               data: BaseUiKitButtonData(
                 text: S.of(context).Read(''),
-                onPressed: onReadTap,
+                onPressed: widget.onReadTap,
               ),
             ),
           ),
@@ -246,32 +234,39 @@ class UiKitDigestCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              if (showTranslateButton != null)
-                ValueListenableBuilder<bool>(
-                  valueListenable: isTranslate,
-                  builder: (_, isTranslating, __) => InkWell(
+              if (widget.showTranslateButton)
+                if (isLoadingTranslate)
+                  SizedBox(
+                    width: 14.w,
+                    height: 14.w,
+                    child: CircularProgressIndicator(
+                      color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
+                      strokeWidth: 2.w,
+                    ),
+                  )
+                else
+                  InkWell(
                     onTap: toggleTranslation,
-                    child: showTranslateButton!.value
+                    child: widget.showTranslateButton
                         ? Text(
-                            isTranslating ? S.of(context).Original : S.of(context).Translate,
+                            isTranslate ? S.of(context).Original : S.of(context).Translate,
                             style: regularTextTheme?.caption4Semibold,
                           )
                         : const SizedBox.shrink(),
                   ),
-                ),
               showEmptyReactionsState
                   ? Builder(
                       builder: (c) => TapRegion(
                         behavior: HitTestBehavior.opaque,
                         onTapInside: (value) {
-                          if (onReactionsTapped != null) {
+                          if (widget.onReactionsTapped != null) {
                             isOverlayVisible
                                 ? hideReactionOverlay(overlayEntry)
                                 : showReactionOverlay(
                                     c,
                                     overlayEntry,
                                     reactionTextColor,
-                                    onReactionsTapped,
+                                    widget.onReactionsTapped,
                                   );
                             isOverlayVisible = !isOverlayVisible;
                           }
@@ -290,14 +285,14 @@ class UiKitDigestCard extends StatelessWidget {
                       builder: (c) => TapRegion(
                         behavior: HitTestBehavior.opaque,
                         onTapInside: (value) {
-                          if (onReactionsTapped != null) {
+                          if (widget.onReactionsTapped != null) {
                             isOverlayVisible
                                 ? hideReactionOverlay(overlayEntry)
                                 : showReactionOverlay(
                                     c,
                                     overlayEntry,
                                     reactionTextColor,
-                                    onReactionsTapped,
+                                    widget.onReactionsTapped,
                                   );
                             isOverlayVisible = !isOverlayVisible;
                           }
@@ -347,8 +342,8 @@ class UiKitDigestCard extends StatelessWidget {
                     ),
             ],
           ),
-          if (viewShareDate != null)
-            UiKitViewShareDateWidget(viewShareDate: viewShareDate!)
+          if (widget.viewShareDate != null)
+            UiKitViewShareDateWidget(viewShareDate: widget.viewShareDate!)
                 .paddingOnly(top: SpacingFoundation.verticalSpacing16),
         ],
       ).paddingAll(EdgeInsetsFoundation.all16);

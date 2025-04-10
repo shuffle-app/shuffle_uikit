@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/ui_models/places/base_ui_kit_media.dart';
 
 class DigestUiModel {
@@ -15,15 +14,9 @@ class DigestUiModel {
   final List<UiKitMediaVideo>? newVideos;
 
   ///Transitions
-  final ValueNotifier<bool>? showTranslateButton;
-  final ValueNotifier<String>? contentDescriptionTranslate;
-  final ValueNotifier<String>? descriptionTranslate;
-  final ValueNotifier<String>? subTitleTranslate;
-  late final ValueNotifier<String>? contentDescriptionNotifier;
-  late final ValueNotifier<String>? descriptionNotifier;
-  late final ValueNotifier<String>? subTitleNotifier;
+  final bool? showTranslateButton;
 
-  DigestUiModel({
+  const DigestUiModel({
     this.placeId,
     this.eventId,
     this.title,
@@ -36,12 +29,5 @@ class DigestUiModel {
     this.newPhotos,
     this.newVideos,
     this.showTranslateButton,
-    this.contentDescriptionTranslate,
-    this.descriptionTranslate,
-    this.subTitleTranslate,
-  }) {
-    contentDescriptionNotifier = ValueNotifier<String>(contentDescription ?? '');
-    descriptionNotifier = ValueNotifier<String>(description ?? '');
-    subTitleNotifier = ValueNotifier<String>(subTitle ?? '');
-  }
+  });
 }
