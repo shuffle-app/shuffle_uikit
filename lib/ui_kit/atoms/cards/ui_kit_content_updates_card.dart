@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
@@ -232,9 +233,8 @@ class _UiKitContentUpdatesCardState extends State<UiKitContentUpdatesCard> {
                       SizedBox(
                         width: 14.w,
                         height: 14.w,
-                        child: CircularProgressIndicator(
+                        child: CupertinoActivityIndicator(
                           color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
-                          strokeWidth: 2.w,
                         ),
                       )
                     else

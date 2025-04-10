@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -74,9 +75,8 @@ class PinnedPublication extends StatelessWidget {
                       SizedBox(
                         height: 14.h,
                         width: 14.h,
-                        child: CircularProgressIndicator(
+                        child: CupertinoActivityIndicator(
                           color: theme?.colorScheme.headingTypography,
-                          strokeWidth: 2.0,
                         ),
                       ).paddingOnly(left: SpacingFoundation.horizontalSpacing4)
                   ],
