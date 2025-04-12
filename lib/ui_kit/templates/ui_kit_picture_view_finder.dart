@@ -191,6 +191,8 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
 
   bool imageLoadingError = false;
 
+  late final int widthDifference;
+
   @override
   void initState() {
     super.initState();
@@ -293,6 +295,8 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
         }
       }
 
+      widthDifference = fittedImageSize.width >= 0.9.sw && !kIsWeb ? (1.sw <= 380 ? 16 : 8) : 0;
+
       dev.log('Initialization finished');
       dev.log('image original orientation: ${isHorizontalPicture ? 'horizontal' : 'vertical'}');
       dev.log(
@@ -332,7 +336,7 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
           AnimatedBuilder(
             animation: _positionAndSize,
             builder: (context, child) {
-              final viewFinderWidth = _positionAndSize.value.size.width;
+              final viewFinderWidth = _positionAndSize.value.size.width - widthDifference;
               final viewFinderHeight = _positionAndSize.value.size.height;
               final viewFinderX = _positionAndSize.value.position.dx;
               final viewFinderY = _positionAndSize.value.position.dy;
@@ -365,7 +369,7 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
                   Rect.fromLTWH(
                     _positionAndSize.value.position.dx,
                     _positionAndSize.value.position.dy,
-                    _positionAndSize.value.size.width,
+                    _positionAndSize.value.size.width - widthDifference,
                     _positionAndSize.value.size.height,
                   ),
                   16,
@@ -379,20 +383,13 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
           AnimatedBuilder(
             animation: _positionAndSize,
             builder: (context, child) {
-              final viewFinderWidth = _positionAndSize.value.size.width;
-              final viewFinderHeight = _positionAndSize.value.size.height;
-              final viewFinderX = _positionAndSize.value.position.dx;
-              final viewFinderY = _positionAndSize.value.position.dy;
-
               return ClipPath(
                 clipper: CropOuterAreaClipper(
-                  Rect.fromCenter(
-                    center: Offset(
-                      viewFinderX + viewFinderWidth / 2,
-                      viewFinderY + viewFinderHeight / 2,
-                    ),
-                    width: viewFinderWidth,
-                    height: viewFinderHeight,
+                  Rect.fromLTWH(
+                    _positionAndSize.value.position.dx,
+                    _positionAndSize.value.position.dy,
+                    _positionAndSize.value.size.width - widthDifference,
+                    _positionAndSize.value.size.height,
                   ),
                   16,
                 ),
@@ -407,10 +404,8 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
           AnimatedBuilder(
             animation: _positionAndSize,
             builder: (context, child) {
-              final safeRight = fittedImageSize.width -
-                  _positionAndSize.value.position.dx -
-                  _positionAndSize.value.size.width -
-                  (fittedImageSize.width >= 0.9.sw && !kIsWeb ? (1.sw <= 380 ? 16 : 8) : 0);
+              final safeRight =
+                  fittedImageSize.width - _positionAndSize.value.position.dx - _positionAndSize.value.size.width;
 
               final safeBottom =
                   fittedImageSize.height - _positionAndSize.value.position.dy - _positionAndSize.value.size.height;
@@ -463,7 +458,7 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
               animation: _positionAndSize,
               builder: (context, child) => Container(
                 clipBehavior: Clip.hardEdge,
-                width: _positionAndSize.value.size.width,
+                width: _positionAndSize.value.size.width - widthDifference,
                 height: _positionAndSize.value.size.height,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadiusFoundation.all16,
@@ -477,7 +472,7 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
                     alignment: Alignment.topRight,
                     child: GestureDetector(
                       onPanUpdate: (details) {
-                        final viewFinderWidth = _positionAndSize.value.size.width;
+                        final viewFinderWidth = _positionAndSize.value.size.width - widthDifference;
                         final width = viewFinderWidth + details.delta.dx;
                         final height = _setupViewFinderHeight(width);
 
@@ -511,8 +506,8 @@ class _UiKitPictureViewFinderState extends State<UiKitPictureViewFinder> {
                         );
                       },
                       child: Container(
-                        width: 32,
-                        height: 32,
+                        width: 64,
+                        height: 64,
                         decoration: const BoxDecoration(color: Colors.transparent),
                       ),
                     ),
