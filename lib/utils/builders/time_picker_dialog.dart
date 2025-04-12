@@ -77,19 +77,21 @@ class SelectTimeFromRangeState extends State<SelectTimeFromRange> {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text(
+            Flexible(
+                child: AutoSizeText(
               formatDateWithCustomPattern('dd.MM.yyyy', widget.selectedDate ?? DateTime.now()),
               style: theme?.regularTextTheme.caption2.copyWith(color: ColorsFoundation.mutedText),
-            ),
+            )),
           ],
         ).paddingSymmetric(horizontal: horizontalSpacing),
         SpacingFoundation.verticalSpace8,
         Row(
           children: [
-            Text(
+            Flexible(
+                child: AutoSizeText(
               S.of(context).Time,
               style: theme?.regularTextTheme.body,
-            ),
+            )),
           ],
         ).paddingSymmetric(horizontal: horizontalSpacing),
         SpacingFoundation.verticalSpace12,

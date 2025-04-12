@@ -26,11 +26,11 @@ class UiKitTitledDescriptionGridWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(
-            title,
-            style: textTheme?.caption1Medium.copyWith(
-              color: ColorsFoundation.darkNeutral900,
-            ),
+          Flexible(
+            child: AutoSizeText(title,
+                style: textTheme?.caption1Medium.copyWith(
+                  color: ColorsFoundation.darkNeutral900,
+                )),
           ),
           SpacingFoundation.verticalSpace4,
           Flexible(
