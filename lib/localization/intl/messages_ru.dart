@@ -258,7 +258,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m90(type) => "Выбрать ${type}";
 
-  static String m91(x) => "Настрой Освежитель за \$${x}";
+  static String m91(x) => "Настрой Рефрешер за \$${x}";
 
   static String m92(count) =>
       "Поделиться ${count} ${Intl.plural(count, zero: 'карточек', one: 'карточкой', two: 'карточками', few: 'карточками', many: 'карточками', other: 'карточками')}";
@@ -590,7 +590,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Не удается найти эту рекламную акцию",
     ),
     "CannotFindThisRefresher": MessageLookupByLibrary.simpleMessage(
-      "Не удается найти этот освежитель",
+      "Не удается найти этот рефрешер",
     ),
     "CannotFindThisVoice": MessageLookupByLibrary.simpleMessage(
       "Не удаётся найти это аудио",
@@ -1708,9 +1708,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "Received": MessageLookupByLibrary.simpleMessage("Получено"),
     "RecentlyAdded": MessageLookupByLibrary.simpleMessage("Недавно добавлено"),
     "Recommended": MessageLookupByLibrary.simpleMessage("Рекомендуем"),
-    "Refresher": MessageLookupByLibrary.simpleMessage("Освежитель"),
+    "Refresher": MessageLookupByLibrary.simpleMessage("Рефрешер"),
     "RefresherCannotBeEmpty": MessageLookupByLibrary.simpleMessage(
-      "Освежитель не может быть пустым",
+      "Рефрешер не может быть пустым",
     ),
     "Refund": MessageLookupByLibrary.simpleMessage("возврат"),
     "RefundEveryone": MessageLookupByLibrary.simpleMessage("Вернуть всем"),
@@ -1736,7 +1736,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Reminder": MessageLookupByLibrary.simpleMessage("Напоминание"),
     "ReminderWithThisDateHasAlreadyCreated":
         MessageLookupByLibrary.simpleMessage(
-          "Ремайндер с этой датой уже создан, пожалуйста выберите другую дату",
+          "Ремайндер с этой датой уже создан, выбери другую дату",
         ),
     "Reminders": MessageLookupByLibrary.simpleMessage("Напоминания"),
     "Remove": MessageLookupByLibrary.simpleMessage("Удалить"),
@@ -1934,7 +1934,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "SetUpARefresherForX": m91,
     "SetUpNewRefresher": MessageLookupByLibrary.simpleMessage(
-      "Установить новый Освежитель",
+      "Установить новый Рефрешер",
     ),
     "SetWorkHours": MessageLookupByLibrary.simpleMessage("Часы работы"),
     "SettingUpAlarmClocks": MessageLookupByLibrary.simpleMessage(
@@ -1963,7 +1963,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Покажи штрих-код на контроле",
     ),
     "ShowTime": MessageLookupByLibrary.simpleMessage("Тип показа"),
-    "ShowUp": MessageLookupByLibrary.simpleMessage("Явки"),
+    "ShowUp": MessageLookupByLibrary.simpleMessage("Show up"),
     "ShowUpRatio": MessageLookupByLibrary.simpleMessage("Show up ratio"),
     "ShowXInProfile": m93,
     "ShraziidGoblet": MessageLookupByLibrary.simpleMessage("Кубок Шразиида"),

@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -24,19 +25,18 @@ Future<DateTimeRange?> showDateRangePickerDialog(BuildContext context,
             borderRadius: BorderRadiusFoundation.all24,
           ),
           child: Container(
-            constraints: kIsWeb
-                ? BoxConstraints.loose(Size(300, 0.75.sh))
-                : null,
+            constraints: kIsWeb ? BoxConstraints.loose(Size(300, 0.75.sh)) : null,
             child: StatefulBuilder(
               builder: (context, setState) => Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   SpacingFoundation.verticalSpace8,
-                  Text(
+                  Flexible(
+                      child: AutoSizeText(
                     title ?? S.of(context).SelectDateRange,
                     style: textTheme?.title2,
-                  ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16),
+                  ).paddingSymmetric(horizontal: EdgeInsetsFoundation.horizontal16)),
                   SpacingFoundation.verticalSpace8,
                   _CalendarDateRangePicker(
                     initialStartDate: initialDateRange?.start,

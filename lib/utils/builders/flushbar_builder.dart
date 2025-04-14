@@ -1,4 +1,5 @@
 import 'package:another_flushbar/flushbar.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -29,10 +30,11 @@ Flushbar showNoNetworkFlushbar(BuildContext context) {
           ),
         ),
         SpacingFoundation.horizontalSpace8,
-        Text(
+        Flexible(
+            child: AutoSizeText(
           S.current.NoConnection,
           style: theme?.regularTextTheme.caption4Regular ?? const TextStyle(color: Colors.white, fontSize: 9),
-        )
+        ))
       ],
     ),
   );

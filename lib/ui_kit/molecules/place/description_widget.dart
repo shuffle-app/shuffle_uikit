@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
@@ -9,6 +10,7 @@ class DescriptionWidget extends StatelessWidget {
   final VoidCallback? onReadMore;
   final VoidCallback? onReadLess;
   final VoidCallback? onTranslateTap;
+  final bool isLoading;
 
   const DescriptionWidget({
     super.key,
@@ -19,6 +21,7 @@ class DescriptionWidget extends StatelessWidget {
     required this.isTranslate,
     this.onTranslateTap,
     this.showTranslateButton,
+    this.isLoading = false,
   });
 
   @override
@@ -72,19 +75,33 @@ class DescriptionWidget extends StatelessWidget {
                   ),
                 const Spacer(),
                 if (showTranslateButton != null)
-                  ListenableBuilder(
-                    listenable: showTranslateButton!,
-                    builder: (context, child) => InkWell(
-                      onTap: onTranslateTap,
-                      child: showTranslateButton!.value
-                          ? Text(
+                  ValueListenableBuilder(
+                    valueListenable: showTranslateButton!,
+                    builder: (_, value, __) {
+                      if (value) {
+                        if (!isLoading) {
+                          return InkWell(
+                            onTap: onTranslateTap,
+                            child: Text(
                               isTranslate ? S.of(context).Original : S.of(context).Translate,
                               style: context.uiKitTheme?.regularTextTheme.caption4Regular.copyWith(
-                                  color:
-                                      isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300),
-                            )
-                          : const SizedBox.shrink(),
-                    ),
+                                color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
+                              ),
+                            ),
+                          );
+                        } else {
+                          return SizedBox(
+                            width: 14.w,
+                            height: 14.w,
+                            child: CupertinoActivityIndicator(
+                              color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
+                            ),
+                          );
+                        }
+                      } else {
+                        return SizedBox.shrink();
+                      }
+                    },
                   ),
               ],
             ),

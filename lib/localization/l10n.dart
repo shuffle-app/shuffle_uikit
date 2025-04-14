@@ -10071,10 +10071,10 @@ class S {
     );
   }
 
-  /// `A reminder with this date has already been created, please select a different date`
+  /// `A reminder with this date has already been created, plz select a different date`
   String get ReminderWithThisDateHasAlreadyCreated {
     return Intl.message(
-      'A reminder with this date has already been created, please select a different date',
+      'A reminder with this date has already been created, plz select a different date',
       name: 'ReminderWithThisDateHasAlreadyCreated',
       desc: '',
       args: [],

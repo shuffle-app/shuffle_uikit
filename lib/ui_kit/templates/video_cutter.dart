@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:ffmpeg_kit_flutter_min/ffmpeg_kit.dart';
+import 'package:ffmpeg_kit_flutter/ffmpeg_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 import 'package:video_editor/video_editor.dart';
@@ -188,10 +188,9 @@ class _VideoCutterState extends State<VideoCutter> {
                     fit: StackFit.expand,
                     alignment: Alignment.center,
                     children: [
-                       AspectRatio(
-                          aspectRatio: _videoEditorController!.video.value.aspectRatio,
-                          child: VideoPlayer(_videoEditorController!.video),
-
+                      AspectRatio(
+                        aspectRatio: _videoEditorController!.video.value.aspectRatio,
+                        child: VideoPlayer(_videoEditorController!.video),
                       ),
                       Positioned(
                         top: 0,
@@ -297,7 +296,7 @@ class _VideoCutterState extends State<VideoCutter> {
             ),
           ),
         ],
-      ).paddingAll(EdgeInsetsFoundation.all16),
+      ),
     );
   }
 }

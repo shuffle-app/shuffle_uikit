@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
-class UiKitFeedbackCard extends StatelessWidget {
+class UiKitFeedbackCard extends StatefulWidget {
   final String? title;
   final String? avatarUrl;
   final DateTime? datePosted;
@@ -22,13 +23,10 @@ class UiKitFeedbackCard extends StatelessWidget {
   final bool canEdit;
   final VoidCallback? onAvatarTap;
 
-  final ValueNotifier<bool>? showTranslateButton;
-  final ValueNotifier<String>? translateText;
+  final bool showTranslateButton;
+  final AsyncValueGetter<String?>? onTranslateTap;
 
-  late final ValueNotifier<bool> isTranslate;
-  late final ValueNotifier<String> description;
-
-  UiKitFeedbackCard({
+  const UiKitFeedbackCard({
     super.key,
     this.title,
     this.isHelpful,
@@ -48,11 +46,45 @@ class UiKitFeedbackCard extends StatelessWidget {
     this.onEdit,
     this.canEdit = false,
     this.onAvatarTap,
-    this.showTranslateButton,
-    this.translateText,
-  }) {
-    description = ValueNotifier<String>(text ?? '');
-    isTranslate = ValueNotifier<bool>(false);
+    this.showTranslateButton = false,
+    this.onTranslateTap,
+  });
+
+  @override
+  State<UiKitFeedbackCard> createState() => _UiKitFeedbackCardState();
+}
+
+class _UiKitFeedbackCardState extends State<UiKitFeedbackCard> {
+  final int microseconds = DateTime.now().millisecondsSinceEpoch;
+  late String description = widget.text ?? '';
+  String? translateText;
+  bool isTranslateLoading = false;
+  bool isTranslate = false;
+
+  Future<void> toggleTranslation() async {
+    isTranslateLoading = true;
+    setState(() {});
+
+    if (isTranslate) {
+      description = widget.text ?? '';
+      isTranslate = !isTranslate;
+    } else {
+      if (translateText != null && translateText!.isNotEmpty) {
+        description = translateText!;
+        isTranslate = !isTranslate;
+      } else {
+        final translateDescription = await widget.onTranslateTap?.call();
+
+        if (translateDescription != null && translateDescription.isNotEmpty) {
+          translateText = translateDescription;
+          description = translateText!;
+          isTranslate = !isTranslate;
+        }
+      }
+    }
+
+    isTranslateLoading = false;
+    setState(() {});
   }
 
   @override
@@ -60,22 +92,14 @@ class UiKitFeedbackCard extends StatelessWidget {
     final theme = context.uiKitTheme;
     final boldTextTheme = theme?.boldTextTheme;
     final colorScheme = theme?.colorScheme;
-
-    final int microseconds = DateTime
-        .now()
-        .millisecondsSinceEpoch;
-
-    void toggleTranslation() {
-      isTranslate.value = !isTranslate.value;
-      description.value = isTranslate.value ? (translateText?.value ?? text ?? '') : text ?? '';
-    }
+    final bool isLightTheme = theme?.themeMode == ThemeMode.light;
 
     return Material(
-      color: customBackgroundColor ?? colorScheme?.surface3,
+      color: widget.customBackgroundColor ?? colorScheme?.surface3,
       borderRadius: BorderRadiusFoundation.all24,
       clipBehavior: Clip.hardEdge,
       child: InkWell(
-        onTap: onPressed,
+        onTap: widget.onPressed,
         child: LayoutBuilder(
           builder: (context, size) {
             final shufflePostVideoWidgetWidth = kIsWeb ? 50.0 : 0.16845 * size.maxWidth;
@@ -93,7 +117,7 @@ class UiKitFeedbackCard extends StatelessWidget {
               double buttonButtonHeight = 32.w;
 
               double usedHeight = titleHeight + textPaddingVertical + buttonButtonHeight;
-              if (media.isNotEmpty) {
+              if (widget.media.isNotEmpty) {
                 usedHeight += shufflePostVideoWidgetHeight;
               }
 
@@ -110,8 +134,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                 text: TextSpan(text: text, style: style),
                 maxLines: 100,
                 textDirection: TextDirection.ltr,
-              )
-                ..layout(maxWidth: maxWidth);
+              )..layout(maxWidth: maxWidth);
 
               final lineHeight = textPainter.preferredLineHeight;
               if (lineHeight <= 0) return 3;
@@ -121,7 +144,7 @@ class UiKitFeedbackCard extends StatelessWidget {
                 return 100;
               }
 
-              final hasMedia = media.isNotEmpty;
+              final hasMedia = widget.media.isNotEmpty;
               final calculatedLines = (maxHeight / lineHeight).floor();
 
               return calculatedLines.clamp(
@@ -137,62 +160,58 @@ class UiKitFeedbackCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   GestureDetector(
-                    onTap: onAvatarTap,
+                    onTap: widget.onAvatarTap,
                     child: UiKitHeaderWithLeading(
-                      title: title ?? '',
+                      title: widget.title ?? '',
                       leading: SizedBox(
-                        width: avatarSize?.width,
-                        height: avatarSize?.height,
+                        width: widget.avatarSize?.width,
+                        height: widget.avatarSize?.height,
                         child: context.userAvatar(
                           size: UserAvatarSize.x40x40,
-                          type: userTileType ?? UserTileType.ordinary,
-                          userName: title ?? '',
-                          imageUrl: avatarUrl,
+                          type: widget.userTileType ?? UserTileType.ordinary,
+                          userName: widget.title ?? '',
+                          imageUrl: widget.avatarUrl,
                         ),
                       ),
-                      subtitle: datePosted?.timeAgo ?? '',
-                      trailing: rating != null ? UiKitRatingBadge(rating: rating!) : null,
+                      subtitle: widget.datePosted?.timeAgo ?? '',
+                      trailing: widget.rating != null ? UiKitRatingBadge(rating: widget.rating!) : null,
                     ),
                   ),
                   SpacingFoundation.verticalSpace12,
-                  if (description.value.isNotEmpty)
+                  if (widget.text != null && widget.text!.isNotEmpty)
                     LayoutBuilder(
                       builder: (context, textConstraints) {
                         int? calculatedMaxLines;
 
-                        if (maxLines == null) {
+                        if (widget.maxLines == null) {
                           final maxTextHeight = calculateMaxTextHeight(
                             totalHeight: size.maxHeight,
                             context: context,
                           );
 
                           calculatedMaxLines = calculateMaxLines(
-                            text: text ?? '',
+                            text: widget.text ?? '',
                             style: boldTextTheme?.caption1Medium ?? TextStyle(fontSize: 13.w),
                             maxWidth: textConstraints.maxWidth,
                             maxHeight: maxTextHeight,
                           );
                         }
 
-                        return ValueListenableBuilder<String>(
-                          valueListenable: description,
-                          builder: (_, text, __) =>
-                              Text(
-                                text.trim(),
-                                style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
-                                maxLines: maxLines ?? calculatedMaxLines,
-                              ),
+                        return Text(
+                          description.trim(),
+                          style: boldTextTheme?.caption1Medium.copyWith(overflow: TextOverflow.ellipsis),
+                          maxLines: widget.maxLines ?? calculatedMaxLines,
                         );
                       },
                     ),
                   SpacingFoundation.verticalSpace8,
-                  if (media.isNotEmpty) ...[
+                  if (widget.media.isNotEmpty) ...[
                     SizedBox(
                       height: shufflePostVideoWidgetHeight,
                       child: ListView.separated(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) {
-                          final item = media[index];
+                          final item = widget.media[index];
                           if (item.type == UiKitMediaType.video) {
                             return UiKitMediaVideoWidget(
                               width: shufflePostVideoWidgetWidth,
@@ -204,8 +223,10 @@ class UiKitFeedbackCard extends StatelessWidget {
                             final String heroTag = '${item.link}--${microseconds}';
                             return GestureDetector(
                                 onTap: () {
-                                  final listLinks =
-                                  media.where((e) => e.type == UiKitMediaType.image).map((e) => e.link).toList();
+                                  final listLinks = widget.media
+                                      .where((e) => e.type == UiKitMediaType.image)
+                                      .map((e) => e.link)
+                                      .toList();
                                   context.push(
                                       PhotoDialog(
                                         images: listLinks,
@@ -227,26 +248,18 @@ class UiKitFeedbackCard extends StatelessWidget {
                           }
                         },
                         separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace4,
-                        itemCount: media.length,
+                        itemCount: widget.media.length,
                         shrinkWrap: true,
                       ),
                     ),
                     SpacingFoundation.verticalSpace4
                   ],
-                  // if (showTranslateButton != null)
-                  //   Row(
-                  //     mainAxisSize: MainAxisSize.max,
-                  //     mainAxisAlignment: MainAxisAlignment.end,
-                  //     children: [
-                  //
-                  //     ],
-                  //   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      if (canEdit)
+                      if (widget.canEdit)
                         GestureDetector(
-                          onTap: onEdit,
+                          onTap: widget.onEdit,
                           child: ImageWidget(
                             link: GraphicsFoundation.instance.svg.pencil.path,
                             width: 14.w,
@@ -254,63 +267,56 @@ class UiKitFeedbackCard extends StatelessWidget {
                             fit: BoxFit.contain,
                           ),
                         ).paddingOnly(right: SpacingFoundation.horizontalSpacing16),
-                      if (companyAnswered ?? false)
+                      if (widget.companyAnswered ?? false)
                         Text(
-                          S
-                              .of(context)
-                              .CompanyAnswered,
+                          S.of(context).CompanyAnswered,
                           style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                         ).paddingOnly(right: SpacingFoundation.horizontalSpacing16),
-                      if (showTranslateButton != null)
-                        Expanded(
-                            child: ValueListenableBuilder<bool>(
-                              valueListenable: isTranslate,
-                              builder: (_, isTranslating, __) =>
-                                  InkWell(
-                                    onTap: toggleTranslation,
-                                    child: showTranslateButton!.value
-                                        ? Text(isTranslating ? S
-                                        .of(context)
-                                        .Original : S
-                                        .of(context)
-                                        .Translate,
-                                        style: theme?.regularTextTheme.caption4Regular.copyWith(
-                                          color: theme.themeMode == ThemeMode.light
-                                              ? ColorsFoundation.darkNeutral700
-                                              : ColorsFoundation.darkNeutral300,
-                                        ))
-                                    // ).paddingOnly(bottom: SpacingFoundation.verticalSpacing10)
-                                        : const SizedBox.shrink(),
-                                  ),
-                            ))
+                      if (widget.showTranslateButton)
+                        if (!isTranslateLoading)
+                          Expanded(
+                            child: TranslateButton(
+                              isTranslate: isTranslate,
+                              showTranslateButton: widget.showTranslateButton,
+                              toggleTranslation: toggleTranslation,
+                            ),
+                          )
+                        else ...[
+                          SizedBox(
+                            width: 14.w,
+                            height: 14.w,
+                            child: CupertinoActivityIndicator(
+                              color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
+                            ),
+                          ),
+                          const Spacer(),
+                        ]
                       else
                         const Spacer(),
                       InkWell(
                         borderRadius: BorderRadiusFoundation.max,
-                        onTap: onLike,
+                        onTap: widget.onLike,
                         child: ImageWidget(
                           iconData: ShuffleUiKitIcons.like,
                           width: 12.w,
-                          color: (isHelpful ?? false) ? colorScheme?.inverseSurface : ColorsFoundation.mutedText,
+                          color: (widget.isHelpful ?? false) ? colorScheme?.inverseSurface : ColorsFoundation.mutedText,
                         ),
                       ),
-                      if (helpfulCount != null) SpacingFoundation.horizontalSpace2,
-                      if (helpfulCount != null)
+                      if (widget.helpfulCount != null) SpacingFoundation.horizontalSpace2,
+                      if (widget.helpfulCount != null)
                         InkWell(
                             borderRadius: BorderRadiusFoundation.max,
-                            onTap: onLike,
+                            onTap: widget.onLike,
                             child: Text(
-                              helpfulCount?.toString() ?? '',
+                              widget.helpfulCount?.toString() ?? '',
                               style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                             )),
                       SpacingFoundation.horizontalSpace8,
                       InkWell(
                         borderRadius: BorderRadiusFoundation.max,
-                        onTap: onLike,
+                        onTap: widget.onLike,
                         child: Text(
-                          S
-                              .of(context)
-                              .Helpful,
+                          S.of(context).Helpful,
                           style: boldTextTheme?.caption2Medium.copyWith(color: ColorsFoundation.darkNeutral900),
                         ),
                       ),
@@ -322,6 +328,37 @@ class UiKitFeedbackCard extends StatelessWidget {
           },
         ),
       ),
+    );
+  }
+}
+
+class TranslateButton extends StatelessWidget {
+  final VoidCallback? toggleTranslation;
+  final bool showTranslateButton;
+  final bool isTranslate;
+
+  const TranslateButton({
+    super.key,
+    this.toggleTranslation,
+    this.showTranslateButton = false,
+    this.isTranslate = false,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = context.uiKitTheme;
+    final bool isLightTheme = theme?.themeMode == ThemeMode.light;
+
+    return GestureDetector(
+      onTap: toggleTranslation,
+      child: showTranslateButton
+          ? Text(
+              isTranslate ? S.of(context).Original : S.of(context).Translate,
+              style: theme?.regularTextTheme.caption4Regular.copyWith(
+                color: isLightTheme ? ColorsFoundation.darkNeutral700 : ColorsFoundation.darkNeutral300,
+              ),
+            ).paddingOnly(right: SpacingFoundation.horizontalSpacing8)
+          : const SizedBox.shrink(),
     );
   }
 }

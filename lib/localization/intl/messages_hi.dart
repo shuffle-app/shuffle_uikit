@@ -565,10 +565,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "ByEmail": MessageLookupByLibrary.simpleMessage("ईमेल द्वारा"),
     "ByMessage": MessageLookupByLibrary.simpleMessage("संदेश द्वारा"),
     "CPCHintDescription": MessageLookupByLibrary.simpleMessage(
-      "Total Cost of Clicks /\nTotal Number of Clicks",
+      "क्लिक की कुल लागत /\nक्लिकों की कुल संख्या",
     ),
     "CPCHintTitle": MessageLookupByLibrary.simpleMessage(
-      "Average cost per click",
+      "प्रति क्लिक औसत लागत",
     ),
     "CalmAtmosphere": MessageLookupByLibrary.simpleMessage("शांत वातावरण"),
     "Cancel": MessageLookupByLibrary.simpleMessage("रद्द करें"),
@@ -613,7 +613,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Chat": MessageLookupByLibrary.simpleMessage("चैट"),
     "ChatDeletionAndCreationMessage": m10,
     "ChatName": MessageLookupByLibrary.simpleMessage("Chat name"),
-    "Chats": MessageLookupByLibrary.simpleMessage("Chats"),
+    "Chats": MessageLookupByLibrary.simpleMessage("चैट"),
     "CheckIn": MessageLookupByLibrary.simpleMessage("चेक इन करें"),
     "CheckInHiwHint": m11,
     "CheckInHiwSubtitle": MessageLookupByLibrary.simpleMessage(
@@ -636,7 +636,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Clicks on the card within a promotion",
     ),
     "Close": MessageLookupByLibrary.simpleMessage("Close"),
-    "Closed": MessageLookupByLibrary.simpleMessage("Closed"),
+    "Closed": MessageLookupByLibrary.simpleMessage("बंद किया हुआ"),
     "CodeScanner": MessageLookupByLibrary.simpleMessage("Code scanner"),
     "CollapseThread": MessageLookupByLibrary.simpleMessage("धागा संकुचित करें"),
     "Comments": m13,
@@ -841,7 +841,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "DownloadPdf": MessageLookupByLibrary.simpleMessage("PDF डाउनलोड करें"),
     "Drafts": MessageLookupByLibrary.simpleMessage("Drafts"),
     "DubaiEventTicket": MessageLookupByLibrary.simpleMessage("दुबई घटना टिकट"),
-    "DuringWeek": MessageLookupByLibrary.simpleMessage("During week"),
+    "DuringWeek": MessageLookupByLibrary.simpleMessage("सप्ताह के दौरान"),
     "Easy": MessageLookupByLibrary.simpleMessage("आसान"),
     "Edit": MessageLookupByLibrary.simpleMessage("संपादित करें"),
     "EditProfile": MessageLookupByLibrary.simpleMessage(
@@ -1705,7 +1705,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Read": m83,
     "RealMoney": MessageLookupByLibrary.simpleMessage("असली पैसे"),
-    "Received": MessageLookupByLibrary.simpleMessage("Received"),
+    "Received": MessageLookupByLibrary.simpleMessage("प्राप्त"),
     "RecentlyAdded": MessageLookupByLibrary.simpleMessage(
       "हाल ही में जोड़ा गया",
     ),
@@ -1740,7 +1740,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "Reminder": MessageLookupByLibrary.simpleMessage("याद दिलाने वाला"),
     "ReminderWithThisDateHasAlreadyCreated": MessageLookupByLibrary.simpleMessage(
-      "A reminder with this date has already been created, please select a different date",
+      "इस तिथि वाला एक रिमाइंडर पहले ही बनाया जा चुका है, कृपया कोई दूसरी तिथि चुनें",
     ),
     "Reminders": MessageLookupByLibrary.simpleMessage("याद दिलाने वाला"),
     "Remove": MessageLookupByLibrary.simpleMessage("हटाएं"),
@@ -1996,7 +1996,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SocialSubtitle": MessageLookupByLibrary.simpleMessage(
       "उपयोगी सेवाएँ और स्थान",
     ),
-    "SoldOut": MessageLookupByLibrary.simpleMessage("Sold out"),
+    "SoldOut": MessageLookupByLibrary.simpleMessage("बिक गया"),
     "SomethingWentWrong": MessageLookupByLibrary.simpleMessage(
       "कुछ गलत हो गया",
     ),
@@ -2210,7 +2210,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ToUnlock": MessageLookupByLibrary.simpleMessage("अनलॉक करने के लिए"),
     "Today": MessageLookupByLibrary.simpleMessage("आज"),
     "TodaysSummaryX": m103,
-    "Tomorrow": MessageLookupByLibrary.simpleMessage("Tomorrow"),
+    "Tomorrow": MessageLookupByLibrary.simpleMessage("कल"),
     "Top": MessageLookupByLibrary.simpleMessage("शीर्ष"),
     "TopEventsFor": m104,
     "TopNDonatorsReceiveXPoints": m105,
@@ -2328,7 +2328,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ViewHistory": MessageLookupByLibrary.simpleMessage("इतिहास देखें"),
     "ViewSources": MessageLookupByLibrary.simpleMessage("स्रोत देखें"),
     "Views": MessageLookupByLibrary.simpleMessage("दृश्य"),
-    "VirtualCard": MessageLookupByLibrary.simpleMessage("Card"),
+    "VirtualCard": MessageLookupByLibrary.simpleMessage("कार्ड"),
     "VisitFirstToOpenNext": MessageLookupByLibrary.simpleMessage(
       "अगला खोलने के लिए पहले जाएँ",
     ),

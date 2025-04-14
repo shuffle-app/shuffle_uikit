@@ -21,10 +21,7 @@ class AppBarTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.uiKitTheme;
-    TextStyle? textStyle = theme?.boldTextTheme.title1 ?? Theme
-        .of(context)
-        .primaryTextTheme
-        .titleMedium;
+    TextStyle? textStyle = theme?.boldTextTheme.title1 ?? Theme.of(context).primaryTextTheme.titleMedium;
     textStyle = textStyle?.copyWith(color: theme?.colorScheme.inversePrimary);
 
     return Expanded(
@@ -33,41 +30,30 @@ class AppBarTitle extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           if (onIWidgetInfoString != null) 14.w.widthBox,
-          if (expanded == false)
-            Flexible(
-                child: AutoSizeText(
-                  title,
-                  style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
-                  textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
-                  maxLines: 1,
-                ))
-          else
-            Flexible(
-              child: Text(
-                title,
-                style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
-                textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
-                maxLines: 2,
-              ),
-            ),
+          Flexible(
+              child: AutoSizeText(
+            title,
+            style: textStyle?.copyWith(overflow: TextOverflow.ellipsis),
+            textAlign: centerTitle ?? Platform.isIOS ? TextAlign.center : TextAlign.left,
+            maxLines: expanded == false ? 1 : 2,
+          )),
           if (onIWidgetInfoString != null) ...[
             SpacingFoundation.horizontalSpace4,
             Builder(
               builder: (context) {
                 return GestureDetector(
-                  onTap: () =>
-                      showUiKitPopover(
-                        context,
-                        customMinHeight: 30.h,
-                        showButton: false,
-                        title: Text(
-                          onIWidgetInfoString!,
-                          style: theme?.regularTextTheme.body.copyWith(
-                            color: Colors.black87,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
+                  onTap: () => showUiKitPopover(
+                    context,
+                    customMinHeight: 30.h,
+                    showButton: false,
+                    title: Text(
+                      onIWidgetInfoString!,
+                      style: theme?.regularTextTheme.body.copyWith(
+                        color: Colors.black87,
                       ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                   child: ImageWidget(
                     iconData: ShuffleUiKitIcons.info,
                     width: 16.w,

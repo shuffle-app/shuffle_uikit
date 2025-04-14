@@ -1,16 +1,22 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'dart:async';
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:huawei_map/huawei_map.dart' as hms;
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
+const _apiKey = String.fromEnvironment('googleApiKey');
+const _huaweiApiKey = String.fromEnvironment('huaweiApiKey');
+
 class MapDirectionsPage extends StatefulWidget {
   final ValueNotifier<LatLng> currentLocationNotifier;
-  final Future Function()? onCurrentLocationRequested;
+  final AsyncCallback? onCurrentLocationRequested;
   final TextEditingController searchController;
   final String destinationTitle;
   final VoidCallback? onDirectionsRequested;
@@ -39,7 +45,6 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
   hms.HuaweiMapController? huaweiController;
   BitmapDescriptor markerIcon = BitmapDescriptor.defaultMarker;
   Marker? marker;
-  final apiKey = const String.fromEnvironment('googleApiKey');
   List<Polyline> directionLines = [];
   late final FocusNode _focusNode = FocusNode()
     ..addListener(() {
@@ -53,23 +58,32 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
 
   @override
   void initState() {
+    marker = Marker(
+      markerId: const MarkerId('destination'),
+      position: LatLng(widget.destination.latitude, widget.destination.longitude),
+      icon: markerIcon,
+    );
     super.initState();
     if (widget.isHuawei) {
-      hms.HuaweiMapInitializer.initializeMap();
+      try {
+        hms.HuaweiMapInitializer.initializeMap();
+      } catch (e) {
+        hms.HuaweiMapInitializer.setApiKey(apiKey: _huaweiApiKey);
+      }
     }
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      // if (widget.isHuawei) {
+      //   await huaweiController?.animateCamera(
+      //       hms.CameraUpdate.newLatLng(hms.LatLng(widget.destination.latitude, widget.destination.longitude)));
+      // } else {
+      //   await controller?.animateCamera(CameraUpdate.newLatLng(widget.destination));
+      // }
       Future.delayed(
         const Duration(milliseconds: 500),
         () async {
           try {
             await widget.onCurrentLocationRequested?.call();
           } catch (e) {
-            if (widget.isHuawei) {
-              await huaweiController?.animateCamera(
-                  hms.CameraUpdate.newLatLng(hms.LatLng(widget.destination.latitude, widget.destination.longitude)));
-            } else {
-              await controller?.animateCamera(CameraUpdate.newLatLng(widget.destination));
-            }
             setState(() {
               loading = false;
             });
@@ -86,14 +100,16 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
       final points = PolylinePoints();
       debugPrint(
           'getRouteBetweenCoordinates from ${widget.currentLocationNotifier.value.latitude} ${widget.currentLocationNotifier.value.longitude} toooo ${widget.destination.latitude} ${widget.destination.longitude}');
-      final result = await points.getRouteBetweenCoordinates(
-          googleApiKey: apiKey,
-          request: PolylineRequest(
-            origin: PointLatLng(
-                widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
-            destination: PointLatLng(widget.destination.latitude, widget.destination.longitude),
-            mode: TravelMode.driving,
-          ));
+      final result = await points
+          .getRouteBetweenCoordinates(
+              googleApiKey: _apiKey,
+              request: PolylineRequest(
+                origin: PointLatLng(
+                    widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
+                destination: PointLatLng(widget.destination.latitude, widget.destination.longitude),
+                mode: TravelMode.driving,
+              ))
+          .timeout(const Duration(seconds: 5));
       if (widget.isHuawei) {
         await huaweiController?.animateCamera(hms.CameraUpdate.newLatLngBounds(
           hms.LatLngBounds(
@@ -139,11 +155,6 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
             visible: true,
           ),
         ];
-        marker = Marker(
-          markerId: const MarkerId('destination'),
-          position: LatLng(result.points.last.latitude, result.points.last.longitude),
-          icon: markerIcon,
-        );
       });
     } catch (e) {
       SnackBarUtils.show(message: 'Directions unavailable', context: context, type: AppSnackBarType.error);
@@ -158,6 +169,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
   void dispose() {
     controller?.dispose();
     _focusNode.dispose();
+    focusNotifier.dispose();
     widget.currentLocationNotifier.removeListener(_currentLocationListener);
     super.dispose();
   }
@@ -174,14 +186,14 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
         children: [
           if (widget.isHuawei)
             hms.HuaweiMap(
+              zoomControlsEnabled: false,
               onMapCreated: (mapController) {
                 widget.currentLocationNotifier.addListener(_currentLocationListener);
                 setState(() => huaweiController = mapController);
                 debugPrint('onMapCreated');
               },
               initialCameraPosition: hms.CameraPosition(
-                target: hms.LatLng(
-                    widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude),
+                target: hms.LatLng(widget.destination.latitude, widget.destination.longitude),
                 zoom: 14,
               ),
               markers: {
@@ -210,7 +222,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                 debugPrint('onMapCreated');
               },
               initialCameraPosition: CameraPosition(
-                target: widget.currentLocationNotifier.value,
+                target: widget.destination,
                 zoom: 14,
               ),
               markers: {if (marker != null) marker!},
@@ -241,12 +253,24 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
           ),
           if (loading)
             Positioned(
-              width: 1.sw,
-              height: 1.sh,
-              child: ColoredBox(
-                color: colorScheme?.surface3.withOpacity(0.75) ?? Colors.black54,
-                child: const Center(child: CircularProgressIndicator()),
-              ),
+              top: SpacingFoundation.verticalSpacing16 + MediaQuery.viewPaddingOf(context).top,
+              right: SpacingFoundation.horizontalSpacing16,
+              child: DecoratedBox(
+                  decoration: BoxDecoration(
+                      color: colorScheme?.surface3.withOpacity(0.75) ?? Colors.black54,
+                      borderRadius: BorderRadiusFoundation.all16),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const CupertinoActivityIndicator(),
+                      SpacingFoundation.horizontalSpace4,
+                      Text(
+                        '${S.current.Loading} ${S.current.Routes}',
+                        style: theme?.regularTextTheme.body.copyWith(color: Colors.white),
+                      )
+                    ],
+                  ).paddingSymmetric(
+                      horizontal: SpacingFoundation.horizontalSpacing8, vertical: SpacingFoundation.verticalSpacing6)),
             ),
         ],
       ),
@@ -256,6 +280,12 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
         foregroundColor: Colors.black,
         onPressed: () {
           widget.onCurrentLocationRequested?.call();
+          if (widget.isHuawei) {
+            huaweiController?.animateCamera(hms.CameraUpdate.newLatLng(hms.LatLng(
+                widget.currentLocationNotifier.value.latitude, widget.currentLocationNotifier.value.longitude)));
+          } else {
+            controller?.animateCamera(CameraUpdate.newLatLng(widget.currentLocationNotifier.value));
+          }
         },
         elevation: 0,
         focusElevation: 0,
@@ -273,7 +303,7 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
-        child: Container(
+        child: DecoratedBox(
           decoration: BoxDecoration(
             color: Colors.white,
             boxShadow: [
@@ -330,7 +360,16 @@ class _MapDirectionsPageState extends State<MapDirectionsPage> {
                       ),
                     ),
                   ),
-                  onPressed: widget.onDirectionsRequested,
+                  onPressed: () {
+                    widget.onDirectionsRequested?.call();
+                    if (widget.isHuawei) {
+                      huaweiController?.animateCamera(hms.CameraUpdate.newLatLng(hms.LatLng(
+                          widget.currentLocationNotifier.value.latitude,
+                          widget.currentLocationNotifier.value.longitude)));
+                    } else {
+                      controller?.animateCamera(CameraUpdate.newLatLng(widget.currentLocationNotifier.value));
+                    }
+                  },
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
