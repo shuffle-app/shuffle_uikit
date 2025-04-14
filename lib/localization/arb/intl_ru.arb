@@ -2403,5 +2403,8 @@
   "VirtualCard": "Карта",
   "Leave": "Выйти",
   "SelectPaymentMethod": "Выберите способ оплаты",
-  "PleaseSelectPaymentMethod": "Пожалуйста выберите способ оплаты"
+  "PleaseSelectPaymentMethod": "Пожалуйста выберите способ оплаты",
+  "TicketsCanOnlyBePaidInCashAtTheEntrance": "Билет можно оплатить только наличными при входе",
+  "TheTicketCanOnlyPaidForUsingTheQRCode": "Билет можно оплатить только по QR коду при входе",
+  "TheTicketCanOnlyBePaidAtTheEntranceUsingQRCodeOrInCash": "Билет можно оплатить только на входе по QR коду или наличными"
 }

@@ -2397,5 +2397,8 @@
   "VirtualCard": "Card",
   "Leave": "Leave",
   "SelectPaymentMethod": "Select payment method",
-  "PleaseSelectPaymentMethod": "Please select payment method"
+  "PleaseSelectPaymentMethod": "Please select payment method",
+  "TicketsCanOnlyBePaidInCashAtTheEntrance": "Tickets can only be paid in cash at the entrance",
+  "TheTicketCanOnlyPaidForUsingTheQRCode": "The ticket can only be paid for using the QR code at the entrance",
+  "TheTicketCanOnlyBePaidAtTheEntranceUsingQRCodeOrInCash": "The ticket can only be paid at the entrance using a QR code or in cash"
 }
