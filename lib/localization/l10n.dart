@@ -10160,6 +10160,91 @@ class S {
       args: [],
     );
   }
+
+  /// `Tickets can only be paid in cash at the entrance`
+  String get TicketsCanOnlyBePaidInCashAtTheEntrance {
+    return Intl.message(
+      'Tickets can only be paid in cash at the entrance',
+      name: 'TicketsCanOnlyBePaidInCashAtTheEntrance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The ticket can only be paid for using the QR code at the entrance`
+  String get TheTicketCanOnlyPaidForUsingTheQRCode {
+    return Intl.message(
+      'The ticket can only be paid for using the QR code at the entrance',
+      name: 'TheTicketCanOnlyPaidForUsingTheQRCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The ticket can be paid with an online card`
+  String get TheTicketCanBePaidWithAnOnlineCard {
+    return Intl.message(
+      'The ticket can be paid with an online card',
+      name: 'TheTicketCanBePaidWithAnOnlineCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The ticket can only be paid in crypto`
+  String get TheTicketCanOnlyBePaidInCrypto {
+    return Intl.message(
+      'The ticket can only be paid in crypto',
+      name: 'TheTicketCanOnlyBePaidInCrypto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Free ticket`
+  String get FreeTicket {
+    return Intl.message('Free ticket', name: 'FreeTicket', desc: '', args: []);
+  }
+
+  /// `Only cash payment`
+  String get OnlyCashPayment {
+    return Intl.message(
+      'Only cash payment',
+      name: 'OnlyCashPayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Only QR code payment`
+  String get OnlyQRCodePayment {
+    return Intl.message(
+      'Only QR code payment',
+      name: 'OnlyQRCodePayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment in crypto`
+  String get PaymentInCrypto {
+    return Intl.message(
+      'Payment in crypto',
+      name: 'PaymentInCrypto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Online payment`
+  String get OnlinePayment {
+    return Intl.message(
+      'Online payment',
+      name: 'OnlinePayment',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
