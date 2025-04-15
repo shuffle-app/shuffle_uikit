@@ -1785,6 +1785,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SaturdayShort": MessageLookupByLibrary.simpleMessage("शनिवार"),
     "Save": MessageLookupByLibrary.simpleMessage("सहेजें"),
     "SaveAndPay": MessageLookupByLibrary.simpleMessage("सहेजें और भुगतान करें"),
+    "SaveAudience": MessageLookupByLibrary.simpleMessage("Save audience"),
     "SaveTemplate": MessageLookupByLibrary.simpleMessage("टेम्पलेट सहेजें"),
     "ScanControllerNotReady": MessageLookupByLibrary.simpleMessage(
       "Controller not ready",
@@ -2453,6 +2454,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "YouCanStillRequestRefundYourComplaint":
         MessageLookupByLibrary.simpleMessage(
           "आप अपनी शिकायत पर वापसी का अनुरोध कर सकते हैं",
+        ),
+    "YouCannotCreateMultipleRemindersInOneDay":
+        MessageLookupByLibrary.simpleMessage(
+          "You cannot create multiple reminders in one day. Try again tomorrow",
         ),
     "YouCannotCreateOfferDate": MessageLookupByLibrary.simpleMessage(
       "You cannot create an offer because the event or venue has already been completed",

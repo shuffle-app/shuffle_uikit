@@ -2438,6 +2438,9 @@
   "PaymentInCrypto": "Payment in crypto",
   "@PaymentInCrypto": {},
   "OnlinePayment": "Online payment",
-  "@OnlinePayment": {}
-
+  "@OnlinePayment": {},
+  "YouCannotCreateMultipleRemindersInOneDay": "You cannot create multiple reminders in one day. Try again tomorrow",
+  "@YouCannotCreateMultipleRemindersInOneDay": {},
+  "SaveAudience": "Save audience",
+  "@SaveAudience": {}
 }

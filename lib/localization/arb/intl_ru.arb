@@ -2442,5 +2442,10 @@
   "PaymentInCrypto": "Оплата криптой",
   "@PaymentInCrypto": {},
   "OnlinePayment": "Онлайн-оплата",
-  "@OnlinePayment": {}
+  "@OnlinePayment": {},
+  "YouCannotCreateMultipleRemindersInOneDay": "Вы не можете создать несколько напоминаний в один день. Повторите попытку завтра",
+  "@YouCannotCreateMultipleRemindersInOneDay": {},
+  "SaveAudience": "Сохранить аудиторию",
+  "@SaveAudience": {}
+
 }
