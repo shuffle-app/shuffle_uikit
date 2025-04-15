@@ -996,6 +996,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Free": MessageLookupByLibrary.simpleMessage("Бесплатно"),
     "FreeNowXLater": m42,
     "FreePlaces": MessageLookupByLibrary.simpleMessage("\nбесплатных мест"),
+    "FreeTicket": MessageLookupByLibrary.simpleMessage("Бесплатный билет"),
     "Fri": MessageLookupByLibrary.simpleMessage("Пт"),
     "Friday": MessageLookupByLibrary.simpleMessage("Пятница"),
     "FridayShort": MessageLookupByLibrary.simpleMessage("Пт"),
@@ -1404,6 +1405,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "OnboardingSlide3": MessageLookupByLibrary.simpleMessage("просто чилить"),
     "Online": MessageLookupByLibrary.simpleMessage("Онлайн"),
+    "OnlinePayment": MessageLookupByLibrary.simpleMessage("Онлайн-оплата"),
+    "OnlyCashPayment": MessageLookupByLibrary.simpleMessage(
+      "Оплата только наличными",
+    ),
+    "OnlyQRCodePayment": MessageLookupByLibrary.simpleMessage(
+      "Оплата только QR-кодом",
+    ),
     "Ooops": MessageLookupByLibrary.simpleMessage("Ууупс!"),
     "Oops": MessageLookupByLibrary.simpleMessage("Уупс"),
     "OopsIWillTryAgain": MessageLookupByLibrary.simpleMessage(
@@ -1459,6 +1467,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "PayForTheStartNotification": MessageLookupByLibrary.simpleMessage(
       "Оплатите уведомление о запуске",
     ),
+    "PaymentInCrypto": MessageLookupByLibrary.simpleMessage("Оплата криптой"),
     "PaymentMethod": MessageLookupByLibrary.simpleMessage("Тип оплаты"),
     "Pending": MessageLookupByLibrary.simpleMessage("Ожидает"),
     "PeopleStartingToTalkAboutYou": MessageLookupByLibrary.simpleMessage(
@@ -1563,6 +1572,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
       "Пожалуйста, выбери один тип",
+    ),
+    "PleaseSelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Пожалуйста выберите способ оплаты",
     ),
     "PleaseSelectPlace": MessageLookupByLibrary.simpleMessage(
       "Выбери место или филиал",
@@ -1880,6 +1892,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SelectOptionSchedule": MessageLookupByLibrary.simpleMessage(
       "Выбери опцию",
     ),
+    "SelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Выберите способ оплаты",
+    ),
     "SelectPeriodOfValid": MessageLookupByLibrary.simpleMessage(
       "Выбери период действия",
     ),
@@ -2118,6 +2133,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "TheSelectedTimeCannotBeElapsed": MessageLookupByLibrary.simpleMessage(
       "Выбранное время не может быть прошедшим",
     ),
+    "TheTicketCanBePaidWithAnOnlineCard": MessageLookupByLibrary.simpleMessage(
+      "The ticket can be paid with an online card",
+    ),
+    "TheTicketCanOnlyBePaidInCrypto": MessageLookupByLibrary.simpleMessage(
+      "The ticket can only be paid in crypto",
+    ),
+    "TheTicketCanOnlyPaidForUsingTheQRCode":
+        MessageLookupByLibrary.simpleMessage(
+          "The ticket can only be paid for using the QR code at the entrance",
+        ),
     "ThenCheckThisOut": MessageLookupByLibrary.simpleMessage(
       "Тогда зацени это",
     ),
@@ -2165,6 +2190,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Билет успешно активирован",
     ),
     "Tickets": m102,
+    "TicketsCanOnlyBePaidInCashAtTheEntrance":
+        MessageLookupByLibrary.simpleMessage(
+          "Tickets can only be paid in cash at the entrance",
+        ),
     "Time": MessageLookupByLibrary.simpleMessage("Время"),
     "TimeRange": MessageLookupByLibrary.simpleMessage("Промежуток времени"),
     "TimeRangeError": MessageLookupByLibrary.simpleMessage(

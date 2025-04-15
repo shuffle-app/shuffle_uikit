@@ -993,6 +993,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "Free": MessageLookupByLibrary.simpleMessage("मुफ्त"),
     "FreeNowXLater": m42,
     "FreePlaces": MessageLookupByLibrary.simpleMessage("निःशुल्क स्थान"),
+    "FreeTicket": MessageLookupByLibrary.simpleMessage("Free ticket"),
     "Fri": MessageLookupByLibrary.simpleMessage("Fri"),
     "Friday": MessageLookupByLibrary.simpleMessage("शुक्रवार"),
     "FridayShort": MessageLookupByLibrary.simpleMessage("शुक्रवार"),
@@ -1412,6 +1413,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "बस आराम करने के लिए",
     ),
     "Online": MessageLookupByLibrary.simpleMessage("Online"),
+    "OnlinePayment": MessageLookupByLibrary.simpleMessage("Online payment"),
+    "OnlyCashPayment": MessageLookupByLibrary.simpleMessage(
+      "Only cash payment",
+    ),
+    "OnlyQRCodePayment": MessageLookupByLibrary.simpleMessage(
+      "Only QR code payment",
+    ),
     "Ooops": MessageLookupByLibrary.simpleMessage("उफ़!"),
     "Oops": MessageLookupByLibrary.simpleMessage("Oops"),
     "OopsIWillTryAgain": MessageLookupByLibrary.simpleMessage(
@@ -1464,6 +1472,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "PayForTheStartNotification": MessageLookupByLibrary.simpleMessage(
       "Pay for the start notification",
+    ),
+    "PaymentInCrypto": MessageLookupByLibrary.simpleMessage(
+      "Payment in crypto",
     ),
     "PaymentMethod": MessageLookupByLibrary.simpleMessage("Payment method"),
     "Pending": MessageLookupByLibrary.simpleMessage("Pending"),
@@ -1565,6 +1576,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "PleaseSelectOneType": MessageLookupByLibrary.simpleMessage(
       "कृपया एक प्रकार चुनें",
+    ),
+    "PleaseSelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Please select payment method",
     ),
     "PleaseSelectPlace": MessageLookupByLibrary.simpleMessage(
       "Please select place or branch",
@@ -1878,6 +1892,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "SelectOptionSchedule": MessageLookupByLibrary.simpleMessage(
       "Select option",
     ),
+    "SelectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Select payment method",
+    ),
     "SelectPeriodOfValid": MessageLookupByLibrary.simpleMessage(
       "मान्य की अवधि का चयन करें",
     ),
@@ -2126,6 +2143,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "TheSelectedTimeCannotBeElapsed": MessageLookupByLibrary.simpleMessage(
       "The selected time cannot be elapsed",
     ),
+    "TheTicketCanBePaidWithAnOnlineCard": MessageLookupByLibrary.simpleMessage(
+      "The ticket can be paid with an online card",
+    ),
+    "TheTicketCanOnlyBePaidInCrypto": MessageLookupByLibrary.simpleMessage(
+      "The ticket can only be paid in crypto",
+    ),
+    "TheTicketCanOnlyPaidForUsingTheQRCode":
+        MessageLookupByLibrary.simpleMessage(
+          "The ticket can only be paid for using the QR code at the entrance",
+        ),
     "ThenCheckThisOut": MessageLookupByLibrary.simpleMessage("फिर इसे जांचें"),
     "ThereIsNothingYetCreateYourFirstNews":
         MessageLookupByLibrary.simpleMessage(
@@ -2173,6 +2200,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "The ticket has been successfully activated",
     ),
     "Tickets": m102,
+    "TicketsCanOnlyBePaidInCashAtTheEntrance":
+        MessageLookupByLibrary.simpleMessage(
+          "Tickets can only be paid in cash at the entrance",
+        ),
     "Time": MessageLookupByLibrary.simpleMessage("समय"),
     "TimeRange": MessageLookupByLibrary.simpleMessage("Time Range"),
     "TimeRangeError": MessageLookupByLibrary.simpleMessage("समय सीमा त्रुटि"),
