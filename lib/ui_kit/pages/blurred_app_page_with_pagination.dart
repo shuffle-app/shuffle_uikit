@@ -129,22 +129,26 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
               height: 1.sh - expandedHeight - (bottomSheetHeight) - (bodyBottomSpace ?? 0) - keyboardPadding,
               width: 1.sw,
               alignment: Alignment.topCenter,
-              child: PagedListView.separated(
-                physics: pagingPhysics ?? const BouncingScrollPhysics(),
-                scrollController: scrollController,
-                padding: reverse
-                    ? EdgeInsets.only(
-                        top: padding?.top ?? 0,
-                        left: padding?.right ?? 0,
-                        right: padding?.left ?? 0,
-                        bottom: (padding?.bottom ?? 0) + (bodyBottomSpace ?? 0),
-                      )
-                    : padding ?? EdgeInsets.zero,
-                reverse: reverse,
-                pagingController: paginationController,
-                builderDelegate: builderDelegate,
-                separatorBuilder: (context, index) => childrenSpacing?.heightBox ?? SpacingFoundation.verticalSpace16,
-              ),
+              child: PagingListener(
+                  controller: paginationController,
+                  builder: (context, state, fetchNextPage) => PagedListView.separated(
+                        physics: pagingPhysics ?? const BouncingScrollPhysics(),
+                        scrollController: scrollController,
+                        padding: reverse
+                            ? EdgeInsets.only(
+                                top: padding?.top ?? 0,
+                                left: padding?.right ?? 0,
+                                right: padding?.left ?? 0,
+                                bottom: (padding?.bottom ?? 0) + (bodyBottomSpace ?? 0),
+                              )
+                            : padding ?? EdgeInsets.zero,
+                        reverse: reverse,
+                        state: state,
+                        builderDelegate: builderDelegate,
+                        separatorBuilder: (context, index) =>
+                            childrenSpacing?.heightBox ?? SpacingFoundation.verticalSpace16,
+                        fetchNextPage: fetchNextPage,
+                      )),
             ).wrapSliverBox;
           },
         ),

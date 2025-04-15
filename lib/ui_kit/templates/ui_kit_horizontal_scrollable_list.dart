@@ -36,28 +36,31 @@ class UiKitHorizontalScrollableList<ItemType> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PagedListView<int, ItemType>.separated(
-      physics: pagingController.itemList?.isEmpty ?? false
-          ? const NeverScrollableScrollPhysics()
-          : physics ?? const BouncingScrollPhysics(),
-      scrollController: scrollController,
-      pagingController: pagingController,
-      clipBehavior: Clip.none,
-      shrinkWrap: true,
-      primary: false,
-      scrollDirection: Axis.horizontal,
-      addAutomaticKeepAlives: false,
-      cacheExtent: 5,
-      separatorBuilder: (_, index) => spacing?.widthBox ?? SpacingFoundation.zero.widthBox,
-      builderDelegate: PagedChildBuilderDelegate<ItemType>(
-        animateTransitions: true,
-        firstPageProgressIndicatorBuilder: (c) => progressIndicator,
-        newPageProgressIndicatorBuilder: (c) => progressIndicator,
-        itemBuilder: itemBuilder,
-        noMoreItemsIndicatorBuilder: (c) => const SizedBox.shrink(),
-        noItemsFoundIndicatorBuilder: (c) =>
-            noItemsFoundIndicator ?? const UiKitNoContentPlaceholder().paddingAll(EdgeInsetsFoundation.all32),
-      ),
-    );
+    return PagingListener(
+        controller: pagingController,
+        builder: (context, state, fetchNextPage) => PagedListView<int, ItemType>.separated(
+              physics: state.items?.isEmpty ?? false
+                  ? const NeverScrollableScrollPhysics()
+                  : physics ?? const BouncingScrollPhysics(),
+              scrollController: scrollController,
+              state: state,
+              clipBehavior: Clip.none,
+              shrinkWrap: true,
+              primary: false,
+              scrollDirection: Axis.horizontal,
+              addAutomaticKeepAlives: false,
+              cacheExtent: 5,
+              separatorBuilder: (_, index) => spacing?.widthBox ?? SpacingFoundation.zero.widthBox,
+              builderDelegate: PagedChildBuilderDelegate<ItemType>(
+                animateTransitions: true,
+                firstPageProgressIndicatorBuilder: (c) => progressIndicator,
+                newPageProgressIndicatorBuilder: (c) => progressIndicator,
+                itemBuilder: itemBuilder,
+                noMoreItemsIndicatorBuilder: (c) => const SizedBox.shrink(),
+                noItemsFoundIndicatorBuilder: (c) =>
+                    noItemsFoundIndicator ?? const UiKitNoContentPlaceholder().paddingAll(EdgeInsetsFoundation.all32),
+              ),
+              fetchNextPage: fetchNextPage,
+            ));
   }
 }
