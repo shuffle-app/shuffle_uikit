@@ -30,7 +30,8 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
 
     final theme = context.uiKitTheme;
     final colorScheme = theme?.colorScheme;
-    final textStyle = theme?.boldTextTheme.bodyUpperCase.copyWith(color: !enabled ? colorScheme?.darkNeutral900 : textColor);
+    final textStyle = theme?.boldTextTheme.bodyUpperCase.copyWith(
+        color: !enabled ? colorScheme?.darkNeutral900 : textColor);
     final textWidget = Text(
       text.toUpperCase(),
       style: textStyle,
@@ -43,9 +44,9 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
         borderRadius: borderRadius ?? (isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.max),
         side: !isGradientEnabled
             ? BorderSide(
-                color: enabled ? (borderColor ?? colorScheme!.inversePrimary) : colorScheme!.darkNeutral900,
-                width: 2.w,
-              )
+          color: borderColor ?? (enabled ? colorScheme!.inversePrimary : colorScheme!.darkNeutral900),
+          width: 2.w,
+        )
             : BorderSide.none,
       ),
       child: InkWell(
@@ -57,25 +58,25 @@ class OutlinedTextButton extends StatelessWidget implements ButtonFactory {
             borderRadius: isGradientEnabled ? BorderRadiusFoundation.all12 : BorderRadiusFoundation.max,
             border: isGradientEnabled
                 ? GradientBoxBorder(
-                    gradient: GradientFoundation.attentionCard,
-                    width: 2.w,
-                  )
+              gradient: GradientFoundation.attentionCard,
+              width: 2.w,
+            )
                 : null,
           ),
           child: loading ?? false
               ? SpacingFoundation.none
               : Center(
-                  child: isGradientEnabled
-                      ? GradientableWidget(
-                          gradient: GradientFoundation.attentionCard,
-                          child: textWidget.paddingSymmetric(
-                            vertical: SpacingFoundation.verticalSpacing12,
-                          ),
-                        )
-                      : textWidget.paddingSymmetric(
-                          vertical: SpacingFoundation.verticalSpacing16,
-                        ),
-                ),
+            child: isGradientEnabled
+                ? GradientableWidget(
+              gradient: GradientFoundation.attentionCard,
+              child: textWidget.paddingSymmetric(
+                vertical: SpacingFoundation.verticalSpacing12,
+              ),
+            )
+                : textWidget.paddingSymmetric(
+              vertical: SpacingFoundation.verticalSpacing16,
+            ),
+          ),
         ),
       ),
     ).loadingWrap(loading ?? false, color: colorScheme?.surface);
