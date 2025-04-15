@@ -212,15 +212,13 @@ class UiKitInviteMessageContent extends StatelessWidget {
                         if (userType == UserTileType.pro) ProAccountMark(),
                       ],
                     ),
-                    Flexible(
-                      child: Text(
-                        showGang
-                            ? S.of(context).InvitesNPeopleTo(invitedUsersData.length).toLowerCase()
-                            : S.of(context).InvitesYouTo.toLowerCase(),
-                        style: theme?.boldTextTheme.caption1Medium.copyWith(
-                          color: colorScheme.inverseSurface,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                    Text(
+                      showGang
+                          ? S.of(context).InvitesNPeopleTo(invitedUsersData.length).toLowerCase()
+                          : S.of(context).InvitesYouTo.toLowerCase(),
+                      style: theme?.boldTextTheme.caption1Medium.copyWith(
+                        color: colorScheme.inverseSurface,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ],

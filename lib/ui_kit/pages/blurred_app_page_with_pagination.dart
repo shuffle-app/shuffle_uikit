@@ -149,9 +149,9 @@ class BlurredAppPageWithPagination<T> extends StatelessWidget {
                             childrenSpacing?.heightBox ?? SpacingFoundation.verticalSpace16,
                         fetchNextPage: fetchNextPage,
                       )),
-            ).wrapSliverBox;
+            );
           },
-        ),
+        ).wrapSliverBox,
         if (bodyBottomSpace != null) bodyBottomSpace!.heightBox.wrapSliverBox,
       ],
     );
