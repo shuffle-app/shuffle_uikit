@@ -2419,5 +2419,31 @@
   "@Chats": {},
   "VirtualCard": "Card",
   "@VirtualCard": {},
-  "Leave": "Leave"
+  "Leave": "Leave",
+  "@Leave": {},
+  "SelectPaymentMethod": "Select payment method",
+  "@SelectPaymentMethod": {},
+  "PleaseSelectPaymentMethod": "Please select payment method",
+  "@PleaseSelectPaymentMethod": {},
+  "TicketsCanOnlyBePaidInCashAtTheEntrance": "Tickets can only be paid in cash at the entrance",
+  "@TicketsCanOnlyBePaidInCashAtTheEntrance": {},
+  "TheTicketCanOnlyPaidForUsingTheQRCode": "The ticket can only be paid for using the QR code at the entrance",
+  "@TheTicketCanOnlyPaidForUsingTheQRCode": {},
+  "TheTicketCanBePaidWithAnOnlineCard": "The ticket can be paid with an online card",
+  "@TheTicketCanBePaidWithAnOnlineCard": {},
+  "TheTicketCanOnlyBePaidInCrypto": "The ticket can only be paid in crypto",
+  "@TheTicketCanOnlyBePaidInCrypto": {},
+  "FreeTicket": "Free ticket",
+  "@FreeTicket": {},
+  "OnlyCashPayment": "Only cash payment",
+  "@OnlyCashPayment": {},
+  "OnlyQRCodePayment": "Only QR code payment",
+  "@OnlyQRCodePayment": {},
+  "PaymentInCrypto": "Payment in crypto",
+  "@PaymentInCrypto": {},
+  "OnlinePayment": "Online payment",
+  "@OnlinePayment": {}
+
+
+
 }
