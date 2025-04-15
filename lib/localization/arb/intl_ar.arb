@@ -2419,5 +2419,10 @@
   "@Chats": {},
   "VirtualCard": "Card",
   "@VirtualCard": {},
-  "Leave": "Leave"
+  "Leave": "Leave",
+  "YouCannotCreateMultipleRemindersInOneDay": "You cannot create multiple reminders in one day. Try again tomorrow",
+  "@YouCannotCreateMultipleRemindersInOneDay": {},
+  "SaveAudience": "Save audience",
+  "@SaveAudience": {}
+
 }

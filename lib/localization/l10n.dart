@@ -10140,6 +10140,26 @@ class S {
   String get Leave {
     return Intl.message('Leave', name: 'Leave', desc: '', args: []);
   }
+
+  /// `You cannot create multiple reminders in one day. Try again tomorrow`
+  String get YouCannotCreateMultipleRemindersInOneDay {
+    return Intl.message(
+      'You cannot create multiple reminders in one day. Try again tomorrow',
+      name: 'YouCannotCreateMultipleRemindersInOneDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save audience`
+  String get SaveAudience {
+    return Intl.message(
+      'Save audience',
+      name: 'SaveAudience',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

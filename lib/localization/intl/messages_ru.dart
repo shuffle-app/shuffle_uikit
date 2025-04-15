@@ -1767,6 +1767,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "SaturdayShort": MessageLookupByLibrary.simpleMessage("Сб"),
     "Save": MessageLookupByLibrary.simpleMessage("Сохранить"),
     "SaveAndPay": MessageLookupByLibrary.simpleMessage("Сохранить и оплатить"),
+    "SaveAudience": MessageLookupByLibrary.simpleMessage("Сохранить аудиторию"),
     "SaveTemplate": MessageLookupByLibrary.simpleMessage("Сохранить шаблон"),
     "ScanControllerNotReady": MessageLookupByLibrary.simpleMessage(
       "Контроллер не готов",
@@ -2408,6 +2409,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "YouCanStillRequestRefundYourComplaint":
         MessageLookupByLibrary.simpleMessage(
           "Ты всё ещё можешь запросить возврат средств по жалобе",
+        ),
+    "YouCannotCreateMultipleRemindersInOneDay":
+        MessageLookupByLibrary.simpleMessage(
+          "Вы не можете создать несколько напоминаний в один день. Повторите попытку завтра",
         ),
     "YouCannotCreateOfferDate": MessageLookupByLibrary.simpleMessage(
       "Ты не можешь создать оффер, так как событие уже завершено",
