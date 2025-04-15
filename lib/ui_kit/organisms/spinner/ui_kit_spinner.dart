@@ -116,11 +116,11 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
     final nearestElementIndex = (currentOffset / screenWidth).round();
     String value = '';
     if (nearestElementIndex <= 0) {
-      value = widget.pagingController.itemList!.first;
-    } else if (nearestElementIndex >= widget.pagingController.itemList!.length) {
-      value = widget.pagingController.itemList!.last;
+      value = widget.pagingController.items!.first;
+    } else if (nearestElementIndex >= widget.pagingController.items!.length) {
+      value = widget.pagingController.items!.last;
     } else {
-      value = widget.pagingController.itemList!.elementAt(nearestElementIndex);
+      value = widget.pagingController.items!.elementAt(nearestElementIndex);
     }
     widget.onSpinChangedCategory?.call(value);
     final nearestElementOffset = nearestElementIndex * screenWidth;
@@ -237,7 +237,7 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                       changeInteractingState(true);
                       setSpinningGesture(details.delta.dx.abs() >= 5 ? SpinningGesture.spin : SpinningGesture.up);
                     }
-                    if (widget.pagingController.itemList?.isEmpty ?? false) return;
+                    if (widget.pagingController.items?.isEmpty ?? false) return;
 
                     if (_spinningGesture == SpinningGesture.up) {
                       if (_transitionNotifier.value > maxSpinnerUpValue) {
@@ -263,13 +263,13 @@ class _UiKitSpinnerState extends State<UiKitSpinner> {
                     );
                   },
                   onPanStart: (details) {
-                    if (widget.pagingController.itemList?.isEmpty ?? false) return;
+                    if (widget.pagingController.items?.isEmpty ?? false) return;
 
                     _scrollStartNotifier.value = widget.scrollController.offset;
                   },
                   onPanEnd: (details) async {
                     changeInteractingState(false);
-                    if (widget.pagingController.itemList?.isEmpty ?? false) return;
+                    if (widget.pagingController.items?.isEmpty ?? false) return;
 
                     if (_transitionNotifier.value != 0) {
                       if (_transitionNotifier.value <= maxSpinnerUpValue + 10) {
@@ -382,7 +382,7 @@ class UiKitSpinnerChangeData {
   final String category;
   final SpinningType spinType;
 
-  UiKitSpinnerChangeData({
+  const UiKitSpinnerChangeData({
     required this.category,
     required this.spinType,
   });

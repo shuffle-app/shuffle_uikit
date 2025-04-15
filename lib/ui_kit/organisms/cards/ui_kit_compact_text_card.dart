@@ -39,6 +39,7 @@ class UiKitCompactTextCard extends StatelessWidget {
             Flexible(
                 child: AutoSizeText(text,
                     maxLines: 1,
+                    minFontSize: 8,
                     softWrap: true,
                     wrapWords: true,
                     group: autoSizeGroup,

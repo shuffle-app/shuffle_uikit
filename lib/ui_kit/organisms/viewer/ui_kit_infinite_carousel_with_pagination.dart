@@ -9,11 +9,11 @@ class UiKitInfiniteCarouselWithPagination<T> extends StatefulWidget {
   final Size size;
 
   const UiKitInfiniteCarouselWithPagination({
-    Key? key,
+    super.key,
     required this.pagingController,
     required this.itemBuilder,
     required this.size,
-  }) : super(key: key);
+  });
 
   @override
   State<UiKitInfiniteCarouselWithPagination<T>> createState() => _UiKitInfiniteCarouselWithPaginationState<T>();
@@ -37,7 +37,7 @@ class _UiKitInfiniteCarouselWithPaginationState<T> extends State<UiKitInfiniteCa
       print('carouselController.position.pixels >= carouselController.position.maxScrollExtent - 1.sw worked');
       print('I need to fetch more');
     }
-    if (carouselController.selectedItem >= widget.pagingController.itemList!.length - 3) {
+    if (carouselController.selectedItem >= widget.pagingController.items!.length - 3) {
       print('carouselController.selectedItem >= widget.pagingController.itemList!.length -3 worked');
       print('I need to fetch more');
     }
@@ -54,20 +54,20 @@ class _UiKitInfiniteCarouselWithPaginationState<T> extends State<UiKitInfiniteCa
         children: [
           InfiniteCarousel.builder(
             controller: carouselController,
-            itemCount: widget.pagingController.itemList?.length ?? 0,
+            itemCount: widget.pagingController.items?.length ?? 0,
             itemExtent: itemExtent,
             physics: const PageViewTypeScrollPhysics(),
             loop: true,
             velocityFactor: 1,
             axisDirection: Axis.horizontal,
             itemBuilder: (context, index, realIndex) {
-              final lastItem = index == widget.pagingController.itemList!.length - 1;
-              final item = widget.pagingController.itemList![index];
+              final lastItem = index == widget.pagingController.items!.length - 1;
+              final item = widget.pagingController.items![index];
               T nextItem = item;
               if (lastItem) {
-                nextItem = widget.pagingController.itemList!.first;
+                nextItem = widget.pagingController.items!.first;
               } else {
-                nextItem = widget.pagingController.itemList![index + 1];
+                nextItem = widget.pagingController.items![index + 1];
               }
 
               return AnimatedBuilder(

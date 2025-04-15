@@ -40,7 +40,7 @@ class FeedbackIsolate {
       }
       if (event is FeedbackIsolateHaptics) {
         await Vibration.vibrate(
-          duration: 10,
+          // duration: 10,
           intensities: event.intensities ?? [100, 100],
           pattern: event.pattern ?? [5, 5],
         );
@@ -70,8 +70,8 @@ abstract class SystemSoundIsolateEvent {}
 class FeedbackIsolateHaptics extends SystemSoundIsolateEvent {
   FeedbackIsolateHaptics({this.intensities, this.pattern});
 
-  List<int>? intensities;
-  List<int>? pattern;
+  final List<int>? intensities;
+  final List<int>? pattern;
 }
 
 class SystemSoundIsolateRachetClick extends SystemSoundIsolateEvent {}
