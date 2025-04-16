@@ -47,13 +47,13 @@ class VerticalMessageCard extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               if (iconData != null || iconLink != null) SpacingFoundation.verticalSpace2,
-              AutoSizeText(
+              Text(
                 /// end line symbols added to make sure that the text is more than 4 lines
                 /// so that the card height is always fixed
                 '${message.toUpperCase()}\n\n\n\n',
                 style: messageStyle,
                 softWrap: true,
-                wrapWords: true,
+                // wrapWords: true,
                 textAlign: TextAlign.center,
                 maxLines: 4,
               ),
