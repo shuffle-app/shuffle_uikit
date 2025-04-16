@@ -2442,5 +2442,22 @@
   "PaymentInCrypto": "Оплата криптой",
   "@PaymentInCrypto": {},
   "OnlinePayment": "Онлайн-оплата",
-  "@OnlinePayment": {}
+  "@OnlinePayment": {},
+  "NeedToChargeMoneyForEntry": "Необходимо взять деньги за вход",
+  "@NeedToChargeMoneyForEntry": {},
+  "AtEntranceCash": "При входе, наличные",
+  "@AtEntranceCash": {},
+  "TheTicketCanOnlyBePaidForUsingThe": "Билет может быть оплачен только с помощью",
+  "@TheTicketCanOnlyBePaidForUsingThe": {},
+  "AtTheEntrance": "у входа",
+  "@AtTheEntrance": {},
+  "TheTicketCanOnlyBePaidAtTheEntrance": "Билет можно оплатить только на входе",
+  "@TheTicketCanOnlyBePaidAtTheEntrance": {},
+  "InCash": "наличными",
+  "@InCash": {},
+  "ORCode": "OR code",
+  "@ORCode": {},
+  "TicketInfo": "Информация о билете",
+  "@TicketInfo": {}
+
 }

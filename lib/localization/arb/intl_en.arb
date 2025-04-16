@@ -2442,5 +2442,21 @@
   "PaymentInCrypto": "Payment in crypto",
   "@PaymentInCrypto": {},
   "OnlinePayment": "Online payment",
-  "@OnlinePayment": {}
+  "@OnlinePayment": {},
+  "NeedToChargeMoneyForEntry": "Need to charge money for entry",
+  "@NeedToChargeMoneyForEntry": {},
+  "AtEntranceCash": "At entrance, cash",
+  "@AtEntranceCash": {},
+  "TheTicketCanOnlyBePaidForUsingThe": "The ticket can only be paid for using the",
+  "@TheTicketCanOnlyBePaidForUsingThe": {},
+  "AtTheEntrance": "at the entrance",
+  "@AtTheEntrance": {},
+  "TheTicketCanOnlyBePaidAtTheEntrance": "The ticket can only be paid at the entrance",
+  "@TheTicketCanOnlyBePaidAtTheEntrance": {},
+  "InCash": "in cash",
+  "@InCash": {},
+  "ORCode": "OR code",
+  "@ORCode": {},
+  "TicketInfo": "Ticket info",
+  "@TicketInfo": {}
 }
