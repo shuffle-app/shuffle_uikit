@@ -483,6 +483,10 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "AskPeople": MessageLookupByLibrary.simpleMessage("Спросить"),
     "AtEntrance": MessageLookupByLibrary.simpleMessage("На входе"),
+    "AtEntranceCash": MessageLookupByLibrary.simpleMessage(
+      "При входе, наличные",
+    ),
+    "AtTheEntrance": MessageLookupByLibrary.simpleMessage("у входа"),
     "Atheism": MessageLookupByLibrary.simpleMessage("Атеизм"),
     "Athlete": MessageLookupByLibrary.simpleMessage("Спортсмен"),
     "Audience": MessageLookupByLibrary.simpleMessage("Аудитория"),
@@ -1096,6 +1100,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "IfYouApplyThePromotion": MessageLookupByLibrary.simpleMessage(
       "если воспользуешься промо",
     ),
+    "InCash": MessageLookupByLibrary.simpleMessage("наличными"),
     "InProgress": MessageLookupByLibrary.simpleMessage("В процессе"),
     "IncludeASurveyForNoShows": MessageLookupByLibrary.simpleMessage(
       "Включи опрос, чтобы разобраться с причиной неявки",
@@ -1287,6 +1292,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "NeedEmailVerification": MessageLookupByLibrary.simpleMessage(
       "Требуется подтвердить email",
     ),
+    "NeedToChargeMoneyForEntry": MessageLookupByLibrary.simpleMessage(
+      "Необходимо взять деньги за вход",
+    ),
     "New": MessageLookupByLibrary.simpleMessage("Новое"),
     "NewDonates": MessageLookupByLibrary.simpleMessage("Новые донаты"),
     "NewFeatures": MessageLookupByLibrary.simpleMessage("Новые функции"),
@@ -1381,6 +1389,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "NumberOfUniqueViews": MessageLookupByLibrary.simpleMessage(
       "Количество уникальных просмотров",
     ),
+    "ORCode": MessageLookupByLibrary.simpleMessage("OR code"),
     "October": MessageLookupByLibrary.simpleMessage("Октябрь"),
     "Off": MessageLookupByLibrary.simpleMessage("Выкл"),
     "Offer": MessageLookupByLibrary.simpleMessage("Предложение"),
@@ -2137,6 +2146,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "TheTicketCanBePaidWithAnOnlineCard": MessageLookupByLibrary.simpleMessage(
       "The ticket can be paid with an online card",
     ),
+    "TheTicketCanOnlyBePaidAtTheEntrance": MessageLookupByLibrary.simpleMessage(
+      "Билет можно оплатить только на входе",
+    ),
+    "TheTicketCanOnlyBePaidForUsingThe": MessageLookupByLibrary.simpleMessage(
+      "Билет может быть оплачен только с помощью",
+    ),
     "TheTicketCanOnlyBePaidInCrypto": MessageLookupByLibrary.simpleMessage(
       "The ticket can only be paid in crypto",
     ),
@@ -2186,6 +2201,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ThursdayShort": MessageLookupByLibrary.simpleMessage("Чт"),
     "Ticket": MessageLookupByLibrary.simpleMessage("Билет"),
     "TicketFrom": m101,
+    "TicketInfo": MessageLookupByLibrary.simpleMessage("Информация о билете"),
     "TicketPrice": MessageLookupByLibrary.simpleMessage("Цена билета"),
     "TicketSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
       "Билет успешно активирован",

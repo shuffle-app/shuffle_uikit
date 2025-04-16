@@ -483,6 +483,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "AskOrSupport": MessageLookupByLibrary.simpleMessage("Ask or support"),
     "AskPeople": MessageLookupByLibrary.simpleMessage("Ask people"),
     "AtEntrance": MessageLookupByLibrary.simpleMessage("At entrance"),
+    "AtEntranceCash": MessageLookupByLibrary.simpleMessage("At entrance, cash"),
+    "AtTheEntrance": MessageLookupByLibrary.simpleMessage("at the entrance"),
     "Atheism": MessageLookupByLibrary.simpleMessage("Atheism"),
     "Athlete": MessageLookupByLibrary.simpleMessage("Athlete"),
     "Audience": MessageLookupByLibrary.simpleMessage("Audience"),
@@ -1094,6 +1096,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "IfYouApplyThePromotion": MessageLookupByLibrary.simpleMessage(
       "if you apply the promotion",
     ),
+    "InCash": MessageLookupByLibrary.simpleMessage("in cash"),
     "InProgress": MessageLookupByLibrary.simpleMessage("In progress"),
     "IncludeASurveyForNoShows": MessageLookupByLibrary.simpleMessage(
       "Include a survey for no-shows to work with the cause",
@@ -1281,6 +1284,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "NeedEmailVerification": MessageLookupByLibrary.simpleMessage(
       "Need email verification",
     ),
+    "NeedToChargeMoneyForEntry": MessageLookupByLibrary.simpleMessage(
+      "Need to charge money for entry",
+    ),
     "New": MessageLookupByLibrary.simpleMessage("New"),
     "NewDonates": MessageLookupByLibrary.simpleMessage("New donates"),
     "NewFeatures": MessageLookupByLibrary.simpleMessage("New features"),
@@ -1375,6 +1381,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "NumberOfUniqueViews": MessageLookupByLibrary.simpleMessage(
       "Number of unique views",
     ),
+    "ORCode": MessageLookupByLibrary.simpleMessage("OR code"),
     "October": MessageLookupByLibrary.simpleMessage("October"),
     "Off": MessageLookupByLibrary.simpleMessage("Off"),
     "Offer": MessageLookupByLibrary.simpleMessage("Offer"),
@@ -2125,6 +2132,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "TheTicketCanBePaidWithAnOnlineCard": MessageLookupByLibrary.simpleMessage(
       "The ticket can be paid with an online card",
     ),
+    "TheTicketCanOnlyBePaidAtTheEntrance": MessageLookupByLibrary.simpleMessage(
+      "The ticket can only be paid at the entrance",
+    ),
+    "TheTicketCanOnlyBePaidForUsingThe": MessageLookupByLibrary.simpleMessage(
+      "The ticket can only be paid for using the",
+    ),
     "TheTicketCanOnlyBePaidInCrypto": MessageLookupByLibrary.simpleMessage(
       "The ticket can only be paid in crypto",
     ),
@@ -2176,6 +2189,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ThursdayShort": MessageLookupByLibrary.simpleMessage("Thu"),
     "Ticket": MessageLookupByLibrary.simpleMessage("Ticket"),
     "TicketFrom": m101,
+    "TicketInfo": MessageLookupByLibrary.simpleMessage("Ticket info"),
     "TicketPrice": MessageLookupByLibrary.simpleMessage("Ticket price"),
     "TicketSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
       "The ticket has been successfully activated",

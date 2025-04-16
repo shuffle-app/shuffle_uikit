@@ -10261,6 +10261,71 @@ class S {
       args: [],
     );
   }
+
+  /// `Need to charge money for entry`
+  String get NeedToChargeMoneyForEntry {
+    return Intl.message(
+      'Need to charge money for entry',
+      name: 'NeedToChargeMoneyForEntry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `At entrance, cash`
+  String get AtEntranceCash {
+    return Intl.message(
+      'At entrance, cash',
+      name: 'AtEntranceCash',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The ticket can only be paid for using the`
+  String get TheTicketCanOnlyBePaidForUsingThe {
+    return Intl.message(
+      'The ticket can only be paid for using the',
+      name: 'TheTicketCanOnlyBePaidForUsingThe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `at the entrance`
+  String get AtTheEntrance {
+    return Intl.message(
+      'at the entrance',
+      name: 'AtTheEntrance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The ticket can only be paid at the entrance`
+  String get TheTicketCanOnlyBePaidAtTheEntrance {
+    return Intl.message(
+      'The ticket can only be paid at the entrance',
+      name: 'TheTicketCanOnlyBePaidAtTheEntrance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `in cash`
+  String get InCash {
+    return Intl.message('in cash', name: 'InCash', desc: '', args: []);
+  }
+
+  /// `OR code`
+  String get ORCode {
+    return Intl.message('OR code', name: 'ORCode', desc: '', args: []);
+  }
+
+  /// `Ticket info`
+  String get TicketInfo {
+    return Intl.message('Ticket info', name: 'TicketInfo', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

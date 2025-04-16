@@ -6,10 +6,27 @@ Future<void> selectPaymentMethodBottomsheet(
   List<String> paymentTypes = const [],
   ValueChanged<String>? onConfirmTap,
 }) async {
+  // : 0.47.sh
+  final double topPadding = 1.sw <= 380
+      ? paymentTypes.length > 3
+          ? 0.32.sh
+          : paymentTypes.length > 2
+              ? 0.37.sh
+              : paymentTypes.length > 1
+                  ? 0.42.sh
+                  : 0.42.sh
+      : paymentTypes.length > 3
+          ? 0.47.sh
+          : paymentTypes.length > 2
+              ? 0.52.sh
+              : paymentTypes.length > 1
+                  ? 0.57.sh
+                  : 0.5.sh;
+
   await showUiKitGeneralFullScreenDialog(
     context,
     GeneralDialogData(
-      topPadding: 1.sw <= 380 ? 0.12.sh : 0.47.sh,
+      topPadding: topPadding,
       useRootNavigator: false,
       isWidgetScrollable: true,
       child: SelectPaymentMethodWidget(

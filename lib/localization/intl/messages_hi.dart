@@ -483,6 +483,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "AskPeople": MessageLookupByLibrary.simpleMessage("लोगों से पूछें"),
     "AtEntrance": MessageLookupByLibrary.simpleMessage("At entrance"),
+    "AtEntranceCash": MessageLookupByLibrary.simpleMessage("At entrance, cash"),
+    "AtTheEntrance": MessageLookupByLibrary.simpleMessage("at the entrance"),
     "Atheism": MessageLookupByLibrary.simpleMessage("नास्तिकता"),
     "Athlete": MessageLookupByLibrary.simpleMessage("एथलीट"),
     "Audience": MessageLookupByLibrary.simpleMessage("Audience"),
@@ -1093,6 +1095,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "IfYouApplyThePromotion": MessageLookupByLibrary.simpleMessage(
       "if you apply the promotion",
     ),
+    "InCash": MessageLookupByLibrary.simpleMessage("in cash"),
     "InProgress": MessageLookupByLibrary.simpleMessage("In progress"),
     "IncludeASurveyForNoShows": MessageLookupByLibrary.simpleMessage(
       "Include a survey for no-shows to work with the cause",
@@ -1285,6 +1288,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "NeedEmailVerification": MessageLookupByLibrary.simpleMessage(
       "Need email verification",
     ),
+    "NeedToChargeMoneyForEntry": MessageLookupByLibrary.simpleMessage(
+      "Need to charge money for entry",
+    ),
     "New": MessageLookupByLibrary.simpleMessage("नया"),
     "NewDonates": MessageLookupByLibrary.simpleMessage("नई दान"),
     "NewFeatures": MessageLookupByLibrary.simpleMessage("नई सुविधाएँ"),
@@ -1385,6 +1391,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "NumberOfUniqueViews": MessageLookupByLibrary.simpleMessage(
       "Number of unique views",
     ),
+    "ORCode": MessageLookupByLibrary.simpleMessage("OR code"),
     "October": MessageLookupByLibrary.simpleMessage("October"),
     "Off": MessageLookupByLibrary.simpleMessage("बंद"),
     "Offer": MessageLookupByLibrary.simpleMessage("प्रस्ताव"),
@@ -2147,6 +2154,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "TheTicketCanBePaidWithAnOnlineCard": MessageLookupByLibrary.simpleMessage(
       "The ticket can be paid with an online card",
     ),
+    "TheTicketCanOnlyBePaidAtTheEntrance": MessageLookupByLibrary.simpleMessage(
+      "The ticket can only be paid at the entrance",
+    ),
+    "TheTicketCanOnlyBePaidForUsingThe": MessageLookupByLibrary.simpleMessage(
+      "The ticket can only be paid for using the",
+    ),
     "TheTicketCanOnlyBePaidInCrypto": MessageLookupByLibrary.simpleMessage(
       "The ticket can only be paid in crypto",
     ),
@@ -2196,6 +2209,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "ThursdayShort": MessageLookupByLibrary.simpleMessage("गुरुवार"),
     "Ticket": MessageLookupByLibrary.simpleMessage("टिकट"),
     "TicketFrom": m101,
+    "TicketInfo": MessageLookupByLibrary.simpleMessage("Ticket info"),
     "TicketPrice": MessageLookupByLibrary.simpleMessage("टिकट कीमत"),
     "TicketSuccessfullyActivated": MessageLookupByLibrary.simpleMessage(
       "The ticket has been successfully activated",

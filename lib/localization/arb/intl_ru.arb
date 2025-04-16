@@ -2446,6 +2446,22 @@
   "YouCannotCreateMultipleRemindersInOneDay": "Вы не можете создать несколько напоминаний в один день. Повторите попытку завтра",
   "@YouCannotCreateMultipleRemindersInOneDay": {},
   "SaveAudience": "Сохранить аудиторию",
-  "@SaveAudience": {}
+  "@SaveAudience": {},
+  "NeedToChargeMoneyForEntry": "Необходимо взять деньги за вход",
+  "@NeedToChargeMoneyForEntry": {},
+  "AtEntranceCash": "При входе, наличные",
+  "@AtEntranceCash": {},
+  "TheTicketCanOnlyBePaidForUsingThe": "Билет может быть оплачен только с помощью",
+  "@TheTicketCanOnlyBePaidForUsingThe": {},
+  "AtTheEntrance": "у входа",
+  "@AtTheEntrance": {},
+  "TheTicketCanOnlyBePaidAtTheEntrance": "Билет можно оплатить только на входе",
+  "@TheTicketCanOnlyBePaidAtTheEntrance": {},
+  "InCash": "наличными",
+  "@InCash": {},
+  "ORCode": "OR code",
+  "@ORCode": {},
+  "TicketInfo": "Информация о билете",
+  "@TicketInfo": {}
 
 }
