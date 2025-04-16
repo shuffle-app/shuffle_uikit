@@ -30,13 +30,13 @@ class UiKitTitledWrappedInput extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Expanded(
+              Flexible(
                 child: Text(
                   title,
                   style: boldTextTheme?.labelLarge,
                 ),
               ),
-              SpacingFoundation.horizontalSpace4,
+              SpacingFoundation.horizontalSpace16,
               if (popOverMessage != null)
                 Builder(
                   builder: (context) {

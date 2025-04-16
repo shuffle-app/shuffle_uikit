@@ -28,10 +28,7 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name =
-        (locale.countryCode?.isEmpty ?? false)
-            ? locale.languageCode
-            : locale.toString();
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -6794,8 +6791,7 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      other:
-          'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      other: 'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
       desc: '',
       args: [count],
@@ -10241,6 +10237,26 @@ class S {
     return Intl.message(
       'Online payment',
       name: 'OnlinePayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You cannot create multiple reminders in one day. Try again tomorrow`
+  String get YouCannotCreateMultipleRemindersInOneDay {
+    return Intl.message(
+      'You cannot create multiple reminders in one day. Try again tomorrow',
+      name: 'YouCannotCreateMultipleRemindersInOneDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save audience`
+  String get SaveAudience {
+    return Intl.message(
+      'Save audience',
+      name: 'SaveAudience',
       desc: '',
       args: [],
     );
