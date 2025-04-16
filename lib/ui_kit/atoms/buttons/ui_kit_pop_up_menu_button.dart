@@ -53,7 +53,7 @@ class UiKitPopUpMenuButton extends StatelessWidget {
             onTap: option.onTap,
             padding: EdgeInsets.zero,
             child: SizedBox(
-                width: width + SpacingFoundation.horizontalSpacing20 + SpacingFoundation.horizontalSpacing16 * 2,
+                width: width + SpacingFoundation.horizontalSpacing24 + SpacingFoundation.horizontalSpacing16 * 2,
                 child: Transform.translate(
                   offset: Offset(SpacingFoundation.horizontalSpacing20, 0),
                   child: Row(
@@ -73,7 +73,7 @@ class UiKitPopUpMenuButton extends StatelessWidget {
                         color: option.iconColor ?? Colors.black,
                       ),
                     ],
-                  ),
+                  ).paddingOnly(right: SpacingFoundation.horizontalSpacing20),
                 )),
           ),
         )
