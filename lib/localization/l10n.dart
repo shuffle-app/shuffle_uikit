@@ -28,7 +28,10 @@ class S {
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -6791,7 +6794,8 @@ class S {
       one: 'locked sections & functions',
       two: 'points, rewards & money',
       few: 'invites, chats, hang outs',
-      other: 'Premium, PRO & organisation, Influencer accounts (use & create content)',
+      other:
+          'Premium, PRO & organisation, Influencer accounts (use & create content)',
       name: 'LoginBenefits',
       desc: '',
       args: [count],
@@ -7193,11 +7197,11 @@ class S {
     return Intl.message('Invitations', name: 'Invitations', desc: '', args: []);
   }
 
-  /// `Your reminder is shown 1 time on the specified date.`
-  String get YourReminderIsShown1Time {
+  /// `Your audience will see the reminder once`
+  String get YourAudienceWillSeeTheReminderOnce {
     return Intl.message(
-      'Your reminder is shown 1 time on the specified date.',
-      name: 'YourReminderIsShown1Time',
+      'Your audience will see the reminder once',
+      name: 'YourAudienceWillSeeTheReminderOnce',
       desc: '',
       args: [],
     );

@@ -2493,6 +2493,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "YourAudienceAge": MessageLookupByLibrary.simpleMessage(
       "Your audience age",
     ),
+    "YourAudienceWillSeeTheReminderOnce": MessageLookupByLibrary.simpleMessage(
+      "Your audience will see the reminder once",
+    ),
     "YourClaim": MessageLookupByLibrary.simpleMessage("Your claim"),
     "YourClaimHasBeenSent": MessageLookupByLibrary.simpleMessage(
       "Your claim has been sent",
@@ -2524,9 +2527,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your price segment",
     ),
     "YourProgress": MessageLookupByLibrary.simpleMessage("Your progress"),
-    "YourReminderIsShown1Time": MessageLookupByLibrary.simpleMessage(
-      "Your reminder is shown 1 time on the specified date.",
-    ),
     "YourReminderIsShown1TimeMax3": MessageLookupByLibrary.simpleMessage(
       "Your reminder is shown 1 time on the specified date. You have a maximum of 3 attempts to be reminded.",
     ),

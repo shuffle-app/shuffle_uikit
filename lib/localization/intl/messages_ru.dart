@@ -2505,6 +2505,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "YourAudienceAge": MessageLookupByLibrary.simpleMessage(
       "Возраст аудитории",
     ),
+    "YourAudienceWillSeeTheReminderOnce": MessageLookupByLibrary.simpleMessage(
+      "Твоя аудитория увидит напоминание 1 раз",
+    ),
     "YourClaim": MessageLookupByLibrary.simpleMessage("Твоя претензия"),
     "YourClaimHasBeenSent": MessageLookupByLibrary.simpleMessage(
       "Твоё заявление отправлено",
@@ -2538,9 +2541,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Твой ценовой сегмент",
     ),
     "YourProgress": MessageLookupByLibrary.simpleMessage("Твой прогресс"),
-    "YourReminderIsShown1Time": MessageLookupByLibrary.simpleMessage(
-      "Напоминание будет показано один раз в день в выбранные даты",
-    ),
     "YourReminderIsShown1TimeMax3": MessageLookupByLibrary.simpleMessage(
       "Напоминание отображается 1 раз в указанный день. Максимум – 3 попытки.",
     ),
