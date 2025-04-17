@@ -44,7 +44,6 @@ class UiKitPopUpMenuButton extends StatelessWidget {
         textDirection: TextDirection.ltr,
         maxLines: 1);
     painter.layout();
-    final width = painter.width;
 
     items = (context) => options
         .map(
@@ -52,29 +51,23 @@ class UiKitPopUpMenuButton extends StatelessWidget {
             value: option.value,
             onTap: option.onTap,
             padding: EdgeInsets.zero,
-            child: SizedBox(
-                width: width + SpacingFoundation.horizontalSpacing24 + SpacingFoundation.horizontalSpacing16 * 2,
-                child: Transform.translate(
-                  offset: Offset(SpacingFoundation.horizontalSpacing20, 0),
-                  child: Row(
-                    // crossAxisAlignment: CrossAxisAlignment.stretch,
-                    // mainAxisAlignment: MainAxisAlignment.s,
-                    children: [
-                      Expanded(
-                          child: Text(
-                        option.title,
-                        style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
-                          color: option.textColor ?? Colors.black,
-                        ),
-                      )),
-                      Icon(
-                        option.icon,
-                        size: 24,
-                        color: option.iconColor ?? Colors.black,
-                      ),
-                    ],
-                  ).paddingOnly(right: SpacingFoundation.horizontalSpacing20),
-                )),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    option.title,
+                    style: context.uiKitTheme?.boldTextTheme.caption2Bold.copyWith(
+                      color: option.textColor ?? Colors.black,
+                    ),
+                  ),
+                ),
+                Icon(
+                  option.icon,
+                  size: 24,
+                  color: option.iconColor ?? Colors.black,
+                ),
+              ],
+            ).paddingSymmetric(horizontal: SpacingFoundation.horizontalSpacing8),
           ),
         )
         .toList();
