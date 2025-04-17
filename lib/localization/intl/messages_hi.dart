@@ -2550,9 +2550,6 @@ class MessageLookup extends MessageLookupByLibrary {
       "Your price segment",
     ),
     "YourProgress": MessageLookupByLibrary.simpleMessage("Your progress"),
-    "YourReminderIsShown1Time": MessageLookupByLibrary.simpleMessage(
-      "आपकी याद दिलाने वाली एक बार निर्दिष्ट तिथि पर दिखाई जाएगी।",
-    ),
     "YourReminderIsShown1TimeMax3": MessageLookupByLibrary.simpleMessage(
       "आपकी याद दिलाने वाली एक बार निर्दिष्ट तिथि पर दिखाई जाएगी। आपको अधिकतम 3 प्रयासों के लिए याद दिलाया जाएगा।",
     ),
