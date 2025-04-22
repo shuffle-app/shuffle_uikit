@@ -144,7 +144,13 @@ class _UiKitUserTileWithCheckboxState extends State<UiKitUserTileWithCheckbox> {
                     children: [
                       Row(
                         children: [
-                          Text(widget.name, style: theme?.boldTextTheme.caption1Bold),
+                          Expanded(
+                            flex: widget.date != null ? 6 : 1,
+                            child: Text(
+                              widget.name,
+                              style: theme?.boldTextTheme.caption1Bold,
+                            ),
+                          ),
                           if (widget.date != null) ...[
                             const Spacer(),
                             Text(
