@@ -2443,6 +2443,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "Yes": MessageLookupByLibrary.simpleMessage("Да"),
     "Yesterday": MessageLookupByLibrary.simpleMessage("Вчера"),
     "You": MessageLookupByLibrary.simpleMessage("Ты"),
+    "YouAreAlreadyConnectedToThisEvent": MessageLookupByLibrary.simpleMessage(
+      "Ты уже подключился к этому событию",
+    ),
+    "YouAreAlreadyConnectedToThisPlace": MessageLookupByLibrary.simpleMessage(
+      "Ты уже подключился к этому месту",
+    ),
     "YouAskedToBeAddedToTheChat": MessageLookupByLibrary.simpleMessage(
       "Вы запросили добавиться в чат",
     ),

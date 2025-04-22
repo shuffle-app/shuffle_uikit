@@ -2458,6 +2458,10 @@
   "ORCode": "OR code",
   "@ORCode": {},
   "TicketInfo": "Ticket info",
-  "@TicketInfo": {}
+  "@TicketInfo": {},
+  "YouAreAlreadyConnectedToThisEvent": "You are already connected to this event",
+  "@YouAreAlreadyConnectedToThisEvent": {},
+  "YouAreAlreadyConnectedToThisPlace": "You are already connected to this place",
+  "@YouAreAlreadyConnectedToThisPlace": {}
 
 }

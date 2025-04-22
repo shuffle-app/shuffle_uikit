@@ -2462,6 +2462,10 @@
   "ORCode": "OR code",
   "@ORCode": {},
   "TicketInfo": "Информация о билете",
-  "@TicketInfo": {}
+  "@TicketInfo": {},
+  "YouAreAlreadyConnectedToThisEvent": "Ты уже подключился к этому событию",
+  "@YouAreAlreadyConnectedToThisEvent": {},
+  "YouAreAlreadyConnectedToThisPlace": "Ты уже подключился к этому месту",
+  "@YouAreAlreadyConnectedToThisPlace": {}
 
 }

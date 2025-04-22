@@ -2429,6 +2429,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "Yes": MessageLookupByLibrary.simpleMessage("Yes"),
     "Yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
     "You": MessageLookupByLibrary.simpleMessage("You"),
+    "YouAreAlreadyConnectedToThisEvent": MessageLookupByLibrary.simpleMessage(
+      "You are already connected to this event",
+    ),
+    "YouAreAlreadyConnectedToThisPlace": MessageLookupByLibrary.simpleMessage(
+      "You are already connected to this place",
+    ),
     "YouAskedToBeAddedToTheChat": MessageLookupByLibrary.simpleMessage(
       "You asked to be added to the chat",
     ),
