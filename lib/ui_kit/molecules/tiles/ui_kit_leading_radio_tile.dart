@@ -21,7 +21,6 @@ class UiKitLeadingRadioTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = context.uiKitTheme?.boldTextTheme;
 
-
     return Material(
       color: Colors.transparent,
       borderRadius: BorderRadius.zero,
@@ -41,7 +40,7 @@ class UiKitLeadingRadioTile extends StatelessWidget {
                 child: ImageWidget(
                   link: avatarLink,
                   width: 0.33.sw,
-                  height: 0.33.sw/1.7,
+                  height: 0.33.sw / 1.7,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -58,17 +57,19 @@ class UiKitLeadingRadioTile extends StatelessWidget {
                     ),
                     SpacingFoundation.verticalSpace4,
                     SizedBox(
-                        height: 11.2.h,
-                        child: ListView.separated(
-                            scrollDirection: Axis.horizontal,
-                            shrinkWrap: true,
-                            primary: false,
-                            itemBuilder: (BuildContext context, int index) {
-                              final tag = tags[index];
-                              return UiKitTagWidget(title: tag.title, icon: tag.icon);
-                            },
-                            separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace8,
-                            itemCount: tags.length))
+                      height: 18.w,
+                      child: ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        primary: false,
+                        itemBuilder: (BuildContext context, int index) {
+                          final tag = tags[index];
+                          return UiKitTagWidget(title: tag.title, icon: tag.icon);
+                        },
+                        separatorBuilder: (_, __) => SpacingFoundation.horizontalSpace8,
+                        itemCount: tags.length,
+                      ),
+                    )
                   ],
                 ),
               ),
