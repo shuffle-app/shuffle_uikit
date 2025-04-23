@@ -10330,6 +10330,26 @@ class S {
   String get TicketInfo {
     return Intl.message('Ticket info', name: 'TicketInfo', desc: '', args: []);
   }
+
+  /// `You are already connected to this event`
+  String get YouAreAlreadyConnectedToThisEvent {
+    return Intl.message(
+      'You are already connected to this event',
+      name: 'YouAreAlreadyConnectedToThisEvent',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You are already connected to this place`
+  String get YouAreAlreadyConnectedToThisPlace {
+    return Intl.message(
+      'You are already connected to this place',
+      name: 'YouAreAlreadyConnectedToThisPlace',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

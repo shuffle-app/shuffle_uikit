@@ -32,78 +32,92 @@ class UiKitChatTile extends StatelessWidget {
     final colorScheme = theme?.colorScheme;
 
     return InkWell(
-        borderRadius: BorderRadiusFoundation.max,
-        onTap: onTap,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              '#$numberInList',
-              style: boldTextTheme?.body,
-            ),
-            Expanded(
-                child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              SpacingFoundation.horizontalSpace12,
-              Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
-                Text(
-                  chatTitle,
-                  style: boldTextTheme?.caption1Medium,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-                Row(
+      borderRadius: BorderRadiusFoundation.max,
+      onTap: onTap,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            '#$numberInList',
+            style: boldTextTheme?.body,
+          ),
+          Expanded(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SpacingFoundation.horizontalSpace12,
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    context.userAvatar(
-                        size: UserAvatarSize.x20x20,
-                        type: userTileType ?? UserTileType.ordinary,
-                        userName: adminName,
-                        imageUrl: avatarUrl),
-                    SpacingFoundation.horizontalSpace12,
-                    Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [
-                      Text(
-                        S.of(context).Admin,
-                        style: regularTextTheme?.caption4.copyWith(color: colorScheme?.darkNeutral400),
+                    Text(
+                      chatTitle,
+                      style: boldTextTheme?.caption1Medium,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    SpacingFoundation.verticalSpace2,
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        context.userAvatar(
+                            size: UserAvatarSize.x24x24,
+                            type: userTileType ?? UserTileType.ordinary,
+                            userName: adminName,
+                            imageUrl: avatarUrl),
+                        SpacingFoundation.horizontalSpace12,
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              S.of(context).Admin,
+                              style: regularTextTheme?.caption4.copyWith(color: colorScheme?.darkNeutral400),
+                            ),
+                            SpacingFoundation.verticalSpace2,
+                            Text(
+                              adminName,
+                              style: regularTextTheme?.caption2.copyWith(color: colorScheme?.darkNeutral400),
+                            )
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                SpacingFoundation.horizontalSpace12,
+                const Spacer(),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      DateFormat('MMM dd').format(date!),
+                      textAlign: TextAlign.end,
+                      style: theme?.regularTextTheme.caption4.copyWith(
+                        color: colorScheme?.bodyTypography,
                       ),
-                      SpacingFoundation.verticalSpace2,
-                      Text(
-                        adminName,
-                        style: regularTextTheme?.caption2.copyWith(color: colorScheme?.darkNeutral400),
-                      )
-                    ])
+                    ),
+                    SpacingFoundation.verticalSpace4,
+                    RichText(
+                      text: TextSpan(children: [
+                        WidgetSpan(
+                            child: ImageWidget(
+                          color: colorScheme?.inversePrimary,
+                          svgAsset: GraphicsFoundation.instance.svg.twoPeople,
+                          fit: BoxFit.fitHeight,
+                          height: boldTextTheme?.caption1Bold.height,
+                        )),
+                        TextSpan(text: ' $chatMembersCount', style: boldTextTheme?.caption1Bold)
+                      ]),
+                    )
                   ],
                 )
-              ]),
-              SpacingFoundation.horizontalSpace12,
-              const Spacer(),
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    DateFormat('MMM dd').format(date!),
-                    textAlign: TextAlign.end,
-                    style: theme?.regularTextTheme.caption4.copyWith(
-                      color: colorScheme?.bodyTypography,
-                    ),
-                  ),
-                  SpacingFoundation.verticalSpace4,
-                  RichText(
-                    text: TextSpan(children: [
-                      WidgetSpan(
-                          child: ImageWidget(
-                        color: colorScheme?.inversePrimary,
-                        svgAsset: GraphicsFoundation.instance.svg.twoPeople,
-                        fit: BoxFit.fitHeight,
-                        height: boldTextTheme?.caption1Bold.height,
-                      )),
-                      TextSpan(text: ' $chatMembersCount', style: boldTextTheme?.caption1Bold)
-                    ]),
-                  )
-                ],
-              )
-            ]))
-          ],
-        ));
+              ],
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
