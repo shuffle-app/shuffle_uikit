@@ -1,5 +1,6 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_html_iframe/shims/dart_ui_real.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 
 class UiKitLargeAdBannerCard extends StatelessWidget implements AdvertisementFactory {

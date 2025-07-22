@@ -1,5 +1,6 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_html_iframe/shims/dart_ui_real.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:shuffle_uikit/shuffle_uikit.dart';
 

@@ -34,7 +34,11 @@ dependencies:
   auto_size_text: ^3.0.0
   url_launcher: ^6.3.2
   table_calendar: ^3.2.0
-  flutter_html_iframe: 3.0.0
+  flutter_html_iframe:
+    git:
+      url: https://github.com/hnvn/flutter_html.git
+      ref: master
+      path: packages/flutter_html_iframe
   flutter_html_svg: 3.0.0
   flutter_html_table_extension:
     git:
